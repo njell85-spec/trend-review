@@ -7,7 +7,7 @@ $OWNER = "njell85-spec"
 $REPO  = "Trend_Review"
 
 $today = Get-Date
-$since = $today.AddDays(-30).ToString("yyyy-MM-dd")
+$since = $today.AddDays(-180).ToString("yyyy-MM-dd")
 $toDay = $today.ToString("yyyy-MM-dd")
 
 $logFile = "$env:TEMP\trend_review_fetch_$(Get-Date -Format 'yyyyMMdd').log"

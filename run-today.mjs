@@ -14,7 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // ── STEP 1: 오늘 파이프라인 실행 ────────────────────────────────────────────
 console.log('🔍 PubMed 검색 및 논문 분석 시작...');
-const orchestrator = new TrendReviewOrchestrator({ searchDays: 30, topN: 3 });
+const orchestrator = new TrendReviewOrchestrator({ searchDays: 180, topN: 1 });
 const result = await orchestrator.run();
 const todayPapers = result.topPapers ?? [];
 console.log(`✅ 오늘 Top ${todayPapers.length}편 선정 완료`);

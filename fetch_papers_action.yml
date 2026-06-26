@@ -22,7 +22,7 @@ jobs:
 
           # ---------- window ----------
           now   = datetime.now(timezone.utc)
-          since = (now - timedelta(days=30)).strftime('%Y-%m-%d')
+          since = (now - timedelta(days=180)).strftime('%Y-%m-%d')
           today = now.strftime('%Y-%m-%d')
 
           # ---------- Stage 0+1: query with publication-type hard filter ----------
@@ -39,7 +39,7 @@ jobs:
                    f'(FIRST_PDATE:[{since} TO {today}]) AND (LANG:"eng") AND (SRC:"MED")')
 
           base = 'https://www.ebi.ac.uk/europepmc/webservices/rest/search'
-          params = {'query': query, 'resultType': 'core', 'pageSize': '200',
+          params = {'query': query, 'resultType': 'core', 'pageSize': '300',
                     'format': 'json', 'sort': 'P_PDATE_D desc'}
           url = base + '?' + urllib.parse.urlencode(params)
           resp = json.loads(urllib.request.urlopen(url, timeout=40).read())
@@ -155,12 +155,12 @@ jobs:
                   'pre_score': pre_score,
               })
 
-          # ---------- Stage 2: rank, keep top 40 candidate pool ----------
+          # ---------- Stage 2: rank, keep top 300 candidate pool ----------
           papers.sort(key=lambda p: p['pre_score'], reverse=True)
-          papers = papers[:40]
+          papers = papers[:300]
 
           out = {'fetched_at': now.isoformat(), 'date': today,
-                 'window_days': 30, 'candidate_count': len(papers), 'papers': papers}
+                 'window_days': 180, 'candidate_count': len(papers), 'papers': papers}
           with open('data/raw_papers.json', 'w', encoding='utf-8') as f:
               json.dump(out, f, ensure_ascii=False)
           print(f'Fetched/screened -> {len(papers)} candidates (from {len(results)} raw)')

@@ -24,8 +24,8 @@ export class DataCollectorAgent {
 
     this.apiKey = process.env.PUBMED_API_KEY ?? '';
     this.email = process.env.PUBMED_EMAIL ?? 'research@example.com';
-    this.maxPapers = options.maxPapers ?? Number(process.env.MAX_PAPERS ?? 50);
-    this.searchDays = options.searchDays ?? Number(process.env.SEARCH_DAYS ?? 30);
+    this.maxPapers = options.maxPapers ?? Number(process.env.MAX_PAPERS ?? 300);
+    this.searchDays = options.searchDays ?? Number(process.env.SEARCH_DAYS ?? 180);
     this.query = options.query ?? DEFAULT_QUERY;
   }
 

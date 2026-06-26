@@ -123,7 +123,7 @@ export class GitHubPublisher {
       const date    = p.paper?.pubDate ?? '';
       const pmid    = p.paper?.pmid ?? '';
       return `
-        <div class="text-[16px] font-extrabold text-gray-700 mt-1">${circ} ${_esc(title)}</div>
+        <div class="text-[18px] font-black text-gray-700 mt-1">${circ} ${_esc(title)}</div>
         <div class="text-[12px] text-gray-400 pl-3">${_esc(journal)} · ${_esc(date)}${pmid ? ` · PMID ${pmid}` : ''}</div>`;
     }).join('');
 
@@ -164,7 +164,7 @@ export class GitHubPublisher {
         (g) => `<div class="mb-0.5"><b class="text-gray-600">${_esc(g.term)}</b> — ${_esc(g.explanation_ko)}</div>`
       ).join('');
       const glossaryBlock = glossaryItems
-        ? `<div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">통계 용어 풀이</div>${glossaryItems}</div>`
+        ? `<div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div>${glossaryItems}</div>`
         : '';
 
       const practiceItems = (p.practiceChange ?? []).map((t, k) => `
@@ -275,7 +275,7 @@ export class GitHubPublisher {
 
     // 기존 TODAY 배지 제거, 섹션을 past 스타일로 전환
     let updated = deduped
-      .replace(/<span class="bg-gray-900 text-white text-\[10px\] font-bold px-2 py-0\.5 rounded-full">TODAY<\/span>/g, '')
+      .replace(/<span class="bg-gray-900 text-white text-\[12px\] font-bold px-2 py-0\.5 rounded-full">TODAY<\/span>/g, '')
       .replace(/<details open class="rounded-xl overflow-hidden shadow-sm border-2 border-gray-900 bg-white">/g,
                '<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">')
       .replace(/class="slide-in border-t-2 border-gray-900 divide-y divide-gray-100"/g,
