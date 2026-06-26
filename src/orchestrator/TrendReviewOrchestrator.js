@@ -291,7 +291,8 @@ export class TrendReviewOrchestrator {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
-      const dateStr = new Date().toISOString().slice(0, 10);
+      // KST 기준 날짜 사용 (21:30 UTC = 06:30 KST → UTC 날짜는 하루 빠름)
+      const dateStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
       const pagesUrl = await this.githubPublisher.publish(dateStr, topPapers);
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);

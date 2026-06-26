@@ -30,11 +30,19 @@ export class GitHubPublisher {
   _gitPush(dateStr) {
     const cwd = this._repoPath;
     execSync('git add index.html', { cwd, stdio: 'pipe' });
-    // 변경 없으면 커밋 건너뜀
     const diff = execSync('git diff --staged --name-only', { cwd, encoding: 'utf8' }).trim();
     if (!diff) return;
     execSync(`git commit -m "Update archive: ${dateStr}"`, { cwd, stdio: 'pipe' });
-    execSync('git push', { cwd, stdio: 'pipe' });
+
+    try {
+      // 1순위: 일반 git push (GitHub Actions의 경우 actions/checkout@v4가 인증 설정)
+      execSync('git push', { cwd, stdio: 'pipe' });
+    } catch {
+      if (!this.token) throw new Error('git push 실패: 자격증명 없음 (GITHUB_TOKEN 미설정)');
+      // 2순위: 토큰 내장 HTTPS URL → 로컬에서 credential 만료 시 우회
+      const remote = `https://x-access-token:${this.token}@github.com/${this.owner}/${this.repo}.git`;
+      execSync(`git push ${remote} HEAD:main`, { cwd, stdio: 'pipe' });
+    }
   }
 
   async _req(path, method = 'GET', body = null) {
