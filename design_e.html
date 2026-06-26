@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시안 E · Newsprint</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style> body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;}
+ .cond{font-family:'Arial Narrow','Helvetica Neue',sans-serif;}
+ details>summary{list-style:none;cursor:pointer;} details>summary::-webkit-details-marker{display:none;}
+ details[open]>summary .chev{transform:rotate(180deg);} .chev{transition:transform .2s ease;}</style>
+</head>
+<body class="bg-white min-h-screen text-black">
+<div class="max-w-2xl mx-auto px-5 py-6">
+  <!-- masthead -->
+  <div class="border-y-4 border-black py-3 mb-1">
+    <div class="flex items-baseline justify-between">
+      <h1 class="text-4xl font-black tracking-tighter uppercase">Trend Review</h1>
+      <span class="text-[10px] font-bold uppercase tracking-widest">Est. 2026 · Daily</span>
+    </div>
+  </div>
+  <div class="flex items-center justify-between border-b-2 border-black pb-2 mb-5 text-[11px] font-bold uppercase tracking-wider">
+    <span>Emergency Medicine &amp; Critical Care</span>
+    <span>10 Days · 30 Papers · 06.18</span>
+  </div>
+
+  <!-- TODAY -->
+  <details open>
+    <summary class="select-none mb-3">
+      <span class="bg-black text-white text-[11px] font-black px-2 py-0.5 uppercase tracking-wider">Today</span>
+      <span class="text-sm font-black ml-1">2026-06-18</span>
+    </summary>
+    <div class="divide-y-2 divide-black border-t-2 border-black">
+      <div class="py-3 flex gap-4">
+        <span class="cond text-5xl font-black leading-none w-12 flex-shrink-0">1</span>
+        <div><div class="text-[17px] font-black leading-tight uppercase">The effects of mechanical ventilation during V-A ECMO support: a systematic review</div>
+        <div class="text-[11px] font-bold uppercase tracking-wide text-gray-500 mt-1">Crit Care · Meta-analysis · PMID 42249495</div>
+        <p class="text-[13px] text-gray-800 leading-relaxed mt-2 border-l-2 border-black pl-3">VA-ECMO 중 폐보호 환기 전략이 생존·이탈에 미치는 영향을 종합한 체계적 리뷰.</p></div>
+      </div>
+      <div class="py-3 flex gap-4">
+        <span class="cond text-5xl font-black leading-none w-12 flex-shrink-0 text-gray-400">2</span>
+        <div><div class="text-[17px] font-black leading-tight uppercase">Predictive validity of daily SOFA-2 score for 30-day mortality</div>
+        <div class="text-[11px] font-bold uppercase tracking-wide text-gray-500 mt-1">Crit Care · Cohort · PMID 42226253</div></div>
+      </div>
+      <div class="py-3 flex gap-4">
+        <span class="cond text-5xl font-black leading-none w-12 flex-shrink-0 text-gray-400">3</span>
+        <div><div class="text-[17px] font-black leading-tight uppercase">2025 Korean Guidelines for CPR: Part 6 — Post-cardiac arrest care</div>
+        <div class="text-[11px] font-bold uppercase tracking-wide text-gray-500 mt-1">Clin Exp Emerg Med · Guideline · PMID 42297409</div></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- archive -->
+  <div class="mt-6 border-t-2 border-black pt-3">
+    <div class="flex items-center gap-2 mb-3"><span class="text-sm font-black uppercase">2026-06-17</span><span class="text-[11px] font-bold text-gray-500">· 3 papers</span><span class="ml-auto text-xl">⌄</span></div>
+  </div>
+
+  <!-- journal archive -->
+  <div class="mt-4 border-2 border-black">
+    <div class="bg-black text-white px-3 py-2 text-[12px] font-black uppercase tracking-wider">Curated Journal Archive · 30</div>
+    <table class="w-full text-[12px]"><tbody>
+      <tr class="border-b border-black"><td class="px-3 py-2 font-bold w-14">06-18</td><td class="px-2 py-2 font-black uppercase text-[11px] w-24">Crit Care</td><td class="px-3 py-2">Mechanical ventilation during VA-ECMO…</td></tr>
+      <tr class="border-b border-black"><td class="px-3 py-2 font-bold">06-18</td><td class="px-2 py-2 font-black uppercase text-[11px]">Crit Care</td><td class="px-3 py-2">Predictive validity of SOFA-2…</td></tr>
+      <tr><td class="px-3 py-2 font-bold">06-17</td><td class="px-2 py-2 font-black uppercase text-[11px]">Resuscitation</td><td class="px-3 py-2">…</td></tr>
+    </tbody></table>
+  </div>
+  <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 py-6">Trend Review · Newsprint</p>
+</div>
+</body>
+</html>

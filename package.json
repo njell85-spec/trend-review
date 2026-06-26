@@ -1,0 +1,25 @@
+{
+  "name": "trend-review",
+  "version": "1.0.0",
+  "description": "Trend Review — EM/CCM Daily Literature Review System",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test:collector": "node --experimental-vm-modules src/agents/DataCollectorAgent.js",
+    "test:filter": "node src/agents/FilterAnalyzerAgent.js",
+    "test:validator": "node src/agents/ValidationAgent.js",
+    "test:reporter": "node src/agents/ReportGeneratorAgent.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.36.0",
+    "dotenv": "^16.4.0",
+    "googleapis": "^173.0.0",
+    "openai": "^6.42.0",
+    "xml2js": "^0.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

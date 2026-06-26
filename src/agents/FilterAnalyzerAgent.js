@@ -1,0 +1,469 @@
+/**
+ * FilterAnalyzerAgent
+ * MCP bindings: fetch (Claude API), filesystem (cache read/write)
+ *
+ * Uses Claude to:
+ *   1. Score all papers (1–10) for EM/CCM clinical applicability
+ *   2. Select top-N papers
+ *   3. Generate structured PICO analysis for each top paper
+ */
+import { Logger } from '../utils/Logger.js';
+import { Cache } from '../utils/Cache.js';
+import { CircuitBreaker } from '../utils/CircuitBreaker.js';
+import { RetryHelper } from '../utils/RetryHelper.js';
+import { LLMClient, PROVIDER_DEFAULTS } from '../utils/LLMClient.js';
+
+export class FilterAnalyzerAgent {
+  constructor(options = {}) {
+    this.provider = options.provider ?? 'anthropic';
+    this.model = options.model ?? (this.provider === 'anthropic' ? 'claude-opus-4-8' : PROVIDER_DEFAULTS[this.provider]);
+    this.picoModel = options.picoModel ?? this.model;
+
+    this.logger = new Logger('FilterAnalyzerAgent', { logFile: 'filter_analyzer.jsonl' });
+    this.cache = new Cache();
+    this.cb = new CircuitBreaker(`${this.provider}-API`, { failureThreshold: 3 });
+    this.retry = new RetryHelper({ maxAttempts: 3, baseDelayMs: 3_000 });
+
+    this.llm = new LLMClient({ provider: this.provider, model: this.model });
+    this.picoLlm = new LLMClient({ provider: this.provider, model: this.picoModel });
+    this.topN = options.topN ?? Number(process.env.TOP_N ?? 3);
+  }
+
+  // ── Tool definitions for structured Claude output ─────────────────────────
+  get _scoringTool() {
+    return {
+      name: 'submit_paper_scores',
+      description: 'Submit clinical applicability scores for a batch of EM/CCM papers',
+      input_schema: {
+        type: 'object',
+        properties: {
+          scores: {
+            type: 'array',
+            items: {
+              type: 'object',
+              properties: {
+                pmid: { type: 'string' },
+                score: {
+                  type: 'number',
+                  description: 'Clinical applicability score 1–10 for EM/CCM practice',
+                },
+                rationale: {
+                  type: 'string',
+                  description: 'One-sentence justification',
+                },
+                studyType: {
+                  type: 'string',
+                  enum: ['RCT', 'Observational', 'Meta-analysis', 'Systematic Review',
+                         'Case Series', 'Guidelines', 'Other'],
+                },
+              },
+              required: ['pmid', 'score', 'rationale', 'studyType'],
+            },
+          },
+        },
+        required: ['scores'],
+      },
+    };
+  }
+
+  get _picoTool() {
+    return {
+      name: 'submit_pico_analysis',
+      description: 'Submit a complete PICO analysis for a paper (bilingual: English + Korean)',
+      input_schema: {
+        type: 'object',
+        properties: {
+          pmid: { type: 'string' },
+          clinicalQuestion: {
+            type: 'string',
+            description: 'Core clinical question the paper addresses (1–2 sentences, English)',
+          },
+          clinicalQuestion_ko: {
+            type: 'string',
+            description: 'Korean translation of clinicalQuestion. Medical/drug/score names may stay in English.',
+          },
+          pico: {
+            type: 'object',
+            properties: {
+              population: {
+                type: 'string',
+                description: 'Patient population and inclusion criteria. MUST BEGIN with the study country/region in square brackets, e.g. "[USA] ...", "[International]" for multinational studies, or "[Country NR]" if not reported. State the country only when given/inferable from the source — never guess. Then preserve the original wording of the abstract as closely as possible (near-verbatim excerpt). MUST include specific numbers (N, age, %, date ranges) from the abstract.',
+              },
+              intervention: {
+                type: 'string',
+                description: 'Primary intervention or exposure studied. Preserve the original abstract wording where possible. Include doses, thresholds, or cutoff values when reported.',
+              },
+              comparison: {
+                type: 'string',
+                description: 'Comparison group or control condition (null if none). Preserve the original abstract wording where possible.',
+              },
+              outcome: {
+                type: 'string',
+                description: 'PRIMARY outcome only, with reported statistics (AUROC, OR, HR, CI, p-values, etc.). Report ONLY statistics explicitly stated in the paper — never derive or compute new values (e.g., do not calculate NNT).',
+              },
+            },
+            required: ['population', 'intervention', 'comparison', 'outcome'],
+          },
+          pico_ko: {
+            type: 'object',
+            description: 'Korean translations of each PICO field. The population field MUST also begin with the study country in Korean square brackets, e.g. "[미국] ...", "[다국가]" for multinational, or "[국가 미기재]" if not reported. Medical terms, score names, and statistics may remain in English.',
+            properties: {
+              population: { type: 'string' },
+              intervention: { type: 'string' },
+              comparison: { type: 'string' },
+              outcome: { type: 'string' },
+            },
+          },
+          baseline: {
+            type: 'string',
+            enum: ['Balanced', 'Imbalanced', 'Not reported'],
+            description: 'Baseline comparability between study groups as reported in the paper. Use "Not reported" if the paper does not state it.',
+          },
+          secondaryOutcomes: {
+            type: 'array',
+            items: { type: 'string' },
+            description: 'Up to 3 key secondary outcomes, each with its reported statistics. Report ONLY values explicitly stated in the paper. Empty array if none reported.',
+          },
+          secondaryOutcomes_ko: {
+            type: 'array',
+            items: { type: 'string' },
+            description: 'Korean translations of secondaryOutcomes (same order). Statistics and medical terms may remain in English.',
+          },
+          statGlossary: {
+            type: 'array',
+            items: {
+              type: 'object',
+              properties: {
+                term: {
+                  type: 'string',
+                  description: 'Statistical term exactly as used in the outcome fields (e.g., OR, HR, 95% CI, p-value, AUROC, mRS)',
+                },
+                explanation_ko: {
+                  type: 'string',
+                  description: 'One-sentence beginner-friendly Korean explanation of the concept',
+                },
+              },
+              required: ['term', 'explanation_ko'],
+            },
+            description: 'Plain-language glossary covering every statistical measure that appears in the outcome/secondaryOutcomes fields. Only include terms that actually appear.',
+          },
+          practiceChange: {
+            type: 'array',
+            items: { type: 'string' },
+            description: '2–3 actionable practice-change bullet points for EM/CCM clinicians (English)',
+          },
+          practiceChange_ko: {
+            type: 'array',
+            items: { type: 'string' },
+            description: 'Korean translations of practiceChange (same order). Medical terms may remain in English.',
+          },
+          keyFindings: {
+            type: 'array',
+            items: { type: 'string' },
+            description: 'Top 3 key findings as bullet points. Include specific numbers, effect sizes, and p-values from the abstract.',
+          },
+          keyFindings_ko: {
+            type: 'array',
+            items: { type: 'string' },
+            description: 'Korean translations of keyFindings (same 3 items). Statistics and medical terms may remain in English.',
+          },
+          clinicalTakeaway: {
+            type: 'string',
+            description: 'Actionable clinical takeaway for EM/CCM practitioners (2–3 sentences, English)',
+          },
+          clinicalTakeaway_ko: {
+            type: 'string',
+            description: 'Korean translation of clinicalTakeaway. Medical terms may remain in English.',
+          },
+          limitations: {
+            type: 'string',
+            description: 'Main study limitations relevant to clinical application (English)',
+          },
+          limitations_ko: {
+            type: 'string',
+            description: 'Korean translation of limitations. Medical terms may remain in English.',
+          },
+          evidenceLevel: {
+            type: 'string',
+            enum: ['High', 'Moderate', 'Low', 'Very Low'],
+            description: 'GRADE-informed evidence quality',
+          },
+          clinicalApplicabilityScore: {
+            type: 'number',
+            description: 'Final score 1–10 after full analysis',
+          },
+        },
+        required: [
+          'pmid', 'clinicalQuestion', 'clinicalQuestion_ko',
+          'pico', 'pico_ko', 'baseline',
+          'secondaryOutcomes', 'secondaryOutcomes_ko', 'statGlossary',
+          'keyFindings', 'keyFindings_ko',
+          'clinicalTakeaway', 'clinicalTakeaway_ko',
+          'limitations', 'limitations_ko',
+          'practiceChange', 'practiceChange_ko',
+          'evidenceLevel', 'clinicalApplicabilityScore',
+        ],
+      },
+    };
+  }
+
+  // ── LLM API wrapper (provider-agnostic) ─────────────────────────────────
+  async _callLLM(messages, tool, llm = this.llm) {
+    return this.cb.execute(() =>
+      this.retry.execute(
+        async () => llm.callWithTool(messages, tool),
+        {
+          label: `${this.provider}-API`,
+          onRetry: ({ attempt, delay }) =>
+            this.logger.warn(`${this.provider} retry ${attempt} in ${Math.round(delay)}ms`),
+        }
+      )
+    );
+  }
+
+  // ── Step 1: Score all papers in batches of 10 ───────────────────────────
+  async scorePapers(papers) {
+    const BATCH = 10;
+    const allScores = [];
+
+    for (let i = 0; i < papers.length; i += BATCH) {
+      const batch = papers.slice(i, i + BATCH);
+      const cacheKey = `scores_${batch.map((p) => p.pmid).join('_')}`;
+
+      const providerCacheKey = `${this.provider}_${this.model}_${cacheKey}`;
+      const { data: scores, fromCache } = await this.cache.getOrFetch(providerCacheKey, async () => {
+        this.logger.debug(`Scoring batch ${Math.floor(i / BATCH) + 1}/${Math.ceil(papers.length / BATCH)}`);
+
+        const paperList = batch
+          .map(
+            (p, idx) =>
+              `[${idx + 1}] PMID: ${p.pmid}\nTitle: ${p.title}\nJournal: ${p.journal} (${p.pubDate})\nAbstract: ${p.abstract.slice(0, 800)}`
+          )
+          .join('\n\n---\n\n');
+
+        const prompt = `You are an expert emergency medicine physician and critical care specialist performing a systematic literature review.
+
+Rate each paper below for CLINICAL APPLICABILITY in emergency medicine or critical care (1–10):
+- 9–10: Practice-changing, directly applicable, robust evidence
+- 7–8: Highly relevant, strong evidence or important topic
+- 5–6: Relevant but limited generalizability or methodological concerns
+- 3–4: Limited clinical relevance or preliminary data
+- 1–2: Not applicable to EM/CCM practice
+
+Prioritize: randomized trials, meta-analyses, high-impact observational studies on sepsis, resuscitation, airway, hemodynamics, toxicology, procedural interventions.
+
+Papers to score:
+${paperList}
+
+Use the submit_paper_scores tool to return scores for ALL ${batch.length} papers.`;
+
+        const result = await this._callLLM(
+          [{ role: 'user', content: prompt }],
+          this._scoringTool
+        );
+
+        return result.scores;
+      });
+
+      if (fromCache) this.logger.debug(`Batch ${Math.floor(i / BATCH) + 1} scores from cache`);
+      allScores.push(...scores);
+    }
+
+    return allScores;
+  }
+
+  // ── Step 2: Select top-N papers ──────────────────────────────────────────
+  _selectTopPapers(papers, scores) {
+    const scoreMap = new Map(scores.map((s) => [s.pmid, s]));
+
+    return papers
+      .map((p) => ({
+        ...p,
+        scoringData: scoreMap.get(p.pmid) ?? { score: 0, rationale: '', studyType: 'Other' },
+      }))
+      .sort((a, b) => (b.scoringData.score ?? 0) - (a.scoringData.score ?? 0))
+      .slice(0, this.topN);
+  }
+
+  // ── Step 3: PICO analysis for top papers (parallel) ──────────────────────
+  async analyzePico(topPapers) {
+    this.logger.info(`Generating PICO analysis for top ${topPapers.length} papers`);
+
+    const analyses = await Promise.allSettled(
+      topPapers.map((paper) => this._analyzeSinglePaper(paper))
+    );
+
+    return analyses.map((result, idx) => {
+      if (result.status === 'fulfilled') return result.value;
+      this.logger.error(`PICO failed for PMID ${topPapers[idx].pmid}`, {
+        err: result.reason?.message,
+      });
+      return this._fallbackPico(topPapers[idx]);
+    });
+  }
+
+  async _analyzeSinglePaper(paper) {
+    const cacheKey = `pico_v4_${this.provider}_${this.picoModel}_${paper.pmid}`;
+    const { data, fromCache } = await this.cache.getOrFetch(cacheKey, async () => {
+      this.logger.info(`PICO analysis: ${paper.pmid} — ${paper.title.slice(0, 60)}…`);
+
+      const hasFullText = paper.fullText && paper.fullText.length > 100;
+      const fullTextSection = hasFullText
+        ? `\n\n--- FULL TEXT (source: ${paper.fullTextSource}, ${Math.round(paper.fullTextLength / 1000)}k chars, truncated) ---\n${paper.fullText}\n---`
+        : '';
+
+      const figureSection = paper.figures?.length
+        ? `\n\nFigures/Tables extracted:\n${paper.figures.map((f) => `• ${f.label}: ${f.caption}`).join('\n')}`
+        : '';
+
+      const prompt = `You are an expert emergency medicine and critical care physician conducting a systematic literature review.
+
+Perform a detailed PICO analysis of the following paper:
+
+Title: ${paper.title}
+Authors: ${paper.authors.join(', ')}
+Journal: ${paper.journal} (${paper.pubDate})
+MeSH Terms: ${paper.meshTerms.join(', ')}
+Full-text available: ${hasFullText ? `YES (${paper.fullTextSource})` : 'NO — abstract only'}
+
+Abstract:
+${paper.abstract}${fullTextSection}${figureSection}
+
+Provide a complete structured analysis using the submit_pico_analysis tool.
+Requirements:
+1. ${hasFullText ? 'Full text is provided — use it to extract detailed methods, subgroup analyses, exact statistics, and figure/table data NOT in the abstract.' : 'Only abstract is available — note this limitation explicitly.'}
+2. PICO fields must include specific numbers (sample sizes, ages, percentages, date ranges, cutoffs, effect sizes, p-values, confidence intervals). Prioritize numbers from full text over abstract when available.
+3. Provide Korean translations for ALL text fields (_ko suffix). Medical terms, drug names, score names (e.g., SOFA, AUROC, PELOD-2), and statistics must remain in English within Korean text — translate only the surrounding prose.
+4. Report ONLY values explicitly stated in the paper. NEVER derive, compute, or estimate new statistics yourself (e.g., do not calculate NNT or absolute risk differences unless the paper reports them). If a value is not reported, omit it rather than guessing.
+5. For the English PICO fields (population/intervention/comparison/outcome), preserve the original wording of the source text as closely as possible — write them as near-verbatim excerpts, not free paraphrases.
+6. statGlossary: for every statistical term that appears in your outcome/secondaryOutcomes text (e.g., OR, HR, 95% CI, p-value, AUROC, mRS), add one entry with a single-sentence plain-Korean explanation a junior clinician could understand. Do not include terms that do not appear.
+7. practiceChange: 2–3 concrete, actionable bullets describing how this evidence should (or should not) change EM/CCM practice.`;
+
+      return await this._callLLM(
+        [{ role: 'user', content: prompt }],
+        this._picoTool,
+        this.picoLlm
+      );
+    });
+
+    if (fromCache) this.logger.debug(`PICO from cache: ${paper.pmid}`);
+    return { ...data, paper };
+  }
+
+  _fallbackPico(paper) {
+    return {
+      pmid: paper.pmid,
+      paper,
+      clinicalQuestion: 'Analysis unavailable — see abstract',
+      pico: {
+        population: 'Not analyzed',
+        intervention: 'Not analyzed',
+        comparison: 'Not analyzed',
+        outcome: 'Not analyzed',
+      },
+      baseline: 'Not reported',
+      secondaryOutcomes: [],
+      secondaryOutcomes_ko: [],
+      statGlossary: [],
+      keyFindings: ['Analysis failed — refer to original abstract'],
+      clinicalTakeaway: 'Manual review required',
+      limitations: 'Automated analysis failed',
+      practiceChange: [],
+      practiceChange_ko: [],
+      evidenceLevel: 'Very Low',
+      clinicalApplicabilityScore: paper.scoringData?.score ?? 0,
+      analysisError: true,
+    };
+  }
+
+  // ── Scoring + selection only (no PICO) — used when full-text enrichment follows ──
+  async runScoringOnly(papers) {
+    this.logger.section('FilterAnalyzerAgent — Scoring & Selection (no PICO yet)');
+    if (!papers.length) return { topPapers: [], allScoredPapers: [] };
+
+    const scores = await this.scorePapers(papers);
+    const topPapers = this._selectTopPapers(papers, scores);
+
+    const scoreMap = new Map(scores.map((s) => [s.pmid, s]));
+    const allScoredPapers = papers.map((p) => ({
+      ...p,
+      scoringData: scoreMap.get(p.pmid) ?? { score: 0, studyType: 'Other' },
+    }));
+
+    this.logger.info(`Selected top ${topPapers.length} papers for full-text enrichment`);
+    return { topPapers, allScoredPapers };
+  }
+
+  // ── Public API ────────────────────────────────────────────────────────────
+  async run(papers) {
+    this.logger.section('FilterAnalyzerAgent — Clinical Scoring & PICO Analysis');
+
+    if (!papers.length) {
+      this.logger.warn('No papers to analyze');
+      return { topPapers: [], allScoredPapers: [], stats: {} };
+    }
+
+    const start = Date.now();
+
+    // 1. Score all papers
+    this.logger.info(`Scoring ${papers.length} papers for clinical applicability…`);
+    const scores = await this.scorePapers(papers);
+    this.logger.info(`Scored ${scores.length} papers`);
+
+    // 2. Select top-N
+    const topPapers = this._selectTopPapers(papers, scores);
+    this.logger.info(
+      `Top ${topPapers.length} papers selected`,
+      topPapers.map((p) => ({
+        pmid: p.pmid,
+        score: p.scoringData.score,
+        title: p.title.slice(0, 60),
+      }))
+    );
+
+    // 3. PICO analysis
+    const picoResults = await this.analyzePico(topPapers);
+
+    // Merge scoring data into all papers for reporting
+    const scoreMap = new Map(scores.map((s) => [s.pmid, s]));
+    const allScoredPapers = papers.map((p) => ({
+      ...p,
+      scoringData: scoreMap.get(p.pmid) ?? { score: 0, studyType: 'Other' },
+    }));
+
+    const stats = {
+      totalPapersInput: papers.length,
+      papersScored: scores.length,
+      topNSelected: picoResults.length,
+      picoErrors: picoResults.filter((p) => p.analysisError).length,
+      elapsedSeconds: ((Date.now() - start) / 1000).toFixed(1),
+      circuitBreaker: this.cb.getStatus(),
+    };
+
+    this.logger.info('Analysis complete', stats);
+    return { topPapers: picoResults, allScoredPapers, stats };
+  }
+}
+
+// ── Standalone test ───────────────────────────────────────────────────────
+if (process.argv[1].endsWith('FilterAnalyzerAgent.js')) {
+  const mockPapers = [
+    {
+      pmid: '99999001',
+      title: 'Early Goal-Directed Therapy vs Usual Care in Septic Shock: A Multicenter RCT',
+      abstract:
+        'Background: Septic shock carries high mortality. We randomized 1200 patients to early goal-directed therapy (EGDT) vs usual care. Primary outcome was 90-day mortality. Results: 90-day mortality was 24.2% in EGDT vs 27.6% in usual care (OR 0.84, 95%CI 0.65-1.08). Secondary outcomes including ICU LOS did not differ. Conclusion: EGDT did not improve mortality in contemporary septic shock.',
+      authors: ['Rivers E', 'Nguyen B', 'Smith J'],
+      journal: 'New England Journal of Medicine',
+      pubDate: '2024-11',
+      meshTerms: ['Septic Shock', 'Fluid Therapy', 'Resuscitation'],
+      keywords: ['sepsis', 'EGDT', 'resuscitation'],
+      pubmedUrl: 'https://pubmed.ncbi.nlm.nih.gov/99999001/',
+      collectedAt: new Date().toISOString(),
+    },
+  ];
+
+  const agent = new FilterAnalyzerAgent({ topN: 1 });
+  const result = await agent.run(mockPapers);
+  console.log('\nPICO result:', JSON.stringify(result.topPapers[0]?.pico, null, 2));
+}

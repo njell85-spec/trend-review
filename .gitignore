@@ -1,0 +1,20 @@
+# === Secrets / credentials (NEVER commit) ===
+.env
+.env.*
+!.env.example
+credentials.json
+mcp-config.json
+google_token.json
+**/google_token.json
+*.pem
+*.key
+
+# === Generated output / runtime ===
+output/
+node_modules/
+*.log
+logs/
+
+# === OS / editor cruft ===
+.DS_Store
+Thumbs.db

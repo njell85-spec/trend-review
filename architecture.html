@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EM/CCM LitReview — System Architecture</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 32px;
+  min-width: 1300px;
+}
+
+/* ── Typography ── */
+h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; opacity: .7; }
+.small { font-size: 11px; opacity: .7; }
+
+/* ── Layout shells ── */
+.page { max-width: 1400px; margin: 0 auto; }
+.row { display: flex; align-items: stretch; gap: 6px; }
+.col { display: flex; flex-direction: column; gap: 6px; }
+.center { align-items: center; justify-content: center; }
+
+/* ── Arrow connectors ── */
+.arr-down { text-align: center; font-size: 22px; color: #475569; line-height: 1; padding: 2px 0; }
+.arr-right { display: flex; align-items: center; color: #475569; font-size: 20px; flex-shrink: 0; padding: 0 4px; }
+.arr-label { font-size: 9px; color: #64748b; text-align: center; margin-top: -4px; }
+
+/* ── Box types ── */
+.box {
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1.5px solid transparent;
+  position: relative;
+}
+.box-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.box-sub   { font-size: 11px; opacity: .75; line-height: 1.4; }
+
+/* Entry */
+.b-entry {
+  background: #1e293b;
+  border-color: #334155;
+}
+/* Orchestrator */
+.b-orch {
+  background: linear-gradient(135deg, #1e3a5f, #1e40af);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f630;
+}
+/* Stage badge */
+.b-stage {
+  background: #1e3a5f;
+  border-color: #3b82f6;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-align: center;
+  color: #93c5fd;
+}
+/* Deterministic agent */
+.b-det {
+  background: #052e16;
+  border-color: #16a34a;
+  color: #86efac;
+}
+.b-det .box-title { color: #4ade80; }
+/* AI agent (Claude) */
+.b-ai {
+  background: #2e1065;
+  border-color: #7c3aed;
+  color: #ddd6fe;
+  box-shadow: 0 0 16px #7c3aed18;
+}
+.b-ai .box-title { color: #c4b5fd; }
+/* Full-text agent */
+.b-ft {
+  background: #082f49;
+  border-color: #0ea5e9;
+  color: #bae6fd;
+}
+.b-ft .box-title { color: #38bdf8; }
+/* External API */
+.b-api {
+  background: #1c1400;
+  border-color: #ca8a04;
+  color: #fde68a;
+}
+.b-api .box-title { color: #fbbf24; }
+/* Google API */
+.b-gapi {
+  background: #1c0a00;
+  border-color: #ea580c;
+  color: #fed7aa;
+}
+.b-gapi .box-title { color: #fb923c; }
+/* Harness */
+.b-harness {
+  background: #0f172a;
+  border-color: #475569;
+  color: #94a3b8;
+}
+.b-harness .box-title { color: #cbd5e1; }
+/* Not implemented */
+.b-nope {
+  background: #1a0005;
+  border: 1.5px dashed #9f1239;
+  color: #fda4af;
+  opacity: .85;
+}
+.b-nope .box-title { color: #fb7185; }
+
+/* ── Tool use badge ── */
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-top: 4px;
+}
+.badge-tool  { background: #4c1d95; color: #e9d5ff; }
+.badge-cache { background: #14532d; color: #bbf7d0; }
+.badge-pmc   { background: #0c4a6e; color: #bae6fd; }
+.badge-new   { background: #7c2d12; color: #fed7aa; }
+.badge-miss  { background: #881337; color: #fecdd3; }
+
+/* ── Section labels ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+/* ── Legend ── */
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+.leg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #94a3b8; }
+.leg-dot  { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+/* ── Divider ── */
+.divider { height: 1px; background: #1e293b; margin: 20px 0; }
+
+/* ── Tooltip ── */
+.tip { position: relative; cursor: default; }
+.tip:hover .tip-box { display: block; }
+.tip-box {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11px;
+  color: #cbd5e1;
+  white-space: nowrap;
+  z-index: 99;
+  box-shadow: 0 8px 24px #00000060;
+  line-height: 1.6;
+}
+
+/* Flex helpers */
+.flex-1 { flex: 1; }
+.mt4 { margin-top: 4px; }
+.mt8 { margin-top: 8px; }
+.gap4 { gap: 4px; }
+.gap8 { gap: 8px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ── Header ── -->
+<div class="row" style="margin-bottom:28px; align-items:flex-start; justify-content:space-between;">
+  <div>
+    <h1>🏥 EM/CCM Literature Review — System Architecture</h1>
+    <p class="small" style="margin-top:6px; color:#64748b;">응급의학·중환자의학 논문 AI 분석 시스템 · 구조 도식</p>
+  </div>
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div> Orchestrator</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#16a34a"></div> 결정론적 Agent</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#7c3aed"></div> AI Agent (Claude)</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#0ea5e9"></div> FullTextAgent (신규)</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#ca8a04"></div> External API</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#475569"></div> Harness / Infrastructure</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#9f1239; opacity:.6"></div> 미구현 (Named only)</div>
+  </div>
+</div>
+
+<!-- ── Layer 0: Entry Point ── -->
+<div class="section-label">① Entry Point</div>
+<div class="box b-entry" style="margin-bottom:4px; display:flex; align-items:center; gap:20px;">
+  <div>
+    <div class="box-title" style="color:#e2e8f0;">🖥️ &nbsp;node src/index.js</div>
+    <div class="box-sub">CLI 진입점 · parseArgs() → <code style="color:#7dd3fc;">LitReviewOrchestrator.run()</code></div>
+  </div>
+  <div style="margin-left:auto; display:flex; gap:10px; font-size:11px; color:#64748b;">
+    <span>--days N</span><span>--max N</span><span>--top N</span><span>--resume SESSION</span><span>--dry-run</span>
+  </div>
+</div>
+
+<div class="arr-down">↓</div>
+
+<!-- ── Layer 1: Orchestrator ── -->
+<div class="section-label">② Orchestrator — State Machine</div>
+<div class="box b-orch" style="margin-bottom:4px;">
+  <div class="box-title" style="font-size:15px; color:#fff;">🎛️ &nbsp;LitReviewOrchestrator</div>
+  <div class="box-sub" style="margin-top:6px; color:#93c5fd;">State Machine · Checkpoint 저장/복원 · Stage 격리 · CircuitBreaker 상태 감시</div>
+  <div class="row" style="margin-top:12px; gap:4px; flex-wrap:nowrap;">
+    <div class="b-stage">IDLE</div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage">COLLECTING</div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage">VALIDATING_1</div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage" style="border-color:#7c3aed; color:#c4b5fd;">ANALYZING<br/><span style="font-size:9px;">(scoring)</span></div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage" style="border-color:#0ea5e9; color:#7dd3fc;">FETCHING<br/>_FULLTEXT <span style="font-size:9px;color:#fb923c;">NEW</span></div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage" style="border-color:#7c3aed; color:#c4b5fd;">PICO<br/>_ANALYSIS <span style="font-size:9px;color:#fb923c;">NEW</span></div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage">VALIDATING_2</div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage">REPORTING</div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage" style="opacity:.6;">NOTIFYING<br/><span style="font-size:9px;">optional</span></div>
+    <div class="arr-right" style="font-size:14px;">→</div>
+    <div class="b-stage" style="border-color:#22c55e; color:#86efac;">DONE</div>
+  </div>
+</div>
+
+<div class="arr-down">↓ &nbsp;<span style="font-size:13px; color:#475569;">각 stage가 해당 Agent 호출</span></div>
+
+<!-- ── Layer 2: Pipeline Columns ── -->
+<div class="section-label">③ Agent Pipeline (Stage × Agent × API)</div>
+<div class="row" style="align-items:flex-start; gap:5px;">
+
+  <!-- COLLECTING -->
+  <div class="col flex-1">
+    <div class="b-stage" style="text-align:center;">Stage 1<br/>COLLECTING</div>
+    <div class="arr-down" style="font-size:16px;">↓</div>
+    <div class="box b-det tip">
+      <div class="box-title">📡 DataCollectorAgent</div>
+      <div class="box-sub">PubMed 검색 · 논문 수집<br/>DOI + PMCID 추출 <span class="badge badge-new">updated</span></div>
+      <div class="tip-box">
+        • esearch → PMIDs 획득<br/>
+        • efetch (XML) → 구조화 파싱<br/>
+        • 새 필드: doi, pmcid (full-text용)<br/>
+        • Batch 10편씩 · Rate-limit 준수
+      </div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#ca8a04;">↓ HTTP</div>
+    <div class="box b-api" style="font-size:11px;">
+      <div class="box-title">🌐 PubMed E-utilities</div>
+      <div class="box-sub">esearch.fcgi (JSON)<br/>efetch.fcgi (XML)<br/>api.ncbi.nlm.nih.gov</div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#ca8a04;">↓ parse</div>
+    <div class="box b-api" style="font-size:11px;">
+      <div class="box-title">📋 Output</div>
+      <div class="box-sub">pmid · title · abstract<br/>authors · journal · pubDate<br/>meshTerms · doi · pmcid</div>
+    </div>
+  </div>
+
+  <div class="arr-right">→</div>
+
+  <!-- VALIDATING_1 -->
+  <div class="col flex-1">
+    <div class="b-stage" style="text-align:center;">Stage 2<br/>VALIDATING_1</div>
+    <div class="arr-down" style="font-size:16px;">↓</div>
+    <div class="box b-det tip">
+      <div class="box-title">✅ ValidationAgent</div>
+      <div class="box-sub">품질 필터 (규칙 기반)<br/>Abstract 길이 · 필드 완결성</div>
+      <div class="tip-box">
+        • API 호출 없음 (pure logic)<br/>
+        • abstract.length > 50<br/>
+        • title 존재 여부<br/>
+        • PICO 결과 2차 검증도 수행
+      </div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#475569;">↓</div>
+    <div class="box b-harness" style="font-size:11px;">
+      <div class="box-title">⚙️ 규칙 기반 로직</div>
+      <div class="box-sub">API 미사용<br/>Sync 처리 (빠름)</div>
+    </div>
+  </div>
+
+  <div class="arr-right">→</div>
+
+  <!-- ANALYZING (scoring) -->
+  <div class="col flex-1">
+    <div class="b-stage" style="text-align:center; border-color:#7c3aed; color:#c4b5fd;">Stage 3<br/>ANALYZING<br/><span style="font-size:9px;">(점수화만)</span></div>
+    <div class="arr-down" style="font-size:16px;">↓</div>
+    <div class="box b-ai tip">
+      <div class="box-title">🤖 FilterAnalyzerAgent<br/><span style="font-size:10px;">runScoringOnly()</span></div>
+      <div class="box-sub">전체 논문 점수화 (1–10)<br/>Top-N 선별 <span class="badge badge-new">split</span></div>
+      <div class="tip-box">
+        • Tool: submit_paper_scores<br/>
+        • Batch 10편 · 병렬 처리<br/>
+        • score + rationale + studyType<br/>
+        • PICO 분석은 Stage 5로 분리됨
+      </div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#7c3aed;">↓ Claude API</div>
+    <div class="box b-api" style="border-color:#7c3aed; background:#1a0030; font-size:11px;">
+      <div class="box-title" style="color:#c4b5fd;">🧠 Claude API</div>
+      <div class="box-sub" style="color:#ddd6fe;">claude-sonnet-4-6<br/>tool_choice: required<br/>max_tokens: 8192 <span class="badge badge-tool">tool use</span></div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#475569;">↓</div>
+    <div class="box b-harness" style="font-size:11px;">
+      <div class="box-title">💾 Cache</div>
+      <div class="box-sub">scores_{pmids} <span class="badge badge-cache">cached</span></div>
+    </div>
+  </div>
+
+  <div class="arr-right">→</div>
+
+  <!-- FETCHING_FULLTEXT -->
+  <div class="col flex-1">
+    <div class="b-stage" style="text-align:center; border-color:#0ea5e9; color:#7dd3fc;">Stage 4<br/>FETCHING_FULLTEXT<br/><span style="font-size:9px; color:#fb923c;">NEW</span></div>
+    <div class="arr-down" style="font-size:16px;">↓</div>
+    <div class="box b-ft tip">
+      <div class="box-title">🌐 FullTextAgent</div>
+      <div class="box-sub">Top-N 논문만 Full-text 시도<br/>PMC → Unpaywall 순서</div>
+      <div class="tip-box">
+        • Route 1: PMCID → PMC efetch XML<br/>
+        &nbsp;&nbsp;→ 본문 파싱 + Figure caption 추출<br/>
+        • Route 2: DOI → Unpaywall API<br/>
+        &nbsp;&nbsp;→ OA URL → HTML 텍스트 추출<br/>
+        • 실패 시 abstract-only로 fallback<br/>
+        • cache: ft_v1_{pmid}
+      </div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#0ea5e9;">↓ HTTP</div>
+    <div class="col gap4">
+      <div class="box b-api" style="border-color:#0ea5e9; background:#001f30; font-size:11px; padding:8px 12px;">
+        <div class="box-title" style="color:#38bdf8;">📄 PMC E-utilities</div>
+        <div class="box-sub" style="color:#bae6fd;">efetch db=pmc (XML)<br/>Full XML 본문<br/>OA 논문만 가능</div>
+      </div>
+      <div class="box b-api" style="font-size:11px; padding:8px 12px;">
+        <div class="box-title">🔓 Unpaywall API</div>
+        <div class="box-sub">api.unpaywall.org/v2/{doi}<br/>합법적 OA URL 탐색<br/>무료 · email 인증</div>
+      </div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#475569;">↓</div>
+    <div class="box b-harness" style="font-size:11px;">
+      <div class="box-title">📊 Output</div>
+      <div class="box-sub">fullText (10k chars)<br/>fullTextSource<br/>figures[] (caption)</div>
+    </div>
+  </div>
+
+  <div class="arr-right">→</div>
+
+  <!-- PICO_ANALYSIS -->
+  <div class="col flex-1">
+    <div class="b-stage" style="text-align:center; border-color:#7c3aed; color:#c4b5fd;">Stage 5<br/>PICO_ANALYSIS<br/><span style="font-size:9px; color:#fb923c;">NEW</span></div>
+    <div class="arr-down" style="font-size:16px;">↓</div>
+    <div class="box b-ai tip">
+      <div class="box-title">🤖 FilterAnalyzerAgent<br/><span style="font-size:10px;">analyzePico()</span></div>
+      <div class="box-sub">Full-text 포함 PICO 분석<br/>영어 + 한글 동시 생성</div>
+      <div class="tip-box">
+        • Tool: submit_pico_analysis<br/>
+        • 입력: abstract + fullText(10k)<br/>
+        • 출력: clinicalQuestion(_ko)<br/>
+        &nbsp;&nbsp;pico(_ko) · keyFindings(_ko)<br/>
+        &nbsp;&nbsp;clinicalTakeaway(_ko)<br/>
+        &nbsp;&nbsp;limitations(_ko)<br/>
+        • Full-text 있으면 본문 우선 분석<br/>
+        • cache: pico_v2_{pmid}
+      </div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#7c3aed;">↓ Claude API</div>
+    <div class="box b-api" style="border-color:#7c3aed; background:#1a0030; font-size:11px;">
+      <div class="box-title" style="color:#c4b5fd;">🧠 Claude API</div>
+      <div class="box-sub" style="color:#ddd6fe;">claude-sonnet-4-6<br/>max_tokens: 8192<br/>tool_choice: required <span class="badge badge-tool">tool use</span></div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#475569;">↓</div>
+    <div class="box b-harness" style="font-size:11px;">
+      <div class="box-title">💾 Cache</div>
+      <div class="box-sub">pico_v2_{pmid} <span class="badge badge-cache">cached</span></div>
+    </div>
+  </div>
+
+  <div class="arr-right">→</div>
+
+  <!-- VALIDATING_2 + REPORTING -->
+  <div class="col flex-1">
+    <div class="b-stage" style="text-align:center;">Stage 6<br/>VALIDATING_2</div>
+    <div class="arr-down" style="font-size:16px;">↓</div>
+    <div class="box b-det" style="font-size:11px;">
+      <div class="box-title">✅ ValidationAgent</div>
+      <div class="box-sub">PICO 품질 점수<br/>2차 검증</div>
+    </div>
+    <div style="height:10px;"></div>
+    <div class="b-stage" style="text-align:center;">Stage 7<br/>REPORTING</div>
+    <div class="arr-down" style="font-size:16px;">↓</div>
+    <div class="box b-det tip">
+      <div class="box-title">📊 ReportGeneratorAgent</div>
+      <div class="box-sub">HTML Dashboard<br/>JSON Archive</div>
+      <div class="tip-box">
+        • Tailwind CSS + Alpine.js<br/>
+        • Chart.js (점수분포, 연구유형)<br/>
+        • 영한 bilingual 카드<br/>
+        • Full-text 소스 배지<br/>
+        • Top-3 비교 요약 표
+      </div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#475569;">↓</div>
+    <div class="box b-api" style="font-size:11px; background:#0a0a0a; border-color:#475569;">
+      <div class="box-title" style="color:#e2e8f0;">💾 파일 시스템</div>
+      <div class="box-sub" style="color:#94a3b8;">output/reports/<br/>dashboard_*.html<br/>archive_*.json</div>
+    </div>
+  </div>
+
+  <div class="arr-right" style="opacity:.5;">→</div>
+
+  <!-- NOTIFYING -->
+  <div class="col flex-1">
+    <div class="b-stage" style="text-align:center; opacity:.6;">Stage 8<br/>NOTIFYING<br/><span style="font-size:9px;">(선택)</span></div>
+    <div class="arr-down" style="font-size:16px; opacity:.5;">↓</div>
+    <div class="box b-det" style="opacity:.7; font-size:11px;">
+      <div class="box-title">📧 NotificationAgent</div>
+      <div class="box-sub">Drive 업로드<br/>Gmail 발송</div>
+    </div>
+    <div class="arr-down" style="font-size:14px; color:#ea580c; opacity:.7;">↓</div>
+    <div class="box b-gapi" style="font-size:11px; opacity:.7;">
+      <div class="box-title">🔶 Google APIs</div>
+      <div class="box-sub">Drive API v3<br/>Gmail API v1<br/>OAuth2 + credentials.json</div>
+    </div>
+  </div>
+
+</div><!-- end pipeline row -->
+
+<div class="divider"></div>
+
+<!-- ── Layer 3: Harness ── -->
+<div class="section-label">④ Harness / Infrastructure Layer (전 Agent 공통 적용)</div>
+<div class="row gap8" style="align-items:stretch;">
+
+  <div class="box b-harness flex-1 tip">
+    <div class="box-title">🔌 CircuitBreaker</div>
+    <div class="box-sub">API 연속 실패 시 자동 차단<br/><span style="font-size:10px; color:#64748b;">PubMed-API · Claude-API 각각 독립</span></div>
+    <div class="tip-box">
+      CLOSED (정상) → failureThreshold: 3 초과<br/>
+      → OPEN (차단, 30s) → 자동 HALF-OPEN<br/>
+      → 성공 시 CLOSED 복귀
+    </div>
+  </div>
+
+  <div class="box b-harness flex-1 tip">
+    <div class="box-title">🔁 RetryHelper</div>
+    <div class="box-sub">지수 백오프 자동 재시도<br/><span style="font-size:10px; color:#64748b;">maxAttempts: 3 · baseDelay: 2–3s</span></div>
+    <div class="tip-box">
+      attempt 1: 즉시<br/>
+      attempt 2: ~3s 후<br/>
+      attempt 3: ~6s 후<br/>
+      이후: CircuitBreaker로 전달
+    </div>
+  </div>
+
+  <div class="box b-harness flex-1 tip">
+    <div class="box-title">💾 Cache (파일 기반)</div>
+    <div class="box-sub">output/cache/*.json · TTL 24–72h<br/><span style="font-size:10px; color:#64748b;">키 버전으로 스키마 변경 대응</span></div>
+    <div class="tip-box" style="white-space:pre;">
+pmids_{query}_{dates}    — PubMed 검색
+articles_{pmids}         — 논문 데이터
+scores_{pmids}           — Claude 점수화
+pico_v2_{pmid}           — PICO (한글 포함)
+ft_v1_{pmid}             — Full-text
+    </div>
+  </div>
+
+  <div class="box b-harness flex-1 tip">
+    <div class="box-title">📝 Logger (JSONL)</div>
+    <div class="box-sub">Agent별 구조화 로그<br/><span style="font-size:10px; color:#64748b;">output/logs/*.jsonl</span></div>
+    <div class="tip-box">
+      per-agent 로그 파일:<br/>
+      data_collector.jsonl<br/>
+      filter_analyzer.jsonl<br/>
+      fulltext_agent.jsonl<br/>
+      orchestrator.jsonl
+    </div>
+  </div>
+
+  <div class="box b-harness flex-1 tip">
+    <div class="box-title">📌 Checkpoint</div>
+    <div class="box-sub">Stage 단위 상태 저장<br/><span style="font-size:10px; color:#64748b;">output/checkpoints/{sessionId}.json</span></div>
+    <div class="tip-box">
+      파이프라인 실패 시:<br/>
+      node src/index.js --resume SESSION<br/>
+      마지막 완료 stage 이후부터 재개
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Layer 4: Claude Tool Use 상세 ── -->
+<div class="section-label">⑤ Claude API — Tool Use 구조 (실제 구현)</div>
+<div class="row gap8">
+
+  <div class="box b-ai flex-1" style="font-size:12px;">
+    <div class="box-title" style="font-size:13px;">🔧 Tool 1: submit_paper_scores</div>
+    <div class="box-sub" style="margin-top:6px;">호출 시점: Stage 3 (전체 논문 일괄)<br/>입력: 10편 batch (title + abstract 800자)</div>
+    <div style="margin-top:8px; font-size:11px; color:#a78bfa; font-family:monospace; line-height:1.8;">
+      scores[]: {<br/>
+      &nbsp;&nbsp;pmid · score(1–10) · rationale · studyType<br/>
+      }
+    </div>
+  </div>
+
+  <div class="box b-ai flex-1" style="font-size:12px;">
+    <div class="box-title" style="font-size:13px;">🔧 Tool 2: submit_pico_analysis</div>
+    <div class="box-sub" style="margin-top:6px;">호출 시점: Stage 5 (Top-N, 논문당 1회)<br/>입력: abstract + fullText(10k) + figures</div>
+    <div style="margin-top:8px; font-size:11px; color:#a78bfa; font-family:monospace; line-height:1.8;">
+      clinicalQuestion · clinicalQuestion_ko<br/>
+      pico { P·I·C·O } · pico_ko { ... }<br/>
+      keyFindings[3] · keyFindings_ko[3]<br/>
+      clinicalTakeaway · clinicalTakeaway_ko<br/>
+      limitations · limitations_ko<br/>
+      evidenceLevel · clinicalApplicabilityScore
+    </div>
+  </div>
+
+  <div class="box flex-1" style="background:#0f172a; border:1.5px solid #334155; font-size:12px;">
+    <div class="box-title" style="color:#e2e8f0; font-size:13px;">⚙️ Claude 호출 설정</div>
+    <div style="margin-top:8px; font-size:11px; color:#94a3b8; font-family:monospace; line-height:2;">
+      model: claude-sonnet-4-6<br/>
+      max_tokens: 8192<br/>
+      tool_choice: { type: "tool", name: "..." }<br/>
+      → 자유 텍스트 불가, 스키마 강제 출력<br/>
+      <br/>
+      <span style="color:#4ade80;">✓</span> Retry × 3  <span style="color:#4ade80;">✓</span> CircuitBreaker<br/>
+      <span style="color:#4ade80;">✓</span> 결과 캐시  <span style="color:#4ade80;">✓</span> 병렬 처리
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Layer 5: 미구현 / 개념적 갭 ── -->
+<div class="section-label">⑥ 명칭은 있으나 미구현 — 구조적 갭</div>
+<div class="row gap8">
+
+  <div class="box b-nope flex-1">
+    <div class="box-title">❌ MCP (Model Context Protocol)</div>
+    <div class="box-sub" style="margin-top:6px; line-height:1.6;">
+      코드 주석에<br/>
+      <code style="color:#fca5a5; font-size:10px;">"MCP bindings: fetch, time, filesystem"</code><br/>
+      이라 쓰여 있지만 실제로는<br/>
+      <strong>그냥 fetch() + fs 직접 호출</strong><br/>
+      <br/>
+      진짜 MCP: JSON-RPC over stdio/SSE,<br/>
+      Claude가 MCP Server에 tool call → 미구현
+    </div>
+  </div>
+
+  <div class="box b-nope flex-1">
+    <div class="box-title">❌ Agent Team / 자율 에이전트</div>
+    <div class="box-sub" style="margin-top:6px; line-height:1.6;">
+      현재는 <strong>순차 파이프라인</strong><br/>
+      Orchestrator가 실행 순서 하드코딩<br/>
+      에이전트 간 직접 통신 없음<br/>
+      <br/>
+      진짜 Agent Team:<br/>
+      목표 제시 → 에이전트 자율 task 선택<br/>
+      → 상호 통신 → 동적 실행
+    </div>
+  </div>
+
+  <div class="box b-nope flex-1">
+    <div class="box-title">❌ Subagent Spawning</div>
+    <div class="box-sub" style="margin-top:6px; line-height:1.6;">
+      현재 FilterAnalyzerAgent는<br/>
+      Claude를 API로 호출하는 코드일 뿐<br/>
+      <br/>
+      진짜 Subagent:<br/>
+      Claude가 다른 Claude 인스턴스를<br/>
+      동적으로 생성 · 위임 · 결과 수집
+    </div>
+  </div>
+
+  <div class="box b-nope flex-1">
+    <div class="box-title">⚠️ Figure 접근 (부분 구현)</div>
+    <div class="box-sub" style="margin-top:6px; line-height:1.6;">
+      PMC OA 논문: Figure caption 추출 ✅<br/>
+      이미지(PNG/TIFF) 자체: ❌<br/>
+      구독 저널 figure: ❌<br/>
+      <br/>
+      Claude Vision으로 figure 분석하려면<br/>
+      image URL 직접 접근 필요 → 미구현
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Data Flow Summary ── -->
+<div class="section-label">⑦ 실제 데이터 흐름 요약</div>
+<div class="box b-harness" style="font-size:12px; line-height:2;">
+  <div class="row" style="flex-wrap:wrap; gap:6px; align-items:center;">
+    <span style="color:#7dd3fc;">PubMed (50편)</span>
+    <span class="arr-right" style="font-size:14px;">→</span>
+    <span style="color:#86efac;">검증 (품질 필터)</span>
+    <span class="arr-right" style="font-size:14px;">→</span>
+    <span style="color:#c4b5fd;">Claude 점수화 (1–10)</span>
+    <span class="arr-right" style="font-size:14px;">→</span>
+    <span style="color:#c4b5fd;">Top-3 선별</span>
+    <span class="arr-right" style="font-size:14px;">→</span>
+    <span style="color:#38bdf8;">PMC Full-text (OA 논문)</span>
+    <span class="arr-right" style="font-size:14px;">→</span>
+    <span style="color:#fbbf24;">Unpaywall (구독 논문)</span>
+    <span class="arr-right" style="font-size:14px;">→</span>
+    <span style="color:#c4b5fd;">Claude PICO 분석 (EN+KO, full-text 포함)</span>
+    <span class="arr-right" style="font-size:14px;">→</span>
+    <span style="color:#86efac;">HTML Dashboard</span>
+  </div>
+  <div style="margin-top:10px; color:#475569; font-size:11px;">
+    이번 테스트 결과: JAMA Network Open 2편 → PMC full-text (26k + 23k chars, figures 포함) &nbsp;|&nbsp; Elsevier 1편 → abstract only
+  </div>
+</div>
+
+<div style="margin-top:24px; text-align:center; font-size:11px; color:#334155;">
+  각 박스 위에 마우스를 올리면 상세 정보가 표시됩니다 &nbsp;·&nbsp; EM/CCM Literature Review Agent · Architecture v2
+</div>
+
+</div><!-- end .page -->
+</body>
+</html>

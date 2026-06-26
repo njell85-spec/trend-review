@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시안 C · Clinical Pro</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; }
+  .mono { font-family: 'SF Mono', ui-monospace, 'Cascadia Code', Consolas, monospace; }
+  details > summary { list-style:none; cursor:pointer; } details > summary::-webkit-details-marker{display:none;}
+  details[open] > summary .chev { transform: rotate(180deg);} .chev{transition:transform .2s ease;}
+</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+<!-- HERO dark + teal accent -->
+<header class="bg-slate-900 text-white border-b-4 border-teal-400">
+  <div class="max-w-2xl mx-auto px-5 pt-8 pb-6">
+    <div class="flex items-baseline gap-3 mb-1">
+      <h1 class="text-2xl font-black tracking-tight">Trend<span class="text-teal-400">Review</span></h1>
+      <span class="mono text-[10px] text-teal-400/80 uppercase tracking-widest">v · daily</span>
+    </div>
+    <p class="text-slate-400 text-[12px] mb-5">Emergency Medicine &amp; Critical Care · AI Literature Pipeline · 30-day window</p>
+    <div class="flex items-stretch gap-0 mono">
+      <div class="pr-6"><div class="text-2xl font-black text-teal-400 tabular-nums">10</div><div class="text-[9px] text-slate-500 uppercase tracking-[0.15em] mt-0.5">days</div></div>
+      <div class="px-6 border-l border-slate-700"><div class="text-2xl font-black text-teal-400 tabular-nums">30</div><div class="text-[9px] text-slate-500 uppercase tracking-[0.15em] mt-0.5">papers</div></div>
+      <div class="pl-6 border-l border-slate-700 ml-auto text-right"><div class="text-sm font-bold text-slate-300 pt-1.5">2026.06.18</div><div class="text-[9px] text-slate-500 uppercase tracking-[0.15em]">updated</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="max-w-2xl mx-auto px-3 py-5 space-y-2.5">
+
+  <!-- TODAY (open) -->
+  <details open class="bg-white rounded-md border-l-4 border-teal-400 shadow-sm border-y border-r border-slate-200 overflow-hidden">
+    <summary class="px-4 py-3.5 flex items-start gap-3 select-none">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="mono text-[10px] font-bold text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded">TODAY</span>
+          <span class="font-bold text-slate-900 text-sm mono">2026-06-18</span>
+          <span class="text-slate-400 text-xs">· 3 papers</span>
+        </div>
+        <div class="divide-y divide-slate-100">
+          <div class="flex gap-3 py-2"><span class="mono text-[13px] font-bold text-teal-600 w-5 flex-shrink-0">01</span><div><div class="text-[15px] font-bold text-slate-900 leading-snug">The effects of mechanical ventilation during v-a ecmo support: a systematic review.</div><div class="mono text-[10px] text-slate-400 mt-0.5">CRIT CARE · 2026 · PMID 42249495</div></div></div>
+          <div class="flex gap-3 py-2"><span class="mono text-[13px] font-bold text-slate-400 w-5 flex-shrink-0">02</span><div><div class="text-[15px] font-bold text-slate-900 leading-snug">Predictive validity of daily SOFA-2 score for 30-day mortality.</div><div class="mono text-[10px] text-slate-400 mt-0.5">CRIT CARE · 2026 · PMID 42226253</div></div></div>
+          <div class="flex gap-3 py-2"><span class="mono text-[13px] font-bold text-slate-400 w-5 flex-shrink-0">03</span><div><div class="text-[15px] font-bold text-slate-900 leading-snug">2025 Korean Guidelines for CPR: Part 6. Post-cardiac arrest care.</div><div class="mono text-[10px] text-slate-400 mt-0.5">CLIN EXP EMERG MED · 2026 · PMID 42297409</div></div></div>
+        </div>
+      </div>
+    </summary>
+    <!-- expanded card -->
+    <div class="border-t border-slate-200 bg-slate-50/50">
+      <details open>
+        <summary class="px-4 py-3 flex items-center gap-3 select-none bg-white">
+          <span class="mono text-[13px] font-bold text-teal-600">01</span>
+          <div class="flex-1"><div class="text-[16px] font-bold text-slate-900 leading-snug">Mechanical ventilation during VA-ECMO</div></div>
+          <span class="mono text-[10px] font-bold text-white bg-slate-800 px-2 py-0.5 rounded">META</span>
+        </summary>
+        <div class="px-4 pb-4 pt-2">
+          <div class="mono text-[10px] text-slate-400 uppercase tracking-wider mb-3">Crit Care · 2026 · Systematic Review · PMID 42249495</div>
+          <div class="text-[13px] font-bold text-teal-700 uppercase tracking-wide mt-3 mb-1">Why It Matters</div>
+          <p class="text-[13px] text-slate-700 leading-relaxed">VA-ECMO 중 폐보호 환기 전략이 생존·이탈에 미치는 영향을 종합한 체계적 리뷰.</p>
+          <div class="text-[15px] font-black text-slate-900 mt-4 mb-2 pb-1 border-b-2 border-teal-400">PICO</div>
+          <div class="space-y-1.5">
+            <div class="flex gap-2"><span class="mono text-[11px] font-bold text-teal-600 w-4">P</span><span class="text-[13px] text-slate-800">VA-ECMO 지원 중인 중증 심원성 쇼크 성인</span></div>
+            <div class="flex gap-2"><span class="mono text-[11px] font-bold text-teal-600 w-4">I</span><span class="text-[13px] text-slate-800">폐보호 환기(저일회호흡량·낮은 구동압)</span></div>
+            <div class="flex gap-2"><span class="mono text-[11px] font-bold text-teal-600 w-4">C</span><span class="text-[13px] text-slate-800">통상 환기</span></div>
+            <div class="flex gap-2"><span class="mono text-[11px] font-bold text-teal-600 w-4">O</span><span class="text-[13px] text-slate-800">생존, ECMO 이탈 성공, 폐손상</span></div>
+          </div>
+          <div class="text-[15px] font-black text-slate-900 mt-4 mb-2 pb-1 border-b-2 border-teal-400">Clinical Bottom Line</div>
+          <p class="text-[13px] text-slate-800 leading-relaxed border-l-2 border-teal-400 pl-3">저구동압 폐보호 환기가 예후 개선과 연관 — 일상 적용 고려 근거 축적.</p>
+        </div>
+      </details>
+      <div class="px-4 py-2.5 mono text-[11px] text-slate-400">// 02, 03 카드 동일 양식으로 이어짐</div>
+    </div>
+  </details>
+
+  <!-- archive collapsed -->
+  <details class="bg-white rounded-md border border-slate-200 shadow-sm overflow-hidden">
+    <summary class="px-4 py-3 flex items-center gap-3 select-none hover:bg-slate-50">
+      <span class="font-bold text-slate-800 text-sm mono">2026-06-17</span><span class="text-slate-400 text-xs">· 3 papers</span>
+      <svg class="chev w-4 h-4 text-slate-300 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+  </details>
+
+  <!-- journal archive -->
+  <div class="bg-white rounded-md border border-slate-200 shadow-sm overflow-hidden">
+    <div class="px-4 py-3 bg-slate-900 flex items-center gap-3"><h2 class="text-sm font-bold text-white">Curated Journal Archive</h2><span class="ml-auto mono text-[10px] text-teal-400">30 entries</span></div>
+    <table class="w-full text-[12px]"><tbody>
+      <tr class="border-b border-slate-100"><td class="px-4 py-2.5 mono text-slate-400 text-[10px]">06-18</td><td class="px-2 py-2.5 font-semibold text-slate-700 text-[11px]">Crit Care</td><td class="px-4 py-2.5 text-slate-600 text-[11px]">Mechanical ventilation during VA-ECMO…</td></tr>
+      <tr class="border-b border-slate-100"><td class="px-4 py-2.5 mono text-slate-400 text-[10px]">06-18</td><td class="px-2 py-2.5 font-semibold text-slate-700 text-[11px]">Crit Care</td><td class="px-4 py-2.5 text-slate-600 text-[11px]">Predictive validity of SOFA-2…</td></tr>
+      <tr><td class="px-4 py-2.5 mono text-slate-400 text-[10px]">06-17</td><td class="px-2 py-2.5 font-semibold text-slate-700 text-[11px]">Resuscitation</td><td class="px-4 py-2.5 text-slate-600 text-[11px]">…</td></tr>
+    </tbody></table>
+  </div>
+
+  <p class="text-center mono text-[10px] text-slate-400 py-6">Trend Review · Clinical Pro</p>
+</div>
+</body>
+</html>
