@@ -7,7 +7,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { GitHubPublisher } from './src/utils/GitHubPublisher.js';
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
+import { execSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -190,16 +191,38 @@ ${sectionBlocks}
 </body>
 </html>`;
 
-// ── STEP 4: GitHub 배포 ───────────────────────────────────────────────────────
+// ── STEP 4: GitHub 배포 (git push 우선, API 폴백) ────────────────────────────
 console.log('\n📤 GitHub Pages 배포 중...');
-const currentData = await gh._req(`/repos/${gh.owner}/${gh.repo}/contents/index.html`);
-await gh._req(`/repos/${gh.owner}/${gh.repo}/contents/index.html`, 'PUT', {
-  message: `Update archive: ${todayDate} (fresh run, new PICO format)`,
-  content: Buffer.from(newHtml, 'utf8').toString('base64'),
-  sha: currentData.sha,
-});
-console.log('✅ 배포 완료!');
-console.log('🌐 GitHub Pages:', gh.pagesUrl);
+const localIndexPath = path.join(__dirname, 'index.html');
+await writeFile(localIndexPath, newHtml, 'utf8');
+
+let deployed = false;
+try {
+  execSync('git add index.html', { cwd: __dirname, stdio: 'pipe' });
+  const diff = execSync('git diff --staged --name-only', { cwd: __dirname, encoding: 'utf8' }).trim();
+  if (diff) {
+    execSync(`git commit -m "Update archive: ${todayDate} (fresh run, new PICO format)"`, { cwd: __dirname, stdio: 'pipe' });
+    execSync('git push', { cwd: __dirname, stdio: 'pipe' });
+  }
+  deployed = true;
+  console.log('✅ 배포 완료! (git push)');
+} catch (gitErr) {
+  console.warn('⚠️  git push 실패, REST API 폴백 시도...');
+  try {
+    const currentData = await gh._req(`/repos/${gh.owner}/${gh.repo}/contents/index.html`);
+    await gh._req(`/repos/${gh.owner}/${gh.repo}/contents/index.html`, 'PUT', {
+      message: `Update archive: ${todayDate} (fresh run, new PICO format)`,
+      content: Buffer.from(newHtml, 'utf8').toString('base64'),
+      sha: currentData.sha,
+    });
+    deployed = true;
+    console.log('✅ 배포 완료! (REST API)');
+  } catch (apiErr) {
+    console.error('❌ 배포 실패 (git + API 모두 차단):', apiErr.message);
+    console.log('ℹ️  index.html은 로컬에 저장되었습니다. 수동으로 git push 하세요.');
+  }
+}
+if (deployed) console.log('🌐 GitHub Pages:', gh.pagesUrl);
 console.log('\n📰 선정 논문:');
 todayPapers.forEach((p, i) => {
   console.log(`  ${i+1}. [${p.clinicalApplicabilityScore}] ${p.paper?.title}`);

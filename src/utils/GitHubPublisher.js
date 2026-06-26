@@ -1,21 +1,40 @@
 /**
  * GitHubPublisher
  * 매일 실행 결과를 GitHub Pages의 index.html에 누적 업데이트
+ *
+ * 배포 전략: git push 우선, 프록시 차단 등으로 실패 시 GitHub REST API 폴백
+ * (Node.js fetch는 Windows 시스템 프록시를 무시하므로 git CLI가 더 안정적)
  */
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
+import { execSync } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const API = 'https://api.github.com';
 
 export class GitHubPublisher {
   constructor({
-    token  = process.env.GITHUB_TOKEN,
-    owner  = process.env.GITHUB_OWNER,
-    repo   = process.env.GITHUB_REPO,
+    token    = process.env.GITHUB_TOKEN,
+    owner    = process.env.GITHUB_OWNER,
+    repo     = process.env.GITHUB_REPO,
+    repoPath = process.cwd(),
   } = {}) {
-    this.token = token;
-    this.owner = owner;
-    this.repo  = repo;
+    this.token    = token;
+    this.owner    = owner;
+    this.repo     = repo;
     this.pagesUrl = `https://${owner}.github.io/${repo}/`;
+    this._repoPath = repoPath;
+  }
+
+  // ── git push (proxy 우회용 1순위 방법) ─────────────────────────────────────
+  _gitPush(dateStr) {
+    const cwd = this._repoPath;
+    execSync('git add index.html', { cwd, stdio: 'pipe' });
+    // 변경 없으면 커밋 건너뜀
+    const diff = execSync('git diff --staged --name-only', { cwd, encoding: 'utf8' }).trim();
+    if (!diff) return;
+    execSync(`git commit -m "Update archive: ${dateStr}"`, { cwd, stdio: 'pipe' });
+    execSync('git push', { cwd, stdio: 'pipe' });
   }
 
   async _req(path, method = 'GET', body = null) {
@@ -36,6 +55,14 @@ export class GitHubPublisher {
   }
 
   async _getIndex() {
+    // 로컬 파일 우선 (git push 경로), 없으면 API 폴백
+    const localPath = path.join(this._repoPath, 'index.html');
+    try {
+      const html = await readFile(localPath, 'utf8');
+      return { sha: null, html };
+    } catch {
+      // 로컬 없으면 API에서 읽기
+    }
     try {
       const data = await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`);
       return {
@@ -272,14 +299,30 @@ export class GitHubPublisher {
       .replace(/<div class="stat-updated-time[^"]*">[^<]+<\/div>/,
                `<div class="stat-updated-time text-sm font-semibold text-gray-300">${generatedAt}</div>`);
 
-    const content = Buffer.from(updated, 'utf8').toString('base64');
-    await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`, 'PUT', {
-      message: `Update archive: ${dateStr}`,
-      content,
-      sha,
-    });
+    // ── 배포: git push 우선 → API 폴백 ────────────────────────────────────────
+    const localPath = path.join(this._repoPath, 'index.html');
+    await writeFile(localPath, updated, 'utf8');
 
-    return this.pagesUrl;
+    try {
+      this._gitPush(dateStr);
+      return this.pagesUrl;
+    } catch (gitErr) {
+      // git 실패 시 REST API 폴백 (sha 필요)
+      let apisha = sha;
+      if (!apisha) {
+        try {
+          const remote = await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`);
+          apisha = remote.sha;
+        } catch { /* sha 없으면 API도 실패할 것 */ }
+      }
+      const content = Buffer.from(updated, 'utf8').toString('base64');
+      await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`, 'PUT', {
+        message: `Update archive: ${dateStr}`,
+        content,
+        sha: apisha,
+      });
+      return this.pagesUrl;
+    }
   }
 }
 
