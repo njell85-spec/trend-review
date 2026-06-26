@@ -10,7 +10,8 @@ google_token.json
 *.key
 
 # === Generated output / runtime ===
-output/
+output/*
+!output/selected_papers.json
 node_modules/
 *.log
 logs/

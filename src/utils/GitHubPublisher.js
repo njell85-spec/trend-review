@@ -1,21 +1,48 @@
 /**
  * GitHubPublisher
  * 매일 실행 결과를 GitHub Pages의 index.html에 누적 업데이트
+ *
+ * 배포 전략: git push 우선, 프록시 차단 등으로 실패 시 GitHub REST API 폴백
+ * (Node.js fetch는 Windows 시스템 프록시를 무시하므로 git CLI가 더 안정적)
  */
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
+import { execSync } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const API = 'https://api.github.com';
 
 export class GitHubPublisher {
   constructor({
-    token  = process.env.GITHUB_TOKEN,
-    owner  = process.env.GITHUB_OWNER,
-    repo   = process.env.GITHUB_REPO,
+    token    = process.env.GITHUB_TOKEN,
+    owner    = process.env.GITHUB_OWNER,
+    repo     = process.env.GITHUB_REPO,
+    repoPath = process.cwd(),
   } = {}) {
-    this.token = token;
-    this.owner = owner;
-    this.repo  = repo;
+    this.token    = token;
+    this.owner    = owner;
+    this.repo     = repo;
     this.pagesUrl = `https://${owner}.github.io/${repo}/`;
+    this._repoPath = repoPath;
+  }
+
+  // ── git push (proxy 우회용 1순위 방법) ─────────────────────────────────────
+  _gitPush(dateStr) {
+    const cwd = this._repoPath;
+    execSync('git add index.html', { cwd, stdio: 'pipe' });
+    const diff = execSync('git diff --staged --name-only', { cwd, encoding: 'utf8' }).trim();
+    if (!diff) return;
+    execSync(`git commit -m "Update archive: ${dateStr}"`, { cwd, stdio: 'pipe' });
+
+    try {
+      // 1순위: 일반 git push (GitHub Actions의 경우 actions/checkout@v4가 인증 설정)
+      execSync('git push', { cwd, stdio: 'pipe' });
+    } catch {
+      if (!this.token) throw new Error('git push 실패: 자격증명 없음 (GITHUB_TOKEN 미설정)');
+      // 2순위: 토큰 내장 HTTPS URL → 로컬에서 credential 만료 시 우회
+      const remote = `https://x-access-token:${this.token}@github.com/${this.owner}/${this.repo}.git`;
+      execSync(`git push ${remote} HEAD:main`, { cwd, stdio: 'pipe' });
+    }
   }
 
   async _req(path, method = 'GET', body = null) {
@@ -36,6 +63,14 @@ export class GitHubPublisher {
   }
 
   async _getIndex() {
+    // 로컬 파일 우선 (git push 경로), 없으면 API 폴백
+    const localPath = path.join(this._repoPath, 'index.html');
+    try {
+      const html = await readFile(localPath, 'utf8');
+      return { sha: null, html };
+    } catch {
+      // 로컬 없으면 API에서 읽기
+    }
     try {
       const data = await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`);
       return {
@@ -96,7 +131,7 @@ export class GitHubPublisher {
       const date    = p.paper?.pubDate ?? '';
       const pmid    = p.paper?.pmid ?? '';
       return `
-        <div class="text-[16px] font-extrabold text-gray-700 mt-1">${circ} ${_esc(title)}</div>
+        <div class="text-[18px] font-black text-gray-700 mt-1">${circ} ${_esc(title)}</div>
         <div class="text-[12px] text-gray-400 pl-3">${_esc(journal)} · ${_esc(date)}${pmid ? ` · PMID ${pmid}` : ''}</div>`;
     }).join('');
 
@@ -137,7 +172,7 @@ export class GitHubPublisher {
         (g) => `<div class="mb-0.5"><b class="text-gray-600">${_esc(g.term)}</b> — ${_esc(g.explanation_ko)}</div>`
       ).join('');
       const glossaryBlock = glossaryItems
-        ? `<div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">통계 용어 풀이</div>${glossaryItems}</div>`
+        ? `<div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div>${glossaryItems}</div>`
         : '';
 
       const practiceItems = (p.practiceChange ?? []).map((t, k) => `
@@ -248,7 +283,7 @@ export class GitHubPublisher {
 
     // 기존 TODAY 배지 제거, 섹션을 past 스타일로 전환
     let updated = deduped
-      .replace(/<span class="bg-gray-900 text-white text-\[10px\] font-bold px-2 py-0\.5 rounded-full">TODAY<\/span>/g, '')
+      .replace(/<span class="bg-gray-900 text-white text-\[12px\] font-bold px-2 py-0\.5 rounded-full">TODAY<\/span>/g, '')
       .replace(/<details open class="rounded-xl overflow-hidden shadow-sm border-2 border-gray-900 bg-white">/g,
                '<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">')
       .replace(/class="slide-in border-t-2 border-gray-900 divide-y divide-gray-100"/g,
@@ -272,14 +307,30 @@ export class GitHubPublisher {
       .replace(/<div class="stat-updated-time[^"]*">[^<]+<\/div>/,
                `<div class="stat-updated-time text-sm font-semibold text-gray-300">${generatedAt}</div>`);
 
-    const content = Buffer.from(updated, 'utf8').toString('base64');
-    await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`, 'PUT', {
-      message: `Update archive: ${dateStr}`,
-      content,
-      sha,
-    });
+    // ── 배포: git push 우선 → API 폴백 ────────────────────────────────────────
+    const localPath = path.join(this._repoPath, 'index.html');
+    await writeFile(localPath, updated, 'utf8');
 
-    return this.pagesUrl;
+    try {
+      this._gitPush(dateStr);
+      return this.pagesUrl;
+    } catch (gitErr) {
+      // git 실패 시 REST API 폴백 (sha 필요)
+      let apisha = sha;
+      if (!apisha) {
+        try {
+          const remote = await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`);
+          apisha = remote.sha;
+        } catch { /* sha 없으면 API도 실패할 것 */ }
+      }
+      const content = Buffer.from(updated, 'utf8').toString('base64');
+      await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`, 'PUT', {
+        message: `Update archive: ${dateStr}`,
+        content,
+        sha: apisha,
+      });
+      return this.pagesUrl;
+    }
   }
 }
 

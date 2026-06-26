@@ -26,7 +26,7 @@ export class FilterAnalyzerAgent {
 
     this.llm = new LLMClient({ provider: this.provider, model: this.model });
     this.picoLlm = new LLMClient({ provider: this.provider, model: this.picoModel });
-    this.topN = options.topN ?? Number(process.env.TOP_N ?? 3);
+    this.topN = options.topN ?? Number(process.env.TOP_N ?? 1);
   }
 
   // ── Tool definitions for structured Claude output ─────────────────────────
@@ -140,7 +140,7 @@ export class FilterAnalyzerAgent {
                 },
                 explanation_ko: {
                   type: 'string',
-                  description: 'One-sentence beginner-friendly Korean explanation of the concept',
+                  description: 'One-sentence Korean explanation WITH a concrete value example from this paper. Format: "[개념 설명]. 예: [term] [actual value from paper] → [meaning in plain Korean]". Example for OR: "오즈비: 1보다 작으면 위험 감소, 1보다 크면 증가. 예: OR 0.76 → 대조군 대비 사건 발생이 24% 낮음". Always include the actual numeric value from this paper.',
                 },
               },
               required: ['term', 'explanation_ko'],
@@ -272,11 +272,17 @@ Use the submit_paper_scores tool to return scores for ALL ${batch.length} papers
     return allScores;
   }
 
-  // ── Step 2: Select top-N papers ──────────────────────────────────────────
-  _selectTopPapers(papers, scores) {
-    const scoreMap = new Map(scores.map((s) => [s.pmid, s]));
+  // ── Step 2: Select top-N papers (excluding already-published PMIDs) ─────────
+  _selectTopPapers(papers, scores, excludePmids = []) {
+    const scoreMap  = new Map(scores.map((s) => [s.pmid, s]));
+    const excludeSet = new Set(excludePmids);
 
-    return papers
+    const eligible = papers.filter((p) => !excludeSet.has(p.pmid));
+    if (eligible.length < papers.length) {
+      this.logger.info(`Excluded ${papers.length - eligible.length} already-published PMIDs from selection`);
+    }
+
+    return eligible
       .map((p) => ({
         ...p,
         scoringData: scoreMap.get(p.pmid) ?? { score: 0, rationale: '', studyType: 'Other' },
@@ -377,12 +383,12 @@ Requirements:
   }
 
   // ── Scoring + selection only (no PICO) — used when full-text enrichment follows ──
-  async runScoringOnly(papers) {
+  async runScoringOnly(papers, excludePmids = []) {
     this.logger.section('FilterAnalyzerAgent — Scoring & Selection (no PICO yet)');
     if (!papers.length) return { topPapers: [], allScoredPapers: [] };
 
     const scores = await this.scorePapers(papers);
-    const topPapers = this._selectTopPapers(papers, scores);
+    const topPapers = this._selectTopPapers(papers, scores, excludePmids);
 
     const scoreMap = new Map(scores.map((s) => [s.pmid, s]));
     const allScoredPapers = papers.map((p) => ({
@@ -395,7 +401,7 @@ Requirements:
   }
 
   // ── Public API ────────────────────────────────────────────────────────────
-  async run(papers) {
+  async run(papers, { excludePmids = [] } = {}) {
     this.logger.section('FilterAnalyzerAgent — Clinical Scoring & PICO Analysis');
 
     if (!papers.length) {
@@ -410,8 +416,8 @@ Requirements:
     const scores = await this.scorePapers(papers);
     this.logger.info(`Scored ${scores.length} papers`);
 
-    // 2. Select top-N
-    const topPapers = this._selectTopPapers(papers, scores);
+    // 2. Select top-N (excluding already-published)
+    const topPapers = this._selectTopPapers(papers, scores, excludePmids);
     this.logger.info(
       `Top ${topPapers.length} papers selected`,
       topPapers.map((p) => ({

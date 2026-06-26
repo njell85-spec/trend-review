@@ -1,0 +1,48 @@
+name: Daily EM/CCM Trend Review
+
+on:
+  schedule:
+    - cron: '30 21 * * *'   # 21:30 UTC = 06:30 KST
+  workflow_dispatch:          # 수동 실행
+
+permissions:
+  contents: write             # GITHUB_TOKEN으로 push 허용 (PAT 불필요)
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run daily review pipeline
+        run: node github-actions-daily.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PUBMED_API_KEY:    ${{ secrets.PUBMED_API_KEY }}
+          PUBMED_EMAIL:      ${{ secrets.PUBMED_EMAIL }}
+          GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER:      ${{ github.repository_owner }}
+          GITHUB_REPO:       ${{ github.event.repository.name }}
+
+      # 위 스크립트가 index.html을 커밋·푸시한 뒤 selected_papers.json도 갱신하므로
+      # 두 번째 커밋으로 exclusion list 상태를 동기화한다.
+      - name: Commit exclusion list
+        run: |
+          git add output/selected_papers.json
+          git diff --staged --quiet \
+            && echo "exclusion list unchanged" \
+            || (git commit -m "chore: sync paper exclusion list" && git push)

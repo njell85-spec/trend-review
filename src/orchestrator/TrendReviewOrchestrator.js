@@ -62,6 +62,39 @@ export class TrendReviewOrchestrator {
     this.checkpoint = null;
     this.executionLog = [];
     this.startTime = null;
+
+    // Exclusion list — tracks PMIDs already published to avoid re-selection
+    this.excludeListPath = path.join(this.outputDir, 'selected_papers.json');
+  }
+
+  // ── Exclusion list (prevent duplicate paper selection) ───────────────────
+  async _loadExcludePmids() {
+    try {
+      const raw = await readFile(this.excludeListPath, 'utf8');
+      return JSON.parse(raw).map((e) => e.pmid);
+    } catch {
+      return [];
+    }
+  }
+
+  async _saveExcludePmids(newPapers) {
+    let existing = [];
+    try {
+      const raw = await readFile(this.excludeListPath, 'utf8');
+      existing = JSON.parse(raw);
+    } catch { /* first run */ }
+
+    const today = new Date().toISOString().slice(0, 10);
+    const added = newPapers.map((p) => ({
+      pmid: p.paper?.pmid ?? p.pmid,
+      title: (p.paper?.title ?? p.title ?? '').slice(0, 80),
+      date: today,
+    }));
+
+    const merged = [...existing, ...added];
+    if (!existsSync(this.outputDir)) await mkdir(this.outputDir, { recursive: true });
+    await writeFile(this.excludeListPath, JSON.stringify(merged, null, 2));
+    this.logger.info(`Exclusion list updated: ${merged.length} total PMIDs tracked`);
   }
 
   _newSessionId() {
@@ -157,7 +190,7 @@ export class TrendReviewOrchestrator {
     }
   }
 
-  async _stageAnalyze(papers, resumeData = null) {
+  async _stageAnalyze(papers, excludePmids = [], resumeData = null) {
     const entry = this._stageStart(STAGES.ANALYZING);
     try {
       if (resumeData?.allScoredPapers) {
@@ -166,7 +199,7 @@ export class TrendReviewOrchestrator {
         return resumeData;
       }
 
-      const result = await this.filter.runScoringOnly(papers);
+      const result = await this.filter.runScoringOnly(papers, excludePmids);
       await this._saveCheckpoint(STAGES.ANALYZING, {
         topPapers: result.topPapers,
         allScoredPapers: result.allScoredPapers,
@@ -258,7 +291,8 @@ export class TrendReviewOrchestrator {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
-      const dateStr = new Date().toISOString().slice(0, 10);
+      // KST 기준 날짜 사용 (21:30 UTC = 06:30 KST → UTC 날짜는 하루 빠름)
+      const dateStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
       const pagesUrl = await this.githubPublisher.publish(dateStr, topPapers);
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
@@ -329,9 +363,12 @@ export class TrendReviewOrchestrator {
         });
       }
 
-      // Stage 3: Score + select top-N — depends on validated papers
+      // Stage 3: Score + select top-N — exclude already-published PMIDs
+      const excludePmids = await this._loadExcludePmids();
+      if (excludePmids.length) this.logger.info(`Excluding ${excludePmids.length} already-published PMIDs`);
       const { topPapers: scoredTopPapers, allScoredPapers } = await this._stageAnalyze(
         validPapers,
+        excludePmids,
         resumeCheckpoint?.data
       );
 
@@ -356,7 +393,7 @@ export class TrendReviewOrchestrator {
       const totalElapsed = ((Date.now() - this.startTime) / 1000).toFixed(1);
       const executionStats = {
         sessionId: this.sessionId,
-        searchDays: Number(process.env.SEARCH_DAYS ?? 30),
+        searchDays: Number(process.env.SEARCH_DAYS ?? 180),
         totalElapsed: Number(totalElapsed),
         stages: this.executionLog,
         collect: collectStats,
@@ -376,6 +413,9 @@ export class TrendReviewOrchestrator {
 
       // Stage 7: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
       const pagesUrl = await this._stagePublish(validatedPico);
+
+      // Save newly-published PMIDs to exclusion list
+      if (validatedPico.length) await this._saveExcludePmids(validatedPico);
 
       // Stage 8: Notify (optional — Drive + Gmail + KakaoTalk)
       const notifyResult = await this._stageNotify(
