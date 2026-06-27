@@ -13,7 +13,6 @@
     "test:reporter": "node src/agents/ReportGeneratorAgent.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.36.0",
     "dotenv": "^16.4.0",
     "googleapis": "^173.0.0",
     "openai": "^6.42.0",

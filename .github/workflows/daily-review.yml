@@ -31,7 +31,6 @@ jobs:
       - name: Run daily review pipeline
         run: node github-actions-daily.mjs
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PUBMED_API_KEY:    ${{ secrets.PUBMED_API_KEY }}
           PUBMED_EMAIL:      ${{ secrets.PUBMED_EMAIL }}
           GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}

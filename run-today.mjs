@@ -202,25 +202,22 @@ try {
   const diff = execSync('git diff --staged --name-only', { cwd: __dirname, encoding: 'utf8' }).trim();
   if (diff) {
     execSync(`git commit -m "Update archive: ${todayDate} (fresh run, new PICO format)"`, { cwd: __dirname, stdio: 'pipe' });
-    execSync('git push', { cwd: __dirname, stdio: 'pipe' });
+    try {
+      execSync('git push', { cwd: __dirname, stdio: 'pipe' });
+    } catch {
+      const token = process.env.GITHUB_TOKEN;
+      const owner = process.env.GITHUB_OWNER ?? gh.owner;
+      const repo  = process.env.GITHUB_REPO  ?? gh.repo;
+      if (!token) throw new Error('git push 실패: GITHUB_TOKEN 미설정');
+      const remote = `https://x-access-token:${token}@github.com/${owner}/${repo}.git`;
+      execSync(`git push ${remote} HEAD:main`, { cwd: __dirname, stdio: 'pipe' });
+    }
   }
   deployed = true;
   console.log('✅ 배포 완료! (git push)');
 } catch (gitErr) {
-  console.warn('⚠️  git push 실패, REST API 폴백 시도...');
-  try {
-    const currentData = await gh._req(`/repos/${gh.owner}/${gh.repo}/contents/index.html`);
-    await gh._req(`/repos/${gh.owner}/${gh.repo}/contents/index.html`, 'PUT', {
-      message: `Update archive: ${todayDate} (fresh run, new PICO format)`,
-      content: Buffer.from(newHtml, 'utf8').toString('base64'),
-      sha: currentData.sha,
-    });
-    deployed = true;
-    console.log('✅ 배포 완료! (REST API)');
-  } catch (apiErr) {
-    console.error('❌ 배포 실패 (git + API 모두 차단):', apiErr.message);
-    console.log('ℹ️  index.html은 로컬에 저장되었습니다. 수동으로 git push 하세요.');
-  }
+  console.error('❌ 배포 실패:', gitErr.message);
+  console.log('ℹ️  index.html은 로컬에 저장되었습니다. 수동으로 git push 하세요.');
 }
 if (deployed) console.log('🌐 GitHub Pages:', gh.pagesUrl);
 console.log('\n📰 선정 논문:');

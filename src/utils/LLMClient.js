@@ -1,11 +1,14 @@
 /**
- * LLMClient — provider-agnostic wrapper for Anthropic and OpenAI tool-use calls.
+ * LLMClient — provider-agnostic wrapper for LLM calls.
+ *
+ * Anthropic provider uses the `claude` CLI (Claude Code subscription) — no API key needed.
+ * OpenAI provider uses the openai SDK with OPENAI_API_KEY.
  *
  * Accepts Anthropic-style tool definitions ({ name, description, input_schema })
- * and transparently translates them to OpenAI function-calling format.
- * Returns the parsed tool-result object from either provider.
+ * and translates the schema into a prompt instruction for the CLI path,
+ * or into OpenAI function-calling format for the openai path.
  */
-import Anthropic from '@anthropic-ai/sdk';
+import { spawnSync } from 'child_process';
 import OpenAI from 'openai';
 
 export const PROVIDER_DEFAULTS = {
@@ -18,13 +21,12 @@ export class LLMClient {
     this.provider = provider;
     this.model = model ?? PROVIDER_DEFAULTS[provider];
 
-    if (provider === 'anthropic') {
-      this._client = new Anthropic({ apiKey: apiKey ?? process.env.ANTHROPIC_API_KEY });
-    } else if (provider === 'openai') {
+    if (provider === 'openai') {
       this._client = new OpenAI({ apiKey: apiKey ?? process.env.OPENAI_API_KEY });
-    } else {
+    } else if (provider !== 'anthropic') {
       throw new Error(`Unknown provider: "${provider}". Supported: "anthropic", "openai"`);
     }
+    // anthropic: uses claude CLI (subscription) — no API key or SDK client needed
   }
 
   get label() {
@@ -32,9 +34,9 @@ export class LLMClient {
   }
 
   /**
-   * Call the LLM with a single forced tool.
+   * Call the LLM with a single forced tool (structured JSON output).
    *
-   * @param {Array}  messages   - OpenAI/Anthropic-style message array
+   * @param {Array}  messages   - Message array [{ role, content }]
    * @param {object} tool       - Anthropic tool def { name, description, input_schema }
    * @param {object} opts
    * @param {number} opts.maxTokens
@@ -42,24 +44,68 @@ export class LLMClient {
    */
   async callWithTool(messages, tool, { maxTokens = 8192 } = {}) {
     if (this.provider === 'anthropic') {
-      return this._callAnthropic(messages, tool, maxTokens);
+      return this._callClaudeCLI(messages, tool);
     }
     if (this.provider === 'openai') {
       return this._callOpenAI(messages, tool, maxTokens);
     }
   }
 
-  async _callAnthropic(messages, tool, maxTokens) {
-    const response = await this._client.messages.create({
-      model: this.model,
-      max_tokens: maxTokens,
-      tools: [tool],
-      tool_choice: { type: 'tool', name: tool.name },
-      messages,
+  _callClaudeCLI(messages, tool) {
+    const userContent = messages
+      .map(m => {
+        if (typeof m.content === 'string') return m.content;
+        if (Array.isArray(m.content)) return m.content.map(c => c.text ?? '').join('\n');
+        return '';
+      })
+      .join('\n\n');
+
+    const schema = JSON.stringify(tool.input_schema, null, 2);
+    const fullPrompt = `${userContent}
+
+---
+IMPORTANT: Respond with ONLY a valid JSON object. No explanation, no markdown code fences, no extra text — just the raw JSON object that matches this schema:
+
+${schema}`;
+
+    const result = spawnSync('claude', ['-p', fullPrompt, '--output-format', 'json'], {
+      encoding: 'utf8',
+      maxBuffer: 32 * 1024 * 1024,
+      timeout: 300_000,
     });
-    const block = response.content.find((b) => b.type === 'tool_use');
-    if (!block) throw new Error(`${this.label}: no tool_use block in response`);
-    return block.input;
+
+    if (result.error) throw new Error(`claude CLI spawn error: ${result.error.message}`);
+    if (result.status !== 0) {
+      const errMsg = result.stderr?.slice(0, 500) ?? 'unknown error';
+      throw new Error(`claude CLI exited with code ${result.status}: ${errMsg}`);
+    }
+
+    let parsed;
+    try {
+      parsed = JSON.parse(result.stdout);
+    } catch {
+      throw new Error(`claude CLI: invalid JSON in stdout: ${result.stdout.slice(0, 300)}`);
+    }
+
+    if (parsed.is_error) throw new Error(`claude CLI error response: ${parsed.result}`);
+
+    return this._extractJSON(parsed.result ?? '');
+  }
+
+  _extractJSON(raw) {
+    // Strip markdown code fences if present
+    const codeMatch = raw.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (codeMatch) {
+      try { return JSON.parse(codeMatch[1].trim()); } catch {}
+    }
+    // Try raw JSON parse
+    try { return JSON.parse(raw.trim()); } catch {}
+    // Find first JSON object or array in the text
+    const objMatch = raw.match(/(\{[\s\S]*\}|\[[\s\S]*\])/);
+    if (objMatch) {
+      try { return JSON.parse(objMatch[1]); } catch {}
+    }
+    throw new Error(`LLMClient: could not extract JSON from claude CLI output:\n${raw.slice(0, 400)}`);
   }
 
   async _callOpenAI(messages, tool, maxTokens) {

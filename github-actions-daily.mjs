@@ -16,10 +16,6 @@ import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestra
 const todayKST = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
 console.log(`\n📅 Daily EM/CCM Trend Review — ${todayKST} (KST)\n`);
 
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error('❌ ANTHROPIC_API_KEY 환경변수가 없습니다. GitHub Secrets를 확인하세요.');
-  process.exit(1);
-}
 
 const orchestrator = new TrendReviewOrchestrator({
   searchDays: 180,
