@@ -16,13 +16,27 @@ import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestra
 const todayKST = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
 console.log(`\n📅 Daily EM/CCM Trend Review — ${todayKST} (KST)\n`);
 
+// 시작 지터: 고정 cron 초에 NCBI를 동시에 때리지 않도록 0~90초 랜덤 지연.
+const jitterMs = Math.floor(Math.random() * 90_000);
+console.log(`⏳ startup jitter ${(jitterMs / 1000).toFixed(0)}s (NCBI 부하 분산)`);
+await new Promise((r) => setTimeout(r, jitterMs));
 
 const orchestrator = new TrendReviewOrchestrator({
   searchDays: 180,
   topN:       1,
 });
 
-const result = await orchestrator.run();
+// 소프트 실패: PubMed 다운 등 일시 장애로 죽어도 워크플로우를 빨갛게 만들지 않고
+// 기존 사이트를 그대로 둔 채 "오늘은 건너뜀"으로 깔끔히 종료(exit 0).
+let result;
+try {
+  result = await orchestrator.run();
+} catch (err) {
+  console.warn(`⚠️  오늘 실행 실패(소프트 스킵): ${err.message}`);
+  console.warn('   사이트는 변경되지 않았습니다. 내일 다시 시도합니다.');
+  process.exit(0);
+}
+
 const papers = result.topPapers ?? [];
 
 console.log(`\n✅ 파이프라인 완료: ${papers.length}편 선정`);

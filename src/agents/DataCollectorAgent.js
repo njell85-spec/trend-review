@@ -19,8 +19,9 @@ export class DataCollectorAgent {
   constructor(options = {}) {
     this.logger = new Logger('DataCollectorAgent', { logFile: 'data_collector.jsonl' });
     this.cache = new Cache({ ttlHours: Number(process.env.CACHE_TTL_HOURS ?? 24) });
-    this.cb = new CircuitBreaker('PubMed-API');
-    this.retry = new RetryHelper({ maxAttempts: 3, baseDelayMs: 2_000 });
+    // PubMed(NCBI eutils)는 아침 피크에 429/5xx 가 잦아 내성을 넉넉히 둔다.
+    this.cb = new CircuitBreaker('PubMed-API', { failureThreshold: 8, recoveryTimeoutMs: 30_000 });
+    this.retry = new RetryHelper({ maxAttempts: 5, baseDelayMs: 3_000, maxDelayMs: 45_000 });
 
     this.apiKey = process.env.PUBMED_API_KEY ?? '';
     this.email = process.env.PUBMED_EMAIL ?? 'research@example.com';
