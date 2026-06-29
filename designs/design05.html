@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'NanumSquare','NanumBarunGothic','NanumGothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}
+
+  body{background:#f5f3ff;color:#1e1b4b}
+  .wrap{max-width:430px;margin:0 auto;min-height:100vh;padding-bottom:30px}
+  .hd{background:linear-gradient(135deg,#4f46e5,#7c3aed 55%,#a21caf);color:#fff;padding:30px 22px 60px}
+  .hd .k{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#ddd6fe;font-weight:700}
+  .hd h1{font-size:23px;font-weight:800;margin-top:4px;letter-spacing:-.5px}
+  .sub{color:#ddd6fe;font-size:11px;margin-top:5px}
+  .stats{display:flex;gap:10px;margin:-44px 18px 0}
+  .scard{flex:1;background:#fff;border-radius:14px;padding:14px;box-shadow:0 10px 25px rgba(79,70,229,.18);text-align:center}
+  .scard .n{font-size:20px;font-weight:800;background:linear-gradient(135deg,#4f46e5,#a21caf);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scard .l{font-size:9px;color:#6b7280;margin-top:3px;text-transform:uppercase}
+  .sec{padding:20px 18px 0}
+  .day{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .pill{background:linear-gradient(90deg,#4f46e5,#7c3aed);color:#fff;font-size:10px;font-weight:700;padding:4px 11px;border-radius:8px}
+  .date{font-weight:800;font-size:15px}
+  .cnt{color:#a5a3c4;font-size:11px;margin-left:auto}
+  .card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 4px 20px rgba(30,27,75,.08);border:1px solid #ece9fe}
+  .medal{font-size:22px}
+  .ttl{font-size:16px;font-weight:800;line-height:1.35;margin-top:6px}
+  .meta{font-size:11px;color:#8b89ad;margin-top:5px}
+  .tags{display:flex;gap:6px;margin-top:12px}
+  .tag{font-size:10px;font-weight:700;padding:5px 10px;border-radius:8px;background:#ede9fe;color:#6d28d9}
+  .tag.s{background:linear-gradient(90deg,#4f46e5,#7c3aed);color:#fff}
+  .lbl{font-size:11px;font-weight:800;color:#7c3aed;margin:16px 0 5px}
+  .txt{font-size:13px;color:#312e6b;line-height:1.6}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+  .pcell{background:#faf9ff;border:1px solid #ece9fe;border-radius:12px;padding:10px}
+  .pcell .pk{font-size:10px;font-weight:800;color:#7c3aed}
+  .pcell .pv{font-size:12px;color:#312e6b;line-height:1.45;margin-top:3px}
+  .pcell.full{grid-column:1/-1}
+  .ft{text-align:center;font-size:10px;color:#a5a3c4;padding:24px}
+</style></head><body><div class="wrap">
+    <div class="hd"><div class="k">AI Literature Pipeline</div><h1>EM/CCM Trend Review</h1>
+      <div class="sub">최근 6개월 300편 스크리닝 → 1편 선정 · Claude Opus</div></div>
+    <div class="stats">
+      <div class="scard"><div class="n">180</div><div class="l">Days</div></div>
+      <div class="scard"><div class="n">300</div><div class="l">Screened</div></div>
+      <div class="scard"><div class="n">1</div><div class="l">Selected</div></div>
+    </div>
+    <div class="sec">
+      <div class="day"><span class="pill">TODAY</span><span class="date">2026-06-29</span><span class="cnt">생성 2026. 06. 29. 07:00</span></div>
+      <div class="card">
+        <div class="medal">🥇</div>
+        <div class="ttl">MSSA 균혈증에서 세파졸린 vs 항포도상구균 페니실린</div>
+        <div class="meta">Cefazolin vs Antistaphylococcal Penicillin for MSSA Bacteremia (SNAP Trial)</div>
+        <div class="meta">N Engl J Med · 2026 · PMID 42308484</div>
+        <div class="tags"><span class="tag s">9.5점</span><span class="tag">RCT</span><span class="tag">적용 가능</span></div>
+        <div class="lbl">WHY IT MATTERS</div><div class="txt">메티실린 감수성 황색포도상구균(MSSA) 균혈증에서 세파졸린이 표준 항포도상구균 페니실린 대비 90일 사망에 비열등한가, 그리고 신독성은 더 적은가?</div>
+        <div class="lbl">PICO</div>
+        <div class="grid">
+          <div class="pcell"><div class="pk">P · 대상</div><div class="pv">[호주·뉴질랜드 등 다국가] MSSA 균혈증으로 입원한 성인 (N=1,287, RCT)</div></div>
+          <div class="pcell"><div class="pk">I · 중재</div><div class="pv">세파졸린(cefazolin) 정주</div></div>
+          <div class="pcell"><div class="pk">C · 비교</div><div class="pv">항포도상구균 페니실린(플루클록사실린 등)</div></div>
+          <div class="pcell"><div class="pk">O · 결과</div><div class="pv">90일 전원인 사망 15.0%(97/645) vs 17.0%(109/642) — 보정 OR 0.81 (95% CrI 0.59–1.12), 비열등 확률 99.2%</div></div>
+          <div class="pcell full"><div class="pk">O · 2차</div><div class="pv">14일 내 급성신손상 13.9% vs 19.6% — 보정 OR 0.67 (95% CrI 0.50–0.89), 우월 확률 99.7%</div></div>
+        </div>
+        <div class="lbl">CLINICAL BOTTOM LINE</div><div class="txt">세파졸린은 MSSA 균혈증 90일 사망에서 항포도상구균 페니실린에 비열등하며(99.2%), 급성신손상 위험이 유의하게 낮다(OR 0.67). 1일 3회 투여와 우수한 신장 안전성으로 1차 선택 약제로 권장된다.</div>
+      </div>
+    </div>
+    <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일</div>
+  </div></body></html>

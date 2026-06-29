@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'NanumGothicCoding','SFMono-Regular',Menlo,Consolas,monospace;-webkit-font-smoothing:antialiased}
+
+  body{background:#0a0e0a;color:#7dd87d;font-family:'NanumGothicCoding','SFMono-Regular',Menlo,Consolas,monospace}
+  .wrap{max-width:430px;margin:0 auto;min-height:100vh;padding:16px}
+  .term{border:1px solid #1f3a1f;border-radius:8px;background:#0d130d;overflow:hidden}
+  .bar{background:#132013;padding:8px 12px;display:flex;gap:6px;align-items:center;border-bottom:1px solid #1f3a1f}
+  .dot{width:10px;height:10px;border-radius:99px}
+  .bar .t{color:#4a7a4a;font-size:11px;margin-left:8px}
+  .body{padding:14px;font-size:12.5px;line-height:1.7}
+  .c{color:#4a7a4a}
+  .g{color:#7dd87d}
+  .y{color:#d8d87d}
+  .w{color:#cfe8cf}
+  .hl{color:#52e052;font-weight:700}
+  .line{white-space:pre-wrap;word-break:break-word}
+  .box{border:1px solid #1f3a1f;border-radius:6px;padding:10px;margin:10px 0;background:#0a100a}
+  .k{color:#52e052;font-weight:700}
+  .ft{text-align:center;font-size:10px;color:#3a5a3a;padding:18px}
+</style></head><body><div class="wrap"><div class="term">
+    <div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span><span class="t">trend-review — daily.sh</span></div>
+    <div class="body">
+      <div class="line"><span class="c">$</span> <span class="g">trend-review</span> <span class="y">--window</span> 180d <span class="y">--screen</span> 300 <span class="y">--select</span> 1 <span class="y">--model</span> opus</div>
+      <div class="line"><span class="c"># </span><span class="w">scanning PubMed [최근 6개월] ... 300 papers screened</span></div>
+      <div class="line"><span class="c"># </span><span class="w">scoring with Claude Opus ... done</span></div>
+      <div class="line"><span class="hl">✓ SELECTED 1/300</span>  <span class="c">2026-06-29  2026. 06. 29. 07:00</span></div>
+      <div class="box">
+        <div class="line"><span class="k">[🥇 rank:1]</span> <span class="w">MSSA 균혈증에서 세파졸린 vs 항포도상구균 페니실린</span></div>
+        <div class="line"><span class="c">en:</span> Cefazolin vs Antistaphylococcal Penicillin for MSSA Bacteremia (SNAP Trial)</div>
+        <div class="line"><span class="c">src:</span> N Engl J Med 2026 | PMID 42308484 | score=<span class="hl">9.5</span> | RCT</div>
+      </div>
+      <div class="line"><span class="k">WHY&gt;</span> <span class="w">메티실린 감수성 황색포도상구균(MSSA) 균혈증에서 세파졸린이 표준 항포도상구균 페니실린 대비 90일 사망에 비열등한가, 그리고 신독성은 더 적은가?</span></div>
+      <div class="box">
+        <div class="line"><span class="k">P:</span> [호주·뉴질랜드 등 다국가] MSSA 균혈증으로 입원한 성인 (N=1,287, RCT)</div>
+        <div class="line"><span class="k">I:</span> 세파졸린(cefazolin) 정주</div>
+        <div class="line"><span class="k">C:</span> 항포도상구균 페니실린(플루클록사실린 등)</div>
+        <div class="line"><span class="k">O:</span> <span class="hl">90일 전원인 사망 15.0%(97/645) vs 17.0%(109/642) — 보정 OR 0.81 (95% CrI 0.59–1.12), 비열등 확률 99.2%</span></div>
+      </div>
+      <div class="line"><span class="k">BOTTOM_LINE&gt;</span> <span class="w">세파졸린은 MSSA 균혈증 90일 사망에서 항포도상구균 페니실린에 비열등하며(99.2%), 급성신손상 위험이 유의하게 낮다(OR 0.67). 1일 3회 투여와 우수한 신장 안전성으로 1차 선택 약제로 권장된다.</span></div>
+      <div class="line"><span class="c">$</span> <span class="g">_</span></div>
+    </div>
+  </div><div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일</div></div></body></html>
