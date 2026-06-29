@@ -318,6 +318,11 @@ Use the submit_paper_scores tool to return scores for ALL ${batch.length} papers
         ? `\n\n--- FULL TEXT (source: ${paper.fullTextSource}, ${Math.round(paper.fullTextLength / 1000)}k chars, truncated) ---\n${paper.fullText}\n---`
         : '';
 
+      // 권위 있는 구조화 보강 소스 (ClinicalTrials.gov 등). 본문이 없을 때 특히 중요.
+      const augmentSection = paper.augmentText
+        ? `\n\n--- AUTHORITATIVE REGISTRY (ClinicalTrials.gov — trustworthy structured source) ---\n${paper.augmentText}\n---`
+        : '';
+
       const figureSection = paper.figures?.length
         ? `\n\nFigures/Tables extracted:\n${paper.figures.map((f) => `• ${f.label}: ${f.caption}`).join('\n')}`
         : '';
@@ -333,12 +338,16 @@ MeSH Terms: ${paper.meshTerms.join(', ')}
 Full-text available: ${hasFullText ? `YES (${paper.fullTextSource})` : 'NO — abstract only'}
 
 Abstract:
-${paper.abstract}${fullTextSection}${figureSection}
+${paper.abstract}${fullTextSection}${augmentSection}${figureSection}
 
 Provide a complete structured analysis using the submit_pico_analysis tool.
 Requirements:
-1. ${hasFullText ? 'Full text is provided — use it to extract detailed methods, subgroup analyses, exact statistics, and figure/table data NOT in the abstract.' : 'Only abstract is available — note this limitation explicitly.'}
-2. PICO fields must include specific numbers (sample sizes, ages, percentages, date ranges, cutoffs, effect sizes, p-values, confidence intervals). Prioritize numbers from full text over abstract when available.
+1. ${hasFullText
+        ? 'Full text is provided — use it to extract detailed methods, subgroup analyses, exact statistics, and figure/table data NOT in the abstract.'
+        : (paper.augmentText
+          ? 'No journal full text — the abstract PLUS an authoritative ClinicalTrials.gov registry record are provided. You MAY use the registry to add trial design, eligibility, exact outcome definitions, enrollment, and any POSTED numeric results that the abstract omits. Treat the registry as a trustworthy source; do NOT pull facts from anywhere else.'
+          : 'Only the abstract is available — note this limitation explicitly and do not invent details.')}
+2. PICO fields must include specific numbers (sample sizes, ages, percentages, date ranges, cutoffs, effect sizes, p-values, confidence intervals). Use ONLY values explicitly present in the abstract, the provided full text, or the provided authoritative registry — NEVER infer, compute, or import numbers from memory or other studies. Prioritize full text > registry > abstract when sources differ.
 3. Provide Korean translations for ALL text fields (_ko suffix). Medical terms, drug names, score names (e.g., SOFA, AUROC, PELOD-2), and statistics must remain in English within Korean text — translate only the surrounding prose.
 4. Report ONLY values explicitly stated in the paper. NEVER derive, compute, or estimate new statistics yourself (e.g., do not calculate NNT or absolute risk differences unless the paper reports them). If a value is not reported, omit it rather than guessing.
 5. For the English PICO fields (population/intervention/comparison/outcome), preserve the original wording of the source text as closely as possible — write them as near-verbatim excerpts, not free paraphrases.
@@ -353,7 +362,26 @@ Requirements:
     });
 
     if (fromCache) this.logger.debug(`PICO from cache: ${paper.pmid}`);
-    return { ...data, paper };
+    return { ...data, paper, ...this._provenance(paper) };
+  }
+
+  // ── 근거 출처 배지 + 참조 링크 (결정적 — LLM 무관) ───────────────────────────
+  _provenance(paper) {
+    const badge = {
+      PMC: '본문(PMC)',
+      Unpaywall: '본문(OA)',
+      'abstract+registry': '초록 + 레지스트리',
+      'abstract-only': '초록만',
+    }[paper.fullTextSource] ?? '초록만';
+
+    const sources = [];
+    const pmUrl = paper.pubmedUrl ?? (paper.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${paper.pmid}/` : null);
+    if (pmUrl) sources.push({ label: `PubMed — PMID ${paper.pmid}`, url: pmUrl });
+    if (paper.doi && paper.doi.length > 3) sources.push({ label: `Journal (DOI) — ${paper.doi}`, url: `https://doi.org/${paper.doi}` });
+    if (paper.oaUrl) sources.push({ label: 'Open-access full text', url: paper.oaUrl });
+    for (const s of paper.augmentSources ?? []) sources.push(s);
+
+    return { evidenceSource: badge, sources };
   }
 
   _fallbackPico(paper) {

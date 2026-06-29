@@ -23,6 +23,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # 분석 LLM 호출 경로:
+      #   1) claude CLI(구독) — CLAUDE_CODE_OAUTH_TOKEN 시크릿이 있으면 사용 (API 비용 없음)
+      #   2) Anthropic API   — ANTHROPIC_API_KEY 시크릿이 있으면 폴백 (CLI 미설치/미인증 시)
+      # 둘 중 하나는 저장소 Secrets 에 등록해야 자동화가 동작한다.
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Configure git
         run: |
           git config user.name  "github-actions[bot]"
@@ -31,8 +38,11 @@ jobs:
       - name: Run daily review pipeline
         run: node github-actions-daily.mjs
         env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
           PUBMED_API_KEY:    ${{ secrets.PUBMED_API_KEY }}
           PUBMED_EMAIL:      ${{ secrets.PUBMED_EMAIL }}
+          UNPAYWALL_EMAIL:   ${{ secrets.PUBMED_EMAIL }}
           GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
           GITHUB_OWNER:      ${{ github.repository_owner }}
           GITHUB_REPO:       ${{ github.event.repository.name }}

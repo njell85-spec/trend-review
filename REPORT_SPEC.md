@@ -44,7 +44,32 @@
 - 푸터: `… · PubMed 최근 6개월 · 1편/일`
 - 전 섹션 동일 타이포그래피(폰트 크기 스케일 `text-[12~18px]`) 유지 — 단일 빌더(`_buildTodaySection`)만 사용.
 
+## 4-B. 1편 심층 분석 — 본문 확보 & 권위 보강 정책
+
+선정된 **1편만** 다음 순서로 근거를 모아 PICO 분석한다 (셀렉/스크리닝은 초록 기준 유지).
+
+1. **본문(PMC)** — PubMed Central 오픈액세스(PMCID) → 전문.
+2. **본문(OA)** — Unpaywall(DOI) 합법 오픈액세스 → 전문.
+3. **초록 + 레지스트리** — 본문이 페이월이면 **ClinicalTrials.gov(NCT)** 구조화 레지스트리(API 키 불필요)로 설계·적격기준·정확한 결과지표·게시된 수치를 보강.
+4. 위 모두 실패 시 **초록만**.
+
+원칙(환각 배제):
+- 수치는 **초록·확보 본문·제공된 권위 레지스트리에 명시된 값만** 사용. 추론/계산/타 연구 인용 금지. 우선순위 본문 > 레지스트리 > 초록.
+- 각 카드에 **근거 배지**(`본문(PMC)`/`본문(OA)`/`초록 + 레지스트리`/`초록만`)와 **참조 링크(PubMed·DOI·레지스트리)** 표기.
+- (선택) 웹 보강은 권위 도메인 한정·출처 명시 시에만. 현재 자동 경로는 ClinicalTrials.gov + 저널/PubMed 링크를 기본 제공.
+
+구현: `FullTextAgent._augment()`(레지스트리), `FilterAnalyzerAgent`(프롬프트 규칙 + `_provenance()` 배지/출처), `GitHubPublisher`(배지·출처 박스 렌더).
+
+## 4-C. 자동화(GitHub Actions) 인증
+
+분석 LLM 호출은 **claude CLI(구독)** 우선, 없으면 **Anthropic API** 폴백.
+- 워크플로우가 `npm i -g @anthropic-ai/claude-code`로 CLI 설치.
+- 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
+
 ## 5. 변경 이력
 
 - 2026-06-29: 1번 방안(6개월/300편/1편·Opus) 전 채널 일괄 반영.
   Opus 모델이 실제 CLI 호출까지 전달되도록 `LLMClient`에 `--model` 추가.
+- 2026-06-29: Sky 파스텔 디자인으로 전면 교체, 과거 아카이브 리셋(오늘부터 시작).
+  1편 분석에 ClinicalTrials.gov 레지스트리 보강 + 근거배지/출처 표기 정식 반영.
+  Actions 자동화 복구(claude CLI 설치 + OAuth 토큰/API 키 폴백).

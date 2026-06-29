@@ -44,11 +44,48 @@ export class LLMClient {
    */
   async callWithTool(messages, tool, { maxTokens = 8192 } = {}) {
     if (this.provider === 'anthropic') {
-      return this._callClaudeCLI(messages, tool);
+      // 데스크탑/로컬: claude CLI(구독). CLI가 없는 환경(GitHub Actions 등)에서는
+      // ANTHROPIC_API_KEY 가 있으면 Anthropic API 로 폴백.
+      try {
+        return this._callClaudeCLI(messages, tool);
+      } catch (err) {
+        const cliMissing = /ENOENT|spawn error/i.test(err.message);
+        if (cliMissing && process.env.ANTHROPIC_API_KEY) {
+          return this._callAnthropicAPI(messages, tool, maxTokens);
+        }
+        throw err;
+      }
     }
     if (this.provider === 'openai') {
       return this._callOpenAI(messages, tool, maxTokens);
     }
+  }
+
+  // ── Anthropic Messages API (CLI 미존재 환경 폴백) ─────────────────────────
+  async _callAnthropicAPI(messages, tool, maxTokens) {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: this.model,
+        max_tokens: maxTokens,
+        tools: [tool],
+        tool_choice: { type: 'tool', name: tool.name },
+        messages: messages.map((m) => ({
+          role: m.role,
+          content: typeof m.content === 'string' ? m.content : m.content,
+        })),
+      }),
+    });
+    if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    const data = await res.json();
+    const toolUse = (data.content ?? []).find((c) => c.type === 'tool_use');
+    if (!toolUse) throw new Error(`Anthropic API: no tool_use block in response`);
+    return toolUse.input;
   }
 
   _callClaudeCLI(messages, tool) {

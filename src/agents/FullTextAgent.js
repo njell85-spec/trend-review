@@ -56,6 +56,13 @@ export class FullTextAgent {
   }
 
   async _fetch(paper) {
+    // 권위 있는 구조화 소스(ClinicalTrials.gov)는 본문 확보 여부와 무관하게 먼저 시도해
+    // 항상 레지스트리 링크/근거를 확보한다.
+    const augment = await this._augment(paper).catch((e) => {
+      this.logger.warn(`Registry augment failed (PMID ${paper.pmid}): ${e.message}`);
+      return { augmentText: null, augmentSources: [], augmentRegistry: false };
+    });
+
     // ── Route 1: PMC ────────────────────────────────────────────────────────
     if (paper.pmcid && String(paper.pmcid).length > 0 && paper.pmcid !== 'undefined') {
       try {
@@ -67,6 +74,7 @@ export class FullTextAgent {
             fullTextSource: 'PMC',
             fullTextLength: text.length,
             figures,
+            ...augment,
           };
         }
       } catch (e) {
@@ -88,6 +96,7 @@ export class FullTextAgent {
               fullTextLength: text.length,
               figures: [],
               oaUrl,
+              ...augment,
             };
           }
         }
@@ -96,8 +105,88 @@ export class FullTextAgent {
       }
     }
 
-    this.logger.info(`Abstract-only: PMID ${paper.pmid} (pmcid=${paper.pmcid || 'none'}, doi=${paper.doi || 'none'})`);
-    return { fullText: null, fullTextSource: 'abstract-only', fullTextLength: 0, figures: [] };
+    // ── Route 3: 본문 없음 → 레지스트리 보강(초록 + ClinicalTrials.gov) ─────────
+    const source = augment.augmentRegistry ? 'abstract+registry' : 'abstract-only';
+    this.logger.info(`${source}: PMID ${paper.pmid} (pmcid=${paper.pmcid || 'none'}, doi=${paper.doi || 'none'}, nct=${augment.nctId || 'none'})`);
+    return { fullText: null, fullTextSource: source, fullTextLength: 0, figures: [], ...augment };
+  }
+
+  // ── 권위 있는 구조화 소스: ClinicalTrials.gov (API 키 불필요) ────────────────
+  async _augment(paper) {
+    const nct = this._findNct(paper);
+    if (!nct) return { augmentText: null, augmentSources: [], augmentRegistry: false };
+
+    const url = `https://clinicaltrials.gov/api/v2/studies/${nct}?format=json`;
+    let study;
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
+      if (!res.ok) throw new Error(`ClinicalTrials.gov HTTP ${res.status}`);
+      study = await res.json();
+    } catch (e) {
+      this.logger.warn(`ClinicalTrials.gov fetch failed (${nct}): ${e.message}`);
+      // 레지스트리 본문은 못 가져와도 링크는 출처로 제공
+      return {
+        augmentText: null, nctId: nct, augmentRegistry: false,
+        augmentSources: [{ label: `ClinicalTrials.gov — ${nct}`, url: `https://clinicaltrials.gov/study/${nct}` }],
+      };
+    }
+
+    const text = this._summarizeCtgov(study, nct);
+    return {
+      augmentText: text ? text.slice(0, 6000) : null,
+      nctId: nct,
+      augmentRegistry: Boolean(text),
+      augmentSources: [{ label: `ClinicalTrials.gov — ${nct} (구조화 레지스트리)`, url: `https://clinicaltrials.gov/study/${nct}` }],
+    };
+  }
+
+  _findNct(paper) {
+    const hay = `${paper.abstract ?? ''}\n${paper.title ?? ''}`;
+    const m = hay.match(/\bNCT0*\d{6,8}\b/i);
+    return m ? m[0].toUpperCase() : null;
+  }
+
+  _summarizeCtgov(study, nct) {
+    try {
+      const ps = study?.protocolSection ?? {};
+      const id = ps.identificationModule ?? {};
+      const design = ps.designModule ?? {};
+      const di = design.designInfo ?? {};
+      const elig = ps.eligibilityModule ?? {};
+      const arms = ps.armsInterventionsModule ?? {};
+      const outcomes = ps.outcomesModule ?? {};
+      const rs = study?.resultsSection ?? {};
+
+      const lines = [`ClinicalTrials.gov ${nct} — authoritative trial registry record`];
+      if (id.officialTitle) lines.push(`Official title: ${id.officialTitle}`);
+      const enr = design.enrollmentInfo?.count;
+      const phases = (design.phases ?? []).join(', ');
+      const alloc = di.allocation, masking = di.maskingInfo?.masking, model = di.interventionModel;
+      lines.push(`Design: ${[phases && `phase ${phases}`, alloc, model, masking && `masking ${masking}`].filter(Boolean).join('; ')}${enr ? `; enrollment ${enr}` : ''}`);
+
+      const prim = (outcomes.primaryOutcomes ?? []).slice(0, 3)
+        .map((o) => `• PRIMARY: ${o.measure}${o.timeFrame ? ` [${o.timeFrame}]` : ''}${o.description ? ` — ${o.description}` : ''}`);
+      const sec = (outcomes.secondaryOutcomes ?? []).slice(0, 5)
+        .map((o) => `• secondary: ${o.measure}${o.timeFrame ? ` [${o.timeFrame}]` : ''}`);
+      if (prim.length) lines.push('Outcome measures:', ...prim, ...sec);
+
+      // 적격기준 (요약)
+      if (elig.eligibilityCriteria) lines.push(`Eligibility (excerpt): ${String(elig.eligibilityCriteria).replace(/\s+/g, ' ').slice(0, 700)}`);
+
+      // 게시된 결과(있을 때만) — 군별 측정값
+      const om = rs?.outcomeMeasuresModule?.outcomeMeasures ?? [];
+      if (om.length) {
+        lines.push('POSTED RESULTS (registry):');
+        for (const o of om.slice(0, 4)) {
+          const groups = (o.groups ?? []).map((g) => g.title).filter(Boolean).join(' vs ');
+          lines.push(`• ${o.title}${o.timeFrame ? ` [${o.timeFrame}]` : ''}${groups ? ` — groups: ${groups}` : ''}`);
+        }
+      }
+      const joined = lines.filter(Boolean).join('\n');
+      return joined.length > 80 ? joined : null;
+    } catch {
+      return null;
+    }
   }
 
   // ── PMC full text ─────────────────────────────────────────────────────────
