@@ -296,9 +296,9 @@ export class GitHubPublisher {
       `$1\n${todaySection}`
     );
 
-    // 통계 업데이트
+    // 통계 업데이트 — 하루 1편 셀렉 기준. 실제 논문 카드 수를 세어 topN 변화에도 견고하게.
     const dayCount   = (updated.match(/<!-- SECTION:/g) ?? []).length;
-    const paperCount = dayCount * 3;
+    const paperCount = (updated.match(/class="w-7 h-7 rounded-full/g) ?? []).length || dayCount;
     updated = updated
       .replace(/<div class="stat-days-count[^"]*">\d+<\/div>/,
                `<div class="stat-days-count text-3xl font-black tabular-nums">${dayCount}</div>`)

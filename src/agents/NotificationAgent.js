@@ -173,7 +173,7 @@ export class NotificationAgent {
     const medals = ['🥇', '🥈', '🥉'];
     const evidenceColor = { High:'#10b981', Moderate:'#3b82f6', Low:'#f59e0b', 'Very Low':'#ef4444' };
 
-    const picoCards = topPapers.slice(0, 3).map((p, i) => {
+    const picoCards = topPapers.slice(0, 1).map((p, i) => {
       const score = p.clinicalApplicabilityScore ?? p.paper?.scoringData?.score ?? '—';
       const title = p.paper?.title ?? '제목 없음';
       const journal = p.paper?.journal ?? '';
@@ -249,11 +249,11 @@ export class NotificationAgent {
   <div style="background:linear-gradient(135deg,#1e3a5f,#2563eb);padding:32px 36px;color:white">
     <div style="font-size:28px;margin-bottom:4px">🏥</div>
     <h1 style="margin:0;font-size:20px;font-weight:700">Trend Review 논문 분석 완료</h1>
-    <p style="margin:8px 0 0;color:#bfdbfe;font-size:13px">최근 30일 응급의학·중환자의학 문헌 자동 분석 · Claude AI</p>
+    <p style="margin:8px 0 0;color:#bfdbfe;font-size:13px">최근 6개월(180일) 응급의학·중환자의학 문헌 자동 분석 · Claude Opus</p>
   </div>
 
   <div style="padding:32px 36px">
-    <p style="color:#374151;margin-top:0">PubMed 최신 논문 <strong>50편</strong>을 분석하여 임상 적용성 기준 <strong>Top 3</strong>를 선정했습니다.<br>
+    <p style="color:#374151;margin-top:0">PubMed 최근 6개월 논문 <strong>최대 300편</strong>을 스크리닝하여 임상 적용성 기준 <strong>오늘의 1편</strong>을 선정했습니다.<br>
     전체 인터랙티브 대시보드는 첨부된 HTML 파일 또는 Google Drive 링크에서 확인하세요.</p>
 
     <a href="${driveUrl}" style="display:block;background:#2563eb;color:white;text-decoration:none;padding:12px 20px;border-radius:6px;font-weight:600;text-align:center;margin-bottom:28px">
@@ -261,7 +261,7 @@ export class NotificationAgent {
     </a>
 
     <h2 style="font-size:17px;color:#1e3a5f;border-bottom:2px solid #dbeafe;padding-bottom:10px;margin-bottom:20px">
-      🏆 Top 3 논문 — PICO 상세 분석
+      🏆 오늘의 선정 논문 — PICO 상세 분석
     </h2>
 
     ${picoCards}

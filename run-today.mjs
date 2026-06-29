@@ -153,7 +153,7 @@ const newHtml = `<!DOCTYPE html>
       <h1 class="text-2xl font-black tracking-tight">EM/CCM Trend_Review</h1>
       <span class="text-gray-500 text-[10px] font-semibold uppercase tracking-widest">Daily</span>
     </div>
-    <p class="text-gray-500 text-xs mb-6">Emergency Medicine &amp; Critical Care Medicine · AI-Powered Literature Pipeline · PubMed 30-day window</p>
+    <p class="text-gray-500 text-xs mb-6">Emergency Medicine &amp; Critical Care Medicine · AI-Powered Literature Pipeline · PubMed 180-day window · 1 paper/day</p>
     <div class="flex items-end gap-6">
       <div><div class="stat-days-count text-3xl font-black tabular-nums">${sections.length}</div><div class="text-gray-600 text-[10px] uppercase tracking-wider mt-0.5">Days</div></div>
       <div class="w-px h-8 bg-gray-700 mb-1"></div>
@@ -186,7 +186,7 @@ ${sectionBlocks}
 </div>
 <!-- JOURNAL_TABLE_END -->
 <div class="text-center text-[10px] text-gray-400 py-6 border-t border-gray-200 mt-2">
-  AI Literature Review Pipeline · Claude · PubMed 최근 30일 · <a href="https://njell85-spec.github.io/Trend_Review/" class="hover:underline">njell85-spec.github.io/Trend_Review</a>
+  AI Literature Review Pipeline · Claude Opus · PubMed 최근 6개월 · <a href="https://njell85-spec.github.io/Trend_Review/" class="hover:underline">njell85-spec.github.io/Trend_Review</a>
 </div>
 </body>
 </html>`;

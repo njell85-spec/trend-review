@@ -68,7 +68,12 @@ IMPORTANT: Respond with ONLY a valid JSON object. No explanation, no markdown co
 
 ${schema}`;
 
-    const result = spawnSync('claude', ['-p', fullPrompt, '--output-format', 'json'], {
+    const args = ['-p', fullPrompt, '--output-format', 'json'];
+    // Pass the configured model through to the CLI so the pipeline actually
+    // runs on the requested model (e.g. claude-opus-4-8) instead of the CLI default.
+    if (this.model) args.push('--model', this.model);
+
+    const result = spawnSync('claude', args, {
       encoding: 'utf8',
       maxBuffer: 32 * 1024 * 1024,
       timeout: 300_000,
