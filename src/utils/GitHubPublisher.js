@@ -124,7 +124,7 @@ export class GitHubPublisher {
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}${trial ? ` · ${esc(trial)}` : ''}</div>` : (trial ? `<div class="ttle">${esc(trial)}</div>` : '')}
         <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)} · ${esc(date)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
-        <div class="chips"><span class="chip sc">${esc(score)}점</span><span class="chip ev">${esc(GitHubPublisher._evidenceShort(ev))}</span><span class="chip ap">${esc(GitHubPublisher._edApplicability(score))}</span></div>
+        <div class="chips"><span class="chip sc">${esc(score)}점</span><span class="chip ev">${esc(GitHubPublisher._evidenceShort(ev))}</span><span class="chip ap">${esc(GitHubPublisher._edApplicability(score))}</span>${p.evidenceSource ? `<span class="chip src">${esc(p.evidenceSource)}</span>` : ''}</div>
       </div>
       <div class="pc-body">
         <div class="lbl"><span class="i">${IC.bulb(T.key)}</span>WHY IT MATTERS</div>
@@ -151,6 +151,8 @@ export class GitHubPublisher {
         <div class="lbl"><span class="i">${IC.bulb(T.key)}</span>임상 결론</div>
         ${enko(p.clinicalTakeaway, p.clinicalTakeaway_ko)}
         ${practice ? `<div class="sub-h">Practice Change</div><ul class="pc-ul">${practice}</ul>` : ''}
+
+        ${(p.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 본문 확보·웹 보강 출처</div>${p.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
 
         <div class="pc-foot"><a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed${pmid ? ` ${esc(pmid)}` : ''}</a>${doiLink}${studyType ? ` · ${esc(studyType)}` : ''}</div>
       </div>
@@ -251,6 +253,7 @@ details[open] .day-prev{display:none}
 .chip.sc{background:linear-gradient(90deg,${T.key},${T.key2});color:#fff}
 .chip.ev{background:${T.soft};color:${T.softTxt}}
 .chip.ap{background:#ecfdf5;color:#059669}
+.chip.src{background:#fff7ed;color:#c2620c;border:1px solid #fed7aa}
 .pc-body{padding:4px 6px 6px}
 .lbl{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:${T.key};letter-spacing:.5px;margin:18px 0 7px}
 .lbl .i{width:15px;height:15px}
@@ -284,6 +287,11 @@ details[open] .day-prev{display:none}
 .pc-dot{width:6px;height:6px;border-radius:99px;background:${T.key};flex:none;margin-top:7px}
 .lnk{color:${T.softTxt};font-weight:700;text-decoration:none}
 .lnk:hover{text-decoration:underline}
+.src-box{margin-top:14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:11px 13px}
+.src-h{font-size:11px;font-weight:800;color:#c2620c;margin-bottom:5px}
+.src-li{display:block;font-size:11.5px;color:#9a5510;text-decoration:none;padding:2px 0;border-bottom:1px solid #fde6cc;word-break:break-all}
+.src-li:last-child{border-bottom:0}
+.src-li:hover{text-decoration:underline}
 .pc-foot{margin-top:14px;padding-top:10px;border-top:1px solid ${T.soft};font-size:11px;color:${T.muted}}
 .ft{text-align:center;font-size:10px;color:${T.muted};padding:26px 20px 0}
 .ft a{color:${T.softTxt}}

@@ -33,31 +33,40 @@ const today = {
   clinicalApplicabilityScore: 9.0,
   evidenceLevel: 'RCT',
 
+  // 근거 출처 배지 + 보강 출처 (초록 + 웹 보강)
+  evidenceSource: '초록 + 웹 보강',
+  sources: [
+    { label: 'PubMed 초록 — PMID 41910345 (NEJM 2026;394:1979-90, DOI 10.1056/NEJMoa2516567)', url: 'https://pubmed.ncbi.nlm.nih.gov/41910345/' },
+    { label: 'TCTMD — HI-PEITHO 결과 보도 (기관·구성요소·전문가 코멘트)', url: 'https://www.tctmd.com/news/hi-peitho-catheter-directed-therapy-bests-anticoagulation-intermediate-risk-pe' },
+    { label: 'American College of Cardiology — ACC.26 발표 요약', url: 'https://www.acc.org/latest-in-cardiology/articles/2026/03/25/21/27/sat-930am-hipeitho-acc-2026' },
+    { label: 'ClinicalTrials.gov — NCT04790370', url: 'https://clinicaltrials.gov/study/NCT04790370' },
+  ],
+
   clinicalQuestion: 'In acute intermediate-risk pulmonary embolism with cardiorespiratory distress, does ultrasound-facilitated, catheter-directed fibrinolysis plus anticoagulation reduce early adverse outcomes compared with anticoagulation alone?',
   clinicalQuestion_ko: '심폐 곤란 징후가 있는 중등도 위험 급성 폐색전증에서, 초음파-유도 카테터 혈전용해 + 항응고가 항응고 단독 대비 조기 악결과를 줄이는가?',
 
   pico: {
-    population: '[Multinational] Adults with acute intermediate-risk PE (RV/LV end-diastolic diameter ratio ≥1.0 and elevated troponin) plus ≥2 signs of cardiorespiratory distress (SBP ≤110 mm Hg, HR ≥100 bpm, or RR >20). N=544; mean age 58.2±13.5 yr; 42.6% women.',
-    intervention: 'Ultrasound-facilitated, catheter-directed fibrinolysis with alteplase plus anticoagulation, per prespecified protocol.',
-    comparison: 'Anticoagulation alone.',
+    population: '[Multinational — 59 sites, U.S. + 8 European countries] Adults with acute intermediate-risk PE (RV/LV end-diastolic diameter ratio ≥1.0 and elevated troponin) plus ≥2 signs of cardiorespiratory distress (SBP ≤110 mm Hg, HR ≥100 bpm, or RR >20). N=544; mean age 58.2±13.5 yr; 42.6% women.',
+    intervention: 'Ultrasound-facilitated, catheter-directed fibrinolysis: catheter-administered 9-mg alteplase with concomitant ultrasound (EkoSonic) plus anticoagulation, per prespecified protocol.',
+    comparison: 'Anticoagulation alone (control patients could receive rescue catheter-directed therapy on deterioration).',
     outcome: 'Composite of PE-related death, cardiorespiratory decompensation/collapse, or symptomatic recurrent PE within 7 days: 4.0% (11/273) vs 10.3% (28/271); relative risk 0.39 (95% CI 0.20–0.77; P=0.005).',
   },
   pico_ko: {
-    population: '[다국가] 급성 중등도 위험 PE 성인 (우심실/좌심실 이완기말 직경비 ≥1.0 + 트로포닌 상승) + 심폐 곤란 징후 ≥2개(수축기혈압 ≤110, 심박수 ≥100, 호흡수 >20). N=544, 평균 58.2±13.5세, 여성 42.6%.',
-    intervention: '알테플라제를 이용한 초음파-유도 카테터 혈전용해 + 항응고 (사전 규정 프로토콜).',
-    comparison: '항응고 단독.',
+    population: '[다국가 — 59개 기관, 미국 + 유럽 8개국] 급성 중등도 위험 PE 성인 (우심실/좌심실 이완기말 직경비 ≥1.0 + 트로포닌 상승) + 심폐 곤란 징후 ≥2개(수축기혈압 ≤110, 심박수 ≥100, 호흡수 >20). N=544, 평균 58.2±13.5세, 여성 42.6%.',
+    intervention: '초음파-유도 카테터 혈전용해: 카테터로 알테플라제 9 mg + 동시 초음파(EkoSonic) + 항응고 (사전 규정 프로토콜).',
+    comparison: '항응고 단독 (대조군은 악화 시 카테터 치료를 구제요법으로 받을 수 있었음).',
     outcome: '7일 내 PE 관련 사망·심폐 대상부전/허탈·증상성 재발 PE 복합: 4.0%(11/273) vs 10.3%(28/271); 상대위험 0.39 (95% CI 0.20–0.77; P=0.005).',
   },
 
   secondaryOutcomes: [
+    '"Hard" events — death, intubation, cardiac arrest, or recurrent PE — were rare and did not differ between groups; the composite benefit was driven by less cardiorespiratory decompensation/collapse.',
     'Major bleeding within 7 days: 4.1% (intervention) vs 2.2% (control), P=0.32; within 30 days 4.1% vs 3.0%, P=0.64.',
     'No intracranial hemorrhage occurred in either group.',
-    'The composite benefit was driven primarily by less cardiorespiratory decompensation or collapse.',
   ],
   secondaryOutcomes_ko: [
+    '"Hard" 사건 — 사망·삽관·심정지·재발 PE — 은 드물었고 군간 차이 없음; 복합 결과의 이득은 심폐 대상부전/허탈 감소에서 비롯됨.',
     '7일 내 대량출혈: 중재군 4.1% vs 대조군 2.2% (P=0.32); 30일 4.1% vs 3.0% (P=0.64) — 유의한 차이 없음.',
     '양 군 모두 두개내출혈은 발생하지 않음.',
-    '복합 결과의 이득은 주로 심폐 대상부전/허탈 감소에서 비롯됨.',
   ],
 
   statGlossary: [
@@ -66,8 +75,8 @@ const today = {
     { term: 'P', explanation_ko: 'P값: 결과가 우연일 확률. 예: P=0.005 → 우연으로 보기 어려움(유의).' },
   ],
 
-  limitations: 'Open-label intervention; the composite benefit was driven by the relatively subjective decompensation/collapse component; device-company funded; results apply to centers with catheter-directed therapy expertise and to patients meeting the specific eligibility criteria.',
-  limitations_ko: '공개표지(open-label) 중재; 복합 결과의 이득이 비교적 주관적인 대상부전/허탈 요소에 주도됨; 기기회사(Boston Scientific) 후원; 카테터 치료 역량을 갖춘 기관과 특정 적격기준 환자에 한해 적용 가능.',
+  limitations: 'Open-label design; benefit driven by the softer decompensation/collapse component while "hard" events (death, intubation, arrest, recurrent PE) did not differ. Control patients who deteriorated could cross over to rescue catheter therapy, so it is unclear whether those deteriorations would have led to worse outcomes. No mortality benefit (short-term PE death is rare). Device-company funded; an accompanying editorial raised concerns about ultrasound efficacy and conflicts of interest. Applies to centers with catheter expertise and the specific eligibility criteria.',
+  limitations_ko: '공개표지(open-label) 설계; 이득이 비교적 주관적인 대상부전/허탈 요소에 주도된 반면 "hard" 사건(사망·삽관·심정지·재발 PE)은 차이 없음. 대조군 악화 환자가 구제 카테터 치료로 교차될 수 있어, 그 악화가 실제 나쁜 결과로 이어졌을지는 불확실. 사망 이득 없음(단기 PE 사망 자체가 드묾). 기기회사(Boston Scientific) 후원이며, 동반 사설은 초음파 효능과 이해상충에 우려를 제기함. 카테터 역량 기관·특정 적격기준에 한해 적용.',
 
   clinicalTakeaway: 'In carefully selected intermediate-risk PE with cardiorespiratory distress, ultrasound-facilitated catheter-directed fibrinolysis lowered early decompensation without excess major bleeding or any intracranial hemorrhage — a targeted escalation option between anticoagulation alone and systemic thrombolysis.',
   clinicalTakeaway_ko: '심폐 곤란을 동반한 선별된 중등도 위험 PE에서 초음파-유도 카테터 혈전용해는 대량출혈 증가나 두개내출혈 없이 조기 대상부전을 낮췄다. 항응고 단독과 전신 혈전용해 사이의 표적 단계적 치료 선택지를 제시한다.',
