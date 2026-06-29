@@ -3,518 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EM/CCM Trend_Review</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>EM/CCM Trend Review</title>
 <style>
-  :root { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; }
-  details > summary { list-style: none; cursor: pointer; }
-  details > summary::-webkit-details-marker { display: none; }
-  details[open] > summary .chev { transform: rotate(180deg); }
-  .chev { transition: transform 0.2s ease; }
-  .slide-in { animation: slideDown 0.15s ease-out; }
-  @keyframes slideDown { from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:translateY(0)} }
-  ::-webkit-scrollbar { width: 5px; }
-  ::-webkit-scrollbar-track { background: #f3f4f6; }
-  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:'NanumSquare','NanumBarunGothic','NanumGothic','Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5;background:#eef4fc;color:#0f172a}
+.i{display:inline-block;vertical-align:middle}
+.wrap{max-width:460px;margin:0 auto;min-height:100vh;padding-bottom:34px}
+a{color:inherit}
+/* header */
+.hd{position:relative;padding:30px 22px 64px;overflow:hidden;color:#fff;background:#5b8fd9;background-image:radial-gradient(120% 90% at 0% 0%,#9ec7f5 0%,#7aa9ec 44%,#6f9be6 74%),radial-gradient(80% 70% at 100% 0%,#d9ecfd88 0%,transparent 60%)}
+.hd .ey{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:#e3effb;font-weight:800}
+.hd h1{font-size:23px;font-weight:800;margin-top:5px;letter-spacing:-.6px}
+.hd .fn{display:inline-flex;align-items:center;gap:7px;margin-top:12px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:99px;font-size:11px;font-weight:700}
+.hd .fn .i{width:13px;height:13px}
+.stats{display:flex;gap:10px;margin:-44px 18px 0;position:relative;z-index:2}
+.sc{flex:1;background:rgba(255,255,255,.92);border:1px solid #fff;border-radius:16px;padding:13px;text-align:center;box-shadow:0 12px 30px -8px #5b8fd940}
+.sc .n{font-size:21px;font-weight:800;color:#5b8fd9;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.sc .l{font-size:9px;color:#64748b;margin-top:3px;letter-spacing:.5px;text-transform:uppercase}
+/* archive */
+.archive{padding:20px 18px 0;display:flex;flex-direction:column;gap:12px}
+details{border-radius:18px;overflow:hidden}
+.day-today{background:#fff;border:1.5px solid #5b8fd9;box-shadow:0 20px 50px -22px #5b8fd966}
+.day-past{background:#fff;border:1px solid #e9f2fd;box-shadow:0 8px 22px -14px #5b8fd933}
+.day-sum{list-style:none;cursor:pointer;padding:15px 16px;display:block}
+.day-sum::-webkit-details-marker{display:none}
+.day-head{display:flex;align-items:center;gap:8px}
+.t-badge{background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff;font-size:10px;font-weight:800;padding:4px 10px;border-radius:7px;box-shadow:0 4px 12px -2px #5b8fd966}
+.day-date{font-weight:800;font-size:15px}
+.day-cnt{color:#94a3b8;font-size:12px}
+.day-gen{color:#94a3b8;font-size:10.5px;margin-left:auto}
+.day-chev{width:16px;height:16px;color:#94a3b8;transition:transform .2s}
+details[open] .day-chev{transform:rotate(180deg)}
+.day-prev{display:flex;align-items:flex-start;gap:8px;margin-top:10px}
+.day-prev-medal{width:16px;height:16px;flex:none;margin-top:1px}
+.day-prev-t{font-size:13.5px;font-weight:800;line-height:1.35;color:#0f172a}
+.day-prev-m{font-size:11px;color:#94a3b8;margin-top:2px}
+details[open] .day-prev{display:none}
+.day-panel{padding:0 14px 14px}
+/* paper card */
+.paper-card{border-top:1px solid #e9f2fd}
+.pc-top{padding:18px 6px 16px}
+.medal{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#fbbf24,#f59e0b);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -6px #f59e0baa}
+.medal svg{width:22px;height:22px;color:#fff}
+.ttl{font-size:18px;font-weight:800;line-height:1.34;margin-top:12px;letter-spacing:-.3px}
+.ttle{font-size:11.5px;color:#94a3b8;margin-top:5px}
+.meta{display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;margin-top:9px}
+.meta .i{width:13px;height:13px}
+.chips{display:flex;gap:6px;margin-top:13px;flex-wrap:wrap}
+.chip{font-size:10.5px;font-weight:800;padding:5px 11px;border-radius:8px}
+.chip.sc{background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff}
+.chip.ev{background:#e9f2fd;color:#3f72bf}
+.chip.ap{background:#ecfdf5;color:#059669}
+.pc-body{padding:4px 6px 6px}
+.lbl{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:#5b8fd9;letter-spacing:.5px;margin:18px 0 7px}
+.lbl .i{width:15px;height:15px}
+.sub-h{font-size:11px;font-weight:800;color:#64748b;margin:12px 0 4px}
+.txt{font-size:13px;color:#334155;line-height:1.66}
+.txt.ko{color:#64748b;margin-top:2px}
+.hl{color:#3f72bf}
+.pico{display:flex;flex-direction:column;gap:1px;background:#e9f2fd;border-radius:13px;overflow:hidden;margin-top:2px}
+.pr{display:flex;gap:10px;background:#fff;padding:11px 12px}
+.pk{width:24px;height:24px;border-radius:8px;background:#e9f2fd;color:#3f72bf;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+.pv{flex:1}
+.viz{background:#eef4fc;border:1px solid #e9f2fd;border-radius:14px;padding:14px;margin-top:2px}
+.viz-block{margin-top:2px}
+.viz-head{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.viz-title{font-size:11.5px;font-weight:800;color:#334155}
+.viz-tag{margin-left:auto;font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px}
+.bar-row{display:flex;align-items:center;gap:8px;margin:5px 0}
+.bar-lab{width:64px;flex:none;font-size:11px;color:#64748b;text-align:right}
+.bar-track{flex:1;height:18px;background:rgba(148,163,184,.16);border-radius:6px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:6px}
+.bar-val{position:absolute;left:8px;top:0;line-height:18px;font-size:10.5px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.bar-n{width:54px;flex:none;font-size:10px;color:#64748b;font-variant-numeric:tabular-nums}
+.sec-ul{margin:2px 0 0;padding:0;list-style:none}
+.sec-li{padding-left:10px;border-left:2px solid #e9f2fd;margin-bottom:7px}
+.gloss{margin-top:10px;background:#e9f2fd;border-radius:12px;padding:11px 13px;font-size:11.5px;color:#64748b;line-height:1.6}
+.gloss-h{font-weight:800;color:#3f72bf;margin-bottom:4px}
+.gloss-i{margin-bottom:2px}
+.gloss-i b{color:#3f72bf}
+.pc-ul{margin:2px 0 0;padding:0;list-style:none}
+.pc-li{display:flex;gap:8px;margin-bottom:7px}
+.pc-dot{width:6px;height:6px;border-radius:99px;background:#5b8fd9;flex:none;margin-top:7px}
+.lnk{color:#3f72bf;font-weight:700;text-decoration:none}
+.lnk:hover{text-decoration:underline}
+.pc-foot{margin-top:14px;padding-top:10px;border-top:1px solid #e9f2fd;font-size:11px;color:#94a3b8}
+.ft{text-align:center;font-size:10px;color:#94a3b8;padding:26px 20px 0}
+.ft a{color:#3f72bf}
 </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
-<header class="bg-gray-900 text-white">
-  <div class="max-w-2xl mx-auto px-4 pt-8 pb-6">
-    <div class="flex items-baseline gap-3 mb-1">
-      <h1 class="text-2xl font-black tracking-tight">EM/CCM Trend_Review</h1>
-      <span class="text-gray-500 text-[10px] font-semibold uppercase tracking-widest">Daily</span>
-    </div>
-    <p class="text-gray-500 text-xs mb-6">Emergency Medicine &amp; Critical Care Medicine · AI-Powered Literature Pipeline · PubMed 180-day window · 1 paper/day</p>
-    <div class="flex items-end gap-6">
-      <div><div class="stat-days-count text-3xl font-black tabular-nums">5</div><div class="text-gray-600 text-[10px] uppercase tracking-wider mt-0.5">Days</div></div>
-      <div class="w-px h-8 bg-gray-700 mb-1"></div>
-      <div><div class="stat-papers-count text-3xl font-black tabular-nums">5</div><div class="text-gray-600 text-[10px] uppercase tracking-wider mt-0.5">Papers</div></div>
-      <div class="w-px h-8 bg-gray-700 mb-1"></div>
-      <div class="mb-0.5"><div class="stat-updated-time text-sm font-semibold text-gray-300">2026. 06. 27.</div><div class="text-gray-600 text-[10px] uppercase tracking-wider mt-0.5">Last Updated</div></div>
-    </div>
+<body>
+<div class="wrap">
+  <header class="hd">
+    <div class="ey">AI Literature Pipeline · Claude Opus</div>
+    <h1>EM/CCM Trend Review</h1>
+    <div class="fn"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></span>180일 · 300편 스크리닝 → 1편/일 선정</div>
+  </header>
+  <div class="stats">
+    <div class="sc"><div class="n stat-days-count">1</div><div class="l">분석일수</div></div>
+    <div class="sc"><div class="n stat-papers-count">1</div><div class="l">선정 논문</div></div>
+    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">2026. 06. 29. 12:54</span></div><div class="l">최종 업데이트</div></div>
   </div>
-</header>
-<div class="max-w-2xl mx-auto px-3 py-5 space-y-3">
+  <div class="archive">
+<!-- ARCHIVE_START -->
 
-<!-- SECTION:2026-06-27 -->
-<details open class="rounded-xl overflow-hidden shadow-sm border-2 border-gray-900 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2.5">
-        <span class="bg-gray-900 text-white text-[12px] font-bold px-2 py-0.5 rounded-full">TODAY</span>
-        <span class="font-black text-gray-900 text-[18px]">2026-06-27</span>
-        <span class="text-gray-400 text-[14px]">· 1편</span>
-        <span class="text-gray-300 text-[12px] ml-auto">생성 2026. 06. 27. 07:00</span>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[18px] font-black text-gray-700 mt-1">① Cefazolin for Methicillin-Susceptible Staphylococcus aureus Bacteremia (SNAP Trial)</div>
-        <div class="text-[12px] text-gray-400 pl-3">N Engl J Med · 2026 · PMID 42308484</div>
-      </div>
+<!-- SECTION:2026-06-29 -->
+<details open class="day day-today">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="t-badge">TODAY</span><span class="day-date">2026-06-29</span>
+      <span class="day-cnt">· 1편</span>
+      <span class="day-gen">생성 2026. 06. 29. 12:54</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
     </div>
-    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="#7dabe8" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></span><div><div class="day-prev-t">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</div><div class="day-prev-m">N Engl J Med · 2026</div></div></div>
   </summary>
-  <div class="slide-in border-t-2 border-gray-900 divide-y divide-gray-100">
-    <details class="group">
-      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
-        <span class="w-7 h-7 rounded-full bg-gray-900 text-white text-[12px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-[16px] font-black text-blue-900 leading-snug">Cefazolin for Methicillin-Susceptible Staphylococcus aureus Bacteremia (SNAP Trial)</div>
-          <div class="text-[12px] text-gray-400 mt-0.5">N Engl J Med · 2026</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-[12px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">RCT</span>
-          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
-        <div class="text-[12px] text-gray-500">
-          <b class="text-gray-700">N Engl J Med</b> · 2026 · RCT · <a href="https://pubmed.ncbi.nlm.nih.gov/42308484/" target="_blank" class="text-blue-600 underline">PubMed 42308484</a>
-        </div>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Why It Matters</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Is cefazolin noninferior to antistaphylococcal penicillin for 90-day mortality in MSSA bacteremia, with implications for antibiotic choice and renal safety?</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">MSSA 균혈증에서 세파졸린은 항포도구균 페니실린 대비 90일 사망률 비열등하며, 신독성도 낮은가?</p>
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">PICO Framework</div>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">P — Patient</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Adult patients with penicillin-resistant, methicillin-susceptible S. aureus (MSSA) bacteremia (N=1,287; international multicenter Bayesian adaptive platform RCT, Feb 2022–Aug 2024)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">페니실린 내성·MSSA 균혈증 성인 환자 (N=1,287; 국제 다기관 베이지안 적응 플랫폼 RCT)</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">I — Intervention</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Cefazolin (dosing per site protocol)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">세파졸린 (기관별 프로토콜 용량)</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">C — Comparison</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Antistaphylococcal penicillin (flucloxacillin or cloxacillin)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">항포도구균 페니실린 (플루클록사실린 또는 클록사실린)</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">O — Outcome &amp; Results</div>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mb-0.5">Primary</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">90-day all-cause mortality: cefazolin 15.0% (97/645) vs penicillin 17.0% (109/642) — adjusted OR 0.81 (95% CrI 0.59–1.12); noninferiority probability 99.2%; superiority probability 89.8%</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">90일 전체사망률: 세파졸린 15.0% vs 항포도구균 페니실린 17.0% — OR 0.81 (95% CrI 0.59–1.12); 비열등 확률 99.2%; 우월 확률 89.8%</p>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mt-2 mb-0.5">Secondary</div>
-        <ul>
-          <li class="mb-1.5 pl-2.5 border-l-2 border-gray-200">
-            <p class="text-[13px] text-gray-800 leading-relaxed">Acute kidney injury within 14 days: 13.9% (92/660) vs 19.6% (127/648) — adjusted OR 0.67 (95% CrI 0.50–0.89); superiority probability 99.7%</p>
-            <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">14일 내 급성신손상: 13.9% vs 19.6% — OR 0.67 (95% CrI 0.50–0.89); 우월 확률 99.7%</p>
-          </li>
-        </ul>
-        <div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div><div class="mb-0.5"><b class="text-gray-600">베이지안 비열등성</b> — 비열등 확률 99.2% = 세파졸린의 OR &lt; 1.2(사망 차이 ≤2.5%p)일 사후 확률. 우월 확률 89.8% = 세파졸린이 실제로 더 좋을 확률.</div><div class="mb-0.5"><b class="text-gray-600">CrI(신용구간)</b> — 베이지안 불확실성 범위. 95% CrI 0.59–1.12 → 비열등성 기준(OR &lt; 1.2) 충족.</div></div>
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Critical Appraisal &amp; Applicability</div>
-        <div class="text-[13px] text-gray-800"><span class="font-bold text-blue-700">Internal Validity</span> — <b>Low Risk</b></div>
-        <div class="text-[13px] text-gray-600 mt-0.5"><span class="text-gray-500">Reason :</span> International multicenter Bayesian adaptive platform RCT. Pre-specified noninferiority margin (OR &lt; 1.2 ≈ absolute difference &lt; 2.5 pp). Hierarchical Bayesian logistic regression. Stopped per pre-specified stopping rule when criterion met.</div>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Limitations</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Open-label design. Flucloxacillin and cloxacillin pooled as one comparator. May not apply directly to nafcillin/oxacillin (US equivalents). Endocarditis subgroup analysis pending.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">개방표지 설계. 두 페니실린계를 단일 비교군 처리. 미국 동등 약물(나프실린/옥사실린)에 직접 적용 시 주의. 심내막염 아그룹 분석 미포함.</p>
-        <div class="text-[13px] text-gray-800 mt-2"><span class="font-bold text-blue-700">ED/CCM Applicability</span> — <b>적용 가능</b></div>
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Clinical Bottom Line</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Cefazolin is noninferior to antistaphylococcal penicillin for 90-day mortality in MSSA bacteremia (noninferiority 99.2%), with significantly lower acute kidney injury risk (OR 0.67, superiority 99.7%). Three-times-daily dosing combined with superior renal safety establishes cefazolin as the preferred first-line agent.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">MSSA 균혈증에서 세파졸린 90일 사망률 비열등성 확립(99.2%), 급성신손상 유의 감소(OR 0.67; 99.7%). 1일 3회 투여 편의 + 신독성 감소 → 세파졸린 1차 선택제 전환 근거 충분.</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Practice Change</div>
-        <ul class="mt-0.5">
-          <li class="mb-1.5 flex gap-1.5">
-            <span class="text-blue-700 font-bold flex-shrink-0">·</span>
-            <div>
-              <p class="text-[13px] text-gray-800 leading-relaxed">Update MSSA bacteremia treatment protocols to cefazolin as first-line, particularly for patients with renal risk factors (elderly, CKD, concurrent nephrotoxins). Antimicrobial stewardship programs should revise MSSA bacteremia pathways accordingly.</p>
-              <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">MSSA 균혈증 치료 프로토콜 세파졸린 1차로 전환. 신독성 고위험(고령, CKD, 병용 신독성 약물)에서 특히 유리. 항생제 스튜어드십 MSSA 균혈증 경로 업데이트 권장.</p>
-            </div>
-          </li>
-        </ul>
+  <div class="day-panel"><article class="paper-card">
+      <div class="pc-top">
+        <div class="medal"><svg viewBox="0 0 24 24" fill="#fff" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></div>
+        <div class="ttl">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</div>
+        <div class="ttle">Ultrasound-Facilitated, Catheter-Directed Fibrinolysis for Acute Pulmonary Embolism · HI-PEITHO Trial</div>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>N Engl J Med · 2026 · PMID 41910345</div>
+        <div class="chips"><span class="chip sc">9점</span><span class="chip ev">RCT</span><span class="chip ap">적용 가능</span></div>
       </div>
-    </details>
-  </div>
+      <div class="pc-body">
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>WHY IT MATTERS</div>
+        <p class="txt">In acute intermediate-risk pulmonary embolism with cardiorespiratory distress, does ultrasound-facilitated, catheter-directed fibrinolysis plus anticoagulation reduce early adverse outcomes compared with anticoagulation alone?</p><p class="txt ko">심폐 곤란 징후가 있는 중등도 위험 급성 폐색전증에서, 초음파-유도 카테터 혈전용해 + 항응고가 항응고 단독 대비 조기 악결과를 줄이는가?</p>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5b8fd9"/></svg></span>PICO</div>
+        <div class="pico">
+          <div class="pr"><span class="pk">P</span><div class="pv"><p class="txt">[Multinational] Adults with acute intermediate-risk PE (RV/LV end-diastolic diameter ratio ≥1.0 and elevated troponin) plus ≥2 signs of cardiorespiratory distress (SBP ≤110 mm Hg, HR ≥100 bpm, or RR &gt;20). N=544; mean age 58.2±13.5 yr; 42.6% women.</p><p class="txt ko">[다국가] 급성 중등도 위험 PE 성인 (우심실/좌심실 이완기말 직경비 ≥1.0 + 트로포닌 상승) + 심폐 곤란 징후 ≥2개(수축기혈압 ≤110, 심박수 ≥100, 호흡수 &gt;20). N=544, 평균 58.2±13.5세, 여성 42.6%.</p></div></div>
+          <div class="pr"><span class="pk">I</span><div class="pv"><p class="txt">Ultrasound-facilitated, catheter-directed fibrinolysis with alteplase plus anticoagulation, per prespecified protocol.</p><p class="txt ko">알테플라제를 이용한 초음파-유도 카테터 혈전용해 + 항응고 (사전 규정 프로토콜).</p></div></div>
+          <div class="pr"><span class="pk">C</span><div class="pv"><p class="txt">Anticoagulation alone.</p><p class="txt ko">항응고 단독.</p></div></div>
+          <div class="pr"><span class="pk">O</span><div class="pv"><p class="txt">Composite of PE-related death, cardiorespiratory decompensation/collapse, or symptomatic recurrent PE within 7 days: 4.0% (11/273) vs 10.3% (28/271); relative risk 0.39 (95% CI 0.20–0.77; P=0.005).</p><p class="txt ko">7일 내 PE 관련 사망·심폐 대상부전/허탈·증상성 재발 PE 복합: 4.0%(11/273) vs 10.3%(28/271); 상대위험 0.39 (95% CI 0.20–0.77; P=0.005).</p></div></div>
+        </div>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>핵심 결과</div>
+        <div class="viz"><div class="viz-block">
+    <div class="viz-head"><span class="viz-title">7일 복합 악결과</span><span class="viz-tag" style="color:#5b8fd9;background:#5b8fd91f">RR 0.39 · P=0.005</span></div>
+    <div class="bar-row">
+      <span class="bar-lab">혈전용해</span>
+      <div class="bar-track"><div class="bar-fill" style="width:32.9%;background:#5b8fd9"></div><span class="bar-val">4%</span></div>
+      <span class="bar-n">11/273</span></div><div class="bar-row">
+      <span class="bar-lab">항응고</span>
+      <div class="bar-track"><div class="bar-fill" style="width:84.7%;background:#cbd5e1"></div><span class="bar-val">10.3%</span></div>
+      <span class="bar-n">28/271</span></div></div><div style="height:10px"></div><div class="viz-block">
+    <div class="viz-head"><span class="viz-title">7일 대량출혈</span><span class="viz-tag" style="color:#3f9b86;background:#3f9b861f">P=0.32 · 차이 없음</span></div>
+    <div class="bar-row">
+      <span class="bar-lab">혈전용해</span>
+      <div class="bar-track"><div class="bar-fill" style="width:84.7%;background:#5fb3a0"></div><span class="bar-val">4.1%</span></div>
+      <span class="bar-n">11/273</span></div><div class="bar-row">
+      <span class="bar-lab">항응고</span>
+      <div class="bar-track"><div class="bar-fill" style="width:45.5%;background:#cbd5e1"></div><span class="bar-val">2.2%</span></div>
+      <span class="bar-n">6/271</span></div></div></div>
+        <div class="sub-h">2차 결과</div><ul class="sec-ul">
+      <li class="sec-li"><p class="txt">Major bleeding within 7 days: 4.1% (intervention) vs 2.2% (control), P=0.32; within 30 days 4.1% vs 3.0%, P=0.64.</p><p class="txt ko">7일 내 대량출혈: 중재군 4.1% vs 대조군 2.2% (P=0.32); 30일 4.1% vs 3.0% (P=0.64) — 유의한 차이 없음.</p></li>
+      <li class="sec-li"><p class="txt">No intracranial hemorrhage occurred in either group.</p><p class="txt ko">양 군 모두 두개내출혈은 발생하지 않음.</p></li>
+      <li class="sec-li"><p class="txt">The composite benefit was driven primarily by less cardiorespiratory decompensation or collapse.</p><p class="txt ko">복합 결과의 이득은 주로 심폐 대상부전/허탈 감소에서 비롯됨.</p></li></ul>
+        <div class="gloss"><div class="gloss-h">📊 통계 용어</div><div class="gloss-i"><b>RR</b> — 상대위험: 1보다 작으면 중재군에서 사건이 덜 발생. 예: RR 0.39 → 복합 악결과가 대조군의 약 39% 수준(약 61% 감소).</div><div class="gloss-i"><b>95% CI</b> — 95% 신뢰구간: 참값이 있을 가능성이 높은 범위. 예: 0.20–0.77 전체가 1 미만 → 통계적으로 유의한 감소.</div><div class="gloss-i"><b>P</b> — P값: 결과가 우연일 확률. 예: P=0.005 → 우연으로 보기 어려움(유의).</div></div>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M12 3v18M5 7h14M5 7l-3 6h6zM19 7l-3 6h6zM8 21h8"/></svg></span>비평적 평가</div>
+        <p class="txt"><b class="hl">Internal Validity</b> — Low Risk · 낮은 비뚤림</p>
+        <p class="txt ko">다국가 적응형 RCT, 7일 복합 임상결과와 안전성(두개내출혈 0건)을 명확히 보고 — 응급·중환자 PE 단계적 치료 결정에 직접 적용 가능.</p>
+        <div class="sub-h">제한점</div><p class="txt">Open-label intervention; the composite benefit was driven by the relatively subjective decompensation/collapse component; device-company funded; results apply to centers with catheter-directed therapy expertise and to patients meeting the specific eligibility criteria.</p><p class="txt ko">공개표지(open-label) 중재; 복합 결과의 이득이 비교적 주관적인 대상부전/허탈 요소에 주도됨; 기기회사(Boston Scientific) 후원; 카테터 치료 역량을 갖춘 기관과 특정 적격기준 환자에 한해 적용 가능.</p>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 결론</div>
+        <p class="txt">In carefully selected intermediate-risk PE with cardiorespiratory distress, ultrasound-facilitated catheter-directed fibrinolysis lowered early decompensation without excess major bleeding or any intracranial hemorrhage — a targeted escalation option between anticoagulation alone and systemic thrombolysis.</p><p class="txt ko">심폐 곤란을 동반한 선별된 중등도 위험 PE에서 초음파-유도 카테터 혈전용해는 대량출혈 증가나 두개내출혈 없이 조기 대상부전을 낮췄다. 항응고 단독과 전신 혈전용해 사이의 표적 단계적 치료 선택지를 제시한다.</p>
+        <div class="sub-h">Practice Change</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot"></span><div><p class="txt">Consider US-facilitated catheter-directed fibrinolysis for intermediate-risk PE with ≥2 markers of cardiorespiratory distress at centers with the expertise.</p><p class="txt ko">카테터 치료 역량이 있는 기관에서, 심폐 곤란 지표 ≥2개를 가진 중등도 위험 PE에 초음파-유도 카테터 혈전용해를 고려.</p></div></li>
+      <li class="pc-li"><span class="pc-dot"></span><div><p class="txt">Reserve for patients meeting the trial’s hemodynamic/imaging criteria; anticoagulation alone remains standard for lower-risk intermediate PE.</p><p class="txt ko">시험의 혈역학/영상 기준을 충족하는 환자에 한정; 더 낮은 위험의 중등도 PE는 항응고 단독이 여전히 표준.</p></div></li>
+      <li class="pc-li"><span class="pc-dot"></span><div><p class="txt">Activate a PE response team (PERT) for escalation and device decisions.</p><p class="txt ko">단계적 치료·기기 결정을 위해 PE 신속대응팀(PERT)을 가동.</p></div></li></ul>
+
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/41910345/" target="_blank" rel="noopener" class="lnk">PubMed 41910345</a> · <a href="https://doi.org/10.1056/NEJMoa2516567" target="_blank" rel="noopener" class="lnk">DOI</a> · RCT</div>
+      </div>
+    </article></div>
 </details>
-<!-- /SECTION:2026-06-27 -->
-
-<!-- SECTION:2026-06-26 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2.5">
-        <span class="font-black text-gray-900 text-[18px]">2026-06-26</span>
-        <span class="text-gray-400 text-[14px]">· 1편</span>
-        <span class="text-gray-300 text-[12px] ml-auto">생성 2026. 06. 26. 07:00</span>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[18px] font-black text-gray-700 mt-1">① Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</div>
-        <div class="text-[12px] text-gray-400 pl-3">N Engl J Med · 2025 · PMID 42150044</div>
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-  </summary>
-  <div class="slide-in border-t border-gray-200 divide-y divide-gray-100">
-    <details class="group">
-      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
-        <span class="w-7 h-7 rounded-full bg-gray-900 text-white text-[12px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-[16px] font-black text-blue-900 leading-snug">Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</div>
-          <div class="text-[12px] text-gray-400 mt-0.5">N Engl J Med · 2025</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-[12px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">RCT</span>
-          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
-        <div class="text-[12px] text-gray-500">
-          <b class="text-gray-700">N Engl J Med</b> · 2025 · RCT · <a href="https://pubmed.ncbi.nlm.nih.gov/42150044/" target="_blank" class="text-blue-600 underline">PubMed 42150044</a>
-        </div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Why It Matters</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Does prehospital Type O whole blood reduce 30-day mortality compared to component therapy in hemorrhagic trauma patients transported by helicopter?</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">병원 전 전혈 수혈이 혈액성분 수혈 대비 출혈성 외상 환자의 30일 사망률을 낮추는가?</p>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">PICO Framework</div>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">P — Patient</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Adults with suspected hemorrhagic shock transported by helicopter EMS (N = 1,020)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">헬기 이송 출혈성 쇼크 의심 성인 외상 환자 (N = 1,020)</p>
-        <div class="text-[13px] text-gray-700 mt-1"><b>n = 1020</b> · <span class="text-gray-500">Baseline —</span> <b>Hemorrhagic shock, SBP &lt; 90 mmHg</b></div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">I — Intervention</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Prehospital low-titer group O whole blood (LTOWB) transfusion</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">병원 전 저역가 O형 전혈(LTOWB) 수혈</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">C — Comparison</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Prehospital component therapy (packed red blood cells + plasma)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">혈액성분 제제 수혈 (농축 적혈구 + 혈장)</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">O — Outcome &amp; Results</div>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mb-0.5">Primary</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">30-day mortality: whole blood 25.9% vs component 20.5% (OR 1.24; 95% CI 0.87–1.76; P = 0.24) — no significant difference</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">30일 사망률: 전혈군 25.9% vs 성분수혈군 20.5% (OR 1.24; 95% CI 0.87–1.76; p = 0.24) — 유의한 차이 없음</p>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mt-2 mb-0.5">Secondary</div>
-        <ul>
-          <li class="mb-1.5 pl-2.5 border-l-2 border-gray-200">
-            <p class="text-[13px] text-gray-800 leading-relaxed">24-hour and in-hospital mortality similar between groups. Total blood product use lower in whole blood arm.</p>
-            <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">24시간 및 원내 사망률 양군 유사. 전혈군에서 전체 혈액제제 사용량 감소.</p>
-          </li>
-        </ul>
-        <div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div><div class="mb-0.5"><b class="text-gray-600">OR (Odds Ratio)</b> — 두 군의 사건 발생 오즈 비율. 1이면 차이 없음, 1보다 크면 위험 증가, 작으면 감소. 예: OR 1.24 → 전혈군이 성분수혈군 대비 사망 오즈 24% 높음 (95% CI 0.87–1.76이 1을 포함 → p = 0.24, 통계적으로 유의하지 않음)</div><div class="mb-0.5"><b class="text-gray-600">95% CI (신뢰구간)</b> — 참값이 95% 확률로 포함되는 범위. 예: OR 1.24 (CI 0.87–1.76) → CI가 1을 포함하므로 귀무가설 기각 불가 → 효과 없음으로 해석</div></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Critical Appraisal &amp; Applicability</div>
-        <div class="text-[13px] text-gray-800"><span class="font-bold text-blue-700">Internal Validity</span> — <b>Low Risk</b></div>
-        <div class="text-[13px] text-gray-600 mt-0.5"><span class="text-gray-500">Reason :</span> Multicenter RCT with pre-specified primary endpoint. Open-label design unavoidable given blood product difference. Intention-to-treat analysis.</div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Limitations</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Open-label; unable to blind field personnel. HEMS protocol variation across sites. Patients who died before hospital arrival excluded from analysis.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">개방표지 설계로 맹검 불가. 기관별 헬기 EMS 프로토콜 차이. 병원 도착 전 사망 환자 분석 제외.</p>
-        <div class="text-[13px] text-gray-800 mt-2"><span class="font-bold text-blue-700">ED Applicability</span> — <b>부분 적용</b></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Clinical Bottom Line</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Prehospital whole blood did not significantly reduce 30-day mortality vs component therapy in hemorrhagic trauma. Both prehospital blood strategies outperform no prehospital transfusion. Whole blood offers logistical advantages but does not supersede component therapy as standard of care.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">병원 전 전혈 수혈은 30일 사망률을 유의하게 낮추지 못했다. 두 군 모두 병원 전 수혈 미시행보다 생존 이점이 있다. 전혈의 물류적 단순성에도 불구하고 성분수혈이 동등한 표준 치료임이 확인됐다.</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Practice Change</div>
-        <ul class="mt-0.5">
-          <li class="mb-1.5 flex gap-1.5">
-            <span class="text-blue-700 font-bold flex-shrink-0">·</span>
-            <div>
-              <p class="text-[13px] text-gray-800 leading-relaxed">Maintain current prehospital transfusion protocols — whole blood is an acceptable option but does not require wholesale switch from component therapy.</p>
-              <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">현행 병원 전 수혈 프로토콜 유지. 전혈은 허용 가능한 대안이나 성분수혈 전환을 의무화할 근거는 없음.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
+<!-- /SECTION:2026-06-29 -->
   </div>
-</details>
-<!-- /SECTION:2026-06-26 -->
-
-<!-- SECTION:2026-06-25 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2.5">
-        <span class="font-black text-gray-900 text-[18px]">2026-06-25</span>
-        <span class="text-gray-400 text-[14px]">· 1편</span>
-        <span class="text-gray-300 text-[12px] ml-auto">생성 2026. 06. 25. 07:00</span>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[18px] font-black text-gray-700 mt-1">① 2025 Korean Guidelines for Cardiopulmonary Resuscitation. Part 4. Adult Advanced Life Support</div>
-        <div class="text-[12px] text-gray-400 pl-3">Clin Exp Emerg Med · 2025 · PMID 42297407</div>
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-  </summary>
-  <div class="slide-in border-t border-gray-200 divide-y divide-gray-100">
-    <details class="group">
-      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
-        <span class="w-7 h-7 rounded-full bg-gray-900 text-white text-[12px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-[16px] font-black text-blue-900 leading-snug">2025 Korean Guidelines for Cardiopulmonary Resuscitation. Part 4. Adult Advanced Life Support</div>
-          <div class="text-[12px] text-gray-400 mt-0.5">Clin Exp Emerg Med · 2025</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-[12px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">Guideline</span>
-          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
-        <div class="text-[12px] text-gray-500">
-          <b class="text-gray-700">Clin Exp Emerg Med</b> · 2025 · Guideline · <a href="https://pubmed.ncbi.nlm.nih.gov/42297407/" target="_blank" class="text-blue-600 underline">PubMed 42297407</a>
-        </div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Why It Matters</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">What are the 2025 Korean CPR guideline updates for adult advanced life support, and how do they differ from prior recommendations?</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">2025 한국 심폐소생술 가이드라인 성인 전문 소생술 주요 변경 사항은 무엇인가?</p>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">PICO Framework</div>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">P — Patient</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Adults with cardiac arrest (in- and out-of-hospital) requiring advanced life support interventions</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">심장정지 성인 환자 (원내·원외) 및 전문 소생술 시행 의료진</p>
-        <div class="text-[13px] text-gray-700 mt-1"><span class="text-gray-500">Baseline —</span> <b>Cardiac arrest requiring ALS</b></div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">I — Intervention</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Application of 2025 Korean CPR ALS guideline (epinephrine timing, TTM 32–36°C, ECPR expanded criteria, supraglottic airway first-line)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">2025 한국 CPR 가이드라인 전문 소생술 권고안 적용 (에피네프린 타이밍, TTM 32–36°C, ECPR 확대, 상후두기도기 우선)</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">C — Comparison</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">2020 Korean CPR guidelines and prior international guidelines (AHA/ERC 2020–2023)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">2020 한국 CPR 가이드라인 및 국제 지침 (AHA/ERC 2020–2023)</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">O — Outcome &amp; Results</div>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mb-0.5">Primary</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Guideline document — Key updates: early epinephrine for non-shockable rhythms; TTM 32–36°C maintained; expanded ECPR criteria for refractory VF; supraglottic airway preferred over immediate ETI in many settings</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">가이드라인 문서 — 주요 변경: 비제세동 리듬 조기 에피네프린; TTM 32–36°C 유지; 불응성 VF ECPR 기준 확대; 상후두기도기 우선 사용 권고</p>
-        <div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div><div class="mb-0.5"><b class="text-gray-600">ECPR (체외심폐소생술)</b> — 기존 CPR에 반응하지 않는 심장정지에 ECMO를 적용하는 기법. 적용 기준: 목격 심장정지, 초기 제세동 리듬(VF/pVT), 소생 시간 &lt; 60분, 가역적 원인 존재 시 권고</div><div class="mb-0.5"><b class="text-gray-600">TTM (목표체온관리)</b> — ROSC 후 신경보호 목적으로 체온 32–36°C 유지. 예: 목표 36°C 48시간 유지 → 고체온 유발 이차 뇌손상 예방</div></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Critical Appraisal &amp; Applicability</div>
-        <div class="text-[13px] text-gray-800"><span class="font-bold text-blue-700">Internal Validity</span> — <b>Low Risk</b></div>
-        <div class="text-[13px] text-gray-600 mt-0.5"><span class="text-gray-500">Reason :</span> Systematic evidence review with multidisciplinary expert consensus. Based on ILCOR CoSTR 2023 and Korean-specific epidemiologic data.</div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Limitations</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Guideline recommendations carry varying levels of evidence (Class I–IIb); some are consensus-based with limited RCT support in Korean populations.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">권고 근거 수준 다양 (Class I–IIb). 일부 권고는 한국 인구 대상 RCT 근거 부족.</p>
-        <div class="text-[13px] text-gray-800 mt-2"><span class="font-bold text-blue-700">ED Applicability</span> — <b>적용 가능</b></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Clinical Bottom Line</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">The 2025 Korean ALS guideline reinforces early epinephrine for PEA/asystole, expands ECPR access criteria, and recommends supraglottic airways as first-line airway in many resuscitation scenarios. TTM 32–36°C preserved.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">2025 한국 ALS 가이드라인: PEA/무수축 조기 에피네프린 강조, ECPR 적응증 확대, 상후두기도기 우선 권고. TTM 32–36°C 유지.</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Practice Change</div>
-        <ul class="mt-0.5">
-          <li class="mb-1.5 flex gap-1.5">
-            <span class="text-blue-700 font-bold flex-shrink-0">·</span>
-            <div>
-              <p class="text-[13px] text-gray-800 leading-relaxed">Review local ECPR activation criteria against expanded 2025 guideline thresholds; confirm team readiness for rapid cannulation in refractory VF.</p>
-              <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">ECPR 활성화 기준을 2025 가이드라인으로 업데이트. 불응성 VF 신속 삽관 팀 준비 상태 점검.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</details>
-<!-- /SECTION:2026-06-25 -->
-
-<!-- SECTION:2026-06-24 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2.5">
-        <span class="font-black text-gray-900 text-[18px]">2026-06-24</span>
-        <span class="text-gray-400 text-[14px]">· 1편</span>
-        <span class="text-gray-300 text-[12px] ml-auto">생성 2026. 06. 24. 07:00</span>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[18px] font-black text-gray-700 mt-1">① High-Flow Nasal Oxygen vs Standard Oxygen in Acute Hypoxemic Respiratory Failure in the ED (SOHO Trial)</div>
-        <div class="text-[12px] text-gray-400 pl-3">N Engl J Med · 2025 · PMID 41841715</div>
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-  </summary>
-  <div class="slide-in border-t border-gray-200 divide-y divide-gray-100">
-    <details class="group">
-      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
-        <span class="w-7 h-7 rounded-full bg-gray-900 text-white text-[12px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-[16px] font-black text-blue-900 leading-snug">High-Flow Nasal Oxygen vs Standard Oxygen in Acute Hypoxemic Respiratory Failure in the ED (SOHO Trial)</div>
-          <div class="text-[12px] text-gray-400 mt-0.5">N Engl J Med · 2025</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-[12px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">RCT</span>
-          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
-        <div class="text-[12px] text-gray-500">
-          <b class="text-gray-700">N Engl J Med</b> · 2025 · RCT · <a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" class="text-blue-600 underline">PubMed 41841715</a>
-        </div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Why It Matters</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Does high-flow nasal oxygen (HFNC) reduce the composite of intubation or 28-day mortality vs standard oxygen in ED patients with acute hypoxemic respiratory failure?</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">응급실 급성 저산소혈증 환자에서 HFNC가 표준 산소 대비 28일 기관삽관 또는 사망 복합 종점을 줄이는가?</p>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">PICO Framework</div>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">P — Patient</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Adults presenting to ED with acute hypoxemic respiratory failure (SpO₂ &lt; 94% on ≥ 6 L/min standard O₂, N = 700)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">응급실 내원 급성 저산소혈증 성인 환자 (표준 6 L/min 이상에서 SpO₂ &lt; 94%, N = 700)</p>
-        <div class="text-[13px] text-gray-700 mt-1"><b>n = 700</b> · <span class="text-gray-500">Baseline —</span> <b>SpO₂ &lt; 94% on standard O₂</b></div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">I — Intervention</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">High-flow nasal cannula (HFNC) at 60 L/min, FiO₂ titrated to SpO₂ ≥ 94%</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">고유량 비강 캐뉼라 (HFNC) 60 L/min, SpO₂ ≥ 94% 목표로 FiO₂ 조절</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">C — Comparison</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Standard oxygen via face mask, flow adjusted to maintain SpO₂ ≥ 94%</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">표준 산소 마스크, SpO₂ ≥ 94% 유지 목표</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">O — Outcome &amp; Results</div>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mb-0.5">Primary</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">28-day intubation or death: HFNC 22% vs standard O₂ 32% (OR 0.60; 95% CI 0.43–0.84; P = 0.003) — significant reduction</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">28일 기관삽관 또는 사망: HFNC 22% vs 표준 산소 32% (OR 0.60; 95% CI 0.43–0.84; P = 0.003) — 유의한 감소</p>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mt-2 mb-0.5">Secondary</div>
-        <ul>
-          <li class="mb-1.5 pl-2.5 border-l-2 border-gray-200">
-            <p class="text-[13px] text-gray-800 leading-relaxed">ICU admission rate reduced in HFNC group; time to intubation prolonged; 90-day mortality trend favoring HFNC (not statistically significant).</p>
-            <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">ICU 입원율 감소; 삽관까지 시간 연장; 90일 사망률 HFNC 경향 있으나 통계적으로 유의하지 않음.</p>
-          </li>
-        </ul>
-        <div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div><div class="mb-0.5"><b class="text-gray-600">OR (Odds Ratio)</b> — 두 군의 결과 발생 오즈 비율. 예: OR 0.60 → HFNC군이 표준 산소군 대비 삽관/사망 오즈 40% 낮음</div><div class="mb-0.5"><b class="text-gray-600">p값</b> — 귀무가설 하에서 이 결과가 우연히 나올 확률. 예: p = 0.003 → 0.3% 우연 확률 → 통계적으로 유의 (p &lt; 0.05 기준)</div></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Critical Appraisal &amp; Applicability</div>
-        <div class="text-[13px] text-gray-800"><span class="font-bold text-blue-700">Internal Validity</span> — <b>Low Risk</b></div>
-        <div class="text-[13px] text-gray-600 mt-0.5"><span class="text-gray-500">Reason :</span> Multicenter RCT with pre-specified primary endpoint and intention-to-treat analysis. Open-label unavoidable (device difference). Adequate statistical power.</div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Limitations</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Open-label design; clinician awareness of allocation may influence intubation timing. Heterogeneous etiology of hypoxemia. ED-specific results may not generalize to ICU.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">개방표지 설계로 삽관 결정 편향 가능. 저산소혈증 원인 이질적. ED 특이 결과로 ICU 적용 제한.</p>
-        <div class="text-[13px] text-gray-800 mt-2"><span class="font-bold text-blue-700">ED Applicability</span> — <b>적용 가능</b></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Clinical Bottom Line</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">HFNC significantly reduces intubation or 28-day death in ED patients with acute hypoxemic respiratory failure. This supports HFNC as first-line respiratory support over standard oxygen masks in this population.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">HFNC는 응급실 급성 저산소혈증에서 기관삽관 또는 28일 사망 복합 종점을 유의하게 감소시켰다. 표준 산소 마스크 대신 HFNC를 1차 호흡 지원으로 사용해야 함을 지지하는 강력한 근거다.</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Practice Change</div>
-        <ul class="mt-0.5">
-          <li class="mb-1.5 flex gap-1.5">
-            <span class="text-blue-700 font-bold flex-shrink-0">·</span>
-            <div>
-              <p class="text-[13px] text-gray-800 leading-relaxed">Initiate HFNC early for ED patients with acute hypoxemic respiratory failure failing standard oxygen; monitor closely for deterioration (ROX index decline) requiring escalation to NIV or intubation.</p>
-              <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">표준 산소 실패 시 조기 HFNC 적용. 악화 징후(ROX 지수 하락) 모니터링 → 필요 시 NIV 또는 기관삽관으로 escalation.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</details>
-<!-- /SECTION:2026-06-24 -->
-
-<!-- SECTION:2026-06-23 -->
-<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2.5">
-        <span class="font-black text-gray-900 text-[18px]">2026-06-23</span>
-        <span class="text-gray-400 text-[14px]">· 1편</span>
-        <span class="text-gray-300 text-[12px] ml-auto">생성 2026. 06. 23. 07:00</span>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[18px] font-black text-gray-700 mt-1">① Ketamine vs Etomidate for Rapid Sequence Intubation — A Randomized Clinical Trial</div>
-        <div class="text-[12px] text-gray-400 pl-3">N Engl J Med · 2025 · PMID 41369227</div>
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-  </summary>
-  <div class="slide-in border-t border-gray-200 divide-y divide-gray-100">
-    <details class="group">
-      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
-        <span class="w-7 h-7 rounded-full bg-gray-900 text-white text-[12px] font-bold flex items-center justify-center flex-shrink-0">01</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-[16px] font-black text-blue-900 leading-snug">Ketamine vs Etomidate for Rapid Sequence Intubation — A Randomized Clinical Trial</div>
-          <div class="text-[12px] text-gray-400 mt-0.5">N Engl J Med · 2025</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-[12px] border border-gray-800 text-gray-800 px-1.5 py-0.5 rounded-full">RCT</span>
-          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
-        <div class="text-[12px] text-gray-500">
-          <b class="text-gray-700">N Engl J Med</b> · 2025 · RCT · <a href="https://pubmed.ncbi.nlm.nih.gov/41369227/" target="_blank" class="text-blue-600 underline">PubMed 41369227</a>
-        </div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Why It Matters</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Does ketamine differ from etomidate in 28-day mortality when used as an induction agent for RSI in critically ill patients?</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">RSI 유도 마취제로 케타민과 에토미데이트가 중증 환자의 28일 사망률에 차이를 보이는가?</p>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">PICO Framework</div>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">P — Patient</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Critically ill adults requiring RSI in the ED or ICU (N = 1,050; multicenter)</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">응급실 또는 ICU에서 RSI가 필요한 중증 성인 환자 (N = 1,050; 다기관)</p>
-        <div class="text-[13px] text-gray-700 mt-1"><b>n = 1050</b> · <span class="text-gray-500">Baseline —</span> <b>Critically ill requiring RSI</b></div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">I — Intervention</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Ketamine 1.5 mg/kg IV for RSI induction</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">케타민 1.5 mg/kg IV RSI 유도</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">C — Comparison</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Etomidate 0.3 mg/kg IV for RSI induction</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">에토미데이트 0.3 mg/kg IV RSI 유도</p>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">O — Outcome &amp; Results</div>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mb-0.5">Primary</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">28-day mortality: ketamine 19.9% vs etomidate 18.2% (absolute difference 1.7%; 95% CI −3.2% to 6.5%; P = 0.49) — no significant difference</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">28일 사망률: 케타민 19.9% vs 에토미데이트 18.2% (차이 1.7%; 95% CI −3.2%–6.5%; p = 0.49) — 유의한 차이 없음</p>
-        <div class="text-[12px] font-bold text-gray-500 uppercase mt-2 mb-0.5">Secondary</div>
-        <ul>
-          <li class="mb-1.5 pl-2.5 border-l-2 border-gray-200">
-            <p class="text-[13px] text-gray-800 leading-relaxed">Adrenal suppression (cortisol blunting) more frequent in etomidate group at 12 h; no difference in hemodynamic profile, ventilator-free days, or ICU LOS.</p>
-            <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">에토미데이트군에서 12시간 코르티솔 억제 더 빈번; 혈역학, 인공호흡기 비사용일수, ICU 재원일수 차이 없음.</p>
-          </li>
-        </ul>
-        <div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div><div class="mb-0.5"><b class="text-gray-600">절대 위험 차이 (ARD)</b> — 두 군 사건 발생률의 단순 차이. 예: ARD 1.7% (CI −3.2%–6.5%) → CI가 0을 포함 → 통계적으로 유의하지 않음 (p = 0.49)</div><div class="mb-0.5"><b class="text-gray-600">부신 억제 (Adrenal Suppression)</b> — 에토미데이트는 11β-hydroxylase 억제로 단일 투여 후 24–48시간 코르티솔 억제. 예: 에토미데이트 투여 12시간 후 자극 코르티솔 &lt; 18 μg/dL → 상대적 부신 부전 진단 기준 도달</div></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Critical Appraisal &amp; Applicability</div>
-        <div class="text-[13px] text-gray-800"><span class="font-bold text-blue-700">Internal Validity</span> — <b>Low Risk</b></div>
-        <div class="text-[13px] text-gray-600 mt-0.5"><span class="text-gray-500">Reason :</span> Double-blind multicenter RCT with allocation concealment. Adequate power for primary endpoint. Pragmatic design reflecting real clinical practice.</div>
-
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Limitations</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Heterogeneous critically ill population (trauma, sepsis, respiratory failure). Mortality driven by underlying illness may mask drug-specific effects. Long-term endocrine outcomes not assessed.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">이질적 환자군 혼재. 기저 질환 사망 기여로 약물 효과 희석 가능. 장기 내분비 결과 미평가.</p>
-        <div class="text-[13px] text-gray-800 mt-2"><span class="font-bold text-blue-700">ED Applicability</span> — <b>적용 가능</b></div>
-
-        <div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">Clinical Bottom Line</div>
-        <p class="text-[13px] text-gray-800 leading-relaxed">Ketamine and etomidate show equivalent 28-day mortality in critically ill patients requiring RSI. Etomidate's adrenal suppression did not translate to worse outcomes. Either agent is appropriate; selection can be based on patient-specific hemodynamic context.</p>
-        <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">케타민과 에토미데이트는 28일 사망률에서 동등하다. 에토미데이트의 부신 억제는 임상 결과 악화로 이어지지 않았다. 두 약제 모두 적절한 RSI 선택지이며, 혈역학 상황에 따라 선택 가능하다.</p>
-        <div class="text-[15px] font-black text-blue-700 mt-3 mb-1">Practice Change</div>
-        <ul class="mt-0.5">
-          <li class="mb-1.5 flex gap-1.5">
-            <span class="text-blue-700 font-bold flex-shrink-0">·</span>
-            <div>
-              <p class="text-[13px] text-gray-800 leading-relaxed">No need to preferentially avoid etomidate due to adrenal suppression. Use ketamine in hemodynamic instability or bronchospasm; etomidate when ICP elevation or severe hypertension is a concern.</p>
-              <p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">부신 억제 우려로 에토미데이트 회피 불필요. 혈역학 불안정·기관지경련 → 케타민; 두개내압 상승·고혈압 → 에토미데이트.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</details>
-<!-- /SECTION:2026-06-23 -->
-
-</div>
-<!-- JOURNAL_TABLE_START -->
-<div class="max-w-2xl mx-auto px-3 pb-8 mt-2">
-  <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-    <div class="px-4 py-3.5 bg-gray-900 flex items-center gap-3">
-      <h2 class="text-sm font-bold text-white tracking-wide">Curated Journal Archive</h2>
-      <span class="ml-auto text-xs text-gray-500 tabular-nums">5 entries</span>
-    </div>
-    <div class="overflow-x-auto"><table class="w-full text-xs">
-      <thead><tr class="border-b border-gray-200">
-        <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider whitespace-nowrap w-20">Date</th>
-        <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider whitespace-nowrap w-28">Journal</th>
-        <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider whitespace-nowrap w-20">Published</th>
-        <th class="px-3 py-2.5 text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Article</th>
-      </tr></thead>
-      <tbody>
-        <tr class="border-t border-gray-100 hover:bg-gray-50"><td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-27</td><td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">N Engl J Med</td><td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">2026</td><td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42308484/" target="_blank" class="hover:underline hover:text-gray-900">Cefazolin for Methicillin-Susceptible Staphylococcus aureus Bacteremia (SNAP Trial)</a></td></tr>
-        <tr class="border-t border-gray-100 hover:bg-gray-50"><td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-26</td><td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">N Engl J Med</td><td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">2025</td><td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42150044/" target="_blank" class="hover:underline hover:text-gray-900">Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage</a></td></tr>
-        <tr class="border-t border-gray-100 hover:bg-gray-50"><td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-25</td><td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">Clin Exp Emerg Med</td><td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">2025</td><td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/42297407/" target="_blank" class="hover:underline hover:text-gray-900">2025 Korean Guidelines for CPR. Part 4. Adult Advanced Life Support</a></td></tr>
-        <tr class="border-t border-gray-100 hover:bg-gray-50"><td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-24</td><td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">N Engl J Med</td><td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">2025</td><td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" class="hover:underline hover:text-gray-900">High-Flow Nasal Oxygen vs Standard Oxygen in Acute Hypoxemic Respiratory Failure in the ED (SOHO Trial)</a></td></tr>
-        <tr class="border-t border-gray-100 hover:bg-gray-50"><td class="px-3 py-2 text-gray-400 whitespace-nowrap text-[10px]">2026-06-23</td><td class="px-3 py-2 font-semibold text-gray-800 text-[11px]">N Engl J Med</td><td class="px-3 py-2 text-gray-500 text-[10px] whitespace-nowrap">2025</td><td class="px-3 py-2 text-gray-600 text-[10px]"><a href="https://pubmed.ncbi.nlm.nih.gov/41369227/" target="_blank" class="hover:underline hover:text-gray-900">Ketamine vs Etomidate for Rapid Sequence Intubation — A Randomized Clinical Trial</a></td></tr>
-      </tbody>
-    </table></div>
-  </div>
-</div>
-<!-- JOURNAL_TABLE_END -->
-<div class="text-center text-[10px] text-gray-400 py-6 border-t border-gray-200 mt-2">
-  AI Literature Review Pipeline · Claude · PubMed 180일 · 1편/일 · <a href="https://njell85-spec.github.io/trend-review/" class="hover:underline">njell85-spec.github.io/trend-review</a>
+  <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일 · <a href="https://njell85-spec.github.io/trend-review/">njell85-spec.github.io/trend-review</a></div>
 </div>
 </body>
 </html>

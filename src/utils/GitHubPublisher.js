@@ -1,343 +1,406 @@
 /**
- * GitHubPublisher
- * 매일 실행 결과를 GitHub Pages의 index.html에 누적 업데이트
+ * GitHubPublisher — 매일 실행 결과를 GitHub Pages(index.html)에 누적 업데이트.
  *
- * 배포 전략: git push 우선, 프록시 차단 등으로 실패 시 GitHub REST API 폴백
- * (Node.js fetch는 Windows 시스템 프록시를 무시하므로 git CLI가 더 안정적)
+ * 디자인: "Sky" 파스텔 테마 (A/Aurora 베이스, 파스텔 스카이블루 키컬러).
+ * 자체 완결형(인라인 CSS) — Tailwind CDN 비의존.
+ *
+ * 배포: git push 우선 → 실패 시 GitHub REST API 폴백.
  */
 import { readFile, writeFile } from 'fs/promises';
 import { execSync } from 'child_process';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
 const API = 'https://api.github.com';
 
+// ── 디자인 토큰 (Sky 파스텔) ──────────────────────────────────────────────────
+const T = {
+  hd: 'radial-gradient(120% 90% at 0% 0%,#9ec7f5 0%,#7aa9ec 44%,#6f9be6 74%),radial-gradient(80% 70% at 100% 0%,#d9ecfd88 0%,transparent 60%)',
+  key: '#5b8fd9', key2: '#7dabe8', soft: '#e9f2fd', softTxt: '#3f72bf',
+  page: '#eef4fc', ey: '#e3effb', ink: '#0f172a', sub: '#64748b', muted: '#94a3b8',
+  sec: '#5fb3a0', secTag: '#3f9b86',
+  SANS: `'NanumSquare','NanumBarunGothic','NanumGothic','Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif`,
+};
+
+function esc(s) {
+  return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ── SVG 아이콘 ────────────────────────────────────────────────────────────────
+const IC = {
+  star: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="${c}" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>`,
+  book: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg>`,
+  bulb: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg>`,
+  target: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="${c}"/></svg>`,
+  pulse: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>`,
+  scale: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M12 3v18M5 7h14M5 7l-3 6h6zM19 7l-3 6h6zM8 21h8"/></svg>`,
+  filter: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>`,
+  chev: (c = 'currentColor') => `<svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg>`,
+};
+
+// ── 결과 비교 막대 (선택적; p.viz 있을 때만) ─────────────────────────────────
+function bars(v, accent, accentTag) {
+  const max = Math.max(v.a.v, v.b.v) * 1.18;
+  const w = (x) => `${(x / max * 100).toFixed(1)}%`;
+  const row = (x, col) => `<div class="bar-row">
+      <span class="bar-lab">${esc(x.l)}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${w(x.v)};background:${col}"></div><span class="bar-val">${x.v}%</span></div>
+      <span class="bar-n">${esc(x.n ?? '')}</span></div>`;
+  return `<div class="viz-block">
+    <div class="viz-head"><span class="viz-title">${esc(v.title)}</span><span class="viz-tag" style="color:${accentTag};background:${accentTag}1f">${esc(v.tag)}</span></div>
+    ${row(v.a, accent)}${row(v.b, '#cbd5e1')}</div>`;
+}
+
+// ── 영어 원문 + 한글 번역 병렬 ───────────────────────────────────────────────
+function enko(en, ko) {
+  return `<p class="txt">${esc(en ?? '—')}</p>${ko ? `<p class="txt ko">${esc(ko)}</p>` : ''}`;
+}
+
 export class GitHubPublisher {
   constructor({
-    token    = process.env.GITHUB_TOKEN,
-    owner    = process.env.GITHUB_OWNER,
-    repo     = process.env.GITHUB_REPO,
+    token = process.env.GITHUB_TOKEN,
+    owner = process.env.GITHUB_OWNER,
+    repo = process.env.GITHUB_REPO,
     repoPath = process.cwd(),
   } = {}) {
-    this.token    = token;
-    this.owner    = owner;
-    this.repo     = repo;
+    this.token = token;
+    this.owner = owner;
+    this.repo = repo;
     this.pagesUrl = `https://${owner}.github.io/${repo}/`;
     this._repoPath = repoPath;
   }
 
-  // ── git push (proxy 우회용 1순위 방법) ─────────────────────────────────────
+  // ── 라벨 헬퍼 ───────────────────────────────────────────────────────────────
+  static _evidenceShort(ev) {
+    return { 'Meta-analysis': 'Meta', 'Systematic Review': 'SR', Moderate: 'Mod', 'Very Low': 'V.Low' }[ev] ?? ev;
+  }
+  static _edApplicability(score) {
+    const s = Number(score);
+    if (s >= 8) return '적용 가능';
+    if (s >= 5) return '부분 적용';
+    return '적용 어려움';
+  }
+  static _internalValidity(ev) {
+    if (['High', 'RCT', 'Meta', 'Meta-analysis', 'Systematic Review'].includes(ev)) return 'Low Risk · 낮은 비뚤림';
+    if (['Moderate', 'Cohort', 'Validation'].includes(ev)) return 'Some Concerns · 일부 우려';
+    return 'High Risk · 높은 비뚤림';
+  }
+
+  // ── 논문 카드 ───────────────────────────────────────────────────────────────
+  _buildPaperCard(p) {
+    const paper = p.paper ?? {};
+    const title = paper.title ?? '제목 없음';
+    const titleKo = p.title_ko ?? p.clinicalQuestion_ko_title ?? '';
+    const journal = paper.journal ?? '';
+    const date = paper.pubDate ?? '';
+    const pmid = paper.pmid ?? '';
+    const pmurl = paper.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : '#');
+    const doi = paper.doi ?? '';
+    const trial = p.trial ?? '';
+    const score = p.clinicalApplicabilityScore ?? paper.scoringData?.score ?? '—';
+    const ev = p.evidenceLevel ?? paper.scoringData?.studyType ?? '—';
+    const studyType = paper.scoringData?.studyType ?? '';
+
+    const picoEn = p.pico ?? {};
+    const picoKo = p.pico_ko ?? {};
+
+    const secondary = (p.secondaryOutcomes ?? []).map((s, k) => `
+      <li class="sec-li"><p class="txt">${esc(s)}</p>${p.secondaryOutcomes_ko?.[k] ? `<p class="txt ko">${esc(p.secondaryOutcomes_ko[k])}</p>` : ''}</li>`).join('');
+
+    const glossary = (p.statGlossary ?? []).map(
+      (g) => `<div class="gloss-i"><b>${esc(g.term)}</b> — ${esc(g.explanation_ko)}</div>`).join('');
+
+    const practice = (p.practiceChange ?? []).map((t, k) => `
+      <li class="pc-li"><span class="pc-dot"></span><div><p class="txt">${esc(t)}</p>${p.practiceChange_ko?.[k] ? `<p class="txt ko">${esc(p.practiceChange_ko[k])}</p>` : ''}</div></li>`).join('');
+
+    const vizBlock = p.viz
+      ? `<div class="viz">${bars(p.viz.primary, T.key, T.key)}${p.viz.secondary ? `<div style="height:10px"></div>${bars(p.viz.secondary, T.sec, T.secTag)}` : ''}</div>`
+      : '';
+
+    const doiLink = doi ? ` · <a href="https://doi.org/${esc(doi)}" target="_blank" rel="noopener" class="lnk">DOI</a>` : '';
+
+    return `<article class="paper-card">
+      <div class="pc-top">
+        <div class="medal">${IC.star('#fff')}</div>
+        <div class="ttl">${esc(titleKo || title)}</div>
+        ${titleKo ? `<div class="ttle">${esc(title)}${trial ? ` · ${esc(trial)}` : ''}</div>` : (trial ? `<div class="ttle">${esc(trial)}</div>` : '')}
+        <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)} · ${esc(date)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
+        <div class="chips"><span class="chip sc">${esc(score)}점</span><span class="chip ev">${esc(GitHubPublisher._evidenceShort(ev))}</span><span class="chip ap">${esc(GitHubPublisher._edApplicability(score))}</span></div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl"><span class="i">${IC.bulb(T.key)}</span>WHY IT MATTERS</div>
+        ${enko(p.clinicalQuestion, p.clinicalQuestion_ko)}
+
+        <div class="lbl"><span class="i">${IC.target(T.key)}</span>PICO</div>
+        <div class="pico">
+          <div class="pr"><span class="pk">P</span><div class="pv">${enko(picoEn.population, picoKo.population)}</div></div>
+          <div class="pr"><span class="pk">I</span><div class="pv">${enko(picoEn.intervention, picoKo.intervention)}</div></div>
+          <div class="pr"><span class="pk">C</span><div class="pv">${enko(picoEn.comparison, picoKo.comparison)}</div></div>
+          <div class="pr"><span class="pk">O</span><div class="pv">${enko(picoEn.outcome, picoKo.outcome)}</div></div>
+        </div>
+
+        <div class="lbl"><span class="i">${IC.pulse(T.key)}</span>핵심 결과</div>
+        ${vizBlock}
+        ${secondary ? `<div class="sub-h">2차 결과</div><ul class="sec-ul">${secondary}</ul>` : ''}
+        ${glossary ? `<div class="gloss"><div class="gloss-h">📊 통계 용어</div>${glossary}</div>` : ''}
+
+        <div class="lbl"><span class="i">${IC.scale(T.key)}</span>비평적 평가</div>
+        <p class="txt"><b class="hl">Internal Validity</b> — ${esc(GitHubPublisher._internalValidity(ev))}</p>
+        ${paper.scoringData?.rationale ? `<p class="txt ko">${esc(paper.scoringData.rationale)}</p>` : ''}
+        ${(p.limitations || p.limitations_ko) ? `<div class="sub-h">제한점</div>${enko(p.limitations, p.limitations_ko)}` : ''}
+
+        <div class="lbl"><span class="i">${IC.bulb(T.key)}</span>임상 결론</div>
+        ${enko(p.clinicalTakeaway, p.clinicalTakeaway_ko)}
+        ${practice ? `<div class="sub-h">Practice Change</div><ul class="pc-ul">${practice}</ul>` : ''}
+
+        <div class="pc-foot"><a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed${pmid ? ` ${esc(pmid)}` : ''}</a>${doiLink}${studyType ? ` · ${esc(studyType)}` : ''}</div>
+      </div>
+    </article>`;
+  }
+
+  // ── 하루 섹션 (접이식) ──────────────────────────────────────────────────────
+  _buildSection(dateStr, generatedAt, topPapers, { isToday = false } = {}) {
+    const cards = topPapers.map((p) => this._buildPaperCard(p)).join('\n');
+    const previewTitle = topPapers[0]
+      ? (topPapers[0].title_ko || topPapers[0].paper?.title || '')
+      : '';
+    const previewMeta = topPapers[0]
+      ? `${topPapers[0].paper?.journal ?? ''} · ${topPapers[0].paper?.pubDate ?? ''}`
+      : '';
+    const cls = isToday ? 'day day-today' : 'day day-past';
+    const openAttr = isToday ? ' open' : '';
+    const badge = isToday ? '<span class="t-badge">TODAY</span>' : '';
+
+    return `
+<!-- SECTION:${dateStr} -->
+<details${openAttr} class="${cls}">
+  <summary class="day-sum">
+    <div class="day-head">
+      ${badge}<span class="day-date">${esc(dateStr)}</span>
+      <span class="day-cnt">· ${topPapers.length}편</span>
+      <span class="day-gen">생성 ${esc(generatedAt)}</span>
+      <span class="day-chev">${IC.chev(T.muted)}</span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal">${IC.star(T.key2)}</span><div><div class="day-prev-t">${esc(previewTitle)}</div><div class="day-prev-m">${esc(previewMeta)}</div></div></div>
+  </summary>
+  <div class="day-panel">${cards}</div>
+</details>
+<!-- /SECTION:${dateStr} -->`;
+  }
+
+  // 하위호환 별칭 (legacy 호출부)
+  _buildTodaySection(dateStr, generatedAt, topPapers) {
+    return this._buildSection(dateStr, generatedAt, topPapers, { isToday: true });
+  }
+
+  // ── 전체 페이지 스캐폴드 ────────────────────────────────────────────────────
+  buildPage(sectionsHtml, { days = 1, papers = 1, updated = '' } = {}) {
+    return `<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EM/CCM Trend Review</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:${T.SANS};line-height:1.5;background:${T.page};color:${T.ink}}
+.i{display:inline-block;vertical-align:middle}
+.wrap{max-width:460px;margin:0 auto;min-height:100vh;padding-bottom:34px}
+a{color:inherit}
+/* header */
+.hd{position:relative;padding:30px 22px 64px;overflow:hidden;color:#fff;background:${T.key};background-image:${T.hd}}
+.hd .ey{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:${T.ey};font-weight:800}
+.hd h1{font-size:23px;font-weight:800;margin-top:5px;letter-spacing:-.6px}
+.hd .fn{display:inline-flex;align-items:center;gap:7px;margin-top:12px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:99px;font-size:11px;font-weight:700}
+.hd .fn .i{width:13px;height:13px}
+.stats{display:flex;gap:10px;margin:-44px 18px 0;position:relative;z-index:2}
+.sc{flex:1;background:rgba(255,255,255,.92);border:1px solid #fff;border-radius:16px;padding:13px;text-align:center;box-shadow:0 12px 30px -8px ${T.key}40}
+.sc .n{font-size:21px;font-weight:800;color:${T.key};font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.sc .l{font-size:9px;color:${T.sub};margin-top:3px;letter-spacing:.5px;text-transform:uppercase}
+/* archive */
+.archive{padding:20px 18px 0;display:flex;flex-direction:column;gap:12px}
+details{border-radius:18px;overflow:hidden}
+.day-today{background:#fff;border:1.5px solid ${T.key};box-shadow:0 20px 50px -22px ${T.key}66}
+.day-past{background:#fff;border:1px solid ${T.soft};box-shadow:0 8px 22px -14px ${T.key}33}
+.day-sum{list-style:none;cursor:pointer;padding:15px 16px;display:block}
+.day-sum::-webkit-details-marker{display:none}
+.day-head{display:flex;align-items:center;gap:8px}
+.t-badge{background:linear-gradient(90deg,${T.key},${T.key2});color:#fff;font-size:10px;font-weight:800;padding:4px 10px;border-radius:7px;box-shadow:0 4px 12px -2px ${T.key}66}
+.day-date{font-weight:800;font-size:15px}
+.day-cnt{color:${T.muted};font-size:12px}
+.day-gen{color:${T.muted};font-size:10.5px;margin-left:auto}
+.day-chev{width:16px;height:16px;color:${T.muted};transition:transform .2s}
+details[open] .day-chev{transform:rotate(180deg)}
+.day-prev{display:flex;align-items:flex-start;gap:8px;margin-top:10px}
+.day-prev-medal{width:16px;height:16px;flex:none;margin-top:1px}
+.day-prev-t{font-size:13.5px;font-weight:800;line-height:1.35;color:${T.ink}}
+.day-prev-m{font-size:11px;color:${T.muted};margin-top:2px}
+details[open] .day-prev{display:none}
+.day-panel{padding:0 14px 14px}
+/* paper card */
+.paper-card{border-top:1px solid ${T.soft}}
+.pc-top{padding:18px 6px 16px}
+.medal{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#fbbf24,#f59e0b);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -6px #f59e0baa}
+.medal svg{width:22px;height:22px;color:#fff}
+.ttl{font-size:18px;font-weight:800;line-height:1.34;margin-top:12px;letter-spacing:-.3px}
+.ttle{font-size:11.5px;color:${T.muted};margin-top:5px}
+.meta{display:flex;align-items:center;gap:6px;font-size:11px;color:${T.sub};margin-top:9px}
+.meta .i{width:13px;height:13px}
+.chips{display:flex;gap:6px;margin-top:13px;flex-wrap:wrap}
+.chip{font-size:10.5px;font-weight:800;padding:5px 11px;border-radius:8px}
+.chip.sc{background:linear-gradient(90deg,${T.key},${T.key2});color:#fff}
+.chip.ev{background:${T.soft};color:${T.softTxt}}
+.chip.ap{background:#ecfdf5;color:#059669}
+.pc-body{padding:4px 6px 6px}
+.lbl{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:${T.key};letter-spacing:.5px;margin:18px 0 7px}
+.lbl .i{width:15px;height:15px}
+.sub-h{font-size:11px;font-weight:800;color:${T.sub};margin:12px 0 4px}
+.txt{font-size:13px;color:#334155;line-height:1.66}
+.txt.ko{color:${T.sub};margin-top:2px}
+.hl{color:${T.softTxt}}
+.pico{display:flex;flex-direction:column;gap:1px;background:${T.soft};border-radius:13px;overflow:hidden;margin-top:2px}
+.pr{display:flex;gap:10px;background:#fff;padding:11px 12px}
+.pk{width:24px;height:24px;border-radius:8px;background:${T.soft};color:${T.softTxt};flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+.pv{flex:1}
+.viz{background:${T.page};border:1px solid ${T.soft};border-radius:14px;padding:14px;margin-top:2px}
+.viz-block{margin-top:2px}
+.viz-head{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.viz-title{font-size:11.5px;font-weight:800;color:#334155}
+.viz-tag{margin-left:auto;font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px}
+.bar-row{display:flex;align-items:center;gap:8px;margin:5px 0}
+.bar-lab{width:64px;flex:none;font-size:11px;color:${T.sub};text-align:right}
+.bar-track{flex:1;height:18px;background:rgba(148,163,184,.16);border-radius:6px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:6px}
+.bar-val{position:absolute;left:8px;top:0;line-height:18px;font-size:10.5px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.bar-n{width:54px;flex:none;font-size:10px;color:${T.sub};font-variant-numeric:tabular-nums}
+.sec-ul{margin:2px 0 0;padding:0;list-style:none}
+.sec-li{padding-left:10px;border-left:2px solid ${T.soft};margin-bottom:7px}
+.gloss{margin-top:10px;background:${T.soft};border-radius:12px;padding:11px 13px;font-size:11.5px;color:${T.sub};line-height:1.6}
+.gloss-h{font-weight:800;color:${T.softTxt};margin-bottom:4px}
+.gloss-i{margin-bottom:2px}
+.gloss-i b{color:${T.softTxt}}
+.pc-ul{margin:2px 0 0;padding:0;list-style:none}
+.pc-li{display:flex;gap:8px;margin-bottom:7px}
+.pc-dot{width:6px;height:6px;border-radius:99px;background:${T.key};flex:none;margin-top:7px}
+.lnk{color:${T.softTxt};font-weight:700;text-decoration:none}
+.lnk:hover{text-decoration:underline}
+.pc-foot{margin-top:14px;padding-top:10px;border-top:1px solid ${T.soft};font-size:11px;color:${T.muted}}
+.ft{text-align:center;font-size:10px;color:${T.muted};padding:26px 20px 0}
+.ft a{color:${T.softTxt}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hd">
+    <div class="ey">AI Literature Pipeline · Claude Opus</div>
+    <h1>EM/CCM Trend Review</h1>
+    <div class="fn"><span class="i">${IC.filter('#fff')}</span>180일 · 300편 스크리닝 → 1편/일 선정</div>
+  </header>
+  <div class="stats">
+    <div class="sc"><div class="n stat-days-count">${days}</div><div class="l">분석일수</div></div>
+    <div class="sc"><div class="n stat-papers-count">${papers}</div><div class="l">선정 논문</div></div>
+    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">${esc(updated)}</span></div><div class="l">최종 업데이트</div></div>
+  </div>
+  <div class="archive">
+<!-- ARCHIVE_START -->
+${sectionsHtml}
+  </div>
+  <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일 · <a href="${this.pagesUrl}">${this.owner ?? 'njell85-spec'}.github.io/${this.repo ?? 'trend-review'}</a></div>
+</div>
+</body>
+</html>`;
+  }
+
+  // ── git push ────────────────────────────────────────────────────────────────
   _gitPush(dateStr) {
     const cwd = this._repoPath;
-    execSync('git add index.html', { cwd, stdio: 'pipe' });
+    execSync('git add index.html output/selected_papers.json', { cwd, stdio: 'pipe' });
     const diff = execSync('git diff --staged --name-only', { cwd, encoding: 'utf8' }).trim();
     if (!diff) return;
     execSync(`git commit -m "Update archive: ${dateStr}"`, { cwd, stdio: 'pipe' });
-
     try {
-      // 1순위: 일반 git push (GitHub Actions의 경우 actions/checkout@v4가 인증 설정)
       execSync('git push', { cwd, stdio: 'pipe' });
     } catch {
-      if (!this.token) throw new Error('git push 실패: 자격증명 없음 (GITHUB_TOKEN 미설정)');
-      // 2순위: 토큰 내장 HTTPS URL → 로컬에서 credential 만료 시 우회
+      if (!this.token) throw new Error('git push 실패: GITHUB_TOKEN 미설정');
       const remote = `https://x-access-token:${this.token}@github.com/${this.owner}/${this.repo}.git`;
       execSync(`git push ${remote} HEAD:main`, { cwd, stdio: 'pipe' });
     }
   }
 
-  async _req(path, method = 'GET', body = null) {
-    const res = await fetch(`${API}${path}`, {
+  async _req(p, method = 'GET', body = null) {
+    const res = await fetch(`${API}${p}`, {
       method,
-      headers: {
-        Authorization: `token ${this.token}`,
-        'Content-Type': 'application/json',
-        Accept: 'application/vnd.github+json',
-      },
+      headers: { Authorization: `token ${this.token}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github+json' },
       ...(body ? { body: JSON.stringify(body) } : {}),
     });
-    if (!res.ok) {
-      const err = await res.text();
-      throw new Error(`GitHub API ${method} ${path} → ${res.status}: ${err}`);
-    }
+    if (!res.ok) throw new Error(`GitHub API ${method} ${p} → ${res.status}: ${await res.text()}`);
     return res.status === 204 ? null : res.json();
   }
 
   async _getIndex() {
-    // 로컬 파일 우선 (git push 경로), 없으면 API 폴백
     const localPath = path.join(this._repoPath, 'index.html');
     try {
-      const html = await readFile(localPath, 'utf8');
-      return { sha: null, html };
-    } catch {
-      // 로컬 없으면 API에서 읽기
-    }
+      return { sha: null, html: await readFile(localPath, 'utf8') };
+    } catch { /* fall through to API */ }
     try {
       const data = await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`);
-      return {
-        sha: data.sha,
-        html: Buffer.from(data.content, 'base64').toString('utf8'),
-      };
+      return { sha: data.sha, html: Buffer.from(data.content, 'base64').toString('utf8') };
     } catch {
       return { sha: null, html: null };
     }
   }
 
-  // ── Static helpers (ReportGeneratorAgent.js 동기화) ──────────────────────
-
-  static _extractN(populationText) {
-    const m = (populationText ?? '').match(/n\s*[=:]\s*([\d,]+)/i)
-      ?? (populationText ?? '').match(/([\d,]+)\s*(?:patients|participants|children|encounters|hospitalizations|adults|subjects)/i);
-    return m ? m[1] : null;
-  }
-
-  static _internalValidityLabel(ev) {
-    if (['High', 'RCT', 'Meta', 'Meta-analysis', 'Systematic Review'].includes(ev))
-      return { label: 'Low Risk', cls: 'bg-gray-900 text-white' };
-    if (['Moderate', 'Cohort', 'Validation'].includes(ev))
-      return { label: 'Some Concerns', cls: 'bg-gray-600 text-white' };
-    return { label: 'High Risk', cls: 'bg-gray-300 text-gray-800' };
-  }
-
-  static _edApplicabilityLabel(score) {
-    const s = Number(score);
-    if (s >= 8) return { label: '적용 가능', cls: 'bg-gray-900 text-white' };
-    if (s >= 5) return { label: '부분 적용', cls: 'bg-gray-600 text-white' };
-    return { label: '적용 어려움', cls: 'bg-gray-300 text-gray-800' };
-  }
-
-  // ── Section builder ───────────────────────────────────────────────────────
-
-  _buildTodaySection(dateStr, generatedAt, topPapers) {
-    const numBg  = ['bg-gray-900', 'bg-gray-600', 'bg-gray-400'];
-    const evStyle = {
-      High:               'border border-gray-800 text-gray-800',
-      Moderate:           'border border-gray-400 text-gray-600',
-      Low:                'border border-gray-300 text-gray-400',
-      'Very Low':         'border border-gray-200 text-gray-400',
-      RCT:                'border border-gray-800 text-gray-800',
-      Meta:               'border border-gray-800 text-gray-800',
-      'Meta-analysis':    'border border-gray-800 text-gray-800',
-      'Systematic Review':'border border-gray-800 text-gray-800',
-      Cohort:             'border border-gray-400 text-gray-600',
-      Validation:         'border border-gray-400 text-gray-600',
-      Review:             'border border-gray-300 text-gray-400',
-      Other:              'border border-gray-200 text-gray-400',
-    };
-
-    const summaryList = topPapers.slice(0, 3).map((p, i) => {
-      const circ  = ['①','②','③'][i];
-      const title   = p.paper?.title ?? '제목 없음';
-      const journal = p.paper?.journal ?? '';
-      const date    = p.paper?.pubDate ?? '';
-      const pmid    = p.paper?.pmid ?? '';
-      return `
-        <div class="text-[18px] font-black text-gray-700 mt-1">${circ} ${_esc(title)}</div>
-        <div class="text-[12px] text-gray-400 pl-3">${_esc(journal)} · ${_esc(date)}${pmid ? ` · PMID ${pmid}` : ''}</div>`;
-    }).join('');
-
-    const paperCards = topPapers.slice(0, 3).map((p, i) => {
-      const nb      = numBg[i];
-      const title   = p.paper?.title ?? '제목 없음';
-      const journal = p.paper?.journal ?? '';
-      const date    = p.paper?.pubDate ?? '';
-      const pmid    = p.paper?.pmid ?? '';
-      const pmurl   = p.paper?.pubmedUrl ?? '#';
-      const studyType = p.paper?.scoringData?.studyType ?? '';
-      const score   = p.clinicalApplicabilityScore ?? '—';
-      const ev      = p.evidenceLevel ?? '—';
-      const evCls   = evStyle[ev] ?? 'border border-gray-300 text-gray-400';
-      const evShort = { 'Meta-analysis':'Meta','Systematic Review':'SR','Moderate':'Mod','Very Low':'V.Low' }[ev] ?? ev;
-
-      const picoEn = p.pico ?? {};
-      const picoKo = p.pico_ko ?? {};
-      const baseline = p.baseline ?? 'Not reported';
-      const nVal = GitHubPublisher._extractN(picoEn.population ?? picoKo.population ?? '');
-      const validity = GitHubPublisher._internalValidityLabel(ev);
-      const edApply  = GitHubPublisher._edApplicabilityLabel(score);
-
-      // 영어 원문(위) + 한글 번역(아래) 병렬 — 동일 양식, 블록 장식 없음
-      const enKo = (en, ko) => `
-        <p class="text-[13px] text-gray-800 leading-relaxed">${_esc(en ?? '—')}</p>
-        ${ko ? `<p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">${_esc(ko)}</p>` : ''}`;
-      const subhead = (label) => `<div class="text-[15px] font-black text-blue-700 mt-3 mb-1">${label}</div>`;
-      const sectionTitle = (label) => `<div class="text-[16px] font-black text-blue-900 mt-4 mb-1.5 pb-1 border-b border-gray-200">${label}</div>`;
-
-      const secondaryItems = (p.secondaryOutcomes ?? []).map((s, k) => `
-        <li class="mb-1.5 pl-2.5 border-l-2 border-gray-200">
-          <p class="text-[13px] text-gray-800 leading-relaxed">${_esc(s)}</p>
-          ${p.secondaryOutcomes_ko?.[k] ? `<p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">${_esc(p.secondaryOutcomes_ko[k])}</p>` : ''}
-        </li>`).join('');
-
-      const glossaryItems = (p.statGlossary ?? []).map(
-        (g) => `<div class="mb-0.5"><b class="text-gray-600">${_esc(g.term)}</b> — ${_esc(g.explanation_ko)}</div>`
-      ).join('');
-      const glossaryBlock = glossaryItems
-        ? `<div class="mt-2 bg-gray-50 rounded-lg px-3 py-2 text-[12px] text-gray-500 leading-relaxed"><div class="font-bold text-gray-600 mb-1">📊</div>${glossaryItems}</div>`
-        : '';
-
-      const practiceItems = (p.practiceChange ?? []).map((t, k) => `
-        <li class="mb-1.5 flex gap-1.5">
-          <span class="text-blue-700 font-bold flex-shrink-0">·</span>
-          <div>
-            <p class="text-[13px] text-gray-800 leading-relaxed">${_esc(t)}</p>
-            ${p.practiceChange_ko?.[k] ? `<p class="text-[13px] text-gray-500 leading-relaxed mt-0.5">${_esc(p.practiceChange_ko[k])}</p>` : ''}
-          </div>
-        </li>`).join('');
-
-      const numBadge = (i + 1).toString().padStart(2, '0');
-      const doiLink = p.paper?.doi
-        ? ` · <a href="https://doi.org/${_esc(p.paper.doi)}" target="_blank" class="text-blue-600 underline">DOI</a>`
-        : '';
-
-      return `
-    <details class="group">
-      <summary class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition select-none">
-        <span class="w-7 h-7 rounded-full ${nb} text-white text-[12px] font-bold flex items-center justify-center flex-shrink-0">${numBadge}</span>
-        <div class="flex-1 min-w-0">
-          <div class="text-[16px] font-black text-blue-900 leading-snug">${_esc(title)}</div>
-          <div class="text-[12px] text-gray-400 mt-0.5">${_esc(journal)} · ${_esc(date)}</div>
-        </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <span class="text-[12px] ${evCls} px-1.5 py-0.5 rounded-full">${evShort}</span>
-          <svg class="chev w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </div>
-      </summary>
-      <div class="slide-in px-4 pb-4 pt-2 bg-gray-50/60">
-        <div class="text-[12px] text-gray-500">
-          <b class="text-gray-700">${_esc(journal)}</b> · ${_esc(date)}${studyType ? ` · ${_esc(studyType)}` : ''} · <a href="${pmurl}" target="_blank" class="text-blue-600 underline">PubMed${pmid ? ` ${pmid}` : ''}</a>${doiLink}
-        </div>
-
-        ${subhead('Why It Matters')}
-        ${enKo(p.clinicalQuestion, p.clinicalQuestion_ko)}
-
-        ${sectionTitle('PICO Framework')}
-        ${subhead('P — Patient')}
-        ${enKo(picoEn.population, picoKo.population)}
-        <div class="text-[13px] text-gray-700 mt-1">${nVal ? `<b>n = ${_esc(nVal)}</b> · ` : ''}<span class="text-gray-500">Baseline —</span> <b>${_esc(baseline)}</b></div>
-        ${subhead('I — Intervention')}
-        ${enKo(picoEn.intervention, picoKo.intervention)}
-        ${subhead('C — Comparison')}
-        ${enKo(picoEn.comparison, picoKo.comparison)}
-        ${subhead('O — Outcome & Results')}
-        <div class="text-[12px] font-bold text-gray-500 uppercase mb-0.5">Primary</div>
-        ${enKo(picoEn.outcome, picoKo.outcome)}
-        ${secondaryItems ? `<div class="text-[12px] font-bold text-gray-500 uppercase mt-2 mb-0.5">Secondary</div><ul>${secondaryItems}</ul>` : ''}
-        ${glossaryBlock}
-
-        ${sectionTitle('Critical Appraisal & Applicability')}
-        <div class="text-[13px] text-gray-800"><span class="font-bold text-blue-700">Internal Validity</span> — <b>${_esc(validity.label)}</b></div>
-        ${p.paper?.scoringData?.rationale ? `<div class="text-[13px] text-gray-600 mt-0.5"><span class="text-gray-500">Reason :</span> ${_esc(p.paper.scoringData.rationale)}</div>` : ''}
-        ${subhead('Limitations')}
-        ${enKo(p.limitations, p.limitations_ko)}
-        <div class="text-[13px] text-gray-800 mt-2"><span class="font-bold text-blue-700">ED Applicability</span> — <b>${_esc(edApply.label)}</b></div>
-
-        ${sectionTitle('Clinical Bottom Line')}
-        ${enKo(p.clinicalTakeaway, p.clinicalTakeaway_ko)}
-        ${practiceItems ? `${subhead('Practice Change')}<ul class="mt-0.5">${practiceItems}</ul>` : ''}
-      </div>
-    </details>`;
-    }).join('');
-
-    return `
-<!-- SECTION:${dateStr} -->
-<details open class="rounded-xl overflow-hidden shadow-sm border-2 border-gray-900 bg-white">
-  <summary class="px-4 py-3.5 flex items-start gap-3 hover:bg-gray-50 transition select-none">
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2.5">
-        <span class="bg-gray-900 text-white text-[12px] font-bold px-2 py-0.5 rounded-full">TODAY</span>
-        <span class="font-black text-gray-900 text-[18px]">${dateStr}</span>
-        <span class="text-gray-400 text-[14px]">· ${topPapers.length}편</span>
-        <span class="text-gray-300 text-[12px] ml-auto">생성 ${_esc(generatedAt)}</span>
-      </div>
-      <div class="space-y-1">${summaryList}
-      </div>
-    </div>
-    <svg class="chev w-4 h-4 text-gray-400 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-  </summary>
-  <div class="slide-in border-t-2 border-gray-900 divide-y divide-gray-100">
-    ${paperCards}
-  </div>
-</details>
-<!-- /SECTION:${dateStr} -->`;
-  }
-
+  // ── 누적 업데이트 ────────────────────────────────────────────────────────────
   async publish(dateStr, topPapers) {
-    const { sha, html } = await this._getIndex();
-
-    if (!html) {
-      throw new Error('index.html을 GitHub에서 가져올 수 없습니다');
-    }
-
+    const { sha, html: existing } = await this._getIndex();
     const generatedAt = new Date().toLocaleString('ko-KR', {
-      timeZone: 'Asia/Seoul',
-      year: 'numeric', month: '2-digit', day: '2-digit',
-      hour: '2-digit', minute: '2-digit', hour12: false,
+      timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
     });
 
-    // 같은 날짜의 기존 섹션 제거 (재실행 시 중복 방지)
-    const dupSection = new RegExp(
-      `<!-- SECTION:${dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} -->[\\s\\S]*?<!-- /SECTION:${dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} -->`,
-      'g'
-    );
-    const deduped = html.replace(dupSection, '');
+    const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true });
 
-    // 기존 TODAY 배지 제거, 섹션을 past 스타일로 전환
-    let updated = deduped
-      .replace(/<span class="bg-gray-900 text-white text-\[12px\] font-bold px-2 py-0\.5 rounded-full">TODAY<\/span>/g, '')
-      .replace(/<details open class="rounded-xl overflow-hidden shadow-sm border-2 border-gray-900 bg-white">/g,
-               '<details class="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-white">')
-      .replace(/class="slide-in border-t-2 border-gray-900 divide-y divide-gray-100"/g,
-               'class="slide-in border-t border-gray-200 divide-y divide-gray-100"');
+    let updated;
+    if (!existing || !existing.includes('<!-- ARCHIVE_START -->')) {
+      // 최초 생성 (또는 구버전 스캐폴드) → 전체 페이지를 새 디자인으로 생성
+      updated = this.buildPage(todaySection, { days: 1, papers: topPapers.length, updated: generatedAt });
+    } else {
+      // 같은 날짜 섹션 제거
+      const escDate = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const dup = new RegExp(`\\n?<!-- SECTION:${escDate} -->[\\s\\S]*?<!-- /SECTION:${escDate} -->`, 'g');
+      let body = existing.replace(dup, '');
+      // 이전 TODAY → past 로 강등
+      body = body
+        .replace(/<details open class="day day-today">/g, '<details class="day day-past">')
+        .replace(/<span class="t-badge">TODAY<\/span>/g, '');
+      // 새 TODAY 삽입
+      body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}`);
+      // 통계 갱신
+      const dayCount = (body.match(/<!-- SECTION:/g) ?? []).length;
+      const paperCount = (body.match(/class="paper-card"/g) ?? []).length || dayCount;
+      body = body
+        .replace(/<div class="n stat-days-count">[^<]*<\/div>/, `<div class="n stat-days-count">${dayCount}</div>`)
+        .replace(/<span class="stat-updated-time">[^<]*<\/span>/, `<span class="stat-updated-time">${generatedAt}</span>`)
+        .replace(/<div class="n stat-papers-count">[^<]*<\/div>/, `<div class="n stat-papers-count">${paperCount}</div>`);
+      updated = body;
+    }
 
-    // 새 TODAY 섹션을 아카이브 컨테이너 맨 위에 삽입
-    const todaySection = this._buildTodaySection(dateStr, generatedAt, topPapers);
-    updated = updated.replace(
-      /(<div class="max-w-2xl mx-auto px-3 py-5 space-y-3">)/,
-      `$1\n${todaySection}`
-    );
-
-    // 통계 업데이트 — 하루 1편 셀렉 기준. 실제 논문 카드 수를 세어 topN 변화에도 견고하게.
-    const dayCount   = (updated.match(/<!-- SECTION:/g) ?? []).length;
-    const paperCount = (updated.match(/class="w-7 h-7 rounded-full/g) ?? []).length || dayCount;
-    updated = updated
-      .replace(/<div class="stat-days-count[^"]*">\d+<\/div>/,
-               `<div class="stat-days-count text-3xl font-black tabular-nums">${dayCount}</div>`)
-      .replace(/<div class="stat-papers-count[^"]*">\d+<\/div>/,
-               `<div class="stat-papers-count text-3xl font-black tabular-nums">${paperCount}</div>`)
-      .replace(/<div class="stat-updated-time[^"]*">[^<]+<\/div>/,
-               `<div class="stat-updated-time text-sm font-semibold text-gray-300">${generatedAt}</div>`);
-
-    // ── 배포: git push 우선 → API 폴백 ────────────────────────────────────────
     const localPath = path.join(this._repoPath, 'index.html');
     await writeFile(localPath, updated, 'utf8');
 
     try {
       this._gitPush(dateStr);
       return this.pagesUrl;
-    } catch (gitErr) {
-      // git 실패 시 REST API 폴백 (sha 필요)
+    } catch {
       let apisha = sha;
       if (!apisha) {
-        try {
-          const remote = await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`);
-          apisha = remote.sha;
-        } catch { /* sha 없으면 API도 실패할 것 */ }
+        try { apisha = (await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`)).sha; } catch { /* */ }
       }
-      const content = Buffer.from(updated, 'utf8').toString('base64');
       await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`, 'PUT', {
         message: `Update archive: ${dateStr}`,
-        content,
+        content: Buffer.from(updated, 'utf8').toString('base64'),
         sha: apisha,
       });
       return this.pagesUrl;
     }
   }
-}
-
-function _esc(str) {
-  return String(str ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }
