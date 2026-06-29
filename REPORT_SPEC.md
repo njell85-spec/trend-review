@@ -60,6 +60,15 @@
 
 구현: `FullTextAgent._augment()`(레지스트리), `FilterAnalyzerAgent`(프롬프트 규칙 + `_provenance()` 배지/출처), `GitHubPublisher`(배지·출처 박스 렌더).
 
+## 4-D. 카카오 나챗방 발송 (무인)
+
+데일리 리포트는 **카카오 일반 REST API "나에게 보내기"** 로 발송 (MCP/세션 불필요 → Actions에서 무인).
+- 모듈: `src/agents/KakaoNotifier.js` (`github-actions-daily.mjs`가 배포 후 호출, 실패해도 파이프라인 성공).
+- 엔드포인트: `/v2/api/talk/memo/default/send` (text 템플릿 + 링크 버튼).
+- Secrets: `KAKAO_REST_API_KEY`, `KAKAO_REFRESH_TOKEN`(필수), `KAKAO_CLIENT_SECRET`(앱 설정 시).
+- refresh 토큰은 매 실행 시 access 토큰으로 갱신. 카카오가 refresh를 회전시키면 로그 경고 → secret 갱신.
+- 미설정 시 발송만 건너뜀(파이프라인 정상). 이메일은 사용 안 함(PeterJ 미확인).
+
 ## 4-C. 자동화(GitHub Actions) 인증
 
 분석 LLM 호출은 **claude CLI(구독)** 우선, 없으면 **Anthropic API** 폴백.
