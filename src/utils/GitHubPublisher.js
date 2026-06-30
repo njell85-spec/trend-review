@@ -85,13 +85,21 @@ export class GitHubPublisher {
     return 'High Risk · 높은 비뚤림';
   }
 
+  // 발행일 표기: 가능하면 연-월(YYYY.MM)까지. ('2026-03-28'→'2026.03', '2026'→'2026')
+  static _fmtDate(d) {
+    const s = String(d ?? '').trim();
+    const m = s.match(/^(\d{4})[-.\/]?(\d{1,2})?/);
+    if (!m) return s;
+    return m[2] ? `${m[1]}.${m[2].padStart(2, '0')}` : m[1];
+  }
+
   // ── 논문 카드 ───────────────────────────────────────────────────────────────
   _buildPaperCard(p) {
     const paper = p.paper ?? {};
     const title = paper.title ?? '제목 없음';
     const titleKo = p.title_ko ?? p.clinicalQuestion_ko_title ?? '';
     const journal = paper.journal ?? '';
-    const date = paper.pubDate ?? '';
+    const date = GitHubPublisher._fmtDate(paper.pubDate);
     const pmid = paper.pmid ?? '';
     const pmurl = paper.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : '#');
     const doi = paper.doi ?? '';
@@ -166,7 +174,7 @@ export class GitHubPublisher {
       ? (topPapers[0].title_ko || topPapers[0].paper?.title || '')
       : '';
     const previewMeta = topPapers[0]
-      ? `${topPapers[0].paper?.journal ?? ''} · ${topPapers[0].paper?.pubDate ?? ''}`
+      ? `${topPapers[0].paper?.journal ?? ''} · ${GitHubPublisher._fmtDate(topPapers[0].paper?.pubDate)}`
       : '';
     const cls = isToday ? 'day day-today' : 'day day-past';
     const openAttr = isToday ? ' open' : '';
@@ -194,8 +202,20 @@ export class GitHubPublisher {
     return this._buildSection(dateStr, generatedAt, topPapers, { isToday: true });
   }
 
+  // ── 누적 아카이브 표의 행(읽음 체크박스 포함) ──────────────────────────────────
+  _tableRows(dateStr, topPapers) {
+    return topPapers.map((p) => {
+      const paper = p.paper ?? {};
+      const pmid = paper.pmid ?? '';
+      const url = paper.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : '#');
+      const title = p.title_ko || paper.title || '';
+      const journal = paper.journal ?? '';
+      return `<tr data-pmid="${esc(pmid)}"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(pmid)}" aria-label="읽음"></td></tr>`;
+    }).join('');
+  }
+
   // ── 전체 페이지 스캐폴드 ────────────────────────────────────────────────────
-  buildPage(sectionsHtml, { days = 1, papers = 1, updated = '' } = {}) {
+  buildPage(sectionsHtml, { days = 1, papers = 1, updated = '', tableRows = '' } = {}) {
     return `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -244,8 +264,8 @@ details[open] .day-prev{display:none}
 .pc-top{padding:18px 6px 16px}
 .medal{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#fbbf24,#f59e0b);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -6px #f59e0baa}
 .medal svg{width:22px;height:22px;color:#fff}
-.ttl{font-size:18px;font-weight:800;line-height:1.34;margin-top:12px;letter-spacing:-.3px}
-.ttle{font-size:11.5px;color:${T.muted};margin-top:5px}
+.ttl{font-size:16px;font-weight:800;line-height:1.4;margin-top:12px;letter-spacing:-.3px}
+.ttle{font-size:16px;font-weight:600;color:${T.sub};line-height:1.4;margin-top:4px}
 .meta{display:flex;align-items:center;gap:6px;font-size:11px;color:${T.sub};margin-top:9px}
 .meta .i{width:13px;height:13px}
 .chips{display:flex;gap:6px;margin-top:13px;flex-wrap:wrap}
@@ -295,6 +315,24 @@ details[open] .day-prev{display:none}
 .pc-foot{margin-top:14px;padding-top:10px;border-top:1px solid ${T.soft};font-size:11px;color:${T.muted}}
 .ft{text-align:center;font-size:10px;color:${T.muted};padding:26px 20px 0}
 .ft a{color:${T.softTxt}}
+/* 누적 아카이브 표 */
+.arch-table{margin:18px 18px 0;background:#fff;border:1px solid ${T.soft};border-radius:16px;overflow:hidden;box-shadow:0 8px 22px -16px ${T.key}33}
+.at-head{display:flex;align-items:center;gap:8px;padding:13px 16px;background:linear-gradient(90deg,${T.key},${T.key2});color:#fff}
+.at-title{font-size:13px;font-weight:800}
+.at-count{margin-left:auto;font-size:11px;font-weight:700;opacity:.92}
+.at-scroll{overflow-x:auto}
+.arch-table table{width:100%;border-collapse:collapse;font-size:12px}
+.arch-table th{text-align:left;font-size:9.5px;font-weight:800;color:${T.muted};text-transform:uppercase;letter-spacing:.5px;padding:9px 10px;border-bottom:1px solid ${T.soft};white-space:nowrap}
+.arch-table td{padding:10px;border-bottom:1px solid ${T.soft};vertical-align:top}
+.arch-table tbody tr:last-child td{border-bottom:0}
+.c-date{color:${T.muted};white-space:nowrap;font-variant-numeric:tabular-nums}
+.c-jour{font-weight:700;color:#334155;white-space:nowrap}
+.c-title a{color:${T.ink};text-decoration:none;line-height:1.4}
+.c-title a:hover{text-decoration:underline}
+.th-read,.c-read{text-align:center;width:44px}
+.readcb{width:18px;height:18px;accent-color:${T.key};cursor:pointer}
+tr.is-read{background:${T.soft}}
+tr.is-read .c-title a,tr.is-read .c-jour{color:${T.muted};text-decoration:line-through}
 </style>
 </head>
 <body>
@@ -313,8 +351,21 @@ details[open] .day-prev{display:none}
 <!-- ARCHIVE_START -->
 ${sectionsHtml}
   </div>
+  <div class="arch-table">
+    <div class="at-head"><span class="at-title">📚 누적 아카이브</span><span class="at-count">${papers}편</span></div>
+    <div class="at-scroll"><table>
+      <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
+      <tbody><!-- TABLE_ROWS_START -->${tableRows}<!-- TABLE_ROWS_END --></tbody>
+    </table></div>
+  </div>
   <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일 · <a href="${this.pagesUrl}">${this.owner ?? 'njell85-spec'}.github.io/${this.repo ?? 'trend-review'}</a></div>
 </div>
+<script>
+(function(){var K='tr_read_v1';var s;try{s=JSON.parse(localStorage.getItem(K))||{};}catch(e){s={};}
+document.querySelectorAll('.readcb').forEach(function(cb){var id=cb.dataset.pmid;var tr=cb.closest('tr');
+if(s[id]){cb.checked=true;tr.classList.add('is-read');}
+cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}tr.classList.toggle('is-read',cb.checked);});});})();
+</script>
 </body>
 </html>`;
   }
@@ -367,10 +418,12 @@ ${sectionsHtml}
 
     const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true });
 
+    const newRows = this._tableRows(dateStr, topPapers);
+
     let updated;
     if (!existing || !existing.includes('<!-- ARCHIVE_START -->')) {
       // 최초 생성 (또는 구버전 스캐폴드) → 전체 페이지를 새 디자인으로 생성
-      updated = this.buildPage(todaySection, { days: 1, papers: topPapers.length, updated: generatedAt });
+      updated = this.buildPage(todaySection, { days: 1, papers: topPapers.length, updated: generatedAt, tableRows: newRows });
     } else {
       // 같은 날짜 섹션 제거
       const escDate = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -382,13 +435,24 @@ ${sectionsHtml}
         .replace(/<span class="t-badge">TODAY<\/span>/g, '');
       // 새 TODAY 삽입
       body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}`);
+      // 누적 표: 같은 PMID 행 제거(재실행 중복 방지) 후 새 행을 표 맨 위에 삽입
+      for (const p of topPapers) {
+        const pmid = p.paper?.pmid;
+        if (!pmid) continue;
+        const rowDup = new RegExp(`<tr data-pmid="${pmid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">[\\s\\S]*?</tr>`, 'g');
+        body = body.replace(rowDup, '');
+      }
+      if (body.includes('<!-- TABLE_ROWS_START -->')) {
+        body = body.replace('<!-- TABLE_ROWS_START -->', `<!-- TABLE_ROWS_START -->${newRows}`);
+      }
       // 통계 갱신
       const dayCount = (body.match(/<!-- SECTION:/g) ?? []).length;
       const paperCount = (body.match(/class="paper-card"/g) ?? []).length || dayCount;
       body = body
         .replace(/<div class="n stat-days-count">[^<]*<\/div>/, `<div class="n stat-days-count">${dayCount}</div>`)
         .replace(/<span class="stat-updated-time">[^<]*<\/span>/, `<span class="stat-updated-time">${generatedAt}</span>`)
-        .replace(/<div class="n stat-papers-count">[^<]*<\/div>/, `<div class="n stat-papers-count">${paperCount}</div>`);
+        .replace(/<div class="n stat-papers-count">[^<]*<\/div>/, `<div class="n stat-papers-count">${paperCount}</div>`)
+        .replace(/<span class="at-count">[^<]*<\/span>/, `<span class="at-count">${paperCount}편</span>`);
       updated = body;
     }
 

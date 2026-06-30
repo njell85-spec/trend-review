@@ -20,7 +20,7 @@ const generatedAt = new Date().toLocaleString('ko-KR', {
 const today = {
   paper: {
     title: 'Ultrasound-Facilitated, Catheter-Directed Fibrinolysis for Acute Pulmonary Embolism',
-    journal: 'N Engl J Med', pubDate: '2026', pmid: '41910345',
+    journal: 'N Engl J Med', pubDate: '2026-03', pmid: '41910345',
     pubmedUrl: 'https://pubmed.ncbi.nlm.nih.gov/41910345/', doi: '10.1056/NEJMoa2516567',
     scoringData: {
       studyType: 'RCT',
@@ -107,7 +107,8 @@ console.log('✓ output/selected_papers.json 리셋 (1건)');
 // ── 2) index.html 새로 생성 (오늘 섹션만) ────────────────────────────────────
 const gh = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' });
 const section = gh._buildSection(dateStr, generatedAt, [today], { isToday: true });
-const pageHtml = gh.buildPage(section, { days: 1, papers: 1, updated: generatedAt });
+const tableRows = gh._tableRows(dateStr, [today]);
+const pageHtml = gh.buildPage(section, { days: 1, papers: 1, updated: generatedAt, tableRows });
 await writeFile(path.join(__dirname, 'index.html'), pageHtml, 'utf8');
 console.log('✓ index.html 새로 생성 (Sky 파스텔, 오늘 1편)');
 console.log('완료. git push는 수동 검토 후 진행하세요.');

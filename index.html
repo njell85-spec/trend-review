@@ -46,8 +46,8 @@ details[open] .day-prev{display:none}
 .pc-top{padding:18px 6px 16px}
 .medal{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#fbbf24,#f59e0b);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -6px #f59e0baa}
 .medal svg{width:22px;height:22px;color:#fff}
-.ttl{font-size:18px;font-weight:800;line-height:1.34;margin-top:12px;letter-spacing:-.3px}
-.ttle{font-size:11.5px;color:#94a3b8;margin-top:5px}
+.ttl{font-size:16px;font-weight:800;line-height:1.4;margin-top:12px;letter-spacing:-.3px}
+.ttle{font-size:16px;font-weight:600;color:#64748b;line-height:1.4;margin-top:4px}
 .meta{display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;margin-top:9px}
 .meta .i{width:13px;height:13px}
 .chips{display:flex;gap:6px;margin-top:13px;flex-wrap:wrap}
@@ -97,6 +97,24 @@ details[open] .day-prev{display:none}
 .pc-foot{margin-top:14px;padding-top:10px;border-top:1px solid #e9f2fd;font-size:11px;color:#94a3b8}
 .ft{text-align:center;font-size:10px;color:#94a3b8;padding:26px 20px 0}
 .ft a{color:#3f72bf}
+/* 누적 아카이브 표 */
+.arch-table{margin:18px 18px 0;background:#fff;border:1px solid #e9f2fd;border-radius:16px;overflow:hidden;box-shadow:0 8px 22px -16px #5b8fd933}
+.at-head{display:flex;align-items:center;gap:8px;padding:13px 16px;background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff}
+.at-title{font-size:13px;font-weight:800}
+.at-count{margin-left:auto;font-size:11px;font-weight:700;opacity:.92}
+.at-scroll{overflow-x:auto}
+.arch-table table{width:100%;border-collapse:collapse;font-size:12px}
+.arch-table th{text-align:left;font-size:9.5px;font-weight:800;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;padding:9px 10px;border-bottom:1px solid #e9f2fd;white-space:nowrap}
+.arch-table td{padding:10px;border-bottom:1px solid #e9f2fd;vertical-align:top}
+.arch-table tbody tr:last-child td{border-bottom:0}
+.c-date{color:#94a3b8;white-space:nowrap;font-variant-numeric:tabular-nums}
+.c-jour{font-weight:700;color:#334155;white-space:nowrap}
+.c-title a{color:#0f172a;text-decoration:none;line-height:1.4}
+.c-title a:hover{text-decoration:underline}
+.th-read,.c-read{text-align:center;width:44px}
+.readcb{width:18px;height:18px;accent-color:#5b8fd9;cursor:pointer}
+tr.is-read{background:#e9f2fd}
+tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-through}
 </style>
 </head>
 <body>
@@ -109,7 +127,7 @@ details[open] .day-prev{display:none}
   <div class="stats">
     <div class="sc"><div class="n stat-days-count">1</div><div class="l">분석일수</div></div>
     <div class="sc"><div class="n stat-papers-count">1</div><div class="l">선정 논문</div></div>
-    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">2026. 06. 29. 13:12</span></div><div class="l">최종 업데이트</div></div>
+    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">2026. 06. 30. 21:19</span></div><div class="l">최종 업데이트</div></div>
   </div>
   <div class="archive">
 <!-- ARCHIVE_START -->
@@ -120,17 +138,17 @@ details[open] .day-prev{display:none}
     <div class="day-head">
       <span class="t-badge">TODAY</span><span class="day-date">2026-06-29</span>
       <span class="day-cnt">· 1편</span>
-      <span class="day-gen">생성 2026. 06. 29. 13:12</span>
+      <span class="day-gen">생성 2026. 06. 30. 21:19</span>
       <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
     </div>
-    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="#7dabe8" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></span><div><div class="day-prev-t">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</div><div class="day-prev-m">N Engl J Med · 2026</div></div></div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="#7dabe8" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></span><div><div class="day-prev-t">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</div><div class="day-prev-m">N Engl J Med · 2026.03</div></div></div>
   </summary>
   <div class="day-panel"><article class="paper-card">
       <div class="pc-top">
         <div class="medal"><svg viewBox="0 0 24 24" fill="#fff" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></div>
         <div class="ttl">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</div>
         <div class="ttle">Ultrasound-Facilitated, Catheter-Directed Fibrinolysis for Acute Pulmonary Embolism · HI-PEITHO Trial</div>
-        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>N Engl J Med · 2026 · PMID 41910345</div>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>N Engl J Med · 2026.03 · PMID 41910345</div>
         <div class="chips"><span class="chip sc">9점</span><span class="chip ev">RCT</span><span class="chip ap">적용 가능</span><span class="chip src">초록 + 웹 보강</span></div>
       </div>
       <div class="pc-body">
@@ -189,7 +207,20 @@ details[open] .day-prev{display:none}
 </details>
 <!-- /SECTION:2026-06-29 -->
   </div>
+  <div class="arch-table">
+    <div class="at-head"><span class="at-title">📚 누적 아카이브</span><span class="at-count">1편</span></div>
+    <div class="at-scroll"><table>
+      <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
+      <tbody><!-- TABLE_ROWS_START --><tr data-pmid="41910345"><td class="c-date">2026-06-29</td><td class="c-jour">N Engl J Med</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41910345/" target="_blank" rel="noopener">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41910345" aria-label="읽음"></td></tr><!-- TABLE_ROWS_END --></tbody>
+    </table></div>
+  </div>
   <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일 · <a href="https://njell85-spec.github.io/trend-review/">njell85-spec.github.io/trend-review</a></div>
 </div>
+<script>
+(function(){var K='tr_read_v1';var s;try{s=JSON.parse(localStorage.getItem(K))||{};}catch(e){s={};}
+document.querySelectorAll('.readcb').forEach(function(cb){var id=cb.dataset.pmid;var tr=cb.closest('tr');
+if(s[id]){cb.checked=true;tr.classList.add('is-read');}
+cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}tr.classList.toggle('is-read',cb.checked);});});})();
+</script>
 </body>
 </html>
