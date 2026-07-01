@@ -11,6 +11,10 @@ permissions:
 jobs:
   review:
     runs-on: ubuntu-latest
+    # 세션 한도(429) 시 최대 SESSION_RETRY_MAX회(기본 3회)를 SESSION_RETRY_DELAY_MIN
+    # 간격(기본 60분)으로 재시도하므로, 잡이 재시도 대기 동안 러너를 붙잡는다.
+    # public 저장소는 Actions 분(minutes)이 무료이며, 6h 기본 한도 안에서 넉넉히 마친다.
+    timeout-minutes: 240
 
     steps:
       - uses: actions/checkout@v4
@@ -55,6 +59,10 @@ jobs:
           GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
           GITHUB_OWNER:      ${{ github.repository_owner }}
           GITHUB_REPO:       ${{ github.event.repository.name }}
+          # 재시도 정책 튜닝(선택): 저장소 Variables 에 설정하면 코드 수정 없이 조정된다.
+          # 미설정 시 기본값(3회 / 60분)이 적용된다. timeout-minutes 도 함께 고려할 것.
+          SESSION_RETRY_MAX:       ${{ vars.SESSION_RETRY_MAX }}
+          SESSION_RETRY_DELAY_MIN: ${{ vars.SESSION_RETRY_DELAY_MIN }}
 
       # 위 스크립트가 index.html을 커밋·푸시한 뒤 selected_papers.json도 갱신하므로
       # 두 번째 커밋으로 exclusion list 상태를 동기화한다.

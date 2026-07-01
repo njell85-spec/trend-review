@@ -17,25 +17,74 @@ import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
 const todayKST = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
 console.log(`\n📅 Daily EM/CCM Trend Review — ${todayKST} (KST)\n`);
 
-// 시작 지터: 고정 cron 초에 NCBI를 동시에 때리지 않도록 0~90초 랜덤 지연.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// ── 재시도 정책 ──────────────────────────────────────────────────────────────
+// claude 구독 CLI가 세션 한도(429)에 걸리면 그 시간대엔 계속 실패한다. 세션 창은
+// 약 5시간마다 리셋되므로, 일정 간격(기본 60분)으로 최대 N회(기본 3회) 재시도해
+// 리셋 창을 노린다. 반대로 워크스페이스 신뢰 미설정·CLI 미설치 같은 "결정적" 오류는
+// 기다려도 동일하게 실패하므로 즉시 중단하고 알린다.
+// 값은 GitHub Actions Variables(SESSION_RETRY_MAX / SESSION_RETRY_DELAY_MIN)로 조정 가능.
+const envNum = (v, d) => {
+  const n = Number(v);
+  return v != null && v !== '' && Number.isFinite(n) ? n : d;
+};
+const MAX_ATTEMPTS = Math.max(1, envNum(process.env.SESSION_RETRY_MAX, 3));
+const RETRY_DELAY_MS = Math.max(0, envNum(process.env.SESSION_RETRY_DELAY_MIN, 60)) * 60_000;
+
+// 실패 메시지로 (재시도 가치 / 사람이 읽을 사유)를 분류.
+function classifyFailure(message = '') {
+  const m = String(message);
+  if (/session limit|"?api_error_status"?\s*[:=]\s*429|(?:^|[^\d])429(?:[^\d]|$)/i.test(m))
+    return { retryable: true, label: 'Claude 세션 한도(429)' };
+  if (/not been trusted|hasTrustDialogAccepted/i.test(m))
+    return { retryable: false, label: 'claude CLI 워크스페이스 신뢰 미설정 (설정 확인 필요)' };
+  if (/ENOENT|spawn error|command not found/i.test(m))
+    return { retryable: false, label: 'claude CLI 미설치/미인증 (설정 확인 필요)' };
+  return { retryable: true, label: 'claude CLI 오류(일시적일 수 있음)' };
+}
+
+async function notifyFailure(reasonLabel) {
+  try {
+    const r = await new KakaoNotifier().sendFailure({ dateStr: todayKST, reason: reasonLabel });
+    if (r.sent) console.log('💬 카카오 실패 알림 발송 완료');
+  } catch (err) {
+    console.warn(`⚠️  카카오 실패 알림 전송 실패(무시): ${err.message}`);
+  }
+}
+
+// 시작 지터(첫 시도 전 1회만): 고정 cron 초에 NCBI를 동시에 때리지 않도록 0~90초 랜덤 지연.
 const jitterMs = Math.floor(Math.random() * 90_000);
 console.log(`⏳ startup jitter ${(jitterMs / 1000).toFixed(0)}s (NCBI 부하 분산)`);
-await new Promise((r) => setTimeout(r, jitterMs));
+await sleep(jitterMs);
 
-const orchestrator = new TrendReviewOrchestrator({
-  searchDays: 180,
-  topN:       1,
-});
+// 소프트 실패: 일시 장애로 죽어도 워크플로우를 빨갛게 만들지 않고 기존 사이트를 그대로
+// 둔 채 종료(exit 0). 단, 재시도 가치가 있는 실패는 간격을 두고 최대 MAX_ATTEMPTS회 재시도.
+let result = null;
+for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+  const orchestrator = new TrendReviewOrchestrator({ searchDays: 180, topN: 1 });
+  try {
+    console.log(`\n▶️  파이프라인 시도 ${attempt}/${MAX_ATTEMPTS}`);
+    result = await orchestrator.run();
+    break; // 성공
+  } catch (err) {
+    const { retryable, label } = classifyFailure(err.message);
+    const last = attempt === MAX_ATTEMPTS;
+    console.warn(`⚠️  시도 ${attempt}/${MAX_ATTEMPTS} 실패: ${label}`);
+    console.warn(`   (${String(err.message).slice(0, 300)})`);
 
-// 소프트 실패: PubMed 다운 등 일시 장애로 죽어도 워크플로우를 빨갛게 만들지 않고
-// 기존 사이트를 그대로 둔 채 "오늘은 건너뜀"으로 깔끔히 종료(exit 0).
-let result;
-try {
-  result = await orchestrator.run();
-} catch (err) {
-  console.warn(`⚠️  오늘 실행 실패(소프트 스킵): ${err.message}`);
-  console.warn('   사이트는 변경되지 않았습니다. 내일 다시 시도합니다.');
-  process.exit(0);
+    if (retryable && !last && RETRY_DELAY_MS > 0) {
+      console.warn(`   ${RETRY_DELAY_MS / 60_000}분 후 재시도합니다 (한도 리셋 창 대기).`);
+      await sleep(RETRY_DELAY_MS);
+      continue;
+    }
+
+    // 결정적 오류이거나 마지막 시도 → 소프트 스킵 + 정확한 사유로 알림.
+    console.warn('   사이트는 변경되지 않았습니다.');
+    const suffix = retryable ? ` — ${MAX_ATTEMPTS}회 재시도 후에도 실패` : '';
+    await notifyFailure(`${label}${suffix}`);
+    process.exit(0);
+  }
 }
 
 const papers = result.topPapers ?? [];
