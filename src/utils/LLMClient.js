@@ -118,8 +118,11 @@ ${schema}`;
 
     if (result.error) throw new Error(`claude CLI spawn error: ${result.error.message}`);
     if (result.status !== 0) {
-      const errMsg = result.stderr?.slice(0, 500) ?? 'unknown error';
-      throw new Error(`claude CLI exited with code ${result.status}: ${errMsg}`);
+      // 실패 원인은 stderr가 비어있고 stdout(JSON)에 담기는 경우가 많아 둘 다 노출한다.
+      const err = (result.stderr || '').trim();
+      const out = (result.stdout || '').trim();
+      const detail = [err && `stderr=${err}`, out && `stdout=${out}`].filter(Boolean).join(' | ').slice(0, 800) || 'no output';
+      throw new Error(`claude CLI exited with code ${result.status}: ${detail}`);
     }
 
     let parsed;
