@@ -13,13 +13,14 @@
 import 'dotenv/config';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
+import { runWithRetry } from './src/utils/retryPipeline.js';
 
 const todayKST = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
 console.log(`\n📅 Daily EM/CCM Trend Review — ${todayKST} (KST)\n`);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// ── 재시도 정책 ──────────────────────────────────────────────────────────────
+// ── 재시도 정책 (상세 로직은 src/utils/retryPipeline.js) ─────────────────────
 // claude 구독 CLI가 세션 한도(429)에 걸리면 그 시간대엔 계속 실패한다. 세션 창은
 // 약 5시간마다 리셋되므로, 일정 간격(기본 60분)으로 최대 N회(기본 3회) 재시도해
 // 리셋 창을 노린다. 반대로 워크스페이스 신뢰 미설정·CLI 미설치 같은 "결정적" 오류는
@@ -31,18 +32,6 @@ const envNum = (v, d) => {
 };
 const MAX_ATTEMPTS = Math.max(1, envNum(process.env.SESSION_RETRY_MAX, 3));
 const RETRY_DELAY_MS = Math.max(0, envNum(process.env.SESSION_RETRY_DELAY_MIN, 60)) * 60_000;
-
-// 실패 메시지로 (재시도 가치 / 사람이 읽을 사유)를 분류.
-function classifyFailure(message = '') {
-  const m = String(message);
-  if (/session limit|"?api_error_status"?\s*[:=]\s*429|(?:^|[^\d])429(?:[^\d]|$)/i.test(m))
-    return { retryable: true, label: 'Claude 세션 한도(429)' };
-  if (/not been trusted|hasTrustDialogAccepted/i.test(m))
-    return { retryable: false, label: 'claude CLI 워크스페이스 신뢰 미설정 (설정 확인 필요)' };
-  if (/ENOENT|spawn error|command not found/i.test(m))
-    return { retryable: false, label: 'claude CLI 미설치/미인증 (설정 확인 필요)' };
-  return { retryable: true, label: 'claude CLI 오류(일시적일 수 있음)' };
-}
 
 async function notifyFailure(reasonLabel) {
   try {
@@ -60,34 +49,30 @@ await sleep(jitterMs);
 
 // 소프트 실패: 일시 장애로 죽어도 워크플로우를 빨갛게 만들지 않고 기존 사이트를 그대로
 // 둔 채 종료(exit 0). 단, 재시도 가치가 있는 실패는 간격을 두고 최대 MAX_ATTEMPTS회 재시도.
-let result = null;
-for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-  const orchestrator = new TrendReviewOrchestrator({ searchDays: 180, topN: 1 });
-  try {
-    console.log(`\n▶️  파이프라인 시도 ${attempt}/${MAX_ATTEMPTS}`);
-    result = await orchestrator.run();
-    break; // 성공
-  } catch (err) {
-    const { retryable, label } = classifyFailure(err.message);
-    const last = attempt === MAX_ATTEMPTS;
-    console.warn(`⚠️  시도 ${attempt}/${MAX_ATTEMPTS} 실패: ${label}`);
-    console.warn(`   (${String(err.message).slice(0, 300)})`);
+const outcome = await runWithRetry(
+  () => new TrendReviewOrchestrator({ searchDays: 180, topN: 1 }),
+  {
+    maxAttempts: MAX_ATTEMPTS,
+    delayMs: RETRY_DELAY_MS,
+    onAttempt: (attempt) => console.log(`\n▶️  파이프라인 시도 ${attempt}/${MAX_ATTEMPTS}`),
+    onFail: ({ attempt, label, message }) => {
+      console.warn(`⚠️  시도 ${attempt}/${MAX_ATTEMPTS} 실패: ${label}`);
+      console.warn(`   (${message.slice(0, 300)})`);
+    },
+    onRetry: ({ delayMs }) =>
+      console.warn(`   ${delayMs / 60_000}분 후 재시도합니다 (한도 리셋 창 대기).`),
+  },
+);
 
-    if (retryable && !last && RETRY_DELAY_MS > 0) {
-      console.warn(`   ${RETRY_DELAY_MS / 60_000}분 후 재시도합니다 (한도 리셋 창 대기).`);
-      await sleep(RETRY_DELAY_MS);
-      continue;
-    }
-
-    // 결정적 오류이거나 마지막 시도 → 소프트 스킵 + 정확한 사유로 알림.
-    console.warn('   사이트는 변경되지 않았습니다.');
-    const suffix = retryable ? ` — ${MAX_ATTEMPTS}회 재시도 후에도 실패` : '';
-    await notifyFailure(`${label}${suffix}`);
-    process.exit(0);
-  }
+if (!outcome.ok) {
+  // 결정적 오류이거나 마지막 시도까지 실패 → 소프트 스킵 + 정확한 사유로 알림.
+  console.warn('   사이트는 변경되지 않았습니다.');
+  const suffix = outcome.retryable ? ` — ${MAX_ATTEMPTS}회 재시도 후에도 실패` : '';
+  await notifyFailure(`${outcome.label}${suffix}`);
+  process.exit(0);
 }
 
-const papers = result.topPapers ?? [];
+const papers = outcome.result.topPapers ?? [];
 
 console.log(`\n✅ 파이프라인 완료: ${papers.length}편 선정`);
 papers.forEach((p, i) =>
