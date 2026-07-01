@@ -15,6 +15,19 @@
 - `FilterAnalyzerAgent.scorePapers`: LLM 배치 채점 → `MetadataScorer`로 교체.
   Opus는 선정 1편의 PICO 심층분석에만 사용.
 
+## ✅ 2축 스코어링 + 관심 프로파일 (PeterJ 2026-07-01) — 완료
+- 질(Quality) × 적합도(Relevance) 2축. 적합도가 질을 최대 +30% 증폭 → "좋은 논문 + 나에게 적절한".
+- `config/interests.json`: PeterJ 편집 가능한 가중 관심 그룹(소생·심혈관/패혈증·쇼크/호흡·ARDS 상위).
+- `rawScore` 풀 정밀도로 동점 안정 정렬. 카드에 `질 X · 적합도 Y` 칩.
+
+## ✅ 가이드라인 캐치업 트랙 (PeterJ 2026-07-01) — 완료
+- 배치: 주 1회 1편(없으면 건너뜀), 신규 나오면 추가 (하이브리드).
+- `DataCollectorAgent.collectGuidelines()`: PublicationType=Guideline + EM/CCM 도메인 쿼리.
+- `GuidelineAnalyzerAgent`: 적합도 상위 미노출 1편 선정 → Opus로 핵심 권고·이전 판 대비 변경점·임상 임팩트 (PICO 아님).
+- `GitHubPublisher._buildGuidelineCard`: teal 계열 별도 카드 + 아카이브 표 📋 행.
+- 오케스트레이터: `output/selected_guidelines.json`로 주기 게이트/중복 방지. 전 과정 non-fatal.
+
 ## 다음 (미정)
-- Actions에서 **단일 논문 Opus PICO**가 CLI 안전필터에 걸리는지 실측 확인
-  (배치 거부는 해소됨; 단건 거부 시 fallback 카드로 degrade — 대응책 검토 필요).
+- Actions에서 **단일 논문 Opus PICO / 가이드라인 Opus 분석**이 CLI 안전필터에 걸리는지 실측
+  (배치 거부는 해소; 단건 거부 시 조용히 fallback/skip — 대응책 필요 시 검토).
+- 관심 프로파일 가중치는 운영하며 PeterJ 피드백으로 재조정.
