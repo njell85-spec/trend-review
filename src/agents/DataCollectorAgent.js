@@ -192,6 +192,14 @@ export class DataCollectorAgent {
           journal?.Title ?? journal?.ISOAbbreviation ?? '';
         const pubDate = this._parsePubDate(journal?.JournalIssue?.PubDate);
 
+        // Publication types (authoritative study-design labels — no LLM guessing)
+        const ptList = article?.PublicationTypeList?.PublicationType;
+        const publicationTypes = ptList
+          ? (Array.isArray(ptList) ? ptList : [ptList])
+              .map((t) => t?._ ?? t ?? '')
+              .filter(Boolean)
+          : [];
+
         // MeSH
         const meshList = medline?.MeshHeadingList?.MeshHeading;
         const meshTerms = this._parseMesh(meshList);
@@ -221,6 +229,7 @@ export class DataCollectorAgent {
           authors,
           journal: String(journalName),
           pubDate,
+          publicationTypes,
           meshTerms,
           keywords,
           doi: String(doi),
