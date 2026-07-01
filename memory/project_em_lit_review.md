@@ -28,3 +28,7 @@ Key pattern: Claude tool use with `submit_paper_scores` and `submit_pico_analysi
   - `DataCollectorAgent`가 `publicationTypes`를 파싱해서 넘겨줌(연구 설계는 PubMed 사실 기반, 환각 없음).
 - **Opus는 선정된 1편의 PICO 심층분석에만 사용**(`FilterAnalyzerAgent.analyzePico`). 단일 논문 정식 분석이라 배치 거부 위험이 낮음(단, Actions CLI에서 단건도 거부될지는 미확정 리스크).
 - 하루 2편(이원화) 방안은 **기각**: 안 읽고 쌓임(3편→1편 회귀한 교훈) + 무료 LLM 배치 채점 불가로 토큰 절약 근거가 무의미.
+
+**2축 스코어링 (2026-07-01):** 질(Quality: 설계·저널·표본·최신성) × 적합도(Relevance: `config/interests.json` 관심 프로파일). 적합도가 질을 최대 +30% 증폭 → 관심 밖 논문(예: 종양 RCT)은 자동 후순위. `rawScore`로 동점 정렬. 관심 그룹 상위 가중: 소생·심혈관 / 패혈증·쇼크 / 호흡·ARDS.
+
+**가이드라인 캐치업 트랙 (2026-07-01 확정):** 논문과 별개. **주 1회 1편(없으면 skip), 신규 나오면 추가**. `DataCollectorAgent.collectGuidelines()`(PublicationType=Guideline) → `GuidelineAnalyzerAgent`가 적합도 상위 미노출 1편을 Opus로 "핵심 권고 + 이전 판 대비 변경점 + 임상 임팩트"(PICO 아님) 분석. `output/selected_guidelines.json`로 주기 게이트. 전 과정 non-fatal(데일리 논문에 영향 없음).
