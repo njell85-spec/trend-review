@@ -253,9 +253,11 @@ export class FilterAnalyzerAgent {
     return eligible
       .map((p) => ({
         ...p,
-        scoringData: scoreMap.get(p.pmid) ?? { score: 0, rationale: '', studyType: 'Other' },
+        scoringData: scoreMap.get(p.pmid) ?? { score: 0, rawScore: 0, rationale: '', studyType: 'Other' },
       }))
-      .sort((a, b) => (b.scoringData.score ?? 0) - (a.scoringData.score ?? 0))
+      // rawScore(풀 정밀도)로 정렬해 동점을 안정적으로 깬다 (표시 점수는 반올림됨).
+      .sort((a, b) => (b.scoringData.rawScore ?? b.scoringData.score ?? 0)
+                    - (a.scoringData.rawScore ?? a.scoringData.score ?? 0))
       .slice(0, this.topN);
   }
 

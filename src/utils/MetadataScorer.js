@@ -1,21 +1,27 @@
 /**
- * MetadataScorer — 결정적(deterministic) 논문 스코어러.
+ * MetadataScorer — 결정적(deterministic) 논문 스코어러 (2축 모델).
  *
- * LLM 을 전혀 쓰지 않고 PubMed 메타데이터만으로 1–10 점을 매긴다.
+ * LLM 을 전혀 쓰지 않고 PubMed 메타데이터만으로 점수를 매긴다.
  *   · 이유: Claude Code CLI(구독)의 안전필터가 "의학 초록 대량 채점"을 거부(AUP refusal)해서
  *     무료·무인 GitHub Actions 자동화에서 LLM 배치 스코어링이 불가능하다.
- *   · 대신 저널 등급 · 연구 설계(PublicationType) · 표본수 · 최신성 · EM/CCM 적합도를
- *     가중 합산한다. 모두 PubMed 가 제공하는 구조화된 사실이라 환각(hallucination)이 없고,
- *     빠르고, 재현 가능하며, 이유(rationale)를 사람이 검증할 수 있다.
+ *   · 모두 PubMed 가 제공하는 구조화된 사실이라 환각(hallucination)이 없고, 재현 가능하며,
+ *     이유(rationale)를 사람이 검증할 수 있다.
  *
- * 출력 형태는 기존 LLM 스코어러와 동일한 계약을 지킨다:
- *   { pmid, score, rationale, studyType }
+ * 두 개의 축으로 나눈다 (PeterJ 요청: "좋은 논문 + 나에게 가장 적절한 논문"):
+ *   ① 질(Quality)     — 연구 설계 · 저널 등급 · 표본수 · 최신성        (0~10)
+ *   ② 적합도(Relevance) — config/interests.json 관심 프로파일 매칭        (0~10)
+ * 최종점수 = 질 × (floor + lift × 적합도01) + 감점, [1,10] 로 클램프.
+ *   · 적합도는 질을 최대 +30% 증폭 → PeterJ 관심사에 맞는 논문이 우선.
+ *   · rawScore(풀 정밀도)를 별도 보관해 정렬 시 동점(tie)을 안정적으로 깬다.
+ *
+ * 출력 계약 (기존 LLM 스코어러와 호환):
+ *   { pmid, score, rawScore, qualityScore, relevanceScore, studyType, rationale, matchedInterests }
  *
  * Opus 는 이 단계 이후 "선정된 1편"의 PICO 심층분석에만 쓴다.
  */
+import { readFileSync } from 'fs';
 
 // ── 저널 등급 (부분 문자열 매칭, 소문자) ────────────────────────────────────────
-// tier1: 최상위 종합 저널 / tier2: EM·CCM 대표 저널 / tier3: 견실한 전문 저널
 const JOURNAL_TIERS = {
   tier1: [
     'n engl j med', 'new england journal of medicine',
@@ -48,7 +54,6 @@ const JOURNAL_TIERS = {
 };
 
 // ── 연구 설계 → (점수, 표준 라벨) ──────────────────────────────────────────────
-// PublicationType 문자열(소문자) 부분매칭. 위에서부터 우선순위(강한 설계 우선).
 const DESIGN_RULES = [
   { match: ['meta-analysis'],                     score: 4.0, label: 'Meta-analysis' },
   { match: ['systematic review'],                 score: 3.7, label: 'Systematic Review' },
@@ -69,22 +74,35 @@ const NEGATIVE_TYPES = [
   'retraction', 'published erratum', 'historical article',
 ];
 
-// ── EM/CCM 핵심 도메인 어휘 (제목 + MeSH + 키워드에서 매칭) ──────────────────────
-const DOMAIN_LEXICON = [
-  'sepsis', 'septic', 'resuscitation', 'cardiac arrest', 'cardiopulmonary',
-  'shock', 'airway', 'intubation', 'mechanical ventilation', 'ventilator',
-  'ards', 'acute respiratory distress', 'trauma', 'hemorrhage', 'haemorrhage',
-  'stroke', 'toxicology', 'overdose', 'poisoning', 'anaphylaxis',
-  'pulmonary embolism', 'myocardial infarction', 'acute coronary',
-  'vasopressor', 'norepinephrine', 'fluid', 'lactate', 'triage',
-  'emergency', 'critical care', 'intensive care', 'icu', 'critically ill',
-  'traumatic brain', 'status epilepticus', 'acute kidney', 'delirium',
-];
+// config 파일이 없을 때의 임베디드 기본 프로파일 (일반 EM/CCM).
+const DEFAULT_PROFILE = {
+  topicGroups: {
+    em_ccm: {
+      label: '응급·중환자',
+      weight: 1.0,
+      terms: ['sepsis', 'resuscitation', 'cardiac arrest', 'airway', 'shock',
+              'mechanical ventilation', 'ards', 'emergency', 'critical care', 'intensive care'],
+    },
+  },
+  blend: { relevanceFloor: 0.7, relevanceLift: 0.3 },
+};
 
 export class MetadataScorer {
   constructor(options = {}) {
     // 참조 시점(최신성 계산 기준). 기본은 실행 시각.
     this.now = options.now ? new Date(options.now) : new Date();
+    this.profile = options.profile ?? this._loadProfile();
+    this.blend = { relevanceFloor: 0.7, relevanceLift: 0.3, ...(this.profile.blend ?? {}) };
+  }
+
+  _loadProfile() {
+    try {
+      const url = new URL('../../config/interests.json', import.meta.url);
+      const raw = readFileSync(url, 'utf8');
+      const parsed = JSON.parse(raw);
+      if (parsed?.topicGroups && Object.keys(parsed.topicGroups).length) return parsed;
+    } catch { /* fall through to default */ }
+    return DEFAULT_PROFILE;
   }
 
   // ── public: LLM scorePapers 와 동일 시그니처 ──────────────────────────────
@@ -94,20 +112,32 @@ export class MetadataScorer {
 
   scoreOne(paper) {
     const design = this._designScore(paper);       // 0–4.0
-    const journal = this._journalScore(paper);     // 0–2.5
+    const journal = this._journalScore(paper);     // 0–3.0
     const recency = this._recencyScore(paper);     // 0–1.5
-    const sample = this._sampleScore(paper);       // 0–1.0  (+ n 추정치)
-    const domain = this._domainScore(paper);       // 0–1.0
+    const sample = this._sampleScore(paper);       // 0–1.5  (+ n 추정치)
     const penalty = this._negativePenalty(paper);  // ≤ 0
 
-    let raw = design.score + journal.score + recency.score + sample.score + domain.score + penalty.value;
-    const score = Math.max(1, Math.min(10, Math.round(raw * 10) / 10));
+    // ① 질 축 (0~10)
+    const quality = Math.max(0, Math.min(10,
+      design.score + journal.score + recency.score + sample.score));
+
+    // ② 적합도 축 (0~1, 표시용 0~10)
+    const rel = this._relevance(paper);             // { rel01, groups }
+
+    // 최종점수: 질을 적합도로 증폭 + 감점
+    const { relevanceFloor: floor, relevanceLift: lift } = this.blend;
+    const rawScore = quality * (floor + lift * rel.rel01) + penalty.value;
+    const score = Math.max(1, Math.min(10, Math.round(rawScore * 10) / 10));
 
     return {
       pmid: paper.pmid,
       score,
+      rawScore: Math.max(1, Math.min(10, rawScore)),   // 정렬용 풀 정밀도
+      qualityScore: Math.round(quality * 10) / 10,
+      relevanceScore: Math.round(rel.rel01 * 100) / 10, // 0~10
       studyType: design.label,
-      rationale: this._rationale({ design, journal, recency, sample, domain, penalty }),
+      matchedInterests: rel.groups,
+      rationale: this._rationale({ design, journal, recency, sample, penalty, quality, rel }),
     };
   }
 
@@ -120,7 +150,6 @@ export class MetadataScorer {
         return { score: rule.score, label: rule.label, matched: rule.match[0] };
       }
     }
-    // PublicationType 이 비었거나 매칭 없음 → 초록 제목에서 RCT 힌트라도 탐색
     const title = String(paper.title ?? '').toLowerCase();
     if (/randomi[sz]ed|\brct\b|double-blind|placebo-controlled/.test(title)) {
       return { score: 3.6, label: 'RCT', matched: 'title-rct' };
@@ -133,16 +162,16 @@ export class MetadataScorer {
   // ── 저널 등급 ──────────────────────────────────────────────────────────────
   _journalScore(paper) {
     const j = String(paper.journal ?? '').toLowerCase();
-    if (JOURNAL_TIERS.tier1.some((n) => j.includes(n))) return { score: 2.5, tier: 1 };
-    if (JOURNAL_TIERS.tier2.some((n) => j.includes(n))) return { score: 2.0, tier: 2 };
-    if (JOURNAL_TIERS.tier3.some((n) => j.includes(n))) return { score: 1.3, tier: 3 };
+    if (JOURNAL_TIERS.tier1.some((n) => j.includes(n))) return { score: 3.0, tier: 1 };
+    if (JOURNAL_TIERS.tier2.some((n) => j.includes(n))) return { score: 2.2, tier: 2 };
+    if (JOURNAL_TIERS.tier3.some((n) => j.includes(n))) return { score: 1.4, tier: 3 };
     return { score: 0.6, tier: 0 };
   }
 
   // ── 최신성 (발행일 기준) ─────────────────────────────────────────────────────
   _recencyScore(paper) {
     const days = this._ageDays(paper.pubDate);
-    if (days == null) return { score: 0.7, days: null };      // 불명 → 중립
+    if (days == null) return { score: 0.7, days: null };
     if (days <= 30)  return { score: 1.5, days };
     if (days <= 90)  return { score: 1.2, days };
     if (days <= 180) return { score: 0.9, days };
@@ -152,7 +181,6 @@ export class MetadataScorer {
 
   _ageDays(pubDate) {
     if (!pubDate) return null;
-    // pubDate 형태: "2026-03", "2026-Mar-15", "2026", "2026-03-15" 등
     const d = this._parseDate(pubDate);
     if (!d) return null;
     return Math.max(0, Math.round((this.now - d) / 86_400_000));
@@ -169,7 +197,7 @@ export class MetadataScorer {
       const m = parts[1].toLowerCase();
       month = MONTHS[m.slice(0, 3)] ?? (Number(parts[1]) ? Number(parts[1]) - 1 : 0);
     }
-    const day = parts[2] && Number(parts[2]) ? Number(parts[2]) : 15; // 일 없으면 월중
+    const day = parts[2] && Number(parts[2]) ? Number(parts[2]) : 15;
     const dt = new Date(Date.UTC(year, month, day));
     return Number.isNaN(dt.getTime()) ? null : dt;
   }
@@ -177,19 +205,18 @@ export class MetadataScorer {
   // ── 표본수 (초록에서 N 추정) ─────────────────────────────────────────────────
   _sampleScore(paper) {
     const n = this._extractSampleSize(paper.abstract ?? '');
-    if (n == null) return { score: 0.3, n: null };
-    if (n >= 1000) return { score: 1.0, n };
-    if (n >= 300)  return { score: 0.7, n };
-    if (n >= 100)  return { score: 0.45, n };
-    if (n >= 30)   return { score: 0.25, n };
-    return { score: 0.1, n };
+    if (n == null) return { score: 0.4, n: null };
+    if (n >= 1000) return { score: 1.5, n };
+    if (n >= 300)  return { score: 1.1, n };
+    if (n >= 100)  return { score: 0.7, n };
+    if (n >= 30)   return { score: 0.4, n };
+    return { score: 0.15, n };
   }
 
   _extractSampleSize(abstract) {
     if (!abstract) return null;
-    const text = abstract.replace(/,(?=\d{3}\b)/g, ''); // "1,200" → "1200"
+    const text = abstract.replace(/,(?=\d{3}\b)/g, '');
     const candidates = [];
-    // "N=544", "n = 1200", "enrolled 544 patients", "544 patients", "included 1200 ..."
     const patterns = [
       /\bN\s*=\s*(\d{2,7})/gi,
       /\b(?:enrolled|randomi[sz]ed|included|recruited|analy[sz]ed)\s+(\d{2,7})\s+(?:patients|participants|subjects|adults|children|cases)/gi,
@@ -203,23 +230,35 @@ export class MetadataScorer {
       }
     }
     if (!candidates.length) return null;
-    return Math.max(...candidates); // 총 표본에 가장 근접한 최댓값 채택
+    return Math.max(...candidates);
   }
 
-  // ── EM/CCM 도메인 적합도 ─────────────────────────────────────────────────────
-  _domainScore(paper) {
-    const hay = [
-      paper.title ?? '',
-      ...(paper.meshTerms ?? []),
-      ...(paper.keywords ?? []),
-    ].join(' ').toLowerCase();
-    const hits = new Set();
-    for (const term of DOMAIN_LEXICON) {
-      if (hay.includes(term)) hits.add(term);
+  // ── ② 적합도: 관심 프로파일 매칭 (0~1) ────────────────────────────────────────
+  _relevance(paper) {
+    const title = String(paper.title ?? '').toLowerCase();
+    const meta = [...(paper.meshTerms ?? []), ...(paper.keywords ?? []),
+                  String(paper.abstract ?? '').slice(0, 600)].join(' ').toLowerCase();
+
+    const scored = [];
+    for (const [key, g] of Object.entries(this.profile.topicGroups ?? {})) {
+      const w = Number(g.weight ?? 0);
+      let titleHits = 0, metaHits = 0;
+      for (const term of g.terms ?? []) {
+        const t = String(term).toLowerCase();
+        if (title.includes(t)) titleHits++;
+        else if (meta.includes(t)) metaHits++;
+      }
+      // 그룹 신호(0~1): 제목 매칭이 메타보다 크게 반영, 포화(saturating).
+      const signal = Math.min(1, titleHits * 0.6 + metaHits * 0.25);
+      if (signal > 0) scored.push({ key, label: g.label ?? key, w, groupScore: w * signal });
     }
-    const n = hits.size;
-    const score = n >= 3 ? 1.0 : n === 2 ? 0.7 : n === 1 ? 0.4 : 0;
-    return { score, hits: [...hits].slice(0, 4) };
+    scored.sort((a, b) => b.groupScore - a.groupScore);
+
+    // 최상위 그룹 + 2순위 소폭 보너스 → 0~1 클램프
+    const best = scored[0]?.groupScore ?? 0;
+    const second = scored[1]?.groupScore ?? 0;
+    const rel01 = Math.max(0, Math.min(1, best + 0.15 * second));
+    return { rel01, groups: scored.slice(0, 3).map((s) => s.label) };
   }
 
   // ── 감점 (사설·논평·동물·시험관 등) ───────────────────────────────────────────
@@ -239,8 +278,10 @@ export class MetadataScorer {
   }
 
   // ── 사람이 읽는 근거 문장 (한국어) ────────────────────────────────────────────
-  _rationale({ design, journal, recency, sample, domain, penalty }) {
+  _rationale({ design, journal, recency, sample, penalty, quality, rel }) {
     const parts = [];
+    parts.push(`질 ${Math.round(quality * 10) / 10}`);
+    parts.push(`적합도 ${Math.round(rel.rel01 * 100) / 10}`);
     parts.push(design.label !== 'Other' ? design.label : '설계 미상');
     const tierName = { 1: '최상위 저널', 2: 'EM·CCM 대표 저널', 3: '전문 저널', 0: '일반 저널' }[journal.tier];
     parts.push(tierName);
@@ -248,7 +289,7 @@ export class MetadataScorer {
       parts.push(recency.days <= 30 ? '최근 30일' : recency.days <= 90 ? '최근 3개월' : recency.days <= 180 ? '6개월 내' : '1년 내');
     }
     if (sample.n != null) parts.push(`N≈${sample.n}`);
-    if (domain.hits.length) parts.push(domain.hits.join('·'));
+    if (rel.groups.length) parts.push(rel.groups.join('·'));
     let s = parts.join(' · ');
     if (penalty.reasons.length) s += ` (감점: ${penalty.reasons.join(', ')})`;
     return s;

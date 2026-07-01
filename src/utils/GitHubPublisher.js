@@ -132,7 +132,7 @@ export class GitHubPublisher {
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}${trial ? ` · ${esc(trial)}` : ''}</div>` : (trial ? `<div class="ttle">${esc(trial)}</div>` : '')}
         <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)} · ${esc(date)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
-        <div class="chips"><span class="chip sc">${esc(score)}점</span><span class="chip ev">${esc(GitHubPublisher._evidenceShort(ev))}</span><span class="chip ap">${esc(GitHubPublisher._edApplicability(score))}</span>${p.evidenceSource ? `<span class="chip src">${esc(p.evidenceSource)}</span>` : ''}</div>
+        <div class="chips"><span class="chip sc">${esc(score)}점</span><span class="chip ev">${esc(GitHubPublisher._evidenceShort(ev))}</span><span class="chip ap">${esc(GitHubPublisher._edApplicability(score))}</span>${Number.isFinite(paper.scoringData?.qualityScore) ? `<span class="chip qr">질 ${esc(paper.scoringData.qualityScore)} · 적합도 ${esc(paper.scoringData.relevanceScore)}</span>` : ''}${p.evidenceSource ? `<span class="chip src">${esc(p.evidenceSource)}</span>` : ''}</div>
       </div>
       <div class="pc-body">
         <div class="lbl"><span class="i">${IC.bulb(T.key)}</span>WHY IT MATTERS</div>
@@ -274,6 +274,7 @@ details[open] .day-prev{display:none}
 .chip.ev{background:${T.soft};color:${T.softTxt}}
 .chip.ap{background:#ecfdf5;color:#059669}
 .chip.src{background:#fff7ed;color:#c2620c;border:1px solid #fed7aa}
+.chip.qr{background:#eef2ff;color:#4f46e5;border:1px solid #c7d2fe}
 .pc-body{padding:4px 6px 6px}
 .lbl{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:${T.key};letter-spacing:.5px;margin:18px 0 7px}
 .lbl .i{width:15px;height:15px}
