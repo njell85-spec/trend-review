@@ -192,6 +192,14 @@ export class DataCollectorAgent {
           journal?.Title ?? journal?.ISOAbbreviation ?? '';
         const pubDate = this._parsePubDate(journal?.JournalIssue?.PubDate);
 
+        // Publication types (authoritative study-design labels — no LLM guessing)
+        const ptList = article?.PublicationTypeList?.PublicationType;
+        const publicationTypes = ptList
+          ? (Array.isArray(ptList) ? ptList : [ptList])
+              .map((t) => t?._ ?? t ?? '')
+              .filter(Boolean)
+          : [];
+
         // MeSH
         const meshList = medline?.MeshHeadingList?.MeshHeading;
         const meshTerms = this._parseMesh(meshList);
@@ -221,6 +229,7 @@ export class DataCollectorAgent {
           authors,
           journal: String(journalName),
           pubDate,
+          publicationTypes,
           meshTerms,
           keywords,
           doi: String(doi),
@@ -264,6 +273,37 @@ export class DataCollectorAgent {
       .map((m) => m?.DescriptorName?._ ?? m?.DescriptorName ?? '')
       .filter(Boolean)
       .slice(0, 10);
+  }
+
+  // ── 가이드라인 수집 (별도 쿼리: PublicationType=Guideline + EM/CCM 도메인) ──────
+  // 가이드라인은 드물어 검색창을 넓게(기본 365일) 잡고, 상위에서 미노출분만 선별한다.
+  async collectGuidelines({ days = 365, max = 40 } = {}) {
+    const now = new Date();
+    const past = new Date(now);
+    past.setDate(past.getDate() - days);
+    const fmt = (d) => `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
+
+    const term =
+      '(("practice guideline"[Publication Type]) OR ("guideline"[Publication Type])) AND ' +
+      '("emergency medicine"[MeSH] OR "critical care"[MeSH] OR "sepsis"[MeSH] OR ' +
+      '"respiratory distress syndrome"[MeSH] OR "resuscitation"[MeSH] OR "heart arrest"[MeSH] OR ' +
+      '"shock"[MeSH] OR "respiration, artificial"[MeSH])';
+
+    const params = this._buildParams({
+      db: 'pubmed', term, retmax: max,
+      mindate: fmt(past), maxdate: fmt(now), datetype: 'pdat',
+      retmode: 'json', sort: 'date',
+    });
+
+    const data = await this._fetchJson(`${PUBMED_BASE}/esearch.fcgi?${params}`);
+    const ids = data?.esearchresult?.idlist ?? [];
+    this.logger.info(`Guideline search: ${ids.length} PMIDs`, { term: 'guideline+EM/CCM' });
+    if (!ids.length) return [];
+
+    const articles = await this.fetchArticles(ids);
+    // PublicationType 에 실제로 guideline 이 있는 것만 유지(안전장치)
+    return articles.filter((a) =>
+      (a.publicationTypes ?? []).some((t) => /guideline/i.test(t)));
   }
 
   // ── Public API ────────────────────────────────────────────────────────────

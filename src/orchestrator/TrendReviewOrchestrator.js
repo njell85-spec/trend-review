@@ -10,6 +10,7 @@ import path from 'path';
 import { Logger } from '../utils/Logger.js';
 import { DataCollectorAgent } from '../agents/DataCollectorAgent.js';
 import { FilterAnalyzerAgent } from '../agents/FilterAnalyzerAgent.js';
+import { GuidelineAnalyzerAgent } from '../agents/GuidelineAnalyzerAgent.js';
 import { FullTextAgent } from '../agents/FullTextAgent.js';
 import { ValidationAgent } from '../agents/ValidationAgent.js';
 import { ReportGeneratorAgent } from '../agents/ReportGeneratorAgent.js';
@@ -44,6 +45,7 @@ export class TrendReviewOrchestrator {
       query: options.query,
     });
     this.filter = new FilterAnalyzerAgent({ topN: options.topN });
+    this.guideline = new GuidelineAnalyzerAgent();
     this.fullText = new FullTextAgent();
     this.validator = new ValidationAgent();
     this.reporter = new ReportGeneratorAgent({ outputDir: this.outputDir });
@@ -65,6 +67,33 @@ export class TrendReviewOrchestrator {
 
     // Exclusion list — tracks PMIDs already published to avoid re-selection
     this.excludeListPath = path.join(this.outputDir, 'selected_papers.json');
+    // 가이드라인 캐치업 노출 기록 (주 1회 게이트 + 중복 방지)
+    this.guidelineListPath = path.join(this.outputDir, 'selected_guidelines.json');
+    this.guidelineIntervalDays = options.guidelineIntervalDays ?? 7;
+  }
+
+  // ── 가이드라인 노출 기록 ──────────────────────────────────────────────────────
+  async _loadSeenGuidelines() {
+    try {
+      const raw = await readFile(this.guidelineListPath, 'utf8');
+      return JSON.parse(raw);
+    } catch { return []; }
+  }
+
+  // 주 1회 게이트: 마지막 가이드라인 노출이 N일 이상 지났거나(또는 없음) 시도.
+  _guidelineDue(seen, todayStr) {
+    if (!seen.length) return true;
+    const last = seen.reduce((a, b) => (a.date > b.date ? a : b));
+    const days = Math.round((new Date(todayStr) - new Date(last.date)) / 86_400_000);
+    return days >= this.guidelineIntervalDays;
+  }
+
+  async _saveGuideline(card, todayStr) {
+    const seen = await this._loadSeenGuidelines();
+    seen.push({ pmid: card.paper?.pmid, title: (card.paper?.title ?? '').slice(0, 80), org: card.org, date: todayStr });
+    if (!existsSync(this.outputDir)) await mkdir(this.outputDir, { recursive: true });
+    await writeFile(this.guidelineListPath, JSON.stringify(seen, null, 2));
+    this.logger.info(`Guideline list updated: ${seen.length} total`);
   }
 
   // ── Exclusion list (prevent duplicate paper selection) ───────────────────
@@ -287,13 +316,47 @@ export class TrendReviewOrchestrator {
     }
   }
 
-  async _stagePublish(topPapers) {
+  // ── 가이드라인 캐치업 (주 1회, 없으면 건너뜀) ────────────────────────────────
+  // 실패해도 데일리 논문 파이프라인에 영향 없도록 완전 non-fatal.
+  async _stageGuideline(todayStr) {
+    const entry = this._stageStart('GUIDELINE');
+    try {
+      const seen = await this._loadSeenGuidelines();
+      if (!this._guidelineDue(seen, todayStr)) {
+        this.logger.info('Guideline gate: not due yet — skipping');
+        this._stageEnd(entry, 'skipped', { reason: 'not-due' });
+        return null;
+      }
+
+      const guidelines = await this.collector.collectGuidelines();
+      const pick = this.guideline.selectNew(guidelines, seen.map((s) => s.pmid));
+      if (!pick) {
+        this.logger.info('No new guideline available — skipping');
+        this._stageEnd(entry, 'skipped', { reason: 'none-new' });
+        return null;
+      }
+
+      const card = await this.guideline.analyze(pick);
+      if (!card) {
+        this._stageEnd(entry, 'skipped', { reason: 'analysis-failed' });
+        return null;
+      }
+      this._stageEnd(entry, 'ok', { pmid: card.paper?.pmid, org: card.org });
+      return card;
+    } catch (err) {
+      this._stageEnd(entry, 'error', { err: err.message });
+      this.logger.warn('Guideline stage failed (non-fatal)', { err: err.message });
+      return null;
+    }
+  }
+
+  async _stagePublish(topPapers, guideline = null) {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
       // KST 기준 날짜 사용 (21:30 UTC = 06:30 KST → UTC 날짜는 하루 빠름)
       const dateStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
-      const pagesUrl = await this.githubPublisher.publish(dateStr, topPapers);
+      const pagesUrl = await this.githubPublisher.publish(dateStr, topPapers, { guideline });
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
       return pagesUrl;
@@ -411,11 +474,16 @@ export class TrendReviewOrchestrator {
 
       const { jsonPath, htmlPath } = await this._stageReport(this.sessionId, payload);
 
-      // Stage 7: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
-      const pagesUrl = await this._stagePublish(validatedPico);
+      // Stage 7a: 가이드라인 캐치업 (주 1회, non-fatal, 없으면 null)
+      const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+      const guidelineCard = await this._stageGuideline(todayStr);
+
+      // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
+      const pagesUrl = await this._stagePublish(validatedPico, guidelineCard);
 
       // Save newly-published PMIDs to exclusion list
       if (validatedPico.length) await this._saveExcludePmids(validatedPico);
+      if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 8: Notify (optional — Drive + Gmail + KakaoTalk)
       const notifyResult = await this._stageNotify(

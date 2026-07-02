@@ -12,6 +12,7 @@ import { Cache } from '../utils/Cache.js';
 import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
 import { LLMClient, PROVIDER_DEFAULTS } from '../utils/LLMClient.js';
+import { MetadataScorer } from '../utils/MetadataScorer.js';
 
 export class FilterAnalyzerAgent {
   constructor(options = {}) {
@@ -27,6 +28,11 @@ export class FilterAnalyzerAgent {
     this.llm = new LLMClient({ provider: this.provider, model: this.model });
     this.picoLlm = new LLMClient({ provider: this.provider, model: this.picoModel });
     this.topN = options.topN ?? Number(process.env.TOP_N ?? 1);
+
+    // 스코어링은 결정적 메타데이터 스코어러로 수행한다 (LLM 아님).
+    //   · 무료·무인 자동화에서 Claude Code CLI 안전필터의 배치 채점 거부(AUP)를 회피.
+    //   · Opus 는 아래 analyzePico 의 "선정 1편" 심층분석에만 쓴다.
+    this.scorer = new MetadataScorer();
   }
 
   // ── Tool definitions for structured Claude output ─────────────────────────
@@ -221,55 +227,17 @@ export class FilterAnalyzerAgent {
     );
   }
 
-  // ── Step 1: Score all papers in batches of 10 ───────────────────────────
+  // ── Step 1: Score all papers — 결정적 메타데이터 스코어링 (LLM 아님) ─────────
+  // PubMed 메타데이터(저널 등급·연구 설계·표본수·최신성·EM/CCM 적합도)만으로 채점한다.
+  // LLM 배치 채점은 Claude Code CLI 안전필터가 거부(AUP)하므로 자동화에서 쓸 수 없다.
+  // 반환 형태는 기존 계약 유지: [{ pmid, score, rationale, studyType }]
   async scorePapers(papers) {
-    const BATCH = 10;
-    const allScores = [];
-
-    for (let i = 0; i < papers.length; i += BATCH) {
-      const batch = papers.slice(i, i + BATCH);
-      const cacheKey = `scores_${batch.map((p) => p.pmid).join('_')}`;
-
-      const providerCacheKey = `${this.provider}_${this.model}_${cacheKey}`;
-      const { data: scores, fromCache } = await this.cache.getOrFetch(providerCacheKey, async () => {
-        this.logger.debug(`Scoring batch ${Math.floor(i / BATCH) + 1}/${Math.ceil(papers.length / BATCH)}`);
-
-        const paperList = batch
-          .map(
-            (p, idx) =>
-              `[${idx + 1}] PMID: ${p.pmid}\nTitle: ${p.title}\nJournal: ${p.journal} (${p.pubDate})\nAbstract: ${p.abstract.slice(0, 800)}`
-          )
-          .join('\n\n---\n\n');
-
-        const prompt = `You are an expert emergency medicine physician and critical care specialist performing a systematic literature review.
-
-Rate each paper below for CLINICAL APPLICABILITY in emergency medicine or critical care (1–10):
-- 9–10: Practice-changing, directly applicable, robust evidence
-- 7–8: Highly relevant, strong evidence or important topic
-- 5–6: Relevant but limited generalizability or methodological concerns
-- 3–4: Limited clinical relevance or preliminary data
-- 1–2: Not applicable to EM/CCM practice
-
-Prioritize: randomized trials, meta-analyses, high-impact observational studies on sepsis, resuscitation, airway, hemodynamics, toxicology, procedural interventions.
-
-Papers to score:
-${paperList}
-
-Use the submit_paper_scores tool to return scores for ALL ${batch.length} papers.`;
-
-        const result = await this._callLLM(
-          [{ role: 'user', content: prompt }],
-          this._scoringTool
-        );
-
-        return result.scores;
-      });
-
-      if (fromCache) this.logger.debug(`Batch ${Math.floor(i / BATCH) + 1} scores from cache`);
-      allScores.push(...scores);
-    }
-
-    return allScores;
+    const scores = this.scorer.scorePapers(papers);
+    this.logger.info(`Scored ${scores.length} papers (deterministic metadata)`, {
+      top: [...scores].sort((a, b) => b.score - a.score).slice(0, 3)
+        .map((s) => ({ pmid: s.pmid, score: s.score, type: s.studyType })),
+    });
+    return scores;
   }
 
   // ── Step 2: Select top-N papers (excluding already-published PMIDs) ─────────
@@ -285,9 +253,11 @@ Use the submit_paper_scores tool to return scores for ALL ${batch.length} papers
     return eligible
       .map((p) => ({
         ...p,
-        scoringData: scoreMap.get(p.pmid) ?? { score: 0, rationale: '', studyType: 'Other' },
+        scoringData: scoreMap.get(p.pmid) ?? { score: 0, rawScore: 0, rationale: '', studyType: 'Other' },
       }))
-      .sort((a, b) => (b.scoringData.score ?? 0) - (a.scoringData.score ?? 0))
+      // rawScore(풀 정밀도)로 정렬해 동점을 안정적으로 깬다 (표시 점수는 반올림됨).
+      .sort((a, b) => (b.scoringData.rawScore ?? b.scoringData.score ?? 0)
+                    - (a.scoringData.rawScore ?? a.scoringData.score ?? 0))
       .slice(0, this.topN);
   }
 

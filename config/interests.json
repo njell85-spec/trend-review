@@ -1,0 +1,60 @@
+{
+  "_comment": "PeterJ 관심사 프로파일 — '나에게 적절한' 논문 적합도 가중치. 숫자만 고쳐 튜닝하세요. weight=그룹 중요도(0~1), terms=매칭 키워드(소문자 부분일치). 제목 매칭이 MeSH/키워드보다 크게 반영됨.",
+  "topicGroups": {
+    "cardiac_resus": {
+      "label": "소생·심정지·심혈관",
+      "weight": 1.0,
+      "terms": [
+        "resuscitation", "cardiac arrest", "cardiopulmonary", "cpr", "rosc",
+        "return of spontaneous", "defibrillation", "post-arrest", "post-cardiac arrest",
+        "targeted temperature", "ecpr", "acute coronary", "myocardial infarction",
+        "stemi", "nstemi", "arrhythmia", "atrial fibrillation", "ventricular fibrillation",
+        "cardiogenic shock", "pulmonary embolism", "cardiac"
+      ]
+    },
+    "sepsis_shock": {
+      "label": "패혈증·쇼크·혈역학",
+      "weight": 1.0,
+      "terms": [
+        "sepsis", "septic", "septic shock", "vasopressor", "norepinephrine",
+        "vasopressin", "epinephrine", "fluid resuscitation", "lactate",
+        "hemodynamic", "haemodynamic", "distributive shock", "source control",
+        "hypotension", "mean arterial pressure", "capillary refill", "resuscitation fluid"
+      ]
+    },
+    "resp_airway_ards": {
+      "label": "호흡·기도·기계환기·ARDS",
+      "weight": 1.0,
+      "terms": [
+        "airway", "intubation", "rapid sequence", "laryngoscopy", "video laryngoscopy",
+        "mechanical ventilation", "ventilator", "ards", "acute respiratory distress",
+        "respiratory failure", "oxygenation", "non-invasive ventilation", "hfnc",
+        "high-flow", "high flow nasal", "peep", "prone position", "ecmo",
+        "extracorporeal", "tidal volume", "weaning", "extubation", "preoxygenation"
+      ]
+    },
+    "tox_trauma_neuro": {
+      "label": "중독·외상·신경응급",
+      "weight": 0.5,
+      "terms": [
+        "toxicology", "overdose", "poisoning", "antidote", "envenomation",
+        "trauma", "hemorrhage", "haemorrhage", "massive transfusion", "tranexamic",
+        "traumatic brain", "stroke", "thrombolysis", "thrombectomy",
+        "status epilepticus", "seizure", "subarachnoid", "intracranial"
+      ]
+    },
+    "general_em_ccm": {
+      "label": "응급·중환자 일반",
+      "weight": 0.55,
+      "terms": [
+        "emergency department", "emergency medicine", "critically ill",
+        "intensive care", "critical care", "acute care", "triage"
+      ]
+    }
+  },
+  "blend": {
+    "_comment": "최종점수 = 질점수 × (relevanceFloor + relevanceLift × 적합도01). 적합도가 높을수록 최대 +30% 가산.",
+    "relevanceFloor": 0.7,
+    "relevanceLift": 0.3
+  }
+}
