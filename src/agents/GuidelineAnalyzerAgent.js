@@ -13,13 +13,13 @@ import { Logger } from '../utils/Logger.js';
 import { Cache } from '../utils/Cache.js';
 import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
-import { LLMClient, PROVIDER_DEFAULTS } from '../utils/LLMClient.js';
+import { LLMClient, PROVIDER_DEFAULTS, ANTHROPIC_ANALYSIS_MODEL } from '../utils/LLMClient.js';
 import { MetadataScorer } from '../utils/MetadataScorer.js';
 
 export class GuidelineAnalyzerAgent {
   constructor(options = {}) {
     this.provider = options.provider ?? 'anthropic';
-    this.model = options.model ?? (this.provider === 'anthropic' ? 'claude-opus-4-8' : PROVIDER_DEFAULTS[this.provider]);
+    this.model = options.model ?? (this.provider === 'anthropic' ? ANTHROPIC_ANALYSIS_MODEL : PROVIDER_DEFAULTS[this.provider]);
 
     this.logger = new Logger('GuidelineAnalyzer', { logFile: 'guideline_analyzer.jsonl' });
     this.cache = new Cache();
@@ -154,9 +154,11 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     if (guideline.doi && guideline.doi.length > 3) sources.push({ label: `Journal (DOI) — ${guideline.doi}`, url: `https://doi.org/${guideline.doi}` });
     if (guideline.oaUrl) sources.push({ label: 'Open-access full text', url: guideline.oaUrl });
     for (const s of guideline.augmentSources ?? []) sources.push(s);
-    // Opus 가 웹검색으로 실제 사용한 권위 출처
+    // Opus 가 웹검색으로 실제 사용한 권위 출처 (http/https 링크만 수용 — javascript: 등 주입 차단)
     for (const s of data.webSources ?? []) {
-      if (s?.url) sources.push({ label: `웹 — ${s.label ?? s.url}`, url: s.url });
+      if (s?.url && /^https?:\/\//i.test(String(s.url).trim())) {
+        sources.push({ label: `웹 — ${s.label ?? s.url}`, url: String(s.url).trim() });
+      }
     }
 
     const keyChanges = Array.isArray(data.keyChanges) ? data.keyChanges : [];

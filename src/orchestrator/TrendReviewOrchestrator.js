@@ -17,6 +17,7 @@ import { ValidationAgent } from '../agents/ValidationAgent.js';
 import { ReportGeneratorAgent } from '../agents/ReportGeneratorAgent.js';
 import { NotificationAgent } from '../agents/NotificationAgent.js';
 import { GitHubPublisher } from '../utils/GitHubPublisher.js';
+import { kstDateStr, kstStamp } from '../utils/dates.js';
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -114,7 +115,7 @@ export class TrendReviewOrchestrator {
       existing = JSON.parse(raw);
     } catch { /* first run */ }
 
-    const today = new Date().toISOString().slice(0, 10);
+    const today = kstDateStr();
     const added = newPapers.map((p) => ({
       pmid: p.paper?.pmid ?? p.pmid,
       title: (p.paper?.title ?? p.title ?? '').slice(0, 80),
@@ -128,18 +129,18 @@ export class TrendReviewOrchestrator {
   }
 
   _newSessionId() {
-    const now = new Date();
-    const date = now.toISOString().slice(0, 10).replace(/-/g, '');
-    const time = now.toTimeString().slice(0, 8).replace(/:/g, '');
-    return `trend_review_${date}_${time}`;
+    return `trend_review_${kstStamp()}`;
   }
 
   // ── Checkpoint persistence ────────────────────────────────────────────────
+  // 단계별 데이터를 병합 저장 — 마지막 단계만 남기면 resume 시 이전 단계를
+  // 전부 다시 실행하게 된다.
   async _saveCheckpoint(stage, data) {
     if (!existsSync(this.checkpointDir))
       await mkdir(this.checkpointDir, { recursive: true });
     const filePath = path.join(this.checkpointDir, `${this.sessionId}.json`);
-    const checkpoint = { sessionId: this.sessionId, stage, savedAt: new Date().toISOString(), data };
+    const merged = { ...(this.checkpoint?.data ?? {}), ...data };
+    const checkpoint = { sessionId: this.sessionId, stage, savedAt: new Date().toISOString(), data: merged };
     await writeFile(filePath, JSON.stringify(checkpoint, null, 2));
     this.checkpoint = checkpoint;
     this.logger.debug(`Checkpoint saved: ${stage}`);
@@ -202,7 +203,8 @@ export class TrendReviewOrchestrator {
       if (resumeData?.validatedPapers) {
         this.logger.info('Resuming from checkpoint — skipping pass-1 validation');
         this._stageEnd(entry, 'resumed');
-        return resumeData;
+        // 호출부는 { papers, stats } 형태를 기대한다 — 체크포인트 키를 정규화
+        return { papers: resumeData.validatedPapers, stats: resumeData.validationStats ?? {} };
       }
 
       const result = this.validator.validatePapers(papers);
@@ -223,15 +225,16 @@ export class TrendReviewOrchestrator {
   async _stageAnalyze(papers, excludePmids = [], resumeData = null) {
     const entry = this._stageStart(STAGES.ANALYZING);
     try {
-      if (resumeData?.allScoredPapers) {
+      if (resumeData?.allScoredPapers && resumeData?.scoredTopPapers) {
         this.logger.info('Resuming from checkpoint — skipping scoring');
         this._stageEnd(entry, 'resumed');
-        return resumeData;
+        return { topPapers: resumeData.scoredTopPapers, allScoredPapers: resumeData.allScoredPapers };
       }
 
       const result = await this.filter.runScoringOnly(papers, excludePmids);
+      // 키를 PICO 결과(topPapers)와 구분 — 병합 체크포인트에서 충돌 방지
       await this._saveCheckpoint(STAGES.ANALYZING, {
-        topPapers: result.topPapers,
+        scoredTopPapers: result.topPapers,
         allScoredPapers: result.allScoredPapers,
       });
       this._stageEnd(entry, 'ok', { topN: result.topPapers.length, total: result.allScoredPapers.length });
@@ -364,9 +367,7 @@ export class TrendReviewOrchestrator {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
-      // KST 기준 날짜 사용 (21:30 UTC = 06:30 KST → UTC 날짜는 하루 빠름)
-      const dateStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
-      const pagesUrl = await this.githubPublisher.publish(dateStr, topPapers, { guideline });
+      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline });
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
       return pagesUrl;
@@ -407,7 +408,10 @@ export class TrendReviewOrchestrator {
       resumeCheckpoint = await this._loadCheckpoint(options.resumeFromSession);
       if (resumeCheckpoint) {
         this.sessionId = options.resumeFromSession;
+        this.checkpoint = resumeCheckpoint; // 이후 저장이 기존 데이터에 병합되도록
         this.logger.info(`Resuming session from stage: ${resumeCheckpoint.stage}`);
+      } else {
+        this.logger.warn(`No checkpoint found for session ${options.resumeFromSession} — running fresh`);
       }
     }
 
@@ -486,15 +490,16 @@ export class TrendReviewOrchestrator {
       const { jsonPath, htmlPath } = await this._stageReport(this.sessionId, payload);
 
       // Stage 7a: 가이드라인 캐치업 (주 1회, non-fatal, 없으면 null)
-      const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+      const todayStr = kstDateStr();
       const guidelineCard = await this._stageGuideline(todayStr);
+
+      // 제외목록·가이드라인 기록을 publish 전에 저장 — publish가 이 파일들을
+      // 커밋/푸시하므로, 순서가 뒤면 원격 목록이 항상 하루 늦어 중복 선정된다
+      if (validatedPico.length) await this._saveExcludePmids(validatedPico);
+      if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
       const pagesUrl = await this._stagePublish(validatedPico, guidelineCard);
-
-      // Save newly-published PMIDs to exclusion list
-      if (validatedPico.length) await this._saveExcludePmids(validatedPico);
-      if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 8: Notify (optional — Drive + Gmail + KakaoTalk)
       const notifyResult = await this._stageNotify(
@@ -510,11 +515,14 @@ export class TrendReviewOrchestrator {
       // Save execution log
       await this.logger.saveSession(this.sessionId);
 
-      return this._buildResult(validatedPico, allScoredPapers, qualityReport, executionStats, {
-        jsonPath,
-        htmlPath,
-        ...(notifyResult && { notification: notifyResult }),
-      });
+      return this._buildResult(
+        validatedPico, allScoredPapers, qualityReport, executionStats,
+        { jsonPath, htmlPath },
+        {
+          ...(pagesUrl && { pagesUrl }),
+          ...(notifyResult && { notification: notifyResult }),
+        }
+      );
     } catch (err) {
       this.state = STAGES.FAILED;
       this.logger.error('Pipeline FAILED', { err: err.message, state: this.state });

@@ -5,13 +5,13 @@
  * Claude(캐시) vs GPT-4o(신규 분석)를 나란히 비교하는 HTML 생성.
  *
  * Usage:
- *   node compare-providers.mjs
- *   node compare-providers.mjs --archive output/reports/archive_litreview_XXXX.json
+ *   node scripts/compare-providers.mjs
+ *   node scripts/compare-providers.mjs --archive output/reports/archive_litreview_XXXX.json
  */
 import 'dotenv/config';
 import { readFile, writeFile, readdir } from 'fs/promises';
 import path from 'path';
-import { FilterAnalyzerAgent } from './src/agents/FilterAnalyzerAgent.js';
+import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
 
 // ── 최신 archive 파일 찾기 ─────────────────────────────────────────────────
 async function findLatestArchive(dir) {

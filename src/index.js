@@ -9,7 +9,6 @@
  *   node src/index.js --dry-run                   # smoke test (no API calls)
  */
 import 'dotenv/config';
-import path from 'path';
 import { TrendReviewOrchestrator } from './orchestrator/TrendReviewOrchestrator.js';
 import { Logger } from './utils/Logger.js';
 
@@ -18,11 +17,20 @@ const log = new Logger('Main');
 function parseArgs() {
   const args = process.argv.slice(2);
   const opts = {};
+  // 값이 빠졌거나 숫자가 아니면 NaN 이 조용히 흘러가지 않도록 즉시 실패
+  const num = (flag, v) => {
+    const n = Number(v);
+    if (!Number.isFinite(n) || n <= 0) {
+      console.error(`잘못된 ${flag} 값: "${v ?? ''}" (양의 숫자 필요)`);
+      process.exit(1);
+    }
+    return n;
+  };
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
-      case '--days':       opts.searchDays = Number(args[++i]); break;
-      case '--max':        opts.maxPapers  = Number(args[++i]); break;
-      case '--top':        opts.topN       = Number(args[++i]); break;
+      case '--days':       opts.searchDays = num('--days', args[++i]); break;
+      case '--max':        opts.maxPapers  = num('--max', args[++i]);  break;
+      case '--top':        opts.topN       = num('--top', args[++i]);  break;
       case '--resume':     opts.resumeFromSession = args[++i];  break;
       case '--dry-run':    opts.dryRun   = true;                break;
       case '--output':     opts.outputDir = args[++i];          break;
@@ -170,12 +178,18 @@ async function main() {
 
     process.exit(0);
   } catch (err) {
-    log.error('Fatal pipeline error', { err: err.message });
+    log.error('Fatal pipeline error', { err: err.message, stack: err.stack });
     const state = orchestrator.getState();
-    log.info(`Last completed stage: ${state.stages.at(-1)?.stage ?? 'none'}`);
+    // 마지막 항목은 보통 "실패한" 단계 — 성공/재개된 단계만 골라 표기
+    const lastOk = state.stages.filter((s) => s.result === 'ok' || s.result === 'resumed').at(-1);
+    log.info(`Last completed stage: ${lastOk?.stage ?? 'none'}`);
     log.info(`재시작: node src/index.js --resume ${state.sessionId}`);
     process.exit(1);
   }
 }
 
-main();
+// 오케스트레이터 생성 등 try 밖에서 터지는 예외도 unhandled rejection 이 되지 않게
+main().catch((err) => {
+  log.error('Unhandled fatal error', { err: err.message, stack: err.stack });
+  process.exit(1);
+});

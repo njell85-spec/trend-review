@@ -4,7 +4,7 @@
  */
 export class RetryHelper {
   constructor(options = {}) {
-    this.maxAttempts = options.maxAttempts ?? Number(process.env.RETRY_MAX_ATTEMPTS ?? 3);
+    this.maxAttempts = Math.max(1, options.maxAttempts ?? Number(process.env.RETRY_MAX_ATTEMPTS ?? 3));
     this.baseDelayMs = options.baseDelayMs ?? Number(process.env.RETRY_BASE_DELAY_MS ?? 1_000);
     this.maxDelayMs = options.maxDelayMs ?? 30_000;
     this.jitter = options.jitter !== false;
@@ -21,18 +21,17 @@ export class RetryHelper {
   _isRetryable(err) {
     if (err.name === 'CircuitOpenError') return false;
     if (!this.retryableErrors) return true;
+    // e 는 에러 클래스일 수도, 문자열 코드('ECONNRESET')·숫자 상태(429)일 수도 있다
     return this.retryableErrors.some(
-      (e) => err instanceof e || err.code === e || err.status === e
+      (e) => (typeof e === 'function' && err instanceof e) || err.code === e || err.status === e
     );
   }
 
   async execute(fn, { label = 'operation', onRetry } = {}) {
-    let lastErr;
     for (let attempt = 1; attempt <= this.maxAttempts; attempt++) {
       try {
         return await fn(attempt);
       } catch (err) {
-        lastErr = err;
         if (attempt === this.maxAttempts || !this._isRetryable(err)) throw err;
 
         const delay = this._delay(attempt);
@@ -40,10 +39,5 @@ export class RetryHelper {
         await new Promise((r) => setTimeout(r, delay));
       }
     }
-    throw lastErr;
   }
-}
-
-export async function withRetry(fn, options = {}) {
-  return new RetryHelper(options).execute(fn);
 }

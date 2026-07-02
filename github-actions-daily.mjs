@@ -11,13 +11,21 @@
  *   GITHUB_REPO        — 자동 제공 (github.event.repository.name)
  */
 import 'dotenv/config';
+import { appendFileSync } from 'fs';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
 import { runWithRetry } from './src/utils/retryPipeline.js';
 import { llmTelemetry } from './src/utils/LLMClient.js';
+import { kstDateStr } from './src/utils/dates.js';
 
-const todayKST = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+const todayKST = kstDateStr();
 console.log(`\n📅 Daily EM/CCM Trend Review — ${todayKST} (KST)\n`);
+
+// Actions job summary — 소프트 실패(exit 0)도 초록 체크와 구분되게 기록한다.
+function jobSummary(md) {
+  if (!process.env.GITHUB_STEP_SUMMARY) return;
+  try { appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + '\n'); } catch { /* non-fatal */ }
+}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -69,7 +77,11 @@ if (!outcome.ok) {
   // 결정적 오류이거나 마지막 시도까지 실패 → 소프트 스킵 + 정확한 사유로 알림.
   console.warn('   사이트는 변경되지 않았습니다.');
   const suffix = outcome.retryable ? ` — ${MAX_ATTEMPTS}회 재시도 후에도 실패` : '';
-  await notifyFailure(`${outcome.label}${suffix}`);
+  const reason = `${outcome.label}${suffix}`;
+  // exit 0 이라 잡은 초록색 — 어노테이션 + job summary 로 소프트 실패를 가시화
+  console.log(`::warning::Trend Review 소프트 실패 (사이트 미변경): ${reason}`);
+  jobSummary(`## ⚠️ Trend Review 소프트 실패 — ${todayKST}\n\n- 사유: **${reason}**\n- 사이트는 이전 상태를 유지합니다. 다음 스케줄에 재시도됩니다.`);
+  await notifyFailure(reason);
   process.exit(0);
 }
 
@@ -84,6 +96,8 @@ papers.forEach((p, i) =>
 
 if (!papers.length) {
   console.warn('⚠️  오늘 선정된 논문이 없습니다.');
+  console.log('::warning::오늘 선정된 논문이 없습니다 (파이프라인은 정상 종료).');
+  jobSummary(`## ⚠️ Trend Review — ${todayKST}\n\n선정된 논문이 없습니다 (검색/검증 결과 0편).`);
   process.exit(0);
 }
 
@@ -95,10 +109,27 @@ const llmRoute = llmTelemetry.label();
 console.log(`🧭 LLM 실행 경로: ${llmRoute}  (구독=CLI, API=폴백)`);
 
 // ── 카카오 나챗방 발송 (Secrets 설정 시) — 실패해도 파이프라인은 성공 처리 ─────
+let kakaoStatus = '미설정';
 try {
   const kakao = new KakaoNotifier();
   const r = await kakao.send({ dateStr: todayKST, screened: 300, topPaper: papers[0], pagesUrl, llmRoute });
-  if (r.sent) console.log('💬 카카오 나챗방 리포트 발송 완료');
+  if (r.sent) {
+    kakaoStatus = '발송 완료';
+    console.log('💬 카카오 나챗방 리포트 발송 완료');
+  }
 } catch (err) {
+  kakaoStatus = `발송 실패: ${err.message.slice(0, 120)}`;
   console.warn(`⚠️  카카오 발송 실패(파이프라인은 정상): ${err.message}`);
+  // 카톡이 유일한 알림 채널이므로, 발송 실패는 잡 로그에서 반드시 눈에 띄어야 한다
+  console.log(`::warning::카카오 발송 실패 — ${err.message.slice(0, 200)}`);
 }
+
+const top = papers[0];
+jobSummary([
+  `## ✅ Trend Review — ${todayKST}`,
+  '',
+  `- 선정: **${(top.title_ko || top.paper?.title || '').slice(0, 100)}** (PMID ${top.paper?.pmid ?? '—'})`,
+  `- LLM 경로: ${llmRoute}`,
+  `- 카카오: ${kakaoStatus}`,
+  `- 대시보드: ${pagesUrl}`,
+].join('\n'));

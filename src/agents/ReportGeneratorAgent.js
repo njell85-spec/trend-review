@@ -113,7 +113,7 @@ ${this._buildSummaryTable(topPapers)}
       <input x-model="search" type="text" placeholder="제목, 저널 검색…" class="border rounded-lg px-3 py-2 text-sm w-56 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
       <select x-model="filterStudy" class="border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
         <option value="">전체 유형</option>
-        ${[...new Set(allScoredPapers.map((p) => p.scoringData?.studyType ?? 'Other'))].map((t) => `<option value="${t}">${t}</option>`).join('')}
+        ${[...new Set(allScoredPapers.map((p) => p.scoringData?.studyType ?? 'Other'))].map((t) => `<option value="${this._esc(t)}">${this._esc(t)}</option>`).join('')}
       </select>
       <select x-model="minScore" class="border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
         <option value="0">전체 점수</option><option value="7">7점 이상</option><option value="5">5점 이상</option>
@@ -182,9 +182,8 @@ ${this._buildSummaryTable(topPapers)}
   <p class="mt-1">본 시스템의 분석 결과는 보조 도구이며, 임상 결정은 전문의 판단을 따르십시오.</p>
 </footer>
 <script>
-const TOP_PAPERS = ${JSON.stringify(topPapers)};
-const ALL_PAPERS = ${JSON.stringify(allScoredPapers)};
-const QUALITY = ${JSON.stringify(qualityReport ?? {})};
+const ALL_PAPERS = ${this._jsonForScript(allScoredPapers.map((p) => this._slimPaper(p)))};
+const QUALITY = ${this._jsonForScript(qualityReport ?? {})};
 function app() {
   return {
     search: '', filterStudy: '', minScore: '0', expandPaper: null,
@@ -220,15 +219,21 @@ function app() {
   }
 
   _buildFullTextBadge(result, paper) {
-    const src = result.fullTextSource ?? 'abstract-only';
-    const len = result.fullTextLength ?? 0;
-    const figures = result.figures ?? [];
-    if (src === 'PMC') {
+    // FullTextAgent는 paper 객체를 보강하므로 실제 필드는 대개 paper 쪽에 있다
+    const src = result.fullTextSource ?? paper.fullTextSource ?? 'abstract-only';
+    const len = result.fullTextLength ?? paper.fullTextLength ?? 0;
+    const figures = result.figures ?? paper.figures ?? [];
+    if (src === 'PMC' || src === 'EuropePMC') {
+      const label = src === 'PMC' ? 'PMC' : 'Europe PMC';
       const figNote = figures.length ? ` · ${figures.length} figure/table caption${figures.length > 1 ? 's' : ''} extracted` : '';
-      return `<div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-3 py-2 mb-4 text-xs text-green-800"><span>📄</span><span><strong>Full text available (PMC)</strong> — ${Math.round(len / 1000)}k chars analyzed${figNote} &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-green-600">PubMed →</a></span></div>`;
+      return `<div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-3 py-2 mb-4 text-xs text-green-800"><span>📄</span><span><strong>Full text available (${label})</strong> — ${Math.round(len / 1000)}k chars analyzed${figNote} &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-green-600">PubMed →</a></span></div>`;
     }
     if (src === 'Unpaywall') {
-      return `<div class="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 mb-4 text-xs text-blue-800"><span>🔓</span><span><strong>Open-access full text (Unpaywall)</strong> — ${Math.round(len / 1000)}k chars analyzed &nbsp;<a href="${this._esc(result.oaUrl ?? paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-blue-600">Full text →</a></span></div>`;
+      return `<div class="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 mb-4 text-xs text-blue-800"><span>🔓</span><span><strong>Open-access full text (Unpaywall)</strong> — ${Math.round(len / 1000)}k chars analyzed &nbsp;<a href="${this._esc(result.oaUrl ?? paper.oaUrl ?? paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-blue-600">Full text →</a></span></div>`;
+    }
+    if (src === 'abstract+registry') {
+      const regUrl = (paper.augmentSources ?? result.augmentSources ?? [])[0]?.url ?? paper.pubmedUrl ?? '#';
+      return `<div class="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-4 text-xs text-amber-800"><span>🗂️</span><span><strong>Abstract + ClinicalTrials.gov registry</strong> &nbsp;<a href="${this._esc(regUrl)}" target="_blank" rel="noopener" class="underline hover:text-amber-600">Registry →</a></span></div>`;
     }
     return `<div class="flex items-center gap-2 bg-gray-100 border border-gray-200 rounded-lg px-3 py-2 mb-4 text-xs text-gray-500"><span>📃</span><span><strong>Abstract only</strong> &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="text-blue-500 underline hover:text-blue-700">PubMed →</a></span></div>`;
   }
@@ -400,6 +405,19 @@ function app() {
 
   _esc(str) {
     return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // 인라인 <script>에 JSON을 안전하게 임베드 — '<' 이스케이프로 '</script>'·'<!--' 주입 차단
+  _jsonForScript(obj) {
+    return JSON.stringify(obj).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+  }
+
+  // 대시보드 JS가 실제로 쓰는 필드만 임베드 (abstract/fullText 등 대용량·비신뢰 텍스트 제외)
+  _slimPaper(p) {
+    return {
+      pmid: p.pmid, title: p.title, journal: p.journal, authors: p.authors,
+      pubDate: p.pubDate, pubmedUrl: p.pubmedUrl, scoringData: p.scoringData,
+    };
   }
 
   async run(sessionId, data) {

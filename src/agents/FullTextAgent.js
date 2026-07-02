@@ -36,23 +36,56 @@ export class FullTextAgent {
     this.logger.section('FullTextAgent — Full-text Retrieval');
     this.logger.info(`Attempting full-text for ${papers.length} papers`);
 
-    const enriched = await Promise.all(papers.map((p) => this._enrich(p)));
+    // NCBI/EPMC 동시 폭주 방지 — 소규모 풀로 제한 (topN=1이면 사실상 순차)
+    const enriched = await this._mapLimit(papers, 3, (p) => this._enrich(p));
 
     const stats = {
       pmc:          enriched.filter((p) => p.fullTextSource === 'PMC').length,
+      europePmc:    enriched.filter((p) => p.fullTextSource === 'EuropePMC').length,
       unpaywall:    enriched.filter((p) => p.fullTextSource === 'Unpaywall').length,
+      registry:     enriched.filter((p) => p.fullTextSource === 'abstract+registry').length,
       abstractOnly: enriched.filter((p) => p.fullTextSource === 'abstract-only').length,
     };
     this.logger.info('Full-text retrieval complete', stats);
     return { papers: enriched, stats };
   }
 
+  async _mapLimit(items, limit, fn) {
+    const out = new Array(items.length);
+    let next = 0;
+    const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+      while (next < items.length) {
+        const idx = next++;
+        out[idx] = await fn(items[idx]);
+      }
+    });
+    await Promise.all(workers);
+    return out;
+  }
+
   // ── Per-paper enrichment ──────────────────────────────────────────────────
+  // 성공(본문 확보)만 캐시한다 — 일시 장애로 초록-only가 된 결과를 72시간
+  // 재사용하면 그날의 선정 논문이 며칠간 초록 분석에 갇힌다.
   async _enrich(paper) {
-    const cacheKey = `ft_v1_${paper.pmid}`;
-    const { data, fromCache } = await this.cache.getOrFetch(cacheKey, () => this._fetch(paper));
-    if (fromCache) this.logger.debug(`Full text from cache: PMID ${paper.pmid}`);
+    const cacheKey = `ft_v2_${paper.pmid}`;
+    const cached = await this.cache.get(cacheKey);
+    if (cached !== null) {
+      this.logger.debug(`Full text from cache: PMID ${paper.pmid}`);
+      return { ...paper, ...cached };
+    }
+    const data = await this._fetch(paper);
+    if (data.fullText) await this.cache.set(cacheKey, data);
     return { ...paper, ...data };
+  }
+
+  // 일시 오류(429/5xx/네트워크)만 재시도하는 fetch 래퍼. 4xx는 그대로 반환해
+  // 각 라우트가 "본문 없음"으로 판단하게 둔다.
+  async _fetchRetry(url, opts = {}, label = 'fetch') {
+    return this.retry.execute(async () => {
+      const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS), ...opts });
+      if (res.status === 429 || res.status >= 500) throw new Error(`${label} HTTP ${res.status}`);
+      return res;
+    }, { label });
   }
 
   async _fetch(paper) {
@@ -99,12 +132,12 @@ export class FullTextAgent {
       this.logger.warn(`EuropePMC failed (PMID ${paper.pmid}): ${e.message}`);
     }
 
-    // ── Route 2: Unpaywall ──────────────────────────────────────────────────
+    // ── Route 2: Unpaywall (best_oa_location 실패 시 다른 OA location도 시도) ──
     if (paper.doi && paper.doi.length > 3 && paper.doi !== 'undefined') {
       try {
-        const oaUrl = await this._unpaywall(paper.doi);
-        if (oaUrl) {
-          const text = await this._fetchHtmlText(oaUrl);
+        const oaUrls = await this._unpaywallUrls(paper.doi);
+        for (const oaUrl of oaUrls) {
+          const text = await this._fetchHtmlText(oaUrl).catch(() => null);
           if (text && text.length > 300) {
             this.logger.info(`Unpaywall full text: PMID ${paper.pmid} — ${text.length} chars`);
             return {
@@ -136,7 +169,7 @@ export class FullTextAgent {
     const url = `https://clinicaltrials.gov/api/v2/studies/${nct}?format=json`;
     let study;
     try {
-      const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
+      const res = await this._fetchRetry(url, {}, 'ctgov');
       if (!res.ok) throw new Error(`ClinicalTrials.gov HTTP ${res.status}`);
       study = await res.json();
     } catch (e) {
@@ -215,9 +248,9 @@ export class FullTextAgent {
 
     if (!pmcid && paper.pmid) {
       const q = `EXT_ID:${paper.pmid} AND SRC:MED`;
-      const sres = await fetch(
+      const sres = await this._fetchRetry(
         `${EPMC}/search?query=${encodeURIComponent(q)}&resultType=core&format=json`,
-        { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) }
+        {}, 'epmc-search'
       );
       if (!sres.ok) throw new Error(`EuropePMC search HTTP ${sres.status}`);
       const sdata = await sres.json();
@@ -228,9 +261,7 @@ export class FullTextAgent {
     }
     if (!pmcid) return { text: '', figures: [] };
 
-    const fres = await fetch(`${EPMC}/PMC/PMC${pmcid}/fullTextXML`, {
-      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-    });
+    const fres = await this._fetchRetry(`${EPMC}/PMC/PMC${pmcid}/fullTextXML`, {}, 'epmc-fulltext');
     if (!fres.ok) throw new Error(`EuropePMC fullText HTTP ${fres.status}`);
     const xmlText = await fres.text();
     const xml = await parseStringPromise(xmlText, { explicitArray: false, ignoreAttrs: false });
@@ -251,7 +282,7 @@ export class FullTextAgent {
     });
 
     const url = `${PUBMED_BASE}/efetch.fcgi?${params}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
+    const res = await this._fetchRetry(url, {}, 'pmc');
     if (!res.ok) throw new Error(`PMC HTTP ${res.status}`);
 
     const xmlText = await res.text();
@@ -327,28 +358,31 @@ export class FullTextAgent {
   }
 
   // ── Unpaywall ─────────────────────────────────────────────────────────────
-  async _unpaywall(doi) {
+  // best_oa_location 우선, 나머지 oa_locations도 후보로 반환 (landing page 우선)
+  async _unpaywallUrls(doi) {
     const url = `https://api.unpaywall.org/v2/${encodeURIComponent(doi)}?email=${encodeURIComponent(this.email)}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) return null;
+    const res = await this._fetchRetry(url, {}, 'unpaywall');
+    if (!res.ok) return [];
     const data = await res.json();
 
-    const best = data?.best_oa_location;
-    if (!best) return null;
-
-    // Prefer HTML landing page (easier to parse) over direct PDF
-    return best.url_for_landing_page ?? best.url_for_pdf ?? best.url ?? null;
+    const locations = [data?.best_oa_location, ...(data?.oa_locations ?? [])].filter(Boolean);
+    const urls = [];
+    for (const loc of locations) {
+      for (const u of [loc.url_for_landing_page, loc.url_for_pdf, loc.url]) {
+        if (u && !urls.includes(u)) urls.push(u);
+      }
+    }
+    return urls.slice(0, 4);
   }
 
   // ── HTML text extraction ──────────────────────────────────────────────────
   async _fetchHtmlText(url) {
-    const res = await fetch(url, {
-      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    const res = await this._fetchRetry(url, {
       headers: {
         'User-Agent': `TrendReviewAgent/1.0 (research; mailto:${this.email})`,
         'Accept': 'text/html,application/xhtml+xml',
       },
-    });
+    }, 'oa-html');
     if (!res.ok) return null;
     const ct = res.headers.get('content-type') ?? '';
     if (ct.includes('pdf')) return null; // skip binary PDFs
@@ -367,11 +401,12 @@ export class FullTextAgent {
       .replace(/<aside[\s\S]*?<\/aside>/gi, ' ')
       .replace(/<[^>]+>/g, ' ')
       .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
       .replace(/&lt;/g, '<')
       .replace(/&gt;/g, '>')
       .replace(/&quot;/g, '"')
       .replace(/&#39;/g, "'")
+      // &amp; 는 마지막에 — 먼저 풀면 '&amp;lt;' 같은 이중 인코딩이 마크업으로 되살아남
+      .replace(/&amp;/g, '&')
       .replace(/\s{2,}/g, ' ')
       .trim();
   }

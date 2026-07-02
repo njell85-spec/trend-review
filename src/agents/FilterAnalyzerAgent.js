@@ -11,13 +11,13 @@ import { Logger } from '../utils/Logger.js';
 import { Cache } from '../utils/Cache.js';
 import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
-import { LLMClient, PROVIDER_DEFAULTS } from '../utils/LLMClient.js';
+import { LLMClient, PROVIDER_DEFAULTS, ANTHROPIC_ANALYSIS_MODEL } from '../utils/LLMClient.js';
 import { MetadataScorer } from '../utils/MetadataScorer.js';
 
 export class FilterAnalyzerAgent {
   constructor(options = {}) {
     this.provider = options.provider ?? 'anthropic';
-    this.model = options.model ?? (this.provider === 'anthropic' ? 'claude-opus-4-8' : PROVIDER_DEFAULTS[this.provider]);
+    this.model = options.model ?? (this.provider === 'anthropic' ? ANTHROPIC_ANALYSIS_MODEL : PROVIDER_DEFAULTS[this.provider]);
     this.picoModel = options.picoModel ?? this.model;
 
     this.logger = new Logger('FilterAnalyzerAgent', { logFile: 'filter_analyzer.jsonl' });
@@ -283,7 +283,10 @@ export class FilterAnalyzerAgent {
   }
 
   async _analyzeSinglePaper(paper) {
-    const cacheKey = `pico_v5_${this.provider}_${this.picoModel}_${paper.pmid}`;
+    // 캐시 키에 본문 확보 상태를 포함 — 초록-only로 캐시된 분석이 전문 확보 후에도
+    // 재사용되는 것을 방지
+    const src = paper.fullTextSource ?? 'none';
+    const cacheKey = `pico_v6_${this.provider}_${this.picoModel}_${paper.pmid}_${src}_${paper.fullTextLength ?? 0}`;
     const { data, fromCache } = await this.cache.getOrFetch(cacheKey, async () => {
       this.logger.info(`PICO analysis: ${paper.pmid} — ${paper.title.slice(0, 60)}…`);
 
@@ -360,29 +363,38 @@ Requirements:
     return { evidenceSource: badge, sources };
   }
 
+  // 성공 경로와 동일한 필드 계약 유지 (_ko 필드·출처 포함) — 렌더러가 빈 섹션 대신
+  // 정직한 안내를 표시하고, 카카오 메시지도 한국어 제목 부재를 명시적으로 처리한다
   _fallbackPico(paper) {
     return {
       pmid: paper.pmid,
       paper,
+      title_ko: '',
       clinicalQuestion: 'Analysis unavailable — see abstract',
+      clinicalQuestion_ko: '자동 분석 실패 — 원문 초록을 확인하세요',
       pico: {
         population: 'Not analyzed',
         intervention: 'Not analyzed',
         comparison: 'Not analyzed',
         outcome: 'Not analyzed',
       },
+      pico_ko: {},
       baseline: 'Not reported',
       secondaryOutcomes: [],
       secondaryOutcomes_ko: [],
       statGlossary: [],
       keyFindings: ['Analysis failed — refer to original abstract'],
+      keyFindings_ko: ['자동 분석 실패 — 원문 초록 참조'],
       clinicalTakeaway: 'Manual review required',
+      clinicalTakeaway_ko: '수동 검토 필요',
       limitations: 'Automated analysis failed',
+      limitations_ko: '자동 분석 실패',
       practiceChange: [],
       practiceChange_ko: [],
       evidenceLevel: 'Very Low',
       clinicalApplicabilityScore: paper.scoringData?.score ?? 0,
       analysisError: true,
+      ...this._provenance(paper),
     };
   }
 
@@ -456,7 +468,7 @@ Requirements:
 }
 
 // ── Standalone test ───────────────────────────────────────────────────────
-if (process.argv[1].endsWith('FilterAnalyzerAgent.js')) {
+if (process.argv[1]?.endsWith('FilterAnalyzerAgent.js')) {
   const mockPapers = [
     {
       pmid: '99999001',

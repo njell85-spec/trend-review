@@ -18,6 +18,10 @@ const SCOPES = [
   'https://www.googleapis.com/auth/gmail.send',
 ];
 
+const esc = (s) => String(s ?? '')
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
 export class NotificationAgent {
   constructor(options = {}) {
     this.logger = new Logger('NotificationAgent', { logFile: 'notification.jsonl' });
@@ -53,7 +57,8 @@ export class NotificationAgent {
   }
 
   async _firstTimeAuth(oAuth2) {
-    const authUrl = oAuth2.generateAuthUrl({ access_type: 'offline', scope: SCOPES });
+    // prompt:'consent' — 재인증 시에도 refresh_token이 반드시 내려오도록
+    const authUrl = oAuth2.generateAuthUrl({ access_type: 'offline', prompt: 'consent', scope: SCOPES });
     this.logger.info('최초 Google 인증 — 브라우저가 열립니다');
 
     // 로컬 HTTP 서버로 리디렉션 코드 자동 수신
@@ -83,12 +88,18 @@ export class NotificationAgent {
         }
       });
 
+      server.on('error', (err) => { reject(new Error(`인증 서버 시작 실패(:3000): ${err.message}`)); });
       server.listen(3000, () => {
         console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-        console.log('🔐 브라우저에서 Google 계정으로 로그인 후');
+        console.log('🔐 아래 URL을 브라우저에서 열어 Google 계정으로 로그인 후');
         console.log('   권한을 허용하면 자동으로 완료됩니다.');
+        console.log(`   ${authUrl}`);
         console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
-        exec(`start "" "${authUrl}"`);
+        // 가능하면 기본 브라우저 자동 열기 (플랫폼별; 실패해도 위 URL 수동 사용)
+        const opener = process.platform === 'win32' ? `start "" "${authUrl}"`
+          : process.platform === 'darwin' ? `open "${authUrl}"`
+          : `xdg-open "${authUrl}"`;
+        exec(opener, () => {});
       });
 
       // 5분 타임아웃
@@ -182,7 +193,7 @@ export class NotificationAgent {
       const pico = p.pico ?? {};
       const evidence = p.evidenceLevel ?? '—';
       const evColor = evidenceColor[evidence] ?? '#6b7280';
-      const findings = (p.keyFindings ?? []).map(f => `<li style="margin:4px 0">${f}</li>`).join('');
+      const findings = (p.keyFindings ?? []).map(f => `<li style="margin:4px 0">${esc(f)}</li>`).join('');
       const pmUrl = p.paper?.pubmedUrl ?? '#';
 
       return `
@@ -191,37 +202,37 @@ export class NotificationAgent {
     <span style="font-size:24px">${medals[i]}</span>
     <div style="flex:1">
       <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px">
-        <span style="background:#3b82f6;color:white;padding:2px 10px;border-radius:999px;font-weight:700;font-size:13px">${score}점</span>
-        <span style="background:${evColor};color:white;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600">${evidence}</span>
+        <span style="background:#3b82f6;color:white;padding:2px 10px;border-radius:999px;font-weight:700;font-size:13px">${esc(score)}점</span>
+        <span style="background:${evColor};color:white;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600">${esc(evidence)}</span>
       </div>
-      <a href="${pmUrl}" style="color:#1e3a5f;font-weight:700;font-size:15px;text-decoration:none">${title}</a>
-      <div style="color:#6b7280;font-size:12px;margin-top:4px">${authors} · ${journal} (${pubDate})</div>
+      <a href="${esc(pmUrl)}" style="color:#1e3a5f;font-weight:700;font-size:15px;text-decoration:none">${esc(title)}</a>
+      <div style="color:#6b7280;font-size:12px;margin-top:4px">${esc(authors)} · ${esc(journal)} (${esc(pubDate)})</div>
     </div>
   </div>
 
   <!-- 임상 질문 -->
   <div style="background:#eff6ff;border-left:3px solid #3b82f6;padding:10px 12px;border-radius:4px;margin-bottom:12px">
     <div style="font-size:11px;font-weight:700;color:#2563eb;margin-bottom:4px">📌 임상 질문</div>
-    <div style="font-size:13px;color:#374151">${p.clinicalQuestion ?? '—'}</div>
+    <div style="font-size:13px;color:#374151">${esc(p.clinicalQuestion ?? '—')}</div>
   </div>
 
   <!-- PICO -->
   <table style="width:100%;border-collapse:collapse;margin-bottom:12px;font-size:13px">
     <tr style="background:#f8fafc">
       <td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;color:#374151;width:28%">👥 P (대상)</td>
-      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${pico.population ?? '—'}</td>
+      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${esc(pico.population ?? '—')}</td>
     </tr>
     <tr>
       <td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;color:#374151">💉 I (중재)</td>
-      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${pico.intervention ?? '—'}</td>
+      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${esc(pico.intervention ?? '—')}</td>
     </tr>
     <tr style="background:#f8fafc">
       <td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;color:#374151">⚖️ C (비교)</td>
-      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${pico.comparison ?? '—'}</td>
+      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${esc(pico.comparison ?? '—')}</td>
     </tr>
     <tr>
       <td style="padding:8px 10px;border:1px solid #e5e7eb;font-weight:700;color:#374151">📊 O (결과)</td>
-      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${pico.outcome ?? '—'}</td>
+      <td style="padding:8px 10px;border:1px solid #e5e7eb;color:#374151">${esc(pico.outcome ?? '—')}</td>
     </tr>
   </table>
 
@@ -234,10 +245,10 @@ export class NotificationAgent {
   <!-- 임상 적용 -->
   <div style="background:#fffbeb;border-left:3px solid #f59e0b;padding:10px 12px;border-radius:4px;margin-bottom:8px">
     <div style="font-size:11px;font-weight:700;color:#d97706;margin-bottom:4px">⚡ 임상 적용 포인트</div>
-    <div style="font-size:13px;color:#374151">${p.clinicalTakeaway ?? '—'}</div>
+    <div style="font-size:13px;color:#374151">${esc(p.clinicalTakeaway ?? '—')}</div>
   </div>
 
-  <div style="font-size:11px;color:#9ca3af"><strong>제한점:</strong> ${p.limitations ?? '—'}</div>
+  <div style="font-size:11px;color:#9ca3af"><strong>제한점:</strong> ${esc(p.limitations ?? '—')}</div>
 </div>`;
     }).join('');
 
@@ -256,7 +267,7 @@ export class NotificationAgent {
     <p style="color:#374151;margin-top:0">PubMed 최근 6개월 논문 <strong>최대 300편</strong>을 스크리닝하여 임상 적용성 기준 <strong>오늘의 1편</strong>을 선정했습니다.<br>
     전체 인터랙티브 대시보드는 첨부된 HTML 파일 또는 Google Drive 링크에서 확인하세요.</p>
 
-    <a href="${driveUrl}" style="display:block;background:#2563eb;color:white;text-decoration:none;padding:12px 20px;border-radius:6px;font-weight:600;text-align:center;margin-bottom:28px">
+    <a href="${esc(driveUrl)}" style="display:block;background:#2563eb;color:white;text-decoration:none;padding:12px 20px;border-radius:6px;font-weight:600;text-align:center;margin-bottom:28px">
       📊 Google Drive에서 대시보드 열기
     </a>
 
@@ -267,7 +278,7 @@ export class NotificationAgent {
     ${picoCards}
 
     <p style="margin-top:24px;font-size:11px;color:#9ca3af;border-top:1px solid #f3f4f6;padding-top:16px">
-      Session: ${sessionId} · 생성: ${new Date().toLocaleString('ko-KR')}<br>
+      Session: ${sessionId} · 생성: ${new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}<br>
       본 분석 결과는 보조 도구이며, 임상 결정은 전문의 판단을 따르십시오.
     </p>
   </div>
@@ -296,7 +307,7 @@ export class NotificationAgent {
 
       await this._sendEmail(auth, {
         to: this.recipientEmail,
-        subject: `[Trend Review] 최신 논문 분석 완료 — ${new Date().toLocaleDateString('ko-KR')}`,
+        subject: `[Trend Review] 최신 논문 분석 완료 — ${new Date().toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' })}`,
         htmlBody: this._buildEmailHtml(sessionId, htmlFile.webViewLink, topPapers),
         attachments: [
           { path: htmlPath, filename: `Trend_Review_${sessionId}.html`, mimeType: 'text/html' },

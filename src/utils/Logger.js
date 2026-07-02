@@ -1,4 +1,4 @@
-import { appendFile, mkdir } from 'fs/promises';
+import { appendFile, writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 
@@ -78,9 +78,9 @@ export class Logger {
     const sessionPath = path.join(this.logDir, `session_${sessionId}.jsonl`);
     try {
       if (!existsSync(this.logDir)) await mkdir(this.logDir, { recursive: true });
-      for (const entry of this.entries) {
-        await appendFile(sessionPath, JSON.stringify(entry) + '\n');
-      }
+      // 한 번에 덮어쓰기 — 같은 세션 ID로 재저장(재개 등) 시 항목 중복 방지
+      const body = this.entries.map((e) => JSON.stringify(e)).join('\n');
+      await writeFile(sessionPath, body ? body + '\n' : '');
       return sessionPath;
     } catch (err) {
       this.error('Failed to save session log', { err: err.message });
