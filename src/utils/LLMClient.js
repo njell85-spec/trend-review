@@ -42,12 +42,12 @@ export class LLMClient {
    * @param {number} opts.maxTokens
    * @returns {Promise<object>} - Parsed tool-result JSON
    */
-  async callWithTool(messages, tool, { maxTokens = 8192 } = {}) {
+  async callWithTool(messages, tool, { maxTokens = 8192, webSearch = false } = {}) {
     if (this.provider === 'anthropic') {
       // 데스크탑/로컬: claude CLI(구독). CLI가 없는 환경(GitHub Actions 등)에서는
       // ANTHROPIC_API_KEY 가 있으면 Anthropic API 로 폴백.
       try {
-        return this._callClaudeCLI(messages, tool);
+        return this._callClaudeCLI(messages, tool, { webSearch });
       } catch (err) {
         const cliMissing = /ENOENT|spawn error/i.test(err.message);
         if (cliMissing && process.env.ANTHROPIC_API_KEY) {
@@ -88,7 +88,7 @@ export class LLMClient {
     return toolUse.input;
   }
 
-  _callClaudeCLI(messages, tool) {
+  _callClaudeCLI(messages, tool, { webSearch = false } = {}) {
     const userContent = messages
       .map(m => {
         if (typeof m.content === 'string') return m.content;
@@ -101,7 +101,9 @@ export class LLMClient {
     const fullPrompt = `${userContent}
 
 ---
-IMPORTANT: Respond with ONLY a valid JSON object. No explanation, no markdown code fences, no extra text — just the raw JSON object that matches this schema:
+IMPORTANT: ${webSearch
+      ? 'You MAY first use the WebSearch/WebFetch tools to research authoritative sources. When done researching, output'
+      : 'Respond'} with ONLY a valid JSON object as your FINAL message. No explanation, no markdown code fences, no extra text — just the raw JSON object that matches this schema:
 
 ${schema}`;
 
@@ -114,10 +116,16 @@ ${schema}`;
     // runs on the requested model (e.g. claude-opus-4-8) instead of the CLI default.
     if (this.model) args.push('--model', this.model);
 
+    // 웹검색 보강(가이드라인 등): 서버 웹툴을 허용하고 멀티턴을 연다.
+    // --allowedTools 는 가변 인자라 반드시 args 맨 끝에 둔다.
+    if (webSearch) {
+      args.push('--max-turns', '12', '--allowedTools', 'WebSearch', 'WebFetch');
+    }
+
     const result = spawnSync('claude', args, {
       encoding: 'utf8',
       maxBuffer: 32 * 1024 * 1024,
-      timeout: 300_000,
+      timeout: webSearch ? 480_000 : 300_000,
     });
 
     if (result.error) throw new Error(`claude CLI spawn error: ${result.error.message}`);
