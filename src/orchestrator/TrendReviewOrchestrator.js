@@ -133,11 +133,14 @@ export class TrendReviewOrchestrator {
   }
 
   // ── Checkpoint persistence ────────────────────────────────────────────────
+  // 단계별 데이터를 병합 저장 — 마지막 단계만 남기면 resume 시 이전 단계를
+  // 전부 다시 실행하게 된다.
   async _saveCheckpoint(stage, data) {
     if (!existsSync(this.checkpointDir))
       await mkdir(this.checkpointDir, { recursive: true });
     const filePath = path.join(this.checkpointDir, `${this.sessionId}.json`);
-    const checkpoint = { sessionId: this.sessionId, stage, savedAt: new Date().toISOString(), data };
+    const merged = { ...(this.checkpoint?.data ?? {}), ...data };
+    const checkpoint = { sessionId: this.sessionId, stage, savedAt: new Date().toISOString(), data: merged };
     await writeFile(filePath, JSON.stringify(checkpoint, null, 2));
     this.checkpoint = checkpoint;
     this.logger.debug(`Checkpoint saved: ${stage}`);
@@ -200,7 +203,8 @@ export class TrendReviewOrchestrator {
       if (resumeData?.validatedPapers) {
         this.logger.info('Resuming from checkpoint — skipping pass-1 validation');
         this._stageEnd(entry, 'resumed');
-        return resumeData;
+        // 호출부는 { papers, stats } 형태를 기대한다 — 체크포인트 키를 정규화
+        return { papers: resumeData.validatedPapers, stats: resumeData.validationStats ?? {} };
       }
 
       const result = this.validator.validatePapers(papers);
@@ -221,15 +225,16 @@ export class TrendReviewOrchestrator {
   async _stageAnalyze(papers, excludePmids = [], resumeData = null) {
     const entry = this._stageStart(STAGES.ANALYZING);
     try {
-      if (resumeData?.allScoredPapers) {
+      if (resumeData?.allScoredPapers && resumeData?.scoredTopPapers) {
         this.logger.info('Resuming from checkpoint — skipping scoring');
         this._stageEnd(entry, 'resumed');
-        return resumeData;
+        return { topPapers: resumeData.scoredTopPapers, allScoredPapers: resumeData.allScoredPapers };
       }
 
       const result = await this.filter.runScoringOnly(papers, excludePmids);
+      // 키를 PICO 결과(topPapers)와 구분 — 병합 체크포인트에서 충돌 방지
       await this._saveCheckpoint(STAGES.ANALYZING, {
-        topPapers: result.topPapers,
+        scoredTopPapers: result.topPapers,
         allScoredPapers: result.allScoredPapers,
       });
       this._stageEnd(entry, 'ok', { topN: result.topPapers.length, total: result.allScoredPapers.length });
@@ -403,7 +408,10 @@ export class TrendReviewOrchestrator {
       resumeCheckpoint = await this._loadCheckpoint(options.resumeFromSession);
       if (resumeCheckpoint) {
         this.sessionId = options.resumeFromSession;
+        this.checkpoint = resumeCheckpoint; // 이후 저장이 기존 데이터에 병합되도록
         this.logger.info(`Resuming session from stage: ${resumeCheckpoint.stage}`);
+      } else {
+        this.logger.warn(`No checkpoint found for session ${options.resumeFromSession} — running fresh`);
       }
     }
 
@@ -507,11 +515,14 @@ export class TrendReviewOrchestrator {
       // Save execution log
       await this.logger.saveSession(this.sessionId);
 
-      return this._buildResult(validatedPico, allScoredPapers, qualityReport, executionStats, {
-        jsonPath,
-        htmlPath,
-        ...(notifyResult && { notification: notifyResult }),
-      });
+      return this._buildResult(
+        validatedPico, allScoredPapers, qualityReport, executionStats,
+        { jsonPath, htmlPath },
+        {
+          ...(pagesUrl && { pagesUrl }),
+          ...(notifyResult && { notification: notifyResult }),
+        }
+      );
     } catch (err) {
       this.state = STAGES.FAILED;
       this.logger.error('Pipeline FAILED', { err: err.message, state: this.state });

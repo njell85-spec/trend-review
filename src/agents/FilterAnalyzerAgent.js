@@ -456,7 +456,7 @@ Requirements:
 }
 
 // ── Standalone test ───────────────────────────────────────────────────────
-if (process.argv[1].endsWith('FilterAnalyzerAgent.js')) {
+if (process.argv[1]?.endsWith('FilterAnalyzerAgent.js')) {
   const mockPapers = [
     {
       pmid: '99999001',

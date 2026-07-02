@@ -334,7 +334,7 @@ export class DataCollectorAgent {
 }
 
 // ── Standalone test ───────────────────────────────────────────────────────
-if (process.argv[1].endsWith('DataCollectorAgent.js')) {
+if (process.argv[1]?.endsWith('DataCollectorAgent.js')) {
   const agent = new DataCollectorAgent({ maxPapers: 5, searchDays: 30 });
   const result = await agent.run();
   console.log(`\nCollected ${result.papers.length} papers`);
