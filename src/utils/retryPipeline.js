@@ -11,10 +11,14 @@
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// 세션 한도/429 판별 — LLMClient·classifyFailure 가 같은 기준을 공유한다 (드리프트 방지)
+const SESSION_LIMIT_RE = /session limit|"?api_error_status"?\s*[:=]\s*429|(?:^|[^\d])429(?:[^\d]|$)/i;
+export const isSessionRateLimit = (message) => SESSION_LIMIT_RE.test(String(message ?? ''));
+
 // 실패 메시지로 (재시도 가치 / 사람이 읽을 사유)를 분류.
 export function classifyFailure(message = '') {
   const m = String(message);
-  if (/session limit|"?api_error_status"?\s*[:=]\s*429|(?:^|[^\d])429(?:[^\d]|$)/i.test(m))
+  if (isSessionRateLimit(m))
     return { retryable: true, label: 'Claude 세션 한도(429)' };
   if (/not been trusted|hasTrustDialogAccepted/i.test(m))
     return { retryable: false, label: 'claude CLI 워크스페이스 신뢰 미설정 (설정 확인 필요)' };
@@ -42,6 +46,7 @@ export async function runWithRetry(makePipeline, {
   onRetry = () => {},
   onFail = () => {},
 } = {}) {
+  maxAttempts = Math.max(1, Number(maxAttempts) || 1); // 0/NaN → undefined 반환 방지
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     onAttempt(attempt);
     try {

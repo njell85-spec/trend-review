@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from 'fs/promises';
+import { readFile, writeFile, mkdir, unlink } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 import crypto from 'crypto';
@@ -23,6 +23,8 @@ export class Cache {
       const raw = await readFile(file, 'utf8');
       const { ts, data } = JSON.parse(raw);
       if (Date.now() - ts > this.ttlMs) {
+        // 만료 파일은 지워서 output/cache 무한 증식 방지 (실패해도 무해)
+        unlink(file).catch(() => {});
         return null;
       }
       return data;
@@ -42,17 +44,16 @@ export class Cache {
 
   async getOrFetch(key, fetchFn) {
     const cached = await this.get(key);
-    if (cached !== null) return { data: cached, fromCache: true };
+    if (cached !== null && cached !== undefined) return { data: cached, fromCache: true };
     const data = await fetchFn();
-    await this.set(key, data);
+    // undefined 는 JSON 직렬화에서 유실돼 "빈 히트"가 되므로 저장하지 않는다
+    if (data !== undefined) await this.set(key, data);
     return { data, fromCache: false };
   }
 
   async invalidate(key) {
-    const file = this._keyToFile(key);
     try {
-      const { unlink } = await import('fs/promises');
-      await unlink(file);
+      await unlink(this._keyToFile(key));
     } catch { /* non-fatal */ }
   }
 }

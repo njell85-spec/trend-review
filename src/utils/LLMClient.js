@@ -8,13 +8,19 @@
  * and translates the schema into a prompt instruction for the CLI path,
  * or into OpenAI function-calling format for the openai path.
  */
-import { spawnSync } from 'child_process';
+import { spawn } from 'child_process';
 import OpenAI from 'openai';
+import { isSessionRateLimit } from './retryPipeline.js';
 
 export const PROVIDER_DEFAULTS = {
   anthropic: 'claude-sonnet-4-6',
   openai: 'gpt-4o',
 };
+
+// 선정·심층분석에 쓰는 정본 모델 — 에이전트별 하드코딩 대신 여기 한 곳만 수정
+export const ANTHROPIC_ANALYSIS_MODEL = process.env.ANALYSIS_MODEL ?? 'claude-opus-4-8';
+
+const API_FETCH_TIMEOUT_MS = 180_000; // API 폴백 호출당 상한 (행 방지)
 
 // 실행 경로 집계(그날 구독 CLI로 돌았는지 / API 폴백으로 넘어갔는지).
 // 프로세스 전역 카운터 — 오케스트레이터가 run() 시작 시 reset().
@@ -60,12 +66,13 @@ export class LLMClient {
       // 데스크탑/로컬: claude CLI(구독). CLI가 없는 환경(GitHub Actions 등)에서는
       // ANTHROPIC_API_KEY 가 있으면 Anthropic API 로 폴백.
       try {
-        return this._callClaudeCLI(messages, tool, { webSearch });
+        // await 필수 — 없으면 비동기 rejection이 이 catch를 건너뛰어 폴백이 죽는다
+        return await this._callClaudeCLI(messages, tool, { webSearch });
       } catch (err) {
         // CLI 미설치뿐 아니라 구독 세션 한도(429)·레이트리밋 등으로 실패해도
         // ANTHROPIC_API_KEY 가 있으면 API 로 폴백한다. 웹검색도 동일하게 유지.
-        const cliMissing = /ENOENT|spawn error|command not found/i.test(err.message);
-        const rateLimited = /session limit|"?api_error_status"?\s*[:=]\s*429|(?:^|[^\d])429(?:[^\d]|$)|rate.?limit|overloaded/i.test(err.message);
+        const cliMissing = /ENOENT|spawn error|command not found|timed out/i.test(err.message);
+        const rateLimited = isSessionRateLimit(err.message) || /rate.?limit|overloaded/i.test(err.message);
         if ((cliMissing || rateLimited) && process.env.ANTHROPIC_API_KEY) {
           return this._callAnthropicAPI(messages, tool, maxTokens, { webSearch });
         }
@@ -92,6 +99,7 @@ export class LLMClient {
     const post = async () => {
       const res = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
+        signal: AbortSignal.timeout(API_FETCH_TIMEOUT_MS), // TLS 행 → 러너 6시간 킬 방지
         headers: {
           'x-api-key': process.env.ANTHROPIC_API_KEY,
           'anthropic-version': '2023-06-01',
@@ -131,7 +139,7 @@ export class LLMClient {
     throw new Error('Anthropic API: no structured tool_use produced (web-search loop exhausted)');
   }
 
-  _callClaudeCLI(messages, tool, { webSearch = false } = {}) {
+  async _callClaudeCLI(messages, tool, { webSearch = false } = {}) {
     const userContent = messages
       .map(m => {
         if (typeof m.content === 'string') return m.content;
@@ -165,13 +173,12 @@ ${schema}`;
       args.push('--max-turns', '12', '--allowedTools', 'WebSearch', 'WebFetch');
     }
 
-    const result = spawnSync('claude', args, {
-      encoding: 'utf8',
-      maxBuffer: 32 * 1024 * 1024,
-      timeout: webSearch ? 480_000 : 300_000,
-    });
+    // 비동기 spawn — spawnSync는 호출당 최대 8분 이벤트 루프를 얼려
+    // 타이머·로그 flush·향후 병렬화를 전부 막는다
+    const result = await this._spawnClaude(args, webSearch ? 480_000 : 300_000);
 
     if (result.error) throw new Error(`claude CLI spawn error: ${result.error.message}`);
+    if (result.timedOut) throw new Error(`claude CLI timed out after ${result.timeoutMs / 1000}s`);
     if (result.status !== 0) {
       // 실패 원인은 stderr가 비어있고 stdout(JSON)에 담기는 경우가 많아 둘 다 노출한다.
       const err = (result.stderr || '').trim();
@@ -191,6 +198,24 @@ ${schema}`;
 
     llmTelemetry.cli++;
     return this._extractJSON(parsed.result ?? '');
+  }
+
+  _spawnClaude(args, timeoutMs) {
+    return new Promise((resolve) => {
+      const child = spawn('claude', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+      let stdout = '';
+      let stderr = '';
+      let settled = false;
+      const finish = (r) => { if (!settled) { settled = true; clearTimeout(timer); resolve(r); } };
+      const timer = setTimeout(() => {
+        child.kill('SIGKILL');
+        finish({ timedOut: true, timeoutMs, stdout, stderr });
+      }, timeoutMs);
+      child.stdout.setEncoding('utf8').on('data', (d) => { stdout += d; });
+      child.stderr.setEncoding('utf8').on('data', (d) => { stderr += d; });
+      child.on('error', (error) => finish({ error }));
+      child.on('close', (status) => finish({ status, stdout, stderr }));
+    });
   }
 
   _extractJSON(raw) {
