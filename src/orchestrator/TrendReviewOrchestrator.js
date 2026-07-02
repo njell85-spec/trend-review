@@ -17,6 +17,7 @@ import { ValidationAgent } from '../agents/ValidationAgent.js';
 import { ReportGeneratorAgent } from '../agents/ReportGeneratorAgent.js';
 import { NotificationAgent } from '../agents/NotificationAgent.js';
 import { GitHubPublisher } from '../utils/GitHubPublisher.js';
+import { kstDateStr, kstStamp } from '../utils/dates.js';
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -114,7 +115,7 @@ export class TrendReviewOrchestrator {
       existing = JSON.parse(raw);
     } catch { /* first run */ }
 
-    const today = new Date().toISOString().slice(0, 10);
+    const today = kstDateStr();
     const added = newPapers.map((p) => ({
       pmid: p.paper?.pmid ?? p.pmid,
       title: (p.paper?.title ?? p.title ?? '').slice(0, 80),
@@ -128,10 +129,7 @@ export class TrendReviewOrchestrator {
   }
 
   _newSessionId() {
-    const now = new Date();
-    const date = now.toISOString().slice(0, 10).replace(/-/g, '');
-    const time = now.toTimeString().slice(0, 8).replace(/:/g, '');
-    return `trend_review_${date}_${time}`;
+    return `trend_review_${kstStamp()}`;
   }
 
   // ── Checkpoint persistence ────────────────────────────────────────────────
@@ -364,9 +362,7 @@ export class TrendReviewOrchestrator {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
-      // KST 기준 날짜 사용 (21:30 UTC = 06:30 KST → UTC 날짜는 하루 빠름)
-      const dateStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
-      const pagesUrl = await this.githubPublisher.publish(dateStr, topPapers, { guideline });
+      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline });
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
       return pagesUrl;
@@ -486,15 +482,16 @@ export class TrendReviewOrchestrator {
       const { jsonPath, htmlPath } = await this._stageReport(this.sessionId, payload);
 
       // Stage 7a: 가이드라인 캐치업 (주 1회, non-fatal, 없으면 null)
-      const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+      const todayStr = kstDateStr();
       const guidelineCard = await this._stageGuideline(todayStr);
+
+      // 제외목록·가이드라인 기록을 publish 전에 저장 — publish가 이 파일들을
+      // 커밋/푸시하므로, 순서가 뒤면 원격 목록이 항상 하루 늦어 중복 선정된다
+      if (validatedPico.length) await this._saveExcludePmids(validatedPico);
+      if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
       const pagesUrl = await this._stagePublish(validatedPico, guidelineCard);
-
-      // Save newly-published PMIDs to exclusion list
-      if (validatedPico.length) await this._saveExcludePmids(validatedPico);
-      if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 8: Notify (optional — Drive + Gmail + KakaoTalk)
       const notifyResult = await this._stageNotify(

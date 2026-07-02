@@ -10,6 +10,7 @@ import { Logger } from '../utils/Logger.js';
 import { Cache } from '../utils/Cache.js';
 import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
+import { kstDateSlash } from '../utils/dates.js';
 
 const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const DEFAULT_QUERY =
@@ -30,14 +31,11 @@ export class DataCollectorAgent {
     this.query = options.query ?? DEFAULT_QUERY;
   }
 
-  // ── MCP: time — compute search date window ────────────────────────────────
-  _getDateRange() {
+  // ── MCP: time — compute search date window (KST 기준) ─────────────────────
+  _getDateRange(days = this.searchDays) {
     const now = new Date();
-    const past = new Date(now);
-    past.setDate(past.getDate() - this.searchDays);
-    const fmt = (d) =>
-      `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
-    return { minDate: fmt(past), maxDate: fmt(now) };
+    const past = new Date(now.getTime() - days * 86_400_000);
+    return { minDate: kstDateSlash(past), maxDate: kstDateSlash(now) };
   }
 
   _buildParams(extra = {}) {
@@ -278,10 +276,7 @@ export class DataCollectorAgent {
   // ── 가이드라인 수집 (별도 쿼리: PublicationType=Guideline + EM/CCM 도메인) ──────
   // 가이드라인은 드물어 검색창을 넓게(기본 365일) 잡고, 상위에서 미노출분만 선별한다.
   async collectGuidelines({ days = 365, max = 40 } = {}) {
-    const now = new Date();
-    const past = new Date(now);
-    past.setDate(past.getDate() - days);
-    const fmt = (d) => `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`;
+    const { minDate, maxDate } = this._getDateRange(days);
 
     const term =
       '(("practice guideline"[Publication Type]) OR ("guideline"[Publication Type])) AND ' +
@@ -291,7 +286,7 @@ export class DataCollectorAgent {
 
     const params = this._buildParams({
       db: 'pubmed', term, retmax: max,
-      mindate: fmt(past), maxdate: fmt(now), datetype: 'pdat',
+      mindate: minDate, maxdate: maxDate, datetype: 'pdat',
       retmode: 'json', sort: 'date',
     });
 

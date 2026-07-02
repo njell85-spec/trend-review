@@ -278,7 +278,7 @@ export class NotificationAgent {
     ${picoCards}
 
     <p style="margin-top:24px;font-size:11px;color:#9ca3af;border-top:1px solid #f3f4f6;padding-top:16px">
-      Session: ${sessionId} · 생성: ${new Date().toLocaleString('ko-KR')}<br>
+      Session: ${sessionId} · 생성: ${new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })}<br>
       본 분석 결과는 보조 도구이며, 임상 결정은 전문의 판단을 따르십시오.
     </p>
   </div>
@@ -307,7 +307,7 @@ export class NotificationAgent {
 
       await this._sendEmail(auth, {
         to: this.recipientEmail,
-        subject: `[Trend Review] 최신 논문 분석 완료 — ${new Date().toLocaleDateString('ko-KR')}`,
+        subject: `[Trend Review] 최신 논문 분석 완료 — ${new Date().toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' })}`,
         htmlBody: this._buildEmailHtml(sessionId, htmlFile.webViewLink, topPapers),
         attachments: [
           { path: htmlPath, filename: `Trend_Review_${sessionId}.html`, mimeType: 'text/html' },
