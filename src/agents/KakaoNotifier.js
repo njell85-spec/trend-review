@@ -55,7 +55,7 @@ export class KakaoNotifier {
   }
 
   // ── 데일리 리포트 텍스트 구성 (REPORT_SPEC 카톡 포맷) ────────────────────────
-  static buildReportText({ dateStr, screened = 300, topPaper, pagesUrl }) {
+  static buildReportText({ dateStr, screened = 300, topPaper, pagesUrl, llmRoute = '' }) {
     const p = topPaper ?? {};
     const paper = p.paper ?? {};
     const titleKo = p.title_ko ?? '';
@@ -72,6 +72,7 @@ export class KakaoNotifier {
       `${dateStr} · 최근6개월 ${screened}편 스크리닝 → 1편 선정`,
       `🥇${shortTitle}${journal ? `(${journal})` : ''}`,
       `${pmid ? `#${pmid}` : ''}${score ? ` · ${score}점` : ''}`,
+      llmRoute ? `LLM ${llmRoute}` : '',
     ].filter(Boolean);
     let text = lines.join('\n');
     if (text.length > 195) text = `${text.slice(0, 193)}…`;
@@ -116,13 +117,13 @@ export class KakaoNotifier {
   }
 
   // ── 발송 (성공 리포트) ────────────────────────────────────────────────────────
-  async send({ dateStr, screened, topPaper, pagesUrl }) {
+  async send({ dateStr, screened, topPaper, pagesUrl, llmRoute = '' }) {
     if (!this.isConfigured) {
       this.logger.info('Kakao 미설정(KAKAO_REST_API_KEY/KAKAO_REFRESH_TOKEN 없음) — 발송 생략');
       return { sent: false, reason: 'not-configured' };
     }
 
-    const text = KakaoNotifier.buildReportText({ dateStr, screened, topPaper, pagesUrl });
+    const text = KakaoNotifier.buildReportText({ dateStr, screened, topPaper, pagesUrl, llmRoute });
     const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
     await this._postMemo(text, url);
     this.logger.info('카카오 나챗방 발송 완료');

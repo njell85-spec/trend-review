@@ -16,6 +16,19 @@ export const PROVIDER_DEFAULTS = {
   openai: 'gpt-4o',
 };
 
+// 실행 경로 집계(그날 구독 CLI로 돌았는지 / API 폴백으로 넘어갔는지).
+// 프로세스 전역 카운터 — 오케스트레이터가 run() 시작 시 reset().
+export const llmTelemetry = {
+  cli: 0, api: 0, apiWeb: 0,
+  reset() { this.cli = 0; this.api = 0; this.apiWeb = 0; },
+  label() {
+    const parts = [];
+    if (this.cli) parts.push(`구독×${this.cli}`);
+    if (this.api) parts.push(`API×${this.api}`);
+    return parts.join(' · ') || '—';
+  },
+};
+
 export class LLMClient {
   constructor({ provider = 'anthropic', model, apiKey } = {}) {
     this.provider = provider;
@@ -95,6 +108,7 @@ export class LLMClient {
       const data = await post();
       const toolUse = (data.content ?? []).find((c) => c.type === 'tool_use');
       if (!toolUse) throw new Error('Anthropic API: no tool_use block in response');
+      llmTelemetry.api++;
       return toolUse.input;
     }
 
@@ -102,7 +116,7 @@ export class LLMClient {
     for (let turn = 0; turn < 8; turn++) {
       const data = await post();
       const structured = (data.content ?? []).find((c) => c.type === 'tool_use' && c.name === tool.name);
-      if (structured) return structured.input;
+      if (structured) { llmTelemetry.api++; llmTelemetry.apiWeb++; return structured.input; }
 
       const usedServerTool = (data.content ?? []).some((c) => c.type === 'server_tool_use');
       if (data.stop_reason === 'pause_turn' || usedServerTool) {
@@ -175,6 +189,7 @@ ${schema}`;
 
     if (parsed.is_error) throw new Error(`claude CLI error response: ${parsed.result}`);
 
+    llmTelemetry.cli++;
     return this._extractJSON(parsed.result ?? '');
   }
 
