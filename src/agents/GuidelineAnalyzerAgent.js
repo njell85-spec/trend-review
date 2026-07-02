@@ -85,13 +85,16 @@ export class GuidelineAnalyzerAgent {
 
   async analyze(guideline) {
     if (!guideline) return null;
-    const cacheKey = `guideline_v2_${this.provider}_${this.model}_${guideline.pmid}`;
+    const cacheKey = `guideline_v3_${this.provider}_${this.model}_${guideline.pmid}`;
     try {
       const { data } = await this.cache.getOrFetch(cacheKey, async () => {
         this.logger.info(`Guideline analysis: ${guideline.pmid} — ${guideline.title?.slice(0, 60)}…`);
         const hasFullText = guideline.fullText && guideline.fullText.length > 100;
         const fullTextSection = hasFullText
           ? `\n\n--- FULL TEXT (source: ${guideline.fullTextSource}, truncated) ---\n${guideline.fullText}\n---`
+          : '';
+        const augmentSection = guideline.augmentText
+          ? `\n\n--- AUTHORITATIVE SOURCE (trustworthy structured/registry) ---\n${guideline.augmentText}\n---`
           : '';
         const prompt = `You are an expert emergency medicine and critical care physician writing a DETAILED GUIDELINE CATCH-UP brief for a busy clinician who wants to know EXACTLY what to change in practice.
 
@@ -108,9 +111,9 @@ Journal: ${guideline.journal} (${guideline.pubDate})
 MeSH: ${(guideline.meshTerms ?? []).join(', ')}
 
 Abstract / summary text:
-${guideline.abstract}${fullTextSection}
+${guideline.abstract}${fullTextSection}${augmentSection}
 
-Use the submit_guideline_catchup tool. Report ONLY facts present in the provided text — never invent recommendations or changes. Prefer the FULL TEXT (when provided) to extract specific changed recommendations, thresholds, doses, and evidence grades. If the text genuinely does not describe what changed from a prior version, return an empty "keyChanges" array rather than guessing. Provide Korean for all _ko fields; medical/drug/score names may remain in English. Be thorough — allocate as much detail as the source supports.`;
+Use the submit_guideline_catchup tool. Report ONLY facts present in the provided text (abstract, full text, or authoritative source) — never invent recommendations or changes. Prefer the FULL TEXT / authoritative source (when provided) to extract specific changed recommendations, thresholds, doses, and evidence grades. If the provided text only gives aggregate COUNTS of changes (e.g. "20 new, 13 updated") without describing their content, return an empty "keyChanges" array rather than restating the counts as if they were changes. Provide Korean for all _ko fields; medical/drug/score names may remain in English. Be thorough — allocate as much detail as the source supports.`;
 
         const result = await this.cb.execute(() =>
           this.retry.execute(() => this.llm.callWithTool([{ role: 'user', content: prompt }], this._tool, { maxTokens: 12000 }),
@@ -131,7 +134,10 @@ Use the submit_guideline_catchup tool. Report ONLY facts present in the provided
     const pmUrl = guideline.pubmedUrl ?? (guideline.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${guideline.pmid}/` : null);
     if (pmUrl) sources.push({ label: `PubMed — PMID ${guideline.pmid}`, url: pmUrl });
     if (guideline.doi && guideline.doi.length > 3) sources.push({ label: `Journal (DOI) — ${guideline.doi}`, url: `https://doi.org/${guideline.doi}` });
+    if (guideline.oaUrl) sources.push({ label: 'Open-access full text', url: guideline.oaUrl });
+    for (const s of guideline.augmentSources ?? []) sources.push(s);
 
+    const keyChanges = Array.isArray(data.keyChanges) ? data.keyChanges : [];
     return {
       type: 'guideline',
       paper: {
@@ -141,7 +147,10 @@ Use the submit_guideline_catchup tool. Report ONLY facts present in the provided
       org: data.org, version: data.version, title_ko: data.title_ko,
       scope_ko: data.scope_ko ?? '',
       summary: data.summary ?? [], summary_ko: data.summary_ko ?? [],
-      keyChanges: Array.isArray(data.keyChanges) ? data.keyChanges : [],
+      keyChanges,
+      // 세부 변경점을 못 얻었고 본문도 확보 못한 경우 → 카드에서 정직하게 안내
+      changesUnavailable: keyChanges.length === 0,
+      fullTextSource: guideline.fullTextSource ?? 'abstract-only',
       practiceImpact: data.practiceImpact, practiceImpact_ko: data.practiceImpact_ko,
       sources,
       scoringData: guideline.scoringData,

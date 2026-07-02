@@ -344,6 +344,7 @@ Requirements:
   _provenance(paper) {
     const badge = {
       PMC: '본문(PMC)',
+      EuropePMC: '본문(EPMC)',
       Unpaywall: '본문(OA)',
       'abstract+registry': '초록 + 레지스트리',
       'abstract-only': '초록만',

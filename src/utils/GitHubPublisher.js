@@ -197,7 +197,11 @@ export class GitHubPublisher {
       </div>
       <div class="pc-body">
         ${summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>핵심 권고</div><ul class="pc-ul">${summary}</ul>` : ''}
-        ${changes ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes">${changes}</div>` : ''}
+        ${changes
+          ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes">${changes}</div>`
+          : (g.changesUnavailable
+            ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes"><p class="txt ko">공개 초록/확보 본문에 구체적 변경 내용이 없어(대개 본문 페이월) 세부 변경점을 확보하지 못했습니다. 아래 원문 링크에서 확인하세요.</p></div>`
+            : '')}
         ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>임상 임팩트</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
         ${(g.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 출처</div>${g.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
         <div class="pc-foot"><a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed${pmid ? ` ${esc(pmid)}` : ''}</a>${doiLink} · 가이드라인 캐치업</div>

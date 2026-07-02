@@ -82,6 +82,23 @@ export class FullTextAgent {
       }
     }
 
+    // ── Route 1b: Europe PMC (JATS 전문; 키 불필요·권위, NCBI가 못 줄 때 보완) ──
+    try {
+      const { text, figures } = await this._fetchEuropePmc(paper);
+      if (text && text.length > 300) {
+        this.logger.info(`EuropePMC full text: PMID ${paper.pmid} — ${text.length} chars`);
+        return {
+          fullText: text.slice(0, MAX_FULLTEXT_CHARS),
+          fullTextSource: 'EuropePMC',
+          fullTextLength: text.length,
+          figures,
+          ...augment,
+        };
+      }
+    } catch (e) {
+      this.logger.warn(`EuropePMC failed (PMID ${paper.pmid}): ${e.message}`);
+    }
+
     // ── Route 2: Unpaywall ──────────────────────────────────────────────────
     if (paper.doi && paper.doi.length > 3 && paper.doi !== 'undefined') {
       try {
@@ -187,6 +204,37 @@ export class FullTextAgent {
     } catch {
       return null;
     }
+  }
+
+  // ── Europe PMC full text (key-free) ──────────────────────────────────────
+  // NCBI PMC efetch가 실패하거나 pmcid가 없을 때, Europe PMC 검색으로 OA 여부·PMCID를
+  // 확인해 JATS 전문(fullTextXML)을 가져온다. 파싱은 PMC와 동일(_parsePmcXml).
+  async _fetchEuropePmc(paper) {
+    const EPMC = 'https://www.ebi.ac.uk/europepmc/webservices/rest';
+    let pmcid = paper.pmcid ? String(paper.pmcid).replace(/^PMC/i, '') : '';
+
+    if (!pmcid && paper.pmid) {
+      const q = `EXT_ID:${paper.pmid} AND SRC:MED`;
+      const sres = await fetch(
+        `${EPMC}/search?query=${encodeURIComponent(q)}&resultType=core&format=json`,
+        { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) }
+      );
+      if (!sres.ok) throw new Error(`EuropePMC search HTTP ${sres.status}`);
+      const sdata = await sres.json();
+      const r = sdata?.resultList?.result?.[0];
+      // OA 전문이 있는 경우에만 진행(환각 방지: 페이월 초록만 있으면 스킵)
+      if (!r || r.isOpenAccess !== 'Y' || !r.pmcid) return { text: '', figures: [] };
+      pmcid = String(r.pmcid).replace(/^PMC/i, '');
+    }
+    if (!pmcid) return { text: '', figures: [] };
+
+    const fres = await fetch(`${EPMC}/PMC/PMC${pmcid}/fullTextXML`, {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
+    if (!fres.ok) throw new Error(`EuropePMC fullText HTTP ${fres.status}`);
+    const xmlText = await fres.text();
+    const xml = await parseStringPromise(xmlText, { explicitArray: false, ignoreAttrs: false });
+    return this._parsePmcXml(xml);
   }
 
   // ── PMC full text ─────────────────────────────────────────────────────────
