@@ -51,7 +51,7 @@ export class GuidelineAnalyzerAgent {
   get _tool() {
     return {
       name: 'submit_guideline_catchup',
-      description: 'Submit a structured guideline catch-up summary (bilingual EN + KO)',
+      description: 'Submit a DETAILED, structured guideline catch-up brief (bilingual EN + KO)',
       input_schema: {
         type: 'object',
         properties: {
@@ -59,30 +59,47 @@ export class GuidelineAnalyzerAgent {
           org: { type: 'string', description: 'Issuing organization/society, e.g. "AHA/ACC", "Surviving Sepsis Campaign", "ATS/ESICM". Infer from title/journal; use "NR" if unclear.' },
           version: { type: 'string', description: 'Guideline year/version, e.g. "2026" or "2026 update". Use the publication year if not otherwise stated.' },
           title_ko: { type: 'string', description: 'Korean title of the guideline.' },
-          summary: { type: 'array', items: { type: 'string' }, description: '3–5 KEY recommendations as concise bullets (English). Include class/level of evidence if the abstract states them. Use ONLY what is in the provided text — never invent recommendations.' },
-          summary_ko: { type: 'array', items: { type: 'string' }, description: 'Korean translations of summary (same order). Medical terms may stay in English.' },
-          changes: { type: 'array', items: { type: 'string' }, description: 'What CHANGED versus the previous version — new/updated/downgraded recommendations (English). If the source does not describe changes, return an empty array (do NOT fabricate deltas).' },
-          changes_ko: { type: 'array', items: { type: 'string' }, description: 'Korean translations of changes (same order).' },
-          practiceImpact: { type: 'string', description: 'How this should change EM/CCM bedside practice (2–3 sentences, English).' },
+          scope_ko: { type: 'string', description: '이 가이드라인이 다루는 범위·대상 환자군을 1–2문장 한국어로.' },
+          summary: { type: 'array', items: { type: 'string' }, description: 'KEY recommendations as SPECIFIC, self-contained bullets (English). Each must state the actual recommended action AND its class/level of evidence when the source gives it (e.g. "Start norepinephrine as first-line vasopressor targeting MAP ≥65 mmHg (strong recommendation, moderate evidence)"). 4–8 bullets. Use ONLY the provided text.' },
+          summary_ko: { type: 'array', items: { type: 'string' }, description: 'Korean translations of summary (same order). Drug/score names may stay in English.' },
+          keyChanges: {
+            type: 'array',
+            description: 'What SPECIFICALLY changed vs the previous version. Each item is ONE concrete change with enough detail to act on — NEVER a count like "20 recommendations added". If the source does not describe specific changes, return an empty array (never fabricate).',
+            items: {
+              type: 'object',
+              properties: {
+                topic: { type: 'string', description: 'Short topic/area of the change in Korean (e.g. "초기 수액 소생", "승압제 선택", "항생제 투여 시점").' },
+                detail: { type: 'string', description: 'The specific change in English: previous recommendation → new recommendation, including changed thresholds/doses/timing, the new class/level of evidence, and the stated reason. Be concrete and self-contained.' },
+                detail_ko: { type: 'string', description: 'Korean translation of detail with the SAME specificity (수치·용량·시간·등급 포함). Drug/score names may stay in English.' },
+              },
+              required: ['topic', 'detail', 'detail_ko'],
+            },
+          },
+          practiceImpact: { type: 'string', description: 'How this should concretely change EM/CCM bedside practice (2–4 sentences, English).' },
           practiceImpact_ko: { type: 'string', description: 'Korean translation of practiceImpact.' },
         },
-        required: ['pmid', 'org', 'version', 'title_ko', 'summary', 'summary_ko', 'changes', 'changes_ko', 'practiceImpact', 'practiceImpact_ko'],
+        required: ['pmid', 'org', 'version', 'title_ko', 'scope_ko', 'summary', 'summary_ko', 'keyChanges', 'practiceImpact', 'practiceImpact_ko'],
       },
     };
   }
 
   async analyze(guideline) {
     if (!guideline) return null;
-    const cacheKey = `guideline_v1_${this.provider}_${this.model}_${guideline.pmid}`;
+    const cacheKey = `guideline_v2_${this.provider}_${this.model}_${guideline.pmid}`;
     try {
       const { data } = await this.cache.getOrFetch(cacheKey, async () => {
         this.logger.info(`Guideline analysis: ${guideline.pmid} — ${guideline.title?.slice(0, 60)}…`);
-        const prompt = `You are an expert emergency medicine and critical care physician writing a concise GUIDELINE CATCH-UP brief for a busy clinician.
+        const hasFullText = guideline.fullText && guideline.fullText.length > 100;
+        const fullTextSection = hasFullText
+          ? `\n\n--- FULL TEXT (source: ${guideline.fullTextSource}, truncated) ---\n${guideline.fullText}\n---`
+          : '';
+        const prompt = `You are an expert emergency medicine and critical care physician writing a DETAILED GUIDELINE CATCH-UP brief for a busy clinician who wants to know EXACTLY what to change in practice.
 
-This is a clinical practice guideline (not a primary study), so do NOT force a PICO structure. Instead summarize:
-  1. The KEY recommendations (with class/level of evidence if stated).
-  2. What CHANGED versus the previous version of this guideline.
-  3. The practical bedside impact for EM/CCM.
+This is a clinical practice guideline (not a primary study) — do NOT force a PICO structure. Produce:
+  1. scope_ko — 무엇을(어떤 환자군을) 다루는 가이드라인인지.
+  2. summary — the key recommendations, each a SPECIFIC actionable statement with class/level of evidence when stated.
+  3. keyChanges — for EACH important change versus the previous version, describe SPECIFICALLY what changed: 이전 권고 → 새 권고, 바뀐 수치/용량/시간 기준, 새 근거등급, 그리고 이유. Describe the actual CONTENT of the changes — NEVER vague counts like "20 recommendations were added". Include as many concrete changes as the source supports.
+  4. practiceImpact — concrete bedside impact for EM/CCM.
 
 Guideline:
 Title: ${guideline.title}
@@ -91,12 +108,12 @@ Journal: ${guideline.journal} (${guideline.pubDate})
 MeSH: ${(guideline.meshTerms ?? []).join(', ')}
 
 Abstract / summary text:
-${guideline.abstract}
+${guideline.abstract}${fullTextSection}
 
-Use the submit_guideline_catchup tool. Report ONLY facts present in the provided text — never invent recommendations or changes. If the text does not describe what changed from a prior version, return an empty "changes" array rather than guessing. Provide Korean translations for all text fields (_ko); medical terms, drug names, and score names may remain in English.`;
+Use the submit_guideline_catchup tool. Report ONLY facts present in the provided text — never invent recommendations or changes. Prefer the FULL TEXT (when provided) to extract specific changed recommendations, thresholds, doses, and evidence grades. If the text genuinely does not describe what changed from a prior version, return an empty "keyChanges" array rather than guessing. Provide Korean for all _ko fields; medical/drug/score names may remain in English. Be thorough — allocate as much detail as the source supports.`;
 
         const result = await this.cb.execute(() =>
-          this.retry.execute(() => this.llm.callWithTool([{ role: 'user', content: prompt }], this._tool),
+          this.retry.execute(() => this.llm.callWithTool([{ role: 'user', content: prompt }], this._tool, { maxTokens: 12000 }),
             { label: `${this.provider}-guideline` }));
         return result;
       });
@@ -122,8 +139,9 @@ Use the submit_guideline_catchup tool. Report ONLY facts present in the provided
         pubDate: guideline.pubDate, pubmedUrl: pmUrl, doi: guideline.doi,
       },
       org: data.org, version: data.version, title_ko: data.title_ko,
+      scope_ko: data.scope_ko ?? '',
       summary: data.summary ?? [], summary_ko: data.summary_ko ?? [],
-      changes: data.changes ?? [], changes_ko: data.changes_ko ?? [],
+      keyChanges: Array.isArray(data.keyChanges) ? data.keyChanges : [],
       practiceImpact: data.practiceImpact, practiceImpact_ko: data.practiceImpact_ko,
       sources,
       scoringData: guideline.scoringData,
