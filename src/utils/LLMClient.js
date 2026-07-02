@@ -49,9 +49,12 @@ export class LLMClient {
       try {
         return this._callClaudeCLI(messages, tool, { webSearch });
       } catch (err) {
-        const cliMissing = /ENOENT|spawn error/i.test(err.message);
-        if (cliMissing && process.env.ANTHROPIC_API_KEY) {
-          return this._callAnthropicAPI(messages, tool, maxTokens);
+        // CLI 미설치뿐 아니라 구독 세션 한도(429)·레이트리밋 등으로 실패해도
+        // ANTHROPIC_API_KEY 가 있으면 API 로 폴백한다. 웹검색도 동일하게 유지.
+        const cliMissing = /ENOENT|spawn error|command not found/i.test(err.message);
+        const rateLimited = /session limit|"?api_error_status"?\s*[:=]\s*429|(?:^|[^\d])429(?:[^\d]|$)|rate.?limit|overloaded/i.test(err.message);
+        if ((cliMissing || rateLimited) && process.env.ANTHROPIC_API_KEY) {
+          return this._callAnthropicAPI(messages, tool, maxTokens, { webSearch });
         }
         throw err;
       }
@@ -61,31 +64,57 @@ export class LLMClient {
     }
   }
 
-  // ── Anthropic Messages API (CLI 미존재 환경 폴백) ─────────────────────────
-  async _callAnthropicAPI(messages, tool, maxTokens) {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: this.model,
-        max_tokens: maxTokens,
-        tools: [tool],
-        tool_choice: { type: 'tool', name: tool.name },
-        messages: messages.map((m) => ({
-          role: m.role,
-          content: typeof m.content === 'string' ? m.content : m.content,
-        })),
-      }),
-    });
-    if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${(await res.text()).slice(0, 300)}`);
-    const data = await res.json();
-    const toolUse = (data.content ?? []).find((c) => c.type === 'tool_use');
-    if (!toolUse) throw new Error(`Anthropic API: no tool_use block in response`);
-    return toolUse.input;
+  // ── Anthropic Messages API (구독 CLI 실패 시 폴백) ────────────────────────
+  // webSearch=true 이면 서버 web_search 툴을 함께 붙여, 구독 CLI와 동일하게
+  // 웹검색 → 최종 구조화 툴 호출까지 다단계로 처리한다(품질 동일 유지).
+  async _callAnthropicAPI(messages, tool, maxTokens, { webSearch = false } = {}) {
+    const tools = webSearch
+      ? [{ type: 'web_search_20260209', name: 'web_search' }, tool]
+      : [tool];
+    // 웹검색을 쓸 땐 강제(tool_choice=tool) 대신 auto 로 두어, 모델이 먼저 검색한 뒤
+    // 마지막에 구조화 툴을 호출하도록 한다.
+    const tool_choice = webSearch ? { type: 'auto' } : { type: 'tool', name: tool.name };
+
+    const convo = messages.map((m) => ({ role: m.role, content: m.content }));
+    const post = async () => {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'x-api-key': process.env.ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ model: this.model, max_tokens: maxTokens, tools, tool_choice, messages: convo }),
+      });
+      if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${(await res.text()).slice(0, 300)}`);
+      return res.json();
+    };
+
+    // 단순 경로(웹검색 없음): 강제 tool_choice 라 1회로 끝.
+    if (!webSearch) {
+      const data = await post();
+      const toolUse = (data.content ?? []).find((c) => c.type === 'tool_use');
+      if (!toolUse) throw new Error('Anthropic API: no tool_use block in response');
+      return toolUse.input;
+    }
+
+    // 웹검색 경로: 서버툴 루프(pause_turn) 처리 후 최종 구조화 툴 추출.
+    for (let turn = 0; turn < 8; turn++) {
+      const data = await post();
+      const structured = (data.content ?? []).find((c) => c.type === 'tool_use' && c.name === tool.name);
+      if (structured) return structured.input;
+
+      const usedServerTool = (data.content ?? []).some((c) => c.type === 'server_tool_use');
+      if (data.stop_reason === 'pause_turn' || usedServerTool) {
+        // 서버 웹검색 진행 중 → assistant 응답을 그대로 실어 재요청(서버가 이어감).
+        convo.push({ role: 'assistant', content: data.content });
+        continue;
+      }
+      // 검색은 끝났는데 구조화 툴을 안 불렀으면 명시적으로 요구.
+      convo.push({ role: 'assistant', content: data.content });
+      convo.push({ role: 'user', content: `Now call the ${tool.name} tool with your final structured result.` });
+    }
+    throw new Error('Anthropic API: no structured tool_use produced (web-search loop exhausted)');
   }
 
   _callClaudeCLI(messages, tool, { webSearch = false } = {}) {

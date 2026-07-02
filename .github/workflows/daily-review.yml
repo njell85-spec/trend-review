@@ -64,11 +64,13 @@ jobs:
           SESSION_RETRY_MAX:       ${{ vars.SESSION_RETRY_MAX }}
           SESSION_RETRY_DELAY_MIN: ${{ vars.SESSION_RETRY_DELAY_MIN }}
 
-      # 위 스크립트가 index.html을 커밋·푸시한 뒤 selected_papers.json도 갱신하므로
-      # 두 번째 커밋으로 exclusion list 상태를 동기화한다.
-      - name: Commit exclusion list
+      # 스크립트가 index.html 커밋·푸시 후 상태파일(선정 논문 제외목록 + 가이드라인 주간
+      # 게이트)을 갱신하므로, 두 번째 커밋으로 그 상태를 동기화한다.
+      # selected_guidelines.json 을 커밋해야 "주 1회 + 중복방지"가 실행 간 유지된다.
+      - name: Commit daily state (papers + guideline gate)
         run: |
           git add output/selected_papers.json
+          [ -f output/selected_guidelines.json ] && git add output/selected_guidelines.json || true
           git diff --staged --quiet \
-            && echo "exclusion list unchanged" \
-            || (git commit -m "chore: sync paper exclusion list" && git push)
+            && echo "state unchanged" \
+            || (git commit -m "chore: sync daily state (papers + guideline gate)" && git push)
