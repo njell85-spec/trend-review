@@ -11,6 +11,7 @@ import { Logger } from '../utils/Logger.js';
 import { DataCollectorAgent } from '../agents/DataCollectorAgent.js';
 import { FilterAnalyzerAgent } from '../agents/FilterAnalyzerAgent.js';
 import { GuidelineAnalyzerAgent } from '../agents/GuidelineAnalyzerAgent.js';
+import { llmTelemetry } from '../utils/LLMClient.js';
 import { FullTextAgent } from '../agents/FullTextAgent.js';
 import { ValidationAgent } from '../agents/ValidationAgent.js';
 import { ReportGeneratorAgent } from '../agents/ReportGeneratorAgent.js';
@@ -394,6 +395,7 @@ export class TrendReviewOrchestrator {
   // ── Full pipeline run ─────────────────────────────────────────────────────
   async run(options = {}) {
     this.startTime = Date.now();
+    llmTelemetry.reset(); // 이번 실행의 LLM 경로(구독/API) 집계 초기화
     this.logger.section(`TrendReview — Session: ${this.sessionId}`);
     this.logger.info('Pipeline starting', {
       sessionId: this.sessionId,

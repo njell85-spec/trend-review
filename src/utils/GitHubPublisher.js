@@ -9,6 +9,7 @@
 import { readFile, writeFile } from 'fs/promises';
 import { execSync } from 'child_process';
 import path from 'path';
+import { llmTelemetry } from './LLMClient.js';
 
 const API = 'https://api.github.com';
 
@@ -232,7 +233,7 @@ export class GitHubPublisher {
 <!-- /GSECTION:${dateStr} -->`;
   }
 
-  _buildSection(dateStr, generatedAt, topPapers, { isToday = false } = {}) {
+  _buildSection(dateStr, generatedAt, topPapers, { isToday = false, route = '' } = {}) {
     const paperCards = topPapers.map((p) => this._buildPaperCard(p)).join('\n');
     const cards = paperCards;
     const cnt = topPapers.length;
@@ -253,7 +254,7 @@ export class GitHubPublisher {
     <div class="day-head">
       ${badge}<span class="day-date">${esc(dateStr)}</span>
       <span class="day-cnt">· ${cnt}편</span>
-      <span class="day-gen">생성 ${esc(generatedAt)}</span>
+      <span class="day-gen">생성 ${esc(generatedAt)}${route ? ` · LLM ${esc(route)}` : ''}</span>
       <span class="day-chev">${IC.chev(T.muted)}</span>
     </div>
     <div class="day-prev"><span class="day-prev-medal">${IC.star(T.key2)}</span><div><div class="day-prev-t">${esc(previewTitle)}</div><div class="day-prev-m">${esc(previewMeta)}</div></div></div>
@@ -509,7 +510,8 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
     });
 
-    const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true });
+    const route = llmTelemetry.label();
+    const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true, route });
     const guidelineSection = guideline
       ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true })
       : '';

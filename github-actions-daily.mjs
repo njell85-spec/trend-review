@@ -14,6 +14,7 @@ import 'dotenv/config';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
 import { runWithRetry } from './src/utils/retryPipeline.js';
+import { llmTelemetry } from './src/utils/LLMClient.js';
 
 const todayKST = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
 console.log(`\n📅 Daily EM/CCM Trend Review — ${todayKST} (KST)\n`);
@@ -89,10 +90,14 @@ if (!papers.length) {
 const pagesUrl = `https://${process.env.GITHUB_OWNER}.github.io/${process.env.GITHUB_REPO}/`;
 console.log(`\n🌐 GitHub Pages: ${pagesUrl}`);
 
+// 이번 실행이 구독 CLI로 돌았는지 / API 폴백으로 넘어갔는지 (경로 피드백)
+const llmRoute = llmTelemetry.label();
+console.log(`🧭 LLM 실행 경로: ${llmRoute}  (구독=CLI, API=폴백)`);
+
 // ── 카카오 나챗방 발송 (Secrets 설정 시) — 실패해도 파이프라인은 성공 처리 ─────
 try {
   const kakao = new KakaoNotifier();
-  const r = await kakao.send({ dateStr: todayKST, screened: 300, topPaper: papers[0], pagesUrl });
+  const r = await kakao.send({ dateStr: todayKST, screened: 300, topPaper: papers[0], pagesUrl, llmRoute });
   if (r.sent) console.log('💬 카카오 나챗방 리포트 발송 완료');
 } catch (err) {
   console.warn(`⚠️  카카오 발송 실패(파이프라인은 정상): ${err.message}`);
