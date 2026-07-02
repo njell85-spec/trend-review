@@ -80,6 +80,10 @@ export class FilterAnalyzerAgent {
         type: 'object',
         properties: {
           pmid: { type: 'string' },
+          title_ko: {
+            type: 'string',
+            description: 'Natural Korean translation of the paper title (concise). Drug names, score names, and trial acronyms may remain in English.',
+          },
           clinicalQuestion: {
             type: 'string',
             description: 'Core clinical question the paper addresses (1–2 sentences, English)',
@@ -200,7 +204,7 @@ export class FilterAnalyzerAgent {
           },
         },
         required: [
-          'pmid', 'clinicalQuestion', 'clinicalQuestion_ko',
+          'pmid', 'title_ko', 'clinicalQuestion', 'clinicalQuestion_ko',
           'pico', 'pico_ko', 'baseline',
           'secondaryOutcomes', 'secondaryOutcomes_ko', 'statGlossary',
           'keyFindings', 'keyFindings_ko',
@@ -279,7 +283,7 @@ export class FilterAnalyzerAgent {
   }
 
   async _analyzeSinglePaper(paper) {
-    const cacheKey = `pico_v4_${this.provider}_${this.picoModel}_${paper.pmid}`;
+    const cacheKey = `pico_v5_${this.provider}_${this.picoModel}_${paper.pmid}`;
     const { data, fromCache } = await this.cache.getOrFetch(cacheKey, async () => {
       this.logger.info(`PICO analysis: ${paper.pmid} — ${paper.title.slice(0, 60)}…`);
 
@@ -322,7 +326,8 @@ Requirements:
 4. Report ONLY values explicitly stated in the paper. NEVER derive, compute, or estimate new statistics yourself (e.g., do not calculate NNT or absolute risk differences unless the paper reports them). If a value is not reported, omit it rather than guessing.
 5. For the English PICO fields (population/intervention/comparison/outcome), preserve the original wording of the source text as closely as possible — write them as near-verbatim excerpts, not free paraphrases.
 6. statGlossary: for every statistical term that appears in your outcome/secondaryOutcomes text (e.g., OR, HR, 95% CI, p-value, AUROC, mRS), add one entry with a single-sentence plain-Korean explanation a junior clinician could understand. Do not include terms that do not appear.
-7. practiceChange: 2–3 concrete, actionable bullets describing how this evidence should (or should not) change EM/CCM practice.`;
+7. practiceChange: 2–3 concrete, actionable bullets describing how this evidence should (or should not) change EM/CCM practice.
+8. title_ko: a natural, concise Korean translation of the paper title (drug/score/trial names may stay in English).`;
 
       return await this._callLLM(
         [{ role: 'user', content: prompt }],

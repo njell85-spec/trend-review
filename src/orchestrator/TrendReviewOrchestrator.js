@@ -336,7 +336,16 @@ export class TrendReviewOrchestrator {
         return null;
       }
 
-      const card = await this.guideline.analyze(pick);
+      // 본문 확보(가능하면) → 세부 변경점 추출 정확도↑. 실패해도 초록으로 진행.
+      let enriched = pick;
+      try {
+        const { papers } = await this.fullText.run([pick]);
+        if (papers?.[0]) enriched = papers[0];
+      } catch (e) {
+        this.logger.warn('Guideline full-text fetch failed — abstract only', { err: e.message });
+      }
+
+      const card = await this.guideline.analyze(enriched);
       if (!card) {
         this._stageEnd(entry, 'skipped', { reason: 'analysis-failed' });
         return null;

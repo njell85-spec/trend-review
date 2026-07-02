@@ -180,23 +180,24 @@ export class GitHubPublisher {
     const doi = paper.doi ?? '';
     const doiLink = doi ? ` · <a href="https://doi.org/${esc(doi)}" target="_blank" rel="noopener" class="lnk">DOI</a>` : '';
 
-    const bilist = (en = [], ko = []) => (en ?? []).map((t, k) => `
-      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">${esc(t)}</p>${ko?.[k] ? `<p class="txt ko">${esc(ko[k])}</p>` : ''}</div></li>`).join('');
+    const summary = (g.summary ?? []).map((t, k) => `
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">${esc(t)}</p>${g.summary_ko?.[k] ? `<p class="txt ko">${esc(g.summary_ko[k])}</p>` : ''}</div></li>`).join('');
 
-    const summary = bilist(g.summary, g.summary_ko);
-    const changes = bilist(g.changes, g.changes_ko);
+    const changes = (g.keyChanges ?? []).map((c) => `
+      <div class="gl-chg">${c.topic ? `<div class="gl-chg-t">${esc(c.topic)}</div>` : ''}${enko(c.detail, c.detail_ko)}</div>`).join('');
 
-    return `<article class="paper-card guideline-card">
+    return `<article class="guideline-card">
       <div class="pc-top gl-top">
         <div class="medal gl-medal">${IC.book('#fff')}</div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}</div>
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}</div>` : ''}
+        ${g.scope_ko ? `<p class="txt ko" style="margin-top:6px">${esc(g.scope_ko)}</p>` : ''}
         <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)} · ${esc(date)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
-        <div class="chips"><span class="chip gl">GUIDELINE</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}</div>
       </div>
       <div class="pc-body">
         ${summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>핵심 권고</div><ul class="pc-ul">${summary}</ul>` : ''}
-        ${changes ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 변경점</div><div class="gl-changes"><ul class="pc-ul">${changes}</ul></div>` : ''}
+        ${changes ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes">${changes}</div>` : ''}
         ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>임상 임팩트</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
         ${(g.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 출처</div>${g.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
         <div class="pc-foot"><a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed${pmid ? ` ${esc(pmid)}` : ''}</a>${doiLink} · 가이드라인 캐치업</div>
@@ -204,10 +205,33 @@ export class GitHubPublisher {
     </article>`;
   }
 
-  _buildSection(dateStr, generatedAt, topPapers, { isToday = false, guideline = null } = {}) {
+  // ── 가이드라인 전용 접이식 섹션 (논문과 분리, 한눈에 '가이드라인'으로 식별) ──────
+  _buildGuidelineSection(dateStr, generatedAt, guideline, { isToday = false } = {}) {
+    const card = this._buildGuidelineCard(guideline);
+    const gTitle = guideline.title_ko || guideline.paper?.title || '';
+    const gMeta = `${guideline.org || guideline.paper?.journal || ''}${guideline.version ? ` · ${guideline.version}` : ''}`;
+    const cls = isToday ? 'day gl-day gl-day-today' : 'day gl-day gl-day-past';
+    const openAttr = isToday ? ' open' : '';
+    const badge = isToday ? '<span class="t-badge gl-badge">NEW</span>' : '';
+    return `
+<!-- GSECTION:${dateStr} -->
+<details${openAttr} class="${cls}">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="gl-tag">📋 가이드라인</span>${badge}<span class="day-gen">${esc(dateStr)} · 생성 ${esc(generatedAt)}</span>
+      <span class="day-chev">${IC.chev(T.muted)}</span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal">${IC.book(T.sec)}</span><div><div class="day-prev-t">${esc(gTitle)}</div><div class="day-prev-m">${esc(gMeta)}</div></div></div>
+  </summary>
+  <div class="day-panel">${card}</div>
+</details>
+<!-- /GSECTION:${dateStr} -->`;
+  }
+
+  _buildSection(dateStr, generatedAt, topPapers, { isToday = false } = {}) {
     const paperCards = topPapers.map((p) => this._buildPaperCard(p)).join('\n');
-    const cards = guideline ? `${paperCards}\n${this._buildGuidelineCard(guideline)}` : paperCards;
-    const cnt = topPapers.length + (guideline ? 1 : 0);
+    const cards = paperCards;
+    const cnt = topPapers.length;
     const previewTitle = topPapers[0]
       ? (topPapers[0].title_ko || topPapers[0].paper?.title || '')
       : '';
@@ -361,7 +385,15 @@ details[open] .day-prev{display:none}
 .chip.gl{background:linear-gradient(90deg,${T.sec},#6fc3b0);color:#fff}
 .chip.org{background:#ecfdf7;color:${T.secTag};border:1px solid #b6e6da}
 .chip.yr{background:#f1f5f9;color:${T.sub}}
-.gl-changes{background:#f0faf7;border:1px solid #cbeae1;border-left:3px solid ${T.sec};border-radius:10px;padding:9px 12px;margin-top:4px}
+.gl-changes{background:#f0faf7;border:1px solid #cbeae1;border-left:3px solid ${T.sec};border-radius:10px;padding:11px 13px;margin-top:4px}
+.gl-chg{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed #cbeae1}
+.gl-chg:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+.gl-chg-t{font-size:12px;font-weight:800;color:${T.secTag};margin-bottom:3px}
+/* 가이드라인 전용 접이식 섹션 */
+.gl-day-today{background:#fff;border:1.5px solid ${T.sec};box-shadow:0 20px 50px -22px ${T.sec}55}
+.gl-day-past{background:#fff;border:1px solid #d7ede7;box-shadow:0 8px 22px -14px ${T.sec}33}
+.gl-tag{background:linear-gradient(90deg,${T.sec},#6fc3b0);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:7px;box-shadow:0 4px 12px -2px ${T.sec}66}
+.gl-badge{background:linear-gradient(90deg,#3f9b86,#6fc3b0)!important;box-shadow:0 4px 12px -2px ${T.sec}66}
 .lnk{color:${T.softTxt};font-weight:700;text-decoration:none}
 .lnk:hover{text-decoration:underline}
 .src-box{margin-top:14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:11px 13px}
@@ -473,25 +505,31 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
     });
 
-    const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true, guideline });
+    const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true });
+    const guidelineSection = guideline
+      ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true })
+      : '';
 
     const newRows = this._tableRows(dateStr, topPapers, guideline);
 
     let updated;
     if (!existing || !existing.includes('<!-- ARCHIVE_START -->')) {
       // 최초 생성 (또는 구버전 스캐폴드) → 전체 페이지를 새 디자인으로 생성
-      updated = this.buildPage(todaySection, { days: 1, papers: topPapers.length, updated: generatedAt, tableRows: newRows });
+      updated = this.buildPage(`${todaySection}\n${guidelineSection}`, { days: 1, papers: topPapers.length, updated: generatedAt, tableRows: newRows });
     } else {
-      // 같은 날짜 섹션 제거
+      // 같은 날짜 섹션 제거 (논문 SECTION + 가이드라인 GSECTION 모두)
       const escDate = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const dup = new RegExp(`\\n?<!-- SECTION:${escDate} -->[\\s\\S]*?<!-- /SECTION:${escDate} -->`, 'g');
-      let body = existing.replace(dup, '');
-      // 이전 TODAY → past 로 강등
+      const gdup = new RegExp(`\\n?<!-- GSECTION:${escDate} -->[\\s\\S]*?<!-- /GSECTION:${escDate} -->`, 'g');
+      let body = existing.replace(dup, '').replace(gdup, '');
+      // 이전 TODAY → past 로 강등 (논문 + 가이드라인 각각)
       body = body
         .replace(/<details open class="day day-today">/g, '<details class="day day-past">')
-        .replace(/<span class="t-badge">TODAY<\/span>/g, '');
-      // 새 TODAY 삽입
-      body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}`);
+        .replace(/<span class="t-badge">TODAY<\/span>/g, '')
+        .replace(/<details open class="day gl-day gl-day-today">/g, '<details class="day gl-day gl-day-past">')
+        .replace(/<span class="t-badge gl-badge">NEW<\/span>/g, '');
+      // 새 TODAY 삽입 (논문 먼저, 그 아래 가이드라인)
+      body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}${guidelineSection ? `\n${guidelineSection}` : ''}`);
       // 누적 표: 같은 PMID 행 제거(재실행 중복 방지) 후 새 행을 표 맨 위에 삽입
       const dedupItems = guideline ? [...topPapers, guideline] : topPapers;
       for (const p of dedupItems) {
