@@ -78,23 +78,28 @@ export class KakaoNotifier {
     return text;
   }
 
-  // ── 발송 ────────────────────────────────────────────────────────────────────
-  async send({ dateStr, screened, topPaper, pagesUrl }) {
-    if (!this.isConfigured) {
-      this.logger.info('Kakao 미설정(KAKAO_REST_API_KEY/KAKAO_REFRESH_TOKEN 없음) — 발송 생략');
-      return { sent: false, reason: 'not-configured' };
-    }
+  // ── 실패 알림 텍스트 (자동 업데이트가 최종 실패했을 때) ──────────────────────
+  // 과거엔 실패 시 아무 알림도 못 보내거나 오진("GitHub 권한 오류")이 나갔다.
+  // 진짜 사유(예: 'Claude 세션 한도(429) — 3회 재시도 후 실패')를 그대로 전달한다.
+  static buildFailureText({ dateStr, reason }) {
+    const lines = [
+      '[Trend Review] ⚠️ 자동 업데이트 실패',
+      `${dateStr} · ${reason}`,
+      '사이트는 이전 상태 유지 · 다음 스케줄에 재시도',
+    ];
+    let text = lines.join('\n');
+    if (text.length > 195) text = `${text.slice(0, 193)}…`;
+    return text;
+  }
 
-    const text = KakaoNotifier.buildReportText({ dateStr, screened, topPaper, pagesUrl });
-    const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
-
+  // ── 나챗방 텍스트 메모 전송 (공통) ───────────────────────────────────────────
+  async _postMemo(text, url) {
     const templateObject = {
       object_type: 'text',
       text,
       link: { web_url: url, mobile_web_url: url },
       button_title: '📊 대시보드 열기',
     };
-
     const accessToken = await this._accessToken();
     const res = await fetch(KAPI_MEMO, {
       method: 'POST',
@@ -108,7 +113,32 @@ export class KakaoNotifier {
     if (!res.ok || data.result_code !== 0) {
       throw new Error(`Kakao memo send failed ${res.status}: ${JSON.stringify(data).slice(0, 200)}`);
     }
+  }
+
+  // ── 발송 (성공 리포트) ────────────────────────────────────────────────────────
+  async send({ dateStr, screened, topPaper, pagesUrl }) {
+    if (!this.isConfigured) {
+      this.logger.info('Kakao 미설정(KAKAO_REST_API_KEY/KAKAO_REFRESH_TOKEN 없음) — 발송 생략');
+      return { sent: false, reason: 'not-configured' };
+    }
+
+    const text = KakaoNotifier.buildReportText({ dateStr, screened, topPaper, pagesUrl });
+    const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
+    await this._postMemo(text, url);
     this.logger.info('카카오 나챗방 발송 완료');
+    return { sent: true };
+  }
+
+  // ── 발송 (실패 알림) ──────────────────────────────────────────────────────────
+  async sendFailure({ dateStr, reason, pagesUrl }) {
+    if (!this.isConfigured) {
+      this.logger.info('Kakao 미설정 — 실패 알림 생략');
+      return { sent: false, reason: 'not-configured' };
+    }
+    const text = KakaoNotifier.buildFailureText({ dateStr, reason });
+    const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
+    await this._postMemo(text, url);
+    this.logger.warn('카카오 실패 알림 발송', { reason });
     return { sent: true };
   }
 }
