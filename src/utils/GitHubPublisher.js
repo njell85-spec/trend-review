@@ -40,12 +40,19 @@ const IC = {
 
 // ── 결과 비교 막대 (선택적; p.viz 있을 때만) ─────────────────────────────────
 function bars(v, accent, accentTag) {
-  const max = Math.max(v.a.v, v.b.v) * 1.18;
+  // LLM 산출 viz 값 방어: a/b 및 수치가 없으면 블록 자체를 생략(렌더 크래시 방지).
+  if (!v || typeof v !== 'object') return '';
+  const av = Number(v.a?.v), bv = Number(v.b?.v);
+  if (!Number.isFinite(av) || !Number.isFinite(bv)) return '';
+  const max = Math.max(av, bv) * 1.18 || 1;
   const w = (x) => `${(x / max * 100).toFixed(1)}%`;
-  const row = (x, col) => `<div class="bar-row">
-      <span class="bar-lab">${esc(x.l)}</span>
-      <div class="bar-track"><div class="bar-fill" style="width:${w(x.v)};background:${col}"></div><span class="bar-val">${x.v}%</span></div>
-      <span class="bar-n">${esc(x.n ?? '')}</span></div>`;
+  const row = (x, col) => {
+    const val = Number(x?.v) || 0;
+    return `<div class="bar-row">
+      <span class="bar-lab">${esc(x?.l)}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${w(val)};background:${col}"></div><span class="bar-val">${val}%</span></div>
+      <span class="bar-n">${esc(x?.n ?? '')}</span></div>`;
+  };
   return `<div class="viz-block">
     <div class="viz-head"><span class="viz-title">${esc(v.title)}</span><span class="viz-tag" style="color:${accentTag};background:${accentTag}1f">${esc(v.tag)}</span></div>
     ${row(v.a, accent)}${row(v.b, '#cbd5e1')}</div>`;
@@ -476,7 +483,13 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     } catch {
       if (!this.token) throw new Error('git push 실패: GITHUB_TOKEN 미설정');
       const remote = `https://x-access-token:${this.token}@github.com/${this.owner}/${this.repo}.git`;
-      execSync(`git push ${remote} HEAD:main`, { cwd, stdio: 'pipe' });
+      try {
+        execSync(`git push ${remote} HEAD:main`, { cwd, stdio: 'pipe' });
+      } catch (e) {
+        // 에러 메시지에 토큰이 담긴 remote URL 이 포함될 수 있어 마스킹 후 재-throw.
+        const safe = String(e.message ?? '').split(this.token).join('***');
+        throw new Error(`git push (token remote) 실패: ${safe}`);
+      }
     }
   }
 
@@ -485,6 +498,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       method,
       headers: { Authorization: `token ${this.token}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github+json' },
       ...(body ? { body: JSON.stringify(body) } : {}),
+      signal: AbortSignal.timeout(60_000),
     });
     if (!res.ok) throw new Error(`GitHub API ${method} ${p} → ${res.status}: ${await res.text()}`);
     return res.status === 204 ? null : res.json();

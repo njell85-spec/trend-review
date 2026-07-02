@@ -99,6 +99,17 @@ try {
   const kakao = new KakaoNotifier();
   const r = await kakao.send({ dateStr: todayKST, screened: 300, topPaper: papers[0], pagesUrl, llmRoute });
   if (r.sent) console.log('💬 카카오 나챗방 리포트 발송 완료');
+
+  // 카카오가 refresh_token 을 회전시켰으면, 무인 환경에서도 알 수 있도록 한 번 더 알림.
+  // (구 토큰이 만료되면 알림이 조용히 끊기므로, secret 갱신을 유도)
+  if (r.sent && kakao.rotatedRefreshTokenTail) {
+    await kakao.sendFailure({
+      dateStr: todayKST,
+      reason: `카카오 refresh 토큰이 회전됨(…${kakao.rotatedRefreshTokenTail}). KAKAO_REFRESH_TOKEN secret 갱신 필요`,
+      pagesUrl,
+    }).catch(() => {});
+    console.warn('🔑 Kakao refresh token rotated — KAKAO_REFRESH_TOKEN secret 갱신 필요');
+  }
 } catch (err) {
   console.warn(`⚠️  카카오 발송 실패(파이프라인은 정상): ${err.message}`);
 }

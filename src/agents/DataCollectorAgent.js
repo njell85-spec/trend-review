@@ -14,6 +14,7 @@ import { RetryHelper } from '../utils/RetryHelper.js';
 const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const DEFAULT_QUERY =
   '"emergency medicine"[MeSH] OR "critical care"[MeSH] OR "sepsis"[MeSH]';
+const FETCH_TIMEOUT_MS = 20_000; // 응답 없는 소켓이 잡 전체(240분)를 붙잡지 않도록
 
 export class DataCollectorAgent {
   constructor(options = {}) {
@@ -55,7 +56,7 @@ export class DataCollectorAgent {
     return this.cb.execute(() =>
       this.retry.execute(
         async () => {
-          const res = await fetch(url);
+          const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
           if (!res.ok) throw new Error(`PubMed HTTP ${res.status}: ${url}`);
           return res.json();
         },
@@ -72,7 +73,7 @@ export class DataCollectorAgent {
     return this.cb.execute(() =>
       this.retry.execute(
         async () => {
-          const res = await fetch(url);
+          const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
           if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
           const text = await res.text();
           return parseStringPromise(text, { explicitArray: false, ignoreAttrs: false });
@@ -339,7 +340,7 @@ export class DataCollectorAgent {
 }
 
 // ── Standalone test ───────────────────────────────────────────────────────
-if (process.argv[1].endsWith('DataCollectorAgent.js')) {
+if (process.argv[1]?.endsWith('DataCollectorAgent.js')) {
   const agent = new DataCollectorAgent({ maxPapers: 5, searchDays: 30 });
   const result = await agent.run();
   console.log(`\nCollected ${result.papers.length} papers`);

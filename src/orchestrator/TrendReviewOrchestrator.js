@@ -202,7 +202,8 @@ export class TrendReviewOrchestrator {
       if (resumeData?.validatedPapers) {
         this.logger.info('Resuming from checkpoint — skipping pass-1 validation');
         this._stageEnd(entry, 'resumed');
-        return resumeData;
+        // 체크포인트 키(validatedPapers/validationStats)를 호출부 계약({papers, stats})으로 변환
+        return { papers: resumeData.validatedPapers, stats: resumeData.validationStats ?? {} };
       }
 
       const result = this.validator.validatePapers(papers);
@@ -492,9 +493,12 @@ export class TrendReviewOrchestrator {
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
       const pagesUrl = await this._stagePublish(validatedPico, guidelineCard);
 
-      // Save newly-published PMIDs to exclusion list
-      if (validatedPico.length) await this._saveExcludePmids(validatedPico);
-      if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
+      // Save newly-published PMIDs to exclusion list.
+      // 발행 실패(pagesUrl=null) 시에는 저장하지 않는다 — 사이트에 실리지 못한 논문이
+      // 영구 제외되어 다시는 선정되지 않는 것을 방지. (publisher 미설정 로컬 실행은 기존대로 저장)
+      const published = pagesUrl || !this.githubPublisher;
+      if (published && validatedPico.length) await this._saveExcludePmids(validatedPico);
+      if (published && guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 8: Notify (optional — Drive + Gmail + KakaoTalk)
       const notifyResult = await this._stageNotify(

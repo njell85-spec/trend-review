@@ -14,10 +14,10 @@ const EM_CCM_MESH_TERMS = new Set([
   'Resuscitation', 'Cardiopulmonary Resuscitation', 'Heart Arrest',
   'Respiratory Insufficiency', 'Acute Kidney Injury', 'Multiple Organ Failure',
   'Airway Management', 'Intubation, Intratracheal', 'Fluid Therapy',
-  'Mechanical Ventilation', 'Respiration, Artificial', 'Hemodynamics',
-  'Vasopressors', 'Norepinephrine', 'Dopamine', 'Epinephrine',
-  'Triage', 'Point-of-Care Testing', 'Ultrasound', 'Echocardiography',
-  'Trauma', 'Wounds and Injuries', 'Burns', 'Poisoning',
+  'Respiration, Artificial', 'Hemodynamics',
+  'Vasoconstrictor Agents', 'Norepinephrine', 'Dopamine', 'Epinephrine',
+  'Triage', 'Point-of-Care Testing', 'Ultrasonography', 'Echocardiography',
+  'Wounds and Injuries', 'Burns', 'Poisoning',
   'Shock', 'Anaphylaxis', 'Stroke', 'Myocardial Infarction',
 ]);
 
@@ -56,8 +56,10 @@ export class ValidationAgent {
       warnings.push('Low EM/CCM relevance signal');
 
     // Abstract quality checks
+    // 통계 약어(OR/RR/HR/CI)는 단어 경계 + 대문자로만 매치 — /i 를 쓰면 "for","authors" 등에
+    // 걸려 이 경고가 절대 발생하지 않던 버그를 수정.
     if (paper.abstract && paper.abstract.length > 50) {
-      const hasNumerics = /\d+(\.\d+)?%|\d+\/\d+|p\s*[<=>]\s*0\.\d+|OR|RR|HR|CI/i.test(paper.abstract);
+      const hasNumerics = /\d+(\.\d+)?%|\d+\/\d+|[pP]\s*[<=>]\s*0?\.\d+|\b(OR|RR|HR|CI)\b/.test(paper.abstract);
       if (!hasNumerics) warnings.push('Abstract lacks quantitative results');
     }
 
@@ -88,8 +90,10 @@ export class ValidationAgent {
     }
 
     // Keyword match in text (lower weight)
+    // 단어 경계 매치 — includes() 는 'icu'⊂'particular', 'acute'⊂'subacute' 등
+    // 부분 문자열 오매치로 관련성 점수를 부풀린다.
     for (const kw of EM_CCM_KEYWORDS) {
-      if (textLower.includes(kw)) score += 1;
+      if (new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(textLower)) score += 1;
     }
 
     return score;

@@ -218,10 +218,10 @@ export class FilterAnalyzerAgent {
   }
 
   // ── LLM API wrapper (provider-agnostic) ─────────────────────────────────
-  async _callLLM(messages, tool, llm = this.llm) {
+  async _callLLM(messages, tool, llm = this.llm, opts = {}) {
     return this.cb.execute(() =>
       this.retry.execute(
-        async () => llm.callWithTool(messages, tool),
+        async () => llm.callWithTool(messages, tool, opts),
         {
           label: `${this.provider}-API`,
           onRetry: ({ attempt, delay }) =>
@@ -278,7 +278,9 @@ export class FilterAnalyzerAgent {
       this.logger.error(`PICO failed for PMID ${topPapers[idx].pmid}`, {
         err: result.reason?.message,
       });
-      return this._fallbackPico(topPapers[idx]);
+      // 폴백도 정상 경로와 동일하게 출처 배지/링크(provenance)를 붙여, 렌더 시
+      // evidenceSource/sources 가 undefined 가 되지 않도록 한다.
+      return { ...this._fallbackPico(topPapers[idx]), ...this._provenance(topPapers[idx]) };
     });
   }
 
@@ -329,10 +331,12 @@ Requirements:
 7. practiceChange: 2–3 concrete, actionable bullets describing how this evidence should (or should not) change EM/CCM practice.
 8. title_ko: a natural, concise Korean translation of the paper title (drug/score/trial names may stay in English).`;
 
+      // 이중언어 필드가 많아 출력이 길다 — 기본 8192 를 넘겨 tool_use 가 잘리지 않도록 상향.
       return await this._callLLM(
         [{ role: 'user', content: prompt }],
         this._picoTool,
-        this.picoLlm
+        this.picoLlm,
+        { maxTokens: 12000 }
       );
     });
 
@@ -361,23 +365,25 @@ Requirements:
   }
 
   _fallbackPico(paper) {
+    const notAnalyzed = { population: 'Not analyzed', intervention: 'Not analyzed', comparison: 'Not analyzed', outcome: 'Not analyzed' };
     return {
       pmid: paper.pmid,
       paper,
+      title_ko: paper.title ?? '',
       clinicalQuestion: 'Analysis unavailable — see abstract',
-      pico: {
-        population: 'Not analyzed',
-        intervention: 'Not analyzed',
-        comparison: 'Not analyzed',
-        outcome: 'Not analyzed',
-      },
+      clinicalQuestion_ko: '분석 실패 — 원문 초록을 확인하세요',
+      pico: { ...notAnalyzed },
+      pico_ko: { ...notAnalyzed },
       baseline: 'Not reported',
       secondaryOutcomes: [],
       secondaryOutcomes_ko: [],
       statGlossary: [],
       keyFindings: ['Analysis failed — refer to original abstract'],
+      keyFindings_ko: ['분석 실패 — 원문 초록을 확인하세요'],
       clinicalTakeaway: 'Manual review required',
+      clinicalTakeaway_ko: '수동 검토 필요',
       limitations: 'Automated analysis failed',
+      limitations_ko: '자동 분석 실패',
       practiceChange: [],
       practiceChange_ko: [],
       evidenceLevel: 'Very Low',
@@ -456,7 +462,7 @@ Requirements:
 }
 
 // ── Standalone test ───────────────────────────────────────────────────────
-if (process.argv[1].endsWith('FilterAnalyzerAgent.js')) {
+if (process.argv[1]?.endsWith('FilterAnalyzerAgent.js')) {
   const mockPapers = [
     {
       pmid: '99999001',

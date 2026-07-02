@@ -22,6 +22,9 @@ export class KakaoNotifier {
     this.restApiKey = options.restApiKey ?? process.env.KAKAO_REST_API_KEY;
     this.refreshToken = options.refreshToken ?? process.env.KAKAO_REFRESH_TOKEN;
     this.clientSecret = options.clientSecret ?? process.env.KAKAO_CLIENT_SECRET ?? null;
+    // 카카오가 refresh_token 을 회전(재발급)하면 그 tail 을 여기 담아 호출부가
+    // "시크릿 갱신 필요" 알림을 보내도록 한다. (무인 환경에서 로그는 아무도 못 봄)
+    this.rotatedRefreshTokenTail = null;
   }
 
   get isConfigured() {
@@ -40,15 +43,19 @@ export class KakaoNotifier {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
       body,
+      signal: AbortSignal.timeout(15_000),
     });
     const data = await res.json();
     if (!res.ok || !data.access_token) {
       throw new Error(`Kakao token refresh failed ${res.status}: ${JSON.stringify(data).slice(0, 200)}`);
     }
-    // 카카오가 refresh_token 을 새로 주면(회전) 로그로 알림 — 운영자가 secret 갱신 판단.
+    // 카카오가 refresh_token 을 새로 주면(회전) — 이번 실행부터 새 토큰을 사용하고,
+    // tail 을 기록해 호출부가 "시크릿 갱신 필요" 카톡을 보내도록 한다.
     if (data.refresh_token) {
+      this.refreshToken = data.refresh_token;
+      this.rotatedRefreshTokenTail = String(data.refresh_token).slice(-6);
       this.logger.warn('Kakao issued a NEW refresh_token — update KAKAO_REFRESH_TOKEN secret', {
-        newRefreshTokenTail: String(data.refresh_token).slice(-6),
+        newRefreshTokenTail: this.rotatedRefreshTokenTail,
       });
     }
     return data.access_token;
@@ -109,6 +116,7 @@ export class KakaoNotifier {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
       },
       body: new URLSearchParams({ template_object: JSON.stringify(templateObject) }),
+      signal: AbortSignal.timeout(15_000),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || data.result_code !== 0) {

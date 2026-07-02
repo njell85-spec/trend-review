@@ -18,6 +18,9 @@ export function classifyFailure(message = '') {
     return { retryable: true, label: 'Claude 세션 한도(429)' };
   if (/not been trusted|hasTrustDialogAccepted/i.test(m))
     return { retryable: false, label: 'claude CLI 워크스페이스 신뢰 미설정 (설정 확인 필요)' };
+  // 타임아웃(spawn timeout / AbortSignal)은 일시적이므로 CLI 미설치보다 먼저 판정해 재시도.
+  if (/ETIMEDOUT|timed out|timeout|AbortError|The operation was aborted/i.test(m))
+    return { retryable: true, label: 'LLM 호출 타임아웃(일시적)' };
   if (/ENOENT|spawn error|command not found/i.test(m))
     return { retryable: false, label: 'claude CLI 미설치/미인증 (설정 확인 필요)' };
   return { retryable: true, label: 'claude CLI 오류(일시적일 수 있음)' };

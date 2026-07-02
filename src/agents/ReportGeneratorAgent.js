@@ -182,9 +182,9 @@ ${this._buildSummaryTable(topPapers)}
   <p class="mt-1">본 시스템의 분석 결과는 보조 도구이며, 임상 결정은 전문의 판단을 따르십시오.</p>
 </footer>
 <script>
-const TOP_PAPERS = ${JSON.stringify(topPapers)};
-const ALL_PAPERS = ${JSON.stringify(allScoredPapers)};
-const QUALITY = ${JSON.stringify(qualityReport ?? {})};
+const TOP_PAPERS = ${this._jsonForScript(topPapers.map((p) => this._slimForScript(p)))};
+const ALL_PAPERS = ${this._jsonForScript(allScoredPapers.map((p) => this._slimForScript(p)))};
+const QUALITY = ${this._jsonForScript(qualityReport ?? {})};
 function app() {
   return {
     search: '', filterStudy: '', minScore: '0', expandPaper: null,
@@ -227,8 +227,17 @@ function app() {
       const figNote = figures.length ? ` · ${figures.length} figure/table caption${figures.length > 1 ? 's' : ''} extracted` : '';
       return `<div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-3 py-2 mb-4 text-xs text-green-800"><span>📄</span><span><strong>Full text available (PMC)</strong> — ${Math.round(len / 1000)}k chars analyzed${figNote} &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-green-600">PubMed →</a></span></div>`;
     }
+    if (src === 'EuropePMC') {
+      const figNote = figures.length ? ` · ${figures.length} figure/table caption${figures.length > 1 ? 's' : ''} extracted` : '';
+      return `<div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-3 py-2 mb-4 text-xs text-green-800"><span>📄</span><span><strong>Full text available (Europe PMC)</strong> — ${Math.round(len / 1000)}k chars analyzed${figNote} &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-green-600">PubMed →</a></span></div>`;
+    }
     if (src === 'Unpaywall') {
       return `<div class="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 mb-4 text-xs text-blue-800"><span>🔓</span><span><strong>Open-access full text (Unpaywall)</strong> — ${Math.round(len / 1000)}k chars analyzed &nbsp;<a href="${this._esc(result.oaUrl ?? paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-blue-600">Full text →</a></span></div>`;
+    }
+    if (src === 'abstract+registry') {
+      const nct = result.nctId ?? '';
+      const regUrl = nct ? `https://clinicaltrials.gov/study/${nct}` : (paper.pubmedUrl ?? '#');
+      return `<div class="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-4 text-xs text-amber-800"><span>🗂️</span><span><strong>Abstract + registry (ClinicalTrials.gov${nct ? ` ${this._esc(nct)}` : ''})</strong> &nbsp;<a href="${this._esc(regUrl)}" target="_blank" rel="noopener" class="underline hover:text-amber-600">Registry →</a></span></div>`;
     }
     return `<div class="flex items-center gap-2 bg-gray-100 border border-gray-200 rounded-lg px-3 py-2 mb-4 text-xs text-gray-500"><span>📃</span><span><strong>Abstract only</strong> &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="text-blue-500 underline hover:text-blue-700">PubMed →</a></span></div>`;
   }
@@ -400,6 +409,25 @@ function app() {
 
   _esc(str) {
     return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // 인라인 <script> 삽입용 JSON — '</script>' 조기 종료 및 라인 구분자 이슈 차단
+  _jsonForScript(value) {
+    return JSON.stringify(value)
+      .replace(/</g, '\\u003c')
+      .replace(/\u2028/g, '\\u2028')
+      .replace(/\u2029/g, '\\u2029');
+  }
+
+  // 대시보드 스크립트에 불필요한 대용량 필드(본문 전문 등) 제거 — 파일 크기 절감
+  _slimForScript(item) {
+    if (!item || typeof item !== 'object') return item;
+    const { fullText, augmentText, ...rest } = item;
+    if (rest.paper && typeof rest.paper === 'object') {
+      const { fullText: _ft, augmentText: _at, ...paperRest } = rest.paper;
+      rest.paper = paperRest;
+    }
+    return rest;
   }
 
   async run(sessionId, data) {

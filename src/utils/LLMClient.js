@@ -98,6 +98,7 @@ export class LLMClient {
           'content-type': 'application/json',
         },
         body: JSON.stringify({ model: this.model, max_tokens: maxTokens, tools, tool_choice, messages: convo }),
+        signal: AbortSignal.timeout(300_000),
       });
       if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${(await res.text()).slice(0, 300)}`);
       return res.json();
