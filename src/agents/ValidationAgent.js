@@ -8,17 +8,21 @@
  */
 import { Logger } from '../utils/Logger.js';
 
+// PubMed MeSH DescriptorName 과 정확히 일치해야 매치된다 — 통용어(Trauma,
+// Vasopressors, Ultrasound, Mechanical Ventilation)는 실제 MeSH 명칭이 아니라
+// 절대 매치되지 않으므로 공식 디스크립터로 교정.
 const EM_CCM_MESH_TERMS = new Set([
   'Emergency Medicine', 'Emergency Service, Hospital', 'Critical Care',
-  'Intensive Care Units', 'Sepsis', 'Septic Shock', 'Shock, Septic',
+  'Intensive Care Units', 'Sepsis', 'Shock, Septic',
   'Resuscitation', 'Cardiopulmonary Resuscitation', 'Heart Arrest',
   'Respiratory Insufficiency', 'Acute Kidney Injury', 'Multiple Organ Failure',
   'Airway Management', 'Intubation, Intratracheal', 'Fluid Therapy',
-  'Mechanical Ventilation', 'Respiration, Artificial', 'Hemodynamics',
-  'Vasopressors', 'Norepinephrine', 'Dopamine', 'Epinephrine',
-  'Triage', 'Point-of-Care Testing', 'Ultrasound', 'Echocardiography',
-  'Trauma', 'Wounds and Injuries', 'Burns', 'Poisoning',
+  'Respiration, Artificial', 'Hemodynamics',
+  'Vasoconstrictor Agents', 'Norepinephrine', 'Dopamine', 'Epinephrine',
+  'Triage', 'Point-of-Care Testing', 'Ultrasonography', 'Echocardiography',
+  'Wounds and Injuries', 'Burns', 'Poisoning',
   'Shock', 'Anaphylaxis', 'Stroke', 'Myocardial Infarction',
+  'Respiratory Distress Syndrome', 'Brain Injuries, Traumatic',
 ]);
 
 const EM_CCM_KEYWORDS = [
@@ -55,9 +59,12 @@ export class ValidationAgent {
     else if (relevanceScore < 2)
       warnings.push('Low EM/CCM relevance signal');
 
-    // Abstract quality checks
+    // Abstract quality checks — 통계 약어는 단어 경계 + 대문자 정확 일치
+    // ('or', 'for', 'chronic' 같은 일반 단어가 매치돼 검사가 무력화되는 것을 방지)
     if (paper.abstract && paper.abstract.length > 50) {
-      const hasNumerics = /\d+(\.\d+)?%|\d+\/\d+|p\s*[<=>]\s*0\.\d+|OR|RR|HR|CI/i.test(paper.abstract);
+      const hasNumerics =
+        /\d+(\.\d+)?%|\d+\/\d+|p\s*[<=>]\s*0?\.\d+/i.test(paper.abstract)
+        || /\b(OR|RR|HR|CI|AUROC|AUC|NNT)\b/.test(paper.abstract);
       if (!hasNumerics) warnings.push('Abstract lacks quantitative results');
     }
 
