@@ -7,7 +7,8 @@
  * 배포: git push 우선 → 실패 시 GitHub REST API 폴백.
  */
 import { readFile, writeFile } from 'fs/promises';
-import { execSync } from 'child_process';
+import { existsSync } from 'fs';
+import { spawnSync } from 'child_process';
 import path from 'path';
 import { llmTelemetry } from './LLMClient.js';
 
@@ -465,18 +466,42 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
   }
 
   // ── git push ────────────────────────────────────────────────────────────────
+  // 토큰이 에러 메시지/프로세스 목록에 노출되지 않도록: 인자 배열 + 스크럽 + env 전달
+  _scrub(s) {
+    return this.token ? String(s).split(this.token).join('***') : String(s);
+  }
+
+  _git(args, extraEnv = null) {
+    const res = spawnSync('git', args, {
+      cwd: this._repoPath,
+      encoding: 'utf8',
+      ...(extraEnv ? { env: { ...process.env, ...extraEnv } } : {}),
+    });
+    if (res.error) throw new Error(`git ${args[0]} 실패: ${this._scrub(res.error.message)}`);
+    if (res.status !== 0) {
+      throw new Error(`git ${args[0]} 실패: ${this._scrub((res.stderr || res.stdout || '').trim())}`);
+    }
+    return (res.stdout ?? '').trim();
+  }
+
   _gitPush(dateStr) {
-    const cwd = this._repoPath;
-    execSync('git add index.html output/selected_papers.json', { cwd, stdio: 'pipe' });
-    const diff = execSync('git diff --staged --name-only', { cwd, encoding: 'utf8' }).trim();
+    const files = ['index.html', 'output/selected_papers.json', 'output/selected_guidelines.json']
+      .filter((f) => existsSync(path.join(this._repoPath, f)));
+    this._git(['add', ...files]);
+    const diff = this._git(['diff', '--staged', '--name-only']);
     if (!diff) return;
-    execSync(`git commit -m "Update archive: ${dateStr}"`, { cwd, stdio: 'pipe' });
+    this._git(['commit', '-m', `Update archive: ${dateStr}`]);
     try {
-      execSync('git push', { cwd, stdio: 'pipe' });
+      this._git(['push']);
     } catch {
       if (!this.token) throw new Error('git push 실패: GITHUB_TOKEN 미설정');
-      const remote = `https://x-access-token:${this.token}@github.com/${this.owner}/${this.repo}.git`;
-      execSync(`git push ${remote} HEAD:main`, { cwd, stdio: 'pipe' });
+      // 토큰은 URL/argv에 싣지 않고 credential helper가 환경변수에서 읽는다
+      const helper = 'credential.helper=!f() { echo "username=x-access-token"; echo "password=$GIT_PUSH_TOKEN"; }; f';
+      this._git(
+        ['-c', 'credential.helper=', '-c', helper,
+         'push', `https://github.com/${this.owner}/${this.repo}.git`, 'HEAD:main'],
+        { GIT_PUSH_TOKEN: this.token },
+      );
     }
   }
 
