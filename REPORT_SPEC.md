@@ -77,6 +77,15 @@
 
 ## 5. 변경 이력
 
+- 2026-07-02: 전면 코드 리뷰 반영.
+  보안(토큰 로그 노출 차단·대시보드 XSS·이메일 이스케이프), 날짜 KST 통일(`src/utils/dates.js`),
+  제외목록을 publish 전에 저장(중복 선정 방지), 체크포인트 병합·resume 수리,
+  FullText 재시도/실패 미캐시/근거배지 수정, PICO 캐시 키에 본문 상태 포함,
+  검증 정규식·MeSH 교정, LLM API 타임아웃·CLI 비동기화, Kakao 토큰 회전 알림 +
+  `-402(talk_message 미동의)` 안내, Actions job summary 로 소프트 실패 가시화.
+  일회성 스크립트·디자인 시안은 `archive/` 로 이동 (운영 경로는
+  daily-review.yml → github-actions-daily.mjs → src/ 만).
+
 - 2026-06-29: 1번 방안(6개월/300편/1편·Opus) 전 채널 일괄 반영.
   Opus 모델이 실제 CLI 호출까지 전달되도록 `LLMClient`에 `--model` 추가.
 - 2026-06-29: Sky 파스텔 디자인으로 전면 교체, 과거 아카이브 리셋(오늘부터 시작).
