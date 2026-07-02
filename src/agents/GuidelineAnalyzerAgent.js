@@ -77,6 +77,11 @@ export class GuidelineAnalyzerAgent {
           },
           practiceImpact: { type: 'string', description: 'How this should concretely change EM/CCM bedside practice (2–4 sentences, English).' },
           practiceImpact_ko: { type: 'string', description: 'Korean translation of practiceImpact.' },
+          webSources: {
+            type: 'array',
+            description: 'Authoritative web pages you consulted via WebSearch/WebFetch to determine the specific changes (only if you actually used web search). Prefer the issuing society, the journal, or PubMed. Each {label, url}. Empty array if you did not use web search.',
+            items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
+          },
         },
         required: ['pmid', 'org', 'version', 'title_ko', 'scope_ko', 'summary', 'summary_ko', 'keyChanges', 'practiceImpact', 'practiceImpact_ko'],
       },
@@ -85,7 +90,7 @@ export class GuidelineAnalyzerAgent {
 
   async analyze(guideline) {
     if (!guideline) return null;
-    const cacheKey = `guideline_v3_${this.provider}_${this.model}_${guideline.pmid}`;
+    const cacheKey = `guideline_v4_${this.provider}_${this.model}_${guideline.pmid}`;
     try {
       const { data } = await this.cache.getOrFetch(cacheKey, async () => {
         this.logger.info(`Guideline analysis: ${guideline.pmid} — ${guideline.title?.slice(0, 60)}…`);
@@ -113,11 +118,24 @@ MeSH: ${(guideline.meshTerms ?? []).join(', ')}
 Abstract / summary text:
 ${guideline.abstract}${fullTextSection}${augmentSection}
 
-Use the submit_guideline_catchup tool. Report ONLY facts present in the provided text (abstract, full text, or authoritative source) — never invent recommendations or changes. Prefer the FULL TEXT / authoritative source (when provided) to extract specific changed recommendations, thresholds, doses, and evidence grades. If the provided text only gives aggregate COUNTS of changes (e.g. "20 new, 13 updated") without describing their content, return an empty "keyChanges" array rather than restating the counts as if they were changes. Provide Korean for all _ko fields; medical/drug/score names may remain in English. Be thorough — allocate as much detail as the source supports.`;
+Use the submit_guideline_catchup tool. Report ONLY facts you can source — never invent recommendations or changes.
 
-        const result = await this.cb.execute(() =>
-          this.retry.execute(() => this.llm.callWithTool([{ role: 'user', content: prompt }], this._tool, { maxTokens: 12000 }),
-            { label: `${this.provider}-guideline` }));
+RESEARCH: If the provided text does NOT describe the specific CONTENT of what changed (e.g. it only gives aggregate counts like "20 new, 13 updated"), USE WebSearch/WebFetch to find the actual changes from AUTHORITATIVE sources — the issuing society's "What's New"/executive summary, the journal article, guideline repositories, or PubMed. Extract the specific changed recommendations (이전→이후, 수치/용량/시간/등급, 이유). List every authoritative page you used in "webSources". If, after searching, you still cannot find the specific content, return an empty "keyChanges" array rather than restating counts.
+
+Provide Korean for all _ko fields; medical/drug/score names may remain in English. Be thorough — allocate as much detail as the sources support.`;
+
+        // 웹검색 보강 우선; 헤드리스에서 웹툴이 불가/실패하면 텍스트-only 로 폴백(정직 안내로 귀결).
+        const call = (webSearch) => this.cb.execute(() =>
+          this.retry.execute(
+            () => this.llm.callWithTool([{ role: 'user', content: prompt }], this._tool, { maxTokens: 12000, webSearch }),
+            { label: `${this.provider}-guideline${webSearch ? '-web' : ''}` }));
+        let result;
+        try {
+          result = await call(true);
+        } catch (e) {
+          this.logger.warn(`Guideline web-search call failed — falling back to text-only: ${e.message}`);
+          result = await call(false);
+        }
         return result;
       });
 
@@ -136,6 +154,10 @@ Use the submit_guideline_catchup tool. Report ONLY facts present in the provided
     if (guideline.doi && guideline.doi.length > 3) sources.push({ label: `Journal (DOI) — ${guideline.doi}`, url: `https://doi.org/${guideline.doi}` });
     if (guideline.oaUrl) sources.push({ label: 'Open-access full text', url: guideline.oaUrl });
     for (const s of guideline.augmentSources ?? []) sources.push(s);
+    // Opus 가 웹검색으로 실제 사용한 권위 출처
+    for (const s of data.webSources ?? []) {
+      if (s?.url) sources.push({ label: `웹 — ${s.label ?? s.url}`, url: s.url });
+    }
 
     const keyChanges = Array.isArray(data.keyChanges) ? data.keyChanges : [];
     return {
