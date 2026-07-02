@@ -219,15 +219,21 @@ function app() {
   }
 
   _buildFullTextBadge(result, paper) {
-    const src = result.fullTextSource ?? 'abstract-only';
-    const len = result.fullTextLength ?? 0;
-    const figures = result.figures ?? [];
-    if (src === 'PMC') {
+    // FullTextAgent는 paper 객체를 보강하므로 실제 필드는 대개 paper 쪽에 있다
+    const src = result.fullTextSource ?? paper.fullTextSource ?? 'abstract-only';
+    const len = result.fullTextLength ?? paper.fullTextLength ?? 0;
+    const figures = result.figures ?? paper.figures ?? [];
+    if (src === 'PMC' || src === 'EuropePMC') {
+      const label = src === 'PMC' ? 'PMC' : 'Europe PMC';
       const figNote = figures.length ? ` · ${figures.length} figure/table caption${figures.length > 1 ? 's' : ''} extracted` : '';
-      return `<div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-3 py-2 mb-4 text-xs text-green-800"><span>📄</span><span><strong>Full text available (PMC)</strong> — ${Math.round(len / 1000)}k chars analyzed${figNote} &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-green-600">PubMed →</a></span></div>`;
+      return `<div class="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-3 py-2 mb-4 text-xs text-green-800"><span>📄</span><span><strong>Full text available (${label})</strong> — ${Math.round(len / 1000)}k chars analyzed${figNote} &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-green-600">PubMed →</a></span></div>`;
     }
     if (src === 'Unpaywall') {
-      return `<div class="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 mb-4 text-xs text-blue-800"><span>🔓</span><span><strong>Open-access full text (Unpaywall)</strong> — ${Math.round(len / 1000)}k chars analyzed &nbsp;<a href="${this._esc(result.oaUrl ?? paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-blue-600">Full text →</a></span></div>`;
+      return `<div class="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 mb-4 text-xs text-blue-800"><span>🔓</span><span><strong>Open-access full text (Unpaywall)</strong> — ${Math.round(len / 1000)}k chars analyzed &nbsp;<a href="${this._esc(result.oaUrl ?? paper.oaUrl ?? paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="underline hover:text-blue-600">Full text →</a></span></div>`;
+    }
+    if (src === 'abstract+registry') {
+      const regUrl = (paper.augmentSources ?? result.augmentSources ?? [])[0]?.url ?? paper.pubmedUrl ?? '#';
+      return `<div class="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-4 text-xs text-amber-800"><span>🗂️</span><span><strong>Abstract + ClinicalTrials.gov registry</strong> &nbsp;<a href="${this._esc(regUrl)}" target="_blank" rel="noopener" class="underline hover:text-amber-600">Registry →</a></span></div>`;
     }
     return `<div class="flex items-center gap-2 bg-gray-100 border border-gray-200 rounded-lg px-3 py-2 mb-4 text-xs text-gray-500"><span>📃</span><span><strong>Abstract only</strong> &nbsp;<a href="${this._esc(paper.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="text-blue-500 underline hover:text-blue-700">PubMed →</a></span></div>`;
   }
