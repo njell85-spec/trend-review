@@ -115,6 +115,9 @@ details[open] .day-prev{display:none}
 .readcb{width:18px;height:18px;accent-color:#5b8fd9;cursor:pointer}
 tr.is-read{background:#e9f2fd}
 tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-through}
+/* 넓은 화면(폴드 펼침·태블릿) 대응: 좁은 화면은 460px 유지, 넓은 화면만 확대 */
+@media(min-width:700px){.wrap{max-width:640px}}
+@media(min-width:1080px){.wrap{max-width:720px}}
 </style>
 </head>
 <body>
