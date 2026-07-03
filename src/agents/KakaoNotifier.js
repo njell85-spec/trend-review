@@ -79,32 +79,30 @@ export class KakaoNotifier {
   }
 
   // ── 데일리 리포트 텍스트 구성 (REPORT_SPEC 카톡 포맷) ────────────────────────
-  // 카톡 텍스트 템플릿은 1건당 200자 제한. 제목이 길어 넘치면 제목을 자르지 않고
-  // 2개 메시지로 분할한다. 링크(📊 줄)는 항상 마지막 메시지에 포함 (REPORT_SPEC §2).
+  // 카톡 메시지 — 핵심만 (REPORT_SPEC §2): 헤더 / 날짜 / 제목 / 저널·PMID / 링크.
+  // 1건당 200자 제한이라 넘치면 제목을 자르지 않고 2개로 분할, 링크는 항상 마지막.
   // 카톡은 http(s) URL 을 자동 링크화하므로 https 포함 필수.
-  static buildReportMessages({ dateStr, screened = 300, topPaper, pagesUrl, llmRoute = '' }) {
+  static buildReportMessages({ dateStr, topPaper, pagesUrl }) {
     const p = topPaper ?? {};
     const paper = p.paper ?? {};
     const title = (p.title_ko || paper.title || '제목 없음').replace(/\s+/g, ' ').trim();
     const journal = paper.journal ?? '';
     const pmid = paper.pmid ?? '';
-    const score = p.clinicalApplicabilityScore ?? paper.scoringData?.score ?? '';
     const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
 
-    const l1 = '[Trend Review] 논문분석완료🏥';
-    const l2 = `${dateStr} · 최근6개월 ${screened}편 스크리닝 → 1편 선정`;
-    const titleLine = `🥇${title}${journal ? `(${journal})` : ''}`;
-    const l4 = `${pmid ? `#${pmid}` : ''}${score ? ` · ${score}점` : ''}${llmRoute ? ` · ${llmRoute}` : ''}`;
+    const l1 = '[trend-review]';
+    const l2 = dateStr;
+    const l4 = `${journal}${pmid ? `${journal ? ' · ' : ''}#${pmid}` : ''}`; // 어느 논문인지
     const l5 = `📊 ${url}`;
 
-    const full = [l1, l2, titleLine, l4, l5].filter(Boolean).join('\n');
+    const full = [l1, l2, title, l4, l5].filter(Boolean).join('\n');
     if (full.length <= 200) return [full];
 
-    // 200 초과 → 제목을 자르지 않고 2개로 분할. ① 헤더+제목  ② PMID·점수 + 링크
-    let msg1 = [l1, l2, titleLine].join('\n');
+    // 200 초과 → 제목을 자르지 않고 2개로 분할. ① 헤더+날짜+제목  ② 저널·PMID + 링크
+    let msg1 = [l1, l2, title].join('\n');
     if (msg1.length > 200) { // 초장문 제목 방어
       const budget = 200 - l1.length - l2.length - 2 - 1;
-      msg1 = [l1, l2, `${titleLine.slice(0, Math.max(12, budget))}…`].join('\n');
+      msg1 = [l1, l2, `${title.slice(0, Math.max(12, budget))}…`].join('\n');
     }
     const msg2 = [l4, l5].filter(Boolean).join('\n');
     return [msg1, msg2];
