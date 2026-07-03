@@ -19,17 +19,18 @@
 ## 2. 카카오톡 리포트 포맷 (PlayMCP MemoChat)
 
 ```
-[Trend Review] 논문분석완료🏥
-{YYYY-MM-DD} · 최근6개월 300편 스크리닝 → 1편 선정
-
-🥇{논문 제목}({저널 약어})
-#{PMID}
-📊njell85-spec.github.io/trend-review/
+[trend-review]
+{YYYY-MM-DD}
+{논문 제목}
+{저널} · #{PMID}
+📊 https://njell85-spec.github.io/trend-review/
 ```
 
-- 메달은 **🥇 하나만** (하루 1편). 🥈🥉 사용 금지.
-- 헤더 둘째 줄은 항상 `최근6개월 300편 스크리닝 → 1편 선정`.
-- 점수/근거가 필요하면 제목 줄 아래 한 줄로 `[{score}점·{evidenceLevel}]` 추가 가능.
+- **핵심만**: 헤더 / 날짜 / 제목 / 저널·PMID / 링크. 스크리닝 설명·점수·evidenceLevel·
+  LLM 경로·메달(🥇) 등 부가 정보는 **넣지 않는다** (PeterJ 요청, 2026-07-03).
+- **링크는 매 발송마다 반드시 포함**. 카톡이 자동 링크화하도록 `https://` 포함.
+- 200자를 넘으면 **제목을 자르지 말고 2개 메시지로 분할**(① 헤더+날짜+제목 ② 저널·PMID+링크),
+  링크는 항상 **마지막 메시지**에 둔다. 구현: `KakaoNotifier.buildReportMessages`.
 
 ## 3. 이메일 리포트 (`NotificationAgent`)
 
