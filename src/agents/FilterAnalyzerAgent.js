@@ -202,6 +202,11 @@ export class FilterAnalyzerAgent {
             type: 'number',
             description: 'Final score 1–10 after full analysis',
           },
+          webSources: {
+            type: 'array',
+            description: 'Authoritative web pages you actually consulted via WebSearch/WebFetch to fill gaps when no full text/registry was available (journal official page, PubMed, PMC, publisher). Only if you truly used web search. Each {label, url}. Empty array if you did not use web search.',
+            items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
+          },
         },
         required: [
           'pmid', 'title_ko', 'clinicalQuestion', 'clinicalQuestion_ko',
@@ -218,12 +223,12 @@ export class FilterAnalyzerAgent {
   }
 
   // ── LLM API wrapper (provider-agnostic) ─────────────────────────────────
-  async _callLLM(messages, tool, llm = this.llm) {
+  async _callLLM(messages, tool, llm = this.llm, { webSearch = false } = {}) {
     return this.cb.execute(() =>
       this.retry.execute(
-        async () => llm.callWithTool(messages, tool),
+        async () => llm.callWithTool(messages, tool, { webSearch, maxTokens: webSearch ? 12000 : 8192 }),
         {
-          label: `${this.provider}-API`,
+          label: `${this.provider}-API${webSearch ? '-web' : ''}`,
           onRetry: ({ attempt, delay }) =>
             this.logger.warn(`${this.provider} retry ${attempt} in ${Math.round(delay)}ms`),
         }
@@ -283,14 +288,17 @@ export class FilterAnalyzerAgent {
   }
 
   async _analyzeSinglePaper(paper) {
-    // 캐시 키에 본문 확보 상태를 포함 — 초록-only로 캐시된 분석이 전문 확보 후에도
-    // 재사용되는 것을 방지
+    const hasFullText = paper.fullText && paper.fullText.length > 100;
+    const hasRegistry = Boolean(paper.augmentText);
+    // 본문(PMC/OA)도 권위 레지스트리(ClinicalTrials.gov)도 없으면 → 웹검색 보강.
+    // "초록만"으로 끝나지 않도록 권위 소스(저널 공식 페이지·PubMed)를 찾게 한다.
+    const webAugment = !hasFullText && !hasRegistry;
+    // 캐시 키에 본문 확보 상태 + 웹보강 여부 포함 — 상태 바뀌면 재분석
     const src = paper.fullTextSource ?? 'none';
-    const cacheKey = `pico_v6_${this.provider}_${this.picoModel}_${paper.pmid}_${src}_${paper.fullTextLength ?? 0}`;
+    const cacheKey = `pico_v7_${this.provider}_${this.picoModel}_${paper.pmid}_${src}_${paper.fullTextLength ?? 0}_${webAugment ? 'web' : 'nw'}`;
     const { data, fromCache } = await this.cache.getOrFetch(cacheKey, async () => {
-      this.logger.info(`PICO analysis: ${paper.pmid} — ${paper.title.slice(0, 60)}…`);
+      this.logger.info(`PICO analysis: ${paper.pmid} — ${paper.title.slice(0, 60)}…${webAugment ? ' (web-augmented)' : ''}`);
 
-      const hasFullText = paper.fullText && paper.fullText.length > 100;
       const fullTextSection = hasFullText
         ? `\n\n--- FULL TEXT (source: ${paper.fullTextSource}, ${Math.round(paper.fullTextLength / 1000)}k chars, truncated) ---\n${paper.fullText}\n---`
         : '';
@@ -323,7 +331,7 @@ Requirements:
         ? 'Full text is provided — use it to extract detailed methods, subgroup analyses, exact statistics, and figure/table data NOT in the abstract.'
         : (paper.augmentText
           ? 'No journal full text — the abstract PLUS an authoritative ClinicalTrials.gov registry record are provided. You MAY use the registry to add trial design, eligibility, exact outcome definitions, enrollment, and any POSTED numeric results that the abstract omits. Treat the registry as a trustworthy source; do NOT pull facts from anywhere else.'
-          : 'Only the abstract is available — note this limitation explicitly and do not invent details.')}
+          : 'No journal full text and no trial registry are available. USE the WebSearch/WebFetch tools to find the study details from AUTHORITATIVE sources ONLY — the journal\'s official article page, PubMed, PMC, or the publisher. Extract exact numbers (N, effect sizes, CIs, p-values, outcome definitions) that the abstract omits ONLY from those authoritative pages. List every page you actually used in "webSources". If, after searching, you still cannot find a value, use the abstract only and do NOT invent, infer, or import numbers from other studies.')}
 2. PICO fields must include specific numbers (sample sizes, ages, percentages, date ranges, cutoffs, effect sizes, p-values, confidence intervals). Use ONLY values explicitly present in the abstract, the provided full text, or the provided authoritative registry — NEVER infer, compute, or import numbers from memory or other studies. Prioritize full text > registry > abstract when sources differ.
 3. Provide Korean translations for ALL text fields (_ko suffix). Medical terms, drug names, score names (e.g., SOFA, AUROC, PELOD-2), and statistics must remain in English within Korean text — translate only the surrounding prose.
 4. Report ONLY values explicitly stated in the paper. NEVER derive, compute, or estimate new statistics yourself (e.g., do not calculate NNT or absolute risk differences unless the paper reports them). If a value is not reported, omit it rather than guessing.
@@ -335,17 +343,21 @@ Requirements:
       return await this._callLLM(
         [{ role: 'user', content: prompt }],
         this._picoTool,
-        this.picoLlm
+        this.picoLlm,
+        { webSearch: webAugment }
       );
     });
 
     if (fromCache) this.logger.debug(`PICO from cache: ${paper.pmid}`);
-    return { ...data, paper, ...this._provenance(paper) };
+    const webSources = Array.isArray(data.webSources)
+      ? data.webSources.filter((s) => s?.url && /^https?:\/\//i.test(String(s.url).trim()))
+      : [];
+    return { ...data, paper, ...this._provenance(paper, { webAugment, webSources }) };
   }
 
-  // ── 근거 출처 배지 + 참조 링크 (결정적 — LLM 무관) ───────────────────────────
-  _provenance(paper) {
-    const badge = {
+  // ── 근거 출처 배지 + 참조 링크 ───────────────────────────────────────────────
+  _provenance(paper, { webAugment = false, webSources = [] } = {}) {
+    let badge = {
       PMC: '본문(PMC)',
       EuropePMC: '본문(EPMC)',
       Unpaywall: '본문(OA)',
@@ -359,6 +371,16 @@ Requirements:
     if (paper.doi && paper.doi.length > 3) sources.push({ label: `Journal (DOI) — ${paper.doi}`, url: `https://doi.org/${paper.doi}` });
     if (paper.oaUrl) sources.push({ label: 'Open-access full text', url: paper.oaUrl });
     for (const s of paper.augmentSources ?? []) sources.push(s);
+
+    // 본문·레지스트리가 없어 웹검색으로 보강했고 실제 권위 출처를 사용한 경우.
+    // http/https URL 만 수용 (javascript: 등 주입 차단, 상위 필터와 이중 방어).
+    const validWeb = webAugment
+      ? webSources.filter((s) => s?.url && /^https?:\/\//i.test(String(s.url).trim()))
+      : [];
+    if (validWeb.length) {
+      if (badge === '초록만') badge = '초록 + 웹보강';
+      for (const s of validWeb) sources.push({ label: `웹 — ${s.label ?? s.url}`, url: String(s.url).trim() });
+    }
 
     return { evidenceSource: badge, sources };
   }
