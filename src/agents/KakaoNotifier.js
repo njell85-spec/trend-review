@@ -85,22 +85,23 @@ export class KakaoNotifier {
     const titleKo = p.title_ko ?? '';
     const titleEn = paper.title ?? '제목 없음';
     const title = (titleKo || titleEn).replace(/\s+/g, ' ').trim();
-    const shortTitle = title.length > 60 ? `${title.slice(0, 58)}…` : title;
     const journal = paper.journal ?? '';
     const pmid = paper.pmid ?? '';
     const score = p.clinicalApplicabilityScore ?? paper.scoringData?.score ?? '';
+    const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
 
-    // 텍스트 템플릿은 200자 제한 — 간결하게.
-    const lines = [
-      '[Trend Review] 논문분석완료🏥',
-      `${dateStr} · 최근6개월 ${screened}편 스크리닝 → 1편 선정`,
-      `🥇${shortTitle}${journal ? `(${journal})` : ''}`,
-      `${pmid ? `#${pmid}` : ''}${score ? ` · ${score}점` : ''}`,
-      llmRoute ? `LLM ${llmRoute}` : '',
-    ].filter(Boolean);
-    let text = lines.join('\n');
-    if (text.length > 195) text = `${text.slice(0, 193)}…`;
-    return text;
+    // 텍스트 템플릿 200자 제한. 헤더·PMID·URL 줄은 고정하고 제목만 남는 공간에
+    // 맞춰 줄인다 — 링크(마지막 줄)가 잘리지 않도록 (REPORT_SPEC §2 준수).
+    // 카톡은 http(s) URL 을 자동으로 링크화하므로 https 포함 필수.
+    const l1 = '[Trend Review] 논문분석완료🏥';
+    const l2 = `${dateStr} · 최근6개월 ${screened}편 스크리닝 → 1편 선정`;
+    const l4 = `${pmid ? `#${pmid}` : ''}${score ? ` · ${score}점` : ''}${llmRoute ? ` · ${llmRoute}` : ''}`;
+    const l5 = `📊 ${url}`;
+    const fixed = [l1, l2, l4, l5].filter(Boolean).join('\n');
+    const budget = 195 - fixed.length - 1; // 제목 줄 개행 몫
+    let titleLine = `🥇${title}${journal ? `(${journal})` : ''}`;
+    if (titleLine.length > budget) titleLine = `${titleLine.slice(0, Math.max(12, budget - 1))}…`;
+    return [l1, l2, titleLine, l4, l5].filter(Boolean).join('\n');
   }
 
   // ── 실패 알림 텍스트 (자동 업데이트가 최종 실패했을 때) ──────────────────────
