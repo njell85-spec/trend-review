@@ -553,6 +553,15 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       const dup = new RegExp(`\\n?<!-- SECTION:${escDate} -->[\\s\\S]*?<!-- /SECTION:${escDate} -->`, 'g');
       const gdup = new RegExp(`\\n?<!-- GSECTION:${escDate} -->[\\s\\S]*?<!-- /GSECTION:${escDate} -->`, 'g');
       let body = existing.replace(dup, '').replace(gdup, '');
+      // 같은 가이드라인(동일 PMID)이 다른 날짜 카드로 이미 올라와 있으면 제거.
+      // 주간 게이트가 실패해도 같은 지침이 중복 노출되지 않게 하는 심층 방어.
+      if (guideline?.paper?.pmid) {
+        const gpmid = guideline.paper.pmid;
+        body = body.replace(
+          /\n?<!-- GSECTION:[0-9-]+ -->[\s\S]*?<!-- \/GSECTION:[0-9-]+ -->/g,
+          (block) => block.includes(`pubmed.ncbi.nlm.nih.gov/${gpmid}/`) ? '' : block,
+        );
+      }
       // 이전 TODAY → past 로 강등 (논문 + 가이드라인 각각)
       body = body
         .replace(/<details open class="day day-today">/g, '<details class="day day-past">')
@@ -561,7 +570,13 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
         .replace(/<span class="t-badge gl-badge">NEW<\/span>/g, '');
       // 새 TODAY 삽입 (논문 먼저, 그 아래 가이드라인)
       body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}${guidelineSection ? `\n${guidelineSection}` : ''}`);
-      // 누적 표: 같은 PMID 행 제거(재실행 중복 방지) 후 새 행을 표 맨 위에 삽입
+      // 누적 표 정리 (재실행 시 상단 섹션과 정확히 일치시키기 위해):
+      //   ① 같은 날짜의 기존 행을 모두 제거 — 상단 SECTION 이 날짜 기준으로 교체되므로
+      //      표도 동일하게. 하루에 여러 번 실행돼도 그날 최종 선정분만 남는다.
+      const escDateCell = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const rowDateDup = new RegExp(`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}</td>[\\s\\S]*?</tr>`, 'g');
+      body = body.replace(rowDateDup, '');
+      //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침이 또 선정된 경우 중복 방지
       const dedupItems = guideline ? [...topPapers, guideline] : topPapers;
       for (const p of dedupItems) {
         const pmid = p.paper?.pmid;

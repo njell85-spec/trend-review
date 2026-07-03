@@ -12,6 +12,7 @@ google_token.json
 # === Generated output / runtime ===
 output/*
 !output/selected_papers.json
+!output/selected_guidelines.json
 node_modules/
 *.log
 logs/
