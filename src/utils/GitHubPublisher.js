@@ -429,8 +429,8 @@ details[open] .day-prev{display:none}
 tr.is-read{background:${T.soft}}
 tr.is-read .c-title a,tr.is-read .c-jour{color:${T.muted};text-decoration:line-through}
 /* 넓은 화면(폴드 펼침·태블릿) 대응: 좁은 화면은 460px 유지, 넓은 화면만 확대 */
-@media(min-width:700px){.wrap{max-width:640px}}
-@media(min-width:1080px){.wrap{max-width:720px}}
+@media(min-width:700px){.wrap{max-width:700px}}
+@media(min-width:1080px){.wrap{max-width:760px}}
 </style>
 </head>
 <body>
