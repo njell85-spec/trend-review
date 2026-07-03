@@ -52,6 +52,16 @@
       ]
     }
   },
+  "deprioritize": {
+    "_comment": "후순위 주제 — 매칭 시 최종점수 감점(배제 아님). 성인 응급/중환자 위주라 소아/신생아는 후순위. 성인 좋은 논문이 있으면 그게 뽑히고, 없을 때만 이들이 올라온다. penalty=감점(음수), 숫자만 고쳐 강도 조절.",
+    "label": "소아/신생아(성인 위주라 후순위)",
+    "penalty": -2.0,
+    "terms": [
+      "neonat", "newborn", "preterm", "premature infant",
+      "infant", "infancy", "paediatric", "pediatric", "children", "childhood",
+      "young infant", "under-5", "under 5"
+    ]
+  },
   "blend": {
     "_comment": "최종점수 = 질점수 × (relevanceFloor + relevanceLift × 적합도01). 적합도가 높을수록 최대 +30% 가산.",
     "relevanceFloor": 0.7,

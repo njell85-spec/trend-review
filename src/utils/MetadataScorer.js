@@ -160,11 +160,21 @@ export class MetadataScorer {
   }
 
   // ── 저널 등급 ──────────────────────────────────────────────────────────────
+  // 짧은 약어('jama','bmj')가 자매지('JAMA Network Open','BMJ Paediatrics Open')에
+  // 부분매칭돼 본지 급으로 과대평가되던 버그 방지: 본지는 정확명, 자매지는 tier2/3 등록분만.
   _journalScore(paper) {
-    const j = String(paper.journal ?? '').toLowerCase();
-    if (JOURNAL_TIERS.tier1.some((n) => j.includes(n))) return { score: 3.0, tier: 1 };
+    const j = String(paper.journal ?? '').toLowerCase().trim();
+    // 1) 본지 정확매칭
+    if (/^(jama|bmj|the bmj|lancet|nature)$/.test(j)
+        || j.includes('new england journal') || j.includes('british medical journal')
+        || j.includes('journal of the american medical association') || j === 'nature medicine') {
+      return { score: 3.0, tier: 1 };
+    }
+    // 2) 정식 등록된 자매지·전문지 먼저 (tier1 짧은 약어보다 우선)
     if (JOURNAL_TIERS.tier2.some((n) => j.includes(n))) return { score: 2.2, tier: 2 };
     if (JOURNAL_TIERS.tier3.some((n) => j.includes(n))) return { score: 1.4, tier: 3 };
+    // 3) 나머지 tier1 (jama/bmj 제외 — 긴 정식명들: lancet respiratory 등은 위 tier2에서 처리됨)
+    if (JOURNAL_TIERS.tier1.some((n) => n !== 'jama' && n !== 'bmj' && j.includes(n))) return { score: 3.0, tier: 1 };
     return { score: 0.6, tier: 0 };
   }
 
@@ -273,6 +283,17 @@ export class MetadataScorer {
         !/\bhuman\b/.test(hay)) { value -= 2.0; reasons.push('전임상(동물/시험관)'); }
     if (/\bstudy protocol\b|\bprotocol for a\b|\brationale and design\b/.test(hay)) {
       value -= 1.5; reasons.push('프로토콜(결과 없음)');
+    }
+
+    // 관심 프로파일의 후순위 주제(소아/신생아 등) — 매칭 시 감점(배제 아님).
+    const dep = this.profile.deprioritize;
+    if (dep?.terms?.length && Number(dep.penalty)) {
+      const depHay = [paper.title ?? '', ...(paper.meshTerms ?? []), ...(paper.keywords ?? []),
+                      String(paper.abstract ?? '').slice(0, 400)].join(' ').toLowerCase();
+      if (dep.terms.some((t) => depHay.includes(String(t).toLowerCase()))) {
+        value += Number(dep.penalty);
+        reasons.push(dep.label ?? '후순위 주제');
+      }
     }
     return { value, reasons };
   }
