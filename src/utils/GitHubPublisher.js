@@ -216,9 +216,10 @@ export class GitHubPublisher {
     const card = this._buildGuidelineCard(guideline);
     const gTitle = guideline.title_ko || guideline.paper?.title || '';
     const gMeta = `${guideline.org || guideline.paper?.journal || ''}${guideline.version ? ` · ${guideline.version}` : ''}`;
-    const cls = isToday ? 'day gl-day gl-day-today' : 'day gl-day gl-day-past';
+    // 논문 섹션과 동일한 흰 박스로 통일 — 구별은 앞쪽 '📋 가이드라인' 라벨로만
+    const cls = isToday ? 'day day-today' : 'day day-past';
     const openAttr = isToday ? ' open' : '';
-    const badge = isToday ? '<span class="t-badge gl-badge">NEW</span>' : '';
+    const badge = isToday ? '<span class="t-badge">NEW</span>' : '';
     return `
 <!-- GSECTION:${dateStr} -->
 <details${openAttr} class="${cls}">
@@ -286,7 +287,9 @@ export class GitHubPublisher {
       const url = gp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : '#');
       const title = guideline.title_ko || gp.title || '';
       const journal = guideline.org || gp.journal || '';
-      rows.push(`<tr data-pmid="${esc(pmid)}"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">📋 ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(pmid)}" aria-label="읽음"></td></tr>`);
+      // data-guideline 마커 — 날짜 기준 행 교체에서 제외(가이드는 논문과 라이프사이클이
+      // 다름: 주 1회 소개 후 계속 남아야 하고, 논문 재실행 날짜 교체에 지워지면 안 됨)
+      rows.push(`<tr data-pmid="${esc(pmid)}" data-guideline="1"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">📋 ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(pmid)}" aria-label="읽음"></td></tr>`);
     }
     return rows.join('');
   }
