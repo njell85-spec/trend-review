@@ -225,7 +225,7 @@ export class GitHubPublisher {
 <details${openAttr} class="${cls}">
   <summary class="day-sum">
     <div class="day-head">
-      <span class="gl-tag">📋 가이드라인</span>${badge}<span class="day-gen">${esc(dateStr)} · 생성 ${esc(generatedAt)}</span>
+      ${badge}<span class="day-date">${esc(dateStr)}</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 ${esc(generatedAt)}</span>
       <span class="day-chev">${IC.chev(T.muted)}</span>
     </div>
     <div class="day-prev"><span class="day-prev-medal">${IC.book(T.sec)}</span><div><div class="day-prev-t">${esc(gTitle)}</div><div class="day-prev-m">${esc(gMeta)}</div></div></div>
