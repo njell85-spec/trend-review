@@ -79,29 +79,35 @@ export class KakaoNotifier {
   }
 
   // ── 데일리 리포트 텍스트 구성 (REPORT_SPEC 카톡 포맷) ────────────────────────
-  static buildReportText({ dateStr, screened = 300, topPaper, pagesUrl, llmRoute = '' }) {
+  // 카톡 텍스트 템플릿은 1건당 200자 제한. 제목이 길어 넘치면 제목을 자르지 않고
+  // 2개 메시지로 분할한다. 링크(📊 줄)는 항상 마지막 메시지에 포함 (REPORT_SPEC §2).
+  // 카톡은 http(s) URL 을 자동 링크화하므로 https 포함 필수.
+  static buildReportMessages({ dateStr, screened = 300, topPaper, pagesUrl, llmRoute = '' }) {
     const p = topPaper ?? {};
     const paper = p.paper ?? {};
-    const titleKo = p.title_ko ?? '';
-    const titleEn = paper.title ?? '제목 없음';
-    const title = (titleKo || titleEn).replace(/\s+/g, ' ').trim();
+    const title = (p.title_ko || paper.title || '제목 없음').replace(/\s+/g, ' ').trim();
     const journal = paper.journal ?? '';
     const pmid = paper.pmid ?? '';
     const score = p.clinicalApplicabilityScore ?? paper.scoringData?.score ?? '';
     const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
 
-    // 텍스트 템플릿 200자 제한. 헤더·PMID·URL 줄은 고정하고 제목만 남는 공간에
-    // 맞춰 줄인다 — 링크(마지막 줄)가 잘리지 않도록 (REPORT_SPEC §2 준수).
-    // 카톡은 http(s) URL 을 자동으로 링크화하므로 https 포함 필수.
     const l1 = '[Trend Review] 논문분석완료🏥';
     const l2 = `${dateStr} · 최근6개월 ${screened}편 스크리닝 → 1편 선정`;
+    const titleLine = `🥇${title}${journal ? `(${journal})` : ''}`;
     const l4 = `${pmid ? `#${pmid}` : ''}${score ? ` · ${score}점` : ''}${llmRoute ? ` · ${llmRoute}` : ''}`;
     const l5 = `📊 ${url}`;
-    const fixed = [l1, l2, l4, l5].filter(Boolean).join('\n');
-    const budget = 195 - fixed.length - 1; // 제목 줄 개행 몫
-    let titleLine = `🥇${title}${journal ? `(${journal})` : ''}`;
-    if (titleLine.length > budget) titleLine = `${titleLine.slice(0, Math.max(12, budget - 1))}…`;
-    return [l1, l2, titleLine, l4, l5].filter(Boolean).join('\n');
+
+    const full = [l1, l2, titleLine, l4, l5].filter(Boolean).join('\n');
+    if (full.length <= 200) return [full];
+
+    // 200 초과 → 제목을 자르지 않고 2개로 분할. ① 헤더+제목  ② PMID·점수 + 링크
+    let msg1 = [l1, l2, titleLine].join('\n');
+    if (msg1.length > 200) { // 초장문 제목 방어
+      const budget = 200 - l1.length - l2.length - 2 - 1;
+      msg1 = [l1, l2, `${titleLine.slice(0, Math.max(12, budget))}…`].join('\n');
+    }
+    const msg2 = [l4, l5].filter(Boolean).join('\n');
+    return [msg1, msg2];
   }
 
   // ── 실패 알림 텍스트 (자동 업데이트가 최종 실패했을 때) ──────────────────────
@@ -159,10 +165,10 @@ export class KakaoNotifier {
       return { sent: false, reason: 'not-configured' };
     }
 
-    const text = KakaoNotifier.buildReportText({ dateStr, screened, topPaper, pagesUrl, llmRoute });
     const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
-    await this._postMemo(text, url);
-    this.logger.info('카카오 나챗방 발송 완료');
+    const messages = KakaoNotifier.buildReportMessages({ dateStr, screened, topPaper, pagesUrl, llmRoute });
+    for (const text of messages) await this._postMemo(text, url);
+    this.logger.info(`카카오 나챗방 발송 완료 (${messages.length}개 메시지)`);
     await this._notifyRotation();
     return { sent: true };
   }
