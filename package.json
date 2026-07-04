@@ -7,6 +7,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
+    "spec-lint": "node scripts/spec-lint.mjs",
+    "preview": "node scripts/preview.mjs",
     "test:collector": "node --experimental-vm-modules src/agents/DataCollectorAgent.js",
     "test:filter": "node src/agents/FilterAnalyzerAgent.js",
     "test:validator": "node src/agents/ValidationAgent.js",
