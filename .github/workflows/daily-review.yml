@@ -27,6 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # 스펙 정합 게이트 — REPORT_SPEC 위반(채널 드리프트·옛 표현·상태파일
+      # gitignore 회귀)이 있으면 파이프라인을 돌리기 전에 중단한다.
+      - name: Spec lint (REPORT_SPEC gate)
+        run: npm run spec-lint
+
       # 분석 LLM 호출 경로:
       #   1) claude CLI(구독) — CLAUDE_CODE_OAUTH_TOKEN 시크릿이 있으면 사용 (API 비용 없음)
       #   2) Anthropic API   — ANTHROPIC_API_KEY 시크릿이 있으면 폴백 (CLI 미설치/미인증 시)

@@ -40,23 +40,33 @@ if ! claude plugin list 2>/dev/null | grep -q "$PLUGIN"; then
 fi
 claude plugin enable "$PLUGIN" >/dev/null 2>&1 || true
 
-# 3) 전역 지침 적용.
+# 3) 전역 지침 적용 — 단일 소스 우선순위.
+#    (a) 현재 프로젝트가 원본(.claude/global-CLAUDE.md)을 갖고 있으면 그것을 복사.
+#        SessionStart 훅들은 병렬 실행되어 순서 보장이 없으므로, 이 훅과
+#        프로젝트 훅(apply-global-md.sh)이 같은 원본을 쓰게 해 경쟁을 없앤다.
+#        (과거엔 여기서 main 구버전을 받아 프로젝트 원본을 도로 덮는 경쟁 있었음.)
+#    (b) 원본 없는 프로젝트/빈 환경이면 GitHub main 원본을 다운로드.
+#    (c) 다운로드 실패 시 기존 파일 보존, 없을 때만 최소본 생성.
 mkdir -p "$HOME/.claude" 2>/dev/null || true
-cat > "$HOME/.claude/CLAUDE.md" <<'MD'
-# 전역 지침 (PeterJ) — Global CLAUDE.md
-
-## 대화 규칙
-- 사용자 호칭은 항상 **PeterJ**.
-- 답변은 항상 **존댓말**.
-
-## 환경 유지
-- **superpowers 플러그인은 항상 설치·활성 상태로 유지**한다.
-
-## 작업 습관
-- 새 세션 시작 시 자동 pull(최신 동기화), 작업 마무리 시 commit + push.
-
-## 추가 예정 (PeterJ가 채워나갈 자리)
+SRC_LOCAL="${CLAUDE_PROJECT_DIR:-}/.claude/global-CLAUDE.md"
+if [ -n "${CLAUDE_PROJECT_DIR:-}" ] && [ -f "$SRC_LOCAL" ]; then
+  cp "$SRC_LOCAL" "$HOME/.claude/CLAUDE.md" 2>/dev/null || true
+else
+  RAW_URL="https://raw.githubusercontent.com/njell85-spec/trend-review/main/.claude/global-CLAUDE.md"
+  TMP="$HOME/.claude/CLAUDE.md.download"
+  if curl -fsSL --max-time 10 "$RAW_URL" -o "$TMP" 2>/dev/null && [ -s "$TMP" ]; then
+    mv "$TMP" "$HOME/.claude/CLAUDE.md"
+  else
+    rm -f "$TMP" 2>/dev/null || true
+    if [ ! -f "$HOME/.claude/CLAUDE.md" ]; then
+      cat > "$HOME/.claude/CLAUDE.md" <<'MD'
+# 전역 지침 (PeterJ) — 최소본 (네트워크 실패 폴백)
+- 사용자 호칭은 항상 **PeterJ**, 답변은 항상 **존댓말**.
+- 완료 주장 전 실행/테스트로 확인하고 증거와 함께 보고한다.
 MD
+    fi
+  fi
+fi
 
 exit 0
 SCRIPT
