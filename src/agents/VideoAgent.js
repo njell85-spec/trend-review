@@ -19,6 +19,7 @@ import {
   renderSlidePngs, cuesFromNarration, buildSrt, assembleVideo, probeDurationSec,
 } from '../utils/videoRender.js';
 import { synthesizeMp3 } from '../utils/tts.js';
+import { cardsFromScript, renderCards } from '../utils/cardNews.js';
 
 const LOG_PATH = path.join(process.cwd(), 'output', 'video_log.json');
 const FORMS = [
@@ -56,7 +57,20 @@ export class VideoAgent {
         }
       }
     }
-    return { ok: results.some((r) => !r.error), videos: results };
+
+    // 카드뉴스 — 숏폼 스크립트(첫 언어) 재사용, 이미지 파일만 생성(발신은 Phase 4)
+    const cards = [];
+    for (const lang of LANGS) {
+      try {
+        const files = await this._produceCards({ enriched, script: scripts.short[lang], lang, todayKST });
+        cards.push({ lang, files });
+      } catch (e) {
+        this.logger.warn(`카드뉴스/${lang} 실패(계속): ${e.message}`);
+        cards.push({ lang, error: e.message });
+      }
+    }
+
+    return { ok: results.some((r) => !r.error), videos: results, cards };
   }
 
   async _produce({ enriched, script, form, lang, orientation, todayKST }) {
@@ -84,6 +98,16 @@ export class VideoAgent {
     await assembleVideo({ pngs, mp3s, durations, srtPath, outPath });
     this.logger.info(`${form}/${lang} 합성 완료 (${durations.reduce((a, b) => a + b, 0).toFixed(1)}s)`);
     return outPath;
+  }
+
+  async _produceCards({ enriched, script, lang, todayKST }) {
+    const work = path.join(process.cwd(), 'output', 'cards', `${todayKST}-${lang}`);
+    const chart = chartFromAnalysis(enriched, lang);
+    const p = enriched.paper ?? {};
+    const cards = cardsFromScript(script, { titleEn: enriched.title_ko && lang === 'ko' ? enriched.title_ko : p.title, pmid: p.pmid });
+    const files = await renderCards(cards, { outDir: work, chartSvg: chart?.svg ?? null });
+    this.logger.info(`카드뉴스/${lang} ${files.length}장 생성`);
+    return files;
   }
 
   async _upload({ file, analysis, form, lang, todayKST, pagesUrl }) {
