@@ -112,7 +112,7 @@ console.log(`🧭 LLM 실행 경로: ${llmRoute}  (구독=CLI, API=폴백)`);
 let kakaoStatus = '미설정';
 try {
   const kakao = new KakaoNotifier();
-  const r = await kakao.send({ dateStr: todayKST, screened: 300, topPaper: papers[0], pagesUrl, llmRoute });
+  const r = await kakao.send({ dateStr: todayKST, topPaper: papers[0], pagesUrl, llmRoute });
   if (r.sent) {
     kakaoStatus = '발송 완료';
     console.log('💬 카카오 나챗방 리포트 발송 완료');

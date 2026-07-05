@@ -78,7 +78,7 @@ export class ReportGeneratorAgent {
       <div class="flex flex-col items-end gap-1 text-right">
         <span class="text-xs text-blue-300">Session: <code class="text-blue-100">${sessionId}</code></span>
         <span class="text-xs text-blue-300">생성: ${ts}</span>
-        <span class="text-xs text-blue-300">검색 기간: 최근 ${executionStats?.searchDays ?? 30}일</span>
+        <span class="text-xs text-blue-300">검색 기간: 최근 ${executionStats?.searchDays ?? 180}일</span>
       </div>
     </div>
   </div>
@@ -88,7 +88,7 @@ export class ReportGeneratorAgent {
     ${[
       { icon: '📚', label: '수집 논문', value: allScoredPapers.length, sub: 'PubMed 검색 결과' },
       { icon: '✅', label: '검증 통과', value: qualityReport?.pass1?.valid ?? allScoredPapers.length, sub: '품질 검증 통과' },
-      { icon: '🏆', label: 'Top 선별', value: topPapers.length, sub: 'Claude AI 선정' },
+      { icon: '🏆', label: '오늘의 선정', value: topPapers.length, sub: '임상 적용성 1편' },
       { icon: '⏱️', label: '처리 시간', value: `${executionStats?.totalElapsed ?? '—'}s`, sub: '총 실행 시간' },
     ].map((s) => `<div class="text-center"><div class="text-2xl mb-1">${s.icon}</div><div class="text-2xl font-bold text-gray-800">${s.value}</div><div class="text-xs font-semibold text-gray-600">${s.label}</div><div class="text-xs text-gray-400">${s.sub}</div></div>`).join('')}
   </div>

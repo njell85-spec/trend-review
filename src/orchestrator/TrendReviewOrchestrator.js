@@ -51,11 +51,10 @@ export class TrendReviewOrchestrator {
     this.fullText = new FullTextAgent();
     this.validator = new ValidationAgent();
     this.reporter = new ReportGeneratorAgent({ outputDir: this.outputDir });
+    // NotificationAgent = Drive 업로드 전용(phase2/3 대비, ENABLE_DRIVE 게이트).
+    // 이메일 미사용 → recipientEmail 불필요. 데일리 카카오 알림은 KakaoNotifier 담당.
     this.notifier = options.notify
-      ? new NotificationAgent({
-          credentialsPath: options.credentialsPath,
-          recipientEmail: options.notifyEmail,
-        })
+      ? new NotificationAgent({ credentialsPath: options.credentialsPath })
       : null;
 
     const hasGitHub = process.env.GITHUB_TOKEN && process.env.GITHUB_OWNER && process.env.GITHUB_REPO;
@@ -467,7 +466,7 @@ export class TrendReviewOrchestrator {
         topPapers, allScoredPapers, validStats
       );
 
-      // Stage 5: Report — depends on all upstream stages
+      // Stage 7: Report — depends on all upstream stages
       const totalElapsed = ((Date.now() - this.startTime) / 1000).toFixed(1);
       const executionStats = {
         sessionId: this.sessionId,
@@ -501,7 +500,7 @@ export class TrendReviewOrchestrator {
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
       const pagesUrl = await this._stagePublish(validatedPico, guidelineCard);
 
-      // Stage 8: Notify (optional — Drive + Gmail + KakaoTalk)
+      // Stage 8: Notify (optional — Google Drive 업로드, ENABLE_DRIVE 시에만)
       const notifyResult = await this._stageNotify(
         this.sessionId,
         { htmlPath, jsonPath },

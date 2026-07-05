@@ -24,7 +24,9 @@ const T = {
 };
 
 function esc(s) {
-  return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  // 작은따옴표까지 이스케이프 — 현재는 모든 속성이 큰따옴표라 필수는 아니나,
+  // 향후 단일따옴표 속성이 추가돼도 LLM 출력이 속성을 탈출하지 못하게 방어한다.
+  return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 // ── SVG 아이콘 ────────────────────────────────────────────────────────────────
@@ -219,7 +221,10 @@ export class GitHubPublisher {
     // 논문 섹션과 동일한 흰 박스로 통일 — 구별은 앞쪽 '📋 가이드라인' 라벨로만
     const cls = isToday ? 'day day-today' : 'day day-past';
     const openAttr = isToday ? ' open' : '';
-    const badge = isToday ? '<span class="t-badge">NEW</span>' : '';
+    // 'gl-badge' 를 함께 붙여야 ① teal 뱃지 스타일(.gl-badge)이 실제 적용되고
+    // ② 다음 실행의 강등 정규식(t-badge gl-badge)이 이 NEW 를 제거한다.
+    // (클래스가 't-badge'뿐이면 지난 가이드 카드에 NEW 가 영구히 남았다)
+    const badge = isToday ? '<span class="t-badge gl-badge">NEW</span>' : '';
     return `
 <!-- GSECTION:${dateStr} -->
 <details${openAttr} class="${cls}">
@@ -568,11 +573,11 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
           (block) => block.includes(`pubmed.ncbi.nlm.nih.gov/${gpmid}/`) ? '' : block,
         );
       }
-      // 이전 TODAY → past 로 강등 (논문 + 가이드라인 각각)
+      // 이전 TODAY/NEW → past 로 강등. 논문(TODAY)·가이드(NEW) 모두 같은
+      // 'day day-today' 컨테이너를 쓰므로 details 강등은 한 정규식이 처리한다.
       body = body
         .replace(/<details open class="day day-today">/g, '<details class="day day-past">')
         .replace(/<span class="t-badge">TODAY<\/span>/g, '')
-        .replace(/<details open class="day gl-day gl-day-today">/g, '<details class="day gl-day gl-day-past">')
         .replace(/<span class="t-badge gl-badge">NEW<\/span>/g, '');
       // 새 TODAY 삽입 (논문 먼저, 그 아래 가이드라인)
       body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}${guidelineSection ? `\n${guidelineSection}` : ''}`);
@@ -587,7 +592,9 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       for (const p of dedupItems) {
         const pmid = p.paper?.pmid;
         if (!pmid) continue;
-        const rowDup = new RegExp(`<tr data-pmid="${pmid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">[\\s\\S]*?</tr>`, 'g');
+        // [^>]* — 가이드 행의 data-guideline="1" 같은 추가 속성이 있어도 매치되게.
+        // (없으면 같은 지침 재발행 시 과거 행이 안 지워져 표에 중복이 남는다)
+        const rowDup = new RegExp(`<tr data-pmid="${pmid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>[\\s\\S]*?</tr>`, 'g');
         body = body.replace(rowDup, '');
       }
       if (body.includes('<!-- TABLE_ROWS_START -->')) {

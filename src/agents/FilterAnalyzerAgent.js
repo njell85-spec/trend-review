@@ -438,7 +438,9 @@ Requirements:
     return { topPapers, allScoredPapers };
   }
 
-  // ── Public API ────────────────────────────────────────────────────────────
+  // ── 통합 경로 (스코어링→선정→PICO 일괄) — standalone 테스트 전용 ─────────────
+  // 운영(오케스트레이터)은 본문 확보를 중간에 끼우려고 runScoringOnly + analyzePico
+  // 를 분리 호출한다. 이 run() 은 파일 하단 standalone 테스트에서만 쓰인다.
   async run(papers, { excludePmids = [] } = {}) {
     this.logger.section('FilterAnalyzerAgent — Clinical Scoring & PICO Analysis');
 

@@ -78,7 +78,10 @@
 - 엔드포인트: `/v2/api/talk/memo/default/send` (text 템플릿 + 링크 버튼).
 - Secrets: `KAKAO_REST_API_KEY`, `KAKAO_REFRESH_TOKEN`(필수), `KAKAO_CLIENT_SECRET`(앱 설정 시).
 - refresh 토큰은 매 실행 시 access 토큰으로 갱신. 카카오가 refresh를 회전시키면 로그 경고 → secret 갱신.
-- 미설정 시 발송만 건너뜀(파이프라인 정상). 이메일은 사용 안 함(PeterJ 미확인).
+- 미설정 시 발송만 건너뜀(파이프라인 정상).
+- **이메일(Gmail)은 사용하지 않음(PeterJ 확정, 2026-07-05)** — 알림은 카카오 단일 채널.
+- **Google Drive 업로드**는 현재 미사용이나 **phase2/3 연동 대비 인프라를 보존**한다
+  (`NotificationAgent`, `ENABLE_DRIVE=true` 게이트, 기본 비활성). Gmail 관련 코드는 제거됨.
 
 ## 4-C. 자동화(GitHub Actions) 인증
 
@@ -87,6 +90,11 @@
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-07-05: 코드 리뷰 후속 보완. 가이드 카드 NEW 뱃지 강등 버그 수정(과거 카드 잔존),
+  이메일(Gmail) 발송 코드 제거(카카오 단일 채널 확정) + Drive 업로드는 phase2/3 대비
+  보존(`ENABLE_DRIVE` 게이트), 표 PMID 중복제거가 가이드 행도 포함, esc() 작은따옴표
+  방어, 주석/데드코드/매직넘버 정리, 개발용 `compare-providers.mjs` 를 `archive/` 로 이동.
 
 - 2026-07-05: Pages 배포 검증 게이트 추가(`scripts/verify-pages-deploy.mjs` +
   daily-review.yml `verify-pages` 잡). GitHub 측 일시 오류로 Pages 배포만 실패해

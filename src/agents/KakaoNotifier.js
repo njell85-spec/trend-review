@@ -157,14 +157,14 @@ export class KakaoNotifier {
   }
 
   // ── 발송 (성공 리포트) ────────────────────────────────────────────────────────
-  async send({ dateStr, screened, topPaper, pagesUrl, llmRoute = '' }) {
+  async send({ dateStr, topPaper, pagesUrl }) {
     if (!this.isConfigured) {
       this.logger.info('Kakao 미설정(KAKAO_REST_API_KEY/KAKAO_REFRESH_TOKEN 없음) — 발송 생략');
       return { sent: false, reason: 'not-configured' };
     }
 
     const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
-    const messages = KakaoNotifier.buildReportMessages({ dateStr, screened, topPaper, pagesUrl, llmRoute });
+    const messages = KakaoNotifier.buildReportMessages({ dateStr, topPaper, pagesUrl });
     for (const text of messages) await this._postMemo(text, url);
     this.logger.info(`카카오 나챗방 발송 완료 (${messages.length}개 메시지)`);
     await this._notifyRotation();

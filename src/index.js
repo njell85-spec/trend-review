@@ -34,7 +34,7 @@ function parseArgs() {
       case '--resume':     opts.resumeFromSession = args[++i];  break;
       case '--dry-run':    opts.dryRun   = true;                break;
       case '--output':     opts.outputDir = args[++i];          break;
-      case '--notify':     opts.notify = true; opts.notifyEmail = args[++i]; break;
+      case '--notify':     opts.notify = true; break; // Drive 업로드 활성(ENABLE_DRIVE 필요)
       case '--credentials': opts.credentialsPath = args[++i];   break;
     }
   }
@@ -135,8 +135,7 @@ async function main() {
     maxPapers:       opts.maxPapers,
     topN:            opts.topN,
     outputDir:       opts.outputDir,
-    notify:          opts.notify,
-    notifyEmail:     opts.notifyEmail ?? process.env.NOTIFY_EMAIL,
+    notify:          opts.notify, // Drive 업로드 트리거(ENABLE_DRIVE 시에만 실동작)
     credentialsPath: opts.credentialsPath ?? process.env.GOOGLE_CREDENTIALS_PATH,
   });
 
@@ -164,12 +163,10 @@ async function main() {
       log.info('Open the HTML file in a browser to view the interactive dashboard.');
     }
 
-    if (result.notification) {
+    if (result.notification?.driveHtmlUrl) {
       log.info('');
-      log.info('Google 알림:');
+      log.info('Google Drive:');
       log.info(`  Drive 대시보드 : ${result.notification.driveHtmlUrl}`);
-      log.info(`  Drive JSON    : ${result.notification.driveJsonUrl}`);
-      log.info(`  이메일 발송   : ${result.notification.sentTo}`);
     }
 
     if (result.warning) {
