@@ -214,7 +214,7 @@ export class GitHubPublisher {
   }
 
   // ── 가이드라인 전용 접이식 섹션 (논문과 분리, 한눈에 '가이드라인'으로 식별) ──────
-  _buildGuidelineSection(dateStr, generatedAt, guideline, { isToday = false } = {}) {
+  _buildGuidelineSection(dateStr, generatedAt, guideline, { isToday = false, manual = false, sectionKey = dateStr } = {}) {
     const card = this._buildGuidelineCard(guideline);
     const gTitle = guideline.title_ko || guideline.paper?.title || '';
     const gMeta = `${guideline.org || guideline.paper?.journal || ''}${guideline.version ? ` · ${guideline.version}` : ''}`;
@@ -224,9 +224,11 @@ export class GitHubPublisher {
     // 'gl-badge' 를 함께 붙여야 ① teal 뱃지 스타일(.gl-badge)이 실제 적용되고
     // ② 다음 실행의 강등 정규식(t-badge gl-badge)이 이 NEW 를 제거한다.
     // (클래스가 't-badge'뿐이면 지난 가이드 카드에 NEW 가 영구히 남았다)
-    const badge = isToday ? '<span class="t-badge gl-badge">NEW</span>' : '';
+    const badge = manual
+      ? '<span class="t-badge" style="background:linear-gradient(90deg,#b45309,#f59e0b)">직접 지정</span>'
+      : (isToday ? '<span class="t-badge gl-badge">NEW</span>' : '');
     return `
-<!-- GSECTION:${dateStr} -->
+<!-- GSECTION:${sectionKey} -->
 <details${openAttr} class="${cls}">
   <summary class="day-sum">
     <div class="day-head">
@@ -237,7 +239,7 @@ export class GitHubPublisher {
   </summary>
   <div class="day-panel">${card}</div>
 </details>
-<!-- /GSECTION:${dateStr} -->`;
+<!-- /GSECTION:${sectionKey} -->`;
   }
 
   _buildSection(dateStr, generatedAt, topPapers, { isToday = false, route = '', manual = false, sectionKey = dateStr } = {}) {
@@ -611,10 +613,15 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     const route = llmTelemetry.label();
     // 수동 지정(on-demand)은 날짜 키와 분리된 자체 섹션 키를 쓴다 —
     // 같은 날의 데일리 자동 선정 섹션·표 행을 지우지 않기 위함(§1-B).
-    const sectionKey = manual ? `${dateStr}-m-${topPapers[0]?.paper?.pmid ?? 'x'}` : dateStr;
-    const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true, route, manual, sectionKey });
+    const keyPmid = topPapers[0]?.paper?.pmid ?? guideline?.paper?.pmid ?? 'x';
+    const sectionKey = manual ? `${dateStr}-m-${keyPmid}` : dateStr;
+    // 논문이 없으면(수동 가이드라인 단독) 빈 논문 섹션을 만들지 않는다.
+    const todaySection = topPapers.length
+      ? this._buildSection(dateStr, generatedAt, topPapers, { isToday: true, route, manual, sectionKey })
+      : '';
+    const gKey = manual ? `${dateStr}-m-${guideline?.paper?.pmid ?? 'x'}` : dateStr;
     const guidelineSection = guideline
-      ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true })
+      ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true, manual, sectionKey: gKey })
       : '';
 
     const newRows = this._tableRows(dateStr, topPapers, guideline);
