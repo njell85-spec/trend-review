@@ -81,8 +81,8 @@ export class DataCollectorAgent {
   }
 
   // ── Search: get PMIDs ─────────────────────────────────────────────────────
-  // Always fetches fresh results — esearch is a single fast call and the 30-day
-  // window shifts daily, so caching PMIDs would risk serving stale candidate sets.
+  // Always fetches fresh results — esearch is a single fast call and the search
+  // window (기본 180일) shifts daily, so caching PMIDs would risk serving stale candidate sets.
   async searchPmids() {
     const { minDate, maxDate } = this._getDateRange();
     this.logger.info('Searching PubMed (fresh)', { query: this.query, minDate, maxDate });

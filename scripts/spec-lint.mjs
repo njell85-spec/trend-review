@@ -20,16 +20,17 @@ const stringLiterals = (src) =>
   (src.match(/(['"`])(?:\\.|(?!\1)[\s\S])*?\1/g) ?? []).join('\n');
 
 const pub = read('src/utils/GitHubPublisher.js');
-const noti = read('src/agents/NotificationAgent.js');
 const kakao = read('src/agents/KakaoNotifier.js');
 const idx = read('index.html');
 const kakaoStr = stringLiterals(kakao);
 
+// 정본 표기·옛 표현 검사 대상 = 사용자에게 스펙 설명 문구를 노출하는 채널.
+// NotificationAgent 는 이메일 렌더 제거 후 Drive 업로드 전용(노출 문구 없음)이라 제외.
+// 발행 채널은 GitHubPublisher(Pages) + index.html(배포 산출물).
 // ── 1) 정본 표기 존재 (REPORT_SPEC §1·§3·§4: 180일·300편·1편) ────────────────
 // index.html 포함 — 배포 산출물은 증분 패치되므로 헤더가 독자 드리프트 가능.
 for (const [name, src] of [
   ['src/utils/GitHubPublisher.js', pub],
-  ['src/agents/NotificationAgent.js', noti],
   ['index.html', idx],
 ]) {
   for (const token of ['180일', '300편', '1편']) {
@@ -48,7 +49,6 @@ const oldSpec = [
 ];
 for (const [name, src] of [
   ['src/utils/GitHubPublisher.js', pub],
-  ['src/agents/NotificationAgent.js', noti],
   ['index.html', idx],
   ['src/agents/KakaoNotifier.js(문자열)', kakaoStr],
 ]) {
