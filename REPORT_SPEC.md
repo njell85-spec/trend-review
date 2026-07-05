@@ -16,6 +16,19 @@
 - 검색 → 스크리닝(최대 300편 스코어링) → **임상 적용성 최고 1편 선정** → 전문 PICO 분석.
 - 절대 "Top 3 / 최근 30일 / 40~50편" 같은 옛 표현을 쓰지 않는다.
 
+## 1-B. On-demand 수동 디깅 (직접 지정 분석)
+
+자동 데일리 선정과 **별개의 예외 경로**. PeterJ가 지정한 논문(PMID/DOI)·가이드라인을
+같은 분석 → 대시보드 → 카톡 → 아카이브 경로에 태운다.
+- 입구: 대시보드 "직접 지정" 위젯(`GitHubPublisher._onDemandWidget`, 멱등 주입) →
+  브라우저에서 `on-demand.yml`을 workflow_dispatch로 직접 호출. **Fine-grained PAT**
+  (이 저장소 actions:write 한정)는 사용자 브라우저 localStorage에만 저장 — 페이지 소스·저장소에 없음.
+  백업 입구: Actions 수동 실행.
+- 실행: `scripts/on-demand.mjs`(DOI→PMID 해석 후 기존 부품 재사용). **"하루 1편" 카운트 밖의 예외**이며,
+  같은 날 데일리 섹션·표를 건드리지 않는다(자체 섹션 키 `YYYY-MM-DD-m-<pmid>`).
+- 카드에 **"직접 지정" 배지**(주황) 표기 · 지정 PMID는 제외목록 등록으로 이후 자동 선정과 중복 방지.
+- 소프트 성격: 분석 실패 시 대시보드 미변경. Secrets 미설정 시 아카이브만 스킵.
+
 ## 2. 카카오톡 리포트 포맷 (PlayMCP MemoChat)
 
 ```

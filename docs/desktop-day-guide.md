@@ -47,10 +47,19 @@ repo → Settings → Secrets and variables → Actions:
 Variables 탭에 (선택): `GOOGLE_DRIVE_FOLDER_ID` — 6-b에서 만든 폴더 ID.
 
 ## 6. Drive 폴더 + YouTube 전용 채널 (10분)
-- a. https://youtube.com → 프로필 → "채널 만들기" → **브랜드 계정으로 새 채널** (이름 예: `Trend Review EM/CCM`).
+- a. https://youtube.com → 프로필 → "채널 만들기" → **브랜드 계정으로 새 채널** (영어 채널, 이름 예: `Trend Review EM/CCM`).
+  발신물은 영어 단일 버전으로 시작(확정 07-06). 한국어 채널은 추후 필요 시 추가.
   ⚠️ 3번 인증 때 이미 로그인한 같은 Google 계정이어야 함. 채널만 새로 만들면 됨.
   (브랜드 채널에 올리려면 3번 승인 화면에서 해당 채널/계정을 선택했어야 함 — 채널을 먼저 만들고 3번을 다시 실행하는 순서도 무방)
 - b. https://drive.google.com → 새 폴더 `trend-review` 생성 → 폴더 열고 URL의 `folders/` 뒤 ID 복사 → Variables `GOOGLE_DRIVE_FOLDER_ID`로 등록.
+
+## 6+. 수동 디깅용 Fine-grained PAT (5분, 선택이지만 권장)
+직접 지정 분석을 대시보드에서 바로 쓰려면:
+1. https://github.com/settings/personal-access-tokens → "Generate new token (fine-grained)"
+2. Repository access → **Only select repositories → `trend-review`만**
+3. Permissions → Repository → **Actions: Read and write** (그 외는 최소)
+4. 생성된 토큰(`github_pat_...`)을 복사 → 나중에 폰에서 대시보드 "직접 지정 분석 → 토큰 설정"에 1회 붙여넣기.
+   (이 토큰은 GitHub Secrets가 아니라 **PeterJ 폰 브라우저에만** 저장됨. 만료 기간은 길게 설정 권장.)
 
 ## 7. NotebookLM 노트북 (10분)
 1. https://notebooklm.google.com → 새 노트북 (이름 예: `Trend Review 2026-07`)
@@ -63,6 +72,12 @@ Variables 탭에 (선택): `GOOGLE_DRIVE_FOLDER_ID` — 6-b에서 만든 폴더 
 2. 완료 후 job summary 확인: `아카이브: 완료 (PDF 적재|없음 · Doc 갱신)`
 3. Drive: `trend-review/2026-07/` 폴더에 Doc(+PDF) 생겼는지 확인
 4. NotebookLM: 7-2 소스 연결 → 당일 논문 내용 질문 → 정상 인용 응답 확인
+5. (선택) 수동 디깅 검증: 대시보드에서 "직접 지정 분석" 펼치기 → PMID 입력 → 토큰 붙여넣기 →
+   실행 → 수 분 후 새로고침 → "직접 지정"(주황) 배지 카드가 데일리 카드와 별도로 추가됐는지 확인.
+
+## 참고 — 영상·카드뉴스 샘플 승인(데스크탑 데이와 별개, 이후 진행)
+- Phase 2 가동 후 `node scripts/video-sample.mjs` → `output/video/*` 영상 + `output/cards/*` 카드 생성(업로드 없음).
+- 모바일에서 확인 → 톤·디자인 튜닝 → 만족 시 Variables `ENABLE_VIDEO=true`로 데일리 편입.
 
 ## 문제 해결
 - **"이 앱은 확인되지 않았습니다" 차단**: 2-1 테스트 사용자 미등록 — 본인 Gmail 추가 후 재시도.
