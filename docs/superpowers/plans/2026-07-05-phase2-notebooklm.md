@@ -292,7 +292,10 @@ ${sorted.map(entrySection).join('\n')}
   *badge 필드명은 구현 시 `_provenance()` 산출을 grep으로 확인해 정확히 맞출 것(`provenanceBadge` 류).*
 - Produces: `toArchiveEntry(analysis, { pdfLink, todayKST }) → entry`(순수, Task 3 스키마),
   `class ArchiveAgent { async run({ analysis, todayKST }) → { ok, pdf, docUpdated, reason? } }`
-- 상태 파일: `output/analysis_archive.json` = `{ entries: [...], driveState: { docIds: {"YYYY-MM": id}, folderIds: {"YYYY-MM": id}, pdfFiles: {pmid: fileId} } }` — ArchiveAgent가 GitHub contents API로 자체 커밋(persist).
+- 상태 파일: `output/analysis_archive.json` = `{ entries: [...], driveState: { docIds: {"YYYY-MM": id}, folderIds: {"YYYY-MM": id}, pdfFiles: {pmid: fileId} } }` —
+  **로컬에만 쓴다.** 지속(persist)은 워크플로우의 기존 "Commit daily state" 스텝이 git으로 커밋한다.
+  (⚠️ 구현 중 결정 변경: contents API 자체 커밋은 그 스텝의 `git push`와 non-fast-forward 충돌을
+  일으키므로 폐기 — GitHubPublisher도 로컬 git push 방식임을 확인함.)
 
 - [ ] **Step 1: 순수부 실패 테스트 작성**
 

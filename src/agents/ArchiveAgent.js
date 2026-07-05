@@ -13,10 +13,10 @@ import path from 'path';
 import { Logger } from '../utils/Logger.js';
 import { getGoogleAuth } from '../utils/googleAuth.js';
 import { buildMonthDocHtml } from '../utils/docBuilder.js';
-import { commitFileToRepo } from '../utils/repoCommit.js';
 
-const ARCHIVE_REL = 'output/analysis_archive.json';
-const ARCHIVE_PATH = path.join(process.cwd(), ARCHIVE_REL);
+// 상태 파일 지속: 로컬에 쓰면 워크플로우의 "Commit daily state" 스텝이 git으로 커밋한다.
+// (contents API 커밋은 그 스텝의 push와 non-fast-forward 충돌을 일으키므로 쓰지 않는다)
+const ARCHIVE_PATH = path.join(process.cwd(), 'output', 'analysis_archive.json');
 const UNPAYWALL = 'https://api.unpaywall.org/v2';
 const EPMC_PDF = (pmcid) => `https://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC${pmcid}&blobtype=pdf`;
 const WEB_PREFIX = '웹 — '; // FilterAnalyzerAgent._provenance()의 웹보강 라벨 접두
@@ -93,7 +93,6 @@ export class ArchiveAgent {
     await this._upsertMonthDoc(drive, state, month, folderId, buildMonthDocHtml(month, monthEntries));
 
     await this._saveArchive(state);
-    await commitFileToRepo(ARCHIVE_REL, `Archive: ${todayKST} analysis_archive`, { logger: this.logger });
     return { ok: true, pdf: Boolean(pdfLink), docUpdated: true };
   }
 

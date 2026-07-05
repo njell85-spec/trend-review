@@ -124,6 +124,18 @@ try {
   console.log(`::warning::카카오 발송 실패 — ${err.message.slice(0, 200)}`);
 }
 
+// ── Phase 2: Drive 아카이브 + 리빙 Doc (소프트 실패 — 코어에 영향 없음) ────────
+let archiveStatus = '미설정';
+try {
+  const { ArchiveAgent } = await import('./src/agents/ArchiveAgent.js');
+  const r = await new ArchiveAgent().run({ analysis: papers[0], todayKST });
+  archiveStatus = r.ok ? `완료 (PDF ${r.pdf ? '적재' : '없음'} · Doc 갱신)` : `건너뜀: ${r.reason}`;
+  if (r.ok) console.log(`📚 Drive 아카이브 완료 (PDF ${r.pdf ? '적재' : '없음'})`);
+} catch (err) {
+  archiveStatus = `실패: ${err.message.slice(0, 120)}`;
+  console.log(`::warning::Phase 2 아카이브 실패 — ${err.message.slice(0, 200)}`);
+}
+
 const top = papers[0];
 jobSummary([
   `## ✅ Trend Review — ${todayKST}`,
@@ -131,5 +143,6 @@ jobSummary([
   `- 선정: **${(top.title_ko || top.paper?.title || '').slice(0, 100)}** (PMID ${top.paper?.pmid ?? '—'})`,
   `- LLM 경로: ${llmRoute}`,
   `- 카카오: ${kakaoStatus}`,
+  `- 아카이브: ${archiveStatus}`,
   `- 대시보드: ${pagesUrl}`,
 ].join('\n'));

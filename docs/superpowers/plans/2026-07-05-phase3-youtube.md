@@ -407,7 +407,9 @@ export async function assembleVideo({ pngs, mp3s, durations, srtPath, outPath })
 **Interfaces:**
 - Consumes: `LLMClient.callWithTool`, Task 1~3 전부, `getGoogleAuth`(Phase 2 plan Task 1).
 - Produces: `class VideoAgent { async run({ analysis, todayKST, pagesUrl, upload = true }) → { ok, videos: [{form, lang, videoId|file, error?}] } }`
-- 상태: `output/video_log.json` = `{ "PMID_form_lang": videoId }` — ArchiveAgent와 동일하게 contents API로 자체 커밋(공용 함수로 추출 가능하면 `src/utils/repoCommit.js`로 빼서 둘 다 사용).
+- 상태: `output/video_log.json` = `{ "PMID_form_lang": videoId }` — **로컬에만 쓴다.**
+  지속은 워크플로우 "Commit daily state" 스텝(이미 video_log.json 포함하도록 수정됨)이 담당.
+  (contents API 자체 커밋은 해당 스텝 push와 충돌하므로 사용 금지 — Phase 2 계획 참조)
 
 - [ ] **Step 1: tts.js 구현**
 
@@ -527,7 +529,7 @@ export class VideoAgent {
 }
 ```
 
-- [ ] **Step 3: 리팩터** — `ArchiveAgent._commitArchiveToRepo`를 `src/utils/repoCommit.js`의 `commitFileToRepo(relPath, message)`로 추출, 두 에이전트가 공유. 기존 Phase 2 테스트 회귀 확인.
+- [ ] **Step 3: 상태 저장 확인** — `_loadLog/_saveLog`는 `output/video_log.json` 로컬 읽기·쓰기만 구현(JSON parse 실패 시 `{}`). 저장소 커밋은 워크플로우 상태 스텝이 담당하므로 코드에서 하지 않는다.
 - [ ] **Step 4: 문법·단위 확인** — Run: `node --check src/agents/VideoAgent.js src/utils/tts.js && npm run test:unit` Expected: 통과
 - [ ] **Step 5: Commit** — `git commit -am "feat(phase3): VideoAgent — 스크립트→TTS→합성→업로드 + video_log"`
 
