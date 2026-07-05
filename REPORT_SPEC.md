@@ -103,9 +103,10 @@
 ## 4-F. Phase 3 — YouTube 영상 (무인 · 승인 게이트 후 활성)
 
 설계 스펙: `docs/superpowers/specs/2026-07-05-phase2-notebooklm-phase3-youtube-design.md`
-- **일 4편**: 중간폼(3~5분, 1920×1080) + 숏폼(**≤60초**, 1080×1920) × 한국어·영어.
-  한국어판은 한국어 자막(의학용어 영어 표기 허용), 영어판은 영어 자막 — **자막은 번인**
+- **기본 일 2편(영어 우선 전략, PeterJ 확정 2026-07-06)**: 중간폼(3~5분, 1920×1080) +
+  숏폼(**≤60초**, 1080×1920), 영어 내레이션 + 영어 자막 — **자막은 번인**
   (captions API는 `youtube.force-ssl` 스코프가 추가로 필요해 미사용, SRT는 보존).
+  한국어판 추가는 `VIDEO_LANGS=en,ko` 설정만으로 확장(대본은 항상 양 언어 생성됨).
 - **스크립트 수치는 리포트 값만** — 프롬프트에 "절대 새로운 수치를 만들지 마라" 규칙 고정
   (`src/utils/videoScript.js`, spec-lint가 문구 존재를 강제). 차트는 검증 수치 재구성만
   (`ChartRenderer`), 수치 불충분 시 차트 생략. **논문 원문 그림·표 이미지 미사용.**
@@ -115,7 +116,7 @@
   편별 독립 소프트 실패. 상태 `output/video_log.json`(중복 업로드 방지, gitignore 예외 필수).
 - **활성 스위치**: Variables `ENABLE_VIDEO=true` — 샘플 승인(모바일 시청, /preview 원칙) 전에는
   기본 비활성. 샘플 생성: `scripts/video-sample.mjs` (업로드 없음).
-- Secrets: `GOOGLE_TTS_API_KEY` (+ 4-E의 GOOGLE_* 공용). 쿼터: 업로드 4건 = 6,400/10,000.
+- Secrets: `GOOGLE_TTS_API_KEY` (+ 4-E의 GOOGLE_* 공용). 쿼터: 업로드 2건 = 3,200/10,000 (언어 확장 시 4건 = 6,400).
 
 ## 4-C. 자동화(GitHub Actions) 인증
 
@@ -128,6 +129,9 @@
 - 2026-07-05 (Phase 2 선작업): 4-E 신설 — Drive 아카이브(월별 리빙 Doc + OA PDF)·NotebookLM
   하이브리드 연동, ArchiveAgent·googleAuth·docBuilder 추가, 상태파일 `analysis_archive.json`
   gitignore 예외 + 시크릿 파일 무시 규칙을 spec-lint로 강제. Secrets 미설정 시 소프트 스킵.
+- 2026-07-06: 발신 전략 확정 — 영어 단일 버전 우선(일 2편, `VIDEO_LANGS`로 확장 가능),
+  유튜브 비공개 인큐베이터 → 품질 도달 시 인스타 개시(프로 계정은 비공개 불가 확인).
+  Phase 구조 재명명: Curate & Brief / Archive / Produce / Publish.
 - 2026-07-05 (Phase 3 선작업): 4-F 신설 — 영상 4편(중간폼·숏폼 × ko·en) 파이프라인
   (VideoAgent·videoScript·videoRender·tts·ChartRenderer). 수치 생성 금지·비공개 고정을
   spec-lint로 강제, ENABLE_VIDEO 스위치(샘플 승인 전 비활성), 자막 번인 + SRT 보존.

@@ -25,6 +25,9 @@ const FORMS = [
   { form: 'midform', orientation: 'landscape' },
   { form: 'short', orientation: 'portrait' },
 ];
+// 발신 언어 — 영어 우선 전략(PeterJ 확정, 2026-07-06). 한국어판 추가는 코드 수정 없이
+// VIDEO_LANGS=en,ko 로 확장한다 (대본은 스키마상 항상 ko·en 둘 다 생성됨).
+const LANGS = (process.env.VIDEO_LANGS || 'en').split(',').map((s) => s.trim()).filter(Boolean);
 
 export class VideoAgent {
   constructor() {
@@ -40,7 +43,7 @@ export class VideoAgent {
 
     const results = [];
     for (const { form, orientation } of FORMS) {
-      for (const lang of ['ko', 'en']) {
+      for (const lang of LANGS) {
         try {
           const file = await this._produce({ enriched, script: scripts[form][lang], form, lang, orientation, todayKST });
           const videoId = upload

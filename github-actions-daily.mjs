@@ -138,15 +138,16 @@ try {
   console.log(`::warning::Phase 2 아카이브 실패 — ${err.message.slice(0, 200)}`);
 }
 
-// ── Phase 3: 영상 4편 제작·비공개 업로드 (소프트 실패 · ENABLE_VIDEO=true 게이트) ──
-// 샘플 승인(REPORT_SPEC §4-F 게이트) 전에는 기본 비활성 — 승인 후 Variables로 켠다.
+// ── Phase 3: 영상 제작·비공개 업로드 (소프트 실패 · ENABLE_VIDEO=true 게이트) ────
+// 기본 영어 2편(중간폼·숏폼) — 언어는 VIDEO_LANGS로 확장. 샘플 승인(REPORT_SPEC
+// §4-F 게이트) 전에는 기본 비활성 — 승인 후 Variables로 켠다.
 let videoStatus = '비활성';
 if (process.env.ENABLE_VIDEO === 'true') {
   try {
     const { VideoAgent } = await import('./src/agents/VideoAgent.js');
     const r = await new VideoAgent().run({ analysis: papers[0], todayKST, pagesUrl });
     const okCnt = r.videos.filter((v) => v.videoId).length;
-    videoStatus = `${okCnt}/4 업로드`;
+    videoStatus = `${okCnt}/${r.videos.length} 업로드`;
     if (okCnt < 4) {
       const failed = r.videos.filter((v) => v.error).map((v) => `${v.form}/${v.lang}`).join(', ');
       console.log(`::warning::영상 일부 실패 — ${failed}`);
