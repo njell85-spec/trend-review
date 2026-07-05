@@ -136,6 +136,25 @@ try {
   console.log(`::warning::Phase 2 아카이브 실패 — ${err.message.slice(0, 200)}`);
 }
 
+// ── Phase 3: 영상 4편 제작·비공개 업로드 (소프트 실패 · ENABLE_VIDEO=true 게이트) ──
+// 샘플 승인(REPORT_SPEC §4-F 게이트) 전에는 기본 비활성 — 승인 후 Variables로 켠다.
+let videoStatus = '비활성';
+if (process.env.ENABLE_VIDEO === 'true') {
+  try {
+    const { VideoAgent } = await import('./src/agents/VideoAgent.js');
+    const r = await new VideoAgent().run({ analysis: papers[0], todayKST, pagesUrl });
+    const okCnt = r.videos.filter((v) => v.videoId).length;
+    videoStatus = `${okCnt}/4 업로드`;
+    if (okCnt < 4) {
+      const failed = r.videos.filter((v) => v.error).map((v) => `${v.form}/${v.lang}`).join(', ');
+      console.log(`::warning::영상 일부 실패 — ${failed}`);
+    }
+  } catch (err) {
+    videoStatus = `실패: ${err.message.slice(0, 120)}`;
+    console.log(`::warning::Phase 3 영상 실패 — ${err.message.slice(0, 200)}`);
+  }
+}
+
 const top = papers[0];
 jobSummary([
   `## ✅ Trend Review — ${todayKST}`,
@@ -144,5 +163,6 @@ jobSummary([
   `- LLM 경로: ${llmRoute}`,
   `- 카카오: ${kakaoStatus}`,
   `- 아카이브: ${archiveStatus}`,
+  `- 영상: ${videoStatus}`,
   `- 대시보드: ${pagesUrl}`,
 ].join('\n'));

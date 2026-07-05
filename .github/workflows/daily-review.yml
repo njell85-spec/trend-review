@@ -27,6 +27,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Phase 3 영상 슬라이드 렌더용 chromium (ENABLE_VIDEO=true일 때 사용).
+      # 캐시로 설치 시간을 상쇄 — 미사용 실행에서도 무해(설치만 하고 안 씀).
+      - name: Cache Playwright chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-chromium-${{ runner.os }}
+      - name: Install Playwright chromium
+        run: npm i --no-save playwright && npx playwright install chromium --with-deps
+
       # 스펙 정합 게이트 — REPORT_SPEC 위반(채널 드리프트·옛 표현·상태파일
       # gitignore 회귀)이 있으면 파이프라인을 돌리기 전에 중단한다.
       - name: Spec lint (REPORT_SPEC gate)
@@ -67,6 +77,8 @@ jobs:
           GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           GOOGLE_TTS_API_KEY:     ${{ secrets.GOOGLE_TTS_API_KEY }}
           GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
+          # 영상 데일리 편입 스위치 — 샘플 승인(§4-F) 후 Variables에서 true로
+          ENABLE_VIDEO:           ${{ vars.ENABLE_VIDEO }}
           GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
           GITHUB_OWNER:      ${{ github.repository_owner }}
           GITHUB_REPO:       ${{ github.event.repository.name }}
