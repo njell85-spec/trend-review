@@ -13,6 +13,8 @@ google_token.json
 output/*
 !output/selected_papers.json
 !output/selected_guidelines.json
+!output/analysis_archive.json
+!output/video_log.json
 node_modules/
 *.log
 logs/

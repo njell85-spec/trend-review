@@ -80,10 +80,17 @@ for (const [re, label] of [
 
 // ── 5) 상태파일 gitignore 예외 유지 (PR #11 회귀 방지 — 중복 선정 차단) ──────
 // 줄 단위 앵커 — 주석 처리(#!output/…)도 소실로 판정한다.
+// analysis_archive(리빙 Doc 재생성)·video_log(중복 업로드 방지)는 Phase 2/3 상태파일.
 const gi = read('.gitignore');
-for (const f of ['selected_papers', 'selected_guidelines']) {
+for (const f of ['selected_papers', 'selected_guidelines', 'analysis_archive', 'video_log']) {
   const re = new RegExp(String.raw`^!output/${f}\.json\s*$`, 'm');
-  if (!re.test(gi)) errors.push(`.gitignore: 상태파일 예외 "!output/${f}.json" 소실/비활성 — 주간 게이트·중복 방지 무력화 (PR #11 회귀)`);
+  if (!re.test(gi)) errors.push(`.gitignore: 상태파일 예외 "!output/${f}.json" 소실/비활성 — 상태 지속 무력화`);
+}
+
+// ── 5b) 시크릿 파일은 반드시 gitignore 안에 (REPORT_SPEC §4-E — 반대 방향 검사) ──
+for (const f of ['credentials.json', 'google_token.json']) {
+  const re = new RegExp(String.raw`^(\*\*/)?${f.replace('.', '\\.')}\s*$`, 'm');
+  if (!re.test(gi)) errors.push(`.gitignore: 시크릿 파일 "${f}" 무시 규칙 소실 — 커밋 유출 위험 (REPORT_SPEC §4-E)`);
 }
 
 // ── 6) (경고) 로그에 시크릿 보간 휴리스틱 ────────────────────────────────────

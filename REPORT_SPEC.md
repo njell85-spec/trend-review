@@ -83,6 +83,23 @@
 - **Google Drive 업로드**는 현재 미사용이나 **phase2/3 연동 대비 인프라를 보존**한다
   (`NotificationAgent`, `ENABLE_DRIVE=true` 게이트, 기본 비활성). Gmail 관련 코드는 제거됨.
 
+## 4-E. Phase 2 — Drive 아카이브 + NotebookLM (무인)
+
+설계 스펙: `docs/superpowers/specs/2026-07-05-phase2-notebooklm-phase3-youtube-design.md`
+- **하이브리드 구조**: ① 자동층 = **월별 리빙 Google Doc**(`Trend Review — YYYY-MM`)을 매일 재생성
+  (HTML→Doc 변환, NotebookLM Drive 자동 동기화가 반영) ② 보강층 = **원문 PDF**(OA 확보 시)를
+  `trend-review/YYYY-MM/`에 적재, NotebookLM 소스 추가는 주 1회 수동(기본 주기).
+- 자료는 **자체 문서만** — 타인 PPT/PDF 파일 수집 금지. 페이월이면 웹보강(4-B) 근거를
+  **근거 도시에** 섹션으로 Doc에 구조화.
+- 모듈: `src/agents/ArchiveAgent.js` + `src/utils/googleAuth.js`(env 우선)·`docBuilder.js`.
+  `github-actions-daily.mjs`가 카카오 발송 뒤 호출 — **실패해도 파이프라인 성공(소프트 실패)**.
+- 상태 파일: `output/analysis_archive.json`(항목 + Drive docId/folderId/pdfFileId) —
+  워크플로우 "Commit daily state" 스텝이 커밋. gitignore 예외 필수(spec-lint 강제).
+- Secrets: `GOOGLE_CLIENT_ID`·`GOOGLE_CLIENT_SECRET`·`GOOGLE_REFRESH_TOKEN`
+  (스코프 `drive.file`+`youtube.upload` 고정). Variables: `GOOGLE_DRIVE_FOLDER_ID`.
+  발급: 데스크탑 데이 `scripts/google-auth-setup.mjs` (`docs/desktop-day-guide.md`).
+  `credentials.json`·`google_token.json`은 gitignore 필수(spec-lint 강제). 미설정 시 단계만 건너뜀.
+
 ## 4-C. 자동화(GitHub Actions) 인증
 
 분석 LLM 호출은 **claude CLI(구독)** 우선, 없으면 **Anthropic API** 폴백.
@@ -90,6 +107,10 @@
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-07-05 (Phase 2 선작업): 4-E 신설 — Drive 아카이브(월별 리빙 Doc + OA PDF)·NotebookLM
+  하이브리드 연동, ArchiveAgent·googleAuth·docBuilder 추가, 상태파일 `analysis_archive.json`
+  gitignore 예외 + 시크릿 파일 무시 규칙을 spec-lint로 강제. Secrets 미설정 시 소프트 스킵.
 
 - 2026-07-05: 코드 리뷰 후속 보완. 가이드 카드 NEW 뱃지 강등 버그 수정(과거 카드 잔존),
   이메일(Gmail) 발송 코드 제거(카카오 단일 채널 확정) + Drive 업로드는 phase2/3 대비
