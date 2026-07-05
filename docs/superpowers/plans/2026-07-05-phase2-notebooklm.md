@@ -1,5 +1,10 @@
 # Phase 2 — NotebookLM 연동 (Google 인증 + ArchiveAgent) Implementation Plan
 
+> ⚠️ **상태: 선작업 실행 완료(2026-07-05 세션) — `src/` 실코드가 정본.** 이 문서의 코드 블록 일부
+> (특히 `_commitArchiveToRepo`/contents API 커밋)는 구현 중 폐기된 초안이다. 상태 지속은
+> 워크플로우 "Commit daily state" 스텝이 담당한다(스텝 목록은 spec-lint가 강제). 이 문서를
+> 근거로 코드를 다시 작성하지 말 것 — 남은 작업은 Task 7(실환경 검증)뿐이다.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 매일 코어 파이프라인 완료 후, 논문 PDF를 Drive에 적재하고 월별 리빙 Google Doc을 갱신해 NotebookLM이 자동 동기화하게 한다.

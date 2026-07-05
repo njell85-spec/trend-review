@@ -1,5 +1,9 @@
 # Phase 3 — YouTube 영상 (ChartRenderer + VideoAgent) Implementation Plan
 
+> ⚠️ **상태: 선작업 실행 완료(2026-07-05 세션) — `src/` 실코드가 정본.** 이 문서의 코드 블록 일부
+> (repoCommit/contents API 언급)는 폐기된 초안이다. video_log 지속은 워크플로우
+> "Commit daily state" 스텝이 담당한다. 남은 작업은 Task 8(샘플 승인 → 실업로드 검증)뿐이다.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 매일 리포트에서 중간폼(3~5분 1920×1080)·숏폼(≤60초 1080×1920) × 한국어·영어 = 4편을 생성해 전용 채널에 비공개 업로드한다.

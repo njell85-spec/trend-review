@@ -97,7 +97,8 @@ export class VideoAgent {
     const base = lang === 'ko'
       ? `[EM/CCM ${form === 'short' ? 'Shorts' : '리뷰'}] ${analysis.title_ko || p.title}`
       : `[EM/CCM ${form === 'short' ? 'Shorts' : 'Review'}] ${p.title}`;
-    const title = `${base.slice(0, 95)} (${todayKST})`;
+    const suffix = ` (${todayKST})`;
+    const title = base.slice(0, 100 - suffix.length) + suffix; // YouTube 제목 하드 리밋 100자
     const description = [
       lang === 'ko' ? '오늘의 논문 리뷰 — 검증된 수치만 사용합니다.' : 'Daily paper review — verified figures only.',
       `PubMed: https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/`,

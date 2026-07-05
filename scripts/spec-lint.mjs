@@ -93,6 +93,16 @@ for (const f of ['credentials.json', 'google_token.json']) {
   if (!re.test(gi)) errors.push(`.gitignore: 시크릿 파일 "${f}" 무시 규칙 소실 — 커밋 유출 위험 (REPORT_SPEC §4-E)`);
 }
 
+// ── 5b-2) 상태파일 지속 계약 — 워크플로우 git-add 목록과 동기 (숨은 계층 계약 강제) ──
+// 에이전트는 로컬에만 쓰고 워크플로우 "Commit daily state" 스텝이 커밋한다.
+// 목록에서 빠지면 러너 휘발로 다음 날 상태가 사라져 중복 업로드가 무오류로 발생한다.
+const wf = read('.github/workflows/daily-review.yml');
+for (const f of ['output/analysis_archive.json', 'output/video_log.json']) {
+  if (!wf.includes(f)) {
+    errors.push(`.github/workflows/daily-review.yml: 상태파일 "${f}"가 Commit daily state 목록에 없음 — 상태 지속 계약 위반`);
+  }
+}
+
 // ── 5c) Phase 3 영상 게이트 (REPORT_SPEC §4-F) ───────────────────────────────
 // 수치 생성 금지 문구·비공개 고정이 소실되면 파이프라인 전에 차단한다.
 const videoScriptSrc = read('src/utils/videoScript.js');

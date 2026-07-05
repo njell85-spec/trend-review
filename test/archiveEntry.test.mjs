@@ -4,7 +4,7 @@ import { toArchiveEntry, upsertEntry, monthOf, pdfFileName } from '../src/agents
 
 // FilterAnalyzerAgent 실산출 필드명 기준: evidenceSource(배지) · sources(출처, 웹보강은 '웹 — ' 접두)
 const analysis = {
-  pmid: '12345', title_ko: '제목', clinicalQuestion_ko: 'Q', pico_ko: {},
+  pmid: '12345', title_ko: '제목', clinicalQuestion_ko: 'Q', pico: { patient: 'adults' }, pico_ko: {},
   keyFindings: ['a'], keyFindings_ko: ['ㄱ'], evidenceLevel: '1b',
   evidenceSource: '본문(PMC)',
   sources: [{ label: 'PubMed — PMID 12345', url: 'https://pubmed.ncbi.nlm.nih.gov/12345/' }],
@@ -19,6 +19,7 @@ test('toArchiveEntry가 Doc 스키마 필드를 채운다 (badge=evidenceSource,
   assert.equal(e.references[0].label, 'PubMed — PMID 12345');
   assert.equal(e.pdfLink, 'L');
   assert.equal(e.fullTextSource, 'PMC');
+  assert.equal(e.pico.patient, 'adults'); // 영어 PICO 보존 (영상 EN 대본 입력)
   assert.equal(e.dossier, null); // 본문 있으면 도시에 없음
 });
 

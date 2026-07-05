@@ -1,7 +1,8 @@
 /**
- * ArchiveAgent — Phase 2: 논문 PDF Drive 적재 + 월별 리빙 Doc 갱신 + 아카이브 JSON 자체 커밋.
+ * ArchiveAgent — Phase 2: 논문 PDF Drive 적재 + 월별 리빙 Doc 갱신 + 아카이브 JSON 로컬 기록.
  *
- * 전 과정 소프트 실패(호출측 try/catch) · 재실행 안전(driveState·upsert) · 토큰 로그 금지.
+ * 전 과정 소프트 실패(호출측 try/catch) · 재실행 안전(driveState·upsert + Drive측 find 폴백) ·
+ * 토큰 로그 금지.
  * 상태 파일: output/analysis_archive.json
  *   { entries: [...], driveState: { docIds: {"YYYY-MM": id}, folderIds: {...}, pdfFiles: {pmid: fileId} } }
  * 러너가 휘발이므로 상태 파일은 GitHub contents API로 저장소에 커밋해 지속한다.
@@ -36,6 +37,7 @@ export function toArchiveEntry(a, { pdfLink, todayKST }) {
     doi: p.doi ?? null,
     badge: a.evidenceSource ?? p.fullTextSource ?? '초록만',
     clinicalQuestion_ko: a.clinicalQuestion_ko,
+    pico: a.pico ?? {}, // 영어 PICO — 영상 대본(EN) 생성 입력이 프로덕션과 동일하도록 보존
     pico_ko: a.pico_ko ?? {},
     keyFindings: a.keyFindings ?? [],
     keyFindings_ko: a.keyFindings_ko ?? [],
@@ -88,12 +90,20 @@ export class ArchiveAgent {
     }
 
     state.entries = upsertEntry(state.entries, toArchiveEntry(analysis, { pdfLink, todayKST }));
-
-    const monthEntries = state.entries.filter((e) => monthOf(e.date) === month);
-    await this._upsertMonthDoc(drive, state, month, folderId, buildMonthDocHtml(month, monthEntries));
-
+    // 항목·PDF 상태를 Doc 갱신보다 먼저 확정 저장 — Doc 변환이 실패해도 그날 데이터는 남는다
+    // (부분 실패가 데이터를 망치지 않도록: 전역 체크리스트 ④)
     await this._saveArchive(state);
-    return { ok: true, pdf: Boolean(pdfLink), docUpdated: true };
+
+    let docUpdated = true;
+    try {
+      const monthEntries = state.entries.filter((e) => monthOf(e.date) === month);
+      await this._upsertMonthDoc(drive, state, month, folderId, buildMonthDocHtml(month, monthEntries));
+      await this._saveArchive(state); // docId 반영
+    } catch (e) {
+      docUpdated = false;
+      this.logger.warn(`리빙 Doc 갱신 실패(항목은 저장됨 — 다음 실행에서 재생성): ${e.message}`);
+    }
+    return { ok: true, pdf: Boolean(pdfLink), docUpdated };
   }
 
   async _loadArchive() {
@@ -137,6 +147,16 @@ export class ArchiveAgent {
     if (state.driveState.pdfFiles[pmid]) {
       return `https://drive.google.com/file/d/${state.driveState.pdfFiles[pmid]}/view`;
     }
+    // 상태 유실(커밋 실패) 대비: Drive에서 같은 파일명을 먼저 찾는다 (find-or-create)
+    const fileName = pdfFileName({ date: todayKST, pmid, title: p.title });
+    const existing = await drive.files.list({
+      q: `name='${fileName.replace(/'/g, "\\'")}' and '${folderId}' in parents and trashed=false`,
+      fields: 'files(id)',
+    });
+    if (existing.data.files?.length) {
+      state.driveState.pdfFiles[pmid] = existing.data.files[0].id;
+      return `https://drive.google.com/file/d/${existing.data.files[0].id}/view`;
+    }
     const url = await this._resolvePdfUrl(p);
     if (!url) {
       this.logger.info(`OA PDF 없음 (PMID ${pmid}) — 스킵`);
@@ -150,8 +170,12 @@ export class ArchiveAgent {
     }
     const buf = Buffer.from(await res.arrayBuffer());
     if (buf.length < 10_000) return null; // 오류 페이지 방어
+    if (buf.length > 30_000_000) {
+      this.logger.info(`PDF ${(buf.length / 1e6).toFixed(0)}MB > 30MB 상한 — 스킵 (러너 메모리 보호)`);
+      return null;
+    }
     const file = await drive.files.create({
-      requestBody: { name: pdfFileName({ date: todayKST, pmid, title: p.title }), parents: [folderId] },
+      requestBody: { name: fileName, parents: [folderId] },
       media: { mimeType: 'application/pdf', body: Readable.from(buf) },
       fields: 'id',
     });
@@ -184,6 +208,15 @@ export class ArchiveAgent {
   async _upsertMonthDoc(drive, state, month, folderId, html) {
     const media = { mimeType: 'text/html', body: Readable.from(Buffer.from(html, 'utf8')) };
     let docId = state.driveState.docIds[month];
+    if (!docId) {
+      // 상태 유실 대비: 같은 이름의 Doc이 이미 있으면 재사용 (중복 Doc 생성 방지)
+      const found = await drive.files.list({
+        q: `name='Trend Review — ${month}' and mimeType='application/vnd.google-apps.document' and '${folderId}' in parents and trashed=false`,
+        fields: 'files(id)',
+      });
+      docId = found.data.files?.[0]?.id ?? null;
+      if (docId) state.driveState.docIds[month] = docId;
+    }
     if (docId) {
       await drive.files.update({ fileId: docId, media });
     } else {

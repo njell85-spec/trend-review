@@ -106,11 +106,13 @@ export async function assembleVideo({ pngs, mp3s, durations, srtPath, outPath })
   const aPath = path.join(dir, 'a.txt');
   await writeFile(vPath, vlist);
   await writeFile(aPath, alist);
+  // subtitles 필터는 경로의 ':' 등을 필터 구분자로 오파싱하므로,
+  // cwd를 작업 폴더로 옮기고 상대 파일명만 넘긴다 (절대경로 보간 금지).
   await run('ffmpeg', ['-y',
     '-f', 'concat', '-safe', '0', '-i', vPath,
     '-f', 'concat', '-safe', '0', '-i', aPath,
-    '-vf', `subtitles=${srtPath}:force_style='FontSize=18,Outline=1',format=yuv420p`,
+    '-vf', `subtitles=${path.basename(srtPath)}:force_style='FontSize=18,Outline=1',format=yuv420p`,
     '-c:v', 'libx264', '-r', '30', '-c:a', 'aac', '-shortest', '-movflags', '+faststart',
     outPath,
-  ], { maxBuffer: 32 * 1024 * 1024 });
+  ], { cwd: dir, maxBuffer: 32 * 1024 * 1024 });
 }

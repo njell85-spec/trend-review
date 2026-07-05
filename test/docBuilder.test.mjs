@@ -36,6 +36,6 @@ test('도시에 섹션은 dossier가 있을 때만 렌더된다', () => {
   assert.ok(!withoutD.includes('근거 도시에'));
 });
 
-test('esc는 & < > " 를 치환한다', () => {
-  assert.equal(esc('a&b<c>"d"'), 'a&amp;b&lt;c&gt;&quot;d&quot;');
+test('esc는 & < > " \' 를 치환한다 (GitHubPublisher.esc와 동일 집합)', () => {
+  assert.equal(esc(`a&b<c>"d"'e'`), 'a&amp;b&lt;c&gt;&quot;d&quot;&#39;e&#39;');
 });

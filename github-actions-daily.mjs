@@ -129,7 +129,9 @@ let archiveStatus = '미설정';
 try {
   const { ArchiveAgent } = await import('./src/agents/ArchiveAgent.js');
   const r = await new ArchiveAgent().run({ analysis: papers[0], todayKST });
-  archiveStatus = r.ok ? `완료 (PDF ${r.pdf ? '적재' : '없음'} · Doc 갱신)` : `건너뜀: ${r.reason}`;
+  archiveStatus = r.ok
+    ? `완료 (PDF ${r.pdf ? '적재' : '없음'} · Doc ${r.docUpdated ? '갱신' : '실패 — 다음 실행에서 재생성'})`
+    : `건너뜀: ${r.reason}`;
   if (r.ok) console.log(`📚 Drive 아카이브 완료 (PDF ${r.pdf ? '적재' : '없음'})`);
 } catch (err) {
   archiveStatus = `실패: ${err.message.slice(0, 120)}`;

@@ -27,14 +27,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Phase 3 영상 슬라이드 렌더용 chromium (ENABLE_VIDEO=true일 때 사용).
-      # 캐시로 설치 시간을 상쇄 — 미사용 실행에서도 무해(설치만 하고 안 씀).
+      # Phase 3 영상 슬라이드 렌더용 chromium — ENABLE_VIDEO=true일 때만 설치.
+      # 게이트 이유: 무조건 설치하면 (a) 미사용 날에도 수 분 낭비, (b) 설치 일시 실패가
+      # 코어 리포트(대시보드·카톡)까지 죽여 소프트 실패 원칙(§4-E/4-F)을 깨뜨린다.
       - name: Cache Playwright chromium
+        if: ${{ vars.ENABLE_VIDEO == 'true' }}
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
           key: pw-chromium-${{ runner.os }}
       - name: Install Playwright chromium
+        if: ${{ vars.ENABLE_VIDEO == 'true' }}
         run: npm i --no-save playwright && npx playwright install chromium --with-deps
 
       # 스펙 정합 게이트 — REPORT_SPEC 위반(채널 드리프트·옛 표현·상태파일

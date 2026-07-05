@@ -4,7 +4,10 @@
  * 모든 외부/LLM 텍스트는 esc()를 거친다 (전역 지침 ② — 이스케이프 없는 삽입 금지).
  */
 export function esc(s) {
-  return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  // GitHubPublisher.esc와 동일 집합(작은따옴표 포함) — 채널 간 이스케이프 드리프트 방지
+  return String(s ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 const li = (arr) => (arr ?? []).map((x) => `<li>${esc(x)}</li>`).join('');
 

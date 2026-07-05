@@ -30,6 +30,7 @@ const analysis = {
   pmid: entry.pmid,
   title_ko: entry.title_ko,
   clinicalQuestion_ko: entry.clinicalQuestion_ko,
+  pico: entry.pico,
   pico_ko: entry.pico_ko,
   keyFindings: entry.keyFindings,
   keyFindings_ko: entry.keyFindings_ko,
@@ -37,13 +38,13 @@ const analysis = {
   paper: { title: entry.title, journal: entry.journal, pmid: entry.pmid, doi: entry.doi },
 };
 
+// 대시보드 URL은 데일리 파이프라인과 같은 방식(env)으로 도출, 로컬 실행만 폴백
+const pagesUrl = process.env.GITHUB_OWNER && process.env.GITHUB_REPO
+  ? `https://${process.env.GITHUB_OWNER}.github.io/${process.env.GITHUB_REPO}/`
+  : 'https://njell85-spec.github.io/trend-review/';
+
 console.log(`🎬 샘플 생성 시작: ${entry.date} — ${entry.title_ko || entry.title}`);
-const r = await new VideoAgent().run({
-  analysis,
-  todayKST: kstDateStr(),
-  pagesUrl: 'https://njell85-spec.github.io/trend-review/',
-  upload: false,
-});
+const r = await new VideoAgent().run({ analysis, todayKST: kstDateStr(), pagesUrl, upload: false });
 console.log(JSON.stringify(
   r.videos.map(({ form, lang, file, error }) => ({ form, lang, file, error })),
   null, 2,
