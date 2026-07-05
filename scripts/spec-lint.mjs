@@ -93,6 +93,17 @@ for (const f of ['credentials.json', 'google_token.json']) {
   if (!re.test(gi)) errors.push(`.gitignore: 시크릿 파일 "${f}" 무시 규칙 소실 — 커밋 유출 위험 (REPORT_SPEC §4-E)`);
 }
 
+// ── 5c) Phase 3 영상 게이트 (REPORT_SPEC §4-F) ───────────────────────────────
+// 수치 생성 금지 문구·비공개 고정이 소실되면 파이프라인 전에 차단한다.
+const videoScriptSrc = read('src/utils/videoScript.js');
+if (!videoScriptSrc.includes('절대 새로운 수치를 만들지 마라')) {
+  errors.push('src/utils/videoScript.js: 수치 생성 금지 규칙 문구 소실 (REPORT_SPEC §4-F — 환각 배제)');
+}
+const videoAgentSrc = read('src/agents/VideoAgent.js');
+if (!/privacyStatus:\s*'private'/.test(videoAgentSrc)) {
+  errors.push("src/agents/VideoAgent.js: privacyStatus: 'private' 고정 소실 (REPORT_SPEC §4-F — 공개 전환은 심사 후 별도 결정)");
+}
+
 // ── 6) (경고) 로그에 시크릿 보간 휴리스틱 ────────────────────────────────────
 const jsFiles = [];
 (function walk(dir) {
