@@ -20,11 +20,21 @@ test('cardsFromScript — 표지 + 슬라이드 + 출처 구성, useChart 전파
     { heading: 'H1', bullets: ['b1'], useChart: true },
     { heading: 'H2', bullets: ['b2'], useChart: false },
   ] };
-  const cards = cardsFromScript(script, { titleEn: 'My Paper', pmid: '123' });
+  const cards = cardsFromScript(script, { title: 'My Paper', pmid: '123', lang: 'en' });
   assert.equal(cards.length, 4); // cover + 2 + source
   assert.equal(cards[0].kind, 'cover');
   assert.equal(cards[0].heading, 'My Paper');
   assert.equal(cards[1].useChart, true);
   assert.equal(cards.at(-1).kind, 'source');
   assert.ok(cards.at(-1).bullets[0].includes('pubmed.ncbi.nlm.nih.gov/123/'));
+});
+
+test('cardsFromScript — 언어별 보일러플레이트 (ko는 한국어, en은 영어)', () => {
+  const script = { slides: [{ heading: 'H', bullets: ['b'], useChart: false }] };
+  const ko = cardsFromScript(script, { title: '제목', pmid: '1', lang: 'ko' });
+  assert.ok(ko[0].bullets[0].includes('데일리'));
+  assert.ok(ko.at(-1).bullets[1].includes('교육용'));
+  const en = cardsFromScript(script, { title: 'T', pmid: '1', lang: 'en' });
+  assert.ok(en[0].bullets[0].includes('Daily'));
+  assert.ok(en.at(-1).bullets[1].includes('education'));
 });

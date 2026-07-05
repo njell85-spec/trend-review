@@ -377,14 +377,17 @@ export class GitHubPublisher {
   }
 
   // ── 누적 아카이브 표의 행(읽음 체크박스 포함) ──────────────────────────────────
-  _tableRows(dateStr, topPapers, guideline = null) {
+  _tableRows(dateStr, topPapers, guideline = null, { manual = false } = {}) {
+    // 수동 지정 행은 data-manual 마커를 단다 — 가이드라인(data-guideline)과 같은 방식으로,
+    // 이후 데일리 실행의 "날짜 기준 행 제거"(rowDateDup)에서 지워지지 않게 보호한다.
+    const manualAttr = manual ? ' data-manual="1"' : '';
     const rows = topPapers.map((p) => {
       const paper = p.paper ?? {};
       const pmid = paper.pmid ?? '';
       const url = paper.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : '#');
       const title = p.title_ko || paper.title || '';
       const journal = paper.journal ?? '';
-      return `<tr data-pmid="${esc(pmid)}"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(pmid)}" aria-label="읽음"></td></tr>`;
+      return `<tr data-pmid="${esc(pmid)}"${manualAttr}><td class="c-date">${esc(dateStr)}</td><td class="c-jour">${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(pmid)}" aria-label="읽음"></td></tr>`;
     });
     if (guideline) {
       const gp = guideline.paper ?? {};
@@ -660,7 +663,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true, manual, sectionKey: gKey })
       : '';
 
-    const newRows = this._tableRows(dateStr, topPapers, guideline);
+    const newRows = this._tableRows(dateStr, topPapers, guideline, { manual });
 
     let updated;
     if (!existing || !existing.includes('<!-- ARCHIVE_START -->')) {
@@ -718,8 +721,9 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       if (body.includes('<!-- TABLE_ROWS_START -->')) {
         body = body.replace('<!-- TABLE_ROWS_START -->', `<!-- TABLE_ROWS_START -->${newRows}`);
       }
-      // 통계 갱신
-      const dayCount = (body.match(/<!-- SECTION:/g) ?? []).length;
+      // 통계 갱신 — 분석일수는 데일리(날짜 키) 섹션만 센다. 수동 지정 섹션
+      // (SECTION:YYYY-MM-DD-m-pmid)은 "하루 1편 카운트 밖의 예외"이므로 제외한다.
+      const dayCount = (body.match(/<!-- SECTION:\d{4}-\d{2}-\d{2} -->/g) ?? []).length;
       const paperCount = (body.match(/class="paper-card"/g) ?? []).length || dayCount;
       body = body
         .replace(/<div class="n stat-days-count">[^<]*<\/div>/, `<div class="n stat-days-count">${dayCount}</div>`)

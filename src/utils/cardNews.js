@@ -37,15 +37,21 @@ export function cardHtml({ kind, brand = 'Trend Review', heading, bullets = [], 
   </body></html>`;
 }
 
-/** 숏폼 스크립트 → 카드 정의 배열 (표지 + 본문 슬라이드 + 출처) */
-export function cardsFromScript(script, { titleEn, pmid }) {
+const CARD_TEXT = {
+  en: { cover: ['Daily EM/CCM paper review', 'Verified figures only'], disclaimer: 'Not medical advice — for education.' },
+  ko: { cover: ['EM/CCM 데일리 논문 리뷰', '검증된 수치만 사용'], disclaimer: '의학적 조언 아님 — 교육용.' },
+};
+
+/** 숏폼 스크립트 → 카드 정의 배열 (표지 + 본문 슬라이드 + 출처). 보일러플레이트는 언어별. */
+export function cardsFromScript(script, { title, pmid, lang = 'en' }) {
+  const t = CARD_TEXT[lang] ?? CARD_TEXT.en;
   const slides = script.slides ?? [];
   const cards = [];
-  cards.push({ kind: 'cover', heading: titleEn, bullets: ['Daily EM/CCM paper review', 'Verified figures only'] });
-  slides.forEach((s, i) => cards.push({
+  cards.push({ kind: 'cover', heading: title, bullets: t.cover });
+  slides.forEach((s) => cards.push({
     kind: 'body', heading: s.heading, bullets: s.bullets ?? [], useChart: s.useChart,
   }));
-  cards.push({ kind: 'source', bullets: [`PubMed: pubmed.ncbi.nlm.nih.gov/${pmid}/`, 'Not medical advice — for education.'] });
+  cards.push({ kind: 'source', bullets: [`PubMed: pubmed.ncbi.nlm.nih.gov/${pmid}/`, t.disclaimer] });
   return cards;
 }
 

@@ -39,7 +39,7 @@ export class VideoAgent {
   async run({ analysis, todayKST, pagesUrl, upload = true }) {
     const llm = new LLMClient({});
     const raw = await llm.callWithTool(buildScriptMessages(analysis), VIDEO_SCRIPT_TOOL, { maxTokens: 8192 });
-    const scripts = validateScripts(raw);
+    const scripts = validateScripts(raw, LANGS);
     const enriched = { ...analysis, chartData: scripts.chartData };
 
     const results = [];
@@ -104,7 +104,8 @@ export class VideoAgent {
     const work = path.join(process.cwd(), 'output', 'cards', `${todayKST}-${lang}`);
     const chart = chartFromAnalysis(enriched, lang);
     const p = enriched.paper ?? {};
-    const cards = cardsFromScript(script, { titleEn: enriched.title_ko && lang === 'ko' ? enriched.title_ko : p.title, pmid: p.pmid });
+    const title = (lang === 'ko' && enriched.title_ko) ? enriched.title_ko : p.title;
+    const cards = cardsFromScript(script, { title, pmid: p.pmid, lang });
     const files = await renderCards(cards, { outDir: work, chartSvg: chart?.svg ?? null });
     this.logger.info(`카드뉴스/${lang} ${files.length}장 생성`);
     return files;
