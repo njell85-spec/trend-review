@@ -1,7 +1,9 @@
 # Archive — 운영 경로에서 제외된 파일들
 
 여기 파일들은 **데일리 파이프라인이 참조하지 않는** 일회성 스크립트·과거 산출물이다.
-운영 경로는 `.github/workflows/daily-review.yml` → `github-actions-daily.mjs` → `src/` 뿐이다.
+운영 경로는 `.github/workflows/daily-review.yml` → `github-actions-daily.mjs` → `src/`
+와 배포 검증용 `scripts/verify-pages-deploy.mjs`(+ `scripts/spec-lint.mjs` 등 루트
+`scripts/`의 CI 스크립트) 뿐이다. (루트 `scripts/` ≠ 여기 `archive/scripts/`.)
 
 | 폴더 | 내용 | 주의 |
 |------|------|------|
