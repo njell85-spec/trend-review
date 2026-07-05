@@ -16,6 +16,19 @@
 - 검색 → 스크리닝(최대 300편 스코어링) → **임상 적용성 최고 1편 선정** → 전문 PICO 분석.
 - 절대 "Top 3 / 최근 30일 / 40~50편" 같은 옛 표현을 쓰지 않는다.
 
+## 1-B. On-demand 수동 디깅 (직접 지정 분석)
+
+자동 데일리 선정과 **별개의 예외 경로**. PeterJ가 지정한 논문(PMID/DOI)·가이드라인을
+같은 분석 → 대시보드 → 카톡 → 아카이브 경로에 태운다.
+- 입구: 대시보드 "직접 지정" 위젯(`GitHubPublisher._onDemandWidget`, 멱등 주입) →
+  브라우저에서 `on-demand.yml`을 workflow_dispatch로 직접 호출. **Fine-grained PAT**
+  (이 저장소 actions:write 한정)는 사용자 브라우저 localStorage에만 저장 — 페이지 소스·저장소에 없음.
+  백업 입구: Actions 수동 실행.
+- 실행: `scripts/on-demand.mjs`(DOI→PMID 해석 후 기존 부품 재사용). **"하루 1편" 카운트 밖의 예외**이며,
+  같은 날 데일리 섹션·표를 건드리지 않는다(자체 섹션 키 `YYYY-MM-DD-m-<pmid>`).
+- 카드에 **"직접 지정" 배지**(주황) 표기 · 지정 PMID는 제외목록 등록으로 이후 자동 선정과 중복 방지.
+- 소프트 성격: 분석 실패 시 대시보드 미변경. Secrets 미설정 시 아카이브만 스킵.
+
 ## 2. 카카오톡 리포트 포맷 (PlayMCP MemoChat)
 
 ```
@@ -83,6 +96,41 @@
 - **Google Drive 업로드**는 현재 미사용이나 **phase2/3 연동 대비 인프라를 보존**한다
   (`NotificationAgent`, `ENABLE_DRIVE=true` 게이트, 기본 비활성). Gmail 관련 코드는 제거됨.
 
+## 4-E. Phase 2 — Drive 아카이브 + NotebookLM (무인)
+
+설계 스펙: `docs/superpowers/specs/2026-07-05-phase2-notebooklm-phase3-youtube-design.md`
+- **하이브리드 구조**: ① 자동층 = **월별 리빙 Google Doc**(`Trend Review — YYYY-MM`)을 매일 재생성
+  (HTML→Doc 변환, NotebookLM Drive 자동 동기화가 반영) ② 보강층 = **원문 PDF**(OA 확보 시)를
+  `trend-review/YYYY-MM/`에 적재, NotebookLM 소스 추가는 주 1회 수동(기본 주기).
+- 자료는 **자체 문서만** — 타인 PPT/PDF 파일 수집 금지. 페이월이면 웹보강(4-B) 근거를
+  **근거 도시에** 섹션으로 Doc에 구조화.
+- 모듈: `src/agents/ArchiveAgent.js` + `src/utils/googleAuth.js`(env 우선)·`docBuilder.js`.
+  `github-actions-daily.mjs`가 카카오 발송 뒤 호출 — **실패해도 파이프라인 성공(소프트 실패)**.
+- 상태 파일: `output/analysis_archive.json`(항목 + Drive docId/folderId/pdfFileId) —
+  워크플로우 "Commit daily state" 스텝이 커밋. gitignore 예외 필수(spec-lint 강제).
+- Secrets: `GOOGLE_CLIENT_ID`·`GOOGLE_CLIENT_SECRET`·`GOOGLE_REFRESH_TOKEN`
+  (스코프 `drive.file`+`youtube.upload` 고정). Variables: `GOOGLE_DRIVE_FOLDER_ID`.
+  발급: 데스크탑 데이 `scripts/google-auth-setup.mjs` (`docs/desktop-day-guide.md`).
+  `credentials.json`·`google_token.json`은 gitignore 필수(spec-lint 강제). 미설정 시 단계만 건너뜀.
+
+## 4-F. Phase 3 — YouTube 영상 (무인 · 승인 게이트 후 활성)
+
+설계 스펙: `docs/superpowers/specs/2026-07-05-phase2-notebooklm-phase3-youtube-design.md`
+- **기본 일 2편(영어 우선 전략, PeterJ 확정 2026-07-06)**: 중간폼(3~5분, 1920×1080) +
+  숏폼(**≤60초**, 1080×1920), 영어 내레이션 + 영어 자막 — **자막은 번인**
+  (captions API는 `youtube.force-ssl` 스코프가 추가로 필요해 미사용, SRT는 보존).
+  한국어판 추가는 `VIDEO_LANGS=en,ko` 설정만으로 확장(대본은 항상 양 언어 생성됨).
+- **스크립트 수치는 리포트 값만** — 프롬프트에 "절대 새로운 수치를 만들지 마라" 규칙 고정
+  (`src/utils/videoScript.js`, spec-lint가 문구 존재를 강제). 차트는 검증 수치 재구성만
+  (`ChartRenderer`), 수치 불충분 시 차트 생략. **논문 원문 그림·표 이미지 미사용.**
+- **업로드는 `privacyStatus: 'private'` 고정**(공개 전환은 API 심사 후 별도 결정, spec-lint 강제).
+  제목·설명에 PubMed·DOI·대시보드 링크. 채널 = 전용 브랜드 채널.
+- 모듈: `src/agents/VideoAgent.js` + `videoScript`·`videoRender`·`tts`·`ChartRenderer`.
+  편별 독립 소프트 실패. 상태 `output/video_log.json`(중복 업로드 방지, gitignore 예외 필수).
+- **활성 스위치**: Variables `ENABLE_VIDEO=true` — 샘플 승인(모바일 시청, /preview 원칙) 전에는
+  기본 비활성. 샘플 생성: `scripts/video-sample.mjs` (업로드 없음).
+- Secrets: `GOOGLE_TTS_API_KEY` (+ 4-E의 GOOGLE_* 공용). 쿼터: 업로드 2건 = 3,200/10,000 (언어 확장 시 4건 = 6,400).
+
 ## 4-C. 자동화(GitHub Actions) 인증
 
 분석 LLM 호출은 **claude CLI(구독)** 우선, 없으면 **Anthropic API** 폴백.
@@ -90,6 +138,16 @@
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-07-05 (Phase 2 선작업): 4-E 신설 — Drive 아카이브(월별 리빙 Doc + OA PDF)·NotebookLM
+  하이브리드 연동, ArchiveAgent·googleAuth·docBuilder 추가, 상태파일 `analysis_archive.json`
+  gitignore 예외 + 시크릿 파일 무시 규칙을 spec-lint로 강제. Secrets 미설정 시 소프트 스킵.
+- 2026-07-06: 발신 전략 확정 — 영어 단일 버전 우선(일 2편, `VIDEO_LANGS`로 확장 가능),
+  유튜브 비공개 인큐베이터 → 품질 도달 시 인스타 개시(프로 계정은 비공개 불가 확인).
+  Phase 구조 재명명: Curate & Brief / Archive / Produce / Publish.
+- 2026-07-05 (Phase 3 선작업): 4-F 신설 — 영상 4편(중간폼·숏폼 × ko·en) 파이프라인
+  (VideoAgent·videoScript·videoRender·tts·ChartRenderer). 수치 생성 금지·비공개 고정을
+  spec-lint로 강제, ENABLE_VIDEO 스위치(샘플 승인 전 비활성), 자막 번인 + SRT 보존.
 
 - 2026-07-05: 코드 리뷰 후속 보완. 가이드 카드 NEW 뱃지 강등 버그 수정(과거 카드 잔존),
   이메일(Gmail) 발송 코드 제거(카카오 단일 채널 확정) + Drive 업로드는 phase2/3 대비

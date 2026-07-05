@@ -27,6 +27,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Phase 3 영상 슬라이드 렌더용 chromium — ENABLE_VIDEO=true일 때만 설치.
+      # 게이트 이유: 무조건 설치하면 (a) 미사용 날에도 수 분 낭비, (b) 설치 일시 실패가
+      # 코어 리포트(대시보드·카톡)까지 죽여 소프트 실패 원칙(§4-E/4-F)을 깨뜨린다.
+      - name: Cache Playwright chromium
+        if: ${{ vars.ENABLE_VIDEO == 'true' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-chromium-${{ runner.os }}
+      - name: Install Playwright chromium
+        if: ${{ vars.ENABLE_VIDEO == 'true' }}
+        run: npm i --no-save playwright && npx playwright install chromium --with-deps
+
       # 스펙 정합 게이트 — REPORT_SPEC 위반(채널 드리프트·옛 표현·상태파일
       # gitignore 회귀)이 있으면 파이프라인을 돌리기 전에 중단한다.
       - name: Spec lint (REPORT_SPEC gate)
@@ -61,6 +74,14 @@ jobs:
           PUBMED_API_KEY:    ${{ secrets.PUBMED_API_KEY }}
           PUBMED_EMAIL:      ${{ secrets.PUBMED_EMAIL }}
           UNPAYWALL_EMAIL:   ${{ secrets.PUBMED_EMAIL }}
+          # Phase 2/3 — Google Drive·YouTube·TTS (미설정 시 해당 단계만 소프트 스킵)
+          GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_TTS_API_KEY:     ${{ secrets.GOOGLE_TTS_API_KEY }}
+          GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
+          # 영상 데일리 편입 스위치 — 샘플 승인(§4-F) 후 Variables에서 true로
+          ENABLE_VIDEO:           ${{ vars.ENABLE_VIDEO }}
           GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
           GITHUB_OWNER:      ${{ github.repository_owner }}
           GITHUB_REPO:       ${{ github.event.repository.name }}
@@ -72,13 +93,15 @@ jobs:
       # 스크립트가 index.html 커밋·푸시 후 상태파일(선정 논문 제외목록 + 가이드라인 주간
       # 게이트)을 갱신하므로, 두 번째 커밋으로 그 상태를 동기화한다.
       # selected_guidelines.json 을 커밋해야 "주 1회 + 중복방지"가 실행 간 유지된다.
-      - name: Commit daily state (papers + guideline gate)
+      - name: Commit daily state (papers + guideline gate + archive/video)
         run: |
           git add output/selected_papers.json
-          [ -f output/selected_guidelines.json ] && git add output/selected_guidelines.json || true
+          for f in output/selected_guidelines.json output/analysis_archive.json output/video_log.json; do
+            [ -f "$f" ] && git add "$f" || true
+          done
           git diff --staged --quiet \
             && echo "state unchanged" \
-            || (git commit -m "chore: sync daily state (papers + guideline gate)" && git push)
+            || (git commit -m "chore: sync daily state (papers + guideline gate + archive/video)" && git push)
 
   # push 성공 ≠ 사이트 반영. GitHub 측 Pages 배포가 일시 오류로 실패하면
   # 카톡 링크가 전날 데이터를 보여준다(2026-07-05 실제 발생). 배포 완료를

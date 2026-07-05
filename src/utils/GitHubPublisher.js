@@ -214,7 +214,7 @@ export class GitHubPublisher {
   }
 
   // ── 가이드라인 전용 접이식 섹션 (논문과 분리, 한눈에 '가이드라인'으로 식별) ──────
-  _buildGuidelineSection(dateStr, generatedAt, guideline, { isToday = false } = {}) {
+  _buildGuidelineSection(dateStr, generatedAt, guideline, { isToday = false, manual = false, sectionKey = dateStr } = {}) {
     const card = this._buildGuidelineCard(guideline);
     const gTitle = guideline.title_ko || guideline.paper?.title || '';
     const gMeta = `${guideline.org || guideline.paper?.journal || ''}${guideline.version ? ` · ${guideline.version}` : ''}`;
@@ -224,9 +224,11 @@ export class GitHubPublisher {
     // 'gl-badge' 를 함께 붙여야 ① teal 뱃지 스타일(.gl-badge)이 실제 적용되고
     // ② 다음 실행의 강등 정규식(t-badge gl-badge)이 이 NEW 를 제거한다.
     // (클래스가 't-badge'뿐이면 지난 가이드 카드에 NEW 가 영구히 남았다)
-    const badge = isToday ? '<span class="t-badge gl-badge">NEW</span>' : '';
+    const badge = manual
+      ? '<span class="t-badge" style="background:linear-gradient(90deg,#b45309,#f59e0b)">직접 지정</span>'
+      : (isToday ? '<span class="t-badge gl-badge">NEW</span>' : '');
     return `
-<!-- GSECTION:${dateStr} -->
+<!-- GSECTION:${sectionKey} -->
 <details${openAttr} class="${cls}">
   <summary class="day-sum">
     <div class="day-head">
@@ -237,10 +239,10 @@ export class GitHubPublisher {
   </summary>
   <div class="day-panel">${card}</div>
 </details>
-<!-- /GSECTION:${dateStr} -->`;
+<!-- /GSECTION:${sectionKey} -->`;
   }
 
-  _buildSection(dateStr, generatedAt, topPapers, { isToday = false, route = '' } = {}) {
+  _buildSection(dateStr, generatedAt, topPapers, { isToday = false, route = '', manual = false, sectionKey = dateStr } = {}) {
     const paperCards = topPapers.map((p) => this._buildPaperCard(p)).join('\n');
     const cards = paperCards;
     const cnt = topPapers.length;
@@ -252,10 +254,15 @@ export class GitHubPublisher {
       : '';
     const cls = isToday ? 'day day-today' : 'day day-past';
     const openAttr = isToday ? ' open' : '';
-    const badge = isToday ? '<span class="t-badge">TODAY</span>' : '';
+    // 수동 지정 배지는 인라인 스타일 — 배포된 index.html은 증분 패치라 새 CSS 클래스가
+    // 주입되지 않으므로 템플릿 CSS에 의존하면 무스타일로 렌더된다. TODAY와 달리
+    // 텍스트가 달라 강등 정규식에 안 걸려 과거에도 유지된다(출처 표식이므로 의도).
+    const badge = manual
+      ? '<span class="t-badge" style="background:linear-gradient(90deg,#b45309,#f59e0b)">직접 지정</span>'
+      : (isToday ? '<span class="t-badge">TODAY</span>' : '');
 
     return `
-<!-- SECTION:${dateStr} -->
+<!-- SECTION:${sectionKey} -->
 <details${openAttr} class="${cls}">
   <summary class="day-sum">
     <div class="day-head">
@@ -268,7 +275,100 @@ export class GitHubPublisher {
   </summary>
   <div class="day-panel">${cards}</div>
 </details>
-<!-- /SECTION:${dateStr} -->`;
+<!-- /SECTION:${sectionKey} -->`;
+  }
+
+  /**
+   * 수동 디깅(on-demand) 입력 위젯 — 대시보드에서 PMID/DOI를 지정해 분석을 트리거.
+   * 정적 페이지라 GitHub API(workflow_dispatch)를 브라우저에서 직접 호출하며,
+   * Fine-grained PAT(이 저장소 actions:write 한정)는 사용자의 localStorage 에만 저장된다
+   * (페이지 소스·저장소에 토큰 없음). 스타일은 증분 패치 호환을 위해 전부 인라인.
+   */
+  _onDemandWidget() {
+    return `<!-- ONDEMAND_WIDGET -->
+<details style="max-width:960px;margin:14px auto;padding:0 16px">
+  <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 On-demand 리뷰 — 논문·가이드라인 검색</summary>
+  <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <input id="od-q" placeholder="키워드 검색 (예: ACG 2026 diverticulitis)" style="flex:1;min-width:170px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px">
+      <button id="od-search" style="padding:8px 16px;border:0;border-radius:8px;background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff;font-weight:700;font-size:13px;cursor:pointer">검색</button>
+    </div>
+    <div id="od-msg" style="margin-top:8px;color:#64748b"></div>
+    <div id="od-list" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div>
+    <div style="margin-top:8px"><a href="#" id="od-direct" style="color:#94a3b8;font-size:12px">PMID/DOI 직접 입력 · 토큰 설정</a></div>
+  </div>
+</details>
+<script>
+(function(){
+  var OWNER='${this.owner}', REPO='${this.repo}';
+  var EUTILS='https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
+  var $=function(id){return document.getElementById(id)};
+  var esc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
+  function pat(force){
+    var t=localStorage.getItem('tr_pat');
+    if(!t||force){ t=prompt('GitHub Fine-grained PAT (이 저장소 actions:write 한정)\\n최초 1회만 — 이 브라우저에만 저장됩니다.'); if(t){localStorage.setItem('tr_pat',t.trim());} }
+    return localStorage.getItem('tr_pat');
+  }
+  function dispatch(target,kind,msg){
+    var t=pat(false); if(!t){msg.textContent='토큰이 필요합니다 ("직접 입력 · 토큰 설정").';return;}
+    msg.textContent='분석 요청 중…';
+    fetch('https://api.github.com/repos/'+OWNER+'/'+REPO+'/actions/workflows/on-demand.yml/dispatches',{
+      method:'POST',
+      headers:{'Authorization':'Bearer '+t,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main',inputs:{target:String(target),kind:kind}})
+    }).then(function(r){
+      msg.textContent = r.status===204 ? '✅ 분석 시작 — 수 분 후 이 페이지에 "직접 지정" 카드가 추가됩니다 (새로고침).' :
+        (r.status===401||r.status===403) ? '✖ 토큰 인증 실패 — "직접 입력 · 토큰 설정"에서 재입력하세요.' : '✖ 실패 (HTTP '+r.status+')';
+    }).catch(function(){msg.textContent='✖ 네트워크 오류';});
+  }
+  function search(){
+    var q=$('od-q').value.trim(), msg=$('od-msg'), list=$('od-list');
+    list.innerHTML='';
+    if(!q){msg.textContent='검색어를 입력하세요.';return;}
+    msg.textContent='PubMed 검색 중…';
+    fetch(EUTILS+'/esearch.fcgi?db=pubmed&retmode=json&sort=date&retmax=8&term='+encodeURIComponent(q))
+      .then(function(r){return r.json()})
+      .then(function(j){
+        var ids=(j.esearchresult&&j.esearchresult.idlist)||[];
+        if(!ids.length){msg.textContent='결과 없음 — 검색어를 바꿔보세요.';return;}
+        return fetch(EUTILS+'/esummary.fcgi?db=pubmed&retmode=json&id='+ids.join(','))
+          .then(function(r){return r.json()})
+          .then(function(s){
+            msg.textContent=ids.length+'건 · 클릭하면 그 논문을 분석합니다';
+            ids.forEach(function(id){
+              var d=s.result&&s.result[id]; if(!d)return;
+              var isG=/guideline|consensus|recommendation/i.test(d.title||'');
+              var yr=(d.pubdate||'').slice(0,4);
+              var el=document.createElement('div');
+              el.style.cssText='border:1px solid #e2e8f0;border-radius:10px;padding:10px;cursor:pointer';
+              el.innerHTML='<div style="font-weight:600;line-height:1.4">'+esc(d.title)+'</div>'+
+                '<div style="font-size:12px;color:#64748b;margin-top:3px">'+esc(d.fulljournalname||d.source||'')+' · '+esc(yr)+' · PMID '+esc(id)+(isG?' · <b>가이드라인</b>':'')+'</div>';
+              el.addEventListener('click',function(){dispatch(id,isG?'guideline':'paper',msg);});
+              list.appendChild(el);
+            });
+          });
+      }).catch(function(){msg.textContent='✖ 검색 실패 — PubMed 접근 불가(브라우저 CORS). "직접 입력"을 쓰세요.';});
+  }
+  $('od-search').addEventListener('click',search);
+  $('od-q').addEventListener('keydown',function(e){if(e.key==='Enter')search();});
+  $('od-direct').addEventListener('click',function(e){
+    e.preventDefault();
+    var msg=$('od-msg');
+    var v=prompt('PMID 또는 DOI 직접 입력 (취소하면 토큰만 설정):');
+    if(v===null){pat(true);return;}
+    v=v.trim(); if(!v)return;
+    var kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
+    dispatch(v,kind,msg);
+  });
+})();
+</script>
+<!-- /ONDEMAND_WIDGET -->`;
+  }
+
+  /** 배포된 페이지에 위젯이 없으면 주입(멱등) — 증분 패치 경로에서도 자가 치유 */
+  _ensureOnDemandWidget(html) {
+    if (html.includes('<!-- ONDEMAND_WIDGET -->')) return html;
+    return html.replace('<!-- ARCHIVE_START -->', `${this._onDemandWidget()}\n<!-- ARCHIVE_START -->`);
   }
 
   // 하위호환 별칭 (legacy 호출부)
@@ -540,16 +640,24 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
   }
 
   // ── 누적 업데이트 ────────────────────────────────────────────────────────────
-  async publish(dateStr, topPapers, { guideline = null } = {}) {
+  async publish(dateStr, topPapers, { guideline = null, manual = false } = {}) {
     const { sha, html: existing } = await this._getIndex();
     const generatedAt = new Date().toLocaleString('ko-KR', {
       timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
     });
 
     const route = llmTelemetry.label();
-    const todaySection = this._buildSection(dateStr, generatedAt, topPapers, { isToday: true, route });
+    // 수동 지정(on-demand)은 날짜 키와 분리된 자체 섹션 키를 쓴다 —
+    // 같은 날의 데일리 자동 선정 섹션·표 행을 지우지 않기 위함(§1-B).
+    const keyPmid = topPapers[0]?.paper?.pmid ?? guideline?.paper?.pmid ?? 'x';
+    const sectionKey = manual ? `${dateStr}-m-${keyPmid}` : dateStr;
+    // 논문이 없으면(수동 가이드라인 단독) 빈 논문 섹션을 만들지 않는다.
+    const todaySection = topPapers.length
+      ? this._buildSection(dateStr, generatedAt, topPapers, { isToday: true, route, manual, sectionKey })
+      : '';
+    const gKey = manual ? `${dateStr}-m-${guideline?.paper?.pmid ?? 'x'}` : dateStr;
     const guidelineSection = guideline
-      ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true })
+      ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true, manual, sectionKey: gKey })
       : '';
 
     const newRows = this._tableRows(dateStr, topPapers, guideline);
@@ -559,11 +667,16 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       // 최초 생성 (또는 구버전 스캐폴드) → 전체 페이지를 새 디자인으로 생성
       updated = this.buildPage(`${todaySection}\n${guidelineSection}`, { days: 1, papers: topPapers.length, updated: generatedAt, tableRows: newRows });
     } else {
-      // 같은 날짜 섹션 제거 (논문 SECTION + 가이드라인 GSECTION 모두)
-      const escDate = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const dup = new RegExp(`\\n?<!-- SECTION:${escDate} -->[\\s\\S]*?<!-- /SECTION:${escDate} -->`, 'g');
-      const gdup = new RegExp(`\\n?<!-- GSECTION:${escDate} -->[\\s\\S]*?<!-- /GSECTION:${escDate} -->`, 'g');
-      let body = existing.replace(dup, '').replace(gdup, '');
+      // 같은 키 섹션 제거 — 데일리는 날짜 키(그날 재실행 시 교체), 수동은 자체 키만
+      // 교체(재실행 안전)하고 같은 날 데일리 섹션은 보존한다.
+      const escKey = sectionKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const dup = new RegExp(`\\n?<!-- SECTION:${escKey} -->[\\s\\S]*?<!-- /SECTION:${escKey} -->`, 'g');
+      let body = existing.replace(dup, '');
+      if (!manual) {
+        const escDate = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const gdup = new RegExp(`\\n?<!-- GSECTION:${escDate} -->[\\s\\S]*?<!-- /GSECTION:${escDate} -->`, 'g');
+        body = body.replace(gdup, '');
+      }
       // 같은 가이드라인(동일 PMID)이 다른 날짜 카드로 이미 올라와 있으면 제거.
       // 주간 게이트가 실패해도 같은 지침이 중복 노출되지 않게 하는 심층 방어.
       if (guideline?.paper?.pmid) {
@@ -575,18 +688,23 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       }
       // 이전 TODAY/NEW → past 로 강등. 논문(TODAY)·가이드(NEW) 모두 같은
       // 'day day-today' 컨테이너를 쓰므로 details 강등은 한 정규식이 처리한다.
-      body = body
-        .replace(/<details open class="day day-today">/g, '<details class="day day-past">')
-        .replace(/<span class="t-badge">TODAY<\/span>/g, '')
-        .replace(/<span class="t-badge gl-badge">NEW<\/span>/g, '');
+      // 수동 지정은 강등을 건너뜀 — 같은 날 데일리 섹션의 TODAY 를 지우지 않기 위함.
+      if (!manual) {
+        body = body
+          .replace(/<details open class="day day-today">/g, '<details class="day day-past">')
+          .replace(/<span class="t-badge">TODAY<\/span>/g, '')
+          .replace(/<span class="t-badge gl-badge">NEW<\/span>/g, '');
+      }
       // 새 TODAY 삽입 (논문 먼저, 그 아래 가이드라인)
       body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}${guidelineSection ? `\n${guidelineSection}` : ''}`);
       // 누적 표 정리 (재실행 시 상단 섹션과 정확히 일치시키기 위해):
       //   ① 같은 날짜의 기존 행을 모두 제거 — 상단 SECTION 이 날짜 기준으로 교체되므로
       //      표도 동일하게. 하루에 여러 번 실행돼도 그날 최종 선정분만 남는다.
-      const escDateCell = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const rowDateDup = new RegExp(`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}</td>[\\s\\S]*?</tr>`, 'g');
-      body = body.replace(rowDateDup, '');
+      if (!manual) {
+        const escDateCell = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const rowDateDup = new RegExp(`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}</td>[\\s\\S]*?</tr>`, 'g');
+        body = body.replace(rowDateDup, '');
+      }
       //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침이 또 선정된 경우 중복 방지
       const dedupItems = guideline ? [...topPapers, guideline] : topPapers;
       for (const p of dedupItems) {
@@ -610,6 +728,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
         .replace(/<span class="at-count">[^<]*<\/span>/, `<span class="at-count">${paperCount}편</span>`);
       updated = body;
     }
+    updated = this._ensureOnDemandWidget(updated);
 
     const localPath = path.join(this._repoPath, 'index.html');
     await writeFile(localPath, updated, 'utf8');

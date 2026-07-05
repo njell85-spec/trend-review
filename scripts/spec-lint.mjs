@@ -80,10 +80,48 @@ for (const [re, label] of [
 
 // ── 5) 상태파일 gitignore 예외 유지 (PR #11 회귀 방지 — 중복 선정 차단) ──────
 // 줄 단위 앵커 — 주석 처리(#!output/…)도 소실로 판정한다.
+// analysis_archive(리빙 Doc 재생성)·video_log(중복 업로드 방지)는 Phase 2/3 상태파일.
 const gi = read('.gitignore');
-for (const f of ['selected_papers', 'selected_guidelines']) {
+for (const f of ['selected_papers', 'selected_guidelines', 'analysis_archive', 'video_log']) {
   const re = new RegExp(String.raw`^!output/${f}\.json\s*$`, 'm');
-  if (!re.test(gi)) errors.push(`.gitignore: 상태파일 예외 "!output/${f}.json" 소실/비활성 — 주간 게이트·중복 방지 무력화 (PR #11 회귀)`);
+  if (!re.test(gi)) errors.push(`.gitignore: 상태파일 예외 "!output/${f}.json" 소실/비활성 — 상태 지속 무력화`);
+}
+
+// ── 5b) 시크릿 파일은 반드시 gitignore 안에 (REPORT_SPEC §4-E — 반대 방향 검사) ──
+for (const f of ['credentials.json', 'google_token.json']) {
+  const re = new RegExp(String.raw`^(\*\*/)?${f.replace('.', '\\.')}\s*$`, 'm');
+  if (!re.test(gi)) errors.push(`.gitignore: 시크릿 파일 "${f}" 무시 규칙 소실 — 커밋 유출 위험 (REPORT_SPEC §4-E)`);
+}
+
+// ── 5b-2) 상태파일 지속 계약 — 워크플로우 git-add 목록과 동기 (숨은 계층 계약 강제) ──
+// 에이전트는 로컬에만 쓰고 워크플로우 "Commit daily state" 스텝이 커밋한다.
+// 목록에서 빠지면 러너 휘발로 다음 날 상태가 사라져 중복 업로드가 무오류로 발생한다.
+const wf = read('.github/workflows/daily-review.yml');
+for (const f of ['output/analysis_archive.json', 'output/video_log.json']) {
+  if (!wf.includes(f)) {
+    errors.push(`.github/workflows/daily-review.yml: 상태파일 "${f}"가 Commit daily state 목록에 없음 — 상태 지속 계약 위반`);
+  }
+}
+
+// ── 5c) Phase 3 영상 게이트 (REPORT_SPEC §4-F) ───────────────────────────────
+// 수치 생성 금지 문구·비공개 고정이 소실되면 파이프라인 전에 차단한다.
+const videoScriptSrc = read('src/utils/videoScript.js');
+if (!videoScriptSrc.includes('절대 새로운 수치를 만들지 마라')) {
+  errors.push('src/utils/videoScript.js: 수치 생성 금지 규칙 문구 소실 (REPORT_SPEC §4-F — 환각 배제)');
+}
+const videoAgentSrc = read('src/agents/VideoAgent.js');
+if (!/privacyStatus:\s*'private'/.test(videoAgentSrc)) {
+  errors.push("src/agents/VideoAgent.js: privacyStatus: 'private' 고정 소실 (REPORT_SPEC §4-F — 공개 전환은 심사 후 별도 결정)");
+}
+
+// ── 5d) On-demand 수동 디깅 앵커 (REPORT_SPEC §1-B) ──────────────────────────
+// 수동 지정이 같은 날 데일리 섹션을 덮어쓰지 않도록 self section key를 쓰는지 확인.
+const pubSrc = read('src/utils/GitHubPublisher.js');
+if (!pubSrc.includes('<!-- ONDEMAND_WIDGET -->') || !/_ensureOnDemandWidget\(updated\)/.test(pubSrc)) {
+  errors.push('src/utils/GitHubPublisher.js: 수동 디깅 위젯(ONDEMAND_WIDGET 마커 + publish 주입) 소실 (REPORT_SPEC §1-B)');
+}
+if (!/manual\s*\?\s*`\$\{dateStr\}-m-/.test(pubSrc)) {
+  errors.push('src/utils/GitHubPublisher.js: 수동 지정 self section key(YYYY-MM-DD-m-<pmid>) 소실 — 같은 날 데일리 섹션 훼손 위험 (REPORT_SPEC §1-B)');
 }
 
 // ── 6) (경고) 로그에 시크릿 보간 휴리스틱 ────────────────────────────────────
