@@ -44,6 +44,15 @@
 - Papers 통계: 실제 논문 카드 수 기준(하루 1편 → Days == Papers).
 - 푸터: `… · PubMed 최근 6개월 · 1편/일`
 - 전 섹션 동일 타이포그래피(폰트 크기 스케일 `text-[12~18px]`) 유지 — 단일 빌더(`_buildTodaySection`)만 사용.
+- **배포 검증 게이트**: push 성공 ≠ 사이트 반영. 파이프라인 잡 종료 후 별도
+  `verify-pages` 잡이 `scripts/verify-pages-deploy.mjs` 로 **원격 main HEAD**
+  (API 폴백 배포까지 포함) 의 Pages 배포 완료를 확인하고, 실패 시 자동 재실행
+  (새 attempt 기준 최대 3회), 끝내 실패하면 카카오 실패 알림 + 워크플로우 실패.
+  잡을 분리한 이유: 재실행용 `actions: write` 토큰을 LLM 파이프라인 잡에 주지
+  않기 위한 권한 분리. 한계(의도된 트레이드오프): 카카오 리포트는 배포 검증
+  전에 발송되므로, 배포 실패 시 링크가 자동 복구(수 분)까지 잠시 전날 데이터를
+  보일 수 있다 — 복구 불가면 실패 알림이 뒤따른다.
+  (근거: 2026-07-05 GitHub 측 일시 오류로 배포만 실패 → 카톡 링크가 전날 데이터 노출.)
 
 ## 4-B. 1편 심층 분석 — 본문 확보 & 권위 보강 정책
 
@@ -78,6 +87,11 @@
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-07-05: Pages 배포 검증 게이트 추가(`scripts/verify-pages-deploy.mjs` +
+  daily-review.yml `verify-pages` 잡). GitHub 측 일시 오류로 Pages 배포만 실패해
+  대시보드가 전날 데이터에 머문 장애의 재발 방지 — 배포 실패 자동 재실행 +
+  실패 가시화. 운영 경로에 `scripts/verify-pages-deploy.mjs` 포함.
 
 - 2026-07-02: 전면 코드 리뷰 반영.
   보안(토큰 로그 노출 차단·대시보드 XSS·이메일 이스케이프), 날짜 KST 통일(`src/utils/dates.js`),

@@ -79,3 +79,34 @@ jobs:
           git diff --staged --quiet \
             && echo "state unchanged" \
             || (git commit -m "chore: sync daily state (papers + guideline gate)" && git push)
+
+  # push 성공 ≠ 사이트 반영. GitHub 측 Pages 배포가 일시 오류로 실패하면
+  # 카톡 링크가 전날 데이터를 보여준다(2026-07-05 실제 발생). 배포 완료를
+  # 확인하고 실패 시 자동 재실행, 끝내 실패하면 카카오 알림 + 워크플로우 실패.
+  # 별도 잡인 이유: 재실행에 필요한 actions:write 토큰을 LLM 파이프라인 잡
+  # (외부 콘텐츠를 다루는 단계)에 쥐여 주지 않기 위한 권한 분리.
+  verify-pages:
+    needs: review
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read          # 스크립트 실행용 체크아웃 + 원격 main 조회
+      actions: write          # 실패한 Pages 배포 런 재실행
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify Pages deployment (auto-retry)
+        run: node scripts/verify-pages-deploy.mjs
+        env:
+          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          KAKAO_REST_API_KEY:  ${{ secrets.KAKAO_REST_API_KEY }}
+          KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
+          KAKAO_CLIENT_SECRET: ${{ secrets.KAKAO_CLIENT_SECRET }}
