@@ -287,42 +287,78 @@ export class GitHubPublisher {
   _onDemandWidget() {
     return `<!-- ONDEMAND_WIDGET -->
 <details style="max-width:960px;margin:14px auto;padding:0 16px">
-  <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 직접 지정 분석 (PMID/DOI)</summary>
+  <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 논문·가이드라인 검색해서 분석</summary>
   <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <input id="od-target" placeholder="PMID 또는 DOI" style="flex:1;min-width:150px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px">
-      <select id="od-kind" style="padding:8px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px">
-        <option value="paper">논문</option><option value="guideline">가이드라인</option>
-      </select>
-      <button id="od-run" style="padding:8px 16px;border:0;border-radius:8px;background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff;font-weight:700;font-size:13px;cursor:pointer">분석 실행</button>
+      <input id="od-q" placeholder="키워드 검색 (예: ACG 2026 diverticulitis)" style="flex:1;min-width:170px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px">
+      <button id="od-search" style="padding:8px 16px;border:0;border-radius:8px;background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff;font-weight:700;font-size:13px;cursor:pointer">검색</button>
     </div>
     <div id="od-msg" style="margin-top:8px;color:#64748b"></div>
-    <div style="margin-top:6px"><a href="#" id="od-pat" style="color:#94a3b8;font-size:12px">토큰 설정/변경</a></div>
+    <div id="od-list" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div>
+    <div style="margin-top:8px"><a href="#" id="od-direct" style="color:#94a3b8;font-size:12px">PMID/DOI 직접 입력 · 토큰 설정</a></div>
   </div>
 </details>
 <script>
 (function(){
   var OWNER='${this.owner}', REPO='${this.repo}';
+  var EUTILS='https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
   var $=function(id){return document.getElementById(id)};
+  var esc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
   function pat(force){
     var t=localStorage.getItem('tr_pat');
     if(!t||force){ t=prompt('GitHub Fine-grained PAT (이 저장소 actions:write 한정)\\n최초 1회만 — 이 브라우저에만 저장됩니다.'); if(t){localStorage.setItem('tr_pat',t.trim());} }
     return localStorage.getItem('tr_pat');
   }
-  $('od-pat').addEventListener('click',function(e){e.preventDefault();pat(true);});
-  $('od-run').addEventListener('click',function(){
-    var target=$('od-target').value.trim(), kind=$('od-kind').value, msg=$('od-msg');
-    if(!target){msg.textContent='PMID 또는 DOI를 입력하세요.';return;}
-    var t=pat(false); if(!t){msg.textContent='토큰이 필요합니다.';return;}
-    msg.textContent='실행 요청 중…';
+  function dispatch(target,kind,msg){
+    var t=pat(false); if(!t){msg.textContent='토큰이 필요합니다 ("직접 입력 · 토큰 설정").';return;}
+    msg.textContent='분석 요청 중…';
     fetch('https://api.github.com/repos/'+OWNER+'/'+REPO+'/actions/workflows/on-demand.yml/dispatches',{
       method:'POST',
       headers:{'Authorization':'Bearer '+t,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
-      body:JSON.stringify({ref:'main',inputs:{target:target,kind:kind}})
+      body:JSON.stringify({ref:'main',inputs:{target:String(target),kind:kind}})
     }).then(function(r){
       msg.textContent = r.status===204 ? '✅ 분석 시작 — 수 분 후 이 페이지에 "직접 지정" 카드가 추가됩니다 (새로고침).' :
-        (r.status===401||r.status===403) ? '✖ 토큰 인증 실패 — "토큰 설정/변경"으로 재입력하세요.' : '✖ 실패 (HTTP '+r.status+')';
+        (r.status===401||r.status===403) ? '✖ 토큰 인증 실패 — "직접 입력 · 토큰 설정"에서 재입력하세요.' : '✖ 실패 (HTTP '+r.status+')';
     }).catch(function(){msg.textContent='✖ 네트워크 오류';});
+  }
+  function search(){
+    var q=$('od-q').value.trim(), msg=$('od-msg'), list=$('od-list');
+    list.innerHTML='';
+    if(!q){msg.textContent='검색어를 입력하세요.';return;}
+    msg.textContent='PubMed 검색 중…';
+    fetch(EUTILS+'/esearch.fcgi?db=pubmed&retmode=json&sort=date&retmax=8&term='+encodeURIComponent(q))
+      .then(function(r){return r.json()})
+      .then(function(j){
+        var ids=(j.esearchresult&&j.esearchresult.idlist)||[];
+        if(!ids.length){msg.textContent='결과 없음 — 검색어를 바꿔보세요.';return;}
+        return fetch(EUTILS+'/esummary.fcgi?db=pubmed&retmode=json&id='+ids.join(','))
+          .then(function(r){return r.json()})
+          .then(function(s){
+            msg.textContent=ids.length+'건 · 클릭하면 그 논문을 분석합니다';
+            ids.forEach(function(id){
+              var d=s.result&&s.result[id]; if(!d)return;
+              var isG=/guideline|consensus|recommendation/i.test(d.title||'');
+              var yr=(d.pubdate||'').slice(0,4);
+              var el=document.createElement('div');
+              el.style.cssText='border:1px solid #e2e8f0;border-radius:10px;padding:10px;cursor:pointer';
+              el.innerHTML='<div style="font-weight:600;line-height:1.4">'+esc(d.title)+'</div>'+
+                '<div style="font-size:12px;color:#64748b;margin-top:3px">'+esc(d.fulljournalname||d.source||'')+' · '+esc(yr)+' · PMID '+esc(id)+(isG?' · <b>가이드라인</b>':'')+'</div>';
+              el.addEventListener('click',function(){dispatch(id,isG?'guideline':'paper',msg);});
+              list.appendChild(el);
+            });
+          });
+      }).catch(function(){msg.textContent='✖ 검색 실패 — PubMed 접근 불가(브라우저 CORS). "직접 입력"을 쓰세요.';});
+  }
+  $('od-search').addEventListener('click',search);
+  $('od-q').addEventListener('keydown',function(e){if(e.key==='Enter')search();});
+  $('od-direct').addEventListener('click',function(e){
+    e.preventDefault();
+    var msg=$('od-msg');
+    var v=prompt('PMID 또는 DOI 직접 입력 (취소하면 토큰만 설정):');
+    if(v===null){pat(true);return;}
+    v=v.trim(); if(!v)return;
+    var kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
+    dispatch(v,kind,msg);
   });
 })();
 </script>
