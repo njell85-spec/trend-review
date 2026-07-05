@@ -69,11 +69,12 @@ jobs:
           GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
 
-      # 상태파일 동기화 — 데일리와 동일 패턴 (publisher가 index+selected는 커밋,
-      # analysis_archive 는 여기서 커밋)
+      # 상태파일 동기화 — 데일리와 동일 패턴 (publisher가 index+selected를 이미 커밋·push,
+      # analysis_archive 만 여기서 추가 커밋). publish()가 push까지 마쳐 local==origin 이므로
+      # 별도 pull/rebase 없이 add→commit→push. (pull --rebase는 REST 폴백 시 rebase 충돌을
+      # || true 로 삼켜 충돌 마커를 커밋할 위험이 있어 제거 — 실패는 조용히 삼키지 않는다.)
       - name: Commit state (archive)
         run: |
-          git pull --rebase --autostash || true
           for f in output/analysis_archive.json output/selected_papers.json output/selected_guidelines.json; do
             [ -f "$f" ] && git add "$f" || true
           done

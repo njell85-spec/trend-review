@@ -95,9 +95,13 @@ submit_video_scripts 툴로 제출하라.`,
   }];
 }
 
-export function validateScripts(raw) {
+/**
+ * 실제 사용하는 언어(langs)만 검증한다 — 영어 단독 배포에서 한국어 대본의
+ * 사소한 결함이 영어 산출까지 죽이지 않도록(소프트 실패 원칙, VideoAgent가 LANGS 전달).
+ */
+export function validateScripts(raw, langs = ['ko', 'en']) {
   for (const form of ['midform', 'short']) {
-    for (const lang of ['ko', 'en']) {
+    for (const lang of langs) {
       const s = raw?.[form]?.[lang];
       if (!s) throw new Error(`missing ${form}.${lang}`);
       const n = s.slides?.length ?? 0;
