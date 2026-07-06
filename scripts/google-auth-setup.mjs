@@ -37,6 +37,8 @@ const server = createServer(async (req, res) => {
   try {
     const code = new URL(req.url, REDIRECT).searchParams.get('code');
     if (!code) { res.end(); return; }
+    // charset 명시 필수 — 없으면 브라우저가 한글 응답을 latin1로 렌더해 깨진다(mojibake).
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     res.end('<h2>✅ 인증 완료 — 이 창을 닫고 터미널로 돌아가세요.</h2>');
     server.close();
     const { tokens } = await oauth2.getToken(code);
