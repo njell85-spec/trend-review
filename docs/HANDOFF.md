@@ -134,9 +134,15 @@ R1 **on-demand 실증**(PeterJ: PAT 발급·위젯 클릭 → 세션: run 확인
 b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 수집(`webRefText.js`) +
 `notebooklm-sync.yml`(월 1일 notebooklm-py 등록 + 카톡 리마인더 폴백) + REPORT_SPEC §4-E 개정.
 계획: `docs/superpowers/plans/2026-07-06-r3-archive-automation.md`. 테스트 42건 통과.
-**잔여**: PeterJ 셋업(아래 B5) 후 workflow_dispatch로 등록 실검증 → R4 **큐레이션 버튼 2종**(P2)
+**잔여**: ~~PeterJ 셋업(아래 B5)~~ 완료 → 07-07 데일리 후 dispatch 실검증만 → R4 **큐레이션 버튼 2종**(P2)
 → R5 **영상·카드 품질 개선**(P1). ※ R5 전에 자료화 버튼 본격 사용은 자제(저품질 영상 누적+비용)
 — R4 완료 후 동작 확인 1~2건만.
+- **R4 경과(2026-07-06 저녁)**: 이전 세션이 R4를 구현 완료했으나 **push 전 세션 에러로
+  컨테이너와 함께 유실**(로컬 커밋 5개 — 원격 미존재 확인). 교훈: 미리보기 승인 대기 중에도
+  세션 지정 브랜치에 push는 해둘 것(승인 전 병합만 안 하면 /preview 규칙 충족).
+  현 세션에서 PeterJ 추가 요구 반영해 재착수: **자료화 여부 상태 표시** 추가 +
+  배치 2안(A: 카드 하단 / B: 누적 표) 목업 미리보기 전송(2026-07-06). **PeterJ 배치 결정
+  대기 중**(세션 추천: 하이브리드 — 상태 컬럼은 표, 실행 버튼은 카드). 결정 후 본구현.
 
 ### P1 · 영상·카드 품질 개선 (승인 게이트 재도전) — 로드맵상 R5
 - **품질 레버 노트(2026-07-06 확인)**: 현재 대본 생성 입력은 리포트 필드(PICO·keyFindings 등)만
@@ -187,20 +193,21 @@ b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 
   GOOGLE_DRIVE_FOLDER_ID 이미 주입돼 있어 후속 코드 작업 불필요. 남은 건 로그 관찰뿐.)
 
 ### B. PeterJ가 폰으로 해야 하는 것 (자동 불가 — Google 로그인·시청·승인)
-- **B1 · M1 NotebookLM 연결**: notebooklm.google.com 새 노트북 → Drive의 `Trend Review — 2026-07`
-  Doc을 "소스 추가 → Google Drive"로 연결 → SOHO 내용 질문해 인용 응답 확인. (월초마다 새 달 Doc 추가.)
-- **B2 · M2 위젯 폰 확인**: **검색(CORS) 확인 완료**(2026-07-06 폰 실측 — "Sepsis guideline"
-  8건 표시). 남은 것: Fine-grained PAT(이 저장소 Actions read/write 한정) 발급·입력 →
-  직접 지정 1건 클릭 실행 확인.
+- ~~B1 · M1 NotebookLM 연결~~ **완료(2026-07-06 저녁)**: 노트북 `Trend-review` 생성,
+  분석 Doc 소스 연결, 질문 1건에 인용 마커 달린 응답 확인(R2 완료).
+- ~~B2 · M2 위젯 폰 확인~~ **완료(2026-07-06 저녁)**: Fine-grained PAT 발급
+  (Actions R/W 한정, **No expiration** — PeterJ 위험 수용, 유출 시 revoke+재발급이 대응책)
+  → 폰 브라우저 2개(삼성인터넷·크롬) 등록, 태블릿은 추후. 위젯 클릭 →
+  on-demand run `28788944742` dispatch 실증(R1 완료).
 - **B3 · M3 샘플 승인**: ~~1차 시청 완료~~ → **보류**(품질 미달, P1로 개선 후 재도전).
   개선판 재생성 때마다 시청 → 만족 시에만 Variables `ENABLE_VIDEO=true`. 승인은 사람 판단 게이트.
 - **B4 · M4 관찰**: 이상 없으면 7일 무개입 관찰.
-- **B5 · NotebookLM 자동 등록 셋업(R3 잔여)**: ① R2에서 만든 노트북의 ID를 Variables
-  `NOTEBOOKLM_NOTEBOOK_ID`로 등록(노트북 URL의 마지막 경로 조각) ② 데스크탑에서
-  `pipx install "notebooklm-py[browser]"` → `notebooklm login`(구글 로그인) → 저장된 인증
-  상태 JSON 내용을 Secret `NOTEBOOKLM_AUTH_STATE`로 등록 ③ `notebooklm-sync.yml`을
-  workflow_dispatch로 1회 실행해 소스 등록 실동작 검증(비공식 라이브러리라 첫 검증 필수 —
-  실패해도 카톡 리마인더 폴백이 동작하는지 함께 확인). 미설정 동안은 매월 1일 리마인더만 옴.
+- ~~B5 · NotebookLM 자동 등록 셋업(R3 잔여)~~ **셋업 완료(2026-07-06 저녁, 데스크탑)**:
+  notebooklm-py 설치·`notebooklm login` 성공(Windows, Python 3.12.10 신규 설치·
+  playwright chromium 별도 다운로드 필요했음) → Secret `NOTEBOOKLM_AUTH_STATE` +
+  Variables `NOTEBOOKLM_NOTEBOOK_ID` 등록. **잔여(세션 몫)**: 전문 Doc은 07-07 첫
+  데일리가 생성하므로, 데일리 후 `notebooklm-sync.yml` dispatch로 등록 실검증(2개 Doc
+  필수 조건) — A3 관찰과 함께 보고.
 
 ### 주의 (자동 세션·사람 공통)
 - §3 확정 결정 되묻지 말 것. §4 데일리 코어 무영향 유지. 대시보드/카톡 포맷 변경 시 push 전 /preview.
