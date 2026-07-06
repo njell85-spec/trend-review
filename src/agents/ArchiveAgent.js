@@ -26,11 +26,17 @@ export const monthOf = (d) => d.slice(0, 7);
 export const pdfFileName = ({ date, pmid, title }) =>
   `${date}_${pmid}_${String(title).replace(/[\\/:*?"<>|]/g, '-').slice(0, 80)}.pdf`;
 
+// dedup(upsertEntry)·PDF 키(pdfFiles)·파일명에 쓰는 PMID. 수집기가 채운 paper.pmid가
+// 권위값이며, LLM이 되돌려준 최상위 analysis.pmid는 빈 문자열('')일 수 있어 뒤에 둔다
+// (?? 는 빈 문자열을 통과시켜 폴백을 막으므로 || 사용 — 빈 pmid는 같은 날 여러 항목의
+// dedup 키를 ''로 충돌시켜 아카이브 유실·OA PDF 오탐 스킵을 유발한다).
+export const entryPmidOf = (a) => String(a?.paper?.pmid || a?.pmid || '');
+
 export function toArchiveEntry(a, { pdfLink, todayKST }) {
   const p = a.paper ?? {};
   return {
     date: todayKST,
-    pmid: a.pmid ?? p.pmid,
+    pmid: entryPmidOf(a),
     title: p.title,
     title_ko: a.title_ko,
     journal: p.journal,
@@ -84,7 +90,7 @@ export class ArchiveAgent {
     // 당일 실행에서만 추가되므로, 여기서 유실되면 그 날짜는 영구 결번이 된다.
     // 재실행 시 이전 실행이 확보한 pdfLink는 보존한다(덮어쓰기로 링크 유실 방지).
     // (부분 실패가 데이터를 망치지 않도록: 전역 체크리스트 ④)
-    const entryPmid = analysis.pmid ?? analysis.paper?.pmid;
+    const entryPmid = entryPmidOf(analysis);
     const prevLink = state.entries.find((e) => e.date === todayKST && e.pmid === entryPmid)?.pdfLink ?? null;
     state.entries = upsertEntry(state.entries, toArchiveEntry(analysis, { pdfLink: prevLink, todayKST }));
     await this._saveArchive(state);
@@ -187,7 +193,7 @@ export class ArchiveAgent {
   /** Unpaywall url_for_pdf → EuropePMC 렌더 순서로 OA PDF 시도. 이미 올린 pmid는 스킵(재실행 안전). */
   async _uploadPdf(drive, state, analysis, todayKST, folderId) {
     const p = analysis.paper ?? {};
-    const pmid = analysis.pmid ?? p.pmid;
+    const pmid = entryPmidOf(analysis);
     if (state.driveState.pdfFiles[pmid]) {
       return `https://drive.google.com/file/d/${state.driveState.pdfFiles[pmid]}/view`;
     }
