@@ -39,6 +39,11 @@ jobs:
       - name: Install Playwright chromium
         if: ${{ vars.ENABLE_VIDEO == 'true' }}
         run: npm i --no-save playwright && npx playwright install chromium --with-deps
+      # ffmpeg/ffprobe — ubuntu-latest 이미지에 기본 포함 아님(실측: video-sample
+      # run 28770767478 spawn ffprobe ENOENT). chromium과 동일 게이트.
+      - name: Install ffmpeg
+        if: ${{ vars.ENABLE_VIDEO == 'true' }}
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
 
       # 스펙 정합 게이트 — REPORT_SPEC 위반(채널 드리프트·옛 표현·상태파일
       # gitignore 회귀)이 있으면 파이프라인을 돌리기 전에 중단한다.

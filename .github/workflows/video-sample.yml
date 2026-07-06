@@ -37,6 +37,11 @@ jobs:
       - name: Install Playwright chromium
         run: npm i --no-save playwright && npx playwright install chromium --with-deps
 
+      # ffmpeg/ffprobe — ubuntu-latest 러너 이미지에 기본 포함이 아님(실측: run 28770767478
+      # 에서 spawn ffprobe ENOENT). videoRender가 PATH의 ffmpeg·ffprobe를 사용한다.
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
       # 대본 생성 LLM 경로 — 데일리와 동일(구독 CLI 우선, API 폴백)
       - name: Install Claude CLI
         run: npm install -g @anthropic-ai/claude-code
@@ -60,8 +65,11 @@ jobs:
         run: |
           { echo '## 샘플 산출물'; echo '```'; ls -R output/video output/cards 2>/dev/null || echo '(없음 — 로그 확인)'; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
-      # 폰에서 워크플로우 페이지 → Artifacts 에서 zip 다운로드 → 시청
+      # 폰에서 워크플로우 페이지 → Artifacts 에서 zip 다운로드 → 시청.
+      # if: always() — 일부만 성공해도(예: 영상 실패·카드 성공) 산출물은 받아본다
+      # (실측: run 28770767478에서 카드 5장이 생성됐지만 잡 실패로 업로드가 스킵됨).
       - name: Upload samples
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: video-samples-${{ github.run_number }}
