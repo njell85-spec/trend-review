@@ -82,6 +82,8 @@ jobs:
           GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
           # 영상 데일리 편입 스위치 — 샘플 승인(§4-F) 후 Variables에서 true로
           ENABLE_VIDEO:           ${{ vars.ENABLE_VIDEO }}
+          # 발신 언어 — 미설정 시 en(영어 단일). 한국어 확장은 Variables에 en,ko 설정만으로.
+          VIDEO_LANGS:            ${{ vars.VIDEO_LANGS }}
           GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
           GITHUB_OWNER:      ${{ github.repository_owner }}
           GITHUB_REPO:       ${{ github.event.repository.name }}

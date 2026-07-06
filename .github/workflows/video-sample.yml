@@ -1,0 +1,73 @@
+# 영상·카드뉴스 샘플 생성 (승인 게이트용, 업로드 없음 — REPORT_SPEC §4-F)
+#
+# scripts/video-sample.mjs를 러너에서 돌려 산출물을 Actions 아티팩트로 올린다.
+# 이유: 로컬 실행은 playwright·ffmpeg·TTS 키가 데스크탑에 필요하지만, 이 워크플로우면
+# PeterJ가 **폰에서도** 실행→다운로드→시청→피드백 루프를 돌릴 수 있다(승인 게이트의
+# 모바일화). 전제: output/analysis_archive.json에 항목 존재(Phase 2 첫 가동 이후).
+name: Video Sample (승인 게이트)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-chromium-${{ runner.os }}
+
+      - name: Install Playwright chromium
+        run: npm i --no-save playwright && npx playwright install chromium --with-deps
+
+      # 대본 생성 LLM 경로 — 데일리와 동일(구독 CLI 우선, API 폴백)
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Trust workspace for Claude CLI
+        run: |
+          node -e "const fs=require('fs'),os=require('os'),path=require('path');const p=path.join(os.homedir(),'.claude.json');let j={};try{j=JSON.parse(fs.readFileSync(p,'utf8'))}catch{};j.projects=j.projects||{};const ws=process.env.GITHUB_WORKSPACE;j.projects[ws]=Object.assign({},j.projects[ws],{hasTrustDialogAccepted:true});fs.writeFileSync(p,JSON.stringify(j,null,2));console.log('trusted:',ws)"
+
+      - name: Generate samples (no upload)
+        run: node scripts/video-sample.mjs
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_TTS_API_KEY:      ${{ secrets.GOOGLE_TTS_API_KEY }}
+          VIDEO_LANGS:             ${{ vars.VIDEO_LANGS }}
+          GITHUB_OWNER:            ${{ github.repository_owner }}
+          GITHUB_REPO:             ${{ github.event.repository.name }}
+
+      - name: Job summary (산출물 목록)
+        if: always()
+        run: |
+          { echo '## 샘플 산출물'; echo '```'; ls -R output/video output/cards 2>/dev/null || echo '(없음 — 로그 확인)'; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      # 폰에서 워크플로우 페이지 → Artifacts 에서 zip 다운로드 → 시청
+      - name: Upload samples
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-samples-${{ github.run_number }}
+          path: |
+            output/video/**/video.mp4
+            output/video/**/subs.srt
+            output/cards/**/*.png
+          retention-days: 7
+          if-no-files-found: error
