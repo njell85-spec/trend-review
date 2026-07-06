@@ -123,12 +123,12 @@ export class KakaoNotifier {
   }
 
   // ── 나챗방 텍스트 메모 전송 (공통) ───────────────────────────────────────────
-  async _postMemo(text, url) {
+  async _postMemo(text, url, buttonTitle = '📊 대시보드 열기') {
     const templateObject = {
       object_type: 'text',
       text,
       link: { web_url: url, mobile_web_url: url },
-      button_title: '📊 대시보드 열기',
+      button_title: buttonTitle,
     };
     const accessToken = await this._accessToken();
     const res = await fetch(KAPI_MEMO, {
@@ -172,12 +172,12 @@ export class KakaoNotifier {
   }
 
   // ── 발송 (범용 공지 — NotebookLM 리마인더 등) ─────────────────────────────────
-  async sendNotice({ text, url }) {
+  async sendNotice({ text, url, buttonTitle }) {
     if (!this.isConfigured) {
       this.logger.info('Kakao 미설정 — 공지 발송 생략');
       return { sent: false, reason: 'not-configured' };
     }
-    await this._postMemo(text, url || 'https://njell85-spec.github.io/trend-review/');
+    await this._postMemo(text, url || 'https://njell85-spec.github.io/trend-review/', buttonTitle);
     await this._notifyRotation();
     return { sent: true };
   }

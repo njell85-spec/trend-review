@@ -24,10 +24,11 @@ async def main() -> None:
         ds = json.load(fp).get("driveState", {})
     doc_ids = [ds.get("docIds", {}).get(month), ds.get("fulltextDocIds", {}).get(month)]
     urls = [f"https://docs.google.com/document/d/{i}/edit" for i in doc_ids if i]
-    if not urls:
-        # exit 1 → 워크플로우가 카톡 리마인더 폴백 실행. 여기서 조용히 성공하면
-        # (그달 데일리 미실행·상태 커밋 지연 시) 그 달 등록이 통째로 누락된다.
-        print(f"{month} Doc 없음 — 등록 불가(데일리 미실행/커밋 지연 가능) → 리마인더 폴백")
+    if len(urls) < 2:
+        # 분석·전문 Doc 둘 다 있어야 성공. 부족하면 exit 1 → 카톡 리마인더 폴백.
+        # 여기서 조용히 성공하면(그달 데일리 미실행·상태 커밋 지연·전문 Doc 미생성)
+        # cron이 월 1회뿐이라 그 달 등록이 통째로/부분 누락된다.
+        print(f"{month} Doc 부족({len(urls)}/2) — 데일리 지연/미생성 가능 → 리마인더 폴백")
         sys.exit(1)
     client = await NotebookLMClient.from_storage(os.environ.get("NOTEBOOKLM_STORAGE"))
     for url in urls:

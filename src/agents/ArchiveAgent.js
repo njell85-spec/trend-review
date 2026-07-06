@@ -154,13 +154,17 @@ export class ArchiveAgent {
         fields: 'files(id)',
       });
       docId = found.data.files?.[0]?.id ?? null;
+      // 복구한 docId는 즉시 상태에 기록 — 무추가 조기 반환(early return) 경로에서도
+      // 저장되도록 (매일 이름 검색 반복 + 검색 일시 실패 시 중복 Doc 생성 방지)
+      if (docId) state.driveState.fulltextDocIds[month] = docId;
     }
 
     let body = '';
     if (docId) {
       const cur = await drive.files.export(
         { fileId: docId, mimeType: 'text/plain' }, { responseType: 'text' });
-      body = String(cur.data ?? '');
+      // Docs export는 UTF-8 BOM을 붙인다 — 그대로 재업로드하면 매일 1개씩 누적됨
+      body = String(cur.data ?? '').replace(/^\uFEFF+/, '');
       // 데이터 보호 가드: export가 기록 길이보다 크게 짧으면(빈/절단 응답) 이번 실행을
       // 중단한다 — 그대로 update하면 Doc이 유일 저장소인 수집 본문이 통째로 유실된다
       // (전역 체크리스트 ④). 다음 실행에서 재시도.
@@ -174,6 +178,16 @@ export class ArchiveAgent {
 
     let appended = 0;
     for (const e of targets) {
+      // Drive측 멱등성: 상태(fulltextDone) 커밋이 유실돼도 Doc 안의 섹션 헤더로 중복 감지
+      // (전문 Doc은 유일 저장소인데 append 방식이라, 이 마커가 없으면 재실행마다 중복 누적)
+      const marker = `[${e.date}] PMID ${e.pmid} —`;
+      if (body.includes(marker)) { done.add(e.pmid); continue; }
+      // export 상한(10MB) 보호 — 초과 접근 시 이후 append 중단(미처리분은 undone 유지,
+      // 경고로 가시화. 조용한 유실 금지 — 전역 지침 "실패·건너뜀 숨기지 않기")
+      if (body.length > 8_000_000) {
+        this.logger.warn(`전문 Doc ${month}이 8MB 초과 — 이후 항목 append 보류(PMID ${e.pmid}~)`);
+        break;
+      }
       const webTexts = e.fullText ? [] : await fetchRefTexts(e.dossier, {});
       const section = fulltextSectionText(e, webTexts);
       // 레퍼런스가 있었는데 전부 실패(일시 오류 가능)면 done 유보 — 다음 실행에서 재시도.
