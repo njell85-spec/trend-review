@@ -135,6 +135,10 @@
   (`ChartRenderer`), 수치 불충분 시 차트 생략. **논문 원문 그림·표 이미지 미사용.**
 - **업로드는 `privacyStatus: 'private'` 고정**(공개 전환은 API 심사 후 별도 결정, spec-lint 강제).
   제목·설명에 PubMed·DOI·대시보드 링크. 채널 = 전용 브랜드 채널.
+- **레퍼런스 전 채널 병기(PeterJ 확정 2026-07-06)**: 웹 리서치는 저명·공식 사이트 우선(4-B)이고,
+  분석에 쓴 참조는 **링크째** 대시보드·분석 Doc·전문 Doc뿐 아니라 **영상 설명·마지막 슬라이드·
+  카드뉴스 마지막 장에도 표기**해 어느 산출물에서든 원 출처로 들어가 확인할 수 있게 한다.
+  (영상·카드 반영은 R5 품질 개선에서 구현 — 현재는 PubMed 링크만 표기됨.)
 - 모듈: `src/agents/VideoAgent.js` + `videoScript`·`videoRender`·`tts`·`ChartRenderer`.
   편별 독립 소프트 실패. 상태 `output/video_log.json`(중복 업로드 방지, gitignore 예외 필수).
 - **활성 스위치**: Variables `ENABLE_VIDEO=true` — 샘플 승인(모바일 시청, /preview 원칙) 전에는

@@ -134,6 +134,8 @@ b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 
 - **품질 레버 노트(2026-07-06 확인)**: 현재 대본 생성 입력은 리포트 필드(PICO·keyFindings 등)만
   — `buildScriptMessages()`가 아카이브 항목의 fullText·dossier를 안 씀. R5에서 이를 대본
   프롬프트의 **추가 컨텍스트**로 넣으면 내용 풍부화 가능("새 수치 생성 금지" 규칙은 그대로).
+- **R5 필수 요건(PeterJ 2026-07-06)**: 레퍼런스 전 채널 병기(REPORT_SPEC §4-F) — 영상 설명·
+  마지막 슬라이드·카드 마지막 장에 참조 링크(references) 표기 구현.
 - **작업 성격: 템플릿·렌더링 코드 개선**(§11 지침 안에서 가능) — 대상 파일:
   `src/utils/videoRender.js`(슬라이드 HTML/CSS 템플릿·ffmpeg 자막 번인 스타일),
   `src/utils/cardNews.js`(카드 레이아웃), `src/utils/videoScript.js`(대본 생성 프롬프트의
