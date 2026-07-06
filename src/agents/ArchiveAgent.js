@@ -14,6 +14,8 @@ import path from 'path';
 import { Logger } from '../utils/Logger.js';
 import { getGoogleAuth } from '../utils/googleAuth.js';
 import { buildMonthDocHtml } from '../utils/docBuilder.js';
+import { fulltextDocName, fulltextSectionText } from '../utils/fulltextDoc.js';
+import { fetchRefTexts } from '../utils/webRefText.js';
 
 // 상태 파일 지속: 로컬에 쓰면 워크플로우의 "Commit daily state" 스텝이 git으로 커밋한다.
 // (contents API 커밋은 그 스텝의 push와 non-fast-forward 충돌을 일으키므로 쓰지 않는다)
@@ -119,7 +121,80 @@ export class ArchiveAgent {
       docUpdated = false;
       this.logger.warn(`리빙 Doc 갱신 실패(항목은 저장됨 — 다음 실행에서 재생성): ${e.message}`);
     }
-    return { ok: true, pdf: Boolean(pdfLink), docUpdated };
+
+    // 전문 Doc(§4-E b′·c) — append-only, 소프트 실패 (실패해도 fulltextDone 미기록이라 재시도됨)
+    let fulltextUpdated = false;
+    try {
+      fulltextUpdated = await this._appendFulltextDoc(drive, state, month, folderId);
+      await this._saveArchive(state); // fulltextDocId·fulltextDone 반영
+    } catch (e) {
+      this.logger.warn(`전문 Doc 갱신 실패(다음 실행에서 재시도): ${e.message}`);
+    }
+    return { ok: true, pdf: Boolean(pdfLink), docUpdated, fulltextUpdated };
+  }
+
+  /**
+   * 월별 전문 Doc(plain text) append — pmid당 1회(fulltextDone). OA는 entry.fullText,
+   * 페이월은 dossier 웹 레퍼런스 본문 수집(fetchRefTexts). 본문은 Drive Doc으로만
+   * 보낸다(공개 repo 커밋 금지 — HANDOFF §3 비공개층 한정 수집). drive.file 스코프로
+   * 충분: 앱 생성 Doc의 files.export(text/plain) → 덧붙임 → files.update(text/plain).
+   */
+  async _appendFulltextDoc(drive, state, month, folderId) {
+    const done = new Set(state.driveState.fulltextDone[month] ?? []);
+    const targets = state.entries.filter(
+      (e) => monthOf(e.date) === month && e.pmid && !done.has(e.pmid));
+    if (!targets.length) return false;
+
+    let docId = state.driveState.fulltextDocIds[month] ?? null;
+    if (!docId) {
+      // 상태 유실(커밋 실패) 대비: 같은 이름 Doc 재사용 (중복 생성 방지)
+      const name = fulltextDocName(month);
+      const found = await drive.files.list({
+        q: `name='${name.replace(/'/g, "\\'")}' and mimeType='application/vnd.google-apps.document' and '${folderId}' in parents and trashed=false`,
+        fields: 'files(id)',
+      });
+      docId = found.data.files?.[0]?.id ?? null;
+    }
+
+    let body = '';
+    if (docId) {
+      const cur = await drive.files.export(
+        { fileId: docId, mimeType: 'text/plain' }, { responseType: 'text' });
+      body = String(cur.data ?? '');
+    } else {
+      body = `${fulltextDocName(month)}\n개인 연구용 비공개 아카이브 — 본문·권위 레퍼런스 수집(사적 이용 복제).`;
+    }
+
+    let appended = 0;
+    for (const e of targets) {
+      const webTexts = e.fullText ? [] : await fetchRefTexts(e.dossier, {});
+      const section = fulltextSectionText(e, webTexts);
+      done.add(e.pmid); // 본문 없음(초록만·레퍼런스 실패)도 '처리됨' — 매일 재fetch 방지
+      if (!section) continue;
+      body += section;
+      appended += 1;
+    }
+    state.driveState.fulltextDone[month] = [...done];
+    if (!appended && docId) return false; // 새로 넣을 게 없으면 업로드 생략
+
+    const media = { mimeType: 'text/plain', body: Readable.from(Buffer.from(body, 'utf8')) };
+    if (docId) {
+      await drive.files.update({ fileId: docId, media });
+    } else {
+      const created = await drive.files.create({
+        requestBody: {
+          name: fulltextDocName(month),
+          mimeType: 'application/vnd.google-apps.document',
+          parents: [folderId],
+        },
+        media,
+        fields: 'id',
+      });
+      docId = created.data.id;
+    }
+    state.driveState.fulltextDocIds[month] = docId;
+    this.logger.info(`전문 Doc 갱신: ${month} (+${appended}편, 총 ${(body.length / 1024).toFixed(0)}KB)`);
+    return true;
   }
 
   async _loadArchive() {
@@ -127,10 +202,16 @@ export class ArchiveAgent {
       const j = JSON.parse(await readFile(ARCHIVE_PATH, 'utf8'));
       return {
         entries: j.entries ?? [],
-        driveState: { docIds: {}, folderIds: {}, pdfFiles: {}, ...(j.driveState ?? {}) },
+        driveState: {
+          docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {},
+          ...(j.driveState ?? {}),
+        },
       };
     } catch {
-      return { entries: [], driveState: { docIds: {}, folderIds: {}, pdfFiles: {} } };
+      return {
+        entries: [],
+        driveState: { docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {} },
+      };
     }
   }
 
