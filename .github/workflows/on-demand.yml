@@ -50,9 +50,13 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      # inputs 는 env 로만 전달 — run 에 ${{ }} 직접 보간 시 셸 인젝션 가능(actions:write
+      # 보유자가 임의 명령 실행). PAT 소지자는 신뢰 대상이지만 심층 방어로 차단한다.
       - name: Run on-demand analysis
-        run: node scripts/on-demand.mjs "${{ inputs.target }}" "${{ inputs.kind }}"
+        run: node scripts/on-demand.mjs "$OD_TARGET" "$OD_KIND"
         env:
+          OD_TARGET: ${{ inputs.target }}
+          OD_KIND:   ${{ inputs.kind }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
           KAKAO_REST_API_KEY:  ${{ secrets.KAKAO_REST_API_KEY }}

@@ -148,7 +148,7 @@ if (process.env.ENABLE_VIDEO === 'true') {
     const r = await new VideoAgent().run({ analysis: papers[0], todayKST, pagesUrl });
     const okCnt = r.videos.filter((v) => v.videoId).length;
     videoStatus = `${okCnt}/${r.videos.length} 업로드`;
-    if (okCnt < 4) {
+    if (okCnt < r.videos.length) {
       const failed = r.videos.filter((v) => v.error).map((v) => `${v.form}/${v.lang}`).join(', ');
       console.log(`::warning::영상 일부 실패 — ${failed}`);
     }

@@ -37,24 +37,40 @@ export class VideoAgent {
 
   /** upload=false면 파일 생성까지만 (샘플 승인 게이트용 — scripts/video-sample.mjs) */
   async run({ analysis, todayKST, pagesUrl, upload = true }) {
+    // 재실행 안전: 이미 업로드된 편은 제작(LLM·TTS·ffmpeg) 전에 건너뛴다 —
+    // 업로드 직전 체크만으로는 재실행마다 TTS 쿼터·LLM 호출을 다시 지출한다.
+    const pmid = analysis.pmid ?? analysis.paper?.pmid;
+    const log = upload ? await this._loadLog() : {};
+    const done = [];
+    const pending = [];
+    for (const { form, orientation } of FORMS) {
+      for (const lang of LANGS) {
+        const key = `${pmid}_${form}_${lang}`;
+        if (upload && log[key]) done.push({ form, lang, videoId: log[key] });
+        else pending.push({ form, lang, orientation });
+      }
+    }
+    if (!pending.length) {
+      this.logger.info(`전 편 이미 업로드됨(재실행 안전): ${done.map((d) => `${d.form}/${d.lang}`).join(', ')}`);
+      return { ok: true, videos: done, cards: [] };
+    }
+
     const llm = new LLMClient({});
     const raw = await llm.callWithTool(buildScriptMessages(analysis), VIDEO_SCRIPT_TOOL, { maxTokens: 8192 });
     const scripts = validateScripts(raw, LANGS);
     const enriched = { ...analysis, chartData: scripts.chartData };
 
-    const results = [];
-    for (const { form, orientation } of FORMS) {
-      for (const lang of LANGS) {
-        try {
-          const file = await this._produce({ enriched, script: scripts[form][lang], form, lang, orientation, todayKST });
-          const videoId = upload
-            ? await this._upload({ file, analysis: enriched, form, lang, todayKST, pagesUrl })
-            : null;
-          results.push({ form, lang, videoId, file });
-        } catch (e) {
-          this.logger.warn(`${form}/${lang} 실패(계속): ${e.message}`);
-          results.push({ form, lang, error: e.message });
-        }
+    const results = [...done];
+    for (const { form, lang, orientation } of pending) {
+      try {
+        const file = await this._produce({ enriched, script: scripts[form][lang], form, lang, orientation, todayKST });
+        const videoId = upload
+          ? await this._upload({ file, analysis: enriched, form, lang, todayKST, pagesUrl })
+          : null;
+        results.push({ form, lang, videoId, file });
+      } catch (e) {
+        this.logger.warn(`${form}/${lang} 실패(계속): ${e.message}`);
+        results.push({ form, lang, error: e.message });
       }
     }
 

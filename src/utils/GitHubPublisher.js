@@ -285,7 +285,10 @@ export class GitHubPublisher {
    * (페이지 소스·저장소에 토큰 없음). 스타일은 증분 패치 호환을 위해 전부 인라인.
    */
   _onDemandWidget() {
-    return `<!-- ONDEMAND_WIDGET -->
+    // 버전 마커: 배포된 index.html은 증분 패치라, 버전이 오르면 _ensureOnDemandWidget이
+    // 구버전 블록을 통째로 교체한다 (v 없는 최초 배포 마커도 매치). 위젯 코드를 고치면
+    // 반드시 버전을 올릴 것 — 안 올리면 배포 페이지에 영원히 반영되지 않는다.
+    return `<!-- ONDEMAND_WIDGET v2 -->
 <details style="max-width:960px;margin:14px auto;padding:0 16px">
   <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 On-demand 리뷰 — 논문·가이드라인 검색</summary>
   <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
@@ -326,7 +329,7 @@ export class GitHubPublisher {
     list.innerHTML='';
     if(!q){msg.textContent='검색어를 입력하세요.';return;}
     msg.textContent='PubMed 검색 중…';
-    fetch(EUTILS+'/esearch.fcgi?db=pubmed&retmode=json&sort=date&retmax=8&term='+encodeURIComponent(q))
+    fetch(EUTILS+'/esearch.fcgi?db=pubmed&retmode=json&retmax=8&term='+encodeURIComponent(q))
       .then(function(r){return r.json()})
       .then(function(j){
         var ids=(j.esearchresult&&j.esearchresult.idlist)||[];
@@ -357,6 +360,7 @@ export class GitHubPublisher {
     var v=prompt('PMID 또는 DOI 직접 입력 (취소하면 토큰만 설정):');
     if(v===null){pat(true);return;}
     v=v.trim(); if(!v)return;
+    if(!/^\\d{5,9}$/.test(v)&&!/^10\\.\\S+\\/\\S+/.test(v)){msg.textContent='✖ PMID(숫자) 또는 DOI(10.…/…) 형식만 지원합니다.';return;}
     var kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
     dispatch(v,kind,msg);
   });
@@ -365,10 +369,19 @@ export class GitHubPublisher {
 <!-- /ONDEMAND_WIDGET -->`;
   }
 
-  /** 배포된 페이지에 위젯이 없으면 주입(멱등) — 증분 패치 경로에서도 자가 치유 */
+  /**
+   * 배포된 페이지에 위젯을 보장(멱등) — 증분 패치 경로에서도 자가 치유.
+   * 현재 버전이 이미 있으면 그대로, 구버전(v 없는 최초 마커 포함)이면 블록 교체,
+   * 없으면 주입. "없을 때만 주입"이면 위젯 수정이 배포 페이지에 영원히 안 실린다.
+   */
   _ensureOnDemandWidget(html) {
-    if (html.includes('<!-- ONDEMAND_WIDGET -->')) return html;
-    return html.replace('<!-- ARCHIVE_START -->', `${this._onDemandWidget()}\n<!-- ARCHIVE_START -->`);
+    const widget = this._onDemandWidget();
+    const currentMarker = widget.match(/<!-- ONDEMAND_WIDGET v\d+ -->/)[0];
+    if (html.includes(currentMarker)) return html;
+    const block = /<!-- ONDEMAND_WIDGET(?: v\d+)? -->[\s\S]*?<!-- \/ONDEMAND_WIDGET -->/;
+    // 치환은 함수로 — 위젯 JS에 $& $' 같은 특수 치환 패턴이 생겨도 오작동하지 않게
+    if (block.test(html)) return html.replace(block, () => widget);
+    return html.replace('<!-- ARCHIVE_START -->', () => `${widget}\n<!-- ARCHIVE_START -->`);
   }
 
   // 하위호환 별칭 (legacy 호출부)

@@ -44,14 +44,17 @@ repo → Settings → Secrets and variables → Actions:
 | `GOOGLE_REFRESH_TOKEN` | 3번 출력값 |
 | `GOOGLE_TTS_API_KEY` | 4번 키 |
 
-Variables 탭에 (선택): `GOOGLE_DRIVE_FOLDER_ID` — 6-b에서 만든 폴더 ID.
+Variables `GOOGLE_DRIVE_FOLDER_ID`는 **등록하지 않습니다** — 폴더는 첫 실행 때 자동 생성(6-b 참고).
 
 ## 6. Drive 폴더 + YouTube 전용 채널 (10분)
 - a. https://youtube.com → 프로필 → "채널 만들기" → **브랜드 계정으로 새 채널** (영어 채널, 이름 예: `Trend Review EM/CCM`).
   발신물은 영어 단일 버전으로 시작(확정 07-06). 한국어 채널은 추후 필요 시 추가.
   ⚠️ 3번 인증 때 이미 로그인한 같은 Google 계정이어야 함. 채널만 새로 만들면 됨.
   (브랜드 채널에 올리려면 3번 승인 화면에서 해당 채널/계정을 선택했어야 함 — 채널을 먼저 만들고 3번을 다시 실행하는 순서도 무방)
-- b. https://drive.google.com → 새 폴더 `trend-review` 생성 → 폴더 열고 URL의 `folders/` 뒤 ID 복사 → Variables `GOOGLE_DRIVE_FOLDER_ID`로 등록.
+- b. Drive 폴더는 **만들지 않아도 됩니다** — 첫 실행 때 파이프라인이 내 드라이브 루트에
+  `trend-review` 폴더를 자동 생성합니다. (⚠️ Drive 웹에서 손으로 만든 폴더는 이 앱의
+  `drive.file` 스코프로 접근이 불가해, 그 ID를 `GOOGLE_DRIVE_FOLDER_ID`에 넣으면 무시되고
+  자동 생성 폴더로 폴백합니다. Variables `GOOGLE_DRIVE_FOLDER_ID`는 비워 두세요.)
 
 ## 6+. 수동 디깅용 Fine-grained PAT (5분, 선택이지만 권장)
 직접 지정 분석을 대시보드에서 바로 쓰려면:
