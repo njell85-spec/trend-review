@@ -65,7 +65,7 @@ export function recountStats(html) {
  * 올릴 것 — 안 올리면 증분 패치되는 배포 페이지에 영원히 반영되지 않는다.
  */
 export function curationBlock({ owner, repo }) {
-  return `<!-- CURATION_BLOCK v1 -->
+  return `<!-- CURATION_BLOCK v3 -->
 <script>
 (function(){
   var OWNER='${owner}', REPO='${repo}';
@@ -176,6 +176,18 @@ export function curationBlock({ owner, repo }) {
   }
   function addTableControls(){
     var table=document.querySelector('.arch-table table'); if(!table)return;
+    // 컬럼 2개 추가로 제목 컬럼이 눌려 세로로 길게 감기는 것 방지 —
+    // 제목에 최소 폭을 주고 넘치는 폭은 기존 가로 스크롤(.at-scroll)이 흡수한다.
+    // 폰 폭에서는 저널 컬럼을 숨겨 제목·자료화 상태가 스와이프 없이 보이게 한다
+    // (저널은 카드에 있고, 표의 목적은 스캔+큐레이션 — 태블릿 이상은 전 컬럼).
+    if(!document.getElementById('cur-style')){
+      var st=document.createElement('style'); st.id='cur-style';
+      st.textContent='.arch-table .c-title{min-width:170px}.arch-table .c-cur button{vertical-align:middle}'
+        +'@media(max-width:699px){.arch-table .c-jour,.arch-table thead th:nth-child(2){display:none}}'
+        // 넓은 화면: 저널 nowrap이 폭을 독점해 관리 컬럼이 잘리는 것 방지(줄바꿈 허용)
+        +'@media(min-width:700px){.arch-table .c-jour{white-space:normal;max-width:150px}}';
+      document.head.appendChild(st);
+    }
     var head=table.querySelector('thead tr');
     if(head&&!head.querySelector('.th-cur')){
       var thS=document.createElement('th'); thS.className='th-cur'; thS.textContent='\\uC790\\uB8CC\\uD654'; thS.style.textAlign='center';
