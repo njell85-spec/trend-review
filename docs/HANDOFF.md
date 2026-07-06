@@ -144,7 +144,10 @@ b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 
   **카드+표 양쪽 모두**로 확정(PeterJ 2026-07-06 밤). **본구현 완료 + 실렌더 미리보기
   승인 + 서브에이전트 리뷰 6건(C1 치명 포함) 반영 완료** — 계획: `docs/superpowers/
   plans/2026-07-06-r4-curation-buttons.md`, 스펙: REPORT_SPEC §4-G. 테스트 58건.
-  PeterJ "실제 포맷 보고 추가 수정사항 있으면 알려줄게" — 병합 후 실사용 피드백 대기.
+  **PR #35 병합 완료(2026-07-06 밤, PeterJ 직접 머지) + 라이브 배포 반영(CURATION_BLOCK
+  v4)**. 07-07 데일리가 병합 후 정상 실행(run success) — 새 `_applyCuration` 경로
+  통과에도 데일리 코어 회귀 0(불변식 유지 실증). PeterJ 실사용 피드백 대기 →
+  포맷 수정사항 나오면 반영. ※ 자료화 버튼 본격 사용은 R5(품질) 후 — 지금은 1~2건 확인만.
 
 ### P1 · 영상·카드 품질 개선 (승인 게이트 재도전) — 로드맵상 R5
 - **품질 레버 노트(2026-07-06 확인)**: 현재 대본 생성 입력은 리포트 필드(PICO·keyFindings 등)만
@@ -207,9 +210,15 @@ b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 
 - ~~B5 · NotebookLM 자동 등록 셋업(R3 잔여)~~ **셋업 완료(2026-07-06 저녁, 데스크탑)**:
   notebooklm-py 설치·`notebooklm login` 성공(Windows, Python 3.12.10 신규 설치·
   playwright chromium 별도 다운로드 필요했음) → Secret `NOTEBOOKLM_AUTH_STATE` +
-  Variables `NOTEBOOKLM_NOTEBOOK_ID` 등록. **잔여(세션 몫)**: 전문 Doc은 07-07 첫
-  데일리가 생성하므로, 데일리 후 `notebooklm-sync.yml` dispatch로 등록 실검증(2개 Doc
-  필수 조건) — A3 관찰과 함께 보고.
+  Variables `NOTEBOOKLM_NOTEBOOK_ID` 등록.
+  - **실검증 결과(2026-07-07 dispatch, run 28829294519)**: 자동 등록 **실패** —
+    `notebooklm-py` 인증 갱신 단계에서 `ValueError: Authentication expired or invalid`
+    (storage_state가 CI 헤드리스에서 만료/무효 판정, `notebooklm login` 재인증 요구).
+    **카톡 리마인더 폴백은 정상 작동**(분석 Doc·전문 Doc 2건 발송 확인) — 설계된
+    소프트 실패 안전망 성립. **미결(선택)**: 자동 등록 살리려면 auth state 재발급 또는
+    브라우저 프로필 동반 필요(비공식 라이브러리 한계, PeterJ 리스크 수용 항목).
+    **현 운영 모드 = 매월 1일 카톡 리마인더 → 폰에서 소스 2개 수동 추가(2클릭)**.
+    데일리 코어·아카이브에는 무영향(소프트 실패 격리 실증).
 
 ### 주의 (자동 세션·사람 공통)
 - §3 확정 결정 되묻지 말 것. §4 데일리 코어 무영향 유지. 대시보드/카톡 포맷 변경 시 push 전 /preview.
