@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { toArchiveEntry, upsertEntry, monthOf, pdfFileName } from '../src/agents/ArchiveAgent.js';
+import { toArchiveEntry, upsertEntry, monthOf, pdfFileName, entryPmidOf } from '../src/agents/ArchiveAgent.js';
 
 // FilterAnalyzerAgent 실산출 필드명 기준: evidenceSource(배지) · sources(출처, 웹보강은 '웹 — ' 접두)
 const analysis = {
@@ -36,6 +36,23 @@ test('페이월 + 웹보강 소스("웹 — " 접두)면 dossier가 생성된다
   assert.equal(e.dossier.length, 1);
   assert.equal(e.dossier[0].url, 'https://nejm.org/x');
   assert.equal(e.dossier[0].source, 'NEJM 공식'); // '웹 — ' 접두 제거
+});
+
+test('entryPmidOf — LLM이 되돌린 빈 pmid("")면 권위값 paper.pmid로 폴백한다', () => {
+  // 실측 회귀: PICO 툴 출력 data.pmid가 ''로 오면 a.pmid ?? p.pmid 는 ''를 통과시켜
+  // 아카이브 pmid가 빈 문자열이 됐다(같은 날 항목 dedup 키 충돌 → 유실).
+  assert.equal(entryPmidOf({ pmid: '', paper: { pmid: '41841715' } }), '41841715');
+  assert.equal(entryPmidOf({ pmid: '55', paper: {} }), '55'); // paper 없으면 최상위 사용
+  assert.equal(entryPmidOf({ paper: { pmid: '99' } }), '99');
+  assert.equal(entryPmidOf({}), '');
+});
+
+test('toArchiveEntry — 빈 최상위 pmid에도 항목 pmid는 paper.pmid로 채워진다', () => {
+  const e = toArchiveEntry(
+    { ...analysis, pmid: '', paper: { ...analysis.paper, pmid: '41841715' } },
+    { pdfLink: null, todayKST: '2026-07-06' },
+  );
+  assert.equal(e.pmid, '41841715');
 });
 
 test('upsertEntry — 같은 날짜+pmid는 교체(재실행 안전), 다른 건 추가', () => {
