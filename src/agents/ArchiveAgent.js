@@ -14,6 +14,8 @@ import path from 'path';
 import { Logger } from '../utils/Logger.js';
 import { getGoogleAuth } from '../utils/googleAuth.js';
 import { buildMonthDocHtml } from '../utils/docBuilder.js';
+import { fulltextDocName, fulltextSectionText } from '../utils/fulltextDoc.js';
+import { fetchRefTexts } from '../utils/webRefText.js';
 
 // 상태 파일 지속: 로컬에 쓰면 워크플로우의 "Commit daily state" 스텝이 git으로 커밋한다.
 // (contents API 커밋은 그 스텝의 push와 non-fast-forward 충돌을 일으키므로 쓰지 않는다)
@@ -119,7 +121,105 @@ export class ArchiveAgent {
       docUpdated = false;
       this.logger.warn(`리빙 Doc 갱신 실패(항목은 저장됨 — 다음 실행에서 재생성): ${e.message}`);
     }
-    return { ok: true, pdf: Boolean(pdfLink), docUpdated };
+
+    // 전문 Doc(§4-E b′·c) — append-only, 소프트 실패 (실패해도 fulltextDone 미기록이라 재시도됨)
+    let fulltextUpdated = false;
+    try {
+      fulltextUpdated = await this._appendFulltextDoc(drive, state, month, folderId);
+      await this._saveArchive(state); // fulltextDocId·fulltextDone 반영
+    } catch (e) {
+      this.logger.warn(`전문 Doc 갱신 실패(다음 실행에서 재시도): ${e.message}`);
+    }
+    return { ok: true, pdf: Boolean(pdfLink), docUpdated, fulltextUpdated };
+  }
+
+  /**
+   * 월별 전문 Doc(plain text) append — pmid당 1회(fulltextDone). OA는 entry.fullText,
+   * 페이월은 dossier 웹 레퍼런스 본문 수집(fetchRefTexts). 본문은 Drive Doc으로만
+   * 보낸다(공개 repo 커밋 금지 — HANDOFF §3 비공개층 한정 수집). drive.file 스코프로
+   * 충분: 앱 생성 Doc의 files.export(text/plain) → 덧붙임 → files.update(text/plain).
+   */
+  async _appendFulltextDoc(drive, state, month, folderId) {
+    const done = new Set(state.driveState.fulltextDone[month] ?? []);
+    const targets = state.entries.filter(
+      (e) => monthOf(e.date) === month && e.pmid && !done.has(e.pmid));
+    if (!targets.length) return false;
+
+    let docId = state.driveState.fulltextDocIds[month] ?? null;
+    if (!docId) {
+      // 상태 유실(커밋 실패) 대비: 같은 이름 Doc 재사용 (중복 생성 방지)
+      const name = fulltextDocName(month);
+      const found = await drive.files.list({
+        q: `name='${name.replace(/'/g, "\\'")}' and mimeType='application/vnd.google-apps.document' and '${folderId}' in parents and trashed=false`,
+        fields: 'files(id)',
+      });
+      docId = found.data.files?.[0]?.id ?? null;
+      // 복구한 docId는 즉시 상태에 기록 — 무추가 조기 반환(early return) 경로에서도
+      // 저장되도록 (매일 이름 검색 반복 + 검색 일시 실패 시 중복 Doc 생성 방지)
+      if (docId) state.driveState.fulltextDocIds[month] = docId;
+    }
+
+    let body = '';
+    if (docId) {
+      const cur = await drive.files.export(
+        { fileId: docId, mimeType: 'text/plain' }, { responseType: 'text' });
+      // Docs export는 UTF-8 BOM을 붙인다 — 그대로 재업로드하면 매일 1개씩 누적됨
+      body = String(cur.data ?? '').replace(/^\uFEFF+/, '');
+      // 데이터 보호 가드: export가 기록 길이보다 크게 짧으면(빈/절단 응답) 이번 실행을
+      // 중단한다 — 그대로 update하면 Doc이 유일 저장소인 수집 본문이 통째로 유실된다
+      // (전역 체크리스트 ④). 다음 실행에서 재시도.
+      const prevLen = state.driveState.fulltextLen[month] ?? 0;
+      if (body.length < prevLen * 0.8) {
+        throw new Error(`전문 Doc export 길이 이상(${body.length} < 기록 ${prevLen}의 80%) — append 중단`);
+      }
+    } else {
+      body = `${fulltextDocName(month)}\n개인 연구용 비공개 아카이브 — 본문·권위 레퍼런스 수집(사적 이용 복제).`;
+    }
+
+    let appended = 0;
+    for (const e of targets) {
+      // Drive측 멱등성: 상태(fulltextDone) 커밋이 유실돼도 Doc 안의 섹션 헤더로 중복 감지
+      // (전문 Doc은 유일 저장소인데 append 방식이라, 이 마커가 없으면 재실행마다 중복 누적)
+      const marker = `[${e.date}] PMID ${e.pmid} —`;
+      if (body.includes(marker)) { done.add(e.pmid); continue; }
+      // export 상한(10MB) 보호 — 초과 접근 시 이후 append 중단(미처리분은 undone 유지,
+      // 경고로 가시화. 조용한 유실 금지 — 전역 지침 "실패·건너뜀 숨기지 않기")
+      if (body.length > 8_000_000) {
+        this.logger.warn(`전문 Doc ${month}이 8MB 초과 — 이후 항목 append 보류(PMID ${e.pmid}~)`);
+        break;
+      }
+      const webTexts = e.fullText ? [] : await fetchRefTexts(e.dossier, {});
+      const section = fulltextSectionText(e, webTexts);
+      // 레퍼런스가 있었는데 전부 실패(일시 오류 가능)면 done 유보 — 다음 실행에서 재시도.
+      // 본문·레퍼런스 자체가 없는 항목(초록만)은 '처리됨'으로 마킹해 매일 재fetch 방지.
+      const refsAllFailed = !e.fullText && (e.dossier?.length ?? 0) > 0 && !webTexts.length;
+      if (!refsAllFailed) done.add(e.pmid);
+      if (!section) continue;
+      body += section;
+      appended += 1;
+    }
+    state.driveState.fulltextDone[month] = [...done];
+    if (!appended && docId) return false; // 새로 넣을 게 없으면 업로드 생략
+
+    const media = { mimeType: 'text/plain', body: Readable.from(Buffer.from(body, 'utf8')) };
+    if (docId) {
+      await drive.files.update({ fileId: docId, media });
+    } else {
+      const created = await drive.files.create({
+        requestBody: {
+          name: fulltextDocName(month),
+          mimeType: 'application/vnd.google-apps.document',
+          parents: [folderId],
+        },
+        media,
+        fields: 'id',
+      });
+      docId = created.data.id;
+    }
+    state.driveState.fulltextDocIds[month] = docId;
+    state.driveState.fulltextLen[month] = body.length; // 다음 실행의 export 이상 감지 기준
+    this.logger.info(`전문 Doc 갱신: ${month} (+${appended}편, 총 ${(body.length / 1024).toFixed(0)}KB)`);
+    return true;
   }
 
   async _loadArchive() {
@@ -127,10 +227,18 @@ export class ArchiveAgent {
       const j = JSON.parse(await readFile(ARCHIVE_PATH, 'utf8'));
       return {
         entries: j.entries ?? [],
-        driveState: { docIds: {}, folderIds: {}, pdfFiles: {}, ...(j.driveState ?? {}) },
+        driveState: {
+          docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {}, fulltextLen: {},
+          ...(j.driveState ?? {}),
+        },
       };
     } catch {
-      return { entries: [], driveState: { docIds: {}, folderIds: {}, pdfFiles: {} } };
+      return {
+        entries: [],
+        driveState: {
+          docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {}, fulltextLen: {},
+        },
+      };
     }
   }
 
@@ -194,7 +302,9 @@ export class ArchiveAgent {
   async _uploadPdf(drive, state, analysis, todayKST, folderId) {
     const p = analysis.paper ?? {};
     const pmid = entryPmidOf(analysis);
-    if (state.driveState.pdfFiles[pmid]) {
+    // 빈 pmid는 캐시 키로 쓰지 않는다 — pdfFiles['']가 서로 다른 논문 간에 공유되면
+    // 다른 논문의 PDF 링크가 오탐 반환된다 (레거시 빈 pmid 항목 방어)
+    if (pmid && state.driveState.pdfFiles[pmid]) {
       return `https://drive.google.com/file/d/${state.driveState.pdfFiles[pmid]}/view`;
     }
     // 상태 유실(커밋 실패) 대비: Drive에서 같은 파일명을 먼저 찾는다 (find-or-create)
@@ -204,7 +314,7 @@ export class ArchiveAgent {
       fields: 'files(id)',
     });
     if (existing.data.files?.length) {
-      state.driveState.pdfFiles[pmid] = existing.data.files[0].id;
+      if (pmid) state.driveState.pdfFiles[pmid] = existing.data.files[0].id;
       return `https://drive.google.com/file/d/${existing.data.files[0].id}/view`;
     }
     const url = await this._resolvePdfUrl(p);
@@ -229,7 +339,7 @@ export class ArchiveAgent {
       media: { mimeType: 'application/pdf', body: Readable.from(buf) },
       fields: 'id',
     });
-    state.driveState.pdfFiles[pmid] = file.data.id;
+    if (pmid) state.driveState.pdfFiles[pmid] = file.data.id;
     this.logger.info(`PDF 적재 완료 (PMID ${pmid}, ${(buf.length / 1024).toFixed(0)}KB)`);
     return `https://drive.google.com/file/d/${file.data.id}/view`;
   }
