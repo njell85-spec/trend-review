@@ -2,6 +2,11 @@
 # 비공식 notebooklm-py 사용(HANDOFF §3 — 소프트 실패, 데일리 코어 무영향, REPORT_SPEC §4-E).
 # PeterJ 셋업: Variables NOTEBOOKLM_NOTEBOOK_ID + Secret NOTEBOOKLM_AUTH_STATE
 # (데스크탑에서 `notebooklm login` 후 저장된 인증 상태 JSON — 첫 등록은 dispatch로 검증).
+# 전제(설계 가정): 새 달 Doc을 월초에 등록하면 이후 내용은 NotebookLM의 Drive 소스
+# 동기화로 채워진다(B1에서 실증). 동기화가 수동으로 확인되면 TARGET_MONTH를 전월로
+# 바꿔(완성본 등록) 한 줄로 전환한다. cron은 당일 06:30 KST 데일리가 새 달 Doc을
+# 만들고 커밋한 뒤(≈07:00)에 돌도록 09:00 KST — 데일리 실패 시 register가 exit 1
+# → 리마인더 폴백.
 name: NotebookLM Sync (월 1회)
 
 on:
@@ -36,7 +41,9 @@ jobs:
         run: |
           if [ -z "$NOTEBOOKLM_AUTH_STATE" ]; then echo "NOTEBOOKLM_AUTH_STATE 없음"; exit 1; fi
           printf '%s' "$NOTEBOOKLM_AUTH_STATE" > "$NOTEBOOKLM_STORAGE"
-          pip install --quiet notebooklm-py
+          # 버전 고정 — 비공식 패키지에 Google 인증 상태를 넘기므로 무검증 최신판 설치 금지
+          # (공급망·인터페이스 파손 방어). 업그레이드는 dispatch로 검증 후 수동 갱신.
+          pip install --quiet notebooklm-py==0.7.3
           python scripts/notebooklm-register.py
 
       # 리마인더 스크립트의 import 체인(KakaoNotifier→Logger, dates, fulltextDoc)은

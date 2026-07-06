@@ -161,6 +161,13 @@ export class ArchiveAgent {
       const cur = await drive.files.export(
         { fileId: docId, mimeType: 'text/plain' }, { responseType: 'text' });
       body = String(cur.data ?? '');
+      // 데이터 보호 가드: export가 기록 길이보다 크게 짧으면(빈/절단 응답) 이번 실행을
+      // 중단한다 — 그대로 update하면 Doc이 유일 저장소인 수집 본문이 통째로 유실된다
+      // (전역 체크리스트 ④). 다음 실행에서 재시도.
+      const prevLen = state.driveState.fulltextLen[month] ?? 0;
+      if (body.length < prevLen * 0.8) {
+        throw new Error(`전문 Doc export 길이 이상(${body.length} < 기록 ${prevLen}의 80%) — append 중단`);
+      }
     } else {
       body = `${fulltextDocName(month)}\n개인 연구용 비공개 아카이브 — 본문·권위 레퍼런스 수집(사적 이용 복제).`;
     }
@@ -196,6 +203,7 @@ export class ArchiveAgent {
       docId = created.data.id;
     }
     state.driveState.fulltextDocIds[month] = docId;
+    state.driveState.fulltextLen[month] = body.length; // 다음 실행의 export 이상 감지 기준
     this.logger.info(`전문 Doc 갱신: ${month} (+${appended}편, 총 ${(body.length / 1024).toFixed(0)}KB)`);
     return true;
   }
@@ -206,14 +214,16 @@ export class ArchiveAgent {
       return {
         entries: j.entries ?? [],
         driveState: {
-          docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {},
+          docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {}, fulltextLen: {},
           ...(j.driveState ?? {}),
         },
       };
     } catch {
       return {
         entries: [],
-        driveState: { docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {} },
+        driveState: {
+          docIds: {}, folderIds: {}, pdfFiles: {}, fulltextDocIds: {}, fulltextDone: {}, fulltextLen: {},
+        },
       };
     }
   }
@@ -278,7 +288,9 @@ export class ArchiveAgent {
   async _uploadPdf(drive, state, analysis, todayKST, folderId) {
     const p = analysis.paper ?? {};
     const pmid = entryPmidOf(analysis);
-    if (state.driveState.pdfFiles[pmid]) {
+    // 빈 pmid는 캐시 키로 쓰지 않는다 — pdfFiles['']가 서로 다른 논문 간에 공유되면
+    // 다른 논문의 PDF 링크가 오탐 반환된다 (레거시 빈 pmid 항목 방어)
+    if (pmid && state.driveState.pdfFiles[pmid]) {
       return `https://drive.google.com/file/d/${state.driveState.pdfFiles[pmid]}/view`;
     }
     // 상태 유실(커밋 실패) 대비: Drive에서 같은 파일명을 먼저 찾는다 (find-or-create)
@@ -288,7 +300,7 @@ export class ArchiveAgent {
       fields: 'files(id)',
     });
     if (existing.data.files?.length) {
-      state.driveState.pdfFiles[pmid] = existing.data.files[0].id;
+      if (pmid) state.driveState.pdfFiles[pmid] = existing.data.files[0].id;
       return `https://drive.google.com/file/d/${existing.data.files[0].id}/view`;
     }
     const url = await this._resolvePdfUrl(p);
@@ -313,7 +325,7 @@ export class ArchiveAgent {
       media: { mimeType: 'application/pdf', body: Readable.from(buf) },
       fields: 'id',
     });
-    state.driveState.pdfFiles[pmid] = file.data.id;
+    if (pmid) state.driveState.pdfFiles[pmid] = file.data.id;
     this.logger.info(`PDF 적재 완료 (PMID ${pmid}, ${(buf.length / 1024).toFixed(0)}KB)`);
     return `https://drive.google.com/file/d/${file.data.id}/view`;
   }

@@ -12,6 +12,7 @@
 import asyncio
 import json
 import os
+import sys
 
 
 async def main() -> None:
@@ -24,8 +25,10 @@ async def main() -> None:
     doc_ids = [ds.get("docIds", {}).get(month), ds.get("fulltextDocIds", {}).get(month)]
     urls = [f"https://docs.google.com/document/d/{i}/edit" for i in doc_ids if i]
     if not urls:
-        print(f"{month} Doc 없음 — 등록할 것 없음")
-        return
+        # exit 1 → 워크플로우가 카톡 리마인더 폴백 실행. 여기서 조용히 성공하면
+        # (그달 데일리 미실행·상태 커밋 지연 시) 그 달 등록이 통째로 누락된다.
+        print(f"{month} Doc 없음 — 등록 불가(데일리 미실행/커밋 지연 가능) → 리마인더 폴백")
+        sys.exit(1)
     client = await NotebookLMClient.from_storage(os.environ.get("NOTEBOOKLM_STORAGE"))
     for url in urls:
         await client.sources.add_url(nb_id, url, wait=True)
