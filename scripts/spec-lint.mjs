@@ -82,7 +82,7 @@ for (const [re, label] of [
 // 줄 단위 앵커 — 주석 처리(#!output/…)도 소실로 판정한다.
 // analysis_archive(리빙 Doc 재생성)·video_log(중복 업로드 방지)는 Phase 2/3 상태파일.
 const gi = read('.gitignore');
-for (const f of ['selected_papers', 'selected_guidelines', 'analysis_archive', 'video_log']) {
+for (const f of ['selected_papers', 'selected_guidelines', 'analysis_archive', 'video_log', 'curation_state']) {
   const re = new RegExp(String.raw`^!output/${f}\.json\s*$`, 'm');
   if (!re.test(gi)) errors.push(`.gitignore: 상태파일 예외 "!output/${f}.json" 소실/비활성 — 상태 지속 무력화`);
 }
@@ -126,6 +126,21 @@ if (!pubSrc.includes('ONDEMAND_WIDGET(?: v\\d+)?')) {
 }
 if (!/manual\s*\?\s*`\$\{dateStr\}-m-/.test(pubSrc)) {
   errors.push('src/utils/GitHubPublisher.js: 수동 지정 self section key(YYYY-MM-DD-m-<pmid>) 소실 — 같은 날 데일리 섹션 훼손 위험 (REPORT_SPEC §1-B)');
+}
+
+// ── 5e) 큐레이션 버튼(R4) 앵커 (REPORT_SPEC §4-G) ────────────────────────────
+// 블록 버전 마커·publish 주입·구버전 교체가 소실되면 버튼 수정이 배포 페이지에
+// 영원히 반영되지 않는다(위젯과 동일한 함정). 카드·표 동시 렌더의 단일 소스인
+// 상태 파일 fetch 도 함께 앵커링한다.
+const curSrc = read('src/utils/curation.js');
+if (!/<!-- CURATION_BLOCK v\d+ -->/.test(curSrc) || !curSrc.includes('CURATION_BLOCK(?: v\\d+)?')) {
+  errors.push('src/utils/curation.js: CURATION_BLOCK 버전 마커/구버전 교체 규칙 소실 (REPORT_SPEC §4-G)');
+}
+if (!curSrc.includes('curation_state.json?t=')) {
+  errors.push('src/utils/curation.js: 상태 파일 fetch(캐시버스트) 소실 — 카드·표 상태 단일 소스 계약 위반 (REPORT_SPEC §4-G)');
+}
+if (!pub.includes('_applyCuration(updated')) {
+  errors.push('src/utils/GitHubPublisher.js: publish 경로의 큐레이션 적용(_applyCuration) 소실 (REPORT_SPEC §4-G)');
 }
 
 // ── 6) (경고) 로그에 시크릿 보간 휴리스틱 ────────────────────────────────────

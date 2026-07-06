@@ -1,0 +1,65 @@
+# 대시보드 삭제 버튼(R4) — 섹션 숨김 기록 + index.html 패치 커밋 (REPORT_SPEC §4-G)
+#
+# 대시보드 CURATION_BLOCK이 PAT(workflow_dispatch)로 호출한다. 삭제는 표시 제거만 —
+# Drive Doc·아카이브·재선정 방지 목록 유지(HANDOFF §10-P2 경계).
+# 데일리 커밋과의 경합: 같은 concurrency 그룹을 daily-review.yml에 넣는 대신(데일리
+# 코어 무영향 불변식) push 실패 시 최신 main으로 리셋 후 멱등 재적용하는 재시도 루프.
+name: Curate Remove (대시보드 삭제)
+
+on:
+  workflow_dispatch:
+    inputs:
+      sectionKey:
+        description: '섹션 키 (YYYY-MM-DD 또는 YYYY-MM-DD-m-<pmid>)'
+        required: true
+        type: string
+      pmid:
+        description: '논문 PMID (누적 표 행 제거용)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: curation-commit
+  cancel-in-progress: false
+
+jobs:
+  remove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # curation.js·dates.js는 npm 의존 0 — npm ci 없이 바로 실행(레지스트리 장애 격리)
+
+      - name: Configure git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # inputs는 env 경유(셸 인젝션 심층 방어, on-demand.yml과 동일)
+      - name: Apply removal + commit (경합 재시도)
+        env:
+          CUR_SECTION_KEY: ${{ inputs.sectionKey }}
+          CUR_PMID:        ${{ inputs.pmid }}
+        run: |
+          for i in 1 2 3; do
+            node scripts/curate-remove.mjs
+            git add index.html output/curation_state.json
+            if git diff --staged --quiet; then echo "변경 없음(멱등) — 종료"; exit 0; fi
+            git commit -m "chore(curation): 대시보드 삭제 — $CUR_SECTION_KEY"
+            if git push; then echo "완료"; exit 0; fi
+            echo "push 경합 — 최신 main으로 재적용 ($i/3)"
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          echo "::error::3회 재시도 후에도 push 실패 (데일리와 지속 경합?)"
+          exit 1

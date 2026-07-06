@@ -15,6 +15,7 @@ output/*
 !output/selected_guidelines.json
 !output/analysis_archive.json
 !output/video_log.json
+!output/curation_state.json
 node_modules/
 *.log
 logs/

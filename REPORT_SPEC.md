@@ -145,6 +145,30 @@
   기본 비활성. 샘플 생성: `scripts/video-sample.mjs` (업로드 없음).
 - Secrets: `GOOGLE_TTS_API_KEY` (+ 4-E의 GOOGLE_* 공용). 쿼터: 업로드 2건 = 3,200/10,000 (언어 확장 시 4건 = 6,400).
 
+## 4-G. 대시보드 큐레이션 — 삭제·자료화 버튼 + 자료화 상태 (R4)
+
+운영 모드(PeterJ 확정 2026-07-06): 데일리(+필요 시 on-demand)로 페이지를 구성하고,
+PeterJ가 페이지에서 **선별 큐레이션**한다. 전역 자동 영상화(`ENABLE_VIDEO`)는 계속
+기본 비활성 — **자료화 버튼이 승격 경로**다.
+
+- **표시 위치(양쪽 동일 상태)**: 각 카드 하단(상태 칩 + 🗑 삭제 + 🎬 자료화 버튼)과
+  누적 아카이브 표(자료화 컬럼 + 관리 컬럼). 렌더는 `CURATION_BLOCK`(버전 마커,
+  `src/utils/curation.js`) 클라이언트 스크립트 1개가 담당하며 **단일 상태 파일**
+  `output/curation_state.json`(gitignore 예외, spec-lint 강제)을 그린다 —
+  두 위치 불일치는 구조적으로 불가능.
+- **삭제** = 대시보드 표시 제거만(`curate-remove.yml` → 섹션·표 행 제거 + 통계 재계산 +
+  숨김 목록 기록). Drive Doc·아카이브·재선정 방지 목록은 유지. 발행 경로는 숨김 목록의
+  섹션 재출현을 방어한다(`GitHubPublisher._applyCuration`).
+- **자료화** = 카드뉴스·영상 생성 + YouTube **비공개** 업로드까지 한 번에
+  (`materialize.yml` → `scripts/materialize.mjs` → VideoAgent, privacyStatus private
+  고정이 안전망). 재실행 안전: `video_log.json`이 업로드된 편을 건너뛰므로 부분 실패 후
+  재클릭하면 나머지만 만든다. 실패 시 빨간 run + 카톡 알림.
+- **인증·경합**: 버튼은 기존 Fine-grained PAT(localStorage, on-demand 위젯과 공용)로
+  workflow_dispatch. 실행 전 확인 대화 1회. 데일리 커밋과의 경합은 push 실패 시 최신
+  main 위에 멱등 재적용(재시도 3회)으로 처리 — daily-review.yml은 건드리지 않는다
+  (데일리 코어 무영향 불변식). 클릭 직후 반영 지연(2~5분)은 클릭한 브라우저의
+  "⏳ 요청됨" 로컬 표시로 완화.
+
 ## 4-C. 자동화(GitHub Actions) 인증
 
 분석 LLM 호출은 **claude CLI(구독)** 우선, 없으면 **Anthropic API** 폴백.
@@ -152,6 +176,10 @@
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-07-06 (R4 큐레이션): §4-G 신설 — 삭제·자료화 버튼 + 자료화 상태 표시를
+  카드·누적 표 양쪽에(단일 상태 파일 `curation_state.json`, 클라이언트 블록 렌더).
+  삭제=표시 제거만, 자료화=선별 승격(비공개 업로드), spec-lint 앵커(5e) 추가.
 
 - 2026-07-06 (R3 아카이브 자동화): 4-E 개정 — 전문 Doc(b′: OA 본문 텍스트 append) +
   페이월 권위 웹 레퍼런스 본문 수집(c) + notebooklm-sync.yml(월 1일 소스 자동 등록,
