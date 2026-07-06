@@ -13,7 +13,7 @@
     "test:filter": "node src/agents/FilterAnalyzerAgent.js",
     "test:validator": "node src/agents/ValidationAgent.js",
     "test:reporter": "node src/agents/ReportGeneratorAgent.js",
-    "test:unit": "node --test \"test/*.test.mjs\""
+    "test:unit": "node --test test/*.test.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.0",
