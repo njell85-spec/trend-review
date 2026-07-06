@@ -11,6 +11,7 @@ import { existsSync } from 'fs';
 import { spawnSync } from 'child_process';
 import path from 'path';
 import { llmTelemetry } from './LLMClient.js';
+import { ensureCurationBlock, loadCurationState, removeSectionFromHtml, parseHiddenKey } from './curation.js';
 
 const API = 'https://api.github.com';
 
@@ -389,6 +390,21 @@ export class GitHubPublisher {
     return this._buildSection(dateStr, generatedAt, topPapers, { isToday: true });
   }
 
+  /**
+   * 큐레이션(R4) 적용 — 블록 보장 + 숨김 목록의 섹션 재출현 방어.
+   * (예: 가이드라인 주간 게이트가 삭제된 지침을 다시 실을 때 다음 발행에서 제거)
+   * 데일리 코어와 격리: 상태 파일이 없거나 깨져도 블록 주입만 하고 지나간다.
+   */
+  _applyCuration(html, curationState = null) {
+    let out = ensureCurationBlock(html, { owner: this.owner, repo: this.repo });
+    for (const [hiddenKey, info] of Object.entries(curationState?.hidden ?? {})) {
+      const parsed = parseHiddenKey(hiddenKey); // "TAG:sectionKey" — 형식 밖 키는 무시
+      if (!parsed) continue;
+      out = removeSectionFromHtml(out, { ...parsed, pmid: info?.pmid ?? '' });
+    }
+    return out;
+  }
+
   // ── 누적 아카이브 표의 행(읽음 체크박스 포함) ──────────────────────────────────
   _tableRows(dateStr, topPapers, guideline = null, { manual = false } = {}) {
     // 수동 지정 행은 data-manual 마커를 단다 — 가이드라인(data-guideline)과 같은 방식으로,
@@ -746,6 +762,9 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       updated = body;
     }
     updated = this._ensureOnDemandWidget(updated);
+    let curationState = null;
+    try { curationState = await loadCurationState(path.join(this._repoPath, 'output', 'curation_state.json')); } catch { /* 소프트 */ }
+    updated = this._applyCuration(updated, curationState);
 
     const localPath = path.join(this._repoPath, 'index.html');
     await writeFile(localPath, updated, 'utf8');

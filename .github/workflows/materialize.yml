@@ -1,0 +1,126 @@
+# 자료화 버튼(R4) — 지정 pmid 카드뉴스·영상 생성 + YouTube 비공개 업로드 (REPORT_SPEC §4-G)
+#
+# "선별 승격": 전역 ENABLE_VIDEO가 꺼져 있어도 버튼을 누른 항목만 제작한다.
+# privacyStatus private 고정(VideoAgent, spec-lint 강제). 편별 소프트 실패 —
+# 실패 시 빨간 run + 카톡 알림, 버튼 재클릭이면 video_log 덕에 나머지만 재시도.
+name: Materialize (자료화)
+
+on:
+  workflow_dispatch:
+    inputs:
+      pmid:
+        description: '논문 PMID (분석 아카이브에 있는 항목)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+# pmid별 그룹: 같은 항목 더블클릭이 값비싼 중복 제작(LLM·TTS·업로드)으로 번지는
+# 것만 막는다 — 뒤 실행은 앞 실행이 push한 video_log를 checkout해 전 편 스킵.
+# 다른 pmid는 병렬 허용(전역 그룹은 대기 1개 규칙 때문에 조용한 취소 유발, 리뷰 M3).
+concurrency:
+  group: materialize-${{ inputs.pmid }}
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-chromium-${{ runner.os }}
+
+      - name: Install Playwright chromium
+        run: npm i --no-save playwright && npx playwright install chromium --with-deps
+
+      # ffmpeg — 러너 기본 미포함 (video-sample.yml과 동일, 실측 근거 run 28770767478)
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Trust workspace for Claude CLI
+        run: |
+          node -e "const fs=require('fs'),os=require('os'),path=require('path');const p=path.join(os.homedir(),'.claude.json');let j={};try{j=JSON.parse(fs.readFileSync(p,'utf8'))}catch{};j.projects=j.projects||{};const ws=process.env.GITHUB_WORKSPACE;j.projects[ws]=Object.assign({},j.projects[ws],{hasTrustDialogAccepted:true});fs.writeFileSync(p,JSON.stringify(j,null,2));console.log('trusted:',ws)"
+
+      - name: Configure git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Materialize (generate + private upload)
+        env:
+          MAT_PMID: ${{ inputs.pmid }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_TTS_API_KEY:      ${{ secrets.GOOGLE_TTS_API_KEY }}
+          GOOGLE_CLIENT_ID:        ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET:    ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN:    ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          VIDEO_LANGS:             ${{ vars.VIDEO_LANGS }}
+          KAKAO_REST_API_KEY:      ${{ secrets.KAKAO_REST_API_KEY }}
+          KAKAO_REFRESH_TOKEN:     ${{ secrets.KAKAO_REFRESH_TOKEN }}
+          KAKAO_CLIENT_SECRET:     ${{ secrets.KAKAO_CLIENT_SECRET }}
+          GITHUB_OWNER:            ${{ github.repository_owner }}
+          GITHUB_REPO:             ${{ github.event.repository.name }}
+        run: node scripts/materialize.mjs
+
+      # 상태 커밋은 성공/부분실패 모두 수행 — 업로드된 편의 상태(video_log·materialized)를
+      # 잃으면 재클릭 시 중복 업로드 방지가 깨진다. 경합 재적용은 통파일 복사가 아니라
+      # JSON 병합: daily도 video_log.json을 커밋하므로(daily-review.yml Commit daily state)
+      # 사본 덮어쓰기는 그 사이 daily가 추가한 항목을 지워 중복 업로드를 만든다(리뷰 M2).
+      - name: Commit state (경합 재시도, JSON 병합)
+        if: always()
+        env:
+          MAT_PMID: ${{ inputs.pmid }}
+        run: |
+          for f in output/curation_state.json output/video_log.json; do
+            [ -f "$f" ] && cp "$f" "$RUNNER_TEMP/$(basename "$f")" || true
+          done
+          for i in 1 2 3; do
+            node -e '
+              const fs = require("fs");
+              const rd = (p) => { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return null; } };
+              const tmp = process.env.RUNNER_TEMP;
+              const vlMine = rd(tmp + "/video_log.json");
+              if (vlMine) { // 평면 맵 {key: videoId} — 합집합, 이 run 값 우선
+                const vlBase = rd("output/video_log.json") ?? {};
+                fs.writeFileSync("output/video_log.json", JSON.stringify({ ...vlBase, ...vlMine }, null, 2));
+              }
+              const csMine = rd(tmp + "/curation_state.json");
+              if (csMine) { // hidden/materialized 맵별 합집합
+                const csBase = rd("output/curation_state.json") ?? {};
+                fs.writeFileSync("output/curation_state.json", JSON.stringify({
+                  hidden: { ...(csBase.hidden ?? {}), ...(csMine.hidden ?? {}) },
+                  materialized: { ...(csBase.materialized ?? {}), ...(csMine.materialized ?? {}) },
+                }, null, 2) + "\n");
+              }
+            '
+            for f in output/curation_state.json output/video_log.json; do
+              [ -f "$f" ] && git add "$f" || true
+            done
+            if git diff --staged --quiet; then echo "상태 변경 없음"; exit 0; fi
+            git commit -m "chore(curation): 자료화 상태 — PMID $MAT_PMID"
+            if git push; then echo "완료"; exit 0; fi
+            echo "push 경합 — 최신 main에 병합 재적용 ($i/3)"
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          echo "::error::상태 커밋 3회 실패"
+          exit 1
