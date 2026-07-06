@@ -171,6 +171,17 @@ export class KakaoNotifier {
     return { sent: true };
   }
 
+  // ── 발송 (범용 공지 — NotebookLM 리마인더 등) ─────────────────────────────────
+  async sendNotice({ text, url }) {
+    if (!this.isConfigured) {
+      this.logger.info('Kakao 미설정 — 공지 발송 생략');
+      return { sent: false, reason: 'not-configured' };
+    }
+    await this._postMemo(text, url || 'https://njell85-spec.github.io/trend-review/');
+    await this._notifyRotation();
+    return { sent: true };
+  }
+
   // ── 발송 (실패 알림) ──────────────────────────────────────────────────────────
   async sendFailure({ dateStr, reason, pagesUrl }) {
     if (!this.isConfigured) {

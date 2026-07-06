@@ -1,0 +1,56 @@
+# NotebookLM 소스 자동 등록 (매월 1일 09:00 KST) — 실패/미설정 시 카톡 리마인더 폴백.
+# 비공식 notebooklm-py 사용(HANDOFF §3 — 소프트 실패, 데일리 코어 무영향, REPORT_SPEC §4-E).
+# PeterJ 셋업: Variables NOTEBOOKLM_NOTEBOOK_ID + Secret NOTEBOOKLM_AUTH_STATE
+# (데스크탑에서 `notebooklm login` 후 저장된 인증 상태 JSON — 첫 등록은 dispatch로 검증).
+name: NotebookLM Sync (월 1회)
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # 매월 1일 00:00 UTC = 09:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: month
+        name: Target month (KST)
+        run: echo "m=$(TZ=Asia/Seoul date +%Y-%m)" >> "$GITHUB_OUTPUT"
+
+      - name: Register sources (notebooklm-py)
+        id: register
+        if: ${{ vars.NOTEBOOKLM_NOTEBOOK_ID != '' }}
+        continue-on-error: true # 실패해도 아래 리마인더 폴백으로 (소프트 실패)
+        env:
+          NOTEBOOKLM_NOTEBOOK_ID: ${{ vars.NOTEBOOKLM_NOTEBOOK_ID }}
+          NOTEBOOKLM_AUTH_STATE: ${{ secrets.NOTEBOOKLM_AUTH_STATE }}
+          NOTEBOOKLM_STORAGE: ${{ runner.temp }}/nblm-auth.json
+          TARGET_MONTH: ${{ steps.month.outputs.m }}
+        run: |
+          if [ -z "$NOTEBOOKLM_AUTH_STATE" ]; then echo "NOTEBOOKLM_AUTH_STATE 없음"; exit 1; fi
+          printf '%s' "$NOTEBOOKLM_AUTH_STATE" > "$NOTEBOOKLM_STORAGE"
+          pip install --quiet notebooklm-py
+          python scripts/notebooklm-register.py
+
+      - uses: actions/setup-node@v4
+        if: ${{ vars.NOTEBOOKLM_NOTEBOOK_ID == '' || steps.register.outcome != 'success' }}
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Kakao reminder fallback
+        if: ${{ vars.NOTEBOOKLM_NOTEBOOK_ID == '' || steps.register.outcome != 'success' }}
+        env:
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+          KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
+          KAKAO_CLIENT_SECRET: ${{ secrets.KAKAO_CLIENT_SECRET }}
+        run: |
+          npm ci --omit=dev --ignore-scripts
+          node scripts/notebooklm-remind.mjs
