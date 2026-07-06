@@ -99,12 +99,20 @@
 ## 4-E. Phase 2 — Drive 아카이브 + NotebookLM (무인)
 
 설계 스펙: `docs/superpowers/specs/2026-07-05-phase2-notebooklm-phase3-youtube-design.md`
-- **하이브리드 구조**: ① 자동층 = **월별 리빙 Google Doc**(`Trend Review — YYYY-MM`)을 매일 재생성
-  (HTML→Doc 변환, NotebookLM Drive 자동 동기화가 반영) ② 보강층 = **원문 PDF**(OA 확보 시)를
-  `trend-review/YYYY-MM/`에 적재, NotebookLM 소스 추가는 주 1회 수동(기본 주기).
-- 자료는 **자체 문서만** — 타인 PPT/PDF 파일 수집 금지. 페이월이면 웹보강(4-B) 근거를
-  **근거 도시에** 섹션으로 Doc에 구조화.
-- 모듈: `src/agents/ArchiveAgent.js` + `src/utils/googleAuth.js`(env 우선)·`docBuilder.js`.
+- **3층 자동 수집 구조(2026-07-06 개정 — PeterJ 확정)**: ① **분석 Doc** = 월별 리빙 Google Doc
+  (`Trend Review — YYYY-MM`) 매일 재생성(HTML→Doc, NotebookLM Drive 자동 동기화 반영)
+  ② **전문 Doc** = `Trend Review 전문 — YYYY-MM`(plain text)에 pmid당 1회 append —
+  OA는 확보 본문 텍스트, **페이월이면 권위 웹 레퍼런스(dossier) 본문을 수집**해 수록
+  ③ **원문 PDF**(OA 확보 시) `trend-review/YYYY-MM/` 적재(보관용 — Doc이 소스 역할).
+- **수집 원칙**: 비공개 아카이브층은 수집 확대(사적 이용 복제 범위, 입수는 합법 경로만).
+  단 **수집 본문은 Drive 비공개 Doc으로만** — 공개 repo에 커밋 금지. 공개 발신물(§4-F)은
+  재구성 원칙 유지. 근거 도시에(출처 목록)는 분석 Doc에 병존.
+- **NotebookLM 소스 등록 자동화**: `notebooklm-sync.yml`(매월 1일 09:00 KST)이
+  notebooklm-py(비공식)로 새 달 Doc 2개를 노트북에 자동 등록. 실패·미설정 시 **카톡
+  리마인더 폴백**(Doc 링크 포함). Variables `NOTEBOOKLM_NOTEBOOK_ID` + Secret
+  `NOTEBOOKLM_AUTH_STATE` 필요 — 미설정 시 리마인더만(소프트).
+- 모듈: `src/agents/ArchiveAgent.js` + `src/utils/googleAuth.js`(env 우선)·`docBuilder.js`·
+  `fulltextDoc.js`·`webRefText.js`, `scripts/notebooklm-{register.py,remind.mjs}`.
   `github-actions-daily.mjs`가 카카오 발송 뒤 호출 — **실패해도 파이프라인 성공(소프트 실패)**.
 - 상태 파일: `output/analysis_archive.json`(항목 + Drive docId/folderId/pdfFileId) —
   워크플로우 "Commit daily state" 스텝이 커밋. gitignore 예외 필수(spec-lint 강제).
@@ -140,6 +148,11 @@
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-07-06 (R3 아카이브 자동화): 4-E 개정 — 전문 Doc(b′: OA 본문 텍스트 append) +
+  페이월 권위 웹 레퍼런스 본문 수집(c) + notebooklm-sync.yml(월 1일 소스 자동 등록,
+  실패 시 카톡 리마인더 폴백). 비공개층 수집 확대 확정(공개 발신물 재구성 원칙 유지),
+  수집 본문은 Drive 비공개 Doc 한정(공개 repo 커밋 금지).
 
 - 2026-07-06 (전체 재검토 실버그 보완): ① Drive 적재 루트 폴더 자동 생성 폴백
   (`drive.file` 스코프는 수동 생성 폴더 접근 불가 — 데스크탑 데이 가이드 6-b 함정 제거),
