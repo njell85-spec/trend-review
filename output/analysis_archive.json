@@ -50,6 +50,72 @@
       "fullTextSource": "abstract+registry",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-07",
+      "pmid": "42262991",
+      "title": "Mortality rates among adults with sepsis and septic shock in Indonesia: a systematic review and meta-analysis.",
+      "title_ko": "인도네시아 성인 패혈증 및 패혈성 쇼크 환자의 사망률: 체계적 문헌고찰 및 메타분석",
+      "journal": "Journal of infection in developing countries",
+      "doi": "10.3855/jidc.21943",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "인도네시아 성인 패혈증 및 패혈성 쇼크 환자에서 통합(pooled) 28일 사망률과 원내(in-hospital) 사망률은 얼마이며, 특히 패혈성 쇼크의 사망 부담은 얼마나 높은가?",
+      "pico": {
+        "population": "[Indonesia] Adults with sepsis and septic shock in Indonesia, defined by Sepsis-3, Sepsis-2, and Not-Mentioned criteria; 47 studies were included in this review, identified from PubMed, Scopus, DOAJ, and citation lists.",
+        "intervention": "Observational assessment of sepsis and septic shock mortality (28-day and in-hospital mortality), with no intervention; this is a systematic review and meta-analysis of mortality rates across Indonesia.",
+        "comparison": null,
+        "outcome": "Pooled 28-day mortality rate of 55.9% (95% CI, 48.7%-63.0%; I2 = 79.5%) among patients with sepsis and septic shock."
+      },
+      "pico_ko": {
+        "population": "[인도네시아] Sepsis-3, Sepsis-2, Not-Mentioned 기준으로 정의된 인도네시아 성인 패혈증 및 패혈성 쇼크 환자; PubMed, Scopus, DOAJ 및 인용목록에서 확인된 총 47개 연구가 포함됨.",
+        "intervention": "패혈증 및 패혈성 쇼크 사망률(28일 및 in-hospital 사망률)에 대한 관찰적 평가로, 별도의 중재는 없음; 인도네시아 전역의 사망률에 대한 체계적 문헌고찰 및 메타분석임.",
+        "comparison": null,
+        "outcome": "패혈증 및 패혈성 쇼크 환자에서 통합 28일 사망률 55.9% (95% CI, 48.7%-63.0%; I2 = 79.5%)."
+      },
+      "keyFindings": [
+        "Across 47 included studies, the pooled 28-day mortality for adults with sepsis and septic shock in Indonesia was 55.9% (95% CI, 48.7%-63.0%; I2 = 79.5%).",
+        "Pooled in-hospital mortality for the combined sepsis/septic shock cohort was higher at 67.4% (95% CI, 62.9%-72.0%; I2 = 95.02%).",
+        "Among patients with septic shock specifically, in-hospital mortality reached 77.5% (95% CI, 67.3%-87.8%; I2 = 91.18%)."
+      ],
+      "keyFindings_ko": [
+        "포함된 47개 연구를 종합할 때, 인도네시아 성인 패혈증 및 패혈성 쇼크 환자의 통합 28일 사망률은 55.9% (95% CI, 48.7%-63.0%; I2 = 79.5%)였음.",
+        "패혈증/패혈성 쇼크 통합 코호트의 통합 in-hospital 사망률은 이보다 높은 67.4% (95% CI, 62.9%-72.0%; I2 = 95.02%)였음.",
+        "패혈성 쇼크 환자에 한정하면 in-hospital 사망률은 77.5% (95% CI, 67.3%-87.8%; I2 = 91.18%)에 달했음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42262991",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42262991/"
+        },
+        {
+          "label": "Journal (DOI) — 10.3855/jidc.21943",
+          "url": "https://doi.org/10.3855/jidc.21943"
+        },
+        {
+          "label": "웹 — JIDC official article page",
+          "url": "https://jidc.org/index.php/journal/article/view/42262991"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42262991)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42262991/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "JIDC official article page",
+          "url": "https://jidc.org/index.php/journal/article/view/42262991",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed record (PMID 42262991)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42262991/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -60,6 +126,18 @@
       "2026-07": "1t3xruJeH8pDo3sYl2FAvbLRM7B9_lvW3"
     },
     "pdfFiles": {},
+    "fulltextDocIds": {
+      "2026-07": "1t1XkK4D9G7VQUX-BwQ_68sTvQsMvuDyxrdoBM-lD3VE"
+    },
+    "fulltextDone": {
+      "2026-07": [
+        "41841715",
+        "42262991"
+      ]
+    },
+    "fulltextLen": {
+      "2026-07": 10360
+    },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
 }
