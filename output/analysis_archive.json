@@ -1,0 +1,65 @@
+{
+  "entries": [
+    {
+      "date": "2026-07-06",
+      "pmid": "",
+      "title": "High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure.",
+      "title_ko": "급성 저산소성 호흡부전에서 고유량 대 표준 산소요법 (SOHO 무작위 임상시험)",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa2516087",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "급성 저산소성 호흡부전 성인 환자에서 high-flow nasal cannula를 통한 산소 공급이 표준 산소요법에 비해 삽관(intubation)과 28일 사망률을 감소시키는가?",
+      "pico": {
+        "population": "[France] Patients who had acute hypoxemic respiratory failure, with a ratio of the partial pressure of arterial oxygen to the fraction of inspired oxygen (PaO2/FiO2) of 200 or less, a respiratory rate of more than 25 breaths per minute, and pulmonary infiltrate on chest imaging; 1116 patients underwent randomization and 1110 (556 high-flow-oxygen, 554 standard-oxygen) were analyzed. Registry inclusion: patients older than 18 years; exclusions included PaCO2 >45 mmHg, need for emergent intubation, hemodynamic instability (vasopressors >0.3 µg/kg/min), and Glasgow Coma Scale ≤12.",
+        "intervention": "Oxygen delivered through a high-flow nasal cannula (high-flow-oxygen therapy); n=556 analyzed.",
+        "comparison": "Standard-oxygen therapy; n=554 analyzed.",
+        "outcome": "Primary outcome was death by day 28: 14.6% (81 of 556) in the high-flow-oxygen group vs 14.6% (81 of 554) in the standard-oxygen group (difference, -0.05 percentage points; 95% CI, -4.21 to 4.10; P = 0.98)."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 급성 저산소성 호흡부전 환자로, PaO2/FiO2 비 200 이하, 호흡수 분당 25회 초과, 흉부 영상에서 폐 침윤(pulmonary infiltrate)을 동반한 환자; 1116명이 무작위배정되었고 1110명(high-flow-oxygen 556명, standard-oxygen 554명)이 분석됨. 등록부 기준: 18세 초과 환자; 제외 기준으로 PaCO2 >45 mmHg, 응급 삽관 필요, 혈역학적 불안정(vasopressor >0.3 µg/kg/min), Glasgow Coma Scale ≤12 등이 포함됨.",
+        "intervention": "High-flow nasal cannula를 통한 산소 공급(high-flow-oxygen 요법); 분석 대상 556명.",
+        "comparison": "표준 산소요법(standard-oxygen therapy); 분석 대상 554명.",
+        "outcome": "일차 결과는 28일째 사망: high-flow-oxygen군 14.6%(556명 중 81명) vs standard-oxygen군 14.6%(554명 중 81명) (차이 -0.05 percentage points; 95% CI, -4.21 ~ 4.10; P = 0.98)."
+      },
+      "keyFindings": [
+        "28-day mortality was identical between groups: 14.6% (81/556) with high-flow oxygen vs 14.6% (81/554) with standard oxygen (difference -0.05 percentage points; 95% CI -4.21 to 4.10; P=0.98).",
+        "Intubation by day 28 was lower with high-flow oxygen: 42.4% (236/556) vs 48.4% (268/554) (difference -5.93 percentage points; 95% CI -11.78 to -0.08).",
+        "Serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing were numerically more frequent with high-flow oxygen: 13 (2.3%) vs 6 (1.1%)."
+      ],
+      "keyFindings_ko": [
+        "28일 사망률은 두 군에서 동일했음: high-flow oxygen 14.6%(81/556) vs standard oxygen 14.6%(81/554) (차이 -0.05 percentage points; 95% CI -4.21 ~ 4.10; P=0.98).",
+        "28일째 삽관은 high-flow oxygen군에서 더 낮았음: 42.4%(236/556) vs 48.4%(268/554) (차이 -5.93 percentage points; 95% CI -11.78 ~ -0.08).",
+        "자발호흡 중 중대한 이상반응(cardiac arrest 또는 pneumothorax)은 high-flow oxygen군에서 수치상 더 많았음: 13명(2.3%) vs 6명(1.1%)."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 41841715",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41841715/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1056/NEJMoa2516087",
+          "url": "https://doi.org/10.1056/NEJMoa2516087"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT04468126 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT04468126"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
+    }
+  ],
+  "driveState": {
+    "docIds": {
+      "2026-07": "15hUHhHzkmD35XH30nn63mzx3E-65dDSXJMNXohL3ik0"
+    },
+    "folderIds": {
+      "2026-07": "1t3xruJeH8pDo3sYl2FAvbLRM7B9_lvW3"
+    },
+    "pdfFiles": {},
+    "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
+  }
+}
