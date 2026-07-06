@@ -117,8 +117,12 @@ if (!/privacyStatus:\s*'private'/.test(videoAgentSrc)) {
 // ── 5d) On-demand 수동 디깅 앵커 (REPORT_SPEC §1-B) ──────────────────────────
 // 수동 지정이 같은 날 데일리 섹션을 덮어쓰지 않도록 self section key를 쓰는지 확인.
 const pubSrc = read('src/utils/GitHubPublisher.js');
-if (!pubSrc.includes('<!-- ONDEMAND_WIDGET -->') || !/_ensureOnDemandWidget\(updated\)/.test(pubSrc)) {
-  errors.push('src/utils/GitHubPublisher.js: 수동 디깅 위젯(ONDEMAND_WIDGET 마커 + publish 주입) 소실 (REPORT_SPEC §1-B)');
+if (!/<!-- ONDEMAND_WIDGET v\d+ -->/.test(pubSrc) || !/_ensureOnDemandWidget\(updated\)/.test(pubSrc)) {
+  errors.push('src/utils/GitHubPublisher.js: 수동 디깅 위젯(ONDEMAND_WIDGET 버전 마커 + publish 주입) 소실 (REPORT_SPEC §1-B)');
+}
+// 배포 index.html은 증분 패치 — 구버전 위젯 블록 교체 로직이 빠지면 위젯 수정이 영원히 미반영.
+if (!pubSrc.includes('ONDEMAND_WIDGET(?: v\\d+)?')) {
+  errors.push('src/utils/GitHubPublisher.js: 구버전 위젯 블록 교체 정규식 소실 — 위젯 수정이 배포 페이지에 반영되지 않음');
 }
 if (!/manual\s*\?\s*`\$\{dateStr\}-m-/.test(pubSrc)) {
   errors.push('src/utils/GitHubPublisher.js: 수동 지정 self section key(YYYY-MM-DD-m-<pmid>) 소실 — 같은 날 데일리 섹션 훼손 위험 (REPORT_SPEC §1-B)');

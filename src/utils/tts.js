@@ -1,6 +1,6 @@
 /**
  * tts — Google Cloud Text-to-Speech REST 어댑터 (API 키 방식).
- * 키는 URL 쿼리로만 전달하고 로그·에러 메시지에 절대 노출하지 않는다.
+ * 키는 요청 헤더(X-Goog-Api-Key)로만 전달하고 로그·에러 메시지에 절대 노출하지 않는다.
  * 무료 티어(월 100만 자) 내 운용 — 일 4편 기준 월 ~45만 자 추정 (스펙 §5.2).
  */
 const VOICES = {
@@ -13,9 +13,10 @@ export async function synthesizeMp3(text, lang) {
   if (!key) throw new Error('GOOGLE_TTS_API_KEY 미설정');
   const voice = VOICES[lang];
   if (!voice) throw new Error(`지원하지 않는 언어: ${lang}`);
-  const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${key}`, {
+  // 키는 URL 쿼리 대신 헤더로 — URL은 프록시·에러 스택 등에 남을 수 있다(전역 지침 ①)
+  const res = await fetch('https://texttospeech.googleapis.com/v1/text:synthesize', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'X-Goog-Api-Key': key },
     body: JSON.stringify({
       input: { text },
       voice,

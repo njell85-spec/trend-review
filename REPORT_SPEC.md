@@ -109,7 +109,9 @@
 - 상태 파일: `output/analysis_archive.json`(항목 + Drive docId/folderId/pdfFileId) —
   워크플로우 "Commit daily state" 스텝이 커밋. gitignore 예외 필수(spec-lint 강제).
 - Secrets: `GOOGLE_CLIENT_ID`·`GOOGLE_CLIENT_SECRET`·`GOOGLE_REFRESH_TOKEN`
-  (스코프 `drive.file`+`youtube.upload` 고정). Variables: `GOOGLE_DRIVE_FOLDER_ID`.
+  (스코프 `drive.file`+`youtube.upload` 고정). 적재 루트 폴더 `trend-review`는 **앱이
+  자동 생성**(find-or-create) — `drive.file` 스코프는 수동 생성 폴더 접근이 불가하므로
+  Variables `GOOGLE_DRIVE_FOLDER_ID`는 선택(접근 불가 ID면 자동 폴백)이며 기본 미설정.
   발급: 데스크탑 데이 `scripts/google-auth-setup.mjs` (`docs/desktop-day-guide.md`).
   `credentials.json`·`google_token.json`은 gitignore 필수(spec-lint 강제). 미설정 시 단계만 건너뜀.
 
@@ -138,6 +140,14 @@
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-07-06 (전체 재검토 실버그 보완): ① Drive 적재 루트 폴더 자동 생성 폴백
+  (`drive.file` 스코프는 수동 생성 폴더 접근 불가 — 데스크탑 데이 가이드 6-b 함정 제거),
+  ② 아카이브 항목을 Drive 작업 전에 선저장(폴더/PDF 실패 시 날짜 영구 결번 방지),
+  ③ On-demand 위젯 버전 마커 + 구버전 블록 교체(증분 패치 페이지에 위젯 수정 반영),
+  ④ on-demand.yml 입력을 env 경유로(셸 인젝션 심층 방어), ⑤ 영상 재실행 시 업로드
+  로그 선확인(LLM·TTS 재지출 방지) + 영어 단일 기본에서 거짓 "일부 실패" 경고 수정,
+  ⑥ TTS API 키를 URL 쿼리 → 헤더로.
 
 - 2026-07-05 (Phase 2 선작업): 4-E 신설 — Drive 아카이브(월별 리빙 Doc + OA PDF)·NotebookLM
   하이브리드 연동, ArchiveAgent·googleAuth·docBuilder 추가, 상태파일 `analysis_archive.json`

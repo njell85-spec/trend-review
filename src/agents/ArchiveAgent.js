@@ -4,8 +4,8 @@
  * 전 과정 소프트 실패(호출측 try/catch) · 재실행 안전(driveState·upsert + Drive측 find 폴백) ·
  * 토큰 로그 금지.
  * 상태 파일: output/analysis_archive.json
- *   { entries: [...], driveState: { docIds: {"YYYY-MM": id}, folderIds: {...}, pdfFiles: {pmid: fileId} } }
- * 러너가 휘발이므로 상태 파일은 GitHub contents API로 저장소에 커밋해 지속한다.
+ *   { entries: [...], driveState: { rootFolderId, docIds: {"YYYY-MM": id}, folderIds: {...}, pdfFiles: {pmid: fileId} } }
+ * 러너가 휘발이므로 상태 파일은 워크플로우 "Commit daily state" 스텝이 git으로 커밋해 지속한다.
  */
 import { google } from 'googleapis';
 import { readFile, writeFile, mkdir } from 'fs/promises';
@@ -79,6 +79,16 @@ export class ArchiveAgent {
     const state = await this._loadArchive();
     const month = monthOf(todayKST);
 
+    // 항목을 Drive 작업보다 먼저 확정 저장 — 폴더 확보·업로드가 실패해도 그날 데이터는
+    // 남아 다음 실행의 Doc 재생성에 포함된다. Doc은 매일 전체 재생성이지만 entries 는
+    // 당일 실행에서만 추가되므로, 여기서 유실되면 그 날짜는 영구 결번이 된다.
+    // 재실행 시 이전 실행이 확보한 pdfLink는 보존한다(덮어쓰기로 링크 유실 방지).
+    // (부분 실패가 데이터를 망치지 않도록: 전역 체크리스트 ④)
+    const entryPmid = analysis.pmid ?? analysis.paper?.pmid;
+    const prevLink = state.entries.find((e) => e.date === todayKST && e.pmid === entryPmid)?.pdfLink ?? null;
+    state.entries = upsertEntry(state.entries, toArchiveEntry(analysis, { pdfLink: prevLink, todayKST }));
+    await this._saveArchive(state);
+
     const folderId = await this._ensureMonthFolder(drive, state, month);
 
     // PDF는 실패해도 계속 (OA가 아닌 날이 정상 경로)
@@ -89,10 +99,10 @@ export class ArchiveAgent {
       this.logger.warn(`PDF 단계 실패(계속): ${e.message}`);
     }
 
-    state.entries = upsertEntry(state.entries, toArchiveEntry(analysis, { pdfLink, todayKST }));
-    // 항목·PDF 상태를 Doc 갱신보다 먼저 확정 저장 — Doc 변환이 실패해도 그날 데이터는 남는다
-    // (부분 실패가 데이터를 망치지 않도록: 전역 체크리스트 ④)
-    await this._saveArchive(state);
+    if (pdfLink) {
+      state.entries = upsertEntry(state.entries, toArchiveEntry(analysis, { pdfLink, todayKST }));
+    }
+    await this._saveArchive(state); // folderId·pdfFileId 반영
 
     let docUpdated = true;
     try {
@@ -123,9 +133,43 @@ export class ArchiveAgent {
     await writeFile(ARCHIVE_PATH, JSON.stringify(state, null, 2), 'utf8');
   }
 
+  /**
+   * 적재 루트 폴더 확보. drive.file 스코프는 **이 앱이 만들었거나 사용자가 피커로 연
+   * 파일만** 접근 가능 — Drive UI에서 수동 생성한 폴더 ID를 GOOGLE_DRIVE_FOLDER_ID로
+   * 넣으면 files.get/create가 404를 던진다. 그래서 접근을 먼저 검증하고, 불가하면
+   * 앱이 직접 만든 `trend-review` 폴더(내 드라이브 루트)로 폴백한다(find-or-create).
+   */
+  async _ensureRootFolder(drive, state) {
+    if (state.driveState.rootFolderId) return state.driveState.rootFolderId;
+    const configured = process.env.GOOGLE_DRIVE_FOLDER_ID;
+    if (configured) {
+      try {
+        await drive.files.get({ fileId: configured, fields: 'id' });
+        state.driveState.rootFolderId = configured;
+        return configured;
+      } catch (e) {
+        this.logger.warn(
+          `GOOGLE_DRIVE_FOLDER_ID 접근 불가(HTTP ${e.code ?? '?'}) — drive.file 스코프는 앱이 만든 폴더만 접근 가능. 앱 관리 폴더 'trend-review'로 폴백`,
+        );
+      }
+    }
+    const q = "name='trend-review' and mimeType='application/vnd.google-apps.folder' and 'root' in parents and trashed=false";
+    const found = await drive.files.list({ q, fields: 'files(id)' });
+    const id =
+      found.data.files?.[0]?.id ??
+      (
+        await drive.files.create({
+          requestBody: { name: 'trend-review', mimeType: 'application/vnd.google-apps.folder', parents: ['root'] },
+          fields: 'id',
+        })
+      ).data.id;
+    state.driveState.rootFolderId = id;
+    return id;
+  }
+
   async _ensureMonthFolder(drive, state, month) {
     if (state.driveState.folderIds[month]) return state.driveState.folderIds[month];
-    const parent = process.env.GOOGLE_DRIVE_FOLDER_ID || 'root';
+    const parent = await this._ensureRootFolder(drive, state);
     const q = `name='${month}' and mimeType='application/vnd.google-apps.folder' and '${parent}' in parents and trashed=false`;
     const found = await drive.files.list({ q, fields: 'files(id)' });
     const id =
