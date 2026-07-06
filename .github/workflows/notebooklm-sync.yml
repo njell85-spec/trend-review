@@ -39,18 +39,12 @@ jobs:
           pip install --quiet notebooklm-py
           python scripts/notebooklm-register.py
 
-      - uses: actions/setup-node@v4
-        if: ${{ vars.NOTEBOOKLM_NOTEBOOK_ID == '' || steps.register.outcome != 'success' }}
-        with:
-          node-version: '20'
-          cache: 'npm'
-
+      # 리마인더 스크립트의 import 체인(KakaoNotifier→Logger, dates, fulltextDoc)은
+      # npm 의존 0 — 러너 기본 node로 바로 실행 (npm ci 불필요, 레지스트리 장애와 격리)
       - name: Kakao reminder fallback
         if: ${{ vars.NOTEBOOKLM_NOTEBOOK_ID == '' || steps.register.outcome != 'success' }}
         env:
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
           KAKAO_CLIENT_SECRET: ${{ secrets.KAKAO_CLIENT_SECRET }}
-        run: |
-          npm ci --omit=dev --ignore-scripts
-          node scripts/notebooklm-remind.mjs
+        run: node scripts/notebooklm-remind.mjs

@@ -169,7 +169,10 @@ export class ArchiveAgent {
     for (const e of targets) {
       const webTexts = e.fullText ? [] : await fetchRefTexts(e.dossier, {});
       const section = fulltextSectionText(e, webTexts);
-      done.add(e.pmid); // 본문 없음(초록만·레퍼런스 실패)도 '처리됨' — 매일 재fetch 방지
+      // 레퍼런스가 있었는데 전부 실패(일시 오류 가능)면 done 유보 — 다음 실행에서 재시도.
+      // 본문·레퍼런스 자체가 없는 항목(초록만)은 '처리됨'으로 마킹해 매일 재fetch 방지.
+      const refsAllFailed = !e.fullText && (e.dossier?.length ?? 0) > 0 && !webTexts.length;
+      if (!refsAllFailed) done.add(e.pmid);
       if (!section) continue;
       body += section;
       appended += 1;

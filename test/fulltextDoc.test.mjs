@@ -17,6 +17,14 @@ test('htmlToText: script/style 제거·태그 소거·공백 축약·상한', ()
   assert.equal(htmlToText(`<p>${'a'.repeat(50)}</p>`, 10).length, 10);
 });
 
+test('htmlToText: 이중 인코딩은 마크업으로 되살아나지 않고, nav/footer 보일러플레이트 제거', () => {
+  // &amp;lt; 의 올바른 복원은 리터럴 '&lt;' 텍스트 — 이중 디코드로 '<b>'가 되살아나면 안 됨
+  assert.equal(htmlToText('<p>&amp;lt;b&amp;gt;x</p>'), '&lt;b&gt;x');
+  const t = htmlToText('<nav>MENU MENU</nav><header>HDR</header><p>real body</p><footer>FTR</footer>');
+  assert.ok(t.includes('real body'));
+  assert.ok(!t.includes('MENU') && !t.includes('HDR') && !t.includes('FTR'));
+});
+
 test('fulltextSectionText: fullText 있으면 섹션, 없고 webTexts 있으면 레퍼런스 섹션, 둘 다 없으면 null', () => {
   const base = { date: '2026-07-06', pmid: '1', title: 'T', journal: 'J' };
   const withFt = fulltextSectionText({ ...base, fullText: 'BODY', fullTextSource: 'PMC' });

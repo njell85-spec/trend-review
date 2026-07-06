@@ -10,9 +10,12 @@ export function htmlToText(html, cap = 40000) {
   return String(html ?? '')
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    // 본문 외 보일러플레이트 제거 — 상한(cap)을 실제 본문이 쓰도록 (FullTextAgent._stripHtml과 동일 원칙)
+    .replace(/<(nav|header|footer|aside)[\s\S]*?<\/\1>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
-    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    // &amp;는 마지막에 — 먼저 풀면 &amp;lt; 같은 이중 인코딩이 마크업으로 되살아남
+    .replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&')
     .replace(/[ \t\r\f\v]+/g, ' ').replace(/\s*\n\s*/g, '\n').trim()
     .slice(0, cap);
 }
