@@ -129,11 +129,11 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
   </header>
   <div class="stats">
     <div class="sc"><div class="n stat-days-count">6</div><div class="l">분석일수</div></div>
-    <div class="sc"><div class="n stat-papers-count">6</div><div class="l">선정 논문</div></div>
-    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">2026. 07. 06. 07:31</span></div><div class="l">최종 업데이트</div></div>
+    <div class="sc"><div class="n stat-papers-count">7</div><div class="l">선정 논문</div></div>
+    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">2026. 07. 06. 14:28</span></div><div class="l">최종 업데이트</div></div>
   </div>
   <div class="archive">
-<!-- ONDEMAND_WIDGET -->
+<!-- ONDEMAND_WIDGET v2 -->
 <details style="max-width:960px;margin:14px auto;padding:0 16px">
   <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 On-demand 리뷰 — 논문·가이드라인 검색</summary>
   <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
@@ -174,7 +174,7 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
     list.innerHTML='';
     if(!q){msg.textContent='검색어를 입력하세요.';return;}
     msg.textContent='PubMed 검색 중…';
-    fetch(EUTILS+'/esearch.fcgi?db=pubmed&retmode=json&sort=date&retmax=8&term='+encodeURIComponent(q))
+    fetch(EUTILS+'/esearch.fcgi?db=pubmed&retmode=json&retmax=8&term='+encodeURIComponent(q))
       .then(function(r){return r.json()})
       .then(function(j){
         var ids=(j.esearchresult&&j.esearchresult.idlist)||[];
@@ -205,6 +205,7 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
     var v=prompt('PMID 또는 DOI 직접 입력 (취소하면 토큰만 설정):');
     if(v===null){pat(true);return;}
     v=v.trim(); if(!v)return;
+    if(!/^\d{5,9}$/.test(v)&&!/^10\.\S+\/\S+/.test(v)){msg.textContent='✖ PMID(숫자) 또는 DOI(10.…/…) 형식만 지원합니다.';return;}
     var kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
     dispatch(v,kind,msg);
   });
@@ -212,6 +213,65 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
 </script>
 <!-- /ONDEMAND_WIDGET -->
 <!-- ARCHIVE_START -->
+
+<!-- SECTION:2026-07-06-m-41841715 -->
+<details open class="day day-today">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="t-badge" style="background:linear-gradient(90deg,#b45309,#f59e0b)">직접 지정</span><span class="day-date">2026-07-06</span>
+      <span class="day-cnt">· 1편</span>
+      <span class="day-gen">생성 2026. 07. 06. 14:28 · LLM 구독×1</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="#7dabe8" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></span><div><div class="day-prev-t">급성 저산소성 호흡부전에서 고유량 대 표준 산소요법 (SOHO 무작위 임상시험)</div><div class="day-prev-m">The New England journal of medicine · 2026</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="paper-card">
+      <div class="pc-top">
+        <div class="medal"><svg viewBox="0 0 24 24" fill="#fff" width="100%" height="100%"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></div>
+        <div class="ttl">급성 저산소성 호흡부전에서 고유량 대 표준 산소요법 (SOHO 무작위 임상시험)</div>
+        <div class="ttle">High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure.</div>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>The New England journal of medicine · 2026 · PMID 41841715</div>
+        <div class="chips"><span class="chip sc">Opus 종합 8점</span><span class="chip src">초록 + 레지스트리</span></div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>WHY IT MATTERS</div>
+        <p class="txt">In adults with acute hypoxemic respiratory failure, does oxygen delivered through a high-flow nasal cannula, as compared with standard oxygen therapy, reduce intubation and 28-day mortality?</p><p class="txt ko">급성 저산소성 호흡부전 성인 환자에서 high-flow nasal cannula를 통한 산소 공급이 표준 산소요법에 비해 삽관(intubation)과 28일 사망률을 감소시키는가?</p>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5b8fd9"/></svg></span>PICO</div>
+        <div class="pico">
+          <div class="pr"><span class="pk">P</span><div class="pv"><p class="txt">[France] Patients who had acute hypoxemic respiratory failure, with a ratio of the partial pressure of arterial oxygen to the fraction of inspired oxygen (PaO2/FiO2) of 200 or less, a respiratory rate of more than 25 breaths per minute, and pulmonary infiltrate on chest imaging; 1116 patients underwent randomization and 1110 (556 high-flow-oxygen, 554 standard-oxygen) were analyzed. Registry inclusion: patients older than 18 years; exclusions included PaCO2 &gt;45 mmHg, need for emergent intubation, hemodynamic instability (vasopressors &gt;0.3 µg/kg/min), and Glasgow Coma Scale ≤12.</p><p class="txt ko">[프랑스] 급성 저산소성 호흡부전 환자로, PaO2/FiO2 비 200 이하, 호흡수 분당 25회 초과, 흉부 영상에서 폐 침윤(pulmonary infiltrate)을 동반한 환자; 1116명이 무작위배정되었고 1110명(high-flow-oxygen 556명, standard-oxygen 554명)이 분석됨. 등록부 기준: 18세 초과 환자; 제외 기준으로 PaCO2 &gt;45 mmHg, 응급 삽관 필요, 혈역학적 불안정(vasopressor &gt;0.3 µg/kg/min), Glasgow Coma Scale ≤12 등이 포함됨.</p></div></div>
+          <div class="pr"><span class="pk">I</span><div class="pv"><p class="txt">Oxygen delivered through a high-flow nasal cannula (high-flow-oxygen therapy); n=556 analyzed.</p><p class="txt ko">High-flow nasal cannula를 통한 산소 공급(high-flow-oxygen 요법); 분석 대상 556명.</p></div></div>
+          <div class="pr"><span class="pk">C</span><div class="pv"><p class="txt">Standard-oxygen therapy; n=554 analyzed.</p><p class="txt ko">표준 산소요법(standard-oxygen therapy); 분석 대상 554명.</p></div></div>
+          <div class="pr"><span class="pk">O</span><div class="pv"><p class="txt">Primary outcome was death by day 28: 14.6% (81 of 556) in the high-flow-oxygen group vs 14.6% (81 of 554) in the standard-oxygen group (difference, -0.05 percentage points; 95% CI, -4.21 to 4.10; P = 0.98).</p><p class="txt ko">일차 결과는 28일째 사망: high-flow-oxygen군 14.6%(556명 중 81명) vs standard-oxygen군 14.6%(554명 중 81명) (차이 -0.05 percentage points; 95% CI, -4.21 ~ 4.10; P = 0.98).</p></div></div>
+        </div>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>핵심 결과</div>
+        
+        <div class="sub-h">2차 결과</div><ul class="sec-ul">
+      <li class="sec-li"><p class="txt">Incidence of intubation by day 28: 42.4% (236 of 556) in the high-flow-oxygen group vs 48.4% (268 of 554) in the standard-oxygen group (difference, -5.93 percentage points; 95% CI, -11.78 to -0.08).</p><p class="txt ko">28일째 삽관(intubation) 발생률: high-flow-oxygen군 42.4%(556명 중 236명) vs standard-oxygen군 48.4%(554명 중 268명) (차이 -5.93 percentage points; 95% CI, -11.78 ~ -0.08).</p></li>
+      <li class="sec-li"><p class="txt">Serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing: 13 patients (2.3%) in the high-flow-oxygen group vs 6 patients (1.1%) in the standard-oxygen group.</p><p class="txt ko">자발호흡 중 발생한 중대한 이상반응(cardiac arrest 또는 pneumothorax): high-flow-oxygen군 13명(2.3%) vs standard-oxygen군 6명(1.1%).</p></li>
+      <li class="sec-li"><p class="txt">Registry-defined additional secondary outcomes (no numeric results in the provided sources): failure of the oxygenation strategy by day 28, mortality in ICU / in hospital / at day 90, ventilator-free days at day 28, and duration of ICU and hospital stay.</p><p class="txt ko">등록부에 정의된 추가 이차 결과(제공된 자료에 수치 결과 없음): 28일째 산소화 전략 실패, ICU/병원/90일 사망률, 28일째 ventilator-free days, ICU 및 병원 재원 기간.</p></li></ul>
+        <div class="gloss"><div class="gloss-h">📊 통계 용어</div><div class="gloss-i"><b>Risk difference (percentage points)</b> — 두 군의 사건 발생률(%)을 직접 뺀 차이로, 0에 가까울수록 두 요법 간 차이가 없음을 뜻함. 예: 사망률 차이 -0.05 percentage points → 두 군 사망률이 사실상 동일함.</div><div class="gloss-i"><b>95% CI</b> — 참값이 있을 것으로 추정되는 95% 신뢰구간으로, 0(차이 없음)을 포함하면 통계적으로 유의하지 않음. 예: 사망률 차이 95% CI -4.21 ~ 4.10 → 0을 포함하므로 차이가 유의하지 않고, 삽관 차이 95% CI -11.78 ~ -0.08 → 0을 포함하지 않아 삽관 감소가 통계적으로 유의함.</div><div class="gloss-i"><b>P-value</b> — 관찰된 차이가 우연일 확률로, 보통 0.05 미만이면 유의하다고 봄. 예: 일차 결과 P = 0.98 → 사망률 차이가 우연일 가능성이 매우 높아 유의하지 않음.</div></div>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M12 3v18M5 7h14M5 7l-3 6h6zM19 7l-3 6h6zM8 21h8"/></svg></span>비평적 평가</div>
+        <p class="txt"><b class="hl">Internal Validity</b> — Low Risk · 낮은 비뚤림</p>
+        
+        <div class="sub-h">제한점</div><p class="txt">The trial was open-label (registry lists single masking), which can bias clinician-driven decisions such as timing of intubation—a key secondary outcome. Enrollment (1116 randomized) fell short of the registry-planned 1504, potentially reducing power for secondary outcomes. The abstract does not report baseline comparability of the groups, and it is a single-country (France) trial, which may limit generalizability. The trial was partly funded by the HFNC manufacturer (Fisher and Paykel Healthcare).</p><p class="txt ko">본 시험은 open-label(등록부상 single masking)로 진행되어, 삽관 시점 같은 임상의 주도 결정(핵심 이차 결과)에 편향이 생길 수 있음. 실제 등록(무작위배정 1116명)이 등록부 계획인 1504명에 미치지 못해 이차 결과에 대한 검정력이 낮아졌을 수 있음. 초록에 두 군의 기저 비교 가능성이 보고되지 않았고, 단일 국가(프랑스) 시험이라 일반화에 제한이 있을 수 있음. 또한 HFNC 제조사(Fisher and Paykel Healthcare)가 일부 자금을 지원함.</p>
+
+        <div class="lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5b8fd9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 결론</div>
+        <p class="txt">In adults with acute hypoxemic respiratory failure (PaO2/FiO2 ≤200, RR &gt;25, pulmonary infiltrate), high-flow nasal cannula did not reduce 28-day mortality compared with standard oxygen (14.6% in both groups). It modestly reduced intubation (42.4% vs 48.4%), but this came without a survival benefit and with a numerically higher rate of serious adverse events during spontaneous breathing. HFNC remains a reasonable option to reduce intubation, but should not be expected to improve survival.</p><p class="txt ko">급성 저산소성 호흡부전 성인(PaO2/FiO2 ≤200, RR &gt;25, 폐 침윤) 환자에서 high-flow nasal cannula는 표준 산소요법에 비해 28일 사망률을 감소시키지 못했음(양 군 모두 14.6%). 삽관은 다소 줄였으나(42.4% vs 48.4%) 생존 이득은 없었고 자발호흡 중 중대한 이상반응은 수치상 더 많았음. HFNC는 삽관을 줄이기 위한 합리적 선택일 수 있으나 생존 개선을 기대해서는 안 됨.</p>
+        <div class="sub-h">Practice Change</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot"></span><div><p class="txt">Do not adopt high-flow nasal cannula over standard oxygen with the expectation of a mortality benefit in acute hypoxemic respiratory failure — 28-day mortality was identical (14.6% vs 14.6%, P=0.98).</p><p class="txt ko">급성 저산소성 호흡부전에서 사망률 개선을 기대하고 표준 산소요법 대신 high-flow nasal cannula를 채택하지 말 것 — 28일 사망률이 동일했음(14.6% vs 14.6%, P=0.98).</p></div></li>
+      <li class="pc-li"><span class="pc-dot"></span><div><p class="txt">HFNC may still be a reasonable first-line strategy to reduce the need for intubation (48.4% → 42.4%; difference -5.93 pp, 95% CI -11.78 to -0.08), but weigh this against a numerically higher rate of serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing (2.3% vs 1.1%).</p><p class="txt ko">HFNC는 삽관 필요성을 줄이기 위한 일차 전략으로 고려할 수 있으나(48.4% → 42.4%; 차이 -5.93 pp, 95% CI -11.78 ~ -0.08), 자발호흡 중 중대한 이상반응(cardiac arrest 또는 pneumothorax)이 수치상 더 많았던 점(2.3% vs 1.1%)과 함께 저울질해야 함.</p></div></li>
+      <li class="pc-li"><span class="pc-dot"></span><div><p class="txt">When using HFNC in these patients, maintain vigilant monitoring for deterioration and do not delay intubation, since avoiding intubation did not translate into a survival advantage.</p><p class="txt ko">이 환자군에서 HFNC 사용 시 악화 여부를 면밀히 모니터링하고 필요한 삽관을 지연시키지 말 것 — 삽관 회피가 생존 이득으로 이어지지 않았기 때문.</p></div></li></ul>
+
+        <div class="src-box"><div class="src-h">🔎 본문 확보·웹 보강 출처</div><a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" rel="noopener" class="src-li">PubMed — PMID 41841715</a><a href="https://doi.org/10.1056/NEJMoa2516087" target="_blank" rel="noopener" class="src-li">Journal (DOI) — 10.1056/NEJMoa2516087</a><a href="https://clinicaltrials.gov/study/NCT04468126" target="_blank" rel="noopener" class="src-li">ClinicalTrials.gov — NCT04468126 (구조화 레지스트리)</a></div>
+
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" rel="noopener" class="lnk">PubMed 41841715</a> · <a href="https://doi.org/10.1056/NEJMoa2516087" target="_blank" rel="noopener" class="lnk">DOI</a></div>
+      </div>
+    </article></div>
+</details>
+<!-- /SECTION:2026-07-06-m-41841715 -->
 
 <!-- SECTION:2026-07-06 -->
 <details open class="day day-today">
@@ -634,10 +694,10 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
 <!-- /SECTION:2026-06-29 -->
   </div>
   <div class="arch-table">
-    <div class="at-head"><span class="at-title">📚 누적 아카이브</span><span class="at-count">6편</span></div>
+    <div class="at-head"><span class="at-title">📚 누적 아카이브</span><span class="at-count">7편</span></div>
     <div class="at-scroll"><table>
       <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
-      <tbody><!-- TABLE_ROWS_START --><tr data-pmid="42308484"><td class="c-date">2026-07-06</td><td class="c-jour">The New England journal of medicine</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42308484/" target="_blank" rel="noopener">Methicillin-감수성 황색포도알균(MSSA) 균혈증에서의 Cefazolin</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42308484" aria-label="읽음"></td></tr><tr data-pmid="42337386"><td class="c-date">2026-07-05</td><td class="c-jour">Shock (Augusta, Ga.)</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42337386/" target="_blank" rel="noopener">패혈증 예후에 대한 산소 목표치의 영향: 무작위 대조 시험</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42337386" aria-label="읽음"></td></tr><tr data-pmid="42299597"><td class="c-date">2026-07-04</td><td class="c-jour">Medicine</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42299597/" target="_blank" rel="noopener">패혈증 또는 패혈성 쇼크의 예후 바이오마커로서 HDL의 유용성: 체계적 문헌고찰 및 메타분석</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42299597" aria-label="읽음"></td></tr><tr data-pmid="42392606"><td class="c-date">2026-07-03</td><td class="c-jour">BMJ paediatrics open</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42392606/" target="_blank" rel="noopener">생후 0-59일 어린 영아에서 사망 예측 및 패혈증 식별을 위한 빈호흡(tachypnoea)의 진단 정확도: 체계적 문헌고찰 및 메타분석</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42392606" aria-label="읽음"></td></tr><tr data-pmid="42275064"><td class="c-date">2026-07-02</td><td class="c-jour">JAMA network open</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42275064/" target="_blank" rel="noopener">신생아로의 병원체 수직전파를 줄이기 위한 소독 세정: NeoVT-AMR 무작위 임상시험</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42275064" aria-label="읽음"></td></tr><tr data-pmid="41869844" data-guideline="1"><td class="c-date">2026-07-02</td><td class="c-jour">📋 Surviving Sepsis Campaign (SCCM/ESICM)</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41869844/" target="_blank" rel="noopener">소아 패혈증 및 패혈성 쇼크 관리에 관한 Surviving Sepsis Campaign 국제 진료지침 2026</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41869844" aria-label="읽음"></td></tr><tr data-pmid="41910345"><td class="c-date">2026-06-29</td><td class="c-jour">N Engl J Med</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41910345/" target="_blank" rel="noopener">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41910345" aria-label="읽음"></td></tr><!-- TABLE_ROWS_END --></tbody>
+      <tbody><!-- TABLE_ROWS_START --><tr data-pmid="41841715" data-manual="1"><td class="c-date">2026-07-06</td><td class="c-jour">The New England journal of medicine</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41841715/" target="_blank" rel="noopener">급성 저산소성 호흡부전에서 고유량 대 표준 산소요법 (SOHO 무작위 임상시험)</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41841715" aria-label="읽음"></td></tr><tr data-pmid="42308484"><td class="c-date">2026-07-06</td><td class="c-jour">The New England journal of medicine</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42308484/" target="_blank" rel="noopener">Methicillin-감수성 황색포도알균(MSSA) 균혈증에서의 Cefazolin</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42308484" aria-label="읽음"></td></tr><tr data-pmid="42337386"><td class="c-date">2026-07-05</td><td class="c-jour">Shock (Augusta, Ga.)</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42337386/" target="_blank" rel="noopener">패혈증 예후에 대한 산소 목표치의 영향: 무작위 대조 시험</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42337386" aria-label="읽음"></td></tr><tr data-pmid="42299597"><td class="c-date">2026-07-04</td><td class="c-jour">Medicine</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42299597/" target="_blank" rel="noopener">패혈증 또는 패혈성 쇼크의 예후 바이오마커로서 HDL의 유용성: 체계적 문헌고찰 및 메타분석</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42299597" aria-label="읽음"></td></tr><tr data-pmid="42392606"><td class="c-date">2026-07-03</td><td class="c-jour">BMJ paediatrics open</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42392606/" target="_blank" rel="noopener">생후 0-59일 어린 영아에서 사망 예측 및 패혈증 식별을 위한 빈호흡(tachypnoea)의 진단 정확도: 체계적 문헌고찰 및 메타분석</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42392606" aria-label="읽음"></td></tr><tr data-pmid="42275064"><td class="c-date">2026-07-02</td><td class="c-jour">JAMA network open</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42275064/" target="_blank" rel="noopener">신생아로의 병원체 수직전파를 줄이기 위한 소독 세정: NeoVT-AMR 무작위 임상시험</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42275064" aria-label="읽음"></td></tr><tr data-pmid="41869844" data-guideline="1"><td class="c-date">2026-07-02</td><td class="c-jour">📋 Surviving Sepsis Campaign (SCCM/ESICM)</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41869844/" target="_blank" rel="noopener">소아 패혈증 및 패혈성 쇼크 관리에 관한 Surviving Sepsis Campaign 국제 진료지침 2026</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41869844" aria-label="읽음"></td></tr><tr data-pmid="41910345"><td class="c-date">2026-06-29</td><td class="c-jour">N Engl J Med</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41910345/" target="_blank" rel="noopener">급성 폐색전증의 초음파-유도 카테터 혈전용해 (HI-PEITHO)</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41910345" aria-label="읽음"></td></tr><!-- TABLE_ROWS_END --></tbody>
     </table></div>
   </div>
   <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일 · <a href="https://njell85-spec.github.io/trend-review/">njell85-spec.github.io/trend-review</a></div>
