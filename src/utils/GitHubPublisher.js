@@ -11,7 +11,7 @@ import { existsSync } from 'fs';
 import { spawnSync } from 'child_process';
 import path from 'path';
 import { llmTelemetry } from './LLMClient.js';
-import { ensureCurationBlock, loadCurationState, removeSectionFromHtml } from './curation.js';
+import { ensureCurationBlock, loadCurationState, removeSectionFromHtml, parseHiddenKey } from './curation.js';
 
 const API = 'https://api.github.com';
 
@@ -397,8 +397,10 @@ export class GitHubPublisher {
    */
   _applyCuration(html, curationState = null) {
     let out = ensureCurationBlock(html, { owner: this.owner, repo: this.repo });
-    for (const [sectionKey, info] of Object.entries(curationState?.hidden ?? {})) {
-      out = removeSectionFromHtml(out, { sectionKey, pmid: info?.pmid ?? '' });
+    for (const [hiddenKey, info] of Object.entries(curationState?.hidden ?? {})) {
+      const parsed = parseHiddenKey(hiddenKey); // "TAG:sectionKey" — 형식 밖 키는 무시
+      if (!parsed) continue;
+      out = removeSectionFromHtml(out, { ...parsed, pmid: info?.pmid ?? '' });
     }
     return out;
   }

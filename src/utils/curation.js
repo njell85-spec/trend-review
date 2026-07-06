@@ -7,6 +7,11 @@
  * 서버측 카드별 패치가 필요 없다. (배포 index.html은 증분 패치라 블록은
  * on-demand 위젯과 동일한 버전 마커 + 멱등 교체 패턴을 쓴다.)
  *
+ * 섹션 식별 = 태그+키 쌍. 주간 가이드라인이 있는 날은 SECTION:날짜 와
+ * GSECTION:날짜 가 같은 키로 공존하므로(publisher gKey=dateStr), 키만으로
+ * 지우면 논문·가이드 카드가 함께 소멸한다(리뷰 C1). 숨김 상태의 키도
+ * "SECTION:2026-07-06" / "GSECTION:2026-07-06" 형태의 태그 접두 키를 쓴다.
+ *
  * 서버측은 삭제 반영(removeSectionFromHtml)과 상태 파일 IO만 제공한다.
  */
 import { readFile, writeFile } from 'fs/promises';
@@ -32,21 +37,27 @@ export async function saveCurationState(state, file = CURATION_STATE_PATH) {
 const reEsc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /**
- * 대시보드 HTML에서 섹션(논문/가이드라인)과 해당 pmid의 표 행을 제거하고
+ * 대시보드 HTML에서 지정 태그의 섹션과 해당 pmid의 표 행을 제거하고
  * 통계(분석일수·논문 수)를 재계산한다. 멱등 — 이미 없으면 그대로.
+ * tag를 좁혀 받는 이유: SECTION/GSECTION이 같은 날짜 키로 공존할 수 있다(C1).
  */
-export function removeSectionFromHtml(html, { sectionKey, pmid = '' }) {
+export function removeSectionFromHtml(html, { sectionKey, pmid = '', tag = 'SECTION' }) {
+  if (!['SECTION', 'GSECTION'].includes(tag)) return html;
   let out = html;
-  for (const tag of ['SECTION', 'GSECTION']) {
-    const re = new RegExp(`\\n?<!-- ${tag}:${reEsc(sectionKey)} -->[\\s\\S]*?<!-- /${tag}:${reEsc(sectionKey)} -->`, 'g');
-    out = out.replace(re, '');
-  }
+  const re = new RegExp(`\\n?<!-- ${tag}:${reEsc(sectionKey)} -->[\\s\\S]*?<!-- /${tag}:${reEsc(sectionKey)} -->`, 'g');
+  out = out.replace(re, '');
   if (pmid) {
     // 표는 pmid 기준 중복 제거돼 있어(publisher ② 단계) 행은 최대 1개다.
     const rowRe = new RegExp(`<tr data-pmid="${reEsc(pmid)}"[^>]*>[\\s\\S]*?</tr>`, 'g');
     out = out.replace(rowRe, '');
   }
   return recountStats(out);
+}
+
+/** 숨김 상태 키("TAG:sectionKey") → {tag, sectionKey}. 형식 밖이면 null. */
+export function parseHiddenKey(hiddenKey) {
+  const m = String(hiddenKey).match(/^(G?SECTION):(.+)$/);
+  return m ? { tag: m[1], sectionKey: m[2] } : null;
 }
 
 /** 통계 재계산 — publisher의 카운트 규칙과 동일(데일리 섹션만 일수로 센다). */
@@ -65,7 +76,7 @@ export function recountStats(html) {
  * 올릴 것 — 안 올리면 증분 패치되는 배포 페이지에 영원히 반영되지 않는다.
  */
 export function curationBlock({ owner, repo }) {
-  return `<!-- CURATION_BLOCK v3 -->
+  return `<!-- CURATION_BLOCK v4 -->
 <script>
 (function(){
   var OWNER='${owner}', REPO='${repo}';
@@ -115,16 +126,27 @@ export function curationBlock({ owner, repo }) {
     var m=a&&a.href.match(/pubmed\\.ncbi\\.nlm\\.nih\\.gov\\/(\\d+)/);
     return m?m[1]:'';
   }
-  function sectionKeyOf(card){
-    var el=card.closest('details'); if(!el) return '';
-    var n=el.previousSibling;
-    while(n){ if(n.nodeType===8){var m=String(n.nodeValue).match(/^\\s*G?SECTION:(\\S+)/); if(m) return m[1];} n=n.previousSibling; }
-    return '';
+  // details 요소의 정체성 = 자신을 감싸는 첫 번째 G?SECTION 주석 (태그+키 쌍).
+  // 형제 체인 전체를 특정 키로 스캔하면 더 오래된 섹션이 전부 오인된다(리뷰 M1).
+  function sectionInfoOfDetails(el){
+    var n=el&&el.previousSibling;
+    while(n){
+      if(n.nodeType===8){
+        var m=String(n.nodeValue).match(/^\\s*(G?SECTION):(\\S+)/);
+        if(m) return {tag:m[1],key:m[2]};
+      }
+      n=n.previousSibling;
+    }
+    return null;
   }
-  function onRemove(sectionKey,pmid,hideEls){
-    if(!sectionKey){alert('\\uC139\\uC158 \\uD0A4\\uB97C \\uCC3E\\uC9C0 \\uBABB\\uD588\\uC2B5\\uB2C8\\uB2E4.');return;}
+  function sectionInfoOf(card){
+    var el=card.closest('details');
+    return el?sectionInfoOfDetails(el):null;
+  }
+  function onRemove(info,pmid,hideEls){
+    if(!info){alert('\\uC139\\uC158 \\uD0A4\\uB97C \\uCC3E\\uC9C0 \\uBABB\\uD588\\uC2B5\\uB2C8\\uB2E4.');return;}
     if(!confirm('\\uC774 \\uD56D\\uBAA9\\uC744 \\uB300\\uC2DC\\uBCF4\\uB4DC\\uC5D0\\uC11C \\uC0AD\\uC81C\\uD560\\uAE4C\\uC694?\\n(\\uC544\\uCE74\\uC774\\uBE0C\\u00B7\\uC7AC\\uC120\\uC815 \\uBC29\\uC9C0 \\uBAA9\\uB85D\\uC740 \\uC720\\uC9C0\\uB429\\uB2C8\\uB2E4)'))return;
-    dispatch('curate-remove.yml',{sectionKey:sectionKey,pmid:pmid},function(){
+    dispatch('curate-remove.yml',{sectionKey:info.key,tag:info.tag,pmid:pmid},function(){
       hideEls.forEach(function(el){if(el)el.style.display='none';});
     });
   }
@@ -147,7 +169,7 @@ export function curationBlock({ owner, repo }) {
     for(var i=0;i<cards.length;i++)(function(card){
       if(card.querySelector('.cur-row'))return;
       var foot=card.querySelector('.pc-foot'); if(!foot)return;
-      var pmid=pmidOfCard(card), key=sectionKeyOf(card);
+      var pmid=pmidOfCard(card), info=sectionInfoOf(card);
       var row=document.createElement('div');
       row.className='cur-row';
       row.style.cssText='display:flex;align-items:center;gap:8px;margin-top:16px;flex-wrap:wrap';
@@ -165,7 +187,7 @@ export function curationBlock({ owner, repo }) {
       var mat=btn('\\uD83C\\uDFAC \\uC790\\uB8CC\\uD654','mat',false);
       del.addEventListener('click',function(){
         var tr=pmid?document.querySelector('.arch-table tr[data-pmid="'+pmid+'"]'):null;
-        onRemove(key,pmid,[card.closest('details'),tr]);
+        onRemove(info,pmid,[card.closest('details'),tr]);
       });
       mat.addEventListener('click',function(){onMaterialize(pmid,repaintAll);});
       box.appendChild(del);box.appendChild(mat);
@@ -184,7 +206,6 @@ export function curationBlock({ owner, repo }) {
       var st=document.createElement('style'); st.id='cur-style';
       st.textContent='.arch-table .c-title{min-width:170px}.arch-table .c-cur button{vertical-align:middle}'
         +'@media(max-width:699px){.arch-table .c-jour,.arch-table thead th:nth-child(2){display:none}}'
-        // 넓은 화면: 저널 nowrap이 폭을 독점해 관리 컬럼이 잘리는 것 방지(줄바꿈 허용)
         +'@media(min-width:700px){.arch-table .c-jour{white-space:normal;max-width:150px}}';
       document.head.appendChild(st);
     }
@@ -210,11 +231,11 @@ export function curationBlock({ owner, repo }) {
       var del=btn('\\uD83D\\uDDD1','del',true); del.title='\\uC0AD\\uC81C';
       var mat=btn('\\uD83C\\uDFAC','mat',true); mat.title='\\uC790\\uB8CC\\uD654';
       del.addEventListener('click',function(){
-        // 표에서 삭제 시 대응 카드 섹션 키는 카드 쪽에서 역탐색
-        var key='',cardEl=null;
+        // 표에서 삭제 시 대응 카드의 섹션 태그+키는 카드 쪽에서 역탐색
+        var info=null,cardEl=null;
         var cards=document.querySelectorAll('.paper-card,.guideline-card');
-        for(var j=0;j<cards.length;j++){ if(pmidOfCard(cards[j])===pmid){cardEl=cards[j];key=sectionKeyOf(cards[j]);break;} }
-        onRemove(key,pmid,[cardEl&&cardEl.closest('details'),tr]);
+        for(var j=0;j<cards.length;j++){ if(pmidOfCard(cards[j])===pmid){cardEl=cards[j];info=sectionInfoOf(cards[j]);break;} }
+        onRemove(info,pmid,[cardEl&&cardEl.closest('details'),tr]);
       });
       mat.addEventListener('click',function(){onMaterialize(pmid,repaintAll);});
       tdM.appendChild(del);tdM.appendChild(document.createTextNode(' '));tdM.appendChild(mat);
@@ -228,15 +249,17 @@ export function curationBlock({ owner, repo }) {
     for(var i=0;i<els.length;i++){ if(els[i]._curPaint)els[i]._curPaint(); }
   }
   function applyHidden(){
-    // 상태 파일이 먼저 갱신되고 HTML 패치·배포가 늦는 구간의 표시 정합
-    Object.keys(state.hidden||{}).forEach(function(key){
-      var all=document.querySelectorAll('.archive details');
-      for(var i=0;i<all.length;i++){
-        var n=all[i].previousSibling,found=false;
-        while(n){ if(n.nodeType===8&&String(n.nodeValue).match(new RegExp('^\\\\s*G?SECTION:'+key.replace(/[.*+?^$()|[\\]\\\\{}]/g,'\\\\$&')+'(\\\\s|$)'))){found=true;break;} n=n.previousSibling; }
-        if(found)all[i].style.display='none';
-      }
-      var pm=(state.hidden[key]||{}).pmid;
+    // 상태 파일이 먼저 갱신되고 HTML 패치·배포가 늦는 구간의 표시 정합.
+    // 각 details의 "자기" 마커(태그:키)를 구해 숨김 목록과 대조한다 —
+    // 키 하나로 형제 체인을 훑으면 더 오래된 섹션까지 전부 숨는다(리뷰 M1).
+    var hid=state.hidden||{};
+    var all=document.querySelectorAll('.archive details');
+    for(var i=0;i<all.length;i++){
+      var info=sectionInfoOfDetails(all[i]);
+      if(info&&hid[info.tag+':'+info.key]) all[i].style.display='none';
+    }
+    Object.keys(hid).forEach(function(k){
+      var pm=(hid[k]||{}).pmid;
       if(pm){var tr=document.querySelector('.arch-table tr[data-pmid="'+pm+'"]'); if(tr)tr.style.display='none';}
     });
   }

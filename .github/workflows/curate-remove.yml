@@ -13,6 +13,12 @@ on:
         description: '섹션 키 (YYYY-MM-DD 또는 YYYY-MM-DD-m-<pmid>)'
         required: true
         type: string
+      tag:
+        description: '섹션 태그 — 같은 날짜에 논문·가이드 섹션이 공존하므로 필수 구분'
+        required: false
+        default: 'SECTION'
+        type: choice
+        options: [SECTION, GSECTION]
       pmid:
         description: '논문 PMID (누적 표 행 제거용)'
         required: false
@@ -22,9 +28,9 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: curation-commit
-  cancel-in-progress: false
+# concurrency 그룹을 쓰지 않는 이유(리뷰 M3): GitHub는 그룹당 대기 1개만 유지해
+# 연속 클릭 시 앞선 요청이 조용히 취소된다. 짧은 잡 + push 경합은 아래 재시도
+# 루프(최신 main 재적용, 멱등)로 처리하므로 직렬화가 필요 없다.
 
 jobs:
   remove:
@@ -49,6 +55,7 @@ jobs:
       - name: Apply removal + commit (경합 재시도)
         env:
           CUR_SECTION_KEY: ${{ inputs.sectionKey }}
+          CUR_TAG:         ${{ inputs.tag }}
           CUR_PMID:        ${{ inputs.pmid }}
         run: |
           for i in 1 2 3; do
