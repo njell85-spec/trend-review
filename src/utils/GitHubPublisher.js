@@ -12,6 +12,7 @@ import { spawnSync } from 'child_process';
 import path from 'path';
 import { llmTelemetry } from './LLMClient.js';
 import { ensureCurationBlock, loadCurationState, removeSectionFromHtml, parseHiddenKey } from './curation.js';
+import { ensureArchiveStatus } from './archiveStatus.js';
 
 const API = 'https://api.github.com';
 
@@ -405,6 +406,19 @@ export class GitHubPublisher {
     return out;
   }
 
+  /**
+   * "아카이브 저장 현황" 섹션(§4-E)을 배포 페이지에 보장(멱등, 매일 최신 데이터로 교체).
+   * analysis_archive.json이 없거나 깨지면 원본을 그대로 반환한다 — 데일리 코어 무영향(소프트).
+   */
+  async _ensureArchiveStatus(html) {
+    try {
+      const raw = await readFile(path.join(this._repoPath, 'output', 'analysis_archive.json'), 'utf8');
+      return ensureArchiveStatus(html, JSON.parse(raw));
+    } catch {
+      return html;
+    }
+  }
+
   // ── 누적 아카이브 표의 행(읽음 체크박스 포함) ──────────────────────────────────
   _tableRows(dateStr, topPapers, guideline = null, { manual = false } = {}) {
     // 수동 지정 행은 data-manual 마커를 단다 — 가이드라인(data-guideline)과 같은 방식으로,
@@ -765,6 +779,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     let curationState = null;
     try { curationState = await loadCurationState(path.join(this._repoPath, 'output', 'curation_state.json')); } catch { /* 소프트 */ }
     updated = this._applyCuration(updated, curationState);
+    updated = await this._ensureArchiveStatus(updated);
 
     const localPath = path.join(this._repoPath, 'index.html');
     await writeFile(localPath, updated, 'utf8');
