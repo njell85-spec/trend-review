@@ -85,6 +85,13 @@
   .p3{--g:linear-gradient(150deg,#c98f33,#d9a441);--accent:#d9a441}
   .p4{--g:linear-gradient(150deg,#6d7f96,#8496ac);--accent:#8496ac}
   .pc{--g:linear-gradient(150deg,#3a4b60,#51637b);--accent:#6d8199}
+  /* Phase 카드 안 6분류 개수 요약 (수동 유지 — 항목 편집 시 함께 갱신) */
+  .pcounts{display:grid;grid-template-columns:repeat(3,1fr);gap:5px 6px;margin-top:12px}
+  .pcounts span{font-size:11px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:6px;
+    background:rgba(255,255,255,.16);border-radius:6px;padding:3px 8px;line-height:1.3}
+  .pcounts span em{font-style:normal;opacity:.9}
+  .pcounts span b{font-weight:800;font-variant-numeric:tabular-nums}
+  .pcounts span.z{opacity:.42}
 
   /* legend */
   .legend{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 16px;
@@ -151,10 +158,14 @@
   </div>
 
   <div class="index">
-    <a class="ibox p1" href="#ph1"><div class="pn">PHASE 1</div><div class="pt">Curate &amp; Brief</div><div class="pk">고르기·브리핑</div><span class="pstat">운영 중</span></a>
-    <a class="ibox p2" href="#ph2"><div class="pn">PHASE 2</div><div class="pt">Archive</div><div class="pk">아카이브</div><span class="pstat">운영 중</span></a>
-    <a class="ibox p3" href="#ph3"><div class="pn">PHASE 3</div><div class="pt">Produce</div><div class="pk">영상·카드</div><span class="pstat">개선 중</span></a>
-    <a class="ibox p4" href="#ph4"><div class="pn">PHASE 4</div><div class="pt">Publish</div><div class="pk">공개 발행</div><span class="pstat">나중에</span></a>
+    <a class="ibox p1" href="#ph1"><div class="pn">PHASE 1</div><div class="pt">Curate &amp; Brief</div><div class="pk">고르기·브리핑</div><span class="pstat">운영 중</span>
+      <div class="pcounts"><span><em>확정</em><b>3</b></span><span><em>P-m</em><b>1</b></span><span class="z"><em>P-d</em><b>0</b></span><span class="z"><em>C</em><b>0</b></span><span class="z"><em>상의</em><b>0</b></span><span><em>특이</em><b>1</b></span></div></a>
+    <a class="ibox p2" href="#ph2"><div class="pn">PHASE 2</div><div class="pt">Archive</div><div class="pk">아카이브</div><span class="pstat">운영 중</span>
+      <div class="pcounts"><span><em>확정</em><b>3</b></span><span><em>P-m</em><b>1</b></span><span class="z"><em>P-d</em><b>0</b></span><span class="z"><em>C</em><b>0</b></span><span><em>상의</em><b>1</b></span><span><em>특이</em><b>1</b></span></div></a>
+    <a class="ibox p3" href="#ph3"><div class="pn">PHASE 3</div><div class="pt">Produce</div><div class="pk">영상·카드</div><span class="pstat">개선 중</span>
+      <div class="pcounts"><span><em>확정</em><b>1</b></span><span><em>P-m</em><b>2</b></span><span class="z"><em>P-d</em><b>0</b></span><span><em>C</em><b>1</b></span><span><em>상의</em><b>1</b></span><span><em>특이</em><b>1</b></span></div></a>
+    <a class="ibox p4" href="#ph4"><div class="pn">PHASE 4</div><div class="pt">Publish</div><div class="pk">공개 발행</div><span class="pstat">나중에</span>
+      <div class="pcounts"><span class="z"><em>확정</em><b>0</b></span><span class="z"><em>P-m</em><b>0</b></span><span class="z"><em>P-d</em><b>0</b></span><span class="z"><em>C</em><b>0</b></span><span><em>상의</em><b>2</b></span><span><em>특이</em><b>1</b></span></div></a>
   </div>
 
   <div class="legend">
