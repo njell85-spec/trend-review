@@ -5,7 +5,7 @@ import { buildMonthDocHtml, esc } from '../src/utils/docBuilder.js';
 const entry = {
   date: '2026-07-06', pmid: '12345', title: 'Trial <script>alert(1)</script>',
   title_ko: '무작위 시험', journal: 'NEJM', doi: '10.1/x', badge: '본문(PMC)',
-  clinicalQuestion_ko: '질문?', pico_ko: { patient: 'P', intervention: 'I', comparison: 'C', outcome: 'O' },
+  clinicalQuestion_ko: '질문?', pico_ko: { population: '성인 패혈증 환자', intervention: 'I', comparison: 'C', outcome: 'O' },
   keyFindings: ['finding A'], keyFindings_ko: ['소견 A'], evidenceLevel: '1b',
   references: [{ label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/12345/' }],
   fullText: 'Body text', fullTextSource: 'PMC', dossier: null, pdfLink: 'https://drive.google.com/x',
@@ -38,4 +38,10 @@ test('도시에 섹션은 dossier가 있을 때만 렌더된다', () => {
 
 test('esc는 & < > " \' 를 치환한다 (GitHubPublisher.esc와 동일 집합)', () => {
   assert.equal(esc(`a&b<c>"d"'e'`), 'a&amp;b&lt;c&gt;&quot;d&quot;&#39;e&#39;');
+});
+
+test('PICO P 항목이 pico_ko.population을 렌더한다 (patient 오독 회귀 방지)', () => {
+  const html = buildMonthDocHtml('2026-07', [entry]);
+  assert.ok(html.includes('P: 성인 패혈증 환자')); // .population을 읽어야 함
+  assert.ok(!html.includes('P: </li>')); // 공란이면 안 됨
 });

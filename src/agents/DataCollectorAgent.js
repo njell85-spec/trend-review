@@ -13,6 +13,11 @@ import { RetryHelper } from '../utils/RetryHelper.js';
 import { kstDateSlash } from '../utils/dates.js';
 
 const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
+
+// PubMed URL에는 api_key 가 query param 으로 들어간다. 로그·에러에 URL을 남기기 전에
+// 반드시 이 함수로 키를 가린다 (public/공유 Actions 로그 노출 방지).
+const scrubUrl = (u) => String(u).replace(/([?&]api_key=)[^&]*/gi, '$1REDACTED');
+
 const DEFAULT_QUERY =
   '"emergency medicine"[MeSH] OR "critical care"[MeSH] OR "sepsis"[MeSH]';
 
@@ -54,13 +59,13 @@ export class DataCollectorAgent {
       this.retry.execute(
         async () => {
           const res = await fetch(url);
-          if (!res.ok) throw new Error(`PubMed HTTP ${res.status}: ${url}`);
+          if (!res.ok) throw new Error(`PubMed HTTP ${res.status}: ${scrubUrl(url)}`);
           return res.json();
         },
         {
           label: 'PubMed-fetch',
           onRetry: ({ attempt, delay }) =>
-            this.logger.warn(`Retry ${attempt} in ${Math.round(delay)}ms`, { url }),
+            this.logger.warn(`Retry ${attempt} in ${Math.round(delay)}ms`, { url: scrubUrl(url) }),
         }
       )
     );

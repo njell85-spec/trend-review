@@ -57,9 +57,11 @@ export async function runWithRetry(makePipeline, {
       const last = attempt === maxAttempts;
       onFail({ attempt, label, retryable, message: String(err?.message ?? '') });
 
-      if (retryable && !last && delayMs > 0) {
+      // delayMs>=0 로 게이트 — delayMs===0(즉시 재시도 의도)도 재시도를 유지한다.
+      // (과거 delayMs>0 조건은 delay 0 설정 시 재시도를 통째로 비활성화했다.)
+      if (retryable && !last && delayMs >= 0) {
         onRetry({ attempt, delayMs, label });
-        await sleepFn(delayMs);
+        if (delayMs > 0) await sleepFn(delayMs);
         continue;
       }
       return { ok: false, retryable, label, error: err, attempt };

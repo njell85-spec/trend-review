@@ -121,7 +121,15 @@ export class TrendReviewOrchestrator {
       date: today,
     }));
 
-    const merged = [...existing, ...added];
+    // dedup: 같은 PMID 중복 누적 방지 (재실행·resume 시 파일 무한 증식 차단).
+    // 먼저 등장한 항목(기존 기록)을 유지한다. 빈 pmid는 서로 다른 논문일 수 있어 병합하지 않고 보존.
+    const seen = new Set();
+    const merged = [...existing, ...added].filter((e) => {
+      if (!e?.pmid) return true;
+      if (seen.has(e.pmid)) return false;
+      seen.add(e.pmid);
+      return true;
+    });
     if (!existsSync(this.outputDir)) await mkdir(this.outputDir, { recursive: true });
     await writeFile(this.excludeListPath, JSON.stringify(merged, null, 2));
     this.logger.info(`Exclusion list updated: ${merged.length} total PMIDs tracked`);
@@ -493,8 +501,12 @@ export class TrendReviewOrchestrator {
       const guidelineCard = await this._stageGuideline(todayStr);
 
       // 제외목록·가이드라인 기록을 publish 전에 저장 — publish가 이 파일들을
-      // 커밋/푸시하므로, 순서가 뒤면 원격 목록이 항상 하루 늦어 중복 선정된다
-      if (validatedPico.length) await this._saveExcludePmids(validatedPico);
+      // 커밋/푸시하므로, 순서가 뒤면 원격 목록이 항상 하루 늦어 중복 선정된다.
+      // 단, 분석 실패(analysisError) fallback 카드는 제외목록에 넣지 않는다 —
+      // 넣으면 제대로 분석 못 한 좋은 논문이 후보풀에서 영구 소진되므로, 다음 실행에서
+      // 재선정·재분석되도록 남겨둔다.
+      const excludable = validatedPico.filter((p) => !p.analysisError);
+      if (excludable.length) await this._saveExcludePmids(excludable);
       if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)

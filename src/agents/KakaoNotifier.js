@@ -24,6 +24,7 @@ export class KakaoNotifier {
     this.refreshToken = options.refreshToken ?? process.env.KAKAO_REFRESH_TOKEN;
     this.clientSecret = options.clientSecret ?? process.env.KAKAO_CLIENT_SECRET ?? null;
     this._rotationDetected = false; // 이번 실행에서 refresh 토큰 회전을 감지했는지
+    this._cachedAccessToken = null; // 한 번 교환한 access token을 실행 내 재사용(중복 인증·회전 리스크 제거)
   }
 
   get isConfigured() {
@@ -32,6 +33,10 @@ export class KakaoNotifier {
 
   // ── refresh token → access token ───────────────────────────────────────────
   async _accessToken() {
+    // 실행 내 캐시 — 다건 메시지 발송 시 매번 refresh→access 재교환하지 않는다.
+    // (재교환 반복은 불필요할 뿐 아니라, 카카오가 refresh_token을 회전시키면
+    //  메모리의 옛 this.refreshToken으로 2번째 교환이 실패할 수 있다.)
+    if (this._cachedAccessToken) return this._cachedAccessToken;
     const body = new URLSearchParams({
       grant_type: 'refresh_token',
       client_id: this.restApiKey,
@@ -60,7 +65,8 @@ export class KakaoNotifier {
       // GitHub Actions 로그에서 눈에 띄는 경고 어노테이션
       console.log('::warning::Kakao refresh 토큰이 회전되었습니다 — KAKAO_REFRESH_TOKEN secret을 재발급·갱신하지 않으면 곧 카톡 알림이 중단됩니다.');
     }
-    return data.access_token;
+    this._cachedAccessToken = data.access_token;
+    return this._cachedAccessToken;
   }
 
   // 회전 감지 시 기존 토큰이 아직 유효한 동안 카톡으로 갱신 안내 발송 (best-effort)

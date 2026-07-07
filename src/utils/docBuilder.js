@@ -20,7 +20,7 @@ function entrySection(e) {
 <p><b>${esc(e.title)}</b><br>${esc(e.journal)} · PMID ${esc(e.pmid)}${e.doi ? ` · DOI ${esc(e.doi)}` : ''}<br>
 근거: <b>${esc(e.badge)}</b> · 근거수준 ${esc(e.evidenceLevel ?? '—')}${e.pdfLink ? ` · <a href="${esc(e.pdfLink)}">원문 PDF(Drive)</a>` : ''}</p>
 <h3>임상 질문</h3><p>${esc(e.clinicalQuestion_ko)}</p>
-<h3>PICO</h3><ul><li>P: ${esc(pico.patient)}</li><li>I: ${esc(pico.intervention)}</li><li>C: ${esc(pico.comparison)}</li><li>O: ${esc(pico.outcome)}</li></ul>
+<h3>PICO</h3><ul><li>P: ${esc(pico.population)}</li><li>I: ${esc(pico.intervention)}</li><li>C: ${esc(pico.comparison)}</li><li>O: ${esc(pico.outcome)}</li></ul>
 <h3>핵심 소견</h3><ul>${li(e.keyFindings_ko)}</ul><ul>${li(e.keyFindings)}</ul>
 ${dossier ? `<h3>근거 도시에 (페이월 — 권위 소스 보강)</h3><ul>${dossier}</ul>` : ''}
 <h3>참조</h3><ul>${(e.references ?? []).map((r) => `<li><a href="${esc(r.url)}">${esc(r.label)}</a></li>`).join('')}</ul>
