@@ -11,6 +11,16 @@
 > 신설 + 프로젝트/전역 양쪽에 **"안내 전 최신 UI(모바일/데스크탑 폼) 구성 확인"** 조항 추가,
 > ② NotebookLM `NOTEBOOKLM_AUTH_STATE` 재발급 + register.py `async with` 버그 수정 →
 > sync 재검증 **성공**(run 28839729336, Doc 2건 등록 완료). 데일리 상태파일은 main 최신 유지.
+>
+> **[2026-07-07 낮~오후 추가 완료 — 이 세션, 상세 개정은 추후]**
+> - PR **#36** 병합: 복구 3파일 + NotebookLM async fix(월 cron 자동등록 실동작 조건 충족) + 전역 "최신 UI" 규칙.
+> - PR **#37** 병합: 대시보드 **아카이브 저장 현황 섹션**(누적 표 아래, 접힘, "나만 보기"=tr_pat 게이트,
+>   건별 본문출처/PDF/전문Doc 메타데이터만). REPORT_SPEC §4-E. 테스트 65건.
+> - PR **#38** 병합: `.mcp.json`(`codex mcp-server`) — 클코 세션에서 **Codex 사용**.
+> - **Codex MCP 셋업 완료·실검증**(새 세션 `/mcp`에 codex 도구 로드 확인). 데스크탑 Codex 로그인 →
+>   `CODEX_AUTH_B64`(Default 환경 env) + setup script 설치/복원 + OpenAI 네트워크 허용.
+>   문서 **`docs/codex-mcp-setup.md`**(토큰 갱신 §3). 전역 자동 규칙(모든 repo `.mcp.json` 자동)
+>   `.claude/global-CLAUDE.md` "Codex MCP" 항.
 
 ## 0. 한 줄 요약
 `trend-review`(EM/CCM 데일리 논문 리뷰 파이프라인)를 **4-Phase 구조로 확장**했고,

@@ -37,5 +37,10 @@
 - 대시보드·메시지 포맷 변경 시 push 전 **/preview 스킬로 미리보기 승인** 받기.
 - 커밋 전 **`npm run spec-lint` 통과** 확인 (CI 앞단에서도 강제됨).
 
+## Codex MCP (클코 안에서 Codex 사용)
+- 셋업·토큰 갱신·트러블슈팅 문서: **`docs/codex-mcp-setup.md`**.
+- 전역 자동 규칙(모든 repo에 `.mcp.json` 자동 추가)은 `.claude/global-CLAUDE.md` "Codex MCP" 항 참고.
+- PeterJ가 "codex 문서 불러와" 하면 `docs/codex-mcp-setup.md`를 연다.
+
 > 세부 목표·운영 방침은 아직 확정 전이라 여기 못 박지 않음. 대화로 조율하며,
 > 현재 작업 중인(확정 아님) 스펙은 REPORT_SPEC.md 참고.

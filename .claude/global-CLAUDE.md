@@ -60,3 +60,15 @@
 
 ## 환경 유지
 - superpowers 플러그인 항상 설치·활성 (SessionStart 훅 담당).
+
+## Codex MCP — 모든 프로젝트에서 클코 안에서 Codex 사용 (PeterJ 확정 2026-07-07)
+- **목적**: 어느 repo에서든 Claude Code 세션이 Codex(OpenAI)를 도구로 호출(`mcp__codex__codex`).
+- **자동 규칙(방법 B — 세션이 알아서)**: 작업하는 repo 루트에 `.mcp.json`이 없거나 codex 서버가
+  빠져 있으면 **자동으로 추가·커밋**한다(이미 있으면 그대로):
+  `{ "mcpServers": { "codex": { "command": "codex", "args": ["mcp-server"] } } }`
+  — 작은 chore 커밋으로. (MCP는 세션 시작 시 로드되므로 새 repo면 다음 세션부터 도구가 뜬다.)
+- **활성 전제**(Default 클라우드 환경에 1회 셋업 — 완료): Codex CLI 설치 + `CODEX_AUTH_B64`
+  환경변수(인증) + OpenAI 네트워크 허용. 미충족 환경이면 이 MCP만 조용히 로드 실패(무해).
+- **막히거나 토큰 만료 시**: PeterJ가 "codex 셋업/문서 불러와" 하면
+  `njell85-spec/trend-review`의 **`docs/codex-mcp-setup.md`**를 연다(다른 repo 세션이면
+  `add_repo`로 trend-review를 가져와 읽는다). 토큰 갱신 절차는 그 문서 §3.
