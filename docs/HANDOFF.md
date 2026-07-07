@@ -9,7 +9,8 @@
 > 미병합 3파일(CLAUDE.md·HANDOFF.md·notebooklm-register.py)을 `session-history-loss-error-182sbo`
 > 브랜치에서 복원. 유실분 재작업: ① 전역 `.claude/global-CLAUDE.md`에 "사용자 액션 안내" 규칙
 > 신설 + 프로젝트/전역 양쪽에 **"안내 전 최신 UI(모바일/데스크탑 폼) 구성 확인"** 조항 추가,
-> ② NotebookLM `NOTEBOOKLM_AUTH_STATE` 재발급 후 sync 재검증(진행). 데일리 상태파일은 main 최신 유지.
+> ② NotebookLM `NOTEBOOKLM_AUTH_STATE` 재발급 + register.py `async with` 버그 수정 →
+> sync 재검증 **성공**(run 28839729336, Doc 2건 등록 완료). 데일리 상태파일은 main 최신 유지.
 
 ## 0. 한 줄 요약
 `trend-review`(EM/CCM 데일리 논문 리뷰 파이프라인)를 **4-Phase 구조로 확장**했고,
@@ -226,14 +227,18 @@ b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 
   notebooklm-py 설치·`notebooklm login` 성공(Windows, Python 3.12.10 신규 설치·
   playwright chromium 별도 다운로드 필요했음) → Secret `NOTEBOOKLM_AUTH_STATE` +
   Variables `NOTEBOOKLM_NOTEBOOK_ID` 등록.
-  - **실검증 결과(2026-07-07 dispatch, run 28829294519)**: 자동 등록 **실패** —
-    `notebooklm-py` 인증 갱신 단계에서 `ValueError: Authentication expired or invalid`
-    (storage_state가 CI 헤드리스에서 만료/무효 판정, `notebooklm login` 재인증 요구).
-    **카톡 리마인더 폴백은 정상 작동**(분석 Doc·전문 Doc 2건 발송 확인) — 설계된
-    소프트 실패 안전망 성립. **미결(선택)**: 자동 등록 살리려면 auth state 재발급 또는
-    브라우저 프로필 동반 필요(비공식 라이브러리 한계, PeterJ 리스크 수용 항목).
-    **현 운영 모드 = 매월 1일 카톡 리마인더 → 폰에서 소스 2개 수동 추가(2클릭)**.
-    데일리 코어·아카이브에는 무영향(소프트 실패 격리 실증).
+  - **실검증 결과(2026-07-07 낮 복원 세션) — 자동 등록 부활 ✅**: PeterJ가
+    `NOTEBOOKLM_AUTH_STATE` 재발급 + register.py `async with` 버그 수정(아래) 후
+    run `28839729336`에서 분석 Doc(`15hUHhHz…`)·전문 Doc(`1t1XkK4D…`) **2건 모두
+    `등록 완료`**, 카톡 리마인더 폴백은 **skip**(불필요). 즉 자동 동기화 경로 실동작.
+  - **직전 "실패"의 진짜 원인 = 인증 만료 아님, 코드 버그**: main에도 있던 선재 버그로
+    `client = await NotebookLMClient.from_storage(...)`가 HTTP 커널을 초기화 안 해
+    `add_url`에서 `RuntimeError: Client not initialized`로 죽었다(진단의 "만료됨 2개"는
+    비핵심 쿠키 오탐 — `from_storage`는 재발급분을 정상 통과). `async with … as client:`로
+    수정(복구 브랜치 커밋 `b481c03`).
+  - **미결(권장) — main 병합 필요**: 이 fix는 현재 `claude/recover-previous-session-t0l4tb`
+    에만 있음. **main에 병합해야 매월 1일 cron 자동 등록이 실제 동작**한다(안 하면 cron은
+    여전히 버그 → 리마인더 폴백으로만). 운영 모드 = **자동 등록 복귀**(실패 시 카톡 리마인더 폴백 유지).
 
 ### 주의 (자동 세션·사람 공통)
 - §3 확정 결정 되묻지 말 것. §4 데일리 코어 무영향 유지. 대시보드/카톡 포맷 변경 시 push 전 /preview.
