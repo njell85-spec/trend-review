@@ -687,7 +687,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
 
   // ── 누적 업데이트 ────────────────────────────────────────────────────────────
   async publish(dateStr, topPapers, { guideline = null, manual = false } = {}) {
-    const { sha, html: existing } = await this._getIndex();
+    const { html: existing } = await this._getIndex();
     const generatedAt = new Date().toLocaleString('ko-KR', {
       timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
     });
@@ -787,17 +787,31 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     try {
       this._gitPush(dateStr);
       return this.pagesUrl;
-    } catch {
-      let apisha = sha;
-      if (!apisha) {
-        try { apisha = (await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`)).sha; } catch { /* */ }
+    } catch (pushErr) {
+      // git push 실패 폴백: index.html 뿐 아니라 상태 JSON(제외목록·가이드라인)도
+      // Contents API로 함께 upsert한다. 상태 파일을 빠뜨리면(F1) 다음날 fresh checkout이
+      // 중복방지 게이트를 잃어 같은 논문을 재선정한다. 각 PUT은 원격 최신 sha를 재조회해
+      // 반영한다. (동시 러너로 원격이 앞선 경우의 완전 병합은 범위 밖 — 데일리는 단일 크론.)
+      this.logger.warn('git push 실패 — Contents API 폴백으로 개별 업로드', { err: this._scrub(pushErr.message) });
+      await this._putFileViaApi('index.html', updated, dateStr);
+      for (const rel of ['output/selected_papers.json', 'output/selected_guidelines.json']) {
+        const abs = path.join(this._repoPath, rel);
+        if (!existsSync(abs)) continue;
+        await this._putFileViaApi(rel, await readFile(abs, 'utf8'), dateStr);
       }
-      await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`, 'PUT', {
-        message: `Update archive: ${dateStr}`,
-        content: Buffer.from(updated, 'utf8').toString('base64'),
-        sha: apisha,
-      });
       return this.pagesUrl;
     }
+  }
+
+  // Contents API로 파일 하나를 upsert — 원격 최신 sha를 재조회해 반영(신규 파일이면 sha 없이 생성).
+  async _putFileViaApi(relPath, content, dateStr) {
+    let sha = null;
+    try { sha = (await this._req(`/repos/${this.owner}/${this.repo}/contents/${relPath}`)).sha; }
+    catch { /* 원격에 아직 없는 신규 파일 */ }
+    await this._req(`/repos/${this.owner}/${this.repo}/contents/${relPath}`, 'PUT', {
+      message: `Update archive: ${dateStr}`,
+      content: Buffer.from(content, 'utf8').toString('base64'),
+      sha,
+    });
   }
 }

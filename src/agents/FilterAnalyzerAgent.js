@@ -278,6 +278,15 @@ export class FilterAnalyzerAgent {
       topPapers.map((paper) => this._analyzeSinglePaper(paper))
     );
 
+    const rejected = analyses.filter((a) => a.status === 'rejected');
+    // 전건 실패면 예외를 전파한다 — 성공처럼 빈 fallback 카드를 발행/발송하지 않고,
+    // runWithRetry(github-actions-daily)가 세션 한도(429) 리셋 창을 노려 재시도하게 한다.
+    // (실패 사유 원문을 메시지에 실어 classifyFailure가 429/세션한도를 인식하도록 한다.)
+    if (topPapers.length && rejected.length === topPapers.length) {
+      const reason = rejected[0].reason?.message ?? 'unknown error';
+      throw new Error(`PICO analysis failed for all ${topPapers.length} paper(s): ${reason}`);
+    }
+
     return analyses.map((result, idx) => {
       if (result.status === 'fulfilled') return result.value;
       this.logger.error(`PICO failed for PMID ${topPapers[idx].pmid}`, {
