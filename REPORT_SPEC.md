@@ -116,6 +116,12 @@
   `github-actions-daily.mjs`가 카카오 발송 뒤 호출 — **실패해도 파이프라인 성공(소프트 실패)**.
 - 상태 파일: `output/analysis_archive.json`(항목 + Drive docId/folderId/pdfFileId) —
   워크플로우 "Commit daily state" 스텝이 커밋. gitignore 예외 필수(spec-lint 강제).
+- **대시보드 "아카이브 저장 현황" 섹션(§4-E, `src/utils/archiveStatus.js`)**: 누적 아카이브
+  표 아래 접힌 섹션으로, 논문 건별 저장 상태(본문 출처 = OA본문/웹레퍼런스/초록만 · OA PDF
+  적재 여부 · 전문 Doc 포함 여부)를 요약+건별로 보여준다. **메타데이터만**(본문 텍스트 미노출).
+  **나만 보기 게이트**: 큐레이션 PAT(localStorage `tr_pat`)가 있을 때만 표시(기본 display:none).
+  대시보드 삭제(§4-G)와 **무관** — 삭제한 논문도 여기엔 "저장됨"으로 남는다(Drive·Doc 누적).
+  `GitHubPublisher._ensureArchiveStatus`가 매일 최신 데이터로 멱등 주입(archive 없으면 소프트 스킵).
 - Secrets: `GOOGLE_CLIENT_ID`·`GOOGLE_CLIENT_SECRET`·`GOOGLE_REFRESH_TOKEN`
   (스코프 `drive.file`+`youtube.upload` 고정). 적재 루트 폴더 `trend-review`는 **앱이
   자동 생성**(find-or-create) — `drive.file` 스코프는 수동 생성 폴더 접근이 불가하므로
