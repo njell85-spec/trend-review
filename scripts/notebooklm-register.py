@@ -61,10 +61,13 @@ async def main() -> None:
         sys.exit(1)
     storage = os.environ.get("NOTEBOOKLM_STORAGE")
     _diagnose_state(storage)
-    client = await NotebookLMClient.from_storage(storage)
-    for url in urls:
-        await client.sources.add_url(nb_id, url, wait=True)
-        print(f"등록 완료: {url}")
+    # notebooklm-py 0.7.3: `async with`로 진입해야 HTTP 커널이 초기화된다. 예전
+    # `client = await from_storage(...)` 형태는 커널 미초기화로 add_url 시
+    # "Client not initialized"로 죽었다(진단 로그가 인증 성패를 가리는 원인이었음).
+    async with NotebookLMClient.from_storage(storage) as client:
+        for url in urls:
+            await client.sources.add_url(nb_id, url, wait=True)
+            print(f"등록 완료: {url}")
 
 
 asyncio.run(main())
