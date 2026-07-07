@@ -68,6 +68,26 @@ MD
   fi
 fi
 
+# ── codex-debate 스킬·에이전트 전역 설치 (SSOT=저장소 .claude, 사본은 파생물) ──
+# 로컬 원본 있으면 복사, 없으면(다른 프로젝트/빈 환경) GitHub main에서 개별 다운로드.
+# 유지보수: 저장소 원본만 수정 — 이 사본은 세션마다 덮어써진다.
+CD_SKILL_DIR="$HOME/.claude/skills/codex-debate"
+CD_AGENTS_DIR="$HOME/.claude/agents"
+mkdir -p "$CD_SKILL_DIR" "$CD_AGENTS_DIR" 2>/dev/null || true
+SRC_CD="${CLAUDE_PROJECT_DIR:-}/.claude"
+if [ -n "${CLAUDE_PROJECT_DIR:-}" ] && [ -d "$SRC_CD/skills/codex-debate" ]; then
+  cp "$SRC_CD/skills/codex-debate/"* "$CD_SKILL_DIR/" 2>/dev/null || true
+  cp "$SRC_CD/agents/code-reviewer.md" "$SRC_CD/agents/review-judge.md" "$CD_AGENTS_DIR/" 2>/dev/null || true
+else
+  CD_RAW="https://raw.githubusercontent.com/njell85-spec/trend-review/main/.claude"
+  for f in skills/codex-debate/SKILL.md skills/codex-debate/codex-review.sh \
+           skills/codex-debate/report-template.md \
+           agents/code-reviewer.md agents/review-judge.md; do
+    curl -fsSL --max-time 10 "$CD_RAW/$f" -o "$HOME/.claude/$f" 2>/dev/null || true
+  done
+fi
+chmod +x "$CD_SKILL_DIR/codex-review.sh" 2>/dev/null || true
+
 exit 0
 SCRIPT
 chmod +x "$HOME/.claude/peterj-session-start.sh"
