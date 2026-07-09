@@ -147,7 +147,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <h1>TR master plan <span class="vpill">v18</span></h1>
+    <h1>TR master plan <span class="vpill">v19</span></h1>
     <div class="navlinks">
       <a href="https://njell85-spec.github.io/trend-review/">📊 대시보드(리포트 페이지)</a>
       <a href="https://github.com/njell85-spec/trend-review">GitHub</a>
@@ -160,7 +160,7 @@
 
   <div class="index">
     <a class="ibox p1" href="#ph1"><div class="pn">PHASE 1</div><div class="pt">Curate &amp; Brief</div><div class="pk">고르기·브리핑</div><span class="pstat">운영 중</span>
-      <div class="pcounts"><span><em>확정</em><b>3</b></span><span><em>P-m</em><b>1</b></span><span class="z"><em>P-d</em><b>0</b></span><span class="z"><em>C</em><b>0</b></span><span class="z"><em>상의</em><b>0</b></span><span><em>특이</em><b>1</b></span></div></a>
+      <div class="pcounts"><span><em>확정</em><b>3</b></span><span><em>P-m</em><b>1</b></span><span class="z"><em>P-d</em><b>0</b></span><span><em>C</em><b>1</b></span><span><em>상의</em><b>2</b></span><span><em>특이</em><b>1</b></span></div></a>
     <a class="ibox p2" href="#ph2"><div class="pn">PHASE 2</div><div class="pt">Archive</div><div class="pk">아카이브</div><span class="pstat">운영 중</span>
       <div class="pcounts"><span><em>확정</em><b>3</b></span><span><em>P-m</em><b>1</b></span><span class="z"><em>P-d</em><b>0</b></span><span class="z"><em>C</em><b>0</b></span><span><em>상의</em><b>1</b></span><span><em>특이</em><b>1</b></span></div></a>
     <a class="ibox p3" href="#ph3"><div class="pn">PHASE 3</div><div class="pt">Produce</div><div class="pk">영상·카드</div><span class="pstat">개선 중</span>
@@ -187,8 +187,10 @@
       <div class="cat pm"><div class="cl"><i style="background:var(--pm)"></i>진행(P-m) <small>모바일</small></div>
         <ol class="items"><li>큐레이션 버튼 실사용 피드백 — 만져보고 고칠 포맷.</li></ol></div>
       <div class="cat pd"><div class="cl"><i style="background:var(--pd)"></i>진행(P-d) <small>데스크탑</small></div><div class="empty">— 없음</div></div>
-      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div><div class="empty">— 없음</div></div>
-      <div class="cat ds"><div class="cl"><i style="background:var(--ds)"></i>상의</div><div class="empty">— 없음</div></div>
+      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div>
+        <ol class="items"><li><b>논문 선정 품질 개편</b> — 결정적 프리필터 → 상위 <b>K편만</b> Opus 정독·선정(retrieve-then-rerank). K는 <b>recall@K 실험</b>으로 실측 확정 + 메타 기준 촘촘화 병행. <b>다음 세션 착수.</b></li></ol></div>
+      <div class="cat ds"><div class="cl"><i style="background:var(--ds)"></i>상의</div>
+        <ol class="items"><li>GPT 교차검증 도입 시점 — 우선 Claude 단독 개선 후 <b>2단계 옵션</b>(비용·OpenAI 키).</li><li>주1회 <b>가이드라인 선정</b>도 논문 선정 개편 후 검토·개편(Phase B).</li></ol></div>
       <div class="cat nt"><div class="cl"><i style="background:var(--nt)"></i>특이 <small>note</small></div>
         <ol class="items"><li>자료화 버튼 본격 사용은 품질 개선(Phase 3) 이후 — 실제 영상 생성+업로드라 비용. 지금은 1~2건만.</li></ol></div>
     </div>
@@ -265,7 +267,8 @@
     <table>
       <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
       <tbody>
-        <tr class="cur"><td class="v">v18</td><td class="d">2026-07-07 저녁</td><td><b>전면 개편</b> — Phase 1→4를 메인 축으로, 각 Phase를 6분류(확정·진행 P-m·진행 P-d·진행 C·상의·특이)로 재구성. 임시 R/A/B 코드 제거. 스탯 3박스 제거. 제목 아래 바로가기(대시보드=리포트 페이지 포함).</td></tr>
+        <tr class="cur"><td class="v">v19</td><td class="d">2026-07-09</td><td><b>논문 선정 품질 개편 착수</b> — 현행 선정이 <b>LLM 판단 0</b>(결정적 메타 점수만)이 저품질의 구조적 원인으로 확인. "300편 배치 AUP 거부"는 미검증(실은 429 정황)으로 재확인, 실제 논문 13편 Opus 배치 채점 성공(59초·거부 없음). 방향 = <b>retrieve-then-rerank + recall@K 실측 + 메타 촘촘화</b>. GPT 교차검증은 2단계 옵션, 가이드라인 선정은 Phase B. (설계·진단 단계, 코드 미변경.)</td></tr>
+        <tr><td class="v">v18</td><td class="d">2026-07-07 저녁</td><td><b>전면 개편</b> — Phase 1→4를 메인 축으로, 각 Phase를 6분류(확정·진행 P-m·진행 P-d·진행 C·상의·특이)로 재구성. 임시 R/A/B 코드 제거. 스탯 3박스 제거. 제목 아래 바로가기(대시보드=리포트 페이지 포함).</td></tr>
         <tr><td class="v">v17</td><td class="d">2026-07-07 저녁</td><td>저장소 정본화(<span class="mono">docs/master-plan.html</span> git 커밋) + v14 포맷 복원. codex-debate 스킬·8건 수정 반영.</td></tr>
         <tr><td class="v">v16</td><td class="d">2026-07-07 낮</td><td>Codex MCP 셋업·아카이브 저장 현황 섹션·복구 3파일(플랫폼 버전 선택기 참조).</td></tr>
         <tr><td class="v">v14</td><td class="d">2026-07-06</td><td>파란 히어로 + R/A/B 색 보드 포맷(임시 코드 체계) — v18에서 Phase 6분류로 대체.</td></tr>
