@@ -29,6 +29,24 @@
 >   회귀 테스트 6건 추가(test:unit 65→71). 근거 리포트 `docs/reviews/2026-07-07-2209-full-codebase-debate.md`.
 > - `CODEX_AUTH_B64`가 빈 `~/.codex/auth.json`으로 시작해 401 → 스킬 프리플라이트가 멱등 시딩(재발 방지).
 
+> **[2026-07-09 — PeterJ 리포트 피드백 세션]**
+> - **item 2 수정(브랜치 대기)**: "아카이브 저장 현황"(§4-E) **하루 지연** 버그. 원인 = publish()가
+>   §4-E 블록을 구운 **뒤에** ArchiveAgent가 그날 항목을 analysis_archive.json에 추가(데일리·on-demand
+>   공통) → 패널이 항상 하루 늦음. 데이터는 정상, **연동 타이밍** 문제. 수정 = `GitHubPublisher.
+>   refreshArchiveStatus()` 신설(ArchiveAgent 직후 재주입·멱등·소프트) + 두 진입점 연결. 회귀 2건
+>   (test:unit 71→73)·spec-lint 통과·실데이터 검증(2건→3건, 07-08 편입). 브랜치
+>   `claude/daily-report-feedback-7tr5no`(커밋 `8a8fa59`) — **PeterJ 머지 대기**. 계획:
+>   `docs/superpowers/plans/2026-07-09-archive-status-lag-fix.md`.
+> - **item 3 진단(미착수, 방향 협의 중)**: 선정 퀄리티. 07-08 = JKMS 관찰연구(질6.2·적합도10),
+>   07-09 = **Nursing in Critical Care** 논문 선정(PeterJ: 관심 분야 아님). **확정 버그**: 저널 티어
+>   매칭이 부분문자열이라 "Nursing in **Critical Care**"가 tier3 `'critical care'`에 걸려 "전문 저널"
+>   (1.4점) 크레딧을 받음 → 질 7.3으로 부풀려짐(`MetadataScorer._journalScore`). 추가로 적합도가
+>   sepsis 키워드에 쉽게 포화(10)돼 질을 +30% 증폭. **방향 후보**: (A) 저널 매칭 정밀화(간호/유사분야
+>   저널 CCM 크레딧 차단) (B) #1 픽 근거등급 게이트 (C) LLM 상위 K편 재랭킹. **4번(GPT-5.5 병행)은
+>   나중에 논의로 보류.** PeterJ 방향 선택 대기.
+> - **잠재버그 발견(미수정)**: `GitHubPublisher` 생성자에 `this.logger` 미설정 → publish() push 실패
+>   폴백(라인 ~795) `this.logger.warn`가 TypeError. 별도 수정 필요(이번 커밋은 console 사용으로 회피).
+
 ## 0. 한 줄 요약
 `trend-review`(EM/CCM 데일리 논문 리뷰 파이프라인)를 **4-Phase 구조로 확장**했고,
 Phase 2·3 코드 + On-demand 수동 디깅 + 카드뉴스까지 **main에 병합 완료**. 남은 건 코드가 아니라
