@@ -138,6 +138,16 @@ try {
   console.log(`::warning::Phase 2 아카이브 실패 — ${err.message.slice(0, 200)}`);
 }
 
+// ── 아카이브 저장 현황 패널(§4-E) 최신화 — ArchiveAgent 가 "그날 항목"을 analysis_archive
+// 에 추가한 뒤라야 오늘 논문이 패널에 뜬다. publish()가 구운 패널은 하루 지연되므로 다시 굽는다. ──
+try {
+  const { GitHubPublisher } = await import('./src/utils/GitHubPublisher.js');
+  const r = await new GitHubPublisher().refreshArchiveStatus(todayKST);
+  if (r.updated) console.log(`📦 아카이브 저장 현황 패널 최신화 (${r.pushed ? '푸시 완료' : '로컬 커밋 — 후속 푸시 대기'})`);
+} catch (err) {
+  console.log(`::warning::아카이브 현황 최신화 실패 — ${err.message.slice(0, 200)}`);
+}
+
 // ── Phase 3: 영상 제작·비공개 업로드 (소프트 실패 · ENABLE_VIDEO=true 게이트) ────
 // 기본 영어 2편(중간폼·숏폼) — 언어는 VIDEO_LANGS로 확장. 샘플 승인(REPORT_SPEC
 // §4-F 게이트) 전에는 기본 비활성 — 승인 후 Variables로 켠다.

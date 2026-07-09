@@ -88,6 +88,14 @@ if (kind === 'guideline') {
   } catch (e) {
     console.warn(`⚠️ 아카이브 실패(계속): ${e.message}`);
   }
+
+  // 아카이브 저장 현황 패널(§4-E) 최신화 — ArchiveAgent 뒤라야 이 건이 패널에 반영된다.
+  try {
+    const r = await publisher.refreshArchiveStatus(todayKST);
+    if (r.updated) console.log(`📦 아카이브 저장 현황 패널 최신화 (${r.pushed ? '푸시 완료' : '로컬 커밋'})`);
+  } catch (e) {
+    console.warn(`⚠️ 아카이브 현황 최신화 실패(계속): ${e.message}`);
+  }
 }
 
 console.log(`🌐 발행 완료: ${pagesUrl}`);

@@ -648,17 +648,74 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     const diff = this._git(['diff', '--staged', '--name-only']);
     if (!diff) return;
     this._git(['commit', '-m', `Update archive: ${dateStr}`]);
+    this._pushToMain();
+  }
+
+  // 현재 커밋을 main 으로 push. 기본 push 실패 시 토큰 자격증명으로 재시도.
+  // 토큰은 URL/argv에 싣지 않고 credential helper가 환경변수에서 읽는다.
+  _pushToMain() {
     try {
       this._git(['push']);
-    } catch {
-      if (!this.token) throw new Error('git push 실패: GITHUB_TOKEN 미설정');
-      // 토큰은 URL/argv에 싣지 않고 credential helper가 환경변수에서 읽는다
-      const helper = 'credential.helper=!f() { echo "username=x-access-token"; echo "password=$GIT_PUSH_TOKEN"; }; f';
-      this._git(
-        ['-c', 'credential.helper=', '-c', helper,
-         'push', `https://github.com/${this.owner}/${this.repo}.git`, 'HEAD:main'],
-        { GIT_PUSH_TOKEN: this.token },
-      );
+      return;
+    } catch { /* 아래 토큰 폴백 */ }
+    if (!this.token) throw new Error('git push 실패: GITHUB_TOKEN 미설정');
+    const helper = 'credential.helper=!f() { echo "username=x-access-token"; echo "password=$GIT_PUSH_TOKEN"; }; f';
+    this._git(
+      ['-c', 'credential.helper=', '-c', helper,
+       'push', `https://github.com/${this.owner}/${this.repo}.git`, 'HEAD:main'],
+      { GIT_PUSH_TOKEN: this.token },
+    );
+  }
+
+  /**
+   * "아카이브 저장 현황"(§4-E) 섹션만 최신 analysis_archive.json 으로 다시 굽고 커밋·푸시.
+   *
+   * 왜: ArchiveAgent 가 "그날 항목"을 analysis_archive.json 에 추가하는 시점이 publish() 뒤라,
+   * publish 가 구운 이 패널은 항상 하루 지연됐다(데일리·on-demand 공통). ArchiveAgent 실행
+   * 직후 이 메서드를 호출하면 그날 항목까지 반영된다. 변경이 없으면 아무 것도 하지 않는다(멱등).
+   *
+   * 소프트: 커밋/푸시가 실패해도 던지지 않는다(패널은 부가 정보 — 데일리 코어 무영향). 로컬
+   * 커밋만 남기면 워크플로의 후속 "sync daily state" 푸시가 함께 올려주고, 그마저 없으면
+   * Contents API 폴백으로 index.html 만 upsert 한다.
+   * @returns {Promise<{updated:boolean, pushed:boolean}>}
+   */
+  async refreshArchiveStatus(dateStr = '') {
+    const localPath = path.join(this._repoPath, 'index.html');
+    let html;
+    try { html = await readFile(localPath, 'utf8'); }
+    catch { return { updated: false, pushed: false }; }   // index.html 없으면 무영향
+
+    const next = await this._ensureArchiveStatus(html);
+    if (next === html) return { updated: false, pushed: false };  // 변경 없음(멱등)
+
+    await writeFile(localPath, next, 'utf8');
+
+    try {
+      this._git(['add', 'index.html']);
+      if (!this._git(['diff', '--staged', '--name-only'])) return { updated: false, pushed: false };
+      this._git(['commit', '-m', `Refresh archive status: ${dateStr}`.trim()]);
+    } catch (err) {
+      console.warn(`⚠️ 아카이브 현황 커밋 실패(무시): ${this._scrub(err.message)}`);
+      return { updated: true, pushed: false };
+    }
+
+    try {
+      this._pushToMain();
+      return { updated: true, pushed: true };
+    } catch (pushErr) {
+      // 자체 푸시 실패 → 로컬 커밋은 남는다(후속 워크플로 푸시가 올림). 토큰이 있으면
+      // Contents API 폴백으로 index.html 만 upsert. 토큰이 없으면 API 자체가 불가하므로 생략.
+      if (this.token) {
+        try {
+          await this._putFileViaApi('index.html', next, dateStr);
+          return { updated: true, pushed: true };
+        } catch (apiErr) {
+          console.warn(`⚠️ 아카이브 현황 푸시 실패(무시): ${this._scrub(pushErr.message)} / ${this._scrub(apiErr.message)}`);
+          return { updated: true, pushed: false };
+        }
+      }
+      console.warn(`⚠️ 아카이브 현황 푸시 실패(무시): ${this._scrub(pushErr.message)}`);
+      return { updated: true, pushed: false };
     }
   }
 
