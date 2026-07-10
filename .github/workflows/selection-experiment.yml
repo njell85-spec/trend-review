@@ -15,6 +15,14 @@ on:
         description: 'LLM 청크 크기 (기본 30)'
         required: false
         default: '30'
+      llm:
+        description: 'LLM 사용 (1=풀스크린 진단, 0=결정적 재랭킹만·빠름)'
+        required: false
+        default: '1'
+      mode:
+        description: '모드 (빈값=recall 진단, rerank=결정적 top-K를 LLM 재순위)'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -52,6 +60,9 @@ jobs:
           ANALYSIS_MODEL:          ${{ vars.ANALYSIS_MODEL }}
           EXP_MAX:                 ${{ github.event.inputs.max }}
           EXP_CHUNK:               ${{ github.event.inputs.chunk }}
+          EXP_LLM:                 ${{ github.event.inputs.llm }}
+          EXP_MODE:                ${{ github.event.inputs.mode }}
+          ENABLE_RERANK:           'true'
 
       - name: Upload detail JSON
         if: always()

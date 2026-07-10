@@ -1,64 +1,28 @@
 /**
- * MetadataScorer — 결정적(deterministic) 논문 스코어러 (2축 모델).
+ * MetadataScorer — 결정적(deterministic) 논문 스코어러.
  *
  * LLM 을 전혀 쓰지 않고 PubMed 메타데이터만으로 점수를 매긴다.
- *   · 이유: Claude Code CLI(구독)의 안전필터가 "의학 초록 대량 채점"을 거부(AUP refusal)해서
- *     무료·무인 GitHub Actions 자동화에서 LLM 배치 스코어링이 불가능하다.
- *   · 모두 PubMed 가 제공하는 구조화된 사실이라 환각(hallucination)이 없고, 재현 가능하며,
- *     이유(rationale)를 사람이 검증할 수 있다.
+ *   · 이유: Claude Code CLI(구독) 안전필터의 배치 채점 거부(AUP)와 세션 한도(429)를 회피 —
+ *     무료·무인 GitHub Actions 자동화에서 안정적으로 매일 돈다. 환각 없음·재현 가능·근거 검증 가능.
+ *   · LLM(Opus) 은 이 단계 이후 "선정 상위 K편"의 재순위·PICO 심층분석에만 쓴다.
  *
- * 두 개의 축으로 나눈다 (PeterJ 요청: "좋은 논문 + 나에게 가장 적절한 논문"):
- *   ① 질(Quality)     — 연구 설계 · 저널 등급 · 표본수 · 최신성        (0~10)
- *   ② 적합도(Relevance) — config/interests.json 관심 프로파일 매칭        (0~10)
- * 최종점수 = 질 × (floor + lift × 적합도01) + 감점, [1,10] 로 클램프.
- *   · 적합도는 질을 최대 +30% 증폭 → PeterJ 관심사에 맞는 논문이 우선.
- *   · rawScore(풀 정밀도)를 별도 보관해 정렬 시 동점(tie)을 안정적으로 깬다.
+ * 선정 우선순위 (PeterJ 확정 2026-07-10): ① 관심주제 부합  ② 저명 저널 — 이 둘이 우선.
+ *   → 최종점수에서 주제·저널이 지배적(각 0~4)이고 설계·최신성·표본은 보조(합 ~3).
+ *   → 관심주제 0매칭이면 topicGatePenalty 로 사실상 배제(비관심 논문이 저명저널이라도 안 뜬다).
+ *   관심 프로파일 = config/interests.json, 저널 등급 = config/journals.json (숫자만 고쳐 튜닝).
  *
- * 출력 계약 (기존 LLM 스코어러와 호환):
+ * 출력 계약 (기존 소비자와 호환):
  *   { pmid, score, rawScore, qualityScore, relevanceScore, studyType, rationale, matchedInterests }
- *
- * Opus 는 이 단계 이후 "선정된 1편"의 PICO 심층분석에만 쓴다.
  */
 import { readFileSync } from 'fs';
 
-// ── 저널 등급 (부분 문자열 매칭, 소문자) ────────────────────────────────────────
-const JOURNAL_TIERS = {
-  tier1: [
-    'n engl j med', 'new england journal of medicine',
-    'lancet', 'jama', 'bmj', 'nature medicine', 'nature',
-  ],
-  tier2: [
-    'annals of emergency medicine', 'ann emerg med',
-    'critical care medicine', 'crit care med',
-    'intensive care medicine', 'intensive care med',
-    'american journal of respiratory and critical care', 'am j respir crit care',
-    'chest', 'circulation', 'resuscitation',
-    'jama internal medicine', 'jama intern med',
-    'jama network open', 'jama neurology', 'jama surgery', 'jama cardiology',
-    'lancet respiratory', 'lancet neurology', 'european heart journal',
-    'blood', 'gastroenterology', 'stroke',
-  ],
-  tier3: [
-    'critical care', 'annals of intensive care', 'ann intensive care',
-    'shock', 'academic emergency medicine', 'acad emerg med',
-    'emergency medicine journal', 'emerg med j',
-    'american journal of emergency medicine', 'am j emerg med',
-    'canadian journal of emergency', 'cjem',
-    'scandinavian journal of trauma', 'annals of intensive',
-    'journal of critical care', 'j crit care',
-    'european journal of emergency medicine', 'eur j emerg med',
-    'prehospital emergency care', 'journal of thrombosis',
-    'thorax', 'anesthesiology', 'british journal of anaesthesia',
-    'journal of trauma', 'j trauma',
-  ],
-};
-
-// ── 연구 설계 → (점수, 표준 라벨) ──────────────────────────────────────────────
+// ── 연구 설계 → (점수, 표준 라벨) — 보조 신호(가중 축소되어 반영) ────────────────
 const DESIGN_RULES = [
   { match: ['meta-analysis'],                     score: 4.0, label: 'Meta-analysis' },
   { match: ['systematic review'],                 score: 3.7, label: 'Systematic Review' },
   { match: ['randomized controlled trial'],       score: 4.0, label: 'RCT' },
   { match: ['clinical trial, phase iii'],         score: 3.6, label: 'RCT' },
+  { match: ['clinical trial, phase iv'],          score: 3.2, label: 'Clinical Trial' },
   { match: ['practice guideline', 'guideline'],   score: 3.3, label: 'Guidelines' },
   { match: ['clinical trial'],                    score: 3.0, label: 'Clinical Trial' },
   { match: ['multicenter study'],                 score: 2.6, label: 'Observational' },
@@ -74,71 +38,122 @@ const NEGATIVE_TYPES = [
   'retraction', 'published erratum', 'historical article',
 ];
 
-// config 파일이 없을 때의 임베디드 기본 프로파일 (일반 EM/CCM).
+// 컴포넌트 스케일 — 주제·저널(각 0~4)이 지배적이 되도록 보조 신호를 축소한다.
+const DESIGN_SCALE = 0.375;   // design 0~4 → 0~1.5
+const RECENCY_SCALE = 0.7 / 1.5; // recency 0~1.5 → 0~0.7
+const SAMPLE_SCALE = 0.8 / 1.5;  // sample 0~1.5 → 0~0.8
+const RELEVANCE_SPAN = 4.0;      // rel01(0~1) → 0~4
+
+// config 파일이 없을 때의 임베디드 기본값 (일반 EM/CCM).
 const DEFAULT_PROFILE = {
   topicGroups: {
     em_ccm: {
       label: '응급·중환자',
       weight: 1.0,
       terms: ['sepsis', 'resuscitation', 'cardiac arrest', 'airway', 'shock',
-              'mechanical ventilation', 'ards', 'emergency', 'critical care', 'intensive care'],
+              'mechanical ventilation', 'ards', 'stroke', 'trauma', 'intensive care'],
     },
   },
-  blend: { relevanceFloor: 0.7, relevanceLift: 0.3 },
+  deprioritize: { groups: {} },
+  scoring: { journalWeight: 1.0, relevanceWeight: 1.0, topicGatePenalty: -5.0 },
+};
+
+const DEFAULT_JOURNALS = {
+  tiers: {
+    top_general: { label: '최상위 종합지', score: 4.0,
+      exact: ['jama', 'bmj', 'lancet', 'nature'],
+      includes: ['new england journal', 'nature medicine'] },
+    em_ccm_flagship: { label: 'EM·CCM 대표지', score: 3.2,
+      includes: ['critical care medicine', 'intensive care medicine', 'resuscitation',
+                 'annals of emergency medicine', 'chest', 'circulation', 'stroke'] },
+    specialty: { label: '전문 저널', score: 2.0,
+      includes: ['american journal of emergency medicine', 'journal of critical care', 'shock'] },
+    low: { label: '저명도 낮음', score: -1.0, exact: ['medicine', 'cureus'],
+      includes: ['scientific reports', 'bmc ', 'plos one', 'frontiers in', 'heliyon'] },
+  },
+  default: { label: '그외 SCI', score: 0.8 },
 };
 
 export class MetadataScorer {
   constructor(options = {}) {
     // 참조 시점(최신성 계산 기준). 기본은 실행 시각.
     this.now = options.now ? new Date(options.now) : new Date();
-    this.profile = options.profile ?? this._loadProfile();
-    this.blend = { relevanceFloor: 0.7, relevanceLift: 0.3, ...(this.profile.blend ?? {}) };
+    this.profile = options.profile ?? this._loadJson('../../config/interests.json', DEFAULT_PROFILE, (p) => p?.topicGroups);
+    this.journals = options.journals ?? this._loadJson('../../config/journals.json', DEFAULT_JOURNALS, (j) => j?.tiers);
+    this.scoring = { journalWeight: 1.0, relevanceWeight: 1.0, topicGatePenalty: -5.0, ...(this.profile.scoring ?? {}) };
   }
 
-  _loadProfile() {
+  _loadJson(relPath, fallback, validate) {
     try {
-      const url = new URL('../../config/interests.json', import.meta.url);
-      const raw = readFileSync(url, 'utf8');
-      const parsed = JSON.parse(raw);
-      if (parsed?.topicGroups && Object.keys(parsed.topicGroups).length) return parsed;
-    } catch { /* fall through to default */ }
-    return DEFAULT_PROFILE;
+      const url = new URL(relPath, import.meta.url);
+      const parsed = JSON.parse(readFileSync(url, 'utf8'));
+      if (validate(parsed)) return parsed;
+    } catch { /* fall through to embedded default */ }
+    return fallback;
   }
 
-  // ── public: LLM scorePapers 와 동일 시그니처 ──────────────────────────────
+  // ── public: 기존 scorePapers 와 동일 시그니처 ──────────────────────────────
   scorePapers(papers) {
     return papers.map((p) => this.scoreOne(p));
   }
 
   scoreOne(paper) {
-    const design = this._designScore(paper);       // 0–4.0
-    const journal = this._journalScore(paper);     // 0–3.0
-    const recency = this._recencyScore(paper);     // 0–1.5
-    const sample = this._sampleScore(paper);       // 0–1.5  (+ n 추정치)
-    const penalty = this._negativePenalty(paper);  // ≤ 0
-
-    // ① 질 축 (0~10)
-    const quality = Math.max(0, Math.min(10,
-      design.score + journal.score + recency.score + sample.score));
-
-    // ② 적합도 축 (0~1, 표시용 0~10)
+    const jr = this._journalScore(paper);          // -1 ~ 4
+    const design = this._designScore(paper);        // 0 ~ 4 (라벨용)
+    const recency = this._recencyScore(paper);      // 0 ~ 1.5
+    const sample = this._sampleScore(paper);        // 0 ~ 1.5 (+ n 추정)
     const rel = this._relevance(paper);             // { rel01, groups }
+    const pen = this._negativePenalty(paper);       // ≤ 0
 
-    // 최종점수: 질을 적합도로 증폭 + 감점
-    const { relevanceFloor: floor, relevanceLift: lift } = this.blend;
-    const rawScore = quality * (floor + lift * rel.rel01) + penalty.value;
+    const w = this.scoring;
+    // ① 우선순위 축 (지배적): 저널·주제 각 0~4
+    const journalPart = w.journalWeight * jr.score;
+    const relPart = w.relevanceWeight * (rel.rel01 * RELEVANCE_SPAN);
+    // ② 보조 축: 설계·최신성·표본 (합 ~3)
+    const designPart = Math.min(1.5, design.score * DESIGN_SCALE);
+    const recencyPart = recency.score * RECENCY_SCALE;
+    const samplePart = sample.score * SAMPLE_SCALE;
+    // ③ 주제 게이트: 관심 0매칭이면 강한 감점(사실상 배제)
+    const gate = rel.rel01 <= 0 ? Number(w.topicGatePenalty ?? -5) : 0;
+
+    // 정렬용 rawScore 는 clamp 하지 않는다(동점 안정 분리 + 게이트 논문 확실히 바닥).
+    const rawScore = journalPart + relPart + designPart + recencyPart + samplePart + pen.value + gate;
     const score = Math.max(1, Math.min(10, Math.round(rawScore * 10) / 10));
+    const quality = journalPart + designPart + recencyPart + samplePart;
 
     return {
       pmid: paper.pmid,
       score,
-      rawScore: Math.max(1, Math.min(10, rawScore)),   // 정렬용 풀 정밀도
+      rawScore,                                        // 풀 정밀·비클램프 (정렬용)
       qualityScore: Math.round(quality * 10) / 10,
-      relevanceScore: Math.round(rel.rel01 * 100) / 10, // 0~10
+      relevanceScore: Math.round(rel.rel01 * 100) / 10, // 0~10 표시
       studyType: design.label,
       matchedInterests: rel.groups,
-      rationale: this._rationale({ design, journal, recency, sample, penalty, quality, rel }),
+      journalTier: jr.tier,
+      gated: gate < 0,
+      rationale: this._rationale({ jr, design, recency, sample, pen, rel, gate }),
     };
+  }
+
+  // ── 저널 등급 (config/journals.json) ─────────────────────────────────────
+  // 판정 순서: top → flagship → specialty → low → default.
+  // exact=저널명 정확일치(자매지 오매칭 방지: 'jama' vs 'jama network open'),
+  // includes=부분일치. 'medicine' 같은 범용명은 low.exact 로만 잡아 'critical care medicine' 오탐 방지.
+  _journalScore(paper) {
+    const j = String(paper.journal ?? '').toLowerCase().trim();
+    const T = this.journals.tiers ?? {};
+    const exact = (arr) => (arr ?? []).some((n) => j === n);
+    const inc = (arr) => j.length > 0 && (arr ?? []).some((n) => j.includes(n));
+
+    if (T.top_general && (exact(T.top_general.exact) || inc(T.top_general.includes)))
+      return { score: T.top_general.score, tier: T.top_general.label ?? '최상위' };
+    if (T.em_ccm_flagship && inc(T.em_ccm_flagship.includes))
+      return { score: T.em_ccm_flagship.score, tier: T.em_ccm_flagship.label ?? '대표지' };
+    if (T.specialty && inc(T.specialty.includes))
+      return { score: T.specialty.score, tier: T.specialty.label ?? '전문지' };
+    if (T.low && (exact(T.low.exact) || inc(T.low.includes)))
+      return { score: T.low.score, tier: T.low.label ?? '저명도 낮음' };
+    return { score: this.journals.default?.score ?? 0.8, tier: this.journals.default?.label ?? '그외 SCI' };
   }
 
   // ── 연구 설계 ──────────────────────────────────────────────────────────────
@@ -159,26 +174,7 @@ export class MetadataScorer {
     return { score: 1.5, label: 'Other', matched: null };
   }
 
-  // ── 저널 등급 ──────────────────────────────────────────────────────────────
-  // 짧은 약어('jama','bmj')가 자매지('JAMA Network Open','BMJ Paediatrics Open')에
-  // 부분매칭돼 본지 급으로 과대평가되던 버그 방지: 본지는 정확명, 자매지는 tier2/3 등록분만.
-  _journalScore(paper) {
-    const j = String(paper.journal ?? '').toLowerCase().trim();
-    // 1) 본지 정확매칭
-    if (/^(jama|bmj|the bmj|lancet|nature)$/.test(j)
-        || j.includes('new england journal') || j.includes('british medical journal')
-        || j.includes('journal of the american medical association') || j === 'nature medicine') {
-      return { score: 3.0, tier: 1 };
-    }
-    // 2) 정식 등록된 자매지·전문지 먼저 (tier1 짧은 약어보다 우선)
-    if (JOURNAL_TIERS.tier2.some((n) => j.includes(n))) return { score: 2.2, tier: 2 };
-    if (JOURNAL_TIERS.tier3.some((n) => j.includes(n))) return { score: 1.4, tier: 3 };
-    // 3) 나머지 tier1 (jama/bmj 제외 — 긴 정식명들: lancet respiratory 등은 위 tier2에서 처리됨)
-    if (JOURNAL_TIERS.tier1.some((n) => n !== 'jama' && n !== 'bmj' && j.includes(n))) return { score: 3.0, tier: 1 };
-    return { score: 0.6, tier: 0 };
-  }
-
-  // ── 최신성 (발행일 기준) ─────────────────────────────────────────────────────
+  // ── 최신성 (발행일 기준, 0~1.5) ──────────────────────────────────────────────
   _recencyScore(paper) {
     const days = this._ageDays(paper.pubDate);
     if (days == null) return { score: 0.7, days: null };
@@ -212,7 +208,7 @@ export class MetadataScorer {
     return Number.isNaN(dt.getTime()) ? null : dt;
   }
 
-  // ── 표본수 (초록에서 N 추정) ─────────────────────────────────────────────────
+  // ── 표본수 (초록에서 N 추정, 0~1.5) ─────────────────────────────────────────
   _sampleScore(paper) {
     const n = this._extractSampleSize(paper.abstract ?? '');
     if (n == null) return { score: 0.4, n: null };
@@ -243,7 +239,7 @@ export class MetadataScorer {
     return Math.max(...candidates);
   }
 
-  // ── ② 적합도: 관심 프로파일 매칭 (0~1) ────────────────────────────────────────
+  // ── 주제 적합도: 관심 프로파일 매칭 (0~1) ─────────────────────────────────────
   _relevance(paper) {
     const title = String(paper.title ?? '').toLowerCase();
     const meta = [...(paper.meshTerms ?? []), ...(paper.keywords ?? []),
@@ -258,61 +254,56 @@ export class MetadataScorer {
         if (title.includes(t)) titleHits++;
         else if (meta.includes(t)) metaHits++;
       }
-      // 그룹 신호(0~1): 제목 매칭이 메타보다 크게 반영, 포화(saturating).
       const signal = Math.min(1, titleHits * 0.6 + metaHits * 0.25);
       if (signal > 0) scored.push({ key, label: g.label ?? key, w, groupScore: w * signal });
     }
     scored.sort((a, b) => b.groupScore - a.groupScore);
 
-    // 최상위 그룹 + 2순위 소폭 보너스 → 0~1 클램프
     const best = scored[0]?.groupScore ?? 0;
     const second = scored[1]?.groupScore ?? 0;
     const rel01 = Math.max(0, Math.min(1, best + 0.15 * second));
     return { rel01, groups: scored.slice(0, 3).map((s) => s.label) };
   }
 
-  // ── 감점 (사설·논평·동물·시험관 등) ───────────────────────────────────────────
+  // ── 감점 (사설·논평·동물·프로토콜 + deprioritize 그룹) ────────────────────────
   _negativePenalty(paper) {
     const types = (paper.publicationTypes ?? []).map((t) => String(t).toLowerCase()).join(' | ');
     const reasons = [];
     let value = 0;
     if (NEGATIVE_TYPES.some((t) => types.includes(t))) { value -= 3.0; reasons.push('사설/논평/서한'); }
+    if (types.includes('case reports')) { value -= 1.5; reasons.push('증례보고'); }
 
     const hay = [paper.title ?? '', ...(paper.meshTerms ?? [])].join(' ').toLowerCase();
     if (/\b(mice|mouse|rats?|murine|in vitro|zebrafish|porcine|canine)\b/.test(hay) &&
         !/\bhuman\b/.test(hay)) { value -= 2.0; reasons.push('전임상(동물/시험관)'); }
-    if (/\bstudy protocol\b|\bprotocol for a\b|\brationale and design\b/.test(hay)) {
-      value -= 1.5; reasons.push('프로토콜(결과 없음)');
-    }
 
-    // 관심 프로파일의 후순위 주제(소아/신생아 등) — 매칭 시 감점(배제 아님).
-    const dep = this.profile.deprioritize;
-    if (dep?.terms?.length && Number(dep.penalty)) {
-      const depHay = [paper.title ?? '', ...(paper.meshTerms ?? []), ...(paper.keywords ?? []),
-                      String(paper.abstract ?? '').slice(0, 400)].join(' ').toLowerCase();
-      if (dep.terms.some((t) => depHay.includes(String(t).toLowerCase()))) {
-        value += Number(dep.penalty);
-        reasons.push(dep.label ?? '후순위 주제');
+    // config deprioritize.groups (소아, 비급성·방법론 등) — 매칭 시 감점.
+    const depHay = [paper.title ?? '', ...(paper.meshTerms ?? []), ...(paper.keywords ?? []),
+                    String(paper.abstract ?? '').slice(0, 400)].join(' ').toLowerCase();
+    for (const g of Object.values(this.profile.deprioritize?.groups ?? {})) {
+      if (!Number(g.penalty) || !(g.terms?.length)) continue;
+      if (g.terms.some((t) => depHay.includes(String(t).toLowerCase()))) {
+        value += Number(g.penalty);
+        reasons.push(g.label ?? '후순위');
       }
     }
     return { value, reasons };
   }
 
   // ── 사람이 읽는 근거 문장 (한국어) ────────────────────────────────────────────
-  _rationale({ design, journal, recency, sample, penalty, quality, rel }) {
+  _rationale({ jr, design, recency, sample, pen, rel, gate }) {
     const parts = [];
-    parts.push(`질 ${Math.round(quality * 10) / 10}`);
-    parts.push(`적합도 ${Math.round(rel.rel01 * 100) / 10}`);
-    parts.push(design.label !== 'Other' ? design.label : '설계 미상');
-    const tierName = { 1: '최상위 저널', 2: 'EM·CCM 대표 저널', 3: '전문 저널', 0: '일반 저널' }[journal.tier];
-    parts.push(tierName);
+    parts.push(`주제 ${Math.round(rel.rel01 * 100) / 10}`);
+    parts.push(jr.tier);
+    if (design.label !== 'Other') parts.push(design.label);
     if (recency.days != null) {
-      parts.push(recency.days <= 30 ? '최근 30일' : recency.days <= 90 ? '최근 3개월' : recency.days <= 180 ? '6개월 내' : '1년 내');
+      parts.push(recency.days <= 30 ? '최근 30일' : recency.days <= 90 ? '최근 3개월' : recency.days <= 180 ? '6개월 내' : '1년+');
     }
     if (sample.n != null) parts.push(`N≈${sample.n}`);
     if (rel.groups.length) parts.push(rel.groups.join('·'));
     let s = parts.join(' · ');
-    if (penalty.reasons.length) s += ` (감점: ${penalty.reasons.join(', ')})`;
+    if (gate < 0) s += ' (⚠ 관심주제 무매칭 — 배제)';
+    if (pen.reasons.length) s += ` (감점: ${pen.reasons.join(', ')})`;
     return s;
   }
 }

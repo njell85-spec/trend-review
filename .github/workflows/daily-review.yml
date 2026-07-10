@@ -79,6 +79,10 @@ jobs:
           PUBMED_API_KEY:    ${{ secrets.PUBMED_API_KEY }}
           PUBMED_EMAIL:      ${{ secrets.PUBMED_EMAIL }}
           UNPAYWALL_EMAIL:   ${{ secrets.PUBMED_EMAIL }}
+          # 논문 선정 — 결정적 상위 K편(RERANK_POOL, 기본 20)을 Opus가 "침상 임상가치"로
+          # 재순위 → 1편(소프트: 실패/거부 시 결정적 순위 유지). 기본 on, vars로 끌 수 있음.
+          ENABLE_RERANK:          ${{ vars.ENABLE_RERANK || 'true' }}
+          RERANK_POOL:            ${{ vars.RERANK_POOL }}
           # Phase 2/3 — Google Drive·YouTube·TTS (미설정 시 해당 단계만 소프트 스킵)
           GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}

@@ -29,10 +29,15 @@ export class FilterAnalyzerAgent {
     this.picoLlm = new LLMClient({ provider: this.provider, model: this.picoModel });
     this.topN = options.topN ?? Number(process.env.TOP_N ?? 1);
 
-    // 스코어링은 결정적 메타데이터 스코어러로 수행한다 (LLM 아님).
+    // 스코어링은 결정적 메타데이터 스코어러로 후보를 압축한다 (LLM 아님).
     //   · 무료·무인 자동화에서 Claude Code CLI 안전필터의 배치 채점 거부(AUP)를 회피.
-    //   · Opus 는 아래 analyzePico 의 "선정 1편" 심층분석에만 쓴다.
     this.scorer = new MetadataScorer();
+
+    // LLM rerank(선택): 결정적 상위 K편만 Opus가 정독해 "침상 임상가치"로 재순위 → top-N.
+    //   · PeterJ 확정(2026-07-10): 결정적은 주제·저널까지, 침상가치 변별은 LLM.
+    //   · 소프트: 실패/거부 시 결정적 순위 유지(데일리 코어 무영향). 게이트 기본 off.
+    this.enableRerank = options.enableRerank ?? (process.env.ENABLE_RERANK === 'true');
+    this.rerankPool = options.rerankPool ?? Number(process.env.RERANK_POOL ?? 20);
   }
 
   // ── Tool definitions for structured Claude output ─────────────────────────
@@ -249,8 +254,9 @@ export class FilterAnalyzerAgent {
     return scores;
   }
 
-  // ── Step 2: Select top-N papers (excluding already-published PMIDs) ─────────
-  _selectTopPapers(papers, scores, excludePmids = []) {
+  // ── Step 2: Select top-K papers (excluding already-published PMIDs) ─────────
+  // limit 기본은 topN. rerank 시엔 pool(예: 20)을 넘겨 결정적 상위 K편을 추린다.
+  _selectTopPapers(papers, scores, excludePmids = [], limit = this.topN) {
     const scoreMap  = new Map(scores.map((s) => [s.pmid, s]));
     const excludeSet = new Set(excludePmids);
 
@@ -267,7 +273,47 @@ export class FilterAnalyzerAgent {
       // rawScore(풀 정밀도)로 정렬해 동점을 안정적으로 깬다 (표시 점수는 반올림됨).
       .sort((a, b) => (b.scoringData.rawScore ?? b.scoringData.score ?? 0)
                     - (a.scoringData.rawScore ?? a.scoringData.score ?? 0))
-      .slice(0, this.topN);
+      .slice(0, limit);
+  }
+
+  // ── Step 2b: LLM rerank — 결정적 상위 K편을 "침상 임상가치"로 재순위 → 상위 n편 ──
+  // 결정적은 주제·저널까지 압축하고, 여기서 Opus가 연구 성격(급성 침상 개입 vs
+  // 역학·이송·원격모니터링·QI·리뷰·증례)을 변별한다. 소프트: 실패/거부 시 결정적 순위 유지.
+  async _rerankSelect(pool, n) {
+    if (pool.length <= n) return pool.slice(0, n);
+    try {
+      const prompt = `You are an expert emergency medicine and critical care (EM/CCM) physician choosing the single most valuable paper for TODAY's bedside practice.
+Score each of the following ${pool.length} papers 1–10 for CLINICAL BEDSIDE VALUE to an acute/critical-care physician:
+10 = directly changes acute bedside management of a critically ill or emergency patient (diagnosis, drug, procedure, resuscitation target).
+Downgrade papers that do NOT change bedside decisions even if on-topic: epidemiology/registry/health-services, interhospital transfer, readmission/remote monitoring, quality-improvement, narrative reviews, case reports, protocols.
+Return one entry per paper via the submit_paper_scores tool.
+
+Papers:
+${pool.map((p, i) => `[${i + 1}] PMID ${p.pmid} | ${p.journal} | types: ${(p.publicationTypes || []).join(', ') || 'NR'}
+Title: ${p.title}
+Abstract: ${String(p.abstract ?? '').slice(0, 1200)}`).join('\n\n')}`;
+
+      const out = await this._callLLM([{ role: 'user', content: prompt }], this._scoringTool, this.llm);
+      const map = new Map((out?.scores ?? []).map((s) => [String(s.pmid), s]));
+      if (!map.size) { this.logger.warn('LLM rerank: 빈 결과 — 결정적 순위 유지'); return pool.slice(0, n); }
+
+      const reranked = [...pool]
+        .sort((a, b) => (Number(map.get(String(b.pmid))?.score ?? 0) - Number(map.get(String(a.pmid))?.score ?? 0))
+                     || ((b.scoringData?.rawScore ?? 0) - (a.scoringData?.rawScore ?? 0)))
+        .map((p) => {
+          const r = map.get(String(p.pmid));
+          if (r) { p.rerankScore = Number(r.score); p.rerankRationale = r.rationale; }
+          return p;
+        });
+      this.logger.info('LLM rerank applied', {
+        pool: pool.length,
+        top: reranked.slice(0, 3).map((p) => ({ pmid: p.pmid, rerank: p.rerankScore, det: p.scoringData?.score })),
+      });
+      return reranked.slice(0, n);
+    } catch (err) {
+      this.logger.warn('LLM rerank 실패 — 결정적 순위 유지 (소프트)', { err: err.message });
+      return pool.slice(0, n);
+    }
   }
 
   // ── Step 3: PICO analysis for top papers (parallel) ──────────────────────
@@ -435,7 +481,10 @@ Requirements:
     if (!papers.length) return { topPapers: [], allScoredPapers: [] };
 
     const scores = await this.scorePapers(papers);
-    const topPapers = this._selectTopPapers(papers, scores, excludePmids);
+    // 결정적으로 pool(rerank 시 K편, 아니면 top-N)을 추린 뒤, 켜져 있으면 LLM 재순위.
+    const poolSize = this.enableRerank ? Math.max(this.topN, this.rerankPool) : this.topN;
+    const pool = this._selectTopPapers(papers, scores, excludePmids, poolSize);
+    const topPapers = this.enableRerank ? await this._rerankSelect(pool, this.topN) : pool;
 
     const scoreMap = new Map(scores.map((s) => [s.pmid, s]));
     const allScoredPapers = papers.map((p) => ({
@@ -443,7 +492,7 @@ Requirements:
       scoringData: scoreMap.get(p.pmid) ?? { score: 0, studyType: 'Other' },
     }));
 
-    this.logger.info(`Selected top ${topPapers.length} papers for full-text enrichment`);
+    this.logger.info(`Selected top ${topPapers.length} papers${this.enableRerank ? ' (LLM reranked)' : ''} for full-text enrichment`);
     return { topPapers, allScoredPapers };
   }
 
