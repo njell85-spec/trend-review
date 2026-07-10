@@ -1,0 +1,62 @@
+name: Selection Experiment (recall@K 진단)
+
+# 논문 선정 개편용 일회성 진단 실험 (HANDOFF §10 [2026-07-09]).
+# 수동 실행 전용. 프로덕션 상태 파일·발송·커밋을 건드리지 않는다(데일리 코어 무영향).
+# 결과는 job summary(폰에서 읽힘) + output/experiments JSON 아티팩트.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: '수집 논문 수 (기본 300)'
+        required: false
+        default: '300'
+      chunk:
+        description: 'LLM 청크 크기 (기본 30)'
+        required: false
+        default: '30'
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 분석 LLM 호출: claude CLI(구독) 우선, 없으면 ANTHROPIC_API_KEY 폴백 (데일리와 동일).
+      - name: Install claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      # claude CLI가 .claude/settings.json 을 읽으려면 workspace trust 필요 (데일리와 동일).
+      - name: Trust workspace
+        run: node -e "const fs=require('fs'),os=require('os'),path=require('path');const p=path.join(os.homedir(),'.claude.json');let j={};try{j=JSON.parse(fs.readFileSync(p,'utf8'))}catch{};j.projects=j.projects||{};const ws=process.env.GITHUB_WORKSPACE;j.projects[ws]=Object.assign({},j.projects[ws],{hasTrustDialogAccepted:true});fs.writeFileSync(p,JSON.stringify(j,null,2));console.log('trusted:',ws)"
+
+      - name: Run selection experiment
+        run: node scripts/selection-experiment.mjs
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+          PUBMED_API_KEY:          ${{ secrets.PUBMED_API_KEY }}
+          PUBMED_EMAIL:            ${{ secrets.PUBMED_EMAIL }}
+          ANALYSIS_MODEL:          ${{ vars.ANALYSIS_MODEL }}
+          EXP_MAX:                 ${{ github.event.inputs.max }}
+          EXP_CHUNK:               ${{ github.event.inputs.chunk }}
+
+      - name: Upload detail JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selection-experiment
+          path: output/experiments/
+          if-no-files-found: ignore
