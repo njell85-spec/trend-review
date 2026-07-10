@@ -116,6 +116,35 @@ if (!USE_LLM) {
   process.exit(0);
 }
 
+// ── LLM rerank 검증 모드 (EXP_MODE=rerank) — 결정적 top-K → Opus 침상가치 재순위 ──
+if (process.env.EXP_MODE === 'rerank') {
+  const POOL = Number(process.env.RERANK_POOL ?? 20);
+  const fa = new FilterAnalyzerAgent();
+  const pool = fa._selectTopPapers(papers, [...detScores.values()], [], POOL);
+  await fa._rerankSelect(pool, 1); // 부수효과로 pool 요소에 rerankScore 부착(프로덕션 경로 그대로)
+  const reranked = [...pool].sort((a, b) => (b.rerankScore ?? 0) - (a.rerankScore ?? 0));
+  let md = `# 📊 결정적 + LLM rerank — ${today}\n\n`;
+  md += `수집 **${papers.length}편** · 결정적 pool ${pool.length}편 → Opus 침상 임상가치 재순위\n\n`;
+  md += `## 🩺 최종 top 10 (rerank 후 — 프로덕션이 이 순서로 1편 선정)\n\n`;
+  reranked.slice(0, 10).forEach((p, i) => {
+    md += `**${i + 1}. rerank ${p.rerankScore ?? '—'}점** (결정 ${p.scoringData?.score}) · ${trunc(p.title, 82)}\n`;
+    md += `  · _${p.journal}_ · ${trunc(p.rerankRationale ?? '', 120)}\n\n`;
+  });
+  md += `## 결정적 top5 → rerank 후 위치 변동\n\n`;
+  pool.slice(0, 5).forEach((p, i) => {
+    const pos = reranked.findIndex((x) => x.pmid === p.pmid) + 1;
+    md += `- 결정 #${i + 1} (${p.scoringData?.score}) → **rerank #${pos}** (${p.rerankScore ?? '—'}) · ${trunc(p.title, 62)}\n`;
+  });
+  summary(md);
+  mkdirSync(OUT, { recursive: true });
+  writeFileSync(`${OUT}/rerank-llm-${today}.json`, JSON.stringify({
+    date: today, pool: pool.length,
+    reranked: reranked.map((p) => ({ pmid: p.pmid, rerank: p.rerankScore, det: p.scoringData?.score, title: p.title, journal: p.journal, why: p.rerankRationale })),
+  }, null, 2));
+  console.error(`상세 JSON: ${OUT}/rerank-llm-${today}.json`);
+  process.exit(0);
+}
+
 const { scores: llmScores, chunkLog } = await llmScreen(papers);
 
 // 랭킹

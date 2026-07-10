@@ -271,6 +271,7 @@ export class MetadataScorer {
     const reasons = [];
     let value = 0;
     if (NEGATIVE_TYPES.some((t) => types.includes(t))) { value -= 3.0; reasons.push('사설/논평/서한'); }
+    if (types.includes('case reports')) { value -= 1.5; reasons.push('증례보고'); }
 
     const hay = [paper.title ?? '', ...(paper.meshTerms ?? [])].join(' ').toLowerCase();
     if (/\b(mice|mouse|rats?|murine|in vitro|zebrafish|porcine|canine)\b/.test(hay) &&
