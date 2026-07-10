@@ -15,6 +15,10 @@ on:
         description: 'LLM 청크 크기 (기본 30)'
         required: false
         default: '30'
+      llm:
+        description: 'LLM 사용 (1=풀스크린 진단, 0=결정적 재랭킹만·빠름)'
+        required: false
+        default: '1'
 
 permissions:
   contents: read
@@ -52,6 +56,7 @@ jobs:
           ANALYSIS_MODEL:          ${{ vars.ANALYSIS_MODEL }}
           EXP_MAX:                 ${{ github.event.inputs.max }}
           EXP_CHUNK:               ${{ github.event.inputs.chunk }}
+          EXP_LLM:                 ${{ github.event.inputs.llm }}
 
       - name: Upload detail JSON
         if: always()

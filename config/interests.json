@@ -1,15 +1,17 @@
 {
-  "_comment": "PeterJ 관심사 프로파일 — '나에게 적절한' 논문 적합도 가중치. 숫자만 고쳐 튜닝하세요. weight=그룹 중요도(0~1), terms=매칭 키워드(소문자 부분일치). 제목 매칭이 MeSH/키워드보다 크게 반영됨.",
+  "_comment": "PeterJ 관심사 프로파일 — 논문 선정 적합도. 숫자만 고쳐 튜닝(세션 없이 폰에서 파일 편집 가능). weight=그룹 중요도(0~1), terms=매칭 키워드(소문자 부분일치, 제목 매칭이 MeSH/키워드보다 크게 반영). 저널 등급은 config/journals.json에서 따로 관리. 선정 우선순위(PeterJ 2026-07-10): ①관심주제 부합 ②저명 저널 — 이 둘이 우선.",
   "topicGroups": {
     "cardiac_resus": {
-      "label": "소생·심정지·심혈관",
+      "label": "심혈관·소생",
       "weight": 1.0,
       "terms": [
-        "resuscitation", "cardiac arrest", "cardiopulmonary", "cpr", "rosc",
+        "acute coronary", "acs", "myocardial infarction", "stemi", "nstemi",
+        "aortic dissection", "aortic syndrome", "acute aortic",
+        "heart failure", "cardiogenic shock", "valvular", "valve disease", "heart valve",
+        "arrhythmia", "atrial fibrillation", "ventricular fibrillation", "ventricular tachycardia",
+        "cardiac arrest", "resuscitation", "cardiopulmonary", "cpr", "rosc",
         "return of spontaneous", "defibrillation", "post-arrest", "post-cardiac arrest",
-        "targeted temperature", "ecpr", "acute coronary", "myocardial infarction",
-        "stemi", "nstemi", "arrhythmia", "atrial fibrillation", "ventricular fibrillation",
-        "cardiogenic shock", "pulmonary embolism", "cardiac"
+        "targeted temperature", "ecmo", "ecpr", "extracorporeal", "pulmonary embolism", "cardiac"
       ]
     },
     "sepsis_shock": {
@@ -19,52 +21,118 @@
         "sepsis", "septic", "septic shock", "vasopressor", "norepinephrine",
         "vasopressin", "epinephrine", "fluid resuscitation", "lactate",
         "hemodynamic", "haemodynamic", "distributive shock", "source control",
-        "hypotension", "mean arterial pressure", "capillary refill", "resuscitation fluid"
+        "hypotension", "mean arterial pressure", "capillary refill"
       ]
     },
-    "resp_airway_ards": {
-      "label": "호흡·기도·기계환기·ARDS",
+    "resp_airway": {
+      "label": "호흡·기도·기계환기",
       "weight": 1.0,
       "terms": [
+        "ards", "acute respiratory distress", "respiratory failure",
+        "copd", "chronic obstructive", "asthma", "status asthmaticus",
+        "pulmonary fibrosis", "ipf", "interstitial lung",
         "airway", "intubation", "rapid sequence", "laryngoscopy", "video laryngoscopy",
-        "mechanical ventilation", "ventilator", "ards", "acute respiratory distress",
-        "respiratory failure", "oxygenation", "non-invasive ventilation", "hfnc",
-        "high-flow", "high flow nasal", "peep", "prone position", "ecmo",
-        "extracorporeal", "tidal volume", "weaning", "extubation", "preoxygenation"
+        "mechanical ventilation", "ventilator", "oxygenation", "preoxygenation",
+        "non-invasive ventilation", "hfnc", "high-flow", "high flow nasal",
+        "peep", "prone position", "tidal volume", "weaning", "extubation"
       ]
     },
-    "tox_trauma_neuro": {
-      "label": "중독·외상·신경응급",
-      "weight": 0.5,
+    "infection": {
+      "label": "감염(비패혈증 국소)",
+      "weight": 1.0,
       "terms": [
-        "toxicology", "overdose", "poisoning", "antidote", "envenomation",
-        "trauma", "hemorrhage", "haemorrhage", "massive transfusion", "tranexamic",
-        "traumatic brain", "stroke", "thrombolysis", "thrombectomy",
-        "status epilepticus", "seizure", "subarachnoid", "intracranial"
+        "urinary tract infection", "pyelonephritis", "pneumonia",
+        "soft tissue infection", "cellulitis", "necrotizing fasciitis",
+        "deep neck", "ludwig", "abscess", "gastrointestinal infection",
+        "cholangitis", "cholecystitis", "meningitis", "bacteremia", "endocarditis"
+      ]
+    },
+    "neuro": {
+      "label": "신경 응급",
+      "weight": 1.0,
+      "terms": [
+        "stroke", "ischemic stroke", "thrombectomy", "thrombolysis", "tenecteplase", "alteplase",
+        "intracerebral hemorrhage", "intracranial hemorrhage", "brain hemorrhage", "brain haemorrhage",
+        "subarachnoid", "intracranial", "central vertigo", "vertigo", "dizziness",
+        "status epilepticus", "seizure"
+      ]
+    },
+    "endo_metabolic": {
+      "label": "응급 내분비·대사",
+      "weight": 1.0,
+      "terms": [
+        "diabetic ketoacidosis", "ketoacidosis", "dka", "hyperglycemic", "hyperglycaemic",
+        "hyperosmolar", "hhs", "adrenal crisis", "adrenal insufficiency",
+        "thyroid storm", "thyrotoxicosis", "myxedema"
+      ]
+    },
+    "vascular_gi_other": {
+      "label": "혈관·소화기·기타 응급",
+      "weight": 1.0,
+      "terms": [
+        "hypertensive emergency", "hypertensive urgency", "anaphylaxis",
+        "peripheral arterial", "peripheral artery", "acute limb ischemia",
+        "ureter stone", "ureteral", "nephrolithiasis", "urolithiasis", "renal colic",
+        "gastrointestinal bleeding", "gastrointestinal bleed", "gi bleed", "variceal",
+        "massive transfusion", "transfusion"
+      ]
+    },
+    "trauma": {
+      "label": "외상",
+      "weight": 1.0,
+      "terms": [
+        "trauma", "traumatic brain", "tbi", "polytrauma", "penetrating",
+        "hemorrhagic shock", "tranexamic", "rib fracture", "pelvic fracture",
+        "blunt", "injury severity"
+      ]
+    },
+    "procedure_dx": {
+      "label": "응급 술기·진단",
+      "weight": 0.8,
+      "terms": [
+        "point-of-care ultrasound", "point of care ultrasound", "pocus",
+        "bedside ultrasound", "focused ultrasound", "echocardiography"
       ]
     },
     "general_em_ccm": {
       "label": "응급·중환자 일반",
-      "weight": 0.55,
+      "weight": 0.4,
       "terms": [
         "emergency department", "emergency medicine", "critically ill",
-        "intensive care", "critical care", "acute care", "triage"
+        "intensive care unit", "acute care", "triage"
       ]
     }
   },
   "deprioritize": {
-    "_comment": "후순위 주제 — 매칭 시 최종점수 감점(배제 아님). 성인 응급/중환자 위주라 소아/신생아는 후순위. 성인 좋은 논문이 있으면 그게 뽑히고, 없을 때만 이들이 올라온다. penalty=감점(음수), 숫자만 고쳐 강도 조절.",
-    "label": "소아/신생아(성인 위주라 후순위)",
-    "penalty": -2.0,
-    "terms": [
-      "neonat", "newborn", "preterm", "premature infant",
-      "infant", "infancy", "paediatric", "pediatric", "children", "childhood",
-      "young infant", "under-5", "under 5"
-    ]
+    "_comment": "매칭 시 감점(배제 아님). ped=소아/신생아(성인 위주 후순위). method=비급성·방법론 연구(오늘 픽 실패 원인: feasibility/QI/재활/설문 등 침상가치 낮은 유형). penalty 숫자만 고쳐 강도 조절.",
+    "groups": {
+      "pediatric": {
+        "label": "소아/신생아(성인 위주라 후순위)",
+        "penalty": -2.0,
+        "terms": [
+          "neonat", "newborn", "preterm", "premature infant",
+          "infant", "infancy", "paediatric", "pediatric", "children", "childhood",
+          "young infant", "under-5", "under 5"
+        ]
+      },
+      "nonacute_method": {
+        "label": "비급성·방법론(침상가치 낮음)",
+        "penalty": -3.0,
+        "terms": [
+          "feasibility", "pilot study", "acceptability", "fidelity", "qualitative",
+          "study protocol", "protocol for a", "quality improvement",
+          "survey", "questionnaire", "scoping review", "cross-sectional survey",
+          "nursing intervention", "rehabilitation", "post-intensive care syndrome",
+          "family syndrome", "caregiver", "educational intervention", "e-learning",
+          "knowledge and attitude", "job satisfaction", "burnout"
+        ]
+      }
+    }
   },
-  "blend": {
-    "_comment": "최종점수 = 질점수 × (relevanceFloor + relevanceLift × 적합도01). 적합도가 높을수록 최대 +30% 가산.",
-    "relevanceFloor": 0.7,
-    "relevanceLift": 0.3
+  "scoring": {
+    "_comment": "최종점수 = journalWeight×저널(0~4) + relevanceWeight×주제(0~4) + 설계(0~1.5) + 최신성(0~0.7) + 표본(0~0.8) + 감점 + 주제게이트. 주제·저널이 지배적(PeterJ 우선순위). topicGate=관심 0매칭 시 감점(사실상 배제). 숫자만 고쳐 튜닝.",
+    "journalWeight": 1.0,
+    "relevanceWeight": 1.0,
+    "topicGatePenalty": -5.0
   }
 }

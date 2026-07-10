@@ -26,6 +26,7 @@ import { kstDateStr } from '../src/utils/dates.js';
 
 const MAX = Number(process.env.EXP_MAX ?? 300);
 const CHUNK = Number(process.env.EXP_CHUNK ?? 30);
+const USE_LLM = (process.env.EXP_LLM ?? '1') !== '0'; // 0 = 결정적 재랭킹만(빠름, LLM 없음)
 const OUT = process.env.EXP_OUT ?? 'output/experiments';
 const KS = [10, 20, 50];
 const today = kstDateStr();
@@ -87,6 +88,33 @@ if (!papers.length) { summary(`## ❌ 실험 실패 — 수집된 논문 0편 (P
 
 const scorer = new MetadataScorer();
 const detScores = new Map(scorer.scorePapers(papers).map((s) => [s.pmid, s]));
+
+// ── 결정적 재랭킹 전용 모드 (개편 스코어러 확인용 — LLM 없이 1~2분) ──────────
+if (!USE_LLM) {
+  const ranked = papers.map((p) => ({ p, d: detScores.get(p.pmid) ?? {} }))
+    .sort((a, b) => (b.d.rawScore ?? 0) - (a.d.rawScore ?? 0));
+  let md = `# 📊 결정적 재랭킹 (개편 스코어러) — ${today}\n\n`;
+  md += `수집 **${papers.length}편** · PeterJ 기준: ①관심주제 ②저명저널\n\n`;
+  md += `## 🩺 상위 20 — PeterJ 눈 검증(이제 취향에 맞나?)\n\n`;
+  ranked.slice(0, 20).forEach((r, i) => {
+    const d = r.d;
+    md += `**${i + 1}. ${d.score}점** (raw ${Number(d.rawScore ?? 0).toFixed(2)}) · ${trunc(r.p.title, 82)}\n`;
+    md += `  · _${r.p.journal}_ · ${d.journalTier ?? '?'}${d.gated ? ' · ⚠GATED' : ''} · ${trunc(d.rationale, 110)}\n\n`;
+  });
+  md += `## 하위 5 — 배제·감점 확인\n\n`;
+  ranked.slice(-5).forEach((r) => {
+    const d = r.d;
+    md += `- ${d.score}점 · ${trunc(r.p.title, 68)} _(${r.p.journal})_${d.gated ? ' · GATED' : ''}\n`;
+  });
+  summary(md);
+  mkdirSync(OUT, { recursive: true });
+  writeFileSync(`${OUT}/rerank-${today}.json`, JSON.stringify({
+    date: today, collect: stats,
+    ranked: ranked.map((r) => ({ pmid: r.p.pmid, score: r.d.score, raw: r.d.rawScore, tier: r.d.journalTier, gated: r.d.gated, groups: r.d.matchedInterests, title: r.p.title, journal: r.p.journal })),
+  }, null, 2));
+  console.error(`상세 JSON: ${OUT}/rerank-${today}.json`);
+  process.exit(0);
+}
 
 const { scores: llmScores, chunkLog } = await llmScreen(papers);
 

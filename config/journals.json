@@ -1,0 +1,55 @@
+{
+  "_comment": "저널 등급 — PeterJ 기준 '저명 SCI 우선'. IF 절대값이 아니라 '분야 내 위상(Q1)'으로 본다(EM/CCM 저널은 종합지보다 IF가 낮아도 분야 대표지면 높게). 숫자·리스트만 고쳐 튜닝(폰에서 파일 편집 가능). 매칭: exact=저널명 정확일치(자매지 오매칭 방지), includes=부분일치(소문자). 판정 순서 = top→flagship→specialty→low→default.",
+  "tiers": {
+    "top_general": {
+      "label": "최상위 종합지",
+      "score": 4.0,
+      "exact": ["jama", "bmj", "the bmj", "lancet", "the lancet", "nature"],
+      "includes": ["new england journal", "british medical journal", "journal of the american medical association", "nature medicine"]
+    },
+    "em_ccm_flagship": {
+      "label": "EM·CCM·심혈관 분야 대표지",
+      "score": 3.2,
+      "includes": [
+        "lancet respiratory", "lancet neurology",
+        "annals of emergency medicine", "ann emerg med",
+        "critical care medicine", "crit care med",
+        "intensive care medicine", "intensive care med",
+        "american journal of respiratory and critical care", "am j respir crit care",
+        "resuscitation", "chest", "circulation", "european heart journal", "eur heart j",
+        "journal of the american college of cardiology", "jacc",
+        "stroke", "critical care", "annals of intensive care",
+        "jama network open", "jama internal medicine", "jama intern med",
+        "jama cardiology", "jama neurology", "jama surgery",
+        "blood", "gastroenterology", "european respiratory journal"
+      ]
+    },
+    "specialty": {
+      "label": "전문 저널(분야 Q2 내외)",
+      "score": 2.0,
+      "includes": [
+        "american journal of emergency medicine", "am j emerg med",
+        "emergency medicine journal", "academic emergency medicine", "acad emerg med",
+        "cjem", "canadian journal of emergency", "european journal of emergency medicine",
+        "internal and emergency medicine", "prehospital emergency care",
+        "journal of critical care", "j crit care", "shock", "journal of intensive care",
+        "critical care explorations", "thorax", "anesthesiology",
+        "british journal of anaesthesia", "journal of trauma", "j trauma",
+        "neurology", "journal of thrombosis", "journal of the american heart association",
+        "clinical toxicology", "annals of intensive", "heart", "europace",
+        "clinical infectious diseases", "journal of infection"
+      ]
+    },
+    "low": {
+      "label": "저명도 낮음·범용/약탈성 우려(감점)",
+      "score": -1.0,
+      "exact": ["medicine", "cureus"],
+      "includes": [
+        "scientific reports", "bmc ", "plos one", "frontiers in", "heliyon",
+        "medicine (baltimore)", "world journal of", "dove", "mdpi",
+        "cureus", "int j environ res public health"
+      ]
+    }
+  },
+  "default": { "label": "그외 SCI", "score": 0.8 }
+}
