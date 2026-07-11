@@ -169,13 +169,18 @@ ${schema}`;
 
     // 웹검색 보강(가이드라인 등): 서버 웹툴을 허용하고 멀티턴을 연다.
     // --allowedTools 는 가변 인자라 반드시 args 맨 끝에 둔다.
+    // 기본 12턴은 데일리 PICO 폴백 기준(바이트 동일 유지). 열린 웹 탐색(트랙 비교 Arm2 등)은
+    // 턴을 많이 먹으므로 LLM_WEB_MAX_TURNS 로 상향할 수 있다(미설정 시 12 그대로).
     if (webSearch) {
-      args.push('--max-turns', '12', '--allowedTools', 'WebSearch', 'WebFetch');
+      const maxTurns = String(process.env.LLM_WEB_MAX_TURNS || '12');
+      args.push('--max-turns', maxTurns, '--allowedTools', 'WebSearch', 'WebFetch');
     }
 
     // 비동기 spawn — spawnSync는 호출당 최대 8분 이벤트 루프를 얼려
     // 타이머·로그 flush·향후 병렬화를 전부 막는다
-    const result = await this._spawnClaude(args, webSearch ? 480_000 : 300_000);
+    // 웹검색 경로 타임아웃도 상향 가능(턴을 늘리면 더 오래 걸린다). 기본 480s 유지.
+    const webTimeoutMs = Number(process.env.LLM_WEB_TIMEOUT_MS) || 480_000;
+    const result = await this._spawnClaude(args, webSearch ? webTimeoutMs : 300_000);
 
     if (result.error) throw new Error(`claude CLI spawn error: ${result.error.message}`);
     if (result.timedOut) throw new Error(`claude CLI timed out after ${result.timeoutMs / 1000}s`);

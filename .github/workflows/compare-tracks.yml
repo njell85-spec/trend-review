@@ -54,3 +54,6 @@ jobs:
           PUBMED_API_KEY:         ${{ secrets.PUBMED_API_KEY }}
           PUBMED_EMAIL:           ${{ secrets.PUBMED_EMAIL }}
           ANALYSIS_MODEL:         ${{ vars.ANALYSIS_MODEL }}
+          # Arm2 웹탐색은 열린 과제라 턴을 많이 먹는다 — 기본 12 대신 상향(데일리는 미설정=12 유지).
+          LLM_WEB_MAX_TURNS:      '30'
+          LLM_WEB_TIMEOUT_MS:     '600000'
