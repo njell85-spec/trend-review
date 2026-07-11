@@ -1,6 +1,5 @@
 // scripts/compare-tracks.mjs
 import { readFile, writeFile, mkdir } from 'fs/promises';
-import { existsSync } from 'fs';
 import { execFileSync } from 'child_process';
 import path from 'path';
 import { kstDateStr } from '../src/utils/dates.js';

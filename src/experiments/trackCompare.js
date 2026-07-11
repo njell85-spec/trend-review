@@ -1,5 +1,4 @@
 import { readFileSync } from 'fs';
-import { fileURLToPath, URL } from 'url';
 
 function _defaultProfile() {
   try {
