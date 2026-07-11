@@ -72,3 +72,10 @@
 - **막히거나 토큰 만료 시**: PeterJ가 "codex 셋업/문서 불러와" 하면
   `njell85-spec/trend-review`의 **`docs/codex-mcp-setup.md`**를 연다(다른 repo 세션이면
   `add_repo`로 trend-review를 가져와 읽는다). 토큰 갱신 절차는 그 문서 §3.
+
+## 클코 구조도 — 버전 누적 관리 (PeterJ 확정 2026-07-11)
+- PeterJ가 "클코 구조도 업데이트/보여줘"라고 하면 `njell85-spec/trend-review`의
+  **`docs/claude-stack-map/README.md`** 규약을 따른다(다른 repo 세션이면 `add_repo`로 가져온다).
+- 요지: 갱신 전 새 HTML 스냅샷을 그 디렉터리에 `YYYY-MM-DD-vN-<슬러그>.html`로 저장하고
+  버전 로그에 한 줄 추가한 뒤, 아티팩트는 **기존 URL로 재게시**(전 버전은 repo에 영구 보존).
+- 수록 원칙: 실제 설정 파일로 확인한 것만 수록, 자작=초록/기성품=회색 구분, 병원 비유 유지.

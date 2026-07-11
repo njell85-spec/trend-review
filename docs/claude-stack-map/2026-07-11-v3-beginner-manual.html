@@ -1,0 +1,482 @@
+<title>PeterJ — Claude Code 구조 매뉴얼</title>
+<style>
+  :root {
+    --bg: #f6f7f6;
+    --surface: #ffffff;
+    --surface-2: #eef1f0;
+    --ink: #1c2422;
+    --ink-2: #55605d;
+    --ink-3: #7d8885;
+    --line: #dde2e0;
+    --accent: #0e7f74;
+    --accent-soft: #e2f1ef;
+    --mine: #0e7f74;        /* 직접 제작 */
+    --stock: #8a94a6;       /* 기성품 */
+    --l-global: #6d5bb8;
+    --l-project: #0e7f74;
+    --l-session: #2f6fb2;
+    --l-human: #b0761f;
+    --ana-bg: #f3efe4;      /* 비유 박스 */
+    --ana-ink: #7a6329;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard",
+            "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141918; --surface: #1c2321; --surface-2: #242c2a;
+      --ink: #e7ecea; --ink-2: #a4b0ac; --ink-3: #76827e; --line: #313b38;
+      --accent: #35b3a5; --accent-soft: #1e3330;
+      --mine: #4cc2b3; --stock: #8a97ab;
+      --l-global: #a292e0; --l-project: #4cc2b3; --l-session: #7aaede; --l-human: #d9a44e;
+      --ana-bg: #2a2619; --ana-ink: #cdb066;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141918; --surface: #1c2321; --surface-2: #242c2a;
+    --ink: #e7ecea; --ink-2: #a4b0ac; --ink-3: #76827e; --line: #313b38;
+    --accent: #35b3a5; --accent-soft: #1e3330;
+    --mine: #4cc2b3; --stock: #8a97ab;
+    --l-global: #a292e0; --l-project: #4cc2b3; --l-session: #7aaede; --l-human: #d9a44e;
+    --ana-bg: #2a2619; --ana-ink: #cdb066;
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f7f6; --surface: #ffffff; --surface-2: #eef1f0;
+    --ink: #1c2422; --ink-2: #55605d; --ink-3: #7d8885; --line: #dde2e0;
+    --accent: #0e7f74; --accent-soft: #e2f1ef;
+    --mine: #0e7f74; --stock: #8a94a6;
+    --l-global: #6d5bb8; --l-project: #0e7f74; --l-session: #2f6fb2; --l-human: #b0761f;
+    --ana-bg: #f3efe4; --ana-ink: #7a6329;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); line-height: 1.6; font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 16px 64px; }
+
+  .eyebrow {
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 6px;
+  }
+  h1 { font-size: 25px; margin: 0 0 8px; line-height: 1.3; text-wrap: balance; font-weight: 800; }
+  .sub { color: var(--ink-2); font-size: 14px; margin: 0; }
+
+  /* 범례 */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 14px;
+    font-size: 12.5px; color: var(--ink-2);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; flex: none; }
+
+  section { margin-top: 40px; }
+  .ch {
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+  h2 { font-size: 18px; margin: 2px 0 10px; font-weight: 750; text-wrap: balance; }
+
+  /* 개념 설명 박스 */
+  .concept {
+    background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0; padding: 11px 14px; font-size: 14px; color: var(--ink-2);
+    margin-bottom: 14px;
+  }
+  .concept b { color: var(--ink); }
+  .ana {
+    display: block; margin-top: 7px; padding: 7px 10px; border-radius: 8px;
+    background: var(--ana-bg); color: var(--ana-ink); font-size: 13px;
+  }
+  .ana b { color: inherit; }
+
+  /* 트리 */
+  .node {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; position: relative;
+  }
+  .role {
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-bottom: 6px;
+  }
+  .role.human { background: color-mix(in srgb, var(--l-human) 16%, transparent); color: var(--l-human); }
+  .role.orch  { background: var(--accent-soft); color: var(--accent); }
+  .role.sub   { background: color-mix(in srgb, var(--l-session) 15%, transparent); color: var(--l-session); }
+  .role.ext   { background: color-mix(in srgb, var(--l-global) 15%, transparent); color: var(--l-global); }
+  .node .name { font-weight: 700; font-size: 15px; }
+  .node .desc { color: var(--ink-2); font-size: 13.5px; margin-top: 2px; }
+  .branch { border-left: 2px solid var(--line); margin-left: 18px; padding: 14px 0 0 16px; display: grid; gap: 12px; }
+  .branch .node::before {
+    content: ""; position: absolute; left: -18px; top: 22px; width: 16px; height: 2px; background: var(--line);
+  }
+  .leaflist { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .chip {
+    font-size: 12px; padding: 3px 9px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--line); color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .chip.mine { border-color: color-mix(in srgb, var(--mine) 55%, transparent); color: var(--mine); font-weight: 650; }
+
+  /* 레이어 카드 */
+  .layer {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    overflow: hidden; margin-top: 14px;
+  }
+  .layer > .lh {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    padding: 12px 16px; border-bottom: 1px solid var(--line);
+  }
+  .lh .dot { width: 10px; height: 10px; border-radius: 3px; flex: none; align-self: center; }
+  .layer.global  .dot { background: var(--l-global); }
+  .layer.project .dot { background: var(--l-project); }
+  .layer.session .dot { background: var(--l-session); }
+  .lh .lt { font-weight: 750; font-size: 15px; }
+  .lh .ls { color: var(--ink-3); font-size: 12.5px; }
+  .lexp { padding: 10px 16px 0; font-size: 13.5px; color: var(--ink-2); }
+  .layer table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 8px; }
+  .layer td { padding: 9px 16px; border-top: 1px solid var(--line); vertical-align: top; }
+  .layer td.k {
+    font-family: var(--mono); font-size: 12px; color: var(--ink-2);
+    width: 40%; word-break: break-all; padding-right: 8px;
+  }
+  .new { color: var(--accent); font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .made { color: var(--mine); font-size: 11.5px; font-weight: 700; }
+
+  /* 수명주기 */
+  .life { display: grid; margin-top: 14px; }
+  .step { display: grid; grid-template-columns: 26px 1fr; gap: 12px; }
+  .step .rail { display: flex; flex-direction: column; align-items: center; }
+  .step .pt {
+    width: 12px; height: 12px; border-radius: 50%; background: var(--accent);
+    border: 3px solid var(--accent-soft); flex: none; margin-top: 4px;
+  }
+  .step .bar { width: 2px; flex: 1; background: var(--line); }
+  .step:last-child .bar { display: none; }
+  .step .body { padding-bottom: 20px; }
+  .step .when { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .step .what { font-weight: 700; margin: 2px 0 3px; }
+  .step .how { color: var(--ink-2); font-size: 13.5px; }
+  .step .how code, .lexp code, .concept code {
+    font-family: var(--mono); font-size: 12px; background: var(--surface-2); padding: 1px 5px; border-radius: 5px;
+  }
+
+  /* 인벤토리 */
+  .inv { display: grid; gap: 12px; margin-top: 14px; }
+  .grp { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 13px 16px; }
+  .gt { font-weight: 750; font-size: 14.5px; }
+  .gs { color: var(--ink-2); font-size: 13px; margin: 3px 0 9px; }
+
+  /* 용어표 */
+  .terms { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .terms th, .terms td { padding: 10px 14px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .terms th { font-size: 12px; color: var(--ink-3); font-weight: 700; width: 30%; border-top: 0; }
+  .terms tr:first-child td { border-top: 0; }
+
+  footer { margin-top: 44px; color: var(--ink-3); font-size: 12.5px; border-top: 1px solid var(--line); padding-top: 14px; }
+  @media (max-width: 480px) {
+    .layer td.k { width: 46%; }
+    h1 { font-size: 21px; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Claude Code Manual</div>
+    <h1>PeterJ의 클로드 코드 구조 매뉴얼</h1>
+    <p class="sub">코딩을 몰라도 읽히도록 각 층의 "이게 뭐냐"부터 설명합니다.
+    2026-07-11 기준, 실제 설정 파일을 열어 확인한 구성만 수록했습니다.</p>
+    <div class="legend">
+      <span><i style="background:var(--mine)"></i><b>초록 테두리·글씨</b> = PeterJ가 직접 제작</span>
+      <span><i style="background:var(--stock)"></i>회색 = 기성품(설치/기본 제공)</span>
+      <span><i style="background:var(--ana-ink)"></i>모래색 박스 = 병원 비유</span>
+      <span>"(오늘 추가)" = 2026-07-11 반영</span>
+    </div>
+  </header>
+
+  <!-- 0장 -->
+  <section>
+    <div class="ch">0장 · 시작하기 전에</div>
+    <h2>클로드 코드(클코)가 뭔가요?</h2>
+    <div class="concept">
+      <b>클로드 코드</b>는 AI(클로드)에게 파일 읽기·수정, 터미널 명령, git(코드 기록 관리) 같은
+      <b>실제 작업 도구</b>를 쥐여 주는 프로그램입니다. 채팅만 하는 AI와 달리, 지시하면 코드를 직접 고치고
+      저장하고 배포까지 이어갑니다. PeterJ는 이것을 폰·태블릿(claude.ai/code)에서 원격으로 부립니다.
+      <span class="ana">🏥 <b>비유</b> — 병원에 비유하면: PeterJ는 최종 결정하는 <b>지도전문의</b>,
+      클로드는 <b>담당 주치의</b>, 아래 나올 서브에이전트들은 <b>협진 의뢰</b>입니다.
+      이 문서 전체에서 이 비유를 유지합니다.</span>
+    </div>
+  </section>
+
+  <!-- 1장 -->
+  <section>
+    <div class="ch">1장 · 지휘 계통</div>
+    <h2>누가 누구에게 일을 시키나</h2>
+    <div class="concept">
+      일은 위에서 아래로 내려가고, <b>결과와 증거</b>는 다시 위로 올라옵니다.
+      맨 위의 사람(PeterJ)만이 "머지·배포·설정 변경" 같은 되돌리기 어려운 결정을 승인합니다.
+    </div>
+
+    <div class="node">
+      <span class="role human">사람 · 최종 결정</span>
+      <div class="name">PeterJ</div>
+      <div class="desc">지시하고, 중간 보고를 받고, 승인 게이트에서 결정합니다. 모바일/원격 위주.</div>
+      <span class="ana">🏥 지도전문의 — 오더를 내리고 최종 사인을 합니다.</span>
+    </div>
+    <div class="branch">
+      <div class="node">
+        <span class="role orch">Orchestrator · 지휘자</span>
+        <div class="name">메인 에이전트 (대화하는 "클로드")</div>
+        <div class="desc">PeterJ와 대화하는 바로 그 AI. 계획을 세우고, 아래 일꾼들에게 일을 나눠 주고,
+        결과를 모아 검증한 뒤 보고합니다. 어떤 모델(Fable·Opus·Sonnet…)이 끼워지든
+        같은 지침·규율(2~3장)을 따르게 돼 있습니다.</div>
+        <span class="ana">🏥 담당 주치의 — 환자(작업)를 처음부터 끝까지 책임집니다.</span>
+      </div>
+      <div class="branch">
+        <div class="node">
+          <span class="role sub">Subagent · 1회용 보조 AI</span>
+          <div class="name">서브에이전트</div>
+          <div class="desc">주치의가 특정 검토를 맡기려고 잠깐 만드는 보조 AI.
+          자기 결과만 보고하고 사라집니다. 여러 명을 <b>동시에(병렬)</b> 돌릴 수 있어서
+          오늘 코드리뷰 때도 8명이 각자 다른 관점으로 검토했습니다.</div>
+          <span class="ana">🏥 협진 의뢰 — 회신지만 받고 끝. 여러 과에 동시에 의뢰 가능합니다.</span>
+          <div class="leaflist">
+            <span class="chip mine">code-reviewer (리뷰 전용)</span>
+            <span class="chip mine">review-judge (중립 심판)</span>
+            <span class="chip">Explore (읽기 전용 탐색)</span>
+            <span class="chip">Plan (설계)</span>
+            <span class="chip">general-purpose (만능)</span>
+            <span class="chip">claude-code-guide (공식 문서 안내)</span>
+          </div>
+        </div>
+        <div class="node">
+          <span class="role sub">Fleet · 대량 병렬</span>
+          <div class="name">워크플로 (Workflow)</div>
+          <div class="desc">서브에이전트를 수십 명 단위로 스크립트에 따라 돌리는 기능.
+          대규모 감사·전수 검사처럼 혼자서는 못 훑는 규모에 씁니다. PeterJ가 명시적으로
+          요청할 때만 가동됩니다(비용이 크므로).</div>
+          <span class="ana">🏥 다학제 통합진료 — 한 환자에 여러 과가 한꺼번에 붙는 격.</span>
+        </div>
+        <div class="node">
+          <span class="role ext">External · 타사 AI</span>
+          <div class="name">codex (OpenAI gpt-5.5)</div>
+          <div class="desc">클로드가 <b>도구처럼 호출하는 경쟁사 AI</b>. 같은 코드를 서로 독립적으로
+          검토하고 반박을 주고받은 뒤 심판(review-judge)이 결론을 내립니다 — "클코덱스 토론".
+          설계 단계용 "설계토론" 모드도 있습니다 <span class="new">(오늘 확장)</span>.</div>
+          <span class="ana">🏥 타 병원 세컨드 오피니언 — 다른 학파의 눈으로 교차검증.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2장 -->
+  <section>
+    <div class="ch">2장 · 설정 3층</div>
+    <h2>지침과 도구는 어디서 오나</h2>
+    <div class="concept">
+      클로드가 세션을 시작하면 <b>세 층의 설정이 겹쳐져</b> 행동 규칙과 도구가 정해집니다.
+      ① 어느 프로젝트에서든 적용되는 <b>전역층</b>, ② 그 프로젝트(repo = 코드 저장소)에만 적용되는
+      <b>프로젝트층</b>, ③ 접속 환경이 기본 제공하는 <b>세션층</b>.
+      <span class="ana">🏥 병원 전체 규정(전역) → 병동별 프로토콜(프로젝트) → 그날 배정된
+      진료실 장비(세션) 순으로 겹쳐지는 것과 같습니다.</span>
+    </div>
+
+    <div class="layer global">
+      <div class="lh"><span class="dot"></span><span class="lt">① 전역층</span>
+        <span class="ls">모든 프로젝트 공통 · 원본은 trend-review 저장소, 세션 시작 때 자동 복사</span></div>
+      <div class="lexp">PeterJ가 직접 만든 층입니다. 어떤 repo에서 작업하든 똑같이 적용됩니다.</div>
+      <table>
+        <tr><td class="k">CLAUDE.md <span class="made">직접 제작</span></td>
+            <td>전역 업무 수칙 — 존댓말, "증거 없는 됐습니다 금지", 커밋 전 셀프리뷰 체크리스트</td></tr>
+        <tr><td class="k">peterj-session-start.sh <span class="made">직접 제작</span></td>
+            <td>세션 시작 자동화 스크립트 (3장 참고)</td></tr>
+        <tr><td class="k">stop-hook-git-check <span class="made">직접 제작</span></td>
+            <td>작업을 저장(커밋·푸시) 안 하고 끝내려 하면 막는 안전장치</td></tr>
+        <tr><td class="k">superpowers 플러그인</td>
+            <td>일하는 순서를 강제하는 기성 스킬 묶음 (4장에 전체 목록)</td></tr>
+        <tr><td class="k">codex-debate 스킬 <span class="made">직접 제작</span></td>
+            <td>클코덱스 토론·설계토론 절차서 <span class="new">(오늘 확장)</span></td></tr>
+        <tr><td class="k">agents/*.md <span class="made">직접 제작</span></td>
+            <td>code-reviewer · review-judge 서브에이전트의 역할 정의서</td></tr>
+      </table>
+    </div>
+
+    <div class="layer project">
+      <div class="lh"><span class="dot"></span><span class="lt">② 프로젝트층</span>
+        <span class="ls">repo마다 다름 · 아래는 EMR_Assist_v1 기준</span></div>
+      <div class="lexp">그 프로젝트에서만 지켜야 할 계약과 그 프로젝트 전용 도구.</div>
+      <table>
+        <tr><td class="k">AGENTS.md <span class="made">직접 제작</span></td>
+            <td>프로젝트 헌법 — 절대 깨면 안 되는 계약 4조(예: 환자 데이터 비저장),
+            코드 지도, 세션 인계 일지(Handoff). 클로드와 codex가 같이 읽습니다.</td></tr>
+        <tr><td class="k">.mcp.json</td>
+            <td>이 repo에서 codex를 도구로 쓸 수 있게 등록 <span class="new">(오늘 추가)</span></td></tr>
+        <tr><td class="k">.claude/settings.json <span class="made">직접 제작</span></td>
+            <td>검증 명령 사전 허용 + "테스트 통과 전 push 금지" 자동 게이트 <span class="new">(오늘 추가)</span></td></tr>
+        <tr><td class="k">docs/…/specs/</td>
+            <td>설계 문서 — 동작을 바꾸면 문서도 같이 고치는 규칙</td></tr>
+      </table>
+    </div>
+
+    <div class="layer session">
+      <div class="lh"><span class="dot"></span><span class="lt">③ 세션층 (하네스)</span>
+        <span class="ls">claude.ai/code 접속 환경이 기본 제공 · 설치 불필요</span></div>
+      <div class="lexp"><b>하네스</b> = AI를 파일·터미널·인터넷에 연결해 주는 작업대 자체.
+      기본 도구들이 여기 딸려 옵니다.</div>
+      <table>
+        <tr><td class="k">MCP 커넥터 9종</td>
+            <td>외부 서비스 연결 통로 — GitHub, 예약 실행(Routine), 카카오, Gmail, 캘린더,
+            드라이브, Figma, PubMed, codex(②에서 등록)</td></tr>
+        <tr><td class="k">내장 스킬</td>
+            <td>/code-review, /verify 등 바로 쓰는 절차서들 (4장 목록)</td></tr>
+        <tr><td class="k">기타</td>
+            <td>워크플로 · 이 문서 같은 아티팩트 페이지 · 웹검색 · 백그라운드 작업</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3장 -->
+  <section>
+    <div class="ch">3장 · 자동화 (훅)</div>
+    <h2>사람이 안 시켜도 도는 것들</h2>
+    <div class="concept">
+      <b>훅(hook)</b> = 특정 순간이 오면 자동으로 실행되는 규칙입니다.
+      "세션이 켜지면", "push하려고 하면", "끝내려고 하면" 같은 순간마다 검사가 돌아서
+      사람이 깜빡해도 시스템이 잡아 줍니다.
+      <span class="ana">🏥 스탠딩 오더 — 입원하면 자동으로 나가는 기본 처방 세트와 같습니다.</span>
+    </div>
+    <div class="life">
+      <div class="step">
+        <div class="rail"><div class="pt"></div><div class="bar"></div></div>
+        <div class="body">
+          <div class="when">세션 시작</div>
+          <div class="what">작업 환경 자동 준비 <span class="made">직접 제작</span></div>
+          <div class="how">최신 코드 받기(안전할 때만) → superpowers 설치 확인 → 전역 지침과
+          자작 스킬을 원본(trend-review)에서 복사 → git 신원 설정</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="rail"><div class="pt"></div><div class="bar"></div></div>
+        <div class="body">
+          <div class="when">작업 중</div>
+          <div class="what">품질 게이트 <span class="made">직접 제작</span> <span class="new">(오늘 추가)</span></div>
+          <div class="how">클로드가 <code>git push</code>(코드 올리기)를 하려는 순간
+          자동으로 전체 테스트(211개)를 돌리고, 하나라도 실패하면 <b>올리기 자체를 차단</b></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="rail"><div class="pt"></div><div class="bar"></div></div>
+        <div class="body">
+          <div class="when">턴 종료</div>
+          <div class="what">저장 안 하고 못 끝냄</div>
+          <div class="how">커밋(저장)·푸시(업로드) 안 된 변경이 남아 있으면 종료를 막고 마무리를 요구</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="rail"><div class="pt"></div></div>
+        <div class="body">
+          <div class="when">세션 마무리 관례</div>
+          <div class="what">인계 일지(Handoff) 갱신</div>
+          <div class="how">한 일·보류한 결정·다음 할 일을 AGENTS.md에 기록 —
+          다음 세션의 클로드가 첫 턴부터 이어받습니다
+          <span class="ana" style="margin-top:6px">🏥 근무 교대 인계장 — 다음 당직의가 바로 진료를 잇게.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4장 -->
+  <section>
+    <div class="ch">4장 · 도구함</div>
+    <h2>스킬 · 플러그인 · MCP — 뭐가 다른가</h2>
+    <div class="concept">
+      <b>스킬</b> = 절차서 한 편("리뷰는 이 순서로 해라"). ·
+      <b>플러그인</b> = 절차서 여러 편을 묶은 책 한 권. ·
+      <b>MCP</b> = 외부 서비스로 나가는 연결 통로.
+      <span class="ana">🏥 스킬 = 술기 체크리스트, 플러그인 = 가이드라인 책자, MCP = 협진망(타과·검사실 연결).</span>
+    </div>
+    <div class="inv">
+      <div class="grp">
+        <div class="gt">플러그인: superpowers <span style="color:var(--stock);font-size:12px">(기성품 · 설치형)</span></div>
+        <div class="gs">"일하는 순서"를 강제하는 절차서 묶음. 이 책에 든 스킬들 ↓</div>
+        <div class="leaflist">
+          <span class="chip">brainstorming (착수 전 요구 파악)</span>
+          <span class="chip">writing-plans (계획서 작성)</span>
+          <span class="chip">executing-plans (계획 실행)</span>
+          <span class="chip">test-driven-development (테스트 먼저)</span>
+          <span class="chip">systematic-debugging (원인 확정 후 수정)</span>
+          <span class="chip">verification-before-completion (증거 없이 완료 금지)</span>
+          <span class="chip">requesting-code-review</span>
+          <span class="chip">receiving-code-review</span>
+          <span class="chip">subagent-driven-development</span>
+          <span class="chip">dispatching-parallel-agents</span>
+          <span class="chip">using-git-worktrees</span>
+          <span class="chip">writing-skills</span>
+          <span class="chip">finishing-a-development-branch</span>
+        </div>
+      </div>
+      <div class="grp">
+        <div class="gt">자작 스킬 · 에이전트 <span class="made">전부 직접 제작</span></div>
+        <div class="gs">원본은 trend-review 저장소 — 고칠 때는 원본을 수정하면 모든 세션에 배포됨</div>
+        <div class="leaflist">
+          <span class="chip mine">codex-debate · 클코덱스 토론</span>
+          <span class="chip mine">codex-debate · 설계토론 모드</span>
+          <span class="chip mine">code-reviewer 에이전트</span>
+          <span class="chip mine">review-judge 에이전트</span>
+          <span class="chip mine">session-start-hook 스킬</span>
+        </div>
+      </div>
+      <div class="grp">
+        <div class="gt">내장 스킬 <span style="color:var(--stock);font-size:12px">(기성품 · 하네스 기본 제공)</span></div>
+        <div class="gs">주요 항목 — "/이름"으로 부릅니다</div>
+        <div class="leaflist">
+          <span class="chip">/code-review (8관점 리뷰)</span><span class="chip">/verify (실동작 검증)</span>
+          <span class="chip">/simplify (코드 정리)</span><span class="chip">/security-review (보안)</span>
+          <span class="chip">/deep-research (심층 조사)</span><span class="chip">/dataviz (차트)</span>
+          <span class="chip">/loop (반복 실행)</span><span class="chip">/fewer-permission-prompts (승인 줄이기)</span>
+          <span class="chip">/review (PR 리뷰)</span><span class="chip">/init (프로젝트 문서 생성)</span>
+        </div>
+      </div>
+      <div class="grp">
+        <div class="gt">MCP 커넥터 <span style="color:var(--stock);font-size:12px">(연결 통로)</span></div>
+        <div class="gs">클로드가 외부 세계와 주고받는 창구들</div>
+        <div class="leaflist">
+          <span class="chip">github (코드 저장소·PR·CI)</span>
+          <span class="chip">claude-code-remote (예약 실행·repo 추가)</span>
+          <span class="chip mine">codex (gpt-5.5 교차검증 — 등록 설정만 자작)</span>
+          <span class="chip">PubMed (의학문헌)</span>
+          <span class="chip">PlayMCP (카카오톡 메모)</span>
+          <span class="chip">Gmail</span><span class="chip">Google Calendar</span>
+          <span class="chip">Google Drive</span><span class="chip">Figma</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5장 -->
+  <section>
+    <div class="ch">부록</div>
+    <h2>용어는 어디까지 공식인가</h2>
+    <div class="concept">
+      혼동 방지: 이 문서에 쓰인 말 중 어떤 것이 공식 명칭이고 어떤 것이 설명용인지 구분합니다.
+    </div>
+    <table class="terms">
+      <tr><th>공식 용어<br>(클로드 코드 문서)</th>
+          <td>스킬 · 플러그인 · 훅 · 서브에이전트 · MCP · CLAUDE.md · 아티팩트</td></tr>
+      <tr><th>업계 통용어</th>
+          <td>하네스(작업대) · 오케스트레이터(지휘자) · 워크플로 · repo(저장소)</td></tr>
+      <tr><th>이 문서 전용<br>(설명 장치)</th>
+          <td>"설정 3층"이라는 층 구분 · 병원 비유 전체 · 장(章) 번호</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    수록 기준: 2026-07-11 세션에서 설정 파일·스크립트를 직접 열어 확인한 것만.
+    이전 판(한 장 요약, 병원 비유 L0~L6)과의 차이: 그쪽은 개념 흐름 중심, 이번 판은
+    개념 설명 + 실물 인벤토리 통합본입니다. ·
+    빈 축(추천 후보): 최신 문서 주입(Context7) · UI 자가검증(/preview) · 보안 자동점검(security-guidance)
+  </footer>
+</div>
