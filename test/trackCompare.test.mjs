@@ -115,3 +115,42 @@ test('isPastEndDate', () => {
   assert.equal(isPastEndDate('2026-07-25', '2026-07-25'), false);
   assert.equal(isPastEndDate('2026-07-25', ''), false);
 });
+
+import { runOnce } from '../src/experiments/trackCompare.js';
+
+const okPaper = { pmid: '900', title: 'T', journal: 'NEJM', pubDate: '2026-05', abstract: 'a', authors: [], meshTerms: [], keywords: [], doi: '' };
+const analyzerStub = { _analyzeSinglePaper: async (p) => ({ pmid: p.pmid, title_ko: '제목', pico: {}, evidenceLevel: 'High', paper: p }) };
+const collectorStub = { fetchArticles: async (ids) => [{ ...okPaper, pmid: ids[0] }] };
+const base = { today: '2026-07-14', sinceDate: '2026-01-14', arm2History: [], comparison: { records: [] }, logger: { warn(){}, info(){} } };
+
+test('runOnce: 정상 → arm2 분석 + 레코드', async () => {
+  const llm = { callWithTool: async () => ({ pmid: '900', title: 'T', journal: 'NEJM', whyChosen: 'x' }) };
+  const out = await runOnce({ ...base, arm1Entry: { pmid: '900' }, llm, collector: collectorStub, analyzer: analyzerStub });
+  assert.equal(out.arm2Pmid, '900');
+  assert.equal(out.record.converged, true);          // arm1도 900
+  assert.equal(out.comparison.records.length, 1);
+});
+
+test('runOnce: 첫 픽 검증 실패 → 재시도 성공', async () => {
+  let call = 0;
+  const llm = { callWithTool: async () => (++call === 1 ? { pmid: 'bad', title: 'T', journal: 'J', whyChosen: 'x' } : { pmid: '900', title: 'T', journal: 'NEJM', whyChosen: 'x' }) };
+  const collector = { fetchArticles: async (ids) => (ids[0] === '900' ? [{ ...okPaper }] : []) };
+  const out = await runOnce({ ...base, arm1Entry: null, llm, collector, analyzer: analyzerStub });
+  assert.equal(call, 2);
+  assert.equal(out.arm2Pmid, '900');
+});
+
+test('runOnce: 재시도도 실패 → arm2=null (소프트)', async () => {
+  const llm = { callWithTool: async () => ({ pmid: 'bad', title: 'T', journal: 'J', whyChosen: 'x' }) };
+  const collector = { fetchArticles: async () => [] };
+  const out = await runOnce({ ...base, arm1Entry: { pmid: '1' }, llm, collector, analyzer: analyzerStub });
+  assert.equal(out.arm2Pmid, null);
+  assert.equal(out.record.arm2, null);
+  assert.equal(out.record.arm1.pmid, '1');
+});
+
+test('runOnce: llm 예외도 소프트(arm2=null)', async () => {
+  const llm = { callWithTool: async () => { throw new Error('429'); } };
+  const out = await runOnce({ ...base, arm1Entry: null, llm, collector: collectorStub, analyzer: analyzerStub });
+  assert.equal(out.arm2Pmid, null);
+});

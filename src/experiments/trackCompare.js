@@ -102,3 +102,37 @@ export function isPastEndDate(today, endDate) {
   if (!endDate) return false;
   return String(today) > String(endDate);
 }
+
+async function _selectAndVerify({ user, llm, collector, sinceDate }) {
+  const pick = await llm.callWithTool([{ role: 'user', content: user }], ARM2_PICK_TOOL, { webSearch: true, maxTokens: 12000 });
+  const v = await verifyPick(pick, { fetchArticles: (ids) => collector.fetchArticles(ids), sinceDate });
+  return { pick, v };
+}
+
+// 하루치 실행: Arm2 선정→검증(1회 재시도)→동일 PICO 분석. Arm1은 호출자가 넘긴 archive 엔트리.
+export async function runOnce({ today, sinceDate, arm1Entry, arm2History = [], comparison, llm, collector, analyzer, logger }) {
+  let arm2 = null, arm2Pmid = null;
+  try {
+    const keywords = extractInterestKeywords();
+    const user = buildArm2SelectPrompt({ sinceDate, keywords, excludePmids: arm2History });
+
+    let { pick, v } = await _selectAndVerify({ user, llm, collector, sinceDate });
+    if (!v.ok) {
+      logger?.warn?.(`Arm2 첫 픽 거부: ${v.reason} — 재시도`);
+      const retryUser = `${user}\n\nYour previous pick (PMID ${pick?.pmid ?? 'NA'}) was rejected: ${v.reason}. Choose a DIFFERENT, verifiable paper.`;
+      ({ pick, v } = await _selectAndVerify({ user: retryUser, llm, collector, sinceDate }));
+    }
+    if (v.ok) {
+      arm2 = await analyzer._analyzeSinglePaper(v.paper);
+      arm2Pmid = String(v.paper.pmid);
+    } else {
+      logger?.warn?.(`Arm2 최종 실패: ${v.reason}`);
+    }
+  } catch (err) {
+    logger?.warn?.(`Arm2 예외(소프트): ${err.message}`);
+  }
+
+  const record = assembleRecord({ date: today, arm1: arm1Entry ?? null, arm2 });
+  const updated = upsertRecord(comparison, record);
+  return { record, arm2Pmid, comparison: updated };
+}
