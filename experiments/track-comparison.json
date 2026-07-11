@@ -4,154 +4,203 @@
   "records": [
     {
       "date": "2026-07-12",
-      "arm1": null,
-      "arm2": {
-        "pmid": "41841715",
-        "title_ko": "급성 저산소혈성 호흡부전에서 고유량 산소요법과 표준 산소요법 비교",
-        "clinicalQuestion": "In adults with acute hypoxemic respiratory failure, does oxygen delivered through a high-flow nasal cannula, compared with standard oxygen therapy, reduce death by day 28 and the need for intubation?",
-        "clinicalQuestion_ko": "급성 저산소혈성 호흡부전 성인 환자에서 high-flow nasal cannula를 통한 산소 공급이 표준 산소요법과 비교해 28일째 사망과 삽관 필요성을 줄이는가?",
+      "arm1": {
+        "date": "2026-07-12",
+        "pmid": "42343425",
+        "title": "On the inevitability of microvascular failure in septic shock and other vasodilatory conditions.",
+        "title_ko": "패혈성 쇼크 및 기타 혈관확장성 병태에서 미세혈관 부전의 필연성에 관하여",
+        "journal": "Critical care (London, England)",
+        "doi": "10.1186/s13054-026-06156-w",
+        "badge": "본문(PMC)",
+        "clinicalQuestion_ko": "패혈성 쇼크 및 기타 혈관확장성 상태에서, 대순환의 혈압과 심박출량(cardiac output)이 회복되었음에도 불구하고 왜 이질적인 미세순환 기능장애(haemodynamic incoherence)가 지속되는가, 그리고 이를 혈관확장·유량 제한·shear 조절의 상호작용에서 비롯되는 필연적 결과로 설명하는 기전 모델을 세울 수 있는가?",
         "pico": {
-          "population": "[France] Patients with acute hypoxemic respiratory failure; all had a ratio of the partial pressure of arterial oxygen to the fraction of inspired oxygen (PaO2:FiO2) of 200 or less, a respiratory rate of more than 25 breaths per minute, and pulmonary infiltrate on chest imaging; 1116 patients underwent randomization, and 1110 (556 high-flow-oxygen, 554 standard-oxygen) were analyzed. Per the trial protocol, eligible patients were older than 18 years.",
-          "intervention": "High-flow-oxygen therapy delivered through a high-flow nasal cannula (556 patients analyzed).",
-          "comparison": "Standard-oxygen therapy (554 patients analyzed).",
-          "outcome": "The primary outcome was death by day 28. Mortality at day 28 was 14.6% (81 of 556) in the high-flow-oxygen group and 14.6% (81 of 554) in the standard-oxygen group (difference, -0.05 percentage points; 95% CI, -4.21 to 4.10; P = 0.98)."
+          "population": "[Country NR] A simulated (in silico) microcirculatory network of one million parallel arterioles in Python (JupyterLab v4.3.4), with vessel radii drawn from a truncated normal distribution (physiological bounds 0–100 microns), mean radius varied 20–30 microns and standard deviation 1.5–3 microns; not human or animal subjects but a computational model of the human microcirculation (true parallel arteriole number probably closer to 100 million, scaled down by a factor of 100 for computation).",
+          "intervention": "A conceptual and computational model in which each vessel's flow demand (Q) is set by an 'apparent shear target' derived from the laminar shear equation (dynamic viscosity 0.003 Pa·s; apparent shear target 10–20 Pa), with total required cardiac output computed as the sum of individual vessel demands; simulated global vasodilation via rising mean vessel radius (20→30 microns).",
+          "comparison": "Baseline reference network at a mean vessel radius of 20 microns (no vessel dropout), against which relative network resistance and functional derecruitment at larger mean radii were compared; and comparison of shear targets of 10 vs 20 Pa.",
+          "outcome": "Minimum cardiac output required to maintain the global shear target rose almost linearly with mean vessel radius (total flow demand proportional to the sum of vessel radii cubed): at shear target 20 Pa and SD 1.5 microns, from ~5 L/min at mean radius 25 microns to ~8.5 L/min at 30 microns. No comparative statistics (no OR/HR/CI/p-values) were reported — this is a deterministic simulation."
         },
         "pico_ko": {
-          "population": "[프랑스] 급성 저산소혈성 호흡부전 환자. 모두 PaO2:FiO2 비 200 이하, 호흡수 분당 25회 초과, 흉부영상에서 폐침윤을 보였음. 1116명이 무작위 배정되었고 1110명(high-flow-oxygen 556명, standard-oxygen 554명)이 분석에 포함됨. 시험 프로토콜상 18세 초과 성인이 대상.",
-          "intervention": "High-flow nasal cannula를 통해 공급된 high-flow-oxygen 요법(분석 대상 556명).",
-          "comparison": "표준 산소요법(standard-oxygen, 분석 대상 554명).",
-          "outcome": "일차 결과는 28일째 사망. 28일째 사망률은 high-flow-oxygen군 14.6%(556명 중 81명), standard-oxygen군 14.6%(554명 중 81명)로 차이 -0.05%p(95% CI, -4.21~4.10; P = 0.98)."
+          "population": "[국가 미기재] Python(JupyterLab v4.3.4)으로 시뮬레이션한 100만 개 평행 세동맥(arteriole)의 미세순환 네트워크(in silico). 혈관 반지름은 절단 정규분포(생리학적 경계 0–100 microns)에서 추출했고, 평균 반지름 20–30 microns, 표준편차 1.5–3 microns로 변화시킴. 실제 사람/동물 대상이 아니라 인체 미세순환의 전산 모델이며, 실제 평행 세동맥 수는 약 1억 개에 가깝지만 계산 편의를 위해 100분의 1로 축소함.",
+          "intervention": "각 혈관의 유량 요구(Q)를 층류 shear 방정식에서 유도한 'apparent shear target'로 설정한 개념적·전산 모델(dynamic viscosity 0.003 Pa·s, apparent shear target 10–20 Pa). 필요한 총 심박출량은 개별 혈관 요구량의 합으로 계산했고, 평균 혈관 반지름을 20→30 microns로 늘려 전신 혈관확장을 모사함.",
+          "comparison": "평균 혈관 반지름 20 microns인 기준 네트워크(혈관 탈락 없음)를 기준으로, 더 큰 평균 반지름에서의 상대적 네트워크 저항 및 기능적 derecruitment를 비교했고, shear target 10 Pa 대 20 Pa도 비교함.",
+          "outcome": "전체 shear target을 유지하는 데 필요한 최소 심박출량은 평균 혈관 반지름에 따라 거의 선형으로 증가함(총 유량 요구는 혈관 반지름 세제곱의 합에 비례). shear target 20 Pa, SD 1.5 microns에서 평균 반지름 25 microns일 때 약 5 L/min, 30 microns일 때 약 8.5 L/min. 비교 통계(OR/HR/CI/p-value)는 보고되지 않았으며, 결정론적(deterministic) 시뮬레이션임."
         },
-        "baseline": "Balanced",
+        "keyFindings": [
+          "In a one-million-vessel simulation, total cardiac output required to maintain a fixed shear target rises in proportion to the sum of vessel radii cubed, so even modest global vasodilation sharply increases required flow — at shear 20 Pa/SD 1.5 microns, from ~5 L/min (mean radius 25 microns) to ~8.5 L/min (30 microns).",
+          "When cardiac output cannot meet demand, low-shear vessels functionally derecruit: increasing mean radius from 25 to 30 microns at a fixed 5000 mL/min caused almost 50% vessel dropout with network resistance falling to 33% of baseline, reproducing the reduced functional capillary density and hyperdynamic, low-resistance circulation of severe sepsis.",
+          "Lowering the apparent shear target from 20 to 10 Pa halved the cardiac output requirement, suggesting microvascular coherence could in principle be restored by reducing vasodilation or shear demand rather than by achieving supranormal cardiac output."
+        ],
+        "keyFindings_ko": [
+          "100만 혈관 시뮬레이션에서, 고정된 shear target을 유지하는 데 필요한 총 심박출량은 혈관 반지름 세제곱의 합에 비례해 증가하므로, 경미한 전신 혈관확장만으로도 필요 유량이 급격히 늘어남 — shear 20 Pa/SD 1.5 microns에서 평균 반지름 25 microns일 때 약 5 L/min, 30 microns일 때 약 8.5 L/min.",
+          "심박출량이 수요를 못 따라가면 저-shear 혈관이 기능적으로 derecruit됨: 고정 5000 mL/min에서 평균 반지름을 25→30 microns로 늘리자 약 50% 혈관 탈락과 함께 네트워크 저항이 기준의 33%로 떨어졌고, 이는 severe sepsis의 functional capillary density 감소 및 hyperdynamic·저저항 순환을 재현함.",
+          "apparent shear target을 20에서 10 Pa로 낮추면 심박출량 요구가 절반으로 감소해, supranormal cardiac output 달성이 아니라 혈관확장이나 shear 수요를 줄임으로써 미세혈관 coherence를 원리적으로 회복할 수 있음을 시사함."
+        ],
+        "evidenceLevel": "Very Low",
+        "references": [
+          {
+            "label": "PubMed — PMID 42343425",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42343425/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1186/s13054-026-06156-w",
+            "url": "https://doi.org/10.1186/s13054-026-06156-w"
+          }
+        ],
+        "fullText": "### Background\nSepsis is the most common cause of circulatory failure treated in the intensive care unit. Despite this, a consistent understanding of the pathophysiology has been elusive. At first, it was thought sepsis was a standard low output shock state. Widespread use of the pulmonary artery catheter in the 60s and 70s first revealed the more common hyperdynamic, low resistance situation [, ]. At the same time animal and ex-vivo studies showed widespread arteriolar vasodilation and hypo-responsiveness of micro-vessels to catecholamines and other vasoconstricting agents [, ]. The next several decades of therapeutic theory focussed on enhancing oxygen delivery through targeting ScvO2 and supranormal cardiac index, which ultimately proved fruitless [, ].\nSince the turn of the millennium access to new imaging techniques like handheld videomicroscopy has revealed the importance of microcirculatory dysfunction. Capillary perfusion is heterogeneous, with reduced functional capillary density and perfused vessel density, and increased stop flow capillaries [, ]. These changes may persist despite normalisation of macrocirculatory variables such as blood pressure and cardiac output and predict mortality; the so-called haemodynamic incoherence []. A satisfactory explanation for this disconnect has not emerged. Why a global vasodilatory process should lead to such a patchy locally heterogeneous problem is unclear. While it is possible that the two phenomena are completely separate, purely vasodilatory conditions such as calcium channel blocker overdose also result in the same microvascular impairment despite high global flow [].\nShear stress is the force exerted by flowing blood on the endothelium, in the direction parallel to the vessel wall. Shear signalling in normal endothelium involves feedback that maintains shear stress within vessels within a given range. Shear is increased by flow and by a reduction in vessel size. When shear is excessive, the signalling pathway will result in local release of nitric oxide (NO), which dilates the vessel and reduces the shear stress back to an acceptable range. Low shear produces endothelin, which constricts the vessel. Sensing of shear occurs via mechanotransduction proteins in the endothelial glycocalyx and gap junctions. Shear regulation is prominent within the microcirculation [, ].\nShear signalling is known to be abnormal in septic shock. Excessive expression of inducible NO synthase (iNOS) results in elevated levels of NO []. At the same time endothelial damage disrupts mechanotransducers and inflammatory cytokines inhibit signalling pathways, resulting in impairment of shear sensing [, ]. These observations have been linked generally to the development of microvascular dysfunction, but not through a mechanistic hypothesis.\nThe aim of this paper is to put forward a hypothesis that explains these disparate findings, and model how the microcirculation is constrained by three main factors; total cardiac output, vasomotor state, and shear regulation. Predictable behaviour of the microcirculation naturally emerges from changes in these variables.\n\n### Methods\nA microcirculatory network consisting of one million parallel arterioles was simulated in Python using JupyterLab (v 4.3.4). The distribution of vessel radii was simulated with a truncated normal distribution (with lower and upper physiological bounds of 0 and 100 microns). The mean vessel radius was varied between 20 and 30 microns, and the standard deviation between 1.5 and 3 microns, consistent with the typical size of arterioles in the microcirculation []. Typical numbers of parallel arterioles in the human body are unknown exactly, but probably closer to 100 million (based on roughly 10 capillaries and each arteriole feeding a bed of 100 capillaries [, ]), however the simulation was scaled for ease of computation, as explained further below.\n\n### Model parameters\nShear stress in the arterioles, where the Womersley number < < 1, is given by the laminar shear equation;\nis shear stress in Pa, µ is dynamic viscosity in Pa·s, Q is mean flow in m·s, and r is radius in metres.\nA typical value of 0.003 Pa·s was used for dynamic viscosity. Although blood is shear thinning and changes its viscosity depending on velocity and vessel size, these effects were considered overall negligible on the outcome of the model.\nThe typical value of shear stress in arterioles is unknown, but has been observed to be 1–7 Pa in larger arteries and ten times less in capillaries [, ]. However given that the model is roughly scaled down in total vessel number by a factor of 100, 10–20 Pa was used as the model parameter. This is a scaled parameter that assumes that the typical value of shear in arterioles is closer to that in capillaries (multiplied by 100) and that produces realistic cardiac outputs in the model output. This is assumed to be a target value. In real vascular networks, the shear target will vary slightly from vessel to vessel, and regulation will not be exact, however for the purposes of the model I assume a single value across the network. Equation 1 can then be re-arranged as follows;\nThis is the flow that each vessel will demand to satisfy its apparent shear target (). I refer to an apparent shear target as the endothelium’s sensing of shear may not be perfectly calibrated to the actual level of shear. If sensing is perfect then actual shear is equal to apparent shear. However if shear sensing is inhibited, the vessel will constrict even though actual shear may be adequate. Thus, the apparent shear target will be raised.\nFor a given distribution of vessel sizes within the network, the total cardiac output required to satisfy the shear target in all vessels is simply the sum of all individual values of Q.\n\n### Model output\nThe model calculated Q for each vessel in the one million vessel network based on the set apparent shear target and the distribution of vessel sizes. It displayed the minimum cardiac output required to satisfy the global shear target plotted against the mean vessel radius, with sliders to adjust the standard deviation of vessel radii between 1.5 and 3 microns, and apparent shear target between 10 and 20 Pa. Rightward movement along the x-axis therefore represents attempted uniform vasodilatation. Plots of vessel size distribution at each standard deviation, for a mean of 25 microns, were also produced. Units were converted from the SI units used in the shear equation to mL·min for flow and microns for vessel radius.\nIf cardiac output is not able to meet the minimal requirement, some vessels will experience shear below their target and constrict in response. Hypothetically, vessel de-recruitment should occur and vessels will be lost from the network, decreasing the overall flow requirement until an equilibrium is achieved again, at a reduced functional capillary density. Such an idealised response was implemented in this model in order to study network flow shunting behaviour, accepting that such regulation is not perfect in real biological systems. The model therefore also simulated a fixed cardiac output of 5000 mL·min, with standard deviation 1.5 microns and shear target 20 Pa. As mean vessel radius was increased from 20 to 30 microns, it iteratively removed the smallest vessels from the distribution, updating the distribution until total shear requirements were satisfied. It displayed a plot of vessel distribution, the total number of remaining vessels out of the initial million, and the relative resistance of the network compared to a baseline mean radius of 20 microns (where there was no vessel dropout). For each distribution, resistance (R) is;\nThe relative resistance is R calculated from Eq.  in the updated distribution divided by that in the distribution at a mean of 20 microns.\n\n### Results\nOver the studied vessel range the minimum cardiac output required to maintain the global shear target increased almost linearly with the mean vessel radius. The required cardiac output, at a shear target of 20 Pa and standard deviation of 1.5 microns, increased from approximately 5 L per minute at a mean radius of 25 microns, to approximately 8.5 L per minute at a radius of 30 microns (Fig. ). Illustrative distribution of vessel sizes at a mean of 25 microns is shown in Fig. .\n[object Object]\n[object Object]\nAn increase in the standard deviation of vessel size from 1.5 microns to 3 microns resulted in a very small shift of the curve upwards, as illustrated in Fig. . A decrease in target shear from 20 to 10 Pa resulted in a significant drop in cardiac output requirement, halving it for the same mean vessel radius and for a given standard deviation of vessel radii (Fig. ).\nFor the fixed cardiac output analysis, at a mean of 25 microns, all of the initial one million vessels remained recruited and resistance was 41% of that at a mean of 20 microns. Increasing the mean to 30 microns resulted in almost 50% vessel dropout (similar to the reduction of functional capillary density observed in severe sepsis) and a resistance 33% of baseline. The drop in resistance would have been 20% of baseline without any vessel dropout. The latter distribution is shown in Fig. .\n[object Object]\n[object Object]\n[object Object]\n\n### Discussion\nI have illustrated a hypothetical model of the microcirculation that is constrained by three elements; cardiac output, shear regulation, and vasomotor state. The model produces the characteristic microcirculatory changes seen in vasodilatory shock. When the microcirculation dilates (increases the sum of its radii cubed), cardiac output must increase in proportion to the sum of radii cubed in order to preserve the same level of shear. If this cannot be achieved, then vasoconstrictive responses triggered by low shear will close off branches of the microcirculation, reducing functional capillary density. While it is unlikely that the baseline or target shear can be restored, the network will therefore te",
+        "fullTextSource": "PMC",
+        "dossier": null,
+        "pdfLink": null
+      },
+      "arm2": {
+        "pmid": "",
+        "title_ko": "중증 환자의 신속연속기관삽관(RSI)에서 propofol 대 ketamine 비교: 전향적 무작위 대조 시험 (PROMINE)",
+        "clinicalQuestion": "Among critically ill adults requiring rapid sequence intubation (RSI), is ketamine a better hypnotic induction agent than propofol with respect to post-induction hemodynamics, particularly the lowest mean arterial pressure within the first 10 minutes?",
+        "clinicalQuestion_ko": "신속연속기관삽관(RSI)이 필요한 중증 성인 환자에서 ketamine이 propofol보다 유도 후 혈역학, 특히 유도 후 10분 이내 최저 평균동맥압(MAP) 측면에서 더 나은 최면 유도제인가?",
+        "pico": {
+          "population": "[Brazil] Adults (≥ 18 years) requiring rapid sequence intubation in two mixed ICUs; 207 patients randomized from October 2021 to October 2023, with 175 included in the modified intention-to-treat analysis (91 ketamine, 84 propofol).",
+          "intervention": "Ketamine for RSI induction, assigned 1:1 (2 mg/kg bolus per trial protocol/registry).",
+          "comparison": "Propofol for RSI induction (1.5 mg/kg bolus per trial protocol/registry).",
+          "outcome": "Primary outcome: lowest mean arterial pressure (MAP) within the first 10 min after induction (adjusted for age, baseline MAP, and total vasopressor dose within 10 min). Lowest MAP was 66 (55–79) mmHg with ketamine vs 60 (48–72) mmHg with propofol (mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050)."
+        },
+        "pico_ko": {
+          "population": "[브라질] 두 곳의 혼합 ICU에서 신속연속기관삽관(RSI)이 필요한 성인(≥ 18세) 환자; 2021년 10월부터 2023년 10월까지 207명이 무작위 배정되었고 modified intention-to-treat 분석에는 175명(ketamine 91명, propofol 84명)이 포함됨.",
+          "intervention": "RSI 유도를 위한 ketamine, 1:1 배정 (시험 프로토콜/등록정보 기준 2 mg/kg 볼루스).",
+          "comparison": "RSI 유도를 위한 propofol (시험 프로토콜/등록정보 기준 1.5 mg/kg 볼루스).",
+          "outcome": "일차 결과: 유도 후 10분 이내 최저 평균동맥압(MAP) (나이, 기저 MAP, 10분 이내 총 승압제 용량으로 보정). 최저 MAP은 ketamine 66 (55–79) mmHg 대 propofol 60 (48–72) mmHg (mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050)."
+        },
+        "baseline": "Not reported",
         "secondaryOutcomes": [
-          "Incidence of intubation by day 28: 42.4% (236 of 556) in the high-flow-oxygen group vs 48.4% (268 of 554) in the standard-oxygen group (difference, -5.93 percentage points; 95% CI, -11.78 to -0.08).",
-          "Serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing occurred in 13 patients (2.3%) in the high-flow-oxygen group vs 6 patients (1.1%) in the standard-oxygen group."
+          "Average MAP difference over the first hour: 1.67 (95% CI −1.98 to 5.31).",
+          "Cardiovascular collapse (mainly due to an increase in vasopressor dose within 2 min): 20/91 (22%) with ketamine vs 28/84 (33%) with propofol.",
+          "Day-7 mortality 33% (ketamine) vs 23.8% (propofol) (OR 1.38; 95% CI 0.86–2.24); hospital mortality 60.4% vs 50.0% (OR 1.21; 95% CI 0.92–1.58)."
         ],
         "secondaryOutcomes_ko": [
-          "28일까지 삽관 발생률: high-flow-oxygen군 42.4%(556명 중 236명) vs standard-oxygen군 48.4%(554명 중 268명) (차이 -5.93%p; 95% CI, -11.78~-0.08).",
-          "자발호흡 중 발생한 중대 이상반응(심정지 또는 기흉): high-flow-oxygen군 13명(2.3%) vs standard-oxygen군 6명(1.1%)."
+          "첫 1시간 동안 평균 MAP 차이: 1.67 (95% CI −1.98 to 5.31).",
+          "심혈관 허탈(cardiovascular collapse, 주로 2분 이내 승압제 용량 증가에 기인): ketamine 20/91 (22%) 대 propofol 28/84 (33%).",
+          "7일 사망률 33% (ketamine) 대 23.8% (propofol) (OR 1.38; 95% CI 0.86–2.24); 병원 내 사망률 60.4% 대 50.0% (OR 1.21; 95% CI 0.92–1.58)."
         ],
         "statGlossary": [
           {
-            "term": "percentage point difference",
-            "explanation_ko": "두 군의 백분율(%) 값을 뺀 절대 차이로, 0이면 차이 없음을 뜻함. 예: 사망률 차이 -0.05%p → 두 군의 28일 사망률이 사실상 동일함."
+            "term": "mean difference",
+            "explanation_ko": "두 군의 평균값 차이로, 0이면 차이 없음을 의미. 예: 최저 MAP mean difference 6.0 mmHg → ketamine군의 최저 MAP이 propofol군보다 평균 6 mmHg 높았음."
           },
           {
             "term": "95% CI",
-            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, 0을 포함하면 통계적으로 유의하지 않음. 예: 삽관 차이 95% CI -11.78~-0.08 → 상한이 0에 매우 가까워 효과가 경계적임."
+            "explanation_ko": "95% 신뢰구간으로, 참값이 있을 것으로 추정되는 범위이며 차이 지표(mean difference)에서 0을, 비율 지표(OR)에서 1을 포함하면 통계적으로 유의하지 않음. 예: mean difference 6.0의 95% CI −0.0 to 11.9 → 0을 걸쳐 유의성 경계."
           },
           {
-            "term": "P value",
-            "explanation_ko": "우연만으로 이런 차이가 나올 확률로, 보통 0.05 미만이면 통계적으로 유의함. 예: P = 0.98 → 두 군 사망률에 유의한 차이가 전혀 없음."
+            "term": "p-value",
+            "explanation_ko": "관찰된 차이가 우연일 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 봄. 예: p = 0.050 → 유의성 경계선상이라 명확한 유의 차이로 보기 어려움."
+          },
+          {
+            "term": "OR",
+            "explanation_ko": "오즈비(odds ratio)로, 1보다 크면 해당 군에서 사건 발생 오즈가 높음을 의미하고 95% CI가 1을 포함하면 유의하지 않음. 예: 7일 사망률 OR 1.38 (95% CI 0.86–2.24) → ketamine군 사망 오즈가 수치상 높았으나 통계적으로 유의하지 않음."
           }
         ],
         "practiceChange": [
-          "Do not adopt high-flow nasal cannula expecting a mortality benefit in acute hypoxemic respiratory failure — 28-day mortality was identical (14.6% vs 14.6%, P = 0.98).",
-          "High-flow oxygen may modestly reduce intubation by day 28 (42.4% vs 48.4%; difference -5.93 pp, 95% CI -11.78 to -0.08), a borderline benefit that can support its use for comfort and work-of-breathing, but the upper CI near zero warrants caution.",
-          "Monitor for barotrauma: serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing were numerically higher with high-flow oxygen (2.3% vs 1.1%), so avoid treating high-flow as risk-free and reassess patients who fail to improve."
+          "Do not choose ketamine over propofol for RSI in critically ill patients on the basis of hemodynamic safety alone: the lowest-MAP advantage was small (~6 mmHg), borderline (p = 0.050), and not sustained over the first hour (mean difference 1.67 mmHg).",
+          "Regardless of induction agent chosen, anticipate and pre-empt peri-intubation hypotension in critically ill patients—cardiovascular collapse occurred in 22% (ketamine) and 33% (propofol)—by ensuring volume/vasopressor readiness before induction.",
+          "Do not interpret this trial as showing a mortality signal for either agent: day-7 and hospital mortality differences (OR 1.38 and 1.21) had wide CIs crossing 1 and the trial was not powered for mortality; await larger trials before changing agent selection for outcome reasons."
         ],
         "practiceChange_ko": [
-          "급성 저산소혈성 호흡부전에서 사망률 개선을 기대하고 high-flow nasal cannula를 도입하지 말 것 — 28일 사망률은 동일했음(14.6% vs 14.6%, P = 0.98).",
-          "High-flow oxygen은 28일 삽관을 다소 줄일 수 있으나(42.4% vs 48.4%; 차이 -5.93%p, 95% CI -11.78~-0.08) 상한이 0에 근접한 경계적 효과이므로, 편안함·호흡일 감소 목적의 사용은 지지되되 신중해야 함.",
-          "기압손상 감시: 자발호흡 중 중대 이상반응(심정지 또는 기흉)이 high-flow군에서 수치상 더 많았으므로(2.3% vs 1.1%), high-flow를 무위험으로 간주하지 말고 호전 없는 환자는 재평가할 것."
+          "중증 환자의 RSI에서 혈역학적 안전성만을 근거로 propofol 대신 ketamine을 선택하지 말 것: 최저 MAP 이점은 작고(~6 mmHg) 경계선상(p = 0.050)이었으며 첫 1시간 동안 유지되지 않았음(mean difference 1.67 mmHg).",
+          "선택한 유도제와 무관하게 중증 환자에서 삽관 전후 저혈압을 예상하고 선제 대응할 것—심혈관 허탈이 ketamine 22%, propofol 33%에서 발생—유도 전에 수액/승압제를 준비해 둘 것.",
+          "이 시험을 어느 한 약제의 사망률 신호로 해석하지 말 것: 7일 및 병원 내 사망률 차이(OR 1.38, 1.21)는 95% CI가 1을 넓게 포함하고 시험이 사망률에 대한 검정력을 갖추지 않았으므로, 결과 기반의 약제 선택 변경은 더 큰 시험 결과를 기다릴 것."
         ],
         "keyFindings": [
-          "28-day mortality was identical between groups: 14.6% (81/556) with high-flow oxygen vs 14.6% (81/554) with standard oxygen (difference -0.05 pp; 95% CI -4.21 to 4.10; P = 0.98).",
-          "Intubation by day 28 was lower with high-flow oxygen: 42.4% (236/556) vs 48.4% (268/554) (difference -5.93 pp; 95% CI -11.78 to -0.08).",
-          "Serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing occurred in 13 patients (2.3%) with high-flow oxygen vs 6 (1.1%) with standard oxygen."
+          "Ketamine produced a slightly higher lowest MAP within 10 min than propofol (66 [55–79] vs 60 [48–72] mmHg; mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050), a borderline and not clinically meaningful difference.",
+          "The hemodynamic advantage was not sustained: the average MAP difference over the first hour was only 1.67 (95% CI −1.98 to 5.31), and cardiovascular collapse occurred in 22% (20/91) of ketamine vs 33% (28/84) of propofol patients.",
+          "No significant mortality difference was seen: day-7 mortality 33% vs 23.8% (OR 1.38; 95% CI 0.86–2.24) and hospital mortality 60.4% vs 50.0% (OR 1.21; 95% CI 0.92–1.58)."
         ],
         "keyFindings_ko": [
-          "28일 사망률은 두 군이 동일: high-flow oxygen 14.6%(81/556) vs standard oxygen 14.6%(81/554) (차이 -0.05%p; 95% CI -4.21~4.10; P = 0.98).",
-          "28일까지 삽관은 high-flow oxygen에서 더 낮음: 42.4%(236/556) vs 48.4%(268/554) (차이 -5.93%p; 95% CI -11.78~-0.08).",
-          "자발호흡 중 중대 이상반응(심정지 또는 기흉)은 high-flow oxygen 13명(2.3%) vs standard oxygen 6명(1.1%)."
+          "Ketamine은 propofol보다 10분 이내 최저 MAP이 약간 높았으나(66 [55–79] 대 60 [48–72] mmHg; mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050) 경계선상이며 임상적으로 유의미하지 않은 차이였음.",
+          "혈역학적 이점은 유지되지 않았음: 첫 1시간 평균 MAP 차이는 1.67(95% CI −1.98 to 5.31)에 불과했고, 심혈관 허탈은 ketamine 22%(20/91) 대 propofol 33%(28/84)에서 발생.",
+          "사망률의 유의한 차이는 없었음: 7일 사망률 33% 대 23.8%(OR 1.38; 95% CI 0.86–2.24), 병원 내 사망률 60.4% 대 50.0%(OR 1.21; 95% CI 0.92–1.58)."
         ],
-        "clinicalTakeaway": "In this large multicenter French trial of acute hypoxemic respiratory failure (PaO2:FiO2 ≤200), high-flow nasal cannula did not reduce 28-day mortality compared with standard oxygen (14.6% vs 14.6%, P = 0.98). It was associated with a borderline reduction in intubation (42.4% vs 48.4%), so it remains a reasonable first-line supportive option to ease work of breathing, but should not be expected to improve survival, and clinicians must watch for a possible higher rate of barotrauma.",
-        "clinicalTakeaway_ko": "급성 저산소혈성 호흡부전(PaO2:FiO2 ≤200) 환자를 대상으로 한 이 대규모 프랑스 다기관 시험에서 high-flow nasal cannula는 표준 산소요법 대비 28일 사망률을 줄이지 못했음(14.6% vs 14.6%, P = 0.98). 삽관은 경계적으로 감소시켰으므로(42.4% vs 48.4%) 호흡일 경감을 위한 합리적 일차 지지요법으로 유지될 수 있으나, 생존율 개선은 기대할 수 없고 기압손상 증가 가능성을 감시해야 함.",
-        "limitations": "Open-label design (no blinding of clinicians or intubation decisions) risks bias in the subjective intubation outcome. The trial was conducted in French ICUs only, limiting generalizability; COVID-19 respiratory failure was excluded, so results may not apply to that population. The intubation benefit was borderline (upper 95% CI -0.08, near zero) and secondary, so it should be interpreted as hypothesis-generating rather than definitive.",
-        "limitations_ko": "Open-label 설계(임상의·삽관 결정에 대한 눈가림 없음)로 주관적 삽관 결과에 편향 위험이 있음. 프랑스 ICU에서만 수행되어 일반화에 제한이 있으며, COVID-19 호흡부전은 제외되어 해당 집단에는 적용되지 않을 수 있음. 삽관 이득은 경계적(95% CI 상한 -0.08로 0에 근접)이고 이차 결과이므로 확정적이기보다 가설 생성적으로 해석해야 함.",
-        "evidenceLevel": "High",
-        "clinicalApplicabilityScore": 8,
+        "clinicalTakeaway": "In this open-label RCT of critically ill adults undergoing RSI, ketamine offered only a small, borderline, and transient advantage in post-induction MAP over propofol, with no sustained hemodynamic or mortality benefit. Agent selection should not rest solely on a presumed lower hypotension risk of ketamine; both agents caused substantial peri-intubation cardiovascular collapse, so hemodynamic optimization before intubation matters more than the specific hypnotic chosen.",
+        "clinicalTakeaway_ko": "RSI를 받는 중증 성인을 대상으로 한 이 open-label RCT에서 ketamine은 propofol에 비해 유도 후 MAP에서 작고 경계선상이며 일시적인 이점만 보였고, 지속적인 혈역학적 또는 사망률 이득은 없었음. 약제 선택을 ketamine의 저혈압 위험이 낮다는 가정에만 근거해서는 안 되며, 두 약제 모두 상당한 삽관 전후 심혈관 허탈을 일으켰으므로 특정 최면제보다 삽관 전 혈역학 최적화가 더 중요함.",
+        "limitations": "Open-label design (no blinding of clinicians) risks performance bias, particularly for vasopressor titration that defines both the primary adjustment covariate and the cardiovascular-collapse outcome. The trial was conducted in only two ICUs in a single country (Brazil), limiting generalizability, and was modest in size (207 randomized, 175 in mITT) and not powered for mortality (wide CIs crossing 1). The primary result was borderline (p = 0.050) and 32 randomized patients were excluded from the mITT analysis. Baseline group comparability was not confirmable from the abstract/registry.",
+        "limitations_ko": "Open-label 설계(임상의 비맹검)로 인해 수행 편향(performance bias)의 위험이 있으며, 특히 일차 보정 공변량이자 심혈관 허탈 결과를 정의하는 승압제 적정에서 그러함. 이 시험은 단일 국가(브라질)의 두 ICU에서만 수행되어 일반화 가능성이 제한되고, 규모가 크지 않으며(207명 무작위 배정, mITT 175명) 사망률에 대한 검정력이 없음(95% CI가 1을 넓게 포함). 일차 결과는 경계선상이었고(p = 0.050) 32명의 무작위 배정 환자가 mITT 분석에서 제외됨. 기저 군 간 비교 가능성은 초록/등록정보로는 확인 불가.",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 7,
         "webSources": [
           {
-            "label": "PubMed — High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/41841715/"
+            "label": "Intensive Care Medicine — official article page (Springer, DOI 10.1007/s00134-026-08351-3)",
+            "url": "https://link.springer.com/article/10.1007/s00134-026-08351-3"
           },
           {
-            "label": "NEJM official article (DOI)",
-            "url": "https://doi.org/10.1056/NEJMoa2516087"
+            "label": "ClinicalTrials.gov — NCT05092152 (PROMINE)",
+            "url": "https://clinicaltrials.gov/study/NCT05092152"
           },
           {
-            "label": "PMC — SOHO trial protocol (PMC11499756)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11499756/"
-          },
-          {
-            "label": "ClinicalTrials.gov — NCT04468126",
-            "url": "https://clinicaltrials.gov/study/NCT04468126"
+            "label": "PROMINE protocol & statistical analysis plan — Critical Care Science (PMC12614951)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12614951/"
           }
         ],
         "paper": {
-          "pmid": "41841715",
-          "title": "High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure.",
-          "abstract": "BACKGROUND: Data are needed on the effect of oxygen delivered through a high-flow nasal cannula, as compared with standard oxygen therapy, on intubation and mortality in patients with acute hypoxemic respiratory failure.\nMETHODS: In this multicenter, open-label trial, we randomly assigned patients who had acute hypoxemic respiratory failure to receive high-flow-oxygen or standard-oxygen therapy. All the patients had a ratio of the partial pressure of arterial oxygen to the fraction of inspired oxygen of 200 or less, a respiratory rate of more than 25 breaths per minute, and pulmonary infiltrate on chest imaging. The primary outcome was death by day 28.\nRESULTS: A total of 1116 patients underwent randomization. Of these patients, 1110 (556 in the high-flow-oxygen group and 554 in the standard-oxygen group) were included in the analysis. Mortality at day 28 was 14.6% (in 81 of 556 patients) in the high-flow-oxygen group and 14.6% (in 81 of 554 patients) in the standard-oxygen group (difference, -0.05 percentage points; 95% confidence interval [CI], -4.21 to 4.10; P = 0.98). The incidence of intubation by day 28 was 42.4% (in 236 of 556 patients) in the high-flow-oxygen group and 48.4% (in 268 of 554 patients) in the standard-oxygen group (difference, -5.93 percentage points; 95% CI, -11.78 to -0.08). Serious adverse events (cardiac arrest or pneumothorax) occurred during spontaneous breathing in 13 patients (2.3%) in the high-flow-oxygen group and in 6 patients (1.1%) in the standard-oxygen group.\nCONCLUSIONS: Among patients with acute hypoxemic respiratory failure, the use of oxygen delivered through a high-flow nasal cannula did not significantly reduce mortality at day 28. (Funded by the French Ministry of Health and Fisher and Paykel Healthcare; SOHO ClinicalTrials.gov number, NCT04468126.).",
+          "pmid": "41870554",
+          "title": "Propofol versus ketamine in rapid sequence intubation in critically ill patients: a prospective, randomized, controlled trial.",
+          "abstract": "PURPOSE: The optimal hypnotic agent for rapid sequence intubation (RSI) in critically ill patients remains uncertain. We evaluated whether Ketamine is a better alternative than propofol.\nMETHODS: In this investigator-initiated, randomized, controlled, open-label trial conducted in two mixed ICU, adults (≥ 18 years) requiring RSI were assigned 1:1 to Ketamine or propofol. The primary outcome was the lowest mean arterial pressure (MAP) within the first 10 min after induction, analyzed with a linear regression model adjusted for age, baseline MAP, and total vasopressor dose within 10 min.\nRESULTS: From October 2021 to October 2023, 207 patients were randomized and 175 were included in the modified intention-to-treat analysis. The lowest MAP within 10 min was 66 (55-79) mmHg with Ketamine and 60 (48-72) mmHg with propofol (mean difference, 6.0 [95% CI - 0.0 to 11.9]; p = 0.050). The average MAP difference over the first hour was 1.67 (95% CI - 1.98 to 5.31). Cardiovascular collapse occurred in 20/91(22%) Ketamine-treated patients and 28/84 (33%) receiving propofol, mainly due to an increase in the vasopressor dose within 2 min. Day-7 mortality was 33% with Ketamine and 23.8% with propofol (OR 1.38; 95% CI 0.86-2.24). Hospital mortality was 60.4% and 50.0%, respectively (OR 1.21; 95% CI 0.92-1.58).\nCONCLUSIONS: Among critically ill patients undergoing RSI, Ketamine resulted in a less pronounced decrease in MAP in the first 10 min compared with propofol, but the difference was not clinically meaningful or sustained. These findings challenge sedative selection based solely on perceived risk of hypotension and highlight the need for larger trials to determine the optimal induction agent.\nGOV REGISTRY: NCT05092152-initial release 10.13.2021.",
           "authors": [
-            "Frat JP",
-            "Quenot JP",
-            "Guitton C",
-            "Coudroy R",
-            "Gacouin A",
-            "Badie J"
+            "Schmidt RC",
+            "Godinho Zampieri F",
+            "da Silva Ramos FJ",
+            "Santos Cavatoni Serra F",
+            "Maccagnan Pinheiro Besen BA",
+            "Fonseca Nunes N"
           ],
-          "journal": "The New England journal of medicine",
-          "pubDate": "2026-Jun-04",
+          "journal": "Intensive care medicine",
+          "pubDate": "2026-Mar",
           "publicationTypes": [
             "Journal Article",
-            "Multicenter Study",
-            "Randomized Controlled Trial",
-            "Comparative Study"
+            "Randomized Controlled Trial"
           ],
           "meshTerms": [
-            "Aged",
-            "Female",
             "Humans",
-            "Male",
+            "Ketamine",
+            "Propofol",
+            "Critical Illness",
+            "Female",
             "Middle Aged",
-            "Acute Disease",
-            "Cannula",
-            "Hypoxia",
-            "Intubation, Intratracheal",
-            "Kaplan-Meier Estimate"
+            "Prospective Studies",
+            "Male",
+            "Rapid Sequence Induction and Intubation",
+            "Hypnotics and Sedatives"
           ],
-          "keywords": [],
-          "doi": "10.1056/NEJMoa2516087",
+          "keywords": [
+            "Airway management",
+            "Hypnotics",
+            "Intubation",
+            "Ketamine",
+            "Propofol",
+            "Rapid sequence intubation"
+          ],
+          "doi": "10.1007/s00134-026-08351-3",
           "pmcid": "",
-          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41841715/",
-          "collectedAt": "2026-07-11T15:47:59.732Z"
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41870554/",
+          "collectedAt": "2026-07-11T23:54:42.826Z"
         },
         "evidenceSource": "초록 + 웹보강",
         "sources": [
           {
-            "label": "PubMed — PMID 41841715",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/41841715/"
+            "label": "PubMed — PMID 41870554",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41870554/"
           },
           {
-            "label": "Journal (DOI) — 10.1056/NEJMoa2516087",
-            "url": "https://doi.org/10.1056/NEJMoa2516087"
+            "label": "Journal (DOI) — 10.1007/s00134-026-08351-3",
+            "url": "https://doi.org/10.1007/s00134-026-08351-3"
           },
           {
-            "label": "웹 — PubMed — High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/41841715/"
+            "label": "웹 — Intensive Care Medicine — official article page (Springer, DOI 10.1007/s00134-026-08351-3)",
+            "url": "https://link.springer.com/article/10.1007/s00134-026-08351-3"
           },
           {
-            "label": "웹 — NEJM official article (DOI)",
-            "url": "https://doi.org/10.1056/NEJMoa2516087"
+            "label": "웹 — ClinicalTrials.gov — NCT05092152 (PROMINE)",
+            "url": "https://clinicaltrials.gov/study/NCT05092152"
           },
           {
-            "label": "웹 — PMC — SOHO trial protocol (PMC11499756)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11499756/"
-          },
-          {
-            "label": "웹 — ClinicalTrials.gov — NCT04468126",
-            "url": "https://clinicaltrials.gov/study/NCT04468126"
+            "label": "웹 — PROMINE protocol & statistical analysis plan — Critical Care Science (PMC12614951)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12614951/"
           }
         ]
       },

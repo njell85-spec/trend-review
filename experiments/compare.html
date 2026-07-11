@@ -29,20 +29,31 @@
 <section class="day">
     <div class="dayhead"><span class="date">2026-07-12</span></div>
     <div class="cols">
-      <div class="col fail"><span class="arm a1">ARM 1 <small>결정적+rerank</small></span>
-      <div class="failmsg">⚠ 이 날 선정 실패 / 픽 없음<br>PMID 검증 실패 또는 6개월 창 밖 → 소프트 스킵.</div></div>
+      <div class="col">
+    <span class="arm a1">ARM 1 <small>결정적+rerank</small></span>
+    <div class="ttl">패혈성 쇼크 및 기타 혈관확장성 병태에서 미세혈관 부전의 필연성에 관하여</div>
+    <div class="ttl-en">On the inevitability of microvascular failure in septic shock and other vasodilatory conditions.</div>
+    <div class="meta">Critical care (London, England) · PMID 42343425 · <a href="https://doi.org/10.1186/s13054-026-06156-w">DOI</a></div>
+    <div class="badges"><span class="b ev">근거 Very Low</span></div>
+    <div class="pico">
+      <div class="row"><span class="k">P</span><span>[Country NR] A simulated (in silico) microcirculatory network of one million parallel arterioles in Python (JupyterLab v4.3.4), with vessel radii drawn from a truncated normal distribution (physiological bounds 0–100 microns), mean radius varied 20–30 microns and standard deviation 1.5–3 microns; not human or animal subjects but a computational model of the human microcirculation (true parallel arteriole number probably closer to 100 million, scaled down by a factor of 100 for computation).</span></div>
+      <div class="row"><span class="k">I</span><span>A conceptual and computational model in which each vessel&#39;s flow demand (Q) is set by an &#39;apparent shear target&#39; derived from the laminar shear equation (dynamic viscosity 0.003 Pa·s; apparent shear target 10–20 Pa), with total required cardiac output computed as the sum of individual vessel demands; simulated global vasodilation via rising mean vessel radius (20→30 microns).</span></div>
+      <div class="row"><span class="k">O</span><span>Minimum cardiac output required to maintain the global shear target rose almost linearly with mean vessel radius (total flow demand proportional to the sum of vessel radii cubed): at shear target 20 Pa and SD 1.5 microns, from ~5 L/min at mean radius 25 microns to ~8.5 L/min at 30 microns. No comparative statistics (no OR/HR/CI/p-values) were reported — this is a deterministic simulation.</span></div>
+    </div>
+    <ul class="kf"><li>100만 혈관 시뮬레이션에서, 고정된 shear target을 유지하는 데 필요한 총 심박출량은 혈관 반지름 세제곱의 합에 비례해 증가하므로, 경미한 전신 혈관확장만으로도 필요 유량이 급격히 늘어남 — shear 20 Pa/SD 1.5 microns에서 평균 반지름 25 microns일 때 약 5 L/min, 30 microns일 때 약 8.5 L/min.</li><li>심박출량이 수요를 못 따라가면 저-shear 혈관이 기능적으로 derecruit됨: 고정 5000 mL/min에서 평균 반지름을 25→30 microns로 늘리자 약 50% 혈관 탈락과 함께 네트워크 저항이 기준의 33%로 떨어졌고, 이는 severe sepsis의 functional capillary density 감소 및 hyperdynamic·저저항 순환을 재현함.</li></ul>
+  </div>
       <div class="col">
     <span class="arm a2">ARM 2 <small>Opus 자체선정</small></span>
-    <div class="ttl">급성 저산소혈성 호흡부전에서 고유량 산소요법과 표준 산소요법 비교</div>
-    <div class="ttl-en"></div>
-    <div class="meta"> · PMID 41841715</div>
-    <div class="badges"><span class="b ev">근거 High</span></div>
+    <div class="ttl">중증 환자의 신속연속기관삽관(RSI)에서 propofol 대 ketamine 비교: 전향적 무작위 대조 시험 (PROMINE)</div>
+    <div class="ttl-en">Propofol versus ketamine in rapid sequence intubation in critically ill patients: a prospective, randomized, controlled trial.</div>
+    <div class="meta">Intensive care medicine · PMID 41870554 · <a href="https://doi.org/10.1007/s00134-026-08351-3">DOI</a></div>
+    <div class="badges"><span class="b ev">근거 Moderate</span></div>
     <div class="pico">
-      <div class="row"><span class="k">P</span><span>[France] Patients with acute hypoxemic respiratory failure; all had a ratio of the partial pressure of arterial oxygen to the fraction of inspired oxygen (PaO2:FiO2) of 200 or less, a respiratory rate of more than 25 breaths per minute, and pulmonary infiltrate on chest imaging; 1116 patients underwent randomization, and 1110 (556 high-flow-oxygen, 554 standard-oxygen) were analyzed. Per the trial protocol, eligible patients were older than 18 years.</span></div>
-      <div class="row"><span class="k">I</span><span>High-flow-oxygen therapy delivered through a high-flow nasal cannula (556 patients analyzed).</span></div>
-      <div class="row"><span class="k">O</span><span>The primary outcome was death by day 28. Mortality at day 28 was 14.6% (81 of 556) in the high-flow-oxygen group and 14.6% (81 of 554) in the standard-oxygen group (difference, -0.05 percentage points; 95% CI, -4.21 to 4.10; P = 0.98).</span></div>
+      <div class="row"><span class="k">P</span><span>[Brazil] Adults (≥ 18 years) requiring rapid sequence intubation in two mixed ICUs; 207 patients randomized from October 2021 to October 2023, with 175 included in the modified intention-to-treat analysis (91 ketamine, 84 propofol).</span></div>
+      <div class="row"><span class="k">I</span><span>Ketamine for RSI induction, assigned 1:1 (2 mg/kg bolus per trial protocol/registry).</span></div>
+      <div class="row"><span class="k">O</span><span>Primary outcome: lowest mean arterial pressure (MAP) within the first 10 min after induction (adjusted for age, baseline MAP, and total vasopressor dose within 10 min). Lowest MAP was 66 (55–79) mmHg with ketamine vs 60 (48–72) mmHg with propofol (mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050).</span></div>
     </div>
-    <ul class="kf"><li>28일 사망률은 두 군이 동일: high-flow oxygen 14.6%(81/556) vs standard oxygen 14.6%(81/554) (차이 -0.05%p; 95% CI -4.21~4.10; P = 0.98).</li><li>28일까지 삽관은 high-flow oxygen에서 더 낮음: 42.4%(236/556) vs 48.4%(268/554) (차이 -5.93%p; 95% CI -11.78~-0.08).</li></ul>
+    <ul class="kf"><li>Ketamine은 propofol보다 10분 이내 최저 MAP이 약간 높았으나(66 [55–79] 대 60 [48–72] mmHg; mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050) 경계선상이며 임상적으로 유의미하지 않은 차이였음.</li><li>혈역학적 이점은 유지되지 않았음: 첫 1시간 평균 MAP 차이는 1.67(95% CI −1.98 to 5.31)에 불과했고, 심혈관 허탈은 ketamine 22%(20/91) 대 propofol 33%(28/84)에서 발생.</li></ul>
   </div>
       <div class="emptyslot">Arm 3 (ChatGPT)<br>2주 뒤 PeterJ 리스트 병합</div>
     </div>
