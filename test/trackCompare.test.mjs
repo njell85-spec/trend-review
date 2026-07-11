@@ -86,3 +86,32 @@ test('verifyPick: 6개월 창 밖 → ok:false', async () => {
   assert.equal(v.ok, false);
   assert.match(v.reason, /window|창|old|date/i);
 });
+
+import { assembleRecord, upsertRecord, isPastEndDate } from '../src/experiments/trackCompare.js';
+
+test('assembleRecord: 수렴 계산', () => {
+  const r = assembleRecord({ date: '2026-07-14', arm1: { pmid: '5' }, arm2: { pmid: '5' } });
+  assert.equal(r.converged, true);
+  assert.equal(r.arm3, null);
+});
+test('assembleRecord: 발산·null', () => {
+  assert.equal(assembleRecord({ date: 'd', arm1: { pmid: '5' }, arm2: { pmid: '9' } }).converged, false);
+  assert.equal(assembleRecord({ date: 'd', arm1: { pmid: '5' }, arm2: null }).converged, false);
+  assert.equal(assembleRecord({ date: 'd', arm1: null, arm2: null }).converged, false);
+});
+test('upsertRecord: 같은 날 교체', () => {
+  let c = { records: [] };
+  c = upsertRecord(c, { date: 'd1', arm1: { pmid: '1' } });
+  c = upsertRecord(c, { date: 'd1', arm1: { pmid: '2' } });
+  assert.equal(c.records.length, 1);
+  assert.equal(c.records[0].arm1.pmid, '2');
+});
+test('upsertRecord: comparison 없으면 초기화', () => {
+  const c = upsertRecord(undefined, { date: 'd1' });
+  assert.equal(c.records.length, 1);
+});
+test('isPastEndDate', () => {
+  assert.equal(isPastEndDate('2026-07-26', '2026-07-25'), true);
+  assert.equal(isPastEndDate('2026-07-25', '2026-07-25'), false);
+  assert.equal(isPastEndDate('2026-07-25', ''), false);
+});

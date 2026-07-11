@@ -84,3 +84,21 @@ export async function verifyPick(pick, { fetchArticles, sinceDate }) {
 
   return { ok: true, paper, reason: 'ok' };
 }
+
+export function assembleRecord({ date, arm1, arm2 }) {
+  const converged = Boolean(arm1?.pmid && arm2?.pmid && String(arm1.pmid) === String(arm2.pmid));
+  return { date, arm1: arm1 ?? null, arm2: arm2 ?? null, arm3: null, converged };
+}
+
+export function upsertRecord(comparison, record) {
+  const c = comparison ?? { records: [] };
+  c.records = Array.isArray(c.records) ? c.records : [];
+  const i = c.records.findIndex((r) => r.date === record.date);
+  if (i >= 0) c.records[i] = record; else c.records.push(record);
+  return c;
+}
+
+export function isPastEndDate(today, endDate) {
+  if (!endDate) return false;
+  return String(today) > String(endDate);
+}
