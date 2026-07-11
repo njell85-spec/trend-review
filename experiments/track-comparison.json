@@ -5,7 +5,156 @@
     {
       "date": "2026-07-12",
       "arm1": null,
-      "arm2": null,
+      "arm2": {
+        "pmid": "41841715",
+        "title_ko": "급성 저산소혈성 호흡부전에서 고유량 산소요법과 표준 산소요법 비교",
+        "clinicalQuestion": "In adults with acute hypoxemic respiratory failure, does oxygen delivered through a high-flow nasal cannula, compared with standard oxygen therapy, reduce death by day 28 and the need for intubation?",
+        "clinicalQuestion_ko": "급성 저산소혈성 호흡부전 성인 환자에서 high-flow nasal cannula를 통한 산소 공급이 표준 산소요법과 비교해 28일째 사망과 삽관 필요성을 줄이는가?",
+        "pico": {
+          "population": "[France] Patients with acute hypoxemic respiratory failure; all had a ratio of the partial pressure of arterial oxygen to the fraction of inspired oxygen (PaO2:FiO2) of 200 or less, a respiratory rate of more than 25 breaths per minute, and pulmonary infiltrate on chest imaging; 1116 patients underwent randomization, and 1110 (556 high-flow-oxygen, 554 standard-oxygen) were analyzed. Per the trial protocol, eligible patients were older than 18 years.",
+          "intervention": "High-flow-oxygen therapy delivered through a high-flow nasal cannula (556 patients analyzed).",
+          "comparison": "Standard-oxygen therapy (554 patients analyzed).",
+          "outcome": "The primary outcome was death by day 28. Mortality at day 28 was 14.6% (81 of 556) in the high-flow-oxygen group and 14.6% (81 of 554) in the standard-oxygen group (difference, -0.05 percentage points; 95% CI, -4.21 to 4.10; P = 0.98)."
+        },
+        "pico_ko": {
+          "population": "[프랑스] 급성 저산소혈성 호흡부전 환자. 모두 PaO2:FiO2 비 200 이하, 호흡수 분당 25회 초과, 흉부영상에서 폐침윤을 보였음. 1116명이 무작위 배정되었고 1110명(high-flow-oxygen 556명, standard-oxygen 554명)이 분석에 포함됨. 시험 프로토콜상 18세 초과 성인이 대상.",
+          "intervention": "High-flow nasal cannula를 통해 공급된 high-flow-oxygen 요법(분석 대상 556명).",
+          "comparison": "표준 산소요법(standard-oxygen, 분석 대상 554명).",
+          "outcome": "일차 결과는 28일째 사망. 28일째 사망률은 high-flow-oxygen군 14.6%(556명 중 81명), standard-oxygen군 14.6%(554명 중 81명)로 차이 -0.05%p(95% CI, -4.21~4.10; P = 0.98)."
+        },
+        "baseline": "Balanced",
+        "secondaryOutcomes": [
+          "Incidence of intubation by day 28: 42.4% (236 of 556) in the high-flow-oxygen group vs 48.4% (268 of 554) in the standard-oxygen group (difference, -5.93 percentage points; 95% CI, -11.78 to -0.08).",
+          "Serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing occurred in 13 patients (2.3%) in the high-flow-oxygen group vs 6 patients (1.1%) in the standard-oxygen group."
+        ],
+        "secondaryOutcomes_ko": [
+          "28일까지 삽관 발생률: high-flow-oxygen군 42.4%(556명 중 236명) vs standard-oxygen군 48.4%(554명 중 268명) (차이 -5.93%p; 95% CI, -11.78~-0.08).",
+          "자발호흡 중 발생한 중대 이상반응(심정지 또는 기흉): high-flow-oxygen군 13명(2.3%) vs standard-oxygen군 6명(1.1%)."
+        ],
+        "statGlossary": [
+          {
+            "term": "percentage point difference",
+            "explanation_ko": "두 군의 백분율(%) 값을 뺀 절대 차이로, 0이면 차이 없음을 뜻함. 예: 사망률 차이 -0.05%p → 두 군의 28일 사망률이 사실상 동일함."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, 0을 포함하면 통계적으로 유의하지 않음. 예: 삽관 차이 95% CI -11.78~-0.08 → 상한이 0에 매우 가까워 효과가 경계적임."
+          },
+          {
+            "term": "P value",
+            "explanation_ko": "우연만으로 이런 차이가 나올 확률로, 보통 0.05 미만이면 통계적으로 유의함. 예: P = 0.98 → 두 군 사망률에 유의한 차이가 전혀 없음."
+          }
+        ],
+        "practiceChange": [
+          "Do not adopt high-flow nasal cannula expecting a mortality benefit in acute hypoxemic respiratory failure — 28-day mortality was identical (14.6% vs 14.6%, P = 0.98).",
+          "High-flow oxygen may modestly reduce intubation by day 28 (42.4% vs 48.4%; difference -5.93 pp, 95% CI -11.78 to -0.08), a borderline benefit that can support its use for comfort and work-of-breathing, but the upper CI near zero warrants caution.",
+          "Monitor for barotrauma: serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing were numerically higher with high-flow oxygen (2.3% vs 1.1%), so avoid treating high-flow as risk-free and reassess patients who fail to improve."
+        ],
+        "practiceChange_ko": [
+          "급성 저산소혈성 호흡부전에서 사망률 개선을 기대하고 high-flow nasal cannula를 도입하지 말 것 — 28일 사망률은 동일했음(14.6% vs 14.6%, P = 0.98).",
+          "High-flow oxygen은 28일 삽관을 다소 줄일 수 있으나(42.4% vs 48.4%; 차이 -5.93%p, 95% CI -11.78~-0.08) 상한이 0에 근접한 경계적 효과이므로, 편안함·호흡일 감소 목적의 사용은 지지되되 신중해야 함.",
+          "기압손상 감시: 자발호흡 중 중대 이상반응(심정지 또는 기흉)이 high-flow군에서 수치상 더 많았으므로(2.3% vs 1.1%), high-flow를 무위험으로 간주하지 말고 호전 없는 환자는 재평가할 것."
+        ],
+        "keyFindings": [
+          "28-day mortality was identical between groups: 14.6% (81/556) with high-flow oxygen vs 14.6% (81/554) with standard oxygen (difference -0.05 pp; 95% CI -4.21 to 4.10; P = 0.98).",
+          "Intubation by day 28 was lower with high-flow oxygen: 42.4% (236/556) vs 48.4% (268/554) (difference -5.93 pp; 95% CI -11.78 to -0.08).",
+          "Serious adverse events (cardiac arrest or pneumothorax) during spontaneous breathing occurred in 13 patients (2.3%) with high-flow oxygen vs 6 (1.1%) with standard oxygen."
+        ],
+        "keyFindings_ko": [
+          "28일 사망률은 두 군이 동일: high-flow oxygen 14.6%(81/556) vs standard oxygen 14.6%(81/554) (차이 -0.05%p; 95% CI -4.21~4.10; P = 0.98).",
+          "28일까지 삽관은 high-flow oxygen에서 더 낮음: 42.4%(236/556) vs 48.4%(268/554) (차이 -5.93%p; 95% CI -11.78~-0.08).",
+          "자발호흡 중 중대 이상반응(심정지 또는 기흉)은 high-flow oxygen 13명(2.3%) vs standard oxygen 6명(1.1%)."
+        ],
+        "clinicalTakeaway": "In this large multicenter French trial of acute hypoxemic respiratory failure (PaO2:FiO2 ≤200), high-flow nasal cannula did not reduce 28-day mortality compared with standard oxygen (14.6% vs 14.6%, P = 0.98). It was associated with a borderline reduction in intubation (42.4% vs 48.4%), so it remains a reasonable first-line supportive option to ease work of breathing, but should not be expected to improve survival, and clinicians must watch for a possible higher rate of barotrauma.",
+        "clinicalTakeaway_ko": "급성 저산소혈성 호흡부전(PaO2:FiO2 ≤200) 환자를 대상으로 한 이 대규모 프랑스 다기관 시험에서 high-flow nasal cannula는 표준 산소요법 대비 28일 사망률을 줄이지 못했음(14.6% vs 14.6%, P = 0.98). 삽관은 경계적으로 감소시켰으므로(42.4% vs 48.4%) 호흡일 경감을 위한 합리적 일차 지지요법으로 유지될 수 있으나, 생존율 개선은 기대할 수 없고 기압손상 증가 가능성을 감시해야 함.",
+        "limitations": "Open-label design (no blinding of clinicians or intubation decisions) risks bias in the subjective intubation outcome. The trial was conducted in French ICUs only, limiting generalizability; COVID-19 respiratory failure was excluded, so results may not apply to that population. The intubation benefit was borderline (upper 95% CI -0.08, near zero) and secondary, so it should be interpreted as hypothesis-generating rather than definitive.",
+        "limitations_ko": "Open-label 설계(임상의·삽관 결정에 대한 눈가림 없음)로 주관적 삽관 결과에 편향 위험이 있음. 프랑스 ICU에서만 수행되어 일반화에 제한이 있으며, COVID-19 호흡부전은 제외되어 해당 집단에는 적용되지 않을 수 있음. 삽관 이득은 경계적(95% CI 상한 -0.08로 0에 근접)이고 이차 결과이므로 확정적이기보다 가설 생성적으로 해석해야 함.",
+        "evidenceLevel": "High",
+        "clinicalApplicabilityScore": 8,
+        "webSources": [
+          {
+            "label": "PubMed — High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41841715/"
+          },
+          {
+            "label": "NEJM official article (DOI)",
+            "url": "https://doi.org/10.1056/NEJMoa2516087"
+          },
+          {
+            "label": "PMC — SOHO trial protocol (PMC11499756)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11499756/"
+          },
+          {
+            "label": "ClinicalTrials.gov — NCT04468126",
+            "url": "https://clinicaltrials.gov/study/NCT04468126"
+          }
+        ],
+        "paper": {
+          "pmid": "41841715",
+          "title": "High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure.",
+          "abstract": "BACKGROUND: Data are needed on the effect of oxygen delivered through a high-flow nasal cannula, as compared with standard oxygen therapy, on intubation and mortality in patients with acute hypoxemic respiratory failure.\nMETHODS: In this multicenter, open-label trial, we randomly assigned patients who had acute hypoxemic respiratory failure to receive high-flow-oxygen or standard-oxygen therapy. All the patients had a ratio of the partial pressure of arterial oxygen to the fraction of inspired oxygen of 200 or less, a respiratory rate of more than 25 breaths per minute, and pulmonary infiltrate on chest imaging. The primary outcome was death by day 28.\nRESULTS: A total of 1116 patients underwent randomization. Of these patients, 1110 (556 in the high-flow-oxygen group and 554 in the standard-oxygen group) were included in the analysis. Mortality at day 28 was 14.6% (in 81 of 556 patients) in the high-flow-oxygen group and 14.6% (in 81 of 554 patients) in the standard-oxygen group (difference, -0.05 percentage points; 95% confidence interval [CI], -4.21 to 4.10; P = 0.98). The incidence of intubation by day 28 was 42.4% (in 236 of 556 patients) in the high-flow-oxygen group and 48.4% (in 268 of 554 patients) in the standard-oxygen group (difference, -5.93 percentage points; 95% CI, -11.78 to -0.08). Serious adverse events (cardiac arrest or pneumothorax) occurred during spontaneous breathing in 13 patients (2.3%) in the high-flow-oxygen group and in 6 patients (1.1%) in the standard-oxygen group.\nCONCLUSIONS: Among patients with acute hypoxemic respiratory failure, the use of oxygen delivered through a high-flow nasal cannula did not significantly reduce mortality at day 28. (Funded by the French Ministry of Health and Fisher and Paykel Healthcare; SOHO ClinicalTrials.gov number, NCT04468126.).",
+          "authors": [
+            "Frat JP",
+            "Quenot JP",
+            "Guitton C",
+            "Coudroy R",
+            "Gacouin A",
+            "Badie J"
+          ],
+          "journal": "The New England journal of medicine",
+          "pubDate": "2026-Jun-04",
+          "publicationTypes": [
+            "Journal Article",
+            "Multicenter Study",
+            "Randomized Controlled Trial",
+            "Comparative Study"
+          ],
+          "meshTerms": [
+            "Aged",
+            "Female",
+            "Humans",
+            "Male",
+            "Middle Aged",
+            "Acute Disease",
+            "Cannula",
+            "Hypoxia",
+            "Intubation, Intratracheal",
+            "Kaplan-Meier Estimate"
+          ],
+          "keywords": [],
+          "doi": "10.1056/NEJMoa2516087",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41841715/",
+          "collectedAt": "2026-07-11T15:47:59.732Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41841715",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41841715/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMoa2516087",
+            "url": "https://doi.org/10.1056/NEJMoa2516087"
+          },
+          {
+            "label": "웹 — PubMed — High-Flow or Standard Oxygen in Acute Hypoxemic Respiratory Failure",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41841715/"
+          },
+          {
+            "label": "웹 — NEJM official article (DOI)",
+            "url": "https://doi.org/10.1056/NEJMoa2516087"
+          },
+          {
+            "label": "웹 — PMC — SOHO trial protocol (PMC11499756)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11499756/"
+          },
+          {
+            "label": "웹 — ClinicalTrials.gov — NCT04468126",
+            "url": "https://clinicaltrials.gov/study/NCT04468126"
+          }
+        ]
+      },
       "arm3": null,
       "converged": false
     }
