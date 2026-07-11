@@ -50,3 +50,37 @@ Do NOT choose any of these already-selected PMIDs: ${exclude}.
 
 Return your single choice via the submit_track_pick tool. The PMID MUST be a real PubMed identifier you verified via search — do not invent it. Prefer including the DOI and the publication year-month.`;
 }
+
+const MONTHS = { jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11 };
+export function parseYearMonth(s) {
+  const parts = String(s ?? '').split(/[-/\s]+/).filter(Boolean);
+  if (!parts.length) return null;
+  const year = Number(parts[0]);
+  if (!Number.isFinite(year) || year < 1900) return null;
+  let month = 0;
+  if (parts[1]) {
+    const m = parts[1].toLowerCase();
+    month = Number.isFinite(Number(parts[1])) ? Number(parts[1]) - 1 : (MONTHS[m.slice(0, 3)] ?? 0);
+  }
+  const dt = new Date(Date.UTC(year, month, 1));
+  return Number.isNaN(dt.getTime()) ? null : dt;
+}
+
+// Arm2가 반환한 pick(PMID)을 PubMed 재조회로 검증하고 6개월 창을 확인.
+// fetchArticles는 주입(테스트 목 가능). 성공 시 canonical paper 객체 반환.
+export async function verifyPick(pick, { fetchArticles, sinceDate }) {
+  const pmid = String(pick?.pmid ?? '').trim();
+  if (!/^\d+$/.test(pmid)) return { ok: false, paper: null, reason: `invalid pmid: "${pick?.pmid ?? ''}"` };
+
+  let articles = [];
+  try { articles = await fetchArticles([pmid]); } catch (err) { return { ok: false, paper: null, reason: `fetch error: ${err.message}` }; }
+  const paper = Array.isArray(articles) ? articles.find((a) => String(a.pmid) === pmid) : null;
+  if (!paper) return { ok: false, paper: null, reason: `PMID ${pmid} not found on PubMed` };
+
+  const pub = parseYearMonth(paper.pubDate);
+  const since = new Date(`${sinceDate}T00:00:00Z`);
+  if (!pub) return { ok: false, paper: null, reason: `unparseable pubDate "${paper.pubDate}"` };
+  if (pub < since) return { ok: false, paper: null, reason: `outside 6-month window (pubDate ${paper.pubDate} < ${sinceDate})` };
+
+  return { ok: true, paper, reason: 'ok' };
+}

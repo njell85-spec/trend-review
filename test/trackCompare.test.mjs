@@ -45,3 +45,44 @@ test('buildArm2SelectPrompt: 제외 없으면 안내 문구', () => {
   const p = buildArm2SelectPrompt({ sinceDate: '2026-01-11', keywords: 'x', excludePmids: [] });
   assert.match(p, /None/i);
 });
+
+import { parseYearMonth, verifyPick } from '../src/experiments/trackCompare.js';
+
+test('parseYearMonth: 다양한 포맷', () => {
+  assert.equal(parseYearMonth('2026-05').getUTCFullYear(), 2026);
+  assert.equal(parseYearMonth('2026/05').getUTCMonth(), 4);
+  assert.equal(parseYearMonth('2026-05-20').getUTCMonth(), 4);
+  assert.equal(parseYearMonth('garbage'), null);
+});
+
+const paper = (over = {}) => ({ pmid: '900', title: 'T', journal: 'NEJM', pubDate: '2026-05', abstract: 'a', authors: [], meshTerms: [], keywords: [], doi: '', ...over });
+
+test('verifyPick: 정상 → ok, paper 반환', async () => {
+  const v = await verifyPick({ pmid: '900' }, {
+    fetchArticles: async (ids) => [paper({ pmid: ids[0] })],
+    sinceDate: '2026-01-01',
+  });
+  assert.equal(v.ok, true);
+  assert.equal(v.paper.pmid, '900');
+});
+
+test('verifyPick: pmid 없음 → ok:false', async () => {
+  const v = await verifyPick({ pmid: '' }, { fetchArticles: async () => [], sinceDate: '2026-01-01' });
+  assert.equal(v.ok, false);
+  assert.match(v.reason, /pmid/i);
+});
+
+test('verifyPick: PubMed 미존재(빈 배열) → ok:false', async () => {
+  const v = await verifyPick({ pmid: '900' }, { fetchArticles: async () => [], sinceDate: '2026-01-01' });
+  assert.equal(v.ok, false);
+  assert.match(v.reason, /not found|없|PubMed/i);
+});
+
+test('verifyPick: 6개월 창 밖 → ok:false', async () => {
+  const v = await verifyPick({ pmid: '900' }, {
+    fetchArticles: async () => [paper({ pubDate: '2025-01' })],
+    sinceDate: '2026-01-01',
+  });
+  assert.equal(v.ok, false);
+  assert.match(v.reason, /window|창|old|date/i);
+});
