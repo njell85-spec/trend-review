@@ -120,10 +120,10 @@
   .cat.cf .cl{color:var(--cf)} .cat.pm .cl{color:var(--pm)} .cat.pd .cl{color:var(--pd)}
   .cat.cc .cl{color:var(--cc)} .cat.ds .cl{color:var(--ds)} .cat.nt .cl{color:var(--nt)}
   ol.items{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;counter-reset:it;max-width:80ch}
-  ol.items li{font-size:13.5px;color:var(--ink);line-height:1.5;display:flex;gap:9px;align-items:flex-start}
+  ol.items li{font-size:13.5px;color:var(--ink);line-height:1.5;position:relative;padding-left:26px}
   ol.items li::before{counter-increment:it;content:counter(it);font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:700;
-    color:var(--faint);background:var(--surface);border:1px solid var(--line);border-radius:5px;min-width:17px;height:17px;
-    display:inline-flex;align-items:center;justify-content:center;margin-top:1px;flex:none}
+    color:var(--faint);background:var(--surface);border:1px solid var(--line);border-radius:5px;min-width:17px;height:17px;box-sizing:border-box;
+    display:inline-flex;align-items:center;justify-content:center;position:absolute;left:0;top:1px}
   ol.items li b{font-weight:700}
   ol.items li .tag{font-size:10.5px;font-weight:700;color:var(--pd);background:var(--pd-bg);padding:0 6px;border-radius:5px;margin-left:4px}
   .empty{font-size:12px;color:var(--faint)}
@@ -147,7 +147,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <h1>TR master plan <span class="vpill">v21</span></h1>
+    <h1>TR master plan <span class="vpill">v22</span></h1>
     <div class="navlinks">
       <a href="https://njell85-spec.github.io/trend-review/">📊 대시보드(리포트 페이지)</a>
       <a href="https://github.com/njell85-spec/trend-review">GitHub</a>
@@ -267,7 +267,8 @@
     <table>
       <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
       <tbody>
-        <tr class="cur"><td class="v">v21</td><td class="d">2026-07-11</td><td><b>2주 트랙 비교 실험 구현 완료</b> — "복잡한 선정 파이프라인 vs LLM 알아서 선정"의 품질을 실측하려고, Arm1(현행 결정적+rerank) vs Arm2(Opus 웹서치 자체선정 + 동일 PICO 분석)를 매일 나란히 누적하는 무인 실험(별도 <span class="mono">compare-tracks.yml</span> · <span class="mono">experiments/compare.html</span> 게시 · 데일리 코어 무접촉). Arm3(ChatGPT 앱)는 PeterJ가 별도 운영해 2주 뒤 병합. brainstorming→spec→plan→서브에이전트 8-task TDD 구현·최종리뷰(READY TO MERGE). 시작은 Variables 2개 설정.</td></tr>
+        <tr class="cur"><td class="v">v22</td><td class="d">2026-07-11</td><td><b>렌더 버그 수정</b> — 리스트 항목 <span class="mono">li</span>가 <span class="mono">display:flex</span>라 <span class="mono">.mono</span> 조각이 여러 개면 텍스트가 세로로 한 글자씩 깨지던 문제 수정(번호 badge는 절대배치, 본문은 정상 인라인 흐름). 내용 변경 없음.</td></tr>
+        <tr><td class="v">v21</td><td class="d">2026-07-11</td><td><b>2주 트랙 비교 실험 구현 완료</b> — "복잡한 선정 파이프라인 vs LLM 알아서 선정"의 품질을 실측하려고, Arm1(현행 결정적+rerank) vs Arm2(Opus 웹서치 자체선정 + 동일 PICO 분석)를 매일 나란히 누적하는 무인 실험(별도 <span class="mono">compare-tracks.yml</span> · <span class="mono">experiments/compare.html</span> 게시 · 데일리 코어 무접촉). Arm3(ChatGPT 앱)는 PeterJ가 별도 운영해 2주 뒤 병합. brainstorming→spec→plan→서브에이전트 8-task TDD 구현·최종리뷰(READY TO MERGE). 시작은 Variables 2개 설정.</td></tr>
         <tr><td class="v">v20</td><td class="d">2026-07-10</td><td><b>논문 선정 3층 개편 완료·프로덕션 반영</b> — 결정적 스코어러 재설계(PeterJ 기준: 관심주제 게이트 + 저명저널 지배, 저명도 낮은 범용지 감점) + config 분리(interests·journals, 폰 튜닝) + <b>Opus rerank</b>(결정 top-K를 침상 임상가치로 재순위, 소프트 폴백). 실측: 오늘 300편 최종 1위 Cefazolin/NEJM(LLM 풀스크린과 수렴), 실패픽·이송·원격·증례·리뷰 강등. 며칠 트렌드 관찰 후 config 튜닝.</td></tr>
         <tr><td class="v">v19</td><td class="d">2026-07-09</td><td><b>논문 선정 품질 개편 착수</b> — 현행 선정이 <b>LLM 판단 0</b>(결정적 메타 점수만)이 저품질의 구조적 원인으로 확인. "300편 배치 AUP 거부"는 미검증(실은 429 정황)으로 재확인, 실제 논문 13편 Opus 배치 채점 성공(59초·거부 없음). 방향 = <b>retrieve-then-rerank + recall@K 실측 + 메타 촘촘화</b>. GPT 교차검증은 2단계 옵션, 가이드라인 선정은 Phase B. (설계·진단 단계, 코드 미변경.)</td></tr>
         <tr><td class="v">v18</td><td class="d">2026-07-07 저녁</td><td><b>전면 개편</b> — Phase 1→4를 메인 축으로, 각 Phase를 6분류(확정·진행 P-m·진행 P-d·진행 C·상의·특이)로 재구성. 임시 R/A/B 코드 제거. 스탯 3박스 제거. 제목 아래 바로가기(대시보드=리포트 페이지 포함).</td></tr>
