@@ -73,9 +73,11 @@
   `njell85-spec/trend-review`의 **`docs/codex-mcp-setup.md`**를 연다(다른 repo 세션이면
   `add_repo`로 trend-review를 가져와 읽는다). 토큰 갱신 절차는 그 문서 §3.
 
-## 클코 구조도 — 버전 누적 관리 (PeterJ 확정 2026-07-11)
-- PeterJ가 "클코 구조도 업데이트/보여줘"라고 하면 `njell85-spec/trend-review`의
-  **`docs/claude-stack-map/README.md`** 규약을 따른다(다른 repo 세션이면 `add_repo`로 가져온다).
-- 요지: 갱신 전 새 HTML 스냅샷을 그 디렉터리에 `YYYY-MM-DD-vN-<슬러그>.html`로 저장하고
-  버전 로그에 한 줄 추가한 뒤, 아티팩트는 **기존 URL로 재게시**(전 버전은 repo에 영구 보존).
-- 수록 원칙: 실제 설정 파일로 확인한 것만 수록, 자작=초록/기성품=회색 구분, 병원 비유 유지.
+## 클코 구조도 — 버전 누적 관리 (PeterJ 확정 2026-07-11, 마스터플랜 방식)
+- 정본(SSOT): `njell85-spec/trend-review`의 **`docs/claude-stack-map.html`** 단일 파일.
+  아티팩트는 이 파일의 렌더 뷰. (다른 repo 세션이면 `add_repo`로 가져온다.)
+- PeterJ가 "클코 구조도 업데이트/보여줘"라고 하면 master-plan.html과 같은 관례로:
+  ① 실제 설정 파일로 구성 재확인(확인한 것만 수록) ② 정본 편집 ③ 문서 안 "버전 기록"
+  맨 위에 새 줄 추가(옛 줄 삭제 금지) ④ **기존 아티팩트 URL로 재게시** ⑤ 커밋·푸시.
+  과거 본문은 git 히스토리가 보존(스냅샷 파일 불필요).
+- 수록 원칙: 자작=초록/기성품=회색 구분, 병원 비유 유지, 용어 출처 부록 유지.
