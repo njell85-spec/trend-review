@@ -10,7 +10,8 @@ function armColumn(cls, label, sub, a) {
       <div class="failmsg">⚠ 이 날 선정 실패 / 픽 없음<br>PMID 검증 실패 또는 6개월 창 밖 → 소프트 스킵.</div></div>`;
   }
   const pico = a.pico ?? {};
-  const kf = (a.keyFindings_ko ?? a.keyFindings ?? []).slice(0, 2)
+  const kfRaw = a.keyFindings_ko ?? a.keyFindings ?? [];
+  const kf = (Array.isArray(kfRaw) ? kfRaw : []).slice(0, 2)
     .map((k) => `<li>${esc(k)}</li>`).join('');
   const doi = a.doi && a.doi.length > 3 ? ` · <a href="https://doi.org/${esc(a.doi)}">DOI</a>` : '';
   return `<div class="col">

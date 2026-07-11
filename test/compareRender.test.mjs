@@ -36,3 +36,10 @@ test('renderComparisonHtml: 빈 records도 안전', () => {
   const html = renderComparisonHtml({ records: [] }, { startDate: 'a', endDate: 'b', today: 'c' });
   assert.match(html, /<!doctype html>/i);
 });
+
+test('renderComparisonHtml: 비배열 keyFindings도 크래시 없음', () => {
+  const html = renderComparisonHtml({ records: [{ date: 'd', converged: false,
+    arm1: { pmid: '1', title: 'T', journal: 'J', pico: {}, keyFindings_ko: 'oops-not-array' }, arm2: null }] },
+    { startDate: 'a', endDate: 'b', today: 'd' });
+  assert.match(html, /<!doctype html>/i);
+});
