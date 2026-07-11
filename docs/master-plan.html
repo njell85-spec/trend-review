@@ -147,7 +147,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <h1>TR master plan <span class="vpill">v20</span></h1>
+    <h1>TR master plan <span class="vpill">v21</span></h1>
     <div class="navlinks">
       <a href="https://njell85-spec.github.io/trend-review/">📊 대시보드(리포트 페이지)</a>
       <a href="https://github.com/njell85-spec/trend-review">GitHub</a>
@@ -185,9 +185,10 @@
       <div class="cat cf"><div class="cl"><i style="background:var(--cf)"></i>확정</div>
         <ol class="items"><li>매일 자동 논문 브리핑 — 선정 → Opus 분석 → 대시보드 → 카카오. 무중단.</li><li>직접 지정 리뷰 — 대시보드에서 논문 골라 분석.</li><li>큐레이션 버튼 — 🗑 삭제 · 🎬 자료화 + 상태 표시.</li><li><b>논문 선정 3층 개편(반영 완료)</b> — 결정적(관심주제+저명저널) → 상위 K편 → <b>Opus rerank(침상 임상가치)</b> → 1편. 관심밖·방법론·저명도낮은 저널 배제. 소프트 폴백.</li></ol></div>
       <div class="cat pm"><div class="cl"><i style="background:var(--pm)"></i>진행(P-m) <small>모바일</small></div>
-        <ol class="items"><li>큐레이션 버튼 실사용 피드백 — 만져보고 고칠 포맷.</li><li><b>며칠 선정 트렌드 관찰 → 피드백.</b> 조정은 <span class="mono">config/interests.json·journals.json</span> 숫자만 고쳐(폰에서). 관심 키워드 추가/배제/가중.</li></ol></div>
+        <ol class="items"><li>큐레이션 버튼 실사용 피드백 — 만져보고 고칠 포맷.</li><li><b>며칠 선정 트렌드 관찰 → 피드백.</b> 조정은 <span class="mono">config/interests.json·journals.json</span> 숫자만 고쳐(폰에서). 관심 키워드 추가/배제/가중.</li><li><b>트랙 비교 실험 시작·관찰</b> — Variables 2개(<span class="mono">ENABLE_TRACK_COMPARE·TRACK_COMPARE_END</span>) 설정 후 <span class="mono">compare.html</span> 2주 관찰. Arm3(ChatGPT 앱)는 직접 돌려 2주 뒤 리스트 제공.</li></ol></div>
       <div class="cat pd"><div class="cl"><i style="background:var(--pd)"></i>진행(P-d) <small>데스크탑</small></div><div class="empty">— 없음</div></div>
-      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div><div class="empty">— 없음</div></div>
+      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div>
+        <ol class="items"><li><b>2주 트랙 비교 실험(구현 완료)</b> — Arm1(현행 파이프라인) vs Arm2(Opus 웹서치 자체선정 + 동일 PICO)를 매일 나란히 누적해 선정 품질 비교. 별도 워크플로우 · <span class="mono">experiments/compare.html</span> 게시 · 데일리 코어 무접촉. 시작·관찰만 남음.</li></ol></div>
       <div class="cat ds"><div class="cl"><i style="background:var(--ds)"></i>상의</div>
         <ol class="items"><li>주1회 <b>가이드라인 선정</b> 검토·개편(Phase B) — 논문 선정 안정화 후. <span class="mono">GuidelineAnalyzerAgent</span>. (GPT 교차검증은 트렌드 보고 판단 — 현재 보류.)</li></ol></div>
       <div class="cat nt"><div class="cl"><i style="background:var(--nt)"></i>특이 <small>note</small></div>
@@ -266,7 +267,8 @@
     <table>
       <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
       <tbody>
-        <tr class="cur"><td class="v">v20</td><td class="d">2026-07-10</td><td><b>논문 선정 3층 개편 완료·프로덕션 반영</b> — 결정적 스코어러 재설계(PeterJ 기준: 관심주제 게이트 + 저명저널 지배, 저명도 낮은 범용지 감점) + config 분리(interests·journals, 폰 튜닝) + <b>Opus rerank</b>(결정 top-K를 침상 임상가치로 재순위, 소프트 폴백). 실측: 오늘 300편 최종 1위 Cefazolin/NEJM(LLM 풀스크린과 수렴), 실패픽·이송·원격·증례·리뷰 강등. 며칠 트렌드 관찰 후 config 튜닝.</td></tr>
+        <tr class="cur"><td class="v">v21</td><td class="d">2026-07-11</td><td><b>2주 트랙 비교 실험 구현 완료</b> — "복잡한 선정 파이프라인 vs LLM 알아서 선정"의 품질을 실측하려고, Arm1(현행 결정적+rerank) vs Arm2(Opus 웹서치 자체선정 + 동일 PICO 분석)를 매일 나란히 누적하는 무인 실험(별도 <span class="mono">compare-tracks.yml</span> · <span class="mono">experiments/compare.html</span> 게시 · 데일리 코어 무접촉). Arm3(ChatGPT 앱)는 PeterJ가 별도 운영해 2주 뒤 병합. brainstorming→spec→plan→서브에이전트 8-task TDD 구현·최종리뷰(READY TO MERGE). 시작은 Variables 2개 설정.</td></tr>
+        <tr><td class="v">v20</td><td class="d">2026-07-10</td><td><b>논문 선정 3층 개편 완료·프로덕션 반영</b> — 결정적 스코어러 재설계(PeterJ 기준: 관심주제 게이트 + 저명저널 지배, 저명도 낮은 범용지 감점) + config 분리(interests·journals, 폰 튜닝) + <b>Opus rerank</b>(결정 top-K를 침상 임상가치로 재순위, 소프트 폴백). 실측: 오늘 300편 최종 1위 Cefazolin/NEJM(LLM 풀스크린과 수렴), 실패픽·이송·원격·증례·리뷰 강등. 며칠 트렌드 관찰 후 config 튜닝.</td></tr>
         <tr><td class="v">v19</td><td class="d">2026-07-09</td><td><b>논문 선정 품질 개편 착수</b> — 현행 선정이 <b>LLM 판단 0</b>(결정적 메타 점수만)이 저품질의 구조적 원인으로 확인. "300편 배치 AUP 거부"는 미검증(실은 429 정황)으로 재확인, 실제 논문 13편 Opus 배치 채점 성공(59초·거부 없음). 방향 = <b>retrieve-then-rerank + recall@K 실측 + 메타 촘촘화</b>. GPT 교차검증은 2단계 옵션, 가이드라인 선정은 Phase B. (설계·진단 단계, 코드 미변경.)</td></tr>
         <tr><td class="v">v18</td><td class="d">2026-07-07 저녁</td><td><b>전면 개편</b> — Phase 1→4를 메인 축으로, 각 Phase를 6분류(확정·진행 P-m·진행 P-d·진행 C·상의·특이)로 재구성. 임시 R/A/B 코드 제거. 스탯 3박스 제거. 제목 아래 바로가기(대시보드=리포트 페이지 포함).</td></tr>
         <tr><td class="v">v17</td><td class="d">2026-07-07 저녁</td><td>저장소 정본화(<span class="mono">docs/master-plan.html</span> git 커밋) + v14 포맷 복원. codex-debate 스킬·8건 수정 반영.</td></tr>
