@@ -10,15 +10,23 @@ function armColumn(cls, label, sub, a) {
       <div class="failmsg">⚠ 이 날 선정 실패 / 픽 없음<br>PMID 검증 실패 또는 6개월 창 밖 → 소프트 스킵.</div></div>`;
   }
   const pico = a.pico ?? {};
+  // Arm1(아카이브 엔트리)은 title/journal/pmid/doi가 최상위, Arm2(_analyzeSinglePaper 출력)는
+  // 이 값들이 a.paper 하위에 있다 — 둘 다 커버하도록 폴백한다.
+  const p = a.paper ?? {};
+  const titleEn = a.title || p.title || '';
+  const titleKo = a.title_ko || '';
+  const journal = a.journal || p.journal || '';
+  const pmid = a.pmid || p.pmid || '';
+  const doiVal = a.doi || p.doi || '';
   const kfRaw = a.keyFindings_ko ?? a.keyFindings ?? [];
   const kf = (Array.isArray(kfRaw) ? kfRaw : []).slice(0, 2)
     .map((k) => `<li>${esc(k)}</li>`).join('');
-  const doi = a.doi && a.doi.length > 3 ? ` · <a href="https://doi.org/${esc(a.doi)}">DOI</a>` : '';
+  const doi = doiVal && doiVal.length > 3 ? ` · <a href="https://doi.org/${esc(doiVal)}">DOI</a>` : '';
   return `<div class="col">
     <span class="arm ${cls}">${label} <small>${esc(sub)}</small></span>
-    <div class="ttl">${esc(a.title_ko || a.title)}</div>
-    ${a.title_ko ? `<div class="ttl-en">${esc(a.title)}</div>` : ''}
-    <div class="meta">${esc(a.journal)} · PMID ${esc(a.pmid)}${doi}</div>
+    <div class="ttl">${esc(titleKo || titleEn)}</div>
+    ${titleKo ? `<div class="ttl-en">${esc(titleEn)}</div>` : ''}
+    <div class="meta">${esc(journal)} · PMID ${esc(pmid)}${doi}</div>
     <div class="badges"><span class="b ev">근거 ${esc(a.evidenceLevel || 'NR')}</span></div>
     <div class="pico">
       ${pico.population ? `<div class="row"><span class="k">P</span><span>${esc(pico.population)}</span></div>` : ''}

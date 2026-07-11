@@ -43,3 +43,15 @@ test('renderComparisonHtml: 비배열 keyFindings도 크래시 없음', () => {
     { startDate: 'a', endDate: 'b', today: 'd' });
   assert.match(html, /<!doctype html>/i);
 });
+
+test('renderComparisonHtml: Arm2 분석객체(title/journal이 .paper 하위)도 저널 표시', () => {
+  const html = renderComparisonHtml({ records: [{ date: 'd', converged: false,
+    arm1: null,
+    arm2: { pmid: '41841715', title_ko: '고유량 산소', evidenceLevel: 'High', pico: { outcome: '28일 사망 14.6%' },
+            keyFindings_ko: ['소견'], paper: { title: 'High-Flow Oxygen', journal: 'NEJM', doi: '10.1056/x' } } }] },
+    { startDate: 'a', endDate: 'b', today: 'd' });
+  assert.match(html, /NEJM/);          // .paper.journal 폴백
+  assert.match(html, /41841715/);
+  assert.match(html, /High-Flow Oxygen/); // .paper.title 폴백
+  assert.match(html, /doi\.org\/10\.1056/);
+});
