@@ -6,7 +6,7 @@ import { kstDateStr } from '../src/utils/dates.js';
 import { LLMClient, ANTHROPIC_ANALYSIS_MODEL } from '../src/utils/LLMClient.js';
 import { DataCollectorAgent } from '../src/agents/DataCollectorAgent.js';
 import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
-import { runOnce, isPastEndDate } from '../src/experiments/trackCompare.js';
+import { runOnce, isPastEndDate, analyzeByPmid } from '../src/experiments/trackCompare.js';
 import { renderComparisonHtml } from '../src/experiments/compareRender.js';
 
 const EXP_DIR = 'experiments';
@@ -28,7 +28,7 @@ async function main() {
 
   const sinceDate = kstDateStr(new Date(Date.now() - 183 * 86_400_000));
 
-  // Arm1: 프로덕션 archive에서 오늘 엔트리(읽기 전용)
+  // Arm1: 프로덕션 archive에서 오늘 엔트리(읽기 전용)로 프로덕션 픽 PMID 확보
   const archive = await readJson(ARCHIVE_PATH, { entries: [] });
   const arm1Entry = (archive.entries ?? []).find((e) => e.date === today) ?? null;
   if (!arm1Entry) console.log(`⚠ 오늘(${today}) Arm1 archive 엔트리 없음 — arm1=null 기록`);
@@ -42,8 +42,18 @@ async function main() {
   const analyzer = new FilterAnalyzerAgent();
   const logger = { warn: (m) => console.warn('WARN', m), info: (m) => console.log(m) };
 
+  // Arm1을 Arm2와 동일 깊이·방법으로 재분석(공정 비교) — 아카이브는 축약본이라 통계용어·
+  // 임상적용점 등이 없다. 실패 시 아카이브 축약본으로 소프트 폴백.
+  let arm1 = arm1Entry;
+  if (arm1Entry?.pmid) {
+    try {
+      const full = await analyzeByPmid(arm1Entry.pmid, { collector, analyzer });
+      if (full) { arm1 = full; console.log(`Arm1 재분석 완료: PMID ${arm1Entry.pmid}`); }
+    } catch (err) { logger.warn(`Arm1 재분석 실패(소프트) — 아카이브 축약본 사용: ${err.message}`); }
+  }
+
   const { record, arm2Pmid, comparison: updated } = await runOnce({
-    today, sinceDate, arm1Entry, arm2History: history.pmids ?? [], comparison, llm, collector, analyzer, logger,
+    today, sinceDate, arm1Entry: arm1, arm2History: history.pmids ?? [], comparison, llm, collector, analyzer, logger,
   });
   if (arm2Pmid && !(history.pmids ?? []).includes(arm2Pmid)) (history.pmids ??= []).push(arm2Pmid);
 

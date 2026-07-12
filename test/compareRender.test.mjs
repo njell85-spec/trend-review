@@ -55,3 +55,17 @@ test('renderComparisonHtml: Arm2 분석객체(title/journal이 .paper 하위)도
   assert.match(html, /High-Flow Oxygen/); // .paper.title 폴백
   assert.match(html, /doi\.org\/10\.1056/);
 });
+
+test('renderComparisonHtml: Phase 1 전체 섹션 렌더(why/PICO C/통계용어/임상결론/practice)', () => {
+  const a2 = { pmid: '9', title_ko: '제목', evidenceLevel: 'High', evidenceSource: '초록 + 웹보강',
+    clinicalQuestion_ko: '왜 중요한가 설명', pico_ko: { population: 'P내용', intervention: 'I내용', comparison: 'C내용', outcome: 'O내용' },
+    keyFindings_ko: ['핵심1'], secondaryOutcomes_ko: ['2차1'],
+    statGlossary: [{ term: 'OR', explanation_ko: '오즈비 설명' }],
+    limitations_ko: '한계 설명', clinicalTakeaway_ko: '임상 결론 설명', practiceChange_ko: ['적용점1'],
+    paper: { title: 'T', journal: 'NEJM', doi: '' } };
+  const html = renderComparisonHtml({ records: [{ date: 'd', converged: false, arm1: null, arm2: a2 }] },
+    { startDate: 'a', endDate: 'b', today: 'd' });
+  for (const needle of ['WHY IT MATTERS', '왜 중요한가', 'C내용', '통계 용어', '오즈비', '임상 결론', 'Practice Change', '적용점1', '초록 \\+ 웹보강']) {
+    assert.match(html, new RegExp(needle));
+  }
+});

@@ -135,3 +135,14 @@ export async function runOnce({ today, sinceDate, arm1Entry, arm2History = [], c
   const updated = upsertRecord(comparison, record);
   return { record, arm2Pmid, comparison: updated };
 }
+
+// 주어진 PMID를 Arm2와 동일한 경로(fetch + 전체 PICO 분석)로 분석한다.
+// Arm1을 아카이브 축약본이 아니라 Arm2와 동일 깊이·동일 방법으로 재분석해 공정 비교를 만든다.
+// 실패 시 예외를 던지므로 호출자가 소프트 폴백(아카이브 축약본)을 처리한다.
+export async function analyzeByPmid(pmid, { collector, analyzer }) {
+  const [paper] = await collector.fetchArticles([String(pmid)]);
+  if (!paper) return null;
+  const full = await analyzer._analyzeSinglePaper(paper);
+  full.pmid = full.pmid || paper.pmid || String(pmid);
+  return full;
+}
