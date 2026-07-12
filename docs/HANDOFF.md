@@ -2,6 +2,18 @@
 
 > 목적: 새 세션(어느 모델이든)이 이 파일 하나로 지금까지의 맥락·결정·상태·다음 할 일을
 > 복원해 이어가기 위함. **새 세션을 열면 이 파일부터 읽고, 아래 "먼저 읽을 파일"을 훑으세요.**
+>
+> **[2026-07-12 — CC 글로벌 툴체인 확장 (EMR_Assist_v1 세션에서 작업, trend-review 반영)]**
+> - **확장 플러그인 세팅 도입**: 딥리서치(적대검증 완료, `docs/reviews/2026-07-12-cc-ecosystem-deep-research.md`)
+>   근거로 A그룹 상시(typescript-lsp·superpowers-chrome) + B그룹 온디맨드(pumasi·insane-search·
+>   security-guidance·double-shot-latte) 체계 확정. `.claude/env-bootstrap.sh`가 A그룹 자동설치+
+>   마켓플레이스 등록, `.claude/global-CLAUDE.md`에 B그룹 발동 조건표(클로드가 상황 판단해 토글).
+>   **새 세션 A그룹 3종 enabled 실측 확인.** B그룹은 설계상 미설치(마켓만 등록)가 정상.
+> - **codex-debate 설계토론 모드** 추가("클코덱스 설계토론") — SKILL.md + 스펙 §12.
+> - **클코 구조도 v4** (`docs/claude-stack-map.html`) — 확장 플러그인 A/B 반영. 마스터플랜 방식 누적.
+> - 적용: PeterJ가 Default 환경 setup script 재저장(캐시 재빌드)로 반영 완료. 이후 새 세션 자동.
+> - **다음**: B그룹 첫 사용 시 실측(insane-search 도달률 before/after, pumasi 산출물 verify 통과).
+>   분기 1회 "Not used recently" 정리(구조도 갱신과 병합). context7 등 외부 API형은 배포 단계에서 도메인 허용 검토.
 > 최종 갱신: **2026-07-11 (KST)** · **2주 트랙 비교 실험(Arm1 vs Arm2) 구현·main 병합 완료** — brainstorming→spec→plan→서브에이전트 8-task TDD, 최종리뷰 READY TO MERGE. 데일리 코어 무접촉(별도 워크플로우, `experiments/`만 커밋). **시작은 PeterJ가 Variables 2개 설정**. 상세는 **§10 [2026-07-11] 블록**.
 > 최종 갱신(이전): 2026-07-10 선정 3층 개편 프로덕션 반영 · 2026-07-09 진단·설계 · 2026-07-07 세션 크래시 복원.
 > D1~D7(GCP·OAuth·YouTube 채널·인증·TTS 키·Secrets 4종) 완료, **D8 검증만 남음**(§8·§10).
