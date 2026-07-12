@@ -19,13 +19,54 @@
 .badges{display:flex;flex-wrap:wrap;gap:5px}.b{font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;background:#eff4ff;color:#2563eb}
 .pico{border-top:1px dashed #e3e8ef;padding-top:8px;display:flex;flex-direction:column;gap:5px}
 .pico .row{display:grid;grid-template-columns:20px 1fr;gap:7px;font-size:11.5px}.pico .k{font-weight:800;color:#5b6675;font-size:10px}
-.kf{margin:2px 0 0;padding-left:16px;font-size:11.5px}.emptyslot{display:flex;align-items:center;justify-content:center;text-align:center;color:#5b6675;font-size:11.5px;border:1px dashed #e3e8ef;border-radius:13px;min-height:120px;padding:14px}
-.failmsg{font-size:12px;color:#5b6675;padding:6px 0}</style></head>
+.kf{margin:2px 0 0;padding-left:16px;font-size:11.5px}.kf li{margin-bottom:2px}.emptyslot{display:flex;align-items:center;justify-content:center;text-align:center;color:#5b6675;font-size:11.5px;border:1px dashed #e3e8ef;border-radius:13px;min-height:120px;padding:14px}
+.failmsg{font-size:12px;color:#5b6675;padding:6px 0}
+.seclbl{font-size:10px;font-weight:800;letter-spacing:.04em;color:#7c3aed;margin:9px 0 2px;text-transform:uppercase}
+.subh{font-size:10.5px;font-weight:700;color:#6b7688;margin:7px 0 2px}
+.txt{font-size:11.5px;margin:2px 0;color:inherit}
+.gloss{display:flex;flex-direction:column;gap:3px}.gi{font-size:11px;color:inherit}
+.col.fail .seclbl{color:#9ca3af}</style></head>
 <body><div class="wrap">
 <header class="hero"><h1>논문 선정 트랙 비교 실험</h1>
-<div class="sub">2026-07-12 → 2026-07-30 (KST) · 오늘 2026-07-12</div>
-<div class="stats"><div class="stat"><b>1</b>기록된 날</div><div class="stat"><b>0</b>수렴</div><div class="stat"><b>0</b>Arm 2 실패</div></div></header>
+<div class="sub">2026-07-12 → 2026-07-30 (KST) · 오늘 2026-07-13</div>
+<div class="stats"><div class="stat"><b>2</b>기록된 날</div><div class="stat"><b>0</b>수렴</div><div class="stat"><b>0</b>Arm 2 실패</div></div></header>
 <div class="legend"><span>■ Arm 1 · 결정적+rerank(현행)</span><span>■ Arm 2 · Opus 자체선정</span><span>■ Arm 3 · ChatGPT(2주 뒤)</span></div>
+<section class="day">
+    <div class="dayhead"><span class="date">2026-07-13</span></div>
+    <div class="cols">
+      <div class="col">
+    <span class="arm a1">ARM 1 <small>결정적+rerank</small></span>
+    <div class="ttl">심인성 쇼크에서의 고급 혈역학 모니터링</div>
+    <div class="ttl-en">Advanced haemodynamic monitoring in cardiogenic shock.</div>
+    <div class="meta">Current opinion in critical care · PMID 42284522 · <a href="https://doi.org/10.1097/MCC.0000000000001404">DOI</a></div>
+    <div class="badges"><span class="b ev">근거 Very Low</span><span class="b">초록 + 웹보강</span></div>
+    <div class="seclbl">💡 WHY IT MATTERS</div><p class="txt">심인성 쇼크(cardiogenic shock) 환자에서 어떤 고급 혈역학 모니터링 방법이 임상적으로 유용한 정보를 제공하고, 예후 가치를 지니며, 표현형 기반 위험 분류와 개별화된 치료 유도에 활용될 수 있는가?</p>
+    <div class="seclbl">🎯 PICO</div><div class="pico"><div class="row"><span class="k">P</span><span>[국가 미기재] 심인성 쇼크(cardiogenic shock) 환자로, 고립성 우심실 부전(isolated right ventricular failure), 양심실 기능부전(biventricular dysfunction), 혼합형 심인성 쇼크(mixed cardiogenic shock) 표현형을 포함하며 이들은 &#39;불량한 예후와 연관되고 서로 다른 치료 전략을 요한다&#39;(내러티브 리뷰로 표본 수·연령·기간 미보고).</span></div><div class="row"><span class="k">I</span><span>상호 보완적 정보를 제공하는 고급·다중양식(multimodal) 혈역학 모니터링으로, &#39;치료 유도를 위한 폐동맥 카테터(pulmonary artery catheter)의 조기 사용&#39;과 고급 심초음파(echocardiography)를 포함하며, 개별 변수로 LVOT VTI(left ventricular outflow tract velocity time integral), PAPi(pulmonary artery pulsatility index), CPO(cardiac power output) 등이 있다.</span></div><div class="row"><span class="k">C</span><span>없음 — 내러티브 리뷰로 비교군이나 대조 조건이 정의되지 않음.</span></div><div class="row"><span class="k">O</span><span>예후 가치 및 표현형 기반 위험 분류: 본 리뷰는 LVOT VTI, PAPi, cardiac power output이 &#39;예후적으로 유의하다&#39;고 서술하나, 초록에는 효과 크기·컷오프 값·신뢰구간·p-value가 보고되지 않음.</span></div></div>
+    <div class="seclbl">📈 핵심 결과</div><ul class="kf"><li>심인성 쇼크는 이질적 질환으로, 다중양식 혈역학 모니터링을 통해 고립성 우심실 부전·양심실 기능부전·혼합형 심인성 쇼크라는 뚜렷한 표현형을 구분할 수 있으며, 각각 불량한 예후와 연관되고 서로 다른 치료 전략을 요한다.</li><li>개별 혈역학 변수인 LVOT VTI(velocity time integral), PAPi(pulmonary artery pulsatility index), CPO(cardiac power output)가 예후적으로 유의한 것으로 기술됨(초록에 수치적 효과 크기는 미보고).</li><li>최근 연구들은 치료 유도를 위한 폐동맥 카테터(PAC)의 조기 사용을 뒷받침하며, PAC와 고급 심초음파의 병용이 치료 개별화에 도움이 된다.</li></ul>
+    
+    
+    <div class="subh">제한점</div><p class="txt">본 논문은 원저나 체계적 문헌고찰이 아닌 내러티브 리뷰(&#39;Purpose of review&#39; 형식)로, 표본 수·효과 크기·신뢰구간·p-value를 보고하지 않으며 공식적인 비뚤림 위험 평가나 GRADE 평가도 제공하지 않는다. 권고(예: PAC 조기 사용)는 저자 자신의 비교 데이터가 아니라 인용된 최근 연구들에 근거하며, 리뷰 스스로도 이들 도구의 시기와 사용을 규정하기 위한 임상시험이 여전히 필요함을 인정하고 있다.</p>
+    <div class="seclbl">✅ 임상 결론</div><p class="txt">심인성 쇼크에서는 모든 쇼크를 동일하게 치료하기보다, 고급 심초음파(LVOT VTI)와 침습적 지표(PAPi, cardiac power output, PAC 데이터)를 결합한 고급 혈역학 모니터링을 층층이 활용해 환자 표현형을 규정하고 예후를 추정하라. 최근 데이터는 치료 유도를 위한 PAC 조기 사용을 지지하나, 본 연구가 내러티브 리뷰인 만큼 확증적 임상시험이 나오기 전까지는 실용적으로 적용해야 한다.</p>
+    <div class="subh">Practice Change</div><ul class="kf"><li>심인성 쇼크에서 단일 혈역학 지표에 의존하지 말고, 고급 심초음파(예: LVOT VTI)와 침습적 데이터(PAPi, cardiac power output)를 결합해 고립성 우심실 부전·양심실·혼합형 표현형을 구분하라 — 이들은 서로 다른 치료 전략을 요하기 때문이다.</li><li>본 리뷰가 최근 연구들이 폐동맥 카테터(PAC)의 조기 사용을 뒷받침한다고 서술하므로 심인성 쇼크에서 치료 유도를 위한 PAC 조기 삽입을 고려하라 — 단, 이는 확증적 임상시험 근거가 아닌 내러티브 리뷰임을 유념한다.</li><li>이들 혈역학 변수를 예후 예측 및 SCAI 방식 위험 계층화에 활용하되, 모니터링 기반 치료 알고리즘을 표준으로 채택하기 전에 진행 중인 임상시험 결과를 기다려라.</li></ul>
+  </div>
+      <div class="col">
+    <span class="arm a2">ARM 2 <small>Opus 자체선정</small></span>
+    <div class="ttl">조기 패혈성 쇼크에서 승압제냐 수액이냐 (ARISE FLUIDS 시험)</div>
+    <div class="ttl-en">Vasopressors or Fluids in Early Septic Shock.</div>
+    <div class="meta">The New England journal of medicine · PMID 42274006 · <a href="https://doi.org/10.1056/NEJMoa2516225">DOI</a></div>
+    <div class="badges"><span class="b ev">근거 High</span><span class="b">초록 + 웹보강</span></div>
+    <div class="seclbl">💡 WHY IT MATTERS</div><p class="txt">응급실에 조기 패혈성 쇼크로 내원한 성인에서, 수액을 제한하고 승압제를 조기에 투여하는 전략이 더 많은 수액과 승압제를 늦게 투여하는 전략에 비해 90일째 생존·퇴원 일수(days alive and out of hospital)를 증가시키는가?</p>
+    <div class="seclbl">🎯 PICO</div><div class="pico"><div class="row"><span class="k">P</span><span>[다국가] 응급실에 패혈성 쇼크로 내원한 성인 환자(프로토콜상 18세 이상; 임상적으로 의심되는 감염과 함께 ≤60분간 ≥1000 mL 수액 투여에도 SBP &lt;90 mm Hg 또는 MAP &lt;65 mm Hg, lactate &gt;2.0 mmol/L). 총 1000명이 무작위 배정(승압제군 499명, 수액군 501명)되었고 intention-to-treat 집단은 963명(481명 대 482명). 시험은 호주, 뉴질랜드, 아일랜드에서 시행됨.</span></div><div class="row"><span class="k">I</span><span>수액을 제한하고 승압제를 조기에 투여하는 전략(승압제군)을 최소 6시간에서 최대 24시간까지 시행. 첫 24시간 동안 정맥 수액 투여량이 median 1108 mL 더 적었고(median difference −1108 mL; 95% CI −1395 to −850), 승압제 사용률이 18.9 percentage points 더 높았음(95% CI 13.3 to 24.5).</span></div><div class="row"><span class="k">C</span><span>더 많은 수액과 승압제를 늦게 투여하는 전략(수액군)을 최소 6시간에서 최대 24시간까지 시행.</span></div><div class="row"><span class="k">O</span><span>일차 결과 — 무작위 배정부터 90일째까지의 생존·퇴원 일수(days alive and out of hospital): 승압제군 median 76일(IQR 55–83) 대 수액군 76일(IQR 55–82)(차이 0.0일; 95% CI −2.7 to 2.7; P = 1.00).</span></div></div>
+    <div class="seclbl">📈 핵심 결과</div><ul class="kf"><li>일차 결과인 90일째 생존·퇴원 일수는 두 군이 동일: 승압제군 median 76일(IQR 55–83) 대 수액군 76일(IQR 55–82)(차이 0.0일; 95% CI −2.7 to 2.7; P=1.00).</li><li>중재는 의도한 군간 분리를 달성함: 승압제군은 24시간 동안 정맥 수액을 median 1108 mL 적게 투여받았고(median difference −1108 mL; 95% CI −1395 to −850), 승압제 사용률이 18.9 percentage points 높았음(95% CI 13.3 to 24.5).</li><li>폐부종은 수액 제한/조기 승압제 전략에서 뚜렷하게 더 적었으며(0.6% 대 5.0%; P&lt;0.001), 그 외 이상반응은 두 군이 비슷했음.</li></ul>
+    <div class="subh">2차 결과</div><ul class="kf"><li>폐부종(pulmonary edema, 이상반응): 승압제군 0.6% 대 수액군 5.0% (P&lt;0.001).</li><li>첫 24시간 정맥 수액 투여량: median difference −1108 mL (95% CI −1395 to −850)로 승압제군에서 더 적음.</li><li>승압제를 투여받은 환자 비율: 승압제군에서 18.9 percentage points 더 높음(95% CI 13.3 to 24.5).</li></ul>
+    <div class="subh">📊 통계 용어</div><div class="gloss"><div class="gi"><b>95% CI</b> — 95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, 0(차이 없음)을 포함하면 통계적으로 유의하지 않음. 예: 일차 결과 차이 0.0일, 95% CI −2.7 to 2.7 → 구간이 0을 포함해 두 전략 간 차이가 없음.</div><div class="gi"><b>P-value</b> — P값: 우연만으로 이런 결과가 나올 확률로, 보통 0.05 미만이면 유의하다고 봄. 예: 일차 결과 P = 1.00 → 두 군이 사실상 완전히 동일, 폐부종 P&lt;0.001 → 차이가 우연일 가능성이 매우 낮음.</div><div class="gi"><b>IQR</b> — 사분위수 범위(interquartile range): 값을 크기순으로 늘어놓았을 때 가운데 50%가 걸치는 구간으로 분포의 퍼짐을 보여줌. 예: 승압제군 median 76일, IQR 55–83 → 환자의 절반이 55~83일 사이에 분포.</div><div class="gi"><b>median difference</b> — 중앙값 차이: 두 군의 median(중앙값)을 뺀 값. 예: 수액량 median difference −1108 mL → 승압제군이 수액군보다 median 1108 mL 적게 투여받음.</div><div class="gi"><b>percentage points</b> — 퍼센트포인트: 두 비율(%)을 단순히 뺀 절대 차이. 예: 승압제 사용률이 18.9 percentage points 높음 → 승압제군의 사용 비율이 수액군보다 절대값으로 18.9% 더 높음.</div></div>
+    <div class="subh">제한점</div><p class="txt">이 시험은 수액량(24시간 median difference 약 1108 mL) 및 승압제 시점에서 중등도 정도의 차이만 비교했으므로 더 극단적인 전략에 대한 정보는 주지 못하며, 두 군 모두 상당량의 수액을 투여받았습니다. 호주·뉴질랜드·아일랜드에서 시행되어 다른 의료 체계로의 일반화가 제한될 수 있고, 37명은 informed consent를 얻지 못해 ITT 집단에서 제외되었습니다. 일차 결과(생존·퇴원 일수)는 중립적이었고, 사망률 차이를 검출할 만한 검정력은 없었으며 초록에 사망률 수치는 보고되지 않았습니다.</p>
+    <div class="seclbl">✅ 임상 결론</div><p class="txt">성인 응급실 패혈성 쇼크에서 수액 제한/조기 승압제 전략과 수액 자유/승압제 지연 전략은 90일째 생존·퇴원 일수가 동일했습니다(median 76 대 76; P=1.00). 즉 임상의는 두 접근 중 어느 쪽도 선택할 여지가 있으며, 조기 승압제는 폐부종을 줄이는(0.6% 대 5.0%) 안전한 선택지로 수액을 제한하고자 할 때 사용할 수 있습니다.</p>
+    <div class="subh">Practice Change</div><ul class="kf"><li>환자 중심 결과(생존·퇴원 일수) 개선을 기대하며 수액 제한/조기 승압제 번들을 도입하지 말 것: 응급실 패혈성 쇼크에서 90일째 생존·퇴원 일수에 차이가 없었으므로(차이 0.0일; 95% CI −2.7 to 2.7; P=1.00), 24시간 동안 약 1~2 L 수액 범위 내에서는 두 전략 모두 합리적임.</li><li>수액 내성(fluid tolerance)이 우려되는 상황에서는 조기·말초(peripheral) 승압제가 수액을 줄이는 안전한 방법이 될 수 있음. 승압제 전략은 이상반응 증가 없이 폐부종을 뚜렷이 줄였음(0.6% 대 5.0%; P&lt;0.001).</li><li>단일 고정 프로토콜을 강제하기보다, 초기 수액 투여 이후에는 관류(perfusion)·fluid tolerance·모니터링/자원 여건에 맞춰 조기 소생술을 개별화할 것.</li></ul>
+  </div>
+      <div class="emptyslot">Arm 3 (ChatGPT)<br>2주 뒤 PeterJ 리스트 병합</div>
+    </div>
+  </section>
 <section class="day">
     <div class="dayhead"><span class="date">2026-07-12</span></div>
     <div class="cols">
@@ -34,26 +75,30 @@
     <div class="ttl">패혈성 쇼크 및 기타 혈관확장성 병태에서 미세혈관 부전의 필연성에 관하여</div>
     <div class="ttl-en">On the inevitability of microvascular failure in septic shock and other vasodilatory conditions.</div>
     <div class="meta">Critical care (London, England) · PMID 42343425 · <a href="https://doi.org/10.1186/s13054-026-06156-w">DOI</a></div>
-    <div class="badges"><span class="b ev">근거 Very Low</span></div>
-    <div class="pico">
-      <div class="row"><span class="k">P</span><span>[Country NR] A simulated (in silico) microcirculatory network of one million parallel arterioles in Python (JupyterLab v4.3.4), with vessel radii drawn from a truncated normal distribution (physiological bounds 0–100 microns), mean radius varied 20–30 microns and standard deviation 1.5–3 microns; not human or animal subjects but a computational model of the human microcirculation (true parallel arteriole number probably closer to 100 million, scaled down by a factor of 100 for computation).</span></div>
-      <div class="row"><span class="k">I</span><span>A conceptual and computational model in which each vessel&#39;s flow demand (Q) is set by an &#39;apparent shear target&#39; derived from the laminar shear equation (dynamic viscosity 0.003 Pa·s; apparent shear target 10–20 Pa), with total required cardiac output computed as the sum of individual vessel demands; simulated global vasodilation via rising mean vessel radius (20→30 microns).</span></div>
-      <div class="row"><span class="k">O</span><span>Minimum cardiac output required to maintain the global shear target rose almost linearly with mean vessel radius (total flow demand proportional to the sum of vessel radii cubed): at shear target 20 Pa and SD 1.5 microns, from ~5 L/min at mean radius 25 microns to ~8.5 L/min at 30 microns. No comparative statistics (no OR/HR/CI/p-values) were reported — this is a deterministic simulation.</span></div>
-    </div>
-    <ul class="kf"><li>100만 혈관 시뮬레이션에서, 고정된 shear target을 유지하는 데 필요한 총 심박출량은 혈관 반지름 세제곱의 합에 비례해 증가하므로, 경미한 전신 혈관확장만으로도 필요 유량이 급격히 늘어남 — shear 20 Pa/SD 1.5 microns에서 평균 반지름 25 microns일 때 약 5 L/min, 30 microns일 때 약 8.5 L/min.</li><li>심박출량이 수요를 못 따라가면 저-shear 혈관이 기능적으로 derecruit됨: 고정 5000 mL/min에서 평균 반지름을 25→30 microns로 늘리자 약 50% 혈관 탈락과 함께 네트워크 저항이 기준의 33%로 떨어졌고, 이는 severe sepsis의 functional capillary density 감소 및 hyperdynamic·저저항 순환을 재현함.</li></ul>
+    <div class="badges"><span class="b ev">근거 Very Low</span><span class="b">본문(PMC)</span></div>
+    <div class="seclbl">💡 WHY IT MATTERS</div><p class="txt">패혈성 쇼크 및 기타 혈관확장성 상태에서, 대순환의 혈압과 심박출량(cardiac output)이 회복되었음에도 불구하고 왜 이질적인 미세순환 기능장애(haemodynamic incoherence)가 지속되는가, 그리고 이를 혈관확장·유량 제한·shear 조절의 상호작용에서 비롯되는 필연적 결과로 설명하는 기전 모델을 세울 수 있는가?</p>
+    <div class="seclbl">🎯 PICO</div><div class="pico"><div class="row"><span class="k">P</span><span>[국가 미기재] Python(JupyterLab v4.3.4)으로 시뮬레이션한 100만 개 평행 세동맥(arteriole)의 미세순환 네트워크(in silico). 혈관 반지름은 절단 정규분포(생리학적 경계 0–100 microns)에서 추출했고, 평균 반지름 20–30 microns, 표준편차 1.5–3 microns로 변화시킴. 실제 사람/동물 대상이 아니라 인체 미세순환의 전산 모델이며, 실제 평행 세동맥 수는 약 1억 개에 가깝지만 계산 편의를 위해 100분의 1로 축소함.</span></div><div class="row"><span class="k">I</span><span>각 혈관의 유량 요구(Q)를 층류 shear 방정식에서 유도한 &#39;apparent shear target&#39;로 설정한 개념적·전산 모델(dynamic viscosity 0.003 Pa·s, apparent shear target 10–20 Pa). 필요한 총 심박출량은 개별 혈관 요구량의 합으로 계산했고, 평균 혈관 반지름을 20→30 microns로 늘려 전신 혈관확장을 모사함.</span></div><div class="row"><span class="k">C</span><span>평균 혈관 반지름 20 microns인 기준 네트워크(혈관 탈락 없음)를 기준으로, 더 큰 평균 반지름에서의 상대적 네트워크 저항 및 기능적 derecruitment를 비교했고, shear target 10 Pa 대 20 Pa도 비교함.</span></div><div class="row"><span class="k">O</span><span>전체 shear target을 유지하는 데 필요한 최소 심박출량은 평균 혈관 반지름에 따라 거의 선형으로 증가함(총 유량 요구는 혈관 반지름 세제곱의 합에 비례). shear target 20 Pa, SD 1.5 microns에서 평균 반지름 25 microns일 때 약 5 L/min, 30 microns일 때 약 8.5 L/min. 비교 통계(OR/HR/CI/p-value)는 보고되지 않았으며, 결정론적(deterministic) 시뮬레이션임.</span></div></div>
+    <div class="seclbl">📈 핵심 결과</div><ul class="kf"><li>100만 혈관 시뮬레이션에서, 고정된 shear target을 유지하는 데 필요한 총 심박출량은 혈관 반지름 세제곱의 합에 비례해 증가하므로, 경미한 전신 혈관확장만으로도 필요 유량이 급격히 늘어남 — shear 20 Pa/SD 1.5 microns에서 평균 반지름 25 microns일 때 약 5 L/min, 30 microns일 때 약 8.5 L/min.</li><li>심박출량이 수요를 못 따라가면 저-shear 혈관이 기능적으로 derecruit됨: 고정 5000 mL/min에서 평균 반지름을 25→30 microns로 늘리자 약 50% 혈관 탈락과 함께 네트워크 저항이 기준의 33%로 떨어졌고, 이는 severe sepsis의 functional capillary density 감소 및 hyperdynamic·저저항 순환을 재현함.</li><li>apparent shear target을 20에서 10 Pa로 낮추면 심박출량 요구가 절반으로 감소해, supranormal cardiac output 달성이 아니라 혈관확장이나 shear 수요를 줄임으로써 미세혈관 coherence를 원리적으로 회복할 수 있음을 시사함.</li></ul>
+    
+    
+    
+    
+    
   </div>
       <div class="col">
     <span class="arm a2">ARM 2 <small>Opus 자체선정</small></span>
     <div class="ttl">중증 환자의 신속연속기관삽관(RSI)에서 propofol 대 ketamine 비교: 전향적 무작위 대조 시험 (PROMINE)</div>
     <div class="ttl-en">Propofol versus ketamine in rapid sequence intubation in critically ill patients: a prospective, randomized, controlled trial.</div>
     <div class="meta">Intensive care medicine · PMID 41870554 · <a href="https://doi.org/10.1007/s00134-026-08351-3">DOI</a></div>
-    <div class="badges"><span class="b ev">근거 Moderate</span></div>
-    <div class="pico">
-      <div class="row"><span class="k">P</span><span>[Brazil] Adults (≥ 18 years) requiring rapid sequence intubation in two mixed ICUs; 207 patients randomized from October 2021 to October 2023, with 175 included in the modified intention-to-treat analysis (91 ketamine, 84 propofol).</span></div>
-      <div class="row"><span class="k">I</span><span>Ketamine for RSI induction, assigned 1:1 (2 mg/kg bolus per trial protocol/registry).</span></div>
-      <div class="row"><span class="k">O</span><span>Primary outcome: lowest mean arterial pressure (MAP) within the first 10 min after induction (adjusted for age, baseline MAP, and total vasopressor dose within 10 min). Lowest MAP was 66 (55–79) mmHg with ketamine vs 60 (48–72) mmHg with propofol (mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050).</span></div>
-    </div>
-    <ul class="kf"><li>Ketamine은 propofol보다 10분 이내 최저 MAP이 약간 높았으나(66 [55–79] 대 60 [48–72] mmHg; mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050) 경계선상이며 임상적으로 유의미하지 않은 차이였음.</li><li>혈역학적 이점은 유지되지 않았음: 첫 1시간 평균 MAP 차이는 1.67(95% CI −1.98 to 5.31)에 불과했고, 심혈관 허탈은 ketamine 22%(20/91) 대 propofol 33%(28/84)에서 발생.</li></ul>
+    <div class="badges"><span class="b ev">근거 Moderate</span><span class="b">초록 + 웹보강</span></div>
+    <div class="seclbl">💡 WHY IT MATTERS</div><p class="txt">신속연속기관삽관(RSI)이 필요한 중증 성인 환자에서 ketamine이 propofol보다 유도 후 혈역학, 특히 유도 후 10분 이내 최저 평균동맥압(MAP) 측면에서 더 나은 최면 유도제인가?</p>
+    <div class="seclbl">🎯 PICO</div><div class="pico"><div class="row"><span class="k">P</span><span>[브라질] 두 곳의 혼합 ICU에서 신속연속기관삽관(RSI)이 필요한 성인(≥ 18세) 환자; 2021년 10월부터 2023년 10월까지 207명이 무작위 배정되었고 modified intention-to-treat 분석에는 175명(ketamine 91명, propofol 84명)이 포함됨.</span></div><div class="row"><span class="k">I</span><span>RSI 유도를 위한 ketamine, 1:1 배정 (시험 프로토콜/등록정보 기준 2 mg/kg 볼루스).</span></div><div class="row"><span class="k">C</span><span>RSI 유도를 위한 propofol (시험 프로토콜/등록정보 기준 1.5 mg/kg 볼루스).</span></div><div class="row"><span class="k">O</span><span>일차 결과: 유도 후 10분 이내 최저 평균동맥압(MAP) (나이, 기저 MAP, 10분 이내 총 승압제 용량으로 보정). 최저 MAP은 ketamine 66 (55–79) mmHg 대 propofol 60 (48–72) mmHg (mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050).</span></div></div>
+    <div class="seclbl">📈 핵심 결과</div><ul class="kf"><li>Ketamine은 propofol보다 10분 이내 최저 MAP이 약간 높았으나(66 [55–79] 대 60 [48–72] mmHg; mean difference 6.0 [95% CI −0.0 to 11.9]; p = 0.050) 경계선상이며 임상적으로 유의미하지 않은 차이였음.</li><li>혈역학적 이점은 유지되지 않았음: 첫 1시간 평균 MAP 차이는 1.67(95% CI −1.98 to 5.31)에 불과했고, 심혈관 허탈은 ketamine 22%(20/91) 대 propofol 33%(28/84)에서 발생.</li><li>사망률의 유의한 차이는 없었음: 7일 사망률 33% 대 23.8%(OR 1.38; 95% CI 0.86–2.24), 병원 내 사망률 60.4% 대 50.0%(OR 1.21; 95% CI 0.92–1.58).</li></ul>
+    <div class="subh">2차 결과</div><ul class="kf"><li>첫 1시간 동안 평균 MAP 차이: 1.67 (95% CI −1.98 to 5.31).</li><li>심혈관 허탈(cardiovascular collapse, 주로 2분 이내 승압제 용량 증가에 기인): ketamine 20/91 (22%) 대 propofol 28/84 (33%).</li><li>7일 사망률 33% (ketamine) 대 23.8% (propofol) (OR 1.38; 95% CI 0.86–2.24); 병원 내 사망률 60.4% 대 50.0% (OR 1.21; 95% CI 0.92–1.58).</li></ul>
+    <div class="subh">📊 통계 용어</div><div class="gloss"><div class="gi"><b>mean difference</b> — 두 군의 평균값 차이로, 0이면 차이 없음을 의미. 예: 최저 MAP mean difference 6.0 mmHg → ketamine군의 최저 MAP이 propofol군보다 평균 6 mmHg 높았음.</div><div class="gi"><b>95% CI</b> — 95% 신뢰구간으로, 참값이 있을 것으로 추정되는 범위이며 차이 지표(mean difference)에서 0을, 비율 지표(OR)에서 1을 포함하면 통계적으로 유의하지 않음. 예: mean difference 6.0의 95% CI −0.0 to 11.9 → 0을 걸쳐 유의성 경계.</div><div class="gi"><b>p-value</b> — 관찰된 차이가 우연일 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 봄. 예: p = 0.050 → 유의성 경계선상이라 명확한 유의 차이로 보기 어려움.</div><div class="gi"><b>OR</b> — 오즈비(odds ratio)로, 1보다 크면 해당 군에서 사건 발생 오즈가 높음을 의미하고 95% CI가 1을 포함하면 유의하지 않음. 예: 7일 사망률 OR 1.38 (95% CI 0.86–2.24) → ketamine군 사망 오즈가 수치상 높았으나 통계적으로 유의하지 않음.</div></div>
+    <div class="subh">제한점</div><p class="txt">Open-label 설계(임상의 비맹검)로 인해 수행 편향(performance bias)의 위험이 있으며, 특히 일차 보정 공변량이자 심혈관 허탈 결과를 정의하는 승압제 적정에서 그러함. 이 시험은 단일 국가(브라질)의 두 ICU에서만 수행되어 일반화 가능성이 제한되고, 규모가 크지 않으며(207명 무작위 배정, mITT 175명) 사망률에 대한 검정력이 없음(95% CI가 1을 넓게 포함). 일차 결과는 경계선상이었고(p = 0.050) 32명의 무작위 배정 환자가 mITT 분석에서 제외됨. 기저 군 간 비교 가능성은 초록/등록정보로는 확인 불가.</p>
+    <div class="seclbl">✅ 임상 결론</div><p class="txt">RSI를 받는 중증 성인을 대상으로 한 이 open-label RCT에서 ketamine은 propofol에 비해 유도 후 MAP에서 작고 경계선상이며 일시적인 이점만 보였고, 지속적인 혈역학적 또는 사망률 이득은 없었음. 약제 선택을 ketamine의 저혈압 위험이 낮다는 가정에만 근거해서는 안 되며, 두 약제 모두 상당한 삽관 전후 심혈관 허탈을 일으켰으므로 특정 최면제보다 삽관 전 혈역학 최적화가 더 중요함.</p>
+    <div class="subh">Practice Change</div><ul class="kf"><li>중증 환자의 RSI에서 혈역학적 안전성만을 근거로 propofol 대신 ketamine을 선택하지 말 것: 최저 MAP 이점은 작고(~6 mmHg) 경계선상(p = 0.050)이었으며 첫 1시간 동안 유지되지 않았음(mean difference 1.67 mmHg).</li><li>선택한 유도제와 무관하게 중증 환자에서 삽관 전후 저혈압을 예상하고 선제 대응할 것—심혈관 허탈이 ketamine 22%, propofol 33%에서 발생—유도 전에 수액/승압제를 준비해 둘 것.</li><li>이 시험을 어느 한 약제의 사망률 신호로 해석하지 말 것: 7일 및 병원 내 사망률 차이(OR 1.38, 1.21)는 95% CI가 1을 넓게 포함하고 시험이 사망률에 대한 검정력을 갖추지 않았으므로, 결과 기반의 약제 선택 변경은 더 큰 시험 결과를 기다릴 것.</li></ul>
   </div>
       <div class="emptyslot">Arm 3 (ChatGPT)<br>2주 뒤 PeterJ 리스트 병합</div>
     </div>

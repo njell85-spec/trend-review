@@ -206,6 +206,264 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-13",
+      "arm1": {
+        "pmid": "42284522",
+        "title_ko": "심인성 쇼크에서의 고급 혈역학 모니터링",
+        "clinicalQuestion": "In patients with cardiogenic shock, which advanced haemodynamic monitoring methods provide clinically useful information, carry prognostic value, and can be used for phenotypic risk classification and to guide individualized management?",
+        "clinicalQuestion_ko": "심인성 쇼크(cardiogenic shock) 환자에서 어떤 고급 혈역학 모니터링 방법이 임상적으로 유용한 정보를 제공하고, 예후 가치를 지니며, 표현형 기반 위험 분류와 개별화된 치료 유도에 활용될 수 있는가?",
+        "pico": {
+          "population": "[Country NR] Patients with cardiogenic shock, including phenotypes of isolated right ventricular failure, biventricular dysfunction, and mixed cardiogenic shock, which are 'associated with poor outcomes and require different management strategies' (narrative review; no sample size, age, or date range reported).",
+          "intervention": "Advanced, multimodal haemodynamic monitoring providing complementary information, including 'early use of pulmonary artery catheters to guide management' and advanced echocardiography, with individual variables such as the velocity time integral at the left ventricular outflow tract (LVOT VTI), pulmonary artery pulsatility index (PAPi), and cardiac power output (CPO).",
+          "comparison": "None — narrative review; no comparator group or control condition is defined.",
+          "outcome": "Prognostic value and phenotypic risk classification: the review states that LVOT VTI, PAPi, and cardiac power output are 'prognostically significant,' but no effect sizes, cutoff values, confidence intervals, or p-values are reported in the abstract."
+        },
+        "pico_ko": {
+          "population": "[국가 미기재] 심인성 쇼크(cardiogenic shock) 환자로, 고립성 우심실 부전(isolated right ventricular failure), 양심실 기능부전(biventricular dysfunction), 혼합형 심인성 쇼크(mixed cardiogenic shock) 표현형을 포함하며 이들은 '불량한 예후와 연관되고 서로 다른 치료 전략을 요한다'(내러티브 리뷰로 표본 수·연령·기간 미보고).",
+          "intervention": "상호 보완적 정보를 제공하는 고급·다중양식(multimodal) 혈역학 모니터링으로, '치료 유도를 위한 폐동맥 카테터(pulmonary artery catheter)의 조기 사용'과 고급 심초음파(echocardiography)를 포함하며, 개별 변수로 LVOT VTI(left ventricular outflow tract velocity time integral), PAPi(pulmonary artery pulsatility index), CPO(cardiac power output) 등이 있다.",
+          "comparison": "없음 — 내러티브 리뷰로 비교군이나 대조 조건이 정의되지 않음.",
+          "outcome": "예후 가치 및 표현형 기반 위험 분류: 본 리뷰는 LVOT VTI, PAPi, cardiac power output이 '예후적으로 유의하다'고 서술하나, 초록에는 효과 크기·컷오프 값·신뢰구간·p-value가 보고되지 않음."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [],
+        "secondaryOutcomes_ko": [],
+        "statGlossary": [],
+        "practiceChange": [
+          "Do not rely on a single hemodynamic parameter in cardiogenic shock; combine advanced echocardiography (e.g., LVOT VTI) with invasive data (PAPi, cardiac power output) to distinguish isolated RV failure, biventricular, and mixed phenotypes, because these require different management strategies.",
+          "Consider early pulmonary artery catheterization to guide management in cardiogenic shock, as this review states recent studies support its early use — while recognizing this is a narrative review, not confirmatory trial evidence.",
+          "Use these hemodynamic variables for prognostication and SCAI-style risk stratification, but await ongoing trials before adopting fixed monitoring-driven treatment algorithms as standard of care."
+        ],
+        "practiceChange_ko": [
+          "심인성 쇼크에서 단일 혈역학 지표에 의존하지 말고, 고급 심초음파(예: LVOT VTI)와 침습적 데이터(PAPi, cardiac power output)를 결합해 고립성 우심실 부전·양심실·혼합형 표현형을 구분하라 — 이들은 서로 다른 치료 전략을 요하기 때문이다.",
+          "본 리뷰가 최근 연구들이 폐동맥 카테터(PAC)의 조기 사용을 뒷받침한다고 서술하므로 심인성 쇼크에서 치료 유도를 위한 PAC 조기 삽입을 고려하라 — 단, 이는 확증적 임상시험 근거가 아닌 내러티브 리뷰임을 유념한다.",
+          "이들 혈역학 변수를 예후 예측 및 SCAI 방식 위험 계층화에 활용하되, 모니터링 기반 치료 알고리즘을 표준으로 채택하기 전에 진행 중인 임상시험 결과를 기다려라."
+        ],
+        "keyFindings": [
+          "Cardiogenic shock is heterogeneous: multimodal haemodynamic monitoring enables identification of distinct phenotypes — isolated right ventricular failure, biventricular dysfunction, and mixed cardiogenic shock — each associated with poor outcomes and requiring different management strategies.",
+          "Individual haemodynamic variables — LVOT velocity time integral (VTI), pulmonary artery pulsatility index (PAPi), and cardiac power output (CPO) — are described as prognostically significant (no numeric effect sizes reported in the abstract).",
+          "Recent studies support the early use of pulmonary artery catheters to guide management, and combined pulmonary artery catheterization plus advanced echocardiography helps tailor treatment."
+        ],
+        "keyFindings_ko": [
+          "심인성 쇼크는 이질적 질환으로, 다중양식 혈역학 모니터링을 통해 고립성 우심실 부전·양심실 기능부전·혼합형 심인성 쇼크라는 뚜렷한 표현형을 구분할 수 있으며, 각각 불량한 예후와 연관되고 서로 다른 치료 전략을 요한다.",
+          "개별 혈역학 변수인 LVOT VTI(velocity time integral), PAPi(pulmonary artery pulsatility index), CPO(cardiac power output)가 예후적으로 유의한 것으로 기술됨(초록에 수치적 효과 크기는 미보고).",
+          "최근 연구들은 치료 유도를 위한 폐동맥 카테터(PAC)의 조기 사용을 뒷받침하며, PAC와 고급 심초음파의 병용이 치료 개별화에 도움이 된다."
+        ],
+        "clinicalTakeaway": "In cardiogenic shock, layer advanced haemodynamic monitoring — advanced echocardiography (LVOT VTI) plus invasive metrics (PAPi, cardiac power output, PAC data) — to phenotype the patient and estimate prognosis rather than treating all shock alike. Recent data favor early PAC use to guide therapy, but because this is a narrative review the recommendation should be applied pragmatically while confirmatory trials are pending.",
+        "clinicalTakeaway_ko": "심인성 쇼크에서는 모든 쇼크를 동일하게 치료하기보다, 고급 심초음파(LVOT VTI)와 침습적 지표(PAPi, cardiac power output, PAC 데이터)를 결합한 고급 혈역학 모니터링을 층층이 활용해 환자 표현형을 규정하고 예후를 추정하라. 최근 데이터는 치료 유도를 위한 PAC 조기 사용을 지지하나, 본 연구가 내러티브 리뷰인 만큼 확증적 임상시험이 나오기 전까지는 실용적으로 적용해야 한다.",
+        "limitations": "This is a narrative review ('Purpose of review' format), not a systematic review or original study; it reports no sample sizes, effect sizes, confidence intervals, or p-values, and provides no formal risk-of-bias or GRADE assessment. Recommendations (e.g., early PAC use) are based on cited recent studies rather than the authors' own comparative data, and the review itself acknowledges that ongoing trials are still needed to define the timing and use of these tools.",
+        "limitations_ko": "본 논문은 원저나 체계적 문헌고찰이 아닌 내러티브 리뷰('Purpose of review' 형식)로, 표본 수·효과 크기·신뢰구간·p-value를 보고하지 않으며 공식적인 비뚤림 위험 평가나 GRADE 평가도 제공하지 않는다. 권고(예: PAC 조기 사용)는 저자 자신의 비교 데이터가 아니라 인용된 최근 연구들에 근거하며, 리뷰 스스로도 이들 도구의 시기와 사용을 규정하기 위한 임상시험이 여전히 필요함을 인정하고 있다.",
+        "evidenceLevel": "Very Low",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed record (PMID 42284522)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42284522/"
+          },
+          {
+            "label": "Current Opinion in Critical Care — official article page (LWW; paywalled, HTTP 402)",
+            "url": "https://journals.lww.com/co-criticalcare/abstract/9900/advanced_haemodynamic_monitoring_in_cardiogenic.366.aspx"
+          }
+        ],
+        "paper": {
+          "pmid": "42284522",
+          "title": "Advanced haemodynamic monitoring in cardiogenic shock.",
+          "abstract": "PURPOSE OF REVIEW: To describe haemodynamic monitoring methods that may be used in cardiogenic shock including the information they provide, their prognostic value, how they may be used for risk classification and guiding management.\nRECENT FINDINGS: Haemodynamic monitoring in cardiogenic shock encompasses multimodal techniques that provide complementary information to enable identification of different cardiogenic shock phenotypes. Isolated right ventricular failure, biventricular dysfunction, and mixed cardiogenic shock are associated with poor outcomes and require different management strategies. Individual haemodynamic variables such as the velocity time integral at the left ventricular outflow tract, pulmonary artery pulsatility index, and cardiac power output are prognostically significant. Recent studies support the early use of pulmonary artery catheters to guide management.\nSUMMARY: Cardiogenic shock remains a highly lethal condition. Haemodynamic monitoring enables phenotypic profiling and confers prognostic information. Combined strategies including pulmonary artery catheterization and advanced echocardiography help tailor management strategies. Ongoing trials will inform the timing and use of advanced haemodynamic monitoring tools to deliver individualized care.",
+          "authors": [
+            "Chew MS",
+            "Yeoh JC",
+            "Jozwiak M"
+          ],
+          "journal": "Current opinion in critical care",
+          "pubDate": "2026-Aug-01",
+          "publicationTypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Shock, Cardiogenic",
+            "Hemodynamic Monitoring",
+            "Hemodynamics",
+            "Prognosis",
+            "Echocardiography",
+            "Catheterization, Swan-Ganz",
+            "Critical Care",
+            "Monitoring, Physiologic",
+            "Cardiac Catheterization"
+          ],
+          "keywords": [
+            "cardiac catheterization",
+            "cardiogenic shock",
+            "critical care",
+            "echocardiography",
+            "hemodynamic monitorin"
+          ],
+          "doi": "10.1097/MCC.0000000000001404",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42284522/",
+          "collectedAt": "2026-07-12T23:50:57.171Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42284522",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42284522/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/MCC.0000000000001404",
+            "url": "https://doi.org/10.1097/MCC.0000000000001404"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 42284522)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42284522/"
+          },
+          {
+            "label": "웹 — Current Opinion in Critical Care — official article page (LWW; paywalled, HTTP 402)",
+            "url": "https://journals.lww.com/co-criticalcare/abstract/9900/advanced_haemodynamic_monitoring_in_cardiogenic.366.aspx"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "",
+        "title_ko": "조기 패혈성 쇼크에서 승압제냐 수액이냐 (ARISE FLUIDS 시험)",
+        "clinicalQuestion": "In adults presenting to the emergency department with early septic shock, does an approach of restricted fluid volume with early vasopressors, compared with greater fluid volume and later vasopressors, increase the number of days alive and out of the hospital at day 90?",
+        "clinicalQuestion_ko": "응급실에 조기 패혈성 쇼크로 내원한 성인에서, 수액을 제한하고 승압제를 조기에 투여하는 전략이 더 많은 수액과 승압제를 늦게 투여하는 전략에 비해 90일째 생존·퇴원 일수(days alive and out of hospital)를 증가시키는가?",
+        "pico": {
+          "population": "[International] Adult patients (18 years or older, per protocol) who presented to the emergency department with septic shock (clinically suspected infection with SBP <90 mm Hg or MAP <65 mm Hg despite ≥1000 mL IV fluid over ≤60 minutes and lactate >2.0 mmol/L); 1000 patients underwent randomization (499 vasopressor group, 501 fluids group), with 963 in the intention-to-treat population (481 vs 482). Trial conducted in Australia, New Zealand, and Ireland.",
+          "intervention": "Fluids at restricted volumes and early vasopressor therapy (vasopressor group) for at least 6 hours and up to 24 hours; in the first 24 hours patients received a median of 1108 mL less IV fluid (median difference −1108 mL; 95% CI −1395 to −850) and vasopressor use was higher by 18.9 percentage points (95% CI 13.3 to 24.5).",
+          "comparison": "Higher volumes of fluids and later vasopressor therapy (fluids group) for at least 6 hours and up to 24 hours.",
+          "outcome": "Primary outcome — days alive and out of the hospital from randomization to day 90: median 76 days (IQR 55 to 83) in the vasopressor group vs 76 days (IQR 55 to 82) in the fluids group (difference, 0.0 days; 95% CI −2.7 to 2.7; P = 1.00)."
+        },
+        "pico_ko": {
+          "population": "[다국가] 응급실에 패혈성 쇼크로 내원한 성인 환자(프로토콜상 18세 이상; 임상적으로 의심되는 감염과 함께 ≤60분간 ≥1000 mL 수액 투여에도 SBP <90 mm Hg 또는 MAP <65 mm Hg, lactate >2.0 mmol/L). 총 1000명이 무작위 배정(승압제군 499명, 수액군 501명)되었고 intention-to-treat 집단은 963명(481명 대 482명). 시험은 호주, 뉴질랜드, 아일랜드에서 시행됨.",
+          "intervention": "수액을 제한하고 승압제를 조기에 투여하는 전략(승압제군)을 최소 6시간에서 최대 24시간까지 시행. 첫 24시간 동안 정맥 수액 투여량이 median 1108 mL 더 적었고(median difference −1108 mL; 95% CI −1395 to −850), 승압제 사용률이 18.9 percentage points 더 높았음(95% CI 13.3 to 24.5).",
+          "comparison": "더 많은 수액과 승압제를 늦게 투여하는 전략(수액군)을 최소 6시간에서 최대 24시간까지 시행.",
+          "outcome": "일차 결과 — 무작위 배정부터 90일째까지의 생존·퇴원 일수(days alive and out of hospital): 승압제군 median 76일(IQR 55–83) 대 수액군 76일(IQR 55–82)(차이 0.0일; 95% CI −2.7 to 2.7; P = 1.00)."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Pulmonary edema (adverse event): 0.6% in the vasopressor group vs 5.0% in the fluids group (P<0.001).",
+          "IV fluid volume in the first 24 hours: median difference −1108 mL (95% CI −1395 to −850), less in the vasopressor group.",
+          "Proportion of patients who received vasopressors: higher by 18.9 percentage points (95% CI 13.3 to 24.5) in the vasopressor group."
+        ],
+        "secondaryOutcomes_ko": [
+          "폐부종(pulmonary edema, 이상반응): 승압제군 0.6% 대 수액군 5.0% (P<0.001).",
+          "첫 24시간 정맥 수액 투여량: median difference −1108 mL (95% CI −1395 to −850)로 승압제군에서 더 적음.",
+          "승압제를 투여받은 환자 비율: 승압제군에서 18.9 percentage points 더 높음(95% CI 13.3 to 24.5)."
+        ],
+        "statGlossary": [
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, 0(차이 없음)을 포함하면 통계적으로 유의하지 않음. 예: 일차 결과 차이 0.0일, 95% CI −2.7 to 2.7 → 구간이 0을 포함해 두 전략 간 차이가 없음."
+          },
+          {
+            "term": "P-value",
+            "explanation_ko": "P값: 우연만으로 이런 결과가 나올 확률로, 보통 0.05 미만이면 유의하다고 봄. 예: 일차 결과 P = 1.00 → 두 군이 사실상 완전히 동일, 폐부종 P<0.001 → 차이가 우연일 가능성이 매우 낮음."
+          },
+          {
+            "term": "IQR",
+            "explanation_ko": "사분위수 범위(interquartile range): 값을 크기순으로 늘어놓았을 때 가운데 50%가 걸치는 구간으로 분포의 퍼짐을 보여줌. 예: 승압제군 median 76일, IQR 55–83 → 환자의 절반이 55~83일 사이에 분포."
+          },
+          {
+            "term": "median difference",
+            "explanation_ko": "중앙값 차이: 두 군의 median(중앙값)을 뺀 값. 예: 수액량 median difference −1108 mL → 승압제군이 수액군보다 median 1108 mL 적게 투여받음."
+          },
+          {
+            "term": "percentage points",
+            "explanation_ko": "퍼센트포인트: 두 비율(%)을 단순히 뺀 절대 차이. 예: 승압제 사용률이 18.9 percentage points 높음 → 승압제군의 사용 비율이 수액군보다 절대값으로 18.9% 더 높음."
+          }
+        ],
+        "practiceChange": [
+          "Do not adopt a restricted-fluid/early-vasopressor bundle expecting a patient-centered outcome benefit: in ED septic shock it produced no difference in days alive and out of hospital at day 90 (difference 0.0 days; 95% CI −2.7 to 2.7; P=1.00), so either strategy is reasonable within this range of ~1–2 L fluid over 24 hours.",
+          "Consider earlier/peripheral vasopressors as a safe way to limit fluid when fluid tolerance is a concern, since the vasopressor strategy markedly reduced pulmonary edema (0.6% vs 5.0%; P<0.001) without excess adverse events.",
+          "Individualize early resuscitation after initial fluid — titrate to perfusion, fluid tolerance, and monitoring/resource capacity — rather than mandating a single fixed fluid-versus-vasopressor protocol."
+        ],
+        "practiceChange_ko": [
+          "환자 중심 결과(생존·퇴원 일수) 개선을 기대하며 수액 제한/조기 승압제 번들을 도입하지 말 것: 응급실 패혈성 쇼크에서 90일째 생존·퇴원 일수에 차이가 없었으므로(차이 0.0일; 95% CI −2.7 to 2.7; P=1.00), 24시간 동안 약 1~2 L 수액 범위 내에서는 두 전략 모두 합리적임.",
+          "수액 내성(fluid tolerance)이 우려되는 상황에서는 조기·말초(peripheral) 승압제가 수액을 줄이는 안전한 방법이 될 수 있음. 승압제 전략은 이상반응 증가 없이 폐부종을 뚜렷이 줄였음(0.6% 대 5.0%; P<0.001).",
+          "단일 고정 프로토콜을 강제하기보다, 초기 수액 투여 이후에는 관류(perfusion)·fluid tolerance·모니터링/자원 여건에 맞춰 조기 소생술을 개별화할 것."
+        ],
+        "keyFindings": [
+          "The primary outcome, days alive and out of the hospital at day 90, was identical between groups: median 76 days (IQR 55–83) vasopressor vs 76 days (IQR 55–82) fluids (difference 0.0 days; 95% CI −2.7 to 2.7; P=1.00).",
+          "The intervention achieved its intended separation: vasopressor group received a median of 1108 mL less IV fluid in 24 hours (median difference −1108 mL; 95% CI −1395 to −850) and had 18.9 percentage points higher vasopressor use (95% CI 13.3 to 24.5).",
+          "Pulmonary edema was substantially less common with the restricted-fluid/early-vasopressor strategy (0.6% vs 5.0%; P<0.001), with adverse events otherwise similar between groups."
+        ],
+        "keyFindings_ko": [
+          "일차 결과인 90일째 생존·퇴원 일수는 두 군이 동일: 승압제군 median 76일(IQR 55–83) 대 수액군 76일(IQR 55–82)(차이 0.0일; 95% CI −2.7 to 2.7; P=1.00).",
+          "중재는 의도한 군간 분리를 달성함: 승압제군은 24시간 동안 정맥 수액을 median 1108 mL 적게 투여받았고(median difference −1108 mL; 95% CI −1395 to −850), 승압제 사용률이 18.9 percentage points 높았음(95% CI 13.3 to 24.5).",
+          "폐부종은 수액 제한/조기 승압제 전략에서 뚜렷하게 더 적었으며(0.6% 대 5.0%; P<0.001), 그 외 이상반응은 두 군이 비슷했음."
+        ],
+        "clinicalTakeaway": "In adult ED septic shock, a restricted-fluid/early-vasopressor strategy and a liberal-fluid/later-vasopressor strategy produced the same days alive and out of hospital at day 90 (median 76 vs 76; P=1.00). This means clinicians have latitude to choose either approach; earlier vasopressors are a safe option that reduces pulmonary edema (0.6% vs 5.0%) and can be used when limiting fluid is desirable.",
+        "clinicalTakeaway_ko": "성인 응급실 패혈성 쇼크에서 수액 제한/조기 승압제 전략과 수액 자유/승압제 지연 전략은 90일째 생존·퇴원 일수가 동일했습니다(median 76 대 76; P=1.00). 즉 임상의는 두 접근 중 어느 쪽도 선택할 여지가 있으며, 조기 승압제는 폐부종을 줄이는(0.6% 대 5.0%) 안전한 선택지로 수액을 제한하고자 할 때 사용할 수 있습니다.",
+        "limitations": "The trial tested a moderate contrast in fluid volume (median difference only ~1108 mL over 24 hours) and vasopressor timing, so it does not inform more extreme strategies; both groups still received substantial fluid. It was conducted in Australia, New Zealand, and Ireland, which may limit generalizability to other health systems, and informed consent was not obtained for 37 patients (excluded from the ITT population). The primary outcome (days alive and out of hospital) was neutral and the trial was not powered to detect differences in mortality, which the abstract does not report.",
+        "limitations_ko": "이 시험은 수액량(24시간 median difference 약 1108 mL) 및 승압제 시점에서 중등도 정도의 차이만 비교했으므로 더 극단적인 전략에 대한 정보는 주지 못하며, 두 군 모두 상당량의 수액을 투여받았습니다. 호주·뉴질랜드·아일랜드에서 시행되어 다른 의료 체계로의 일반화가 제한될 수 있고, 37명은 informed consent를 얻지 못해 ITT 집단에서 제외되었습니다. 일차 결과(생존·퇴원 일수)는 중립적이었고, 사망률 차이를 검출할 만한 검정력은 없었으며 초록에 사망률 수치는 보고되지 않았습니다.",
+        "evidenceLevel": "High",
+        "clinicalApplicabilityScore": 8,
+        "webSources": [
+          {
+            "label": "NEJM — Vasopressors or Fluids in Early Septic Shock (official article page, HTTP 403, abstract-level metadata confirmed via search)",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2516225"
+          },
+          {
+            "label": "PMC — ARISE FLUIDS trial study protocol (PMC12278162): country/sites and inclusion criteria",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12278162/"
+          },
+          {
+            "label": "PMC — ARISE FLUIDS statistical analysis plan (PMC12741368)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12741368/"
+          }
+        ],
+        "paper": {
+          "pmid": "42274006",
+          "title": "Vasopressors or Fluids in Early Septic Shock.",
+          "abstract": "BACKGROUND: The optimal approach to early resuscitation in septic shock is unknown. Equipoise exists between the use of larger volumes of intravenous fluids to restore perfusion and the use of early vasopressor therapy along with smaller volumes of fluids to minimize potential harm from excess fluid.\nMETHODS: We randomly assigned adult patients who presented to the emergency department with septic shock to receive either fluids at restricted volumes and early vasopressor therapy (vasopressor group) or higher volumes of fluids and later vasopressor therapy (fluids group) for at least 6 hours and up to 24 hours. The primary outcome was days alive and out of the hospital from randomization to day 90.\nRESULTS: A total of 1000 patients underwent randomization, with 499 assigned to the vasopressor group and 501 to the fluids group. Informed consent was not obtained for 37 patients, which left 963 patients in the intention-to-treat population (481 in the vasopressor group and 482 in the fluids group). Three patients in the fluids group were lost to follow-up for the primary outcome. In the first 24 hours after randomization, patients in the vasopressor group received less intravenous fluid than those in the fluids group (median difference, -1108 ml; 95% confidence interval [CI], -1395 to -850). The percentage of patients who received vasopressors was higher by 18.9 percentage points (95% CI, 13.3 to 24.5) in the vasopressor group. The median number of days alive and out of the hospital at day 90 was 76 (interquartile range, 55 to 83) in the vasopressor group and 76 (interquartile range, 55 to 82) in the fluids group (difference, 0.0 days; 95% CI, -2.7 to 2.7; P = 1.00). Adverse events occurred in similar percentages of patients in the two groups, except for pulmonary edema (0.6% in the vasopressor group vs. 5.0% in the fluids group; P<0.001).\nCONCLUSIONS: Among adult patients who presented to the emergency department with septic shock, an approach that involved restricted fluid volume and early vasopressors did not result in a greater number of days alive and out of the hospital at day 90 than an approach involving greater fluid volume and later administration of vasopressors. (Funded by the Australian National Health and Medical Council Medical Research Future Fund and the New Zealand Health Research Council; ARISE FLUIDS ClinicalTrials.gov number, NCT04569942.).",
+          "authors": [
+            "Peake SL",
+            "Macdonald SPJ",
+            "Howe BD",
+            "Milford E",
+            "Jones P"
+          ],
+          "journal": "The New England journal of medicine",
+          "pubDate": "2026-Jun-11",
+          "publicationTypes": [
+            "Journal Article"
+          ],
+          "meshTerms": [],
+          "keywords": [],
+          "doi": "10.1056/NEJMoa2516225",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42274006/",
+          "collectedAt": "2026-07-12T23:54:39.277Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42274006",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42274006/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMoa2516225",
+            "url": "https://doi.org/10.1056/NEJMoa2516225"
+          },
+          {
+            "label": "웹 — NEJM — Vasopressors or Fluids in Early Septic Shock (official article page, HTTP 403, abstract-level metadata confirmed via search)",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2516225"
+          },
+          {
+            "label": "웹 — PMC — ARISE FLUIDS trial study protocol (PMC12278162): country/sites and inclusion criteria",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12278162/"
+          },
+          {
+            "label": "웹 — PMC — ARISE FLUIDS statistical analysis plan (PMC12741368)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12741368/"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
