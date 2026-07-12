@@ -5,7 +5,7 @@
     ③ 문서 맨 아래 "버전 기록" 맨 위에 새 줄 추가(옛 줄 삭제 금지)
     ④ 같은 아티팩트 URL로 재배포 ⑤ 커밋·푸시(trend-review main).
   아티팩트는 이 파일의 렌더 뷰. 과거 전체 본문은 git 히스토리가 보존하므로 유실 없음.
-  표기 원칙: 자작=초록/기성품=회색, 병원 비유 유지, 용어 출처 부록 유지.
+  표기 원칙: 자작=초록/다운설치=앰버/클로드기본=회색(3색 구분), 병원 비유 유지, 용어 출처 부록 유지.
 -->
 <title>PeterJ — Claude Code 구조 매뉴얼</title>
 <style>
@@ -19,8 +19,9 @@
     --line: #dde2e0;
     --accent: #0e7f74;
     --accent-soft: #e2f1ef;
-    --mine: #0e7f74;        /* 직접 제작 */
-    --stock: #8a94a6;       /* 기성품 */
+    --mine: #0e7f74;        /* 직접 제작 (초록) */
+    --inst: #b5701a;        /* 다운받아 설치 (앰버) */
+    --stock: #8a94a6;       /* 클로드 기본 제공 (회색) */
     --l-global: #6d5bb8;
     --l-project: #0e7f74;
     --l-session: #2f6fb2;
@@ -36,7 +37,7 @@
       --bg: #141918; --surface: #1c2321; --surface-2: #242c2a;
       --ink: #e7ecea; --ink-2: #a4b0ac; --ink-3: #76827e; --line: #313b38;
       --accent: #35b3a5; --accent-soft: #1e3330;
-      --mine: #4cc2b3; --stock: #8a97ab;
+      --mine: #4cc2b3; --inst: #e0a250; --stock: #8a97ab;
       --l-global: #a292e0; --l-project: #4cc2b3; --l-session: #7aaede; --l-human: #d9a44e;
       --ana-bg: #2a2619; --ana-ink: #cdb066;
     }
@@ -45,7 +46,7 @@
     --bg: #141918; --surface: #1c2321; --surface-2: #242c2a;
     --ink: #e7ecea; --ink-2: #a4b0ac; --ink-3: #76827e; --line: #313b38;
     --accent: #35b3a5; --accent-soft: #1e3330;
-    --mine: #4cc2b3; --stock: #8a97ab;
+    --mine: #4cc2b3; --inst: #e0a250; --stock: #8a97ab;
     --l-global: #a292e0; --l-project: #4cc2b3; --l-session: #7aaede; --l-human: #d9a44e;
     --ana-bg: #2a2619; --ana-ink: #cdb066;
   }
@@ -53,7 +54,7 @@
     --bg: #f6f7f6; --surface: #ffffff; --surface-2: #eef1f0;
     --ink: #1c2422; --ink-2: #55605d; --ink-3: #7d8885; --line: #dde2e0;
     --accent: #0e7f74; --accent-soft: #e2f1ef;
-    --mine: #0e7f74; --stock: #8a94a6;
+    --mine: #0e7f74; --inst: #b5701a; --stock: #8a94a6;
     --l-global: #6d5bb8; --l-project: #0e7f74; --l-session: #2f6fb2; --l-human: #b0761f;
     --ana-bg: #f3efe4; --ana-ink: #7a6329;
   }
@@ -128,6 +129,7 @@
     white-space: nowrap;
   }
   .chip.mine { border-color: color-mix(in srgb, var(--mine) 55%, transparent); color: var(--mine); font-weight: 650; }
+  .chip.inst { border-color: color-mix(in srgb, var(--inst) 55%, transparent); color: var(--inst); font-weight: 600; }
 
   /* 레이어 카드 */
   .layer {
@@ -153,6 +155,8 @@
   }
   .new { color: var(--accent); font-size: 12px; font-weight: 600; white-space: nowrap; }
   .made { color: var(--mine); font-size: 11.5px; font-weight: 700; }
+  .inst-tag { color: var(--inst); font-size: 11.5px; font-weight: 700; }
+  .builtin-tag { color: var(--stock); font-size: 11.5px; font-weight: 700; }
 
   /* 수명주기 */
   .life { display: grid; margin-top: 14px; }
@@ -199,10 +203,10 @@
     <p class="sub">코딩을 몰라도 읽히도록 각 층의 "이게 뭐냐"부터 설명합니다.
     2026-07-11 기준, 실제 설정 파일을 열어 확인한 구성만 수록했습니다.</p>
     <div class="legend">
-      <span><i style="background:var(--mine)"></i><b>초록 테두리·글씨</b> = PeterJ가 직접 제작</span>
-      <span><i style="background:var(--stock)"></i>회색 = 기성품(설치/기본 제공)</span>
+      <span><i style="background:var(--mine)"></i><b style="color:var(--mine)">초록</b> = PeterJ가 직접 제작</span>
+      <span><i style="background:var(--inst)"></i><b style="color:var(--inst)">앰버</b> = 다운받아 설치(마켓플레이스·npm)</span>
+      <span><i style="background:var(--stock)"></i><b style="color:var(--stock)">회색</b> = 클로드 기본 제공(하네스 내장)</span>
       <span><i style="background:var(--ana-ink)"></i>모래색 박스 = 병원 비유</span>
-      <span>"(오늘 추가)" = 2026-07-11 반영</span>
     </div>
   </header>
 
@@ -304,8 +308,8 @@
             <td>세션 시작 자동화 스크립트 (3장 참고)</td></tr>
         <tr><td class="k">stop-hook-git-check <span class="made">직접 제작</span></td>
             <td>작업을 저장(커밋·푸시) 안 하고 끝내려 하면 막는 안전장치</td></tr>
-        <tr><td class="k">superpowers 플러그인</td>
-            <td>일하는 순서를 강제하는 기성 스킬 묶음 (4장에 전체 목록)</td></tr>
+        <tr><td class="k">superpowers 플러그인 <span class="inst-tag">다운설치</span></td>
+            <td>일하는 순서를 강제하는 스킬 묶음 (마켓플레이스에서 설치, 4장에 전체 목록)</td></tr>
         <tr><td class="k">codex-debate 스킬 <span class="made">직접 제작</span></td>
             <td>클코덱스 토론·설계토론 절차서</td></tr>
         <tr><td class="k">agents/*.md <span class="made">직접 제작</span></td>
@@ -324,11 +328,11 @@
         <tr><td class="k">AGENTS.md <span class="made">직접 제작</span></td>
             <td>프로젝트 헌법 — 절대 깨면 안 되는 계약 4조(예: 환자 데이터 비저장),
             코드 지도, 세션 인계 일지(Handoff). 클로드와 codex가 같이 읽습니다.</td></tr>
-        <tr><td class="k">.mcp.json</td>
+        <tr><td class="k">.mcp.json <span class="made">직접 제작</span></td>
             <td>이 repo에서 codex를 도구로 쓸 수 있게 등록 <span class="new">(오늘 추가)</span></td></tr>
         <tr><td class="k">.claude/settings.json <span class="made">직접 제작</span></td>
             <td>검증 명령 사전 허용 + "테스트 통과 전 push 금지" 자동 게이트 <span class="new">(오늘 추가)</span></td></tr>
-        <tr><td class="k">docs/…/specs/</td>
+        <tr><td class="k">docs/…/specs/ <span class="made">직접 제작</span></td>
             <td>설계 문서 — 동작을 바꾸면 문서도 같이 고치는 규칙</td></tr>
       </table>
     </div>
@@ -339,12 +343,12 @@
       <div class="lexp"><b>하네스</b> = AI를 파일·터미널·인터넷에 연결해 주는 작업대 자체.
       기본 도구들이 여기 딸려 옵니다.</div>
       <table>
-        <tr><td class="k">MCP 커넥터 9종</td>
+        <tr><td class="k">MCP 커넥터 9종 <span class="builtin-tag">클로드 기본</span></td>
             <td>외부 서비스 연결 통로 — GitHub, 예약 실행(Routine), 카카오, Gmail, 캘린더,
-            드라이브, Figma, PubMed, codex(②에서 등록)</td></tr>
-        <tr><td class="k">내장 스킬</td>
+            드라이브, Figma, PubMed. (단 codex만 ②에서 <span class="made">직접 등록</span>)</td></tr>
+        <tr><td class="k">내장 스킬 <span class="builtin-tag">클로드 기본</span></td>
             <td>/code-review, /verify 등 바로 쓰는 절차서들 (4장 목록)</td></tr>
-        <tr><td class="k">기타</td>
+        <tr><td class="k">기타 <span class="builtin-tag">클로드 기본</span></td>
             <td>워크플로 · 이 문서 같은 아티팩트 페이지 · 웹검색 · 백그라운드 작업</td></tr>
       </table>
     </div>
@@ -412,7 +416,7 @@
     </div>
     <div class="inv">
       <div class="grp">
-        <div class="gt">플러그인: superpowers <span style="color:var(--stock);font-size:12px">(기성품 · 설치형)</span></div>
+        <div class="gt">플러그인: superpowers <span class="inst-tag">다운설치</span> <span style="color:var(--ink-3);font-size:12px">(마켓플레이스)</span></div>
         <div class="gs">"일하는 순서"를 강제하는 절차서 묶음. 이 책에 든 스킬들 ↓</div>
         <div class="leaflist">
           <span class="chip">brainstorming (착수 전 요구 파악)</span>
@@ -431,15 +435,15 @@
         </div>
       </div>
       <div class="grp">
-        <div class="gt">확장 플러그인 <span class="new">(v4 추가)</span> <span style="color:var(--stock);font-size:12px">(기성품 · 마켓플레이스)</span></div>
+        <div class="gt">확장 플러그인 <span class="new">(v4 추가)</span> <span class="inst-tag">다운설치</span> <span style="color:var(--ink-3);font-size:12px">(마켓플레이스)</span></div>
         <div class="gs">env-bootstrap이 관리. <b>A=항상 켜짐</b> / <b>B=평소 꺼둠, 클로드가 상황 판단해 켜고 끔</b></div>
         <div class="leaflist">
-          <span class="chip">A · typescript-lsp (편집 즉시 타입 진단)</span>
-          <span class="chip">A · superpowers-chrome (브라우저 조작·스크린샷)</span>
-          <span class="chip">B · pumasi (codex 병렬 실행팀)</span>
-          <span class="chip">B · insane-search (리서치 차단 우회)</span>
-          <span class="chip">B · security-guidance (편집 시 보안 검토)</span>
-          <span class="chip">B · double-shot-latte (불필요한 중단 제거)</span>
+          <span class="chip inst">A · typescript-lsp (편집 즉시 타입 진단)</span>
+          <span class="chip inst">A · superpowers-chrome (브라우저 조작·스크린샷)</span>
+          <span class="chip inst">B · pumasi (codex 병렬 실행팀)</span>
+          <span class="chip inst">B · insane-search (리서치 차단 우회)</span>
+          <span class="chip inst">B · security-guidance (편집 시 보안 검토)</span>
+          <span class="chip inst">B · double-shot-latte (불필요한 중단 제거)</span>
         </div>
       </div>
       <div class="grp">
@@ -454,7 +458,7 @@
         </div>
       </div>
       <div class="grp">
-        <div class="gt">내장 스킬 <span style="color:var(--stock);font-size:12px">(기성품 · 하네스 기본 제공)</span></div>
+        <div class="gt">내장 스킬 <span class="builtin-tag">클로드 기본</span> <span style="color:var(--ink-3);font-size:12px">(하네스 기본 제공)</span></div>
         <div class="gs">주요 항목 — "/이름"으로 부릅니다</div>
         <div class="leaflist">
           <span class="chip">/code-review (8관점 리뷰)</span><span class="chip">/verify (실동작 검증)</span>
@@ -465,8 +469,8 @@
         </div>
       </div>
       <div class="grp">
-        <div class="gt">MCP 커넥터 <span style="color:var(--stock);font-size:12px">(연결 통로)</span></div>
-        <div class="gs">클로드가 외부 세계와 주고받는 창구들</div>
+        <div class="gt">MCP 커넥터 <span class="builtin-tag">클로드 기본</span> <span style="color:var(--ink-3);font-size:12px">(codex만 자작 등록)</span></div>
+        <div class="gs">클로드가 외부 세계와 주고받는 창구들 — 대부분 하네스 제공, codex만 직접 등록</div>
         <div class="leaflist">
           <span class="chip">github (코드 저장소·PR·CI)</span>
           <span class="chip">claude-code-remote (예약 실행·repo 추가)</span>
@@ -502,8 +506,12 @@
     <div class="ch">버전 기록</div>
     <h2>이 구조도의 변천 (새 판이 위 · 옛 줄 삭제 금지)</h2>
     <table class="terms">
+      <tr><th>v5 · 2026-07-12</th>
+          <td><b>출처 3색 구분(현재)</b> — 기존 2색(자작 초록 / 나머지 회색)에서, 회색이 섞여 있던
+          "다운받아 설치(기성품)"와 "클로드 기본 제공(하네스 내장)"을 분리. <b>초록=직접 제작 ·
+          앰버=다운설치 · 회색=클로드 기본</b> 3색으로 각 항목 재태깅.</td></tr>
       <tr><th>v4 · 2026-07-12</th>
-          <td><b>확장 플러그인 세팅 반영(현재)</b> — 딥리서치(적대검증 완료) 근거로 A그룹 상시
+          <td><b>확장 플러그인 세팅 반영</b> — 딥리서치(적대검증 완료) 근거로 A그룹 상시
           2종(typescript-lsp·superpowers-chrome) 자동설치 + B그룹 온디맨드 4종(pumasi·
           insane-search·security-guidance·double-shot-latte) 발동 조건표 추가. env-bootstrap을
           전역층에 명시. "MCP보다 자작 스킬 먼저"·분기 1회 미사용 정리 원칙 도입.</td></tr>
