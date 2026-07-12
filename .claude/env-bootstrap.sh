@@ -3,9 +3,10 @@
 # PeterJ 환경 부트스트랩 (env-bootstrap.sh)
 # -----------------------------------------------------------------------------
 # 목적: 환경이 "완전 리셋"되거나 새 환경을 만들어도, 모든 프로젝트에
-#       아래 3가지가 자동으로 다시 깔리게 한다.
+#       아래가 자동으로 다시 깔리게 한다.
 #         1) 새 세션 시작 시 안전 자동 pull
-#         2) superpowers 플러그인 설치·활성 유지
+#         2) superpowers + A그룹 상시 플러그인(typescript-lsp·superpowers-chrome)
+#            설치·활성 유지 + 추가 마켓플레이스 등록(B그룹 온디맨드용)
 #         3) 전역 지침(~/.claude/CLAUDE.md) 적용
 #
 # 사용법: 이 파일 내용을 클라우드 "환경 설정 > 셋업 스크립트"에 붙여넣으면,
@@ -39,6 +40,23 @@ if ! claude plugin list 2>/dev/null | grep -q "$PLUGIN"; then
   claude plugin install "$PLUGIN" --scope user >/dev/null 2>&1 || true
 fi
 claude plugin enable "$PLUGIN" >/dev/null 2>&1 || true
+
+# 2b) 추가 플러그인 — 마켓플레이스 등록 + A그룹(상시) 설치 (PeterJ 승인 2026-07-12).
+#     A그룹(로컬·저비용)은 항상 설치·활성. B그룹(온디맨드)은 마켓플레이스만 등록해
+#     두고 세션 중 클로드가 발동 조건표(전역지침)를 보고 필요할 때 설치·활성한다.
+#     전부 멱등: 이미 있으면 조용히 통과. 네트워크/도구 미가용 환경이면 무해 실패.
+for MP in anthropics/claude-plugins-official anthropics/claude-code fivetaku/gptaku_plugins; do
+  claude plugin marketplace add "$MP" >/dev/null 2>&1 || true
+done
+# A그룹 상시 설치·활성
+for P in typescript-lsp@claude-plugins-official superpowers-chrome@superpowers-marketplace; do
+  claude plugin list 2>/dev/null | grep -q "${P%@*}" || \
+    claude plugin install "$P" --scope user >/dev/null 2>&1 || true
+  claude plugin enable "$P" >/dev/null 2>&1 || true
+done
+# typescript-lsp 백엔드 바이너리 (없을 때만; npm 미도달 환경이면 무해 실패)
+command -v typescript-language-server >/dev/null 2>&1 || \
+  npm install -g typescript-language-server typescript >/dev/null 2>&1 || true
 
 # 3) 전역 지침 적용 — 단일 소스 우선순위.
 #    (a) 현재 프로젝트가 원본(.claude/global-CLAUDE.md)을 갖고 있으면 그것을 복사.
