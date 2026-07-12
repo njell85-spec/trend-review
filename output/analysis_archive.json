@@ -351,6 +351,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-13",
+      "pmid": "42284522",
+      "title": "Advanced haemodynamic monitoring in cardiogenic shock.",
+      "title_ko": "심장성 쇼크에서의 고급 혈역학 모니터링",
+      "journal": "Current opinion in critical care",
+      "doi": "10.1097/MCC.0000000000001404",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "심장성 쇼크(cardiogenic shock) 환자에서 어떤 고급 혈역학 모니터링 방법(예: advanced echocardiography, pulmonary artery catheterization)이 쇼크 표현형을 규명하고 예후 정보를 제공하며 개별화된 치료를 안내하는 데 가장 유용한가?",
+      "pico": {
+        "population": "[Country NR] Patients with cardiogenic shock, including phenotypes of isolated right ventricular failure, biventricular dysfunction, and mixed cardiogenic shock (narrative review; no sample size, age, or date range reported).",
+        "intervention": "Advanced/multimodal haemodynamic monitoring — including pulmonary artery catheterization and advanced echocardiography, and individual variables such as the velocity time integral (VTI) at the left ventricular outflow tract, pulmonary artery pulsatility index (PAPi), and cardiac power output (CPO) — used for phenotypic profiling, prognostication, risk classification, and guiding management.",
+        "comparison": null,
+        "outcome": "No primary outcome with reported statistics; as a narrative review the paper reports qualitatively that multimodal monitoring enables identification of cardiogenic shock phenotypes and that VTI at the LVOT, PAPi, and CPO are 'prognostically significant' (no numeric effect sizes, CIs, or p-values provided)."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 심장성 쇼크(cardiogenic shock) 환자로, isolated right ventricular failure, biventricular dysfunction, mixed cardiogenic shock 표현형을 포함(narrative review로 표본 크기·연령·기간은 보고되지 않음).",
+        "intervention": "고급/다중모드 혈역학 모니터링 — pulmonary artery catheterization 및 advanced echocardiography, 그리고 left ventricular outflow tract에서의 velocity time integral(VTI), pulmonary artery pulsatility index(PAPi), cardiac power output(CPO) 같은 개별 변수를 포함 — 를 표현형 프로파일링, 예후 예측, 위험 분류, 치료 안내에 사용.",
+        "comparison": null,
+        "outcome": "통계치가 보고된 primary outcome은 없음; narrative review로서 다중모드 모니터링이 심장성 쇼크 표현형 식별을 가능하게 하고 VTI at LVOT, PAPi, CPO가 '예후적으로 유의하다(prognostically significant)'고 정성적으로 기술(수치적 effect size·CI·p-value 미제시)."
+      },
+      "keyFindings": [
+        "Haemodynamic monitoring in cardiogenic shock is multimodal, providing complementary information that enables identification of distinct phenotypes — isolated right ventricular failure, biventricular dysfunction, and mixed cardiogenic shock — each associated with poor outcomes and requiring different management strategies.",
+        "Individual haemodynamic variables — velocity time integral (VTI) at the left ventricular outflow tract, pulmonary artery pulsatility index (PAPi), and cardiac power output (CPO) — are described as prognostically significant (no numeric effect sizes reported in the abstract).",
+        "Recent studies support the early use of pulmonary artery catheters to guide management; combined pulmonary artery catheterization plus advanced echocardiography helps tailor therapy, with ongoing trials expected to inform timing and use."
+      ],
+      "keyFindings_ko": [
+        "심장성 쇼크의 혈역학 모니터링은 다중모드(multimodal)로, 상호보완적 정보를 제공해 서로 다른 표현형 — isolated right ventricular failure, biventricular dysfunction, mixed cardiogenic shock — 을 식별하게 하며, 각각 예후가 나쁘고 서로 다른 관리 전략을 요한다.",
+        "개별 혈역학 변수 — left ventricular outflow tract에서의 velocity time integral(VTI), pulmonary artery pulsatility index(PAPi), cardiac power output(CPO) — 이 예후적으로 유의하다고 기술됨(초록에는 수치적 effect size 미보고).",
+        "최신 연구들은 관리 지침을 위한 pulmonary artery catheter의 조기 사용을 지지하며, pulmonary artery catheterization과 advanced echocardiography의 병용이 치료 개별화에 도움이 되고, 진행 중인 임상시험이 시점과 사용법을 밝힐 것으로 기대됨."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42284522",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42284522/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/MCC.0000000000001404",
+          "url": "https://doi.org/10.1097/MCC.0000000000001404"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42284522 (title, authors, journal, DOI, abstract)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42284522/"
+        },
+        {
+          "label": "웹 — Current Opinion in Critical Care — official article page (LWW; paywalled, HTTP 402)",
+          "url": "https://journals.lww.com/co-criticalcare/abstract/9900/advanced_haemodynamic_monitoring_in_cardiogenic.366.aspx"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 42284522 (title, authors, journal, DOI, abstract)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42284522/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Current Opinion in Critical Care — official article page (LWW; paywalled, HTTP 402)",
+          "url": "https://journals.lww.com/co-criticalcare/abstract/9900/advanced_haemodynamic_monitoring_in_cardiogenic.366.aspx",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
