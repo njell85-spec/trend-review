@@ -307,9 +307,12 @@
         <tr><td class="k">superpowers 플러그인</td>
             <td>일하는 순서를 강제하는 기성 스킬 묶음 (4장에 전체 목록)</td></tr>
         <tr><td class="k">codex-debate 스킬 <span class="made">직접 제작</span></td>
-            <td>클코덱스 토론·설계토론 절차서 <span class="new">(오늘 확장)</span></td></tr>
+            <td>클코덱스 토론·설계토론 절차서</td></tr>
         <tr><td class="k">agents/*.md <span class="made">직접 제작</span></td>
             <td>code-reviewer · review-judge 서브에이전트의 역할 정의서</td></tr>
+        <tr><td class="k">env-bootstrap.sh <span class="made">직접 제작</span></td>
+            <td>플러그인 자동설치 대장 — superpowers + A그룹 상시 플러그인 설치, B그룹
+            마켓플레이스 등록 <span class="new">(v4 확장)</span></td></tr>
       </table>
     </div>
 
@@ -428,6 +431,18 @@
         </div>
       </div>
       <div class="grp">
+        <div class="gt">확장 플러그인 <span class="new">(v4 추가)</span> <span style="color:var(--stock);font-size:12px">(기성품 · 마켓플레이스)</span></div>
+        <div class="gs">env-bootstrap이 관리. <b>A=항상 켜짐</b> / <b>B=평소 꺼둠, 클로드가 상황 판단해 켜고 끔</b></div>
+        <div class="leaflist">
+          <span class="chip">A · typescript-lsp (편집 즉시 타입 진단)</span>
+          <span class="chip">A · superpowers-chrome (브라우저 조작·스크린샷)</span>
+          <span class="chip">B · pumasi (codex 병렬 실행팀)</span>
+          <span class="chip">B · insane-search (리서치 차단 우회)</span>
+          <span class="chip">B · security-guidance (편집 시 보안 검토)</span>
+          <span class="chip">B · double-shot-latte (불필요한 중단 제거)</span>
+        </div>
+      </div>
+      <div class="grp">
         <div class="gt">자작 스킬 · 에이전트 <span class="made">전부 직접 제작</span></div>
         <div class="gs">원본은 trend-review 저장소 — 고칠 때는 원본을 수정하면 모든 세션에 배포됨</div>
         <div class="leaflist">
@@ -487,8 +502,13 @@
     <div class="ch">버전 기록</div>
     <h2>이 구조도의 변천 (새 판이 위 · 옛 줄 삭제 금지)</h2>
     <table class="terms">
+      <tr><th>v4 · 2026-07-12</th>
+          <td><b>확장 플러그인 세팅 반영(현재)</b> — 딥리서치(적대검증 완료) 근거로 A그룹 상시
+          2종(typescript-lsp·superpowers-chrome) 자동설치 + B그룹 온디맨드 4종(pumasi·
+          insane-search·security-guidance·double-shot-latte) 발동 조건표 추가. env-bootstrap을
+          전역층에 명시. "MCP보다 자작 스킬 먼저"·분기 1회 미사용 정리 원칙 도입.</td></tr>
       <tr><th>v3 · 2026-07-11</th>
-          <td><b>초심자 매뉴얼 통합판(현재)</b> — v1의 개념 설명·병원 비유 + v2의 실물 인벤토리·자작
+          <td><b>초심자 매뉴얼 통합판</b> — v1의 개념 설명·병원 비유 + v2의 실물 인벤토리·자작
           구분을 합침. 층마다 개념 박스, 스킬/플러그인/MCP 차이 설명, 용어 출처 부록 복원.
           관리 방식을 마스터플랜 관례(단일 정본 + 문서 내 버전 기록 + git 보존)로 확정.</td></tr>
       <tr><th>v2 · 2026-07-11</th>
@@ -504,6 +524,7 @@
   <footer>
     수록 기준: 세션에서 설정 파일·스크립트를 직접 열어 확인한 것만. ·
     정본: trend-review <code>docs/claude-stack-map.html</code> (아티팩트는 렌더 뷰) ·
-    빈 축(추천 후보): 최신 문서 주입(Context7) · UI 자가검증(/preview) · 보안 자동점검(security-guidance)
+    적용 필요(PeterJ 1회): env-bootstrap.sh를 클라우드 환경 셋업란에 재붙여넣기 →
+    이후 A그룹 자동 · B그룹은 클로드가 상황 판단해 토글
   </footer>
 </div>
