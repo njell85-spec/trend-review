@@ -8,12 +8,9 @@
 
 - [x] 검색 5각도 (완료, 워크플로 캐시)
 - [x] 소스 정독·주장 추출 (완료 — 일부 도메인 403 차단으로 접근 가능한 소스만)
-- [x] 주장 25건 중 15건 판정 완료 (11 확정 / 4 반박)
-- [ ] **남은 작업**: 아래 §3 미검증 10건의 3표 적대검증 + 최종 합성
-  (세션 한도 2회 소진으로 중단; 리셋 06:30 UTC)
-- 재개 방법: 같은 세션이면 `resumeFromRunId: wf_9cb395c7-ee6`로 워크플로 재개(캐시 재사용).
-  세션이 바뀌면 이 문서 §3의 주장 목록을 서브에이전트 3표 검증으로 직접 재개
-  (원자료: `data/2026-07-12-cc-ecosystem-research-raw.json`).
+- [x] 전 주장 판정 완료 — **최종: 확정 발견 12(병합) / 반박 6 / 미검증 0** (§7)
+- [x] 최종 합성 완료 (103/103 에이전트, 2026-07-12 3차 재개에서 완결)
+- 원자료: `data/2026-07-12-cc-ecosystem-research-raw.json`(2차분) — §7이 최종본.
 
 ## 1. 검증 통과 주장 (3표 적대검증, 표결 표시)
 
@@ -62,7 +59,7 @@
 **R4.** Enabled plugins inject their content into the system prompt on every single exchange in every session, and are billed regardless of whether the plugin has actually been used recently — an unused plugin still costs tokens continuously.
 
 
-## 3. 미검증 주장 (남은 작업 대상 — 참고용, 신뢰도 낮음 표기)
+## 3. (구) 미검증 주장 — 3차 재개에서 전건 판정 완료, 최종 판정은 §7 참조
 
 **U1.** Idle MCP-server plugins impose a large fixed context cost in Claude Code: five connected-but-unused plugins inject about 55,000 tokens of tool definitions before the user types anything, which the author estimates wastes roughly $40 over a typical 20-message conversation. — https://madewithlove.com/blog/your-claude-code-is-burning-through-tokens-heres-how-to-fix-it/
 
@@ -127,3 +124,33 @@
   episodic-memory · claude-session-driver · superpowers-lab 등.
 - double-shot-latte 소스 검증: Stop 훅 + Claude judge, "사용자 결정 요청 시 정지 허용" 명시.
 - Chromium/Playwright 사전 설치 확인(클라우드 컨테이너).
+
+
+## 7. 최종 완결 요지 (2026-07-12, 103/103 에이전트 · 미검증 0)
+
+**§4 대비 갱신·확정된 것**:
+
+1. **MCP 비용 논쟁 최종 정리(3-0)**: `/context`가 MCP 사용량을 ~3배 과다보고하던 버그가
+   실재했고 2026-01에 수정됨. **그러나 버그를 걷어내도 고정비는 실재** — GitHub 공식 MCP
+   단독 실측 수만 토큰(3중 독립 실측), 다중 MCP 활성 시 빈 세션에서 수십 % 소모 사례.
+   MCP tool search(지연 로딩)가 이를 대폭 완화. "비판이 대부분 버그 탓"이라는 확장 해석은
+   0-3 기각 — **비용은 과장됐을 뿐 실재했다**.
+2. **"5개=55K"·"평균 2K/개, 매 교환 주입" 수치 담론은 최종 반박**(반박 6건에 포함).
+3. **실사용자의 정답은 '온디맨드 관리'(3-0)**: 기본 활성 0개 + 필요 시 /plugin 토글
+   (disabled = 토큰 비용 0) + 'Not used recently' 정기 정리 + /clear 위생.
+4. **스킬 > MCP 비용 구조(2-1, medium)**: 스킬은 frontmatter만 상시 로드. Willison 테제
+   ("터미널 있는 하네스에선 CLI·스킬이 대부분의 MCP를 대체") 교차 지지 —
+   "신규 MCP 대신 자작 스킬 우선" 원칙 채택 근거.
+5. **훅 = 결정론적 게이트 가치 확정(3-0)** — 단 결정론적인 건 실행이지 패턴 매칭의
+   완전성이 아님(우회 가능성 유의).
+6. **security-guidance 3층 메커니즘 공식 문서로 확정(3-0)** — 네트워크 불필요·로컬 동작,
+   제한 네트워크 클라우드 세션에 최적. 합성 순위 1위.
+7. 합성 에이전트의 순위는 ① security-guidance ② typescript-lsp ③ commit-commands
+   ④ 온디맨드 규율 ⑤ 자작 스킬 우선이었으나, **commit-commands는 PeterJ의 기존 git 규율
+   훅과 중복 + "프록시 뒤 push 실패" caveat(2-1)가 그의 환경에 직접 해당**되어
+   본 보고서 매트릭스(§5)에서는 스킵 유지 — 이 불일치는 명시해 둠.
+
+**§5 결정 매트릭스에 미치는 영향**: 순위 변동 없음(1순위 4종 그대로). context7 "조건부"
+근거 보강(호스팅형 외부 API + 효용 주장 벤치마크 부재 2-1). 원칙 항목 추가 —
+"새 도구 욕구가 생기면 MCP보다 자작 스킬을 먼저 검토"(F9), "분기 1회 Not used recently
+정리"(F10, 클코 구조도 갱신 주기와 병합 가능).
