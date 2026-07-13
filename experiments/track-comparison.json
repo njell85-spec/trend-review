@@ -464,6 +464,263 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-14",
+      "arm1": {
+        "pmid": "42319221",
+        "title_ko": "생명유지 지원 하의 영양 공급: ECMO 및 CRRT 적용 중 중증질환 환자의 대사·영양 관리",
+        "clinicalQuestion": "In critically ill adults receiving life-support therapies (ECMO, mechanical circulatory support, CRRT), how should metabolic and nutritional management — calorie/protein targeting, micronutrient repletion, and monitoring — be approached given the absence of population-specific guidelines?",
+        "clinicalQuestion_ko": "생명유지 지원 치료(ECMO, 기계적 순환 보조[MCS], CRRT)를 받는 중증 성인 환자에서, 이 집단에 특화된 지침이 없는 상황에서 대사·영양 관리(열량/단백질 목표 설정, 미량영양소 보충, 모니터링)를 어떻게 접근해야 하는가?",
+        "pico": {
+          "population": "[International] Critically ill patients receiving life-support therapies like extracorporeal membrane oxygenation (ECMO), mechanical circulatory systems (MCS), and continuous renal replacement therapy (CRRT), which create a complex and dynamic metabolic environment; no specific guidelines exist for this population (narrative mini-review, no cohort N reported).",
+          "intervention": "Pragmatic nutritional assessment and delivery strategies for calorie-protein targeting, micronutrient repletion, and monitoring, emphasizing a 'start low, advance carefully' approach within a multidisciplinary framework.",
+          "comparison": null,
+          "outcome": "No quantitative primary outcome; as a narrative synthesis the review provides pragmatic recommendations addressing dramatic nutrient fluxes with CRRT, a possible hypermetabolic state exacerbated by ECMO, fluid overload constraints, and drug-nutrient interactions. No effect sizes, CIs, or p-values reported."
+        },
+        "pico_ko": {
+          "population": "[다국가] 복잡하고 역동적인 대사 환경을 만드는 생명유지 지원 치료(ECMO, 기계적 순환 보조[MCS], CRRT)를 받는 중증 환자; 이 집단에 특화된 지침은 존재하지 않음(서술적 미니리뷰로 코호트 N은 보고되지 않음).",
+          "intervention": "열량-단백질 목표 설정, 미량영양소 보충, 모니터링을 위한 실용적 영양 평가 및 공급 전략으로, 다학제적 틀 안에서 '낮게 시작하여 신중히 증량(start low, advance carefully)'하는 접근을 강조함.",
+          "comparison": null,
+          "outcome": "정량적 1차 결과 없음; 서술적 종합으로서 CRRT에 따른 급격한 영양소 유출입, ECMO로 악화될 수 있는 과대사 상태, 수분과부하 제약, 약물-영양소 상호작용을 다루는 실용적 권고를 제시함. 효과크기·CI·p-value는 보고되지 않음."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [],
+        "secondaryOutcomes_ko": [],
+        "statGlossary": [],
+        "practiceChange": [
+          "Do not rely on standard ICU calorie/protein formulas for patients on ECMO or CRRT; adopt a 'start low, advance carefully' strategy and, where possible, use indirect calorimetry to individualize energy targets given the possible ECMO-exacerbated hypermetabolic state.",
+          "For patients on CRRT, actively anticipate and replete micronutrient and amino-acid losses from the circuit ('dramatic nutrient fluxes') and monitor for deficiencies, since standard delivery underestimates true losses.",
+          "Manage nutrition through a multidisciplinary team that accounts for fluid-overload constraints and drug-nutrient interactions, while recognizing that current recommendations rest on expert opinion and observational data rather than population-specific trial evidence."
+        ],
+        "practiceChange_ko": [
+          "ECMO 또는 CRRT 환자에서 표준 ICU 열량/단백질 공식에 의존하지 말고, '낮게 시작하여 신중히 증량' 전략을 채택하며, ECMO로 악화될 수 있는 과대사 상태를 고려해 가능하면 indirect calorimetry로 에너지 목표를 개별화한다.",
+          "CRRT 환자에서는 회로를 통한 미량영양소·아미노산 손실('급격한 영양소 유출입')을 적극적으로 예상·보충하고 결핍 여부를 모니터링한다. 표준 공급으로는 실제 손실을 과소평가하기 때문이다.",
+          "수분과부하 제약과 약물-영양소 상호작용을 고려하는 다학제 팀을 통해 영양을 관리하되, 현재 권고가 집단 특화 임상시험 근거가 아니라 전문가 의견과 관찰 데이터에 기반함을 인식한다."
+        ],
+        "keyFindings": [
+          "Life-support therapies (ECMO, MCS, CRRT) create a complex, dynamic metabolic environment, yet no specific nutritional guidelines exist for this population and current recommendations rest largely on expert opinion and observational data.",
+          "Key metabolic challenges include dramatic nutrient fluxes with CRRT, a possible hypermetabolic state exacerbated by ECMO, fluid overload constraints, and drug-nutrient interactions.",
+          "The review proposes pragmatic strategies for calorie-protein targeting, micronutrient repletion, and monitoring, emphasizing a 'start low, advance carefully' approach within a multidisciplinary framework."
+        ],
+        "keyFindings_ko": [
+          "생명유지 지원 치료(ECMO, MCS, CRRT)는 복잡하고 역동적인 대사 환경을 만들지만, 이 집단에 특화된 영양 지침은 없으며 현재 권고는 대부분 전문가 의견과 관찰 데이터에 기반한다.",
+          "주요 대사적 난제는 CRRT에 따른 급격한 영양소 유출입, ECMO로 악화될 수 있는 과대사 상태, 수분과부하 제약, 약물-영양소 상호작용을 포함한다.",
+          "이 리뷰는 열량-단백질 목표 설정, 미량영양소 보충, 모니터링을 위한 실용적 전략을 제안하며, 다학제적 틀 안에서 '낮게 시작하여 신중히 증량'하는 접근을 강조한다."
+        ],
+        "clinicalTakeaway": "For critically ill patients on ECMO/MCS/CRRT, nutrition should be individualized and cautious rather than driven by standard ICU targets: start low and advance carefully, anticipate CRRT-related micronutrient and amino-acid losses, and manage within a multidisciplinary team mindful of fluid overload and drug-nutrient interactions. Clinicians should apply these as pragmatic, expert-opinion-level suggestions, not as evidence-based standards, given the lack of population-specific trials.",
+        "clinicalTakeaway_ko": "ECMO/MCS/CRRT를 받는 중증 환자에서는 표준 ICU 목표에 따르기보다 영양을 개별화하고 신중히 접근해야 한다: 낮게 시작하여 신중히 증량하고, CRRT 관련 미량영양소·아미노산 손실을 예상하며, 수분과부하와 약물-영양소 상호작용을 고려하는 다학제 팀 안에서 관리한다. 집단 특화 임상시험이 없으므로, 이 권고는 근거 기반 표준이 아니라 전문가 의견 수준의 실용적 제안으로 적용해야 한다.",
+        "limitations": "This is a narrative mini-review, not a systematic review or original study: it reports no sample size, no comparator, and no quantitative outcomes, effect sizes, or p-values. The synthesized evidence is explicitly limited and based largely on expert opinion and observational data, and no population-specific guidelines exist, so recommendations are pragmatic rather than validated. Risk of selection and author bias inherent to opinion-based mini-reviews applies.",
+        "limitations_ko": "본 논문은 체계적 문헌고찰이나 원저가 아닌 서술적 미니리뷰로, 표본 크기·비교군·정량적 결과·효과크기·p-value를 보고하지 않는다. 종합된 근거는 명시적으로 제한적이며 대부분 전문가 의견과 관찰 데이터에 기반하고, 집단 특화 지침이 없으므로 권고는 검증된 것이 아닌 실용적 수준이다. 의견 기반 미니리뷰에 내재하는 선택 및 저자 편향의 위험이 적용된다.",
+        "evidenceLevel": "Very Low",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed — PMID 42319221",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42319221/"
+          }
+        ],
+        "paper": {
+          "pmid": "42319221",
+          "title": "Feeding under support in critical care illness: metabolic and nutritional management during extracorporeal membrane oxygenation and continuous renal replacement therapy.",
+          "abstract": "PURPOSE OF REVIEW: The use of life-support therapies like extracorporeal membrane oxygenation (ECMO), mechanical circulatory systems (MCS), and continuous renal replacement therapy (CRRT) creates a complex and dynamic metabolic environment that profoundly challenges nutritional management for these critically ill patients. Current existing guideline recommendations are largely based on expert opinions and observational data. No specific guidelines exist for this population.\nRECENT FINDINGS: This mini-review synthesizes the current, limited evidence on the pathophysiological and metabolic alterations induced by ECMO, MCS, and CRRT and provides pragmatic recommendations for nutritional assessment and delivery.\nSUMMARY: The key challenges include dramatic nutrient fluxes in the case of CRRT, a possible hypermetabolic state exacerbated by ECMO, fluid overload constraints, and drug-nutrient interactions. Practical strategies are proposed for calorie-protein targeting, micronutrient repletion, and monitoring, emphasizing a 'start low, advance carefully' approach within a multidisciplinary framework.",
+          "authors": [
+            "Stoppe C",
+            "Marelli S",
+            "De Waele E"
+          ],
+          "journal": "Current opinion in critical care",
+          "pubDate": "2026-Aug-01",
+          "publicationTypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Extracorporeal Membrane Oxygenation",
+            "Continuous Renal Replacement Therapy",
+            "Critical Illness",
+            "Critical Care",
+            "Nutritional Support",
+            "Nutrition Assessment"
+          ],
+          "keywords": [
+            "continuous renal replacement therapy",
+            "energy",
+            "extracorporeal membrane oxygenation",
+            "mechanical circulatory systems",
+            "multi-organ support",
+            "nutrition",
+            "protein"
+          ],
+          "doi": "10.1097/MCC.0000000000001394",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42319221/",
+          "collectedAt": "2026-07-13T23:52:22.564Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42319221",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42319221/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/MCC.0000000000001394",
+            "url": "https://doi.org/10.1097/MCC.0000000000001394"
+          },
+          {
+            "label": "웹 — PubMed — PMID 42319221",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42319221/"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "41910345",
+        "title_ko": "급성 폐색전증에 대한 초음파-보조 카테터-유도 섬유소용해술 (HI-PEITHO 임상시험)",
+        "clinicalQuestion": "In patients with acute, intermediate-risk pulmonary embolism, does ultrasound-facilitated, catheter-directed fibrinolysis with alteplase added to anticoagulation reduce early adverse outcomes compared with anticoagulation alone?",
+        "clinicalQuestion_ko": "급성 중등도위험(intermediate-risk) 폐색전증 환자에서, 항응고 단독요법 대비 alteplase를 이용한 초음파-보조 카테터-유도 섬유소용해술을 항응고에 추가하면 조기 불량 결과가 감소하는가?",
+        "pico": {
+          "population": "[International] The intention-to-treat population comprised 544 patients (273 intervention, 271 control) with intermediate-risk pulmonary embolism (RV/LV end-diastolic diameter ratio ≥1.0 and elevated troponin) who had at least two indicators of cardiorespiratory distress (systolic blood pressure ≤110 mm Hg, heart rate ≥100 bpm, or respiratory rate >20 breaths/min); mean age 58.2±13.5 years, 42.6% women. Enrolled at 59 sites in the U.S. and 8 European countries.",
+          "intervention": "Ultrasound-facilitated, catheter-directed fibrinolysis with alteplase plus anticoagulation, according to prespecified treatment protocols (n=273).",
+          "comparison": "Anticoagulation alone according to prespecified treatment protocols (n=271).",
+          "outcome": "Primary outcome (composite of PE-related death, cardiorespiratory decompensation or collapse, or symptomatic recurrence of PE within 7 days) occurred in 11 patients (4.0%; 95% CI, 2.3 to 7.1) in the intervention group vs 28 (10.3%; 95% CI, 7.2 to 14.5) in the control group (relative risk, 0.39; 95% CI, 0.20 to 0.77; P = 0.005), driven primarily by lower cardiorespiratory decompensation or collapse."
+        },
+        "pico_ko": {
+          "population": "[다국가] intention-to-treat 모집단은 중등도위험 폐색전증 환자 544명(중재군 273명, 대조군 271명)으로, RV/LV 확장기말 직경비 ≥1.0 및 troponin 상승을 보이고 심폐 곤란 지표 2개 이상(수축기혈압 ≤110 mm Hg, 심박수 ≥100 bpm, 또는 호흡수 >20회/분)을 동반한 환자; 평균 연령 58.2±13.5세, 여성 42.6%. 미국 및 유럽 8개국 59개 기관에서 등록.",
+          "intervention": "사전 규정된 치료 프로토콜에 따라 alteplase를 이용한 초음파-보조 카테터-유도 섬유소용해술 + 항응고요법 (n=273).",
+          "comparison": "사전 규정된 치료 프로토콜에 따른 항응고 단독요법 (n=271).",
+          "outcome": "일차 결과(7일 이내 PE 관련 사망, 심폐 실조/허탈, 또는 증상성 PE 재발의 복합)는 중재군 11명(4.0%; 95% CI, 2.3–7.1) 대 대조군 28명(10.3%; 95% CI, 7.2–14.5)에서 발생(relative risk 0.39; 95% CI, 0.20–0.77; P = 0.005), 주로 심폐 실조/허탈의 감소에 기인함."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Major bleeding within 7 days after randomization: 11 patients (4.1%) in the intervention group vs 6 (2.2%) in the control group (P = 0.32).",
+          "Major bleeding within 30 days: 11 patients (4.1%) in the intervention group vs 8 (3.0%) in the control group (P = 0.64).",
+          "No intracranial hemorrhage occurred in either group, and no substantial between-group differences in other serious adverse events were observed up to 30 days."
+        ],
+        "secondaryOutcomes_ko": [
+          "무작위배정 후 7일 이내 major bleeding: 중재군 11명(4.1%) 대 대조군 6명(2.2%) (P = 0.32).",
+          "30일 이내 major bleeding: 중재군 11명(4.1%) 대 대조군 8명(3.0%) (P = 0.64).",
+          "양 군 모두 intracranial hemorrhage는 발생하지 않았으며, 30일까지 기타 중대 이상반응에서 유의한 군간 차이는 관찰되지 않음."
+        ],
+        "statGlossary": [
+          {
+            "term": "relative risk (RR)",
+            "explanation_ko": "상대위험도: 대조군 대비 중재군에서 사건이 발생할 비율로, 1보다 작으면 위험 감소를 의미. 예: RR 0.39 → 중재군의 일차 결과 위험이 대조군보다 약 61% 낮음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, RR의 구간이 1을 포함하지 않으면 통계적으로 유의. 예: RR 0.39의 95% CI 0.20–0.77 → 1을 넘지 않아 위험 감소가 통계적으로 유의함."
+          },
+          {
+            "term": "P-value",
+            "explanation_ko": "유의확률: 관찰된 차이가 우연일 확률로, 보통 0.05 미만이면 유의하다고 봄. 예: 일차 결과 P = 0.005 → 군간 차이가 우연일 가능성이 낮아 유의함(반면 major bleeding P = 0.32는 유의하지 않음)."
+          }
+        ],
+        "practiceChange": [
+          "In carefully selected intermediate-risk PE patients who have RV/LV ratio ≥1.0, elevated troponin, AND at least two markers of cardiorespiratory distress, consider early referral for ultrasound-facilitated catheter-directed fibrinolysis plus anticoagulation, as it lowered the 7-day composite of PE-related death, decompensation/collapse, or recurrence (RR 0.39; P=0.005).",
+          "Do not extrapolate this benefit to all intermediate-risk PE: the enrolled cohort was a higher-acuity 'intermediate-high' subgroup, and the benefit was driven by fewer decompensation/collapse events, not a proven mortality reduction.",
+          "Reassure regarding safety in this trial—major bleeding did not differ significantly (4.1% vs 2.2% at 7 days, P=0.32) and no intracranial hemorrhage occurred—but recognize this requires a catheter-capable center and appropriate device/protocol before adopting over anticoagulation alone."
+        ],
+        "practiceChange_ko": [
+          "RV/LV 비 ≥1.0, troponin 상승, 그리고 심폐 곤란 지표 2개 이상을 모두 갖춘 신중히 선별된 중등도위험 PE 환자에서는 초음파-보조 카테터-유도 섬유소용해술 + 항응고의 조기 시행을 고려할 수 있다(7일 복합 결과 감소: RR 0.39; P=0.005).",
+          "이 이득을 모든 중등도위험 PE로 확대 적용하지 말 것: 등록 코호트는 고위험에 가까운 'intermediate-high' 하위군이었고, 이득은 사망 감소가 아닌 심폐 실조/허탈 사건 감소에 의해 주도되었다.",
+          "안전성 측면에서 본 시험에서는 major bleeding 차이가 유의하지 않았고(7일 4.1% 대 2.2%, P=0.32) intracranial hemorrhage도 없었으나, 항응고 단독요법 대비 채택하려면 카테터 시술이 가능한 센터와 적절한 기기·프로토콜이 필요함을 인식할 것."
+        ],
+        "keyFindings": [
+          "The primary composite outcome (PE-related death, cardiorespiratory decompensation/collapse, or symptomatic PE recurrence at 7 days) occurred in 4.0% (11/273) of the intervention group vs 10.3% (28/271) of controls (RR 0.39; 95% CI 0.20–0.77; P=0.005).",
+          "The effect was driven primarily by a lower rate of cardiorespiratory decompensation or collapse in the intervention group.",
+          "Major bleeding did not differ significantly (7 days: 4.1% vs 2.2%, P=0.32; 30 days: 4.1% vs 3.0%, P=0.64), and no intracranial hemorrhage occurred in either group."
+        ],
+        "keyFindings_ko": [
+          "일차 복합 결과(7일 PE 관련 사망, 심폐 실조/허탈, 또는 증상성 PE 재발)는 중재군 4.0%(11/273) 대 대조군 10.3%(28/271)에서 발생(RR 0.39; 95% CI 0.20–0.77; P=0.005).",
+          "이 효과는 주로 중재군에서 심폐 실조/허탈 비율이 낮았던 것에 기인함.",
+          "Major bleeding은 유의한 차이 없음(7일: 4.1% 대 2.2%, P=0.32; 30일: 4.1% 대 3.0%, P=0.64), 양 군 모두 intracranial hemorrhage 없음."
+        ],
+        "clinicalTakeaway": "In acute intermediate-risk PE with RV dysfunction, troponin elevation, and at least two signs of cardiorespiratory distress, ultrasound-facilitated catheter-directed fibrinolysis plus anticoagulation cut the 7-day composite of PE-related death, decompensation/collapse, or recurrence by ~61% (RR 0.39; P=0.005) without a significant excess of major bleeding or any intracranial hemorrhage. The benefit was driven by fewer decompensation/collapse events rather than mortality, so patient selection and access to a catheter-capable center are essential. This supports catheter-directed therapy as an option in this higher-acuity subgroup but does not mandate it for all intermediate-risk PE.",
+        "clinicalTakeaway_ko": "RV 기능부전, troponin 상승, 심폐 곤란 지표 2개 이상을 동반한 급성 중등도위험 PE에서, 초음파-보조 카테터-유도 섬유소용해술 + 항응고는 7일 복합 결과(PE 관련 사망, 실조/허탈, 재발)를 약 61% 감소시켰고(RR 0.39; P=0.005) major bleeding의 유의한 증가나 intracranial hemorrhage는 없었다. 이 이득은 사망이 아닌 실조/허탈 사건 감소에 기인하므로 환자 선별과 카테터 시술 가능 센터 접근성이 필수적이다. 본 결과는 이 고위험 하위군에서 카테터-유도 치료를 하나의 선택지로 지지하지만, 모든 중등도위험 PE에 의무화하는 것은 아니다.",
+        "limitations": "Abstract/authoritative-source data only (no full text available), so individual primary-outcome component counts and full secondary-outcome statistics could not be extracted. The trial was industry-funded (Boston Scientific) and enrolled a higher-acuity 'intermediate-high' subgroup requiring ≥2 cardiorespiratory distress markers, limiting generalizability to broader intermediate-risk PE. The 7-day primary window is short, the benefit was driven by non-fatal decompensation/collapse rather than mortality, and the open procedural nature (blinded adjudication notwithstanding) plus need for a catheter-capable center constrain external applicability.",
+        "limitations_ko": "전문(full text) 미제공으로 초록 및 authoritative 출처 데이터만 사용하여, 일차 결과 개별 구성요소 건수와 전체 secondary outcome 통계는 추출하지 못함. 산업 후원(Boston Scientific) 연구이며, 심폐 곤란 지표 ≥2개를 요구한 고위험에 가까운 'intermediate-high' 하위군을 등록하여 광범위한 중등도위험 PE로의 일반화가 제한됨. 일차 평가 기간이 7일로 짧고, 이득이 사망이 아닌 비치명적 실조/허탈에 기인하며, 시술의 개방적 특성(맹검 판정에도 불구)과 카테터 시술 가능 센터 필요성이 외적 적용성을 제한함.",
+        "evidenceLevel": "High",
+        "clinicalApplicabilityScore": 7,
+        "webSources": [
+          {
+            "label": "PubMed (PMID 41910345)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41910345/"
+          },
+          {
+            "label": "NEJM official article page (DOI 10.1056/NEJMoa2516567)",
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2516567"
+          },
+          {
+            "label": "American College of Cardiology — HI-PEITHO ACC.26 summary",
+            "url": "https://www.acc.org/latest-in-cardiology/articles/2026/03/25/21/27/sat-930am-hipeitho-acc-2026"
+          }
+        ],
+        "paper": {
+          "pmid": "41910345",
+          "title": "Ultrasound-Facilitated, Catheter-Directed Fibrinolysis for Acute Pulmonary Embolism.",
+          "abstract": "BACKGROUND: Whether anticoagulation alone is an adequate treatment for acute, intermediate-risk pulmonary embolism is uncertain.\nMETHODS: We conducted a multinational, adaptive-design trial with blinded outcome adjudication. Patients with intermediate-risk pulmonary embolism (with a ratio of right ventricular end-diastolic diameter to left ventricular end-diastolic diameter of ≥1.0 and an elevated troponin level) were eligible if they had at least two indicators of cardiorespiratory distress (systolic blood pressure of ≤110 mm Hg, a heart rate of ≥100 beats per minute, or a respiratory rate of >20 breaths per minute). Patients were randomly assigned to undergo ultrasound-facilitated, catheter-directed fibrinolysis with alteplase plus anticoagulation (the intervention group) or anticoagulation alone (the control group) according to prespecified treatment protocols. The primary outcome was a composite of pulmonary embolism-related death, cardiorespiratory decompensation or collapse, or symptomatic recurrence of pulmonary embolism within 7 days.\nRESULTS: The intention-to-treat population comprised 544 patients: 273 in the intervention group and 271 in the control group. The mean (±SD) age was 58.2±13.5 years, and 42.6% of the patients were women. A primary-outcome event occurred in 11 patients (4.0%; 95% confidence interval [CI], 2.3 to 7.1) in the intervention group and 28 (10.3%; 95% CI, 7.2 to 14.5) in the control group (relative risk, 0.39; 95% CI, 0.20 to 0.77; P = 0.005). The effect was driven primarily by a lower risk of cardiorespiratory decompensation or collapse in the intervention group. Major bleeding occurred within 7 days after randomization in 11 patients (4.1%) in the intervention group and 6 (2.2%) in the control group (P = 0.32); major bleeding occurred within 30 days in 11 patients (4.1%) and 8 patients (3.0%), respectively (P = 0.64). No substantial between-group differences in the incidence of other serious adverse events were observed up to 30 days after randomization; no intracranial hemorrhage occurred.\nCONCLUSIONS: In patients with acute, intermediate-risk pulmonary embolism, ultrasound-facilitated, catheter-directed fibrinolysis plus anticoagulation led to a lower risk of the composite of pulmonary embolism-related death, cardiopulmonary decompensation or collapse, or symptomatic recurrence of pulmonary embolism within 7 days than anticoagulation alone. (Funded by Boston Scientific; HI-PEITHO ClinicalTrials.gov number, NCT04790370.).",
+          "authors": [
+            "Rosenfield K",
+            "Klok FA",
+            "Piazza G",
+            "Sharp ASP",
+            "Ní Áinle F",
+            "Jaff MR"
+          ],
+          "journal": "The New England journal of medicine",
+          "pubDate": "2026-May-28",
+          "publicationTypes": [
+            "Adaptive Clinical Trial",
+            "Clinical Trial, Phase IV",
+            "Journal Article",
+            "Multicenter Study",
+            "Randomized Controlled Trial"
+          ],
+          "meshTerms": [
+            "Aged",
+            "Female",
+            "Humans",
+            "Male",
+            "Middle Aged",
+            "Acute Disease",
+            "Anticoagulants",
+            "Drug Therapy, Combination",
+            "Fibrinolytic Agents",
+            "Hemorrhage"
+          ],
+          "keywords": [],
+          "doi": "10.1056/NEJMoa2516567",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41910345/",
+          "collectedAt": "2026-07-13T23:57:46.751Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41910345",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41910345/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMoa2516567",
+            "url": "https://doi.org/10.1056/NEJMoa2516567"
+          },
+          {
+            "label": "웹 — PubMed (PMID 41910345)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41910345/"
+          },
+          {
+            "label": "웹 — NEJM official article page (DOI 10.1056/NEJMoa2516567)",
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2516567"
+          },
+          {
+            "label": "웹 — American College of Cardiology — HI-PEITHO ACC.26 summary",
+            "url": "https://www.acc.org/latest-in-cardiology/articles/2026/03/25/21/27/sat-930am-hipeitho-acc-2026"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
