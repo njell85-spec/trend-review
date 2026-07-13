@@ -417,6 +417,63 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-14",
+      "pmid": "42319221",
+      "title": "Feeding under support in critical care illness: metabolic and nutritional management during extracorporeal membrane oxygenation and continuous renal replacement therapy.",
+      "title_ko": "생명유지 중재 하의 중환자 영양: 체외막산소공급(ECMO)과 지속적신대체요법(CRRT) 중의 대사 및 영양 관리",
+      "journal": "Current opinion in critical care",
+      "doi": "10.1097/MCC.0000000000001394",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ECMO, 기계순환보조(MCS), 그리고/또는 CRRT로 지지받는 중환자에서, 이 집단에 특화된 가이드라인이 없는 상황에서 대사·영양 평가와 공급(칼로리-단백 목표 설정, 미량영양소 보충, 모니터링)을 어떻게 관리해야 하는가?",
+      "pico": {
+        "population": "[Country NR] Critically ill patients receiving life-support therapies like extracorporeal membrane oxygenation (ECMO), mechanical circulatory systems (MCS), and continuous renal replacement therapy (CRRT), for whom no specific nutrition guidelines exist; this is a mini-review and no sample size (N), age, or date range is reported.",
+        "intervention": "Pragmatic nutritional assessment and delivery strategies — calorie-protein targeting, micronutrient repletion, and monitoring — using a 'start low, advance carefully' approach within a multidisciplinary framework.",
+        "comparison": null,
+        "outcome": "Narrative synthesis only; no primary clinical outcome, effect size, or statistic is reported. The review characterizes pathophysiological/metabolic alterations (dramatic nutrient fluxes with CRRT, a possible hypermetabolic state exacerbated by ECMO, fluid overload constraints, drug-nutrient interactions) and proposes practical recommendations."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 체외막산소공급(ECMO), 기계순환보조(MCS), 지속적신대체요법(CRRT) 같은 생명유지 중재를 받는 중환자로, 이 집단에 특화된 영양 가이드라인은 존재하지 않는다. 본 논문은 mini-review이며 표본 크기(N)·연령·기간은 보고되지 않았다.",
+        "intervention": "실용적 영양 평가 및 공급 전략 — 칼로리-단백 목표 설정, 미량영양소 보충, 모니터링 — 을 다학제 틀 안에서 '낮게 시작해 천천히 증량(start low, advance carefully)'하는 접근으로 적용.",
+        "comparison": null,
+        "outcome": "서술적 종합(narrative synthesis)만 제시되며, 일차 임상 결과·효과크기·통계치는 보고되지 않음. CRRT로 인한 급격한 영양소 유출, ECMO로 악화될 수 있는 hypermetabolic state, 체액 과부하 제약, 약물-영양소 상호작용 등 병태생리·대사 변화를 기술하고 실용적 권고를 제안함."
+      },
+      "keyFindings": [
+        "No specific nutrition guidelines exist for critically ill patients on ECMO, MCS, or CRRT; current recommendations are largely based on expert opinion and observational data.",
+        "Key metabolic challenges are dramatic nutrient fluxes with CRRT, a possible hypermetabolic state exacerbated by ECMO, fluid overload constraints, and drug-nutrient interactions.",
+        "The authors propose a pragmatic 'start low, advance carefully' approach to calorie-protein targeting, micronutrient repletion, and monitoring within a multidisciplinary framework."
+      ],
+      "keyFindings_ko": [
+        "ECMO, MCS, CRRT를 받는 중환자를 위한 특화된 영양 가이드라인은 존재하지 않으며, 현재 권고는 대부분 전문가 의견과 관찰 데이터에 근거한다.",
+        "주요 대사적 난제는 CRRT로 인한 급격한 영양소 유출, ECMO로 악화될 수 있는 hypermetabolic state, 체액 과부하 제약, 약물-영양소 상호작용이다.",
+        "저자들은 다학제 틀 안에서 칼로리-단백 목표 설정, 미량영양소 보충, 모니터링에 대해 실용적인 'start low, advance carefully' 접근을 제안한다."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42319221",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42319221/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/MCC.0000000000001394",
+          "url": "https://doi.org/10.1097/MCC.0000000000001394"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42319221 (Curr Opin Crit Care 2026;32(4):366-373, DOI 10.1097/MCC.0000000000001394)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42319221/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 42319221 (Curr Opin Crit Care 2026;32(4):366-373, DOI 10.1097/MCC.0000000000001394)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42319221/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
