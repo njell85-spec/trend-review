@@ -474,6 +474,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-15",
+      "pmid": "42409761",
+      "title": "Consensus Recommendations for Clinical Pharmacist Integration into the Acute Stroke Care Team: Endorsed by the American College of Clinical Pharmacy, Neurocritical Care Society, Society for Academic Emergency Medicine, and Society of Critical Care Medicine, and affirmed by the American Academy of Neurology.",
+      "title_ko": "급성 뇌졸중 진료팀에 임상약사를 통합하기 위한 합의 권고안: American College of Clinical Pharmacy, Neurocritical Care Society, Society for Academic Emergency Medicine, Society of Critical Care Medicine 승인 및 American Academy of Neurology 지지",
+      "journal": "Journal of the American College of Clinical Pharmacy : JACCP",
+      "doi": "10.1002/jac5.70246",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "응급실에 내원한 성인 acute ischemic stroke(AIS) 또는 hemorrhagic stroke 환자의 학제간 급성 뇌졸중 진료팀에 임상약사를 통합해야 하는가?",
+      "pico": {
+        "population": "[USA] Adult patients presenting to the emergency department (ED) with acute ischemic stroke (AIS) or hemorrhagic stroke. This consensus statement panel was composed of clinical pharmacists, emergency medicine physicians, and a vascular neurologist; two focused questions were addressed. (Exact panel size, number of included studies, and voting percentages not reported in the abstract.)",
+        "intervention": "Clinical pharmacist involvement/integration into the interdisciplinary acute stroke care team — specifically (1) clinical pharmacist involvement in AIS care for adult patients presenting to the ED and (2) clinical pharmacist involvement in hemorrhagic stroke care for adult patients presenting to the ED.",
+        "comparison": null,
+        "outcome": "Despite the very low level of evidence (GRADE approach used to assess certainty and strength), a consensus was reached endorsing both recommendations: clinical pharmacist involvement in AIS care and in hemorrhagic stroke care in the ED. No pooled effect estimates, confidence intervals, or p-values are reported (narrative consensus statement)."
+      },
+      "pico_ko": {
+        "population": "[미국] 응급실(ED)에 내원한 성인 acute ischemic stroke(AIS) 또는 hemorrhagic stroke 환자. 본 합의 성명 패널은 임상약사, 응급의학과 의사, 그리고 1명의 vascular neurologist로 구성되었으며 두 개의 핵심 질문을 다루었다. (정확한 패널 인원 수, 포함된 연구 수, 투표 비율은 초록에 미기재.)",
+        "intervention": "학제간 급성 뇌졸중 진료팀에 임상약사를 참여/통합 — 구체적으로 (1) 응급실에 내원한 성인 AIS 진료에 임상약사 참여, (2) 응급실에 내원한 성인 hemorrhagic stroke 진료에 임상약사 참여.",
+        "comparison": null,
+        "outcome": "근거 수준이 very low임에도 불구하고(certainty와 recommendation 강도 평가에 GRADE 방식 사용), 두 권고안 모두에 대해 합의가 도출되었다: 응급실에서 AIS 진료 및 hemorrhagic stroke 진료에 대한 임상약사 참여. 통합 효과 추정치, 신뢰구간, p-value는 보고되지 않았다(서술형 합의 성명)."
+      },
+      "keyFindings": [
+        "A multidisciplinary panel (clinical pharmacists, emergency medicine physicians, and a vascular neurologist) using the GRADE approach reached consensus on two recommendations supporting clinical pharmacist involvement in ED care of adult AIS and hemorrhagic stroke patients.",
+        "Both recommendations were made despite a 'very low level of evidence,' underscoring that support rests on expert consensus rather than high-certainty comparative data.",
+        "The statement, endorsed by ACCP, NCS, SAEM, and SCCM and affirmed by AAN, frames optimizing the clinical pharmacist role as a critical factor for improving time-sensitive treatment and equity in stroke care delivery."
+      ],
+      "keyFindings_ko": [
+        "다학제 패널(임상약사, 응급의학과 의사, vascular neurologist 1명)이 GRADE 방식을 사용하여 성인 AIS 및 hemorrhagic stroke 환자의 ED 진료에 임상약사 참여를 지지하는 두 개의 권고안에 대해 합의를 도출했다.",
+        "두 권고안 모두 'very low level of evidence'에도 불구하고 도출되었으며, 이는 고확실성 비교 데이터가 아닌 전문가 합의에 기반함을 강조한다.",
+        "ACCP, NCS, SAEM, SCCM이 승인하고 AAN이 지지한 본 성명은 임상약사 역할 최적화를 시간에 민감한 치료와 뇌졸중 진료 형평성 개선의 핵심 요소로 규정한다."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42409761",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42409761/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1002/jac5.70246",
+          "url": "https://doi.org/10.1002/jac5.70246"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42409761)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42409761/"
+        },
+        {
+          "label": "웹 — Wiley Online Library — JACCP article page (DOI 10.1002/jac5.70246)",
+          "url": "https://accpjournals.onlinelibrary.wiley.com/doi/10.1002/jac5.70246"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 42409761)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42409761/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Wiley Online Library — JACCP article page (DOI 10.1002/jac5.70246)",
+          "url": "https://accpjournals.onlinelibrary.wiley.com/doi/10.1002/jac5.70246",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
