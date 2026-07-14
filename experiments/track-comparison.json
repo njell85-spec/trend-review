@@ -721,6 +721,276 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-15",
+      "arm1": {
+        "pmid": "42409761",
+        "title_ko": "급성 뇌졸중 진료팀에 임상약사를 통합하기 위한 합의 권고안: ACCP, Neurocritical Care Society, SAEM, SCCM 공동 승인 및 American Academy of Neurology 지지",
+        "clinicalQuestion": "In adult patients presenting to the emergency department with acute ischemic stroke (AIS) or hemorrhagic stroke, should a clinical pharmacist be integrated into the acute stroke care team?",
+        "clinicalQuestion_ko": "응급실에 내원한 성인 acute ischemic stroke(AIS) 또는 hemorrhagic stroke 환자의 진료에서, 임상약사를 급성 뇌졸중 진료팀에 통합해야 하는가?",
+        "pico": {
+          "population": "[USA] Adult patients presenting to the emergency department (ED) with acute ischemic stroke (AIS) or hemorrhagic stroke; the consensus panel was composed of clinical pharmacists, emergency medicine physicians, and a vascular neurologist.",
+          "intervention": "Clinical pharmacist involvement/integration into the interdisciplinary acute stroke care team for management of both AIS and hemorrhagic stroke.",
+          "comparison": "Acute stroke care without dedicated clinical pharmacist integration (no formal comparator group; consensus statement using the GRADE approach).",
+          "outcome": "Consensus was reached, despite a very low level (certainty) of evidence, for two recommendations: (1) clinical pharmacist involvement in AIS care for adult patients presenting to the ED, and (2) clinical pharmacist involvement in hemorrhagic stroke care for adult patients presenting to the ED. No pooled effect sizes, confidence intervals, or p-values were reported in the abstract."
+        },
+        "pico_ko": {
+          "population": "[미국] 응급실(ED)에 내원한 성인 acute ischemic stroke(AIS) 또는 hemorrhagic stroke 환자; 합의 패널은 임상약사, 응급의학과 의사, 그리고 vascular neurologist 1인으로 구성되었다.",
+          "intervention": "AIS 및 hemorrhagic stroke 관리를 위해 다학제 급성 뇌졸중 진료팀에 임상약사를 참여·통합시키는 것.",
+          "comparison": "임상약사가 통합되지 않은 급성 뇌졸중 진료(별도의 대조군 없음; GRADE 방법론을 사용한 합의 성명서).",
+          "outcome": "very low 수준(certainty)의 근거임에도, 두 가지 권고에 대해 합의에 도달함: (1) ED에 내원한 성인 AIS 진료에 임상약사 참여, (2) ED에 내원한 성인 hemorrhagic stroke 진료에 임상약사 참여. 초록에는 통합 효과크기, confidence interval, p-value가 보고되지 않았다."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [],
+        "secondaryOutcomes_ko": [],
+        "statGlossary": [
+          {
+            "term": "GRADE",
+            "explanation_ko": "GRADE: 근거의 확실성(certainty)과 권고의 강도를 High/Moderate/Low/Very Low 등으로 등급화하는 표준 방법론. 예: 본 성명서는 very low certainty of evidence임에도 임상약사 통합에 대해 합의 권고를 도출함 → 근거는 매우 약하지만 전문가 합의로 권고가 제시된 상태."
+          }
+        ],
+        "practiceChange": [
+          "EM/CCM teams should formally embed a clinical pharmacist in the acute stroke workflow (ED and neurocritical care) to support time-sensitive tasks such as thrombolytic dosing/screening in AIS and rapid anticoagulation reversal and blood-pressure management in hemorrhagic stroke.",
+          "Because the recommendation rests on very low certainty (expert consensus, not comparative outcome data), integrate pharmacists as a process/quality improvement measure while tracking local metrics (e.g., door-to-needle time, reversal time) rather than assuming a proven mortality or functional-outcome benefit.",
+          "Use this multi-society consensus to justify staffing/resourcing of dedicated stroke pharmacists and to standardize the pharmacist role across institutions, addressing the noted inconsistency and underutilization and improving equity in time-sensitive treatment."
+        ],
+        "practiceChange_ko": [
+          "EM/CCM 팀은 급성 뇌졸중 워크플로(ED 및 neurocritical care)에 임상약사를 공식적으로 배치하여, AIS에서의 혈전용해제 용량 산정/스크리닝, hemorrhagic stroke에서의 신속한 anticoagulation reversal 및 혈압 관리 등 시간이 중요한 업무를 지원하도록 해야 한다.",
+          "권고가 very low certainty(비교 결과 데이터가 아닌 전문가 합의)에 근거하므로, 사망률·기능적 예후 개선이 입증되었다고 가정하기보다는 door-to-needle time, reversal time 등 자체 지표를 추적하는 과정/질 향상(QI) 조치로서 약사를 통합하는 것이 바람직하다.",
+          "이 다학회 합의를 활용해 전담 뇌졸중 약사의 인력·자원 확보를 정당화하고 기관 간 약사 역할을 표준화하여, 지적된 역할의 비일관성·과소활용 문제를 해소하고 시간 민감 치료의 형평성을 개선할 수 있다."
+        ],
+        "keyFindings": [
+          "Using the GRADE approach, a multidisciplinary panel (clinical pharmacists, emergency medicine physicians, and a vascular neurologist) reached consensus on two recommendations supporting clinical pharmacist involvement in ED care of adult AIS and hemorrhagic stroke.",
+          "Both recommendations were made despite a very low level of evidence, reflecting reliance on expert consensus rather than high-quality comparative outcome data.",
+          "The panel concluded that optimizing the clinical pharmacist role is a critical factor for improving time-sensitive treatment and equity in care delivery, addressing the currently inconsistent and underutilized pharmacist role."
+        ],
+        "keyFindings_ko": [
+          "GRADE 방법론을 사용해 다학제 패널(임상약사, 응급의학과 의사, vascular neurologist)이 성인 AIS 및 hemorrhagic stroke의 ED 진료에 임상약사 참여를 지지하는 두 가지 권고에 합의하였다.",
+          "두 권고 모두 very low 수준의 근거임에도 도출되었으며, 이는 고품질 비교 결과 데이터가 아닌 전문가 합의에 의존했음을 반영한다.",
+          "패널은 임상약사 역할의 최적화가 시간 민감 치료와 진료 형평성 개선의 핵심 요인이라고 결론지었으며, 현재 비일관적이고 과소활용된 약사 역할 문제를 겨냥하였다."
+        ],
+        "clinicalTakeaway": "This multi-society consensus statement recommends integrating clinical pharmacists into ED-based acute stroke teams for both ischemic and hemorrhagic stroke, primarily to speed time-sensitive interventions (thrombolysis, anticoagulation reversal, BP control) and improve equity. However, the recommendations are based on very low certainty evidence, so pharmacist integration should be pursued as a reasonable, expert-endorsed process improvement rather than an outcome-proven mandate, with local performance metrics tracked to demonstrate value.",
+        "clinicalTakeaway_ko": "이 다학회 합의 성명서는 ischemic 및 hemorrhagic stroke 모두에서 ED 기반 급성 뇌졸중 팀에 임상약사를 통합할 것을 권고하며, 주로 혈전용해, anticoagulation reversal, 혈압 조절 등 시간 민감 중재의 신속화와 형평성 개선을 목표로 한다. 다만 권고가 very low certainty 근거에 기반하므로, 결과가 입증된 의무 사항이라기보다 전문가가 지지하는 합리적 과정 개선으로 접근하고 자체 성과 지표를 추적해 가치를 입증하는 것이 바람직하다.",
+        "limitations": "The recommendations are supported only by a very low level (certainty) of evidence and represent expert consensus rather than direct comparative or randomized outcome data; no effect sizes, patient-level outcomes (e.g., mortality, functional/mRS outcomes), sample sizes, or confidence intervals are reported. The panel was US-based and small, with only a single vascular neurologist, limiting generalizability; only abstract-level information was available (full text not accessed), and publication/consensus-panel bias cannot be excluded.",
+        "limitations_ko": "권고는 very low 수준(certainty)의 근거로만 뒷받침되며 직접 비교나 무작위 결과 데이터가 아닌 전문가 합의를 나타낸다. 효과크기, 환자 수준 결과(예: 사망률, 기능적/mRS 예후), 표본 크기, confidence interval이 보고되지 않았다. 패널은 미국 중심이고 규모가 작으며 vascular neurologist가 1인뿐이어서 일반화 가능성이 제한된다. 초록 수준 정보만 확보되었고(전문 미접근), 출판/합의패널 편향을 배제할 수 없다.",
+        "evidenceLevel": "Very Low",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed record (PMID 42409761)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42409761/"
+          },
+          {
+            "label": "Wiley Online Library — JACCP official article page (DOI 10.1002/jac5.70246, access blocked/403)",
+            "url": "https://accpjournals.onlinelibrary.wiley.com/doi/10.1002/jac5.70246"
+          }
+        ],
+        "paper": {
+          "pmid": "42409761",
+          "title": "Consensus Recommendations for Clinical Pharmacist Integration into the Acute Stroke Care Team: Endorsed by the American College of Clinical Pharmacy, Neurocritical Care Society, Society for Academic Emergency Medicine, and Society of Critical Care Medicine, and affirmed by the American Academy of Neurology.",
+          "abstract": "Clinical pharmacists are increasingly recognized as vital contributors to acute stroke care, yet their role remains inconsistently defined and underutilized across health care systems. This consensus statement explores the expanding presence of clinical pharmacists within interdisciplinary stroke teams, particularly in the management of both acute ischemic stroke (AIS) and hemorrhagic stroke. This consensus statement panel was composed of clinical pharmacists, emergency medicine physicians, and a vascular neurologist. The Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) approach was used to assess the level of certainty and strength of recommendations. We focused on two questions regarding the clinical pharmacist's role in caring for adult patients presenting to the emergency department (ED) with AIS or hemorrhagic stroke. Despite the very low level of evidence, a consensus was reached for the following recommendations: (1) clinical pharmacist involvement in AIS care for adult patients presenting to the ED and (2) clinical pharmacist involvement in hemorrhagic stroke care for adult patients presenting to the ED. Based on the available literature, we believe optimizing the clinical pharmacist role is a critical factor in improving time-sensitive treatment and equity in care delivery.",
+          "authors": [
+            "Gilbert BW",
+            "Brown CS",
+            "Acquisto NM",
+            "Engstrom KK",
+            "Mercer KJ",
+            "Howington GT"
+          ],
+          "journal": "Journal of the American College of Clinical Pharmacy : JACCP",
+          "pubDate": "2026-Jul",
+          "publicationTypes": [
+            "Journal Article",
+            "Consensus Statement"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Pharmacists",
+            "Stroke",
+            "Pharmacy Service, Hospital",
+            "Critical Care",
+            "Patient Care Team",
+            "Professional Role",
+            "Neurology",
+            "United States",
+            "Emergency Medicine"
+          ],
+          "keywords": [
+            "acute ischemic stroke",
+            "clinical pharmacist",
+            "emergency medicine",
+            "hemorrhagic stroke"
+          ],
+          "doi": "10.1002/jac5.70246",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42409761/",
+          "collectedAt": "2026-07-14T23:51:17.151Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42409761",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42409761/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1002/jac5.70246",
+            "url": "https://doi.org/10.1002/jac5.70246"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 42409761)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42409761/"
+          },
+          {
+            "label": "웹 — Wiley Online Library — JACCP official article page (DOI 10.1002/jac5.70246, access blocked/403)",
+            "url": "https://accpjournals.onlinelibrary.wiley.com/doi/10.1002/jac5.70246"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "41642827",
+        "title_ko": "발병 4.5~24시간 후 비대혈관폐색(non-LVO) 급성 허혈성 뇌졸중에 대한 Tenecteplase: OPTION 무작위 임상시험",
+        "clinicalQuestion": "In patients with non-large vessel occlusion acute ischemic stroke and salvageable brain tissue on perfusion imaging presenting 4.5 to 24 hours after onset, does intravenous tenecteplase improve 90-day functional outcome compared with standard medical treatment, and at what safety cost?",
+        "clinicalQuestion_ko": "관류영상에서 구제 가능한 뇌조직이 확인되고 발병 4.5~24시간에 내원한 비대혈관폐색(non-LVO) 급성 허혈성 뇌졸중 환자에서, 정맥내 tenecteplase가 표준 약물치료 대비 90일 기능적 예후를 향상시키는가, 그리고 그 안전성 대가는 무엇인가?",
+        "pico": {
+          "population": "[China] 566 patients with non-large vessel occlusion stroke and evidence of potentially salvageable tissue determined on perfusion imaging presenting within 4.5 to 24 hours of the time last seen well, recruited at 48 centers in China between June 2, 2023, and August 4, 2025 (median age, 68 [IQR, 59-75] years; 196 female [34.6%]).",
+          "intervention": "Intravenous tenecteplase (0.25 mg/kg; maximum dose, 25 mg; n = 282) administered 4.5 to 24 hours after stroke onset.",
+          "comparison": "Standard medical treatment (n = 284).",
+          "outcome": "Primary efficacy outcome was an excellent functional outcome, defined as a modified Rankin Scale (mRS) score of 0 or 1 at 90 days: 123 of 282 (43.6%) with tenecteplase vs 97 of 284 (34.2%) with control (risk ratio, 1.28 [95% CI, 1.04-1.57]; P = .02)."
+        },
+        "pico_ko": {
+          "population": "[중국] 관류영상(perfusion imaging)에서 구제 가능한 뇌조직이 확인되고 마지막 정상 확인 시점으로부터 4.5~24시간 이내에 내원한 비대혈관폐색(non-LVO) 뇌졸중 환자 566명. 2023년 6월 2일~2025년 8월 4일 중국 48개 센터에서 모집(중앙값 연령 68세[IQR 59-75], 여성 196명[34.6%]).",
+          "intervention": "발병 4.5~24시간에 투여한 정맥내 tenecteplase(0.25 mg/kg; 최대 25 mg; n = 282).",
+          "comparison": "표준 약물치료(standard medical treatment; n = 284).",
+          "outcome": "일차 효능 결과는 우수한 기능적 예후(90일째 mRS 0 또는 1)로 정의됨: tenecteplase군 282명 중 123명(43.6%) 대 대조군 284명 중 97명(34.2%) (risk ratio 1.28 [95% CI 1.04-1.57]; P = .02)."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Symptomatic intracranial hemorrhage within 36 hours: 2.8% with tenecteplase vs 0% with standard medical treatment (risk difference, 2.85% [95% CI, 1.16%-5.54%]; P = .004).",
+          "Mortality within 90 days: 5.0% with tenecteplase vs 3.2% with control (risk ratio, 1.57 [95% CI, 0.69-3.57]; P = .28)."
+        ],
+        "secondaryOutcomes_ko": [
+          "36시간 이내 증상성 두개내출혈(symptomatic intracranial hemorrhage): tenecteplase군 2.8% 대 표준치료군 0% (risk difference 2.85% [95% CI 1.16%-5.54%]; P = .004).",
+          "90일 사망률: tenecteplase군 5.0% 대 대조군 3.2% (risk ratio 1.57 [95% CI 0.69-3.57]; P = .28)."
+        ],
+        "statGlossary": [
+          {
+            "term": "mRS",
+            "explanation_ko": "modified Rankin Scale: 0(증상 없음)~6(사망)으로 뇌졸중 후 장애 정도를 재는 척도로, 0~1은 사실상 후유장애가 없는 우수한 예후를 뜻함. 예: 이 연구의 일차 결과는 90일째 mRS 0~1 달성 비율(tenecteplase군 43.6%)."
+          },
+          {
+            "term": "risk ratio",
+            "explanation_ko": "위험비: 두 군의 사건 발생 확률의 비로, 1보다 크면 해당 결과가 더 흔함을 의미. 예: RR 1.28 → tenecteplase군이 대조군보다 우수한 예후 도달이 상대적으로 28% 더 흔함."
+          },
+          {
+            "term": "risk difference",
+            "explanation_ko": "위험차: 두 군의 사건 발생률 차이(절대값). 예: risk difference 2.85% → tenecteplase군의 증상성 두개내출혈 발생률이 대조군보다 절대적으로 2.85%p 높음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, 위험비의 구간이 1을 포함하지 않으면 통계적으로 유의함. 예: RR 1.28의 95% CI 1.04-1.57 → 1을 넘지 않아 효능이 유의함."
+          },
+          {
+            "term": "P",
+            "explanation_ko": "p-value: 결과가 우연으로 생겼을 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 봄. 예: 일차 결과 P = .02 → 우연일 가능성이 낮아 유의함(반면 사망률 P = .28은 유의하지 않음)."
+          }
+        ],
+        "practiceChange": [
+          "For non-LVO acute ischemic stroke with perfusion-confirmed salvageable tissue presenting 4.5-24 hours after last-seen-well, IV tenecteplase (0.25 mg/kg, max 25 mg) can now be considered as a perfusion-selected extended-window option, having improved mRS 0-1 at 90 days (43.6% vs 34.2%; RR 1.28).",
+          "Counsel patients/families on the trade-off: the benefit comes with a real bleeding cost — symptomatic intracranial hemorrhage rose from 0% to 2.8% (risk difference 2.85%; P = .004), while the 90-day mortality difference (5.0% vs 3.2%) was not statistically significant.",
+          "Do not extrapolate beyond the tested selection: eligibility hinged on advanced perfusion imaging confirming salvageable tissue and confirmed absence of large-vessel occlusion, so centers lacking rapid perfusion imaging or in populations outside a Chinese cohort should apply this cautiously."
+        ],
+        "practiceChange_ko": [
+          "관류영상으로 구제 가능한 조직이 확인되고 마지막 정상 확인 4.5~24시간에 내원한 non-LVO 급성 허혈성 뇌졸중에서, IV tenecteplase(0.25 mg/kg, 최대 25 mg)는 관류영상으로 선별된 확장시간창 선택지로 고려할 수 있음 — 90일 mRS 0~1을 개선(43.6% 대 34.2%; RR 1.28).",
+          "이득에는 실질적 출혈 대가가 따름을 환자·보호자에게 설명해야 함: 증상성 두개내출혈이 0%에서 2.8%로 증가(risk difference 2.85%; P = .004)했으며, 90일 사망률 차이(5.0% 대 3.2%)는 통계적으로 유의하지 않았음.",
+          "검증된 선별 기준을 벗어난 확대 적용은 금물: 자격 기준이 고급 관류영상으로 구제 가능한 조직을 확인하고 대혈관폐색(LVO) 부재를 확인하는 데 달려 있었으므로, 신속 관류영상이 없는 기관이나 중국 코호트 외 인구집단에서는 신중히 적용해야 함."
+        ],
+        "keyFindings": [
+          "IV tenecteplase 4.5-24 h after onset in non-LVO stroke with salvageable tissue increased excellent functional outcome (mRS 0-1) at 90 days: 43.6% (123/282) vs 34.2% (97/284) with standard care (risk ratio, 1.28 [95% CI, 1.04-1.57]; P = .02).",
+          "Symptomatic intracranial hemorrhage within 36 hours was significantly higher with tenecteplase: 2.8% vs 0% (risk difference, 2.85% [95% CI, 1.16%-5.54%]; P = .004).",
+          "90-day mortality was numerically higher but not statistically significant: 5.0% vs 3.2% (risk ratio, 1.57 [95% CI, 0.69-3.57]; P = .28)."
+        ],
+        "keyFindings_ko": [
+          "구제 가능한 조직이 있는 non-LVO 뇌졸중에서 발병 4.5~24시간의 IV tenecteplase는 90일 우수한 기능적 예후(mRS 0~1)를 증가시킴: 43.6%(123/282) 대 표준치료 34.2%(97/284) (risk ratio 1.28 [95% CI 1.04-1.57]; P = .02).",
+          "36시간 이내 증상성 두개내출혈은 tenecteplase군에서 유의하게 높았음: 2.8% 대 0% (risk difference 2.85% [95% CI 1.16%-5.54%]; P = .004).",
+          "90일 사망률은 수치상 더 높았으나 통계적으로 유의하지 않았음: 5.0% 대 3.2% (risk ratio 1.57 [95% CI 0.69-3.57]; P = .28)."
+        ],
+        "clinicalTakeaway": "In perfusion-selected patients with non-LVO ischemic stroke presenting 4.5-24 hours after last-seen-well, IV tenecteplase modestly improves the chance of a near-disability-free outcome at 90 days but roughly triples-plus the absolute risk of symptomatic intracranial hemorrhage (from 0% to 2.8%). This positions late-window tenecteplase as a reasonable option only where advanced perfusion imaging confirms salvageable tissue and after shared decision-making about the bleeding trade-off. Mortality was not significantly increased, but the trial was not powered for that endpoint.",
+        "clinicalTakeaway_ko": "마지막 정상 확인 4.5~24시간에 내원한 관류영상 선별 non-LVO 허혈성 뇌졸중 환자에서 IV tenecteplase는 90일째 사실상 무장애 예후 가능성을 완만하게 높이지만 증상성 두개내출혈의 절대위험을 0%에서 2.8%로 크게 증가시킴. 따라서 후기 시간창 tenecteplase는 고급 관류영상으로 구제 가능한 조직이 확인되고 출혈 위험에 대한 공유의사결정(shared decision-making)을 거친 경우에만 합리적 선택지가 됨. 사망률은 유의하게 증가하지 않았으나 이 시험은 사망 종말점에 대한 검정력을 갖추지 않았음.",
+        "limitations": "Open-label design (only end points were blinded), leaving room for performance bias in care; single-country trial conducted entirely at 48 centers in China, limiting generalizability to other populations; strict enrollment required advanced perfusion imaging to confirm salvageable tissue and absence of large-vessel occlusion, so results do not apply to unselected patients or centers lacking such imaging; the trial was underpowered for mortality (wide CI 0.69-3.57), and no secondary efficacy outcomes were retrievable from the abstract/authoritative sources to further characterize the benefit-risk profile.",
+        "limitations_ko": "공개표지(open-label) 설계로 결과 판정만 눈가림되어 진료 과정에서 수행 편향(performance bias) 여지가 있음; 중국 48개 센터에서만 수행된 단일 국가 시험으로 다른 인구집단으로의 일반화가 제한됨; 등록 기준이 구제 가능한 조직과 대혈관폐색(LVO) 부재를 확인하는 고급 관류영상을 요구하여, 선별되지 않은 환자나 그런 영상이 없는 기관에는 적용 불가; 사망률에 대해서는 검정력이 부족했고(넓은 CI 0.69-3.57), 이득-위험 프로파일을 더 규명할 이차 효능 결과는 초록·권위 있는 출처에서 확보되지 않음.",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed (PMID 41642827)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41642827/"
+          },
+          {
+            "label": "JAMA official article page",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2844754"
+          }
+        ],
+        "paper": {
+          "pmid": "41642827",
+          "title": "Tenecteplase for Acute Non-Large Vessel Occlusion 4.5 to 24 Hours After Ischemic Stroke: The OPTION Randomized Clinical Trial.",
+          "abstract": "IMPORTANCE: The efficacy and safety of intravenous tenecteplase in non-large vessel occlusion acute ischemic stroke beyond 4.5 hours after symptom onset remain uncertain.\nOBJECTIVE: To assess the efficacy and safety of intravenous tenecteplase administered 4.5 to 24 hours after stroke onset in patients with non-large vessel occlusion and salvageable brain tissue.\nDESIGN, SETTING, AND PARTICIPANTS: This randomized, open-label, blinded end-point clinical trial was conducted at 48 centers in China. A total of 566 patients with non-large vessel occlusion stroke and evidence of potentially salvageable tissue determined on perfusion imaging presenting within 4.5 to 24 hours of the time last seen well were recruited between June 2, 2023, and August 4, 2025 (final follow-up, October 28, 2025).\nINTERVENTIONS: Patients were randomly assigned 1:1 using a minimization algorithm to receive intravenous tenecteplase (0.25 mg/kg; maximum dose, 25 mg; n = 282) or standard medical treatment (n = 284).\nMAIN OUTCOMES AND MEASURES: The primary efficacy outcome was an excellent functional outcome, defined as a score of 0 or 1 on the modified Rankin Scale at 90 days. Safety outcomes included symptomatic intracranial hemorrhage within 36 hours and mortality within 90 days.\nRESULTS: Among the 570 patients randomized, 566 were included in the primary analysis (median age, 68 [IQR, 59-75] years; 196 female [34.6%]). An excellent functional outcome was observed in 123 of 282 patients (43.6%) in the tenecteplase group and 97 of 284 (34.2%) in the control group (risk ratio, 1.28 [95% CI, 1.04-1.57]; P = .02). The incidence of symptomatic intracranial hemorrhage at 2.8% was higher with tenecteplase than with standard medical treatment at 0% (risk difference, 2.85% [95% CI, 1.16%-5.54%]; P = .004), and the mortality at 90 days was 5.0% and 3.2%, respectively (risk ratio, 1.57 [95% CI, 0.69-3.57]; P = .28).\nCONCLUSIONS AND RELEVANCE: Among patients with non-large vessel occlusion acute ischemic stroke and salvageable brain tissue, intravenous tenecteplase administered 4.5 to 24 hours after onset resulted in a greater likelihood of an excellent functional outcome at 90 days than standard care but had an increased risk of symptomatic intracranial hemorrhage.\nTRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT05752916.",
+          "authors": [
+            "Ma G",
+            "Mo R",
+            "Zuo Y",
+            "Ma Q",
+            "Zhao G",
+            "Yao X"
+          ],
+          "journal": "JAMA",
+          "pubDate": "2026-Apr-07",
+          "publicationTypes": [
+            "Clinical Trial, Phase IV",
+            "Journal Article",
+            "Multicenter Study",
+            "Randomized Controlled Trial"
+          ],
+          "meshTerms": [
+            "Aged",
+            "Female",
+            "Humans",
+            "Male",
+            "Middle Aged",
+            "Administration, Intravenous",
+            "Fibrinolytic Agents",
+            "Intracranial Hemorrhages",
+            "Ischemic Stroke",
+            "Tenecteplase"
+          ],
+          "keywords": [],
+          "doi": "10.1001/jama.2026.0210",
+          "pmcid": "PMC12878635",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41642827/",
+          "collectedAt": "2026-07-14T23:55:02.760Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41642827",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41642827/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2026.0210",
+            "url": "https://doi.org/10.1001/jama.2026.0210"
+          },
+          {
+            "label": "웹 — PubMed (PMID 41642827)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41642827/"
+          },
+          {
+            "label": "웹 — JAMA official article page",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2844754"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
