@@ -587,6 +587,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-17",
+      "pmid": "42454644",
+      "title": "Likelihood of Bacterial Infection in Immunocompromised Patients Treated With IV Antibiotics for Possible Sepsis.",
+      "title_ko": "패혈증 의심으로 IV 항생제를 투여받은 면역저하 환자에서 세균 감염의 가능성",
+      "journal": "Critical care explorations",
+      "doi": "10.1097/CCE.0000000000001443",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "응급실에서 패혈증 의심으로 경험적 항생제를 투여받은 성인에서, 후향적으로 볼 때 실제 세균 감염일 가능성은 얼마나 되며, 이 가능성이 면역저하 환자와 비면역저하 환자 사이에서 어떻게 다른가?",
+      "pico": {
+        "population": "[USA] Adults treated for possible sepsis (blood culture draw, lactate measurement, and IV antibiotic administration) within 6 hours of emergency department (ED) arrival at nine hospitals between 2022 and 2024; 350 hospitalizations were randomly selected for structured medical record review, oversampling for immunocompromised status using administrative codes. Of 350 patients, 186 (53.1%) were confirmed as immunocompromised and 164 (46.9%) as nonimmunocompromised.",
+        "intervention": "Confirmed immunocompromised status per Centers for Disease Control and Prevention (CDC) criteria (immunocompromised patients, n=186 [53.1%]), determined by structured medical record review.",
+        "comparison": "Nonimmunocompromised patients (n=164 [46.9%]) treated empirically for possible sepsis over the same period.",
+        "outcome": "Definite or probable bacterial infection (determined by post hoc structured review) was identified in 92 of 186 (49.5%) immunocompromised patients vs. 97 of 164 (59.1%) nonimmunocompromised patients (p = 0.07)."
+      },
+      "pico_ko": {
+        "population": "[미국] 9개 병원에서 2022~2024년 사이 응급실(ED) 도착 6시간 이내에 패혈증 의심으로 치료받은(혈액배양 채취, 젖산 측정, IV 항생제 투여) 성인; 행정 코드를 이용해 면역저하 상태를 oversampling하여 350건의 입원을 무작위 선정해 구조화된 의무기록 검토를 시행함. 350명 중 186명(53.1%)이 면역저하로, 164명(46.9%)이 비면역저하로 확인됨.",
+        "intervention": "구조화된 의무기록 검토를 통해 Centers for Disease Control and Prevention(CDC) 기준으로 확인된 면역저하 상태(면역저하 환자, n=186 [53.1%]).",
+        "comparison": "같은 기간 동안 패혈증 의심으로 경험적 치료를 받은 비면역저하 환자(n=164 [46.9%]).",
+        "outcome": "후향적 구조화 검토로 판정한 확정적(definite) 또는 유력한(probable) 세균 감염은 면역저하 환자 186명 중 92명(49.5%) vs. 비면역저하 환자 164명 중 97명(59.1%)에서 확인됨 (p = 0.07)."
+      },
+      "keyFindings": [
+        "Only 92 of 186 (49.5%) immunocompromised patients treated empirically for possible sepsis had definite or probable bacterial infection in retrospect, vs. 97 of 164 (59.1%) nonimmunocompromised patients (p = 0.07).",
+        "Immunocompromised patients more commonly presented with fevers, chills or rigors (66.0% vs. 32.0%, p < 0.001) and ED clinicians more often documented concern for sepsis (74% vs. 62%, p = 0.01).",
+        "Non-bacterial mimics differed by host: viral/fungal infection, febrile neutropenia without bacterial evidence, malignancy progression, and medication toxicity predominated in immunocompromised patients, whereas chronic heart/lung disease exacerbations, hypovolemia, and hypervolemia predominated in nonimmunocompromised patients."
+      ],
+      "keyFindings_ko": [
+        "패혈증 의심으로 경험적 치료를 받은 면역저하 환자 186명 중 92명(49.5%)만이 후향적으로 확정적/유력한 세균 감염이었고, 비면역저하 환자는 164명 중 97명(59.1%)이었음 (p = 0.07).",
+        "면역저하 환자는 발열, 오한 또는 전율(rigors)을 더 흔히 보였고(66.0% vs. 32.0%, p < 0.001), ED 임상의가 패혈증 우려를 더 자주 기록함(74% vs. 62%, p = 0.01).",
+        "비세균성 유사질환은 숙주에 따라 달랐음: 면역저하 환자에서는 viral/fungal 감염, 세균 증거 없는 febrile neutropenia, 악성종양 진행, 약물 독성이 우세했고, 비면역저하 환자에서는 만성 심장/폐질환 악화, hypovolemia, hypervolemia가 우세했음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42454644",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42454644/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCE.0000000000001443",
+          "url": "https://doi.org/10.1097/CCE.0000000000001443"
+        },
+        {
+          "label": "웹 — PubMed — article record (PMID 42454644)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42454644/"
+        },
+        {
+          "label": "웹 — PubMed search — article citation/DOI verification",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Likelihood+of+Bacterial+Infection+in+Immunocompromised+Patients+Treated+With+IV+Antibiotics+for+Possible+Sepsis"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — article record (PMID 42454644)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42454644/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed search — article citation/DOI verification",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Likelihood+of+Bacterial+Infection+in+Immunocompromised+Patients+Treated+With+IV+Antibiotics+for+Possible+Sepsis",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
