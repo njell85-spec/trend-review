@@ -991,6 +991,288 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-16",
+      "arm1": {
+        "pmid": "42331569",
+        "title_ko": "패혈증에서 심박수 관련 심근 손상 재고: 심방세동, 심박수, cardiac troponin T 및 장기 사망률",
+        "clinicalQuestion": "In adults with sepsis requiring vasopressor support, what are the independent and combined prognostic contributions of atrial fibrillation (AF), highest recorded heart rate, and high-sensitivity cardiac troponin T (hs-cTnT) to 1-year mortality, and is troponin elevation attributable to rate-related demand ischaemia?",
+        "clinicalQuestion_ko": "혈압상승제(vasopressor)가 필요한 성인 패혈증 환자에서 atrial fibrillation(AF), 최고 기록 심박수, high-sensitivity cardiac troponin T(hs-cTnT)가 1년 사망률에 미치는 독립적·복합적 예후 기여도는 무엇이며, troponin 상승이 심박수 관련 수요 허혈(demand ischaemia)로 설명되는가?",
+        "pico": {
+          "population": "[Sweden] Adults with sepsis requiring vasopressor support admitted to critical care units at Danderyd University Hospital, Stockholm, between March 2012 and September 2021, fulfilling Sepsis-3 criteria with hs-cTnT measured within 48 hours of sepsis onset; among 586 included patients, 177 (30%) had pre-existing AF and 112 (19%) developed new-onset AF, and elevated hs-cTnT (≥15 ng/L) was present in 546 (93%). Median age was 68 (IQR 58–76) in no AF, 79 (72–85) in pre-existing AF and 74 (67–80) in new-onset AF; female 42%/29%/35% respectively.",
+          "intervention": "Exposures were AF status (classified as no AF, pre-existing AF or new-onset AF) and highest recorded heart rate during the first 72 hours, examined in relation to hs-cTnT concentrations (elevated defined as ≥15 ng/L).",
+          "comparison": "Patients with no atrial fibrillation (no AF).",
+          "outcome": "Primary outcome was the association between highest plasma hs-cTnT and all-cause 1-year mortality in patients with and without AF. One-year mortality increased progressively across hs-cTnT quartiles, with an additive increase among patients with concomitant AF; after multivariable adjustment log-transformed hs-cTnT remained associated with 1-year mortality (HR 1.3, 95% CI 1.1–1.4, p<0.001). Highest recorded heart rate was not associated with hs-cTnT or mortality."
+        },
+        "pico_ko": {
+          "population": "[스웨덴] 2012년 3월부터 2021년 9월까지 Stockholm의 Danderyd University Hospital 중환자실에 입원한, 혈압상승제(vasopressor)가 필요한 성인 패혈증 환자로 Sepsis-3 기준을 충족하고 패혈증 발생 48시간 이내에 hs-cTnT를 측정한 경우. 포함된 586명 중 177명(30%)은 기존 AF, 112명(19%)은 신규 발생 AF였고, 상승된 hs-cTnT(≥15 ng/L)는 546명(93%)에서 존재. 중앙값 연령은 no AF 68세(IQR 58–76), 기존 AF 79세(72–85), 신규 AF 74세(67–80)였고 여성 비율은 각각 42%/29%/35%.",
+          "intervention": "노출 변수는 AF 상태(no AF, 기존 AF, 신규 발생 AF로 분류)와 첫 72시간 동안의 최고 기록 심박수였으며, hs-cTnT 농도(상승 기준 ≥15 ng/L)와의 관계를 분석함.",
+          "comparison": "atrial fibrillation이 없는 환자(no AF).",
+          "outcome": "일차 결과는 최고 혈장 hs-cTnT와 전원인 1년 사망률의 연관성(AF 유무별). 1년 사망률은 hs-cTnT quartile에 걸쳐 점진적으로 증가했고 AF 동반 시 위험이 additive하게 증가했으며, 다변량 보정 후 log-변환 hs-cTnT는 1년 사망률과 연관됨(HR 1.3, 95% CI 1.1–1.4, p<0.001). 최고 기록 심박수는 hs-cTnT나 사망률과 연관 없음."
+        },
+        "baseline": "Imbalanced",
+        "secondaryOutcomes": [
+          "One-year mortality was higher in pre-existing AF (crude HR 2.4, 95% CI 1.8–3.2) and new-onset AF (crude HR 1.8, 95% CI 1.3–2.5) versus no AF; after multivariable adjustment, pre-existing AF HR 1.4 (95% CI 0.99–1.9, p=0.055) and new-onset AF HR 1.5 (95% CI 1.1–2.2, p=0.014).",
+          "AF status accounted for only 1.2% of the variability in hs-cTnT concentrations and 2.2% of the variability in highest recorded heart rate; by comparison LVEF explained 9.4% of hs-cTnT variability.",
+          "Highest recorded heart rate was not associated with hs-cTnT concentrations or with 1-year mortality on multivariable analysis."
+        ],
+        "secondaryOutcomes_ko": [
+          "1년 사망률은 no AF 대비 기존 AF(보정 전 HR 2.4, 95% CI 1.8–3.2)와 신규 AF(보정 전 HR 1.8, 95% CI 1.3–2.5)에서 더 높았고, 다변량 보정 후 기존 AF HR 1.4(95% CI 0.99–1.9, p=0.055), 신규 AF HR 1.5(95% CI 1.1–2.2, p=0.014).",
+          "AF 상태는 hs-cTnT 농도 변동의 1.2%, 최고 기록 심박수 변동의 2.2%만 설명했으며, 대조적으로 LVEF는 hs-cTnT 변동의 9.4%를 설명함.",
+          "최고 기록 심박수는 다변량 분석에서 hs-cTnT 농도 또는 1년 사망률과 연관되지 않음."
+        ],
+        "statGlossary": [
+          {
+            "term": "HR",
+            "explanation_ko": "위험비(hazard ratio): 특정 시점에 사건(사망) 발생 속도의 비. 1보다 크면 위험 증가. 예: 기존 AF의 보정 전 HR 2.4 → no AF 대비 1년 사망 위험이 약 2.4배 높음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, 1을 포함하면 통계적으로 유의하지 않음. 예: 기존 AF의 보정 HR 1.4(95% CI 0.99–1.9)는 1을 포함해 유의성이 경계선."
+          },
+          {
+            "term": "p-value",
+            "explanation_ko": "우연만으로 이 결과가 나올 확률로 보통 0.05 미만이면 유의하다고 봄. 예: log-hs-cTnT의 p<0.001 → 사망률과의 연관이 우연일 가능성이 매우 낮음."
+          },
+          {
+            "term": "R²",
+            "explanation_ko": "설명된 변동 비율: 한 변수가 다른 변수의 값 차이를 몇 % 설명하는지. 예: AF가 hs-cTnT 변동의 1.2%만 설명 → AF는 troponin 상승을 거의 설명하지 못함."
+          }
+        ],
+        "practiceChange": [
+          "In septic patients on vasopressors, do not dismiss an elevated hs-cTnT as merely rate-related demand ischaemia — heart rate explained essentially none of the troponin variability and was not linked to mortality, so tachycardia should not be invoked to explain away myocardial injury.",
+          "Recognize concomitant AF (pre-existing or new-onset) plus elevated hs-cTnT as a high-risk phenotype: mortality rose progressively across troponin quartiles with an additive increase when AF was present, flagging these patients for closer monitoring and goals-of-care discussion.",
+          "Do not treat this observational, single-centre data as justification for rate-control targeting to lower troponin or mortality; the study shows association only and heart rate was not prognostically relevant, so no rate-lowering intervention is supported."
+        ],
+        "practiceChange_ko": [
+          "혈압상승제를 사용하는 패혈증 환자에서 상승된 hs-cTnT를 단순한 심박수 관련 수요 허혈로 치부하지 말 것 — 심박수는 troponin 변동을 사실상 전혀 설명하지 못했고 사망률과도 무관했으므로, 빈맥으로 심근 손상을 합리화해서는 안 됨.",
+          "AF 동반(기존 또는 신규) + hs-cTnT 상승을 고위험 표현형으로 인식할 것: 사망률이 troponin quartile에 따라 점진 증가하고 AF 동반 시 additive하게 상승하므로, 이들 환자는 면밀한 모니터링과 치료 목표 논의 대상으로 삼음.",
+          "이 관찰적·단일기관 자료를 troponin이나 사망률을 낮추기 위한 rate-control 목표 설정의 근거로 삼지 말 것; 연관성만 보였고 심박수는 예후적 의미가 없어 심박수 저하 중재를 뒷받침하지 않음."
+        ],
+        "keyFindings": [
+          "Among 586 vasopressor-requiring sepsis patients (30% pre-existing AF, 19% new-onset AF, 93% with hs-cTnT ≥15 ng/L), AF explained only 1.2% of hs-cTnT variability and 2.2% of heart rate variability, and heart rate was not associated with troponin or mortality.",
+          "Crude 1-year mortality was higher with pre-existing AF (HR 2.4, 95% CI 1.8–3.2) and new-onset AF (HR 1.8, 95% CI 1.3–2.5) versus no AF; on multivariable adjustment new-onset AF remained significant (HR 1.5, 95% CI 1.1–2.2, p=0.014) while pre-existing AF was borderline (HR 1.4, 95% CI 0.99–1.9, p=0.055).",
+          "One-year mortality increased progressively across hs-cTnT quartiles with an additive increase among AF patients, and log-transformed hs-cTnT remained independently associated with mortality after adjustment (HR 1.3, 95% CI 1.1–1.4, p<0.001)."
+        ],
+        "keyFindings_ko": [
+          "혈압상승제가 필요한 패혈증 환자 586명(기존 AF 30%, 신규 AF 19%, hs-cTnT ≥15 ng/L 93%)에서 AF는 hs-cTnT 변동의 1.2%, 심박수 변동의 2.2%만 설명했고, 심박수는 troponin·사망률과 무관했음.",
+          "보정 전 1년 사망률은 no AF 대비 기존 AF(HR 2.4, 95% CI 1.8–3.2), 신규 AF(HR 1.8, 95% CI 1.3–2.5)에서 높았고, 다변량 보정 후 신규 AF는 유의(HR 1.5, 95% CI 1.1–2.2, p=0.014), 기존 AF는 경계선(HR 1.4, 95% CI 0.99–1.9, p=0.055)이었음.",
+          "1년 사망률은 hs-cTnT quartile에 걸쳐 점진 증가했고 AF 환자에서 additive하게 상승했으며, log-변환 hs-cTnT는 보정 후에도 사망률과 독립적으로 연관(HR 1.3, 95% CI 1.1–1.4, p<0.001)."
+        ],
+        "clinicalTakeaway": "In vasopressor-dependent sepsis, an elevated hs-cTnT should not be reflexively attributed to tachycardia/demand ischaemia — heart rate explained virtually none of the troponin variability and carried no prognostic weight. Instead, elevated troponin plus AF marks a distinct high-risk subgroup with additive 1-year mortality, useful for risk stratification and prognostic conversations rather than as a target for rate-lowering therapy.",
+        "clinicalTakeaway_ko": "혈압상승제 의존 패혈증에서 상승된 hs-cTnT를 반사적으로 빈맥/수요 허혈 탓으로 돌려서는 안 됨 — 심박수는 troponin 변동을 사실상 설명하지 못했고 예후적 의미도 없었음. 오히려 troponin 상승 + AF는 1년 사망률이 additive하게 높은 별개의 고위험 아군을 나타내며, 이는 심박수 저하 치료의 표적이 아니라 위험 층화와 예후 상담에 유용함.",
+        "limitations": "Single-centre, retrospective secondary analysis of the SET cohort at one Swedish university hospital, limiting generalizability; groups were imbalanced at baseline (older age and lower female proportion in AF groups), and although multivariable Cox adjustment was performed, residual confounding is likely. Only the highest hs-cTnT and highest heart rate within fixed windows were used (no serial dynamics), heart rate does not capture rhythm burden or rate control, causality cannot be inferred from association, and after adjustment the pre-existing AF association was only borderline (p=0.055).",
+        "limitations_ko": "스웨덴 단일 대학병원 SET 코호트의 후향적 이차 분석으로 일반화에 제한이 있음; 기저 특성이 불균형(AF군에서 고령, 여성 비율 낮음)했고 다변량 Cox 보정을 했으나 잔여 교란 가능성이 높음. 고정 구간 내 최고 hs-cTnT와 최고 심박수만 사용(연속 변화 미반영)했고, 심박수는 리듬 부담이나 rate control을 반영하지 못하며, 연관성으로 인과를 추론할 수 없고, 보정 후 기존 AF의 연관성은 경계선(p=0.055)에 그침.",
+        "evidenceLevel": "Low",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed record (PMID 42331569)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42331569/"
+          },
+          {
+            "label": "PMC full text (PMC13289210), Open Heart 2026;13(1):e004073, DOI 10.1136/openhrt-2026-004073",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13289210/"
+          }
+        ],
+        "paper": {
+          "pmid": "42331569",
+          "title": "Rethinking rate-related myocardial injury in sepsis: atrial fibrillation, heart rate, cardiac troponin T and long-term mortality.",
+          "abstract": "BACKGROUND: Atrial fibrillation (AF), elevated heart rate and elevated high-sensitivity cardiac troponin T (hs-cTnT) are common in sepsis, but their independent and combined prognostic significance remains uncertain.\nMETHODS: This secondary analysis of the retrospective Sepsis and Elevated Troponin cohort study included adults with sepsis requiring vasopressor support admitted to critical care units at Danderyd University Hospital, Stockholm, Sweden, between March 2012 and September 2021. Eligible patients fulfilled Sepsis-3 criteria and had hs-cTnT measured within 48 hours of sepsis onset. Patients were classified as having no AF, pre-existing AF or new-onset AF. AF status and highest recorded heart rate during the first 72 hours were examined in relation to troponin concentrations and 1-year mortality using linear regression, Kaplan-Meier analysis and multivariable Cox proportional hazards regression.\nRESULTS: Among 586 included patients, 177 (30%) had pre-existing AF and 112 (19%) developed new-onset AF. Elevated hs-cTnT (≥15 ng/L) was present in 546 patients (93%). Patients with AF had higher hs-cTnT concentrations and higher recorded heart rates. AF accounted for only 1.2% of the variability in hs-cTnT concentrations and 2.2% of the variability in highest recorded heart rate. Heart rate was not associated with hs-cTnT concentrations or mortality. One-year mortality was higher in patients with pre-existing AF (HR 2.4, 95% CI 1.8-3.2) and new-onset AF (HR 1.8, 95% CI 1.3-2.5) than in those without AF. One-year mortality increased progressively across hs-cTnT quartiles, with an additive increase in risk among patients with concomitant AF. After multivariable adjustment, AF and hs-cTnT concentrations remained independently associated with 1-year mortality, whereas highest recorded heart rate did not.\nCONCLUSIONS: In adults with sepsis requiring vasopressor support, AF and elevated hs-cTnT were associated with increased 1-year mortality, with additive prognostic value independent of highest recorded heart rate. Concomitant AF and troponin elevation identify a high-risk subgroup of sepsis patients whose myocardial injury should not be attributed solely to rate-related demand ischaemia.",
+          "authors": [
+            "Lörstad S",
+            "Essehorn L",
+            "Engdahl J",
+            "Persson J"
+          ],
+          "journal": "Open heart",
+          "pubDate": "2026-Jun-22",
+          "publicationTypes": [
+            "Journal Article"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Atrial Fibrillation",
+            "Troponin T",
+            "Sepsis",
+            "Heart Rate",
+            "Female",
+            "Male",
+            "Retrospective Studies",
+            "Biomarkers",
+            "Aged"
+          ],
+          "keywords": [
+            "Atrial Fibrillation",
+            "Biomarkers",
+            "Epidemiology",
+            "Inflammation"
+          ],
+          "doi": "10.1136/openhrt-2026-004073",
+          "pmcid": "PMC13289210",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42331569/",
+          "collectedAt": "2026-07-15T23:57:00.917Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42331569",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42331569/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/openhrt-2026-004073",
+            "url": "https://doi.org/10.1136/openhrt-2026-004073"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 42331569)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42331569/"
+          },
+          {
+            "label": "웹 — PMC full text (PMC13289210), Open Heart 2026;13(1):e004073, DOI 10.1136/openhrt-2026-004073",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13289210/"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "42150044",
+        "title_ko": "외상 및 출혈에서 O형 전혈을 이용한 병원 전 소생술 (TOWAR 시험)",
+        "clinicalQuestion": "In injured patients with hemorrhagic shock, does prehospital transfusion of type O whole blood reduce 30-day all-cause mortality compared with as-indicated blood components, and does the storage age of whole blood affect outcomes?",
+        "clinicalQuestion_ko": "출혈성 쇼크가 있는 외상 환자에서, 병원 전 O형 전혈(whole blood) 수혈이 필요에 따른 혈액 성분(component) 수혈에 비해 30일 전체 사망률을 낮추는가, 그리고 전혈의 보관 기간(storage age)이 결과에 영향을 미치는가?",
+        "pico": {
+          "population": "[USA] Injured trauma patients transported by air medical bases who were in hemorrhagic shock (eligibility: SBP ≤90 mmHg with HR ≥108, or any SBP ≤70 mmHg; ages 18–90); of 1020 eligible patients transported to hospitals by the air bases, 715 were assigned to whole blood and 305 to blood components (695 and 298, respectively, included in the primary analysis).",
+          "intervention": "Up to 2 units of prehospital type O whole blood.",
+          "comparison": "As-indicated blood components (plasma, red cells, or both) for prehospital transfusion.",
+          "outcome": "Death from any cause within 30 days after randomization: 25.9% in the whole-blood group vs 20.5% in the component group (adjusted odds ratio 1.24; 95% CI 0.87 to 1.76; P = 0.24)."
+        },
+        "pico_ko": {
+          "population": "[미국] 항공 의료기지(air medical base)를 통해 이송된 출혈성 쇼크 상태의 외상 환자(적격 기준: SBP ≤90 mmHg 이면서 HR ≥108, 또는 SBP ≤70 mmHg; 연령 18–90세); 항공기지가 병원으로 이송한 적격 환자 1020명 중 715명이 whole blood, 305명이 blood components에 배정되었고, 각각 695명과 298명이 일차 분석에 포함됨.",
+          "intervention": "병원 전 O형 전혈(whole blood) 최대 2단위.",
+          "comparison": "필요에 따라 투여한 혈액 성분(plasma, red cells, 또는 둘 다)의 병원 전 수혈.",
+          "outcome": "무작위배정 후 30일 이내 전체 사망: whole-blood군 25.9% 대 component군 20.5% (adjusted odds ratio 1.24; 95% CI 0.87–1.76; P = 0.24)."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Observational storage-age substudy: 30-day mortality was 27.1% among 210 patients who received whole blood with a storage age of 15 to 21 days vs 26.4% among 443 patients who received whole blood with a storage age of 1 to 14 days (adjusted odds ratio 0.99; 95% CI 0.74 to 1.32).",
+          "Safety: no substantial between-group differences in adverse events were observed (no specific statistics reported in the abstract)."
+        ],
+        "secondaryOutcomes_ko": [
+          "관찰적 보관기간(storage-age) 하위연구: 30일 사망률은 보관기간 15–21일 전혈을 받은 210명에서 27.1%, 1–14일 전혈을 받은 443명에서 26.4% (adjusted odds ratio 0.99; 95% CI 0.74–1.32).",
+          "안전성: 군 간 이상반응(adverse events)에 실질적 차이는 관찰되지 않음(초록에 구체적 통계치는 보고되지 않음)."
+        ],
+        "statGlossary": [
+          {
+            "term": "adjusted odds ratio (OR)",
+            "explanation_ko": "교란변수를 보정한 오즈비: 1보다 크면 해당 군의 사건 발생 오즈가 높고, 1보다 작으면 낮음. 예: 일차결과 adjusted OR 1.24 → component군 대비 whole-blood군의 30일 사망 오즈가 약 24% 높은 방향이나, 통계적으로 유의하지 않음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위이며, 1(효과 없음)을 포함하면 유의하지 않음. 예: 95% CI 0.87–1.76 → 1을 포함하므로 두 군 사망 차이가 유의하지 않음."
+          },
+          {
+            "term": "P value",
+            "explanation_ko": "우연만으로 이 정도 차이가 나타날 확률로, 보통 0.05 미만이면 유의하다고 봄. 예: P = 0.24 → 0.05보다 크므로 두 군 간 30일 사망률 차이는 통계적으로 유의하지 않음."
+          }
+        ],
+        "practiceChange": [
+          "Do NOT adopt prehospital whole blood as superior to component therapy for mortality: in this phase 3 cluster-RCT, 2 units of type O whole blood did not lower 30-day mortality vs as-indicated components (25.9% vs 20.5%; adjusted OR 1.24, 95% CI 0.87–1.76, P=0.24), so either strategy remains acceptable and choice can be driven by logistics, cost, and product availability.",
+          "Continue prehospital blood transfusion itself for traumatic hemorrhagic shock — the trial compared two transfusion strategies, not transfusion vs none, so the established benefit of early prehospital blood is not challenged.",
+          "Storage age of whole blood (15–21 vs 1–14 days) need not be a barrier to use: the observational substudy showed no mortality difference (27.1% vs 26.4%; adjusted OR 0.99, 95% CI 0.74–1.32), supporting operational flexibility in inventory management."
+        ],
+        "practiceChange_ko": [
+          "병원 전 whole blood를 component 요법보다 사망률 측면에서 우월한 것으로 채택하지 말 것: 이 phase 3 cluster-RCT에서 O형 전혈 2단위는 필요에 따른 component 대비 30일 사망률을 낮추지 못함(25.9% 대 20.5%; adjusted OR 1.24, 95% CI 0.87–1.76, P=0.24). 따라서 두 전략 모두 수용 가능하며 선택은 물류·비용·제제 가용성에 따라 결정할 수 있음.",
+          "외상성 출혈성 쇼크에서 병원 전 수혈 자체는 계속 시행할 것 — 본 시험은 수혈 대 무수혈이 아니라 두 수혈 전략을 비교한 것이므로, 조기 병원 전 수혈의 기존 이점은 부정되지 않음.",
+          "전혈의 보관기간(15–21일 대 1–14일)이 사용의 장벽이 될 필요는 없음: 관찰적 하위연구에서 사망률 차이가 없었으며(27.1% 대 26.4%; adjusted OR 0.99, 95% CI 0.74–1.32), 재고 관리의 운영적 유연성을 뒷받침함."
+        ],
+        "keyFindings": [
+          "In 993 analyzed patients (695 whole blood, 298 components), 30-day all-cause mortality was 25.9% with whole blood vs 20.5% with components (adjusted OR 1.24; 95% CI 0.87–1.76; P=0.24) — no significant mortality benefit from whole blood.",
+          "The observational storage-age substudy found nearly identical 30-day mortality for older (15–21 day) vs fresher (1–14 day) whole blood: 27.1% (n=210) vs 26.4% (n=443) (adjusted OR 0.99; 95% CI 0.74–1.32).",
+          "No substantial between-group differences in adverse events were observed, and the trial concluded whole blood did not lower 30-day mortality compared with blood components."
+        ],
+        "keyFindings_ko": [
+          "분석 대상 993명(whole blood 695명, components 298명)에서 30일 전체 사망률은 whole blood 25.9% 대 components 20.5% (adjusted OR 1.24; 95% CI 0.87–1.76; P=0.24)로, whole blood의 유의한 사망 이득 없음.",
+          "관찰적 보관기간 하위연구에서 오래된(15–21일) 전혈과 신선한(1–14일) 전혈의 30일 사망률이 거의 동일함: 27.1%(n=210) 대 26.4%(n=443) (adjusted OR 0.99; 95% CI 0.74–1.32).",
+          "군 간 이상반응(adverse events)에 실질적 차이가 없었으며, 전혈이 혈액 성분 대비 30일 사망률을 낮추지 못한다고 결론지음."
+        ],
+        "clinicalTakeaway": "In adults with prehospital traumatic hemorrhagic shock, giving up to 2 units of type O whole blood did not improve 30-day survival compared with as-indicated blood components (25.9% vs 20.5%; adjusted OR 1.24, 95% CI 0.87–1.76). Both strategies appear clinically equivalent for mortality, so the choice can be guided by logistics, cost, and supply rather than a presumed survival advantage. Storage age of whole blood up to 21 days did not affect mortality, supporting flexible inventory practices.",
+        "clinicalTakeaway_ko": "병원 전 외상성 출혈성 쇼크 성인에서 O형 전혈 최대 2단위 투여는 필요에 따른 혈액 성분 대비 30일 생존을 개선하지 못함(25.9% 대 20.5%; adjusted OR 1.24, 95% CI 0.87–1.76). 두 전략은 사망률 측면에서 임상적으로 동등해 보이므로, 선택은 가정된 생존 이득이 아니라 물류·비용·공급에 따라 결정할 수 있음. 21일까지의 전혈 보관기간은 사망률에 영향을 주지 않아 유연한 재고 운영을 뒷받침함.",
+        "limitations": "Cluster-randomized by air medical base with a 2:1 allocation and 1-month blocks, which can introduce between-group imbalance (baseline comparability was not reported in the abstract); the trial was likely powered for a larger effect and the 5.4-percentage-point higher point estimate in the whole-blood group cannot exclude harm within the wide CI. The storage-age comparison was observational (not randomized) and thus subject to confounding, and only abstract-level data (no full text) were available, limiting appraisal of secondary outcomes and subgroup effects. Findings are from US air medical transport and may not generalize to ground EMS or other systems.",
+        "limitations_ko": "항공 의료기지 단위의 cluster 무작위배정(2:1 배정, 1개월 블록)으로 군 간 불균형이 발생할 수 있으며(초록에 baseline 비교성 미보고), 시험은 더 큰 효과를 검출하도록 설계되었을 가능성이 크고 whole-blood군에서 5.4%p 높은 점추정치는 넓은 CI 내에서 해악 가능성을 배제하지 못함. 보관기간 비교는 무작위배정이 아닌 관찰적 분석이라 교란에 취약하며, 전문(full text) 없이 초록 수준 자료만 이용 가능해 secondary outcomes 및 하위군 효과 평가가 제한됨. 결과는 미국 항공 의료 이송 기반이므로 지상 EMS나 다른 시스템에 일반화되지 않을 수 있음.",
+        "evidenceLevel": "High",
+        "clinicalApplicabilityScore": 8,
+        "webSources": [
+          {
+            "label": "PubMed — PMID 42150044 (abstract, DOI/PMID confirmation)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42150044/"
+          },
+          {
+            "label": "ClinicalTrials.gov — NCT04684719 (TOWAR eligibility, outcomes, enrollment, country)",
+            "url": "https://clinicaltrials.gov/study/NCT04684719"
+          }
+        ],
+        "paper": {
+          "pmid": "42150044",
+          "title": "Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage.",
+          "abstract": "BACKGROUND: Blood transfusion before arrival at a hospital reduces mortality from traumatic hemorrhage and shock. Whether transfusion with whole blood is more beneficial than transfusion with blood components is uncertain, as are the effects of the length of time that blood products are in storage between donation and transfusion.\nMETHODS: In this pragmatic, multicenter, phase 3, cluster-randomized trial, we assigned 44 air medical bases in a 2:1 ratio to the use of up to 2 units of whole blood or as-indicated blood components (plasma, red cells, or both) for prehospital transfusion in trauma patients during 1-month blocks. The primary outcome was death from any cause within 30 days after randomization. An observational substudy assessed outcomes according to the storage age of whole blood.\nRESULTS: Of 1020 eligible patients transported to hospitals by the air bases, 715 were assigned to receive whole blood and 305 to receive blood components; 695 and 298, respectively, were included in the primary analysis. Mortality at 30 days was 25.9% in the whole-blood group and 20.5% in the component group (adjusted odds ratio, 1.24; 95% confidence interval [CI], 0.87 to 1.76; P = 0.24). No substantial between-group differences in adverse events were observed. In the observational substudy, 30-day mortality was 27.1% among 210 patients who received whole blood with a storage age of 15 to 21 days and 26.4% among 443 patients who received whole blood with a storage age of 1 to 14 days (adjusted odds ratio, 0.99; 95% CI, 0.74 to 1.32).\nCONCLUSIONS: In injured patients with hemorrhagic shock, the use of whole blood for prehospital transfusion did not result in lower 30-day mortality than the use of blood components. (Funded by the Defense Health Agency Research Technology Portfolio Management, Combat Casualty Portfolio; TOWAR ClinicalTrials.gov number, NCT04684719.).",
+          "authors": [
+            "Sperry JL",
+            "Guyette FX",
+            "Cotton BA",
+            "Luther JF",
+            "Utarnachitt RB",
+            "Kutcher ME"
+          ],
+          "journal": "The New England journal of medicine",
+          "pubDate": "2026-Jun-18",
+          "publicationTypes": [
+            "Clinical Trial, Phase III",
+            "Comparative Study",
+            "Journal Article",
+            "Multicenter Study",
+            "Observational Study",
+            "Pragmatic Clinical Trial",
+            "Randomized Controlled Trial"
+          ],
+          "meshTerms": [
+            "Adult",
+            "Female",
+            "Humans",
+            "Male",
+            "Middle Aged",
+            "ABO Blood-Group System",
+            "Air Ambulances",
+            "Blood Component Transfusion",
+            "Blood Preservation",
+            "Blood Transfusion"
+          ],
+          "keywords": [],
+          "doi": "10.1056/NEJMoa2602167",
+          "pmcid": "PMC13313084",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42150044/",
+          "collectedAt": "2026-07-16T00:02:32.758Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42150044",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42150044/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMoa2602167",
+            "url": "https://doi.org/10.1056/NEJMoa2602167"
+          },
+          {
+            "label": "웹 — PubMed — PMID 42150044 (abstract, DOI/PMID confirmation)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42150044/"
+          },
+          {
+            "label": "웹 — ClinicalTrials.gov — NCT04684719 (TOWAR eligibility, outcomes, enrollment, country)",
+            "url": "https://clinicaltrials.gov/study/NCT04684719"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
