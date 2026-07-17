@@ -1273,6 +1273,282 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-17",
+      "arm1": {
+        "pmid": "42454644",
+        "title_ko": "가능성 있는 sepsis로 IV 항생제 치료를 받은 면역저하 환자에서 세균 감염의 가능성",
+        "clinicalQuestion": "Among adults empirically treated for possible sepsis in the emergency department, what proportion of immunocompromised versus nonimmunocompromised patients actually had a definite or probable bacterial infection in retrospect, and what alternative diagnoses mimicked bacterial sepsis?",
+        "clinicalQuestion_ko": "응급실에서 가능성 있는 sepsis에 대해 경험적으로 치료받은 성인 중, 면역저하 환자와 비면역저하 환자에서 후향적으로 실제 확정적(definite) 또는 개연적(probable) 세균 감염이 있었던 비율은 각각 얼마이며, 세균성 sepsis를 모방한 대체 진단은 무엇인가?",
+        "pico": {
+          "population": "[USA] All adults treated for possible sepsis (blood culture draw, lactate measurement, and IV antibiotic administration) within 6 hours of emergency department (ED) arrival at nine hospitals between 2022 and 2024; 350 hospitalizations randomly selected for structured medical record review, oversampling for immunocompromised status using administrative codes; 186 (53.1%) confirmed immunocompromised and 164 (46.9%) nonimmunocompromised.",
+          "intervention": "Confirmed immunocompromised status per Centers for Disease Control and Prevention (CDC) criteria (186 patients, 53.1%), with post hoc likelihood of bacterial infection determined by structured medical record review.",
+          "comparison": "Nonimmunocompromised patients treated empirically for possible sepsis (164 patients, 46.9%).",
+          "outcome": "Definite or probable bacterial infection was identified in 92 of 186 (49.5%) immunocompromised patients vs. 97 of 164 (59.1%) nonimmunocompromised patients (p = 0.07)."
+        },
+        "pico_ko": {
+          "population": "[미국] 2022년부터 2024년 사이 9개 병원에서 응급실(ED) 도착 6시간 이내에 가능성 있는 sepsis에 대해 치료받은(혈액배양 채취, lactate 측정, IV 항생제 투여) 모든 성인; 행정 코드를 이용해 면역저하 상태를 oversampling하여 350건의 입원을 무작위로 선정해 구조화된 의무기록 검토를 시행; 186명(53.1%)이 면역저하로, 164명(46.9%)이 비면역저하로 확인됨.",
+          "intervention": "Centers for Disease Control and Prevention(CDC) 기준에 따라 확인된 면역저하 상태(186명, 53.1%)로, 구조화된 의무기록 검토를 통해 세균 감염 가능성을 post hoc으로 판정함.",
+          "comparison": "가능성 있는 sepsis에 대해 경험적으로 치료받은 비면역저하 환자(164명, 46.9%).",
+          "outcome": "확정적 또는 개연적 세균 감염은 면역저하 환자 186명 중 92명(49.5%) vs. 비면역저하 환자 164명 중 97명(59.1%)에서 확인됨(p = 0.07)."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Immunocompromised patients more commonly presented with fevers, chills or rigors (66.0% vs. 32.0%, p < 0.001).",
+          "ED clinicians more often documented concern for sepsis in immunocompromised patients (74% vs. 62%, p = 0.01).",
+          "Among immunocompromised patients without definite/probable bacterial infection, common alternative etiologies were viral or fungal infection, febrile neutropenia without clinical evidence of bacterial infection, progression of malignancy, and medication toxicity, whereas chronic heart or lung disease exacerbations, hypovolemia, and hypervolemia predominated among nonimmunocompromised patients."
+        ],
+        "secondaryOutcomes_ko": [
+          "면역저하 환자는 발열, 오한 또는 rigor를 더 흔하게 보였다(66.0% vs. 32.0%, p < 0.001).",
+          "ED 임상의는 면역저하 환자에서 sepsis에 대한 우려를 더 자주 기록했다(74% vs. 62%, p = 0.01).",
+          "확정적/개연적 세균 감염이 없었던 면역저하 환자에서 흔한 대체 원인은 바이러스 또는 진균 감염, 세균 감염의 임상적 근거가 없는 febrile neutropenia, 악성종양의 진행, 약물 독성이었던 반면, 비면역저하 환자에서는 만성 심장 또는 폐질환의 악화, hypovolemia, hypervolemia가 우세했다."
+        ],
+        "statGlossary": [
+          {
+            "term": "p-value",
+            "explanation_ko": "관찰된 차이가 우연만으로 나타날 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 본다. 예: 세균 감염 비율 49.5% vs. 59.1%의 p = 0.07 → 통상적 기준(0.05)에서 유의하지 않아 두 군 간 차이가 우연일 가능성을 배제하기 어려움; 반면 발열·오한 66.0% vs. 32.0%의 p < 0.001 → 우연일 가능성이 매우 낮아 유의한 차이."
+          }
+        ],
+        "practiceChange": [
+          "Recognize that empiric IV antibiotics for possible sepsis are frequently given to patients who do not have bacterial infection — in this cohort only ~49.5% of immunocompromised and ~59.1% of nonimmunocompromised patients had definite/probable bacterial infection in retrospect — so continue prompt empiric coverage but pair it with aggressive, protocolized reassessment and de-escalation once cultures and clinical trajectory clarify.",
+          "In immunocompromised patients presenting with fever/chills and a sepsis-like picture, actively broaden the differential to include viral/fungal infection, febrile neutropenia without bacterial source, malignancy progression, and medication toxicity, and pursue targeted non-bacterial diagnostics rather than anchoring on bacterial sepsis alone.",
+          "Do NOT use these data to withhold or delay initial empiric antibiotics in immunocompromised patients with possible sepsis; the retrospective ~50% bacterial rate cannot identify non-bacterial cases prospectively at presentation, and the study reports no mortality or safety outcome supporting delayed treatment."
+        ],
+        "practiceChange_ko": [
+          "가능성 있는 sepsis에 대한 경험적 IV 항생제가 실제로는 세균 감염이 없는 환자에게 빈번히 투여됨을 인식하라 — 본 코호트에서 후향적으로 면역저하 환자의 약 49.5%, 비면역저하 환자의 약 59.1%만 확정적/개연적 세균 감염이었음 — 따라서 신속한 경험적 치료는 유지하되 배양 결과와 임상 경과가 명확해지면 적극적·프로토콜화된 재평가 및 de-escalation을 병행하라.",
+          "발열·오한과 sepsis 유사 양상으로 내원한 면역저하 환자에서는 바이러스/진균 감염, 세균 병소가 없는 febrile neutropenia, 악성종양 진행, 약물 독성까지 감별진단을 적극 확대하고, 세균성 sepsis에만 고정(anchoring)되지 말고 표적화된 비세균 진단 검사를 시행하라.",
+          "이 데이터를 근거로 가능성 있는 sepsis가 있는 면역저하 환자에서 초기 경험적 항생제를 보류하거나 지연시키지 말라; 후향적 약 50%의 세균 감염 비율은 내원 시점에서 비세균 증례를 전향적으로 식별해주지 못하며, 본 연구는 치료 지연을 뒷받침하는 사망률이나 안전성 결과를 보고하지 않았다."
+        ],
+        "keyFindings": [
+          "Only 92 of 186 (49.5%) immunocompromised patients treated empirically for possible sepsis had definite or probable bacterial infection in retrospect, vs. 97 of 164 (59.1%) nonimmunocompromised patients (p = 0.07).",
+          "Immunocompromised patients more commonly presented with fevers, chills or rigors (66.0% vs. 32.0%, p < 0.001) and ED clinicians more often documented concern for sepsis (74% vs. 62%, p = 0.01).",
+          "Sepsis mimics differed by host: viral/fungal infection, febrile neutropenia without bacterial evidence, malignancy progression, and medication toxicity predominated in immunocompromised patients, whereas chronic heart/lung disease exacerbations, hypovolemia, and hypervolemia predominated in nonimmunocompromised patients."
+        ],
+        "keyFindings_ko": [
+          "가능성 있는 sepsis로 경험적 치료를 받은 면역저하 환자 186명 중 92명(49.5%)만 후향적으로 확정적 또는 개연적 세균 감염이 있었고, 비면역저하 환자는 164명 중 97명(59.1%)이었다(p = 0.07).",
+          "면역저하 환자는 발열, 오한 또는 rigor를 더 흔하게 보였고(66.0% vs. 32.0%, p < 0.001), ED 임상의는 sepsis 우려를 더 자주 기록했다(74% vs. 62%, p = 0.01).",
+          "sepsis 모방 질환은 숙주에 따라 달랐다: 면역저하 환자에서는 바이러스/진균 감염, 세균 근거 없는 febrile neutropenia, 악성종양 진행, 약물 독성이 우세했고, 비면역저하 환자에서는 만성 심/폐질환 악화, hypovolemia, hypervolemia가 우세했다."
+        ],
+        "clinicalTakeaway": "About half of immunocompromised patients (49.5%) and roughly three-fifths of nonimmunocompromised patients (59.1%) empirically treated for possible sepsis turned out to have definite or probable bacterial infection, highlighting that a large fraction of sepsis presentations — especially in immunocompromised hosts — are driven by non-bacterial mimics. Clinicians should still start prompt empiric antibiotics but build in structured early reassessment and a broad differential (viral/fungal infection, febrile neutropenia, malignancy progression, drug toxicity) to enable timely de-escalation.",
+        "clinicalTakeaway_ko": "가능성 있는 sepsis로 경험적 치료를 받은 면역저하 환자의 약 절반(49.5%), 비면역저하 환자의 약 3/5(59.1%)만이 확정적 또는 개연적 세균 감염으로 판명되어, sepsis 양상의 상당 부분 — 특히 면역저하 숙주에서 — 이 비세균성 모방 질환에 의한 것임을 보여준다. 임상의는 여전히 신속한 경험적 항생제를 시작하되, 구조화된 조기 재평가와 폭넓은 감별진단(바이러스/진균 감염, febrile neutropenia, 악성종양 진행, 약물 독성)을 마련해 적시의 de-escalation이 가능하도록 해야 한다.",
+        "limitations": "Retrospective structured medical record review at nine hospitals with only 350 patients selected and intentional oversampling of immunocompromised status using administrative codes, limiting generalizability and precluding true prevalence estimates. Bacterial infection likelihood was determined post hoc/in retrospect (subject to reviewer judgment and misclassification) rather than by a prospectively applicable diagnostic standard, and the difference in the primary outcome (49.5% vs. 59.1%) was not statistically significant (p = 0.07). No patient-centered outcomes such as mortality, antibiotic days, or harms of overtreatment were reported, so the data cannot directly guide when to withhold therapy.",
+        "limitations_ko": "9개 병원에서 시행된 후향적 구조화 의무기록 검토로 350명만 선정되었고 행정 코드를 이용해 면역저하 상태를 의도적으로 oversampling하여 일반화가 제한되며 실제 유병률 추정이 불가능하다. 세균 감염 가능성은 전향적으로 적용 가능한 진단 기준이 아니라 후향적/post hoc으로(검토자의 판단과 오분류에 취약) 판정되었고, 일차 결과의 차이(49.5% vs. 59.1%)는 통계적으로 유의하지 않았다(p = 0.07). 사망률, 항생제 사용일수, 과잉치료의 위해 등 환자 중심 결과가 보고되지 않아 언제 치료를 보류할지에 대한 직접적 지침을 제공하지 못한다.",
+        "evidenceLevel": "Low",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed — PMID 42454644 (abstract page)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42454644/"
+          },
+          {
+            "label": "PubMed search (title lookup, PMID/DOI confirmation)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Likelihood+of+Bacterial+Infection+in+Immunocompromised+Patients+Treated+With+IV+Antibiotics+for+Possible+Sepsis"
+          }
+        ],
+        "paper": {
+          "pmid": "42454644",
+          "title": "Likelihood of Bacterial Infection in Immunocompromised Patients Treated With IV Antibiotics for Possible Sepsis.",
+          "abstract": "OBJECTIVES: Immunocompromised patients with possible sepsis are typically treated immediately with empiric antibiotics given their high risk for poor outcomes. Clinical presentations of sepsis, however, are protean and many nonbacterial infections and noninfectious conditions can present similarly. We assessed the likelihood of bacterial infections in retrospect in immunocompromised vs. nonimmunocompromised patients treated empirically for sepsis.\nDESIGN, SETTING AND PATIENTS: We identified all adults treated for possible sepsis (blood culture draw, lactate measurement, and IV antibiotic administration) within 6 hours of emergency department (ED) arrival at nine hospitals between 2022 and 2024 and randomly selected 350 hospitalizations for structured medical record review, oversampling for immunocompromised status using administrative codes. Reviews were used to confirm immunocompromised status per Centers for Disease Control and Prevention criteria and determine post hoc likelihoods of bacterial infection.\nINTERVENTIONS: None.\nMEASUREMENTS AND MAIN RESULTS: Of the 350 patients, 186 (53.1%) were confirmed as immunocompromised and 164 (46.9%) as nonimmunocompromised. Immunocompromised patients more commonly presented with fevers, chills or rigors (66.0% vs. 32.0%, p < 0.001) and ED clinicians more often documented concern for sepsis (74% vs. 62%, p = 0.01) compared with nonimmunocompromised patients. Definite or probable bacterial infection was identified in 92 of 186 (49.5%) immunocompromised patients vs. 97 of 164 (59.1%) nonimmunocompromised patients (p = 0.07). Among immunocompromised patients without definite or probable bacterial infection, common alternative etiologies included viral or fungal infection, febrile neutropenia without clinical evidence of bacterial infection, progression of malignancy, and medication toxicity, whereas chronic heart or lung disease exacerbations, hypovolemia, and hypervolemia predominated among nonimmunocompromised patients.\nCONCLUSIONS: Only about one-half of immunocompromised patients treated empirically for possible sepsis had definite or probable bacterial infection in retrospect, compared with approximately three-fifths in nonimmunocompromised patients. These findings underscore the complexity of sepsis diagnosis, particularly in immunocompromised patients, and highlight important differences in the conditions that mimic bacterial sepsis in immunocompromised vs. nonimmunocompromised hosts.",
+          "authors": [
+            "Gupta S",
+            "Millham L",
+            "DelloStritto L",
+            "Agan AA",
+            "McKenna C",
+            "Rhee C"
+          ],
+          "journal": "Critical care explorations",
+          "pubDate": "2026-Jul-01",
+          "publicationTypes": [
+            "Journal Article"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Immunocompromised Host",
+            "Sepsis",
+            "Anti-Bacterial Agents",
+            "Female",
+            "Bacterial Infections",
+            "Male",
+            "Middle Aged",
+            "Retrospective Studies",
+            "Aged"
+          ],
+          "keywords": [
+            "bacterial infection",
+            "immunocompromised host",
+            "infection",
+            "sepsis"
+          ],
+          "doi": "10.1097/CCE.0000000000001443",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42454644/",
+          "collectedAt": "2026-07-16T23:56:50.688Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42454644",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42454644/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCE.0000000000001443",
+            "url": "https://doi.org/10.1097/CCE.0000000000001443"
+          },
+          {
+            "label": "웹 — PubMed — PMID 42454644 (abstract page)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42454644/"
+          },
+          {
+            "label": "웹 — PubMed search (title lookup, PMID/DOI confirmation)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Likelihood+of+Bacterial+Infection+in+Immunocompromised+Patients+Treated+With+IV+Antibiotics+for+Possible+Sepsis"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "41505155",
+        "title_ko": "Ibuprofen에 Acetaminophen(Paracetamol) 또는 Opioid 진통제를 추가한 소아 근골격계 손상 치료: 두 개의 무작위 임상시험",
+        "clinicalQuestion": "In children with acute nonoperative musculoskeletal limb injury, does adding an opioid (hydromorphone) or a nonopioid (acetaminophen) to ibuprofen reduce pain scores at 60 minutes compared with ibuprofen alone?",
+        "clinicalQuestion_ko": "급성 비수술적 근골격계 사지 손상 소아에서, ibuprofen 단독 대비 opioid(hydromorphone) 또는 비opioid(acetaminophen)를 ibuprofen에 추가하면 60분 시점 통증 점수가 감소하는가?",
+        "pico": {
+          "population": "[Canada] Children aged 6 to 17 years presenting to 6 university-affiliated, tertiary care Canadian pediatric emergency departments with a nonoperative acute limb injury (<24 hours) and a verbal numerical rating scale (vNRS) pain score of 5 or more out of 10, enrolled from April 2019 to March 2023; 8098 screened, 699 randomized, 653 included in efficacy analyses; mean (SD) age 11.5 (3.5) years, 47.4% female, mean (SD) vNRS at recruitment 6.4 (1.8).",
+          "intervention": "A single oral dose of ibuprofen plus hydromorphone (opioid trial) or ibuprofen plus acetaminophen (both trials); ibuprofen dosed at 10 mg/kg (maximum 600 mg), acetaminophen 15 mg/kg (maximum 1000 mg), and hydromorphone 0.05 mg/kg (maximum 5 mg).",
+          "comparison": "A single oral dose of ibuprofen alone (10 mg/kg, maximum 600 mg), placebo-controlled and double-masked.",
+          "outcome": "Primary efficacy outcome was self-reported vNRS pain score at 60 minutes post medication (range 0–10; MCID 1.5). In pooled analyses, mean (SD) vNRS at 60 minutes was 4.8 (2.6) with ibuprofen plus hydromorphone, 4.6 (2.4) with ibuprofen plus acetaminophen, and 4.6 (2.3) with ibuprofen alone (P = .78)."
+        },
+        "pico_ko": {
+          "population": "[캐나다] 6개 대학 연계 3차 캐나다 소아 응급실에 비수술적 급성 사지 손상(<24시간)과 verbal numerical rating scale(vNRS) 통증 점수 10점 만점 중 5점 이상으로 내원한 6~17세 소아, 2019년 4월~2023년 3월 등록; 8098명 선별, 699명 무작위 배정, 653명 유효성 분석 포함; 평균(SD) 연령 11.5(3.5)세, 47.4% 여아, 등록 시 평균(SD) vNRS 6.4(1.8).",
+          "intervention": "ibuprofen에 hydromorphone 추가(opioid 시험) 또는 ibuprofen에 acetaminophen 추가(두 시험 모두)를 경구 단회 투여; ibuprofen 10 mg/kg(최대 600 mg), acetaminophen 15 mg/kg(최대 1000 mg), hydromorphone 0.05 mg/kg(최대 5 mg).",
+          "comparison": "ibuprofen 단독 경구 단회 투여(10 mg/kg, 최대 600 mg), placebo 대조 및 double-masked.",
+          "outcome": "일차 유효성 결과는 투약 60분 후 자가 보고 vNRS 통증 점수(범위 0–10; MCID 1.5). 통합 분석에서 60분 시점 평균(SD) vNRS는 ibuprofen+hydromorphone 4.8(2.6), ibuprofen+acetaminophen 4.6(2.4), ibuprofen 단독 4.6(2.3) (P = .78)."
+        },
+        "baseline": "Balanced",
+        "secondaryOutcomes": [
+          "Achievement of mild pain (vNRS <3) at 60 minutes: hydromorphone 23.4%, acetaminophen 19.9%, ibuprofen alone 19.3% (P = .95).",
+          "Pain reduction of ≥2 points at 60 minutes: 44.9% (hydromorphone), 47.0% (acetaminophen), 48.7% (ibuprofen alone).",
+          "Rescue analgesia required: 0 across all groups; any adverse event related to study drug occurred in 28.2% with ibuprofen plus hydromorphone vs 6.1% with ibuprofen plus acetaminophen and 5.8% with ibuprofen alone, with no serious adverse events."
+        ],
+        "secondaryOutcomes_ko": [
+          "60분 시점 경증 통증(vNRS <3) 달성: hydromorphone 23.4%, acetaminophen 19.9%, ibuprofen 단독 19.3% (P = .95).",
+          "60분 시점 ≥2점 통증 감소: 44.9%(hydromorphone), 47.0%(acetaminophen), 48.7%(ibuprofen 단독).",
+          "구제 진통제 필요: 전 군에서 0명; 연구약 관련 이상반응은 ibuprofen+hydromorphone 28.2% vs ibuprofen+acetaminophen 6.1%, ibuprofen 단독 5.8%로 발생, 중대한 이상반응은 없었음."
+        ],
+        "statGlossary": [
+          {
+            "term": "P value",
+            "explanation_ko": "p-value: 관찰된 군 간 차이가 우연만으로 나타날 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 본다. 예: 60분 vNRS 비교 P = .78 → 세 군 간 통증 점수 차이가 우연 범위 안이라 유의한 차이가 없음."
+          },
+          {
+            "term": "SD",
+            "explanation_ko": "표준편차(standard deviation): 값들이 평균 주변에 얼마나 퍼져 있는지를 나타낸다. 예: ibuprofen 단독군 vNRS 4.6 (SD 2.3) → 평균 4.6점 주변으로 대략 ±2.3점 정도 흩어져 있음."
+          },
+          {
+            "term": "MCID",
+            "explanation_ko": "최소 임상적 중요 차이(minimal clinically important difference): 환자가 의미 있다고 느끼는 최소한의 점수 변화. 예: vNRS MCID 1.5 → 군 간 통증 점수 차이가 1.5점 미만이면 임상적으로 의미 있는 차이로 보기 어려움."
+          },
+          {
+            "term": "vNRS",
+            "explanation_ko": "구두 숫자 통증 척도(verbal numerical rating scale): 통증을 0(없음)~10(최악)으로 말로 평가하는 도구. 예: 등록 시 평균 vNRS 6.4 → 중등도~중증 통증 수준."
+          }
+        ],
+        "practiceChange": [
+          "For children with acute nonoperative musculoskeletal limb injury and moderate-to-severe pain, use oral ibuprofen 10 mg/kg (max 600 mg) monotherapy as first-line; adding acetaminophen or hydromorphone did not produce a clinically meaningful improvement in 60-minute pain (all differences below the 1.5-point MCID; P = .78).",
+          "Avoid routinely adding oral hydromorphone to ibuprofen for this indication: it conferred no analgesic benefit while roughly quadrupling drug-related adverse events (28.2% vs ~6%), an unfavorable risk-benefit balance.",
+          "Do not reflexively add acetaminophen to ibuprofen expecting additive analgesia in this specific ED setting/timeframe; combination did not outperform ibuprofen alone at 60 minutes, so reserve escalation for clinical reassessment rather than automatic dual therapy."
+        ],
+        "practiceChange_ko": [
+          "급성 비수술적 근골격계 사지 손상과 중등도~중증 통증이 있는 소아에서는 경구 ibuprofen 10 mg/kg(최대 600 mg) 단독을 일차로 사용한다; acetaminophen이나 hydromorphone 추가는 60분 통증에서 임상적으로 의미 있는 개선을 주지 못했다(모든 차이가 MCID 1.5점 미만; P = .78).",
+          "이 적응증에서 ibuprofen에 경구 hydromorphone을 일상적으로 추가하지 않는다: 진통 이득은 없으면서 약물 관련 이상반응이 약 4배(28.2% vs 약 6%) 증가해 위험-이득 균형이 불리하다.",
+          "이 응급실 상황·시점에서 additive 진통을 기대하고 ibuprofen에 acetaminophen을 반사적으로 추가하지 않는다; 병용이 60분 시점에서 단독을 능가하지 못했으므로, 자동 병용보다는 임상적 재평가 후 단계적 상향을 고려한다."
+        ],
+        "keyFindings": [
+          "In pooled analyses, mean (SD) vNRS at 60 minutes was 4.8 (2.6) for ibuprofen plus hydromorphone, 4.6 (2.4) for ibuprofen plus acetaminophen, and 4.6 (2.3) for ibuprofen alone (P = .78) — no significant or clinically meaningful difference (MCID 1.5).",
+          "Any drug-related adverse event occurred in 28.2% with ibuprofen plus hydromorphone vs 6.1% with ibuprofen plus acetaminophen and 5.8% with ibuprofen alone — a roughly 4-fold increase with hydromorphone; no serious adverse events occurred.",
+          "Across two trials, 8098 children were screened and 699 randomized (opioid trial n=249: 110/70/69; nonopioid trial n=450: 225/225), with 653 included in efficacy analyses; mean age 11.5 years and mean recruitment vNRS 6.4."
+        ],
+        "keyFindings_ko": [
+          "통합 분석에서 60분 시점 평균(SD) vNRS는 ibuprofen+hydromorphone 4.8(2.6), ibuprofen+acetaminophen 4.6(2.4), ibuprofen 단독 4.6(2.3) (P = .78) — 유의하거나 임상적으로 의미 있는 차이 없음(MCID 1.5).",
+          "약물 관련 이상반응은 ibuprofen+hydromorphone 28.2% vs ibuprofen+acetaminophen 6.1%, ibuprofen 단독 5.8%로 hydromorphone에서 약 4배 증가; 중대한 이상반응은 없었음.",
+          "두 시험에서 8098명이 선별되고 699명이 무작위 배정(opioid 시험 n=249: 110/70/69; nonopioid 시험 n=450: 225/225), 653명이 유효성 분석에 포함; 평균 연령 11.5세, 등록 시 평균 vNRS 6.4."
+        ],
+        "clinicalTakeaway": "For children aged 6–17 with acute nonoperative musculoskeletal limb injury, ibuprofen monotherapy (10 mg/kg, max 600 mg) is sufficient first-line analgesia — adding acetaminophen or hydromorphone did not meaningfully lower pain at 60 minutes (all below the 1.5-point MCID; P = .78). Hydromorphone added no benefit but quadrupled adverse events (28.2% vs ~6%), so it should not be routinely combined with ibuprofen for this indication. Reserve therapy escalation for clinical reassessment rather than automatic combination dosing.",
+        "clinicalTakeaway_ko": "6~17세 급성 비수술적 근골격계 사지 손상 소아에서는 ibuprofen 단독(10 mg/kg, 최대 600 mg)이 충분한 일차 진통이다 — acetaminophen이나 hydromorphone 추가는 60분 통증을 의미 있게 낮추지 못했다(모두 MCID 1.5점 미만; P = .78). hydromorphone은 이득 없이 이상반응을 4배(28.2% vs 약 6%) 늘렸으므로 이 적응증에서 ibuprofen과 일상적으로 병용해서는 안 된다. 자동 병용보다 임상적 재평가 후 치료 상향을 고려한다.",
+        "limitations": "Single oral dose with a single 60-minute primary endpoint, so longer-duration or repeated-dose analgesia and time-to-effect beyond 60 minutes were not assessed; results apply to acute (<24 hour), nonoperative limb injuries in Canadian tertiary pediatric EDs and may not generalize to operative, non-limb, or other settings. The opioid trial arms were relatively small (110/70/69), limiting power for less common outcomes, and outcomes rely on self-reported vNRS.",
+        "limitations_ko": "60분 단일 시점을 일차 종료점으로 한 경구 단회 투여이므로, 더 긴 시간 또는 반복 투여의 진통 효과와 60분 이후의 효과 발현 시점은 평가되지 않았다; 결과는 캐나다 3차 소아 응급실의 급성(<24시간) 비수술적 사지 손상에 해당하며 수술적·비사지·다른 세팅에는 일반화되지 않을 수 있다. opioid 시험군 규모가 상대적으로 작아(110/70/69) 드문 결과에 대한 검정력이 제한되고, 결과는 자가 보고 vNRS에 의존한다.",
+        "evidenceLevel": "High",
+        "clinicalApplicabilityScore": 8,
+        "webSources": [
+          {
+            "label": "JAMA — full article (fullarticle/2843665)",
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2843665"
+          },
+          {
+            "label": "PubMed — PMID 41505155",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41505155/"
+          }
+        ],
+        "paper": {
+          "pmid": "41505155",
+          "title": "Acetaminophen (Paracetamol) or Opioid Analgesia Added to Ibuprofen for Children's Musculoskeletal Injury: Two Randomized Clinical Trials.",
+          "abstract": "IMPORTANCE: Ibuprofen is first-line therapy for musculoskeletal pain. However, two-thirds of children experience inadequate pain relief with ibuprofen monotherapy, and the efficacy of additive medications for moderate to severe musculoskeletal pain is unclear.\nOBJECTIVE: To determine whether treatment with an opioid (hydromorphone) plus ibuprofen or nonopioid (acetaminophen [paracetamol]) plus ibuprofen decreased pain scores compared with ibuprofen alone.\nDESIGN, SETTING, AND PARTICIPANTS: Two randomized, double-masked, placebo-controlled trials were conducted from April 2019 to March 2023 in 6 university-affiliated, tertiary care Canadian pediatric emergency departments. Children aged 6 to 17 years presenting with a nonoperative acute limb injury (<24 hours) and a verbal numerical rating scale (vNRS) pain score of 5 or more out of 10 were enrolled. Date of final follow-up was March 22, 2023.\nINTERVENTIONS: The opioid trial randomized participants to a single oral dose of ibuprofen plus hydromorphone, ibuprofen plus acetaminophen, or ibuprofen alone. The nonopioid trial randomized participants to a single oral dose of ibuprofen plus acetaminophen or ibuprofen alone. In all groups, ibuprofen was dosed at 10 mg/kg (maximum, 600 mg). The acetaminophen dose was 15 mg/kg (maximum, 1000 mg), and the hydromorphone dose was 0.05 mg/kg (maximum, 5 mg).\nMAIN OUTCOMES AND MEASURES: The primary efficacy outcome was self-reported vNRS pain score at 60 minutes post medication administration (score range, 0 [no pain] to 10 [worst pain]; minimal clinically important difference, 1.5). The primary safety end point was the proportion of children with any adverse event related to study drug administration.\nRESULTS: A total of 8098 children were screened for eligibility; 699 were randomized and 653 were included in the efficacy analyses. The opioid trial included 249 children: 110 randomized to ibuprofen plus hydromorphone, 70 to ibuprofen plus acetaminophen, and 69 to ibuprofen alone. The nonopioid trial included 450 children: 225 randomized to a single oral dose of ibuprofen plus acetaminophen and 225 randomized to ibuprofen alone. The mean (SD) age of children in the 2 trials was 11.5 (3.5) years and 47.4% were female. The mean (SD) vNRS score at recruitment was 6.4 (1.8). In pooled analyses, mean (SD) vNRS scores 60 minutes after drug administration were 4.8 (2.6) in the ibuprofen plus hydromorphone group, 4.6 (2.4) in the ibuprofen plus acetaminophen group, and 4.6 (2.3) in the ibuprofen alone group (P = .78). Any adverse event occurred at higher rates in the ibuprofen plus hydromorphone group (28.2%) compared with the ibuprofen plus acetaminophen (6.1%) or ibuprofen alone groups (5.8%). No serious adverse events occurred.\nCONCLUSIONS AND RELEVANCE: For children with acute nonoperative musculoskeletal injury, pain scores at 60 minutes after drug administration did not improve with ibuprofen plus acetaminophen or ibuprofen plus hydromorphone compared with ibuprofen alone. Adverse events were 4-fold more frequent with hydromorphone.\nTRIAL REGISTRATION: Clinicaltrials.gov Identifier: NCT03767933.",
+          "authors": [
+            "Ali S",
+            "Klassen TP",
+            "Candelaria P",
+            "Bhatt M",
+            "Sawyer S",
+            "Stang A"
+          ],
+          "journal": "JAMA",
+          "pubDate": "2026-Mar-10",
+          "publicationTypes": [
+            "Clinical Trial, Phase II",
+            "Equivalence Trial",
+            "Journal Article",
+            "Multicenter Study",
+            "Randomized Controlled Trial"
+          ],
+          "meshTerms": [
+            "Adolescent",
+            "Child",
+            "Female",
+            "Humans",
+            "Male",
+            "Acetaminophen",
+            "Analgesics, Non-Narcotic",
+            "Analgesics, Opioid",
+            "Double-Blind Method",
+            "Drug Therapy, Combination"
+          ],
+          "keywords": [],
+          "doi": "10.1001/jama.2025.25033",
+          "pmcid": "PMC12784265",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41505155/",
+          "collectedAt": "2026-07-17T00:03:57.469Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41505155",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41505155/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2025.25033",
+            "url": "https://doi.org/10.1001/jama.2025.25033"
+          },
+          {
+            "label": "웹 — JAMA — full article (fullarticle/2843665)",
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2843665"
+          },
+          {
+            "label": "웹 — PubMed — PMID 41505155",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41505155/"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
