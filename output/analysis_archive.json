@@ -704,6 +704,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-19",
+      "pmid": "42410446",
+      "title": "Mortality effect of albumin fluid resuscitation in adults with septic shock: a systematic review and dual frequentist-bayesian meta-analysis of randomised trials.",
+      "title_ko": "성인 패혈성 쇼크에서 알부민 수액 소생술의 사망률 효과: 무작위 배정 시험에 대한 체계적 문헌고찰 및 frequentist-Bayesian 이중 메타분석",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-026-06172-w",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "성인 패혈성 쇼크 환자에서 알부민 기반 수액 소생술은 crystalloid 기반 소생술에 비해 전체 원인 사망률(all-cause mortality)을 감소시키는가?",
+      "pico": {
+        "population": "[International] Adults with septic shock; seven RCTs (n = 3273) were included. Three trials primarily recruited septic shock patients, while data from the remaining were derived from subgroups or extracted strata.",
+        "intervention": "Albumin-based resuscitation strategies (as compared across albumin formulation, dosing strategy, and trial-level baseline serum albumin subgroups).",
+        "comparison": "Crystalloid-based resuscitation.",
+        "outcome": "Primary outcome was all-cause mortality at the longest available follow-up (up to 90 days): albumin-based fluid resuscitation was associated with a statistically significant 10% reduction in the relative risk of all-cause mortality (RR 0.90, 95% CI 0.83-0.99; p = 0.02; I² = 0%). Bayesian analysis under the primary weakly informative prior yielded a posterior probability of mortality reduction of 94.7% (P[RR < 1.0])."
+      },
+      "pico_ko": {
+        "population": "[다국가] 성인 패혈성 쇼크 환자; 7개 RCT(n = 3273)가 포함됨. 3개 시험은 주로 패혈성 쇼크 환자를 모집하였고, 나머지 데이터는 subgroup 또는 추출된 strata에서 도출되었다.",
+        "intervention": "알부민 기반 소생술 전략(albumin formulation, dosing strategy, 시험 수준의 baseline serum albumin subgroup에 걸쳐 비교됨).",
+        "comparison": "Crystalloid 기반 소생술.",
+        "outcome": "1차 결과는 가장 긴 추적 시점(최대 90일)의 all-cause mortality: 알부민 기반 수액 소생술은 all-cause mortality의 relative risk를 통계적으로 유의하게 10% 감소시켰다(RR 0.90, 95% CI 0.83-0.99; p = 0.02; I² = 0%). primary weakly informative prior 하의 Bayesian 분석에서 사망률 감소의 posterior probability는 94.7%였다(P[RR < 1.0])."
+      },
+      "keyFindings": [
+        "Across 7 RCTs (n = 3273), albumin-based fluid resuscitation was associated with a statistically significant 10% reduction in relative risk of all-cause mortality at longest follow-up (RR 0.90, 95% CI 0.83-0.99; p = 0.02) with no heterogeneity (I² = 0%).",
+        "Bayesian analysis under the primary weakly informative prior gave a posterior probability of mortality reduction of 94.7% (P[RR < 1.0]), directionally concordant with the frequentist estimate.",
+        "Pre-specified subgroup analyses by albumin formulation, dosing strategy, and trial-level baseline serum albumin showed no evidence of effect modification; overall GRADE certainty was low because evidence was indirect and imprecise."
+      ],
+      "keyFindings_ko": [
+        "7개 RCT(n = 3273)에서 알부민 기반 수액 소생술은 가장 긴 추적 시점의 all-cause mortality relative risk를 통계적으로 유의하게 10% 감소시켰으며(RR 0.90, 95% CI 0.83-0.99; p = 0.02) 이질성은 없었다(I² = 0%).",
+        "primary weakly informative prior 하의 Bayesian 분석에서 사망률 감소의 posterior probability는 94.7%로(P[RR < 1.0]) frequentist 추정치와 방향이 일치했다.",
+        "albumin formulation, dosing strategy, 시험 수준 baseline serum albumin에 따른 사전 지정 subgroup 분석에서 effect modification의 근거는 없었으며, 근거가 간접적이고 부정확하여 전반적 GRADE 확실성은 low였다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42410446",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42410446/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-026-06172-w",
+          "url": "https://doi.org/10.1186/s13054-026-06172-w"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42410446)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42410446/"
+        },
+        {
+          "label": "웹 — Critical Care official article page (BioMed Central / Springer, DOI 10.1186/s13054-026-06172-w) — abstract only, full text paywalled",
+          "url": "https://ccforum.biomedcentral.com/articles/10.1186/s13054-026-06172-w"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 42410446)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42410446/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care official article page (BioMed Central / Springer, DOI 10.1186/s13054-026-06172-w) — abstract only, full text paywalled",
+          "url": "https://ccforum.biomedcentral.com/articles/10.1186/s13054-026-06172-w",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
