@@ -28,9 +28,45 @@
 .col.fail .seclbl{color:#9ca3af}</style></head>
 <body><div class="wrap">
 <header class="hero"><h1>논문 선정 트랙 비교 실험</h1>
-<div class="sub">2026-07-12 → 2026-07-30 (KST) · 오늘 2026-07-18</div>
-<div class="stats"><div class="stat"><b>7</b>기록된 날</div><div class="stat"><b>0</b>수렴</div><div class="stat"><b>0</b>Arm 2 실패</div></div></header>
+<div class="sub">2026-07-12 → 2026-07-30 (KST) · 오늘 2026-07-19</div>
+<div class="stats"><div class="stat"><b>8</b>기록된 날</div><div class="stat"><b>0</b>수렴</div><div class="stat"><b>0</b>Arm 2 실패</div></div></header>
 <div class="legend"><span>■ Arm 1 · 결정적+rerank(현행)</span><span>■ Arm 2 · Opus 자체선정</span><span>■ Arm 3 · ChatGPT(2주 뒤)</span></div>
+<section class="day">
+    <div class="dayhead"><span class="date">2026-07-19</span></div>
+    <div class="cols">
+      <div class="col">
+    <span class="arm a1">ARM 1 <small>결정적+rerank</small></span>
+    <div class="ttl">성인 패혈성 쇼크 환자에서 알부민 수액소생술의 사망률 효과: 무작위 배정 시험에 대한 체계적 문헌고찰 및 이중(빈도주의-베이지안) 메타분석</div>
+    <div class="ttl-en">Mortality effect of albumin fluid resuscitation in adults with septic shock: a systematic review and dual frequentist-bayesian meta-analysis of randomised trials.</div>
+    <div class="meta">Critical care (London, England) · PMID 42410446 · <a href="https://doi.org/10.1186/s13054-026-06172-w">DOI</a></div>
+    <div class="badges"><span class="b ev">근거 Low</span><span class="b">초록 + 웹보강</span></div>
+    <div class="seclbl">💡 WHY IT MATTERS</div><p class="txt">성인 패혈성 쇼크 환자에서 crystalloid 기반 소생술과 비교하여 albumin 기반 수액소생술이 전체 원인 사망률(all-cause mortality)을 감소시키는가?</p>
+    <div class="seclbl">🎯 PICO</div><div class="pico"><div class="row"><span class="k">P</span><span>[다국가] 성인 패혈성 쇼크(septic shock) 환자; 총 7개 RCT(n = 3273) 포함. 3개 시험은 주로 패혈성 쇼크 환자를 모집했고, 나머지 자료는 subgroup 또는 추출된 stratum에서 유래함.</span></div><div class="row"><span class="k">I</span><span>Albumin 기반 수액소생술 전략.</span></div><div class="row"><span class="k">C</span><span>Crystalloid 기반 수액소생술 전략.</span></div><div class="row"><span class="k">O</span><span>일차 결과는 가장 긴 추적관찰 시점(최대 90일)의 전체 원인 사망률(all-cause mortality). Albumin 기반 수액소생술은 상대위험(relative risk)의 통계적으로 유의한 10% 감소와 연관되었음(RR 0.90, 95% CI 0.83–0.99; p = 0.02; I² = 0%). 일차 weakly informative prior 하의 Bayesian 분석에서 사망률 감소의 사후확률(posterior probability)은 94.7%였음(P[RR &lt; 1.0]).</span></div></div>
+    <div class="seclbl">📈 핵심 결과</div><ul class="kf"><li>7개 RCT(n = 3273)에서 albumin 기반 소생술은 가장 긴 추적 시점(최대 90일)의 전체 원인 사망률을 통계적으로 유의하게 상대 10% 감소시키는 것과 연관됨: RR 0.90, 95% CI 0.83–0.99; p = 0.02; I² = 0%.</li><li>일차 weakly informative prior 하의 Bayesian 분석에서 사망률 감소의 사후확률은 94.7%(P[RR &lt; 1.0])로, frequentist 추정치와 방향이 일치함.</li><li>Albumin formulation, dosing strategy, 시험 수준 baseline serum albumin에 따른 사전 지정 subgroup 분석에서 효과 수정(effect modification) 근거는 없었고, 간접성·부정확성으로 전체 확실성은 GRADE 낮음.</li></ul>
+    
+    <div class="subh">📊 통계 용어</div><div class="gloss"><div class="gi"><b>RR</b> — 상대위험도: 중재군의 사건 발생 위험을 대조군과 비교한 비율로, 1보다 작으면 위험 감소를 뜻함. 예: RR 0.90 → albumin 군의 사망 위험이 crystalloid 군보다 10% 낮음.</div><div class="gi"><b>95% CI</b> — 95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, RR에서 1을 포함하지 않으면 통계적으로 유의함. 예: 95% CI 0.83–0.99 → 상한이 1 미만이므로 사망 감소가 통계적으로 유의함.</div><div class="gi"><b>p-value</b> — 유의확률: 우연히 이 정도 결과가 나올 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 봄. 예: p = 0.02 → 우연으로 보기 어려운 유의한 차이.</div><div class="gi"><b>I²</b> — 이질성 지표: 포함된 시험들 간 결과가 얼마나 다른지를 백분율로 나타내며, 0%에 가까울수록 결과가 일관됨. 예: I² = 0% → 7개 시험 간 사망률 효과의 이질성이 없음.</div><div class="gi"><b>posterior probability</b> — 사후확률: Bayesian 분석에서 사전 정보와 자료를 결합해 계산한, 어떤 가설이 참일 확률. 예: 94.7% (P[RR &lt; 1.0]) → 자료를 볼 때 albumin이 사망을 줄일 확률이 약 94.7%.</div></div>
+    <div class="subh">제한점</div><p class="txt">근거의 낮은 확실성(GRADE). 7개 시험 중 3개만 주로 패혈성 쇼크 환자를 모집했고, 나머지는 subgroup 또는 추출 stratum에서 간접 자료를 제공함. 통합 추정치는 부정확하고(95% CI 상한 0.99로 무효과에 근접) 인과적 효과라기보다 연관성을 나타냄. 이질적 albumin formulation과 dosing 전략을 통합한 메타분석이며 충분한 검정력의 전용 시험이 없어 결과는 가설 생성 수준임. 전문(full text)에 자유롭게 접근할 수 없어 시험별 세부사항·이차 결과·군별 사건 수는 초록 범위를 넘어 확인하지 못함.</p>
+    <div class="seclbl">✅ 임상 결론</div><p class="txt">이 이중(frequentist–Bayesian) 메타분석은 패혈성 쇼크에서 albumin 기반 소생술의 사망률 이득 가능성을 시사하지만(RR 0.90; 이득의 사후확률 94.7%), 근거는 GRADE 낮은 확실성이고 상당 부분 간접적(subgroup/추출 자료)이며 부정확함(CI 상한이 0.99에 근접). balanced crystalloid를 일차 수액에서 대체할 만큼 충분하지 않으며, 충분한 검정력의 전용 RCT가 나올 때까지 albumin은 선택적 보조 수단으로 남음.</p>
+    <div class="subh">Practice Change</div><ul class="kf"><li>이 메타분석만을 근거로 albumin을 패혈성 쇼크의 일상적 일차 소생 수액으로 채택하지 말 것: 통합 신호(RR 0.90, 95% CI 0.83–0.99)는 GRADE 낮은 확실성이며, 간접적(자료 상당수가 subgroup/추출 stratum에서 유래)이고 부정확함(CI 상한 0.99).</li><li>현행 sepsis 지침대로 balanced crystalloid를 기본 소생 수액으로 유지하고, albumin은 선택적으로(예: 대량 crystalloid가 필요한 환자) 고려하되 이 근거는 실무를 확정하기보다 가설 생성 수준임을 인식할 것.</li><li>94.7%의 Bayesian 사후확률은 지지적이나 확정적이지 않음 — frequentist 추정치와 방향이 일치하지만, 실무 변경 전에 albumin을 전용으로 검증하는 충분한 검정력의 RCT가 여전히 필요함.</li></ul>
+  </div>
+      <div class="col">
+    <span class="arm a2">ARM 2 <small>Opus 자체선정</small></span>
+    <div class="ttl">대사성 산증과 쇼크가 있는 중증 성인 환자에서의 Sodium Bicarbonate (SODa-BIC 시험)</div>
+    <div class="ttl-en">Sodium Bicarbonate for Critically Ill Adults with Metabolic Acidosis and Shock.</div>
+    <div class="meta">The New England journal of medicine · PMID 42283370 · <a href="https://doi.org/10.1056/NEJMoa2600526">DOI</a></div>
+    <div class="badges"><span class="b ev">근거 High</span><span class="b">초록 + 웹보강</span></div>
+    <div class="seclbl">💡 WHY IT MATTERS</div><p class="txt">승압제(vasopressor)를 투여 중인 대사성 산증(pH &lt;7.30) 중환자에서 sodium bicarbonate 주입이 위약(5% dextrose)에 비해 30일 내 major adverse kidney event를 줄이는가?</p>
+    <div class="seclbl">🎯 PICO</div><div class="pico"><div class="row"><span class="k">P</span><span>[다국가] 대사성 산증(pH &lt;7.30; base excess -4 mmol/L 이하; 그리고 partial pressure of arterial carbon dioxide가 비삽관 시 ≤45 mm Hg 또는 삽관 시 ≤50 mm Hg)을 가진 성인으로 중환자실(ICU)에서 vasopressor를 투여받는 환자; 7개국 55개 ICU에서 500명 등록(중앙 연령 66세, 여성 43.2%; 2023년 4월~2025년 12월 등록).</span></div><div class="row"><span class="k">I</span><span>Sodium bicarbonate를 최대 5시간 동안 주입하며, target pH 최소 7.30 및 base excess 최소 0 mmol/L를 목표로 주입 속도를 조정(배정 n=245, 분석 244명).</span></div><div class="row"><span class="k">C</span><span>위약(5% dextrose)을 동일한 titration 프로토콜로 최대 5시간 동안 주입(배정 n=255, 분석 254명).</span></div><div class="row"><span class="k">O</span><span>1차 결과 — 30일 내 major adverse kidney event(사망, renal-replacement therapy 사용, 또는 persistent renal dysfunction): sodium bicarbonate군 244명 중 98명(40.2%) 대 위약군 254명 중 100명(39.4%) (adjusted difference 1.2%p; 95% CI -7.1~9.4; P = 0.78).</span></div></div>
+    <div class="seclbl">📈 핵심 결과</div><ul class="kf"><li>Sodium bicarbonate는 30일 내 major adverse kidney event를 줄이지 못함: 98/244 (40.2%) 대 위약 100/254 (39.4%) (adjusted difference 1.2%p; 95% CI -7.1~9.4; P = 0.78).</li><li>사망 이득 없음 — 30일 병원 내 사망 25.4% 대 24.0% (adjusted difference 1.8%p; 95% CI -5.6~9.2); renal-replacement therapy 16.8% 대 20.9% (adjusted difference -3.9%p; 95% CI -10.6~2.7).</li><li>이상반응은 sodium bicarbonate군 4명(1.6%), 위약군 0명(P = 0.06)이며, 7개국 55개 ICU에서 500명을 대상으로 한 시험임.</li></ul>
+    <div class="subh">2차 결과</div><ul class="kf"><li>30일 내 renal-replacement therapy: sodium bicarbonate군 16.8% 대 위약군 20.9%; adjusted difference -3.9%p; 95% CI -10.6~2.7.</li><li>30일 내 병원 내 사망(in-hospital mortality): sodium bicarbonate군 25.4% 대 위약군 24.0%; adjusted difference 1.8%p; 95% CI -5.6~9.2.</li><li>이상반응(adverse effect): sodium bicarbonate군 4명(1.6%) 대 위약군 0명(P = 0.06).</li></ul>
+    <div class="subh">📊 통계 용어</div><div class="gloss"><div class="gi"><b>adjusted difference (percentage points)</b> — 두 군 간 사건 발생률의 보정된 절대 차이(%p)로, 0이면 차이 없음을 의미. 예: adjusted difference 1.2%p (95% CI -7.1~9.4) → sodium bicarbonate군의 MAKE30 발생률이 위약군보다 1.2%p 높지만 통계적으로 의미 없음.</div><div class="gi"><b>95% CI</b> — 95% 신뢰구간으로, 참값이 이 범위에 있을 가능성이 높으며 구간이 0을 포함하면 유의하지 않음. 예: 95% CI -7.1~9.4 → 0을 포함하므로 두 군 차이가 통계적으로 유의하지 않음.</div><div class="gi"><b>P value</b> — 우연만으로 관찰된 차이가 나올 확률로, 보통 0.05 미만이면 유의하다고 봄. 예: P = 0.78 → 두 군의 MAKE30 차이가 우연으로도 충분히 설명되어 유의하지 않음.</div></div>
+    <div class="subh">제한점</div><p class="txt">잘 수행된 이중맹검 RCT임에도 한계가 있다: 등록 환자의 대부분이 호주(72.1%)와 뉴질랜드(21.9%) 출신으로 다른 의료 체계로의 일반화가 제한된다; 등록이 500명에서 종료되었고 secondary outcome(예: renal-replacement therapy)의 신뢰구간이 넓어 임상적으로 의미 있는 이득이나 위해를 배제할 수 없다; 중재가 최대 5시간의 짧은 titration 주입이어서 더 장기간·고용량 bicarbonate 전략의 효과는 검증되지 않았다; 그리고 광범위한 등록 기준으로 인해 특정 하위집단(예: acute kidney injury를 동반한 중증 acidemia)에서의 이득이 희석되었을 수 있다.</p>
+    <div class="seclbl">✅ 임상 결론</div><p class="txt">Vasopressor를 투여받는 대사성 산증(pH &lt;7.30) 중환자에서, pH/base excess 목표에 맞춰 titration한 sodium bicarbonate는 위약과 비교해 major adverse kidney event, renal-replacement therapy 필요성, 사망을 낮추지 못했다. 이 환자군에서 acidemia 치료 목적으로 bicarbonate를 일상적으로 사용해서는 안 되며, 확립된 적응증에 한해 사용하고 투여 시 hypokalaemia를 관찰해야 한다.</p>
+    <div class="subh">Practice Change</div><ul class="kf"><li>Vasopressor를 투여 중인 대사성 산증(pH &lt;7.30) 중환자에서 신손상 감소나 생존 향상을 위해 sodium bicarbonate를 일상적으로 투여하지 말 것 — MAKE30(40.2% 대 39.4%)와 30일 병원 내 사망(25.4% 대 24.0%) 모두 위약과 차이 없음.</li><li>renal-replacement therapy 비율이 낮았으나(16.8% 대 20.9%; 95% CI -10.6~2.7) 유의하지 않으므로, 이 광범위한 환자군에서 pH/base excess 목표에 맞춰 bicarbonate를 titration할 근거로 삼기에 부족함; acidemia 자체보다는 특정 적응증(예: 중증 hyperkalemia, 일부 독성물질 섭취)에 한해 사용할 것.</li><li>Bicarbonate 투여 시 hypokalaemia를 모니터링할 것 — 유일한 초과 위해 신호는 교정이 필요한 hypokalaemia로 인한 이상반응 4건(1.6%)이며 위약군은 0건(P = 0.06).</li></ul>
+  </div>
+      <div class="emptyslot">Arm 3 (ChatGPT)<br>2주 뒤 PeterJ 리스트 병합</div>
+    </div>
+  </section>
 <section class="day">
     <div class="dayhead"><span class="date">2026-07-18</span></div>
     <div class="cols">

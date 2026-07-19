@@ -1865,6 +1865,294 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-19",
+      "arm1": {
+        "pmid": "42410446",
+        "title_ko": "성인 패혈성 쇼크 환자에서 알부민 수액소생술의 사망률 효과: 무작위 배정 시험에 대한 체계적 문헌고찰 및 이중(빈도주의-베이지안) 메타분석",
+        "clinicalQuestion": "In adults with septic shock, does albumin-based fluid resuscitation compared with crystalloid-based resuscitation reduce all-cause mortality?",
+        "clinicalQuestion_ko": "성인 패혈성 쇼크 환자에서 crystalloid 기반 소생술과 비교하여 albumin 기반 수액소생술이 전체 원인 사망률(all-cause mortality)을 감소시키는가?",
+        "pico": {
+          "population": "[International] Adults with septic shock; seven RCTs (n = 3273) included. Three trials primarily recruited septic shock patients, while data from the remaining were derived from subgroups or extracted strata.",
+          "intervention": "Albumin-based fluid resuscitation strategies.",
+          "comparison": "Crystalloid-based fluid resuscitation strategies.",
+          "outcome": "Primary outcome was all-cause mortality at the longest available follow-up (up to 90 days). Albumin-based fluid resuscitation was associated with a statistically significant 10% reduction in the relative risk of all-cause mortality (RR 0.90, 95% CI 0.83–0.99; p = 0.02; I² = 0%). Bayesian analysis under the primary weakly informative prior yielded a posterior probability of mortality reduction of 94.7% (P[RR < 1.0])."
+        },
+        "pico_ko": {
+          "population": "[다국가] 성인 패혈성 쇼크(septic shock) 환자; 총 7개 RCT(n = 3273) 포함. 3개 시험은 주로 패혈성 쇼크 환자를 모집했고, 나머지 자료는 subgroup 또는 추출된 stratum에서 유래함.",
+          "intervention": "Albumin 기반 수액소생술 전략.",
+          "comparison": "Crystalloid 기반 수액소생술 전략.",
+          "outcome": "일차 결과는 가장 긴 추적관찰 시점(최대 90일)의 전체 원인 사망률(all-cause mortality). Albumin 기반 수액소생술은 상대위험(relative risk)의 통계적으로 유의한 10% 감소와 연관되었음(RR 0.90, 95% CI 0.83–0.99; p = 0.02; I² = 0%). 일차 weakly informative prior 하의 Bayesian 분석에서 사망률 감소의 사후확률(posterior probability)은 94.7%였음(P[RR < 1.0])."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [],
+        "secondaryOutcomes_ko": [],
+        "statGlossary": [
+          {
+            "term": "RR",
+            "explanation_ko": "상대위험도: 중재군의 사건 발생 위험을 대조군과 비교한 비율로, 1보다 작으면 위험 감소를 뜻함. 예: RR 0.90 → albumin 군의 사망 위험이 crystalloid 군보다 10% 낮음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위로, RR에서 1을 포함하지 않으면 통계적으로 유의함. 예: 95% CI 0.83–0.99 → 상한이 1 미만이므로 사망 감소가 통계적으로 유의함."
+          },
+          {
+            "term": "p-value",
+            "explanation_ko": "유의확률: 우연히 이 정도 결과가 나올 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 봄. 예: p = 0.02 → 우연으로 보기 어려운 유의한 차이."
+          },
+          {
+            "term": "I²",
+            "explanation_ko": "이질성 지표: 포함된 시험들 간 결과가 얼마나 다른지를 백분율로 나타내며, 0%에 가까울수록 결과가 일관됨. 예: I² = 0% → 7개 시험 간 사망률 효과의 이질성이 없음."
+          },
+          {
+            "term": "posterior probability",
+            "explanation_ko": "사후확률: Bayesian 분석에서 사전 정보와 자료를 결합해 계산한, 어떤 가설이 참일 확률. 예: 94.7% (P[RR < 1.0]) → 자료를 볼 때 albumin이 사망을 줄일 확률이 약 94.7%."
+          }
+        ],
+        "practiceChange": [
+          "Do not adopt albumin as routine first-line resuscitation fluid for septic shock on the basis of this meta-analysis alone: the pooled signal (RR 0.90, 95% CI 0.83–0.99) is GRADE low certainty, indirect (much of the data came from subgroups/extracted strata), and imprecise (upper CI 0.99).",
+          "Continue balanced crystalloids as the default resuscitation fluid per current sepsis guidelines; consider albumin selectively (e.g., patients requiring large-volume crystalloid), recognizing this evidence is hypothesis-generating rather than practice-defining.",
+          "Interpret the 94.7% Bayesian posterior probability as supportive but not confirmatory — it is directionally concordant with the frequentist estimate, and adequately powered RCTs dedicated to albumin in septic shock are still needed before changing practice."
+        ],
+        "practiceChange_ko": [
+          "이 메타분석만을 근거로 albumin을 패혈성 쇼크의 일상적 일차 소생 수액으로 채택하지 말 것: 통합 신호(RR 0.90, 95% CI 0.83–0.99)는 GRADE 낮은 확실성이며, 간접적(자료 상당수가 subgroup/추출 stratum에서 유래)이고 부정확함(CI 상한 0.99).",
+          "현행 sepsis 지침대로 balanced crystalloid를 기본 소생 수액으로 유지하고, albumin은 선택적으로(예: 대량 crystalloid가 필요한 환자) 고려하되 이 근거는 실무를 확정하기보다 가설 생성 수준임을 인식할 것.",
+          "94.7%의 Bayesian 사후확률은 지지적이나 확정적이지 않음 — frequentist 추정치와 방향이 일치하지만, 실무 변경 전에 albumin을 전용으로 검증하는 충분한 검정력의 RCT가 여전히 필요함."
+        ],
+        "keyFindings": [
+          "Across 7 RCTs (n = 3273), albumin-based resuscitation was associated with a statistically significant 10% relative reduction in all-cause mortality at longest follow-up (up to 90 days): RR 0.90, 95% CI 0.83–0.99; p = 0.02; I² = 0%.",
+          "Bayesian analysis under the primary weakly informative prior gave a posterior probability of mortality reduction of 94.7% (P[RR < 1.0]), directionally concordant with the frequentist estimate.",
+          "Pre-specified subgroup analyses by albumin formulation, dosing strategy, and trial-level baseline serum albumin showed no evidence of effect modification; overall certainty was GRADE low due to indirectness and imprecision."
+        ],
+        "keyFindings_ko": [
+          "7개 RCT(n = 3273)에서 albumin 기반 소생술은 가장 긴 추적 시점(최대 90일)의 전체 원인 사망률을 통계적으로 유의하게 상대 10% 감소시키는 것과 연관됨: RR 0.90, 95% CI 0.83–0.99; p = 0.02; I² = 0%.",
+          "일차 weakly informative prior 하의 Bayesian 분석에서 사망률 감소의 사후확률은 94.7%(P[RR < 1.0])로, frequentist 추정치와 방향이 일치함.",
+          "Albumin formulation, dosing strategy, 시험 수준 baseline serum albumin에 따른 사전 지정 subgroup 분석에서 효과 수정(effect modification) 근거는 없었고, 간접성·부정확성으로 전체 확실성은 GRADE 낮음."
+        ],
+        "clinicalTakeaway": "This dual frequentist–Bayesian meta-analysis suggests a plausible mortality benefit from albumin-based resuscitation in septic shock (RR 0.90; 94.7% posterior probability of benefit), but the evidence is GRADE low certainty, largely indirect (subgroup/extracted data), and imprecise (CI upper bound touching 0.99). It is not sufficient to change first-line practice away from balanced crystalloids; albumin remains a selective adjunct pending adequately powered dedicated trials.",
+        "clinicalTakeaway_ko": "이 이중(frequentist–Bayesian) 메타분석은 패혈성 쇼크에서 albumin 기반 소생술의 사망률 이득 가능성을 시사하지만(RR 0.90; 이득의 사후확률 94.7%), 근거는 GRADE 낮은 확실성이고 상당 부분 간접적(subgroup/추출 자료)이며 부정확함(CI 상한이 0.99에 근접). balanced crystalloid를 일차 수액에서 대체할 만큼 충분하지 않으며, 충분한 검정력의 전용 RCT가 나올 때까지 albumin은 선택적 보조 수단으로 남음.",
+        "limitations": "Low certainty of evidence (GRADE). Only 3 of 7 trials primarily recruited septic shock patients; the remainder contributed indirect data from subgroups or extracted strata. The pooled estimate is imprecise (95% CI upper bound 0.99, close to null) and represents an association rather than a definitive causal effect. As a meta-analysis of heterogeneous albumin formulations and dosing strategies with no dedicated adequately powered trial, findings are hypothesis-generating. Full text was not openly accessible, so trial-level details, secondary outcomes, and per-group event counts could not be verified beyond the abstract.",
+        "limitations_ko": "근거의 낮은 확실성(GRADE). 7개 시험 중 3개만 주로 패혈성 쇼크 환자를 모집했고, 나머지는 subgroup 또는 추출 stratum에서 간접 자료를 제공함. 통합 추정치는 부정확하고(95% CI 상한 0.99로 무효과에 근접) 인과적 효과라기보다 연관성을 나타냄. 이질적 albumin formulation과 dosing 전략을 통합한 메타분석이며 충분한 검정력의 전용 시험이 없어 결과는 가설 생성 수준임. 전문(full text)에 자유롭게 접근할 수 없어 시험별 세부사항·이차 결과·군별 사건 수는 초록 범위를 넘어 확인하지 못함.",
+        "evidenceLevel": "Low",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed — Mendes H et al., Crit Care 2026 (PMID 42410446)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42410446/"
+          },
+          {
+            "label": "Critical Care (BioMed Central) — official article page, doi:10.1186/s13054-026-06172-w",
+            "url": "https://ccforum.biomedcentral.com/articles/10.1186/s13054-026-06172-w"
+          }
+        ],
+        "paper": {
+          "pmid": "42410446",
+          "title": "Mortality effect of albumin fluid resuscitation in adults with septic shock: a systematic review and dual frequentist-bayesian meta-analysis of randomised trials.",
+          "abstract": "OBJECTIVE: To determine the effect of albumin-based fluid resuscitation on mortality in adults with septic shock.\nDESIGN: Systematic review and dual frequentist-Bayesian meta-analysis of randomised clinical trials (RCTs), following PRISMA guidelines and preregistered protocol (CRD420261325998).\nDATA SOURCES: PubMed, Embase, CENTRAL, and Scopus were searched from inception to February 2026.\nMETHODS: Eligible RCTs comparing albumin-based resuscitation strategies versus crystalloid-based resuscitation in adults with septic shock were included. The primary outcome was all-cause mortality at the longest available follow-up (up to 90 days). The analysis utilised random-effects models, subgroup analyses, and Bayesian methods.\nRESULTS: Seven trials (n = 3273) were included. Three trials primarily recruited septic shock patients, while data from the remaining were derived from subgroups or extracted strata. At the longest available follow-up, albumin-based fluid resuscitation was associated with a statistically significant 10% reduction in the relative risk of all-cause mortality (RR 0.90, 95% CI 0.83-0.99; p = 0.02; I² = 0%). Bayesian analysis under the primary weakly informative prior yielded a posterior probability of mortality reduction of 94.7% (P[RR < 1.0]). Pre-specified subgroup analyses by albumin formulation, dosing strategy, and trial-level baseline serum albumin did not show evidence of effect modification.\nCONCLUSION: In adults with septic shock, albumin-based resuscitation strategies are associated with a statistically significant reduction in mortality at the longest available follow-up, with a directionally concordant Bayesian estimate. A mortality benefit is therefore plausible, but the supporting evidence is indirect and imprecise (GRADE: low certainty). Adequately powered trials specifically addressing albumin fluid resuscitation in septic shock are warranted.",
+          "authors": [
+            "Mendes H",
+            "Wen HK",
+            "de Souza H",
+            "Peng Y",
+            "Deshpande K",
+            "Blok SG"
+          ],
+          "journal": "Critical care (London, England)",
+          "pubDate": "2026-Jul-06",
+          "publicationTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Shock, Septic",
+            "Randomized Controlled Trials as Topic",
+            "Fluid Therapy",
+            "Albumins",
+            "Bayes Theorem",
+            "Resuscitation",
+            "Crystalloid Solutions"
+          ],
+          "keywords": [
+            "Albumin",
+            "Bayesian",
+            "Crystalloid",
+            "Fluid therapy",
+            "Human serum albumin",
+            "Hyperoncotic",
+            "Iso-oncotic",
+            "Meta-analysis",
+            "Mortality",
+            "Resuscitation",
+            "Septic shock"
+          ],
+          "doi": "10.1186/s13054-026-06172-w",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42410446/",
+          "collectedAt": "2026-07-18T23:51:17.632Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42410446",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42410446/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1186/s13054-026-06172-w",
+            "url": "https://doi.org/10.1186/s13054-026-06172-w"
+          },
+          {
+            "label": "웹 — PubMed — Mendes H et al., Crit Care 2026 (PMID 42410446)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42410446/"
+          },
+          {
+            "label": "웹 — Critical Care (BioMed Central) — official article page, doi:10.1186/s13054-026-06172-w",
+            "url": "https://ccforum.biomedcentral.com/articles/10.1186/s13054-026-06172-w"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "",
+        "title_ko": "대사성 산증과 쇼크가 있는 중증 성인 환자에서의 Sodium Bicarbonate (SODa-BIC 시험)",
+        "clinicalQuestion": "In critically ill adults with metabolic acidosis (pH <7.30) who are receiving vasopressors in the ICU, does an infusion of sodium bicarbonate, compared with placebo (5% dextrose), reduce major adverse kidney events within 30 days?",
+        "clinicalQuestion_ko": "승압제(vasopressor)를 투여 중인 대사성 산증(pH <7.30) 중환자에서 sodium bicarbonate 주입이 위약(5% dextrose)에 비해 30일 내 major adverse kidney event를 줄이는가?",
+        "pico": {
+          "population": "[International] Adults with metabolic acidosis (pH, <7.30; base excess, no more than -4 mmol per liter; and partial pressure of arterial carbon dioxide, ≤45 mm Hg without intubation or ≤50 mm Hg with intubation) who were receiving vasopressors in the intensive care unit (ICU); 500 patients enrolled in 55 ICUs across seven countries (median age 66 years, 43.2% women; enrolled April 2023 through December 2025).",
+          "intervention": "Sodium bicarbonate infused for up to 5 hours, with the infusion rate adjusted for a target pH of at least 7.30 and base excess of at least 0 mmol per liter (n=245 assigned; 244 analyzed).",
+          "comparison": "Placebo (5% dextrose) infused for up to 5 hours with the same titration protocol (n=255 assigned; 254 analyzed).",
+          "outcome": "Primary outcome — major adverse kidney event within 30 days (death, use of renal-replacement therapy, or persistent renal dysfunction): 98 of 244 patients (40.2%) in the sodium bicarbonate group vs 100 of 254 patients (39.4%) in the placebo group (adjusted difference, 1.2 percentage points; 95% CI, -7.1 to 9.4; P = 0.78)."
+        },
+        "pico_ko": {
+          "population": "[다국가] 대사성 산증(pH <7.30; base excess -4 mmol/L 이하; 그리고 partial pressure of arterial carbon dioxide가 비삽관 시 ≤45 mm Hg 또는 삽관 시 ≤50 mm Hg)을 가진 성인으로 중환자실(ICU)에서 vasopressor를 투여받는 환자; 7개국 55개 ICU에서 500명 등록(중앙 연령 66세, 여성 43.2%; 2023년 4월~2025년 12월 등록).",
+          "intervention": "Sodium bicarbonate를 최대 5시간 동안 주입하며, target pH 최소 7.30 및 base excess 최소 0 mmol/L를 목표로 주입 속도를 조정(배정 n=245, 분석 244명).",
+          "comparison": "위약(5% dextrose)을 동일한 titration 프로토콜로 최대 5시간 동안 주입(배정 n=255, 분석 254명).",
+          "outcome": "1차 결과 — 30일 내 major adverse kidney event(사망, renal-replacement therapy 사용, 또는 persistent renal dysfunction): sodium bicarbonate군 244명 중 98명(40.2%) 대 위약군 254명 중 100명(39.4%) (adjusted difference 1.2%p; 95% CI -7.1~9.4; P = 0.78)."
+        },
+        "baseline": "Balanced",
+        "secondaryOutcomes": [
+          "Renal-replacement therapy within 30 days: 16.8% (sodium bicarbonate) vs 20.9% (placebo); adjusted difference, -3.9 percentage points; 95% CI, -10.6 to 2.7.",
+          "In-hospital mortality by day 30: 25.4% (sodium bicarbonate) vs 24.0% (placebo); adjusted difference, 1.8 percentage points; 95% CI, -5.6 to 9.2.",
+          "Adverse effect: 4 patients (1.6%) in the sodium bicarbonate group vs none in the placebo group (P = 0.06)."
+        ],
+        "secondaryOutcomes_ko": [
+          "30일 내 renal-replacement therapy: sodium bicarbonate군 16.8% 대 위약군 20.9%; adjusted difference -3.9%p; 95% CI -10.6~2.7.",
+          "30일 내 병원 내 사망(in-hospital mortality): sodium bicarbonate군 25.4% 대 위약군 24.0%; adjusted difference 1.8%p; 95% CI -5.6~9.2.",
+          "이상반응(adverse effect): sodium bicarbonate군 4명(1.6%) 대 위약군 0명(P = 0.06)."
+        ],
+        "statGlossary": [
+          {
+            "term": "adjusted difference (percentage points)",
+            "explanation_ko": "두 군 간 사건 발생률의 보정된 절대 차이(%p)로, 0이면 차이 없음을 의미. 예: adjusted difference 1.2%p (95% CI -7.1~9.4) → sodium bicarbonate군의 MAKE30 발생률이 위약군보다 1.2%p 높지만 통계적으로 의미 없음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간으로, 참값이 이 범위에 있을 가능성이 높으며 구간이 0을 포함하면 유의하지 않음. 예: 95% CI -7.1~9.4 → 0을 포함하므로 두 군 차이가 통계적으로 유의하지 않음."
+          },
+          {
+            "term": "P value",
+            "explanation_ko": "우연만으로 관찰된 차이가 나올 확률로, 보통 0.05 미만이면 유의하다고 봄. 예: P = 0.78 → 두 군의 MAKE30 차이가 우연으로도 충분히 설명되어 유의하지 않음."
+          }
+        ],
+        "practiceChange": [
+          "Do not routinely administer sodium bicarbonate to reduce kidney injury or improve survival in critically ill adults with metabolic acidosis (pH <7.30) on vasopressors — MAKE30 (40.2% vs 39.4%) and 30-day in-hospital mortality (25.4% vs 24.0%) were no different from placebo.",
+          "The lower-but-nonsignificant renal-replacement therapy rate (16.8% vs 20.9%; 95% CI -10.6 to 2.7) is not sufficient evidence to titrate bicarbonate for a pH/base-excess target in this broad population; reserve bicarbonate for specific indications (e.g., severe hyperkalemia, certain toxic ingestions) rather than acidemia per se.",
+          "Monitor for hypokalaemia if bicarbonate is given — the only excess harm signal was 4 (1.6%) adverse effects driven by hypokalaemia requiring correction vs none with placebo (P = 0.06)."
+        ],
+        "practiceChange_ko": [
+          "Vasopressor를 투여 중인 대사성 산증(pH <7.30) 중환자에서 신손상 감소나 생존 향상을 위해 sodium bicarbonate를 일상적으로 투여하지 말 것 — MAKE30(40.2% 대 39.4%)와 30일 병원 내 사망(25.4% 대 24.0%) 모두 위약과 차이 없음.",
+          "renal-replacement therapy 비율이 낮았으나(16.8% 대 20.9%; 95% CI -10.6~2.7) 유의하지 않으므로, 이 광범위한 환자군에서 pH/base excess 목표에 맞춰 bicarbonate를 titration할 근거로 삼기에 부족함; acidemia 자체보다는 특정 적응증(예: 중증 hyperkalemia, 일부 독성물질 섭취)에 한해 사용할 것.",
+          "Bicarbonate 투여 시 hypokalaemia를 모니터링할 것 — 유일한 초과 위해 신호는 교정이 필요한 hypokalaemia로 인한 이상반응 4건(1.6%)이며 위약군은 0건(P = 0.06)."
+        ],
+        "keyFindings": [
+          "Sodium bicarbonate did not reduce major adverse kidney events within 30 days: 98/244 (40.2%) vs 100/254 (39.4%) with placebo (adjusted difference, 1.2 percentage points; 95% CI, -7.1 to 9.4; P = 0.78).",
+          "No mortality benefit — in-hospital mortality by day 30 was 25.4% vs 24.0% (adjusted difference, 1.8 percentage points; 95% CI, -5.6 to 9.2); renal-replacement therapy was 16.8% vs 20.9% (adjusted difference, -3.9 percentage points; 95% CI, -10.6 to 2.7).",
+          "Adverse effects occurred in 4 patients (1.6%) with sodium bicarbonate vs none with placebo (P = 0.06), in a trial of 500 patients across 55 ICUs in seven countries."
+        ],
+        "keyFindings_ko": [
+          "Sodium bicarbonate는 30일 내 major adverse kidney event를 줄이지 못함: 98/244 (40.2%) 대 위약 100/254 (39.4%) (adjusted difference 1.2%p; 95% CI -7.1~9.4; P = 0.78).",
+          "사망 이득 없음 — 30일 병원 내 사망 25.4% 대 24.0% (adjusted difference 1.8%p; 95% CI -5.6~9.2); renal-replacement therapy 16.8% 대 20.9% (adjusted difference -3.9%p; 95% CI -10.6~2.7).",
+          "이상반응은 sodium bicarbonate군 4명(1.6%), 위약군 0명(P = 0.06)이며, 7개국 55개 ICU에서 500명을 대상으로 한 시험임."
+        ],
+        "clinicalTakeaway": "In critically ill adults with metabolic acidosis (pH <7.30) receiving vasopressors, protocolized sodium bicarbonate titrated to a pH/base-excess target did not lower major adverse kidney events, need for renal-replacement therapy, or mortality compared with placebo. Bicarbonate should not be used routinely to treat acidemia in this population; limit it to established indications and watch for hypokalaemia when it is given.",
+        "clinicalTakeaway_ko": "Vasopressor를 투여받는 대사성 산증(pH <7.30) 중환자에서, pH/base excess 목표에 맞춰 titration한 sodium bicarbonate는 위약과 비교해 major adverse kidney event, renal-replacement therapy 필요성, 사망을 낮추지 못했다. 이 환자군에서 acidemia 치료 목적으로 bicarbonate를 일상적으로 사용해서는 안 되며, 확립된 적응증에 한해 사용하고 투여 시 hypokalaemia를 관찰해야 한다.",
+        "limitations": "Open questions remain despite this being a well-conducted double-blind RCT: the enrolled population was predominantly from Australia (72.1%) and New Zealand (21.9%), limiting generalizability to other health systems; enrollment stopped at 500 patients, and the confidence intervals around secondary outcomes (e.g., renal-replacement therapy) are wide and cannot exclude a clinically relevant benefit or harm; the intervention was a short (up to 5 hours) titrated infusion, so effects of more prolonged or higher-dose bicarbonate strategies are untested; and the broad enrollment criteria may dilute any benefit in specific subgroups (e.g., severe acidemia with acute kidney injury).",
+        "limitations_ko": "잘 수행된 이중맹검 RCT임에도 한계가 있다: 등록 환자의 대부분이 호주(72.1%)와 뉴질랜드(21.9%) 출신으로 다른 의료 체계로의 일반화가 제한된다; 등록이 500명에서 종료되었고 secondary outcome(예: renal-replacement therapy)의 신뢰구간이 넓어 임상적으로 의미 있는 이득이나 위해를 배제할 수 없다; 중재가 최대 5시간의 짧은 titration 주입이어서 더 장기간·고용량 bicarbonate 전략의 효과는 검증되지 않았다; 그리고 광범위한 등록 기준으로 인해 특정 하위집단(예: acute kidney injury를 동반한 중증 acidemia)에서의 이득이 희석되었을 수 있다.",
+        "evidenceLevel": "High",
+        "clinicalApplicabilityScore": 8,
+        "webSources": [
+          {
+            "label": "NEJM official article page (NEJMoa2600526)",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2600526"
+          },
+          {
+            "label": "Critical Care Reviews — SODa-BIC trial summary",
+            "url": "https://criticalcarereviews.com/trial-summaries-critiques/soda-bic"
+          },
+          {
+            "label": "Renal and Urology News — SODa-BIC coverage",
+            "url": "https://www.renalandurologynews.com/news/kidney-events-sodium-bicarbondate-reduce-adverse-metabolic-acidosis/"
+          },
+          {
+            "label": "ClinicalTrials.gov NCT05697770",
+            "url": "https://clinicaltrials.gov/study/NCT05697770"
+          }
+        ],
+        "paper": {
+          "pmid": "42283370",
+          "title": "Sodium Bicarbonate for Critically Ill Adults with Metabolic Acidosis and Shock.",
+          "abstract": "BACKGROUND: Metabolic acidosis is common in critically ill patients and is associated with organ dysfunction and death. Sodium bicarbonate is used to correct acidemia, but its benefit in patients with metabolic acidosis who are receiving vasopressors remains uncertain.\nMETHODS: In this pragmatic, adaptive, double-blind, randomized trial, we assigned adults with metabolic acidosis (pH, <7.30; base excess, no more than -4 mmol per liter; and partial pressure of arterial carbon dioxide, ≤45 mm Hg without intubation or ≤50 mm Hg with intubation) who were receiving vasopressors in the intensive care unit (ICU) to receive either sodium bicarbonate or placebo (5% dextrose). Sodium bicarbonate or placebo was infused for up to 5 hours, with the infusion rate adjusted for a target pH of at least 7.30 and base excess of at least 0 mmol per liter. The primary outcome was a major adverse kidney event, defined as death, use of renal-replacement therapy, or persistent renal dysfunction, within 30 days.\nRESULTS: A total of 500 patients were enrolled in 55 ICUs across seven countries; 245 patients were assigned to receive sodium bicarbonate and 255 to receive placebo. A major adverse kidney event within 30 days occurred in 98 of 244 patients (40.2%) in the sodium bicarbonate group and in 100 of 254 patients (39.4%) in the placebo group (adjusted difference, 1.2 percentage points; 95% confidence interval [CI], -7.1 to 9.4; P = 0.78). Renal-replacement therapy was used within 30 days in 16.8% of the patients in the sodium bicarbonate group and in 20.9% of those in the placebo group (adjusted difference, -3.9 percentage points; 95% CI, -10.6 to 2.7). In-hospital mortality by day 30 was 25.4% in the sodium bicarbonate group and 24.0% in the placebo group (adjusted difference, 1.8 percentage points; 95% CI, -5.6 to 9.2). Four patients (1.6%) in the sodium bicarbonate group had an adverse effect, as compared with none in the placebo group (P = 0.06).\nCONCLUSIONS: The use of sodium bicarbonate in critically ill patients with metabolic acidosis receiving vasopressors did not lead to a lower risk of major adverse kidney events within 30 days than placebo. (Funded by the National Health and Medical Research Council of Australia; SODa-BIC ClinicalTrials.gov number, NCT05697770.).",
+          "authors": [
+            "Serpa Neto A",
+            "McNamara M",
+            "White K",
+            "Cooper DJ",
+            "Fujii T"
+          ],
+          "journal": "The New England journal of medicine",
+          "pubDate": "2026-Jun-12",
+          "publicationTypes": [
+            "Journal Article"
+          ],
+          "meshTerms": [],
+          "keywords": [],
+          "doi": "10.1056/NEJMoa2600526",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42283370/",
+          "collectedAt": "2026-07-18T23:58:34.553Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42283370",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42283370/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMoa2600526",
+            "url": "https://doi.org/10.1056/NEJMoa2600526"
+          },
+          {
+            "label": "웹 — NEJM official article page (NEJMoa2600526)",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2600526"
+          },
+          {
+            "label": "웹 — Critical Care Reviews — SODa-BIC trial summary",
+            "url": "https://criticalcarereviews.com/trial-summaries-critiques/soda-bic"
+          },
+          {
+            "label": "웹 — Renal and Urology News — SODa-BIC coverage",
+            "url": "https://www.renalandurologynews.com/news/kidney-events-sodium-bicarbondate-reduce-adverse-metabolic-acidosis/"
+          },
+          {
+            "label": "웹 — ClinicalTrials.gov NCT05697770",
+            "url": "https://clinicaltrials.gov/study/NCT05697770"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
