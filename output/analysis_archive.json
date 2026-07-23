@@ -837,6 +837,64 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-24",
+      "pmid": "42341623",
+      "title": "Sepsis-induced neuromuscular dysfunction: A systematic review with meta-analysis.",
+      "title_ko": "패혈증 유발 신경근 기능장애: 메타분석을 동반한 체계적 문헌고찰",
+      "journal": "Journal of infection and public health",
+      "doi": "10.1016/j.jiph.2026.103285",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "패혈증 성인 환자에서 sepsis-induced neuromuscular dysfunction(SIND)과 연관된 위험인자는 무엇이며, 임상 연구들에서의 통합(pooled) 유병률은 어느 정도인가?",
+      "pico": {
+        "population": "[International] Fourteen studies including 596 adult patients with sepsis; a systematic review and meta-analysis conducted per PRISMA 2020 and registered in PROSPERO (CRD42024577234), searching Medline, BMC, Cochrane Library, and Google Scholar.",
+        "intervention": "Not an interventional study; exposure of interest was 40 clinical parameters (risk factors) grouped into seven categories — baseline characteristics, organ failure, disease severity indices, medical procedures, plasma biomarkers, pharmacological therapy, and length of stay — further stratified as modifiable or non-modifiable.",
+        "comparison": null,
+        "outcome": "Pooled prevalence of SIND was 60% (95% CI: 50-70%), with substantial heterogeneity. ICU-acquired neuromuscular dysfunction showed a prevalence of 70% (95% CI: 60-80%), whereas direct neuromuscular damage attributable to sepsis was lower (9%, 95% CI: 4-19%).",
+        "outcome_units": ""
+      },
+      "pico_ko": {
+        "population": "[다국가] 패혈증 성인 환자 596명을 포함한 14개 연구; PRISMA 2020에 따라 수행되고 PROSPERO(CRD42024577234)에 등록된 체계적 문헌고찰 및 메타분석으로, Medline, BMC, Cochrane Library, Google Scholar를 검색함.",
+        "intervention": "중재 연구가 아니며, 관심 노출은 7개 범주(baseline characteristics, organ failure, disease severity indices, medical procedures, plasma biomarkers, pharmacological therapy, length of stay)로 묶인 40개 임상 지표(위험인자)로, 다시 modifiable/non-modifiable로 층화됨.",
+        "comparison": null,
+        "outcome": "SIND의 통합 유병률은 60%(95% CI: 50-70%)이며 이질성이 상당함. ICU-acquired neuromuscular dysfunction 유병률은 70%(95% CI: 60-80%)였고, 패혈증에 직접 기인한 신경근 손상은 더 낮은 9%(95% CI: 4-19%)였음."
+      },
+      "keyFindings": [
+        "Pooled prevalence of SIND was 60% (95% CI: 50-70%) across 14 studies and 596 adult septic patients, with substantial heterogeneity.",
+        "ICU-acquired neuromuscular dysfunction was highly prevalent at 70% (95% CI: 60-80%), while neuromuscular damage directly attributable to sepsis was much lower at 9% (95% CI: 4-19%).",
+        "40 clinical parameters were grouped into seven domains (baseline characteristics, organ failure, disease severity indices, medical procedures, plasma biomarkers, pharmacological therapy, length of stay); critical illness polyneuropathy was the most frequently reported entity."
+      ],
+      "keyFindings_ko": [
+        "14개 연구·성인 패혈증 환자 596명에서 SIND의 통합 유병률은 60%(95% CI: 50-70%)였으며 이질성이 상당함.",
+        "ICU-acquired neuromuscular dysfunction은 70%(95% CI: 60-80%)로 매우 흔했던 반면, 패혈증에 직접 기인한 신경근 손상은 9%(95% CI: 4-19%)로 훨씬 낮았음.",
+        "40개 임상 지표가 7개 도메인(baseline characteristics, organ failure, disease severity indices, medical procedures, plasma biomarkers, pharmacological therapy, length of stay)으로 분류되었고, critical illness polyneuropathy가 가장 흔히 보고된 병태였음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42341623",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42341623/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.jiph.2026.103285",
+          "url": "https://doi.org/10.1016/j.jiph.2026.103285"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42341623)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42341623/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 42341623)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42341623/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
