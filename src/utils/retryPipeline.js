@@ -20,6 +20,12 @@ export function classifyFailure(message = '') {
   const m = String(message);
   if (isSessionRateLimit(m))
     return { retryable: true, label: 'Claude 세션 한도(429)' };
+  // 인증 실패(401·API키 무효·OAuth 토큰 만료)는 기다려도 동일하게 실패하는 결정적 오류.
+  // 재시도로 러너 시간(기본 60분×3회)만 낭비하지 말고 즉시 중단하고, 사람이 바로 조치할 수
+  // 있게 '재발급 필요' 사유로 알린다. (2026-07-20~ 데일리 장애: 비활성화된 ANTHROPIC_API_KEY가
+  // CLI로 새어들어가 401 → "일시적일 수 있음"으로 오분류되어 매일 2.5시간 헛재시도.)
+  if (/api_error_status["']?\s*[:=]\s*401|\b401\b|failed to authenticate|authentication_error|invalid[\s_-]*(?:x-)?api[\s_-]*key|api key is invalid|unauthorized/i.test(m))
+    return { retryable: false, label: 'claude 인증 실패 — 구독 토큰/API 키 재발급 필요' };
   if (/not been trusted|hasTrustDialogAccepted/i.test(m))
     return { retryable: false, label: 'claude CLI 워크스페이스 신뢰 미설정 (설정 확인 필요)' };
   if (/ENOENT|spawn error|command not found/i.test(m))

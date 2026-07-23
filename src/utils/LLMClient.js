@@ -207,7 +207,14 @@ ${schema}`;
 
   _spawnClaude(args, timeoutMs) {
     return new Promise((resolve) => {
-      const child = spawn('claude', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+      // 구독 CLI는 CLAUDE_CODE_OAUTH_TOKEN(구독)으로 인증해야 한다. process.env에
+      // ANTHROPIC_API_KEY가 남아 있으면 CLI가 구독 대신 그 API 키를 우선 사용해버려,
+      // 키가 만료·비활성화면 구독 토큰이 멀쩡해도 401로 죽는다(2026-07-20 데일리 장애).
+      // → 자식 CLI 환경에서만 API 키를 제거해 구독 경로를 보장한다. Node 폴백
+      // (_callAnthropicAPI)은 process.env를 직접 읽으므로 이 격리와 무관하게 동작한다.
+      const env = { ...process.env };
+      delete env.ANTHROPIC_API_KEY;
+      const child = spawn('claude', args, { stdio: ['ignore', 'pipe', 'pipe'], env });
       let stdout = '';
       let stderr = '';
       let settled = false;

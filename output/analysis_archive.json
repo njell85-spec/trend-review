@@ -770,6 +770,73 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-23",
+      "pmid": "42469837",
+      "title": "The usual suspects: a pragmatic framework to identify and address reversible contributors in apparent refractory septic shock.",
+      "title_ko": "흔한 용의자들: 겉보기 불응성 패혈성 쇼크에서 가역적 기여 요인을 식별하고 다루기 위한 실용적 프레임워크",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-026-06197-1",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "초기 소생술에도 불구하고 지속적 저관류 상태이거나 승압제 증량이 필요한 겉보기 불응성 패혈성 쇼크 환자에서, 쇼크가 진정한 불응성이라고 결론짓기 전에 임상의가 가역적 기여 요인을 체계적으로 재평가하고 다룰 수 있는 방법은 무엇인가?",
+      "pico": {
+        "population": "[Country NR] Adult patients with septic shock, specifically a subset who remain hypoperfused or require escalating vasopressor support despite initial resuscitation — an \"apparent refractory\" trajectory in which early high vasopressor requirements or persistent hypoperfusion may still reflect potentially modifiable contributors.",
+        "intervention": "A pragmatic, hypothesis-driven bedside framework (the \"usual suspects\") for structured, parallel reassessment of potentially reversible contributors: antimicrobial adequacy and source control as the foundational substrate; fluid responsiveness, tolerance, and efficiency; endocrine, metabolic, and iatrogenic contributors to vasoplegia (e.g., acidemia, sedation burden); and cardiac mechanisms including ventricular performance, ventriculo-arterial coupling, and dynamic left ventricular outflow tract obstruction — reassessment guided by the dominant physiology rather than a fixed sequence.",
+        "comparison": null,
+        "outcome": "As a Perspective/framework article, no quantitative outcome is measured or reported. The proposed benefit is conceptual: to operationalize the \"optimization\" dimension of refractoriness and help clinicians interpret persistent hypoperfusion and vasopressor escalation during the transition from apparent to established refractory septic shock, serving as an operational companion to current SCCM/ESICM consensus definitions.",
+        "outcome_ko": null
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 패혈성 쇼크 성인 환자, 특히 초기 소생술에도 불구하고 지속적 저관류 상태이거나 승압제 증량이 필요한 하위군 — 초기 높은 승압제 요구량이나 지속적 저관류가 여전히 교정 가능한 기여 요인을 반영할 수 있는 '겉보기 불응성' 경과.",
+        "intervention": "가역적 기여 요인을 구조적·병렬적으로 재평가하기 위한 실용적·가설 기반 침상 프레임워크('흔한 용의자들'): 근본 기반으로서 항균제 적절성 및 source control; fluid responsiveness·tolerance·efficiency; vasoplegia에 대한 내분비·대사·의인성 기여 요인(예: acidemia, sedation burden); 그리고 ventricular performance, ventriculo-arterial coupling, 동적 left ventricular outflow tract obstruction을 포함한 심장 기전 — 고정된 순서가 아니라 지배적 생리에 따라 재평가.",
+        "comparison": null,
+        "outcome": "Perspective/프레임워크 논문으로서 정량적 결과는 측정되거나 보고되지 않음. 제안된 이점은 개념적임: 불응성의 'optimization' 차원을 조작화하고, 겉보기 불응성에서 확립된 불응성 패혈성 쇼크로의 이행기에 지속적 저관류와 승압제 증량을 임상의가 해석하도록 도우며, 현행 SCCM/ESICM 합의 정의의 실무적 동반 도구 역할을 함."
+      },
+      "keyFindings": [
+        "A subset of septic shock patients who remain hypoperfused or need escalating vasopressors after initial resuscitation may not be truly refractory — early high vasopressor needs or persistent hypoperfusion can still reflect modifiable contributors (unresolved infection, inadequate fluids, metabolic derangements, iatrogenic factors, cardiac dysfunction).",
+        "The paper proposes the 'usual suspects' — a parallel, hypothesis-driven bedside reassessment across foundational (antimicrobial adequacy, source control), fluid, endocrine/metabolic/iatrogenic (vasoplegia; acidemia, sedation), and cardiac (ventricular performance, ventriculo-arterial coupling, dynamic LVOT obstruction) domains.",
+        "Refractoriness is framed as a multidimensional construct shaped by severity, time in shock, and prior optimization; the relative contribution of each domain varies across patients and over time, so reassessment should be guided by the dominant physiology rather than a fixed sequence."
+      ],
+      "keyFindings_ko": [
+        "초기 소생술 후에도 지속적 저관류이거나 승압제 증량이 필요한 패혈성 쇼크 하위군이 반드시 진정한 불응성은 아닐 수 있음 — 초기 높은 승압제 요구량이나 지속적 저관류는 여전히 교정 가능한 요인(미해결 감염, 불충분한 수액, 대사 이상, 의인성 요인, 심기능 저하)을 반영할 수 있음.",
+        "본 논문은 '흔한 용의자들'을 제안함 — 기반(항균제 적절성, source control), fluid, 내분비/대사/의인성(vasoplegia; acidemia, sedation), 심장(ventricular performance, ventriculo-arterial coupling, 동적 LVOT obstruction) 영역에 걸친 병렬적·가설 기반 침상 재평가.",
+        "불응성은 severity, time in shock, prior optimization으로 형성되는 다차원적 구성 개념으로 제시됨; 각 영역의 상대적 기여도가 환자별·시간별로 달라지므로 고정된 순서가 아니라 지배적 생리에 따라 재평가해야 함."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42469837",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42469837/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-026-06197-1",
+          "url": "https://doi.org/10.1186/s13054-026-06197-1"
+        },
+        {
+          "label": "웹 — Springer / Critical Care — official article page",
+          "url": "https://link.springer.com/article/10.1186/s13054-026-06197-1"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42469837",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42469837/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "Springer / Critical Care — official article page",
+          "url": "https://link.springer.com/article/10.1186/s13054-026-06197-1",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed — PMID 42469837",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42469837/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
