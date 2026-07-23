@@ -3,6 +3,24 @@
 > 목적: 새 세션(어느 모델이든)이 이 파일 하나로 지금까지의 맥락·결정·상태·다음 할 일을
 > 복원해 이어가기 위함. **새 세션을 열면 이 파일부터 읽고, 아래 "먼저 읽을 파일"을 훑으세요.**
 >
+> **[2026-07-23 — 데일리 401 인증 장애 수정 (subprocess는 정상, 인증이 원인)]**
+> - **증상**: 2026-07-20~22 데일리가 매일 소프트 실패("claude CLI 오류(일시적일 수 있음) —
+>   3회 재시도 후에도 실패") + 카톡 실패알림. 브랜치명 `subprocess-issue`는 오해였음.
+> - **근본 원인(Actions 로그 실측)**: subprocess(claude CLI)는 정상 작동. 실제는 인증 401 —
+>   `api_error_status:401 / "Failed to authenticate. API Error: 401 API key is invalid."`
+>   PeterJ가 과금 때문에 **`ANTHROPIC_API_KEY`를 비활성화**했는데, 그 죽은 키가 spawn 시
+>   `process.env`로 CLI에 새어들어가 **CLI가 구독 OAuth 토큰 대신 그 키를 우선 사용** → 401.
+>   (마지막 성공 07-19, 키 비활성화 후 07-20부터 실패로 타임라인 일치.)
+> - **수정(PR — LLMClient.js·retryPipeline.js)**: ① `_spawnClaude`가 자식 CLI env에서
+>   `ANTHROPIC_API_KEY`만 제거 → 구독 경로 보장(Node 폴백 `_callAnthropicAPI`은 격리 무관,
+>   키 재활성화 시 자동 복귀). ② `classifyFailure`가 401/인증 실패를 **결정적(비재시도)**로
+>   분류 → 2.5시간 헛재시도 제거 + "인증 실패 — 재발급 필요"로 정확한 카톡 안내. 회귀 3건 추가.
+> - **검증(실측)**: 브랜치에서 데일리 수동 dispatch(run 29985296543) → `구독×2`(401 없음)·
+>   1편 선정·카톡 정상 발송·96.7초 완료. **구독 토큰은 멀쩡 → PeterJ 시크릿 조작 불필요.**
+> - **남은 별개 이슈(팔로업)**: 같은 런에서 Phase 2 아카이브가 `invalid_grant`(Google
+>   `GOOGLE_REFRESH_TOKEN` 만료)로 소프트 실패 — **코어 무영향**. 이번 401과 무관. Google 재인증은
+>   데스크탑 조작 필요(스텝바이스텝 안내 대상). 미해결.
+>
 > **[2026-07-12 — CC 글로벌 툴체인 확장 (EMR_Assist_v1 세션에서 작업, trend-review 반영)]**
 > - **확장 플러그인 세팅 도입**: 딥리서치(적대검증 완료, `docs/reviews/2026-07-12-cc-ecosystem-deep-research.md`)
 >   근거로 A그룹 상시(typescript-lsp·superpowers-chrome) + B그룹 온디맨드(pumasi·insane-search·
