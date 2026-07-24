@@ -895,6 +895,63 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-25",
+      "pmid": "42341374",
+      "title": "The use of oXiris hemofilter in the initial continuous renal replacement therapy among patients with septic shock: A propensity score matched analysis.",
+      "title_ko": "패혈성 쇼크 환자에서 초기 지속적 신대체요법(CRRT)에 oXiris 혈액필터 사용: 성향점수 매칭 분석",
+      "journal": "Journal of critical care",
+      "doi": "10.1016/j.jcrc.2026.155666",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "CRRT가 필요한 성인 패혈성 쇼크 환자에서 초기 필터로 oXiris 혈액필터를 사용하는 것이 표준 M100 필터에 비해 더 나은 결과, 특히 28일 vasopressor-free days와 연관되는가?",
+      "pico": {
+        "population": "[China] Adult patients with septic shock admitted to the ICU of a tertiary referral hospital between 2019 and 2023 who underwent at least one CRRT session; of 465 patients who met all eligibility criteria, 69 in the oXiris group were matched 1:1 with 69 in the M100 group after propensity score matching.",
+        "intervention": "Initial CRRT using the oXiris hemofilter (oXiris CRRT); n=69.",
+        "comparison": "Initial CRRT using the M100 hemofilter (M100 group); n=69.",
+        "outcome": "Primary outcome was 28-day vasopressor-free days: oXiris was associated with longer vasopressor-free days (24 vs. 19 days, P = 0.04); however, competing risk analysis indicated no significant between-group difference in the cumulative incidence of vasopressor weaning after accounting for the competing risk of ICU mortality."
+      },
+      "pico_ko": {
+        "population": "[중국] 2019~2023년 3차 의뢰병원 ICU에 입원하여 최소 1회 이상 CRRT를 시행받은 성인 패혈성 쇼크 환자. 모든 선정기준을 충족한 465명 중, 성향점수 매칭 후 oXiris군 69명이 M100군 69명과 1:1로 매칭됨.",
+        "intervention": "초기 CRRT에 oXiris 혈액필터 사용(oXiris CRRT); n=69.",
+        "comparison": "초기 CRRT에 M100 혈액필터 사용(M100군); n=69.",
+        "outcome": "1차 결과는 28일 vasopressor-free days로, oXiris군이 더 길었음(24일 vs. 19일, P = 0.04). 그러나 ICU 사망이라는 경쟁위험(competing risk)을 보정한 competing risk analysis에서는 vasopressor 이탈의 누적발생률에 군간 유의한 차이가 없었음."
+      },
+      "keyFindings": [
+        "In 69 matched pairs, oXiris CRRT was associated with longer 28-day vasopressor-free days (24 vs. 19 days, P = 0.04), but competing risk analysis showed no significant difference in cumulative incidence of vasopressor weaning after accounting for ICU mortality.",
+        "oXiris was associated with shorter CRRT duration (72 vs. 117 h, P = 0.03) and greater SOFA score reduction (-2 vs. 1, P = 0.004) in unadjusted analyses.",
+        "No significant between-group differences were seen in lactate, PCT, or IL-6 changes, fluid balance, ICU or hospital LOS, or short-term mortality."
+      ],
+      "keyFindings_ko": [
+        "69쌍의 매칭 코호트에서 oXiris CRRT는 더 긴 28일 vasopressor-free days와 연관되었으나(24 vs. 19일, P = 0.04), ICU 사망을 보정한 competing risk analysis에서는 vasopressor 이탈 누적발생률에 유의한 차이가 없었음.",
+        "비보정 분석에서 oXiris는 더 짧은 CRRT 지속시간(72 vs. 117시간, P = 0.03)과 더 큰 SOFA 점수 감소(-2 vs. 1, P = 0.004)와 연관됨.",
+        "lactate, PCT, IL-6 변화, 수액 균형, ICU·병원 LOS, 단기 사망률에서는 군간 유의한 차이가 없었음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42341374",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42341374/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.jcrc.2026.155666",
+          "url": "https://doi.org/10.1016/j.jcrc.2026.155666"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42341374",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42341374/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 42341374",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42341374/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
