@@ -2181,6 +2181,280 @@
       "arm2": null,
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-24",
+      "arm1": {
+        "pmid": "42341623",
+        "title_ko": "패혈증으로 유발된 신경근육 기능장애: 메타분석을 포함한 체계적 문헌고찰",
+        "clinicalQuestion": "What is the pooled prevalence of sepsis-induced neuromuscular dysfunction (SIND) in adult sepsis patients, and what risk factors (modifiable and non-modifiable) are associated with its development?",
+        "clinicalQuestion_ko": "패혈증 성인 환자에서 패혈증 유발 신경근육 기능장애(SIND)의 통합 유병률은 어느 정도이며, 그 발생과 관련된 위험요인(교정 가능/불가능)은 무엇인가?",
+        "pico": {
+          "population": "[Country NR] Systematic review and meta-analysis conducted in accordance with PRISMA 2020 guidelines and registered in PROSPERO (CRD42024577234); Fourteen studies including 596 adult patients with sepsis were eligible; databases searched: Medline, BMC, Cochrane Library, and Google Scholar.",
+          "intervention": "Not an interventional study — the review identified and classified risk factors associated with SIND; a total of 40 clinical parameters were identified and grouped into seven categories: baseline characteristics, organ failure, disease severity indices, medical procedures, plasma biomarkers, pharmacological therapy, and length of stay; risk factors further stratified as modifiable or non-modifiable.",
+          "comparison": "ICU-acquired neuromuscular dysfunction (prevalence 70%, 95% CI: 60-80%) versus direct neuromuscular damage attributable to sepsis (prevalence 9%, 95% CI: 4-19%).",
+          "outcome": "Pooled prevalence estimates were calculated using a random-effects model (DerSimonian-Laird method). The pooled prevalence of SIND was 60% (95% CI: 50-70%), with substantial heterogeneity. ICU-acquired neuromuscular dysfunction showed a prevalence of 70% (95% CI: 60-80%), whereas direct neuromuscular damage attributable to sepsis was lower (9%, 95% CI: 4-19%). Critical illness polyneuropathy was the most frequently reported entity and demonstrated strong associations with both modifiable and non-modifiable risk factors."
+        },
+        "pico_ko": {
+          "population": "[국가 미기재] PRISMA 2020 지침에 따라 수행되고 PROSPERO(CRD42024577234)에 등록된 체계적 문헌고찰 및 메타분석; 패혈증 성인 환자 596명을 포함한 14개 연구가 최종 선정됨; Medline, BMC, Cochrane Library, Google Scholar 데이터베이스를 검색함.",
+          "intervention": "중재 연구가 아님 — 이 리뷰는 SIND와 관련된 위험요인을 식별·분류함; 총 40개의 임상 변수가 확인되어 기저 특성, 장기부전, 질병 중증도 지표, 의료 처치, 혈장 바이오마커, 약물 치료, 재원기간의 7개 범주로 분류됨; 위험요인은 추가로 교정 가능/교정 불가능으로 층화됨.",
+          "comparison": "ICU 획득 신경근육 기능장애(유병률 70%, 95% CI: 60-80%) 대 패혈증에 직접 기인한 신경근육 손상(유병률 9%, 95% CI: 4-19%) 비교.",
+          "outcome": "통합 유병률 추정치는 무작위효과모형(DerSimonian-Laird 방법)으로 산출됨. SIND의 통합 유병률은 60%(95% CI: 50-70%)였으며 이질성이 상당했음. ICU 획득 신경근육 기능장애의 유병률은 70%(95% CI: 60-80%)였고, 패혈증에 직접 기인한 신경근육 손상은 9%(95% CI: 4-19%)로 더 낮았음. Critical illness polyneuropathy가 가장 흔히 보고된 병태였으며, 교정 가능 및 교정 불가능 위험요인 모두와 강한 연관성을 보였음."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "A total of 40 clinical parameters were identified as risk factors for SIND and grouped into seven categories (baseline characteristics, organ failure, disease severity indices, medical procedures, plasma biomarkers, pharmacological therapy, and length of stay), further stratified as modifiable or non-modifiable.",
+          "Critical illness polyneuropathy was the most frequently reported neuromuscular entity among septic patients, demonstrating strong associations with both modifiable and non-modifiable risk factors."
+        ],
+        "secondaryOutcomes_ko": [
+          "SIND의 위험요인으로 40개 임상 변수가 확인되어 7개 영역(기저 특성, 장기부전, 질병 중증도 지표, 의료 처치, 혈장 바이오마커, 약물 치료, 재원기간)으로 분류되었고, 교정 가능/교정 불가능 위험요인으로 층화됨.",
+          "Critical illness polyneuropathy가 패혈증 환자에서 가장 흔히 보고된 신경근육 병태로 확인되었으며, 교정 가능 및 교정 불가능 위험요인 모두와 강한 연관성을 보임."
+        ],
+        "statGlossary": [
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 실제 값이 존재할 것으로 95% 확신하는 범위. 예: SIND 유병률 60%(95% CI 50-70%) → 실제 유병률이 50~70% 사이일 가능성이 높음."
+          },
+          {
+            "term": "Pooled prevalence",
+            "explanation_ko": "여러 연구의 결과를 통계적으로 합쳐 산출한 통합 유병률. 예: 통합 유병률 60% → 14개 연구를 종합했을 때 패혈증 환자 중 약 60%에서 SIND가 확인됨."
+          },
+          {
+            "term": "Random-effects model (DerSimonian-Laird)",
+            "explanation_ko": "연구 간 실제 효과크기가 다를 수 있다고 가정하고 이질성을 반영해 통합 추정치를 계산하는 통계모형. 예: 이 메타분석은 DerSimonian-Laird 방법의 무작위효과모형을 사용해 60%의 통합 유병률을 산출함."
+          },
+          {
+            "term": "Heterogeneity",
+            "explanation_ko": "여러 연구 결과 간의 차이(이질성) 정도. 예: 본 연구는 '상당한 이질성(substantial heterogeneity)'을 보고하여 통합 유병률 해석 시 주의가 필요함."
+          }
+        ],
+        "practiceChange": [
+          "Maintain a high index of suspicion for SIND in septic ICU patients, given a pooled prevalence of ~60% (95% CI: 50-70%), and consider routine screening for ICU-acquired weakness/critical illness polyneuropathy, especially with prolonged ICU stay.",
+          "Prioritize early identification and mitigation of modifiable risk factors (among the 40 parameters across 7 domains) as part of ICU care to potentially reduce SIND burden.",
+          "Given abstract-only reporting and substantial heterogeneity, use the pooled prevalence as a signal to prompt neuromuscular assessment rather than as a precise, generalizable incidence figure."
+        ],
+        "practiceChange_ko": [
+          "SIND의 통합 유병률이 약 60%(95% CI: 50-70%)로 높은 점을 고려해 패혈증 중환자에서 SIND에 대한 임상적 의심을 높게 유지하고, 특히 ICU 재원이 길어지는 경우 ICU 획득 쇠약/critical illness polyneuropathy에 대한 정례적 선별검사를 고려한다.",
+          "7개 영역, 40개 변수 중 교정 가능한 위험요인을 조기에 파악하고 관리하여 SIND 부담을 줄이는 것을 ICU 진료의 우선순위로 삼는다.",
+          "초록 수준의 자료와 상당한 이질성을 감안할 때, 통합 유병률을 신경근육 평가를 촉발하는 신호로 활용하되 정밀하고 일반화 가능한 발생률로 확대 해석하지 않는다."
+        ],
+        "keyFindings": [
+          "Across 14 studies (596 adult sepsis patients), the pooled prevalence of SIND was 60% (95% CI: 50-70%), with substantial heterogeneity, using a random-effects (DerSimonian-Laird) model.",
+          "ICU-acquired neuromuscular dysfunction prevalence was 70% (95% CI: 60-80%), markedly higher than direct sepsis-attributable neuromuscular damage at 9% (95% CI: 4-19%).",
+          "Forty clinical parameters across seven categories were identified as risk factors, stratified as modifiable/non-modifiable; critical illness polyneuropathy was the most commonly reported entity, with strong risk-factor associations."
+        ],
+        "keyFindings_ko": [
+          "14개 연구(성인 패혈증 환자 596명)를 통합한 결과, 무작위효과모형(DerSimonian-Laird)을 이용한 SIND의 통합 유병률은 60%(95% CI: 50-70%)였으며 이질성이 상당했음.",
+          "ICU 획득 신경근육 기능장애의 유병률은 70%(95% CI: 60-80%)로, 패혈증에 직접 기인한 신경근육 손상 9%(95% CI: 4-19%)보다 현저히 높았음.",
+          "40개 임상 변수가 7개 범주로 분류되어 위험요인(교정 가능/불가능)으로 확인되었고, Critical illness polyneuropathy가 가장 흔히 보고된 병태로 위험요인들과 강한 연관성을 보임."
+        ],
+        "clinicalTakeaway": "SIND, particularly ICU-acquired forms such as critical illness polyneuropathy, affects a majority of septic ICU patients and warrants active screening, especially in those with prolonged ICU stay, organ failure, and high disease severity. Clinicians should prioritize early identification of modifiable risk factors to potentially reduce SIND burden, while recognizing that pooled estimates carry substantial heterogeneity and derive from a limited evidence base (14 studies, 596 patients).",
+        "clinicalTakeaway_ko": "SIND, 특히 critical illness polyneuropathy와 같은 ICU 획득 형태는 패혈증 중환자 대다수에서 발생하므로, 장기간 ICU 재원, 장기부전, 높은 질병 중증도를 보이는 환자에서 적극적인 선별검사가 필요합니다. 임상의는 SIND 부담을 줄이기 위해 조기에 교정 가능한 위험요인을 파악하고 관리하는 데 우선순위를 두어야 하지만, 통합 추정치는 상당한 이질성을 지니며 근거 기반이 작다는(14개 연구, 596명) 점을 염두에 두어야 합니다.",
+        "limitations": "Only an abstract is available, limiting assessment of individual study quality and risk of bias. The meta-analysis pooled only 14 studies with 596 total patients, and heterogeneity was substantial (no specific I² value reported in the abstract). Google Scholar was included among the search databases, raising the risk of including lower-quality or grey literature. No adjusted effect estimates (e.g., ORs/HRs) for individual risk factors were reported in the abstract, limiting the ability to quantify the strength of specific risk-factor associations.",
+        "limitations_ko": "초록만 제공되어 개별 연구의 질과 비뚤림 위험 평가가 제한적입니다. 메타분석은 총 596명의 환자를 포함한 14개 연구만을 통합했으며, 이질성이 상당했습니다(초록에 구체적 I² 값은 제시되지 않음). 검색 데이터베이스에 Google Scholar가 포함되어 있어 질 낮은 문헌이나 회색 문헌이 포함될 위험이 있습니다. 개별 위험요인에 대한 보정된 효과크기(OR/HR 등)가 초록에 보고되지 않아 특정 위험요인 연관성의 강도를 정량화하는 데 한계가 있습니다.",
+        "evidenceLevel": "Low",
+        "clinicalApplicabilityScore": 4,
+        "webSources": [
+          {
+            "label": "PubMed — Sepsis-induced neuromuscular dysfunction: A systematic review with meta-analysis (PMID 42341623)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42341623/"
+          },
+          {
+            "label": "NCBI E-utilities — efetch record for PMID 42341623 (J Infect Public Health. 2026 Aug;19(8):103285)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42341623&rettype=abstract&retmode=text"
+          }
+        ],
+        "paper": {
+          "pmid": "42341623",
+          "title": "Sepsis-induced neuromuscular dysfunction: A systematic review with meta-analysis.",
+          "abstract": "INTRODUCTION: Sepsis-induced neuromuscular dysfunction (SIND) is a common but underrecognized complication in critically ill patients, contributing to prolonged intensive care unit (ICU) stays, increased morbidity, and long-term functional impairment. Its pathophysiology is multifactorial, involving interactions among host factors, disease severity, and therapeutic interventions.\nOBJECTIVE: To systematically identify and classify risk factors associated with SIND in septic patients and to estimate its pooled prevalence across clinical studies.\nMETHODS: A systematic review and meta-analysis were conducted in accordance with PRISMA 2020 guidelines and registered in PROSPERO (CRD42024577234). Databases; Medline, BMC, Cochrane Library, and Google Scholar, were searched for relevant studies. Fourteen studies including 596 adult patients with sepsis were eligible. Risk factors were categorized into seven clinical domains and further stratified as modifiable or non-modifiable. Pooled prevalence estimates were calculated using a random-effects model (DerSimonian-Laird method).\nRESULTS: A total of 40 clinical parameters were identified and grouped into seven categories: baseline characteristics, organ failure, disease severity indices, medical procedures, plasma biomarkers, pharmacological therapy, and length of stay. The pooled prevalence of SIND was 60% (95% CI: 50-70%), with substantial heterogeneity. ICU-acquired neuromuscular dysfunction showed a prevalence of 70% (95% CI: 60-80%), whereas direct neuromuscular damage attributable to sepsis was lower (9%, 95% CI: 4-19%). Critical illness polyneuropathy was the most frequently reported entity and demonstrated strong associations with both modifiable and non-modifiable risk factors.\nCONCLUSION: SIND is a highly prevalent and multifactorial complication of sepsis. Early recognition of risk factors-particularly modifiable ones-may support targeted preventive strategies and improve clinical outcomes in critically ill patients.",
+          "authors": [
+            "Becerra Á",
+            "Rebolledo N",
+            "Soto F",
+            "Valenzuela-Fuenzalida JJ",
+            "Loaiza-Giraldo JP",
+            "González Á"
+          ],
+          "journal": "Journal of infection and public health",
+          "pubDate": "2026-Aug",
+          "publicationTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Sepsis",
+            "Neuromuscular Diseases",
+            "Risk Factors",
+            "Intensive Care Units",
+            "Prevalence",
+            "Critical Illness"
+          ],
+          "keywords": [
+            "Muscular disease [MeSH]",
+            "Myopathy",
+            "Neuromuscular diseases [MeSH]",
+            "Neuromyopathy",
+            "Paresis [MeSH]",
+            "Polyneuropathies [MeSH]",
+            "Sepsis [MeSH]"
+          ],
+          "doi": "10.1016/j.jiph.2026.103285",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42341623/",
+          "collectedAt": "2026-07-23T23:57:36.961Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42341623",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42341623/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.jiph.2026.103285",
+            "url": "https://doi.org/10.1016/j.jiph.2026.103285"
+          },
+          {
+            "label": "웹 — PubMed — Sepsis-induced neuromuscular dysfunction: A systematic review with meta-analysis (PMID 42341623)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42341623/"
+          },
+          {
+            "label": "웹 — NCBI E-utilities — efetch record for PMID 42341623 (J Infect Public Health. 2026 Aug;19(8):103285)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42341623&rettype=abstract&retmode=text"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "41881047",
+        "title_ko": "영국(잉글랜드·웨일스) 응급실에서 패혈증 식별 및 항생제 투여 결정을 위한 프로칼시토닌 검사 + NEWS2 평가 병용 대 NEWS2 기반 일반 진료 비교(PRONTO): 다기관, 무작위배정, 대조군, 공개표지, 3상 임상시험",
+        "clinicalQuestion": "In adult ED patients with suspected sepsis, does supplementing NEWS2-based usual care with rapid procalcitonin (PCT) testing reduce intravenous antibiotic initiation at 3 h (superiority) while showing at least no increase (non-inferiority) in 28-day mortality, compared with NEWS2-based usual care alone?",
+        "clinicalQuestion_ko": "패혈증이 의심되는 성인 응급실 환자에서, NEWS2 기반 일반 진료에 신속 procalcitonin(PCT) 검사를 추가하는 것이 NEWS2 단독 기반 일반 진료 대비 3시간 시점 정맥 항생제 투여를 줄이면서(우월성) 28일 사망률은 적어도 증가시키지 않는지(비열등성) 확인하는 것이 핵심 임상 질문이다.",
+        "pico": {
+          "population": "[England and Wales] Patients aged 16 years and older with suspected sepsis, recruited from 20 hospital emergency departments within 17 NHS Trusts or Health Boards across England and Wales, between Nov 20, 2020, and Nov 1, 2023. A total of 7667 patients were recruited and randomly assigned to usual care (n=3836) or procalcitonin-guided care (n=3831); 5453 patients (2748 female, 2703 male, 1 non-binary, 1 gender data missing) were included in the primary analysis population (2715 usual care, 2738 procalcitonin-guided care).",
+          "intervention": "Procalcitonin-guided care: rapid procalcitonin testing used in combination with NEWS2 assessment, via a guidance-only algorithm for clinicians; clinicians were free to use, ignore, or deviate from the algorithm.",
+          "comparison": "Usual care: participants assessed according to standard clinical management based on National Early Warning Score 2 (NEWS2) alone, using the same guidance-only algorithm framework (without procalcitonin results).",
+          "outcome": "Co-primary endpoints, assessed in the primary analysis population (n=5453) with data for both outcomes: (1) intravenous antibiotic initiation at 3 h from triage (superiority) — no difference between groups: 48.4% (1325/2738) procalcitonin-guided care vs 48.2% (1308/2715) usual care (adjusted risk difference -0.08 percentage points, 95% CI -2.58 to 2.42; p=0.95). (2) 28-day mortality (non-inferiority margin 2.5 percentage points on risk difference scale) — lower in procalcitonin-guided care: 13.6% (372/2738) vs 16.6% (450/2715) usual care (adjusted risk difference -3.12 percentage points, 90% CI -4.68 to -1.57; p=0.0009), with the upper bound of the 90% CI below both the non-inferiority margin and the point of no effect, implying non-inferiority and superiority at the one-sided 5% level."
+        },
+        "pico_ko": {
+          "population": "[잉글랜드·웨일스] 잉글랜드와 웨일스 소재 17개 NHS Trust/Health Board 산하 20개 병원 응급실에서 2020년 11월 20일부터 2023년 11월 1일까지 모집된, 패혈증이 의심되는 16세 이상 환자. 총 7667명이 무작위배정되어 usual care군(n=3836) 또는 procalcitonin-guided care군(n=3831)에 배정되었으며, 5453명(여성 2748명, 남성 2703명, 논바이너리 1명, 성별 데이터 결측 1명)이 1차 분석 집단에 포함됨(usual care 2715명, procalcitonin-guided care 2738명).",
+          "intervention": "Procalcitonin-guided care: NEWS2 평가와 함께 신속 procalcitonin 검사를 병용하며, 임상의를 위한 가이드용(권고성) 알고리즘을 사용함. 임상의는 알고리즘을 따르거나, 무시하거나, 벗어나는 것이 자유롭게 허용됨.",
+          "comparison": "Usual care: National Early Warning Score 2(NEWS2)만을 기반으로 한 표준 임상 관리를 시행함(동일한 가이드용 알고리즘 틀을 사용하되 procalcitonin 결과는 포함하지 않음).",
+          "outcome": "1차 분석 집단(n=5453)에서 평가된 공동 1차 평가변수: (1) triage 후 3시간 시점 정맥 항생제 투여 시작(우월성 검정) — 군 간 차이 없음: procalcitonin-guided care 48.4%(1325/2738) vs usual care 48.2%(1308/2715) (adjusted risk difference -0.08 percentage points, 95% CI -2.58 to 2.42; p=0.95). (2) 28일 사망률(위험차 척도에서 비열등성 마진 2.5 percentage points) — procalcitonin-guided care군에서 더 낮음: 13.6%(372/2738) vs usual care 16.6%(450/2715) (adjusted risk difference -3.12 percentage points, 90% CI -4.68 to -1.57; p=0.0009); 90% CI 상한이 비열등성 마진과 무효과 지점(0) 모두보다 낮아, 편측 5% 수준에서 비열등성과 우월성이 모두 입증됨."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Procalcitonin test result was considered in clinical decision making in 64.7% (1771/2738) of participants in the procalcitonin-guided care group.",
+          "Total of 180 adverse events recorded: 53.3% (96 events in 57/2968 [1.9%] participants) in the usual care group vs 46.7% (84 events in 66/3042 [2.2%] participants) in the procalcitonin-guided care group (adverse event analysis population differs from primary analysis population and includes all randomly assigned, baseline-consenting participants).",
+          "One (<1%) of 2042 participants in the procalcitonin-guided care group reported a serious adverse event probably or definitely attributable to the procalcitonin test; improved mortality was not explained by findings of planned subgroup, sensitivity, or secondary analyses."
+        ],
+        "secondaryOutcomes_ko": [
+          "Procalcitonin-guided care군 참가자의 64.7%(1771/2738)에서 procalcitonin 검사 결과가 임상 의사결정에 실제로 고려됨.",
+          "총 180건의 adverse event가 기록됨: usual care군 53.3%(2968명 중 57명[1.9%]에서 96건) vs procalcitonin-guided care군 46.7%(3042명 중 66명[2.2%]에서 84건) (adverse event 분석 대상은 1차 분석 집단과 달리 기저 시점에 동의한 모든 무작위배정 참가자 포함).",
+          "Procalcitonin-guided care군 2042명 중 1명(<1%)에서 procalcitonin 검사와 probably 또는 definitely 관련된 serious adverse event가 보고됨; 사망률 개선 효과는 사전 계획된 subgroup·sensitivity·secondary 분석으로 설명되지 않음."
+        ],
+        "statGlossary": [
+          {
+            "term": "adjusted risk difference",
+            "explanation_ko": "두 군 간 사건 발생률의 차이를 다른 변수 보정 후 계산한 값으로, 0에 가까울수록 차이가 없음을 의미함. 예: 3시간 항생제 투여의 adjusted risk difference -0.08 percentage points → 두 군 간 실질적 차이 거의 없음; 28일 사망률의 adjusted risk difference -3.12 percentage points → procalcitonin-guided care군에서 사망률이 약 3.12%p 더 낮음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간으로, 참값이 있을 것으로 추정되는 범위(반복 시행 시 95%가 이 구간에 포함됨). 예: 95% CI -2.58 to 2.42가 0을 포함하므로 항생제 투여 차이는 통계적으로 유의하지 않음."
+          },
+          {
+            "term": "90% CI",
+            "explanation_ko": "비열등성 검정에서 흔히 사용하는 90% 신뢰구간. 예: 28일 사망률 위험차의 90% CI -4.68 to -1.57이 비열등성 마진(2.5%p)과 0을 모두 하회하여, 비열등성과 우월성을 동시에 시사함."
+          },
+          {
+            "term": "p-value",
+            "explanation_ko": "관찰된 결과가 우연히 나타났을 확률로, 통상 0.05 미만이면 통계적으로 유의하다고 판단함. 예: 28일 사망률 비교 p=0.0009 → 통계적으로 매우 유의한 차이; 항생제 투여 비교 p=0.95 → 유의한 차이 없음."
+          },
+          {
+            "term": "non-inferiority margin",
+            "explanation_ko": "새로운 중재가 기존 치료보다 '이 정도까지는 나빠도 열등하지 않다'고 미리 정한 허용 한계치. 예: 이 연구에서 non-inferiority margin은 위험차 2.5 percentage points로 설정되었고, 90% CI 상한(-1.57)이 이보다 낮아 비열등성이 확인됨."
+          }
+        ],
+        "keyFindings": [
+          "No difference in intravenous antibiotic initiation at 3 h from triage: 48.4% (1325/2738) in the procalcitonin-guided care group vs 48.2% (1308/2715) in the usual care group (adjusted risk difference -0.08 percentage points, 95% CI -2.58 to 2.42; p=0.95).",
+          "28-day mortality was lower with procalcitonin-guided care: 13.6% (372/2738) vs 16.6% (450/2715) with usual care (adjusted risk difference -3.12 percentage points, 90% CI -4.68 to -1.57; p=0.0009), meeting both the non-inferiority margin (2.5 percentage points) and superiority criteria at the one-sided 5% level.",
+          "The procalcitonin result was actually used in clinical decision making in only 64.7% (1771/2738) of the procalcitonin-guided care group, and the improved mortality signal was not explained by planned subgroup, sensitivity, or secondary analyses."
+        ],
+        "keyFindings_ko": [
+          "Triage 후 3시간 시점 정맥 항생제 투여에는 두 군 간 차이가 없었음: procalcitonin-guided care 48.4%(1325/2738) vs usual care 48.2%(1308/2715) (adjusted risk difference -0.08 percentage points, 95% CI -2.58 to 2.42; p=0.95).",
+          "28일 사망률은 procalcitonin-guided care군에서 더 낮았음: 13.6%(372/2738) vs usual care 16.6%(450/2715) (adjusted risk difference -3.12 percentage points, 90% CI -4.68 to -1.57; p=0.0009), 편측 5% 수준에서 비열등성 마진(2.5%p)과 우월성 기준을 모두 충족함.",
+          "Procalcitonin 검사 결과는 procalcitonin-guided care군 중 64.7%(1771/2738)에서만 실제 임상 의사결정에 고려되었으며, 사망률 개선 신호는 사전 계획된 subgroup·sensitivity·secondary 분석으로 설명되지 않았음."
+        ],
+        "clinicalTakeaway": "Adding rapid procalcitonin testing to NEWS2-based assessment in ED patients with suspected sepsis did not reduce or accelerate intravenous antibiotic initiation at 3 h, so it should not be adopted purely as an antibiotic-stewardship intervention on this trial's basis. The trial did show an unexpected and statistically robust reduction in 28-day mortality with procalcitonin-guided care that current subgroup, sensitivity, and secondary analyses could not explain, so clinicians should view this mortality signal as hypothesis-generating pending further mechanistic research rather than an immediate mandate to change practice.",
+        "clinicalTakeaway_ko": "패혈증이 의심되는 응급실 환자에서 NEWS2 기반 평가에 신속 procalcitonin 검사를 추가하는 것은 3시간 시점 정맥 항생제 투여를 줄이거나 앞당기지 못했으므로, 이 연구 결과만으로 항생제 스튜어드십 도구로 채택하기는 이르다. 다만 procalcitonin-guided care군에서 예상치 못한 통계적으로 유의한 28일 사망률 감소가 관찰되었고 이는 현재까지의 subgroup·sensitivity·secondary 분석으로 설명되지 않으므로, 이 사망률 신호는 즉각적인 진료 변경의 근거라기보다 추가 기전 연구가 필요한 가설 생성적 소견으로 받아들여야 한다.",
+        "limitations": "Open-label design with participants, research staff, outcome assessors, and statisticians unmasked to group assignment, risking performance and detection bias. Only 71% (5453/7667) of randomly assigned patients contributed data for both co-primary outcomes and were included in the primary analysis population, raising attrition/selection concerns. The procalcitonin result was actually used in clinical decision making in only 64.7% of the intervention group, limiting inference about the true effect of a fully implemented algorithm. The mechanism behind the observed mortality benefit remains unexplained by the reported subgroup, sensitivity, and secondary analyses, so causality is uncertain. The trial was conducted in a single-country (England and Wales) NHS emergency care setting, which may limit generalizability to other health systems.",
+        "limitations_ko": "참가자, 연구 인력, 결과 평가자, 통계분석자 모두 군 배정에 대해 masking되지 않은 open-label 설계로, performance bias 및 detection bias 위험이 있음. 무작위배정된 7667명 중 71%(5453명)만 두 공동 1차 평가변수 데이터를 모두 갖추어 1차 분석 집단에 포함되어, 탈락/선택 편향 우려가 있음. Procalcitonin 결과가 실제 임상 의사결정에 고려된 비율은 중재군의 64.7%에 불과하여, 알고리즘이 완전히 이행되었을 때의 진정한 효과를 추정하기 어려움. 관찰된 사망률 개선 효과의 기전은 보고된 subgroup·sensitivity·secondary 분석으로 설명되지 않아 인과관계가 불확실함. 이 연구는 잉글랜드·웨일스 단일 국가 NHS 응급의료 환경에서 수행되어 다른 의료 시스템으로의 일반화에 제한이 있을 수 있음.",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 5,
+        "webSources": [
+          {
+            "label": "PRONTO trial — PubMed record (PMID 41881047)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41881047/"
+          }
+        ],
+        "paper": {
+          "pmid": "41881047",
+          "title": "Procalcitonin testing combined with NEWS2 evaluation compared with usual care based on NEWS2 for identification of sepsis and antibiotic initiation in the emergency department in England and Wales (PRONTO): a multicentre, randomised, controlled, open-label, phase 3 trial.",
+          "abstract": "BACKGROUND: Sepsis is a common and serious condition, defined as a dysregulated host response to infection, that leads to life-threatening organ dysfunction. In emergency department settings, accurate diagnosis can be challenging, as many non-infectious conditions have similar presenting features and there is no gold standard diagnostic test, which can lead to misdirected use of antibiotics. Procalcitonin is a well characterised biomarker that responds rapidly and with high specificity to the presence of bacterial infection. We aimed to investigate whether supplementing current practice with rapid procalcitonin testing would improve recognition of sepsis and allow reduced antibiotic prescribing with at least no change in overall mortality.\nMETHODS: A parallel, two-arm, open-label, individually randomised controlled trial was done in 20 hospital emergency departments within 17 National Health Service (NHS) Trusts or Health Boards across England and Wales. Patients aged 16 years and older with suspected sepsis were randomly assigned to either usual care or procalcitonin-guided care in a 1:1 ratio via a centrally controlled web-based randomisation programme. Participants, research staff, those assessing outcomes, and statisticians analysing the data were not masked to group assignment. Participants in the usual care group were assessed according to standard clinical management based on National Early Warning Score 2 (NEWS2). In the procalcitonin-guided care group, rapid procalcitonin testing was used in combination with NEWS2 assessment by use of a guidance-only algorithm for clinicians. This algorithm for clinical management was used for both usual care and procalcitonin-guided care groups and clinicians were free to use, ignore, or deviate from the algorithm. The co-primary endpoints were intravenous antibiotic initiation at 3 h (superiority) and 28-day mortality (non-inferiority) from triage assessment, assessed in all randomly assigned consenting participants with data for both co-primary outcomes available. Non-inferiority was concluded for 28-day mortality if the upper bound of the 90% CI was below a 2·5% margin on the risk difference scale. All patients who were randomly assigned to one of the two groups and who consented to data collection at baseline were included in adverse event analysis for the period they were included in the study. The study was registered with ISRCTN (ISRCTN54006056) and is complete.\nFINDINGS: Between Nov 20, 2020, and Nov 1, 2023, a total of 7667 patients were recruited and randomly assigned to the usual care group (n=3836) or the procalcitonin-guided care group (n=3831). 5453 patients (2748 female, 2703 male, 1 non-binary, 1 data for gender missing) were included in the primary analysis population (2715 usual care, 2738 procalcitonin-guided care). The last 28-day follow-up was on Nov 29, 2023. There was no difference in intravenous antibiotic initiation at 3 h from triage assessment between the two groups: 48·4% (1325/2738 participants) in the procalcitonin-guided care group versus 48·2% (1308/2715 participants) in the usual care group (adjusted risk difference -0·08 percentage points, 95% CI -2·58 to 2·42; p=0·95). Mortality at 28 days was lower in the procalcitonin-guided care group: 13·6% (372/2738 participants) in the procalcitonin-guided care group versus 16·6% (450/2715 participants) in the usual care group (adjusted risk difference -3·12 percentage points, 90% CI -4·68 to -1·57; p=0·0009). The upper bound of the 90% CI was below the non-inferiority margin of 2·5 percentage points and the point of no effect, implying both non-inferiority and superiority at the one-sided 5% level. In the primary analysis population, the procalcitonin test result was considered in clinical decision making in 64·7% (1771/2738) of participants in the procalcitonin-guided care group. Improved mortality was not explained by findings of planned subgroup, sensitivity, or secondary analyses. A total of 180 adverse events were recorded, 53·3% (96 events in 57 [1·9%] of 2968 participants) in the usual care group and 46·7% (84 events in 66 [2·2%] of 3042 participants) in the procalcitonin-guided care group. One (<1%) of 2042 participants in the procalcitonin-guided care group reported a serious adverse event probably or definitely attributable to the procalcitonin test.\nINTERPRETATION: Making a procalcitonin-guided algorithm available to clinicians in emergency departments did not change intravenous antibiotic initiation at 3 h in patients managed as suspected sepsis, but a decrease in 28-day mortality was seen and further research is needed to understand this finding.\nFUNDING: National Institute for Health and Care Research.",
+          "authors": [
+            "Todd S",
+            "Euden J",
+            "Condie J",
+            "Aston S",
+            "Barlow G",
+            "Brookes-Howell L"
+          ],
+          "journal": "The Lancet. Respiratory medicine",
+          "pubDate": "2026-May",
+          "publicationTypes": [
+            "Journal Article",
+            "Randomized Controlled Trial",
+            "Multicenter Study",
+            "Clinical Trial, Phase III"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Procalcitonin",
+            "Anti-Bacterial Agents",
+            "England",
+            "Emergency Service, Hospital",
+            "Sepsis",
+            "Male",
+            "Female",
+            "Biomarkers",
+            "Middle Aged"
+          ],
+          "keywords": [],
+          "doi": "10.1016/S2213-2600(25)00433-3",
+          "pmcid": "PMC13125698",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41881047/",
+          "collectedAt": "2026-07-24T00:04:29.254Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41881047",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41881047/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S2213-2600(25)00433-3",
+            "url": "https://doi.org/10.1016/S2213-2600(25)00433-3"
+          },
+          {
+            "label": "웹 — PRONTO trial — PubMed record (PMID 41881047)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41881047/"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
