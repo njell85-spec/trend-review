@@ -33,52 +33,110 @@ const API_FETCH_TIMEOUT_MS = 180_000; // API 폴백 호출당 상한 (행 방지
 //                      사라진다(한도에 걸릴 만큼 쓴 판이 통째로 누락됨). 장부는 프로세스가
 //                      태운 총량을 기록해야 하므로 누적만 한다.
 //
-// 구독 CLI와 API 폴백을 분리 집계하는 이유: 장부 스키마의 auth는 subscription|api
-// 2값뿐이라(rulebook/usage-accounting.md 계약 C1) 한 줄에 섞을 수 없다. 두 경로가
-// 모두 돌면 레코드 2줄로 나눠 기록한다.
-const emptyBucket = () => ({ calls: 0, in: 0, out: 0, cacheW: 0, cacheR: 0, costUsd: 0, models: {} });
+// 집계 키는 (auth, 모델) 쌍이다. auth로만 묶고 모델명을 'opus+sonnet'처럼 이어붙이면
+// 장부에 쓰레기 모델 행이 생기고 현황판의 모델별 롤업이 깨진다 — 게다가 장부는
+// append-only라 되돌릴 수 없다. 룰북이 "장부에 원자료(모델·토큰)를 그대로 둔다"고
+// 약속하는 것도 이 때문이다. CLI가 modelUsage로 모델별 정확한 수치를 주므로 그대로 쓴다.
+// auth를 나누는 이유는 별개다: 장부 스키마의 auth가 subscription|api 2값뿐이라
+// (rulebook/usage-accounting.md 계약 C1) 한 줄에 섞을 수 없다.
+const emptyBucket = () => ({ calls: 0, in: 0, out: 0, cacheW: 0, cacheR: 0, costUsd: 0 });
 const num = (v) => (Number.isFinite(Number(v)) ? Number(v) : 0);
 
 export const llmTelemetry = {
   cli: 0, api: 0, apiWeb: 0,
-  totals: { subscription: emptyBucket(), api: emptyBucket() },
+  totals: { subscription: {}, api: {} },   // auth → 모델명 → bucket
   reset() { this.cli = 0; this.api = 0; this.apiWeb = 0; },
-  resetTotals() { this.totals = { subscription: emptyBucket(), api: emptyBucket() }; },
+  resetTotals() { this.totals = { subscription: {}, api: {} }; },
 
   /**
-   * 호출 1회의 토큰·비용을 누적한다.
+   * 호출 1회의 토큰·비용을 (auth, model) 버킷에 누적한다.
    * usage 키 이름은 CLI(--output-format json)와 Messages API가 동일해 그대로 받는다.
    * @param {'subscription'|'api'} auth
-   * @param {{ models?: string[], usage?: object, costUsd?: number }} rec
+   * @param {{ model?: string, usage?: object, costUsd?: number }} rec
    */
-  record(auth, { models = [], usage = {}, costUsd = 0 } = {}) {
-    const b = this.totals[auth];
-    if (!b) return;
+  record(auth, { model = 'unknown', usage = {}, costUsd = 0 } = {}) {
+    const models = this.totals[auth];
+    if (!models) return;
+    const key = model || 'unknown';
+    const b = (models[key] ??= emptyBucket());
     b.calls += 1;
     b.in += num(usage.input_tokens);
     b.out += num(usage.output_tokens);
     b.cacheW += num(usage.cache_creation_input_tokens);
     b.cacheR += num(usage.cache_read_input_tokens);
     b.costUsd += num(costUsd);
-    for (const m of models) if (m) b.models[m] = (b.models[m] ?? 0) + 1;
   },
 
-  /** 장부 append용 요약 — 호출이 있었던 auth만 레코드로 낸다(없으면 빈 배열). */
+  /**
+   * claude CLI(--output-format json) 응답 1건을 적재한다.
+   * modelUsage가 있으면 모델별 정확한 수치를 그대로 쓰고(키 표기가 usage와 달라 정규화),
+   * 없을 때만 최상위 usage + 요청 모델로 폴백한다. 둘을 함께 세면 이중 계상이 된다
+   * (실측: 최상위 usage == modelUsage 합).
+   */
+  recordCliResult(parsed, fallbackModel) {
+    const mu = parsed?.modelUsage;
+    if (mu && typeof mu === 'object' && Object.keys(mu).length) {
+      for (const [model, m] of Object.entries(mu)) {
+        this.record('subscription', {
+          model,
+          usage: {
+            input_tokens: m?.inputTokens,
+            output_tokens: m?.outputTokens,
+            cache_creation_input_tokens: m?.cacheCreationInputTokens,
+            cache_read_input_tokens: m?.cacheReadInputTokens,
+          },
+          costUsd: m?.costUSD,
+        });
+      }
+      return true;
+    }
+    if (parsed?.usage || parsed?.total_cost_usd != null) {
+      this.record('subscription', {
+        model: fallbackModel,
+        usage: parsed.usage,
+        costUsd: parsed.total_cost_usd,
+      });
+      return true;
+    }
+    return false;
+  },
+
+  /**
+   * 실패한 CLI 호출의 stdout에서 사용량만 건져 적재한다(방어적 파싱 — 절대 던지지 않는다).
+   * 세션 한도로 죽을 때 CLI는 종료코드가 0이 아니면서도 결과 JSON을 stdout에 실어 보내고,
+   * 거기 담긴 usage/total_cost_usd는 이미 태운 값이다. 이걸 버리면 정작 "한도에 걸릴 만큼
+   * 쓴 날"의 사용량이 통째로 누락된다 — 이 기능이 존재하는 이유가 그 날을 잡는 것이다.
+   */
+  tryRecordCliStdout(stdout, fallbackModel) {
+    try {
+      return this.recordCliResult(JSON.parse(String(stdout ?? '')), fallbackModel);
+    } catch {
+      return false;
+    }
+  },
+
+  /** 장부 append용 요약 — 호출이 있었던 (auth, 모델)마다 레코드 1줄(없으면 빈 배열). */
   summary() {
-    return Object.entries(this.totals)
-      .filter(([, b]) => b.calls > 0)
-      .map(([auth, b]) => {
-        const models = Object.keys(b.models);
-        return {
+    const out = [];
+    for (const [auth, models] of Object.entries(this.totals)) {
+      for (const [model, b] of Object.entries(models)) {
+        if (!b.calls) continue;
+        out.push({
           auth,
-          // 한 런에서 모델이 섞이면(선정=Opus·요약=Sonnet 등) '+'로 잇는다.
-          model: models.join('+') || 'unknown',
+          model,
           in: b.in, out: b.out, cache_w: b.cacheW, cache_r: b.cacheR,
           // 부동소수 잔재(0.30000000000000004)가 장부에 남지 않게 자른다.
           cost_usd: Number(b.costUsd.toFixed(6)),
           calls: b.calls,
-        };
-      });
+          // 구독 CLI는 비용을 직접 보고하지만 Messages API는 주지 않는다. 토큰은 정확해도
+          // 비용이 구조적으로 0이므로 exact로 위장하지 않는다 — 장부가 생긴 계기가 바로
+          // API 과금 누수라, 과금된 날을 "정확히 $0"으로 남기는 게 최악의 실패다.
+          accuracy: auth === 'api' ? 'approx' : 'exact',
+          note: auth === 'api' ? 'cost_usd 0 — Messages API가 비용을 보고하지 않음(토큰은 정확)' : '',
+        });
+      }
+    }
+    return out;
   },
 
   label() {
@@ -166,7 +224,7 @@ export class LLMClient {
       // 응답 1건 = 토큰 1회분. 웹검색 경로는 pause_turn으로 여러 번 도는데, 최종 턴에서만
       // 기록하면 중간 검색 턴의 토큰이 통째로 샌다 — 그래서 여기(모든 응답)에서 누적한다.
       // Messages API는 비용을 돌려주지 않으므로 cost는 0(장부 계약: 없으면 0).
-      llmTelemetry.record('api', { models: [this.model], usage: data.usage });
+      llmTelemetry.record('api', { model: this.model, usage: data.usage });
       return data;
     };
 
@@ -245,6 +303,9 @@ ${schema}`;
     if (result.timedOut) throw new Error(`claude CLI timed out after ${result.timeoutMs / 1000}s`);
     if (result.status !== 0) {
       // 실패 원인은 stderr가 비어있고 stdout(JSON)에 담기는 경우가 많아 둘 다 노출한다.
+      // 그 stdout JSON에는 이미 태운 usage·total_cost_usd가 들어 있으므로, 던지기 전에
+      // 먼저 장부에 적재한다(세션 한도로 죽은 날의 사용량이 여기서 새면 안 된다).
+      llmTelemetry.tryRecordCliStdout(result.stdout, this.model);
       const err = (result.stderr || '').trim();
       const out = (result.stdout || '').trim();
       const detail = [err && `stderr=${err}`, out && `stdout=${out}`].filter(Boolean).join(' | ').slice(0, 800) || 'no output';
@@ -258,18 +319,13 @@ ${schema}`;
       throw new Error(`claude CLI: invalid JSON in stdout: ${result.stdout.slice(0, 300)}`);
     }
 
+    // is_error 응답도 토큰은 실제로 태운 것이므로, 던지기 전에 먼저 적재한다.
+    // CLI(--output-format json)는 usage·total_cost_usd·modelUsage를 함께 뱉는다(2026-07-25 실측).
+    llmTelemetry.recordCliResult(parsed, this.model);
+
     if (parsed.is_error) throw new Error(`claude CLI error response: ${parsed.result}`);
 
     llmTelemetry.cli++;
-    // CLI(--output-format json)는 usage·total_cost_usd·modelUsage를 함께 뱉는다(2026-07-25 실측).
-    // modelUsage 키가 실제로 돈 모델이라 this.model(요청값)보다 정확하다 — 없으면 요청값으로.
-    llmTelemetry.record('subscription', {
-      models: Object.keys(parsed.modelUsage ?? {}).length
-        ? Object.keys(parsed.modelUsage)
-        : [this.model],
-      usage: parsed.usage,
-      costUsd: parsed.total_cost_usd,
-    });
     return this._extractJSON(parsed.result ?? '');
   }
 

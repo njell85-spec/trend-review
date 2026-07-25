@@ -125,12 +125,18 @@ jobs:
       # 부가 기능이다. 그래서 continue-on-error + 모든 분기에서 exit 0로 빠진다.
       # if: always() 인 이유는 파이프라인이 소프트 실패한 날에도 태운 토큰은 기록해야
       # 하기 때문이다(오히려 그런 날 기록이 필요하다).
+      # timeout-minutes 가 필수다: continue-on-error는 "실패"만 덮고 "멈춤"은 못 덮는다.
+      # 클론이 네트워크에서 행이면 잡의 240분을 태우고 잡이 취소되는데, 그러면
+      # needs: review 인 verify-pages(2026-07-05 사고 후 만든 Pages 배포 안전망)가
+      # 아예 실행되지 않는다 — 부가 기능이 본업 가드를 죽이는 최악의 경로다.
       - name: Append usage to tower ledger
         if: always()
         continue-on-error: true
+        timeout-minutes: 5
         env:
           GC_USAGE_TOKEN: ${{ secrets.GC_USAGE_TOKEN }}
           USAGE_FILE: ${{ runner.temp }}/usage-run.json
+          GIT_TERMINAL_PROMPT: '0'   # 인증 프롬프트로 멈추지 않고 즉시 실패하게
         run: |
           set -uo pipefail
 
@@ -142,8 +148,11 @@ jobs:
             echo "::notice::사용량 요약 파일이 없습니다 — LLM 호출 전에 끝난 실행으로 봅니다."
             exit 0
           fi
-          if [ "$(jq '.records | length' "$USAGE_FILE")" = "0" ]; then
-            echo "::notice::기록할 LLM 호출이 없습니다 — 건너뜁니다."
+          # jq가 깨진 JSON을 만나면 stdout이 비어 "" != "0" 이 되고 그대로 통과해버린다
+          # (프로세스가 writeFileSync 중간에 죽으면 실제로 생길 수 있다). 기본값으로 막는다.
+          COUNT="$(jq -r '.records | length' "$USAGE_FILE" 2>/dev/null || echo 0)"
+          if [ "${COUNT:-0}" -le 0 ] 2>/dev/null; then
+            echo "::notice::기록할 LLM 호출이 없거나 요약이 손상됐습니다 — 건너뜁니다."
             exit 0
           fi
 
@@ -156,12 +165,15 @@ jobs:
             exit 0
           fi
 
-          cd "$RUNNER_TEMP/tower"
+          # cd 실패 시 그냥 진행하면 아래 git config가 trend-review 워크스페이스에서 돌아
+          # github-actions[bot] 신원을 usage-bot으로 덮어쓴다 — 반드시 여기서 빠진다.
+          cd "$RUNNER_TEMP/tower" || { echo "::warning::타워 디렉터리 진입 실패 — 건너뜁니다."; exit 0; }
           git config user.name  "usage-bot"
           git config user.email "usage-bot@users.noreply.github.com"
 
-          # 장부 스키마상 auth는 subscription|api 2값이라, 두 경로가 모두 돈 날은
-          # 레코드가 2줄로 나뉘어 온다 — 줄 단위로 적재한다.
+          # 레코드는 (auth, 모델)마다 1줄로 나뉘어 온다 — 줄 단위로 적재한다.
+          # append-usage.sh 에 </dev/null 을 주는 이유: 안 주면 이 while 루프의 stdin(jq
+          # 파이프)을 물려받아, 안쪽 git이 stdin을 한 번이라도 읽으면 남은 레코드를 삼킨다.
           jq -c '.records[]' "$USAGE_FILE" | while read -r rec; do
             f() { printf '%s' "$rec" | jq -r "$1"; }
             bash tools/usage/append-usage.sh \
@@ -175,9 +187,10 @@ jobs:
               --cache-r "$(f .cache_r)" \
               --cost    "$(f .cost_usd)" \
               --auth    "$(f .auth)" \
-              --accuracy exact \
+              --accuracy "$(f .accuracy)" \
+              --note    "$(f .note)" \
               --run-id  "${{ github.run_id }}" \
-              >/dev/null || echo "::warning::장부 append 실패 — 이 레코드는 누락됩니다."
+              </dev/null >/dev/null || echo "::warning::장부 append 실패 — 이 레코드는 누락됩니다."
           done
 
           # 금지된 건 public repo에 사용량 숫자 '파일'을 커밋하는 것이고,

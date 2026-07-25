@@ -33,14 +33,18 @@ function jobSummary(md) {
 // exit 훅에 거는 이유: 이 스크립트는 소프트 실패·논문 0편 등으로 중간에 process.exit(0)
 // 하는 경로가 여럿이라, 정상 종료 지점에만 쓰면 "한도에 걸려 토큰만 태우고 끝난 날"이
 // 장부에서 통째로 빠진다. 그런 날이야말로 기록이 필요하다.
-if (process.env.USAGE_OUT) {
+//
+// 다만 exit 훅은 SIGTERM/SIGKILL에는 안 뜬다 — 잡 타임아웃·런 취소로 죽는 날은 보통
+// 가장 길고 비싼 날이라 그때 통째로 잃는 게 제일 아프다. 그래서 시도가 끝날 때마다
+// 스냅샷을 미리 떨궈, 뒤에 강제 종료돼도 직전까지의 사용량은 남게 한다.
+const dumpUsage = () => {
   const usageOut = process.env.USAGE_OUT;
-  process.on('exit', () => {
-    try {
-      writeFileSync(usageOut, JSON.stringify({ records: llmTelemetry.summary() }));
-    } catch { /* 장부 수집 실패가 파이프라인을 죽여서는 안 된다 */ }
-  });
-}
+  if (!usageOut) return;
+  try {
+    writeFileSync(usageOut, JSON.stringify({ records: llmTelemetry.summary() }));
+  } catch { /* 장부 수집 실패가 파이프라인을 죽여서는 안 된다 */ }
+};
+process.on('exit', dumpUsage);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -82,11 +86,15 @@ const outcome = await runWithRetry(
     onFail: ({ attempt, label, message }) => {
       console.warn(`⚠️  시도 ${attempt}/${MAX_ATTEMPTS} 실패: ${label}`);
       console.warn(`   (${message.slice(0, 300)})`);
+      // 재시도 대기(기본 60분) 중 잡 타임아웃으로 강제 종료돼도 이 시도까지의
+      // 사용량은 남도록, 대기에 들어가기 전에 스냅샷을 떨군다.
+      dumpUsage();
     },
     onRetry: ({ delayMs }) =>
       console.warn(`   ${delayMs / 60_000}분 후 재시도합니다 (한도 리셋 창 대기).`),
   },
 );
+dumpUsage(); // LLM 단계 종료 시점 스냅샷 — 이후 발송·아카이브 단계에서 죽어도 보존된다.
 
 if (!outcome.ok) {
   // 결정적 오류이거나 마지막 시도까지 실패 → 소프트 스킵 + 정확한 사유로 알림.
