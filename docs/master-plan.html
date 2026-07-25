@@ -295,6 +295,42 @@
     .hero h1 { font-size: 22px; }
     .sec { padding: 14px 15px; }
   }
+
+  /* ── 인덱스(Phase) 카드 대비 교정 (PeterJ 눈 확인 2026-07-26) ──────────
+     .ibox는 원래 컬러 그라디언트 배경 + 흰 글자였다. 위 visionOS 레이어가
+     배경만 밝은 유리로 덮으면서 흰 글자가 그대로 남아 카드가 거의
+     안 보였다(모바일 390px 실측 — 근사백색 7개 셀렉터).
+     여기서 글자·칩을 밝은 테마 톤으로 되돌린다.
+     되돌리려면 이 블록만 삭제. */
+
+  /* 딥 파스텔(--accent)은 다크 배경용이라 밝은 유리에서 흐리다 → 잉크 톤으로 */
+  .p1 { --accent: #a24d68; }
+  .p2 { --accent: #21715a; }
+  .p3 { --accent: #8a5f1e; }
+  .p4 { --accent: #5b4a9e; }
+  .pc { --accent: #5d5751; }
+
+  .ibox { color: var(--ink); border-left: 3px solid var(--accent); }
+  .ibox .pn    { color: var(--accent); opacity: 1; font-weight: 700; }
+  .ibox .pt    { color: var(--ink); }
+  .ibox .pk    { color: var(--muted); opacity: 1; }
+  .ibox .pstat {
+    color: var(--accent); background: rgba(255, 255, 255, .62);
+    border: 1px solid var(--glass-edge);
+  }
+  .pcounts span {
+    color: var(--muted); background: rgba(255, 255, 255, .5);
+    border: 1px solid var(--glass-edge);
+  }
+  .pcounts span em { color: var(--faint); opacity: 1; }
+  .pcounts span b  { color: var(--ink); }
+  .pcounts span.z  { opacity: .5; }
+
+  /* hero 부제 — 위 레이어가 .desc만 덮어 .ph는 흰 글자로 남아 있었다 */
+  .hero .ph { color: var(--muted); }
+
+  /* 긴 mono 토큰이 390px에서 가로 스크롤을 만들던 것 차단 (실측: TR 508px) */
+  .mono, code { overflow-wrap: anywhere; }
 </style>
 
 <div class="wrap">
