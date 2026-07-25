@@ -952,6 +952,53 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-26",
+      "pmid": "42498336",
+      "title": "Fluid and Electrolyte Management in Critically Ill Patients with Infections.",
+      "title_ko": "감염을 동반한 중증 환자에서의 수액 및 전해질 관리",
+      "journal": "Critical care nursing clinics of North America",
+      "doi": "10.1016/j.cnc.2026.04.007",
+      "badge": "초록만",
+      "clinicalQuestion_ko": "중증 감염(sepsis, septic shock, 또는 multiorgan dysfunction syndrome)을 동반한 중환자에서, 모세혈관 투과성·조직 관류·세포 기능의 병태생리학적 교란을 고려할 때 수액 및 전해질 균형을 어떻게 관리해야 하는가?",
+      "pico": {
+        "population": "[Country NR] Critically ill patients with severe infections — patients with sepsis, septic shock, or multiorgan dysfunction syndrome who struggle to maintain fluid balance due to increased capillary permeability, inflammation, vasodilation, and organ dysfunction. (Narrative review; no sample size, age, or date range reported.)",
+        "intervention": "Fluid and electrolyte management supported by skilled nursing, advanced monitoring, and continuous education (no specific fluid type, dose, or threshold reported).",
+        "comparison": null,
+        "outcome": "Narrative statement that inadequate fluid balance can increase complications, morbidity, and mortality; optimized management aims to improve outcomes. No quantitative effect estimates, confidence intervals, or p-values reported."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 중증 감염을 동반한 중환자 — 모세혈관 투과성 증가, 염증, 혈관확장, 장기 기능부전으로 인해 수액 균형 유지가 어려운 sepsis, septic shock 또는 multiorgan dysfunction syndrome 환자. (서술적 종설이며 표본 크기·연령·기간은 보고되지 않음.)",
+        "intervention": "숙련된 간호, 고급 모니터링, 지속적 교육을 통한 수액 및 전해질 관리 (구체적 수액 종류·용량·기준치는 보고되지 않음).",
+        "comparison": null,
+        "outcome": "부적절한 수액 균형이 합병증, 이환율, 사망률을 증가시킬 수 있으며 최적화된 관리가 예후 개선을 목표로 한다는 서술적 진술. 정량적 효과 추정치, 신뢰구간, p-value는 보고되지 않음."
+      },
+      "keyFindings": [
+        "In sepsis, septic shock, and multiorgan dysfunction syndrome, fluid balance is disrupted by increased capillary permeability, inflammation, vasodilation, and organ dysfunction, making fluid management inherently complex.",
+        "Inadequate fluid balance can increase complications, morbidity, and mortality in this population (no effect sizes reported).",
+        "Care is further complicated by antimicrobial resistance, drug stewardship, and infection control; skilled nursing, advanced monitoring, and continuous education are described as essential to optimize outcomes."
+      ],
+      "keyFindings_ko": [
+        "sepsis, septic shock, multiorgan dysfunction syndrome에서 모세혈관 투과성 증가·염증·혈관확장·장기 기능부전으로 수액 균형이 교란되어 수액 관리가 본질적으로 복잡하다.",
+        "부적절한 수액 균형은 이 환자군에서 합병증·이환율·사망률을 증가시킬 수 있다(효과 크기는 보고되지 않음).",
+        "antimicrobial resistance, drug stewardship, 감염 관리로 진료가 더욱 복잡해지며, 숙련된 간호·고급 모니터링·지속적 교육이 예후 최적화에 필수적이라고 기술된다."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42498336",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42498336/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.cnc.2026.04.007",
+          "url": "https://doi.org/10.1016/j.cnc.2026.04.007"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
