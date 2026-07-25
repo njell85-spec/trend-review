@@ -142,6 +142,159 @@
   .cur td{background:color-mix(in srgb,var(--cc) 9%,transparent)}
 
   footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint)}
+
+  /* ═══════════════════════════════════════════════════════════════════
+     visionOS 통일 레이어 — 타워홈·TP와 같은 양식 (PeterJ 지시 2026-07-25)
+     기존 규칙을 지우지 않고 뒤에서 덮어쓴다(되돌리려면 이 블록만 삭제).
+     밝은 유리 단일 테마로 고정 — 다크/시스템 반전 없음.
+     ═══════════════════════════════════════════════════════════════════ */
+  :root,
+  :root[data-theme="light"],
+  :root[data-theme="dark"] {
+    color-scheme: light;
+    --ink: #2a2724; --muted: #5f5a54; --faint: #8b8580;
+    --line: rgba(139,133,128,.22);
+    --surface: rgba(255,255,255,.52);
+    --surface2: rgba(255,255,255,.42);
+    --glass-edge: rgba(255,255,255,.75);
+    /* 6분류 시맨틱 — TP와 같은 파스텔 유리 톤 */
+    --cf: #1f6b4e; --cf-bg: #d9efe1;   /* 확정 */
+    --pm: #8a5f1e; --pm-bg: #f8e6cf;   /* 진행 P-m */
+    --pd: #a8551f; --pd-bg: #f9dfd0;   /* 진행 P-d */
+    --cc: #33568e; --cc-bg: #dfe8f8;   /* 진행 C */
+    --ds: #5b4a9e; --ds-bg: #e9e1f8;   /* 상의 */
+    --nt: #5d5751; --nt-bg: #efedeb;   /* 특이 */
+    --tag: #6f6960; --tag-bg: rgba(255,255,255,.55);
+    --shadow: 0 1px 0 rgba(255,255,255,.9) inset,
+              0 -8px 18px -14px rgba(255,255,255,.9) inset,
+              0 18px 34px -22px rgba(80,68,60,.35);
+  }
+
+  /* 웜그레이 지면 + 무지개빛 반사 — 유리 카드가 이걸 블러로 비춘다 */
+  body {
+    background: linear-gradient(165deg, #f6f5f4, #edebe9);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                 "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(46vh 40vh at 12% 4%,  rgba(214,198,236,.55), transparent 68%),
+      radial-gradient(48vh 42vh at 96% 18%, rgba(244,214,192,.50), transparent 70%),
+      radial-gradient(50vh 44vh at 30% 102%, rgba(198,228,212,.50), transparent 70%),
+      radial-gradient(42vh 38vh at 88% 92%, rgba(206,220,244,.45), transparent 70%),
+      linear-gradient(165deg, #f6f5f4, #edebe9);
+  }
+  .wrap { max-width: 760px; padding: 34px 16px 72px; }
+
+  /* 헤더 — 컬러 그라디언트 블록을 걷어내고 TH/TP처럼 지면 위 잉크 텍스트로 */
+  .hero {
+    background: none; color: var(--ink); box-shadow: none;
+    border-radius: 0; padding: 0 2px;
+  }
+  .hero h1 {
+    font-size: 25px; font-weight: 750; letter-spacing: -.02em;
+    color: var(--ink); gap: 10px;
+  }
+  .hero .desc { color: var(--muted); font-size: 14px; margin-top: 10px; }
+  .hero .desc b { color: var(--ink); }
+  .vpill {
+    background: rgba(255,255,255,.6); border: 1px solid var(--glass-edge);
+    color: var(--muted); font-size: 12.5px; font-weight: 700;
+  }
+  .navlinks { margin: 16px 0 4px; }
+  .navlinks a {
+    color: var(--muted); font-size: 12.5px; font-weight: 650;
+    background: rgba(255,255,255,.5); border: 1px solid var(--glass-edge);
+    border-radius: 999px; padding: 8px 15px; min-height: 40px;
+  }
+  .navlinks a:hover, .navlinks a:active { background: rgba(255,255,255,.72); }
+  .navlinks a:focus-visible { outline: 2px solid #7f9fd8; outline-offset: 2px; }
+
+  /* 유리 카드 공통 — 큰 라운드 · 블러 · 상단 스펙큘러 */
+  .ibox, .sec, .tablewrap {
+    position: relative;
+    background: var(--surface); border: 1px solid var(--glass-edge);
+    -webkit-backdrop-filter: blur(26px) saturate(1.35);
+    backdrop-filter: blur(26px) saturate(1.35);
+    box-shadow: var(--shadow);
+  }
+  .ibox { border-radius: 20px; border-top: 1px solid var(--glass-edge); }
+  .sec  { border-radius: 26px; border-left: 1px solid var(--glass-edge); padding: 16px 18px; }
+  .tablewrap { border-radius: 22px; }
+  .ibox::before, .sec::before {
+    content: ""; position: absolute; inset: 0 0 62% 0;
+    border-radius: 20px 20px 34px 34px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,.5), transparent);
+  }
+  .sec::before { border-radius: 26px 26px 40px 40px; }
+  .ibox > *, .sec > * { position: relative; }
+
+  /* 6분류 색은 상단 굵은 선 대신 좌측 파스텔 레일로 — 유리 톤을 깨지 않게 */
+  .ibox { border-left: 3px solid var(--c); }
+  .sec  { border-left: 4px solid var(--c); }
+  .ibox .in { color: var(--c); font-weight: 750; }
+  .ibox .icount { color: var(--ink); font-weight: 750; }
+  .shead .dot { border-radius: 50%; width: 12px; height: 12px;
+    border: 1px solid rgba(255,255,255,.85); }
+  .shead .st { color: var(--c); font-weight: 750; letter-spacing: -.015em; }
+  .shead .scount {
+    background: rgba(255,255,255,.55); border: 1px solid var(--glass-edge);
+    color: var(--c); font-weight: 700;
+  }
+  ol.items li { color: var(--muted); font-size: 13.5px; }
+  ol.items li b { color: var(--ink); }
+  ol.items li::before {
+    background: rgba(255,255,255,.6); border: 1px solid var(--glass-edge);
+    color: var(--faint); border-radius: 6px;
+  }
+  .tg {
+    background: var(--tag-bg); border: 1px solid var(--glass-edge);
+    color: var(--tag); border-radius: 999px; padding: 1px 8px;
+  }
+
+  h2 { color: var(--faint); }
+  h2 .hr { background: var(--line); }
+
+  /* 버전 기록 표 */
+  table { min-width: 300px; font-size: 13px; }
+  th {
+    background: rgba(255,255,255,.42); color: var(--faint);
+    border-bottom: 1px solid var(--line);
+  }
+  th, td { border-bottom: 1px solid var(--line); padding: 10px 13px; }
+  td.v { color: var(--cc); font-weight: 750; }
+  td.d { color: var(--faint); }
+  .cur td { background: rgba(223,232,248,.42); }
+
+  footer { border-top: 1px solid var(--line); color: var(--faint); }
+  .mono, code {
+    background: rgba(255,255,255,.55); border: 1px solid var(--glass-edge);
+    padding: 1px 6px; border-radius: 7px; font-size: 12px;
+  }
+
+  /* 버전 기록 토글 — 최신 판은 노출, 옛 판은 접어 둠 (기본 닫힘) */
+  .vlog { margin-top: 10px; }
+  .vlog > summary {
+    list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px;
+    min-height: 38px; padding: 7px 15px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 650; color: var(--muted);
+    background: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.78);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .vlog > summary::-webkit-details-marker { display: none; }
+  .vlog > summary::after { content: "▾"; color: var(--faint); font-size: 11px; }
+  .vlog[open] > summary::after { content: "▴"; }
+  .vlog:focus-within > summary { outline: 2px solid #7f9fd8; outline-offset: 2px; }
+  .vlog > summary:active { background: rgba(255,255,255,.72); }
+  .vlog .tablewrap { margin-top: 10px; }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 22px; }
+    .sec { padding: 14px 15px; }
+  }
 </style>
 
 <div class="wrap">
@@ -270,19 +423,29 @@
       <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
       <tbody>
         <tr class="cur"><td class="v">v23</td><td class="d">2026-07-12</td><td><b>CC 툴체인 인프라 반영</b> — 공통·인프라 확정에 확장 플러그인 세팅(A상시/B온디맨드) 추가. CC 툴링 상세는 별도 정본(<span class="mono">클코 구조도 v4</span>)이 관리, 마스터플랜엔 인프라 포인터만. 제품 로드맵 변경 없음.</td></tr>
-        <tr><td class="v">v23</td><td class="d">2026-07-25</td><td><b>사용량 장부 연결 + 브랜치 판정 + 미머지 버그 발굴</b> — 토큰 소비 워크플로우 6개를 타워 장부에 연결(<span class="mono">#50·#51</span>, 공용 액션·코드리뷰 반영). 브랜치 자동삭제 활성화, 구 토큰 폐기 확인(확정 이동). 브랜치 23개 판정: 20개 삭제 안전 / 3개 살아있음. 그 과정에서 <b>Phase 2 "아카이브 하루 지연" 수정이 머지되지 않은 채 방치</b>돼 있음을 실측 확인 — 진행(C)에 등록.</td></tr>
-        <tr><td class="v">v22</td><td class="d">2026-07-11</td><td><b>렌더 버그 수정</b> — 리스트 항목 <span class="mono">li</span>가 <span class="mono">display:flex</span>라 <span class="mono">.mono</span> 조각이 여러 개면 텍스트가 세로로 한 글자씩 깨지던 문제 수정(번호 badge는 절대배치, 본문은 정상 인라인 흐름). 내용 변경 없음.</td></tr>
-        <tr><td class="v">v21</td><td class="d">2026-07-11</td><td><b>2주 트랙 비교 실험 구현 완료</b> — "복잡한 선정 파이프라인 vs LLM 알아서 선정"의 품질을 실측하려고, Arm1(현행 결정적+rerank) vs Arm2(Opus 웹서치 자체선정 + 동일 PICO 분석)를 매일 나란히 누적하는 무인 실험(별도 <span class="mono">compare-tracks.yml</span> · <span class="mono">experiments/compare.html</span> 게시 · 데일리 코어 무접촉). Arm3(ChatGPT 앱)는 PeterJ가 별도 운영해 2주 뒤 병합. brainstorming→spec→plan→서브에이전트 8-task TDD 구현·최종리뷰(READY TO MERGE). 시작은 Variables 2개 설정.</td></tr>
-        <tr><td class="v">v20</td><td class="d">2026-07-10</td><td><b>논문 선정 3층 개편 완료·프로덕션 반영</b> — 결정적 스코어러 재설계(PeterJ 기준: 관심주제 게이트 + 저명저널 지배, 저명도 낮은 범용지 감점) + config 분리(interests·journals, 폰 튜닝) + <b>Opus rerank</b>(결정 top-K를 침상 임상가치로 재순위, 소프트 폴백). 실측: 오늘 300편 최종 1위 Cefazolin/NEJM(LLM 풀스크린과 수렴), 실패픽·이송·원격·증례·리뷰 강등. 며칠 트렌드 관찰 후 config 튜닝.</td></tr>
-        <tr><td class="v">v19</td><td class="d">2026-07-09</td><td><b>논문 선정 품질 개편 착수</b> — 현행 선정이 <b>LLM 판단 0</b>(결정적 메타 점수만)이 저품질의 구조적 원인으로 확인. "300편 배치 AUP 거부"는 미검증(실은 429 정황)으로 재확인, 실제 논문 13편 Opus 배치 채점 성공(59초·거부 없음). 방향 = <b>retrieve-then-rerank + recall@K 실측 + 메타 촘촘화</b>. GPT 교차검증은 2단계 옵션, 가이드라인 선정은 Phase B. (설계·진단 단계, 코드 미변경.)</td></tr>
-        <tr><td class="v">v18</td><td class="d">2026-07-07 저녁</td><td><b>전면 개편</b> — Phase 1→4를 메인 축으로, 각 Phase를 6분류(확정·진행 P-m·진행 P-d·진행 C·상의·특이)로 재구성. 임시 R/A/B 코드 제거. 스탯 3박스 제거. 제목 아래 바로가기(대시보드=리포트 페이지 포함).</td></tr>
-        <tr><td class="v">v17</td><td class="d">2026-07-07 저녁</td><td>저장소 정본화(<span class="mono">docs/master-plan.html</span> git 커밋) + v14 포맷 복원. codex-debate 스킬·8건 수정 반영.</td></tr>
-        <tr><td class="v">v16</td><td class="d">2026-07-07 낮</td><td>Codex MCP 셋업·아카이브 저장 현황 섹션·복구 3파일(플랫폼 버전 선택기 참조).</td></tr>
-        <tr><td class="v">v14</td><td class="d">2026-07-06</td><td>파란 히어로 + R/A/B 색 보드 포맷(임시 코드 체계) — v18에서 Phase 6분류로 대체.</td></tr>
-        <tr><td class="v">v1~v13</td><td class="d">~2026-07-06</td><td>확장 설계·데스크탑 데이·Phase 2/3 구현·리뷰 누적. 상세는 플랫폼 버전 선택기 / git 이력.</td></tr>
       </tbody>
     </table>
   </div>
+  <details class="vlog">
+    <summary>이전 판 기록 10개 펼쳐 보기</summary>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td class="v">v23</td><td class="d">2026-07-25</td><td><b>사용량 장부 연결 + 브랜치 판정 + 미머지 버그 발굴</b> — 토큰 소비 워크플로우 6개를 타워 장부에 연결(<span class="mono">#50·#51</span>, 공용 액션·코드리뷰 반영). 브랜치 자동삭제 활성화, 구 토큰 폐기 확인(확정 이동). 브랜치 23개 판정: 20개 삭제 안전 / 3개 살아있음. 그 과정에서 <b>Phase 2 "아카이브 하루 지연" 수정이 머지되지 않은 채 방치</b>돼 있음을 실측 확인 — 진행(C)에 등록.</td></tr>
+          <tr><td class="v">v22</td><td class="d">2026-07-11</td><td><b>렌더 버그 수정</b> — 리스트 항목 <span class="mono">li</span>가 <span class="mono">display:flex</span>라 <span class="mono">.mono</span> 조각이 여러 개면 텍스트가 세로로 한 글자씩 깨지던 문제 수정(번호 badge는 절대배치, 본문은 정상 인라인 흐름). 내용 변경 없음.</td></tr>
+          <tr><td class="v">v21</td><td class="d">2026-07-11</td><td><b>2주 트랙 비교 실험 구현 완료</b> — "복잡한 선정 파이프라인 vs LLM 알아서 선정"의 품질을 실측하려고, Arm1(현행 결정적+rerank) vs Arm2(Opus 웹서치 자체선정 + 동일 PICO 분석)를 매일 나란히 누적하는 무인 실험(별도 <span class="mono">compare-tracks.yml</span> · <span class="mono">experiments/compare.html</span> 게시 · 데일리 코어 무접촉). Arm3(ChatGPT 앱)는 PeterJ가 별도 운영해 2주 뒤 병합. brainstorming→spec→plan→서브에이전트 8-task TDD 구현·최종리뷰(READY TO MERGE). 시작은 Variables 2개 설정.</td></tr>
+          <tr><td class="v">v20</td><td class="d">2026-07-10</td><td><b>논문 선정 3층 개편 완료·프로덕션 반영</b> — 결정적 스코어러 재설계(PeterJ 기준: 관심주제 게이트 + 저명저널 지배, 저명도 낮은 범용지 감점) + config 분리(interests·journals, 폰 튜닝) + <b>Opus rerank</b>(결정 top-K를 침상 임상가치로 재순위, 소프트 폴백). 실측: 오늘 300편 최종 1위 Cefazolin/NEJM(LLM 풀스크린과 수렴), 실패픽·이송·원격·증례·리뷰 강등. 며칠 트렌드 관찰 후 config 튜닝.</td></tr>
+          <tr><td class="v">v19</td><td class="d">2026-07-09</td><td><b>논문 선정 품질 개편 착수</b> — 현행 선정이 <b>LLM 판단 0</b>(결정적 메타 점수만)이 저품질의 구조적 원인으로 확인. "300편 배치 AUP 거부"는 미검증(실은 429 정황)으로 재확인, 실제 논문 13편 Opus 배치 채점 성공(59초·거부 없음). 방향 = <b>retrieve-then-rerank + recall@K 실측 + 메타 촘촘화</b>. GPT 교차검증은 2단계 옵션, 가이드라인 선정은 Phase B. (설계·진단 단계, 코드 미변경.)</td></tr>
+          <tr><td class="v">v18</td><td class="d">2026-07-07 저녁</td><td><b>전면 개편</b> — Phase 1→4를 메인 축으로, 각 Phase를 6분류(확정·진행 P-m·진행 P-d·진행 C·상의·특이)로 재구성. 임시 R/A/B 코드 제거. 스탯 3박스 제거. 제목 아래 바로가기(대시보드=리포트 페이지 포함).</td></tr>
+          <tr><td class="v">v17</td><td class="d">2026-07-07 저녁</td><td>저장소 정본화(<span class="mono">docs/master-plan.html</span> git 커밋) + v14 포맷 복원. codex-debate 스킬·8건 수정 반영.</td></tr>
+          <tr><td class="v">v16</td><td class="d">2026-07-07 낮</td><td>Codex MCP 셋업·아카이브 저장 현황 섹션·복구 3파일(플랫폼 버전 선택기 참조).</td></tr>
+          <tr><td class="v">v14</td><td class="d">2026-07-06</td><td>파란 히어로 + R/A/B 색 보드 포맷(임시 코드 체계) — v18에서 Phase 6분류로 대체.</td></tr>
+          <tr><td class="v">v1~v13</td><td class="d">~2026-07-06</td><td>확장 설계·데스크탑 데이·Phase 2/3 구현·리뷰 누적. 상세는 플랫폼 버전 선택기 / git 이력.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
 
   <footer>
     TR master plan · 정본 = <span class="mono">docs/master-plan.html</span>(git). 갱신 = 이 파일 편집(버전 줄 위에 추가, 옛 줄 삭제 금지) → 같은 URL 재배포 → 커밋. 아티팩트는 렌더 뷰.
