@@ -28,9 +28,32 @@
 .col.fail .seclbl{color:#9ca3af}</style></head>
 <body><div class="wrap">
 <header class="hero"><h1>논문 선정 트랙 비교 실험</h1>
-<div class="sub">2026-07-12 → 2026-07-30 (KST) · 오늘 2026-07-24</div>
-<div class="stats"><div class="stat"><b>13</b>기록된 날</div><div class="stat"><b>0</b>수렴</div><div class="stat"><b>0</b>Arm 2 실패</div></div></header>
+<div class="sub">2026-07-12 → 2026-07-30 (KST) · 오늘 2026-07-25</div>
+<div class="stats"><div class="stat"><b>14</b>기록된 날</div><div class="stat"><b>0</b>수렴</div><div class="stat"><b>1</b>Arm 2 실패</div></div></header>
 <div class="legend"><span>■ Arm 1 · 결정적+rerank(현행)</span><span>■ Arm 2 · Opus 자체선정</span><span>■ Arm 3 · ChatGPT(2주 뒤)</span></div>
+<section class="day">
+    <div class="dayhead"><span class="date">2026-07-25</span></div>
+    <div class="cols">
+      <div class="col">
+    <span class="arm a1">ARM 1 <small>결정적+rerank</small></span>
+    <div class="ttl">패혈성 쇼크 환자의 초기 지속적 신대체요법(CRRT)에서 oXiris 혈액여과막 사용: 성향점수매칭 분석</div>
+    <div class="ttl-en">The use of oXiris hemofilter in the initial continuous renal replacement therapy among patients with septic shock: A propensity score matched analysis.</div>
+    <div class="meta">Journal of critical care · PMID 42341374 · <a href="https://doi.org/10.1016/j.jcrc.2026.155666">DOI</a></div>
+    <div class="badges"><span class="b ev">근거 Low</span><span class="b">초록 + 웹보강</span></div>
+    <div class="seclbl">💡 WHY IT MATTERS</div><p class="txt">CRRT를 시행받는 성인 패혈성 쇼크 ICU 환자에서, 초기 혈액여과막으로 oXiris를 사용하는 것이 M100 사용과 비교하여 28일 vasopressor-free days 및 기타 임상 결과 개선과 연관되는가?</p>
+    <div class="seclbl">🎯 PICO</div><div class="pico"><div class="row"><span class="k">P</span><span>[중국] 2019년부터 2023년까지 3차 의뢰병원 ICU에 입원하여 최소 1회 이상 CRRT를 받은 성인 패혈성 쇼크 환자. 모든 자격 기준을 충족한 465명 중 oXiris군 69명이 M100군 69명과 1:1 성향점수매칭되었다.</span></div><div class="row"><span class="k">I</span><span>초기 CRRT 시행 시 oXiris 혈액여과막(hemofilter)을 사용한 군(oXiris군).</span></div><div class="row"><span class="k">C</span><span>초기 CRRT 시행 시 M100 혈액여과막을 사용한 군(M100군); 두 군은 1:1 성향점수매칭으로 비교되었다.</span></div><div class="row"><span class="k">O</span><span>1차 결과는 28일 vasopressor-free days. M100군과 비교하여 oXiris CRRT는 더 긴 28일 vasopressor-free days(24일 vs 19일, P = 0.04)와 연관되었다. 그러나 ICU 사망이라는 경쟁 위험(competing risk)을 보정한 competing risk analysis에서는 vasopressor weaning의 cumulative incidence에 군 간 유의한 차이가 없었다.</span></div></div>
+    <div class="seclbl">📈 핵심 결과</div><ul class="kf"><li>1:1 성향점수매칭 코호트(69명 vs 69명)에서 초기 oXiris CRRT는 M100 대비 더 긴 28일 vasopressor-free days(24일 vs 19일, P = 0.04), 더 짧은 CRRT 기간(72 vs 117시간, P = 0.03), 더 큰 SOFA 점수 감소(-2 vs 1, P = 0.004)와 연관되었다.</li><li>ICU 사망을 고려한 competing risk analysis에서는 vasopressor weaning의 cumulative incidence에 군 간 유의한 차이가 없어, 보정 전 1차 결과 신호가 확인되지 않았다.</li><li>Lactate, PCT, IL-6 수치 변화, 수분 균형, ICU/병원 재원기간, 단기 사망률에서는 두 군 간 유의한 차이가 없었다.</li></ul>
+    <div class="subh">2차 결과</div><ul class="kf"><li>oXiris군에서 M100군 대비 CRRT 시행 기간이 더 짧았다 (72 vs. 117시간, P = 0.03).</li><li>oXiris군에서 SOFA 점수 감소폭이 더 컸다 (-2 vs. 1, P = 0.004).</li><li>Lactate, PCT, IL-6 수치 변화, 수분 균형(fluid balance), ICU/병원 재원기간(LOS), 단기 사망률에서는 두 군 간 유의한 차이가 없었다.</li></ul>
+    <div class="subh">📊 통계 용어</div><div class="gloss"><div class="gi"><b>P-value</b> — 귀무가설이 참일 때 관찰된 결과 이상의 차이가 우연히 나타날 확률로, 보통 0.05 미만이면 통계적으로 유의하다고 본다. 예: P = 0.04 → 두 군 간 28-day vasopressor-free days 차이(24일 vs 19일)가 우연만으로 보기 어렵다는 의미.</div><div class="gi"><b>Competing risk analysis</b> — 관심 사건(vasopressor weaning)이 일어나기 전에 다른 사건(ICU 사망)이 먼저 발생해 관찰을 방해할 수 있을 때, 그 경쟁 사건의 영향을 보정하여 분석하는 통계기법. 예: 이 연구에서 ICU 사망을 경쟁위험으로 보정하자 vasopressor weaning의 군 간 차이가 더 이상 유의하지 않았다.</div><div class="gi"><b>Cumulative incidence</b> — 일정 기간 동안 특정 사건이 누적되어 발생한 비율. 예: 이 연구에서 competing risk 보정 후 oXiris군과 M100군의 vasopressor weaning cumulative incidence에 유의한 차이가 없었다.</div></div>
+    <div class="subh">제한점</div><p class="txt">단일기관, 후향적 코호트 설계로 2019-2023년 한 3차 의뢰병원에서 시행됨; 1:1 성향점수매칭에도 불구하고 69쌍만 분석되어 검정력이 제한적이고 잔여/미측정 교란 가능성이 남아있음; 주요 보정 전 이득(vasopressor-free days)은 ICU 사망을 고려한 competing risk analysis에서 확인되지 않았음; 사망률, 재원기간, 염증표지자 변화에서도 유의한 차이가 없었으며, 이용 가능한 초록에는 기저 균형 지표, 신뢰구간, hazard ratio 등이 보고되어 있지 않음.</p>
+    <div class="seclbl">✅ 임상 결론</div><p class="txt">이 단일기관 성향점수매칭 후향적 코호트에서, 보정 전 분석은 초기 oXiris CRRT가 M100 대비 더 많은 vasopressor-free days, 더 짧은 CRRT 기간, 더 큰 SOFA 개선과 연관됨을 시사했으나, ICU 사망을 경쟁위험으로 보정한 competing risk analysis에서는 이 신호들이 확인되지 않았고 사망률·재원기간 이득도 없었다. 따라서 임상의는 oXiris를 진료를 바꿀 근거로 보기보다는, 전향적 확증 연구가 나오기 전까지는 효과가 검증되지 않은 보조요법으로 간주해야 한다.</p>
+    <div class="subh">Practice Change</div><ul class="kf"><li>이 연구의 보정 전 28일 vasopressor-free days 이득(24일 vs 19일, P = 0.04)만으로 초기 CRRT 혈액여과막을 oXiris로 바꾸지 말 것 — ICU 사망을 경쟁위험으로 보정한 competing risk analysis에서는 이 효과가 사라졌다.</li><li>Lactate/PCT/IL-6 변화, 수분 균형, ICU/병원 재원기간, 단기 사망률에서 유의한 차이가 없었으므로, 초기 CRRT 혈액여과막(oXiris vs M100) 선택은 여전히 가용성·비용 등 실무적 요인에 따라 결정한다.</li><li>CRRT 필터 이득을 주장하는 후향적 PSM 연구를 평가할 때는, 진료 변경 전에 주요 결과에 대한 competing risk 보정 분석 결과를 반드시 확인한다 — 군 간 사망률 차이가 단순 시간-사건 비교를 왜곡할 수 있기 때문이다.</li></ul>
+  </div>
+      <div class="col fail"><span class="arm a2">ARM 2 <small>Opus 자체선정</small></span>
+      <div class="failmsg">⚠ 이 날 선정 실패 / 픽 없음<br>PMID 검증 실패·6개월 창 밖·분석 실패 → 소프트 스킵.</div></div>
+      <div class="emptyslot">Arm 3 (ChatGPT)<br>2주 뒤 PeterJ 리스트 병합</div>
+    </div>
+  </section>
 <section class="day">
     <div class="dayhead"><span class="date">2026-07-24</span></div>
     <div class="cols">
