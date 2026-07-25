@@ -147,7 +147,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <h1>TR master plan <span class="vpill">v22</span></h1>
+    <h1>TR master plan <span class="vpill">v23</span></h1>
     <div class="navlinks">
       <a href="https://njell85-spec.github.io/trend-review/">📊 대시보드(리포트 페이지)</a>
       <a href="https://github.com/njell85-spec/trend-review">GitHub</a>
@@ -162,7 +162,7 @@
     <a class="ibox p1" href="#ph1"><div class="pn">PHASE 1</div><div class="pt">Curate &amp; Brief</div><div class="pk">고르기·브리핑</div><span class="pstat">운영 중</span>
       <div class="pcounts"><span><em>확정</em><b>4</b></span><span><em>P-m</em><b>2</b></span><span class="z"><em>P-d</em><b>0</b></span><span class="z"><em>C</em><b>0</b></span><span><em>상의</em><b>1</b></span><span><em>특이</em><b>1</b></span></div></a>
     <a class="ibox p2" href="#ph2"><div class="pn">PHASE 2</div><div class="pt">Archive</div><div class="pk">아카이브</div><span class="pstat">운영 중</span>
-      <div class="pcounts"><span><em>확정</em><b>3</b></span><span><em>P-m</em><b>1</b></span><span class="z"><em>P-d</em><b>0</b></span><span class="z"><em>C</em><b>0</b></span><span><em>상의</em><b>1</b></span><span><em>특이</em><b>1</b></span></div></a>
+      <div class="pcounts"><span><em>확정</em><b>3</b></span><span><em>P-m</em><b>1</b></span><span class="z"><em>P-d</em><b>0</b></span><span><em>C</em><b>1</b></span><span><em>상의</em><b>1</b></span><span><em>특이</em><b>1</b></span></div></a>
     <a class="ibox p3" href="#ph3"><div class="pn">PHASE 3</div><div class="pt">Produce</div><div class="pk">영상·카드</div><span class="pstat">개선 중</span>
       <div class="pcounts"><span><em>확정</em><b>1</b></span><span><em>P-m</em><b>2</b></span><span class="z"><em>P-d</em><b>0</b></span><span><em>C</em><b>1</b></span><span><em>상의</em><b>1</b></span><span><em>특이</em><b>1</b></span></div></a>
     <a class="ibox p4" href="#ph4"><div class="pn">PHASE 4</div><div class="pt">Publish</div><div class="pk">공개 발행</div><span class="pstat">나중에</span>
@@ -205,7 +205,8 @@
       <div class="cat pm"><div class="cl"><i style="background:var(--pm)"></i>진행(P-m) <small>모바일</small></div>
         <ol class="items"><li>매월 1일 NotebookLM 소스 2개 수동 추가 — 카톡 리마인더(2클릭).</li></ol></div>
       <div class="cat pd"><div class="cl"><i style="background:var(--pd)"></i>진행(P-d) <small>데스크탑</small></div><div class="empty">— 없음</div></div>
-      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div><div class="empty">— 없음</div></div>
+      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div>
+        <ol class="items"><li><b>아카이브 저장 현황 "하루 지연" 버그</b> <span class="tag">미머지</span> — 대시보드 §4-E 패널에 오늘 항목이 안 뜨고 항상 하루 늦게 뜬다(2026-07-09 PeterJ 피드백). 원인은 실행 순서: <span class="mono">publish()</span>가 그 시점의 <span class="mono">analysis_archive.json</span>(어제까지)으로 패널을 굽고 <b>그 뒤에</b> <span class="mono">ArchiveAgent</span>가 오늘 항목을 추가. <span class="mono">on-demand.mjs</span>도 동일. 수정(<span class="mono">refreshArchiveStatus()</span> 재주입 + 테스트 97줄)이 만들어졌으나 <b>머지되지 않고 브랜치에 방치</b> — 2026-07-25 실측으로 main에 미반영 확인(<span class="mono">refreshArchiveStatus</span> 0회). 브랜치 <span class="mono">claude/daily-report-feedback-7tr5no</span>. 3주 전 코드라 현행 main 기준 재구현 권장.</li></ol></div>
       <div class="cat ds"><div class="cl"><i style="background:var(--ds)"></i>상의</div>
         <ol class="items"><li>논문 본문을 공개 저장소에 계속 둘지 vs 전문 Doc에 옮긴 뒤 뺄지.</li></ol></div>
       <div class="cat nt"><div class="cl"><i style="background:var(--nt)"></i>특이 <small>note</small></div>
@@ -251,14 +252,15 @@
     <div class="phead"><span class="hn">COMMON</span><span class="ht">공통 · 인프라</span><span class="hk">Phase에 안 묶이는 것</span></div>
     <div class="cats">
       <div class="cat cf"><div class="cl"><i style="background:var(--cf)"></i>확정</div>
-        <ol class="items"><li>외부 설정 일체 <span class="mono">D1~D8</span> — 구글·유튜브 채널·시크릿·토큰·NotebookLM.</li><li>codex-debate 스킬 + 전체코드 토론·8건 수정 (<span class="mono">#41·#42</span>). 설계토론 모드 추가(2026-07-12).</li><li><b>CC 확장 플러그인 세팅</b>(2026-07-12) — 딥리서치 검증 후 A그룹 상시(typescript-lsp·superpowers-chrome) 자동설치 + B그룹 온디맨드 4종 발동 조건표. 상세·구조는 <span class="mono">클코 구조도</span>(claude-stack-map.html) 참조.</li><li>안정성 장치 — 배포 검증·데일리 무영향·소프트 실패 격리. 회귀 0.</li></ol></div>
+        <ol class="items"><li>외부 설정 일체 <span class="mono">D1~D8</span> — 구글·유튜브 채널·시크릿·토큰·NotebookLM.</li><li>codex-debate 스킬 + 전체코드 토론·8건 수정 (<span class="mono">#41·#42</span>). 설계토론 모드 추가(2026-07-12).</li><li><b>CC 확장 플러그인 세팅</b>(2026-07-12) — 딥리서치 검증 후 A그룹 상시(typescript-lsp·superpowers-chrome) 자동설치 + B그룹 온디맨드 4종 발동 조건표. 상세·구조는 <span class="mono">클코 구조도</span>(claude-stack-map.html) 참조.</li><li>안정성 장치 — 배포 검증·데일리 무영향·소프트 실패 격리. 회귀 0.</li><li><b>타워 사용량 장부 연결</b>(2026-07-25, <span class="mono">#50·#51</span>) — 토큰을 태우는 워크플로우 <b>6개 전부</b>가 실행 토큰·비용을 global-config 장부에 <span class="mono">(auth, 모델)</span>별 1줄로 적재. 공용 액션 <span class="mono">.github/actions/append-usage</span> + <span class="mono">src/utils/usageDump.js</span>. 적재 스텝은 <span class="mono">if: always()</span>+<span class="mono">continue-on-error</span>+<span class="mono">timeout-minutes 5</span>라 데일리를 죽이지도 멈추지도 않는다. 독립 코드리뷰 1회(Important 4·Minor 5 반영).</li><li><b>구 GitHub 토큰 폐기 확인</b> <span class="tag">보안</span> — 2026-07-25 <span class="mono">Settings → Tokens (classic)</span> 실측 결과 <b>목록 비어 있음</b>(GitHub 자동 폐기 또는 기존 삭제). P-d 대기 항목이었으나 완료 확인.</li><li><b>머지된 브랜치 자동 삭제</b> 활성화(2026-07-25) — repo Settings의 <span class="mono">Automatically delete head branches</span>. 앞으로 PR 머지 시 브랜치가 자동 정리된다(복구 가능).</li></ol></div>
       <div class="cat pm"><div class="cl"><i style="background:var(--pm)"></i>진행(P-m) <small>모바일</small></div>
-        <ol class="items"><li>태블릿 토큰 등록 + 카톡 토큰 메시지 삭제.</li></ol></div>
-      <div class="cat pd"><div class="cl"><i style="background:var(--pd)"></i>진행(P-d) <small>데스크탑</small></div>
-        <ol class="items"><li>구 GitHub 토큰 폐기 <span class="tag">보안</span> — 예전 <span class="mono">Trend_Review</span> 저장소 옛 설정에 평문 토큰 → PAT(classic) Revoke.</li></ol></div>
-      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div><div class="empty">— 없음</div></div>
+        <ol class="items"><li>태블릿 토큰 등록 + 카톡 토큰 메시지 삭제.</li><li><b>옛 브랜치 22개 수동 삭제</b> — <span class="mono">github.com/njell85-spec/trend-review/branches</span> 행마다 🗑. 자동삭제 설정은 <b>앞으로 머지되는 것</b>에만 적용돼 기존분은 수동. 판정: <b>20개는 삭제 안전</b>(머지된 PR 있음 → <span class="mono">refs/pull/N/head</span>로 영구 복구 가능, 또는 main과 내용 동일), <b>2개는 보류</b>(아래 진행(C) 참조). 세션에서는 프록시 403으로 삭제 불가 확인.</li></ol></div>
+      <div class="cat pd"><div class="cl"><i style="background:var(--pd)"></i>진행(P-d) <small>데스크탑</small></div><div class="empty">— 없음 (구 토큰 폐기는 확정으로 이동)</div></div>
+      <div class="cat cc"><div class="cl"><i style="background:var(--cc)"></i>진행(C) <small>클코</small></div>
+        <ol class="items"><li><b>코워크 프롬프트 문서 건져오기</b> — <span class="mono">docs/cowork-paper-selection-prompts.md</span>(182줄, 미러형/자율형 2종)가 <b>브랜치에만 있고 main에 없다</b>. 코워크 자동화 운용 방침 결정 시 필요한 자료. 브랜치 <span class="mono">claude/paper-selection-mobile-cowork-r7jwjh</span> → main으로 옮긴 뒤 브랜치 삭제.</li><li><b>브랜치 <span class="mono">claude/code-review-optimization-foai3i</span> 처분 판단</b> — 2026-07-02, 핵심 12파일 124줄(파이프라인 신뢰성·보안 보강). <b>PR이 없어 지우면 영구 소실</b>이고, 3주간 main이 크게 바뀌어 그대로 얹으면 위험. 내용 대조 후 살릴 것만 추리거나 폐기 결정.</li></ol></div>
       <div class="cat ds"><div class="cl"><i style="background:var(--ds)"></i>상의</div><div class="empty">— 없음</div></div>
-      <div class="cat nt"><div class="cl"><i style="background:var(--nt)"></i>특이 <small>note</small></div><div class="empty">—</div></div>
+      <div class="cat nt"><div class="cl"><i style="background:var(--nt)"></i>특이 <small>note</small></div>
+        <ol class="items"><li><b>죽은 토큰 문자열이 <span class="mono">archive/</span>에 남아 있다</b> — <span class="mono">REVIEW_BUNDLE.md</span>·<span class="mono">fetch_papers_task.ps1</span>·<span class="mono">normalize_all.cjs</span>에 옛 <span class="mono">ghp_</span> 문자열. <b>토큰은 이미 폐기 확인</b>돼 보안 위험은 없고, 스캐너가 계속 잡는 위생 문제다. <span class="mono">archive/</span> 폴더 자체가 레거시라 통째 정리도 선택지.</li></ol></div>
     </div>
   </section>
 
@@ -268,6 +270,7 @@
       <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
       <tbody>
         <tr class="cur"><td class="v">v23</td><td class="d">2026-07-12</td><td><b>CC 툴체인 인프라 반영</b> — 공통·인프라 확정에 확장 플러그인 세팅(A상시/B온디맨드) 추가. CC 툴링 상세는 별도 정본(<span class="mono">클코 구조도 v4</span>)이 관리, 마스터플랜엔 인프라 포인터만. 제품 로드맵 변경 없음.</td></tr>
+        <tr><td class="v">v23</td><td class="d">2026-07-25</td><td><b>사용량 장부 연결 + 브랜치 판정 + 미머지 버그 발굴</b> — 토큰 소비 워크플로우 6개를 타워 장부에 연결(<span class="mono">#50·#51</span>, 공용 액션·코드리뷰 반영). 브랜치 자동삭제 활성화, 구 토큰 폐기 확인(확정 이동). 브랜치 23개 판정: 20개 삭제 안전 / 3개 살아있음. 그 과정에서 <b>Phase 2 "아카이브 하루 지연" 수정이 머지되지 않은 채 방치</b>돼 있음을 실측 확인 — 진행(C)에 등록.</td></tr>
         <tr><td class="v">v22</td><td class="d">2026-07-11</td><td><b>렌더 버그 수정</b> — 리스트 항목 <span class="mono">li</span>가 <span class="mono">display:flex</span>라 <span class="mono">.mono</span> 조각이 여러 개면 텍스트가 세로로 한 글자씩 깨지던 문제 수정(번호 badge는 절대배치, 본문은 정상 인라인 흐름). 내용 변경 없음.</td></tr>
         <tr><td class="v">v21</td><td class="d">2026-07-11</td><td><b>2주 트랙 비교 실험 구현 완료</b> — "복잡한 선정 파이프라인 vs LLM 알아서 선정"의 품질을 실측하려고, Arm1(현행 결정적+rerank) vs Arm2(Opus 웹서치 자체선정 + 동일 PICO 분석)를 매일 나란히 누적하는 무인 실험(별도 <span class="mono">compare-tracks.yml</span> · <span class="mono">experiments/compare.html</span> 게시 · 데일리 코어 무접촉). Arm3(ChatGPT 앱)는 PeterJ가 별도 운영해 2주 뒤 병합. brainstorming→spec→plan→서브에이전트 8-task TDD 구현·최종리뷰(READY TO MERGE). 시작은 Variables 2개 설정.</td></tr>
         <tr><td class="v">v20</td><td class="d">2026-07-10</td><td><b>논문 선정 3층 개편 완료·프로덕션 반영</b> — 결정적 스코어러 재설계(PeterJ 기준: 관심주제 게이트 + 저명저널 지배, 저명도 낮은 범용지 감점) + config 분리(interests·journals, 폰 튜닝) + <b>Opus rerank</b>(결정 top-K를 침상 임상가치로 재순위, 소프트 폴백). 실측: 오늘 300편 최종 1위 Cefazolin/NEJM(LLM 풀스크린과 수렴), 실패픽·이송·원격·증례·리뷰 강등. 며칠 트렌드 관찰 후 config 튜닝.</td></tr>
