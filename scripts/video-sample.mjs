@@ -12,6 +12,11 @@ import { readFile } from 'fs/promises';
 import { VideoAgent } from '../src/agents/VideoAgent.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
+import { installUsageDump } from '../src/utils/usageDump.js';
+
+// 이 스크립트도 LLM을 태우므로 사용량을 타워 장부용으로 떨군다(USAGE_OUT 지정 시에만).
+installUsageDump();
+
 let archive;
 try {
   archive = JSON.parse(await readFile('output/analysis_archive.json', 'utf8'));

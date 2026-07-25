@@ -47,6 +47,7 @@ jobs:
       - name: Run track comparison
         run: node scripts/compare-tracks.mjs
         env:
+          USAGE_OUT: ${{ runner.temp }}/usage-run.json
           ENABLE_TRACK_COMPARE:   ${{ vars.ENABLE_TRACK_COMPARE }}
           TRACK_COMPARE_END:      ${{ vars.TRACK_COMPARE_END }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -57,3 +58,14 @@ jobs:
           # Arm2 웹탐색은 열린 과제라 턴을 많이 먹는다 — 기본 12 대신 상향(데일리는 미설정=12 유지).
           LLM_WEB_MAX_TURNS:      '30'
           LLM_WEB_TIMEOUT_MS:     '600000'
+
+      # 사용량 장부 적재 — 이 워크플로우도 LLM을 태운다(공용 액션).
+      - name: Append usage to tower ledger
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        uses: ./.github/actions/append-usage
+        with:
+          token: ${{ secrets.GC_USAGE_TOKEN }}
+          task: compare-tracks
+          usage-file: ${{ runner.temp }}/usage-run.json

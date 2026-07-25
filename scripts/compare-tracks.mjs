@@ -9,6 +9,11 @@ import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
 import { runOnce, isPastEndDate, analyzeByPmid } from '../src/experiments/trackCompare.js';
 import { renderComparisonHtml } from '../src/experiments/compareRender.js';
 
+import { installUsageDump } from '../src/utils/usageDump.js';
+
+// 이 스크립트도 LLM을 태우므로 사용량을 타워 장부용으로 떨군다(USAGE_OUT 지정 시에만).
+installUsageDump();
+
 const EXP_DIR = 'experiments';
 const CMP_PATH = path.join(EXP_DIR, 'track-comparison.json');
 const HIST_PATH = path.join(EXP_DIR, 'arm2-history.json');

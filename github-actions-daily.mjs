@@ -11,11 +11,12 @@
  *   GITHUB_REPO        — 자동 제공 (github.event.repository.name)
  */
 import 'dotenv/config';
-import { appendFileSync, writeFileSync } from 'fs';
+import { appendFileSync } from 'fs';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
 import { runWithRetry } from './src/utils/retryPipeline.js';
 import { llmTelemetry } from './src/utils/LLMClient.js';
+import { installUsageDump } from './src/utils/usageDump.js';
 import { kstDateStr } from './src/utils/dates.js';
 
 const todayKST = kstDateStr();
@@ -27,24 +28,8 @@ function jobSummary(md) {
   try { appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + '\n'); } catch { /* non-fatal */ }
 }
 
-// 사용량 요약 덤프 — USAGE_OUT 이 지정된 경우에만 파일로 떨군다(워크플로우의 장부
-// 수집 스텝이 읽는다). 미지정이면 아무 일도 안 하므로 로컬 실행에는 영향이 없다.
-//
-// exit 훅에 거는 이유: 이 스크립트는 소프트 실패·논문 0편 등으로 중간에 process.exit(0)
-// 하는 경로가 여럿이라, 정상 종료 지점에만 쓰면 "한도에 걸려 토큰만 태우고 끝난 날"이
-// 장부에서 통째로 빠진다. 그런 날이야말로 기록이 필요하다.
-//
-// 다만 exit 훅은 SIGTERM/SIGKILL에는 안 뜬다 — 잡 타임아웃·런 취소로 죽는 날은 보통
-// 가장 길고 비싼 날이라 그때 통째로 잃는 게 제일 아프다. 그래서 시도가 끝날 때마다
-// 스냅샷을 미리 떨궈, 뒤에 강제 종료돼도 직전까지의 사용량은 남게 한다.
-const dumpUsage = () => {
-  const usageOut = process.env.USAGE_OUT;
-  if (!usageOut) return;
-  try {
-    writeFileSync(usageOut, JSON.stringify({ records: llmTelemetry.summary() }));
-  } catch { /* 장부 수집 실패가 파이프라인을 죽여서는 안 된다 */ }
-};
-process.on('exit', dumpUsage);
+// 사용량 덤프 설치 — 워크플로우의 장부 적재 스텝이 이 파일을 읽는다(상세는 usageDump.js).
+const dumpUsage = installUsageDump();
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

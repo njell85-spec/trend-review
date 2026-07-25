@@ -17,6 +17,11 @@ import { KakaoNotifier } from '../src/agents/KakaoNotifier.js';
 import { loadCurationState, saveCurationState } from '../src/utils/curation.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
+import { installUsageDump } from '../src/utils/usageDump.js';
+
+// 이 스크립트도 LLM을 태우므로 사용량을 타워 장부용으로 떨군다(USAGE_OUT 지정 시에만).
+installUsageDump();
+
 const pmid = (process.env.MAT_PMID ?? '').trim();
 const todayKST = kstDateStr();
 
