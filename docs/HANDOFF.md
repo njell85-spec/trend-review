@@ -3,6 +3,52 @@
 > 목적: 새 세션(어느 모델이든)이 이 파일 하나로 지금까지의 맥락·결정·상태·다음 할 일을
 > 복원해 이어가기 위함. **새 세션을 열면 이 파일부터 읽고, 아래 "먼저 읽을 파일"을 훑으세요.**
 >
+> **[2026-07-25 — 타워 사용량 장부 연결 + 브랜치 판정 + 미머지 버그 발굴]**
+> - **작업 성격**: 관제(Usage & Billing) 인프라 연결 + 저장소 위생. **데일리 산출물·포맷 변경 없음.**
+> - **사용량 장부 연결 (PR #50·#51, 머지됨)**: 이 repo의 실행 토큰·비용을 타워(global-config
+>   비공개)의 `data/usage/YYYY-MM.jsonl`에 `(auth, 모델)`별 1줄로 적재한다.
+>   - 원래 타워 가이드는 `claude-code-action` 출력 파싱 전제였는데 **이 repo엔 그 액션이 없다**.
+>     다만 이미 `claude -p --output-format json`으로 부르고 있어 응답에 `usage`·`total_cost_usd`·
+>     `modelUsage`가 들어온다(CLI 2.1.220 실측). **`.result`만 쓰고 버리던 값을 주워 담은 것**.
+>   - `src/utils/LLMClient.js` `llmTelemetry`에 `(auth, 모델)`별 누적 추가. **`totals`는 `reset()`이
+>     건드리지 않는다** — 세션 한도(429) 재시도 때 런마다 `reset()`이 불리는데 여기서 지우면
+>     한도에 걸릴 만큼 태운 토큰이 통째로 빠진다. **`label()` 출력은 불변**(카톡 문구·job summary 보존, 테스트로 고정).
+>   - 종료코드가 0이 아닌 CLI 호출도 stdout 결과 JSON에서 사용량을 건진다(그 날이야말로 기록이 필요).
+>   - `src/utils/usageDump.js` + 공용 액션 `.github/actions/append-usage`. **토큰 태우는 워크플로우
+>     6개 전부** 연결: daily-review · **compare-tracks(schedule 자동!)** · on-demand ·
+>     selection-experiment · materialize · video-sample. 비소비 4개(ci·curate-remove·
+>     notebooklm-sync·verify-pages)는 연결 안 함.
+>   - 적재 스텝은 **`if: always()` + `continue-on-error` + `timeout-minutes: 5`**. 타임아웃이 필수인
+>     이유: `continue-on-error`는 "실패"만 덮고 **"멈춤"은 못 덮는다**. 클론이 행이면 잡이 240분 뒤
+>     취소되고, 그러면 `needs: review`인 **`verify-pages`(Pages 배포 안전망)가 통째로 안 돈다**.
+>   - 검증: `test:unit` **120/120**(신규 13) · `spec-lint` 통과 · **변이 테스트**(`recordCliResult`
+>     호출 제거 시 배선 테스트 3건 적색) · 종단 dry-run · 통로 실측(프로브 run 30145017192).
+>   - 독립 코드리뷰 1회 **머지 부적합** 판정 → Important 4·Minor 5 반영 후 머지. 핵심 지적 셋은
+>     **append-only 장부에 영구히 잘못된 데이터**를 남기는 것이었다(모델별 원자료 소실 /
+>     실패 호출 사용량 폐기 / API 비용 0을 `exact`로 기록).
+> - **⚠️ 다음 세션이 처리할 것 — 미머지 버그**: 대시보드 **"아카이브 저장 현황"(§4-E) 패널이
+>   지금도 하루씩 늦게** 뜬다. 2026-07-09 PeterJ 피드백으로 수정(`refreshArchiveStatus()` 재주입
+>   + 테스트 97줄)까지 만들어졌으나 **머지되지 않고 브랜치에 방치**됐다.
+>   - 2026-07-25 실측: main `github-actions-daily.mjs`가 `runWithRetry`(→publish, 65줄) →
+>     `ArchiveAgent`(139줄) 순서 그대로이고, `refreshArchiveStatus`는 main에 **0회**.
+>     `scripts/on-demand.mjs`도 동일(publish 85줄 → ArchiveAgent 91줄).
+>   - 브랜치 `claude/daily-report-feedback-7tr5no`(계획 문서 포함). **3주 전 코드라 그대로 얹지 말고
+>     현행 main 기준 재구현 권장** — 그 사이 `GitHubPublisher.js`가 많이 바뀌었다.
+> - **브랜치 정리 (판정 완료, 삭제는 미실행)**: 23개 중 **20개 삭제 안전**(머지된 PR 있음 →
+>   `refs/pull/N/head`로 영구 복구 가능 / 또는 main과 내용 동일), **3개 살아있음**:
+>   ① `paper-selection-mobile-cowork-r7jwjh` — `docs/cowork-paper-selection-prompts.md` 182줄,
+>   **main에 없는 유일본**. 코워크 자동화 운용 결정 시 필요 → main으로 건져올 것.
+>   ② `daily-report-feedback-7tr5no` — 위 미머지 버그 수정.
+>   ③ `code-review-optimization-foai3i` — 2026-07-02, 12파일 124줄. **PR이 없어 지우면 영구 소실**,
+>   3주간 main이 크게 바뀌어 그대로 얹으면 위험. 대조 후 판단 필요.
+>   - **세션에서 브랜치 삭제 불가**: `git push --delete`는 프록시 403, GitHub MCP에 삭제 도구 없음.
+>     PeterJ가 `/branches` 화면에서 수동으로 하거나, 자동삭제 설정에 맡긴다.
+> - **완료·정리**: repo Settings에 **`Automatically delete head branches` 활성화**(앞으로 머지되는
+>   브랜치는 자동 정리). **구 GitHub 토큰 폐기 확인** — `Settings → Tokens (classic)` 목록이 비어
+>   있음(MP의 P-d 대기 항목이었음). 단 `archive/` 밑 3개 파일에 **죽은 `ghp_` 문자열이 남아 있다**
+>   — 보안 위험은 없고 스캐너가 계속 잡는 위생 문제(`archive/`는 레거시라 통째 정리도 선택지).
+> - MP는 **v23**으로 갱신(위 항목들 6분류 반영).
+
 > **[2026-07-23 — 데일리 401 인증 장애 수정 (subprocess는 정상, 인증이 원인)]**
 > - **증상**: 2026-07-20~22 데일리가 매일 소프트 실패("claude CLI 오류(일시적일 수 있음) —
 >   3회 재시도 후에도 실패") + 카톡 실패알림. 브랜치명 `subprocess-issue`는 오해였음.
