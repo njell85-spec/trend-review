@@ -11,7 +11,7 @@
  *   GITHUB_REPO        — 자동 제공 (github.event.repository.name)
  */
 import 'dotenv/config';
-import { appendFileSync } from 'fs';
+import { appendFileSync, writeFileSync } from 'fs';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
 import { runWithRetry } from './src/utils/retryPipeline.js';
@@ -25,6 +25,21 @@ console.log(`\n📅 Daily EM/CCM Trend Review — ${todayKST} (KST)\n`);
 function jobSummary(md) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
   try { appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + '\n'); } catch { /* non-fatal */ }
+}
+
+// 사용량 요약 덤프 — USAGE_OUT 이 지정된 경우에만 파일로 떨군다(워크플로우의 장부
+// 수집 스텝이 읽는다). 미지정이면 아무 일도 안 하므로 로컬 실행에는 영향이 없다.
+//
+// exit 훅에 거는 이유: 이 스크립트는 소프트 실패·논문 0편 등으로 중간에 process.exit(0)
+// 하는 경로가 여럿이라, 정상 종료 지점에만 쓰면 "한도에 걸려 토큰만 태우고 끝난 날"이
+// 장부에서 통째로 빠진다. 그런 날이야말로 기록이 필요하다.
+if (process.env.USAGE_OUT) {
+  const usageOut = process.env.USAGE_OUT;
+  process.on('exit', () => {
+    try {
+      writeFileSync(usageOut, JSON.stringify({ records: llmTelemetry.summary() }));
+    } catch { /* 장부 수집 실패가 파이프라인을 죽여서는 안 된다 */ }
+  });
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

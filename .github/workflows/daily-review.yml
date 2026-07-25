@@ -100,6 +100,10 @@ jobs:
           # 미설정 시 기본값(3회 / 60분)이 적용된다. timeout-minutes 도 함께 고려할 것.
           SESSION_RETRY_MAX:       ${{ vars.SESSION_RETRY_MAX }}
           SESSION_RETRY_DELAY_MIN: ${{ vars.SESSION_RETRY_DELAY_MIN }}
+          # 이번 실행의 토큰·비용 요약 덤프 경로 — 아래 장부 스텝이 읽는다.
+          # 러너 임시 디렉터리라 repo에 커밋되지 않는다(public repo에 사용량 숫자
+          # 파일을 커밋하지 않는다는 타워 장부 불변계약).
+          USAGE_OUT: ${{ runner.temp }}/usage-run.json
 
       # 스크립트가 index.html 커밋·푸시 후 상태파일(선정 논문 제외목록 + 가이드라인 주간
       # 게이트)을 갱신하므로, 두 번째 커밋으로 그 상태를 동기화한다.
@@ -113,6 +117,75 @@ jobs:
           git diff --staged --quiet \
             && echo "state unchanged" \
             || (git commit -m "chore: sync daily state (papers + guideline gate + archive/video)" && git push)
+
+      # 타워(global-config)의 사용량 장부에 이번 실행의 토큰·비용을 적재한다.
+      # 규칙 정본: global-config rulebook/usage-accounting.md (계약 C1).
+      #
+      # 이 스텝은 절대 데일리를 빨갛게 만들지 않는다 — 리포트 발행이 본업이고 관제는
+      # 부가 기능이다. 그래서 continue-on-error + 모든 분기에서 exit 0로 빠진다.
+      # if: always() 인 이유는 파이프라인이 소프트 실패한 날에도 태운 토큰은 기록해야
+      # 하기 때문이다(오히려 그런 날 기록이 필요하다).
+      - name: Append usage to tower ledger
+        if: always()
+        continue-on-error: true
+        env:
+          GC_USAGE_TOKEN: ${{ secrets.GC_USAGE_TOKEN }}
+          USAGE_FILE: ${{ runner.temp }}/usage-run.json
+        run: |
+          set -uo pipefail
+
+          if [ -z "${GC_USAGE_TOKEN:-}" ]; then
+            echo "::notice::GC_USAGE_TOKEN 미설정 — 장부 적재를 건너뜁니다."
+            exit 0
+          fi
+          if [ ! -s "$USAGE_FILE" ]; then
+            echo "::notice::사용량 요약 파일이 없습니다 — LLM 호출 전에 끝난 실행으로 봅니다."
+            exit 0
+          fi
+          if [ "$(jq '.records | length' "$USAGE_FILE")" = "0" ]; then
+            echo "::notice::기록할 LLM 호출이 없습니다 — 건너뜁니다."
+            exit 0
+          fi
+
+          # PAT는 remote URL에만 쓰고 절대 echo하지 않는다. -q와 stderr 차단으로
+          # 실패 메시지에 토큰이 섞여 로그에 남는 것도 막는다.
+          if ! git clone -q --depth 1 \
+              "https://x-access-token:${GC_USAGE_TOKEN}@github.com/njell85-spec/global-config.git" \
+              "$RUNNER_TEMP/tower" 2>/dev/null; then
+            echo "::warning::타워 체크아웃 실패 — GC_USAGE_TOKEN의 권한/만료를 확인하세요(장부 적재만 건너뜁니다)."
+            exit 0
+          fi
+
+          cd "$RUNNER_TEMP/tower"
+          git config user.name  "usage-bot"
+          git config user.email "usage-bot@users.noreply.github.com"
+
+          # 장부 스키마상 auth는 subscription|api 2값이라, 두 경로가 모두 돈 날은
+          # 레코드가 2줄로 나뉘어 온다 — 줄 단위로 적재한다.
+          jq -c '.records[]' "$USAGE_FILE" | while read -r rec; do
+            f() { printf '%s' "$rec" | jq -r "$1"; }
+            bash tools/usage/append-usage.sh \
+              --surface actions \
+              --repo    "${{ github.event.repository.name }}" \
+              --task    daily-review \
+              --model   "$(f .model)" \
+              --in      "$(f .in)" \
+              --out     "$(f .out)" \
+              --cache-w "$(f .cache_w)" \
+              --cache-r "$(f .cache_r)" \
+              --cost    "$(f .cost_usd)" \
+              --auth    "$(f .auth)" \
+              --accuracy exact \
+              --run-id  "${{ github.run_id }}" \
+              >/dev/null || echo "::warning::장부 append 실패 — 이 레코드는 누락됩니다."
+          done
+
+          # 금지된 건 public repo에 사용량 숫자 '파일'을 커밋하는 것이고,
+          # 로그·job summary 표시는 허용된다(장부 불변계약).
+          {
+            echo "### 📊 사용량 장부 적재"
+            jq -r '.records[] | "- \(.auth) · \(.model) — in \(.in) · out \(.out) · cache_w \(.cache_w) · cache_r \(.cache_r) · $\(.cost_usd)"' "$USAGE_FILE"
+          } >> "$GITHUB_STEP_SUMMARY"
 
   # push 성공 ≠ 사이트 반영. GitHub 측 Pages 배포가 일시 오류로 실패하면
   # 카톡 링크가 전날 데이터를 보여준다(2026-07-05 실제 발생). 배포 완료를

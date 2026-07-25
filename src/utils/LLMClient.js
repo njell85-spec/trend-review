@@ -24,9 +24,63 @@ const API_FETCH_TIMEOUT_MS = 180_000; // API 폴백 호출당 상한 (행 방지
 
 // 실행 경로 집계(그날 구독 CLI로 돌았는지 / API 폴백으로 넘어갔는지).
 // 프로세스 전역 카운터 — 오케스트레이터가 run() 시작 시 reset().
+//
+// 두 층으로 나뉜다:
+//   · cli/api/apiWeb — "이번 런"의 경로 카운터. reset() 대상이고 label()이 읽는다.
+//   · totals         — 토큰·비용 누적. **reset()이 건드리지 않는다.** 세션 한도(429)로
+//                      파이프라인을 재시도하면 오케스트레이터가 런마다 reset()을 부르는데,
+//                      totals까지 지우면 실패한 시도에서 실제로 태운 토큰이 장부에서
+//                      사라진다(한도에 걸릴 만큼 쓴 판이 통째로 누락됨). 장부는 프로세스가
+//                      태운 총량을 기록해야 하므로 누적만 한다.
+//
+// 구독 CLI와 API 폴백을 분리 집계하는 이유: 장부 스키마의 auth는 subscription|api
+// 2값뿐이라(rulebook/usage-accounting.md 계약 C1) 한 줄에 섞을 수 없다. 두 경로가
+// 모두 돌면 레코드 2줄로 나눠 기록한다.
+const emptyBucket = () => ({ calls: 0, in: 0, out: 0, cacheW: 0, cacheR: 0, costUsd: 0, models: {} });
+const num = (v) => (Number.isFinite(Number(v)) ? Number(v) : 0);
+
 export const llmTelemetry = {
   cli: 0, api: 0, apiWeb: 0,
+  totals: { subscription: emptyBucket(), api: emptyBucket() },
   reset() { this.cli = 0; this.api = 0; this.apiWeb = 0; },
+  resetTotals() { this.totals = { subscription: emptyBucket(), api: emptyBucket() }; },
+
+  /**
+   * 호출 1회의 토큰·비용을 누적한다.
+   * usage 키 이름은 CLI(--output-format json)와 Messages API가 동일해 그대로 받는다.
+   * @param {'subscription'|'api'} auth
+   * @param {{ models?: string[], usage?: object, costUsd?: number }} rec
+   */
+  record(auth, { models = [], usage = {}, costUsd = 0 } = {}) {
+    const b = this.totals[auth];
+    if (!b) return;
+    b.calls += 1;
+    b.in += num(usage.input_tokens);
+    b.out += num(usage.output_tokens);
+    b.cacheW += num(usage.cache_creation_input_tokens);
+    b.cacheR += num(usage.cache_read_input_tokens);
+    b.costUsd += num(costUsd);
+    for (const m of models) if (m) b.models[m] = (b.models[m] ?? 0) + 1;
+  },
+
+  /** 장부 append용 요약 — 호출이 있었던 auth만 레코드로 낸다(없으면 빈 배열). */
+  summary() {
+    return Object.entries(this.totals)
+      .filter(([, b]) => b.calls > 0)
+      .map(([auth, b]) => {
+        const models = Object.keys(b.models);
+        return {
+          auth,
+          // 한 런에서 모델이 섞이면(선정=Opus·요약=Sonnet 등) '+'로 잇는다.
+          model: models.join('+') || 'unknown',
+          in: b.in, out: b.out, cache_w: b.cacheW, cache_r: b.cacheR,
+          // 부동소수 잔재(0.30000000000000004)가 장부에 남지 않게 자른다.
+          cost_usd: Number(b.costUsd.toFixed(6)),
+          calls: b.calls,
+        };
+      });
+  },
+
   label() {
     const parts = [];
     if (this.cli) parts.push(`구독×${this.cli}`);
@@ -108,7 +162,12 @@ export class LLMClient {
         body: JSON.stringify({ model: this.model, max_tokens: maxTokens, tools, tool_choice, messages: convo }),
       });
       if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${(await res.text()).slice(0, 300)}`);
-      return res.json();
+      const data = await res.json();
+      // 응답 1건 = 토큰 1회분. 웹검색 경로는 pause_turn으로 여러 번 도는데, 최종 턴에서만
+      // 기록하면 중간 검색 턴의 토큰이 통째로 샌다 — 그래서 여기(모든 응답)에서 누적한다.
+      // Messages API는 비용을 돌려주지 않으므로 cost는 0(장부 계약: 없으면 0).
+      llmTelemetry.record('api', { models: [this.model], usage: data.usage });
+      return data;
     };
 
     // 단순 경로(웹검색 없음): 강제 tool_choice 라 1회로 끝.
@@ -202,6 +261,15 @@ ${schema}`;
     if (parsed.is_error) throw new Error(`claude CLI error response: ${parsed.result}`);
 
     llmTelemetry.cli++;
+    // CLI(--output-format json)는 usage·total_cost_usd·modelUsage를 함께 뱉는다(2026-07-25 실측).
+    // modelUsage 키가 실제로 돈 모델이라 this.model(요청값)보다 정확하다 — 없으면 요청값으로.
+    llmTelemetry.record('subscription', {
+      models: Object.keys(parsed.modelUsage ?? {}).length
+        ? Object.keys(parsed.modelUsage)
+        : [this.model],
+      usage: parsed.usage,
+      costUsd: parsed.total_cost_usd,
+    });
     return this._extractJSON(parsed.result ?? '');
   }
 
