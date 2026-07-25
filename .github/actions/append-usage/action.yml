@@ -1,0 +1,99 @@
+# 타워(global-config) 사용량 장부에 이번 실행의 토큰·비용을 적재하는 공용 스텝.
+# 규칙 정본: global-config rulebook/usage-accounting.md (계약 C1).
+#
+# 쓰는 쪽 규약:
+#   ① LLM을 태우는 스텝에 env USAGE_OUT 을 주고(진입 스크립트가 installUsageDump()로 덤프)
+#   ② 그 뒤에 이 액션을 붙인다. 반드시 if: always() + continue-on-error: true 로 감쌀 것.
+#
+# 이 액션은 어떤 경우에도 워크플로우를 실패시키지 않는다(모든 분기 exit 0).
+# 다만 "멈춤"은 continue-on-error가 못 막으므로 timeout-minutes를 호출 측에서 반드시 준다 —
+# 잡이 타임아웃으로 취소되면 needs: 로 물린 후속 잡(예: verify-pages 안전망)이 통째로 안 돈다.
+name: Append usage to tower ledger
+description: 이번 실행의 토큰·비용을 타워(global-config) 사용량 장부에 1줄씩 적재한다.
+
+inputs:
+  token:
+    description: 타워 push용 fine-grained PAT (secrets.GC_USAGE_TOKEN). 비어 있으면 조용히 건너뛴다.
+    required: false
+    default: ''
+  task:
+    description: 장부의 task 필드 — 워크플로우 식별자 (예 daily-review).
+    required: true
+  usage-file:
+    description: 진입 스크립트가 떨군 사용량 요약 JSON 경로 (USAGE_OUT 과 같은 값).
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GC_USAGE_TOKEN: ${{ inputs.token }}
+        USAGE_FILE: ${{ inputs.usage-file }}
+        USAGE_TASK: ${{ inputs.task }}
+        GIT_TERMINAL_PROMPT: '0'   # 인증 프롬프트로 멈추지 않고 즉시 실패하게
+      run: |
+        set -uo pipefail
+
+        if [ -z "${GC_USAGE_TOKEN:-}" ]; then
+          echo "::notice::GC_USAGE_TOKEN 미설정 — 장부 적재를 건너뜁니다."
+          exit 0
+        fi
+        if [ ! -s "$USAGE_FILE" ]; then
+          echo "::notice::사용량 요약 파일이 없습니다 — LLM 호출 전에 끝난 실행으로 봅니다."
+          exit 0
+        fi
+        # jq가 깨진 JSON을 만나면 stdout이 비어 "" != "0" 이 되고 그대로 통과해버린다
+        # (프로세스가 writeFileSync 중간에 죽으면 실제로 생길 수 있다). 기본값으로 막는다.
+        COUNT="$(jq -r '.records | length' "$USAGE_FILE" 2>/dev/null || echo 0)"
+        if [ "${COUNT:-0}" -le 0 ] 2>/dev/null; then
+          echo "::notice::기록할 LLM 호출이 없거나 요약이 손상됐습니다 — 건너뜁니다."
+          exit 0
+        fi
+
+        # PAT는 remote URL에만 쓰고 절대 echo하지 않는다. -q와 stderr 차단으로
+        # 실패 메시지에 토큰이 섞여 로그에 남는 것도 막는다.
+        if ! git clone -q --depth 1 \
+            "https://x-access-token:${GC_USAGE_TOKEN}@github.com/njell85-spec/global-config.git" \
+            "$RUNNER_TEMP/tower" 2>/dev/null; then
+          echo "::warning::타워 체크아웃 실패 — GC_USAGE_TOKEN의 권한/만료를 확인하세요(장부 적재만 건너뜁니다)."
+          exit 0
+        fi
+
+        # cd 실패 시 그냥 진행하면 아래 git config가 이 repo 워크스페이스에서 돌아
+        # github-actions[bot] 신원을 usage-bot으로 덮어쓴다 — 반드시 여기서 빠진다.
+        cd "$RUNNER_TEMP/tower" || { echo "::warning::타워 디렉터리 진입 실패 — 건너뜁니다."; exit 0; }
+        git config user.name  "usage-bot"
+        git config user.email "usage-bot@users.noreply.github.com"
+
+        # GITHUB_REPOSITORY 는 owner/repo 형태 — 장부의 repo 필드엔 이름만 넣는다.
+        REPO_NAME="${GITHUB_REPOSITORY##*/}"
+
+        # 레코드는 (auth, 모델)마다 1줄로 나뉘어 온다 — 줄 단위로 적재한다.
+        # append-usage.sh 에 </dev/null 을 주는 이유: 안 주면 이 while 루프의 stdin(jq
+        # 파이프)을 물려받아, 안쪽 git이 stdin을 한 번이라도 읽으면 남은 레코드를 삼킨다.
+        jq -c '.records[]' "$USAGE_FILE" | while read -r rec; do
+          f() { printf '%s' "$rec" | jq -r "$1"; }
+          bash tools/usage/append-usage.sh \
+            --surface actions \
+            --repo    "$REPO_NAME" \
+            --task    "$USAGE_TASK" \
+            --model   "$(f .model)" \
+            --in      "$(f .in)" \
+            --out     "$(f .out)" \
+            --cache-w "$(f .cache_w)" \
+            --cache-r "$(f .cache_r)" \
+            --cost    "$(f .cost_usd)" \
+            --auth    "$(f .auth)" \
+            --accuracy "$(f .accuracy)" \
+            --note    "$(f .note)" \
+            --run-id  "$GITHUB_RUN_ID" \
+            </dev/null >/dev/null || echo "::warning::장부 append 실패 — 이 레코드는 누락됩니다."
+        done
+
+        # 금지된 건 public repo에 사용량 숫자 '파일'을 커밋하는 것이고,
+        # 로그·job summary 표시는 허용된다(장부 불변계약).
+        {
+          echo "### 📊 사용량 장부 적재 — $USAGE_TASK"
+          jq -r '.records[] | "- \(.auth) · \(.model) — in \(.in) · out \(.out) · cache_w \(.cache_w) · cache_r \(.cache_r) · $\(.cost_usd)"' "$USAGE_FILE"
+        } >> "$GITHUB_STEP_SUMMARY"

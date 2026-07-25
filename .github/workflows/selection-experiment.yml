@@ -53,6 +53,7 @@ jobs:
       - name: Run selection experiment
         run: node scripts/selection-experiment.mjs
         env:
+          USAGE_OUT: ${{ runner.temp }}/usage-run.json
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
           PUBMED_API_KEY:          ${{ secrets.PUBMED_API_KEY }}
@@ -71,3 +72,14 @@ jobs:
           name: selection-experiment
           path: output/experiments/
           if-no-files-found: ignore
+
+      # 사용량 장부 적재 — 이 워크플로우도 LLM을 태운다(공용 액션).
+      - name: Append usage to tower ledger
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        uses: ./.github/actions/append-usage
+        with:
+          token: ${{ secrets.GC_USAGE_TOKEN }}
+          task: selection-experiment
+          usage-file: ${{ runner.temp }}/usage-run.json

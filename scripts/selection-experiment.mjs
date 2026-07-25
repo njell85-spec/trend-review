@@ -24,6 +24,11 @@ import { LLMClient } from '../src/utils/LLMClient.js';
 import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
+import { installUsageDump } from '../src/utils/usageDump.js';
+
+// 이 스크립트도 LLM을 태우므로 사용량을 타워 장부용으로 떨군다(USAGE_OUT 지정 시에만).
+installUsageDump();
+
 const MAX = Number(process.env.EXP_MAX ?? 300);
 const CHUNK = Number(process.env.EXP_CHUNK ?? 30);
 const USE_LLM = (process.env.EXP_LLM ?? '1') !== '0'; // 0 = 결정적 재랭킹만(빠름, LLM 없음)
