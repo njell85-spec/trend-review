@@ -2599,6 +2599,270 @@
       "arm2": null,
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-26",
+      "arm1": {
+        "pmid": "42498336",
+        "title_ko": "중증 감염 위중 환자의 수액 및 전해질 관리",
+        "clinicalQuestion": "How should fluid and electrolyte balance be managed in critically ill patients with severe infections such as sepsis, septic shock, or multiorgan dysfunction syndrome?",
+        "clinicalQuestion_ko": "패혈증, 패혈성 쇼크, 또는 다발성 장기 기능부전 증후군(MODS)을 동반한 중증 감염 환자에서 수액 및 전해질 균형을 어떻게 관리해야 하는가?",
+        "pico": {
+          "population": "[Country NR] Critically ill patients with severe infections, including those with sepsis, septic shock, or multiorgan dysfunction syndrome, who struggle to maintain fluid balance due to increased capillary permeability, inflammation, vasodilation, and organ dysfunction. No specific sample size, age range, or study dates are reported (narrative review, not a primary study).",
+          "intervention": "Fluid and electrolyte management strategies in the setting of infectious disease care, supported by skilled nursing, advanced monitoring, and continuous education; the review also discusses challenges from antimicrobial resistance, drug stewardship, and infection control.",
+          "comparison": null,
+          "outcome": "Complications, morbidity, and mortality associated with inadequate fluid balance in critically ill infected patients. No effect sizes, odds ratios, hazard ratios, confidence intervals, or p-values are reported in the abstract."
+        },
+        "pico_ko": {
+          "population": "[국가 미기재] 증가된 모세혈관 투과성, 염증, 혈관확장, 장기 기능부전으로 인해 수액 균형 유지에 어려움을 겪는 패혈증·패혈성 쇼크·다발성 장기 기능부전 증후군(MODS) 등 중증 감염 위중 환자군. 구체적인 표본 수, 연령대, 연구 기간은 보고되지 않음(1차 연구가 아닌 서술적 리뷰).",
+          "intervention": "감염 질환 치료 상황에서의 수액 및 전해질 관리 전략으로, 숙련된 간호, 첨단 모니터링, 지속적 교육이 뒷받침됨. 이 리뷰는 항균제 내성, 항생제 스튜어드십, 감염 관리로 인한 추가적 어려움도 함께 다룸.",
+          "comparison": null,
+          "outcome": "중증 감염 위중 환자에서 부적절한 수액 균형과 관련된 합병증, 이환율, 사망률. 초록에는 효과크기, OR, HR, 95% CI, p-value 등이 보고되지 않음."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [],
+        "secondaryOutcomes_ko": [],
+        "statGlossary": [],
+        "practiceChange": [
+          "Use structured, protocol-driven fluid and electrolyte assessment (rather than ad hoc dosing) in septic/septic shock patients, given that increased capillary permeability and vasodilation alter fluid distribution and volume status.",
+          "Pair fluid/electrolyte management with advanced hemodynamic and electrolyte monitoring and ongoing nursing education to reduce complications tied to fluid imbalance in this population.",
+          "Coordinate fluid/electrolyte decisions with antimicrobial stewardship and infection-control practices, since the review frames these as interconnected challenges in infected critically ill patients."
+        ],
+        "practiceChange_ko": [
+          "패혈증·패혈성 쇼크 환자에서는 임의적인 투여보다 구조화된 프로토콜 기반의 수액·전해질 평가를 적용한다. 모세혈관 투과성 증가와 혈관확장이 체액 분포와 용적 상태를 변화시키기 때문이다.",
+          "수액·전해질 관리와 함께 첨단 혈역학·전해질 모니터링, 지속적인 간호 교육을 병행하여 이 환자군에서 수액 불균형과 관련된 합병증을 줄인다.",
+          "리뷰가 항균제 스튜어드십, 감염 관리와 수액·전해질 관리를 상호 연관된 과제로 다루고 있으므로, 관련 결정을 조율한다."
+        ],
+        "keyFindings": [
+          "Sepsis, septic shock, and multiorgan dysfunction syndrome impair fluid balance via increased capillary permeability, inflammation, vasodilation, and organ dysfunction (no quantitative data reported in the abstract).",
+          "Inadequate fluid balance is associated with increased complications, morbidity, and mortality in this population, per the review; specific effect sizes are not reported.",
+          "Optimizing outcomes requires skilled nursing, advanced monitoring, and continuous education, particularly given added complexity from antimicrobial resistance, drug stewardship, and infection control."
+        ],
+        "keyFindings_ko": [
+          "패혈증, 패혈성 쇼크, 다발성 장기 기능부전 증후군은 모세혈관 투과성 증가, 염증, 혈관확장, 장기 기능부전을 통해 수액 균형을 저해한다(초록에 정량적 데이터 없음).",
+          "리뷰에 따르면 부적절한 수액 균형은 이 환자군에서 합병증, 이환율, 사망률 증가와 관련이 있으나, 구체적인 효과크기는 보고되지 않음.",
+          "예후 최적화를 위해서는 숙련된 간호, 첨단 모니터링, 지속적 교육이 필요하며, 항균제 내성·항생제 스튜어드십·감염 관리로 인한 복잡성 증가가 이를 더욱 요구한다."
+        ],
+        "clinicalTakeaway": "This is a narrative educational review, not a primary study — it reports no new quantitative findings and should be read as a reminder of established principles rather than practice-changing evidence. It reinforces that fluid/electrolyte management in septic, critically ill patients must account for capillary leak and vasodilation, and that nursing-driven monitoring, protocols, and education remain central to reducing complications in this population.",
+        "clinicalTakeaway_ko": "이 논문은 1차 연구가 아닌 서술적 교육용 리뷰로, 새로운 정량적 데이터를 제시하지 않으며 진료 방침을 바꿀 근거라기보다 기존 원칙을 재확인하는 자료로 봐야 한다. 패혈증을 동반한 중증 환자의 수액·전해질 관리는 모세혈관 누출과 혈관확장을 고려해야 하며, 간호 주도의 모니터링·프로토콜·교육이 이 환자군의 합병증 감소에 핵심적임을 강조한다.",
+        "limitations": "This is a narrative/educational review article (Critical Care Nursing Clinics of North America review series), not a systematic review, meta-analysis, or clinical trial. The abstract reports no sample size, defined population parameters, comparator, or measured outcome statistics, so no GRADE-quality quantitative evidence assessment is possible. Full text was unavailable (paywalled via Elsevier/ScienceDirect), so it could not be verified whether the full article cites specific primary studies, guidelines, or evidence tables beyond the general abstract content.",
+        "limitations_ko": "이 논문은 체계적 문헌고찰, 메타분석, 임상시험이 아닌 서술적/교육적 리뷰 논문(Critical Care Nursing Clinics of North America 리뷰 시리즈)이다. 초록에는 표본 수, 구체적 인구집단 특성, 비교군, 측정 결과 통계가 보고되지 않아 GRADE 기반의 정량적 근거 평가가 불가능하다. 전문(全文)은 Elsevier/ScienceDirect 유료 접근으로 확인할 수 없어, 본문이 구체적인 1차 연구·가이드라인·근거표를 인용하는지 여부는 검증하지 못했다.",
+        "evidenceLevel": "Very Low",
+        "clinicalApplicabilityScore": 3,
+        "webSources": [
+          {
+            "label": "PubMed — Fluid and Electrolyte Management in Critically Ill Patients with Infections (PMID 42498336)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498336/"
+          },
+          {
+            "label": "Elsevier/ScienceDirect article page (DOI 10.1016/j.cnc.2026.04.007)",
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0899588526000328"
+          }
+        ],
+        "paper": {
+          "pmid": "42498336",
+          "title": "Fluid and Electrolyte Management in Critically Ill Patients with Infections.",
+          "abstract": "Fluid and electrolyte management is a crucial component of care in critically ill patients with severe infections. Patients with sepsis, septic shock, or multiorgan dysfunction syndrome struggle to maintain fluid balance due to increased capillary permeability, inflammation, vasodilation, and organ dysfunction. Inadequate fluid balance can increase complications, morbidity, and mortality. Fluid management is complex because sepsis disrupts vascular permeability, tissue perfusion, and cellular function. Infectious disease care is further challenged by antimicrobial resistance, drug stewardship, and infection control. Skilled nursing, advanced monitoring, and continuous education are essential to optimize outcomes and ensure high-quality management in this vulnerable population.",
+          "authors": [
+            "Wuertz KC",
+            "Holdridge A"
+          ],
+          "journal": "Critical care nursing clinics of North America",
+          "pubDate": "2026-Sep",
+          "publicationTypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Critical Illness",
+            "Fluid Therapy",
+            "Water-Electrolyte Balance",
+            "Sepsis",
+            "Water-Electrolyte Imbalance"
+          ],
+          "keywords": [
+            "Critical illness",
+            "Electrolyte imbalance",
+            "Fluid resuscitation",
+            "Infection",
+            "Intensive care",
+            "Nursing management",
+            "Sepsis"
+          ],
+          "doi": "10.1016/j.cnc.2026.04.007",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42498336/",
+          "collectedAt": "2026-07-25T23:58:13.668Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42498336",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498336/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.cnc.2026.04.007",
+            "url": "https://doi.org/10.1016/j.cnc.2026.04.007"
+          },
+          {
+            "label": "웹 — PubMed — Fluid and Electrolyte Management in Critically Ill Patients with Infections (PMID 42498336)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498336/"
+          },
+          {
+            "label": "웹 — Elsevier/ScienceDirect article page (DOI 10.1016/j.cnc.2026.04.007)",
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0899588526000328"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "42087223",
+        "title_ko": "비외상성 병원 밖 심정지 환자에서 병원 전 대동맥풍선폐쇄술(REBOA): 국제 다기관, 공개표지, 실용적 무작위대조시험(REBOARREST)",
+        "clinicalQuestion": "In adult patients with non-traumatic out-of-hospital cardiac arrest, does prehospital resuscitative endovascular balloon occlusion of the aorta (REBOA) as an adjunct to advanced life support (ALS) increase the rate of sustained return of spontaneous circulation (ROSC) compared with ALS alone?",
+        "clinicalQuestion_ko": "비외상성 병원 밖 심정지가 발생한 성인 환자에서, ALS(전문소생술)에 병원 전 REBOA(대동맥 내 풍선폐쇄술)를 보조적으로 시행하는 것이 ALS 단독 시행에 비해 지속적 ROSC(자발순환회복) 비율을 증가시키는가?",
+        "pico": {
+          "population": "[International (Norway, Denmark, Italy)] Adult patients (18-80 years) with non-traumatic out-of-hospital cardiac arrest at 12 sites; from June 7, 2021, to June 28, 2025, 200 patients were randomly assigned; 21 dropped out due to lack of consent, leaving 179 patients (88 intervention, 91 control) analyzed. Most patients were male (76%), median age 68 years (IQR 58-74). Median time from arrest to randomisation was 33 min (IQR 23-39) intervention vs 29 min (IQR 23-38) control.",
+          "intervention": "Prehospital resuscitative endovascular balloon occlusion of the aorta (REBOA) as an adjunct to advanced life support (ALS), with occlusion performed in the thoracic aorta. Median randomisation-to-occlusion time was 14 min (IQR 11-16); 51 of 88 intervention patients (58%) actually underwent aortic occlusion, with successful cannulation in 51 of 65 attempted procedures (78%).",
+          "comparison": "Advanced life support (ALS) alone (control group, n=91).",
+          "outcome": "Primary outcome — sustained ROSC (≥20 min), intention-to-treat: 25 of 88 patients (28%) intervention vs 24 of 91 patients (26%) control; adjusted risk difference 1.8% (95% CI -11 to 15), p = 0.78 — not statistically significant."
+        },
+        "pico_ko": {
+          "population": "[다국가 (노르웨이·덴마크·이탈리아)] 12개 기관에서 발생한 비외상성 병원 밖 심정지 성인 환자(18-80세) 대상. 2021년 6월 7일부터 2025년 6월 28일까지 200명이 무작위 배정되었고, 동의 철회로 21명이 탈락하여 179명(중재군 88명, 대조군 91명)이 분석 대상. 남성 76%, 중앙연령 68세(IQR 58-74). 심정지 발생부터 무작위배정까지 시간 중앙값은 중재군 33분(IQR 23-39), 대조군 29분(IQR 23-38).",
+          "intervention": "ALS(전문소생술)에 병원 전 흉부 대동맥 REBOA(대동맥 내 풍선폐쇄술)를 보조적으로 시행. 무작위배정부터 풍선폐쇄까지 중앙값 14분(IQR 11-16); 중재군 88명 중 51명(58%)만 실제 대동맥 폐쇄를 시행받았고, 시술 시도 65건 중 51건(78%)에서 삽관 성공.",
+          "comparison": "ALS(전문소생술) 단독 시행군(대조군, n=91).",
+          "outcome": "1차 결과 — 지속적 ROSC(≥20분), intention-to-treat 분석: 중재군 25/88명(28%) vs 대조군 24/91명(26%); 보정 위험차(adjusted risk difference) 1.8%(95% CI -11~15), p=0.78 — 통계적으로 유의하지 않음."
+        },
+        "baseline": "Balanced",
+        "secondaryOutcomes": [
+          "Modified Rankin Scale (mRS) 0-3 at 30 days: 5 of 88 patients (6%) intervention vs 3 of 91 patients (3%) control; adjusted risk difference 2% (95% CI -4 to 8), p = 0.47.",
+          "30-day survival: 6 of 88 patients (7%) intervention vs 6 of 91 patients (7%) control — no difference between groups.",
+          "End-tidal CO2 (EtCO2) increased significantly after aortic occlusion (p = 0.003), confirming a physiological effect of REBOA on proximal perfusion."
+        ],
+        "secondaryOutcomes_ko": [
+          "30일 시점 Modified Rankin Scale(mRS) 0-3점: 중재군 5/88명(6%) vs 대조군 3/91명(3%); 보정 위험차(aRD) 2%(95% CI -4~8), p=0.47.",
+          "30일 생존율: 중재군 6/88명(7%) vs 대조군 6/91명(7%)로 두 군 간 차이 없음.",
+          "대동맥 폐쇄 후 EtCO2(호기말 이산화탄소분압)가 유의하게 상승(p=0.003)하여, REBOA의 근위부 관류 증가라는 생리학적 효과는 확인됨."
+        ],
+        "statGlossary": [
+          {
+            "term": "Adjusted risk difference (aRD)",
+            "explanation_ko": "두 군 간 사건 발생률의 차이를 다른 요인으로 보정하여 산출한 값(%p 단위). 예: 1차 결과의 aRD 1.8% (95% CI -11~15) → REBOA군이 대조군보다 지속적 ROSC 발생률이 산술적으로 1.8%포인트 높았으나, 신뢰구간이 0을 포함해 실제 차이가 없을 가능성을 배제할 수 없음."
+          },
+          {
+            "term": "95% CI (95% 신뢰구간)",
+            "explanation_ko": "참값이 존재할 것으로 95% 확신할 수 있는 범위. 예: 1차 결과 95% CI가 -11~15로 0을 포함하므로 통계적으로 유의한 차이라고 볼 수 없음."
+          },
+          {
+            "term": "p-value",
+            "explanation_ko": "귀무가설(두 군 간 차이 없음)이 참일 때 관찰된 정도 이상의 차이가 우연히 나타날 확률. 예: 1차 결과 p=0.78로 통상 유의수준(0.05)보다 훨씬 커서 REBOA 효과가 있다고 결론지을 수 없음."
+          }
+        ],
+        "practiceChange": [
+          "Do not adopt routine prehospital REBOA for non-traumatic OHCA outside of research protocols — despite being technically feasible, it did not significantly increase sustained ROSC (28% vs 26%, aRD 1.8%, 95% CI -11 to 15, p = 0.78).",
+          "Recognize that only 58% of the intervention group actually reached aortic occlusion, with a median randomisation-to-occlusion time of 14 minutes — real-world deployment timing constraints should be factored into any future protocol design or trial interpretation.",
+          "The confirmed safety profile (feasible with a two-person team, low procedure time, physiological effect on EtCO2) supports continued mechanistic/physiological research into REBOA during cardiac arrest, but current evidence does not justify changing ALS-alone prehospital cardiac arrest protocols."
+        ],
+        "practiceChange_ko": [
+          "비외상성 OHCA에서 병원 전 REBOA를 연구 프로토콜 밖에서 일상적으로 도입하지 말 것 — 기술적으로 시행 가능했으나 지속적 ROSC를 유의하게 증가시키지 못함(28% vs 26%, aRD 1.8%, 95% CI -11~15, p=0.78).",
+          "중재군 중 실제로 대동맥 폐쇄까지 도달한 경우는 58%에 불과했고, 무작위배정부터 폐쇄까지 중앙값 14분이 소요됨을 인지할 것 — 향후 프로토콜 설계나 연구 해석 시 실제 현장 시행 시간 제약을 고려해야 함.",
+          "안전성(2인 팀으로 시행 가능, 짧은 시술 시간, EtCO2 상승 등 생리학적 효과 확인)은 입증되었으므로 REBOA의 기전·생리학 연구는 지속할 가치가 있으나, 현재 근거로는 ALS 단독 병원 전 심정지 프로토콜을 변경할 근거가 되지 않음."
+        ],
+        "keyFindings": [
+          "Prehospital REBOA as an adjunct to ALS did not significantly increase sustained ROSC (≥20 min): 28% (25/88) intervention vs 26% (24/91) control; adjusted risk difference 1.8% (95% CI -11 to 15), p = 0.78.",
+          "Secondary outcomes were similarly non-significant: mRS 0-3 at 30 days 6% vs 3% (aRD 2%, 95% CI -4 to 8, p = 0.47); 30-day survival 7% in both groups.",
+          "REBOA was feasible and safe: median randomisation-to-occlusion time 14 min (IQR 11-16), cannulation succeeded in 78% of attempted procedures, and EtCO2 rose significantly after aortic occlusion (p = 0.003); adverse events were registered in 19 patients overall."
+        ],
+        "keyFindings_ko": [
+          "ALS 보조 요법으로서의 병원 전 REBOA는 지속적 ROSC(≥20분)를 유의하게 증가시키지 못함: 중재군 28%(25/88) vs 대조군 26%(24/91); 보정 위험차 1.8%(95% CI -11~15), p=0.78.",
+          "2차 결과 역시 유의한 차이 없음: 30일 mRS 0-3점 6% vs 3%(aRD 2%, 95% CI -4~8, p=0.47); 30일 생존율 양 군 모두 7%.",
+          "REBOA는 시행 가능하고 안전했음: 무작위배정-폐쇄 시간 중앙값 14분(IQR 11-16), 시도된 시술 중 78%에서 삽관 성공, 대동맥 폐쇄 후 EtCO2 유의하게 상승(p=0.003); 전체 19명에서 이상반응 등록됨."
+        ],
+        "clinicalTakeaway": "Prehospital REBOA can be deployed safely and rapidly by a two-person team during resuscitation for non-traumatic OHCA, and it produces the expected physiological effect (increased EtCO2 after occlusion). However, this trial found no significant benefit for sustained ROSC, 30-day survival, or 30-day neurological outcome compared with ALS alone, so it should not be adopted into routine prehospital cardiac arrest care outside of research settings.",
+        "clinicalTakeaway_ko": "병원 전 REBOA는 비외상성 OHCA 소생술 중 2인 팀으로 안전하고 신속하게 시행 가능하며, 폐쇄 후 EtCO2 상승과 같은 기대된 생리학적 효과도 나타났다. 그러나 본 연구에서는 ALS 단독과 비교해 지속적 ROSC, 30일 생존율, 30일 신경학적 결과 모두에서 유의한 이득을 보이지 못했으므로, 연구 목적 외 일상 병원 전 심정지 진료에 도입해서는 안 된다.",
+        "limitations": "Only 58% of the intervention group actually underwent aortic occlusion (51/88), diluting the intention-to-treat effect estimate relative to a true per-protocol effect. Median time from arrest to randomisation was already 29-33 minutes, and occlusion occurred a further 14 minutes later, likely beyond the window in which augmenting aortic/coronary perfusion pressure could meaningfully rescue myocardium or brain. The open-label design (no blinding of on-scene clinicians, only the analyzing statistician was blinded) and physician-determined eligibility with sealed-envelope allocation may introduce selection or performance bias. Of 200 randomised, only 179 were analyzed after 21 consent-related dropouts, and the trial's sample size may be underpowered to detect a true modest treatment effect on ROSC or secondary neurological/survival outcomes given the wide confidence intervals reported.",
+        "limitations_ko": "중재군 중 실제로 대동맥 폐쇄까지 시행된 경우는 58%(51/88)에 불과해, intention-to-treat 효과 추정치가 실제 per-protocol 효과보다 희석되었을 가능성이 있음. 심정지 발생부터 무작위배정까지 이미 29-33분이 소요되었고, 폐쇄는 그로부터 14분이 더 지난 후 이루어져 대동맥·관상동맥 관류압 증가가 심근이나 뇌를 실질적으로 구제할 수 있는 시간대를 이미 지났을 가능성이 있음. 공개표지 설계(현장 임상의는 눈가림되지 않았고 분석 통계학자만 눈가림됨)와 의사가 적격성을 판단하고 밀봉봉투로 배정하는 방식은 선택·수행 편향을 유발할 수 있음. 200명 중 동의 관련 탈락 21명을 제외한 179명만 분석되었고, 보고된 넓은 신뢰구간을 고려할 때 ROSC 및 2차 신경학적·생존 결과에서 실제 존재할 수 있는 완만한 치료 효과를 검출하기에 검정력이 부족했을 가능성이 있음.",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 3,
+        "webSources": [
+          {
+            "label": "PubMed — REBOARREST results paper (PMID 42087223)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42087223/"
+          },
+          {
+            "label": "PMC full text — REBOARREST results paper (PMC13289542)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13289542/"
+          },
+          {
+            "label": "NCBI E-utilities esummary — bibliographic confirmation (PMID/DOI/PMCID)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42087223&retmode=json"
+          }
+        ],
+        "paper": {
+          "pmid": "42087223",
+          "title": "Prehospital resuscitative endovascular balloon occlusion of the aorta in non-traumatic out-of-hospital cardiac arrest (REBOARREST): an international, multicentre, open label, pragmatic, randomised, controlled trial.",
+          "abstract": "BACKGROUND: Most patients with out-of-hospital cardiac arrest do not achieve sustained return of spontaneous circulation (ROSC). Resuscitative endovascular balloon occlusion of the aorta (REBOA) may increase blood pressure proximal to the ballon. If this technique is used during advanced life support (ALS), and occlusion is performed in the thoracic aorta, it may augment aortic pressure and coronary perfusion pressure. We investigated whether prehospital REBOA as an adjunct to ALS increased the rate of ROSC.\nMETHODS: REBOARREST was a pragmatic, parallel-group, multicentre, randomised controlled trial conducted at 12 sites in Norway, Denmark, and Italy. Adult patients (18-80 years) with non-traumatic out-of-hospital cardiac arrest were randomly assigned (1:1) to either a control group that received ALS or to an intervention group that received ALS combined with REBOA as an adjunct. Fulfilment of eligibility criteria was determined by the physician on scene and sealed envelopes were used to allocate patients. The statistician that performed the analyses was blinded for group allocation. The primary outcome was sustained ROSC, defined as lasting ≥ 20 min, assessed in the intention-to-treat population.\nRESULTS: From June 7, 2021, to June 28, 2025, 200 patients were randomly assigned to the study groups. Due to lack of consent 21 patients dropped out of the trial, hence data from 179 patients are presented, 88 in the intervention group and 91 in the control group. Most patients were male (76%), with median age of 68 years (IQR 58-74). Median time from arrest to randomisation was 33 min (IQR 23-39) in the intervention group and 29 min (IQR 23-38) in the control group. Twenty-five of 88 patients (28%) in the intervention group and 24 of 91 patients (26%) in the control group achieved sustained ROSC (adjusted risk difference 1.8% [-11, 15, 95% CI], p = 0.78). Adverse events were registered in 19 patients.\nCONCLUSIONS: Among patients with non-traumatic out-of-hospital cardiac arrest, a strategy of prehospital deployment of REBOA as an adjunct to ALS was feasible but did not significantly improve rates of sustained ROSC compared to ALS alone. Deployment of prehospital REBOA is safe and manageable in a two-person team with low procedure time.\nTRIAL REGISTRATION: Clinicaltrials.gov ID NCT04596514. Registered 22.10.2020.",
+          "authors": [
+            "Brede JR",
+            "Farbu BH",
+            "Gamberini L",
+            "Thorsen K",
+            "Rehn M",
+            "Rognås L"
+          ],
+          "journal": "Critical care (London, England)",
+          "pubDate": "2026-May-05",
+          "publicationTypes": [
+            "Journal Article",
+            "Randomized Controlled Trial",
+            "Multicenter Study",
+            "Pragmatic Clinical Trial"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Out-of-Hospital Cardiac Arrest",
+            "Balloon Occlusion",
+            "Male",
+            "Middle Aged",
+            "Emergency Medical Services",
+            "Female",
+            "Aged",
+            "Adult",
+            "Aged, 80 and over"
+          ],
+          "keywords": [
+            "Aortic occlusion. REBOA. Advanced cardiovascular life support. Return of spontaneous circulation."
+          ],
+          "doi": "10.1186/s13054-026-06057-y",
+          "pmcid": "PMC13289542",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42087223/",
+          "collectedAt": "2026-07-26T00:04:57.373Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42087223",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42087223/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1186/s13054-026-06057-y",
+            "url": "https://doi.org/10.1186/s13054-026-06057-y"
+          },
+          {
+            "label": "웹 — PubMed — REBOARREST results paper (PMID 42087223)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42087223/"
+          },
+          {
+            "label": "웹 — PMC full text — REBOARREST results paper (PMC13289542)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13289542/"
+          },
+          {
+            "label": "웹 — NCBI E-utilities esummary — bibliographic confirmation (PMID/DOI/PMCID)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42087223&retmode=json"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
