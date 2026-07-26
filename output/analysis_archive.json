@@ -999,6 +999,63 @@
       "fullTextSource": "abstract-only",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-27",
+      "pmid": "42377086",
+      "title": "A study on the prognosis of patients with sepsis or septic shock based on plasma proenkephalin levels: a meta-analysis.",
+      "title_ko": "혈장 proenkephalin(pro-ENK) 수치에 근거한 패혈증 또는 패혈성 쇼크 환자의 예후 연구: 메타분석",
+      "journal": "Biomarkers : biochemical indicators of exposure, response, and susceptibility to chemicals",
+      "doi": "10.1080/1354750X.2026.2697747",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "패혈증 또는 패혈성 쇼크 환자에서 혈장 proenkephalin(pro-ENK/penKid) 수치가 나쁜 예후, 특히 acute kidney injury(AKI)와 사망을 예측하는가?",
+      "pico": {
+        "population": "[Country NR] Patients with sepsis or septic shock, drawn from 9 cohort studies with sample sizes ranging from 40 to 956 participants per study; databases (PubMed, Embase, Cochrane Library, Web of Science) searched from database establishment to June 16, 2025.",
+        "intervention": "Plasma/serum pro-enkephalin (pro-ENK, penKid) levels as a prognostic biomarker for risk stratification.",
+        "comparison": "AKI group vs. non-AKI group, and non-survivor group vs. survivor group among patients with sepsis or shock.",
+        "outcome": "Higher pro-ENK levels in the non-survivor group among patients with sepsis or shock (SMD: 0.85, 95% CI: 0.60–1.10)."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 패혈증 또는 패혈성 쇼크 환자로, 연구당 표본 크기 40~956명 범위의 cohort study 9편에서 도출; 데이터베이스(PubMed, Embase, Cochrane Library, Web of Science)를 구축 시점부터 2025년 6월 16일까지 검색.",
+        "intervention": "위험 층화를 위한 예후 biomarker로서의 혈장/혈청 pro-enkephalin(pro-ENK, penKid) 수치.",
+        "comparison": "AKI군 대 비AKI군, 그리고 패혈증 또는 쇼크 환자 중 non-survivor군 대 survivor군.",
+        "outcome": "패혈증 또는 쇼크 환자 중 non-survivor군에서 pro-ENK 수치가 더 높음(SMD: 0.85, 95% CI: 0.60–1.10)."
+      },
+      "keyFindings": [
+        "In 9 cohort studies (40–956 participants each), pro-ENK levels were markedly higher in the AKI group vs. non-AKI group among sepsis/shock patients (SMD: 1.82, 95% CI: 1.26–2.39).",
+        "Pro-ENK levels were higher in non-survivors than survivors with sepsis or shock (SMD: 0.85, 95% CI: 0.60–1.10).",
+        "Higher penKid levels were associated with AKI occurrence (OR: 2.50, 95% CI: 2.02–2.99)."
+      ],
+      "keyFindings_ko": [
+        "cohort study 9편(각 40~956명)에서 패혈증/쇼크 환자 중 AKI군의 pro-ENK 수치가 비AKI군보다 뚜렷하게 높음(SMD: 1.82, 95% CI: 1.26–2.39).",
+        "패혈증 또는 쇼크 환자에서 non-survivor의 pro-ENK 수치가 survivor보다 높음(SMD: 0.85, 95% CI: 0.60–1.10).",
+        "penKid 수치가 높을수록 AKI 발생과 연관됨(OR: 2.50, 95% CI: 2.02–2.99)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42377086",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42377086/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1080/1354750X.2026.2697747",
+          "url": "https://doi.org/10.1080/1354750X.2026.2697747"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42377086",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42377086/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 42377086",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42377086/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
