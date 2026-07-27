@@ -2863,6 +2863,289 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-27",
+      "arm1": {
+        "pmid": "42377086",
+        "title_ko": "혈장 프로엔케팔린 수치에 기반한 패혈증/패혈성 쇼크 환자의 예후에 관한 연구: 메타분석",
+        "clinicalQuestion": "In patients with sepsis or septic shock, is plasma pro-enkephalin (pro-ENK) level associated with acute kidney injury (AKI) development and mortality?",
+        "clinicalQuestion_ko": "패혈증 또는 패혈성 쇼크 환자에서 혈장 pro-enkephalin(pro-ENK) 수치는 급성 신손상(AKI) 발생 및 사망률과 관련이 있는가?",
+        "pico": {
+          "population": "[Country NR] Cohort studies that examined the relationship between pro-ENK levels and poor prognosis in patients with sepsis or septic shock. Databases (PubMed, Embase, Cochrane Library, Web of Science) were searched from database establishment to June 16, 2025. 9 studies were included, with sample sizes ranging from 40 to 956 participants per study.",
+          "intervention": "Plasma pro-enkephalin (pro-ENK) level measurement, including the proenkephalin A 119-159 fragment (penKid), as a prognostic biomarker",
+          "comparison": "Patients with vs. without AKI; non-survivors vs. survivors among sepsis/septic shock patients",
+          "outcome": "Pro-ENK levels were higher in the AKI group among sepsis or shock patients (SMD: 1.82, 95% CI: 1.26-2.39); AKI occurrence was associated with penKid levels (OR: 2.50, 95% CI: 2.02-2.99)."
+        },
+        "pico_ko": {
+          "population": "[국가 미기재] pro-ENK 수치와 불량한 예후 간의 관계를 조사한 코호트 연구들. PubMed, Embase, Cochrane Library, Web of Science 데이터베이스를 구축 시점부터 2025년 6월 16일까지 검색. 9개 연구가 포함되었으며 연구별 표본 크기는 40명에서 956명까지 다양함.",
+          "intervention": "패혈증/패혈성 쇼크 환자에서 예후 바이오마커로서의 혈장 pro-enkephalin(pro-ENK) 수치 측정(proenkephalin A 119-159 조각인 penKid 포함)",
+          "comparison": "AKI 발생군 vs 비발생군; 패혈증/패혈성 쇼크 환자 중 비생존군 vs 생존군",
+          "outcome": "패혈증 또는 쇼크 환자에서 AKI군의 pro-ENK 수치가 더 높았음(SMD: 1.82, 95% CI: 1.26-2.39); AKI 발생은 penKid 수치와 관련이 있었음(OR: 2.50, 95% CI: 2.02-2.99)."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Pro-ENK levels were higher in the non-survivor group among patients with sepsis or shock (SMD: 0.85, 95% CI: 0.60-1.10)."
+        ],
+        "secondaryOutcomes_ko": [
+          "패혈증 또는 쇼크 환자 중 비생존군에서 pro-ENK 수치가 더 높았음(SMD: 0.85, 95% CI: 0.60-1.10)."
+        ],
+        "statGlossary": [
+          {
+            "term": "SMD",
+            "explanation_ko": "표준화 평균차: 서로 다른 측정단위를 쓴 연구들의 결과를 하나의 척도로 통합해 두 그룹 간 차이 크기를 나타낸 값. 예: SMD 1.82 → AKI군의 pro-ENK 수치가 비AKI군보다 매우 큰 폭으로 높음(0.8 이상이면 통상 '큰 효과크기'로 간주)."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 실제 값이 존재할 것으로 95% 확신하는 범위. 예: SMD 1.82의 95% CI 1.26-2.39 → 구간이 1을 넘어 0을 포함하지 않으므로 AKI군에서 pro-ENK가 더 높다는 결과가 통계적으로 의미있음."
+          },
+          {
+            "term": "OR",
+            "explanation_ko": "오즈비: 1보다 크면 해당 사건(여기서는 AKI 발생) 위험이 증가함을 의미. 예: OR 2.50 → penKid 수치가 높을수록 AKI 발생 오즈가 약 2.5배 높음(95% CI 2.02-2.99로 1을 포함하지 않아 통계적으로 유의)."
+          }
+        ],
+        "practiceChange": [
+          "Consider plasma pro-ENK (including penKid) as a potential adjunct biomarker for risk-stratifying AKI development in sepsis/septic shock patients, used alongside — not in place of — standard KDIGO criteria and renal function monitoring.",
+          "An elevated pro-ENK level may help flag sepsis/septic shock patients at higher risk of mortality for closer monitoring, but should not independently drive escalation-of-care decisions given the observational nature of the underlying data.",
+          "Do not yet adopt pro-ENK/penKid into routine clinical decision-making or order sets — validated assay cutoffs, prospective outcome trials, and clarification of heterogeneity/risk of bias across the pooled cohorts are needed first."
+        ],
+        "practiceChange_ko": [
+          "혈장 pro-ENK(penKid 포함)를 패혈증/패혈성 쇼크 환자의 AKI 위험 계층화를 위한 보조 바이오마커로 고려하되, 표준 KDIGO 기준 및 신기능 모니터링을 대체하지 않고 병행 활용한다.",
+          "pro-ENK 수치 상승은 사망 위험이 높은 패혈증/패혈성 쇼크 환자를 선별해 더 면밀히 모니터링하는 데 참고할 수 있으나, 관찰연구 기반 근거이므로 이 수치만으로 치료 강도 상향 결정을 내려서는 안 된다.",
+          "검증된 검사 cutoff, 전향적 결과 연구, 개별 코호트 간 이질성/비뚤림 위험 평가가 선행되기 전까지는 pro-ENK/penKid를 일상적 임상 의사결정이나 오더셋에 아직 도입하지 않는다."
+        ],
+        "keyFindings": [
+          "Meta-analysis of 9 cohort studies (sample sizes 40-956 per study) found pro-ENK levels significantly higher in the AKI group among sepsis/septic shock patients (SMD: 1.82, 95% CI: 1.26-2.39).",
+          "Pro-ENK levels were higher in the non-survivor group than survivors among sepsis/septic shock patients (SMD: 0.85, 95% CI: 0.60-1.10).",
+          "penKid levels were associated with AKI occurrence (OR: 2.50, 95% CI: 2.02-2.99)."
+        ],
+        "keyFindings_ko": [
+          "9개 코호트 연구(연구별 표본 크기 40-956명)를 종합한 메타분석에서, 패혈증/패혈성 쇼크 환자 중 AKI군의 pro-ENK 수치가 유의하게 더 높았음(SMD: 1.82, 95% CI: 1.26-2.39).",
+          "패혈증/패혈성 쇼크 환자 중 비생존군의 pro-ENK 수치가 생존군보다 더 높았음(SMD: 0.85, 95% CI: 0.60-1.10).",
+          "penKid 수치는 AKI 발생과 관련이 있었음(OR: 2.50, 95% CI: 2.02-2.99)."
+        ],
+        "clinicalTakeaway": "Pooled cohort data show a strong, consistent association between elevated plasma pro-ENK (and penKid) and both AKI development and mortality in sepsis/septic shock, supporting its potential role as an auxiliary prognostic biomarker. Clinicians should view this as hypothesis-supporting rather than practice-changing until prospective validation and standardized cutoffs are established.",
+        "clinicalTakeaway_ko": "종합된 코호트 데이터는 혈장 pro-ENK(및 penKid) 상승이 패혈증/패혈성 쇼크에서 AKI 발생 및 사망률과 강하고 일관된 연관성을 보임을 시사하며, 보조적 예후 바이오마커로서의 가능성을 뒷받침한다. 다만 전향적 검증과 표준화된 cutoff가 확립되기 전까지는 진료 변경의 근거라기보다 가설을 뒷받침하는 수준으로 봐야 한다.",
+        "limitations": "The abstract does not report heterogeneity (I2) statistics, publication bias assessment, or pooled NOS quality scores, limiting appraisal of study quality and consistency. Included study sample sizes varied widely (40-956 participants), suggesting potential clinical/methodological heterogeneity. All evidence derives from observational cohort studies, which are subject to confounding and cannot establish causality. Full text was not accessible for this review, so additional methodological details (e.g., country/setting of included studies, specific AKI definitions used, assay methods) could not be verified beyond the abstract.",
+        "limitations_ko": "초록에는 이질성(I2) 통계치, 출판 편향 평가, 통합 NOS 품질 점수가 보고되지 않아 연구 질과 일관성 평가에 제한이 있다. 포함된 연구들의 표본 크기가 40명에서 956명까지 크게 달라 임상적/방법론적 이질성이 존재할 가능성이 있다. 모든 근거가 관찰적 코호트 연구에서 도출되어 교란변수에 취약하고 인과관계를 입증할 수 없다. 이번 검토에서는 원문 전체에 접근할 수 없어 포함 연구의 국가/세팅, 구체적 AKI 정의, 검사 방법 등 추가 방법론적 세부사항은 초록 이상으로 확인하지 못했다.",
+        "evidenceLevel": "Low",
+        "clinicalApplicabilityScore": 4,
+        "webSources": [
+          {
+            "label": "PubMed abstract (PMID 42377086)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42377086/"
+          }
+        ],
+        "paper": {
+          "pmid": "42377086",
+          "title": "A study on the prognosis of patients with sepsis or septic shock based on plasma proenkephalin levels: a meta-analysis.",
+          "abstract": "BACKGROUND: Sepsis can induce multiple organ dysfunction, and its complications, such as acute kidney injury, are associated with poor prognoses. Serum pro-enkephalin (pro-ENK), as a stable biomarker, holds potential value for risk stratification and prognostic assessment in sepsis. This review aimed to investigate its value through a meta-analysis.\nMETHODS: Databases (PubMed, Embase, Cochrane Library, Web of Science) were searched from database establishment to June 16, 2025, and literature was screened according to the established PICOS principles. Cohort studies that examined the relationship between pro-ENK levels and poor prognosis were included. Data were extracted, and study quality was appraised via the NOS (Newcastle-Ottawa Scale) assessment tool. This meta-analysis was conducted using Stata 15.0.\nRESULTS: 9 studies were included, with sample sizes ranging from 40 to 956 participants per study. In sepsis or shock patients, pro-ENK levels were higher in the AKI group (SMD: 1.82, 95% CI: 1.26-2.39); pro-ENK levels were higher in the non-survivor group among patients with sepsis or shock (SMD: 0.85, 95% CI: 0.60-1.10). AKI occurrence was associated with penKid levels (OR: 2.50, 95% CI: 2.02-2.99).\nCONCLUSION: Current evidence identifies pro-ENK as an auxiliary biomarker for sepsis-related AKI and its prognosis and provides valuable insights for further clinical research.",
+          "authors": [
+            "Yang S",
+            "Zhou Z",
+            "Xie Y",
+            "Chen X"
+          ],
+          "journal": "Biomarkers : biochemical indicators of exposure, response, and susceptibility to chemicals",
+          "pubDate": "2026-Jul",
+          "publicationTypes": [
+            "Journal Article",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Protein Precursors",
+            "Enkephalins",
+            "Biomarkers",
+            "Prognosis",
+            "Shock, Septic",
+            "Sepsis",
+            "Acute Kidney Injury"
+          ],
+          "keywords": [
+            "Sepsis",
+            "acute kidney injury",
+            "plasma pro-enkephalin",
+            "septic shock"
+          ],
+          "doi": "10.1080/1354750X.2026.2697747",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42377086/",
+          "collectedAt": "2026-07-26T23:57:53.134Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42377086",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42377086/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1080/1354750X.2026.2697747",
+            "url": "https://doi.org/10.1080/1354750X.2026.2697747"
+          },
+          {
+            "label": "웹 — PubMed abstract (PMID 42377086)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42377086/"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "41887242",
+        "title_ko": "내독소성 패혈성 쇼크에서 Polymyxin B 혈액흡착 (Tigris): 다기관, 공개표지, 베이지안, 무작위배정, 대조, 3상 임상시험",
+        "clinicalQuestion": "In adults with septic shock, multiorgan dysfunction, and intermediate-to-high endotoxin activity (0.60-0.89 units), does polymyxin B haemoadsorption added to standard of care reduce 28-day and 90-day mortality compared with standard of care alone?",
+        "clinicalQuestion_ko": "패혈성 쇼크, 다발성 장기 기능장애, 그리고 endotoxin activity가 중간-고도(0.60-0.89 units)인 성인 환자에서, 표준 치료에 polymyxin B haemoadsorption을 추가하는 것이 표준 치료 단독군에 비해 28일 및 90일 사망률을 낮추는가?",
+        "pico": {
+          "population": "[USA] Adults (aged ≥18 years) with septic shock requiring vasopressors, with multiple organ dysfunction, and with endotoxin activity between 0.60 and 0.89 units, enrolled at 19 US hospitals. Between Sept 30, 2019, and April 10, 2025, we screened 14,890 patients, of whom 157 were enrolled (106 assigned to polymyxin B and 51 to control; 66 [42%] women and 91 [58%] men).",
+          "intervention": "Two sessions of polymyxin B haemoadsorption plus standard of care, given via haemodialysis at a blood flow rate of 80-120 mL/min for 90-120 min per session, 22 h apart.",
+          "comparison": "Standard of care alone (control). Patients were randomly assigned 2:1 to polymyxin B plus standard of care or control, with block randomisation stratified by site; study personnel were masked to treatment allocation.",
+          "outcome": "Primary outcome: 28-day mortality in the intention-to-treat cohort. At 28 days, 41 (39%) patients in the polymyxin B group and 23 (45%) in the control group had died, yielding a posterior probability of benefit of 95.3% (APACHE-II adjusted odds ratio 0.67 [95% credible interval 0.39-1.08])."
+        },
+        "pico_ko": {
+          "population": "[미국] 승압제가 필요한 패혈성 쇼크, 다발성 장기 기능장애가 있고 endotoxin activity가 0.60-0.89 units인 성인(18세 이상) 환자, 미국 19개 병원에서 등록. 2019년 9월 30일부터 2025년 4월 10일까지 14,890명을 선별하였고 이 중 157명이 등록되었다(polymyxin B군 106명, 대조군 51명; 여성 66명[42%], 남성 91명[58%]).",
+          "intervention": "표준 치료에 더해 polymyxin B haemoadsorption 2회 시행, 혈액투석 경로로 혈류속도 80-120 mL/min, 세션당 90-120분, 세션 간 22시간 간격으로 시행.",
+          "comparison": "표준 치료 단독(대조군). 환자들은 polymyxin B+표준 치료군과 대조군에 2:1로 무작위 배정되었으며, 기관(site)별로 층화된 블록 무작위배정을 사용하였고, 연구 인력(study personnel)은 치료 배정에 대해 눈가림되었다.",
+          "outcome": "1차 평가변수: intention-to-treat 코호트에서의 28일 사망률. 28일째 polymyxin B군에서 41명(39%), 대조군에서 23명(45%)이 사망하여 benefit에 대한 posterior probability 95.3%를 보였다(APACHE-II 보정 odds ratio 0.67 [95% credible interval 0.39-1.08])."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "90-day mortality (key secondary outcome): posterior probability of benefit 99.4%; APACHE-II adjusted odds ratio 0.54 (95% credible interval 0.32-0.87).",
+          "Safety cohort serious adverse events: 30 of 100 (30%) patients in the polymyxin B group vs 11 of 51 (22%) in the control group had a serious adverse event (difference -8 percentage points [95% CI -22 to 6]); 2 (2%) serious adverse events in the polymyxin B group were treatment-related (one related to polymyxin B, one to catheter placement)."
+        ],
+        "secondaryOutcomes_ko": [
+          "90일 사망률(핵심 2차 평가변수): benefit에 대한 posterior probability 99.4%; APACHE-II 보정 odds ratio 0.54 (95% credible interval 0.32-0.87).",
+          "안전성 코호트에서의 중대이상반응(serious adverse event): polymyxin B군 100명 중 30명(30%), 대조군 51명 중 11명(22%)에서 발생(차이 -8%p [95% CI -22 to 6]); polymyxin B군에서 치료 관련 중대이상반응은 2건(2%)이었다(1건은 polymyxin B 관련, 1건은 카테터 삽입 관련)."
+        ],
+        "statGlossary": [
+          {
+            "term": "posterior probability of benefit",
+            "explanation_ko": "베이지안 통계에서 사전 정보(prior)와 관찰된 데이터를 결합해 계산한, '치료가 실제로 이득이 있을 확률'. 예: 28일 posterior probability of benefit 95.3% → 관찰된 데이터를 반영했을 때 polymyxin B가 대조군보다 사망률을 낮출 확률이 95.3%라는 의미."
+          },
+          {
+            "term": "95% credible interval",
+            "explanation_ko": "베이지안 분석에서의 신뢰구간으로, 참값이 95% 확률로 포함될 것으로 추정되는 범위. 예: 28일 odds ratio 0.67의 95% credible interval이 0.39-1.08이므로 구간이 1을 포함해 무효 가능성도 배제할 수 없음."
+          },
+          {
+            "term": "odds ratio (OR)",
+            "explanation_ko": "오즈비: 1보다 작으면 사건(사망) 발생 위험 감소, 1보다 크면 증가를 의미. 예: 90일 사망 OR 0.54 → 대조군 대비 polymyxin B군의 사망 오즈가 약 46% 낮음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 값이 0을 포함하면 통계적으로 유의한 차이라고 확신하기 어려움. 예: 중대이상반응 발생률 차이 -8%p의 95% CI가 -22~6으로 0을 포함해 두 군 간 차이가 통계적으로 확실하지 않음."
+          }
+        ],
+        "practiceChange": [
+          "Consider polymyxin B haemoadsorption in septic shock patients with confirmed multiorgan dysfunction and an endotoxin activity assay (EAA) value strictly between 0.60 and 0.89, given a 95.3% posterior probability of 28-day mortality benefit and 99.4% at 90 days — but recognize the 28-day credible interval (0.39-1.08) still crosses 1.",
+          "Do not extend this therapy to septic shock patients who have not been tested with the EAA or whose activity falls outside the 0.60-0.89 range, since the trial specifically enriched for this endotype and broader applicability is unproven.",
+          "Before adopting polymyxin B haemoadsorption, ensure institutional capability for EAA testing and haemodialysis-based delivery, and counsel on the numerically higher serious adverse event rate in the polymyxin B group (30% vs 22%)."
+        ],
+        "practiceChange_ko": [
+          "다발성 장기 기능장애가 확인되고 endotoxin activity assay(EAA) 값이 정확히 0.60-0.89 범위인 패혈성 쇼크 환자에서는 polymyxin B haemoadsorption을 고려할 수 있다(28일 사망 이득에 대한 posterior probability 95.3%, 90일 99.4%) — 다만 28일 결과의 credible interval(0.39-1.08)이 여전히 1을 포함한다는 점을 인지해야 한다.",
+          "EAA 검사를 시행하지 않았거나 EAA 값이 0.60-0.89 범위를 벗어나는 패혈성 쇼크 환자에게는 이 치료를 확대 적용하지 말아야 한다. 본 시험은 이 특정 endotype에 맞춰 선택적으로 등록하였으므로 더 넓은 적용 가능성은 아직 입증되지 않았다.",
+          "polymyxin B haemoadsorption 도입 전 기관 내 EAA 검사 및 혈액투석 기반 시행 역량을 확보하고, polymyxin B군에서 수치상 더 높았던 중대이상반응 발생률(30% vs 22%)에 대해 사전에 설명해야 한다."
+        ],
+        "keyFindings": [
+          "In 157 patients with endotoxic septic shock (EAA 0.60-0.89) at 19 US hospitals, 28-day mortality was 39% (41/106) with polymyxin B vs 45% (23/51) with control, giving a 95.3% posterior probability of benefit (APACHE-II adjusted OR 0.67 [95% credible interval 0.39-1.08]).",
+          "At 90 days (key secondary outcome), the posterior probability of benefit rose to 99.4% (APACHE-II adjusted OR 0.54 [95% credible interval 0.32-0.87]).",
+          "Serious adverse events occurred in 30% (30/100) of the polymyxin B safety cohort vs 22% (11/51) of controls (difference -8 percentage points [95% CI -22 to 6]); only 2 (2%) were treatment-related in the polymyxin B group."
+        ],
+        "keyFindings_ko": [
+          "미국 19개 병원에서 등록된 내독소성 패혈성 쇼크 환자 157명(EAA 0.60-0.89) 중, 28일 사망률은 polymyxin B군 39%(41/106), 대조군 45%(23/51)였으며 benefit에 대한 posterior probability는 95.3%였다(APACHE-II 보정 OR 0.67 [95% credible interval 0.39-1.08]).",
+          "핵심 2차 평가변수인 90일 사망률에서는 benefit에 대한 posterior probability가 99.4%로 상승했다(APACHE-II 보정 OR 0.54 [95% credible interval 0.32-0.87]).",
+          "안전성 코호트에서 중대이상반응은 polymyxin B군 30%(30/100), 대조군 22%(11/51)에서 발생했으며(차이 -8%p [95% CI -22 to 6]), polymyxin B군에서 치료 관련 중대이상반응은 2건(2%)에 불과했다."
+        ],
+        "clinicalTakeaway": "In a carefully enriched population of septic shock patients with multiorgan dysfunction and endotoxin activity between 0.60 and 0.89, polymyxin B haemoadsorption showed a high Bayesian posterior probability of mortality benefit at both 28 and 90 days, though the 28-day credible interval still crossed 1. Clinicians should view this as promising but not yet definitive evidence, applicable only to patients who meet the trial's specific EAA-based enrichment criteria.",
+        "clinicalTakeaway_ko": "다발성 장기 기능장애와 endotoxin activity 0.60-0.89를 가진, 세심하게 선별된 패혈성 쇼크 환자군에서 polymyxin B haemoadsorption은 28일과 90일 모두 사망 이득에 대한 베이지안 posterior probability가 높게 나타났으나, 28일 결과의 credible interval은 여전히 1을 포함하였다. 임상의는 이를 유망하지만 아직 확정적이지 않은 근거로 간주해야 하며, 시험의 EAA 기반 선별 기준을 충족하는 환자에게만 적용해야 한다.",
+        "limitations": "The trial was open-label (only study personnel assessing outcomes were masked, not treating clinicians or patients), which could bias supportive care decisions. The sample size was small (n=157) for a mortality outcome, and the 28-day primary outcome's 95% credible interval (0.39-1.08) crossed 1, indicating residual uncertainty. The Bayesian design incorporated an informative prior derived from a subgroup of the earlier EUPHRATES trial, which could influence the posterior estimates. Enrollment required a specific endotoxin activity assay (EAA 0.60-0.89) and was conducted only at 19 US hospitals, limiting generalizability outside this enriched population and single-country setting. Serious adverse events were numerically more frequent in the polymyxin B group (30% vs 22%).",
+        "limitations_ko": "이 시험은 open-label로 진행되어(결과 평가를 담당하는 연구 인력만 눈가림되었고 치료 의료진과 환자는 눈가림되지 않음) 지지 치료(supportive care) 결정에 편향이 개입될 수 있다. 표본 크기가 사망률 평가변수 치고는 작았고(n=157), 28일 1차 평가변수의 95% credible interval(0.39-1.08)이 1을 포함하여 잔여 불확실성이 있다. 베이지안 설계는 이전 EUPHRATES 시험의 하위집단에서 도출한 informative prior를 사용하였는데, 이는 posterior 추정치에 영향을 줄 수 있다. 등록에는 특정 endotoxin activity assay(EAA 0.60-0.89) 결과가 필요했고 미국 19개 병원에서만 시행되어, 이 선별된 집단과 단일 국가 환경 밖으로의 일반화에는 제한이 있다. 중대이상반응은 polymyxin B군에서 수치상 더 많았다(30% vs 22%).",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 5.5,
+        "webSources": [
+          {
+            "label": "PubMed abstract (PMID 41887242)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41887242/"
+          },
+          {
+            "label": "Critical Care Reviews — Tigris trial summary/citation",
+            "url": "https://criticalcarereviews.com/2026/tigris-trial"
+          },
+          {
+            "label": "Icahn School of Medicine at Mount Sinai — publication record",
+            "url": "https://scholars.mssm.edu/en/publications/polymyxin-b-haemoadsorption-in-endotoxic-septic-shock-tigris-a-mu/"
+          },
+          {
+            "label": "PMC narrative review citing TIGRIS 90-day mortality data",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12751791/"
+          }
+        ],
+        "paper": {
+          "pmid": "41887242",
+          "title": "Polymyxin B haemoadsorption in endotoxic septic shock (Tigris): a multicentre, open-label, Bayesian, randomised, controlled, phase 3 trial.",
+          "abstract": "BACKGROUND: Endotoxic septic shock, a subset of septic shock with high endotoxin activity and multiorgan failure, is associated with high risk of death. We sought to identify the effect of endotoxin removal from the blood with polymyxin B haemoadsorption on mortality.\nMETHODS: We conducted an open-label, randomised, controlled, phase 3 trial at 19 US hospitals, enrolling adults (aged ≥18 years) with septic shock requiring vasopressors, with multiple organ dysfunction, and with endotoxin activity between 0·60 and 0·89 units. Patients were randomly assigned (2:1) to receive two sessions of polymyxin B plus standard of care or standard of care alone (control), with block randomisation stratified by site. Study personnel were masked to treatment allocation. Polymyxin B haemoadsorption was given via haemodialysis at a blood flow rate of 80-120 mL/min for 90-120 min per session, 22 h apart. The primary outcome was 28-day mortality in the intention-to-treat cohort. The safety cohort included all participants exposed to any amount of study treatment. Design and analysis followed a Bayesian framework, using a prior for the treatment effect based on a subgroup of the earlier EUPHRATES trial. 90-day mortality was the key secondary outcome. The trial was registered at ClinicalTrials.gov and is completed (NCT03901807).\nFINDINGS: Between Sept 30, 2019, and April 10, 2025, we screened 14 890 patients, of whom 157 were enrolled (106 assigned to polymyxin B and 51 to control; 66 [42%] women and 91 [58%] men). At 28 days, 41 (39%) patients in the polymyxin B group and 23 (45%) in the control group had died, yielding a posterior probability of benefit of 95·3% (APACHE-II adjusted odds ratio 0·67 [95% credible interval 0·39-1·08]). At 90 days, the posterior probability of benefit was 99·4% (0·54 [0·32-0·87]). Of 100 patients in the polymyxin B group assessed for safety, 30 (30%) had a serious adverse event compared with 11 (22%) of 51 patients in the control group (difference -8 percentage points [95% CI -22 to 6]). Two (2%) serious adverse events in the polymyxin B group were treatment-related, one related to polymyxin B and one to catheter placement.\nINTERPRETATION: In patients with endotoxic septic shock defined by high endotoxin activity and multiorgan failure, polymyxin B haemoadsorption was associated with a high probability of lower mortality at 28 days and 90 days.\nFUNDING: Spectral Medical.",
+          "authors": [
+            "Neyra JA",
+            "Legrand M",
+            "Tidswell MA",
+            "Al-Khafaji A",
+            "Galphin C",
+            "Rains R"
+          ],
+          "journal": "The Lancet. Respiratory medicine",
+          "pubDate": "2026-May",
+          "publicationTypes": [
+            "Journal Article",
+            "Multicenter Study",
+            "Clinical Trial, Phase III",
+            "Randomized Controlled Trial"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Polymyxin B",
+            "Shock, Septic",
+            "Female",
+            "Anti-Bacterial Agents",
+            "Male",
+            "Middle Aged",
+            "Aged",
+            "Bayes Theorem",
+            "Endotoxins"
+          ],
+          "keywords": [],
+          "doi": "10.1016/S2213-2600(26)00047-0",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41887242/",
+          "collectedAt": "2026-07-27T00:02:11.403Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41887242",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41887242/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S2213-2600(26)00047-0",
+            "url": "https://doi.org/10.1016/S2213-2600(26)00047-0"
+          },
+          {
+            "label": "웹 — PubMed abstract (PMID 41887242)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41887242/"
+          },
+          {
+            "label": "웹 — Critical Care Reviews — Tigris trial summary/citation",
+            "url": "https://criticalcarereviews.com/2026/tigris-trial"
+          },
+          {
+            "label": "웹 — Icahn School of Medicine at Mount Sinai — publication record",
+            "url": "https://scholars.mssm.edu/en/publications/polymyxin-b-haemoadsorption-in-endotoxic-septic-shock-tigris-a-mu/"
+          },
+          {
+            "label": "웹 — PMC narrative review citing TIGRIS 90-day mortality data",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12751791/"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
