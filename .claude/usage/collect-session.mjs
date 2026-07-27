@@ -40,6 +40,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
@@ -255,7 +256,31 @@ function main() {
   }
 
   mkdirSync(OUT_DIR, { recursive: true });
-  writeFileSync(path.join(OUT_DIR, `${sessionId}.json`), JSON.stringify(snapshot, null, 2) + '\n', 'utf8');
+  const outFile = path.join(OUT_DIR, `${sessionId}.json`);
+  writeFileSync(outFile, JSON.stringify(snapshot, null, 2) + '\n', 'utf8');
+  stageSnapshot(outFile);
+}
+
+/* 쓴 스냅샷을 곧바로 스테이징한다 (2026-07-27).
+ *
+ * 왜 필요한가: 각 repo 세션은 **자기 컨테이너**에서 돌고, 컨테이너는 회수된다. 타워는
+ * 나중에 GitHub에서 새로 클론해 걷으므로, 스냅샷이 **커밋돼 올라가지 않으면 통째로 유실**된다.
+ * 종전에는 "`git add`에 포함시킬 것"이라는 지침에만 기대고 있었다 — 세션이 잊으면 조용히
+ * 사라지고, 사라졌다는 사실조차 안 보인다(화면에는 "안 썼다"와 똑같이 나온다).
+ *
+ * 여기서 스테이징까지만 하면 그 세션이 무슨 커밋을 하든 딸려 올라간다. 커밋·푸시는
+ * 하지 않는다 — 세션의 커밋 타이밍과 메시지는 세션의 것이고, 훅이 멋대로 커밋을
+ * 만들면 그게 더 나쁘다.
+ *
+ * 실패는 전부 삼킨다: git이 없을 수도, repo가 아닐 수도, 다른 git 명령과 index.lock이
+ * 겹칠 수도 있다. 어느 경우든 **스냅샷 파일 자체는 이미 쓰였고**, 세션이 평소대로
+ * `git add`하면 그대로 올라간다. 훅을 깨뜨리면서까지 지킬 값어치는 없다. */
+function stageSnapshot(file) {
+  try {
+    spawnSync('git', ['add', '--', file], {
+      cwd: path.dirname(file), stdio: 'ignore', timeout: 5000,
+    });
+  } catch { /* 위 주석 참조 — 조용히 넘어간다 */ }
 }
 
 try {
