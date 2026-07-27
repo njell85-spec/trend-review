@@ -81,17 +81,68 @@ const PRICES = {
   'claude-sonnet-4-5': [3, 15],
   'claude-haiku-4-5': [1, 5],
 };
-const UNKNOWN_PRICE = [5, 25]; // 모르면 Opus급으로 보수적으로 잡는다(과소보고보다 낫다)
+/* 모르는 모델은 **표에서 가장 비싼 값**으로 잡는다 — 과소보고보다 과대보고가 낫기 때문이다.
+ * 종전에는 Opus급 [5,25]를 "보수적"이라고 썼는데, 표에 그보다 비싼 [10,50]이 이미 있어서
+ * 실제로는 절반으로 과소 계상하고 있었다(2026-07-27 Fable 검토). 표가 바뀌면 같이 따라가게
+ * 상수 대신 계산으로 둔다 — 단가를 하나 추가하고 이 줄을 잊는 날이 오기 때문이다. */
+const UNKNOWN_PRICE = Object.values(PRICES).reduce(
+  (max, p) => (p[0] > max[0] ? p : max), [0, 0]);
 const CACHE_WRITE_MULT = Number(process.env.USAGE_CACHE_WRITE_MULT || '2');
 
-/* 표면 — 기본은 `cloud`(클라우드 세션).
- * v3(데스크탑 로컬)는 별도 도구가 필요 없다: 로컬 Claude Code도 **같은 형식**의
- * 트랜스크립트를 `~/.claude/projects/`에 쓰므로 이 수집기가 그대로 동작한다.
- * 로컬에서 돌릴 때 `USAGE_SURFACE=local`만 주면 현황판에서 표면이 갈린다. */
+/** 스냅샷 스키마 판(版). 집계 규칙이 바뀌면 올린다 — 판이 높으면 병합에서 이긴다.
+ *  2 = message.id 중복 제거 + 서브에이전트 포함 (2026-07-27, 종전 대비 비용 약 -44%).
+ *  3 = 표면(surface)을 환경 신호로 판정 + CI 실행 제외 (2026-07-27 저녁).
+ *  이게 없으면 "턴 수가 큰 쪽이 이긴다"는 병합 규칙 때문에 **옛 스냅샷이 계속 이긴다.** */
+const SNAPSHOT_SCHEMA = 3;
+
+/* ---------------- 표면(surface) 판정 ----------------
+ * 어느 경로에서 태운 토큰인가. 장부 C1의 `surface` 칸에 그대로 들어간다.
+ *
+ * **기본값을 박아두지 않고 환경 신호로 판정한다** (2026-07-27 개정).
+ * 종전에는 기본이 `cloud`이고 "로컬에서 돌릴 때 USAGE_SURFACE=local만 주면 된다"였다.
+ * 그런데 그 한 줄을 **아무도 주지 않았다** — `Trend_Review_v2`(PeterJ 데스크탑에서 매일
+ * 도는 로컬 파이프라인)에 수집기를 배포했지만 `local-daily.ps1`에 그 환경변수가 없어서,
+ * 로컬 사용량이 전부 `cloud`로 적힐 참이었다. 설정을 잊으면 **틀린 값이 조용히 쌓이고
+ * 화면상으로는 정상으로 보인다** — 이 저장소가 반복해서 당한 실패 모양이다.
+ *
+ * 판정 근거는 관측된 사실이다: 클라우드 컨테이너에는 `CLAUDE_CODE_REMOTE=true`가 있고
+ * (2026-07-27 실측), PeterJ 데스크탑에는 없다.
+ * 못 잡는 경우도 적어 둔다 — `CLAUDE_CODE_REMOTE`를 안 세우는 클라우드 변종이 생기면
+ * `local`로 잘못 적힌다. 그때는 그 세션에 `USAGE_SURFACE=cloud`를 주면 되고, 명시가
+ * 판정보다 항상 우선한다. 이건 표시가 갈리는 문제지 값이 사라지는 문제는 아니다. */
+const SURFACES = ['cloud', 'local', 'cowork', 'api'];
 const SURFACE = (() => {
-  const s = String(process.env.USAGE_SURFACE || 'cloud').trim();
-  return ['cloud', 'local'].includes(s) ? s : 'cloud';
+  const s = String(process.env.USAGE_SURFACE || '').trim();
+  if (SURFACES.includes(s)) return s;          // 명시가 최우선
+  return process.env.CLAUDE_CODE_REMOTE === 'true' ? 'cloud' : 'local';
 })();
+
+/* ---------------- CI 실행은 세지 않는다 (2026-07-27 실측으로 확정) ----------------
+ *
+ * **같은 실행이 장부에 두 번 들어갈 참이었다.**
+ *
+ * `trend-review`의 데일리 워크플로우는 `claude -p ... --output-format json`으로 CLI를
+ * 여러 번 spawn한다. 실측(2026-07-27): 그 호출은 **Stop 훅을 발화시킨다.** 즉 CLI 호출마다
+ * 이 수집기가 돌아 `.usage/sessions/`에 `approx` 스냅샷을 쓰고 스테이징까지 한다.
+ * 그런데 같은 워크플로우의 `Append usage to tower ledger` 스텝이 **같은 토큰을 `exact`로**
+ * 장부에 이미 적는다. 게다가 그 repo의 커밋 스텝은 `git add <경로>` 뒤에 경로를 못 박지 않은
+ * `git commit -m`이라 스테이징된 스냅샷이 그대로 딸려 올라간다 → 이중 계상.
+ *
+ * 아직 안 터진 것은 자동 스테이징이 07-27에 들어갔고 그 뒤 데일리가 아직 안 돌았기 때문이다.
+ *
+ * **왜 `exact` 쪽을 남기나** — CLI가 스스로 보고한 값이라 정확하고(`total_cost_usd` 포함),
+ * 실패한 호출까지 적재한다. 이쪽 `approx`는 공시단가 환산치다. 둘 중 하나를 버려야 하면
+ * 환산치를 버리는 것이 맞다.
+ *
+ * **조용히 버리지 않는다** — 건너뛴 이유를 stderr에 남긴다(Actions 로그에 그대로 보인다).
+ * 그리고 Actions에서 claude를 돌리면서 장부 적재를 붙이지 **않은** repo가 생기면 이 규칙이
+ * 곧 누락이 되므로, 그런 repo는 `USAGE_COLLECT_IN_CI=1`로 켜면 된다.
+ * 규칙 정본: rulebook/usage-accounting.md */
+function ciSkipReason() {
+  if (process.env.USAGE_COLLECT_IN_CI === '1') return null;   // 명시적 opt-in
+  if (process.env.GITHUB_ACTIONS === 'true') return 'GitHub Actions';
+  return null;
+}
 
 /** 모델 ID를 단가표 키로 정규화 (날짜 접미사 제거: claude-haiku-4-5-20251001 → claude-haiku-4-5) */
 function priceFor(model) {
@@ -146,9 +197,12 @@ function readHookInput() {
   }
 }
 
-/** 훅 입력이 없을 때: ~/.claude/projects/**\/*.jsonl 중 가장 최근에 수정된 것 */
+/** 훅 입력이 없을 때: ~/.claude/projects/**\/*.jsonl 중 가장 최근에 수정된 것.
+ *  Windows에는 HOME이 없는 경우가 많아 USERPROFILE도 본다 — PeterJ 데스크탑(로컬 수집)이
+ *  이 폴백을 탈 수 있기 때문이다. 훅으로 돌 때는 transcript_path가 오므로 여기까진 안 온다. */
 function findLatestTranscript() {
-  const base = path.join(process.env.HOME || '/root', '.claude', 'projects');
+  const home = process.env.HOME || process.env.USERPROFILE || '/root';
+  const base = path.join(home, '.claude', 'projects');
   if (!existsSync(base)) return null;
   let best = null;
   const walk = (dir, depth) => {
@@ -157,7 +211,11 @@ function findLatestTranscript() {
       const p = path.join(dir, name);
       let st;
       try { st = statSync(p); } catch { continue; }
-      if (st.isDirectory()) walk(p, depth + 1);
+      // `subagents/`는 건너뛴다 — 서브에이전트 파일은 본 세션 집계에 이미 합산되고,
+      // 여기서 골라 버리면 **서브에이전트를 그 자체로 하나의 세션으로 착각**해
+      // `agent-xxxx` 가짜 스냅샷을 만들면서 정작 본 세션 갱신은 그 커밋에서 빠진다.
+      // (백그라운드 에이전트가 방금 쓴 파일이 mtime 최신이라 실제로 뽑히기 쉽다.)
+      if (st.isDirectory()) { if (name !== 'subagents') walk(p, depth + 1); }
       else if (name.endsWith('.jsonl') && (!best || st.mtimeMs > best.mtimeMs)) {
         best = { path: p, mtimeMs: st.mtimeMs };
       }
@@ -168,9 +226,23 @@ function findLatestTranscript() {
 }
 
 /* ---------------- 집계 ---------------- */
-function aggregateTranscript(file) {
-  const text = readFileSync(file, 'utf8');
-  const byModel = new Map();
+
+/**
+ * 트랜스크립트 한 벌을 합산한다.
+ *
+ * ⚠️ **같은 응답이 여러 줄에 반복 기록된다 — `message.id`로 중복을 걸러야 한다.**
+ * Claude Code는 한 API 응답을 여러 JSONL 줄로 나눠 쓰면서 **각 줄에 같은 usage를 통째로
+ * 되풀이**한다. 줄마다 더하면 같은 토큰이 2~4번 들어간다. 2026-07-27 이 세션 실측:
+ *   usage 있는 줄 1,033 · 고유 message.id 587 · 같은 id인데 값이 다른 경우 0
+ *   그대로 합산 $258.62 vs id로 중복 제거 $144.52 → **비용 +79% 과대**
+ * 값이 항상 동일함을 확인했으므로 첫 줄만 취하면 정확하다.
+ * (Fable 검토 2026-07-27에서 지적 → 재현·확정.)
+ *
+ * `id`가 없는 줄은 접을 근거가 없으므로 그대로 더한다 — 조용히 버리지 않는다.
+ */
+function aggregateOne(file, byModel, seen) {
+  let text;
+  try { text = readFileSync(file, 'utf8'); } catch { return 0; }
   let turns = 0;
   for (const line of text.split('\n')) {
     const t = line.trim();
@@ -181,6 +253,13 @@ function aggregateTranscript(file) {
     if (!msg || typeof msg !== 'object') continue;
     const u = msg.usage;
     if (!u || typeof u !== 'object') continue;
+
+    const id = typeof msg.id === 'string' && msg.id ? msg.id : null;
+    if (id) {
+      if (seen.has(id)) continue;   // 같은 응답의 되풀이 — 이미 셌다
+      seen.add(id);
+    }
+
     const model = typeof msg.model === 'string' && msg.model ? msg.model : 'unknown';
     turns++;
     const cur = byModel.get(model) || { in: 0, out: 0, cache_w: 0, cache_r: 0 };
@@ -191,11 +270,40 @@ function aggregateTranscript(file) {
     cur.cache_r += n(u.cache_read_input_tokens);
     byModel.set(model, cur);
   }
+  return turns;
+}
+
+/** 이 세션이 태운 것을 **빠짐없이** 모은다 — 메인 트랜스크립트 + 서브에이전트들.
+ *  서브에이전트는 `<세션id>/subagents/agent-*.jsonl`에 따로 쌓이고, 메인에는 그 usage가
+ *  전혀 안 들어간다(2026-07-27 실측: 겹치는 message.id 0개). 그래서 메인만 세면 서브에이전트에
+ *  맡긴 작업이 통째로 장부에서 빠진다 — 큰 검토를 서브에이전트에 위임할수록 더 많이 샌다. */
+function aggregateTranscript(file) {
+  const byModel = new Map();
+  const seen = new Set();
+  let turns = aggregateOne(file, byModel, seen);
+
+  const subDir = path.join(path.dirname(file), path.basename(file).replace(/\.jsonl$/, ''), 'subagents');
+  if (existsSync(subDir)) {
+    for (const name of readdirSync(subDir)) {
+      if (name.endsWith('.jsonl')) turns += aggregateOne(path.join(subDir, name), byModel, seen);
+    }
+  }
   return { byModel, turns };
 }
 
 /* ---------------- main ---------------- */
 function main() {
+  // CI 실행이면 아무것도 쓰지 않는다(위 "CI 실행은 세지 않는다" 참조).
+  // `--print`는 진단용이라 그대로 통과시킨다 — 파일을 쓰지 않으므로 이중 계상이 없다.
+  const skip = ciSkipReason();
+  if (skip && !PRINT_ONLY) {
+    console.error(
+      `[usage] ${skip} 실행이라 세션 스냅샷을 쓰지 않습니다 — 이 표면은 워크플로우가 ` +
+      `exact로 장부에 직접 적습니다(이중 계상 방지). 켜려면 USAGE_COLLECT_IN_CI=1.`
+    );
+    return;
+  }
+
   const hook = readHookInput();
   const transcript = TRANSCRIPT_ARG || hook?.transcript_path || findLatestTranscript();
   if (!transcript || !existsSync(transcript)) {
@@ -239,7 +347,9 @@ function main() {
     });
   }
 
-  const snapshot = { session_id: sessionId, repo, updated: date, turns, records };
+  // `schema`는 병합 판정에 쓰인다 — 아래 설명은 lib/snapshot-store.mjs 참조.
+  // 2 = message.id 중복 제거 + 서브에이전트 포함 (2026-07-27). 1 = 그 이전(과대 집계).
+  const snapshot = { session_id: sessionId, schema: SNAPSHOT_SCHEMA, repo, updated: date, turns, records };
 
   if (PRINT_ONLY) {
     const total = records.reduce((s, r) => s + r.cost_usd, 0);
