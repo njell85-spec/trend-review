@@ -3146,6 +3146,287 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-28",
+      "arm1": {
+        "pmid": "42485042",
+        "title_ko": "피페라실린-타조박탐 내성 대 감수성 균혈증에서의 사망률 비교",
+        "clinicalQuestion": "Among adults with monomicrobial Escherichia coli or Klebsiella pneumoniae bloodstream infection, is piperacillin-tazobactam (TZP) resistance associated with higher 30-day mortality compared with TZP-susceptible infection?",
+        "clinicalQuestion_ko": "단일균 Escherichia coli 또는 Klebsiella pneumoniae 균혈증 성인 환자에서 piperacillin-tazobactam(TZP) 내성이 TZP 감수성 균혈증에 비해 30일 사망률 증가와 연관되는가?",
+        "pico": {
+          "population": "[Denmark] Data collected in near real time from Danish national health registers from November 15, 2018, through November 21, 2024. Participants were patients aged 18 years or older with monomicrobial Escherichia coli or Klebsiella pneumoniae BSI, restricted to the first positive (index) blood culture with a TZP-susceptibility test result during the follow-up period. The study population included 34 379 patients (median overall age, 76 years [IQR, 66-83 years]; 51.5% male). Among 28 649 patients (81.9%) with E coli BSI, 1689 (5.9%) had a TZP-resistant BSI; among 6314 patients (18.1%) with K pneumoniae BSI, 597 (9.5%) had a TZP-resistant BSI.",
+          "intervention": "E coli or K pneumoniae BSI and a TZP susceptibility test classified as TZP resistant.",
+          "comparison": "E coli or K pneumoniae BSI with a TZP susceptibility test classified as TZP susceptible.",
+          "outcome": "Thirty-day mortality hazard ratios (HRs) for BSIs with TZP-resistant vs TZP-susceptible bacteria, estimated from the index date (blood culture) until death, emigration, or end of the observation period, adjusted a priori for self-reported gender, age, comorbidity, year, length of hospital stay until BSI, total length of inpatient stays in the prior year, and BSI in the prior 6 months with species other than that in the index culture. Mortality was similar for patients with TZP-resistant and TZP-susceptible BSI after adjustment (E coli: crude HR, 1.22 [95% CI, 1.08-1.38]; adjusted HR [AHR], 1.09 [95% CI, 0.94-1.27]; K pneumoniae: crude HR, 1.27 [95% CI, 1.05-1.52]; AHR, 1.15 [95% CI, 0.94-1.41])."
+        },
+        "pico_ko": {
+          "population": "[덴마크] 2018년 11월 15일부터 2024년 11월 21일까지 덴마크 국가 보건등록자료에서 근실시간으로 수집된 데이터. 대상자는 만 18세 이상 성인으로 단일균 Escherichia coli 또는 Klebsiella pneumoniae 균혈증(BSI) 환자였으며, 추적 기간 중 TZP 감수성 검사 결과가 있는 최초 양성(index) 혈액배양으로 제한되었다. 연구 대상은 총 34,379명(전체 중앙값 연령 76세 [IQR, 66-83세]; 남성 51.5%)이었다. E coli BSI 28,649명(81.9%) 중 1,689명(5.9%)이 TZP 내성이었고, K pneumoniae BSI 6,314명(18.1%) 중 597명(9.5%)이 TZP 내성이었다.",
+          "intervention": "E coli 또는 K pneumoniae BSI이면서 TZP 감수성 검사에서 TZP 내성으로 분류된 경우.",
+          "comparison": "E coli 또는 K pneumoniae BSI이면서 TZP 감수성 검사에서 TZP 감수성으로 분류된 경우.",
+          "outcome": "index 혈액배양일부터 사망, 이민, 또는 관찰 종료 시점까지 산정한 TZP 내성 대 감수성 BSI의 30일 사망률 HR. 자가보고 성별, 연령, 동반질환, 연도, BSI까지의 재원기간, 직전 1년 총 입원기간, 직전 6개월 내 다른 균종에 의한 BSI를 사전 지정하여 보정. 기저 위험요인 보정 후 TZP 내성군과 감수성군의 사망률은 유사했다(E coli: 미보정 HR 1.22 [95% CI, 1.08-1.38]; 보정 HR[AHR] 1.09 [95% CI, 0.94-1.27]; K pneumoniae: 미보정 HR 1.27 [95% CI, 1.05-1.52]; AHR 1.15 [95% CI, 0.94-1.41])."
+        },
+        "baseline": "Imbalanced",
+        "secondaryOutcomes": [],
+        "secondaryOutcomes_ko": [],
+        "statGlossary": [
+          {
+            "term": "HR",
+            "explanation_ko": "위험비(Hazard Ratio): 특정 시점까지 사건(여기서는 사망)이 발생할 위험을 두 군 간 비교한 값으로, 1보다 크면 위험 증가, 1이면 차이 없음을 의미. 예: K pneumoniae 미보정 HR 1.27 → TZP 내성군의 사망 위험이 감수성군보다 27% 높게 관찰됨."
+          },
+          {
+            "term": "AHR",
+            "explanation_ko": "보정 위험비(Adjusted Hazard Ratio): 성별·연령·동반질환 등 교란요인을 통계적으로 보정한 후 산출한 위험비. 예: E coli AHR 1.09 → 교란요인 보정 후에는 TZP 내성군과 감수성군 간 사망 위험 차이가 크지 않음."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 추정되는 범위이며, 이 구간이 1을 포함하면 통계적으로 유의한 차이가 없다고 해석. 예: E coli AHR 95% CI 0.94-1.27은 1을 포함하므로 통계적으로 유의한 차이가 없음을 의미."
+          }
+        ],
+        "practiceChange": [
+          "Do not assume TZP-resistant E coli/K pneumoniae bacteremia carries an independently higher mortality risk than TZP-susceptible bacteremia — the crude excess mortality (HR ~1.2-1.3) was largely explained by baseline comorbidity and illness burden, not resistance itself, once adjusted (AHR 1.09 and 1.15, both crossing 1).",
+          "Continue to prioritize rapid blood culture susceptibility testing and timely de-escalation/escalation of antimicrobial therapy based on results, since the study's Danish setting relies on fast turnaround and low carbapenem resistance to keep TZP-resistant BSI outcomes comparable to susceptible BSI.",
+          "Do not extrapolate this reassurance to health systems with high carbapenem resistance or slower microbiology turnaround times, where the confounding-by-comorbidity explanation may not hold and empirical coverage decisions should still be guided by local antibiograms."
+        ],
+        "practiceChange_ko": [
+          "TZP 내성 E coli/K pneumoniae 균혈증이 TZP 감수성 균혈증보다 독립적으로 사망 위험이 높다고 단정하지 말 것 — 미보정 사망률 차이(HR 약 1.2-1.3)는 대부분 기저 동반질환·중증도 부담으로 설명되며, 보정 후에는 AHR 1.09, 1.15로 모두 통계적으로 유의하지 않았음.",
+          "신속한 혈액배양 감수성 검사와 그 결과에 따른 시의적절한 항생제 조정(de-escalation/escalation)을 지속할 것 — 본 연구의 덴마크 환경은 빠른 검사 회전과 낮은 carbapenem 내성률을 전제로 TZP 내성 BSI의 예후가 감수성군과 유사하게 유지된 것으로 보임.",
+          "carbapenem 내성률이 높거나 미생물 검사 회전이 느린 의료체계에는 이 안심할 만한 결과를 그대로 적용하지 말 것 — 동반질환에 의한 교란 설명이 성립하지 않을 수 있으므로, 경험적 항생제 선택은 여전히 지역 항생제 감수성 패턴을 따라야 함."
+        ],
+        "keyFindings": [
+          "Among 34,379 patients with E coli or K pneumoniae BSI, TZP resistance was present in 5.9% (1689/28,649) of E coli and 9.5% (597/6314) of K pneumoniae index bloodstream infections.",
+          "Crude 30-day mortality was higher for TZP-resistant vs TZP-susceptible BSI (E coli: HR 1.22 [95% CI, 1.08-1.38]; K pneumoniae: HR 1.27 [95% CI, 1.05-1.52]), but the association was no longer significant after adjustment for baseline risk factors (E coli: AHR 1.09 [95% CI, 0.94-1.27]; K pneumoniae: AHR 1.15 [95% CI, 0.94-1.41]).",
+          "The study's Key Points 'Meaning' statement concludes that clinical comorbidities associated with TZP-resistant BSI, rather than resistance itself, likely explain the apparent higher crude mortality risk."
+        ],
+        "keyFindings_ko": [
+          "E coli 또는 K pneumoniae BSI 환자 34,379명 중 TZP 내성은 E coli의 5.9%(1689/28,649), K pneumoniae의 9.5%(597/6314)에서 나타났다.",
+          "미보정 30일 사망률은 TZP 내성군에서 더 높았으나(E coli: HR 1.22 [95% CI, 1.08-1.38]; K pneumoniae: HR 1.27 [95% CI, 1.05-1.52]), 기저 위험요인 보정 후에는 더 이상 유의하지 않았다(E coli: AHR 1.09 [95% CI, 0.94-1.27]; K pneumoniae: AHR 1.15 [95% CI, 0.94-1.41]).",
+          "논문의 Key Points 'Meaning' 항목은 TZP 내성 BSI와 연관된 임상적 동반질환이 (내성 자체가 아니라) 관찰된 미보정 사망률 증가의 원인일 가능성을 시사한다고 결론지었다."
+        ],
+        "clinicalTakeaway": "In this large Danish national cohort, TZP resistance in E coli or K pneumoniae bacteremia was not independently associated with higher 30-day mortality once baseline comorbidity, age, and prior health care exposure were accounted for. Clinicians should still pursue rapid susceptibility testing and prompt appropriate antimicrobial therapy, but resistance status alone should not be interpreted as an independent mortality signal distinct from the patient's underlying illness burden.",
+        "clinicalTakeaway_ko": "이 대규모 덴마크 국가 코호트에서 E coli 또는 K pneumoniae 균혈증의 TZP 내성은 기저 동반질환, 연령, 이전 의료이용력을 보정하면 30일 사망률과 독립적으로 연관되지 않았습니다. 임상의는 여전히 신속한 감수성 검사와 적절한 항생제 치료를 신속히 시행해야 하지만, 내성 여부 자체를 환자의 기저 중증도와 별개의 독립적 사망 위험 신호로 해석해서는 안 됩니다.",
+        "limitations": "This is an observational, registry-based cohort study without randomization; despite a priori adjustment for gender, age, comorbidity, year, hospital length of stay before BSI, prior-year inpatient days, and remote BSI history, residual or unmeasured confounding (e.g., infection source, clinical severity, antibiotic dosing, definitive treatment selection) cannot be excluded. The cohort is restricted to Denmark, a health care system with relatively low carbapenem resistance and rapid microbiology turnaround, which may limit generalizability to settings with higher resistance prevalence or slower diagnostic turnaround. The population was further restricted to patients with an available TZP susceptibility test result on a monomicrobial index blood culture, which could introduce selection effects, and the study evaluated mortality only, not other clinically relevant outcomes.",
+        "limitations_ko": "이 연구는 무작위 배정이 없는 관찰적 레지스트리 기반 코호트 연구입니다. 성별, 연령, 동반질환, 연도, BSI 이전 재원기간, 직전 1년 입원일수, 과거 BSI 병력을 사전 보정했음에도 감염 부위, 임상적 중증도, 항생제 용량, 최종 치료 선택 등 잔여·미측정 교란요인의 가능성을 배제할 수 없습니다. 코호트가 carbapenem 내성률이 비교적 낮고 미생물 검사 회전이 빠른 덴마크 의료체계에 국한되어 있어, 내성률이 높거나 진단 회전이 느린 의료환경으로의 일반화에는 제한이 있습니다. 또한 단일균 index 혈액배양에서 TZP 감수성 검사 결과가 있는 환자로 대상자가 제한되어 선택효과가 발생할 수 있으며, 사망률만을 평가하여 다른 임상적으로 중요한 결과는 다루지 않았습니다.",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed — Mortality After Piperacillin-Tazobactam-Resistant vs -Susceptible Bloodstream Infection (PMID 42485042)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42485042/"
+          },
+          {
+            "label": "JAMA Network Open — full article page (Key Points box)",
+            "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2851934"
+          }
+        ],
+        "paper": {
+          "pmid": "42485042",
+          "title": "Mortality After Piperacillin-Tazobactam-Resistant vs -Susceptible Bloodstream Infection.",
+          "abstract": "IMPORTANCE: Use of piperacillin-tazobactam (TZP) as treatment for bloodstream infections (BSIs) has increased over time in Europe, as has antimicrobial resistance to TZP in some European countries.\nOBJECTIVE: To evaluate mortality associated with TZP-resistant BSIs in the Danish health care system.\nDESIGN, SETTING, AND PARTICIPANTS: In this cohort study, data collected in near real time were obtained from Danish national health registers from November 15, 2018, through November 21, 2024. Participants were patients aged 18 years or older with monomicrobial Escherichia coli or Klebsiella pneumoniae BSI, restricted to the first positive (index) blood culture with a TZP-susceptibility test result during the follow-up period.\nEXPOSURES: E coli or K pneumoniae BSI and a TZP susceptibility test classified as TZP resistant or TZP susceptible.\nMAIN OUTCOME AND MEASURES: Thirty-day mortality hazard ratios (HRs) for BSIs with TZP-resistant vs TZP-susceptible bacteria were estimated from the index date (blood culture) until death, emigration, or end of the observation period. Mortality was drawn from Danish national health registers, with no restriction on in-hospital or postdischarge mortality. Univariable and multivariable models adjusted a priori for self-reported gender, age, comorbidity, year, length of hospital stay until BSI, total length of inpatient stays in the prior year, and BSI in the prior 6 months with species other than that in the index culture.\nRESULTS: The study population included 34 379 patients (median overall age, 76 years [IQR, 66-83 years]; 51.5% male). Among 28 649 patients (81.9%) with E coli BSI, 1689 (5.9%) had a TZP-resistant BSI; among 6314 patients (18.1%) with K pneumoniae BSI, 597 (9.5%) had a TZP-resistant BSI. There was no loss to follow-up, and about 1% of participants were right-censored by the end of the observation period (E coli: 343 [1.2%]; K pneumoniae, 88 [1.4%]). Mortality was similar for patients with TZP-resistant and TZP-susceptible BSI after adjusting for baseline risk factors (E coli: crude HR, 1.22 [95% CI, 1.08-1.38]; adjusted HR [AHR], 1.09 [95% CI, 0.94-1.27]; K pneumoniae: crude HR, 1.27 [95% CI, 1.05-1.52]; AHR, 1.15 [95% CI, 0.94-1.41]).\nCONCLUSIONS AND RELEVANCE: In this cohort study of patients with monomicrobial E coli or K pneumoniae BSI, there was no significant difference in mortality for patients with BSI caused by TZP-resistant vs TZP-susceptible bacteria after adjustment for baseline risk factors. The result is important given increasing TZP resistance in Denmark and other countries.",
+          "authors": [
+            "Tusch E",
+            "Holzknecht B",
+            "Lindegaard M",
+            "Nielsen RT",
+            "Justesen US",
+            "Søgaard KK"
+          ],
+          "journal": "JAMA network open",
+          "pubDate": "2026-Jul-01",
+          "publicationTypes": [
+            "Journal Article"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Denmark",
+            "Female",
+            "Piperacillin, Tazobactam Drug Combination",
+            "Male",
+            "Anti-Bacterial Agents",
+            "Aged",
+            "Escherichia coli",
+            "Klebsiella pneumoniae",
+            "Bacteremia"
+          ],
+          "keywords": [],
+          "doi": "10.1001/jamanetworkopen.2026.24366",
+          "pmcid": "PMC13392807",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42485042/",
+          "collectedAt": "2026-07-28T00:00:00.489Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42485042",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42485042/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jamanetworkopen.2026.24366",
+            "url": "https://doi.org/10.1001/jamanetworkopen.2026.24366"
+          },
+          {
+            "label": "웹 — PubMed — Mortality After Piperacillin-Tazobactam-Resistant vs -Susceptible Bloodstream Infection (PMID 42485042)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42485042/"
+          },
+          {
+            "label": "웹 — JAMA Network Open — full article page (Key Points box)",
+            "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2851934"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "41412717",
+        "title_ko": "호흡곤란을 주소로 내원한 응급실 환자에서 시행하는 시점진료초음파(POCUS) 기반 진단 경로: 무작위 대조 시험",
+        "clinicalQuestion": "In adult emergency department patients presenting with dyspnoea as the chief complaint, does adding a focused lung and cardiac point-of-care ultrasound (POCUS) to the diagnostic pathway increase the proportion of patients discharged alive within 24 hours compared with standard care?",
+        "clinicalQuestion_ko": "호흡곤란을 주소로 응급실에 내원한 성인 환자에서, 표준 진료에 focused lung and cardiac POCUS를 추가하는 것이 표준 진료 단독에 비해 24시간 이내 생존 퇴원 비율을 높이는가?",
+        "pico": {
+          "population": "[Denmark] Adult patients presenting to the emergency department (ED) with dyspnoea as chief complaint, enrolled at 10 Danish EDs. Among 674 patients who were randomised between 25 January 2023 and 23 August 2024, 663 were included in the analysis (331 intervention, 332 control).",
+          "intervention": "Addition of focused lung and cardiac ultrasound (point-of-care ultrasound, POCUS) to the ED diagnostic pathway",
+          "comparison": "Omission of focused lung and cardiac ultrasound (standard diagnostic pathway/standard care)",
+          "outcome": "Primary outcome (proportion of patients discharged alive within 24 h) occurred in 141 (42.6%) out of 331 patients in the intervention group versus 151 (45.5%) out of 332 in the control group (risk difference -2.9, 95% CI -10.4-4.7; p=0.45)."
+        },
+        "pico_ko": {
+          "population": "[덴마크] 덴마크 내 10개 응급실(ED)에 호흡곤란을 주소로 내원한 성인 환자. 2023년 1월 25일부터 2024년 8월 23일 사이 674명이 무작위 배정되었고, 이 중 663명이 분석에 포함됨(중재군 331명, 대조군 332명).",
+          "intervention": "표준 ED 진단 경로에 focused lung and cardiac ultrasound(POCUS)를 추가",
+          "comparison": "focused lung and cardiac ultrasound를 생략(표준 진단 경로/표준 진료 단독)",
+          "outcome": "1차 결과(24시간 이내 생존 퇴원 비율)는 중재군 331명 중 141명(42.6%), 대조군 332명 중 151명(45.5%)에서 발생 (risk difference -2.9, 95% CI -10.4~4.7; p=0.45)."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Overall incidence rate of hospital discharge per person-days at risk was 0.28 in the intervention group versus 0.32 in the control group (hazard ratio 0.93, 95% CI 0.79-1.08; p=0.35), reflecting overall hospital length of stay."
+        ],
+        "secondaryOutcomes_ko": [
+          "전체 재원일-위험도당 병원 퇴원 발생률은 중재군 0.28, 대조군 0.32였음 (hazard ratio 0.93, 95% CI 0.79-1.08; p=0.35) — 전체 병원 재원 기간을 반영."
+        ],
+        "statGlossary": [
+          {
+            "term": "risk difference",
+            "explanation_ko": "두 군 간 사건 발생 비율의 차이를 절대값(%포인트)으로 나타낸 값. 예: risk difference -2.9 → 중재군이 대조군보다 24시간 내 퇴원 비율이 2.9%p 낮았음(통계적으로 유의하지 않음)."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 이 범위 안에 있을 가능성이 95%라는 뜻이며, 구간이 0(또는 무효과 값)을 포함하면 통계적으로 유의하지 않다고 해석. 예: risk difference의 95% CI가 -10.4~4.7로 0을 포함하여 유의한 차이 없음."
+          },
+          {
+            "term": "p-value",
+            "explanation_ko": "관찰된 차이가 우연히 발생했을 확률을 나타내는 값으로, 통상 0.05 미만이면 통계적으로 유의하다고 판단. 예: 1차 결과 p=0.45로 유의하지 않음."
+          },
+          {
+            "term": "hazard ratio",
+            "explanation_ko": "특정 시점까지 사건(여기서는 퇴원)이 발생할 상대적 속도를 비교한 값으로, 1보다 작으면 사건 발생이 느림을 의미. 예: HR 0.93 (95% CI 0.79-1.08) → 중재군의 퇴원 속도가 대조군 대비 7% 느린 경향이나 신뢰구간이 1을 포함해 유의하지 않음."
+          }
+        ],
+        "practiceChange": [
+          "Do not adopt a routine POCUS-driven diagnostic pathway for undifferentiated dyspnoea in the ED as a means to shorten hospital stay or increase 24-hour discharge rates — this trial found no benefit over standard care.",
+          "Continue to use POCUS selectively for its established diagnostic value (e.g., identifying pulmonary edema, pneumothorax, effusion) rather than as a length-of-stay reduction intervention, since disposition-level outcomes were unaffected.",
+          "Await full-text publication and any prespecified subgroup analyses before drawing conclusions about specific dyspnoea etiologies (e.g., heart failure) that might still benefit from POCUS-guided pathways."
+        ],
+        "practiceChange_ko": [
+          "ED에서 미분화 호흡곤란 환자의 재원 기간 단축이나 24시간 내 퇴원율 증가를 목적으로 POCUS 기반 진단 경로를 일률적으로 도입하지 말 것 — 본 연구에서는 표준 진료 대비 이득이 확인되지 않음.",
+          "POCUS는 재원 기간 단축을 위한 중재가 아니라, 폐부종·기흉·흉수 등 확립된 진단적 가치를 위해 선택적으로 계속 활용할 것 — 배치(퇴원 여부) 수준의 결과에는 영향이 없었음.",
+          "특정 호흡곤란 원인(예: 심부전)에서 POCUS 기반 경로가 여전히 도움이 될 수 있는지에 대해서는 전체 논문 및 사전 계획된 하위군 분석 발표를 기다린 뒤 결론 내릴 것."
+        ],
+        "keyFindings": [
+          "Among 674 randomised patients (663 analysed), the primary outcome (discharged alive within 24 h) occurred in 42.6% (141/331) of the POCUS intervention group vs 45.5% (151/332) of the control group (risk difference -2.9, 95% CI -10.4-4.7; p=0.45) — no significant difference.",
+          "Overall incidence rate of hospital discharge was 0.28 vs 0.32 per person-days at risk in the intervention vs control groups (hazard ratio 0.93, 95% CI 0.79-1.08; p=0.35), indicating no meaningful difference in overall hospital length of stay.",
+          "The trial did not confirm previously suggested benefits of adding focused lung and cardiac POCUS to the standard ED dyspnoea diagnostic pathway across 10 Danish EDs."
+        ],
+        "keyFindings_ko": [
+          "무작위 배정된 674명(분석 663명) 중, 1차 결과(24시간 내 생존 퇴원)는 POCUS 중재군 42.6%(141/331), 대조군 45.5%(151/332)에서 발생 (risk difference -2.9, 95% CI -10.4~4.7; p=0.45) — 유의한 차이 없음.",
+          "전체 병원 퇴원 발생률은 재원일-위험도당 중재군 0.28, 대조군 0.32 (hazard ratio 0.93, 95% CI 0.79-1.08; p=0.35)로, 전체 병원 재원 기간에도 의미 있는 차이가 없었음.",
+          "10개 덴마크 응급실에서 시행된 이번 연구는 표준 ED 호흡곤란 진단 경로에 focused lung and cardiac POCUS를 추가하는 것이 이전에 제시된 이점을 확인하지 못함."
+        ],
+        "clinicalTakeaway": "In this large multicentre Danish RCT, adding a focused lung and cardiac POCUS pathway to standard ED care for patients with dyspnoea did not increase the proportion discharged alive within 24 h nor shorten overall hospital length of stay compared with standard care. Clinicians should not expect routine POCUS integration into the dyspnoea workflow to translate into faster disposition or shorter admissions on its own.",
+        "clinicalTakeaway_ko": "이 대규모 다기관 덴마크 RCT에서, 호흡곤란 환자의 표준 ED 진료에 focused lung and cardiac POCUS 경로를 추가하는 것은 표준 진료 대비 24시간 내 생존 퇴원 비율을 높이거나 전체 병원 재원 기간을 단축시키지 못했습니다. 임상의는 호흡곤란 진료 흐름에 POCUS를 일상적으로 통합한다고 해서 그 자체로 더 빠른 배치 결정이나 짧은 입원으로 이어지리라 기대해서는 안 됩니다.",
+        "limitations": "Only the abstract was available for this analysis; the full text (including baseline characteristics, blinding/allocation concealment details, chest imaging utilisation numbers, and 72 h alive and revisit-free results) could not be retrieved from authoritative sources, limiting assessment of risk of bias and generalisability. POCUS trials are inherently unblinded for the sonographer/treating clinician, which may introduce performance or detection bias not quantifiable from the abstract alone.",
+        "limitations_ko": "본 분석은 초록만을 근거로 하였으며, 전체 논문(기저 특성, 눈가림/배정은폐 세부사항, 흉부영상 촬영 이용률 수치, 72시간 생존 및 재방문 없는 비율 결과 등)은 신뢰할 수 있는 출처에서 확인할 수 없어 비뚤림 위험 및 일반화 가능성 평가에 제한이 있습니다. POCUS 연구는 시행하는 초음파술자/치료 임상의에 대한 눈가림이 본질적으로 불가능하여, 초록만으로는 정량화할 수 없는 수행 비뚤림이나 발견 비뚤림이 있을 수 있습니다.",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 6,
+        "webSources": [
+          {
+            "label": "PubMed abstract (PMID 41412717)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41412717/"
+          },
+          {
+            "label": "European Respiratory Journal official article page",
+            "url": "https://publications.ersnet.org/content/erj/67/3/2500070"
+          },
+          {
+            "label": "Europe PMC record (EXT_ID:41412717)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41412717&format=json&resultType=core"
+          },
+          {
+            "label": "Aarhus University RECEM news article on this trial",
+            "url": "https://recem.au.dk/display/artikel/new-research-in-the-field-of-ultrasound-in-emergency-medicine"
+          }
+        ],
+        "paper": {
+          "pmid": "41412717",
+          "title": "A point-of-care ultrasound-driven diagnostic pathway for emergency department patients with dyspnoea: a randomised controlled trial.",
+          "abstract": "BACKGROUND: Previous trials have suggested that point-of-care ultrasound (POCUS) for emergency department (ED) patients with dyspnoea increases the proportion of patients discharged within 24 h. We aimed to assess whether this effect could be confirmed.\nMETHODS: This trial was a randomised controlled trial in 10 Danish EDs. Adult patients presenting to the ED with dyspnoea as chief complaint were randomised to the addition or omission of focused lung and cardiac ultrasound. The primary outcome was the proportion of patients discharged alive within 24 h. Secondary outcomes included overall hospital length of stay, chest imaging utilisation, and 72 h alive and revisit-free.\nRESULTS: Among 674 patients who were randomised between 25 January 2023 and 23 August 2024, 663 were included in the analysis. The primary outcome occurred in 141 (42.6%) out of 331 patients in the intervention group  151 (45.5%) out of 332 in the control group (risk difference -2.9, 95% CI -10.4-4.7; p=0.45). The overall incidence rate of hospital discharges per person-days at risk was 0.28 in the intervention group  0.32 in the control group (hazard ratio 0.93, 95% CI 0.79-1.08; p=0.35).\nCONCLUSIONS: In adult ED patients with dyspnoea as chief complaint, a POCUS-driven diagnostic pathway did not alter the proportion of patients discharged alive within 24 h or the overall hospital length of stay compared with standard care.",
+          "authors": [
+            "Ovesen SH",
+            "Skaarup SH",
+            "Aagaard R",
+            "Raaber N",
+            "Tygesen GB",
+            "Nielsen T"
+          ],
+          "journal": "The European respiratory journal",
+          "pubDate": "2026-Mar",
+          "publicationTypes": [
+            "Journal Article",
+            "Randomized Controlled Trial",
+            "Multicenter Study"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Dyspnea",
+            "Female",
+            "Male",
+            "Emergency Service, Hospital",
+            "Middle Aged",
+            "Ultrasonography",
+            "Aged",
+            "Point-of-Care Systems",
+            "Length of Stay"
+          ],
+          "keywords": [],
+          "doi": "10.1183/13993003.00070-2025",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41412717/",
+          "collectedAt": "2026-07-28T00:08:36.020Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41412717",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41412717/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1183/13993003.00070-2025",
+            "url": "https://doi.org/10.1183/13993003.00070-2025"
+          },
+          {
+            "label": "웹 — PubMed abstract (PMID 41412717)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41412717/"
+          },
+          {
+            "label": "웹 — European Respiratory Journal official article page",
+            "url": "https://publications.ersnet.org/content/erj/67/3/2500070"
+          },
+          {
+            "label": "웹 — Europe PMC record (EXT_ID:41412717)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41412717&format=json&resultType=core"
+          },
+          {
+            "label": "웹 — Aarhus University RECEM news article on this trial",
+            "url": "https://recem.au.dk/display/artikel/new-research-in-the-field-of-ultrasound-in-emergency-medicine"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
