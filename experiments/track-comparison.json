@@ -3427,6 +3427,281 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-29",
+      "arm1": {
+        "pmid": "42498933",
+        "title_ko": "패혈증 관련 면역억제: 최신 연구 성과에 대한 종합 리뷰",
+        "clinicalQuestion": "What are the mechanisms, monitoring strategies, and treatment approaches (immunostimulation, checkpoint inhibitors, other immunomodulators, IVIG) for sepsis-related immunosuppression in adults and children, and how do pediatric-specific immune trajectories differ from those in adults?",
+        "clinicalQuestion_ko": "성인과 소아에서 패혈증 관련 면역억제의 기전, 모니터링 전략, 치료 접근법(immunostimulation, immune checkpoint inhibitors, 기타 면역조절요법, IVIG)은 무엇이며, 소아의 면역 궤적은 성인과 어떻게 다른가?",
+        "pico": {
+          "population": "[International] Narrative review of sepsis-related immunosuppression involving multi-level functional exhaustion of the innate and adaptive immune systems, covering both adult and pediatric patients, with a dedicated discussion of pediatric-specific mechanisms; cites global burden of approximately 48.9 million sepsis cases and 11 million sepsis-related deaths annually, approximately 20 million pediatric sepsis cases yearly, and 2.9 million deaths in children under 5 (19.7% of global child deaths), with approximately 50% of pediatric septic shock deaths occurring within 48 h of hospitalization.",
+          "intervention": "Immunostimulation (e.g., IL-7, GM-CSF), immune checkpoint inhibitors (anti-PD-1/PD-L1), other immunomodulatory therapies (e.g., IFN-γ, mesenchymal stem cells), and intravenous immunoglobulin, as reviewed across current research on sepsis-related immunosuppression.",
+          "comparison": "No single comparator; this is a narrative review. Where trial data are cited, GM-CSF was evaluated against standard care and 'failed to improve 30-day survival' in trials.",
+          "outcome": "Narrative synthesis of immune dysfunction (dysfunctions of monocytes/macrophages, neutrophils, and dendritic cells; depletion of T and B cells; imbalance of the cytokine network), monitoring methods (immune cell quantity/function, HLA-DR expression, cytokine levels, Th17/Treg ratio), and treatment strategies. Specific findings: IL-7 'increases CD4+ and CD8+ T cell counts'; GM-CSF 'enhances monocyte/neutrophil function but failed to improve 30-day survival in trials'; pediatric macrophages show a '15-fold higher IL-10/TNF-α ratio than that observed in adult macrophages'; monocyte HLA-DR downregulation is 'documented as early as 72 hours in pediatric cases'; concurrent hyperinflammation and immunosuppression occur 'within the first 72 h of PICU admission'; the clinical translation of existing treatment strategies 'remains to be verified.'"
+        },
+        "pico_ko": {
+          "population": "[다국가] Sepsis 관련 면역억제에 관한 narrative review로, innate 및 adaptive 면역계의 다층적 기능 소진을 다루며 성인과 소아 환자를 모두 포괄하고 소아 특이적 기전에 대한 별도 논의를 포함함. 전 세계적으로 연간 약 48.9 million건의 sepsis 사례와 약 11 million명의 sepsis 관련 사망이 발생하며, 소아에서는 연간 약 20 million건의 sepsis 사례와 5세 미만 소아 사망 2.9 million명(전체 소아 사망의 19.7%)이 인용되었고, 소아 septic shock 사망의 약 50%가 입원 48시간 이내에 발생한다고 언급됨.",
+          "intervention": "Immunostimulation(예: IL-7, GM-CSF), immune checkpoint inhibitors(anti-PD-1/PD-L1), 기타 면역조절요법(예: IFN-γ, mesenchymal stem cells), intravenous immunoglobulin 등 패혈증 관련 면역억제에 대해 현재까지 연구된 치료 전략들을 다룸.",
+          "comparison": "단일 대조군 없음 — narrative review임. 인용된 임상 데이터 중 GM-CSF는 표준 치료와 비교되었으며 시험에서 '30일 생존율 개선에는 실패'함.",
+          "outcome": "면역 기능장애(monocyte/macrophage, neutrophil, dendritic cell 기능장애; T세포 및 B세포 고갈; cytokine network 불균형), 모니터링 방법(면역세포 수/기능, HLA-DR 발현, cytokine 수치, Th17/Treg ratio), 치료 전략에 대한 서술적 종합. 구체적으로 IL-7은 CD4+ 및 CD8+ T세포 수를 증가시키고, GM-CSF는 monocyte/neutrophil 기능을 향상시키지만 시험에서 '30일 생존율 개선에는 실패'했으며, 소아 macrophage는 성인 대비 '15-fold 높은 IL-10/TNF-α ratio'를 보이고, monocyte HLA-DR 하향조절은 소아에서 '72시간 이내'에 나타날 수 있으며, PICU 입실 후 첫 72시간 이내에 과염증과 면역억제가 동시에 나타날 수 있음. 기존 치료 전략의 임상적 전환 효과는 '아직 검증이 필요함'."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Global epidemiology cited in the review: approximately 48.9 million sepsis cases and 11 million sepsis-related deaths annually worldwide; approximately 20 million pediatric sepsis cases yearly with 2.9 million deaths in children under 5, representing 19.7% of global child deaths.",
+          "Pediatric-specific immune differences: neutrophil extracellular traps (NETs) are 'significantly elevated in children compared to adults'; 'neonatal neutrophils exhibit lower TLR4 expression and impaired chemotaxis'; Th17/Treg ratio inversely correlates with prognosis.",
+          "The authors challenge the traditional biphasic model, stating the 'long-standing biphasic model of sequential hyperinflammation followed by immunosuppression is not universally supported by clinical data,' and call for 'pediatric-specific clinical trials' and 'head-to-head comparative studies characterizing age-specific immune trajectories.'"
+        ],
+        "secondaryOutcomes_ko": [
+          "Review에 인용된 전 세계 역학: 전 세계적으로 연간 약 48.9 million건의 sepsis 사례와 약 11 million명의 sepsis 관련 사망 발생; 소아에서는 연간 약 20 million건의 sepsis 사례와 5세 미만 소아 사망 2.9 million명(전체 소아 사망의 19.7%) 발생.",
+          "소아 특이적 면역 차이: neutrophil extracellular traps(NETs)가 '성인 대비 소아에서 유의하게 상승'하며, '신생아 neutrophil은 더 낮은 TLR4 발현과 손상된 chemotaxis'를 보임; Th17/Treg ratio는 예후와 역상관관계를 보임.",
+          "저자들은 전통적인 biphasic model에 의문을 제기하며 '순차적 과염증 이후 면역억제가 뒤따른다는 오래된 biphasic model은 임상 데이터로 보편적으로 뒷받침되지 않는다'고 언급하고, '소아 특이적 임상시험'과 '연령별 면역 궤적을 특징짓는 head-to-head 비교 연구'를 촉구함."
+        ],
+        "statGlossary": [],
+        "keyFindings": [
+          "Sepsis-related immunosuppression reflects multi-level functional exhaustion of innate and adaptive immunity, including monocyte/macrophage, neutrophil, and dendritic cell dysfunction, T and B cell depletion, and cytokine network imbalance.",
+          "Pediatric immunosuppression is mechanistically distinct from adult disease: pediatric macrophages show a '15-fold higher IL-10/TNF-α ratio' than adult macrophages, monocyte HLA-DR downregulation can appear 'as early as 72 hours,' concurrent hyperinflammation and immunosuppression can occur within the first 72 h of PICU admission, and approximately 50% of pediatric septic shock deaths occur within 48 h of hospitalization.",
+          "Reviewed treatments show biological activity but unproven clinical benefit: IL-7 increases CD4+/CD8+ T cell counts, but GM-CSF 'failed to improve 30-day survival in trials,' and the clinical translation of existing immunomodulatory strategies (checkpoint inhibitors, IFN-γ, mesenchymal stem cells, IVIG) 'remains to be verified.'"
+        ],
+        "keyFindings_ko": [
+          "패혈증 관련 면역억제는 innate 및 adaptive 면역의 다층적 기능 소진을 반영하며, monocyte/macrophage, neutrophil, dendritic cell 기능장애, T세포 및 B세포 고갈, cytokine network 불균형을 포함함.",
+          "소아 면역억제는 성인과 기전적으로 다름: 소아 macrophage는 성인 대비 '15-fold 높은 IL-10/TNF-α ratio'를 보이고, monocyte HLA-DR 하향조절은 '72시간 이내'에 나타날 수 있으며, PICU 입실 후 첫 72시간 이내에 과염증과 면역억제가 동시에 나타날 수 있고, 소아 septic shock 사망의 약 50%가 입원 48시간 이내에 발생함.",
+          "검토된 치료법들은 생물학적 활성은 있으나 임상적 이득은 아직 입증되지 않음: IL-7은 CD4+/CD8+ T세포 수를 증가시키지만, GM-CSF는 시험에서 '30일 생존율 개선에는 실패'했고, 기존 면역조절 전략(checkpoint inhibitors, IFN-γ, mesenchymal stem cells, IVIG)의 임상적 전환은 '아직 검증이 필요함'."
+        ],
+        "clinicalTakeaway": "EM/CCM clinicians should recognize sepsis-related immunosuppression as a distinct, monitorable immune phenotype (via HLA-DR expression, lymphocyte counts, and cytokine panels) rather than assuming a uniform inflammatory course for all septic patients. Pediatric patients require separate consideration, as immune dysfunction can be faster-onset and more pronounced than in adults, with roughly half of pediatric septic shock deaths occurring within 48 h. None of the reviewed immunomodulatory therapies (IL-7, GM-CSF, checkpoint inhibitors, IFN-γ, mesenchymal stem cells, IVIG) has established mortality benefit, so they remain investigational outside clinical trials.",
+        "clinicalTakeaway_ko": "EM/CCM 임상의는 모든 패혈증 환자가 동일한 염증 경과를 따른다고 가정하기보다, HLA-DR 발현·lymphocyte count·cytokine panel을 통해 모니터링 가능한 별개의 면역 표현형으로서 패혈증 관련 면역억제를 인식해야 함. 소아 환자는 성인보다 더 빠르고 뚜렷한 면역 기능장애를 보일 수 있고 소아 septic shock 사망의 약 절반이 48시간 이내에 발생하므로 별도로 고려해야 함. 검토된 면역조절 치료(IL-7, GM-CSF, checkpoint inhibitors, IFN-γ, mesenchymal stem cells, IVIG) 중 사망률 개선이 입증된 것은 없으므로, 임상시험 밖에서는 여전히 investigational 단계로 남아 있음.",
+        "limitations": "This is a narrative (non-systematic) review without a stated search strategy, inclusion criteria, or formal quality/GRADE appraisal of the underlying literature. The abstract and available full text do not report the number or type of studies synthesized, and specific trial-level data (e.g., N, effect sizes, confidence intervals) behind statements such as GM-CSF's lack of 30-day survival benefit are not detailed in the sources reviewed. Epidemiologic and mechanistic figures are drawn from cited sources within the review rather than original data generated by the authors.",
+        "limitations_ko": "이 논문은 검색 전략, 선정 기준, 또는 formal quality/GRADE 평가가 명시되지 않은 narrative(비체계적) review임. 초록 및 확인 가능한 본문에는 종합된 연구의 수나 유형이 보고되어 있지 않으며, GM-CSF의 30일 생존율 개선 실패와 같은 서술의 근거가 되는 세부 시험 데이터(N, 효과크기, 신뢰구간 등)는 확인한 자료에 상세히 제시되어 있지 않음. 역학 및 기전 관련 수치들은 저자들이 직접 생성한 원자료가 아니라 review 내 인용된 출처에서 가져온 것임.",
+        "practiceChange": [
+          "Do not adopt GM-CSF as a survival-improving therapy for sepsis-related immunosuppression outside clinical trials — it enhances monocyte/neutrophil function but 'failed to improve 30-day survival in trials.'",
+          "Incorporate immune-status monitoring (HLA-DR expression, lymphocyte counts, Th17/Treg ratio, cytokine panels) into the assessment of septic patients rather than treating sepsis as immunologically uniform, to identify immunosuppressed phenotypes potentially amenable to future immunostimulatory or checkpoint-inhibitor strategies.",
+          "In pediatric septic shock, apply age-specific rather than adult-extrapolated monitoring: recognize that hyperinflammation and immunosuppression can occur concurrently within the first 72 h of PICU admission, and that roughly half of pediatric septic shock deaths occur within 48 h of hospitalization."
+        ],
+        "practiceChange_ko": [
+          "GM-CSF는 monocyte/neutrophil 기능을 향상시키지만 시험에서 '30일 생존율 개선에는 실패'했으므로, 임상시험 밖에서 패혈증 관련 면역억제의 생존율 개선 치료로 채택하지 말 것.",
+          "패혈증을 면역학적으로 균일한 상태로 간주하기보다, HLA-DR 발현·lymphocyte count·Th17/Treg ratio·cytokine panel 등 면역 상태 모니터링을 평가에 포함시켜 향후 immunostimulation 또는 checkpoint inhibitor 전략의 대상이 될 수 있는 면역억제 표현형을 식별할 것.",
+          "소아 septic shock에서는 성인 기준을 그대로 적용하지 말고 연령별 모니터링을 적용할 것 — 과염증과 면역억제가 PICU 입실 후 첫 72시간 이내에 동시에 나타날 수 있고, 소아 septic shock 사망의 약 절반이 입원 48시간 이내에 발생함을 인지할 것."
+        ],
+        "evidenceLevel": "Low",
+        "clinicalApplicabilityScore": 4,
+        "webSources": [
+          {
+            "label": "PubMed - Sepsis-related immunosuppression: a comprehensive review of current research breakthroughs (PMID 42498933)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498933/"
+          },
+          {
+            "label": "Europe PMC record (PMID, DOI, journal metadata)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22Sepsis-related%20immunosuppression%22%20AND%20AUTH:%22Ren%22&format=json"
+          },
+          {
+            "label": "Critical Care (Springer) - full article page, DOI 10.1186/s13054-026-06168-6",
+            "url": "https://link.springer.com/article/10.1186/s13054-026-06168-6"
+          }
+        ],
+        "paper": {
+          "pmid": "42498933",
+          "title": "Sepsis-related immunosuppression: a comprehensive review of current research breakthroughs.",
+          "abstract": "This article focuses on Sepsis-related immunosuppression, systematically expounding on its pathological mechanisms, monitoring methods, and treatment strategies. Immunosuppression in sepsis involves multi-level functional exhaustion of the innate and adaptive immune systems, such as dysfunctions of monocytes/macrophages, neutrophils, and dendritic cells, depletion of T and B cells, and imbalance of the cytokine network. The monitoring of the immune state mainly relies on the detection of the quantity and function of immune cells, HLA-DR expression, and cytokine levels. Treatment methods include immunostimulation (such as IL-7, GM-CSF), immune checkpoint inhibitors, other immunomodulatory therapies (such as IFN-γ, mesenchymal stem cells), and intravenous immunoglobulin. However, the clinical transformation effects of existing treatment strategies remain to be verified. In-depth research on sepsis-related immunosuppression is of great significance for improving clinical diagnosis and treatment and reducing mortality.Importantly, the pathogenesis and trajectory of immunosuppression in children differ significantly from adults due to age‑specific immune development, necessitating a separate discussion of pediatric‑specific mechanisms and monitoring strategies.",
+          "authors": [
+            "Ren S",
+            "Wen J"
+          ],
+          "journal": "Critical care (London, England)",
+          "pubDate": "2026-Jul-24",
+          "publicationTypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Sepsis",
+            "Immunosuppression Therapy",
+            "Immune Tolerance",
+            "Cytokines"
+          ],
+          "keywords": [
+            "Cytokine storm",
+            "Immunosuppression",
+            "Sepsis"
+          ],
+          "doi": "10.1186/s13054-026-06168-6",
+          "pmcid": "PMC13397701",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42498933/",
+          "collectedAt": "2026-07-28T23:56:12.107Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42498933",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498933/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1186/s13054-026-06168-6",
+            "url": "https://doi.org/10.1186/s13054-026-06168-6"
+          },
+          {
+            "label": "웹 — PubMed - Sepsis-related immunosuppression: a comprehensive review of current research breakthroughs (PMID 42498933)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498933/"
+          },
+          {
+            "label": "웹 — Europe PMC record (PMID, DOI, journal metadata)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22Sepsis-related%20immunosuppression%22%20AND%20AUTH:%22Ren%22&format=json"
+          },
+          {
+            "label": "웹 — Critical Care (Springer) - full article page, DOI 10.1186/s13054-026-06168-6",
+            "url": "https://link.springer.com/article/10.1186/s13054-026-06168-6"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "42273960",
+        "title_ko": "병원 내 심정지 환자에서 중탄산나트륨 투여: 무작위 임상시험",
+        "clinicalQuestion": "Does administration of sodium bicarbonate during in-hospital cardiac arrest, in addition to standard resuscitation including epinephrine, increase the proportion of patients achieving sustained return of spontaneous circulation compared with placebo?",
+        "clinicalQuestion_ko": "병원 내 심정지 환자에서 epinephrine을 포함한 표준 소생술에 더해 중탄산나트륨(sodium bicarbonate)을 투여하면 위약 대비 지속적 자발순환회복(sustained ROSC) 비율이 증가하는가?",
+        "pico": {
+          "population": "[Denmark] Adults with in-hospital cardiac arrest who received at least 1 dose of epinephrine, enrolled at 21 hospitals in Denmark from February 6, 2023, to February 11, 2026 (last 90-day follow-up conducted May 4, 2026). A total of 2913 patients were screened; 913 were randomized, of whom 779 were eligible for the primary analyses (372 sodium bicarbonate, 407 placebo). Median (IQR) age was 73 (64-79) years; 502 (64%) were male.",
+          "intervention": "Sodium bicarbonate (up to 100 mmol) intravenously",
+          "comparison": "Placebo intravenously",
+          "outcome": "Primary outcome was sustained return of spontaneous circulation: 146 patients (39%) in the sodium bicarbonate group vs 150 (37%) in the placebo group (risk ratio, 1.05 [95% CI, 0.88-1.24]; P = .62) — no significant difference."
+        },
+        "pico_ko": {
+          "population": "[덴마크] 덴마크 21개 병원에서 2023년 2월 6일부터 2026년 2월 11일까지 등록된, epinephrine을 최소 1회 투여받은 병원 내 심정지 성인 환자(마지막 90일 추적관찰 2026년 5월 4일 시행). 총 2913명이 선별되었고 913명이 무작위 배정되었으며, 이 중 779명이 주요 분석 대상(중탄산나트륨군 372명, 위약군 407명)이었다. 중앙값(IQR) 연령은 73세(64-79)였고 502명(64%)이 남성이었다.",
+          "intervention": "중탄산나트륨(최대 100 mmol) 정맥 투여",
+          "comparison": "위약(placebo) 정맥 투여",
+          "outcome": "1차 결과는 지속적 자발순환회복(sustained ROSC)이었다: 중탄산나트륨군 146명(39%) vs 위약군 150명(37%) (risk ratio 1.05 [95% CI, 0.88-1.24]; P = .62) — 통계적으로 유의한 차이 없음."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "Survival at 30 days: 45 patients (12%) in the sodium bicarbonate group vs 37 (9.1%) in the placebo group (risk ratio, 1.25 [95% CI, 0.84-1.88]).",
+          "Favorable neurologic outcome (modified Rankin Scale score 0-3) at 30 days: 30 patients (8.1%) in the sodium bicarbonate group vs 22 (5.4%) in the placebo group (risk ratio, 1.39 [95% CI, 0.82-2.34]).",
+          "Alkalosis and hypernatremia after cardiac arrest were more common in the sodium bicarbonate group than the placebo group (exact counts not reported in available sources)."
+        ],
+        "secondaryOutcomes_ko": [
+          "30일 생존율: 중탄산나트륨군 45명(12%) vs 위약군 37명(9.1%) (risk ratio 1.25 [95% CI, 0.84-1.88]).",
+          "30일째 양호한 신경학적 결과(modified Rankin Scale 0-3점): 중탄산나트륨군 30명(8.1%) vs 위약군 22명(5.4%) (risk ratio 1.39 [95% CI, 0.82-2.34]).",
+          "심정지 후 alkalosis(알칼리증)와 hypernatremia(고나트륨혈증)가 중탄산나트륨군에서 위약군보다 더 흔했다(정확한 수치는 확인 가능한 자료에 보고되지 않음)."
+        ],
+        "statGlossary": [
+          {
+            "term": "risk ratio",
+            "explanation_ko": "위험비: 두 군 간 사건 발생 확률의 비율로, 1이면 차이 없음을 의미. 예: 1차 결과에서 risk ratio 1.05 → 중탄산나트륨군의 sustained ROSC 확률이 위약군보다 5% 높은 경향이나 임상적으로 의미 있는 차이는 아님."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "95% 신뢰구간: 참값이 있을 것으로 95% 확신하는 범위. 예: RR 1.05 [95% CI, 0.88-1.24]에서 구간이 1을 포함하므로 두 군 간 유의한 차이가 없다고 해석."
+          },
+          {
+            "term": "P value",
+            "explanation_ko": "P값: 우연에 의해 관찰된 차이가 나올 확률로, 통상 0.05 미만이면 통계적으로 유의하다고 판단. 예: 1차 결과 P = .62로 0.05보다 훨씬 커서 두 군 간 차이가 통계적으로 유의하지 않음."
+          },
+          {
+            "term": "modified Rankin Scale (mRS)",
+            "explanation_ko": "modified Rankin Scale: 신경학적 장애 정도를 0(증상 없음)부터 6(사망)까지 평가하는 척도. 예: 이 연구에서 mRS 0-3점을 '양호한 신경학적 결과'로 정의."
+          },
+          {
+            "term": "IQR",
+            "explanation_ko": "사분위범위(IQR): 자료의 중간 50%가 분포하는 범위. 예: 연령 중앙값 73세(IQR 64-79)는 환자 절반이 64~79세 사이에 분포함을 의미."
+          }
+        ],
+        "practiceChange": [
+          "Do not administer sodium bicarbonate routinely during in-hospital cardiac arrest resuscitation solely to increase sustained ROSC — this large RCT found no significant benefit (RR 1.05, 95% CI 0.88-1.24; P = .62).",
+          "Continue to reserve sodium bicarbonate for established specific indications (e.g., hyperkalemia, tricyclic antidepressant toxicity, severe pre-existing metabolic acidosis), since BIHCA enrolled a general in-hospital arrest population and does not address these subgroups.",
+          "Weigh the observed increase in alkalosis and hypernatremia against the lack of proven mortality or neurologic benefit before using bicarbonate empirically during resuscitation."
+        ],
+        "practiceChange_ko": [
+          "단순히 sustained ROSC를 높이기 위한 목적으로 병원 내 심정지 소생술 중 중탄산나트륨을 일상적으로 투여하지 않는다 — 이번 대규모 RCT에서 유의한 이득이 없었다(RR 1.05, 95% CI 0.88-1.24; P = .62).",
+          "hyperkalemia, tricyclic antidepressant 중독, 심한 기존 대사성 산증 등 확립된 특정 적응증에서는 계속 중탄산나트륨 사용을 고려한다 — BIHCA는 일반적인 병원 내 심정지 환자군을 대상으로 했으며 이러한 하위군은 다루지 않았다.",
+          "생존율·신경학적 이득이 입증되지 않은 상태에서 alkalosis와 hypernatremia 위험 증가를 고려하여 경험적 중탄산나트륨 사용을 신중히 결정한다."
+        ],
+        "keyFindings": [
+          "No significant difference in sustained ROSC between sodium bicarbonate and placebo (39% vs 37%; RR 1.05 [95% CI, 0.88-1.24]; P = .62).",
+          "Numerically higher 30-day survival (12% vs 9.1%; RR 1.25 [95% CI, 0.84-1.88]) and favorable neurologic outcome (8.1% vs 5.4%; RR 1.39 [95% CI, 0.82-2.34]) with bicarbonate, but both confidence intervals cross 1, so these are not statistically conclusive.",
+          "Alkalosis and hypernatremia after cardiac arrest were more common in the sodium bicarbonate group than the placebo group."
+        ],
+        "keyFindings_ko": [
+          "중탄산나트륨군과 위약군 간 sustained ROSC에 유의한 차이 없음(39% vs 37%; RR 1.05 [95% CI, 0.88-1.24]; P = .62).",
+          "30일 생존율(12% vs 9.1%; RR 1.25 [95% CI, 0.84-1.88])과 양호한 신경학적 결과(8.1% vs 5.4%; RR 1.39 [95% CI, 0.82-2.34])는 중탄산나트륨군에서 수치상 더 높았으나, 두 지표 모두 95% CI가 1을 포함하여 통계적으로 확정적인 결론은 아니다.",
+          "심정지 후 alkalosis와 hypernatremia는 중탄산나트륨군에서 위약군보다 더 흔했다."
+        ],
+        "clinicalTakeaway": "In this large multicenter Danish RCT of in-hospital cardiac arrest, routine sodium bicarbonate administration after epinephrine did not significantly improve sustained ROSC and should not be given routinely for that purpose. Because the trial was not powered to detect differences in 30-day survival or neurologic outcome, the numerically higher point estimates for these secondary endpoints should not be read as proof of benefit, and the observed increase in alkalosis/hypernatremia argues against indiscriminate use.",
+        "clinicalTakeaway_ko": "이번 대규모 다기관 덴마크 RCT에서 epinephrine 투여 후 중탄산나트륨을 일상적으로 추가 투여해도 sustained ROSC가 유의하게 개선되지 않았으므로, 그러한 목적으로 일상적으로 투여해서는 안 된다. 이 시험은 30일 생존율이나 신경학적 결과의 차이를 검출하도록 설계(파워)되지 않았으므로, 해당 2차 결과들의 수치상 높은 점추정치를 이득의 증거로 해석해서는 안 되며, 관찰된 alkalosis/hypernatremia 증가는 무분별한 사용을 지지하지 않는다.",
+        "limitations": "The trial appears primarily powered for the ROSC outcome, not for 30-day survival or favorable neurologic outcome, so the wide, overlapping confidence intervals for these secondary endpoints preclude firm conclusions about benefit or harm. Only 779 of 913 randomized patients were eligible for the primary analysis, and the abstract does not report reasons for exclusion or a group-level baseline characteristics comparison. The single-country (Denmark) setting and enrollment restricted to patients who had already received epinephrine may limit generalizability to other health systems or specific arrest etiologies (e.g., hyperkalemia, drug toxicity) where bicarbonate has an established indication.",
+        "limitations_ko": "이 시험은 sustained ROSC를 검출하는 데 주로 검정력(power)이 맞춰진 것으로 보이며, 30일 생존율이나 양호한 신경학적 결과에 대해서는 그렇지 않아, 이들 2차 결과의 넓고 서로 겹치는 신뢰구간으로는 이득 또는 해를 확정적으로 결론 내리기 어렵다. 무작위 배정된 913명 중 779명만 주요 분석 대상에 포함되었으며, 초록에는 제외 사유나 군 간 기저 특성 비교표가 제시되지 않았다. 덴마크 단일 국가에서 시행되었고 이미 epinephrine을 투여받은 환자만 등록되었다는 점은 hyperkalemia, 약물 중독 등 중탄산나트륨의 확립된 적응증을 가진 특정 심정지 원인군이나 다른 의료체계로의 일반화 가능성을 제한할 수 있다.",
+        "evidenceLevel": "Moderate",
+        "clinicalApplicabilityScore": 7,
+        "webSources": [
+          {
+            "label": "JAMA Network — Sodium Bicarbonate for In-Hospital Cardiac Arrest: A Randomized Clinical Trial (full article)",
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2850405"
+          },
+          {
+            "label": "JAMA Network — article abstract page",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2850404"
+          },
+          {
+            "label": "PubMed — PMID 42273960",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42273960/"
+          },
+          {
+            "label": "Aarhus University research portal — publication record",
+            "url": "https://pure.au.dk/portal/en/publications/sodium-bicarbonate-for-in-hospital-cardiac-arrest-a-randomized-cl/"
+          }
+        ],
+        "paper": {
+          "pmid": "42273960",
+          "title": "Sodium Bicarbonate for In-Hospital Cardiac Arrest: A Randomized Clinical Trial.",
+          "abstract": "IMPORTANCE: Patients with in-hospital cardiac arrest have poor outcomes. Sodium bicarbonate is commonly administered during cardiac arrest, but the effects on clinical outcomes are unknown.\nOBJECTIVE: To determine whether administration of sodium bicarbonate during in-hospital cardiac arrest increases the proportion of patients with return of spontaneous circulation.\nDESIGN, SETTING, AND PARTICIPANTS: Randomized, parallel-group, double-blind, placebo-controlled clinical trial conducted at 21 hospitals in Denmark. Participants were adults with in-hospital cardiac arrest, who received at least 1 dose of epinephrine. Patients were enrolled from February 6, 2023, to February 11, 2026, with the last 90-day follow-up conducted on May 4, 2026. Final statistical analysis was conducted on May 5, 2026.\nINTERVENTION: Sodium bicarbonate (up to 100 mmol) or placebo intravenously.\nMAIN OUTCOMES AND MEASURES: The primary outcome was sustained return of spontaneous circulation. Key secondary outcomes were survival at 30 days and survival at 30 days with a favorable neurologic outcome, defined by a score of 0 to 3 on the modified Rankin Scale (scores range from 0 to 6, with higher scores indicating greater disability).\nRESULTS: A total of 2913 patients with in-hospital cardiac arrest were screened; 913 patients were randomized, of which 779 were eligible for the primary analyses, with 372 randomized to receive sodium bicarbonate and 407 randomized to receive placebo. The median (IQR) age of patients was 73 (64-79) years and 502 were male (64%). Sustained return of spontaneous circulation occurred in 146 patients (39%) in the sodium bicarbonate group and 150 (37%) in the placebo group (risk ratio, 1.05 [95% CI, 0.88-1.24]; P = .62). At 30 days, 45 patients (12%) in the sodium bicarbonate group and 37 (9.1%) in the placebo group were alive (risk ratio, 1.25 [95% CI, 0.84-1.88]); a favorable neurologic outcome at 30 days occurred in 30 patients (8.1%) and 22 patients (5.4%), respectively (risk ratio, 1.39 [95% CI, 0.82-2.34]). Alkalosis and hypernatremia after cardiac arrest were more common in the sodium bicarbonate group.\nCONCLUSIONS AND RELEVANCE: There was no significant difference in sustained return of spontaneous circulation between sodium bicarbonate and placebo in adults with in-hospital cardiac arrest. These findings do not support routine administration of sodium bicarbonate for patients with in-hospital cardiac arrest.\nTRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT05564130; ClinicalTrialsRegister.eu Identifier: 2022-501304-10-00.",
+          "authors": [
+            "Granfeldt A",
+            "Kirkegaard BL",
+            "Vallentin MF",
+            "Holmberg MJ",
+            "Stankovic N",
+            "Lind PC"
+          ],
+          "journal": "JAMA",
+          "pubDate": "2026-Jun-11",
+          "publicationTypes": [
+            "Journal Article"
+          ],
+          "meshTerms": [],
+          "keywords": [],
+          "doi": "10.1001/jama.2026.10628",
+          "pmcid": "PMC13261510",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42273960/",
+          "collectedAt": "2026-07-29T00:00:07.620Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42273960",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42273960/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2026.10628",
+            "url": "https://doi.org/10.1001/jama.2026.10628"
+          },
+          {
+            "label": "웹 — JAMA Network — Sodium Bicarbonate for In-Hospital Cardiac Arrest: A Randomized Clinical Trial (full article)",
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2850405"
+          },
+          {
+            "label": "웹 — JAMA Network — article abstract page",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2850404"
+          },
+          {
+            "label": "웹 — PubMed — PMID 42273960",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42273960/"
+          },
+          {
+            "label": "웹 — Aarhus University research portal — publication record",
+            "url": "https://pure.au.dk/portal/en/publications/sodium-bicarbonate-for-in-hospital-cardiac-arrest-a-randomized-cl/"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
