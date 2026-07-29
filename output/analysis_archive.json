@@ -1151,6 +1151,63 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-30",
+      "pmid": "42498339",
+      "title": "Smart Systems, Saved Lives: Using AI to Identify Deteriorating Sepsis Patients in Adult Critical Care.",
+      "title_ko": "스마트 시스템, 생명을 구하다: 성인 중환자에서 악화되는 sepsis 환자를 식별하기 위한 AI의 활용",
+      "journal": "Critical care nursing clinics of North America",
+      "doi": "10.1016/j.cnc.2026.04.010",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "성인 중환자 sepsis 환자에서, artificial intelligence 및 machine learning이 기존의 침상 조기경보 도구(MEWS, NEWS2, qSOFA)를 보강하여 생리학적 악화의 조기 인지를 개선할 수 있는가?",
+      "pico": {
+        "population": "[Country NR] Narrative review addressing adult critical care patients with sepsis, described as \"a dysregulated host response to infection\" that \"continues to account for over 31 million deaths annually.\" No defined study cohort, sample size (N), age range, or enrollment dates are reported.",
+        "intervention": "Application of artificial intelligence and machine learning to enhance early warning systems for identifying deteriorating sepsis patients in adult critical care. No thresholds, cutoffs, or model specifications are reported in the abstract.",
+        "comparison": "Traditional bedside early warning tools — \"The Modified Early Warning Score, National Early Warning Score 2, and Quick Sequential Organ Failure Assessment remain the most frequently used bedside tools for adult deterioration and sepsis.\"",
+        "outcome": "As a narrative review, no quantitative primary outcome, effect size, AUROC, OR, HR, confidence interval, or p-value is reported. The paper frames \"early recognition and timely intervention\" as crucial to improving outcomes, citing a sepsis burden of \"over 31 million deaths annually.\""
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 성인 중환자 sepsis 환자를 다루는 서술적 종설(narrative review). sepsis는 \"감염에 대한 조절되지 않는 숙주 반응(dysregulated host response to infection)\"으로 기술되며 \"연간 3,100만 명 이상의 사망\"을 유발한다고 인용됨. 정의된 연구 코호트, 표본 크기(N), 연령 범위, 등록 기간은 보고되지 않음.",
+        "intervention": "성인 중환자에서 악화되는 sepsis 환자를 식별하기 위해 artificial intelligence 및 machine learning을 조기경보 시스템에 적용. 초록에는 역치, cutoff, 모델 사양이 보고되지 않음.",
+        "comparison": "기존의 침상 조기경보 도구 — \"Modified Early Warning Score, National Early Warning Score 2, Quick Sequential Organ Failure Assessment이 성인 악화 및 sepsis에 가장 흔히 사용되는 침상 도구로 남아 있다.\"",
+        "outcome": "서술적 종설이므로 정량적 일차 결과, 효과크기, AUROC, OR, HR, 신뢰구간, p-value가 보고되지 않음. 이 논문은 \"조기 인지와 시의적절한 개입\"이 예후 개선에 핵심이라고 제시하며 \"연간 3,100만 명 이상의 사망\"이라는 sepsis 부담을 인용함."
+      },
+      "keyFindings": [
+        "Sepsis, a dysregulated host response to infection, remains a leading cause of adult critical care mortality, cited as accounting for over 31 million deaths annually.",
+        "The Modified Early Warning Score (MEWS), National Early Warning Score 2 (NEWS2), and Quick Sequential Organ Failure Assessment (qSOFA) remain the most frequently used bedside tools for adult deterioration and sepsis.",
+        "The review proposes that artificial intelligence and machine learning can augment these traditional early warning systems, but reports no comparative performance metrics or effect sizes."
+      ],
+      "keyFindings_ko": [
+        "감염에 대한 조절되지 않는 숙주 반응인 sepsis는 성인 중환자 사망의 주요 원인으로 남아 있으며, 연간 3,100만 명 이상의 사망을 유발한다고 인용됨.",
+        "Modified Early Warning Score(MEWS), National Early Warning Score 2(NEWS2), Quick Sequential Organ Failure Assessment(qSOFA)이 성인 악화 및 sepsis에 가장 흔히 사용되는 침상 도구로 남아 있음.",
+        "이 종설은 artificial intelligence 및 machine learning이 이러한 기존 조기경보 시스템을 보강할 수 있다고 제안하나, 비교 성능 지표나 효과크기는 보고하지 않음."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42498339",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42498339/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.cnc.2026.04.010",
+          "url": "https://doi.org/10.1016/j.cnc.2026.04.010"
+        },
+        {
+          "label": "웹 — PubMed — Smith AR, Manning J. Smart Systems, Saved Lives (PMID 42498339)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42498339/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — Smith AR, Manning J. Smart Systems, Saved Lives (PMID 42498339)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42498339/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
