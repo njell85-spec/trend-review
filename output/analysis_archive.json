@@ -1208,6 +1208,63 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-07-31",
+      "pmid": "42520766",
+      "title": "Efficacy of Sensory Stimulation in Intensive Care Unit Patients: A Systematic Review and Meta-analysis.",
+      "title_ko": "중환자실(ICU) 환자에서 감각 자극(Sensory Stimulation)의 효과: 체계적 문헌고찰 및 메타분석",
+      "journal": "Dimensions of critical care nursing : DCCN",
+      "doi": "10.1097/DCC.0000000000000776",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ICU 환자에서 감각 자극(sensory stimulation)은 일상적 표준 간호(routine care)에 비해 의식 수준을 향상시키고 섬망(delirium)의 발생률·지속시간, 각성 시간(awakening time), 기계환기 기간을 줄이는가?",
+      "pico": {
+        "population": "[Country NR] ICU patients enrolled in 22 randomized controlled trials involving 1,522 patients; MeSH indexing indicates mechanically ventilated (Respiration, Artificial) critically ill patients evaluated for consciousness and delirium.",
+        "intervention": "Sensory stimulation (SS), including multisensory stimulation (MSS) versus single-modality stimulation, delivered by family members or nurses; subgroup analyses examined an intervention period of at least 7 days and twice-daily frequency.",
+        "comparison": "Routine care.",
+        "outcome": "Level of consciousness improved with SS versus routine care (MD: 2.09; 95% CI: 1.50 to 2.68; P < .001)."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 22개 무작위대조시험(RCT)에 포함된 총 1,522명의 ICU 환자; MeSH 색인상 기계환기(Respiration, Artificial)를 받는 중환자로, 의식 수준과 섬망을 평가함.",
+        "intervention": "감각 자극(SS) — 다감각 자극(MSS) 대 단일 감각 자극 비교 포함 — 을 가족 또는 간호사가 시행; 하위집단 분석에서 최소 7일 이상의 중재 기간과 1일 2회 빈도를 검토함.",
+        "comparison": "일상적 표준 간호(routine care).",
+        "outcome": "SS는 routine care 대비 의식 수준을 향상시킴 (MD: 2.09; 95% CI: 1.50 ~ 2.68; P < .001)."
+      },
+      "keyFindings": [
+        "Across 22 RCTs (1,522 ICU patients), sensory stimulation improved level of consciousness versus routine care (MD: 2.09; 95% CI: 1.50 to 2.68; P < .001).",
+        "Sensory stimulation reduced delirium incidence (OR: 0.33; 95% CI: 0.18 to 0.62; P < .001) and duration (MD: -2.63; 95% CI: -3.32 to -2.03; P < .001).",
+        "Sensory stimulation shortened awakening time (MD: -7.39; 95% CI: -8.76 to -6.01; P < .001); subgroups favored family-delivered and multisensory stimulation, ≥7 days, twice daily."
+      ],
+      "keyFindings_ko": [
+        "22개 RCT(ICU 환자 1,522명)에서 감각 자극은 routine care 대비 의식 수준을 향상시킴 (MD: 2.09; 95% CI: 1.50 ~ 2.68; P < .001).",
+        "감각 자극은 섬망 발생률(OR: 0.33; 95% CI: 0.18 ~ 0.62; P < .001)과 지속시간(MD: -2.63; 95% CI: -3.32 ~ -2.03; P < .001)을 감소시킴.",
+        "감각 자극은 각성 시간을 단축시킴 (MD: -7.39; 95% CI: -8.76 ~ -6.01; P < .001); 하위집단에서 가족 시행·다감각 자극, 최소 7일, 1일 2회가 더 유리함."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42520766",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42520766/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/DCC.0000000000000776",
+          "url": "https://doi.org/10.1097/DCC.0000000000000776"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42520766 (abstract, PMID, DOI, authors, journal)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42520766/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 42520766 (abstract, PMID, DOI, authors, journal)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42520766/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
