@@ -3702,6 +3702,266 @@
       },
       "arm3": null,
       "converged": false
+    },
+    {
+      "date": "2026-07-30",
+      "arm1": {
+        "pmid": "42498339",
+        "title_ko": "스마트 시스템, 생명을 구하다: 성인 중환자실에서 악화되는 패혈증 환자 식별을 위한 AI 활용",
+        "clinicalQuestion": "How can AI-based smart systems complement or improve upon existing bedside early warning tools (MEWS, NEWS2, qSOFA) to identify adult critical care patients with deteriorating sepsis?",
+        "clinicalQuestion_ko": "성인 중환자실에서 기존 병상 조기경보 도구(MEWS, NEWS2, qSOFA)에 더해 AI 기반 스마트 시스템이 악화되는 패혈증 환자를 식별하는 데 어떻게 도움이 될 수 있는가?",
+        "pico": {
+          "population": "[USA] Adult patients in critical care with sepsis — 'a dysregulated host response to infection' — which 'continues to account for over 31 million deaths annually' worldwide; review authored by nursing faculty/student at Louisiana State University Health New Orleans School of Nursing",
+          "intervention": "AI-based ('smart') systems for identifying deteriorating sepsis patients, discussed in the context of existing bedside early warning systems 'initially developed to standardize the recognition of physiologic instability and guide early recognition'",
+          "comparison": "Established bedside early warning tools: Modified Early Warning Score (MEWS), National Early Warning Score 2 (NEWS2), and quick Sequential Organ Failure Assessment (qSOFA) — 'the most frequently used bedside tools for adult deterioration and sepsis'",
+          "outcome": "The abstract text available (background/introduction section only) does not report a specific primary outcome, sample size, or effect size for AI-based sepsis deterioration detection; it is limited to describing the clinical problem (sepsis mortality, unpredictable trajectory) and naming existing bedside early warning tools (MEWS, NEWS2, qSOFA) as 'the most frequently used.' No full text was retrievable via PubMed/PMC to obtain further outcome data."
+        },
+        "pico_ko": {
+          "population": "[미국] 중환자실의 성인 패혈증(sepsis) 환자 — '감염에 대한 조절 이상 숙주 반응'으로 정의되며, 전 세계적으로 매년 3,100만 명 이상의 사망(over 31 million deaths annually)과 관련됨; 저자는 Louisiana State University Health New Orleans School of Nursing 소속",
+          "intervention": "악화되는 패혈증 환자를 식별하기 위한 AI 기반('스마트') 시스템 — 기존의 병상 조기경보 시스템('생리적 불안정을 표준화하여 조기 인지를 유도하기 위해 처음 개발됨') 맥락에서 논의됨",
+          "comparison": "기존에 확립된 병상 조기경보 도구: Modified Early Warning Score(MEWS), National Early Warning Score 2(NEWS2), quick Sequential Organ Failure Assessment(qSOFA) — '성인 악화 및 패혈증에 가장 흔히 사용되는 병상 도구'",
+          "outcome": "확인 가능한 초록 내용(배경/서론 부분)에는 AI 기반 패혈증 악화 감지에 대한 구체적인 주요 결과, 표본 크기, 효과 크기가 보고되어 있지 않음 — 임상 문제(패혈증 사망률, 예측 불가능한 경과) 설명과 기존 병상 조기경보 도구(MEWS, NEWS2, qSOFA)를 '가장 흔히 사용되는' 도구로 언급하는 데 그침. PubMed/PMC를 통해 추가 결과 데이터를 얻을 수 있는 전문(full text)은 확인되지 않음."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [],
+        "secondaryOutcomes_ko": [],
+        "statGlossary": [],
+        "keyFindings": [
+          "Sepsis is described as accounting for 'over 31 million deaths annually' worldwide and remains a leading cause of mortality in adult critical care.",
+          "The abstract identifies the Modified Early Warning Score (MEWS), National Early Warning Score 2 (NEWS2), and quick Sequential Organ Failure Assessment (qSOFA) as 'the most frequently used bedside tools for adult deterioration and sepsis.'",
+          "The paper is framed as a review of AI ('smart systems') for identifying deteriorating sepsis patients, but the retrievable abstract text does not include specific AI model names, performance statistics, or study population numbers."
+        ],
+        "keyFindings_ko": [
+          "패혈증은 전 세계적으로 매년 3,100만 명 이상의 사망(over 31 million deaths annually)과 관련되며, 성인 중환자실 사망의 주요 원인으로 남아 있음.",
+          "초록에서는 Modified Early Warning Score(MEWS), National Early Warning Score 2(NEWS2), quick Sequential Organ Failure Assessment(qSOFA)를 '성인 악화 및 패혈증에 가장 흔히 사용되는 병상 도구'로 명시함.",
+          "본 논문은 악화되는 패혈증 환자 식별을 위한 AI('스마트 시스템')에 관한 리뷰로 기획되었으나, 확인 가능한 초록 텍스트에는 구체적인 AI 모델명, 성능 통계, 연구 대상자 수가 포함되어 있지 않음."
+        ],
+        "clinicalTakeaway": "This appears to be a narrative review introducing the rationale for AI-assisted sepsis deterioration detection in adult critical care, built on the established roles of MEWS, NEWS2, and qSOFA. Because the retrievable abstract provides no comparative performance data for any AI system, it cannot yet support a specific change in bedside practice; clinicians should continue to rely on validated early warning scores until primary AI-validation data are reviewed in the full text.",
+        "clinicalTakeaway_ko": "이 논문은 성인 중환자실에서 AI 지원 패혈증 악화 감지의 필요성을 소개하는 내러티브 리뷰로 보이며, MEWS·NEWS2·qSOFA의 확립된 역할을 배경으로 함. 확인 가능한 초록에는 어떤 AI 시스템에 대한 비교 성능 데이터도 없으므로, 현재로서는 병상 진료 방식을 구체적으로 바꿀 근거가 되지 못함. 전문(full text)에서 AI 검증 데이터를 확인하기 전까지는 검증된 조기경보 점수 체계를 계속 사용해야 함.",
+        "limitations": "Only the abstract (background/introduction portion) is available; no full text was accessible via PubMed/PMC/publisher to confirm study design, sample size, AI model details, or outcome statistics. The article appears to be a narrative review rather than a primary study, and the excerpt retrieved contains no original data, limiting assessment of evidence quality and generalizability.",
+        "limitations_ko": "초록(배경/서론 부분)만 확인 가능하며, PubMed/PMC/출판사를 통해 연구 설계·표본 크기·AI 모델 세부사항·결과 통계를 확인할 수 있는 전문(full text)에는 접근하지 못함. 논문은 원저 연구가 아닌 내러티브 리뷰로 보이며, 확인된 부분에는 원본 데이터가 없어 근거 수준과 일반화 가능성을 평가하는 데 제한이 있음.",
+        "practiceChange": [
+          "Do not replace validated bedside early warning tools (MEWS, NEWS2, qSOFA) with AI-based sepsis-deterioration systems based on this abstract alone — no comparative performance data are available in the retrievable text.",
+          "Continue to use MEWS/NEWS2/qSOFA as the primary bedside deterioration-screening tools for adult sepsis, per this review's description of current standard practice.",
+          "If the full text becomes available, re-review for specific AI model performance metrics (e.g., AUROC, sensitivity/specificity) before considering integration into clinical workflows."
+        ],
+        "practiceChange_ko": [
+          "이 초록만으로는 검증된 병상 조기경보 도구(MEWS, NEWS2, qSOFA)를 AI 기반 패혈증 악화 감지 시스템으로 대체하지 말 것 — 확인 가능한 텍스트에는 비교 성능 데이터가 없음.",
+          "본 리뷰가 서술한 현재 표준 진료에 따라 성인 패혈증의 1차 병상 악화 선별 도구로 MEWS/NEWS2/qSOFA를 계속 사용할 것.",
+          "전문(full text)을 확인할 수 있게 되면, 임상 워크플로에 도입을 고려하기 전에 구체적인 AI 모델 성능 지표(예: AUROC, 민감도/특이도)를 재검토할 것."
+        ],
+        "evidenceLevel": "Very Low",
+        "clinicalApplicabilityScore": 2,
+        "webSources": [
+          {
+            "label": "PubMed record — PMID 42498339",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498339/"
+          },
+          {
+            "label": "NCBI E-utilities esearch (confirms PMID match on Smith AR / Manning J / sepsis / 2026)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=Smith+AR%5BAuthor%5D+AND+Manning+J%5BAuthor%5D+AND+sepsis+AND+2026%5Bpdat%5D"
+          },
+          {
+            "label": "NCBI E-utilities efetch (abstract XML, author affiliations, journal pagination, DOI)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42498339&rettype=abstract&retmode=xml"
+          },
+          {
+            "label": "Publisher (Elsevier ScienceDirect) via DOI",
+            "url": "https://doi.org/10.1016/j.cnc.2026.04.010"
+          }
+        ],
+        "paper": {
+          "pmid": "42498339",
+          "title": "Smart Systems, Saved Lives: Using AI to Identify Deteriorating Sepsis Patients in Adult Critical Care.",
+          "abstract": "Sepsis remains one of the leading causes of mortality in adult critical care, representing a dysregulated host response to infection. Despite advances in therapeutics and supportive care, it continues to account for over 31 million deaths annually. Its unpredictable trajectory and variable physiologic presentations make early recognition and timely intervention crucial to improving outcomes. Early warning systems were initially developed to standardize the recognition of physiologic instability and guide early recognition. The Modified Early Warning Score, National Early Warning Score 2, and Quick Sequential Organ Failure Assessment remain the most frequently used bedside tools for adult deterioration and sepsis.",
+          "authors": [
+            "Smith AR",
+            "Manning J"
+          ],
+          "journal": "Critical care nursing clinics of North America",
+          "pubDate": "2026-Sep",
+          "publicationTypes": [
+            "Journal Article",
+            "Review"
+          ],
+          "meshTerms": [
+            "Humans",
+            "Sepsis",
+            "Critical Care",
+            "Artificial Intelligence",
+            "Early Warning Score",
+            "Organ Dysfunction Scores",
+            "Adult"
+          ],
+          "keywords": [
+            "Artificial Intelligence",
+            "Early Warning Systems",
+            "Machine learning"
+          ],
+          "doi": "10.1016/j.cnc.2026.04.010",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42498339/",
+          "collectedAt": "2026-07-29T23:57:59.251Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42498339",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498339/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.cnc.2026.04.010",
+            "url": "https://doi.org/10.1016/j.cnc.2026.04.010"
+          },
+          {
+            "label": "웹 — PubMed record — PMID 42498339",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42498339/"
+          },
+          {
+            "label": "웹 — NCBI E-utilities esearch (confirms PMID match on Smith AR / Manning J / sepsis / 2026)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=Smith+AR%5BAuthor%5D+AND+Manning+J%5BAuthor%5D+AND+sepsis+AND+2026%5Bpdat%5D"
+          },
+          {
+            "label": "웹 — NCBI E-utilities efetch (abstract XML, author affiliations, journal pagination, DOI)",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42498339&rettype=abstract&retmode=xml"
+          },
+          {
+            "label": "웹 — Publisher (Elsevier ScienceDirect) via DOI",
+            "url": "https://doi.org/10.1016/j.cnc.2026.04.010"
+          }
+        ]
+      },
+      "arm2": {
+        "pmid": "42267831",
+        "title_ko": "심정지 후 무반응 환자에서의 보존적 산소요법",
+        "clinicalQuestion": "In unresponsive adults receiving mechanical ventilation after cardiac arrest, does conservative oxygen therapy (limiting SpO2/FiO2 exposure) improve survival with a favorable functional outcome at 180 days compared with liberal oxygen therapy?",
+        "clinicalQuestion_ko": "심정지 후 기계환기 중인 무반응 성인 환자에서, conservative 산소요법(SpO2/FiO2 노출 제한)이 liberal 산소요법에 비해 180일째 favorable functional outcome을 동반한 생존율을 개선하는가?",
+        "pico": {
+          "population": "[International] Unresponsive adults receiving mechanical ventilation in the intensive care unit (ICU) after cardiac arrest. A total of 1840 patients were recruited from 53 ICUs in Australia, New Zealand, and Ireland, with 882 assigned to conservative oxygen therapy and 958 assigned to liberal oxygen therapy.",
+          "intervention": "Conservative oxygen therapy: the default lower limit of arterial oxygen saturation by pulse oximetry (Spo2) was 90%; the alarm for the upper limit of Spo2 was set at 95%, and the fraction of inspired oxygen (Fio2) was decreased to 0.21 provided that the Spo2 was above the lower limit.",
+          "comparison": "Liberal oxygen therapy: the default lower limit of Spo2 was also 90%, but there were no measures limiting the upper Spo2, and the minimum Fio2 permitted during mechanical ventilation was 0.3.",
+          "outcome": "Primary outcome: survival with a favorable functional outcome (GOS-E level ≥5) at 180 days — observed in 313 of 819 patients (38.2%) in the conservative-oxygen group vs. 353 of 890 patients (39.7%) in the liberal-oxygen group (relative risk, 0.97; 95% confidence interval, 0.87 to 1.09; P = 0.65)."
+        },
+        "pico_ko": {
+          "population": "[다국가] 심정지 후 중환자실(ICU)에서 기계환기 중인 무반응 성인 환자. 호주, 뉴질랜드, 아일랜드의 53개 ICU에서 총 1840명이 모집되었으며, 882명은 conservative 산소요법군, 958명은 liberal 산소요법군에 배정됨.",
+          "intervention": "Conservative 산소요법: Spo2 하한 기본값은 90%였고, Spo2 상한 알람을 95%로 설정하였으며, Spo2가 하한 이상으로 유지되는 경우 Fio2를 0.21까지 감소시킴.",
+          "comparison": "Liberal 산소요법: Spo2 하한 기본값은 동일하게 90%였으나, Spo2 상한을 제한하는 조치는 없었고, 기계환기 중 허용되는 최소 Fio2는 0.3이었음.",
+          "outcome": "1차 결과: 180일째 favorable functional outcome(GOS-E ≥5)을 동반한 생존 — conservative군 313/819명(38.2%) vs liberal군 353/890명(39.7%); relative risk 0.97(95% CI, 0.87–1.09), P=0.65."
+        },
+        "baseline": "Not reported",
+        "secondaryOutcomes": [
+          "No adverse events were reported in either the conservative-oxygen or liberal-oxygen group."
+        ],
+        "secondaryOutcomes_ko": [
+          "conservative 산소요법군과 liberal 산소요법군 모두에서 보고된 이상반응(adverse event)은 없었음."
+        ],
+        "statGlossary": [
+          {
+            "term": "Relative risk (RR)",
+            "explanation_ko": "두 군 간 사건 발생 확률의 비율로, 1보다 작으면 위험 감소, 1보다 크면 위험 증가를 의미. 예: RR 0.97 → conservative군의 favorable outcome 발생률이 liberal군 대비 약 3% 낮았으나 임상적으로 의미 있는 차이는 아님."
+          },
+          {
+            "term": "95% CI",
+            "explanation_ko": "참값이 포함될 것으로 95% 확신하는 범위로, 비(ratio) 지표에서 이 범위가 1(무차이)을 포함하면 통계적으로 유의하지 않음. 예: 95% CI 0.87–1.09 → 1을 포함하므로 두 군 간 유의한 차이가 없다고 해석."
+          },
+          {
+            "term": "P-value",
+            "explanation_ko": "관찰된 차이가 우연히 발생했을 확률로, 통상 0.05 미만이면 통계적으로 유의하다고 판단. 예: P=0.65 → 이런 정도의 차이가 우연히 나타날 확률이 65%로 매우 높아 통계적으로 유의하지 않음."
+          },
+          {
+            "term": "GOS-E",
+            "explanation_ko": "Extended Glasgow Outcome Scale의 약자로, 외상성·저산소성 뇌손상 후 기능적 회복 정도를 1(사망)부터 8(완전 회복)까지 평가하는 척도. 예: 이 연구는 GOS-E 5점(lower moderate disability) 이상을 favorable functional outcome으로 정의함."
+          }
+        ],
+        "practiceChange": [
+          "Do not adopt a conservative (lower-SpO2/lower-FiO2) oxygenation strategy specifically to improve 180-day functional survival in unresponsive post-cardiac-arrest patients on mechanical ventilation — this large multicenter RCT found no benefit over a liberal strategy (minimum FiO2 0.3, no upper SpO2 limit).",
+          "Note that both trial arms shared a common SpO2 lower limit of 90%, so this result addresses only upper-limit oxygen titration; it does not license tolerating SpO2 below 90% and should not be extrapolated to justify hypoxemia.",
+          "Given the null result with a reasonably precise confidence interval in a well-powered (1840-patient) international trial, clinicians can default to simpler liberal oxygen titration (FiO2 ≥0.3) post-arrest without added complexity of conservative oxygen protocols, pending further data on secondary/safety outcomes."
+        ],
+        "practiceChange_ko": [
+          "심정지 후 기계환기 중인 무반응 환자에서 180일 기능적 생존 개선을 목적으로 conservative(낮은 SpO2/FiO2) 산소요법을 채택할 근거는 부족함 — 대규모 다기관 RCT에서 liberal 요법(최소 FiO2 0.3, SpO2 상한 제한 없음) 대비 이점이 없었음.",
+          "두 군 모두 SpO2 하한 90%를 공통으로 사용했으므로, 이번 결과는 '상한 산소 제한'에 국한된 질문에 답한 것이며 SpO2 90% 미만의 저산소혈증을 용인해도 된다는 근거로 확대 해석해서는 안 됨.",
+          "1840명 규모의 국제 다기관 RCT에서 비교적 정밀한 신뢰구간과 함께 유의한 차이가 없었으므로, 2차/안전성 결과에 대한 추가 자료가 나올 때까지는 심정지 후 산소요법에서 단순한 liberal 적정(FiO2 ≥0.3)을 기본 전략으로 고려할 수 있음."
+        ],
+        "keyFindings": [
+          "In this multicenter RCT of 1840 unresponsive post-cardiac-arrest patients (882 conservative-oxygen, 958 liberal-oxygen) across 53 ICUs in Australia, New Zealand, and Ireland, a favorable functional outcome (GOS-E ≥5) at 180 days occurred in 38.2% (313/819) of the conservative-oxygen group vs. 39.7% (353/890) of the liberal-oxygen group.",
+          "The between-group difference was not statistically significant (relative risk, 0.97; 95% CI, 0.87 to 1.09; P = 0.65).",
+          "No adverse events were reported in either treatment group."
+        ],
+        "keyFindings_ko": [
+          "호주·뉴질랜드·아일랜드의 53개 ICU에서 심정지 후 무반응 환자 1840명(conservative 산소요법군 882명, liberal 산소요법군 958명)을 대상으로 한 다기관 RCT에서, 180일째 favorable functional outcome(GOS-E ≥5)은 conservative군 38.2%(313/819), liberal군 39.7%(353/890)로 관찰됨.",
+          "두 군 간 차이는 통계적으로 유의하지 않았음(relative risk 0.97; 95% CI, 0.87–1.09; P = 0.65).",
+          "두 치료군 모두에서 보고된 이상반응은 없었음."
+        ],
+        "clinicalTakeaway": "In unresponsive adults mechanically ventilated after cardiac arrest, a conservative oxygen strategy (SpO2 upper alarm 95%, FiO2 down to 0.21) does not improve 180-day survival with favorable functional outcome compared with a liberal strategy (minimum FiO2 0.3, no upper SpO2 limit). Clinicians can select either approach based on unit workflow without expecting a difference in neurological/functional recovery, while continuing to avoid SpO2 below the 90% lower limit used in both arms.",
+        "clinicalTakeaway_ko": "심정지 후 기계환기 중인 무반응 성인 환자에서 conservative 산소요법(SpO2 상한 알람 95%, FiO2 0.21까지 감소)은 liberal 산소요법(최소 FiO2 0.3, SpO2 상한 제한 없음)에 비해 180일째 favorable functional outcome을 동반한 생존율을 개선하지 못함. 임상의는 두 전략 중 어느 쪽을 택하더라도 신경학적·기능적 회복에 차이를 기대할 필요는 없으나, 양 군에서 공통으로 사용된 SpO2 하한 90% 미만은 계속 피해야 함.",
+        "limitations": "This analysis is based on the published abstract only; the full-text article was not accessible (the NEJM article page returned an access-restricted response, and no PMC record was yet available), so details on baseline characteristics, blinding/allocation concealment, secondary outcomes (e.g., mortality, ICU/hospital length of stay, cognitive outcomes), protocol adherence/oxygen-exposure fidelity between groups, and prespecified subgroup analyses could not be independently verified from an authoritative source. The abstract does not state whether outcome assessors were blinded, and fewer patients had primary outcome data available (819 of 882 and 890 of 958) than were originally randomized, with the reason for this attrition not explained in the abstract.",
+        "limitations_ko": "본 분석은 공개된 초록(abstract)만을 근거로 하였으며, 전체 원문에는 접근할 수 없었음(NEJM 원문 페이지는 접근이 제한되어 있었고, PMC에도 아직 등재되지 않음). 이에 따라 기저특성, 눈가림/배정은폐 방법, 2차 결과(사망률, ICU/입원 재원일수, 인지기능 결과 등), 군 간 산소 노출 프로토콜 순응도, 사전 지정된 하위군 분석 등의 세부사항은 신뢰할 수 있는 출처로 확인하지 못함. 초록에는 결과 평가자의 눈가림 여부가 명시되어 있지 않으며, 1차 결과 자료가 확인된 인원(819/882명, 890/958명)이 애초 무작위배정된 인원보다 적어 결측치가 발생한 이유도 설명되어 있지 않음.",
+        "evidenceLevel": "High",
+        "clinicalApplicabilityScore": 8,
+        "webSources": [
+          {
+            "label": "PubMed abstract — Conservative Oxygen for Unresponsive Patients after Cardiac Arrest",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42267831/"
+          },
+          {
+            "label": "NEJM official article page (10.1056/NEJMoa2513814) — access restricted/paywalled at time of review",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2513814"
+          },
+          {
+            "label": "American College of Cardiology journal scan summary of the LOGICAL trial",
+            "url": "https://www.acc.org/latest-in-cardiology/journal-scans/2026/06/15/17/15/logical"
+          }
+        ],
+        "paper": {
+          "pmid": "42267831",
+          "title": "Conservative Oxygen for Unresponsive Patients after Cardiac Arrest.",
+          "abstract": "BACKGROUND: In patients who are unresponsive after resuscitation from cardiac arrest, limiting oxygen exposure to that necessary to achieve acceptable oxygenation may increase the likelihood of survival with a favorable functional outcome.\nMETHODS: We randomly assigned unresponsive adults receiving mechanical ventilation in the intensive care unit (ICU) after cardiac arrest to conservative or liberal oxygen therapy. In the two groups, the default lower limit of arterial oxygen saturation as measured by pulse oximetry (Spo) was 90%. In the conservative-oxygen group, the alarm for the upper limit of the Spo was set at 95%, and the fraction of inspired oxygen (Fio) was decreased to 0.21 provided that the Spo was above the lower limit. In the liberal-oxygen group, there were no measures limiting the upper Spo, but the minimum Fio permitted during mechanical ventilation was 0.3. The primary outcome was survival with a favorable functional outcome at 180 days, assessed with the Extended Glasgow Outcome Scale (GOS-E). Levels on the GOS-E range from 1 (death) to 8 (\"upper good recovery\"). We defined survival with a favorable functional outcome as a GOS-E level of 5 (\"lower moderate disability\") or higher.\nRESULTS: A total of 1840 patients were recruited from 53 ICUs in Australia, New Zealand, and Ireland, with 882 assigned to conservative oxygen therapy and 958 assigned to liberal oxygen therapy. A favorable functional outcome at 180 days was observed for 313 of 819 patients (38.2%) in the conservative-oxygen group and 353 of 890 patients (39.7%) in the liberal-oxygen group (relative risk, 0.97; 95% confidence interval, 0.87 to 1.09; P = 0.65). No adverse events were reported.\nCONCLUSIONS: Among unresponsive adults undergoing mechanical ventilation in the ICU after a cardiac arrest, the percentage who survived with a favorable functional outcome was not higher with conservative oxygen therapy than with liberal oxygen therapy. (Funded by the Health Research Council of New Zealand and others; LOGICAL Australian New Zealand Clinical Trials Registry number, ACTRN12621000518864.).",
+          "authors": [
+            "Hodgson CL",
+            "Mackle D",
+            "Mather AM",
+            "Bailey M",
+            "Beasley R"
+          ],
+          "journal": "The New England journal of medicine",
+          "pubDate": "2026-Jun-10",
+          "publicationTypes": [
+            "Journal Article"
+          ],
+          "meshTerms": [],
+          "keywords": [],
+          "doi": "10.1056/NEJMoa2513814",
+          "pmcid": "",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42267831/",
+          "collectedAt": "2026-07-30T00:04:28.612Z"
+        },
+        "evidenceSource": "초록 + 웹보강",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42267831",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42267831/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMoa2513814",
+            "url": "https://doi.org/10.1056/NEJMoa2513814"
+          },
+          {
+            "label": "웹 — PubMed abstract — Conservative Oxygen for Unresponsive Patients after Cardiac Arrest",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42267831/"
+          },
+          {
+            "label": "웹 — NEJM official article page (10.1056/NEJMoa2513814) — access restricted/paywalled at time of review",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2513814"
+          },
+          {
+            "label": "웹 — American College of Cardiology journal scan summary of the LOGICAL trial",
+            "url": "https://www.acc.org/latest-in-cardiology/journal-scans/2026/06/15/17/15/logical"
+          }
+        ]
+      },
+      "arm3": null,
+      "converged": false
     }
   ]
 }
