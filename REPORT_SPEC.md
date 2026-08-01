@@ -92,7 +92,16 @@
 - Secrets: `KAKAO_REST_API_KEY`, `KAKAO_REFRESH_TOKEN`(필수), `KAKAO_CLIENT_SECRET`(앱 설정 시).
 - refresh 토큰은 매 실행 시 access 토큰으로 갱신. 카카오가 refresh를 회전시키면 로그 경고 → secret 갱신.
 - 미설정 시 발송만 건너뜀(파이프라인 정상).
-- **이메일(Gmail)은 사용하지 않음(PeterJ 확정, 2026-07-05)** — 알림은 카카오 단일 채널.
+- **이메일(Gmail)은 사용하지 않음(PeterJ 확정, 2026-07-05)**.
+- **텔레그램 병행 발송(2026-08-01 추가)** — 알림 채널 전역 방침이 텔레그램으로 확정되어
+  카카오와 병행한다("카카오 단일 채널" 문구는 이 개정으로 대체).
+  - 모듈: `src/agents/TelegramNotifier.js` — Bot API `sendMessage`. **메시지 텍스트는
+    `KakaoNotifier`의 빌더를 재사용**한다(포맷 정본은 §2 한 곳 — 채널별로 갈라두지 않는다).
+  - Secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 미설정 시 발송만 건너뜀(파이프라인 정상).
+  - 발송 지점은 카카오와 동일 3곳: 성공 리포트·실패 알림(`github-actions-daily.mjs`),
+    Pages 배포 실패(`scripts/verify-pages-deploy.mjs`).
+  - 통로 점검: `telegram-smoke.yml`(workflow_dispatch) — 시크릿 등록 직후 수동 1회.
+  - 보안: 봇 토큰이 URL에 들어가므로 에러 메시지에 URL을 넣지 않는다. `parse_mode` 미사용.
 - **Google Drive 업로드**는 현재 미사용이나 **phase2/3 연동 대비 인프라를 보존**한다
   (`NotificationAgent`, `ENABLE_DRIVE=true` 게이트, 기본 비활성). Gmail 관련 코드는 제거됨.
 

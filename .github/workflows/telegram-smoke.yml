@@ -1,0 +1,29 @@
+name: Telegram smoke test
+
+# 텔레그램 통로 점검 — 시크릿 등록 직후 수동 1회 실행 (판정·리포트 없이 메시지 1건).
+# 세션 컨테이너에서는 프록시가 api.telegram.org를 막아 못 돌린다 — 여기서만 가능.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Send smoke message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/telegram-smoke.mjs
