@@ -98,6 +98,10 @@
   - 모듈: `src/agents/TelegramNotifier.js` — Bot API `sendMessage`. **메시지 텍스트는
     `KakaoNotifier`의 빌더를 재사용**한다(포맷 정본은 §2 한 곳 — 채널별로 갈라두지 않는다).
   - Secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 미설정 시 발송만 건너뜀(파이프라인 정상).
+    - ⚠️ **값은 "리포트용" 봇이다** — 타워 센티널의 "경보용" 봇과 다른 봇을 쓴다.
+      경보와 리포트를 한 대화창에 섞으면 음소거를 따로 못 걸어 경보를 놓친다.
+      규격 정본: global-config `rulebook/command-center.md` §7 "봇 2개 규격".
+      (`TELEGRAM_CHAT_ID`는 두 봇 모두 같은 값 — 대화창은 chat_id가 아니라 봇으로 갈린다.)
   - 발송 지점은 카카오와 동일 3곳: 성공 리포트·실패 알림(`github-actions-daily.mjs`),
     Pages 배포 실패(`scripts/verify-pages-deploy.mjs`).
   - 통로 점검: `telegram-smoke.yml`(workflow_dispatch) — 시크릿 등록 직후 수동 1회.
