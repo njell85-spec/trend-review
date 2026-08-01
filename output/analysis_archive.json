@@ -1331,6 +1331,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-02",
+      "pmid": "42538732",
+      "title": "IgM-Enriched Immunoglobulin As Adjunctive Therapy in Adult Sepsis and Septic Shock: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+      "title_ko": "성인 패혈증 및 패혈성 쇼크에서 보조 요법으로서의 IgM 강화 면역글로불린: 무작위 대조 시험에 대한 체계적 문헌고찰 및 메타분석",
+      "journal": "Critical care explorations",
+      "doi": "10.1097/CCE.0000000000001451",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "성인 sepsis, severe sepsis 또는 septic shock 환자에서 표준 치료에 IgM 강화 면역글로불린(Pentaglobin)을 보조적으로 추가하면 표준 치료 단독에 비해 단기 사망률을 낮추는가?",
+      "pico": {
+        "population": "[International] Adults with sepsis, severe sepsis, or septic shock enrolled in randomized controlled trials; the protocol-concordant core synthesis comprised six English-language randomized Pentaglobin trials with extractable short-term mortality data (411 participants).",
+        "intervention": "An IgM-enriched immunoglobulin preparation (Pentaglobin) administered in addition to standard care; a post hoc exploratory formulation-class analysis also incorporated the phase II Concentrated IgM for Application (CIGMA) trimodulin trial.",
+        "comparison": "Standard care alone (without IgM-enriched immunoglobulin).",
+        "outcome": "Short-term mortality: the primary pooled estimate was directionally favorable but statistically inconclusive (OR, 0.65; 95% CI, 0.39-1.07; I2 = 9%)."
+      },
+      "pico_ko": {
+        "population": "[다국가] 무작위 대조 시험에 등록된 sepsis, severe sepsis 또는 septic shock 성인 환자; 프로토콜 부합 핵심 통합 분석은 단기 사망률 데이터를 추출할 수 있는 6개의 영어 논문 Pentaglobin 무작위 시험(411명)으로 구성됨.",
+        "intervention": "표준 치료에 추가로 투여된 IgM 강화 면역글로불린 제제(Pentaglobin); 사후(post hoc) 탐색적 제형-계열 분석에서는 phase II Concentrated IgM for Application (CIGMA) trimodulin 시험도 포함함.",
+        "comparison": "표준 치료 단독(IgM 강화 면역글로불린 미투여).",
+        "outcome": "단기 사망률: 일차 통합 추정치는 방향성은 유리했으나 통계적으로 결론에 이르지 못함(OR, 0.65; 95% CI, 0.39-1.07; I2 = 9%)."
+      },
+      "keyFindings": [
+        "In the protocol-concordant core synthesis of six English-language Pentaglobin RCTs (411 participants), short-term mortality was directionally favorable but statistically inconclusive (OR, 0.65; 95% CI, 0.39-1.07; I2 = 9%), and the exact 28-day mortality (OR, 0.84; 95% CI, 0.50-1.43) and risk-ratio model (RR, 0.76; 95% CI, 0.55-1.06) were also nonsignificant.",
+        "Statistically significant benefit appeared ONLY in exploratory post hoc analyses: the language-inclusive Pentaglobin sensitivity analysis (OR, 0.57; 95% CI, 0.34-0.95; I2 = 16%) and the formulation-class model including the CIGMA trimodulin trial (OR, 0.64; 95% CI, 0.43-0.94; I2 = 5%).",
+        "Safety reporting was incomplete in most Pentaglobin reports, and the authors conclude current evidence does not justify routine use while a recurrent direction of effect supports a modern, adequately powered, phenotype-guided trial."
+      ],
+      "keyFindings_ko": [
+        "6개의 영어 논문 Pentaglobin RCT(411명)로 구성된 프로토콜 부합 핵심 통합 분석에서 단기 사망률은 방향성은 유리했으나 통계적으로 불확실했고(OR, 0.65; 95% CI, 0.39-1.07; I2 = 9%), 정확한 28일 사망률(OR, 0.84; 95% CI, 0.50-1.43)과 risk-ratio 모델(RR, 0.76; 95% CI, 0.55-1.06)도 유의하지 않았음.",
+        "통계적으로 유의한 이득은 탐색적 사후(post hoc) 분석에서만 나타남: 언어 포함 Pentaglobin 민감도 분석(OR, 0.57; 95% CI, 0.34-0.95; I2 = 16%) 및 CIGMA trimodulin 시험을 포함한 제형-계열 모델(OR, 0.64; 95% CI, 0.43-0.94; I2 = 5%).",
+        "대부분의 Pentaglobin 논문에서 안전성 보고가 불완전했으며, 저자들은 현재 근거가 일상적 사용을 정당화하지 못하나 반복되는 효과 방향성은 현대적이고 적절히 검정력 있는 phenotype 기반 시험을 뒷받침한다고 결론지음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42538732",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42538732/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCE.0000000000001451",
+          "url": "https://doi.org/10.1097/CCE.0000000000001451"
+        },
+        {
+          "label": "웹 — PubMed — Sewify et al., IgM-Enriched Immunoglobulin in Adult Sepsis (PMID 42538732)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42538732/"
+        },
+        {
+          "label": "웹 — DOI/Publisher (Critical Care Explorations) 10.1097/CCE.0000000000001451",
+          "url": "https://doi.org/10.1097/CCE.0000000000001451"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — Sewify et al., IgM-Enriched Immunoglobulin in Adult Sepsis (PMID 42538732)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42538732/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "DOI/Publisher (Critical Care Explorations) 10.1097/CCE.0000000000001451",
+          "url": "https://doi.org/10.1097/CCE.0000000000001451",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
