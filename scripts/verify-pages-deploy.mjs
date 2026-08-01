@@ -20,6 +20,7 @@
  * 보안상 이 스크립트는 LLM 파이프라인과 별도 잡에서 실행한다 (daily-review.yml 참고).
  */
 import { KakaoNotifier } from '../src/agents/KakaoNotifier.js';
+import { TelegramNotifier } from '../src/agents/TelegramNotifier.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
 const API = 'https://api.github.com';
@@ -82,6 +83,15 @@ async function notifyAndFail(reason) {
     if (r.sent) console.log('💬 카카오 실패 알림 발송 완료');
   } catch (err) {
     console.warn(`⚠️  카카오 실패 알림 전송 실패(무시): ${err.message}`);
+  }
+  try {
+    const r = await new TelegramNotifier().sendFailure({
+      dateStr: kstDateStr(),
+      reason: `대시보드 배포 확인 실패 — ${reason}`,
+    });
+    if (r.sent) console.log('💬 텔레그램 실패 알림 발송 완료');
+  } catch (err) {
+    console.warn(`⚠️  텔레그램 실패 알림 전송 실패(무시): ${err.message}`);
   }
   process.exit(1);
 }

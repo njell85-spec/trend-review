@@ -14,6 +14,7 @@ import 'dotenv/config';
 import { appendFileSync } from 'fs';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
+import { TelegramNotifier } from './src/agents/TelegramNotifier.js';
 import { runWithRetry } from './src/utils/retryPipeline.js';
 import { llmTelemetry } from './src/utils/LLMClient.js';
 import { installUsageDump } from './src/utils/usageDump.js';
@@ -52,6 +53,12 @@ async function notifyFailure(reasonLabel) {
     if (r.sent) console.log('💬 카카오 실패 알림 발송 완료');
   } catch (err) {
     console.warn(`⚠️  카카오 실패 알림 전송 실패(무시): ${err.message}`);
+  }
+  try {
+    const r = await new TelegramNotifier().sendFailure({ dateStr: todayKST, reason: reasonLabel });
+    if (r.sent) console.log('💬 텔레그램 실패 알림 발송 완료');
+  } catch (err) {
+    console.warn(`⚠️  텔레그램 실패 알림 전송 실패(무시): ${err.message}`);
   }
 }
 
@@ -128,8 +135,23 @@ try {
 } catch (err) {
   kakaoStatus = `발송 실패: ${err.message.slice(0, 120)}`;
   console.warn(`⚠️  카카오 발송 실패(파이프라인은 정상): ${err.message}`);
-  // 카톡이 유일한 알림 채널이므로, 발송 실패는 잡 로그에서 반드시 눈에 띄어야 한다
   console.log(`::warning::카카오 발송 실패 — ${err.message.slice(0, 200)}`);
+}
+
+// ── 텔레그램 발송 (Secrets 설정 시) — 카카오와 병행, 전역 방침 기본 채널 ────────
+// 어느 채널이 실패해도 파이프라인은 성공 처리. 두 채널이 동시에 실패하면 알림이
+// 전무해지므로, 실패는 잡 로그에서 반드시 눈에 띄어야 한다(::warning).
+let telegramStatus = '미설정';
+try {
+  const r = await new TelegramNotifier().send({ dateStr: todayKST, topPaper: papers[0], pagesUrl });
+  if (r.sent) {
+    telegramStatus = '발송 완료';
+    console.log('💬 텔레그램 리포트 발송 완료');
+  }
+} catch (err) {
+  telegramStatus = `발송 실패: ${err.message.slice(0, 120)}`;
+  console.warn(`⚠️  텔레그램 발송 실패(파이프라인은 정상): ${err.message}`);
+  console.log(`::warning::텔레그램 발송 실패 — ${err.message.slice(0, 200)}`);
 }
 
 // ── Phase 2: Drive 아카이브 + 리빙 Doc (소프트 실패 — 코어에 영향 없음) ────────
@@ -173,6 +195,7 @@ jobSummary([
   `- 선정: **${(top.title_ko || top.paper?.title || '').slice(0, 100)}** (PMID ${top.paper?.pmid ?? '—'})`,
   `- LLM 경로: ${llmRoute}`,
   `- 카카오: ${kakaoStatus}`,
+  `- 텔레그램: ${telegramStatus}`,
   `- 아카이브: ${archiveStatus}`,
   `- 영상: ${videoStatus}`,
   `- 대시보드: ${pagesUrl}`,
