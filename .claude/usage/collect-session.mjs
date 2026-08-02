@@ -33,6 +33,7 @@
  *   node tools/usage/collect-session.mjs              # 훅 입력(stdin JSON) 또는 자동 탐색
  *   node tools/usage/collect-session.mjs --print      # 파일을 쓰지 않고 결과만 출력
  *   node tools/usage/collect-session.mjs --transcript <path>
+ *   node tools/usage/collect-session.mjs --out <dir>  # 출력 위치를 인자로 지정
  *
  * 훅에서 쓸 때는 **절대 실패로 세션을 막지 않는다** — 무슨 일이 있어도 종료코드 0.
  */
@@ -44,23 +45,36 @@ import { spawnSync } from 'node:child_process';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
-/* 출력 위치 — 이 수집기는 **모든 repo에 배포**된다(tools/sync-to-repo.sh).
- * · 타워(global-config): 장부 옆 `data/usage/sessions/`
- * · 프로젝트 repo: `.usage/sessions/` — 그 repo의 세션이 자기 repo에 남긴다.
- *   타워는 나중에 `tools/usage/collect-repos.mjs`로 걷어 합산한다.
- * 배포본은 `<repo>/.claude/usage/collect-session.mjs`에 놓이므로 ROOT는 어느 쪽이든 repo 루트다. */
-const OUT_DIR = process.env.USAGE_OUT_DIR
-  ? path.resolve(process.env.USAGE_OUT_DIR)
-  : existsSync(path.join(ROOT, 'data', 'usage'))
-    ? path.join(ROOT, 'data', 'usage', 'sessions')
-    : path.join(ROOT, '.usage', 'sessions');
-
 const argv = process.argv.slice(2);
 const PRINT_ONLY = argv.includes('--print');
 const TRANSCRIPT_ARG = (() => {
   const i = argv.indexOf('--transcript');
   return i >= 0 ? argv[i + 1] : null;
 })();
+/* `--out <dir>`이 필요한 이유 — 하네스가 훅 객체에 `env`를 주지 않는다.
+ * 데스크탑 로컬(관제 v3)은 출력 위치를 Drive 동기화 폴더로 돌려야 하는데, Stop 훅으로는
+ * 환경변수를 심을 자리가 없다(공식 훅 스키마에 `env` 필드가 없음 — 2026-07-28 문서 확인).
+ * 남는 길은 ①PC 전역 환경변수 ②셸 문법으로 앞에 붙이기 두 개뿐이고, 둘 다 PC 셸이
+ * 무엇이냐에 기댄다. 인자로 받으면 셸에도 환경에도 안 기댄다. */
+const OUT_ARG = (() => {
+  const i = argv.indexOf('--out');
+  return i >= 0 ? argv[i + 1] : null;
+})();
+
+/* 출력 위치 — 이 수집기는 **모든 repo에 배포**된다(tools/sync-to-repo.sh).
+ * · 타워(global-config): 장부 옆 `data/usage/sessions/`
+ * · 프로젝트 repo: `.usage/sessions/` — 그 repo의 세션이 자기 repo에 남긴다.
+ *   타워는 나중에 `tools/usage/collect-repos.mjs`로 걷어 합산한다.
+ * · 데스크탑 로컬: `--out`으로 Drive 동기화 폴더를 가리킨다.
+ * 배포본은 `<repo>/.claude/usage/collect-session.mjs`에 놓이므로 ROOT는 어느 쪽이든 repo 루트다.
+ * 우선순위는 `--out` > `USAGE_OUT_DIR` > 자동 판정. 명시가 항상 이긴다. */
+const OUT_DIR = OUT_ARG
+  ? path.resolve(OUT_ARG)
+  : process.env.USAGE_OUT_DIR
+    ? path.resolve(process.env.USAGE_OUT_DIR)
+    : existsSync(path.join(ROOT, 'data', 'usage'))
+      ? path.join(ROOT, 'data', 'usage', 'sessions')
+      : path.join(ROOT, '.usage', 'sessions');
 
 /* ---------------- 단가표 ----------------
  * $/1M 토큰. 출처: Anthropic 공시 단가(2026-07 기준).
