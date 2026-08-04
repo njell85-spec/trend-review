@@ -3,6 +3,36 @@
 > 목적: 새 세션(어느 모델이든)이 이 파일 하나로 지금까지의 맥락·결정·상태·다음 할 일을
 > 복원해 이어가기 위함. **새 세션을 열면 이 파일부터 읽고, 아래 "먼저 읽을 파일"을 훑으세요.**
 >
+> **[2026-08-04 — PubMed 미등재 가이드라인 URL 경로 + 알림 채널 텔레그램 단일화]**
+> - **발단**: PeterJ "2026 IDSA gram negative 가이드라인 TR에 추가로 돌려줘".
+>   실측 결과 **그 문서는 PubMed에 없다** — `gram-negative[Title] AND guidance[Title]` 전수 6건,
+>   `Tamma PD[Author] AND (guidance|guideline*)[Title]` 전수 18건 모두 확인, 최신 등재본은
+>   **2024판 PMID 39108079 / DOI 10.1093/cid/ciae403**. on-demand는 PMID/DOI만 받으므로 못 태웠다.
+> - **① URL 지정 경로 신설 (PR #65, 머지)**: `target`이 `http(s)://`면 **가이드라인 전용 웹 출처 모드**.
+>   - `src/utils/externalGuideline.js`(신규) — URL 판별·`sourceId`(`web:<host><path>`)·본문 확보(소프트)·합성 객체.
+>   - `GuidelineAnalyzerAgent` 프롬프트에 **Source URL 명시**(LLM이 원문을 직접 읽게) + 캐시키 `pmid||sourceId`.
+>   - `GitHubPublisher`: PMID 없는 가이드 카드/표 행이 죽은 `#` 대신 **원문(발행기관) 링크**,
+>     섹션 키·행 키·중복 제거를 `sourceId`/`sourceUrl`로 폴백. **PMID 경로는 무변경**(회귀 테스트 고정).
+>   - on-demand.yml 선택 입력 `title`·`org`·`pubdate` 추가.
+>   - **실측**: run `30895778410` success — `📄 원문 텍스트: 60000자 확보` → 발행.
+>     **세션에서는 idsociety.org가 프록시 정책상 403이지만 Actions 러너는 열려 있다**(중요).
+>   - 산출물: IDSA 2026 AMR 그람음성 가이던스 카드(핵심 권고 7 · 변경점 12 · 임상 임팩트)를
+>     라이브 대시보드에 게시. 문서 버전은 파이프라인이 공홈에서 읽은 값 = `2026 (v5.0, current as of
+>     March 1, 2026; published July 30, 2026)`.
+> - **② 알림 채널 텔레그램 단일화 (PR #66, 머지)**: 같은 런에서 카카오가
+>   `invalid_grant / expired_or_invalid_refresh_token (KOE322)`로 실패 — 토큰 만료.
+>   PeterJ 판단: 재발급 대신 **텔레그램으로 정리**(텔레그램 생존은 smoke run `30955539644`로 실측).
+>   - `src/utils/reportMessage.js`(신규) = **§2 메시지 텍스트 정본**을 채널에서 분리. 텍스트 무변경.
+>   - 발송 지점 5곳 전환 — 데일리 성공·실패, verify-pages 실패, materialize 실패,
+>     notebooklm 리마인더, **on-demand**(그동안 카카오 단독이라 알림이 아예 없던 구멍).
+>   - `KakaoNotifier.js` 삭제 + 워크플로우 4개 `KAKAO_*` env 제거, spec-lint 앵커 이전.
+>   - 병합본 통로 재점검 run `30956404066` success.
+> - **검증**: spec-lint 통과 · `test:unit` 120→**132** · 수정 파일 `node --check` · 모바일 390px 렌더 확인.
+> - **남은 것**: 저장소 Secrets의 `KAKAO_*` 3개는 아무도 안 읽음(방치 무해, 지우려면 PeterJ가 Settings에서).
+>   PubMed에 2026판이 등재되면 `GuidelineAnalyzerAgent`의 주간 게이트가 **같은 지침을 또 뽑을 수 있다**
+>   (웹 카드와 PMID 카드는 중복 제거 키가 다름) — 그때 `selected_guidelines.json`에 PMID를 넣거나
+>   수동 삭제로 처리.
+>
 > **[2026-07-25 — 타워 사용량 장부 연결 + 브랜치 판정 + 미머지 버그 발굴]**
 > - **작업 성격**: 관제(Usage & Billing) 인프라 연결 + 저장소 위생. **데일리 산출물·포맷 변경 없음.**
 > - **사용량 장부 연결 (PR #50·#51, 머지됨)**: 이 repo의 실행 토큰·비용을 타워(global-config
@@ -116,7 +146,7 @@ Phase 2·3 코드 + On-demand 수동 디깅 + 카드뉴스까지 **main에 병�
 2. `docs/superpowers/specs/2026-07-05-phase2-notebooklm-phase3-youtube-design.md` — 확장 설계 근거.
 3. `docs/superpowers/plans/2026-07-05-phase2-notebooklm.md`, `...phase3-youtube.md` — 실행 계획(코드는 이미 반영됨. 문서 상단 경고대로 폐기된 초안 코드블록 존재 — `src/`가 정본).
 4. `docs/desktop-day-guide.md` — **내일 PeterJ가 데스크탑에서 할 1회성 설정 8단계.**
-5. **TR master plan** — **정본(SSOT) = `docs/master-plan.html`** (git). 현재 **v18**.
+5. **TR master plan** — **정본(SSOT) = `docs/master-plan.html`** (git). 현재 **v25**.
    Artifact(뷰) = https://claude.ai/code/artifact/757a28f8-bef7-4d5d-bc38-0dbccf747a5f
    **★ 이름·운영 규칙(PeterJ 확정 2026-07-07 — 반드시 준수)**:
    - **공식 이름 = "TR master plan"**. PeterJ가 **TR plan / 로드맵 / 마스터플랜 / 서머리 / sum** 중
@@ -450,7 +480,7 @@ b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 
     여전히 버그 → 리마인더 폴백으로만). 운영 모드 = **자동 등록 복귀**(실패 시 카톡 리마인더 폴백 유지).
 
 ### 주의 (자동 세션·사람 공통)
-- §3 확정 결정 되묻지 말 것. §4 데일리 코어 무영향 유지. 대시보드/카톡 포맷 변경 시 push 전 /preview.
+- §3 확정 결정 되묻지 말 것. §4 데일리 코어 무영향 유지. 대시보드/알림 포맷 변경 시 push 전 /preview.
 - YouTube 업로드는 승인 계정이 개인계정이라, 나중에 영상 켰을 때 403(channelNotFound) 나면
   `google-auth-setup.mjs` 재실행해 **브랜드 채널 컨텍스트로 재승인**(가이드 문제해결 참고).
 - **Fable 안전 라우팅 주의**(§0·§7): 과거 이 프로젝트 작업 중 Fable→Opus 강제 전환이 있었다.
@@ -473,6 +503,6 @@ b′ 전문 Doc(`fulltextDoc.js`+ArchiveAgent append-only) + c 웹 레퍼런스 
 ## 9. 프로젝트 규칙 (CLAUDE.md 요지)
 - 호칭 **PeterJ**, **존댓말**. 결론부터, 확인/추측 구분.
 - 작업 마무리 시 commit+push. 리포트·발송·대시보드 변경 전 `REPORT_SPEC.md` 필독.
-- 대시보드/카톡 포맷 변경은 push 전 **/preview 스킬로 미리보기 승인**.
+- 대시보드/알림 메시지 포맷 변경은 push 전 **/preview 스킬로 미리보기 승인**.
 - 커밋 전 `npm run spec-lint` 통과. 규모 있는 변경은 `/code-review`.
 - 병합된 PR은 재사용 금지 — 후속 작업은 main에서 브랜치 새로 파서.
