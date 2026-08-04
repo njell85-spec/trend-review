@@ -182,7 +182,14 @@ export class GitHubPublisher {
     const journal = paper.journal ?? '';
     const date = GitHubPublisher._fmtDate(paper.pubDate);
     const pmid = paper.pmid ?? '';
-    const pmurl = paper.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : '#');
+    // PubMed 미등재(발행기관 공개본) 가이드라인 — 죽은 '#' 링크 대신 원문으로 건다.
+    const srcUrl = paper.sourceUrl ?? '';
+    const pmurl = paper.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : (srcUrl || '#'));
+    const footLink = pmid
+      ? `<a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed ${esc(pmid)}</a>`
+      : (srcUrl
+        ? `<a href="${esc(srcUrl)}" target="_blank" rel="noopener" class="lnk">원문 (발행기관)</a>`
+        : `<a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed</a>`);
     const doi = paper.doi ?? '';
     const doiLink = doi ? ` · <a href="https://doi.org/${esc(doi)}" target="_blank" rel="noopener" class="lnk">DOI</a>` : '';
 
@@ -199,7 +206,7 @@ export class GitHubPublisher {
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}</div>` : ''}
         ${g.scope_ko ? `<p class="txt ko" style="margin-top:6px">${esc(g.scope_ko)}</p>` : ''}
-        <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)} · ${esc(date)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
+        <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)}${date ? ` · ${esc(date)}` : ''}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
       </div>
       <div class="pc-body">
         ${summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>핵심 권고</div><ul class="pc-ul">${summary}</ul>` : ''}
@@ -210,7 +217,7 @@ export class GitHubPublisher {
             : '')}
         ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>임상 임팩트</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
         ${(g.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 출처</div>${g.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
-        <div class="pc-foot"><a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed${pmid ? ` ${esc(pmid)}` : ''}</a>${doiLink} · 가이드라인 캐치업</div>
+        <div class="pc-foot">${footLink}${doiLink} · 가이드라인 캐치업</div>
       </div>
     </article>`;
   }
@@ -435,12 +442,14 @@ export class GitHubPublisher {
     if (guideline) {
       const gp = guideline.paper ?? {};
       const pmid = gp.pmid ?? '';
-      const url = gp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : '#');
+      // PubMed 미등재 가이드라인은 원문 URL로 걸고, 행 키(읽음 체크·중복 제거)는 sourceId 로 대신한다.
+      const url = gp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : (gp.sourceUrl || '#'));
+      const rowId = pmid || gp.sourceId || '';
       const title = guideline.title_ko || gp.title || '';
       const journal = guideline.org || gp.journal || '';
       // data-guideline 마커 — 날짜 기준 행 교체에서 제외(가이드는 논문과 라이프사이클이
       // 다름: 주 1회 소개 후 계속 남아야 하고, 논문 재실행 날짜 교체에 지워지면 안 됨)
-      rows.push(`<tr data-pmid="${esc(pmid)}" data-guideline="1"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">📋 ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(pmid)}" aria-label="읽음"></td></tr>`);
+      rows.push(`<tr data-pmid="${esc(rowId)}" data-guideline="1"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">📋 ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(rowId)}" aria-label="읽음"></td></tr>`);
     }
     return rows.join('');
   }
@@ -695,13 +704,15 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     const route = llmTelemetry.label();
     // 수동 지정(on-demand)은 날짜 키와 분리된 자체 섹션 키를 쓴다 —
     // 같은 날의 데일리 자동 선정 섹션·표 행을 지우지 않기 위함(§1-B).
-    const keyPmid = topPapers[0]?.paper?.pmid ?? guideline?.paper?.pmid ?? 'x';
+    // PubMed 미등재 가이드라인은 pmid 가 빈 문자열이라 `??` 로는 폴백되지 않는다 → `||` + sourceId.
+    const gIdent = guideline?.paper?.pmid || guideline?.paper?.sourceId || '';
+    const keyPmid = topPapers[0]?.paper?.pmid || gIdent || 'x';
     const sectionKey = manual ? `${dateStr}-m-${keyPmid}` : dateStr;
     // 논문이 없으면(수동 가이드라인 단독) 빈 논문 섹션을 만들지 않는다.
     const todaySection = topPapers.length
       ? this._buildSection(dateStr, generatedAt, topPapers, { isToday: true, route, manual, sectionKey })
       : '';
-    const gKey = manual ? `${dateStr}-m-${guideline?.paper?.pmid ?? 'x'}` : dateStr;
+    const gKey = manual ? `${dateStr}-m-${gIdent || 'x'}` : dateStr;
     const guidelineSection = guideline
       ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true, manual, sectionKey: gKey })
       : '';
@@ -725,11 +736,15 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       }
       // 같은 가이드라인(동일 PMID)이 다른 날짜 카드로 이미 올라와 있으면 제거.
       // 주간 게이트가 실패해도 같은 지침이 중복 노출되지 않게 하는 심층 방어.
-      if (guideline?.paper?.pmid) {
-        const gpmid = guideline.paper.pmid;
+      // 지문(fingerprint) = PubMed 링크(등재본) 또는 원문 URL(웹 공개본). 웹 공개본은 URL 이
+      // 카드에 esc() 된 형태로 들어가므로 원문·이스케이프본 양쪽으로 대조한다.
+      const gMarks = [];
+      if (guideline?.paper?.pmid) gMarks.push(`pubmed.ncbi.nlm.nih.gov/${guideline.paper.pmid}/`);
+      if (guideline?.paper?.sourceUrl) gMarks.push(guideline.paper.sourceUrl, esc(guideline.paper.sourceUrl));
+      if (gMarks.length) {
         body = body.replace(
-          /\n?<!-- GSECTION:[0-9-]+ -->[\s\S]*?<!-- \/GSECTION:[0-9-]+ -->/g,
-          (block) => block.includes(`pubmed.ncbi.nlm.nih.gov/${gpmid}/`) ? '' : block,
+          /\n?<!-- GSECTION:[^\s>]+ -->[\s\S]*?<!-- \/GSECTION:[^\s>]+ -->/g,
+          (block) => gMarks.some((m) => block.includes(m)) ? '' : block,
         );
       }
       // 이전 TODAY/NEW → past 로 강등. 논문(TODAY)·가이드(NEW) 모두 같은
@@ -754,7 +769,8 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침이 또 선정된 경우 중복 방지
       const dedupItems = guideline ? [...topPapers, guideline] : topPapers;
       for (const p of dedupItems) {
-        const pmid = p.paper?.pmid;
+        // 웹 공개본 가이드라인은 pmid 가 없다 — 행 키로 쓴 sourceId 로 같은 항목을 지운다.
+        const pmid = p.paper?.pmid || p.paper?.sourceId;
         if (!pmid) continue;
         // [^>]* — 가이드 행의 data-guideline="1" 같은 추가 속성이 있어도 매치되게.
         // (없으면 같은 지침 재발행 시 과거 행이 안 지워져 표에 중복이 남는다)

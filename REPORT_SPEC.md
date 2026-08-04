@@ -26,6 +26,11 @@
   백업 입구: Actions 수동 실행.
 - 실행: `scripts/on-demand.mjs`(DOI→PMID 해석 후 기존 부품 재사용). **"하루 1편" 카운트 밖의 예외**이며,
   같은 날 데일리 섹션·표를 건드리지 않는다(자체 섹션 키 `YYYY-MM-DD-m-<pmid>`).
+- **URL 지정(가이드라인 한정)**: 학회 홈페이지 공개본처럼 **PubMed 미등재** 가이드라인은
+  `target`에 `https://…` 원문 URL을 넣는다(`kind=guideline` 필수. 선택 입력 `title`·`org`·`pubdate`).
+  본문은 러너가 확보하되 차단·PDF면 소프트 스킵하고 **LLM 웹검색 보강**이 원문을 읽는다
+  (`src/utils/externalGuideline.js`). PMID 대신 `sourceId`(`web:<host><path>`)가 섹션 키·표 행 키·
+  중복 제거 키가 되고, 카드·표 링크는 PubMed 대신 **원문(발행기관)** 으로 건다.
 - 카드에 **"직접 지정" 배지**(주황) 표기 · 지정 PMID는 제외목록 등록으로 이후 자동 선정과 중복 방지.
 - 소프트 성격: 분석 실패 시 대시보드 미변경. Secrets 미설정 시 아카이브만 스킵.
 
@@ -195,6 +200,11 @@ PeterJ가 페이지에서 **선별 큐레이션**한다. 전역 자동 영상화
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-08-04 (On-demand URL 가이드라인): §1-B에 **URL 지정 경로** 추가 — PubMed 미등재
+  학회 공개본(예: IDSA 2026 AMR 그람음성 가이던스 v4.0)을 원문 URL로 태운다.
+  PMID 없는 가이드 카드는 죽은 PubMed 링크 대신 원문 링크로 렌더(`sourceId` 키).
+  데일리 자동 경로(PMID 기반)는 무변경.
 
 - 2026-07-06 (R4 큐레이션): §4-G 신설 — 삭제·자료화 버튼 + 자료화 상태 표시를
   카드·누적 표 양쪽에(단일 상태 파일 `curation_state.json`, 클라이언트 블록 렌더).

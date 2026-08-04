@@ -90,7 +90,8 @@ export class GuidelineAnalyzerAgent {
 
   async analyze(guideline) {
     if (!guideline) return null;
-    const cacheKey = `guideline_v4_${this.provider}_${this.model}_${guideline.pmid}`;
+    // PubMed 미등재(웹 출처) 가이드라인은 pmid 가 빈 문자열이라 캐시키가 전부 충돌한다 → sourceId 폴백.
+    const cacheKey = `guideline_v4_${this.provider}_${this.model}_${guideline.pmid || guideline.sourceId || guideline.sourceUrl}`;
     try {
       const { data } = await this.cache.getOrFetch(cacheKey, async () => {
         this.logger.info(`Guideline analysis: ${guideline.pmid} — ${guideline.title?.slice(0, 60)}…`);
@@ -113,7 +114,9 @@ Guideline:
 Title: ${guideline.title}
 Authors: ${(guideline.authors ?? []).join(', ')}
 Journal: ${guideline.journal} (${guideline.pubDate})
-MeSH: ${(guideline.meshTerms ?? []).join(', ')}
+MeSH: ${(guideline.meshTerms ?? []).join(', ')}${guideline.sourceUrl ? `
+Source URL (issuing organization's own publication — this document is NOT in PubMed): ${guideline.sourceUrl}
+→ Read this URL (and the issuing society's "What's New"/summary pages) with WebFetch/WebSearch to extract the actual recommendations and changes.` : ''}
 
 Abstract / summary text:
 ${guideline.abstract}${fullTextSection}${augmentSection}
@@ -151,6 +154,8 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     const sources = [];
     const pmUrl = guideline.pubmedUrl ?? (guideline.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${guideline.pmid}/` : null);
     if (pmUrl) sources.push({ label: `PubMed — PMID ${guideline.pmid}`, url: pmUrl });
+    // 발행기관 공개본(PubMed 미등재) — 원문이 유일한 1차 출처이므로 맨 앞줄급으로 넣는다.
+    if (guideline.sourceUrl) sources.push({ label: '원문 — 발행기관 공개 문서', url: guideline.sourceUrl });
     if (guideline.doi && guideline.doi.length > 3) sources.push({ label: `Journal (DOI) — ${guideline.doi}`, url: `https://doi.org/${guideline.doi}` });
     if (guideline.oaUrl) sources.push({ label: 'Open-access full text', url: guideline.oaUrl });
     for (const s of guideline.augmentSources ?? []) sources.push(s);
@@ -167,6 +172,8 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       paper: {
         pmid: guideline.pmid, title: guideline.title, journal: guideline.journal,
         pubDate: guideline.pubDate, pubmedUrl: pmUrl, doi: guideline.doi,
+        // 웹 출처 가이드라인 식별자 — 카드/표 링크와 중복 제거가 PMID 대신 이걸 쓴다.
+        sourceUrl: guideline.sourceUrl, sourceId: guideline.sourceId,
       },
       org: data.org, version: data.version, title_ko: data.title_ko,
       scope_ko: data.scope_ko ?? '',

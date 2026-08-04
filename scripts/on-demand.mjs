@@ -21,6 +21,8 @@ import { KakaoNotifier } from '../src/agents/KakaoNotifier.js';
 import { llmTelemetry } from '../src/utils/LLMClient.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
+import { isHttpUrl, fetchSourceText, buildWebGuideline } from '../src/utils/externalGuideline.js';
+
 import { installUsageDump } from '../src/utils/usageDump.js';
 
 // 이 스크립트도 LLM을 태우므로 사용량을 타워 장부용으로 떨군다(USAGE_OUT 지정 시에만).
@@ -29,7 +31,12 @@ installUsageDump();
 const target = (process.argv[2] ?? '').trim();
 const kind = (process.argv[3] ?? 'paper').trim();
 if (!target) {
-  console.error('사용법: node scripts/on-demand.mjs <PMID|DOI> [paper|guideline]');
+  console.error('사용법: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline]');
+  process.exit(1);
+}
+// URL 지정은 가이드라인 전용 — 논문은 PubMed 메타데이터(저널·저자·MeSH)가 분석의 전제다.
+if (isHttpUrl(target) && kind !== 'guideline') {
+  console.error('✖ URL 지정은 kind=guideline 에서만 지원합니다 (논문은 PMID/DOI로 지정하세요).');
   process.exit(1);
 }
 
@@ -48,17 +55,38 @@ async function resolvePmid(t) {
 }
 
 const todayKST = kstDateStr();
-const pmid = await resolvePmid(target);
-console.log(`🔎 직접 지정 분석 시작: PMID ${pmid} (${kind}) — ${todayKST}`);
+const webMode = isHttpUrl(target);
 
-// ── 2) 메타데이터 + 본문 확보 (데일리와 동일 부품 재사용) ─────────────────────
-const collector = new DataCollectorAgent();
-const [article] = await collector.fetchArticles([pmid]);
-if (!article) {
-  console.error(`✖ PMID ${pmid} 메타데이터를 가져오지 못했습니다.`);
-  process.exit(1);
+// ── 2) 메타데이터 + 본문 확보 ────────────────────────────────────────────────
+// (a) 웹 출처 가이드라인 — PubMed 미등재본(학회 홈페이지 living document).
+//     본문 확보는 소프트: 차단(403)·PDF면 텍스트 없이 넘기고 LLM 웹검색 보강에 맡긴다.
+// (b) 그 외 — 기존 PMID/DOI 경로(데일리와 동일 부품 재사용).
+let pmid = '';
+let article;
+let enriched;
+
+if (webMode) {
+  console.log(`🔎 직접 지정 분석 시작: URL ${target} (guideline) — ${todayKST}`);
+  const src = await fetchSourceText(target);
+  console.log(`📄 원문 텍스트: ${src.text ? `${src.text.length}자 확보` : `미확보(${src.contentType || '접근 불가'}) — LLM 웹검색 보강에 위임`}`);
+  enriched = buildWebGuideline({
+    url: target,
+    title: (process.env.OD_TITLE ?? '').trim() || src.title || '',
+    org: (process.env.OD_ORG ?? '').trim(),
+    pubDate: (process.env.OD_DATE ?? '').trim(),
+    text: src.text,
+  });
+  article = { title: enriched.title, journal: enriched.journal };
+} else {
+  pmid = await resolvePmid(target);
+  console.log(`🔎 직접 지정 분석 시작: PMID ${pmid} (${kind}) — ${todayKST}`);
+  [article] = await new DataCollectorAgent().fetchArticles([pmid]);
+  if (!article) {
+    console.error(`✖ PMID ${pmid} 메타데이터를 가져오지 못했습니다.`);
+    process.exit(1);
+  }
+  ({ papers: [enriched] } = await new FullTextAgent().run([article]));
 }
-const { papers: [enriched] } = await new FullTextAgent().run([article]);
 
 // ── 3) 분석 → 발행 ───────────────────────────────────────────────────────────
 const publisher = new GitHubPublisher();
@@ -71,7 +99,10 @@ if (kind === 'guideline') {
     console.error('✖ 가이드라인 분석 실패 — 대시보드 미변경.');
     process.exit(1);
   }
-  await appendState('output/selected_guidelines.json', { pmid, title: article.title, date: todayKST });
+  await appendState('output/selected_guidelines.json', {
+    pmid, title: article.title, date: todayKST,
+    ...(webMode ? { sourceUrl: enriched.sourceUrl, sourceId: enriched.sourceId } : {}),
+  });
   pagesUrl = await publisher.publish(todayKST, [], { guideline: card, manual: true });
   notifyPaper = { title_ko: card.title_ko, paper: { title: article.title, journal: article.journal, pmid } };
 } else {
@@ -110,7 +141,10 @@ async function appendState(rel, entry) {
   const p = path.join(process.cwd(), rel);
   let list = [];
   try { list = JSON.parse(await readFile(p, 'utf8')); } catch { /* 최초 */ }
-  if (!list.some((x) => x.pmid === entry.pmid)) {
+  // 웹 출처 가이드라인은 pmid 가 빈 문자열 — 그대로 비교하면 서로 다른 문서가 전부 중복 판정된다.
+  const same = (x) => (entry.pmid ? x.pmid === entry.pmid
+    : Boolean(entry.sourceId) && x.sourceId === entry.sourceId);
+  if (!list.some(same)) {
     list.push(entry);
     await writeFile(p, JSON.stringify(list, null, 2), 'utf8');
   }
