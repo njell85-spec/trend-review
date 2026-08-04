@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'PMID 또는 DOI'
+        description: 'PMID 또는 DOI (가이드라인은 발행기관 URL도 가능)'
         required: true
         type: string
       kind:
@@ -15,6 +15,21 @@ on:
         default: 'paper'
         type: choice
         options: [paper, guideline]
+      title:
+        description: '문서 제목 (URL 지정 가이드라인용, 선택 — 비우면 페이지 <title>)'
+        required: false
+        default: ''
+        type: string
+      org:
+        description: '발행 기관 (URL 지정 가이드라인용, 선택 — 예: IDSA)'
+        required: false
+        default: ''
+        type: string
+      pubdate:
+        description: '발행/기준 일자 (URL 지정 가이드라인용, 선택 — 예: 2026-03)'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -58,6 +73,9 @@ jobs:
           USAGE_OUT: ${{ runner.temp }}/usage-run.json
           OD_TARGET: ${{ inputs.target }}
           OD_KIND:   ${{ inputs.kind }}
+          OD_TITLE:  ${{ inputs.title }}
+          OD_ORG:    ${{ inputs.org }}
+          OD_DATE:   ${{ inputs.pubdate }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
           KAKAO_REST_API_KEY:  ${{ secrets.KAKAO_REST_API_KEY }}
