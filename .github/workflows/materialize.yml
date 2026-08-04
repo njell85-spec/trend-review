@@ -75,9 +75,8 @@ jobs:
           GOOGLE_CLIENT_SECRET:    ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN:    ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           VIDEO_LANGS:             ${{ vars.VIDEO_LANGS }}
-          KAKAO_REST_API_KEY:      ${{ secrets.KAKAO_REST_API_KEY }}
-          KAKAO_REFRESH_TOKEN:     ${{ secrets.KAKAO_REFRESH_TOKEN }}
-          KAKAO_CLIENT_SECRET:     ${{ secrets.KAKAO_CLIENT_SECRET }}
+          TELEGRAM_BOT_TOKEN:      ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:        ${{ secrets.TELEGRAM_CHAT_ID }}
           GITHUB_OWNER:            ${{ github.repository_owner }}
           GITHUB_REPO:             ${{ github.event.repository.name }}
         run: node scripts/materialize.mjs

@@ -1,6 +1,6 @@
 # Trend Review — 데일리 리포트 규격 (Single Source of Truth)
 
-> 매일 파이프라인 실행 및 카카오톡/이메일 리포트 작성 시 **반드시 이 규격을 따른다.**
+> 매일 파이프라인 실행 및 텔레그램 리포트 작성 시 **반드시 이 규격을 따른다.**
 > "또 반영이 안 됐다"는 문제를 막기 위한 단일 기준 문서.
 
 ## 1. 스크리닝·선정 방침 (확정안 = 1번 방안)
@@ -19,7 +19,7 @@
 ## 1-B. On-demand 수동 디깅 (직접 지정 분석)
 
 자동 데일리 선정과 **별개의 예외 경로**. PeterJ가 지정한 논문(PMID/DOI)·가이드라인을
-같은 분석 → 대시보드 → 카톡 → 아카이브 경로에 태운다.
+같은 분석 → 대시보드 → 텔레그램 → 아카이브 경로에 태운다.
 - 입구: 대시보드 "직접 지정" 위젯(`GitHubPublisher._onDemandWidget`, 멱등 주입) →
   브라우저에서 `on-demand.yml`을 workflow_dispatch로 직접 호출. **Fine-grained PAT**
   (이 저장소 actions:write 한정)는 사용자 브라우저 localStorage에만 저장 — 페이지 소스·저장소에 없음.
@@ -34,7 +34,7 @@
 - 카드에 **"직접 지정" 배지**(주황) 표기 · 지정 PMID는 제외목록 등록으로 이후 자동 선정과 중복 방지.
 - 소프트 성격: 분석 실패 시 대시보드 미변경. Secrets 미설정 시 아카이브만 스킵.
 
-## 2. 카카오톡 리포트 포맷 (PlayMCP MemoChat)
+## 2. 리포트 메시지 포맷 (텔레그램 · 정본 `src/utils/reportMessage.js`)
 
 ```
 [trend-review]
@@ -46,9 +46,9 @@
 
 - **핵심만**: 헤더 / 날짜 / 제목 / 저널·PMID / 링크. 스크리닝 설명·점수·evidenceLevel·
   LLM 경로·메달(🥇) 등 부가 정보는 **넣지 않는다** (PeterJ 요청, 2026-07-03).
-- **링크는 매 발송마다 반드시 포함**. 카톡이 자동 링크화하도록 `https://` 포함.
+- **링크는 매 발송마다 반드시 포함**. 메신저가 자동 링크화하도록 `https://` 포함.
 - 200자를 넘으면 **제목을 자르지 말고 2개 메시지로 분할**(① 헤더+날짜+제목 ② 저널·PMID+링크),
-  링크는 항상 **마지막 메시지**에 둔다. 구현: `KakaoNotifier.buildReportMessages`.
+  링크는 항상 **마지막 메시지**에 둔다. 구현: `reportMessage.buildReportMessages`.
 
 ## 3. 이메일 리포트 (`NotificationAgent`)
 
@@ -65,12 +65,12 @@
 - **배포 검증 게이트**: push 성공 ≠ 사이트 반영. 파이프라인 잡 종료 후 별도
   `verify-pages` 잡이 `scripts/verify-pages-deploy.mjs` 로 **원격 main HEAD**
   (API 폴백 배포까지 포함) 의 Pages 배포 완료를 확인하고, 실패 시 자동 재실행
-  (새 attempt 기준 최대 3회), 끝내 실패하면 카카오 실패 알림 + 워크플로우 실패.
+  (새 attempt 기준 최대 3회), 끝내 실패하면 텔레그램 실패 알림 + 워크플로우 실패.
   잡을 분리한 이유: 재실행용 `actions: write` 토큰을 LLM 파이프라인 잡에 주지
-  않기 위한 권한 분리. 한계(의도된 트레이드오프): 카카오 리포트는 배포 검증
+  않기 위한 권한 분리. 한계(의도된 트레이드오프): 리포트는 배포 검증
   전에 발송되므로, 배포 실패 시 링크가 자동 복구(수 분)까지 잠시 전날 데이터를
   보일 수 있다 — 복구 불가면 실패 알림이 뒤따른다.
-  (근거: 2026-07-05 GitHub 측 일시 오류로 배포만 실패 → 카톡 링크가 전날 데이터 노출.)
+  (근거: 2026-07-05 GitHub 측 일시 오류로 배포만 실패 → 리포트 링크가 전날 데이터 노출.)
 
 ## 4-B. 1편 심층 분석 — 본문 확보 & 권위 보강 정책
 
@@ -89,28 +89,27 @@
 
 구현: `FullTextAgent._augment()`(레지스트리), `FilterAnalyzerAgent`(프롬프트 규칙 + `_provenance()` 배지/출처), `GitHubPublisher`(배지·출처 박스 렌더).
 
-## 4-D. 카카오 나챗방 발송 (무인)
+## 4-D. 텔레그램 발송 (무인 · 단일 알림 채널)
 
-데일리 리포트는 **카카오 일반 REST API "나에게 보내기"** 로 발송 (MCP/세션 불필요 → Actions에서 무인).
-- 모듈: `src/agents/KakaoNotifier.js` (`github-actions-daily.mjs`가 배포 후 호출, 실패해도 파이프라인 성공).
-- 엔드포인트: `/v2/api/talk/memo/default/send` (text 템플릿 + 링크 버튼).
-- Secrets: `KAKAO_REST_API_KEY`, `KAKAO_REFRESH_TOKEN`(필수), `KAKAO_CLIENT_SECRET`(앱 설정 시).
-- refresh 토큰은 매 실행 시 access 토큰으로 갱신. 카카오가 refresh를 회전시키면 로그 경고 → secret 갱신.
-- 미설정 시 발송만 건너뜀(파이프라인 정상).
+리포트·알림은 **텔레그램 Bot API `sendMessage`** 하나로 발송한다 (MCP/세션 불필요 → Actions에서 무인).
+- 모듈: `src/agents/TelegramNotifier.js`. 메시지 텍스트 정본은 `src/utils/reportMessage.js`
+  (§2) — 채널 모듈은 텍스트를 만들지 않고 실어 나르기만 한다.
+- Secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. **미설정 시 발송만 건너뜀(파이프라인 정상)**,
+  발송 실패도 소프트(파이프라인 성공 처리, 로그에 `::warning`).
+  - ⚠️ **값은 "리포트용" 봇이다** — 타워 센티널의 "경보용" 봇과 다른 봇을 쓴다.
+    경보와 리포트를 한 대화창에 섞으면 음소거를 따로 못 걸어 경보를 놓친다.
+    규격 정본: global-config `rulebook/command-center.md` §7 "봇 2개 규격".
+    (`TELEGRAM_CHAT_ID`는 두 봇 모두 같은 값 — 대화창은 chat_id가 아니라 봇으로 갈린다.)
+- 발송 지점 5곳: 데일리 성공 리포트·데일리 실패 알림(`github-actions-daily.mjs`),
+  **on-demand 성공 리포트**(`scripts/on-demand.mjs`), 자료화 실패(`scripts/materialize.mjs`),
+  Pages 배포 실패(`scripts/verify-pages-deploy.mjs`), NotebookLM 리마인더(`scripts/notebooklm-remind.mjs`).
+- 통로 점검: `telegram-smoke.yml`(workflow_dispatch) — 시크릿 변경 직후 수동 1회.
+- 보안: 봇 토큰이 URL에 들어가므로 에러 메시지에 URL을 넣지 않는다. `parse_mode` 미사용.
+- **카카오는 폐지(2026-08-04, PeterJ 확정)** — refresh 토큰 만료(KOE322) + 재발급 부담,
+  그리고 텔레그램이 이미 전 지점의 대체재였다. `KakaoNotifier`·`KAKAO_*` env 제거.
+  되살릴 일이 생기면 그 커밋을 revert한다(git 히스토리 보존). 저장소 Secrets의 `KAKAO_*`는
+  코드가 안 쓰므로 남아 있어도 무해하다.
 - **이메일(Gmail)은 사용하지 않음(PeterJ 확정, 2026-07-05)**.
-- **텔레그램 병행 발송(2026-08-01 추가)** — 알림 채널 전역 방침이 텔레그램으로 확정되어
-  카카오와 병행한다("카카오 단일 채널" 문구는 이 개정으로 대체).
-  - 모듈: `src/agents/TelegramNotifier.js` — Bot API `sendMessage`. **메시지 텍스트는
-    `KakaoNotifier`의 빌더를 재사용**한다(포맷 정본은 §2 한 곳 — 채널별로 갈라두지 않는다).
-  - Secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 미설정 시 발송만 건너뜀(파이프라인 정상).
-    - ⚠️ **값은 "리포트용" 봇이다** — 타워 센티널의 "경보용" 봇과 다른 봇을 쓴다.
-      경보와 리포트를 한 대화창에 섞으면 음소거를 따로 못 걸어 경보를 놓친다.
-      규격 정본: global-config `rulebook/command-center.md` §7 "봇 2개 규격".
-      (`TELEGRAM_CHAT_ID`는 두 봇 모두 같은 값 — 대화창은 chat_id가 아니라 봇으로 갈린다.)
-  - 발송 지점은 카카오와 동일 3곳: 성공 리포트·실패 알림(`github-actions-daily.mjs`),
-    Pages 배포 실패(`scripts/verify-pages-deploy.mjs`).
-  - 통로 점검: `telegram-smoke.yml`(workflow_dispatch) — 시크릿 등록 직후 수동 1회.
-  - 보안: 봇 토큰이 URL에 들어가므로 에러 메시지에 URL을 넣지 않는다. `parse_mode` 미사용.
 - **Google Drive 업로드**는 현재 미사용이나 **phase2/3 연동 대비 인프라를 보존**한다
   (`NotificationAgent`, `ENABLE_DRIVE=true` 게이트, 기본 비활성). Gmail 관련 코드는 제거됨.
 
@@ -126,12 +125,12 @@
   단 **수집 본문은 Drive 비공개 Doc으로만** — 공개 repo에 커밋 금지. 공개 발신물(§4-F)은
   재구성 원칙 유지. 근거 도시에(출처 목록)는 분석 Doc에 병존.
 - **NotebookLM 소스 등록 자동화**: `notebooklm-sync.yml`(매월 1일 09:00 KST)이
-  notebooklm-py(비공식)로 새 달 Doc 2개를 노트북에 자동 등록. 실패·미설정 시 **카톡
+  notebooklm-py(비공식)로 새 달 Doc 2개를 노트북에 자동 등록. 실패·미설정 시 **텔레그램
   리마인더 폴백**(Doc 링크 포함). Variables `NOTEBOOKLM_NOTEBOOK_ID` + Secret
   `NOTEBOOKLM_AUTH_STATE` 필요 — 미설정 시 리마인더만(소프트).
 - 모듈: `src/agents/ArchiveAgent.js` + `src/utils/googleAuth.js`(env 우선)·`docBuilder.js`·
   `fulltextDoc.js`·`webRefText.js`, `scripts/notebooklm-{register.py,remind.mjs}`.
-  `github-actions-daily.mjs`가 카카오 발송 뒤 호출 — **실패해도 파이프라인 성공(소프트 실패)**.
+  `github-actions-daily.mjs`가 텔레그램 발송 뒤 호출 — **실패해도 파이프라인 성공(소프트 실패)**.
 - 상태 파일: `output/analysis_archive.json`(항목 + Drive docId/folderId/pdfFileId) —
   워크플로우 "Commit daily state" 스텝이 커밋. gitignore 예외 필수(spec-lint 강제).
 - **대시보드 "아카이브 저장 현황" 섹션(§4-E, `src/utils/archiveStatus.js`)**: 누적 아카이브
@@ -186,7 +185,7 @@ PeterJ가 페이지에서 **선별 큐레이션**한다. 전역 자동 영상화
 - **자료화** = 카드뉴스·영상 생성 + YouTube **비공개** 업로드까지 한 번에
   (`materialize.yml` → `scripts/materialize.mjs` → VideoAgent, privacyStatus private
   고정이 안전망). 재실행 안전: `video_log.json`이 업로드된 편을 건너뛰므로 부분 실패 후
-  재클릭하면 나머지만 만든다. 실패 시 빨간 run + 카톡 알림.
+  재클릭하면 나머지만 만든다. 실패 시 빨간 run + 텔레그램 알림.
 - **인증·경합**: 버튼은 기존 Fine-grained PAT(localStorage, on-demand 위젯과 공용)로
   workflow_dispatch. 실행 전 확인 대화 1회. 데일리 커밋과의 경합은 push 실패 시 최신
   main 위에 멱등 재적용(재시도 3회)으로 처리 — daily-review.yml은 건드리지 않는다
@@ -201,6 +200,11 @@ PeterJ가 페이지에서 **선별 큐레이션**한다. 전역 자동 영상화
 
 ## 5. 변경 이력
 
+- 2026-08-04 (알림 채널 텔레그램 단일화): §4-D 전면 개정 — 카카오 폐지(`KakaoNotifier` 삭제,
+  워크플로우 `KAKAO_*` env 제거), 전 발송 지점(**on-demand·materialize·NotebookLM 리마인더 포함**)을
+  텔레그램으로 통일. §2 메시지 텍스트 정본을 `src/utils/reportMessage.js`로 분리(**텍스트 무변경**),
+  spec-lint 앵커도 그 파일로 이전.
+
 - 2026-08-04 (On-demand URL 가이드라인): §1-B에 **URL 지정 경로** 추가 — PubMed 미등재
   학회 공개본(예: IDSA 2026 AMR 그람음성 가이던스 v4.0)을 원문 URL로 태운다.
   PMID 없는 가이드 카드는 죽은 PubMed 링크 대신 원문 링크로 렌더(`sourceId` 키).
@@ -212,7 +216,7 @@ PeterJ가 페이지에서 **선별 큐레이션**한다. 전역 자동 영상화
 
 - 2026-07-06 (R3 아카이브 자동화): 4-E 개정 — 전문 Doc(b′: OA 본문 텍스트 append) +
   페이월 권위 웹 레퍼런스 본문 수집(c) + notebooklm-sync.yml(월 1일 소스 자동 등록,
-  실패 시 카톡 리마인더 폴백). 비공개층 수집 확대 확정(공개 발신물 재구성 원칙 유지),
+  실패 시 리마인더 폴백). 비공개층 수집 확대 확정(공개 발신물 재구성 원칙 유지),
   수집 본문은 Drive 비공개 Doc 한정(공개 repo 커밋 금지).
 
 - 2026-07-06 (전체 재검토 실버그 보완): ① Drive 적재 루트 폴더 자동 생성 폴백

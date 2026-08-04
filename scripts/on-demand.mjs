@@ -3,7 +3,7 @@
  * on-demand.mjs — 수동 디깅(직접 지정 분석) 실행기 (REPORT_SPEC §1-B)
  *
  * 자동 데일리 선정과 별개의 예외 경로: PeterJ가 지정한 논문/가이드라인(PMID 또는 DOI)을
- * 동일한 분석 → 대시보드(직접 지정 배지) → 카톡 → 아카이브 경로에 태운다.
+ * 동일한 분석 → 대시보드(직접 지정 배지) → 텔레그램 → 아카이브 경로에 태운다.
  * 같은 날 데일리 섹션을 건드리지 않으며(자체 섹션 키), "하루 1편" 카운트 밖의 예외다.
  *
  * 사용: node scripts/on-demand.mjs <PMID|DOI> [paper|guideline]
@@ -17,7 +17,7 @@ import { FullTextAgent } from '../src/agents/FullTextAgent.js';
 import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
 import { GuidelineAnalyzerAgent } from '../src/agents/GuidelineAnalyzerAgent.js';
 import { GitHubPublisher } from '../src/utils/GitHubPublisher.js';
-import { KakaoNotifier } from '../src/agents/KakaoNotifier.js';
+import { TelegramNotifier } from '../src/agents/TelegramNotifier.js';
 import { llmTelemetry } from '../src/utils/LLMClient.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
@@ -128,12 +128,12 @@ if (kind === 'guideline') {
 
 console.log(`🌐 발행 완료: ${pagesUrl}`);
 
-// ── 4) 카톡 알림 (소프트) — 데일리와 동일 §2 포맷 ────────────────────────────
+// ── 4) 텔레그램 알림 (소프트) — 데일리와 동일 §2 포맷 ────────────────────────
 try {
-  const r = await new KakaoNotifier().send({ dateStr: todayKST, topPaper: notifyPaper, pagesUrl, llmRoute: llmTelemetry.label() });
-  if (r.sent) console.log('💬 카카오 알림 발송 완료');
+  const r = await new TelegramNotifier().send({ dateStr: todayKST, topPaper: notifyPaper, pagesUrl });
+  if (r.sent) console.log('💬 텔레그램 알림 발송 완료');
 } catch (e) {
-  console.warn(`⚠️ 카카오 발송 실패(계속): ${e.message}`);
+  console.warn(`⚠️ 텔레그램 발송 실패(계속): ${e.message}`);
 }
 
 /** 제외목록에 추가(중복 자동선정 방지) — publish() 전에 호출해 publisher 커밋에 포함시킨다 */

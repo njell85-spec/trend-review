@@ -7,7 +7,7 @@
  *     ENABLE_DRIVE=true + credentials.json 이 있을 때만 동작(기본 비활성).
  *
  * 첫 실행 시 브라우저 인증 → output/google_token.json 저장 → 이후 자동.
- * 카카오 알림은 KakaoNotifier(REST API)가 담당 — 이 에이전트와 무관.
+ * 리포트 알림은 TelegramNotifier가 담당 — 이 에이전트와 무관.
  */
 import { google } from 'googleapis';
 import { readFile, writeFile, mkdir } from 'fs/promises';

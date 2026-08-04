@@ -13,7 +13,6 @@
 import 'dotenv/config';
 import { appendFileSync } from 'fs';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
-import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
 import { TelegramNotifier } from './src/agents/TelegramNotifier.js';
 import { runWithRetry } from './src/utils/retryPipeline.js';
 import { llmTelemetry } from './src/utils/LLMClient.js';
@@ -48,12 +47,6 @@ const MAX_ATTEMPTS = Math.max(1, envNum(process.env.SESSION_RETRY_MAX, 3));
 const RETRY_DELAY_MS = Math.max(0, envNum(process.env.SESSION_RETRY_DELAY_MIN, 60)) * 60_000;
 
 async function notifyFailure(reasonLabel) {
-  try {
-    const r = await new KakaoNotifier().sendFailure({ dateStr: todayKST, reason: reasonLabel });
-    if (r.sent) console.log('💬 카카오 실패 알림 발송 완료');
-  } catch (err) {
-    console.warn(`⚠️  카카오 실패 알림 전송 실패(무시): ${err.message}`);
-  }
   try {
     const r = await new TelegramNotifier().sendFailure({ dateStr: todayKST, reason: reasonLabel });
     if (r.sent) console.log('💬 텔레그램 실패 알림 발송 완료');
@@ -123,24 +116,9 @@ console.log(`\n🌐 GitHub Pages: ${pagesUrl}`);
 const llmRoute = llmTelemetry.label();
 console.log(`🧭 LLM 실행 경로: ${llmRoute}  (구독=CLI, API=폴백)`);
 
-// ── 카카오 나챗방 발송 (Secrets 설정 시) — 실패해도 파이프라인은 성공 처리 ─────
-let kakaoStatus = '미설정';
-try {
-  const kakao = new KakaoNotifier();
-  const r = await kakao.send({ dateStr: todayKST, topPaper: papers[0], pagesUrl, llmRoute });
-  if (r.sent) {
-    kakaoStatus = '발송 완료';
-    console.log('💬 카카오 나챗방 리포트 발송 완료');
-  }
-} catch (err) {
-  kakaoStatus = `발송 실패: ${err.message.slice(0, 120)}`;
-  console.warn(`⚠️  카카오 발송 실패(파이프라인은 정상): ${err.message}`);
-  console.log(`::warning::카카오 발송 실패 — ${err.message.slice(0, 200)}`);
-}
-
-// ── 텔레그램 발송 (Secrets 설정 시) — 카카오와 병행, 전역 방침 기본 채널 ────────
-// 어느 채널이 실패해도 파이프라인은 성공 처리. 두 채널이 동시에 실패하면 알림이
-// 전무해지므로, 실패는 잡 로그에서 반드시 눈에 띄어야 한다(::warning).
+// ── 텔레그램 발송 (Secrets 설정 시) — 유일한 알림 채널 (2026-08-04 카카오 폐지) ──
+// 실패해도 파이프라인은 성공 처리. 다만 실패하면 알림이 전무해지므로,
+// 잡 로그에서 반드시 눈에 띄어야 한다(::warning).
 let telegramStatus = '미설정';
 try {
   const r = await new TelegramNotifier().send({ dateStr: todayKST, topPaper: papers[0], pagesUrl });
@@ -194,7 +172,6 @@ jobSummary([
   '',
   `- 선정: **${(top.title_ko || top.paper?.title || '').slice(0, 100)}** (PMID ${top.paper?.pmid ?? '—'})`,
   `- LLM 경로: ${llmRoute}`,
-  `- 카카오: ${kakaoStatus}`,
   `- 텔레그램: ${telegramStatus}`,
   `- 아카이브: ${archiveStatus}`,
   `- 영상: ${videoStatus}`,

@@ -9,7 +9,7 @@
  *    ※ 긴 1장을 폰에서 클릭하면 다운스케일돼 글자가 깨지는 문제(PeterJ 피드백,
  *      2026-07-05)를 막기 위한 설계. 각 조각은 위아래 OVERLAP 만큼 겹쳐 경계
  *      내용이 잘리지 않는다.
- * 2) 카톡 메시지 "포맷" 미리보기 (REPORT_SPEC §2 5줄 구조·링크 위치 확인용 —
+ * 2) 알림 메시지(텔레그램) "포맷" 미리보기 (REPORT_SPEC §2 5줄 구조·링크 위치 확인용 —
  *    상태파일 제목은 80자 절단·저널 미저장이라 실발송 텍스트·분할 건수와
  *    다를 수 있음. 출력에 경고를 함께 표시한다.)
  *
@@ -99,19 +99,18 @@ try {
   await browser.close();
 }
 
-// ── 카톡 메시지 포맷 미리보기 (실패해도 스크린샷 산출물은 유효) ───────────────
+// ── 알림 메시지 포맷 미리보기 (실패해도 스크린샷 산출물은 유효) ───────────────
 try {
-  const mod = await import(new URL('../src/agents/KakaoNotifier.js', import.meta.url));
-  const KakaoNotifier = mod.KakaoNotifier ?? mod.default;
+  const { buildReportMessages } = await import(new URL('../src/utils/reportMessage.js', import.meta.url));
   const sel = JSON.parse(readFileSync('output/selected_papers.json', 'utf8'));
   const last = sel[sel.length - 1] ?? {};
-  const msgs = KakaoNotifier.buildReportMessages({
+  const msgs = buildReportMessages({
     dateStr: last.date ?? 'YYYY-MM-DD',
     topPaper: { title_ko: last.title, paper: { title: last.title, journal: '(저널)', pmid: last.pmid } },
   });
-  console.log('\n── 카톡 메시지 포맷 미리보기 (최근 선정 논문 기준) ──');
+  console.log('\n── 알림 메시지 포맷 미리보기 (최근 선정 논문 기준) ──');
   msgs.forEach((m, i) => console.log(`[메시지 ${i + 1}/${msgs.length}]\n${m}\n`));
   console.log('※ 상태파일 기준(제목 80자 절단·저널 미저장) — 실발송의 한글 제목·저널·1/2건 분할 여부는 다를 수 있습니다. 5줄 구조·링크 위치 확인용입니다.');
 } catch (e) {
-  console.log(`(카톡 미리보기 건너뜀: ${e.message})`);
+  console.log(`(알림 메시지 미리보기 건너뜀: ${e.message})`);
 }

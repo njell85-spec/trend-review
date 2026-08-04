@@ -13,7 +13,7 @@
 import 'dotenv/config';
 import { readFile } from 'fs/promises';
 import { VideoAgent } from '../src/agents/VideoAgent.js';
-import { KakaoNotifier } from '../src/agents/KakaoNotifier.js';
+import { TelegramNotifier } from '../src/agents/TelegramNotifier.js';
 import { loadCurationState, saveCurationState } from '../src/utils/curation.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
@@ -27,7 +27,7 @@ const todayKST = kstDateStr();
 
 async function notifyFailure(reason) {
   try {
-    await new KakaoNotifier().sendFailure({ dateStr: todayKST, reason: `자료화 실패 — ${reason}` });
+    await new TelegramNotifier().sendFailure({ dateStr: todayKST, reason: `자료화 실패 — ${reason}` });
   } catch { /* 알림 실패는 결과에 영향 없음 */ }
 }
 
