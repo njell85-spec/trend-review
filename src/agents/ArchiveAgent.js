@@ -70,6 +70,25 @@ function buildDossier(a) {
   }));
 }
 
+/**
+ * run() 결과 → 판정 파일(output/archive_health.json)에 쓸 객체.
+ * `skipped`(인증 미설정)는 실패가 아니다 — 그 환경에 이 기능이 없는 것뿐이다.
+ */
+export function archiveHealthOf(r, todayKST) {
+  if (!r || r.skipped) return { ok: true, skipped: true, failures: [], date: todayKST };
+  return { ok: Boolean(r.ok), skipped: false, failures: r.failures ?? [], date: todayKST };
+}
+
+/**
+ * run() 결과 → job summary 한 줄. **실패를 완료처럼 쓰지 않는 것**이 이 함수의 존재 이유다
+ * (GC#60: 안쪽이 다 죽었는데 "완료 (PDF 없음)"으로 찍혀 27일간 아무도 못 봤다).
+ */
+export function archiveStatusText(r) {
+  if (!r || r.skipped) return `건너뜀: ${r?.reason ?? 'unknown'}`;
+  if (r.ok) return `완료 (PDF ${r.pdf ? '적재' : '없음'} · Doc 갱신)`;
+  return `⚠️ 실패: ${(r.failures ?? []).join(' / ').slice(0, 200)}`;
+}
+
 export function upsertEntry(entries, entry) {
   const rest = entries.filter((e) => !(e.date === entry.date && e.pmid === entry.pmid));
   return [...rest, entry];
@@ -80,9 +99,18 @@ export class ArchiveAgent {
     this.logger = new Logger('ArchiveAgent', { logFile: 'archive_agent.jsonl' });
   }
 
+  /**
+   * 반환 계약 — 겉면이 속을 속이지 않게 한다 (2026-08-04):
+   *   { ok, skipped, reason, failures[], pdf, docUpdated, fulltextUpdated }
+   * `ok`는 **단계 실패가 하나도 없을 때만** true다. 종전에는 안쪽 3단계가 전부
+   * invalid_grant로 죽어도 `ok:true`를 돌려줘 로그에 "📚 아카이브 완료"가 찍혔고,
+   * 그래서 인증 만료를 27일간 아무도 못 봤다(GC#60). `skipped`는 인증 미설정 —
+   * 실패가 아니라 "이 환경에는 이 기능이 없다"이므로 구분한다.
+   */
   async run({ analysis, todayKST }) {
     const auth = await getGoogleAuth({ logger: this.logger });
-    if (!auth) return { ok: false, reason: 'google-auth-unset' };
+    if (!auth) return { ok: false, skipped: true, reason: 'google-auth-unset', failures: [] };
+    const failures = [];
     const drive = google.drive({ version: 'v3', auth });
     const state = await this._loadArchive();
     const month = monthOf(todayKST);
@@ -99,11 +127,13 @@ export class ArchiveAgent {
 
     const folderId = await this._ensureMonthFolder(drive, state, month);
 
-    // PDF는 실패해도 계속 (OA가 아닌 날이 정상 경로)
+    // PDF는 실패해도 계속 (OA가 아닌 날이 정상 경로).
+    // 단 "OA 없음"은 null 반환이고 여기 catch는 **진짜 실패**뿐이라 failures에 넣는다.
     let pdfLink = null;
     try {
       pdfLink = await this._uploadPdf(drive, state, analysis, todayKST, folderId);
     } catch (e) {
+      failures.push(`PDF: ${e.message}`);
       this.logger.warn(`PDF 단계 실패(계속): ${e.message}`);
     }
 
@@ -119,6 +149,7 @@ export class ArchiveAgent {
       await this._saveArchive(state); // docId 반영
     } catch (e) {
       docUpdated = false;
+      failures.push(`리빙 Doc: ${e.message}`);
       this.logger.warn(`리빙 Doc 갱신 실패(항목은 저장됨 — 다음 실행에서 재생성): ${e.message}`);
     }
 
@@ -128,9 +159,17 @@ export class ArchiveAgent {
       fulltextUpdated = await this._appendFulltextDoc(drive, state, month, folderId);
       await this._saveArchive(state); // fulltextDocId·fulltextDone 반영
     } catch (e) {
+      failures.push(`전문 Doc: ${e.message}`);
       this.logger.warn(`전문 Doc 갱신 실패(다음 실행에서 재시도): ${e.message}`);
     }
-    return { ok: true, pdf: Boolean(pdfLink), docUpdated, fulltextUpdated };
+    return {
+      ok: failures.length === 0,
+      skipped: false,
+      failures,
+      pdf: Boolean(pdfLink),
+      docUpdated,
+      fulltextUpdated,
+    };
   }
 
   /**

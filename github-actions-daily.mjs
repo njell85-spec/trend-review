@@ -11,7 +11,7 @@
  *   GITHUB_REPO        — 자동 제공 (github.event.repository.name)
  */
 import 'dotenv/config';
-import { appendFileSync } from 'fs';
+import { appendFileSync, writeFileSync, mkdirSync } from 'fs';
 import { TrendReviewOrchestrator } from './src/orchestrator/TrendReviewOrchestrator.js';
 import { KakaoNotifier } from './src/agents/KakaoNotifier.js';
 import { TelegramNotifier } from './src/agents/TelegramNotifier.js';
@@ -154,18 +154,34 @@ try {
   console.log(`::warning::텔레그램 발송 실패 — ${err.message.slice(0, 200)}`);
 }
 
-// ── Phase 2: Drive 아카이브 + 리빙 Doc (소프트 실패 — 코어에 영향 없음) ────────
+// ── Phase 2: Drive 아카이브 + 리빙 Doc (코어는 안 멈춘다 — 다만 조용히 넘어가지도 않는다) ──
+// 판정을 output/archive_health.json에 남기고, 워크플로 **마지막 게이트 스텝**이 그 파일을
+// 읽어 빨간불을 켠다. 여기서 즉시 죽이지 않는 이유: 그러면 뒤따르는 "Commit daily state"가
+// 건너뛰어져 그날 아카이브 항목이 유실된다(부분 실패가 데이터를 망치면 안 된다).
+// 배경: 2026-07-08~08-03 인증 만료로 아카이브가 죽어 있었는데 로그 겉면이 "완료"라
+// 27일간 아무도 못 봤다 (GC#60).
 let archiveStatus = '미설정';
+let archiveHealth = { ok: true, skipped: true, failures: [], date: todayKST };
 try {
-  const { ArchiveAgent } = await import('./src/agents/ArchiveAgent.js');
+  const { ArchiveAgent, archiveHealthOf, archiveStatusText } =
+    await import('./src/agents/ArchiveAgent.js');
   const r = await new ArchiveAgent().run({ analysis: papers[0], todayKST });
-  archiveStatus = r.ok
-    ? `완료 (PDF ${r.pdf ? '적재' : '없음'} · Doc ${r.docUpdated ? '갱신' : '실패 — 다음 실행에서 재생성'})`
-    : `건너뜀: ${r.reason}`;
-  if (r.ok) console.log(`📚 Drive 아카이브 완료 (PDF ${r.pdf ? '적재' : '없음'})`);
+  archiveStatus = archiveStatusText(r);
+  archiveHealth = archiveHealthOf(r, todayKST);
+  if (r.ok && !r.skipped) console.log(`📚 Drive 아카이브 완료 (PDF ${r.pdf ? '적재' : '없음'})`);
+  if (!r.ok && !r.skipped) {
+    console.log(`::warning::Phase 2 아카이브 실패 — ${r.failures.join(' / ').slice(0, 200)}`);
+  }
 } catch (err) {
-  archiveStatus = `실패: ${err.message.slice(0, 120)}`;
+  archiveStatus = `⚠️ 실패: ${err.message.slice(0, 120)}`;
+  archiveHealth = { ok: false, skipped: false, failures: [err.message], date: todayKST };
   console.log(`::warning::Phase 2 아카이브 실패 — ${err.message.slice(0, 200)}`);
+}
+try {
+  mkdirSync('output', { recursive: true });
+  writeFileSync('output/archive_health.json', JSON.stringify(archiveHealth, null, 2), 'utf8');
+} catch (e) {
+  console.log(`::warning::아카이브 판정 파일 기록 실패 — ${e.message.slice(0, 120)}`);
 }
 
 // ── Phase 3: 영상 제작·비공개 업로드 (소프트 실패 · ENABLE_VIDEO=true 게이트) ────
