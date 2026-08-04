@@ -52,7 +52,7 @@ export class TrendReviewOrchestrator {
     this.validator = new ValidationAgent();
     this.reporter = new ReportGeneratorAgent({ outputDir: this.outputDir });
     // NotificationAgent = Drive 업로드 전용(phase2/3 대비, ENABLE_DRIVE 게이트).
-    // 이메일 미사용 → recipientEmail 불필요. 데일리 카카오 알림은 KakaoNotifier 담당.
+    // 이메일 미사용 → recipientEmail 불필요. 데일리 알림은 TelegramNotifier 담당.
     this.notifier = options.notify
       ? new NotificationAgent({ credentialsPath: options.credentialsPath })
       : null;

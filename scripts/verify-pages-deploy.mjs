@@ -4,7 +4,7 @@
  * 왜 필요한가: 파이프라인이 index.html 을 main 에 반영하면 GitHub 가 자체
  * "pages build and deployment" 워크플로우로 사이트를 배포하는데, 이 배포가
  * GitHub 측 일시 오류("Deployment failed, try again later")로 실패하면
- * 카카오 리포트 링크가 전날 데이터를 계속 보여준다 (2026-07-05 실제 발생).
+ * 리포트 링크가 전날 데이터를 계속 보여준다 (2026-07-05 실제 발생).
  * 파이프라인 성공 ≠ 사이트 반영이므로, 배포 완료까지를 게이트로 확인한다.
  *
  * 동작:
@@ -14,12 +14,11 @@
  *   2. 이번 실행에서 원격이 안 움직였으면(원격 HEAD == GITHUB_SHA) 즉시 통과.
  *   3. 그 커밋의 Pages 배포 런을 폴링. 실패로 끝나면 rerun-failed-jobs 로
  *      재실행 (새 attempt 기준 최대 RERUN_MAX회 — 폴링 지연으로 중복 카운트 금지).
- *   4. 제한 시간 내 성공을 못 보면 카카오 실패 알림 후 exit 1 (워크플로우 빨간불).
+ *   4. 제한 시간 내 성공을 못 보면 텔레그램 실패 알림 후 exit 1 (워크플로우 빨간불).
  *
  * 필요 권한: GITHUB_TOKEN 에 actions: write (재실행) + contents: read.
  * 보안상 이 스크립트는 LLM 파이프라인과 별도 잡에서 실행한다 (daily-review.yml 참고).
  */
-import { KakaoNotifier } from '../src/agents/KakaoNotifier.js';
 import { TelegramNotifier } from '../src/agents/TelegramNotifier.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
@@ -75,15 +74,6 @@ async function findPagesRun(sha) {
 
 async function notifyAndFail(reason) {
   console.error(`❌ Pages 배포 검증 실패: ${reason}`);
-  try {
-    const r = await new KakaoNotifier().sendFailure({
-      dateStr: kstDateStr(),
-      reason: `대시보드 배포 확인 실패 — ${reason}`,
-    });
-    if (r.sent) console.log('💬 카카오 실패 알림 발송 완료');
-  } catch (err) {
-    console.warn(`⚠️  카카오 실패 알림 전송 실패(무시): ${err.message}`);
-  }
   try {
     const r = await new TelegramNotifier().sendFailure({
       dateStr: kstDateStr(),
