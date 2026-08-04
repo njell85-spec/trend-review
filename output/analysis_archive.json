@@ -1514,6 +1514,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-05",
+      "pmid": "42498331",
+      "title": "Early Recognition and Management of Sepsis: Improving Patient Outcomes.",
+      "title_ko": "패혈증의 조기 인지와 관리: 환자 예후 개선",
+      "journal": "Critical care nursing clinics of North America",
+      "doi": "10.1016/j.cnc.2026.04.002",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "패혈증 위험이 있는 중환자에서, 중환자실 간호사의 조기 인지 역할과 다학제 번들 기반 관리를 강화하면 어떻게 환자 예후를 개선하고 사망률을 낮출 수 있는가?",
+      "pico": {
+        "population": "[Country NR] Narrative review; no defined patient cohort. Addresses patients with sepsis, which \"remains a leading cause of mortality, accounting for 1 in 5 deaths worldwide.\"",
+        "intervention": "\"Implementation of the sepsis management bundle,\" together with the critical care nurse's role in early sepsis recognition and increasing \"nurse's knowledge, confidence, and clinical reasoning skills\" and \"assuring nurses work to the full extent of their licensure.\"",
+        "comparison": null,
+        "outcome": "Narrative statement only: \"The implementation of the sepsis management bundle has been associated with reduced mortality in sepsis patients.\" No effect size, confidence interval, or p-value reported."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 서술적 리뷰(narrative review)로 정의된 환자 코호트는 없음. \"전 세계 사망의 5명 중 1명(1 in 5)을 차지하는\" 주요 사망 원인인 패혈증 환자를 다룸.",
+        "intervention": "\"패혈증 관리 번들(sepsis management bundle)의 시행\"과 함께, 조기 패혈증 인지에서의 중환자 간호사 역할, 그리고 \"간호사의 지식·자신감·임상추론 능력\" 향상 및 \"간호사가 자기 면허 범위를 최대한 활용하도록 보장\"하는 것.",
+        "comparison": null,
+        "outcome": "서술적 진술만 존재: \"패혈증 관리 번들의 시행은 패혈증 환자의 사망률 감소와 연관되어 왔다.\" 효과크기·신뢰구간·p-value는 보고되지 않음."
+      },
+      "keyFindings": [
+        "Sepsis remains a leading cause of mortality, accounting for 1 in 5 deaths worldwide (~20%).",
+        "Implementation of the sepsis management bundle has been associated with reduced mortality in sepsis patients (no quantitative effect size reported).",
+        "Critical care nurses play a pivotal role in early sepsis recognition; increasing their knowledge, confidence, clinical reasoning, and scope-of-licensure practice is presented as vital to improving outcomes and bundle adherence."
+      ],
+      "keyFindings_ko": [
+        "패혈증은 여전히 주요 사망 원인으로, 전 세계 사망의 5명 중 1명(약 20%)을 차지한다.",
+        "패혈증 관리 번들(sepsis management bundle)의 시행은 패혈증 환자의 사망률 감소와 연관되어 왔다(정량적 효과크기는 보고되지 않음).",
+        "중환자 간호사는 조기 패혈증 인지에 핵심 역할을 하며, 이들의 지식·자신감·임상추론 및 면허 범위 내 최대 실무를 향상시키는 것이 예후 개선과 번들 준수에 필수적이라고 제시된다."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42498331",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42498331/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.cnc.2026.04.002",
+          "url": "https://doi.org/10.1016/j.cnc.2026.04.002"
+        },
+        {
+          "label": "웹 — PubMed — article record (PMID 42498331)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42498331/"
+        },
+        {
+          "label": "웹 — PubMed search — Cooke, Early Recognition and Management of Sepsis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Cooke+Early+Recognition+and+Management+of+Sepsis+Improving+Patient+Outcomes"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — article record (PMID 42498331)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42498331/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed search — Cooke, Early Recognition and Management of Sepsis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Cooke+Early+Recognition+and+Management+of+Sepsis+Improving+Patient+Outcomes",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
