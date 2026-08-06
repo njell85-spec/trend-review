@@ -3,7 +3,7 @@
   "schema": 3,
   "repo": "trend-review",
   "updated": "2026-08-06",
-  "turns": 93,
+  "turns": 95,
   "records": [
     {
       "ts": "2026-08-06",
@@ -12,15 +12,15 @@
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-5",
-      "in": 1991,
-      "out": 73775,
-      "cache_w": 290116,
-      "cache_r": 16913887,
-      "cost_usd": 13.212434,
+      "in": 1995,
+      "out": 74065,
+      "cache_w": 291097,
+      "cache_r": 17501350,
+      "cost_usd": 13.523245,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "cc65157d-fef4-551d-8514-4ede6c560f5f",
-      "note": "세션 누계(턴 93) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 95) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
       "ts": "2026-08-06",
@@ -37,7 +37,7 @@
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "cc65157d-fef4-551d-8514-4ede6c560f5f",
-      "note": "세션 누계(턴 93) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 95) · 공시단가 환산 · 캐시쓰기 배수 2"
     }
   ]
 }
