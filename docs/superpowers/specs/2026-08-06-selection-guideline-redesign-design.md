@@ -461,9 +461,21 @@ P2-4 백필 스크립트(~130줄, 코어 밖) · P2-5 supersede 스윕(queue + p
 
 ---
 
-## 8. PeterJ 확인 대기 (권고 기본값 있음 — "그대로 가"면 진행)
+## 8. PeterJ 확정 사항 (2026-08-06)
 
-§9 참조 — 채팅으로 별도 제시.
+| # | 항목 | 확정 | 설계 반영 |
+|---|---|---|---|
+| 8-1 | 소아 가이드라인 처분 | **감점 -2.0만 적용 (완전 배제 안 함)** | `GuidelineScorer`의 `scopeAdj`가 `interests.json:109-116`의 pediatric penalty(-2.0)를 그대로 재사용. 희소·유한 코퍼스라 배제는 회복 불가능한 손실이고, -2.0이면 성인 대작이 큐에 있는 한 소아는 head 로 올라오지 않는다 |
+| 8-2 | 가이드라인 문서 유형 범위 | **우선 미포함** — 백필 dry-run 후 재결정 | `collectGuidelines`의 PublicationType 필터(`DataCollectorAgent.js:305-306`)를 `Guideline`/`Practice Guideline`로 **유지**. consensus/scientific statement·focused update 확장은 P2-4 dry-run에서 큐 깊이(§7-3)를 본 뒤 결정 |
+| 8-3 | 대시보드 v2 경계선 | *(확인 대기)* | — |
+| 8-4 | 가이드 발행 텔레그램 알림 | **가이드 전용 짧은 알림 발송** (제목 + 학회 + 링크 3줄) | 논문 리포트와 **별도 메시지**. 카덴스가 2~7일 1회라 알림 피로 미미. **`REPORT_SPEC.md §2`에 가이드 메시지 포맷을 별도 절로 추가하고 `spec-lint` 앵커를 넣는 것이 선행돼야 한다** — §2는 현재 5줄 포맷을 못 박고 있고 `spec-lint.mjs:74-82`가 이를 기계적으로 강제한다 |
+
+**8-4 구현 메모**: 발송 지점은 `src/utils/reportMessage.js`(§2 텍스트 정본)에 가이드 전용 빌더를
+추가하고 `TelegramNotifier`로 보낸다. 링크는 논문 대시보드가 아니라 **`guidelines.html`**로 건다
+(§5.5-B 페이지 분할과 맞물림).
+
+**8-2 재검토 트리거**: P2-4 백필 dry-run에서 `queued` 항목이 **20건 미만**이면 문서 유형 확장을
+다시 논의한다(큐가 얕으면 카덴스가 7일로 떨어져 캐치업이 사실상 멈춘다).
 
 ## 9. 승인 게이트
 
