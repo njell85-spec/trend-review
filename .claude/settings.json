@@ -21,6 +21,24 @@
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/chat-archive/collect-session.mjs\""
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-weight.mjs\""
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-weight.mjs\""
+          }
+        ]
       }
     ]
   }
