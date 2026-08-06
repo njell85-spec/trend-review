@@ -337,12 +337,53 @@ priority = wOrg   × orgAuthority(0 … 4)    // 제목+저널+org 결정적 매
 **백필**: `scripts/guideline-backfill.mjs`, `workflow_dispatch` 전용(코어 밖 — 레이트리밋 격리).
 `collectGuidelines`를 분기별로 나눠 호출(현행 `max=40` 단일 esearch는 3년치를 못 담는다).
 
-**렌더**: `guidelines.html`을 상태 파일에서 **전량 재생성**. `_buildGuidelineCard`(`:178`) 재사용.
-`publish()`(`:710-760`)의 가이드 분기를 `publishGuidelines()`로 이주. `index.html`엔 링크 카드 +
-"검토 대기 N건".
+### 5.5-B 콘텐츠 3분류 · 페이지 2분할 (PeterJ 확정 2026-08-06)
 
-> **참고자료 모드(`kind=reference`, 2026-08-06 구현됨)도 이 페이지 분리에 얹혀 간다.**
-> 카드 빌더를 공유하므로 `guidelines.html` 이주 시 함께 옮긴다(REPORT_SPEC §1-B).
+**분류는 3개를 유지한다** — 이미 on-demand `kind` 매트릭스와 상태 파일이 이 셋으로 갈려 있다.
+
+| 분류 | 카드 형식 | 공급 | 상태 파일 |
+|---|---|---|---|
+| **논문** | PICO (전용 렌더러) | 자동, 매일 1편 | `selected_papers.json` |
+| **가이드라인** | 공용 골격 + *이전 판 대비 변경점* | 자동, 큐 소진 2~7일 | `selected_guidelines.json` |
+| **기타(참고자료)** | 공용 골격 + *출처 성격* | **PeterJ 직접 지정 시에만** | `selected_references.json` |
+
+**페이지는 2개로 나눈다.**
+```
+index.html        → ① 논문 (데일리 코어)
+guidelines.html   → ② 가이드라인 및 기타
+```
+
+**근거**: 카드 빌더가 이미 이 선을 그어놨다 — 가이드라인과 기타는 `_buildGuidelineCard`
+(`GitHubPublisher.js:178`) **하나를 공유**하고 축 하나만 다르다(`isRef` 분기). 논문만 PICO
+전용 렌더러다. 3페이지로 가면 렌더러가 3벌이 되면서 얻는 것이 없다. 소비 리듬도 갈린다 —
+논문은 "매일 하나 읽는 것", 나머지 둘은 "쌓아두고 가끔 훑는 레퍼런스". 기타는 부정기·소량이라
+단독 페이지를 채우지 못한다(빈 페이지 = 죽은 링크).
+
+**★ 페이지 ② 안에서는 섹션을 분리한다** (PeterJ 확정 — 시간순 통합 기각):
+```
+[guidelines.html] 가이드라인 및 기타
+  ├ 📋 가이드라인   — 자체 아카이브 + "검토 대기 N건"(needsReview)
+  └ 🔖 기타 자료    — 자체 아카이브
+```
+분리하는 이유 둘:
+1. **권위 혼동 방지.** 기타는 미공인 출처일 수 있는데(카드에 `출처 성격` 블록이 그래서 있다),
+   가이드라인과 시간순으로 섞이면 **페이지 자체가 "여기 있는 건 다 권위 문서"라는 인상**을 준다.
+   페이지 인상은 카드보다 먼저 온다.
+2. **캐치업 진척 가시성.** 트랙 B의 성공 지표는 큐 소진율인데, 기타 카드가 사이사이 끼면
+   눈으로 셀 수 없다.
+
+**렌더**: `guidelines.html`을 상태 파일 **2개(가이드·기타)에서 전량 재생성**.
+`_buildGuidelineCard`(`:178`) 재사용(`type`으로 배지·라벨 분기 — 2026-08-06 구현 완료).
+`publish()`(`:710-760`)의 가이드 분기를 `publishGuidelines()`로 이주. `index.html`엔
+"가이드라인·기타 →" 링크 카드 + 검토 대기 건수.
+
+**같이 갈라야 하는 것(작업량 정직하게)**: 현재 `index.html`은 카드뿐 아니라 **하단 누적 표에도**
+가이드라인 행이 `data-guideline="1"`(`GitHubPublisher.js:452`)로 섞여 있다. 카드와 함께 **표도
+갈라야** 한다. 읽음 체크박스는 `pmid`/`sourceId` 키라 페이지가 갈려도 충돌하지 않는다.
+
+> **참고자료 모드(`kind=reference`)는 2026-08-06에 이미 구현됐다**(REPORT_SPEC §1-B).
+> 지금은 `index.html`에 배지만 달리해 렌더되고 있으며, 이 페이지 분리 때 ② 페이지의
+> "🔖 기타 자료" 섹션으로 함께 이주한다.
 
 ### 5.6 폰에서 튜닝하는 config 키
 
@@ -396,7 +437,8 @@ lane 재도입을 막는 방벽.)
 
 P2-1 `GuidelineScorer` + `guideline-orgs.json` + `_relevance` 공유 모듈 추출(~180줄) ·
 P2-2 상태 v2 + 드레인 루프 + needsReview(~170줄, **try/catch 유지 필수**) ·
-P2-3 `guidelines.html` 전량 재생성 + publisher 분리(~220줄, **/preview 승인**) ·
+P2-3 `guidelines.html` 전량 재생성 + publisher 분리(~260줄, **/preview 승인**) —
+§5.5-B 3분류·2페이지·섹션 분리, **누적 표도 함께 분할** ·
 P2-4 백필 스크립트(~130줄, 코어 밖) · P2-5 supersede 스윕(queue + published 소급, ~80줄,
 **폐기판 노출 0 = CI 실패 조건**).
 
