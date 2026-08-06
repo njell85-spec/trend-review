@@ -3,7 +3,7 @@
   "schema": 3,
   "repo": "trend-review",
   "updated": "2026-08-06",
-  "turns": 44,
+  "turns": 66,
   "records": [
     {
       "ts": "2026-08-06",
@@ -12,15 +12,32 @@
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-5",
-      "in": 83,
-      "out": 29065,
-      "cache_w": 195850,
-      "cache_r": 6209241,
-      "cost_usd": 5.790161,
+      "in": 453,
+      "out": 44574,
+      "cache_w": 241024,
+      "cache_r": 9953595,
+      "cost_usd": 8.503653,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "cc65157d-fef4-551d-8514-4ede6c560f5f",
-      "note": "세션 누계(턴 44) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 66) · 공시단가 환산 · 캐시쓰기 배수 2"
+    },
+    {
+      "ts": "2026-08-06",
+      "date": "2026-08-06",
+      "surface": "cloud",
+      "repo": "trend-review",
+      "task": "session",
+      "model": "claude-fable-5",
+      "in": 6106,
+      "out": 309,
+      "cache_w": 58165,
+      "cache_r": 112219,
+      "cost_usd": 1.352029,
+      "auth": "subscription",
+      "accuracy": "approx",
+      "run_id": "cc65157d-fef4-551d-8514-4ede6c560f5f",
+      "note": "세션 누계(턴 66) · 공시단가 환산 · 캐시쓰기 배수 2"
     }
   ]
 }
