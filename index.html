@@ -133,7 +133,7 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
     <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">2026. 08. 06. 07:35</span></div><div class="l">최종 업데이트</div></div>
   </div>
   <div class="archive">
-<!-- ONDEMAND_WIDGET v3 -->
+<!-- ONDEMAND_WIDGET v4 -->
 <details style="max-width:960px;margin:14px auto;padding:0 16px">
   <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 On-demand 리뷰 — 논문·가이드라인 검색</summary>
   <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
@@ -199,12 +199,12 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
   }
   $('od-search').addEventListener('click',search);
   $('od-q').addEventListener('keydown',function(e){if(e.key==='Enter')search();});
-  // 직접 입력 판별. URL 은 scripts/on-demand.mjs 가 kind=guideline 에서만 받으므로
-  // 여기서 kind 를 강제한다(폰에서 confirm 을 잘못 눌러 실패하는 것을 막는다).
-  // test/onDemandWidget.test.mjs 가 이 함수를 위젯에서 추출해 직접 실행한다 —
-  // 이름·들여쓰기를 바꾸면 그 테스트가 적색이 된다.
+  // 직접 입력 판별. URL 은 논문(PICO)으로는 못 돌린다 — PubMed 메타데이터가 분석의 전제라
+  // scripts/on-demand.mjs 가 거부한다. 그래서 URL 은 guideline/reference 중에서만 고른다.
+  // test/{onDemandWidget,referenceMode}.test.mjs 가 이 함수를 위젯에서 추출해 직접 실행한다 —
+  // 이름·들여쓰기를 바꾸면 그 테스트들이 적색이 된다.
   function classify(v){
-    if(/^https?:\/\/\S+$/i.test(v)) return {ok:true,kind:'guideline',isUrl:true};
+    if(/^https?:\/\/\S+$/i.test(v)) return {ok:true,isUrl:true};
     if(/^\d{5,9}$/.test(v)) return {ok:true};
     if(/^10\.\S+\/\S+/.test(v)) return {ok:true};
     return {ok:false};
@@ -212,14 +212,19 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
   $('od-direct').addEventListener('click',function(e){
     e.preventDefault();
     var msg=$('od-msg');
-    var v=prompt('PMID · DOI · 가이드라인 원문 URL 직접 입력 (취소하면 토큰만 설정):');
+    var v=prompt('PMID · DOI · 원문 URL 직접 입력 (취소하면 토큰만 설정):');
     if(v===null){pat(true);return;}
     v=v.trim(); if(!v)return;
     var c=classify(v);
     if(!c.ok){msg.textContent='✖ PMID(숫자) · DOI(10.…/…) · URL(https://…) 형식만 지원합니다.';return;}
-    var kind=c.kind||(confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper');
+    var kind;
+    if(c.isUrl){
+      // URL 은 논문 경로가 없다 → 가이드라인 / 참고자료 둘 중 하나.
+      kind=confirm('공식 가이드라인이면 확인,\n일반 참고자료면 취소')?'guideline':'reference';
+    }else{
+      kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
+    }
     dispatch(v,kind,msg);
-    if(c.isUrl){msg.textContent='분석 요청 중… (URL은 가이드라인으로 분석합니다)';}
   });
 })();
 </script>

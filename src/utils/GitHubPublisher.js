@@ -175,7 +175,11 @@ export class GitHubPublisher {
 
   // ── 하루 섹션 (접이식) ──────────────────────────────────────────────────────
   // ── 가이드라인 캐치업 카드 (PICO 대신 요약·변경점·임팩트) ─────────────────────
+  // 가이드라인 카드와 참고자료 카드는 골격이 같고 축 하나만 다르다
+  // (가이드라인 = 이전 판 대비 변경점 / 참고자료 = 출처 성격).
+  // `type` 미지정은 가이드라인 — 이미 배포된 상태파일의 구 카드가 여기 걸린다.
   _buildGuidelineCard(g) {
+    const isRef = g.type === 'reference';
     const paper = g.paper ?? {};
     const title = paper.title ?? g.title ?? '';
     const titleKo = g.title_ko ?? '';
@@ -202,22 +206,28 @@ export class GitHubPublisher {
     return `<article class="guideline-card">
       <div class="pc-top gl-top">
         <div class="medal gl-medal">${IC.book('#fff')}</div>
-        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}</div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">${isRef ? '🔖 참고자료' : '📋 가이드라인'}</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}</div>
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}</div>` : ''}
         ${g.scope_ko ? `<p class="txt ko" style="margin-top:6px">${esc(g.scope_ko)}</p>` : ''}
         <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)}${date ? ` · ${esc(date)}` : ''}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
       </div>
       <div class="pc-body">
-        ${summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>핵심 권고</div><ul class="pc-ul">${summary}</ul>` : ''}
-        ${changes
-          ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes">${changes}</div>`
-          : (g.changesUnavailable
-            ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes"><p class="txt ko">공개 초록/확보 본문에 구체적 변경 내용이 없어(대개 본문 페이월) 세부 변경점을 확보하지 못했습니다. 아래 원문 링크에서 확인하세요.</p></div>`
-            : '')}
-        ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>임상 임팩트</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
+        ${summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>${isRef ? '핵심 내용' : '핵심 권고'}</div><ul class="pc-ul">${summary}</ul>` : ''}
+        ${isRef
+          // 참고자료는 PeterJ 가 직접 고른 출처라 공인 문서가 아닐 수 있다 —
+          // 무엇을 근거로 얼마나 믿을지 카드가 먼저 말해야 한다.
+          ? (g.sourceNote_ko
+            ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>출처 성격</div><div class="gl-changes"><p class="txt ko">${esc(g.sourceNote_ko)}</p></div>`
+            : '')
+          : (changes
+            ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes">${changes}</div>`
+            : (g.changesUnavailable
+              ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes"><p class="txt ko">공개 초록/확보 본문에 구체적 변경 내용이 없어(대개 본문 페이월) 세부 변경점을 확보하지 못했습니다. 아래 원문 링크에서 확인하세요.</p></div>`
+              : ''))}
+        ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>${isRef ? '어떻게 쓰나' : '임상 임팩트'}</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
         ${(g.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 출처</div>${g.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
-        <div class="pc-foot">${footLink}${doiLink} · 가이드라인 캐치업</div>
+        <div class="pc-foot">${footLink}${doiLink} · ${isRef ? '직접 지정 참고자료' : '가이드라인 캐치업'}</div>
       </div>
     </article>`;
   }
@@ -297,7 +307,7 @@ export class GitHubPublisher {
     // 버전 마커: 배포된 index.html은 증분 패치라, 버전이 오르면 _ensureOnDemandWidget이
     // 구버전 블록을 통째로 교체한다 (v 없는 최초 배포 마커도 매치). 위젯 코드를 고치면
     // 반드시 버전을 올릴 것 — 안 올리면 배포 페이지에 영원히 반영되지 않는다.
-    return `<!-- ONDEMAND_WIDGET v3 -->
+    return `<!-- ONDEMAND_WIDGET v4 -->
 <details style="max-width:960px;margin:14px auto;padding:0 16px">
   <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 On-demand 리뷰 — 논문·가이드라인 검색</summary>
   <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
@@ -363,12 +373,12 @@ export class GitHubPublisher {
   }
   $('od-search').addEventListener('click',search);
   $('od-q').addEventListener('keydown',function(e){if(e.key==='Enter')search();});
-  // 직접 입력 판별. URL 은 scripts/on-demand.mjs 가 kind=guideline 에서만 받으므로
-  // 여기서 kind 를 강제한다(폰에서 confirm 을 잘못 눌러 실패하는 것을 막는다).
-  // test/onDemandWidget.test.mjs 가 이 함수를 위젯에서 추출해 직접 실행한다 —
-  // 이름·들여쓰기를 바꾸면 그 테스트가 적색이 된다.
+  // 직접 입력 판별. URL 은 논문(PICO)으로는 못 돌린다 — PubMed 메타데이터가 분석의 전제라
+  // scripts/on-demand.mjs 가 거부한다. 그래서 URL 은 guideline/reference 중에서만 고른다.
+  // test/{onDemandWidget,referenceMode}.test.mjs 가 이 함수를 위젯에서 추출해 직접 실행한다 —
+  // 이름·들여쓰기를 바꾸면 그 테스트들이 적색이 된다.
   function classify(v){
-    if(/^https?:\\/\\/\\S+$/i.test(v)) return {ok:true,kind:'guideline',isUrl:true};
+    if(/^https?:\\/\\/\\S+$/i.test(v)) return {ok:true,isUrl:true};
     if(/^\\d{5,9}$/.test(v)) return {ok:true};
     if(/^10\\.\\S+\\/\\S+/.test(v)) return {ok:true};
     return {ok:false};
@@ -376,14 +386,19 @@ export class GitHubPublisher {
   $('od-direct').addEventListener('click',function(e){
     e.preventDefault();
     var msg=$('od-msg');
-    var v=prompt('PMID · DOI · 가이드라인 원문 URL 직접 입력 (취소하면 토큰만 설정):');
+    var v=prompt('PMID · DOI · 원문 URL 직접 입력 (취소하면 토큰만 설정):');
     if(v===null){pat(true);return;}
     v=v.trim(); if(!v)return;
     var c=classify(v);
     if(!c.ok){msg.textContent='✖ PMID(숫자) · DOI(10.…/…) · URL(https://…) 형식만 지원합니다.';return;}
-    var kind=c.kind||(confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper');
+    var kind;
+    if(c.isUrl){
+      // URL 은 논문 경로가 없다 → 가이드라인 / 참고자료 둘 중 하나.
+      kind=confirm('공식 가이드라인이면 확인,\\n일반 참고자료면 취소')?'guideline':'reference';
+    }else{
+      kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
+    }
     dispatch(v,kind,msg);
-    if(c.isUrl){msg.textContent='분석 요청 중… (URL은 가이드라인으로 분석합니다)';}
   });
 })();
 </script>

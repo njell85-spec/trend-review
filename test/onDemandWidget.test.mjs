@@ -60,7 +60,7 @@ test('직접 입력: PMID·DOI 는 종전대로 통과한다 (회귀)', () => {
   assert.equal(classify('10.1093/cid/ciae403').kind, undefined);
 });
 
-test('직접 입력: http(s) URL 을 받아들이고 kind=guideline 으로 강제한다', () => {
+test('직접 입력: http(s) URL 을 받아들이고 URL 로 표시한다', () => {
   const classify = loadClassify();
   for (const u of [
     'https://www.idsociety.org/practice-guideline/amr-guidance/',
@@ -69,9 +69,11 @@ test('직접 입력: http(s) URL 을 받아들이고 kind=guideline 으로 강�
   ]) {
     const c = classify(u);
     assert.equal(c.ok, true, `URL 이 거부됨: ${u}`);
-    // scripts/on-demand.mjs 는 URL + kind!=guideline 을 거부한다 → 여기서 강제해야 한다.
-    assert.equal(c.kind, 'guideline', `kind 강제 실패: ${u}`);
-    assert.equal(c.isUrl, true);
+    assert.equal(c.isUrl, true, `URL 로 표시되지 않음: ${u}`);
+    // 위젯 v3 는 kind='guideline' 을 강제했다. v4 에서 참고자료(kind=reference)가 생기면서
+    // URL 의 종류는 사용자가 고르게 바뀌었다 — 다만 논문(PICO)은 여전히 URL 로 못 간다
+    // (scripts/on-demand.mjs 의 DOC_KINDS 가 guideline|reference 만 받는다).
+    assert.equal(c.kind, undefined, `URL 의 kind 를 강제하면 참고자료를 못 넣는다: ${u}`);
   }
 });
 

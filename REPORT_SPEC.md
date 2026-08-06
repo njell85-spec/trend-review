@@ -26,11 +26,21 @@
   백업 입구: Actions 수동 실행.
 - 실행: `scripts/on-demand.mjs`(DOI→PMID 해석 후 기존 부품 재사용). **"하루 1편" 카운트 밖의 예외**이며,
   같은 날 데일리 섹션·표를 건드리지 않는다(자체 섹션 키 `YYYY-MM-DD-m-<pmid>`).
-- **URL 지정(가이드라인 한정)**: 학회 홈페이지 공개본처럼 **PubMed 미등재** 가이드라인은
-  `target`에 `https://…` 원문 URL을 넣는다(`kind=guideline` 필수. 선택 입력 `title`·`org`·`pubdate`).
+- **URL 지정(가이드라인·참고자료)**: 학회 홈페이지 공개본처럼 **PubMed 미등재** 문서는
+  `target`에 `https://…` 원문 URL을 넣는다(`kind=guideline` 또는 `kind=reference`.
+  선택 입력 `title`·`org`·`pubdate`). **논문(PICO)은 URL로 못 넣는다** — PICO 분석은 PubMed
+  메타데이터(저널·저자·MeSH)가 전제라 `scripts/on-demand.mjs`가 거부한다.
   본문은 러너가 확보하되 차단·PDF면 소프트 스킵하고 **LLM 웹검색 보강**이 원문을 읽는다
   (`src/utils/externalGuideline.js`). PMID 대신 `sourceId`(`web:<host><path>`)가 섹션 키·표 행 키·
   중복 제거 키가 되고, 카드·표 링크는 PubMed 대신 **원문(발행기관)** 으로 건다.
+- **`kind=reference` — 범용 참고자료 (2026-08-06 신설)**: 공식 가이드라인도 논문도 아닌, PeterJ가
+  직접 열어보고 쓸 만하다고 판단한 자료(기관 프로토콜·출판사 요약·해설 페이지 등)를 태운다.
+  URL·PMID·DOI 전부 받는다. 카드는 가이드라인과 골격이 같고 축 하나만 다르다 —
+  "이전 판 대비 변경점" 자리에 **"출처 성격"**(동료심사 여부·1차/2차·근거 인용·기준 시점·이해관계)이
+  들어간다. **공인되지 않은 출처일 수 있다는 것이 이 모드의 전제**이므로, 확인되지 않는 것은
+  "확인되지 않음"으로 적게 하고 **추정으로 권위를 부여하지 않는다**. 배지 `🔖 참고자료`(가이드라인은
+  `📋 가이드라인`). 상태는 `output/selected_references.json`(자동 선정 대상이 아니라 가이드라인
+  트랙의 주간 게이트와 분리). 구현: `GuidelineAnalyzerAgent.analyze(doc, { mode })`.
 - 카드에 **"직접 지정" 배지**(주황) 표기 · 지정 PMID는 제외목록 등록으로 이후 자동 선정과 중복 방지.
 - 소프트 성격: 분석 실패 시 대시보드 미변경. Secrets 미설정 시 아카이브만 스킵.
 
