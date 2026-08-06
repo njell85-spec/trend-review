@@ -28,11 +28,17 @@
  * 아무것도 import하지 않는다. 반대로 CLI(`extract-session.mjs`)는 **여기서 import한다** —
  * 추출 로직이 두 벌이 되지 않게 하는 것이 이 배치의 유일한 목적이다.
  *
- * 세 갈래 (설계 §3-2) — 추측하지 않고 **파일의 유무**로 가른다
+ * 갈래 (설계 §3-2) — 추측하지 않고 **파일의 유무**로 가른다
  * -----------------------------------------------------------------------------
  *   · 타워 자신 (`tools/chat-archive/`가 있다)      → `data/chat-archive/sessions/` + git add
- *   · public repo (`.claude/chat-archive/relay-to-gc` 마커가 있다) → GC 클론에 직접 (§4·relayToGc)
- *   · 그 외 = private repo                          → 자기 repo `.chat/sessions/` + git add
+ *   · 그 외 전부 (`.claude/chat-archive/relay-to-gc` 마커) → GC 클론에 직접 (§4·relayToGc)
+ *   · 마커도 없다 = 옛 배포본                       → 자기 repo `.chat/sessions/` + git add (폴백)
+ *
+ * **2026-08-06 변경: 릴레이가 public 전용이 아니라 전 repo 공통이 됐다.**
+ * 종전에 private은 자기 repo `.chat/`에 쓰고 `git add`까지만 해서, **그 세션이 커밋을 한 번도
+ * 안 하면 대화가 통째로 사라졌다**(컨테이너 회수와 함께). 릴레이는 매 턴 force-push라 커밋과
+ * 무관하다 — 공개 쪽이 오히려 안전한 구조였던 것을 뒤집었다. 아래 마지막 갈래는 마커가 아직
+ * 안 닿은 옛 배포본을 위한 폴백으로만 남는다.
  *
  * 사용법
  * -----------------------------------------------------------------------------
@@ -409,7 +415,7 @@ function main() {
       if (!hook?.stop_hook_active) {
         console.log(JSON.stringify({
           decision: 'block',
-          reason: '대화 아카이브: add_repo로 njell85-spec/global-config를 붙여 주세요. 붙이면 이 세션 대화가 자동 보관됩니다.',
+          reason: '대화 아카이브: add_repo로 njell85-spec/global-config를 붙여 주세요. 붙이면 이 세션 대화가 매 턴 자동 보관됩니다(커밋 불필요). 붙이지 않으면 이 세션 대화는 남지 않습니다.',
         }));
       }
       return;
@@ -420,7 +426,9 @@ function main() {
     return;
   }
 
-  // private repo — 자기 마당에 쓰고, 타워가 tools/chat-archive/pull-repos.mjs로 걷는다.
+  // 폴백 — 릴레이 마커가 아직 안 닿은 옛 배포본. 자기 마당에 쓰고 타워가 pull-repos.mjs로 걷는다.
+  // **이 경로는 커밋에 의존한다**(그 세션이 커밋을 안 하면 유실) — 그래서 2026-08-06에
+  // 릴레이를 전 repo 공통으로 바꿨다. 배포가 닿으면 여기로 안 온다.
   const out = path.join(root, '.chat', 'sessions', fileName);
   mkdirSync(path.dirname(out), { recursive: true });
   writeFileSync(out, body, 'utf8');
