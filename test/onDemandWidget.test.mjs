@@ -35,3 +35,49 @@ test('버전을 올리면 이전 버전 블록이 교체된다', () => {
   assert.ok(!out.includes('<!-- ONDEMAND_WIDGET v1 -->'));
   assert.equal(out.match(/<!-- \/ONDEMAND_WIDGET -->/g).length, 1);
 });
+
+/**
+ * "직접 입력" 판별 로직 — 위젯에 실제로 실려 배포되는 인라인 JS를 그대로 꺼내 실행한다.
+ * 문자열 포함 검사가 아니라 동작 검증이라야, 정규식을 잘못 고쳤을 때 적색이 된다.
+ *
+ * 배경(2026-08-06): URL 지정 경로(PR #65)가 백엔드에는 있는데 이 위젯이 URL을 거부해서
+ * 폰에서 PubMed 미등재 가이드라인을 넣을 수 없었다.
+ */
+function loadClassify() {
+  const src = pub._onDemandWidget();
+  const m = src.match(/function classify\(v\)\{[\s\S]*?\n {2}\}/);
+  assert.ok(m, '위젯에서 classify() 를 추출하지 못했다 — 함수 이름/들여쓰기가 바뀌었는지 확인');
+  // eslint-disable-next-line no-new-func
+  return new Function(`${m[0]}; return classify;`)();
+}
+
+test('직접 입력: PMID·DOI 는 종전대로 통과한다 (회귀)', () => {
+  const classify = loadClassify();
+  assert.equal(classify('41236566').ok, true, 'PMID');
+  assert.equal(classify('10.1093/cid/ciae403').ok, true, 'DOI');
+  // PMID/DOI 는 kind 를 강제하지 않는다 — confirm() 으로 사용자가 고른다.
+  assert.equal(classify('41236566').kind, undefined);
+  assert.equal(classify('10.1093/cid/ciae403').kind, undefined);
+});
+
+test('직접 입력: http(s) URL 을 받아들이고 kind=guideline 으로 강제한다', () => {
+  const classify = loadClassify();
+  for (const u of [
+    'https://www.idsociety.org/practice-guideline/amr-guidance/',
+    'http://example.org/gl.html',
+    'https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines?x=1&y=2',
+  ]) {
+    const c = classify(u);
+    assert.equal(c.ok, true, `URL 이 거부됨: ${u}`);
+    // scripts/on-demand.mjs 는 URL + kind!=guideline 을 거부한다 → 여기서 강제해야 한다.
+    assert.equal(c.kind, 'guideline', `kind 강제 실패: ${u}`);
+    assert.equal(c.isUrl, true);
+  }
+});
+
+test('직접 입력: 형식이 아닌 입력은 여전히 거부한다', () => {
+  const classify = loadClassify();
+  for (const bad of ['sepsis', '123', 'ftp://x.org/a', 'www.idsociety.org', '10.1093']) {
+    assert.equal(classify(bad).ok, false, `거부됐어야 함: ${bad}`);
+  }
+});

@@ -297,7 +297,7 @@ export class GitHubPublisher {
     // 버전 마커: 배포된 index.html은 증분 패치라, 버전이 오르면 _ensureOnDemandWidget이
     // 구버전 블록을 통째로 교체한다 (v 없는 최초 배포 마커도 매치). 위젯 코드를 고치면
     // 반드시 버전을 올릴 것 — 안 올리면 배포 페이지에 영원히 반영되지 않는다.
-    return `<!-- ONDEMAND_WIDGET v2 -->
+    return `<!-- ONDEMAND_WIDGET v3 -->
 <details style="max-width:960px;margin:14px auto;padding:0 16px">
   <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 On-demand 리뷰 — 논문·가이드라인 검색</summary>
   <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
@@ -307,7 +307,7 @@ export class GitHubPublisher {
     </div>
     <div id="od-msg" style="margin-top:8px;color:#64748b"></div>
     <div id="od-list" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div>
-    <div style="margin-top:8px"><a href="#" id="od-direct" style="color:#94a3b8;font-size:12px">PMID/DOI 직접 입력 · 토큰 설정</a></div>
+    <div style="margin-top:8px"><a href="#" id="od-direct" style="color:#94a3b8;font-size:12px">PMID/DOI/URL 직접 입력 · 토큰 설정</a></div>
   </div>
 </details>
 <script>
@@ -363,15 +363,27 @@ export class GitHubPublisher {
   }
   $('od-search').addEventListener('click',search);
   $('od-q').addEventListener('keydown',function(e){if(e.key==='Enter')search();});
+  // 직접 입력 판별. URL 은 scripts/on-demand.mjs 가 kind=guideline 에서만 받으므로
+  // 여기서 kind 를 강제한다(폰에서 confirm 을 잘못 눌러 실패하는 것을 막는다).
+  // test/onDemandWidget.test.mjs 가 이 함수를 위젯에서 추출해 직접 실행한다 —
+  // 이름·들여쓰기를 바꾸면 그 테스트가 적색이 된다.
+  function classify(v){
+    if(/^https?:\\/\\/\\S+$/i.test(v)) return {ok:true,kind:'guideline',isUrl:true};
+    if(/^\\d{5,9}$/.test(v)) return {ok:true};
+    if(/^10\\.\\S+\\/\\S+/.test(v)) return {ok:true};
+    return {ok:false};
+  }
   $('od-direct').addEventListener('click',function(e){
     e.preventDefault();
     var msg=$('od-msg');
-    var v=prompt('PMID 또는 DOI 직접 입력 (취소하면 토큰만 설정):');
+    var v=prompt('PMID · DOI · 가이드라인 원문 URL 직접 입력 (취소하면 토큰만 설정):');
     if(v===null){pat(true);return;}
     v=v.trim(); if(!v)return;
-    if(!/^\\d{5,9}$/.test(v)&&!/^10\\.\\S+\\/\\S+/.test(v)){msg.textContent='✖ PMID(숫자) 또는 DOI(10.…/…) 형식만 지원합니다.';return;}
-    var kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
+    var c=classify(v);
+    if(!c.ok){msg.textContent='✖ PMID(숫자) · DOI(10.…/…) · URL(https://…) 형식만 지원합니다.';return;}
+    var kind=c.kind||(confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper');
     dispatch(v,kind,msg);
+    if(c.isUrl){msg.textContent='분석 요청 중… (URL은 가이드라인으로 분석합니다)';}
   });
 })();
 </script>
