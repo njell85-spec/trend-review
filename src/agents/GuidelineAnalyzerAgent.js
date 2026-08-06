@@ -48,7 +48,17 @@ export class GuidelineAnalyzerAgent {
     return top;
   }
 
-  get _tool() {
+  /**
+   * 툴 스키마. `mode`:
+   *   'guideline'  — 가이드라인 캐치업 브리프 (기본값. 데일리 코어가 쓰는 경로 — 건드리지 말 것)
+   *   'reference'  — PeterJ 가 직접 고른 범용 참고자료 요약 (on-demand `kind=reference`)
+   *
+   * 두 모드가 갈리는 지점은 둘뿐이다: 가이드라인은 `keyChanges`(이전 판 대비 변경점)를 요구하고,
+   * 참고자료는 `sourceNote_ko`(출처 성격·근거 수준·한계)를 요구한다. 참고자료는 공인되지 않은
+   * 출처일 수 있다는 것이 이 모드의 전제이므로, 출처 성격을 카드가 말하지 않으면 안 된다.
+   */
+  _tool(mode = 'guideline') {
+    if (mode === 'reference') return this._referenceTool();
     return {
       name: 'submit_guideline_catchup',
       description: 'Submit a DETAILED, structured guideline catch-up brief (bilingual EN + KO)',
@@ -88,21 +98,87 @@ export class GuidelineAnalyzerAgent {
     };
   }
 
-  async analyze(guideline) {
-    if (!guideline) return null;
-    // PubMed 미등재(웹 출처) 가이드라인은 pmid 가 빈 문자열이라 캐시키가 전부 충돌한다 → sourceId 폴백.
-    const cacheKey = `guideline_v4_${this.provider}_${this.model}_${guideline.pmid || guideline.sourceId || guideline.sourceUrl}`;
-    try {
-      const { data } = await this.cache.getOrFetch(cacheKey, async () => {
-        this.logger.info(`Guideline analysis: ${guideline.pmid} — ${guideline.title?.slice(0, 60)}…`);
-        const hasFullText = guideline.fullText && guideline.fullText.length > 100;
-        const fullTextSection = hasFullText
-          ? `\n\n--- FULL TEXT (source: ${guideline.fullTextSource}, truncated) ---\n${guideline.fullText}\n---`
-          : '';
-        const augmentSection = guideline.augmentText
-          ? `\n\n--- AUTHORITATIVE SOURCE (trustworthy structured/registry) ---\n${guideline.augmentText}\n---`
-          : '';
-        const prompt = `You are an expert emergency medicine and critical care physician writing a DETAILED GUIDELINE CATCH-UP brief for a busy clinician who wants to know EXACTLY what to change in practice.
+  /** 범용 참고자료 툴 — 가이드라인의 `keyChanges` 자리를 `sourceNote_ko` 가 대신한다. */
+  _referenceTool() {
+    return {
+      name: 'submit_reference_brief',
+      description: 'Submit a structured brief for a user-selected clinical reference (bilingual EN + KO)',
+      input_schema: {
+        type: 'object',
+        properties: {
+          pmid: { type: 'string' },
+          org: { type: 'string', description: 'Who produced this — society, institution, journal, publisher, or site operator. Infer from the document/host; use "NR" if unclear.' },
+          version: { type: 'string', description: 'Publication or last-updated date/version as stated by the source, e.g. "2026-03" or "3rd edition". Use "NR" if the source states none — do NOT guess.' },
+          title_ko: { type: 'string', description: 'Korean title of the reference.' },
+          scope_ko: { type: 'string', description: '이 자료가 무엇이고 누가 만든 것인지, 무엇을 다루는지 1–2문장 한국어로.' },
+          summary: { type: 'array', items: { type: 'string' }, description: 'KEY content as SPECIFIC, self-contained bullets (English) — the actual substance a clinician would want (numbers, doses, thresholds, algorithms). 4–8 bullets. Use ONLY what the source actually says.' },
+          summary_ko: { type: 'array', items: { type: 'string' }, description: 'Korean translations of summary (same order). Drug/score names may stay in English.' },
+          sourceNote_ko: {
+            type: 'string',
+            description: '★ 출처의 성격과 한계를 한국어 2–4문장으로 정직하게. 반드시 다룰 것: ① 동료심사를 거친 문헌인가, 학회 공식 문서인가, 아니면 기관·개인의 웹 문서인가 ② 1차 자료인가 2차 해설인가 ③ 권고의 근거가 인용으로 뒷받침되는가 ④ 언제 기준인가(갱신 시점 불명이면 불명이라고) ⑤ 발행 주체에 상업적·이해관계가 보이면 명시. **확인되지 않는 것은 "확인되지 않음"이라고 적어라 — 절대 추정으로 권위를 부여하지 마라.**',
+          },
+          practiceImpact: { type: 'string', description: 'How a clinician should (and should not) use this in practice, given its source quality (2–4 sentences, English).' },
+          practiceImpact_ko: { type: 'string', description: 'Korean translation of practiceImpact.' },
+          webSources: {
+            type: 'array',
+            description: 'Web pages you consulted via WebSearch/WebFetch. Each {label, url}. Empty array if you did not use web search.',
+            items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
+          },
+        },
+        required: ['pmid', 'org', 'version', 'title_ko', 'scope_ko', 'summary', 'summary_ko', 'sourceNote_ko', 'practiceImpact', 'practiceImpact_ko'],
+      },
+    };
+  }
+
+  /**
+   * 캐시키. **mode 를 포함해야 한다** — 같은 URL 을 guideline 으로 한 번, reference 로 한 번
+   * 돌리면 mode 없는 키에서는 먼저 돌린 쪽 결과가 그대로 재사용된다.
+   * PubMed 미등재(웹 출처)는 pmid 가 빈 문자열이라 sourceId 로 폴백한다.
+   */
+  _cacheKey(doc, mode = 'guideline') {
+    const id = doc.pmid || doc.sourceId || doc.sourceUrl;
+    return `${mode}_v5_${this.provider}_${this.model}_${id}`;
+  }
+
+  /** 분석 프롬프트. 모드에 따라 요구 산출물이 갈린다. */
+  _prompt(doc, mode = 'guideline') {
+    const hasFullText = doc.fullText && doc.fullText.length > 100;
+    const fullTextSection = hasFullText
+      ? `\n\n--- FULL TEXT (source: ${doc.fullTextSource}, truncated) ---\n${doc.fullText}\n---`
+      : '';
+    const augmentSection = doc.augmentText
+      ? `\n\n--- AUTHORITATIVE SOURCE (trustworthy structured/registry) ---\n${doc.augmentText}\n---`
+      : '';
+    const meta = `Title: ${doc.title}
+Authors: ${(doc.authors ?? []).join(', ')}
+Journal: ${doc.journal} (${doc.pubDate})
+MeSH: ${(doc.meshTerms ?? []).join(', ')}`;
+
+    if (mode === 'reference') {
+      return `You are an expert emergency medicine and critical care physician summarising a clinical reference for a busy colleague.
+
+IMPORTANT — this document was **chosen by the user, not by a curation process. It may not be authoritative**: it can be a society page, an institutional protocol, a publisher's summary, a blog, or vendor material. Your job is BOTH to convey its content AND to tell the reader honestly what kind of source it is, so they can weigh it themselves.
+
+This is NOT a clinical practice guideline brief and NOT a primary study — do NOT force a PICO structure and do NOT report "changes versus the previous version". Produce:
+  1. scope_ko — 이 자료가 무엇이고 누가 만든 것인지, 무엇을 다루는지.
+  2. summary — the actual substance: numbers, doses, thresholds, algorithms. Only what the source says.
+  3. sourceNote_ko — ★ 출처의 성격과 한계. peer-reviewed 문헌인지, 학회 공식 문서인지, 기관·개인 웹 문서인지. 1차 자료인지 2차 해설인지. 근거가 인용으로 뒷받침되는지. 언제 기준인지. 이해관계가 보이는지. **확인되지 않는 것은 "확인되지 않음"이라고 적어라.**
+  4. practiceImpact — 이 자료를 임상에서 어떻게 쓰고, 어디까지만 믿어야 하는지.
+
+Reference:
+${meta}${doc.sourceUrl ? `
+Source URL (user-supplied — read it directly): ${doc.sourceUrl}
+→ Read this URL with WebFetch/WebSearch to extract the actual content, and to judge what kind of source it is (publisher, peer review status, citations, last update).` : ''}
+
+Abstract / summary text:
+${doc.abstract}${fullTextSection}${augmentSection}
+
+Use the submit_reference_brief tool. Report ONLY what you can source — never invent content, and never grant the source authority it has not demonstrated. If you cannot verify something, say so in sourceNote_ko.
+
+Provide Korean for all _ko fields; medical/drug/score names may remain in English.`;
+    }
+
+    return `You are an expert emergency medicine and critical care physician writing a DETAILED GUIDELINE CATCH-UP brief for a busy clinician who wants to know EXACTLY what to change in practice.
 
 This is a clinical practice guideline (not a primary study) — do NOT force a PICO structure. Produce:
   1. scope_ko — 무엇을(어떤 환자군을) 다루는 가이드라인인지.
@@ -111,46 +187,57 @@ This is a clinical practice guideline (not a primary study) — do NOT force a P
   4. practiceImpact — concrete bedside impact for EM/CCM.
 
 Guideline:
-Title: ${guideline.title}
-Authors: ${(guideline.authors ?? []).join(', ')}
-Journal: ${guideline.journal} (${guideline.pubDate})
-MeSH: ${(guideline.meshTerms ?? []).join(', ')}${guideline.sourceUrl ? `
-Source URL (issuing organization's own publication — this document is NOT in PubMed): ${guideline.sourceUrl}
+${meta}${doc.sourceUrl ? `
+Source URL (issuing organization's own publication — this document is NOT in PubMed): ${doc.sourceUrl}
 → Read this URL (and the issuing society's "What's New"/summary pages) with WebFetch/WebSearch to extract the actual recommendations and changes.` : ''}
 
 Abstract / summary text:
-${guideline.abstract}${fullTextSection}${augmentSection}
+${doc.abstract}${fullTextSection}${augmentSection}
 
 Use the submit_guideline_catchup tool. Report ONLY facts you can source — never invent recommendations or changes.
 
 RESEARCH: If the provided text does NOT describe the specific CONTENT of what changed (e.g. it only gives aggregate counts like "20 new, 13 updated"), USE WebSearch/WebFetch to find the actual changes from AUTHORITATIVE sources — the issuing society's "What's New"/executive summary, the journal article, guideline repositories, or PubMed. Extract the specific changed recommendations (이전→이후, 수치/용량/시간/등급, 이유). List every authoritative page you used in "webSources". If, after searching, you still cannot find the specific content, return an empty "keyChanges" array rather than restating counts.
 
 Provide Korean for all _ko fields; medical/drug/score names may remain in English. Be thorough — allocate as much detail as the sources support.`;
+  }
+
+  /**
+   * @param doc  가이드라인/참고자료 문서(PubMed 메타 또는 externalGuideline 합성 객체)
+   * @param mode 'guideline'(기본 — 데일리 코어가 쓰는 경로) | 'reference'(on-demand 범용 참고자료)
+   */
+  async analyze(doc, { mode = 'guideline' } = {}) {
+    if (!doc) return null;
+    const cacheKey = this._cacheKey(doc, mode);
+    try {
+      const { data } = await this.cache.getOrFetch(cacheKey, async () => {
+        this.logger.info(`${mode} analysis: ${doc.pmid || doc.sourceId} — ${doc.title?.slice(0, 60)}…`);
+        const prompt = this._prompt(doc, mode);
+        const tool = this._tool(mode);
 
         // 웹검색 보강 우선; 헤드리스에서 웹툴이 불가/실패하면 텍스트-only 로 폴백(정직 안내로 귀결).
         const call = (webSearch) => this.cb.execute(() =>
           this.retry.execute(
-            () => this.llm.callWithTool([{ role: 'user', content: prompt }], this._tool, { maxTokens: 12000, webSearch }),
-            { label: `${this.provider}-guideline${webSearch ? '-web' : ''}` }));
+            () => this.llm.callWithTool([{ role: 'user', content: prompt }], tool, { maxTokens: 12000, webSearch }),
+            { label: `${this.provider}-${mode}${webSearch ? '-web' : ''}` }));
         let result;
         try {
           result = await call(true);
         } catch (e) {
-          this.logger.warn(`Guideline web-search call failed — falling back to text-only: ${e.message}`);
+          this.logger.warn(`${mode} web-search call failed — falling back to text-only: ${e.message}`);
           result = await call(false);
         }
         return result;
       });
 
-      return this._toCard(guideline, data);
+      return this._toCard(doc, data, mode);
     } catch (err) {
       // 분석 실패/거부 → null. 오케스트레이터가 조용히 건너뛴다(카드 미표시).
-      this.logger.warn('Guideline analysis failed — skipping guideline this cycle', { err: err.message });
+      this.logger.warn(`${mode} analysis failed — skipping this cycle`, { err: err.message });
       return null;
     }
   }
 
-  _toCard(guideline, data) {
+  _toCard(guideline, data, mode = 'guideline') {
     const sources = [];
     const pmUrl = guideline.pubmedUrl ?? (guideline.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${guideline.pmid}/` : null);
     if (pmUrl) sources.push({ label: `PubMed — PMID ${guideline.pmid}`, url: pmUrl });
@@ -167,8 +254,12 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     }
 
     const keyChanges = Array.isArray(data.keyChanges) ? data.keyChanges : [];
+    // 참고자료는 "이전 판 대비 변경점" 축이 없다 — 대신 출처 성격을 싣는다.
+    const modeFields = mode === 'reference'
+      ? { sourceNote_ko: data.sourceNote_ko ?? '' }
+      : { keyChanges, changesUnavailable: keyChanges.length === 0 };
     return {
-      type: 'guideline',
+      type: mode === 'reference' ? 'reference' : 'guideline',
       paper: {
         pmid: guideline.pmid, title: guideline.title, journal: guideline.journal,
         pubDate: guideline.pubDate, pubmedUrl: pmUrl, doi: guideline.doi,
@@ -178,9 +269,9 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       org: data.org, version: data.version, title_ko: data.title_ko,
       scope_ko: data.scope_ko ?? '',
       summary: data.summary ?? [], summary_ko: data.summary_ko ?? [],
-      keyChanges,
-      // 세부 변경점을 못 얻었고 본문도 확보 못한 경우 → 카드에서 정직하게 안내
-      changesUnavailable: keyChanges.length === 0,
+      // guideline: keyChanges + changesUnavailable(세부 변경점을 못 얻은 경우 카드에서 정직 안내)
+      // reference: sourceNote_ko(출처 성격·한계)
+      ...modeFields,
       fullTextSource: guideline.fullTextSource ?? 'abstract-only',
       practiceImpact: data.practiceImpact, practiceImpact_ko: data.practiceImpact_ko,
       sources,

@@ -1,12 +1,12 @@
 name: On-demand Analysis (직접 지정)
 
 # 대시보드 "직접 지정 분석" 위젯(또는 Actions 수동 실행)에서 트리거.
-# 데일리와 동일한 분석 경로로 지정 논문/가이드라인을 처리한다 (REPORT_SPEC §1-B).
+# 데일리와 동일한 분석 경로로 지정 논문/가이드라인/참고자료를 처리한다 (REPORT_SPEC §1-B).
 on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'PMID 또는 DOI (가이드라인은 발행기관 URL도 가능)'
+        description: 'PMID 또는 DOI (가이드라인·참고자료는 원문 URL도 가능)'
         required: true
         type: string
       kind:
@@ -14,19 +14,19 @@ on:
         required: false
         default: 'paper'
         type: choice
-        options: [paper, guideline]
+        options: [paper, guideline, reference]
       title:
-        description: '문서 제목 (URL 지정 가이드라인용, 선택 — 비우면 페이지 <title>)'
+        description: '문서 제목 (URL 지정용, 선택 — 비우면 페이지 <title>)'
         required: false
         default: ''
         type: string
       org:
-        description: '발행 기관 (URL 지정 가이드라인용, 선택 — 예: IDSA)'
+        description: '발행 기관 (URL 지정용, 선택 — 예: IDSA)'
         required: false
         default: ''
         type: string
       pubdate:
-        description: '발행/기준 일자 (URL 지정 가이드라인용, 선택 — 예: 2026-03)'
+        description: '발행/기준 일자 (URL 지정용, 선택 — 예: 2026-03)'
         required: false
         default: ''
         type: string
@@ -97,7 +97,7 @@ jobs:
       # || true 로 삼켜 충돌 마커를 커밋할 위험이 있어 제거 — 실패는 조용히 삼키지 않는다.)
       - name: Commit state (archive)
         run: |
-          for f in output/analysis_archive.json output/selected_papers.json output/selected_guidelines.json; do
+          for f in output/analysis_archive.json output/selected_papers.json output/selected_guidelines.json output/selected_references.json; do
             [ -f "$f" ] && git add "$f" || true
           done
           git diff --staged --quiet \

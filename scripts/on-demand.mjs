@@ -6,7 +6,7 @@
  * 동일한 분석 → 대시보드(직접 지정 배지) → 텔레그램 → 아카이브 경로에 태운다.
  * 같은 날 데일리 섹션을 건드리지 않으며(자체 섹션 키), "하루 1편" 카운트 밖의 예외다.
  *
- * 사용: node scripts/on-demand.mjs <PMID|DOI> [paper|guideline]
+ * 사용: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline|reference]
  * 트리거: .github/workflows/on-demand.yml (대시보드 위젯 또는 Actions 수동 실행)
  */
 import 'dotenv/config';
@@ -31,12 +31,14 @@ installUsageDump();
 const target = (process.argv[2] ?? '').trim();
 const kind = (process.argv[3] ?? 'paper').trim();
 if (!target) {
-  console.error('사용법: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline]');
+  console.error('사용법: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline|reference]');
   process.exit(1);
 }
-// URL 지정은 가이드라인 전용 — 논문은 PubMed 메타데이터(저널·저자·MeSH)가 분석의 전제다.
-if (isHttpUrl(target) && kind !== 'guideline') {
-  console.error('✖ URL 지정은 kind=guideline 에서만 지원합니다 (논문은 PMID/DOI로 지정하세요).');
+// URL 은 논문(PICO) 경로로 못 간다 — PICO 분석은 PubMed 메타데이터(저널·저자·MeSH)가 전제다.
+// 가이드라인(공식 문서)과 참고자료(PeterJ 가 직접 고른 범용 자료)만 URL 을 받는다.
+const DOC_KINDS = new Set(['guideline', 'reference']);
+if (isHttpUrl(target) && !DOC_KINDS.has(kind)) {
+  console.error('✖ URL 지정은 kind=guideline 또는 kind=reference 에서만 지원합니다 (논문은 PMID/DOI로 지정하세요).');
   process.exit(1);
 }
 
@@ -66,7 +68,7 @@ let article;
 let enriched;
 
 if (webMode) {
-  console.log(`🔎 직접 지정 분석 시작: URL ${target} (guideline) — ${todayKST}`);
+  console.log(`🔎 직접 지정 분석 시작: URL ${target} (${kind}) — ${todayKST}`);
   const src = await fetchSourceText(target);
   console.log(`📄 원문 텍스트: ${src.text ? `${src.text.length}자 확보` : `미확보(${src.contentType || '접근 불가'}) — LLM 웹검색 보강에 위임`}`);
   enriched = buildWebGuideline({
@@ -93,13 +95,16 @@ const publisher = new GitHubPublisher();
 let pagesUrl = `https://${process.env.GITHUB_OWNER}.github.io/${process.env.GITHUB_REPO}/`;
 let notifyPaper = null;
 
-if (kind === 'guideline') {
-  const card = await new GuidelineAnalyzerAgent().analyze(enriched);
+if (DOC_KINDS.has(kind)) {
+  const isRef = kind === 'reference';
+  const card = await new GuidelineAnalyzerAgent().analyze(enriched, { mode: kind });
   if (!card) {
-    console.error('✖ 가이드라인 분석 실패 — 대시보드 미변경.');
+    console.error(`✖ ${isRef ? '참고자료' : '가이드라인'} 분석 실패 — 대시보드 미변경.`);
     process.exit(1);
   }
-  await appendState('output/selected_guidelines.json', {
+  // 참고자료는 가이드라인 트랙의 주간 게이트·중복 방지 목록과 성격이 다르다
+  // (자동 선정 대상이 아니라 PeterJ 가 직접 지정할 때만 생긴다) → 별도 상태 파일.
+  await appendState(isRef ? 'output/selected_references.json' : 'output/selected_guidelines.json', {
     pmid, title: article.title, date: todayKST,
     ...(webMode ? { sourceUrl: enriched.sourceUrl, sourceId: enriched.sourceId } : {}),
   });

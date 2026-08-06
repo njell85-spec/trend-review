@@ -82,7 +82,7 @@ for (const [re, label] of [
 // 줄 단위 앵커 — 주석 처리(#!output/…)도 소실로 판정한다.
 // analysis_archive(리빙 Doc 재생성)·video_log(중복 업로드 방지)는 Phase 2/3 상태파일.
 const gi = read('.gitignore');
-for (const f of ['selected_papers', 'selected_guidelines', 'analysis_archive', 'video_log', 'curation_state']) {
+for (const f of ['selected_papers', 'selected_guidelines', 'selected_references', 'analysis_archive', 'video_log', 'curation_state']) {
   const re = new RegExp(String.raw`^!output/${f}\.json\s*$`, 'm');
   if (!re.test(gi)) errors.push(`.gitignore: 상태파일 예외 "!output/${f}.json" 소실/비활성 — 상태 지속 무력화`);
 }
