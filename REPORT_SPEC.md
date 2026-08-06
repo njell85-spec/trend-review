@@ -150,7 +150,14 @@
   대시보드 삭제(§4-G)와 **무관** — 삭제한 논문도 여기엔 "저장됨"으로 남는다(Drive·Doc 누적).
   `GitHubPublisher._ensureArchiveStatus`가 매일 최신 데이터로 멱등 주입(archive 없으면 소프트 스킵).
 - Secrets: `GOOGLE_CLIENT_ID`·`GOOGLE_CLIENT_SECRET`·`GOOGLE_REFRESH_TOKEN`
-  (스코프 `drive.file`+`youtube.upload` 고정). 적재 루트 폴더 `trend-review`는 **앱이
+  (스코프 **`drive.file` 단독** — 2026-08-04 축소. `youtube.upload`는 민감 스코프라
+  동의 화면 게시가 심사 대상이 되는데, **게시 상태가 "테스트"면 refresh token이 7일마다
+  만료**돼 아카이브가 죽는다(2026-07-08~08-03 실측 · GC#60). Phase 3 영상을 켜는 날
+  스코프를 되돌리고 재인증한다 — `docs/desktop-day-guide.md` 3-b).
+  **아카이브 실패는 초록으로 넘기지 않는다**: 파이프라인이 `output/archive_health.json`에
+  판정을 남기고 워크플로의 `archive-gate` 잡이 실패한 날 빨간불을 켠다(리포트 발행 경로와
+  Pages 검증 잡은 그대로 통과시킨다 — 부가 기능이 본업 가드를 죽이지 않는다).
+  적재 루트 폴더 `trend-review`는 **앱이
   자동 생성**(find-or-create) — `drive.file` 스코프는 수동 생성 폴더 접근이 불가하므로
   Variables `GOOGLE_DRIVE_FOLDER_ID`는 선택(접근 불가 ID면 자동 폴백)이며 기본 미설정.
   발급: 데스크탑 데이 `scripts/google-auth-setup.mjs` (`docs/desktop-day-guide.md`).
