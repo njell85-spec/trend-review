@@ -158,3 +158,25 @@ test('publisher._applyCuration: 상태 없음(null)이어도 블록은 주입된
   const pub = new GitHubPublisher({ token: 't', owner: 'o', repo: 'r' });
   assert.match(pub._applyCuration('<body>x</body>', null), /CURATION_BLOCK v\d+/);
 });
+
+// ── 회귀: 숨김 기록이 다른 트랙 카드의 표 행을 잡아먹지 않는다 ────────────────
+// 실측 사고(2026-08-07): PMID 42555934 의 논문 카드를 삭제한 뒤 같은 PMID 를
+// 참고자료 카드로 다시 발행하자, 카드는 떴는데 누적 표 행만 사라졌다. publish() 가
+// 매 발행마다 curation 을 재적용하는데 행 제거에 조건이 없어 새 행까지 지웠던 것.
+
+test('섹션이 이미 없으면 같은 PMID 의 표 행을 지우지 않는다 (다른 트랙 카드 보호)', () => {
+  const html = `<body>
+<!-- GSECTION:2026-08-07-m-999 --><div>참고자료 카드</div><!-- /GSECTION:2026-08-07-m-999 -->
+<tbody><!-- TABLE_ROWS_START --><tr data-pmid="999" data-guideline="1"><td class="c-date">2026-08-07</td></tr><!-- TABLE_ROWS_END --></tbody>
+</body>`;
+  // 숨김 기록은 '논문 섹션'(SECTION) 것이고, 그 섹션은 이미 지워져 이 문서에 없다.
+  const out = removeSectionFromHtml(html, { sectionKey: '2026-08-07-m-999', pmid: '999', tag: 'SECTION' });
+  assert.ok(out.includes('data-pmid="999"'), '없는 섹션의 숨김 기록이 다른 카드의 행을 지웠다');
+  assert.ok(out.includes('GSECTION:2026-08-07-m-999'), '참고자료 카드 자체는 그대로여야 한다');
+});
+
+test('섹션을 실제로 지울 때는 표 행도 함께 지운다 (원래 의도 보존)', () => {
+  const out = removeSectionFromHtml(samplePage(), { sectionKey: '2026-07-05', pmid: '111' });
+  assert.ok(!out.includes('SECTION:2026-07-05 -->'));
+  assert.ok(!out.includes('data-pmid="111"'));
+});
