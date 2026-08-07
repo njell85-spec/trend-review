@@ -1732,6 +1732,63 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-08",
+      "pmid": "42528431",
+      "title": "Platelet-To-Lactate Ratio Predicts In-Hospital Mortality in Patients With Sepsis-Induced Coagulopathy: A Retrospective Cohort Study.",
+      "title_ko": "혈소판-젖산 비율(PLAC)은 패혈증 유발 응고병증 환자의 원내 사망률을 예측한다: 후향적 코호트 연구",
+      "journal": "British journal of hospital medicine (London, England : 2005)",
+      "doi": "10.31083/BJHM52277",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ICU에 입원한 sepsis-induced coagulopathy(SIC) 환자에서 platelet-to-lactate ratio(PLAC)가 원내 사망률과 독립적으로 연관되는지, 그리고 그 예측 성능이 SOFA score, SIC score, Charlson comorbidity index와 비교해 어떠한지를 규명하고자 한다.",
+      "pico": {
+        "population": "[China] 1722 patients with sepsis-induced coagulopathy (SIC) diagnosed after admission to the intensive care unit (ICU) of Chinese PLA General Hospital between December 2017 and October 2025; in-hospital mortality was 26.2% (n = 452).",
+        "intervention": "The platelet-to-lactate ratio (PLAC), which integrates platelet count (coagulation status) and lactate level (tissue hypoperfusion), analyzed by tertiles and with a restricted cubic spline (RCS) threshold effect at PLAC = 28.",
+        "comparison": "Highest PLAC tertile as reference (compared with middle and lowest tertiles); predictive performance also compared with the SOFA score, the SIC score, and the Charlson comorbidity index score via ROC curves and the DeLong test.",
+        "outcome": "In-hospital mortality. Nonsurvivors had significantly lower PLAC than survivors (13.44 vs. 32.75, p < 0.001). Compared with the highest tertile, adjusted HRs were 1.701 (middle) and 3.501 (lowest), both p < 0.05. AUC for PLAC was 0.711 (95% CI: 0.683–0.738), comparable to SOFA (p = 0.135) and superior to the SIC score and Charlson comorbidity index (both p < 0.001)."
+      },
+      "pico_ko": {
+        "population": "[중국] 2017년 12월부터 2025년 10월까지 Chinese PLA General Hospital 중환자실(ICU) 입원 후 sepsis-induced coagulopathy(SIC)로 진단된 1722명의 환자; 원내 사망률은 26.2%(n = 452)였다.",
+        "intervention": "혈소판 수(응고 상태)와 젖산 수치(조직 저관류)를 통합한 platelet-to-lactate ratio(PLAC); tertile로 분석하고 restricted cubic spline(RCS)로 PLAC = 28에서의 역치 효과를 분석함.",
+        "comparison": "가장 높은 PLAC tertile을 기준(reference)으로 중간·최저 tertile과 비교; 또한 ROC curve와 DeLong test를 이용해 SOFA score, SIC score, Charlson comorbidity index score와 예측 성능을 비교함.",
+        "outcome": "원내 사망률. 비생존자는 생존자보다 PLAC가 유의하게 낮았다(13.44 vs. 32.75, p < 0.001). 최고 tertile 대비 보정 HR은 중간 tertile 1.701, 최저 tertile 3.501로 모두 p < 0.05였다. PLAC의 AUC는 0.711(95% CI: 0.683–0.738)로 SOFA score와 유사하고(p = 0.135) SIC score 및 Charlson comorbidity index보다 우수했다(둘 다 p < 0.001)."
+      },
+      "keyFindings": [
+        "Among 1722 SIC patients (in-hospital mortality 26.2%, n = 452), nonsurvivors had significantly lower PLAC than survivors (13.44 vs. 32.75, p < 0.001).",
+        "Compared with the highest PLAC tertile, adjusted hazard ratios for in-hospital mortality were 1.701 (middle tertile) and 3.501 (lowest tertile), both p < 0.05, with an RCS threshold effect at PLAC = 28.",
+        "PLAC discrimination (AUC 0.711, 95% CI 0.683–0.738) was comparable to the SOFA score (p = 0.135) and superior to the SIC score and Charlson comorbidity index (both p < 0.001)."
+      ],
+      "keyFindings_ko": [
+        "1722명의 SIC 환자(원내 사망률 26.2%, n = 452)에서 비생존자는 생존자보다 PLAC가 유의하게 낮았다(13.44 vs. 32.75, p < 0.001).",
+        "최고 PLAC tertile 대비 원내 사망의 보정 HR은 중간 tertile 1.701, 최저 tertile 3.501로 모두 p < 0.05였으며, RCS에서 PLAC = 28의 역치 효과가 확인되었다.",
+        "PLAC의 판별력(AUC 0.711, 95% CI 0.683–0.738)은 SOFA score와 유사했고(p = 0.135) SIC score 및 Charlson comorbidity index보다 우수했다(둘 다 p < 0.001)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42528431",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42528431/"
+        },
+        {
+          "label": "Journal (DOI) — 10.31083/BJHM52277",
+          "url": "https://doi.org/10.31083/BJHM52277"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42528431 (abstract, DOI 10.31083/BJHM52277)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42528431/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 42528431 (abstract, DOI 10.31083/BJHM52277)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42528431/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
