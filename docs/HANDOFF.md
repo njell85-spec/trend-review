@@ -3,6 +3,37 @@
 > 목적: 새 세션(어느 모델이든)이 이 파일 하나로 지금까지의 맥락·결정·상태·다음 할 일을
 > 복원해 이어가기 위함. **새 세션을 열면 이 파일부터 읽고, 아래 "먼저 읽을 파일"을 훑으세요.**
 >
+> **[2026-08-07 — 페이월 문헌 본문 입력 통로 신설 + curation 실버그 1건 · 선정 개편 무관]**
+> - **발단**: PeterJ가 NEJM Clinical Practice **"Syncope"**(Kenny RA, PMID **42555934**,
+>   DOI 10.1056/NEJMcp2517255) 캡처를 주며 "on-demand로 돌려 넣어달라". 처음 `kind=paper`로
+>   돌렸으나 PeterJ가 **"PICO가 안 맞는다, 요약분석 개념"**이라고 정정 → `kind=reference`로 전환.
+>   (교훈: **서술형 종설은 reference 모드가 맞다** — 그 모드 프롬프트가 PICO를 명시적으로 금지한다.)
+> - **문제**: NEJM은 페이월이라 러너가 원문을 못 읽는다(`fetchSourceText` 403, LLM 웹검색도 막힘).
+>   첫 reference 카드가 **초록 수준으로 얇았고**, 카드 스스로 "본문 미열람, 수치·역치 확인 안 됨"이라 적었다.
+> - **① `sourceText` 입력 통로 (PR #72, 머지)**: on-demand 선택 입력 → `OD_SOURCE_TEXT` →
+>   `applyUserText()`가 `enriched.fullText` 자리에 얹는다. `src/utils/userSuppliedText.js` 신규
+>   (100자 미만 무시 · 60000자 상한 · `fullTextSource='user-supplied'` · `fullTextLength` 갱신).
+>   - **캐시 함정**: `GuidelineAnalyzerAgent._cacheKey`에 본문 지문을 안 넣으면 같은 PMID를
+>     초록으로 먼저 돌린 뒤 본문을 넣어도 **얇은 첫 결과가 재사용**된다 → 사용자 본문이 있을 때만
+>     `_ut<sha12>` 접미사. **본문 없는 기존 경로 키는 종전과 동일(데일리 코어 무영향).**
+>   - 공개 repo라 dispatch 입력값이 Actions 화면에 남는다는 점은 주석·입력 설명에 적어뒀다.
+>     PeterJ 판단으로 이번엔 전문 수준 정리본을 그대로 넣었다.
+> - **② curation 실버그 (PR #73, 머지)**: **숨김 기록이 같은 PMID의 다른 트랙 카드 표 행을 영구히
+>   지운다.** `publish()`가 매 발행마다 `_applyCuration`을 재적용하는데 `removeSectionFromHtml`이
+>   섹션 제거 성공 여부와 무관하게 pmid 행을 지웠다. 섹션 키는 `SECTION:…`인데 **행 키는 pmid 하나뿐**이라
+>   `GSECTION`(가이드/참고자료) 카드의 새 행까지 같이 사라진다. **실측**: PICO 카드를 curate-remove로
+>   지운 뒤 같은 PMID를 참고자료로 재발행 → 카드는 뜨는데 누적 표에만 행이 없었다.
+>   수정 = 이번 호출에서 섹션을 실제로 지웠을 때만 행을 지운다.
+> - **검증**: `test:unit` **149 → 160 pass**(신규 11) · spec-lint 통과 · **변이 테스트 2회**
+>   (캐시키 접미사 제거 시 2건 적색 / curation 가드를 상수 true로 죽이면 1건 적색) · 실측 재발행 후
+>   카드 1개 + 누적 표 행 복구 확인.
+> - **남은 것(미처리)**: ⓐ **접힌 섹션 헤더가 참고자료에도 `📋 가이드라인`으로 뜬다** —
+>   `GitHubPublisher._buildGuidelineSection`이 라벨을 하드코딩(카드 안쪽 배지는 `🔖 참고자료`로 정상).
+>   대시보드 표시 변경이라 **/preview 승인 후** 고칠 것. ⓑ 마지막 카드 `출처 성격` ⑤에 깨진 어절
+>   ("실린더블루더 회사명") 1곳 — LLM 생성 잡음, 재실행하면 사라질 가능성.
+> - **세션 제약 메모**: 이 세션에서 **eutils(PubMed)·pubmed.ncbi.nlm.nih.gov·github.io가 프록시 차단**.
+>   PMID 조회는 DOI를 러너에서 해석시키거나 상태 파일로 확인해야 한다.
+>
 > **[2026-08-06 — 선정 품질 진단(F1~F8) → 클코덱스 설계토론 수렴 → 합의 스펙 draft · 프로덕션 코드 무변경]**
 > - **성격**: 진단·설계 단계 + on-demand 소품 2건. **선정 관련 프로덕션 코드·config는 한 줄도 안 건드렸다.**
 >   작업 브랜치 `claude/paper-selection-quality-2221ez-2u0ckp`(원 브랜치 `…-2221ez`를 ff 흡수).
