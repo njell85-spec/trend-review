@@ -1674,6 +1674,64 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-07",
+      "pmid": "42555934",
+      "title": "Syncope.",
+      "title_ko": "실신 (Syncope)",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMcp2517255",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "실신으로 내원한 환자에서 임상의는 어떻게 기저 기전(reflex, orthostatic, cardiac)을 진단하고 위험을 계층화하며, 재발·손상·심혈관 유해 결과를 줄이도록 관리해야 하는가?",
+      "pico": {
+        "population": "[International] Patients with syncope, a common clinical problem caused by transient cerebral hypoperfusion; includes older patients in whom syncope may manifest as unexplained falls. (Narrative review — no defined cohort or sample size reported.)",
+        "intervention": "Structured diagnostic approach based on careful history taking and physical examination, plus targeted testing guided by risk stratification and early identification of high-risk features; mechanism-based management (reflex, orthostatic, cardiac).",
+        "comparison": null,
+        "outcome": "Accurate diagnosis of the underlying mechanism and reduction of recurrence, injury risk, and adverse cardiovascular outcomes. No quantitative effect estimates (N, OR, HR, CI, p-values) are reported in this narrative review.",
+        "outcome_detail": ""
+      },
+      "pico_ko": {
+        "population": "[다국가] 일과성 뇌 저관류(transient cerebral hypoperfusion)로 발생하는 흔한 임상 문제인 실신 환자; 실신이 원인 불명 낙상(unexplained falls)으로 나타날 수 있는 고령 환자를 포함한다. (내러티브 리뷰 — 정의된 코호트나 표본 수는 보고되지 않음.)",
+        "intervention": "면밀한 병력 청취와 신체 검진에 기반한 구조화된 진단 접근, 위험 계층화(risk stratification)와 고위험 소견의 조기 식별로 유도되는 표적 검사, 그리고 기전 기반(reflex·orthostatic·cardiac) 관리.",
+        "comparison": null,
+        "outcome": "기저 기전의 정확한 진단과 재발·손상 위험·심혈관 유해 결과의 감소. 이 내러티브 리뷰에는 정량적 효과 추정치(N, OR, HR, CI, p-value)가 보고되지 않음."
+      },
+      "keyFindings": [
+        "Syncope is caused by transient cerebral hypoperfusion and encompasses three mechanisms — reflex, orthostatic, and cardiac; accurate diagnosis relies on careful history taking and physical examination plus targeted testing guided by risk stratification.",
+        "Management is determined by the underlying mechanism and focuses on reducing recurrence and injury risk; in older patients, syncope may manifest as unexplained falls.",
+        "Early identification of high-risk features is critical to prevent adverse cardiovascular outcomes. (No quantitative effect estimates are reported in this narrative review.)"
+      ],
+      "keyFindings_ko": [
+        "실신은 일과성 뇌 저관류로 발생하며 reflex·orthostatic·cardiac의 세 가지 기전을 아우른다; 정확한 진단은 면밀한 병력 청취·신체 검진과 위험 계층화로 유도되는 표적 검사에 달려 있다.",
+        "관리는 기저 기전에 따라 결정되며 재발과 손상 위험 감소에 초점을 둔다; 고령 환자에서는 실신이 원인 불명 낙상으로 나타날 수 있다.",
+        "고위험 소견의 조기 식별이 심혈관 유해 결과 예방에 핵심적이다. (이 내러티브 리뷰에는 정량적 효과 추정치가 보고되지 않음.)"
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42555934",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42555934/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1056/NEJMcp2517255",
+          "url": "https://doi.org/10.1056/NEJMcp2517255"
+        },
+        {
+          "label": "웹 — NEJM official article page — Syncope (Kenny RA), N Engl J Med 2026;395:582-591, DOI 10.1056/NEJMcp2517255",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMcp2517255"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "NEJM official article page — Syncope (Kenny RA), N Engl J Med 2026;395:582-591, DOI 10.1056/NEJMcp2517255",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMcp2517255",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
