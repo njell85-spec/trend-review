@@ -22,6 +22,7 @@ import { llmTelemetry } from '../src/utils/LLMClient.js';
 import { kstDateStr } from '../src/utils/dates.js';
 
 import { isHttpUrl, fetchSourceText, buildWebGuideline } from '../src/utils/externalGuideline.js';
+import { applyUserText } from '../src/utils/userSuppliedText.js';
 
 import { installUsageDump } from '../src/utils/usageDump.js';
 
@@ -88,6 +89,18 @@ if (webMode) {
     process.exit(1);
   }
   ({ papers: [enriched] } = await new FullTextAgent().run([article]));
+}
+
+// (c) 페이월 보정 — PeterJ 가 본문 정리본을 넘겼으면 그것을 본문 자리에 얹는다.
+//     러너가 못 읽는 유료 문헌(NEJM 등)에서 카드가 초록 수준으로 얇아지는 것을 막는 유일한 통로.
+{
+  const r = applyUserText(enriched, process.env.OD_SOURCE_TEXT);
+  if (r.applied) {
+    enriched = r.doc;
+    console.log(`📝 사용자 제공 본문 적용: ${r.length}자 (fullTextSource=user-supplied)`);
+  } else if (r.reason === 'too_short') {
+    console.warn(`⚠️ 사용자 제공 본문이 너무 짧아 무시합니다(${r.length}자) — 초록으로 진행.`);
+  }
 }
 
 // ── 3) 분석 → 발행 ───────────────────────────────────────────────────────────

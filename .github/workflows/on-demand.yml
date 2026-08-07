@@ -30,6 +30,14 @@ on:
         required: false
         default: ''
         type: string
+      # 페이월 문헌(NEJM 등)은 러너가 원문을 못 읽어 카드가 초록 수준으로 얇아진다.
+      # 그때만 쓰는 통로. **공개 저장소이고 이 입력값은 Actions 실행 화면에 남으므로**
+      # 유료 원문을 그대로 붙이지 말고 수치·역치·권고 위주의 사실 정리본을 넣는다.
+      sourceText:
+        description: '본문 정리본 (선택 — 페이월로 원문을 못 읽을 때만. 원문 전재 금지)'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -76,6 +84,7 @@ jobs:
           OD_TITLE:  ${{ inputs.title }}
           OD_ORG:    ${{ inputs.org }}
           OD_DATE:   ${{ inputs.pubdate }}
+          OD_SOURCE_TEXT: ${{ inputs.sourceText }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
           TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
