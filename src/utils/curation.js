@@ -46,7 +46,13 @@ export function removeSectionFromHtml(html, { sectionKey, pmid = '', tag = 'SECT
   let out = html;
   const re = new RegExp(`\\n?<!-- ${tag}:${reEsc(sectionKey)} -->[\\s\\S]*?<!-- /${tag}:${reEsc(sectionKey)} -->`, 'g');
   out = out.replace(re, '');
-  if (pmid) {
+  // 행 제거는 **이번 호출에서 그 섹션을 실제로 지웠을 때만** 한다.
+  // 조건 없이 지우면, 숨김 기록이 남아 있는 한 publish() 가 매번 curation 을 재적용하면서
+  // **같은 PMID 의 다른 트랙 카드(가이드라인·참고자료)가 새로 넣은 행까지 영구히 지운다** —
+  // 카드는 대시보드에 보이는데 누적 표에만 안 나오는 상태가 된다.
+  // (섹션이 이미 지워진 뒤의 재적용은 원래도 무의미했으므로 기존 의도는 그대로 보존된다.)
+  const sectionRemoved = out !== html;
+  if (pmid && sectionRemoved) {
     // 표는 pmid 기준 중복 제거돼 있어(publisher ② 단계) 행은 최대 1개다.
     const rowRe = new RegExp(`<tr data-pmid="${reEsc(pmid)}"[^>]*>[\\s\\S]*?</tr>`, 'g');
     out = out.replace(rowRe, '');
