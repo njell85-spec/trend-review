@@ -1,0 +1,26 @@
+{
+  "session_id": "7af1bec2-89d4-5caa-bac8-b26c2eb3a7e9",
+  "schema": 3,
+  "repo": "trend-review",
+  "updated": "2026-08-07",
+  "turns": 36,
+  "records": [
+    {
+      "ts": "2026-08-07",
+      "date": "2026-08-07",
+      "surface": "cloud",
+      "repo": "trend-review",
+      "task": "session",
+      "model": "claude-opus-5",
+      "in": 68,
+      "out": 15009,
+      "cache_w": 186821,
+      "cache_r": 3508008,
+      "cost_usd": 3.997779,
+      "auth": "subscription",
+      "accuracy": "approx",
+      "run_id": "7af1bec2-89d4-5caa-bac8-b26c2eb3a7e9",
+      "note": "세션 누계(턴 36) · 공시단가 환산 · 캐시쓰기 배수 2"
+    }
+  ]
+}
