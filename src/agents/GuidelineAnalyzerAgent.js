@@ -9,6 +9,7 @@
  * 분석: 단일 문서 요약이므로 Opus 사용(단건이라 CLI 안전필터 통과 가능성 높음).
  *        LLM 미가용/거부 시 null 반환 → 오케스트레이터가 조용히 건너뜀.
  */
+import { createHash } from 'crypto';
 import { Logger } from '../utils/Logger.js';
 import { Cache } from '../utils/Cache.js';
 import { CircuitBreaker } from '../utils/CircuitBreaker.js';
@@ -137,7 +138,13 @@ export class GuidelineAnalyzerAgent {
    */
   _cacheKey(doc, mode = 'guideline') {
     const id = doc.pmid || doc.sourceId || doc.sourceUrl;
-    return `${mode}_v5_${this.provider}_${this.model}_${id}`;
+    // 사용자가 본문을 얹은 경우 본문 지문을 키에 넣는다 — 안 넣으면 같은 PMID 를 초록만으로
+    // 한 번 돌린 뒤 본문을 넣어 다시 돌려도 **얇은 첫 결과가 그대로 재사용**된다.
+    // (본문 없는 기존 경로는 접미사가 붙지 않아 키가 종전과 완전히 동일 — 데일리 코어 무영향)
+    const supplied = doc.fullTextSource === 'user-supplied' && doc.fullText
+      ? `_ut${createHash('sha256').update(doc.fullText).digest('hex').slice(0, 12)}`
+      : '';
+    return `${mode}_v5_${this.provider}_${this.model}_${id}${supplied}`;
   }
 
   /** 분석 프롬프트. 모드에 따라 요구 산출물이 갈린다. */
