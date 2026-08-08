@@ -1789,6 +1789,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-09",
+      "pmid": "42568095",
+      "title": "The impact of an intensive care telemedicine program on weaning from invasive ventilation: a secondary analysis of the ERIC trial.",
+      "title_ko": "중환자실 원격의료 프로그램이 침습적 인공호흡기 이탈(weaning)에 미치는 영향: ERIC 임상시험의 이차 분석",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-026-06234-z",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "침습적 기계환기가 필요한 중환자실 환자에서, 복합 원격의료 중재(intensivist와 ICU 간호사의 매일 원격 회진)가 통상 진료 대비 인공호흡기 이탈(weaning) 과정과 결과를 개선하는가?",
+      "pico": {
+        "population": "[Germany] Of 1,463 patients enrolled in the stepped-wedge cluster-randomized ERIC trial across ten clusters of ICUs in the metropolitan area of Berlin, 308 patients who received invasive mechanical ventilation for at least two consecutive days and at least one spontaneous breathing trial (SBT) were analyzed (control condition: 55; intervention condition: 253); registry eligibility required age ≥18 years, expected ICU treatment >24 hours, German statutory health insurance coverage, and written informed consent.",
+        "intervention": "A complex telemedicine intervention which included daily telemedicine rounding by an intensivist and ICU nurse, aimed at improving adherence to eight quality indicators of ICU care (intervention condition: 253 patients).",
+        "comparison": "Control condition (usual care without the telemedicine intervention; 55 patients).",
+        "outcome": "Weaning success rate did not differ between intervention and control (28% vs 36%; p = 0.32); in multivariable regression the intervention was not associated with weaning success (OR for weaning failure 1.45 [95% CI 0.71–2.95]; p = 0.302)."
+      },
+      "pico_ko": {
+        "population": "[독일] Berlin 대도시권 10개 ICU 클러스터에서 시행된 stepped-wedge 클러스터 무작위 배정 ERIC 임상시험에 등록된 1,463명 중, 최소 2일 연속으로 침습적 기계환기를 받고 최소 1회 이상의 spontaneous breathing trial(SBT)을 받은 308명을 분석함(대조군 55명; 중재군 253명); 등록 기준은 만 18세 이상, 예상 ICU 치료 24시간 초과, 독일 법정건강보험 가입, 서면 동의였음.",
+        "intervention": "ICU 진료의 8개 quality indicator 준수 향상을 목표로, intensivist와 ICU 간호사의 매일 원격 회진(daily telemedicine rounding)을 포함한 복합 원격의료 중재(중재군 253명).",
+        "comparison": "대조 조건(원격의료 중재 없는 통상 진료; 55명).",
+        "outcome": "Weaning 성공률은 중재군과 대조군 간 차이가 없었음(28% vs 36%; p = 0.32); 다변량 회귀에서 중재는 weaning 성공과 연관되지 않았음(weaning 실패에 대한 OR 1.45 [95% CI 0.71–2.95]; p = 0.302)."
+      },
+      "keyFindings": [
+        "Among 308 mechanically ventilated ICU patients (control 55; intervention 253), the telemedicine intervention increased SBTs (51% vs 27% of patient days; p < 0.001) but did not improve weaning success rate (28% vs 36%; p = 0.32) or weaning classification (p = 0.21).",
+        "In successfully weaned patients, invasive mechanical ventilation duration was significantly shorter with the intervention (7 [IQR 4, 10] vs 9 [IQR 6, 20] days; p = 0.031).",
+        "Multivariable regression showed no association with weaning success (OR for weaning failure 1.45 [95% CI 0.71–2.95]; p = 0.302) but a significant association with shorter time from first SBT to successful weaning (β = 0.56 [0.32–0.98]; p = 0.042)."
+      ],
+      "keyFindings_ko": [
+        "기계환기 중인 ICU 환자 308명(대조군 55; 중재군 253) 중, 원격의료 중재는 SBT를 늘렸으나(환자-일 51% vs 27%; p < 0.001) weaning 성공률(28% vs 36%; p = 0.32)이나 weaning classification(p = 0.21)은 개선하지 못했다.",
+        "성공적으로 weaning된 환자에서 침습적 기계환기 기간은 중재군에서 유의하게 짧았다(7 [IQR 4, 10]일 vs 9 [IQR 6, 20]일; p = 0.031).",
+        "다변량 회귀에서 weaning 성공과는 연관이 없었으나(weaning 실패 OR 1.45 [95% CI 0.71–2.95]; p = 0.302), 첫 SBT부터 성공적 weaning까지 시간 단축과는 유의하게 연관되었다(β = 0.56 [0.32–0.98]; p = 0.042)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42568095",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42568095/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-026-06234-z",
+          "url": "https://doi.org/10.1186/s13054-026-06234-z"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT03671447 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT03671447"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
