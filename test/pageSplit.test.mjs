@@ -211,3 +211,72 @@ test('퍼블리셔는 로거 없이 생성해도 로그 호출이 죽지 않는�
   assert.doesNotThrow(() => pub.logger.warn('x', { a: 1 }));
   assert.doesNotThrow(() => pub.logger.info('x'));
 });
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 코드리뷰(2026-08-08 high) 지적 회귀 — 전부 "조용히 망가지는" 종류다.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * ★ 2회차 발행부터 guidelines 통계가 index 것으로 되돌아가던 문제.
+ * 통계 교체 정규식은 `</div><div class="archive">` 를 찾는데, 2회차부터는 그 사이에
+ * 지난 실행이 심은 <nav class="pgnav"> 가 끼어 매치가 조용히 실패했다.
+ * 종전 왕복 테스트는 **개수만** 셌기 때문에 이걸 못 잡았다 — 문구를 본다.
+ */
+test('2회차 이후에도 guidelines 통계가 자기 것으로 유지된다', () => {
+  const a = splitPages(samplePage(), { refIds });
+  let idx = a.index, gui = a.guidelines;
+  for (let i = 0; i < 3; i++) {
+    const r = splitPages(mergePages(idx, gui), { refIds });
+    idx = r.index; gui = r.guidelines;
+    assert.match(gui, /<div class="l">가이드라인<\/div>/, `${i + 2}회차에서 통계가 되돌아감`);
+    assert.match(gui, /<div class="l">기타 자료<\/div>/);
+    assert.doesNotMatch(gui, /stat-days-count/);
+    assert.doesNotMatch(gui, /stat-papers-count/);
+    assert.doesNotMatch(gui, /<div class="l">분석일수<\/div>/);
+    assert.equal(count(gui, /class="sc"/g), 3);
+    assert.equal(count(gui, /<nav class="pgnav">/g), 1); // 탭도 누적되지 않는다
+    assert.equal(count(idx, /<nav class="pgnav">/g), 1);
+  }
+});
+
+/**
+ * ★ ARCHIVE_STATUS 마커가 없을 때 표 전체가 두 페이지에 복제되던 문제.
+ * 경계를 `indexOf('</div>')` 로 폴백하면 표 **안쪽** div 를 잡는다.
+ * 이제는 컨테이너를 균형 계산으로 닫는다.
+ */
+test('아카이브 현황 블록이 없어도 표가 복제되지 않는다', () => {
+  const noStatus = samplePage().replace(/<!-- ARCHIVE_STATUS v1 -->[\s\S]*?<!-- \/ARCHIVE_STATUS -->/, '');
+  const before = count(noStatus, ROWS);
+  const { index, guidelines } = splitPages(noStatus, { refIds });
+  assert.equal(before, 4);
+  assert.equal(count(index, ROWS) + count(guidelines, ROWS), before);
+  assert.equal(count(index, /<div class="arch-table">/g), 1);
+  assert.equal(count(guidelines, /<div class="arch-table">/g), 2); // 가이드 + 기타
+});
+
+/** 현황 블록 버전이 올라도(v1→v2) guidelines 에서 제거된다. */
+test('아카이브 현황 제거가 버전에 묶여 있지 않다', () => {
+  const v2 = samplePage().replace('<!-- ARCHIVE_STATUS v1 -->', '<!-- ARCHIVE_STATUS v2 -->');
+  const { index, guidelines } = splitPages(v2, { refIds });
+  assert.match(index, /ARCHIVE_STATUS v2/);
+  assert.doesNotMatch(guidelines, /ARCHIVE_STATUS/);
+});
+
+/**
+ * ★ 행 HTML 에 `$&`·`` $` `` 가 있으면 문자열 치환이 특수 패턴으로 해석해 본문이 깨진다.
+ * esc() 는 `$` 를 건드리지 않으므로 논문 제목에 실제로 들어올 수 있다.
+ */
+test('행 제목에 $& 가 있어도 병합이 본문을 망가뜨리지 않는다', () => {
+  const EVIL_TITLE = '비용 $& 효과 $` 분석';
+  // ⚠ 픽스처를 만들 때도 함수형 replacer 를 써야 한다 — 문자열로 쓰면 여기서부터
+  //   `$&`·`` $` `` 가 펼쳐져 픽스처가 이미 망가진다(실제로 4행 → 7행이 됐다).
+  //   이 한 줄이 이 테스트가 막으려는 위험 그 자체다.
+  const evil = samplePage().replace('<a href="#">G1</a>', () => `<a href="#">${EVIL_TITLE}</a>`);
+  assert.equal(count(evil, ROWS), 4, '픽스처가 이미 훼손됨');
+  const a = splitPages(evil, { refIds });
+  const merged = mergePages(a.index, a.guidelines);
+  assert.equal(count(merged, ROWS), 4);
+  assert.ok(merged.includes(EVIL_TITLE), '치환으로 제목이 훼손됨');
+  const b = splitPages(merged, { refIds });
+  assert.deepEqual(b.counts, a.counts);
+});

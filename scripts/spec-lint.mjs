@@ -171,6 +171,20 @@ if (!/data-pmid="\$\{esc\(rowId\)\}" data-kind=/.test(pub)) {
 if (!curSrc.includes("querySelectorAll('.arch-table table')")) {
   errors.push('src/utils/curation.js: 표 전부 순회 소실 — 둘째 표에 자료화 열이 안 붙는다 (REPORT_SPEC §4-H)');
 }
+// 삭제 경로는 두 페이지를 모두 패치·스테이징해야 한다. index.html 만 보면 가이드라인
+// 삭제가 아무것도 안 지우고 "이미 없음(멱등)"이라며 조용히 성공한다.
+const curRmSrc = read('scripts/curate-remove.mjs');
+const curRmWf = read('.github/workflows/curate-remove.yml');
+if (!curRmSrc.includes("'guidelines.html'")) {
+  errors.push('scripts/curate-remove.mjs: guidelines.html 미패치 — 가이드/기타 삭제가 조용히 무효 (REPORT_SPEC §4-H)');
+}
+if (!curRmWf.includes('guidelines.html')) {
+  errors.push('.github/workflows/curate-remove.yml: guidelines.html 미스테이징 — 삭제가 커밋되지 않는다 (REPORT_SPEC §4-H)');
+}
+// on-demand 로 발행한 가이드/기타는 사이트 루트가 아니라 guidelines.html 에 실린다.
+if (!read('scripts/on-demand.mjs').includes('guidelines.html')) {
+  errors.push('scripts/on-demand.mjs: 가이드/기타 알림 링크가 루트를 가리킴 — 카드 없는 페이지 안내 (REPORT_SPEC §4-H)');
+}
 
 // ── 6) (경고) 로그에 시크릿 보간 휴리스틱 ────────────────────────────────────
 const jsFiles = [];

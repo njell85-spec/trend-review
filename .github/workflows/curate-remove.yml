@@ -1,4 +1,4 @@
-# 대시보드 삭제 버튼(R4) — 섹션 숨김 기록 + index.html 패치 커밋 (REPORT_SPEC §4-G)
+# 대시보드 삭제 버튼(R4) — 섹션 숨김 기록 + index.html/guidelines.html 패치 커밋 (REPORT_SPEC §4-G·§4-H)
 #
 # 대시보드 CURATION_BLOCK이 PAT(workflow_dispatch)로 호출한다. 삭제는 표시 제거만 —
 # Drive Doc·아카이브·재선정 방지 목록 유지(HANDOFF §10-P2 경계).
@@ -61,6 +61,8 @@ jobs:
           for i in 1 2 3; do
             node scripts/curate-remove.mjs
             git add index.html output/curation_state.json
+            # 가이드·기타 카드는 guidelines.html 에 있다(§4-H) — 빠뜨리면 삭제가 커밋되지 않는다
+            [ -f guidelines.html ] && git add guidelines.html || true
             if git diff --staged --quiet; then echo "변경 없음(멱등) — 종료"; exit 0; fi
             git commit -m "chore(curation): 대시보드 삭제 — $CUR_SECTION_KEY"
             if git push; then echo "완료"; exit 0; fi

@@ -22,8 +22,9 @@ const A_START = '<!-- ARCHIVE_START -->';
 const T_OPEN = '<div class="arch-table">';
 const ROWS_START = '<!-- TABLE_ROWS_START -->';
 const ROWS_END = '<!-- TABLE_ROWS_END -->';
-const STATUS_OPEN = '<!-- ARCHIVE_STATUS v1 -->';
-const STATUS_CLOSE = '<!-- /ARCHIVE_STATUS -->';
+// 버전을 하드코딩하지 않는다 — archiveStatus.js 가 버전 마커를 올리면(v1→v2)
+// 하드코딩본은 블록을 못 찾아 guidelines 쪽에 현황 블록이 그대로 남는다(§4-H 5 위반).
+const STATUS_BLOCK_RE = /<!-- ARCHIVE_STATUS(?: v\d+)? -->[\s\S]*?<!-- \/ARCHIVE_STATUS -->/;
 
 const SEC_RE = /<!-- (G?SECTION):([^\s>]+) -->[\s\S]*?<!-- \/\1:\2 -->/g;
 const ROW_RE = /<tr data-pmid="([^"]*)"[^>]*>[\s\S]*?<\/tr>/g;
@@ -237,16 +238,47 @@ const secHead = (icon, label, n, desc) => `<div class="tsec">
 
 const emptyBox = (t) => `<div class="tempty">${t}</div>\n`;
 
-/** 탭을 통계 바로 아래(.archive 직전)에 넣는다. 이미 있으면 교체. */
+/**
+ * 지난 실행이 심은 탭을 걷어낸다.
+ * ★ 통계 교체보다 **먼저** 불러야 한다. 2회차부터는 `.stats` 와 `.archive` 사이에
+ *   이 <nav> 가 끼어 있어서, 그걸 안 걷고 통계 정규식을 돌리면 매치가 실패하고
+ *   guidelines 페이지 통계가 index 것(분석일수·선정 논문)으로 되돌아간다.
+ */
+function stripNav(html) {
+  return html.replace(/<nav class="pgnav">[\s\S]*?<\/nav>\s*/g, '');
+}
+
+/** 탭을 통계 바로 아래(.archive 직전)에 넣는다. */
 function withNav(html, navHtml) {
-  const stripped = html.replace(/<nav class="pgnav">[\s\S]*?<\/nav>\s*/g, '');
-  return stripped.replace('<div class="archive">', `${navHtml}  <div class="archive">`);
+  // 치환문에 사용자 데이터가 섞이므로 함수형 replacer — 문자열이면 $&·$` 가 해석된다.
+  return stripNav(html).replace('<div class="archive">', () => `${navHtml}  <div class="archive">`);
+}
+
+/**
+ * `<div class="arch-table">` 컨테이너가 닫히는 지점(바로 뒤 인덱스)을 균형 계산으로 찾는다.
+ * ★ 종전엔 `ARCHIVE_STATUS` 마커를 경계로 썼고, 마커가 없으면
+ *   `indexOf('</div>', iTable)` 로 폴백했다. 그 폴백은 표 **안쪽** div 를 잡아
+ *   낡은 표 전체가 두 페이지에 통째로 복제되고 `</div>` 도 어긋났다(리뷰 실측).
+ */
+function endOfTableContainer(html, start) {
+  const re = /<div\b|<\/div>/g;
+  re.lastIndex = start;
+  let depth = 0;
+  for (let m; (m = re.exec(html)) !== null; ) {
+    if (m[0] === '</div>') {
+      depth -= 1;
+      if (depth === 0) return m.index + m[0].length;
+    } else {
+      depth += 1;
+    }
+  }
+  return -1;
 }
 
 /** 타워 톤을 </head> 직전에(원본 스타일 뒤에) 얹는다. 이미 있으면 그대로. */
 export function ensureTowerTone(html) {
   if (!html || html.includes('id="tower-tone"')) return html;
-  return html.replace('</head>', `${TOWER_TONE}\n</head>`);
+  return html.replace('</head>', () => `${TOWER_TONE}\n</head>`);
 }
 
 // ── 공개 API ─────────────────────────────────────────────────────────────────
@@ -280,7 +312,9 @@ export function mergePages(indexHtml, guidelinesHtml) {
   // 행: index 표의 끝에 붙인다.
   const merged = [...gRows.guideline, ...gRows.reference];
   if (merged.length && out.includes(ROWS_END)) {
-    out = out.replace(ROWS_END, `${merged.join('')}${ROWS_END}`);
+    // 함수형 replacer 필수 — 보관된 행 HTML 에 `$&`·`` $` `` 가 있으면 문자열
+    // 치환은 그걸 특수 패턴으로 해석해 본문을 망가뜨린다(esc() 도 못 막는다).
+    out = out.replace(ROWS_END, () => `${merged.join('')}${ROWS_END}`);
   }
   return out;
 }
@@ -300,10 +334,12 @@ export function splitPages(html, { refIds = null } = {}) {
 
   const iArch = themed.indexOf(A_START);
   const iTable = themed.indexOf(T_OPEN);
-  const iStatus = themed.indexOf(STATUS_OPEN);
-  const headRaw = themed.slice(0, iArch + A_START.length);
+  const iTableEnd = endOfTableContainer(themed, iTable);
+  if (iTableEnd < 0) return { index: html, guidelines: null, counts: null }; // 소프트
+  // 탭은 여기서 한 번 걷어낸다 — 아래 통계 교체가 그 다음이어야 한다(위 stripNav 주석).
+  const headRaw = stripNav(themed.slice(0, iArch + A_START.length));
   const sectionsRaw = themed.slice(iArch + A_START.length, iTable);
-  const afterTable = iStatus > 0 ? themed.slice(iStatus) : themed.slice(themed.indexOf('</div>', iTable));
+  const afterTable = themed.slice(iTableEnd);
 
   const mClose = sectionsRaw.match(/\s*<\/div>\s*$/);
   const archiveClose = mClose ? mClose[0] : '\n  </div>\n';
@@ -343,7 +379,7 @@ export function splitPages(html, { refIds = null } = {}) {
   // ⚠ 통계 교체는 **탭 주입 전**에 해야 한다 — 주입 후엔 `.stats` 뒤가 <nav> 라
   //   앵커(`<div class="archive">`)가 안 맞아 원본 카드가 남는다(미리보기에서 실측).
   const gStatsRe = /<div class="stats">[\s\S]*?<\/div>\s*<div class="archive">/;
-  const gHeadBase = gStatsRe.test(headRaw) ? headRaw.replace(gStatsRe, gStats) : headRaw;
+  const gHeadBase = gStatsRe.test(headRaw) ? headRaw.replace(gStatsRe, () => gStats) : headRaw;
 
   const gHead = withNav(gHeadBase, pageNav('guides', counts))
     .replace('<title>EM/CCM Trend Review</title>', '<title>가이드라인 및 기타 — EM/CCM Trend Review</title>')
@@ -368,11 +404,7 @@ export function splitPages(html, { refIds = null } = {}) {
 
 /** 아카이브 저장 현황(§4-E)은 논문 아카이브 기준이라 index 에만 둔다. */
 function stripArchiveStatus(tailHtml) {
-  const a = tailHtml.indexOf(STATUS_OPEN);
-  if (a < 0) return tailHtml;
-  const b = tailHtml.indexOf(STATUS_CLOSE);
-  if (b < 0) return tailHtml;
-  return tailHtml.slice(0, a) + tailHtml.slice(b + STATUS_CLOSE.length);
+  return tailHtml.replace(STATUS_BLOCK_RE, '');
 }
 
 function extractUpdated(html) {
