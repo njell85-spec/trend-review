@@ -82,7 +82,7 @@ export function recountStats(html) {
  * 올릴 것 — 안 올리면 증분 패치되는 배포 페이지에 영원히 반영되지 않는다.
  */
 export function curationBlock({ owner, repo }) {
-  return `<!-- CURATION_BLOCK v4 -->
+  return `<!-- CURATION_BLOCK v5 -->
 <script>
 (function(){
   var OWNER='${owner}', REPO='${repo}';
@@ -203,7 +203,13 @@ export function curationBlock({ owner, repo }) {
     })(cards[i]);
   }
   function addTableControls(){
-    var table=document.querySelector('.arch-table table'); if(!table)return;
+    // 페이지 2분할(§4-H) 이후 guidelines.html 은 표가 둘(가이드·기타)이다 —
+    // querySelector 로 첫 표만 잡으면 둘째 표에 '자료화' 열이 영원히 안 붙는다.
+    var _ts=document.querySelectorAll('.arch-table table');
+    for(var _i=0;_i<_ts.length;_i++)addTableControlsOne(_ts[_i]);
+  }
+  function addTableControlsOne(table){
+    if(!table)return;
     // 컬럼 2개 추가로 제목 컬럼이 눌려 세로로 길게 감기는 것 방지 —
     // 제목에 최소 폭을 주고 넘치는 폭은 기존 가로 스크롤(.at-scroll)이 흡수한다.
     // 폰 폭에서는 저널 컬럼을 숨겨 제목·자료화 상태가 스와이프 없이 보이게 한다

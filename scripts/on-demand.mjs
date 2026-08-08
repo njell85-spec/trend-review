@@ -121,7 +121,10 @@ if (DOC_KINDS.has(kind)) {
     pmid, title: article.title, date: todayKST,
     ...(webMode ? { sourceUrl: enriched.sourceUrl, sourceId: enriched.sourceId } : {}),
   });
-  pagesUrl = await publisher.publish(todayKST, [], { guideline: card, manual: true });
+  const published = await publisher.publish(todayKST, [], { guideline: card, manual: true });
+  // 가이드·기타 카드는 사이트 루트(index.html)가 아니라 guidelines.html 에 실린다(§4-H).
+  // 루트로 안내하면 방금 만든 카드가 없는 페이지를 열게 된다.
+  pagesUrl = `${String(published).replace(/\/?$/, '/')}guidelines.html`;
   notifyPaper = { title_ko: card.title_ko, paper: { title: article.title, journal: article.journal, pmid } };
 } else {
   const [analysis] = await new FilterAnalyzerAgent().analyzePico([enriched]);

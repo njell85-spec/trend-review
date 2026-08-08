@@ -50,10 +50,24 @@ state.hidden[hiddenKey] = {
 };
 await saveCurationState(state);
 
-const html = await readFile('index.html', 'utf8');
-const patched = removeSectionFromHtml(html, { sectionKey, tag, pmid: state.hidden[hiddenKey].pmid });
-await writeFile('index.html', patched, 'utf8');
+// 페이지 2분할(§4-H) 이후 GSECTION 카드와 가이드·기타 표 행은 guidelines.html 에 있다.
+// index.html 만 패치하면 가이드라인 삭제가 아무것도 안 지우고 "이미 없음(멱등)"이라며
+// 조용히 성공한다(클라이언트 숨김이 가려줄 뿐, 발행 HTML 엔 남는다).
+const targets = ['index.html', 'guidelines.html'];
+const changed = [];
+for (const file of targets) {
+  let html;
+  try {
+    html = await readFile(file, 'utf8');
+  } catch {
+    continue; // guidelines.html 은 첫 분할 전이면 없다 — 소프트
+  }
+  const patched = removeSectionFromHtml(html, { sectionKey, tag, pmid: state.hidden[hiddenKey].pmid });
+  if (patched === html) continue;
+  await writeFile(file, patched, 'utf8');
+  changed.push(file);
+}
 
-console.log(patched === html
+console.log(changed.length === 0
   ? `${hiddenKey}: 페이지에 이미 없음(멱등) — 숨김 목록만 갱신`
-  : `${hiddenKey} 제거 완료${pmid ? ` (+표 행 ${pmid})` : ''}`);
+  : `${hiddenKey} 제거 완료 [${changed.join(', ')}]${pmid ? ` (+표 행 ${pmid})` : ''}`);

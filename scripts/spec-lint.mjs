@@ -143,6 +143,49 @@ if (!pub.includes('_applyCuration(updated')) {
   errors.push('src/utils/GitHubPublisher.js: publish 경로의 큐레이션 적용(_applyCuration) 소실 (REPORT_SPEC §4-G)');
 }
 
+// ── 5f) 페이지 2분할(§4-H) 앵커 ──────────────────────────────────────────────
+// 이 검사군이 잡는 것은 "조용히 망가지는" 세 가지다:
+//  ① merge/split 배선이 빠지면 guidelines.html 이 갱신을 멈춘 채 방치된다(초록 실패).
+//  ② 논문 행에 속성이 하나라도 늘면 같은-날짜 행 교체 정규식이 깨져 행이 중복 누적된다.
+//  ③ push/API 폴백 목록에서 guidelines.html 이 빠지면 두 페이지가 어긋나고,
+//     다음 실행의 merge 가 낡은 가이드 페이지를 합쳐 지운 카드를 되살린다.
+const splitSrc = read('src/utils/pageSplit.js');
+if (!pub.includes('mergePages(') || !pub.includes('splitPages(')) {
+  errors.push('src/utils/GitHubPublisher.js: publish 의 페이지 2분할 배선(mergePages/splitPages) 소실 (REPORT_SPEC §4-H)');
+}
+if (!/const files = \[[^\]]*'guidelines\.html'/.test(pub) || !pub.includes("_putFileViaApi('guidelines.html'")) {
+  errors.push('src/utils/GitHubPublisher.js: guidelines.html 이 push/API 폴백 목록에서 누락 — 두 페이지 어긋남 (REPORT_SPEC §4-H)');
+}
+// 논문 행에 마커를 붙이지 않는다는 계약 — markRow 의 조기 반환이 그 계약의 구현체다.
+if (!/kind === 'paper'\) return row/.test(splitSrc)) {
+  errors.push('src/utils/pageSplit.js: 논문 행 무마킹 계약 소실 — 같은 날 재실행 시 표 행 중복 누적 (REPORT_SPEC §4-H)');
+}
+// 가이드 행 마커는 data-pmid '뒤'에 와야 한다(행 dedup·삭제 패치가 첫 속성을 전제).
+if (!splitSrc.includes('(<tr data-pmid="[^"]*")')) {
+  errors.push('src/utils/pageSplit.js: data-kind 삽입 위치 계약(data-pmid 뒤) 소실 (REPORT_SPEC §4-H)');
+}
+if (!/data-pmid="\$\{esc\(rowId\)\}" data-kind=/.test(pub)) {
+  errors.push('src/utils/GitHubPublisher.js: 가이드/기타 행의 data-kind 마커 소실 또는 위치 오류 (REPORT_SPEC §4-H)');
+}
+// 큐레이션은 표를 전부 순회해야 한다(guidelines.html 은 표가 둘).
+if (!curSrc.includes("querySelectorAll('.arch-table table')")) {
+  errors.push('src/utils/curation.js: 표 전부 순회 소실 — 둘째 표에 자료화 열이 안 붙는다 (REPORT_SPEC §4-H)');
+}
+// 삭제 경로는 두 페이지를 모두 패치·스테이징해야 한다. index.html 만 보면 가이드라인
+// 삭제가 아무것도 안 지우고 "이미 없음(멱등)"이라며 조용히 성공한다.
+const curRmSrc = read('scripts/curate-remove.mjs');
+const curRmWf = read('.github/workflows/curate-remove.yml');
+if (!curRmSrc.includes("'guidelines.html'")) {
+  errors.push('scripts/curate-remove.mjs: guidelines.html 미패치 — 가이드/기타 삭제가 조용히 무효 (REPORT_SPEC §4-H)');
+}
+if (!curRmWf.includes('guidelines.html')) {
+  errors.push('.github/workflows/curate-remove.yml: guidelines.html 미스테이징 — 삭제가 커밋되지 않는다 (REPORT_SPEC §4-H)');
+}
+// on-demand 로 발행한 가이드/기타는 사이트 루트가 아니라 guidelines.html 에 실린다.
+if (!read('scripts/on-demand.mjs').includes('guidelines.html')) {
+  errors.push('scripts/on-demand.mjs: 가이드/기타 알림 링크가 루트를 가리킴 — 카드 없는 페이지 안내 (REPORT_SPEC §4-H)');
+}
+
 // ── 6) (경고) 로그에 시크릿 보간 휴리스틱 ────────────────────────────────────
 const jsFiles = [];
 (function walk(dir) {
