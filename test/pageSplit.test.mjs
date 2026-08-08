@@ -197,3 +197,17 @@ test('가이드·기타 행의 data-pmid 는 첫 속성으로 남는다(삭제 �
   // curation.js 의 삭제 패치 정규식으로도 잡혀야 한다
   assert.match(guidelines, new RegExp(`<tr data-pmid="${REF_ID}"[^>]*>[\\s\\S]*?</tr>`));
 });
+
+/**
+ * 회귀 — `this.logger` 미설정으로 push 실패 폴백이 첫 줄에서 죽던 문제.
+ * 생성자가 logger 를 안 넣어 `this.logger.warn(...)` 이 TypeError 를 던졌고,
+ * 그래서 Contents API 폴백(상태 JSON 업로드 포함)이 한 번도 실행될 수 없었다.
+ */
+test('퍼블리셔는 로거 없이 생성해도 로그 호출이 죽지 않는다', async () => {
+  const { GitHubPublisher } = await import('../src/utils/GitHubPublisher.js');
+  const pub = new GitHubPublisher({ token: 't', owner: 'o', repo: 'r' });
+  assert.equal(typeof pub.logger?.info, 'function');
+  assert.equal(typeof pub.logger?.warn, 'function');
+  assert.doesNotThrow(() => pub.logger.warn('x', { a: 1 }));
+  assert.doesNotThrow(() => pub.logger.info('x'));
+});

@@ -12,6 +12,7 @@ import { spawnSync } from 'child_process';
 import path from 'path';
 import { llmTelemetry } from './LLMClient.js';
 import { ensureCurationBlock, loadCurationState, removeSectionFromHtml, parseHiddenKey } from './curation.js';
+import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
 
 const API = 'https://api.github.com';
@@ -67,12 +68,22 @@ export class GitHubPublisher {
     owner = process.env.GITHUB_OWNER,
     repo = process.env.GITHUB_REPO,
     repoPath = process.cwd(),
+    logger = null,
   } = {}) {
     this.token = token;
     this.owner = owner;
     this.repo = repo;
     this.pagesUrl = `https://${owner}.github.io/${repo}/`;
     this._repoPath = repoPath;
+    // ★ 로거는 반드시 존재해야 한다. 생성자가 이걸 안 넣어서 `this.logger` 가 undefined 였고,
+    //   그래서 **git push 실패 폴백이 첫 줄(logger.warn)에서 TypeError 로 죽어 한 번도
+    //   실행될 수 없었다** — 폴백은 상태 JSON 까지 Contents API 로 올리는 안전망인데,
+    //   그게 안 돌면 다음날 fresh checkout 이 중복방지 목록을 잃는다.
+    //   (2026-08-08 §4-H 작업 중 dry-run 에서 실측 발견. 어느 호출부도 logger 를 안 넘긴다.)
+    this.logger = logger ?? {
+      info: (msg, data) => console.log(`[GitHubPublisher] ${msg}`, data ?? ''),
+      warn: (msg, data) => console.warn(`[GitHubPublisher] ${msg}`, data ?? ''),
+    };
   }
 
   // ── 라벨 헬퍼 ───────────────────────────────────────────────────────────────
@@ -235,9 +246,12 @@ export class GitHubPublisher {
   // ── 가이드라인 전용 접이식 섹션 (논문과 분리, 한눈에 '가이드라인'으로 식별) ──────
   _buildGuidelineSection(dateStr, generatedAt, guideline, { isToday = false, manual = false, sectionKey = dateStr } = {}) {
     const card = this._buildGuidelineCard(guideline);
+    // 참고자료도 이 섹션 골격을 공유한다(카드 축 하나만 다름) — 라벨까지 공유하면
+    // §4-H 의 '🔖 기타 자료' 섹션 안에서 카드가 '📋 가이드라인'이라 말하는 모순이 된다.
+    const isRef = guideline.type === 'reference';
     const gTitle = guideline.title_ko || guideline.paper?.title || '';
     const gMeta = `${guideline.org || guideline.paper?.journal || ''}${guideline.version ? ` · ${guideline.version}` : ''}`;
-    // 논문 섹션과 동일한 흰 박스로 통일 — 구별은 앞쪽 '📋 가이드라인' 라벨로만
+    // 논문 섹션과 동일한 흰 박스로 통일 — 구별은 앞쪽 라벨로만
     const cls = isToday ? 'day day-today' : 'day day-past';
     const openAttr = isToday ? ' open' : '';
     // 'gl-badge' 를 함께 붙여야 ① teal 뱃지 스타일(.gl-badge)이 실제 적용되고
@@ -251,7 +265,7 @@ export class GitHubPublisher {
 <details${openAttr} class="${cls}">
   <summary class="day-sum">
     <div class="day-head">
-      ${badge}<span class="day-date">${esc(dateStr)}</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 ${esc(generatedAt)}</span>
+      ${badge}<span class="day-date">${esc(dateStr)}</span><span class="gl-tag${isRef ? ' ref' : ''}">${isRef ? '🔖 기타 자료' : '📋 가이드라인'}</span><span class="day-gen">생성 ${esc(generatedAt)}</span>
       <span class="day-chev">${IC.chev(T.muted)}</span>
     </div>
     <div class="day-prev"><span class="day-prev-medal">${IC.book(T.sec)}</span><div><div class="day-prev-t">${esc(gTitle)}</div><div class="day-prev-m">${esc(gMeta)}</div></div></div>
@@ -476,13 +490,25 @@ export class GitHubPublisher {
       const journal = guideline.org || gp.journal || '';
       // data-guideline 마커 — 날짜 기준 행 교체에서 제외(가이드는 논문과 라이프사이클이
       // 다름: 주 1회 소개 후 계속 남아야 하고, 논문 재실행 날짜 교체에 지워지면 안 됨)
-      rows.push(`<tr data-pmid="${esc(rowId)}" data-guideline="1"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">📋 ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(rowId)}" aria-label="읽음"></td></tr>`);
+      // 참고자료는 가이드라인과 다른 페이지 섹션으로 간다(§4-H) — 종류 마커를 단다.
+      // ★ data-pmid 는 반드시 첫 속성으로 유지할 것: publish 의 행 dedup 과
+      //   curation.js 의 삭제 패치가 `<tr data-pmid="…"[^>]*>` 로 잡는다.
+      //   (논문 행에는 마커를 안 붙인다 — 같은 날 재실행 교체 정규식이 속성 추가에
+      //    깨진다. 논문은 "data-guideline 없음"으로 판별된다. pageSplit.js 주석 참조.)
+      const gKind = guideline.type === 'reference' ? 'reference' : 'guideline';
+      const gIcon = gKind === 'reference' ? '🔖' : '📋';
+      rows.push(`<tr data-pmid="${esc(rowId)}" data-kind="${gKind}" data-guideline="1"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">${gIcon} ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(rowId)}" aria-label="읽음"></td></tr>`);
     }
     return rows.join('');
   }
 
   // ── 전체 페이지 스캐폴드 ────────────────────────────────────────────────────
-  buildPage(sectionsHtml, { days = 1, papers = 1, updated = '', tableRows = '' } = {}) {
+  // 타워 톤(§4-H)은 원본 <style> 뒤에 얹혀야 이긴다 → ensureTowerTone 이 </head> 직전에 넣는다.
+  buildPage(sectionsHtml, opts = {}) {
+    return ensureTowerTone(this._buildPageRaw(sectionsHtml, opts));
+  }
+
+  _buildPageRaw(sectionsHtml, { days = 1, papers = 1, updated = '', tableRows = '' } = {}) {
     return `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -678,7 +704,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
   }
 
   _gitPush(dateStr) {
-    const files = ['index.html', 'output/selected_papers.json', 'output/selected_guidelines.json']
+    const files = ['index.html', 'guidelines.html', 'output/selected_papers.json', 'output/selected_guidelines.json']
       .filter((f) => existsSync(path.join(this._repoPath, f)));
     this._git(['add', ...files]);
     const diff = this._git(['diff', '--staged', '--name-only']);
@@ -709,21 +735,41 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
   }
 
   async _getIndex() {
-    const localPath = path.join(this._repoPath, 'index.html');
+    return this._getPage('index.html');
+  }
+
+  async _getPage(relPath) {
+    const localPath = path.join(this._repoPath, relPath);
     try {
       return { sha: null, html: await readFile(localPath, 'utf8') };
     } catch { /* fall through to API */ }
     try {
-      const data = await this._req(`/repos/${this.owner}/${this.repo}/contents/index.html`);
+      const data = await this._req(`/repos/${this.owner}/${this.repo}/contents/${relPath}`);
       return { sha: data.sha, html: Buffer.from(data.content, 'base64').toString('utf8') };
     } catch {
       return { sha: null, html: null };
     }
   }
 
+  /** 참고자료 식별자 — 구본 표 행(data-kind 없음)을 가이드/기타로 가를 때만 쓴다. */
+  async _referenceIds() {
+    try {
+      const raw = await readFile(path.join(this._repoPath, 'output', 'selected_references.json'), 'utf8');
+      return new Set(JSON.parse(raw).map((r) => r.pmid || r.sourceId).filter(Boolean));
+    } catch {
+      return null; // 없으면 기타 0건으로 본다 — 분할 자체는 성립한다(소프트).
+    }
+  }
+
   // ── 누적 업데이트 ────────────────────────────────────────────────────────────
   async publish(dateStr, topPapers, { guideline = null, manual = false } = {}) {
-    const { html: existing } = await this._getIndex();
+    // ★ 페이지 2분할(§4-H) — 합쳤다가 가른다.
+    // 아래 증분 로직(지침 중복 제거·TODAY 강등·날짜 행 교체·PMID dedup·통계 갱신)은
+    // 단일 페이지를 전제로 4주간 다듬어졌다. 두 벌로 쪼개는 대신 **입력을 합쳐서**
+    // 종전과 동일한 본문을 보게 하고, 맨 끝에서만 두 파일로 가른다.
+    const { html: indexHtml } = await this._getIndex();
+    const { html: guidesHtml } = await this._getPage('guidelines.html');
+    const existing = mergePages(indexHtml, guidesHtml);
     const generatedAt = new Date().toLocaleString('ko-KR', {
       timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
     });
@@ -824,8 +870,17 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     updated = this._applyCuration(updated, curationState);
     updated = await this._ensureArchiveStatus(updated);
 
-    const localPath = path.join(this._repoPath, 'index.html');
-    await writeFile(localPath, updated, 'utf8');
+    // 두 페이지로 가른다. 스캐폴드가 아니면 split 이 guidelines=null 을 돌려주고
+    // index 만 종전대로 기록된다(소프트 — 분할 실패가 데일리를 막지 않는다).
+    const { index: indexOut, guidelines: guidesOut, counts } = splitPages(updated, {
+      refIds: await this._referenceIds(),
+    });
+    await writeFile(path.join(this._repoPath, 'index.html'), indexOut, 'utf8');
+    if (guidesOut) {
+      await writeFile(path.join(this._repoPath, 'guidelines.html'), guidesOut, 'utf8');
+      this.logger.info('페이지 2분할 기록', counts);
+    }
+    updated = indexOut;
 
     try {
       this._gitPush(dateStr);
@@ -837,6 +892,9 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       // 반영한다. (동시 러너로 원격이 앞선 경우의 완전 병합은 범위 밖 — 데일리는 단일 크론.)
       this.logger.warn('git push 실패 — Contents API 폴백으로 개별 업로드', { err: this._scrub(pushErr.message) });
       await this._putFileViaApi('index.html', updated, dateStr);
+      // guidelines.html 을 빠뜨리면 두 페이지가 어긋난다 — 다음 실행의 merge 가
+      // 낡은 가이드 페이지를 합쳐 이미 지운 카드를 되살린다.
+      if (guidesOut) await this._putFileViaApi('guidelines.html', guidesOut, dateStr);
       for (const rel of ['output/selected_papers.json', 'output/selected_guidelines.json']) {
         const abs = path.join(this._repoPath, rel);
         if (!existsSync(abs)) continue;
