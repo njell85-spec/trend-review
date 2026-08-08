@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가이드라인 및 기타 — EM/CCM Trend Review</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:'NanumSquare','NanumBarunGothic','NanumGothic','Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5;background:#eef4fc;color:#0f172a}
+.i{display:inline-block;vertical-align:middle}
+.wrap{max-width:460px;margin:0 auto;min-height:100vh;padding-bottom:34px}
+a{color:inherit}
+/* header */
+.hd{position:relative;padding:30px 22px 64px;overflow:hidden;color:#fff;background:#5b8fd9;background-image:radial-gradient(120% 90% at 0% 0%,#9ec7f5 0%,#7aa9ec 44%,#6f9be6 74%),radial-gradient(80% 70% at 100% 0%,#d9ecfd88 0%,transparent 60%)}
+.hd .ey{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:#e3effb;font-weight:800}
+.hd h1{font-size:23px;font-weight:800;margin-top:5px;letter-spacing:-.6px}
+.hd .fn{display:inline-flex;align-items:center;gap:7px;margin-top:12px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:99px;font-size:11px;font-weight:700}
+.hd .fn .i{width:13px;height:13px}
+.stats{display:flex;gap:10px;margin:-44px 18px 0;position:relative;z-index:2}
+.sc{flex:1;background:rgba(255,255,255,.92);border:1px solid #fff;border-radius:16px;padding:13px;text-align:center;box-shadow:0 12px 30px -8px #5b8fd940}
+.sc .n{font-size:21px;font-weight:800;color:#5b8fd9;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.sc .l{font-size:9px;color:#64748b;margin-top:3px;letter-spacing:.5px;text-transform:uppercase}
+/* archive */
+.archive{padding:20px 18px 0;display:flex;flex-direction:column;gap:12px}
+details{border-radius:18px;overflow:hidden}
+.day-today{background:#fff;border:1.5px solid #5b8fd9;box-shadow:0 20px 50px -22px #5b8fd966}
+.day-past{background:#fff;border:1px solid #e9f2fd;box-shadow:0 8px 22px -14px #5b8fd933}
+.day-sum{list-style:none;cursor:pointer;padding:15px 16px;display:block}
+.day-sum::-webkit-details-marker{display:none}
+.day-head{display:flex;align-items:center;gap:8px}
+.t-badge{background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff;font-size:10px;font-weight:800;padding:4px 10px;border-radius:7px;box-shadow:0 4px 12px -2px #5b8fd966}
+.day-date{font-weight:800;font-size:15px}
+.day-cnt{color:#94a3b8;font-size:12px}
+.day-gen{color:#94a3b8;font-size:10.5px;margin-left:auto}
+.day-chev{width:16px;height:16px;color:#94a3b8;transition:transform .2s}
+details[open] .day-chev{transform:rotate(180deg)}
+.day-prev{display:flex;align-items:flex-start;gap:8px;margin-top:10px}
+.day-prev-medal{width:16px;height:16px;flex:none;margin-top:1px}
+.day-prev-t{font-size:13.5px;font-weight:800;line-height:1.35;color:#0f172a}
+.day-prev-m{font-size:11px;color:#94a3b8;margin-top:2px}
+details[open] .day-prev{display:none}
+.day-panel{padding:0 14px 14px}
+/* paper card */
+.paper-card{border-top:1px solid #e9f2fd}
+.pc-top{padding:18px 6px 16px}
+.medal{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#fbbf24,#f59e0b);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -6px #f59e0baa}
+.medal svg{width:22px;height:22px;color:#fff}
+.ttl{font-size:16px;font-weight:800;line-height:1.4;margin-top:12px;letter-spacing:-.3px}
+.ttle{font-size:16px;font-weight:600;color:#64748b;line-height:1.4;margin-top:4px}
+.meta{display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;margin-top:9px}
+.meta .i{width:13px;height:13px}
+.chips{display:flex;gap:6px;margin-top:13px;flex-wrap:wrap}
+.chip{font-size:10.5px;font-weight:800;padding:5px 11px;border-radius:8px}
+.chip.sc{background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff}
+.chip.ev{background:#e9f2fd;color:#3f72bf}
+.chip.ap{background:#ecfdf5;color:#059669}
+.chip.src{background:#fff7ed;color:#c2620c;border:1px solid #fed7aa}
+.pc-body{padding:4px 6px 6px}
+.lbl{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:#5b8fd9;letter-spacing:.5px;margin:18px 0 7px}
+.lbl .i{width:15px;height:15px}
+.sub-h{font-size:11px;font-weight:800;color:#64748b;margin:12px 0 4px}
+.txt{font-size:13px;color:#334155;line-height:1.66}
+.txt.ko{color:#64748b;margin-top:2px}
+.hl{color:#3f72bf}
+.pico{display:flex;flex-direction:column;gap:1px;background:#e9f2fd;border-radius:13px;overflow:hidden;margin-top:2px}
+.pr{display:flex;gap:10px;background:#fff;padding:11px 12px}
+.pk{width:24px;height:24px;border-radius:8px;background:#e9f2fd;color:#3f72bf;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+.pv{flex:1}
+.viz{background:#eef4fc;border:1px solid #e9f2fd;border-radius:14px;padding:14px;margin-top:2px}
+.viz-block{margin-top:2px}
+.viz-head{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.viz-title{font-size:11.5px;font-weight:800;color:#334155}
+.viz-tag{margin-left:auto;font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px}
+.bar-row{display:flex;align-items:center;gap:8px;margin:5px 0}
+.bar-lab{width:64px;flex:none;font-size:11px;color:#64748b;text-align:right}
+.bar-track{flex:1;height:18px;background:rgba(148,163,184,.16);border-radius:6px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:6px}
+.bar-val{position:absolute;left:8px;top:0;line-height:18px;font-size:10.5px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.bar-n{width:54px;flex:none;font-size:10px;color:#64748b;font-variant-numeric:tabular-nums}
+.sec-ul{margin:2px 0 0;padding:0;list-style:none}
+.sec-li{padding-left:10px;border-left:2px solid #e9f2fd;margin-bottom:7px}
+.gloss{margin-top:10px;background:#e9f2fd;border-radius:12px;padding:11px 13px;font-size:11.5px;color:#64748b;line-height:1.6}
+.gloss-h{font-weight:800;color:#3f72bf;margin-bottom:4px}
+.gloss-i{margin-bottom:2px}
+.gloss-i b{color:#3f72bf}
+.pc-ul{margin:2px 0 0;padding:0;list-style:none}
+.pc-li{display:flex;gap:8px;margin-bottom:7px}
+.pc-dot{width:6px;height:6px;border-radius:99px;background:#5b8fd9;flex:none;margin-top:7px}
+.lnk{color:#3f72bf;font-weight:700;text-decoration:none}
+.lnk:hover{text-decoration:underline}
+.src-box{margin-top:14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:11px 13px}
+.src-h{font-size:11px;font-weight:800;color:#c2620c;margin-bottom:5px}
+.src-li{display:block;font-size:11.5px;color:#9a5510;text-decoration:none;padding:2px 0;border-bottom:1px solid #fde6cc;word-break:break-all}
+.src-li:last-child{border-bottom:0}
+.src-li:hover{text-decoration:underline}
+.pc-foot{margin-top:14px;padding-top:10px;border-top:1px solid #e9f2fd;font-size:11px;color:#94a3b8}
+.ft{text-align:center;font-size:10px;color:#94a3b8;padding:26px 20px 0}
+.ft a{color:#3f72bf}
+/* 누적 아카이브 표 */
+.arch-table{margin:18px 18px 0;background:#fff;border:1px solid #e9f2fd;border-radius:16px;overflow:hidden;box-shadow:0 8px 22px -16px #5b8fd933}
+.at-head{display:flex;align-items:center;gap:8px;padding:13px 16px;background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff}
+.at-title{font-size:13px;font-weight:800}
+.at-count{margin-left:auto;font-size:11px;font-weight:700;opacity:.92}
+.at-scroll{overflow-x:auto}
+.arch-table table{width:100%;border-collapse:collapse;font-size:12px}
+.arch-table th{text-align:left;font-size:9.5px;font-weight:800;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;padding:9px 10px;border-bottom:1px solid #e9f2fd;white-space:nowrap}
+.arch-table td{padding:10px;border-bottom:1px solid #e9f2fd;vertical-align:top}
+.arch-table tbody tr:last-child td{border-bottom:0}
+.c-date{color:#94a3b8;white-space:nowrap;font-variant-numeric:tabular-nums}
+.c-jour{font-weight:700;color:#334155;white-space:nowrap}
+.c-title a{color:#0f172a;text-decoration:none;line-height:1.4}
+.c-title a:hover{text-decoration:underline}
+.th-read,.c-read{text-align:center;width:44px}
+.readcb{width:18px;height:18px;accent-color:#5b8fd9;cursor:pointer}
+tr.is-read{background:#e9f2fd}
+tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-through}
+/* 넓은 화면(폴드 펼침·태블릿) 대응: 좁은 화면은 460px 유지, 넓은 화면만 확대 */
+@media(min-width:700px){.wrap{max-width:700px}}
+@media(min-width:1080px){.wrap{max-width:760px}}
+</style>
+<style id="tower-tone">
+/* ── 타워 톤 — 웜뉴트럴 지면 + 무지개 라디얼 + 글래스 카드 ── */
+:root{
+  --t-ink:#2a2724; --t-ink2:#5c574f; --t-ink3:#6f6960;
+  --t-glass:rgba(255,255,255,.52); --t-glass-strong:rgba(255,255,255,.68);
+  --t-edge:rgba(255,255,255,.75); --t-edge-strong:rgba(255,255,255,.88);
+  --t-shadow:0 1px 0 rgba(255,255,255,.9) inset,
+             0 -8px 18px -14px rgba(255,255,255,.9) inset,
+             0 18px 34px -22px rgba(80,68,60,.35);
+  --t-blue:#5f7fc0; --t-violet-ink:#5b4a9e; --t-violet:rgba(214,198,236,.34);
+  --t-amber-ink:#8a5f1e; --t-amber:rgba(222,168,96,.28);
+  --t-teal-ink:#1f6b4e; --t-teal:rgba(169,216,191,.36);
+  --t-sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  --t-blur:blur(26px) saturate(1.35);
+}
+body{
+  font-family:var(--t-sans); color:var(--t-ink);
+  background:
+    radial-gradient(560px 480px at 10% 2%,  rgba(214,198,236,.55), transparent 68%),
+    radial-gradient(620px 520px at 98% 14%, rgba(244,214,192,.50), transparent 70%),
+    radial-gradient(640px 560px at 24% 58%, rgba(198,228,212,.45), transparent 70%),
+    radial-gradient(560px 480px at 92% 74%, rgba(206,220,244,.45), transparent 70%),
+    linear-gradient(165deg,#f6f5f4,#edebe9);
+  background-attachment:fixed;
+}
+.hd{background:none;background-image:none;color:var(--t-ink);padding:26px 20px 16px;overflow:visible}
+.hd .ey{color:var(--t-ink3);font-size:10px;letter-spacing:2.2px}
+.hd h1{font-size:25px;font-weight:750;letter-spacing:-.02em;margin-top:6px}
+.hd .fn{background:var(--t-glass);border:1px solid var(--t-edge);color:var(--t-ink2);
+  box-shadow:var(--t-shadow);-webkit-backdrop-filter:var(--t-blur);backdrop-filter:var(--t-blur);font-weight:650}
+.hd .fn .i svg{stroke:var(--t-ink3)}
+.stats{margin:2px 18px 0;gap:9px}
+.sc{background:var(--t-glass);border:1px solid var(--t-edge);border-radius:20px;
+  box-shadow:var(--t-shadow);-webkit-backdrop-filter:var(--t-blur);backdrop-filter:var(--t-blur)}
+.sc .n{color:var(--t-blue)}
+.sc .l{color:var(--t-ink3)}
+/* 페이지 탭 — 두 페이지가 대등하게 보이는 장치 */
+.pgnav{display:flex;gap:8px;margin:14px 18px 0}
+.pgnav a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:54px;border-radius:999px;text-decoration:none;font-size:13px;font-weight:650;
+  background:rgba(255,255,255,.26);border:1px solid rgba(255,255,255,.5);color:var(--t-ink3);
+  box-shadow:none;transition:background .15s ease,transform .15s ease}
+.pgnav a .sub{font-size:10.5px;font-weight:600;color:var(--t-ink3);margin-top:1px;letter-spacing:.02em;opacity:.85}
+.pgnav a.on{background:rgba(255,255,255,.86);border-color:#fff;color:var(--t-ink);font-weight:800;
+  box-shadow:var(--t-shadow),0 0 0 2px rgba(95,127,192,.30);
+  -webkit-backdrop-filter:var(--t-blur);backdrop-filter:var(--t-blur)}
+.pgnav a.on .sub{color:var(--t-blue);font-weight:750;opacity:1}
+.pgnav a:active{transform:scale(.985)}
+/* 섹션 헤더 */
+.tsec{margin:22px 18px 2px}
+.tsec .t{display:flex;align-items:baseline;gap:8px;font-size:15px;font-weight:800;color:var(--t-ink);letter-spacing:-.012em}
+.tsec .n{font-size:11px;font-weight:700;color:var(--t-ink3);background:rgba(255,255,255,.6);
+  border:1px solid var(--t-edge);border-radius:999px;padding:2px 9px}
+.tsec .d{font-size:12px;color:var(--t-ink2);margin-top:4px;line-height:1.5}
+/* 카드 */
+.archive{padding:12px 18px 0;gap:11px}
+details{border-radius:24px}
+.day-today{background:var(--t-glass-strong);border:1px solid var(--t-edge-strong);box-shadow:var(--t-shadow);
+  -webkit-backdrop-filter:var(--t-blur);backdrop-filter:var(--t-blur)}
+.day-past{background:var(--t-glass);border:1px solid var(--t-edge);box-shadow:var(--t-shadow);
+  -webkit-backdrop-filter:var(--t-blur);backdrop-filter:var(--t-blur)}
+.day-date{color:var(--t-ink)}
+.day-cnt,.day-gen{color:var(--t-ink3)}
+.day-prev-t{color:var(--t-ink)}
+.day-prev-m{color:var(--t-ink2)}
+.paper-card,.guideline-card{border-top:1px solid rgba(255,255,255,.65)}
+.t-badge{background:var(--t-violet);color:var(--t-violet-ink);border:1px solid var(--t-edge);
+  border-radius:999px;box-shadow:none;font-size:10px;letter-spacing:.04em;font-weight:800}
+.t-badge[style]{background:var(--t-amber)!important;color:var(--t-amber-ink)!important;
+  border:1px solid var(--t-edge)!important;box-shadow:none!important}
+.t-badge.gl-badge{background:var(--t-teal);color:var(--t-teal-ink)}
+.gl-tag{color:var(--t-ink2);font-weight:700}
+.gl-tag.ref{color:var(--t-amber-ink)}
+.chip{border-radius:999px;letter-spacing:.02em}
+/* 누적 표 */
+.arch-table{margin:16px 18px 0;background:var(--t-glass);border:1px solid var(--t-edge);
+  border-radius:22px;box-shadow:var(--t-shadow);-webkit-backdrop-filter:var(--t-blur);backdrop-filter:var(--t-blur)}
+.at-head{background:none;color:var(--t-ink);border-bottom:1px solid rgba(255,255,255,.65);padding:14px 16px}
+.at-title{font-size:13.5px;font-weight:800;letter-spacing:-.01em}
+.at-count{color:var(--t-ink3);font-weight:700}
+.arch-table th{color:var(--t-ink3);border-bottom:1px solid rgba(255,255,255,.65)}
+.arch-table td{border-bottom:1px solid rgba(255,255,255,.55)}
+.c-date{color:var(--t-ink3)}
+.c-jour{color:var(--t-ink2)}
+.c-title a{color:var(--t-ink)}
+.tempty{margin:8px 18px 0;padding:18px;text-align:center;font-size:13px;color:var(--t-ink3);
+  background:rgba(255,255,255,.28);border:1px dashed rgba(150,142,133,.5);border-radius:22px}
+.ft{color:var(--t-ink3)}
+.ft a{color:var(--t-ink2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hd">
+    <div class="ey">AI Literature Pipeline · Claude Opus</div>
+    <h1>EM/CCM Trend Review</h1>
+    <div class="fn">공식 가이드라인 캐치업 · 직접 지정 참고자료</div>
+  </header>
+  <div class="stats">
+    <div class="sc"><div class="n">6</div><div class="l">가이드라인</div></div>
+    <div class="sc"><div class="n">1</div><div class="l">기타 자료</div></div>
+    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="g-updated">2026. 08. 08. 07:08</span></div><div class="l">최종 업데이트</div></div>
+  </div>
+  <nav class="pgnav">
+  <a href="index.html"><span>📄 논문</span><span class="sub">35편</span></a>
+  <a href="guidelines.html" class="on" aria-current="page"><span>📋 가이드라인 · 기타</span><span class="sub">6 · 1건</span></a>
+</nav>
+  <div class="archive">
+<!-- ONDEMAND_WIDGET v4 -->
+<details style="max-width:960px;margin:14px auto;padding:0 16px">
+  <summary style="cursor:pointer;color:#3f72bf;font-weight:700;font-size:13px">🔎 On-demand 리뷰 — 논문·가이드라인 검색</summary>
+  <div style="background:#fff;border:1px solid #d9e4f0;border-radius:12px;padding:14px;margin-top:8px;font-size:13px;color:#334155">
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <input id="od-q" placeholder="키워드 검색 (예: ACG 2026 diverticulitis)" style="flex:1;min-width:170px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px">
+      <button id="od-search" style="padding:8px 16px;border:0;border-radius:8px;background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff;font-weight:700;font-size:13px;cursor:pointer">검색</button>
+    </div>
+    <div id="od-msg" style="margin-top:8px;color:#64748b"></div>
+    <div id="od-list" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div>
+    <div style="margin-top:8px"><a href="#" id="od-direct" style="color:#94a3b8;font-size:12px">PMID/DOI/URL 직접 입력 · 토큰 설정</a></div>
+  </div>
+</details>
+<script>
+(function(){
+  var OWNER='njell85-spec', REPO='trend-review';
+  var EUTILS='https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
+  var $=function(id){return document.getElementById(id)};
+  var esc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
+  function pat(force){
+    var t=localStorage.getItem('tr_pat');
+    if(!t||force){ t=prompt('GitHub Fine-grained PAT (이 저장소 actions:write 한정)\n최초 1회만 — 이 브라우저에만 저장됩니다.'); if(t){localStorage.setItem('tr_pat',t.trim());} }
+    return localStorage.getItem('tr_pat');
+  }
+  function dispatch(target,kind,msg){
+    var t=pat(false); if(!t){msg.textContent='토큰이 필요합니다 ("직접 입력 · 토큰 설정").';return;}
+    msg.textContent='분석 요청 중…';
+    fetch('https://api.github.com/repos/'+OWNER+'/'+REPO+'/actions/workflows/on-demand.yml/dispatches',{
+      method:'POST',
+      headers:{'Authorization':'Bearer '+t,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main',inputs:{target:String(target),kind:kind}})
+    }).then(function(r){
+      msg.textContent = r.status===204 ? '✅ 분석 시작 — 수 분 후 이 페이지에 "직접 지정" 카드가 추가됩니다 (새로고침).' :
+        (r.status===401||r.status===403) ? '✖ 토큰 인증 실패 — "직접 입력 · 토큰 설정"에서 재입력하세요.' : '✖ 실패 (HTTP '+r.status+')';
+    }).catch(function(){msg.textContent='✖ 네트워크 오류';});
+  }
+  function search(){
+    var q=$('od-q').value.trim(), msg=$('od-msg'), list=$('od-list');
+    list.innerHTML='';
+    if(!q){msg.textContent='검색어를 입력하세요.';return;}
+    msg.textContent='PubMed 검색 중…';
+    fetch(EUTILS+'/esearch.fcgi?db=pubmed&retmode=json&retmax=8&term='+encodeURIComponent(q))
+      .then(function(r){return r.json()})
+      .then(function(j){
+        var ids=(j.esearchresult&&j.esearchresult.idlist)||[];
+        if(!ids.length){msg.textContent='결과 없음 — 검색어를 바꿔보세요.';return;}
+        return fetch(EUTILS+'/esummary.fcgi?db=pubmed&retmode=json&id='+ids.join(','))
+          .then(function(r){return r.json()})
+          .then(function(s){
+            msg.textContent=ids.length+'건 · 클릭하면 그 논문을 분석합니다';
+            ids.forEach(function(id){
+              var d=s.result&&s.result[id]; if(!d)return;
+              var isG=/guideline|consensus|recommendation/i.test(d.title||'');
+              var yr=(d.pubdate||'').slice(0,4);
+              var el=document.createElement('div');
+              el.style.cssText='border:1px solid #e2e8f0;border-radius:10px;padding:10px;cursor:pointer';
+              el.innerHTML='<div style="font-weight:600;line-height:1.4">'+esc(d.title)+'</div>'+
+                '<div style="font-size:12px;color:#64748b;margin-top:3px">'+esc(d.fulljournalname||d.source||'')+' · '+esc(yr)+' · PMID '+esc(id)+(isG?' · <b>가이드라인</b>':'')+'</div>';
+              el.addEventListener('click',function(){dispatch(id,isG?'guideline':'paper',msg);});
+              list.appendChild(el);
+            });
+          });
+      }).catch(function(){msg.textContent='✖ 검색 실패 — PubMed 접근 불가(브라우저 CORS). "직접 입력"을 쓰세요.';});
+  }
+  $('od-search').addEventListener('click',search);
+  $('od-q').addEventListener('keydown',function(e){if(e.key==='Enter')search();});
+  // 직접 입력 판별. URL 은 논문(PICO)으로는 못 돌린다 — PubMed 메타데이터가 분석의 전제라
+  // scripts/on-demand.mjs 가 거부한다. 그래서 URL 은 guideline/reference 중에서만 고른다.
+  // test/{onDemandWidget,referenceMode}.test.mjs 가 이 함수를 위젯에서 추출해 직접 실행한다 —
+  // 이름·들여쓰기를 바꾸면 그 테스트들이 적색이 된다.
+  function classify(v){
+    if(/^https?:\/\/\S+$/i.test(v)) return {ok:true,isUrl:true};
+    if(/^\d{5,9}$/.test(v)) return {ok:true};
+    if(/^10\.\S+\/\S+/.test(v)) return {ok:true};
+    return {ok:false};
+  }
+  $('od-direct').addEventListener('click',function(e){
+    e.preventDefault();
+    var msg=$('od-msg');
+    var v=prompt('PMID · DOI · 원문 URL 직접 입력 (취소하면 토큰만 설정):');
+    if(v===null){pat(true);return;}
+    v=v.trim(); if(!v)return;
+    var c=classify(v);
+    if(!c.ok){msg.textContent='✖ PMID(숫자) · DOI(10.…/…) · URL(https://…) 형식만 지원합니다.';return;}
+    var kind;
+    if(c.isUrl){
+      // URL 은 논문 경로가 없다 → 가이드라인 / 참고자료 둘 중 하나.
+      kind=confirm('공식 가이드라인이면 확인,\n일반 참고자료면 취소')?'guideline':'reference';
+    }else{
+      kind=confirm('가이드라인이면 확인, 논문이면 취소')?'guideline':'paper';
+    }
+    dispatch(v,kind,msg);
+  });
+})();
+</script>
+<!-- /ONDEMAND_WIDGET -->
+<!-- ARCHIVE_START --><div class="tsec">
+  <div class="t"><span>📋 가이드라인</span><span class="n">6건</span></div>
+  <div class="d">공식 발행기관의 진료지침 — 캐치업 큐에서 순차 소개</div>
+</div>
+<!-- GSECTION:2026-08-04-m-web:www-idsociety-org-practice-guideline-amr-guidance -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="t-badge" style="background:linear-gradient(90deg,#b45309,#f59e0b)">직접 지정</span><span class="day-date">2026-08-04</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 2026. 08. 04. 18:21</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span><div><div class="day-prev-t">IDSA 2026 항균제 내성 그람음성균 감염 치료 지침</div><div class="day-prev-m">IDSA · 2026 (v5.0, current as of March 1, 2026; published July 30, 2026)</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="guideline-card">
+      <div class="pc-top gl-top">
+        <div class="medal gl-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span><span class="chip org">IDSA</span><span class="chip yr">2026 (v5.0, current as of March 1, 2026; published July 30, 2026)</span></div>
+        <div class="ttl">IDSA 2026 항균제 내성 그람음성균 감염 치료 지침</div>
+        <div class="ttle">IDSA 2026 Guidance on the Treatment of Antimicrobial Resistant Gram-Negative Infections</div>
+        <p class="txt ko" style="margin-top:6px">미국 임상 상황을 기준으로 ESBL 생성 장내세균(ESBL-E), AmpC 생성 장내세균(AmpC-E), 카바페넴 내성 장내세균(CRE), 치료난치성 내성 녹농균(DTR P. aeruginosa), 카바페넴 내성 Acinetobacter baumannii(CRAB), Stenotrophomonas maltophilia 등 6개 다제내성 그람음성균 감염의 표적 치료(균 동정 및 in vitro 감수성 확인을 전제)를 다룬다. 성인·소아 모두에 적용되나 용량은 성인 기준만 제시하며, GRADE 방법론은 사용하지 않고 전문가 합의 기반 &#39;제안(suggestion)&#39; 형식이다.</p>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>IDSA · 2026.03</div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5fb3a0"/></svg></span>핵심 권고</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">ESBL-E uncomplicated cystitis (uUTI): preferred oral/parenteral options are single-dose aminoglycoside, gepotidacin, nitrofurantoin, pivmecillinam, sulopenem, and TMP-SMX (listed alphabetically, no rank); oral fosfomycin is an alternative for ESBL E. coli only; reserve fluoroquinolones, cefepime-enmetazobactam, and carbapenems for cUTI/invasive disease.</p><p class="txt ko">ESBL-E 단순 방광염(uUTI): 단회 aminoglycoside, gepotidacin, nitrofurantoin, pivmecillinam, sulopenem, TMP-SMX가 선호 옵션(알파벳 순, 우선순위 없음); 경구 fosfomycin은 ESBL E. coli에 한해 대체 옵션; fluoroquinolone·cefepime-enmetazobactam·carbapenem은 cUTI/침습감염용으로 아껴둔다.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">ESBL-E complicated UTI (cUTI): preferred agents are TMP-SMX, ciprofloxacin, or levofloxacin when susceptible; cefepime-enmetazobactam or carbapenems (ertapenem/meropenem/imipenem) when those cannot be used; IV fosfomycin, aminoglycosides, and piperacillin-tazobactam are alternatives (pip-tazo only if not critically ill and no bacteremia).</p><p class="txt ko">ESBL-E 복잡성 요로감염(cUTI): 감수성 확인 시 TMP-SMX, ciprofloxacin, levofloxacin이 선호; 이들이 불가하면 cefepime-enmetazobactam 또는 carbapenem(ertapenem/meropenem/imipenem); IV fosfomycin, aminoglycoside, piperacillin-tazobactam은 대체 옵션(pip-tazo는 중증이 아니고 균혈증이 없을 때만).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">ESBL-E infections outside the urinary tract: carbapenems (ertapenem, imipenem, meropenem) are preferred — use imipenem or meropenem (not ertapenem) in critically ill or hypoalbuminemic (&lt;2.5 g/dL) patients; cefepime-enmetazobactam is an alternative; piperacillin-tazobactam and cefepime are NOT suggested even if susceptible.</p><p class="txt ko">ESBL-E 요로 외 감염: carbapenem(ertapenem, imipenem, meropenem)이 선호 — 중증 또는 저알부민혈증(&lt;2.5 g/dL)에서는 ertapenem 대신 imipenem/meropenem 사용; cefepime-enmetazobactam은 대체; piperacillin-tazobactam과 cefepime은 감수성이 있어도 권장하지 않음.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">AmpC-E: Enterobacter cloacae complex, Klebsiella aerogenes, and Citrobacter freundii (now also Hafnia alvei) are treated as moderate-risk for clinically significant inducible AmpC; avoid piperacillin-tazobactam for invasive infections in these organisms; for non-severe infection where empiric ceftriaxone produced clinical improvement with adequate source control, completing ceftriaxone may be reasonable.</p><p class="txt ko">AmpC-E: Enterobacter cloacae complex, Klebsiella aerogenes, Citrobacter freundii(이번에 Hafnia alvei 추가)를 임상적으로 유의한 유도성 AmpC 중등도 위험군으로 간주; 이들 균의 침습감염에 piperacillin-tazobactam 회피; 비중증 감염에서 경험적 ceftriaxone으로 임상 호전 + 적절한 source control이 있으면 ceftriaxone 완결이 합리적일 수 있음.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">CRE: for KPC-producing infections use meropenem-vaborbactam or ceftazidime-avibactam; for NDM-producing infections aztreonam-avibactam OR ceftazidime-avibactam plus aztreonam is reasonable, with a slight preference for aztreonam-avibactam (now FDA-approved).</p><p class="txt ko">CRE: KPC 생성 감염엔 meropenem-vaborbactam 또는 ceftazidime-avibactam; NDM 생성 감염엔 aztreonam-avibactam 또는 ceftazidime-avibactam+aztreonam이 합리적이며 aztreonam-avibactam(신규 FDA 승인)을 약간 더 선호.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">DTR P. aeruginosa: ceftolozane-tazobactam is preferred over ceftazidime-avibactam for DTR pneumonia; imipenem-relebactam carries a similarly high risk of on-therapy resistance emergence as ceftazidime-avibactam/ceftolozane-tazobactam; a new question addresses how carbapenemase detection guides therapy.</p><p class="txt ko">DTR 녹농균: DTR 폐렴에서 ceftolozane-tazobactam을 ceftazidime-avibactam보다 선호; imipenem-relebactam은 ceftazidime-avibactam·ceftolozane-tazobactam과 유사하게 치료 중 내성 출현 위험이 높음; 카바페넴분해효소 검출이 치료 선택에 미치는 영향을 다루는 새 질문 추가.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">CRAB (invasive infections): sulbactam-durlobactam (in combination with a carbapenem) is the priority regimen — alternative agents should be used only as bridge therapy until sulbactam-durlobactam is available; if resistance is present, use two non-sulbactam agents or add sulbactam-durlobactam to cefiderocol.</p><p class="txt ko">CRAB(침습감염): sulbactam-durlobactam(carbapenem 병용)이 우선 요법 — 대체 약제는 sulbactam-durlobactam 확보 전까지 브리지 요법으로만 사용; 내성 시 non-sulbactam 2제 병용 또는 cefiderocol에 sulbactam-durlobactam 추가.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">S. maltophilia (invasive infections): cefiderocol monotherapy is now the preferred treatment (based on susceptibility data and neutropenic animal studies, with little clinical data); aztreonam-avibactam, preferably combined with a second agent, is the alternative.</p><p class="txt ko">S. maltophilia(침습감염): cefiderocol 단독요법이 이제 선호 치료(감수성 자료와 호중구감소 동물모델 근거, 임상 자료는 미미); aztreonam-avibactam은 가능하면 2제 병용으로 대체 옵션.</p></div></li></ul>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>이전 판 대비 주요 변경점</div><div class="gl-changes">
+      <div class="gl-chg"><div class="gl-chg-t">ESBL 추정 기준 (ceftriaxone MIC)</div><p class="txt">The surrogate threshold for presumed ESBL production in E. coli, K. pneumoniae, and K. oxytoca was revised to a ceftriaxone MIC ≥4 µg/mL (reflecting updated evidence), and US ESBL-producing E. coli prevalence among UTIs is now estimated at ~17% with regional variability. This tightens the laboratory definition clinicians use to flag ESBL-E.</p><p class="txt ko">E. coli, K. pneumoniae, K. oxytoca의 ESBL 생성 추정 대리 기준이 ceftriaxone MIC ≥4 µg/mL로 개정되었고(근거 갱신 반영), 미국 요로감염 중 ESBL 생성 E. coli 유병률은 지역차가 있으나 약 17%로 추정. ESBL-E를 표시하는 검사실 기준이 더 명확해짐.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">ESBL-E uUTI 신규 경구 약제</div><p class="txt">Several newly FDA-approved oral agents were added as options for ESBL-E infections: gepotidacin (approved Mar 2025; &gt;90% ESBL-E activity), pivmecillinam (approved Apr 2024; suggested dose 400 mg TID, differing from label), and oral sulopenem etzadroxil/probenecid (approved Oct 2024; &gt;95% ESBL-E activity). Gepotidacin, pivmecillinam, sulopenem, nitrofurantoin, single-dose aminoglycoside and TMP-SMX are now co-equal preferred uUTI options.</p><p class="txt ko">ESBL-E 감염에 신규 FDA 승인 경구 약제가 옵션으로 추가됨: gepotidacin(2025.3 승인, ESBL-E &gt;90% 활성), pivmecillinam(2024.4 승인, 제안 용량 400 mg 1일 3회로 라벨과 상이), 경구 sulopenem etzadroxil/probenecid(2024.10 승인, ESBL-E &gt;95% 활성). gepotidacin·pivmecillinam·sulopenem·nitrofurantoin·단회 aminoglycoside·TMP-SMX가 동등한 uUTI 선호 옵션이 됨.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">ESBL-E: cefepime-enmetazobactam 도입</div><p class="txt">Cefepime-enmetazobactam was introduced as a preferred agent for ESBL-E cUTI when TMP-SMX/fluoroquinolones cannot be used (RCT: 74% [56/76] success vs 52% [34/66] with piperacillin-tazobactam) and as an alternative for infections outside the urinary tract. Enmetazobactam&#39;s methyl substitution gives a net-neutral zwitterionic structure improving periplasmic penetration versus tazobactam.</p><p class="txt ko">cefepime-enmetazobactam이 ESBL-E cUTI에서 TMP-SMX/fluoroquinolone 사용 불가 시 선호 약제로(RCT: 74% [56/76] vs piperacillin-tazobactam 52% [34/66]), 요로 외 감염에서는 대체 옵션으로 도입됨. enmetazobactam은 methyl 치환으로 순전하 중성의 zwitterion 구조를 가져 tazobactam 대비 periplasm 침투가 향상됨.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">ESBL-E: IV fosfomycin</div><p class="txt">IV fosfomycin (FDA-approved Oct 2025) was added as an alternative for ESBL-E cUTI, preferentially for E. coli (RCT: 93% [52/56] cure vs 93% piperacillin-tazobactam). Caution is advised for ESBL K. pneumoniae because of frequent fosA, and its high sodium content warrants caution in older adults and heart-failure risk.</p><p class="txt ko">IV fosfomycin(2025.10 FDA 승인)이 ESBL-E cUTI 대체 옵션으로 추가됨, 특히 E. coli에 우선(RCT: 93% [52/56] vs piperacillin-tazobactam 93%). ESBL K. pneumoniae는 fosA 빈도가 높아 주의; 높은 나트륨 함량으로 고령·심부전 위험 환자에 주의.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">ESBL-E cUTI: piperacillin-tazobactam 위치</div><p class="txt">Piperacillin-tazobactam was newly added as an ALTERNATIVE option for ESBL-E cUTI in patients who are not critically ill and without concomitant bacteremia (systematic review of 1,156 patients showed comparable success to carbapenems). It remains NOT suggested for invasive/bloodstream ESBL-E infections even when susceptible, given the meropenem-favoring mortality signal (88% vs 96% 30-day survival in the pivotal trial).</p><p class="txt ko">piperacillin-tazobactam이 중증이 아니고 동반 균혈증이 없는 ESBL-E cUTI 환자에서 대체 옵션으로 신규 추가됨(1,156명 체계적 고찰에서 carbapenem과 유사 성공률). 침습성/혈류 ESBL-E 감염에는 감수성이 있어도 여전히 비권장 — 핵심 시험에서 meropenem 우위 사망률 신호(30일 생존 88% vs 96%) 때문.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">AmpC-E: Hafnia alvei 추가 및 위험군 정리</div><p class="txt">Hafnia alvei was added to the moderate-risk category for clinically significant inducible AmpC production alongside Enterobacter cloacae complex, Klebsiella aerogenes, and Citrobacter freundii, based on in vitro data (limited clinical experience). Updated molecular epidemiology notes plasmid-mediated ampC is found in &lt;10% of US ceftriaxone-non-susceptible isolates, largely E. coli and K. pneumoniae.</p><p class="txt ko">Hafnia alvei가 in vitro 자료에 근거해(임상 경험은 제한적) Enterobacter cloacae complex, Klebsiella aerogenes, Citrobacter freundii와 함께 임상적으로 유의한 유도성 AmpC 중등도 위험군에 추가됨. 갱신된 분자역학에서 플라스미드 매개 ampC는 미국 ceftriaxone 비감수성 분리주의 &lt;10%, 대부분 E. coli·K. pneumoniae.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">AmpC-E: 경험적 ceftriaxone 유지 허용</div><p class="txt">New language allows that, for a non-severe AmpC-E infection where ceftriaxone was started empirically and the patient improves clinically with adequate source control, continuing ceftriaxone to complete therapy may be reasonable — a pragmatic softening of prior de-escalation-away-from-ceftriaxone guidance. Additional data reinforce that piperacillin-tazobactam may be suboptimal for invasive infections by moderate-risk inducible-AmpC organisms.</p><p class="txt ko">비중증 AmpC-E 감염에서 경험적으로 ceftriaxone을 시작해 임상 호전 + 적절한 source control이 있으면 ceftriaxone으로 치료 완결이 합리적일 수 있다는 새 문구 추가 — 기존 ceftriaxone 회피 권고를 실용적으로 완화. 유도성 AmpC 중등도 위험 균의 침습감염에 piperacillin-tazobactam이 최적이 아닐 수 있다는 자료 보강.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">CRE: NDM 생성균에 aztreonam-avibactam</div><p class="txt">Aztreonam-avibactam (newly FDA-approved) was added for NDM-producing Enterobacterales; the guidance now states either aztreonam-avibactam OR ceftazidime-avibactam plus aztreonam is reasonable for NDM producers, with a slight preference for aztreonam-avibactam. New pre-clinical/clinical data compare ceftazidime-avibactam vs meropenem-vaborbactam for KPC producers and aztreonam-avibactam vs cefiderocol for NDM producers.</p><p class="txt ko">신규 FDA 승인된 aztreonam-avibactam이 NDM 생성 장내세균에 추가됨; NDM 생성균에 aztreonam-avibactam 또는 ceftazidime-avibactam+aztreonam 어느 쪽도 합리적이며 aztreonam-avibactam을 약간 더 선호한다고 명시. KPC 생성균에 대한 ceftazidime-avibactam vs meropenem-vaborbactam, NDM 생성균에 대한 aztreonam-avibactam vs cefiderocol 신규 자료 추가.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">DTR 녹농균: 폐렴 약제 우선순위</div><p class="txt">New comparative-effectiveness data support preferring ceftolozane-tazobactam over ceftazidime-avibactam for DTR P. aeruginosa pneumonia. Imipenem-relebactam is now noted to carry a similarly high risk of on-therapy resistance emergence as ceftazidime-avibactam and ceftolozane-tazobactam. A new &#39;Game Changer Trial&#39; compared cefiderocol vs alternative therapy for DTR P. aeruginosa bloodstream infections.</p><p class="txt ko">새로운 비교효과 자료로 DTR 녹농균 폐렴에서 ceftolozane-tazobactam을 ceftazidime-avibactam보다 선호. imipenem-relebactam도 ceftazidime-avibactam·ceftolozane-tazobactam과 유사하게 치료 중 내성 출현 위험이 높다고 명시. DTR 녹농균 혈류감염에 대해 cefiderocol vs 대체요법을 비교한 &#39;Game Changer Trial&#39; 추가.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">DTR 녹농균: 질문 구조 변경 및 카바페넴분해효소</div><p class="txt">The standalone question on treating uncomplicated UTI caused by DTR P. aeruginosa was removed and folded into a brief statement at the end of the complicated-UTI answer. A NEW question was added addressing how identification of carbapenemases in P. aeruginosa should influence treatment selection.</p><p class="txt ko">DTR 녹농균에 의한 단순 요로감염 치료를 다루던 독립 질문이 삭제되고 복잡성 요로감염 답변 말미의 짧은 기술로 통합됨. 녹농균에서 카바페넴분해효소 동정이 치료 선택에 어떻게 영향을 주는지 다루는 새 질문이 추가됨.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">CRAB: sulbactam-durlobactam 우선 및 질문 삭제</div><p class="txt">For invasive CRAB, the guidance now prioritizes sulbactam-durlobactam (in combination with a carbapenem) as the definitive regimen, with alternative agents used ONLY as bridge therapy until sulbactam-durlobactam is available; if sulbactam-durlobactam resistance is present, use two non-sulbactam agents or add sulbactam-durlobactam to cefiderocol, and a new approach for NDM-producing CRAB was added. The prior questions on the general CRAB treatment approach, on combination therapy, on extended-infusion meropenem/imipenem, and on rifamycins were REMOVED.</p><p class="txt ko">침습성 CRAB에서 sulbactam-durlobactam(carbapenem 병용)을 확정 요법으로 우선하고, 대체 약제는 sulbactam-durlobactam 확보 전까지 브리지 요법으로만 사용하도록 정리; sulbactam-durlobactam 내성 시 non-sulbactam 2제 병용 또는 cefiderocol에 sulbactam-durlobactam 추가, NDM 생성 CRAB에 대한 새 접근법 추가. 기존의 CRAB 일반 치료 접근·병용요법·연장주입 meropenem/imipenem·rifamycin 관련 질문은 삭제됨.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">S. maltophilia: cefiderocol 단독요법 선호로 변경</div><p class="txt">Cefiderocol monotherapy was newly designated the PREFERRED treatment for invasive S. maltophilia (based on susceptibility data and neutropenic animal studies, with very little clinical data), and the alternative suggestion changed to aztreonam-avibactam, preferably combined with a second agent. The general treatment-approach question was removed, &#39;invasive infections&#39; language was added throughout, and a Game Changer Trial (cefiderocol vs alternative for S. maltophilia BSI) was added.</p><p class="txt ko">cefiderocol 단독요법이 침습성 S. maltophilia의 선호 치료로 새로 지정됨(감수성 자료와 호중구감소 동물모델 근거, 임상 자료는 극히 적음), 대체 제안은 aztreonam-avibactam(가능하면 2제 병용)으로 변경됨. 일반 치료 접근 질문은 삭제되고 전반에 &#39;침습감염&#39; 문구가 추가되었으며, S. maltophilia 혈류감염에 대한 Game Changer Trial(cefiderocol vs 대체요법)이 추가됨.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">공통: CLSI 브레이크포인트 및 정의 조화</div><p class="txt">Table 2 was updated with 2026 CLSI susceptibility breakpoints and Table 1 dosing was refreshed to current evidence. Definitions of uncomplicated vs complicated UTI were harmonized with the 2025 IDSA Complicated UTI guideline (uUTI = bladder-confined in afebrile women/men; cUTI = pyelonephritis, febrile/bacteremic UTI, catheter-associated UTI, prostatitis), and a pediatric dosing reference for newer β-lactams was added.</p><p class="txt ko">Table 2가 2026 CLSI 감수성 브레이크포인트로 갱신되고 Table 1 용량이 최신 근거로 개정됨. 단순/복잡성 요로감염 정의가 2025 IDSA 복잡성 요로감염 지침과 조화됨(uUTI = 발열 없는 여성/남성의 방광 국한; cUTI = 신우신염, 발열성/균혈증성 요로감염, 카테터 관련 요로감염, 전립선염), 소아용 신규 β-lactam 용량 참고문헌 추가.</p></div></div>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 임팩트</div><p class="txt">At the bedside, EM/CCM clinicians treating ESBL-E cystitis now have a broader oral toolkit (gepotidacin, pivmecillinam, sulopenem, plus nitrofurantoin/TMP-SMX/single-dose aminoglycoside), letting them avoid carbapenems and fluoroquinolones for simple UTIs while reserving cefepime-enmetazobactam and carbapenems for cUTI/invasive disease. For any ESBL-E bloodstream, intra-abdominal, or pulmonary infection the carbapenem-preferred rule stands — do NOT step down to piperacillin-tazobactam or cefepime even if labeled susceptible — and in critically ill or hypoalbuminemic (&lt;2.5 g/dL) patients choose meropenem/imipenem over ertapenem. For resistant nonfermenters, memorize the new definitive regimens: sulbactam-durlobactam plus a carbapenem is now the priority for invasive CRAB (other agents only bridge to it), cefiderocol monotherapy is preferred for invasive S. maltophilia, ceftolozane-tazobactam is preferred for DTR P. aeruginosa pneumonia, and aztreonam-avibactam (slightly preferred) or ceftazidime-avibactam-plus-aztreonam covers NDM producers. Also flag Hafnia alvei alongside Enterobacter/K. aerogenes/C. freundii as inducible-AmpC risks where pip-tazo should be avoided for invasive infection, and use the updated ceftriaxone MIC ≥4 µg/mL cutoff and 2026 CLSI breakpoints when interpreting susceptibility reports.</p><p class="txt ko">진료 현장에서 ESBL-E 방광염 치료 시 이제 더 넓은 경구 선택지(gepotidacin, pivmecillinam, sulopenem 및 nitrofurantoin/TMP-SMX/단회 aminoglycoside)가 있어 단순 요로감염에 carbapenem·fluoroquinolone을 아끼고 cefepime-enmetazobactam·carbapenem은 cUTI/침습감염용으로 남길 수 있다. ESBL-E 혈류·복강내·폐 감염에는 carbapenem 선호 원칙이 유지되며 — 라벨상 감수성이 있어도 piperacillin-tazobactam·cefepime으로 de-escalation 금지 — 중증 또는 저알부민혈증(&lt;2.5 g/dL) 환자에서는 ertapenem 대신 meropenem/imipenem을 택한다. 내성 비발효균에는 새로운 확정 요법을 숙지: 침습성 CRAB엔 sulbactam-durlobactam + carbapenem이 우선(다른 약제는 브리지만), 침습성 S. maltophilia엔 cefiderocol 단독요법 선호, DTR 녹농균 폐렴엔 ceftolozane-tazobactam 선호, NDM 생성균엔 aztreonam-avibactam(약간 선호) 또는 ceftazidime-avibactam+aztreonam이다. 또한 Hafnia alvei를 Enterobacter/K. aerogenes/C. freundii와 함께 유도성 AmpC 위험균으로 인식해 침습감염에 pip-tazo를 피하고, 감수성 판독 시 갱신된 ceftriaxone MIC ≥4 µg/mL 기준과 2026 CLSI 브레이크포인트를 적용한다.</p>
+        <div class="src-box"><div class="src-h">🔎 출처</div><a href="https://www.idsociety.org/practice-guideline/amr-guidance/" target="_blank" rel="noopener" class="src-li">원문 — 발행기관 공개 문서</a><a href="https://www.idsociety.org/practice-guideline/amr-guidance/" target="_blank" rel="noopener" class="src-li">웹 — IDSA AMR Guidance (issuing society publication page)</a></div>
+        <div class="pc-foot"><a href="https://www.idsociety.org/practice-guideline/amr-guidance/" target="_blank" rel="noopener" class="lnk">원문 (발행기관)</a> · 가이드라인 캐치업</div>
+      </div>
+    </article></div>
+</details>
+<!-- /GSECTION:2026-08-04-m-web:www-idsociety-org-practice-guideline-amr-guidance -->
+<!-- GSECTION:2026-07-30 -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="day-date">2026-07-30</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 2026. 07. 30. 07:33</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span><div><div class="day-prev-t">Part 12: 소생 교육 과학 — 2025 미국심장협회(AHA) 심폐소생술 및 응급심혈관치료 가이드라인</div><div class="day-prev-m">AHA (ILCOR-informed) · 2025</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="guideline-card">
+      <div class="pc-top gl-top">
+        <div class="medal gl-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span><span class="chip org">AHA (ILCOR-informed)</span><span class="chip yr">2025</span></div>
+        <div class="ttl">Part 12: 소생 교육 과학 — 2025 미국심장협회(AHA) 심폐소생술 및 응급심혈관치료 가이드라인</div>
+        <div class="ttle">Part 12: Resuscitation Education Science: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.</div>
+        <p class="txt ko" style="margin-top:6px">심정지 관리 역량을 기르기 위한 &#39;소생술 교육&#39;의 설계·전달 방법을 다루는 가이드라인으로, 대상은 실제 환자가 아니라 교육을 받는 의료인과 일반인(lay rescuer)이다. 2020년 이후 첫 종합 개정이며, ① 교육 설계(Instructional Design: 피드백 장치·연습 방식·시뮬레이션 등)와 ② 학습자 개별 요인(Provider Considerations: 성별·인종·사회경제적 지위·언어 격차, 학령기 아동 교육, 일반인 CPR 시행 의지의 촉진/장벽)을 두 축으로 권고한다.</p>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>Circulation · 2025 · PMID 41122895</div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5fb3a0"/></svg></span>핵심 권고</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Use CPR feedback devices during training for both health care professionals and lay rescuers (Class I, LOE A) — meta-analyses show moderate-to-large improvement in compression depth/rate compliance.</p><p class="txt ko">훈련 중 CPR 피드백 장치를 의료인과 일반인 모두에게 사용하도록 권고(Class I, LOE A) — 메타분석에서 압박 깊이·속도 준수율이 중등도~크게 개선됨.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Lay rescuers should receive education on recognition and initial treatment of opioid overdose, including naloxone use (Class I, B-NR); the optimal training method is not yet established (Class 2b, C-LD).</p><p class="txt ko">일반인은 아편유사제(opioid) 과다복용의 인지 및 초기 처치(naloxone 사용 포함) 교육을 받아야 함(Class I, B-NR); 다만 최적의 교육 방법은 아직 정립되지 않음(Class 2b, C-LD).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Children ≥12 years should be trained in high-quality CPR, and children &lt;12 should receive emergency-response training to build future willingness to act (Class I, B-NR/C-LD).</p><p class="txt ko">12세 이상 아동은 고품질 CPR을 교육받아야 하고, 12세 미만 아동은 향후 행동 의지를 키우기 위한 응급대응 교육을 받아야 함(Class I, B-NR/C-LD).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Cognitive aids are reasonable to use for health care professionals to improve protocol adherence (Class 2a, C-LD) but are NOT recommended for lay rescuers (Class 3, C-LD) because studies showed 30–70 second delays in calling EMS and starting compressions.</p><p class="txt ko">인지보조도구(cognitive aid)는 의료인에게는 프로토콜 준수 향상을 위해 사용이 합리적(Class 2a, C-LD)이나, 일반인에게는 권고되지 않음(Class 3, C-LD) — 연구에서 EMS 신고·압박 시작이 30~70초 지연됨.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Rapid-cycle deliberate practice (RCDP) may be reasonable for BLS/ALS training (Class 2b, C-LD), showing faster time to compressions and defibrillation.</p><p class="txt ko">빠른주기 의도적연습(RCDP)은 BLS/ALS 훈련에 합리적일 수 있음(Class 2b, C-LD) — 압박·제세동까지의 시간이 단축됨.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Blended (online + hands-on) learning may be considered as an alternative to fully instructor-led courses (Class 2b, B-NR), with largely equivalent skill acquisition and long-term cost savings.</p><p class="txt ko">혼합학습(온라인+실습)은 전면 강사주도 과정의 대안으로 고려 가능(Class 2b, B-NR) — 술기 습득은 대체로 동등하고 장기적으로 비용 절감됨.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Alternative objects (e.g., pillow/foam) for lay-rescuer chest-compression practice have not been well established as substitutes for manikins (Class 2b, C-LD).</p><p class="txt ko">일반인 흉부압박 연습에 베개·폼 등 대체 물체를 마네킨 대신 쓰는 것은 유용성이 충분히 확립되지 않음(Class 2b, C-LD).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Guidelines explicitly address education disparities by gender, race/ethnicity, socioeconomic status, and language, and prioritize teamwork/leadership training within resuscitation courses.</p><p class="txt ko">성별·인종/민족·사회경제적 지위·언어에 따른 교육 격차를 명시적으로 다루고, 소생 과정 내 팀워크·리더십 훈련을 우선순위로 둠.</p></div></li></ul>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>이전 판 대비 주요 변경점</div><div class="gl-changes">
+      <div class="gl-chg"><div class="gl-chg-t">CPR 피드백 장치</div><p class="txt">Training with CPR feedback devices is now a strong recommendation (Class I, LOE A) for both health care professionals AND lay rescuers, up from the weaker/less-emphasized 2020 stance, based on meta-analyses showing moderate-to-large improvements across CPR quality metrics (compression depth and rate compliance).</p><p class="txt ko">CPR 피드백 장치를 이용한 훈련이 이제 의료인과 일반인 모두에서 강한 권고(Class I, LOE A)로 격상됨(2020년의 약한/덜 강조된 입장에서 상향). 근거는 압박 깊이·속도 등 CPR 품질 지표 전반에서 중등도~큰 개선을 보인 메타분석.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">인지보조도구(cognitive aids) — 학습자 구분</div><p class="txt">New paired recommendation that splits by learner: cognitive aids are reasonable FOR health care professionals (Class 2a, C-LD) to improve protocol adherence, but are NOT recommended for lay rescuers (Class 3/No benefit or Harm, C-LD) because trials showed 30–70 second delays in calling EMS and initiating chest compressions. The 2020 guidelines did not carry this population-specific split.</p><p class="txt ko">학습자에 따라 갈리는 새 권고 쌍이 추가됨: 인지보조도구는 의료인에게는 프로토콜 준수 향상을 위해 합리적(Class 2a, C-LD)이나, 일반인에게는 권고하지 않음(Class 3, C-LD) — 임상시험에서 EMS 신고·흉부압박 시작이 30~70초 지연되었기 때문. 2020년에는 이런 대상별 구분이 없었음.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">아편유사제 과다복용 교육</div><p class="txt">New recommendation that lay rescuers receive education on recognition and initial management of opioid overdose including naloxone (Class I, B-NR), aligned with a new suspected-opioid-overdose treatment/public-access naloxone algorithm; the best method to deliver this training remains unestablished (Class 2b, C-LD). This topic was not a discrete education recommendation in 2020.</p><p class="txt ko">일반인이 아편유사제 과다복용의 인지 및 초기 처치(naloxone 포함) 교육을 받도록 하는 새 권고(Class I, B-NR)가 신설됨 — 새로운 아편유사제 의심 처치/공공 naloxone 알고리즘과 연동. 다만 이 교육의 최적 전달 방법은 미정립(Class 2b, C-LD). 2020년에는 별도 교육 권고로 존재하지 않던 주제.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">학령기 아동 CPR 교육</div><p class="txt">Expanded/strengthened school-based recommendations: children ≥12 years should be trained in high-quality CPR, and children &lt;12 should receive emergency-response training (how to recognize arrest and activate EMS) to build future willingness to act (Class I, B-NR/C-LD). The &lt;12 emergency-response training recommendation is new.</p><p class="txt ko">학교 기반 권고가 확장·강화됨: 12세 이상 아동은 고품질 CPR을 교육받고, 12세 미만 아동은 심정지 인지·EMS 활성화 등 응급대응 교육을 받아 향후 행동 의지를 키우도록 함(Class I, B-NR/C-LD). 특히 12세 미만 대상 응급대응 교육 권고는 신설된 것.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">빠른주기 의도적연습(RCDP)</div><p class="txt">New recommendation that RCDP may be reasonable for BLS/ALS training (Class 2b, C-LD); evidence shows faster time to first compressions and to defibrillation, though long-term impact and lay-rescuer applicability remain knowledge gaps.</p><p class="txt ko">RCDP를 BLS/ALS 훈련에 적용하는 것이 합리적일 수 있다는 새 권고(Class 2b, C-LD) — 첫 압박·제세동까지의 시간 단축이 확인됨. 다만 장기 효과와 일반인 적용 가능성은 여전히 근거 공백.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">혼합학습(blended learning)</div><p class="txt">Blended learning (self-directed online plus hands-on practice) may be considered as an alternative to fully instructor-led courses (Class 2b, B-NR); skill acquisition is largely equivalent to traditional training and, despite higher setup costs, it yields long-term cost savings.</p><p class="txt ko">혼합학습(자기주도 온라인 + 실습)을 전면 강사주도 과정의 대안으로 고려 가능(Class 2b, B-NR) — 술기 습득은 전통 방식과 대체로 동등하고, 초기 구축 비용은 높지만 장기적으로 비용 절감됨.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">흉부압박 연습용 대체 물체</div><p class="txt">New topic: usefulness of alternative objects (e.g., pillow/foam) instead of manikins for lay-rescuer chest-compression practice is not well established (Class 2b, C-LD), with mixed results versus manikin training — relevant for large-scale/low-resource lay training.</p><p class="txt ko">신규 주제: 일반인 흉부압박 연습에서 마네킨 대신 베개·폼 등 대체 물체를 쓰는 것의 유용성은 충분히 확립되지 않음(Class 2b, C-LD) — 마네킨 대비 결과가 혼재. 대규모/저자원 일반인 교육 맥락에서 의미 있음.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">VR/AR 및 게임화 학습</div><p class="txt">New/expanded recommendations covering a trio of statements on virtual and augmented reality for training, plus gamified learning elements for both professionals and lay rescuers — technologies that were minimally addressed in 2020.</p><p class="txt ko">가상현실(VR)·증강현실(AR) 훈련에 관한 3개 권고와, 의료인·일반인 모두를 위한 게임화(gamified) 학습 요소에 대한 신규/확장 권고가 추가됨 — 2020년에는 거의 다뤄지지 않던 기술 영역.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">교육 형평성·사회적 결정요인</div><p class="txt">New emphasis: guidelines formally address disparities in resuscitation education and bystander-CPR willingness by gender, race/ethnicity, socioeconomic status, and language (several Class I equity-oriented statements), directing programs to adapt to local community demographics — a substantially expanded focus vs 2020.</p><p class="txt ko">신규 강조점: 성별·인종/민족·사회경제적 지위·언어에 따른 소생 교육 및 일반인 CPR 시행 의지의 격차를 공식적으로 다루고(형평성 지향 Class I 권고 다수), 지역사회 인구 특성에 맞춘 교육을 지시함 — 2020년 대비 크게 확장된 초점.</p></div></div>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 임팩트</div><p class="txt">For EM/CCM educators and code teams, this shifts training toward measurable, feedback-driven practice: build CPR feedback devices into every BLS/ALS course and mock code, and adopt rapid-cycle deliberate practice and scripted debriefing to compress time-to-compression/defibrillation. Deploy cognitive aids (checklists/algorithm cards) for professional code teams, but do NOT push them onto lay/bystander programs where they delay action. Add opioid-overdose recognition plus naloxone to community/lay training, expand school-based CPR (high-quality CPR at ≥12, emergency-response at &lt;12), and use blended learning to scale training cost-effectively while consciously targeting gender/race/SES/language gaps in bystander-CPR access.</p><p class="txt ko">응급/중환자 교육자와 코드팀에게 이 가이드라인은 훈련을 &#39;측정 가능·피드백 기반&#39; 연습으로 전환시킨다: 모든 BLS/ALS 과정과 모의코드에 CPR 피드백 장치를 기본 탑재하고, RCDP와 대본화 디브리핑(scripted debriefing)을 도입해 압박·제세동까지의 시간을 단축한다. 인지보조도구(체크리스트·알고리즘 카드)는 전문 코드팀에는 적극 활용하되, 행동을 지연시키는 일반인/방관자 교육에는 강요하지 않는다. 지역·일반인 교육에는 아편유사제 과다복용 인지와 naloxone을 추가하고, 학교 CPR 교육을 확대(12세 이상 고품질 CPR, 12세 미만 응급대응)하며, 혼합학습으로 교육을 비용효율적으로 확장하는 동시에 성별·인종·사회경제·언어에 따른 방관자 CPR 접근 격차를 의도적으로 겨냥한다.</p>
+        <div class="src-box"><div class="src-h">🔎 출처</div><a href="https://pubmed.ncbi.nlm.nih.gov/41122895/" target="_blank" rel="noopener" class="src-li">PubMed — PMID 41122895</a><a href="https://doi.org/10.1161/CIR.0000000000001374" target="_blank" rel="noopener" class="src-li">Journal (DOI) — 10.1161/CIR.0000000000001374</a><a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/resuscitation-education-science" target="_blank" rel="noopener" class="src-li">웹 — AHA cpr.heart.org — Part 12: Resuscitation Education Science (2025, take-home messages &amp; recommendations with COR/LOE)</a><a href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001374" target="_blank" rel="noopener" class="src-li">웹 — Circulation — Part 12: Resuscitation Education Science: 2025 AHA Guidelines (primary article)</a><a href="https://www.guidelinecentral.com/insights/dec-2025-aha-cprecc-guideline-spotlight/" target="_blank" rel="noopener" class="src-li">웹 — Guideline Central — 2025 AHA CPR/ECC Guideline spotlight (cognitive aids, RCDP, gamified, VR/AR, pediatric)</a><a href="https://newsroom.heart.org/news/updated-cpr-guidelines-tackle-choking-response-opioid-related-emergencies-and-a-revised-chain-of-survival" target="_blank" rel="noopener" class="src-li">웹 — AHA Newsroom — Updated CPR guidelines (opioid overdose, naloxone algorithm, chain of survival)</a></div>
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/41122895/" target="_blank" rel="noopener" class="lnk">PubMed 41122895</a> · <a href="https://doi.org/10.1161/CIR.0000000000001374" target="_blank" rel="noopener" class="lnk">DOI</a> · 가이드라인 캐치업</div>
+      </div>
+    </article></div>
+</details>
+<!-- /GSECTION:2026-07-30 -->
+<!-- GSECTION:2026-07-23 -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="day-date">2026-07-23</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 2026. 07. 23. 15:39</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span><div><div class="day-prev-t">순환성 쇼크 및 혈역학 모니터링에 관한 ESICM 2025 가이드라인</div><div class="day-prev-m">ESICM · 2025</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="guideline-card">
+      <div class="pc-top gl-top">
+        <div class="medal gl-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span><span class="chip org">ESICM</span><span class="chip yr">2025</span></div>
+        <div class="ttl">순환성 쇼크 및 혈역학 모니터링에 관한 ESICM 2025 가이드라인</div>
+        <div class="ttle">ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.</div>
+        <p class="txt ko" style="margin-top:6px">성인 중환자실 환자에서 순환성 쇼크(circulatory shock)의 진단과 혈역학 모니터링을 다루는 유럽중환자의학회(ESICM) 임상 가이드라인으로, PICO 형식 질문에 GRADE 방법론을 적용해 총 50개의 권고(등급 권고 + 등급외 모범진료문[UGPS])를 제시한다. 무엇을 평가하고, 언제 개입하며, 어떻게 모니터링할지에 초점을 둔다.</p>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>Intensive care medicine · 2025 · PMID 41236566</div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5fb3a0"/></svg></span>핵심 권고</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Monitor skin perfusion using capillary refill time (CRT), which may be complemented by assessment of skin temperature and mottling; when feasible, microcirculation assessment may be considered as an adjunct to comprehensive hemodynamic evaluation (ungraded good practice statement, UGPS).</p><p class="txt ko">피부 관류는 capillary refill time(CRT)로 모니터링하며, 피부 온도와 mottling(반점) 평가로 보완할 수 있다. 가능하면 미세순환(microcirculation) 평가를 포괄적 혈역학 평가의 보조로 고려할 수 있다(등급외 모범진료문, UGPS).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">In patients with a central venous catheter (and arterial catheter), perform serial measurements of (central) venous oxygen saturation and of the veno-arterial CO2 partial pressure difference (v-a PCO2 gap) as part of perfusion assessment (UGPS).</p><p class="txt ko">중심정맥카테터(및 동맥카테터)가 있는 환자에서는 (중심)정맥 산소포화도와 정맥-동맥 CO2 분압차(v-a PCO2 gap)를 연속 측정하여 관류 평가에 활용한다(UGPS).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">In persistent shock after initial fluid resuscitation, assess fluid responsiveness before giving more fluid and use dynamic variables over static markers of preload when applicable (graded statement); a fluid challenge is defined as a bolus of 200–500 mL given over 5–10 minutes while evaluating its effects (ungraded definition).</p><p class="txt ko">초기 수액 소생 후에도 지속되는 쇼크에서는 추가 수액 전에 fluid responsiveness를 평가하고, 가능한 경우 정적(static) 전부하 지표보다 동적(dynamic) 변수를 사용한다(등급 권고). Fluid challenge는 200–500 mL를 5–10분에 걸쳐 투여하며 효과를 평가하는 것으로 정의한다(등급외 정의).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Use the passive leg raising (PLR) test to assess fluid responsiveness in mechanically ventilated patients with or without spontaneous breathing activity (STRONG recommendation, HIGH certainty of evidence); use the end-expiratory occlusion test as an alternative to PLR in mechanically ventilated patients without spontaneous breathing activity (STRONG recommendation, MODERATE certainty).</p><p class="txt ko">기계환기 중인 쇼크 환자에서 자발호흡 유무와 관계없이 passive leg raising(PLR) 검사로 fluid responsiveness를 평가한다(강한 권고, 근거수준 HIGH). 자발호흡이 없는 기계환기 환자에서는 PLR의 대안으로 end-expiratory occlusion test를 사용한다(강한 권고, MODERATE).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Monitor cardiac output and/or stroke volume in patients who do not respond to initial therapy to determine shock type and therapeutic response; transpulmonary thermodilution or the pulmonary artery catheter (PAC) may be considered when CO monitoring is required, including for guiding fluid therapy in moderate-to-severe ARDS (UGPS).</p><p class="txt ko">초기 치료에 반응하지 않는 환자에서는 심박출량(CO) 및/또는 일회박출량(SV)을 모니터링하여 쇼크 유형과 치료 반응을 판단한다. CO 모니터링이 필요한 경우 transpulmonary thermodilution 또는 폐동맥카테터(PAC)를 고려할 수 있으며, 중등도–중증 ARDS에서 수액 치료 지침용으로도 고려할 수 있다(UGPS).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Monitor arterial pressure with an arterial catheter in shock not responsive to initial therapy and/or requiring vasopressor infusion; individualize the blood-pressure target — a higher MAP may be considered in septic shock with chronic hypertension or high CVP, and an initial MAP ≥65 mmHg may be considered in cardiogenic shock (UGPS).</p><p class="txt ko">초기 치료에 반응하지 않거나 승압제 주입이 필요한 쇼크에서는 동맥카테터로 동맥압을 모니터링한다. 목표 혈압은 개별화하며 — 만성 고혈압이 있거나 CVP가 높은 septic shock에서는 더 높은 MAP를, cardiogenic shock에서는 초기 MAP ≥65 mmHg를 고려할 수 있다(UGPS).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">In traumatic hemorrhagic shock with uncontrolled bleeding and no traumatic brain injury, target systolic pressure 80–90 mmHg (MAP 50–60 mmHg) until major bleeding is stopped (permissive hypotension); in traumatic brain injury with GCS ≤8, target an initial MAP ≥80 mmHg.</p><p class="txt ko">출혈이 조절되지 않고 외상성 뇌손상이 없는 외상성 출혈성 쇼크에서는 주요 출혈이 멈출 때까지 수축기압 80–90 mmHg(MAP 50–60 mmHg)를 목표로 한다(허용적 저혈압). GCS ≤8의 외상성 뇌손상에서는 초기 MAP ≥80 mmHg를 목표로 한다.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Use echocardiography as the first-line imaging modality to assess the type of shock (graded statement); echocardiographically defined left/right ventricular systolic dysfunction phenotypes may have prognostic significance (weak recommendation, very low certainty). Measure central venous pressure (CVP) when a central venous catheter is present, but do NOT target a pre-specified CVP value during resuscitation (UGPS).</p><p class="txt ko">쇼크 유형 평가의 1차 영상 도구로 심초음파(echocardiography)를 사용한다(등급 권고). 심초음파로 정의된 좌/우심실 수축기능 표현형은 예후적 의의가 있을 수 있다(약한 권고, 근거수준 매우 낮음). 중심정맥카테터가 있으면 CVP를 측정하되, 소생 중 특정 CVP 값을 목표로 삼지는 않는다(UGPS).</p></div></li></ul>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>이전 판 대비 주요 변경점</div><div class="gl-changes"><p class="txt ko">공개 초록/확보 본문에 구체적 변경 내용이 없어(대개 본문 페이월) 세부 변경점을 확보하지 못했습니다. 아래 원문 링크에서 확인하세요.</p></div>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 임팩트</div><p class="txt">At the bedside, drive shock resuscitation with serial perfusion targets (CRT, mottling, lactate, ScvO2, v-a PCO2 gap) rather than filling pressures, and prove fluid responsiveness with a dynamic test — PLR (now a strong, high-certainty recommendation) or, in passively ventilated patients, an end-expiratory occlusion test — before every additional 200–500 mL bolus. Place an arterial line and start CO/stroke-volume monitoring once a patient fails initial therapy, and reach for echocardiography first to classify the shock. Individualize the MAP target instead of applying a universal number: permissive hypotension (SBP 80–90 / MAP 50–60 mmHg) in uncontrolled hemorrhage without TBI, MAP ≥80 mmHg with TBI (GCS ≤8), and ~65 mmHg in cardiogenic shock. CVP may be measured but must not be used as a resuscitation target.</p><p class="txt ko">침상에서는 충만압이 아니라 연속적 관류 지표(CRT, mottling, lactate, ScvO2, v-a PCO2 gap)로 쇼크 소생을 이끌고, 추가 수액(매 200–500 mL bolus) 전에 동적 검사 — PLR(현재 강한 권고·근거수준 HIGH) 또는 자발호흡이 없는 기계환기 환자에서는 end-expiratory occlusion test — 로 fluid responsiveness를 확인한다. 초기 치료에 실패하면 동맥카테터를 삽입하고 CO/SV 모니터링을 시작하며, 쇼크 유형 분류에는 심초음파를 1차로 사용한다. MAP 목표는 획일적 수치 대신 개별화한다: TBI가 없는 조절 안 된 출혈에서는 허용적 저혈압(SBP 80–90 / MAP 50–60 mmHg), TBI(GCS ≤8)에서는 MAP ≥80 mmHg, cardiogenic shock에서는 약 65 mmHg. CVP는 측정할 수 있으나 소생 목표로 삼아서는 안 된다.</p>
+        <div class="src-box"><div class="src-h">🔎 출처</div><a href="https://pubmed.ncbi.nlm.nih.gov/41236566/" target="_blank" rel="noopener" class="src-li">PubMed — PMID 41236566</a><a href="https://doi.org/10.1007/s00134-025-08137-z" target="_blank" rel="noopener" class="src-li">Journal (DOI) — 10.1007/s00134-025-08137-z</a><a href="https://link.springer.com/article/10.1007/s00134-025-08137-z" target="_blank" rel="noopener" class="src-li">웹 — ESICM 2025 guideline — Intensive Care Medicine (Springer, full text; paywalled)</a><a href="https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf" target="_blank" rel="noopener" class="src-li">웹 — ESICM official visual abstract (all 50 statements with GRADE/UGPS labels, PDF)</a><a href="https://www.esicm.org/icm-esicm-guidelines-circulatory-shock-haemodynamic-monitoring-2025/" target="_blank" rel="noopener" class="src-li">웹 — ESICM ICM Online First announcement page</a><a href="https://www.guidelinecentral.com/guideline/4972119/" target="_blank" rel="noopener" class="src-li">웹 — Guideline Central — ESICM Circulatory Shock and Hemodynamic Monitoring summary</a><a href="https://pubmed.ncbi.nlm.nih.gov/25392034/" target="_blank" rel="noopener" class="src-li">웹 — 2014 predecessor: Cecconi/De Backer ESICM consensus on circulatory shock (PubMed 25392034)</a></div>
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/41236566/" target="_blank" rel="noopener" class="lnk">PubMed 41236566</a> · <a href="https://doi.org/10.1007/s00134-025-08137-z" target="_blank" rel="noopener" class="lnk">DOI</a> · 가이드라인 캐치업</div>
+      </div>
+    </article></div>
+</details>
+<!-- /GSECTION:2026-07-23 -->
+<!-- GSECTION:2026-07-13 -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="day-date">2026-07-13</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 2026. 07. 13. 07:25</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span><div><div class="day-prev-t">중증 급성 허혈성 뇌졸중 성인 환자의 신경학적 예후예측(neuroprognostication) 가이드라인</div><div class="day-prev-m">NCS/DGNI · 2026</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="guideline-card">
+      <div class="pc-top gl-top">
+        <div class="medal gl-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span><span class="chip org">NCS/DGNI</span><span class="chip yr">2026</span></div>
+        <div class="ttl">중증 급성 허혈성 뇌졸중 성인 환자의 신경학적 예후예측(neuroprognostication) 가이드라인</div>
+        <div class="ttle">Guidelines for Neuroprognostication in Critically ill Adults with Acute Ischemic Stroke.</div>
+        <p class="txt ko" style="margin-top:6px">표준치료(적응증이 되는 경우 재관류치료 포함)를 받은 성인 급성 허혈성 뇌졸중(AIS) 환자 중, 뇌졸중 자체의 관리(대뇌반구 대경색·뇌부종·의식저하·심폐 불안정·시술 후 관리 등)로 중환자실 입원이 필요한 환자를 대상으로 한다. 경증 뇌졸중·TIA, 재활병동/퇴원 후 재활 환자는 범위에서 제외되며, 주로 ICU에서의 조기 예후예측과 환자·대리인 상담 맥락에 초점을 둔다.</p>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>Neurocritical care · 2026 · PMID 41942818</div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5fb3a0"/></svg></span>핵심 권고</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Early neurological improvement within 24 h of revascularization is the ONLY individual predictor rated moderately reliable — and it predicts GOOD functional outcome at ≥3 months, not a poor one.</p><p class="txt ko">재관류치료 후 24시간 이내의 조기 신경학적 호전(early neurological improvement)은 유일하게 &#39;중등도로 신뢰할 만한(moderately reliable)&#39; 개별 예측인자이며, 나쁜 예후가 아니라 3개월 이상 시점의 &#39;좋은&#39; 기능 예후를 예측한다.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">No individual clinical variable or prediction model is reliable for predicting mortality or poor functional outcome; the risk of bias from the self-fulfilling prophecy was judged too high to recommend any single variable to predict death.</p><p class="txt ko">사망 또는 나쁜 기능 예후를 신뢰성 있게 예측하는 개별 임상변수나 예측모델은 없다. 사망 예측 문헌은 자기실현적 예언(self-fulfilling prophecy)에 의한 비뚤림 위험이 너무 높아 어떤 단일 변수도 권고하지 않았다.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Commonly used single predictors and multivariable scores (e.g., age, NIHSS, glucose, infarct size, ASTRAL, DRAGON, iScore, THRIVE) should NOT be used alone to justify withdrawal of life-sustaining treatment.</p><p class="txt ko">흔히 쓰는 단일 예측인자·다변량 점수(예: 나이, NIHSS, 혈당, 경색 크기, ASTRAL, DRAGON, iScore, THRIVE)를 단독 근거로 연명치료 중단을 정당화해서는 안 된다.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Good practice statement: avoid premature neuroprognostication and avoid confounders (e.g., sedation, metabolic derangement) that distort the neurological exam.</p><p class="txt ko">좋은진료권고(good practice statement): 조기(성급한) 예후예측을 피하고, 신경학적 진찰을 왜곡하는 교란요인(진정, 대사이상 등)을 배제하라.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Good practice statement: use a multimodal assessment (clinical course, imaging, comorbidities) rather than any isolated variable or early admission data.</p><p class="txt ko">좋은진료권고: 고립된 단일 변수나 입원 초기 데이터에 의존하지 말고 임상경과·영상·동반질환을 통합한 다중모달(multimodal) 평가를 사용하라.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Good practice statement: prognostication may address recovery of swallow function and likelihood of tracheostomy decannulation.</p><p class="txt ko">좋은진료권고: 삼킴기능(swallow) 회복 및 기관절개 발관(tracheostomy decannulation) 가능성에 대한 예후예측을 제공할 수 있다.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Good practice statement: counsel patients with large hemispheric infarction and their surrogates proactively, before anticipated neurological decline.</p><p class="txt ko">좋은진료권고: 대뇌반구 대경색(large hemispheric infarction) 환자와 대리인에게는 신경학적 악화가 예상되기 전에 선제적으로 상담하라.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Recommendations are framed for counseling critically ill AIS patients/surrogates about poor functional outcome at 3 months or later, and were developed with GRADE methodology from 518 eligible articles.</p><p class="txt ko">권고는 3개월 이상 시점의 나쁜 기능 예후에 대해 중증 AIS 환자·대리인을 상담하는 맥락에서 구성되었으며, 518편의 적격 문헌을 바탕으로 GRADE 방법론으로 개발되었다.</p></div></li></ul>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>이전 판 대비 주요 변경점</div><div class="gl-changes"><p class="txt ko">공개 초록/확보 본문에 구체적 변경 내용이 없어(대개 본문 페이월) 세부 변경점을 확보하지 못했습니다. 아래 원문 링크에서 확인하세요.</p></div>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 임팩트</div><p class="txt">At the bedside, do not anchor prognosis or withdrawal-of-care discussions on any single number — age, NIHSS, glucose, infarct volume, or scores like ASTRAL/DRAGON/iScore/THRIVE are not reliable enough alone to justify WLST in critically ill AIS patients. Delay definitive neuroprognostication, remove confounders (sedation, metabolic disturbance) before examining, and integrate a multimodal picture over time rather than acting on early admission data. The one signal you can lean on positively is early neurological improvement within 24 h of revascularization, which favors a good outcome, so frame counseling to avoid premature pessimism and the self-fulfilling prophecy — and for large hemispheric infarction, counsel patients/surrogates proactively before decline while explicitly conveying uncertainty.</p><p class="txt ko">침상에서 예후 판단이나 연명치료 중단(WLST) 논의를 단일 수치에 고정해서는 안 됩니다 — 나이, NIHSS, 혈당, 경색 용적, 또는 ASTRAL/DRAGON/iScore/THRIVE 같은 점수는 중증 AIS 환자에서 WLST를 정당화할 만큼 단독으로 신뢰할 수 없습니다. 확정적 신경예후 판단은 미루고, 진찰 전 교란요인(진정·대사이상)을 제거하며, 입원 초기 데이터가 아니라 시간 경과에 따른 다중모달 종합 그림으로 판단하십시오. 긍정적으로 기댈 수 있는 유일한 신호는 재관류 후 24시간 이내의 조기 신경학적 호전으로 좋은 예후를 시사하므로, 성급한 비관과 자기실현적 예언을 피하도록 상담을 구성하고, 대뇌반구 대경색 환자·대리인에게는 악화 전에 선제적으로 불확실성을 명확히 전달하며 상담하십시오.</p>
+        <div class="src-box"><div class="src-h">🔎 출처</div><a href="https://pubmed.ncbi.nlm.nih.gov/41942818/" target="_blank" rel="noopener" class="src-li">PubMed — PMID 41942818</a><a href="https://doi.org/10.1007/s12028-026-02486-3" target="_blank" rel="noopener" class="src-li">Journal (DOI) — 10.1007/s12028-026-02486-3</a><a href="https://link.springer.com/article/10.1007/s12028-026-02486-3" target="_blank" rel="noopener" class="src-li">웹 — Springer Nature Link — Guidelines for Neuroprognostication in Critically ill Adults with Acute Ischemic Stroke (Neurocritical Care, 2026)</a><a href="https://pbrainmd.wordpress.com/2026/04/12/ncs-guidelines-prognosis-in-ais-5-main-points/" target="_blank" rel="noopener" class="src-li">웹 — pbrainmd — NCS Guidelines Prognosis in AIS: 5 main points</a><a href="https://criticalcarenews.wordpress.com/2026/04/20/guidelines-for-neuroprognostication-in-critically-ill-adults-with-acute-ischemic-stroke/" target="_blank" rel="noopener" class="src-li">웹 — Critical Care News — Guidelines for Neuroprognostication in Critically ill Adults with Acute Ischemic Stroke</a></div>
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/41942818/" target="_blank" rel="noopener" class="lnk">PubMed 41942818</a> · <a href="https://doi.org/10.1007/s12028-026-02486-3" target="_blank" rel="noopener" class="lnk">DOI</a> · 가이드라인 캐치업</div>
+      </div>
+    </article></div>
+</details>
+<!-- /GSECTION:2026-07-13 -->
+<!-- GSECTION:2026-07-06-m-42373461 -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="t-badge" style="background:linear-gradient(90deg,#b45309,#f59e0b)">직접 지정</span><span class="day-date">2026-07-06</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 2026. 07. 06. 20:49</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span><div><div class="day-prev-t">2026 Surviving Sepsis Campaign 가이드라인: 근거 업데이트에서 임상 적용까지</div><div class="day-prev-m">Surviving Sepsis Campaign (SCCM/ESICM) · 2026</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="guideline-card">
+      <div class="pc-top gl-top">
+        <div class="medal gl-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span><span class="chip org">Surviving Sepsis Campaign (SCCM/ESICM)</span><span class="chip yr">2026</span></div>
+        <div class="ttl">2026 Surviving Sepsis Campaign 가이드라인: 근거 업데이트에서 임상 적용까지</div>
+        <div class="ttle">[The 2026 Surviving Sepsis Campaign guidelines: from evidence updates to practice implementation].</div>
+        <p class="txt ko" style="margin-top:6px">성인 패혈증 및 패혈성 쇼크 환자의 조기 인지·진단·초기 소생부터 급성기 치료, 회복·퇴원 후 장기 관리(전 경과 관리)까지를 다루는 국제 임상진료지침입니다. 2021년판을 체계적으로 개정한 것으로, 위험도 계층화(risk stratification)에 기반한 정밀의료와 자원 제한 환경(resource-limited settings)을 위한 독립 권고 체계를 새로 포함합니다.</p>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>Zhonghua yi xue za zhi · 2026 · PMID 42373461</div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5fb3a0"/></svg></span>핵심 권고</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Give balanced crystalloids over 0.9% saline for initial resuscitation (recommendation strengthened; moderate certainty), with normal saline reserved for sepsis with traumatic brain injury; suggested initial bolus ≥30 mL/kg within 3 hours (conditional, low certainty).</p><p class="txt ko">초기 소생에는 0.9% 생리식염수보다 balanced crystalloid를 사용(권고 강도 상향, moderate certainty), 단 외상성 뇌손상 동반 패혈증에서는 생리식염수 사용; 초기 볼루스는 3시간 내 ≥30 mL/kg 제안(conditional, low certainty).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Start vasopressors peripherally rather than delaying for central access (conditional, very low certainty); norepinephrine remains first-line but is now a conditional (suggest) rather than strong recommendation when compared against vasopressin or angiotensin II.</p><p class="txt ko">중심정맥 확보를 기다리지 말고 승압제를 말초로 시작할 것을 제안(conditional, very low); norepinephrine은 여전히 1차이지만 vasopressin·angiotensin II와 비교 시 strong이 아닌 conditional(제안)로 하향.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Target MAP ≥65 mmHg for the general population (strong, moderate), with a new age-specific option of 60–65 mmHg for older adults (≥65 years) (conditional, low certainty).</p><p class="txt ko">일반 환자는 MAP ≥65 mmHg 목표(strong, moderate)이며, 고령자(≥65세)에 대해 60–65 mmHg 목표라는 새로운 연령별 옵션 추가(conditional, low).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Recommend prolonged/extended-infusion beta-lactams over bolus dosing (upgraded from suggest to recommend), and recommend antimicrobial de-escalation once microbiologic diagnosis and susceptibility are confirmed (upgraded to recommend).</p><p class="txt ko">beta-lactam은 볼루스보다 지속/연장 주입(prolonged infusion)을 권고(suggest→recommend 상향), 미생물 진단·감수성 확인 시 항생제 de-escalation 권고(recommend로 상향).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Use serial lactate trending (not normalization) to guide resuscitation and individualize fluids after the initial bolus (restrictive vs liberal both acceptable); initiate active fluid removal/de-resuscitation once the initial resuscitation phase is complete (new).</p><p class="txt ko">젖산 정상화가 아닌 serial lactate 추세로 소생을 유도하고 초기 볼루스 이후 수액을 개별화(제한적·자유로운 전략 모두 허용); 초기 소생기 완료 후에는 능동적 수액 제거(de-resuscitation)를 시작(신규).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">For sepsis-associated respiratory failure, favor high-flow nasal cannula as the initial device, use individualized oxygen targets, and consider awake proning in non-intubated hypoxemic patients (conditional, very low certainty).</p><p class="txt ko">패혈증 관련 호흡부전에는 초기 장치로 HFNC를 우선하고, 산소 목표를 개별화하며, 비삽관 저산소 환자에서 awake proning을 고려(conditional, very low).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Recommend against routine antipyretics (for outcome improvement), probiotics, and beta blockers for treatment of sepsis/septic shock; recommend against blood purification (hemoperfusion, high-dose hemofiltration, plasma exchange); use POCUS to guide resuscitation (conditional).</p><p class="txt ko">임상결과 개선 목적의 통상적 해열제, probiotics, beta blocker의 치료적 사용을 반대; 혈액정화(hemoperfusion, 고용량 hemofiltration, 혈장교환)를 반대; 소생 유도에 POCUS 사용(conditional).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Emphasize whole-course/transitions-of-care management: advance care planning, pharmacist-led medication reconciliation, structured post-discharge support, and mental-health access for survivors, plus a separate recommendation set for resource-limited settings.</p><p class="txt ko">전 경과 관리·이행기 관리 강조: 사전연명의료계획(ACP), 약사 주도 약물 조정(medication reconciliation), 체계적 퇴원 후 지원, 생존자 정신건강 접근성; 자원 제한 환경을 위한 별도 권고 체계 신설.</p></div></li></ul>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>이전 판 대비 주요 변경점</div><div class="gl-changes">
+      <div class="gl-chg"><div class="gl-chg-t">승압제 선택 (norepinephrine 1차)</div><p class="txt">Norepinephrine as first-line vasopressor was DOWNGRADED from a strong recommendation to a conditional (suggest) recommendation when compared with vasopressin or angiotensin II, reflecting the growing role of these alternative/adjunct agents rather than a change in norepinephrine&#39;s primacy.</p><p class="txt ko">1차 승압제로서 norepinephrine 권고가 vasopressin 또는 angiotensin II와 비교할 때 strong에서 conditional(제안)로 하향되었습니다. norepinephrine의 우선순위 자체가 바뀐 것이 아니라 이들 대체·병용 약제의 역할 확대를 반영한 것입니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">말초 승압제 개시</div><p class="txt">New emphasis: start vasopressors through a peripheral line rather than delaying infusion until central venous access is obtained (conditional recommendation, very low certainty), enabling earlier hemodynamic support.</p><p class="txt ko">신규 강조점: 중심정맥로 확보를 기다리지 말고 말초 정맥로로 승압제를 시작할 것(conditional, very low certainty). 조기 혈역학 지지가 목적입니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">MAP 목표 (고령자)</div><p class="txt">MAP target ≥65 mmHg is retained for the general population (strong, moderate certainty), but a NEW age-specific option is added: a target of 60–65 mmHg for older adults (≥65 years) (conditional, low certainty), moving from uniform toward risk-stratified pressure targets.</p><p class="txt ko">일반 환자의 MAP ≥65 mmHg 목표는 유지(strong, moderate)되었으나, 고령자(≥65세)에 대해 60–65 mmHg 목표라는 연령별 옵션이 신설(conditional, low)되었습니다. 획일적 목표에서 위험도 계층화된 압력 목표로 이동한 것입니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">정질액 선택 (balanced vs saline)</div><p class="txt">Balanced crystalloids over 0.9% saline for resuscitation was strengthened (toward a recommend, moderate certainty) versus the weaker 2021 suggestion, with a new explicit exception: use normal saline in sepsis with traumatic brain injury.</p><p class="txt ko">소생 시 0.9% 생리식염수보다 balanced crystalloid 사용 권고가 2021년의 약한 제안에서 상향(recommend 방향, moderate certainty)되었고, 외상성 뇌손상 동반 패혈증에서는 생리식염수를 사용하라는 예외가 명시적으로 추가되었습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">초기 수액 소생량 및 이후 전략</div><p class="txt">Initial fluid bolus of ≥30 mL/kg within 3 hours is suggested (conditional, low certainty); after the initial phase, EITHER a restrictive or liberal strategy is acceptable based on individual factors — moving away from a fixed protocolized volume. Fluids should be individualized rather than continued to lactate normalization.</p><p class="txt ko">초기 수액 볼루스는 3시간 내 ≥30 mL/kg 제안(conditional, low). 초기기 이후에는 환자별 요인에 따라 제한적(restrictive) 또는 자유로운(liberal) 전략 모두 허용하여, 고정된 프로토콜 용량에서 벗어났습니다. 젖산 정상화까지 수액을 지속하지 말고 개별화해야 합니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">젖산 기반 소생</div><p class="txt">Use serial lactate trending to guide resuscitation rather than targeting full normalization, with a new remark cautioning against reflexive fluid boluses based on an elevated lactate alone (lactate elevation is multifactorial).</p><p class="txt ko">젖산의 완전 정상화를 목표하기보다 serial lactate 추세로 소생을 유도하며, 젖산 상승만으로 반사적 수액 볼루스를 주지 말라는 remark가 새로 추가되었습니다(젖산 상승은 다인성).</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">능동적 수액 제거 (de-resuscitation)</div><p class="txt">NEW recommendation to prevent fluid overload by initiating active fluid removal/de-resuscitation once the initial resuscitation phase is complete — the guideline explicitly extends beyond the give-fluids acute phase to fluid management across the course.</p><p class="txt ko">수액 과부하 예방을 위해 초기 소생기 완료 후 능동적 수액 제거(de-resuscitation)를 시작하라는 신규 권고입니다. 수액 투여 급성기를 넘어 전 경과에 걸친 수액 관리로 명시적으로 확장했습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">항생제 투여 시점</div><p class="txt">Antibiotics within 1 hour is retained (strong, very low certainty) for septic shock and for sepsis without shock; but for POSSIBLE sepsis without shock a more lenient window of up to 3 hours is now suggested (conditional), allowing time for diagnostic evaluation in lower-probability cases.</p><p class="txt ko">패혈성 쇼크 및 쇼크 없는 패혈증에서는 1시간 내 항생제(strong, very low)가 유지되지만, &#39;가능성 있는(possible)&#39; 쇼크 없는 패혈증에서는 최대 3시간까지의 완화된 창(conditional)이 새로 제안되어, 확률이 낮은 사례에서 진단적 평가 시간을 허용합니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">beta-lactam 지속 주입</div><p class="txt">Prolonged/extended-infusion beta-lactams over intermittent bolus dosing was UPGRADED from a conditional suggestion to a strong recommendation.</p><p class="txt ko">간헐적 볼루스보다 beta-lactam의 지속/연장 주입(prolonged infusion) 권고가 conditional(제안)에서 strong(권고)로 상향되었습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">항생제 de-escalation</div><p class="txt">Antimicrobial de-escalation once a confirmed microbiologic diagnosis and susceptibility are available was UPGRADED from suggest to recommend, reinforcing stewardship.</p><p class="txt ko">미생물 진단과 감수성이 확인되면 항생제 de-escalation을 시행하라는 권고가 suggest에서 recommend로 상향되어, 항생제 스튜어드십을 강화했습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">호흡 지지 (HFNC·산소목표·awake proning)</div><p class="txt">For sepsis-associated respiratory failure, high-flow nasal cannula is now favored as the INITIAL device; oxygen targets are individualized (either liberal ~≥96% or conservative ~90–93% by context, conditional low); and awake proning is suggested for non-intubated hypoxemic patients (conditional, very low certainty) — all newly addressed/expanded areas.</p><p class="txt ko">패혈증 관련 호흡부전에서 초기 장치로 HFNC를 우선하도록 새로 제시되었고, 산소 목표는 개별화(상황에 따라 자유로운 ≥96% 또는 보존적 90–93%, conditional low), 비삽관 저산소 환자에서 awake proning을 제안(conditional, very low)합니다 — 모두 신규 또는 확장된 영역입니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">부가 요법 반대 (해열제·probiotics·beta blocker)</div><p class="txt">New recommendations AGAINST routine antipyretics for improving clinical outcomes (symptomatic relief still permitted), AGAINST probiotics, and AGAINST beta blockers (including IV beta blockers, conditional, very low certainty) for treatment of sepsis/septic shock.</p><p class="txt ko">임상결과 개선 목적의 통상적 해열제 사용 반대(증상 완화 목적은 허용), probiotics 반대, 그리고 패혈증·패혈성 쇼크 치료를 위한 beta blocker(정맥 포함, conditional very low) 반대 권고가 신설되었습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">혈액정화(blood purification)</div><p class="txt">Recommendation against blood purification techniques was broadened to explicitly recommend AGAINST hemoperfusion, high-dose hemofiltration, and plasma exchange for sepsis/septic shock.</p><p class="txt ko">혈액정화 반대 권고 범위가 확대되어 hemoperfusion, 고용량 hemofiltration, 혈장교환(plasma exchange)을 명시적으로 반대하도록 했습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">sodium bicarbonate</div><p class="txt">Recommend against sodium bicarbonate to improve hemodynamics (conditional, low certainty), except in severe acidemia (pH ≤7.2) with acute kidney injury.</p><p class="txt ko">혈역학 개선 목적의 sodium bicarbonate 투여 반대(conditional, low), 단 중증 산증(pH ≤7.2)과 급성 신손상 동반 시는 예외입니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">POCUS 및 동적 지표</div><p class="txt">New conditional recommendation to use point-of-care ultrasound (POCUS) to guide resuscitation, and clarified preference for dynamic measures of fluid responsiveness over physical exam or static measures; capillary refill time endorsed as an adjunctive perfusion assessment.</p><p class="txt ko">소생 유도에 POCUS를 사용하라는 신규 conditional 권고, 그리고 수액 반응성 평가에서 신체진찰·정적 지표보다 동적 지표(dynamic measures)를 선호함을 명확히 했으며, capillary refill time을 보조적 관류 평가 도구로 인정했습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">전 경과·이행기 관리</div><p class="txt">New whole-course management emphasis: advance care planning, pharmacist-led medication reconciliation, structured post-discharge support programs, and access to mental-health services for sepsis survivors — extending the guideline scope from acute-phase treatment to long-term functional recovery.</p><p class="txt ko">전 경과 관리 강조가 신설되었습니다: 사전연명의료계획(ACP), 약사 주도 약물 조정, 체계적 퇴원 후 지원 프로그램, 패혈증 생존자의 정신건강 서비스 접근성 — 급성기 치료에서 장기 기능 회복까지로 범위를 확장했습니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">자원 제한 환경 별도 권고 체계</div><p class="txt">For the first time, an independent recommendation system for resource-limited settings was established (e.g., prioritizing early antimicrobials where care access is delayed, judicious empirical coverage guided by local epidemiology), shifting from a high-resource-center perspective to a global health-equity perspective.</p><p class="txt ko">자원 제한 환경을 위한 독립 권고 체계가 처음으로 마련되었습니다(예: 진료 접근이 지연되는 곳에서 조기 항생제 우선, 지역 역학 기반의 신중한 경험적 커버리지). 고자원 의료센터 관점에서 글로벌 보건 형평성 관점으로 전환한 것입니다.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">조기 인지·프로세스 (Code Sepsis)</div><p class="txt">Newly addressed process elements: prehospital/standardized screening tools, conditional support for multidisciplinary &#39;Code Sepsis&#39; huddles, blood cultures before antimicrobials when feasible (strong, low), and ICU admission within 6 hours (conditional, low).</p><p class="txt ko">새로 다뤄진 프로세스 요소: 병원 전 단계 표준화 선별도구, 다학제 &#39;Code Sepsis&#39; 허들에 대한 conditional 지지, 가능하면 항생제 전 혈액배양(strong, low), 6시간 내 ICU 입실(conditional, low).</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">방법론 재구성</div><p class="txt">Beyond individual recommendations, the 2026 guideline restructured its methodological framework — moving from simple evidence updates toward a rebuilt GRADE-based methodology and risk-stratified (precision) approach, with 129 total statements including 46 not previously addressed.</p><p class="txt ko">개별 권고를 넘어 2026 가이드라인은 방법론적 틀 자체를 재구성했습니다 — 단순 근거 업데이트에서 GRADE 기반 방법론 재정비와 위험도 계층화(정밀) 접근으로 이동했으며, 총 129개 진술(이 중 46개는 이전에 다루지 않은 신규)로 구성됩니다.</p></div></div>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 임팩트</div><p class="txt">At the bedside, EM/CCM clinicians should default to balanced crystalloids, avoid rigid &#39;fluids until lactate normalizes&#39; behavior, and be ready to start norepinephrine through a peripheral line early rather than chasing central access — while individualizing the MAP target (accepting 60–65 mmHg in patients ≥65). Antibiotic practice tightens toward extended-infusion beta-lactams and prompt de-escalation, and the possible-sepsis-without-shock 3-hour window relieves pressure to reflexively bolus antibiotics in low-probability cases. Respiratory failure should be managed with HFNC first and awake proning considered, and clinicians should actively de-resuscitate (remove fluid) once stabilized while dropping antipyretics, probiotics, beta blockers, and blood-purification devices from routine care. Finally, disposition planning now formally includes ICU admission within ~6 hours, advance care planning, medication reconciliation, and post-discharge/mental-health follow-up for survivors.</p><p class="txt ko">침상에서 EM/CCM 임상의는 balanced crystalloid를 기본으로 하고 &#39;젖산 정상화까지 수액&#39; 관행을 버리며, 중심정맥 확보를 쫓기보다 말초로 norepinephrine을 조기에 시작할 준비를 해야 합니다 — MAP 목표는 개별화하여 ≥65세에서는 60–65 mmHg를 허용합니다. 항생제는 beta-lactam 연장 주입과 신속한 de-escalation으로 정교화되며, &#39;쇼크 없는 가능성 있는 패혈증&#39;의 3시간 창은 확률이 낮은 사례에서 반사적 항생제 볼루스 압박을 완화합니다. 호흡부전은 HFNC를 먼저 쓰고 awake proning을 고려하며, 안정화 후에는 능동적으로 수액을 제거(de-resuscitation)하고 통상적 해열제·probiotics·beta blocker·혈액정화 장치를 일상 진료에서 제외해야 합니다. 마지막으로 처치 계획에 ~6시간 내 ICU 입실, 사전연명의료계획, 약물 조정, 생존자의 퇴원 후·정신건강 추적관찰이 공식적으로 포함됩니다.</p>
+        <div class="src-box"><div class="src-h">🔎 출처</div><a href="https://pubmed.ncbi.nlm.nih.gov/42373461/" target="_blank" rel="noopener" class="src-li">PubMed — PMID 42373461</a><a href="https://doi.org/10.3760/cma.j.cn112137-20260421-01074" target="_blank" rel="noopener" class="src-li">Journal (DOI) — 10.3760/cma.j.cn112137-20260421-01074</a><a href="https://emcrit.org/emcrit/ssc-2026-sepsis-guidelines/" target="_blank" rel="noopener" class="src-li">웹 — EMCrit 422 — SSC 2026 Sepsis Guidelines (lead author Hallie Prescott)</a><a href="https://www.guidelinecentral.com/insights/mar-2026-sccmesicm-sepsis-guideline-spotlight/" target="_blank" rel="noopener" class="src-li">웹 — GuidelineCentral — 2026 SCCM/ESICM Sepsis Guideline Spotlight</a><a href="https://criticalcarescience.org/article/using-the-2026-surviving-sepsis-campaign-guidelines-in-practice/" target="_blank" rel="noopener" class="src-li">웹 — Critical Care Science — Using the 2026 SSC Guidelines in Practice</a><a href="https://www.esicm.org/2026-surviving-sepsis-campaing-guidelines/" target="_blank" rel="noopener" class="src-li">웹 — ESICM — The 2026 Surviving Sepsis Campaign Guidelines released</a><a href="https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026" target="_blank" rel="noopener" class="src-li">웹 — SCCM — Surviving Sepsis Campaign 2026 Adult Guidelines</a><a href="https://www.pulmonologyadvisor.com/features/surviving-sepsis-campaign-guidelines-2026/" target="_blank" rel="noopener" class="src-li">웹 — Pulmonology Advisor — 2026 SSC Guidelines Provide Definitive New Recommendations</a></div>
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/42373461/" target="_blank" rel="noopener" class="lnk">PubMed 42373461</a> · <a href="https://doi.org/10.3760/cma.j.cn112137-20260421-01074" target="_blank" rel="noopener" class="lnk">DOI</a> · 가이드라인 캐치업</div>
+      </div>
+    </article></div>
+</details>
+<!-- /GSECTION:2026-07-06-m-42373461 -->
+<!-- GSECTION:2026-07-02 -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="day-date">2026-07-02</span><span class="gl-tag">📋 가이드라인</span><span class="day-gen">생성 2026. 07. 02. 17:37</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span><div><div class="day-prev-t">소아 패혈증 및 패혈성 쇼크 관리에 관한 Surviving Sepsis Campaign 국제 진료지침 2026</div><div class="day-prev-m">Surviving Sepsis Campaign (SCCM/ESICM) · 2026</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="guideline-card">
+      <div class="pc-top gl-top">
+        <div class="medal gl-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📋 가이드라인</span><span class="chip org">Surviving Sepsis Campaign (SCCM/ESICM)</span><span class="chip yr">2026</span></div>
+        <div class="ttl">소아 패혈증 및 패혈성 쇼크 관리에 관한 Surviving Sepsis Campaign 국제 진료지침 2026</div>
+        <div class="ttle">Surviving Sepsis Campaign International Guidelines for the Management of Sepsis and Septic Shock in Children 2026.</div>
+        <p class="txt ko" style="margin-top:6px">재태 37주 이후 신생아부터 18세 청소년(영아·학령기 아동 포함)에서 패혈증 또는 패혈성 쇼크의 인지·초기 소생·혈역학 지지·항생제·기계환기·체외지지 및 회복기(장기 추적) 관리를 다루는 국제 진료지침입니다. 61개 권고(강한 권고 5, 조건부 24, 모범임상문 10) 중 대부분이 낮은 근거수준에 기반하며, 22개 PICO 질문에서는 권고를 내리지 못했습니다.</p>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>Pediatric critical care medicine : a journal of the Society of Critical Care Medicine and the World Federation of Pediatric Intensive and Critical Care Societies · 2026 · PMID 41869844</div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5fb3a0"/></svg></span>핵심 권고</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">In settings with ICU access, for septic shock give up to 40–60 mL/kg of bolus fluid (10–20 mL/kg per bolus) titrated to perfusion over the first hour (conditional, low certainty); use balanced/buffered crystalloids over 0.9% saline (conditional, very low) and crystalloids over albumin (conditional, moderate).</p><p class="txt ko">ICU 이용 가능 환경의 패혈성 쇼크: 첫 1시간 동안 관류 지표에 맞춰 10–20 mL/kg씩 최대 40–60 mL/kg 수액 볼루스(조건부, 낮은 근거). 결정질액은 0.9% 생리식염수보다 balanced/buffered 용액을 우선(조건부, 매우 낮음), 알부민보다 결정질액을 우선(조건부, 중등도).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">In settings WITHOUT ICU access: for sepsis WITHOUT hypotension, do NOT give a fluid bolus — start maintenance fluids (strong, high certainty); for hypotensive septic shock give up to 40 mL/kg bolus in 10–20 mL/kg increments (conditional, low).</p><p class="txt ko">ICU 이용 불가 환경: 저혈압이 없는 패혈증에는 볼루스 금지, 유지수액으로 시작(강한 권고, 높은 근거). 저혈압성 패혈성 쇼크에는 10–20 mL/kg씩 최대 40 mL/kg 볼루스(조건부, 낮음).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Start antimicrobial therapy as soon as possible — ideally within 1 hour for septic shock (strong, very low certainty) and within 3 hours for sepsis without shock (conditional, very low); obtain blood cultures first when feasible (good practice) and do not delay antibiotics for central access.</p><p class="txt ko">항생제는 가능한 한 빨리 — 패혈성 쇼크는 인지 후 1시간 이내(강한 권고, 매우 낮음), 쇼크 없는 패혈증은 3시간 이내(조건부, 매우 낮음). 가능하면 혈액배양을 먼저 시행(모범임상문)하고, 중심정맥 확보를 기다리느라 항생제를 늦추지 말 것.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Measure blood lactate as part of the initial evaluation and management (strong recommendation, very low certainty).</p><p class="txt ko">혈중 젖산(lactate)을 초기 평가·관리의 일부로 측정(강한 권고, 매우 낮은 근거).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Initiate vasoactive agents via peripheral IV rather than delaying for central access (conditional, very low); insufficient evidence to prefer epinephrine vs norepinephrine as first-line; add vasopressin or further titrate catecholamines in high-dose catecholamine shock (conditional, low).</p><p class="txt ko">승압제는 중심정맥 확보를 기다리기보다 말초 IV로 시작(조건부, 매우 낮음). Epinephrine과 norepinephrine 중 1차 선택은 근거 불충분. 고용량 카테콜아민 쇼크에서는 vasopressin 추가 또는 카테콜아민 추가 적정(조건부, 낮음).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Use cardiac and lung POCUS to guide resuscitation where local training/resources allow (conditional, low), and target ScvO₂ ≥70% when central access is available (conditional, very low).</p><p class="txt ko">국소 교육·자원이 허용되면 심장·폐 POCUS로 소생을 유도(조건부, 낮음). 중심정맥 확보 시 ScvO₂ ≥70% 목표(조건부, 매우 낮음).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Titrate supplemental oxygen to a conservative SpO₂ target of 88–92% rather than &gt;94% (conditional, moderate); avoid etomidate for intubation (conditional, low); suggest against IV hydrocortisone in hemodynamically stable shock (conditional, low).</p><p class="txt ko">보조 산소는 &gt;94%가 아닌 보수적 SpO₂ 88–92%로 적정(조건부, 중등도). 삽관 시 etomidate 회피(조건부, 낮음). 혈역학적으로 안정된 쇼크에서는 IV hydrocortisone 사용 반대(조건부, 낮음).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Implement a hospital performance-improvement program (strong, very low), an individualized early rehabilitation bundle during acute illness (conditional, very low), and post-discharge assessment of post-sepsis morbidity risk (good practice).</p><p class="txt ko">병원 차원의 성과개선(performance improvement) 프로그램 시행(강한 권고, 매우 낮음), 급성기 중 개별화된 조기 재활 번들(조건부, 매우 낮음), 퇴원 후 패혈증 후 이환 위험 평가(모범임상문).</p></div></li></ul>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>이전 판 대비 주요 변경점</div><div class="gl-changes">
+      <div class="gl-chg"><div class="gl-chg-t">혈중 젖산(lactate) 측정 등급 상향</div><p class="txt">Blood lactate measurement was elevated to a STRONG recommendation as part of the initial evaluation and management of children with sepsis/septic shock, whereas the 2020 guideline gave only weaker guidance about using lactate. Rationale cited: lactate ≥2 mmol/L is independently associated with increased mortality, making it a priority initial-assessment measurement.</p><p class="txt ko">혈중 젖산 측정이 초기 평가·관리의 일부로서 '강한 권고'로 상향되었습니다(2020년에는 약한 수준의 지침). 근거: 젖산 ≥2 mmol/L이 사망률 증가와 독립적으로 연관되어 초기 평가에서 우선 측정 대상이 됨.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">보수적 산소포화도 목표(신설)</div><p class="txt">NEW: after resuscitation, titrate supplemental oxygen to a CONSERVATIVE SpO₂ target of 88–92% rather than a liberal target (&gt;94%) — conditional recommendation, moderate certainty. The 2020 guideline did not specify a conservative oxygenation target; the change reflects new evidence favoring avoidance of hyperoxia. Exceptions: anemia, hemoglobinopathy, cyanotic congenital heart disease.</p><p class="txt ko">신설: 소생 후 보조 산소를 자유로운 목표(&gt;94%)가 아닌 보수적 SpO₂ 88–92%로 적정(조건부 권고, 중등도 근거). 2020년에는 보수적 산소화 목표가 명시되지 않았으며, 고산소혈증 회피를 지지하는 새 근거를 반영. 예외: 빈혈, 혈색소병증, 청색성 선천성 심질환.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">POCUS 도입(신설)</div><p class="txt">NEW: a conditional recommendation to use cardiac and lung point-of-care ultrasound (POCUS) to guide resuscitation over not using POCUS, where local training and resources allow (low certainty). This topic was not addressed in the 2020 guideline and is one of the 20 new recommendations.</p><p class="txt ko">신설: 국소 교육·자원이 허용되는 경우 심장·폐 POCUS를 사용해 소생을 유도하도록 하는 조건부 권고(낮은 근거). 2020년에는 다루지 않았던 주제로, 20개 신규 권고 중 하나.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">회복기·조기 재활(신설)</div><p class="txt">NEW: suggest implementing an individualized, early rehabilitation bundle during the acute illness (conditional, very low certainty). Not present in 2020. Rationale: 30–40% of children surviving ICU-level sepsis face lasting physical/cognitive/psychological sequelae.</p><p class="txt ko">신설: 급성 질환 기간 중 개별화된 조기 재활 번들 시행을 제안(조건부, 매우 낮은 근거). 2020년에는 없던 항목. 근거: ICU 수준 패혈증 생존 소아의 30–40%가 지속적 신체·인지·정신 후유증을 경험.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">패혈증 후 이환 추적(신설)</div><p class="txt">NEW: assess risk factors for post-sepsis morbidity, educate patients/families/clinicians, and evaluate for new sequelae after discharge (good practice / clinical-consensus statement). Long-term follow-up of post-sepsis morbidity was newly added versus 2020, though evidence was insufficient to recommend a specific structured follow-up program.</p><p class="txt ko">신설: 퇴원 후 패혈증 후 이환 위험인자 평가, 환자·가족·의료진 교육, 새로운 후유증 평가(모범임상문/임상적 합의). 2020년 대비 장기 추적 항목이 신설되었으나, 특정 구조화된 추적 프로그램을 권고할 근거는 불충분.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">프로칼시토닌 기반 항생제 감량</div><p class="txt">Suggest AGAINST routinely using procalcitonin to guide antimicrobial de-escalation when an active antimicrobial stewardship program is already in place (conditional recommendation, moderate certainty) — reflecting evidence that procalcitonin adds little where stewardship exists.</p><p class="txt ko">이미 활성화된 항생제 스튜어드십 프로그램이 있는 경우, 항생제 감량(de-escalation) 유도를 위해 프로칼시토닌을 일상적으로 사용하지 말 것을 제안(조건부 권고, 중등도 근거). 스튜어드십이 있는 환경에서 프로칼시토닌의 추가 이득이 적다는 근거 반영.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">수혈·혈액제제 권고 철회</div><p class="txt">The 2020 blood-product/transfusion recommendations were NOT re-reviewed in 2026; the panel now defers to other dedicated guidelines (e.g., pediatric transfusion guidance) rather than restating a hemoglobin transfusion threshold. Practically, no SSC-specific pediatric transfusion trigger is carried in the 2026 document.</p><p class="txt ko">2020년의 혈액제제·수혈 권고는 2026년에 재검토되지 않았으며, 패혈증 지침 자체에 혈색소 수혈 역치를 재기술하지 않고 별도의 전용 지침(소아 수혈 지침 등)을 따르도록 위임. 즉, 2026 문서에는 SSC 고유의 소아 수혈 기준이 유지되지 않음.</p></div>
+      <div class="gl-chg"><div class="gl-chg-t">고용량 지속 신대체요법</div><p class="txt">For children requiring continuous renal replacement therapy, suggest high-volume hemofiltration (&gt;35 mL/kg/hr) over standard-volume (≤35 mL/kg/hr) (conditional, low certainty) — a specific dose-threshold recommendation refined in the 2026 update.</p><p class="txt ko">지속적 신대체요법이 필요한 소아에서 표준용량(≤35 mL/kg/hr)보다 고용량 혈액여과(&gt;35 mL/kg/hr)를 제안(조건부, 낮은 근거). 2026년 업데이트에서 구체적 용량 역치로 정리됨.</p></div></div>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>임상 임팩트</div><p class="txt">At the bedside, keep the familiar tiered fluid strategy (10–20 mL/kg boluses to 40–60 mL/kg with ICU backup, balanced crystalloids over saline, and NO bolus for non-hypotensive sepsis where ICU care is unavailable), but now treat a stat lactate as a strong, mandatory part of initial workup and start peripheral vasoactives early rather than waiting for central access. Antibiotics still must go in within 1 hour for shock / 3 hours for sepsis without shock, ideally after blood cultures, and never delayed for line placement. Adopt conservative oxygenation (SpO₂ 88–92%), avoid etomidate for intubation, avoid hydrocortisone in hemodynamically stable shock, and incorporate cardiac/lung POCUS where you are trained. Finally, extend care beyond the ICU: build early rehabilitation into the acute stay and screen survivors for post-sepsis morbidity at discharge.</p><p class="txt ko">침상에서는 익숙한 단계적 수액 전략(ICU 지원 하 10–20 mL/kg씩 40–60 mL/kg, 생리식염수보다 balanced 결정질액, ICU 이용 불가·저혈압 없는 패혈증에는 볼루스 금지)을 유지하되, 이제 즉시 젖산 측정을 초기 검사에 강한 권고로 반드시 포함하고 중심정맥 확보를 기다리지 말고 말초로 승압제를 조기 시작합니다. 항생제는 여전히 쇼크 1시간·쇼크 없는 패혈증 3시간 이내에, 가능하면 혈액배양 후 투여하되 라인 확보 때문에 지연시키지 않습니다. 보수적 산소화(SpO₂ 88–92%)를 적용하고, 삽관 시 etomidate를 피하며, 혈역학적으로 안정된 쇼크에서는 hydrocortisone을 피하고, 숙련된 경우 심장·폐 POCUS를 활용합니다. 마지막으로 급성기 중 조기 재활을 도입하고 퇴원 시 패혈증 후 이환을 선별하는 등 ICU 이후로 관리를 확장합니다.</p>
+        <div class="src-box"><div class="src-h">🔎 출처</div><a href="https://pubmed.ncbi.nlm.nih.gov/41869844/" target="_blank" rel="noopener" class="src-li">PubMed — PMID 41869844</a><a href="https://doi.org/10.1097/PCC.0000000000003927" target="_blank" rel="noopener" class="src-li">Journal (DOI) — 10.1097/PCC.0000000000003927</a><a href="https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-the-management-of-sepsis-and-septic-shock-in" target="_blank" rel="noopener" class="src-li">웹 — SCCM — SSC Pediatric Sepsis Guidelines 2026 (official page)</a><a href="https://www.guidelinecentral.com/guideline/5149074/" target="_blank" rel="noopener" class="src-li">웹 — Guideline Central — ESICM/SCCM SSC Pediatric 2026 Summary</a><a href="https://www.pulmonologyadvisor.com/features/pediatric-sepsis-guidelines-2026-ssc/" target="_blank" rel="noopener" class="src-li">웹 — Pulmonology Advisor — 2026 Pediatric Sepsis Guidelines Update</a><a href="https://pubmed.ncbi.nlm.nih.gov/41869844/" target="_blank" rel="noopener" class="src-li">웹 — PubMed — Weiss SL et al., SSC Pediatric 2026 (PMID 41869844)</a><a href="https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines" target="_blank" rel="noopener" class="src-li">웹 — SCCM — Original 2020 SSC Pediatric Guidelines (baseline for comparison)</a></div>
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/41869844/" target="_blank" rel="noopener" class="lnk">PubMed 41869844</a> · <a href="https://doi.org/10.1097/PCC.0000000000003927" target="_blank" rel="noopener" class="lnk">DOI</a> · 가이드라인 캐치업</div>
+      </div>
+    </article></div>
+</details>
+<!-- /GSECTION:2026-07-02 --><div class="tsec">
+  <div class="t"><span>🔖 기타 자료</span><span class="n">1건</span></div>
+  <div class="d">직접 지정한 참고자료 — 공인 문서가 아닐 수 있습니다(카드의 “출처 성격” 참고)</div>
+</div>
+<!-- GSECTION:2026-08-07-m-42555934 -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="t-badge" style="background:linear-gradient(90deg,#b45309,#f59e0b)">직접 지정</span><span class="day-date">2026-08-07</span><span class="gl-tag ref">🔖 기타 자료</span><span class="day-gen">생성 2026. 08. 07. 19:03</span>
+      <span class="day-chev"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span><div><div class="day-prev-t">실신(Syncope)</div><div class="day-prev-m">The New England Journal of Medicine (NEJM) — Clinical Practice review; authored by Rose Anne Kenny, Trinity College Dublin / St. James&#39;s Hospital Dublin · 2026-08-06</div></div></div>
+  </summary>
+  <div class="day-panel"><article class="guideline-card">
+      <div class="pc-top gl-top">
+        <div class="medal gl-medal"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">🔖 참고자료</span><span class="chip org">The New England Journal of Medicine (NEJM) — Clinical Practice review; authored by Rose Anne Kenny, Trinity College Dublin / St. James&#39;s Hospital Dublin</span><span class="chip yr">2026-08-06</span></div>
+        <div class="ttl">실신(Syncope)</div>
+        <div class="ttle">Syncope.</div>
+        <p class="txt ko" style="margin-top:6px">NEJM &#39;Clinical Practice&#39; 코너에 실린 단일 저자(Rose Anne Kenny)의 실신 종설로, 동료심사 학술지에 실린 서술형 임상 리뷰입니다. 실신의 정의·역학·기전별 분류(반사·기립성 저혈압·심장성), 진단적 평가와 위험도 층화, 기전별 치료를 다루며, 특히 고령자에서 실신과 원인불명 낙상의 중첩을 강조합니다.</p>
+        <div class="meta"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19V5"/></svg></span>The New England journal of medicine · 2026 · PMID 42555934</div>
+      </div>
+      <div class="pc-body">
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" width="100%" height="100%"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#5fb3a0"/></svg></span>핵심 내용</div><ul class="pc-ul">
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Definition/classification: syncope = transient LOC from transient cerebral hypoperfusion, usually &lt;1 min, classified as reflex, orthostatic-hypotension, or cardiac. Reflex syncope accounts for &gt;90% of cases in younger adults but only ~40% in older adults; cardiac syncope is ≤5% in young vs ~30% in older patients; carotid sinus syndrome causes 9–17% of syncope and up to 30% of otherwise-unexplained falls.</p><p class="txt ko">정의/분류: 실신 = 일시적 뇌 저관류에 의한 일과성 의식소실, 보통 1분 미만, 반사성·기립성 저혈압·심장성으로 분류. 반사성 실신은 젊은 성인에서 &gt;90%지만 고령자에서는 ~40%; 심장성은 젊은 층 ≤5% vs 고령자 ~30%; 경동맥동증후군은 실신의 9–17%, 원인불명 낙상의 최대 30%를 차지.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Diagnostic thresholds: vasovagal — SBP ≤80 mm Hg, HR &lt;40 bpm, or asystole ≥3 s; carotid sinus hypersensitivity — pause ≥3 s or SBP fall ≥50 mm Hg on carotid sinus massage; orthostatic hypotension — SBP drop ≥20 (or ≥30 with supine hypertension) or DBP drop ≥10 mm Hg within 3 min of standing; postprandial hypotension — SBP drop ≥20 mm Hg within 2 h of a meal.</p><p class="txt ko">진단 기준값: 혈관미주신경성 — SBP ≤80 mmHg, HR &lt;40회/분, 또는 무수축 ≥3초; 경동맥동 과민 — 경동맥동 마사지 시 정지 ≥3초 또는 SBP ≥50 mmHg 하강; 기립성 저혈압 — 기립 3분 이내 SBP ≥20(누운 상태 고혈압 동반 시 ≥30) 또는 DBP ≥10 mmHg 하강; 식후 저혈압 — 식후 2시간 이내 SBP ≥20 mmHg 하강.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Initial evaluation (class I): history + eyewitness account, physical exam, supine and standing BP, and ECG identify the cause in most patients. Carotid sinus massage (supine AND upright, with HR/BP monitoring) is advised in patients &gt;40 yr with suspected reflex syncope, syncope on head turning, or unexplained falls; head-up tilt-table testing when reflex syncope is suspected but unconfirmed.</p><p class="txt ko">초기 평가(class I): 병력 + 목격자 진술, 진찰, 누운/선 자세 혈압, 심전도로 대부분 원인 규명. 경동맥동 마사지(누운·선 자세 모두, HR/BP 감시 병행)는 반사성 실신 의심, 고개 돌릴 때 실신, 또는 원인불명 낙상이 있는 40세 초과 환자에 권고; 반사성 실신이 의심되나 확진 안 될 때 head-up tilt 검사.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">High-risk-for-cardiac features: age &gt;60 yr, cardiac/structural disease, male sex, brief prodrome, palpitations or chest pain, sudden syncope, syncope on exertion or while seated/supine, few (1–2) episodes, abnormal cardiac exam, family history of premature sudden death (&lt;50 yr). Injury-risk features: unexplained/recurrent falls, brief/absent prodrome, osteoporosis, cognitive impairment, polypharmacy (diuretics, antianginal, psychotropic, anticholinergic, opioid, anticoagulant/antiplatelet).</p><p class="txt ko">심장성 고위험 특징: 60세 초과, 심장·구조적 질환, 남성, 짧은 전구증상, 두근거림/흉통, 갑작스러운 실신, 운동 중 또는 앉거나 누운 자세에서의 실신, 발작 횟수 적음(1–2회), 비정상 심장 진찰, 조기(&lt;50세) 급사 가족력. 손상 위험 특징: 원인불명·반복 낙상, 짧거나 없는 전구증상, 골다공증, 인지장애, 다약제복용(이뇨제·항협심증·향정신·항콜린·오피오이드·항응고/항혈소판제).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Disposition: intermediate-risk unclear-cause patients can use a structured ED observation protocol with 6–12 h cardiac monitoring; hospital admission reserved for high-risk. A cited RCT (124 adults &gt;50 yr) found similar serious-outcome rates for ED observation vs admission at 30 days and 6 months, with substantially lower cost for observation.</p><p class="txt ko">처치 결정: 원인 불명확한 중등도 위험 환자는 6–12시간 심장 감시가 포함된 구조화된 응급실 관찰 프로토콜 가능, 입원은 고위험에 한정. 인용된 RCT(50세 초과 124명)에서 응급실 관찰 vs 입원의 중대 결과 발생률이 30일·6개월에 유사했고 관찰군 비용이 상당히 낮았음.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Pharmacology data cited: among antihypertensives the lowest hypotension risk was with ACE inhibitors (OR 0.85, 95% CI 0.81–0.89) and calcium-channel blockers (OR 0.81, 0.74–0.90); droxidopa and midodrine consistently reduced orthostatic symptoms; fludrocortisone showed only marginally nonsignificant reduction in recurrent vasovagal syncope (HR 0.69, 95% CI 0.46–1.03, P=0.07).</p><p class="txt ko">약물 데이터: 항고혈압제 중 저혈압 위험이 가장 낮은 것은 ACE 억제제(OR 0.85, 95% CI 0.81–0.89)와 칼슘차단제(OR 0.81, 0.74–0.90); droxidopa와 midodrine은 기립 증상을 일관되게 감소; fludrocortisone은 재발성 혈관미주신경성 실신 감소가 근소하게 비유의(HR 0.69, 95% CI 0.46–1.03, P=0.07).</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Device/procedure therapy: cardiac pacing reduced syncope recurrence by &gt;50% in meta-analyses of reflex syncope with documented bradycardia; cardioneural (ganglionated-plexus) ablation is investigational with RCTs ongoing (NCT03903744, NCT05573178, NCT05803148, NCT05461859, NCT04642976); ICDs for serious ventricular arrhythmia / high sudden-death risk.</p><p class="txt ko">기기/시술 치료: 서맥이 기록된 반사성 실신 메타분석에서 심장 박동조율이 재발을 &gt;50% 감소; 심장신경절제술(ganglionated-plexus 절제)은 아직 연구 단계로 RCT 진행 중(NCT03903744, NCT05573178, NCT05803148, NCT05461859, NCT04642976); 중대한 심실 부정맥/급사 고위험엔 ICD.</p></div></li>
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt">Prognosis and epidemiology: syncope affects one third to one half of people over a lifetime (women 22% vs men 15%); recurrent syncope carries higher risk of death (HR 1.87, 95% CI 1.26–2.77) and MACE (HR 2.69, 95% CI 2.02–3.59) over 24 months. Structured pathways plus prolonged rhythm monitoring cut &#39;unexplained&#39; syncope from ~37% to &lt;10%.</p><p class="txt ko">예후·역학: 실신은 평생 인구의 1/3~1/2에 발생(여성 22% vs 남성 15%); 재발성 실신은 24개월간 사망(HR 1.87, 95% CI 1.26–2.77)과 MACE(HR 2.69, 95% CI 2.02–3.59) 위험이 더 높음. 구조화된 경로 + 장기 리듬 감시로 &#39;원인불명&#39; 실신이 ~37%에서 &lt;10%로 감소.</p></div></li></ul>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>출처 성격</div><div class="gl-changes"><p class="txt ko">① 성격: 세계 최상위 동료심사 학술지 NEJM의 &#39;Clinical Practice&#39; 종설로, 편집·심사를 거친 신뢰도 높은 출처이나 학회 공식 가이드라인이 아니라 단일 저자(Rose Anne Kenny)의 서술형 임상 리뷰입니다. ② 자료 층위: 1차 연구가 아닌 2차 해설(리뷰)이며, 진단 알고리즘·표는 ESC(2018)·ACC-AHA-HRS(2017) 가이드라인과 Brignole·van Dijk 등의 문헌을 인용·각색한 것입니다. 특히 &#39;Conclusions&#39;의 증례 권고(예: 경동맥동증후군에 이중챔버 박동조율기로 바로 진행)는 저자 개인의 임상 판단(&#39;I would…&#39;)임을 명시하고 있어 가이드라인 등급 권고로 오독하면 안 됩니다. ③ 근거: 주요 수치·오즈비·위험비는 인용으로 뒷받침되나, 개별 연구의 표본·설계 세부는 본문에 완전히 제시되지 않습니다. ④ 기준 시점: 2026-08-06 발행(N Engl J Med 2026;395:582-591, DOI 10.1056/NEJMcp2517255). ⑤ 이해관계: 저자의 이해상충 공개·자금 출처는 제공된 본문에 포함되어 있지 않아 &#39;확인되지 않음&#39;; 실린더블루더 회사명(Abbott, Biotronik, Boston Scientific, Medtronic)은 상업적 추천이 아니라 이식형 감시장치 공급사 나열로 기재됨. 본 리뷰는 저자 스스로 &#39;ESC 가이드라인에 더 부합한다&#39;고 밝히고 있어 관점 편향 가능성을 감안해야 합니다.</p></div>
+        <div class="lbl gl-lbl"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#5fb3a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1.5 1.5 1.5 3h5c0-1.5.5-2 1.5-3a6 6 0 00-4-10z"/></svg></span>어떻게 쓰나</div><p class="txt">Use this as a high-quality, up-to-date narrative refresher on syncope evaluation and mechanism-based management, and as a practical crib for diagnostic thresholds (vasovagal, carotid sinus, orthostatic/postprandial hypotension) and ED risk stratification/observation. Because it is one expert&#39;s review rather than a guideline, treat the graded recommendations and the vignette-specific plan (notably proceeding directly to a dual-chamber pacemaker for carotid sinus syndrome) as informed opinion to corroborate against the primary ESC 2018 and ACC-AHA-HRS 2017 documents before acting, especially for device/procedure decisions and drug therapy where the author flags weak or nonsignificant evidence (e.g., fludrocortisone). It is well suited for teaching, bedside reasoning, and generating a differential/workup, but should not be cited as the definitive standard for pacing, ICD, or ablation indications.</p><p class="txt ko">실신의 평가와 기전 기반 치료를 최신 관점에서 정리한 양질의 서술형 참고자료로, 진단 기준값(혈관미주신경성·경동맥동·기립성/식후 저혈압)과 응급실 위험 층화·관찰 프로토콜의 실무 요약으로 활용하기 좋습니다. 다만 가이드라인이 아니라 단일 전문가의 리뷰이므로, 등급 권고와 증례별 계획(특히 경동맥동증후군에 바로 이중챔버 박동조율기 이식)은 &#39;전문가 의견&#39;으로 보고, 실제 시술·기기 결정 전에 1차 자료인 ESC 2018·ACC-AHA-HRS 2017 원문과 대조해 확인하십시오. 저자가 근거가 약하거나 비유의하다고 명시한 부분(예: fludrocortisone)은 특히 주의가 필요합니다. 교육·병상 추론·감별진단과 검사 계획 수립에는 적합하나, 박동조율·ICD·절제술 적응증의 확정 표준으로 인용하기에는 부적절합니다.</p>
+        <div class="src-box"><div class="src-h">🔎 출처</div><a href="https://pubmed.ncbi.nlm.nih.gov/42555934/" target="_blank" rel="noopener" class="src-li">PubMed — PMID 42555934</a><a href="https://doi.org/10.1056/NEJMcp2517255" target="_blank" rel="noopener" class="src-li">Journal (DOI) — 10.1056/NEJMcp2517255</a></div>
+        <div class="pc-foot"><a href="https://pubmed.ncbi.nlm.nih.gov/42555934/" target="_blank" rel="noopener" class="lnk">PubMed 42555934</a> · <a href="https://doi.org/10.1056/NEJMcp2517255" target="_blank" rel="noopener" class="lnk">DOI</a> · 직접 지정 참고자료</div>
+      </div>
+    </article></div>
+</details>
+<!-- /GSECTION:2026-08-07-m-42555934 -->
+  </div>
+    <div class="arch-table">
+    <div class="at-head"><span class="at-title">📋 가이드라인 누적</span><span class="at-count">6건</span></div>
+    <div class="at-scroll"><table>
+      <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
+      <tbody><!-- TABLE_ROWS_START --><tr data-pmid="web:www-idsociety-org-practice-guideline-amr-guidance" data-kind="guideline" data-guideline="1"><td class="c-date">2026-08-04</td><td class="c-jour">📋 IDSA</td><td class="c-title"><a href="https://www.idsociety.org/practice-guideline/amr-guidance/" target="_blank" rel="noopener">IDSA 2026 항균제 내성 그람음성균 감염 치료 지침</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="web:www-idsociety-org-practice-guideline-amr-guidance" aria-label="읽음"></td></tr><tr data-pmid="41122895" data-kind="guideline" data-guideline="1"><td class="c-date">2026-07-30</td><td class="c-jour">📋 AHA (ILCOR-informed)</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41122895/" target="_blank" rel="noopener">Part 12: 소생 교육 과학 — 2025 미국심장협회(AHA) 심폐소생술 및 응급심혈관치료 가이드라인</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41122895" aria-label="읽음"></td></tr><tr data-pmid="41236566" data-kind="guideline" data-guideline="1"><td class="c-date">2026-07-23</td><td class="c-jour">📋 ESICM</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41236566/" target="_blank" rel="noopener">순환성 쇼크 및 혈역학 모니터링에 관한 ESICM 2025 가이드라인</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41236566" aria-label="읽음"></td></tr><tr data-pmid="41942818" data-kind="guideline" data-guideline="1"><td class="c-date">2026-07-13</td><td class="c-jour">📋 NCS/DGNI</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41942818/" target="_blank" rel="noopener">중증 급성 허혈성 뇌졸중 성인 환자의 신경학적 예후예측(neuroprognostication) 가이드라인</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41942818" aria-label="읽음"></td></tr><tr data-pmid="42373461" data-kind="guideline" data-guideline="1"><td class="c-date">2026-07-06</td><td class="c-jour">📋 Surviving Sepsis Campaign (SCCM/ESICM)</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42373461/" target="_blank" rel="noopener">2026 Surviving Sepsis Campaign 가이드라인: 근거 업데이트에서 임상 적용까지</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42373461" aria-label="읽음"></td></tr><tr data-pmid="41869844" data-kind="guideline" data-guideline="1"><td class="c-date">2026-07-02</td><td class="c-jour">📋 Surviving Sepsis Campaign (SCCM/ESICM)</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41869844/" target="_blank" rel="noopener">소아 패혈증 및 패혈성 쇼크 관리에 관한 Surviving Sepsis Campaign 국제 진료지침 2026</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="41869844" aria-label="읽음"></td></tr><!-- TABLE_ROWS_END --></tbody>
+    </table></div>
+  </div>
+  <div class="arch-table">
+    <div class="at-head"><span class="at-title">🔖 기타 자료 누적</span><span class="at-count">1건</span></div>
+    <div class="at-scroll"><table>
+      <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
+      <tbody><!-- TABLE_ROWS_START --><tr data-pmid="42555934" data-kind="reference" data-guideline="1"><td class="c-date">2026-08-07</td><td class="c-jour">🔖 The New England Journal of Medicine (NEJM) — Clinical Practice review; authored by Rose Anne Kenny, Trinity College Dublin / St. James&#39;s Hospital Dublin</td><td class="c-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42555934/" target="_blank" rel="noopener">실신(Syncope)</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="42555934" aria-label="읽음"></td></tr><!-- TABLE_ROWS_END --></tbody>
+    </table></div>
+  </div>
+
+  
+  <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일 · <a href="https://njell85-spec.github.io/trend-review/">njell85-spec.github.io/trend-review</a></div>
+</div>
+<script>
+(function(){var K='tr_read_v1';var s;try{s=JSON.parse(localStorage.getItem(K))||{};}catch(e){s={};}
+document.querySelectorAll('.readcb').forEach(function(cb){var id=cb.dataset.pmid;var tr=cb.closest('tr');
+if(s[id]){cb.checked=true;tr.classList.add('is-read');}
+cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}tr.classList.toggle('is-read',cb.checked);});});})();
+</script>
+<!-- CURATION_BLOCK v4 -->
+<script>
+(function(){
+  var OWNER='njell85-spec', REPO='trend-review';
+  var API='https://api.github.com/repos/'+OWNER+'/'+REPO;
+  var PEND_TTL=45*60*1000; // 요청됨 표시 유지 시간 — 이 안에 상태 파일이 갱신된다
+  var state={hidden:{},materialized:{}};
+
+  function pat(force){
+    var t=localStorage.getItem('tr_pat');
+    if(!t||force){ t=prompt('GitHub Fine-grained PAT (이 저장소 actions:write 한정)\n최초 1회만 — 이 브라우저에만 저장됩니다.'); if(t){localStorage.setItem('tr_pat',t.trim());} }
+    return localStorage.getItem('tr_pat');
+  }
+  function pending(pmid,set){
+    var k='tr_cur_p_'+pmid;
+    if(set){ try{localStorage.setItem(k,String(Date.now()));}catch(e){} return true; }
+    var v=Number(localStorage.getItem(k)||0);
+    if(!v) return false;
+    if(Date.now()-v>PEND_TTL || (state.materialized&&state.materialized[pmid])){ try{localStorage.removeItem(k);}catch(e){} return false; }
+    return true;
+  }
+  function statusOf(pmid){
+    var m=state.materialized&&state.materialized[pmid];
+    if(m) return {k:'done',date:String(m.date||'').slice(5)};
+    if(pending(pmid)) return {k:'pending'};
+    return {k:'none'};
+  }
+  function chipHtml(st,small){
+    var pad=small?'3px 8px':'5px 11px', fs=small?'10px':'10.5px';
+    if(st.k==='done') return '<span style="font-size:'+fs+';font-weight:800;padding:'+pad+';border-radius:99px;background:#ecfdf5;color:#059669;border:1px solid #b6e6da;white-space:nowrap">\uD83C\uDFAC \uC790\uB8CC\uD654\uB428'+(st.date?' \u00B7 '+st.date:'')+'</span>';
+    if(st.k==='pending') return '<span style="font-size:'+fs+';font-weight:800;padding:'+pad+';border-radius:99px;background:#fef9c3;color:#a16207;white-space:nowrap">\u23F3 \uC694\uCCAD\uB428</span>';
+    return small?'<span style="color:#cbd5e1">\u2014</span>':'<span style="font-size:'+fs+';font-weight:800;padding:'+pad+';border-radius:99px;background:#f1f5f9;color:#94a3b8;white-space:nowrap">\uBBF8\uC790\uB8CC\uD654</span>';
+  }
+  function dispatch(workflow,inputs,done){
+    var t=pat(false); if(!t){alert('\uD1A0\uD070\uC774 \uD544\uC694\uD569\uB2C8\uB2E4 \u2014 \uC704\uC82F\uC758 "\uC9C1\uC811 \uC785\uB825 \u00B7 \uD1A0\uD070 \uC124\uC815"\uC5D0\uC11C \uB4F1\uB85D\uD558\uC138\uC694.');return;}
+    fetch(API+'/actions/workflows/'+workflow+'/dispatches',{
+      method:'POST',
+      headers:{'Authorization':'Bearer '+t,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main',inputs:inputs})
+    }).then(function(r){
+      if(r.status===204){done();}
+      else if(r.status===401||r.status===403){alert('\u2716 \uD1A0\uD070 \uC778\uC99D \uC2E4\uD328 \u2014 \uC704\uC82F\uC5D0\uC11C \uD1A0\uD070\uC744 \uC7AC\uC124\uC815\uD558\uC138\uC694.');}
+      else{alert('\u2716 \uC694\uCCAD \uC2E4\uD328 (HTTP '+r.status+')');}
+    }).catch(function(){alert('\u2716 \uB124\uD2B8\uC6CC\uD06C \uC624\uB958');});
+  }
+  function pmidOfCard(card){
+    var a=card.querySelector('.pc-foot a[href*="pubmed.ncbi.nlm.nih.gov"]');
+    var m=a&&a.href.match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/);
+    return m?m[1]:'';
+  }
+  // details 요소의 정체성 = 자신을 감싸는 첫 번째 G?SECTION 주석 (태그+키 쌍).
+  // 형제 체인 전체를 특정 키로 스캔하면 더 오래된 섹션이 전부 오인된다(리뷰 M1).
+  function sectionInfoOfDetails(el){
+    var n=el&&el.previousSibling;
+    while(n){
+      if(n.nodeType===8){
+        var m=String(n.nodeValue).match(/^\s*(G?SECTION):(\S+)/);
+        if(m) return {tag:m[1],key:m[2]};
+      }
+      n=n.previousSibling;
+    }
+    return null;
+  }
+  function sectionInfoOf(card){
+    var el=card.closest('details');
+    return el?sectionInfoOfDetails(el):null;
+  }
+  function onRemove(info,pmid,hideEls){
+    if(!info){alert('\uC139\uC158 \uD0A4\uB97C \uCC3E\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.');return;}
+    if(!confirm('\uC774 \uD56D\uBAA9\uC744 \uB300\uC2DC\uBCF4\uB4DC\uC5D0\uC11C \uC0AD\uC81C\uD560\uAE4C\uC694?\n(\uC544\uCE74\uC774\uBE0C\u00B7\uC7AC\uC120\uC815 \uBC29\uC9C0 \uBAA9\uB85D\uC740 \uC720\uC9C0\uB429\uB2C8\uB2E4)'))return;
+    dispatch('curate-remove.yml',{sectionKey:info.key,tag:info.tag,pmid:pmid},function(){
+      hideEls.forEach(function(el){if(el)el.style.display='none';});
+    });
+  }
+  function onMaterialize(pmid,refresh){
+    if(!pmid){alert('PMID\uB97C \uCC3E\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.');return;}
+    if(statusOf(pmid).k==='done')return;
+    if(!confirm('\uCE74\uB4DC\uB274\uC2A4\u00B7\uC601\uC0C1\uC744 \uC0DD\uC131\uD558\uACE0 YouTube \uBE44\uACF5\uAC1C \uC5C5\uB85C\uB4DC\uD560\uAE4C\uC694?\n(\uC218 \uBD84 \uC18C\uC694 \u2014 \uC644\uB8CC \uD6C4 \uC0C1\uD0DC\uAC00 \uC790\uB8CC\uD654\uB428\uC73C\uB85C \uBC14\uB01D\uB2C8\uB2E4)'))return;
+    dispatch('materialize.yml',{pmid:pmid},function(){ pending(pmid,true); refresh(); });
+  }
+  function btn(label,kind,small){
+    var b=document.createElement('button');
+    b.textContent=label;
+    b.style.cssText = kind==='del'
+      ? 'font-size:'+(small?'13px':'12px')+';font-weight:800;padding:'+(small?'4px 8px':'7px 13px')+';border-radius:8px;border:1px solid #fdba74;background:#fff7ed;color:#b45309;cursor:pointer'
+      : 'font-size:'+(small?'13px':'12px')+';font-weight:800;padding:'+(small?'4px 8px':'7px 13px')+';border-radius:8px;border:0;background:linear-gradient(90deg,#5b8fd9,#7dabe8);color:#fff;cursor:pointer';
+    return b;
+  }
+  function addCardControls(){
+    var cards=document.querySelectorAll('.paper-card,.guideline-card');
+    for(var i=0;i<cards.length;i++)(function(card){
+      if(card.querySelector('.cur-row'))return;
+      var foot=card.querySelector('.pc-foot'); if(!foot)return;
+      var pmid=pmidOfCard(card), info=sectionInfoOf(card);
+      var row=document.createElement('div');
+      row.className='cur-row';
+      row.style.cssText='display:flex;align-items:center;gap:8px;margin-top:16px;flex-wrap:wrap';
+      var chip=document.createElement('span');
+      function paint(){
+        var st=statusOf(pmid);
+        chip.innerHTML=chipHtml(st,false);
+        mat.disabled=(st.k!=='none');
+        if(st.k==='done'){mat.style.background='#e2e8f0';mat.style.color='#94a3b8';mat.textContent='\uD83C\uDFAC \uC790\uB8CC\uD654\uB428';}
+        else if(st.k==='pending'){mat.style.opacity='.55';}
+      }
+      var box=document.createElement('span');
+      box.style.cssText='margin-left:auto;display:flex;gap:8px';
+      var del=btn('\uD83D\uDDD1 \uC0AD\uC81C','del',false);
+      var mat=btn('\uD83C\uDFAC \uC790\uB8CC\uD654','mat',false);
+      del.addEventListener('click',function(){
+        var tr=pmid?document.querySelector('.arch-table tr[data-pmid="'+pmid+'"]'):null;
+        onRemove(info,pmid,[card.closest('details'),tr]);
+      });
+      mat.addEventListener('click',function(){onMaterialize(pmid,repaintAll);});
+      box.appendChild(del);box.appendChild(mat);
+      row.appendChild(chip);row.appendChild(box);
+      foot.parentNode.insertBefore(row,foot);
+      card._curPaint=paint; paint();
+    })(cards[i]);
+  }
+  function addTableControls(){
+    var table=document.querySelector('.arch-table table'); if(!table)return;
+    // 컬럼 2개 추가로 제목 컬럼이 눌려 세로로 길게 감기는 것 방지 —
+    // 제목에 최소 폭을 주고 넘치는 폭은 기존 가로 스크롤(.at-scroll)이 흡수한다.
+    // 폰 폭에서는 저널 컬럼을 숨겨 제목·자료화 상태가 스와이프 없이 보이게 한다
+    // (저널은 카드에 있고, 표의 목적은 스캔+큐레이션 — 태블릿 이상은 전 컬럼).
+    if(!document.getElementById('cur-style')){
+      var st=document.createElement('style'); st.id='cur-style';
+      st.textContent='.arch-table .c-title{min-width:170px}.arch-table .c-cur button{vertical-align:middle}'
+        +'@media(max-width:699px){.arch-table .c-jour,.arch-table thead th:nth-child(2){display:none}}'
+        +'@media(min-width:700px){.arch-table .c-jour{white-space:normal;max-width:150px}}';
+      document.head.appendChild(st);
+    }
+    var head=table.querySelector('thead tr');
+    if(head&&!head.querySelector('.th-cur')){
+      var thS=document.createElement('th'); thS.className='th-cur'; thS.textContent='\uC790\uB8CC\uD654'; thS.style.textAlign='center';
+      var thM=document.createElement('th'); thM.className='th-cur'; thM.textContent='\uAD00\uB9AC'; thM.style.textAlign='center';
+      var thRead=head.querySelector('.th-read');
+      head.insertBefore(thS,thRead); head.appendChild(thM);
+    }
+    var rows=table.querySelectorAll('tbody tr[data-pmid]');
+    for(var i=0;i<rows.length;i++)(function(tr){
+      if(tr.querySelector('.c-cur'))return;
+      var pmid=tr.getAttribute('data-pmid')||'';
+      var tdS=document.createElement('td'); tdS.className='c-cur'; tdS.style.cssText='text-align:center;white-space:nowrap';
+      var tdM=document.createElement('td'); tdM.className='c-cur'; tdM.style.cssText='text-align:center;white-space:nowrap';
+      function paint(){
+        var st=statusOf(pmid);
+        tdS.innerHTML=chipHtml(st,true);
+        mat.disabled=(st.k!=='none');
+        mat.style.opacity=(st.k==='none')?'1':'.45';
+      }
+      var del=btn('\uD83D\uDDD1','del',true); del.title='\uC0AD\uC81C';
+      var mat=btn('\uD83C\uDFAC','mat',true); mat.title='\uC790\uB8CC\uD654';
+      del.addEventListener('click',function(){
+        // 표에서 삭제 시 대응 카드의 섹션 태그+키는 카드 쪽에서 역탐색
+        var info=null,cardEl=null;
+        var cards=document.querySelectorAll('.paper-card,.guideline-card');
+        for(var j=0;j<cards.length;j++){ if(pmidOfCard(cards[j])===pmid){cardEl=cards[j];info=sectionInfoOf(cards[j]);break;} }
+        onRemove(info,pmid,[cardEl&&cardEl.closest('details'),tr]);
+      });
+      mat.addEventListener('click',function(){onMaterialize(pmid,repaintAll);});
+      tdM.appendChild(del);tdM.appendChild(document.createTextNode(' '));tdM.appendChild(mat);
+      var tdRead=tr.querySelector('.c-read');
+      tr.insertBefore(tdS,tdRead); tr.appendChild(tdM);
+      tr._curPaint=paint; paint();
+    })(rows[i]);
+  }
+  function repaintAll(){
+    var els=document.querySelectorAll('.paper-card,.guideline-card,.arch-table tbody tr[data-pmid]');
+    for(var i=0;i<els.length;i++){ if(els[i]._curPaint)els[i]._curPaint(); }
+  }
+  function applyHidden(){
+    // 상태 파일이 먼저 갱신되고 HTML 패치·배포가 늦는 구간의 표시 정합.
+    // 각 details의 "자기" 마커(태그:키)를 구해 숨김 목록과 대조한다 —
+    // 키 하나로 형제 체인을 훑으면 더 오래된 섹션까지 전부 숨는다(리뷰 M1).
+    var hid=state.hidden||{};
+    var all=document.querySelectorAll('.archive details');
+    for(var i=0;i<all.length;i++){
+      var info=sectionInfoOfDetails(all[i]);
+      if(info&&hid[info.tag+':'+info.key]) all[i].style.display='none';
+    }
+    Object.keys(hid).forEach(function(k){
+      var pm=(hid[k]||{}).pmid;
+      if(pm){var tr=document.querySelector('.arch-table tr[data-pmid="'+pm+'"]'); if(tr)tr.style.display='none';}
+    });
+  }
+  function init(){
+    fetch('output/curation_state.json?t='+Date.now())
+      .then(function(r){return r.ok?r.json():null})
+      .then(function(j){ if(j){state.hidden=j.hidden||{};state.materialized=j.materialized||{};} })
+      .catch(function(){})
+      .then(function(){ applyHidden(); addCardControls(); addTableControls(); });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
+</script>
+<!-- /CURATION_BLOCK -->
+</body>
+</html>
