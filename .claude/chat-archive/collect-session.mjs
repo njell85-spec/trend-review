@@ -447,16 +447,55 @@ function main() {
 
   if (PRINT_ONLY) { console.log(body); return; }
 
+  /* ── 갈래 0: 출력 경로가 못 박혀 있으면 그리로만 쓴다 (PC 로컬 세션) ────────
+   * PeterJ 데스크탑 세션은 저장소 밖에서 도는 것이 많아(사용량 실측 52건 중 17건 =
+   * 단일 최대 표면인데 대화는 0건이었다) 릴레이할 GC 클론도, 쓸 `.chat/`도 없다.
+   * 사용량이 이미 쓰는 길을 그대로 쓴다 — PC가 **Drive 동기화 폴더**에 떨어뜨리고
+   * 타워가 하루 한 번 걷는다(`pull-local-drive.mjs`). 새로 만드는 배관이 0이다.
+   * 종전 규칙에 "저장소 밖이라 실어 보낼 곳이 없다"고 적혀 있었는데 **그것은 틀렸다** —
+   * 사용량은 그 길로 이미 오고 있었다(2026-08-09 설계토론 F9). */
+  const outDir = process.env.CHAT_OUT_DIR;
+  if (outDir) {
+    const out = path.join(outDir, fileName);
+    mkdirSync(outDir, { recursive: true });
+    writeFileSync(out, body, 'utf8');
+    console.error(`[chat-archive] ${out} — ${turns.length}턴 (CHAT_OUT_DIR)`);
+    return;
+  }
+
   /* ── 갈래 판별 (설계 §3-2) — 추측하지 않고 파일의 유무로 가른다 ───────────── */
   const isTower = existsSync(path.join(root, 'tools', 'chat-archive'));
   const relayMarker = path.join(root, '.claude', 'chat-archive', 'relay-to-gc');
 
   if (isTower) {
+    /* 타워도 릴레이한다 (PeterJ 확정 2026-08-09 — 설계토론 F1).
+     *
+     * 종전에는 파일을 쓰고 스테이징만 했다. 그래서 **마지막 커밋 이후의 턴이 통째로
+     * 빠졌다** — 실물로 확인됐다: 08-08·08-09 아카이브가 "핸드오프를 쓰고 마무리하겠습니다"
+     * 에서 끊겨 있고, 두 세션 다 그 뒤로 한참 더 진행됐다. 잘리는 자리가 하필 4종 마무리
+     * 직후 = PeterJ의 마지막 지시가 나오는 자리다.
+     *
+     * 왜 `sessions/`가 아니라 `repos/global-config/`인가
+     *   릴레이 브랜치는 origin/main **전체 사본**이라, 수거기가 어떤 경로를 걷게 하면
+     *   다른 저장소의 낡은 릴레이 브랜치도 그 경로를 함께 덮어쓴다. `sessions/`를 수거
+     *   경로에 넣으면 2026-08-08 사고(낡은 사본이 main을 덮음)가 되살아난다 —
+     *   harvest-branches.test.sh [4]가 지키는 바로 그것이다. 그래서 타워도 다른 저장소와
+     *   똑같이 `repos/<repo>/` 밑에 쌓는다. 옛 `sessions/` 파일들은 그대로 둔다.
+     *
+     * 릴레이가 실패하면 종전 방식으로 되돌아간다 — 커밋에 의존하지만 아무것도 안 남는
+     * 것보다는 낫다. 그 경우 같은 세션의 파일이 두 곳에 생길 수 있는데, 중복은 되돌릴 수
+     * 있고 유실은 못 되돌린다. */
+    const r = relayToGc(root, { repo, fileName, body, id8 });
+    if (r.ok) {
+      if (r.changed) console.error(`[chat-archive] ${r.branch}에 올림 — ${turns.length}턴`);
+      return;
+    }
+    console.error(`[chat-archive] 타워 릴레이 실패(${r.why}) — 로컬 폴백으로 씁니다`);
     const out = path.join(root, 'data', 'chat-archive', 'sessions', fileName);
     mkdirSync(path.dirname(out), { recursive: true });
     writeFileSync(out, body, 'utf8');
     stage(out);
-    console.error(`[chat-archive] ${path.relative(root, out)} — ${turns.length}턴`);
+    console.error(`[chat-archive] ${path.relative(root, out)} — ${turns.length}턴 (커밋해야 남습니다)`);
     return;
   }
 
