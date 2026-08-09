@@ -1840,6 +1840,72 @@
       "fullTextSource": "abstract+registry",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-10",
+      "pmid": "42437551",
+      "title": "Factors associated with intensive care professionals' ability to identify patient-ventilator asynchronies: A systematic review and meta-analysis.",
+      "title_ko": "중환자 진료 전문가의 환자-인공호흡기 비동조(patient-ventilator asynchrony) 식별 능력과 연관된 요인: 체계적 문헌고찰 및 메타분석",
+      "journal": "Intensive & critical care nursing",
+      "doi": "10.1016/j.iccn.2026.104499",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "중환자 진료 전문가에서 어떤 요인(예: 기계환기 교육, 상급 학위 교육, 비동조/파형 해석 특정 교육, 직종)이 환자-인공호흡기 비동조를 정확히 식별하는 능력과 연관되는가?",
+      "pico": {
+        "population": "[International] Intensive care professionals; twelve studies including 4823 healthcare professionals were included, of which seven contributed data to the meta-analysis; searches ran from database inception to January 2026 across PubMed, LILACS, Cochrane Library, ScienceDirect, and EMBASE.",
+        "intervention": "Previous training in mechanical ventilation (also assessed: advanced academic training; specific training in asynchronies or waveform interpretation; profession) as factors associated with the ability to identify patient-ventilator asynchronies.",
+        "comparison": "Intensive care professionals without the corresponding factor (e.g., no previous training in mechanical ventilation, no advanced academic training, no specific asynchrony/waveform training).",
+        "outcome": "Correct identification of patient-ventilator asynchronies. Previous training in mechanical ventilation was significantly associated (OR = 3.49; 95% CI: 1.95-6.25; I² = 83%); advanced academic training was significantly associated (OR = 1.83; 95% CI: 1.07-3.16; I² = 28%). Statistical significance set at p < 0.05."
+      },
+      "pico_ko": {
+        "population": "[다국가] 중환자 진료 전문가; 총 12개 연구, 4823명의 의료 전문가가 포함되었고 그중 7개 연구가 메타분석에 데이터를 기여함; 검색은 데이터베이스 시작 시점부터 2026년 1월까지 PubMed, LILACS, Cochrane Library, ScienceDirect, EMBASE에서 수행됨.",
+        "intervention": "환자-인공호흡기 비동조 식별 능력과 연관된 요인으로서 기계환기에 대한 이전 교육(추가 평가: 상급 학위 교육; 비동조 또는 파형 해석에 대한 특정 교육; 직종).",
+        "comparison": "해당 요인이 없는 중환자 진료 전문가(예: 기계환기 이전 교육 없음, 상급 학위 교육 없음, 비동조/파형 특정 교육 없음).",
+        "outcome": "환자-인공호흡기 비동조의 정확한 식별. 기계환기에 대한 이전 교육은 유의하게 연관됨(OR = 3.49; 95% CI: 1.95-6.25; I² = 83%); 상급 학위 교육도 유의하게 연관됨(OR = 1.83; 95% CI: 1.07-3.16; I² = 28%). 통계적 유의성은 p < 0.05로 설정됨."
+      },
+      "keyFindings": [
+        "Previous training in mechanical ventilation was significantly associated with correctly identifying patient-ventilator asynchronies (OR = 3.49; 95% CI: 1.95-6.25; I² = 83%).",
+        "Advanced academic training was significantly associated with correct identification (OR = 1.83; 95% CI: 1.07-3.16; I² = 28%).",
+        "Specific training in asynchronies/waveform interpretation was NOT significantly associated (OR = 1.75; 95% CI: 0.67-4.56; I² = 68%), and no association was seen by profession; 12 studies / 4823 professionals, evidence certainty low (GRADE)."
+      ],
+      "keyFindings_ko": [
+        "기계환기에 대한 이전 교육은 환자-인공호흡기 비동조의 정확한 식별과 유의하게 연관됨(OR = 3.49; 95% CI: 1.95-6.25; I² = 83%).",
+        "상급 학위 교육은 정확한 식별과 유의하게 연관됨(OR = 1.83; 95% CI: 1.07-3.16; I² = 28%).",
+        "비동조/파형 해석에 대한 특정 교육은 유의한 연관이 없었고(OR = 1.75; 95% CI: 0.67-4.56; I² = 68%) 직종별 연관도 없었음; 12개 연구 / 4823명, 근거 확실성은 낮음(GRADE)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42437551",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42437551/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.iccn.2026.104499",
+          "url": "https://doi.org/10.1016/j.iccn.2026.104499"
+        },
+        {
+          "label": "웹 — PubMed — article record (PMID 42437551)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42437551/"
+        },
+        {
+          "label": "웹 — PMC — related multicenter cross-sectional study on ability to identify patient-ventilator asynchronies",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12080533/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — article record (PMID 42437551)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42437551/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PMC — related multicenter cross-sectional study on ability to identify patient-ventilator asynchronies",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12080533/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
