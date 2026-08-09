@@ -81,8 +81,10 @@ jobs:
           UNPAYWALL_EMAIL:   ${{ secrets.PUBMED_EMAIL }}
           # 논문 선정 — 결정적 상위 K편(RERANK_POOL, 기본 20)을 Opus가 "침상 임상가치"로
           # 재순위 → 1편(소프트: 실패/거부 시 결정적 순위 유지). 기본 on, vars로 끌 수 있음.
+          # ★ `${{ vars.X }}` 는 변수 미설정 시 **빈 문자열**을 주입한다. 코드가 이를
+          #   0으로 읽어 풀이 1로 붕괴, 재순위가 4주간 안 돌았다(F1). 여기서도 기본값을 준다.
           ENABLE_RERANK:          ${{ vars.ENABLE_RERANK || 'true' }}
-          RERANK_POOL:            ${{ vars.RERANK_POOL }}
+          RERANK_POOL:            ${{ vars.RERANK_POOL || '20' }}
           # Phase 2/3 — Google Drive·YouTube·TTS (미설정 시 해당 단계만 소프트 스킵)
           GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
