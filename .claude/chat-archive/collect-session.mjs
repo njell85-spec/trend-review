@@ -73,6 +73,34 @@ export function isInjected(text) {
   );
 }
 
+/**
+ * 스킬 본문인가 — 맞으면 **자리표시 한 줄**을 돌려준다(아니면 null).
+ *
+ * 왜 필요한가 (2026-08-09 실측, GC#96): 스킬을 부르면 SKILL.md **전문이 user 턴으로**
+ * 들어오는데 태그가 없어서 `isInjected`의 여덟 가지를 전부 통과했다. 그래서 아카이브에
+ * `### PeterJ` 밑에 스킬 지시문이 그대로 박혔다 — 전체 감사 결과 **PeterJ 발화로 기록된
+ * 글자의 57.3%**(28,210 / 49,274자)가 이것이었다. 한 건이 1만 자 안팎이라 턴 수(5/174)에
+ * 비해 글자 비중이 압도적이다.
+ *
+ * 브리핑이 아카이브를 **원본(raw data)으로 삼기로** 했으므로(rulebook §5 "3단 방어") 이건
+ * 단순한 군더더기가 아니다 — `HARD-GATE ... 승인 없이 구현하지 마라` 같은 스킬 지시문을
+ * **PeterJ의 요구로 읽을 수 있다.**
+ *
+ * 통째로 지우지 않고 한 줄을 남기는 이유: 1만 자짜리 턴이 소리 없이 사라지면 나중에
+ * "PeterJ가 여기서 무슨 말을 했나"를 알 수 없다. 무엇이 있었는지는 남기고 내용만 뺀다.
+ * (같은 이유로 수거기도 "안 걷은 브랜치는 안 지운다" 가드를 둔다.)
+ *
+ * 형태는 실측으로 하나뿐이다 — `Base directory for this skill: <경로>`로 시작하고
+ * `ARGUMENTS: …`로 끝난다. 전체 아카이브를 훑어 다른 패턴은 0건이었다.
+ * **새 형태가 보이면 여기에 추가할 것.**
+ */
+export function skillBodyMarker(text) {
+  const m = String(text).trimStart().match(/^Base directory for this skill:\s*(\S+)/);
+  if (!m) return null;
+  const name = m[1].split('/').filter(Boolean).pop() || '이름 미상';
+  return `_(스킬 본문 생략 — ${name} · ${String(text).length.toLocaleString('en-US')}자)_`;
+}
+
 /** system-reminder 등 삽입 블록을 문장 중간에서도 걷어낸다. */
 export function stripInline(text) {
   return text
@@ -84,13 +112,15 @@ export function stripInline(text) {
 
 /** 한 메시지에서 사람이 읽을 텍스트만 뽑는다. */
 export function textOf(message) {
+  // 스킬 본문은 버리기 전에 자리표시로 바꾼다 — isInjected보다 먼저 본다.
+  const one = (t) => skillBodyMarker(t) ?? (isInjected(t) ? '' : stripInline(t));
   const c = message?.content;
-  if (typeof c === 'string') return isInjected(c) ? '' : stripInline(c);
+  if (typeof c === 'string') return one(c);
   if (!Array.isArray(c)) return '';
   return c
     // tool_use / tool_result / thinking / image 는 통째로 버린다
     .filter((b) => b.type === 'text' && typeof b.text === 'string')
-    .map((b) => (isInjected(b.text) ? '' : stripInline(b.text)))
+    .map((b) => one(b.text))
     .filter(Boolean)
     .join('\n\n');
 }
@@ -126,6 +156,24 @@ export function kstDate(iso) {
 }
 
 /**
+ * ISO 시각 → KST ISO-8601 (`2026-08-07T01:05:45+09:00`). 턴 제목 줄에 붙는다.
+ *
+ * 왜 날짜까지 다 넣나 (PeterJ 확정 2026-08-07): 파일명 날짜는 **첫 턴 기준으로 고정**이라
+ *   자정을 넘긴 세션은 한 파일에 이틀치가 섞인다(흔하다 — 밤 작업). 거기에 `HH:MM`만 찍으면
+ *   `23:09` 다음 `01:05` 가 **앞선 시각으로 읽힌다.** 선후관계를 보려고 만드는 표시가
+ *   선후관계를 뒤집으면 안 된다.
+ * 왜 오프셋까지 넣나: GitHub Actions 로그는 UTC고 우리 규칙은 KST다. 오프셋이 박혀 있으면
+ *   나중에 뒤지는 쪽이 변환 실수를 안 하고, ISO-8601이라 **문자열 정렬만으로 시간순**이 된다.
+ * 비용: 턴당 25자. 32턴짜리 아카이브(약 4만 자) 기준 2% — 줄 수는 안 늘어난다(제목 줄에 얹는다).
+ */
+export function kstStamp(iso) {
+  if (!iso) return '';
+  const t = Date.parse(iso);
+  if (Number.isNaN(t)) return '';
+  return `${new Date(t + 9 * 3600 * 1000).toISOString().slice(0, 19)}+09:00`;
+}
+
+/**
  * 마크다운 본문을 만든다. 형식은 손으로 만든 기존 아카이브 2개와 **한 글자도 다르지 않다** —
  * 자동 수집분과 수동 추출분이 같은 그릇에 섞이므로 모양이 갈리면 안 된다.
  *
@@ -141,7 +189,13 @@ export function renderArchive({ turns, title, repo, srcKB, by }) {
     `> 세션: ${repo} \`${branch}\` (${from}${to && to !== from ? ` ~ ${to}` : ''} KST)\n` +
     `> 추출: 세션 기록(${srcKB}KB)에서 PeterJ↔Claude 대화 텍스트만 (코드·툴 출력·시스템 주입 제외).\n` +
     `> 추출기: \`${by}\`. 규칙 정본: rulebook/command-center.md.\n\n` +
-    turns.map((t) => `### ${t.who}\n\n${t.text}`).join('\n\n---\n\n') +
+    turns
+      .map((t) => {
+        // 시각을 못 읽은 턴은 제목만 낸다 — 없는 시각을 지어내지 않는다.
+        const at = kstStamp(t.at);
+        return `### ${t.who}${at ? ` · ${at}` : ''}\n\n${t.text}`;
+      })
+      .join('\n\n---\n\n') +
     '\n'
   );
 }
