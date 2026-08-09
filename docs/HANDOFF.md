@@ -3,6 +3,80 @@
 > 목적: 새 세션(어느 모델이든)이 이 파일 하나로 지금까지의 맥락·결정·상태·다음 할 일을
 > 복원해 이어가기 위함. **새 세션을 열면 이 파일부터 읽고, 아래 "먼저 읽을 파일"을 훑으세요.**
 >
+> **[2026-08-09 — ★ F1 재순위 복구(스펙 P0-1) + 표 행 계약 실행 잠금 · 선정 개편 첫 착수]**
+> - **성격**: 진단이 아니라 **첫 프로덕션 수정**. 선정 개편 스펙의 P0-1 을 실제로 넣었다.
+>   발행 표현 계층·대시보드는 **한 픽셀도 안 건드렸다**(/preview 불필요).
+>
+> **■ 재확인부터 (문서 말고 실측)**
+> - 데일리 최근 실행 `31280455886`(08-08) **success** · 잡은 `review` + `verify-pages` 둘뿐.
+>   **`archive-gate` 잡은 main 에 아직 없다** — PR #64 에 들어 있고 #64 는 **열린 채**다.
+> - `npm run test:unit` **180 pass**(기준선 일치) · spec-lint 통과.
+> - `RERANK_POOL` 실제 주입값 = **빈 문자열**(로그 env 덤프에 `RERANK_POOL:` 로 찍힘).
+>
+> **■ ★ F1 을 먼저 재현했다 (가설 아님, 실행 로그)**
+> ```
+> ENABLE_RERANK: true          ← 켜져 있고
+> RERANK_POOL:                 ← 빈 문자열이 주입되고
+> Selected top 1 papers (LLM reranked) for full-text enrichment   ← 돌았다고 찍고
+> Stage ANALYZING completed in 0.1s                               ← 실제론 0.1초
+> LLM 실행 경로: 구독×1        ← 재순위가 돌면 2회여야 한다
+> ```
+> 그날 선정된 논문은 *"intensive care telemedicine program on weaning from invasive
+> ventilation"* — 재순위 프롬프트가 **명시적으로 감점하라고 적어둔** 원격모니터링·보건서비스
+> 연구다. 재순위가 돌았다면 안 뽑혔을 것이다. **고장의 대가가 로그가 아니라 산출물에 있었다.**
+>
+> **■ 고친 것 (커밋 3개, 각각 독립 revert 가능)**
+> - **`3ab1c9f` P0-1 재순위 복구**: 파싱을 정수·양수만 신뢰(빈 문자열·0·음수·비수치 → 20) +
+>   워크플로도 `vars.RERANK_POOL || '20'` 로 이중 안전망.
+>   - **★ 로그 거짓말 제거**: `(LLM reranked)` 는 이제 `telemetry.applied` 에서만 나온다.
+>     플래그로 찍으면 안 돈 날도 돌았다고 적혀 **다음 고장도 4주간 안 보인다.**
+>     `rerank_requested/pool_size/llm_called/applied/fallback_reason` 실행 증거 추가.
+>   - **부분 응답 무효화**: LLM 이 풀 PMID 를 전부 안 덮으면 재순위 **전체 무효**(누락분이
+>     0점 취급돼 순위가 통째로 뒤집히는 것을 막는다).
+> - **`f06d368` 표 행 속성 순서 계약 실행 잠금**: 계약은 §4-H-3·HANDOFF 별표·주석에 **세 번**
+>   적혀 있었지만 실행으로 잠기지 않았다. `_rowDateDupRe(dateStr)` 를 스윕 정규식 **단일
+>   원본**으로 추출(정규식 자체는 종전과 동일 — 발행 HTML 무변경)하고, 테스트가 사본이 아니라
+>   **프로덕션이 쓰는 그 정규식**을 `_tableRows` 산출물과 맞물려 검사한다. spec-lint 3중 추가.
+> - **`581e290` 코드리뷰 3건**: ⓐ 오케스트레이터가 telemetry 를 버려 증거가 사장 →
+>   `selected_papers.json` 에 `selectionMode/rerankApplied/rerankPoolSize/fallbackReason/
+>   lowConfidence` 가산(소비자는 `.pmid` 만 읽어 코어 무영향) ⓑ `selection-experiment` 가
+>   무효인 날에도 "LLM 이 결정적과 같은 순서를 골랐다"처럼 읽히던 것 → 사유 명시
+>   ⓒ 같은 스크립트에 원래 함정이 그대로 남아 있었다 → **spec-lint 신설로 클래스 차단**
+>   (`vars.NAME` 주입 이름을 `Number(process.env.NAME ?? …)` 로 읽으면 실패).
+>   - **★ 배운 것**: 올바른 가드(`envNum`)는 **이미 `github-actions-daily.mjs` 에 있었다.**
+>     `SESSION_RETRY_MAX/DELAY_MIN` 도 빈 문자열로 주입되는데 그쪽은 안 죽었다.
+>     RERANK_POOL 만 그 가드를 안 썼다 — 지식이 없어서가 아니라 **한 곳에만 적용돼서** 샜다.
+>
+> **■ 선정 실버그 4건 — 손대지 않았다(전부 스펙에 이미 흡수돼 있다)**
+> 실제 코드로 4건 다 **살아 있음**을 확인했고, 4건 다 합의 스펙에 매핑된다. 중복 구현 금지:
+> | 버그 | 코드 실측 | 스펙 |
+> |---|---|---|
+> | 표본수 오추출 | `_extractSampleSize` 가 맨몸 `(\d+) patients` 까지 잡고 **`Math.max`** — 배경 문장의 대규모 코호트 숫자가 이긴다 | §5.2 "표본 축 **삭제**" · **P0-3** |
+> | 최신성 = 호 발행일 | `DataCollectorAgent:196` 이 `JournalIssue.PubDate`(호 표지 날짜)를 읽는다 | §5.2 "최신성 축 삭제" + tie-break ArticleDate · **P1-5** |
+> | `jacc` 오매칭 | flagship 티어는 `exact` 0개 · `includes` 29개뿐이라 `includes('jacc')` 가 JACCP 를 3.2점으로 올린다 | §5.2 "저널 축 **exact 우선**" · **P0-3** |
+> | 가이드가 논문 스코어러 | `GuidelineAnalyzerAgent:30,40` 이 `MetadataScorer` 를 그대로 쓴다 | §5.5 · **P2-1 `GuidelineScorer`** |
+> **스펙이 "P0-1 을 먼저 단독 배포하고 1일 관찰한 뒤 P0-2·P0-3"** 이라고 못 박았다(동시 변경 시
+> 귀인 불능). 그래서 오늘은 P0-1 만 넣었다. **다음 세션이 P0-2·P0-3 을 같이 넣으면 된다.**
+>
+> **■ 검증 (증거)**
+> `test:unit` **180 → 197 pass**(신규 17) · spec-lint 통과(신규 검사 4종) ·
+> **변이 테스트 8종 전부 적색**: 파싱 되돌림(3) · 로그 플래그화(3) · 부분응답 가드 제거(1) ·
+> 논문 행 마커 추가(4) · data-pmid 밀어내기(4) · 스윕 느슨화(1) · 가이드 마커 앞당김(2) ·
+> lint 규칙(1).
+> - **러너 종단 실측**: `selection-experiment` mode=rerank 를 이 브랜치로 dispatch
+>   (run `31312734522` **success**) — 재순위 스텝 **61초** 소요 + 사용량 장부에 LLM 호출 적재.
+>   바뀐 코드 경로가 러너에서 실제로 LLM 을 태운다는 확인이다.
+>   **단, 이 워크플로는 `RERANK_POOL` 을 주입하지 않아 원래도 20이었다** — 데일리 경로의
+>   최종 합격 판정은 **내일 데일리 로그의 `rerank_applied=true`** 다. 과잉 주장 금지.
+>
+> **■ ★ 다음 세션이 할 것**
+> ① **다음 데일리 로그에서 `rerank_applied=true`·`rerank_pool_size=20` 확인** — 이게 P0-1 의
+>    진짜 합격선이다. 안 찍혔으면 되돌리지 말고 `fallback_reason` 을 읽어라.
+> ② **P0-2(쿼리 교정) + P0-3(저널 exact·간호지 low·표본 축 삭제)** 을 함께.
+> ③ (미실행) `lowConfidence` 를 대시보드·텔레그램에 표기 — **REPORT_SPEC §2 개정 +
+>    spec-lint 앵커 갱신이 선행**돼야 CI 를 통과한다. 데이터는 이미 파일에 쌓인다.
+> ④ 구글 토큰 재발급 → PR #64 머지(아카이브 2026-07-08부터 사망, `archive-gate` 도 여기 있다).
+>
 > **[2026-08-08 — 현황 파악 + 배포 페이지 2분할(§4-H) 프로덕션 반영·배포 완료]**
 > - **성격**: 세션 전반부는 현황 진단, 후반부는 스펙 §5.5-B(페이지 2분할) 구현·배포.
 >   **선정 로직은 한 줄도 안 건드렸다.** 변경은 발행 표현 계층에 한정.

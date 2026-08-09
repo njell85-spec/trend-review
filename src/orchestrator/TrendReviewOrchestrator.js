@@ -107,7 +107,11 @@ export class TrendReviewOrchestrator {
     }
   }
 
-  async _saveExcludePmids(newPapers) {
+  // rerank telemetry 를 함께 받아 **선정 증거**를 영속화한다(스펙 §5.4).
+  // 로그는 90일이면 사라지지만 이 파일은 남는다 — F1(재순위 4주 미작동)이 은폐된
+  // 구조를 닫으려면 "그날 실제로 돌았나"를 사후에 물을 수 있어야 한다.
+  // 기존 소비자는 `.pmid` 만 읽으므로 필드 추가는 순수 가산(데일리 코어 무영향).
+  async _saveExcludePmids(newPapers, rerank = null) {
     let existing = [];
     try {
       const raw = await readFile(this.excludeListPath, 'utf8');
@@ -115,10 +119,21 @@ export class TrendReviewOrchestrator {
     } catch { /* first run */ }
 
     const today = kstDateStr();
+    const evidence = rerank
+      ? {
+        selectionMode: rerank.applied ? 'llm_reranked' : 'deterministic',
+        rerankApplied: rerank.applied === true,
+        rerankPoolSize: rerank.poolSize ?? null,
+        fallbackReason: rerank.reason ?? null,
+        // 약한 날 표기 — 재순위가 안 돌았거나 풀이 얕으면 그날 선정은 신뢰도가 낮다.
+        lowConfidence: rerank.applied !== true || (rerank.poolSize ?? 0) < 10,
+      }
+      : {};
     const added = newPapers.map((p) => ({
       pmid: p.paper?.pmid ?? p.pmid,
       title: (p.paper?.title ?? p.title ?? '').slice(0, 80),
       date: today,
+      ...evidence,
     }));
 
     // dedup: 같은 PMID 중복 누적 방지 (재실행·resume 시 파일 무한 증식 차단).
@@ -235,7 +250,11 @@ export class TrendReviewOrchestrator {
       if (resumeData?.allScoredPapers && resumeData?.scoredTopPapers) {
         this.logger.info('Resuming from checkpoint — skipping scoring');
         this._stageEnd(entry, 'resumed');
-        return { topPapers: resumeData.scoredTopPapers, allScoredPapers: resumeData.allScoredPapers };
+        return {
+          topPapers: resumeData.scoredTopPapers,
+          allScoredPapers: resumeData.allScoredPapers,
+          rerank: resumeData.rerank ?? null, // 재개해도 선정 증거를 잃지 않는다
+        };
       }
 
       const result = await this.filter.runScoringOnly(papers, excludePmids);
@@ -243,6 +262,7 @@ export class TrendReviewOrchestrator {
       await this._saveCheckpoint(STAGES.ANALYZING, {
         scoredTopPapers: result.topPapers,
         allScoredPapers: result.allScoredPapers,
+        rerank: result.rerank ?? null,
       });
       this._stageEnd(entry, 'ok', { topN: result.topPapers.length, total: result.allScoredPapers.length });
       return result;
@@ -451,7 +471,7 @@ export class TrendReviewOrchestrator {
       // Stage 3: Score + select top-N — exclude already-published PMIDs
       const excludePmids = await this._loadExcludePmids();
       if (excludePmids.length) this.logger.info(`Excluding ${excludePmids.length} already-published PMIDs`);
-      const { topPapers: scoredTopPapers, allScoredPapers } = await this._stageAnalyze(
+      const { topPapers: scoredTopPapers, allScoredPapers, rerank } = await this._stageAnalyze(
         validPapers,
         excludePmids,
         resumeCheckpoint?.data
@@ -506,7 +526,7 @@ export class TrendReviewOrchestrator {
       // 넣으면 제대로 분석 못 한 좋은 논문이 후보풀에서 영구 소진되므로, 다음 실행에서
       // 재선정·재분석되도록 남겨둔다.
       const excludable = validatedPico.filter((p) => !p.analysisError);
-      if (excludable.length) await this._saveExcludePmids(excludable);
+      if (excludable.length) await this._saveExcludePmids(excludable, rerank);
       if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)

@@ -467,6 +467,18 @@ export class GitHubPublisher {
     }
   }
 
+  // ── 같은 날짜 논문 행 스윕 정규식 (REPORT_SPEC §4-H-3 계약) ──────────────────
+  // ★ `data-pmid` **하나만** 단 행을 잡는다. 이것이 "논문 행에 종류 마커를 붙이지
+  //   않는다"는 계약의 실체다 — 속성이 하나라도 늘면 여기서 안 잡혀 같은 날 재발행분이
+  //   지워지지 않고 **매일 표 행이 중복 누적**된다. 반대로 가이드(`data-guideline`)와
+  //   수동 지정(`data-manual`) 행은 바로 이 성질 덕에 스윕에서 살아남는다(의도된 예외).
+  //   테스트(`test/tableRowContract.test.mjs`)가 _tableRows 산출물과 이 정규식을
+  //   맞물려 검사하므로, 둘 중 하나만 바뀌면 적색이 된다.
+  _rowDateDupRe(dateStr) {
+    const escDateCell = String(dateStr).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}</td>[\\s\\S]*?</tr>`, 'g');
+  }
+
   // ── 누적 아카이브 표의 행(읽음 체크박스 포함) ──────────────────────────────────
   _tableRows(dateStr, topPapers, guideline = null, { manual = false } = {}) {
     // 수동 지정 행은 data-manual 마커를 단다 — 가이드라인(data-guideline)과 같은 방식으로,
@@ -835,9 +847,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       //   ① 같은 날짜의 기존 행을 모두 제거 — 상단 SECTION 이 날짜 기준으로 교체되므로
       //      표도 동일하게. 하루에 여러 번 실행돼도 그날 최종 선정분만 남는다.
       if (!manual) {
-        const escDateCell = dateStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const rowDateDup = new RegExp(`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}</td>[\\s\\S]*?</tr>`, 'g');
-        body = body.replace(rowDateDup, '');
+        body = body.replace(this._rowDateDupRe(dateStr), '');
       }
       //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침이 또 선정된 경우 중복 방지
       const dedupItems = guideline ? [...topPapers, guideline] : topPapers;

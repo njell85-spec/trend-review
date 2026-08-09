@@ -240,6 +240,13 @@ guidelines.html   ② 가이드라인 및 기타
      `<tr data-pmid="[^"]*"><td class="c-date">…` 라, 속성이 하나라도 늘면 매치가 깨져
      행이 중복 누적된다. 논문은 "`data-guideline` 없음"으로 판별한다.
    - 가이드·기타 행만 `data-kind="guideline|reference"` 를 **`data-pmid` 뒤에** 단다.
+   - **예외는 둘뿐**: `data-guideline="1"`(주 1회 소개가 날짜 스윕에 지워지면 안 됨)과
+     `data-manual="1"`(직접 지정분 보호). 둘 다 "스윕에 안 걸리는 것"이 목적이라
+     **논문 행에 속성을 다는 것과는 방향이 반대**다.
+   - **집행**: 스윕 정규식의 단일 원본은 `GitHubPublisher._rowDateDupRe(dateStr)` 하나이고,
+     `test/tableRowContract.test.mjs` 가 `_tableRows` 산출물과 이 정규식을 맞물려 검사한다
+     (둘 중 하나만 바뀌면 적색). spec-lint 가 CI 앞단에서 같은 계약을 3중으로 잡는다.
+     **문서로만 두면 다시 밟는다 — 실제로 구현 중 한 번 밟았다.**
 4. **소프트 실패**: `guidelines.html` 읽기 실패는 "없음"으로 보고 진행. 스캐폴드가
    아니면 분할하지 않고 `index.html` 만 종전대로 기록한다 — 분할이 데일리를 막지 않는다.
 5. 아카이브 저장 현황(§4-E)은 논문 아카이브 기준이라 **`index.html` 에만** 둔다.

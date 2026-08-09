@@ -36,8 +36,13 @@ export class FilterAnalyzerAgent {
     // LLM rerank(선택): 결정적 상위 K편만 Opus가 정독해 "침상 임상가치"로 재순위 → top-N.
     //   · PeterJ 확정(2026-07-10): 결정적은 주제·저널까지, 침상가치 변별은 LLM.
     //   · 소프트: 실패/거부 시 결정적 순위 유지(데일리 코어 무영향). 게이트 기본 off.
+    //   · ★ RERANK_POOL 은 워크플로가 `${{ vars.RERANK_POOL }}` 로 주입하므로 변수가
+    //     미설정이면 **빈 문자열**이 온다. `??` 는 빈 문자열을 통과시켜 `Number('')=0`
+    //     → poolSize 1 → 재순위가 조용히 죽는다(F1, 4주간 은폐). 정수·양수만 신뢰한다.
     this.enableRerank = options.enableRerank ?? (process.env.ENABLE_RERANK === 'true');
-    this.rerankPool = options.rerankPool ?? Number(process.env.RERANK_POOL ?? 20);
+    const parsedPool = Number(process.env.RERANK_POOL);
+    this.rerankPool = options.rerankPool
+      ?? (Number.isInteger(parsedPool) && parsedPool > 0 ? parsedPool : 20);
   }
 
   // ── Tool definitions for structured Claude output ─────────────────────────
@@ -279,8 +284,19 @@ export class FilterAnalyzerAgent {
   // ── Step 2b: LLM rerank — 결정적 상위 K편을 "침상 임상가치"로 재순위 → 상위 n편 ──
   // 결정적은 주제·저널까지 압축하고, 여기서 Opus가 연구 성격(급성 침상 개입 vs
   // 역학·이송·원격모니터링·QI·리뷰·증례)을 변별한다. 소프트: 실패/거부 시 결정적 순위 유지.
+  //
+  // 반환은 `{ picks, telemetry }` — telemetry 는 **실행 증거**다. 호출부는 이 값으로만
+  // `(LLM reranked)` 를 찍는다. 플래그(enableRerank)로 찍으면 안 돈 날도 돌았다고
+  // 기록돼 고장이 보이지 않는다(F1이 4주간 은폐된 직접 원인).
   async _rerankSelect(pool, n) {
-    if (pool.length <= n) return pool.slice(0, n);
+    const telemetry = { llmCalled: false, applied: false, reason: null };
+    if (pool.length <= n) {
+      telemetry.reason = 'pool_too_small';
+      this.logger.warn('LLM rerank 미발동 — 풀이 topN 이하 (RERANK_POOL 주입값을 확인하라)', {
+        pool: pool.length, topN: n, rerankPool: this.rerankPool,
+      });
+      return { picks: pool.slice(0, n), telemetry };
+    }
     try {
       const prompt = `You are an expert emergency medicine and critical care (EM/CCM) physician choosing the single most valuable paper for TODAY's bedside practice.
 Score each of the following ${pool.length} papers 1–10 for CLINICAL BEDSIDE VALUE to an acute/critical-care physician:
@@ -293,9 +309,24 @@ ${pool.map((p, i) => `[${i + 1}] PMID ${p.pmid} | ${p.journal} | types: ${(p.pub
 Title: ${p.title}
 Abstract: ${String(p.abstract ?? '').slice(0, 1200)}`).join('\n\n')}`;
 
+      telemetry.llmCalled = true;
       const out = await this._callLLM([{ role: 'user', content: prompt }], this._scoringTool, this.llm);
       const map = new Map((out?.scores ?? []).map((s) => [String(s.pmid), s]));
-      if (!map.size) { this.logger.warn('LLM rerank: 빈 결과 — 결정적 순위 유지'); return pool.slice(0, n); }
+      if (!map.size) {
+        telemetry.reason = 'empty_scores';
+        this.logger.warn('LLM rerank: 빈 결과 — 결정적 순위 유지');
+        return { picks: pool.slice(0, n), telemetry };
+      }
+      // 부분 응답으로 재순위하면 누락된 논문이 0점 취급돼 순위가 통째로 뒤집힌다.
+      // 풀을 전부 덮지 않으면 재순위 **전체 무효**(스펙 §5.4).
+      const missing = pool.filter((p) => !map.has(String(p.pmid)));
+      if (missing.length) {
+        telemetry.reason = 'incomplete_scores';
+        this.logger.warn('LLM rerank: 응답이 풀을 전부 덮지 않음 — 재순위 무효, 결정적 순위 유지', {
+          pool: pool.length, scored: map.size, missing: missing.length,
+        });
+        return { picks: pool.slice(0, n), telemetry };
+      }
 
       const reranked = [...pool]
         .sort((a, b) => (Number(map.get(String(b.pmid))?.score ?? 0) - Number(map.get(String(a.pmid))?.score ?? 0))
@@ -305,14 +336,16 @@ Abstract: ${String(p.abstract ?? '').slice(0, 1200)}`).join('\n\n')}`;
           if (r) { p.rerankScore = Number(r.score); p.rerankRationale = r.rationale; }
           return p;
         });
+      telemetry.applied = true;
       this.logger.info('LLM rerank applied', {
         pool: pool.length,
         top: reranked.slice(0, 3).map((p) => ({ pmid: p.pmid, rerank: p.rerankScore, det: p.scoringData?.score })),
       });
-      return reranked.slice(0, n);
+      return { picks: reranked.slice(0, n), telemetry };
     } catch (err) {
+      telemetry.reason = `llm_error: ${err.message}`;
       this.logger.warn('LLM rerank 실패 — 결정적 순위 유지 (소프트)', { err: err.message });
-      return pool.slice(0, n);
+      return { picks: pool.slice(0, n), telemetry };
     }
   }
 
@@ -484,7 +517,19 @@ Requirements:
     // 결정적으로 pool(rerank 시 K편, 아니면 top-N)을 추린 뒤, 켜져 있으면 LLM 재순위.
     const poolSize = this.enableRerank ? Math.max(this.topN, this.rerankPool) : this.topN;
     const pool = this._selectTopPapers(papers, scores, excludePmids, poolSize);
-    const topPapers = this.enableRerank ? await this._rerankSelect(pool, this.topN) : pool;
+    const { picks: topPapers, telemetry } = this.enableRerank
+      ? await this._rerankSelect(pool, this.topN)
+      : { picks: pool, telemetry: { llmCalled: false, applied: false, reason: 'disabled' } };
+
+    telemetry.poolSize = pool.length;
+    // 실행 증거 — 플래그가 아니라 "무슨 일이 실제로 있었나"를 남긴다.
+    this.logger.info('rerank telemetry', {
+      rerank_requested: this.enableRerank,
+      rerank_pool_size: pool.length,
+      rerank_llm_called: telemetry.llmCalled,
+      rerank_applied: telemetry.applied,
+      fallback_reason: telemetry.reason,
+    });
 
     const scoreMap = new Map(scores.map((s) => [s.pmid, s]));
     const allScoredPapers = papers.map((p) => ({
@@ -492,8 +537,9 @@ Requirements:
       scoringData: scoreMap.get(p.pmid) ?? { score: 0, studyType: 'Other' },
     }));
 
-    this.logger.info(`Selected top ${topPapers.length} papers${this.enableRerank ? ' (LLM reranked)' : ''} for full-text enrichment`);
-    return { topPapers, allScoredPapers };
+    // ★ 문구는 `telemetry.applied` 에서만 나온다 — 플래그로 찍으면 안 돈 날도 돌았다고 적힌다.
+    this.logger.info(`Selected top ${topPapers.length} papers${telemetry.applied ? ' (LLM reranked)' : ''} for full-text enrichment`);
+    return { topPapers, allScoredPapers, rerank: telemetry };
   }
 
   // ── 통합 경로 (스코어링→선정→PICO 일괄) — standalone 테스트 전용 ─────────────
