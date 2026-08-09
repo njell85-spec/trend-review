@@ -167,6 +167,21 @@ if (!splitSrc.includes('(<tr data-pmid="[^"]*")')) {
 if (!/data-pmid="\$\{esc\(rowId\)\}" data-kind=/.test(pub)) {
   errors.push('src/utils/GitHubPublisher.js: 가이드/기타 행의 data-kind 마커 소실 또는 위치 오류 (REPORT_SPEC §4-H)');
 }
+// ★ 논문 행은 data-pmid 뒤에 곧바로 `<td class="c-date">` 가 와야 한다(§4-H-3).
+//   여기에 속성이 하나라도 끼면 같은 날 재발행 스윕이 안 잡아 표 행이 매일 중복 누적된다.
+//   (data-manual 은 "수동 지정은 스윕 대상 아님"을 만드는 의도된 예외라 허용.)
+if (!/<tr data-pmid="\$\{esc\(pmid\)\}"\$\{manualAttr\}><td class="c-date">/.test(pub)) {
+  errors.push('src/utils/GitHubPublisher.js: 논문 행 속성 계약 위반 — data-pmid 뒤 곧바로 c-date 가 아니면 표 행이 매일 중복 누적된다 (REPORT_SPEC §4-H-3)');
+}
+// 스윕 정규식은 단일 원본(_rowDateDupRe)이어야 한다 — 테스트가 이 함수로 계약을 잠근다.
+if (!/_rowDateDupRe\(dateStr\)\s*\{/.test(pub) || !pub.includes('this._rowDateDupRe(dateStr)')) {
+  errors.push('src/utils/GitHubPublisher.js: 같은-날짜 스윕 정규식 단일 원본(_rowDateDupRe) 소실 (REPORT_SPEC §4-H-3)');
+}
+// 그 정규식은 속성이 하나뿐인 행만 잡아야 한다. [^>]* 로 느슨해지면 가이드·수동 지정 행까지
+// 같은 날 스윕에 쓸려나간다(주 1회 소개·직접 지정분 소실).
+if (!pub.includes('`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}')) {
+  errors.push('src/utils/GitHubPublisher.js: 날짜 스윕이 느슨해짐 — 가이드/수동 지정 행까지 삭제된다 (REPORT_SPEC §4-H-3)');
+}
 // 큐레이션은 표를 전부 순회해야 한다(guidelines.html 은 표가 둘).
 if (!curSrc.includes("querySelectorAll('.arch-table table')")) {
   errors.push('src/utils/curation.js: 표 전부 순회 소실 — 둘째 표에 자료화 열이 안 붙는다 (REPORT_SPEC §4-H)');
