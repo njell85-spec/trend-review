@@ -182,6 +182,35 @@ if (!/_rowDateDupRe\(dateStr\)\s*\{/.test(pub) || !pub.includes('this._rowDateDu
 if (!pub.includes('`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}')) {
   errors.push('src/utils/GitHubPublisher.js: 날짜 스윕이 느슨해짐 — 가이드/수동 지정 행까지 삭제된다 (REPORT_SPEC §4-H-3)');
 }
+// ── 빈 문자열 주입 함정 (F1 재발 방지) ──────────────────────────────────────
+// `${{ vars.NAME }}` 는 저장소 변수 미설정 시 **빈 문자열**을 주입한다. 코드가
+// `Number(process.env.NAME ?? 기본값)` 로 읽으면 `??` 가 빈 문자열을 통과시켜
+// `Number('') = 0` — 기본값이 조용히 증발한다. RERANK_POOL 이 바로 이렇게 4주간
+// 죽어 있었다. 워크플로가 vars 로 주입하는 이름 전부에 이 패턴을 금지한다.
+// (올바른 형태: github-actions-daily.mjs 의 `envNum(v, d)` — 빈 문자열을 명시 배제)
+{
+  const wfDir = '.github/workflows';
+  const wfSrc = readdirSync(wfDir).filter((f) => /\.ya?ml$/.test(f)).map((f) => read(`${wfDir}/${f}`)).join('\n');
+  const injected = new Set((wfSrc.match(/vars\.[A-Z][A-Z0-9_]+/g) ?? []).map((s) => s.slice(5)));
+  const codeFiles = [];
+  (function walk(dir) {
+    for (const f of readdirSync(dir)) {
+      const p = `${dir}/${f}`;
+      if (f === 'node_modules' || f.startsWith('.')) continue;
+      if (statSync(p).isDirectory()) walk(p);
+      else if (/\.m?js$/.test(f)) codeFiles.push(p);
+    }
+  })('src');
+  for (const p of [...codeFiles, ...readdirSync('scripts').filter((f) => /\.mjs$/.test(f)).map((f) => `scripts/${f}`)]) {
+    const src = read(p);
+    for (const name of injected) {
+      if (new RegExp(`Number\\(\\s*process\\.env\\.${name}\\s*\\?\\?`).test(src)) {
+        errors.push(`${p}: \`Number(process.env.${name} ?? …)\` — 워크플로가 빈 문자열을 주입하면 0이 된다 (F1 재발 패턴). envNum 류 가드를 쓸 것`);
+      }
+    }
+  }
+}
+
 // 큐레이션은 표를 전부 순회해야 한다(guidelines.html 은 표가 둘).
 if (!curSrc.includes("querySelectorAll('.arch-table table')")) {
   errors.push('src/utils/curation.js: 표 전부 순회 소실 — 둘째 표에 자료화 열이 안 붙는다 (REPORT_SPEC §4-H)');

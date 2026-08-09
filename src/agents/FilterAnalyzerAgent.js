@@ -521,6 +521,7 @@ Requirements:
       ? await this._rerankSelect(pool, this.topN)
       : { picks: pool, telemetry: { llmCalled: false, applied: false, reason: 'disabled' } };
 
+    telemetry.poolSize = pool.length;
     // 실행 증거 — 플래그가 아니라 "무슨 일이 실제로 있었나"를 남긴다.
     this.logger.info('rerank telemetry', {
       rerank_requested: this.enableRerank,

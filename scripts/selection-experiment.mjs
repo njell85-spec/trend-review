@@ -123,13 +123,21 @@ if (!USE_LLM) {
 
 // ── LLM rerank 검증 모드 (EXP_MODE=rerank) — 결정적 top-K → Opus 침상가치 재순위 ──
 if (process.env.EXP_MODE === 'rerank') {
-  const POOL = Number(process.env.RERANK_POOL ?? 20);
+  // 프로덕션과 같은 파싱 — 빈 문자열·0·음수·비수치는 전부 20으로 떨어진다(F1 과 같은 함정).
   const fa = new FilterAnalyzerAgent();
+  const POOL = fa.rerankPool;
   const pool = fa._selectTopPapers(papers, [...detScores.values()], [], POOL);
-  await fa._rerankSelect(pool, 1); // 부수효과로 pool 요소에 rerankScore 부착(프로덕션 경로 그대로)
+  // 부수효과로 pool 요소에 rerankScore 부착(프로덕션 경로 그대로) + 실행 증거 수령.
+  const { telemetry } = await fa._rerankSelect(pool, 1);
   const reranked = [...pool].sort((a, b) => (b.rerankScore ?? 0) - (a.rerankScore ?? 0));
   let md = `# 📊 결정적 + LLM rerank — ${today}\n\n`;
   md += `수집 **${papers.length}편** · 결정적 pool ${pool.length}편 → Opus 침상 임상가치 재순위\n\n`;
+  // ★ 재순위가 무효면 아래 순서는 결정적 순서와 같다. 그걸 안 적으면 리포트가
+  //   "LLM 이 결정적과 같은 순서를 골랐다"로 잘못 읽힌다(F1 이 은폐된 것과 같은 구조).
+  if (!telemetry.applied) {
+    md += `> ⚠️ **재순위 미적용 — 아래는 결정적 순위 그대로다.** `
+        + `llm_called=${telemetry.llmCalled} · reason=\`${telemetry.reason ?? '—'}\`\n\n`;
+  }
   md += `## 🩺 최종 top 10 (rerank 후 — 프로덕션이 이 순서로 1편 선정)\n\n`;
   reranked.slice(0, 10).forEach((p, i) => {
     md += `**${i + 1}. rerank ${p.rerankScore ?? '—'}점** (결정 ${p.scoringData?.score}) · ${trunc(p.title, 82)}\n`;
@@ -143,7 +151,7 @@ if (process.env.EXP_MODE === 'rerank') {
   summary(md);
   mkdirSync(OUT, { recursive: true });
   writeFileSync(`${OUT}/rerank-llm-${today}.json`, JSON.stringify({
-    date: today, pool: pool.length,
+    date: today, pool: pool.length, rerankApplied: telemetry.applied, fallbackReason: telemetry.reason,
     reranked: reranked.map((p) => ({ pmid: p.pmid, rerank: p.rerankScore, det: p.scoringData?.score, title: p.title, journal: p.journal, why: p.rerankRationale })),
   }, null, 2));
   console.error(`상세 JSON: ${OUT}/rerank-llm-${today}.json`);
