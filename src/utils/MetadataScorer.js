@@ -39,10 +39,27 @@ const NEGATIVE_TYPES = [
 ];
 
 // 컴포넌트 스케일 — 주제·저널(각 0~4)이 지배적이 되도록 보조 신호를 축소한다.
-const DESIGN_SCALE = 0.375;   // design 0~4 → 0~1.5
-const RECENCY_SCALE = 0.7 / 1.5; // recency 0~1.5 → 0~0.7
-const SAMPLE_SCALE = 0.8 / 1.5;  // sample 0~1.5 → 0~0.8
+// v2 (2026-08-10): 설계 축을 0~2.0 으로 올리고 **최신성·표본 축은 삭제**했다.
+//   · 최신성: 수집이 최신순 300편이라 실효창이 ~2주 — 사실상 상수였고, 게다가
+//     호(issue) 발행일을 읽어 07월 전자공개분을 "1년+"로 오판했다(F6).
+//   · 표본: 초록의 배경 문장 인구수를 표본으로 읽었다(실측 `N≈1704632`, F5).
+//   두 축이 빠진 자리를 설계 축이 받는다 — 보조 축 합은 종전 ~3.0 → 2.0 으로 오히려 준다.
+const DESIGN_SCALE = 0.5;        // design 0~4 → 0~2.0
+const DESIGN_CAP = 2.0;
 const RELEVANCE_SPAN = 4.0;      // rel01(0~1) → 0~4
+
+// 주제 축 탈포화 (F3) — 종전 `titleHits * 0.6` 은 제목 2히트로 만점이었다.
+// 체감가중이라 4히트에서 1.00 에 닿는다. MeSH·초록은 보조(최대 0.24).
+const TITLE_HIT_WEIGHTS = [0.50, 0.25, 0.15, 0.10];
+const META_HIT_WEIGHT = 0.08;
+const META_HIT_CAP = 3;
+
+// 서술 리뷰는 **최상위 종합지에서만** 대접한다 (PeterJ 확정 ① 2026-08-06).
+// 그 외 저널의 서술 종설은 침상 가치가 낮은데, 종전에는 설계 1.7 로 관찰연구에
+// 육박해 상위 20 의 6편을 차지했다(2026-08-10 실측).
+const REVIEW_FLAGSHIP_TIERS = ['최상위 종합지', '최상위'];
+const REVIEW_SCORE_FLAGSHIP = 3.2;
+const REVIEW_SCORE_OTHER = 0.7;
 
 // config 파일이 없을 때의 임베디드 기본값 (일반 EM/CCM).
 const DEFAULT_PROFILE = {
@@ -99,9 +116,9 @@ export class MetadataScorer {
 
   scoreOne(paper) {
     const jr = this._journalScore(paper);          // -1 ~ 4
-    const design = this._designScore(paper);        // 0 ~ 4 (라벨용)
-    const recency = this._recencyScore(paper);      // 0 ~ 1.5
-    const sample = this._sampleScore(paper);        // 0 ~ 1.5 (+ n 추정)
+    const design = this._designScore(paper, jr);    // 0 ~ 4 (라벨용 · 리뷰는 티어 조건부)
+    const recency = this._recencyScore(paper);      // 표시 전용 (점수 미반영)
+    const sample = this._sampleScore(paper);        // 표시 전용 (점수 미반영)
     const rel = this._relevance(paper);             // { rel01, groups }
     const pen = this._negativePenalty(paper);       // ≤ 0
 
@@ -109,10 +126,10 @@ export class MetadataScorer {
     // ① 우선순위 축 (지배적): 저널·주제 각 0~4
     const journalPart = w.journalWeight * jr.score;
     const relPart = w.relevanceWeight * (rel.rel01 * RELEVANCE_SPAN);
-    // ② 보조 축: 설계·최신성·표본 (합 ~3)
-    const designPart = Math.min(1.5, design.score * DESIGN_SCALE);
-    const recencyPart = recency.score * RECENCY_SCALE;
-    const samplePart = sample.score * SAMPLE_SCALE;
+    // ② 보조 축: 설계뿐 (0~2.0). 최신성·표본은 v2 에서 삭제 — 위 상수 주석 참조.
+    const designPart = Math.min(DESIGN_CAP, design.score * DESIGN_SCALE);
+    const recencyPart = 0;
+    const samplePart = 0;
     // ③ 주제 게이트: 관심 0매칭이면 강한 감점(사실상 배제)
     //    배제 저널은 후보 선정에서 아예 빠지지만(_selectTopPapers), 점수에도 바닥을
     //    깔아 둔다 — 폴백 경로나 진단 리포트에서 위로 올라오지 않게.
@@ -131,6 +148,7 @@ export class MetadataScorer {
       qualityScore: Math.round(quality * 10) / 10,
       relevanceScore: Math.round(rel.rel01 * 100) / 10, // 0~10 표시
       studyType: design.label,
+      designPart: Math.round(designPart * 100) / 100,
       matchedInterests: rel.groups,
       journalTier: jr.tier,
       journalExcluded: jr.excluded === true,
@@ -175,11 +193,17 @@ export class MetadataScorer {
   }
 
   // ── 연구 설계 ──────────────────────────────────────────────────────────────
-  _designScore(paper) {
+  _designScore(paper, jr = null) {
     const types = (paper.publicationTypes ?? []).map((t) => String(t).toLowerCase());
     const hay = types.join(' | ');
     for (const rule of DESIGN_RULES) {
       if (rule.match.some((m) => hay.includes(m))) {
+        // 서술 리뷰만 티어 조건부 (PeterJ 확정 ①). 체계적 문헌고찰·메타분석은
+        // 별도 라벨이라 여기 걸리지 않는다 — 근거 종합이지 종설이 아니다.
+        if (rule.label === 'Review') {
+          const flagship = REVIEW_FLAGSHIP_TIERS.includes(jr?.tier);
+          return { score: flagship ? REVIEW_SCORE_FLAGSHIP : REVIEW_SCORE_OTHER, label: 'Review', matched: 'review' };
+        }
         return { score: rule.score, label: rule.label, matched: rule.match[0] };
       }
     }
@@ -266,13 +290,27 @@ export class MetadataScorer {
     const scored = [];
     for (const [key, g] of Object.entries(this.profile.topicGroups ?? {})) {
       const w = Number(g.weight ?? 0);
-      let titleHits = 0, metaHits = 0;
-      for (const term of g.terms ?? []) {
-        const t = String(term).toLowerCase();
-        if (title.includes(t)) titleHits++;
-        else if (meta.includes(t)) metaHits++;
+      // ★ 중복 계수 금지: 'septic shock' 이 걸리면 그 안에 든 'septic' 은 세지 않는다.
+      //   config 의 관심어가 서로 겹쳐서(sepsis / septic / septic shock) 한 자리가
+      //   3히트로 부풀고, 그것이 주제 포화의 실제 동력이었다.
+      //   긴 term 부터 확정하고, 이미 잡힌 term 의 부분문자열은 건너뛴다.
+      const terms = [...(g.terms ?? [])].map((t) => String(t).toLowerCase())
+        .sort((a, b) => b.length - a.length);
+      const hitTitle = [], hitMeta = [];
+      for (const t of terms) {
+        const covered = (arr) => arr.some((h) => h.includes(t));
+        if (title.includes(t)) { if (!covered(hitTitle)) hitTitle.push(t); }
+        else if (meta.includes(t)) { if (!covered(hitMeta)) hitMeta.push(t); }
       }
-      const signal = Math.min(1, titleHits * 0.6 + metaHits * 0.25);
+      const titleHits = hitTitle.length, metaHits = hitMeta.length;
+      // 탈포화(F3): 히트마다 체감가중. 종전 `titleHits * 0.6` 은 제목 2히트면 만점이라
+      // 저널 0.8짜리 논문도 주제 4.0 을 받아 상위권에 올라왔다(2026-08-10 실측 8/20).
+      let signal = 0;
+      for (let i = 0; i < titleHits; i++) {
+        signal += TITLE_HIT_WEIGHTS[i] ?? TITLE_HIT_WEIGHTS[TITLE_HIT_WEIGHTS.length - 1];
+      }
+      signal += META_HIT_WEIGHT * Math.min(metaHits, META_HIT_CAP);
+      signal = Math.min(1, signal);
       if (signal > 0) scored.push({ key, label: g.label ?? key, w, groupScore: w * signal });
     }
     scored.sort((a, b) => b.groupScore - a.groupScore);
