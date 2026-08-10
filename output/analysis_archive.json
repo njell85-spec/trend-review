@@ -1906,6 +1906,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-11",
+      "pmid": "42507344",
+      "title": "Singapore Post-cardiac Arrest Care Guidelines 2026.",
+      "title_ko": "싱가포르 심정지 후 치료 가이드라인 2026",
+      "journal": "Singapore medical journal",
+      "doi": "10.4103/singaporemedj.SMJ-2026-279",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "병원 밖 심정지(OHCA) 후 자발순환회복(ROSC)을 이룬 뒤 중환자실(ICU)에 입원한 환자를, 생존 퇴원과 신경학적 회복을 개선하기 위해 임상의는 어떻게 관리해야 하는가?",
+      "pico": {
+        "population": "[Singapore] Patients admitted to the intensive care unit after return of spontaneous circulation (ROSC) following out-of-hospital cardiac arrest, which continues to pose a substantial public health challenge in Singapore (no sample size, age, or date range reported — this is a narrative clinical practice guideline).",
+        "intervention": "Strengthened post-cardiac arrest care — the sixth link in the chain of survival — delivered as an updated summary of post-cardiac arrest management and practical guidance for clinicians treating resuscitated cardiac arrest patients in the intensive care unit, building on the National Targeted Temperature Management Workgroup (2017) and the National Post-Cardiac Arrest and Survivorship Workgroup (2021) recommendations.",
+        "comparison": null,
+        "outcome": "Survival to hospital discharge and neurological recovery (stated as targets requiring further progress); no quantitative outcome measures, effect sizes, or statistics are reported in this guideline abstract."
+      },
+      "pico_ko": {
+        "population": "[싱가포르] 병원 밖 심정지 후 자발순환회복(ROSC)을 이룬 뒤 중환자실(ICU)에 입원한 환자로, 심정지는 싱가포르에서 여전히 상당한 공중보건 과제로 남아 있음(표본 수·연령·기간 미보고 — 본 문헌은 서술형 임상 진료 가이드라인임).",
+        "intervention": "생존사슬의 여섯 번째 고리인 심정지 후 치료(post-cardiac arrest care)의 강화 — ICU에서 소생된 심정지 환자를 치료하는 임상의를 위한 최신 관리 요약과 실무 지침으로 제공되며, National Targeted Temperature Management Workgroup(2017)과 National Post-Cardiac Arrest and Survivorship Workgroup(2021)의 권고를 기반으로 함.",
+        "comparison": null,
+        "outcome": "생존 퇴원 및 신경학적 회복(추가 개선이 필요한 목표로 제시됨); 본 가이드라인 초록에는 정량적 결과 지표, 효과 크기, 통계치가 보고되지 않음."
+      },
+      "keyFindings": [
+        "Out-of-hospital cardiac arrest remains a substantial public health challenge in Singapore; while prehospital resuscitation and survival to hospital admission have improved, survival to hospital discharge and neurological recovery still require further progress.",
+        "The guideline frames post-cardiac arrest care as the 'sixth link' in the chain of survival and calls for strengthening it to optimise outcomes for patients admitted to the ICU after ROSC.",
+        "It provides an updated summary and practical clinical guidance that builds on the National Targeted Temperature Management Workgroup (2017) and the National Post-Cardiac Arrest and Survivorship Workgroup (2021) recommendations (no quantitative results reported)."
+      ],
+      "keyFindings_ko": [
+        "병원 밖 심정지는 싱가포르에서 여전히 상당한 공중보건 과제로 남아 있으며, 병원 전 소생과 입원 생존은 개선되었으나 생존 퇴원과 신경학적 회복은 추가 개선이 필요하다.",
+        "본 가이드라인은 심정지 후 치료를 생존사슬의 '여섯 번째 고리'로 규정하고, ROSC 후 ICU에 입원한 환자의 결과를 최적화하기 위해 이를 강화할 것을 촉구한다.",
+        "National Targeted Temperature Management Workgroup(2017)과 National Post-Cardiac Arrest and Survivorship Workgroup(2021) 권고를 기반으로 한 최신 요약과 실무 임상 지침을 제공한다(정량적 결과는 보고되지 않음)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42507344",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42507344/"
+        },
+        {
+          "label": "Journal (DOI) — 10.4103/singaporemedj.SMJ-2026-279",
+          "url": "https://doi.org/10.4103/singaporemedj.SMJ-2026-279"
+        },
+        {
+          "label": "웹 — PubMed — Singapore Post-cardiac Arrest Care Guidelines 2026 (PMID 42507344)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42507344/"
+        },
+        {
+          "label": "웹 — Singapore Medical Journal / Ovid — SMJ 2026 resuscitation guideline series",
+          "url": "https://www.ovid.com/jnls/SMJ"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — Singapore Post-cardiac Arrest Care Guidelines 2026 (PMID 42507344)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42507344/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Singapore Medical Journal / Ovid — SMJ 2026 resuscitation guideline series",
+          "url": "https://www.ovid.com/jnls/SMJ",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
