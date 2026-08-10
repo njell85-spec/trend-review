@@ -61,6 +61,46 @@ const REVIEW_FLAGSHIP_TIERS = ['최상위 종합지', '최상위'];
 const REVIEW_SCORE_FLAGSHIP = 3.2;
 const REVIEW_SCORE_OTHER = 0.7;
 
+// 저널 배제 패턴 — **코드에 내장된 바닥**(PeterJ 지시 2026-08-10).
+// ★ config 에만 두면 `journals.json` 이 깨졌을 때 `_loadJson` 이 조용히 기본값으로
+//   떨어지면서 **배제가 통째로 꺼진 채 로그도 없이** 데일리가 돈다 — 이 개편이 막으려던
+//   바로 그 실패다. 그래서 코드가 바닥을 들고, config 는 `patterns` 로 **더하기만** 한다.
+//   되살리기는 config `exclude.allow` 로 한다(폰에서 한 줄 추가 = 그 저널 부활).
+const EXCLUDE_BUILTIN = [
+  "nursing",
+  "nurse",
+  " nurs ",
+  "midwifery",
+  "nutrition",
+  "nutrients",
+  "dietet",
+  "parenteral and enteral",
+  "rehabilitation",
+  "physical therapy",
+  "physiotherapy",
+  "occupational therapy",
+  "medical education",
+  "education online",
+  "medical teacher",
+  "health policy",
+  "health services research",
+  "health economics",
+  "veterinary",
+  "dental",
+  "dentistry",
+  "oral health",
+  "acupuncture",
+  "herbal",
+  "complementary",
+  "alternative medicine",
+  "ethics",
+  "nursing ethics",
+  "informatics",
+  "american journal of critical care",
+  "heart & lung",
+  "intensive and critical care nurs"
+];
+
 // config 파일이 없을 때의 임베디드 기본값 (일반 EM/CCM).
 const DEFAULT_PROFILE = {
   topicGroups: {
@@ -133,8 +173,9 @@ export class MetadataScorer {
     // ③ 주제 게이트: 관심 0매칭이면 강한 감점(사실상 배제)
     //    배제 저널은 후보 선정에서 아예 빠지지만(_selectTopPapers), 점수에도 바닥을
     //    깔아 둔다 — 폴백 경로나 진단 리포트에서 위로 올라오지 않게.
-    const gate = (rel.rel01 <= 0 ? Number(w.topicGatePenalty ?? -5) : 0)
-               + (jr.excluded ? -10 : 0);
+    const topicGate = rel.rel01 <= 0 ? Number(w.topicGatePenalty ?? -5) : 0;
+    const excludeGate = jr.excluded ? -10 : 0;
+    const gate = topicGate + excludeGate;
 
     // 정렬용 rawScore 는 clamp 하지 않는다(동점 안정 분리 + 게이트 논문 확실히 바닥).
     const rawScore = journalPart + relPart + designPart + recencyPart + samplePart + pen.value + gate;
@@ -153,7 +194,7 @@ export class MetadataScorer {
       journalTier: jr.tier,
       journalExcluded: jr.excluded === true,
       gated: gate < 0,
-      rationale: this._rationale({ jr, design, recency, sample, pen, rel, gate }),
+      rationale: this._rationale({ jr, design, recency, sample, pen, rel, topicGate, excludeGate }),
     };
   }
 
@@ -169,7 +210,10 @@ export class MetadataScorer {
   isExcludedJournal(paper) {
     const j = String(paper?.journal ?? '').toLowerCase().trim();
     if (!j) return false;
-    return (this.journals.exclude?.patterns ?? []).some((t) => j.includes(String(t).toLowerCase()));
+    const allow = this.journals.exclude?.allow ?? [];
+    if (allow.some((t) => j.includes(String(t).toLowerCase()))) return false;
+    const pats = [...EXCLUDE_BUILTIN, ...(this.journals.exclude?.patterns ?? [])];
+    return pats.some((t) => j.includes(String(t).toLowerCase()));
   }
 
   _journalScore(paper) {
@@ -347,18 +391,23 @@ export class MetadataScorer {
   }
 
   // ── 사람이 읽는 근거 문장 (한국어) ────────────────────────────────────────────
-  _rationale({ jr, design, recency, sample, pen, rel, gate }) {
+  _rationale({ jr, design, recency, sample, pen, rel, topicGate, excludeGate }) {
     const parts = [];
     parts.push(`주제 ${Math.round(rel.rel01 * 100) / 10}`);
     parts.push(jr.tier);
     if (design.label !== 'Other') parts.push(design.label);
+    // 최신성·표본은 v2 에서 **점수에 반영되지 않는다**(축 삭제). 참고 표시만 남기되,
+    // 근거 문장이 "이 숫자가 점수를 만들었다"고 읽히지 않게 괄호로 구분한다.
+    // (특히 표본은 초록 배경 문장의 인구수를 잡는 오추출이 남아 있다 — 실측 N≈1704632)
     if (recency.days != null) {
-      parts.push(recency.days <= 30 ? '최근 30일' : recency.days <= 90 ? '최근 3개월' : recency.days <= 180 ? '6개월 내' : '1년+');
+      const label = recency.days <= 30 ? '최근 30일' : recency.days <= 90 ? '최근 3개월' : recency.days <= 180 ? '6개월 내' : '1년+';
+      parts.push(`${label}(참고)`);
     }
-    if (sample.n != null) parts.push(`N≈${sample.n}`);
+    if (sample.n != null) parts.push(`N≈${sample.n}(참고)`);
     if (rel.groups.length) parts.push(rel.groups.join('·'));
     let s = parts.join(' · ');
-    if (gate < 0) s += ' (⚠ 관심주제 무매칭 — 배제)';
+    if (excludeGate < 0) s += ' (⚠ 배제 저널 — config/journals.json exclude)';
+    if (topicGate < 0) s += ' (⚠ 관심주제 무매칭 — 배제)';
     if (pen.reasons.length) s += ` (감점: ${pen.reasons.join(', ')})`;
     return s;
   }

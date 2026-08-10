@@ -128,8 +128,12 @@ if (process.env.EXP_MODE === 'rerank') {
   const POOL = fa.rerankPool;
   const pool = fa._selectTopPapers(papers, [...detScores.values()], [], POOL);
   // 부수효과로 pool 요소에 rerankScore 부착(프로덕션 경로 그대로) + 실행 증거 수령.
-  const { telemetry } = await fa._rerankSelect(pool, 1);
-  const reranked = [...pool].sort((a, b) => (b.rerankScore ?? 0) - (a.rerankScore ?? 0));
+  // ★ 순위는 프로덕션이 돌려준 것을 그대로 쓴다. 여기서 다시 정렬하면(종전 코드가
+  //   `rerankScore ?? 0` 로 재정렬했다) 부분 적용 경로에서 미채점분이 0점으로 밀려
+  //   **리포트가 프로덕션과 다른 순서를 보여준다** — 이 리포트의 요점이 "프로덕션이
+  //   이 순서로 1편 선정"이므로 치명적이다.
+  const { picks, telemetry } = await fa._rerankSelect(pool, pool.length);
+  const reranked = picks;
   let md = `# 📊 결정적 + LLM rerank — ${today}\n\n`;
   md += `수집 **${papers.length}편** · 결정적 pool ${pool.length}편 → Opus 침상 임상가치 재순위\n\n`;
   // ★ 재순위가 무효면 아래 순서는 결정적 순서와 같다. 그걸 안 적으면 리포트가

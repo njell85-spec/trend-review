@@ -110,3 +110,35 @@ test('★ 배제: 배제 때문에 후보가 0이 되면 폴백한다 (데일리
   const picked = agent._selectTopPapers(papers, scores, [], 1);
   assert.equal(picked.length, 1, '전부 배제되면 빈손이 아니라 폴백해야 한다');
 });
+
+// ── 코드리뷰(high) 지적 반영 ──────────────────────────────────────────────
+test('★ 배제: config 가 깨져도 배제가 꺼지지 않는다 (폰 편집 사고 대비)', () => {
+  // journals.json 은 PeterJ 가 폰에서 고치는 파일이다. JSON 이 깨지면 _loadJson 이
+  // 조용히 임베디드 기본값으로 떨어지는데, 거기에 exclude 가 없으면 **배제가 통째로
+  // 꺼진 채 아무 로그도 없이** 데일리가 돈다 — 이 개편이 막으려던 바로 그 실패다.
+  // config 에 exclude 가 통째로 없어도(= 깨진 파일 → 임베디드 기본값) 배제는 살아 있다.
+  const noExclude = new MetadataScorer({ journals: { tiers: {}, default: { score: 0.8 } } });
+  assert.equal(noExclude.isExcludedJournal({ journal: 'Intensive & critical care nursing' }), true,
+    'config 에 exclude 가 없으면 배제가 꺼진다 — 코드가 바닥을 들어야 한다');
+  assert.equal(noExclude.isExcludedJournal({ journal: 'Critical care medicine' }), false);
+});
+
+test('배제: config allow 로 폰에서 되살릴 수 있다', () => {
+  const revived = new MetadataScorer({
+    journals: { tiers: {}, default: { score: 0.8 }, exclude: { allow: ['clinical nutrition'] } },
+  });
+  assert.equal(revived.isExcludedJournal({ journal: 'Clinical nutrition (Edinburgh, Scotland)' }), false);
+  assert.equal(revived.isExcludedJournal({ journal: 'Nutrients' }), true, 'allow 가 다른 것까지 풀면 안 된다');
+});
+
+test('배제: 배제 사유와 주제 무매칭 사유가 구분된다', () => {
+  const excluded = scorer.scoreOne(paper2('Sepsis septic shock vasopressor lactate', 'Nursing in critical care'));
+  assert.equal(excluded.journalExcluded, true);
+  assert.ok(!/관심주제 무매칭/.test(excluded.rationale),
+    `주제가 맞는데 "관심주제 무매칭"이라고 적는다: ${excluded.rationale}`);
+  assert.match(excluded.rationale, /배제/);
+});
+
+function paper2(title, journal) {
+  return { pmid: '1', title, abstract: '', journal, publicationTypes: [], pubDate: '2026-08-01' };
+}

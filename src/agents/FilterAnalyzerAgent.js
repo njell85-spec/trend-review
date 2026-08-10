@@ -332,7 +332,11 @@ Abstract: ${String(p.abstract ?? '').slice(0, 1200)}`).join('\n\n')}`;
 
       telemetry.llmCalled = true;
       const out = await this._callLLM([{ role: 'user', content: prompt }], this._scoringTool, this.llm);
-      const map = new Map((out?.scores ?? []).map((s) => [String(s.pmid), s]));
+      // ★ 숫자가 아닌 점수는 버린다. 하나라도 NaN 이 섞이면 그 논문이 정렬에서 1위로
+      //   튀어오르고(NaN 비교는 false), 중앙값에 걸리면 미채점분 전체가 NaN 이 된다.
+      const map = new Map((out?.scores ?? [])
+        .filter((s) => s?.pmid != null && Number.isFinite(Number(s.score)))
+        .map((s) => [String(s.pmid), s]));
       if (!map.size) {
         telemetry.reason = 'empty_scores';
         this.logger.warn('LLM rerank: 빈 결과 — 결정적 순위 유지');
