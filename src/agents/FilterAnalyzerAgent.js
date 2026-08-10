@@ -14,6 +14,10 @@ import { RetryHelper } from '../utils/RetryHelper.js';
 import { LLMClient, PROVIDER_DEFAULTS, ANTHROPIC_ANALYSIS_MODEL } from '../utils/LLMClient.js';
 import { MetadataScorer } from '../utils/MetadataScorer.js';
 
+// LLM 재순위를 신뢰하는 최소 커버리지 — 이 밑이면 재순위 전체 무효.
+// 1.0(전부 덮어야 함)이었으나 19/20 응답을 버리는 것이 실제 해였다(2026-08-10).
+const MIN_RERANK_COVERAGE = 0.8;
+
 export class FilterAnalyzerAgent {
   constructor(options = {}) {
     this.provider = options.provider ?? 'anthropic';
@@ -265,9 +269,26 @@ export class FilterAnalyzerAgent {
     const scoreMap  = new Map(scores.map((s) => [s.pmid, s]));
     const excludeSet = new Set(excludePmids);
 
-    const eligible = papers.filter((p) => !excludeSet.has(p.pmid));
+    let eligible = papers.filter((p) => !excludeSet.has(p.pmid));
     if (eligible.length < papers.length) {
       this.logger.info(`Excluded ${papers.length - eligible.length} already-published PMIDs from selection`);
+    }
+
+    // 저널 배제 (PeterJ 지시 2026-08-10) — 감점이 아니라 후보에서 뺀다.
+    // ★ 폴백: 배제 후 topN 을 못 채우면 배제를 적용하지 않는다. 배제 목록이 넓어졌거나
+    //   그날 후보가 얕을 때 데일리가 빈손이 되는 것보다, 한 편이라도 내보내는 편이 낫다.
+    //   (이 폴백이 돌면 로그에 남으므로 목록이 과한지 사후에 알 수 있다.)
+    const kept = eligible.filter((p) => !this.scorer.isExcludedJournal(p));
+    const dropped = eligible.length - kept.length;
+    if (dropped > 0) {
+      if (kept.length >= this.topN) {
+        this.logger.info(`저널 배제: ${dropped}편 제외 (간호·영양 등 — config/journals.json exclude)`);
+        eligible = kept;
+      } else {
+        this.logger.warn('저널 배제를 건너뜀 — 배제하면 후보가 topN 미만이 된다', {
+          eligible: eligible.length, kept: kept.length, topN: this.topN,
+        });
+      }
     }
 
     return eligible
@@ -311,25 +332,51 @@ Abstract: ${String(p.abstract ?? '').slice(0, 1200)}`).join('\n\n')}`;
 
       telemetry.llmCalled = true;
       const out = await this._callLLM([{ role: 'user', content: prompt }], this._scoringTool, this.llm);
-      const map = new Map((out?.scores ?? []).map((s) => [String(s.pmid), s]));
+      // ★ 숫자가 아닌 점수는 버린다. 하나라도 NaN 이 섞이면 그 논문이 정렬에서 1위로
+      //   튀어오르고(NaN 비교는 false), 중앙값에 걸리면 미채점분 전체가 NaN 이 된다.
+      const map = new Map((out?.scores ?? [])
+        .filter((s) => s?.pmid != null && Number.isFinite(Number(s.score)))
+        .map((s) => [String(s.pmid), s]));
       if (!map.size) {
         telemetry.reason = 'empty_scores';
         this.logger.warn('LLM rerank: 빈 결과 — 결정적 순위 유지');
         return { picks: pool.slice(0, n), telemetry };
       }
-      // 부분 응답으로 재순위하면 누락된 논문이 0점 취급돼 순위가 통째로 뒤집힌다.
-      // 풀을 전부 덮지 않으면 재순위 **전체 무효**(스펙 §5.4).
-      const missing = pool.filter((p) => !map.has(String(p.pmid)));
-      if (missing.length) {
+      // ★ 커버리지 판정 (2026-08-10 개정 — 스펙 §5.4 에서 벗어난다).
+      //   스펙은 "풀을 전부 덮지 않으면 전체 무효"였고 그대로 구현했는데, 실운영
+      //   첫날(run 31338148071) `{pool:20, scored:20, missing:1}` — LLM 이 풀에 없는
+      //   PMID 를 하나 섞어 보낸 것만으로 **19편의 멀쩡한 채점을 통째로 버렸다.**
+      //   그 결과 결정적 순위가 그대로 쓰여 간호지가 1위로 발행됐다. 규칙이 과했다.
+      //   이제 대부분(80% 이상)을 덮으면 **채점분만 재순위**하고, 미채점분은 0점이
+      //   아니라 **결정적 순위 뒤**로 보낸다(0점 취급하면 LLM 이 안 본 논문이 최하위로
+      //   밀려 순위가 왜곡된다). 절반도 못 덮으면 종전대로 전체 무효.
+      const covered = pool.filter((p) => map.has(String(p.pmid))).length;
+      const coverage = covered / pool.length;
+      if (coverage < MIN_RERANK_COVERAGE) {
         telemetry.reason = 'incomplete_scores';
-        this.logger.warn('LLM rerank: 응답이 풀을 전부 덮지 않음 — 재순위 무효, 결정적 순위 유지', {
-          pool: pool.length, scored: map.size, missing: missing.length,
+        this.logger.warn('LLM rerank: 응답 커버리지 부족 — 재순위 무효, 결정적 순위 유지', {
+          pool: pool.length, covered, coverage: coverage.toFixed(2),
         });
         return { picks: pool.slice(0, n), telemetry };
       }
+      if (covered < pool.length) {
+        telemetry.reason = 'partial_scores';
+        this.logger.warn('LLM rerank: 부분 적용 — 채점분만 재순위, 미채점분은 결정적 순위 뒤로', {
+          pool: pool.length, covered, missing: pool.length - covered,
+        });
+      }
 
+      // 미채점분에는 **채점분의 중앙값**을 준다. 0점(또는 맨 뒤)으로 밀면 LLM 이
+      // 우연히 빠뜨린 논문이 처벌받고, 만점을 주면 반대로 특혜가 된다. 중앙값이면
+      // 결정적 순위(동점 tie-break)가 그대로 살아 LLM 의 누락이 순위를 왜곡하지 않는다.
+      const scored = pool.map((p) => map.get(String(p.pmid))).filter(Boolean).map((s) => Number(s.score));
+      const sortedScores = [...scored].sort((a, b) => a - b);
+      const median = sortedScores.length
+        ? sortedScores[Math.floor((sortedScores.length - 1) / 2)]
+        : 0;
+      const scoreOf = (p) => (map.has(String(p.pmid)) ? Number(map.get(String(p.pmid)).score) : median);
       const reranked = [...pool]
-        .sort((a, b) => (Number(map.get(String(b.pmid))?.score ?? 0) - Number(map.get(String(a.pmid))?.score ?? 0))
+        .sort((a, b) => (scoreOf(b) - scoreOf(a))
                      || ((b.scoringData?.rawScore ?? 0) - (a.scoringData?.rawScore ?? 0)))
         .map((p) => {
           const r = map.get(String(p.pmid));
