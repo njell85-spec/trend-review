@@ -114,7 +114,10 @@ export class MetadataScorer {
     const recencyPart = recency.score * RECENCY_SCALE;
     const samplePart = sample.score * SAMPLE_SCALE;
     // ③ 주제 게이트: 관심 0매칭이면 강한 감점(사실상 배제)
-    const gate = rel.rel01 <= 0 ? Number(w.topicGatePenalty ?? -5) : 0;
+    //    배제 저널은 후보 선정에서 아예 빠지지만(_selectTopPapers), 점수에도 바닥을
+    //    깔아 둔다 — 폴백 경로나 진단 리포트에서 위로 올라오지 않게.
+    const gate = (rel.rel01 <= 0 ? Number(w.topicGatePenalty ?? -5) : 0)
+               + (jr.excluded ? -10 : 0);
 
     // 정렬용 rawScore 는 clamp 하지 않는다(동점 안정 분리 + 게이트 논문 확실히 바닥).
     const rawScore = journalPart + relPart + designPart + recencyPart + samplePart + pen.value + gate;
@@ -130,6 +133,7 @@ export class MetadataScorer {
       studyType: design.label,
       matchedInterests: rel.groups,
       journalTier: jr.tier,
+      journalExcluded: jr.excluded === true,
       gated: gate < 0,
       rationale: this._rationale({ jr, design, recency, sample, pen, rel, gate }),
     };
@@ -139,8 +143,22 @@ export class MetadataScorer {
   // 판정 순서: top → flagship → specialty → low → default.
   // exact=저널명 정확일치(자매지 오매칭 방지: 'jama' vs 'jama network open'),
   // includes=부분일치. 'medicine' 같은 범용명은 low.exact 로만 잡아 'critical care medicine' 오탐 방지.
+  // ── 저널 배제 (PeterJ 지시 2026-08-10 — 감점이 아니라 배제) ──────────────────
+  // ★ 티어 판정보다 **먼저** 걸러야 한다. 대표지 티어가 `'critical care'` 맨몸
+  //   부분일치라, 이 검사가 없으면 "Intensive & critical care nursing" 같은 간호지가
+  //   3.2점(대표지)을 받는다 — 실제로 2026-08-09·10 이틀 연속 그렇게 1위로 발행됐다.
+  //   저널명이 비면 배제하지 않는다(메타데이터 결손으로 좋은 논문을 잃지 않는다).
+  isExcludedJournal(paper) {
+    const j = String(paper?.journal ?? '').toLowerCase().trim();
+    if (!j) return false;
+    return (this.journals.exclude?.patterns ?? []).some((t) => j.includes(String(t).toLowerCase()));
+  }
+
   _journalScore(paper) {
     const j = String(paper.journal ?? '').toLowerCase().trim();
+    if (this.isExcludedJournal(paper)) {
+      return { score: this.journals.tiers?.low?.score ?? -1.0, tier: this.journals.exclude?.label ?? '배제 저널', excluded: true };
+    }
     const T = this.journals.tiers ?? {};
     const exact = (arr) => (arr ?? []).some((n) => j === n);
     const inc = (arr) => j.length > 0 && (arr ?? []).some((n) => j.includes(n));

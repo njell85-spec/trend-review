@@ -124,15 +124,49 @@ test('rerankLog: LLM 이 실패하면 결정적 순위를 유지하고 "(LLM rer
   assert.ok(lines.some((l) => /llm_error/.test(l)), '실패 사유가 로그에 남아야 한다');
 });
 
-test('rerankLog: LLM 응답이 풀 PMID 를 전부 덮지 않으면 재순위 전체 무효', async () => {
+test('rerankLog: 응답이 대부분을 덮으면 채점분만 재순위한다 (1편 빠졌다고 전부 버리지 않는다)', async () => {
+  // ★ 실측 회귀 (2026-08-10 run 31338148071): `{pool:20, scored:20, missing:1}` —
+  //   LLM 이 풀에 없는 PMID 를 하나 섞어 보내 커버리지가 19/20 이 됐고, 종전의
+  //   "전부 안 덮으면 전체 무효" 규칙(스펙 §5.4)이 발동해 **재순위가 통째로 버려졌다.**
+  //   그 결과 결정적 순위가 그대로 쓰여 간호지가 1위로 발행됐다. 규칙이 과했다.
   const agent = new FilterAnalyzerAgent({ topN: 1, enableRerank: true, rerankPool: 20 });
   const lines = captureLogs(agent);
-  // 20편 풀인데 3편만 점수를 돌려준다 → 나머지 17편이 0점 취급돼 순위가 뒤집힌다.
+  agent._callLLM = async (messages) => {
+    const scores = fullScores(messages, '1007');
+    scores.pop();                                  // 1편 누락
+    scores.push({ pmid: '9999', score: 10 });      // 풀에 없는 PMID 혼입
+    return { scores };
+  };
+  const { topPapers } = await agent.runScoringOnly(makePapers(30));
+  assert.equal(topPapers[0].pmid, '1007', '19/20 을 덮었으면 재순위 결과를 써야 한다');
+  const selected = lines.find((l) => l.includes('Selected top'));
+  assert.ok(/\(LLM reranked\)/.test(selected), `적용했는데 문구가 없다: ${selected}`);
+  assert.ok(lines.some((l) => /partial_scores/.test(l)), '부분 적용 사실이 로그에 남아야 한다');
+});
+
+test('rerankLog: 미채점 논문은 0점이 아니라 결정적 순위 뒤로 간다', async () => {
+  // 미채점을 0점 취급하면 LLM 이 안 본 논문이 최하위로 밀려 순위가 왜곡된다.
+  const agent = new FilterAnalyzerAgent({ topN: 3, enableRerank: true, rerankPool: 20 });
+  captureLogs(agent);
+  agent._callLLM = async (messages) => {
+    // 결정적 1·2위(1000·1001)는 채점하지 않고, 하위 1편만 낮은 점수로 채점한다.
+    const pmids = promptPmids(messages);
+    return { scores: pmids.slice(2).map((pmid) => ({ pmid, score: 3, rationale: 'low' })) };
+  };
+  const { topPapers } = await agent.runScoringOnly(makePapers(30));
+  const picked = topPapers.map((p) => p.pmid);
+  assert.ok(picked.includes('1000') && picked.includes('1001'),
+    `미채점 논문이 0점으로 밀려났다: ${picked.join(',')}`);
+});
+
+test('rerankLog: 응답이 풀의 절반도 못 덮으면 재순위 전체 무효', async () => {
+  const agent = new FilterAnalyzerAgent({ topN: 1, enableRerank: true, rerankPool: 20 });
+  const lines = captureLogs(agent);
   agent._callLLM = async () => ({
     scores: [{ pmid: '1019', score: 10 }, { pmid: '1018', score: 9 }, { pmid: '1017', score: 8 }],
   });
   const { topPapers } = await agent.runScoringOnly(makePapers(30));
-  assert.notEqual(topPapers[0].pmid, '1019', '부분 응답으로 순위를 뒤집으면 안 된다');
+  assert.notEqual(topPapers[0].pmid, '1019', '3/20 짜리 응답으로 순위를 뒤집으면 안 된다');
   const selected = lines.find((l) => l.includes('Selected top'));
   assert.ok(!/\(LLM reranked\)/.test(selected), `무효 처리인데 돌았다고 찍는다: ${selected}`);
   assert.ok(lines.some((l) => /incomplete_scores/.test(l)), '무효 사유가 로그에 남아야 한다');
