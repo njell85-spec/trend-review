@@ -228,5 +228,15 @@
     "rerankPoolSize": 20,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42454924",
+    "title": "Bacteremia evaluation with T2 magnetic resonance in the emergency room (BETTER).",
+    "date": "2026-08-12",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 20,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
