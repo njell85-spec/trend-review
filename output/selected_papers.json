@@ -238,5 +238,15 @@
     "rerankPoolSize": 20,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42486569",
+    "title": "The Left Ventricular Assist Device Patient in the Intensive Care Unit: A Clinica",
+    "date": "2026-08-13",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 20,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
