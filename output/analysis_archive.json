@@ -2019,6 +2019,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-13",
+      "pmid": "42486569",
+      "title": "The Left Ventricular Assist Device Patient in the Intensive Care Unit: A Clinically Focused Guide for Intensivists.",
+      "title_ko": "중환자실의 좌심실보조장치(LVAD) 환자: 중환자 전문의를 위한 임상 중심 지침",
+      "journal": "Clinics in chest medicine",
+      "doi": "10.1016/j.ccm.2026.04.015",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "중환자 전문의는 흔한 중환자실 질환으로 내원하는 LVAD 환자를 관리할 때 LVAD 특유의 생리와 장치 관련 고려사항을 어떻게 통합해야 하는가?",
+      "pico": {
+        "population": "[Country NR] Advanced heart failure patients supported with left ventricular assist devices (LVADs) who present with common intensive care unit (ICU) conditions; narrative review, no defined cohort or sample size reported.",
+        "intervention": "Application of fundamental LVAD principles and best practices for monitoring and management of common ICU pathophysiologic states among LVAD patients by intensivists (narrative review guidance; no specific dose or threshold reported).",
+        "comparison": null,
+        "outcome": "No primary outcome measured; as a narrative review the paper reports no quantitative outcome, effect size, or statistical result. It aims to address knowledge gaps and outline best practices for monitoring and management."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 좌심실보조장치(LVAD)로 순환 보조를 받는 진행성 심부전 환자 중 흔한 중환자실(ICU) 질환으로 내원한 환자; 서술적(narrative) 리뷰로 정의된 코호트나 표본 크기는 보고되지 않음.",
+        "intervention": "중환자 전문의가 LVAD 환자의 흔한 ICU 병태생리 상태에 대해 기본 LVAD 원리와 모니터링·관리 모범 사례를 적용하는 것(서술적 리뷰 지침; 특정 용량이나 기준치는 보고되지 않음).",
+        "comparison": null,
+        "outcome": "측정된 일차 결과 없음; 서술적 리뷰로서 정량적 결과·효과크기·통계 결과를 보고하지 않음. 지식 격차를 해소하고 모니터링·관리 모범 사례를 제시하는 것을 목표로 함."
+      },
+      "keyFindings": [
+        "LVADs are increasingly used for advanced heart failure, and ongoing durability improvements have enhanced long-term device performance, making it more likely that intensivists will manage these patients (no quantitative figures reported).",
+        "Dynamic interactions between LVAD function and underlying pathophysiology produce heterogeneous clinical presentations that require tailored, individualized management rather than a single protocol.",
+        "Knowledge gaps among intensivists regarding integrating LVAD considerations into ICU care are highlighted as a key motivation; the review outlines fundamental principles, monitoring/management best practices, and common ICU pathophysiologic states in LVAD patients."
+      ],
+      "keyFindings_ko": [
+        "LVAD는 진행성 심부전에 점점 더 많이 사용되며, 지속적인 내구성 개선으로 장기 장치 성능이 향상되어 중환자 전문의가 이들 환자를 관리할 가능성이 커지고 있음(정량적 수치는 보고되지 않음).",
+        "LVAD 기능과 기저 병태생리 간의 동적 상호작용은 이질적인 임상 양상을 만들어 단일 프로토콜이 아니라 맞춤형 개별 관리를 요구함.",
+        "ICU 진료에 LVAD 고려사항을 통합하는 데 있어 중환자 전문의의 지식 격차가 핵심 동기로 강조되며, 이 리뷰는 기본 원리, 모니터링·관리 모범 사례, LVAD 환자의 흔한 ICU 병태생리 상태를 정리함."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42486569",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42486569/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.ccm.2026.04.015",
+          "url": "https://doi.org/10.1016/j.ccm.2026.04.015"
+        },
+        {
+          "label": "웹 — PubMed search (article not yet indexed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Left+Ventricular+Assist+Device+Patient+Intensive+Care+Unit+Clinically+Focused+Guide+Intensivists+Starling+Moreno"
+        },
+        {
+          "label": "웹 — Clinics in Chest Medicine — current issue (publisher)",
+          "url": "https://www.chestmed.theclinics.com/current"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed search (article not yet indexed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Left+Ventricular+Assist+Device+Patient+Intensive+Care+Unit+Clinically+Focused+Guide+Intensivists+Starling+Moreno",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Clinics in Chest Medicine — current issue (publisher)",
+          "url": "https://www.chestmed.theclinics.com/current",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
