@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { MetadataScorer } from '../src/utils/MetadataScorer.js';
 import { composeDualStreams, DataCollectorAgent } from '../src/agents/DataCollectorAgent.js';
-import { candidatesAsOf, applyArmExclusions, runReplay, armDivergence, SOFT_PATTERNS } from '../src/experiments/selectionReplay.js';
+import { candidatesAsOf, applyArmExclusions, runReplay, armDivergence, selectMonthlyPool, SOFT_PATTERNS } from '../src/experiments/selectionReplay.js';
 
 const fixture = JSON.parse(readFileSync(new URL('./fixtures/replay-corpus.json', import.meta.url), 'utf8'));
 const arms = JSON.parse(readFileSync(new URL('../experiments/arms.json', import.meta.url), 'utf8')).arms;
@@ -126,4 +126,28 @@ test('h) D 의 배제 집합은 A 와 같다 — 티어화가 후보를 바꾸�
   assert.deepEqual(aKept.papers.map((p) => String(p.pmid)).sort(),
     dKept.papers.map((p) => String(p.pmid)).sort());
   assert.equal(dKept.softRestoredCount, 0);
+});
+
+test('i) 월별 top-K 는 배제 저널을 먼저 걷어낸 뒤 채운다', () => {
+  // 배제 저널이 월 10슬롯을 차지한 뒤 사라지면 그 달 기여가 10편 미만이 되고
+  // 밀려난 정상 임상지는 보충되지 않는다 (코덱스 리뷰 2026-08-14).
+  const scorer = new MetadataScorer({ profile, journals });
+  const mk = (pmid, journal) => ({ pmid, title: 'Sepsis septic shock trial', abstract: 'sepsis',
+    journal, publicationTypes: ['Randomized Controlled Trial'], pubDate: '2026-08-01' });
+  const cand = [mk('N1', 'Intensive & critical care nursing'), mk('N2', 'Journal of clinical nursing'),
+    mk('G1', 'Critical care medicine'), mk('G2', 'Resuscitation')];
+  const sel = selectMonthlyPool(cand, '2026-08-05', scorer, { months: 12, monthDays: 30, keepPerMonth: 2 });
+  const ids = sel.pool.map((p) => String(p.pmid)).sort();
+  assert.deepEqual(ids, ['G1', 'G2'], '배제 저널이 슬롯을 먹고 사라졌다');
+});
+
+test('j) armDivergence 는 후보 수가 같아도 집합이 다르면 잡는다', () => {
+  const day = (pmids) => ({ date: '2026-08-01', candidateCount: pmids.length,
+    excludedCount: 0, softRestoredCount: 0, fallbackTriggered: false,
+    ranked: pmids.map((p) => ({ pmid: p, rawScore: 5 })), selected: { pmid: pmids[0] } });
+  const r = { arms: {
+    A: { selectedPmids: ['1'], days: [day(['1', '2'])] },
+    X: { selectedPmids: ['1'], days: [day(['1', '3'])] },
+  } };
+  assert.equal(armDivergence(r).find((x) => x.arm === 'X').poolDiffDays, 1);
 });

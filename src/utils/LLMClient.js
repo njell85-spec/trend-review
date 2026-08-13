@@ -11,7 +11,7 @@
 import { spawn } from 'child_process';
 
 // 리눅스 MAX_ARG_STRLEN 은 128KB(=32 페이지). 여유를 두고 96KB 를 넘으면 stdin 으로 보낸다.
-const ARGV_PROMPT_LIMIT = 96_000;
+const ARGV_PROMPT_LIMIT = 96_000;   // 바이트
 import OpenAI from 'openai';
 import { isSessionRateLimit } from './retryPipeline.js';
 
@@ -287,7 +287,9 @@ ${schema}`;
     //   176,670자였고 그대로 터졌다(20편 29,811자는 통과). 큰 프롬프트는 stdin 으로 넘긴다
     //   — `claude -p` 는 위치 인자가 없으면 stdin 을 읽는다.
     //   데일리(풀 20)는 상한 아래라 종전 argv 경로 그대로다.
-    const stdinPrompt = fullPrompt.length > ARGV_PROMPT_LIMIT ? fullPrompt : null;
+    //   ★ 상한은 **바이트**다. `.length` 는 UTF-16 문자 수라 한글이 섞이면 7만 자가
+    //   UTF-8 21만 바이트가 돼 임계를 통과해 놓고 그대로 터진다.
+    const stdinPrompt = Buffer.byteLength(fullPrompt, 'utf8') > ARGV_PROMPT_LIMIT ? fullPrompt : null;
     const args = stdinPrompt
       ? ['-p', '--output-format', 'json', '--append-system-prompt', sys]
       : ['-p', fullPrompt, '--output-format', 'json', '--append-system-prompt', sys];

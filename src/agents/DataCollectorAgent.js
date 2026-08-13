@@ -254,7 +254,10 @@ export class DataCollectorAgent {
     const perMonth = [];
     const keptIds = [];
     for (let m = 0; m < months; m++) {
-      const end = new Date(this.now.getTime() - m * monthDays * 86_400_000);
+      // PubMed 날짜 범위는 **양 끝을 포함**한다. 이웃 구간의 end 와 start 가 같은 날이면
+      // 그날 논문이 두 달에 다 들어가 dedup 뒤 풀이 조용히 작아진다 — 하루 당겨 반개구간으로.
+      const end = new Date(this.now.getTime() - m * monthDays * 86_400_000
+        - (m > 0 ? 86_400_000 : 0));
       const start = new Date(this.now.getTime() - (m + 1) * monthDays * 86_400_000);
       const minDate = this._isoDate(start), maxDate = this._isoDate(end);
       const monthIds = await this._search({
@@ -272,8 +275,12 @@ export class DataCollectorAgent {
       } else {
         kept = monthIds.slice(0, screenPerMonth);
       }
+      // esearch 가 screenDepth 로 잘렸으면 그 달의 오래된 고득점 논문은 **점수조차 안 매겨진다.**
+      // 조용히 넘기면 "그 달 전체를 훑었다"는 말이 거짓이 된다 — 표에 드러낸다.
+      const truncated = monthIds.length >= screenDepth;
+      if (truncated) this.logger.warn(`월별 풀 M${m}: screenDepth(${screenDepth}) 에 걸렸다 — 그 달을 다 못 봤다`, { minDate, maxDate });
       perMonth.push({ month: m, minDate, maxDate, found: monthIds.length,
-        screenDepth, kept: kept.length, preranked });
+        screenDepth, truncated, kept: kept.length, preranked });
       keptIds.push(...kept);
       this.logger.info(`월별 풀 M${m}: ${monthIds.length}편 발견 → ${kept.length}편 선별`,
         { preranked, minDate, maxDate });

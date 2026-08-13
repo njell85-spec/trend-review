@@ -62,7 +62,10 @@ export function monthlyBuckets(candidates, day, { months = 12, monthDays = 30 } 
 
 export function selectMonthlyPool(candidates, day, scorer, cfg = {}) {
   const { months = 12, monthDays = 30, keepPerMonth = 10 } = cfg;
-  const buckets = monthlyBuckets(candidates, day, { months, monthDays });
+  // ★ 배제를 top-K **앞**에 건다. 뒤에 걸면 배제 저널이 월 10슬롯을 차지한 뒤 사라져
+  //   그 달 기여가 10편 미만으로 줄고, 밀려난 정상 임상지는 보충되지 않는다.
+  const eligible = candidates.filter((p) => !scorer.isExcludedJournal(p));
+  const buckets = monthlyBuckets(eligible, day, { months, monthDays });
   const pool = [];
   const perMonth = [];
   for (let m = 0; m < buckets.length; m++) {
@@ -237,7 +240,11 @@ export function armDivergence(result, baseline = 'A') {
         if (delta > 1e-9) { dayDiff = true; maxAbsDelta = Math.max(maxAbsDelta, delta); }
       }
       if (dayDiff) scoreDiffDays++;
-      if (dayB.candidateCount !== dayX.candidateCount) poolDiffDays++;
+      // 후보 "수"만 보면 크기가 같고 내용이 다른 두 풀을 같다고 오판한다 — 집합으로 본다.
+      const setB = new Set(dayB.ranked.map((r) => String(r.pmid)));
+      const setX = new Set(dayX.ranked.map((r) => String(r.pmid)));
+      const sameSet = setB.size === setX.size && [...setB].every((id) => setX.has(id));
+      if (!sameSet) poolDiffDays++;
       if ((dayB.selected?.pmid ?? null) !== (dayX.selected?.pmid ?? null)) pickDiffDays++;
     }
     const verdict = scoreDiffDays === 0 && poolDiffDays === 0
@@ -271,7 +278,13 @@ export function renderPoolComparison(result, { charsPerToken = null } = {}) {
   if (!arms.includes('A') || !arms.includes('E')) return '';
   const sum = (a, f) => result.arms[a].days.reduce((n, d) => n + (f(d) ?? 0), 0);
   const picks = (a) => new Set(result.arms[a].selectedPmids);
-  const overlap = [...picks('A')].filter((x) => picks('E').has(x)).length;
+  // ★ 두 지표는 다르다. 종전엔 고유 PMID 교집합을 "같은 날"이라고 적어 오보했다 —
+  //   서로 다른 날 같은 논문을 골라도 1로 세고, 반복 선정이 있으면 반대로 과소계상한다.
+  const sameDayPicks = result.arms.A.days.filter((d) => {
+    const e = result.arms.E.days.find((x) => x.date === d.date);
+    return (d.selected?.pmid ?? null) !== null && (d.selected?.pmid ?? null) === (e?.selected?.pmid ?? null);
+  }).length;
+  const pmidOverlap = [...picks('A')].filter((x) => picks('E').has(x)).length;
 
   let md = `\n## 풀 구조 비교 — 현행 A vs PeterJ 안 E\n\n`;
   md += `| 항목 | A (180일·단일 300 → top20 → LLM) | E (365일·12×100 → 월top10 → 120 → LLM) |\n|---|---:|---:|\n`;
@@ -296,8 +309,8 @@ export function renderPoolComparison(result, { charsPerToken = null } = {}) {
     md += `\n> 이 두 줄만 실제 호출이다. 30일 총량은 **일자별 실제 프롬프트 글자수 합 × 위 비율**로 냈다.\n`;
     md += `> 선정 논문 1편을 분석하는 LLM 비용은 두 안이 동일하므로(둘 다 1편) 비교에서 상쇄된다.\n`;
   }
-  md += `\n**두 안이 같은 논문을 고른 날: ${overlap} / ${result.arms.A.days.length}**`;
-  md += ` (고유 PMID 교집합 ${overlap}편)\n`;
+  md += `\n**같은 날 같은 논문을 고른 날: ${sameDayPicks} / ${result.arms.A.days.length}**`;
+  md += ` · 날짜 무관 고유 PMID 교집합: ${pmidOverlap}편 (다른 지표다)\n`;
 
   md += `\n### 선정 논문이 갈린 날\n\n| 날짜 | A | E |\n|---|---|---|\n`;
   let diff = 0;
