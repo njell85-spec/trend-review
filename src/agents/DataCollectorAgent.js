@@ -19,7 +19,7 @@ const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const scrubUrl = (u) => String(u).replace(/([?&]api_key=)[^&]*/gi, '$1REDACTED');
 
 const DEFAULT_QUERY =
-  '"emergency medicine"[MeSH] OR "critical care"[MeSH] OR "sepsis"[MeSH]';
+  '"emergency service, hospital"[MeSH] OR "critical illness"[MeSH] OR "intensive care units"[MeSH] OR "resuscitation"[MeSH] OR "critical care"[MeSH] OR "emergency medicine"[MeSH]';
 
 export class DataCollectorAgent {
   constructor(options = {}) {

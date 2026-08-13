@@ -118,13 +118,12 @@ const DEFAULT_PROFILE = {
 const DEFAULT_JOURNALS = {
   tiers: {
     top_general: { label: '최상위 종합지', score: 4.0,
-      exact: ['jama', 'bmj', 'lancet', 'nature'],
-      includes: ['new england journal', 'nature medicine'] },
+      exact: ['jama', 'bmj', 'lancet', 'nature', 'the new england journal of medicine', 'nature medicine'] },
     em_ccm_flagship: { label: 'EM·CCM 대표지', score: 3.2,
-      includes: ['critical care medicine', 'intensive care medicine', 'resuscitation',
-                 'annals of emergency medicine', 'chest', 'circulation', 'stroke'] },
+      exact: ['critical care medicine', 'intensive care medicine', 'resuscitation',
+              'annals of emergency medicine', 'chest', 'circulation', 'stroke'] },
     specialty: { label: '전문 저널', score: 2.0,
-      includes: ['american journal of emergency medicine', 'journal of critical care', 'shock'] },
+      exact: ['american journal of emergency medicine', 'journal of critical care', 'shock'] },
     low: { label: '저명도 낮음', score: -1.0, exact: ['medicine', 'cureus'],
       includes: ['scientific reports', 'bmc ', 'plos one', 'frontiers in', 'heliyon'] },
   },
@@ -225,11 +224,13 @@ export class MetadataScorer {
     const exact = (arr) => (arr ?? []).some((n) => j === n);
     const inc = (arr) => j.length > 0 && (arr ?? []).some((n) => j.includes(n));
 
-    if (T.top_general && (exact(T.top_general.exact) || inc(T.top_general.includes)))
+    // 상위 3개 티어는 exact만 허용한다. 부분일치는 low 감점용으로만
+    // 남겨 `critical care` 같은 단어가 간호지·자매지를 대표지로 올리지 못하게 한다.
+    if (T.top_general && exact(T.top_general.exact))
       return { score: T.top_general.score, tier: T.top_general.label ?? '최상위' };
-    if (T.em_ccm_flagship && inc(T.em_ccm_flagship.includes))
+    if (T.em_ccm_flagship && exact(T.em_ccm_flagship.exact))
       return { score: T.em_ccm_flagship.score, tier: T.em_ccm_flagship.label ?? '대표지' };
-    if (T.specialty && inc(T.specialty.includes))
+    if (T.specialty && exact(T.specialty.exact))
       return { score: T.specialty.score, tier: T.specialty.label ?? '전문지' };
     if (T.low && (exact(T.low.exact) || inc(T.low.includes)))
       return { score: T.low.score, tier: T.low.label ?? '저명도 낮음' };
