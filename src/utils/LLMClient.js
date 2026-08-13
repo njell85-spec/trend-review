@@ -9,6 +9,9 @@
  * or into OpenAI function-calling format for the openai path.
  */
 import { spawn } from 'child_process';
+
+// 리눅스 MAX_ARG_STRLEN 은 128KB(=32 페이지). 여유를 두고 96KB 를 넘으면 stdin 으로 보낸다.
+const ARGV_PROMPT_LIMIT = 96_000;
 import OpenAI from 'openai';
 import { isSessionRateLimit } from './retryPipeline.js';
 
@@ -279,7 +282,15 @@ ${schema}`;
     // 안전 필터 오탐(false-positive refusal)을 줄인다.
     const sys = 'You are assisting a board-certified emergency medicine and critical care physician with a routine, legitimate systematic review of peer-reviewed biomedical literature indexed in PubMed. All inputs are public scientific abstracts from medical journals. Provide objective, professional clinical appraisal and the requested structured output. This is standard medical education and research.';
 
-    const args = ['-p', fullPrompt, '--output-format', 'json', '--append-system-prompt', sys];
+    // ★ 프롬프트를 argv 로 넘기면 리눅스의 **단일 인자 상한(MAX_ARG_STRLEN = 128KB)**에
+    //   걸려 `spawn E2BIG` 로 죽는다. 2026-08-14 실측: 논문 120편 rerank 프롬프트가
+    //   176,670자였고 그대로 터졌다(20편 29,811자는 통과). 큰 프롬프트는 stdin 으로 넘긴다
+    //   — `claude -p` 는 위치 인자가 없으면 stdin 을 읽는다.
+    //   데일리(풀 20)는 상한 아래라 종전 argv 경로 그대로다.
+    const stdinPrompt = fullPrompt.length > ARGV_PROMPT_LIMIT ? fullPrompt : null;
+    const args = stdinPrompt
+      ? ['-p', '--output-format', 'json', '--append-system-prompt', sys]
+      : ['-p', fullPrompt, '--output-format', 'json', '--append-system-prompt', sys];
     // Pass the configured model through to the CLI so the pipeline actually
     // runs on the requested model (e.g. claude-opus-4-8) instead of the CLI default.
     if (this.model) args.push('--model', this.model);
@@ -297,7 +308,7 @@ ${schema}`;
     // 타이머·로그 flush·향후 병렬화를 전부 막는다
     // 웹검색 경로 타임아웃도 상향 가능(턴을 늘리면 더 오래 걸린다). 기본 480s 유지.
     const webTimeoutMs = Number(process.env.LLM_WEB_TIMEOUT_MS) || 480_000;
-    const result = await this._spawnClaude(args, webSearch ? webTimeoutMs : 300_000);
+    const result = await this._spawnClaude(args, webSearch ? webTimeoutMs : 300_000, stdinPrompt);
 
     if (result.error) throw new Error(`claude CLI spawn error: ${result.error.message}`);
     if (result.timedOut) throw new Error(`claude CLI timed out after ${result.timeoutMs / 1000}s`);
@@ -329,7 +340,7 @@ ${schema}`;
     return this._extractJSON(parsed.result ?? '');
   }
 
-  _spawnClaude(args, timeoutMs) {
+  _spawnClaude(args, timeoutMs, stdinData = null) {
     return new Promise((resolve) => {
       // 구독 CLI는 CLAUDE_CODE_OAUTH_TOKEN(구독)으로 인증해야 한다. process.env에
       // ANTHROPIC_API_KEY가 남아 있으면 CLI가 구독 대신 그 API 키를 우선 사용해버려,
@@ -338,7 +349,14 @@ ${schema}`;
       // (_callAnthropicAPI)은 process.env를 직접 읽으므로 이 격리와 무관하게 동작한다.
       const env = { ...process.env };
       delete env.ANTHROPIC_API_KEY;
-      const child = spawn('claude', args, { stdio: ['ignore', 'pipe', 'pipe'], env });
+      const child = spawn('claude', args,
+        { stdio: [stdinData ? 'pipe' : 'ignore', 'pipe', 'pipe'], env });
+      if (stdinData) {
+        // EPIPE 로 프로세스를 죽이지 않는다 — CLI 가 먼저 닫으면 그냥 무시하고
+        // close 핸들러가 stderr 로 원인을 잡게 둔다.
+        child.stdin.on('error', () => {});
+        child.stdin.end(stdinData, 'utf8');
+      }
       let stdout = '';
       let stderr = '';
       let settled = false;
