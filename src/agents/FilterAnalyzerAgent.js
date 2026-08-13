@@ -337,7 +337,10 @@ Abstract: ${String(p.abstract ?? '').slice(0, 1200)}`).join('\n\n')}`;
       //   120편(PeterJ 안)은 약 23,300 토큰이 필요해 그냥 죽는다 — 실제로 110편 호출이
       //   조용히 실패했다(usage 0). 소프트 실패라 "결정적 순위 유지"로 넘어가 **LLM 이 안
       //   돌았는데 돈 것처럼 보인다.** 상한을 풀에 맞춰 늘린다.
-      const rerankMaxTokens = Math.min(64_000, 1_000 + 240 * pool.length);
+      //   ★ 종전 기본값(8,192)보다 **낮아지지 않게** 바닥을 깐다. 풀 20 이면 공식값이
+      //   5,800 이라 데일리 예산이 오히려 줄어드는데, 초록·rationale 길이는 날마다 달라서
+      //   그 축소가 언젠가 조용한 절단으로 돌아온다. 늘리는 것만 하고 줄이지는 않는다.
+      const rerankMaxTokens = Math.max(8_192, Math.min(64_000, 1_000 + 240 * pool.length));
       telemetry.rerankMaxTokens = rerankMaxTokens;
       telemetry.llmCalled = true;
       const out = await this._callLLM([{ role: 'user', content: prompt }], this._scoringTool,

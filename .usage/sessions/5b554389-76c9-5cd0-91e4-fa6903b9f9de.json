@@ -3,7 +3,7 @@
   "schema": 3,
   "repo": "trend-review",
   "updated": "2026-08-14",
-  "turns": 263,
+  "turns": 284,
   "records": [
     {
       "ts": "2026-08-14",
@@ -12,15 +12,15 @@
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-5",
-      "in": 2678,
-      "out": 152708,
-      "cache_w": 864630,
-      "cache_r": 46223941,
-      "cost_usd": 35.589361,
+      "in": 2712,
+      "out": 162791,
+      "cache_w": 891288,
+      "cache_r": 54040712,
+      "cost_usd": 40.016571,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "5b554389-76c9-5cd0-91e4-fa6903b9f9de",
-      "note": "세션 누계(턴 263) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 284) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
       "ts": "2026-08-14",
@@ -29,15 +29,15 @@
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-4-7",
-      "in": 105,
-      "out": 29150,
-      "cache_w": 277096,
-      "cache_r": 2773997,
-      "cost_usd": 4.887234,
+      "in": 119,
+      "out": 29706,
+      "cache_w": 287881,
+      "cache_r": 2900106,
+      "cost_usd": 5.072108,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "5b554389-76c9-5cd0-91e4-fa6903b9f9de",
-      "note": "세션 누계(턴 263) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 284) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
       "ts": "2026-08-14",
@@ -54,7 +54,7 @@
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "5b554389-76c9-5cd0-91e4-fa6903b9f9de",
-      "note": "세션 누계(턴 263) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 284) · 공시단가 환산 · 캐시쓰기 배수 2"
     }
   ]
 }
