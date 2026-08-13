@@ -6,6 +6,7 @@
  * returning structured paper objects ready for downstream analysis.
  */
 import { parseStringPromise } from 'xml2js';
+import { readFileSync } from 'fs';
 import { Logger } from '../utils/Logger.js';
 import { Cache } from '../utils/Cache.js';
 import { CircuitBreaker } from '../utils/CircuitBreaker.js';
@@ -21,6 +22,43 @@ const scrubUrl = (u) => String(u).replace(/([?&]api_key=)[^&]*/gi, '$1REDACTED')
 const DEFAULT_QUERY =
   '"emergency service, hospital"[MeSH] OR "critical illness"[MeSH] OR "intensive care units"[MeSH] OR "resuscitation"[MeSH] OR "critical care"[MeSH] OR "emergency medicine"[MeSH]';
 
+const DEFAULT_COLLECTION = {
+  maxPapers: 300,
+  streamA: { days: 30, retmax: 220 },
+  streamB: { days: 180, slices: 6, retmaxPerSlice: 16, journalChunkSize: 10,
+    designTypes: ['randomized controlled trial', 'meta-analysis', 'systematic review'] },
+};
+
+export function composeDualStreams(streamA, streamB, { maxPapers = 300, minB = 80 } = {}) {
+  const byId = (items) => new Map(items.filter((p) => p?.pmid).map((p) => [String(p.pmid), p]));
+  const a = byId(streamA);
+  const b = byId(streamB);
+  const out = [];
+  const add = (p, source) => {
+    if (!p || out.some((x) => String(x.pmid) === String(p.pmid))) return;
+    const id = String(p.pmid);
+    const sources = [a.has(id) && 'A', b.has(id) && 'B'].filter(Boolean);
+    out.push({ ...p, streamSource: source, streamSources: sources });
+  };
+  for (const p of b.values()) { if (out.length >= Math.min(minB, b.size, maxPapers)) break; add(p, 'B'); }
+  for (const p of a.values()) { if (out.length >= maxPapers) break; add(p, 'A'); }
+  for (const p of b.values()) { if (out.length >= maxPapers) break; add(p, 'B'); }
+  return out;
+}
+
+function mergeCorpusSources(groups) {
+  const merged = new Map();
+  for (const [source, papers] of Object.entries(groups)) {
+    for (const paper of papers) {
+      const id = String(paper.pmid);
+      const prior = merged.get(id);
+      merged.set(id, { ...(prior ?? {}), ...paper,
+        collectionSources: [...new Set([...(prior?.collectionSources ?? []), source])] });
+    }
+  }
+  return [...merged.values()];
+}
+
 export class DataCollectorAgent {
   constructor(options = {}) {
     this.logger = new Logger('DataCollectorAgent', { logFile: 'data_collector.jsonl' });
@@ -34,11 +72,25 @@ export class DataCollectorAgent {
     this.maxPapers = options.maxPapers ?? Number(process.env.MAX_PAPERS ?? 300);
     this.searchDays = options.searchDays ?? Number(process.env.SEARCH_DAYS ?? 180);
     this.query = options.query ?? DEFAULT_QUERY;
+    this.collectionMode = options.collectionMode ?? 'single';
+    this.now = options.now ? new Date(options.now) : new Date();
+    this.collection = options.collection ?? this._loadCollection();
+    this.journals = options.journals ?? this._loadJournals();
+  }
+
+  _loadCollection() {
+    try { return JSON.parse(readFileSync(new URL('../../config/collection.json', import.meta.url), 'utf8')); }
+    catch { return DEFAULT_COLLECTION; }
+  }
+
+  _loadJournals() {
+    try { return JSON.parse(readFileSync(new URL('../../config/journals.json', import.meta.url), 'utf8')); }
+    catch { return { tiers: {} }; }
   }
 
   // ── MCP: time — compute search date window (KST 기준) ─────────────────────
   _getDateRange(days = this.searchDays) {
-    const now = new Date();
+    const now = this.now;
     const past = new Date(now.getTime() - days * 86_400_000);
     return { minDate: kstDateSlash(past), maxDate: kstDateSlash(now) };
   }
@@ -90,15 +142,19 @@ export class DataCollectorAgent {
   // window (기본 180일) shifts daily, so caching PMIDs would risk serving stale candidate sets.
   async searchPmids() {
     const { minDate, maxDate } = this._getDateRange();
+    return this._search({ term: this.query, retmax: this.maxPapers, minDate, maxDate, stream: 'A', datetype: 'pdat' });
+  }
+
+  async _search({ term, retmax, minDate, maxDate, stream, datetype = 'edat' }) {
     this.logger.info('Searching PubMed (fresh)', { query: this.query, minDate, maxDate });
 
     const params = this._buildParams({
       db: 'pubmed',
-      term: this.query,
-      retmax: this.maxPapers,
+      term,
+      retmax,
       mindate: minDate,
       maxdate: maxDate,
-      datetype: 'pdat',
+      datetype,
       retmode: 'json',
       sort: 'date',
     });
@@ -111,7 +167,54 @@ export class DataCollectorAgent {
     this.logger.info(`Found ${result.count} total, retrieved ${ids.length} PMIDs`, {
       count: result.count,
     });
-    return ids;
+    return ids.map(String);
+  }
+
+  _isoDate(date) { return date.toISOString().slice(0, 10).replaceAll('-', '/'); }
+
+  _streamBJournals() {
+    return Object.values(this.journals.tiers ?? {}).flatMap((t) => t.pubmedTa ?? []);
+  }
+
+  async collectDualStreams() {
+    const aCfg = this.collection.streamA ?? DEFAULT_COLLECTION.streamA;
+    const bCfg = this.collection.streamB ?? DEFAULT_COLLECTION.streamB;
+    const aRange = this._getDateRange(aCfg.days);
+    const aIds = await this._search({ term: this.query, retmax: aCfg.retmax, ...aRange, stream: 'A' });
+    const aPapers = (await this.fetchArticles(aIds)).map((p) => ({ ...p, streamSource: 'A', streamSources: ['A'] }));
+
+    const journals = this._streamBJournals();
+    const chunks = [];
+    for (let i = 0; i < journals.length; i += bCfg.journalChunkSize) chunks.push(journals.slice(i, i + bCfg.journalChunkSize));
+    const bIds = [];
+    for (let slice = 0; slice < bCfg.slices; slice++) {
+      const end = new Date(this.now.getTime() - slice * 30 * 86_400_000);
+      const start = new Date(this.now.getTime() - Math.min(bCfg.days, (slice + 1) * 30) * 86_400_000);
+      const design = bCfg.designTypes.map((t) => `"${t}"[Publication Type]`).join(' OR ');
+      for (const chunk of chunks) {
+        const journalTerm = chunk.map((j) => `"${j}"[Journal]`).join(' OR ');
+        const ids = await this._search({
+          term: `((${journalTerm})) AND ((${design}))`, retmax: bCfg.retmaxPerSlice,
+          minDate: this._isoDate(start), maxDate: this._isoDate(end), stream: 'B',
+        });
+        bIds.push(...ids);
+      }
+    }
+    const uniqueB = [...new Set(bIds)];
+    const bPapers = (await this.fetchArticles(uniqueB)).map((p) => ({ ...p, streamSource: 'B', streamSources: ['B'] }));
+    return { papers: composeDualStreams(aPapers, bPapers, { maxPapers: this.collection.maxPapers ?? 300, minB: 80 }), streamA: aPapers, streamB: bPapers };
+  }
+
+  async collectReplayCorpus() {
+    const legacyRange = this._getDateRange(this.searchDays);
+    const legacyIds = await this._search({ term: this.query, retmax: this.maxPapers, ...legacyRange, datetype: 'pdat', stream: 'legacy' });
+    const legacy = await this.fetchArticles(legacyIds);
+    const dual = await this.collectDualStreams();
+    const papers = mergeCorpusSources({ legacy, A: dual.streamA, B: dual.streamB });
+    const dates = papers.map((p) => p.pubDate).filter(Boolean).sort();
+    return { papers, stats: { pmidsFound: papers.length, articlesCollected: papers.length,
+      legacyCount: legacy.length, streamACount: dual.streamA.length, streamBCount: dual.streamB.length,
+      oldestPubDate: dates[0] ?? null, newestPubDate: dates.at(-1) ?? null } };
   }
 
   // ── Fetch article details in batches ─────────────────────────────────────
@@ -193,7 +296,7 @@ export class DataCollectorAgent {
         const journal = article?.Journal;
         const journalName =
           journal?.Title ?? journal?.ISOAbbreviation ?? '';
-        const pubDate = this._parsePubDate(journal?.JournalIssue?.PubDate);
+        const { pubDate, pubDateSource } = this._preferredPubDate(item, article, journal);
 
         // Publication types (authoritative study-design labels — no LLM guessing)
         const ptList = article?.PublicationTypeList?.PublicationType;
@@ -232,6 +335,8 @@ export class DataCollectorAgent {
           authors,
           journal: String(journalName),
           pubDate,
+          edat: pubDate,
+          pubDateSource,
           publicationTypes,
           meshTerms,
           keywords,
@@ -267,6 +372,24 @@ export class DataCollectorAgent {
     const month = pubDate?.Month ?? pubDate?.MedlineDate?.split(' ')[1] ?? '';
     const day = pubDate?.Day ?? '';
     return [year, month, day].filter(Boolean).join('-');
+  }
+
+  _preferredPubDate(item, article, journal) {
+    const history = item?.PubmedData?.History?.PubMedPubDate;
+    const entries = Array.isArray(history) ? history : history ? [history] : [];
+    const pubmed = entries.find((d) => String(d?.$?.PubStatus ?? '').toLowerCase() === 'pubmed');
+    const articleDates = article?.ArticleDate;
+    const articleDate = Array.isArray(articleDates) ? articleDates[0] : articleDates;
+    const candidates = [
+      ['PubmedData.History/PubMedPubDate[pubmed]', pubmed],
+      ['Article.ArticleDate', articleDate],
+      ['JournalIssue.PubDate', journal?.JournalIssue?.PubDate],
+    ];
+    for (const [source, value] of candidates) {
+      const parsed = this._parsePubDate(value);
+      if (parsed) return { pubDate: parsed, pubDateSource: source };
+    }
+    return { pubDate: '', pubDateSource: 'missing' };
   }
 
   _parseMesh(meshList) {
@@ -312,6 +435,15 @@ export class DataCollectorAgent {
     const start = Date.now();
 
     try {
+      if (this.collectionMode === 'dual') {
+        const dual = await this.collectDualStreams();
+        const dates = dual.papers.map((p) => p.pubDate).filter(Boolean).sort();
+        return { papers: dual.papers, stats: {
+          pmidsFound: dual.papers.length, articlesCollected: dual.papers.length,
+          streamACount: dual.streamA.length, streamBCount: dual.streamB.length,
+          oldestPubDate: dates[0] ?? null, newestPubDate: dates.at(-1) ?? null,
+        } };
+      }
       const pmids = await this.searchPmids();
       if (!pmids.length) {
         this.logger.warn('No PMIDs found for query');
@@ -327,6 +459,8 @@ export class DataCollectorAgent {
         withAbstracts: papers.filter((p) => p.abstract.length > 50).length,
         elapsedSeconds: Number(elapsed),
         circuitBreaker: this.cb.getStatus(),
+        oldestPubDate: papers.map((p) => p.pubDate).filter(Boolean).sort()[0] ?? null,
+        newestPubDate: papers.map((p) => p.pubDate).filter(Boolean).sort().at(-1) ?? null,
       };
 
       this.logger.info('Collection complete', stats);

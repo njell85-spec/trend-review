@@ -1,0 +1,61 @@
+{
+  "arms": {
+    "A": {"label": "현행", "collection": "single", "days": 180, "scoring": {"titleWeights": [0.50, 0.25, 0.15, 0.10], "metaHitWeight": 0.08, "metaHitCap": 3, "queryMeshExcludeInMeta": false, "queryMeshExcludeInTitle": false, "relevanceSpan": 4.0, "designScale": 0.5, "designCap": 2.0, "reviewScoreFlagship": 3.2, "reviewScoreOther": 0.7, "topicGatePenalty": -5.0}, "exclusions": {"mode": "hardOnly"}},
+    "B": {
+      "label": "수집 개선(이중 스트림)",
+      "collection": "dual",
+      "streamA": {"days": 30, "retmax": 220},
+      "streamB": {"days": 180, "slices": 6, "retmaxPerSlice": 16, "journalChunkSize": 10, "designTypes": ["randomized controlled trial", "meta-analysis", "systematic review"]},
+      "scoring": {
+        "titleWeights": [0.50, 0.25, 0.15, 0.10],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": false,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {"mode": "hardOnly"}
+    },
+    "C": {
+      "label": "주제축 교정(검색 MeSH 제외)",
+      "collection": "single",
+      "days": 180,
+      "scoring": {
+        "titleWeights": [0.50, 0.25, 0.15, 0.10],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": true,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "queryMeshExcludeInTitle": false,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {"mode": "hardOnly"}
+    },
+    "D": {
+      "label": "배제 민감도(3층화+단계적 복원)",
+      "collection": "single",
+      "days": 180,
+      "scoring": {
+        "titleWeights": [0.50, 0.25, 0.15, 0.10],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": false,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {"mode": "tiered", "softPenalty": -1.0, "fallbackRestore": "softOnly"}
+    }
+  }
+}

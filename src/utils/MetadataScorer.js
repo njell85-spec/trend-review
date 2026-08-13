@@ -45,6 +45,8 @@ const NEGATIVE_TYPES = [
 //   · 표본: 초록의 배경 문장 인구수를 표본으로 읽었다(실측 `N≈1704632`, F5).
 //   두 축이 빠진 자리를 설계 축이 받는다 — 보조 축 합은 종전 ~3.0 → 2.0 으로 오히려 준다.
 const RELEVANCE_SPAN = 4.0;      // rel01(0~1) → 0~4
+const DESIGN_SCALE = 0.5;
+const DESIGN_CAP = 2.0;
 
 // 주제 축 탈포화 (F3) — 종전 `titleHits * 0.6` 은 제목 2히트로 만점이었다.
 // 체감가중이라 4히트에서 1.00 에 닿는다. MeSH·초록은 보조(최대 0.24).
@@ -134,12 +136,21 @@ export class MetadataScorer {
     this.now = options.now ? new Date(options.now) : new Date();
     this.profile = options.profile ?? this._loadJson('../../config/interests.json', DEFAULT_PROFILE, (p) => p?.topicGroups);
     this.journals = options.journals ?? this._loadJson('../../config/journals.json', DEFAULT_JOURNALS, (j) => j?.tiers);
+    this.queryMeshExclusions = (options.queryMeshExclusions ?? []).map((t) => String(t).toLowerCase());
     this.scoring = {
+      titleWeights: TITLE_HIT_WEIGHTS,
+      metaHitWeight: META_HIT_WEIGHT,
+      metaHitCap: META_HIT_CAP,
+      relevanceSpan: RELEVANCE_SPAN,
+      reviewScoreFlagship: REVIEW_SCORE_FLAGSHIP,
+      reviewScoreOther: REVIEW_SCORE_OTHER,
+      queryMeshExcludeInMeta: false,
+      queryMeshExcludeInTitle: false,
       journalWeight: 1.0,
       relevanceWeight: 1.0,
       topicGatePenalty: -5.0,
-      designScale: 0.5,
-      designCap: 2.0,
+      designScale: DESIGN_SCALE,
+      designCap: DESIGN_CAP,
       ...(this.profile.scoring ?? {}),
       ...options.scoring,
     };
@@ -170,7 +181,7 @@ export class MetadataScorer {
     const w = this.scoring;
     // ① 우선순위 축 (지배적): 저널·주제 각 0~4
     const journalPart = w.journalWeight * jr.score;
-    const relPart = w.relevanceWeight * (rel.rel01 * RELEVANCE_SPAN);
+    const relPart = w.relevanceWeight * (rel.rel01 * w.relevanceSpan);
     // ② 보조 축: 설계뿐 (0~2.0). 최신성·표본은 v2 에서 삭제 — 위 상수 주석 참조.
     const designPart = Math.min(this.scoring.designCap, design.score * this.scoring.designScale);
     const recencyPart = 0;
@@ -195,6 +206,21 @@ export class MetadataScorer {
       relevanceScore: Math.round(rel.rel01 * 100) / 10, // 0~10 표시
       studyType: design.label,
       designPart: Math.round(designPart * 100) / 100,
+      titleHits: rel.titleHits,
+      metaHitsBefore: rel.metaHitsBefore,
+      metaHitsAfter: rel.metaHitsAfter,
+      rel01: rel.rel01,
+      primaryTopic: rel.primaryTopic,
+      contributions: {
+        journal: journalPart,
+        relevance: relPart,
+        design: designPart,
+        recency: recencyPart,
+        sample: samplePart,
+        negative: pen.value,
+        topicGate,
+        excludeGate,
+      },
       matchedInterests: rel.groups,
       journalTier: jr.tier,
       journalExcluded: jr.excluded === true,
@@ -253,7 +279,7 @@ export class MetadataScorer {
         // 별도 라벨이라 여기 걸리지 않는다 — 근거 종합이지 종설이 아니다.
         if (rule.label === 'Review') {
           const flagship = REVIEW_FLAGSHIP_TIERS.includes(jr?.tier);
-          return { score: flagship ? REVIEW_SCORE_FLAGSHIP : REVIEW_SCORE_OTHER, label: 'Review', matched: 'review' };
+          return { score: flagship ? this.scoring.reviewScoreFlagship : this.scoring.reviewScoreOther, label: 'Review', matched: 'review' };
         }
         return { score: rule.score, label: rule.label, matched: rule.match[0] };
       }
@@ -335,8 +361,10 @@ export class MetadataScorer {
   // ── 주제 적합도: 관심 프로파일 매칭 (0~1) ─────────────────────────────────────
   _relevance(paper) {
     const title = String(paper.title ?? '').toLowerCase();
-    const meta = [...(paper.meshTerms ?? []), ...(paper.keywords ?? []),
-                  String(paper.abstract ?? '').slice(0, 600)].join(' ').toLowerCase();
+    const mesh = (paper.meshTerms ?? []).map((t) => String(t).toLowerCase());
+    const nonMeshMeta = [...(paper.keywords ?? []), String(paper.abstract ?? '').slice(0, 600)]
+      .join(' ').toLowerCase();
+    const isQueryMesh = (term) => this.queryMeshExclusions.some((q) => term === q);
 
     const scored = [];
     for (const [key, g] of Object.entries(this.profile.topicGroups ?? {})) {
@@ -347,29 +375,51 @@ export class MetadataScorer {
       //   긴 term 부터 확정하고, 이미 잡힌 term 의 부분문자열은 건너뛴다.
       const terms = [...(g.terms ?? [])].map((t) => String(t).toLowerCase())
         .sort((a, b) => b.length - a.length);
-      const hitTitle = [], hitMeta = [];
+      const hitTitle = [], hitMetaBefore = [], hitMetaAfter = [];
       for (const t of terms) {
         const covered = (arr) => arr.some((h) => h.includes(t));
-        if (title.includes(t)) { if (!covered(hitTitle)) hitTitle.push(t); }
-        else if (meta.includes(t)) { if (!covered(hitMeta)) hitMeta.push(t); }
+        const titleAllowed = !(this.scoring.queryMeshExcludeInTitle && isQueryMesh(t));
+        if (title.includes(t) && titleAllowed) {
+          if (!covered(hitTitle)) hitTitle.push(t);
+          continue;
+        }
+        const inMesh = mesh.some((m) => m.includes(t));
+        const inNonMesh = nonMeshMeta.includes(t);
+        if (inMesh || inNonMesh) {
+          if (!covered(hitMetaBefore)) hitMetaBefore.push(t);
+          const blockedMeshOnly = this.scoring.queryMeshExcludeInMeta && isQueryMesh(t) && inMesh && !inNonMesh;
+          if (!blockedMeshOnly && !covered(hitMetaAfter)) hitMetaAfter.push(t);
+        }
       }
-      const titleHits = hitTitle.length, metaHits = hitMeta.length;
+      const titleHits = hitTitle.length;
+      const metaHitsBefore = hitMetaBefore.length;
+      const metaHitsAfter = hitMetaAfter.length;
       // 탈포화(F3): 히트마다 체감가중. 종전 `titleHits * 0.6` 은 제목 2히트면 만점이라
       // 저널 0.8짜리 논문도 주제 4.0 을 받아 상위권에 올라왔다(2026-08-10 실측 8/20).
       let signal = 0;
       for (let i = 0; i < titleHits; i++) {
-        signal += TITLE_HIT_WEIGHTS[i] ?? TITLE_HIT_WEIGHTS[TITLE_HIT_WEIGHTS.length - 1];
+        signal += this.scoring.titleWeights[i] ?? this.scoring.titleWeights[this.scoring.titleWeights.length - 1];
       }
-      signal += META_HIT_WEIGHT * Math.min(metaHits, META_HIT_CAP);
+      signal += this.scoring.metaHitWeight * Math.min(metaHitsAfter, this.scoring.metaHitCap);
       signal = Math.min(1, signal);
-      if (signal > 0) scored.push({ key, label: g.label ?? key, w, groupScore: w * signal });
+      if (signal > 0 || metaHitsBefore > 0) scored.push({
+        key, label: g.label ?? key, w, groupScore: w * signal,
+        titleHits, metaHitsBefore, metaHitsAfter,
+      });
     }
-    scored.sort((a, b) => b.groupScore - a.groupScore);
+    scored.sort((a, b) => (b.groupScore - a.groupScore) || a.key.localeCompare(b.key));
 
     const best = scored[0]?.groupScore ?? 0;
     const second = scored[1]?.groupScore ?? 0;
     const rel01 = Math.max(0, Math.min(1, best + 0.15 * second));
-    return { rel01, groups: scored.slice(0, 3).map((s) => s.label) };
+    return {
+      rel01,
+      groups: scored.filter((s) => s.groupScore > 0).slice(0, 3).map((s) => s.label),
+      primaryTopic: scored.find((s) => s.groupScore > 0)?.key ?? null,
+      titleHits: scored.reduce((n, s) => n + s.titleHits, 0),
+      metaHitsBefore: scored.reduce((n, s) => n + s.metaHitsBefore, 0),
+      metaHitsAfter: scored.reduce((n, s) => n + s.metaHitsAfter, 0),
+    };
   }
 
   // ── 감점 (사설·논평·동물·프로토콜 + deprioritize 그룹) ────────────────────────
