@@ -248,5 +248,15 @@
     "rerankPoolSize": 20,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42554971",
+    "title": "High-Flow Nasal Cannula Versus Noninvasive Ventilation for Prevention of Reintub",
+    "date": "2026-08-14",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 20,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
