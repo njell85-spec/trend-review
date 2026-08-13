@@ -106,11 +106,11 @@ async function replayMain() {
   // 추정 비율을 쓰지 않는다. **프로덕션과 같은 경로**(FilterAnalyzerAgent._rerankSelect)로
   // A 풀(20)·E 풀(120)을 각각 한 번씩 실제로 태우고, 그 usage 로 chars/token 을 잰다.
   // 30일 총량은 일자별 실제 프롬프트 글자수 합 × 그 비율로 낸다.
-  if (USE_LLM && requested.includes('E')) {
+  if (USE_LLM) {
     const { llmTelemetry } = await import('../src/utils/LLMClient.js');
     const { rerankPromptChars } = await import('../src/experiments/selectionReplay.js');
     const calib = [];
-    for (const arm of ['A', 'E']) {
+    for (const arm of requested) {
       const days = result.arms[arm]?.days ?? [];
       // 프롬프트가 가장 큰 날 = 그 arm 의 정상 부하
       const day = days.filter((d) => d.rerankPromptChars > 0)

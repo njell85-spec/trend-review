@@ -278,6 +278,25 @@ export function renderArmDivergence(result, baseline = 'A') {
  * (아티팩트 CDN·로그 zip 이 프록시에 막혀 있어 `get_job_logs` 가 유일한 회수 경로다.
  *  표가 위에 있으면 매번 보일러플레이트 130줄을 같이 끌고 와야 한다.)
  */
+/**
+ * arm 별 선정 리스트 — PeterJ 가 "이전 리스트와 이번 리스트를 대조해 결정"하기 위한 원자료.
+ * 로그 tail 로만 회수되므로 **맨 끝**에, 한 줄 한 편으로 압축해 찍는다.
+ */
+export function renderArmLists(result) {
+  const cut = (v, n) => String(v ?? '').replace(/\s+/g, ' ').slice(0, n);
+  let md = `\n=== LISTS ===\n`;
+  for (const arm of Object.keys(result.arms)) {
+    md += `-- ${arm} --\n`;
+    for (const d of result.arms[arm].days) {
+      const s = d.selected;
+      md += s
+        ? `${d.date} ${s.pmid} | ${cut(s.journal, 34)} | ${cut(s.title, 62)}\n`
+        : `${d.date} — (빈손)\n`;
+    }
+  }
+  return md + `=== /LISTS ===\n`;
+}
+
 export function renderCompactSummary(result) {
   const arms = Object.keys(result.arms);
   const line = (a) => {
@@ -295,6 +314,16 @@ export function renderCompactSummary(result) {
       ` · ${c.reason}\n`;
   }
   if (result.charsPerToken) md += `charsPerToken ${result.charsPerToken}\n`;
+  for (let i = 0; i < arms.length; i++) {
+    for (let j = i + 1; j < arms.length; j++) {
+      const [x, y] = [arms[i], arms[j]];
+      const n = result.arms[x].days.filter((d) => {
+        const o = result.arms[y].days.find((z) => z.date === d.date);
+        return d.selected?.pmid && d.selected.pmid === o?.selected?.pmid;
+      }).length;
+      md += `일치 ${x}-${y}: ${n}/${result.arms[x].days.length}\n`;
+    }
+  }
   if (arms.includes('A') && arms.includes('E')) {
     const same = result.arms.A.days.filter((d) => {
       const e = result.arms.E.days.find((x) => x.date === d.date);
@@ -385,5 +414,6 @@ export function renderReplaySummary(result) {
   md += renderArmDivergence(result);
   md += renderPoolComparison(result, { charsPerToken: result.charsPerToken ?? null });
   md += renderCompactSummary(result);
+  md += renderArmLists(result);
   return md;
 }

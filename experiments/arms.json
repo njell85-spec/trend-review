@@ -64,7 +64,8 @@
       },
       "exclusions": {
         "mode": "hardOnly"
-      }
+      },
+      "rerankPool": 20
     },
     "C": {
       "label": "주제축 교정(검색 MeSH 제외)",
@@ -90,7 +91,8 @@
       },
       "exclusions": {
         "mode": "hardOnly"
-      }
+      },
+      "rerankPool": 20
     },
     "D": {
       "label": "배제 민감도(3층화+단계적 복원)",
@@ -117,7 +119,8 @@
         "mode": "tiered",
         "softPenalty": -1.0,
         "fallbackRestore": "softOnly"
-      }
+      },
+      "rerankPool": 20
     },
     "E": {
       "label": "월별 풀(PeterJ 2026-08-14) — 365일·12구간, 달마다 esummary 사전순위로 100편 → 월 top10 → 120 → LLM 1편",
@@ -131,6 +134,40 @@
         "screenDepth": 1000
       },
       "rerankPool": 120,
+      "scoring": {
+        "titleWeights": [
+          0.5,
+          0.25,
+          0.15,
+          0.1
+        ],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": false,
+        "queryMeshExcludeInTitle": false,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {
+        "mode": "hardOnly"
+      }
+    },
+    "F": {
+      "label": "월별 풀·좁은 셀렉(PeterJ 2026-08-14) — 365일·12구간, 달마다 사전순위 100편 → 월 top3 → 36 → LLM 1편",
+      "collection": "monthly12",
+      "days": 365,
+      "monthly": {
+        "months": 12,
+        "monthDays": 30,
+        "screenPerMonth": 100,
+        "keepPerMonth": 3,
+        "screenDepth": 1000
+      },
+      "rerankPool": 36,
       "scoring": {
         "titleWeights": [
           0.5,
