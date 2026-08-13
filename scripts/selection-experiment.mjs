@@ -25,6 +25,12 @@ import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
 import { kstDateStr } from '../src/utils/dates.js';
 import { runReplay, renderReplaySummary } from '../src/experiments/selectionReplay.js';
 
+// llmTelemetry.totals(auth → 모델 → bucket)에서 입력·출력 토큰 합을 뽑는다.
+const sumIn = (t) => Object.values(t ?? {}).flatMap((m) => Object.values(m ?? {}))
+  .reduce((n, b) => n + (b?.in ?? 0), 0);
+const sumOut = (t) => Object.values(t ?? {}).flatMap((m) => Object.values(m ?? {}))
+  .reduce((n, b) => n + (b?.out ?? 0), 0);
+
 import { installUsageDump } from '../src/utils/usageDump.js';
 
 // 이 스크립트도 LLM을 태우므로 사용량을 타워 장부용으로 떨군다(USAGE_OUT 지정 시에만).
@@ -65,7 +71,13 @@ async function replayMain() {
   if (corpusPath) {
     corpusDoc = JSON.parse(readFileSync(corpusPath, 'utf8'));
   } else {
-    const collector = new DataCollectorAgent({ collectionMode: 'dual', maxPapers: collection.maxPapers });
+    // arm E(월별 풀)가 요청되면 코퍼스를 365일까지 넓힌다 — 12구간 × screenPerMonth.
+    const eCfg = armsDoc.arms.E?.monthly ?? {};
+    const needMonthly = requested.includes('E');
+    const collector = new DataCollectorAgent({ collectionMode: 'dual', maxPapers: collection.maxPapers,
+      includeMonthlyPool: needMonthly,
+      monthlyPoolOptions: { months: eCfg.months ?? 12, monthDays: eCfg.monthDays ?? 30,
+        screenPerMonth: Number(process.env.EXP_SCREEN_PER_MONTH ?? eCfg.screenPerMonth ?? 100) } });
     const collected = await collector.collectReplayCorpus();
     corpusDoc = { start, end, collectedAt: new Date().toISOString(), stats: collected.stats, papers: collected.papers };
     corpusPath = `${OUT}/corpus-${start}_${end}.json`;
@@ -76,10 +88,54 @@ async function replayMain() {
   const result = runReplay({ corpus, arms: requested, armDefinitions: armsDoc.arms,
     profile, journals, collection, start, end });
   result.corpus = corpusPath;
+  const cpt = Number(process.env.EXP_CHARS_PER_TOKEN);
+  if (Number.isFinite(cpt) && cpt > 0) result.charsPerToken = cpt;
   const corpusDates = corpus.map((p) => p.pubDate).filter(Boolean).sort();
   result.corpusStats = { candidateCount: corpus.length, oldestPubDate: corpusDates[0] ?? null,
     newestPubDate: corpusDates.at(-1) ?? null, ...(Array.isArray(corpusDoc) ? {} : corpusDoc.stats) };
   result.llm = { enabled: false, implemented: false, requested: process.env.EXP_LLM === '1' };
+  // ── 토큰 실측 캘리브레이션 (EXP_LLM=1) ────────────────────────────────────
+  // 추정 비율을 쓰지 않는다. **프로덕션과 같은 경로**(FilterAnalyzerAgent._rerankSelect)로
+  // A 풀(20)·E 풀(120)을 각각 한 번씩 실제로 태우고, 그 usage 로 chars/token 을 잰다.
+  // 30일 총량은 일자별 실제 프롬프트 글자수 합 × 그 비율로 낸다.
+  if (USE_LLM && requested.includes('E')) {
+    const { llmTelemetry } = await import('../src/utils/LLMClient.js');
+    const { rerankPromptChars } = await import('../src/experiments/selectionReplay.js');
+    const calib = [];
+    for (const arm of ['A', 'E']) {
+      const days = result.arms[arm]?.days ?? [];
+      // 프롬프트가 가장 큰 날 = 그 arm 의 정상 부하
+      const day = days.filter((d) => d.rerankPromptChars > 0)
+        .sort((a, b) => b.rerankPromptChars - a.rerankPromptChars)[0];
+      if (!day) { console.error(`[calib] ${arm}: rerank 풀이 있는 날이 없다 — 건너뜀`); continue; }
+      const pool = day.ranked.slice(0, day.rerankPoolSize)
+        .map((r) => corpus.find((p) => String(p.pmid) === String(r.pmid))).filter(Boolean);
+      if (pool.length < 2) { console.error(`[calib] ${arm}: 풀 복원 실패`); continue; }
+      const chars = rerankPromptChars(pool);
+      const before = JSON.stringify(llmTelemetry.totals);
+      const agent = new FilterAnalyzerAgent({ topN: 1, enableRerank: true, rerankPool: pool.length });
+      agent.logger.info = () => {}; agent.logger.warn = () => {}; agent.logger.section = () => {};
+      const t0 = Date.now();
+      let telemetry = null;
+      try { ({ telemetry } = await agent._rerankSelect(pool, 1)); }
+      catch (err) { console.error(`[calib] ${arm}: 호출 실패 — ${err.message}`); }
+      const inTok = sumIn(llmTelemetry.totals) - sumIn(JSON.parse(before));
+      const outTok = sumOut(llmTelemetry.totals) - sumOut(JSON.parse(before));
+      calib.push({ arm, date: day.date, poolSize: pool.length, promptChars: chars,
+        inputTokens: inTok, outputTokens: outTok,
+        charsPerToken: inTok > 0 ? Number((chars / inTok).toFixed(3)) : null,
+        llmCalled: telemetry?.llmCalled ?? false, applied: telemetry?.applied ?? false,
+        sec: ((Date.now() - t0) / 1000).toFixed(0) });
+      console.error(`[calib] ${arm}: 풀 ${pool.length} · ${chars}자 → in ${inTok} · out ${outTok} 토큰`);
+    }
+    result.tokenCalibration = calib;
+    const withRatio = calib.filter((c) => c.charsPerToken);
+    if (withRatio.length) {
+      result.charsPerToken = Number(
+        (withRatio.reduce((n, c) => n + c.charsPerToken, 0) / withRatio.length).toFixed(3));
+    }
+  }
+
   const outputPath = `${OUT}/replay-${start}_${end}.json`;
   writeFileSync(outputPath, JSON.stringify(result, null, 2));
   summary(renderReplaySummary(result));

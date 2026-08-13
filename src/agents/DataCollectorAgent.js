@@ -73,6 +73,8 @@ export class DataCollectorAgent {
     this.searchDays = options.searchDays ?? Number(process.env.SEARCH_DAYS ?? 180);
     this.query = options.query ?? DEFAULT_QUERY;
     this.collectionMode = options.collectionMode ?? 'single';
+    this.includeMonthlyPool = options.includeMonthlyPool ?? false;
+    this.monthlyPoolOptions = options.monthlyPoolOptions ?? {};
     this.now = options.now ? new Date(options.now) : new Date();
     this.collection = options.collection ?? this._loadCollection();
     this.journals = options.journals ?? this._loadJournals();
@@ -205,15 +207,46 @@ export class DataCollectorAgent {
     return { papers: composeDualStreams(aPapers, bPapers, { maxPapers: this.collection.maxPapers ?? 300, minB: 80 }), streamA: aPapers, streamB: bPapers };
   }
 
+  // ── 월별 풀 (PeterJ 확정 2026-08-14) ──────────────────────────────────────
+  // "최근 1년, 한 달씩 끊어 한 달 100편 스크리닝, 그중 스코어링으로 10편, 12달치 120편에서
+  //  한 편을 LLM 이 고른다."
+  // 현행(180일 단일 300편 → 스코어러 top-20 → LLM)과 **풀 구조만** 다르게 두려고
+  // 쿼리 축은 건드리지 않는다 — 한 번에 하나만 바꿔야 비교가 성립한다.
+  async collectMonthlyPool({ months = 12, screenPerMonth = 100, monthDays = 30 } = {}) {
+    const ids = [];
+    const perMonth = [];
+    for (let m = 0; m < months; m++) {
+      const end = new Date(this.now.getTime() - m * monthDays * 86_400_000);
+      const start = new Date(this.now.getTime() - (m + 1) * monthDays * 86_400_000);
+      const monthIds = await this._search({
+        term: this.query, retmax: screenPerMonth,
+        minDate: this._isoDate(start), maxDate: this._isoDate(end),
+        stream: `M${m}`, datetype: 'pdat',
+      });
+      perMonth.push({ month: m, requested: screenPerMonth, got: monthIds.length,
+        minDate: this._isoDate(start), maxDate: this._isoDate(end) });
+      ids.push(...monthIds);
+    }
+    const unique = [...new Set(ids)];
+    const papers = (await this.fetchArticles(unique)).map((p) => ({ ...p, streamSource: 'M' }));
+    return { papers, perMonth, requestedTotal: months * screenPerMonth, uniqueIds: unique.length };
+  }
+
   async collectReplayCorpus() {
     const legacyRange = this._getDateRange(this.searchDays);
     const legacyIds = await this._search({ term: this.query, retmax: this.maxPapers, ...legacyRange, datetype: 'pdat', stream: 'legacy' });
     const legacy = await this.fetchArticles(legacyIds);
     const dual = await this.collectDualStreams();
-    const papers = mergeCorpusSources({ legacy, A: dual.streamA, B: dual.streamB });
+    // 월별 풀(arm E)은 365일을 덮으므로 코퍼스가 그만큼 넓어진다. 끄고 싶으면 옵션으로.
+    const monthly = this.includeMonthlyPool
+      ? await this.collectMonthlyPool(this.monthlyPoolOptions)
+      : { papers: [], perMonth: [], requestedTotal: 0, uniqueIds: 0 };
+    const papers = mergeCorpusSources({ legacy, A: dual.streamA, B: dual.streamB, M: monthly.papers });
     const dates = papers.map((p) => p.pubDate).filter(Boolean).sort();
     return { papers, stats: { pmidsFound: papers.length, articlesCollected: papers.length,
       legacyCount: legacy.length, streamACount: dual.streamA.length, streamBCount: dual.streamB.length,
+      monthlyCount: monthly.papers.length, monthlyPerMonth: monthly.perMonth,
+      monthlyRequested: monthly.requestedTotal, monthlyUniqueIds: monthly.uniqueIds,
       oldestPubDate: dates[0] ?? null, newestPubDate: dates.at(-1) ?? null } };
   }
 
