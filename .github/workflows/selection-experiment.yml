@@ -20,7 +20,23 @@ on:
         required: false
         default: '1'
       mode:
-        description: '모드 (빈값=recall 진단, rerank=결정적 top-K를 LLM 재순위)'
+        description: '모드 (빈값=recall 진단, rerank=LLM 재순위, replay=30일 arm 재생)'
+        required: false
+        default: ''
+      arms:
+        description: '재생 arm (쉼표 구분 A,B,C,D; 빈값이면 기존 모드 유지)'
+        required: false
+        default: ''
+      start:
+        description: '재생 시작일 (YYYY-MM-DD)'
+        required: false
+        default: ''
+      end:
+        description: '재생 종료일 (YYYY-MM-DD)'
+        required: false
+        default: ''
+      corpus:
+        description: '재사용할 코퍼스 JSON 경로'
         required: false
         default: ''
 
@@ -63,6 +79,10 @@ jobs:
           EXP_CHUNK:               ${{ github.event.inputs.chunk }}
           EXP_LLM:                 ${{ github.event.inputs.llm }}
           EXP_MODE:                ${{ github.event.inputs.mode }}
+          EXP_ARM:                 ${{ github.event.inputs.arms }}
+          EXP_START:               ${{ github.event.inputs.start }}
+          EXP_END:                 ${{ github.event.inputs.end }}
+          EXP_CORPUS:              ${{ github.event.inputs.corpus }}
           ENABLE_RERANK:           'true'
 
       - name: Upload detail JSON

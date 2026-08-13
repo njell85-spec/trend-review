@@ -1,0 +1,24 @@
+{
+  "maxPapers": 300,
+  "streamA": {
+    "days": 30,
+    "retmax": 220,
+    "mesh": ["emergency service, hospital", "critical illness",
+             "intensive care units", "resuscitation",
+             "critical care", "emergency medicine"]
+  },
+  "streamB": {
+    "days": 180,
+    "slices": 6,
+    "retmaxPerSlice": 16,
+    "journalChunkSize": 10,
+    "designTypes": ["randomized controlled trial",
+                    "meta-analysis", "systematic review"]
+  },
+  "candidatePoolSize": 20,
+  "candidateTopicCap": 5,
+  "streamBReserved": 2,
+  "queryMeshExclusions": ["critical care", "emergency medicine",
+                          "intensive care units", "resuscitation",
+                          "critical illness", "emergency service, hospital"]
+}

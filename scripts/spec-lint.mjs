@@ -24,6 +24,15 @@ const msgSrc = read('src/utils/reportMessage.js');
 const idx = read('index.html');
 const msgStr = stringLiterals(msgSrc);
 
+// 저널 상위 티어의 부분일치는 자매지·간호지 승격을 재발시킨다(설계 §5.2).
+// includes는 low 티어에만 허용한다.
+const journalConfig = JSON.parse(read('config/journals.json'));
+for (const tier of ['top_general', 'em_ccm_flagship', 'specialty']) {
+  if (Object.hasOwn(journalConfig.tiers?.[tier] ?? {}, 'includes')) {
+    errors.push(`config/journals.json: ${tier}.includes 금지 — 상위 티어는 exact만 허용 (설계 §5.2)`);
+  }
+}
+
 // 정본 표기·옛 표현 검사 대상 = 사용자에게 스펙 설명 문구를 노출하는 채널.
 // NotificationAgent 는 이메일 렌더 제거 후 Drive 업로드 전용(노출 문구 없음)이라 제외.
 // 발행 채널은 GitHubPublisher(Pages) + index.html(배포 산출물).

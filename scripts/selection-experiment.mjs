@@ -17,12 +17,13 @@
  * 환경변수: EXP_MAX(기본 300) · EXP_CHUNK(기본 30) · EXP_OUT(기본 output/experiments).
  */
 import 'dotenv/config';
-import { mkdirSync, writeFileSync, appendFileSync } from 'fs';
+import { mkdirSync, writeFileSync, appendFileSync, readFileSync } from 'fs';
 import { DataCollectorAgent } from '../src/agents/DataCollectorAgent.js';
 import { MetadataScorer } from '../src/utils/MetadataScorer.js';
 import { LLMClient } from '../src/utils/LLMClient.js';
 import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
 import { kstDateStr } from '../src/utils/dates.js';
+import { runReplay, renderReplaySummary } from '../src/experiments/selectionReplay.js';
 
 import { installUsageDump } from '../src/utils/usageDump.js';
 
@@ -44,6 +45,51 @@ const summary = (md) => {
 };
 const trunc = (s, n) => (String(s ?? '').length > n ? String(s).slice(0, n - 1) + '…' : String(s ?? ''));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function replayMain() {
+  const armsDoc = JSON.parse(readFileSync(new URL('../experiments/arms.json', import.meta.url), 'utf8'));
+  const profile = JSON.parse(readFileSync(new URL('../config/interests.json', import.meta.url), 'utf8'));
+  const journals = JSON.parse(readFileSync(new URL('../config/journals.json', import.meta.url), 'utf8'));
+  const collection = JSON.parse(readFileSync(new URL('../config/collection.json', import.meta.url), 'utf8'));
+  const requested = (process.env.EXP_ARM || 'A,B,C,D').split(',').map((a) => a.trim().toUpperCase()).filter(Boolean);
+  const invalid = requested.filter((a) => !armsDoc.arms[a]);
+  if (invalid.length) throw new Error(`Unknown EXP_ARM: ${invalid.join(', ')}`);
+  const end = process.env.EXP_END || today;
+  const startDate = new Date(`${end}T00:00:00Z`);
+  startDate.setUTCDate(startDate.getUTCDate() - 29);
+  const start = process.env.EXP_START || startDate.toISOString().slice(0, 10);
+  mkdirSync(OUT, { recursive: true });
+
+  let corpusDoc;
+  let corpusPath = process.env.EXP_CORPUS;
+  if (corpusPath) {
+    corpusDoc = JSON.parse(readFileSync(corpusPath, 'utf8'));
+  } else {
+    const collector = new DataCollectorAgent({ collectionMode: 'dual', maxPapers: collection.maxPapers });
+    const collected = await collector.collectReplayCorpus();
+    corpusDoc = { start, end, collectedAt: new Date().toISOString(), stats: collected.stats, papers: collected.papers };
+    corpusPath = `${OUT}/corpus-${start}_${end}.json`;
+    writeFileSync(corpusPath, JSON.stringify(corpusDoc, null, 2));
+  }
+  const corpus = Array.isArray(corpusDoc) ? corpusDoc : corpusDoc.papers;
+  if (!Array.isArray(corpus) || !corpus.length) throw new Error('Replay corpus has no papers');
+  const result = runReplay({ corpus, arms: requested, armDefinitions: armsDoc.arms,
+    profile, journals, collection, start, end });
+  result.corpus = corpusPath;
+  const corpusDates = corpus.map((p) => p.pubDate).filter(Boolean).sort();
+  result.corpusStats = { candidateCount: corpus.length, oldestPubDate: corpusDates[0] ?? null,
+    newestPubDate: corpusDates.at(-1) ?? null, ...(Array.isArray(corpusDoc) ? {} : corpusDoc.stats) };
+  result.llm = { enabled: false, implemented: false, requested: process.env.EXP_LLM === '1' };
+  const outputPath = `${OUT}/replay-${start}_${end}.json`;
+  writeFileSync(outputPath, JSON.stringify(result, null, 2));
+  summary(renderReplaySummary(result));
+  console.error(`재생 JSON: ${outputPath}\n코퍼스: ${corpusPath}`);
+}
+
+if (process.env.EXP_MODE === 'replay' || String(process.env.EXP_ARM ?? '').trim()) {
+  await replayMain();
+  process.exit(0);
+}
 
 // ── LLM 풀스크린(청크 채점) ────────────────────────────────────────────────
 async function llmScreen(papers) {

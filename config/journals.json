@@ -10,19 +10,24 @@
         "the bmj",
         "lancet",
         "the lancet",
-        "nature"
-      ],
-      "includes": [
-        "new england journal",
+        "nature",
+        "the new england journal of medicine",
         "british medical journal",
         "journal of the american medical association",
         "nature medicine"
+      ],
+      "pubmedTa": [
+        "JAMA",
+        "BMJ",
+        "Lancet",
+        "Nature",
+        "N Engl J Med"
       ]
     },
     "em_ccm_flagship": {
       "label": "EM·CCM·심혈관 분야 대표지",
       "score": 3.2,
-      "includes": [
+      "exact": [
         "lancet respiratory",
         "lancet neurology",
         "annals of emergency medicine",
@@ -42,6 +47,7 @@
         "jacc",
         "stroke",
         "critical care",
+        "critical care (london, england)",
         "annals of intensive care",
         "jama network open",
         "jama internal medicine",
@@ -52,12 +58,28 @@
         "blood",
         "gastroenterology",
         "european respiratory journal"
+      ],
+      "pubmedTa": [
+        "Ann Emerg Med",
+        "Crit Care Med",
+        "Intensive Care Med",
+        "Am J Respir Crit Care Med",
+        "Resuscitation",
+        "Chest",
+        "Circulation",
+        "Eur Heart J",
+        "Stroke",
+        "Crit Care",
+        "JAMA Netw Open",
+        "JAMA Intern Med",
+        "Blood",
+        "Gastroenterology"
       ]
     },
     "specialty": {
       "label": "전문 저널(분야 Q2 내외)",
       "score": 2.0,
-      "includes": [
+      "exact": [
         "american journal of emergency medicine",
         "am j emerg med",
         "emergency medicine journal",
@@ -87,6 +109,17 @@
         "europace",
         "clinical infectious diseases",
         "journal of infection"
+      ],
+      "pubmedTa": [
+        "Am J Emerg Med",
+        "Acad Emerg Med",
+        "CJEM",
+        "J Crit Care",
+        "Shock",
+        "J Trauma",
+        "Neurology",
+        "Heart",
+        "Europace"
       ]
     },
     "low": {
