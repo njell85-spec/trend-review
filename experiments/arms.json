@@ -120,14 +120,15 @@
       }
     },
     "E": {
-      "label": "월별 풀(PeterJ 2026-08-14) — 365일·12구간×100 스크리닝·월 top10 → 120 → LLM 1편",
+      "label": "월별 풀(PeterJ 2026-08-14) — 365일·12구간, 달마다 esummary 사전순위로 100편 → 월 top10 → 120 → LLM 1편",
       "collection": "monthly12",
       "days": 365,
       "monthly": {
         "months": 12,
         "monthDays": 30,
         "screenPerMonth": 100,
-        "keepPerMonth": 10
+        "keepPerMonth": 10,
+        "screenDepth": 1000
       },
       "rerankPool": 120,
       "scoring": {

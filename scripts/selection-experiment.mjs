@@ -74,10 +74,18 @@ async function replayMain() {
     // arm E(월별 풀)가 요청되면 코퍼스를 365일까지 넓힌다 — 12구간 × screenPerMonth.
     const eCfg = armsDoc.arms.E?.monthly ?? {};
     const needMonthly = requested.includes('E');
+    // 사전순위 스코어러 — esummary 에는 초록·MeSH 가 없다. **주제 게이트를 끈다**:
+    // 켜 두면 제목에 관심어가 없는 논문이 rel01=0 → -5 로 바닥에 깔려, 초록에만 주제어가
+    // 있는 좋은 RCT 가 100편 안에 못 든다. prerank 는 저널 티어·설계·제목 히트로만 거른다.
+    const prerankScorer = needMonthly
+      ? new MetadataScorer({ profile, journals, scoring: { topicGatePenalty: 0 } })
+      : null;
     const collector = new DataCollectorAgent({ collectionMode: 'dual', maxPapers: collection.maxPapers,
       includeMonthlyPool: needMonthly,
       monthlyPoolOptions: { months: eCfg.months ?? 12, monthDays: eCfg.monthDays ?? 30,
-        screenPerMonth: Number(process.env.EXP_SCREEN_PER_MONTH ?? eCfg.screenPerMonth ?? 100) } });
+        screenPerMonth: Number(process.env.EXP_SCREEN_PER_MONTH ?? eCfg.screenPerMonth ?? 100),
+        screenDepth: Number(process.env.EXP_SCREEN_DEPTH ?? eCfg.screenDepth ?? 1000),
+        prerankScorer } });
     const collected = await collector.collectReplayCorpus();
     corpusDoc = { start, end, collectedAt: new Date().toISOString(), stats: collected.stats, papers: collected.papers };
     corpusPath = `${OUT}/corpus-${start}_${end}.json`;
