@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { MetadataScorer } from '../src/utils/MetadataScorer.js';
 import { composeDualStreams, DataCollectorAgent } from '../src/agents/DataCollectorAgent.js';
-import { candidatesAsOf, applyArmExclusions, runReplay } from '../src/experiments/selectionReplay.js';
+import { candidatesAsOf, applyArmExclusions, runReplay, armDivergence, SOFT_PATTERNS } from '../src/experiments/selectionReplay.js';
 
 const fixture = JSON.parse(readFileSync(new URL('./fixtures/replay-corpus.json', import.meta.url), 'utf8'));
 const arms = JSON.parse(readFileSync(new URL('../experiments/arms.json', import.meta.url), 'utf8')).arms;
@@ -79,4 +79,51 @@ test('PubMed 날짜는 history[pubmed] → ArticleDate → JournalIssue 순서�
   const [paper] = collector._parseArticles({ PubmedArticleSet: { PubmedArticle: base } });
   assert.equal(paper.edat, '2026-03-03');
   assert.equal(paper.pubDateSource, 'PubmedData.History/PubMedPubDate[pubmed]');
+});
+
+// ── arm 발산 진단 (2026-08-13 재생에서 A·C·D 가 동일 결과였던 원인 규명용) ──────
+test('g) armDivergence 는 배선 문제(ⓐ)와 효과 크기 문제(ⓑ)를 구분한다', () => {
+  const day = (selectedPmid, ranked) => ({ date: '2026-08-01', candidateCount: ranked.length,
+    excludedCount: 0, softRestoredCount: 0, fallbackTriggered: false,
+    ranked, selected: selectedPmid ? { pmid: selectedPmid } : null });
+
+  // ⓐ 점수도 후보수도 완전히 같다 → 주입이 안 닿았다
+  const identical = { arms: {
+    A: { selectedPmids: ['1'], days: [day('1', [{ pmid: '1', rawScore: 5 }, { pmid: '2', rawScore: 4 }])] },
+    X: { selectedPmids: ['1'], days: [day('1', [{ pmid: '1', rawScore: 5 }, { pmid: '2', rawScore: 4 }])] },
+  } };
+  const a = armDivergence(identical).find((r) => r.arm === 'X');
+  assert.equal(a.scoreDiffDays, 0);
+  assert.equal(a.poolDiffDays, 0);
+  assert.match(a.verdict, /배선/);
+
+  // ⓑ 점수는 갈렸는데 top-1 은 그대로 → 효과 크기
+  const nudged = { arms: {
+    A: { selectedPmids: ['1'], days: [day('1', [{ pmid: '1', rawScore: 5 }, { pmid: '2', rawScore: 4 }])] },
+    X: { selectedPmids: ['1'], days: [day('1', [{ pmid: '1', rawScore: 5 }, { pmid: '2', rawScore: 4.2 }])] },
+  } };
+  const b = armDivergence(nudged).find((r) => r.arm === 'X');
+  assert.equal(b.scoreDiffDays, 1);
+  assert.equal(b.pickDiffDays, 0);
+  assert.equal(b.maxAbsDelta, 0.2);
+  assert.match(b.verdict, /효과 크기/);
+
+  // 실제로 갈린 경우
+  const flipped = { arms: {
+    A: { selectedPmids: ['1'], days: [day('1', [{ pmid: '1', rawScore: 5 }, { pmid: '2', rawScore: 4 }])] },
+    X: { selectedPmids: ['2'], days: [day('2', [{ pmid: '1', rawScore: 5 }, { pmid: '2', rawScore: 6 }])] },
+  } };
+  assert.equal(armDivergence(flipped).find((r) => r.arm === 'X').pickDiffDays, 1);
+});
+
+test('h) D 의 배제 집합은 A 와 같다 — 티어화가 후보를 바꾸지 않는다(soft 복원 0의 이유)', () => {
+  const scorer = new MetadataScorer({ profile, journals });
+  const papers = fixture.papers;
+  const aKept = applyArmExclusions(papers, 'A', scorer, journals);
+  const dScorer = new MetadataScorer({ profile, journals: {
+    ...journals, exclude: { ...journals.exclude, allow: SOFT_PATTERNS } } });
+  const dKept = applyArmExclusions(papers, 'D', dScorer, journals);
+  assert.deepEqual(aKept.papers.map((p) => String(p.pmid)).sort(),
+    dKept.papers.map((p) => String(p.pmid)).sort());
+  assert.equal(dKept.softRestoredCount, 0);
 });

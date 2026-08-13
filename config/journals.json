@@ -149,7 +149,7 @@
     "score": 0.8
   },
   "exclude": {
-    "_comment": "PeterJ 지시 2026-08-10 — 감점이 아니라 **배제**. 저널명(소문자)에 아래 패턴이 부분일치하면 후보에서 아예 뺀다(`_selectTopPapers`). 이틀 연속 간호지가 1위로 발행돼 도입했다. ★ 오탐이 곧 품질 붕괴이므로 패턴을 넓히기 전에 test/journalExclude.test.mjs 의 '정상 임상지' 목록으로 반드시 확인할 것. 여기서 한 줄 빼면 그 분야가 즉시 되살아난다(폰에서 편집 가능).",
+    "_comment": "PeterJ 지시 2026-08-10 — 감점이 아니라 **배제**. 저널명(소문자)에 아래 패턴이 부분일치하면 후보에서 아예 뺀다(`_selectTopPapers`). 이틀 연속 간호지가 1위로 발행돼 도입했다. 2026-08-13 교육·QI 계열 추가 — 실측에서 `Journal of continuing education in the health professions` 가 그외 SCI 0.8 로 통과하고 있었다. ★ 오탐이 곧 품질 붕괴이므로 패턴을 넓히기 전에 test/journalExclude.test.mjs 의 '정상 임상지' 목록으로 반드시 확인할 것. 여기서 한 줄 빼면 그 분야가 즉시 되살아난다(폰에서 편집 가능).",
     "label": "배제 저널",
     "patterns": [
       "nursing",
@@ -164,9 +164,17 @@
       "physical therapy",
       "physiotherapy",
       "occupational therapy",
-      "medical education",
-      "education online",
       "medical teacher",
+      "education",
+      "health professions",
+      "medical quality",
+      "academic medicine",
+      "simulation in healthcare",
+      "quality improvement",
+      "healthcare quality",
+      "quality & safety",
+      "quality and safety",
+      "patient safety",
       "health policy",
       "health services research",
       "health economics",

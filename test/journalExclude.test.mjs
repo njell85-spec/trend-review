@@ -76,6 +76,57 @@ test('★ 배제: 정상 임상지는 절대 배제되지 않는다 (오탐 = �
   }
 });
 
+test('배제: 교육·QI 계열이 배제된다 (PeterJ 지시 2026-08-13)', () => {
+  // 2026-08-13 실측: `Journal of continuing education in the health professions` 가
+  // 그외 SCI 0.8 로 통과하고 있었다 — 간호지 배제의 잔존 구멍이었다.
+  for (const name of [
+    'Journal of continuing education in the health professions',
+    'Medical education',
+    'Medical education online',
+    'BMC medical education',
+    'Medical teacher',
+    'Advances in health sciences education',
+    'Academic medicine : journal of the Association of American Medical Colleges',
+    'Simulation in healthcare',
+    'BMJ quality & safety',
+    'American journal of medical quality',
+    'Journal of healthcare quality',
+    'Journal of patient safety',
+  ]) {
+    assert.equal(scorer.isExcludedJournal(j(name)), true, `배제돼야 한다: ${name}`);
+  }
+});
+
+test('★ 교육·QI 패턴이 정상 임상지를 오탐하지 않는다', () => {
+  // `education` 을 통패턴으로 넣었고 `academic medicine` 도 넣었다. 가장 위험한 이웃들:
+  //   'academic emergency medicine' 은 'academic medicine' 을 부분문자열로 갖지 않는다.
+  //   'Circulation. Cardiovascular quality and outcomes' 는 'quality and safety' 와 다르다.
+  for (const name of [
+    'Academic emergency medicine',
+    'Circulation. Cardiovascular quality and outcomes',
+    'Resuscitation plus',
+    'Intensive care medicine experimental',
+    'The Lancet respiratory medicine',
+    'Journal of trauma and acute care surgery',
+    'European journal of emergency medicine',
+    'Annals of internal medicine',
+    'Prehospital emergency care',
+    'Critical care explorations',
+  ]) {
+    assert.equal(scorer.isExcludedJournal(j(name)), false, `배제되면 안 된다: ${name}`);
+  }
+});
+
+test('저널 티어: PubMed 괄호 접미사가 붙어도 등급을 잃지 않는다', () => {
+  // 2026-08-13 exact 전환 회귀 — `Shock (Augusta, Ga.)` 가 전문지 2.0 → 그외 0.8 로 강등됐다.
+  const tier = (journal) => scorer.scoreOne({ ...j(journal), title: 'Sepsis trial' });
+  assert.equal(tier('Shock (Augusta, Ga.)').contributions.journal, 2.0);
+  assert.equal(tier('Shock').contributions.journal, 2.0);
+  assert.equal(tier('Critical care (London, England)').contributions.journal, 3.2);
+  // 괄호 제거가 감점 판정을 흐리면 안 된다 — `Medicine (Baltimore)` 는 여전히 low.
+  assert.equal(tier('Medicine (Baltimore)').contributions.journal, -1.0);
+});
+
 test('배제: 저널명이 비어 있으면 배제하지 않는다 (메타데이터 결손으로 좋은 논문을 잃지 않는다)', () => {
   assert.equal(scorer.isExcludedJournal(j('')), false);
   assert.equal(scorer.isExcludedJournal({ pmid: '1' }), false);

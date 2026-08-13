@@ -79,9 +79,17 @@ const EXCLUDE_BUILTIN = [
   "physical therapy",
   "physiotherapy",
   "occupational therapy",
-  "medical education",
-  "education online",
+  "education",
   "medical teacher",
+  "health professions",
+  "academic medicine",
+  "simulation in healthcare",
+  "quality improvement",
+  "healthcare quality",
+  "medical quality",
+  "quality & safety",
+  "quality and safety",
+  "patient safety",
   "health policy",
   "health services research",
   "health economics",
@@ -253,7 +261,12 @@ export class MetadataScorer {
       return { score: this.journals.tiers?.low?.score ?? -1.0, tier: this.journals.exclude?.label ?? '배제 저널', excluded: true };
     }
     const T = this.journals.tiers ?? {};
-    const exact = (arr) => (arr ?? []).some((n) => j === n);
+    // PubMed 는 동명 저널을 가르려고 발행지를 괄호로 덧붙인다
+    // (`Shock (Augusta, Ga.)` · `Critical care (London, England)` · `Medicine (Baltimore)`).
+    // exact 목록은 사람이 쓰는 이름이라 그 접미사가 없어서, 2026-08-13 exact 전환 때
+    // `Shock` 이 전문지 2.0 → 그외 0.8 로 조용히 강등됐다. 괄호 접미사를 떼고 한 번 더 맞춰본다.
+    const jBare = j.replace(/\s*\([^()]*\)\s*$/, '').trim();
+    const exact = (arr) => (arr ?? []).some((n) => j === n || jBare === n);
     const inc = (arr) => j.length > 0 && (arr ?? []).some((n) => j.includes(n));
 
     // 상위 3개 티어는 exact만 허용한다. 부분일치는 low 감점용으로만

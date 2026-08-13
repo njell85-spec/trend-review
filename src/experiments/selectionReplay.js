@@ -3,7 +3,7 @@ import { composeDualStreams } from '../agents/DataCollectorAgent.js';
 
 export const REPLAY_WARNING = '이 실험은 arm 간 상대 우열만 말한다. PubMed 의 MeSH·publication type 은 나중에 붙으므로 과거 재생은 실제보다 유리하다.';
 
-const SOFT_PATTERNS = [
+export const SOFT_PATTERNS = [
   'nursing', 'nurse', ' nurs ', 'midwifery', 'nutrition', 'nutrients', 'dietet',
   'parenteral and enteral', 'rehabilitation', 'physical therapy', 'physiotherapy',
   'occupational therapy', 'medical education', 'education online', 'medical teacher',
@@ -131,6 +131,60 @@ export function runReplay({ corpus, arms, armDefinitions, profile, journals, col
   return { warning: REPLAY_WARNING, start, end, arms: results };
 }
 
+/**
+ * arm 간 발산 진단 — "arm 주입이 스코어러까지 닿는가" 와 "효과가 top-1 을 뒤집는가" 를 가른다.
+ *
+ * 2026-08-13 재생(run 31712702785)에서 A·C·D 가 30일 내내 같은 논문을 골랐다. 그때
+ * 결과 표만으로는 ⓐ배선이 죽어 점수가 아예 같은 것인지 ⓑ점수는 갈렸는데 top-1 을
+ * 못 뒤집은 것인지 구분할 수 없었다. 이 표가 그 구분을 강제한다:
+ *   - scoreDiffDays = 0  →  ⓐ 배선 문제(주입이 스코어러에 안 닿는다)
+ *   - scoreDiffDays > 0 이고 pickDiffDays = 0  →  ⓑ 효과 크기 문제
+ */
+export function armDivergence(result, baseline = 'A') {
+  const arms = Object.keys(result.arms);
+  if (!arms.includes(baseline)) return [];
+  const base = result.arms[baseline];
+  return arms.filter((a) => a !== baseline).map((arm) => {
+    const other = result.arms[arm];
+    let scoreDiffDays = 0, pickDiffDays = 0, maxAbsDelta = 0, comparedPmids = 0, poolDiffDays = 0;
+    for (const dayB of base.days) {
+      const dayX = other.days.find((d) => d.date === dayB.date);
+      if (!dayX) continue;
+      const mapB = new Map(dayB.ranked.map((r) => [String(r.pmid), r.rawScore]));
+      let dayDiff = false;
+      for (const r of dayX.ranked) {
+        const b = mapB.get(String(r.pmid));
+        if (b === undefined) continue;
+        comparedPmids++;
+        const delta = Math.abs(r.rawScore - b);
+        if (delta > 1e-9) { dayDiff = true; maxAbsDelta = Math.max(maxAbsDelta, delta); }
+      }
+      if (dayDiff) scoreDiffDays++;
+      if (dayB.candidateCount !== dayX.candidateCount) poolDiffDays++;
+      if ((dayB.selected?.pmid ?? null) !== (dayX.selected?.pmid ?? null)) pickDiffDays++;
+    }
+    const verdict = scoreDiffDays === 0 && poolDiffDays === 0
+      ? 'ⓐ 주입이 점수·후보 어디에도 안 닿음 (배선/설정 확인)'
+      : pickDiffDays === 0
+        ? 'ⓑ 점수는 갈렸으나 top-1 을 못 뒤집음 (효과 크기)'
+        : '갈림';
+    return { arm, baseline, scoreDiffDays, poolDiffDays, pickDiffDays,
+      maxAbsDelta: Math.round(maxAbsDelta * 1000) / 1000, comparedPmids, verdict };
+  });
+}
+
+export function renderArmDivergence(result, baseline = 'A') {
+  const rows = armDivergence(result, baseline);
+  if (!rows.length) return '';
+  let md = `\n## arm 발산 진단 (기준 ${baseline})\n\n`;
+  md += `| arm | 점수가 달랐던 날 | 후보수가 달랐던 날 | 선정이 달랐던 날 | 최대 rawScore 차 | 판정 |\n`;
+  md += `|---|---:|---:|---:|---:|---|\n`;
+  for (const r of rows) {
+    md += `| ${r.arm} | ${r.scoreDiffDays} | ${r.poolDiffDays} | ${r.pickDiffDays} | ${r.maxAbsDelta} | ${r.verdict} |\n`;
+  }
+  return md;
+}
+
 export function renderReplaySummary(result) {
   const arms = Object.keys(result.arms);
   let md = `> ⚠️ ${REPLAY_WARNING}\n\n# 30일 선정 재생 ${result.start} ~ ${result.end}\n\n`;
@@ -143,5 +197,6 @@ export function renderReplaySummary(result) {
     const days = result.arms[arm].days;
     md += `| ${arm} | ${days.filter((d) => d.selected).length} | ${new Set(result.arms[arm].selectedPmids).size} | ${days.reduce((n, d) => n + d.excludedCount, 0)} | ${days.reduce((n, d) => n + d.softRestoredCount, 0)} | ${days.filter((d) => d.fallbackTriggered).length} |\n`;
   }
+  md += renderArmDivergence(result);
   return md;
 }

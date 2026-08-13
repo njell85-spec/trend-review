@@ -50,6 +50,18 @@ const DIAGNOSTIC =
 const GUIDELINE =
   '"guideline"[Publication Type] OR "practice guideline"[Publication Type] OR "consensus development conference"[Publication Type]';
 
+// ── 색인 지연 프로브 ────────────────────────────────────────────────────────
+// 프로덕션 쿼리(DEFAULT_QUERY)는 **MeSH 전용**이고 MeSH 는 발행 몇 주~몇 달 뒤에 붙는다.
+// 그래서 "최신 구간이 마르다"가 ⓐ진짜 재고 부족인지 ⓑ색인이 아직 안 붙은 것인지
+// 구분이 안 된다. 최신 구간 가중(쟁점 ⓑ)은 이 구분 없이는 못 정한다.
+// 같은 구간을 MeSH 를 안 쓰는 두 축으로 다시 세어 가른다:
+//   - TIAB: 제목·초록 텍스트 (색인 없이 발행 즉시 검색된다)
+//   - 저널 단독: [Journal] 필드 (색인과 무관하게 즉시 붙는다)
+const TIAB_QUERY =
+  '"emergency department"[tiab] OR "emergency service"[tiab] OR "emergency medicine"[tiab] OR ' +
+  '"critical illness"[tiab] OR "critically ill"[tiab] OR "intensive care"[tiab] OR ' +
+  '"critical care"[tiab] OR "resuscitation"[tiab]';
+
 const TIERS = ['top_general', 'em_ccm_flagship', 'specialty'];
 const tierTerm = (tier) => {
   const ta = journals.tiers?.[tier]?.pubmedTa ?? [];
@@ -145,6 +157,18 @@ export async function runCensus() {
       perDayTopFlagship: Number((strictN / days).toFixed(2)), perDayAllTiers: Number((anyTier / days).toFixed(2)) };
   }
 
+  // ⑤ 색인 지연 프로브 — 같은 구간을 MeSH 없이 다시 센다.
+  const topFlagTerm = `${tierTerm('top_general')} OR ${tierTerm('em_ccm_flagship')}`;
+  for (const r of rows) {
+    const win = { minDate: r.minDate, maxDate: r.maxDate };
+    r.probe = {
+      tiabTotal: await esearchCount({ term: TIAB_QUERY, ...win, datetype: 'edat' }),
+      journalOnly: await esearchCount({ term: topFlagTerm, ...win, datetype: 'edat' }),
+      journalDesign: await esearchCount({ term: AND(topFlagTerm, DESIGN_FILTER), ...win, datetype: 'edat' }),
+    };
+    console.error(`[probe] ${r.label} 완료 (누적 esearch ${calls}회)`);
+  }
+
   const doc = { generatedAt: new Date().toISOString(), kstDate: kstDateStr(), query: BASE,
     sliceDays: SLICE_DAYS, slices: SLICES, esearchCalls: calls, rows, arrival };
   const path = `${OUT}/pool-census-${kstDateStr()}.json`;
@@ -189,6 +213,17 @@ export function render(doc) {
   }
   md += `\n> ⓑ 판단 근거: 하루 1편만 발행하므로, **/일 값이 1보다 크면** 최신 구간 할당을 늘려도\n`;
   md += `> 적체가 생긴다(=ⓒ "밀린 대작 소화" 기간이 길어진다). 1보다 작으면 최신 구간만으로는 매일 못 채운다.\n`;
+  if (doc.rows.every((r) => r.probe)) {
+    md += `\n## ⑤ 색인 지연 프로브 — 최신 구간이 마른 것은 재고 부족인가, 색인 지연인가\n\n`;
+    md += `| 구간 | MeSH 쿼리 총 | TIAB 총(색인 무관) | top+flagship 저널 단독 | 저널∧설계 | (참고) MeSH∧저널∧설계 |\n`;
+    md += `|---|---:|---:|---:|---:|---:|\n`;
+    for (const r of doc.rows) {
+      md += `| ${r.label} | ${r.totalEdat} | ${r.probe.tiabTotal} | ${r.probe.journalOnly} | ${r.probe.journalDesign} | ${r.strict.topPlusFlagship} |\n`;
+    }
+    md += `\n> 읽는 법: **저널 단독**은 색인과 무관하게 즉시 붙는 필드다. 이 열이 구간마다 평평한데\n`;
+    md += `> MeSH 쿼리 총만 최신 구간에서 꺼지면 **색인 지연**이다(재고는 있는데 쿼리가 못 본다).\n`;
+    md += `> 저널 단독도 같이 꺼지면 그때가 **진짜 재고 부족**이다.\n`;
+  }
   md += `\n(esearch ${doc.esearchCalls}회 · 레코드 미수신 — count 만 읽음)\n`;
   return md;
 }
