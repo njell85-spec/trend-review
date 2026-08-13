@@ -44,8 +44,6 @@ const NEGATIVE_TYPES = [
 //     호(issue) 발행일을 읽어 07월 전자공개분을 "1년+"로 오판했다(F6).
 //   · 표본: 초록의 배경 문장 인구수를 표본으로 읽었다(실측 `N≈1704632`, F5).
 //   두 축이 빠진 자리를 설계 축이 받는다 — 보조 축 합은 종전 ~3.0 → 2.0 으로 오히려 준다.
-const DESIGN_SCALE = 0.5;        // design 0~4 → 0~2.0
-const DESIGN_CAP = 2.0;
 const RELEVANCE_SPAN = 4.0;      // rel01(0~1) → 0~4
 
 // 주제 축 탈포화 (F3) — 종전 `titleHits * 0.6` 은 제목 2히트로 만점이었다.
@@ -136,7 +134,15 @@ export class MetadataScorer {
     this.now = options.now ? new Date(options.now) : new Date();
     this.profile = options.profile ?? this._loadJson('../../config/interests.json', DEFAULT_PROFILE, (p) => p?.topicGroups);
     this.journals = options.journals ?? this._loadJson('../../config/journals.json', DEFAULT_JOURNALS, (j) => j?.tiers);
-    this.scoring = { journalWeight: 1.0, relevanceWeight: 1.0, topicGatePenalty: -5.0, ...(this.profile.scoring ?? {}) };
+    this.scoring = {
+      journalWeight: 1.0,
+      relevanceWeight: 1.0,
+      topicGatePenalty: -5.0,
+      designScale: 0.5,
+      designCap: 2.0,
+      ...(this.profile.scoring ?? {}),
+      ...options.scoring,
+    };
   }
 
   _loadJson(relPath, fallback, validate) {
@@ -166,7 +172,7 @@ export class MetadataScorer {
     const journalPart = w.journalWeight * jr.score;
     const relPart = w.relevanceWeight * (rel.rel01 * RELEVANCE_SPAN);
     // ② 보조 축: 설계뿐 (0~2.0). 최신성·표본은 v2 에서 삭제 — 위 상수 주석 참조.
-    const designPart = Math.min(DESIGN_CAP, design.score * DESIGN_SCALE);
+    const designPart = Math.min(this.scoring.designCap, design.score * this.scoring.designScale);
     const recencyPart = 0;
     const samplePart = 0;
     // ③ 주제 게이트: 관심 0매칭이면 강한 감점(사실상 배제)
