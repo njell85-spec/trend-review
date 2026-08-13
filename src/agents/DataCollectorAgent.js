@@ -19,7 +19,7 @@ const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 // 반드시 이 함수로 키를 가린다 (public/공유 Actions 로그 노출 방지).
 const scrubUrl = (u) => String(u).replace(/([?&]api_key=)[^&]*/gi, '$1REDACTED');
 
-const DEFAULT_QUERY =
+export const DEFAULT_QUERY =
   '"emergency service, hospital"[MeSH] OR "critical illness"[MeSH] OR "intensive care units"[MeSH] OR "resuscitation"[MeSH] OR "critical care"[MeSH] OR "emergency medicine"[MeSH]';
 
 const DEFAULT_COLLECTION = {

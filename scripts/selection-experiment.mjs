@@ -86,6 +86,13 @@ async function replayMain() {
   console.error(`재생 JSON: ${outputPath}\n코퍼스: ${corpusPath}`);
 }
 
+if (process.env.EXP_MODE === 'census') {
+  // 수집 풀 실측 — LLM 미사용, esearch count 만 읽는다 (scripts/pool-census.mjs).
+  const { runCensus } = await import('./pool-census.mjs');
+  await runCensus();
+  process.exit(0);
+}
+
 if (process.env.EXP_MODE === 'replay' || String(process.env.EXP_ARM ?? '').trim()) {
   await replayMain();
   process.exit(0);
