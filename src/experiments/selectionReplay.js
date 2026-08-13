@@ -273,6 +273,40 @@ export function renderArmDivergence(result, baseline = 'A') {
  * 풀 구조 비교 — 현행(A) vs PeterJ 안(E). 선정 결과와 **토큰 비용**을 같이 낸다.
  * 토큰은 실제 rerank 프롬프트 글자수에 측정된 chars/token 비를 곱해 낸다(추정 아님).
  */
+/**
+ * 한 줄 요약 — Actions 로그를 tail 로만 읽을 수 있는 제약 때문에 **맨 끝**에 찍는다.
+ * (아티팩트 CDN·로그 zip 이 프록시에 막혀 있어 `get_job_logs` 가 유일한 회수 경로다.
+ *  표가 위에 있으면 매번 보일러플레이트 130줄을 같이 끌고 와야 한다.)
+ */
+export function renderCompactSummary(result) {
+  const arms = Object.keys(result.arms);
+  const line = (a) => {
+    const d = result.arms[a].days;
+    const sum = (f) => d.reduce((n, x) => n + (f(x) ?? 0), 0);
+    return `${a}: 발행 ${d.filter((x) => x.selected).length}/${d.length}` +
+      ` · 풀평균 ${(sum((x) => x.rerankPoolSize) / d.length).toFixed(1)}` +
+      ` · 프롬프트 ${sum((x) => x.rerankPromptChars).toLocaleString()}자`;
+  };
+  let md = `\n=== COMPACT ===\n`;
+  for (const a of arms) md += `${line(a)}\n`;
+  for (const c of result.tokenCalibration ?? []) {
+    md += `calib ${c.arm}: 풀 ${c.poolSize} · in ${c.inputTokens.toLocaleString()}` +
+      ` · out ${c.outputTokens.toLocaleString()} · 상한 ${(c.maxTokens ?? 0).toLocaleString()}` +
+      ` · ${c.reason}\n`;
+  }
+  if (result.charsPerToken) md += `charsPerToken ${result.charsPerToken}\n`;
+  if (arms.includes('A') && arms.includes('E')) {
+    const same = result.arms.A.days.filter((d) => {
+      const e = result.arms.E.days.find((x) => x.date === d.date);
+      return d.selected?.pmid && d.selected.pmid === e?.selected?.pmid;
+    }).length;
+    md += `같은날 같은픽 ${same}/${result.arms.A.days.length}\n`;
+    const empty = (result.arms.E.days.at(-1)?.monthlyPerMonth ?? []).filter((m) => m.kept === 0).length;
+    md += `E 빈달 ${empty}\n`;
+  }
+  return md + `=== /COMPACT ===\n`;
+}
+
 export function renderPoolComparison(result, { charsPerToken = null } = {}) {
   const arms = Object.keys(result.arms);
   if (!arms.includes('A') || !arms.includes('E')) return '';
@@ -350,5 +384,6 @@ export function renderReplaySummary(result) {
   }
   md += renderArmDivergence(result);
   md += renderPoolComparison(result, { charsPerToken: result.charsPerToken ?? null });
+  md += renderCompactSummary(result);
   return md;
 }
