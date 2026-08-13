@@ -288,10 +288,10 @@ export function renderPoolComparison(result, { charsPerToken = null } = {}) {
   }
   if (result.tokenCalibration?.length) {
     md += `\n### 토큰 실측 캘리브레이션 (프로덕션과 같은 경로로 실제 호출)\n\n`;
-    md += `| arm | 날짜 | 풀 | 프롬프트 글자 | 입력 토큰 | 출력 토큰 | chars/token | LLM 호출됨 |\n`;
-    md += `|---|---|---:|---:|---:|---:|---:|---|\n`;
+    md += `| arm | 날짜 | 풀 | 프롬프트 글자 | 입력 토큰 | 출력 토큰 | 출력상한 | chars/token | 결과 |\n`;
+    md += `|---|---|---:|---:|---:|---:|---:|---:|---|\n`;
     for (const c of result.tokenCalibration) {
-      md += `| ${c.arm} | ${c.date} | ${c.poolSize} | ${c.promptChars.toLocaleString()} | ${c.inputTokens.toLocaleString()} | ${c.outputTokens.toLocaleString()} | ${c.charsPerToken ?? '—'} | ${c.llmCalled ? 'O' : 'X'} |\n`;
+      md += `| ${c.arm} | ${c.date} | ${c.poolSize} | ${c.promptChars.toLocaleString()} | ${c.inputTokens.toLocaleString()} | ${c.outputTokens.toLocaleString()} | ${(c.maxTokens ?? 0).toLocaleString()} | ${c.charsPerToken ?? '—'} | ${c.reason ?? (c.llmCalled ? 'O' : 'X')} |\n`;
     }
     md += `\n> 이 두 줄만 실제 호출이다. 30일 총량은 **일자별 실제 프롬프트 글자수 합 × 위 비율**로 냈다.\n`;
     md += `> 선정 논문 1편을 분석하는 LLM 비용은 두 안이 동일하므로(둘 다 1편) 비교에서 상쇄된다.\n`;

@@ -237,10 +237,11 @@ export class FilterAnalyzerAgent {
   }
 
   // ── LLM API wrapper (provider-agnostic) ─────────────────────────────────
-  async _callLLM(messages, tool, llm = this.llm, { webSearch = false } = {}) {
+  async _callLLM(messages, tool, llm = this.llm, { webSearch = false, maxTokens = null } = {}) {
     return this.cb.execute(() =>
       this.retry.execute(
-        async () => llm.callWithTool(messages, tool, { webSearch, maxTokens: webSearch ? 12000 : 8192 }),
+        async () => llm.callWithTool(messages, tool,
+          { webSearch, maxTokens: maxTokens ?? (webSearch ? 12000 : 8192) }),
         {
           label: `${this.provider}-API${webSearch ? '-web' : ''}`,
           onRetry: ({ attempt, delay }) =>
@@ -330,8 +331,17 @@ ${pool.map((p, i) => `[${i + 1}] PMID ${p.pmid} | ${p.journal} | types: ${(p.pub
 Title: ${p.title}
 Abstract: ${String(p.abstract ?? '').slice(0, 1200)}`).join('\n\n')}`;
 
+      // ★ 출력 상한은 풀 크기에 비례해야 한다 (2026-08-14 실측).
+      //   `submit_paper_scores` 는 **논문 1편당 1엔트리**를 요구하므로 출력이 풀에 비례한다.
+      //   실측: 20편 → 3,883 출력 토큰 = 편당 194. 고정 상한 8,192 는 **42편이 한계**이고,
+      //   120편(PeterJ 안)은 약 23,300 토큰이 필요해 그냥 죽는다 — 실제로 110편 호출이
+      //   조용히 실패했다(usage 0). 소프트 실패라 "결정적 순위 유지"로 넘어가 **LLM 이 안
+      //   돌았는데 돈 것처럼 보인다.** 상한을 풀에 맞춰 늘린다.
+      const rerankMaxTokens = Math.min(64_000, 1_000 + 240 * pool.length);
+      telemetry.rerankMaxTokens = rerankMaxTokens;
       telemetry.llmCalled = true;
-      const out = await this._callLLM([{ role: 'user', content: prompt }], this._scoringTool, this.llm);
+      const out = await this._callLLM([{ role: 'user', content: prompt }], this._scoringTool,
+        this.llm, { maxTokens: rerankMaxTokens });
       // ★ 숫자가 아닌 점수는 버린다. 하나라도 NaN 이 섞이면 그 논문이 정렬에서 1위로
       //   튀어오르고(NaN 비교는 false), 중앙값에 걸리면 미채점분 전체가 NaN 이 된다.
       const map = new Map((out?.scores ?? [])

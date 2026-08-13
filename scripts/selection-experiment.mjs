@@ -125,14 +125,19 @@ async function replayMain() {
       agent.logger.info = () => {}; agent.logger.warn = () => {}; agent.logger.section = () => {};
       const t0 = Date.now();
       let telemetry = null;
+      let failure = null;
       try { ({ telemetry } = await agent._rerankSelect(pool, 1)); }
-      catch (err) { console.error(`[calib] ${arm}: 호출 실패 — ${err.message}`); }
+      catch (err) { failure = err.message; console.error(`[calib] ${arm}: 호출 실패 — ${err.message}`); }
       const inTok = sumIn(llmTelemetry.totals) - sumIn(JSON.parse(before));
       const outTok = sumOut(llmTelemetry.totals) - sumOut(JSON.parse(before));
       calib.push({ arm, date: day.date, poolSize: pool.length, promptChars: chars,
         inputTokens: inTok, outputTokens: outTok,
         charsPerToken: inTok > 0 ? Number((chars / inTok).toFixed(3)) : null,
         llmCalled: telemetry?.llmCalled ?? false, applied: telemetry?.applied ?? false,
+        // ★ `llmCalled` 는 "호출을 시도했다"이지 "성공했다"가 아니다. 소프트 실패라
+        //   0 토큰이 그냥 넘어가면 측정이 조용히 거짓말을 한다 — 사유를 같이 낸다.
+        reason: failure ?? telemetry?.reason ?? (inTok > 0 ? 'ok' : 'usage_not_recorded'),
+        maxTokens: telemetry?.rerankMaxTokens ?? null,
         sec: ((Date.now() - t0) / 1000).toFixed(0) });
       console.error(`[calib] ${arm}: 풀 ${pool.length} · ${chars}자 → in ${inTok} · out ${outTok} 토큰`);
     }
