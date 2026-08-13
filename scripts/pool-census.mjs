@@ -169,8 +169,23 @@ export async function runCensus() {
     console.error(`[probe] ${r.label} 완료 (누적 esearch ${calls}회)`);
   }
 
+  // ⑥ 저널 약어 검증 — `pubmedTa` 는 PubMed `[Journal]` 검색어(MEDLINE 약어)다.
+  // 약어가 틀리면 에러가 아니라 **조용히 0건**이 되고, 그 저널은 수집에서 통째로 빠진 채
+  // 아무도 모른다. 2026-08-13 에 exact 69종 대 pubmedTa 28종으로 벌어져 있던 것을
+  // 발견했다. 180일 전체에서 0건인 약어를 찾아내 이름을 지적한다.
+  const journalCheck = [];
+  const wholeWindow = { minDate: slash(new Date(now.getTime() - 180 * 86_400_000)), maxDate: slash(now) };
+  for (const tier of TIERS) {
+    for (const ta of journals.tiers?.[tier]?.pubmedTa ?? []) {
+      const n = await esearchCount({ term: `"${ta}"[Journal]`, ...wholeWindow, datetype: 'edat' });
+      journalCheck.push({ tier, pubmedTa: ta, count180: n });
+    }
+  }
+  const deadAbbrevs = journalCheck.filter((j) => j.count180 === 0);
+  console.error(`[journals] ${journalCheck.length}종 검증 · 0건 ${deadAbbrevs.length}종`);
+
   const doc = { generatedAt: new Date().toISOString(), kstDate: kstDateStr(), query: BASE,
-    sliceDays: SLICE_DAYS, slices: SLICES, esearchCalls: calls, rows, arrival };
+    sliceDays: SLICE_DAYS, slices: SLICES, esearchCalls: calls, rows, arrival, journalCheck, deadAbbrevs };
   const path = `${OUT}/pool-census-${kstDateStr()}.json`;
   writeFileSync(path, JSON.stringify(doc, null, 2));
   summary(render(doc));
@@ -223,6 +238,21 @@ export function render(doc) {
     md += `\n> 읽는 법: **저널 단독**은 색인과 무관하게 즉시 붙는 필드다. 이 열이 구간마다 평평한데\n`;
     md += `> MeSH 쿼리 총만 최신 구간에서 꺼지면 **색인 지연**이다(재고는 있는데 쿼리가 못 본다).\n`;
     md += `> 저널 단독도 같이 꺼지면 그때가 **진짜 재고 부족**이다.\n`;
+  }
+  if (doc.journalCheck) {
+    md += `\n## ⑥ 저널 약어 검증 (\`pubmedTa\` = PubMed [Journal] 검색어)\n\n`;
+    md += `180일 전체에서 검증한 ${doc.journalCheck.length}종 중 **0건 ${doc.deadAbbrevs.length}종**`;
+    md += doc.deadAbbrevs.length
+      ? ` — 아래 약어는 틀렸거나 그 이름으로 색인되지 않는다. 고치기 전까지 그 저널은 수집에서 빠진다.\n\n`
+      : ` (전부 살아 있다).\n\n`;
+    if (doc.deadAbbrevs.length) {
+      md += `| 티어 | pubmedTa | 180일 건수 |\n|---|---|---:|\n`;
+      for (const j of doc.deadAbbrevs) md += `| ${j.tier} | \`${j.pubmedTa}\` | ${j.count180} |\n`;
+    }
+    const thin = doc.journalCheck.filter((j) => j.count180 > 0 && j.count180 < 10);
+    if (thin.length) {
+      md += `\n180일에 10건 미만(오타 의심): ${thin.map((j) => `\`${j.pubmedTa}\`(${j.count180})`).join(' · ')}\n`;
+    }
   }
   md += `\n(esearch ${doc.esearchCalls}회 · 레코드 미수신 — count 만 읽음)\n`;
   return md;
