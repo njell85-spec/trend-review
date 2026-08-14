@@ -1,6 +1,9 @@
 import { MetadataScorer } from '../utils/MetadataScorer.js';
 import { composeDualStreams } from '../agents/DataCollectorAgent.js';
 import { applyTopicCooldown } from '../utils/topicCooldown.js';
+import { isoDay, monthlyBuckets, selectMonthlyPool } from '../utils/monthlyPool.js';
+
+export { isoDay, monthlyBuckets, selectMonthlyPool } from '../utils/monthlyPool.js';
 
 export const REPLAY_WARNING = '이 실험은 arm 간 상대 우열만 말한다. PubMed 의 MeSH·publication type 은 나중에 붙으므로 과거 재생은 실제보다 유리하다.';
 
@@ -15,13 +18,6 @@ const HARD_PATTERNS = [
   'veterinary', 'dental', 'dentistry', 'oral health', 'acupuncture', 'herbal',
   'complementary', 'alternative medicine', 'ethics', 'nursing ethics',
 ];
-
-export function isoDay(value) {
-  if (!value) return null;
-  const match = String(value).match(/^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{1,2})?/);
-  if (!match) return null;
-  return `${match[1]}-${String(match[2] ?? 1).padStart(2, '0')}-${String(match[3] ?? 1).padStart(2, '0')}`;
-}
 
 export function replayDates(start, end) {
   const out = [];
@@ -47,39 +43,6 @@ export function candidatesAsOf(papers, day) {
  * 갖고 있으므로 여기서는 그대로 쓴다 — **이 실험이 말하는 것은 풀 구조의 효과이지
  * 날짜축 교체의 효과가 아니다.**
  */
-export function monthlyBuckets(candidates, day, { months = 12, monthDays = 30 } = {}) {
-  const dayMs = new Date(`${day}T00:00:00Z`).getTime();
-  const buckets = Array.from({ length: months }, () => []);
-  for (const p of candidates) {
-    const iso = isoDay(p.pubDate ?? p.edat);
-    if (!iso) continue;
-    const ageDays = Math.floor((dayMs - new Date(`${iso}T00:00:00Z`).getTime()) / 86_400_000);
-    if (ageDays < 0) continue;
-    const idx = Math.floor(ageDays / monthDays);
-    if (idx >= 0 && idx < months) buckets[idx].push(p);
-  }
-  return buckets;
-}
-
-export function selectMonthlyPool(candidates, day, scorer, cfg = {}) {
-  const { months = 12, monthDays = 30, keepPerMonth = 10 } = cfg;
-  // ★ 배제를 top-K **앞**에 건다. 뒤에 걸면 배제 저널이 월 10슬롯을 차지한 뒤 사라져
-  //   그 달 기여가 10편 미만으로 줄고, 밀려난 정상 임상지는 보충되지 않는다.
-  const eligible = candidates.filter((p) => !scorer.isExcludedJournal(p));
-  const buckets = monthlyBuckets(eligible, day, { months, monthDays });
-  const pool = [];
-  const perMonth = [];
-  for (let m = 0; m < buckets.length; m++) {
-    const scored = scorer.scorePapers(buckets[m])
-      .sort((a, b) => (b.rawScore - a.rawScore) || String(a.pmid).localeCompare(String(b.pmid)));
-    const keep = scored.slice(0, keepPerMonth).map((sc) =>
-      buckets[m].find((p) => String(p.pmid) === String(sc.pmid)));
-    perMonth.push({ month: m, screened: buckets[m].length, kept: keep.length });
-    pool.push(...keep.filter(Boolean));
-  }
-  return { pool, perMonth };
-}
-
 /**
  * LLM rerank 프롬프트의 실제 크기 — `FilterAnalyzerAgent._rerankSelect` 와 **같은 서식**으로
  * 만들어 글자수를 잰다. 토큰 비교의 근거를 추정이 아니라 실물 문자열에 둔다
