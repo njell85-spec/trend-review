@@ -258,5 +258,16 @@
     "rerankPoolSize": 20,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "41870554",
+    "title": "Propofol versus ketamine in rapid sequence intubation in critically ill patients",
+    "date": "2026-08-15",
+    "topic": "resp_airway",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 33,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
