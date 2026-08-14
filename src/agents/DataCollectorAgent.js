@@ -12,6 +12,7 @@ import { Cache } from '../utils/Cache.js';
 import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
 import { kstDateSlash } from '../utils/dates.js';
+import { MetadataScorer } from '../utils/MetadataScorer.js';
 
 const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 
@@ -72,11 +73,11 @@ export class DataCollectorAgent {
     this.maxPapers = options.maxPapers ?? Number(process.env.MAX_PAPERS ?? 300);
     this.searchDays = options.searchDays ?? Number(process.env.SEARCH_DAYS ?? 180);
     this.query = options.query ?? DEFAULT_QUERY;
-    this.collectionMode = options.collectionMode ?? 'single';
+    this.collection = options.collection ?? this._loadCollection();
+    this.collectionMode = options.collectionMode ?? this.collection.mode ?? 'single';
     this.includeMonthlyPool = options.includeMonthlyPool ?? false;
     this.monthlyPoolOptions = options.monthlyPoolOptions ?? {};
     this.now = options.now ? new Date(options.now) : new Date();
-    this.collection = options.collection ?? this._loadCollection();
     this.journals = options.journals ?? this._loadJournals();
   }
 
@@ -526,6 +527,42 @@ export class DataCollectorAgent {
     const start = Date.now();
 
     try {
+      if (this.collectionMode === 'monthly12') {
+        const monthlyCfg = { ...(this.collection.monthly ?? {}), ...this.monthlyPoolOptions };
+        const prerankScorer = monthlyCfg.prerankScorer ?? new MetadataScorer({
+          journals: this.journals,
+          scoring: { topicGatePenalty: 0 },
+        });
+        try {
+          const monthly = await this.collectMonthlyPool({ ...monthlyCfg, prerankScorer });
+          if (!monthly.papers.length) throw new Error('monthly collection returned no papers');
+          const dates = monthly.papers.map((p) => p.pubDate).filter(Boolean).sort();
+          const stats = {
+            pmidsFound: monthly.uniqueIds,
+            articlesCollected: monthly.papers.length,
+            monthlyPerMonth: monthly.perMonth.map((m) => ({
+              ...m, screened: m.found, kept: m.kept,
+            })),
+            monthlyRequested: monthly.requestedTotal,
+            monthlyFallback: { executed: false },
+            prerankTopicGatePenalty: prerankScorer.scoring?.topicGatePenalty ?? 0,
+            oldestPubDate: dates[0] ?? null,
+            newestPubDate: dates.at(-1) ?? null,
+          };
+          this.logger.info('Monthly collection complete', stats);
+          return { papers: monthly.papers, stats };
+        } catch (monthlyErr) {
+          this.logger.warn('월별 수집 실패/빈 결과 — 기존 단일 경로 폴백 실행', { err: monthlyErr.message });
+          const fallback = await this._runSingleCollection(start);
+          fallback.stats.monthlyFallback = {
+            executed: true,
+            reason: monthlyErr.message,
+            execution: { pmidsFound: fallback.stats.pmidsFound, articlesCollected: fallback.stats.articlesCollected },
+          };
+          this.logger.warn('기존 단일 경로 폴백 완료', fallback.stats.monthlyFallback);
+          return fallback;
+        }
+      }
       if (this.collectionMode === 'dual') {
         const dual = await this.collectDualStreams();
         const dates = dual.papers.map((p) => p.pubDate).filter(Boolean).sort();
@@ -535,6 +572,14 @@ export class DataCollectorAgent {
           oldestPubDate: dates[0] ?? null, newestPubDate: dates.at(-1) ?? null,
         } };
       }
+      return await this._runSingleCollection(start);
+    } catch (err) {
+      this.logger.error('Collection failed', { err: err.message, stack: err.stack });
+      throw err;
+    }
+  }
+
+  async _runSingleCollection(start = Date.now()) {
       const pmids = await this.searchPmids();
       if (!pmids.length) {
         this.logger.warn('No PMIDs found for query');
@@ -556,10 +601,6 @@ export class DataCollectorAgent {
 
       this.logger.info('Collection complete', stats);
       return { papers, stats };
-    } catch (err) {
-      this.logger.error('Collection failed', { err: err.message, stack: err.stack });
-      throw err;
-    }
   }
 }
 

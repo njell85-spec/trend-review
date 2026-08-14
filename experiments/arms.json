@@ -227,6 +227,158 @@
         "days": 5,
         "penalty": -2.0
       }
+    },
+    "H": {
+      "label": "월별 풀 + 주제 쿨다운 스윕 — F 와 같되 최근 7일 내 같은 주제군 -3.0 감점",
+      "collection": "monthly12",
+      "days": 365,
+      "monthly": {
+        "months": 12,
+        "monthDays": 30,
+        "screenPerMonth": 100,
+        "keepPerMonth": 3,
+        "screenDepth": 1000
+      },
+      "rerankPool": 36,
+      "scoring": {
+        "titleWeights": [
+          0.5,
+          0.25,
+          0.15,
+          0.1
+        ],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": false,
+        "queryMeshExcludeInTitle": false,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {
+        "mode": "hardOnly"
+      },
+      "topicCooldown": {
+        "days": 7,
+        "penalty": -3.0
+      }
+    },
+    "I": {
+      "label": "월별 풀 + 주제 쿨다운 스윕 — F 와 같되 최근 3일 내 같은 주제군 -3.0 감점",
+      "collection": "monthly12",
+      "days": 365,
+      "monthly": {
+        "months": 12,
+        "monthDays": 30,
+        "screenPerMonth": 100,
+        "keepPerMonth": 3,
+        "screenDepth": 1000
+      },
+      "rerankPool": 36,
+      "scoring": {
+        "titleWeights": [
+          0.5,
+          0.25,
+          0.15,
+          0.1
+        ],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": false,
+        "queryMeshExcludeInTitle": false,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {
+        "mode": "hardOnly"
+      },
+      "topicCooldown": {
+        "days": 3,
+        "penalty": -3.0
+      }
+    },
+    "J": {
+      "label": "월별 풀 + 주제 쿨다운 스윕 — F 와 같되 최근 10일 내 같은 주제군 -2.0 감점",
+      "collection": "monthly12",
+      "days": 365,
+      "monthly": {
+        "months": 12,
+        "monthDays": 30,
+        "screenPerMonth": 100,
+        "keepPerMonth": 3,
+        "screenDepth": 1000
+      },
+      "rerankPool": 36,
+      "scoring": {
+        "titleWeights": [
+          0.5,
+          0.25,
+          0.15,
+          0.1
+        ],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": false,
+        "queryMeshExcludeInTitle": false,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {
+        "mode": "hardOnly"
+      },
+      "topicCooldown": {
+        "days": 10,
+        "penalty": -2.0
+      }
+    },
+    "K": {
+      "label": "월별 풀 + 주제 쿨다운 스윕 — F 와 같되 최근 7일 내 같은 주제군 -4.0 감점",
+      "collection": "monthly12",
+      "days": 365,
+      "monthly": {
+        "months": 12,
+        "monthDays": 30,
+        "screenPerMonth": 100,
+        "keepPerMonth": 3,
+        "screenDepth": 1000
+      },
+      "rerankPool": 36,
+      "scoring": {
+        "titleWeights": [
+          0.5,
+          0.25,
+          0.15,
+          0.1
+        ],
+        "metaHitWeight": 0.08,
+        "metaHitCap": 3,
+        "queryMeshExcludeInMeta": false,
+        "queryMeshExcludeInTitle": false,
+        "relevanceSpan": 4.0,
+        "designScale": 0.5,
+        "designCap": 2.0,
+        "reviewScoreFlagship": 3.2,
+        "reviewScoreOther": 0.7,
+        "topicGatePenalty": -5.0
+      },
+      "exclusions": {
+        "mode": "hardOnly"
+      },
+      "topicCooldown": {
+        "days": 7,
+        "penalty": -4.0
+      }
     }
   }
 }

@@ -1,4 +1,6 @@
 {
+  "mode": "monthly12",
+  "monthly": { "months": 12, "monthDays": 30, "screenPerMonth": 100, "keepPerMonth": 3, "screenDepth": 1000 },
   "maxPapers": 300,
   "streamA": {
     "days": 30,

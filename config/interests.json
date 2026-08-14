@@ -1,5 +1,6 @@
 {
   "_comment": "PeterJ 관심사 프로파일 — 논문 선정 적합도. 숫자만 고쳐 튜닝(세션 없이 폰에서 파일 편집 가능). weight=그룹 중요도(0~1), terms=매칭 키워드(소문자 부분일치, 제목 매칭이 MeSH/키워드보다 크게 반영). 저널 등급은 config/journals.json에서 따로 관리. 선정 우선순위(PeterJ 2026-07-10): ①관심주제 부합 ②저명 저널 — 이 둘이 우선.",
+  "topicCooldown": { "days": 5, "penalty": -2.0 },
   "topicGroups": {
     "cardiac_resus": {
       "label": "심혈관·소생",

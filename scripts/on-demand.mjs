@@ -133,7 +133,11 @@ if (DOC_KINDS.has(kind)) {
     process.exit(1);
   }
   analysis.manualPick = true;
-  await appendState('output/selected_papers.json', { pmid, title: article.title, date: todayKST });
+  // Manual picks skip point scoring, so primaryTopic normally needs recalculation and stays null.
+  await appendState('output/selected_papers.json', {
+    pmid, title: article.title, date: todayKST,
+    topic: analysis.scoringData?.primaryTopic ?? null,
+  });
   pagesUrl = await publisher.publish(todayKST, [analysis], { manual: true });
   notifyPaper = analysis;
 

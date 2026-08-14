@@ -18,6 +18,7 @@ import { ReportGeneratorAgent } from '../agents/ReportGeneratorAgent.js';
 import { NotificationAgent } from '../agents/NotificationAgent.js';
 import { GitHubPublisher } from '../utils/GitHubPublisher.js';
 import { kstDateStr, kstStamp } from '../utils/dates.js';
+import { selectMonthlyPool } from '../utils/monthlyPool.js';
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -46,7 +47,14 @@ export class TrendReviewOrchestrator {
       searchDays: options.searchDays,
       query: options.query,
     });
-    this.filter = new FilterAnalyzerAgent({ topN: options.topN });
+    this.collectionMode = this.collector.collectionMode;
+    this.monthlyConfig = this.collector.collection.monthly ?? {};
+    const monthlyRerankPool = Number(this.monthlyConfig.months ?? 12)
+      * Number(this.monthlyConfig.keepPerMonth ?? 3);
+    this.filter = new FilterAnalyzerAgent({
+      topN: options.topN,
+      ...(this.collectionMode === 'monthly12' && { rerankPool: monthlyRerankPool }),
+    });
     this.guideline = new GuidelineAnalyzerAgent();
     this.fullText = new FullTextAgent();
     this.validator = new ValidationAgent();
@@ -107,6 +115,50 @@ export class TrendReviewOrchestrator {
     }
   }
 
+  // 월별 풀(arm F) 선정 — 수집분에서 월 top-K 를 뽑아 LLM 풀을 만든다.
+  // **분기를 메서드로 뺀 이유**: run() 안에 인라인으로 두면 테스트가 분기를 "재현"할 뿐
+  // 실제 코드를 못 탄다. 그러면 여기서 폴백을 지워도 테스트가 초록인 채로 남는다.
+  _buildSelectionPool(validPapers, collectStats = {}) {
+    if (this.collectionMode !== 'monthly12') return validPapers;
+    if (collectStats?.monthlyFallback?.executed === true) return validPapers;
+
+    const monthly = selectMonthlyPool(validPapers, kstDateStr(), this.filter.scorer, this.monthlyConfig);
+    collectStats.monthlySelectionPerMonth = monthly.perMonth;
+    collectStats.monthlySelectionPoolSize = monthly.pool.length;
+
+    // ★ 수집은 성공했는데 **월별 갈래에서** 풀이 비는 경우가 있다 — pubDate 가 미래이거나
+    //   (ahead-of-print) 360일 창 밖이면 버킷에 안 담긴다. 날짜축 불일치(pdat vs pubDate)로
+    //   특정 구간이 통째로 0 이 된 것은 이미 실측된 적이 있다(M11).
+    //   수집 폴백은 이 경우를 못 잡는다 — 수집 자체는 성공했기 때문이다. 여기서 막지 않으면
+    //   **그날 데일리가 조용히 빈손**이 된다. 이 저장소가 가장 오래 싸운 실패 양상이다.
+    if (!monthly.pool.length) {
+      collectStats.monthlySelectionFallback = { executed: true, reason: 'monthly pool empty after bucketing' };
+      this.logger.warn('월별 선정 풀이 비었다 — 수집분 전체로 폴백한다', {
+        collected: validPapers.length, perMonth: monthly.perMonth,
+      });
+      return validPapers;
+    }
+
+    collectStats.monthlySelectionFallback = { executed: false };
+    this.logger.info('월별 top-K 선정 풀 구성 완료', {
+      poolSize: monthly.pool.length,
+      rerankPool: this.filter.rerankPool,
+      perMonth: monthly.perMonth,
+    });
+    return monthly.pool;
+  }
+
+  async _loadSelectionHistory() {
+    try {
+      const raw = await readFile(this.excludeListPath, 'utf8');
+      return JSON.parse(raw)
+        .filter((e) => e?.topic)
+        .map((e) => ({ topic: e.topic, date: e.date }));
+    } catch {
+      return [];
+    }
+  }
+
   // rerank telemetry 를 함께 받아 **선정 증거**를 영속화한다(스펙 §5.4).
   // 로그는 90일이면 사라지지만 이 파일은 남는다 — F1(재순위 4주 미작동)이 은폐된
   // 구조를 닫으려면 "그날 실제로 돌았나"를 사후에 물을 수 있어야 한다.
@@ -133,6 +185,7 @@ export class TrendReviewOrchestrator {
       pmid: p.paper?.pmid ?? p.pmid,
       title: (p.paper?.title ?? p.title ?? '').slice(0, 80),
       date: today,
+      topic: p.scoringData?.primaryTopic ?? p.paper?.scoringData?.primaryTopic ?? null,
       ...evidence,
     }));
 
@@ -244,8 +297,17 @@ export class TrendReviewOrchestrator {
     }
   }
 
-  async _stageAnalyze(papers, excludePmids = [], resumeData = null) {
+  // ★ 주제 쿨다운 이력은 **여기서** 싣는다 — 호출부가 아니라.
+  //   호출부에서 조립하면 누가 인자 하나를 빠뜨려도 테스트가 전부 초록인 채로
+  //   쿨다운만 조용히 죽는다(F1 이 그 구조였다). 이 자리가 선정으로 가는 유일한
+  //   길목이므로, 여기서 채우면 빠뜨릴 수가 없다. 명시로 넘긴 값이 있으면 그것을 쓴다.
+  async _stageAnalyze(papers, selectionOptions = {}, resumeData = null) {
     const entry = this._stageStart(STAGES.ANALYZING);
+    const selection = {
+      ...selectionOptions,
+      history: selectionOptions.history ?? await this._loadSelectionHistory(),
+      today: selectionOptions.today ?? kstDateStr(),
+    };
     try {
       if (resumeData?.allScoredPapers && resumeData?.scoredTopPapers) {
         this.logger.info('Resuming from checkpoint — skipping scoring');
@@ -257,7 +319,7 @@ export class TrendReviewOrchestrator {
         };
       }
 
-      const result = await this.filter.runScoringOnly(papers, excludePmids);
+      const result = await this.filter.runScoringOnly(papers, selection);
       // 키를 PICO 결과(topPapers)와 구분 — 병합 체크포인트에서 충돌 방지
       await this._saveCheckpoint(STAGES.ANALYZING, {
         scoredTopPapers: result.topPapers,
@@ -471,9 +533,10 @@ export class TrendReviewOrchestrator {
       // Stage 3: Score + select top-N — exclude already-published PMIDs
       const excludePmids = await this._loadExcludePmids();
       if (excludePmids.length) this.logger.info(`Excluding ${excludePmids.length} already-published PMIDs`);
+      const selectionPapers = this._buildSelectionPool(validPapers, collectStats);
       const { topPapers: scoredTopPapers, allScoredPapers, rerank } = await this._stageAnalyze(
-        validPapers,
-        excludePmids,
+        selectionPapers,
+        { excludePmids },
         resumeCheckpoint?.data
       );
 
