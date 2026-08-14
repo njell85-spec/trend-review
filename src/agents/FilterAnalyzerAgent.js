@@ -13,6 +13,7 @@ import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
 import { LLMClient, PROVIDER_DEFAULTS, ANTHROPIC_ANALYSIS_MODEL } from '../utils/LLMClient.js';
 import { MetadataScorer } from '../utils/MetadataScorer.js';
+import { applyTopicCooldown, DEFAULT_TOPIC_COOLDOWN } from '../utils/topicCooldown.js';
 
 // LLM 재순위를 신뢰하는 최소 커버리지 — 이 밑이면 재순위 전체 무효.
 // 1.0(전부 덮어야 함)이었으나 19/20 응답을 버리는 것이 실제 해였다(2026-08-10).
@@ -35,7 +36,12 @@ export class FilterAnalyzerAgent {
 
     // 스코어링은 결정적 메타데이터 스코어러로 후보를 압축한다 (LLM 아님).
     //   · 무료·무인 자동화에서 Claude Code CLI 안전필터의 배치 채점 거부(AUP)를 회피.
-    this.scorer = new MetadataScorer();
+    this.scorer = new MetadataScorer({ profile: options.profile ?? options.interests });
+    this.topicCooldownCfg = options.topicCooldown
+      ?? options.profile?.topicCooldown
+      ?? options.interests?.topicCooldown
+      ?? this.scorer.profile?.topicCooldown
+      ?? DEFAULT_TOPIC_COOLDOWN;
 
     // LLM rerank(선택): 결정적 상위 K편만 Opus가 정독해 "침상 임상가치"로 재순위 → top-N.
     //   · PeterJ 확정(2026-07-10): 결정적은 주제·저널까지, 침상가치 변별은 LLM.
@@ -266,7 +272,12 @@ export class FilterAnalyzerAgent {
 
   // ── Step 2: Select top-K papers (excluding already-published PMIDs) ─────────
   // limit 기본은 topN. rerank 시엔 pool(예: 20)을 넘겨 결정적 상위 K편을 추린다.
-  _selectTopPapers(papers, scores, excludePmids = [], limit = this.topN) {
+  _selectTopPapers(papers, scores, options = {}, legacyLimit) {
+    // Positional array support keeps standalone/existing callers backward compatible.
+    const normalized = Array.isArray(options)
+      ? { excludePmids: options, ...(legacyLimit === undefined ? {} : { limit: legacyLimit }) }
+      : options;
+    const { excludePmids = [], history, today, limit = this.topN } = normalized;
     const scoreMap  = new Map(scores.map((s) => [s.pmid, s]));
     const excludeSet = new Set(excludePmids);
 
@@ -292,11 +303,42 @@ export class FilterAnalyzerAgent {
       }
     }
 
-    return eligible
-      .map((p) => ({
+    let scored = eligible.map((p) => ({
         ...p,
         scoringData: scoreMap.get(p.pmid) ?? { score: 0, rawScore: 0, rationale: '', studyType: 'Other' },
-      }))
+      }));
+
+    // ★ Topic cooldown deployment notes:
+    // · First few days after deploy, cooldown has no effect (history lacks topic field).
+    //   Self-healing: once 5 days of topic-tagged entries accumulate, it works fully.
+    // · If cfg.days=0 or cfg.penalty=0, cooldown is completely disabled (preserves old behavior).
+    // · Penalty is deduction, not exclusion — strong papers can overcome it (rawScore gap > 2.0).
+    if (history !== undefined && today !== undefined) {
+      const adjusted = applyTopicCooldown(
+        scored.map((p) => ({
+          pmid: String(p.pmid),
+          rawScore: p.scoringData.rawScore ?? p.scoringData.score ?? 0,
+          primaryTopic: p.scoringData.primaryTopic ?? null,
+        })),
+        history,
+        today,
+        this.topicCooldownCfg
+      );
+      const adjustedByPmid = new Map(adjusted.map((x) => [String(x.pmid), x]));
+      scored = scored.map((p) => {
+        const result = adjustedByPmid.get(String(p.pmid));
+        return {
+          ...p,
+          scoringData: {
+            ...p.scoringData,
+            rawScore: result?.rawScore ?? p.scoringData.rawScore ?? p.scoringData.score ?? 0,
+            cooldownPenalty: result?.cooldown ?? 0,
+          },
+        };
+      });
+    }
+
+    return scored
       // rawScore(풀 정밀도)로 정렬해 동점을 안정적으로 깬다 (표시 점수는 반올림됨).
       .sort((a, b) => (b.scoringData.rawScore ?? b.scoringData.score ?? 0)
                     - (a.scoringData.rawScore ?? a.scoringData.score ?? 0))
@@ -569,14 +611,15 @@ Requirements:
   }
 
   // ── Scoring + selection only (no PICO) — used when full-text enrichment follows ──
-  async runScoringOnly(papers, excludePmids = []) {
+  async runScoringOnly(papers, options = {}) {
     this.logger.section('FilterAnalyzerAgent — Scoring & Selection (no PICO yet)');
     if (!papers.length) return { topPapers: [], allScoredPapers: [] };
 
     const scores = await this.scorePapers(papers);
     // 결정적으로 pool(rerank 시 K편, 아니면 top-N)을 추린 뒤, 켜져 있으면 LLM 재순위.
     const poolSize = this.enableRerank ? Math.max(this.topN, this.rerankPool) : this.topN;
-    const pool = this._selectTopPapers(papers, scores, excludePmids, poolSize);
+    const normalized = Array.isArray(options) ? { excludePmids: options } : options;
+    const pool = this._selectTopPapers(papers, scores, { ...normalized, limit: poolSize });
     const { picks: topPapers, telemetry } = this.enableRerank
       ? await this._rerankSelect(pool, this.topN)
       : { picks: pool, telemetry: { llmCalled: false, applied: false, reason: 'disabled' } };
@@ -621,7 +664,7 @@ Requirements:
     this.logger.info(`Scored ${scores.length} papers`);
 
     // 2. Select top-N (excluding already-published)
-    const topPapers = this._selectTopPapers(papers, scores, excludePmids);
+    const topPapers = this._selectTopPapers(papers, scores, { excludePmids });
     this.logger.info(
       `Top ${topPapers.length} papers selected`,
       topPapers.map((p) => ({
