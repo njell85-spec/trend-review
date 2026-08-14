@@ -2,46 +2,46 @@
   "session_id": "5b554389-76c9-5cd0-91e4-fa6903b9f9de",
   "schema": 3,
   "repo": "trend-review",
-  "updated": "2026-08-14",
-  "turns": 318,
+  "updated": "2026-08-15",
+  "turns": 344,
   "records": [
     {
-      "ts": "2026-08-14",
-      "date": "2026-08-14",
+      "ts": "2026-08-15",
+      "date": "2026-08-15",
       "surface": "cloud",
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-5",
-      "in": 2892,
-      "out": 266105,
-      "cache_w": 3218196,
-      "cache_r": 101129228,
-      "cost_usd": 89.413659,
+      "in": 2930,
+      "out": 279907,
+      "cache_w": 3927376,
+      "cache_r": 112714461,
+      "cost_usd": 102.643316,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "5b554389-76c9-5cd0-91e4-fa6903b9f9de",
-      "note": "세션 누계(턴 318) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 344) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
-      "ts": "2026-08-14",
-      "date": "2026-08-14",
+      "ts": "2026-08-15",
+      "date": "2026-08-15",
       "surface": "cloud",
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-4-7",
-      "in": 13,
-      "out": 546,
-      "cache_w": 8871,
-      "cache_r": 91748,
-      "cost_usd": 0.148299,
+      "in": 30,
+      "out": 6778,
+      "cache_w": 40891,
+      "cache_r": 338326,
+      "cost_usd": 0.747673,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "5b554389-76c9-5cd0-91e4-fa6903b9f9de",
-      "note": "세션 누계(턴 318) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 344) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
-      "ts": "2026-08-14",
-      "date": "2026-08-14",
+      "ts": "2026-08-15",
+      "date": "2026-08-15",
       "surface": "cloud",
       "repo": "trend-review",
       "task": "session",
@@ -54,7 +54,7 @@
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "5b554389-76c9-5cd0-91e4-fa6903b9f9de",
-      "note": "세션 누계(턴 318) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 344) · 공시단가 환산 · 캐시쓰기 배수 2"
     }
   ]
 }
