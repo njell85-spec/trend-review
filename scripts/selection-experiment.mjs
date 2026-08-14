@@ -25,6 +25,12 @@ import { FilterAnalyzerAgent } from '../src/agents/FilterAnalyzerAgent.js';
 import { kstDateStr } from '../src/utils/dates.js';
 import { runReplay, renderReplaySummary } from '../src/experiments/selectionReplay.js';
 
+// llmTelemetry.totals(auth → 모델 → bucket)에서 입력·출력 토큰 합을 뽑는다.
+const sumIn = (t) => Object.values(t ?? {}).flatMap((m) => Object.values(m ?? {}))
+  .reduce((n, b) => n + (b?.in ?? 0), 0);
+const sumOut = (t) => Object.values(t ?? {}).flatMap((m) => Object.values(m ?? {}))
+  .reduce((n, b) => n + (b?.out ?? 0), 0);
+
 import { installUsageDump } from '../src/utils/usageDump.js';
 
 // 이 스크립트도 LLM을 태우므로 사용량을 타워 장부용으로 떨군다(USAGE_OUT 지정 시에만).
@@ -65,7 +71,30 @@ async function replayMain() {
   if (corpusPath) {
     corpusDoc = JSON.parse(readFileSync(corpusPath, 'utf8'));
   } else {
-    const collector = new DataCollectorAgent({ collectionMode: 'dual', maxPapers: collection.maxPapers });
+    // arm E(월별 풀)가 요청되면 코퍼스를 365일까지 넓힌다 — 12구간 × screenPerMonth.
+    // ★ arm 이름이 아니라 **collection 모드**로 판정한다. 종전엔 `includes('E')` 라
+    //   F·G(같은 monthly12)를 요청하면 코퍼스를 안 걷어 **전부 빈손**이 됐다
+    //   (2026-08-14 실측 — F,G 재생이 30/30 빈손으로 나왔고 원인이 이것이었다).
+    const monthlyArms = requested.filter((a) => armsDoc.arms[a]?.collection === 'monthly12');
+    const needMonthly = monthlyArms.length > 0;
+    const eCfg = armsDoc.arms[monthlyArms[0]]?.monthly ?? {};
+    // 여러 monthly arm 이 섞이면 **가장 넓은 스크리닝**으로 한 번만 걷는다(부분집합은 재생에서 잘린다).
+    if (monthlyArms.length > 1) {
+      eCfg.screenPerMonth = Math.max(...monthlyArms.map((a) => armsDoc.arms[a].monthly?.screenPerMonth ?? 0));
+      eCfg.screenDepth = Math.max(...monthlyArms.map((a) => armsDoc.arms[a].monthly?.screenDepth ?? 0));
+    }
+    // 사전순위 스코어러 — esummary 에는 초록·MeSH 가 없다. **주제 게이트를 끈다**:
+    // 켜 두면 제목에 관심어가 없는 논문이 rel01=0 → -5 로 바닥에 깔려, 초록에만 주제어가
+    // 있는 좋은 RCT 가 100편 안에 못 든다. prerank 는 저널 티어·설계·제목 히트로만 거른다.
+    const prerankScorer = needMonthly
+      ? new MetadataScorer({ profile, journals, scoring: { topicGatePenalty: 0 } })
+      : null;
+    const collector = new DataCollectorAgent({ collectionMode: 'dual', maxPapers: collection.maxPapers,
+      includeMonthlyPool: needMonthly,
+      monthlyPoolOptions: { months: eCfg.months ?? 12, monthDays: eCfg.monthDays ?? 30,
+        screenPerMonth: Number(process.env.EXP_SCREEN_PER_MONTH ?? eCfg.screenPerMonth ?? 100),
+        screenDepth: Number(process.env.EXP_SCREEN_DEPTH ?? eCfg.screenDepth ?? 1000),
+        prerankScorer } });
     const collected = await collector.collectReplayCorpus();
     corpusDoc = { start, end, collectedAt: new Date().toISOString(), stats: collected.stats, papers: collected.papers };
     corpusPath = `${OUT}/corpus-${start}_${end}.json`;
@@ -76,14 +105,70 @@ async function replayMain() {
   const result = runReplay({ corpus, arms: requested, armDefinitions: armsDoc.arms,
     profile, journals, collection, start, end });
   result.corpus = corpusPath;
+  const cpt = Number(process.env.EXP_CHARS_PER_TOKEN);
+  if (Number.isFinite(cpt) && cpt > 0) result.charsPerToken = cpt;
   const corpusDates = corpus.map((p) => p.pubDate).filter(Boolean).sort();
   result.corpusStats = { candidateCount: corpus.length, oldestPubDate: corpusDates[0] ?? null,
     newestPubDate: corpusDates.at(-1) ?? null, ...(Array.isArray(corpusDoc) ? {} : corpusDoc.stats) };
   result.llm = { enabled: false, implemented: false, requested: process.env.EXP_LLM === '1' };
+  // ── 토큰 실측 캘리브레이션 (EXP_LLM=1) ────────────────────────────────────
+  // 추정 비율을 쓰지 않는다. **프로덕션과 같은 경로**(FilterAnalyzerAgent._rerankSelect)로
+  // A 풀(20)·E 풀(120)을 각각 한 번씩 실제로 태우고, 그 usage 로 chars/token 을 잰다.
+  // 30일 총량은 일자별 실제 프롬프트 글자수 합 × 그 비율로 낸다.
+  if (USE_LLM) {
+    const { llmTelemetry } = await import('../src/utils/LLMClient.js');
+    const { rerankPromptChars } = await import('../src/experiments/selectionReplay.js');
+    const calib = [];
+    for (const arm of requested) {
+      const days = result.arms[arm]?.days ?? [];
+      // 프롬프트가 가장 큰 날 = 그 arm 의 정상 부하
+      const day = days.filter((d) => d.rerankPromptChars > 0)
+        .sort((a, b) => b.rerankPromptChars - a.rerankPromptChars)[0];
+      if (!day) { console.error(`[calib] ${arm}: rerank 풀이 있는 날이 없다 — 건너뜀`); continue; }
+      const pool = day.ranked.slice(0, day.rerankPoolSize)
+        .map((r) => corpus.find((p) => String(p.pmid) === String(r.pmid))).filter(Boolean);
+      if (pool.length < 2) { console.error(`[calib] ${arm}: 풀 복원 실패`); continue; }
+      const chars = rerankPromptChars(pool);
+      const before = JSON.stringify(llmTelemetry.totals);
+      const agent = new FilterAnalyzerAgent({ topN: 1, enableRerank: true, rerankPool: pool.length });
+      agent.logger.info = () => {}; agent.logger.warn = () => {}; agent.logger.section = () => {};
+      const t0 = Date.now();
+      let telemetry = null;
+      let failure = null;
+      try { ({ telemetry } = await agent._rerankSelect(pool, 1)); }
+      catch (err) { failure = err.message; console.error(`[calib] ${arm}: 호출 실패 — ${err.message}`); }
+      const inTok = sumIn(llmTelemetry.totals) - sumIn(JSON.parse(before));
+      const outTok = sumOut(llmTelemetry.totals) - sumOut(JSON.parse(before));
+      calib.push({ arm, date: day.date, poolSize: pool.length, promptChars: chars,
+        inputTokens: inTok, outputTokens: outTok,
+        charsPerToken: inTok > 0 ? Number((chars / inTok).toFixed(3)) : null,
+        llmCalled: telemetry?.llmCalled ?? false, applied: telemetry?.applied ?? false,
+        // ★ `llmCalled` 는 "호출을 시도했다"이지 "성공했다"가 아니다. 소프트 실패라
+        //   0 토큰이 그냥 넘어가면 측정이 조용히 거짓말을 한다 — 사유를 같이 낸다.
+        reason: failure ?? telemetry?.reason ?? (inTok > 0 ? 'ok' : 'usage_not_recorded'),
+        maxTokens: telemetry?.rerankMaxTokens ?? null,
+        sec: ((Date.now() - t0) / 1000).toFixed(0) });
+      console.error(`[calib] ${arm}: 풀 ${pool.length} · ${chars}자 → in ${inTok} · out ${outTok} 토큰`);
+    }
+    result.tokenCalibration = calib;
+    const withRatio = calib.filter((c) => c.charsPerToken);
+    if (withRatio.length) {
+      result.charsPerToken = Number(
+        (withRatio.reduce((n, c) => n + c.charsPerToken, 0) / withRatio.length).toFixed(3));
+    }
+  }
+
   const outputPath = `${OUT}/replay-${start}_${end}.json`;
   writeFileSync(outputPath, JSON.stringify(result, null, 2));
   summary(renderReplaySummary(result));
   console.error(`재생 JSON: ${outputPath}\n코퍼스: ${corpusPath}`);
+}
+
+if (process.env.EXP_MODE === 'census') {
+  // 수집 풀 실측 — LLM 미사용, esearch count 만 읽는다 (scripts/pool-census.mjs).
+  const { runCensus } = await import('./pool-census.mjs');
+  await runCensus();
+  process.exit(0);
 }
 
 if (process.env.EXP_MODE === 'replay' || String(process.env.EXP_ARM ?? '').trim()) {

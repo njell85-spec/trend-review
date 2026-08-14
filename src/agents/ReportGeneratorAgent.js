@@ -6,6 +6,7 @@ import { writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 import { Logger } from '../utils/Logger.js';
+import { impactFactorLabel } from '../utils/journalMeta.js';
 
 const EVIDENCE_COLOR = {
   High: '#10b981', Moderate: '#3b82f6', Low: '#f59e0b', 'Very Low': '#ef4444',
@@ -264,7 +265,7 @@ function app() {
       const authors = (p.authors ?? []).slice(0, 2).join(', ') + ((p.authors?.length ?? 0) > 2 ? ' 외' : '');
       return `<tr class="border-b hover:bg-gray-50 transition-colors align-top">
   <td class="px-4 py-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-600 text-white text-xs font-bold">${i + 1}</span></td>
-  <td class="px-4 py-4"><a href="${this._esc(p.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="font-semibold text-gray-800 hover:text-blue-700 text-sm leading-snug block mb-1">${this._esc(p.title ?? '')}</a><div class="text-xs text-gray-400">${this._esc(authors)} · ${this._esc(p.journal ?? '')} (${this._esc(p.pubDate ?? '')})</div></td>
+  <td class="px-4 py-4"><a href="${this._esc(p.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="font-semibold text-gray-800 hover:text-blue-700 text-sm leading-snug block mb-1">${this._esc(p.title ?? '')}</a><div class="text-xs text-gray-400">${this._esc(authors)} · ${this._esc(p.journal ?? '')}${this._esc(impactFactorLabel(p.journal, { prefix: ' ' }))} (${this._esc(p.pubDate ?? '')})</div></td>
   <td class="px-4 py-4 text-center"><div class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full inline-block mb-1">${STUDY_ICON[studyType] ?? '📝'} ${this._esc(studyType)}</div><div><span class="evidence-badge text-white text-xs" style="background:${evColor}">${this._esc(evidence)}</span></div></td>
   <td class="px-4 py-4 text-center">${nVal ? `<span class="text-sm font-bold text-gray-700">N = ${this._esc(nVal)}</span>` : '<span class="text-xs text-gray-400">—</span>'}</td>
   <td class="px-4 py-4 text-center"><span class="score-badge text-white" style="background:${scoreColor}">${score}</span></td>
@@ -362,7 +363,7 @@ function app() {
     <div class="flex-1 min-w-0">
       <div class="text-xs font-semibold text-gray-400 tracking-wide mb-2">No. ${String(rank + 1).padStart(2, '0')} · ${this._esc(evidence)} Evidence · ${this._esc(studyType)}</div>
       <a href="${this._esc(p.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="text-lg font-bold text-blue-900 hover:text-blue-700 leading-snug block">${this._esc(p.title ?? '')}</a>
-      <div class="text-sm text-gray-500 mt-1.5"><strong class="text-gray-600">${this._esc(p.journal ?? '—')}</strong> · ${this._esc(p.pubDate ?? '—')} · <a href="${this._esc(p.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="text-blue-600 underline hover:text-blue-800">PubMed</a>${doiLink}</div>
+      <div class="text-sm text-gray-500 mt-1.5"><strong class="text-gray-600">${this._esc(p.journal ?? '—')}</strong>${this._esc(impactFactorLabel(p.journal))} · ${this._esc(p.pubDate ?? '—')} · <a href="${this._esc(p.pubmedUrl ?? '#')}" target="_blank" rel="noopener" class="text-blue-600 underline hover:text-blue-800">PubMed</a>${doiLink}</div>
     </div>
     <button @click="open=!open" class="flex-shrink-0 text-xs text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap mt-1">
       <span x-show="open">접기 ▲</span><span x-show="!open" x-cloak>펼치기 ▼</span>

@@ -19,7 +19,7 @@ const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 // 반드시 이 함수로 키를 가린다 (public/공유 Actions 로그 노출 방지).
 const scrubUrl = (u) => String(u).replace(/([?&]api_key=)[^&]*/gi, '$1REDACTED');
 
-const DEFAULT_QUERY =
+export const DEFAULT_QUERY =
   '"emergency service, hospital"[MeSH] OR "critical illness"[MeSH] OR "intensive care units"[MeSH] OR "resuscitation"[MeSH] OR "critical care"[MeSH] OR "emergency medicine"[MeSH]';
 
 const DEFAULT_COLLECTION = {
@@ -73,6 +73,8 @@ export class DataCollectorAgent {
     this.searchDays = options.searchDays ?? Number(process.env.SEARCH_DAYS ?? 180);
     this.query = options.query ?? DEFAULT_QUERY;
     this.collectionMode = options.collectionMode ?? 'single';
+    this.includeMonthlyPool = options.includeMonthlyPool ?? false;
+    this.monthlyPoolOptions = options.monthlyPoolOptions ?? {};
     this.now = options.now ? new Date(options.now) : new Date();
     this.collection = options.collection ?? this._loadCollection();
     this.journals = options.journals ?? this._loadJournals();
@@ -205,15 +207,104 @@ export class DataCollectorAgent {
     return { papers: composeDualStreams(aPapers, bPapers, { maxPapers: this.collection.maxPapers ?? 300, minB: 80 }), streamA: aPapers, streamB: bPapers };
   }
 
+  // ── esummary (docsum) — 레코드 전체를 안 받고 싸게 훑는다 ──────────────────
+  // efetch 는 초록까지 받아 무겁다. esummary 는 저널명·제목·publication type 만 주는데,
+  // **사전순위(prerank)에 필요한 축은 그것으로 충분하다**(저널 티어 · 설계 · 제목 히트).
+  async fetchSummaries(pmids) {
+    const BATCH = 200;   // GET URL 길이 한계(≈2000자) 안쪽
+    const out = [];
+    for (let i = 0; i < pmids.length; i += BATCH) {
+      const batch = pmids.slice(i, i + BATCH);
+      const params = this._buildParams({ db: 'pubmed', id: batch.join(','), retmode: 'json' });
+      const data = await this._fetchJson(`${PUBMED_BASE}/esummary.fcgi?${params}`);
+      const res = data?.result ?? {};
+      for (const uid of res.uids ?? []) {
+        const r = res[uid];
+        if (!r) continue;
+        out.push({
+          pmid: String(uid),
+          title: r.title ?? '',
+          journal: r.fulljournalname || r.source || '',
+          publicationTypes: Array.isArray(r.pubtype) ? r.pubtype : [],
+          pubDate: r.sortpubdate || r.epubdate || r.pubdate || '',
+          abstract: '',                     // esummary 는 초록을 안 준다 — prerank 는 이것 없이 판정한다
+        });
+      }
+      if (!this.apiKey && i + BATCH < pmids.length) await new Promise((r) => setTimeout(r, 350));
+    }
+    return out;
+  }
+
+  // ── 월별 풀 (PeterJ 확정 2026-08-14 · 2단 회수) ────────────────────────────
+  // "최근 1년, 한 달씩 끊어 한 달 100편 스크리닝, 그중 스코어링으로 10편,
+  //  12달치 120편에서 한 편을 LLM 이 고른다."
+  //
+  // ★ 달 안에서 날짜로 자르지 않는다 (PeterJ 2026-08-14: "한 달을 자르는데 그 안에서
+  //   날짜 구분할 이유가 없지"). `sort=date` + `retmax=100` 이면 그 100편이 각 달의
+  //   최신 2~5일치가 돼(census 실측) 구간을 나눈 의미가 사라진다.
+  //   그래서 **2단 회수**로 간다:
+  //     ① esearch 로 그 달 전체 PMID 를 최대 screenDepth 까지 (PMID 만 — 사실상 무료)
+  //     ② esummary 로 싸게 훑어 **사전순위**(저널 티어 · 설계 · 제목 히트)로 100편 선별
+  //     ③ 그 100편만 efetch (초록까지) → 본 스코어러가 월 top-K 를 뽑는다
+  //   날짜 절단이 점수 절단으로 바뀐다. efetch 예산은 12×100 = 1200 으로 고정된다.
+  //
+  // 쿼리 축은 안 건드린다 — 풀 구조만 바꿔야 현행과의 비교가 성립한다.
+  async collectMonthlyPool({ months = 12, screenPerMonth = 100, monthDays = 30,
+    screenDepth = 1000, prerankScorer = null } = {}) {
+    const perMonth = [];
+    const keptIds = [];
+    for (let m = 0; m < months; m++) {
+      // PubMed 날짜 범위는 **양 끝을 포함**한다. 이웃 구간의 end 와 start 가 같은 날이면
+      // 그날 논문이 두 달에 다 들어가 dedup 뒤 풀이 조용히 작아진다 — 하루 당겨 반개구간으로.
+      const end = new Date(this.now.getTime() - m * monthDays * 86_400_000
+        - (m > 0 ? 86_400_000 : 0));
+      const start = new Date(this.now.getTime() - (m + 1) * monthDays * 86_400_000);
+      const minDate = this._isoDate(start), maxDate = this._isoDate(end);
+      const monthIds = await this._search({
+        term: this.query, retmax: screenDepth, minDate, maxDate,
+        stream: `M${m}`, datetype: 'pdat',
+      });
+      let kept = monthIds;
+      let preranked = false;
+      if (prerankScorer && monthIds.length > screenPerMonth) {
+        const summaries = await this.fetchSummaries(monthIds);
+        const scored = prerankScorer.scorePapers(summaries)
+          .sort((a, b) => (b.rawScore - a.rawScore) || String(a.pmid).localeCompare(String(b.pmid)));
+        kept = scored.slice(0, screenPerMonth).map((x) => String(x.pmid));
+        preranked = true;
+      } else {
+        kept = monthIds.slice(0, screenPerMonth);
+      }
+      // esearch 가 screenDepth 로 잘렸으면 그 달의 오래된 고득점 논문은 **점수조차 안 매겨진다.**
+      // 조용히 넘기면 "그 달 전체를 훑었다"는 말이 거짓이 된다 — 표에 드러낸다.
+      const truncated = monthIds.length >= screenDepth;
+      if (truncated) this.logger.warn(`월별 풀 M${m}: screenDepth(${screenDepth}) 에 걸렸다 — 그 달을 다 못 봤다`, { minDate, maxDate });
+      perMonth.push({ month: m, minDate, maxDate, found: monthIds.length,
+        screenDepth, truncated, kept: kept.length, preranked });
+      keptIds.push(...kept);
+      this.logger.info(`월별 풀 M${m}: ${monthIds.length}편 발견 → ${kept.length}편 선별`,
+        { preranked, minDate, maxDate });
+    }
+    const unique = [...new Set(keptIds)];
+    const papers = (await this.fetchArticles(unique)).map((p) => ({ ...p, streamSource: 'M' }));
+    return { papers, perMonth, requestedTotal: months * screenPerMonth, uniqueIds: unique.length };
+  }
+
   async collectReplayCorpus() {
     const legacyRange = this._getDateRange(this.searchDays);
     const legacyIds = await this._search({ term: this.query, retmax: this.maxPapers, ...legacyRange, datetype: 'pdat', stream: 'legacy' });
     const legacy = await this.fetchArticles(legacyIds);
     const dual = await this.collectDualStreams();
-    const papers = mergeCorpusSources({ legacy, A: dual.streamA, B: dual.streamB });
+    // 월별 풀(arm E)은 365일을 덮으므로 코퍼스가 그만큼 넓어진다. 끄고 싶으면 옵션으로.
+    const monthly = this.includeMonthlyPool
+      ? await this.collectMonthlyPool(this.monthlyPoolOptions)
+      : { papers: [], perMonth: [], requestedTotal: 0, uniqueIds: 0 };
+    const papers = mergeCorpusSources({ legacy, A: dual.streamA, B: dual.streamB, M: monthly.papers });
     const dates = papers.map((p) => p.pubDate).filter(Boolean).sort();
     return { papers, stats: { pmidsFound: papers.length, articlesCollected: papers.length,
       legacyCount: legacy.length, streamACount: dual.streamA.length, streamBCount: dual.streamB.length,
+      monthlyCount: monthly.papers.length, monthlyPerMonth: monthly.perMonth,
+      monthlyRequested: monthly.requestedTotal, monthlyUniqueIds: monthly.uniqueIds,
       oldestPubDate: dates[0] ?? null, newestPubDate: dates.at(-1) ?? null } };
   }
 
