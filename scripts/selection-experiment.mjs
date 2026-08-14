@@ -72,8 +72,17 @@ async function replayMain() {
     corpusDoc = JSON.parse(readFileSync(corpusPath, 'utf8'));
   } else {
     // arm E(월별 풀)가 요청되면 코퍼스를 365일까지 넓힌다 — 12구간 × screenPerMonth.
-    const eCfg = armsDoc.arms.E?.monthly ?? {};
-    const needMonthly = requested.includes('E');
+    // ★ arm 이름이 아니라 **collection 모드**로 판정한다. 종전엔 `includes('E')` 라
+    //   F·G(같은 monthly12)를 요청하면 코퍼스를 안 걷어 **전부 빈손**이 됐다
+    //   (2026-08-14 실측 — F,G 재생이 30/30 빈손으로 나왔고 원인이 이것이었다).
+    const monthlyArms = requested.filter((a) => armsDoc.arms[a]?.collection === 'monthly12');
+    const needMonthly = monthlyArms.length > 0;
+    const eCfg = armsDoc.arms[monthlyArms[0]]?.monthly ?? {};
+    // 여러 monthly arm 이 섞이면 **가장 넓은 스크리닝**으로 한 번만 걷는다(부분집합은 재생에서 잘린다).
+    if (monthlyArms.length > 1) {
+      eCfg.screenPerMonth = Math.max(...monthlyArms.map((a) => armsDoc.arms[a].monthly?.screenPerMonth ?? 0));
+      eCfg.screenDepth = Math.max(...monthlyArms.map((a) => armsDoc.arms[a].monthly?.screenDepth ?? 0));
+    }
     // 사전순위 스코어러 — esummary 에는 초록·MeSH 가 없다. **주제 게이트를 끈다**:
     // 켜 두면 제목에 관심어가 없는 논문이 rel01=0 → -5 로 바닥에 깔려, 초록에만 주제어가
     // 있는 좋은 RCT 가 100편 안에 못 든다. prerank 는 저널 티어·설계·제목 히트로만 거른다.
