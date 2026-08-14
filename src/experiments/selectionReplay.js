@@ -1,5 +1,6 @@
 import { MetadataScorer } from '../utils/MetadataScorer.js';
 import { composeDualStreams } from '../agents/DataCollectorAgent.js';
+import { applyTopicCooldown } from '../utils/topicCooldown.js';
 
 export const REPLAY_WARNING = '이 실험은 arm 간 상대 우열만 말한다. PubMed 의 MeSH·publication type 은 나중에 붙으므로 과거 재생은 실제보다 유리하다.';
 
@@ -179,11 +180,25 @@ export function runReplay({ corpus, arms, armDefinitions, profile, journals, col
         return { ...paper, exclusionTier: tier, scoringData: score };
       });
       const scoreMap = new Map(allScored.map((p) => [String(p.pmid), p]));
-      const scored = exclusion.papers.map((p) => scoreMap.get(String(p.pmid)))
+      let scored = exclusion.papers.map((p) => scoreMap.get(String(p.pmid)))
         .filter(Boolean)
         .sort((a, b) => (b.scoringData.rawScore - a.scoringData.rawScore) || String(a.pmid).localeCompare(String(b.pmid)));
+      // 주제 쿨다운 — 최근 발행한 주제군은 감점해 돌아가며 나오게 한다(배제가 아니라 감점).
+      if (cfg.topicCooldown) {
+        const adjusted = applyTopicCooldown(
+          scored.map((p) => ({ pmid: String(p.pmid), rawScore: p.scoringData.rawScore,
+            primaryTopic: p.scoringData.primaryTopic })),
+          results[arm].history ?? [], day, cfg.topicCooldown);
+        const order = new Map(adjusted.map((x, i) => [x.pmid, i]));
+        const penBy = new Map(adjusted.map((x) => [x.pmid, x.cooldown]));
+        scored = [...scored].sort((a, b) => order.get(String(a.pmid)) - order.get(String(b.pmid)));
+        for (const p of scored) p.cooldownPenalty = penBy.get(String(p.pmid)) ?? 0;
+      }
       const pick = scored[0] ?? null;
-      if (pick) results[arm].selectedPmids.push(String(pick.pmid));
+      if (pick) {
+        results[arm].selectedPmids.push(String(pick.pmid));
+        (results[arm].history ??= []).push({ topic: pick.scoringData.primaryTopic, date: day });
+      }
       const dates = candidates.map((p) => isoDay(p.edat ?? p.pubDate)).filter(Boolean).sort();
       // ── 토큰 비교 근거 — 실제 rerank 프롬프트를 만들어 글자수를 잰다 ──────────
       // 현행(A)은 데일리에서 RERANK_POOL=20, arm E 는 PeterJ 안대로 120 이다.
@@ -205,7 +220,7 @@ export function runReplay({ corpus, arms, armDefinitions, profile, journals, col
           primaryTopic: p.scoringData.primaryTopic, contributions: p.scoringData.contributions })),
         selected: pick ? { pmid: String(pick.pmid), title: pick.title, journal: pick.journal,
           pubDate: pick.pubDate, pubDateSource: pick.pubDateSource, streamSource: pick.streamSource,
-          ...pick.scoringData } : null });
+          cooldownPenalty: pick.cooldownPenalty ?? 0, ...pick.scoringData } : null });
     }
   }
   return { warning: REPLAY_WARNING, start, end, arms: results };
@@ -332,6 +347,20 @@ export function renderCompactSummary(result) {
     md += `같은날 같은픽 ${same}/${result.arms.A.days.length}\n`;
     const empty = (result.arms.E.days.at(-1)?.monthlyPerMonth ?? []).filter((m) => m.kept === 0).length;
     md += `E 빈달 ${empty}\n`;
+  }
+  // 주제·저널 쏠림 — 쿨다운의 효과가 여기서 보인다
+  for (const a of arms) {
+    const sel = result.arms[a].days.map((d) => d.selected).filter(Boolean);
+    if (!sel.length) continue;
+    const byTopic = {}, byJournal = {};
+    for (const p of sel) {
+      byTopic[p.primaryTopic ?? '(없음)'] = (byTopic[p.primaryTopic ?? '(없음)'] ?? 0) + 1;
+      byJournal[p.journal] = (byJournal[p.journal] ?? 0) + 1;
+    }
+    const top = Object.entries(byTopic).sort((x, y) => y[1] - x[1]);
+    md += `주제 ${a}: ${Object.keys(byTopic).length}군 · 최다 ${top[0][1]}편(${top[0][0]})` +
+      ` · 저널 ${Object.keys(byJournal).length}종 · 최다 ${Math.max(...Object.values(byJournal))}편\n`;
+    md += `  ${top.map(([k, v]) => `${k}:${v}`).join(' ')}\n`;
   }
   return md + `=== /COMPACT ===\n`;
 }

@@ -14,6 +14,7 @@ import { llmTelemetry } from './LLMClient.js';
 import { ensureCurationBlock, loadCurationState, removeSectionFromHtml, parseHiddenKey } from './curation.js';
 import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
+import { impactFactorLabel } from './journalMeta.js';
 
 const API = 'https://api.github.com';
 
@@ -148,7 +149,7 @@ export class GitHubPublisher {
         <div class="medal">${IC.star('#fff')}</div>
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}${trial ? ` · ${esc(trial)}` : ''}</div>` : (trial ? `<div class="ttle">${esc(trial)}</div>` : '')}
-        <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)} · ${esc(date)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
+        <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)}${esc(impactFactorLabel(journal))} · ${esc(date)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
         <div class="chips">${Number.isFinite(paper.scoringData?.qualityScore) ? `<span class="chip qr">스크리닝 질 ${esc(paper.scoringData.qualityScore)} · 적합도 ${esc(paper.scoringData.relevanceScore)}</span>` : ''}<span class="chip sc">Opus 종합 ${esc(score)}점</span>${p.evidenceSource ? `<span class="chip src">${esc(p.evidenceSource)}</span>` : ''}</div>
       </div>
       <div class="pc-body">
@@ -221,7 +222,7 @@ export class GitHubPublisher {
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}</div>` : ''}
         ${g.scope_ko ? `<p class="txt ko" style="margin-top:6px">${esc(g.scope_ko)}</p>` : ''}
-        <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)}${date ? ` · ${esc(date)}` : ''}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
+        <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)}${esc(impactFactorLabel(journal))}${date ? ` · ${esc(date)}` : ''}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
       </div>
       <div class="pc-body">
         ${summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>${isRef ? '핵심 내용' : '핵심 권고'}</div><ul class="pc-ul">${summary}</ul>` : ''}

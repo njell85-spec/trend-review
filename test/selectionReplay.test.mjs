@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { MetadataScorer } from '../src/utils/MetadataScorer.js';
 import { composeDualStreams, DataCollectorAgent } from '../src/agents/DataCollectorAgent.js';
 import { candidatesAsOf, applyArmExclusions, runReplay, armDivergence, selectMonthlyPool, SOFT_PATTERNS } from '../src/experiments/selectionReplay.js';
+import { applyTopicCooldown } from '../src/utils/topicCooldown.js';
 
 const fixture = JSON.parse(readFileSync(new URL('./fixtures/replay-corpus.json', import.meta.url), 'utf8'));
 const arms = JSON.parse(readFileSync(new URL('../experiments/arms.json', import.meta.url), 'utf8')).arms;
@@ -150,4 +151,40 @@ test('j) armDivergence 는 후보 수가 같아도 집합이 다르면 잡는다
     X: { selectedPmids: ['1'], days: [day(['1', '3'])] },
   } };
   assert.equal(armDivergence(r).find((x) => x.arm === 'X').poolDiffDays, 1);
+});
+
+// ── 주제 쿨다운 (PeterJ 확정 2026-08-14 "돌아가면서 나오게") ──────────────────
+test('k) 쿨다운은 배제가 아니라 감점이다 — 충분히 큰 논문은 감점을 이기고 그대로 나온다', () => {
+  const scored = [
+    { pmid: 'SAME', rawScore: 9.0, primaryTopic: 'cardiac_resus' },  // 어제와 같은 주제, 압도적
+    { pmid: 'OTHER', rawScore: 7.5, primaryTopic: 'sepsis_shock' },
+  ];
+  const hist = [{ topic: 'cardiac_resus', date: '2026-08-13' }];
+  const out = applyTopicCooldown(scored, hist, '2026-08-14', { days: 5, penalty: -1.0 });
+  assert.equal(out[0].pmid, 'SAME', '감점(-1.0)이 1.5점 차를 못 이겨야 한다');
+  assert.equal(out[0].rawScore, 8.0);
+});
+
+test('l) 쿨다운이 접전에서는 주제를 바꾼다', () => {
+  const scored = [
+    { pmid: 'SAME', rawScore: 8.0, primaryTopic: 'cardiac_resus' },
+    { pmid: 'OTHER', rawScore: 7.5, primaryTopic: 'sepsis_shock' },
+  ];
+  const hist = [{ topic: 'cardiac_resus', date: '2026-08-13' }];
+  const out = applyTopicCooldown(scored, hist, '2026-08-14', { days: 5, penalty: -2.0 });
+  assert.equal(out[0].pmid, 'OTHER', '0.5점 차는 감점 -2.0 에 뒤집혀야 한다');
+});
+
+test('m) 쿨다운은 시간이 지나면 사라지고, 끄면 아무것도 안 바뀐다', () => {
+  const scored = [{ pmid: 'X', rawScore: 8.0, primaryTopic: 'cardiac_resus' }];
+  const hist = [{ topic: 'cardiac_resus', date: '2026-08-13' }];
+  // 5일 뒤 = 감점 0
+  assert.equal(applyTopicCooldown(scored, hist, '2026-08-18', { days: 5, penalty: -2 })[0].rawScore, 8.0);
+  // days 0 = 완전히 꺼짐
+  assert.equal(applyTopicCooldown(scored, hist, '2026-08-14', { days: 0, penalty: -2 })[0].rawScore, 8.0);
+  // penalty 0 = 완전히 꺼짐
+  assert.equal(applyTopicCooldown(scored, hist, '2026-08-14', { days: 5, penalty: 0 })[0].rawScore, 8.0);
+  // 이력에 없는 주제는 무영향
+  assert.equal(applyTopicCooldown([{ pmid: 'Y', rawScore: 8, primaryTopic: 'trauma' }],
+    hist, '2026-08-14', { days: 5, penalty: -2 })[0].rawScore, 8.0);
 });
