@@ -287,6 +287,14 @@ guidelines.html   ② 가이드라인 및 기타
 
 ## 5. 변경 이력
 
+- 2026-08-15 (가이드라인 개편 G1 — 전용 스코어러·기관 스키마): `config/guideline-orgs.json`(기관 9곳 ·
+  정책값) · `src/utils/guidelineOrgs.js`(fail-fast 검증기 + 기관 판정) ·
+  `src/utils/GuidelineScorer.js`(권위·주제·최신성·범위·발견신뢰도 전용 점수식) 신설.
+  **`MetadataScorer` 무수정 · import 도 하지 않는다** — 저널 등급·연구설계·표본은 점수에 안 들어간다.
+  **런타임 미배선**(아직 아무도 부르지 않는다). `unmatchedTier1Policy="needsReview"` 만 PeterJ 확정(②-C)이고
+  가중치·임계값은 잠정값이다. 기관별 `sources` 는 **전부 비웠다** — 검증되지 않은 URL·selector 는
+  넣지 않는다(G5 몫).
+
 - 2026-08-15 (가이드라인 개편 G0 — 회귀 보호): §1-C 신설 — 개편 전 **현행 계약**(7일 게이트 ·
   배열 상태 = v2 마이그레이션 입력 · 수동 URL 최종 승인 · non-fatal 경계 · 논문 경로 불변)을
   명문화하고 `test/guidelineContract.test.mjs` 23건으로 고정. **런타임 배선 무변경.**

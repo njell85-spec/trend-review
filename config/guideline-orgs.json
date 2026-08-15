@@ -1,0 +1,105 @@
+{
+  "_comment": "가중치·임계값은 잠정값(설계서 예시). 폰에서 숫자만 고쳐 튜닝. unmatchedTier1Policy 만 PeterJ 확정(②-C).",
+  "schemaVersion": 1,
+  "policy": {
+    "authorityWeight": 1.0,
+    "topicWeight": 1.0,
+    "recencyWeight": 1.0,
+    "unmatchedTier1Policy": "needsReview",
+    "autoPublishThreshold": 6.0,
+    "reviewThreshold": 3.0,
+    "scopeAdjustments": {}
+  },
+  "organizations": [
+    {
+      "id": "aha",
+      "name": "American Heart Association",
+      "aliases": ["AHA", "American Heart Association"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["heart.org", "ahajournals.org", "cpr.heart.org"],
+      "pubmedMatchers": { "affiliation": ["American Heart Association"], "title": ["AHA", "American Heart Association"] },
+      "sources": []
+    },
+    {
+      "id": "esc",
+      "name": "European Society of Cardiology",
+      "aliases": ["ESC", "European Society of Cardiology"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["escardio.org"],
+      "pubmedMatchers": { "affiliation": ["European Society of Cardiology"], "title": ["ESC", "European Society of Cardiology"] },
+      "sources": []
+    },
+    {
+      "id": "sccm",
+      "name": "Society of Critical Care Medicine",
+      "aliases": ["SCCM", "Society of Critical Care Medicine"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["sccm.org"],
+      "pubmedMatchers": { "affiliation": ["Society of Critical Care Medicine"], "title": ["SCCM", "Society of Critical Care Medicine"] },
+      "sources": []
+    },
+    {
+      "id": "esicm",
+      "name": "European Society of Intensive Care Medicine",
+      "aliases": ["ESICM", "European Society of Intensive Care Medicine"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["esicm.org"],
+      "pubmedMatchers": { "affiliation": ["European Society of Intensive Care Medicine"], "title": ["ESICM", "European Society of Intensive Care Medicine"] },
+      "sources": []
+    },
+    {
+      "id": "acep",
+      "name": "American College of Emergency Physicians",
+      "aliases": ["ACEP", "American College of Emergency Physicians"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["acep.org"],
+      "pubmedMatchers": { "affiliation": ["American College of Emergency Physicians"], "title": ["ACEP", "American College of Emergency Physicians"] },
+      "sources": []
+    },
+    {
+      "id": "idsa",
+      "name": "Infectious Diseases Society of America",
+      "aliases": ["IDSA", "Infectious Diseases Society of America"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["idsociety.org"],
+      "pubmedMatchers": { "affiliation": ["Infectious Diseases Society of America"], "title": ["IDSA", "Infectious Diseases Society of America"] },
+      "sources": []
+    },
+    {
+      "id": "ilcor",
+      "name": "International Liaison Committee on Resuscitation",
+      "aliases": ["ILCOR", "International Liaison Committee on Resuscitation"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["ilcor.org"],
+      "pubmedMatchers": { "affiliation": ["International Liaison Committee on Resuscitation"], "title": ["ILCOR", "International Liaison Committee on Resuscitation"] },
+      "sources": []
+    },
+    {
+      "id": "surviving-sepsis",
+      "name": "Surviving Sepsis Campaign",
+      "aliases": ["SSC", "Surviving Sepsis Campaign"],
+      "tier": 1,
+      "authorityScore": 4.0,
+      "domains": ["sccm.org", "esicm.org"],
+      "pubmedMatchers": { "affiliation": ["Surviving Sepsis Campaign"], "title": ["Surviving Sepsis Campaign"] },
+      "sources": []
+    },
+    {
+      "id": "ncs",
+      "name": "Neurocritical Care Society",
+      "aliases": ["NCS", "Neurocritical Care Society"],
+      "tier": 2,
+      "authorityScore": 2.5,
+      "domains": ["neurocriticalcare.org"],
+      "pubmedMatchers": { "affiliation": ["Neurocritical Care Society"], "title": ["Neurocritical Care Society"] },
+      "sources": []
+    }
+  ]
+}
