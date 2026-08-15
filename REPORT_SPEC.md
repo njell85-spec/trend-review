@@ -287,6 +287,16 @@ guidelines.html   ② 가이드라인 및 기타
 
 ## 5. 변경 이력
 
+- 2026-08-15 (가이드라인 개편 G2·G3): `src/utils/guidelineClassifier.js`(문서 성격 판정 —
+  **점수 계산보다 앞**에 선다) + `test/fixtures/guideline-corpus.json`(오탐 corpus 34건) ·
+  `src/utils/guidelineState.js`(상태 v2 + 무손실 마이그레이션 · 원자 저장 · 손상 파일을
+  빈 큐로 위장 금지). **런타임 미배선.**
+  ★ 소급 판정 회귀(`test/guidelineHistoryRegression.test.mjs`) — 라벨이 없으므로 **현행 경로가
+  실제로 발행한 이력 7건**을 새 분류기로 되돌려 판정한다. 이것이 두 결함을 잡았다:
+  ①PMID 42373461 은 지침이 아니라 그 지침의 **해설 논문**인데 현행 경로가 발행했다
+  (`guideline-commentary-or-digest` 패턴 신설) ②수동 승인 URL 이 `needsReview` 로 떨어지고
+  있었다 — 확정 ⑤-A 위반이라 `manualApproved` 우회로를 넣었다(자동 필터를 통째로 건너뛴다).
+
 - 2026-08-15 (arm F 전량 스크리닝): `config/collection.json` 의 `monthly.screenDepth` **1000 → 5000**.
   전환 첫날 실측(run `31844016618`)에서 **12구간 전부가 상한에 걸려** 있었다 — 구간별 실제
   1,013~2,575편(합 21,946)인데 12,000편만 회수돼 **9,946편(45%)이 점수조차 안 매겨졌다.**
