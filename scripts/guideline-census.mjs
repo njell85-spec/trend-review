@@ -24,6 +24,7 @@ const arg = (name, fallback) => {
 };
 const days = Number(arg('days', 365));
 const listOut = arg('list', '');   // 지정하면 제목 목록까지 받아 JSON 으로 쓴다
+const withCountry = process.argv.includes('--countries');   // efetch 로 국가까지 받는다
 const asDate = (d) => d.toISOString().slice(0, 10).replaceAll('-', '/');
 
 // esearch 로 PMID 를 회수한다. count 세기와 달리 retmax 가 필요하다.
@@ -69,6 +70,74 @@ async function summaries(pmids) {
         types: rec.pubtype ?? [],
       });
     }
+  }
+  return out;
+}
+
+
+// ── 국가 판정 ────────────────────────────────────────────────────────────────
+// esummary 에는 국가가 없다. efetch XML 의 두 곳을 본다:
+//   ① MedlineJournalInfo/Country — **저널 발행국**
+//   ② 첫 Affiliation 문자열 끝의 국가명 — **저자 소속국**
+// 지침이 "어디서 나왔나" 는 ②가 더 가깝다(독일 학회 지침이 영국 저널에 실릴 수 있다).
+// ②가 없으면 ①로 떨어진다. 둘 다 추정이라는 것을 리포트에 밝힌다.
+
+const EUROPE = new Set(['england','scotland','wales','northern ireland','ireland','united kingdom','uk',
+  'germany','france','italy','spain','netherlands','switzerland','sweden','norway','denmark','finland',
+  'austria','belgium','poland','portugal','greece','czech republic','czechia','hungary','slovakia','slovenia',
+  'croatia','serbia','romania','bulgaria','iceland','luxembourg','estonia','latvia','lithuania','malta','cyprus']);
+const US = new Set(['united states','usa','u.s.a.','u.s.','united states of america']);
+const KOREA = new Set(['korea (south)','south korea','republic of korea','korea','korea, republic of']);
+
+function bucketOf(name) {
+  const v = String(name ?? '').trim().toLowerCase().replace(/\.$/, '');
+  if (!v) return null;
+  if (US.has(v)) return 'us';
+  if (KOREA.has(v)) return 'kr';
+  if (EUROPE.has(v)) return 'eu';
+  return 'other';
+}
+
+// Affiliation 문자열 끝에서 국가명을 뽑는다: "..., Boston, MA, USA."
+function countryFromAffiliation(aff) {
+  if (!aff) return null;
+  const parts = String(aff).replace(/\.\s*$/, '').split(/,\s*/);
+  for (let i = parts.length - 1; i >= Math.max(0, parts.length - 3); i--) {
+    const b = bucketOf(parts[i]);
+    if (b && b !== 'other') return { bucket: b, raw: parts[i].trim() };
+    if (b === 'other' && i === parts.length - 1) return { bucket: 'other', raw: parts[i].trim() };
+  }
+  return null;
+}
+
+async function fetchCountries(pmids) {
+  const BATCH = 200;
+  const out = new Map();
+  for (let i = 0; i < pmids.length; i += BATCH) {
+    const batch = pmids.slice(i, i + BATCH);
+    const body = new URLSearchParams({
+      db: 'pubmed', id: batch.join(','), retmode: 'xml',
+      ...(apiKey && { api_key: apiKey }),
+    });
+    const res = await fetch(`${BASE}/efetch.fcgi`, {
+      method: 'POST', body,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    });
+    if (!res.ok) throw new Error(`PubMed efetch HTTP ${res.status}`);
+    const xml = await res.text();
+    // 레코드 단위로 자른다. 정규식 파싱이지만 필요한 필드가 둘뿐이라 파서를 끌어오지 않는다.
+    for (const chunk of xml.split(/<PubmedArticle[\s>]/).slice(1)) {
+      const pmid = (chunk.match(/<PMID[^>]*>(\d+)<\/PMID>/) ?? [])[1];
+      if (!pmid) continue;
+      const jc = (chunk.match(/<MedlineJournalInfo>[\s\S]*?<Country>([^<]*)<\/Country>/) ?? [])[1] ?? '';
+      const aff = (chunk.match(/<Affiliation>([\s\S]*?)<\/Affiliation>/) ?? [])[1] ?? '';
+      const fromAff = countryFromAffiliation(aff.replace(/&amp;/g, '&'));
+      out.set(String(pmid), {
+        jc, jcBucket: bucketOf(jc),
+        ac: fromAff?.raw ?? '', acBucket: fromAff?.bucket ?? null,
+      });
+    }
+    console.log(`[country] ${Math.min(i + BATCH, pmids.length)}/${pmids.length}`);
   }
   return out;
 }
@@ -167,6 +236,22 @@ if (listOut) {
     const items = await summaries(pmids);
     payload.axes[key] = { label, term, total, fetched: items.length, items };
     console.log(`[list] ${key}: count=${total} fetched=${items.length}`);
+  }
+  if (withCountry) {
+    // 국가는 축을 가로질러 같은 PMID 를 공유하므로 **한 번만** 받는다.
+    const allPmids = [...new Set(Object.values(payload.axes).flatMap((a) => a.items.map((x) => x.pmid)))];
+    console.log(`[country] 대상 ${allPmids.length}건`);
+    const map = await fetchCountries(allPmids);
+    let hit = 0;
+    for (const axis of Object.values(payload.axes)) {
+      for (const it of axis.items) {
+        const c = map.get(it.pmid);
+        if (!c) continue;
+        hit += 1;
+        it.jc = c.jc; it.jcb = c.jcBucket; it.ac = c.ac; it.acb = c.acBucket;
+      }
+    }
+    console.log(`[country] 채워진 항목 ${hit}건`);
   }
   writeFileSync(listOut, JSON.stringify(payload));
   console.log(`[list] wrote ${listOut}`);

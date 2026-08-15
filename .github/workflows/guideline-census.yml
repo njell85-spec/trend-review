@@ -13,6 +13,10 @@ on:
         description: 제목 목록까지 받아 experiments/ 에 커밋할까
         required: false
         default: 'false'
+      countries:
+        description: 저자 소속국·저널 발행국까지 받을까 (efetch · list=true 필요)
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -33,7 +37,9 @@ jobs:
         run: |
           if [ "${{ inputs.list }}" = "true" ]; then
             mkdir -p experiments
-            node scripts/guideline-census.mjs --days "${{ inputs.days }}" --list experiments/guideline-census.json
+            EXTRA=""
+            [ "${{ inputs.countries }}" = "true" ] && EXTRA="--countries"
+            node scripts/guideline-census.mjs --days "${{ inputs.days }}" --list experiments/guideline-census.json $EXTRA
           else
             node scripts/guideline-census.mjs --days "${{ inputs.days }}"
           fi
