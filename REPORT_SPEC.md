@@ -287,6 +287,15 @@ guidelines.html   ② 가이드라인 및 기타
 
 ## 5. 변경 이력
 
+- 2026-08-15 (가이드라인 개편 G4·G5·G6): `guidelinePubmed.js`(PT 쿼리 + 제목·유형 확장 쿼리를
+  독립 실행·병합 · 쿼리별 실행 증거 manifest · **초집합 검증**) · `guidelineOrgSources.js`
+  (기관 어댑터 골격 rss/listing-html/sitemap/api-json/manual-seed + source health · dry-run) ·
+  `guidelineLineage.js`(제목 정규화 · 계보 키 · supersede 전이 — 애매하면 자동 처리 금지).
+  **런타임 미배선.** 이 컨테이너는 아웃바운드 전면 차단이라 기관 실물 selector 를 검증할 수
+  없어 `guideline-orgs.json` 의 `sources` 는 **전부 비운 채로 둔다**(테스트가 그것을 못 박는다).
+  ★ 초집합 검증(`assertSupersetOfPtPath`)이 이 개편의 최우선 정지 신호다 — PT 경로가 찾은 것을
+  확장 경로가 하나라도 놓치면 던진다. 근거(`ptPmids`)는 **열거 가능한 manifest 필드**여야 한다.
+
 - 2026-08-15 (가이드라인 개편 G2·G3): `src/utils/guidelineClassifier.js`(문서 성격 판정 —
   **점수 계산보다 앞**에 선다) + `test/fixtures/guideline-corpus.json`(오탐 corpus 34건) ·
   `src/utils/guidelineState.js`(상태 v2 + 무손실 마이그레이션 · 원자 저장 · 손상 파일을
