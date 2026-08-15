@@ -1,44 +1,600 @@
-[
-  {
-    "pmid": "41869844",
-    "title": "Surviving Sepsis Campaign International Guidelines for the Management of Pediatr",
-    "org": "Surviving Sepsis Campaign (SCCM/ESICM)",
-    "date": "2026-07-02"
+{
+  "schemaVersion": 2,
+  "queue": [
+    {
+      "id": "pmid:42522393",
+      "pmid": "42522393",
+      "title": "Consensus document on the management of patients with accidental hypothermia from the Spanish Society of Anesthesiology, Resuscitation and Pain Management (SEDAR), the Spanish Society of Intensive Care Medicine, Critical Care and Coronary Units (SEMICYUC), and the Spanish Society of Emergency Medicine (SEMES).",
+      "pubDate": "2026 Aug",
+      "journal": "Emergencias : revista de la Sociedad Espanola de Medicina de Emergencias",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6.8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2.8,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": null,
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-15T21:50:26.872Z"
+    },
+    {
+      "id": "pmid:42087034",
+      "pmid": "42087034",
+      "title": "Guidelines for Seizure Prophylaxis in Patients Undergoing Supratentorial Neurosurgery: A Statement for Healthcare Professionals from the Neurocritical Care Society.",
+      "pubDate": "2026 Aug",
+      "journal": "Neurocritical care",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "ncs"
+      },
+      "priority": 8.5,
+      "breakdown": {
+        "authority": 2.5,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "ncs",
+      "tier": 2,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-15T21:50:26.872Z",
+      "lineageKey": "ncs|seizure-prophylaxis-patients-undergoing-supratentorial-neurosurgery-statement-healthcare-professionals-from",
+      "supersedes": []
+    },
+    {
+      "id": "pmid:42132666",
+      "pmid": "42132666",
+      "title": "Ketogenic diet therapy for children with super-refractory status epilepticus in intensive care: International clinical practice recommendations.",
+      "pubDate": "2026 Aug",
+      "journal": "Epilepsia open",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 5,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "recommendations",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-15T21:50:26.872Z"
+    },
+    {
+      "id": "pmid:41942814",
+      "pmid": "41942814",
+      "title": "Teleneurocritical Care (TeleNCC) Consensus Statement : The American Academy of Neurology (AAN), the American Association of Neurological Surgeons (AANS), and the Congress of Neurological Surgeons (CNS) affirm the value of this statement. Endorsed by the American Telemedicine Association (ATA).",
+      "pubDate": "2026 Aug",
+      "journal": "Neurocritical care",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 3,
+      "breakdown": {
+        "authority": 0,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": false,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "consensus",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-15T21:50:26.872Z"
+    },
+    {
+      "id": "pmid:41887234",
+      "pmid": "41887234",
+      "title": "Methodological quality assessment tool for observational studies comparing treatment effectiveness in infectious diseases: a Delphi consensus and application to studies on bloodstream infections due to carbapenem-resistant Enterobacterales.",
+      "pubDate": "2026 Aug",
+      "journal": "The Lancet. Infectious diseases",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 3,
+      "breakdown": {
+        "authority": 0,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": false,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": null,
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-15T21:50:26.872Z"
+    },
+    {
+      "id": "pmid:41705512",
+      "pmid": "41705512",
+      "title": "The impact of physician factors on treatment recommendations in sports medicine.",
+      "pubDate": "2026 Aug",
+      "journal": "The Physician and sportsmedicine",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 3,
+      "breakdown": {
+        "authority": 0,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": false,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "recommendations",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-15T21:50:26.872Z"
+    }
+  ],
+  "published": [
+    {
+      "id": "pmid:41869844",
+      "pmid": "41869844",
+      "sourceId": null,
+      "sourceUrl": null,
+      "title": "Surviving Sepsis Campaign International Guidelines for the Management of Pediatr",
+      "organizationId": null,
+      "lineageKey": null,
+      "versionYear": null,
+      "publishedAt": "2026-07-02",
+      "status": "current",
+      "supersededBy": null,
+      "supersededAt": null,
+      "legacy": {
+        "pmid": "41869844",
+        "title": "Surviving Sepsis Campaign International Guidelines for the Management of Pediatr",
+        "org": "Surviving Sepsis Campaign (SCCM/ESICM)",
+        "date": "2026-07-02"
+      }
+    },
+    {
+      "id": "pmid:42373461",
+      "pmid": "42373461",
+      "sourceId": null,
+      "sourceUrl": null,
+      "title": "[The 2026 Surviving Sepsis Campaign guidelines: from evidence updates to practice implementation].",
+      "organizationId": null,
+      "lineageKey": null,
+      "versionYear": null,
+      "publishedAt": "2026-07-06",
+      "status": "current",
+      "supersededBy": null,
+      "supersededAt": null,
+      "legacy": {
+        "pmid": "42373461",
+        "title": "[The 2026 Surviving Sepsis Campaign guidelines: from evidence updates to practice implementation].",
+        "date": "2026-07-06"
+      }
+    },
+    {
+      "id": "pmid:41942818",
+      "pmid": "41942818",
+      "sourceId": null,
+      "sourceUrl": null,
+      "title": "Guidelines for Neuroprognostication in Critically ill Adults with Acute Ischemic",
+      "organizationId": null,
+      "lineageKey": null,
+      "versionYear": null,
+      "publishedAt": "2026-07-13",
+      "status": "current",
+      "supersededBy": null,
+      "supersededAt": null,
+      "legacy": {
+        "pmid": "41942818",
+        "title": "Guidelines for Neuroprognostication in Critically ill Adults with Acute Ischemic",
+        "org": "NCS/DGNI",
+        "date": "2026-07-13"
+      }
+    },
+    {
+      "id": "pmid:41236566",
+      "pmid": "41236566",
+      "sourceId": null,
+      "sourceUrl": null,
+      "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
+      "organizationId": null,
+      "lineageKey": null,
+      "versionYear": null,
+      "publishedAt": "2026-07-23",
+      "status": "current",
+      "supersededBy": null,
+      "supersededAt": null,
+      "legacy": {
+        "pmid": "41236566",
+        "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
+        "org": "ESICM",
+        "date": "2026-07-23"
+      }
+    },
+    {
+      "id": "pmid:41122895",
+      "pmid": "41122895",
+      "sourceId": null,
+      "sourceUrl": null,
+      "title": "Part 12: Resuscitation Education Science: 2025 American Heart Association Guidel",
+      "organizationId": null,
+      "lineageKey": null,
+      "versionYear": null,
+      "publishedAt": "2026-07-30",
+      "status": "current",
+      "supersededBy": null,
+      "supersededAt": null,
+      "legacy": {
+        "pmid": "41122895",
+        "title": "Part 12: Resuscitation Education Science: 2025 American Heart Association Guidel",
+        "org": "AHA (ILCOR-informed)",
+        "date": "2026-07-30"
+      }
+    },
+    {
+      "id": "web:www-idsociety-org-practice-guideline-amr-guidance",
+      "pmid": "",
+      "sourceId": "web:www-idsociety-org-practice-guideline-amr-guidance",
+      "sourceUrl": "https://www.idsociety.org/practice-guideline/amr-guidance/",
+      "title": "IDSA 2026 Guidance on the Treatment of Antimicrobial Resistant Gram-Negative Infections",
+      "organizationId": null,
+      "lineageKey": null,
+      "versionYear": null,
+      "publishedAt": "2026-08-04",
+      "status": "current",
+      "supersededBy": null,
+      "supersededAt": null,
+      "legacy": {
+        "pmid": "",
+        "title": "IDSA 2026 Guidance on the Treatment of Antimicrobial Resistant Gram-Negative Infections",
+        "date": "2026-08-04",
+        "sourceUrl": "https://www.idsociety.org/practice-guideline/amr-guidance/",
+        "sourceId": "web:www-idsociety-org-practice-guideline-amr-guidance"
+      }
+    },
+    {
+      "id": "pmid:41122894",
+      "pmid": "41122894",
+      "sourceId": null,
+      "sourceUrl": null,
+      "title": "Part 11: Post-Cardiac Arrest Care: 2025 American Heart Association Guidelines fo",
+      "organizationId": null,
+      "lineageKey": null,
+      "versionYear": null,
+      "publishedAt": "2026-08-11",
+      "status": "current",
+      "supersededBy": null,
+      "supersededAt": null,
+      "legacy": {
+        "pmid": "41122894",
+        "title": "Part 11: Post-Cardiac Arrest Care: 2025 American Heart Association Guidelines fo",
+        "org": "AHA (American Heart Association)",
+        "date": "2026-08-11"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "id": "pmid:42494313",
+      "pmid": "42494313",
+      "title": "Nutritional Risk Screening Recommendations for Critically Ill Patients: A Meta-Research Study and Quality Appraisal of Clinical Guidelines.",
+      "pubDate": "2026 Aug",
+      "journal": "Journal of human nutrition and dietetics : the official journal of the British Dietetic Association",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "recommendations",
+      "reasons": [
+        "commentary-or-evaluation"
+      ]
+    },
+    {
+      "id": "pmid:42276864",
+      "pmid": "42276864",
+      "title": "[Best practice deployment of lead emergency physicians in Germany - A Delphi study: A structured consensus process among EMS medical directors].",
+      "pubDate": "2026 Aug",
+      "journal": "Zeitschrift fur Evidenz, Fortbildung und Qualitat im Gesundheitswesen",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": null,
+      "reasons": [
+        "consensus-process-study"
+      ]
+    }
+  ],
+  "sourceHealth": {
+    "organizations": [
+      {
+        "organizationId": "aha",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "esc",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "sccm",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "esicm",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "acep",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "idsa",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "ilcor",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "surviving-sepsis",
+        "status": "unconfigured",
+        "sources": []
+      },
+      {
+        "organizationId": "ncs",
+        "status": "unconfigured",
+        "sources": []
+      }
+    ]
   },
-  {
-    "pmid": "42373461",
-    "title": "[The 2026 Surviving Sepsis Campaign guidelines: from evidence updates to practice implementation].",
-    "date": "2026-07-06"
+  "lastRun": {
+    "runId": "trend_review_20260816_064447:guideline:2026-08-16",
+    "outcome": "observe-only",
+    "publishedId": null,
+    "manifest": {
+      "pubmed": {
+        "queries": [
+          {
+            "id": "pubmed-pt",
+            "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
+            "attempted": true,
+            "succeeded": true,
+            "totalFound": 2,
+            "idsFetched": 2,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-expanded",
+            "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
+            "attempted": true,
+            "succeeded": true,
+            "totalFound": 8,
+            "idsFetched": 8,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "mergedTotal": 8,
+        "overlapCount": 2,
+        "ptOnlyCount": 0,
+        "expandedOnlyCount": 6,
+        "oldestFetchedDate": "2026 Aug",
+        "newestFetchedDate": "2026 Aug",
+        "window": {
+          "minDate": "2026/07/17",
+          "maxDate": "2026/08/16"
+        },
+        "retmax": 40,
+        "ptPmids": [
+          "42522393",
+          "42087034"
+        ],
+        "supersetCheckable": true
+      },
+      "orgSources": [
+        {
+          "organizationId": "aha",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "esc",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "sccm",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "esicm",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "acep",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "idsa",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "ilcor",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "surviving-sepsis",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "ncs",
+          "status": "unconfigured",
+          "sources": []
+        }
+      ],
+      "collectionError": null,
+      "decisions": {
+        "queued": 1,
+        "needsReview": 5,
+        "rejected": 2,
+        "superseded": 0
+      },
+      "publish": {
+        "attempted": false,
+        "candidateId": null,
+        "analyzed": false,
+        "stateContainsPublishedId": false
+      }
+    }
   },
-  {
-    "pmid": "41942818",
-    "title": "Guidelines for Neuroprognostication in Critically ill Adults with Acute Ischemic",
-    "org": "NCS/DGNI",
-    "date": "2026-07-13"
-  },
-  {
-    "pmid": "41236566",
-    "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
-    "org": "ESICM",
-    "date": "2026-07-23"
-  },
-  {
-    "pmid": "41122895",
-    "title": "Part 12: Resuscitation Education Science: 2025 American Heart Association Guidel",
-    "org": "AHA (ILCOR-informed)",
-    "date": "2026-07-30"
-  },
-  {
-    "pmid": "",
-    "title": "IDSA 2026 Guidance on the Treatment of Antimicrobial Resistant Gram-Negative Infections",
-    "date": "2026-08-04",
-    "sourceUrl": "https://www.idsociety.org/practice-guideline/amr-guidance/",
-    "sourceId": "web:www-idsociety-org-practice-guideline-amr-guidance"
-  },
-  {
-    "pmid": "41122894",
-    "title": "Part 11: Post-Cardiac Arrest Care: 2025 American Heart Association Guidelines fo",
-    "org": "AHA (American Heart Association)",
-    "date": "2026-08-11"
-  }
-]
+  "updatedAt": "2026-08-15T21:50:26.875Z",
+  "configVersion": "guideline-v2"
+}

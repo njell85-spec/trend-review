@@ -269,5 +269,16 @@
     "rerankPoolSize": 33,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "41159835",
+    "title": "Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early ",
+    "date": "2026-08-16",
+    "topic": "sepsis_shock",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 32,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
