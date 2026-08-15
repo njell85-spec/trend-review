@@ -9,6 +9,13 @@ on:
         description: 며칠치를 셀까
         required: true
         default: '365'
+      list:
+        description: 제목 목록까지 받아 experiments/ 에 커밋할까
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
 
 jobs:
   census:
@@ -23,4 +30,21 @@ jobs:
       - name: Count guidelines on PubMed
         env:
           PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
-        run: node scripts/guideline-census.mjs --days "${{ inputs.days }}"
+        run: |
+          if [ "${{ inputs.list }}" = "true" ]; then
+            mkdir -p experiments
+            node scripts/guideline-census.mjs --days "${{ inputs.days }}" --list experiments/guideline-census.json
+          else
+            node scripts/guideline-census.mjs --days "${{ inputs.days }}"
+          fi
+
+      # 목록은 저장소에 남긴다 — artifact 는 인증이 있어야 열리고, 이 목록은 세션이
+      # 읽어 HTML 로 만들어야 한다. 데일리 상태 커밋과 같은 방식이다.
+      - name: Commit census list
+        if: ${{ inputs.list == 'true' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add experiments/guideline-census.json
+          git diff --cached --quiet && echo "변화 없음" \
+            || (git commit -m "chore(census): PubMed 지침 목록 갱신 (최근 ${{ inputs.days }}일)" && git push)

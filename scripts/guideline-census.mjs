@@ -23,7 +23,55 @@ const arg = (name, fallback) => {
   return i > -1 ? process.argv[i + 1] : fallback;
 };
 const days = Number(arg('days', 365));
+const listOut = arg('list', '');   // 지정하면 제목 목록까지 받아 JSON 으로 쓴다
 const asDate = (d) => d.toISOString().slice(0, 10).replaceAll('-', '/');
+
+// esearch 로 PMID 를 회수한다. count 세기와 달리 retmax 가 필요하다.
+async function ids(term, minDate, maxDate, retmax) {
+  const out = [];
+  // esearch retmax 상한은 10000. 그보다 많으면 retstart 로 넘긴다.
+  for (let start = 0; start < retmax; start += 9999) {
+    const p = new URLSearchParams({
+      db: 'pubmed', term, mindate: minDate, maxdate: maxDate,
+      datetype: 'pdat', retmode: 'json', sort: 'date',
+      retmax: String(Math.min(9999, retmax - start)), retstart: String(start),
+      ...(apiKey && { api_key: apiKey }),
+    });
+    const res = await fetch(`${BASE}/esearch.fcgi?${p}`);
+    if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
+    const list = (await res.json())?.esearchresult?.idlist ?? [];
+    out.push(...list.map(String));
+    if (list.length < 9999) break;
+  }
+  return out;
+}
+
+// esummary 로 제목·저널·발행일만 받는다. 초록은 안 받는다(가볍게).
+async function summaries(pmids) {
+  const BATCH = 200;
+  const out = [];
+  for (let i = 0; i < pmids.length; i += BATCH) {
+    const p = new URLSearchParams({
+      db: 'pubmed', id: pmids.slice(i, i + BATCH).join(','), retmode: 'json',
+      ...(apiKey && { api_key: apiKey }),
+    });
+    const res = await fetch(`${BASE}/esummary.fcgi?${p}`);
+    if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
+    const r = (await res.json())?.result ?? {};
+    for (const uid of r.uids ?? []) {
+      const rec = r[uid];
+      if (!rec) continue;
+      out.push({
+        pmid: String(uid),
+        title: rec.title ?? '',
+        journal: rec.source ?? '',
+        date: rec.pubdate ?? '',
+        types: rec.pubtype ?? [],
+      });
+    }
+  }
+  return out;
+}
 
 async function count(term, minDate, maxDate) {
   const p = new URLSearchParams({
@@ -102,6 +150,27 @@ for (const org of orgs.organizations) {
 push('');
 push('> **주의**: ④의 기관명 매칭은 저자 소속·본문 언급까지 잡으므로 **과대추정**이다.');
 push('> 발행 주체 판정은 파이프라인의 `matchOrganization` + 문서 성격 판정이 따로 한다.');
+
+// ── 목록 회수 (--list <경로>) ────────────────────────────────────────────────
+if (listOut) {
+  const { writeFileSync } = await import('node:fs');
+  const axisList = [
+    ['pt_emccm', '① 현행 자동 경로 (PT + EM/CCM MeSH)', PT_TERM],
+    ['expanded_emccm', '② 확장분만 (제목·유형 + EM/CCM MeSH)', EXPANDED_TERM],
+    ['union_emccm', '③ 개편 경로 합집합', `(${PT_TERM}) OR (${EXPANDED_TERM})`],
+    ['pt_all', '④ 분야 제한 없는 PubMed 전체 지침 (PT only)', PT_ONLY],
+  ];
+  const payload = { generatedAt: new Date().toISOString(), days, minDate, maxDate, axes: {} };
+  for (const [key, label, term] of axisList) {
+    const total = totals[label] ?? await count(term, minDate, maxDate);
+    const pmids = await ids(term, minDate, maxDate, total);
+    const items = await summaries(pmids);
+    payload.axes[key] = { label, term, total, fetched: items.length, items };
+    console.log(`[list] ${key}: count=${total} fetched=${items.length}`);
+  }
+  writeFileSync(listOut, JSON.stringify(payload));
+  console.log(`[list] wrote ${listOut}`);
+}
 
 if (process.env.GITHUB_STEP_SUMMARY) {
   const { appendFileSync } = await import('node:fs');
