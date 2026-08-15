@@ -42,36 +42,68 @@ const LEGACY_STATE = [
   { pmid: '41122894', title: 'Part 11: Post-Cardiac Arrest Care: 2025 American Heart Association Guidelines fo', org: 'AHA (American Heart Association)', date: '2026-08-11' },
 ];
 
-// ── ① 7일 게이트 ────────────────────────────────────────────────────────────
-// G7 이 "매일 시도"로 바꿀 때까지의 현행 동작. G7 이 이 테스트를 고칠 때는
-// 게이트 제거가 **의도된 변경**임을 커밋에 남겨야 한다.
+// ── ① 매일 시도 · 빈 큐 skip (G7 확정 ④-D) ───────────────────────────────
+// G0 은 여기에 7일 게이트를 못 박아 두었다. G7 이 **의도적으로** 그것을 없앴으므로
+// 이 절만 새 계약으로 다시 썼다. 나머지 절(상태·수동 URL·non-fatal·논문 불변)은 그대로다.
+//
+// ★ 소스 문자열 정규식으로 때우지 않는다 — `outcome: 'empty'` 라는 글자가 파일에 있다는
+//   것과 빈 큐일 때 실제로 그 값이 남는다는 것은 다른 말이다. 이 저장소가 F1 에서
+//   4주 동안 당한 것이 바로 "플래그를 찍고 실행 증거로 착각한" 실패다. 행위로 본다.
 
-test('게이트: 노출 기록이 없으면 첫날부터 시도한다', async () => {
-  const { o } = await orchestratorInTmp();
-  assert.equal(o._guidelineDue([], '2026-08-15'), true);
+const V2_EMPTY = () => ({ schemaVersion: 2, queue: [], published: [], rejected: [],
+  sourceHealth: {}, lastRun: null, updatedAt: '2026-08-01T00:00:00.000Z', configVersion: 'guideline-v2' });
+
+async function dailyStage(queue = [], overrides = {}) {
+  const dir = await mkdtemp(path.join(tmpdir(), 'tr-gl-gate-'));
+  const file = path.join(dir, 'selected_guidelines.json');
+  await writeFile(file, JSON.stringify({ ...V2_EMPTY(), queue }));
+  const o = new TrendReviewOrchestrator();
+  o.outputDir = dir;
+  o.guidelineListPath = file;
+  o._guidelineInputs = overrides.inputs ?? (async () => ({ candidates: [], manifest: { ptPmids: [] } }));
+  o.guideline = { analyze: overrides.analyze ?? (async (paper) => ({ paper, org: 'AHA' })) };
+  o.fullText = { run: async (papers) => ({ papers }) };
+  return { o, file };
+}
+
+const queued = (pmid, priority) => ({ id: `pmid:${pmid}`, pmid, priority, status: 'queued',
+  title: `AHA cardiac arrest guideline 2026 ${pmid}`, pubDate: '2026-08-01', attempts: 0 });
+
+test('게이트: 7일 주기 판정을 가이드라인 단계가 더는 호출하지 않는다 (④-D)', () => {
+  const src = readFileSync(new URL('../src/orchestrator/TrendReviewOrchestrator.js', import.meta.url), 'utf8');
+  const body = src.slice(src.indexOf('async _stageGuideline('), src.indexOf('async _stagePublish('));
+  assert.equal(body.includes('_guidelineDue('), false, '주기 게이트가 되살아났다');
 });
 
-test('게이트: 마지막 노출로부터 6일이면 아직 아니다', async () => {
-  const { o } = await orchestratorInTmp();
-  assert.equal(o._guidelineDue([{ date: '2026-08-09' }], '2026-08-15'), false);
+test('게이트: 어제 발행했어도 오늘 또 발행한다 (매일 시도)', async () => {
+  const { o, file } = await dailyStage([queued('1', 10), queued('2', 9)]);
+  await o._stageGuideline('2026-08-15');
+  await o._stageGuideline('2026-08-16');   // 종전 계약이라면 7일 게이트에 막혔을 날
+  const state = JSON.parse(await readFile(file, 'utf8'));
+  assert.deepEqual(state.published.map((x) => x.id), ['pmid:1', 'pmid:2']);
 });
 
-test('게이트: 마지막 노출로부터 7일이면 시도한다 (경계 포함)', async () => {
-  const { o } = await orchestratorInTmp();
-  assert.equal(o._guidelineDue([{ date: '2026-08-08' }], '2026-08-15'), true);
+test('게이트: 하루에 한 편을 넘기지 않는다', async () => {
+  const { o, file } = await dailyStage([queued('1', 10), queued('2', 9), queued('3', 8)]);
+  await o._stageGuideline('2026-08-15');
+  const state = JSON.parse(await readFile(file, 'utf8'));
+  assert.equal(state.published.length, 1, '하루 한 편 계약이 깨졌다');
+  assert.equal(state.published[0].id, 'pmid:1', 'priority 최상위가 아니다');
 });
 
-test('게이트: 배열 순서가 아니라 가장 최근 날짜를 기준으로 판정한다', async () => {
-  const { o } = await orchestratorInTmp();
-  // 최신 항목이 배열 끝이 아니라 중간에 있는, 정렬이 깨진 상태.
-  const scrambled = [{ date: '2026-08-14' }, { date: '2026-06-01' }];
-  assert.equal(o._guidelineDue(scrambled, '2026-08-15'), false,
-    '가장 최근 노출이 어제인데 시도하면 하루 두 편이 나간다');
+test('게이트: 빈 큐면 outcome 이 empty 로 남는다 (행위로 확인)', async () => {
+  const { o, file } = await dailyStage([]);
+  await o._stageGuideline('2026-08-15');
+  const state = JSON.parse(await readFile(file, 'utf8'));
+  assert.equal(state.lastRun.outcome, 'empty');
+  assert.equal(state.published.length, 0);
 });
 
-test('게이트: 기본 주기는 7일이다', async () => {
-  const { o } = await orchestratorInTmp();
-  assert.equal(o.guidelineIntervalDays, 7);
+test('게이트: 빈 큐면 분석기를 한 번도 부르지 않는다 (LLM 0)', async () => {
+  let calls = 0;
+  const { o } = await dailyStage([], { analyze: async () => { calls += 1; return null; } });
+  await o._stageGuideline('2026-08-15');
+  assert.equal(calls, 0, '빈 큐인데 LLM 을 태우면 매일 시도가 매일 과금이 된다');
 });
 
 // ── ② 배열 상태 = v2 마이그레이션 입력 ──────────────────────────────────────
@@ -204,13 +236,11 @@ test('non-fatal: 본문 확보가 실패해도 초록으로 분석을 계속한�
   assert.equal(card.org, 'AHA');
 });
 
-test('non-fatal: 게이트 미도래면 수집기를 아예 부르지 않는다 (네트워크·LLM 0)', async () => {
-  const { o, file } = await orchestratorInTmp();
-  await writeFile(file, JSON.stringify([{ pmid: '1', title: 't', date: '2026-08-14' }]));
+test('non-fatal: 이제는 매일 수집을 시도한다 (④-D — 종전 주기 게이트 폐지)', async () => {
   let called = 0;
-  stubStage(o, { collect: async () => { called += 1; return []; } });
-  assert.equal(await o._stageGuideline('2026-08-15'), null);
-  assert.equal(called, 0, '주기가 아닌 날에 PubMed 를 두드리면 안 된다');
+  const { o } = await dailyStage([], { inputs: async () => { called += 1; return { candidates: [], manifest: { ptPmids: [] } }; } });
+  await o._stageGuideline('2026-08-15');
+  assert.equal(called, 1, '매일 시도가 계약이다 — 안 부르면 큐가 영영 안 찬다');
 });
 
 // ── ⑤ 논문 데일리 경로 불변 ────────────────────────────────────────────────

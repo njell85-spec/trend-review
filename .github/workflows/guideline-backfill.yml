@@ -1,0 +1,28 @@
+name: Guideline backfill dry-run
+
+on:
+  workflow_dispatch:
+    inputs:
+      windows:
+        description: Day-offset windows
+        required: true
+        default: 60-30,150-120,240-210
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Run replay experiment
+        env:
+          PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
+        run: node scripts/guideline-backfill.mjs --windows "${{ inputs.windows }}" --out guideline-backfill-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: guideline-backfill-report
+          path: guideline-backfill-report.json

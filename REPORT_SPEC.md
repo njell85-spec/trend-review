@@ -287,6 +287,15 @@ guidelines.html   ② 가이드라인 및 기타
 
 ## 5. 변경 이력
 
+- 2026-08-15 (가이드라인 개편 G7·G10): `_stageGuideline()` 교체 — **7일 게이트 제거, 매일 시도**
+  (확정 ④-D). 하루 최대 한 편(priority 최상위), 빈 큐면 `outcome:'empty'` 로 skip 하고 **LLM 을
+  부르지 않는다.** 판정(G2)이 점수(G1)보다 먼저 서고, 분석 실패는 published 로 전이하지 않는다
+  (attempts·lastError 기록, 3회면 `needsReview`). 상태 손상은 **빈 상태로 덮어쓰지 않고** 그날만 건너뛴다.
+  최상위 try/catch 유지 — 가이드라인이 무엇으로 실패해도 논문 데일리는 계속된다(§4 불변식).
+  §1-C 의 7일 게이트 조항은 이로써 폐지됐고, G0 회귀 그물의 게이트 5건을 **행위 테스트로** 다시 썼다.
+  G10: `scripts/guideline-backfill.mjs`(기본 dry-run — 어떤 파일도 안 바꾼다) +
+  `.github/workflows/guideline-backfill.yml`(workflow_dispatch · **LLM 시크릿 미사용**).
+
 - 2026-08-15 (가이드라인 개편 G4·G5·G6): `guidelinePubmed.js`(PT 쿼리 + 제목·유형 확장 쿼리를
   독립 실행·병합 · 쿼리별 실행 증거 manifest · **초집합 검증**) · `guidelineOrgSources.js`
   (기관 어댑터 골격 rss/listing-html/sitemap/api-json/manual-seed + source health · dry-run) ·

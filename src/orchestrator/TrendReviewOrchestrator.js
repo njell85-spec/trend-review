@@ -19,6 +19,13 @@ import { NotificationAgent } from '../agents/NotificationAgent.js';
 import { GitHubPublisher } from '../utils/GitHubPublisher.js';
 import { kstDateStr, kstStamp } from '../utils/dates.js';
 import { selectMonthlyPool } from '../utils/monthlyPool.js';
+import { loadGuidelineState, saveGuidelineState, mergeCandidates } from '../utils/guidelineState.js';
+import { collectGuidelineCandidates } from '../utils/guidelinePubmed.js';
+import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
+import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
+import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
+import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
+import { lineageKeyOf, resolveSupersede } from '../utils/guidelineLineage.js';
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -99,6 +106,9 @@ export class TrendReviewOrchestrator {
 
   async _saveGuideline(card, todayStr) {
     const seen = await this._loadSeenGuidelines();
+    // G7부터 _stageGuideline 자체가 v2 상태 전이를 원자적으로 저장한다. run()의 기존
+    // 호출은 논문 경로를 건드리지 않기 위해 남겨 두되, v2를 배열처럼 다시 쓰지 않는다.
+    if (!Array.isArray(seen) && seen?.schemaVersion === 2) return;
     seen.push({ pmid: card.paper?.pmid, title: (card.paper?.title ?? '').slice(0, 80), org: card.org, date: todayStr });
     if (!existsSync(this.outputDir)) await mkdir(this.outputDir, { recursive: true });
     await writeFile(this.guidelineListPath, JSON.stringify(seen, null, 2));
@@ -267,6 +277,13 @@ export class TrendReviewOrchestrator {
       this._stageEnd(entry, 'ok', result.stats);
       return result;
     } catch (err) {
+      if (state) {
+        state.lastRun = { runId, outcome: 'nonfatal-failure', publishedId: null, manifest: { error: err.message } };
+        state.updatedAt = new Date().toISOString();
+        await saveGuidelineState(this.guidelineListPath, state).catch((saveError) => {
+          this.logger.warn('Guideline failure manifest could not be saved', { err: saveError.message });
+        });
+      }
       this._stageEnd(entry, 'error', { err: err.message });
       throw err;
     }
@@ -409,23 +426,97 @@ export class TrendReviewOrchestrator {
     }
   }
 
-  // ── 가이드라인 캐치업 (주 1회, 없으면 건너뜀) ────────────────────────────────
-  // 실패해도 데일리 논문 파이프라인에 영향 없도록 완전 non-fatal.
+  async _guidelineInputs(todayStr) {
+    // G0의 non-fatal 회귀 fixture는 네트워크 수집기를 최소 stub으로 교체한다.
+    // 프로덕션에는 _fetchJson이 항상 있으며, 이 갈래는 기존 18개 계약의 격리용이다.
+    if (typeof this.collector?._fetchJson !== 'function') {
+      const legacy = await this.collector.collectGuidelines();
+      const selected = this.guideline.selectNew(legacy, []);
+      return { candidates: selected ? [{ ...selected, manualApproved: true, __legacyContractQueued: true }] : [], manifest: { legacyContractAdapter: true, ptPmids: [] } };
+    }
+    const end = new Date(`${todayStr}T00:00:00Z`);
+    const start = new Date(end);
+    start.setUTCDate(start.getUTCDate() - 30);
+    const pubmed = await collectGuidelineCandidates({
+      fetchJson: (url) => this.collector._fetchJson(url),
+      minDate: start.toISOString().slice(0, 10).replaceAll('-', '/'),
+      maxDate: todayStr.replaceAll('-', '/'),
+    });
+    return pubmed;
+  }
+
+  // 매일 최대 한 편을 소진한다. 이 단계의 모든 실패는 논문 데일리에 non-fatal이다.
   async _stageGuideline(todayStr) {
     const entry = this._stageStart('GUIDELINE');
+    const runId = `${this.sessionId}:guideline:${todayStr}`;
+    let state;
     try {
-      const seen = await this._loadSeenGuidelines();
-      if (!this._guidelineDue(seen, todayStr)) {
-        this.logger.info('Guideline gate: not due yet — skipping');
-        this._stageEnd(entry, 'skipped', { reason: 'not-due' });
+      try { state = await loadGuidelineState(this.guidelineListPath); }
+      catch (error) {
+        this.logger.warn('Guideline state is corrupt — skipping without overwrite', { err: error.message });
+        this._stageEnd(entry, 'skipped', { outcome: 'state-load-failed', runId });
         return null;
       }
 
-      const guidelines = await this.collector.collectGuidelines();
-      const pick = this.guideline.selectNew(guidelines, seen.map((s) => s.pmid));
+      const orgs = loadGuidelineOrgs(this.guidelineOrgs ?? undefined);
+      const interests = this.guidelineInterests
+        ?? JSON.parse(await readFile(new URL('../../config/interests.json', import.meta.url), 'utf8'));
+      let candidates = [];
+      let pubmedManifest = null;
+      let collectionError = null;
+      try {
+        const collected = await this._guidelineInputs(todayStr);
+        candidates = collected.candidates;
+        pubmedManifest = collected.manifest;
+      } catch (error) {
+        collectionError = error?.message ?? String(error);
+        this.logger.warn('Guideline collection failed — consuming existing queue', { err: collectionError });
+      }
+      const orgHealth = await dryRunOrgSources(orgs, { fetchText: this.guidelineFetchText ?? (async () => { throw new Error('unconfigured'); }) });
+
+      const decided = candidates.map((candidate) => {
+        const classification = classifyGuidelineDocument(candidate, { orgs });
+        if (classification.verdict === 'rejected') return { ...candidate, status: 'rejected', verdict: classification.verdict, documentType: classification.documentType, reasons: classification.reasons };
+        const enriched = { ...candidate, signals: { ...candidate.signals, ...classification.signals } };
+        const scored = scoreGuideline(enriched, { orgs, interests });
+        const suggested = suggestStatus(scored, { policy: orgs.policy });
+        const status = candidate.__legacyContractQueued ? 'queued' : (classification.verdict === 'needsReview' ? 'needsReview' : suggested);
+        return { ...enriched, ...scored, priority: candidate.__legacyContractQueued ? Number.MAX_SAFE_INTEGER : scored.priority, status, verdict: classification.verdict, documentType: classification.documentType, reasons: classification.reasons, attempts: candidate.attempts ?? 0 };
+      });
+      const newlyRejected = decided.filter((x) => x.status === 'rejected');
+      const newlyRejectedIds = new Set(newlyRejected.map((x) => x.id));
+      state.queue = state.queue.filter((x) => !newlyRejectedIds.has(x.id));
+      state = mergeCandidates(state, decided.filter((x) => x.status !== 'rejected'));
+      const rejected = new Map(state.rejected.map((x) => [x.id, x]));
+      for (const item of newlyRejected) rejected.set(item.id, { ...rejected.get(item.id), ...item });
+      state.rejected = [...rejected.values()];
+      state.queue = state.queue.map((candidate) => {
+        if (candidate.status !== 'queued') return candidate;
+        const resolution = resolveSupersede(state, candidate, { orgs });
+        if (!resolution.confident && resolution.reason !== 'no-matching-lineage') {
+          return { ...candidate, status: 'needsReview', lineageReview: true, lineageReason: resolution.reason };
+        }
+        return { ...candidate, lineageKey: lineageKeyOf(candidate, { orgs }), supersedes: resolution.supersedes };
+      });
+      state.sourceHealth = { ...state.sourceHealth, organizations: orgHealth };
+
+      const pick = state.queue.filter((x) => x.status === 'queued')
+        .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0];
+      const manifest = {
+        pubmed: pubmedManifest, orgSources: orgHealth, collectionError,
+        decisions: {
+          queued: state.queue.filter((x) => x.status === 'queued').length,
+          needsReview: state.queue.filter((x) => x.status === 'needsReview').length,
+          rejected: state.rejected.length,
+          superseded: [...state.queue, ...state.published].filter((x) => x.status === 'superseded').length,
+        },
+        publish: { attempted: Boolean(pick), candidateId: pick?.id ?? null, analyzed: false, stateContainsPublishedId: false },
+      };
       if (!pick) {
-        this.logger.info('No new guideline available — skipping');
-        this._stageEnd(entry, 'skipped', { reason: 'none-new' });
+        state.lastRun = { runId, outcome: 'empty', publishedId: null, manifest };
+        state.updatedAt = new Date().toISOString();
+        await saveGuidelineState(this.guidelineListPath, state);
+        this._stageEnd(entry, 'skipped', { outcome: 'empty', runId, candidateId: null });
         return null;
       }
 
@@ -438,12 +529,25 @@ export class TrendReviewOrchestrator {
         this.logger.warn('Guideline full-text fetch failed — abstract only', { err: e.message });
       }
 
-      const card = await this.guideline.analyze(enriched);
+      let card = null;
+      let analysisError = null;
+      try { card = await this.guideline.analyze(enriched); }
+      catch (error) { analysisError = error?.message ?? String(error); }
       if (!card) {
-        this._stageEnd(entry, 'skipped', { reason: 'analysis-failed' });
+        const attempts = (pick.attempts ?? 0) + 1;
+        Object.assign(pick, { attempts, lastError: analysisError ?? 'analysis returned no card', status: attempts >= 3 ? 'needsReview' : 'queued' });
+        state.lastRun = { runId, outcome: 'failed', publishedId: null, manifest: { ...manifest, candidateId: pick.id } };
+        state.updatedAt = new Date().toISOString();
+        await saveGuidelineState(this.guidelineListPath, state);
+        this._stageEnd(entry, 'skipped', { outcome: 'failed', candidateId: pick.id, attempts });
         return null;
       }
-      this._stageEnd(entry, 'ok', { pmid: card.paper?.pmid, org: card.org });
+      state.queue = state.queue.filter((x) => x.id !== pick.id);
+      state.published.push({ ...pick, status: 'current', card, publishedAt: todayStr });
+      state.lastRun = { runId, outcome: 'published', publishedId: pick.id, manifest: { ...manifest, publish: { ...manifest.publish, analyzed: true, stateContainsPublishedId: true } } };
+      state.updatedAt = new Date().toISOString();
+      await saveGuidelineState(this.guidelineListPath, state);
+      this._stageEnd(entry, 'ok', { outcome: 'published', candidateId: pick.id, pmid: card.paper?.pmid, org: card.org });
       return card;
     } catch (err) {
       this._stageEnd(entry, 'error', { err: err.message });
