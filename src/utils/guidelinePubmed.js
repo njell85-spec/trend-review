@@ -73,6 +73,15 @@ export function assertSupersetOfPtPath(manifest, candidates) {
     throw new Error(`PT superset check evidence is empty although the PT query fetched `
       + `${ptQuery.idsFetched} id(s)`);
   }
+  // ★ PT 쿼리 **자신이 죽은 날**이 가장 위험한데, 종전 가드는 거기서 침묵했다.
+  //   `succeeded:false` 면 ptPmids 가 비고, 빈 집합은 어떤 후보 집합의 부분집합이므로
+  //   `missing` 이 항상 비어 무조건 통과한다. 수집기는 **두 쿼리가 다 죽어야** throw 하므로,
+  //   PT 가 죽고 확장만 산 날은 "초집합 검증 통과 + 후보 정상 수집" 으로 읽힌다.
+  //   현행 경로가 무너진 바로 그 상황에서 최우선 정지 신호가 조용해지는 것이다.
+  if (ptQuery && ptQuery.succeeded === false) {
+    throw new Error(`PT superset check cannot run: the PT query failed `
+      + `(${ptQuery.error ?? 'unknown error'}) — 확장 경로만으로는 현행 회수율을 보장할 수 없다`);
+  }
   const finalIds = new Set((candidates ?? []).map((item) => item.id ?? (item.pmid ? `pmid:${item.pmid}` : null)));
   const missing = ptPmids.filter((pmid) => !finalIds.has(`pmid:${pmid}`));
   if (missing.length) throw new Error(`PubMed PT superset violation; missing PMID(s): ${missing.join(', ')}`);
@@ -113,6 +122,12 @@ export async function collectGuidelineCandidates({ fetchJson, minDate, maxDate, 
     window: { minDate, maxDate }, retmax,
   };
   manifest.ptPmids = [...pt];   // 열거 가능해야 한다 — 위 assert 주석 참조
-  assertSupersetOfPtPath(manifest, candidates);
+  // PT 쿼리가 죽었으면 초집합을 **판정할 수 없다.** 수집 자체는 부분 성공으로 계속하되
+  // (G4 계약), 판정 불가라는 사실을 manifest 에 남긴다 — 호출자가 정지 신호로 올린다.
+  // 여기서 던져 버리면 확장 경로 결과까지 버리게 되고, 조용히 통과시키면 최우선 정지
+  // 신호가 죽는다. 둘 다 아니고 **판정 불가로 표시**하는 것이 맞다.
+  const ptOk = manifest.queries.find((q) => q.id === 'pubmed-pt')?.succeeded === true;
+  manifest.supersetCheckable = ptOk;
+  if (ptOk) assertSupersetOfPtPath(manifest, candidates);
   return { candidates, manifest };
 }

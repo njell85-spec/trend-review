@@ -287,6 +287,20 @@ guidelines.html   ② 가이드라인 및 기타
 
 ## 5. 변경 이력
 
+- 2026-08-15 (개편 병합 전 코드리뷰 반영 — 실버그 7건): 병렬 리뷰가 치명 1·중대 3을 잡았다.
+  ① **렌더가 지우고 있었다** — `_renderGuidelineState()` 가 GSECTION·가이드 표 행을 전부 지우고
+  `state.published` 로 다시 그렸다. 실물 측정 GSECTION 8→7 · '핵심 권고' 7→0 · 679KB→572KB.
+  마이그레이션된 옛 발행분은 `card` 가 없어 빈 껍데기가 되고, **수동 지정 참고자료가 매일 사라진다.**
+  확정 ③-C 위반이라 **덧붙이기만 하는** 구조로 바꿨다(배지 소급 · 화면에 없는 신규만 추가 · 검토함).
+  ② **수동 등록이 v2 다음 날부터 죽는다** — `appendState` 가 배열 전제였다. `publish()` 보다 앞이라
+  카드 발행 자체가 실패했을 것(⑤-A 경로 차단). 두 모양을 다 받는 `appendManualEntry` 로 분리.
+  ③ **논문 수집 실패 진단이 죽어 있었다** — 가이드라인 실패 매니페스트 블록이 `_stageCollect()` 의
+  catch 에 잘못 붙어 `state`·`runId` 미정의 ReferenceError 로 원래 에러를 덮었다. 제자리로 옮겼다.
+  ④ 계보 전이가 배열 순서에 의존 — `resolveSupersede` 를 순수화하고 `applySupersede` 로 일괄 적용.
+  ⑤ PT 쿼리 자체가 실패한 날 초집합 검증이 침묵 → `supersetCheckable:false` 로 판정 불가를 표시하고
+  백필이 정지 신호로 올린다. ⑥ 기각된 행에 tier 가 없어 앵커 재현율이 부풀던 것 정정.
+  ⑦ 가이드라인 PubMed 호출에 `api_key` 누락.
+
 - 2026-08-15 (가이드라인 개편 G8·G9): `guidelines.html` 을 **published 상태를 정본으로** 재렌더.
   구판 카드는 삭제하지 않고 `superseded` 배지 + 신판 링크만 소급 추가(확정 ③-C).
   `needsReview` 접이식 목록에 판정 이유까지 표시. **논문 `index.html` 렌더러와 날짜 스윕,

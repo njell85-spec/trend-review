@@ -25,7 +25,7 @@ import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
-import { lineageKeyOf, resolveSupersede } from '../utils/guidelineLineage.js';
+import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -277,13 +277,6 @@ export class TrendReviewOrchestrator {
       this._stageEnd(entry, 'ok', result.stats);
       return result;
     } catch (err) {
-      if (state) {
-        state.lastRun = { runId, outcome: 'nonfatal-failure', publishedId: null, manifest: { error: err.message } };
-        state.updatedAt = new Date().toISOString();
-        await saveGuidelineState(this.guidelineListPath, state).catch((saveError) => {
-          this.logger.warn('Guideline failure manifest could not be saved', { err: saveError.message });
-        });
-      }
       this._stageEnd(entry, 'error', { err: err.message });
       throw err;
     }
@@ -438,7 +431,15 @@ export class TrendReviewOrchestrator {
     const start = new Date(end);
     start.setUTCDate(start.getUTCDate() - 30);
     const pubmed = await collectGuidelineCandidates({
-      fetchJson: (url) => this.collector._fetchJson(url),
+      // ★ 가이드라인 URL 은 guidelinePubmed 가 직접 만든다 — 수집기의 `_buildParams()` 를 안 타므로
+        //   api_key 가 안 붙는다(무인증 3req/s). 여기서 얹어 준다.
+        fetchJson: (url) => {
+          const key = process.env.PUBMED_API_KEY ?? '';
+          const signed = key && !url.includes('api_key=')
+            ? `${url}${url.includes('?') ? '&' : '?'}api_key=${encodeURIComponent(key)}`
+            : url;
+          return this.collector._fetchJson(signed);
+        },
       minDate: start.toISOString().slice(0, 10).replaceAll('-', '/'),
       maxDate: todayStr.replaceAll('-', '/'),
     });
@@ -490,14 +491,18 @@ export class TrendReviewOrchestrator {
       const rejected = new Map(state.rejected.map((x) => [x.id, x]));
       for (const item of newlyRejected) rejected.set(item.id, { ...rejected.get(item.id), ...item });
       state.rejected = [...rejected.values()];
+      const pendingTransitions = [];
       state.queue = state.queue.map((candidate) => {
         if (candidate.status !== 'queued') return candidate;
         const resolution = resolveSupersede(state, candidate, { orgs });
+        pendingTransitions.push(...(resolution.transitions ?? []));
         if (!resolution.confident && resolution.reason !== 'no-matching-lineage') {
           return { ...candidate, status: 'needsReview', lineageReview: true, lineageReason: resolution.reason };
         }
         return { ...candidate, lineageKey: lineageKeyOf(candidate, { orgs }), supersedes: resolution.supersedes };
       });
+      // 전이는 map 이 **끝난 뒤** 최종 배열에 한 번에 적용한다 — 배열 순서에 의존하지 않게.
+      applySupersede(state, pendingTransitions);
       state.sourceHealth = { ...state.sourceHealth, organizations: orgHealth };
 
       // ★ 관찰 전용 게이트 (계획서 §13 배포 순서 2·5단계).
@@ -560,6 +565,19 @@ export class TrendReviewOrchestrator {
       this._stageEnd(entry, 'ok', { outcome: 'published', candidateId: pick.id, pmid: card.paper?.pmid, org: card.org });
       return card;
     } catch (err) {
+      // 실패 증거를 상태에 남긴다 — 이 블록은 원래 여기 있어야 했는데 `_stageCollect()` 의
+      // catch 에 잘못 붙어 있었다. 거기엔 `state`·`runId` 가 없어서, **논문 수집이 실패하면
+      // ReferenceError 가 원래 에러를 덮어쓰고** 진단 경로가 통째로 죽었다.
+      // 저장 실패까지 삼켜서 non-fatal 계약은 어떤 경우에도 유지한다.
+      try {
+        if (state && runId) {
+          state.lastRun = { runId, outcome: 'nonfatal-failure', publishedId: null, manifest: { error: err.message } };
+          state.updatedAt = new Date().toISOString();
+          await saveGuidelineState(this.guidelineListPath, state);
+        }
+      } catch (saveError) {
+        this.logger.warn('Guideline failure manifest could not be saved', { err: saveError.message });
+      }
       this._stageEnd(entry, 'error', { err: err.message });
       this.logger.warn('Guideline stage failed (non-fatal)', { err: err.message });
       return null;

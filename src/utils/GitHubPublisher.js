@@ -253,30 +253,75 @@ export class GitHubPublisher {
   /** 상태 v2의 published를 정본으로 가이드 카드와 누적 행을 전량 재생성한다. */
   _renderGuidelineState(html, state, generatedAt) {
     if (!state || !Array.isArray(state.published)) return html;
-    const published = state.published.map((entry) => {
-      const legacy = entry.legacy ?? {};
-      const base = entry.card ?? {
-        paper: {
-          pmid: entry.pmid ?? legacy.pmid,
-          sourceId: entry.sourceId ?? legacy.sourceId,
-          sourceUrl: entry.sourceUrl ?? legacy.sourceUrl,
-          title: entry.title ?? legacy.title,
-          pubDate: entry.publishedAt ?? legacy.date,
-        },
-        org: entry.organization ?? legacy.organization ?? '',
-      };
-      return { ...base, id: entry.id, stateId: entry.id, status: entry.status, supersededBy: entry.supersededBy, supersedes: entry.supersedes, publishedAt: entry.publishedAt };
+
+    // ★ 이 함수는 **덧붙이기만 한다. 지우지 않는다.**
+    //   처음 구현은 GSECTION 블록과 `data-guideline` 표 행을 **전부 지운 뒤** `state.published`
+    //   로 다시 그렸다. 그러면 둘이 한꺼번에 사라진다:
+    //     ① 마이그레이션된 옛 발행 7건은 `card` 가 없다(옛 배열엔 pmid/title/org/date 뿐).
+    //        빈 껍데기로 재생성되면서 그동안 LLM 이 뽑은 요약·변경점·임상영향이 **소실**된다.
+    //     ② PeterJ 가 수동 지정한 참고자료는 `selected_references.json` 에 있고 가이드라인
+    //        상태에는 없다. 지우고 다시 그리면 매 데일리마다 화면에서 사라진다.
+    //   확정 ③-C 는 "구판을 삭제하지 않는다" 이므로 지우는 설계 자체가 위반이다.
+    //   그래서 하는 일은 셋뿐이다: superseded 배지 소급 · **화면에 없는** 신규 발행만 추가 ·
+    //   needsReview 목록 표시.
+    const escapeRe = (v) => String(v).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const idOf = (entry) => entry.id ?? (entry.pmid ? `pmid:${entry.pmid}` : entry.sourceId ?? '');
+    const pmidOf = (entry) => entry.pmid ?? entry.legacy?.pmid ?? entry.card?.paper?.pmid ?? '';
+    const keyOf = (entry) => pmidOf(entry) || entry.sourceId || entry.legacy?.sourceId || idOf(entry);
+
+    let out = html;
+
+    // ── ① superseded 배지 소급 (기존 카드·행은 그대로 두고 배지만 얹는다) ──────────
+    for (const entry of state.published) {
+      if (entry.status !== 'superseded') continue;
+      const key = keyOf(entry);
+      if (!key) continue;
+      const successor = state.published.find((x) => idOf(x) === entry.supersededBy);
+      const successorPmid = successor ? pmidOf(successor) : '';
+      const link = successorPmid
+        ? ` <a class="gl-supersede-link" href="https://pubmed.ncbi.nlm.nih.gov/${successorPmid}/">신판 보기</a>`
+        : '';
+      const badge = `<span class="t-badge gl-superseded" data-superseded-for="${key}">개정됨(superseded)</span>${link}`;
+      if (out.includes(`data-superseded-for="${key}"`)) continue;   // 멱등 — 재발행해도 중복 안 붙는다
+      const rowRe = new RegExp(`(<tr data-pmid="${escapeRe(key)}"[^>]*data-guideline="1"[^>]*>)`);
+      if (rowRe.test(out)) out = out.replace(rowRe, `$1<!--SUPERSEDED--><td class="gl-superseded-cell">${badge}</td>`.replace('<!--SUPERSEDED-->', ''));
+      const secRe = new RegExp(`(<!-- GSECTION:[^\\s>]*${escapeRe(key)}[^\\s>]* -->)`);
+      if (secRe.test(out)) out = out.replace(secRe, `$1\n${badge}`);
+    }
+
+    // ── ② 화면에 아직 없는 발행만 추가 (card 가 있는 것 = 새 경로가 발행한 것) ──────
+    const missing = state.published.filter((entry) => {
+      const key = keyOf(entry);
+      if (!key) return false;
+      if (out.includes(`data-pmid="${key}"`)) return false;      // 이미 표에 있다
+      if (out.includes(`GSECTION:state-${idOf(entry)} `)) return false;
+      return Boolean(entry.card);   // card 가 없으면 그릴 내용이 없다 — 빈 껍데기를 만들지 않는다
     });
-    const sections = published.map((g) => this._buildGuidelineSection(
-      g.publishedAt || '날짜 미상', generatedAt, g,
-      { sectionKey: `state-${g.id}` },
-    )).join('\n');
-    let out = html.replace(/\n?<!-- GSECTION:[^\s>]+ -->[\s\S]*?<!-- \/GSECTION:[^\s>]+ -->/g, '');
-    out = out.replace('<!-- ARCHIVE_START -->', () => `<!-- ARCHIVE_START -->\n${sections}`);
-    // 논문 행은 바이트 그대로 두고, 가이드/참고자료 행만 상태로 갈아 낀다.
-    out = out.replace(/<tr data-pmid="[^"]*"[^>]*data-guideline="1"[^>]*>[\s\S]*?<\/tr>/g, '');
-    const rows = published.map((g) => this._tableRows(g.publishedAt || '', [], g)).join('');
-    out = out.replace('<!-- TABLE_ROWS_START -->', () => `<!-- TABLE_ROWS_START -->${rows}`);
+    if (missing.length) {
+      const sections = missing.map((entry) => this._buildGuidelineSection(
+        entry.publishedAt || '날짜 미상', generatedAt,
+        { ...entry.card, id: idOf(entry), stateId: idOf(entry), status: entry.status,
+          supersededBy: entry.supersededBy, supersedes: entry.supersedes, publishedAt: entry.publishedAt },
+        { sectionKey: `state-${idOf(entry)}` },
+      )).join('\n');
+      out = out.replace('<!-- ARCHIVE_START -->', () => `<!-- ARCHIVE_START -->\n${sections}`);
+      const rows = missing.map((entry) => this._tableRows(entry.publishedAt || '', [],
+        { ...entry.card, publishedAt: entry.publishedAt })).join('');
+      out = out.replace('<!-- TABLE_ROWS_START -->', () => `<!-- TABLE_ROWS_START -->${rows}`);
+    }
+
+    // ── ③ 검토함(needsReview) — 판정 이유까지 보인다 ───────────────────────────
+    out = out.replace(/\n?<!-- GNEEDSREVIEW -->[\s\S]*?<!-- \/GNEEDSREVIEW -->/g, '');
+    const review = (state.queue ?? []).filter((x) => x.status === 'needsReview');
+    if (review.length) {
+      const items = review.map((x) => {
+        const reasons = (x.decisionReasons ?? x.reasons ?? []).join(', ');
+        const org = x.organizationId ? ` · ${esc(x.organizationId)}` : '';
+        return `<li><b>${esc(x.title ?? x.id)}</b>${org}${reasons ? ` <span class="gl-reason">— ${esc(reasons)}</span>` : ''}</li>`;
+      }).join('');
+      const block = `<!-- GNEEDSREVIEW -->\n<details class="day day-past gl-review"><summary>🔎 검토함 ${review.length}건 — 자동 발행하지 않고 보관 중</summary><ul>${items}</ul></details>\n<!-- /GNEEDSREVIEW -->`;
+      out = out.replace('<!-- ARCHIVE_START -->', () => `<!-- ARCHIVE_START -->\n${block}`);
+    }
     return out;
   }
 

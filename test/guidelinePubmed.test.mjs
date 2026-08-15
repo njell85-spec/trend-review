@@ -82,3 +82,16 @@ test('★ 초집합 위반은 직렬화 뒤에도 잡힌다', async () => {
   const missingOne = built.candidates.filter((c) => c.pmid !== '11');
   assert.throws(() => assertSupersetOfPtPath(roundTripped, missingOne), /superset violation/);
 });
+
+test('★ PT 쿼리가 죽은 날은 초집합을 "통과" 로 위장하지 않는다 (판정 불가로 표시)', async () => {
+  const out = await collectGuidelineCandidates({ fetchJson: stub({ fail: 'pt' }), minDate: 'a', maxDate: 'b', retmax: 10 });
+  assert.equal(out.manifest.supersetCheckable, false,
+    'PT 가 죽으면 ptPmids 가 비고 빈 집합은 모든 집합의 부분집합이라 검증이 항상 통과한다');
+  assert.equal(out.candidates.length, 2, '수집 자체는 부분 성공으로 계속한다');
+  assert.throws(() => assertSupersetOfPtPath(out.manifest, out.candidates), /PT query failed/);
+});
+
+test('★ PT 쿼리가 성공한 날은 초집합 판정이 가능하다고 표시된다', async () => {
+  const out = await collectGuidelineCandidates({ fetchJson: stub(), minDate: 'a', maxDate: 'b', retmax: 10 });
+  assert.equal(out.manifest.supersetCheckable, true);
+});

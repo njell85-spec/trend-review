@@ -99,3 +99,32 @@ export function mergeCandidates(state, candidates) {
   }
   return { ...state, queue: [...queue.values()], updatedAt: new Date().toISOString() };
 }
+
+
+// ★ PeterJ 수동 등록(on-demand)이 상태 파일의 **두 모양**을 다 견디게 한다.
+//   `output/selected_guidelines.json` 은 v1(배열)일 수도 v2(객체)일 수도 있다.
+//   배열로만 다루면 마이그레이션 다음 날 `list.some is not a function` 으로 죽고,
+//   그 호출이 `publisher.publish()` 보다 **앞**이라 **카드 발행 자체가 실패한다** —
+//   확정 ⑤-A(수동 URL = 최종 승인) 경로가 통째로 막힌다.
+//   모양은 읽은 그대로 유지한다. 여기서 멋대로 v2 로 승격하지 않는다.
+export function appendManualEntry(raw, entry) {
+  const isV2 = raw && !Array.isArray(raw) && Number(raw.schemaVersion) >= 2;
+  const list = isV2 ? (raw.published ?? []) : (Array.isArray(raw) ? raw : []);
+  const idOf = (x) => x.id ?? (x.pmid ? `pmid:${x.pmid}` : x.sourceId ?? '');
+  const same = (x) => (entry.pmid
+    ? (x.pmid === entry.pmid || x.legacy?.pmid === entry.pmid || idOf(x) === `pmid:${entry.pmid}`)
+    : Boolean(entry.sourceId) && (x.sourceId === entry.sourceId || x.legacy?.sourceId === entry.sourceId));
+  if (list.some(same)) return { changed: false, next: raw ?? (isV2 ? raw : []) };
+
+  if (isV2) {
+    // 수동 승인은 큐를 거치지 않는다 — 승인이 곧 발행이다(계획서 §6.4).
+    return { changed: true, next: { ...raw, updatedAt: new Date().toISOString(),
+      published: [...list, {
+        id: entry.pmid ? `pmid:${entry.pmid}` : (entry.sourceId ?? `manual:${entry.date ?? ''}`),
+        pmid: entry.pmid ?? '', sourceId: entry.sourceId, sourceUrl: entry.sourceUrl,
+        title: entry.title, status: 'current', manualApproved: true,
+        publishedAt: entry.date, legacy: entry,
+      }] } };
+  }
+  return { changed: true, next: [...list, entry] };
+}

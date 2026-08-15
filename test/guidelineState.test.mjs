@@ -3,9 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import {
-  loadGuidelineState, mergeCandidates, migrateGuidelineState, saveGuidelineState,
-} from '../src/utils/guidelineState.js';
+import { loadGuidelineState, mergeCandidates, migrateGuidelineState, saveGuidelineState, appendManualEntry } from '../src/utils/guidelineState.js';
 
 const productionPath = new URL('../output/selected_guidelines.json', import.meta.url);
 
@@ -60,4 +58,45 @@ test('published ids are not returned to the queue', () => {
   const state = migrateGuidelineState([{ pmid: '123', title: 'Already out', date: '2026-01-01' }]);
   const merged = mergeCandidates(state, [{ pmid: '123', title: 'Rediscovered', discoveredBy: ['pubmed-pt'] }]);
   assert.equal(merged.queue.length, 0);
+});
+
+// ── B2 회귀 (코드리뷰) ─────────────────────────────────────────────────────
+// on-demand 수동 등록은 상태 파일이 배열이라고 전제하고 `list.some(...)` 을 불렀다.
+// 상태 v2 가 배포되면 그 다음 날부터 `list.some is not a function` 으로 죽는데,
+// 이 호출이 `publisher.publish()` 보다 **앞**이라 카드 발행 자체가 실패한다 —
+// 확정 ⑤-A(PeterJ 수동 URL = 최종 승인) 경로가 통째로 막히는 것이다.
+
+test('★ 수동 등록: v1 배열이면 배열 모양 그대로 덧붙인다', () => {
+  const raw = [{ pmid: '1', title: 'a', date: '2026-08-01' }];
+  const { changed, next } = appendManualEntry(raw, { pmid: '2', title: 'b', date: '2026-08-02' });
+  assert.equal(changed, true);
+  assert.ok(Array.isArray(next), '모양을 멋대로 승격하면 안 된다');
+  assert.equal(next.length, 2);
+});
+
+test('★ 수동 등록: v2 객체여도 죽지 않고 published 에 들어간다 (⑤-A)', () => {
+  const raw = { schemaVersion: 2, queue: [], published: [], rejected: [], sourceHealth: {}, lastRun: null, updatedAt: 'x', configVersion: 'guideline-v2' };
+  const { changed, next } = appendManualEntry(raw, {
+    pmid: '', title: 'IDSA guidance', date: '2026-08-16',
+    sourceUrl: 'https://www.idsociety.org/x/', sourceId: 'web:idsociety-x',
+  });
+  assert.equal(changed, true);
+  assert.equal(next.schemaVersion, 2, 'v2 모양을 유지해야 한다');
+  assert.equal(next.published.length, 1);
+  assert.equal(next.published[0].manualApproved, true, '수동 승인은 큐를 거치지 않는다');
+  assert.equal(next.published[0].sourceId, 'web:idsociety-x');
+});
+
+test('★ 수동 등록: v2 에서도 중복은 다시 넣지 않는다', () => {
+  const raw = { schemaVersion: 2, queue: [], rejected: [], sourceHealth: {}, lastRun: null, updatedAt: 'x', configVersion: 'guideline-v2',
+    published: [{ id: 'pmid:42', pmid: '42', title: 't', status: 'current' }] };
+  const { changed } = appendManualEntry(raw, { pmid: '42', title: 't', date: '2026-08-16' });
+  assert.equal(changed, false);
+});
+
+test('★ 수동 등록: 마이그레이션된 레거시 항목과도 중복 판정이 된다', () => {
+  const raw = { schemaVersion: 2, queue: [], rejected: [], sourceHealth: {}, lastRun: null, updatedAt: 'x', configVersion: 'guideline-v2',
+    published: [{ id: 'web:idsociety-x', legacy: { pmid: '', sourceId: 'web:idsociety-x' }, status: 'current' }] };
+  const { changed } = appendManualEntry(raw, { pmid: '', sourceId: 'web:idsociety-x', title: 't', date: '2026-08-16' });
+  assert.equal(changed, false);
 });

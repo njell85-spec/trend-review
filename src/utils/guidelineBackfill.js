@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { collectGuidelineCandidates, assertSupersetOfPtPath } from './guidelinePubmed.js';
+import { matchOrganization } from './guidelineOrgs.js';
 import { classifyGuidelineDocument } from './guidelineClassifier.js';
 import { scoreGuideline, suggestStatus } from './GuidelineScorer.js';
 import { loadGuidelineOrgs } from './guidelineOrgs.js';
@@ -50,9 +51,22 @@ export async function runGuidelineBackfill({
         missing = match ? match[1].split(/,\s*/) : (manifest.ptPmids ?? []).filter((pmid) => !candidates.some((c) => String(c.pmid) === String(pmid)));
         stopSignals.push(`① ${window.label}: 초집합 위반 ${missing.join(', ') || error.message}`);
       }
+      if (manifest.supersetCheckable === false) {
+        stopSignals.push(`① ${window.label}: PT 쿼리 실패로 초집합 판정 불가 — 확장 경로만으로는 현행 회수율을 보장 못 한다`);
+      }
       const rows = candidates.filter((candidate) => !alreadyPublished.has(idOf(candidate))).map((candidate) => {
         const classified = classifyGuidelineDocument(candidate, { orgs });
-        if (classified.verdict === 'rejected') return { ...candidate, status: 'rejected', verdict: classified.verdict, documentType: classified.documentType, reasons: classified.reasons };
+        if (classified.verdict === 'rejected') {
+          // ★ 기각된 행에도 tier 를 붙인다. 종전에는 스코어러를 안 타서 `tier` 가 없었고,
+          //   앵커가 `tier === 1` 로 거르는 바람에 **PT 가 잡던 tier-1 지침을 새 분류기가
+          //   오탐 기각한 경우**가 통째로 계측 밖으로 빠졌다 — 재현율이 대개 1.0 으로 부풀었다.
+          //   넓힌 그물이 원래 잡던 걸 버렸는지 재는 것이 이 지표의 존재 이유인데
+          //   가장 중요한 손실 유형만 안 보이던 셈이다.
+          const org = matchOrganization(candidate, orgs);
+          const tier = org ? orgs.organizations.find((o) => o.id === org.organizationId)?.tier ?? null : null;
+          return { ...candidate, status: 'rejected', tier, organizationId: org?.organizationId ?? null,
+            verdict: classified.verdict, documentType: classified.documentType, reasons: classified.reasons };
+        }
         const enriched = { ...candidate, signals: { ...candidate.signals, ...classified.signals } };
         const scored = scoreGuideline(enriched, { orgs, interests });
         const suggested = suggestStatus(scored, { policy: orgs.policy });
