@@ -215,10 +215,16 @@ export class GitHubPublisher {
     const changes = (g.keyChanges ?? []).map((c) => `
       <div class="gl-chg">${c.topic ? `<div class="gl-chg-t">${esc(c.topic)}</div>` : ''}${enko(c.detail, c.detail_ko)}</div>`).join('');
 
-    return `<article class="guideline-card">
+    const stateId = g.stateId ?? g.id ?? '';
+    const superseded = g.status === 'superseded';
+    const supersededBy = g.supersededBy ?? '';
+    const supersedes = Array.isArray(g.supersedes) ? g.supersedes : [];
+    const lineageBadges = `${superseded ? `<span class="chip superseded">superseded</span>` : ''}${supersededBy ? `<a class="chip successor-link" href="#${esc(supersededBy)}">신판 보기</a>` : ''}${supersedes.map((id) => `<a class="chip predecessor-link" href="#${esc(id)}">구판 보기</a>`).join('')}`;
+
+    return `<article class="guideline-card"${stateId ? ` id="${esc(stateId)}" data-guideline-id="${esc(stateId)}"` : ''}>
       <div class="pc-top gl-top">
         <div class="medal gl-medal">${IC.book('#fff')}</div>
-        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">${isRef ? '🔖 참고자료' : '📋 가이드라인'}</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}</div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">${isRef ? '🔖 참고자료' : '📋 가이드라인'}</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}${lineageBadges}</div>
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}</div>` : ''}
         ${g.scope_ko ? `<p class="txt ko" style="margin-top:6px">${esc(g.scope_ko)}</p>` : ''}
@@ -242,6 +248,36 @@ export class GitHubPublisher {
         <div class="pc-foot">${footLink}${doiLink} · ${isRef ? '직접 지정 참고자료' : '가이드라인 캐치업'}</div>
       </div>
     </article>`;
+  }
+
+  /** 상태 v2의 published를 정본으로 가이드 카드와 누적 행을 전량 재생성한다. */
+  _renderGuidelineState(html, state, generatedAt) {
+    if (!state || !Array.isArray(state.published)) return html;
+    const published = state.published.map((entry) => {
+      const legacy = entry.legacy ?? {};
+      const base = entry.card ?? {
+        paper: {
+          pmid: entry.pmid ?? legacy.pmid,
+          sourceId: entry.sourceId ?? legacy.sourceId,
+          sourceUrl: entry.sourceUrl ?? legacy.sourceUrl,
+          title: entry.title ?? legacy.title,
+          pubDate: entry.publishedAt ?? legacy.date,
+        },
+        org: entry.organization ?? legacy.organization ?? '',
+      };
+      return { ...base, id: entry.id, stateId: entry.id, status: entry.status, supersededBy: entry.supersededBy, supersedes: entry.supersedes, publishedAt: entry.publishedAt };
+    });
+    const sections = published.map((g) => this._buildGuidelineSection(
+      g.publishedAt || '날짜 미상', generatedAt, g,
+      { sectionKey: `state-${g.id}` },
+    )).join('\n');
+    let out = html.replace(/\n?<!-- GSECTION:[^\s>]+ -->[\s\S]*?<!-- \/GSECTION:[^\s>]+ -->/g, '');
+    out = out.replace('<!-- ARCHIVE_START -->', () => `<!-- ARCHIVE_START -->\n${sections}`);
+    // 논문 행은 바이트 그대로 두고, 가이드/참고자료 행만 상태로 갈아 낀다.
+    out = out.replace(/<tr data-pmid="[^"]*"[^>]*data-guideline="1"[^>]*>[\s\S]*?<\/tr>/g, '');
+    const rows = published.map((g) => this._tableRows(g.publishedAt || '', [], g)).join('');
+    out = out.replace('<!-- TABLE_ROWS_START -->', () => `<!-- TABLE_ROWS_START -->${rows}`);
+    return out;
   }
 
   // ── 가이드라인 전용 접이식 섹션 (논문과 분리, 한눈에 '가이드라인'으로 식별) ──────
@@ -775,7 +811,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
   }
 
   // ── 누적 업데이트 ────────────────────────────────────────────────────────────
-  async publish(dateStr, topPapers, { guideline = null, manual = false } = {}) {
+  async publish(dateStr, topPapers, { guideline = null, manual = false, guidelineState = null } = {}) {
     // ★ 페이지 2분할(§4-H) — 합쳤다가 가른다.
     // 아래 증분 로직(지침 중복 제거·TODAY 강등·날짜 행 교체·PMID dedup·통계 갱신)은
     // 단일 페이지를 전제로 4주간 다듬어졌다. 두 벌로 쪼개는 대신 **입력을 합쳐서**
@@ -875,6 +911,7 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
         .replace(/<span class="at-count">[^<]*<\/span>/, `<span class="at-count">${paperCount}편</span>`);
       updated = body;
     }
+    if (guidelineState) updated = this._renderGuidelineState(updated, guidelineState, generatedAt);
     updated = this._ensureOnDemandWidget(updated);
     let curationState = null;
     try { curationState = await loadCurationState(path.join(this._repoPath, 'output', 'curation_state.json')); } catch { /* 소프트 */ }
@@ -885,6 +922,9 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
     // index 만 종전대로 기록된다(소프트 — 분할 실패가 데일리를 막지 않는다).
     const { index: indexOut, guidelines: guidesOut, counts } = splitPages(updated, {
       refIds: await this._referenceIds(),
+      needsReview: guidelineState?.needsReview
+        ?? guidelineState?.queue?.filter((item) => item.status === 'needsReview')
+        ?? [],
     });
     await writeFile(path.join(this._repoPath, 'index.html'), indexOut, 'utf8');
     if (guidesOut) {

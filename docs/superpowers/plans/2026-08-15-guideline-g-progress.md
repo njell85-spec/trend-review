@@ -35,8 +35,8 @@
 | G5 | 학회 어댑터 골격 + health | ✅ | (아래) | sources 0건 유지를 테스트로 못 박음 |
 | G6 | 계보·supersede | ✅ | (아래) | 애매하면 자동 처리 금지 · 발행 기록 삭제 0 |
 | G7 | 오케스트레이터 배선 | ✅ | (아래) | G4/G5 와 별도 커밋 지켰다 · 변이 5종 적색 |
-| G8 | 배지·검토함·재렌더 | ⬜ | | 대시보드 변경 → 미리보기 첨부 |
-| G9 | workflow 증거·관제 | ⬜ | | |
+| G8 | 배지·검토함·재렌더 | ✅ | (아래) | 구판 보존 + 배지만 추가 · 논문 렌더 무변경 |
+| G9 | workflow 증거·관제 | ✅ | (아래) | 무음 실패 5종 · 논문 잡 무영향 |
 | G10 | 백필 dry-run | ✅ | (아래) | CLI + workflow_dispatch · LLM 0 |
 | EXP | 30일 가상 재생 + 분석 | ⬜ | | 설계 확정 → `docs/superpowers/specs/2026-08-15-guideline-replay-experiment-design.md` |
 

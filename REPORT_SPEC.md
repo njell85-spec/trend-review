@@ -287,6 +287,15 @@ guidelines.html   ② 가이드라인 및 기타
 
 ## 5. 변경 이력
 
+- 2026-08-15 (가이드라인 개편 G8·G9): `guidelines.html` 을 **published 상태를 정본으로** 재렌더.
+  구판 카드는 삭제하지 않고 `superseded` 배지 + 신판 링크만 소급 추가(확정 ③-C).
+  `needsReview` 접이식 목록에 판정 이유까지 표시. **논문 `index.html` 렌더러와 날짜 스윕,
+  표 행 계약(`data-pmid`·`data-kind`·`data-guideline`)은 무변경**(기존 렌더 테스트 50건 통과).
+  G9: `guidelineManifest.js` 의 `verifyGuidelineRun` 이 무음 실패를 잡는다 — manifest 부재 ·
+  **source attempt 0건**(돌긴 돌았는데 아무것도 안 걷음) · 상태 published 인데 HTML 카드 없음 ·
+  HTML 카드는 있는데 상태 전이 없음 · **초집합 근거 직렬화 소실**. 데일리 워크플로우에
+  검증 스텝을 붙이되 `continue-on-error` 로 **논문 잡을 실패시키지 않는다**.
+
 - 2026-08-15 (가이드라인 개편 G7·G10): `_stageGuideline()` 교체 — **7일 게이트 제거, 매일 시도**
   (확정 ④-D). 하루 최대 한 편(priority 최상위), 빈 큐면 `outcome:'empty'` 로 skip 하고 **LLM 을
   부르지 않는다.** 판정(G2)이 점수(G1)보다 먼저 서고, 분석 실패는 published 로 전이하지 않는다

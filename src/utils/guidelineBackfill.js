@@ -82,7 +82,12 @@ export async function runGuidelineBackfill({
       const match = message.match(/PubMed PT superset violation; missing PMID\(s\): (.+)$/);
       const missing = match ? match[1].split(/,\s*/) : [];
       if (missing.length) stopSignals.push(`① ${window.label}: 초집합 위반 ${missing.join(', ')}`);
-      reports.push({ window, error: message, manifest: null, counts: { candidates: 0, queued: 0, needsReview: 0, rejected: 0 }, supersetViolation: { violated: missing.length > 0, missing }, anchors: { ptAndTier1: [], recovered: [], lost: [], recallRate: null }, queueDepth: { queued: 0, daysSustainable: 0 }, audit: { queued: [] }, rejectedSample: [] });
+      // ★ 수집이 통째로 실패한 창을 조용히 "발견 0건" 으로 넘기지 않는다.
+      //   그러면 PubMed 가 죽은 날의 실행이 "깨끗한 실험, 문제 없음" 으로 읽힌다 —
+      //   계획서 §11 이 막으려는 무음 실패가 실험 도구 자신에게서 나는 꼴이다.
+      //   초집합 여부도 `false`(=위반 없음)가 아니라 `null`(=판정 못 함)이다.
+      stopSignals.push(`⑤ ${window.label}: 수집 실패 — 이 창은 판정 불가 (${message})`);
+      reports.push({ window, error: message, manifest: null, counts: { candidates: 0, queued: 0, needsReview: 0, rejected: 0 }, supersetViolation: { violated: missing.length > 0 ? true : null, missing, evaluated: false }, anchors: { ptAndTier1: [], recovered: [], lost: [], recallRate: null }, queueDepth: { queued: 0, daysSustainable: 0 }, audit: { queued: [] }, rejectedSample: [] });
     }
   }
   if (apply) {
@@ -91,5 +96,7 @@ export async function runGuidelineBackfill({
     await saveGuidelineState(statePath, working);
   }
   const totals = reports.reduce((out, report) => { for (const key of Object.keys(out)) out[key] += report.counts[key] ?? 0; return out; }, { candidates: 0, queued: 0, needsReview: 0, rejected: 0 });
-  return { generatedAt: new Date().toISOString(), windows: reports, stopSignals, totals };
+  const failedWindows = reports.filter((r) => r.error).map((r) => r.window.label);
+  return { generatedAt: new Date().toISOString(), windows: reports, stopSignals, totals,
+    failedWindows, evaluatedWindows: reports.length - failedWindows.length };
 }

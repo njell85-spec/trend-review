@@ -570,7 +570,10 @@ export class TrendReviewOrchestrator {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
-      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline });
+      let guidelineState = null;
+      try { guidelineState = await loadGuidelineState(this.guidelineListPath); }
+      catch (error) { this.logger.warn('Guideline render state unavailable — keeping existing page', { err: error.message }); }
+      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline, guidelineState });
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
       return pagesUrl;

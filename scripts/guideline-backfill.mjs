@@ -31,5 +31,12 @@ else {
   const target = path.resolve(out);
   await mkdir(path.dirname(target), { recursive: true });
   await writeFile(target, `${JSON.stringify(report, null, 2)}\n`);
-  console.log(`Wrote ${target} (${report.windows.length} windows, ${report.stopSignals.length} stop signals)`);
+  const failed = report.failedWindows ?? [];
+  console.log(`Wrote ${target} (창 ${report.windows.length}개 중 판정 가능 ${report.evaluatedWindows}개 · `
+    + `수집 실패 ${failed.length}개${failed.length ? ` [${failed.join(', ')}]` : ''} · `
+    + `정지 신호 ${report.stopSignals.length}건)`);
+  for (const signal of report.stopSignals) console.error(`  STOP  ${signal}`);
+  // ★ 실패한 실험이 성공한 실험처럼 보이면 안 된다 — 리포트는 남기되 종료 코드로 알린다.
+  if (failed.length) process.exitCode = 3;
+  else if (report.stopSignals.length) process.exitCode = 4;
 }

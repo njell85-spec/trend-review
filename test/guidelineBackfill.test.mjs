@@ -50,3 +50,32 @@ test('중간 창 실패 후에도 나머지 창을 계속한다', async () => {
   assert.equal(report.windows[1].error, 'middle failed');
   assert.equal(calls, 3);
 });
+
+// ── 세션 검수에서 추가한 것 ────────────────────────────────────────────────
+// 네트워크가 끊긴 컨테이너에서 CLI 를 실제로 돌려 보니, **수집이 통째로 실패한 창**을
+// `stopSignals: []` · exit 0 으로 보고했다. PubMed 가 죽은 날의 실행이 "깨끗한 실험,
+// 문제 없음" 으로 읽힌다 — 계획서 §11 이 막으려는 무음 실패가 실험 도구 자신에게서 났다.
+
+test('★ 수집이 실패한 창은 정지 신호로 올라온다 (발견 0건으로 위장 금지)', async () => {
+  const report = await runGuidelineBackfill({
+    windows: ['60-30'],
+    fetchJson: async () => { throw new Error('network down'); },
+    now: new Date('2026-08-15T00:00:00Z'),
+  });
+  assert.equal(report.windows[0].error !== undefined, true);
+  assert.equal(report.failedWindows.length, 1);
+  assert.equal(report.evaluatedWindows, 0);
+  assert.ok(report.stopSignals.some((s) => s.includes('수집 실패')),
+    '실패한 창이 정지 신호에 없다 — 실패한 실험이 성공처럼 보인다');
+});
+
+test('★ 실패한 창의 초집합 판정은 false(위반 없음)가 아니라 판정 불가다', async () => {
+  const report = await runGuidelineBackfill({
+    windows: ['60-30'],
+    fetchJson: async () => { throw new Error('network down'); },
+    now: new Date('2026-08-15T00:00:00Z'),
+  });
+  assert.equal(report.windows[0].supersetViolation.violated, null,
+    'false 는 "검사했고 위반 없음" 이라는 뜻이라 거짓말이 된다');
+  assert.equal(report.windows[0].supersetViolation.evaluated, false);
+});
