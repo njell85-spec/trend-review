@@ -90,6 +90,17 @@ export function classifyGuidelineDocument(candidate, { orgs } = {}) {
     organizationId: organization?.organizationId ?? null,
   };
 
+  // ★ 해설·요약 부류는 **기각이 아니라 격리**다 (재생 실험 W3 실측, 2026-08-15).
+  //   "Executive summary of the Brain Trauma Foundation Guidelines ... Second Edition" 이
+  //   `summary of the` 에 걸려 기각됐는데, 지침의 **공식 요약본은 지침 그 자체의 일부**다.
+  //   반대로 "지침을 요약한 저널 소개글" 은 지침이 아니다 — 제목만으로는 갈리지 않는다.
+  //   설계 원칙(§6.5)이 바로 이 경우를 위한 것이다: 애매한 것은 점수로 눌러 언젠가
+  //   발행시키지도, 버리지도 말고 `needsReview` 로 격리한다.
+  //   확실한 부정(합의과정 연구·논평·이행 연구)은 그대로 기각한다.
+  const digestFamily = negative?.[0] === 'guideline-commentary-or-digest';
+  if (negative && digestFamily) {
+    return { verdict: 'needsReview', documentType, reasons: [negative[0]], evidence, signals };
+  }
   if (negative && !editorialType && !guidelineType) {
     return { verdict: 'rejected', documentType, reasons: [negative[0]], evidence, signals };
   }
