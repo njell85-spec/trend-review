@@ -11,11 +11,27 @@
 //   ③ EM/CCM 무관 전체 = PT only                  (분야 제한을 풀면 얼마나 되나)
 //   ④ 기관별           = ③ ∩ 기관명              (승인 학회 9곳이 얼마나 내나)
 
+import { readFileSync } from 'node:fs';
 import { PT_TERM, EXPANDED_TERM } from '../src/utils/guidelinePubmed.js';
 import { loadGuidelineOrgs } from '../src/utils/guidelineOrgs.js';
 
 const BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const PT_ONLY = '(("practice guideline"[Publication Type]) OR ("guideline"[Publication Type]))';
+
+// ★ PeterJ 관심주제(`config/interests.json`)를 그대로 쿼리 축으로 쓴다.
+//   EM/CCM MeSH 만 보면 관심 질환 지침이 통째로 빠진다 — DKA·뇌졸중·소화관 출혈 지침이
+//   "emergency medicine"[MeSH] 를 안 달고 나오는 일이 흔하다. 주제어로 직접 잡는다.
+//   지침 형식(PT 또는 확장 표현)과 AND 로 묶어 논문까지 딸려 오지 않게 한다.
+const interestsCfg = JSON.parse(readFileSync(new URL('../config/interests.json', import.meta.url), 'utf8'));
+const INTEREST_TERMS = Object.values(interestsCfg.topicGroups ?? {})
+  .flatMap((g) => g.terms ?? [])
+  .map((t) => String(t).trim())
+  .filter(Boolean);
+const TOPIC_AXIS = `(${INTEREST_TERMS.map((t) => `"${t}"[Title/Abstract]`).join(' OR ')})`;
+const GUIDELINE_FORM = `(${PT_ONLY} OR (guideline[Title] OR guidelines[Title] OR "consensus statement"[Title] `
+  + `OR "scientific statement"[Title] OR "position statement"[Title] OR "focused update"[Title] `
+  + `OR recommendations[Title]))`;
+const TOPIC_TERM = `${TOPIC_AXIS} AND ${GUIDELINE_FORM}`;
 const apiKey = process.env.PUBMED_API_KEY ?? '';
 
 const arg = (name, fallback) => {
@@ -28,19 +44,27 @@ const withCountry = process.argv.includes('--countries');   // efetch 로 국가
 const asDate = (d) => d.toISOString().slice(0, 10).replaceAll('-', '/');
 
 // esearch 로 PMID 를 회수한다. count 세기와 달리 retmax 가 필요하다.
+// 관심주제 쿼리는 4KB 가 넘어 GET URL 한계를 넘는다 — esearch 는 POST 를 받는다.
+async function esearchPost(params) {
+  const res = await fetch(`${BASE}/esearch.fcgi`, {
+    method: 'POST', body: new URLSearchParams(params),
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  });
+  if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
+  return res.json();
+}
+
 async function ids(term, minDate, maxDate, retmax) {
   const out = [];
   // esearch retmax 상한은 10000. 그보다 많으면 retstart 로 넘긴다.
   for (let start = 0; start < retmax; start += 9999) {
-    const p = new URLSearchParams({
+    const p = {
       db: 'pubmed', term, mindate: minDate, maxdate: maxDate,
       datetype: 'pdat', retmode: 'json', sort: 'date',
       retmax: String(Math.min(9999, retmax - start)), retstart: String(start),
       ...(apiKey && { api_key: apiKey }),
-    });
-    const res = await fetch(`${BASE}/esearch.fcgi?${p}`);
-    if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
-    const list = (await res.json())?.esearchresult?.idlist ?? [];
+    };
+    const list = (await esearchPost(p))?.esearchresult?.idlist ?? [];
     out.push(...list.map(String));
     if (list.length < 9999) break;
   }
@@ -143,14 +167,11 @@ async function fetchCountries(pmids) {
 }
 
 async function count(term, minDate, maxDate) {
-  const p = new URLSearchParams({
+  const data = await esearchPost({
     db: 'pubmed', term, mindate: minDate, maxdate: maxDate,
     datetype: 'pdat', retmode: 'json', retmax: '0',
     ...(apiKey && { api_key: apiKey }),
   });
-  const res = await fetch(`${BASE}/esearch.fcgi?${p}`);
-  if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
-  const data = await res.json();
   const n = Number(data?.esearchresult?.count);
   if (!Number.isFinite(n)) throw new Error('esearch 응답에 count 가 없다');
   return n;
@@ -174,7 +195,10 @@ const axes = [
   ['② 확장분만 (제목·유형 + EM/CCM MeSH)', EXPANDED_TERM],
   ['③ 개편 경로 합집합 (① OR ②)', `(${PT_TERM}) OR (${EXPANDED_TERM})`],
   ['④ 분야 제한 없는 PubMed 전체 지침 (PT only)', PT_ONLY],
+  ['⑤ 관심주제 지침 (interests.json 주제어 + 지침 형식)', TOPIC_TERM],
 ];
+push('');
+push(`관심주제 축은 \`config/interests.json\` 의 주제어 **${INTEREST_TERMS.length}개**를 그대로 쓴다.`);
 
 push('| 축 | 최근 1년 편수 |');
 push('|---|---|');
@@ -228,6 +252,7 @@ if (listOut) {
     ['expanded_emccm', '② 확장분만 (제목·유형 + EM/CCM MeSH)', EXPANDED_TERM],
     ['union_emccm', '③ 개편 경로 합집합', `(${PT_TERM}) OR (${EXPANDED_TERM})`],
     ['pt_all', '④ 분야 제한 없는 PubMed 전체 지침 (PT only)', PT_ONLY],
+    ['topic', '⑤ 관심주제 지침', TOPIC_TERM],
   ];
   const payload = { generatedAt: new Date().toISOString(), days, minDate, maxDate, axes: {} };
   for (const [key, label, term] of axisList) {
