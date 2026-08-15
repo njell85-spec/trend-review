@@ -18,20 +18,29 @@ import { loadGuidelineOrgs } from '../src/utils/guidelineOrgs.js';
 const BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const PT_ONLY = '(("practice guideline"[Publication Type]) OR ("guideline"[Publication Type]))';
 
-// ★ PeterJ 관심주제(`config/interests.json`)를 그대로 쿼리 축으로 쓴다.
-//   EM/CCM MeSH 만 보면 관심 질환 지침이 통째로 빠진다 — DKA·뇌졸중·소화관 출혈 지침이
-//   "emergency medicine"[MeSH] 를 안 달고 나오는 일이 흔하다. 주제어로 직접 잡는다.
-//   지침 형식(PT 또는 확장 표현)과 AND 로 묶어 논문까지 딸려 오지 않게 한다.
-const interestsCfg = JSON.parse(readFileSync(new URL('../config/interests.json', import.meta.url), 'utf8'));
-const INTEREST_TERMS = Object.values(interestsCfg.topicGroups ?? {})
+// ★ 가이드라인 검색축은 **전용 목록**을 쓴다 (`config/guideline-topics.json`).
+//   논문 선정용 `interests.json` 은 건드리지 않는다(PeterJ 확정 2026-08-15).
+//   왜 나눴나: interests.json 은 "이 논문이 내 관심사인가" 를 **점수로** 재는 목록이라
+//   넓은 단어(cardiac·trauma·triage)가 있어도 가중치로 눌린다. 검색축으로 쓰면 가중치가
+//   안 먹고 그냥 다 걸린다 — 실측에서 그 넓은 단어들이 축을 지배했다.
+//   그리고 field=Title 이 핵심이다: Title/Abstract 로 재니 2,894편 중 1,097편(38%)이
+//   **제목이 아니라 초록에서만** 걸렸다.
+const topicCfg = JSON.parse(readFileSync(new URL('../config/guideline-topics.json', import.meta.url), 'utf8'));
+const TOPIC_FIELD = topicCfg.search?.field === 'Title' ? 'Title' : 'Title/Abstract';
+const INTEREST_TERMS = Object.values(topicCfg.groups ?? {})
   .flatMap((g) => g.terms ?? [])
   .map((t) => String(t).trim())
   .filter(Boolean);
-const TOPIC_AXIS = `(${INTEREST_TERMS.map((t) => `"${t}"[Title/Abstract]`).join(' OR ')})`;
+const meshClause = topicCfg.search?.alsoSearchMeshTerms
+  ? ` OR (${INTEREST_TERMS.map((t) => `"${t}"[MeSH Terms]`).join(' OR ')})` : '';
+const TOPIC_AXIS = `((${INTEREST_TERMS.map((t) => `"${t}"[${TOPIC_FIELD}]`).join(' OR ')})${meshClause})`;
+const EXCLUDE_TERMS = (topicCfg.excludeTitle?.terms ?? []).filter(Boolean);
+const EXCLUDE_CLAUSE = EXCLUDE_TERMS.length
+  ? ` NOT (${EXCLUDE_TERMS.map((t) => `"${t}"[Title]`).join(' OR ')})` : '';
 const GUIDELINE_FORM = `(${PT_ONLY} OR (guideline[Title] OR guidelines[Title] OR "consensus statement"[Title] `
   + `OR "scientific statement"[Title] OR "position statement"[Title] OR "focused update"[Title] `
   + `OR recommendations[Title]))`;
-const TOPIC_TERM = `${TOPIC_AXIS} AND ${GUIDELINE_FORM}`;
+const TOPIC_TERM = `${TOPIC_AXIS} AND ${GUIDELINE_FORM}${EXCLUDE_CLAUSE}`;
 const apiKey = process.env.PUBMED_API_KEY ?? '';
 
 const arg = (name, fallback) => {
@@ -195,10 +204,12 @@ const axes = [
   ['② 확장분만 (제목·유형 + EM/CCM MeSH)', EXPANDED_TERM],
   ['③ 개편 경로 합집합 (① OR ②)', `(${PT_TERM}) OR (${EXPANDED_TERM})`],
   ['④ 분야 제한 없는 PubMed 전체 지침 (PT only)', PT_ONLY],
-  ['⑤ 관심주제 지침 (interests.json 주제어 + 지침 형식)', TOPIC_TERM],
+  ['⑤ 관심주제 지침 (guideline-topics.json 주제어 + 지침 형식)', TOPIC_TERM],
 ];
 push('');
-push(`관심주제 축은 \`config/interests.json\` 의 주제어 **${INTEREST_TERMS.length}개**를 그대로 쓴다.`);
+push(`관심주제 축은 \`config/guideline-topics.json\` 의 주제어 **${INTEREST_TERMS.length}개**를 쓴다 `
+  + `(검색 필드 ${TOPIC_FIELD}${topicCfg.search?.alsoSearchMeshTerms ? ' + MeSH' : ''}, 제외어 ${EXCLUDE_TERMS.length}개). `
+  + `논문 선정용 \`interests.json\` 과는 **별개 목록**이다.`);
 
 push('| 축 | 최근 1년 편수 |');
 push('|---|---|');
