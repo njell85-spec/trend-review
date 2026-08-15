@@ -22,6 +22,46 @@ jobs:
         env:
           PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
         run: node scripts/guideline-backfill.mjs --windows "${{ inputs.windows }}" --out guideline-backfill-report.json
+      # 요약을 **로그와 잡 요약에 찍는다.** artifact 는 인증이 있어야 열리는데, 이 실험의
+      # 결론(초집합·큐 순도·큐 깊이)은 폰에서 바로 보여야 한다.
+      - name: Summarize report
+        if: always()
+        run: |
+          node -e '
+            const r = require("./guideline-backfill-report.json");
+            const L = [];
+            L.push("## 가이드라인 재생 실험 — 창 " + r.windows.length + "개");
+            L.push("");
+            L.push("| 창 | 후보 | queued | needsReview | rejected | 초집합 위반 | 앵커 재현율 | 큐 지속일 |");
+            L.push("|---|---|---|---|---|---|---|---|");
+            for (const w of r.windows) {
+              const sv = w.supersetViolation;
+              const v = sv.evaluated === false ? "판정불가" : (sv.violated ? "★" + sv.missing.length + "건" : "없음");
+              const rr = w.anchors.recallRate === null ? "—" : (w.anchors.recallRate * 100).toFixed(0) + "%";
+              L.push(`| ${w.window.label} (${w.window.minDate}~${w.window.maxDate}) | ${w.counts.candidates} | ${w.counts.queued} | ${w.counts.needsReview} | ${w.counts.rejected} | ${v} | ${rr} | ${w.queueDepth.daysSustainable} |`);
+            }
+            L.push("");
+            L.push("정지 신호 " + r.stopSignals.length + "건");
+            for (const s of r.stopSignals) L.push("- " + s);
+            L.push("");
+            L.push("### queued 전수 감사 대상 (판정은 마지막 두 칸 — 블라인드로 먼저 보라)");
+            for (const w of r.windows) {
+              for (const q of (w.audit.queued ?? [])) {
+                L.push(`- [${w.window.label}] ${q.pmid} · ${q.organizationId ?? "-"} · p=${(q.priority ?? 0).toFixed(1)} · ${q.title} — ${q.verdict}/${(q.reasons ?? []).join("+")}`);
+              }
+            }
+            L.push("");
+            L.push("### rejected 표본 (미탐 감사)");
+            for (const w of r.windows) {
+              for (const q of (w.rejectedSample ?? []).slice(0, 8)) {
+                L.push(`- [${w.window.label}] ${q.pmid} · ${q.title} — ${(q.reasons ?? []).join("+")}`);
+              }
+            }
+            const out = L.join("\n");
+            console.log(out);
+            require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, out + "\n");
+          '
+
       # ★ 리포트는 실행이 실패해도 반드시 올린다.
       #   CLI 는 수집 실패(3)·정지 신호(4)에 0 이 아닌 코드로 끝난다 — 그래야 실패한 실험이
       #   성공처럼 안 보인다. 그런데 업로드가 그 실패에 딸려 건너뛰면 **가장 봐야 할 리포트가
