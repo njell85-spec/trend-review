@@ -1,0 +1,26 @@
+name: Guideline census (시장조사)
+
+# PubMed 에 지침이 1년에 몇 편이나 나오는지 센다. esearch count 만 읽으므로 사실상 무료이고
+# LLM 시크릿을 쓰지 않는다. 저장소에 아무것도 커밋하지 않는다.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 며칠치를 셀까
+        required: true
+        default: '365'
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Count guidelines on PubMed
+        env:
+          PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
+        run: node scripts/guideline-census.mjs --days "${{ inputs.days }}"
