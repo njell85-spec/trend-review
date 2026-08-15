@@ -106,9 +106,12 @@ test('진짜 학회 지침은 소급 판정에서도 guideline 으로 남는다'
 
 test('★ 지침의 공식 요약본을 버리지 않는다 (기각 → 검토함)', () => {
   const orgs = loadGuidelineOrgs();
+  // ★ PT 를 일부러 빼고 본다. PT 가 있으면 다른 분기로 새어 이 규칙을 판별하지 못한다
+  //   (첫 시도의 테스트가 그래서 변이에 안 걸렸다). 확장 경로로 들어오는 문서가 정확히
+  //   이 모양이고, 실험에서 실제로 기각된 것도 이 경로다.
   const result = classifyGuidelineDocument({
     title: 'Executive summary of the Brain Trauma Foundation Guidelines for the Management of Penetrating Traumatic Brain Injury, Second Edition.',
-    publicationTypes: ['Guideline'], discoveredBy: ['pubmed-pt'],
+    discoveredBy: ['pubmed-title'],
   }, { orgs });
   assert.notEqual(result.verdict, 'rejected', '공식 요약본을 버리면 그 지침을 통째로 놓친다');
   assert.equal(result.verdict, 'needsReview');
