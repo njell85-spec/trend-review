@@ -22,7 +22,13 @@ jobs:
         env:
           PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
         run: node scripts/guideline-backfill.mjs --windows "${{ inputs.windows }}" --out guideline-backfill-report.json
+      # ★ 리포트는 실행이 실패해도 반드시 올린다.
+      #   CLI 는 수집 실패(3)·정지 신호(4)에 0 이 아닌 코드로 끝난다 — 그래야 실패한 실험이
+      #   성공처럼 안 보인다. 그런데 업로드가 그 실패에 딸려 건너뛰면 **가장 봐야 할 리포트가
+      #   사라진다.** 잡은 빨갛게 두고 산출물은 남긴다.
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: guideline-backfill-report
           path: guideline-backfill-report.json
+          if-no-files-found: error
