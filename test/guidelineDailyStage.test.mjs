@@ -14,6 +14,9 @@ async function setup(queue = []) {
   await writeFile(file, JSON.stringify(baseState(queue)));
   const o = new TrendReviewOrchestrator();
   o.guidelineListPath = file;
+  // 이 파일은 **자동 발행을 켠 상태**의 소진 계약을 본다.
+  // 관찰 전용 기본값(게이트 OFF) 자체는 `guidelineContract.test.mjs` 가 본다.
+  process.env.ENABLE_GUIDELINE_AUTOPUBLISH = 'true';
   o._guidelineInputs = async () => ({ candidates: [], manifest: { ptPmids: [] } });
   o.guideline = { analyze: async (paper) => ({ paper, org: 'AHA' }) };
   o.fullText = { run: async (papers) => ({ papers }) };

@@ -84,6 +84,9 @@ jobs:
           # ★ `vars.<이름>` 표현식은 변수 미설정 시 **빈 문자열**을 주입한다. 코드가 이를
           #   0으로 읽어 풀이 1로 붕괴, 재순위가 4주간 안 돌았다(F1). 여기서도 기본값을 준다.
           ENABLE_RERANK:          ${{ vars.ENABLE_RERANK || 'true' }}
+          # 가이드라인 개편 자동 발행 게이트. 미설정=관찰 전용(수집·판정·큐만, 발행 안 함).
+          # 폰에서 repo Variable 하나로 켜고 끈다 — 되돌리는 것도 같은 한 줄이다.
+          ENABLE_GUIDELINE_AUTOPUBLISH: ${{ vars.ENABLE_GUIDELINE_AUTOPUBLISH }}
           RERANK_POOL:            ${{ vars.RERANK_POOL || '20' }}
           # Phase 2/3 — Google Drive·YouTube·TTS (미설정 시 해당 단계만 소프트 스킵)
           GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}

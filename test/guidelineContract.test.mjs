@@ -60,6 +60,7 @@ async function dailyStage(queue = [], overrides = {}) {
   const o = new TrendReviewOrchestrator();
   o.outputDir = dir;
   o.guidelineListPath = file;
+  process.env.ENABLE_GUIDELINE_AUTOPUBLISH = overrides.autoPublish ?? 'true';
   o._guidelineInputs = overrides.inputs ?? (async () => ({ candidates: [], manifest: { ptPmids: [] } }));
   o.guideline = { analyze: overrides.analyze ?? (async (paper) => ({ paper, org: 'AHA' })) };
   o.fullText = { run: async (papers) => ({ papers }) };
@@ -68,6 +69,24 @@ async function dailyStage(queue = [], overrides = {}) {
 
 const queued = (pmid, priority) => ({ id: `pmid:${pmid}`, pmid, priority, status: 'queued',
   title: `AHA cardiac arrest guideline 2026 ${pmid}`, pubDate: '2026-08-01', attempts: 0 });
+
+test('★ 관찰 전용 기본값: 게이트가 꺼져 있으면 큐가 차도 발행하지 않는다', async () => {
+  const { o, file } = await dailyStage([queued('1', 10)], { autoPublish: 'false' });
+  const card = await o._stageGuideline('2026-08-15');
+  assert.equal(card, null, '수집 확대와 자동 발행이 같이 켜지면 오탐이 곧바로 발행된다');
+  const state = JSON.parse(await readFile(file, 'utf8'));
+  assert.equal(state.published.length, 0);
+  assert.equal(state.lastRun.outcome, 'observe-only');
+  assert.equal(state.queue.length, 1, '관찰 모드에서도 큐는 그대로 쌓인다');
+});
+
+test('★ 관찰 전용에서도 분석기(LLM)는 부르지 않는다', async () => {
+  let calls = 0;
+  const { o } = await dailyStage([queued('1', 10)],
+    { autoPublish: 'false', analyze: async () => { calls += 1; return null; } });
+  await o._stageGuideline('2026-08-15');
+  assert.equal(calls, 0);
+});
 
 test('게이트: 7일 주기 판정을 가이드라인 단계가 더는 호출하지 않는다 (④-D)', () => {
   const src = readFileSync(new URL('../src/orchestrator/TrendReviewOrchestrator.js', import.meta.url), 'utf8');

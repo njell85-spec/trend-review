@@ -500,8 +500,17 @@ export class TrendReviewOrchestrator {
       });
       state.sourceHealth = { ...state.sourceHealth, organizations: orgHealth };
 
-      const pick = state.queue.filter((x) => x.status === 'queued')
-        .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0];
+      // ★ 관찰 전용 게이트 (계획서 §13 배포 순서 2·5단계).
+      //   수집 확대(G4/G5)를 켠 첫 주는 **자동 발행을 붙이지 않는다** — 넓힌 그물과
+      //   자동 발행이 같이 켜지면 오탐이 곧바로 발행된다. 기본값은 관찰이다.
+      //   관찰 모드에서도 수집·판정·큐 적재·상태 저장은 전부 돈다. 발행만 안 한다.
+      //   따라서 프로덕션에서 매일 실측이 쌓이고, PeterJ 가 `ENABLE_GUIDELINE_AUTOPUBLISH=true`
+      //   하나로 발행을 켠다. 되돌리는 것도 그 한 줄이다.
+      const autoPublish = String(process.env.ENABLE_GUIDELINE_AUTOPUBLISH ?? '').toLowerCase() === 'true';
+      const pick = autoPublish
+        ? state.queue.filter((x) => x.status === 'queued')
+          .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0]
+        : undefined;
       const manifest = {
         pubmed: pubmedManifest, orgSources: orgHealth, collectionError,
         decisions: {
@@ -513,10 +522,11 @@ export class TrendReviewOrchestrator {
         publish: { attempted: Boolean(pick), candidateId: pick?.id ?? null, analyzed: false, stateContainsPublishedId: false },
       };
       if (!pick) {
-        state.lastRun = { runId, outcome: 'empty', publishedId: null, manifest };
+        const outcome = autoPublish ? 'empty' : 'observe-only';
+        state.lastRun = { runId, outcome, publishedId: null, manifest };
         state.updatedAt = new Date().toISOString();
         await saveGuidelineState(this.guidelineListPath, state);
-        this._stageEnd(entry, 'skipped', { outcome: 'empty', runId, candidateId: null });
+        this._stageEnd(entry, 'skipped', { outcome, runId, candidateId: null });
         return null;
       }
 

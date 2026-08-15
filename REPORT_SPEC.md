@@ -293,6 +293,10 @@ guidelines.html   ② 가이드라인 및 기타
   (attempts·lastError 기록, 3회면 `needsReview`). 상태 손상은 **빈 상태로 덮어쓰지 않고** 그날만 건너뛴다.
   최상위 try/catch 유지 — 가이드라인이 무엇으로 실패해도 논문 데일리는 계속된다(§4 불변식).
   §1-C 의 7일 게이트 조항은 이로써 폐지됐고, G0 회귀 그물의 게이트 5건을 **행위 테스트로** 다시 썼다.
+  ★ **관찰 전용이 기본값이다** — `ENABLE_GUIDELINE_AUTOPUBLISH` 가 `true` 가 아니면 수집·판정·
+  큐 적재·상태 저장은 다 돌고 **발행만 안 한다**(`outcome:'observe-only'`, LLM 0). 계획서 §13 이
+  요구한 "수집 확대를 dry-run 으로 먼저 관찰"을 프로덕션에서 그대로 한다. 폰에서 repo Variable
+  하나로 켜고 끈다.
   G10: `scripts/guideline-backfill.mjs`(기본 dry-run — 어떤 파일도 안 바꾼다) +
   `.github/workflows/guideline-backfill.yml`(workflow_dispatch · **LLM 시크릿 미사용**).
 
