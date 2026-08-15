@@ -15,20 +15,41 @@
    - Cloud Text-to-Speech API
 
 ## 2. OAuth 클라이언트 + 동의 화면 (15분)
-1. "API 및 서비스 → OAuth 동의 화면": User Type **외부**, 앱 이름 `trend-review`,
-   본인 이메일 입력 → **테스트 사용자에 본인 Gmail 추가** (⚠️ 빠뜨리면 로그인 차단됨).
-   게시 상태는 "테스트" 유지(심사 불필요 · refresh token은 계속 유효).
-2. "사용자 인증 정보 → 사용자 인증 정보 만들기 → OAuth 클라이언트 ID":
-   유형 **데스크톱 앱** → 생성 → **JSON 다운로드** → 저장소 루트에 `credentials.json`으로 저장
+
+> 콘솔 메뉴가 개편돼 **"OAuth 동의 화면"이 "Google 인증 플랫폼(Google Auth Platform)"**
+> 아래로 들어갔습니다. 왼쪽에 **브랜딩 / 대상(Audience) / 클라이언트(Clients) /
+> 데이터 액세스(Data access)** 가 보이면 그 화면이 맞습니다. (2026-08-04 확인)
+
+1. "API 및 서비스 → Google 인증 플랫폼 → **대상(Audience)**":
+   User Type **외부(External)**, 앱 이름 `trend-review`, 본인 이메일 입력.
+2. ⚠️ **게시 상태를 "프로덕션(In production)"으로 올립니다** — 같은 화면의
+   **[앱 게시 / PUBLISH APP]** 버튼.
+   **"테스트" 상태로 두면 refresh token이 7일마다 만료됩니다**(구글 규칙). 그러면 매주
+   재발급하지 않는 한 아카이브가 조용히 죽습니다 — **2026-07-08 사망의 실제 원인이
+   이것이었고, 이 문서의 종전 안내("테스트 유지 · 계속 유효")가 사실과 반대였습니다**
+   (2026-08-04 정정, GC#60).
+3. **데이터 액세스(Data access)** 의 스코프는 **`.../auth/drive.file` 하나만** 둡니다.
+   `drive.file`은 구글 분류상 **비민감**이라 프로덕션으로 게시해도 **심사가 필요 없습니다.**
+   `youtube.upload`는 **민감 스코프**라 넣으면 게시가 심사 대상이 됩니다 — Phase 3 영상
+   업로드를 실제로 켜는 날 추가하고 재인증하세요(아래 3-b).
+4. "클라이언트(Clients) → 클라이언트 만들기": 유형 **데스크톱 앱** → 생성 →
+   **JSON 다운로드** → 저장소 루트에 `credentials.json`으로 저장
    (gitignore 대상 — 커밋 금지, spec-lint가 감시).
 
 ## 3. refresh token 발급 (10분)
 ```bash
 node scripts/google-auth-setup.mjs
 ```
-- 브라우저가 열리면 본인 계정 선택 → 경고 화면("확인되지 않은 앱")에서 **고급 → 이동** → Drive·YouTube 권한 허용.
+- 브라우저가 열리면 본인 계정 선택 → (경고 화면이 뜨면 **고급 → 이동**) → Drive 권한 허용.
 - 터미널에 출력되는 `GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN` 3줄을 복사.
 - ⚠️ 출력값은 비밀 — 등록 후 터미널 기록 삭제.
+
+### 3-b. 나중에 Phase 3(영상 업로드)를 켤 때만
+1. `src/utils/googleAuth.js`의 `GOOGLE_SCOPES`에
+   `https://www.googleapis.com/auth/youtube.upload`를 다시 추가.
+2. 콘솔 **데이터 액세스**에도 같은 스코프 추가 → 3번을 다시 실행해 재인증 → Secrets 갱신.
+3. 민감 스코프라 게시 상태가 "프로덕션"이면 심사 안내가 뜰 수 있습니다. 본인만 쓰는
+   앱이면 미검증 상태로도 동작하지만(경고 화면 경유), 그때 실제 화면을 보고 판단하세요.
 
 ## 4. Cloud TTS API 키 (5분)
 "사용자 인증 정보 → 만들기 → API 키" → 생성된 키를 복사.
@@ -85,5 +106,10 @@ Variables `GOOGLE_DRIVE_FOLDER_ID`는 **등록하지 않습니다** — 폴더�
 ## 문제 해결
 - **"이 앱은 확인되지 않았습니다" 차단**: 2-1 테스트 사용자 미등록 — 본인 Gmail 추가 후 재시도.
 - **refresh_token이 안 나옴**: https://myaccount.google.com/permissions 에서 `trend-review` 승인 삭제 후 3번 재실행.
-- **Actions에서 401/invalid_grant**: Secrets 오타 또는 토큰 회수 — 3번 재실행 → Secrets 갱신.
+- **Actions에서 401/invalid_grant**: refresh token이 만료·회수된 것입니다. **먼저 2-2의
+  게시 상태를 봅니다** — "테스트"면 7일마다 이 일이 반복되므로 **프로덕션으로 올린 뒤**
+  3번 재실행 → Secrets 갱신. 프로덕션인데도 났다면 승인 철회·6개월 미사용·비밀번호 변경
+  쪽이니 3번 재실행만으로 됩니다.
+  (증상: 리포트·대시보드·카톡은 정상인데 드라이브에만 안 쌓임. 2026-08-04부터는 이런 날
+  워크플로의 `archive-gate` 잡이 **빨갛게** 실패하므로 조용히 지나가지 않습니다.)
 - **YouTube 업로드 403 (channelNotFound 등)**: 6-a 채널 생성 후 3번을 다시 실행해 채널 컨텍스트로 재승인.
