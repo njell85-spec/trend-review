@@ -287,6 +287,15 @@ guidelines.html   ② 가이드라인 및 기타
 
 ## 5. 변경 이력
 
+- 2026-08-15 (arm F 전량 스크리닝): `config/collection.json` 의 `monthly.screenDepth` **1000 → 3000**.
+  전환 첫날 실측(run `31844016618`)에서 **12구간 전부가 상한에 걸려** 있었다 — 구간별 실제
+  1,013~2,575편(합 21,946)인데 12,000편만 회수돼 **9,946편(45%)이 점수조차 안 매겨졌다.**
+  `sort=date` 내림차순이라 절단은 각 30일 구간의 **오래된 쪽부터** 일어난다.
+  **LLM 토큰 변화 0**(사전순위는 결정적 `MetadataScorer`, 재순위 풀 36·efetch 12×100 은 불변).
+  늘어나는 것은 esummary 요청뿐(60 → 116회/일, 총 192 → 248). 순차 호출이라 **요청 속도(≈0.85/s)는
+  그대로**여서 NCBI 한도 여유도 불변. 월별 수집 구간 소요 85s → 약 151s.
+  회귀: `test/monthlyScreenDepth.test.mjs` — 절단 보고와 설정값을 고정(종전 무테스트).
+
 - 2026-08-15 (가이드라인 개편 G1 — 전용 스코어러·기관 스키마): `config/guideline-orgs.json`(기관 9곳 ·
   정책값) · `src/utils/guidelineOrgs.js`(fail-fast 검증기 + 기관 판정) ·
   `src/utils/GuidelineScorer.js`(권위·주제·최신성·범위·발견신뢰도 전용 점수식) 신설.
