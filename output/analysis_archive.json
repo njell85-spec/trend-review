@@ -2183,6 +2183,57 @@
       "fullTextSource": "abstract+registry",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-16",
+      "pmid": "41159835",
+      "title": "Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early Septic Shock: The ANDROMEDA-SHOCK-2 Randomized Clinical Trial.",
+      "title_ko": "초기 패혈성 쇼크에서 모세혈관 재충전 시간(Capillary Refill Time)을 목표로 한 개인 맞춤형 혈역학 소생술: ANDROMEDA-SHOCK-2 무작위 임상시험",
+      "journal": "JAMA",
+      "doi": "10.1001/jama.2025.20402",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "초기 패혈성 쇼크 성인 환자에서 capillary refill time을 목표로 한 개인 맞춤형 혈역학 소생술 프로토콜(CRT-PHR)이 usual care에 비해 사망률·생명유지치료 기간·재원기간의 계층적 복합 결과를 개선하는가?",
+      "pico": {
+        "population": "[International] Patients within the first 4 hours of septic shock (Sepsis-3: suspected/confirmed infection plus hyperlactatemia and norepinephrine requirement due to persistent hypotension after ≥1000 mL fluid load in 1 hour) enrolled at 86 centers in 19 countries between March 2022 and April 2025 (last follow-up July 2025); from 1501 randomized, 1467 were included in the primary analysis (mean age, 66 [17] years; 43.3% female).",
+        "intervention": "CRT-PHR (n = 720), a personalized hemodynamic resuscitation protocol including assessment of pulse pressure, diastolic arterial pressure, fluid responsiveness, and bedside echocardiography, to tailor fluids, vasopressors, and inotropes.",
+        "comparison": "Usual care (n = 747).",
+        "outcome": "Hierarchical composite of mortality, duration of vital support (vasoactives, mechanical ventilation, and kidney replacement therapy), and length of hospital stay assessed at 28 days, analyzed by win ratio stratified by median APACHE II score: 131 131 wins (48.9%) in CRT-PHR vs 112 787 (42.1%) in usual care, win ratio 1.16 (95% CI, 1.02-1.33; P = .04). Individual wins — death 19.1% vs 17.8%; duration of vital support 26.4% vs 21.1%; length of hospital stay 3.4% vs 3.2%."
+      },
+      "pico_ko": {
+        "population": "[다국가] 패혈성 쇼크 발생 후 첫 4시간 이내 환자(Sepsis-3: 의심/확진 감염 + hyperlactatemia + 1시간 동안 ≥1000 mL 수액 부하 후에도 지속되는 저혈압으로 인한 norepinephrine 요구). 19개국 86개 센터에서 2022년 3월~2025년 4월 등록(최종 추적 2025년 7월); 무작위 배정된 1501명 중 1467명이 일차 분석에 포함(평균 연령 66 [17]세, 43.3% 여성).",
+        "intervention": "CRT-PHR(n = 720): pulse pressure, diastolic arterial pressure, fluid responsiveness, bedside echocardiography 평가를 포함해 수액·혈압상승제·강심제를 맞춤 조절하는 개인 맞춤형 혈역학 소생술 프로토콜.",
+        "comparison": "Usual care(n = 747).",
+        "outcome": "28일 시점의 사망률, 생명유지치료 기간(vasoactives, mechanical ventilation, kidney replacement therapy), 재원기간의 계층적 복합 결과를 median APACHE II 점수로 층화한 win ratio로 분석: CRT-PHR 131 131 wins(48.9%) vs usual care 112 787(42.1%), win ratio 1.16(95% CI, 1.02-1.33; P = .04). 개별 wins — 사망 19.1% vs 17.8%; 생명유지치료 기간 26.4% vs 21.1%; 재원기간 3.4% vs 3.2%."
+      },
+      "keyFindings": [
+        "The hierarchical composite primary outcome favored CRT-PHR with 131 131 wins (48.9%) vs 112 787 (42.1%) in usual care, win ratio 1.16 (95% CI, 1.02-1.33; P = .04).",
+        "The benefit was driven primarily by a lower duration of vital support (individual wins 26.4% vs 21.1%), not by mortality (death wins 19.1% vs 17.8%) or length of hospital stay (3.4% vs 3.2%).",
+        "The trial was large and pragmatic — 86 centers in 19 countries, 1501 randomized (720 CRT-PHR vs 747 usual care), 1467 in the primary analysis (mean age 66 [17] years, 43.3% female)."
+      ],
+      "keyFindings_ko": [
+        "계층적 복합 일차 결과는 CRT-PHR에 유리하여 131 131 wins(48.9%) vs usual care 112 787(42.1%), win ratio 1.16(95% CI, 1.02-1.33; P = .04)였다.",
+        "이득은 주로 짧아진 생명유지치료 기간(개별 wins 26.4% vs 21.1%)에서 비롯되었고, 사망(19.1% vs 17.8%)이나 재원기간(3.4% vs 3.2%)에서는 아니었다.",
+        "이 시험은 대규모 실용적 연구로 19개국 86개 센터에서 1501명 무작위 배정(720명 CRT-PHR vs 747명 usual care), 일차 분석 1467명(평균 연령 66 [17]세, 43.3% 여성)이었다."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41159835",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41159835/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1001/jama.2025.20402",
+          "url": "https://doi.org/10.1001/jama.2025.20402"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT05057611 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT05057611"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
