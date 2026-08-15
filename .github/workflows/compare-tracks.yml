@@ -1,11 +1,12 @@
 # .github/workflows/compare-tracks.yml
 name: Track Comparison (Arm1 vs Arm2 · 2주 실험)
 
-# 데일리(06:30 KST) 커밋 이후 08:00 KST(=23:00 UTC 전날)에 실행.
+# 데일리(06:30 KST) 커밋 이후 08:00 KST(=23:00 UTC 전날)에 실행하던 2주 실험.
 # 데일리 코어 무접촉: output/analysis_archive.json 읽기만, experiments/ 만 커밋.
+# 2026-08-15: 스케줄 제거 — 실험 수집(7/12~7/30)이 끝난 뒤 스크립트가 매일 no-op 으로만
+# 돌고 있었다(TRACK_COMPARE_END 경과, 실측 0초 스텝). 데이터는 experiments/ 에 보존돼 있고
+# 19일치 분석은 별도 task 다. 재실험 때는 workflow_dispatch 로 수동 실행하거나 스케줄을 되살린다.
 on:
-  schedule:
-    - cron: '0 23 * * *'   # 08:00 KST
   workflow_dispatch:
 
 permissions:
