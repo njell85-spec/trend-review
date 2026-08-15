@@ -28,6 +28,44 @@ function auditItem(item) {
   };
 }
 
+
+// ★ "그날 아침 이 로직이 돌았다면 무엇이 뽑혔을까" 를 날짜별로 재생한다.
+//   개수만 세는 것과 다르다 — 개수는 "자격이 되는 게 몇 건인가" 를 말하고,
+//   이것은 "8월 1일엔 뭐가, 2일엔 뭐가 나갔을까" 를 말한다. PeterJ 가 보려던 것이 이것이다.
+//
+//   규칙은 프로덕션 `_stageGuideline()` 과 같다:
+//     ① 그날까지 **발행된**(pubDate <= 그날) 후보만 큐에 있다 — 미래 문서를 미리 뽑지 않는다
+//     ② 이미 나간 것은 다시 안 나간다
+//     ③ 하루 최대 한 편, priority 최상위
+//     ④ 큐가 비면 그날은 건너뛴다 (확정 ④-D)
+export function simulateDailyPublishing(rows, { minDate, maxDate }) {
+  const toDay = (v) => String(v ?? '').slice(0, 10).replaceAll('/', '-');
+  const start = new Date(toDay(minDate));
+  const end = new Date(toDay(maxDate));
+  const eligible = rows.filter((r) => r.status === 'queued');
+  const published = new Set();
+  const days = [];
+  for (let d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
+    const day = d.toISOString().slice(0, 10);
+    const available = eligible
+      .filter((r) => !published.has(r.id ?? `pmid:${r.pmid}`))
+      .filter((r) => !r.pubDate || toDay(r.pubDate) <= day)
+      .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
+    const pick = available[0];
+    if (pick) {
+      published.add(pick.id ?? `pmid:${pick.pmid}`);
+      days.push({ date: day, outcome: 'published', pmid: pick.pmid,
+        org: pick.organizationId ?? null, priority: pick.priority ?? null,
+        title: pick.title ?? '', queueLeft: available.length - 1 });
+    } else {
+      days.push({ date: day, outcome: 'empty', queueLeft: 0 });
+    }
+  }
+  const publishedDays = days.filter((x) => x.outcome === 'published').length;
+  return { days, publishedDays, skippedDays: days.length - publishedDays,
+    coverage: days.length ? publishedDays / days.length : 0 };
+}
+
 export async function runGuidelineBackfill({
   windows = DEFAULT_BACKFILL_WINDOWS, today = new Date(), fetchJson, apply = false,
   statePath, orgs: suppliedOrgs, interests: suppliedInterests, collect = collectGuidelineCandidates,
@@ -85,6 +123,7 @@ export async function runGuidelineBackfill({
         supersetViolation: { violated: missing.length > 0, missing },
         anchors: { ptAndTier1: anchors.map((x) => x.pmid), recovered, lost, recallRate: anchors.length ? recovered.length / anchors.length : null },
         queueDepth: { queued: queued.length, daysSustainable: queued.length / 30 },
+        simulation: simulateDailyPublishing(rows, window),
         audit: { queued: queued.map(auditItem) },
         rejectedSample: rejected.slice(0, 20).map((x) => ({ pmid: x.pmid ?? null, title: x.title ?? '', reasons: x.reasons })),
       });
@@ -101,7 +140,7 @@ export async function runGuidelineBackfill({
       //   계획서 §11 이 막으려는 무음 실패가 실험 도구 자신에게서 나는 꼴이다.
       //   초집합 여부도 `false`(=위반 없음)가 아니라 `null`(=판정 못 함)이다.
       stopSignals.push(`⑤ ${window.label}: 수집 실패 — 이 창은 판정 불가 (${message})`);
-      reports.push({ window, error: message, manifest: null, counts: { candidates: 0, queued: 0, needsReview: 0, rejected: 0 }, supersetViolation: { violated: missing.length > 0 ? true : null, missing, evaluated: false }, anchors: { ptAndTier1: [], recovered: [], lost: [], recallRate: null }, queueDepth: { queued: 0, daysSustainable: 0 }, audit: { queued: [] }, rejectedSample: [] });
+      reports.push({ window, error: message, manifest: null, counts: { candidates: 0, queued: 0, needsReview: 0, rejected: 0 }, supersetViolation: { violated: missing.length > 0 ? true : null, missing, evaluated: false }, anchors: { ptAndTier1: [], recovered: [], lost: [], recallRate: null }, queueDepth: { queued: 0, daysSustainable: 0 }, simulation: { days: [], publishedDays: 0, skippedDays: 0, coverage: 0 }, audit: { queued: [] }, rejectedSample: [] });
     }
   }
   if (apply) {

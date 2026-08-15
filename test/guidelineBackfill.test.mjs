@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { runGuidelineBackfill } from '../src/utils/guidelineBackfill.js';
+import { runGuidelineBackfill, simulateDailyPublishing } from '../src/utils/guidelineBackfill.js';
 import { loadGuidelineOrgs } from '../src/utils/guidelineOrgs.js';
 
 const interests = { topicGroups: { resus: { weight: 1, terms: ['cardiac arrest'] } } };
@@ -78,4 +78,55 @@ test('★ 실패한 창의 초집합 판정은 false(위반 없음)가 아니라
   assert.equal(report.windows[0].supersetViolation.violated, null,
     'false 는 "검사했고 위반 없음" 이라는 뜻이라 거짓말이 된다');
   assert.equal(report.windows[0].supersetViolation.evaluated, false);
+});
+
+// ── 일자별 발행 시뮬레이션 ────────────────────────────────────────────────
+// 개수만 세는 것과 다르다. 개수는 "자격이 되는 게 몇 건인가", 이것은 "그날 아침
+// 이 로직이 돌았다면 무엇이 뽑혔을까" 다. 프로덕션 `_stageGuideline()` 과 같은 규칙:
+// 그날까지 발행된 문서만 · 재발행 없음 · 하루 한 편 · 빈 큐면 건너뜀.
+
+const q = (pmid, priority, pubDate) => ({ id: `pmid:${pmid}`, pmid, priority, pubDate,
+  status: 'queued', title: `Guideline ${pmid}` });
+
+test('★ 하루 한 편씩, priority 순으로 나간다', () => {
+  const sim = simulateDailyPublishing(
+    [q('1', 10, '2026-07-01'), q('2', 9, '2026-07-01'), q('3', 8, '2026-07-01')],
+    { minDate: '2026/07/01', maxDate: '2026/07/03' });
+  assert.deepEqual(sim.days.map((d) => d.pmid), ['1', '2', '3']);
+  assert.equal(sim.publishedDays, 3);
+  assert.equal(sim.skippedDays, 0);
+});
+
+test('★ 아직 발행 안 된 문서를 미리 뽑지 않는다', () => {
+  const sim = simulateDailyPublishing(
+    [q('late', 10, '2026-07-05')],
+    { minDate: '2026/07/01', maxDate: '2026/07/06' });
+  const first = sim.days.find((d) => d.outcome === 'published');
+  assert.equal(first.date, '2026-07-05', '문서 발행일 전에 뽑으면 미래를 훔쳐보는 것이다');
+  assert.equal(sim.days.slice(0, 4).every((d) => d.outcome === 'empty'), true);
+});
+
+test('★ 큐가 마르면 그날부터는 건너뛴다 (확정 ④-D)', () => {
+  const sim = simulateDailyPublishing(
+    [q('1', 10, '2026-07-01')],
+    { minDate: '2026/07/01', maxDate: '2026/07/05' });
+  assert.equal(sim.publishedDays, 1);
+  assert.equal(sim.skippedDays, 4);
+  assert.equal(sim.coverage, 0.2);
+});
+
+test('★ 같은 문서를 두 번 발행하지 않는다', () => {
+  const sim = simulateDailyPublishing(
+    [q('1', 10, '2026-07-01')],
+    { minDate: '2026/07/01', maxDate: '2026/07/03' });
+  const pmids = sim.days.filter((d) => d.outcome === 'published').map((d) => d.pmid);
+  assert.equal(new Set(pmids).size, pmids.length);
+});
+
+test('★ needsReview·rejected 는 시뮬레이션에 안 들어간다 (자동 발행 대상이 아니다)', () => {
+  const sim = simulateDailyPublishing(
+    [{ ...q('1', 10, '2026-07-01'), status: 'needsReview' },
+     { ...q('2', 9, '2026-07-01'), status: 'rejected' }],
+    { minDate: '2026/07/01', maxDate: '2026/07/03' });
+  assert.equal(sim.publishedDays, 0);
 });
