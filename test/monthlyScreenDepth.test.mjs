@@ -65,15 +65,15 @@ test('절단: 상한을 올리면 같은 구간이 전량 스크리닝으로 바
   assert.equal(before.perMonth[0].truncated, true);
   assert.equal(before.perMonth[0].found, 1000);
   assert.equal(after.perMonth[0].truncated, false);
-  assert.equal(after.perMonth[0].found, found, '실측 최다 구간이 3000 상한 안에 들어와야 한다');
+  assert.equal(after.perMonth[0].found, found, '실측 최다 구간이 상한 안에 들어와야 한다');
   // efetch 예산은 상한과 무관하게 고정이다 — 늘어나는 것은 esummary 뿐이다.
   assert.equal(before.perMonth[0].kept, after.perMonth[0].kept);
 });
 
-test('설정: screenDepth 는 3000 이다 (실측 최다 구간 2,575 를 덮는다)', async () => {
+test('설정: screenDepth 는 5000 이다 (실측 최다 구간 2,575 위로 여유를 둔다)', async () => {
   const cfg = JSON.parse(await readFile(new URL('../config/collection.json', import.meta.url), 'utf8'));
-  assert.equal(cfg.monthly.screenDepth, 3000,
-    '되돌리면 구간마다 오래된 쪽이 잘려 45% 가 점수조차 못 받는다 (2026-08-15 실측)');
+  assert.equal(cfg.monthly.screenDepth, 5000,
+    '되돌리면 구간마다 오래된 쪽이 잘려 45% 가 점수조차 못 받는다 (2026-08-15 실측). 상한은 회수량이 아니라 캡이라 높여도 비용이 같다.');
   assert.equal(cfg.monthly.screenPerMonth, 100, 'efetch 예산 12×100 은 그대로다');
   assert.equal(cfg.monthly.keepPerMonth, 3);
 });
