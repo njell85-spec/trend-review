@@ -96,3 +96,41 @@ test('진짜 학회 지침은 소급 판정에서도 guideline 으로 남는다'
       `진짜 지침이 걸러졌다(과잉 차단): ${entry.title} → ${result.reasons.join(',')}`);
   }
 });
+
+// ── 재생 실험 W3(2025/12/18~2026/01/17) 실측에서 잡은 미탐 ──────────────────
+// "Executive summary of the Brain Trauma Foundation Guidelines for the Management of
+//  Penetrating Traumatic Brain Injury, Second Edition." 이 `summary of the` 에 걸려
+// **기각**됐다. 지침의 공식 요약본은 지침 그 자체의 일부다 — 버리면 안 된다.
+// 반대로 "지침을 소개하는 저널 글" 도 같은 표현을 쓴다. 제목만으로는 안 갈린다.
+// 그래서 이 부류는 기각이 아니라 `needsReview` 격리로 내렸다(설계 §6.5 그대로).
+
+test('★ 지침의 공식 요약본을 버리지 않는다 (기각 → 검토함)', () => {
+  const orgs = loadGuidelineOrgs();
+  // ★ PT 를 일부러 빼고 본다. PT 가 있으면 다른 분기로 새어 이 규칙을 판별하지 못한다
+  //   (첫 시도의 테스트가 그래서 변이에 안 걸렸다). 확장 경로로 들어오는 문서가 정확히
+  //   이 모양이고, 실험에서 실제로 기각된 것도 이 경로다.
+  const result = classifyGuidelineDocument({
+    title: 'Executive summary of the Brain Trauma Foundation Guidelines for the Management of Penetrating Traumatic Brain Injury, Second Edition.',
+    discoveredBy: ['pubmed-title'],
+  }, { orgs });
+  assert.notEqual(result.verdict, 'rejected', '공식 요약본을 버리면 그 지침을 통째로 놓친다');
+  assert.equal(result.verdict, 'needsReview');
+});
+
+test('★ 그래도 지침 해설 논문은 자동 발행 후보가 아니다', () => {
+  const orgs = loadGuidelineOrgs();
+  const result = classifyGuidelineDocument({
+    title: '[The 2026 Surviving Sepsis Campaign guidelines: from evidence updates to practice implementation].',
+    publicationTypes: ['Guideline'], discoveredBy: ['pubmed-pt'],
+  }, { orgs });
+  assert.notEqual(result.verdict, 'guideline');
+});
+
+test('★ 합의과정 연구는 여전히 기각이다 (격리로 완화되지 않는다)', () => {
+  const orgs = loadGuidelineOrgs();
+  const result = classifyGuidelineDocument({
+    title: 'Quality indicators for the practice of emergency medicine in Europe (EUSEM-QI-V1): results of a European-wide expanded Delphi consensus process.',
+  }, { orgs });
+  assert.equal(result.verdict, 'rejected');
+  assert.ok(result.reasons.includes('consensus-process-study'));
+});
