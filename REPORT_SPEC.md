@@ -44,6 +44,33 @@
 - 카드에 **"직접 지정" 배지**(주황) 표기 · 지정 PMID는 제외목록 등록으로 이후 자동 선정과 중복 방지.
 - 소프트 성격: 분석 실패 시 대시보드 미변경. Secrets 미설정 시 아카이브만 스킵.
 
+## 1-C. 가이드라인 자동 선정 — 현행 계약 (개편 G0 기준선)
+
+개편 설계서: `docs/superpowers/plans/2026-08-14-guideline-selection-redesign-plan.md` (G0~G10).
+아래는 **개편 전 현행 동작**이며, 회귀 테스트 `test/guidelineContract.test.mjs` 가 이것을 고정한다.
+G1~G10 이 이 계약을 바꿀 때는 **그 커밋이 테스트도 같이 고쳐** 변경이 의도된 것임을 남긴다.
+
+- **주기 게이트 7일** — `guidelineIntervalDays` 기본 7. 노출 기록이 없으면 첫날부터 시도하고,
+  마지막 노출로부터 7일 이상 지나야 다시 시도한다. 판정 기준은 배열의 마지막 항목이 아니라
+  **가장 최근 날짜**다. 주기가 아닌 날에는 **PubMed·LLM 을 아예 부르지 않는다.**
+- **상태 파일은 배열** — `output/selected_guidelines.json` 은 `{pmid,title,org?,date}` 배열이며
+  누적 append 만 한다. `org` 는 선택 필드이고, 수동 웹 항목은 `pmid` 가 빈 문자열이며
+  `sourceUrl`·`sourceId` 를 가진다. **이 배열이 v2 승격(G3)의 무손실 입력이다.**
+- **수동 URL = PeterJ 최종 승인 (확정 ⑤-A)** — `scripts/on-demand.mjs` 의 입력 검사는
+  URL 형식과 `kind=guideline|reference` 뿐이다. **자동 학회 수집(G5)의 도메인·기관 검증을
+  이 경로에 재사용하지 않는다.** PeterJ 가 넘긴 URL 은 그 자체로 공식성 판정이 끝난 것이다.
+- **non-fatal 경계** — 수집·선정·분석·본문확보 중 무엇이 실패해도 `_stageGuideline()` 은
+  throw 하지 않고 `null` 을 돌려준다. 가이드라인 장애가 그날 논문 데일리를 죽이면 안 된다(§4 불변식).
+- **논문 경로 불변** — 가이드라인 수집은 `DataCollectorAgent.collectGuidelines()` 로 분리돼 있고
+  `run()` 은 이를 부르지 않는다. 선정기는 후보 객체를 변형하지 않는다.
+
+**PeterJ 확정 5건 (2026-08-14)** — 개편이 향할 곳:
+①-B+①-C 자동 인정 범위를 PT 밖(consensus·statement·focused update·recommendations)까지 넓히고
+승인 학회 사이트도 별도 수집 · ②-C 주제 무매칭 tier-1 은 버리지 않고 `needsReview` 보존 ·
+③-C 신판은 새 카드, 구판은 삭제 없이 `superseded` 배지 · ④-D 매일 시도하되 큐가 비면 건너뜀 ·
+⑤-A 수동 URL 은 승인 그 자체(도메인 검증 금지).
+
+
 ## 2. 리포트 메시지 포맷 (텔레그램 · 정본 `src/utils/reportMessage.js`)
 
 ```
@@ -259,6 +286,12 @@ guidelines.html   ② 가이드라인 및 기타
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-08-15 (가이드라인 개편 G0 — 회귀 보호): §1-C 신설 — 개편 전 **현행 계약**(7일 게이트 ·
+  배열 상태 = v2 마이그레이션 입력 · 수동 URL 최종 승인 · non-fatal 경계 · 논문 경로 불변)을
+  명문화하고 `test/guidelineContract.test.mjs` 23건으로 고정. **런타임 배선 무변경.**
+  변이 6종(게이트 주기·상태 필드 유실·catch 재throw·수동 URL 기관검증·선정기 입력변형·
+  run() 결합) 전부 적색 확인.
 
 - 2026-08-04 (알림 채널 텔레그램 단일화): §4-D 전면 개정 — 카카오 폐지(`KakaoNotifier` 삭제,
   워크플로우 `KAKAO_*` env 제거), 전 발송 지점(**on-demand·materialize·NotebookLM 리마인더 포함**)을
