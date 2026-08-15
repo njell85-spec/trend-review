@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "_comment": "가이드라인 검색 전용 주제어. config/interests.json(논문 선정용)과 **별개 파일**이다 — PeterJ 확정 2026-08-15. 논문 선정은 그 파일을 그대로 쓰고 여기는 안 본다. 숫자·단어만 고쳐 폰에서 튜닝. 왜 나눴나: interests.json 은 '이 논문이 내 관심사인가'를 점수로 재는 목록이라 넓은 단어(cardiac·trauma·triage)가 들어 있어도 가중치로 눌린다. 그런데 검색축으로 쓰면 가중치가 안 먹고 그냥 다 걸린다 — 실측에서 그 넓은 단어들이 축을 지배했다.",
+
+  "search": {
+    "_comment": "field=Title 이 핵심이다. Title/Abstract 로 재 보니 2,894편 중 1,097편(38%)이 **제목이 아니라 초록에서만** 걸렸다 — 다른 주제 지침이 초록에서 lactate·transfusion 을 한 번 언급한 것들이다. 지침은 주제를 제목에 쓴다.",
+    "field": "Title",
+    "alsoSearchMeshTerms": true
+  },
+
+  "groups": {
+    "cardiac_resus": {
+      "label": "심혈관·소생",
+      "terms": [
+        "cardiac arrest", "out-of-hospital cardiac arrest", "in-hospital cardiac arrest",
+        "cardiopulmonary resuscitation", "cpr", "defibrillation", "return of spontaneous circulation",
+        "post-cardiac arrest", "post-arrest", "targeted temperature management", "neuroprognostication",
+        "acute coronary syndrome", "myocardial infarction", "stemi", "nstemi",
+        "aortic dissection", "acute aortic syndrome",
+        "acute heart failure", "heart failure", "cardiogenic shock",
+        "atrial fibrillation", "ventricular fibrillation", "ventricular tachycardia",
+        "valvular heart disease", "infective endocarditis",
+        "pulmonary embolism", "venous thromboembolism", "deep vein thrombosis",
+        "ecmo", "ecpr", "extracorporeal membrane oxygenation", "extracorporeal life support"
+      ]
+    },
+    "sepsis_shock": {
+      "label": "패혈증·쇼크·혈역학",
+      "terms": [
+        "sepsis", "septic shock", "surviving sepsis",
+        "vasopressor", "norepinephrine", "vasopressin",
+        "fluid resuscitation", "fluid therapy", "distributive shock",
+        "hemodynamic monitoring", "haemodynamic monitoring", "circulatory shock",
+        "source control"
+      ]
+    },
+    "resp_airway": {
+      "label": "호흡·기도·기계환기",
+      "terms": [
+        "ards", "acute respiratory distress syndrome", "acute respiratory failure",
+        "copd", "chronic obstructive pulmonary disease", "asthma", "status asthmaticus",
+        "interstitial lung disease", "pulmonary fibrosis",
+        "airway management", "difficult airway", "tracheal intubation", "endotracheal intubation",
+        "rapid sequence intubation", "video laryngoscopy", "tracheostomy",
+        "mechanical ventilation", "invasive ventilation", "non-invasive ventilation",
+        "high-flow nasal", "prone positioning", "ventilator weaning", "extubation",
+        "oxygen therapy"
+      ]
+    },
+    "infection": {
+      "label": "감염 (비패혈증 국소)",
+      "terms": [
+        "community-acquired pneumonia", "hospital-acquired pneumonia", "ventilator-associated pneumonia",
+        "pneumonia", "urinary tract infection", "pyelonephritis",
+        "skin and soft tissue infection", "cellulitis", "necrotizing fasciitis",
+        "intra-abdominal infection", "cholangitis", "cholecystitis",
+        "bacterial meningitis", "meningitis", "encephalitis",
+        "bacteremia", "bloodstream infection", "candidemia",
+        "antimicrobial resistan", "antibiotic steward"
+      ]
+    },
+    "neuro": {
+      "label": "신경 응급",
+      "terms": [
+        "acute ischemic stroke", "ischaemic stroke", "stroke",
+        "mechanical thrombectomy", "thrombectomy", "intravenous thrombolysis", "tenecteplase",
+        "intracerebral hemorrhage", "intracerebral haemorrhage",
+        "subarachnoid hemorrhage", "subarachnoid haemorrhage",
+        "status epilepticus", "seizure", "epilepsy",
+        "traumatic brain injury", "intracranial pressure", "acute vertigo"
+      ]
+    },
+    "endo_metabolic": {
+      "label": "응급 내분비·대사",
+      "terms": [
+        "diabetic ketoacidosis", "hyperosmolar hyperglycemic", "hyperglycemic crisis",
+        "adrenal insufficiency", "adrenal crisis",
+        "thyroid storm", "thyrotoxicosis", "myxedema coma",
+        "hyperkalemia", "hyperkalaemia", "hyponatremia", "hyponatraemia"
+      ]
+    },
+    "vascular_gi_other": {
+      "label": "혈관·소화기·기타 응급",
+      "terms": [
+        "hypertensive emergency", "hypertensive crisis", "anaphylaxis",
+        "acute limb ischemia", "acute limb ischaemia", "peripheral artery disease",
+        "renal colic", "nephrolithiasis", "urolithiasis",
+        "gastrointestinal bleeding", "gastrointestinal haemorrhage", "variceal bleeding",
+        "acute pancreatitis", "acute liver failure", "acute kidney injury",
+        "renal replacement therapy", "continuous renal replacement"
+      ]
+    },
+    "trauma_hemorrhage": {
+      "label": "외상·출혈",
+      "terms": [
+        "major trauma", "polytrauma", "trauma resuscitation", "damage control",
+        "hemorrhagic shock", "haemorrhagic shock", "massive transfusion",
+        "massive hemorrhage", "massive haemorrhage", "tranexamic acid",
+        "penetrating trauma", "blunt trauma", "pelvic fracture", "rib fracture",
+        "burn injury", "burns management",
+        "anticoagulation reversal", "reversal of anticoagulation", "bleeding management"
+      ]
+    },
+    "critical_care_practice": {
+      "label": "중환자 진료 실무",
+      "terms": [
+        "sedation", "analgesia and sedation", "delirium", "agitation",
+        "nutrition support", "enteral nutrition", "parenteral nutrition",
+        "transfusion threshold", "red blood cell transfusion",
+        "stress ulcer prophylaxis", "thromboprophylaxis",
+        "procedural sedation", "pain management in the emergency",
+        "end-of-life care in the intensive"
+      ]
+    },
+    "toxicology_environmental": {
+      "label": "중독·환경 응급",
+      "terms": [
+        "poisoning", "intoxication", "overdose", "toxicology",
+        "alcohol withdrawal", "opioid overdose", "carbon monoxide",
+        "accidental hypothermia", "heat stroke", "heat-related illness",
+        "envenomation", "drowning"
+      ]
+    },
+    "procedure_dx": {
+      "label": "응급 술기·진단",
+      "terms": [
+        "point-of-care ultrasound", "point of care ultrasound", "pocus",
+        "focused cardiac ultrasound", "lung ultrasound", "echocardiography in the",
+        "central venous catheter", "vascular access"
+      ]
+    }
+  },
+
+  "excludeTitle": {
+    "_comment": "제목에 이 표현이 있으면 검색축에서 뺀다. 지침이 아니라 지침을 **연구한** 논문이거나 우리 범위 밖인 것. 문서 성격 판정(guidelineClassifier)이 뒤에서 또 거르지만, 검색 단계에서 빼면 모수 자체가 깨끗해진다.",
+    "terms": [
+      "veterinary", "dental", "dentistry", "orthodontic", "dermatolog",
+      "cosmetic", "aesthetic", "acupuncture", "traditional chinese medicine"
+    ]
+  }
+}
