@@ -6,7 +6,7 @@ on:
       windows:
         description: Day-offset windows
         required: true
-        default: 60-30,150-120,240-210
+        default: 30-0,60-30,150-120
 
 jobs:
   backfill:
@@ -43,6 +43,20 @@ jobs:
             L.push("");
             L.push("정지 신호 " + r.stopSignals.length + "건");
             for (const s of r.stopSignals) L.push("- " + s);
+            L.push("");
+            L.push("### 일자별 발행 시뮬레이션 — 그날 아침 이 로직이 돌았다면");
+            for (const w of r.windows) {
+              const s = w.simulation ?? { days: [], publishedDays: 0, skippedDays: 0, coverage: 0 };
+              L.push("");
+              L.push(`**${w.window.label} (${w.window.minDate}~${w.window.maxDate})** — 발행 ${s.publishedDays}일 / 건너뜀 ${s.skippedDays}일 (${(s.coverage*100).toFixed(0)}%)`);
+              L.push("");
+              L.push("| 날짜 | 결과 | 기관 | 뽑힌 지침 |");
+              L.push("|---|---|---|---|");
+              for (const d of s.days) {
+                if (d.outcome === "published") L.push(`| ${d.date} | 발행 | ${d.org ?? "-"} | ${d.title} |`);
+                else L.push(`| ${d.date} | 건너뜀 | — | (큐 비어 있음) |`);
+              }
+            }
             L.push("");
             L.push("### queued 전수 감사 대상 (판정은 마지막 두 칸 — 블라인드로 먼저 보라)");
             for (const w of r.windows) {
