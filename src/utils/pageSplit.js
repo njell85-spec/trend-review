@@ -322,10 +322,10 @@ export function mergePages(indexHtml, guidelinesHtml) {
 /**
  * 병합 본문을 두 페이지로 가른다.
  * @param {string} html   병합 본문(= 기존 publish 로직을 통과한 index 형태 페이지)
- * @param {{refIds?:Set<string>, pagesUrl?:string}} opts
+ * @param {{refIds?:Set<string>, pagesUrl?:string, needsReview?:Array<object>}} opts
  * @returns {{index:string, guidelines:string, counts:object}}
  */
-export function splitPages(html, { refIds = null } = {}) {
+export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
   if (!html || !html.includes(A_START) || !html.includes(T_OPEN)) {
     // 스캐폴드가 아니면 가르지 않는다(소프트) — 원본을 그대로 index 로 둔다.
     return { index: html, guidelines: null, counts: null };
@@ -390,6 +390,7 @@ export function splitPages(html, { refIds = null } = {}) {
 
   const guidelinesOut =
     gHead +
+    reviewBox(needsReview) +
     secHead('📋', '가이드라인', counts.guidelines, '공식 발행기관의 진료지침 — 캐치업 큐에서 순차 소개') +
     (sec.guidelines.length ? sec.guidelines.join('\n') : emptyBox('아직 소개된 가이드라인이 없습니다.')) +
     secHead('🔖', '기타 자료', counts.others, '직접 지정한 참고자료 — 공인 문서가 아닐 수 있습니다(카드의 “출처 성격” 참고)') +
@@ -400,6 +401,21 @@ export function splitPages(html, { refIds = null } = {}) {
     stripArchiveStatus(afterTable);
 
   return { index: indexOut, guidelines: guidelinesOut, counts };
+}
+
+function reviewBox(items) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  const rows = items.map((item) => {
+    const title = item.title ?? item.paper?.title ?? '제목 없음';
+    const org = item.organization ?? item.organizationId ?? item.org ?? '기관 미상';
+    const reasons = Array.isArray(item.reasons) ? item.reasons.join(', ') : (item.reasons ?? '사유 없음');
+    return `<li><div class="review-title">${escapeHtml(title)}</div><div class="review-org">${escapeHtml(org)}</div><div class="review-reasons">판정 이유: ${escapeHtml(reasons)}</div></li>`;
+  }).join('');
+  return `<details class="guideline-review"><summary>검토함 <span class="n">${items.length}건</span></summary><ul>${rows}</ul></details>`;
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 /** 아카이브 저장 현황(§4-E)은 논문 아카이브 기준이라 index 에만 둔다. */

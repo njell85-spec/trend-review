@@ -84,6 +84,9 @@ jobs:
           # ★ `vars.<이름>` 표현식은 변수 미설정 시 **빈 문자열**을 주입한다. 코드가 이를
           #   0으로 읽어 풀이 1로 붕괴, 재순위가 4주간 안 돌았다(F1). 여기서도 기본값을 준다.
           ENABLE_RERANK:          ${{ vars.ENABLE_RERANK || 'true' }}
+          # 가이드라인 개편 자동 발행 게이트. 미설정=관찰 전용(수집·판정·큐만, 발행 안 함).
+          # 폰에서 repo Variable 하나로 켜고 끈다 — 되돌리는 것도 같은 한 줄이다.
+          ENABLE_GUIDELINE_AUTOPUBLISH: ${{ vars.ENABLE_GUIDELINE_AUTOPUBLISH }}
           RERANK_POOL:            ${{ vars.RERANK_POOL || '20' }}
           # Phase 2/3 — Google Drive·YouTube·TTS (미설정 시 해당 단계만 소프트 스킵)
           GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
@@ -119,6 +122,22 @@ jobs:
           git diff --staged --quiet \
             && echo "state unchanged" \
             || (git commit -m "chore: sync daily state (papers + guideline gate + archive/video)" && git push)
+
+      # 가이드라인은 non-fatal 단계다. 증거 불일치는 annotation과 artifact로 남기되
+      # 논문 데일리 잡의 성공 여부에는 영향을 주지 않는다.
+      - name: Verify guideline run evidence
+        if: always()
+        continue-on-error: true
+        run: node scripts/verify-guideline-run.mjs output/selected_guidelines.json guidelines.html "${{ runner.temp }}/guideline-run-manifest.json"
+
+      - name: Upload guideline run manifest
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: guideline-run-manifest-${{ github.run_id }}
+          path: ${{ runner.temp }}/guideline-run-manifest.json
+          if-no-files-found: warn
 
       # 타워(global-config)의 사용량 장부에 이번 실행의 토큰·비용을 적재한다.
       # 규칙 정본: global-config rulebook/usage-accounting.md (계약 C1).

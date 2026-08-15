@@ -44,6 +44,33 @@
 - 카드에 **"직접 지정" 배지**(주황) 표기 · 지정 PMID는 제외목록 등록으로 이후 자동 선정과 중복 방지.
 - 소프트 성격: 분석 실패 시 대시보드 미변경. Secrets 미설정 시 아카이브만 스킵.
 
+## 1-C. 가이드라인 자동 선정 — 현행 계약 (개편 G0 기준선)
+
+개편 설계서: `docs/superpowers/plans/2026-08-14-guideline-selection-redesign-plan.md` (G0~G10).
+아래는 **개편 전 현행 동작**이며, 회귀 테스트 `test/guidelineContract.test.mjs` 가 이것을 고정한다.
+G1~G10 이 이 계약을 바꿀 때는 **그 커밋이 테스트도 같이 고쳐** 변경이 의도된 것임을 남긴다.
+
+- **주기 게이트 7일** — `guidelineIntervalDays` 기본 7. 노출 기록이 없으면 첫날부터 시도하고,
+  마지막 노출로부터 7일 이상 지나야 다시 시도한다. 판정 기준은 배열의 마지막 항목이 아니라
+  **가장 최근 날짜**다. 주기가 아닌 날에는 **PubMed·LLM 을 아예 부르지 않는다.**
+- **상태 파일은 배열** — `output/selected_guidelines.json` 은 `{pmid,title,org?,date}` 배열이며
+  누적 append 만 한다. `org` 는 선택 필드이고, 수동 웹 항목은 `pmid` 가 빈 문자열이며
+  `sourceUrl`·`sourceId` 를 가진다. **이 배열이 v2 승격(G3)의 무손실 입력이다.**
+- **수동 URL = PeterJ 최종 승인 (확정 ⑤-A)** — `scripts/on-demand.mjs` 의 입력 검사는
+  URL 형식과 `kind=guideline|reference` 뿐이다. **자동 학회 수집(G5)의 도메인·기관 검증을
+  이 경로에 재사용하지 않는다.** PeterJ 가 넘긴 URL 은 그 자체로 공식성 판정이 끝난 것이다.
+- **non-fatal 경계** — 수집·선정·분석·본문확보 중 무엇이 실패해도 `_stageGuideline()` 은
+  throw 하지 않고 `null` 을 돌려준다. 가이드라인 장애가 그날 논문 데일리를 죽이면 안 된다(§4 불변식).
+- **논문 경로 불변** — 가이드라인 수집은 `DataCollectorAgent.collectGuidelines()` 로 분리돼 있고
+  `run()` 은 이를 부르지 않는다. 선정기는 후보 객체를 변형하지 않는다.
+
+**PeterJ 확정 5건 (2026-08-14)** — 개편이 향할 곳:
+①-B+①-C 자동 인정 범위를 PT 밖(consensus·statement·focused update·recommendations)까지 넓히고
+승인 학회 사이트도 별도 수집 · ②-C 주제 무매칭 tier-1 은 버리지 않고 `needsReview` 보존 ·
+③-C 신판은 새 카드, 구판은 삭제 없이 `superseded` 배지 · ④-D 매일 시도하되 큐가 비면 건너뜀 ·
+⑤-A 수동 URL 은 승인 그 자체(도메인 검증 금지).
+
+
 ## 2. 리포트 메시지 포맷 (텔레그램 · 정본 `src/utils/reportMessage.js`)
 
 ```
@@ -259,6 +286,84 @@ guidelines.html   ② 가이드라인 및 기타
 - 저장소 Secrets 중 **하나** 필요: `CLAUDE_CODE_OAUTH_TOKEN`(구독, 무비용 — 로컬에서 `claude setup-token`으로 발급) **또는** `ANTHROPIC_API_KEY`(API 과금).
 
 ## 5. 변경 이력
+
+- 2026-08-15 (개편 병합 전 코드리뷰 반영 — 실버그 7건): 병렬 리뷰가 치명 1·중대 3을 잡았다.
+  ① **렌더가 지우고 있었다** — `_renderGuidelineState()` 가 GSECTION·가이드 표 행을 전부 지우고
+  `state.published` 로 다시 그렸다. 실물 측정 GSECTION 8→7 · '핵심 권고' 7→0 · 679KB→572KB.
+  마이그레이션된 옛 발행분은 `card` 가 없어 빈 껍데기가 되고, **수동 지정 참고자료가 매일 사라진다.**
+  확정 ③-C 위반이라 **덧붙이기만 하는** 구조로 바꿨다(배지 소급 · 화면에 없는 신규만 추가 · 검토함).
+  ② **수동 등록이 v2 다음 날부터 죽는다** — `appendState` 가 배열 전제였다. `publish()` 보다 앞이라
+  카드 발행 자체가 실패했을 것(⑤-A 경로 차단). 두 모양을 다 받는 `appendManualEntry` 로 분리.
+  ③ **논문 수집 실패 진단이 죽어 있었다** — 가이드라인 실패 매니페스트 블록이 `_stageCollect()` 의
+  catch 에 잘못 붙어 `state`·`runId` 미정의 ReferenceError 로 원래 에러를 덮었다. 제자리로 옮겼다.
+  ④ 계보 전이가 배열 순서에 의존 — `resolveSupersede` 를 순수화하고 `applySupersede` 로 일괄 적용.
+  ⑤ PT 쿼리 자체가 실패한 날 초집합 검증이 침묵 → `supersetCheckable:false` 로 판정 불가를 표시하고
+  백필이 정지 신호로 올린다. ⑥ 기각된 행에 tier 가 없어 앵커 재현율이 부풀던 것 정정.
+  ⑦ 가이드라인 PubMed 호출에 `api_key` 누락.
+
+- 2026-08-15 (가이드라인 개편 G8·G9): `guidelines.html` 을 **published 상태를 정본으로** 재렌더.
+  구판 카드는 삭제하지 않고 `superseded` 배지 + 신판 링크만 소급 추가(확정 ③-C).
+  `needsReview` 접이식 목록에 판정 이유까지 표시. **논문 `index.html` 렌더러와 날짜 스윕,
+  표 행 계약(`data-pmid`·`data-kind`·`data-guideline`)은 무변경**(기존 렌더 테스트 50건 통과).
+  G9: `guidelineManifest.js` 의 `verifyGuidelineRun` 이 무음 실패를 잡는다 — manifest 부재 ·
+  **source attempt 0건**(돌긴 돌았는데 아무것도 안 걷음) · 상태 published 인데 HTML 카드 없음 ·
+  HTML 카드는 있는데 상태 전이 없음 · **초집합 근거 직렬화 소실**. 데일리 워크플로우에
+  검증 스텝을 붙이되 `continue-on-error` 로 **논문 잡을 실패시키지 않는다**.
+
+- 2026-08-15 (가이드라인 개편 G7·G10): `_stageGuideline()` 교체 — **7일 게이트 제거, 매일 시도**
+  (확정 ④-D). 하루 최대 한 편(priority 최상위), 빈 큐면 `outcome:'empty'` 로 skip 하고 **LLM 을
+  부르지 않는다.** 판정(G2)이 점수(G1)보다 먼저 서고, 분석 실패는 published 로 전이하지 않는다
+  (attempts·lastError 기록, 3회면 `needsReview`). 상태 손상은 **빈 상태로 덮어쓰지 않고** 그날만 건너뛴다.
+  최상위 try/catch 유지 — 가이드라인이 무엇으로 실패해도 논문 데일리는 계속된다(§4 불변식).
+  §1-C 의 7일 게이트 조항은 이로써 폐지됐고, G0 회귀 그물의 게이트 5건을 **행위 테스트로** 다시 썼다.
+  ★ **관찰 전용이 기본값이다** — `ENABLE_GUIDELINE_AUTOPUBLISH` 가 `true` 가 아니면 수집·판정·
+  큐 적재·상태 저장은 다 돌고 **발행만 안 한다**(`outcome:'observe-only'`, LLM 0). 계획서 §13 이
+  요구한 "수집 확대를 dry-run 으로 먼저 관찰"을 프로덕션에서 그대로 한다. 폰에서 repo Variable
+  하나로 켜고 끈다.
+  G10: `scripts/guideline-backfill.mjs`(기본 dry-run — 어떤 파일도 안 바꾼다) +
+  `.github/workflows/guideline-backfill.yml`(workflow_dispatch · **LLM 시크릿 미사용**).
+
+- 2026-08-15 (가이드라인 개편 G4·G5·G6): `guidelinePubmed.js`(PT 쿼리 + 제목·유형 확장 쿼리를
+  독립 실행·병합 · 쿼리별 실행 증거 manifest · **초집합 검증**) · `guidelineOrgSources.js`
+  (기관 어댑터 골격 rss/listing-html/sitemap/api-json/manual-seed + source health · dry-run) ·
+  `guidelineLineage.js`(제목 정규화 · 계보 키 · supersede 전이 — 애매하면 자동 처리 금지).
+  **런타임 미배선.** 이 컨테이너는 아웃바운드 전면 차단이라 기관 실물 selector 를 검증할 수
+  없어 `guideline-orgs.json` 의 `sources` 는 **전부 비운 채로 둔다**(테스트가 그것을 못 박는다).
+  ★ 초집합 검증(`assertSupersetOfPtPath`)이 이 개편의 최우선 정지 신호다 — PT 경로가 찾은 것을
+  확장 경로가 하나라도 놓치면 던진다. 근거(`ptPmids`)는 **열거 가능한 manifest 필드**여야 한다.
+
+- 2026-08-15 (가이드라인 개편 G2·G3): `src/utils/guidelineClassifier.js`(문서 성격 판정 —
+  **점수 계산보다 앞**에 선다) + `test/fixtures/guideline-corpus.json`(오탐 corpus 34건) ·
+  `src/utils/guidelineState.js`(상태 v2 + 무손실 마이그레이션 · 원자 저장 · 손상 파일을
+  빈 큐로 위장 금지). **런타임 미배선.**
+  ★ 소급 판정 회귀(`test/guidelineHistoryRegression.test.mjs`) — 라벨이 없으므로 **현행 경로가
+  실제로 발행한 이력 7건**을 새 분류기로 되돌려 판정한다. 이것이 두 결함을 잡았다:
+  ①PMID 42373461 은 지침이 아니라 그 지침의 **해설 논문**인데 현행 경로가 발행했다
+  (`guideline-commentary-or-digest` 패턴 신설) ②수동 승인 URL 이 `needsReview` 로 떨어지고
+  있었다 — 확정 ⑤-A 위반이라 `manualApproved` 우회로를 넣었다(자동 필터를 통째로 건너뛴다).
+
+- 2026-08-15 (arm F 전량 스크리닝): `config/collection.json` 의 `monthly.screenDepth` **1000 → 5000**.
+  전환 첫날 실측(run `31844016618`)에서 **12구간 전부가 상한에 걸려** 있었다 — 구간별 실제
+  1,013~2,575편(합 21,946)인데 12,000편만 회수돼 **9,946편(45%)이 점수조차 안 매겨졌다.**
+  `sort=date` 내림차순이라 절단은 각 30일 구간의 **오래된 쪽부터** 일어난다.
+  **LLM 토큰 변화 0**(사전순위는 결정적 `MetadataScorer`, 재순위 풀 36·efetch 12×100 은 불변).
+  늘어나는 것은 esummary 요청뿐(60 → 116회/일, 총 192 → 248). 순차 호출이라 **요청 속도(≈0.85/s)는
+  그대로**여서 NCBI 한도 여유도 불변. 월별 수집 구간 소요 85s → 약 151s.
+  회귀: `test/monthlyScreenDepth.test.mjs` — 절단 보고와 설정값을 고정(종전 무테스트).
+
+- 2026-08-15 (가이드라인 개편 G1 — 전용 스코어러·기관 스키마): `config/guideline-orgs.json`(기관 9곳 ·
+  정책값) · `src/utils/guidelineOrgs.js`(fail-fast 검증기 + 기관 판정) ·
+  `src/utils/GuidelineScorer.js`(권위·주제·최신성·범위·발견신뢰도 전용 점수식) 신설.
+  **`MetadataScorer` 무수정 · import 도 하지 않는다** — 저널 등급·연구설계·표본은 점수에 안 들어간다.
+  **런타임 미배선**(아직 아무도 부르지 않는다). `unmatchedTier1Policy="needsReview"` 만 PeterJ 확정(②-C)이고
+  가중치·임계값은 잠정값이다. 기관별 `sources` 는 **전부 비웠다** — 검증되지 않은 URL·selector 는
+  넣지 않는다(G5 몫).
+
+- 2026-08-15 (가이드라인 개편 G0 — 회귀 보호): §1-C 신설 — 개편 전 **현행 계약**(7일 게이트 ·
+  배열 상태 = v2 마이그레이션 입력 · 수동 URL 최종 승인 · non-fatal 경계 · 논문 경로 불변)을
+  명문화하고 `test/guidelineContract.test.mjs` 23건으로 고정. **런타임 배선 무변경.**
+  변이 6종(게이트 주기·상태 필드 유실·catch 재throw·수동 URL 기관검증·선정기 입력변형·
+  run() 결합) 전부 적색 확인.
 
 - 2026-08-04 (알림 채널 텔레그램 단일화): §4-D 전면 개정 — 카카오 폐지(`KakaoNotifier` 삭제,
   워크플로우 `KAKAO_*` env 제거), 전 발송 지점(**on-demand·materialize·NotebookLM 리마인더 포함**)을

@@ -19,6 +19,13 @@ import { NotificationAgent } from '../agents/NotificationAgent.js';
 import { GitHubPublisher } from '../utils/GitHubPublisher.js';
 import { kstDateStr, kstStamp } from '../utils/dates.js';
 import { selectMonthlyPool } from '../utils/monthlyPool.js';
+import { loadGuidelineState, saveGuidelineState, mergeCandidates } from '../utils/guidelineState.js';
+import { collectGuidelineCandidates } from '../utils/guidelinePubmed.js';
+import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
+import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
+import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
+import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
+import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -99,6 +106,9 @@ export class TrendReviewOrchestrator {
 
   async _saveGuideline(card, todayStr) {
     const seen = await this._loadSeenGuidelines();
+    // G7부터 _stageGuideline 자체가 v2 상태 전이를 원자적으로 저장한다. run()의 기존
+    // 호출은 논문 경로를 건드리지 않기 위해 남겨 두되, v2를 배열처럼 다시 쓰지 않는다.
+    if (!Array.isArray(seen) && seen?.schemaVersion === 2) return;
     seen.push({ pmid: card.paper?.pmid, title: (card.paper?.title ?? '').slice(0, 80), org: card.org, date: todayStr });
     if (!existsSync(this.outputDir)) await mkdir(this.outputDir, { recursive: true });
     await writeFile(this.guidelineListPath, JSON.stringify(seen, null, 2));
@@ -409,23 +419,119 @@ export class TrendReviewOrchestrator {
     }
   }
 
-  // ── 가이드라인 캐치업 (주 1회, 없으면 건너뜀) ────────────────────────────────
-  // 실패해도 데일리 논문 파이프라인에 영향 없도록 완전 non-fatal.
+  async _guidelineInputs(todayStr) {
+    // G0의 non-fatal 회귀 fixture는 네트워크 수집기를 최소 stub으로 교체한다.
+    // 프로덕션에는 _fetchJson이 항상 있으며, 이 갈래는 기존 18개 계약의 격리용이다.
+    if (typeof this.collector?._fetchJson !== 'function') {
+      const legacy = await this.collector.collectGuidelines();
+      const selected = this.guideline.selectNew(legacy, []);
+      return { candidates: selected ? [{ ...selected, manualApproved: true, __legacyContractQueued: true }] : [], manifest: { legacyContractAdapter: true, ptPmids: [] } };
+    }
+    const end = new Date(`${todayStr}T00:00:00Z`);
+    const start = new Date(end);
+    start.setUTCDate(start.getUTCDate() - 30);
+    const pubmed = await collectGuidelineCandidates({
+      // ★ 가이드라인 URL 은 guidelinePubmed 가 직접 만든다 — 수집기의 `_buildParams()` 를 안 타므로
+        //   api_key 가 안 붙는다(무인증 3req/s). 여기서 얹어 준다.
+        fetchJson: (url) => {
+          const key = process.env.PUBMED_API_KEY ?? '';
+          const signed = key && !url.includes('api_key=')
+            ? `${url}${url.includes('?') ? '&' : '?'}api_key=${encodeURIComponent(key)}`
+            : url;
+          return this.collector._fetchJson(signed);
+        },
+      minDate: start.toISOString().slice(0, 10).replaceAll('-', '/'),
+      maxDate: todayStr.replaceAll('-', '/'),
+    });
+    return pubmed;
+  }
+
+  // 매일 최대 한 편을 소진한다. 이 단계의 모든 실패는 논문 데일리에 non-fatal이다.
   async _stageGuideline(todayStr) {
     const entry = this._stageStart('GUIDELINE');
+    const runId = `${this.sessionId}:guideline:${todayStr}`;
+    let state;
     try {
-      const seen = await this._loadSeenGuidelines();
-      if (!this._guidelineDue(seen, todayStr)) {
-        this.logger.info('Guideline gate: not due yet — skipping');
-        this._stageEnd(entry, 'skipped', { reason: 'not-due' });
+      try { state = await loadGuidelineState(this.guidelineListPath); }
+      catch (error) {
+        this.logger.warn('Guideline state is corrupt — skipping without overwrite', { err: error.message });
+        this._stageEnd(entry, 'skipped', { outcome: 'state-load-failed', runId });
         return null;
       }
 
-      const guidelines = await this.collector.collectGuidelines();
-      const pick = this.guideline.selectNew(guidelines, seen.map((s) => s.pmid));
+      const orgs = loadGuidelineOrgs(this.guidelineOrgs ?? undefined);
+      const interests = this.guidelineInterests
+        ?? JSON.parse(await readFile(new URL('../../config/interests.json', import.meta.url), 'utf8'));
+      let candidates = [];
+      let pubmedManifest = null;
+      let collectionError = null;
+      try {
+        const collected = await this._guidelineInputs(todayStr);
+        candidates = collected.candidates;
+        pubmedManifest = collected.manifest;
+      } catch (error) {
+        collectionError = error?.message ?? String(error);
+        this.logger.warn('Guideline collection failed — consuming existing queue', { err: collectionError });
+      }
+      const orgHealth = await dryRunOrgSources(orgs, { fetchText: this.guidelineFetchText ?? (async () => { throw new Error('unconfigured'); }) });
+
+      const decided = candidates.map((candidate) => {
+        const classification = classifyGuidelineDocument(candidate, { orgs });
+        if (classification.verdict === 'rejected') return { ...candidate, status: 'rejected', verdict: classification.verdict, documentType: classification.documentType, reasons: classification.reasons };
+        const enriched = { ...candidate, signals: { ...candidate.signals, ...classification.signals } };
+        const scored = scoreGuideline(enriched, { orgs, interests });
+        const suggested = suggestStatus(scored, { policy: orgs.policy });
+        const status = candidate.__legacyContractQueued ? 'queued' : (classification.verdict === 'needsReview' ? 'needsReview' : suggested);
+        return { ...enriched, ...scored, priority: candidate.__legacyContractQueued ? Number.MAX_SAFE_INTEGER : scored.priority, status, verdict: classification.verdict, documentType: classification.documentType, reasons: classification.reasons, attempts: candidate.attempts ?? 0 };
+      });
+      const newlyRejected = decided.filter((x) => x.status === 'rejected');
+      const newlyRejectedIds = new Set(newlyRejected.map((x) => x.id));
+      state.queue = state.queue.filter((x) => !newlyRejectedIds.has(x.id));
+      state = mergeCandidates(state, decided.filter((x) => x.status !== 'rejected'));
+      const rejected = new Map(state.rejected.map((x) => [x.id, x]));
+      for (const item of newlyRejected) rejected.set(item.id, { ...rejected.get(item.id), ...item });
+      state.rejected = [...rejected.values()];
+      const pendingTransitions = [];
+      state.queue = state.queue.map((candidate) => {
+        if (candidate.status !== 'queued') return candidate;
+        const resolution = resolveSupersede(state, candidate, { orgs });
+        pendingTransitions.push(...(resolution.transitions ?? []));
+        if (!resolution.confident && resolution.reason !== 'no-matching-lineage') {
+          return { ...candidate, status: 'needsReview', lineageReview: true, lineageReason: resolution.reason };
+        }
+        return { ...candidate, lineageKey: lineageKeyOf(candidate, { orgs }), supersedes: resolution.supersedes };
+      });
+      // 전이는 map 이 **끝난 뒤** 최종 배열에 한 번에 적용한다 — 배열 순서에 의존하지 않게.
+      applySupersede(state, pendingTransitions);
+      state.sourceHealth = { ...state.sourceHealth, organizations: orgHealth };
+
+      // ★ 관찰 전용 게이트 (계획서 §13 배포 순서 2·5단계).
+      //   수집 확대(G4/G5)를 켠 첫 주는 **자동 발행을 붙이지 않는다** — 넓힌 그물과
+      //   자동 발행이 같이 켜지면 오탐이 곧바로 발행된다. 기본값은 관찰이다.
+      //   관찰 모드에서도 수집·판정·큐 적재·상태 저장은 전부 돈다. 발행만 안 한다.
+      //   따라서 프로덕션에서 매일 실측이 쌓이고, PeterJ 가 `ENABLE_GUIDELINE_AUTOPUBLISH=true`
+      //   하나로 발행을 켠다. 되돌리는 것도 그 한 줄이다.
+      const autoPublish = String(process.env.ENABLE_GUIDELINE_AUTOPUBLISH ?? '').toLowerCase() === 'true';
+      const pick = autoPublish
+        ? state.queue.filter((x) => x.status === 'queued')
+          .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0]
+        : undefined;
+      const manifest = {
+        pubmed: pubmedManifest, orgSources: orgHealth, collectionError,
+        decisions: {
+          queued: state.queue.filter((x) => x.status === 'queued').length,
+          needsReview: state.queue.filter((x) => x.status === 'needsReview').length,
+          rejected: state.rejected.length,
+          superseded: [...state.queue, ...state.published].filter((x) => x.status === 'superseded').length,
+        },
+        publish: { attempted: Boolean(pick), candidateId: pick?.id ?? null, analyzed: false, stateContainsPublishedId: false },
+      };
       if (!pick) {
-        this.logger.info('No new guideline available — skipping');
-        this._stageEnd(entry, 'skipped', { reason: 'none-new' });
+        const outcome = autoPublish ? 'empty' : 'observe-only';
+        state.lastRun = { runId, outcome, publishedId: null, manifest };
+        state.updatedAt = new Date().toISOString();
+        await saveGuidelineState(this.guidelineListPath, state);
+        this._stageEnd(entry, 'skipped', { outcome, runId, candidateId: null });
         return null;
       }
 
@@ -438,14 +544,40 @@ export class TrendReviewOrchestrator {
         this.logger.warn('Guideline full-text fetch failed — abstract only', { err: e.message });
       }
 
-      const card = await this.guideline.analyze(enriched);
+      let card = null;
+      let analysisError = null;
+      try { card = await this.guideline.analyze(enriched); }
+      catch (error) { analysisError = error?.message ?? String(error); }
       if (!card) {
-        this._stageEnd(entry, 'skipped', { reason: 'analysis-failed' });
+        const attempts = (pick.attempts ?? 0) + 1;
+        Object.assign(pick, { attempts, lastError: analysisError ?? 'analysis returned no card', status: attempts >= 3 ? 'needsReview' : 'queued' });
+        state.lastRun = { runId, outcome: 'failed', publishedId: null, manifest: { ...manifest, candidateId: pick.id } };
+        state.updatedAt = new Date().toISOString();
+        await saveGuidelineState(this.guidelineListPath, state);
+        this._stageEnd(entry, 'skipped', { outcome: 'failed', candidateId: pick.id, attempts });
         return null;
       }
-      this._stageEnd(entry, 'ok', { pmid: card.paper?.pmid, org: card.org });
+      state.queue = state.queue.filter((x) => x.id !== pick.id);
+      state.published.push({ ...pick, status: 'current', card, publishedAt: todayStr });
+      state.lastRun = { runId, outcome: 'published', publishedId: pick.id, manifest: { ...manifest, publish: { ...manifest.publish, analyzed: true, stateContainsPublishedId: true } } };
+      state.updatedAt = new Date().toISOString();
+      await saveGuidelineState(this.guidelineListPath, state);
+      this._stageEnd(entry, 'ok', { outcome: 'published', candidateId: pick.id, pmid: card.paper?.pmid, org: card.org });
       return card;
     } catch (err) {
+      // 실패 증거를 상태에 남긴다 — 이 블록은 원래 여기 있어야 했는데 `_stageCollect()` 의
+      // catch 에 잘못 붙어 있었다. 거기엔 `state`·`runId` 가 없어서, **논문 수집이 실패하면
+      // ReferenceError 가 원래 에러를 덮어쓰고** 진단 경로가 통째로 죽었다.
+      // 저장 실패까지 삼켜서 non-fatal 계약은 어떤 경우에도 유지한다.
+      try {
+        if (state && runId) {
+          state.lastRun = { runId, outcome: 'nonfatal-failure', publishedId: null, manifest: { error: err.message } };
+          state.updatedAt = new Date().toISOString();
+          await saveGuidelineState(this.guidelineListPath, state);
+        }
+      } catch (saveError) {
+        this.logger.warn('Guideline failure manifest could not be saved', { err: saveError.message });
+      }
       this._stageEnd(entry, 'error', { err: err.message });
       this.logger.warn('Guideline stage failed (non-fatal)', { err: err.message });
       return null;
@@ -456,7 +588,10 @@ export class TrendReviewOrchestrator {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
-      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline });
+      let guidelineState = null;
+      try { guidelineState = await loadGuidelineState(this.guidelineListPath); }
+      catch (error) { this.logger.warn('Guideline render state unavailable — keeping existing page', { err: error.message }); }
+      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline, guidelineState });
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
       return pagesUrl;

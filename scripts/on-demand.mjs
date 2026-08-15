@@ -23,6 +23,7 @@ import { kstDateStr } from '../src/utils/dates.js';
 
 import { isHttpUrl, fetchSourceText, buildWebGuideline } from '../src/utils/externalGuideline.js';
 import { applyUserText } from '../src/utils/userSuppliedText.js';
+import { appendManualEntry } from '../src/utils/guidelineState.js';
 
 import { installUsageDump } from '../src/utils/usageDump.js';
 
@@ -164,13 +165,8 @@ try {
 /** 제외목록에 추가(중복 자동선정 방지) — publish() 전에 호출해 publisher 커밋에 포함시킨다 */
 async function appendState(rel, entry) {
   const p = path.join(process.cwd(), rel);
-  let list = [];
-  try { list = JSON.parse(await readFile(p, 'utf8')); } catch { /* 최초 */ }
-  // 웹 출처 가이드라인은 pmid 가 빈 문자열 — 그대로 비교하면 서로 다른 문서가 전부 중복 판정된다.
-  const same = (x) => (entry.pmid ? x.pmid === entry.pmid
-    : Boolean(entry.sourceId) && x.sourceId === entry.sourceId);
-  if (!list.some(same)) {
-    list.push(entry);
-    await writeFile(p, JSON.stringify(list, null, 2), 'utf8');
-  }
+  let raw = null;
+  try { raw = JSON.parse(await readFile(p, 'utf8')); } catch { /* 최초 */ }
+  const { changed, next } = appendManualEntry(raw, entry);
+  if (changed) await writeFile(p, JSON.stringify(next, null, 2), 'utf8');
 }
