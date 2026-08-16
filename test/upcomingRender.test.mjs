@@ -155,21 +155,25 @@ test('트랙마다 온오프 토글 버튼이 하나씩 붙는다', async () => 
 test('★ 예고 블록은 자기 스타일을 들고 다닌다 (맨몸으로 나가지 않는다)', () => {
   const out = render({ from: '2026-08-16', days: 1, tracks: [oneTrack()] });
   assert.match(out, /<style>[\s\S]*\.up-item[\s\S]*<\/style>/, '블록에 스타일이 없다');
-  assert.ok(out.indexOf('<style>') < out.indexOf('<section class="upcoming"'),
+  assert.ok(out.indexOf('<style>') < out.indexOf('<details class="upcoming"'),
     '스타일이 섹션보다 뒤에 있다');
 });
 
-test('★ 긴 제목은 잘리고 전문은 title 속성에 남는다', () => {
+// ★ 계약 변경 (PeterJ 지시 2026-08-17) — **제목을 자르지 않는다.**
+//   종전에는 66자에서 잘랐는데, 그러면 무엇에 대한 지침인지가 잘려 나가
+//   🗑 를 누를지 말지를 판단할 수 없다. 길어지는 문제는 블록 접힘으로 푼다.
+test('★ 긴 제목이 잘리지 않고 전부 나온다 (삭제 판단에 필요)', () => {
   const long = '가'.repeat(300);
   const out = render({ from: '2026-08-16', days: 1,
     tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on',
       state: { queue: [{ pmid: '1', title: long, journal: 'J', score: 1 }] } }] });
   // 라벨(up-track)이 제목 span 안에 들어 있으므로 라벨 뒤부터 본다.
   const inner = out.match(/<span class="up-title"[^>]*>([\s\S]*?)<\/span>\s*(?=<span class="up-journal"|<button)/)?.[1] ?? '';
-  const shown = inner.replace(/<span class="up-track">[^<]*<\/span>\s*/, '').replace(/<[^>]*>/g, '');
-  assert.ok(shown.length <= 67, `제목이 안 잘렸다 (${shown.length}자)`);
-  assert.ok(shown.endsWith('…'), '말줄임표가 없다');
+  const shown = inner.replace(/<span class="up-track">[^<]*<\/span>\s*/, '').replace(/<[^>]*>/g, '').trim();
+  assert.equal(shown, long, `제목이 잘렸다 (${shown.length}자 / 원문 ${long.length}자)`);
   assert.ok(out.includes(`title="${long}"`), '전문이 title 속성에 없다');
+  // 잘리지 않으므로 CSS 가 줄바꿈을 허용해야 한다 — 안 그러면 가로 스크롤이 생긴다
+  assert.match(out, /\.up-title\{[^}]*overflow-wrap:anywhere/, '긴 제목 줄바꿈 규칙이 없다');
 });
 
 test('저널이 없으면 빈 칸을 그리지 않는다', () => {
@@ -181,7 +185,7 @@ test('저널이 없으면 빈 칸을 그리지 않는다', () => {
 
 test('터치 대상이 모바일 최소 크기(34px)를 지킨다', () => {
   const out = render({ from: '2026-08-16', days: 1, tracks: [oneTrack()] });
-  assert.match(out, /min-width:34px;min-height:34px/, '버튼이 너무 작다');
+  assert.match(out, /min-width:38px;min-height:38px/, '버튼이 너무 작다');
 });
 
 test('★ CSS 선택자가 실제 마크업의 클래스와 일치한다 (안 맞으면 스타일이 통째로 안 먹는다)', () => {
@@ -293,4 +297,30 @@ test('★ 가이드라인 예고는 실제 발행 대상(queued)만 보여준다
   assert.ok(block.includes('실제로 나갈 지침'), '발행 대상이 예고에 없다');
   assert.equal(block.includes('검토 대기 지침'), false,
     '검토 대기 항목을 오늘 나간다고 예고했다 — 화면이 거짓말한다');
+});
+
+
+/**
+ * ★ PeterJ 지시 2026-08-17 — 예고 리스트도 **기본 접힘**이다.
+ *   논문이 누적되면 목록이 길어져 불편하다. 카드·누적표와 같은 규칙으로 통일한다.
+ */
+test('★ 예고 블록은 접힘이 기본이다', () => {
+  const out = render({ from: '2026-08-16', days: 3, tracks: [track('papers', '논문', 'daily', 'on', 3)] });
+  assert.match(out, /<details class="upcoming"/, '예고가 접힘 블록이 아니다');
+  assert.doesNotMatch(out, /<details open class="upcoming"/, '예고가 펼쳐진 채로 나갔다');
+  // 접혀 있어도 몇 건인지는 보여야 한다 — 안 그러면 열어봐야 빈지 아닌지를 안다
+  assert.match(out, /<span class="n">3건<\/span>/, '접힌 상태에서 건수가 안 보인다');
+});
+
+/**
+ * ★ 2026-08-17 실측 — 기기가 다크모드면 `.up-day{color:#d1d5db}`(다크 규칙)를
+ *   제목이 **상속**해 흰 바탕에 흰 글씨가 됐다. 이 페이지는 배경이 라이트 전용이라
+ *   다크 규칙 자체가 성립하지 않는다. 제목은 자기 색을 명시해야 한다.
+ */
+test('★ 제목이 자기 색을 갖는다 (상속에 맡기면 다크모드에서 안 보인다)', () => {
+  const out = render({ from: '2026-08-16', days: 1, tracks: [oneTrack()] });
+  const css = out.match(/<style>([\s\S]*?)<\/style>/)[1];
+  assert.match(css, /\.up-title\{[^}]*color:#/, '.up-title 에 색이 없다 — 상속되면 다크모드에서 사라진다');
+  assert.equal(/prefers-color-scheme:\s*dark/.test(css), false,
+    '라이트 전용 페이지에 다크 규칙이 있다 — 흰 바탕에 흰 글씨가 난다');
 });

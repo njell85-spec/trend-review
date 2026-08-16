@@ -32,31 +32,41 @@ import { TRACKS as UPCOMING_TRACKS } from './controlState.js';
  */
 const UPCOMING_STYLE = `<style>
 .upcoming{margin:16px 0;font-size:14px}
-.up-h{font-size:15px;margin:0 0 8px;font-weight:600}
-.up-h small{display:block;font-weight:400;color:#6b7280;font-size:12px;margin-top:2px}
+.up-h{font-size:15px;margin:0;font-weight:700;color:#2a2724;cursor:pointer;list-style:none;
+  display:flex;align-items:center;gap:6px}
+.up-h::-webkit-details-marker{display:none}
+.up-h::after{content:'▾';color:#6f6960;font-size:12px;transition:transform .15s ease}
+.upcoming[open]>.up-h::after{transform:rotate(180deg)}
+.up-h .n{font-size:11px;font-weight:700;color:#5c574f;background:rgba(255,255,255,.6);
+  border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:2px 9px}
+.up-note{color:#5c574f;font-size:12px;display:block;margin:6px 0 10px;font-weight:400}
 .up-toggles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.up-toggle{border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}
-.up-toggle[data-up-mode=off]{background:#f3f4f6;color:#9ca3af;text-decoration:line-through}
+.up-toggle{border:1px solid #cfc9c0;background:#fff;color:#2a2724;border-radius:999px;
+  padding:5px 11px;font-size:12px;font-weight:650;cursor:pointer}
+.up-toggle[data-up-mode=off]{background:#f1efec;color:#8a847b;text-decoration:line-through}
 .up-toggle[data-up-mode=alternate]{border-style:dashed}
-.up-day{margin:10px 0 4px;font-weight:600;color:#374151;font-size:13px}
+.up-toggle[data-up-seq=on]{background:#2a2724;color:#fff;border-color:#2a2724}
 .upcoming ul{list-style:none;margin:0;padding:0}
-.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 0;border-bottom:1px solid #f0f1f3}
-.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#eef2ff;color:#4338ca;white-space:nowrap}
-.up-title{flex:1 0 100%;line-height:1.5}
-.up-journal{flex:1 1 auto;font-size:11px;color:#6b7280;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.up-warn{color:#d97706;margin-left:3px}
-.up-btn{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:6px;
-  min-width:34px;min-height:34px;font-size:13px;cursor:pointer}
-.up-empty{color:#9ca3af;padding:8px 0}
-.up-date{font-weight:600;color:#374151;font-size:13px;margin:12px 0 2px}
+.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:10px 0;
+  border-bottom:1px solid rgba(150,142,133,.28)}
+.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#e7ecfa;color:#3a4f8a;
+  white-space:nowrap;font-weight:700}
+/* ★ 제목은 **자기 색을 명시한다.** 상속에 맡겼더니 기기가 다크모드일 때 부모(.up-day)의
+   다크 규칙(#d1d5db)을 물려받아 **흰 바탕에 흰 글씨**가 됐다(2026-08-17 실측).
+   이 페이지는 배경이 라이트 전용이라 다크 규칙 자체가 성립하지 않는다. */
+.up-title{flex:1 0 100%;line-height:1.55;color:#2a2724;font-weight:600;
+  overflow-wrap:anywhere;word-break:break-word}
+.up-journal{flex:1 1 auto;font-size:11.5px;color:#5c574f;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-warn{color:#8a5f1e;margin-left:3px}
+.up-btn{flex:0 0 auto;border:1px solid #cfc9c0;background:#fff;color:#2a2724;border-radius:8px;
+  min-width:38px;min-height:38px;font-size:14px;cursor:pointer}
+.up-empty{color:#6f6960;padding:8px 0}
+.up-date{font-weight:700;color:#2a2724;font-size:12.5px;margin:12px 0 2px}
 .up-list{list-style:none;margin:0;padding:0}
-.up-note{color:#6b7280;font-size:12px;margin-top:10px}
-.up-msg{font-size:12px;color:#6b7280;min-height:16px;margin-top:6px}
-.up-reset{margin-top:10px;border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
-@media(prefers-color-scheme:dark){
- .up-toggle,.up-btn{background:#1f2937;border-color:#374151;color:#e5e7eb}
- .up-day{color:#d1d5db}.up-item{border-color:#374151}
- .up-track{background:#312e81;color:#c7d2fe}}
+.up-msg{font-size:12px;color:#5c574f;min-height:16px;margin-top:6px}
+.up-reset{margin-top:12px;border:1px solid #cfc9c0;background:#fff;color:#2a2724;
+  border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
 </style>`;
 import { normalizeControl } from './controlState.js';
 
@@ -462,9 +472,14 @@ export class GitHubPublisher {
    * (미리보기에서 한 줄이 폰 화면 절반을 먹었다), 예고는 **훑어보는 목록**이라
    * 전문이 필요 없다. 전문은 title 속성으로 남겨 길게 누르면 보이게 한다.
    */
-  static _clipTitle(t, max = 66) {
-    const v = String(t ?? '').trim();
-    return v.length > max ? `${v.slice(0, max - 1)}…` : v;
+  static _clipTitle(t) {
+    // ★ 자르지 않는다 (PeterJ 지시 2026-08-17) — **제목을 다 봐야 삭제 여부를 판단한다.**
+    //   종전에는 66자에서 잘랐는데(폰에서 한 줄이 화면 절반을 먹어서), 그러면
+    //   "Guidelines for Seizure Prophylaxis in Patients Undergoing Suprate…" 처럼
+    //   정작 무엇에 대한 지침인지가 잘려 나가 🗑 를 누를지 말지를 못 정한다.
+    //   대신 CSS 로 줄바꿈을 허용하고(.up-title overflow-wrap:anywhere) 블록 자체를
+    //   접어두어(요구 ②) 목록이 길어지는 문제를 푼다.
+    return String(t ?? '').trim();
   }
 
   /**
@@ -540,13 +555,17 @@ export class GitHubPublisher {
         + (dayHtml || '<p class="up-empty">예고할 것이 없습니다 — 큐가 비었거나 트랙이 꺼져 있습니다.</p>')
         + `<button class="up-reset" data-up-reset="${esc(key)}">이 목록 전체 갈아엎기</button>`;
 
+    // ★ 기본 접힘 (PeterJ 지시 2026-08-17). 논문이 누적되면 목록이 길어져 불편하다.
+    //   `<details>` 로 감싸고 `open` 을 주지 않는다 — 카드·누적표와 같은 규칙이다.
+    const n = rows.length;
     const block = `<!-- UPCOMING:${key} -->\n${UPCOMING_STYLE}`
-      + `<section class="upcoming" data-up-section="${esc(key)}">`
-      + `<h2 class="up-h">📅 ${esc(label)} — 다음 ${days}일 예고`
-      + ` <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2>`
+      + `<details class="upcoming" data-up-section="${esc(key)}">`
+      + `<summary class="up-h">📅 ${esc(label)} — 다음 ${days}일 예고`
+      + ` <span class="n">${n}건</span></summary>`
+      + `<span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span>`
       + body
       + `<div id="up-msg" class="up-msg"></div>`
-      + `</section>\n${script}\n<!-- /UPCOMING:${key} -->`;
+      + `</details>\n${script}\n<!-- /UPCOMING:${key} -->`;
     return out.replace('<!-- ARCHIVE_START -->', () => `${block}\n<!-- ARCHIVE_START -->`);
   }
 
@@ -674,18 +693,13 @@ export class GitHubPublisher {
       out = out.replace('<!-- TABLE_ROWS_START -->', () => `<!-- TABLE_ROWS_START -->${rows}`);
     }
 
-    // ── ③ 검토함(needsReview) — 판정 이유까지 보인다 ───────────────────────────
+    // ── ③ 검토함(needsReview) — **제거했다** (PeterJ 지시 2026-08-17) ───────────
+    //   자동 발행 기준을 통과하지 못한 후보를 판정 이유와 함께 나열하던 상자다.
+    //   분류기의 진단 정보이지 PeterJ 가 읽고 무엇을 하는 화면이 아니었다.
+    //   ★ 걷어내는 replace 는 **남긴다.** 이미 배포된 페이지에 그 블록이 들어 있으면
+    //     아무도 안 지우는 유령이 된다(이 저장소는 그 부류로 여러 번 데였다).
+    //   데이터는 `output/selected_guidelines.json` 큐에 그대로 남는다.
     out = out.replace(/\n?<!-- GNEEDSREVIEW -->[\s\S]*?<!-- \/GNEEDSREVIEW -->/g, '');
-    const review = (state.queue ?? []).filter((x) => x.status === 'needsReview');
-    if (review.length) {
-      const items = review.map((x) => {
-        const reasons = (x.decisionReasons ?? x.reasons ?? []).join(', ');
-        const org = x.organizationId ? ` · ${esc(x.organizationId)}` : '';
-        return `<li><b>${esc(x.title ?? x.id)}</b>${org}${reasons ? ` <span class="gl-reason">— ${esc(reasons)}</span>` : ''}</li>`;
-      }).join('');
-      const block = `<!-- GNEEDSREVIEW -->\n<details class="day day-past gl-review"><summary>🔎 검토함 ${review.length}건 — 자동 발행하지 않고 보관 중</summary><ul>${items}</ul></details>\n<!-- /GNEEDSREVIEW -->`;
-      out = out.replace('<!-- ARCHIVE_START -->', () => `<!-- ARCHIVE_START -->\n${block}`);
-    }
     return out;
   }
 
@@ -736,19 +750,28 @@ export class GitHubPublisher {
    * 그래서 **가진 것만 정직하게** 보여준다 — 없는 요약을 지어내지 않는다.
    */
   _buildReviewSection(dateStr, generatedAt, review, { sectionKey = dateStr } = {}) {
-    const rp = review?.paper ?? review ?? {};
+    const card = review?.card ?? null;
+    const rp = card?.paper ?? review?.paper ?? review ?? {};
     const pmid = rp.pmid ?? review?.pmid ?? '';
     const url = rp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : (rp.sourceUrl || '#'));
-    const title = review?.title_ko || rp.title || review?.title || '';
+    const title = card?.title_ko || review?.title_ko || rp.title || review?.title || '';
     const journal = rp.journal || review?.journal || '';
-    const topic = review?.topic ? `<span class="chip">${esc(review.topic)}</span>` : '';
-    const score = Number.isFinite(Number(review?.score)) ? `<span class="chip">점수 ${esc(String(review.score))}</span>` : '';
-    const card = `<article class="guideline-card">
-      <div class="pc-t"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></div>
-      <div class="pc-meta">${esc(journal)}</div>
-      <div class="pc-chips">${topic}${score}</div>
-      <div class="pc-foot"><a href="${esc(url)}" target="_blank" rel="noopener">원문</a> · 리뷰 아티클</div>
+
+    // ★ 분석 카드가 있으면 **참고자료와 같은 틀**로 그린다 (PeterJ 지시 2026-08-17).
+    //   NEJM syncope 카드가 그 모양이고, PeterJ 가 그것을 기준으로 지목했다.
+    //   `_buildGuidelineCard` 는 `type` 으로 칩을 정하므로 리뷰용 칩만 갈아끼운다.
+    const body = card
+      ? this._buildGuidelineCard({ ...card, type: 'reference' })
+        .replace('<span class="chip gl">🔖 참고자료</span>', '<span class="chip gl">📰 리뷰 아티클</span>')
+        .replace('· 직접 지정 참고자료', '· 리뷰 아티클')
+      // 분석이 실패한 날에도 **무엇이 나갔는지는 남긴다.** 빈 카드보다 얇은 카드가 낫다.
+      : `<article class="guideline-card">
+      <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📰 리뷰 아티클</span></div>
+      <div class="ttl"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></div>
+      <div class="meta">${esc(journal)}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
+      <p class="txt ko" style="margin-top:6px">본문 정리를 만들지 못했습니다 — 원문을 확인해 주세요.</p>
     </article>`;
+
     return `
 <!-- RSECTION:${sectionKey} -->
 <details class="day day-past">
@@ -759,7 +782,7 @@ export class GitHubPublisher {
     </div>
     <div class="day-prev"><span class="day-prev-medal">${IC.book(T.sec)}</span><div><div class="day-prev-t">${esc(title)}</div><div class="day-prev-m">${esc(journal)}</div></div></div>
   </summary>
-  <div class="day-panel">${card}</div>
+  <div class="day-panel">${body}</div>
 </details>
 <!-- /RSECTION:${sectionKey} -->`;
   }
@@ -1470,9 +1493,6 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
     // index 만 종전대로 기록된다(소프트 — 분할 실패가 데일리를 막지 않는다).
     const { index: indexOut, guidelines: guidesOut, reviews: reviewsOut, counts } = splitPages(updated, {
       refIds: await this._referenceIds(),
-      needsReview: guidelineState?.needsReview
-        ?? guidelineState?.queue?.filter((item) => item.status === 'needsReview')
-        ?? [],
     });
     // ★ 분할이 소프트 폴백으로 떨어지면 **아무것도 쓰지 않는다** (코드리뷰 발견 B15).
     //   종전에는 병합 본문을 index.html 에 그대로 기록하고 하위 페이지는 건너뛰었다.

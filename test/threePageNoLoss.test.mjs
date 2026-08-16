@@ -210,3 +210,41 @@ test('★ 예고 블록이 각 페이지로 라우팅된다 (요구 ② · 구�
     assert.equal(out[file].includes('구버전 블록'), false, `${file} 에 구버전 예고가 남았다`);
   }
 });
+
+
+/**
+ * ★ PeterJ 지시 2026-08-17 — 지난 카드는 **한 번 더 접는다.**
+ *   카드가 각각 접혀 있어도 날마다 한 줄씩 쌓이면 스크롤이 불편하다.
+ *   오늘 것만 밖에 두고 나머지는 묶어서 접는다.
+ */
+test('★ 오늘 카드는 밖에, 지난 카드는 한 겹 더 접힌다 (요구 ④)', () => {
+  const src = FIXTURE();
+  assert.ok(count(src, /<!-- SECTION:/g) >= 1, '픽스처에 논문 카드가 없다 — 이 검사는 헛돈다');
+
+  // 지난 논문 카드를 하나 더 넣어 "오늘 1 + 지난 1" 을 만든다
+  const withPast = src.replace('<!-- GSECTION:2026-08-10 -->', [
+    '<!-- SECTION:2026-08-15 -->',
+    '<details class="day day-past"><article class="paper-card">지난 논문</article></details>',
+    '<!-- /SECTION:2026-08-15 -->',
+    '<!-- GSECTION:2026-08-10 -->',
+  ].join('\n'));
+
+  const out = splitPages(withPast, { refIds: null });
+  assert.equal(count(out.index, /<details class="past-fold">/g), 1, '지난 논문 묶음이 없다');
+  assert.match(out.index, /지난 논문 <span class="n">1건/, '지난 건수가 안 보인다');
+  assert.doesNotMatch(out.index, /<details open class="past-fold">/, '지난 묶음이 펼쳐져 나갔다');
+
+  // ★ 오늘 카드는 묶음 **밖**에 있어야 한다 — 안에 들어가면 매일 두 번 열어야 한다
+  const fold = out.index.match(/<details class="past-fold">[\s\S]*?<\/details>/)[0];
+  assert.equal(fold.includes('SECTION:2026-08-17'), false, '오늘 카드가 지난 묶음에 들어갔다');
+  assert.ok(fold.includes('SECTION:2026-08-15'), '지난 카드가 묶음에 안 들어갔다');
+  // 손실 0 — 접는다고 카드가 사라지면 안 된다
+  assert.equal(count(out.index, /<!-- SECTION:/g), 2, '카드가 사라졌다');
+});
+
+test('★ 지난 것이 없으면 묶음을 만들지 않는다 (빈 상자 금지)', () => {
+  const out = splitPages(FIXTURE(), { refIds: null });
+  // ★ 요소로 센다. `past-fold` 라는 글자는 스타일시트에도 있어서, 문자열로 세면
+  //   CSS 규칙을 요소로 착각해 늘 실패한다(처음에 그렇게 짰다가 걸렸다).
+  assert.equal(count(out.index, /<details class="past-fold">/g), 0, '지난 것이 없는데 빈 묶음이 생겼다');
+});

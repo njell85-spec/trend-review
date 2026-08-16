@@ -32,8 +32,26 @@ test('표 행 계약과 카드 ID↔published ID를 유지한다', () => {
   assert.deepEqual(ids.sort(), state.published.map((x) => x.id).sort());
 });
 test('재렌더해도 superseded 배지가 사라지지 않는다', () => assert.match(render(), /chip superseded/));
-test('needsReview는 이유와 건수를 보이고 0건이면 목록을 숨긴다', () => {
-  assert.match(render(), /검토함 <span class="n">1건/);
-  assert.match(render(), /판정 이유: same-year-ambiguous/);
-  assert.doesNotMatch(render({ ...state, queue: [] }), /class="guideline-review"/);
+/**
+ * ★ 계약 변경 (PeterJ 지시 2026-08-17) — **검토함 블록을 없앴다.**
+ *   자동 발행 기준을 통과 못 한 후보를 판정 이유와 함께 나열하던 상자인데,
+ *   분류기 진단이지 PeterJ 가 읽고 무엇을 하는 화면이 아니었다.
+ *   데이터는 `selected_guidelines.json` 큐에 그대로 남는다 — 화면에서만 뺐다.
+ */
+test('★ 검토함 블록은 화면에 나오지 않는다', () => {
+  const out = render();
+  assert.doesNotMatch(out, /class="guideline-review"/, 'pageSplit 쪽 검토함이 남았다');
+  assert.doesNotMatch(out, /GNEEDSREVIEW/, '렌더 쪽 검토함이 남았다');
+  assert.doesNotMatch(out, /검토함/, '검토함 문구가 남았다');
+  // 전제 확인 — 픽스처에 needsReview 가 실제로 있어야 이 검사가 의미를 갖는다
+  assert.ok(state.queue.some((x) => x.status === 'needsReview'),
+    '픽스처에 needsReview 가 없다 — 이 검사는 헛돈다');
+});
+
+test('★ 이미 배포된 페이지에 남은 검토함 블록은 걷어낸다 (유령 방지)', async () => {
+  const { GitHubPublisher } = await import('../src/utils/GitHubPublisher.js');
+  const withGhost = '<!-- ARCHIVE_START -->\n<!-- GNEEDSREVIEW -->\n<details>옛 검토함</details>\n<!-- /GNEEDSREVIEW -->';
+  const out = new GitHubPublisher()._renderGuidelineState(withGhost, state, '2026-08-17');
+  assert.doesNotMatch(out, /GNEEDSREVIEW/, '배포본에 남은 검토함이 안 걷혔다');
+  assert.doesNotMatch(out, /옛 검토함/);
 });

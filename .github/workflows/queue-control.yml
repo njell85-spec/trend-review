@@ -52,6 +52,16 @@ jobs:
         run: |
           node scripts/queue-control.mjs --track "$IN_TRACK" --action "$IN_ACTION" --id "$IN_ID"
 
+      # ★ 큐만 고치면 **화면은 그대로다** (2026-08-17 실측 — 🗑 를 눌러 큐에서 빠졌는데
+      #   예고 리스트에는 그대로 남아 있었다). 예고는 발행 시점에 그려지므로, 여기서
+      #   렌더 경로를 한 번 태워야 "1~2분 뒤 새로고침하면 반영됩니다" 가 참이 된다.
+      #   분석·수집은 하지 않는다 — LLM 토큰 0.
+      - name: 예고 리스트 다시 그리기
+        run: npm ci --omit=dev && node scripts/apply-page-render.mjs
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO:  ${{ github.event.repository.name }}
+
       - name: 커밋 · 푸시 (경합 시 재시도)
         env:
           IN_TRACK:  ${{ inputs.track }}
@@ -60,11 +70,11 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- output/; then
+          if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
             echo "· 변경 없음 — 커밋하지 않는다"
             exit 0
           fi
-          git add output/
+          git add output/ index.html guidelines.html reviews.html
           git commit -m "chore(queue): $IN_TRACK $IN_ACTION $IN_ID"
           for i in 1 2 3 4; do
             if git push; then exit 0; fi

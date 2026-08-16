@@ -79,7 +79,13 @@ test('★ 재발행해도 배지가 중복되지 않는다 (멱등)', async () =
   assert.ok(count(once, /gl-superseded/g) > 0, '배지가 아예 안 붙었다 — ③-C 미구현');
 });
 
-test('★ 검토함은 상태의 needsReview 를 판정 이유와 함께 보인다', async () => {
+/**
+ * ★ 계약 변경 (PeterJ 지시 2026-08-17) — **검토함 블록을 없앴다.**
+ *   자동 발행 기준을 통과 못 한 후보를 판정 이유와 함께 나열하던 상자인데,
+ *   분류기 진단이지 PeterJ 가 읽고 무엇을 하는 화면이 아니었다.
+ *   데이터는 `selected_guidelines.json` 큐에 그대로 남는다 — 화면에서만 뺐다.
+ */
+test('★ needsReview 가 있어도 검토함을 그리지 않는다', async () => {
   const { html } = await realInputs();
   const state = {
     schemaVersion: 2, published: [], rejected: [], sourceHealth: {}, lastRun: null,
@@ -87,18 +93,41 @@ test('★ 검토함은 상태의 needsReview 를 판정 이유와 함께 보인�
     queue: [{ id: 'pmid:1', pmid: '1', status: 'needsReview', title: 'Ambiguous statement on shock',
       organizationId: 'esicm', decisionReasons: ['insufficient-positive-evidence'] }],
   };
-  const publisher = new GitHubPublisher();
-  const out = publisher._renderGuidelineState(html, state, '2026-08-16T00:00:00Z');
-  assert.match(out, /검토함 1건/);
-  assert.match(out, /insufficient-positive-evidence/);
-  // 멱등 — 두 번 그려도 목록이 둘로 늘지 않는다
-  const twice = publisher._renderGuidelineState(out, state, '2026-08-17T00:00:00Z');
-  assert.equal(count(twice, /<!-- GNEEDSREVIEW -->/g), 1);
+  const out = new GitHubPublisher()._renderGuidelineState(html, state, '2026-08-16T00:00:00Z');
+  // ★ 이 함수가 책임지는 것은 GNEEDSREVIEW 블록 하나다. 실물 페이지에 남아 있는
+  //   pageSplit 쪽 검토함(`guideline-review`)은 다음 분할에서 재생성되지 않는 방식으로
+  //   사라지므로 여기서 재지 않는다 — 그건 아래 발행 경로 검사가 본다.
+  assert.equal(count(out, /<!-- GNEEDSREVIEW -->/g), 0, '검토함 블록이 그려졌다');
+  // ★ 지우는 것 말고는 아무것도 안 지켰는지 확인 — 본문은 그대로여야 한다
+  assert.ok(out.length >= html.length * 0.98, `본문이 줄었다: ${html.length} → ${out.length}`);
 });
 
-test('★ needsReview 가 0건이면 목록 자체를 넣지 않는다', async () => {
+test('★ 이미 배포된 페이지의 검토함 블록은 걷어낸다 (유령 방지)', async () => {
   const { html, state } = await realInputs();
-  const publisher = new GitHubPublisher();
-  const out = publisher._renderGuidelineState(html, state, '2026-08-16T00:00:00Z');
-  assert.equal(count(out, /<!-- GNEEDSREVIEW -->/g), 0);
+  const ghost = html.replace('<!-- ARCHIVE_START -->',
+    '<!-- ARCHIVE_START -->\n<!-- GNEEDSREVIEW -->\n<details>옛 검토함</details>\n<!-- /GNEEDSREVIEW -->');
+  assert.match(ghost, /GNEEDSREVIEW/, '픽스처에 유령이 없다 — 이 검사는 헛돈다');
+  const out = new GitHubPublisher()._renderGuidelineState(ghost, state, '2026-08-17T00:00:00Z');
+  assert.equal(count(out, /GNEEDSREVIEW/g), 0, '배포본에 남은 검토함이 안 걷혔다');
+});
+
+
+/**
+ * pageSplit 쪽 검토함은 **재생성되지 않는 방식**으로 사라진다.
+ * split 이 페이지를 다시 조립하면서 그 블록을 더는 만들지 않기 때문이다.
+ * 배포 실물에 아직 남아 있으므로, 한 번 갈라보면 사라지는지 여기서 확인한다.
+ */
+test('★ 페이지를 다시 가르면 검토함이 사라진다', async () => {
+  const { splitPages } = await import('../src/utils/pageSplit.js');
+  const html = await readFile(new URL('../guidelines.html', import.meta.url), 'utf8');
+  const { readFile: rf } = await import('node:fs/promises');
+  const index = await rf(new URL('../index.html', import.meta.url), 'utf8');
+  const { mergePages } = await import('../src/utils/pageSplit.js');
+  const reviews = await rf(new URL('../reviews.html', import.meta.url), 'utf8');
+
+  const merged = mergePages(index, html, reviews);
+  const out = splitPages(merged, { refIds: null });
+  assert.ok(out.guidelines, '분할이 안 됐다 — 이 검사는 헛돈다');
+  assert.equal(count(out.guidelines, /class="guideline-review"/g), 0, '검토함이 남았다');
+  assert.equal(count(out.guidelines, /검토함/g), 0, '검토함 문구가 남았다');
 });

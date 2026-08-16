@@ -47,7 +47,15 @@ const UP_LEGACY_RE = /\n?<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g;
 const PAGE_TRACK = { papers: 'papers', guides: 'guidelines', reviews: 'reviews' };
 
 /** 타워 톤 (tower-home · tower-plan · master-plan 공통 디자인 언어) */
-export const TOWER_TONE = `<style id="tower-tone">
+/**
+ * ★ 버전 마커를 반드시 올릴 것 (2026-08-17 실측 사고).
+ *   `ensureTowerTone` 은 "이미 있으면 그대로" 라 **새 규칙이 배포본에 영원히 안 들어간다.**
+ *   지난 카드 묶음(.past-fold)을 넣었는데 화면에 스타일 없는 맨몸으로 나왔다.
+ *   ONDEMAND_WIDGET 이 같은 이유로 버전을 달고 있다 — 같은 규율을 여기도 적용한다.
+ *   **이 파일의 CSS 를 고치면 이 숫자를 올려라.**
+ */
+export const TOWER_TONE_VERSION = 2;
+export const TOWER_TONE = `<style id="tower-tone" data-v="2">
 /* ── 타워 톤 — 웜뉴트럴 지면 + 무지개 라디얼 + 글래스 카드 ── */
 :root{
   --t-ink:#2a2724; --t-ink2:#5c574f; --t-ink3:#6f6960;
@@ -138,6 +146,16 @@ details{border-radius:24px}
 .arch-fold>summary::-webkit-details-marker{display:none}
 .arch-fold>summary::after{content:'▾';color:var(--t-ink3);font-size:12px;transition:transform .15s ease}
 .arch-fold[open]>summary::after{transform:rotate(180deg)}
+/* 지난 카드 묶음 접힘 (요구 ④) */
+.past-fold{margin:10px 18px 0;background:rgba(255,255,255,.34);border:1px solid var(--t-edge);
+  border-radius:20px;padding:2px 14px}
+.past-fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;
+  padding:11px 2px;font-size:13.5px;font-weight:700;color:var(--t-ink)}
+.past-fold>summary::-webkit-details-marker{display:none}
+.past-fold>summary::after{content:'▾';margin-left:auto;color:var(--t-ink3);font-size:12px;transition:transform .15s ease}
+.past-fold[open]>summary::after{transform:rotate(180deg)}
+.past-fold>summary .n{font-size:11px;font-weight:700;color:var(--t-ink3);
+  background:rgba(255,255,255,.6);border:1px solid var(--t-edge);border-radius:999px;padding:2px 9px}
 .tempty{margin:8px 18px 0;padding:18px;text-align:center;font-size:13px;color:var(--t-ink3);
   background:rgba(255,255,255,.28);border:1px dashed rgba(150,142,133,.5);border-radius:22px}
 .ft{color:var(--t-ink3)}
@@ -277,6 +295,24 @@ const secHead = (icon, label, n, desc) => `<div class="tsec">
 const emptyBox = (t) => `<div class="tempty">${t}</div>\n`;
 
 /**
+ * 오늘 것만 밖에 두고 **지난 것은 한 번 더 접는다** (PeterJ 지시 2026-08-17).
+ *
+ * 카드가 이미 각각 접혀 있어도 날마다 한 줄씩 쌓이면 목록이 길어져 스크롤이 불편하다.
+ * 그래서 지난 것들을 묶어 한 겹 더 접는다. 오늘 카드는 `day-today` 로 판별한다 —
+ * `splitPages` 는 날짜를 모르고, 그 클래스가 이미 "오늘" 의 유일한 표식이다.
+ *
+ * ★ 접기만 한다. 카드를 지우거나 순서를 바꾸지 않는다 — 다음 실행의 merge 가 이
+ *   래퍼를 그대로 통과해야 하므로(정규식은 섹션 단위로 잡는다) 감싸는 것 이상은 안 한다.
+ */
+function foldPast(sections, label) {
+  const today = sections.filter((b) => b.includes('day day-today'));
+  const past = sections.filter((b) => !b.includes('day day-today'));
+  const head = today.join('\n');
+  if (!past.length) return head;
+  return `${head}\n<details class="past-fold"><summary>지난 ${label} <span class="n">${past.length}건</span></summary>\n${past.join('\n')}\n</details>`;
+}
+
+/**
  * 지난 실행이 심은 탭을 걷어낸다.
  * ★ 통계 교체보다 **먼저** 불러야 한다. 2회차부터는 `.stats` 와 `.archive` 사이에
  *   이 <nav> 가 끼어 있어서, 그걸 안 걷고 통계 정규식을 돌리면 매치가 실패하고
@@ -327,8 +363,12 @@ export function collapseAllCards(html) {
 
 /** 타워 톤을 </head> 직전에(원본 스타일 뒤에) 얹는다. 이미 있으면 그대로. */
 export function ensureTowerTone(html) {
-  if (!html || html.includes('id="tower-tone"')) return html;
-  return html.replace('</head>', () => `${TOWER_TONE}\n</head>`);
+  if (!html) return html;
+  // 같은 버전이 이미 있으면 그대로 둔다.
+  if (html.includes(`id="tower-tone" data-v="${TOWER_TONE_VERSION}"`)) return html;
+  // 구버전(버전 없는 최초 배포본 포함)은 **통째로 갈아끼운다.**
+  const stripped = html.replace(/<style id="tower-tone"(?: data-v="\d+")?>[\s\S]*?<\/style>\s*/g, '');
+  return stripped.replace('</head>', () => `${TOWER_TONE}\n</head>`);
 }
 
 // ── 공개 API ─────────────────────────────────────────────────────────────────
@@ -388,7 +428,7 @@ export function mergePages(indexHtml, guidelinesHtml, reviewsHtml) {
  * @param {{refIds?:Set<string>, needsReview?:Array<object>}} opts
  * @returns {{index:string, guidelines:string, reviews:string, counts:object}}
  */
-export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
+export function splitPages(html, { refIds = null } = {}) {
   if (!html || !html.includes(A_START) || !html.includes(T_OPEN)) {
     // 스캐폴드가 아니면 가르지 않는다(소프트) — 원본을 그대로 index 로 둔다.
     return { index: html, guidelines: null, reviews: null, counts: null };
@@ -443,7 +483,7 @@ export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
   // ── ① index.html (논문) ──
   const indexOut =
     withUpcoming(withNav(headRaw, pageNav('papers', counts)), 'papers') +
-    sec.papers.join('\n') +
+    foldPast(sec.papers, '논문') +
     archiveClose +
     tableHtml('📚 논문 누적', rows.paper.length, '편', rows.paper.map((r) => markRow(r, 'paper'))) +
     afterTable;
@@ -476,9 +516,8 @@ export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
 
   const guidelinesOut =
     gHead +
-    reviewBox(needsReview) +
     secHead('📋', '가이드라인', counts.guidelines, '공식 발행기관의 진료지침 — 캐치업 큐에서 순차 소개') +
-    (sec.guidelines.length ? sec.guidelines.join('\n') : emptyBox('아직 소개된 가이드라인이 없습니다.')) +
+    (sec.guidelines.length ? foldPast(sec.guidelines, '가이드라인') : emptyBox('아직 소개된 가이드라인이 없습니다.')) +
     archiveClose +
     tableHtml('📋 가이드라인 누적', rows.guideline.length, '건', rows.guideline.map((r) => markRow(r, 'guideline'))) +
     stripArchiveStatus(afterTable);
@@ -493,9 +532,9 @@ export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
   const reviewsOut =
     rHead +
     secHead('📰', '리뷰', counts.reviews, '주요 저널의 리뷰 아티클 — 저수지에서 순차 소개') +
-    (sec.reviews.length ? sec.reviews.join('\n') : emptyBox('아직 소개된 리뷰가 없습니다.')) +
+    (sec.reviews.length ? foldPast(sec.reviews, '리뷰') : emptyBox('아직 소개된 리뷰가 없습니다.')) +
     secHead('🔖', '기타 자료', counts.others, '직접 지정한 참고자료 — 공인 문서가 아닐 수 있습니다(카드의 “출처 성격” 참고)') +
-    (sec.others.length ? sec.others.map(fixRefSection).join('\n') : emptyBox('아직 등록된 기타 자료가 없습니다.')) +
+    (sec.others.length ? foldPast(sec.others.map(fixRefSection), '기타 자료') : emptyBox('아직 등록된 기타 자료가 없습니다.')) +
     archiveClose +
     tableHtml('📰 리뷰 누적', rows.review.length, '건', rows.review.map((r) => markRow(r, 'review'))) +
     tableHtml('🔖 기타 자료 누적', rows.reference.length, '건', rows.reference.map((r) => markRow(r, 'reference'))) +
@@ -504,20 +543,16 @@ export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
   return { index: indexOut, guidelines: guidelinesOut, reviews: reviewsOut, counts };
 }
 
-function reviewBox(items) {
-  if (!Array.isArray(items) || items.length === 0) return '';
-  const rows = items.map((item) => {
-    const title = item.title ?? item.paper?.title ?? '제목 없음';
-    const org = item.organization ?? item.organizationId ?? item.org ?? '기관 미상';
-    const reasons = Array.isArray(item.reasons) ? item.reasons.join(', ') : (item.reasons ?? '사유 없음');
-    return `<li><div class="review-title">${escapeHtml(title)}</div><div class="review-org">${escapeHtml(org)}</div><div class="review-reasons">판정 이유: ${escapeHtml(reasons)}</div></li>`;
-  }).join('');
-  return `<details class="guideline-review"><summary>검토함 <span class="n">${items.length}건</span></summary><ul>${rows}</ul></details>`;
-}
-
-function escapeHtml(value) {
-  return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
+/**
+ * ★ '검토함' 블록은 **제거했다** (PeterJ 지시 2026-08-17).
+ *
+ * 무엇이었나 — 자동 발행 기준을 통과하지 못한 지침 후보(`status: needsReview`)를
+ * 판정 이유(`insufficient-positive-evidence` 등)와 함께 나열하던 상자다. 분류기의
+ * 진단 정보이지 PeterJ 가 읽고 무엇을 하는 화면이 아니었다.
+ *
+ * **데이터는 그대로 남는다** — `output/selected_guidelines.json` 의 큐에 계속 쌓이고,
+ * 판정 기준을 손보면 그대로 되살아난다. 화면에서만 뺐다.
+ */
 
 /** 아카이브 저장 현황(§4-E)은 논문 아카이브 기준이라 index 에만 둔다. */
 function stripArchiveStatus(tailHtml) {

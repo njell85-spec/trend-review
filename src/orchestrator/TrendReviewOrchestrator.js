@@ -28,6 +28,7 @@ import { filterByRegion } from '../utils/guidelineRegionFilter.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
+import { isNarrativeReview, notReviewReason } from '../utils/reviewQueue.js';
 import { buildProgressLines } from '../utils/trackProgress.js';
 import { normalizeControl } from '../utils/controlState.js';
 import { intervalFor, trackRunsOn } from '../utils/trackCadence.js';
@@ -656,6 +657,46 @@ export class TrendReviewOrchestrator {
     return normalizeControl(raw);
   }
 
+  /**
+   * 리뷰 아티클을 **번역·정리해서** 카드로 만든다 (PeterJ 지시 2026-08-17).
+   *
+   * ★ 왜 필요한가 — 종전 리뷰 카드에는 제목·저널·점수뿐이었다. 저수지 항목이 그것만
+   *   들고 오기 때문이다. PeterJ: *"리뷰아티클 자료분석이 전혀없는데? ... 지난 자료
+   *   NEJM syncope 처럼 저런거고 그냥 안빠지고 번역해서 제시하는걸로."*
+   *
+   * ★ 분석기의 `mode: 'reference'` 를 쓴다. 그 모드가 만드는 것이 정확히 그 카드다
+   *   (NEJM syncope 카드가 같은 경로로 나왔다). `guideline` 모드는 권고·변경점을
+   *   뽑는 틀이라 종설에는 안 맞는다.
+   *
+   * ★ 원문을 못 구하면 **초록으로라도 만든다.** 카드가 얇아지는 것과 카드가 없는 것은
+   *   다르다 — 없으면 화면에 제목만 남는다(지금 상태가 그것이다).
+   * ★ 전 과정이 소프트다. 실패하면 카드 없이 발행한다 — 리뷰 분석이 데일리를 막지 않는다.
+   */
+  async _analyzeReview(item) {
+    const pmid = String(item?.pmid ?? '').trim();
+    if (!pmid) return null;
+    try {
+      const [article] = await this.collector.fetchArticles([pmid]);
+      if (!article) {
+        this.logger.warn('리뷰 메타데이터를 못 받았다 — 카드 없이 발행한다', { pmid });
+        return null;
+      }
+      let enriched = article;
+      try {
+        const { papers } = await this.fullText.run([article]);
+        if (papers?.[0]) enriched = papers[0];
+      } catch (error) {
+        this.logger.warn('리뷰 원문 확보 실패 — 초록으로 진행', { pmid, err: error.message });
+      }
+      const card = await this.guideline.analyze(enriched, { mode: 'reference' });
+      if (!card) this.logger.warn('리뷰 분석이 카드를 못 냈다 — 카드 없이 발행한다', { pmid });
+      return card ?? null;
+    } catch (error) {
+      this.logger.warn('리뷰 분석 실패 (non-fatal)', { pmid, err: error.message });
+      return null;
+    }
+  }
+
   async _stageReview(todayStr) {
     const control = await this._loadControl();
     const mode = control.tracks.reviews.mode;
@@ -665,7 +706,7 @@ export class TrendReviewOrchestrator {
       return { outcome: 'skipped', reason: 'cadence-gate' };
     }
 
-    const state = await loadTrackQueue(this.queueReviewsPath, 'reviews');
+    let state = await loadTrackQueue(this.queueReviewsPath, 'reviews');
     const intervalDays = mode === 'alternate' ? intervalFor('reviews') * 2 : intervalFor('reviews');
     const todayDay = calendarDay(todayStr);
     const lastDay = calendarDay(state.lastRun?.date);
@@ -674,8 +715,32 @@ export class TrendReviewOrchestrator {
     }
     if (!state.queue.length) return { outcome: 'empty' };
 
+    // ★ 발행 직전에 한 번 더 거른다 (PeterJ 지적 2026-08-17).
+    //   저수지는 필터가 생기기 전에 만들어져 합의문·지침이 섞여 있다. 다시 만들지 않고
+    //   **소비하면서 정화한다** — 걸린 것은 rejected 로 옮겨 다음 수집에 안 돌아오게 한다.
+    //   (`rejected` 대조는 `mergeQueueItems` 가 이미 한다.)
+    const dropped = [];
+    let queue = state.queue;
+    while (queue.length && !isNarrativeReview(queue[0])) {
+      const bad = queue[0];
+      this.logger.info('리뷰 아님 — 저수지에서 뺀다', {
+        reason: notReviewReason(bad), title: String(bad.title ?? '').slice(0, 70),
+      });
+      dropped.push({ ...bad, rejectedAt: todayStr, rejectedReason: notReviewReason(bad) });
+      queue = queue.slice(1);
+    }
+    if (dropped.length) {
+      await saveTrackQueue(this.queueReviewsPath, {
+        ...state, queue, rejected: [...(state.rejected ?? []), ...dropped], updatedAt: todayStr,
+      });
+      state = { ...state, queue, rejected: [...(state.rejected ?? []), ...dropped] };
+    }
+    if (!queue.length) return { outcome: 'empty' };
+
     const [picked, ...remaining] = state.queue;
-    const published = { ...picked, publishedAt: todayStr };
+    // ★ 번역·정리 카드를 여기서 만든다. 실패해도 발행은 계속된다(카드만 얇아진다).
+    const card = await this._analyzeReview(picked);
+    const published = { ...picked, publishedAt: todayStr, card };
     const next = {
       ...state,
       queue: remaining,
