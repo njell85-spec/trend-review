@@ -7,6 +7,10 @@ import { loadTrackQueue, saveTrackQueue } from '../src/utils/trackQueue.js';
 import { buildReviewQueue, itemsForSet, REVIEW_AXES, REVIEW_TRACK } from '../src/utils/reviewQueue.js';
 
 function parseArgs(argv) {
+  // ★ 저널 세트 = 6종 (PeterJ 확정 2026-08-16).
+  //   NEJM · JAMA · Lancet · BMJ + Intensive Care Med · Crit Care Med.
+  //   실측 공급 주 1.6편으로 주 1회 슬롯의 1.6배다 — 🗑 을 눌러도 저수지가 마르지 않는다.
+  //   4종은 주 0.8편이라 주 1회에도 빠듯하고, 10종(주 3.7편)은 질이 섞인다.
   const options = { set: 'core4_plus_ccm', limit: 400, out: 'output/queue_reviews.json', dry: false };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];

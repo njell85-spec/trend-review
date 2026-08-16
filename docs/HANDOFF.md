@@ -49,8 +49,32 @@
 >   ★ 러너는 브라우저 파일을 **읽기만** 한다. 되쓰면 상호 덮어쓰기가 시작된다.
 > ```
 >
-> **■ 아직 안 한 것** — 실제 데일리로 한 번도 안 돌았다(내일 06:30 이 첫 실전).
-> 트랙3 저널 세트는 6종(core4+ICM/CCM) 기본값으로 박혀 있고 PeterJ 확정 대기.
+> **■ PeterJ 확정 (2026-08-16 · 되묻지 말 것)**
+> **트랙3 저널 세트 = 6종** (NEJM·JAMA·Lancet·BMJ + Intensive Care Med·Crit Care Med).
+> 실측 주 1.6편으로 주 1회 슬롯의 1.6배 — 🗑 을 눌러도 저수지가 마르지 않는다.
+> 4종은 주 0.8편이라 빠듯하고 10종(주 3.7편)은 질이 섞인다.
+>
+> **■ PAT — 완료됨 (2026-08-16 · PeterJ 폰에서 처리)**
+> 토큰 `trend-review-dispatch` 에 `Contents: Read and write` 를 더했다. 현재 권한:
+> ```
+>   Repository access  njell85-spec/trend-review (Only select repositories)
+>   Actions            Read and write   (버튼 구동)
+>   Contents           Read and write   (읽음 상태 직커밋)  ← 이번에 추가
+>   Metadata           Read-only (필수)
+> ```
+> **PC 도 재발급도 필요 없었다** — fine-grained PAT 는 편집으로 권한만 더할 수 있고
+> 토큰 문자열이 안 바뀐다(= 브라우저에 다시 넣을 필요 없음). 폰 브라우저로 된다.
+> 경로: `github.com/settings/personal-access-tokens` → 토큰 →
+> **`Access on <owner>` 줄 오른쪽의 `Edit`** (화면 위쪽 Save/Cancel 은 토큰 *이름* 편집이다).
+> 참고: "편집하면 저장소 선택이 All repositories 로 초기화된다" 는 커뮤니티 보고가 있는데
+> **이번 실측에서는 일어나지 않았다**(Only select repositories 가 유지됐다). 확인만 하면 된다.
+>
+> **■ 아직 안 한 것 — 이것 하나뿐이다**
+> **실제 데일리로 한 번도 안 돌았다. 2026-08-17 06:30 이 첫 실전이다.**
+> 다음 세션이 볼 것: ①예고 리스트가 배포 페이지에 실제로 뜨는지 ②리뷰 arm 이 주 1회
+> 게이트를 지키는지 ③텔레그램에 진행상황 줄이 실리는지 ④`queue_papers.json` 이 커밋돼
+> 다음 날까지 살아남는지(gitignore 예외를 넣었지만 실전 확인 전이다).
+> **데일리 코어(논문 1편)는 무영향이 보장돼 있다** — 새 arm 이 다 실패해도 논문은 나간다.
 > NotebookLM·카드뉴스·영상은 계획 범위 밖(후순위).
 
 > **[2026-08-16 — 가이드라인 개편 G0~G10 완료 · 3트랙 시장조사 완료 · PeterJ 결정 대기]**
