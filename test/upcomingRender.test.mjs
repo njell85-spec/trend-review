@@ -189,3 +189,23 @@ test('트랙이 전부 꺼져 있어도 빈 상태를 그린다', () => {
     tracks: [{ ...oneTrack(), mode: 'off' }] });
   assert.match(out, /up-empty/);
 });
+
+// ── ★ 발행 경로 배선 회귀 ───────────────────────────────────────────────────
+// 이 저장소는 **"모듈은 옳은데 아무도 안 부른다"** 로 두 번 데였다
+// (지역 판정 모듈 · 예고 렌더). 유닛 테스트는 둘 다 초록이었다.
+// 게다가 배선하면서 import 를 빠뜨려도 `node --check` 는 통과하고(ESM 은 미정의
+// 식별자를 파싱 시점에 못 잡는다) 테스트도 그 경로를 안 타면 초록이다.
+// 그래서 **실제로 호출해서** 터지지 않는지 본다.
+test('★ 디스크에서 큐를 읽어 예고를 그리는 경로가 실제로 돈다 (import 누락 포함)', async () => {
+  const p = new GitHubPublisher();
+  const out = await p._renderUpcomingFromDisk('<!-- ARCHIVE_START -->', '2026-08-16T00:00:00Z');
+  assert.match(out, /<!-- UPCOMING -->/, '예고 블록이 안 그려졌다');
+  assert.match(out, /data-up-toggle/, '토글이 없다');
+});
+
+test('★ 큐 파일이 하나도 없어도 페이지는 나간다 (예고는 부가물이다)', async () => {
+  const p = new GitHubPublisher();
+  p._repoPath = '/tmp/존재하지-않는-경로-' + Date.now();
+  const out = await p._renderUpcomingFromDisk('<!-- ARCHIVE_START -->', '2026-08-16T00:00:00Z');
+  assert.match(out, /up-empty/, '빈 상태 안내가 없다');
+});

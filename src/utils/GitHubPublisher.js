@@ -16,6 +16,7 @@ import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
 import { impactFactorLabel } from './journalMeta.js';
 import { buildUpcoming } from './upcomingSchedule.js';
+import { normalizeControl } from './controlState.js';
 
 const API = 'https://api.github.com';
 
@@ -430,6 +431,29 @@ export class GitHubPublisher {
       + `<div id="up-msg" class="up-msg"></div>`
       + `</section>\n${this._upcomingScript()}\n<!-- /UPCOMING -->`;
     return out.replace('<!-- ARCHIVE_START -->', () => `${block}\n<!-- ARCHIVE_START -->`);
+  }
+
+  /**
+   * 디스크의 큐·제어 상태를 읽어 예고 리스트를 그린다.
+   * 세 트랙의 큐가 각각 다른 파일에 있으므로(쓰는 주체가 달라 일부러 갈랐다) 여기서 모은다.
+   */
+  async _renderUpcomingFromDisk(html, generatedAt) {
+    const out = path.join(this._repoPath, 'output');
+    const readJson = async (f) => { try { return JSON.parse(await readFile(path.join(out, f), 'utf8')); } catch { return null; } };
+    const [papers, guidelines, reviews, control] = await Promise.all([
+      readJson('queue_papers.json'), readJson('selected_guidelines.json'),
+      readJson('queue_reviews.json'), readJson('control_state.json'),
+    ]);
+    const c = normalizeControl(control);
+    const from = String(generatedAt ?? '').slice(0, 10) || new Date().toISOString().slice(0, 10);
+    return this._renderUpcoming(html, {
+      from, days: 7,
+      tracks: [
+        { key: 'papers', label: '논문', cadence: 'daily', mode: c.tracks.papers.mode, state: papers ?? { queue: [] } },
+        { key: 'guidelines', label: '가이드라인', cadence: 'daily', mode: c.tracks.guidelines.mode, state: guidelines ?? { queue: [] } },
+        { key: 'reviews', label: '리뷰', cadence: 'weekly', mode: c.tracks.reviews.mode, state: reviews ?? { queue: [] } },
+      ],
+    });
   }
 
   _renderGuidelineState(html, state, generatedAt) {
@@ -1158,6 +1182,10 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       updated = body;
     }
     if (guidelineState) updated = this._renderGuidelineState(updated, guidelineState, generatedAt);
+    // ★ 예고 리스트. 상태 파일이 없거나 깨져도 **발행을 막지 않는다** — 예고는 부가물이고
+    //   데일리 코어 무영향이 불변식이다. 실패하면 예고 블록만 빠진 페이지가 나간다.
+    try { updated = await this._renderUpcomingFromDisk(updated, generatedAt); }
+    catch (err) { this.logger?.warn?.('예고 리스트 렌더 실패 — 페이지는 그대로 나간다', { err: err.message }); }
     updated = this._ensureOnDemandWidget(updated);
     let curationState = null;
     try { curationState = await loadCurationState(path.join(this._repoPath, 'output', 'curation_state.json')); } catch { /* 소프트 */ }
