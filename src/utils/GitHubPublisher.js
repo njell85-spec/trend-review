@@ -342,11 +342,23 @@ export class GitHubPublisher {
 </script>`;
   }
 
+  /**
+   * 예고 줄의 제목 절단. 지침 제목은 발표 기관이 줄줄이 붙어 200자를 넘는 일이 흔하고
+   * (미리보기에서 한 줄이 폰 화면 절반을 먹었다), 예고는 **훑어보는 목록**이라
+   * 전문이 필요 없다. 전문은 title 속성으로 남겨 길게 누르면 보이게 한다.
+   */
+  static _clipTitle(t, max = 66) {
+    const v = String(t ?? '').trim();
+    return v.length > max ? `${v.slice(0, max - 1)}…` : v;
+  }
+
   _renderUpcoming(html, { from, days = 7, tracks = [] } = {}) {
     const rows = buildUpcoming({ from, days, tracks });
     // 이전 블록은 항상 먼저 걷어낸다 — 이게 멱등성의 전부다.
     let out = String(html).replace(/\n?<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
-    if (!rows.length) return out;
+    // ★ 비어도 블록을 그린다. 조기 반환하면 큐가 마른 날 화면에서 예고 섹션이 통째로
+    //   사라져서 PeterJ는 "고장인지 빈 건지" 를 구분할 수 없다. 토글 버튼도 같이 사라져
+    //   **꺼둔 트랙을 다시 켤 방법이 없어진다** — 이게 조기 반환의 진짜 위험이다.
 
     const byDate = new Map();
     for (const r of rows) {
@@ -356,12 +368,13 @@ export class GitHubPublisher {
     const dayHtml = [...byDate.entries()].map(([date, items]) => {
       const li = items.map((r) => {
         const it = r.item ?? {};
+        const clip = (t) => GitHubPublisher._clipTitle(t);
         const warn = r.lowConfidence ? '<span class="up-warn" title="재순위가 약한 날">⚠</span>' : '';
         // 버튼은 data-* 만 들고 있고 동작은 페이지 하단 스크립트가 붙인다.
         return `<li class="up-item">`
-          + `<span class="up-track">${esc(r.trackLabel)}</span>`
-          + `<span class="up-title">${esc(it.title ?? '')}</span>${warn}`
-          + `<span class="up-journal">${esc(it.journal ?? '')}</span>`
+          + `<span class="up-title" title="${esc(it.title ?? '')}">`
+          + `<span class="up-track">${esc(r.trackLabel)}</span> ${esc(clip(it.title))}${warn}</span>`
+          + (it.journal ? `<span class="up-journal">${esc(it.journal)}</span>` : '')
           + `<button class="up-btn up-run" data-up-run="${esc(it.pmid ?? '')}" `
           + `data-up-track="${esc(r.track)}" title="이것을 먼저 돌린다">▶</button>`
           + `<button class="up-btn up-drop" data-up-drop="${esc(it.pmid ?? '')}" `
@@ -376,9 +389,43 @@ export class GitHubPublisher {
     const toggles = tracks.map((t) => `<button class="up-toggle" data-up-toggle="${esc(t.key)}" `
       + `data-up-mode="${esc(t.mode ?? 'on')}">${esc(t.label)} · ${esc(MODE_LABEL[t.mode] ?? '켜짐')}</button>`).join('');
 
-    const block = `<!-- UPCOMING -->\n<section class="upcoming"><h2 class="up-h">📅 다음 ${days}일 예고`
+    // ★ 스타일을 블록 안에 같이 넣는다. 대시보드 CSS 는 index.html 에 있고 이 블록은
+    //   교체식으로 끼워지므로, 밖에 두면 블록만 갱신될 때 스타일이 따라오지 않는다.
+    //   미리보기에서 실제로 **스타일 없는 맨몸**으로 나온 자리다(push 전에 잡았다).
+    const style = `<style>
+.upcoming{margin:16px 0;font-size:14px}
+.up-h{font-size:15px;margin:0 0 8px;font-weight:600}
+.up-h small{display:block;font-weight:400;color:#6b7280;font-size:12px;margin-top:2px}
+.up-toggles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.up-toggle{border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}
+.up-toggle[data-up-mode=off]{background:#f3f4f6;color:#9ca3af;text-decoration:line-through}
+.up-toggle[data-up-mode=alternate]{border-style:dashed}
+.up-day{margin:10px 0 4px;font-weight:600;color:#374151;font-size:13px}
+.upcoming ul{list-style:none;margin:0;padding:0}
+.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 0;border-bottom:1px solid #f0f1f3}
+.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#eef2ff;color:#4338ca;white-space:nowrap}
+.up-title{flex:1 0 100%;line-height:1.5}
+.up-journal{flex:1 1 auto;font-size:11px;color:#6b7280;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-warn{color:#d97706;margin-left:3px}
+.up-btn{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:6px;
+  min-width:34px;min-height:34px;font-size:13px;cursor:pointer}
+.up-empty{color:#9ca3af;padding:8px 0}
+.up-date{font-weight:600;color:#374151;font-size:13px;margin:12px 0 2px}
+.up-list{list-style:none;margin:0;padding:0}
+.up-note{color:#6b7280;font-size:12px;margin-top:10px}
+.up-msg{font-size:12px;color:#6b7280;min-height:16px;margin-top:6px}
+.up-reset{margin-top:10px;border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
+@media(prefers-color-scheme:dark){
+ .up-toggle,.up-btn{background:#1f2937;border-color:#374151;color:#e5e7eb}
+ .up-day{color:#d1d5db}.up-item{border-color:#374151}
+ .up-track{background:#312e81;color:#c7d2fe}}
+</style>`;
+    const block = `<!-- UPCOMING -->\n${style}<section class="upcoming"><h2 class="up-h">📅 다음 ${days}일 예고`
       + ` <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2>`
-      + `<div class="up-toggles">${toggles}</div>${dayHtml}`
+      // ★ 빈 상태를 반드시 그린다. 큐가 다 마르거나 세 트랙이 다 꺼져 있으면
+      //   화면에 **아무것도 안 나와서** PeterJ는 "고장인지 빈 건지" 를 구분할 수 없다.
+      + `<div class="up-toggles">${toggles}</div>`
+      + (dayHtml || '<p class="up-empty">예고할 것이 없습니다 — 큐가 비었거나 트랙이 모두 꺼져 있습니다.</p>')
       + `<button class="up-reset" data-up-reset="1">이 목록 전체 갈아엎기</button>`
       + `<div id="up-msg" class="up-msg"></div>`
       + `</section>\n${this._upcomingScript()}\n<!-- /UPCOMING -->`;
