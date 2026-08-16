@@ -34,7 +34,18 @@ export async function loadTrackQueue(path, track) {
   }
 }
 
+// ★ 테스트가 실제 `output/` 을 오염시키는 것을 막는다.
+// 실측으로 걸린 자리: 테스트 픽스처(`paper-1`, 제목 빈 문자열)가 프로덕션 큐에 들어가
+// 배포 페이지 예고 리스트에 **빈 줄**로 떴다. 테스트는 임시 디렉터리를 써야 한다.
+function assertNotProductionInTest(file) {
+  if (!process.env.NODE_TEST_CONTEXT) return;
+  if (/(^|[/\\])output[/\\]/.test(String(file))) {
+    throw new Error(`테스트가 프로덕션 경로에 쓰려 한다: ${file} — 임시 디렉터리를 쓰라`);
+  }
+}
+
 export async function saveTrackQueue(path, state) {
+  assertNotProductionInTest(path);
   validateState(state);
   const temp = join(dirname(path), `.${basename(path)}.${process.pid}.${randomUUID()}.tmp`);
   try {

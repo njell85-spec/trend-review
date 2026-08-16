@@ -131,3 +131,14 @@ test('★ 어떤 타임존에서도 날짜가 밀리지 않는다', () => {
     }
   } finally { process.env.TZ = saved; }
 });
+
+test('★ 제목 없는 항목은 예고에 안 뜬다 (빈 줄은 지울지 돌릴지 알 수 없다)', () => {
+  const out = buildUpcoming({ from: '2026-08-16', days: 3,
+    tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on',
+      state: { queue: [
+        { pmid: '1', title: '', score: 9 },
+        { pmid: '2', title: '   ', score: 8 },
+        { pmid: '3', title: '진짜 제목', score: 7 }] } }] });
+  assert.deepEqual(out.map((x) => x.item.pmid), ['3']);
+  assert.equal(out[0].date, '2026-08-16', '빈 항목 때문에 날짜가 밀리면 안 된다');
+});

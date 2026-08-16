@@ -1,0 +1,3616 @@
+{
+  "schemaVersion": 1,
+  "track": "reviews",
+  "queue": [
+    {
+      "pmid": "41504890",
+      "title": "A consensus of international experts on definition, sampling, treatment, and prevention of peripheral extracorporeal membrane oxygenation cannula-site infection obtained by the Delphi method: the SAVECMO study.",
+      "journal": "Intensive Care Med",
+      "score": 9.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42412218",
+      "title": "60 years of ARDS and the evolution of extracorporeal lung support - from ECMO to ECCO(2)R.",
+      "journal": "Intensive Care Med",
+      "score": 9.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37921532",
+      "title": "Post-Cardiac Arrest Care in Adult Patients After Extracorporeal Cardiopulmonary Resuscitation.",
+      "journal": "Crit Care Med",
+      "score": 9.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42508832",
+      "title": "Investigation and management of breakthrough ischemic stroke in anticoagulated patients with atrial fibrillation.",
+      "journal": "BMJ",
+      "score": 9.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42329250",
+      "title": "PEEP and alveolar recruitment after 60 years of acute respiratory distress syndrome.",
+      "journal": "Intensive Care Med",
+      "score": 9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42390593",
+      "title": "Prehospital airway and ventilatory management: a collaborative and narrative review.",
+      "journal": "Intensive Care Med",
+      "score": 9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42412219",
+      "title": "Lung- and diaphragm-protective mechanical ventilation in acute respiratory distress syndrome.",
+      "journal": "Intensive Care Med",
+      "score": 9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41951238",
+      "title": "Airway management of adults in the acute care setting.",
+      "journal": "BMJ",
+      "score": 8.9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42474726",
+      "title": "Prone positioning in ARDS.",
+      "journal": "Intensive Care Med",
+      "score": 9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41319669",
+      "title": "Heart failure with reduced ejection fraction.",
+      "journal": "Lancet",
+      "score": 8.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41765030",
+      "title": "Sepsis.",
+      "journal": "Lancet",
+      "score": 8.8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41794418",
+      "title": "Atrial fibrillation.",
+      "journal": "Lancet",
+      "score": 8.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42043915",
+      "title": "Cardiac Resynchronization Therapy: A Review.",
+      "journal": "JAMA",
+      "score": 8.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41871593",
+      "title": "Primary sclerosing cholangitis.",
+      "journal": "Lancet",
+      "score": 8.8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42419784",
+      "title": "Advances in systemic therapies for advanced prostate cancer.",
+      "journal": "BMJ",
+      "score": 8.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36640801",
+      "title": "Acute aortic dissection.",
+      "journal": "Lancet",
+      "score": 8.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40668153",
+      "title": "Assessment of Tissue Perfusion Pressure in Patients With Septic Shock: Beyond Mean Arterial Pressure.",
+      "journal": "Crit Care Med",
+      "score": 8.6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39680399",
+      "title": "Atrial Fibrillation: A Review.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39976933",
+      "title": "Out-of-Hospital Cardiac Arrest in Apparently Healthy, Young Adults.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40193249",
+      "title": "Management of Staphylococcus aureus Bacteremia: A Review.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40335091",
+      "title": "Advances in treatments for acute ischemic stroke.",
+      "journal": "BMJ",
+      "score": 8.4,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40440268",
+      "title": "Platelet Transfusion: 2025 AABB and ICTMG International Clinical Practice Guidelines.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40522647",
+      "title": "Adrenal Insufficiency in Adults: A Review.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "endo_metabolic",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40720119",
+      "title": "Patent Foramen Ovale and Stroke: A Review.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40889511",
+      "title": "Cardiovascular, kidney, and metabolic health: an actionable vision for heart failure prevention.",
+      "journal": "Lancet",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40773213",
+      "title": "Geroscience: A Translational Review.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40889513",
+      "title": "Prioritising the primary prevention of heart failure.",
+      "journal": "Lancet",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41038208",
+      "title": "Anti-cytokine biologics for asthma in adults.",
+      "journal": "Lancet",
+      "score": 8.4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41110447",
+      "title": "Community-acquired pneumonia.",
+      "journal": "Lancet",
+      "score": 8.4,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41193237",
+      "title": "Advances in the management of acute decompensated heart failure.",
+      "journal": "BMJ",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42113209",
+      "title": "Extracorporeal membrane oxygenation, acute kidney injury, fluid balance, and continuous renal replacement therapy: Acute Disease Quality Initiative (ADQI) and Extracorporeal Life Support Organization (ELSO) joint consensus conference.",
+      "journal": "Intensive Care Med",
+      "score": 8.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36075255",
+      "title": "Towards the elimination of chronic obstructive pulmonary disease: a Lancet Commission.",
+      "journal": "Lancet",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41586889",
+      "title": "Physiological determinants and the red blood cells transfusion decision-making process in non-bleeding critically ill patients: a comprehensive narrative review.",
+      "journal": "Intensive Care Med",
+      "score": 8.1,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42043555",
+      "title": "Non-invasive intracranial pressure estimation in the intensive care unit: narrative review of methods and clinical applications.",
+      "journal": "Intensive Care Med",
+      "score": 8.1,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42126552",
+      "title": "Airway management in critically ill patients with obesity.",
+      "journal": "Intensive Care Med",
+      "score": 8.1,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38367642",
+      "title": "Heart failure with preserved ejection fraction: everything the clinician needs to know.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42455344",
+      "title": "Antiseizure medication dosing and monitoring in the intensive care unit: a practical narrative review.",
+      "journal": "Intensive Care Med",
+      "score": 8.1,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34505911",
+      "title": "Extracorporeal cardiopulmonary resuscitation in adults: evidence and implications.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38441582",
+      "title": "Cardiac Amyloidosis Due to Transthyretin Protein: A Review.",
+      "journal": "JAMA",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38554727",
+      "title": "The future of valvular heart disease assessment and therapy.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38554728",
+      "title": "Valvular heart disease: from mechanisms to management.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38648021",
+      "title": "Interstitial Lung Disease: A Review.",
+      "journal": "JAMA",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38759664",
+      "title": "Stroke.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38889923",
+      "title": "Recognition, diagnosis, and early management of suspected sepsis: summary of updated NICE guidance.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39059997",
+      "title": "Evaluation and management of hypertensive emergency.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39067905",
+      "title": "Infective endocarditis.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39216494",
+      "title": "Primary biliary cholangitis.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39244275",
+      "title": "The global blood donation index: an imperfect measure of transfusion need.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39283629",
+      "title": "Community-Acquired Pneumonia: A Review.",
+      "journal": "JAMA",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39288952",
+      "title": "Management of atrial fibrillation in older adults.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39341645",
+      "title": "Endovascular management of acute stroke.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39467606",
+      "title": "Acute respiratory distress syndrome.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39550175",
+      "title": "Cardiogenic shock.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39616000",
+      "title": "A contemporary review of sudden cardiac arrest and death in competitive and recreational athletes.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41247499",
+      "title": "Bedside thoracic echography in ICU: new insights for acute circulatory and respiratory failure.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41359028",
+      "title": "Current standard of care for septic shock.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41428205",
+      "title": "The medical management of acute respiratory distress syndrome.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41575283",
+      "title": "What Is Sepsis, Who Gets It, How, and Why? The Keys to Unlocking Precision Medicine in Sepsis.",
+      "journal": "Crit Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41524797",
+      "title": "Severe community-acquired pneumonia: current concepts and controversies.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41586891",
+      "title": "The next frontier in sepsis: connected ICU data for real-world clinical decision making.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41686209",
+      "title": "Consensus on identifying and ranking ventilator asynchronies in invasively ventilated ICU patients: a modified Delphi study (SYNAPsE).",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41773929",
+      "title": "Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With Acute Respiratory Distress Syndrome.",
+      "journal": "Crit Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41701325",
+      "title": "Intraoperative blood pressure management in noncardiac surgery: a narrative review based on current evidence.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41860319",
+      "title": "10 Steps to Improve Sepsis Care in Low-Resource Settings.",
+      "journal": "Crit Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41860328",
+      "title": "Gaps and Strategies for Management of Sepsis in Low-Resource Settings: Expert Consensus Statements Using a Delphi Method.",
+      "journal": "Crit Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41860329",
+      "title": "The Frame of Survival for Sepsis: A Practical Systems Framework for Time-Sensitive Critical Illness in Low-Resource Settings.",
+      "journal": "Crit Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41874620",
+      "title": "Clinical criteria for the definition of refractory septic shock: a joint Delphi consensus from the Society of Critical Care Medicine (SCCM) and European Society of Intensive Care Medicine (ESICM).",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41873857",
+      "title": "Clinical Criteria for the Definition of Refractory Septic Shock: A Joint Delphi Consensus from the Society of Critical Care Medicine (SCCM) and European Society of Intensive Care Medicine (ESICM).",
+      "journal": "Crit Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41954744",
+      "title": "Mechanical ventilation for ICU patient with obesity: current best practices and future directions.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42228011",
+      "title": "Nutrition support in the ICU: current evidence and evolving standards.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42257879",
+      "title": "Is acute respiratory distress syndrome a preventable disease?",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37707378",
+      "title": "Society of Critical Care Medicine Clinical Practice Guidelines for Rapid Sequence Intubation in the Critically Ill Adult Patient: Executive Summary.",
+      "journal": "Crit Care Med",
+      "score": 7.9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42301312",
+      "title": "Current knowledge and challenges of sepsis-associated encephalopathy.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42315625",
+      "title": "How to optimize brain perfusion and prevent cerebral complications during extracorporeal life support.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42371000",
+      "title": "ECMO for patients with obesity: evidence and practice.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37707379",
+      "title": "Society of Critical Care Medicine Clinical Practice Guidelines for Rapid Sequence Intubation in the Critically Ill Adult Patient.",
+      "journal": "Crit Care Med",
+      "score": 7.9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42525086",
+      "title": "Intracranial pressure physiology, monitoring and individualized management in the acute brain injured patient.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42593538",
+      "title": "Corticosteroids in ARDS: old controversies, new insights, and future directions.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40163131",
+      "title": "A consensus of European experts on the definition of ventilator-associated pneumonia recurrences obtained by the Delphi method: the RECUVAP study.",
+      "journal": "Intensive Care Med",
+      "score": 7.9,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40736325",
+      "title": "Pharmacological Research Agenda on Adult Extracorporeal Membrane Oxygenation Using the Delphi Method: A Position Paper of the Extracorporeal Membrane Oxygenation Pharmacology Network.",
+      "journal": "Crit Care Med",
+      "score": 7.9,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40768066",
+      "title": "Extracorporeal life support for adult patients with ARDS.",
+      "journal": "Intensive Care Med",
+      "score": 7.9,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41051555",
+      "title": "British societies guideline on the management of emergencies in patients on extracorporeal membrane oxygenation.",
+      "journal": "Intensive Care Med",
+      "score": 7.9,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34454688",
+      "title": "Cardiopulmonary resuscitation in special circumstances.",
+      "journal": "Lancet",
+      "score": 7.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34751704",
+      "title": "Cardiogenic Shock After Acute Myocardial Infarction: A Review.",
+      "journal": "JAMA",
+      "score": 7.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40960600",
+      "title": "Echocardiography guided management of atrial fibrillation.",
+      "journal": "Intensive Care Med",
+      "score": 7.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37314271",
+      "title": "Fluid Therapy for Critically Ill Adults With Sepsis: A Review.",
+      "journal": "JAMA",
+      "score": 7.7,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39774207",
+      "title": "Induction Agents for Tracheal Intubation in Critically Ill Patients.",
+      "journal": "Crit Care Med",
+      "score": 7.7,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40163133",
+      "title": "European Society of Intensive Care Medicine (ESICM) 2025 clinical practice guideline on fluid therapy in adult critically ill patients: part 2-the volume of resuscitation fluids.",
+      "journal": "Intensive Care Med",
+      "score": 7.7,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40522481",
+      "title": "Traumatic brain injury management in the intensive care unit: standard of care and knowledge gaps.",
+      "journal": "Intensive Care Med",
+      "score": 7.7,
+      "topic": "trauma",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36682372",
+      "title": "Asthma.",
+      "journal": "Lancet",
+      "score": 7.6,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36917048",
+      "title": "Heart Failure With Preserved Ejection Fraction: A Review.",
+      "journal": "JAMA",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37480934",
+      "title": "Global access and patient safety in the transition to environmentally friendly respiratory inhalers: the Global Initiative for Asthma perspective.",
+      "journal": "Lancet",
+      "score": 7.6,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37647926",
+      "title": "The Lancet Commission to reduce the global burden of sudden cardiac death: a call for multidisciplinary action.",
+      "journal": "Lancet",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37824153",
+      "title": "Red Blood Cell Transfusion: 2023 AABB International Guidelines.",
+      "journal": "JAMA",
+      "score": 7.6,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39714613",
+      "title": "Management of adult sepsis in resource-limited settings: global expert consensus statements using a Delphi method.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39847066",
+      "title": "The Brussels consensus for non-invasive ICP monitoring when invasive systems are not available in the care of TBI patients (the B-ICONIC consensus, recommendations, and management algorithm).",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "trauma",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39982186",
+      "title": "Society of Critical Care Medicine Guidelines for the Treatment of Heat Stroke.",
+      "journal": "Crit Care Med",
+      "score": 7.6,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40163135",
+      "title": "Sepsis subphenotypes, theragnostics and personalized sepsis care.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40323451",
+      "title": "Atrial fibrillation in critical illness: state of the art.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40411623",
+      "title": "How to approach a patient hospitalized for pneumonia who is not responding to treatment?",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37909826",
+      "title": "The Roles of Venopulmonary Arterial Extracorporeal Membrane Oxygenation.",
+      "journal": "Crit Care Med",
+      "score": 7.5,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40668231",
+      "title": "Clinical heterogeneity and phenotyping of post cardiac arrest brain injury: one size may not fit all.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40728635",
+      "title": "Norepinephrine pharmacolexicology: a chronological review of dose reporting and the implications of salt formulations.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40768067",
+      "title": "Cardiogenic shock: diagnosis, phenotyping and management.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38059745",
+      "title": "Oxygenation During Venoarterial Extracorporeal Membrane Oxygenation: Physiology, Current Evidence, and a Pragmatic Approach to Oxygen Titration.",
+      "journal": "Crit Care Med",
+      "score": 7.5,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40982016",
+      "title": "Pathophysiology and clinical applications of PEEP in acute brain injury.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41123621",
+      "title": "European Resuscitation Council and European Society of Intensive Care Medicine guidelines 2025: post-resuscitation care.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41236566",
+      "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39007570",
+      "title": "Executive Summary-Society of Critical Care Medicine Guideline and American Society of Health-System Pharmacists for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
+      "journal": "Crit Care Med",
+      "score": 7.3,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38598123",
+      "title": "Head-to-toe bedside ultrasound for adult patients on extracorporeal membrane oxygenation.",
+      "journal": "Intensive Care Med",
+      "score": 7.5,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38771364",
+      "title": "European Society of Intensive Care Medicine clinical practice guideline on fluid therapy in adult critically ill patients. Part 1: the choice of resuscitation fluids.",
+      "journal": "Intensive Care Med",
+      "score": 7.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39007578",
+      "title": "Society of Critical Care Medicine and American Society of Health-System Pharmacists Guideline for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
+      "journal": "Crit Care Med",
+      "score": 7.3,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35076659",
+      "title": "Screening for Atrial Fibrillation: US Preventive Services Task Force Recommendation Statement.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35140114",
+      "title": "Advances in the management of cardioembolic stroke associated with patent foramen ovale.",
+      "journal": "BMJ",
+      "score": 7.2,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35166796",
+      "title": "Diagnosis and Treatment of Acute Coronary Syndromes: A Review.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35258527",
+      "title": "Acute Cholecystitis: A Review.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35367005",
+      "title": "Acute coronary syndromes.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35380580",
+      "title": "Antiseizure Medications for Adults With Epilepsy: A Review.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35533707",
+      "title": "Chronic obstructive pulmonary disease.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35536260",
+      "title": "Screening for Chronic Obstructive Pulmonary Disease: US Preventive Services Task Force Reaffirmation Recommendation Statement.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35779549",
+      "title": "Improvement in trauma care for road traffic injuries: an assessment of the effect on mortality in low-income and middle-income countries.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "trauma",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35780794",
+      "title": "Complex post-traumatic stress disorder.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "trauma",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35964592",
+      "title": "Interstitial lung diseases.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36194215",
+      "title": "Acute Pulmonary Embolism: A Review.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35985353",
+      "title": "Spontaneous subarachnoid haemorrhage.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36070787",
+      "title": "Acute respiratory distress syndrome: causes, pathophysiology, and phenotypes.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36070788",
+      "title": "Acute respiratory distress syndrome in adults: diagnosis, outcomes, long-term sequelae, and management.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36472590",
+      "title": "Progress and Challenges in Bacterial Meningitis: A Review.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36946547",
+      "title": "Advances in the management of idiopathic pulmonary fibrosis and progressive pulmonary fibrosis.",
+      "journal": "BMJ",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38112771",
+      "title": "High and intermediate risk pulmonary embolism in the ICU.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38117319",
+      "title": "Status epilepticus in the ICU.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38240498",
+      "title": "Position Paper on the Reporting of Norepinephrine Formulations in Critical Care from the Society of Critical Care Medicine and European Society of Intensive Care Medicine Joint Task Force.",
+      "journal": "Crit Care Med",
+      "score": 7.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38546855",
+      "title": "Challenges for a broad international implementation of the current severe community-acquired pneumonia guidelines.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38598130",
+      "title": "Contemporary management of aneurysmal subarachnoid haemorrhage. An update for the intensivist.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38801520",
+      "title": "Implementing diaphragm protection during invasive mechanical ventilation.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38899947",
+      "title": "A Core Outcome Set for Research Evaluating Interventions to Enable Communication in Patients With an Artificial Airway: An International Delphi Consensus Study (Comm-COS).",
+      "journal": "Crit Care Med",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39133071",
+      "title": "Machine Learning Tools for Acute Respiratory Distress Syndrome Detection and Prediction.",
+      "journal": "Crit Care Med",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39222142",
+      "title": "Understanding, assessing and treating immune, endothelial and haemostasis dysfunctions in bacterial sepsis.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39254735",
+      "title": "Management of cardiogenic shock: state-of-the-art.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39297721",
+      "title": "Risk Stratification and Management of Acute Respiratory Failure in Patients With Neuromuscular Disease.",
+      "journal": "Crit Care Med",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39432104",
+      "title": "Causal inference can lead us to modifiable mechanisms and informative archetypes in sepsis.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39453492",
+      "title": "My echo checklist in venoarterial ECMO patients.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39531053",
+      "title": "Sepsis: key insights, future directions, and immediate goals. A review and expert opinion.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40154972",
+      "title": "Evaluating patients with chest pain in the emergency department.",
+      "journal": "BMJ",
+      "score": 7.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39557688",
+      "title": "Position paper on the physiology and nomenclature of dual circulation during venoarterial ECMO in adults.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34499865",
+      "title": "Disease pathology in fibrotic interstitial lung disease: is it all about usual interstitial pneumonia?",
+      "journal": "Lancet",
+      "score": 7.1,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37507572",
+      "title": "Clinical targeting of the cerebral oxygen cascade to improve brain oxygenation in patients with hypoxic-ischaemic brain injury after cardiac arrest.",
+      "journal": "Intensive Care Med",
+      "score": 7.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37707377",
+      "title": "The Ins and Outs of IV Fluids in Hemodynamic Resuscitation.",
+      "journal": "Crit Care Med",
+      "score": 7.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38245889",
+      "title": "International Consensus Criteria for Pediatric Sepsis and Septic Shock.",
+      "journal": "JAMA",
+      "score": 7,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34872910",
+      "title": "Management of pneumonia in critically ill patients.",
+      "journal": "BMJ",
+      "score": 6.9,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34303412",
+      "title": "Community-acquired bacterial meningitis.",
+      "journal": "Lancet",
+      "score": 6.8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34454687",
+      "title": "Brain injury after cardiac arrest.",
+      "journal": "Lancet",
+      "score": 6.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34481570",
+      "title": "Community-acquired pneumonia.",
+      "journal": "Lancet",
+      "score": 6.8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34607802",
+      "title": "Treatments for poorly controlled asthma.",
+      "journal": "BMJ",
+      "score": 6.8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34499866",
+      "title": "Treatment of fibrotic interstitial lung disease: current approaches and future directions.",
+      "journal": "Lancet",
+      "score": 6.8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36592205",
+      "title": "How to use biomarkers of infection or sepsis at the bedside: guide to clinicians.",
+      "journal": "Intensive Care Med",
+      "score": 6.8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37184336",
+      "title": "Advances in the Management of Cardiogenic Shock.",
+      "journal": "Crit Care Med",
+      "score": 6.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37607072",
+      "title": "Practice Standards for the Use of Multimodality Neuromonitoring: A Delphi Consensus Process.",
+      "journal": "Crit Care Med",
+      "score": 6.8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38865154",
+      "title": "Low-Dose Corticosteroids for Critically Ill Adults With Severe Pulmonary Infections: A Review.",
+      "journal": "JAMA",
+      "score": 6.8,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39137947",
+      "title": "Device associated complications in the intensive care unit.",
+      "journal": "BMJ",
+      "score": 6.8,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39653416",
+      "title": "Management of pain and sedation in the intensive care unit.",
+      "journal": "BMJ",
+      "score": 6.8,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34910228",
+      "title": "Current practice and evolving concepts in septic shock resuscitation.",
+      "journal": "Intensive Care Med",
+      "score": 6.7,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35943569",
+      "title": "Extracorporeal carbon dioxide removal for acute respiratory failure: a review of potential indications, clinical practice and open research questions.",
+      "journal": "Intensive Care Med",
+      "score": 6.7,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35997793",
+      "title": "Machines that help machines to help patients: optimising antimicrobial dosing in patients receiving extracorporeal membrane oxygenation and renal replacement therapy using dosing software.",
+      "journal": "Intensive Care Med",
+      "score": 6.7,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36094523",
+      "title": "Complications Associated With Venovenous Extracorporeal Membrane Oxygenation-What Can Go Wrong?",
+      "journal": "Crit Care Med",
+      "score": 6.7,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35986748",
+      "title": "How to improve intubation in the intensive care unit. Update on knowledge and devices.",
+      "journal": "Intensive Care Med",
+      "score": 6.5,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35595999",
+      "title": "Management of moderate to severe traumatic brain injury: an update for the intensivist.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "trauma",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35607967",
+      "title": "Electrical Impedance Tomography in Acute Respiratory Distress Syndrome Management.",
+      "journal": "Crit Care Med",
+      "score": 6.4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35652920",
+      "title": "Prone position in mechanically ventilated patients.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35688993",
+      "title": "Phrenic nerve stimulation to protect the diaphragm, lung, and brain during mechanical ventilation.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35802139",
+      "title": "Invasive arterial pressure monitoring: much more than mean arterial pressure!",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40396870",
+      "title": "Contemporary Rationale for Delivering Enteral Nutrition in Critically Ill Adults.",
+      "journal": "Crit Care Med",
+      "score": 6.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35816237",
+      "title": "Intracranial pressure: current perspectives on physiology and monitoring.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35833958",
+      "title": "Imaging the acute respiratory distress syndrome: past, present and future.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35945343",
+      "title": "Respiratory indications for ECMO: focus on COVID-19.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41489340",
+      "title": "Tandem Extracorporeal Blood Purification/Support Therapies in Critically Ill Children: A Literature Review.",
+      "journal": "Crit Care Med",
+      "score": 6.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35945344",
+      "title": "How can assessing hemodynamics help to assess volume status?",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39961846",
+      "title": "Invasive fungal infections in patients with liver disease: immunological and clinical considerations for the intensive care unit.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40663138",
+      "title": "Preventing acute kidney injury and its longer-term impact in the critically ill.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38944044",
+      "title": "Neonatal bacterial sepsis.",
+      "journal": "Lancet",
+      "score": 6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40828463",
+      "title": "European Society of Intensive Care Medicine Clinical Practice Guideline on fluid therapy in adult critically ill patients: Part 3-fluid removal at de-escalation phase.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41123622",
+      "title": "Life-threatening immune-related adverse events in the intensive care unit: a narrative review.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40658248",
+      "title": "Source control in bloodstream infections in patients with sepsis, septic shock, or requiring ICU admission: a scoping review with recommendations for standardizing research.",
+      "journal": "Intensive Care Med",
+      "score": 6.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39774315",
+      "title": "Sepsis and Septic Shock.",
+      "journal": "N Engl J Med",
+      "score": 5.8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34545440",
+      "title": "Critically ill cancer patient's resuscitation: a Belgian/French societies' consensus conference.",
+      "journal": "Intensive Care Med",
+      "score": 6.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34677620",
+      "title": "Transfusion strategies in bleeding critically ill adults: a clinical practice guideline from the European Society of Intensive Care Medicine.",
+      "journal": "Intensive Care Med",
+      "score": 6.1,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34705079",
+      "title": "Brain injury after cardiac arrest: pathophysiology, treatment, and prognosis.",
+      "journal": "Intensive Care Med",
+      "score": 6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36661450",
+      "title": "Mortality As a Measure of Treatment Effect in Clinical Trials Recruiting Critically Ill Patients.",
+      "journal": "Crit Care Med",
+      "score": 5.6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38236292",
+      "title": "The trajectory of very old critically ill patients.",
+      "journal": "Intensive Care Med",
+      "score": 6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38483559",
+      "title": "Consistency of data reporting in fluid responsiveness studies in the critically ill setting: the CODEFIRE consensus from the Cardiovascular Dynamic section of the European Society of Intensive Care Medicine.",
+      "journal": "Intensive Care Med",
+      "score": 6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38512399",
+      "title": "Invasive Fungal Diseases in Adult Patients in Intensive Care Unit (FUNDICU): 2024 consensus definitions from ESGCIP, EFISG, ESICM, ECMM, MSGERC, ISAC, and ISHAM.",
+      "journal": "Intensive Care Med",
+      "score": 6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36794946",
+      "title": "Neuromonitoring in Critically Ill Patients.",
+      "journal": "Crit Care Med",
+      "score": 5.6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38748265",
+      "title": "Management of hematological patients requiring emergency chemotherapy in the intensive care unit.",
+      "journal": "Intensive Care Med",
+      "score": 6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38771368",
+      "title": "Nutrition in the intensive care unit: from the acute phase to beyond.",
+      "journal": "Intensive Care Med",
+      "score": 6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39361081",
+      "title": "European Society of Intensive Care Medicine guidelines on end of life and palliative care in the intensive care unit.",
+      "journal": "Intensive Care Med",
+      "score": 6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41467651",
+      "title": "Cardiogenic Shock.",
+      "journal": "N Engl J Med",
+      "score": 5.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36808215",
+      "title": "How to manage coagulopathies in critically ill patients.",
+      "journal": "Intensive Care Med",
+      "score": 5.6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37552332",
+      "title": "Precision management of acute kidney injury in the intensive care unit: current state of the art.",
+      "journal": "Intensive Care Med",
+      "score": 5.6,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41534044",
+      "title": "Sudden Cardiac Arrest in Athletes.",
+      "journal": "N Engl J Med",
+      "score": 5.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41564398",
+      "title": "Physiologic Pacing in Heart Failure.",
+      "journal": "N Engl J Med",
+      "score": 5.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41604641",
+      "title": "Peripheral Artery Disease in the Legs.",
+      "journal": "N Engl J Med",
+      "score": 5.6,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35941260",
+      "title": "Machines that save lives in the intensive care unit: the ultrasonography machine.",
+      "journal": "Intensive Care Med",
+      "score": 5.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41707139",
+      "title": "Secondary Prevention after Ischemic Stroke.",
+      "journal": "N Engl J Med",
+      "score": 5.6,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42019020",
+      "title": "Spinal Epidural Abscess.",
+      "journal": "N Engl J Med",
+      "score": 5.6,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35960275",
+      "title": "Plasma exchange in the intensive care unit: a narrative review.",
+      "journal": "Intensive Care Med",
+      "score": 5.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35984473",
+      "title": "Hemoperfusion in the intensive care unit.",
+      "journal": "Intensive Care Med",
+      "score": 5.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35997792",
+      "title": "Electroencephalogram in the intensive care unit: a focused look at acute brain injury.",
+      "journal": "Intensive Care Med",
+      "score": 5.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36106970",
+      "title": "Interfacility Transport of Critically Ill Patients.",
+      "journal": "Crit Care Med",
+      "score": 5.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36066597",
+      "title": "Delivering optimal renal replacement therapy to critically ill patients with acute kidney injury.",
+      "journal": "Intensive Care Med",
+      "score": 5.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39778171",
+      "title": "Heart Failure with Preserved Ejection Fraction.",
+      "journal": "N Engl J Med",
+      "score": 5.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40532153",
+      "title": "Unruptured Intracranial Aneurysms.",
+      "journal": "N Engl J Med",
+      "score": 5.2,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40902163",
+      "title": "Management of Acute Type B Aortic Dissection.",
+      "journal": "N Engl J Med",
+      "score": 5.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41569019",
+      "title": "Interhospital Transfer of Critically Ill Cardiac Patients.",
+      "journal": "Crit Care Med",
+      "score": 5.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41061234",
+      "title": "Idiopathic Intracranial Hypertension.",
+      "journal": "N Engl J Med",
+      "score": 5.2,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38519084",
+      "title": "Stroke rehabilitation in adults: summary of updated NICE guidance.",
+      "journal": "BMJ",
+      "score": 5,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41528192",
+      "title": "Vasoactive Medications and the Microcirculation in Septic Shock: A Scoping Review.",
+      "journal": "Crit Care Med",
+      "score": 5,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "33870914",
+      "title": "A Core Outcome Set for Research Evaluating Interventions to Prevent and/or Treat Delirium in Critically Ill Adults: An International Consensus Study (Del-COrS).",
+      "journal": "Crit Care Med",
+      "score": 4.8,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34787687",
+      "title": "Basic ultrasound head-to-toe skills for intensivists in the general and neuro intensive care unit population: consensus and expert recommendations of the European Society of Intensive Care Medicine.",
+      "journal": "Intensive Care Med",
+      "score": 4.8,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38294976",
+      "title": "Cardiac Implantable Electronic Devices.",
+      "journal": "N Engl J Med",
+      "score": 4.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37585629",
+      "title": "Community-Acquired Pneumonia.",
+      "journal": "N Engl J Med",
+      "score": 4.4,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37703556",
+      "title": "Asthma in Adults.",
+      "journal": "N Engl J Med",
+      "score": 4.4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39870417",
+      "title": "Intensive care unit acquired weakness and physical rehabilitation in the ICU.",
+      "journal": "BMJ",
+      "score": 4.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42418776",
+      "title": "Nutrition Therapy in Critically Ill Adults.",
+      "journal": "N Engl J Med",
+      "score": 4.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36975216",
+      "title": "Health Disparities in Extracorporeal Membrane Oxygenation Utilization and Outcomes: A Scoping Review and Methodologic Critique of the Literature.",
+      "journal": "Crit Care Med",
+      "score": 4.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35020986",
+      "title": "Biologic Therapies for Severe Asthma.",
+      "journal": "N Engl J Med",
+      "score": 4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35263520",
+      "title": "Extracorporeal Kidney-Replacement Therapy for Acute Kidney Injury.",
+      "journal": "N Engl J Med",
+      "score": 4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35294814",
+      "title": "Cryptogenic Organizing Pneumonia.",
+      "journal": "N Engl J Med",
+      "score": 4,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42467246",
+      "title": "Key principles for rehabilitation of critically ill patients with obesity.",
+      "journal": "Intensive Care Med",
+      "score": 3.8,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35793208",
+      "title": "Pulmonary Embolism.",
+      "journal": "N Engl J Med",
+      "score": 4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36300975",
+      "title": "Spontaneous Intracerebral Hemorrhage.",
+      "journal": "N Engl J Med",
+      "score": 4,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36322846",
+      "title": "Noninvasive Respiratory Support for Adults with Acute Respiratory Failure.",
+      "journal": "N Engl J Med",
+      "score": 4,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35481953",
+      "title": "Patient, Public, and Healthcare Professionals' Sepsis Awareness, Knowledge, and Information Seeking Behaviors: A Scoping Review.",
+      "journal": "Crit Care Med",
+      "score": 3.4,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34874632",
+      "title": "Spontaneous Intracranial Hypotension.",
+      "journal": "N Engl J Med",
+      "score": 3.9,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "34469648",
+      "title": "Chronic Meningitis.",
+      "journal": "N Engl J Med",
+      "score": 3.6,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40392264",
+      "title": "Understanding and mitigating medication errors associated with patient harm in adult intensive care units: a scoping review.",
+      "journal": "Intensive Care Med",
+      "score": 3.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40794169",
+      "title": "What measures have been used to explore the outcomes of family members of critically ill patients: a scoping review.",
+      "journal": "Intensive Care Med",
+      "score": 3.4,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39417874",
+      "title": "Accuracy of continuous glucose monitoring systems in intensive care unit patients: a scoping review.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41212550",
+      "title": "Metabolic Dysfunction-Associated Steatotic Liver Disease in Adults: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41247746",
+      "title": "Peripheral Neuropathy: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41288429",
+      "title": "Anemia of Critical Illness: A Concise Definitive Review in Critical Care.",
+      "journal": "Crit Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41296368",
+      "title": "Therapeutic Use of Cannabis and Cannabinoids: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41396553",
+      "title": "Disorders of consciousness diagnosis, interventions, and prognostication for the intensivist: Report of the 2025 ISICEM roundtable.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41547366",
+      "title": "Glucagon-like receptor agonists and next-generation incretin-based medications: metabolic, cardiovascular, and renal benefits.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41556744",
+      "title": "Volatile Anesthetics: A Comprehensive Review of Pharmacology, Delivery Systems, and Safety Considerations for ICU Practitioners.",
+      "journal": "Crit Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41563785",
+      "title": "Restless Legs Syndrome: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41617253",
+      "title": "Evaluation and management of chest pain from cardiovascular causes in female patients.",
+      "journal": "BMJ",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41671483",
+      "title": "Mucormycosis.",
+      "journal": "N Engl J Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41697686",
+      "title": "Type 1 Diabetes: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41770539",
+      "title": "Chronic, Noninfectious Diarrhea: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41771281",
+      "title": "Autosomal dominant polycystic kidney disease.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41773927",
+      "title": "Society of Critical Care Medicine Guidelines for the Allocation of Critical Care Resources to Adults During Crisis-Level Shortages.",
+      "journal": "Crit Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41801269",
+      "title": "Feeding the injured brain: nutrients, dose, timing, and monitoring.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41831848",
+      "title": "Sickle cell disease.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41841954",
+      "title": "The Effective Management of Shock: Moving From Physiology to Guidelines to Personalized Medicine.",
+      "journal": "Crit Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41860322",
+      "title": "Society of Critical Care Medicine Guidelines on Caring for Older Adults in the ICU.",
+      "journal": "Crit Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41870448",
+      "title": "Diagnosis and Management of Resistant Hypertension: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42001896",
+      "title": "Targeting MEK in cancer and beyond: mechanistic insights and therapeutic opportunities.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42007984",
+      "title": "Temperature control in acute brain injury.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42008245",
+      "title": "Prepregnancy Care and Counseling: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42059919",
+      "title": "Stepwise clinical and diagnostic strategy for coma of unknown origin.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42059920",
+      "title": "Standard of care for rehabilitation in critical illness.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42090794",
+      "title": "Cerebral Amyloid Angiopathy.",
+      "journal": "N Engl J Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42207626",
+      "title": "Adult Male Hypogonadism: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42257880",
+      "title": "International evidence-based recommendations for point-of-care lung ultrasound : 2025 focused update of the 2012 recommendations.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42257882",
+      "title": "Patient blood management in general intensive care patients.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42258347",
+      "title": "Survivors of Cyanotic Congenital Heart Disease: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42263727",
+      "title": "Global advances in health artificial intelligence: a workforce imperative.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42285117",
+      "title": "Prevention of postpartum haemorrhage: from evidence to implementation at scale.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42285119",
+      "title": "Postpartum haemorrhage: epidemiology, consequences, and missed opportunities.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42377460",
+      "title": "Burden of and risk factors for neurological complications in critical illness.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42406571",
+      "title": "Alcohol-Related Liver Disease: A Review.",
+      "journal": "JAMA",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42526473",
+      "title": "Psoriasis.",
+      "journal": "Lancet",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42526943",
+      "title": "Antithrombotic treatment for migraine in patients with patent foramen ovale: multicentre, randomised, active controlled, open label trial.",
+      "journal": "BMJ",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42555934",
+      "title": "Syncope.",
+      "journal": "N Engl J Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "42593537",
+      "title": "Decades of intensive care medicine trials: what randomised evidence has changed, corrected, and still questions to resolve.",
+      "journal": "Intensive Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39630439",
+      "title": "Axial Spondyloarthritis: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39688452",
+      "title": "Toward Precision in Nutrition Therapy.",
+      "journal": "Crit Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39746713",
+      "title": "Nutritional Support in the ICU.",
+      "journal": "BMJ",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39774866",
+      "title": "What intensivists need to know about cytomegalovirus infection in immunocompromised ICU patients.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39791972",
+      "title": "Disorders of Lymphatic Architecture and Flow in Critical Illness.",
+      "journal": "Crit Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39899286",
+      "title": "Testicular Germ Cell Tumors: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39937221",
+      "title": "Supporting the bereaved child in the adult ICU: a narrative review.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39955121",
+      "title": "Atopic dermatitis.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39961851",
+      "title": "ESICM consensus-based recommendations for the management of very old patients in intensive care.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39982143",
+      "title": "A Focused Update to the Clinical Practice Guidelines for the Prevention and Management of Pain, Anxiety, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU.",
+      "journal": "Crit Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39982148",
+      "title": "The Definition of the Intensivist in the Era of Global Healthcare: 2024 Consensus Statement From the Society of Critical Care Medicine Defining Intensivist Task Force.",
+      "journal": "Crit Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39982182",
+      "title": "Society of Critical Care Medicine Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024.",
+      "journal": "Crit Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39986748",
+      "title": "Human schistosomiasis.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40094679",
+      "title": "Chronic Myeloid Leukemia: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40126492",
+      "title": "Autosomal Dominant Polycystic Kidney Disease: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40159291",
+      "title": "Iron Deficiency in Adults: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40179933",
+      "title": "The Lancet Commission on rethinking coronary artery disease: moving from ischaemia to atheroma.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40227658",
+      "title": "Cataracts: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40237805",
+      "title": "Contemporary review of critical illness following allogeneic hematopoietic stem cell transplant in adults.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40293759",
+      "title": "Non-Cystic Fibrosis Bronchiectasis in Adults: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40358930",
+      "title": "Screening for Syphilis Infection During Pregnancy: US Preventive Services Task Force Reaffirmation Recommendation Statement.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40388146",
+      "title": "Immune Thrombotic Thrombocytopenic Purpura: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40425241",
+      "title": "Current management of hypertrophic cardiomyopathy.",
+      "journal": "BMJ",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40484016",
+      "title": "Acute rheumatic fever.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40544858",
+      "title": "Current treatment for symptomatic uterine fibroids: available evidence and therapeutic dilemmas.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40549398",
+      "title": "Diagnosis and Treatment of Type 2 Diabetes in Adults: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40608084",
+      "title": "Thrombotic thrombocytopenic purpura: early diagnosis and effective treatment in 2025.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40618768",
+      "title": "A decade later, what have we learned from the Zika epidemic in children with intrauterine exposure?",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40622703",
+      "title": "West Nile Virus: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40684779",
+      "title": "Childhood epilepsy.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40705073",
+      "title": "Noninvasive respiratory supports in ICU.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40719889",
+      "title": "State of the art: Renal recovery after AKI - from basic science to clinical practice.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40783291",
+      "title": "Vesicular monoamine transport inhibitors: current uses and future directions.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40788632",
+      "title": "Prostatitis: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40813129",
+      "title": "Cardiovascular, kidney related, and weight loss effects of therapeutics for type 2 diabetes: a living clinical practice guideline.",
+      "journal": "BMJ",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40826313",
+      "title": "Determination of Cerebral Autoregulation at the Bedside: A Narrative Review.",
+      "journal": "Crit Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40888899",
+      "title": "Antibiotic therapy for severe bacterial infections.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40952730",
+      "title": "Superficial Vein Thrombosis: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "40983070",
+      "title": "The future of type 1 diabetes therapy.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41100079",
+      "title": "Syphilis: A Review.",
+      "journal": "JAMA",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41117944",
+      "title": "Invasive candidiasis in intensive care medicine: shaping the future of diagnosis and therapy.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41173010",
+      "title": "Peripartum cardiomyopathy.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41222651",
+      "title": "Critical care management of the patient with pharmaceutical poisoning.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41318214",
+      "title": "Contemporary, non-invasive imaging diagnosis of chronic coronary artery disease.",
+      "journal": "Lancet",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37698452",
+      "title": "National ICU Registries as Enablers of Clinical Research and Quality Improvement.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38112769",
+      "title": "Diagnosis and management of autoimmune diseases in the ICU.",
+      "journal": "Intensive Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38189930",
+      "title": "Contemporary management of major haemorrhage in critical care.",
+      "journal": "Intensive Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38197931",
+      "title": "ICU-acquired infections in immunocompromised patients.",
+      "journal": "Intensive Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38240487",
+      "title": "Management of Heat-Related Illness and Injury in the ICU: A Concise Definitive Review.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38278171",
+      "title": "Hyperthyroidism.",
+      "journal": "Lancet",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38388984",
+      "title": "Dyspnoea in acutely ill mechanically ventilated adult patients: an ERS/ESICM statement.",
+      "journal": "Intensive Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38407240",
+      "title": "Toward Equitable Kidney Function Estimation in Critical Care Practice: Guidance From the Society of Critical Care Medicine's Diversity, Equity, and Inclusion in Renal Clinical Practice Task Force.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38416431",
+      "title": "Cardiac Rehabilitation - Challenges, Advances, and the Road Ahead.",
+      "journal": "N Engl J Med",
+      "score": 2.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38470381",
+      "title": "Allergic Rhinitis: A Review.",
+      "journal": "JAMA",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38497953",
+      "title": "Arteriovenous Access for Hemodialysis: A Review.",
+      "journal": "JAMA",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38526578",
+      "title": "British societies guideline on the management of emergencies in implantable left ventricular assist device recipients in transplant centres.",
+      "journal": "Intensive Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38536167",
+      "title": "Risk Assessment and Prevention of Falls in Older Community-Dwelling Adults: A Review.",
+      "journal": "JAMA",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38735295",
+      "title": "Hypopituitarism.",
+      "journal": "Lancet",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38749554",
+      "title": "Cardiovascular toxicity of immune therapies for cancer.",
+      "journal": "BMJ",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38836697",
+      "title": "Optic Nerve Sheath Diameter Point-of-Care Ultrasonography Quality Criteria Checklist: An International Consensus Statement on Optic Nerve Sheath Diameter Imaging and Measurement.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38885678",
+      "title": "Peptic ulcer disease.",
+      "journal": "Lancet",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38897628",
+      "title": "Diagnosis and management of resistant hypertension.",
+      "journal": "BMJ",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39007569",
+      "title": "From Traditional Typing to Intelligent Insights: A Narrative Review of Directions Toward Targeted Therapies in Delirium.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39098320",
+      "title": "Acute liver failure.",
+      "journal": "Lancet",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39133476",
+      "title": "Perioperative Management of Patients Taking Direct Oral Anticoagulants: A Review.",
+      "journal": "JAMA",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39145701",
+      "title": "Covert Consciousness in the ICU.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39145702",
+      "title": "Toward Precision in Critical Care Research: Methods for Observational and Interventional Studies.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39171998",
+      "title": "Malignant Hyperthermia.",
+      "journal": "Crit Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39235771",
+      "title": "Diagnosis, Risk Stratification, and Treatment of Pericarditis: A Review.",
+      "journal": "JAMA",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39254734",
+      "title": "Complement system activation: bridging physiology, pathophysiology, and therapy.",
+      "journal": "Intensive Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39265587",
+      "title": "Severe respiratory syncytial virus infection in children: burden, management, and emerging therapies.",
+      "journal": "Lancet",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39320462",
+      "title": "Challenging management dogma where evidence is non-existent, weak, or outdated: part II.",
+      "journal": "Intensive Care Med",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39353639",
+      "title": "Sodium-glucose cotransporter-2 (SGLT-2) inhibitors for adults with chronic kidney disease: a clinical practice guideline.",
+      "journal": "BMJ",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39356511",
+      "title": "Dialysis for Chronic Kidney Failure: A Review.",
+      "journal": "JAMA",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "39527048",
+      "title": "Calcific Aortic Stenosis: A Review.",
+      "journal": "JAMA",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36563698",
+      "title": "Lung cancer screening.",
+      "journal": "Lancet",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36725015",
+      "title": "Efficacy, safety, and tolerability of antidepressants for pain in adults: overview of systematic reviews.",
+      "journal": "BMJ",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36749328",
+      "title": "Management of Menopausal Symptoms: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37014337",
+      "title": "Diagnosis and Treatment of Acute Myocarditis: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37052436",
+      "title": "Guidelines for the Management of Adult Acute and Acute-on-Chronic Liver Failure in the ICU: Neurology, Peri-Transplant Medicine, Infectious Disease, and Gastroenterology Considerations.",
+      "journal": "Crit Care Med",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37121245",
+      "title": "Current concepts in coronary artery revascularisation.",
+      "journal": "Lancet",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37159031",
+      "title": "Diagnosis and Management of Cirrhosis and Its Complications: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37263632",
+      "title": "Prevention of venous thromboembolism in patients with cancer.",
+      "journal": "BMJ",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37344680",
+      "title": "Differentiating infection, colonisation, and sterile inflammation in critical illness: the emerging role of host-response profiling.",
+      "journal": "Intensive Care Med",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37459868",
+      "title": "Adult epilepsy.",
+      "journal": "Lancet",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37552333",
+      "title": "Intensive care management of acute-on-chronic liver failure.",
+      "journal": "Intensive Care Med",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37595965",
+      "title": "Pathophysiology, diagnosis, and management of neuroinflammation in covid-19.",
+      "journal": "BMJ",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37676504",
+      "title": "Sex and gender differences in intensive care medicine.",
+      "journal": "Intensive Care Med",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37698559",
+      "title": "Ulcerative Colitis in Adults: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37699417",
+      "title": "The future of cystic fibrosis treatment: from disease mechanisms to novel therapeutic approaches.",
+      "journal": "Lancet",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37716772",
+      "title": "Dilated cardiomyopathy: causes, mechanisms, and current and future treatment approaches.",
+      "journal": "Lancet",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37750876",
+      "title": "Clinical Care for People Who Survive Childhood Cancer: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37844590",
+      "title": "β blockers switched to first-line therapy in hypertension.",
+      "journal": "Lancet",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37847271",
+      "title": "Hyperthyroidism: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37874571",
+      "title": "Evaluation and Treatment of Knee Pain: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "37924827",
+      "title": "Malaria.",
+      "journal": "Lancet",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "38112812",
+      "title": "Common Painful Foot and Ankle Conditions: A Review.",
+      "journal": "JAMA",
+      "score": 1.8,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35040882",
+      "title": "Evaluating the Patient With a Pulmonary Nodule: A Review.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35074803",
+      "title": "Diagnosis and management of functional neurological disorder.",
+      "journal": "BMJ",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35093206",
+      "title": "Measles.",
+      "journal": "Lancet",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35103762",
+      "title": "Diagnosis and Management of Multiple Myeloma: A Review.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35230389",
+      "title": "Diagnosis and Treatment of Pulmonary Sarcoidosis: A Review.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35296510",
+      "title": "Recent advances in the diagnosis and management of cluster headache.",
+      "journal": "BMJ",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35303116",
+      "title": "Challenging management dogma where evidence is non-existent, weak or outdated.",
+      "journal": "Intensive Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35412560",
+      "title": "Diagnosis and Treatment of Pulmonary Arterial Hypertension: A Review.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35426840",
+      "title": "Temperature Management in the ICU.",
+      "journal": "Crit Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35430021",
+      "title": "Management of common clinical problems experienced by survivors of cancer.",
+      "journal": "Lancet",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35430023",
+      "title": "Long-term care for people treated for cancer during childhood and adolescence.",
+      "journal": "Lancet",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35445823",
+      "title": "The brain in pediatric critical care: unique aspects of assessment, monitoring, investigations, and follow-up.",
+      "journal": "Intensive Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35473709",
+      "title": "Diagnosis and management of covid-19 in pregnancy.",
+      "journal": "BMJ",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35489361",
+      "title": "Improving health and social systems for all children in LMICs: structural innovations to deliver high-quality services.",
+      "journal": "Lancet",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35508320",
+      "title": "PCSK9 inhibitors and ezetimibe for the reduction of cardiovascular events: a clinical practice guideline with risk-stratified recommendations.",
+      "journal": "BMJ",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35587274",
+      "title": "Use of dexmedetomidine for sedation in mechanically ventilated adult ICU patients: a rapid practice guideline.",
+      "journal": "Intensive Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35690953",
+      "title": "The physiological underpinnings of life-saving respiratory support.",
+      "journal": "Intensive Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35691301",
+      "title": "Thalassaemia.",
+      "journal": "Lancet",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35696329",
+      "title": "Prognostication and shared decision making in neurocritical care.",
+      "journal": "BMJ",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35697356",
+      "title": "Revascularization in stable coronary artery disease.",
+      "journal": "BMJ",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35785792",
+      "title": "Bronchiolitis.",
+      "journal": "Lancet",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35788790",
+      "title": "Sickle Cell Disease: A Review.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35852524",
+      "title": "Diagnosis and Management of Hyponatremia: A Review.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35866651",
+      "title": "Using Qualitative Synthesis to Explore Heterogeneity of Randomized Trials on ICU Diaries.",
+      "journal": "Crit Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35881115",
+      "title": "Behavioral Counseling Interventions to Promote a Healthy Diet and Physical Activity for Cardiovascular Disease Prevention in Adults Without Cardiovascular Disease Risk Factors: US Preventive Services Task Force Recommendation Statement.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "35997723",
+      "title": "Statin Use for the Primary Prevention of Cardiovascular Disease in Adults: US Preventive Services Task Force Recommendation Statement.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    },
+    {
+      "pmid": "36066598",
+      "title": "Artificial liver support in patients with liver failure: a modified DELPHI consensus of international experts.",
+      "journal": "Intensive Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16"
+    }
+  ],
+  "published": [
+    {
+      "pmid": "40889512",
+      "title": "Prevention of heart failure after acute myocardial infarction.",
+      "journal": "Lancet",
+      "score": 9.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "publishedAt": "2026-08-16"
+    }
+  ],
+  "rejected": [],
+  "lastRun": {
+    "date": "2026-08-16",
+    "outcome": "published",
+    "publishedId": "40889512"
+  },
+  "updatedAt": "2026-08-16"
+}

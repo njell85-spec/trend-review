@@ -39,7 +39,10 @@ export function buildUpcoming({ from, days, tracks = [] }) {
   const rows = [];
   for (const t of tracks) {
     const dates = nextRunDates({ from, days, mode: t.mode, cadence: t.cadence });
-    const queue = t.state?.queue ?? [];
+    // ★ 제목 없는 항목은 예고에 올리지 않는다. 화면에 **빈 줄**로 떠서 무엇을 지우는지
+    //   무엇을 먼저 돌리는지 알 수 없게 된다(실측: 테스트 픽스처가 흘러들어와 빈 줄이 떴다).
+    //   큐에서 지우지는 않는다 — 데이터 문제이지 큐 자체의 문제가 아니다.
+    const queue = (t.state?.queue ?? []).filter((x) => String(x?.title ?? '').trim());
     // 큐 머리부터 순서대로. 큐가 모자라면 거기서 멈춘다.
     for (let i = 0; i < Math.min(dates.length, queue.length); i += 1) {
       rows.push({

@@ -159,3 +159,27 @@ test('exclude 목록은 숫자·문자 pmid 를 섞어 줘도 걸러낸다', () 
     [{ pmid: '111', title: 'a', score: 1 }], { today: '2026-08-16', excludePmids: [111] });
   assert.equal(b.queue.length, 0, '풀이 문자 · 장부가 숫자');
 });
+
+// ★ 실측 사고 회귀 (2026-08-16).
+// 테스트가 오케스트레이터를 기본 옵션으로 만들면 `output/queue_papers.json` 에 쓴다.
+// 그래서 테스트 픽스처(`paper-1`, 제목 빈 문자열)가 **프로덕션 큐에 들어갔고**
+// 배포 페이지 예고 리스트에 제목 없는 빈 줄로 떴다. 화면을 눈으로 보고서야 알았다.
+test('★ 테스트 중에는 프로덕션 output 경로에 못 쓴다', async () => {
+  await assert.rejects(
+    () => saveTrackQueue('output/queue_papers.json', emptyQueue('papers')),
+    /프로덕션 경로/);
+  await assert.rejects(
+    () => saveTrackQueue('/home/user/trend-review/output/queue_reviews.json', emptyQueue('reviews')),
+    /프로덕션 경로/);
+});
+
+// ★ 실측으로 걸린 자리: `output/*` 가 통째로 gitignore 라서 큐가 커밋되지 않았다.
+// 리뷰 저수지 400편이 **매 실행마다 사라지고** 트랙 온오프·읽음도 초기화된다.
+// 상태 파일을 늘릴 때마다 예외를 같이 넣어야 하므로 테스트로 못 박는다.
+test('★ 트랙 상태 파일들이 gitignore 예외에 들어 있다 (안 그러면 실행 사이에 증발한다)', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const gi = await readFile(new URL('../.gitignore', import.meta.url), 'utf8');
+  for (const f of ['queue_papers.json', 'queue_reviews.json', 'control_state.json', 'read_state.json']) {
+    assert.ok(gi.includes(`!output/${f}`), `output/${f} 가 gitignore 예외에 없다 — 실행 사이에 사라진다`);
+  }
+});
