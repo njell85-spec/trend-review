@@ -42,7 +42,9 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-15T21:50:26.872Z"
+      "lastSeenAt": "2026-08-16T21:50:27.591Z",
+      "region": "eu",
+      "by": "org-acronym"
     },
     {
       "id": "pmid:42087034",
@@ -86,9 +88,11 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-15T21:50:26.872Z",
+      "lastSeenAt": "2026-08-16T21:50:27.591Z",
       "lineageKey": "ncs|seizure-prophylaxis-patients-undergoing-supratentorial-neurosurgery-statement-healthcare-professionals-from",
-      "supersedes": []
+      "supersedes": [],
+      "region": "us",
+      "by": "org-name"
     },
     {
       "id": "pmid:42132666",
@@ -172,7 +176,9 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-15T21:50:26.872Z"
+      "lastSeenAt": "2026-08-16T21:50:27.591Z",
+      "region": "us",
+      "by": "org-name"
     },
     {
       "id": "pmid:41887234",
@@ -430,13 +436,15 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "discoveredAt": "2026-08-16T21:50:26.991Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
       "reasons": [
         "consensus-process-study"
-      ]
+      ],
+      "region": "eu",
+      "by": "nationality"
     }
   ],
   "sourceHealth": {
@@ -489,7 +497,7 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260816_064447:guideline:2026-08-16",
+    "runId": "trend_review_20260817_064334:guideline:2026-08-17",
     "outcome": "observe-only",
     "publishedId": null,
     "manifest": {
@@ -523,8 +531,8 @@
         "oldestFetchedDate": "2026 Aug",
         "newestFetchedDate": "2026 Aug",
         "window": {
-          "minDate": "2026/07/17",
-          "maxDate": "2026/08/16"
+          "minDate": "2026/07/18",
+          "maxDate": "2026/08/17"
         },
         "retmax": 40,
         "ptPmids": [
@@ -595,6 +603,6 @@
       }
     }
   },
-  "updatedAt": "2026-08-15T21:50:26.875Z",
+  "updatedAt": "2026-08-16T21:50:27.595Z",
   "configVersion": "guideline-v2"
 }

@@ -3,15 +3,6 @@
   "track": "reviews",
   "queue": [
     {
-      "pmid": "41504890",
-      "title": "A consensus of international experts on definition, sampling, treatment, and prevention of peripheral extracorporeal membrane oxygenation cannula-site infection obtained by the Delphi method: the SAVECMO study.",
-      "journal": "Intensive Care Med",
-      "score": 9.3,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16"
-    },
-    {
       "pmid": "42412218",
       "title": "60 years of ARDS and the evolution of extracorporeal lung support - from ECMO to ECCO(2)R.",
       "journal": "Intensive Care Med",
@@ -3604,13 +3595,23 @@
       "lowConfidence": false,
       "addedAt": "2026-08-16",
       "publishedAt": "2026-08-16"
+    },
+    {
+      "pmid": "41504890",
+      "title": "A consensus of international experts on definition, sampling, treatment, and prevention of peripheral extracorporeal membrane oxygenation cannula-site infection obtained by the Delphi method: the SAVECMO study.",
+      "journal": "Intensive Care Med",
+      "score": 9.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "publishedAt": "2026-08-17"
     }
   ],
   "rejected": [],
   "lastRun": {
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "outcome": "published",
-    "publishedId": "40889512"
+    "publishedId": "41504890"
   },
-  "updatedAt": "2026-08-16"
+  "updatedAt": "2026-08-17"
 }

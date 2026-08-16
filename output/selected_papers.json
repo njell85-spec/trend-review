@@ -280,5 +280,16 @@
     "rerankPoolSize": 32,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42267831",
+    "title": "Conservative Oxygen for Unresponsive Patients after Cardiac Arrest.",
+    "date": "2026-08-17",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 31,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
