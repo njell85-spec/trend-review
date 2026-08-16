@@ -4,11 +4,10 @@ import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { loadGuidelineState, mergeCandidates, migrateGuidelineState, saveGuidelineState, appendManualEntry } from '../src/utils/guidelineState.js';
-
-const productionPath = new URL('../output/selected_guidelines.json', import.meta.url);
+import { readPublishedLegacy } from './helpers/guidelineProduction.mjs';
 
 test('migrates all seven production records without field loss', async () => {
-  const legacy = JSON.parse(await readFile(productionPath, 'utf8'));
+  const legacy = await readPublishedLegacy();
   const state = migrateGuidelineState(legacy);
   assert.equal(legacy.length, 7);
   assert.equal(state.published.length, legacy.length);

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { GitHubPublisher } from '../src/utils/GitHubPublisher.js';
 import { migrateGuidelineState } from '../src/utils/guidelineState.js';
+import { readPublishedLegacy } from './helpers/guidelineProduction.mjs';
 
 // ★ B1 재현 회귀 — 병합 전 코드리뷰가 실물 측정으로 잡은 치명 결함.
 //
@@ -25,7 +26,7 @@ const count = (html, re) => (html.match(re) || []).length;
 
 async function realInputs() {
   const html = await readFile(new URL('../guidelines.html', import.meta.url), 'utf8');
-  const legacy = JSON.parse(await readFile(new URL('../output/selected_guidelines.json', import.meta.url), 'utf8'));
+  const legacy = await readPublishedLegacy();
   return { html, state: migrateGuidelineState(legacy) };
 }
 
