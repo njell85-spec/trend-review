@@ -304,6 +304,25 @@ if (withReviews) {
   }
   push('');
   push('> SR·메타분석은 제외했다 — 그건 논문 트랙(arm F)의 몫이고 겹치면 같은 걸 두 번 본다.');
+
+  // ★ 위 숫자는 **주제 필터가 없는 전량**이다. NEJM·JAMA·Lancet·BMJ 는 전 의학 분야를
+  //   다루므로 그대로는 슬롯 주기를 못 정한다 — 관심주제로 좁힌 뒤라야 "주에 몇 편"이 나온다.
+  push('');
+  push('### ⑦ 트랙3 — 관심주제로 좁힌 리뷰 (슬롯 주기를 정하는 숫자)');
+  push('');
+  push('| 저널 묶음 | 최근 1년 | 최근 3년 | 최근 5년 | 주당(5년 기준) |');
+  push('|---|---|---|---|---|');
+  for (const [name, journals] of Object.entries(REVIEW_JOURNAL_SETS)) {
+    const cells = [];
+    for (const d of [365, 365 * 3, 365 * 5]) {
+      const from = asDate(new Date(now.getTime() - d * 86_400_000));
+      cells.push(await count(`${TOPIC_AXIS} AND ${reviewTerm(journals)}`, from, maxDate));
+    }
+    const perWeek = (cells[2] / (365 * 5 / 7)).toFixed(1);
+    push(`| ${name} (${journals.length}종) | ${cells[0]} | ${cells[1]} | ${cells[2]} | ${perWeek} |`);
+  }
+  push('');
+  push('> 관심주제 축은 ⑤와 같은 `config/interests.json` 주제어를 쓴다(Title/Abstract).');
 }
 
 // ── 목록 회수 (--list <경로>) ────────────────────────────────────────────────
