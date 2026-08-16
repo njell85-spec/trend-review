@@ -90,8 +90,14 @@ test('★ 큐 파일이 없으면 실패가 아니라 조용한 성공이다 (�
 test('★ 워크플로가 CLI 에 넘기는 입력 이름이 CLI 가 읽는 것과 같다', async () => {
   const wf = await readFile(new URL('../.github/workflows/queue-control.yml', import.meta.url), 'utf8');
   const cli = await readFile(new URL('../scripts/queue-control.mjs', import.meta.url), 'utf8');
-  for (const flag of ['track', 'action', 'id']) {
-    assert.ok(wf.includes(`--${flag} "\${{ inputs.${flag} }}"`), `워크플로가 --${flag} 를 안 넘긴다`);
+  // ★ 값은 **env 로** 넘긴다. `${{ }}` 를 셸에 직접 펼치면 자유 입력인 id 가 따옴표를
+  //   탈출해 러너에서 임의 명령이 돈다(코드리뷰 실측). 여기서 그 회귀도 같이 막는다.
+  const ENV = { track: 'IN_TRACK', action: 'IN_ACTION', id: 'IN_ID' };
+  for (const [flag, envName] of Object.entries(ENV)) {
+    assert.ok(wf.includes(`${envName}:`), `워크플로가 ${envName} 을 안 정의한다`);
+    assert.ok(wf.includes(`--${flag} "$${envName}"`), `워크플로가 --${flag} 를 env 로 안 넘긴다`);
     assert.ok(cli.includes(`arg('${flag}'`), `CLI 가 --${flag} 를 안 읽는다`);
   }
+  assert.equal(/--(track|action|id) "\$\{\{/.test(wf), false,
+    '자유 입력을 셸에 직접 펼쳤다 — 인젝션 경로다');
 });

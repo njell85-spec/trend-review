@@ -42,6 +42,14 @@ export function calendarDay(dateStr) {
   let year = Number(match[1]);
   const month = Number(match[2]);
   const day = Number(match[3]);
+  // ★ 형식만 보면 `2026-02-31` 도 통과한다. 그러면 게이트는 그 날을 계산해 내고
+  //   예고 쪽 `addDays` 는 Date.UTC 로 `2026-03-03` 으로 정규화해서 **둘이 다른 날을
+  //   본다**(코드리뷰 실측). 연도 0000~0099 는 JS 의 1900년 보정까지 겹친다.
+  //   실재하는 날짜가 아니면 null 을 돌려 "판정 불가" 로 일치시킨다.
+  if (year < 1900 || month < 1 || month > 12 || day < 1) return null;
+  const dim = [31, (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28,
+    31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+  if (day > dim) return null;
   year -= month <= 2 ? 1 : 0;
   const era = Math.floor(year / 400);
   const yearOfEra = year - era * 400;

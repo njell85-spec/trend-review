@@ -69,3 +69,20 @@ test('날짜를 못 읽으면 막지 않는다 (소프트 — 고장이 배포�
   assert.equal(sequentialTrackFor('garbage'), null);
   assert.equal(sequentialAllows('papers', 'garbage'), true);
 });
+
+/**
+ * ★ 코드리뷰 실측 — `calendarDay` 가 형식만 검사하던 시절에는 `2026-02-31` 이 통과했고,
+ *   게이트는 그 날을 계산했지만 예고 쪽 `addDays` 는 `Date.UTC` 로 `2026-03-03` 으로
+ *   정규화해 **둘이 서로 다른 날을 봤다.** 연도 0000~0099 는 JS 의 1900년 보정까지 겹쳐
+ *   게이트는 papers, 예고는 guidelines 를 골랐다. 없는 날짜는 양쪽 다 "판정 불가" 여야 한다.
+ */
+test('★ 없는 날짜는 게이트와 예고가 같이 판정 불가로 떨어진다', () => {
+  for (const bad of ['2026-02-31', '2026-13-01', '0000-01-01', '2026-00-10', '2026-04-31']) {
+    assert.equal(sequentialTrackFor(bad), null, `${bad} 를 실재하는 날짜로 봤다`);
+    assert.equal(sequentialAllows('papers', bad), true, `${bad} 에서 소프트 폴백이 안 돈다`);
+  }
+  // 실재하는 경계는 살아 있어야 한다(윤년 포함) — 과잉 차단이면 이 줄이 잡는다.
+  for (const ok of ['2028-02-29', '2026-02-28', '2026-12-31', '2026-01-01']) {
+    assert.notEqual(sequentialTrackFor(ok), null, `${ok} 를 없는 날짜로 봤다`);
+  }
+});

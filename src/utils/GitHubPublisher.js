@@ -576,7 +576,17 @@ export class GitHubPublisher {
     ]);
     const c = normalizeControl(control);
     const from = GitHubPublisher._toYmd(generatedAt);
-    const states = { papers, guidelines, reviews };
+    // ★ 가이드라인 예고는 **실제로 발행 대상이 되는 것만** 보여야 한다.
+    //   오케스트레이터는 `status === 'queued'` 인 것 중에서 고르는데(그리고 priority 순),
+    //   예고는 큐 배열을 통째로 그리고 있었다. 지금 실물 큐가 `needsReview` 5 · `queued` 1
+    //   이라 **화면은 검토 대기 항목이 오늘 나간다고 말하고 실제로는 다른 것이 나갔다.**
+    //   결함 B2 와 같은 부류(화면과 게이트가 다른 것을 본다)라 같은 자리에서 막는다.
+    const publishableGuidelines = guidelines?.queue
+      ? { ...guidelines, queue: guidelines.queue
+          .filter((x) => x?.status === 'queued')
+          .sort((a, b) => (b?.priority ?? 0) - (a?.priority ?? 0)) }
+      : guidelines;
+    const states = { papers, guidelines: publishableGuidelines, reviews };
     const labels = { papers: '논문', guidelines: '가이드라인', reviews: '리뷰' };
 
     // ★ 트랙마다 **자기 블록**을 그린다(PeterJ 요구 ②). `splitPages` 가 이 블록들을
@@ -1224,8 +1234,28 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
     return (res.stdout ?? '').trim();
   }
 
+  /**
+   * ★ 스테이징 목록은 **러너가 쓰는 파일 전부**여야 한다.
+   *
+   * 2026-08-16 실측 치명 결함 — 이 목록에 `reviews.html` 과 트랙 큐가 빠져 있었다.
+   * 지난 세션이 "큐가 매 실행 증발한다" 를 고치면서 `.gitignore` 예외만 넣고 **여기를
+   * 안 고쳤다.** 예외는 파일을 *추적 가능하게* 만들 뿐 `git add` 를 대신하지 않는다.
+   * 그대로 뒀으면 리뷰 저수지가 매 실행 사라지고, 소비한 리뷰가 다음 날 또 소비되고,
+   * 3번째 페이지는 원격에서 영원히 갱신되지 않는다. push 는 **성공으로 끝난다.**
+   *
+   * ★ `control_state.json` · `read_state.json` 은 **절대 넣지 않는다.** 브라우저가 쓰는
+   *   파일이고 러너는 읽기만 한다(불변식). 러너가 되쓰기 시작하면 버튼 커밋과 상호
+   *   덮어쓰기가 시작된다.
+   * `test/publishStaging.test.mjs` 가 이 목록을 실제 기록 경로와 맞물려 검사한다.
+   */
+  static RUNNER_FILES = Object.freeze([
+    'index.html', 'guidelines.html', 'reviews.html',
+    'output/selected_papers.json', 'output/selected_guidelines.json',
+    'output/queue_papers.json', 'output/queue_reviews.json',
+  ]);
+
   _gitPush(dateStr) {
-    const files = ['index.html', 'guidelines.html', 'output/selected_papers.json', 'output/selected_guidelines.json']
+    const files = GitHubPublisher.RUNNER_FILES
       .filter((f) => existsSync(path.join(this._repoPath, f)));
     this._git(['add', ...files]);
     const diff = this._git(['diff', '--staged', '--name-only']);
@@ -1361,7 +1391,11 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       }
       // 같은 리뷰가 다른 날짜 카드로 이미 올라와 있으면 제거(중복 노출 방어).
       if (rIdent) {
-        const rDup = new RegExp(`\\n?<!-- RSECTION:[^\\s>]+-r-${String(rIdent).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} -->[\\s\\S]*?<!-- /RSECTION:[^\\s>]+ -->`, 'g');
+        // ★ 여는 마커의 키를 역참조로 잡아 **닫는 마커가 같은 키일 때만** 지운다.
+        //   `[^\\s>]+` 로 열어두면 닫는 마커가 어긋난 순간 다음 리뷰 카드까지 통째로
+        //   삼킨다(코드리뷰 실측 · 부분 배포·수동 수정 시 재현).
+        const rEsc = String(rIdent).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const rDup = new RegExp(`\\n?<!-- RSECTION:([^\\s>]+-r-${rEsc}) -->[\\s\\S]*?<!-- /RSECTION:\\1 -->`, 'g');
         body = body.replace(rDup, '');
       }
       // 새 TODAY 삽입 (논문 먼저, 그 아래 가이드라인, 그 아래 리뷰)
@@ -1436,7 +1470,8 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       // 낡은 가이드 페이지를 합쳐 이미 지운 카드를 되살린다.
       if (guidesOut) await this._putFileViaApi('guidelines.html', guidesOut, dateStr);
       if (reviewsOut) await this._putFileViaApi('reviews.html', reviewsOut, dateStr);
-      for (const rel of ['output/selected_papers.json', 'output/selected_guidelines.json']) {
+      // 폴백도 같은 목록을 쓴다 — 한쪽만 늘리면 다시 어긋난다.
+      for (const rel of GitHubPublisher.RUNNER_FILES.filter((f) => f.startsWith('output/'))) {
         const abs = path.join(this._repoPath, rel);
         if (!existsSync(abs)) continue;
         await this._putFileViaApi(rel, await readFile(abs, 'utf8'), dateStr);

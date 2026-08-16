@@ -41,14 +41,22 @@ jobs:
         with:
           node-version: '20'
 
+      # ★ `id` 는 자유 입력이다. `${{ }}` 로 셸에 직접 펼치면 따옴표를 탈출해 러너에서
+      #   임의 명령이 돈다(코드리뷰 실측). env 로 넘기면 셸이 값으로만 취급한다.
+      #   `track`·`action` 은 choice 라 값이 고정이지만 같은 방식으로 통일한다.
       - name: 큐 갱신
+        env:
+          IN_TRACK:  ${{ inputs.track }}
+          IN_ACTION: ${{ inputs.action }}
+          IN_ID:     ${{ inputs.id }}
         run: |
-          node scripts/queue-control.mjs \
-            --track "${{ inputs.track }}" \
-            --action "${{ inputs.action }}" \
-            --id "${{ inputs.id }}"
+          node scripts/queue-control.mjs --track "$IN_TRACK" --action "$IN_ACTION" --id "$IN_ID"
 
       - name: 커밋 · 푸시 (경합 시 재시도)
+        env:
+          IN_TRACK:  ${{ inputs.track }}
+          IN_ACTION: ${{ inputs.action }}
+          IN_ID:     ${{ inputs.id }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -57,7 +65,7 @@ jobs:
             exit 0
           fi
           git add output/
-          git commit -m "chore(queue): ${{ inputs.track }} ${{ inputs.action }} ${{ inputs.id }}"
+          git commit -m "chore(queue): $IN_TRACK $IN_ACTION $IN_ID"
           for i in 1 2 3 4; do
             if git push; then exit 0; fi
             echo "· push 실패 — 최신 main 위로 옮겨 재시도 ($i)"

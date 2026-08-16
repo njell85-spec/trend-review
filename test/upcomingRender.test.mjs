@@ -263,3 +263,34 @@ test('★ publish 가 넘기는 한국어 로케일 시각으로도 예고가 �
   assert.match(out, /<!-- UPCOMING:papers -->/, '예고 블록이 안 그려졌다');
   assert.doesNotMatch(out, /Invalid Date|NaN/, '날짜 계산이 깨졌다');
 });
+
+
+/**
+ * ★ 코드리뷰 실측 — 가이드라인 예고가 큐 배열 **전체**를 그렸는데, 오케스트레이터는
+ *   `status === 'queued'` 인 것 중 priority 순으로 고른다. 실물 큐가
+ *   `needsReview 5 · queued 1` 이라 **화면은 검토 대기 항목이 오늘 나간다고 말하고
+ *   실제로는 다른 것이 나갔다.** 결함 B2 와 같은 부류다.
+ */
+test('★ 가이드라인 예고는 실제 발행 대상(queued)만 보여준다', async () => {
+  const { mkdtemp, writeFile, mkdir } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const nodePath = (await import('node:path')).default;
+
+  const dir = await mkdtemp(nodePath.join(tmpdir(), 'tr-up-'));
+  await mkdir(nodePath.join(dir, 'output'), { recursive: true });
+  await writeFile(nodePath.join(dir, 'output', 'selected_guidelines.json'), JSON.stringify({
+    schemaVersion: 2,
+    queue: [
+      { id: 'a', pmid: 'a', title: '검토 대기 지침', status: 'needsReview', priority: 99 },
+      { id: 'b', pmid: 'b', title: '실제로 나갈 지침', status: 'queued', priority: 5 },
+    ],
+    published: [], rejected: [],
+  }));
+
+  const p = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review', repoPath: dir });
+  const out = await p._renderUpcomingFromDisk('<!-- ARCHIVE_START -->', '2026-08-17');
+  const block = out.match(/<!-- UPCOMING:guidelines -->[\s\S]*?<!-- \/UPCOMING:guidelines -->/)[0];
+  assert.ok(block.includes('실제로 나갈 지침'), '발행 대상이 예고에 없다');
+  assert.equal(block.includes('검토 대기 지침'), false,
+    '검토 대기 항목을 오늘 나간다고 예고했다 — 화면이 거짓말한다');
+});
