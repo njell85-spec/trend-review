@@ -6,6 +6,14 @@ export const STATE_ONLY_PATHS = new Set([
   'output/selected_guidelines.json',
   'output/analysis_archive.json',
   'output/video_log.json',
+  // ★ 3트랙 큐(2026-08-16) — 러너가 커밋하게 됐지만 브라우저가 요청하지 않는다.
+  //   빼먹으면 큐만 바뀐 커밋에도 Pages 배포 검증이 걸려 헛돌고, 배포가 안 나면
+  //   가짜 실패로 데일리가 빨개진다.
+  'output/queue_papers.json',
+  'output/queue_reviews.json',
+  // 브라우저가 쓰는 파일. 러너는 커밋하지 않지만 버튼 커밋이 main 에 들어온다.
+  'output/control_state.json',
+  'output/read_state.json',
 ]);
 
 export function touchesPublishedPath(filenames) {
