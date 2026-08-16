@@ -119,7 +119,7 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:#94a3b8;text-decoration:line-thro
 @media(min-width:700px){.wrap{max-width:700px}}
 @media(min-width:1080px){.wrap{max-width:760px}}
 </style>
-<style id="tower-tone">
+<style id="tower-tone" data-v="2">
 /* ── 타워 톤 — 웜뉴트럴 지면 + 무지개 라디얼 + 글래스 카드 ── */
 :root{
   --t-ink:#2a2724; --t-ink2:#5c574f; --t-ink3:#6f6960;
@@ -204,6 +204,22 @@ details{border-radius:24px}
 .c-date{color:var(--t-ink3)}
 .c-jour{color:var(--t-ink2)}
 .c-title a{color:var(--t-ink)}
+/* 누적 표 접힘 토글 — 헤더가 그대로 summary 가 된다(요구 ⑤) */
+.arch-fold{border-radius:22px}
+.arch-fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.arch-fold>summary::-webkit-details-marker{display:none}
+.arch-fold>summary::after{content:'▾';color:var(--t-ink3);font-size:12px;transition:transform .15s ease}
+.arch-fold[open]>summary::after{transform:rotate(180deg)}
+/* 지난 카드 묶음 접힘 (요구 ④) */
+.past-fold{margin:10px 18px 0;background:rgba(255,255,255,.34);border:1px solid var(--t-edge);
+  border-radius:20px;padding:2px 14px}
+.past-fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;
+  padding:11px 2px;font-size:13.5px;font-weight:700;color:var(--t-ink)}
+.past-fold>summary::-webkit-details-marker{display:none}
+.past-fold>summary::after{content:'▾';margin-left:auto;color:var(--t-ink3);font-size:12px;transition:transform .15s ease}
+.past-fold[open]>summary::after{transform:rotate(180deg)}
+.past-fold>summary .n{font-size:11px;font-weight:700;color:var(--t-ink3);
+  background:rgba(255,255,255,.6);border:1px solid var(--t-edge);border-radius:999px;padding:2px 9px}
 .tempty{margin:8px 18px 0;padding:18px;text-align:center;font-size:13px;color:var(--t-ink3);
   background:rgba(255,255,255,.28);border:1px dashed rgba(150,142,133,.5);border-radius:22px}
 .ft{color:var(--t-ink3)}
@@ -332,35 +348,47 @@ details{border-radius:24px}
 
 
 
+
+
 <!-- UPCOMING:guidelines -->
 <style>
 .upcoming{margin:16px 0;font-size:14px}
-.up-h{font-size:15px;margin:0 0 8px;font-weight:600}
-.up-h small{display:block;font-weight:400;color:#6b7280;font-size:12px;margin-top:2px}
+.up-h{font-size:15px;margin:0;font-weight:700;color:#2a2724;cursor:pointer;list-style:none;
+  display:flex;align-items:center;gap:6px}
+.up-h::-webkit-details-marker{display:none}
+.up-h::after{content:'▾';color:#6f6960;font-size:12px;transition:transform .15s ease}
+.upcoming[open]>.up-h::after{transform:rotate(180deg)}
+.up-h .n{font-size:11px;font-weight:700;color:#5c574f;background:rgba(255,255,255,.6);
+  border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:2px 9px}
+.up-note{color:#5c574f;font-size:12px;display:block;margin:6px 0 10px;font-weight:400}
 .up-toggles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.up-toggle{border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}
-.up-toggle[data-up-mode=off]{background:#f3f4f6;color:#9ca3af;text-decoration:line-through}
+.up-toggle{border:1px solid #cfc9c0;background:#fff;color:#2a2724;border-radius:999px;
+  padding:5px 11px;font-size:12px;font-weight:650;cursor:pointer}
+.up-toggle[data-up-mode=off]{background:#f1efec;color:#8a847b;text-decoration:line-through}
 .up-toggle[data-up-mode=alternate]{border-style:dashed}
-.up-day{margin:10px 0 4px;font-weight:600;color:#374151;font-size:13px}
+.up-toggle[data-up-seq=on]{background:#2a2724;color:#fff;border-color:#2a2724}
 .upcoming ul{list-style:none;margin:0;padding:0}
-.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 0;border-bottom:1px solid #f0f1f3}
-.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#eef2ff;color:#4338ca;white-space:nowrap}
-.up-title{flex:1 0 100%;line-height:1.5}
-.up-journal{flex:1 1 auto;font-size:11px;color:#6b7280;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.up-warn{color:#d97706;margin-left:3px}
-.up-btn{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:6px;
-  min-width:34px;min-height:34px;font-size:13px;cursor:pointer}
-.up-empty{color:#9ca3af;padding:8px 0}
-.up-date{font-weight:600;color:#374151;font-size:13px;margin:12px 0 2px}
+.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:10px 0;
+  border-bottom:1px solid rgba(150,142,133,.28)}
+.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#e7ecfa;color:#3a4f8a;
+  white-space:nowrap;font-weight:700}
+/* ★ 제목은 **자기 색을 명시한다.** 상속에 맡겼더니 기기가 다크모드일 때 부모(.up-day)의
+   다크 규칙(#d1d5db)을 물려받아 **흰 바탕에 흰 글씨**가 됐다(2026-08-17 실측).
+   이 페이지는 배경이 라이트 전용이라 다크 규칙 자체가 성립하지 않는다. */
+.up-title{flex:1 0 100%;line-height:1.55;color:#2a2724;font-weight:600;
+  overflow-wrap:anywhere;word-break:break-word}
+.up-journal{flex:1 1 auto;font-size:11.5px;color:#5c574f;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-warn{color:#8a5f1e;margin-left:3px}
+.up-btn{flex:0 0 auto;border:1px solid #cfc9c0;background:#fff;color:#2a2724;border-radius:8px;
+  min-width:38px;min-height:38px;font-size:14px;cursor:pointer}
+.up-empty{color:#6f6960;padding:8px 0}
+.up-date{font-weight:700;color:#2a2724;font-size:12.5px;margin:12px 0 2px}
 .up-list{list-style:none;margin:0;padding:0}
-.up-note{color:#6b7280;font-size:12px;margin-top:10px}
-.up-msg{font-size:12px;color:#6b7280;min-height:16px;margin-top:6px}
-.up-reset{margin-top:10px;border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
-@media(prefers-color-scheme:dark){
- .up-toggle,.up-btn{background:#1f2937;border-color:#374151;color:#e5e7eb}
- .up-day{color:#d1d5db}.up-item{border-color:#374151}
- .up-track{background:#312e81;color:#c7d2fe}}
-</style><section class="upcoming" data-up-section="guidelines"><h2 class="up-h">📅 가이드라인 — 다음 7일 예고 <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2><div class="up-toggles"><button class="up-toggle" data-up-toggle="guidelines" data-up-mode="on">가이드라인 · 켜짐</button><button class="up-toggle up-seq" data-up-seq="off" title="켜면 논문 → 가이드라인 → 리뷰 순으로 하루 한 트랙씩 돕니다">순차진행 · 꺼짐</button></div><div class="up-day"><div class="up-date">2026-08-17</div><ul class="up-list"><li class="up-item"><span class="up-title" title="Guidelines for Seizure Prophylaxis in Patients Undergoing Supratentorial Neurosurgery: A Statement for Healthcare Professionals from the Neurocritical Care Society."><span class="up-track">가이드라인</span> Guidelines for Seizure Prophylaxis in Patients Undergoing Suprate…</span><span class="up-journal">Neurocritical care</span><button class="up-btn up-run" data-up-run="42087034" data-up-track="guidelines" title="이것을 먼저 돌린다">▶</button><button class="up-btn up-drop" data-up-drop="42087034" data-up-track="guidelines" title="빼고 다음 것으로 채운다">🗑</button></li></ul></div><button class="up-reset" data-up-reset="guidelines">이 목록 전체 갈아엎기</button><div id="up-msg" class="up-msg"></div></section>
+.up-msg{font-size:12px;color:#5c574f;min-height:16px;margin-top:6px}
+.up-reset{margin-top:12px;border:1px solid #cfc9c0;background:#fff;color:#2a2724;
+  border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
+</style><details class="upcoming" data-up-section="guidelines"><summary class="up-h">📅 가이드라인 — 다음 7일 예고 <span class="n">0건</span></summary><span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span><div class="up-toggles"><button class="up-toggle" data-up-toggle="guidelines" data-up-mode="on">가이드라인 · 켜짐</button><button class="up-toggle up-seq" data-up-seq="off" title="켜면 논문 → 가이드라인 → 리뷰 순으로 하루 한 트랙씩 돕니다">순차진행 · 꺼짐</button></div><p class="up-empty">예고할 것이 없습니다 — 큐가 비었거나 트랙이 꺼져 있습니다.</p><button class="up-reset" data-up-reset="guidelines">이 목록 전체 갈아엎기</button><div id="up-msg" class="up-msg"></div></details>
 <!-- UPBTN v4 -->
 <script>
 (function(){
@@ -474,10 +502,12 @@ details{border-radius:24px}
 })();
 </script>
 <!-- /UPCOMING:guidelines -->
-<!-- ARCHIVE_START --><details class="guideline-review"><summary>검토함 <span class="n">5건</span></summary><ul><li><div class="review-title">Consensus document on the management of patients with accidental hypothermia from the Spanish Society of Anesthesiology, Resuscitation and Pain Management (SEDAR), the Spanish Society of Intensive Care Medicine, Critical Care and Coronary Units (SEMICYUC), and the Spanish Society of Emergency Medicine (SEMES).</div><div class="review-org">기관 미상</div><div class="review-reasons">판정 이유: insufficient-positive-evidence</div></li><li><div class="review-title">Ketogenic diet therapy for children with super-refractory status epilepticus in intensive care: International clinical practice recommendations.</div><div class="review-org">기관 미상</div><div class="review-reasons">판정 이유: insufficient-positive-evidence</div></li><li><div class="review-title">Teleneurocritical Care (TeleNCC) Consensus Statement : The American Academy of Neurology (AAN), the American Association of Neurological Surgeons (AANS), and the Congress of Neurological Surgeons (CNS) affirm the value of this statement. Endorsed by the American Telemedicine Association (ATA).</div><div class="review-org">기관 미상</div><div class="review-reasons">판정 이유: insufficient-positive-evidence</div></li><li><div class="review-title">Methodological quality assessment tool for observational studies comparing treatment effectiveness in infectious diseases: a Delphi consensus and application to studies on bloodstream infections due to carbapenem-resistant Enterobacterales.</div><div class="review-org">기관 미상</div><div class="review-reasons">판정 이유: insufficient-positive-evidence</div></li><li><div class="review-title">The impact of physician factors on treatment recommendations in sports medicine.</div><div class="review-org">기관 미상</div><div class="review-reasons">판정 이유: insufficient-positive-evidence</div></li></ul></details><div class="tsec">
+<!-- ARCHIVE_START --><div class="tsec">
   <div class="t"><span>📋 가이드라인</span><span class="n">7건</span></div>
   <div class="d">공식 발행기관의 진료지침 — 캐치업 큐에서 순차 소개</div>
 </div>
+
+<details class="past-fold"><summary>지난 가이드라인 <span class="n">7건</span></summary>
 <!-- GSECTION:2026-08-11 -->
 <details class="day day-past">
   <summary class="day-sum">
@@ -789,6 +819,7 @@ details{border-radius:24px}
     </article></div>
 </details>
 <!-- /GSECTION:2026-07-02 -->
+</details>
   </div>
   <div class="arch-table">
     <details class="arch-fold">
@@ -799,6 +830,8 @@ details{border-radius:24px}
     </table></div>
     </details>
   </div>
+
+
 
 
 

@@ -307,3 +307,41 @@ test('행 제목에 $& 가 있어도 병합이 본문을 망가뜨리지 않는�
   const b = splitPages(merged, { refIds });
   assert.deepEqual(b.counts, a.counts);
 });
+
+
+/**
+ * ★ 2026-08-17 실측 사고 — `ensureTowerTone` 이 "이미 있으면 그대로" 라서
+ *   새로 넣은 CSS 규칙(.past-fold)이 **배포본에 영원히 안 들어갔다.** 화면에는
+ *   스타일 없는 맨몸으로 나왔고 테스트는 전부 초록이었다(단위 테스트는 늘 새 페이지를 만든다).
+ *   이제 버전 마커로 갈아끼운다 — **CSS 를 고치면 TOWER_TONE_VERSION 을 올려야 한다.**
+ */
+test('★ 구버전 타워 톤은 통째로 갈아끼운다 (새 CSS 가 배포본에 들어간다)', async () => {
+  const { TOWER_TONE_VERSION } = await import('../src/utils/pageSplit.js');
+  const old = '<html><head><style id="tower-tone">.old{color:red}</style></head><body></body></html>';
+  const out = ensureTowerTone(old);
+  assert.equal(count(out, /<style id="tower-tone"/g), 1, '스타일이 둘로 늘었다');
+  assert.equal(out.includes('.old{color:red}'), false, '구버전 규칙이 남았다');
+  assert.ok(out.includes(`data-v="${TOWER_TONE_VERSION}"`), '버전 마커가 없다');
+  assert.match(out, /\.past-fold\{/, '새 규칙이 안 들어갔다');
+});
+
+test('★ 같은 버전이면 건드리지 않는다 (멱등)', async () => {
+  const once = ensureTowerTone('<html><head></head><body></body></html>');
+  assert.equal(ensureTowerTone(once), once, '같은 버전인데 다시 썼다');
+});
+
+test('★ 배포된 세 페이지가 모두 최신 타워 톤을 갖는다', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const { existsSync } = await import('node:fs');
+  const { TOWER_TONE_VERSION } = await import('../src/utils/pageSplit.js');
+  let checked = 0;
+  for (const f of ['index.html', 'guidelines.html', 'reviews.html']) {
+    const url = new URL(`../${f}`, import.meta.url);
+    if (!existsSync(url)) continue;
+    const html = await readFile(url, 'utf8');
+    assert.ok(html.includes(`data-v="${TOWER_TONE_VERSION}"`),
+      `${f} 의 타워 톤이 낡았다 — 새 CSS 가 화면에 안 먹는다`);
+    checked += 1;
+  }
+  assert.ok(checked >= 3, `검사한 페이지가 ${checked}개다 — 이 검사는 헛돈다`);
+});

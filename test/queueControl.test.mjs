@@ -139,3 +139,20 @@ test('★ 가이드라인에서 뺀 항목은 다음 수집에 되살아나지 �
   const merged2 = mergeCandidates(next, [{ id: 'pmid:222', pmid: '222', title: '새 지침', status: 'queued' }]);
   assert.equal(merged2.queue.length, 1, '새 지침이 안 들어왔다 — 필터가 과하다');
 });
+
+
+/**
+ * ★ 2026-08-17 실측 — 🗑 를 눌러 큐에서는 빠졌는데 **예고 리스트에는 그대로 남아 있었다.**
+ *   예고는 발행 시점에 그려지므로 큐만 고치면 화면이 안 바뀐다.
+ *   버튼이 "1~2분 뒤 새로고침하면 반영됩니다" 라고 말하므로 그것이 참이어야 한다.
+ */
+test('★ 큐 제어 워크플로가 페이지를 다시 그리고 함께 커밋한다', async () => {
+  const wf = await readFile(new URL('../.github/workflows/queue-control.yml', import.meta.url), 'utf8');
+  assert.match(wf, /apply-page-render\.mjs/, '큐만 고치고 화면을 안 그린다 — 버튼이 거짓말한다');
+  for (const f of ['index.html', 'guidelines.html', 'reviews.html']) {
+    assert.ok(wf.includes(f), `${f} 를 커밋하지 않는다 — 그려도 반영이 안 된다`);
+  }
+  // 렌더에 식별자를 넘겨야 한다 — 안 넘기면 스크립트에 'undefined' 가 구워진다(결함 B1)
+  assert.match(wf, /GITHUB_OWNER:/, '렌더에 owner 를 안 넘긴다');
+  assert.match(wf, /GITHUB_REPO:/, '렌더에 repo 를 안 넘긴다');
+});

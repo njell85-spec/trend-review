@@ -9,6 +9,51 @@ export const REVIEW_AXES = {
   wide: 'review_wide',
 };
 
+/**
+ * 리뷰 아티클이 맞는가 — **합의문·지침류를 걷어낸다.**
+ *
+ * ★ 2026-08-17 실측 (PeterJ 지적) — 첫 발행분이
+ *   "A consensus of international experts on ... obtained by the Delphi method: the
+ *   SAVECMO study" 였다. PubMed 의 `Review[Publication Type]` 은 **합의문·Delphi 연구·
+ *   지침 성격 문서까지 포함**한다. 종전 쿼리는 SR·메타만 뺐다.
+ *   트랙3의 목적은 "복습용 종설"(NEJM Clinical Practice 같은 것)이므로 성격이 다르다.
+ *   지침류는 트랙2가 따로 다룬다 — 여기 섞이면 같은 것을 두 트랙이 다룬다.
+ *
+ * 제목으로만 판정한다. 초록·MeSH 는 저수지 항목에 없고(제목·저널·점수만 들고 온다),
+ * 제목이 문서 성격을 가장 잘 드러내는 축이기도 하다.
+ */
+const NOT_REVIEW_PATTERNS = [
+  /\bconsensus\b/i,
+  /\bdelphi\b/i,
+  /\bguidelines?\b/i,
+  /\brecommendations?\b/i,
+  /\bposition (statement|paper)\b/i,
+  /\bexpert statement\b/i,
+  /\bpractice parameter\b/i,
+  // ★ `standard of care` 는 **넣지 않는다.** 실측에서 "Current standard of care for
+  //   septic shock", "TBI management: standard of care and knowledge gaps" 같은
+  //   **진짜 종설**이 걸렸다. 문서 성격이 아니라 주제를 가리키는 말이다.
+  /\bappropriate use criteria\b/i,
+  /\bsystematic review\b/i,
+  /\bmeta-?analysis\b/i,
+  /\bscoping review\b/i,
+  /\bumbrella review\b/i,
+];
+
+export function isNarrativeReview(item) {
+  const title = String(item?.title ?? item?.paper?.title ?? '').trim();
+  if (!title) return false;
+  return !NOT_REVIEW_PATTERNS.some((re) => re.test(title));
+}
+
+/** 걸러낸 이유(로그·장부용). 통과하면 null. */
+export function notReviewReason(item) {
+  const title = String(item?.title ?? item?.paper?.title ?? '').trim();
+  if (!title) return 'no-title';
+  const hit = NOT_REVIEW_PATTERNS.find((re) => re.test(title));
+  return hit ? `not-narrative-review:${hit.source.replace(/\\b/g, '')}` : null;
+}
+
 export function publicationYear(paper) {
   const match = String(paper?.date ?? paper?.pubdate ?? '').match(/\b(19|20)\d{2}\b/);
   return match ? Number(match[0]) : null;
@@ -73,6 +118,9 @@ export function itemsForSet(census, setName) {
 
 export function buildReviewQueue({ state = emptyQueue(REVIEW_TRACK), papers = [], scorer,
   limit = 400, today, currentYear } = {}) {
+  // ★ 합의문·지침류는 저수지에 넣지 않는다(위 isNarrativeReview 주석 참조).
+  //   여기서 한 번, 발행 직전에 한 번 더 본다 — 이미 쌓인 저수지에는 섞여 있기 때문이다.
+  papers = (papers ?? []).filter(isNarrativeReview);
   const safeLimit = Math.max(0, Math.floor(Number(limit) || 0));
   const candidates = scoreReviewItems(papers, scorer, { currentYear }).slice(0, safeLimit);
   const merged = mergeQueueItems(state, candidates, { today });
