@@ -262,6 +262,86 @@ export class GitHubPublisher {
    * ★ 예고가 하나도 없으면 **블록을 아예 넣지 않는다.** 빈 상자를 남기면 PeterJ가
    * "오늘은 아직 안 돌았나" 와 "정말 없나" 를 구별할 수 없다.
    */
+  /**
+   * 예고 리스트 버튼의 동작. 브라우저에서만 돈다.
+   *
+   * 인증은 **기존 PAT 경로를 그대로 재사용한다**(`localStorage['tr_pat']`) — 새 토큰 체계를
+   * 만들면 PeterJ가 토큰을 두 번 발급해야 한다. 토큰은 헤더로만 보내고 URL 에 싣지 않는다
+   * (URL 은 브라우저 히스토리·리퍼러·서버 로그에 남는다).
+   *
+   * ★ 제어 상태의 시각은 **날짜까지만** 남긴다. 이 저장소는 public 이라 분 단위 토글 시각이
+   * 쌓이면 생활 패턴 시계열이 회수 불가로 공개 히스토리에 남는다.
+   */
+  _upcomingScript() {
+    return `<!-- UPBTN v1 -->
+<script>
+(function(){
+  var OWNER='${this.owner}', REPO='${this.repo}';
+  var API='https://api.github.com/repos/'+OWNER+'/'+REPO;
+  function pat(force){
+    var t=localStorage.getItem('tr_pat');
+    if(!t||force){ t=prompt('GitHub Fine-grained PAT (이 저장소 actions:write 한정)\\n최초 1회만 — 이 브라우저에만 저장됩니다.'); if(t){localStorage.setItem('tr_pat',t.trim());} }
+    return localStorage.getItem('tr_pat');
+  }
+  function say(m){ var el=document.getElementById('up-msg'); if(el){el.textContent=m;} else {alert(m);} }
+  // 워크플로 구동. 토큰은 헤더로만 나간다.
+  function fire(wf,inputs,okMsg){
+    var t=pat(); if(!t){say('✖ 토큰이 없어 실행하지 못했습니다.');return;}
+    say('⏳ 실행 중…');
+    fetch(API+'/actions/workflows/'+wf+'/dispatches',{
+      method:'POST',
+      headers:{Authorization:'Bearer '+t,Accept:'application/vnd.github+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main',inputs:inputs})
+    }).then(function(r){
+      if(r.status===204){ say(okMsg+' — 1~2분 뒤 새로고침하면 반영됩니다.'); }
+      else if(r.status===401||r.status===403){ pat(true); say('✖ 토큰이 거부됐습니다. 다시 입력해 주세요.'); }
+      else { say('✖ 실패 ('+r.status+')'); }
+    }).catch(function(e){ say('✖ 통신 실패 — '+e.message); });
+  }
+  // 트랙 온오프는 워크플로가 아니라 상태 파일을 **직접** 고친다(러너를 안 띄운다).
+  var NEXT={on:'off',off:'alternate',alternate:'on'};
+  function toggle(track,cur,btn){
+    var t=pat(); if(!t){say('✖ 토큰이 없어 실행하지 못했습니다.');return;}
+    var next=NEXT[cur]||'on';
+    var path='output/control_state.json';
+    var H={Authorization:'Bearer '+t,Accept:'application/vnd.github+json','Content-Type':'application/json'};
+    say('⏳ 전환 중…');
+    fetch(API+'/contents/'+path,{headers:H}).then(function(r){
+      return r.status===200?r.json():null;
+    }).then(function(cur2){
+      var state={schemaVersion:1,tracks:{}};
+      if(cur2&&cur2.content){ try{ state=JSON.parse(decodeURIComponent(escape(atob(cur2.content.replace(/\\n/g,''))))); }catch(e){} }
+      if(!state.tracks)state.tracks={};
+      // 시각은 날짜까지만. public repo 에 분 단위가 쌓이면 생활 패턴이 된다.
+      state.tracks[track]={mode:next,since:new Date().toISOString().slice(0,10)};
+      var body={message:'chore(control): '+track+' → '+next,
+        content:btoa(unescape(encodeURIComponent(JSON.stringify(state,null,2))))};
+      if(cur2&&cur2.sha)body.sha=cur2.sha;
+      return fetch(API+'/contents/'+path,{method:'PUT',headers:H,body:JSON.stringify(body)});
+    }).then(function(r){
+      if(r&&(r.status===200||r.status===201)){
+        btn.dataset.upMode=next;
+        btn.textContent=btn.textContent.split(' · ')[0]+' · '+({on:'켜짐',off:'꺼짐',alternate:'격일'}[next]);
+        say('✔ '+track+' → '+({on:'켜짐',off:'꺼짐',alternate:'격일'}[next]));
+      } else { say('✖ 전환 실패'+(r?' ('+r.status+')':'')); }
+    }).catch(function(e){ say('✖ 통신 실패 — '+e.message); });
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('button'):null; if(!b)return;
+    if(b.dataset.upRun){ fire('on-demand.yml',{pmid:b.dataset.upRun,mode:'paper'},'▶ 먼저 돌리기를 걸었습니다'); }
+    else if(b.dataset.upDrop){ fire('curate-remove.yml',{sectionKey:b.dataset.upDrop,tag:'SECTION',pmid:b.dataset.upDrop},'🗑 뺐습니다 — 다음 항목이 채웁니다'); }
+    else if(b.dataset.upToggle){ toggle(b.dataset.upToggle,b.dataset.upMode||'on',b); }
+    else if(b.dataset.upReset){
+      // 되돌릴 수 없으므로 반드시 묻는다.
+      if(confirm('지금 예고에 있는 항목을 전부 빼고 새로 채웁니다. 계속할까요?')){
+        fire('curate-remove.yml',{sectionKey:'__UPCOMING_RESET__',tag:'SECTION'},'♻ 전체를 갈아엎었습니다');
+      }
+    }
+  });
+})();
+</script>`;
+  }
+
   _renderUpcoming(html, { from, days = 7, tracks = [] } = {}) {
     const rows = buildUpcoming({ from, days, tracks });
     // 이전 블록은 항상 먼저 걷어낸다 — 이게 멱등성의 전부다.
@@ -300,7 +380,8 @@ export class GitHubPublisher {
       + ` <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2>`
       + `<div class="up-toggles">${toggles}</div>${dayHtml}`
       + `<button class="up-reset" data-up-reset="1">이 목록 전체 갈아엎기</button>`
-      + `</section>\n<!-- /UPCOMING -->`;
+      + `<div id="up-msg" class="up-msg"></div>`
+      + `</section>\n${this._upcomingScript()}\n<!-- /UPCOMING -->`;
     return out.replace('<!-- ARCHIVE_START -->', () => `${block}\n<!-- ARCHIVE_START -->`);
   }
 
