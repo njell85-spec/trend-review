@@ -62,12 +62,40 @@ const asDate = (d) => d.toISOString().slice(0, 10).replaceAll('-', '/');
 
 // esearch 로 PMID 를 회수한다. count 세기와 달리 retmax 가 필요하다.
 // 관심주제 쿼리는 4KB 가 넘어 GET URL 한계를 넘는다 — esearch 는 POST 를 받는다.
+//
+// PubMed 는 API 키 없이 **초당 3회**, 키가 있어도 10회가 상한이다. 축이 늘면서 요청이
+// 60개를 넘어가자 러너에서 429 로 통째로 죽었다(2026-08-16 실측). 그래서 둘을 건다:
+//   ① 매 요청 사이 최소 간격 — 키 유무에 따라 120ms / 350ms
+//   ② 429·5xx 는 지수 백오프로 4회까지 재시도 (그 뒤에도 안 되면 진짜 실패다)
+const MIN_GAP_MS = apiKey ? 120 : 350;
+let lastCallAt = 0;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function throttle() {
+  const wait = MIN_GAP_MS - (Date.now() - lastCallAt);
+  if (wait > 0) await sleep(wait);
+  lastCallAt = Date.now();
+}
+
+/** 429·5xx 만 재시도한다. 400·404 는 쿼리가 틀린 것이므로 즉시 던진다. */
+async function fetchRetry(url, init, label) {
+  let lastStatus = 0;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await throttle();
+    const res = await fetch(url, init);
+    if (res.ok) return res;
+    lastStatus = res.status;
+    if (res.status !== 429 && res.status < 500) break;
+    await sleep(1000 * 2 ** attempt);   // 1s · 2s · 4s · 8s
+  }
+  throw new Error(`PubMed HTTP ${lastStatus} (${label})`);
+}
+
 async function esearchPost(params) {
-  const res = await fetch(`${BASE}/esearch.fcgi`, {
+  const res = await fetchRetry(`${BASE}/esearch.fcgi`, {
     method: 'POST', body: new URLSearchParams(params),
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  });
-  if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
+  }, 'esearch');
   return res.json();
 }
 
@@ -97,8 +125,7 @@ async function summaries(pmids) {
       db: 'pubmed', id: pmids.slice(i, i + BATCH).join(','), retmode: 'json',
       ...(apiKey && { api_key: apiKey }),
     });
-    const res = await fetch(`${BASE}/esummary.fcgi?${p}`);
-    if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
+    const res = await fetchRetry(`${BASE}/esummary.fcgi?${p}`, undefined, 'esummary');
     const r = (await res.json())?.result ?? {};
     for (const uid of r.uids ?? []) {
       const rec = r[uid];
@@ -160,11 +187,10 @@ async function fetchCountries(pmids) {
       db: 'pubmed', id: batch.join(','), retmode: 'xml',
       ...(apiKey && { api_key: apiKey }),
     });
-    const res = await fetch(`${BASE}/efetch.fcgi`, {
+    const res = await fetchRetry(`${BASE}/efetch.fcgi`, {
       method: 'POST', body,
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    });
-    if (!res.ok) throw new Error(`PubMed efetch HTTP ${res.status}`);
+    }, 'efetch');
     const xml = await res.text();
     // 레코드 단위로 자른다. 정규식 파싱이지만 필요한 필드가 둘뿐이라 파서를 끌어오지 않는다.
     for (const chunk of xml.split(/<PubmedArticle[\s>]/).slice(1)) {
