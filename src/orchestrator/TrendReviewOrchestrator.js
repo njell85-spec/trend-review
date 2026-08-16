@@ -24,6 +24,7 @@ import { collectGuidelineCandidates } from '../utils/guidelinePubmed.js';
 import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
+import { filterByRegion } from '../utils/guidelineRegionFilter.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
@@ -508,7 +509,20 @@ export class TrendReviewOrchestrator {
       }
       const orgHealth = await dryRunOrgSources(orgs, { fetchText: this.guidelineFetchText ?? (async () => { throw new Error('unconfigured'); }) });
 
-      const decided = candidates.map((candidate) => {
+      // ★ 지역 필터 (PeterJ 확정 2026-08-16) — 미국·유럽·한국 발표 기관 지침만 받는다.
+      //   트랙1·3 은 저널 등급으로 걸러지지만 트랙2 는 그 장치가 없어 전 세계가 들어온다.
+      //   분류·스코어링 **앞**에 두는 이유: 뒤에 두면 안 볼 지침에 LLM·점수 계산을 쓴다.
+      const regionFiltered = filterByRegion(candidates);
+      if (regionFiltered.dropped.length) {
+        const unknown = regionFiltered.dropped.filter((d) => d.region === null).length;
+        this.logger.info('지침 지역 필터', {
+          kept: regionFiltered.kept.length,
+          dropped: regionFiltered.dropped.length,
+          // 판정 불가가 많아지면 판정 규칙을 손봐야 한다는 신호다 — 따로 센다.
+          unknownRegion: unknown,
+        });
+      }
+      const decided = regionFiltered.kept.map((candidate) => {
         const classification = classifyGuidelineDocument(candidate, { orgs });
         if (classification.verdict === 'rejected') return { ...candidate, status: 'rejected', verdict: classification.verdict, documentType: classification.documentType, reasons: classification.reasons };
         const enriched = { ...candidate, signals: { ...candidate.signals, ...classification.signals } };
