@@ -951,9 +951,29 @@ ${sectionsHtml}
 </div>
 <script>
 (function(){var K='tr_read_v1';var s;try{s=JSON.parse(localStorage.getItem(K))||{};}catch(e){s={};}
+// ★ 읽음은 이제 **저장소에도** 올린다. localStorage 에만 두면 리포트를 만드는 러너가
+// 이걸 못 봐서 "몇 개 안 읽었다" 를 넣을 수 없다. localStorage 는 오프라인 캐시로 남긴다 —
+// 커밋이 실패해도 화면 표시는 즉시 되고, 다음 성공 때 함께 올라간다.
+var OWNER='${this.owner ?? 'njell85-spec'}',REPO='${this.repo ?? 'trend-review'}',PATH='output/read_state.json',pend=false;
+function tok(){return localStorage.getItem('tr_pat');}
+function ymd(){var d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);}
+function push(){
+  var t=tok(); if(!t){return;}            // 토큰이 없으면 화면 표시만 하고 조용히 넘어간다
+  if(pend){return;} pend=true;
+  var url='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/'+PATH;
+  var H={Authorization:'Bearer '+t,Accept:'application/vnd.github+json'};
+  fetch(url,{headers:H}).then(function(r){return r.ok?r.json():{};}).then(function(cur){
+    var items={},d=ymd();
+    for(var k in s){if(s[k]){items[k]=d;}}
+    var body={message:'chore(read): 읽음 상태 갱신',content:btoa(unescape(encodeURIComponent(
+      JSON.stringify({schemaVersion:1,items:items},null,2)))),sha:cur.sha};
+    return fetch(url,{method:'PUT',headers:H,body:JSON.stringify(body)});
+  }).catch(function(){}).then(function(){pend=false;});
+}
 document.querySelectorAll('.readcb').forEach(function(cb){var id=cb.dataset.pmid;var tr=cb.closest('tr');
 if(s[id]){cb.checked=true;tr.classList.add('is-read');}
-cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}tr.classList.toggle('is-read',cb.checked);});});})();
+cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}
+tr.classList.toggle('is-read',cb.checked);push();});});})();
 </script>
 </body>
 </html>`;
