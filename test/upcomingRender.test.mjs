@@ -29,12 +29,24 @@ test('★ 실물 페이지에 예고를 그려도 기존 내용이 하나도 안
   });
   for (const [label, re] of [
     ['보관 섹션', /<details class="day/g],
-    ['누적 표 행', /data-guideline="1"/g],
+    ['논문 표 행', /data-pmid=/g],
     ['읽음 체크박스', /class="readcb"/g],
   ]) {
+    // ★ 기준값이 0이면 이 검사는 아무것도 지키지 않는다.
+    //   실제로 그런 일이 있었다 — `data-guideline="1"` 로 재고 있었는데 그 행은
+    //   페이지 분할로 guidelines.html 에 있어서 index.html 에는 0개였다.
+    //   `0 >= 0` 이라 **행을 통째로 지우는 변이가 안 잡혔다.** 기준값부터 못 박는다.
+    assert.ok(count(html, re) > 0, `${label} 기준값이 0이다 — 이 검사는 헛돈다`);
     assert.ok(count(out, re) >= count(html, re), `${label} 이 줄었다`);
   }
-  assert.ok(out.length >= html.length - 200, '본문이 통째로 줄었다');
+  // ★ 길이는 **예고 블록을 뺀 나머지**로 잰다.
+  //   예고 블록은 설계상 매번 통째로 교체된다 — 트랙이 꺼지거나 큐가 짧아지면 블록이
+  //   작아지는 게 정상이다. 전체 길이로 비교하면 그 정상 동작을 "본문이 줄었다" 로
+  //   오판한다(실측: 실물 페이지에 블록이 이미 들어간 뒤 이 테스트가 빨개졌다).
+  //   지켜야 할 것은 "예고 말고 나머지는 손대지 않는다" 이므로 그것만 잰다.
+  const strip = (h) => h.replace(/<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
+  assert.ok(strip(out).length >= strip(html).length - 200,
+    `예고 밖 본문이 줄었다 (${strip(html).length} → ${strip(out).length})`);
 });
 
 test('예고 블록이 실제로 들어간다', async () => {
