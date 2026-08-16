@@ -41,6 +41,7 @@ const arg = (name, fallback) => {
 const days = Number(arg('days', 365));
 const listOut = arg('list', '');   // 지정하면 제목 목록까지 받아 JSON 으로 쓴다
 const withCountry = process.argv.includes('--countries');   // efetch 로 국가까지 받는다
+const withReviews = process.argv.includes('--reviews');     // 트랙3(리뷰 아티클) 시장조사
 const asDate = (d) => d.toISOString().slice(0, 10).replaceAll('-', '/');
 
 // esearch 로 PMID 를 회수한다. count 세기와 달리 retmax 가 필요하다.
@@ -243,6 +244,25 @@ for (const org of orgs.organizations) {
 push('');
 push('> **주의**: ④의 기관명 매칭은 저자 소속·본문 언급까지 잡으므로 **과대추정**이다.');
 push('> 발행 주체 판정은 파이프라인의 `matchOrganization` + 문서 성격 판정이 따로 한다.');
+
+// ── 트랙3 시장조사 (--reviews) ──────────────────────────────────────────────
+if (withReviews) {
+  push('');
+  push('### ⑥ 트랙3 후보 — 유명 저널 리뷰 아티클 (SR·메타 제외)');
+  push('');
+  push('| 저널 묶음 | 최근 1년 | 최근 3년 | 최근 5년 |');
+  push('|---|---|---|---|');
+  for (const [name, journals] of Object.entries(REVIEW_JOURNAL_SETS)) {
+    const cells = [];
+    for (const d of [365, 365 * 3, 365 * 5]) {
+      const from = asDate(new Date(now.getTime() - d * 86_400_000));
+      cells.push(await count(reviewTerm(journals), from, maxDate));
+    }
+    push(`| ${name} (${journals.length}종) | ${cells[0]} | ${cells[1]} | ${cells[2]} |`);
+  }
+  push('');
+  push('> SR·메타분석은 제외했다 — 그건 논문 트랙(arm F)의 몫이고 겹치면 같은 걸 두 번 본다.');
+}
 
 // ── 목록 회수 (--list <경로>) ────────────────────────────────────────────────
 if (listOut) {

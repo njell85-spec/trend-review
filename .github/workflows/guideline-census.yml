@@ -17,6 +17,10 @@ on:
         description: 저자 소속국·저널 발행국까지 받을까 (efetch · list=true 필요)
         required: false
         default: 'false'
+      reviews:
+        description: 트랙3(유명 저널 리뷰 아티클) 시장조사도 할까
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -38,10 +42,13 @@ jobs:
           if [ "${{ inputs.list }}" = "true" ]; then
             mkdir -p experiments
             EXTRA=""
-            [ "${{ inputs.countries }}" = "true" ] && EXTRA="--countries"
+            [ "${{ inputs.countries }}" = "true" ] && EXTRA="$EXTRA --countries"
+            [ "${{ inputs.reviews }}" = "true" ] && EXTRA="$EXTRA --reviews"
             node scripts/guideline-census.mjs --days "${{ inputs.days }}" --list experiments/guideline-census.json $EXTRA
           else
-            node scripts/guideline-census.mjs --days "${{ inputs.days }}"
+            EXTRA=""
+            [ "${{ inputs.reviews }}" = "true" ] && EXTRA="--reviews"
+            node scripts/guideline-census.mjs --days "${{ inputs.days }}" $EXTRA
           fi
 
       # 목록은 저장소에 남긴다 — artifact 는 인증이 있어야 열리고, 이 목록은 세션이
