@@ -47,54 +47,6 @@
       "by": "org-acronym"
     },
     {
-      "id": "pmid:42087034",
-      "pmid": "42087034",
-      "title": "Guidelines for Seizure Prophylaxis in Patients Undergoing Supratentorial Neurosurgery: A Statement for Healthcare Professionals from the Neurocritical Care Society.",
-      "pubDate": "2026 Aug",
-      "journal": "Neurocritical care",
-      "publicationTypes": [],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-title"
-      ],
-      "discoveredAt": "2026-08-15T21:50:26.390Z",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "ncs"
-      },
-      "priority": 8.5,
-      "breakdown": {
-        "authority": 2.5,
-        "topic": 2,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "ncs",
-      "tier": 2,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence"
-      ],
-      "attempts": 0,
-      "lastSeenAt": "2026-08-16T21:50:27.591Z",
-      "lineageKey": "ncs|seizure-prophylaxis-patients-undergoing-supratentorial-neurosurgery-statement-healthcare-professionals-from",
-      "supersedes": [],
-      "region": "us",
-      "by": "org-name"
-    },
-    {
       "id": "pmid:42132666",
       "pmid": "42132666",
       "title": "Ketogenic diet therapy for children with super-refractory status epilepticus in intensive care: International clinical practice recommendations.",
@@ -445,6 +397,55 @@
       ],
       "region": "eu",
       "by": "nationality"
+    },
+    {
+      "id": "pmid:42087034",
+      "pmid": "42087034",
+      "title": "Guidelines for Seizure Prophylaxis in Patients Undergoing Supratentorial Neurosurgery: A Statement for Healthcare Professionals from the Neurocritical Care Society.",
+      "pubDate": "2026 Aug",
+      "journal": "Neurocritical care",
+      "publicationTypes": [],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-15T21:50:26.390Z",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "ncs"
+      },
+      "priority": 8.5,
+      "breakdown": {
+        "authority": 2.5,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "ncs",
+      "tier": 2,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-16T21:50:27.591Z",
+      "lineageKey": "ncs|seizure-prophylaxis-patients-undergoing-supratentorial-neurosurgery-statement-healthcare-professionals-from",
+      "supersedes": [],
+      "region": "us",
+      "by": "org-name",
+      "rejectedAt": "2026-08-17"
     }
   ],
   "sourceHealth": {
@@ -603,6 +604,6 @@
       }
     }
   },
-  "updatedAt": "2026-08-16T21:50:27.595Z",
+  "updatedAt": "2026-08-17",
   "configVersion": "guideline-v2"
 }
