@@ -24,8 +24,29 @@ import { collectGuidelineCandidates } from '../utils/guidelinePubmed.js';
 import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
+import { filterByRegion } from '../utils/guidelineRegionFilter.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
+import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
+import { buildProgressLines } from '../utils/trackProgress.js';
+import { normalizeControl } from '../utils/controlState.js';
+
+// 날짜 문자열을 달력상의 연속 일수로 바꾼다. Date를 쓰면 실행 환경의 타임존에 따라
+// 자정이 전날로 밀릴 수 있어, 주간 발행 경계는 YYYY-MM-DD의 정수 연산만 사용한다.
+function calendarDay(dateStr) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr ?? '');
+  if (!match) return null;
+  let year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  year -= month <= 2 ? 1 : 0;
+  const era = Math.floor(year / 400);
+  const yearOfEra = year - era * 400;
+  const shiftedMonth = month + (month > 2 ? -3 : 9);
+  const dayOfYear = Math.floor((153 * shiftedMonth + 2) / 5) + day - 1;
+  return era * 146097 + yearOfEra * 365 + Math.floor(yearOfEra / 4)
+    - Math.floor(yearOfEra / 100) + dayOfYear;
+}
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -83,6 +104,9 @@ export class TrendReviewOrchestrator {
 
     // Exclusion list — tracks PMIDs already published to avoid re-selection
     this.excludeListPath = path.join(this.outputDir, 'selected_papers.json');
+    this.queuePapersPath = options.queuePapersPath ?? path.join(this.outputDir, 'queue_papers.json');
+    this.queueReviewsPath = options.queueReviewsPath ?? path.join(this.outputDir, 'queue_reviews.json');
+    this.controlStatePath = options.controlStatePath ?? path.join(this.outputDir, 'control_state.json');
     // 가이드라인 캐치업 노출 기록 (주 1회 게이트 + 중복 방지)
     this.guidelineListPath = path.join(this.outputDir, 'selected_guidelines.json');
     this.guidelineIntervalDays = options.guidelineIntervalDays ?? 7;
@@ -156,6 +180,37 @@ export class TrendReviewOrchestrator {
       perMonth: monthly.perMonth,
     });
     return monthly.pool;
+  }
+
+  async _saveTrack1Queue(selectionPool, today, excludePmids = []) {
+    try {
+      const scores = this.filter.scorer.scorePapers(selectionPool);
+      const papers = new Map(selectionPool.map((paper) => [String(paper.pmid), paper]));
+      const items = [...scores]
+        .sort((a, b) => (Number(b.rawScore ?? b.score) - Number(a.rawScore ?? a.score))
+          || String(a.pmid).localeCompare(String(b.pmid)))
+        .slice(0, 14)
+        .map((scored) => {
+          const paper = papers.get(String(scored.pmid)) ?? {};
+          return {
+            pmid: scored.pmid,
+            title: paper.title ?? '',
+            journal: paper.journal ?? '',
+            score: scored.score,
+            topic: scored.primaryTopic ?? null,
+            lowConfidence: false,
+          };
+        });
+      const state = await loadTrackQueue(this.queuePapersPath, 'papers');
+      const merged = mergeQueueItems(state, items, { today, excludePmids });
+      if (!existsSync(path.dirname(this.queuePapersPath))) {
+        await mkdir(path.dirname(this.queuePapersPath), { recursive: true });
+      }
+      await saveTrackQueue(this.queuePapersPath, merged);
+    } catch (error) {
+      // 예비 큐는 관찰·예고용이다. 저장 장애가 데일리 선정과 발행을 막아서는 안 된다.
+      this.logger.warn('트랙1 예비 큐 저장 실패 — 데일리는 계속한다', { err: error.message });
+    }
   }
 
   async _loadSelectionHistory() {
@@ -475,7 +530,20 @@ export class TrendReviewOrchestrator {
       }
       const orgHealth = await dryRunOrgSources(orgs, { fetchText: this.guidelineFetchText ?? (async () => { throw new Error('unconfigured'); }) });
 
-      const decided = candidates.map((candidate) => {
+      // ★ 지역 필터 (PeterJ 확정 2026-08-16) — 미국·유럽·한국 발표 기관 지침만 받는다.
+      //   트랙1·3 은 저널 등급으로 걸러지지만 트랙2 는 그 장치가 없어 전 세계가 들어온다.
+      //   분류·스코어링 **앞**에 두는 이유: 뒤에 두면 안 볼 지침에 LLM·점수 계산을 쓴다.
+      const regionFiltered = filterByRegion(candidates);
+      if (regionFiltered.dropped.length) {
+        const unknown = regionFiltered.dropped.filter((d) => d.region === null).length;
+        this.logger.info('지침 지역 필터', {
+          kept: regionFiltered.kept.length,
+          dropped: regionFiltered.dropped.length,
+          // 판정 불가가 많아지면 판정 규칙을 손봐야 한다는 신호다 — 따로 센다.
+          unknownRegion: unknown,
+        });
+      }
+      const decided = regionFiltered.kept.map((candidate) => {
         const classification = classifyGuidelineDocument(candidate, { orgs });
         if (classification.verdict === 'rejected') return { ...candidate, status: 'rejected', verdict: classification.verdict, documentType: classification.documentType, reasons: classification.reasons };
         const enriched = { ...candidate, signals: { ...candidate.signals, ...classification.signals } };
@@ -584,6 +652,37 @@ export class TrendReviewOrchestrator {
     }
   }
 
+  // 트랙3은 독립 발행 arm이다. 이 메서드의 오류는 run() 호출 경계에서 격리해
+  // 논문 보고서·발행 경로가 리뷰 큐 상태에 의존하지 않게 한다.
+  async _stageReview(todayStr) {
+    let rawControl = null;
+    try { rawControl = JSON.parse(await readFile(this.controlStatePath, 'utf8')); }
+    catch { /* 제어 파일 부재·손상은 normalizeControl의 전부 on 기본값으로 복구한다. */ }
+    const mode = normalizeControl(rawControl).tracks.reviews.mode;
+    if (mode === 'off') return { outcome: 'skipped', reason: 'track-off' };
+
+    const state = await loadTrackQueue(this.queueReviewsPath, 'reviews');
+    const intervalDays = mode === 'alternate' ? 14 : 7;
+    const todayDay = calendarDay(todayStr);
+    const lastDay = calendarDay(state.lastRun?.date);
+    if (todayDay !== null && lastDay !== null && todayDay - lastDay < intervalDays) {
+      return { outcome: 'skipped', reason: 'weekly-gate' };
+    }
+    if (!state.queue.length) return { outcome: 'empty' };
+
+    const [picked, ...remaining] = state.queue;
+    const published = { ...picked, publishedAt: todayStr };
+    const next = {
+      ...state,
+      queue: remaining,
+      published: [...state.published, published],
+      lastRun: { date: todayStr, outcome: 'published', publishedId: picked.pmid ?? picked.id ?? null },
+      updatedAt: todayStr,
+    };
+    await saveTrackQueue(this.queueReviewsPath, next);
+    return { outcome: 'published', item: published };
+  }
+
   async _stagePublish(topPapers, guideline = null) {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
@@ -599,6 +698,29 @@ export class TrendReviewOrchestrator {
       this._stageEnd(entry, 'error', { err: err.message });
       this.logger.warn('GitHub Pages 업데이트 실패 (파이프라인은 계속)', { err: err.message });
       return null;
+    }
+  }
+
+  /**
+   * 텔레그램 리포트에 실을 트랙별 진행상황.
+   * ★ 실패해도 리포트는 그대로 간다 — 진행상황은 부가 정보다.
+   */
+  async _buildProgressLines(todayStr) {
+    try {
+      const out = path.join(this.outputDir);
+      const rj = async (f) => { try { return JSON.parse(await readFile(path.join(out, f), 'utf8')); } catch { return null; } };
+      const [control, read, papers, guidelines, reviews] = await Promise.all([
+        rj('control_state.json'), rj('read_state.json'),
+        rj('queue_papers.json'), rj('selected_guidelines.json'), rj('queue_reviews.json'),
+      ]);
+      const ids = (st) => (st?.published ?? []).map((x) => String(x.pmid ?? x.id ?? '')).filter(Boolean);
+      return buildProgressLines({
+        today: todayStr, control, read,
+        published: { papers: ids(papers), guidelines: ids(guidelines), reviews: ids(reviews) },
+      });
+    } catch (err) {
+      this.logger.warn('진행상황 계산 실패 — 리포트는 그대로 간다', { err: err.message });
+      return [];
     }
   }
 
@@ -669,6 +791,7 @@ export class TrendReviewOrchestrator {
       const excludePmids = await this._loadExcludePmids();
       if (excludePmids.length) this.logger.info(`Excluding ${excludePmids.length} already-published PMIDs`);
       const selectionPapers = this._buildSelectionPool(validPapers, collectStats);
+      await this._saveTrack1Queue(selectionPapers, kstDateStr(), excludePmids);
       const { topPapers: scoredTopPapers, allScoredPapers, rerank } = await this._stageAnalyze(
         selectionPapers,
         { excludePmids },
@@ -717,6 +840,10 @@ export class TrendReviewOrchestrator {
       // Stage 7a: 가이드라인 캐치업 (주 1회, non-fatal, 없으면 null)
       const todayStr = kstDateStr();
       const guidelineCard = await this._stageGuideline(todayStr);
+
+      // 리뷰는 데일리 코어의 부가 arm이다. 큐 읽기·저장 어느 쪽이 실패해도 논문 발행은 계속한다.
+      try { await this._stageReview(todayStr); }
+      catch (error) { this.logger.warn('Review stage failed (non-fatal)', { err: error.message }); }
 
       // 제외목록·가이드라인 기록을 publish 전에 저장 — publish가 이 파일들을
       // 커밋/푸시하므로, 순서가 뒤면 원격 목록이 항상 하루 늦어 중복 선정된다.

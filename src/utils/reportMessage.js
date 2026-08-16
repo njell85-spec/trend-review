@@ -10,7 +10,7 @@
  *  보장하는 구조라 유지한다. 텔레그램은 4096자 한도라 join해서 1건으로 보낸다.)
  */
 
-export function buildReportMessages({ dateStr, topPaper, pagesUrl }) {
+export function buildReportMessages({ dateStr, topPaper, pagesUrl, progressLines = [] }) {
   const p = topPaper ?? {};
   const paper = p.paper ?? {};
   const title = (p.title_ko || paper.title || '제목 없음').replace(/\s+/g, ' ').trim();
@@ -23,8 +23,15 @@ export function buildReportMessages({ dateStr, topPaper, pagesUrl }) {
   const l4 = `${journal}${pmid ? `${journal ? ' · ' : ''}#${pmid}` : ''}`; // 어느 논문인지
   const l5 = `📊 ${url}`;
 
+  // ★ 진행상황은 **별도 메시지**로 붙인다. 기존 5줄 본문은 200자 계약(REPORT_SPEC §4-D)
+  //   아래 있고 분할 규칙이 거기 맞춰져 있다 — 본문에 끼워 넣으면 그 계약이 깨진다.
+  const progress = progressLines.length
+    ? [`[진행상황]`, ...progressLines].join('\n')
+    : null;
+  const withProgress = (msgs) => (progress ? [...msgs, progress] : msgs);
+
   const full = [l1, l2, title, l4, l5].filter(Boolean).join('\n');
-  if (full.length <= 200) return [full];
+  if (full.length <= 200) return withProgress([full]);
 
   // 200 초과 → 제목을 자르지 않고 2개로 분할. ① 헤더+날짜+제목  ② 저널·PMID + 링크
   let msg1 = [l1, l2, title].join('\n');
@@ -33,7 +40,7 @@ export function buildReportMessages({ dateStr, topPaper, pagesUrl }) {
     msg1 = [l1, l2, `${title.slice(0, Math.max(12, budget))}…`].join('\n');
   }
   const msg2 = [l4, l5].filter(Boolean).join('\n');
-  return [msg1, msg2];
+  return withProgress([msg1, msg2]);
 }
 
 // ── 실패 알림 텍스트 (자동 업데이트가 최종 실패했을 때) ──────────────────────

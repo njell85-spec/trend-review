@@ -15,6 +15,8 @@ import { ensureCurationBlock, loadCurationState, removeSectionFromHtml, parseHid
 import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
 import { impactFactorLabel } from './journalMeta.js';
+import { buildUpcoming } from './upcomingSchedule.js';
+import { normalizeControl } from './controlState.js';
 
 const API = 'https://api.github.com';
 
@@ -251,6 +253,209 @@ export class GitHubPublisher {
   }
 
   /** 상태 v2의 published를 정본으로 가이드 카드와 누적 행을 전량 재생성한다. */
+  /**
+   * 1주치 예고 리스트를 그린다.
+   *
+   * ★ **자기 블록만 갈아끼우고 나머지는 손대지 않는다.** 이 저장소는 렌더가 기존 내용을
+   * 통째로 지운 사고를 이미 냈다(GSECTION 8→7, 본문 679KB→572KB, LLM 요약 소실).
+   * 그래서 `<!-- UPCOMING -->` ~ `<!-- /UPCOMING -->` 사이만 교체한다.
+   *
+   * ★ 예고가 하나도 없으면 **블록을 아예 넣지 않는다.** 빈 상자를 남기면 PeterJ가
+   * "오늘은 아직 안 돌았나" 와 "정말 없나" 를 구별할 수 없다.
+   */
+  /**
+   * 예고 리스트 버튼의 동작. 브라우저에서만 돈다.
+   *
+   * 인증은 **기존 PAT 경로를 그대로 재사용한다**(`localStorage['tr_pat']`) — 새 토큰 체계를
+   * 만들면 PeterJ가 토큰을 두 번 발급해야 한다. 토큰은 헤더로만 보내고 URL 에 싣지 않는다
+   * (URL 은 브라우저 히스토리·리퍼러·서버 로그에 남는다).
+   *
+   * ★ 제어 상태의 시각은 **날짜까지만** 남긴다. 이 저장소는 public 이라 분 단위 토글 시각이
+   * 쌓이면 생활 패턴 시계열이 회수 불가로 공개 히스토리에 남는다.
+   */
+  _upcomingScript() {
+    return `<!-- UPBTN v1 -->
+<script>
+(function(){
+  var OWNER='${this.owner}', REPO='${this.repo}';
+  var API='https://api.github.com/repos/'+OWNER+'/'+REPO;
+  function pat(force){
+    var t=localStorage.getItem('tr_pat');
+    if(!t||force){ t=prompt('GitHub Fine-grained PAT (이 저장소 actions:write 한정)\\n최초 1회만 — 이 브라우저에만 저장됩니다.'); if(t){localStorage.setItem('tr_pat',t.trim());} }
+    return localStorage.getItem('tr_pat');
+  }
+  function say(m){ var el=document.getElementById('up-msg'); if(el){el.textContent=m;} else {alert(m);} }
+  // 워크플로 구동. 토큰은 헤더로만 나간다.
+  function fire(wf,inputs,okMsg){
+    var t=pat(); if(!t){say('✖ 토큰이 없어 실행하지 못했습니다.');return;}
+    say('⏳ 실행 중…');
+    fetch(API+'/actions/workflows/'+wf+'/dispatches',{
+      method:'POST',
+      headers:{Authorization:'Bearer '+t,Accept:'application/vnd.github+json','Content-Type':'application/json'},
+      body:JSON.stringify({ref:'main',inputs:inputs})
+    }).then(function(r){
+      if(r.status===204){ say(okMsg+' — 1~2분 뒤 새로고침하면 반영됩니다.'); }
+      else if(r.status===401||r.status===403){ pat(true); say('✖ 토큰이 거부됐습니다. 다시 입력해 주세요.'); }
+      else { say('✖ 실패 ('+r.status+')'); }
+    }).catch(function(e){ say('✖ 통신 실패 — '+e.message); });
+  }
+  // 트랙 온오프는 워크플로가 아니라 상태 파일을 **직접** 고친다(러너를 안 띄운다).
+  var NEXT={on:'off',off:'alternate',alternate:'on'};
+  function toggle(track,cur,btn){
+    var t=pat(); if(!t){say('✖ 토큰이 없어 실행하지 못했습니다.');return;}
+    var next=NEXT[cur]||'on';
+    var path='output/control_state.json';
+    var H={Authorization:'Bearer '+t,Accept:'application/vnd.github+json','Content-Type':'application/json'};
+    say('⏳ 전환 중…');
+    fetch(API+'/contents/'+path,{headers:H}).then(function(r){
+      return r.status===200?r.json():null;
+    }).then(function(cur2){
+      var state={schemaVersion:1,tracks:{}};
+      if(cur2&&cur2.content){ try{ state=JSON.parse(decodeURIComponent(escape(atob(cur2.content.replace(/\\n/g,''))))); }catch(e){} }
+      if(!state.tracks)state.tracks={};
+      // 시각은 날짜까지만. public repo 에 분 단위가 쌓이면 생활 패턴이 된다.
+      state.tracks[track]={mode:next,since:new Date().toISOString().slice(0,10)};
+      var body={message:'chore(control): '+track+' → '+next,
+        content:btoa(unescape(encodeURIComponent(JSON.stringify(state,null,2))))};
+      if(cur2&&cur2.sha)body.sha=cur2.sha;
+      return fetch(API+'/contents/'+path,{method:'PUT',headers:H,body:JSON.stringify(body)});
+    }).then(function(r){
+      if(r&&(r.status===200||r.status===201)){
+        btn.dataset.upMode=next;
+        btn.textContent=btn.textContent.split(' · ')[0]+' · '+({on:'켜짐',off:'꺼짐',alternate:'격일'}[next]);
+        say('✔ '+track+' → '+({on:'켜짐',off:'꺼짐',alternate:'격일'}[next]));
+      } else { say('✖ 전환 실패'+(r?' ('+r.status+')':'')); }
+    }).catch(function(e){ say('✖ 통신 실패 — '+e.message); });
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('button'):null; if(!b)return;
+    if(b.dataset.upRun){ fire('on-demand.yml',{pmid:b.dataset.upRun,mode:'paper'},'▶ 먼저 돌리기를 걸었습니다'); }
+    else if(b.dataset.upDrop){ fire('curate-remove.yml',{sectionKey:b.dataset.upDrop,tag:'SECTION',pmid:b.dataset.upDrop},'🗑 뺐습니다 — 다음 항목이 채웁니다'); }
+    else if(b.dataset.upToggle){ toggle(b.dataset.upToggle,b.dataset.upMode||'on',b); }
+    else if(b.dataset.upReset){
+      // 되돌릴 수 없으므로 반드시 묻는다.
+      if(confirm('지금 예고에 있는 항목을 전부 빼고 새로 채웁니다. 계속할까요?')){
+        fire('curate-remove.yml',{sectionKey:'__UPCOMING_RESET__',tag:'SECTION'},'♻ 전체를 갈아엎었습니다');
+      }
+    }
+  });
+})();
+</script>`;
+  }
+
+  /**
+   * 예고 줄의 제목 절단. 지침 제목은 발표 기관이 줄줄이 붙어 200자를 넘는 일이 흔하고
+   * (미리보기에서 한 줄이 폰 화면 절반을 먹었다), 예고는 **훑어보는 목록**이라
+   * 전문이 필요 없다. 전문은 title 속성으로 남겨 길게 누르면 보이게 한다.
+   */
+  static _clipTitle(t, max = 66) {
+    const v = String(t ?? '').trim();
+    return v.length > max ? `${v.slice(0, max - 1)}…` : v;
+  }
+
+  _renderUpcoming(html, { from, days = 7, tracks = [] } = {}) {
+    const rows = buildUpcoming({ from, days, tracks });
+    // 이전 블록은 항상 먼저 걷어낸다 — 이게 멱등성의 전부다.
+    let out = String(html).replace(/\n?<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
+    // ★ 비어도 블록을 그린다. 조기 반환하면 큐가 마른 날 화면에서 예고 섹션이 통째로
+    //   사라져서 PeterJ는 "고장인지 빈 건지" 를 구분할 수 없다. 토글 버튼도 같이 사라져
+    //   **꺼둔 트랙을 다시 켤 방법이 없어진다** — 이게 조기 반환의 진짜 위험이다.
+
+    const byDate = new Map();
+    for (const r of rows) {
+      if (!byDate.has(r.date)) byDate.set(r.date, []);
+      byDate.get(r.date).push(r);
+    }
+    const dayHtml = [...byDate.entries()].map(([date, items]) => {
+      const li = items.map((r) => {
+        const it = r.item ?? {};
+        const clip = (t) => GitHubPublisher._clipTitle(t);
+        const warn = r.lowConfidence ? '<span class="up-warn" title="재순위가 약한 날">⚠</span>' : '';
+        // 버튼은 data-* 만 들고 있고 동작은 페이지 하단 스크립트가 붙인다.
+        return `<li class="up-item">`
+          + `<span class="up-title" title="${esc(it.title ?? '')}">`
+          + `<span class="up-track">${esc(r.trackLabel)}</span> ${esc(clip(it.title))}${warn}</span>`
+          + (it.journal ? `<span class="up-journal">${esc(it.journal)}</span>` : '')
+          + `<button class="up-btn up-run" data-up-run="${esc(it.pmid ?? '')}" `
+          + `data-up-track="${esc(r.track)}" title="이것을 먼저 돌린다">▶</button>`
+          + `<button class="up-btn up-drop" data-up-drop="${esc(it.pmid ?? '')}" `
+          + `data-up-track="${esc(r.track)}" title="빼고 다음 것으로 채운다">🗑</button>`
+          + `</li>`;
+      }).join('');
+      return `<div class="up-day"><div class="up-date">${esc(date)}</div><ul class="up-list">${li}</ul></div>`;
+    }).join('');
+
+    // 트랙별 온오프 토글. off 인 트랙도 여기 나와야 다시 켤 수 있다.
+    const MODE_LABEL = { on: '켜짐', off: '꺼짐', alternate: '격일' };
+    const toggles = tracks.map((t) => `<button class="up-toggle" data-up-toggle="${esc(t.key)}" `
+      + `data-up-mode="${esc(t.mode ?? 'on')}">${esc(t.label)} · ${esc(MODE_LABEL[t.mode] ?? '켜짐')}</button>`).join('');
+
+    // ★ 스타일을 블록 안에 같이 넣는다. 대시보드 CSS 는 index.html 에 있고 이 블록은
+    //   교체식으로 끼워지므로, 밖에 두면 블록만 갱신될 때 스타일이 따라오지 않는다.
+    //   미리보기에서 실제로 **스타일 없는 맨몸**으로 나온 자리다(push 전에 잡았다).
+    const style = `<style>
+.upcoming{margin:16px 0;font-size:14px}
+.up-h{font-size:15px;margin:0 0 8px;font-weight:600}
+.up-h small{display:block;font-weight:400;color:#6b7280;font-size:12px;margin-top:2px}
+.up-toggles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.up-toggle{border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}
+.up-toggle[data-up-mode=off]{background:#f3f4f6;color:#9ca3af;text-decoration:line-through}
+.up-toggle[data-up-mode=alternate]{border-style:dashed}
+.up-day{margin:10px 0 4px;font-weight:600;color:#374151;font-size:13px}
+.upcoming ul{list-style:none;margin:0;padding:0}
+.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 0;border-bottom:1px solid #f0f1f3}
+.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#eef2ff;color:#4338ca;white-space:nowrap}
+.up-title{flex:1 0 100%;line-height:1.5}
+.up-journal{flex:1 1 auto;font-size:11px;color:#6b7280;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-warn{color:#d97706;margin-left:3px}
+.up-btn{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:6px;
+  min-width:34px;min-height:34px;font-size:13px;cursor:pointer}
+.up-empty{color:#9ca3af;padding:8px 0}
+.up-date{font-weight:600;color:#374151;font-size:13px;margin:12px 0 2px}
+.up-list{list-style:none;margin:0;padding:0}
+.up-note{color:#6b7280;font-size:12px;margin-top:10px}
+.up-msg{font-size:12px;color:#6b7280;min-height:16px;margin-top:6px}
+.up-reset{margin-top:10px;border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
+@media(prefers-color-scheme:dark){
+ .up-toggle,.up-btn{background:#1f2937;border-color:#374151;color:#e5e7eb}
+ .up-day{color:#d1d5db}.up-item{border-color:#374151}
+ .up-track{background:#312e81;color:#c7d2fe}}
+</style>`;
+    const block = `<!-- UPCOMING -->\n${style}<section class="upcoming"><h2 class="up-h">📅 다음 ${days}일 예고`
+      + ` <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2>`
+      // ★ 빈 상태를 반드시 그린다. 큐가 다 마르거나 세 트랙이 다 꺼져 있으면
+      //   화면에 **아무것도 안 나와서** PeterJ는 "고장인지 빈 건지" 를 구분할 수 없다.
+      + `<div class="up-toggles">${toggles}</div>`
+      + (dayHtml || '<p class="up-empty">예고할 것이 없습니다 — 큐가 비었거나 트랙이 모두 꺼져 있습니다.</p>')
+      + `<button class="up-reset" data-up-reset="1">이 목록 전체 갈아엎기</button>`
+      + `<div id="up-msg" class="up-msg"></div>`
+      + `</section>\n${this._upcomingScript()}\n<!-- /UPCOMING -->`;
+    return out.replace('<!-- ARCHIVE_START -->', () => `${block}\n<!-- ARCHIVE_START -->`);
+  }
+
+  /**
+   * 디스크의 큐·제어 상태를 읽어 예고 리스트를 그린다.
+   * 세 트랙의 큐가 각각 다른 파일에 있으므로(쓰는 주체가 달라 일부러 갈랐다) 여기서 모은다.
+   */
+  async _renderUpcomingFromDisk(html, generatedAt) {
+    const out = path.join(this._repoPath, 'output');
+    const readJson = async (f) => { try { return JSON.parse(await readFile(path.join(out, f), 'utf8')); } catch { return null; } };
+    const [papers, guidelines, reviews, control] = await Promise.all([
+      readJson('queue_papers.json'), readJson('selected_guidelines.json'),
+      readJson('queue_reviews.json'), readJson('control_state.json'),
+    ]);
+    const c = normalizeControl(control);
+    const from = String(generatedAt ?? '').slice(0, 10) || new Date().toISOString().slice(0, 10);
+    return this._renderUpcoming(html, {
+      from, days: 7,
+      tracks: [
+        { key: 'papers', label: '논문', cadence: 'daily', mode: c.tracks.papers.mode, state: papers ?? { queue: [] } },
+        { key: 'guidelines', label: '가이드라인', cadence: 'daily', mode: c.tracks.guidelines.mode, state: guidelines ?? { queue: [] } },
+        { key: 'reviews', label: '리뷰', cadence: 'weekly', mode: c.tracks.reviews.mode, state: reviews ?? { queue: [] } },
+      ],
+    });
+  }
+
   _renderGuidelineState(html, state, generatedAt) {
     if (!state || !Array.isArray(state.published)) return html;
 
@@ -770,9 +975,29 @@ ${sectionsHtml}
 </div>
 <script>
 (function(){var K='tr_read_v1';var s;try{s=JSON.parse(localStorage.getItem(K))||{};}catch(e){s={};}
+// ★ 읽음은 이제 **저장소에도** 올린다. localStorage 에만 두면 리포트를 만드는 러너가
+// 이걸 못 봐서 "몇 개 안 읽었다" 를 넣을 수 없다. localStorage 는 오프라인 캐시로 남긴다 —
+// 커밋이 실패해도 화면 표시는 즉시 되고, 다음 성공 때 함께 올라간다.
+var OWNER='${this.owner ?? 'njell85-spec'}',REPO='${this.repo ?? 'trend-review'}',PATH='output/read_state.json',pend=false;
+function tok(){return localStorage.getItem('tr_pat');}
+function ymd(){var d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);}
+function push(){
+  var t=tok(); if(!t){return;}            // 토큰이 없으면 화면 표시만 하고 조용히 넘어간다
+  if(pend){return;} pend=true;
+  var url='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/'+PATH;
+  var H={Authorization:'Bearer '+t,Accept:'application/vnd.github+json'};
+  fetch(url,{headers:H}).then(function(r){return r.ok?r.json():{};}).then(function(cur){
+    var items={},d=ymd();
+    for(var k in s){if(s[k]){items[k]=d;}}
+    var body={message:'chore(read): 읽음 상태 갱신',content:btoa(unescape(encodeURIComponent(
+      JSON.stringify({schemaVersion:1,items:items},null,2)))),sha:cur.sha};
+    return fetch(url,{method:'PUT',headers:H,body:JSON.stringify(body)});
+  }).catch(function(){}).then(function(){pend=false;});
+}
 document.querySelectorAll('.readcb').forEach(function(cb){var id=cb.dataset.pmid;var tr=cb.closest('tr');
 if(s[id]){cb.checked=true;tr.classList.add('is-read');}
-cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}tr.classList.toggle('is-read',cb.checked);});});})();
+cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}
+tr.classList.toggle('is-read',cb.checked);push();});});})();
 </script>
 </body>
 </html>`;
@@ -957,6 +1182,10 @@ cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setIte
       updated = body;
     }
     if (guidelineState) updated = this._renderGuidelineState(updated, guidelineState, generatedAt);
+    // ★ 예고 리스트. 상태 파일이 없거나 깨져도 **발행을 막지 않는다** — 예고는 부가물이고
+    //   데일리 코어 무영향이 불변식이다. 실패하면 예고 블록만 빠진 페이지가 나간다.
+    try { updated = await this._renderUpcomingFromDisk(updated, generatedAt); }
+    catch (err) { this.logger?.warn?.('예고 리스트 렌더 실패 — 페이지는 그대로 나간다', { err: err.message }); }
     updated = this._ensureOnDemandWidget(updated);
     let curationState = null;
     try { curationState = await loadCurationState(path.join(this._repoPath, 'output', 'curation_state.json')); } catch { /* 소프트 */ }

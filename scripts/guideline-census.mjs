@@ -335,13 +335,28 @@ if (listOut) {
     ['pt_all', '④ 분야 제한 없는 PubMed 전체 지침 (PT only)', PT_ONLY],
     ['topic', '⑤ 관심주제 지침', TOPIC_TERM],
   ];
+  // 트랙3(리뷰)은 **복습용**이라 창이 길어야 한다 — 최신성이 목적이 아니다.
+  // 그래서 같은 `--days` 를 쓰지 않고 축마다 자기 창을 들고 다닌다.
+  if (withReviews) {
+    const from5y = asDate(new Date(now.getTime() - 365 * 5 * 86_400_000));
+    for (const [name, journals] of Object.entries(REVIEW_JOURNAL_SETS)) {
+      axisList.push([
+        `review_${name}`,
+        `⑥ 트랙3 리뷰 — ${name} (${journals.length}종 · 5년 · 관심주제)`,
+        `${TOPIC_AXIS} AND ${reviewTerm(journals)}`,
+        from5y,
+      ]);
+    }
+  }
   const payload = { generatedAt: new Date().toISOString(), days, minDate, maxDate, axes: {} };
-  for (const [key, label, term] of axisList) {
-    const total = totals[label] ?? await count(term, minDate, maxDate);
-    const pmids = await ids(term, minDate, maxDate, total);
+  for (const [key, label, term, axisMinDate] of axisList) {
+    const from = axisMinDate ?? minDate;
+    // 축이 자기 창을 들고 오면 전체 집계(`totals`)를 재활용하면 안 된다 — 창이 다르다.
+    const total = axisMinDate ? await count(term, from, maxDate) : (totals[label] ?? await count(term, from, maxDate));
+    const pmids = await ids(term, from, maxDate, total);
     const items = await summaries(pmids);
-    payload.axes[key] = { label, term, total, fetched: items.length, items };
-    console.log(`[list] ${key}: count=${total} fetched=${items.length}`);
+    payload.axes[key] = { label, term, minDate: from, maxDate, total, fetched: items.length, items };
+    console.log(`[list] ${key}: count=${total} fetched=${items.length} (${from}~${maxDate})`);
   }
   if (withCountry) {
     // 국가는 축을 가로질러 같은 PMID 를 공유하므로 **한 번만** 받는다.

@@ -121,7 +121,12 @@ console.log(`🧭 LLM 실행 경로: ${llmRoute}  (구독=CLI, API=폴백)`);
 // 잡 로그에서 반드시 눈에 띄어야 한다(::warning).
 let telegramStatus = '미설정';
 try {
-  const r = await new TelegramNotifier().send({ dateStr: todayKST, topPaper: papers[0], pagesUrl });
+  // 트랙별 진행상황(미독 수·며칠째 off)을 별도 메시지로 함께 보낸다.
+  // ★ 계산이 실패해도 리포트는 그대로 간다 — 진행상황은 부가 정보다.
+  let progressLines = [];
+  try { progressLines = await new TrendReviewOrchestrator()._buildProgressLines(todayKST); }
+  catch { /* 리포트를 막지 않는다 */ }
+  const r = await new TelegramNotifier().send({ dateStr: todayKST, topPaper: papers[0], pagesUrl, progressLines });
   if (r.sent) {
     telegramStatus = '발송 완료';
     console.log('💬 텔레그램 리포트 발송 완료');

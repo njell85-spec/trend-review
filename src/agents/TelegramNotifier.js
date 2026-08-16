@@ -46,13 +46,41 @@ export class TelegramNotifier {
     }
   }
 
+  /**
+   * md 파일 첨부. PeterJ 요구: *"각 1 2 3 분석 내용도 md파일 첨부해서 텔레그램에서 바로
+   * 볼수있게"* — 텔레그램은 .md 를 앱 안에서 미리보기로 열어준다.
+   *
+   * ★ 첨부 실패가 리포트 발송을 막으면 안 된다. 본문은 이미 갔거나 갈 것이고,
+   *   첨부는 부가물이다. 그래서 던지지 않고 성공 여부만 돌려준다.
+   */
+  async sendDocument({ filename, content, caption }) {
+    if (!this.isConfigured) return false;
+    try {
+      const form = new FormData();
+      form.append('chat_id', this.chatId);
+      if (caption) form.append('caption', caption.slice(0, 1024));   // 텔레그램 캡션 상한
+      form.append('document', new Blob([content], { type: 'text/markdown' }), filename);
+      const res = await fetch(`${API_BASE}/bot${this.token}/sendDocument`, { method: 'POST', body: form });
+      if (!res.ok) {
+        let desc = '';
+        try { desc = (await res.json())?.description ?? ''; } catch { /* 상태코드로 충분 */ }
+        this.logger.warn('md 첨부 실패 — 리포트 본문은 그대로 간다', { status: res.status, desc });
+        return false;
+      }
+      return true;
+    } catch (err) {
+      this.logger.warn('md 첨부 실패 — 리포트 본문은 그대로 간다', { err: err.message });
+      return false;
+    }
+  }
+
   // ── 발송 (성공 리포트) — 데일리·on-demand가 발행 직후 호출 ────────────────────
-  async send({ dateStr, topPaper, pagesUrl }) {
+  async send({ dateStr, topPaper, pagesUrl, progressLines = [] }) {
     if (!this.isConfigured) {
       this.logger.info('Telegram 미설정(TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID 없음) — 발송 생략');
       return { sent: false, reason: 'not-configured' };
     }
-    const text = buildReportMessages({ dateStr, topPaper, pagesUrl }).join('\n');
+    const text = buildReportMessages({ dateStr, topPaper, pagesUrl, progressLines }).join('\n');
     await this._post(text);
     this.logger.info('텔레그램 리포트 발송 완료');
     return { sent: true };
