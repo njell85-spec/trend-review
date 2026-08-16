@@ -60,3 +60,24 @@ test('★ git push 실패 폴백도 같은 목록을 쓴다 (한쪽만 늘리면
   assert.ok(fallback.includes('RUNNER_FILES'),
     '폴백이 목록을 따로 들고 있다 — 정본이 둘이 되면 반드시 어긋난다');
 });
+
+
+/**
+ * ★ 러너가 커밋하는 상태 파일은 **게시 파일이 아니다.**
+ *   빠뜨리면 큐만 바뀐 커밋에도 Pages 배포 검증이 걸려 헛돌고, 배포가 안 나면
+ *   가짜 실패로 데일리가 빨개진다(이 저장소는 이미 가짜 실패로 한 번 데였다).
+ *   두 목록이 같이 움직이도록 여기서 맞물려 검사한다.
+ */
+test('★ 커밋되는 상태 파일은 Pages 배포 검증 대상에서 빠져 있다', async () => {
+  const { STATE_ONLY_PATHS } = await import('../src/utils/pagesDeployTarget.js');
+  const stateFiles = GitHubPublisher.RUNNER_FILES.filter((f) => f.startsWith('output/'));
+  assert.ok(stateFiles.length > 0, '상태 파일 기준값이 0이다 — 이 검사는 헛돈다');
+  for (const f of stateFiles) {
+    assert.ok(STATE_ONLY_PATHS.has(f),
+      `${f} 가 게시 파일로 취급된다 — 상태만 바뀐 커밋에 배포 검증이 헛돈다`);
+  }
+  // 반대로 페이지는 반드시 게시 파일이어야 한다
+  for (const f of GitHubPublisher.RUNNER_FILES.filter((x) => x.endsWith('.html'))) {
+    assert.equal(STATE_ONLY_PATHS.has(f), false, `${f} 가 배포 검증에서 빠졌다`);
+  }
+});
