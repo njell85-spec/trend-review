@@ -32,6 +32,22 @@ const GUIDELINE_FORM = `(${PT_ONLY} OR (guideline[Title] OR guidelines[Title] OR
   + `OR "scientific statement"[Title] OR "position statement"[Title] OR "focused update"[Title] `
   + `OR recommendations[Title]))`;
 const TOPIC_TERM = `${TOPIC_AXIS} AND ${GUIDELINE_FORM}`;
+
+// ── 트랙3(리뷰 아티클) 축 ────────────────────────────────────────────────────
+// 복습·개념 정리용 **내러티브 리뷰**만 센다. systematic review·meta-analysis 는
+// 제목·PT 양쪽으로 빼낸다 — 그건 논문 트랙(arm F)의 몫이고, 겹치면 같은 걸 두 번 본다.
+const REVIEW_CORE4 = ['N Engl J Med', 'JAMA', 'Lancet', 'BMJ'];
+const REVIEW_CCM = ['Intensive Care Med', 'Crit Care Med'];
+const REVIEW_WIDE = ['Ann Emerg Med', 'Chest', 'Am J Respir Crit Care Med', 'Circulation'];
+const REVIEW_JOURNAL_SETS = {
+  core4: REVIEW_CORE4,
+  core4_plus_ccm: [...REVIEW_CORE4, ...REVIEW_CCM],
+  wide: [...REVIEW_CORE4, ...REVIEW_CCM, ...REVIEW_WIDE],
+};
+const REVIEW_FORM = '(Review[Publication Type]) NOT ("systematic review"[Publication Type] '
+  + 'OR "meta-analysis"[Publication Type] OR "systematic review"[Title] OR "meta-analysis"[Title])';
+const reviewTerm = (journals) =>
+  `(${journals.map((j) => `"${j}"[Journal]`).join(' OR ')}) AND ${REVIEW_FORM}`;
 const apiKey = process.env.PUBMED_API_KEY ?? '';
 
 const arg = (name, fallback) => {
