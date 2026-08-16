@@ -2234,6 +2234,81 @@
       "fullTextSource": "abstract+registry",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-17",
+      "pmid": "42267831",
+      "title": "Conservative Oxygen for Unresponsive Patients after Cardiac Arrest.",
+      "title_ko": "심정지 후 반응 없는 환자에서의 보존적 산소요법 (LOGICAL 시험)",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa2513814",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "심정지 후 ICU에서 기계환기를 받는 반응 없는 성인 환자에서, 보존적 산소요법(산소 노출 제한)이 자유 산소요법에 비해 180일째 양호한 기능적 결과를 동반한 생존을 증가시키는가?",
+      "pico": {
+        "population": "[International] Unresponsive adults receiving mechanical ventilation in the intensive care unit (ICU) after cardiac arrest; a total of 1840 patients recruited from 53 ICUs in Australia, New Zealand, and Ireland (enrolled September 2021 through June 2024), with 882 assigned to conservative oxygen and 958 to liberal oxygen.",
+        "intervention": "Conservative oxygen therapy: the alarm for the upper limit of Spo2 was set at 95%, and the fraction of inspired oxygen (Fio2) was decreased to 0.21 provided that the Spo2 was above the lower limit (default lower Spo2 limit of 90%).",
+        "comparison": "Liberal oxygen therapy: no measures limiting the upper Spo2, but the minimum Fio2 permitted during mechanical ventilation was 0.3 (default lower Spo2 limit of 90%).",
+        "outcome": "Primary outcome: survival with a favorable functional outcome (GOS-E level ≥5) at 180 days — 313 of 819 patients (38.2%) in the conservative-oxygen group vs 353 of 890 patients (39.7%) in the liberal-oxygen group (relative risk, 0.97; 95% CI, 0.87 to 1.09; P = 0.65)."
+      },
+      "pico_ko": {
+        "population": "[다국가] 심정지 후 중환자실(ICU)에서 기계환기를 받는 반응 없는 성인 환자; 호주·뉴질랜드·아일랜드의 53개 ICU에서 총 1840명 모집(2021년 9월~2024년 6월 등록), 보존적 산소군 882명, 자유 산소군 958명 배정.",
+        "intervention": "보존적 산소요법: Spo2 상한 알람을 95%로 설정하고, Spo2가 하한 이상이면 흡입산소분율(Fio2)을 0.21까지 낮춤(기본 Spo2 하한 90%).",
+        "comparison": "자유 산소요법: Spo2 상한을 제한하는 조치 없음, 다만 기계환기 중 허용되는 최소 Fio2는 0.3(기본 Spo2 하한 90%).",
+        "outcome": "1차 결과: 180일째 양호한 기능적 결과(GOS-E ≥5)를 동반한 생존 — 보존적 산소군 819명 중 313명(38.2%) vs 자유 산소군 890명 중 353명(39.7%) (relative risk 0.97; 95% CI 0.87~1.09; P = 0.65)."
+      },
+      "keyFindings": [
+        "A favorable functional outcome (GOS-E ≥5) at 180 days occurred in 313/819 (38.2%) of the conservative-oxygen group vs 353/890 (39.7%) of the liberal-oxygen group (relative risk, 0.97; 95% CI, 0.87–1.09; P=0.65) — no significant difference.",
+        "The trial enrolled 1840 unresponsive post–cardiac arrest adults on mechanical ventilation across 53 ICUs in Australia, New Zealand, and Ireland (882 conservative, 958 liberal).",
+        "No adverse events were reported in either group, indicating conservative oxygen targeting was not associated with reported harm."
+      ],
+      "keyFindings_ko": [
+        "180일째 양호한 기능적 결과(GOS-E ≥5)는 보존적 산소군 819명 중 313명(38.2%) vs 자유 산소군 890명 중 353명(39.7%)에서 관찰됨(relative risk 0.97; 95% CI 0.87–1.09; P=0.65) — 유의한 차이 없음.",
+        "호주·뉴질랜드·아일랜드 53개 ICU에서 기계환기를 받는 심정지 후 반응 없는 성인 1840명 등록(보존적 882명, 자유 958명).",
+        "두 군 모두 이상반응이 보고되지 않아 보존적 산소 목표가 보고된 위해와 연관되지 않음을 시사함."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 42267831",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42267831/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1056/NEJMoa2513814",
+          "url": "https://doi.org/10.1056/NEJMoa2513814"
+        },
+        {
+          "label": "웹 — NEJM — Conservative Oxygen for Unresponsive Patients after Cardiac Arrest (LOGICAL), 10.1056/NEJMoa2513814",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2513814"
+        },
+        {
+          "label": "웹 — American College of Cardiology — LOGICAL journal scan",
+          "url": "https://www.acc.org/latest-in-cardiology/journal-scans/2026/06/15/17/15/logical"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42267831 (LOGICAL trial)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42267831/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "NEJM — Conservative Oxygen for Unresponsive Patients after Cardiac Arrest (LOGICAL), 10.1056/NEJMoa2513814",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2513814",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "American College of Cardiology — LOGICAL journal scan",
+          "url": "https://www.acc.org/latest-in-cardiology/journal-scans/2026/06/15/17/15/logical",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed — PMID 42267831 (LOGICAL trial)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42267831/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
