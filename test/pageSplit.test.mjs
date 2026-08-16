@@ -345,3 +345,45 @@ test('★ 배포된 세 페이지가 모두 최신 타워 톤을 갖는다', asy
   }
   assert.ok(checked >= 3, `검사한 페이지가 ${checked}개다 — 이 검사는 헛돈다`);
 });
+
+
+/**
+ * ★ 2026-08-17 실측 사고 — TOWER_TONE 이 **문자열이 아니라 `true` 였다.**
+ *   주석에 백틱(`)을 하나 넣는 순간 템플릿 리터럴이 거기서 끝나고 나머지가 식으로
+ *   해석돼 boolean 이 됐다. `node --check` 는 **문법상 유효해서 통과**하고,
+ *   `ensureTowerTone` 은 구버전을 걷어낸 뒤 빈 것을 끼워 넣어 **배포 페이지의 스타일이
+ *   통째로 사라졌다**(각 페이지 -6.5KB). 이 저장소의 CSS 는 전부 이런 템플릿이라
+ *   같은 사고가 언제든 재발한다.
+ */
+test('★ 타워 톤은 문자열이고 스타일 태그로 닫힌다 (백틱 사고 방지)', async () => {
+  const { TOWER_TONE, TOWER_TONE_VERSION } = await import('../src/utils/pageSplit.js');
+  assert.equal(typeof TOWER_TONE, 'string', 'TOWER_TONE 이 문자열이 아니다 — 템플릿이 조기 종료됐다');
+  assert.ok(TOWER_TONE.length > 1000, `너무 짧다 (${TOWER_TONE.length}자) — 중간에 끊겼다`);
+  assert.match(TOWER_TONE, /^<style id="tower-tone" data-v="\d+">/);
+  assert.match(TOWER_TONE, /<\/style>$/, '스타일 태그가 안 닫혔다');
+  assert.ok(TOWER_TONE.includes(`data-v="${TOWER_TONE_VERSION}"`),
+    '마커 버전과 상수가 어긋났다 — 갈아끼우기가 영영 안 돈다');
+});
+
+test('★ 톤을 얹으면 페이지가 줄지 않는다 (빈 것을 끼워 넣지 않는다)', async () => {
+  const before = '<html><head><style id="tower-tone" data-v="1">.x{}</style></head><body>본문</body></html>';
+  const after = ensureTowerTone(before);
+  assert.ok(after.length > before.length, `본문이 줄었다: ${before.length} → ${after.length}`);
+  assert.match(after, /<style id="tower-tone" data-v="\d+">[\s\S]+<\/style>\s*<\/head>/,
+    '스타일이 head 안에 안 들어갔다');
+});
+
+/**
+ * ★ PeterJ 지적 2026-08-17 — "지난 논문" 묶음을 열면 **날짜만 남고 제목이 사라졌다.**
+ *   원본 CSS 의 details[open] .day-prev 는 자손 선택자라, 바깥 묶음이 열리면
+ *   안쪽 **닫힌** 카드들의 미리보기까지 숨겼다. "그래야 찾아 들어가지."
+ */
+test('★ 지난 묶음을 열어도 안쪽 카드 제목은 보인다', async () => {
+  const { TOWER_TONE } = await import('../src/utils/pageSplit.js');
+  // ① 넓은 규칙을 되돌린다
+  assert.match(TOWER_TONE, /details\[open\] \.day-prev\{display:flex\}/,
+    '자손 선택자 규칙을 안 되돌렸다 — 묶음을 열면 제목이 통째로 사라진다');
+  // ② 자기 카드가 열렸을 때만 숨긴다 (자식 결합자)
+  assert.match(TOWER_TONE, /details\.day\[open\] > summary \.day-prev\{display:none\}/,
+    '자기 카드 열림 시 숨김 규칙이 없다 — 펼친 카드에 제목이 두 번 나온다');
+});
