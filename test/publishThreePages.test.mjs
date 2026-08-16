@@ -116,3 +116,52 @@ test('★ 리뷰가 없는 날에도 세 페이지가 그대로 나간다 (데�
   const idx = await readFile(path.join(dir, 'index.html'), 'utf8');
   assert.ok(idx.includes('E2E 시험 논문'), '리뷰가 없다고 논문이 안 나갔다');
 });
+
+
+/**
+ * ★ 치명 회귀 B1 — `publish()` 의 표 행 삽입이 함수형 replacer 가 아니었다.
+ *   `newRows` 에는 **LLM 이 만든 제목**이 들어가는데, 거기에 `$&` 나 `` $` `` 가 있으면
+ *   문자열 치환이 그것을 특수 패턴으로 해석해 본문을 통째로 복제한다.
+ *   실측: 제목 하나로 index.html 이 575KB → 1.37MB 가 됐고 `TABLE_ROWS_START` 마커가
+ *   행 안쪽에 복제돼 다음 실행의 삽입 앵커까지 어긋났다.
+ *   `esc()` 는 `&` 를 `&amp;` 로 바꿀 뿐 `$&` 는 그대로 두므로 방어가 안 된다.
+ */
+test('★ 제목에 $& 가 있어도 페이지가 폭발하지 않는다 (치명 회귀 B1)', async () => {
+  const dir = await sandbox();
+  const pub = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review', repoPath: dir });
+  pub._gitPush = () => {};
+  const before = (await readFile(path.join(dir, 'index.html'), 'utf8')).length;
+
+  const evil = {
+    paper: { pmid: '77777', title: 'x', journal: 'NEJM' },
+    title_ko: '비용 $& 효과 $` 분석 $\'',
+  };
+  await pub.publish('2026-08-17', [evil], {});
+  const after = await readFile(path.join(dir, 'index.html'), 'utf8');
+
+  assert.ok(after.length < before * 1.2,
+    `본문이 폭발했다: ${before} → ${after.length} — 치환이 $& 를 패턴으로 해석했다`);
+  assert.equal(count(after, /<!-- TABLE_ROWS_START -->/g), 1,
+    '행 삽입 앵커가 복제됐다 — 다음 실행의 삽입 위치가 어긋난다');
+  assert.equal(count(after, /<!-- TABLE_ROWS_END -->/g), 1);
+  // ★ **발행이 실제로 성공했는지**까지 본다. 치환이 본문을 망가뜨리면 표 구조가 깨져
+  //   분할이 소프트 폴백으로 떨어지고, 그때는 페이지를 건드리지 않는다(B15 방어).
+  //   페이지가 안전한 것과 그날 논문이 나간 것은 다른 말이다 — 길이·마커만 보면
+  //   "아무 일도 안 일어난 것" 을 통과로 착각한다.
+  assert.ok(after.includes('77777'), '그날 논문이 페이지에 안 올라갔다 — 발행이 조용히 무산됐다');
+  assert.ok(after.length > before, '페이지가 전혀 갱신되지 않았다');
+});
+
+/**
+ * ★ 코드리뷰 발견 B16 — 식별자 없는 리뷰는 카드 중복 제거도 행 dedup 도 돌지 않아
+ *   매 실행 무한히 쌓인다. 못 지우는 것을 만들지 않는다.
+ */
+test('★ 식별자 없는 리뷰는 발행하지 않는다 (지울 방법이 없는 것을 만들지 않는다)', async () => {
+  const dir = await sandbox();
+  const pub = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review', repoPath: dir });
+  pub._gitPush = () => {};
+  await pub.publish('2026-08-17', [PAPER], { review: { title: '식별자 없는 리뷰', journal: 'X' } });
+  const rev = await readFile(path.join(dir, 'reviews.html'), 'utf8');
+  assert.equal(rev.includes('식별자 없는 리뷰'), false, '식별자 없는 리뷰가 발행됐다');
+  assert.equal(count(rev, /<!-- RSECTION:/g), 0);
+});

@@ -55,3 +55,27 @@ export function intervalFor(track) {
   const v = TRACK_INTERVAL_DAYS[track];
   return Number.isFinite(v) && v > 0 ? v : 1;
 }
+
+/**
+ * ★ 그 트랙이 그 날 도는가 — **게이트와 예고가 공유하는 단 하나의 판정.**
+ *
+ * 왜 함수 하나로 합쳤나 (2026-08-16 코드리뷰 발견 B2)
+ *   배포 페이지에 트랙 on/off/격일 토글이 세 페이지에 다 붙어 있는데,
+ *   **`mode` 를 읽는 게이트가 리뷰 하나뿐이었다.** PeterJ 가 "논문 · 꺼짐" 을 눌러도
+ *   화면과 예고만 꺼진 것처럼 보이고 **다음 데일리는 논문을 그대로 발행했다.**
+ *   화면과 실제가 다른 것은 이 저장소가 반복해서 낸 사고이므로, 판정을 한 곳에 두고
+ *   양쪽이 같은 함수를 부르게 한다.
+ *
+ * ★ 상태를 안 쓴다. 날짜만으로 정한다 — 예고는 **미래 날짜**를 그려야 하는데
+ *   `lastRun` 기반으로는 미래를 계산할 수 없다. 격일도 달력 패리티로 잡아야
+ *   화면의 "모레 나갑니다" 가 실제와 맞는다.
+ *   (같은 날 두 번 도는 것을 막는 것은 별개의 안전망이고 호출부가 따로 본다.)
+ */
+export function trackRunsOn(track, dateStr, { mode = 'on', sequential = false } = {}) {
+  if (mode === 'off') return false;
+  const day = calendarDay(dateStr);
+  if (day === null) return true;                       // 날짜를 못 읽으면 막지 않는다(소프트)
+  if (mode === 'alternate' && day % 2 !== 0) return false;
+  if (sequential && !sequentialAllows(track, dateStr)) return false;
+  return true;
+}

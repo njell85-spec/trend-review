@@ -326,6 +326,11 @@ details{border-radius:24px}
 <!-- /ONDEMAND_WIDGET -->
 
 
+
+
+
+
+
 <!-- UPCOMING:guidelines -->
 <style>
 .upcoming{margin:16px 0;font-size:14px}
@@ -355,7 +360,7 @@ details{border-radius:24px}
  .up-day{color:#d1d5db}.up-item{border-color:#374151}
  .up-track{background:#312e81;color:#c7d2fe}}
 </style><section class="upcoming" data-up-section="guidelines"><h2 class="up-h">📅 가이드라인 — 다음 7일 예고 <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2><div class="up-toggles"><button class="up-toggle" data-up-toggle="guidelines" data-up-mode="on">가이드라인 · 켜짐</button><button class="up-toggle up-seq" data-up-seq="off" title="켜면 논문 → 가이드라인 → 리뷰 순으로 하루 한 트랙씩 돕니다">순차진행 · 꺼짐</button></div><div class="up-day"><div class="up-date">2026-08-16</div><ul class="up-list"><li class="up-item"><span class="up-title" title="Guidelines for Seizure Prophylaxis in Patients Undergoing Supratentorial Neurosurgery: A Statement for Healthcare Professionals from the Neurocritical Care Society."><span class="up-track">가이드라인</span> Guidelines for Seizure Prophylaxis in Patients Undergoing Suprate…</span><span class="up-journal">Neurocritical care</span><button class="up-btn up-run" data-up-run="42087034" data-up-track="guidelines" title="이것을 먼저 돌린다">▶</button><button class="up-btn up-drop" data-up-drop="42087034" data-up-track="guidelines" title="빼고 다음 것으로 채운다">🗑</button></li></ul></div><button class="up-reset" data-up-reset="guidelines">이 목록 전체 갈아엎기</button><div id="up-msg" class="up-msg"></div></section>
-<!-- UPBTN v3 -->
+<!-- UPBTN v4 -->
 <script>
 (function(){
   var OWNER='njell85-spec', REPO='trend-review';
@@ -437,13 +442,19 @@ details{border-radius:24px}
   //   {pmid,mode} 를 보냈는데 그 워크플로는 {target,kind} 를 받는다 — 422 로 튕겨
   //   버튼이 조용히 죽어 있었다(실측). 여기를 고칠 때는 반드시
   //   .github/workflows/*.yml 의 inputs 를 열어서 맞춰라.
-  var KIND={papers:'paper',guidelines:'guideline',reviews:'paper'};
+  // ★ 트랙마다 ▶ 의 뜻이 다르다 (코드리뷰 발견 B4).
+  //   논문·가이드라인은 on-demand 가 그 종류의 카드를 바로 만들 수 있다.
+  //   **리뷰는 못 만든다** — on-demand 는 kind=paper|guideline|reference 뿐이라
+  //   리뷰를 넘기면 index.html 에 '직접 지정 논문' 으로 올라가고 리뷰 페이지에는
+  //   아무것도 안 생기며 리뷰 큐도 그대로 남아 며칠 뒤 같은 논문이 리뷰로 또 나간다.
+  //   그래서 리뷰의 ▶ 는 **큐 머리로 올린다**(= 다음 데일리에 이것이 나간다).
+  var KIND={papers:'paper',guidelines:'guideline'};
   document.addEventListener('click',function(e){
     var b=e.target.closest?e.target.closest('button'):null; if(!b)return;
     if(b.dataset.upRun){
-      // 지금 분석해서 바로 발행한다(= on-demand 실행 버튼).
-      fire('on-demand.yml',{target:b.dataset.upRun,kind:KIND[b.dataset.upTrack]||'paper'},
-        '▶ 지금 분석을 걸었습니다');
+      var tr=b.dataset.upTrack;
+      if(KIND[tr]){ fire('on-demand.yml',{target:b.dataset.upRun,kind:KIND[tr]},'▶ 지금 분석을 걸었습니다'); }
+      else { fire('queue-control.yml',{track:tr,action:'promote',id:b.dataset.upRun},'▶ 맨 앞으로 올렸습니다 — 다음 실행에 나갑니다'); }
     }
     else if(b.dataset.upDrop){
       fire('queue-control.yml',{track:b.dataset.upTrack,action:'drop',id:b.dataset.upDrop},
@@ -778,7 +789,7 @@ details{border-radius:24px}
 </details>
 <!-- /GSECTION:2026-07-02 -->
   </div>
-                        <div class="arch-table">
+  <div class="arch-table">
     <details class="arch-fold">
     <summary class="at-head"><span class="at-title">📋 가이드라인 누적</span><span class="at-count">7건</span></summary>
     <div class="at-scroll"><table>
@@ -787,6 +798,11 @@ details{border-radius:24px}
     </table></div>
     </details>
   </div>
+
+
+
+
+
 
 
 

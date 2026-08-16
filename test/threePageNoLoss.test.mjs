@@ -120,22 +120,93 @@ test('★ 예고 블록은 페이지마다 자기 트랙 것 하나만 있다 (�
   }
 });
 
-test('★ 세 페이지 모두 카드가 접혀 있다 (요구 ③ — 오늘 논문 포함)', async () => {
-  const pages = await realPages();
-  for (const [file, html] of Object.entries(pages)) {
-    if (!html) continue;
-    assert.equal(count(html, /<details open class="day/g), 0,
-      `${file}.html 에 펼쳐진 카드가 남아 있다`);
+/**
+ * ★ 여기부터는 **합성 픽스처**로 검사한다 (2026-08-16 코드리뷰 발견 B5).
+ *
+ * 종전에는 배포된 실물 HTML 을 픽스처로 썼는데, 그것은 **이미 기능이 적용된 결과물**이라
+ * 기능을 통째로 없애는 변이를 넣어도 검사가 그대로 초록이었다:
+ *   · `collapseAllCards` 를 항등함수로 바꿔도 → 실물엔 이미 `open` 이 0개라 통과
+ *   · 누적표 접힘을 없애도 → `if (!html.includes('arch-fold')) continue` 로 전부 skip
+ *   · 예고 라우팅을 없애도 → `if (!html.includes('<!-- UPCOMING:')) continue` 로 전부 skip
+ * **"기능이 완전히 죽으면 검사도 같이 사라지는"** 구조였다. 그래서 입력에 그 기능이
+ * 아직 적용되지 않은 상태를 **일부러 만들어** 넣고, 출력에서 적용되었는지 본다.
+ */
+const FIXTURE = () => `<!DOCTYPE html>
+<html lang="ko"><head><title>EM/CCM Trend Review</title></head><body>
+<div class="wrap">
+  <header class="hd"><h1>EM/CCM Trend Review</h1><div class="fn">x</div></header>
+  <div class="stats"><div class="sc"><div class="n">1</div><div class="l">a</div></div></div>
+  <div class="archive">
+<!-- UPCOMING -->구버전 블록<!-- /UPCOMING -->
+<!-- ARCHIVE_START -->
+<!-- SECTION:2026-08-17 -->
+<details open class="day day-today"><article class="paper-card">P</article></details>
+<!-- /SECTION:2026-08-17 -->
+<!-- GSECTION:2026-08-10 -->
+<details open class="day day-today"><summary><span class="gl-tag">📋 가이드라인</span></summary><article class="guideline-card">G</article></details>
+<!-- /GSECTION:2026-08-10 -->
+<!-- GSECTION:2026-08-09-m-9 -->
+<details class="day day-past"><summary><span class="gl-tag">📋 가이드라인</span></summary><article class="guideline-card"><span class="chip gl">🔖 참고자료</span>R</article></details>
+<!-- /GSECTION:2026-08-09-m-9 -->
+<!-- RSECTION:2026-08-08 -->
+<details open class="day day-today"><summary><span class="gl-tag">📰 리뷰</span></summary><article class="guideline-card">V</article></details>
+<!-- /RSECTION:2026-08-08 -->
+  </div>
+  <div class="arch-table">
+    <div class="at-head"><span class="at-title">📚 누적</span><span class="at-count">1편</span></div>
+    <div class="at-scroll"><table><tbody><!-- TABLE_ROWS_START --><tr data-pmid="1"><td class="c-date">2026-08-17</td><td class="c-jour">NEJM</td><td class="c-title"><a href="#">P</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="2" data-kind="guideline" data-guideline="1"><td class="c-date">2026-08-10</td><td class="c-jour">📋 IDSA</td><td class="c-title"><a href="#">G</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="9" data-kind="reference" data-guideline="1"><td class="c-date">2026-08-09</td><td class="c-jour">🔖 X</td><td class="c-title"><a href="#">R</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="3" data-kind="review" data-guideline="1"><td class="c-date">2026-08-08</td><td class="c-jour">📰 Lancet</td><td class="c-title"><a href="#">V</a></td><td class="c-read"><input class="readcb"></td></tr><!-- TABLE_ROWS_END --></tbody></table></div>
+  </div>
+</div></body></html>`;
+
+test('★ 펼쳐진 카드가 든 입력을 넣어도 출력은 전부 접혀 나온다 (요구 ③)', () => {
+  const src = FIXTURE();
+  // ★ 기준값 확인 — 입력에 펼침이 없으면 이 검사는 아무것도 안 지킨다.
+  assert.ok(count(src, /<details open class="day/g) >= 3,
+    '픽스처에 펼쳐진 카드가 없다 — 이 검사는 헛돈다');
+
+  const out = splitPages(src, { refIds: null });
+  for (const page of ['index', 'guidelines', 'reviews']) {
+    assert.ok(out[page], `${page} 가 안 나왔다`);
+    assert.equal(count(out[page], /<details open class="day/g), 0,
+      `${page} 에 펼쳐진 카드가 남았다`);
+  }
+  // 카드 자체는 살아 있어야 한다(접는다고 지우면 안 된다)
+  assert.match(out.index, /<details class="day day-today">/);
+});
+
+test('★ 누적 표는 접힘 토글로 나온다 (요구 ⑤)', () => {
+  const out = splitPages(FIXTURE(), { refIds: null });
+  const folds = ['index', 'guidelines', 'reviews'].map((p) => count(out[p], /<details class="arch-fold">/g));
+  assert.deepEqual(folds, [1, 1, 2], `누적 표 접힘 개수가 다르다: ${folds}`);
+  for (const page of ['index', 'guidelines', 'reviews']) {
+    assert.equal(count(out[page], /<details open class="arch-fold">/g), 0,
+      `${page} 의 누적 표가 펼쳐진 채로 나갔다`);
+    // 표 알맹이가 살아 있는지 — 접기만 하고 지우면 안 된다
+    assert.match(out[page], /<!-- TABLE_ROWS_START -->/);
   }
 });
 
-test('★ 누적 표는 접힘이 기본이다 (요구 ⑤)', async () => {
-  const pages = await realPages();
-  for (const [file, html] of Object.entries(pages)) {
-    if (!html || !html.includes('arch-fold')) continue;
-    const n = count(html, /<details class="arch-fold">/g);
-    assert.ok(n > 0, `${file}.html 의 누적 표 접힘 기준값이 0이다`);
-    assert.equal(count(html, /<details open class="arch-fold">/g), 0,
-      `${file}.html 의 누적 표가 펼쳐진 채로 나갔다`);
+test('★ 예고 블록이 각 페이지로 라우팅된다 (요구 ② · 구버전 블록은 걷힌다)', () => {
+  // 트랙별 블록이 든 입력을 만든다 — 이것이 없으면 라우팅 검사가 skip 으로 빠진다(B5).
+  const withBlocks = FIXTURE().replace('<!-- ARCHIVE_START -->', [
+    '<!-- UPCOMING:papers -->논문예고<!-- /UPCOMING:papers -->',
+    '<!-- UPCOMING:guidelines -->지침예고<!-- /UPCOMING:guidelines -->',
+    '<!-- UPCOMING:reviews -->리뷰예고<!-- /UPCOMING:reviews -->',
+    '<!-- ARCHIVE_START -->',
+  ].join('\n'));
+
+  const out = splitPages(withBlocks, { refIds: null });
+  const own = { index: ['papers', '논문예고'], guidelines: ['guidelines', '지침예고'], reviews: ['reviews', '리뷰예고'] };
+  for (const [file, [track, marker]] of Object.entries(own)) {
+    assert.equal(count(out[file], new RegExp(`<!-- UPCOMING:${track} -->`, 'g')), 1,
+      `${file} 에 ${track} 예고가 하나가 아니다`);
+    assert.ok(out[file].includes(marker), `${file} 에 ${track} 예고 내용이 없다`);
+    for (const [otherTrack, otherMarker] of Object.values(own)) {
+      if (otherTrack === track) continue;
+      assert.equal(out[file].includes(otherMarker), false,
+        `${file} 에 남의 트랙(${otherTrack}) 예고가 있다`);
+    }
+    // 구버전(트랙 없는) 블록은 걷혀야 한다 — 안 걷으면 두 벌이 공존한다
+    assert.equal(out[file].includes('구버전 블록'), false, `${file} 에 구버전 예고가 남았다`);
   }
 });

@@ -101,3 +101,41 @@ test('★ 워크플로가 CLI 에 넘기는 입력 이름이 CLI 가 읽는 것�
   assert.equal(/--(track|action|id) "\$\{\{/.test(wf), false,
     '자유 입력을 셸에 직접 펼쳤다 — 인젝션 경로다');
 });
+
+
+/**
+ * ★ 코드리뷰 발견 B3 — 🗑/♻ 가 **가이드라인 트랙에서만** 하루 만에 되돌아왔다.
+ *   `queueControl` 은 뺀 것을 `rejected` 로 옮기는데, 가이드라인 큐를 다시 채우는
+ *   `mergeCandidates` 가 **published·queue 만 대조하고 rejected 는 안 봤다.**
+ *   papers·reviews 가 쓰는 `trackQueue.mergeQueueItems` 는 이미 rejected 를 본다 —
+ *   가이드라인만 예외였다. PeterJ 입장에서는 "지웠는데 다음 날 또 떴다" 가 된다.
+ *
+ *   합성 픽스처가 아니라 **실제 가이드라인 상태 모듈**을 태운다. 종전 테스트가
+ *   track:'papers' 픽스처만 써서 이 경로를 한 번도 안 밟았다.
+ */
+test('★ 가이드라인에서 뺀 항목은 다음 수집에 되살아나지 않는다', async () => {
+  const { mergeCandidates } = await import('../src/utils/guidelineState.js');
+  const { dropFromQueue } = await import('../src/utils/queueControl.js');
+
+  const state = {
+    schemaVersion: 2,
+    queue: [{ id: 'pmid:111', pmid: '111', title: '뺄 지침', status: 'queued' }],
+    published: [], rejected: [], sourceHealth: {}, lastRun: null,
+    updatedAt: '2026-08-16', configVersion: 'guideline-v2',
+  };
+
+  // 🗑 — 큐에서 빼고 rejected 로 옮긴다
+  const { next, changed } = dropFromQueue(state, '111', '2026-08-16');
+  assert.equal(changed, true);
+  assert.equal(next.queue.length, 0);
+  assert.equal(next.rejected.length, 1);
+
+  // 다음 데일리가 PubMed 에서 같은 것을 또 가져온다 (mergeCandidates 는 새 상태를 돌려준다)
+  const merged = mergeCandidates(next, [{ id: 'pmid:111', pmid: '111', title: '뺄 지침', status: 'queued' }]);
+  assert.equal(merged.queue.length, 0,
+    '뺀 지침이 다음 수집에 되살아났다 — 🗑 가 하루짜리가 된다');
+
+  // 반대로, 뺀 적 없는 것은 정상적으로 들어와야 한다(과잉 차단이면 여기서 잡힌다)
+  const merged2 = mergeCandidates(next, [{ id: 'pmid:222', pmid: '222', title: '새 지침', status: 'queued' }]);
+  assert.equal(merged2.queue.length, 1, '새 지침이 안 들어왔다 — 필터가 과하다');
+});

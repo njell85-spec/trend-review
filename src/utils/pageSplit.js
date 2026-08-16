@@ -419,7 +419,11 @@ export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
   };
 
   const mClose = sectionsRaw.match(/\s*<\/div>\s*$/);
-  const archiveClose = mClose ? mClose[0] : '\n  </div>\n';
+  // ★ 닫는 태그 주변 공백은 **정규화한다.** 원본을 그대로 물려주면 그 뒤에 오는
+  //   `tableHtml()` 이 자기 들여쓰기를 또 붙여, **왕복마다 공백이 2칸씩 쌓인다.**
+  //   매일 도는 경로라 파일이 무한히 자라고, 바이트로 무손실을 재는 검사가 늘 "늘었다" 로
+  //   흔들린다(2026-08-16 실측: 렌더를 돌릴 때마다 정확히 +4바이트).
+  const archiveClose = '\n  </div>\n';
   const sectionsBody = mClose ? sectionsRaw.slice(0, mClose.index) : sectionsRaw;
 
   const sec = classifySections(sectionsBody);

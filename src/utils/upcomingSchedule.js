@@ -8,7 +8,7 @@
 // 날짜는 처음부터 끝까지 'YYYY-MM-DD' 문자열로만 다룬다. Date 객체를 돌리면
 // 컨테이너 타임존과 KST 가 어긋나 하루가 밀린다 — 이 저장소가 이미 겪은 부류다.
 
-import { sequentialAllows } from './trackCadence.js';
+import { trackRunsOn } from './trackCadence.js';
 
 /** 'YYYY-MM-DD' 에 일수를 더한다. UTC 정오를 기준으로 삼아 DST·타임존 밀림을 피한다. */
 function addDays(ymd, n) {
@@ -19,20 +19,23 @@ function addDays(ymd, n) {
 
 /**
  * 트랙 하나가 앞으로 `days` 일 창에서 **발행할 날짜들**.
- * mode: 'on' 매일 · 'alternate' 격일 · 'off' 안 나옴
+ * mode: 'on' 매일 · 'alternate' 격일(달력 패리티) · 'off' 안 나옴
  * cadence: 'daily' 주기대로 · 'weekly' 창에 한 번
+ *
+ * ★ 격일을 **인덱스 패리티가 아니라 달력 패리티**로 바꿨다(2026-08-16 리뷰 B13).
+ *   종전에는 `from`(오늘)부터 두 칸씩 세어서, 게이트가 보는 날과 하루씩 엇갈렸다.
  */
 export function nextRunDates({ from, days, mode = 'on', cadence = 'daily', sequential = false, track = null }) {
   if (mode === 'off') return [];
   if (cadence === 'weekly') return [from];
-  const step = mode === 'alternate' ? 2 : 1;
   const out = [];
-  for (let i = 0; i < days; i += step) out.push(addDays(from, i));
-  // ★ 순차진행이 켜져 있으면 **그 트랙이 담당하는 날짜만** 남긴다.
-  //   게이트와 같은 함수(`sequentialAllows`)를 쓴다 — 여기서 따로 계산하면 화면이
-  //   "내일 나간다" 고 해놓고 실제로는 안 나가는 결함 B2 가 그대로 재현된다.
-  if (!sequential || !track) return out;
-  return out.filter((d) => sequentialAllows(track, d));
+  for (let i = 0; i < days; i += 1) {
+    const d = addDays(from, i);
+    // ★ 판정은 `trackRunsOn` **하나**가 한다 — 게이트가 부르는 것과 같은 함수다.
+    //   여기서 따로 계산하면 화면이 "내일 나갑니다" 라고 해놓고 안 나가는 결함이 난다.
+    if (trackRunsOn(track ?? 'papers', d, { mode, sequential })) out.push(d);
+  }
+  return out;
 }
 
 /**

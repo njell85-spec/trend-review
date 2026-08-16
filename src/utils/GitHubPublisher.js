@@ -343,7 +343,7 @@ export class GitHubPublisher {
   _upcomingScript(ident) {
     // 식별자를 못 정하면 스크립트를 굽지 않는다 — 죽은 버튼보다 없는 버튼이 정직하다.
     if (!ident) return '';
-    return `<!-- UPBTN v3 -->
+    return `<!-- UPBTN v4 -->
 <script>
 (function(){
   var OWNER='${ident.owner}', REPO='${ident.repo}';
@@ -425,13 +425,19 @@ export class GitHubPublisher {
   //   {pmid,mode} 를 보냈는데 그 워크플로는 {target,kind} 를 받는다 — 422 로 튕겨
   //   버튼이 조용히 죽어 있었다(실측). 여기를 고칠 때는 반드시
   //   .github/workflows/*.yml 의 inputs 를 열어서 맞춰라.
-  var KIND={papers:'paper',guidelines:'guideline',reviews:'paper'};
+  // ★ 트랙마다 ▶ 의 뜻이 다르다 (코드리뷰 발견 B4).
+  //   논문·가이드라인은 on-demand 가 그 종류의 카드를 바로 만들 수 있다.
+  //   **리뷰는 못 만든다** — on-demand 는 kind=paper|guideline|reference 뿐이라
+  //   리뷰를 넘기면 index.html 에 '직접 지정 논문' 으로 올라가고 리뷰 페이지에는
+  //   아무것도 안 생기며 리뷰 큐도 그대로 남아 며칠 뒤 같은 논문이 리뷰로 또 나간다.
+  //   그래서 리뷰의 ▶ 는 **큐 머리로 올린다**(= 다음 데일리에 이것이 나간다).
+  var KIND={papers:'paper',guidelines:'guideline'};
   document.addEventListener('click',function(e){
     var b=e.target.closest?e.target.closest('button'):null; if(!b)return;
     if(b.dataset.upRun){
-      // 지금 분석해서 바로 발행한다(= on-demand 실행 버튼).
-      fire('on-demand.yml',{target:b.dataset.upRun,kind:KIND[b.dataset.upTrack]||'paper'},
-        '▶ 지금 분석을 걸었습니다');
+      var tr=b.dataset.upTrack;
+      if(KIND[tr]){ fire('on-demand.yml',{target:b.dataset.upRun,kind:KIND[tr]},'▶ 지금 분석을 걸었습니다'); }
+      else { fire('queue-control.yml',{track:tr,action:'promote',id:b.dataset.upRun},'▶ 맨 앞으로 올렸습니다 — 다음 실행에 나갑니다'); }
     }
     else if(b.dataset.upDrop){
       fire('queue-control.yml',{track:b.dataset.upTrack,action:'drop',id:b.dataset.upDrop},
@@ -1343,11 +1349,19 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       : '';
     // ★ 리뷰 섹션. 없으면 빈 문자열이라 아무것도 안 바뀐다(데일리 코어 무영향).
     const rIdent = review?.paper?.pmid || review?.pmid || review?.id || '';
-    const reviewSection = review
-      ? this._buildReviewSection(dateStr, generatedAt, review, { sectionKey: `${dateStr}-r-${rIdent || 'x'}` })
+    // ★ 식별자가 없으면 **발행하지 않는다** (2026-08-16 코드리뷰 발견 B16).
+    //   식별자가 없으면 카드 중복 제거(`rIdent` 기반)도 행 dedup 도 돌지 않아
+    //   매 실행 카드와 행이 무한히 쌓인다. 못 지우는 것을 만들지 않는 편이 낫다.
+    if (review && !rIdent) {
+      this.logger?.warn?.('리뷰에 식별자가 없어 발행하지 않는다 — 중복을 지울 방법이 없다',
+        { title: String(review.title ?? '').slice(0, 60) });
+    }
+    const publishableReview = rIdent ? review : null;
+    const reviewSection = publishableReview
+      ? this._buildReviewSection(dateStr, generatedAt, publishableReview, { sectionKey: `${dateStr}-r-${rIdent}` })
       : '';
 
-    const newRows = this._tableRows(dateStr, topPapers, guideline, { manual, review });
+    const newRows = this._tableRows(dateStr, topPapers, guideline, { manual, review: publishableReview });
 
     let updated;
     if (!existing || !existing.includes('<!-- ARCHIVE_START -->')) {
@@ -1411,7 +1425,7 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       //     같은 날 재실행하면 리뷰 행이 둘이 됐다(E2E 테스트가 잡았다). 리뷰 행은
       //     `data-guideline="1"` 을 달아 날짜 스윕(①)에서 보호받으므로, 여기서 안 지우면
       //     지울 곳이 없다.
-      const dedupItems = [...topPapers, guideline, review].filter(Boolean);
+      const dedupItems = [...topPapers, guideline, publishableReview].filter(Boolean);
       for (const p of dedupItems) {
         // 웹 공개본 가이드라인은 pmid 가 없다 — 행 키로 쓴 sourceId 로 같은 항목을 지운다.
         // 리뷰 큐 항목은 `paper` 로 감싸여 있지 않고 pmid/id 를 직접 들고 온다.
@@ -1423,7 +1437,12 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
         body = body.replace(rowDup, '');
       }
       if (body.includes('<!-- TABLE_ROWS_START -->')) {
-        body = body.replace('<!-- TABLE_ROWS_START -->', `<!-- TABLE_ROWS_START -->${newRows}`);
+        // ★ 함수형 replacer 필수. `newRows` 에는 LLM 이 만든 제목이 들어 있고, 거기에
+        //   `$&` 나 `` $` `` 가 있으면 문자열 치환이 그것을 **특수 패턴으로 해석해**
+        //   본문을 통째로 복제한다. `esc()` 는 `&` 를 `&amp;` 로 바꿀 뿐 `$&` 는 그대로
+        //   남기므로 방어가 안 된다. 실측: 제목 하나로 index.html 575KB → 1.37MB.
+        //   pageSplit.js 의 쌍둥이 자리는 이미 함수형인데 여기만 아니었다.
+        body = body.replace('<!-- TABLE_ROWS_START -->', () => `<!-- TABLE_ROWS_START -->${newRows}`);
       }
       // 통계 갱신 — 분석일수는 데일리(날짜 키) 섹션만 센다. 수동 지정 섹션
       // (SECTION:YYYY-MM-DD-m-pmid)은 "하루 1편 카운트 밖의 예외"이므로 제외한다.
@@ -1455,10 +1474,23 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
         ?? guidelineState?.queue?.filter((item) => item.status === 'needsReview')
         ?? [],
     });
+    // ★ 분할이 소프트 폴백으로 떨어지면 **아무것도 쓰지 않는다** (코드리뷰 발견 B15).
+    //   종전에는 병합 본문을 index.html 에 그대로 기록하고 하위 페이지는 건너뛰었다.
+    //   그러면 index 에 가이드·리뷰·기타 카드가 전부 들어간 채로 남고, 하위 페이지는
+    //   옛 사본을 유지한다 → **다음 실행의 merge 가 같은 것을 또 합쳐 매일 두 배가 된다.**
+    //   폴백은 "분할이 데일리를 막지 않는다" 를 위한 것이지 페이지를 망가뜨리라는 뜻이
+    //   아니다. 그대로 두는 편이 안전하고, 무엇보다 **소리 없이 지나가지 않게** 경고한다.
+    if (!guidesOut || !reviewsOut) {
+      this.logger.warn('페이지 분할이 소프트 폴백으로 떨어졌다 — 페이지를 건드리지 않는다', {
+        guidelines: Boolean(guidesOut), reviews: Boolean(reviewsOut),
+      });
+      try { this._gitPush(dateStr); } catch { /* 상태 파일만이라도 남긴다 */ }
+      return this.pagesUrl;
+    }
     await writeFile(path.join(this._repoPath, 'index.html'), indexOut, 'utf8');
-    if (guidesOut) await writeFile(path.join(this._repoPath, 'guidelines.html'), guidesOut, 'utf8');
-    if (reviewsOut) await writeFile(path.join(this._repoPath, 'reviews.html'), reviewsOut, 'utf8');
-    if (guidesOut || reviewsOut) this.logger.info('페이지 3분할 기록', counts);
+    await writeFile(path.join(this._repoPath, 'guidelines.html'), guidesOut, 'utf8');
+    await writeFile(path.join(this._repoPath, 'reviews.html'), reviewsOut, 'utf8');
+    this.logger.info('페이지 3분할 기록', counts);
     updated = indexOut;
 
     try {
