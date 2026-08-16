@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
 import { classifyGuidelineDocument } from '../src/utils/guidelineClassifier.js';
+import { readPublishedLegacy } from './helpers/guidelineProduction.mjs';
 import { loadGuidelineOrgs } from '../src/utils/guidelineOrgs.js';
 
 // ★ 라벨 없이 할 수 있는 가장 정직한 회귀 (Fable 판정 2026-08-15).
@@ -18,7 +18,7 @@ import { loadGuidelineOrgs } from '../src/utils/guidelineOrgs.js';
 //
 // 이 파일은 그 둘이 다시 새지 못하게 못을 박는다.
 
-const HISTORY = new URL('../output/selected_guidelines.json', import.meta.url);
+// 상태 파일이 v2 객체로 갈아타도 여기서 보는 것은 늘 "발행 이력 배열" 이다.
 
 function asCandidate(entry) {
   // 현행 발행 이력에는 초록이 없다. 자동 경로로 들어온 것은 PT 가 있었다는 뜻이고,
@@ -36,7 +36,7 @@ function asCandidate(entry) {
 
 test('소급 판정: 현행 발행 이력 7건이 전부 분류된다', async () => {
   const orgs = loadGuidelineOrgs();
-  const history = JSON.parse(await readFile(HISTORY, 'utf8'));
+  const history = await readPublishedLegacy();
   assert.equal(history.length, 7, '발행 이력 건수가 바뀌었다 — 기대값을 다시 보라');
   for (const entry of history) {
     const verdict = classifyGuidelineDocument(asCandidate(entry), { orgs }).verdict;
@@ -46,7 +46,7 @@ test('소급 판정: 현행 발행 이력 7건이 전부 분류된다', async ()
 
 test('★ 현행 경로가 발행한 오탐(PMID 42373461)을 새 분류기는 걸러낸다', async () => {
   const orgs = loadGuidelineOrgs();
-  const history = JSON.parse(await readFile(HISTORY, 'utf8'));
+  const history = await readPublishedLegacy();
   const entry = history.find((h) => h.pmid === '42373461');
   assert.ok(entry, '대상 이력이 사라졌다');
   const result = classifyGuidelineDocument(asCandidate(entry), { orgs });
@@ -58,7 +58,7 @@ test('★ 현행 경로가 발행한 오탐(PMID 42373461)을 새 분류기는 �
 
 test('★ 수동 승인 URL 은 자동 필터를 통째로 우회한다 (확정 ⑤-A)', async () => {
   const orgs = loadGuidelineOrgs();
-  const history = JSON.parse(await readFile(HISTORY, 'utf8'));
+  const history = await readPublishedLegacy();
   const web = history.find((h) => !h.pmid && h.sourceId);
   assert.ok(web, '수동 웹 항목이 사라졌다');
   const result = classifyGuidelineDocument(asCandidate(web), { orgs });
@@ -87,7 +87,7 @@ test('수동 승인 플래그가 없으면 같은 문서는 자동 판정을 그
 
 test('진짜 학회 지침은 소급 판정에서도 guideline 으로 남는다', async () => {
   const orgs = loadGuidelineOrgs();
-  const history = JSON.parse(await readFile(HISTORY, 'utf8'));
+  const history = await readPublishedLegacy();
   for (const pmid of ['41869844', '41236566', '41122894', '41122895']) {
     const entry = history.find((h) => h.pmid === pmid);
     assert.ok(entry, `이력에서 ${pmid} 가 사라졌다`);

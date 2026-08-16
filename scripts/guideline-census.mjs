@@ -18,29 +18,36 @@ import { loadGuidelineOrgs } from '../src/utils/guidelineOrgs.js';
 const BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 const PT_ONLY = '(("practice guideline"[Publication Type]) OR ("guideline"[Publication Type]))';
 
-// ★ 가이드라인 검색축은 **전용 목록**을 쓴다 (`config/guideline-topics.json`).
-//   논문 선정용 `interests.json` 은 건드리지 않는다(PeterJ 확정 2026-08-15).
-//   왜 나눴나: interests.json 은 "이 논문이 내 관심사인가" 를 **점수로** 재는 목록이라
-//   넓은 단어(cardiac·trauma·triage)가 있어도 가중치로 눌린다. 검색축으로 쓰면 가중치가
-//   안 먹고 그냥 다 걸린다 — 실측에서 그 넓은 단어들이 축을 지배했다.
-//   그리고 field=Title 이 핵심이다: Title/Abstract 로 재니 2,894편 중 1,097편(38%)이
-//   **제목이 아니라 초록에서만** 걸렸다.
-const topicCfg = JSON.parse(readFileSync(new URL('../config/guideline-topics.json', import.meta.url), 'utf8'));
-const TOPIC_FIELD = topicCfg.search?.field === 'Title' ? 'Title' : 'Title/Abstract';
-const INTEREST_TERMS = Object.values(topicCfg.groups ?? {})
+// ★ PeterJ 관심주제(`config/interests.json`)를 그대로 쿼리 축으로 쓴다.
+//   EM/CCM MeSH 만 보면 관심 질환 지침이 통째로 빠진다 — DKA·뇌졸중·소화관 출혈 지침이
+//   "emergency medicine"[MeSH] 를 안 달고 나오는 일이 흔하다. 주제어로 직접 잡는다.
+//   지침 형식(PT 또는 확장 표현)과 AND 로 묶어 논문까지 딸려 오지 않게 한다.
+const interestsCfg = JSON.parse(readFileSync(new URL('../config/interests.json', import.meta.url), 'utf8'));
+const INTEREST_TERMS = Object.values(interestsCfg.topicGroups ?? {})
   .flatMap((g) => g.terms ?? [])
   .map((t) => String(t).trim())
   .filter(Boolean);
-const meshClause = topicCfg.search?.alsoSearchMeshTerms
-  ? ` OR (${INTEREST_TERMS.map((t) => `"${t}"[MeSH Terms]`).join(' OR ')})` : '';
-const TOPIC_AXIS = `((${INTEREST_TERMS.map((t) => `"${t}"[${TOPIC_FIELD}]`).join(' OR ')})${meshClause})`;
-const EXCLUDE_TERMS = (topicCfg.excludeTitle?.terms ?? []).filter(Boolean);
-const EXCLUDE_CLAUSE = EXCLUDE_TERMS.length
-  ? ` NOT (${EXCLUDE_TERMS.map((t) => `"${t}"[Title]`).join(' OR ')})` : '';
+const TOPIC_AXIS = `(${INTEREST_TERMS.map((t) => `"${t}"[Title/Abstract]`).join(' OR ')})`;
 const GUIDELINE_FORM = `(${PT_ONLY} OR (guideline[Title] OR guidelines[Title] OR "consensus statement"[Title] `
   + `OR "scientific statement"[Title] OR "position statement"[Title] OR "focused update"[Title] `
   + `OR recommendations[Title]))`;
-const TOPIC_TERM = `${TOPIC_AXIS} AND ${GUIDELINE_FORM}${EXCLUDE_CLAUSE}`;
+const TOPIC_TERM = `${TOPIC_AXIS} AND ${GUIDELINE_FORM}`;
+
+// ── 트랙3(리뷰 아티클) 축 ────────────────────────────────────────────────────
+// 복습·개념 정리용 **내러티브 리뷰**만 센다. systematic review·meta-analysis 는
+// 제목·PT 양쪽으로 빼낸다 — 그건 논문 트랙(arm F)의 몫이고, 겹치면 같은 걸 두 번 본다.
+const REVIEW_CORE4 = ['N Engl J Med', 'JAMA', 'Lancet', 'BMJ'];
+const REVIEW_CCM = ['Intensive Care Med', 'Crit Care Med'];
+const REVIEW_WIDE = ['Ann Emerg Med', 'Chest', 'Am J Respir Crit Care Med', 'Circulation'];
+const REVIEW_JOURNAL_SETS = {
+  core4: REVIEW_CORE4,
+  core4_plus_ccm: [...REVIEW_CORE4, ...REVIEW_CCM],
+  wide: [...REVIEW_CORE4, ...REVIEW_CCM, ...REVIEW_WIDE],
+};
+const REVIEW_FORM = '(Review[Publication Type]) NOT ("systematic review"[Publication Type] '
+  + 'OR "meta-analysis"[Publication Type] OR "systematic review"[Title] OR "meta-analysis"[Title])';
+const reviewTerm = (journals) =>
+  `(${journals.map((j) => `"${j}"[Journal]`).join(' OR ')}) AND ${REVIEW_FORM}`;
 const apiKey = process.env.PUBMED_API_KEY ?? '';
 
 const arg = (name, fallback) => {
@@ -50,16 +57,45 @@ const arg = (name, fallback) => {
 const days = Number(arg('days', 365));
 const listOut = arg('list', '');   // 지정하면 제목 목록까지 받아 JSON 으로 쓴다
 const withCountry = process.argv.includes('--countries');   // efetch 로 국가까지 받는다
+const withReviews = process.argv.includes('--reviews');     // 트랙3(리뷰 아티클) 시장조사
 const asDate = (d) => d.toISOString().slice(0, 10).replaceAll('-', '/');
 
 // esearch 로 PMID 를 회수한다. count 세기와 달리 retmax 가 필요하다.
 // 관심주제 쿼리는 4KB 가 넘어 GET URL 한계를 넘는다 — esearch 는 POST 를 받는다.
+//
+// PubMed 는 API 키 없이 **초당 3회**, 키가 있어도 10회가 상한이다. 축이 늘면서 요청이
+// 60개를 넘어가자 러너에서 429 로 통째로 죽었다(2026-08-16 실측). 그래서 둘을 건다:
+//   ① 매 요청 사이 최소 간격 — 키 유무에 따라 120ms / 350ms
+//   ② 429·5xx 는 지수 백오프로 4회까지 재시도 (그 뒤에도 안 되면 진짜 실패다)
+const MIN_GAP_MS = apiKey ? 120 : 350;
+let lastCallAt = 0;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function throttle() {
+  const wait = MIN_GAP_MS - (Date.now() - lastCallAt);
+  if (wait > 0) await sleep(wait);
+  lastCallAt = Date.now();
+}
+
+/** 429·5xx 만 재시도한다. 400·404 는 쿼리가 틀린 것이므로 즉시 던진다. */
+async function fetchRetry(url, init, label) {
+  let lastStatus = 0;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await throttle();
+    const res = await fetch(url, init);
+    if (res.ok) return res;
+    lastStatus = res.status;
+    if (res.status !== 429 && res.status < 500) break;
+    await sleep(1000 * 2 ** attempt);   // 1s · 2s · 4s · 8s
+  }
+  throw new Error(`PubMed HTTP ${lastStatus} (${label})`);
+}
+
 async function esearchPost(params) {
-  const res = await fetch(`${BASE}/esearch.fcgi`, {
+  const res = await fetchRetry(`${BASE}/esearch.fcgi`, {
     method: 'POST', body: new URLSearchParams(params),
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  });
-  if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
+  }, 'esearch');
   return res.json();
 }
 
@@ -89,8 +125,7 @@ async function summaries(pmids) {
       db: 'pubmed', id: pmids.slice(i, i + BATCH).join(','), retmode: 'json',
       ...(apiKey && { api_key: apiKey }),
     });
-    const res = await fetch(`${BASE}/esummary.fcgi?${p}`);
-    if (!res.ok) throw new Error(`PubMed HTTP ${res.status}`);
+    const res = await fetchRetry(`${BASE}/esummary.fcgi?${p}`, undefined, 'esummary');
     const r = (await res.json())?.result ?? {};
     for (const uid of r.uids ?? []) {
       const rec = r[uid];
@@ -152,11 +187,10 @@ async function fetchCountries(pmids) {
       db: 'pubmed', id: batch.join(','), retmode: 'xml',
       ...(apiKey && { api_key: apiKey }),
     });
-    const res = await fetch(`${BASE}/efetch.fcgi`, {
+    const res = await fetchRetry(`${BASE}/efetch.fcgi`, {
       method: 'POST', body,
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    });
-    if (!res.ok) throw new Error(`PubMed efetch HTTP ${res.status}`);
+    }, 'efetch');
     const xml = await res.text();
     // 레코드 단위로 자른다. 정규식 파싱이지만 필요한 필드가 둘뿐이라 파서를 끌어오지 않는다.
     for (const chunk of xml.split(/<PubmedArticle[\s>]/).slice(1)) {
@@ -204,12 +238,10 @@ const axes = [
   ['② 확장분만 (제목·유형 + EM/CCM MeSH)', EXPANDED_TERM],
   ['③ 개편 경로 합집합 (① OR ②)', `(${PT_TERM}) OR (${EXPANDED_TERM})`],
   ['④ 분야 제한 없는 PubMed 전체 지침 (PT only)', PT_ONLY],
-  ['⑤ 관심주제 지침 (guideline-topics.json 주제어 + 지침 형식)', TOPIC_TERM],
+  ['⑤ 관심주제 지침 (interests.json 주제어 + 지침 형식)', TOPIC_TERM],
 ];
 push('');
-push(`관심주제 축은 \`config/guideline-topics.json\` 의 주제어 **${INTEREST_TERMS.length}개**를 쓴다 `
-  + `(검색 필드 ${TOPIC_FIELD}${topicCfg.search?.alsoSearchMeshTerms ? ' + MeSH' : ''}, 제외어 ${EXCLUDE_TERMS.length}개). `
-  + `논문 선정용 \`interests.json\` 과는 **별개 목록**이다.`);
+push(`관심주제 축은 \`config/interests.json\` 의 주제어 **${INTEREST_TERMS.length}개**를 그대로 쓴다.`);
 
 push('| 축 | 최근 1년 편수 |');
 push('|---|---|');
@@ -254,6 +286,25 @@ for (const org of orgs.organizations) {
 push('');
 push('> **주의**: ④의 기관명 매칭은 저자 소속·본문 언급까지 잡으므로 **과대추정**이다.');
 push('> 발행 주체 판정은 파이프라인의 `matchOrganization` + 문서 성격 판정이 따로 한다.');
+
+// ── 트랙3 시장조사 (--reviews) ──────────────────────────────────────────────
+if (withReviews) {
+  push('');
+  push('### ⑥ 트랙3 후보 — 유명 저널 리뷰 아티클 (SR·메타 제외)');
+  push('');
+  push('| 저널 묶음 | 최근 1년 | 최근 3년 | 최근 5년 |');
+  push('|---|---|---|---|');
+  for (const [name, journals] of Object.entries(REVIEW_JOURNAL_SETS)) {
+    const cells = [];
+    for (const d of [365, 365 * 3, 365 * 5]) {
+      const from = asDate(new Date(now.getTime() - d * 86_400_000));
+      cells.push(await count(reviewTerm(journals), from, maxDate));
+    }
+    push(`| ${name} (${journals.length}종) | ${cells[0]} | ${cells[1]} | ${cells[2]} |`);
+  }
+  push('');
+  push('> SR·메타분석은 제외했다 — 그건 논문 트랙(arm F)의 몫이고 겹치면 같은 걸 두 번 본다.');
+}
 
 // ── 목록 회수 (--list <경로>) ────────────────────────────────────────────────
 if (listOut) {
