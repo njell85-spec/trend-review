@@ -15,6 +15,7 @@ import { ensureCurationBlock, loadCurationState, removeSectionFromHtml, parseHid
 import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
 import { impactFactorLabel } from './journalMeta.js';
+import { buildUpcoming } from './upcomingSchedule.js';
 
 const API = 'https://api.github.com';
 
@@ -251,6 +252,58 @@ export class GitHubPublisher {
   }
 
   /** 상태 v2의 published를 정본으로 가이드 카드와 누적 행을 전량 재생성한다. */
+  /**
+   * 1주치 예고 리스트를 그린다.
+   *
+   * ★ **자기 블록만 갈아끼우고 나머지는 손대지 않는다.** 이 저장소는 렌더가 기존 내용을
+   * 통째로 지운 사고를 이미 냈다(GSECTION 8→7, 본문 679KB→572KB, LLM 요약 소실).
+   * 그래서 `<!-- UPCOMING -->` ~ `<!-- /UPCOMING -->` 사이만 교체한다.
+   *
+   * ★ 예고가 하나도 없으면 **블록을 아예 넣지 않는다.** 빈 상자를 남기면 PeterJ가
+   * "오늘은 아직 안 돌았나" 와 "정말 없나" 를 구별할 수 없다.
+   */
+  _renderUpcoming(html, { from, days = 7, tracks = [] } = {}) {
+    const rows = buildUpcoming({ from, days, tracks });
+    // 이전 블록은 항상 먼저 걷어낸다 — 이게 멱등성의 전부다.
+    let out = String(html).replace(/\n?<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
+    if (!rows.length) return out;
+
+    const byDate = new Map();
+    for (const r of rows) {
+      if (!byDate.has(r.date)) byDate.set(r.date, []);
+      byDate.get(r.date).push(r);
+    }
+    const dayHtml = [...byDate.entries()].map(([date, items]) => {
+      const li = items.map((r) => {
+        const it = r.item ?? {};
+        const warn = r.lowConfidence ? '<span class="up-warn" title="재순위가 약한 날">⚠</span>' : '';
+        // 버튼은 data-* 만 들고 있고 동작은 페이지 하단 스크립트가 붙인다.
+        return `<li class="up-item">`
+          + `<span class="up-track">${esc(r.trackLabel)}</span>`
+          + `<span class="up-title">${esc(it.title ?? '')}</span>${warn}`
+          + `<span class="up-journal">${esc(it.journal ?? '')}</span>`
+          + `<button class="up-btn up-run" data-up-run="${esc(it.pmid ?? '')}" `
+          + `data-up-track="${esc(r.track)}" title="이것을 먼저 돌린다">▶</button>`
+          + `<button class="up-btn up-drop" data-up-drop="${esc(it.pmid ?? '')}" `
+          + `data-up-track="${esc(r.track)}" title="빼고 다음 것으로 채운다">🗑</button>`
+          + `</li>`;
+      }).join('');
+      return `<div class="up-day"><div class="up-date">${esc(date)}</div><ul class="up-list">${li}</ul></div>`;
+    }).join('');
+
+    // 트랙별 온오프 토글. off 인 트랙도 여기 나와야 다시 켤 수 있다.
+    const MODE_LABEL = { on: '켜짐', off: '꺼짐', alternate: '격일' };
+    const toggles = tracks.map((t) => `<button class="up-toggle" data-up-toggle="${esc(t.key)}" `
+      + `data-up-mode="${esc(t.mode ?? 'on')}">${esc(t.label)} · ${esc(MODE_LABEL[t.mode] ?? '켜짐')}</button>`).join('');
+
+    const block = `<!-- UPCOMING -->\n<section class="upcoming"><h2 class="up-h">📅 다음 ${days}일 예고`
+      + ` <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2>`
+      + `<div class="up-toggles">${toggles}</div>${dayHtml}`
+      + `<button class="up-reset" data-up-reset="1">이 목록 전체 갈아엎기</button>`
+      + `</section>\n<!-- /UPCOMING -->`;
+    return out.replace('<!-- ARCHIVE_START -->', () => `${block}\n<!-- ARCHIVE_START -->`);
+  }
+
   _renderGuidelineState(html, state, generatedAt) {
     if (!state || !Array.isArray(state.published)) return html;
 
