@@ -1406,11 +1406,16 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       if (!manual) {
         body = body.replace(this._rowDateDupRe(dateStr), '');
       }
-      //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침이 또 선정된 경우 중복 방지
-      const dedupItems = guideline ? [...topPapers, guideline] : topPapers;
+      //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침/리뷰가 또 선정된 경우 중복 방지
+      //   ★ **새 종류를 더할 때 이 목록에도 넣어야 한다.** 리뷰를 붙이면서 여기를 빼먹어
+      //     같은 날 재실행하면 리뷰 행이 둘이 됐다(E2E 테스트가 잡았다). 리뷰 행은
+      //     `data-guideline="1"` 을 달아 날짜 스윕(①)에서 보호받으므로, 여기서 안 지우면
+      //     지울 곳이 없다.
+      const dedupItems = [...topPapers, guideline, review].filter(Boolean);
       for (const p of dedupItems) {
         // 웹 공개본 가이드라인은 pmid 가 없다 — 행 키로 쓴 sourceId 로 같은 항목을 지운다.
-        const pmid = p.paper?.pmid || p.paper?.sourceId;
+        // 리뷰 큐 항목은 `paper` 로 감싸여 있지 않고 pmid/id 를 직접 들고 온다.
+        const pmid = p.paper?.pmid || p.paper?.sourceId || p.pmid || p.id;
         if (!pmid) continue;
         // [^>]* — 가이드 행의 data-guideline="1" 같은 추가 속성이 있어도 매치되게.
         // (없으면 같은 지침 재발행 시 과거 행이 안 지워져 표에 중복이 남는다)
