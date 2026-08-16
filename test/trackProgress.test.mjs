@@ -65,3 +65,25 @@ test('★ 제어 상태가 없어도 안 터지고 전부 켜짐으로 본다', 
   assert.equal(lines.length, 3);
   assert.ok(lines.every((l) => !/꺼짐/.test(l)));
 });
+
+// ── ★ 배선 회귀 ─────────────────────────────────────────────────────────────
+// 이 세션에만 "모듈은 옳은데 아무도 안 부른다" 로 세 번 데였다(지역 필터·예고 렌더·
+// import 누락). 게다가 데일리 진입점에서는 없는 변수를 참조해도 `node --check` 가 통과했다.
+// 그래서 **실제로 호출해서** 결과 모양까지 본다.
+import { TrendReviewOrchestrator } from '../src/orchestrator/TrendReviewOrchestrator.js';
+import { readFile } from 'node:fs/promises';
+
+test('★ 오케스트레이터에서 진행상황 계산이 실제로 돈다', async () => {
+  const lines = await new TrendReviewOrchestrator()._buildProgressLines('2026-08-16');
+  assert.equal(lines.length, 3, '세 트랙이 다 안 나온다');
+  for (const l of lines) assert.match(l, /켜짐|꺼짐|격일/, `상태가 없다: ${l}`);
+});
+
+test('★ 데일리 진입점이 존재하지 않는 변수를 참조하지 않는다', async () => {
+  // github-actions-daily.mjs 는 러너에서만 도는 파일이라 테스트가 실행 경로를 안 탄다.
+  // 한 번 `orchestrator` 라는 없는 변수를 참조한 채 커밋될 뻔했다(node --check 는 통과했다).
+  const src = await readFile(new URL('../github-actions-daily.mjs', import.meta.url), 'utf8');
+  const call = src.match(/progressLines = await ([^;]+);/)?.[1] ?? '';
+  assert.ok(call.includes('new TrendReviewOrchestrator()'),
+    `진행상황 호출이 지역 변수를 참조한다: ${call}`);
+});

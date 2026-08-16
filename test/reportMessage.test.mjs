@@ -59,3 +59,20 @@ test('TelegramNotifier: 미설정이면 send/sendFailure/sendNotice 모두 {sent
   assert.deepEqual(await n.sendFailure({ dateStr: '2026-08-04', reason: 'x' }), { sent: false, reason: 'not-configured' });
   assert.deepEqual(await n.sendNotice({ text: 'x', url: 'https://example.com' }), { sent: false, reason: 'not-configured' });
 });
+
+// ★ 진행상황은 별도 메시지다. 기존 5줄 본문은 200자 계약(REPORT_SPEC §4-D) 아래 있고
+// 분할 규칙이 거기 맞춰져 있어서, 본문에 끼워 넣으면 그 계약이 깨진다.
+test('★ 진행상황을 줘도 기존 본문 계약(200자·분할)이 안 깨진다', () => {
+  const base = { dateStr: '2026-08-16', topPaper: { title_ko: '짧은 제목', paper: { journal: 'NEJM', pmid: '1' } }, pagesUrl: 'https://x' };
+  const without = buildReportMessages(base);
+  const withP = buildReportMessages({ ...base, progressLines: ['논문 · 켜짐 · 미독 2'] });
+  assert.deepEqual(withP.slice(0, without.length), without, '본문이 바뀌었다');
+  assert.equal(withP.length, without.length + 1, '진행상황이 별도 메시지가 아니다');
+  assert.match(withP.at(-1), /진행상황/);
+  assert.match(withP.at(-1), /미독 2/);
+});
+
+test('진행상황이 없으면 메시지가 늘지 않는다', () => {
+  const base = { dateStr: '2026-08-16', topPaper: { title_ko: 't', paper: {} }, pagesUrl: 'https://x' };
+  assert.equal(buildReportMessages(base).length, buildReportMessages({ ...base, progressLines: [] }).length);
+});

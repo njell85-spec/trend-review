@@ -75,12 +75,12 @@ export class TelegramNotifier {
   }
 
   // ── 발송 (성공 리포트) — 데일리·on-demand가 발행 직후 호출 ────────────────────
-  async send({ dateStr, topPaper, pagesUrl }) {
+  async send({ dateStr, topPaper, pagesUrl, progressLines = [] }) {
     if (!this.isConfigured) {
       this.logger.info('Telegram 미설정(TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID 없음) — 발송 생략');
       return { sent: false, reason: 'not-configured' };
     }
-    const text = buildReportMessages({ dateStr, topPaper, pagesUrl }).join('\n');
+    const text = buildReportMessages({ dateStr, topPaper, pagesUrl, progressLines }).join('\n');
     await this._post(text);
     this.logger.info('텔레그램 리포트 발송 완료');
     return { sent: true };

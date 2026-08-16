@@ -28,6 +28,7 @@ import { filterByRegion } from '../utils/guidelineRegionFilter.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
+import { buildProgressLines } from '../utils/trackProgress.js';
 import { normalizeControl } from '../utils/controlState.js';
 
 // 날짜 문자열을 달력상의 연속 일수로 바꾼다. Date를 쓰면 실행 환경의 타임존에 따라
@@ -697,6 +698,29 @@ export class TrendReviewOrchestrator {
       this._stageEnd(entry, 'error', { err: err.message });
       this.logger.warn('GitHub Pages 업데이트 실패 (파이프라인은 계속)', { err: err.message });
       return null;
+    }
+  }
+
+  /**
+   * 텔레그램 리포트에 실을 트랙별 진행상황.
+   * ★ 실패해도 리포트는 그대로 간다 — 진행상황은 부가 정보다.
+   */
+  async _buildProgressLines(todayStr) {
+    try {
+      const out = path.join(this.outputDir);
+      const rj = async (f) => { try { return JSON.parse(await readFile(path.join(out, f), 'utf8')); } catch { return null; } };
+      const [control, read, papers, guidelines, reviews] = await Promise.all([
+        rj('control_state.json'), rj('read_state.json'),
+        rj('queue_papers.json'), rj('selected_guidelines.json'), rj('queue_reviews.json'),
+      ]);
+      const ids = (st) => (st?.published ?? []).map((x) => String(x.pmid ?? x.id ?? '')).filter(Boolean);
+      return buildProgressLines({
+        today: todayStr, control, read,
+        published: { papers: ids(papers), guidelines: ids(guidelines), reviews: ids(reviews) },
+      });
+    } catch (err) {
+      this.logger.warn('진행상황 계산 실패 — 리포트는 그대로 간다', { err: err.message });
+      return [];
     }
   }
 
