@@ -1,0 +1,67 @@
+# 예고 리스트 버튼(🗑 빼기 · ▶ 먼저 돌리기 · ♻ 전체 갈아엎기)의 실행부.
+#
+# 배포 페이지의 UPBTN 스크립트가 PAT(workflow_dispatch)로 부른다.
+# 큐 파일만 고치고 커밋한다 — 분석·발행은 하지 않는다(그건 데일리와 on-demand 의 몫).
+name: Queue Control (예고 리스트 버튼)
+
+on:
+  workflow_dispatch:
+    inputs:
+      track:
+        description: '트랙'
+        required: true
+        type: choice
+        options: [papers, guidelines, reviews]
+      action:
+        description: '동작 — drop 빼기 · promote 먼저 돌리기 · reset 전체 갈아엎기'
+        required: true
+        type: choice
+        options: [drop, promote, reset]
+      id:
+        description: 'PMID (drop·promote 에만 필요)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+
+# 데일리 커밋과 경합할 수 있다. 데일리에 같은 그룹을 걸지는 않는다 —
+# 데일리 코어 무영향이 불변식이므로, 여기서 push 실패 시 재시도한다.
+concurrency:
+  group: queue-control
+  cancel-in-progress: false
+
+jobs:
+  control:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 큐 갱신
+        run: |
+          node scripts/queue-control.mjs \
+            --track "${{ inputs.track }}" \
+            --action "${{ inputs.action }}" \
+            --id "${{ inputs.id }}"
+
+      - name: 커밋 · 푸시 (경합 시 재시도)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- output/; then
+            echo "· 변경 없음 — 커밋하지 않는다"
+            exit 0
+          fi
+          git add output/
+          git commit -m "chore(queue): ${{ inputs.track }} ${{ inputs.action }} ${{ inputs.id }}"
+          for i in 1 2 3 4; do
+            if git push; then exit 0; fi
+            echo "· push 실패 — 최신 main 위로 옮겨 재시도 ($i)"
+            git pull --rebase origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1

@@ -19,15 +19,20 @@ async function setup(queue = [], lastRun = null) {
   return { o, queueFile, controlFile };
 }
 
-test('마지막 발행 6일째에는 주간 게이트로 건너뛴다', async () => {
-  const { o, queueFile } = await setup([item('1')], { date: '2026-08-10', outcome: 'published' });
+// ★ 계약 변경 (PeterJ 확정 2026-08-16 · 4-A) — "세 트랙 전부 매일" 로 바뀌었다.
+//   종전 계약은 주 1회(6일째 skip · 7일째 발행)였고 그것을 여기서 잠그고 있었다.
+//   간격은 `src/utils/trackCadence.js` 한 곳에서 온다 — 예고 렌더도 같은 값을 보므로
+//   화면과 실제가 어긋날 수 없다. PeterJ 가 "며칠 돌려보고 재설정" 하겠다고 했으므로
+//   그 파일의 숫자만 고치면 이 계약도 같이 움직인다.
+test('같은 날 두 번 돌면 두 번째는 게이트로 건너뛴다', async () => {
+  const { o, queueFile } = await setup([item('1')], { date: '2026-08-16', outcome: 'published' });
   assert.deepEqual(await o._stageReview('2026-08-16'), { outcome: 'skipped', reason: 'weekly-gate' });
   assert.equal(JSON.parse(await readFile(queueFile, 'utf8')).queue.length, 1);
 });
 
-test('마지막 발행 7일째에는 한 편을 발행한다', async () => {
-  const { o } = await setup([item('1')], { date: '2026-08-10', outcome: 'published' });
-  assert.equal((await o._stageReview('2026-08-17')).outcome, 'published');
+test('어제 발행했으면 오늘 또 발행한다 (4-A · 매일)', async () => {
+  const { o } = await setup([item('1')], { date: '2026-08-15', outcome: 'published' });
+  assert.equal((await o._stageReview('2026-08-16')).outcome, 'published');
 });
 
 test('빈 큐는 예외 없이 empty를 돌려준다', async () => {
@@ -57,16 +62,33 @@ test('발행한 머리 항목은 queue에서 빠져 published로 옮겨진다', 
   assert.equal(saved.lastRun.date, '2026-08-16');
 });
 
-test('alternate 모드는 마지막 발행 후 13일에는 건너뛴다', async () => {
-  const { o, controlFile } = await setup([item('1')], { date: '2026-08-01' });
+// 격일 모드는 기본 간격의 2배다 — 4-A 에서 기본이 1일이므로 격일은 2일이 된다.
+test('alternate 모드는 발행 다음 날에는 건너뛴다', async () => {
+  const { o, controlFile } = await setup([item('1')], { date: '2026-08-14' });
   await writeFile(controlFile, JSON.stringify({ tracks: { reviews: { mode: 'alternate' } } }));
-  assert.deepEqual(await o._stageReview('2026-08-14'), { outcome: 'skipped', reason: 'weekly-gate' });
+  assert.deepEqual(await o._stageReview('2026-08-15'), { outcome: 'skipped', reason: 'weekly-gate' });
 });
 
-test('alternate 모드는 마지막 발행 후 14일에 발행한다', async () => {
-  const { o, controlFile } = await setup([item('1')], { date: '2026-08-01' });
+test('alternate 모드는 발행 이틀 뒤에 발행한다', async () => {
+  const { o, controlFile } = await setup([item('1')], { date: '2026-08-14' });
   await writeFile(controlFile, JSON.stringify({ tracks: { reviews: { mode: 'alternate' } } }));
-  assert.equal((await o._stageReview('2026-08-15')).outcome, 'published');
+  assert.equal((await o._stageReview('2026-08-16')).outcome, 'published');
+});
+
+// ★ 순차진행 (PeterJ 확정 2026-08-16) — 켜면 논문 → 가이드라인 → 리뷰 하루 한 트랙.
+//   게이트와 예고가 **같은 함수**를 보는지까지 확인한다(따로 계산하면 화면이 거짓말한다).
+test('순차진행이 켜지면 리뷰는 자기 차례 날에만 발행한다', async () => {
+  const { sequentialTrackFor } = await import('../src/utils/trackCadence.js');
+  const mine = ['2026-08-17', '2026-08-18', '2026-08-19'].find((d) => sequentialTrackFor(d) === 'reviews');
+  const notMine = ['2026-08-17', '2026-08-18', '2026-08-19'].find((d) => sequentialTrackFor(d) !== 'reviews');
+
+  const a = await setup([item('1')]);
+  await writeFile(a.controlFile, JSON.stringify({ sequential: true }));
+  assert.deepEqual(await a.o._stageReview(notMine), { outcome: 'skipped', reason: 'sequential-gate' });
+
+  const b = await setup([item('1')]);
+  await writeFile(b.controlFile, JSON.stringify({ sequential: true }));
+  assert.equal((await b.o._stageReview(mine)).outcome, 'published');
 });
 
 test('리뷰 단계가 예외를 던져도 데일리 논문 발행 경로는 살아남는다', async () => {

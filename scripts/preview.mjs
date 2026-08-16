@@ -58,23 +58,23 @@ try {
 
 // 이전 실행의 조각 파일을 먼저 정리 — 이번에 더 짧아지면 옛 조각이 남아 오인된다.
 for (const f of readdirSync('output')) {
-  if (/^preview-(phone|tablet)(-\d+)?\.png$/.test(f)) {
+  if (/^preview-(phone|tablet)(-[a-z]+)?(-\d+)?\.png$/.test(f)) {
     try { rmSync(path.join('output', f)); } catch { /* non-fatal */ }
   }
 }
 
 // 전체 높이를 뷰포트로 만든 뒤 clip 으로 조각을 잘라야 clip 이 항상 뷰포트 안에 든다.
-async function shoot(name, width) {
+async function shoot(name, width, file0 = 'index.html', tag = '') {
   const ctx = await browser.newContext({ viewport: { width, height: 900 }, deviceScaleFactor: SCALE });
   const page = await ctx.newPage();
-  await page.goto('file://' + path.join(ROOT, 'index.html'), { waitUntil: 'load' });
+  await page.goto('file://' + path.join(ROOT, file0), { waitUntil: 'load' });
   const total = await page.evaluate(() => document.body.scrollHeight);
   await page.setViewportSize({ width, height: total });
   await page.waitForTimeout(150); // 뷰포트 확대 후 레이아웃/폰트 안정화
 
   const saved = [];
   if (total <= SEG_PX) {
-    const file = `output/preview-${name}.png`;
+    const file = `output/preview-${name}${tag}.png`;
     await page.screenshot({ path: file });
     saved.push(file);
   } else {
@@ -82,18 +82,28 @@ async function shoot(name, width) {
     while (y < total) {
       const top = y > 0 ? y - OVERLAP_PX : 0;
       const h = Math.min(SEG_PX + (y > 0 ? OVERLAP_PX : 0), total - top);
-      const file = `output/preview-${name}-${++i}.png`;
+      const file = `output/preview-${name}${tag}-${++i}.png`;
       await page.screenshot({ path: file, clip: { x: 0, y: top, width, height: h } });
       saved.push(file);
       y += SEG_PX;
     }
   }
   await ctx.close();
-  console.log(`✓ ${name} (${width}px @${SCALE}x) — ${saved.length}장: ${saved.map((f) => path.basename(f)).join(', ')}`);
+  console.log(`✓ ${name}${tag} (${width}px @${SCALE}x) — ${saved.length}장: ${saved.map((f) => path.basename(f)).join(', ')}`);
 }
 
+// ★ 3페이지 전부 찍는다 (2026-08-16). index 만 찍으면 새 페이지의 레이아웃 사고를
+//   눈으로도 못 잡는다 — 미리보기 자체가 헛도는 검사가 된다.
+const PAGES = [
+  ['index.html', ''],
+  ['guidelines.html', '-guides'],
+  ['reviews.html', '-reviews'],
+];
 try {
-  await shoot('phone', 390);
+  for (const [file, tag] of PAGES) {
+    if (!existsSync(path.join(ROOT, file))) continue;
+    await shoot('phone', 390, file, tag);
+  }
   await shoot('tablet', 800);
 } finally {
   await browser.close();

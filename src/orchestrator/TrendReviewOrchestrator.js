@@ -17,7 +17,7 @@ import { ValidationAgent } from '../agents/ValidationAgent.js';
 import { ReportGeneratorAgent } from '../agents/ReportGeneratorAgent.js';
 import { NotificationAgent } from '../agents/NotificationAgent.js';
 import { GitHubPublisher } from '../utils/GitHubPublisher.js';
-import { kstDateStr, kstStamp } from '../utils/dates.js';
+import { kstDateStr, kstStamp, calendarDay } from '../utils/dates.js';
 import { selectMonthlyPool } from '../utils/monthlyPool.js';
 import { loadGuidelineState, saveGuidelineState, mergeCandidates } from '../utils/guidelineState.js';
 import { collectGuidelineCandidates } from '../utils/guidelinePubmed.js';
@@ -30,23 +30,8 @@ import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guideli
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
 import { buildProgressLines } from '../utils/trackProgress.js';
 import { normalizeControl } from '../utils/controlState.js';
+import { intervalFor, sequentialAllows } from '../utils/trackCadence.js';
 
-// 날짜 문자열을 달력상의 연속 일수로 바꾼다. Date를 쓰면 실행 환경의 타임존에 따라
-// 자정이 전날로 밀릴 수 있어, 주간 발행 경계는 YYYY-MM-DD의 정수 연산만 사용한다.
-function calendarDay(dateStr) {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr ?? '');
-  if (!match) return null;
-  let year = Number(match[1]);
-  const month = Number(match[2]);
-  const day = Number(match[3]);
-  year -= month <= 2 ? 1 : 0;
-  const era = Math.floor(year / 400);
-  const yearOfEra = year - era * 400;
-  const shiftedMonth = month + (month > 2 ? -3 : 9);
-  const dayOfYear = Math.floor((153 * shiftedMonth + 2) / 5) + day - 1;
-  return era * 146097 + yearOfEra * 365 + Math.floor(yearOfEra / 4)
-    - Math.floor(yearOfEra / 100) + dayOfYear;
-}
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -109,7 +94,11 @@ export class TrendReviewOrchestrator {
     this.controlStatePath = options.controlStatePath ?? path.join(this.outputDir, 'control_state.json');
     // 가이드라인 캐치업 노출 기록 (주 1회 게이트 + 중복 방지)
     this.guidelineListPath = path.join(this.outputDir, 'selected_guidelines.json');
-    this.guidelineIntervalDays = options.guidelineIntervalDays ?? 7;
+    // ★ 가이드라인 주기 게이트는 **없다.** 확정 ④-D(G7) 가 "매일 시도" 로 못 박았다.
+    //   종전에는 `guidelineIntervalDays`(기본 7)와 `_guidelineDue()` 가 남아 있었는데
+    //   **아무도 부르지 않는 죽은 코드**였고, 그것이 문서와 다음 세션을 둘 다 속였다
+    //   ("큐가 6건뿐인 건 주 1회 게이트 때문" — 아니었다. 관찰 모드 때문이었다).
+    //   손잡이처럼 보이는데 아무 데도 안 걸린 것은 없느니만 못하므로 지웠다.
   }
 
   // ── 가이드라인 노출 기록 ──────────────────────────────────────────────────────
@@ -118,14 +107,6 @@ export class TrendReviewOrchestrator {
       const raw = await readFile(this.guidelineListPath, 'utf8');
       return JSON.parse(raw);
     } catch { return []; }
-  }
-
-  // 주 1회 게이트: 마지막 가이드라인 노출이 N일 이상 지났거나(또는 없음) 시도.
-  _guidelineDue(seen, todayStr) {
-    if (!seen.length) return true;
-    const last = seen.reduce((a, b) => (a.date > b.date ? a : b));
-    const days = Math.round((new Date(todayStr) - new Date(last.date)) / 86_400_000);
-    return days >= this.guidelineIntervalDays;
   }
 
   async _saveGuideline(card, todayStr) {
@@ -580,7 +561,14 @@ export class TrendReviewOrchestrator {
       //   따라서 프로덕션에서 매일 실측이 쌓이고, PeterJ 가 `ENABLE_GUIDELINE_AUTOPUBLISH=true`
       //   하나로 발행을 켠다. 되돌리는 것도 그 한 줄이다.
       const autoPublish = String(process.env.ENABLE_GUIDELINE_AUTOPUBLISH ?? '').toLowerCase() === 'true';
-      const pick = autoPublish
+      // ★ 주기 게이트는 **없다.** 확정 ④-D(G7) 가 "매일 시도" 로 못 박았고
+      //   `test/guidelineContract.test.mjs` 가 그것을 잠근다. 되살리지 마라 —
+      //   2026-08-16 에 핸드오프가 "큐가 6건뿐인 건 주 1회 게이트 때문" 이라고 적었는데
+      //   그 게이트는 애초에 돌지 않고 있었다. 실제로 발행을 막던 것은 관찰 모드다.
+      // ★ 순차진행만 건다 (PeterJ 확정 2026-08-16 · 4-A).
+      const control = await this._loadControl();
+      const dueToday = !control.sequential || sequentialAllows('guidelines', todayStr);
+      const pick = (autoPublish && dueToday)
         ? state.queue.filter((x) => x.status === 'queued')
           .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0]
         : undefined;
@@ -654,15 +642,28 @@ export class TrendReviewOrchestrator {
 
   // 트랙3은 독립 발행 arm이다. 이 메서드의 오류는 run() 호출 경계에서 격리해
   // 논문 보고서·발행 경로가 리뷰 큐 상태에 의존하지 않게 한다.
+  /**
+   * 제어 상태를 읽는다. **러너는 읽기만 한다** — 되쓰기 시작하면 브라우저 버튼 커밋과
+   * 상호 덮어쓰기가 시작된다(불변식).
+   */
+  async _loadControl() {
+    let raw = null;
+    try { raw = JSON.parse(await readFile(this.controlStatePath, 'utf8')); }
+    catch { /* 부재·손상은 normalizeControl 의 전부 on 기본값으로 복구한다. */ }
+    return normalizeControl(raw);
+  }
+
   async _stageReview(todayStr) {
-    let rawControl = null;
-    try { rawControl = JSON.parse(await readFile(this.controlStatePath, 'utf8')); }
-    catch { /* 제어 파일 부재·손상은 normalizeControl의 전부 on 기본값으로 복구한다. */ }
-    const mode = normalizeControl(rawControl).tracks.reviews.mode;
+    const control = await this._loadControl();
+    const mode = control.tracks.reviews.mode;
     if (mode === 'off') return { outcome: 'skipped', reason: 'track-off' };
+    // 순차진행이 켜져 있으면 리뷰는 자기 차례 날에만 나간다.
+    if (control.sequential && !sequentialAllows('reviews', todayStr)) {
+      return { outcome: 'skipped', reason: 'sequential-gate' };
+    }
 
     const state = await loadTrackQueue(this.queueReviewsPath, 'reviews');
-    const intervalDays = mode === 'alternate' ? 14 : 7;
+    const intervalDays = mode === 'alternate' ? intervalFor('reviews') * 2 : intervalFor('reviews');
     const todayDay = calendarDay(todayStr);
     const lastDay = calendarDay(state.lastRun?.date);
     if (todayDay !== null && lastDay !== null && todayDay - lastDay < intervalDays) {
@@ -683,14 +684,14 @@ export class TrendReviewOrchestrator {
     return { outcome: 'published', item: published };
   }
 
-  async _stagePublish(topPapers, guideline = null) {
+  async _stagePublish(topPapers, guideline = null, review = null) {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
       let guidelineState = null;
       try { guidelineState = await loadGuidelineState(this.guidelineListPath); }
       catch (error) { this.logger.warn('Guideline render state unavailable — keeping existing page', { err: error.message }); }
-      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline, guidelineState });
+      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline, guidelineState, review });
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
       return pagesUrl;
@@ -842,20 +843,36 @@ export class TrendReviewOrchestrator {
       const guidelineCard = await this._stageGuideline(todayStr);
 
       // 리뷰는 데일리 코어의 부가 arm이다. 큐 읽기·저장 어느 쪽이 실패해도 논문 발행은 계속한다.
-      try { await this._stageReview(todayStr); }
-      catch (error) { this.logger.warn('Review stage failed (non-fatal)', { err: error.message }); }
+      // ★ 리뷰 결과를 **발행 경로로 넘긴다.** 넘기지 않으면 큐만 소비되고 화면에는
+      //   아무것도 안 나온다 — 2026-08-16 까지 실제로 그 상태였다(테스트는 전부 초록).
+      let reviewItem = null;
+      try {
+        const r = await this._stageReview(todayStr);
+        if (r?.outcome === 'published') reviewItem = r.item;
+      } catch (error) { this.logger.warn('Review stage failed (non-fatal)', { err: error.message }); }
 
       // 제외목록·가이드라인 기록을 publish 전에 저장 — publish가 이 파일들을
       // 커밋/푸시하므로, 순서가 뒤면 원격 목록이 항상 하루 늦어 중복 선정된다.
       // 단, 분석 실패(analysisError) fallback 카드는 제외목록에 넣지 않는다 —
       // 넣으면 제대로 분석 못 한 좋은 논문이 후보풀에서 영구 소진되므로, 다음 실행에서
       // 재선정·재분석되도록 남겨둔다.
-      const excludable = validatedPico.filter((p) => !p.analysisError);
+      // ★ 순차진행 (PeterJ 확정 2026-08-16) — 켜져 있으면 논문도 자기 차례 날에만 발행한다.
+      //   기본은 꺼짐이므로 **데일리 코어 무영향 불변식은 그대로다.** 켜는 것은 PeterJ 의
+      //   명시적 선택이고 버튼 한 번으로 되돌릴 수 있다.
+      //   ★ 발행을 건너뛰는 날에는 **제외목록에도 넣지 않는다** — 넣으면 화면에 한 번도
+      //     안 나온 논문이 후보풀에서 영구히 소진된다.
+      const controlForRun = await this._loadControl();
+      const papersDue = !controlForRun.sequential || sequentialAllows('papers', todayStr);
+      if (!papersDue) {
+        this.logger.info('순차진행 — 오늘은 논문 차례가 아니다', { today: todayStr });
+      }
+
+      const excludable = papersDue ? validatedPico.filter((p) => !p.analysisError) : [];
       if (excludable.length) await this._saveExcludePmids(excludable, rerank);
       if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
-      const pagesUrl = await this._stagePublish(validatedPico, guidelineCard);
+      const pagesUrl = await this._stagePublish(papersDue ? validatedPico : [], guidelineCard, reviewItem);
 
       // Stage 8: Notify (optional — Google Drive 업로드, ENABLE_DRIVE 시에만)
       const notifyResult = await this._stageNotify(

@@ -8,6 +8,8 @@
 // 날짜는 처음부터 끝까지 'YYYY-MM-DD' 문자열로만 다룬다. Date 객체를 돌리면
 // 컨테이너 타임존과 KST 가 어긋나 하루가 밀린다 — 이 저장소가 이미 겪은 부류다.
 
+import { sequentialAllows } from './trackCadence.js';
+
 /** 'YYYY-MM-DD' 에 일수를 더한다. UTC 정오를 기준으로 삼아 DST·타임존 밀림을 피한다. */
 function addDays(ymd, n) {
   const [y, m, d] = ymd.split('-').map(Number);
@@ -20,13 +22,17 @@ function addDays(ymd, n) {
  * mode: 'on' 매일 · 'alternate' 격일 · 'off' 안 나옴
  * cadence: 'daily' 주기대로 · 'weekly' 창에 한 번
  */
-export function nextRunDates({ from, days, mode = 'on', cadence = 'daily' }) {
+export function nextRunDates({ from, days, mode = 'on', cadence = 'daily', sequential = false, track = null }) {
   if (mode === 'off') return [];
   if (cadence === 'weekly') return [from];
   const step = mode === 'alternate' ? 2 : 1;
   const out = [];
   for (let i = 0; i < days; i += step) out.push(addDays(from, i));
-  return out;
+  // ★ 순차진행이 켜져 있으면 **그 트랙이 담당하는 날짜만** 남긴다.
+  //   게이트와 같은 함수(`sequentialAllows`)를 쓴다 — 여기서 따로 계산하면 화면이
+  //   "내일 나간다" 고 해놓고 실제로는 안 나가는 결함 B2 가 그대로 재현된다.
+  if (!sequential || !track) return out;
+  return out.filter((d) => sequentialAllows(track, d));
 }
 
 /**
@@ -35,10 +41,12 @@ export function nextRunDates({ from, days, mode = 'on', cadence = 'daily' }) {
  * ★ 큐가 날짜보다 짧으면 **남는 날은 비워둔다.** 없는 것을 지어내면
  * PeterJ가 "있다고 믿고 안 채우는" 상태가 되므로, 빈 것은 빈 채로 보여야 한다.
  */
-export function buildUpcoming({ from, days, tracks = [] }) {
+export function buildUpcoming({ from, days, tracks = [], sequential = false }) {
   const rows = [];
   for (const t of tracks) {
-    const dates = nextRunDates({ from, days, mode: t.mode, cadence: t.cadence });
+    const dates = nextRunDates({
+      from, days, mode: t.mode, cadence: t.cadence, sequential, track: t.key,
+    });
     // ★ 제목 없는 항목은 예고에 올리지 않는다. 화면에 **빈 줄**로 떠서 무엇을 지우는지
     //   무엇을 먼저 돌리는지 알 수 없게 된다(실측: 테스트 픽스처가 흘러들어와 빈 줄이 떴다).
     //   큐에서 지우지는 않는다 — 데이터 문제이지 큐 자체의 문제가 아니다.
