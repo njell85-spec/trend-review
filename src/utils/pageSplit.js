@@ -54,8 +54,8 @@ const PAGE_TRACK = { papers: 'papers', guides: 'guidelines', reviews: 'reviews' 
  *   ONDEMAND_WIDGET 이 같은 이유로 버전을 달고 있다 — 같은 규율을 여기도 적용한다.
  *   **이 파일의 CSS 를 고치면 이 숫자를 올려라.**
  */
-export const TOWER_TONE_VERSION = 2;
-export const TOWER_TONE = `<style id="tower-tone" data-v="2">
+export const TOWER_TONE_VERSION = 3;
+export const TOWER_TONE = `<style id="tower-tone" data-v="3">
 /* ── 타워 톤 — 웜뉴트럴 지면 + 무지개 라디얼 + 글래스 카드 ── */
 :root{
   --t-ink:#2a2724; --t-ink2:#5c574f; --t-ink3:#6f6960;
@@ -146,6 +146,14 @@ details{border-radius:24px}
 .arch-fold>summary::-webkit-details-marker{display:none}
 .arch-fold>summary::after{content:'▾';color:var(--t-ink3);font-size:12px;transition:transform .15s ease}
 .arch-fold[open]>summary::after{transform:rotate(180deg)}
+/* ★ 지난 묶음을 열면 그 안 카드 제목이 통째로 사라지던 것 (2026-08-17 PeterJ 지적).
+   원본 CSS 의 details[open] .day-prev 규칙은 **자손 선택자**라,
+   바깥 묶음(details.past-fold)이 열리면 **안쪽 닫힌 카드들의 미리보기까지** 숨겼다.
+   "그래야 찾아 들어가지" — 날짜만 남으면 목록의 쓸모가 없다.
+   ① 그 규칙을 되돌리고 ② **자기 카드가 열렸을 때만** 숨기도록 좁힌다.
+   (자식 결합자 > 로 자기 summary 안의 것만 잡는다.) */
+details[open] .day-prev{display:flex}
+details.day[open] > summary .day-prev{display:none}
 /* 지난 카드 묶음 접힘 (요구 ④) */
 .past-fold{margin:10px 18px 0;background:rgba(255,255,255,.34);border:1px solid var(--t-edge);
   border-radius:20px;padding:2px 14px}
