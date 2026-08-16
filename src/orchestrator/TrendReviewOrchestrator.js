@@ -26,6 +26,7 @@ import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
+import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -83,6 +84,7 @@ export class TrendReviewOrchestrator {
 
     // Exclusion list — tracks PMIDs already published to avoid re-selection
     this.excludeListPath = path.join(this.outputDir, 'selected_papers.json');
+    this.queuePapersPath = options.queuePapersPath ?? path.join(this.outputDir, 'queue_papers.json');
     // 가이드라인 캐치업 노출 기록 (주 1회 게이트 + 중복 방지)
     this.guidelineListPath = path.join(this.outputDir, 'selected_guidelines.json');
     this.guidelineIntervalDays = options.guidelineIntervalDays ?? 7;
@@ -156,6 +158,37 @@ export class TrendReviewOrchestrator {
       perMonth: monthly.perMonth,
     });
     return monthly.pool;
+  }
+
+  async _saveTrack1Queue(selectionPool, today, excludePmids = []) {
+    try {
+      const scores = this.filter.scorer.scorePapers(selectionPool);
+      const papers = new Map(selectionPool.map((paper) => [String(paper.pmid), paper]));
+      const items = [...scores]
+        .sort((a, b) => (Number(b.rawScore ?? b.score) - Number(a.rawScore ?? a.score))
+          || String(a.pmid).localeCompare(String(b.pmid)))
+        .slice(0, 14)
+        .map((scored) => {
+          const paper = papers.get(String(scored.pmid)) ?? {};
+          return {
+            pmid: scored.pmid,
+            title: paper.title ?? '',
+            journal: paper.journal ?? '',
+            score: scored.score,
+            topic: scored.primaryTopic ?? null,
+            lowConfidence: false,
+          };
+        });
+      const state = await loadTrackQueue(this.queuePapersPath, 'papers');
+      const merged = mergeQueueItems(state, items, { today, excludePmids });
+      if (!existsSync(path.dirname(this.queuePapersPath))) {
+        await mkdir(path.dirname(this.queuePapersPath), { recursive: true });
+      }
+      await saveTrackQueue(this.queuePapersPath, merged);
+    } catch (error) {
+      // 예비 큐는 관찰·예고용이다. 저장 장애가 데일리 선정과 발행을 막아서는 안 된다.
+      this.logger.warn('트랙1 예비 큐 저장 실패 — 데일리는 계속한다', { err: error.message });
+    }
   }
 
   async _loadSelectionHistory() {
@@ -669,6 +702,7 @@ export class TrendReviewOrchestrator {
       const excludePmids = await this._loadExcludePmids();
       if (excludePmids.length) this.logger.info(`Excluding ${excludePmids.length} already-published PMIDs`);
       const selectionPapers = this._buildSelectionPool(validPapers, collectStats);
+      await this._saveTrack1Queue(selectionPapers, kstDateStr(), excludePmids);
       const { topPapers: scoredTopPapers, allScoredPapers, rerank } = await this._stageAnalyze(
         selectionPapers,
         { excludePmids },
