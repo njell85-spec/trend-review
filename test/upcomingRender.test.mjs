@@ -3,6 +3,15 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { GitHubPublisher } from '../src/utils/GitHubPublisher.js';
 
+// ★ 3페이지 재구성(2026-08-16)으로 `_renderUpcoming` 이 **트랙 하나씩** 그리도록 바뀌었다.
+//   각 페이지가 자기 트랙 블록만 맨 위에 들어야 하기 때문이다(PeterJ 요구 ②).
+//   기존 테스트는 트랙 배열을 한 번에 넘겼으므로, 여기서 접어서 같은 뜻으로 만든다.
+const renderAll = (pub, html, { from, days, tracks = [], sequential = false }) =>
+  tracks.reduce((acc, t) => pub._renderUpcoming(acc, {
+    from, days, sequential,
+    track: t.key, label: t.label, cadence: t.cadence, mode: t.mode, state: t.state,
+  }), html);
+
 // ★ 이 저장소는 렌더가 **기존 내용을 지우는** 사고를 이미 한 번 냈다
 // (GSECTION 8→7, 본문 679KB→572KB, LLM 이 뽑은 요약이 통째로 소실).
 // 그래서 새 렌더는 **자기 블록만 갈아끼우고 나머지는 손대지 않는다**는 것을
@@ -10,7 +19,7 @@ import { GitHubPublisher } from '../src/utils/GitHubPublisher.js';
 
 const count = (html, re) => (html.match(re) || []).length;
 const realHtml = () => readFile(new URL('../index.html', import.meta.url), 'utf8');
-const render = (opts) => new GitHubPublisher()._renderUpcoming('<!-- ARCHIVE_START -->', opts);
+const render = (opts) => renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), '<!-- ARCHIVE_START -->', opts);
 const oneTrack = () => ({ key: 'papers', label: '논문', cadence: 'daily', mode: 'on',
   state: { queue: [{ pmid: '1', title: '제목', journal: 'NEJM', score: 1 }] } });
 
@@ -22,8 +31,8 @@ const track = (key, label, cadence, mode, n) => ({
 
 test('★ 실물 페이지에 예고를 그려도 기존 내용이 하나도 안 사라진다', async () => {
   const html = await realHtml();
-  const p = new GitHubPublisher();
-  const out = p._renderUpcoming(html, {
+  const p = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' });
+  const out = renderAll(p, html, {
     from: '2026-08-16', days: 7,
     tracks: [track('papers', '논문', 'daily', 'on', 5)],
   });
@@ -44,30 +53,34 @@ test('★ 실물 페이지에 예고를 그려도 기존 내용이 하나도 안
   //   작아지는 게 정상이다. 전체 길이로 비교하면 그 정상 동작을 "본문이 줄었다" 로
   //   오판한다(실측: 실물 페이지에 블록이 이미 들어간 뒤 이 테스트가 빨개졌다).
   //   지켜야 할 것은 "예고 말고 나머지는 손대지 않는다" 이므로 그것만 잰다.
-  const strip = (h) => h.replace(/<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
+  // 구버전 마커(<!-- UPCOMING -->)도 함께 걷는다 — 렌더가 마이그레이션으로 그것을
+  // 없애므로, 안 걷으면 "정상적인 구버전 제거" 를 "본문이 줄었다" 로 오판한다.
+  const strip = (h) => h
+    .replace(/<!-- UPCOMING:[a-z]+ -->[\s\S]*?<!-- \/UPCOMING:[a-z]+ -->/g, '')
+    .replace(/<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
   assert.ok(strip(out).length >= strip(html).length - 200,
     `예고 밖 본문이 줄었다 (${strip(html).length} → ${strip(out).length})`);
 });
 
 test('예고 블록이 실제로 들어간다', async () => {
-  const out = new GitHubPublisher()._renderUpcoming(await realHtml(), {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), await realHtml(), {
     from: '2026-08-16', days: 3,
     tracks: [track('papers', '논문', 'daily', 'on', 3)],
   });
-  assert.match(out, /<!-- UPCOMING -->/);
+  assert.match(out, /<!-- UPCOMING:papers -->/);
   assert.match(out, /논문 후보 0/);
 });
 
 test('★ 두 번 그려도 블록이 둘로 늘지 않는다 (멱등)', async () => {
-  const p = new GitHubPublisher();
+  const p = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' });
   const args = { from: '2026-08-16', days: 3, tracks: [track('papers', '논문', 'daily', 'on', 3)] };
-  const once = p._renderUpcoming(await realHtml(), args);
-  const twice = p._renderUpcoming(once, { ...args, from: '2026-08-17' });
-  assert.equal(count(twice, /<!-- UPCOMING -->/g), 1);
+  const once = renderAll(p, await realHtml(), args);
+  const twice = renderAll(p, once, { ...args, from: '2026-08-17' });
+  assert.equal(count(twice, /<!-- UPCOMING:papers -->/g), 1);
   // ★ 페이지 본문에는 오늘 날짜가 여기저기 박혀 있다(데일리가 찍는다).
   //   그래서 전체 문서가 아니라 **예고 블록 안에서만** 검사해야 한다 —
   //   안 그러면 코드가 멀쩡해도 빨개진다(처음에 그렇게 짰다가 걸렸다).
-  const blockOf = (h) => h.match(/<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/)?.[0] ?? '';
+  const blockOf = (h) => h.match(/<!-- UPCOMING:papers -->[\s\S]*?<!-- \/UPCOMING:papers -->/)?.[0] ?? '';
   const b = blockOf(twice);
   assert.match(b, /2026-08-17/, '새 내용으로 갱신돼야 한다');
   assert.doesNotMatch(b, /2026-08-16/, '옛 예고가 블록에 남으면 안 된다');
@@ -80,17 +93,17 @@ test('★ 두 번 그려도 블록이 둘로 늘지 않는다 (멱등)', async (
 // 그래서 **비어도 블록은 그리고 "없다" 고 말한다.**
 test('★ 트랙을 전부 꺼도 블록과 토글은 남는다 (다시 켤 스위치가 사라지면 안 된다)', async () => {
   const html = await realHtml();
-  const out = new GitHubPublisher()._renderUpcoming(html, {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), html, {
     from: '2026-08-16', days: 7,
     tracks: [track('papers', '논문', 'daily', 'off', 5)],   // 전부 off
   });
-  assert.equal(count(out, /<!-- UPCOMING -->/g), 1, '블록이 사라졌다');
+  assert.equal(count(out, /<!-- UPCOMING:papers -->/g), 1, '블록이 사라졌다');
   assert.match(out, /data-up-toggle/, '다시 켤 토글이 없다');
   assert.match(out, /up-empty/, '비었다는 안내가 없다');
 });
 
 test('off 인 트랙은 "꺼짐" 으로 표시되고 항목은 안 나온다', async () => {
-  const out = new GitHubPublisher()._renderUpcoming(await realHtml(), {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), await realHtml(), {
     from: '2026-08-16', days: 7,
     tracks: [track('papers', '논문', 'daily', 'off', 3), track('reviews', '리뷰', 'weekly', 'on', 2)],
   });
@@ -99,7 +112,7 @@ test('off 인 트랙은 "꺼짐" 으로 표시되고 항목은 안 나온다', a
 });
 
 test('★ 제목의 HTML 특수문자가 이스케이프된다 (LLM·외부 입력이 들어오는 자리다)', async () => {
-  const out = new GitHubPublisher()._renderUpcoming(await realHtml(), {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), await realHtml(), {
     from: '2026-08-16', days: 1,
     tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on',
       state: { queue: [{ pmid: '1', title: '<img src=x onerror=alert(1)>', journal: 'J&J', score: 1 }] } }],
@@ -110,7 +123,7 @@ test('★ 제목의 HTML 특수문자가 이스케이프된다 (LLM·외부 입�
 });
 
 test('lowConfidence 항목에 ⚠ 가 붙는다 (계산만 되고 출구가 없던 값)', async () => {
-  const out = new GitHubPublisher()._renderUpcoming(await realHtml(), {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), await realHtml(), {
     from: '2026-08-16', days: 1,
     tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on',
       state: { queue: [{ pmid: '1', title: '약한 날', score: 1, lowConfidence: true }] } }],
@@ -119,7 +132,7 @@ test('lowConfidence 항목에 ⚠ 가 붙는다 (계산만 되고 출구가 없�
 });
 
 test('항목마다 삭제·구동 버튼이 붙는다', async () => {
-  const out = new GitHubPublisher()._renderUpcoming(await realHtml(), {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), await realHtml(), {
     from: '2026-08-16', days: 2,
     tracks: [track('papers', '논문', 'daily', 'on', 2)],
   });
@@ -128,7 +141,7 @@ test('항목마다 삭제·구동 버튼이 붙는다', async () => {
 });
 
 test('트랙마다 온오프 토글 버튼이 하나씩 붙는다', async () => {
-  const out = new GitHubPublisher()._renderUpcoming(await realHtml(), {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), await realHtml(), {
     from: '2026-08-16', days: 7,
     tracks: [track('papers', '논문', 'daily', 'on', 2), track('reviews', '리뷰', 'weekly', 'on', 2)],
   });
@@ -142,7 +155,7 @@ test('트랙마다 온오프 토글 버튼이 하나씩 붙는다', async () => 
 test('★ 예고 블록은 자기 스타일을 들고 다닌다 (맨몸으로 나가지 않는다)', () => {
   const out = render({ from: '2026-08-16', days: 1, tracks: [oneTrack()] });
   assert.match(out, /<style>[\s\S]*\.up-item[\s\S]*<\/style>/, '블록에 스타일이 없다');
-  assert.ok(out.indexOf('<style>') < out.indexOf('<section class="upcoming">'),
+  assert.ok(out.indexOf('<style>') < out.indexOf('<section class="upcoming"'),
     '스타일이 섹션보다 뒤에 있다');
 });
 
@@ -179,7 +192,10 @@ test('★ CSS 선택자가 실제 마크업의 클래스와 일치한다 (안 �
     render({ from: '2026-08-16', days: 1, tracks: [oneTrack()] }),
     render({ from: '2026-08-16', days: 1, tracks: [{ key: 'papers', label: '논문',
       cadence: 'daily', mode: 'on', state: { queue: [{ pmid: '1', title: 't', score: 1, lowConfidence: true }] } }] }),
-    render({ from: '2026-08-16', days: 1, tracks: [] }),
+    // 빈 상태(.up-empty)를 덮는다. 트랙별 렌더로 바뀐 뒤로는 "트랙 배열이 비었다" 가
+    // 아니라 **큐가 비었다** 가 그 자리를 대신한다.
+    render({ from: '2026-08-16', days: 1,
+      tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on', state: { queue: [] } }] }),
   ];
   const markup = new Set(cases.flatMap((h) => [...h.replace(/<style>[\s\S]*?<\/style>/, '')
     .matchAll(/class="([^"]+)"/g)].flatMap((m) => m[1].split(/\s+/))));
@@ -191,7 +207,8 @@ test('★ CSS 선택자가 실제 마크업의 클래스와 일치한다 (안 �
 });
 
 test('★ 예고할 것이 없으면 "없다" 고 말한다 (빈 화면은 고장과 구분이 안 된다)', () => {
-  const out = render({ from: '2026-08-16', days: 7, tracks: [] });
+  const out = render({ from: '2026-08-16', days: 7,
+    tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on', state: { queue: [] } }] });
   assert.match(out, /up-empty/);
   assert.match(out, /예고할 것이 없습니다/);
 });
@@ -209,15 +226,71 @@ test('트랙이 전부 꺼져 있어도 빈 상태를 그린다', () => {
 // 식별자를 파싱 시점에 못 잡는다) 테스트도 그 경로를 안 타면 초록이다.
 // 그래서 **실제로 호출해서** 터지지 않는지 본다.
 test('★ 디스크에서 큐를 읽어 예고를 그리는 경로가 실제로 돈다 (import 누락 포함)', async () => {
-  const p = new GitHubPublisher();
+  const p = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' });
   const out = await p._renderUpcomingFromDisk('<!-- ARCHIVE_START -->', '2026-08-16T00:00:00Z');
-  assert.match(out, /<!-- UPCOMING -->/, '예고 블록이 안 그려졌다');
+  // ★ 세 트랙이 **각자** 블록을 갖는다(PeterJ 요구 ② — 각 페이지 맨 위).
+  //   하나라도 빠지면 그 페이지는 예고 없이 나간다.
+  for (const key of ['papers', 'guidelines', 'reviews']) {
+    assert.match(out, new RegExp(`<!-- UPCOMING:${key} -->`), `${key} 예고 블록이 안 그려졌다`);
+  }
   assert.match(out, /data-up-toggle/, '토글이 없다');
+  assert.match(out, /data-up-seq/, '순차진행 토글이 없다');
 });
 
 test('★ 큐 파일이 하나도 없어도 페이지는 나간다 (예고는 부가물이다)', async () => {
-  const p = new GitHubPublisher();
+  const p = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' });
   p._repoPath = '/tmp/존재하지-않는-경로-' + Date.now();
   const out = await p._renderUpcomingFromDisk('<!-- ARCHIVE_START -->', '2026-08-16T00:00:00Z');
   assert.match(out, /up-empty/, '빈 상태 안내가 없다');
+});
+
+
+/**
+ * ★ 2026-08-16 실측 결함 — `publish()` 는 `generatedAt` 으로 **한국어 로케일 문자열**
+ *   ("2026. 08. 16. 22:45")을 넘긴다. 종전 코드는 그것을 `.slice(0, 10)` 해서
+ *   "2026. 08. 1" 을 날짜로 썼고, `addDays` 가 던진 예외를 `publish()` 의 try/catch 가
+ *   삼켜 **예고 블록이 통째로 빠진 페이지가 조용히 나갔다.**
+ *   빈 문자열이 아니라서 `|| 오늘` 폴백도 안 걸렸다 — "폴백이 있는데 안 도는" 부류다.
+ */
+test('★ publish 가 넘기는 한국어 로케일 시각으로도 예고가 그려진다', async () => {
+  const p = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' });
+  // publish() 안의 표현을 그대로 재현한다 — 형식이 바뀌면 여기서 같이 깨져야 한다.
+  const generatedAt = new Date().toLocaleString('ko-KR', {
+    timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false,
+  });
+  const out = await p._renderUpcomingFromDisk('<!-- ARCHIVE_START -->', generatedAt);
+  assert.match(out, /<!-- UPCOMING:papers -->/, '예고 블록이 안 그려졌다');
+  assert.doesNotMatch(out, /Invalid Date|NaN/, '날짜 계산이 깨졌다');
+});
+
+
+/**
+ * ★ 코드리뷰 실측 — 가이드라인 예고가 큐 배열 **전체**를 그렸는데, 오케스트레이터는
+ *   `status === 'queued'` 인 것 중 priority 순으로 고른다. 실물 큐가
+ *   `needsReview 5 · queued 1` 이라 **화면은 검토 대기 항목이 오늘 나간다고 말하고
+ *   실제로는 다른 것이 나갔다.** 결함 B2 와 같은 부류다.
+ */
+test('★ 가이드라인 예고는 실제 발행 대상(queued)만 보여준다', async () => {
+  const { mkdtemp, writeFile, mkdir } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const nodePath = (await import('node:path')).default;
+
+  const dir = await mkdtemp(nodePath.join(tmpdir(), 'tr-up-'));
+  await mkdir(nodePath.join(dir, 'output'), { recursive: true });
+  await writeFile(nodePath.join(dir, 'output', 'selected_guidelines.json'), JSON.stringify({
+    schemaVersion: 2,
+    queue: [
+      { id: 'a', pmid: 'a', title: '검토 대기 지침', status: 'needsReview', priority: 99 },
+      { id: 'b', pmid: 'b', title: '실제로 나갈 지침', status: 'queued', priority: 5 },
+    ],
+    published: [], rejected: [],
+  }));
+
+  const p = new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review', repoPath: dir });
+  const out = await p._renderUpcomingFromDisk('<!-- ARCHIVE_START -->', '2026-08-17');
+  const block = out.match(/<!-- UPCOMING:guidelines -->[\s\S]*?<!-- \/UPCOMING:guidelines -->/)[0];
+  assert.ok(block.includes('실제로 나갈 지침'), '발행 대상이 예고에 없다');
+  assert.equal(block.includes('검토 대기 지침'), false,
+    '검토 대기 항목을 오늘 나간다고 예고했다 — 화면이 거짓말한다');
 });

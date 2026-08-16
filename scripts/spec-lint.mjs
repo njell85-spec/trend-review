@@ -152,18 +152,23 @@ if (!pub.includes('_applyCuration(updated')) {
   errors.push('src/utils/GitHubPublisher.js: publish 경로의 큐레이션 적용(_applyCuration) 소실 (REPORT_SPEC §4-G)');
 }
 
-// ── 5f) 페이지 2분할(§4-H) 앵커 ──────────────────────────────────────────────
+// ── 5f) 페이지 3분할(§4-H) 앵커 ──────────────────────────────────────────────
 // 이 검사군이 잡는 것은 "조용히 망가지는" 세 가지다:
-//  ① merge/split 배선이 빠지면 guidelines.html 이 갱신을 멈춘 채 방치된다(초록 실패).
+//  ① merge/split 배선이 빠지면 하위 페이지가 갱신을 멈춘 채 방치된다(초록 실패).
 //  ② 논문 행에 속성이 하나라도 늘면 같은-날짜 행 교체 정규식이 깨져 행이 중복 누적된다.
-//  ③ push/API 폴백 목록에서 guidelines.html 이 빠지면 두 페이지가 어긋나고,
-//     다음 실행의 merge 가 낡은 가이드 페이지를 합쳐 지운 카드를 되살린다.
+//  ③ push/API 폴백 목록에서 페이지가 빠지면 세 페이지가 어긋나고, 다음 실행의 merge 가
+//     낡은 페이지를 합쳐 지운 카드를 되살린다. 2026-08-16 에 `reviews.html` 과 트랙 큐가
+//     실제로 그 목록에서 빠져 있었다 — **push 는 성공으로 끝난다.**
 const splitSrc = read('src/utils/pageSplit.js');
 if (!pub.includes('mergePages(') || !pub.includes('splitPages(')) {
   errors.push('src/utils/GitHubPublisher.js: publish 의 페이지 2분할 배선(mergePages/splitPages) 소실 (REPORT_SPEC §4-H)');
 }
-if (!/const files = \[[^\]]*'guidelines\.html'/.test(pub) || !pub.includes("_putFileViaApi('guidelines.html'")) {
-  errors.push('src/utils/GitHubPublisher.js: guidelines.html 이 push/API 폴백 목록에서 누락 — 두 페이지 어긋남 (REPORT_SPEC §4-H)');
+const runnerList = pub.match(/RUNNER_FILES\s*=\s*Object\.freeze\(\[([\s\S]*?)\]\)/)?.[1] ?? '';
+const missingPages = ['index.html', 'guidelines.html', 'reviews.html',
+  'output/queue_papers.json', 'output/queue_reviews.json']
+  .filter((f) => !runnerList.includes(`'${f}'`));
+if (missingPages.length || !pub.includes("_putFileViaApi('guidelines.html'") || !pub.includes("_putFileViaApi('reviews.html'")) {
+  errors.push(`src/utils/GitHubPublisher.js: push/API 폴백 목록에서 누락 [${missingPages.join(', ') || 'API 폴백'}] — 세 페이지 어긋남 (REPORT_SPEC §4-H)`);
 }
 // 논문 행에 마커를 붙이지 않는다는 계약 — markRow 의 조기 반환이 그 계약의 구현체다.
 if (!/kind === 'paper'\) return row/.test(splitSrc)) {

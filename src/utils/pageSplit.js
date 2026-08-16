@@ -1,8 +1,18 @@
 /**
- * pageSplit — 배포 페이지 2분할 (REPORT_SPEC §4-H · 스펙 §5.5-B)
+ * pageSplit — 배포 페이지 3분할 (REPORT_SPEC §4-H · 스펙 §5.5-B)
  *
- *   index.html        ① 논문 (데일리 코어)
- *   guidelines.html   ② 가이드라인 및 기타 (안에서 📋/🔖 섹션 분리)
+ *   index.html        ① 논문 (데일리 코어)          SECTION:  · data-kind=paper
+ *   guidelines.html   ② 가이드라인                   GSECTION: · data-kind=guideline
+ *   reviews.html      ③ 리뷰 · 기타                  RSECTION: · data-kind=review
+ *                                                   GSECTION(🔖) · data-kind=reference
+ *
+ * ★ 2 → 3 분할 (PeterJ 요구 ① · 2026-08-16). "기타" 가 가이드라인 쪽에서 리뷰 쪽으로
+ *   옮겨간다. **마이그레이션은 공짜다**: `reviews.html` 이 없으면 merge 가 무시하고,
+ *   split 이 기존 `guidelines.html` 의 기타 카드·행을 리뷰 페이지로 옮긴다.
+ *
+ * ★ 3분할의 진짜 함정은 **마커가 어느 파일에 있는지가 바뀐다는 것**이다. 지난 세션에
+ *   정확히 이걸로 헛검사가 났다(`data-guideline` 이 index.html 엔 0개 → `0 >= 0` 이라
+ *   행을 통째로 지우는 변이가 초록이었다). `test/threePageNoLoss.test.mjs` 가 못이다.
  *
  * ★ 왜 순수 함수인가 — `publish()` 는 단일 index.html 증분 패처이고, 그 안에는
  *   4주간 잡아온 로직이 쌓여 있다(지침 중복 제거·TODAY 강등·행 dedup·큐레이션 재적용).
@@ -26,9 +36,15 @@ const ROWS_END = '<!-- TABLE_ROWS_END -->';
 // 하드코딩본은 블록을 못 찾아 guidelines 쪽에 현황 블록이 그대로 남는다(§4-H 5 위반).
 const STATUS_BLOCK_RE = /<!-- ARCHIVE_STATUS(?: v\d+)? -->[\s\S]*?<!-- \/ARCHIVE_STATUS -->/;
 
-const SEC_RE = /<!-- (G?SECTION):([^\s>]+) -->[\s\S]*?<!-- \/\1:\2 -->/g;
+const SEC_RE = /<!-- ([GR]?SECTION):([^\s>]+) -->[\s\S]*?<!-- \/\1:\2 -->/g;
 const ROW_RE = /<tr data-pmid="([^"]*)"[^>]*>[\s\S]*?<\/tr>/g;
 const ROW_KIND_RE = /<tr[^>]*\sdata-kind="([^"]*)"/;
+/** 트랙별 예고 블록. split 이 이걸 보고 각자의 페이지 맨 위로 옮긴다. */
+const UP_RE = /\n?<!-- UPCOMING:([a-z]+) -->[\s\S]*?<!-- \/UPCOMING:\1 -->/g;
+/** 트랙 없는 구버전 블록(2026-08-16 이전 배포본). 보이면 걷어낸다. */
+const UP_LEGACY_RE = /\n?<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g;
+/** 어느 페이지가 어느 트랙 예고를 갖는가. */
+const PAGE_TRACK = { papers: 'papers', guides: 'guidelines', reviews: 'reviews' };
 
 /** 타워 톤 (tower-home · tower-plan · master-plan 공통 디자인 언어) */
 export const TOWER_TONE = `<style id="tower-tone">
@@ -116,6 +132,12 @@ details{border-radius:24px}
 .c-date{color:var(--t-ink3)}
 .c-jour{color:var(--t-ink2)}
 .c-title a{color:var(--t-ink)}
+/* 누적 표 접힘 토글 — 헤더가 그대로 summary 가 된다(요구 ⑤) */
+.arch-fold{border-radius:22px}
+.arch-fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.arch-fold>summary::-webkit-details-marker{display:none}
+.arch-fold>summary::after{content:'▾';color:var(--t-ink3);font-size:12px;transition:transform .15s ease}
+.arch-fold[open]>summary::after{transform:rotate(180deg)}
 .tempty{margin:8px 18px 0;padding:18px;text-align:center;font-size:13px;color:var(--t-ink3);
   background:rgba(255,255,255,.28);border:1px dashed rgba(150,142,133,.5);border-radius:22px}
 .ft{color:var(--t-ink3)}
@@ -123,12 +145,13 @@ details{border-radius:24px}
 </style>`;
 
 /** 두 페이지가 공유하는 탭 바. 현재 페이지만 활성 — 한쪽이 하위 링크로 보이지 않게. */
-export function pageNav(active, { papers = 0, guidelines = 0, others = 0 } = {}) {
+export function pageNav(active, { papers = 0, guidelines = 0, others = 0, reviews = 0 } = {}) {
   const tab = (href, on, label, sub) =>
     `<a href="${href}"${on ? ' class="on" aria-current="page"' : ''}><span>${label}</span><span class="sub">${sub}</span></a>`;
   return `<nav class="pgnav">
   ${tab('index.html', active === 'papers', '📄 논문', `${papers}편`)}
-  ${tab('guidelines.html', active === 'guides', '📋 가이드라인 · 기타', `${guidelines} · ${others}건`)}
+  ${tab('guidelines.html', active === 'guides', '📋 가이드라인', `${guidelines}건`)}
+  ${tab('reviews.html', active === 'reviews', '📰 리뷰 · 기타', `${reviews} · ${others}건`)}
 </nav>
 `;
 }
@@ -140,13 +163,15 @@ function classifySections(body) {
   const papers = [];
   const guidelines = [];
   const others = [];
+  const reviews = [];
   for (const m of body.matchAll(SEC_RE)) {
     if (m[1] === 'SECTION') papers.push(m[0]);
+    else if (m[1] === 'RSECTION') reviews.push(m[0]);
     // 참고자료 카드는 '🔖 참고자료' 칩을 단다(_buildGuidelineCard 의 isRef 분기).
     else if (m[0].includes('🔖 참고자료')) others.push(m[0]);
     else guidelines.push(m[0]);
   }
-  return { papers, guidelines, others };
+  return { papers, guidelines, others, reviews };
 }
 
 /**
@@ -158,17 +183,19 @@ function classifyRows(rowsHtml, refIds) {
   const paper = [];
   const guideline = [];
   const reference = [];
+  const review = [];
   for (const m of rowsHtml.matchAll(ROW_RE)) {
     const row = m[0];
     const kind = row.match(ROW_KIND_RE)?.[1];
     if (kind === 'reference') reference.push(row);
+    else if (kind === 'review') review.push(row);
     else if (kind === 'guideline') guideline.push(row);
     else if (kind === 'paper') paper.push(row);
     else if (!row.includes('data-guideline')) paper.push(row);
     else if (refIds?.has(m[1])) reference.push(row);
     else guideline.push(row);
   }
-  return { paper, guideline, reference };
+  return { paper, guideline, reference, review };
 }
 
 /**
@@ -219,13 +246,24 @@ function fixRefSection(block) {
   );
 }
 
+/**
+ * 누적 표. **접힘이 기본이다** (PeterJ 요구 ⑤ · 2026-08-16).
+ *
+ * ★ `<details>` 를 `.arch-table` **바깥**에 두지 않고 그 자리에 그대로 씌운다 —
+ *   `splitPages` 가 `<div class="arch-table">` 로 표 시작점을 찾고 `endOfTableContainer`
+ *   가 div 균형으로 끝점을 찾기 때문이다. 밖에 씌우면 그 계산이 어긋나 표가 통째로
+ *   복제되거나 `</div>` 가 엇갈린다(리뷰 실측으로 이미 한 번 난 사고다).
+ *   그래서 details 는 `.arch-table` **안쪽 맨 위**에 들어간다.
+ */
 function tableHtml(title, count, unit, rows) {
   return `  <div class="arch-table">
-    <div class="at-head"><span class="at-title">${title}</span><span class="at-count">${count}${unit}</span></div>
+    <details class="arch-fold">
+    <summary class="at-head"><span class="at-title">${title}</span><span class="at-count">${count}${unit}</span></summary>
     <div class="at-scroll"><table>
       <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
       <tbody>${ROWS_START}${rows.join('')}${ROWS_END}</tbody>
     </table></div>
+    </details>
   </div>
 `;
 }
@@ -275,6 +313,18 @@ function endOfTableContainer(html, start) {
   return -1;
 }
 
+/**
+ * 모든 카드를 접는다 (PeterJ 요구 ③ · 2026-08-16 — **오늘 논문 포함**).
+ *
+ * ★ 새로 만드는 카드는 `_buildSection`/`_buildGuidelineSection` 이 이미 `open` 없이
+ *   낸다. 그런데 **배포본에는 지난 실행이 남긴 `open` 이 그대로 있다** — 증분 패치라
+ *   과거 카드는 다시 만들어지지 않기 때문이다. 그래서 여기서 한 번 걷는다.
+ * ★ `day-today` / `day-past` 클래스는 건드리지 않는다. 접힘만 바꾸고 시각적 강조는 둔다.
+ */
+export function collapseAllCards(html) {
+  return String(html).replace(/<details open class="day/g, '<details class="day');
+}
+
 /** 타워 톤을 </head> 직전에(원본 스타일 뒤에) 얹는다. 이미 있으면 그대로. */
 export function ensureTowerTone(html) {
   if (!html || html.includes('id="tower-tone"')) return html;
@@ -284,19 +334,33 @@ export function ensureTowerTone(html) {
 // ── 공개 API ─────────────────────────────────────────────────────────────────
 
 /**
- * 두 페이지를 단일 본문으로 합친다(기존 publish 로직이 볼 입력).
- * guidelines 가 없으면(첫 실행·읽기 실패) index 를 그대로 돌려준다 — 그 자체가
- * 마이그레이션 경로다(구 index.html 은 이미 가이드·기타를 다 품고 있다).
+ * 세 페이지를 단일 본문으로 합친다(기존 publish 로직이 볼 입력).
+ *
+ * 없는 페이지는 그냥 건너뛴다 — 그 자체가 **마이그레이션 경로**다.
+ *   · guidelines 도 reviews 도 없으면 구 index.html 하나가 전부를 품고 있다.
+ *   · reviews 만 없으면 guidelines.html 이 가이드+기타를 품고 있고, split 이 가른다.
  */
-export function mergePages(indexHtml, guidelinesHtml) {
+export function mergePages(indexHtml, guidelinesHtml, reviewsHtml) {
   if (!indexHtml) return indexHtml;
-  if (!guidelinesHtml || !guidelinesHtml.includes(A_START)) return indexHtml;
 
-  const { guidelines, others } = classifySections(guidelinesHtml);
-  const gBlocks = [...guidelines, ...others];
-  const gRows = classifyRows(rowsRegion(guidelinesHtml), null);
+  // ★ 예고 블록은 **매 실행 재생성**된다. 병합 입력에서 통째로 걷어낸다 —
+  //   안 걷으면 guidelines/reviews 쪽 블록이 index 본문에 섞여 들어와 한 페이지에
+  //   같은 트랙 블록이 둘씩 남는다.
+  const strip = (h) => String(h ?? '').replace(UP_RE, '').replace(UP_LEGACY_RE, '');
 
-  let out = indexHtml;
+  let out = strip(indexHtml);
+  const gBlocks = [];
+  const gRows = [];
+
+  for (const page of [guidelinesHtml, reviewsHtml]) {
+    if (!page || !page.includes(A_START)) continue;
+    const cleaned = strip(page);
+    const { guidelines, others, reviews } = classifySections(cleaned);
+    gBlocks.push(...guidelines, ...reviews, ...others);
+    const r = classifyRows(rowsRegion(cleaned), null);
+    gRows.push(...r.guideline, ...r.review, ...r.reference);
+  }
+
   // 카드: .archive 영역 끝(누적 표 직전)에 붙인다. 그룹 내 상대 순서는 보존된다.
   if (gBlocks.length) {
     const iTable = out.indexOf(T_OPEN);
@@ -310,39 +374,56 @@ export function mergePages(indexHtml, guidelinesHtml) {
     }
   }
   // 행: index 표의 끝에 붙인다.
-  const merged = [...gRows.guideline, ...gRows.reference];
-  if (merged.length && out.includes(ROWS_END)) {
+  if (gRows.length && out.includes(ROWS_END)) {
     // 함수형 replacer 필수 — 보관된 행 HTML 에 `$&`·`` $` `` 가 있으면 문자열
     // 치환은 그걸 특수 패턴으로 해석해 본문을 망가뜨린다(esc() 도 못 막는다).
-    out = out.replace(ROWS_END, () => `${merged.join('')}${ROWS_END}`);
+    out = out.replace(ROWS_END, () => `${gRows.join('')}${ROWS_END}`);
   }
   return out;
 }
 
 /**
- * 병합 본문을 두 페이지로 가른다.
+ * 병합 본문을 세 페이지로 가른다.
  * @param {string} html   병합 본문(= 기존 publish 로직을 통과한 index 형태 페이지)
- * @param {{refIds?:Set<string>, pagesUrl?:string, needsReview?:Array<object>}} opts
- * @returns {{index:string, guidelines:string, counts:object}}
+ * @param {{refIds?:Set<string>, needsReview?:Array<object>}} opts
+ * @returns {{index:string, guidelines:string, reviews:string, counts:object}}
  */
 export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
   if (!html || !html.includes(A_START) || !html.includes(T_OPEN)) {
     // 스캐폴드가 아니면 가르지 않는다(소프트) — 원본을 그대로 index 로 둔다.
-    return { index: html, guidelines: null, counts: null };
+    return { index: html, guidelines: null, reviews: null, counts: null };
   }
-  const themed = ensureTowerTone(html);
+  // ★ 카드 접힘 정규화는 **가르기 전에** 한 번만 한다(요구 ③ — 오늘 논문 포함).
+  const themed = collapseAllCards(ensureTowerTone(html));
 
   const iArch = themed.indexOf(A_START);
   const iTable = themed.indexOf(T_OPEN);
   const iTableEnd = endOfTableContainer(themed, iTable);
-  if (iTableEnd < 0) return { index: html, guidelines: null, counts: null }; // 소프트
+  if (iTableEnd < 0) return { index: html, guidelines: null, reviews: null, counts: null }; // 소프트
   // 탭은 여기서 한 번 걷어낸다 — 아래 통계 교체가 그 다음이어야 한다(위 stripNav 주석).
-  const headRaw = stripNav(themed.slice(0, iArch + A_START.length));
+  let headRaw = stripNav(themed.slice(0, iArch + A_START.length));
   const sectionsRaw = themed.slice(iArch + A_START.length, iTable);
   const afterTable = themed.slice(iTableEnd);
 
+  // ★ 예고 블록을 트랙별로 걷어내 보관한다. 각 페이지에 **자기 것만** 다시 넣는다
+  //   (PeterJ 요구 ② — 각 페이지 맨 위에 그 트랙 예고와 그 버튼).
+  const upByTrack = new Map();
+  for (const m of headRaw.matchAll(UP_RE)) upByTrack.set(m[1], m[0]);
+  headRaw = headRaw.replace(UP_RE, '').replace(UP_LEGACY_RE, '');
+
+  /** 그 페이지가 맡은 예고 블록을 ARCHIVE_START 바로 앞(= 카드 위)에 넣는다. */
+  const withUpcoming = (head, page) => {
+    const block = upByTrack.get(PAGE_TRACK[page]);
+    if (!block) return head;
+    return head.replace(A_START, () => `${block}\n${A_START}`);
+  };
+
   const mClose = sectionsRaw.match(/\s*<\/div>\s*$/);
-  const archiveClose = mClose ? mClose[0] : '\n  </div>\n';
+  // ★ 닫는 태그 주변 공백은 **정규화한다.** 원본을 그대로 물려주면 그 뒤에 오는
+  //   `tableHtml()` 이 자기 들여쓰기를 또 붙여, **왕복마다 공백이 2칸씩 쌓인다.**
+  //   매일 도는 경로라 파일이 무한히 자라고, 바이트로 무손실을 재는 검사가 늘 "늘었다" 로
+  //   흔들린다(2026-08-16 실측: 렌더를 돌릴 때마다 정확히 +4바이트).
+  const archiveClose = '\n  </div>\n';
   const sectionsBody = mClose ? sectionsRaw.slice(0, mClose.index) : sectionsRaw;
 
   const sec = classifySections(sectionsBody);
@@ -352,26 +433,27 @@ export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
     papers: sec.papers.length,
     guidelines: sec.guidelines.length,
     others: sec.others.length,
+    reviews: sec.reviews.length,
     paperRows: rows.paper.length,
     guidelineRows: rows.guideline.length,
     referenceRows: rows.reference.length,
+    reviewRows: rows.review.length,
   };
 
   // ── ① index.html (논문) ──
   const indexOut =
-    withNav(headRaw, pageNav('papers', counts)) +
+    withUpcoming(withNav(headRaw, pageNav('papers', counts)), 'papers') +
     sec.papers.join('\n') +
     archiveClose +
     tableHtml('📚 논문 누적', rows.paper.length, '편', rows.paper.map((r) => markRow(r, 'paper'))) +
     afterTable;
 
-  // ── ② guidelines.html (가이드라인 및 기타) ──
-  // 히어로·탭·스타일·위젯을 그대로 재사용하는 것이 '대등한 병렬 페이지'의 실체다.
+  // 히어로·탭·스타일·위젯을 그대로 재사용하는 것이 '대등한 병렬 페이지' 의 실체다.
   // 통계 3칸만 자기 것으로 바꾼다. (stat-*-count 클래스는 index 전용이므로 떼어낸다 —
-  // publish() 의 통계 갱신 정규식이 guidelines 쪽을 건드리지 않게.)
-  const gStats = `<div class="stats">
-    <div class="sc"><div class="n">${counts.guidelines}</div><div class="l">가이드라인</div></div>
-    <div class="sc"><div class="n">${counts.others}</div><div class="l">기타 자료</div></div>
+  // publish() 의 통계 갱신 정규식이 다른 페이지를 건드리지 않게.)
+  const statsBlock = (a, b) => `<div class="stats">
+    <div class="sc"><div class="n">${a[1]}</div><div class="l">${a[0]}</div></div>
+    <div class="sc"><div class="n">${b[1]}</div><div class="l">${b[0]}</div></div>
     <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="g-updated">${extractUpdated(themed)}</span></div><div class="l">최종 업데이트</div></div>
   </div>
   <div class="archive">`;
@@ -379,28 +461,47 @@ export function splitPages(html, { refIds = null, needsReview = [] } = {}) {
   // ⚠ 통계 교체는 **탭 주입 전**에 해야 한다 — 주입 후엔 `.stats` 뒤가 <nav> 라
   //   앵커(`<div class="archive">`)가 안 맞아 원본 카드가 남는다(미리보기에서 실측).
   const gStatsRe = /<div class="stats">[\s\S]*?<\/div>\s*<div class="archive">/;
-  const gHeadBase = gStatsRe.test(headRaw) ? headRaw.replace(gStatsRe, () => gStats) : headRaw;
+  const headWith = (stats) => (gStatsRe.test(headRaw) ? headRaw.replace(gStatsRe, () => stats) : headRaw);
 
-  const gHead = withNav(gHeadBase, pageNav('guides', counts))
-    .replace('<title>EM/CCM Trend Review</title>', '<title>가이드라인 및 기타 — EM/CCM Trend Review</title>')
-    .replace(
-      /<div class="fn">[\s\S]*?<\/div>\s*<\/header>/,
-      '<div class="fn">공식 가이드라인 캐치업 · 직접 지정 참고자료</div>\n  </header>',
-    );
+  const retitle = (head, title, fn) => head
+    .replace('<title>EM/CCM Trend Review</title>', `<title>${title} — EM/CCM Trend Review</title>`)
+    .replace(/<div class="fn">[\s\S]*?<\/div>\s*<\/header>/, `<div class="fn">${fn}</div>\n  </header>`);
+
+  // ── ② guidelines.html (가이드라인) ──
+  const gHead = withUpcoming(
+    retitle(withNav(headWith(statsBlock(['가이드라인', counts.guidelines], ['누적 행', counts.guidelineRows])),
+      pageNav('guides', counts)), '가이드라인', '공식 발행기관의 진료지침 캐치업'),
+    'guides',
+  );
 
   const guidelinesOut =
     gHead +
     reviewBox(needsReview) +
     secHead('📋', '가이드라인', counts.guidelines, '공식 발행기관의 진료지침 — 캐치업 큐에서 순차 소개') +
     (sec.guidelines.length ? sec.guidelines.join('\n') : emptyBox('아직 소개된 가이드라인이 없습니다.')) +
+    archiveClose +
+    tableHtml('📋 가이드라인 누적', rows.guideline.length, '건', rows.guideline.map((r) => markRow(r, 'guideline'))) +
+    stripArchiveStatus(afterTable);
+
+  // ── ③ reviews.html (리뷰 · 기타) ──
+  const rHead = withUpcoming(
+    retitle(withNav(headWith(statsBlock(['리뷰', counts.reviews], ['기타 자료', counts.others])),
+      pageNav('reviews', counts)), '리뷰 및 기타', '주요 저널 리뷰 아티클 · 직접 지정 참고자료'),
+    'reviews',
+  );
+
+  const reviewsOut =
+    rHead +
+    secHead('📰', '리뷰', counts.reviews, '주요 저널의 리뷰 아티클 — 저수지에서 순차 소개') +
+    (sec.reviews.length ? sec.reviews.join('\n') : emptyBox('아직 소개된 리뷰가 없습니다.')) +
     secHead('🔖', '기타 자료', counts.others, '직접 지정한 참고자료 — 공인 문서가 아닐 수 있습니다(카드의 “출처 성격” 참고)') +
     (sec.others.length ? sec.others.map(fixRefSection).join('\n') : emptyBox('아직 등록된 기타 자료가 없습니다.')) +
     archiveClose +
-    tableHtml('📋 가이드라인 누적', rows.guideline.length, '건', rows.guideline.map((r) => markRow(r, 'guideline'))) +
+    tableHtml('📰 리뷰 누적', rows.review.length, '건', rows.review.map((r) => markRow(r, 'review'))) +
     tableHtml('🔖 기타 자료 누적', rows.reference.length, '건', rows.reference.map((r) => markRow(r, 'reference'))) +
     stripArchiveStatus(afterTable);
 
-  return { index: indexOut, guidelines: guidelinesOut, counts };
+  return { index: indexOut, guidelines: guidelinesOut, reviews: reviewsOut, counts };
 }
 
 function reviewBox(items) {

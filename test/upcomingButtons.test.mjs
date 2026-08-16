@@ -1,19 +1,29 @@
 import { test } from 'node:test';
+import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { GitHubPublisher } from '../src/utils/GitHubPublisher.js';
+
+// ★ 3페이지 재구성(2026-08-16)으로 `_renderUpcoming` 이 **트랙 하나씩** 그리도록 바뀌었다.
+//   각 페이지가 자기 트랙 블록만 맨 위에 들어야 하기 때문이다(PeterJ 요구 ②).
+//   기존 테스트는 트랙 배열을 한 번에 넘겼으므로, 여기서 접어서 같은 뜻으로 만든다.
+const renderAll = (pub, html, { from, days, tracks = [], sequential = false }) =>
+  tracks.reduce((acc, t) => pub._renderUpcoming(acc, {
+    from, days, sequential,
+    track: t.key, label: t.label, cadence: t.cadence, mode: t.mode, state: t.state,
+  }), html);
 
 // 버튼 동작 스크립트. 브라우저에서만 도는 코드라 유닛 테스트로는 **문자열을 검사**한다 —
 // 위젯 테스트(onDemandWidget.test.mjs)가 쓰는 것과 같은 방식이다.
 // 여기서 막고 싶은 것은 셋이다: ①PAT 를 화면·URL 에 흘리는 것 ②워크플로 이름 오타로
 // 버튼이 조용히 아무것도 안 하는 것 ③시각을 분 단위로 커밋해 생활 패턴이 쌓이는 것.
 
-const script = () => new GitHubPublisher()._upcomingScript();
+const script = () => new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' })._upcomingScript({ owner: 'njell85-spec', repo: 'trend-review' });
 
 test('★ 버튼 속성명과 스크립트가 읽는 키가 정확히 대응한다', () => {
   // 렌더는 `data-up-run` 을 쓰고 스크립트는 `dataset.upRun` 을 읽는다. 둘 중 한쪽만
   // 고치면 버튼이 **조용히 아무것도 안 한다** — 에러도 안 난다. 그래서 양쪽을 같이 본다.
   const s = script();
-  const rendered = new GitHubPublisher()._renderUpcoming('<!-- ARCHIVE_START -->', {
+  const rendered = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), '<!-- ARCHIVE_START -->', {
     from: '2026-08-16', days: 1,
     tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on',
       state: { queue: [{ pmid: '1', title: 't', score: 1 }] } }],
@@ -33,10 +43,41 @@ test('★ PAT 는 localStorage 에서만 읽고 URL 에 싣지 않는다', () =>
   assert.ok(s.includes('Authorization'), '헤더로 보내야 한다');
 });
 
-test('★ 워크플로 파일명이 실재하는 것과 일치한다 (오타면 버튼이 조용히 죽는다)', () => {
+/**
+ * ★ 이 검사가 종전에는 **파일명 문자열만** 봤다. 그래서 2026-08-16 배포에서
+ *   버튼 세 개가 전부 죽어 있었는데도 초록이었다:
+ *     ▶  on-demand.yml 에 {pmid, mode} 를 보냈다 — 받는 이름은 {target, kind} 다(422).
+ *     🗑  curate-remove.yml 에 pmid 를 sectionKey 로 보냈다 — 그건 발행된 섹션을
+ *         숨기는 워크플로라 아직 발행 전인 큐 항목과는 무관하다.
+ *     ♻  '__UPCOMING_RESET__' 를 보냈는데 그 문자열을 아는 코드가 저장소에 없었다.
+ *   파일명이 맞는 것과 **받는 쪽이 그 입력을 아는 것**은 다른 말이다. 이제 둘 다 본다.
+ */
+function workflowInputs(file) {
+  const src = readFileSync(new URL(`../.github/workflows/${file}`, import.meta.url), 'utf8');
+  const block = src.slice(src.indexOf('inputs:'), src.indexOf('permissions:'));
+  return new Set([...block.matchAll(/^      ([a-zA-Z]\w*):$/gm)].map((m) => m[1]));
+}
+
+test('★ 버튼이 부르는 워크플로가 실재하고, 보내는 입력을 그 워크플로가 받는다', () => {
   const s = script();
-  assert.ok(s.includes('curate-remove.yml'), '삭제가 기존 워크플로를 써야 한다');
-  assert.ok(s.includes('on-demand.yml'), '구동이 기존 워크플로를 써야 한다');
+  // 스크립트가 fire(...) 로 부르는 것을 전부 뽑아 실물 계약과 대조한다.
+  const calls = [...s.matchAll(/fire\('([^']+)',\{([^}]*)\}/g)]
+    .map((m) => ({ wf: m[1], keys: [...m[2].matchAll(/(\w+)\s*:/g)].map((k) => k[1]) }));
+  assert.ok(calls.length >= 3, `버튼 호출이 너무 적다 (${calls.length}개) — 배선이 빠졌다`);
+
+  for (const { wf, keys } of calls) {
+    const declared = workflowInputs(wf);   // 파일이 없으면 여기서 던진다 = 오타 검출
+    for (const k of keys) {
+      assert.ok(declared.has(k),
+        `${wf} 는 '${k}' 입력을 받지 않는다 (받는 것: ${[...declared].join(', ')}) — 버튼이 422 로 조용히 죽는다`);
+    }
+  }
+});
+
+test('★ 삭제·갈아엎기는 큐를 실제로 고치는 경로를 쓴다', () => {
+  const s = script();
+  assert.ok(s.includes('queue-control.yml'), '큐를 고치는 워크플로를 안 부른다');
+  assert.ok(s.includes('on-demand.yml'), '지금 실행이 on-demand 를 안 부른다');
 });
 
 test('★ 제어 상태는 날짜까지만 기록한다 — public repo 에 분 단위가 쌓이면 생활 패턴이 된다', () => {
@@ -61,7 +102,7 @@ test('갈아엎기는 되돌릴 수 없으므로 확인을 받는다', () => {
 });
 
 test('스크립트가 페이지에 실제로 들어간다', () => {
-  const out = new GitHubPublisher()._renderUpcoming('<!-- ARCHIVE_START -->', {
+  const out = renderAll(new GitHubPublisher({ owner: 'njell85-spec', repo: 'trend-review' }), '<!-- ARCHIVE_START -->', {
     from: '2026-08-16', days: 1,
     tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on',
       state: { queue: [{ pmid: '1', title: 't', score: 1 }] } }],

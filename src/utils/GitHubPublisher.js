@@ -16,6 +16,48 @@ import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
 import { impactFactorLabel } from './journalMeta.js';
 import { buildUpcoming } from './upcomingSchedule.js';
+import { cadenceFor } from './trackCadence.js';
+import { kstDateStr } from './dates.js';
+import { TRACKS as UPCOMING_TRACKS } from './controlState.js';
+
+/**
+ * 예고 블록 전용 스타일.
+ *
+ * ★ **블록 안에 같이 넣는다.** 대시보드 CSS 는 index.html 에 있고 이 블록은 교체식으로
+ *   끼워지므로, 밖에 두면 블록만 갱신될 때 스타일이 따라오지 않는다. 미리보기에서 실제로
+ *   **스타일 없는 맨몸**으로 나온 자리다(2026-08-16, push 전에 잡았다).
+ * ★ 클래스명은 마크업과 1:1 이어야 한다. 과거 CSS 는 `.up-row`/`.up-modes` 인데 마크업은
+ *   `up-item`/`up-toggles` 라 **행 스타일이 통째로 안 먹었고 테스트는 전부 초록이었다.**
+ *   `test/upcomingRender.test.mjs` 가 그 대응을 검사한다.
+ */
+const UPCOMING_STYLE = `<style>
+.upcoming{margin:16px 0;font-size:14px}
+.up-h{font-size:15px;margin:0 0 8px;font-weight:600}
+.up-h small{display:block;font-weight:400;color:#6b7280;font-size:12px;margin-top:2px}
+.up-toggles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.up-toggle{border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}
+.up-toggle[data-up-mode=off]{background:#f3f4f6;color:#9ca3af;text-decoration:line-through}
+.up-toggle[data-up-mode=alternate]{border-style:dashed}
+.up-day{margin:10px 0 4px;font-weight:600;color:#374151;font-size:13px}
+.upcoming ul{list-style:none;margin:0;padding:0}
+.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 0;border-bottom:1px solid #f0f1f3}
+.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#eef2ff;color:#4338ca;white-space:nowrap}
+.up-title{flex:1 0 100%;line-height:1.5}
+.up-journal{flex:1 1 auto;font-size:11px;color:#6b7280;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-warn{color:#d97706;margin-left:3px}
+.up-btn{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:6px;
+  min-width:34px;min-height:34px;font-size:13px;cursor:pointer}
+.up-empty{color:#9ca3af;padding:8px 0}
+.up-date{font-weight:600;color:#374151;font-size:13px;margin:12px 0 2px}
+.up-list{list-style:none;margin:0;padding:0}
+.up-note{color:#6b7280;font-size:12px;margin-top:10px}
+.up-msg{font-size:12px;color:#6b7280;min-height:16px;margin-top:6px}
+.up-reset{margin-top:10px;border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
+@media(prefers-color-scheme:dark){
+ .up-toggle,.up-btn{background:#1f2937;border-color:#374151;color:#e5e7eb}
+ .up-day{color:#d1d5db}.up-item{border-color:#374151}
+ .up-track{background:#312e81;color:#c7d2fe}}
+</style>`;
 import { normalizeControl } from './controlState.js';
 
 const API = 'https://api.github.com';
@@ -273,11 +315,38 @@ export class GitHubPublisher {
    * ★ 제어 상태의 시각은 **날짜까지만** 남긴다. 이 저장소는 public 이라 분 단위 토글 시각이
    * 쌓이면 생활 패턴 시계열이 회수 불가로 공개 히스토리에 남는다.
    */
-  _upcomingScript() {
-    return `<!-- UPBTN v1 -->
+  /**
+   * 페이지 스크립트가 쓸 `owner/repo` 를 정한다.
+   *
+   * ★ 왜 이게 따로 필요한가 — 생성자는 `owner = process.env.GITHUB_OWNER` 다. 러너 밖에서
+   *   렌더하면 env 가 비어 **`var OWNER='undefined'` 가 라이브 스크립트에 그대로 구워진다.**
+   *   2026-08-16 PR #108 배포에서 실제로 일어났고, 예고 리스트의 ▶·🗑·토글·갈아엎기가
+   *   `api.github.com/repos/undefined/undefined` 로 가서 전부 조용히 죽어 있었다.
+   *   같은 페이지의 ONDEMAND_WIDGET·CURATION_BLOCK 이 멀쩡했던 것은 실력이 아니라
+   *   **그 둘은 없을 때만 삽입되고 예고 블록만 매번 재생성**되기 때문이다.
+   *
+   * 순서: 생성자 값 → `GITHUB_REPOSITORY`(Actions 가 항상 준다) → **이미 배포된 페이지에
+   * 남아 있는 올바른 식별자**. 셋 다 실패하면 null 을 돌려주고, 호출부는 스크립트를
+   * 아예 굽지 않는다 — 죽은 버튼을 내보내느니 버튼이 없는 편이 정직하다.
+   */
+  _scriptIdent(html = '') {
+    const ok = (v) => typeof v === 'string' && v && v !== 'undefined' && v !== 'null';
+    if (ok(this.owner) && ok(this.repo)) return { owner: this.owner, repo: this.repo };
+    const [envOwner, envRepo] = String(process.env.GITHUB_REPOSITORY ?? '').split('/');
+    if (ok(envOwner) && ok(envRepo)) return { owner: envOwner, repo: envRepo };
+    for (const m of String(html).matchAll(/var OWNER='([^']*)', REPO='([^']*)'/g)) {
+      if (ok(m[1]) && ok(m[2])) return { owner: m[1], repo: m[2] };
+    }
+    return null;
+  }
+
+  _upcomingScript(ident) {
+    // 식별자를 못 정하면 스크립트를 굽지 않는다 — 죽은 버튼보다 없는 버튼이 정직하다.
+    if (!ident) return '';
+    return `<!-- UPBTN v4 -->
 <script>
 (function(){
-  var OWNER='${this.owner}', REPO='${this.repo}';
+  var OWNER='${ident.owner}', REPO='${ident.repo}';
   var API='https://api.github.com/repos/'+OWNER+'/'+REPO;
   function pat(force){
     var t=localStorage.getItem('tr_pat');
@@ -327,15 +396,60 @@ export class GitHubPublisher {
       } else { say('✖ 전환 실패'+(r?' ('+r.status+')':'')); }
     }).catch(function(e){ say('✖ 통신 실패 — '+e.message); });
   }
+  // 순차진행 토글 — 트랙 토글과 같은 파일을 고치되 최상위 sequential 만 건드린다.
+  function toggleSeq(btn){
+    var t=pat(); if(!t){say('✖ 토큰이 없어 실행하지 못했습니다.');return;}
+    var next=(btn.dataset.upSeq!=='on');
+    var path='output/control_state.json';
+    var H={Authorization:'Bearer '+t,Accept:'application/vnd.github+json','Content-Type':'application/json'};
+    say('⏳ 전환 중…');
+    fetch(API+'/contents/'+path,{headers:H}).then(function(r){
+      return r.status===200?r.json():null;
+    }).then(function(cur){
+      var state={schemaVersion:1,tracks:{}};
+      if(cur&&cur.content){ try{ state=JSON.parse(decodeURIComponent(escape(atob(cur.content.replace(/\\n/g,''))))); }catch(e){} }
+      state.sequential=next;
+      var body={message:'chore(control): sequential → '+(next?'on':'off'),
+        content:btoa(unescape(encodeURIComponent(JSON.stringify(state,null,2))))};
+      if(cur&&cur.sha)body.sha=cur.sha;
+      return fetch(API+'/contents/'+path,{method:'PUT',headers:H,body:JSON.stringify(body)});
+    }).then(function(r){
+      if(r&&(r.status===200||r.status===201)){
+        btn.dataset.upSeq=next?'on':'off';
+        btn.textContent='순차진행 · '+(next?'켜짐':'꺼짐');
+        say('✔ 순차진행 '+(next?'켜짐 — 논문→가이드라인→리뷰 하루 한 트랙':'꺼짐 — 세 트랙이 매일 각자')+' (다음 데일리부터)');
+      } else { say('✖ 전환 실패'+(r?' ('+r.status+')':'')); }
+    }).catch(function(e){ say('✖ 통신 실패 — '+e.message); });
+  }
+  // ★ 입력 이름은 **받는 워크플로의 계약** 그대로다. 종전 코드는 on-demand 에
+  //   {pmid,mode} 를 보냈는데 그 워크플로는 {target,kind} 를 받는다 — 422 로 튕겨
+  //   버튼이 조용히 죽어 있었다(실측). 여기를 고칠 때는 반드시
+  //   .github/workflows/*.yml 의 inputs 를 열어서 맞춰라.
+  // ★ 트랙마다 ▶ 의 뜻이 다르다 (코드리뷰 발견 B4).
+  //   논문·가이드라인은 on-demand 가 그 종류의 카드를 바로 만들 수 있다.
+  //   **리뷰는 못 만든다** — on-demand 는 kind=paper|guideline|reference 뿐이라
+  //   리뷰를 넘기면 index.html 에 '직접 지정 논문' 으로 올라가고 리뷰 페이지에는
+  //   아무것도 안 생기며 리뷰 큐도 그대로 남아 며칠 뒤 같은 논문이 리뷰로 또 나간다.
+  //   그래서 리뷰의 ▶ 는 **큐 머리로 올린다**(= 다음 데일리에 이것이 나간다).
+  var KIND={papers:'paper',guidelines:'guideline'};
   document.addEventListener('click',function(e){
     var b=e.target.closest?e.target.closest('button'):null; if(!b)return;
-    if(b.dataset.upRun){ fire('on-demand.yml',{pmid:b.dataset.upRun,mode:'paper'},'▶ 먼저 돌리기를 걸었습니다'); }
-    else if(b.dataset.upDrop){ fire('curate-remove.yml',{sectionKey:b.dataset.upDrop,tag:'SECTION',pmid:b.dataset.upDrop},'🗑 뺐습니다 — 다음 항목이 채웁니다'); }
+    if(b.dataset.upRun){
+      var tr=b.dataset.upTrack;
+      if(KIND[tr]){ fire('on-demand.yml',{target:b.dataset.upRun,kind:KIND[tr]},'▶ 지금 분석을 걸었습니다'); }
+      else { fire('queue-control.yml',{track:tr,action:'promote',id:b.dataset.upRun},'▶ 맨 앞으로 올렸습니다 — 다음 실행에 나갑니다'); }
+    }
+    else if(b.dataset.upDrop){
+      fire('queue-control.yml',{track:b.dataset.upTrack,action:'drop',id:b.dataset.upDrop},
+        '🗑 뺐습니다 — 다음 항목이 채웁니다');
+    }
     else if(b.dataset.upToggle){ toggle(b.dataset.upToggle,b.dataset.upMode||'on',b); }
+    else if(b.dataset.upSeq!==undefined){ toggleSeq(b); }
     else if(b.dataset.upReset){
       // 되돌릴 수 없으므로 반드시 묻는다.
-      if(confirm('지금 예고에 있는 항목을 전부 빼고 새로 채웁니다. 계속할까요?')){
-        fire('curate-remove.yml',{sectionKey:'__UPCOMING_RESET__',tag:'SECTION'},'♻ 전체를 갈아엎었습니다');
+      if(confirm('이 트랙의 예고를 전부 빼고 다음 수집이 새로 채우게 합니다. 계속할까요?')){
+        fire('queue-control.yml',{track:b.dataset.upReset,action:'reset',id:''},
+          '♻ 전체를 갈아엎었습니다');
       }
     }
   });
@@ -353,13 +467,34 @@ export class GitHubPublisher {
     return v.length > max ? `${v.slice(0, max - 1)}…` : v;
   }
 
-  _renderUpcoming(html, { from, days = 7, tracks = [] } = {}) {
-    const rows = buildUpcoming({ from, days, tracks });
+  /**
+   * 한 트랙의 예고 블록을 그린다. **트랙마다 자기 블록을 갖는다.**
+   *
+   * ★ 왜 트랙별로 갈랐나 (PeterJ 요구 ②) — 종전에는 세 트랙이 `index.html` 한 곳에
+   *   섞여 있었다. 3페이지 체제에서는 각 페이지가 **자기 트랙의 예고와 그 버튼만**
+   *   맨 위에 들고 있어야 한다. 그래서 마커를 `<!-- UPCOMING:papers -->` 처럼 트랙으로
+   *   가르고, `splitPages` 가 이 마커를 보고 제 페이지로 옮긴다.
+   *
+   * ★ **자기 블록만 갈아끼우고 나머지는 손대지 않는다.** 이 저장소는 렌더가 기존 내용을
+   *   통째로 지운 사고를 이미 냈다(GSECTION 8→7, 679KB→572KB, LLM 요약 소실).
+   *
+   * ★ 비어도 블록을 그린다. 조기 반환하면 큐가 마른 날 섹션이 통째로 사라져
+   *   "고장인지 빈 건지" 를 구분할 수 없고, **토글까지 사라져 꺼둔 트랙을 다시 켤 수
+   *   없어진다** — 이게 조기 반환의 진짜 위험이다.
+   */
+  _renderUpcoming(html, { from, days = 7, track, label = '', cadence = 'daily', mode = 'on', sequential = false, state = null } = {}) {
+    const key = String(track ?? '');
+    const rows = buildUpcoming({
+      from, days, sequential,
+      tracks: [{ key, label, cadence, mode, state: state ?? { queue: [] } }],
+    });
+
     // 이전 블록은 항상 먼저 걷어낸다 — 이게 멱등성의 전부다.
-    let out = String(html).replace(/\n?<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
-    // ★ 비어도 블록을 그린다. 조기 반환하면 큐가 마른 날 화면에서 예고 섹션이 통째로
-    //   사라져서 PeterJ는 "고장인지 빈 건지" 를 구분할 수 없다. 토글 버튼도 같이 사라져
-    //   **꺼둔 트랙을 다시 켤 방법이 없어진다** — 이게 조기 반환의 진짜 위험이다.
+    // 트랙 없는 구버전 마커(`<!-- UPCOMING -->`)도 같이 걷는다: 배포본에 그것이 남아
+    // 있는데 안 걷으면 세 트랙이 섞인 낡은 블록이 새 블록과 나란히 영원히 남는다.
+    let out = String(html)
+      .replace(new RegExp(`\\n?<!-- UPCOMING:${key} -->[\\s\\S]*?<!-- /UPCOMING:${key} -->`, 'g'), '')
+      .replace(/\n?<!-- UPCOMING -->[\s\S]*?<!-- \/UPCOMING -->/g, '');
 
     const byDate = new Map();
     for (const r of rows) {
@@ -371,7 +506,7 @@ export class GitHubPublisher {
         const it = r.item ?? {};
         const clip = (t) => GitHubPublisher._clipTitle(t);
         const warn = r.lowConfidence ? '<span class="up-warn" title="재순위가 약한 날">⚠</span>' : '';
-        // 버튼은 data-* 만 들고 있고 동작은 페이지 하단 스크립트가 붙인다.
+        // 버튼은 data-* 만 들고 있고 동작은 블록 안 스크립트가 붙인다.
         return `<li class="up-item">`
           + `<span class="up-title" title="${esc(it.title ?? '')}">`
           + `<span class="up-track">${esc(r.trackLabel)}</span> ${esc(clip(it.title))}${warn}</span>`
@@ -385,51 +520,33 @@ export class GitHubPublisher {
       return `<div class="up-day"><div class="up-date">${esc(date)}</div><ul class="up-list">${li}</ul></div>`;
     }).join('');
 
-    // 트랙별 온오프 토글. off 인 트랙도 여기 나와야 다시 켤 수 있다.
+    // 이 페이지가 맡은 트랙의 토글만 낸다. off 인 트랙도 나와야 다시 켤 수 있다.
+    // 순차진행은 **셋 공통 스위치**라 세 페이지 모두에 낸다 — 어느 페이지에서든 끄고 켤 수
+    // 있어야 한다(한 페이지에만 두면 그 페이지를 안 여는 날 스위치에 손이 안 닿는다).
     const MODE_LABEL = { on: '켜짐', off: '꺼짐', alternate: '격일' };
-    const toggles = tracks.map((t) => `<button class="up-toggle" data-up-toggle="${esc(t.key)}" `
-      + `data-up-mode="${esc(t.mode ?? 'on')}">${esc(t.label)} · ${esc(MODE_LABEL[t.mode] ?? '켜짐')}</button>`).join('');
+    const toggles = `<button class="up-toggle" data-up-toggle="${esc(key)}" `
+      + `data-up-mode="${esc(mode)}">${esc(label)} · ${esc(MODE_LABEL[mode] ?? '켜짐')}</button>`
+      + `<button class="up-toggle up-seq" data-up-seq="${sequential ? 'on' : 'off'}" `
+      + `title="켜면 논문 → 가이드라인 → 리뷰 순으로 하루 한 트랙씩 돕니다">`
+      + `순차진행 · ${sequential ? '켜짐' : '꺼짐'}</button>`;
 
-    // ★ 스타일을 블록 안에 같이 넣는다. 대시보드 CSS 는 index.html 에 있고 이 블록은
-    //   교체식으로 끼워지므로, 밖에 두면 블록만 갱신될 때 스타일이 따라오지 않는다.
-    //   미리보기에서 실제로 **스타일 없는 맨몸**으로 나온 자리다(push 전에 잡았다).
-    const style = `<style>
-.upcoming{margin:16px 0;font-size:14px}
-.up-h{font-size:15px;margin:0 0 8px;font-weight:600}
-.up-h small{display:block;font-weight:400;color:#6b7280;font-size:12px;margin-top:2px}
-.up-toggles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.up-toggle{border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:4px 10px;font-size:12px;cursor:pointer}
-.up-toggle[data-up-mode=off]{background:#f3f4f6;color:#9ca3af;text-decoration:line-through}
-.up-toggle[data-up-mode=alternate]{border-style:dashed}
-.up-day{margin:10px 0 4px;font-weight:600;color:#374151;font-size:13px}
-.upcoming ul{list-style:none;margin:0;padding:0}
-.up-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 0;border-bottom:1px solid #f0f1f3}
-.up-track{font-size:11px;padding:2px 6px;border-radius:4px;background:#eef2ff;color:#4338ca;white-space:nowrap}
-.up-title{flex:1 0 100%;line-height:1.5}
-.up-journal{flex:1 1 auto;font-size:11px;color:#6b7280;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.up-warn{color:#d97706;margin-left:3px}
-.up-btn{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:6px;
-  min-width:34px;min-height:34px;font-size:13px;cursor:pointer}
-.up-empty{color:#9ca3af;padding:8px 0}
-.up-date{font-weight:600;color:#374151;font-size:13px;margin:12px 0 2px}
-.up-list{list-style:none;margin:0;padding:0}
-.up-note{color:#6b7280;font-size:12px;margin-top:10px}
-.up-msg{font-size:12px;color:#6b7280;min-height:16px;margin-top:6px}
-.up-reset{margin-top:10px;border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
-@media(prefers-color-scheme:dark){
- .up-toggle,.up-btn{background:#1f2937;border-color:#374151;color:#e5e7eb}
- .up-day{color:#d1d5db}.up-item{border-color:#374151}
- .up-track{background:#312e81;color:#c7d2fe}}
-</style>`;
-    const block = `<!-- UPCOMING -->\n${style}<section class="upcoming"><h2 class="up-h">📅 다음 ${days}일 예고`
+    const ident = this._scriptIdent(html);
+    const script = this._upcomingScript(ident);
+    // 식별자를 못 정하면 버튼을 아예 내지 않는다 — 누르면 죽는 버튼을 두지 않는다.
+    const dead = !ident;
+    const body = dead
+      ? '<p class="up-empty">저장소 식별자를 찾지 못해 버튼을 감췄습니다 — 다음 데일리 실행에서 복구됩니다.</p>'
+      : `<div class="up-toggles">${toggles}</div>`
+        + (dayHtml || '<p class="up-empty">예고할 것이 없습니다 — 큐가 비었거나 트랙이 꺼져 있습니다.</p>')
+        + `<button class="up-reset" data-up-reset="${esc(key)}">이 목록 전체 갈아엎기</button>`;
+
+    const block = `<!-- UPCOMING:${key} -->\n${UPCOMING_STYLE}`
+      + `<section class="upcoming" data-up-section="${esc(key)}">`
+      + `<h2 class="up-h">📅 ${esc(label)} — 다음 ${days}일 예고`
       + ` <span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span></h2>`
-      // ★ 빈 상태를 반드시 그린다. 큐가 다 마르거나 세 트랙이 다 꺼져 있으면
-      //   화면에 **아무것도 안 나와서** PeterJ는 "고장인지 빈 건지" 를 구분할 수 없다.
-      + `<div class="up-toggles">${toggles}</div>`
-      + (dayHtml || '<p class="up-empty">예고할 것이 없습니다 — 큐가 비었거나 트랙이 모두 꺼져 있습니다.</p>')
-      + `<button class="up-reset" data-up-reset="1">이 목록 전체 갈아엎기</button>`
+      + body
       + `<div id="up-msg" class="up-msg"></div>`
-      + `</section>\n${this._upcomingScript()}\n<!-- /UPCOMING -->`;
+      + `</section>\n${script}\n<!-- /UPCOMING:${key} -->`;
     return out.replace('<!-- ARCHIVE_START -->', () => `${block}\n<!-- ARCHIVE_START -->`);
   }
 
@@ -437,6 +554,25 @@ export class GitHubPublisher {
    * 디스크의 큐·제어 상태를 읽어 예고 리스트를 그린다.
    * 세 트랙의 큐가 각각 다른 파일에 있으므로(쓰는 주체가 달라 일부러 갈랐다) 여기서 모은다.
    */
+  /**
+   * 어떤 날짜 표현이 와도 'YYYY-MM-DD' 로 만든다.
+   *
+   * ★ 2026-08-16 실측 결함 — 종전 코드는 `String(generatedAt).slice(0, 10)` 이었다.
+   *   그런데 `publish()` 가 넘기는 `generatedAt` 은 **한국어 로케일 문자열**이다
+   *   (`toLocaleString('ko-KR', …)` → `"2026. 08. 16. 22:45"`). 앞 10자는
+   *   `"2026. 08. 1"` 이라 날짜가 아니고, `addDays` 가 `Invalid time value` 로 던진다.
+   *   그 예외는 `publish()` 의 try/catch 가 삼키므로 **예고 블록이 통째로 빠진 페이지가
+   *   조용히 나간다.** 로그 한 줄 말고는 아무 표시가 없다.
+   *   빈 문자열이 아니라서 `|| fallback` 도 안 걸렸다 — 폴백이 있는데 안 도는 부류다.
+   */
+  static _toYmd(value) {
+    const raw = String(value ?? '');
+    if (/^\d{4}-\d{2}-\d{2}/.test(raw)) return raw.slice(0, 10);
+    const m = raw.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
+    if (m) return `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
+    return kstDateStr();
+  }
+
   async _renderUpcomingFromDisk(html, generatedAt) {
     const out = path.join(this._repoPath, 'output');
     const readJson = async (f) => { try { return JSON.parse(await readFile(path.join(out, f), 'utf8')); } catch { return null; } };
@@ -445,15 +581,38 @@ export class GitHubPublisher {
       readJson('queue_reviews.json'), readJson('control_state.json'),
     ]);
     const c = normalizeControl(control);
-    const from = String(generatedAt ?? '').slice(0, 10) || new Date().toISOString().slice(0, 10);
-    return this._renderUpcoming(html, {
-      from, days: 7,
-      tracks: [
-        { key: 'papers', label: '논문', cadence: 'daily', mode: c.tracks.papers.mode, state: papers ?? { queue: [] } },
-        { key: 'guidelines', label: '가이드라인', cadence: 'daily', mode: c.tracks.guidelines.mode, state: guidelines ?? { queue: [] } },
-        { key: 'reviews', label: '리뷰', cadence: 'weekly', mode: c.tracks.reviews.mode, state: reviews ?? { queue: [] } },
-      ],
-    });
+    const from = GitHubPublisher._toYmd(generatedAt);
+    // ★ 가이드라인 예고는 **실제로 발행 대상이 되는 것만** 보여야 한다.
+    //   오케스트레이터는 `status === 'queued'` 인 것 중에서 고르는데(그리고 priority 순),
+    //   예고는 큐 배열을 통째로 그리고 있었다. 지금 실물 큐가 `needsReview` 5 · `queued` 1
+    //   이라 **화면은 검토 대기 항목이 오늘 나간다고 말하고 실제로는 다른 것이 나갔다.**
+    //   결함 B2 와 같은 부류(화면과 게이트가 다른 것을 본다)라 같은 자리에서 막는다.
+    const publishableGuidelines = guidelines?.queue
+      ? { ...guidelines, queue: guidelines.queue
+          .filter((x) => x?.status === 'queued')
+          .sort((a, b) => (b?.priority ?? 0) - (a?.priority ?? 0)) }
+      : guidelines;
+    const states = { papers, guidelines: publishableGuidelines, reviews };
+    const labels = { papers: '논문', guidelines: '가이드라인', reviews: '리뷰' };
+
+    // ★ 트랙마다 **자기 블록**을 그린다(PeterJ 요구 ②). `splitPages` 가 이 블록들을
+    //   마커로 알아보고 각자의 페이지 맨 위로 옮긴다.
+    // ★ cadence 는 `trackCadence` 에서 끌어온다 — 게이트 숫자와 같은 곳이라 화면과
+    //   실제가 어긋날 수 없다(결함 B2 의 재발 차단).
+    let acc = html;
+    for (const key of UPCOMING_TRACKS) {
+      acc = this._renderUpcoming(acc, {
+        from,
+        days: 7,
+        track: key,
+        label: labels[key],
+        cadence: cadenceFor(key),
+        mode: c.tracks[key].mode,
+        sequential: c.sequential,
+        state: states[key] ?? { queue: [] },
+      });
+    }
+    return acc;
   }
 
   _renderGuidelineState(html, state, generatedAt) {
@@ -540,7 +699,10 @@ export class GitHubPublisher {
     const gMeta = `${guideline.org || guideline.paper?.journal || ''}${guideline.version ? ` · ${guideline.version}` : ''}`;
     // 논문 섹션과 동일한 흰 박스로 통일 — 구별은 앞쪽 라벨로만
     const cls = isToday ? 'day day-today' : 'day day-past';
-    const openAttr = isToday ? ' open' : '';
+    // ★ 오늘 카드도 **접힌 채로** 낸다 (PeterJ 요구 ③ · 2026-08-16).
+    //   시각적 강조(day-today)는 남기고 펼침만 없앤다. 배포본에 남은 옛 `open` 은
+    //   `pageSplit.collapseAllCards` 가 걷는다.
+    const openAttr = '';
     // 'gl-badge' 를 함께 붙여야 ① teal 뱃지 스타일(.gl-badge)이 실제 적용되고
     // ② 다음 실행의 강등 정규식(t-badge gl-badge)이 이 NEW 를 제거한다.
     // (클래스가 't-badge'뿐이면 지난 가이드 카드에 NEW 가 영구히 남았다)
@@ -562,6 +724,46 @@ export class GitHubPublisher {
 <!-- /GSECTION:${sectionKey} -->`;
   }
 
+  /**
+   * 리뷰 카드 섹션 (RSECTION).
+   *
+   * ★ 2026-08-16 실측 — `_stageReview` 는 큐에서 꺼내 `published` 로 옮기기만 하고
+   *   **카드도 표 행도 만들지 않았다.** 리뷰 트랙은 발행되는데 화면에는 아무것도 안
+   *   나오는 상태였다(테스트 590건 전부 초록). 3페이지 체제에서 리뷰 페이지를 만드는
+   *   이상 그 페이지가 영원히 비어 있으면 안 되므로 여기서 렌더를 붙인다.
+   *
+   * 리뷰 큐 항목은 논문과 달리 LLM 카드가 없다(저수지에서 제목·저널·점수만 들고 온다).
+   * 그래서 **가진 것만 정직하게** 보여준다 — 없는 요약을 지어내지 않는다.
+   */
+  _buildReviewSection(dateStr, generatedAt, review, { sectionKey = dateStr } = {}) {
+    const rp = review?.paper ?? review ?? {};
+    const pmid = rp.pmid ?? review?.pmid ?? '';
+    const url = rp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : (rp.sourceUrl || '#'));
+    const title = review?.title_ko || rp.title || review?.title || '';
+    const journal = rp.journal || review?.journal || '';
+    const topic = review?.topic ? `<span class="chip">${esc(review.topic)}</span>` : '';
+    const score = Number.isFinite(Number(review?.score)) ? `<span class="chip">점수 ${esc(String(review.score))}</span>` : '';
+    const card = `<article class="guideline-card">
+      <div class="pc-t"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></div>
+      <div class="pc-meta">${esc(journal)}</div>
+      <div class="pc-chips">${topic}${score}</div>
+      <div class="pc-foot"><a href="${esc(url)}" target="_blank" rel="noopener">원문</a> · 리뷰 아티클</div>
+    </article>`;
+    return `
+<!-- RSECTION:${sectionKey} -->
+<details class="day day-past">
+  <summary class="day-sum">
+    <div class="day-head">
+      <span class="day-date">${esc(dateStr)}</span><span class="gl-tag">📰 리뷰</span><span class="day-gen">생성 ${esc(generatedAt)}</span>
+      <span class="day-chev">${IC.chev(T.muted)}</span>
+    </div>
+    <div class="day-prev"><span class="day-prev-medal">${IC.book(T.sec)}</span><div><div class="day-prev-t">${esc(title)}</div><div class="day-prev-m">${esc(journal)}</div></div></div>
+  </summary>
+  <div class="day-panel">${card}</div>
+</details>
+<!-- /RSECTION:${sectionKey} -->`;
+  }
+
   _buildSection(dateStr, generatedAt, topPapers, { isToday = false, route = '', manual = false, sectionKey = dateStr } = {}) {
     const paperCards = topPapers.map((p) => this._buildPaperCard(p)).join('\n');
     const cards = paperCards;
@@ -573,7 +775,10 @@ export class GitHubPublisher {
       ? `${topPapers[0].paper?.journal ?? ''} · ${GitHubPublisher._fmtDate(topPapers[0].paper?.pubDate)}`
       : '';
     const cls = isToday ? 'day day-today' : 'day day-past';
-    const openAttr = isToday ? ' open' : '';
+    // ★ 오늘 카드도 **접힌 채로** 낸다 (PeterJ 요구 ③ · 2026-08-16).
+    //   시각적 강조(day-today)는 남기고 펼침만 없앤다. 배포본에 남은 옛 `open` 은
+    //   `pageSplit.collapseAllCards` 가 걷는다.
+    const openAttr = '';
     // 수동 지정 배지는 인라인 스타일 — 배포된 index.html은 증분 패치라 새 CSS 클래스가
     // 주입되지 않으므로 템플릿 CSS에 의존하면 무스타일로 렌더된다. TODAY와 달리
     // 텍스트가 달라 강등 정규식에 안 걸려 과거에도 유지된다(출처 표식이므로 의도).
@@ -767,7 +972,7 @@ export class GitHubPublisher {
   }
 
   // ── 누적 아카이브 표의 행(읽음 체크박스 포함) ──────────────────────────────────
-  _tableRows(dateStr, topPapers, guideline = null, { manual = false } = {}) {
+  _tableRows(dateStr, topPapers, guideline = null, { manual = false, review = null } = {}) {
     // 수동 지정 행은 data-manual 마커를 단다 — 가이드라인(data-guideline)과 같은 방식으로,
     // 이후 데일리 실행의 "날짜 기준 행 제거"(rowDateDup)에서 지워지지 않게 보호한다.
     const manualAttr = manual ? ' data-manual="1"' : '';
@@ -797,6 +1002,19 @@ export class GitHubPublisher {
       const gKind = guideline.type === 'reference' ? 'reference' : 'guideline';
       const gIcon = gKind === 'reference' ? '🔖' : '📋';
       rows.push(`<tr data-pmid="${esc(rowId)}" data-kind="${gKind}" data-guideline="1"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">${gIcon} ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(rowId)}" aria-label="읽음"></td></tr>`);
+    }
+    // ★ 리뷰 행 (3분할 · 2026-08-16). `data-kind="review"` 가 `pageSplit` 이 이 행을
+    //   reviews.html 로 보내는 유일한 근거다. 지우면 행이 논문 표로 흘러든다.
+    //   `data-guideline="1"` 도 같이 단다 — 날짜 기준 행 교체에서 보호받는 표식이고
+    //   가이드와 라이프사이클이 같다(소개 후 계속 남는다).
+    if (review) {
+      const rp = review.paper ?? review;
+      const pmid = rp.pmid ?? review.pmid ?? '';
+      const rowId = pmid || rp.id || review.id || '';
+      const url = rp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : (rp.sourceUrl || '#'));
+      const title = review.title_ko || rp.title || review.title || '';
+      const journal = rp.journal || review.journal || '';
+      rows.push(`<tr data-pmid="${esc(rowId)}" data-kind="review" data-guideline="1"><td class="c-date">${esc(dateStr)}</td><td class="c-jour">📰 ${esc(journal)}</td><td class="c-title"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a></td><td class="c-read"><input type="checkbox" class="readcb" data-pmid="${esc(rowId)}" aria-label="읽음"></td></tr>`);
     }
     return rows.join('');
   }
@@ -1022,8 +1240,28 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
     return (res.stdout ?? '').trim();
   }
 
+  /**
+   * ★ 스테이징 목록은 **러너가 쓰는 파일 전부**여야 한다.
+   *
+   * 2026-08-16 실측 치명 결함 — 이 목록에 `reviews.html` 과 트랙 큐가 빠져 있었다.
+   * 지난 세션이 "큐가 매 실행 증발한다" 를 고치면서 `.gitignore` 예외만 넣고 **여기를
+   * 안 고쳤다.** 예외는 파일을 *추적 가능하게* 만들 뿐 `git add` 를 대신하지 않는다.
+   * 그대로 뒀으면 리뷰 저수지가 매 실행 사라지고, 소비한 리뷰가 다음 날 또 소비되고,
+   * 3번째 페이지는 원격에서 영원히 갱신되지 않는다. push 는 **성공으로 끝난다.**
+   *
+   * ★ `control_state.json` · `read_state.json` 은 **절대 넣지 않는다.** 브라우저가 쓰는
+   *   파일이고 러너는 읽기만 한다(불변식). 러너가 되쓰기 시작하면 버튼 커밋과 상호
+   *   덮어쓰기가 시작된다.
+   * `test/publishStaging.test.mjs` 가 이 목록을 실제 기록 경로와 맞물려 검사한다.
+   */
+  static RUNNER_FILES = Object.freeze([
+    'index.html', 'guidelines.html', 'reviews.html',
+    'output/selected_papers.json', 'output/selected_guidelines.json',
+    'output/queue_papers.json', 'output/queue_reviews.json',
+  ]);
+
   _gitPush(dateStr) {
-    const files = ['index.html', 'guidelines.html', 'output/selected_papers.json', 'output/selected_guidelines.json']
+    const files = GitHubPublisher.RUNNER_FILES
       .filter((f) => existsSync(path.join(this._repoPath, f)));
     this._git(['add', ...files]);
     const diff = this._git(['diff', '--staged', '--name-only']);
@@ -1081,14 +1319,15 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
   }
 
   // ── 누적 업데이트 ────────────────────────────────────────────────────────────
-  async publish(dateStr, topPapers, { guideline = null, manual = false, guidelineState = null } = {}) {
+  async publish(dateStr, topPapers, { guideline = null, manual = false, guidelineState = null, review = null } = {}) {
     // ★ 페이지 2분할(§4-H) — 합쳤다가 가른다.
     // 아래 증분 로직(지침 중복 제거·TODAY 강등·날짜 행 교체·PMID dedup·통계 갱신)은
     // 단일 페이지를 전제로 4주간 다듬어졌다. 두 벌로 쪼개는 대신 **입력을 합쳐서**
     // 종전과 동일한 본문을 보게 하고, 맨 끝에서만 두 파일로 가른다.
     const { html: indexHtml } = await this._getIndex();
     const { html: guidesHtml } = await this._getPage('guidelines.html');
-    const existing = mergePages(indexHtml, guidesHtml);
+    const { html: reviewsHtml } = await this._getPage('reviews.html');
+    const existing = mergePages(indexHtml, guidesHtml, reviewsHtml);
     const generatedAt = new Date().toLocaleString('ko-KR', {
       timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
     });
@@ -1108,13 +1347,26 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
     const guidelineSection = guideline
       ? this._buildGuidelineSection(dateStr, generatedAt, guideline, { isToday: true, manual, sectionKey: gKey })
       : '';
+    // ★ 리뷰 섹션. 없으면 빈 문자열이라 아무것도 안 바뀐다(데일리 코어 무영향).
+    const rIdent = review?.paper?.pmid || review?.pmid || review?.id || '';
+    // ★ 식별자가 없으면 **발행하지 않는다** (2026-08-16 코드리뷰 발견 B16).
+    //   식별자가 없으면 카드 중복 제거(`rIdent` 기반)도 행 dedup 도 돌지 않아
+    //   매 실행 카드와 행이 무한히 쌓인다. 못 지우는 것을 만들지 않는 편이 낫다.
+    if (review && !rIdent) {
+      this.logger?.warn?.('리뷰에 식별자가 없어 발행하지 않는다 — 중복을 지울 방법이 없다',
+        { title: String(review.title ?? '').slice(0, 60) });
+    }
+    const publishableReview = rIdent ? review : null;
+    const reviewSection = publishableReview
+      ? this._buildReviewSection(dateStr, generatedAt, publishableReview, { sectionKey: `${dateStr}-r-${rIdent}` })
+      : '';
 
-    const newRows = this._tableRows(dateStr, topPapers, guideline, { manual });
+    const newRows = this._tableRows(dateStr, topPapers, guideline, { manual, review: publishableReview });
 
     let updated;
     if (!existing || !existing.includes('<!-- ARCHIVE_START -->')) {
       // 최초 생성 (또는 구버전 스캐폴드) → 전체 페이지를 새 디자인으로 생성
-      updated = this.buildPage(`${todaySection}\n${guidelineSection}`, { days: 1, papers: topPapers.length, updated: generatedAt, tableRows: newRows });
+      updated = this.buildPage(`${todaySection}\n${guidelineSection}\n${reviewSection}`, { days: 1, papers: topPapers.length, updated: generatedAt, tableRows: newRows });
     } else {
       // 같은 키 섹션 제거 — 데일리는 날짜 키(그날 재실행 시 교체), 수동은 자체 키만
       // 교체(재실행 안전)하고 같은 날 데일리 섹션은 보존한다.
@@ -1144,23 +1396,40 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       // 수동 지정은 강등을 건너뜀 — 같은 날 데일리 섹션의 TODAY 를 지우지 않기 위함.
       if (!manual) {
         body = body
-          .replace(/<details open class="day day-today">/g, '<details class="day day-past">')
+          // ★ 요구 ③ 이후 새 카드는 `open` 없이 나온다. 배포본에는 **옛 open 카드가
+          //   그대로 남아 있으므로** 두 형태를 모두 강등한다. 한쪽만 잡으면 어제 카드가
+          //   영원히 day-today 로 남아 TODAY 가 둘이 된다.
+          .replace(/<details(?: open)? class="day day-today">/g, '<details class="day day-past">')
           .replace(/<span class="t-badge">TODAY<\/span>/g, '')
           .replace(/<span class="t-badge gl-badge">NEW<\/span>/g, '');
       }
-      // 새 TODAY 삽입 (논문 먼저, 그 아래 가이드라인)
-      body = body.replace('<!-- ARCHIVE_START -->', `<!-- ARCHIVE_START -->\n${todaySection}${guidelineSection ? `\n${guidelineSection}` : ''}`);
+      // 같은 리뷰가 다른 날짜 카드로 이미 올라와 있으면 제거(중복 노출 방어).
+      if (rIdent) {
+        // ★ 여는 마커의 키를 역참조로 잡아 **닫는 마커가 같은 키일 때만** 지운다.
+        //   `[^\\s>]+` 로 열어두면 닫는 마커가 어긋난 순간 다음 리뷰 카드까지 통째로
+        //   삼킨다(코드리뷰 실측 · 부분 배포·수동 수정 시 재현).
+        const rEsc = String(rIdent).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const rDup = new RegExp(`\\n?<!-- RSECTION:([^\\s>]+-r-${rEsc}) -->[\\s\\S]*?<!-- /RSECTION:\\1 -->`, 'g');
+        body = body.replace(rDup, '');
+      }
+      // 새 TODAY 삽입 (논문 먼저, 그 아래 가이드라인, 그 아래 리뷰)
+      body = body.replace('<!-- ARCHIVE_START -->', () => `<!-- ARCHIVE_START -->\n${todaySection}${guidelineSection ? `\n${guidelineSection}` : ''}${reviewSection ? `\n${reviewSection}` : ''}`);
       // 누적 표 정리 (재실행 시 상단 섹션과 정확히 일치시키기 위해):
       //   ① 같은 날짜의 기존 행을 모두 제거 — 상단 SECTION 이 날짜 기준으로 교체되므로
       //      표도 동일하게. 하루에 여러 번 실행돼도 그날 최종 선정분만 남는다.
       if (!manual) {
         body = body.replace(this._rowDateDupRe(dateStr), '');
       }
-      //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침이 또 선정된 경우 중복 방지
-      const dedupItems = guideline ? [...topPapers, guideline] : topPapers;
+      //   ② 같은 PMID 행 제거 — 과거 날짜에 같은 논문/지침/리뷰가 또 선정된 경우 중복 방지
+      //   ★ **새 종류를 더할 때 이 목록에도 넣어야 한다.** 리뷰를 붙이면서 여기를 빼먹어
+      //     같은 날 재실행하면 리뷰 행이 둘이 됐다(E2E 테스트가 잡았다). 리뷰 행은
+      //     `data-guideline="1"` 을 달아 날짜 스윕(①)에서 보호받으므로, 여기서 안 지우면
+      //     지울 곳이 없다.
+      const dedupItems = [...topPapers, guideline, publishableReview].filter(Boolean);
       for (const p of dedupItems) {
         // 웹 공개본 가이드라인은 pmid 가 없다 — 행 키로 쓴 sourceId 로 같은 항목을 지운다.
-        const pmid = p.paper?.pmid || p.paper?.sourceId;
+        // 리뷰 큐 항목은 `paper` 로 감싸여 있지 않고 pmid/id 를 직접 들고 온다.
+        const pmid = p.paper?.pmid || p.paper?.sourceId || p.pmid || p.id;
         if (!pmid) continue;
         // [^>]* — 가이드 행의 data-guideline="1" 같은 추가 속성이 있어도 매치되게.
         // (없으면 같은 지침 재발행 시 과거 행이 안 지워져 표에 중복이 남는다)
@@ -1168,7 +1437,12 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
         body = body.replace(rowDup, '');
       }
       if (body.includes('<!-- TABLE_ROWS_START -->')) {
-        body = body.replace('<!-- TABLE_ROWS_START -->', `<!-- TABLE_ROWS_START -->${newRows}`);
+        // ★ 함수형 replacer 필수. `newRows` 에는 LLM 이 만든 제목이 들어 있고, 거기에
+        //   `$&` 나 `` $` `` 가 있으면 문자열 치환이 그것을 **특수 패턴으로 해석해**
+        //   본문을 통째로 복제한다. `esc()` 는 `&` 를 `&amp;` 로 바꿀 뿐 `$&` 는 그대로
+        //   남기므로 방어가 안 된다. 실측: 제목 하나로 index.html 575KB → 1.37MB.
+        //   pageSplit.js 의 쌍둥이 자리는 이미 함수형인데 여기만 아니었다.
+        body = body.replace('<!-- TABLE_ROWS_START -->', () => `<!-- TABLE_ROWS_START -->${newRows}`);
       }
       // 통계 갱신 — 분석일수는 데일리(날짜 키) 섹션만 센다. 수동 지정 섹션
       // (SECTION:YYYY-MM-DD-m-pmid)은 "하루 1편 카운트 밖의 예외"이므로 제외한다.
@@ -1194,17 +1468,29 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
 
     // 두 페이지로 가른다. 스캐폴드가 아니면 split 이 guidelines=null 을 돌려주고
     // index 만 종전대로 기록된다(소프트 — 분할 실패가 데일리를 막지 않는다).
-    const { index: indexOut, guidelines: guidesOut, counts } = splitPages(updated, {
+    const { index: indexOut, guidelines: guidesOut, reviews: reviewsOut, counts } = splitPages(updated, {
       refIds: await this._referenceIds(),
       needsReview: guidelineState?.needsReview
         ?? guidelineState?.queue?.filter((item) => item.status === 'needsReview')
         ?? [],
     });
-    await writeFile(path.join(this._repoPath, 'index.html'), indexOut, 'utf8');
-    if (guidesOut) {
-      await writeFile(path.join(this._repoPath, 'guidelines.html'), guidesOut, 'utf8');
-      this.logger.info('페이지 2분할 기록', counts);
+    // ★ 분할이 소프트 폴백으로 떨어지면 **아무것도 쓰지 않는다** (코드리뷰 발견 B15).
+    //   종전에는 병합 본문을 index.html 에 그대로 기록하고 하위 페이지는 건너뛰었다.
+    //   그러면 index 에 가이드·리뷰·기타 카드가 전부 들어간 채로 남고, 하위 페이지는
+    //   옛 사본을 유지한다 → **다음 실행의 merge 가 같은 것을 또 합쳐 매일 두 배가 된다.**
+    //   폴백은 "분할이 데일리를 막지 않는다" 를 위한 것이지 페이지를 망가뜨리라는 뜻이
+    //   아니다. 그대로 두는 편이 안전하고, 무엇보다 **소리 없이 지나가지 않게** 경고한다.
+    if (!guidesOut || !reviewsOut) {
+      this.logger.warn('페이지 분할이 소프트 폴백으로 떨어졌다 — 페이지를 건드리지 않는다', {
+        guidelines: Boolean(guidesOut), reviews: Boolean(reviewsOut),
+      });
+      try { this._gitPush(dateStr); } catch { /* 상태 파일만이라도 남긴다 */ }
+      return this.pagesUrl;
     }
+    await writeFile(path.join(this._repoPath, 'index.html'), indexOut, 'utf8');
+    await writeFile(path.join(this._repoPath, 'guidelines.html'), guidesOut, 'utf8');
+    await writeFile(path.join(this._repoPath, 'reviews.html'), reviewsOut, 'utf8');
+    this.logger.info('페이지 3분할 기록', counts);
     updated = indexOut;
 
     try {
@@ -1220,7 +1506,9 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       // guidelines.html 을 빠뜨리면 두 페이지가 어긋난다 — 다음 실행의 merge 가
       // 낡은 가이드 페이지를 합쳐 이미 지운 카드를 되살린다.
       if (guidesOut) await this._putFileViaApi('guidelines.html', guidesOut, dateStr);
-      for (const rel of ['output/selected_papers.json', 'output/selected_guidelines.json']) {
+      if (reviewsOut) await this._putFileViaApi('reviews.html', reviewsOut, dateStr);
+      // 폴백도 같은 목록을 쓴다 — 한쪽만 늘리면 다시 어긋난다.
+      for (const rel of GitHubPublisher.RUNNER_FILES.filter((f) => f.startsWith('output/'))) {
         const abs = path.join(this._repoPath, rel);
         if (!existsSync(abs)) continue;
         await this._putFileViaApi(rel, await readFile(abs, 'utf8'), dateStr);

@@ -15,7 +15,14 @@ export function cycleMode(mode) {
 }
 
 export function defaultControl() {
-  return { schemaVersion: 1, tracks: Object.fromEntries(TRACKS.map((t) => [t, { mode: 'on', since: null }])) };
+  return {
+    schemaVersion: 1,
+    // ★ 순차진행 (PeterJ 확정 2026-08-16) — 켜면 논문 → 가이드라인 → 리뷰 순으로
+    //   **하루 한 트랙씩** 돈다. 기본은 꺼짐(= 세 트랙이 매일 각자 나간다).
+    //   담당 트랙은 달력 일수의 나머지로 정하므로 저장할 상태가 없다(trackCadence.js).
+    sequential: false,
+    tracks: Object.fromEntries(TRACKS.map((t) => [t, { mode: 'on', since: null }])),
+  };
 }
 
 /**
@@ -28,6 +35,8 @@ export function defaultControl() {
 export function normalizeControl(raw) {
   const base = defaultControl();
   if (!raw || typeof raw !== 'object') return base;
+  // 순차진행은 명시적으로 true 일 때만 켠다 — 깨진 값이 몰래 트랙 둘을 재우면 안 된다.
+  if (raw.sequential === true) base.sequential = true;
   const src = raw.tracks && typeof raw.tracks === 'object' ? raw.tracks : {};
   for (const t of TRACKS) {
     const v = src[t];

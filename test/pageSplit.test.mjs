@@ -1,5 +1,9 @@
 /**
- * pageSplit — 배포 페이지 2분할(§4-H)의 서버측 계약 검증.
+ * pageSplit — 배포 페이지 3분할(§4-H)의 서버측 계약 검증.
+ *
+ * ★ 2026-08-16 에 2 → 3 페이지로 바뀌었다(PeterJ 요구 ①):
+ *     index.html = 논문 · guidelines.html = 가이드라인 · reviews.html = 리뷰 · 기타
+ *   "기타(참고자료)" 가 가이드라인 쪽에서 **리뷰 쪽으로 옮겨간다.**
  *
  * 잠그는 것 셋:
  *  ① **손실 0** — 가른 뒤 카드·행의 합이 원본과 같다(과거 저널명이 배포 HTML 에만
@@ -41,12 +45,15 @@ function samplePage() {
 <!-- GSECTION:2026-08-07-m-999 -->
 <details class="day day-past"><summary><span class="gl-tag">📋 가이드라인</span></summary><article class="guideline-card"><span class="chip gl">🔖 참고자료</span>R1</article></details>
 <!-- /GSECTION:2026-08-07-m-999 -->
+<!-- RSECTION:2026-08-06 -->
+<details class="day day-past"><summary><span class="gl-tag">📰 리뷰</span></summary><article class="guideline-card">V1</article></details>
+<!-- /RSECTION:2026-08-06 -->
   </div>
   <div class="arch-table">
     <div class="at-head"><span class="at-title">📚 누적 아카이브</span><span class="at-count">2편</span></div>
     <div class="at-scroll"><table>
       <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
-      <tbody><!-- TABLE_ROWS_START --><tr data-pmid="111"><td class="c-date">2026-08-08</td><td class="c-jour">NEJM</td><td class="c-title"><a href="#">P1</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="222"><td class="c-date">2026-08-07</td><td class="c-jour">JAMA</td><td class="c-title"><a href="#">P2</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="333" data-guideline="1"><td class="c-date">2026-08-04</td><td class="c-jour">📋 IDSA</td><td class="c-title"><a href="#">G1</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="${REF_ID}" data-guideline="1"><td class="c-date">2026-08-07</td><td class="c-jour">📋 NEJM</td><td class="c-title"><a href="#">R1</a></td><td class="c-read"><input class="readcb"></td></tr><!-- TABLE_ROWS_END --></tbody>
+      <tbody><!-- TABLE_ROWS_START --><tr data-pmid="111"><td class="c-date">2026-08-08</td><td class="c-jour">NEJM</td><td class="c-title"><a href="#">P1</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="222"><td class="c-date">2026-08-07</td><td class="c-jour">JAMA</td><td class="c-title"><a href="#">P2</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="333" data-guideline="1"><td class="c-date">2026-08-04</td><td class="c-jour">📋 IDSA</td><td class="c-title"><a href="#">G1</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="${REF_ID}" data-guideline="1"><td class="c-date">2026-08-07</td><td class="c-jour">📋 NEJM</td><td class="c-title"><a href="#">R1</a></td><td class="c-read"><input class="readcb"></td></tr><tr data-pmid="444" data-kind="review"><td class="c-date">2026-08-06</td><td class="c-jour">📰 Lancet</td><td class="c-title"><a href="#">V1</a></td><td class="c-read"><input class="readcb"></td></tr><!-- TABLE_ROWS_END --></tbody>
     </table></div>
   </div>
   <!-- ARCHIVE_STATUS v1 -->
@@ -61,32 +68,43 @@ const refIds = new Set([REF_ID]);
 const count = (s, re) => (s.match(re) ?? []).length;
 const ROWS = /<tr [^>]*data-pmid=/g;
 
-test('가른 뒤 카드가 손실 없이 두 페이지에 나뉜다', () => {
-  const { index, guidelines, counts } = splitPages(samplePage(), { refIds });
+test('가른 뒤 카드가 손실 없이 세 페이지에 나뉜다', () => {
+  const { index, guidelines, reviews, counts } = splitPages(samplePage(), { refIds });
   assert.equal(counts.papers, 2);
   assert.equal(counts.guidelines, 1);
   assert.equal(counts.others, 1);
-  // index 에는 논문만, guidelines 에는 가이드·기타만
+  assert.equal(counts.reviews, 1);
+  // 논문은 index 에만
   assert.equal(count(index, /<!-- SECTION:/g), 2);
   assert.equal(count(index, /<!-- GSECTION:/g), 0);
-  assert.equal(count(guidelines, /<!-- SECTION:/g), 0);
-  assert.equal(count(guidelines, /<!-- GSECTION:/g), 2);
+  assert.equal(count(index, /<!-- RSECTION:/g), 0);
+  // 가이드라인 페이지에는 가이드 카드 하나뿐 — **기타는 여기 없다**(리뷰 쪽으로 갔다)
+  assert.equal(count(guidelines, /<!-- GSECTION:/g), 1);
+  assert.equal(count(guidelines, /🔖 참고자료/g), 0);
+  // 리뷰 페이지에 리뷰 + 기타
+  assert.equal(count(reviews, /<!-- RSECTION:/g), 1);
+  assert.equal(count(reviews, /<!-- GSECTION:/g), 1);
 });
 
-test('표 행도 손실 0 — 원본 4행이 3/1 로 갈린다', () => {
+test('표 행도 손실 0 — 원본 5행이 2/1/2 로 갈린다', () => {
   const before = count(samplePage(), ROWS);
-  const { index, guidelines, counts } = splitPages(samplePage(), { refIds });
-  assert.equal(before, 4);
+  const { index, guidelines, reviews, counts } = splitPages(samplePage(), { refIds });
+  assert.equal(before, 5);
   assert.equal(counts.paperRows, 2);
   assert.equal(counts.guidelineRows, 1);
   assert.equal(counts.referenceRows, 1);
-  assert.equal(count(index, ROWS) + count(guidelines, ROWS), before);
+  assert.equal(counts.reviewRows, 1);
+  // ★ 세 페이지를 **전부** 더해야 한다. 2페이지 시절 식(index+guidelines)을 그대로
+  //   두면 리뷰·기타 행이 통째로 사라져도 합이 맞아 초록이 된다.
+  assert.equal(count(index, ROWS) + count(guidelines, ROWS) + count(reviews, ROWS), before);
 });
 
 test('구본 행(data-kind 없음)도 참고자료 식별자로 갈린다 — 마이그레이션', () => {
-  const { guidelines } = splitPages(samplePage(), { refIds });
-  // 기타 표에만 REF_ID 행이 있고, 아이콘이 🔖 로 교정된다
-  const refRow = guidelines.match(new RegExp(`<tr[^>]*data-pmid="${REF_ID}"[^>]*>[\\s\\S]*?</tr>`))[0];
+  const { guidelines, reviews } = splitPages(samplePage(), { refIds });
+  // ★ 참고자료 행은 이제 **reviews.html** 로 간다(3분할). guidelines 에는 없어야 한다.
+  assert.equal(count(guidelines, new RegExp(`data-pmid="${REF_ID}"`, 'g')), 0,
+    '참고자료 행이 가이드라인 페이지에 남았다');
+  const refRow = reviews.match(new RegExp(`<tr[^>]*data-pmid="${REF_ID}"[^>]*>[\\s\\S]*?</tr>`))[0];
   assert.match(refRow, /data-kind="reference"/);
   assert.match(refRow, /🔖 NEJM/);
   assert.doesNotMatch(refRow, /📋 NEJM/);
@@ -95,7 +113,7 @@ test('구본 행(data-kind 없음)도 참고자료 식별자로 갈린다 — �
 test('refIds 없이도 data-kind 가 있으면 그것으로 갈린다', () => {
   const once = splitPages(samplePage(), { refIds });
   // 두 번째 판정은 refIds 를 주지 않는다 — 첫 판정이 심은 data-kind 만으로 갈려야 한다.
-  const merged = mergePages(once.index, once.guidelines);
+  const merged = mergePages(once.index, once.guidelines, once.reviews);
   const twice = splitPages(merged, { refIds: null });
   assert.equal(twice.counts.referenceRows, 1);
   assert.equal(twice.counts.guidelineRows, 1);
@@ -104,24 +122,25 @@ test('refIds 없이도 data-kind 가 있으면 그것으로 갈린다', () => {
 
 test('왕복 안정 — split → merge → split 이 같은 개수를 낸다', () => {
   const a = splitPages(samplePage(), { refIds });
-  const merged = mergePages(a.index, a.guidelines);
+  const merged = mergePages(a.index, a.guidelines, a.reviews);
   const b = splitPages(merged, { refIds });
   assert.deepEqual(b.counts, a.counts);
   // 3회차까지 흔들리지 않는다(매일 도는 경로다)
-  const c = splitPages(mergePages(b.index, b.guidelines), { refIds });
+  const c = splitPages(mergePages(b.index, b.guidelines, b.reviews), { refIds });
   assert.deepEqual(c.counts, a.counts);
 });
 
-test('guidelines 가 없으면 merge 는 index 를 그대로 돌려준다 — 첫 실행/마이그레이션', () => {
+test('없는 페이지는 건너뛴다 — 첫 실행/마이그레이션', () => {
   const src = samplePage();
-  assert.equal(mergePages(src, null), src);
-  assert.equal(mergePages(src, ''), src);
-  assert.equal(mergePages(src, '<html>스캐폴드 아님</html>'), src);
+  // 예고 블록이 없는 입력이므로 strip 은 아무것도 안 바꾼다 = 원본 그대로여야 한다.
+  assert.equal(mergePages(src, null, null), src);
+  assert.equal(mergePages(src, '', ''), src);
+  assert.equal(mergePages(src, '<html>스캐폴드 아님</html>', null), src);
 });
 
 test('참고자료 섹션의 접힌 헤더 라벨이 기타 자료로 교정된다', () => {
-  const { guidelines } = splitPages(samplePage(), { refIds });
-  const refBlock = guidelines.match(/<!-- GSECTION:2026-08-07-m-999 -->[\s\S]*?<!-- \/GSECTION:2026-08-07-m-999 -->/)[0];
+  const { guidelines, reviews } = splitPages(samplePage(), { refIds });
+  const refBlock = reviews.match(/<!-- GSECTION:2026-08-07-m-999 -->[\s\S]*?<!-- \/GSECTION:2026-08-07-m-999 -->/)[0];
   assert.match(refBlock, /<span class="gl-tag ref">🔖 기타 자료<\/span>/);
   assert.doesNotMatch(refBlock, /<span class="gl-tag">📋 가이드라인<\/span>/);
   // 가이드라인 섹션은 종전 라벨 유지
@@ -129,15 +148,17 @@ test('참고자료 섹션의 접힌 헤더 라벨이 기타 자료로 교정된�
   assert.match(glBlock, /<span class="gl-tag">📋 가이드라인<\/span>/);
 });
 
-test('두 페이지가 같은 탭 바를 갖고 현재 페이지만 활성 — 대등한 병렬 페이지', () => {
-  const { index, guidelines } = splitPages(samplePage(), { refIds });
-  for (const p of [index, guidelines]) {
+test('세 페이지가 같은 탭 바를 갖고 현재 페이지만 활성 — 대등한 병렬 페이지', () => {
+  const { index, guidelines, reviews } = splitPages(samplePage(), { refIds });
+  for (const p of [index, guidelines, reviews]) {
     assert.equal(count(p, /<nav class="pgnav">/g), 1);
     assert.match(p, /href="index\.html"/);
     assert.match(p, /href="guidelines\.html"/);
+    assert.match(p, /href="reviews\.html"/);
   }
   assert.match(index, /<a href="index\.html" class="on"/);
   assert.match(guidelines, /<a href="guidelines\.html" class="on"/);
+  assert.match(reviews, /<a href="reviews\.html" class="on"/);
   // 같은 히어로를 쓴다(제목을 바꾸면 하위 페이지처럼 보인다)
   assert.match(guidelines, /<h1>EM\/CCM Trend Review<\/h1>/);
 });
@@ -171,9 +192,11 @@ test('스캐폴드가 아니면 가르지 않는다(소프트)', () => {
 });
 
 test('pageNav 는 건수를 그대로 노출한다', () => {
-  const nav = pageNav('papers', { papers: 35, guidelines: 6, others: 1 });
+  const nav = pageNav('papers', { papers: 35, guidelines: 6, others: 1, reviews: 4 });
   assert.match(nav, /35편/);
-  assert.match(nav, /6 · 1건/);
+  assert.match(nav, /6건/);
+  assert.match(nav, /4 · 1건/);
+  assert.equal(count(nav, /<a href=/g), 3, '탭이 셋이어야 한다');
 });
 
 /**
@@ -189,13 +212,15 @@ test('논문 행은 바이트 그대로 — 마커를 붙이지 않는다(같은
   assert.equal(count(index, dailyRe), 1);
 });
 
-test('가이드·기타 행의 data-pmid 는 첫 속성으로 남는다(삭제 패치 계약)', () => {
-  const { guidelines } = splitPages(samplePage(), { refIds });
-  for (const m of guidelines.matchAll(/<tr ([^>]*)>/g)) {
-    assert.match(m[1], /^data-pmid="/, `data-pmid 가 첫 속성이 아님: <tr ${m[1]}>`);
+test('가이드·리뷰·기타 행의 data-pmid 는 첫 속성으로 남는다(삭제 패치 계약)', () => {
+  const { guidelines, reviews } = splitPages(samplePage(), { refIds });
+  for (const page of [guidelines, reviews]) {
+    for (const m of page.matchAll(/<tr ([^>]*)>/g)) {
+      assert.match(m[1], /^data-pmid="/, `data-pmid 가 첫 속성이 아님: <tr ${m[1]}>`);
+    }
   }
   // curation.js 의 삭제 패치 정규식으로도 잡혀야 한다
-  assert.match(guidelines, new RegExp(`<tr data-pmid="${REF_ID}"[^>]*>[\\s\\S]*?</tr>`));
+  assert.match(reviews, new RegExp(`<tr data-pmid="${REF_ID}"[^>]*>[\\s\\S]*?</tr>`));
 });
 
 /**
@@ -224,18 +249,19 @@ test('퍼블리셔는 로거 없이 생성해도 로그 호출이 죽지 않는�
  */
 test('2회차 이후에도 guidelines 통계가 자기 것으로 유지된다', () => {
   const a = splitPages(samplePage(), { refIds });
-  let idx = a.index, gui = a.guidelines;
+  let idx = a.index, gui = a.guidelines, rev = a.reviews;
   for (let i = 0; i < 3; i++) {
-    const r = splitPages(mergePages(idx, gui), { refIds });
-    idx = r.index; gui = r.guidelines;
+    const r = splitPages(mergePages(idx, gui, rev), { refIds });
+    idx = r.index; gui = r.guidelines; rev = r.reviews;
     assert.match(gui, /<div class="l">가이드라인<\/div>/, `${i + 2}회차에서 통계가 되돌아감`);
-    assert.match(gui, /<div class="l">기타 자료<\/div>/);
+    assert.match(rev, /<div class="l">기타 자료<\/div>/);
     assert.doesNotMatch(gui, /stat-days-count/);
     assert.doesNotMatch(gui, /stat-papers-count/);
     assert.doesNotMatch(gui, /<div class="l">분석일수<\/div>/);
     assert.equal(count(gui, /class="sc"/g), 3);
     assert.equal(count(gui, /<nav class="pgnav">/g), 1); // 탭도 누적되지 않는다
     assert.equal(count(idx, /<nav class="pgnav">/g), 1);
+    assert.equal(count(rev, /<nav class="pgnav">/g), 1);
   }
 });
 
@@ -247,11 +273,12 @@ test('2회차 이후에도 guidelines 통계가 자기 것으로 유지된다', 
 test('아카이브 현황 블록이 없어도 표가 복제되지 않는다', () => {
   const noStatus = samplePage().replace(/<!-- ARCHIVE_STATUS v1 -->[\s\S]*?<!-- \/ARCHIVE_STATUS -->/, '');
   const before = count(noStatus, ROWS);
-  const { index, guidelines } = splitPages(noStatus, { refIds });
-  assert.equal(before, 4);
-  assert.equal(count(index, ROWS) + count(guidelines, ROWS), before);
+  const { index, guidelines, reviews } = splitPages(noStatus, { refIds });
+  assert.equal(before, 5);
+  assert.equal(count(index, ROWS) + count(guidelines, ROWS) + count(reviews, ROWS), before);
   assert.equal(count(index, /<div class="arch-table">/g), 1);
-  assert.equal(count(guidelines, /<div class="arch-table">/g), 2); // 가이드 + 기타
+  assert.equal(count(guidelines, /<div class="arch-table">/g), 1);   // 가이드라인 하나
+  assert.equal(count(reviews, /<div class="arch-table">/g), 2);      // 리뷰 + 기타
 });
 
 /** 현황 블록 버전이 올라도(v1→v2) guidelines 에서 제거된다. */
@@ -272,10 +299,10 @@ test('행 제목에 $& 가 있어도 병합이 본문을 망가뜨리지 않는�
   //   `$&`·`` $` `` 가 펼쳐져 픽스처가 이미 망가진다(실제로 4행 → 7행이 됐다).
   //   이 한 줄이 이 테스트가 막으려는 위험 그 자체다.
   const evil = samplePage().replace('<a href="#">G1</a>', () => `<a href="#">${EVIL_TITLE}</a>`);
-  assert.equal(count(evil, ROWS), 4, '픽스처가 이미 훼손됨');
+  assert.equal(count(evil, ROWS), 5, '픽스처가 이미 훼손됨');
   const a = splitPages(evil, { refIds });
-  const merged = mergePages(a.index, a.guidelines);
-  assert.equal(count(merged, ROWS), 4);
+  const merged = mergePages(a.index, a.guidelines, a.reviews);
+  assert.equal(count(merged, ROWS), 5);
   assert.ok(merged.includes(EVIL_TITLE), '치환으로 제목이 훼손됨');
   const b = splitPages(merged, { refIds });
   assert.deepEqual(b.counts, a.counts);

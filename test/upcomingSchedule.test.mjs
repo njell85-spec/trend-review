@@ -15,10 +15,21 @@ test('매일 트랙: 오늘부터 하루 간격으로 채운다', () => {
     ['2026-08-16', '2026-08-17', '2026-08-18', '2026-08-19', '2026-08-20']);
 });
 
-test('격일 트랙: 하루 걸러 나온다', () => {
-  assert.deepEqual(
-    nextRunDates({ from: D('2026-08-16'), days: 7, mode: 'alternate', cadence: 'daily' }),
-    ['2026-08-16', '2026-08-18', '2026-08-20', '2026-08-22']);
+// ★ 격일은 **달력 패리티**로 바뀌었다 (2026-08-16 리뷰 B13).
+//   종전에는 `from` 부터 두 칸씩 셌는데, 게이트는 다른 기준으로 판정해 둘이 하루씩
+//   엇갈렸다. 이제 양쪽 다 `trackRunsOn` 을 부르므로 어긋날 수 없다.
+//   그래서 "무슨 날이 나오는가" 는 시작일이 아니라 달력이 정한다.
+test('격일 트랙: 하루 걸러 나오고, 어느 날부터 세든 같은 날들이 나온다', () => {
+  const a = nextRunDates({ from: D('2026-08-16'), days: 7, mode: 'alternate', cadence: 'daily' });
+  const b = nextRunDates({ from: D('2026-08-17'), days: 6, mode: 'alternate', cadence: 'daily' });
+  // 하루 걸러 나온다 (7일 창이면 3~4일 — 창이 짝수 날에서 시작하는지에 달렸다)
+  assert.ok(a.length === 3 || a.length === 4, `격일인데 ${a.length}일이 나왔다`);
+  for (let i = 1; i < a.length; i += 1) {
+    const gap = (new Date(a[i]) - new Date(a[i - 1])) / 86_400_000;
+    assert.equal(gap, 2, `${a[i - 1]} → ${a[i]} 간격이 2일이 아니다`);
+  }
+  // ★ 시작일을 바꿔도 같은 계열이다 — 이것이 게이트와 안 어긋나는 이유다.
+  for (const d of b) assert.ok(a.includes(d), `시작일에 따라 격일 계열이 달라졌다 (${d})`);
 });
 
 test('★ off 면 날짜가 하나도 안 나온다 — 예고도 비어야 한다', () => {

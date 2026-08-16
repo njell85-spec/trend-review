@@ -17,7 +17,7 @@ import { ValidationAgent } from '../agents/ValidationAgent.js';
 import { ReportGeneratorAgent } from '../agents/ReportGeneratorAgent.js';
 import { NotificationAgent } from '../agents/NotificationAgent.js';
 import { GitHubPublisher } from '../utils/GitHubPublisher.js';
-import { kstDateStr, kstStamp } from '../utils/dates.js';
+import { kstDateStr, kstStamp, calendarDay } from '../utils/dates.js';
 import { selectMonthlyPool } from '../utils/monthlyPool.js';
 import { loadGuidelineState, saveGuidelineState, mergeCandidates } from '../utils/guidelineState.js';
 import { collectGuidelineCandidates } from '../utils/guidelinePubmed.js';
@@ -30,23 +30,8 @@ import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guideli
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
 import { buildProgressLines } from '../utils/trackProgress.js';
 import { normalizeControl } from '../utils/controlState.js';
+import { intervalFor, trackRunsOn } from '../utils/trackCadence.js';
 
-// 날짜 문자열을 달력상의 연속 일수로 바꾼다. Date를 쓰면 실행 환경의 타임존에 따라
-// 자정이 전날로 밀릴 수 있어, 주간 발행 경계는 YYYY-MM-DD의 정수 연산만 사용한다.
-function calendarDay(dateStr) {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr ?? '');
-  if (!match) return null;
-  let year = Number(match[1]);
-  const month = Number(match[2]);
-  const day = Number(match[3]);
-  year -= month <= 2 ? 1 : 0;
-  const era = Math.floor(year / 400);
-  const yearOfEra = year - era * 400;
-  const shiftedMonth = month + (month > 2 ? -3 : 9);
-  const dayOfYear = Math.floor((153 * shiftedMonth + 2) / 5) + day - 1;
-  return era * 146097 + yearOfEra * 365 + Math.floor(yearOfEra / 4)
-    - Math.floor(yearOfEra / 100) + dayOfYear;
-}
 
 const STAGES = {
   IDLE: 'IDLE',
@@ -109,7 +94,11 @@ export class TrendReviewOrchestrator {
     this.controlStatePath = options.controlStatePath ?? path.join(this.outputDir, 'control_state.json');
     // 가이드라인 캐치업 노출 기록 (주 1회 게이트 + 중복 방지)
     this.guidelineListPath = path.join(this.outputDir, 'selected_guidelines.json');
-    this.guidelineIntervalDays = options.guidelineIntervalDays ?? 7;
+    // ★ 가이드라인 주기 게이트는 **없다.** 확정 ④-D(G7) 가 "매일 시도" 로 못 박았다.
+    //   종전에는 `guidelineIntervalDays`(기본 7)와 `_guidelineDue()` 가 남아 있었는데
+    //   **아무도 부르지 않는 죽은 코드**였고, 그것이 문서와 다음 세션을 둘 다 속였다
+    //   ("큐가 6건뿐인 건 주 1회 게이트 때문" — 아니었다. 관찰 모드 때문이었다).
+    //   손잡이처럼 보이는데 아무 데도 안 걸린 것은 없느니만 못하므로 지웠다.
   }
 
   // ── 가이드라인 노출 기록 ──────────────────────────────────────────────────────
@@ -118,14 +107,6 @@ export class TrendReviewOrchestrator {
       const raw = await readFile(this.guidelineListPath, 'utf8');
       return JSON.parse(raw);
     } catch { return []; }
-  }
-
-  // 주 1회 게이트: 마지막 가이드라인 노출이 N일 이상 지났거나(또는 없음) 시도.
-  _guidelineDue(seen, todayStr) {
-    if (!seen.length) return true;
-    const last = seen.reduce((a, b) => (a.date > b.date ? a : b));
-    const days = Math.round((new Date(todayStr) - new Date(last.date)) / 86_400_000);
-    return days >= this.guidelineIntervalDays;
   }
 
   async _saveGuideline(card, todayStr) {
@@ -580,7 +561,17 @@ export class TrendReviewOrchestrator {
       //   따라서 프로덕션에서 매일 실측이 쌓이고, PeterJ 가 `ENABLE_GUIDELINE_AUTOPUBLISH=true`
       //   하나로 발행을 켠다. 되돌리는 것도 그 한 줄이다.
       const autoPublish = String(process.env.ENABLE_GUIDELINE_AUTOPUBLISH ?? '').toLowerCase() === 'true';
-      const pick = autoPublish
+      // ★ 주기 게이트는 **없다.** 확정 ④-D(G7) 가 "매일 시도" 로 못 박았고
+      //   `test/guidelineContract.test.mjs` 가 그것을 잠근다. 되살리지 마라 —
+      //   2026-08-16 에 핸드오프가 "큐가 6건뿐인 건 주 1회 게이트 때문" 이라고 적었는데
+      //   그 게이트는 애초에 돌지 않고 있었다. 실제로 발행을 막던 것은 관찰 모드다.
+      // ★ on/off·격일·순차진행 (PeterJ 확정 2026-08-16 · 4-A).
+      //   종전에는 `mode` 를 **아무도 안 봤다** — 화면에서 "가이드라인 · 꺼짐" 을 눌러도
+      //   다음 데일리가 그대로 발행했다(코드리뷰 발견 B2).
+      const control = await this._loadControl();
+      const dueToday = trackRunsOn('guidelines', todayStr,
+        { mode: control.tracks.guidelines.mode, sequential: control.sequential });
+      const pick = (autoPublish && dueToday)
         ? state.queue.filter((x) => x.status === 'queued')
           .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0]
         : undefined;
@@ -654,15 +645,28 @@ export class TrendReviewOrchestrator {
 
   // 트랙3은 독립 발행 arm이다. 이 메서드의 오류는 run() 호출 경계에서 격리해
   // 논문 보고서·발행 경로가 리뷰 큐 상태에 의존하지 않게 한다.
+  /**
+   * 제어 상태를 읽는다. **러너는 읽기만 한다** — 되쓰기 시작하면 브라우저 버튼 커밋과
+   * 상호 덮어쓰기가 시작된다(불변식).
+   */
+  async _loadControl() {
+    let raw = null;
+    try { raw = JSON.parse(await readFile(this.controlStatePath, 'utf8')); }
+    catch { /* 부재·손상은 normalizeControl 의 전부 on 기본값으로 복구한다. */ }
+    return normalizeControl(raw);
+  }
+
   async _stageReview(todayStr) {
-    let rawControl = null;
-    try { rawControl = JSON.parse(await readFile(this.controlStatePath, 'utf8')); }
-    catch { /* 제어 파일 부재·손상은 normalizeControl의 전부 on 기본값으로 복구한다. */ }
-    const mode = normalizeControl(rawControl).tracks.reviews.mode;
+    const control = await this._loadControl();
+    const mode = control.tracks.reviews.mode;
     if (mode === 'off') return { outcome: 'skipped', reason: 'track-off' };
+    // ★ on/off·격일·순차진행 판정은 예고가 부르는 것과 **같은 함수**가 한다.
+    if (!trackRunsOn('reviews', todayStr, { mode, sequential: control.sequential })) {
+      return { outcome: 'skipped', reason: 'cadence-gate' };
+    }
 
     const state = await loadTrackQueue(this.queueReviewsPath, 'reviews');
-    const intervalDays = mode === 'alternate' ? 14 : 7;
+    const intervalDays = mode === 'alternate' ? intervalFor('reviews') * 2 : intervalFor('reviews');
     const todayDay = calendarDay(todayStr);
     const lastDay = calendarDay(state.lastRun?.date);
     if (todayDay !== null && lastDay !== null && todayDay - lastDay < intervalDays) {
@@ -680,17 +684,20 @@ export class TrendReviewOrchestrator {
       updatedAt: todayStr,
     };
     await saveTrackQueue(this.queueReviewsPath, next);
-    return { outcome: 'published', item: published };
+    // 발행이 실패하면 호출부가 이것을 불러 큐를 되돌린다(B14). 되돌림은 **직전 상태를
+    // 그대로 다시 쓴다** — 그 사이 다른 주체가 이 파일을 고치지 않는다(러너 단독 크론).
+    const rollback = async () => { await saveTrackQueue(this.queueReviewsPath, state); };
+    return { outcome: 'published', item: published, rollback };
   }
 
-  async _stagePublish(topPapers, guideline = null) {
+  async _stagePublish(topPapers, guideline = null, review = null) {
     if (!this.githubPublisher) return null;
     const entry = this._stageStart(STAGES.PUBLISHING);
     try {
       let guidelineState = null;
       try { guidelineState = await loadGuidelineState(this.guidelineListPath); }
       catch (error) { this.logger.warn('Guideline render state unavailable — keeping existing page', { err: error.message }); }
-      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline, guidelineState });
+      const pagesUrl = await this.githubPublisher.publish(kstDateStr(), topPapers, { guideline, guidelineState, review });
       this._stageEnd(entry, 'ok', { pagesUrl });
       this.logger.info(`GitHub Pages 업데이트 완료: ${pagesUrl}`);
       return pagesUrl;
@@ -762,6 +769,23 @@ export class TrendReviewOrchestrator {
     }
 
     try {
+      // ★ 논문 트랙 게이트를 **수집보다 먼저** 본다 (코드리뷰 발견 B9).
+      //   종전에는 수집·재순위·풀텍스트·PICO·검증(전부 LLM)을 다 돌린 뒤에야 게이트를
+      //   보고 결과를 버렸다. 순차진행을 켜면 3일 중 2일이 그렇게 되어 **LLM 비용이 3배**다.
+      //   더 나쁜 것은 정합성이다 — 리포트와 텔레그램은 게이트 이전 값을 쓰므로
+      //   PeterJ 는 "오늘의 논문" 알림을 받는데 페이지에는 그 논문이 없다.
+      //   여기서 막으면 셋이 같은 말을 한다.
+      const todayStr = kstDateStr();
+      const controlForRun = await this._loadControl();
+      const papersDue = trackRunsOn('papers', todayStr,
+        { mode: controlForRun.tracks.papers.mode, sequential: controlForRun.sequential });
+      if (!papersDue) {
+        this.logger.info('논문 트랙이 오늘은 쉰다 — 수집·분석을 건너뛴다', {
+          today: todayStr, mode: controlForRun.tracks.papers.mode, sequential: controlForRun.sequential,
+        });
+        return this._runWithoutPapers(todayStr);
+      }
+
       // Stage 1: Collect
       const { papers: rawPapers, stats: collectStats } = await this._stageCollect(
         resumeCheckpoint?.data?.collectionResult
@@ -837,13 +861,18 @@ export class TrendReviewOrchestrator {
 
       const { jsonPath, htmlPath } = await this._stageReport(this.sessionId, payload);
 
-      // Stage 7a: 가이드라인 캐치업 (주 1회, non-fatal, 없으면 null)
-      const todayStr = kstDateStr();
+      // Stage 7a: 가이드라인 캐치업 (non-fatal, 없으면 null)
       const guidelineCard = await this._stageGuideline(todayStr);
 
       // 리뷰는 데일리 코어의 부가 arm이다. 큐 읽기·저장 어느 쪽이 실패해도 논문 발행은 계속한다.
-      try { await this._stageReview(todayStr); }
-      catch (error) { this.logger.warn('Review stage failed (non-fatal)', { err: error.message }); }
+      // ★ 리뷰 결과를 **발행 경로로 넘긴다.** 넘기지 않으면 큐만 소비되고 화면에는
+      //   아무것도 안 나온다 — 2026-08-16 까지 실제로 그 상태였다(테스트는 전부 초록).
+      let reviewItem = null;
+      let reviewRollback = null;
+      try {
+        const r = await this._stageReview(todayStr);
+        if (r?.outcome === 'published') { reviewItem = r.item; reviewRollback = r.rollback ?? null; }
+      } catch (error) { this.logger.warn('Review stage failed (non-fatal)', { err: error.message }); }
 
       // 제외목록·가이드라인 기록을 publish 전에 저장 — publish가 이 파일들을
       // 커밋/푸시하므로, 순서가 뒤면 원격 목록이 항상 하루 늦어 중복 선정된다.
@@ -855,7 +884,20 @@ export class TrendReviewOrchestrator {
       if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
 
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
-      const pagesUrl = await this._stagePublish(validatedPico, guidelineCard);
+      const pagesUrl = await this._stagePublish(validatedPico, guidelineCard, reviewItem);
+      // ★ 발행이 실패했으면 리뷰 큐 소비를 되돌린다 (코드리뷰 발견 B14).
+      //   큐 전이는 발행보다 **먼저** 일어나고 `_stagePublish` 는 예외를 삼켜 null 을
+      //   돌려준다. 되돌리지 않으면 그 리뷰는 published 로 기록돼 다시는 큐 머리에
+      //   오지 않는데 카드는 어디에도 없다 — **화면에 한 번도 안 나온 채 영구 소멸한다.**
+      //   논문 쪽은 같은 위험을 알고 제외목록 저장을 막아뒀는데 리뷰만 보호가 없었다.
+      if (reviewItem && !pagesUrl && reviewRollback) {
+        try {
+          await reviewRollback();
+          this.logger.warn('발행 실패 — 리뷰 큐 소비를 되돌렸다', { pmid: reviewItem.pmid ?? reviewItem.id });
+        } catch (error) {
+          this.logger.warn('리뷰 큐 롤백 실패 — 다음 실행에서 수동 확인 필요', { err: error.message });
+        }
+      }
 
       // Stage 8: Notify (optional — Google Drive 업로드, ENABLE_DRIVE 시에만)
       const notifyResult = await this._stageNotify(
@@ -885,6 +927,48 @@ export class TrendReviewOrchestrator {
       await this.logger.saveSession(this.sessionId);
       throw err;
     }
+  }
+
+  /**
+   * 논문 트랙이 쉬는 날의 실행 (순차진행 ON 또는 논문 토글 OFF).
+   *
+   * ★ 왜 별도 경로인가 (코드리뷰 발견 B9) — 종전에는 전체 파이프라인을 다 돌린 뒤
+   *   결과만 버렸다. LLM 비용이 그대로 나가고, 무엇보다 리포트·텔레그램이 **버려질
+   *   논문을 그대로 알렸다.** PeterJ 는 "오늘의 논문" 알림을 받는데 페이지에는 그
+   *   논문이 없는 상태가 된다. 여기서는 **애초에 논문을 안 뽑는다.**
+   *
+   * ★ 가이드라인·리뷰는 그대로 돈다. 순차진행의 요지가 "하루 한 트랙" 이므로
+   *   논문이 쉬는 날은 다른 트랙 차례다.
+   * ★ `topPapers` 는 빈 배열로 돌려준다 — 진입점이 이 값으로 텔레그램을 만들기 때문에,
+   *   비워야 "논문 없음" 이 그대로 전달된다.
+   */
+  async _runWithoutPapers(todayStr) {
+    let guidelineCard = null;
+    try { guidelineCard = await this._stageGuideline(todayStr); }
+    catch (error) { this.logger.warn('Guideline stage failed (non-fatal)', { err: error.message }); }
+
+    let reviewItem = null;
+    let reviewRollback = null;
+    try {
+      const r = await this._stageReview(todayStr);
+      if (r?.outcome === 'published') { reviewItem = r.item; reviewRollback = r.rollback ?? null; }
+    } catch (error) { this.logger.warn('Review stage failed (non-fatal)', { err: error.message }); }
+
+    if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
+
+    const pagesUrl = await this._stagePublish([], guidelineCard, reviewItem);
+    if (reviewItem && !pagesUrl && reviewRollback) {
+      try { await reviewRollback(); this.logger.warn('발행 실패 — 리뷰 큐 소비를 되돌렸다'); }
+      catch (error) { this.logger.warn('리뷰 큐 롤백 실패', { err: error.message }); }
+    }
+
+    this.state = STAGES.DONE;
+    return this._buildResult([], null, null, null, null, {
+      pagesUrl,
+      skipped: 'papers',
+      guidelinePublished: Boolean(guidelineCard),
+      reviewPublished: Boolean(reviewItem),
+    });
   }
 
   _buildResult(topPapers, allPapers, qualityReport, stats, paths, extra = {}) {

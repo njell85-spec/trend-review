@@ -82,10 +82,16 @@ export async function saveGuidelineState(path, state) {
 export function mergeCandidates(state, candidates) {
   validateV2(state);
   const publishedIds = new Set(state.published.map(candidateId));
+  // ★ 뺀 것(rejected)도 대조한다 (2026-08-16 코드리뷰 발견 B3).
+  //   종전에는 published·queue 만 봐서, 예고에서 🗑 로 뺀 지침이 **다음 데일리 수집에
+  //   그대로 되살아났다.** PeterJ 입장에서는 "지웠는데 다시 떴다" 가 된다.
+  //   papers·reviews 가 쓰는 `trackQueue.mergeQueueItems` 는 이미 rejected 를 본다 —
+  //   가이드라인만 예외였다.
+  const rejectedIds = new Set((state.rejected ?? []).map(candidateId));
   const queue = new Map(state.queue.map((item) => [candidateId(item), item]));
   for (const candidate of candidates ?? []) {
     const id = candidateId(candidate);
-    if (publishedIds.has(id)) continue;
+    if (publishedIds.has(id) || rejectedIds.has(id)) continue;
     const previous = queue.get(id);
     const discoveredBy = [...new Set([...(previous?.discoveredBy ?? []), ...(candidate.discoveredBy ?? [])])];
     queue.set(id, {
