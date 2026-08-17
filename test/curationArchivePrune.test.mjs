@@ -104,3 +104,47 @@ test('삭제 확인 문구가 분석내용까지 지운다고 알린다', () => 
   // 클라이언트 코드를 고쳤으면 버전을 올려야 배포 페이지에 반영된다.
   assert.match(block, /CURATION_BLOCK v7/);
 });
+
+// ── ★ 계약: 스크립트가 쓰는 파일은 워크플로 git add 목록에 다 있어야 한다 ──────
+// 이 저장소가 **두 번** 데인 자리다:
+//   08-16 reviews.html·트랙 큐가 add 목록에 없어 큐가 매 실행 증발할 뻔했다
+//   08-17 analysis_archive.json 프루닝과 reviews.html 패치를 붙이고 이 줄을 안 고쳤다
+// 증상이 고약하다 — 러너에서는 고쳐지고 커밋만 안 돼서 **push 가 성공으로 끝난다.**
+// 게다가 index.html 블록은 프루닝된 값으로 다시 그려져 화면은 맞아 보이는데,
+// JSON 이 안 올라가서 다음 데일리 렌더가 지운 항목을 되살린다.
+
+test('★ curate-remove 가 쓰는 모든 파일이 워크플로 git add 목록에 있다', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const script = await readFile('scripts/curate-remove.mjs', 'utf8');
+  const wf = await readFile('.github/workflows/curate-remove.yml', 'utf8');
+
+  // ① writeFile('<경로>' …) 로 직접 쓰는 것
+  const written = [...script.matchAll(/writeFile\(\s*['"`]([^'"`]+)['"`]/g)].map((m) => m[1]);
+  // ② targets 배열 — 섹션 패치 대상 페이지
+  const targets = [...script.matchAll(/const targets = \[([^\]]+)\]/g)]
+    .flatMap((m) => m[1].split(',').map((x) => x.trim().replace(/['"`]/g, '')))
+    .filter(Boolean);
+  // ③ 상태 파일은 헬퍼(saveCurationState)를 거쳐 정규식에 안 걸린다 — 못 박아 둔다
+  const files = [...new Set([...written, ...targets, 'output/curation_state.json'])]
+    .filter((f) => f.includes('.'));
+
+  assert.ok(files.length >= 4, `대상 파일을 못 찾았다 (${files.join(', ')}) — 이 검사가 헛돌고 있다`);
+  const addLines = wf.split('\n').filter((l) => l.includes('git add') || l.includes('for f in'));
+  const haystack = addLines.join('\n');
+  const missing = files.filter((f) => !haystack.includes(f));
+  assert.deepEqual(missing, [], `git add 목록에 없다: ${missing.join(', ')}`);
+});
+
+test('★ 워크플로 tag choice 값과 스크립트 화이트리스트가 일치한다', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const script = await readFile('scripts/curate-remove.mjs', 'utf8');
+  const wf = await readFile('.github/workflows/curate-remove.yml', 'utf8');
+  // 워크플로가 보내는 값을 스크립트가 거절하면 exit 1 이고 화면엔 아무 말이 없다
+  // (2026-08-17 리뷰 삭제가 정확히 그렇게 죽었다 — choice 엔 RSECTION 이 있는데
+  //  스크립트 화이트리스트엔 없었다).
+  const choices = wf.match(/options: \[([^\]]+)\]/)[1].split(',').map((s) => s.trim());
+  const allowed = script.match(/\[([^\]]*?)\]\.includes\(tag\)/)[1]
+    .split(',').map((s) => s.trim().replace(/'/g, ''));
+  assert.deepEqual(choices.slice().sort(), allowed.slice().sort(),
+    `워크플로 choice ${choices.join('|')} vs 스크립트 허용 ${allowed.join('|')}`);
+});
