@@ -96,3 +96,47 @@ test('가이드라인 단계가 throw해도 논문 publish가 호출된다', asy
   await o.run();
   assert.equal(published, 1);
 });
+
+// ── F2 배선 회귀: 보강이 **실제로 불리는가** ─────────────────────────────────────
+//
+// 이 저장소가 반복해서 밟은 함정이 "모듈은 옳은데 아무도 안 부른다" 다.
+// `enrichCandidates` 자체는 `guidelinePubmed.test.mjs` 가 보지만, 그것이 데일리 수집
+// 경로에 **걸려 있는지**는 여기서만 볼 수 있다. 안 걸려 있으면 초록이 영원히 비고
+// 분류기의 `normative` 축이 항상 0 이다 — 2026-08-17 실물이 정확히 그 상태였다.
+test('F2: _guidelineInputs 가 efetch 보강을 태우고 증거를 manifest 에 남긴다', async () => {
+  const o = new TrendReviewOrchestrator();
+  const asked = [];
+  o.collector = {
+    _fetchJson: async (url) => {
+      if (url.includes('esearch')) {
+        const isPt = new URL(url).searchParams.get('term').includes('practice guideline');
+        return { esearchresult: { count: '1', idlist: isPt ? ['11'] : ['12'] } };
+      }
+      const ids = new URL(url).searchParams.get('id').split(',');
+      return { result: Object.fromEntries(ids.map((id) => [id, { uid: id, title: `Doc ${id}`, pubdate: '2026-08-01', pubtype: ['Guideline'] }])) };
+    },
+    fetchArticles: async (pmids) => {
+      asked.push(...pmids);
+      return pmids.map((pmid) => ({ pmid, abstract: `We recommend X for ${pmid}.`, publicationTypes: ['Guideline'], meshTerms: ['Sepsis'], keywords: [] }));
+    },
+  };
+  const out = await o._guidelineInputs('2026-08-17');
+  assert.deepEqual(asked.sort(), ['11', '12'], 'efetch 보강이 아예 안 불렸다');
+  assert.ok(out.candidates.every((c) => String(c.abstract ?? '').includes('We recommend')),
+    '보강 결과가 후보에 안 실렸다 — 반환값을 버리고 원본을 돌려주고 있다');
+  assert.equal(out.manifest.enrichment.enriched, 2);
+  assert.equal(out.manifest.enrichment.withAbstract, 2);
+});
+
+test('F2: 보강이 죽어도 수집은 성사되고, 죽었다는 사실이 남는다', async () => {
+  const o = new TrendReviewOrchestrator();
+  o.collector = {
+    _fetchJson: async (url) => (url.includes('esearch')
+      ? { esearchresult: { count: '1', idlist: ['11'] } }
+      : { result: { 11: { uid: '11', title: 'Doc 11', pubdate: '2026-08-01', pubtype: ['Guideline'] } } }),
+    fetchArticles: async () => { throw new Error('efetch 503'); },
+  };
+  const out = await o._guidelineInputs('2026-08-17');
+  assert.equal(out.candidates.length, 1, '보강 실패가 수집을 죽이면 안 된다');
+  assert.match(out.manifest.enrichment.error, /efetch 503/, '조용히 넘어가면 안 된다');
+});

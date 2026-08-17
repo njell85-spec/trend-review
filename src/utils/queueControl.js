@@ -45,15 +45,32 @@ export function dropFromQueue(state, id, todayStr = null) {
 
 /**
  * ▶ — 큐 머리로 올린다(= 다음 실행에서 이것이 나간다).
- * 순서만 바꾼다. 빼거나 더하지 않는다.
+ *
+ * ★ 순서만 바꾸면 **아무 일도 안 일어나는 항목**이 있다 (2026-08-17 실측).
+ *   가이드라인 큐는 항목마다 `status` 를 들고 있고, 발행 픽은 `status === 'queued'` 인
+ *   것 중에서만 고른다. 그런데 실물 큐 5건이 전부 `needsReview` 였다 —
+ *   ▶ 를 눌러 머리로 올려도 **게이트가 쳐다보지도 않는 자리로 올릴 뿐**이다.
+ *   예고 리스트도 `queued` 만 그리므로 화면에서 사라지고, 자동 재판정이 닿지 않는
+ *   (수집 창 밖으로 나간) 항목은 **영구 적체**된다. 소진 통로가 0 이었다.
+ *
+ *   그래서 ▶ 는 "다음 실행에서 이것이 나간다" 라는 **자기 설명대로** 동작한다:
+ *   머리로 올리고, 검토 대기 상태였으면 **발행 대기로 승격한다.**
+ *   이것은 PeterJ 의 수동 판단이므로 자동 필터보다 우선한다(확정 ⑤-A 와 같은 원칙).
+ *   `status` 자체가 없는 큐(papers·reviews)는 종전과 똑같이 순서만 바뀐다.
  */
 export function promoteInQueue(state, id, todayStr = null) {
   const key = String(id ?? '').trim();
   if (!key) return { next: state, changed: false };
   const queue = state.queue ?? [];
   const idx = queue.findIndex((x) => itemId(x) === key);
-  if (idx <= 0) return { next: state, changed: false }; // 없거나 이미 머리면 할 일 없음
-  const moved = queue[idx];
+  if (idx < 0) return { next: state, changed: false };
+  const hit = queue[idx];
+  const needsPromotion = hit?.status != null && hit.status !== 'queued';
+  // 이미 머리이고 승격할 것도 없으면 진짜로 할 일이 없다.
+  if (idx === 0 && !needsPromotion) return { next: state, changed: false };
+  const moved = needsPromotion
+    ? { ...hit, status: 'queued', promotedFrom: hit.status, promotedAt: todayStr ?? null }
+    : hit;
   return {
     next: {
       ...state,

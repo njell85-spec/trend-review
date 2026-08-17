@@ -59,18 +59,32 @@ export function classifyGuidelineDocument(candidate, { orgs } = {}) {
   const types = publicationTypes(candidate ?? {});
   const negative = NEGATIVE_PATTERNS.find(([, pattern]) => pattern.test(title));
   const editorialType = types.some((type) => /\b(?:editorial|comment|letter)\b/.test(type));
-  const guidelineType = types.some((type) => /^(?:practice )?guideline$/.test(type));
-  const documentType = inferDocumentType(title, types);
+  const discoveredByRaw = (candidate?.discoveredBy ?? []).map(normalized);
+  // ★ PT 쿼리가 돌려준 것은 **PubMed 자신이 Guideline/Practice Guideline 으로 색인한 것**이다.
+  //   `pubmed-pt` 쿼리 자체가 `("practice guideline"[Publication Type]) OR ("guideline"[Publication Type])`
+  //   이므로, 거기서 나왔다는 사실은 publicationTypes 를 다시 읽는 것과 같은 증거다.
+  //   종전에는 `publicationTypes` **하나만** 봤고, 그 배열이 esummary 필드명 오류로 통째로
+  //   비어 있었다(F1). 그래서 **PT 로 찾아온 문서가 "PT 가 아님" 으로 판정되는** 자기모순이
+  //   났다. F1 을 고쳐도 esummary 가 PT 를 늦게 다는 날은 같은 일이 재발하므로, 발견 경로
+  //   자체를 두 번째 근거로 세워 둔다.
+  const ptDiscovered = discoveredByRaw.includes('pubmed pt');
+  const guidelineType = types.some((type) => /^(?:practice )?guideline$/.test(type)) || ptDiscovered;
+  const documentType = inferDocumentType(title, types) ?? (ptDiscovered ? 'guideline' : null);
   const organization = orgs ? matchOrganization(candidate ?? {}, orgs) : null;
   const body = normalized([candidate?.abstract, candidate?.fullText, candidate?.content].filter(Boolean).join(' '));
   const normative = /\b(?:recommend(?:ation|ations|ed|s)?|should|class of recommendation|level of evidence|guidance)\b/.test(body);
-  const discoveredBy = (candidate?.discoveredBy ?? []).map(normalized);
+  const discoveredBy = discoveredByRaw;
   const approvedOrgSource = discoveredBy.some((source) => source.startsWith('org '))
     || candidate?.signals?.approvedOrgPath === true
     || candidate?.signals?.approvedOrganizationSource === true;
+  // ★ `Boolean(...)` 로 감싼다. 종전에는 `guidelineType && candidate.pmid` 가 **pmid 문자열**을
+  //   그대로 돌려줘서 `evidence.official` 에 `'42522393'` 같은 값이 들어갔다. 축 개수를 세는
+  //   데는 truthy 라 문제가 안 났지만, 이 evidence 객체는 **상태 파일에 그대로 직렬화**되므로
+  //   나중에 `=== true` 로 읽는 코드가 조용히 어긋난다. 계약은 boolean 이다
+  //   (`test/guidelineClassifier.test.mjs` 의 코퍼스 계약이 그렇게 못 박고 있다).
   const pubmedOfficial = candidate?.signals?.pubmedOfficial === true
     || candidate?.signals?.officialDocument === true
-    || (guidelineType && (candidate?.pmid || discoveredBy.some((source) => source.startsWith('pubmed'))));
+    || Boolean(guidelineType && (candidate?.pmid || discoveredBy.some((source) => source.startsWith('pubmed'))));
 
   const evidence = {
     format: Boolean(documentType),

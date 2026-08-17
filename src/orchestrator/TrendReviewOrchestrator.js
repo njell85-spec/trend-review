@@ -20,7 +20,7 @@ import { GitHubPublisher } from '../utils/GitHubPublisher.js';
 import { kstDateStr, kstStamp, calendarDay } from '../utils/dates.js';
 import { selectMonthlyPool } from '../utils/monthlyPool.js';
 import { loadGuidelineState, saveGuidelineState, mergeCandidates } from '../utils/guidelineState.js';
-import { collectGuidelineCandidates } from '../utils/guidelinePubmed.js';
+import { collectGuidelineCandidates, enrichCandidates } from '../utils/guidelinePubmed.js';
 import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
@@ -480,7 +480,24 @@ export class TrendReviewOrchestrator {
       minDate: start.toISOString().slice(0, 10).replaceAll('-', '/'),
       maxDate: todayStr.replaceAll('-', '/'),
     });
-    return pubmed;
+
+    // ★ esummary 만으로는 **초록·MeSH·키워드가 없다.** 분류기의 `normative` 축과
+    //   스코어러의 주제 점수가 거기서만 읽으므로, 보강이 없으면 그 축들이 영원히 0 이다
+    //   (2026-08-17 실측: 큐 5건 전부 `insufficient-positive-evidence`).
+    //   파서는 논문 트랙의 검증된 것을 그대로 쓴다 — 같은 응답을 두 파서가 다르게 읽으면
+    //   어느 쪽이 맞는지 아무도 모르게 된다.
+    const enriched = await enrichCandidates(pubmed.candidates, {
+      fetchArticles: typeof this.collector?.fetchArticles === 'function'
+        ? (pmids) => this.collector.fetchArticles(pmids)
+        : undefined,
+    });
+    // 보강 실패는 수집을 죽이지 않는다. 다만 **조용히 넘어가지 않는다** — manifest 에 남겨
+    //   "그날은 판정이 옛 상태로 되돌아갔다" 를 나중에 읽을 수 있게 한다.
+    if (enriched.evidence.error) {
+      this.logger.warn('지침 후보 보강(efetch) 실패 — 초록 없이 판정한다', { err: enriched.evidence.error });
+    }
+    pubmed.manifest.enrichment = enriched.evidence;
+    return { candidates: enriched.candidates, manifest: pubmed.manifest };
   }
 
   // 매일 최대 한 편을 소진한다. 이 단계의 모든 실패는 논문 데일리에 non-fatal이다.

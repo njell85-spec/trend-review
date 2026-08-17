@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
-import { collectGuidelineCandidates, assertSupersetOfPtPath } from './guidelinePubmed.js';
+import { collectGuidelineCandidates, assertSupersetOfPtPath, enrichCandidates } from './guidelinePubmed.js';
+import { filterByRegion } from './guidelineRegionFilter.js';
 import { matchOrganization } from './guidelineOrgs.js';
 import { classifyGuidelineDocument } from './guidelineClassifier.js';
 import { scoreGuideline, suggestStatus } from './GuidelineScorer.js';
@@ -69,6 +70,7 @@ export function simulateDailyPublishing(rows, { minDate, maxDate }) {
 export async function runGuidelineBackfill({
   windows = DEFAULT_BACKFILL_WINDOWS, today = new Date(), fetchJson, apply = false,
   statePath, orgs: suppliedOrgs, interests: suppliedInterests, collect = collectGuidelineCandidates,
+  fetchArticles,
 } = {}) {
   if (typeof fetchJson !== 'function') throw new TypeError('fetchJson must be a function');
   const orgs = suppliedOrgs ?? loadGuidelineOrgs();
@@ -81,12 +83,28 @@ export async function runGuidelineBackfill({
 
   for (const window of parseBackfillWindows(windows, today)) {
     try {
-      const { candidates, manifest } = await collect({ fetchJson, minDate: window.minDate, maxDate: window.maxDate });
+      const collected = await collect({ fetchJson, minDate: window.minDate, maxDate: window.maxDate });
+      const manifest = collected.manifest;
+      // ★ 보강(efetch)과 지역 필터는 **프로덕션 `_stageGuideline()` 과 같은 순서**로 돈다.
+      //   이 실험의 존재 이유가 "그날 아침 이 로직이 돌았다면 무엇이 나갔을까" 인데,
+      //   프로덕션에 있는 단계를 빼고 재생하면 재생이 아니라 다른 실험이 된다.
+      //   특히 `--apply` 를 켜면 **여기서 나온 것이 실제 큐가 된다** — 지역 필터가 빠진 채
+      //   적용하면 PeterJ 가 안 읽는 지역 지침이 큐에 그대로 들어앉는다(확정 2026-08-16 위반).
+      const enrichedResult = await enrichCandidates(collected.candidates, { fetchArticles });
+      manifest.enrichment = enrichedResult.evidence;
+      const regionFiltered = filterByRegion(enrichedResult.candidates);
+      manifest.region = { kept: regionFiltered.kept.length, dropped: regionFiltered.dropped.length };
+      const candidates = regionFiltered.kept;
       let missing = [];
-      try { assertSupersetOfPtPath(manifest, candidates); }
+      // ★ 초집합 검사는 **지역 필터 앞의 집합**으로 한다. 이 검사가 묻는 것은
+      //   "넓힌 그물이 현행 PT 경로가 잡던 것을 놓쳤나" — 즉 **수집 회수율**이다.
+      //   지역 필터는 수집이 아니라 정책이므로, 그것이 일부러 버린 것을 "놓쳤다" 로 세면
+      //   최우선 정지 신호가 정상 동작에 매일 울린다(= 아무도 안 보게 된다).
+      const collectedForSuperset = enrichedResult.candidates;
+      try { assertSupersetOfPtPath(manifest, collectedForSuperset); }
       catch (error) {
         const match = String(error.message).match(/missing PMID\(s\): (.+)$/);
-        missing = match ? match[1].split(/,\s*/) : (manifest.ptPmids ?? []).filter((pmid) => !candidates.some((c) => String(c.pmid) === String(pmid)));
+        missing = match ? match[1].split(/,\s*/) : (manifest.ptPmids ?? []).filter((pmid) => !collectedForSuperset.some((c) => String(c.pmid) === String(pmid)));
         stopSignals.push(`① ${window.label}: 초집합 위반 ${missing.join(', ') || error.message}`);
       }
       if (manifest.supersetCheckable === false) {

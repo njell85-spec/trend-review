@@ -130,3 +130,48 @@ test('★ needsReview·rejected 는 시뮬레이션에 안 들어간다 (자동 
     { minDate: '2026/07/01', maxDate: '2026/07/03' });
   assert.equal(sim.publishedDays, 0);
 });
+
+// ── F5 회귀: 백필이 프로덕션과 **같은 단계**를 밟는가 ────────────────────────────
+//
+// `--apply` 를 켜면 여기서 나온 것이 **실제 큐**가 된다. 프로덕션 `_stageGuideline()` 은
+// 분류 앞에 ①efetch 보강 ②지역 필터를 두는데, 백필에는 둘 다 없었다.
+// 그 상태로 apply 하면 PeterJ 가 안 읽는 지역 지침이 큐에 그대로 들어앉고
+// (확정 2026-08-16 위반), 초록이 없어 `normative` 축이 0 이라 needsReview 만 쌓인다.
+test('F5: 백필도 지역 필터를 태운다 (허용 외 지역은 큐에 안 들어간다)', async () => {
+  const collect = async () => ({
+    candidates: [
+      { id: 'pmid:1', pmid: '1', title: '2026 AHA cardiac arrest guideline', pubDate: '2026-07-01', journal: 'Circulation', publicationTypes: ['Guideline'], discoveredBy: ['pubmed-pt'] },
+      { id: 'pmid:2', pmid: '2', title: 'Diretrizes brasileiras de parada cardiaca', pubDate: '2026-07-01', journal: 'Arq Bras Cardiol', publicationTypes: ['Guideline'], discoveredBy: ['pubmed-pt'] },
+    ],
+    manifest: { queries: [], ptPmids: ['1', '2'], window: {} },
+  });
+  const report = await runGuidelineBackfill(opts(collect));
+  const ids = [...report.windows[0].audit.queued.map((x) => x.pmid),
+    ...report.windows[0].rejectedSample.map((x) => x.pmid)];
+  assert.ok(!ids.includes('2'), '허용 외 지역이 백필 결과에 남아 있다');
+  // ★ 감사 목록만 보면 약하다 — 걸러졌어야 할 것이 needsReview 로 떨어지면 두 목록
+  //   어디에도 안 나타나서 **필터를 빼도 초록이 된다**(변이 주입으로 실측).
+  //   판정에 실제로 들어간 후보 수를 직접 못 박는다.
+  assert.equal(report.windows[0].counts.candidates, 1, '지역 필터가 판정 앞에 안 걸려 있다');
+  assert.equal(report.windows[0].manifest.region.dropped, 1);
+  // ★ 지역 필터가 버린 것을 "초집합 위반" 으로 세면 안 된다 — 그건 수집 회수율이 아니라
+  //   정책이다. 매일 울리는 정지 신호는 아무도 안 보게 된다.
+  assert.equal(report.stopSignals.length, 0, '정책이 버린 것을 수집 실패로 오인했다');
+});
+
+test('F5: 백필도 efetch 보강을 태운다', async () => {
+  const asked = [];
+  const collect = async () => ({
+    candidates: [{ id: 'pmid:1', pmid: '1', title: 'AHA consensus statement on cardiac arrest', pubDate: '2026-07-01', journal: 'Circulation', publicationTypes: [], discoveredBy: ['pubmed-title'] }],
+    manifest: { queries: [], ptPmids: [], window: {} },
+  });
+  const report = await runGuidelineBackfill(opts(collect, {
+    fetchArticles: async (pmids) => {
+      asked.push(...pmids);
+      return pmids.map((pmid) => ({ pmid, abstract: 'We recommend chest compressions.', publicationTypes: ['Guideline'], meshTerms: [], keywords: [] }));
+    },
+  }));
+  assert.deepEqual(asked, ['1'], '백필이 보강을 안 태웠다');
+  assert.equal(report.windows[0].manifest.enrichment.withAbstract, 1);
+  assert.equal(report.windows[0].counts.queued, 1, '보강 없이는 needsReview 로 떨어진다');
+});

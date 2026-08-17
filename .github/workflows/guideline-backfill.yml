@@ -1,4 +1,4 @@
-name: Guideline backfill dry-run
+name: Guideline backfill (캐치업 백로그)
 
 on:
   workflow_dispatch:
@@ -7,6 +7,18 @@ on:
         description: Day-offset windows
         required: true
         default: 30-0,60-30,150-120
+      apply:
+        description: '큐에 실제로 반영한다 (끄면 리포트만 — 종전 동작)'
+        required: false
+        default: false
+        type: boolean
+
+# 데일리·큐제어와 같은 파일(output/selected_guidelines.json)을 쓴다.
+permissions:
+  contents: write
+concurrency:
+  group: queue-control
+  cancel-in-progress: false
 
 jobs:
   backfill:
@@ -18,10 +30,23 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # ★ 정지 신호가 있으면 CLI 가 0 이 아닌 코드로 끝난다(설계). 그 자체는 옳지만
+      #   여기서 잡지 않으면 **뒤의 요약·커밋 단계가 통째로 안 돈다** — 가장 봐야 할
+      #   리포트가 사라지고, --apply 로 이미 고친 큐 파일이 커밋 안 된 채 러너와 함께
+      #   버려진다. 코드는 기억해 뒀다가 마지막에 잡을 빨갛게 만든다.
       - name: Run replay experiment
+        id: replay
         env:
           PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
-        run: node scripts/guideline-backfill.mjs --windows "${{ inputs.windows }}" --out guideline-backfill-report.json
+          IN_WINDOWS: ${{ inputs.windows }}
+          IN_APPLY: ${{ inputs.apply }}
+        run: |
+          APPLY=""
+          if [ "$IN_APPLY" = "true" ]; then APPLY="--apply"; fi
+          set +e
+          node scripts/guideline-backfill.mjs --windows "$IN_WINDOWS" --out guideline-backfill-report.json $APPLY
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          set -e
       # 요약을 **로그와 잡 요약에 찍는다.** artifact 는 인증이 있어야 열리는데, 이 실험의
       # 결론(초집합·큐 순도·큐 깊이)은 폰에서 바로 보여야 한다.
       - name: Summarize report
@@ -76,6 +101,32 @@ jobs:
             require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, out + "\n");
           '
 
+      # ★ --apply 로 큐를 고쳤으면 **커밋해야 실물이 된다.** 안 그러면 러너가 죽으면서
+      #   같이 사라지고, 로그만 "반영했다" 라고 말한다. 예고 리스트는 발행 시점에 그려지므로
+      #   큐제어와 같은 렌더 경로를 한 번 태운다(LLM 토큰 0).
+      - name: 예고 리스트 다시 그리기 · 커밋 (apply 일 때만)
+        if: ${{ always() && inputs.apply }}
+        env:
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO:  ${{ github.event.repository.name }}
+        run: |
+          node scripts/apply-page-render.mjs
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
+            echo "· 변경 없음 — 커밋하지 않는다"
+            exit 0
+          fi
+          git add output/ index.html guidelines.html reviews.html
+          git commit -m "chore(guidelines): backfill apply ${{ inputs.windows }}"
+          for i in 1 2 3 4; do
+            if git push; then exit 0; fi
+            echo "· push 실패 — 최신 main 위로 옮겨 재시도 ($i)"
+            git pull --rebase origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
+
       # ★ 리포트는 실행이 실패해도 반드시 올린다.
       #   CLI 는 수집 실패(3)·정지 신호(4)에 0 이 아닌 코드로 끝난다 — 그래야 실패한 실험이
       #   성공처럼 안 보인다. 그런데 업로드가 그 실패에 딸려 건너뛰면 **가장 봐야 할 리포트가
@@ -86,3 +137,13 @@ jobs:
           name: guideline-backfill-report
           path: guideline-backfill-report.json
           if-no-files-found: error
+
+      # 실험 자체의 실패·정지 신호는 마지막에 드러낸다 — 리포트와 커밋을 다 남긴 뒤에.
+      - name: 실험 종료 코드 반영
+        if: always()
+        run: |
+          CODE="${{ steps.replay.outputs.code }}"
+          if [ -n "$CODE" ] && [ "$CODE" != "0" ]; then
+            echo "::error::guideline-backfill exited with $CODE (3=수집 실패 · 4=정지 신호) — 위 요약을 보라"
+            exit "$CODE"
+          fi
