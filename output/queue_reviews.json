@@ -3,6 +3,25 @@
   "track": "reviews",
   "queue": [
     {
+      "pmid": "39714613",
+      "title": "Management of adult sepsis in resource-limited settings: global expert consensus statements using a Delphi method.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "자원제한 패혈증 델파이 — 각도 좁으나 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "promotedFrom": "needsReview",
+      "promotedAt": "2026-08-17"
+    },
+    {
       "pmid": "41951238",
       "title": "Airway management of adults in the acute care setting.",
       "journal": "BMJ",
@@ -1565,23 +1584,6 @@
         "at": "2026-08-17T07:31:06.571Z"
       },
       "status": "queued"
-    },
-    {
-      "pmid": "39714613",
-      "title": "Management of adult sepsis in resource-limited settings: global expert consensus statements using a Delphi method.",
-      "journal": "Intensive Care Med",
-      "score": 7.6,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 5,
-        "keep": false,
-        "reason": "자원제한 패혈증 델파이 — 각도 좁으나 관련",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "needsReview"
     },
     {
       "pmid": "39847066",
@@ -6791,5 +6793,5 @@
     "outcome": "published",
     "publishedId": "41504890"
   },
-  "updatedAt": "2026-08-17T07:41:12.021Z"
+  "updatedAt": "2026-08-17"
 }
