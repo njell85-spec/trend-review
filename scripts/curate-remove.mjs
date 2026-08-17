@@ -26,7 +26,14 @@ const pmid = (process.env.CUR_PMID ?? '').trim();
 // 키 형식을 엄격히 검증 — PAT 소지자는 신뢰 대상이지만 임의 문자열이
 // 정규식 치환·커밋 메시지로 흘러가지 않게 형식 밖 입력은 거절한다.
 // -m-x: 수동 가이드라인 단독 발행은 pmid 폴백이 'x'다(publisher keyPmid ?? 'x').
-if (!/^\d{4}-\d{2}-\d{2}(-m-([0-9]{1,9}|x))?$/.test(sectionKey)) {
+//
+// ★ `-r-<pmid>` = 리뷰 섹션(RSECTION). publisher 가 `${dateStr}-r-${rIdent}` 로 만든다.
+//   2026-08-16 3트랙 개편에서 생겼는데 **이 검증기가 안 따라왔다.** 그래서 리뷰 누적행의
+//   🗑 를 눌러 확인까지 눌러도 워크플로가 여기서 `✖ 잘못된 sectionKey` 로 죽었고,
+//   화면에는 아무 말 없이 항목이 그대로 남았다(2026-08-17 PeterJ 실측).
+//   같은 개편이 놓친 자리가 이것으로 다섯 번째다 — 클라이언트 정규식 · 서버 화이트리스트 ·
+//   상태 키 파서 · 워크플로 choice 목록 · 그리고 여기.
+if (!/^\d{4}-\d{2}-\d{2}(-[mr]-([0-9]{1,9}|x))?$/.test(sectionKey)) {
   console.error(`✖ 잘못된 sectionKey: "${sectionKey}"`);
   process.exit(1);
 }
