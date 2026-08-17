@@ -49,7 +49,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -87,7 +87,9 @@
         "keep": true,
         "reason": "우발적 저체온 합의지침 — 응급·중환자 환경응급 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|consensus-document-management-patients-with-accidental-hypothermia-from-spanish-society-anesthesiology-resuscitation-pain-management-sedar-spanish-society-intensive-care-medicine-critical-care-coronary-units-semicyuc-spanish-society-emergency-medicine-semes",
+      "supersedes": []
     },
     {
       "id": "pmid:42132666",
@@ -174,7 +176,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -182,7 +184,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -208,7 +210,9 @@
         "keep": false,
         "reason": "원격 신경중환자 합의문 — ED/ICU 운영, 신경응급 인접",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|teleneurocritical-care-telencc-american-academy-neurology-aan-american-association-neurological-surgeons-aans-congress-neurological-surgeons-cns-affirm-value-this-statement-endorsed-by-american-telemedicine-association-ata",
+      "supersedes": []
     },
     {
       "id": "pmid:41887234",
@@ -386,7 +390,9 @@
         "keep": true,
         "reason": "중환자 적혈구 수혈 CHEST 지침 — 핵심 중환자 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|red-blood-cell-transfusion-critically-ill-adults-american-college-chest-physicians-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:39198198",
@@ -450,7 +456,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "superseded",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -465,7 +471,11 @@
         "keep": true,
         "reason": "기계환기 중환자 케타민 진정 신속 지침, ICU 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "candidate-not-newer",
+      "supersededBy": "pmid:39207913",
+      "supersededAt": "2026-08-17T21:56:39.171Z"
     },
     {
       "id": "pmid:38531812",
@@ -532,7 +542,9 @@
         "keep": true,
         "reason": "외상 수혈 전혈소생 EAST 지침—침상 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|whole-blood-resuscitation-injured-patients-requiring-transfusion-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma",
+      "supersedes": []
     },
     {
       "id": "pmid:39297198",
@@ -608,7 +620,9 @@
         "keep": true,
         "reason": "심정지 후 병원간 이송 성명, 소생 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|management-patients-with-cardiac-arrest-requiring-interfacility-transport-from",
+      "supersedes": []
     },
     {
       "id": "pmid:39151721",
@@ -1118,7 +1132,9 @@
         "keep": true,
         "reason": "하지 DVT 재발 진단 합의, 응급 진단 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|diagnosis-recurrence-lower-limb-deep-vein-thrombosis-french-society-vascular-medicine-sfmv",
+      "supersedes": []
     },
     {
       "id": "pmid:39278696",
@@ -1191,7 +1207,9 @@
         "keep": true,
         "reason": "비만환자 VTE 관리 합의문, 응급 항응고 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|unresolved-questions-venous-thromboembolic-disease-venous-thromboembolism-vte-management-obese-patients-french-society-vascular-medicine-sfmv",
+      "supersedes": []
     },
     {
       "id": "pmid:39278695",
@@ -1490,7 +1508,9 @@
         "keep": true,
         "reason": "초록없음. LVAD·임시 기계순환보조 영상 권고 — 중환자 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|multimodality-imaging-patients-with-left-ventricular-assist-devices-temporary-mechanical-support-from-american-society-echocardiography",
+      "supersedes": []
     },
     {
       "id": "pmid:39228243",
@@ -1769,7 +1789,9 @@
         "keep": true,
         "reason": "입원 심부전 관리 ACC 합의, 심혈관 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|acc-expert-consensus-decision-pathway-clinical-assessment-management-trajectory-patients-hospitalized-with-heart-failure-report-american-college-cardiology-solution-set-oversight-committee",
+      "supersedes": []
     },
     {
       "id": "pmid:39127953",
@@ -2428,7 +2450,9 @@
         "keep": true,
         "reason": "천식 지침 하이라이트, 급성 천식 응급 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|highlights-spanish-asthma-gema",
+      "supersedes": []
     },
     {
       "id": "pmid:39309478",
@@ -2926,7 +2950,9 @@
         "keep": true,
         "reason": "허혈뇌졸중·TIA 진단·이차예방 미·유럽 지침비교",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|comparison-american-european-diagnostic-workup-secondary-prevention-ischemic-stroke-transient-ischemic-attack",
+      "supersedes": []
     },
     {
       "id": "pmid:39507718",
@@ -2988,7 +3014,9 @@
         "keep": true,
         "reason": "급성췌장염 지침 미·일 비교, 응급 GI 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|clinical-practice-acute-pancreatitis-united-states-japan-similarities-differences",
+      "supersedes": []
     },
     {
       "id": "pmid:39283213",
@@ -3056,7 +3084,9 @@
         "keep": true,
         "reason": "SCCM 스트레스성 위장출혈 예방 지침(정오표), 중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|american-society-health-system-pharmacists-prevention-stress-related-gastrointestinal-bleeding-critically-ill-adults-erratum",
+      "supersedes": []
     },
     {
       "id": "pmid:39244084",
@@ -3329,7 +3359,9 @@
         "keep": true,
         "reason": "ESICM 중환자 임종·완화의료 지침, ICU 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|end-life-palliative-care-intensive-care-unit",
+      "supersedes": []
     },
     {
       "id": "pmid:39019674",
@@ -3576,7 +3608,9 @@
         "keep": true,
         "reason": "비심장수술 술중 혈역학 모니터링—혈역학 관리 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|intraoperative-haemodynamic-monitoring-management-adults-having-non-cardiac-surgery-german-society-anaesthesiology-intensive-care-medicine-collaboration-with-german-association-scientific-medical-societies",
+      "supersedes": []
     },
     {
       "id": "pmid:39461555",
@@ -3653,7 +3687,9 @@
         "keep": true,
         "reason": "ICU 원내폐렴 경험적치료 지침 순응도 평가 — 중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|impact-empirical-treatment-from-european-nosocomial-pneumonia",
+      "supersedes": []
     },
     {
       "id": "pmid:39669937",
@@ -3850,7 +3886,9 @@
         "keep": true,
         "reason": "수술전후 VTE 예방 지침, 중환자·마취 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|prevention-perioperative-venous-thromboembolism-from-french-working-group-perioperative-haemostasis-gihp-developed-collaboration-with-french-society-anaesthesia-intensive-care-medicine-sfar-french-society-thrombosis-haemostasis-sfth-french-society-vascular-medicine-sfmv-endorsed-by-french-society-digestive-surgery-sfcd-french-society-pharmacology-therapeutics-sfpt-innovte-investigation-network-venous-thromboembolism-network",
+      "supersedes": []
     },
     {
       "id": "pmid:39434369",
@@ -3912,7 +3950,9 @@
         "keep": true,
         "reason": "한국 급성관상동맥증후군 약물치료 지침, 응급·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-society-myocardial-infarction-national-evidence-based-healthcare-collaborating-agency-pharmacotherapy-acute-coronary-syndromes",
+      "supersedes": []
     },
     {
       "id": "pmid:39387123",
@@ -4059,7 +4099,9 @@
         "keep": true,
         "reason": "급성심부전 심실부정맥 ESC 합의, 응급·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|ventricular-arrhythmias-acute-heart-failure-clinical-association-acute-cardiovascular-care-european-heart-rhythm-association-heart-failure-association",
+      "supersedes": []
     },
     {
       "id": "pmid:39210723",
@@ -4127,7 +4169,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -4142,7 +4184,9 @@
         "keep": true,
         "reason": "2024 ESC 심방세동 전문 지침, 초록없어 제목판단",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:39087551",
@@ -4287,7 +4331,9 @@
         "keep": true,
         "reason": "2023 ESC 감염성 심내막염 지침 요점, 응급·중환자 감염 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|new-european-infective-endocarditis-main-novelties-implications-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:39060555",
@@ -4426,7 +4472,9 @@
         "keep": true,
         "reason": "기계환기 이탈 지침, 중환자 핵심 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|liberation-from-mechanical-ventilation-critically-ill-patients-korean-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:38148269",
@@ -4645,7 +4693,9 @@
         "keep": true,
         "reason": "한국 HAP/VAP 항생제 지침 — 중환자 감염 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-management-antibiotic-therapy-adult-patients-with-hospital-acquired-pneumonia",
+      "supersedes": []
     },
     {
       "id": "pmid:39153884",
@@ -4809,7 +4859,9 @@
         "keep": true,
         "reason": "IDSA 담낭염·담관염 영상 지침, ED 감염 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "idsa|clinical-practice-by-complicated-intraabdominal-infections-diagnostic-imaging-suspected-acute-cholecystitis-acute-cholangitis-adults-children-pregnant-people",
+      "supersedes": []
     },
     {
       "id": "pmid:39429201",
@@ -5546,7 +5598,9 @@
         "keep": true,
         "reason": "성인 어려운 기도 관리 지침 — 응급·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|executive-summary-spanish-society-anesthesiology-reanimation-pain-therapy-sedar-spanish-society-emergency-emergency-medicine-semes-spanish-society-otolaryngology-head-neck-surgery-seorl-ccc-difficult-airway-management",
+      "supersedes": []
     },
     {
       "id": "pmid:39588601",
@@ -5616,7 +5670,9 @@
         "keep": true,
         "reason": "급성 폐색전 위험분류·경피적 재관류—응급/중환자 심혈관 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|italian-society-interventional-cardiology-sici-gise-position-paper-integrated-management-transcatheter-interventions-acute-pulmonary-embolism",
+      "supersedes": []
     },
     {
       "id": "pmid:39576264",
@@ -5830,7 +5886,9 @@
         "keep": true,
         "reason": "감염성 심내막염 항생제 입장문—응급·중환자 감염",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|antibiotic-therapy-prophylaxis-infective-endocarditis-spilf-aepei",
+      "supersedes": []
     },
     {
       "id": "pmid:39538025",
@@ -5908,7 +5966,9 @@
         "keep": true,
         "reason": "2024 ESC 심방세동 지침 요약, 응급실 흔한 부정맥",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|management-atrial-fibrillation-af-care-as-new-credo",
+      "supersedes": []
     },
     {
       "id": "pmid:39529625",
@@ -6283,7 +6343,9 @@
         "keep": true,
         "reason": "HFpEF 관리 ACC/AHA/ESC 지침 리뷰, 심부전 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|navigating-evolving-landscape-hfpef-management-detailed-look-at-key-acc-esc-updates",
+      "supersedes": []
     },
     {
       "id": "pmid:39622601",
@@ -6349,7 +6411,9 @@
         "keep": true,
         "reason": "성인 패혈증·패혈성쇼크 조기관리 한국 지침, 핵심 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|early-management-adult-sepsis-septic-shock-korean-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:39495314",
@@ -6421,7 +6485,9 @@
         "keep": true,
         "reason": "혈액배양 오염 감소 지침, ED 흔한 검사라 실무 적용됨",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|american-society-microbiology-evidence-based-laboratory-medicine-practice-reduce-blood-culture-contamination-rates-systematic-review-meta-analysis",
+      "supersedes": []
     },
     {
       "id": "pmid:39584852",
@@ -6853,7 +6919,9 @@
         "keep": true,
         "reason": "혈우병 항혈전요법 지침 요약 — 출혈·항응고 실무 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|use-antithrombotic-therapy-patients-with-hemophilia-selected-synopsis-european-hematology-association-international-society-thrombosis-haemostasis-european-association-hemophilia-allied-disorders-european-stroke-organization-clinical-practice-document",
+      "supersedes": []
     },
     {
       "id": "pmid:39651399",
@@ -7069,7 +7137,9 @@
         "keep": true,
         "reason": "비정맥류 상부위장관출혈 영상 적정성—응급 출혈 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|acr-appropriateness-criteria-nonvariceal-upper-gastrointestinal-bleeding",
+      "supersedes": []
     },
     {
       "id": "pmid:39545884",
@@ -7224,7 +7294,9 @@
         "keep": true,
         "reason": "ACR 의식변화·혼수·섬망 영상 적정성—ED 흔한 신경응급",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|acr-appropriateness-criteria-altered-mental-status-coma-delirium-psychosis",
+      "supersedes": []
     },
     {
       "id": "pmid:39807550",
@@ -7397,7 +7469,9 @@
         "keep": true,
         "reason": "NCS 비외상 ICH 발작예방 지침, 신경중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "ncs|seizure-prophylaxis-patients-hospitalized-with-nontraumatic-intracerebral-hemorrhage-clinical-practice-health-care-professionals-from",
+      "supersedes": []
     },
     {
       "id": "pmid:39180134",
@@ -7475,7 +7549,9 @@
         "keep": true,
         "reason": "심원성쇼크 tMCS 영상 합의, 중환자·혈역학 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|imaging-acute-percutaneous-mechanical-circulatory-support-adults-clinical-association-acute-cardiovascular-care-acvc-european-association-cardiovascular-imaging-eacvi-european-branch-extracorporeal-life-support-organization-euroelso",
+      "supersedes": []
     },
     {
       "id": "pmid:39716733",
@@ -7550,7 +7626,9 @@
         "keep": true,
         "reason": "2024 ESC/EACTS AF 지침 10대 신규점 요약—실무 유용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|spotlight-eacts-management-atrial-fibrillation-10-novel-key-aspects",
+      "supersedes": []
     },
     {
       "id": "pmid:39706772",
@@ -7612,7 +7690,9 @@
         "keep": true,
         "reason": "2024 유럽 심방세동 지침 임상 논평—응급실서 씀",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|clinician-viewpoint-european-management-patients-with-atrial-fibrillation",
+      "supersedes": []
     },
     {
       "id": "pmid:39689069",
@@ -7741,7 +7821,9 @@
         "keep": true,
         "reason": "2024 ESC 심방세동 지침 해설, 심혈관 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|interpretation-atrial-fibrillation-multidimensional-integrated-management-atrial-fibrillation",
+      "supersedes": []
     },
     {
       "id": "pmid:39674741",
@@ -7815,7 +7897,9 @@
         "keep": true,
         "reason": "2024 ESC/EACTS AF 지침 AF-CARE 분석, 실무 적용 가능",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|analysis-eacts-atrial-fibrillation",
+      "supersedes": []
     },
     {
       "id": "pmid:39608451",
@@ -7949,7 +8033,9 @@
         "keep": true,
         "reason": "2024 ESC AF 지침 요약(신규·중요점), AF 진료 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|atrial-fibrillation-what-is-new-what-is-important",
+      "supersedes": []
     },
     {
       "id": "pmid:39067569",
@@ -8094,7 +8180,9 @@
         "keep": true,
         "reason": "ERS 성인 양성 흉수 성명서, 흉수천자 등 응급·중환자 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|ers-statement-benign-pleural-effusions-adults",
+      "supersedes": []
     },
     {
       "id": "pmid:39006369",
@@ -8309,7 +8397,9 @@
         "keep": true,
         "reason": "독일 병원획득폐렴 지침 갱신 — VAP 중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|key-summary-german-national-adult-patients-with-nosocomial-pneumonia-funding-number-at-federal-joint-committee-g-ba-01vsf22007",
+      "supersedes": []
     },
     {
       "id": "pmid:39078360",
@@ -8818,7 +8908,9 @@
         "keep": true,
         "reason": "급성 뇌졸중 전신 합병증 성명—신경중환자 실무 유용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|addressing-systemic-complications-acute-stroke-from",
+      "supersedes": []
     },
     {
       "id": "pmid:39155639",
@@ -9102,7 +9194,9 @@
         "keep": true,
         "reason": "ESO 뇌기저동맥폐색 급성기 지침 — 신경응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-stroke-organisation-european-society-minimally-invasive-neurological-therapy-acute-management-basilar-artery-occlusion",
+      "supersedes": []
     },
     {
       "id": "pmid:39676231",
@@ -9376,7 +9470,9 @@
         "keep": true,
         "reason": "ESAIC 성인 수술후 섬망 지침 개정, 중환자 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-society-anaesthesiology-intensive-care-medicine-evidence-based-consensus-based-postoperative-delirium-adult-patients",
+      "supersedes": []
     },
     {
       "id": "pmid:39046524",
@@ -9529,7 +9625,9 @@
         "keep": true,
         "reason": "ATS 중환자 침습진균 치료 지침—ICU 실무 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|treatment-invasive-pulmonary-aspergillosis-preventive-empirical-therapy-invasive-candidiasis-adult-pulmonary-critical-care-patients-official-american-thoracic-society-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:39513996",
@@ -10248,7 +10346,9 @@
         "keep": true,
         "reason": "심부전 POCUS 권고 — 응급 침상 초음파 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|use-point-care-ultrasound-heart-failure-from-heart-failure-atrial-fibrillation-clinical-ultrasound-working-groups-spanish-society-internal-medicine-semi",
+      "supersedes": []
     },
     {
       "id": "pmid:39863066",
@@ -10325,7 +10425,9 @@
         "keep": true,
         "reason": "폐색전 진단·치료 권고 — 핵심 응급 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|diagnosis-treatment-pulmonary-embolism-thromboembolic-disease-group-spanish-society-internal-medicine",
+      "supersedes": []
     },
     {
       "id": "pmid:39828106",
@@ -10615,7 +10717,9 @@
         "keep": true,
         "reason": "2024 ESC AF 지침 새 내용 해설—AF 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|patients-with-atrial-fibrillation-what-s-new-what-implications-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:39054773",
@@ -10762,7 +10866,9 @@
         "keep": true,
         "reason": "감염성 심내막염 영상 지침 비교 — 중환자 진단 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|role-multimodality-imaging-infective-endocarditis-comparison-major-society-united-states-europe",
+      "supersedes": []
     },
     {
       "id": "pmid:40304403",
@@ -11036,7 +11142,9 @@
         "keep": true,
         "reason": "SCCM 중증환자 RSI 지침, 기도관리 침상 핵심(초록없음)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|rapid-sequence-intubation-critically-ill-patients-from",
+      "supersedes": []
     },
     {
       "id": "pmid:39799978",
@@ -11647,7 +11755,9 @@
         "keep": true,
         "reason": "FXa 억제제 GI출혈 andexanet 성명 — 항응고 역전, ED/ICU 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|polish-society-gastroenterology-use-andexanet-alfa-patients-with-gastrointestinal-bleeding-taking-factor-xa-inhibitors",
+      "supersedes": []
     },
     {
       "id": "pmid:41079436",
@@ -11892,7 +12002,9 @@
         "keep": true,
         "reason": "SCCM 열사병 치료 지침—응급·환경 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|treatment-heat-stroke",
+      "supersedes": []
     },
     {
       "id": "pmid:39982184",
@@ -12032,7 +12144,9 @@
         "keep": true,
         "reason": "SCCM 중환자 초음파 지침 갱신, 핵심 술기",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|adult-critical-care-ultrasonography",
+      "supersedes": []
     },
     {
       "id": "pmid:39982130",
@@ -12320,7 +12434,9 @@
         "keep": true,
         "reason": "초고령 중환자 관리 ESICM 권고 — 중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|consensus-based-very-old-patients-intensive-care",
+      "supersedes": []
     },
     {
       "id": "pmid:39945062",
@@ -12381,7 +12497,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -12395,7 +12511,9 @@
         "keep": true,
         "reason": "중환자심장학 AHA 성명 — 구조·수련 중심이나 CICU 실무 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:39012362",
@@ -12541,7 +12659,9 @@
         "keep": true,
         "reason": "심방세동 지침 비교, 응급 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|comparison-latest-esc-acc-accp-hrs-ccs-management-atrial-fibrillation",
+      "supersedes": []
     },
     {
       "id": "pmid:39964938",
@@ -12599,7 +12719,9 @@
         "keep": true,
         "reason": "ACC/AHA 심방세동 관리 지침, 응급 실무 적용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|management-atrial-fibrillation-from-american-college-cardiology",
+      "supersedes": []
     },
     {
       "id": "pmid:39898766",
@@ -12643,7 +12765,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -12657,7 +12779,9 @@
         "keep": true,
         "reason": "2024 ESC AF 지침 이탈리아어판—핵심 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:39873188",
@@ -12728,7 +12852,9 @@
         "keep": true,
         "reason": "ESICM 2024 소생수액 선택 핵심메시지—중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|choice-resuscitation-fluids-critically-ill-adults-key-messages-from-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:39967372",
@@ -12859,7 +12985,9 @@
         "keep": true,
         "reason": "SCCM 열사병 치료 지침 요약—환경 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|executive-summary-treatment-heat-stroke",
+      "supersedes": []
     },
     {
       "id": "pmid:39925269",
@@ -13075,7 +13203,9 @@
         "keep": true,
         "reason": "ESICM 소생수액 용량 지침—중환자 핵심 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|clinical-practice-fluid-therapy-adult-critically-ill-patients-part-2-volume-resuscitation-fluids",
+      "supersedes": []
     },
     {
       "id": "pmid:40074060",
@@ -13157,7 +13287,9 @@
         "keep": true,
         "reason": "중환자 FFP·혈소판 수혈 ACCP 지침 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|transfusion-fresh-frozen-plasma-platelets-critically-ill-adults-american-college-chest-physicians-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:40037948",
@@ -13219,7 +13351,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -13234,7 +13366,9 @@
         "keep": true,
         "reason": "성인 지역사회폐렴 관리, 중증 포함",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40126669",
@@ -13384,7 +13518,9 @@
         "keep": true,
         "reason": "AHA AED 심포지엄 권고—소생·제세동 공공접근, 실무 인접",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|automated-external-defibrillator-symposium-summary",
+      "supersedes": []
     },
     {
       "id": "pmid:40020769",
@@ -13806,7 +13942,9 @@
         "keep": true,
         "reason": "급성 심부전 심실부정맥 합의문, 응급·중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|ventricular-arrhythmias-acute-heart-failure-clinical-association-acute-cardiovascular-care-acvc-european-heart-rhythm-association-ehra-heart-failure-association-hfa",
+      "supersedes": []
     },
     {
       "id": "pmid:40100174",
@@ -13873,7 +14011,9 @@
         "keep": true,
         "reason": "ACC 심인성쇼크 합의, 쇼크·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|concise-clinical-acc-expert-evaluation-management-cardiogenic-shock-report-american-college-cardiology-solution-set-oversight-committee",
+      "supersedes": []
     },
     {
       "id": "pmid:40091554",
@@ -14470,7 +14610,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -14486,7 +14626,9 @@
         "keep": true,
         "reason": "2025 ACS 지침, 응급 핵심 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40013746",
@@ -14566,7 +14708,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -14582,7 +14724,9 @@
         "keep": true,
         "reason": "2025 ACC/AHA/ACEP ACS 지침 — 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40012353",
@@ -14714,7 +14858,9 @@
         "keep": true,
         "reason": "2024 ESC AF 지침 '10계명' 실무요약, 유용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|10-commandments-atrial-fibrillation",
+      "supersedes": []
     },
     {
       "id": "pmid:39812172",
@@ -15034,7 +15180,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -15048,7 +15194,9 @@
         "keep": true,
         "reason": "성인 지역사회획득폐렴 지침, ICU 승인·응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40011104",
@@ -15099,7 +15247,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -15113,7 +15261,9 @@
         "keep": true,
         "reason": "성인 CAP 프랑스 지침(SRLF 승인), 응급·중환자",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:38864584",
@@ -15700,7 +15850,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -15715,7 +15865,9 @@
         "keep": true,
         "reason": "심부전 LVEF 합의문 — ICU/ER 심부전 분류 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40264003",
@@ -16933,7 +17085,9 @@
         "keep": true,
         "reason": "ESTES 다발성외상 치료 권고 — 응급·외상 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|estes-treatment-polytrauma-european-consensus-based-german-s3-treatment-patients-with-severe-multiple-injuries",
+      "supersedes": []
     },
     {
       "id": "pmid:40320004",
@@ -17011,7 +17165,9 @@
         "keep": true,
         "reason": "AMI 합병증·기계순환보조, 심인성쇼크 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|american-association-thoracic-surgery-aats-expert-consensus-document-surgical-management-acute-myocardial-infarction-associated-complications",
+      "supersedes": []
     },
     {
       "id": "pmid:40308048",
@@ -17084,7 +17240,9 @@
         "keep": true,
         "reason": "비심장수술 혈역학 관리, MAP>60 등 쇼크 실무 닿음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|intra-operative-haemodynamic-monitoring-management-adults-having-noncardiac-surgery-statement-from-european-society-anaesthesiology-intensive-care",
+      "supersedes": []
     },
     {
       "id": "pmid:40402379",
@@ -17233,7 +17391,9 @@
         "keep": true,
         "reason": "ICU 정량 폐초음파 합의, 성인 중환자 술기",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|espnic-international-expert-consensus-quantitative-lung-ultrasound-intensive-care",
+      "supersedes": []
     },
     {
       "id": "pmid:40163651",
@@ -17379,7 +17539,9 @@
         "keep": true,
         "reason": "ESC 심방세동 지침 요약, 응급 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-atrial-fibrillation",
+      "supersedes": []
     },
     {
       "id": "pmid:40409894",
@@ -17832,7 +17994,9 @@
         "keep": true,
         "reason": "급성심부전 혈관확장제 ESC 성명, 침상 처치 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|pathophysiology-clinical-use-agents-with-vasodilator-properties-acute-heart-failure-heart-failure-association-hfa",
+      "supersedes": []
     },
     {
       "id": "pmid:40320260",
@@ -18210,7 +18374,9 @@
         "keep": true,
         "reason": "조영제 과민반응·아나필락시스 관리 — 응급실 조영제·전처치 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|management-prevention-hypersensitivity-reactions-radiocontrast-media-from-american-college-radiology-american-academy-allergy-asthma-immunology",
+      "supersedes": []
     },
     {
       "id": "pmid:40409875",
@@ -18429,7 +18595,9 @@
         "keep": true,
         "reason": "흡인성 폐렴 지침 SPILF 2025 — ED/ICU 흔한 감염 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|aspiration-pneumonia-société-de-pathologie-infectieuse-de-langue-française",
+      "supersedes": []
     },
     {
       "id": "pmid:40306623",
@@ -18573,7 +18741,9 @@
         "keep": true,
         "reason": "급성 TBI 신경외과 관리 2025 지침 — 응급 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|neurosurgical-management-acute-phase-adult-pediatric-traumatic-brain-injury-french-society-neurosurgery",
+      "supersedes": []
     },
     {
       "id": "pmid:40401776",
@@ -18721,7 +18891,9 @@
         "keep": true,
         "reason": "자발성 뇌출혈 관리 지침, 신경응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-stroke-organisation-eso-european-association-neurosurgical-societies-eans-stroke-due-spontaneous-intracerebral-haemorrhage",
+      "supersedes": []
     },
     {
       "id": "pmid:40401760",
@@ -19013,7 +19185,9 @@
         "keep": true,
         "reason": "TBI CT 선별 바이오마커, NICE 두부손상 지침 보조",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|serum-biomarkers-as-adjuncts-national-institute-health-care-excellence-head-injury-ng232-when-selecting-patients-with-traumatic-brain-injury-computed-tomography-collaborative-european-neurotrauma-effectiveness-research-traumatic-brain-injury-study",
+      "supersedes": []
     },
     {
       "id": "pmid:40320582",
@@ -19234,7 +19408,9 @@
         "keep": true,
         "reason": "혈류감염 신속진단 검사실 지침 — 패혈증·ICU 진단 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|american-society-microbiology-s-evidence-based-laboratory-medicine-practice-diagnosis-bloodstream-infections-using-rapid-tests-systematic-review-meta-analysis",
+      "supersedes": []
     },
     {
       "id": "pmid:40465080",
@@ -19312,7 +19488,9 @@
         "keep": true,
         "reason": "중환자 침습성 폐아스페르길루스증 진단·치료 지침, ICU 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|diagnosis-treatment-invasive-pulmonary-aspergillosis-critically-ill-intensive-care-patients-executive-summary-german-national-awmf-113-005",
+      "supersedes": []
     },
     {
       "id": "pmid:40688888",
@@ -19601,7 +19779,9 @@
         "keep": true,
         "reason": "2024 ESC AF 지침 실무 업데이트 — 유용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|atrial-fibrillation-essential-updates-everyday-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:40512113",
@@ -19806,7 +19986,9 @@
         "keep": true,
         "reason": "2025 ACC/AHA ACS 지침 지질관리, ACS 핵심이나 예방 편향",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|maturation-lipid-management-acc-acute-coronary-syndrome-what-it-is-what-it-might-have-been",
+      "supersedes": []
     },
     {
       "id": "pmid:40459417",
@@ -19869,7 +20051,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -19884,7 +20066,9 @@
         "keep": true,
         "reason": "급성 PE CTA 판독 합의(94 중복) — 응급 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40415689",
@@ -20016,7 +20200,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -20030,7 +20214,9 @@
         "keep": true,
         "reason": "여성 ACS 항혈전 합의(87 중복) — 응급 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40677934",
@@ -20087,7 +20273,9 @@
         "keep": true,
         "reason": "스페인 천식지침 GEMA5.5, 급성 천식 응급 실무 관련(제목판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|key-updates-spanish-asthma-gema",
+      "supersedes": []
     },
     {
       "id": "pmid:40547932",
@@ -20144,7 +20332,9 @@
         "keep": true,
         "reason": "스페인 COPD 지침 2025, COPD 악화 응급 관련(초록없어 제목판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|challenges-new-spanish-treatment-copd-gesepoc",
+      "supersedes": []
     },
     {
       "id": "pmid:40517762",
@@ -20204,7 +20394,9 @@
         "keep": true,
         "reason": "만성호흡부전 NIV 독일지침—호흡·환기 실무 닿음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|german-national-treating-chronic-respiratory-failure-with-non-invasive-ventilation",
+      "supersedes": []
     },
     {
       "id": "pmid:40468902",
@@ -20280,7 +20472,9 @@
         "keep": true,
         "reason": "비만 환자 기도관리 권고 — 응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|airway-management-patients-living-with-obesity-best-from-society-obesity-bariatric-anaesthesia-endorsed-by-all-wales-airway-group-scottish-airway-group-difficult-airway-society",
+      "supersedes": []
     },
     {
       "id": "pmid:40457450",
@@ -20345,7 +20539,9 @@
         "keep": true,
         "reason": "출혈성 외상 CAB vs ABC 소생 컨센서스—핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|prioritizing-circulation-over-airway-improve-survival-trauma-patients-with-exsanguinating-injuries-world-society-emergency-surgery-panamerican-trauma",
+      "supersedes": []
     },
     {
       "id": "pmid:40440059",
@@ -20850,7 +21046,9 @@
         "keep": true,
         "reason": "응급 항응고 관리 지침, 침상 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|anticoagulant-management-emergency-settings-from-french-society-emergency-medicine-sfmu-french-society-anaesthesia-intensive-care-medicine-sfar-french-society-thrombosis-haemostasis-sfth-french-working-group-perioperative-haemostasis-gihp-endorsed-by-french-neurovascular-society",
+      "supersedes": []
     },
     {
       "id": "pmid:39207913",
@@ -20931,7 +21129,11 @@
         "keep": true,
         "reason": "기계환기 케타민 진정 지침 — 중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|ketamine-analgo-sedation-mechanically-ventilated-critically-ill-adults-rapid-practice-from-saudi-critical-care-society-scandinavian-society-anesthesiology-intensive-care-medicine",
+      "supersedes": [
+        "pmid:39198198"
+      ]
     },
     {
       "id": "pmid:40613765",
@@ -21207,7 +21409,9 @@
         "keep": true,
         "reason": "확장기능·HFpEF 심초음파 권고, 중환자 유용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|evaluation-left-ventricular-diastolic-function-by-echocardiography-heart-failure-with-preserved-ejection-fraction-diagnosis-from-american-society-echocardiography",
+      "supersedes": []
     },
     {
       "id": "pmid:40616445",
@@ -21572,7 +21776,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -21587,7 +21791,9 @@
         "keep": true,
         "reason": "급성 PE CTA 판독 합의 — 응급 진단 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40390370",
@@ -21652,7 +21858,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -21666,7 +21872,9 @@
         "keep": true,
         "reason": "여성 ACS 항혈전 합의 — 응급 ACS 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40588313",
@@ -21728,7 +21936,9 @@
         "keep": true,
         "reason": "NICE/BTS/SIGN 천식지침 논평, 급성 천식 실무 관련(초록없어 제목판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|nice-bts-sign-asthma-breath-fresh-air",
+      "supersedes": []
     },
     {
       "id": "pmid:40682147",
@@ -22152,7 +22362,9 @@
         "keep": true,
         "reason": "급성뇌졸중 병원전 이송결정(LVO) 지침 — 신경응급",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|clinical-practice-prehospital-stage-acute-stroke-korea-ii-transport-decisions-patients-with-acute-ischemic-stroke",
+      "supersedes": []
     },
     {
       "id": "pmid:40653745",
@@ -22286,7 +22498,9 @@
         "keep": true,
         "reason": "급성간부전 AGG 지침요약, 응급중환자 유용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|know-your-american-journal-gastroenterology-clinical-acute-liver-failure",
+      "supersedes": []
     },
     {
       "id": "pmid:40651900",
@@ -22352,7 +22566,9 @@
         "keep": true,
         "reason": "급성 췌장염 국제 개정 지침 2025 — GI 응급·ICU 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|international-association-pancreatology-revised-acute-pancreatitis-supported-endorsed-by-american-pancreatic-association-european-pancreatic-club-indian-pancreas-club-japan-pancreas-society",
+      "supersedes": []
     },
     {
       "id": "pmid:40552470",
@@ -22409,7 +22625,9 @@
         "keep": true,
         "reason": "입원환자 혈전예방 폴란드 권고, 병동실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|thromboprophylaxis-medical-patients-polish",
+      "supersedes": []
     },
     {
       "id": "pmid:40842057",
@@ -22486,7 +22704,9 @@
         "keep": true,
         "reason": "외상 TXA 공동 입장문, 출혈·병전 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "acep|tranexamic-acid-trauma-joint-resource-document-naemsp-acs-cot",
+      "supersedes": []
     },
     {
       "id": "pmid:40828463",
@@ -22565,7 +22785,9 @@
         "keep": true,
         "reason": "ESICM 수액 제거 지침(탈에스컬레이션)—중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|clinical-practice-fluid-therapy-adult-critically-ill-patients-part-3-fluid-removal-at-de-escalation-phase",
+      "supersedes": []
     },
     {
       "id": "pmid:40784821",
@@ -22981,7 +23203,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -22995,7 +23217,9 @@
         "keep": true,
         "reason": "2025 ESC/EACTS 판막질환 지침, 심혈관 주요(초록없음)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40825204",
@@ -23062,7 +23286,9 @@
         "keep": true,
         "reason": "AMI 수혈전략 AABB 지침 — 침상 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|red-cell-transfusion-acute-myocardial-infarction-aabb-international-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:40819957",
@@ -23393,7 +23619,9 @@
         "keep": true,
         "reason": "AF AWMF/ESC 지침 요약 — 응급서 흔한 부정맥",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|current-atrial-fibrillation-what-do-awmf-recommend",
+      "supersedes": []
     },
     {
       "id": "pmid:40763073",
@@ -23694,7 +23922,9 @@
         "keep": true,
         "reason": "ESC AF 지침 요약, 응급 율동·속도 조절에 닿음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|atrial-fibrillation-from-dgk-commission-clinical-cardiovascular-medicine",
+      "supersedes": []
     },
     {
       "id": "pmid:40457965",
@@ -23824,7 +24054,9 @@
         "keep": true,
         "reason": "성인 지역사회획득폐렴 스웨덴 지침, 응급 흔한 감염(초록없어 제목판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|management-community-acquired-pneumonia-immunocompetent-adults-swedish",
+      "supersedes": []
     },
     {
       "id": "pmid:40739674",
@@ -23882,7 +24114,9 @@
         "keep": true,
         "reason": "동맥류 SAH 급성기 신경중환자 합의",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|acute-care-aneurysmal-subarachnoid-hemorrhage-practical-from-multidisciplinary-group-german-speaking-neurointensivists-neuroradiologists-behalf-divi-neurology-section",
+      "supersedes": []
     },
     {
       "id": "pmid:40751844",
@@ -24025,7 +24259,9 @@
         "keep": true,
         "reason": "SCCM 중환자 스트레스성 위장출혈 예방 지침, 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|executive-summary-american-society-health-system-pharmacists-prevention-stress-related-gastrointestinal-bleeding-critically-ill-adults",
+      "supersedes": []
     },
     {
       "id": "pmid:40323259",
@@ -24083,7 +24319,9 @@
         "keep": true,
         "reason": "병원전 외상 TXA 합동 성명 — 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "acep|prehospital-trauma-compendium-tranexamic-acid-trauma-joint-resource-document-naemsp-acs-cot",
+      "supersedes": []
     },
     {
       "id": "pmid:40879726",
@@ -24143,7 +24381,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -24158,7 +24396,9 @@
         "keep": true,
         "reason": "DIVI 중환자 임종기 진료 권고—ICU 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41007856",
@@ -25020,7 +25260,9 @@
         "keep": true,
         "reason": "급성뇌졸중 테넥테플라제 성명 — ED 혈전용해 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|tenecteplase-acute-ischemic-stroke-from-korean-stroke-society",
+      "supersedes": []
     },
     {
       "id": "pmid:40878301",
@@ -25083,7 +25325,9 @@
         "keep": true,
         "reason": "뇌졸중 혈압관리 지침 갱신 — ICH·재관류 급성기",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-clinical-practice-stroke-blood-pressure-management",
+      "supersedes": []
     },
     {
       "id": "pmid:41024753",
@@ -25224,7 +25468,9 @@
         "keep": true,
         "reason": "EAST 관통외상 이송·병원전 처치 지침, 외상 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|mode-transport-prehospital-interventions-urban-penetrating-trauma-systematic-review-practice-management-from-eastern-association-surgery-trauma",
+      "supersedes": []
     },
     {
       "id": "pmid:40956301",
@@ -25297,7 +25543,9 @@
         "keep": true,
         "reason": "외상 출혈 TXA 지침, 응급·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|use-tranexamic-acid-management-injured-patients-at-risk-hemorrhage-systematic-review-meta-analysis-eastern-association-surgery-trauma-practice-management",
+      "supersedes": []
     },
     {
       "id": "pmid:40887950",
@@ -25354,7 +25602,9 @@
         "keep": true,
         "reason": "APA 섬망 진료지침 본문, ICU 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|american-psychiatric-association-practice-prevention-treatment-delirium",
+      "supersedes": []
     },
     {
       "id": "pmid:40880274",
@@ -25411,7 +25661,9 @@
         "keep": true,
         "reason": "독일 응급혈관로 IO/IV 지침, 소생 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|emergency-vascular-access-intraosseous-vs-intravenous-input-from-new-german-national",
+      "supersedes": []
     },
     {
       "id": "pmid:41122893",
@@ -25491,7 +25743,9 @@
         "keep": true,
         "reason": "2025 AHA CPR/ECC 요약 — 소생 핵심 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|part-1-executive-summary-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41122892",
@@ -25567,7 +25821,9 @@
         "keep": true,
         "reason": "2025 AHA 지침 근거평가편, 핵심 지침 세트 일부",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|part-2-evidence-evaluation-development-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41122891",
@@ -25805,7 +26061,9 @@
         "keep": true,
         "reason": "아나필락시스·고칼륨·저체온 등 특수상황 소생, 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|part-10-adult-pediatric-special-circumstances-resuscitation-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41122888",
@@ -25881,7 +26139,9 @@
         "keep": true,
         "reason": "2025 성인 BLS 핵심 지침, 직접 적용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|part-7-adult-basic-life-support-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41122886",
@@ -25961,7 +26221,9 @@
         "keep": true,
         "reason": "소생 시스템 오브 케어, 핵심 주제이나 침상보단 체계",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|part-4-systems-care-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41122884",
@@ -26043,7 +26305,9 @@
         "keep": true,
         "reason": "2025 성인 ACLS 핵심 지침, 최우선",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|part-9-adult-advanced-life-support-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41117575",
@@ -26107,7 +26371,7 @@
       "organizationId": "esicm",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -26123,7 +26387,9 @@
         "keep": true,
         "reason": "ERC/ESICM 소생후 관리, 중환자 핵심 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41117574",
@@ -26203,7 +26469,9 @@
         "keep": true,
         "reason": "ERC 2025 성인 기본소생술, 소생 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-resuscitation-council-adult-basic-life-support",
+      "supersedes": []
     },
     {
       "id": "pmid:41117573",
@@ -26271,7 +26539,9 @@
         "keep": true,
         "reason": "ERC 2025 지침 총괄요약, 소생 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-resuscitation-council-executive-summary",
+      "supersedes": []
     },
     {
       "id": "pmid:41117572",
@@ -26344,7 +26614,9 @@
         "keep": true,
         "reason": "ERC 2025 성인 ALS — 소생 핵심 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-resuscitation-council-adult-advanced-life-support",
+      "supersedes": []
     },
     {
       "id": "pmid:41117570",
@@ -26427,7 +26699,9 @@
         "keep": true,
         "reason": "소생 시스템·병원내 심정지 운영, 실무 일부 닿음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-resuscitation-council-system-saving-lives",
+      "supersedes": []
     },
     {
       "id": "pmid:41117569",
@@ -26505,7 +26779,9 @@
         "keep": true,
         "reason": "ERC 특수상황 소생 — 응급 실무 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-resuscitation-council-special-circumstances-resuscitation",
+      "supersedes": []
     },
     {
       "id": "pmid:41117568",
@@ -26974,7 +27250,9 @@
         "keep": true,
         "reason": "ECMO 응급상황 관리 지침, 중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|british-societies-management-emergencies-patients-extracorporeal-membrane-oxygenation",
+      "supersedes": []
     },
     {
       "id": "pmid:41193010",
@@ -27041,7 +27319,9 @@
         "keep": true,
         "reason": "ACEP 중등도 호흡곤란 응급진료 권고, ED 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "acep|acute-care-patients-with-moderate-respiratory-distress-from-expert-panel",
+      "supersedes": []
     },
     {
       "id": "pmid:40994133",
@@ -27182,7 +27462,9 @@
         "keep": true,
         "reason": "AF 율동조절 최신 권고 정리, 응급/중환자 리듬관리에 유용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|new-rhythm-control-what-has-changed-acc-accp-hrs-esc-atrial-fibrillation-where-does-dronedarone-fit",
+      "supersedes": []
     },
     {
       "id": "pmid:41085599",
@@ -27585,7 +27867,9 @@
         "keep": true,
         "reason": "패혈증 관리 프랑스 지침, 중환자 핵심 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|french-sepsis-pragmatic-frame-manage-septic-patients",
+      "supersedes": []
     },
     {
       "id": "pmid:41198528",
@@ -27862,7 +28146,9 @@
         "keep": true,
         "reason": "침습적 기계환기·ECMO 독일 S3 핵심 메시지 — 핵심 중환자",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|ten-key-messages-german-s3-invasive-ventilation-use-extracorporeal-techniques-patients-with-acute-respiratory-failure",
+      "supersedes": []
     },
     {
       "id": "pmid:41098085",
@@ -28293,7 +28579,9 @@
         "keep": true,
         "reason": "간경변 복수·용량과부하·저나트륨혈증 관리 — ED/ICU 실무 닿음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|aga-clinical-practice-management-ascites-volume-overload-hyponatremia-cirrhosis-expert-review",
+      "supersedes": []
     },
     {
       "id": "pmid:41067965",
@@ -28685,7 +28973,9 @@
         "keep": true,
         "reason": "소생실 성인 혈관확보 지침 — 응급 술기 직접 적용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|vascular-access-initial-treatment-adult-emergency-patients-resuscitation-room-short-summary-from-german-national-s1",
+      "supersedes": []
     },
     {
       "id": "pmid:41123621",
@@ -28749,7 +29039,7 @@
       "organizationId": "esicm",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -28765,7 +29055,9 @@
         "keep": true,
         "reason": "ERC/ESICM 2025 소생후 관리 — 중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40907996",
@@ -29135,7 +29427,9 @@
         "keep": true,
         "reason": "ESC/EACTS 2025 판막질환 지침—주요 심장 지침, 일부 응급",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|eacts-treatment-valvular-heart-disease-new-standards-diagnostics-treatment",
+      "supersedes": []
     },
     {
       "id": "pmid:41217787",
@@ -29259,7 +29553,9 @@
         "keep": true,
         "reason": "감염성 심내막염 논쟁 정리, ED/ICU 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|controversies-challenges-management-infective-endocarditis-critical-comments-new-position-paper-german-society-infectious-diseases",
+      "supersedes": []
     },
     {
       "id": "pmid:41193046",
@@ -29342,7 +29638,9 @@
         "keep": true,
         "reason": "급성 폐색전증 관리 기준, 응급 핵심 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|acr-appropriateness-criteria-management-acute-pulmonary-embolism",
+      "supersedes": []
     },
     {
       "id": "pmid:41181880",
@@ -30901,7 +31199,9 @@
         "keep": true,
         "reason": "CO 중독 관리 position statement — 중독·환경 응급 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|management-acute-intoxication-with-carbon-monoxide-polish-medical-society-section-clinical-toxicology",
+      "supersedes": []
     },
     {
       "id": "pmid:41419371",
@@ -31053,7 +31353,9 @@
         "keep": true,
         "reason": "ICU 임종기 치료 권고, 중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|treatment-support-adults-at-end-life-intensive-care-by-ethics-section-divi-german-society-palliative-medicine-part-2-therapeutic-measures-support-at-end-life-intensive-care",
+      "supersedes": []
     },
     {
       "id": "pmid:40879751",
@@ -31117,7 +31419,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -31132,7 +31434,9 @@
         "keep": true,
         "reason": "중환자실 성인 임종기 치료·지지 권고, ICU 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:40820608",
@@ -31287,7 +31591,9 @@
         "keep": true,
         "reason": "소생·불명 쇼크 중 fTEE 합의문, 응급·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|consensus-paper-focused-transesophageal-echocardiography-ftee-clinical-acute-emergency-medicine-from-commission-clinical-cardiovascular-medicine-dgk-cooperation-with-dgina-dgiin-dgim",
+      "supersedes": []
     },
     {
       "id": "pmid:41391086",
@@ -31488,7 +31794,9 @@
         "keep": true,
         "reason": "소생지침 내 ECPR 역할 논평, 소생 핵심주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|role-extracorporeal-cardiopulmonary-resuscitation-new-european-north-american-resuscitation-between-shadow-light",
+      "supersedes": []
     },
     {
       "id": "pmid:41506925",
@@ -31611,7 +31919,9 @@
         "keep": true,
         "reason": "기기검출 심방세동 항응고 전략, 실무 접점 있음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-stroke-prevention-strategies-patients-with-device-detected-atrial-fibrillation-4s-ddaf-approach",
+      "supersedes": []
     },
     {
       "id": "pmid:41421702",
@@ -31740,7 +32050,9 @@
         "keep": true,
         "reason": "2025 ESC 판막질환 지침 해설(초록없음, 제목판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|insights-into-eacts-management-patients-with-valvular-heart-disease",
+      "supersedes": []
     },
     {
       "id": "pmid:41417044",
@@ -31815,7 +32127,9 @@
         "keep": true,
         "reason": "ERC 2025 소생술 지침 ALS 핵심 변경 — 최우선",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|new-european-resuscitation-council-erc-overview-most-important-changes-first-3-5-min-are-decisive",
+      "supersedes": []
     },
     {
       "id": "pmid:41410977",
@@ -31886,7 +32200,9 @@
         "keep": true,
         "reason": "ESC 감염성 심내막염 지침(네덜란드 승인·요약)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|infective-endocarditis-statement-endorsement-by-nvvc-short",
+      "supersedes": []
     },
     {
       "id": "pmid:41410976",
@@ -31957,7 +32273,9 @@
         "keep": true,
         "reason": "ESC 감염성 심내막염 지침 전체판, 응급 항생제 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|infective-endocarditis-statement-endorsement-by-nvvc-full",
+      "supersedes": []
     },
     {
       "id": "pmid:41287601",
@@ -32149,7 +32467,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -32163,7 +32481,9 @@
         "keep": true,
         "reason": "2025 ESC/EACTS 판막 지침 원문 — 핵심 지침이나 응급성 제한적",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41417310",
@@ -32336,7 +32656,9 @@
         "keep": true,
         "reason": "ARDS 폐개방환기 재평가, 중환자 침상 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|reassessing-open-lung-ventilation-ards-meta-analysis-highlights-risks-routine-use-supports-individualized-strategies",
+      "supersedes": []
     },
     {
       "id": "pmid:41447855",
@@ -33188,11 +33510,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.833629859098348,
+      "priority": 6.831005135265704,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.8336298590983482,
+        "recency": 1.831005135265704,
         "scope": 0,
         "confidence": 1
       },
@@ -33205,14 +33527,15 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 2,
         "keep": false,
         "reason": "중추성 수면무호흡·심부전 리뷰 — 만성 수면의학, 응급 무관",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42578382",
@@ -33480,7 +33803,9 @@
         "keep": true,
         "reason": "2025 한국 CPR 주요 변경 요약",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|major-changes-korean-cardiopulmonary-resuscitation",
+      "supersedes": []
     },
     {
       "id": "pmid:41521700",
@@ -33755,7 +34080,9 @@
         "keep": true,
         "reason": "침습 혈역학 프로토콜 표준화—쇼크·심부전 중환자 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|standardization-baseline-provocative-invasive-hemodynamic-protocols-evaluation-heart-failure-pulmonary-hypertension-from",
+      "supersedes": []
     },
     {
       "id": "pmid:41448425",
@@ -33831,7 +34158,9 @@
         "keep": true,
         "reason": "흉부·흉복부 대동맥질환, 혈관 응급 연관",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|european-society-vascular-surgery-esvs-clinical-practice-management-descending-thoracic-thoraco-abdominal-aortic-diseases-editor-s-choice",
+      "supersedes": []
     },
     {
       "id": "pmid:41402108",
@@ -33896,7 +34225,9 @@
         "keep": true,
         "reason": "초록없음·제목판단: 2025 ACS 지침 해설(중문)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|interpretation-acc-acep-naemsp-scai-patients-with-acute-coronary-syndromes",
+      "supersedes": []
     },
     {
       "id": "pmid:41055898",
@@ -34174,7 +34505,9 @@
         "keep": true,
         "reason": "기관절개 ICU 환자 관리·이탈 지침, 중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|expert-consensus-based-clinical-practice-care-weaning-procedures-tracheostomized-icu-patients-after-invasive-mechanical-ventilation-joint-statement-by-intensive-care-physiotherapy-society-skr-french-intensive-care-society-srlf",
+      "supersedes": []
     },
     {
       "id": "pmid:41769574",
@@ -34633,7 +34966,9 @@
         "keep": true,
         "reason": "흡인성 폐렴 2025 프랑스 지침 — 응급실 흔한 중증 감염",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|aspiration-pneumonia-practical-synthesis-perspectives-light-french",
+      "supersedes": []
     },
     {
       "id": "pmid:40923137",
@@ -34708,7 +35043,9 @@
         "keep": true,
         "reason": "중증·위중 COVID 입원환자 abatacept 권고, 중환자 적용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "idsa|clinical-practice-by-treatment-management-covid-19-abatacept",
+      "supersedes": []
     },
     {
       "id": "pmid:40831386",
@@ -34784,7 +35121,9 @@
         "keep": true,
         "reason": "중증·위중 COVID infliximab 권고, ICU 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "idsa|clinical-practice-by-treatment-management-covid-19-infliximab",
+      "supersedes": []
     },
     {
       "id": "pmid:40757658",
@@ -34865,7 +35204,9 @@
         "keep": true,
         "reason": "중증·위중 COVID 면역조절·예방 4개 신규 권고",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "idsa|clinical-practice-by-treatment-management-covid-19-pemivibart-pre-exposure-prophylaxis-vilobelimab-critical-illness-abatacept-infliximab-severe-critical-illness",
+      "supersedes": []
     },
     {
       "id": "pmid:40679934",
@@ -34940,7 +35281,9 @@
         "keep": true,
         "reason": "ATS 지역사회획득폐렴 지침, 응급·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|diagnosis-management-community-acquired-pneumonia-official-american-thoracic-society-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:40402009",
@@ -35017,7 +35360,9 @@
         "keep": true,
         "reason": "위중 COVID vilobelimab, 중환자 직접 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "idsa|clinical-practice-by-treatment-management-covid-19-vilobelimab",
+      "supersedes": []
     },
     {
       "id": "pmid:39471458",
@@ -35157,7 +35502,9 @@
         "keep": true,
         "reason": "임신 중증 TBI 다학제 합의문 — 외상·신경·중환자 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|management-severe-isolated-traumatic-brain-injury-pregnancy-joint-from-european-association-neurosurgical-societies-eans-world-society-emergency-surgery-wses",
+      "supersedes": []
     },
     {
       "id": "pmid:41514030",
@@ -35232,7 +35579,9 @@
         "keep": true,
         "reason": "뇌졸중 급성기 혈압 목표 비교, 응급·신경 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|blood-pressure-management-stroke-comparative-review-acc-aanp-acpm-ags-ama-aspc-nma-pcna-sgim-esc-esh-jsh",
+      "supersedes": []
     },
     {
       "id": "pmid:40484642",
@@ -35507,7 +35856,9 @@
         "keep": true,
         "reason": "2025 ACS 지침 핵심 요약, 심인성쇼크·재관류 포함",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|highlights-perioperative-implications-from-american-college-cardiology-patients-with-acute-coronary-syndromes",
+      "supersedes": []
     },
     {
       "id": "pmid:41697613",
@@ -35614,7 +35965,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -35628,7 +35979,9 @@
         "keep": true,
         "reason": "급성관상동맥증후군 지침 비교(간호사 대상) — ER 핵심주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41631393",
@@ -35707,7 +36060,9 @@
         "keep": true,
         "reason": "폐경전 여성 ACS 성명, SCAD 등 응급 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|acute-coronary-syndromes-premenopausal-women-from",
+      "supersedes": []
     },
     {
       "id": "pmid:41622524",
@@ -35769,7 +36124,9 @@
         "keep": true,
         "reason": "2025 AHA CPR·ECC 지침 리뷰, 소생 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|critical-review-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41609149",
@@ -36047,7 +36404,9 @@
         "keep": true,
         "reason": "ERC 2025 심폐소생술 업데이트 — 소생 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|erc-cardiopulmonary-resuscitation",
+      "supersedes": []
     },
     {
       "id": "pmid:41581011",
@@ -36260,7 +36619,9 @@
         "keep": true,
         "reason": "ESICM 성인 중환자 수액요법 지침—중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esicm|clinical-practice-fluid-therapy-adult-critically-ill-patients-path-toward-improved-patient-management",
+      "supersedes": []
     },
     {
       "id": "pmid:41628637",
@@ -36326,7 +36687,9 @@
         "keep": true,
         "reason": "독일 S3 인공환기 이탈 분류 — 중환자 기계환기 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|weaning-classification-systems-wind-icc-prolonged-weaning-light-german-s3-invasive-mechanical-ventilation",
+      "supersedes": []
     },
     {
       "id": "pmid:41716098",
@@ -36383,7 +36746,9 @@
         "keep": true,
         "reason": "ATS CAP 신지침 요약(폐초음파·스테로이드), 응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|new-from-american-thoracic-society-community-acquired-pneumonia-recommend-lung-ultrasound-reducing-antibiotic-treatment-duration-corticosteroids-severe-disease",
+      "supersedes": []
     },
     {
       "id": "pmid:41662713",
@@ -36661,7 +37026,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -36676,7 +37041,9 @@
         "keep": true,
         "reason": "임신·산후 뇌졸중 성명, 신경 응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41623113",
@@ -36882,7 +37249,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -36897,86 +37264,9 @@
         "keep": true,
         "reason": "임신·산후 뇌졸중 성명(중복), 신경 응급",
         "at": "2026-08-17T04:43:32.344Z"
-      }
-    },
-    {
-      "id": "pmid:41582814",
-      "pmid": "41582814",
-      "title": "2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke: A Guideline From the American Heart Association/American Stroke Association.",
-      "pubDate": "2026 Aug",
-      "journal": "Stroke",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:38.246Z",
-      "abstract": "AIM: The \"2026 Guideline for the Early Management of Patients With AIS\" replaces the \"2018 Guidelines for the Early Management of Patients With AIS\" and the 2019 update to reflect recent advances in evidence. This updated guideline is intended to provide a comprehensive, up-to-date, evidence-based set of recommendations, advising management from prehospital evaluation through acute treatment and early in-hospital management of complications and initiation of early secondary prevention measures. The intended audience includes prehospital care professionals, physicians, allied health professionals, and hospital administrators.\nMETHODS: A search for literature derived from research principally involving human subjects, published in English since the last AIS guideline in 2018 and the 2019 update, and indexed in MEDLINE, PubMed, Cochrane Library, and other selected databases relevant to this guideline, was conducted between September and December 2024. Additional high impact studies and articles published through March 2025 were added later, where appropriate.\nSTRUCTURE: This guideline represents the most current and comprehensive evidence available in AIS care. Key updates include the incorporation of new evidence related to thrombolytic choice and eligibility, determination of eligibility for endovascular thrombectomy, and management of hyperglycemia and dysphagia; a focused consideration of the pediatric population; and modification of the approach to thrombolysis contraindications. Although this guideline reflects significant advances, it also highlights gaps in knowledge and underscores the urgent need for continued research to further refine and improve treatment strategies.",
-      "meshTerms": [
-        "Humans",
-        "Ischemic Stroke",
-        "American Heart Association",
-        "United States",
-        "Thrombolytic Therapy",
-        "Endovascular Procedures",
-        "Disease Management",
-        "Thrombectomy",
-        "Brain Ischemia"
-      ],
-      "keywords": [
-        "AHA Scientific Statements",
-        "endovascular procedures",
-        "guideline",
-        "ischemic stroke",
-        "stroke",
-        "thrombolytic therapy"
-      ],
-      "doi": "10.1161/STR.0000000000000513",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": "aha"
       },
-      "priority": 12,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "2026 급성 허혈뇌졸중 조기관리 핵심 지침",
-        "at": "2026-08-17T04:43:32.344Z"
-      }
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41616248",
@@ -37096,7 +37386,9 @@
         "keep": true,
         "reason": "APA 섬망 진료지침, ICU 실무 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|american-psychiatric-association-practice-prevention-treatment-delirium-implications-patient-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41860322",
@@ -37173,7 +37465,9 @@
         "keep": true,
         "reason": "SCCM 고령 ICU 환자 진료 지침, 중환자 실무 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|caring-older-adults-icu",
+      "supersedes": []
     },
     {
       "id": "pmid:41810980",
@@ -37252,7 +37546,9 @@
         "keep": true,
         "reason": "EUSEM 응급·병원전 급성통증 관리 갱신 — 핵심 응급",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-society-emergency-medicine-acute-pain-management-emergency-departments-prehospital-care",
+      "supersedes": []
     },
     {
       "id": "pmid:41773929",
@@ -37329,7 +37625,9 @@
         "keep": true,
         "reason": "SCCM ARDS 신경근차단 지침, 중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|administration-neuromuscular-blockade-adults-with-acute-respiratory-distress-syndrome",
+      "supersedes": []
     },
     {
       "id": "pmid:41773927",
@@ -37407,7 +37705,9 @@
         "keep": true,
         "reason": "SCCM 위기시 중환자 자원배분 지침, 실무·윤리 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|allocation-critical-care-resources-adults-during-crisis-level-shortages",
+      "supersedes": []
     },
     {
       "id": "pmid:41738425",
@@ -37554,7 +37854,9 @@
         "keep": true,
         "reason": "중환자 스트레스궤양 예방 CPG, ICU 핵심 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|stress-ulcer-prophylaxis-critically-ill-adults-contextualized-clinical-practice-from-saudi-critical-care-society-scandinavian-society-anaesthesiology-intensive-care-medicine-endorsed-by-kuwait-anesthesia-critical-care-society",
+      "supersedes": []
     },
     {
       "id": "pmid:41014602",
@@ -37631,7 +37933,9 @@
         "keep": true,
         "reason": "저혈압 OHCA 혈역학 관리 ESC 합의, 소생·중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|haemodynamic-monitoring-management-hypotensive-out-hospital-cardiac-arrest-patient-adult-intensive-care-unit-clinical-association-acute-cardiovascular-care",
+      "supersedes": []
     },
     {
       "id": "pmid:42064867",
@@ -37895,7 +38199,9 @@
         "keep": true,
         "reason": "ERC 2025 주요 변경 개관 — 소생 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-resuscitation-council-overview-most-important-changes",
+      "supersedes": []
     },
     {
       "id": "pmid:41837923",
@@ -37958,7 +38264,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -37966,14 +38272,17 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 5,
         "keep": false,
         "reason": "AAA·박리 영상 적정성—혈관응급 진단 닿음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|acr-appropriateness-criteria-abdominal-aortic-aneurysm-dissection-interventional-planning-follow-up",
+      "supersedes": []
     },
     {
       "id": "pmid:41804888",
@@ -38185,7 +38494,9 @@
         "keep": true,
         "reason": "2025 ERC 심정지 지침, 소생 핵심 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|rethinking-cardiac-arrest-new-paradigms-erc",
+      "supersedes": []
     },
     {
       "id": "pmid:41738680",
@@ -38402,7 +38713,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -38418,7 +38729,9 @@
         "keep": true,
         "reason": "2026 급성 폐색전증 지침, ACEP 참여 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41712677",
@@ -38499,7 +38812,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -38515,7 +38828,9 @@
         "keep": true,
         "reason": "2026 폐색전증 지침(중복), 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41820196",
@@ -38662,7 +38977,9 @@
         "keep": true,
         "reason": "SCCM ARDS 신경근차단 지침, 중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "sccm|executive-summary-administration-neuromuscular-blockade-adults-with-acute-respiratory-distress-syndrome",
+      "supersedes": []
     },
     {
       "id": "pmid:41760103",
@@ -38950,7 +39267,9 @@
         "keep": true,
         "reason": "상지 심부정맥혈전 지침, 혈관 응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|american-venous-forum-clinical-practice-care-patients-with-upper-extremity-deep-venous-thrombosis",
+      "supersedes": []
     },
     {
       "id": "pmid:41738095",
@@ -39100,7 +39419,9 @@
         "keep": true,
         "reason": "고칼륨혈증 진단·치료 권고, 응급 대사 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|consensus-diagnosis-treatment-hyperkalemia-austrian-society-nephrology",
+      "supersedes": []
     },
     {
       "id": "pmid:41758104",
@@ -39179,7 +39500,9 @@
         "keep": true,
         "reason": "ACR 주요 둔상 영상 적정기준 — 외상 진단 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|acr-appropriateness-criteria-major-blunt-trauma",
+      "supersedes": []
     },
     {
       "id": "pmid:41746233",
@@ -39257,7 +39580,9 @@
         "keep": true,
         "reason": "ACR 경증 둔상 영상 적정기준 — 응급 영상 판단",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|acr-appropriateness-criteria-minor-blunt-trauma",
+      "supersedes": []
     },
     {
       "id": "pmid:41773753",
@@ -39720,7 +40045,7 @@
       "organizationId": "sccm",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": null,
       "reasons": [
@@ -39733,7 +40058,9 @@
         "keep": true,
         "reason": "난치성 패혈성쇼크 정의 SCCM/ESICM 합의, 쇼크 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41873857",
@@ -39793,7 +40120,7 @@
       "organizationId": "sccm",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": null,
       "reasons": [
@@ -39806,7 +40133,9 @@
         "keep": true,
         "reason": "난치성 패혈성쇼크 정의(중복), 쇼크 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:42110709",
@@ -39925,7 +40254,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -39933,14 +40262,17 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 5,
         "keep": false,
         "reason": "STS 심장수술 후 신규 심방세동 지침 — 수술후 관리, 응급 접점",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|society-thoracic-surgeons-clinical-practice-prevention-treatment-new-onset-postoperative-atrial-fibrillation-after-cardiac-surgery",
+      "supersedes": []
     },
     {
       "id": "pmid:41964413",
@@ -40003,7 +40335,9 @@
         "keep": true,
         "reason": "임신 심부전(ESC), 급성 발현 가능(제목판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|heart-failure-pregnancy-where-cardiovascular-disease-pregnancy-illuminate-where-shadows-remain",
+      "supersedes": []
     },
     {
       "id": "pmid:41949235",
@@ -40065,7 +40399,9 @@
         "keep": true,
         "reason": "2026 AHA/ACC 급성 폐색전 지침, 핵심 응급",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|acc-acute-pulmonary-embolism-implications-individual-risk-assessment-therapies",
+      "supersedes": []
     },
     {
       "id": "pmid:41949229",
@@ -40128,7 +40464,9 @@
         "keep": true,
         "reason": "PE 지침 카테터치료 파트, 응급 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|field-transition-catheter-based-therapy-acc-acute-pulmonary-embolism",
+      "supersedes": []
     },
     {
       "id": "pmid:41949219",
@@ -40193,7 +40531,9 @@
         "keep": true,
         "reason": "AHA/ACC PE 지침 진단·위험층화·관리",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|acc-pulmonary-embolism-new-era-diagnosis-risk-assessment-management",
+      "supersedes": []
     },
     {
       "id": "pmid:41933833",
@@ -40274,7 +40614,9 @@
         "keep": true,
         "reason": "임신 VTE·PE 진단 컨센서스—응급 진단 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|executive-summary-consensus-document-diagnosis-venous-thromboembolism-pregnancy-from-spanish-society-internal-medicine-spanish-society-medical-radiology-spanish-society-vascular-interventional-radiology-spanish-society-gynecology-obstetrics",
+      "supersedes": []
     },
     {
       "id": "pmid:41924886",
@@ -40408,7 +40750,9 @@
         "keep": true,
         "reason": "지연 STEMI 재관류 지침 비교, 심장응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|revascularization-latecomer-st-elevation-myocardial-infarction-patients-diverging-acc-esc",
+      "supersedes": []
     },
     {
       "id": "pmid:41936423",
@@ -40810,7 +41154,9 @@
         "keep": true,
         "reason": "악성 MCA·소뇌경색 감압술 권고 — 신경응급·중환자 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|diagnosis-treatment-malignant-middle-cerebral-artery-infarction-cerebellar-infarction-with-mass-effect-spanish-society-neurology-s-stroke-study-group",
+      "supersedes": []
     },
     {
       "id": "pmid:41907177",
@@ -41107,14 +41453,17 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 7,
         "keep": true,
         "reason": "ACR 복부·골반 관통상 영상 갱신 — 외상 진단 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|acr-appropriateness-criteria-penetrating-trauma-abdomen-pelvis",
+      "supersedes": []
     },
     {
       "id": "pmid:42000278",
@@ -41277,7 +41626,9 @@
         "keep": true,
         "reason": "포르투갈 병원전 패혈증·쇼크 권고 — 패혈증 핵심, 국소성",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|management-patient-with-suspected-sepsis-septic-shock-portuguese-prehospital-setting",
+      "supersedes": []
     },
     {
       "id": "pmid:42130350",
@@ -41493,7 +41844,9 @@
         "keep": true,
         "reason": "한국 CPR 2025 응급처치편 — 소생·응급",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-11-first-aid",
+      "supersedes": []
     },
     {
       "id": "pmid:42297413",
@@ -41686,7 +42039,9 @@
         "keep": true,
         "reason": "성인 심정지 후 소생 후 관리 핵심 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-6-post-cardiac-arrest-care",
+      "supersedes": []
     },
     {
       "id": "pmid:42297408",
@@ -41750,7 +42105,9 @@
         "keep": true,
         "reason": "특수상황 심정지(고칼륨·PE) 소생 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-5-cardiac-arrest-special-circumstances",
+      "supersedes": []
     },
     {
       "id": "pmid:42297407",
@@ -41814,7 +42171,9 @@
         "keep": true,
         "reason": "성인 전문소생술 핵심 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-4-adult-advanced-life-support",
+      "supersedes": []
     },
     {
       "id": "pmid:42297406",
@@ -41878,7 +42237,9 @@
         "keep": true,
         "reason": "성인 기본소생술 핵심 지침, 침상 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-3-adult-basic-life-support",
+      "supersedes": []
     },
     {
       "id": "pmid:42297405",
@@ -41941,7 +42302,9 @@
         "keep": true,
         "reason": "심정지 역학·생존사슬, 소생 맥락",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-2-current-status-cardiac-arrest-chain-survival",
+      "supersedes": []
     },
     {
       "id": "pmid:42161420",
@@ -42005,7 +42368,9 @@
         "keep": true,
         "reason": "2025 한국 CPR 개정 총론·주요변경 개요",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-1-process-highlights",
+      "supersedes": []
     },
     {
       "id": "pmid:42155015",
@@ -42062,7 +42427,9 @@
         "keep": true,
         "reason": "ECLS 윤리 AHA 지침, 중환자 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|ethical-complexities-extracorporeal-life-support-management-pearls-from-new-ethics",
+      "supersedes": []
     },
     {
       "id": "pmid:42111960",
@@ -42174,14 +42541,15 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "수술후 AF 지침에 대한 논평, 실무전환 약함",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42095279",
@@ -42383,7 +42751,9 @@
         "keep": true,
         "reason": "급성 PE 침상 위험층화 지침 비교, 응급 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|bedside-oriented-new-risk-stratification-acute-pulmonary-embolism-implications-clinical-utility-acc-compared-with-esc",
+      "supersedes": []
     },
     {
       "id": "pmid:42034326",
@@ -42773,7 +43143,9 @@
         "keep": true,
         "reason": "NICE 성인 패혈증 지침 비교, EM 저널·핵심주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|comparison-national-institute-health-care-excellence-sepsis-adults-against-service-evaluation",
+      "supersedes": []
     },
     {
       "id": "pmid:42043514",
@@ -42831,7 +43203,9 @@
         "keep": true,
         "reason": "2026 SSC 패혈증 지침 비교, 중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "surviving-sepsis|comparison-german-s3-sepsis",
+      "supersedes": []
     },
     {
       "id": "pmid:41810828",
@@ -42982,7 +43356,9 @@
         "keep": true,
         "reason": "뇌졸중 관련 폐렴, ED/ICU 감염 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-stroke-organisation-stroke-associated-pneumonia",
+      "supersedes": []
     },
     {
       "id": "pmid:42002786",
@@ -43056,7 +43432,9 @@
         "keep": true,
         "reason": "흡인위험 기도관리 합의, RSI 응급 실무 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|anaesthesiologic-management-patients-at-risk-pulmonary-aspiration-swiss",
+      "supersedes": []
     },
     {
       "id": "pmid:41738241",
@@ -43100,7 +43478,7 @@
       "organizationId": "idsa",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -43114,7 +43492,9 @@
         "keep": true,
         "reason": "IDSA CAP 지침 미승인 입장문, 감염 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:41340493",
@@ -43173,7 +43553,7 @@
       "organizationId": "idsa",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -43188,7 +43568,9 @@
         "keep": true,
         "reason": "CAP 항생제 권고 이견 입장문—응급 폐렴 항생제 판단에 닿음",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:42109096",
@@ -43336,7 +43718,9 @@
         "keep": true,
         "reason": "급성 뇌졸중·ICH 혈압관리, 침상 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-stroke-organisation-eso-blood-pressure-management-acute-ischaemic-stroke-intracerebral-haemorrhage",
+      "supersedes": []
     },
     {
       "id": "pmid:42095754",
@@ -43419,7 +43803,9 @@
         "keep": true,
         "reason": "동맥류성 SAH 지침, 신경 응급·중환자",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-stroke-organisation-eso-european-association-neurosurgical-societies-eans-european-society-minimally-invasive-neurological-therapy-esmint-aneurysmal-subarachnoid-haemorrhage",
+      "supersedes": []
     },
     {
       "id": "pmid:42067227",
@@ -43549,7 +43935,9 @@
         "keep": true,
         "reason": "부신부전 NICE 지침 요약, 응급 내분비(소아저널이나 성인적용)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|adrenal-insufficiency-identification-management-nice-ng243",
+      "supersedes": []
     },
     {
       "id": "pmid:42171307",
@@ -43692,7 +44080,9 @@
         "keep": true,
         "reason": "ICU PADIS(진통·진정·섬망·부동·수면) 지침, 중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|dutch-clinical-practice-pain-analgesia-sedation-delirium-immobility-sleep-disturbances-padis",
+      "supersedes": []
     },
     {
       "id": "pmid:42057302",
@@ -43832,7 +44222,9 @@
         "keep": true,
         "reason": "중환자 중심정맥관 삽입 지침, ICU 핵심 술기",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|central-venous-cannulation-critically-ill-patients-polish-society-anaesthesiology-intensive-therapy",
+      "supersedes": []
     },
     {
       "id": "pmid:42153399",
@@ -43985,7 +44377,9 @@
         "keep": true,
         "reason": "심장중환자실 환자선별·중증도분류 성명—중환자 실무 직결",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|cardiac-intensive-care-unit-appropriate-patient-selection-triage-from",
+      "supersedes": []
     },
     {
       "id": "pmid:42420041",
@@ -44042,7 +44436,9 @@
         "keep": true,
         "reason": "2025 한국 CPR 지침 갱신, 소생 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation",
+      "supersedes": []
     },
     {
       "id": "pmid:42312386",
@@ -44102,7 +44498,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -44110,14 +44506,17 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 4,
         "keep": false,
         "reason": "고령 심부전 관리—외래 지침중심이나 중환자 인접",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "aha|strategies-optimizing-heart-failure-care-older-adult-from",
+      "supersedes": []
     },
     {
       "id": "pmid:42290315",
@@ -44189,7 +44588,9 @@
         "keep": true,
         "reason": "ACS/PCI 항혈전 개인화 컨센서스—출혈·허혈 침상 판단",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "esc|antithrombotic-therapy-secondary-prevention-patients-with-acute-coronary-syndromes-treated-with-percutaneous-coronary-intervention-options-personalization-reduce-bleeding-ischaemic-risks-clinical-working-group-thrombosis-association-acute-cardiovascular-care-european-association-percutaneous-cardiovascular-interventions-esc-working-group-cardiovascular-pharmacology-clinical-working-group-thrombosis-association-acute-cardiovascular-care-european-association-percutaneous-cardiovascular-interventions-esc-working-group-cardiovascular-pharmacology",
+      "supersedes": []
     },
     {
       "id": "pmid:42269820",
@@ -44246,7 +44647,9 @@
         "keep": true,
         "reason": "2026 PE 지침 IR 관점 요약, 핵심 주제",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|acc-accp-acep-chest-scai-shm-sir-svm-svn-evaluation-management-acute-pulmonary-embolism-adults-pertinent-points-interventional-radiologist",
+      "supersedes": []
     },
     {
       "id": "pmid:42265997",
@@ -44389,14 +44792,17 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 8,
         "keep": true,
         "reason": "급성 폐색전 위험층화 ACC/AHA—응급 혈역학 결정 핵심(초록없음,제목판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "aha|acc-risk-stratification-acute-pulmonary-embolism-hemodynamic-choice",
+      "supersedes": []
     },
     {
       "id": "pmid:42263157",
@@ -44483,14 +44889,15 @@
         "publisher-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 4,
         "keep": false,
         "reason": "CKM증후군 지침(중복 게재), 만성 예방",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42263147",
@@ -44563,14 +44970,17 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "CKM 1차예방 위험도 과학성명, 외래 예방 위주",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:42263012",
@@ -44643,14 +45053,17 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "215와 동일 CKM 1차예방 성명, 외래 예방 위주",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous"
     },
     {
       "id": "pmid:42240859",
@@ -44771,7 +45184,9 @@
         "keep": true,
         "reason": "급성 폐색전증 ESC vs AHA/ACC 지침 비교 — ER 핵심 주제(초록 없어 제목 판단)",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|acute-pulmonary-embolism-continuity-innovation-between-esc-acc",
+      "supersedes": []
     },
     {
       "id": "pmid:41968953",
@@ -45084,7 +45499,9 @@
         "keep": true,
         "reason": "2026 급성뇌졸중 지침 갱신, 신경 응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|asa-updates-management-patients-with-acute-ischemic-stroke-guide-radiologists",
+      "supersedes": []
     },
     {
       "id": "pmid:42217665",
@@ -45284,7 +45701,9 @@
         "keep": true,
         "reason": "중증뇌졸중 완화·연명 결정, 중환자 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|palliative-care-stroke-spanish-society-neurology-s-stroke-study-group",
+      "supersedes": []
     },
     {
       "id": "pmid:42161591",
@@ -45345,7 +45764,9 @@
         "keep": true,
         "reason": "2026 급성 뇌졸중 혈전제거술 지침 논평 — 신경응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|should-baseline-mrs-serve-as-gatekeeper-stroke-thrombectomy-commentary-asa-early-management-acute-ischemic-stroke",
+      "supersedes": []
     },
     {
       "id": "pmid:42299777",
@@ -45423,7 +45844,9 @@
         "keep": true,
         "reason": "급성췌장염 통증관리 유럽지침, 소화기 응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|european-interdisciplinary-pain-management-acute-pancreatitis-ueg-epc-eds-esdo-eagen-espghan-esgar-espcg-evidence-based",
+      "supersedes": []
     },
     {
       "id": "pmid:42216617",
@@ -45501,7 +45924,9 @@
         "keep": true,
         "reason": "급성췌장염 지침, 소화기 응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|aeg-aespanc-opge-sied-spg-ibero-latin-american-acute-pancreatitis-ilatam-ap",
+      "supersedes": []
     },
     {
       "id": "pmid:41774604",
@@ -45915,7 +46340,9 @@
         "keep": true,
         "reason": "급성 폐색전증 중재 2026 vs 2019 지침 비교 — ER 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|intervention-acute-pulmonary-embolism-comparison-acc-esc",
+      "supersedes": []
     },
     {
       "id": "pmid:42379923",
@@ -45976,7 +46403,9 @@
         "keep": true,
         "reason": "2026 폐색전증 위험 재분류·적용 — 침상 판단 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|risk-reclassification-implementation-challenges-acc-pulmonary-embolism",
+      "supersedes": []
     },
     {
       "id": "pmid:42339539",
@@ -46039,21 +46468,24 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 5,
         "keep": false,
         "reason": "주산기 심부전 성명—임신 급성 심부전 응급 일부 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "aha|heart-failure-occurring-perinatal-period-from",
+      "supersedes": []
     },
     {
       "id": "pmid:42299758",
@@ -46134,7 +46566,9 @@
         "keep": true,
         "reason": "AHA 2025 BLS/ACLS 소생 지침—응급·소생 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "aha|basic-life-support-advanced-cardiovascular-life-support-pediatric-advanced-life-support-neonatal-resuscitation",
+      "supersedes": []
     },
     {
       "id": "pmid:42373444",
@@ -46263,7 +46697,9 @@
         "keep": true,
         "reason": "급성호흡부전 비침습호흡지원 핵심 지침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|noninvasive-respiratory-support-adult-patients-with-acute-respiratory-failure-official-american-thoracic-society-clinical-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:42350065",
@@ -46461,7 +46897,9 @@
         "keep": true,
         "reason": "인공호흡기 관련 폐렴 예방, ICU 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|strategies-prevent-ventilator-associated-pneumonia-critically-ill-mechanically-ventilated-patients-siaarti",
+      "supersedes": []
     },
     {
       "id": "pmid:42418304",
@@ -46522,7 +46960,9 @@
         "keep": true,
         "reason": "동맥류 SAH 지침 혈관내치료, 신경응급 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|evidence-novel-endovascular-techniques-eso-eans-esmint-aneurysmal-subarachnoid-haemorrhage",
+      "supersedes": []
     },
     {
       "id": "pmid:42389837",
@@ -46594,14 +47034,17 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 6,
         "keep": true,
         "reason": "혈전없는 LV기능저하 뇌졸중 항응고 판단—침상 결정",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "aha|management-patients-at-risk-ischemic-stroke-with-left-ventricular-systolic-dysfunction-absence-intracardiac-thrombus-from",
+      "supersedes": []
     },
     {
       "id": "pmid:42333213",
@@ -46722,7 +47165,9 @@
         "keep": true,
         "reason": "독일 위장관출혈 S2k 지침, 응급 출혈 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|s2k-gastrointestinal-bleeding-german-society-gastroenterology-digestive-metabolic-diseases-dgvs-december-awmf-registration-number-021-028",
+      "supersedes": []
     },
     {
       "id": "pmid:42486076",
@@ -46888,21 +47333,22 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 6,
         "keep": true,
         "reason": "오피오이드 OUD·과용량 관리 지침, 응급중독 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42371399",
@@ -46956,21 +47402,22 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": false,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 6,
         "keep": true,
         "reason": "프랑스 오피오이드 지침, 진통·과용량 응급 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42370555",
@@ -47035,7 +47482,9 @@
         "keep": true,
         "reason": "나트륨차단제 중독 독물센터 권고 조사, 응급중독",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "lineageKey": "unknown|contemporary-survey-united-states-poison-center-treatment-sodium-channel-blocking-drug-poisoning",
+      "supersedes": []
     },
     {
       "id": "pmid:42604549",
@@ -47110,14 +47559,17 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 6,
         "keep": true,
         "reason": "ERC 2025 BLS·응급처치 리뷰, 소생 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|review-european-resuscitation-council-erc-first-aid-adult-basic-life-support-practical-implications-hungarian-practice",
+      "supersedes": []
     },
     {
       "id": "pmid:42586421",
@@ -47175,37 +47627,50 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "guideline",
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 6,
         "keep": true,
         "reason": "임신 VTE 치료 합의, 응급 항응고 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42550214",
       "pmid": "42550214",
       "title": "[Prevention of venous thromboembolism in orthopaedics and traumatology: Austrian interdisciplinary consensus statement 2026].",
-      "pubDate": "2026 Aug 4",
+      "pubDate": "2026 Aug",
       "journal": "Wiener klinische Wochenschrift",
       "publicationTypes": [
-        "English Abstract",
-        "Journal Article"
+        "Journal Article",
+        "Consensus Statement",
+        "English Abstract"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-17T04:41:03.449Z",
       "abstract": "Venous thromboembolism (VTE), a disease entity comprising deep vein thrombosis (DVT) and/or pulmonary embolism (PE), represents one of the most frequent and potentially life-threatening complications in orthopaedics and traumatology [1]. The previous Austrian recommendation on VTE prophylaxis in musculoskeletal procedures, dating from 2014 [2], no longer adequately reflects current evidence-based pharmacological and nonpharmacological strategies. Current international interdisciplinary guidelines on VTE prophylaxis, such as those issued by the European Society of Anaesthesiology and Intensive Care (ESAIC) [3] and the Association of the Scientific Medical Societies in Germany (AWMF) [4], were therefore adapted with consideration of Austrian healthcare structures. In particular, clearly defined criteria for a functional early mobilisation concept within the framework of a fast-track programme, as well as structured recommendations on VTE prophylaxis in conservative orthopaedic and traumatological treatments, have been lacking to date. To develop practice-oriented, evidence-based recommendations, an interdisciplinary consensus group comprising representatives of the Austrian medical societies relevant to this topic was convened. The aim was to formulate more structured, risk-adapted recommendations that take the Austrian healthcare context into account.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Venous Thromboembolism",
+        "Austria",
+        "Orthopedic Procedures",
+        "Intersectoral Collaboration",
+        "Pulmonary Embolism",
+        "Postoperative Complications",
+        "Anticoagulants",
+        "Interdisciplinary Communication",
+        "Evidence-Based Medicine"
+      ],
       "keywords": [
         "Hypocoagulation",
         "Prophylaxis",
@@ -47238,21 +47703,24 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 5,
         "keep": false,
         "reason": "정형외상 VTE 예방 합의, 부분 응급 적용",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|prevention-venous-thromboembolism-orthopaedics-traumatology-austrian-interdisciplinary",
+      "supersedes": []
     },
     {
       "id": "pmid:42496134",
@@ -47301,21 +47769,24 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 5,
         "keep": false,
         "reason": "심부전 관동맥 재관류 합의, 급성 아님",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|revascularization-coronary-artery-disease-heart-failure-european-journal-heart-failure-expert",
+      "supersedes": []
     },
     {
       "id": "pmid:42189053",
@@ -47374,21 +47845,24 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 2,
         "keep": false,
         "reason": "여성심장센터 네트워크 프레임워크—체계 성명, 침상 무관",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "esc|women-s-heart-centres-clinical-european-association-cardiovascular-imaging-eacvi-european-association-percutaneous-cardiovascular-interventions-eapci-heart-failure-association-hfa-association-acute-cardiovascular-care-acvc",
+      "supersedes": []
     },
     {
       "id": "pmid:41787921",
@@ -47438,14 +47912,15 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 2,
         "keep": false,
         "reason": "CAP 지침 오정보 정정 논평, 비임상",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42573784",
@@ -47495,14 +47970,15 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "SAH 지침에 대한 코멘트 서신, 실무전환 약함",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42552475",
@@ -47561,14 +48037,17 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 8,
         "keep": true,
         "reason": "NCS aneurysmal SAH 발작예방 지침, 신경중환자 핵심",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "ncs|seizure-prophylaxis-patients-with-aneurysmal-subarachnoid-hemorrhage-statement-healthcare-professionals-from",
+      "supersedes": []
     },
     {
       "id": "pmid:42490058",
@@ -47612,20 +48091,21 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": null,
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 7,
         "keep": true,
         "reason": "외상 전혈 수혈 후 RhD 관리, 소생 실무",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42480549",
@@ -47669,21 +48149,24 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:16.928Z",
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
       "llmFit": {
         "version": 1,
         "score": 5,
         "keep": false,
         "reason": "내시경 진정 지침, 절차진정 일부 겹침",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|sedation-gastrointestinal-endoscopy-european-society-gastrointestinal-endoscopy-esge-european-society-gastroenterology-endoscopy-nurses-associates-esgena",
+      "supersedes": []
     }
   ],
   "published": [
@@ -47826,6 +48309,229 @@
         "org": "AHA (American Heart Association)",
         "date": "2026-08-11"
       }
+    },
+    {
+      "id": "pmid:41582814",
+      "pmid": "41582814",
+      "title": "2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke: A Guideline From the American Heart Association/American Stroke Association.",
+      "pubDate": "2026 Aug",
+      "journal": "Stroke",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:38.246Z",
+      "abstract": "AIM: The \"2026 Guideline for the Early Management of Patients With AIS\" replaces the \"2018 Guidelines for the Early Management of Patients With AIS\" and the 2019 update to reflect recent advances in evidence. This updated guideline is intended to provide a comprehensive, up-to-date, evidence-based set of recommendations, advising management from prehospital evaluation through acute treatment and early in-hospital management of complications and initiation of early secondary prevention measures. The intended audience includes prehospital care professionals, physicians, allied health professionals, and hospital administrators.\nMETHODS: A search for literature derived from research principally involving human subjects, published in English since the last AIS guideline in 2018 and the 2019 update, and indexed in MEDLINE, PubMed, Cochrane Library, and other selected databases relevant to this guideline, was conducted between September and December 2024. Additional high impact studies and articles published through March 2025 were added later, where appropriate.\nSTRUCTURE: This guideline represents the most current and comprehensive evidence available in AIS care. Key updates include the incorporation of new evidence related to thrombolytic choice and eligibility, determination of eligibility for endovascular thrombectomy, and management of hyperglycemia and dysphagia; a focused consideration of the pediatric population; and modification of the approach to thrombolysis contraindications. Although this guideline reflects significant advances, it also highlights gaps in knowledge and underscores the urgent need for continued research to further refine and improve treatment strategies.",
+      "meshTerms": [
+        "Humans",
+        "Ischemic Stroke",
+        "American Heart Association",
+        "United States",
+        "Thrombolytic Therapy",
+        "Endovascular Procedures",
+        "Disease Management",
+        "Thrombectomy",
+        "Brain Ischemia"
+      ],
+      "keywords": [
+        "AHA Scientific Statements",
+        "endovascular procedures",
+        "guideline",
+        "ischemic stroke",
+        "stroke",
+        "thrombolytic therapy"
+      ],
+      "doi": "10.1161/STR.0000000000000513",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "aha"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T21:56:38.142Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "2026 급성 허혈뇌졸중 조기관리 핵심 지침",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "attempts": 0,
+      "lineageKey": "aha|early-management-patients-with-acute-ischemic-stroke-from-american-stroke-association",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41582814",
+          "title": "2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke: A Guideline From the American Heart Association/American Stroke Association.",
+          "journal": "Stroke",
+          "pubDate": "2026 Aug",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41582814/",
+          "doi": "10.1161/STR.0000000000000513"
+        },
+        "org": "AHA/ASA",
+        "version": "2026",
+        "title_ko": "2026 급성 허혈성 뇌졸중 환자의 초기 관리를 위한 미국심장협회/미국뇌졸중협회(AHA/ASA) 가이드라인",
+        "scope_ko": "성인 및 (신규로) 소아 급성 허혈성 뇌졸중(AIS) 환자의 병원 전 평가부터 급성기 재관류 치료(정맥 혈전용해·혈관내 혈전제거술), 초기 입원 합병증 관리, 조기 2차 예방 개시까지를 포괄하는 종합 가이드라인. 2018년 가이드라인과 2019년 개정판을 대체한다. 대상 독자는 병원 전 응급의료인, 의사, 관련 보건의료인, 병원 행정가.",
+        "summary": [
+          "Give IV thrombolysis within 4.5 h with either tenecteplase 0.25 mg/kg (max 25 mg) single IV bolus OR alteplase 0.9 mg/kg (max 90 mg; 10% bolus then 60-min infusion) — both now Class 1 to improve functional outcomes, tenecteplase favored for single-bolus simplicity.",
+          "In patients with salvageable penumbra on automated perfusion imaging, IV thrombolysis is reasonable 4.5–9 h from last known well or within 9 h of the midpoint of sleep in wake-up stroke (Class 2a); may be considered 4.5–24 h in LVO patients who cannot undergo thrombectomy (Class 2b).",
+          "Endovascular thrombectomy is now Class 1 for selected anterior-circulation LVO up to 24 h (age <80, NIHSS ≥6, ASPECTS 3–5 without significant mass effect), and Class 1 for basilar artery occlusion within 24 h (NIHSS ≥10, PC-ASPECTS ≥6).",
+          "Do NOT intensively lower blood pressure to <140 mmHg systolic after thrombolysis (Class 3, no benefit) or within 72 h after successful thrombectomy (Class 3, harm).",
+          "Do NOT target tight glucose 80–130 mg/dL with IV insulin (Class 3, no benefit / hypoglycemia risk); a target of 140–180 mg/dL remains reasonable.",
+          "Deploy mobile stroke units where feasible to shorten time to thrombolysis (Class 1).",
+          "For minor stroke (NIHSS ≤5) or high-risk TIA of presumed atherosclerotic cause, start dual antiplatelet therapy (clopidogrel + aspirin) for 21 days then single antiplatelet (Class 2a).",
+          "First-ever pediatric recommendations: IV thrombolysis within 4.5 h for confirmed AIS ages 28 days–18 years (Class 2b) and thrombectomy for LVO (Class 2a for ≥6 years, Class 2b for younger)."
+        ],
+        "summary_ko": [
+          "4.5시간 이내 정맥 혈전용해는 tenecteplase 0.25 mg/kg(최대 25 mg) 단회 정맥 볼루스 또는 alteplase 0.9 mg/kg(최대 90 mg; 10% 볼루스 후 60분 주입) 중 하나로 시행 — 두 약제 모두 기능 예후 개선을 위해 Class 1이며, tenecteplase는 단회 볼루스의 간편성으로 선호.",
+          "자동 관류영상에서 구제 가능한 penumbra가 있으면 마지막 정상 확인 후 4.5–9시간, 또는 기상형 뇌졸중에서 수면 중간시점 후 9시간 이내에 정맥 혈전용해가 합리적(Class 2a); 혈전제거술이 불가능한 LVO 환자에서는 4.5–24시간에 고려 가능(Class 2b).",
+          "혈관내 혈전제거술은 선별된 전순환 LVO에서 24시간까지 Class 1(연령 <80, NIHSS ≥6, ASPECTS 3–5, 유의한 종괴효과 없음), 기저동맥 폐색에서도 24시간 이내 Class 1(NIHSS ≥10, PC-ASPECTS ≥6).",
+          "혈전용해 후 수축기혈압을 <140 mmHg로 적극적으로 낮추지 말 것(Class 3, 이득 없음), 혈전제거술 성공 후 72시간 이내에도 적극적 강하 금지(Class 3, 해로움).",
+          "IV 인슐린으로 80–130 mg/dL의 엄격한 혈당 목표를 두지 말 것(Class 3, 이득 없음/저혈당 위험); 140–180 mg/dL 목표는 여전히 합리적.",
+          "가능한 환경에서는 이동형 뇌졸중 유닛(mobile stroke unit)을 운영해 혈전용해까지의 시간을 단축(Class 1).",
+          "경증 뇌졸중(NIHSS ≤5) 또는 죽상경화 추정 고위험 TIA에서는 이중 항혈소판요법(clopidogrel + aspirin)을 21일간 시행 후 단일 항혈소판제로 전환(Class 2a).",
+          "최초의 소아 권고: 확진된 AIS 소아(28일–18세)에서 4.5시간 이내 정맥 혈전용해(Class 2b), LVO에서 혈전제거술(≥6세 Class 2a, 그 미만 Class 2b)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "혈전용해제 선택 (tenecteplase)",
+            "detail": "Previously alteplase was the primary/default thrombolytic and tenecteplase was only an alternative. Now tenecteplase 0.25 mg/kg (max 25 mg) as a single IV bolus and alteplase 0.9 mg/kg are BOTH Class 1 within 4.5 h to improve functional outcomes. Reason: multiple international trials showed tenecteplase noninferior (with potential advantages) to alteplase, and the single-bolus dosing avoids the 1-hour infusion and its dosing complexities.",
+            "detail_ko": "이전에는 alteplase가 1차/기본 혈전용해제였고 tenecteplase는 대안에 불과했다. 이제 tenecteplase 0.25 mg/kg(최대 25 mg) 단회 정맥 볼루스와 alteplase 0.9 mg/kg가 4.5시간 이내 기능 예후 개선을 위해 모두 Class 1이다. 이유: 여러 국제 임상시험에서 tenecteplase가 alteplase에 비열등(잠재적 이점 포함)함이 확인되었고, 단회 볼루스가 1시간 주입과 그에 따른 용량 계산 복잡성을 없애준다."
+          },
+          {
+            "topic": "혈전용해 시간창 연장 (9시간·기상형)",
+            "detail": "Previous guidance centered on a 4.5-h window. New: in patients with salvageable ischemic penumbra on automated perfusion imaging, IV thrombolysis is reasonable 4.5–9 h from last known well, or within 9 h of the midpoint of sleep for wake-up stroke (Class 2a, based on trials such as EXTEND). Additionally, IVT may be considered 4.5–24 h in selected LVO patients unable to undergo thrombectomy (Class 2b; HOPE, TRACE-III).",
+            "detail_ko": "이전에는 4.5시간 창이 표준이었다. 신규: 자동 관류영상에서 구제 가능한 penumbra가 있는 환자에서 마지막 정상 확인 후 4.5–9시간, 또는 기상형 뇌졸중에서 수면 중간시점 후 9시간 이내에 정맥 혈전용해가 합리적(Class 2a, EXTEND 등 근거). 추가로 혈전제거술이 불가능한 선별된 LVO 환자에서는 4.5–24시간에 고려 가능(Class 2b; HOPE, TRACE-III)."
+          },
+          {
+            "topic": "혈전제거술 시간창·적응증 확대 (24시간)",
+            "detail": "The 2018/2019 24-h EVT window rested largely on DAWN/DEFUSE-3 selection. New: EVT is Class 1 for selected anterior-circulation LVO presenting 6–24 h in patients age <80 with NIHSS ≥6 and ASPECTS 3–5 without significant mass effect, broadening eligibility to include some patients with larger established ischemia.",
+            "detail_ko": "2018/2019년의 24시간 EVT 창은 주로 DAWN/DEFUSE-3 선별에 근거했다. 신규: 6–24시간에 내원한 선별된 전순환 LVO 환자에서 연령 <80, NIHSS ≥6, ASPECTS 3–5, 유의한 종괴효과 없음 조건이면 EVT가 Class 1로, 이미 상당한 경색이 진행된 일부 환자까지 적응증이 확대되었다."
+          },
+          {
+            "topic": "대경색(large core) 혈전제거술",
+            "detail": "Large ischemic cores were previously an exclusion for EVT. New: thrombectomy is reasonable (Class 2a) for patients age <80 with ASPECTS 0–2 within 6 h with careful selection, reflecting recent large-core trials showing benefit despite extensive early infarct.",
+            "detail_ko": "대경색은 이전에 EVT 제외 기준이었다. 신규: 연령 <80, ASPECTS 0–2인 환자에서 6시간 이내 신중한 선별 하에 혈전제거술이 합리적(Class 2a)으로, 광범위 조기 경색에도 이득을 보인 최근 대경색 임상시험을 반영한다."
+          },
+          {
+            "topic": "기저동맥 폐색 혈전제거술",
+            "detail": "Previously there was no clear recommendation for basilar/posterior-circulation thrombectomy. New: EVT is Class 1 for basilar artery occlusion within 24 h in patients with baseline mRS 0–1, NIHSS ≥10, and PC-ASPECTS ≥6, based on the ATTENTION and BAOCHE trials.",
+            "detail_ko": "이전에는 기저동맥/후순환 혈전제거술에 대한 명확한 권고가 없었다. 신규: 기저동맥 폐색에서 기저 mRS 0–1, NIHSS ≥10, PC-ASPECTS ≥6인 환자에게 24시간 이내 EVT가 Class 1로, ATTENTION 및 BAOCHE 임상시험에 근거한다."
+          },
+          {
+            "topic": "중·원위 혈관 폐색 신중 권고",
+            "detail": "New, more cautious guidance for medium and distal vessel occlusions: thrombectomy is not broadly endorsed because robust randomized evidence is lacking, distinguishing these from proximal LVO indications.",
+            "detail_ko": "중간·원위 혈관 폐색에 대해서는 더 신중한 신규 권고: 견고한 무작위 근거가 부족하므로 혈전제거술을 폭넓게 권장하지 않으며, 근위부 LVO 적응증과 구분한다."
+          },
+          {
+            "topic": "혈전용해 후 혈압 관리",
+            "detail": "New Class 3 (No Benefit): intensive systolic BP lowering to <140 mmHg after IV thrombolysis does NOT improve functional outcomes versus a <180 mmHg target and is not recommended. Pre-treatment target remains <185/110 mmHg.",
+            "detail_ko": "신규 Class 3(이득 없음): 정맥 혈전용해 후 수축기혈압을 <140 mmHg로 적극적으로 낮추는 것은 <180 mmHg 목표 대비 기능 예후를 개선하지 못하므로 권장하지 않는다. 치료 전 목표는 여전히 <185/110 mmHg."
+          },
+          {
+            "topic": "혈전제거술 후 혈압 관리",
+            "detail": "New Class 3 (Harm): after successful recanalization, intensive systolic BP reduction to <140 mmHg during the first 72 h is harmful and not recommended, based on ENCHANTED2/MT and OPTIMAL-BP.",
+            "detail_ko": "신규 Class 3(해로움): 재관류 성공 후 첫 72시간 동안 수축기혈압을 <140 mmHg로 적극적으로 낮추는 것은 해로우며 권장하지 않는다(ENCHANTED2/MT, OPTIMAL-BP 근거)."
+          },
+          {
+            "topic": "고혈당 관리 (혈당 목표)",
+            "detail": "New Class 3 (No Benefit): IV insulin targeting tight glucose 80–130 mg/dL does not improve 3-month outcomes and increases hypoglycemia risk (SHINE trial); a target range of 140–180 mg/dL remains reasonable. This moves away from aggressive glucose control.",
+            "detail_ko": "신규 Class 3(이득 없음): IV 인슐린으로 80–130 mg/dL의 엄격한 혈당을 목표하는 것은 3개월 예후를 개선하지 못하고 저혈당 위험을 높인다(SHINE 임상시험); 140–180 mg/dL 목표는 여전히 합리적이다. 적극적 혈당 강하에서 벗어난 변화다."
+          },
+          {
+            "topic": "이동형 뇌졸중 유닛 (Mobile Stroke Unit)",
+            "detail": "New Class 1 recommendation to use mobile stroke units where feasible to reduce prehospital delays and time to thrombolysis, based on the B_PROUD and BEST-MSU trials.",
+            "detail_ko": "신규 Class 1 권고: 가능한 환경에서 병원 전 지연과 혈전용해까지의 시간을 줄이기 위해 이동형 뇌졸중 유닛을 운영한다(B_PROUD, BEST-MSU 근거)."
+          },
+          {
+            "topic": "소아 뇌졸중 (최초 권고)",
+            "detail": "First-ever pediatric AIS recommendations. IV thrombolysis (alteplase) may be considered within 4.5 h for confirmed AIS with disabling deficits, ages 28 days–18 years (Class 2b; safety supported by TIPS). EVT for LVO is Class 2a for ages ≥6 years (6–24 h) and Class 2b for ages 28 days–6 years (within 24 h).",
+            "detail_ko": "최초의 소아 AIS 권고. 확진되고 장애를 유발하는 결손이 있는 28일–18세 소아에서 4.5시간 이내 정맥 혈전용해(alteplase) 고려 가능(Class 2b; TIPS로 안전성 근거). LVO 혈전제거술은 ≥6세에서 6–24시간 Class 2a, 28일–6세에서 24시간 이내 Class 2b."
+          },
+          {
+            "topic": "경증뇌졸중·고위험 TIA 이중 항혈소판요법",
+            "detail": "Class 2a: for minor stroke (NIHSS ≤5) or high-risk TIA of presumed atherosclerotic origin, start clopidogrel plus aspirin for 21 days followed by single antiplatelet therapy to reduce recurrent stroke.",
+            "detail_ko": "Class 2a: 죽상경화 추정 원인의 경증 뇌졸중(NIHSS ≤5) 또는 고위험 TIA에서 clopidogrel과 aspirin을 21일간 병용 후 단일 항혈소판제로 전환하여 재발 뇌졸중을 감소시킨다."
+          },
+          {
+            "topic": "혈전용해 금기 접근 완화 및 검사 지연 금지",
+            "detail": "The approach to thrombolysis contraindications was modified/liberalized. New Class 1 emphasis: vascular imaging in suspected LVO should not be delayed to obtain serum creatinine, and baseline ECG/troponin should not delay initiation of IVT or EVT — prioritizing speed to reperfusion.",
+            "detail_ko": "혈전용해 금기에 대한 접근이 수정·완화되었다. 신규 Class 1 강조: 의심되는 LVO에서 혈관영상을 혈청 크레아티닌 확인을 위해 지연시키지 말고, 기저 ECG/troponin이 정맥 혈전용해나 혈전제거술 개시를 지연시키지 않도록 한다 — 재관류까지의 속도를 우선한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, EM/CCM clinicians can now default to tenecteplase 0.25 mg/kg as a single IV bolus within 4.5 h — eliminating the alteplase infusion and simplifying door-to-needle workflow — and should use perfusion imaging to extend thrombolysis to 9 h and thrombectomy (including basilar and large-core cases) to 24 h in selected patients. Critically, stop titrating blood pressure below 140 mmHg systolic after thrombolysis or thrombectomy and abandon tight glucose control (80–130 mg/dL), instead accepting a 140–180 mg/dL glucose range and a <180/105 post-lysis BP ceiling, since intensive control adds harm or no benefit. Do not delay CTA/reperfusion waiting on creatinine, ECG, or troponin, and start 21-day clopidogrel-plus-aspirin DAPT for minor stroke/high-risk TIA. Pediatric AIS now has explicit thrombolysis and thrombectomy pathways to follow rather than extrapolation.",
+        "practiceImpact_ko": "현장에서 응급·중환자 의료진은 이제 4.5시간 이내 tenecteplase 0.25 mg/kg 단회 정맥 볼루스를 기본으로 삼아 alteplase 주입을 없애고 door-to-needle 흐름을 단순화할 수 있으며, 관류영상을 활용해 선별 환자에서 혈전용해를 9시간까지, 혈전제거술(기저동맥·대경색 포함)을 24시간까지 확대해야 한다. 특히 혈전용해나 혈전제거술 후 수축기혈압을 140 mmHg 미만으로 적정하지 말고 엄격한 혈당 조절(80–130 mg/dL)을 중단하여, 대신 혈당 140–180 mg/dL와 용해 후 <180/105 mmHg 상한을 수용한다 — 적극적 조절은 해가 되거나 이득이 없기 때문이다. 크레아티닌·ECG·troponin을 기다리느라 CTA/재관류를 지연시키지 말고, 경증 뇌졸중/고위험 TIA에는 21일 clopidogrel+aspirin DAPT를 시작한다. 소아 AIS도 이제 추정에 의존하지 않고 따를 수 있는 명시적 혈전용해·혈전제거술 경로가 마련되었다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41582814",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41582814/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1161/STR.0000000000000513",
+            "url": "https://doi.org/10.1161/STR.0000000000000513"
+          },
+          {
+            "label": "웹 — AHA/ASA Stroke journal — 2026 AIS Guideline (STR.0000000000000513)",
+            "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000513"
+          },
+          {
+            "label": "웹 — Professional Heart Daily — Top Things to Know (2026 AIS Guideline)",
+            "url": "https://professional.heart.org/en/science-news/2026-guideline-for-the-early-management-of-patients-with-acute-ischemic-stroke/top-things-to-know"
+          },
+          {
+            "label": "웹 — emDocs — 2026 Guideline Update: Early Management of Acute Ischemic Stroke",
+            "url": "https://www.emdocs.net/2026-guideline-update-early-management-of-acute-ischemic-stroke/"
+          },
+          {
+            "label": "웹 — UIC Drug Information Group — Major Pharmacotherapy Updates from the 2026 AHA/ASA Stroke Guidelines",
+            "url": "https://dig.pharmacy.uic.edu/faqs/2026-2/april-2026-faqs/update-what-are-major-pharmacotherapy-updates-from-the-2026-aha-asa-stroke-guidelines/"
+          },
+          {
+            "label": "웹 — TCTMD — AHA/ASA Release New Comprehensive Acute Ischemic Stroke Guideline",
+            "url": "https://www.tctmd.com/news/ahaasa-release-new-comprehensive-acute-ischemic-stroke-guideline"
+          },
+          {
+            "label": "웹 — PubMed — 2026 AIS Guideline (PMID 41582814)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41582814/"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-18"
     }
   ],
   "rejected": [
@@ -47853,11 +48559,14 @@
       "title": "[Best practice deployment of lead emergency physicians in Germany - A Delphi study: A structured consensus process among EMS medical directors].",
       "pubDate": "2026 Aug",
       "journal": "Zeitschrift fur Evidenz, Fortbildung und Qualitat im Gesundheitswesen",
-      "publicationTypes": [],
+      "publicationTypes": [
+        "English Abstract",
+        "Journal Article"
+      ],
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-16T21:50:26.991Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -47865,7 +48574,36 @@
         "consensus-process-study"
       ],
       "region": "eu",
-      "by": "nationality"
+      "by": "nationality",
+      "abstract": "INTRODUCTION: Complex emergency operations in prehospital care, such as mass casualty incidents (MCI), place special demands on the deployment of the Leading Emergency Physician (LNA). Uniform national standards for LNA appointment are currently lacking. This study aimed to develop a consensus-based best practice model and to highlight the relevance of the new curriculum of the German Medical Association (BÄK) for LNA qualification.\nMETHODS: In two Delphi rounds, 20 theses were evaluated to determine consensus (K = agreement), neutrality (0 = abstention), or dissent (D = disagreement). The topics included professional qualification as well as structural, material, and organizational resources. Participants were N = 56 medical directors of emergency medical services (ÄLRD) attending the BV-ÄLRD annual meeting in 2024.\nRESULTS: Broad consensus was reached that LNA should hold a specialist qualification (K = 96%) and complete specific continuing education (K = 96%). Regular activity as an emergency physician (K = 93%) and participation in exercises (K = 93%) were considered essential. Structural requirements such as fixed duty rosters (K = 89%) and defined alerting criteria (K = 96%) achieved high levels of agreement. Standard leadership tools (K = 96%) and personal protective equipment (K = 100%) were also rated as essential. An advisory function outside MCI scenarios was a controversial debate topic (K = 44%, 0 = 22%, D = 34%).\nDISCUSSION: The results provide consensus-based recommendations for a quality-assured LNA appointment with standardized qualification and organizational structures. Standardized measures improve service readiness and quality of LNA deployment and emphasize the importance of a national curriculum and structural requirements.",
+      "meshTerms": [
+        "Germany",
+        "Humans",
+        "Delphi Technique",
+        "Curriculum",
+        "Emergency Medical Services",
+        "Physician Executives",
+        "Education, Medical, Continuing",
+        "Leadership",
+        "Mass Casualty Incidents",
+        "Benchmarking"
+      ],
+      "keywords": [
+        "Best practice method",
+        "Best-Practice-Methode",
+        "Großschadensfälle",
+        "LNA deployment",
+        "LNA-Gestellung",
+        "Leading Emergency Physician",
+        "Leitender Notarzt",
+        "Major incidents",
+        "Mass casualty incident",
+        "Massenanfall von Verletzen",
+        "Medical operations",
+        "Medizinische Einsatzlagen"
+      ],
+      "doi": "10.1016/j.zefq.2026.04.003",
+      "pmcid": ""
     },
     {
       "id": "pmid:42087034",
@@ -51715,7 +52453,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:39:22.746Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -52108,7 +52846,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:40:05.138Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -52734,7 +53472,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:41:03.449Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -52769,7 +53507,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:41:03.449Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -52799,7 +53537,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:41:03.449Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -52829,7 +53567,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:41:03.449Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -52865,7 +53603,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:41:03.449Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -52895,7 +53633,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-17T04:41:03.449Z",
+      "discoveredAt": "2026-08-17T21:56:29.516Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -52963,9 +53701,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260817_064334:guideline:2026-08-17",
-    "outcome": "observe-only",
-    "publishedId": null,
+    "runId": "trend_review_20260818_065009:guideline:2026-08-18",
+    "outcome": "published",
+    "publishedId": "pmid:41582814",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -52990,22 +53728,131 @@
             "error": null
           }
         ],
-        "mergedTotal": 8,
+        "mergedTotal": 147,
         "overlapCount": 2,
         "ptOnlyCount": 0,
         "expandedOnlyCount": 6,
-        "oldestFetchedDate": "2026 Aug",
-        "newestFetchedDate": "2026 Aug",
+        "oldestFetchedDate": "2026",
+        "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/18",
-          "maxDate": "2026/08/17"
+          "minDate": "2026/07/19",
+          "maxDate": "2026/08/18"
         },
-        "retmax": 40,
+        "retmax": 60,
+        "topics": [
+          {
+            "id": "pubmed-topic:cardiac_resus",
+            "label": "심혈관·소생",
+            "succeeded": true,
+            "totalFound": 58,
+            "idsFetched": 58,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:sepsis_shock",
+            "label": "패혈증·쇼크·혈역학",
+            "succeeded": true,
+            "totalFound": 4,
+            "idsFetched": 4,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:resp_airway",
+            "label": "호흡·기도·기계환기",
+            "succeeded": true,
+            "totalFound": 13,
+            "idsFetched": 13,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:infection",
+            "label": "감염 (비패혈증 국소)",
+            "succeeded": true,
+            "totalFound": 12,
+            "idsFetched": 12,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:neuro",
+            "label": "신경 응급",
+            "succeeded": true,
+            "totalFound": 28,
+            "idsFetched": 28,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:endo_metabolic",
+            "label": "응급 내분비·대사",
+            "succeeded": true,
+            "totalFound": 2,
+            "idsFetched": 2,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:vascular_gi_other",
+            "label": "혈관·소화기·기타 응급",
+            "succeeded": true,
+            "totalFound": 10,
+            "idsFetched": 10,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:trauma_hemorrhage",
+            "label": "외상·출혈",
+            "succeeded": true,
+            "totalFound": 6,
+            "idsFetched": 6,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:critical_care_practice",
+            "label": "중환자 진료 실무",
+            "succeeded": true,
+            "totalFound": 4,
+            "idsFetched": 4,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:toxicology_environmental",
+            "label": "중독·환경 응급",
+            "succeeded": true,
+            "totalFound": 5,
+            "idsFetched": 5,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "id": "pubmed-topic:procedure_dx",
+            "label": "응급 술기·진단",
+            "succeeded": true,
+            "totalFound": 3,
+            "idsFetched": 3,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "topicOnlyCount": 139,
         "ptPmids": [
           "42522393",
           "42087034"
         ],
-        "supersetCheckable": true
+        "supersetCheckable": true,
+        "enrichment": {
+          "attempted": true,
+          "requested": 147,
+          "enriched": 147,
+          "withAbstract": 111,
+          "error": null
+        }
       },
       "orgSources": [
         {
@@ -53055,20 +53902,24 @@
         }
       ],
       "collectionError": null,
+      "fit": {
+        "skipped": "nothing-unscored",
+        "scored": 0
+      },
       "decisions": {
-        "queued": 1,
-        "needsReview": 5,
-        "rejected": 2,
-        "superseded": 0
+        "queued": 231,
+        "needsReview": 440,
+        "rejected": 120,
+        "superseded": 1
       },
       "publish": {
-        "attempted": false,
-        "candidateId": null,
-        "analyzed": false,
-        "stateContainsPublishedId": false
+        "attempted": true,
+        "candidateId": "pmid:41582814",
+        "analyzed": true,
+        "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-17T05:03:04.471Z",
+  "updatedAt": "2026-08-17T21:59:16.298Z",
   "configVersion": "guideline-v2"
 }
