@@ -60,7 +60,10 @@ test('ensure: 푸터 앞 주입 + 멱등 교체(중복 없음)', () => {
   assert.ok(once.indexOf('ARCHIVE_STATUS') < once.indexOf('class="ft"'), '푸터 앞에 위치');
   // 다시 적용해도 블록은 하나만(교체) — 데이터 갱신 시나리오
   const twice = ensureArchiveStatus(once, sampleArchive());
-  assert.equal((twice.match(/<!-- ARCHIVE_STATUS v1 -->/g) || []).length, 1);
+  // ★ 버전을 리터럴로 박지 않는다 — 블록 내용을 고쳐 버전을 올릴 때마다 이 검사가 깨진다.
+  //   여기서 볼 것은 "중복 없이 교체되나" 이지 버전 문자열이 아니다.
+  const marker = new RegExp(`<!-- ARCHIVE_STATUS ${ARCHIVE_STATUS_VERSION} -->`, 'g');
+  assert.equal((twice.match(marker) || []).length, 1);
 });
 
 test('ensure: 앵커·기존 블록 없으면 원본 유지(소프트)', () => {
