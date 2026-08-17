@@ -55,6 +55,10 @@ jobs:
         run: |
           DRY=""
           if [ "$IN_DRY" = "true" ]; then DRY="--dry-run"; fi
+          # ★ 아래 커밋 단계를 `!inputs.dry_run` 으로 막으면 안 된다 — API 디스패치는
+          #   문자열 "false" 를 보내고 GHA 에서 그것은 truthy 라 `!` 가 거짓이 된다.
+          #   즉 **진짜 실행인데 커밋이 조용히 건너뛰어진다.** 셸 판정값 하나만 쓴다.
+          if [ "$IN_DRY" = "true" ]; then echo "dry=true" >> "$GITHUB_OUTPUT"; else echo "dry=false" >> "$GITHUB_OUTPUT"; fi
           set +e
           node scripts/guideline-fit.mjs --limit "$IN_LIMIT" $DRY | tee fit.log
           echo "code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
@@ -69,7 +73,7 @@ jobs:
       # ★ 큐만 고치면 화면은 그대로다 — 예고는 발행 시점에 그려진다.
       #   큐제어·백필과 같은 렌더 경로를 태운다(LLM 토큰 0).
       - name: 예고 리스트 다시 그리기 · 커밋
-        if: ${{ always() && !inputs.dry_run }}
+        if: ${{ always() && steps.fit.outputs.dry == 'false' }}
         env:
           GITHUB_OWNER: ${{ github.repository_owner }}
           GITHUB_REPO:  ${{ github.event.repository.name }}
