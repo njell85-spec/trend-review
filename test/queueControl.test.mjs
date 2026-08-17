@@ -156,3 +156,38 @@ test('★ 큐 제어 워크플로가 페이지를 다시 그리고 함께 커밋
   assert.match(wf, /GITHUB_OWNER:/, '렌더에 owner 를 안 넘긴다');
   assert.match(wf, /GITHUB_REPO:/, '렌더에 repo 를 안 넘긴다');
 });
+
+// ── F4 회귀: ▶ 는 자기 설명대로 "다음 실행에서 이것이 나가게" 해야 한다 ──────────
+//
+// 2026-08-17 실물: 가이드라인 큐 5건이 전부 `needsReview` 였다. 발행 픽은
+// `status === 'queued'` 만 보고, 예고 리스트도 `queued` 만 그린다. 그래서 ▶ 로
+// 머리에 올려 봐야 **게이트가 쳐다보지도 않는 자리로 올릴 뿐**이었다 —
+// 수집 창(30일) 밖으로 나간 항목은 재판정도 못 받아 영구 적체된다.
+test('F4: promote 는 needsReview 를 queued 로 승격한다', () => {
+  const state = { queue: [
+    { pmid: '1', status: 'queued', title: 'A' },
+    { pmid: '2', status: 'needsReview', title: 'B' },
+  ] };
+  const { next, changed } = promoteInQueue(state, '2', '2026-08-17');
+  assert.equal(changed, true);
+  assert.equal(next.queue[0].pmid, '2');
+  assert.equal(next.queue[0].status, 'queued', '머리로만 옮기면 게이트가 여전히 안 본다');
+  assert.equal(next.queue[0].promotedFrom, 'needsReview');
+  assert.equal(next.queue[1].status, 'queued', '나머지는 그대로');
+});
+
+test('F4: 이미 머리에 있어도 needsReview 면 승격한다', () => {
+  const state = { queue: [{ pmid: '1', status: 'needsReview', title: 'A' }] };
+  const { next, changed } = promoteInQueue(state, '1', '2026-08-17');
+  assert.equal(changed, true, '머리라는 이유로 건너뛰면 유일한 승격 통로가 막힌다');
+  assert.equal(next.queue[0].status, 'queued');
+});
+
+test('F4: status 없는 큐(papers·reviews)는 순서만 바뀐다 — 종전 동작 보존', () => {
+  const state = { queue: [{ pmid: '1', title: 'A' }, { pmid: '2', title: 'B' }] };
+  const { next, changed } = promoteInQueue(state, '2', '2026-08-17');
+  assert.equal(changed, true);
+  assert.equal(next.queue[0].pmid, '2');
+  assert.ok(!('status' in next.queue[0]), '없던 status 를 만들어 내면 안 된다');
+  assert.equal(promoteInQueue(state, '1', '2026-08-17').changed, false, '이미 머리면 할 일 없음');
+});

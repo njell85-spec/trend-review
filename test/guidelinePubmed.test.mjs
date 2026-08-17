@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { collectGuidelineCandidates, assertSupersetOfPtPath } from '../src/utils/guidelinePubmed.js';
+import { collectGuidelineCandidates, assertSupersetOfPtPath, pubTypesOf, enrichCandidates, mergeArticleDetail } from '../src/utils/guidelinePubmed.js';
 
 function stub({ pt = ['1', '2'], expanded = ['2', '3'], fail = '' } = {}) {
   return async (url) => {
@@ -11,7 +11,7 @@ function stub({ pt = ['1', '2'], expanded = ['2', '3'], fail = '' } = {}) {
       return { esearchresult: { count: String(ids.length + 2), idlist: ids } };
     }
     const ids = new URL(url).searchParams.get('id').split(',');
-    return { result: Object.fromEntries(ids.map((id) => [id, { uid: id, title: id === '3' ? 'Scientific statement and focused update' : `Guideline ${id}`, pubdate: `202${id}-01-01`, pubtypelist: id === '3' ? ['Journal Article'] : ['Guideline'] }])) };
+    return { result: Object.fromEntries(ids.map((id) => [id, { uid: id, title: id === '3' ? 'Scientific statement and focused update' : `Guideline ${id}`, pubdate: `202${id}-01-01`, pubtype: id === '3' ? ['Journal Article'] : ['Guideline'] }])) };
   };
 }
 
@@ -94,4 +94,71 @@ test('★ PT 쿼리가 죽은 날은 초집합을 "통과" 로 위장하지 않�
 test('★ PT 쿼리가 성공한 날은 초집합 판정이 가능하다고 표시된다', async () => {
   const out = await collectGuidelineCandidates({ fetchJson: stub(), minDate: 'a', maxDate: 'b', retmax: 10 });
   assert.equal(out.manifest.supersetCheckable, true);
+});
+
+// ── F1 회귀: esummary 의 실제 필드명은 `pubtype` 이다 ──────────────────────────
+// 종전 구현은 `pubtypelist` 를 읽었고 **픽스처도 같은 오타를 쓰고 있었다.** 그래서
+// 프로덕션에서 `publicationTypes` 가 전건 빈 배열이었는데도 테스트는 초록이었다
+// (2026-08-17 실측: 상태 파일의 PubMed 수집분 8건 전부 `[]`).
+// 이 테스트는 **NCBI 응답 모양 그 자체**를 계약으로 못 박는다 — 여기가 흔들리면
+// 분류기의 format·official 두 축이 조용히 죽는다.
+test('F1: esummary 의 pubtype 을 읽는다 (pubtypelist 아님)', () => {
+  assert.deepEqual(pubTypesOf({ pubtype: ['Practice Guideline', 'Journal Article'] }),
+    ['Practice Guideline', 'Journal Article']);
+  // 옛 이름들은 폴백으로만 산다
+  assert.deepEqual(pubTypesOf({ pubtypelist: ['Guideline'] }), ['Guideline']);
+  assert.deepEqual(pubTypesOf({ publicationTypes: ['Guideline'] }), ['Guideline']);
+  // ★ 빈 배열이 먼저 오면 `??` 로는 폴백이 안 돈다 — 비어 있지 않은 첫 배열을 골라야 한다
+  assert.deepEqual(pubTypesOf({ pubtype: [], pubtypelist: ['Guideline'] }), ['Guideline']);
+  assert.deepEqual(pubTypesOf({}), []);
+});
+
+test('F1: 수집 결과의 publicationTypes 가 채워진다', async () => {
+  const out = await collectGuidelineCandidates({ fetchJson: stub(), minDate: 'a', maxDate: 'b', retmax: 10 });
+  const one = out.candidates.find((x) => x.pmid === '1');
+  assert.deepEqual(one.publicationTypes, ['Guideline'],
+    'esummary 가 pubtype 을 줬는데 후보가 비어 있다면 필드명이 또 어긋난 것이다');
+  assert.ok(out.candidates.every((x) => Array.isArray(x.publicationTypes)));
+});
+
+// ── F2 회귀: 초록 보강 ────────────────────────────────────────────────────────
+test('F2: efetch 보강이 초록·PT·MeSH 를 채운다', async () => {
+  const candidates = [
+    { id: 'pmid:1', pmid: '1', title: 'A', publicationTypes: [], discoveredBy: ['pubmed-title'] },
+    { id: 'pmid:2', pmid: '2', title: 'B', publicationTypes: [], discoveredBy: ['pubmed-title'] },
+  ];
+  const out = await enrichCandidates(candidates, {
+    fetchArticles: async (pmids) => {
+      assert.deepEqual(pmids, ['1', '2']);
+      return [{ pmid: '1', abstract: 'We recommend early antibiotics.', publicationTypes: ['Guideline'], meshTerms: ['Sepsis'], keywords: ['sepsis'], journal: 'J', doi: 'd', pmcid: '' }];
+    },
+  });
+  assert.equal(out.candidates[0].abstract, 'We recommend early antibiotics.');
+  assert.deepEqual(out.candidates[0].publicationTypes, ['Guideline']);
+  assert.deepEqual(out.candidates[0].meshTerms, ['Sepsis']);
+  assert.equal(out.candidates[1].abstract, undefined, '응답에 없는 PMID 는 손대지 않는다');
+  assert.deepEqual(out.evidence, { attempted: true, requested: 2, enriched: 1, withAbstract: 1, error: null });
+});
+
+test('F2: 보강 실패는 수집을 죽이지 않되 조용하지도 않다', async () => {
+  const candidates = [{ id: 'pmid:1', pmid: '1', title: 'A' }];
+  const out = await enrichCandidates(candidates, { fetchArticles: async () => { throw new Error('efetch 500'); } });
+  assert.equal(out.candidates.length, 1);
+  assert.match(out.evidence.error, /efetch 500/);
+  assert.equal(out.evidence.attempted, true);
+});
+
+test('F2: fetchArticles 가 없으면 그대로 통과한다', async () => {
+  const out = await enrichCandidates([{ pmid: '1' }], {});
+  assert.equal(out.evidence.attempted, false);
+  assert.equal(out.candidates.length, 1);
+});
+
+test('F2: 보강은 이미 있는 값을 덮어쓰지 않는다', () => {
+  const merged = mergeArticleDetail(
+    { pmid: '1', abstract: 'kept', publicationTypes: ['Guideline'], journal: 'kept-journal' },
+    { pmid: '1', abstract: 'new', publicationTypes: [], journal: 'new-journal' });
+  assert.equal(merged.abstract, 'kept');
+  assert.deepEqual(merged.publicationTypes, ['Guideline']);
+  assert.equal(merged.journal, 'kept-journal');
 });

@@ -17,6 +17,29 @@ function dateOf(record) {
   return record.pubdate ?? record.epubdate ?? record.sortpubdate ?? record.date ?? null;
 }
 
+// ★ NCBI esummary(pubmed) 의 publication type 필드 이름은 **`pubtype`** 이다.
+//   종전 구현은 `pubtypelist` 를 읽었고, 그런 필드는 응답에 없다 — 그래서
+//   **모든 후보의 `publicationTypes` 가 빈 배열**이었다(2026-08-17 실측: 상태 파일의
+//   PubMed 수집분 8건 전부 `[]`). 결과는 조용한 전멸이다:
+//     · 분류기의 `format` 축(제목·PT 로 문서형식 추정)이 PT 쪽 근거를 못 받고
+//     · `official` 축(PubMed 공식 색인)은 `guidelineType` 에 걸려 있어 통째로 죽는다
+//   **PT 쿼리로 찾아온 문서조차 "PT 가 아님" 으로 판정됐다** — 42522393 이 manifest 의
+//   `ptPmids` 에 있으면서 상태에는 `documentType: null` 로 앉아 있다.
+//   같은 저장소의 논문 트랙(`DataCollectorAgent._parseArticles` 호출부)과 시장조사
+//   (`scripts/guideline-census.mjs`)는 처음부터 `pubtype` 을 쓴다 — 여기 한 곳만 틀렸다.
+//   테스트가 초록이던 이유는 픽스처가 **틀린 이름을 그대로 박아 놨기** 때문이다.
+//   옛 이름들도 폴백으로 남긴다(다른 호출자가 넘겨 주는 모양이 있다) — 다만
+//   **비어 있지 않은 첫 배열**을 고른다. `??` 로는 빈 배열이 먼저 걸려 폴백이 안 돈다.
+export function pubTypesOf(record = {}) {
+  for (const raw of [record.pubtype, record.pubtypelist, record.publicationTypes]) {
+    const list = (Array.isArray(raw) ? raw : raw ? [raw] : [])
+      .map((x) => x?.value ?? x)
+      .filter((x) => String(x ?? '').trim());
+    if (list.length) return list;
+  }
+  return [];
+}
+
 function toCandidate(pmid, record, discoveredBy, now) {
   return {
     id: `pmid:${pmid}`,
@@ -24,7 +47,7 @@ function toCandidate(pmid, record, discoveredBy, now) {
     title: record.title ?? '',
     pubDate: dateOf(record),
     journal: record.fulljournalname ?? record.source ?? '',
-    publicationTypes: (record.pubtypelist ?? record.publicationTypes ?? []).map((x) => x?.value ?? x),
+    publicationTypes: pubTypesOf(record),
     discoveredBy: [discoveredBy],
     discoveredAt: now,
   };
@@ -130,4 +153,62 @@ export async function collectGuidelineCandidates({ fetchJson, minDate, maxDate, 
   manifest.supersetCheckable = ptOk;
   if (ptOk) assertSupersetOfPtPath(manifest, candidates);
   return { candidates, manifest };
+}
+
+// ★ esummary 는 **초록을 주지 않는다.** 그런데 분류기의 `normative` 축(권고 표현이
+//   본문에 있는가)은 초록·본문에서만 읽고, 스코어러의 주제 점수는 MeSH·키워드도 본다.
+//   즉 수집이 esummary 에서 끝나면 그 두 축이 **구조적으로 항상 비어 있다** —
+//   2026-08-17 실측에서 상태 파일 15건 전부 `abstract` 가 없었고, 그래서 큐 5건이
+//   모두 `insufficient-positive-evidence` 로 격리됐다.
+//
+//   efetch 로 한 번 더 받아 채운다. 파싱은 이미 논문 트랙이 검증된 구현을 갖고 있으므로
+//   (`DataCollectorAgent.fetchArticles`) 여기서 다시 쓰지 않고 **주입받는다** — 파서가
+//   둘로 갈리면 같은 PubMed 응답을 서로 다르게 읽는 날이 온다.
+//
+//   ★ 보강은 **소프트 실패**다. efetch 가 죽어도 수집 자체는 성사시킨다(esummary 만으로도
+//   후보 목록은 성립한다). 다만 조용히 넘어가지 않고 manifest 에 남긴다 — 보강이 죽은
+//   날은 판정이 옛 상태로 되돌아가므로, 그 사실이 보여야 한다.
+export function mergeArticleDetail(candidate, article) {
+  if (!article) return candidate;
+  const types = pubTypesOf({ pubtype: article.publicationTypes });
+  // ★ 규칙 하나로 통일한다: **빈 자리만 채운다. 있는 값은 안 덮는다.**
+  //   위쪽(수동 승인 URL·본문 수집)이 이미 채워 넣은 것을 efetch 가 덮으면
+  //   PeterJ 가 직접 넣은 근거가 조용히 바뀐다 — 확정 ⑤-A 가 막으려는 부류다.
+  return {
+    ...candidate,
+    abstract: candidate.abstract || article.abstract || '',
+    publicationTypes: (candidate.publicationTypes ?? []).length ? candidate.publicationTypes : types,
+    meshTerms: article.meshTerms?.length ? article.meshTerms : (candidate.meshTerms ?? []),
+    keywords: article.keywords?.length ? article.keywords : (candidate.keywords ?? []),
+    journal: candidate.journal || article.journal || '',
+    doi: candidate.doi || article.doi || '',
+    pmcid: candidate.pmcid || article.pmcid || '',
+  };
+}
+
+export async function enrichCandidates(candidates, { fetchArticles } = {}) {
+  const evidence = { attempted: false, requested: 0, enriched: 0, withAbstract: 0, error: null };
+  const pmids = (candidates ?? []).map((c) => String(c?.pmid ?? '')).filter(Boolean);
+  if (typeof fetchArticles !== 'function' || !pmids.length) {
+    return { candidates: candidates ?? [], evidence };
+  }
+  evidence.attempted = true;
+  evidence.requested = pmids.length;
+  let articles = [];
+  try {
+    articles = (await fetchArticles(pmids)) ?? [];
+  } catch (error) {
+    evidence.error = error?.message ?? String(error);
+    return { candidates, evidence };
+  }
+  const byPmid = new Map(articles.map((a) => [String(a?.pmid ?? ''), a]));
+  const out = candidates.map((candidate) => {
+    const article = byPmid.get(String(candidate?.pmid ?? ''));
+    if (!article) return candidate;
+    evidence.enriched += 1;
+    const merged = mergeArticleDetail(candidate, article);
+    if (String(merged.abstract ?? '').trim()) evidence.withAbstract += 1;
+    return merged;
+  });
+  return { candidates: out, evidence };
 }
