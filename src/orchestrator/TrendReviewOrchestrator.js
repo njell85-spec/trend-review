@@ -22,6 +22,9 @@ import { selectMonthlyPool } from '../utils/monthlyPool.js';
 import { loadGuidelineState, saveGuidelineState, mergeCandidates } from '../utils/guidelineState.js';
 import { collectGuidelineCandidates, enrichCandidates } from '../utils/guidelinePubmed.js';
 import { loadGuidelineTopics, topicQuerySpecs } from '../utils/guidelineTopics.js';
+import { GuidelineFitAgent } from '../agents/GuidelineFitAgent.js';
+import { unscoredItems } from '../utils/guidelineFit.js';
+import { sortByGuidelineRank } from '../utils/guidelineRank.js';
 import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
@@ -514,6 +517,35 @@ export class TrendReviewOrchestrator {
     return { candidates: enriched.candidates, manifest: pubmed.manifest };
   }
 
+  // ★ 하루에 판정하는 양을 막아 둔다. 2년 풀은 수백 건이라 한 번에 다 돌리면
+  //   데일리 한 판의 토큰이 통째로 여기 들어간다. 벌크는 `scripts/guideline-fit.mjs`
+  //   (전용 워크플로)가 맡고, 데일리는 그날 새로 들어온 것만 따라잡는다.
+  async _scoreGuidelineFit(state) {
+    const limit = Number(process.env.GUIDELINE_FIT_DAILY_LIMIT ?? 40);
+    if (String(process.env.ENABLE_GUIDELINE_LLM_FIT ?? 'true').toLowerCase() === 'false') {
+      return { skipped: 'disabled', scored: 0 };
+    }
+    const targets = unscoredItems(state.queue, { limit });
+    if (!targets.length) return { skipped: 'nothing-unscored', scored: 0 };
+    try {
+      const agent = this.guidelineFit ?? new GuidelineFitAgent();
+      let topicLabels = [];
+      try { topicLabels = Object.values((this.guidelineTopics ?? loadGuidelineTopics()).groups).map((g) => g.label); }
+      catch { /* 라벨은 프롬프트 보조일 뿐이다 — 없으면 일반 문구로 간다 */ }
+      const result = await agent.score(targets, { topicLabels });
+      // 판정 결과를 큐에 되꽂는다. id 로 맞춘다 — 인덱스로 맞추면 그 사이에 큐가
+      // 바뀐 날 엉뚱한 항목에 판정이 붙는다.
+      const byId = new Map(result.items.map((x) => [x.id, x]));
+      state.queue = state.queue.map((x) => byId.get(x.id) ?? x);
+      return { scored: result.scored, batches: result.batches, failed: result.failed, error: result.error };
+    } catch (error) {
+      // 여기까지 온 예외는 에이전트 생성 실패 부류다. 데일리를 죽이지 않는다.
+      const message = error?.message ?? String(error);
+      this.logger.warn('지침 LLM 셀렉을 건너뛴다 — 규칙 점수로 진행', { err: message });
+      return { skipped: 'agent-unavailable', scored: 0, error: message };
+    }
+  }
+
   // 매일 최대 한 편을 소진한다. 이 단계의 모든 실패는 논문 데일리에 non-fatal이다.
   async _stageGuideline(todayStr) {
     const entry = this._stageStart('GUIDELINE');
@@ -600,15 +632,24 @@ export class TrendReviewOrchestrator {
       // ★ on/off·격일·순차진행 (PeterJ 확정 2026-08-16 · 4-A).
       //   종전에는 `mode` 를 **아무도 안 봤다** — 화면에서 "가이드라인 · 꺼짐" 을 눌러도
       //   다음 데일리가 그대로 발행했다(코드리뷰 발견 B2).
+      // ★ LLM 셀렉 (PeterJ 지시 2026-08-17 — "셀렉은 LLM 통해서 나한테 맞는거 리스트를 정하고").
+      //   규칙 점수는 "권위 있는 최신 지침인가" 를 잰다. 2년치를 미리 풀링하면 그것만으로
+      //   못 가르는 것이 수백 건 섞인다 — 소아 전용인가, 한 나라 제도 얘기인가,
+      //   응급실에서 손에 잡히는 내용인가. 그 판단만 LLM 이 한다.
+      //   ★ 실패는 전부 소프트다. 판정이 없으면 항목은 그대로 남고 규칙 점수가 순서를
+      //     정한다 — 데일리 코어 무영향 불변식.
+      const fitEvidence = await this._scoreGuidelineFit(state);
+
       const control = await this._loadControl();
       const dueToday = trackRunsOn('guidelines', todayStr,
         { mode: control.tracks.guidelines.mode, sequential: control.sequential });
+      // 정렬은 `guidelineRank` 하나가 한다 — 예고 리스트가 읽는 것과 같은 함수다.
+      // 여기서 따로 정렬하면 화면이 "내일 이것이 나갑니다" 라고 해놓고 다른 게 나간다(결함 B2).
       const pick = (autoPublish && dueToday)
-        ? state.queue.filter((x) => x.status === 'queued')
-          .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0]
+        ? sortByGuidelineRank(state.queue.filter((x) => x.status === 'queued'))[0]
         : undefined;
       const manifest = {
-        pubmed: pubmedManifest, orgSources: orgHealth, collectionError,
+        pubmed: pubmedManifest, orgSources: orgHealth, collectionError, fit: fitEvidence,
         decisions: {
           queued: state.queue.filter((x) => x.status === 'queued').length,
           needsReview: state.queue.filter((x) => x.status === 'needsReview').length,

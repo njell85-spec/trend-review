@@ -61,6 +61,10 @@ async function dailyStage(queue = [], overrides = {}) {
   o.outputDir = dir;
   o.guidelineListPath = file;
   process.env.ENABLE_GUIDELINE_AUTOPUBLISH = overrides.autoPublish ?? 'true';
+  // ★ 이 파일은 게이트·상태 계약을 본다. LLM 셀렉은 자기 테스트가 따로 보므로
+  //   여기서는 끈다 — 안 그러면 테스트가 **실제 LLM 을 때리고**, 판정 결과에 따라
+  //   초록/적색이 갈리는 비결정 테스트가 된다.
+  process.env.ENABLE_GUIDELINE_LLM_FIT = 'false';
   o._guidelineInputs = overrides.inputs ?? (async () => ({ candidates: [], manifest: { ptPmids: [] } }));
   o.guideline = { analyze: overrides.analyze ?? (async (paper) => ({ paper, org: 'AHA' })) };
   o.fullText = { run: async (papers) => ({ papers }) };

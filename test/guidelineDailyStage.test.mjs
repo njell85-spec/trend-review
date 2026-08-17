@@ -17,6 +17,9 @@ async function setup(queue = []) {
   // 이 파일은 **자동 발행을 켠 상태**의 소진 계약을 본다.
   // 관찰 전용 기본값(게이트 OFF) 자체는 `guidelineContract.test.mjs` 가 본다.
   process.env.ENABLE_GUIDELINE_AUTOPUBLISH = 'true';
+  // LLM 셀렉은 자기 테스트(guidelineFit)가 본다. 여기서 켜면 이 파일이 **실제 LLM 을
+  // 때리고** 판정 결과에 따라 초록/적색이 갈리는 비결정 테스트가 된다.
+  process.env.ENABLE_GUIDELINE_LLM_FIT = 'false';
   o._guidelineInputs = async () => ({ candidates: [], manifest: { ptPmids: [] } });
   o.guideline = { analyze: async (paper) => ({ paper, org: 'AHA' }) };
   o.fullText = { run: async (papers) => ({ papers }) };
