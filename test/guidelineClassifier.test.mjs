@@ -81,6 +81,9 @@ const HARD_REJECT_CASES = [
   ['guideline-uptake-study', 'Third-generation cephalosporin use is frequently non-guideline-concordant in severe community-acquired pneumonia: Findings from a French critical care cohort.'],
   ['guideline-uptake-study', 'Real-world adoption of the 2023 European Society of Cardiology guidelines regarding antiplatelet strategies in acute coronary syndromes: Insights from the European READAPT-2 survey.'],
   ['guideline-uptake-study', 'Temporal changes in clinical practice and mortality in aneurysmal subarachnoid hemorrhage following the 2012 AHA/ASA guidelines: a retrospective cohort study using the MIMIC database.'],
+  // ★ 2년 apply 실물에서 새로 잡힌 것 — 기관명이 4단어라 사이 단어 허용치(3)를 넘어
+  //   빠져나갔고 priority 12 로 예고 최상위에 앉아 있었다.
+  ['guideline-uptake-study', 'Adherence to European Society of Cardiology guidelines at discharge after acute coronary syndrome: a nationwide registry analysis.'],
   ['llm-benchmark-study', 'ChatGPT response consistency to the 2025 ESC/EACTS guidelines for the management of valvular heart disease: A test-retest study.'],
   ['llm-benchmark-study', 'A comparative evaluation of large language models in aligning with European Respiratory Society (ERS) guidelines for high-flow nasal cannula in acute respiratory failure.'],
 ];
