@@ -21,6 +21,7 @@ import { kstDateStr, kstStamp, calendarDay } from '../utils/dates.js';
 import { selectMonthlyPool } from '../utils/monthlyPool.js';
 import { loadGuidelineState, saveGuidelineState, mergeCandidates } from '../utils/guidelineState.js';
 import { collectGuidelineCandidates, enrichCandidates } from '../utils/guidelinePubmed.js';
+import { loadGuidelineTopics, topicQuerySpecs } from '../utils/guidelineTopics.js';
 import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
@@ -467,7 +468,17 @@ export class TrendReviewOrchestrator {
     const end = new Date(`${todayStr}T00:00:00Z`);
     const start = new Date(end);
     start.setUTCDate(start.getUTCDate() - 30);
+    // ★ 관심주제 축 (PeterJ 지시 2026-08-17). 종전에는 EM/CCM MeSH 8개에만 묶여 있어
+    //   30일 창에서 8건이 나왔다 — 데일리가 먹는 양(월 30편)의 4분의 1이다.
+    //   같은 주제축으로 잰 시장 규모는 연 2,888편이었다. 설정이 죽어 있었을 뿐이다.
+    //   설정이 깨지면 **수집을 죽이지 않고 현행 두 축으로 계속 돈다** — 데일리 코어
+    //   무영향이 불변식이고, 주제축은 그 위에 얹는 확장이다.
+    let topicSpecs = [];
+    try { topicSpecs = topicQuerySpecs(this.guidelineTopics ?? loadGuidelineTopics()); }
+    catch (error) { this.logger.warn('지침 주제축 설정이 깨졌다 — 현행 두 축으로만 수집한다', { err: error.message }); }
+
     const pubmed = await collectGuidelineCandidates({
+      topicSpecs,
       // ★ 가이드라인 URL 은 guidelinePubmed 가 직접 만든다 — 수집기의 `_buildParams()` 를 안 타므로
         //   api_key 가 안 붙는다(무인증 3req/s). 여기서 얹어 준다.
         fetchJson: (url) => {
@@ -479,6 +490,9 @@ export class TrendReviewOrchestrator {
         },
       minDate: start.toISOString().slice(0, 10).replaceAll('-', '/'),
       maxDate: todayStr.replaceAll('-', '/'),
+      // 주제 그룹 하나가 30일에 40건을 넘길 일은 거의 없지만, 절단되면 그 주제가
+      // 조용히 잘린다. 여유를 두고 `truncated` 로 감시한다.
+      retmax: 60,
     });
 
     // ★ esummary 만으로는 **초록·MeSH·키워드가 없다.** 분류기의 `normative` 축과
