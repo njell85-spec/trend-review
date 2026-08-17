@@ -9,7 +9,15 @@
       "score": 8.9,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 급성기 기도관리, 기도 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42412218",
@@ -18,7 +26,15 @@
       "score": 9.3,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 체외폐지지 종설, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37921532",
@@ -27,7 +43,15 @@
       "score": 9.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ECPR 후 소생 후 관리, 소생·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42508832",
@@ -36,7 +60,15 @@
       "score": 9.1,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "AF 항응고 중 뇌졸중, 신경응급 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42329250",
@@ -45,7 +77,15 @@
       "score": 9,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS PEEP·폐포모집, 기계환기 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42390593",
@@ -54,7 +94,15 @@
       "score": 9,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "병원전 기도·환기 종설, 기도 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42474726",
@@ -63,7 +111,15 @@
       "score": 9,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 복와위, 호흡부전 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41319669",
@@ -72,7 +128,15 @@
       "score": 8.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "HFrEF 종설, 응급·중환자서 흔함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41765030",
@@ -81,7 +145,15 @@
       "score": 8.8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "패혈증 종설, 최핵심 복습주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41794418",
@@ -90,7 +162,15 @@
       "score": 8.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "심방세동 종설, 응급 부정맥",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42043915",
@@ -99,7 +179,15 @@
       "score": 8.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "CRT 기기치료, 외래 EP 성격 강함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41871593",
@@ -108,7 +196,15 @@
       "score": 8.8,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "원발성 경화성 담관염, 만성 간담도",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42419784",
@@ -117,7 +213,15 @@
       "score": 8.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "진행성 전립선암 약물, 무관 종양학",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "36640801",
@@ -126,7 +230,15 @@
       "score": 8.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 대동맥박리, 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40668153",
@@ -135,7 +247,15 @@
       "score": 8.6,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈성쇼크 조직관류압, 혈역학 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39680399",
@@ -144,7 +264,15 @@
       "score": 8.4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "심방세동 종설, 응급 부정맥",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39976933",
@@ -153,7 +281,15 @@
       "score": 8.4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "젊은 성인 OHCA, 소생 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40193249",
@@ -162,7 +298,15 @@
       "score": 8.4,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "황색포도상구균 균혈증, 중환자 감염",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40335091",
@@ -171,7 +315,15 @@
       "score": 8.4,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 허혈뇌졸중 치료, 신경응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40440268",
@@ -180,7 +332,15 @@
       "score": 8.4,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "혈소판 수혈 지침, 응급·중환자 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40522647",
@@ -189,7 +349,15 @@
       "score": 8.4,
       "topic": "endo_metabolic",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "부신부전·부신위기, 응급 내분비 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40720119",
@@ -198,7 +366,15 @@
       "score": 8.4,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "PFO와 뇌졸중, 신경 응급에 닿는 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40889511",
@@ -207,7 +383,15 @@
       "score": 8.4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "심부전 예방·건강 비전, 급성 진료와 거리",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40773213",
@@ -216,7 +400,15 @@
       "score": 8.4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "노화과학 번역리뷰, 기초·비임상 성격",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40889513",
@@ -225,7 +417,15 @@
       "score": 8.4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "심부전 1차 예방 정책, 급성 복습 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41038208",
@@ -234,7 +434,15 @@
       "score": 8.4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "성인 천식 생물학제제, 외래성이나 기도 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41110447",
@@ -243,7 +451,15 @@
       "score": 8.4,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "지역사회획득폐렴, 응급·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41193237",
@@ -252,7 +468,15 @@
       "score": 8.4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 비대상성 심부전 관리, 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42113209",
@@ -261,7 +485,15 @@
       "score": 8.3,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ECMO·AKI·CRRT 합의, 중환자 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36075255",
@@ -270,7 +502,15 @@
       "score": 8.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "COPD 근절 위원회 정책문서, 임상 복습 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41586889",
@@ -279,7 +519,15 @@
       "score": 8.1,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 수혈 결정, 중환자 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42043555",
@@ -288,7 +536,15 @@
       "score": 8.1,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "비침습 ICP 추정, 신경 중환자 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42126552",
@@ -297,7 +553,15 @@
       "score": 8.1,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "비만 중환자 기도관리, 응급·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38367642",
@@ -306,7 +570,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "HFpEF 임상 총정리, 응급실서 흔히 만남",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42455344",
@@ -315,7 +587,15 @@
       "score": 8.1,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICU 항경련제 용량·모니터링, 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34505911",
@@ -324,7 +604,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 ECPR, 소생 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38441582",
@@ -333,7 +621,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "TTR 심장 아밀로이드증, 심장 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38554727",
@@ -342,7 +638,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "판막질환 미래 전망, 다소 전향적",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38554728",
@@ -351,7 +655,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "판막질환 기전~관리 종설, 심혈관 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38648021",
@@ -360,7 +672,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "간질성 폐질환 종설, 호흡 급성악화 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38759664",
@@ -369,7 +689,15 @@
       "score": 8,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "뇌졸중 종설(Lancet)·응급신경 핵심 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38889923",
@@ -378,7 +706,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "패혈증 조기인지·초기관리 요약, 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39059997",
@@ -387,7 +723,15 @@
       "score": 8,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "고혈압 응급 평가·관리, 응급실 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39067905",
@@ -396,7 +740,15 @@
       "score": 8,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "감염성 심내막염(Lancet) 핵심 임상 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39216494",
@@ -405,7 +757,15 @@
       "score": 8,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "원발성 담즙성 담관염·만성 간질환 외래 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39244275",
@@ -414,7 +774,15 @@
       "score": 8,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "헌혈지표 정책 논평, 임상 복습가치 없음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39283629",
@@ -423,7 +791,15 @@
       "score": 8,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "지역사회획득폐렴(JAMA) 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39288952",
@@ -432,7 +808,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "고령 심방세동 관리, 응급·심장 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39341645",
@@ -441,7 +825,15 @@
       "score": 8,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성뇌졸중 혈관내치료, 응급신경 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39467606",
@@ -450,7 +842,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS(BMJ) 중환자 호흡 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39550175",
@@ -459,7 +859,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크(Lancet) 소생·혈역학 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39616000",
@@ -468,7 +876,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "운동선수 심정지·돌연사 종설, 소생 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41247499",
@@ -477,7 +893,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 흉부초음파, 순환·호흡부전 술기 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41359028",
@@ -486,7 +910,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈성 쇼크 표준진료, 중환자 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41428205",
@@ -495,7 +927,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 내과적 관리, 중환자 호흡 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41575283",
@@ -504,7 +944,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "패혈증 개념·정밀의학 종설, 복습 유익",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41524797",
@@ -513,7 +961,15 @@
       "score": 8,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중증 지역사회폐렴 논쟁, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41586891",
@@ -522,7 +978,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "ICU 데이터·의사결정 정보학, 임상성 약함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41686209",
@@ -531,7 +995,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "인공호흡 비동조 합의, 기계환기 실무 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41773929",
@@ -540,7 +1012,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ARDS 근이완제 SCCM 지침, 중환자 호흡 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41701325",
@@ -549,7 +1029,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "수술 중 혈압관리 종설, 혈역학 복습에 닿음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41860319",
@@ -558,7 +1046,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "저자원 패혈증 진료 개선, 시스템 위주라 복습가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41860328",
@@ -567,7 +1063,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "저자원 패혈증 Delphi 합의, 임상 종설 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41860329",
@@ -576,7 +1080,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "저자원 패혈증 시스템 프레임워크, 복습가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41874620",
@@ -585,7 +1097,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "불응성 패혈성 쇼크 정의 합의, ICU 임상에 유용",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41873857",
@@ -594,7 +1114,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "불응성 패혈성 쇼크 정의 합의(중복 저널판)",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41954744",
@@ -603,7 +1131,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "비만 ICU 기계환기 종설, 호흡 복습 적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42228011",
@@ -612,7 +1148,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ICU 영양지원 종설, 중환자 실무 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42257879",
@@ -621,7 +1165,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ARDS 예방 가능성 종설, 호흡 복습 적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37707378",
@@ -630,7 +1182,15 @@
       "score": 7.9,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 RSI 지침 요약, 기도 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42301312",
@@ -639,7 +1199,15 @@
       "score": 8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "패혈증 관련 뇌병증 종설, 중환자 복습 적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42315625",
@@ -648,7 +1216,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ECLS 중 뇌관류 최적화 종설, 소생 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42371000",
@@ -657,7 +1233,15 @@
       "score": 8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "비만 환자 ECMO 종설, 소생 복습에 닿음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37707379",
@@ -666,7 +1250,15 @@
       "score": 7.9,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 RSI 지침 본문, 기도 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42525086",
@@ -675,7 +1267,15 @@
       "score": 8,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICP 생리·감시·개별화 관리 종설, 신경 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42593538",
@@ -684,7 +1284,15 @@
       "score": 8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ARDS 스테로이드 종설, 호흡 핵심 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40163131",
@@ -693,7 +1301,15 @@
       "score": 7.9,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "VAP 재발 정의 Delphi, 정의성 합의라 좁음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40736325",
@@ -702,7 +1318,15 @@
       "score": 7.9,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "ECMO 약리 연구의제 포지션페이퍼, 복습가치 낮음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40768066",
@@ -711,7 +1335,15 @@
       "score": 7.9,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "성인 ARDS ECLS 종설, 소생·호흡 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41051555",
@@ -720,7 +1352,15 @@
       "score": 7.9,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ECMO 응급상황 관리 지침, 소생 실무 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34454688",
@@ -729,7 +1369,15 @@
       "score": 7.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "특수상황 CPR 종설 — 소생 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34751704",
@@ -738,7 +1386,15 @@
       "score": 7.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "AMI 후 심인성 쇼크 종설 — 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40960600",
@@ -747,7 +1403,15 @@
       "score": 7.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "심초음파 기반 AF 관리, ICM — 중환자실 적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37314271",
@@ -756,7 +1420,15 @@
       "score": 7.7,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈증 수액요법 종설 — 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39774207",
@@ -765,7 +1437,15 @@
       "score": 7.7,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중증환자 기관삽관 유도제 — 기도 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40163133",
@@ -774,7 +1454,15 @@
       "score": 7.7,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ESICM 수액량 지침 — 소생수액 실무 유용",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40522481",
@@ -783,7 +1471,15 @@
       "score": 7.7,
       "topic": "trauma",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 외상성뇌손상 관리 종설 — 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36682372",
@@ -792,7 +1488,15 @@
       "score": 7.6,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "천식 종설, Lancet — 호흡 응급 적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36917048",
@@ -801,7 +1505,15 @@
       "score": 7.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "HFpEF 종설 — 응급실서 흔히 만남",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37480934",
@@ -810,7 +1522,15 @@
       "score": 7.6,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "친환경 흡입기 접근성 정책론 — 복습용 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37647926",
@@ -819,7 +1539,15 @@
       "score": 7.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "돌연사 부담 감축 위원회 성명 — 정책문서",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37824153",
@@ -828,7 +1556,15 @@
       "score": 7.6,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "적혈구 수혈 지침 — 출혈·중환자 유용",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39714613",
@@ -837,7 +1573,15 @@
       "score": 7.6,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "자원제한 패혈증 델파이 — 각도 좁으나 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39847066",
@@ -846,7 +1590,15 @@
       "score": 7.6,
       "topic": "trauma",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "비침습 ICP 모니터 합의·알고리즘 — 신경중환자",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39982186",
@@ -855,7 +1607,15 @@
       "score": 7.6,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "열사병 SCCM 지침 — 환경응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40163135",
@@ -864,7 +1624,15 @@
       "score": 7.6,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "패혈증 아형·맞춤치료 종설 — 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40323451",
@@ -873,7 +1641,15 @@
       "score": 7.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중증질환 심방세동 state of art — 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40411623",
@@ -882,7 +1658,15 @@
       "score": 7.6,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "치료무반응 폐렴 접근 — 감염·중환자 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37909826",
@@ -891,7 +1675,15 @@
       "score": 7.5,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "VP-ECMO 역할 — 중환자 소생 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40668231",
@@ -900,7 +1692,15 @@
       "score": 7.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "심정지후 뇌손상 표현형 종설 — 소생·신경",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40728635",
@@ -909,7 +1709,15 @@
       "score": 7.6,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "노르에피네프린 용량표기·염제형 — 승압제 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40768067",
@@ -918,7 +1726,15 @@
       "score": 7.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크 진단·표현형·관리 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38059745",
@@ -927,7 +1743,15 @@
       "score": 7.5,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "VA-ECMO 산소화 생리·적정 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40982016",
@@ -936,7 +1760,15 @@
       "score": 7.6,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성 뇌손상 PEEP — 호흡·신경 중환자 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41123621",
@@ -945,7 +1777,15 @@
       "score": 7.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "소생 후 진료 지침, 소생 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41236566",
@@ -954,7 +1794,15 @@
       "score": 7.6,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "순환 쇼크·혈역학 모니터링 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39007570",
@@ -963,7 +1811,15 @@
       "score": 7.3,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 스트레스성 위장출혈 예방 요약",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38598123",
@@ -972,7 +1828,15 @@
       "score": 7.5,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ECMO 환자 침상 초음파 — 중환자 술기",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38771364",
@@ -981,7 +1845,15 @@
       "score": 7.3,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 수액 요법·소생액 선택 지침",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39007578",
@@ -990,7 +1862,15 @@
       "score": 7.3,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "스트레스성 위장출혈 예방 전문 지침",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35076659",
@@ -999,7 +1879,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "심방세동 선별 USPSTF, 예방·외래 성격",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35140114",
@@ -1008,7 +1896,15 @@
       "score": 7.2,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "PFO 심색전 뇌졸중 관리 — 신경 응급",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35166796",
@@ -1017,7 +1913,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 관상동맥증후군 진단·치료 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35258527",
@@ -1026,7 +1930,15 @@
       "score": 7.2,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "급성 담낭염 — 응급 감염·복부 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35367005",
@@ -1035,7 +1947,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 관상동맥증후군 Lancet 종설, 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35380580",
@@ -1044,7 +1964,15 @@
       "score": 7.2,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "성인 뇌전증 약물 — 신경 응급 인접 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35533707",
@@ -1053,7 +1981,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "COPD — 응급실 급성악화로 흔히 만남",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35536260",
@@ -1062,7 +1998,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "COPD 선별 USPSTF, 예방 성격 복습가치 낮음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35779549",
@@ -1071,7 +2015,15 @@
       "score": 7.2,
       "topic": "trauma",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "저소득국 외상체계·사망률 정책평가, 종설 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35780794",
@@ -1080,7 +2032,15 @@
       "score": 7.2,
       "topic": "trauma",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "복합 PTSD — 정신과 만성질환, 응급 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35964592",
@@ -1089,7 +2049,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "간질성폐질환 종설, 중환자실서 만남·복습가치 있음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36194215",
@@ -1098,7 +2066,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 폐색전증 JAMA 종설, 응급 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35985353",
@@ -1107,7 +2083,15 @@
       "score": 7.2,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "자발성 지주막하출혈 Lancet 종설, 신경응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36070787",
@@ -1116,7 +2100,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 기전·표현형 Lancet 종설, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36070788",
@@ -1125,7 +2117,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 진단·관리 Lancet 종설, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36472590",
@@ -1134,7 +2134,15 @@
       "score": 7.2,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "세균성 뇌수막염 JAMA 종설, 감염·신경응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36946547",
@@ -1143,7 +2151,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "특발성 폐섬유화 BMJ, 만성 외래쪽이나 인접 복습가치",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38112771",
@@ -1152,7 +2168,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 고·중위험 폐색전증, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38117319",
@@ -1161,7 +2185,15 @@
       "score": 7.2,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 간질지속증, 신경중환자 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38240498",
@@ -1170,7 +2202,15 @@
       "score": 7.2,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "노르에피네프린 표기 합의문, 실무 관련이나 종설 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38546855",
@@ -1179,7 +2219,15 @@
       "score": 7.2,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "중증 지역폐렴 지침 이행 논의, 정책성 글",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38598130",
@@ -1188,7 +2236,15 @@
       "score": 7.2,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "동맥류성 SAH 중환자 최신, 신경중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38801520",
@@ -1197,7 +2253,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "기계환기 중 횡격막 보호 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38899947",
@@ -1206,7 +2270,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "인공기도 의사소통 COS 델파이, 연구방법 합의문",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39133071",
@@ -1215,7 +2287,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "ARDS 머신러닝 검출 도구, 방법론 치우침",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39222142",
@@ -1224,7 +2304,15 @@
       "score": 7.2,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "패혈증 면역·내피·지혈장애 종설, 기전 다소 무거움",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39254735",
@@ -1233,7 +2321,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크 최신 종설, 소생·혈역학 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39297721",
@@ -1242,7 +2338,15 @@
       "score": 7.2,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "신경근질환 급성 호흡부전 위험분류·관리 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39432104",
@@ -1251,7 +2355,15 @@
       "score": 7.2,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "패혈증 인과추론 방법론 글, 복습용 부적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39453492",
@@ -1260,7 +2372,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "VA ECMO 심초음파 체크리스트, 술기 실무 유용",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39531053",
@@ -1269,7 +2389,15 @@
       "score": 7.2,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈증 핵심 종설, 응급·중환자 정중앙 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40154972",
@@ -1278,7 +2406,15 @@
       "score": 7.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "응급실 흉통 평가, EM 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39557688",
@@ -1287,7 +2423,15 @@
       "score": 7.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "VA ECMO 이중순환 생리·용어 정리, 중환자 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34499865",
@@ -1296,7 +2440,15 @@
       "score": 7.1,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "섬유화 ILD 병리 위주, 만성·비응급 인접분야",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37507572",
@@ -1305,7 +2457,15 @@
       "score": 7.1,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "심정지 후 뇌 산소화 목표, 소생 후 중환자 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37707377",
@@ -1314,7 +2474,15 @@
       "score": 7.1,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "수액 소생 혈역학, 응급·중환자 핵심 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38245889",
@@ -1323,7 +2491,15 @@
       "score": 7,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "소아 전용 패혈증 정의 기준, 성인 독자 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "34872910",
@@ -1332,7 +2508,15 @@
       "score": 6.9,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 폐렴 관리, ICU 감염 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34303412",
@@ -1341,7 +2525,15 @@
       "score": 6.8,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "세균성 뇌수막염, 신경 응급 감염 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34454687",
@@ -1350,7 +2542,15 @@
       "score": 6.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심정지 후 뇌손상, 소생 중환자 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34481570",
@@ -1359,7 +2559,15 @@
       "score": 6.8,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "지역사회 폐렴, 응급실 흔한 감염 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34607802",
@@ -1368,7 +2576,15 @@
       "score": 6.8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "난치 천식 치료, 외래 위주지만 응급실서 만남",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34499866",
@@ -1377,7 +2593,15 @@
       "score": 6.8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "섬유화 ILD 치료, 만성 폐질환·비응급",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "36592205",
@@ -1386,7 +2610,15 @@
       "score": 6.8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "감염·패혈증 바이오마커 침상 활용, 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37184336",
@@ -1395,7 +2627,15 @@
       "score": 6.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크 관리, 심혈관 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37607072",
@@ -1404,7 +2644,15 @@
       "score": 6.8,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "다중 신경모니터링 표준 합의, 신경중환자 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38865154",
@@ -1413,7 +2661,15 @@
       "score": 6.8,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중증 폐감염 저용량 스테로이드, ICU 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39137947",
@@ -1422,7 +2678,15 @@
       "score": 6.8,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ICU 장치 관련 합병증, 중환자 진료 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39653416",
@@ -1431,7 +2695,15 @@
       "score": 6.8,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICU 통증·진정 관리, 중환자 실무 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34910228",
@@ -1440,7 +2712,15 @@
       "score": 6.7,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈성 쇼크 소생, 응급·중환자 정중앙 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35943569",
@@ -1449,7 +2729,15 @@
       "score": 6.7,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ECCO2R 급성호흡부전 종설 — 호흡·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35997793",
@@ -1458,7 +2746,15 @@
       "score": 6.7,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ECMO·CRRT 항균제 용량 최적화 — ICM 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36094523",
@@ -1467,7 +2763,15 @@
       "score": 6.7,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "VV-ECMO 합병증 종설 — 중환자 소생 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35986748",
@@ -1476,7 +2780,15 @@
       "score": 6.5,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 기관삽관 개선·기구 업데이트 — 기도 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35595999",
@@ -1485,7 +2797,15 @@
       "score": 6.4,
       "topic": "trauma",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중등도~중증 TBI 집중치료 업데이트 — 외상·신경 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35607967",
@@ -1494,7 +2814,15 @@
       "score": 6.4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ARDS 전기임피던스단층촬영 — 호흡 모니터링 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35652920",
@@ -1503,7 +2831,15 @@
       "score": 6.4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "기계환기 복와위 종설 — 호흡 핵심 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35688993",
@@ -1512,7 +2848,15 @@
       "score": 6.4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "횡격막 보호 횡격신경 자극 — 환기 니치 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35802139",
@@ -1521,7 +2865,15 @@
       "score": 6.4,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "침습적 동맥압 모니터링 — 혈역학 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40396870",
@@ -1530,7 +2882,15 @@
       "score": 6.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 장관영양 근거 — ICU 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35816237",
@@ -1539,7 +2899,15 @@
       "score": 6.4,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "두개내압 생리·모니터링 — 신경 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35833958",
@@ -1548,7 +2916,15 @@
       "score": 6.4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ARDS 영상 종설 — 호흡 진단 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35945343",
@@ -1557,7 +2933,15 @@
       "score": 6.4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ECMO 호흡 적응증·COVID — 호흡·소생 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41489340",
@@ -1566,7 +2950,15 @@
       "score": 6.1,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "소아 전용 체외혈액정화 — 성인 독자 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35945344",
@@ -1575,7 +2967,15 @@
       "score": 6.4,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "혈역학으로 용적상태 평가 — 쇼크 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39961846",
@@ -1584,7 +2984,15 @@
       "score": 6.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "간질환 침습성 진균감염 ICU — 감염 니치 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40663138",
@@ -1593,7 +3001,15 @@
       "score": 6.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 급성신손상 예방 — ICU 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38944044",
@@ -1602,7 +3018,15 @@
       "score": 6,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "신생아 패혈증 — 성인 독자와 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40828463",
@@ -1611,7 +3035,15 @@
       "score": 6.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ESICM 수액 탈에스컬레이션 지침 — 수액 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41123622",
@@ -1620,7 +3052,15 @@
       "score": 6.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ICU 면역관련 이상반응 종설 — 중환자 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40658248",
@@ -1629,7 +3069,15 @@
       "score": 6.2,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "패혈증 혈류감염 소스컨트롤 스코핑 — 연구표준화 색채",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39774315",
@@ -1638,7 +3086,15 @@
       "score": 5.8,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "패혈증·패혈성쇼크 NEJM — 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34545440",
@@ -1647,7 +3103,15 @@
       "score": 6.1,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "암환자 중환자 소생 합의문 — 중환자 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34677620",
@@ -1656,7 +3120,15 @@
       "score": 6.1,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "출혈 중환자 수혈 전략 — 응급·중환자 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "34705079",
@@ -1665,7 +3137,15 @@
       "score": 6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심정지 후 뇌손상 — 소생 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36661450",
@@ -1674,7 +3154,15 @@
       "score": 5.6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "임상시험 사망률 지표 — 연구방법론",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38236292",
@@ -1683,7 +3171,15 @@
       "score": 6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "초고령 중환자 경과 — 중환자 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38483559",
@@ -1692,7 +3188,15 @@
       "score": 6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "수액반응성 연구 보고 표준화 합의 — 방법론 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38512399",
@@ -1701,7 +3205,15 @@
       "score": 6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "ICU 침습성 진균증 정의 합의 — 감염 관련이나 정의문",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "36794946",
@@ -1710,7 +3222,15 @@
       "score": 5.6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 신경모니터링 — 신경·중환자 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38748265",
@@ -1719,7 +3239,15 @@
       "score": 6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "혈액암 응급 항암 ICU 관리 — 다소 좁은 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38771368",
@@ -1728,7 +3256,15 @@
       "score": 6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "중환자 영양 — 중환자 진료 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39361081",
@@ -1737,7 +3273,15 @@
       "score": 6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "ICU 임종·완화의료 지침 — 실무 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41467651",
@@ -1746,7 +3290,15 @@
       "score": 5.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크 NEJM — 소생·혈역학 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36808215",
@@ -1755,7 +3307,15 @@
       "score": 5.6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 응고장애 관리 — 중환자 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37552332",
@@ -1764,7 +3324,15 @@
       "score": 5.6,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ICU 급성신손상 관리 — 중환자 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41534044",
@@ -1773,7 +3341,15 @@
       "score": 5.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "운동선수 급성심정지 — 소생 관련 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41564398",
@@ -1782,7 +3358,15 @@
       "score": 5.6,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "심부전 생리적 페이싱 — 순환기 시술 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41604641",
@@ -1791,7 +3375,15 @@
       "score": 5.6,
       "topic": "vascular_gi_other",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "하지 말초동맥질환 — 다소 외래 만성질환",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35941260",
@@ -1800,7 +3392,15 @@
       "score": 5.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ICU 초음파 장비 종설 — 중환자 실무 도구",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41707139",
@@ -1809,7 +3409,15 @@
       "score": 5.6,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "허혈성 뇌졸중 2차예방 — 신경, 만성 관리 성격",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42019020",
@@ -1818,7 +3426,15 @@
       "score": 5.6,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "척수 경막외 농양 — 응급 감염·신경 종설, 핵심 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35960275",
@@ -1827,7 +3443,15 @@
       "score": 5.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ICU 혈장교환 서술형 종설 — 중환자 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35984473",
@@ -1836,7 +3460,15 @@
       "score": 5.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ICU 혈액관류 종설 — 중독·중환자 실무 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35997792",
@@ -1845,7 +3477,15 @@
       "score": 5.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ICU EEG·급성 뇌손상 — 신경 중환자 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36106970",
@@ -1854,7 +3494,15 @@
       "score": 5.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "중환자 병원간 이송 종설 — CCM 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36066597",
@@ -1863,7 +3511,15 @@
       "score": 5.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "AKI 신대체요법 종설 — 중환자 핵심 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39778171",
@@ -1872,7 +3528,15 @@
       "score": 5.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "HFpEF — 심부전 종설, 응급실 흔함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40532153",
@@ -1881,7 +3545,15 @@
       "score": 5.2,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "비파열 뇌동맥류 — 신경 종설, 복습 가치",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40902163",
@@ -1890,7 +3562,15 @@
       "score": 5.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성 B형 대동맥박리 — 심혈관 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41569019",
@@ -1899,7 +3579,15 @@
       "score": 5.1,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "중환자 심장 병원간 이송 — 심혈관·CCM 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41061234",
@@ -1908,7 +3596,15 @@
       "score": 5.2,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "특발성 두개내압상승 — 신경 응급 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38519084",
@@ -1917,7 +3613,15 @@
       "score": 5,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "뇌졸중 재활 NICE 지침 — 재활 위주, 복습가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41528192",
@@ -1926,7 +3630,15 @@
       "score": 5,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "패혈성쇼크 혈관작용제·미세순환 — 쇼크 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "33870914",
@@ -1935,7 +3647,15 @@
       "score": 4.8,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "섬망 연구 핵심결과세트 합의 — 연구방법론 문서",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "34787687",
@@ -1944,7 +3664,15 @@
       "score": 4.8,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "중환자 초음파 실무 전문가 권고 — 술기 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38294976",
@@ -1953,7 +3681,15 @@
       "score": 4.8,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "심장 이식형 전자장치 — 응급실 대응 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37585629",
@@ -1962,7 +3698,15 @@
       "score": 4.4,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "지역사회획득폐렴 — 응급·감염 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37703556",
@@ -1971,7 +3715,15 @@
       "score": 4.4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "성인 천식 — 호흡 응급 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39870417",
@@ -1980,7 +3732,15 @@
       "score": 4.2,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ICU 획득 쇠약·재활, 중환자 진료 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42418776",
@@ -1989,7 +3749,15 @@
       "score": 4.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 영양요법 — CCM 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36975216",
@@ -1998,7 +3766,15 @@
       "score": 4.1,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "ECMO 격차 스코핑리뷰·방법론 비평, 복습가치 낮음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35020986",
@@ -2007,7 +3783,15 @@
       "score": 4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "중증천식 생물학제제 NEJM, 외래 위주지만 응급 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35263520",
@@ -2016,7 +3800,15 @@
       "score": 4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "AKI 신대체요법 NEJM, 중환자 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35294814",
@@ -2025,7 +3817,15 @@
       "score": 4,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "기질화폐렴 NEJM, 호흡기 감별로 접함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42467246",
@@ -2034,7 +3834,15 @@
       "score": 3.8,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "비만 중환자 재활 원칙, 좁지만 실무 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35793208",
@@ -2043,7 +3851,15 @@
       "score": 4,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "폐색전증 NEJM, 응급·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36300975",
@@ -2052,7 +3868,15 @@
       "score": 4,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "자발성 뇌내출혈 NEJM, 신경응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36322846",
@@ -2061,7 +3885,15 @@
       "score": 4,
       "topic": "resp_airway",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 급성호흡부전 비침습 호흡지원, 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35481953",
@@ -2070,7 +3902,15 @@
       "score": 3.4,
       "topic": "sepsis_shock",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "패혈증 인식·정보탐색 스코핑리뷰, 비임상",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "34874632",
@@ -2079,7 +3919,15 @@
       "score": 3.9,
       "topic": "neuro",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "자발성 두개내저압 NEJM, 두통 감별로 접함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "34469648",
@@ -2088,7 +3936,15 @@
       "score": 3.6,
       "topic": "infection",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "만성 수막염 NEJM, 감염·신경 감별 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40392264",
@@ -2097,7 +3953,15 @@
       "score": 3.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "ICU 투약오류 스코핑리뷰, 안전·품질 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40794169",
@@ -2106,7 +3970,15 @@
       "score": 3.4,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "가족 결과측정 스코핑리뷰, 임상복습 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39417874",
@@ -2115,7 +3987,15 @@
       "score": 3,
       "topic": "general_em_ccm",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "ICU 연속혈당측정 정확도 스코핑리뷰, 기기평가",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41212550",
@@ -2124,7 +4004,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "MASLD 지방간 JAMA, 외래 만성 간질환",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41247746",
@@ -2133,7 +4021,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "말초신경병증 JAMA, 외래 신경 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41288429",
@@ -2142,7 +4038,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중증질환 빈혈 CCM 종설, 중환자 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41296368",
@@ -2151,7 +4055,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "대마·카나비노이드 치료적 사용 JAMA, 응급 접점 약함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41396553",
@@ -2160,7 +4072,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "의식장애 진단·예후, 중환자의 신경 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41547366",
@@ -2169,7 +4089,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "GLP-1 대사·심신장 종설 — 외래 만성 위주지만 응급환자도 봄",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41556744",
@@ -2178,7 +4106,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICU 대상 흡입마취제 종설 — 중환자 진료 실무 직결",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41563785",
@@ -2187,7 +4123,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "하지불안증후군 — 외래 신경, 응급·중환자 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41617253",
@@ -2196,7 +4140,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "여성 심인성 흉통 평가·관리 — 응급실 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41671483",
@@ -2205,7 +4157,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "모균증 종설 — 중증 침습감염, 응급·면역저하 진료 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41697686",
@@ -2214,7 +4174,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "1형 당뇨 종설 — DKA 등 응급 접점 있으나 만성관리 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41770539",
@@ -2223,7 +4191,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "만성 비감염 설사 — 외래 소화기, 복습가치 낮음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41771281",
@@ -2232,7 +4208,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "상염색체우성 다낭신 — 만성 신장, 응급 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41773927",
@@ -2241,7 +4225,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "위기시 중환자 자원배분 지침 — 행정문서지만 CC 실무 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41801269",
@@ -2250,7 +4242,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "손상뇌 영양 종설 — 신경중환자 실무 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41831848",
@@ -2259,7 +4259,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "겸상적혈구병 — 응급실 통증위기 대응, 복습가치 있음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41841954",
@@ -2268,7 +4276,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "쇼크 관리 종설 — 중환자 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41860322",
@@ -2277,7 +4293,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "ICU 고령환자 진료 지침 — 중환자 실무 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41870448",
@@ -2286,7 +4310,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "저항성 고혈압 종설 — 외래 위주지만 고혈압응급 인접",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42001896",
@@ -2295,7 +4327,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "MEK 표적 항암 기전 — 분자기전·종양, 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42007984",
@@ -2304,7 +4344,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성뇌손상 체온조절 — 신경중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42008245",
@@ -2313,7 +4361,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "임신전 상담 — 외래 산과, 응급·중환자 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42059919",
@@ -2322,7 +4378,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "원인불명 혼수 단계적 접근 — 응급·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42059920",
@@ -2331,7 +4395,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "중증질환 재활 표준진료 — ICU 실무 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42090794",
@@ -2340,7 +4412,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "뇌아밀로이드혈관병 — 뇌출혈 응급 접점 있음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42207626",
@@ -2349,7 +4429,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "성인 남성 성선저하증 — 외래 내분비 만성질환, 응급 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42257880",
@@ -2358,7 +4446,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "폐 초음파 POCUS 업데이트 — 응급·중환자 핵심 술기",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42257882",
@@ -2367,7 +4463,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 수혈·혈액관리 — ICU 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42258347",
@@ -2376,7 +4480,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "성인 청색증 선천심질환 생존자 — 좁은 성인선천심, 응급성 낮음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42263727",
@@ -2385,7 +4497,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "보건 AI 인력정책 — 임상 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42285117",
@@ -2394,7 +4514,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "산후출혈 예방 대규모 시행 — 정책·구현 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42285119",
@@ -2403,7 +4531,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "산후출혈 역학·놓친 기회 — 출혈 응급 인접, 복습 참고",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42377460",
@@ -2412,7 +4548,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중증질환 신경합병증 — 중환자 신경 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42406571",
@@ -2421,7 +4565,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "알코올성 간질환 — 응급실서 흔함, 소화기 응급",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42526473",
@@ -2430,7 +4582,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "건선 — 피부과 만성질환, 응급 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42526943",
@@ -2439,7 +4599,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "PFO 편두통 항혈전 RCT — 종설 아닌 시험, 주제 협소",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "42555934",
@@ -2448,7 +4616,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "실신 NEJM 종설 — 응급 핵심 증상 접근",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "42593537",
@@ -2457,7 +4633,15 @@
       "score": 3,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 RCT 수십년 정리 — 실무 근거 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39630439",
@@ -2466,7 +4650,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "축성 척추관절염 — 류마 외래 만성, 응급 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39688452",
@@ -2475,7 +4667,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "정밀 영양요법 — ICU 영양 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39746713",
@@ -2484,7 +4684,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ICU 영양지원 — 중환자 실무 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39774866",
@@ -2493,7 +4701,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "면역저하 ICU 환자 CMV — 중환자 감염 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39791972",
@@ -2502,7 +4718,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "중증질환 림프흐름 장애 — 중환자 생리, 복습가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39899286",
@@ -2511,7 +4735,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "고환 생식세포종양 — 종양·비뇨기, 응급 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39937221",
@@ -2520,7 +4752,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "성인 ICU 사별 아동 지원 — ICU 실무 인접, 소프트 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39955121",
@@ -2529,7 +4769,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "아토피 피부염—피부과 외래, 응급·중환자 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39961851",
@@ -2538,7 +4786,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "초고령 ICU 환자 관리—중환자 실무 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39982143",
@@ -2547,7 +4803,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICU 통증·진정·섬망(PADIS) 갱신—중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39982148",
@@ -2556,7 +4820,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "'전문의 정의' 학회 행정 합의문—복습 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39982182",
@@ -2565,7 +4837,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 초음파 갱신—응급 술기·진단 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39986748",
@@ -2574,7 +4854,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "주혈흡충증—열대감염, 응급·중환자 비핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40094679",
@@ -2583,7 +4871,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "만성골수성백혈병—혈액종양 외래관리",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40126492",
@@ -2592,7 +4888,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "상염색체우성 다낭신—신장 만성질환",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40159291",
@@ -2601,7 +4905,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "성인 철결핍—흔하나 외래 만성, 복습가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40179933",
@@ -2610,7 +4922,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "관상동맥질환 재고찰—심혈관 핵심이나 정책성 강함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40227658",
@@ -2619,7 +4939,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "백내장—안과, 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40237805",
@@ -2628,7 +4956,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "동종조혈모세포이식 후 중증질환—ICU 관리 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40293759",
@@ -2637,7 +4973,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "비CF 기관지확장증—호흡기 종설, 응급실서 만남",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40358930",
@@ -2646,7 +4990,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "임신 매독 선별 USPSTF 권고—선별 행정문서",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40388146",
@@ -2655,7 +5007,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "면역성 TTP—혈액응급, ICU/응급서 대응",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40425241",
@@ -2664,7 +5024,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "비후성 심근병증 관리—부정맥·실신 응급 연관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40484016",
@@ -2673,7 +5041,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "급성 류마티스열—주로 소아·글로벌보건, 복습 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40544858",
@@ -2682,7 +5058,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "자궁근종 치료—부인과 외래, 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40549398",
@@ -2691,7 +5075,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "2형 당뇨 진단·치료—외래 만성관리 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40608084",
@@ -2700,7 +5092,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "TTP 조기진단·치료 2025—중환자 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40618768",
@@ -2709,7 +5109,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "소아 자궁내 지카 노출 후유증, EM·CC 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40622703",
@@ -2718,7 +5126,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "West Nile 바이러스 종설, 뇌염 등 신경·감염 응급 닿음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40684779",
@@ -2727,7 +5143,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "소아 뇌전증 전용, 성인 EM·CC 대상 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40705073",
@@ -2736,7 +5160,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 비침습 호흡보조, 중환자 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40719889",
@@ -2745,7 +5177,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "AKI 신기능 회복, 중환자 진료 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40783291",
@@ -2754,7 +5194,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "VMAT 억제제 약리(운동장애), EM·CC 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40788632",
@@ -2763,7 +5211,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "전립선염 종설, 국소 감염 응급에서 간혹 만남",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40813129",
@@ -2772,7 +5228,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "2형 당뇨 약물 외래 관리 지침, 응급 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "40826313",
@@ -2781,7 +5245,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "침상 뇌자동조절 평가, 신경중환자 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40888899",
@@ -2790,7 +5262,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중증 세균감염 항생제 치료, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40952730",
@@ -2799,7 +5279,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "표재정맥혈전 종설, 혈관 응급에서 접함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "40983070",
@@ -2808,7 +5296,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "1형 당뇨 미래 치료 전망, 응급 복습가치 낮음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41100079",
@@ -2817,7 +5313,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "매독 종설, 국소 감염 인접, 애매하면 유지",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "41117944",
@@ -2826,7 +5330,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICU 침습성 칸디다증 진단·치료, 중환자 감염",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41173010",
@@ -2835,7 +5347,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "주산기 심근병증, 심원성 쇼크로 응급 발현",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41222651",
@@ -2844,7 +5364,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "약물중독 중환자 관리, 중독·CC 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "41318214",
@@ -2853,7 +5381,15 @@
       "score": 2.6,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "만성 관동맥 비침습 영상, 급성보다 외래 성격",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37698452",
@@ -2862,7 +5398,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "국가 ICU 레지스트리 연구·QI, 행정·방법론",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38112769",
@@ -2871,7 +5415,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ICU 자가면역질환 진단·관리, 중환자 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38189930",
@@ -2880,7 +5432,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중환자 대량출혈 관리, 외상·출혈 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38197931",
@@ -2889,7 +5449,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "면역저하 ICU 감염 — 중환자 감염 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38240487",
@@ -2898,7 +5466,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "열손상 ICU 관리 — 환경응급 정본 리뷰",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38278171",
@@ -2907,7 +5483,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "갑상선기능항진 — 갑상선폭풍 등 응급 복습 유용",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38388984",
@@ -2916,7 +5500,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "기계환기 환자 호흡곤란 ERS/ESICM — 호흡·기도 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38407240",
@@ -2925,7 +5517,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "신기능 추정 형평성 정책문서 — 복습 가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38416431",
@@ -2934,7 +5534,15 @@
       "score": 2.2,
       "topic": "cardiac_resus",
       "lowConfidence": false,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "심장재활 — 외래 만성 관리, 응급과 거리",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38470381",
@@ -2943,7 +5551,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "알레르기비염 — 외래 만성, EM 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38497953",
@@ -2952,7 +5568,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "투석 동정맥루 — 접근로 합병증 응급 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38526578",
@@ -2961,7 +5585,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "LVAD 응급 관리 — ED/ICU 드문 고위험 상황",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38536167",
@@ -2970,7 +5602,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "노인 낙상 예방 — 외래 예방, 복습 부적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "38735295",
@@ -2979,7 +5619,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "뇌하수체저하 — 부신위기·졸중 응급 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38749554",
@@ -2988,7 +5636,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "항암 면역치료 심독성 — ICI 심근염 등 CC 관련",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38836697",
@@ -2997,7 +5653,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "시신경초 직경 POCUS — ICP 평가 술기 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38885678",
@@ -3006,7 +5670,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "소화성궤양 — 상부위장관 출혈 응급 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38897628",
@@ -3015,7 +5687,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "저항성 고혈압 — 만성이나 고혈압응급 인접",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39007569",
@@ -3024,7 +5704,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "섬망 표적치료 — ICU 섬망 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39098320",
@@ -3033,7 +5721,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 간부전 — 중환자 응급 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39133476",
@@ -3042,7 +5738,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "DOAC 수술전후 관리 — 항응고·출혈 실무 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39145701",
@@ -3051,7 +5755,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "ICU 은닉 의식 — 신경중환자 관심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39145702",
@@ -3060,7 +5772,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "중환자 연구방법론 — 임상 복습 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39171998",
@@ -3069,7 +5789,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "악성고열증 종설, 중환자·마취 대사응급 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39235771",
@@ -3078,7 +5806,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "심낭염 진단·치료 종설, 응급실 흔한 심혈관 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39254734",
@@ -3087,7 +5823,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "보체계 종설, ICM이나 기전 위주라 복습가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39265587",
@@ -3096,7 +5840,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "소아 RSV 전용, 성인 응급 독자와 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39320462",
@@ -3105,7 +5857,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ICU 관행 재검토 종설, 중환자 실무 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "39353639",
@@ -3114,7 +5874,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "CKD SGLT-2 외래 만성질환 지침, 응급 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39356511",
@@ -3123,7 +5891,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "만성신부전 투석 종설, 외래 만성 관리",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "39527048",
@@ -3132,7 +5908,15 @@
       "score": 2.2,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "석회화 대동맥협착 종설, 심혈관 임상 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "36563698",
@@ -3141,7 +5925,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "폐암 검진, 응급·중환자와 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "36725015",
@@ -3150,7 +5942,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "항우울제 진통 SR 개관, 통계·외래 만성통증",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "36749328",
@@ -3159,7 +5959,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "폐경 증상 관리, 외래 주제로 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37014337",
@@ -3168,7 +5976,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성 심근염 종설, 심장응급 핵심 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37052436",
@@ -3177,7 +5993,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ICU 간부전 관리 지침, 중환자 다장기 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37121245",
@@ -3186,7 +6010,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "관상동맥 재관류 개념, ACS 인접 복습가치",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37159031",
@@ -3195,7 +6027,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "간경변·합병증 종설, 응급실 정맥류·간성뇌증",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37263632",
@@ -3204,7 +6044,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "암환자 VTE 예방, 종양 위주나 응급 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37344680",
@@ -3213,7 +6061,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "중증 감염·집락·염증 감별, 패혈증 인접 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37459868",
@@ -3222,7 +6078,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "성인 뇌전증 종설, 발작·경련지속 신경응급",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37552333",
@@ -3231,7 +6095,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "급성만성 간부전 중환자 관리, ICU 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37595965",
@@ -3240,7 +6112,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "코로나 신경염증, 기전 위주지만 신경 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37676504",
@@ -3249,7 +6129,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "중환자의학 성차 종설, ICU 실무 인접",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37698559",
@@ -3258,7 +6146,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "궤양성대장염, 중증 플레어는 응급 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37699417",
@@ -3267,7 +6163,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "낭성섬유증 기전·신약 위주, 응급 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37716772",
@@ -3276,7 +6180,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "확장성 심근병증, 심부전 ICU 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37750876",
@@ -3285,7 +6197,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "소아암 생존자 외래 관리, 독자 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37844590",
@@ -3294,7 +6214,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "고혈압 외래 약물치료 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37847271",
@@ -3303,7 +6231,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "갑상선기능항진증, 갑상선폭풍 응급 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "37874571",
@@ -3312,7 +6248,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "무릎통증 외래 근골격, 응급 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "37924827",
@@ -3321,7 +6265,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "말라리아, 중증은 ICU 감염 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "38112812",
@@ -3330,7 +6282,15 @@
       "score": 1.8,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "족부·족관절 통증 외래 근골격",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35040882",
@@ -3339,7 +6299,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "폐결절 외래 평가, 복습가치 제한",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35074803",
@@ -3348,7 +6316,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "기능성 신경장애, 응급실 배제진단 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35093206",
@@ -3357,7 +6333,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "홍역, 응급실 감염 인지에 유용",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35103762",
@@ -3366,7 +6350,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "다발골수종, 고칼슘·신부전 응급 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35230389",
@@ -3375,7 +6367,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "폐사르코이드증 호흡기 종설, 접점 제한적",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35296510",
@@ -3384,7 +6384,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "군발두통, 응급실 두통 감별·치료",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35303116",
@@ -3393,7 +6401,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중환자 관리 통념 재검토, 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35412560",
@@ -3402,7 +6418,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "폐동맥고혈압, RV부전 ICU 접점",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35426840",
@@ -3411,7 +6435,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 체온관리, 중환자 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35430021",
@@ -3420,7 +6452,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "암 생존자 외래 문제 관리 위주",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35430023",
@@ -3429,7 +6469,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "소아암 생존자 장기관리 — 성인 응급·중환자와 무관",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35445823",
@@ -3438,7 +6486,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "소아 전용 신경중환자 — 중환자 개념은 닿으나 대상 아님",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35473709",
@@ -3447,7 +6503,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "임신 중 코로나 진단·관리 — 응급실서 만나는 호흡기 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35489361",
@@ -3456,7 +6520,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 0,
+        "keep": false,
+        "reason": "LMIC 소아 보건제도 혁신 — 임상 아닌 정책문서",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35508320",
@@ -3465,7 +6537,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "PCSK9·에제티미브 지질 예방 지침 — 외래 만성관리",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35587274",
@@ -3474,7 +6554,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 인공호흡 ICU 덱스메데토미딘 진정 — 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35690953",
@@ -3483,7 +6571,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "생명구조 호흡지원의 생리 — 기계환기 복습 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35691301",
@@ -3492,7 +6588,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "지중해빈혈 — 만성 혈액질환, 복습가치 낮음",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35696329",
@@ -3501,7 +6605,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "신경중환자 예후예측·공유의사결정 — ICU 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35697356",
@@ -3510,7 +6622,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "안정형 관동맥질환 재관류 — 심혈관 임상 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35785792",
@@ -3519,7 +6639,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "세기관지염 — 소아 전용 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35788790",
@@ -3528,7 +6656,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "겸상적혈구병 — 응급실 통증위기 등서 만남",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35852524",
@@ -3537,7 +6673,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "저나트륨혈증 진단·관리 — 응급·중환자 핵심 대사",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     },
     {
       "pmid": "35866651",
@@ -3546,7 +6690,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "ICU 일기 RCT 질적종합 — 연구방법론이 본체",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35881115",
@@ -3555,7 +6707,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "식이·운동 상담 USPSTF 예방권고 — 외래 예방",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "35997723",
@@ -3564,7 +6724,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "스타틴 일차예방 USPSTF 권고 — 외래 예방문서",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "needsReview"
     },
     {
       "pmid": "36066598",
@@ -3573,7 +6741,15 @@
       "score": 1.4,
       "topic": null,
       "lowConfidence": true,
-      "addedAt": "2026-08-16"
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "간부전 인공간 지지 국제 델파이 합의 — 중환자 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued"
     }
   ],
   "published": [
@@ -3615,5 +6791,5 @@
     "outcome": "published",
     "publishedId": "41504890"
   },
-  "updatedAt": "2026-08-17"
+  "updatedAt": "2026-08-17T07:41:12.021Z"
 }
