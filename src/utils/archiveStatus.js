@@ -10,12 +10,48 @@
  *   토큰이 없으면 섹션 자체가 렌더되지 않는다(기본 display:none + 스크립트 해제).
  *   ※ 공개 정적 페이지라 소스를 열면 보인다 — "굳이 숨길 정보 아님"(PeterJ) 전제의
  *     가벼운 개인 패널이지 기밀 게이트가 아니다.
- * - **삭제와 무관**: 대시보드 삭제(숨김)와 별개로 아카이브 전체를 비춘다 — 삭제한 논문도
- *   Drive·Doc엔 누적되므로 여기엔 "저장됨"으로 남는다.
+ * - **삭제를 따라간다** (PeterJ 확정 2026-08-17: *"삭제하면 누적리스트 및 분석내용 모두 삭제"*).
+ *   종전 설계는 그 반대였다 — 삭제한 논문도 여기엔 "저장됨"으로 남겼다. 그런데 PeterJ 가
+ *   28건을 지운 뒤 이 목록에 그대로 있는 것을 보고 "반영이 안 됐다" 고 했다. 지운 것을
+ *   계속 보여줄 이유가 없다.
+ *   ★ **재선정 방지 목록은 별개 파일이라 그대로 둔다**(`output/selected_papers.json`).
+ *     둘을 같은 것으로 착각하면 "지운 논문이 다시 뽑히는" 회귀를 만든다 — 실제로 종전
+ *     안내 문구가 그 둘을 한 덩어리로 묶어 놨다.
+ *   ★ Drive·Doc 은 이미 append 된 것을 여기서 되돌릴 수 없다(누적). 로컬 아카이브와
+ *     화면에서만 지운다 — 그렇게 안내한다.
  * - **소프트**: 데이터가 없거나 깨져도 호출측이 원본 html을 그대로 쓰도록 한다(데일리 코어 무영향).
  */
 
-export const ARCHIVE_STATUS_VERSION = 'v1';
+export const ARCHIVE_STATUS_VERSION = 'v2';
+
+/**
+ * 대시보드에서 지운 항목을 아카이브에서도 뺀다 (PeterJ 확정 2026-08-17).
+ *
+ * ★ **숨김 목록 전체를 매번 훑는다** — "이번에 지운 것 하나" 만 빼지 않는다.
+ *   그래야 ⓐ 멱등이고 ⓑ **이미 지나간 삭제도 다음 실행에서 소급 정리된다.**
+ *   실측 시점에 숨김 31건 중 28건이 아카이브에 그대로 남아 있었다 — 한 건씩만
+ *   처리하는 설계였다면 그 28건은 손으로 치우는 수밖에 없었다.
+ * ★ pmid 가 빈 숨김 기록(`''`)은 **아무것도 지우지 않는다.** 빈 문자열을 그대로
+ *   비교하면 pmid 없는 아카이브 항목이 통째로 날아간다.
+ *
+ * @returns {{archive: object, removed: string[]}} 새 객체(원본 불변)
+ */
+export function pruneArchiveByHidden(archive, hidden) {
+  const entries = Array.isArray(archive?.entries) ? archive.entries : null;
+  if (!entries) return { archive, removed: [] };
+  const drop = new Set(
+    Object.values(hidden ?? {})
+      .map((v) => String(v?.pmid ?? '').trim())
+      .filter((p) => /^\d+$/.test(p)),
+  );
+  if (!drop.size) return { archive, removed: [] };
+  const kept = entries.filter((e) => !drop.has(String(e?.pmid ?? '').trim()));
+  if (kept.length === entries.length) return { archive, removed: [] };
+  const removed = entries
+    .filter((e) => drop.has(String(e?.pmid ?? '').trim()))
+    .map((e) => String(e.pmid));
+  return { archive: { ...archive, entries: kept }, removed };
+}
 
 const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -102,7 +138,7 @@ export function archiveStatusBlock(archive) {
   <summary><span class="as-title">📦 아카이브 저장 현황</span><span class="as-lock">🔒 나만 보기</span><span class="as-cnt">${counts.total}건</span></summary>
   <div class="as-sum"><span>총 <b>${counts.total}건</b></span><span>OA본문 <b>${counts.oa}</b></span><span>웹레퍼런스 <b>${counts.web}</b></span><span>초록만 <b>${counts.abs}</b></span><span>PDF적재 <b>${counts.pdf}</b></span></div>
   <div class="as-list">${listHtml}</div>
-  <div class="as-note">※ 삭제한 논문도 여기엔 "저장됨"으로 남습니다(Drive·Doc은 삭제와 무관 누적). 본문 텍스트는 표시하지 않고 저장 여부만 보여줍니다.</div>
+  <div class="as-note">※ 대시보드에서 삭제한 논문은 이 목록에서도 빠집니다(재선정 방지 목록은 유지 — 지운 논문이 다시 뽑히지 않습니다). 이미 Drive·Doc에 올라간 것은 되돌리지 않습니다. 본문 텍스트는 표시하지 않고 저장 여부만 보여줍니다.</div>
 </details>
 </div>
 <script>(function(){try{if(localStorage.getItem('tr_pat')){document.getElementById('as-wrap').style.display='block';}}catch(e){}})();</script>

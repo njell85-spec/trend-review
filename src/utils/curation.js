@@ -77,11 +77,32 @@ export function parseHiddenKey(hiddenKey) {
   return m ? { tag: m[1], sectionKey: m[2] } : null;
 }
 
+/**
+ * 지난 카드 묶음(`.past-fold`)의 "지난 N건" 배지를 다시 센다.
+ *
+ * ★★ 이 배지는 **발행 시점에 `foldPast` 가 박아 넣는 상수**다. 삭제는 발행된 HTML 을
+ *   패치하는 경로라 배지를 안 건드렸고, 그래서 실측(2026-08-17)에서 **배지 43건 ·
+ *   실제 15건**이 됐다 — PeterJ 가 28건을 지웠는데 화면은 지우기 전 숫자를 그대로 말했다.
+ *   "삭제가 반영 안 된다" 로 보이는 부류다(실제로는 카드·표 행 다 지워져 있었다).
+ * ★ 세는 규칙을 `foldPast` 와 **글자 그대로 같게** 둔다(`day day-today` 가 없는 블록).
+ *   여기서 따로 세면 두 곳이 다른 숫자를 말하는 날이 온다.
+ */
+function recountPastFold(html) {
+  const blocks = html.match(
+    /<!-- (?:SECTION|GSECTION|RSECTION):[^>]*? -->[\s\S]*?<!-- \/(?:SECTION|GSECTION|RSECTION):[^>]*? -->/g,
+  ) ?? [];
+  const past = blocks.filter((b) => !b.includes('day day-today')).length;
+  return html.replace(
+    /(<details class="past-fold"><summary>지난 [^<]*<span class="n">)\d+건(<\/span>)/,
+    (_m, head, tail) => `${head}${past}건${tail}`,
+  );
+}
+
 /** 통계 재계산 — publisher의 카운트 규칙과 동일(데일리 섹션만 일수로 센다). */
 export function recountStats(html) {
   const dayCount = (html.match(/<!-- SECTION:\d{4}-\d{2}-\d{2} -->/g) ?? []).length;
   const paperCount = (html.match(/class="paper-card"/g) ?? []).length || dayCount;
-  return html
+  return recountPastFold(html)
     .replace(/<div class="n stat-days-count">[^<]*<\/div>/, `<div class="n stat-days-count">${dayCount}</div>`)
     .replace(/<div class="n stat-papers-count">[^<]*<\/div>/, `<div class="n stat-papers-count">${paperCount}</div>`)
     .replace(/<span class="at-count">[^<]*<\/span>/, `<span class="at-count">${paperCount}편</span>`);
@@ -93,7 +114,7 @@ export function recountStats(html) {
  * 올릴 것 — 안 올리면 증분 패치되는 배포 페이지에 영원히 반영되지 않는다.
  */
 export function curationBlock({ owner, repo }) {
-  return `<!-- CURATION_BLOCK v6 -->
+  return `<!-- CURATION_BLOCK v7 -->
 <script>
 (function(){
   var OWNER='${owner}', REPO='${repo}';
@@ -162,7 +183,7 @@ export function curationBlock({ owner, repo }) {
   }
   function onRemove(info,pmid,hideEls){
     if(!info){alert('\\uC139\\uC158 \\uD0A4\\uB97C \\uCC3E\\uC9C0 \\uBABB\\uD588\\uC2B5\\uB2C8\\uB2E4.');return;}
-    if(!confirm('\\uC774 \\uD56D\\uBAA9\\uC744 \\uB300\\uC2DC\\uBCF4\\uB4DC\\uC5D0\\uC11C \\uC0AD\\uC81C\\uD560\\uAE4C\\uC694?\\n(\\uC544\\uCE74\\uC774\\uBE0C\\u00B7\\uC7AC\\uC120\\uC815 \\uBC29\\uC9C0 \\uBAA9\\uB85D\\uC740 \\uC720\\uC9C0\\uB429\\uB2C8\\uB2E4)'))return;
+    if(!confirm('\\uC774 \\uD56D\\uBAA9\\uC744 \\uC0AD\\uC81C\\uD560\\uAE4C\\uC694?\\n\\uCE74\\uB4DC\\u00B7\\uB204\\uC801 \\uB9AC\\uC2A4\\uD2B8\\u00B7\\uBD84\\uC11D\\uB0B4\\uC6A9\\uC774 \\uD568\\uAED8 \\uC9C0\\uC6CC\\uC9D1\\uB2C8\\uB2E4.\\n(\\uC7AC\\uC120\\uC815 \\uBC29\\uC9C0 \\uBAA9\\uB85D\\uC740 \\uC720\\uC9C0 \\u2014 \\uB2E4\\uC2DC \\uBF51\\uD788\\uC9C0 \\uC54A\\uC2B5\\uB2C8\\uB2E4)'))return;
     dispatch('curate-remove.yml',{sectionKey:info.key,tag:info.tag,pmid:pmid},function(){
       hideEls.forEach(function(el){if(el)el.style.display='none';});
     });
