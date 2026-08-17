@@ -100,9 +100,10 @@ test('삭제 확인 문구가 분석내용까지 지운다고 알린다', () => 
   const decode = (s) => s.replace(/\\u([0-9A-Fa-f]{4})/g, (_m, h) => String.fromCharCode(parseInt(h, 16)));
   const msg = decode(block.match(/if\(!confirm\('(.*?)'\)\)return;/)[1]);
   assert.match(msg, /분석내용/);
+  assert.match(msg, /누적리스트/, '확정 명칭(누적리스트)으로 말해야 한다');
   assert.match(msg, /재선정 방지 목록은 유지/);
   // 클라이언트 코드를 고쳤으면 버전을 올려야 배포 페이지에 반영된다.
-  assert.match(block, /CURATION_BLOCK v7/);
+  assert.match(block, /CURATION_BLOCK v8/);
 });
 
 // ── ★ 계약: 스크립트가 쓰는 파일은 워크플로 git add 목록에 다 있어야 한다 ──────

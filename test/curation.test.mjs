@@ -64,7 +64,8 @@ test('섹션 제거: 블록·표 행이 사라지고 통계가 준다', () => {
   assert.ok(!out.includes('SECTION:2026-07-05 '), '섹션 마커 잔존 금지');
   assert.ok(!out.includes('data-pmid="111"'), '표 행 잔존 금지');
   assert.ok(out.includes('SECTION:2026-07-06-m-222'), '다른 섹션은 보존');
-  assert.ok(out.includes('<div class="n stat-days-count">0</div>'), '데일리 일수는 수동 섹션을 세지 않는다');
+  // ★ 2026-08-18 — 카운트는 페이지당 하나다. 분석일수 칸은 **걷어낸다**(구판 배포본 정리).
+  assert.ok(!out.includes('stat-days-count'), '분석일수 칸이 남았다 — 구판 잔재를 걷어야 한다');
   assert.ok(out.includes('<div class="n stat-papers-count">1</div>'));
   assert.ok(out.includes('<span class="at-count">1편</span>'));
 });
@@ -137,11 +138,11 @@ test('클라이언트 블록: 삭제 dispatch에 tag가 포함된다(C1 클라�
 
 // ── 통계 재계산 ──────────────────────────────────────────────────────────────
 test('recountStats: 논문 카드 0이면 일수로 폴백한다(publisher 규칙 동일)', () => {
-  const html = `<div class="n stat-days-count">9</div><div class="n stat-papers-count">9</div><span class="at-count">9편</span>
+  const html = `<div class="sc"><div class="n stat-days-count">9</div><div class="l">분석일수</div></div><div class="n stat-papers-count">9</div><span class="at-count">9편</span>
 <!-- SECTION:2026-07-01 --><details></details><!-- /SECTION:2026-07-01 -->`;
   const out = recountStats(html);
-  assert.ok(out.includes('stat-days-count">1<'));
-  assert.ok(out.includes('stat-papers-count">1<'));
+  assert.ok(!out.includes('stat-days-count'), '분석일수 칸이 남았다 — 구판 잔재를 걷어야 한다');
+  assert.ok(out.includes('stat-papers-count">1<'), '논문 카드가 0이면 날짜 섹션 수로 폴백한다');
 });
 
 // ── 퍼블리셔 연동 ────────────────────────────────────────────────────────────

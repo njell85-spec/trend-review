@@ -102,14 +102,45 @@ papers.forEach((p, i) =>
   )
 );
 
+const guidelineCard = outcome.result.guideline ?? null;
+const reviewItem = outcome.result.review ?? null;
+
+const pagesUrl = `https://${process.env.GITHUB_OWNER}.github.io/${process.env.GITHUB_REPO}/`;
+
+// ── 그날 분석 md 첨부 (PeterJ 확정 2026-08-18) ────────────────────────────────
+// *"그날 분석한 내용 동일내용으로 md파일로 추가제시 — 텔레그램에서 눌러서 바로 읽게."*
+// ★ **논문이 없는 날에도** 보낸다. 가이드라인·리뷰만 나간 날이 그날의 전부이기 때문이다.
+//   (종전에는 논문 0편이면 여기서 exit 0 이라 그런 날 알림이 통째로 없었다.)
+// ★ 첨부 실패는 파이프라인을 막지 않는다 — 부가물이다.
+async function sendDailyDigest() {
+  if (!papers.length && !guidelineCard && !reviewItem) return '발행 없음 — 건너뜀';
+  try {
+    const { buildDailyDigest, dailyDigestFilename } = await import('./src/utils/dailyDigest.js');
+    const content = buildDailyDigest({
+      dateStr: todayKST, papers, guideline: guidelineCard, review: reviewItem, pagesUrl,
+    });
+    const ok = await new TelegramNotifier().sendDocument({
+      filename: dailyDigestFilename(todayKST),
+      content,
+      caption: `[trend-review] ${todayKST} 분석 전문`,
+    });
+    return ok ? '첨부 완료' : '첨부 실패(본문은 정상)';
+  } catch (err) {
+    console.log(`::warning::md 첨부 생성 실패 — ${err.message.slice(0, 200)}`);
+    return `첨부 실패: ${err.message.slice(0, 120)}`;
+  }
+}
+
 if (!papers.length) {
   console.warn('⚠️  오늘 선정된 논문이 없습니다.');
   console.log('::warning::오늘 선정된 논문이 없습니다 (파이프라인은 정상 종료).');
-  jobSummary(`## ⚠️ Trend Review — ${todayKST}\n\n선정된 논문이 없습니다 (검색/검증 결과 0편).`);
+  // 논문만 없을 뿐 가이드라인·리뷰는 나갔을 수 있다 — 그날 것을 md 로 보낸다.
+  const digestOnly = await sendDailyDigest();
+  console.log(`📎 md 첨부: ${digestOnly}`);
+  jobSummary(`## ⚠️ Trend Review — ${todayKST}\n\n선정된 논문이 없습니다 (검색/검증 결과 0편).\n\n- md 첨부: ${digestOnly}`);
   process.exit(0);
 }
 
-const pagesUrl = `https://${process.env.GITHUB_OWNER}.github.io/${process.env.GITHUB_REPO}/`;
 console.log(`\n🌐 GitHub Pages: ${pagesUrl}`);
 
 // 이번 실행이 구독 CLI로 돌았는지 / API 폴백으로 넘어갔는지 (경로 피드백)
@@ -131,6 +162,10 @@ try {
     telegramStatus = '발송 완료';
     console.log('💬 텔레그램 리포트 발송 완료');
   }
+  // 본문 다음에 그날 분석 전문을 md 로 붙인다(본문이 먼저 도착해야 순서가 자연스럽다).
+  const digest = await sendDailyDigest();
+  telegramStatus = `${telegramStatus} · md ${digest}`;
+  console.log(`📎 md 첨부: ${digest}`);
 } catch (err) {
   telegramStatus = `발송 실패: ${err.message.slice(0, 120)}`;
   console.warn(`⚠️  텔레그램 발송 실패(파이프라인은 정상): ${err.message}`);

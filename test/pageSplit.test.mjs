@@ -165,10 +165,12 @@ test('세 페이지가 같은 탭 바를 갖고 현재 페이지만 활성 — �
 
 test('guidelines 통계는 자기 것이고 index 통계 클래스를 물려받지 않는다', () => {
   const { guidelines } = splitPages(samplePage(), { refIds });
-  assert.equal(count(guidelines, /class="sc"/g), 3); // 원본 카드 잔존(중복) 회귀 방지
+  // ★ 2026-08-18 — 페이지당 카운트 하나 + 최종 업데이트 = `.sc` 2칸 (PeterJ 확정).
+  assert.equal(count(guidelines, /class="sc"/g), 2); // 원본 카드 잔존(중복) 회귀 방지
   assert.doesNotMatch(guidelines, /stat-days-count/);
   assert.doesNotMatch(guidelines, /stat-papers-count/);
-  assert.match(guidelines, /<div class="l">가이드라인<\/div>/);
+  assert.match(guidelines, /<div class="l">발행 가이드라인<\/div>/);
+  assert.match(guidelines, /<div class="l">최종 업데이트<\/div>/);
 });
 
 test('아카이브 저장 현황(§4-E)은 index 에만 남는다', () => {
@@ -253,12 +255,12 @@ test('2회차 이후에도 guidelines 통계가 자기 것으로 유지된다', 
   for (let i = 0; i < 3; i++) {
     const r = splitPages(mergePages(idx, gui, rev), { refIds });
     idx = r.index; gui = r.guidelines; rev = r.reviews;
-    assert.match(gui, /<div class="l">가이드라인<\/div>/, `${i + 2}회차에서 통계가 되돌아감`);
-    assert.match(rev, /<div class="l">기타 자료<\/div>/);
+    assert.match(gui, /<div class="l">발행 가이드라인<\/div>/, `${i + 2}회차에서 통계가 되돌아감`);
+    assert.match(rev, /<div class="l">발행 리뷰<\/div>/);
     assert.doesNotMatch(gui, /stat-days-count/);
     assert.doesNotMatch(gui, /stat-papers-count/);
     assert.doesNotMatch(gui, /<div class="l">분석일수<\/div>/);
-    assert.equal(count(gui, /class="sc"/g), 3);
+    assert.equal(count(gui, /class="sc"/g), 2);
     assert.equal(count(gui, /<nav class="pgnav">/g), 1); // 탭도 누적되지 않는다
     assert.equal(count(idx, /<nav class="pgnav">/g), 1);
     assert.equal(count(rev, /<nav class="pgnav">/g), 1);

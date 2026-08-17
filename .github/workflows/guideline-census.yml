@@ -36,25 +36,31 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Count guidelines on PubMed
+        id: census
         env:
           PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
+          IN_DAYS: ${{ inputs.days }}
+          IN_LIST: ${{ inputs.list }}
+          IN_COUNTRIES: ${{ inputs.countries }}
+          IN_REVIEWS: ${{ inputs.reviews }}
         run: |
-          if [ "${{ inputs.list }}" = "true" ]; then
+          if [ "$IN_LIST" = "true" ]; then echo "list=true" >> "$GITHUB_OUTPUT"; else echo "list=false" >> "$GITHUB_OUTPUT"; fi
+          if [ "$IN_LIST" = "true" ]; then
             mkdir -p experiments
             EXTRA=""
-            [ "${{ inputs.countries }}" = "true" ] && EXTRA="$EXTRA --countries"
-            [ "${{ inputs.reviews }}" = "true" ] && EXTRA="$EXTRA --reviews"
-            node scripts/guideline-census.mjs --days "${{ inputs.days }}" --list experiments/guideline-census.json $EXTRA
+            [ "$IN_COUNTRIES" = "true" ] && EXTRA="$EXTRA --countries"
+            [ "$IN_REVIEWS" = "true" ] && EXTRA="$EXTRA --reviews"
+            node scripts/guideline-census.mjs --days "$IN_DAYS" --list experiments/guideline-census.json $EXTRA
           else
             EXTRA=""
-            [ "${{ inputs.reviews }}" = "true" ] && EXTRA="--reviews"
-            node scripts/guideline-census.mjs --days "${{ inputs.days }}" $EXTRA
+            [ "$IN_REVIEWS" = "true" ] && EXTRA="--reviews"
+            node scripts/guideline-census.mjs --days "$IN_DAYS" $EXTRA
           fi
 
       # 목록은 저장소에 남긴다 — artifact 는 인증이 있어야 열리고, 이 목록은 세션이
       # 읽어 HTML 로 만들어야 한다. 데일리 상태 커밋과 같은 방식이다.
       - name: Commit census list
-        if: ${{ inputs.list == 'true' }}
+        if: ${{ steps.census.outputs.list == 'true' }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

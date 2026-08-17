@@ -15,8 +15,8 @@
  *   3. 게시 파일을 건드린 최신 커밋부터 검증한다. 2026-08-13 가짜 실패는
  *      데일리의 2회 커밋 푸시 레이스로 Pages 런이 다른 sha에 붙어서 발생했다.
  *      따라서 원격 main HEAD 하나가 아니라 게시 파일 기준의 커밋 범위를 확인한다.
- *   4. 그 sha들의 Pages 배포 런을 폴링. 실패로 끝나면 rerun-failed-jobs 로
- *      재실행 (새 attempt 기준 최대 RERUN_MAX회 — 폴링 지연으로 중복 카운트 금지).
+ *   4. 그 sha들의 Pages 배포 런을 폴링. cancelled면 전체 rerun, 그 외 실패면
+ *      rerun-failed-jobs (새 attempt 기준 최대 RERUN_MAX회 — 중복 카운트 금지).
  *   5. 제한 시간 내 성공을 못 보면 텔레그램 실패 알림 후 exit 1 (워크플로우 빨간불).
  *
  * 필요 권한: GITHUB_TOKEN 에 actions: write (재실행) + contents: read.
@@ -24,7 +24,7 @@
  */
 import { TelegramNotifier } from '../src/agents/TelegramNotifier.js';
 import { kstDateStr } from '../src/utils/dates.js';
-import { pickVerifyTargets } from '../src/utils/pagesDeployTarget.js';
+import { pickVerifyTargets, rerunEndpointForConclusion } from '../src/utils/pagesDeployTarget.js';
 
 const API = 'https://api.github.com';
 const PAGES_WORKFLOW_PATH = 'dynamic/pages/pages-build-deployment';
@@ -55,9 +55,10 @@ async function apiGet(path) {
   return res.json();
 }
 
-// 재실행 요청. 반환: 'accepted' | 'already-running' | HTTP 상태코드(거부)
-async function requestRerun(runId) {
-  const res = await fetch(`${API}/repos/${repoFull}/actions/runs/${runId}/rerun-failed-jobs`, {
+// 재실행 요청. 반환: 'accepted' | 'already-running' | { status, endpoint }(거부)
+async function requestRerun(run) {
+  const endpoint = rerunEndpointForConclusion(run.id, run.conclusion);
+  const res = await fetch(`${API}/repos/${repoFull}${endpoint}`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -67,7 +68,7 @@ async function requestRerun(runId) {
   });
   if (res.ok) return 'accepted';
   if (res.status === 409) return 'already-running'; // 이미 재실행 중
-  return res.status; // 403/422 등 — 권한·정책 문제, 기다려도 안 풀림
+  return { status: res.status, endpoint }; // 403/422 등 — 호출 경로와 함께 원인을 진단한다.
 }
 
 // 검증 대상 커밋의 가장 최근 Pages 배포 런 (head_sha 서버측 필터)
@@ -130,6 +131,11 @@ try {
 }
 console.log(`🔎 게시 파일 검증 대상: ${targets.map((sha) => sha.slice(0, 7)).join(', ')}`);
 
+// pickVerifyTargets 계약상 첫 원소가 게시 파일을 건드린 가장 최신 커밋이다.
+// 뒤 원소는 그 내용을 포함한 후속 상태 커밋이므로, 아래 후보 중 성공한 Pages 런은
+// 모두 "가장 최신 게시 내용"의 배포 성공을 뜻한다. 배열 순서에 판정을 숨기지 않는다.
+const latestPublishedSha = targets[0];
+
 // ── 폴링 루프 ────────────────────────────────────────────────────────────────
 const start = Date.now();
 let rerunsIssued = 0;      // 실제로 접수된 재실행 요청 수
@@ -156,9 +162,9 @@ while (Date.now() - start < DEADLINE_MS) {
     continue;
   }
 
-  const successful = visibleRuns.find(({ run }) => run.status === 'completed' && run.conclusion === 'success');
-  if (successful) {
-    console.log(`✅ Pages 배포 성공 확인 (sha ${successful.sha.slice(0, 7)}, run ${successful.run.id}, attempt ${successful.run.run_attempt})`);
+  const latestPublishedDeployment = visibleRuns.find(({ run }) => run.status === 'completed' && run.conclusion === 'success');
+  if (latestPublishedDeployment) {
+    console.log(`✅ 최신 게시 내용(${latestPublishedSha.slice(0, 7)})의 Pages 배포 성공 확인 (run sha ${latestPublishedDeployment.sha.slice(0, 7)}, run ${latestPublishedDeployment.run.id}, attempt ${latestPublishedDeployment.run.run_attempt})`);
     process.exit(0);
   }
 
@@ -188,7 +194,7 @@ while (Date.now() - start < DEADLINE_MS) {
   console.warn(`🔁 배포 실패(sha ${sha.slice(0, 7)}, conclusion=${run.conclusion}, attempt ${run.run_attempt}) — 재실행 요청 ${rerunsIssued + 1}/${RERUN_MAX}`);
   let result;
   try {
-    result = await requestRerun(run.id);
+    result = await requestRerun(run);
   } catch (err) {
     console.warn(`⚠️  재실행 요청 실패(재시도): ${err.message}`); // 네트워크 오류 — 카운트하지 않음
     await sleep(POLL_MS);
@@ -200,8 +206,9 @@ while (Date.now() - start < DEADLINE_MS) {
   } else if (result === 'already-running') {
     handledAttempt.set(run.id, run.run_attempt);
   } else {
-    // 권한/정책 거부 — 재시도 무의미. 원인을 그대로 알린다.
-    await notifyAndFail(`재실행 요청 거부 HTTP ${result} — 워크플로우 actions:write 권한 확인 필요`);
+    // 취소 런에 failed-jobs를 잘못 호출한 422와 실제 권한 거부를 경로까지 남겨 구분한다.
+    const kind = run.conclusion === 'cancelled' ? '취소 런 전체 재실행' : '실패 잡 재실행';
+    await notifyAndFail(`${kind} 요청 거부 HTTP ${result.status} (endpoint=${result.endpoint}) — ${run.conclusion === 'cancelled' ? 'rerun 전체 재실행 경로 사용 중; actions:write·저장소 정책 확인 필요' : 'rerun-failed-jobs 경로 사용 중; actions:write 권한 확인 필요'}`);
   }
   await sleep(POLL_MS);
 }

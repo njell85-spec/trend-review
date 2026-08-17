@@ -80,7 +80,9 @@ export class TelegramNotifier {
       this.logger.info('Telegram 미설정(TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID 없음) — 발송 생략');
       return { sent: false, reason: 'not-configured' };
     }
-    const text = buildReportMessages({ dateStr, topPaper, pagesUrl, progressLines }).join('\n');
+    // ★ 메시지 사이는 **빈 줄**로 잇는다 (2026-08-18 포맷 개정). 본문과 진행상황이
+    //   줄바꿈 하나로 붙으면 본문 마지막 줄(📊 링크)에 진행상황이 달라붙어 보인다.
+    const text = buildReportMessages({ dateStr, topPaper, pagesUrl, progressLines }).join('\n\n');
     await this._post(text);
     this.logger.info('텔레그램 리포트 발송 완료');
     return { sent: true };

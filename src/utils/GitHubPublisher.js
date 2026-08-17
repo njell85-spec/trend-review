@@ -19,6 +19,7 @@ import { buildUpcoming } from './upcomingSchedule.js';
 import { sortByGuidelineRank } from './guidelineRank.js';
 import { rankedPublishableReviews } from './reviewRank.js';
 import { cadenceFor } from './trackCadence.js';
+import { consumedIds, withoutConsumed } from './trackQueue.js';
 import { kstDateStr } from './dates.js';
 import { TRACKS as UPCOMING_TRACKS } from './controlState.js';
 
@@ -383,7 +384,7 @@ export class GitHubPublisher {
   _upcomingScript(ident) {
     // 식별자를 못 정하면 스크립트를 굽지 않는다 — 죽은 버튼보다 없는 버튼이 정직하다.
     if (!ident) return '';
-    return `<!-- UPBTN v5 -->
+    return `<!-- UPBTN v6 -->
 <script>
 (function(){
   var OWNER='${ident.owner}', REPO='${ident.repo}';
@@ -484,15 +485,15 @@ export class GitHubPublisher {
     }
     else if(b.dataset.upDrop){
       fire('queue-control.yml',{track:b.dataset.upTrack,action:'drop',id:b.dataset.upDrop},
-        '🗑 뺐습니다 — 다음 항목이 채웁니다');
+        '🗑 예정리스트에서 뺐습니다 — 다음 항목이 채웁니다');
     }
     else if(b.dataset.upToggle){ toggle(b.dataset.upToggle,b.dataset.upMode||'on',b); }
     else if(b.dataset.upSeq!==undefined){ toggleSeq(b); }
     else if(b.dataset.upReset){
       // 되돌릴 수 없으므로 반드시 묻는다.
-      if(confirm('이 트랙의 예고를 전부 빼고 다음 수집이 새로 채우게 합니다. 계속할까요?')){
+      if(confirm('이 트랙의 예정리스트를 전부 비우고 다음 수집이 새로 채우게 합니다. 계속할까요?')){
         fire('queue-control.yml',{track:b.dataset.upReset,action:'reset',id:''},
-          '♻ 전체를 갈아엎었습니다');
+          '♻ 예정리스트를 전부 비웠습니다');
       }
     }
   });
@@ -560,9 +561,9 @@ export class GitHubPublisher {
           + `<span class="up-track">${esc(r.trackLabel)}</span> ${esc(clip(it.title))}${warn}</span>`
           + (it.journal ? `<span class="up-journal">${esc(it.journal)}</span>` : '')
           + `<button class="up-btn up-run" data-up-run="${esc(it.pmid ?? '')}" `
-          + `data-up-track="${esc(r.track)}" title="이것을 먼저 돌린다">▶</button>`
+          + `data-up-track="${esc(r.track)}" title="이 항목을 지금 발행한다">▶</button>`
           + `<button class="up-btn up-drop" data-up-drop="${esc(it.pmid ?? '')}" `
-          + `data-up-track="${esc(r.track)}" title="빼고 다음 것으로 채운다">🗑</button>`
+          + `data-up-track="${esc(r.track)}" title="예정리스트에서 빼고 다음 항목으로 채운다">🗑</button>`
           + `</li>`;
       }).join('');
       return `<div class="up-day"><div class="up-date">${esc(date)}</div><ul class="up-list">${li}</ul></div>`;
@@ -585,17 +586,17 @@ export class GitHubPublisher {
     const body = dead
       ? '<p class="up-empty">저장소 식별자를 찾지 못해 버튼을 감췄습니다 — 다음 데일리 실행에서 복구됩니다.</p>'
       : `<div class="up-toggles">${toggles}</div>`
-        + (dayHtml || '<p class="up-empty">예고할 것이 없습니다 — 큐가 비었거나 트랙이 꺼져 있습니다.</p>')
-        + `<button class="up-reset" data-up-reset="${esc(key)}">이 목록 전체 갈아엎기</button>`;
+        + (dayHtml || '<p class="up-empty">예정리스트가 비었습니다 — 큐가 비었거나 트랙이 꺼져 있습니다.</p>')
+        + `<button class="up-reset" data-up-reset="${esc(key)}">예정리스트 전체 갈아엎기</button>`;
 
     // ★ 기본 접힘 (PeterJ 지시 2026-08-17). 논문이 누적되면 목록이 길어져 불편하다.
     //   `<details>` 로 감싸고 `open` 을 주지 않는다 — 카드·누적표와 같은 규칙이다.
     const n = rows.length;
     const block = `<!-- UPCOMING:${key} -->\n${UPCOMING_STYLE}`
       + `<details class="upcoming" data-up-section="${esc(key)}">`
-      + `<summary class="up-h">📅 ${esc(label)} — 다음 ${days}일 예고`
+      + `<summary class="up-h">📅 ${esc(label)} 예정리스트`
       + ` <span class="n">${n}건</span></summary>`
-      + `<span class="up-note">놔두면 날짜대로 나갑니다 · 🗑 누르면 다음 것이 채웁니다</span>`
+      + `<span class="up-note">앞으로 ${days}일치입니다 · 놔두면 날짜대로 발행됩니다 · 🗑 누르면 다음 항목이 채웁니다</span>`
       + body
       + `<div id="up-msg" class="up-msg"></div>`
       + `</details>\n${script}\n<!-- /UPCOMING:${key} -->`;
@@ -628,12 +629,24 @@ export class GitHubPublisher {
   async _renderUpcomingFromDisk(html, generatedAt) {
     const out = path.join(this._repoPath, 'output');
     const readJson = async (f) => { try { return JSON.parse(await readFile(path.join(out, f), 'utf8')); } catch { return null; } };
-    const [papers, guidelines, reviews, control] = await Promise.all([
+    const [papers, guidelines, reviews, control, selectedPapers] = await Promise.all([
       readJson('queue_papers.json'), readJson('selected_guidelines.json'),
       readJson('queue_reviews.json'), readJson('control_state.json'),
+      readJson('selected_papers.json'),
     ]);
     const c = normalizeControl(control);
     const from = GitHubPublisher._toYmd(generatedAt);
+    // ★★ 예정리스트는 **아직 안 나간 것**만 말해야 한다 (2026-08-18).
+    //   실측: 논문 큐 12건 중 PMID 41188988 이 이미 발행됐는데 예정리스트 1번에 앉아
+    //   있었다. 큐를 채우는 쪽(`mergeQueueItems`)도 이제 걸러 내지만, 그것은 **데일리가
+    //   돌 때만** 일어난다 — ▶ 로 지금 발행하면 큐 파일은 다음 데일리까지 옛말이다.
+    //   그 사이에도 화면이 사실을 말하도록 **그리는 쪽에서도 장부를 직접 대조**한다.
+    //   판정 정본은 `trackQueue.consumedIds` 하나다(두 곳이 다른 정의를 쓰면 갈린다).
+    const publishedPmids = (Array.isArray(selectedPapers) ? selectedPapers : [])
+      .map((x) => x?.pmid).filter((x) => x != null);
+    const publishablePapers = papers?.queue
+      ? { ...papers, queue: withoutConsumed(papers.queue, consumedIds(papers, publishedPmids)) }
+      : papers;
     // ★ 가이드라인 예고는 **실제로 발행 대상이 되는 것만** 보여야 한다.
     //   오케스트레이터는 `status === 'queued'` 인 것 중에서 고르는데(그리고 priority 순),
     //   예고는 큐 배열을 통째로 그리고 있었다. 지금 실물 큐가 `needsReview` 5 · `queued` 1
@@ -652,7 +665,7 @@ export class GitHubPublisher {
     const publishableReviewState = reviews?.queue
       ? { ...reviews, queue: rankedPublishableReviews(reviews.queue) }
       : reviews;
-    const states = { papers, guidelines: publishableGuidelines, reviews: publishableReviewState };
+    const states = { papers: publishablePapers, guidelines: publishableGuidelines, reviews: publishableReviewState };
     const labels = { papers: '논문', guidelines: '가이드라인', reviews: '리뷰' };
 
     // ★ 트랙마다 **자기 블록**을 그린다(PeterJ 요구 ②). `splitPages` 가 이 블록들을
@@ -1036,7 +1049,7 @@ export class GitHubPublisher {
     return new RegExp(`<tr data-pmid="[^"]*"><td class="c-date">${escDateCell}</td>[\\s\\S]*?</tr>`, 'g');
   }
 
-  // ── 누적 아카이브 표의 행(읽음 체크박스 포함) ──────────────────────────────────
+  // ── 누적리스트 표의 행(읽음 체크박스 포함) ──────────────────────────────────
   _tableRows(dateStr, topPapers, guideline = null, { manual = false, review = null } = {}) {
     // 수동 지정 행은 data-manual 마커를 단다 — 가이드라인(data-guideline)과 같은 방식으로,
     // 이후 데일리 실행의 "날짜 기준 행 제거"(rowDateDup)에서 지워지지 않게 보호한다.
@@ -1208,7 +1221,7 @@ details[open] .day-prev{display:none}
 .pc-foot{margin-top:14px;padding-top:10px;border-top:1px solid ${T.soft};font-size:11px;color:${T.muted}}
 .ft{text-align:center;font-size:10px;color:${T.muted};padding:26px 20px 0}
 .ft a{color:${T.softTxt}}
-/* 누적 아카이브 표 */
+/* 누적리스트 표 */
 .arch-table{margin:18px 18px 0;background:#fff;border:1px solid ${T.soft};border-radius:16px;overflow:hidden;box-shadow:0 8px 22px -16px ${T.key}33}
 .at-head{display:flex;align-items:center;gap:8px;padding:13px 16px;background:linear-gradient(90deg,${T.key},${T.key2});color:#fff}
 .at-title{font-size:13px;font-weight:800}
@@ -1236,11 +1249,10 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:${T.muted};text-decoration:line-t
   <header class="hd">
     <div class="ey">AI Literature Pipeline · Claude Opus</div>
     <h1>EM/CCM Trend Review</h1>
-    <div class="fn"><span class="i">${IC.filter('#fff')}</span>180일 · 300편 스크리닝 → 1편/일 선정</div>
+    <div class="fn"><span class="i">${IC.filter('#fff')}</span>매일 자동 선정 · 논문 · 가이드라인 · 리뷰</div>
   </header>
-  <div class="stats">
-    <div class="sc"><div class="n stat-days-count">${days}</div><div class="l">분석일수</div></div>
-    <div class="sc"><div class="n stat-papers-count">${papers}</div><div class="l">선정 논문</div></div>
+  <div class="stats stats-2">
+    <div class="sc"><div class="n stat-papers-count">${papers}</div><div class="l">발행 논문</div></div>
     <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">${esc(updated)}</span></div><div class="l">최종 업데이트</div></div>
   </div>
   <div class="archive">
@@ -1248,7 +1260,7 @@ tr.is-read .c-title a,tr.is-read .c-jour{color:${T.muted};text-decoration:line-t
 ${sectionsHtml}
   </div>
   <div class="arch-table">
-    <div class="at-head"><span class="at-title">📚 누적 아카이브</span><span class="at-count">${papers}편</span></div>
+    <div class="at-head"><span class="at-title">📚 논문 누적리스트</span><span class="at-count">${papers}편</span></div>
     <div class="at-scroll"><table>
       <thead><tr><th>선정일</th><th>저널</th><th>논문</th><th class="th-read">읽음</th></tr></thead>
       <tbody><!-- TABLE_ROWS_START -->${tableRows}<!-- TABLE_ROWS_END --></tbody>
@@ -1256,17 +1268,40 @@ ${sectionsHtml}
   </div>
   <div class="ft">AI Literature Pipeline · Claude Opus · PubMed 최근 6개월 · 1편/일 · <a href="${this.pagesUrl}">${this.owner ?? 'njell85-spec'}.github.io/${this.repo ?? 'trend-review'}</a></div>
 </div>
+${this._readScript()}
+</body>
+</html>`;
+  }
+
+  /**
+   * 누적리스트의 **읽음 체크** 스크립트 (버전 마커 있음).
+   *
+   * ★★ 왜 마커를 달았나 (2026-08-18 실측 결함) — 이 스크립트는 종전에 `_buildPageRaw`
+   *   본문에 그냥 박혀 있었다. 그런데 배포 페이지는 **증분 패처**가 만든다:
+   *   `_buildPageRaw` 는 index.html 이 아예 없을 때만 돌고, 있으면 카드·표만 패치한다.
+   *   그래서 이 스크립트를 고쳐도 **배포본에는 영원히 안 들어간다.**
+   *   실측(커밋 542cfd2): 저장소 코드에는 `output/read_state.json` PUT 이 있는데
+   *   배포된 세 페이지에는 그 코드가 **없었다**(`grep -c read_state.json` → 0 0 0).
+   *   읽음을 아무리 눌러도 러너는 못 보고, 다른 브라우저에도 안 넘어갔다.
+   *   → `ONDEMAND_WIDGET`·`CURATION_BLOCK` 과 같은 규칙으로 바꾼다: 마커 + 교체.
+   *   **문구·동작을 고치면 반드시 버전을 올려라.** 안 올리면 교체가 안 된다.
+   */
+  _readScript() {
+    return `<!-- READBTN v1 -->
 <script>
 (function(){var K='tr_read_v1';var s;try{s=JSON.parse(localStorage.getItem(K))||{};}catch(e){s={};}
-// ★ 읽음은 이제 **저장소에도** 올린다. localStorage 에만 두면 리포트를 만드는 러너가
+// ★ 읽음은 **저장소에도** 올린다. localStorage 에만 두면 리포트를 만드는 러너가
 // 이걸 못 봐서 "몇 개 안 읽었다" 를 넣을 수 없다. localStorage 는 오프라인 캐시로 남긴다 —
 // 커밋이 실패해도 화면 표시는 즉시 되고, 다음 성공 때 함께 올라간다.
-var OWNER='${this.owner ?? 'njell85-spec'}',REPO='${this.repo ?? 'trend-review'}',PATH='output/read_state.json',pend=false;
+var OWNER='${this.owner ?? 'njell85-spec'}',REPO='${this.repo ?? 'trend-review'}',PATH='output/read_state.json',pend=false,dirty=false;
 function tok(){return localStorage.getItem('tr_pat');}
 function ymd(){var d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);}
 function push(){
   var t=tok(); if(!t){return;}            // 토큰이 없으면 화면 표시만 하고 조용히 넘어간다
-  if(pend){return;} pend=true;
+  // ★ 전송 중에 또 누르면 **그 변경을 기억해 뒀다가** 끝난 뒤 한 번 더 보낸다.
+  //   종전에는 그냥 return 이라, 첫 PUT 이 도는 동안 체크한 것들이 저장소에 영영 안 갔다
+  //   (localStorage 에만 남아 화면만 맞았다). 연달아 누르는 것이 정상 사용이라 흔했다.
+  if(pend){dirty=true;return;} pend=true; dirty=false;
   var url='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/'+PATH;
   var H={Authorization:'Bearer '+t,Accept:'application/vnd.github+json'};
   fetch(url,{headers:H}).then(function(r){return r.ok?r.json():{};}).then(function(cur){
@@ -1275,15 +1310,32 @@ function push(){
     var body={message:'chore(read): 읽음 상태 갱신',content:btoa(unescape(encodeURIComponent(
       JSON.stringify({schemaVersion:1,items:items},null,2)))),sha:cur.sha};
     return fetch(url,{method:'PUT',headers:H,body:JSON.stringify(body)});
-  }).catch(function(){}).then(function(){pend=false;});
+  }).catch(function(){}).then(function(){pend=false; if(dirty){push();}});
 }
 document.querySelectorAll('.readcb').forEach(function(cb){var id=cb.dataset.pmid;var tr=cb.closest('tr');
 if(s[id]){cb.checked=true;tr.classList.add('is-read');}
 cb.addEventListener('change',function(){s[id]=cb.checked;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}
 tr.classList.toggle('is-read',cb.checked);push();});});})();
 </script>
-</body>
-</html>`;
+<!-- /READBTN -->`;
+  }
+
+  /**
+   * 배포 페이지에 읽음 스크립트를 보장(멱등) — 구버전이면 교체, 없으면 주입.
+   * ★ 마커 없이 박혀 있던 **구판 스크립트**(`var K='tr_read_v1'` 로 시작하는 것)도
+   *   찾아서 걷어낸다. 안 걷으면 같은 페이지에 스크립트가 둘 붙어 이벤트가 두 번 돈다.
+   */
+  _ensureReadScript(html) {
+    const block = this._readScript();
+    const currentMarker = block.match(/<!-- READBTN v\d+ -->/)[0];
+    if (html.includes(currentMarker)) return html;
+    const marked = /<!-- READBTN(?: v\d+)? -->[\s\S]*?<!-- \/READBTN -->/;
+    if (marked.test(html)) return html.replace(marked, () => block);
+    // 마커 없는 구판 — 여는 <script> 부터 짝 닫는 </script> 까지.
+    const legacy = /<script>\s*\(function\(\)\{var K='tr_read_v1'[\s\S]*?<\/script>/;
+    if (legacy.test(html)) return html.replace(legacy, () => block);
+    if (html.includes('</body>')) return html.replace('</body>', () => `${block}\n</body>`);
+    return html;
   }
 
   // ── git push ────────────────────────────────────────────────────────────────
@@ -1511,10 +1563,12 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       }
       // 통계 갱신 — 분석일수는 데일리(날짜 키) 섹션만 센다. 수동 지정 섹션
       // (SECTION:YYYY-MM-DD-m-pmid)은 "하루 1편 카운트 밖의 예외"이므로 제외한다.
+      // ★ 카운트는 페이지당 하나다 (PeterJ 확정 2026-08-18). 분석일수 칸은 없앴다 —
+      //   하루 1편이라 두 숫자가 같은 것을 두 번 말하고 있었다. 날짜 섹션 수는 카드가
+      //   하나도 없을 때의 폴백으로만 남긴다.
       const dayCount = (body.match(/<!-- SECTION:\d{4}-\d{2}-\d{2} -->/g) ?? []).length;
       const paperCount = (body.match(/class="paper-card"/g) ?? []).length || dayCount;
       body = body
-        .replace(/<div class="n stat-days-count">[^<]*<\/div>/, `<div class="n stat-days-count">${dayCount}</div>`)
         .replace(/<span class="stat-updated-time">[^<]*<\/span>/, `<span class="stat-updated-time">${generatedAt}</span>`)
         .replace(/<div class="n stat-papers-count">[^<]*<\/div>/, `<div class="n stat-papers-count">${paperCount}</div>`)
         .replace(/<span class="at-count">[^<]*<\/span>/, `<span class="at-count">${paperCount}편</span>`);
@@ -1530,6 +1584,9 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
     try { curationState = await loadCurationState(path.join(this._repoPath, 'output', 'curation_state.json')); } catch { /* 소프트 */ }
     updated = this._applyCuration(updated, curationState);
     updated = await this._ensureArchiveStatus(updated);
+    // 읽음 스크립트도 마커 기반으로 보장한다 — 종전에는 본문에 박혀 있어 배포본이
+    // 영원히 구판이었다(실측: 배포 3페이지에 read_state.json PUT 이 아예 없었다).
+    updated = this._ensureReadScript(updated);
 
     // 두 페이지로 가른다. 스캐폴드가 아니면 split 이 guidelines=null 을 돌려주고
     // index 만 종전대로 기록된다(소프트 — 분할 실패가 데일리를 막지 않는다).

@@ -36,14 +36,22 @@ for (const tier of ['top_general', 'em_ccm_flagship', 'specialty']) {
 // 정본 표기·옛 표현 검사 대상 = 사용자에게 스펙 설명 문구를 노출하는 채널.
 // NotificationAgent 는 이메일 렌더 제거 후 Drive 업로드 전용(노출 문구 없음)이라 제외.
 // 발행 채널은 GitHubPublisher(Pages) + index.html(배포 산출물).
-// ── 1) 정본 표기 존재 (REPORT_SPEC §1·§3·§4: 180일·300편·1편) ────────────────
+// ── 1) 정본 표기 존재 (REPORT_SPEC §3·§4: 1편/일) ────────────────────────────
 // index.html 포함 — 배포 산출물은 증분 패치되므로 헤더가 독자 드리프트 가능.
+//
+// ★ 2026-08-18 — "180일"·"300편" 을 **이 목록에서 뺐다** (PeterJ 확정:
+//   *"180일 300편 스크리닝 저 문구는 이제 옛말이니 수정하든 삭제하든 해라"*).
+//   두 숫자는 **논문 트랙 수집 설정으로는 여전히 사실**이고 REPORT_SPEC §1 표에 남아
+//   있다. 옛말이 된 것은 **화면이 그것을 선정 방식의 전부인 양 말하는 것**이다 —
+//   지금은 3트랙이고, 가이드라인·리뷰는 2년치 풀에서 LLM 판정으로 꺼내며, 논문도
+//   점수 → Opus 재정렬의 3층이다. 화면 문구를 강제하던 검사가 오히려 정정을 막고 있었다.
+//   ★ 코드 설정값이 바뀌는 것은 여전히 막아야 한다 — 그것은 아래 3)의 설정 검사 몫이다.
 for (const [name, src] of [
   ['src/utils/GitHubPublisher.js', pub],
   ['index.html', idx],
 ]) {
-  for (const token of ['180일', '300편', '1편']) {
-    if (!src.includes(token)) errors.push(`${name}: 정본 표기 "${token}" 누락 (REPORT_SPEC §1/§3/§4)`);
+  for (const token of ['1편']) {
+    if (!src.includes(token)) errors.push(`${name}: 정본 표기 "${token}" 누락 (REPORT_SPEC §3/§4)`);
   }
 }
 

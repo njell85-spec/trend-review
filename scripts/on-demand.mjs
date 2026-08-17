@@ -132,7 +132,7 @@ if (kind === REVIEW_KIND) {
   };
   // ★ 큐에서 빼고 published 로 옮긴다. 안 그러면 **며칠 뒤 데일리가 같은 것을 또 낸다** —
   //   ▶ 는 "지금 이것을 내보낸다" 이지 "한 번 더 낸다" 가 아니다.
-  const moved = await consumeReviewQueue(pmid, todayKST, review);
+  const moved = await consumeTrackQueue('output/queue_reviews.json', pmid, todayKST, review);
   console.log(moved ? `· 리뷰 큐에서 소진 처리: ${pmid}` : `· 리뷰 큐에 없던 항목이다(직접 지정) — 큐는 그대로`);
   const published = await publisher.publish(todayKST, [], { review });
   pagesUrl = `${String(published).replace(/\/?$/, '/')}reviews.html`;
@@ -150,10 +150,17 @@ if (kind === REVIEW_KIND) {
     pmid, title: article.title, date: todayKST,
     ...(webMode ? { sourceUrl: enriched.sourceUrl, sourceId: enriched.sourceId } : {}),
   });
+  // ★ 예정리스트에서 ▶ 로 올린 지침이면 큐에서 뺀다 — 안 그러면 방금 발행한 것이
+  //   예정리스트 맨 위에 그대로 남고, 다음 데일리가 같은 것을 또 낸다.
+  if (!isRef) {
+    const dropped = await dropFromGuidelineQueue(pmid, todayKST);
+    console.log(dropped ? `· 가이드라인 큐에서 소진 처리: ${pmid}` : '· 가이드라인 큐에 없던 항목이다(직접 지정) — 큐는 그대로');
+  }
   const published = await publisher.publish(todayKST, [], { guideline: card, manual: true });
-  // 가이드·기타 카드는 사이트 루트(index.html)가 아니라 guidelines.html 에 실린다(§4-H).
-  // 루트로 안내하면 방금 만든 카드가 없는 페이지를 열게 된다.
-  pagesUrl = `${String(published).replace(/\/?$/, '/')}guidelines.html`;
+  // 가이드 카드는 guidelines.html, **참고자료 카드는 reviews.html('기타 자료')** 에 실린다.
+  // ★ 종전에는 둘 다 guidelines.html 로 안내했다 — 참고자료를 넣으면 텔레그램 링크가
+  //   방금 만든 카드가 **없는** 페이지를 열었다(pageSplit 이 reference 를 reviews 로 보낸다).
+  pagesUrl = `${String(published).replace(/\/?$/, '/')}${isRef ? 'reviews' : 'guidelines'}.html`;
   notifyPaper = { title_ko: card.title_ko, paper: { title: article.title, journal: article.journal, pmid } };
 } else {
   const [analysis] = await new FilterAnalyzerAgent().analyzePico([enriched]);
@@ -167,6 +174,12 @@ if (kind === REVIEW_KIND) {
     pmid, title: article.title, date: todayKST,
     topic: analysis.scoringData?.primaryTopic ?? null,
   });
+  // ★ 예정리스트에서 ▶ 로 올린 논문이면 큐에서 뺀다. 발행 장부(selected_papers.json)에
+  //   적는 것만으로는 **큐가 그대로 남아** 예정리스트가 방금 나간 논문을 계속 보여준다.
+  const movedPaper = await consumeTrackQueue('output/queue_papers.json', pmid, todayKST, {
+    title: article.title, journal: article.journal,
+  });
+  console.log(movedPaper ? `· 논문 큐에서 소진 처리: ${pmid}` : '· 논문 큐에 없던 항목이다(직접 지정) — 큐는 그대로');
   pagesUrl = await publisher.publish(todayKST, [analysis], { manual: true });
   notifyPaper = analysis;
 
@@ -192,14 +205,20 @@ try {
 
 /** 제외목록에 추가(중복 자동선정 방지) — publish() 전에 호출해 publisher 커밋에 포함시킨다 */
 /**
- * 리뷰 큐에서 해당 pmid 를 빼 `published` 로 옮긴다.
+ * 트랙 큐에서 해당 pmid 를 빼 `published` 로 옮긴다.
  * 큐에 없으면(직접 지정으로 아무 PMID 나 넣은 경우) 아무 것도 하지 않고 false.
- * 데일리 `_stageReview` 가 쓰는 것과 같은 상태 파일·같은 모양이다.
+ * 데일리(`_stageReview` · `_saveTrack1Queue`)가 쓰는 것과 같은 상태 파일·같은 모양이다.
+ *
+ * ★★ 2026-08-18 — 종전에는 **리뷰 전용**이었다. ▶ 가 논문·가이드라인에서 눌렸을 때는
+ *   분석·발행만 하고 큐를 그대로 뒀고, 그래서 **방금 발행한 것이 예정리스트 맨 위에
+ *   그대로 남았다**(실측: PMID 41188988 이 이미 발행됐는데 예정리스트 1번).
+ *   버튼은 "지금 이것을 내보낸다" 라고 말하는데 화면은 "다음에 나갈 것" 이라고 말한다 —
+ *   버튼의 자기 설명과 실제 동작이 어긋나는, 이 저장소의 단골 부류다.
  */
-async function consumeReviewQueue(targetPmid, todayStr, published) {
+async function consumeTrackQueue(rel, targetPmid, todayStr, published) {
   const key = String(targetPmid ?? '').trim();
   if (!key) return false;
-  const file = path.join(process.cwd(), 'output/queue_reviews.json');
+  const file = path.join(process.cwd(), rel);
   let state;
   try { state = JSON.parse(await readFile(file, 'utf8')); } catch { return false; }
   const queue = Array.isArray(state.queue) ? state.queue : [];
@@ -212,6 +231,25 @@ async function consumeReviewQueue(targetPmid, todayStr, published) {
     updatedAt: todayStr,
   };
   await writeFile(file, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
+  return true;
+}
+
+/**
+ * 가이드라인 큐(선정 장부 v2)에서 해당 pmid 를 뺀다.
+ * `appendManualEntry` 가 `published` 에 넣는 것과 짝이다 — 그것만으로는 **큐에 그대로
+ * 남아** 예정리스트가 이미 나간 지침을 계속 보여준다. 상태 파일이 v1(배열)이면 큐가
+ * 없으므로 할 일이 없다.
+ */
+async function dropFromGuidelineQueue(targetPmid, todayStr) {
+  const key = String(targetPmid ?? '').trim();
+  if (!key) return false;
+  const file = path.join(process.cwd(), 'output/selected_guidelines.json');
+  let state;
+  try { state = JSON.parse(await readFile(file, 'utf8')); } catch { return false; }
+  if (!state || Array.isArray(state) || !Array.isArray(state.queue)) return false;
+  const next = state.queue.filter((x) => String(x?.pmid ?? '') !== key);
+  if (next.length === state.queue.length) return false;
+  await writeFile(file, `${JSON.stringify({ ...state, queue: next, updatedAt: todayStr }, null, 2)}\n`, 'utf8');
   return true;
 }
 

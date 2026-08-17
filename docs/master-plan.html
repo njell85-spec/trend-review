@@ -347,12 +347,55 @@
     border-radius:999px; background:rgba(255,255,255,.10);
     border:1px solid rgba(255,255,255,.18); color:inherit; }
   .exp-bar .hint{ font-size:12px; opacity:.7; align-self:center; }
+
+  /* ── v34: 도입 "이게 어떻게 돌아가나" — 새 클래스만 추가, 기존 규칙 무변경 ── */
+  .how{ margin-top:18px; position:relative;
+    background:var(--surface); border:1px solid var(--glass-edge); border-radius:26px;
+    padding:18px 18px 16px; box-shadow:var(--shadow);
+    -webkit-backdrop-filter:blur(26px) saturate(1.35); backdrop-filter:blur(26px) saturate(1.35); }
+  .how::before{ content:""; position:absolute; inset:0 0 62% 0; border-radius:26px 26px 40px 40px;
+    pointer-events:none; background:linear-gradient(180deg,rgba(255,255,255,.5),transparent); }
+  .how > *{ position:relative; }
+  .how .ht0{ font-size:17px; font-weight:800; letter-spacing:-.015em; color:var(--ink); margin:0; }
+  .how .hsub{ font-size:12px; color:var(--faint); margin:3px 0 10px; }
+  .how p.lead{ margin:0 0 4px; font-size:13.5px; color:var(--muted); line-height:1.7; max-width:62ch; }
+  .how p.lead b{ color:var(--ink); }
+  .how .hgap{ margin:14px 0 8px; font-size:13px; font-weight:750; color:var(--ink); }
+  /* 흐름 다이어그램 (인라인 SVG) */
+  .how svg{ display:block; width:100%; height:auto; max-width:430px; margin:12px auto 2px; }
+  .how .fbox{ fill:rgba(255,255,255,.62); stroke:rgba(139,133,128,.35); }
+  .how .fhum{ fill:none; stroke:var(--faint); stroke-dasharray:4 4; }
+  .how .ft1{ fill:var(--ink); font-size:12px; font-weight:700; }
+  .how .ft2{ fill:var(--muted); font-size:10.5px; }
+  .how .fln{ stroke:var(--faint); stroke-width:1.3; fill:none; marker-end:url(#mpArr); }
+  .how .flc{ stroke:var(--faint); stroke-width:1.3; fill:none; }
+  .how .farr{ fill:var(--faint); }
+  .how .fb1{ fill:var(--cc-bg); stroke:var(--cc); } .how .fk1{ fill:var(--cc); font-size:12px; font-weight:800; }
+  .how .fb2{ fill:var(--cf-bg); stroke:var(--cf); } .how .fk2{ fill:var(--cf); font-size:12px; font-weight:800; }
+  .how .fb3{ fill:var(--ds-bg); stroke:var(--ds); } .how .fk3{ fill:var(--ds); font-size:12px; font-weight:800; }
+  /* 트랙 비교 카드 — 폰에서 세로 3장, 넓으면 가로 3열 (가로 스크롤 없음) */
+  .how-tracks{ display:grid; grid-template-columns:1fr; gap:10px; margin:0 0 2px; }
+  @media(min-width:720px){ .how-tracks{ grid-template-columns:repeat(3,1fr); } }
+  .htc{ border-radius:16px; padding:11px 13px; background:rgba(255,255,255,.5);
+    border:1px solid var(--glass-edge); border-left:4px solid var(--c); }
+  .htc.t1{ --c:var(--cc); } .htc.t2{ --c:var(--cf); } .htc.t3{ --c:var(--ds); }
+  .htc .tn{ font-size:13.5px; font-weight:800; color:var(--c); margin:0; }
+  .htc .tw{ font-size:11.5px; color:var(--faint); margin:1px 0 4px; }
+  .htc p{ margin:6px 0 0; font-size:12.5px; line-height:1.65; color:var(--muted); }
+  .htc p b{ color:var(--ink); }
+  /* 리스트 3종 */
+  .how-lists{ display:flex; flex-direction:column; gap:7px; margin:0 0 2px; }
+  .hl{ font-size:12.5px; color:var(--muted); line-height:1.6;
+    background:rgba(255,255,255,.45); border:1px solid var(--glass-edge); border-radius:12px; padding:8px 12px; }
+  .hl b{ color:var(--ink); font-weight:750; }
+  .how details.grp p{ margin:8px 4px 2px; font-size:12.5px; color:var(--muted); line-height:1.65; }
+  .how details.grp p b{ color:var(--ink); }
 </style>
 
 <div class="wrap">
 
   <div class="hero">
-    <h1>TR master plan <span class="vpill">v33</span></h1>
+    <h1>TR master plan <span class="vpill">v34</span></h1>
     <div class="navlinks">
       <a href="https://njell85-spec.github.io/trend-review/">📊 대시보드(리포트 페이지)</a>
       <a href="https://github.com/njell85-spec/trend-review">GitHub</a>
@@ -362,6 +405,93 @@
     </div>
     <p class="ph">Phase 1 → 4 · Curate &amp; Brief · Archive · Produce · Publish</p>
   </div>
+
+  <!-- v34: 도입 — 이게 어떻게 돌아가나 (처음 보는 사람용) -->
+  <section class="how" id="how">
+    <p class="ht0">이게 어떻게 돌아가나</p>
+    <p class="hsub">처음 보는 사람용 1분 요약 — 세부는 아래 PHASE 1~4 에 있다.</p>
+    <p class="lead">매일 새벽(한국 시각 06:30) <b>GitHub Actions</b>(깃허브가 정해진 시각에 코드를 대신 돌려 주는 장치)가 자동으로 돈다. <b>PubMed</b>(의학 논문 검색 사이트)를 뒤져 읽을 것을 고르고 → <b>Claude Opus</b>(AI)가 분석하고 → 웹페이지에 카드로 올리고 → 텔레그램으로 알린다. 사람이 할 일은 <b>읽는 것</b>과, 마음에 안 드는 것을 <b>🗑 로 빼는 것</b>뿐이다.</p>
+    <svg viewBox="0 0 360 436" role="img" aria-label="매일 자동 흐름: 수집, 세 트랙으로 나눠 고르기, 분석, 발행, 텔레그램 알림, 사람은 읽고 빼기만 한다">
+      <defs><marker id="mpArr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="farr" d="M0 0L8 4L0 8Z"/></marker></defs>
+      <rect class="fbox" x="70" y="4" width="220" height="28" rx="14"/>
+      <text class="ft1" x="180" y="22" text-anchor="middle">매일 새벽 6:30 자동 시작</text>
+      <line class="fln" x1="180" y1="32" x2="180" y2="44"/>
+      <rect class="fbox" x="45" y="48" width="270" height="46" rx="12"/>
+      <text class="ft1" x="180" y="67" text-anchor="middle">수집 — PubMed 를 뒤진다</text>
+      <text class="ft2" x="180" y="84" text-anchor="middle">관심 주제로 후보를 긁어모은다</text>
+      <polyline class="flc" points="180,94 180,103"/>
+      <polyline class="flc" points="62,103 298,103"/>
+      <line class="fln" x1="62" y1="103" x2="62" y2="115"/>
+      <line class="fln" x1="180" y1="103" x2="180" y2="115"/>
+      <line class="fln" x1="298" y1="103" x2="298" y2="115"/>
+      <rect class="fb1" x="8" y="119" width="108" height="76" rx="12"/>
+      <text class="fk1" x="62" y="138" text-anchor="middle">① 논문</text>
+      <text class="ft2" x="62" y="155" text-anchor="middle">새 임상 연구</text>
+      <text class="ft2" x="62" y="170" text-anchor="middle">점수+AI 재정렬</text>
+      <text class="ft2" x="62" y="185" text-anchor="middle">하루 1편</text>
+      <rect class="fb2" x="126" y="119" width="108" height="76" rx="12"/>
+      <text class="fk2" x="180" y="138" text-anchor="middle">② 가이드라인</text>
+      <text class="ft2" x="180" y="155" text-anchor="middle">2년치 미리 수집</text>
+      <text class="ft2" x="180" y="170" text-anchor="middle">미국·유럽·한국만</text>
+      <text class="ft2" x="180" y="185" text-anchor="middle">AI 10점 판정</text>
+      <rect class="fb3" x="244" y="119" width="108" height="76" rx="12"/>
+      <text class="fk3" x="298" y="138" text-anchor="middle">③ 리뷰</text>
+      <text class="ft2" x="298" y="155" text-anchor="middle">주요 저널 종설</text>
+      <text class="ft2" x="298" y="170" text-anchor="middle">리뷰 전용 판정</text>
+      <text class="ft2" x="298" y="185" text-anchor="middle">쌓아 두고 꺼냄</text>
+      <polyline class="flc" points="62,195 62,204"/>
+      <polyline class="flc" points="180,195 180,204"/>
+      <polyline class="flc" points="298,195 298,204"/>
+      <polyline class="flc" points="62,204 298,204"/>
+      <line class="fln" x1="180" y1="204" x2="180" y2="216"/>
+      <rect class="fbox" x="45" y="218" width="270" height="46" rx="12"/>
+      <text class="ft1" x="180" y="237" text-anchor="middle">분석 — Claude Opus(AI)가 쓴다</text>
+      <text class="ft2" x="180" y="254" text-anchor="middle">논문 PICO · 지침 변경점 · 리뷰 번역</text>
+      <line class="fln" x1="180" y1="264" x2="180" y2="276"/>
+      <rect class="fbox" x="45" y="278" width="270" height="46" rx="12"/>
+      <text class="ft1" x="180" y="297" text-anchor="middle">발행 — 웹페이지에 카드로</text>
+      <text class="ft2" x="180" y="314" text-anchor="middle">논문·가이드라인·리뷰 세 페이지</text>
+      <line class="fln" x1="180" y1="324" x2="180" y2="336"/>
+      <rect class="fbox" x="45" y="338" width="270" height="46" rx="12"/>
+      <text class="ft1" x="180" y="357" text-anchor="middle">알림 — 텔레그램으로 도착</text>
+      <text class="ft2" x="180" y="374" text-anchor="middle">폰에서 바로 확인</text>
+      <line class="fln" x1="180" y1="384" x2="180" y2="396"/>
+      <rect class="fhum" x="55" y="398" width="250" height="32" rx="16"/>
+      <text class="ft2" x="180" y="418" text-anchor="middle">사람: 읽는다 · 별로면 🗑 로 뺀다</text>
+    </svg>
+    <p class="hgap">세 갈래(트랙)로 나뉜다 — 성격이 달라, 고르는 법도 분석하는 법도 다르다.</p>
+    <div class="how-tracks">
+      <div class="htc t1">
+        <p class="tn">① 논문</p>
+        <p class="tw">갓 나온 임상 연구 → index.html</p>
+        <p><b>어떻게 고르나</b> — 최근 180일 PubMed 에서 관심 주제·저명 저널로 후보를 모아 점수를 매기고, 상위 후보를 <b>Opus 가 다시 읽어</b> "침상에서 쓸모 있는가" 로 재정렬한다 → <b>하루 1편</b>.</p>
+        <p><b>어떻게 분석하나</b> — <b>PICO</b>(임상 질문을 환자 P·중재 I·비교 C·결과 O 로 쪼개 읽는 틀): 임상 질문 / P·I·C·O / 핵심 결과 / 비평적 평가 / 임상 결론 · Practice Change. 수치는 초록·본문·레지스트리·확인된 권위 웹페이지에 <b>적힌 값만</b> 쓴다(추론 금지).</p>
+      </div>
+      <div class="htc t2">
+        <p class="tn">② 가이드라인</p>
+        <p class="tw">학회 진료지침 → guidelines.html</p>
+        <p><b>어떻게 고르나</b> — PubMed 출판유형(PT) 쿼리 + 제목 쿼리 + <b>질병명 188개</b> 주제축으로 2년치를 미리 모아 둔다 → 발표 기관이 미국·유럽·한국인 것만 → 소아 전용은 규칙으로 제외 → 4가지 축(형식·발행처·규범성·공식성) 중 2개 이상 → 점수 → <b>LLM(AI)이 "이 독자에게 값이 있나" 를 10점 만점으로 판정</b>, 6점 이상만 발행 대기.</p>
+        <p><b>어떻게 분석하나</b> — <b>실무 요약 + 이전 판과의 차이</b>: 무엇이 바뀌었는지(이전 권고 → 새 권고)를 축으로 잡는다.</p>
+      </div>
+      <div class="htc t3">
+        <p class="tn">③ 리뷰</p>
+        <p class="tw">주요 저널 종설 → reviews.html</p>
+        <p><b>어떻게 고르나</b> — 주요 저널(NEJM·JAMA·Lancet·BMJ·ICM·CCM)의 <b>종설</b>(한 주제를 통째로 정리해 주는 긴 리뷰 논문)을 모아 둔다 → <b>리뷰 전용 LLM 판정</b>으로 순위를 매긴다. 가이드라인 기준을 그대로 쓰면 전부 탈락한다 — 리뷰는 정의상 "지침이 아니다".</p>
+        <p><b>어떻게 분석하나</b> — <b>요약이 아니라 번역</b>: 원문의 절 순서를 그대로 따라 옮긴다. 원문을 못 구하면 웹에서 찾고, 그래도 못 구하면 "초록 범위만 옮겼다" 고 카드에 정직하게 적는다.</p>
+      </div>
+    </div>
+    <p class="hgap">화면에는 리스트가 셋 있다.</p>
+    <div class="how-lists">
+      <div class="hl"><b>예정리스트</b> — 페이지 맨 위. 앞으로 나갈 것들. ▶ 지금 발행 · 🗑 빼기 · 트랙 켜기/끄기.</div>
+      <div class="hl"><b>발행리스트</b> — 페이지 본문. 분석해서 올린 카드들. 오늘 것은 펼쳐져 있고 지난 것은 접혀 있다.</div>
+      <div class="hl"><b>누적리스트</b> — 페이지 아래. 지금까지 나간 것 전부의 표. 읽음 체크 · 🗑 삭제 · 🎬 자료화.</div>
+    </div>
+    <details class="grp"><summary>조금 더 — 왜 미리 모아 두나 · 뺀 것은 · 버튼은 어떻게 반영되나</summary>
+      <p><b>미리 모아 두는 이유</b> — 매일 새로 찾으면 그날 좋은 게 없을 때 빈손이다. 2년치를 미리 모아 쌓아 두고(현재 가이드라인 672건 · 리뷰 397건 · 논문 12건) 거기서 매일 꺼내 쓴다. 새로 나온 것은 얹기만 한다. 그래서 <b>"오늘 나올 게 없다" 가 없다.</b></p>
+      <p><b>뺀 것은 다시 안 온다</b> — 🗑 로 빼면 다시 뽑히지 않게 기록에 남는다. 실수로 뺀 것은 ▶ 로 되살린다.</p>
+      <p><b>버튼이 폰에서 바로 먹는 이유</b> — 사람이 손대는 자리는 브라우저에서 바로 GitHub 을 고친다. 버튼이 GitHub Actions 를 호출하거나 상태 파일을 직접 수정해서, 폰에서 눌러도 즉시 반영된다.</p>
+    </details>
+  </section>
 
   <div class="index">
     <a class="ibox p1" href="#ph1"><div class="pn">PHASE 1</div><div class="pt">Curate &amp; Brief</div><div class="pk">고르기·브리핑</div><span class="pstat">운영 중</span>
@@ -495,16 +625,17 @@
     <table>
       <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
       <tbody>
-        <tr><td class="v">v33</td><td class="d">2026-08-17</td><td><b>세 트랙이 각자 다른 분석·다른 셀렉으로 굴러가기 시작했다</b> — ① <b>2년 풀이 실제로 찼다</b>: 질병명 188개 주제축 + 30일×24조각 백필을 Actions 로 돌려 가이드라인 큐 <b>672건</b>(발행대기 255 · 격리 417), 리뷰 저수지 397건. "리스트가 비었다" 는 끝났다 — 데일리 월 30편 기준 가이드라인만 8개월분이다. ② <b>셀렉을 LLM 이 한다</b>(PeterJ 지시). 규칙 점수는 "권위 있는 최신 지침인가" 를 재고, 소아 전용·특정국 제도·침상 적용성은 못 가른다. 정렬 정본을 함수 하나로 모아 <b>발행 픽과 예고가 같은 순서를 본다</b>. 안 맞는 것은 <span class="mono">rejected</span> 가 아니라 <b>격리</b>다 — 영구 배제는 되돌릴 수 없다. ③ <b>★ 트랙마다 셀렉 기준이 다르다</b>: 가이드라인 프롬프트를 리뷰에 재사용하면 <b>397건이 전건 격리된다</b>(그 프롬프트가 "지침이 아닌 것" 을 0~2점으로 규정하고 리뷰 아티클은 정의상 전부 그렇다). 더 나쁜 것은 그 결과가 <b>"셀렉이 잘 걸렀다" 로 읽힌다</b>는 점이다 — 그래서 성공 판정에 <b>점수 분포가 퍼졌는지</b>를 넣었다(실측 6점 이상 256건). 기계(배치·전역 index·격리 정책)는 공유하고 <b>기준만 가른다</b>. ④ <b>세 트랙의 분석을 갈랐다</b>(PeterJ 확정): 논문은 종전 PICO 그대로, 가이드라인은 실무 요약 + 이전 버전 차이(실물 프롬프트가 이미 그걸 하고 있어 안 건드렸다), 리뷰는 <b>요약이 아니라 번역</b>이다. 리뷰 도구 스키마에서 요약·변경점 칸을 <b>아예 뺐다</b> — 도구에 자리가 없으면 모델이 흐를 데가 없어서 <b>프롬프트 문구보다 강한 장치</b>가 된다. 원문 확보가 어려우면 웹서치로 찾고, 못 찾았으면 <b>확보 수준(원문/웹보강/초록만)을 화면에 정직하게</b> 적는다. ⑤ <b>버튼들이 자기 설명과 반대로 동작하고 있었다</b>: 삭제를 연달아 누르면 앞엣것이 <b>조용히 취소</b>됐고(내 배치가 버튼과 같은 동시성 그룹을 썼다 — GitHub 은 그룹당 대기 1개만 유지한다), 생성 HTML 에 rebase 로 대응해 <b>남의 변경을 되돌렸고</b>, ▶ 는 승격한 항목을 <b>맨 뒤로 보냈다</b>(승격은 상태만 올리고 적합도 거부를 그대로 둬서 정렬이 바닥으로 내렸다 — 실측 258개 중 257·258위). <b>PR #118 의 수정을 같은 날 PR #120 이 조용히 되돌린 자리다.</b> ⑥ <b>삭제가 분석내용·배지까지 안 따라갔다</b> — PeterJ 가 28건을 지웠는데 아카이브 목록과 "지난 N건" 배지가 지우기 전 숫자를 말했다(카드·표는 정상이었다). 아카이브도 함께 지우게 뒤집고(<b>재선정 방지 목록은 별개 파일이라 유지</b> — 지운 논문이 다시 뽑히면 안 된다) 배지를 다시 세게 했다. ⑦ <b>같은 함정 두 번째</b>: 워크플로 <span class="mono">git add</span> 목록에 새로 쓰는 파일을 안 넣어 <b>러너에서는 고쳐지고 커밋만 안 되는데 push 가 성공으로 끝났다</b> — 화면은 맞아 보이고 <b>다음 데일리가 지운 항목을 되살린다</b>(하루 뒤에 되돌아오는 부류). 08-16 에 같은 자리에 빠져 장부에 적어 뒀는데 또 빠졌다 — 이번에는 <b>계약 검사로 잠갔다</b>. <b>교훈</b>: "마지막 자리" 라고 쓰기 전에 세어라(어제 "다섯 번째이자 마지막" 이 셋 중 하나였다) · 검증을 함수 직접 호출로 하면 <b>프로덕션 경로를 안 태운다</b> · 되돌릴 수 있는 조작도 <b>효과를 먼저 계산해 보면 고장이 드러난다</b>. 테스트 672 → <b>798</b>. PR <span class="mono">#118~#133</span>.</td></tr>
+        <tr><td class="v">v34</td><td class="d">2026-08-18</td><td><b>시작부에 "이게 어떻게 돌아가나" 도입 섹션 신설</b>(PeterJ 지시 08-17) — 처음 보는 사람이 1분에 구동 방식을 잡게 했다. 전체 흐름 SVG 다이어그램(수집 → 세 트랙으로 갈려 고르기 → 분석 → 발행 → 텔레그램 · 사람은 읽고 🗑 로 빼기만), 트랙별 <b>선정·분석 방식</b> 카드 3장(논문 = 점수+Opus 재정렬 → 하루 1편 · PICO / 가이드라인 = 2년치 풀 + 지역·소아 필터 + LLM 10점 판정 · 실무 요약+변경점 / 리뷰 = 전용 LLM 판정 · 요약이 아니라 번역), 리스트 3종 명칭(<b>예정리스트·발행리스트·누적리스트</b> — 08-18 확정 명칭) 정리. 세부(미리 모아 두는 이유·🗑 영구 기록·버튼의 GitHub 직접 조작)는 접힘. 위치는 히어로 바로 아래, 새 클래스만 추가 — <b>기존 본문·스타일 무변경</b>.</td></tr>
       </tbody>
     </table>
   </div>
   <details class="vlog">
-    <summary>이전 판 기록 20개 펼쳐 보기</summary>
+    <summary>이전 판 기록 21개 펼쳐 보기</summary>
     <div class="tablewrap">
       <table>
         <thead><tr><th>버전</th><th>날짜</th><th>내용</th></tr></thead>
         <tbody>
+        <tr><td class="v">v33</td><td class="d">2026-08-17</td><td><b>세 트랙이 각자 다른 분석·다른 셀렉으로 굴러가기 시작했다</b> — ① <b>2년 풀이 실제로 찼다</b>: 질병명 188개 주제축 + 30일×24조각 백필을 Actions 로 돌려 가이드라인 큐 <b>672건</b>(발행대기 255 · 격리 417), 리뷰 저수지 397건. "리스트가 비었다" 는 끝났다 — 데일리 월 30편 기준 가이드라인만 8개월분이다. ② <b>셀렉을 LLM 이 한다</b>(PeterJ 지시). 규칙 점수는 "권위 있는 최신 지침인가" 를 재고, 소아 전용·특정국 제도·침상 적용성은 못 가른다. 정렬 정본을 함수 하나로 모아 <b>발행 픽과 예고가 같은 순서를 본다</b>. 안 맞는 것은 <span class="mono">rejected</span> 가 아니라 <b>격리</b>다 — 영구 배제는 되돌릴 수 없다. ③ <b>★ 트랙마다 셀렉 기준이 다르다</b>: 가이드라인 프롬프트를 리뷰에 재사용하면 <b>397건이 전건 격리된다</b>(그 프롬프트가 "지침이 아닌 것" 을 0~2점으로 규정하고 리뷰 아티클은 정의상 전부 그렇다). 더 나쁜 것은 그 결과가 <b>"셀렉이 잘 걸렀다" 로 읽힌다</b>는 점이다 — 그래서 성공 판정에 <b>점수 분포가 퍼졌는지</b>를 넣었다(실측 6점 이상 256건). 기계(배치·전역 index·격리 정책)는 공유하고 <b>기준만 가른다</b>. ④ <b>세 트랙의 분석을 갈랐다</b>(PeterJ 확정): 논문은 종전 PICO 그대로, 가이드라인은 실무 요약 + 이전 버전 차이(실물 프롬프트가 이미 그걸 하고 있어 안 건드렸다), 리뷰는 <b>요약이 아니라 번역</b>이다. 리뷰 도구 스키마에서 요약·변경점 칸을 <b>아예 뺐다</b> — 도구에 자리가 없으면 모델이 흐를 데가 없어서 <b>프롬프트 문구보다 강한 장치</b>가 된다. 원문 확보가 어려우면 웹서치로 찾고, 못 찾았으면 <b>확보 수준(원문/웹보강/초록만)을 화면에 정직하게</b> 적는다. ⑤ <b>버튼들이 자기 설명과 반대로 동작하고 있었다</b>: 삭제를 연달아 누르면 앞엣것이 <b>조용히 취소</b>됐고(내 배치가 버튼과 같은 동시성 그룹을 썼다 — GitHub 은 그룹당 대기 1개만 유지한다), 생성 HTML 에 rebase 로 대응해 <b>남의 변경을 되돌렸고</b>, ▶ 는 승격한 항목을 <b>맨 뒤로 보냈다</b>(승격은 상태만 올리고 적합도 거부를 그대로 둬서 정렬이 바닥으로 내렸다 — 실측 258개 중 257·258위). <b>PR #118 의 수정을 같은 날 PR #120 이 조용히 되돌린 자리다.</b> ⑥ <b>삭제가 분석내용·배지까지 안 따라갔다</b> — PeterJ 가 28건을 지웠는데 아카이브 목록과 "지난 N건" 배지가 지우기 전 숫자를 말했다(카드·표는 정상이었다). 아카이브도 함께 지우게 뒤집고(<b>재선정 방지 목록은 별개 파일이라 유지</b> — 지운 논문이 다시 뽑히면 안 된다) 배지를 다시 세게 했다. ⑦ <b>같은 함정 두 번째</b>: 워크플로 <span class="mono">git add</span> 목록에 새로 쓰는 파일을 안 넣어 <b>러너에서는 고쳐지고 커밋만 안 되는데 push 가 성공으로 끝났다</b> — 화면은 맞아 보이고 <b>다음 데일리가 지운 항목을 되살린다</b>(하루 뒤에 되돌아오는 부류). 08-16 에 같은 자리에 빠져 장부에 적어 뒀는데 또 빠졌다 — 이번에는 <b>계약 검사로 잠갔다</b>. <b>교훈</b>: "마지막 자리" 라고 쓰기 전에 세어라(어제 "다섯 번째이자 마지막" 이 셋 중 하나였다) · 검증을 함수 직접 호출로 하면 <b>프로덕션 경로를 안 태운다</b> · 되돌릴 수 있는 조작도 <b>효과를 먼저 계산해 보면 고장이 드러난다</b>. 테스트 672 → <b>798</b>. PR <span class="mono">#118~#133</span>.</td></tr>
         <tr><td class="v">v32</td><td class="d">2026-08-17</td><td><b>배포 페이지 3분할 + 첫 실전 · 그리고 "버튼이 거짓말하고 있었다"</b> — ① <b>2 → 3 페이지</b>: 논문 / 가이드라인 / 리뷰·기타. 누적 리스트도 페이지별로 갈랐고 기타가 가이드라인 쪽에서 리뷰 쪽으로 옮겨갔다. 예고 리스트를 <b>각 페이지 맨 위</b>로 올리고 삭제·발행·토글 버튼을 그 안에 넣었다. 카드·예고·누적표를 <b>전부 접힘</b>으로 통일했고(오늘 논문 포함), 지난 카드는 한 겹 더 접었다. ② <b>트랙 주기를 4-A 로 확정</b>(PeterJ) — 세 트랙 전부 매일. 정본을 <span class="mono">trackCadence.js</span> 하나로 모아 <b>게이트와 예고가 같은 함수를 본다</b>. 순차진행 토글(논문→가이드라인→리뷰 하루 한 트랙, 기본 꺼짐)을 더했다. ③ <b>★★ 화면이 거짓말을 하고 있었다 — 실물 결함 5건 + 리뷰 발견 13건</b>. 배포된 예고 버튼이 <span class="mono">var OWNER=&#39;undefined&#39;</span> 로 <b>전부 죽어 있었고</b>, 버튼 3종은 받는 워크플로의 <b>입력 이름과 아예 달랐고</b>(▶ 는 422, ♻ 는 받는 코드 자체가 없었다), 트랙 on/off 토글은 <b>아무것도 막지 않았고</b>(mode 를 읽는 게이트가 리뷰 하나뿐이었다), 리뷰 트랙은 <b>화면에 아예 렌더되지 않았고</b>(큐만 소비), 예고는 가이드라인을 매일이라 그려놓고 게이트는 주 1회였다. ④ <b>치명 2건</b>: 표 행 삽입이 함수형 replacer 가 아니라 LLM 제목의 <span class="mono">$&amp;</span> 로 <b>페이지가 575KB → 1.37MB 로 폭발</b>했고(<span class="mono">esc()</span> 는 못 막는다), <span class="mono">reviews.html</span> 과 트랙 큐가 <b>git add 목록에 없었다</b> — 지난 세션이 큐 증발을 고치며 <span class="mono">.gitignore</span> 예외만 넣고 add 목록을 안 고쳤다. <b>예외는 추적 가능하게 만들 뿐 add 를 대신하지 않는다. 그런데 push 는 성공으로 끝난다.</b> ⑤ <b>죽은 손잡이를 지웠다</b> — <span class="mono">_guidelineDue()</span>/<span class="mono">guidelineIntervalDays</span> 는 확정 ④-D 로 이미 없앤 게이트인데 함수만 남아 있었고, <b>그 잔해가 문서와 다음 세션을 오진하게 만들었다</b>("큐가 6건뿐인 건 주 1회 게이트 때문" — 아니었다, 관찰 모드였다). ⑥ <b>PeterJ 요구 6건</b>(첫 실전 화면을 보고): 🗑 이 화면에 반영 안 되던 것(큐 제어가 페이지를 안 그렸다) · 예고도 접힘 · <b>다크모드에서 제목이 흰 바탕에 흰 글씨</b>(부모의 다크 규칙을 상속했는데 배경은 라이트 전용이다) · 제목 절단 제거(잘리면 삭제 판단이 불가능하다) · 검토함 제거 · <b>리뷰 아티클이 리뷰가 아니었다</b>(Delphi 합의문 — <span class="mono">Review[Publication Type]</span> 이 합의문·지침까지 포함한다. 저수지 398 중 64건을 거른다) · 리뷰에 <b>번역·정리 카드</b>를 붙였다(NEJM syncope 와 같은 경로). ⑦ <b>이 세션이 낸 실수 둘</b>: 스타일 상수에 백틱을 하나 넣어 <b>문자열이 boolean 이 됐고</b>(<span class="mono">node --check</span> 는 문법상 유효해서 통과한다) 배포 세 페이지의 스타일이 통째로 날아갔다. 무손실 테스트 픽스처로 <b>배포 실물</b>을 썼는데, 이미 기능이 적용된 결과물이라 <b>기능을 없애는 변이도 초록</b>이었다(코드리뷰가 잡았다). <b>배포 실물을 픽스처로 쓰지 마라.</b> ⑧ 첫 실전(08-17 06:30) 확인: 예고 정상 · <span class="mono">queue_papers</span> 13건 생존 · 리뷰 발행 · 카드 접힘. 테스트 590 → <b>672</b>. PR <span class="mono">#110 #111 #112 #114</span>.</td></tr>
         <tr><td class="v">v31</td><td class="d">2026-08-16</td><td><b>3트랙 체제 + 예비 큐·1주 예고·버튼 4종</b> — ① <b>세 트랙을 세웠다</b>: ①논문(최신동향·매일) ②가이드라인(진료지침) ③리뷰아티클(복습·주1회). 공급 성격이 달라 주기를 다르게 뒀다 — 논문은 매일 새로 오고, 가이드라인은 가뭄(30일 재생에서 발행 1건), 리뷰는 5년 창 <b>400편 저수지</b>라 마르지 않는다. ② <b>S1~S8 구현</b>: 매일 걷고 버리던 논문 풀 상위 14편 저장 · 리뷰 저수지 적재(연도 가중 ≤16.7% · 같은 저널 연속 3건 제한) · <b>1주 예고 렌더</b> · 버튼 4종(🗑삭제·▶구동·켜짐/꺼짐/격일·전체갈아엎기) · 리뷰 발행 arm · 읽음 서버화 · 텔레그램 진행상황+md 첨부 · md 아카이빙. 테스트 517 → 590. ③ <b>예고 날짜를 저장하지 않는다</b> — 큐 순서로 렌더 시점에 계산한다. 저장하면 삭제 한 번에 뒤 항목 전부의 날짜를 다시 써야 하는데, 계산으로 두면 <b>"지운 자리를 다음 항목이 물려받는다"(자동 충원)가 코드 없이 공짜</b>다. ④ <b>상태 파일을 쓰는 주체별로 갈랐다</b> — 큐는 러너, 온오프·읽음은 브라우저. 섞으면 데일리 커밋과 버튼 커밋이 충돌한다. 러너는 브라우저 파일을 <b>읽기만</b> 한다. 시각은 날짜까지만(public repo에 분 단위가 쌓이면 생활 패턴 시계열). ⑤ <b>트랙2 지역 필터</b> — 미국·유럽·한국 발표 기관만(PeterJ 확정). 판정 기준은 <b>발표 기관</b>이다 — 저널 발행국은 출판사 주소를 잡는다(Elsevier=네덜란드, BMJ=영국). ⑥ <b>★★ 배선 함정 9건 — 전부 "테스트는 초록인데 실제로는 안 도는" 부류</b>. 지역 판정 모듈이 파이프라인에 안 걸려 <b>브라질·일본 지침이 그대로 들어오고 있었고</b>(배선을 지워도 515건 초록), 예고 렌더도 아무도 안 불렀고, 배선하며 import 누락(<span class="mono">node --check</span> 통과 — ESM은 미정의 식별자를 파싱 때 못 잡는다), 데일리 진입점이 없는 지역 변수 참조, 하청 결과가 발행 장부를 안 봄, CSS 클래스명 불일치로 행 스타일이 통째로 안 먹음, <span class="mono">output/*</span>가 gitignore라 <b>저수지 400편이 매 실행 증발할 뻔</b>, 그리고 무손실 검사 자체가 두 군데서 헛돌고 있었다(전체 길이 비교 · 기준값이 0인 마커로 재기 → <span class="mono">0 &gt;= 0</span>이라 삭제 변이가 초록). <b>처방: 모듈을 만들면 그것을 실제로 부르는 경로를 호출하는 테스트를 같이 박고, 배선을 지우는 변이가 적색이 되는 것까지 확인한다.</b> ⑦ <b>테스트가 프로덕션을 오염시켰다</b> — 픽스처가 실제 큐에 들어가 배포 페이지 예고에 빈 줄로 떴다. 이제 테스트 중 <span class="mono">output/</span> 쓰기는 예외를 던진다. ⑧ 시장조사 실측(LLM 0): 관심주제 리뷰가 4종 주 0.8편 / <b>6종 주 1.6편(채택)</b> / 10종 주 3.7편. PR <span class="mono">#101 #102 #106 #107 #108</span>.</td></tr>
         <tr><td class="v">v30</td><td class="d">2026-08-14</td><td><b>수집 풀 실측 인프라 + arm E/F/G</b> — ① <b>PeterJ 안(월별 풀)을 구현했다</b>: 365일을 12구간으로 나눠 달마다 esummary 사전순위로 100편 → 월 top-K → LLM 1편. <span class="mono">E</span>(top10·풀120) / <span class="mono">F</span>(top3·풀36) / <span class="mono">G</span>(=<span class="mono">F</span> + 주제 쿨다운). <span class="mono">collectMonthlyPool()</span>은 2단 회수하고 날짜 절단을 점수 절단으로 바꿨다. <span class="mono">includeMonthlyPool</span> 기본값이 <span class="mono">false</span>라 <b>데일리 코어는 무영향</b>. ② <b>★ 실버그 — 120편 rerank가 조용히 작동하지 못하고 있었다</b>. <span class="mono">submit_paper_scores</span>는 편당 1엔트리라 출력이 풀에 비례한다(실측 20편 → 3,883 = 편당 194). 고정 상한 8,192는 42편이 한계여서 <span class="mono">max(8192, min(64000, 1000+240×풀))</span>로 바꿨고, argv 128KB 벽은 96KB 초과 시 stdin으로 넘긴다. ③ <b>재생 결과 — F는 A보다 확실히 낫다</b>: 빈손 13/30 → 0. A가 고른 17편 중 8편(47%)이 EM/CCM 코어 밖이었다(교육 콘텐츠 평가 · 지질 역학 · COPD 사망률). E-F는 <b>30/30 결정적으로 동일</b>. ④ <b>★ 그러나 F를 그대로 켜면 안 된다 — 주제 쏠림 87%</b>. 30일 중 26일이 심정지(16) 아니면 기도·인공호흡(10), 저널 8종·최다 12편(<span class="mono">Resuscitation</span>)으로 관심주제 10그룹 중 2그룹만 나왔다. → <span class="mono">src/utils/topicCooldown.js</span> + arm <span class="mono">G</span>(5일·-2.0). <b>배제가 아니라 감점</b>이다. 참고로 <span class="mono">config/collection.json</span>의 <span class="mono">candidateTopicCap: 5</span>는 코드 어디서도 안 쓰는 죽은 설정이다. ⑤ <b>코덱스 하청 리뷰가 실버그 7건을 잡았다</b> — 그중 하나는 <b>검증 방식의 결함</b>이었다: <span class="mono">education</span> 통패턴이 <span class="mono">Patient education and counseling</span>까지 영구 배제했는데, "정상 임상지 47종 오탐 0"이라고 보고할 때 그 47종을 스스로 골랐다. <b>자기가 고른 목록으로 자기를 검증하면 샌다.</b> 구체 패턴 6종으로 좁히고 반례를 테스트로 박았다. 나머지는 월 경계 중복(양끝 포함 → 반개구간) · <span class="mono">screenDepth</span> 절단이 조용했던 것 · 월 top-K 뒤에 배제를 걸던 순서 오류 · <span class="mono">armDivergence</span>가 수만 비교 · "같은 논문을 고른 날" 지표 오보 · E2BIG 임계가 문자 수(→바이트). ⑥ <b>저널 IF 표기</b> — <span class="mono">journals.json</span>에 <span class="mono">impactFactors</span> 57종(통상 알려진 근사치, 대략 2023 JCR). <span class="mono">src/utils/journalMeta.js</span> 조회, 리포트 본문·표·발행 카드 4곳. <b>모르는 저널은 안 찍는다.</b> ⑦ <b>미해결 — 재생 생존자 편향</b>: 코퍼스가 월별 상위 100편만 보존해 <b>저널 품질은 부풀려지고(깎아 봐야 한다), 채움률 30/30은 오히려 보수적인 값</b>이다. A는 매일 새로 걷으므로 이 편향이 없다 — A의 13일 빈손은 진짜다. PR <span class="mono">#84</span>.</td></tr>

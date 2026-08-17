@@ -98,12 +98,23 @@ function recountPastFold(html) {
   );
 }
 
-/** 통계 재계산 — publisher의 카운트 규칙과 동일(데일리 섹션만 일수로 센다). */
+/**
+ * 통계 재계산 — publisher의 카운트 규칙과 동일.
+ *
+ * ★ 2026-08-18 (PeterJ 확정) — 카운트는 **페이지당 하나**다. `stat-days-count`(분석일수)
+ *   칸은 없앴다. 다만 **이미 배포된 페이지에는 아직 그 칸이 남아 있을 수 있으므로**
+ *   여기서 걷어낸다 — 안 걷으면 삭제 버튼을 누른 페이지만 옛 3칸으로 남는다.
+ *   (칸 구성을 다시 그리는 정본은 `pageSplit`. 여기는 그 사이의 배포본을 맞춰 주는 자리다.)
+ */
 export function recountStats(html) {
   const dayCount = (html.match(/<!-- SECTION:\d{4}-\d{2}-\d{2} -->/g) ?? []).length;
   const paperCount = (html.match(/class="paper-card"/g) ?? []).length || dayCount;
   return recountPastFold(html)
-    .replace(/<div class="n stat-days-count">[^<]*<\/div>/, `<div class="n stat-days-count">${dayCount}</div>`)
+    // 구판 잔재 제거 — 분석일수 칸 하나를 통째로. 두 모양을 다 본다:
+    //   ⓐ 배포본의 실제 모양(`.sc` 카드로 감싸인 것)  ⓑ 감싸지 않은 맨 div
+    // ⓑ 를 남기면 "칸은 사라졌는데 숫자만 떠 있는" 화면이 된다.
+    .replace(/\s*<div class="sc"><div class="n stat-days-count">[^<]*<\/div><div class="l">[^<]*<\/div><\/div>/, '')
+    .replace(/\s*<div class="n stat-days-count">[^<]*<\/div>/, '')
     .replace(/<div class="n stat-papers-count">[^<]*<\/div>/, `<div class="n stat-papers-count">${paperCount}</div>`)
     .replace(/<span class="at-count">[^<]*<\/span>/, `<span class="at-count">${paperCount}편</span>`);
 }
@@ -114,7 +125,7 @@ export function recountStats(html) {
  * 올릴 것 — 안 올리면 증분 패치되는 배포 페이지에 영원히 반영되지 않는다.
  */
 export function curationBlock({ owner, repo }) {
-  return `<!-- CURATION_BLOCK v7 -->
+  return `<!-- CURATION_BLOCK v8 -->
 <script>
 (function(){
   var OWNER='${owner}', REPO='${repo}';
@@ -183,7 +194,7 @@ export function curationBlock({ owner, repo }) {
   }
   function onRemove(info,pmid,hideEls){
     if(!info){alert('\\uC139\\uC158 \\uD0A4\\uB97C \\uCC3E\\uC9C0 \\uBABB\\uD588\\uC2B5\\uB2C8\\uB2E4.');return;}
-    if(!confirm('\\uC774 \\uD56D\\uBAA9\\uC744 \\uC0AD\\uC81C\\uD560\\uAE4C\\uC694?\\n\\uCE74\\uB4DC\\u00B7\\uB204\\uC801 \\uB9AC\\uC2A4\\uD2B8\\u00B7\\uBD84\\uC11D\\uB0B4\\uC6A9\\uC774 \\uD568\\uAED8 \\uC9C0\\uC6CC\\uC9D1\\uB2C8\\uB2E4.\\n(\\uC7AC\\uC120\\uC815 \\uBC29\\uC9C0 \\uBAA9\\uB85D\\uC740 \\uC720\\uC9C0 \\u2014 \\uB2E4\\uC2DC \\uBF51\\uD788\\uC9C0 \\uC54A\\uC2B5\\uB2C8\\uB2E4)'))return;
+    if(!confirm('\\uC774 \\uD56D\\uBAA9\\uC744 \\uC0AD\\uC81C\\uD560\\uAE4C\\uC694?\\n\\uCE74\\uB4DC\\u00B7\\uB204\\uC801\\uB9AC\\uC2A4\\uD2B8\\u00B7\\uBD84\\uC11D\\uB0B4\\uC6A9\\uC774 \\uD568\\uAED8 \\uC9C0\\uC6CC\\uC9D1\\uB2C8\\uB2E4.\\n(\\uC7AC\\uC120\\uC815 \\uBC29\\uC9C0 \\uBAA9\\uB85D\\uC740 \\uC720\\uC9C0 \\u2014 \\uB2E4\\uC2DC \\uBF51\\uD788\\uC9C0 \\uC54A\\uC2B5\\uB2C8\\uB2E4)'))return;
     dispatch('curate-remove.yml',{sectionKey:info.key,tag:info.tag,pmid:pmid},function(){
       hideEls.forEach(function(el){if(el)el.style.display='none';});
     });

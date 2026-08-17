@@ -488,28 +488,52 @@ export function splitPages(html, { refIds = null } = {}) {
     reviewRows: rows.review.length,
   };
 
-  // ── ① index.html (논문) ──
-  const indexOut =
-    withUpcoming(withNav(headRaw, pageNav('papers', counts)), 'papers') +
-    foldPast(sec.papers, '논문') +
-    archiveClose +
-    tableHtml('📚 논문 누적', rows.paper.length, '편', rows.paper.map((r) => markRow(r, 'paper'))) +
-    afterTable;
-
   // 히어로·탭·스타일·위젯을 그대로 재사용하는 것이 '대등한 병렬 페이지' 의 실체다.
-  // 통계 3칸만 자기 것으로 바꾼다. (stat-*-count 클래스는 index 전용이므로 떼어낸다 —
+  // 통계 칸만 자기 것으로 바꾼다. (stat-*-count 클래스는 index 전용이므로 떼어낸다 —
   // publish() 의 통계 갱신 정규식이 다른 페이지를 건드리지 않게.)
-  const statsBlock = (a, b) => `<div class="stats">
+  //
+  // ★★ 2026-08-18 (PeterJ 확정) — **페이지당 카운트 하나만** 남긴다.
+  //   *"분석일수·선정논문 이런 거 구분할 이유 없어서 페이지당 카운트 하나씩만.
+  //     최종 업데이트는 그대로."*
+  //   종전에는 index 가 [분석일수 · 선정 논문 · 최종 업데이트] 3칸이었는데 하루 1편이라
+  //   두 숫자가 사실상 같은 것을 두 번 말했고, 하위 페이지는 [트랙 수 · 누적 행 수] 로
+  //   또 다른 두 숫자를 말해 셋이 서로 안 맞아 보였다.
+  const statsBlock = (a) => `<div class="stats stats-2">
     <div class="sc"><div class="n">${a[1]}</div><div class="l">${a[0]}</div></div>
-    <div class="sc"><div class="n">${b[1]}</div><div class="l">${b[0]}</div></div>
     <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="g-updated">${extractUpdated(themed)}</span></div><div class="l">최종 업데이트</div></div>
+  </div>
+  <div class="archive">`;
+
+  // ★ index 통계도 **매 렌더 다시 그린다.** 종전에는 `_buildPageRaw` 가 처음 만들 때만
+  //   그리고 그 뒤로는 정규식으로 숫자만 갈아끼웠다 — 그래서 칸 **구성**을 바꿔도
+  //   이미 배포된 index.html 은 영원히 옛 3칸 그대로였다(증분 패처의 단골 함정).
+  //   여기서 다시 그리면 `apply-page-render.mjs` 한 번으로 배포본까지 따라온다.
+  //   `stat-papers-count` · `stat-updated-time` 클래스는 **계약**이다(삭제 경로의
+  //   `recountStats` 와 publish 의 갱신 정규식이 이 이름으로 찾는다) — 유지한다.
+  const indexStatsBlock = `<div class="stats stats-2">
+    <div class="sc"><div class="n stat-papers-count">${counts.papers}</div><div class="l">발행 논문</div></div>
+    <div class="sc"><div class="n" style="font-size:13px;line-height:1.3;padding-top:4px"><span class="stat-updated-time">${extractUpdated(themed)}</span></div><div class="l">최종 업데이트</div></div>
   </div>
   <div class="archive">`;
 
   // ⚠ 통계 교체는 **탭 주입 전**에 해야 한다 — 주입 후엔 `.stats` 뒤가 <nav> 라
   //   앵커(`<div class="archive">`)가 안 맞아 원본 카드가 남는다(미리보기에서 실측).
-  const gStatsRe = /<div class="stats">[\s\S]*?<\/div>\s*<div class="archive">/;
+  const gStatsRe = /<div class="stats[^"]*">[\s\S]*?<\/div>\s*<div class="archive">/;
   const headWith = (stats) => (gStatsRe.test(headRaw) ? headRaw.replace(gStatsRe, () => stats) : headRaw);
+
+  // ── ① index.html (논문) ──
+  // ★ index 부제도 다시 쓴다. "180일 · 300편 스크리닝 → 1편/일 선정" 은 **옛말**이다
+  //   (PeterJ 2026-08-18) — 지금은 2년치를 미리 모아 두고 3층 선정으로 꺼내 쓴다.
+  //   `retitle` 이 하위 페이지에만 걸려 있어서 index 만 옛 문구를 이고 있었다.
+  const indexHead = headWith(indexStatsBlock)
+    .replace(/(<div class="fn">(?:<span class="i">[\s\S]*?<\/span>)?)[^<]*(<\/div>)/, '$1매일 자동 선정 · 논문 · 가이드라인 · 리뷰$2');
+
+  const indexOut =
+    withUpcoming(withNav(indexHead, pageNav('papers', counts)), 'papers') +
+    foldPast(sec.papers, '논문') +
+    archiveClose +
+    tableHtml('📚 논문 누적리스트', rows.paper.length, '편', rows.paper.map((r) => markRow(r, 'paper'))) +
+    afterTable;
 
   const retitle = (head, title, fn) => head
     .replace('<title>EM/CCM Trend Review</title>', `<title>${title} — EM/CCM Trend Review</title>`)
@@ -517,7 +541,7 @@ export function splitPages(html, { refIds = null } = {}) {
 
   // ── ② guidelines.html (가이드라인) ──
   const gHead = withUpcoming(
-    retitle(withNav(headWith(statsBlock(['가이드라인', counts.guidelines], ['누적 행', counts.guidelineRows])),
+    retitle(withNav(headWith(statsBlock(['발행 가이드라인', counts.guidelines])),
       pageNav('guides', counts)), '가이드라인', '공식 발행기관의 진료지침 캐치업'),
     'guides',
   );
@@ -527,12 +551,12 @@ export function splitPages(html, { refIds = null } = {}) {
     secHead('📋', '가이드라인', counts.guidelines, '공식 발행기관의 진료지침 — 캐치업 큐에서 순차 소개') +
     (sec.guidelines.length ? foldPast(sec.guidelines, '가이드라인') : emptyBox('아직 소개된 가이드라인이 없습니다.')) +
     archiveClose +
-    tableHtml('📋 가이드라인 누적', rows.guideline.length, '건', rows.guideline.map((r) => markRow(r, 'guideline'))) +
+    tableHtml('📋 가이드라인 누적리스트', rows.guideline.length, '건', rows.guideline.map((r) => markRow(r, 'guideline'))) +
     stripArchiveStatus(afterTable);
 
   // ── ③ reviews.html (리뷰 · 기타) ──
   const rHead = withUpcoming(
-    retitle(withNav(headWith(statsBlock(['리뷰', counts.reviews], ['기타 자료', counts.others])),
+    retitle(withNav(headWith(statsBlock(['발행 리뷰', counts.reviews])),
       pageNav('reviews', counts)), '리뷰 및 기타', '주요 저널 리뷰 아티클 · 직접 지정 참고자료'),
     'reviews',
   );
@@ -544,8 +568,8 @@ export function splitPages(html, { refIds = null } = {}) {
     secHead('🔖', '기타 자료', counts.others, '직접 지정한 참고자료 — 공인 문서가 아닐 수 있습니다(카드의 “출처 성격” 참고)') +
     (sec.others.length ? foldPast(sec.others.map(fixRefSection), '기타 자료') : emptyBox('아직 등록된 기타 자료가 없습니다.')) +
     archiveClose +
-    tableHtml('📰 리뷰 누적', rows.review.length, '건', rows.review.map((r) => markRow(r, 'review'))) +
-    tableHtml('🔖 기타 자료 누적', rows.reference.length, '건', rows.reference.map((r) => markRow(r, 'reference'))) +
+    tableHtml('📰 리뷰 누적리스트', rows.review.length, '건', rows.review.map((r) => markRow(r, 'review'))) +
+    tableHtml('🔖 기타 자료 누적리스트', rows.reference.length, '건', rows.reference.map((r) => markRow(r, 'reference'))) +
     stripArchiveStatus(afterTable);
 
   return { index: indexOut, guidelines: guidelinesOut, reviews: reviewsOut, counts };
