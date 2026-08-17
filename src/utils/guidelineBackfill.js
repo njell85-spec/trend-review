@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { collectGuidelineCandidates, assertSupersetOfPtPath, enrichCandidates } from './guidelinePubmed.js';
 import { filterByRegion } from './guidelineRegionFilter.js';
+import { filterPediatric } from './guidelinePediatric.js';
 import { loadGuidelineTopics, topicQuerySpecs } from './guidelineTopics.js';
 import { matchOrganization } from './guidelineOrgs.js';
 import { classifyGuidelineDocument } from './guidelineClassifier.js';
@@ -116,7 +117,10 @@ export async function runGuidelineBackfill({
       manifest.enrichment = enrichedResult.evidence;
       const regionFiltered = filterByRegion(enrichedResult.candidates);
       manifest.region = { kept: regionFiltered.kept.length, dropped: regionFiltered.dropped.length };
-      const candidates = regionFiltered.kept;
+      // 소아 전용 배제도 프로덕션과 같은 자리에 건다 — 백필이 apply 되면 그 결과가 실제 큐다.
+      const pediatricFiltered = filterPediatric(regionFiltered.kept);
+      manifest.pediatric = { kept: pediatricFiltered.kept.length, dropped: pediatricFiltered.dropped.length };
+      const candidates = pediatricFiltered.kept;
       let missing = [];
       // ★ 초집합 검사는 **지역 필터 앞의 집합**으로 한다. 이 검사가 묻는 것은
       //   "넓힌 그물이 현행 PT 경로가 잡던 것을 놓쳤나" — 즉 **수집 회수율**이다.

@@ -26,11 +26,18 @@ on:
 permissions:
   contents: write
 
-# 데일리 커밋과 경합할 수 있다. 데일리에 같은 그룹을 걸지는 않는다 —
-# 데일리 코어 무영향이 불변식이므로, 여기서 push 실패 시 재시도한다.
-concurrency:
-  group: queue-control
-  cancel-in-progress: false
+# ★ concurrency 그룹을 쓰지 않는다 (2026-08-17 실측 사고로 제거).
+#
+#   GitHub 은 **그룹당 대기 1개만** 유지한다. 그래서 그룹을 걸어 두면 PeterJ 가 예고
+#   리스트에서 🗑 를 연달아 누를 때 **앞엣것이 조용히 취소된다** — 실측에서 세 번 눌러
+#   run #6 cancelled · #7 cancelled · #8 pending 이 됐고 화면은 아무 반응이 없었다.
+#   (그날은 15분짜리 백필이 같은 그룹을 붙잡고 있어 더 크게 터졌다.)
+#   `curate-remove.yml` 이 같은 이유로 처음부터 그룹을 안 쓴다 — 그 판단이 옳았다.
+#
+#   직렬화 없이 정합성을 지키는 법: 아래 한 단계가 **최신 main 으로 리셋한 뒤 변형을
+#   다시 적용**한다. 변형(`applyQueueAction`)은 멱등이라(이미 빠진 id 면 "바뀐 것 없음")
+#   경합해도 서로의 결과를 덮지 않는다. 종전처럼 변형을 먼저 하고 push 만 재시도하면,
+#   rebase 가 **낡은 파일 전체를 다시 써서 앞 실행의 변경을 되돌린다.**
 
 jobs:
   control:
@@ -44,42 +51,39 @@ jobs:
       # ★ `id` 는 자유 입력이다. `${{ }}` 로 셸에 직접 펼치면 따옴표를 탈출해 러너에서
       #   임의 명령이 돈다(코드리뷰 실측). env 로 넘기면 셸이 값으로만 취급한다.
       #   `track`·`action` 은 choice 라 값이 고정이지만 같은 방식으로 통일한다.
-      - name: 큐 갱신
-        env:
-          IN_TRACK:  ${{ inputs.track }}
-          IN_ACTION: ${{ inputs.action }}
-          IN_ID:     ${{ inputs.id }}
-        run: |
-          node scripts/queue-control.mjs --track "$IN_TRACK" --action "$IN_ACTION" --id "$IN_ID"
+      - name: 의존성 설치
+        run: npm ci --omit=dev
 
-      # ★ 큐만 고치면 **화면은 그대로다** (2026-08-17 실측 — 🗑 를 눌러 큐에서 빠졌는데
-      #   예고 리스트에는 그대로 남아 있었다). 예고는 발행 시점에 그려지므로, 여기서
-      #   렌더 경로를 한 번 태워야 "1~2분 뒤 새로고침하면 반영됩니다" 가 참이 된다.
-      #   분석·수집은 하지 않는다 — LLM 토큰 0.
-      - name: 예고 리스트 다시 그리기
-        run: npm ci --omit=dev && node scripts/apply-page-render.mjs
+      # ★ 큐 갱신 · 렌더 · 커밋을 **한 루프 안에** 둔다.
+      #   ① 큐만 고치면 화면은 그대로다 — 예고는 발행 시점에 그려지므로 렌더 경로를
+      #      한 번 태워야 "1~2분 뒤 새로고침하면 반영됩니다" 가 참이 된다(LLM 토큰 0).
+      #   ② push 가 경합에 밀리면 **최신 main 으로 리셋하고 변형부터 다시 적용**한다.
+      #      종전에는 변형을 루프 밖에서 한 번만 하고 rebase 로 밀어 넣었는데, 그러면
+      #      낡은 파일 전체를 다시 써서 그 사이 들어온 다른 실행의 변경을 되돌린다.
+      - name: 큐 갱신 · 예고 다시 그리기 · 커밋 (경합 시 최신 main 위에서 재적용)
         env:
-          GITHUB_OWNER: ${{ github.repository_owner }}
-          GITHUB_REPO:  ${{ github.event.repository.name }}
-
-      - name: 커밋 · 푸시 (경합 시 재시도)
-        env:
-          IN_TRACK:  ${{ inputs.track }}
-          IN_ACTION: ${{ inputs.action }}
-          IN_ID:     ${{ inputs.id }}
+          IN_TRACK:      ${{ inputs.track }}
+          IN_ACTION:     ${{ inputs.action }}
+          IN_ID:         ${{ inputs.id }}
+          GITHUB_OWNER:  ${{ github.repository_owner }}
+          GITHUB_REPO:   ${{ github.event.repository.name }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
-            echo "· 변경 없음 — 커밋하지 않는다"
-            exit 0
-          fi
-          git add output/ index.html guidelines.html reviews.html
-          git commit -m "chore(queue): $IN_TRACK $IN_ACTION $IN_ID"
-          for i in 1 2 3 4; do
+          for i in 1 2 3 4 5; do
+            node scripts/queue-control.mjs --track "$IN_TRACK" --action "$IN_ACTION" --id "$IN_ID"
+            node scripts/apply-page-render.mjs
+            if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
+              echo "· 변경 없음 (멱등) — 커밋하지 않는다"
+              exit 0
+            fi
+            git add output/ index.html guidelines.html reviews.html
+            git commit -m "chore(queue): $IN_TRACK $IN_ACTION $IN_ID"
             if git push; then exit 0; fi
-            echo "· push 실패 — 최신 main 위로 옮겨 재시도 ($i)"
-            git pull --rebase origin main || exit 1
-            sleep $((i * 3))
+            echo "· push 경합 — 최신 main 으로 리셋하고 변형부터 다시 적용한다 ($i)"
+            git fetch origin main || exit 1
+            git reset --hard origin/main || exit 1
+            sleep $((i * 2))
           done
+          echo "::error::큐 제어가 5회 재시도 후에도 push 하지 못했다"
           exit 1

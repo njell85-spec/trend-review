@@ -16,8 +16,20 @@ on:
 # 데일리·큐제어와 같은 파일(output/selected_guidelines.json)을 쓴다.
 permissions:
   contents: write
+# ★ 버튼(queue-control)과 **다른 그룹**을 쓴다.
+#
+#   2026-08-17 실측 사고: 이 워크플로를 `group: queue-control` 에 넣었더니, 15분짜리
+#   2년 백필이 도는 동안 PeterJ 가 예고 리스트에서 🗑 를 세 번 눌렀는데
+#   앞의 두 번이 **조용히 취소되고** 세 번째는 대기에 걸려 화면이 안 바뀌었다
+#   (run #6 cancelled · #7 cancelled · #8 pending).
+#   GitHub 은 **그룹당 대기 1개만** 유지하므로 연속 클릭은 앞엣것을 버린다 —
+#   `curate-remove.yml` 주석이 바로 이 함정을 적어 두었는데 같은 데 빠졌다.
+#
+#   같은 파일(output/selected_guidelines.json)을 쓰지만 **직렬화가 필요 없다**:
+#   커밋 단계가 push 실패 시 최신 main 으로 rebase 해 멱등 재적용하는 루프를 갖고 있다.
+#   사람이 누르는 버튼은 **절대 배치 작업 뒤에 줄 세우지 않는다.**
 concurrency:
-  group: queue-control
+  group: guideline-batch
   cancel-in-progress: false
 
 jobs:
