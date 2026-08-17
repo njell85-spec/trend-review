@@ -3,6 +3,25 @@
   "track": "reviews",
   "queue": [
     {
+      "pmid": "40658248",
+      "title": "Source control in bloodstream infections in patients with sepsis, septic shock, or requiring ICU admission: a scoping review with recommendations for standardizing research.",
+      "journal": "Intensive Care Med",
+      "score": 6.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "패혈증 혈류감염 소스컨트롤 스코핑 — 연구표준화 색채",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "promotedFrom": "needsReview",
+      "promotedAt": "2026-08-17"
+    },
+    {
       "pmid": "39714613",
       "title": "Management of adult sepsis in resource-limited settings: global expert consensus statements using a Delphi method.",
       "journal": "Intensive Care Med",
@@ -3063,23 +3082,6 @@
         "at": "2026-08-17T07:31:06.571Z"
       },
       "status": "queued"
-    },
-    {
-      "pmid": "40658248",
-      "title": "Source control in bloodstream infections in patients with sepsis, septic shock, or requiring ICU admission: a scoping review with recommendations for standardizing research.",
-      "journal": "Intensive Care Med",
-      "score": 6.2,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 5,
-        "keep": false,
-        "reason": "패혈증 혈류감염 소스컨트롤 스코핑 — 연구표준화 색채",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "needsReview"
     },
     {
       "pmid": "39774315",
