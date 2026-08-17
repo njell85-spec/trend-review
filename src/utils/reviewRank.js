@@ -1,3 +1,5 @@
+import { isManuallyPromoted } from './queueControl.js';
+
 /**
  * 리뷰(트랙3) 큐의 **정렬·필터 정본**.
  *
@@ -24,8 +26,18 @@ export function publishableReviews(items) {
   return (items ?? []).filter((x) => x?.status == null || x.status === 'queued');
 }
 
+/** 수동 승격은 자동 필터를 우회한다 — 그 판정을 쓰는 곳과 같은 함수를 본다. */
+const MANUAL_FLOOR = 1_000;
+
 /**
  * 클수록 먼저 나간다.
+ * · ★★ ▶ 로 사람이 올린 것이 **무조건 1순위다.** 이것이 없으면 버튼이 거짓말을 한다:
+ *   `promoteInQueue` 는 `status` 만 올리고 `llmFit.keep` 은 그대로 두는데, 아래
+ *   `keep === false` 분기가 그것을 다시 바닥(-1000)으로 보낸다. 실측(2026-08-17)에서
+ *   리뷰 두 건을 승격시켰더니 258개 중 **257·258위**가 됐다 — "다음 실행에서 이것이
+ *   나간다" 는 버튼이 실제로는 맨 뒤로 보냈다. PR #118 의 승격 수정을 같은 날
+ *   PR #120 의 적합도 정렬이 조용히 되돌린 자리다. 수동 판단이 자동 필터를
+ *   우회한다는 확정 ⑤-A 와 같은 원칙으로 여기서 막는다.
  * · LLM 이 "안 맞는다" 고 본 것은 바닥으로 내린다(지우지는 않는다 — ▶ 로 되살린다).
  * · LLM 적합도가 규칙 점수를 지배한다(×10). 규칙 점수는 0~10 대라 같은 적합도
  *   안에서만 순서를 가른다 — PeterJ 지시대로 "나한테 맞는 것" 이 1순위다.
@@ -33,6 +45,7 @@ export function publishableReviews(items) {
  */
 export function reviewRank(item) {
   const score = Number(item?.score) || 0;
+  if (isManuallyPromoted(item)) return MANUAL_FLOOR + score;
   const fit = item?.llmFit;
   if (fit?.keep === false) return -1_000 + score;
   if (!Number.isFinite(Number(fit?.score))) return score;

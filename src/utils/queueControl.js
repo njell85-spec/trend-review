@@ -56,7 +56,8 @@ export function dropFromQueue(state, id, todayStr = null) {
  *   그래서 ▶ 는 "다음 실행에서 이것이 나간다" 라는 **자기 설명대로** 동작한다:
  *   머리로 올리고, 검토 대기 상태였으면 **발행 대기로 승격한다.**
  *   이것은 PeterJ 의 수동 판단이므로 자동 필터보다 우선한다(확정 ⑤-A 와 같은 원칙).
- *   `status` 자체가 없는 큐(papers·reviews)는 종전과 똑같이 순서만 바뀐다.
+ *   `status` 자체가 없는 큐(papers)는 종전과 똑같이 순서만 바뀐다.
+ *   ★ reviews 는 2026-08-17 부터 `status` 를 갖는다 — 여기 목록에서 뺐다.
  */
 export function promoteInQueue(state, id, todayStr = null) {
   const key = String(id ?? '').trim();
@@ -65,11 +66,29 @@ export function promoteInQueue(state, id, todayStr = null) {
   const idx = queue.findIndex((x) => itemId(x) === key);
   if (idx < 0) return { next: state, changed: false };
   const hit = queue[idx];
-  const needsPromotion = hit?.status != null && hit.status !== 'queued';
-  // 이미 머리이고 승격할 것도 없으면 진짜로 할 일이 없다.
-  if (idx === 0 && !needsPromotion) return { next: state, changed: false };
-  const moved = needsPromotion
-    ? { ...hit, status: 'queued', promotedFrom: hit.status, promotedAt: todayStr ?? null }
+  // ★ `status` 를 쓰는 큐(가이드라인·리뷰)와 안 쓰는 큐(papers)를 가른다.
+  //   papers 는 배열 순서가 곧 발행 순서라 표식이 의미 없다 — 종전과 완전히 같게 둔다.
+  const tracksStatus = hit?.status != null;
+  const needsPromotion = tracksStatus && hit.status !== 'queued';
+  // 이미 머리이고, 승격할 것도 없고, 수동 표식까지 있으면 진짜로 할 일이 없다.
+  if (idx === 0 && !needsPromotion && (!tracksStatus || hit.promotedAt != null)) {
+    return { next: state, changed: false };
+  }
+  // ★★ `promotedAt` 을 **항상** 남긴다 (2026-08-17 실측 사고).
+  //   종전에는 격리 상태였을 때만 남겼다. 그런데 정렬 정본(`guidelineRank`·`reviewRank`)은
+  //   **배열 위치를 안 본다** — 그래서 이미 `queued` 인 항목을 ▶ 로 올려도 순서가 안 바뀌고,
+  //   격리분은 `llmFit.keep === false` 가 그대로 남아 **바닥(-1000)** 으로 다시 가라앉았다.
+  //   실측: 리뷰 두 건을 승격시켜도 258개 중 257·258위였다. 버튼은 "다음 실행에서 이것이
+  //   나간다" 라고 말하는데 실제로는 **맨 뒤로 보냈다.** PR #118 의 F4 수정(승격)을
+  //   같은 날의 PR #120(적합도 정렬)이 조용히 되돌린 것이다.
+  //   이 표식을 정렬이 최우선으로 읽는다 — 수동 판단은 자동 필터를 우회한다(확정 ⑤-A).
+  const moved = tracksStatus
+    ? {
+      ...hit,
+      status: 'queued',
+      ...(needsPromotion ? { promotedFrom: hit.status } : {}),
+      promotedAt: todayStr ?? null,
+    }
     : hit;
   return {
     next: {
@@ -101,6 +120,17 @@ export function resetQueue(state, todayStr = null) {
     },
     changed: true,
   };
+}
+
+/**
+ * ▶ 로 사람이 직접 올린 것인가.
+ *
+ * ★ 판정을 **쓰는 곳(여기)과 읽는 곳(정렬 정본)** 이 같은 함수를 보게 한다.
+ *   필드 이름을 정렬 쪽에서 따로 적으면, 여기서 이름을 바꾼 날 정렬이 조용히
+ *   전건 false 가 되고 ▶ 는 다시 "누르면 맨 뒤로 가는 버튼" 이 된다.
+ */
+export function isManuallyPromoted(item) {
+  return item?.promotedAt != null;
 }
 
 export const ACTIONS = Object.freeze(['drop', 'promote', 'reset']);
