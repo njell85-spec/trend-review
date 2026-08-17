@@ -5,6 +5,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import {
   curationBlock, ensureCurationBlock, removeSectionFromHtml, recountStats, parseHiddenKey, SECTION_TAGS,
 } from '../src/utils/curation.js';
@@ -233,4 +234,40 @@ test('★ 클라이언트 스크립트가 RSECTION 주석을 알아본다', () =
   assert.equal(' RSECTION:2026-08-17-r-1 '.match(live)?.[1], 'RSECTION');
   assert.equal(' GSECTION:2026-08-17 '.match(live)?.[1], 'GSECTION');
   assert.equal(' SECTION:2026-08-17 '.match(live)?.[1], 'SECTION');
+});
+
+// ── 섹션 키 형식 검증기 (2026-08-17 PeterJ 실측) ─────────────────────────────
+//
+// 리뷰 누적행의 🗑 를 눌러 **확인까지 눌렀는데** 항목이 그대로 남았다.
+// 클라이언트는 정상 동작했고(확인 대화가 떴다) `curate-remove.yml` 로 디스패치도 됐다.
+// 죽은 자리는 `scripts/curate-remove.mjs` 의 키 형식 정규식이었다:
+//   CUR_SECTION_KEY: 2026-08-17-r-41504890 · CUR_TAG: RSECTION
+//   → ✖ 잘못된 sectionKey
+// `-m-`(수동)만 알고 `-r-`(리뷰)을 몰랐다. RSECTION 이 3트랙 개편에서 생겼는데
+// 따라오지 않은 자리가 이것으로 다섯 번째다.
+test('★ 섹션 키 검증기가 리뷰 키(-r-)를 받는다 — 형식 밖 입력은 여전히 거절', async () => {
+  const src = await readFile(new URL('../scripts/curate-remove.mjs', import.meta.url), 'utf8');
+  const m = src.match(/if \(!(\/\^.+?\/)\.test\(sectionKey\)\)/);
+  assert.ok(m, '키 형식 정규식을 못 찾았다');
+  const re = new RegExp(m[1].slice(1, -1));
+  for (const ok of ['2026-08-17', '2026-08-17-m-42373461', '2026-08-17-m-x', '2026-08-17-r-41504890']) {
+    assert.ok(re.test(ok), `받아야 하는 키를 거절했다: ${ok}`);
+  }
+  for (const bad of ['2026-08-17-z-1', '../../etc/passwd', '2026-08-17-r-', '2026-08-17-r-abc', '']) {
+    assert.equal(re.test(bad), false, `거절해야 하는 키를 받았다: ${bad}`);
+  }
+});
+
+test('★ 리뷰 삭제는 분석 카드와 누적표 행을 함께 지운다 (PeterJ 요구 2026-08-17)', () => {
+  const html = [
+    '<tr data-pmid="41504890" data-kind="review" data-guideline="1"><td>행</td></tr>',
+    '<tr data-pmid="99999999"><td>남아야 하는 다른 행</td></tr>',
+    '<!-- GSECTION:2026-08-17 -->가이드라인 카드<!-- /GSECTION:2026-08-17 -->',
+    '<!-- RSECTION:2026-08-17-r-41504890 -->리뷰 분석 카드<!-- /RSECTION:2026-08-17-r-41504890 -->',
+  ].join('\n');
+  const out = removeSectionFromHtml(html, { sectionKey: '2026-08-17-r-41504890', pmid: '41504890', tag: 'RSECTION' });
+  assert.ok(!out.includes('리뷰 분석 카드'), '분석 내용이 안 지워졌다');
+  assert.ok(!out.includes('data-pmid="41504890"'), '누적표 행이 안 지워졌다');
+  assert.ok(out.includes('가이드라인 카드'), '다른 트랙 카드가 같이 사라졌다');
+  assert.ok(out.includes('data-pmid="99999999"'), '다른 행이 같이 사라졌다');
 });

@@ -36,7 +36,11 @@ const NEGATIVE_PATTERNS = [
   //    "Real-world adoption of the 2023 ESC guidelines… Insights from the READAPT-2 survey",
   //    "Educational professional activities… data from the OpTIMa-HF Registry"
   //    ★ 근거출처 문구('findings from a' 등)로 잡는다 — 지침 제목은 자기 근거를 이렇게 안 쓴다.
-  ['guideline-uptake-study', /\b(?:adherence to (?:\w+\s+){0,3}(?:recommendations?|guidelines?)|guideline concordan|real world adoption|findings from a|insights from the|data from the|an analysis (?:from|of) the|a retrospective cohort study|strength and quality of evidence)\b/],
+  //    ★ `adherence to … guidelines` 의 사이 단어 허용치를 3 → 8 로 넓혔다. 2년 apply 실물에서
+  //      "Adherence to European Society of Cardiology guidelines at discharge after…" 가
+  //      기관명이 4단어라 빠져나가 priority 12 로 예고 최상위에 앉았다.
+  //      비탐욕(`{0,8}?`)이라 제목 뒤쪽의 다른 'guidelines' 까지 삼키지 않는다.
+  ['guideline-uptake-study', /\b(?:adherence to (?:\w+\s+){0,8}?(?:recommendations?|guidelines?)|guideline concordan|real world adoption|findings from a|insights from the|data from the|an analysis (?:from|of) the|a retrospective cohort study|strength and quality of evidence)\b/],
 
   // ④ LLM 성능평가 논문. 실측 3건(ChatGPT 일치도·LLM 정렬 비교).
   ['llm-benchmark-study', /\b(?:chat ?gpts?|large language models?|llms?|gemini|copilot)\b/],

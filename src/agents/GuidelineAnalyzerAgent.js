@@ -60,6 +60,7 @@ export class GuidelineAnalyzerAgent {
    */
   _tool(mode = 'guideline') {
     if (mode === 'reference') return this._referenceTool();
+    if (mode === 'review') return this._reviewTool();
     return {
       name: 'submit_guideline_catchup',
       description: 'Submit a DETAILED, structured guideline catch-up brief (bilingual EN + KO)',
@@ -100,6 +101,59 @@ export class GuidelineAnalyzerAgent {
   }
 
   /** 범용 참고자료 툴 — 가이드라인의 `keyChanges` 자리를 `sourceNote_ko` 가 대신한다. */
+  /**
+   * 트랙3(리뷰 아티클) 전용 — **요약이 아니라 번역**이다 (PeterJ 확정 2026-08-17).
+   *
+   * *"리뷰는 있는그대로 번역 제시. 원문 확보 어려우면 웹서칭통해서라도."*
+   *
+   * ★ 가이드라인·참고자료 도구와 무엇이 다른가
+   *   · `summary`(4~8 불릿 요약)를 안 쓴다 — 요약하면 원문이 사라진다. 대신 원문의
+   *     절 구조를 그대로 따라가는 `sections` 를 받는다.
+   *   · `keyChanges`(이전 판 대비)가 없다 — 종설은 판본 개정 문서가 아니다.
+   *   · `sourceNote_ko`(출처 신뢰도 평가)가 없다 — NEJM·Lancet·ICM 급 종설이라
+   *     출처는 이미 확실하다. 그 칸은 PeterJ 가 직접 고른 자료(reference)에만 필요하다.
+   *   · `coverage` 로 **무엇을 보고 번역했는지 정직하게** 남긴다. 초록만 보고 번역해 놓고
+   *     전문을 옮긴 척하면 안 된다.
+   */
+  _reviewTool() {
+    return {
+      name: 'submit_review_translation',
+      description: 'Submit a faithful Korean rendering of a review article, section by section.',
+      input_schema: {
+        type: 'object',
+        properties: {
+          pmid: { type: 'string' },
+          title_ko: { type: 'string', description: '리뷰 제목의 한국어 번역.' },
+          scope_ko: { type: 'string', description: '이 종설이 무엇을 다루는지 1–2문장 한국어로.' },
+          coverage: {
+            type: 'string',
+            enum: ['full-text', 'web-augmented', 'abstract-only'],
+            description: 'What you actually rendered from. full-text = the provided full text. web-augmented = you fetched the article content from the web because full text was unavailable. abstract-only = you could only reach the abstract. NEVER claim full-text if you did not have it.',
+          },
+          sections: {
+            type: 'array',
+            description: "The article rendered in Korean, FOLLOWING THE SOURCE'S OWN SECTION ORDER. This is a translation, not a summary: keep the author's claims, numbers, doses, thresholds, caveats and hedging. Do not compress several sections into one. 4–12 sections depending on the article.",
+            items: {
+              type: 'object',
+              properties: {
+                heading_ko: { type: 'string', description: "절 제목(한국어). 원문 소제목을 그대로 옮긴다. 원문에 소제목이 없으면 그 문단이 다루는 바를 짧게 붙인다." },
+                body_ko: { type: 'string', description: '그 절의 내용을 한국어로 **충실히** 옮긴 것. 요약하지 말고, 저자가 말한 수치·용량·역치·근거등급·단서를 그대로 살려라. 약물명·점수명·약어는 영어로 두어도 된다. 여러 문단이면 줄바꿈으로 나눠라.' },
+              },
+              required: ['heading_ko', 'body_ko'],
+            },
+          },
+          practiceImpact_ko: { type: 'string', description: '이 종설을 읽고 EM/CCM 침상에서 무엇이 달라지는지 2–3문장 한국어. 원문이 말한 범위 안에서만 쓴다.' },
+          webSources: {
+            type: 'array',
+            description: 'Pages you actually consulted via WebSearch/WebFetch to obtain the article content (only if you used them). Each {label, url}. Empty array if you did not use web search.',
+            items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
+          },
+        },
+        required: ['pmid', 'title_ko', 'scope_ko', 'coverage', 'sections'],
+      },
+    };
+  }
+
   _referenceTool() {
     return {
       name: 'submit_reference_brief',
@@ -160,6 +214,41 @@ export class GuidelineAnalyzerAgent {
 Authors: ${(doc.authors ?? []).join(', ')}
 Journal: ${doc.journal} (${doc.pubDate})
 MeSH: ${(doc.meshTerms ?? []).join(', ')}`;
+
+    if (mode === 'review') {
+      // ★ 요약이 아니라 **번역**이다 (PeterJ 확정 2026-08-17).
+      //   원문을 못 구하면 웹서치로라도 본문을 확보한 뒤 옮긴다. 못 구했으면
+      //   `coverage` 에 그대로 적는다 — 초록만 보고 전문을 옮긴 척하면 안 된다.
+      return `You are translating a medical review article into Korean for an emergency
+medicine / critical care physician who wants to read the article itself, not a digest.
+
+★ THIS IS A TRANSLATION TASK, NOT A SUMMARY TASK.
+Do NOT compress the article into bullets. Do NOT impose a PICO structure. Do NOT report
+"changes versus a previous version" — a review article is not a versioned guideline.
+Follow the source's OWN section order and render each section faithfully in Korean,
+keeping the author's numbers, doses, thresholds, evidence grades, caveats and hedging.
+If the author is uncertain, your Korean must be uncertain in the same way.
+
+★ IF YOU DO NOT HAVE THE FULL TEXT: use WebSearch/WebFetch to find and read the article
+(publisher page, PMC, DOI landing page, society summary) BEFORE settling for the abstract.
+The user explicitly asked for this. Then set coverage honestly:
+  · full-text     — you rendered from the full text provided below
+  · web-augmented — you fetched the article content from the web
+  · abstract-only — you could only reach the abstract; say so rather than padding
+NEVER claim full-text coverage you did not have, and never invent section content.
+
+Review article:
+${meta}${doc.doi ? `
+DOI: https://doi.org/${doc.doi}` : ''}${doc.pmid ? `
+PubMed: https://pubmed.ncbi.nlm.nih.gov/${doc.pmid}/` : ''}
+
+Abstract:
+${doc.abstract}${fullTextSection}${augmentSection}
+
+Use the submit_review_translation tool.
+Write every _ko field in natural Korean prose. Drug names, score names, trial acronyms and
+abbreviations may stay in English. Keep the register of a clinical journal, not a blog.`;
+    }
 
     if (mode === 'reference') {
       return `You are an expert emergency medicine and critical care physician summarising a clinical reference for a busy colleague.
@@ -261,12 +350,22 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     }
 
     const keyChanges = Array.isArray(data.keyChanges) ? data.keyChanges : [];
-    // 참고자료는 "이전 판 대비 변경점" 축이 없다 — 대신 출처 성격을 싣는다.
-    const modeFields = mode === 'reference'
-      ? { sourceNote_ko: data.sourceNote_ko ?? '' }
-      : { keyChanges, changesUnavailable: keyChanges.length === 0 };
+    // 트랙마다 축이 다르다 (PeterJ 확정 2026-08-17):
+    //   guideline  이전 판 대비 변경점(keyChanges)
+    //   reference  출처 성격·한계(sourceNote_ko) — PeterJ 가 직접 고른 자료라 신뢰도를 먼저 말한다
+    //   review     절별 번역(sections) + 무엇을 보고 옮겼는지(coverage)
+    const modeFields = mode === 'review'
+      ? {
+        sections: (Array.isArray(data.sections) ? data.sections : [])
+          .filter((x) => String(x?.body_ko ?? '').trim()),
+        coverage: ['full-text', 'web-augmented', 'abstract-only'].includes(data.coverage)
+          ? data.coverage : 'abstract-only',
+      }
+      : mode === 'reference'
+        ? { sourceNote_ko: data.sourceNote_ko ?? '' }
+        : { keyChanges, changesUnavailable: keyChanges.length === 0 };
     return {
-      type: mode === 'reference' ? 'reference' : 'guideline',
+      type: mode === 'reference' ? 'reference' : (mode === 'review' ? 'review' : 'guideline'),
       paper: {
         pmid: guideline.pmid, title: guideline.title, journal: guideline.journal,
         pubDate: guideline.pubDate, pubmedUrl: pmUrl, doi: guideline.doi,
