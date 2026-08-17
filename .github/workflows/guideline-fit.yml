@@ -3,11 +3,17 @@
 # 데일리는 하루 40건까지만 판정한다 — 2년 백필 직후에는 풀이 수백 건이라 그 속도로는
 # 몇 주가 걸린다. 백필을 돌린 뒤 이것을 한 번 돌리면 풀 전체에 판정이 붙고,
 # 그 뒤로는 데일리가 새로 들어온 것만 따라잡는다.
-name: Guideline fit (LLM 셀렉 벌크)
+name: LLM 셀렉 벌크 (가이드라인 · 리뷰)
 
 on:
   workflow_dispatch:
     inputs:
+      track:
+        description: '트랙 — guidelines 진료지침 · reviews 복습용 리뷰 아티클'
+        required: true
+        type: choice
+        default: guidelines
+        options: [guidelines, reviews]
       limit:
         description: '이번에 판정할 최대 건수 (규칙 점수 높은 것부터)'
         required: true
@@ -61,6 +67,7 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+          IN_TRACK:                ${{ inputs.track }}
           IN_LIMIT:                ${{ inputs.limit }}
           IN_DRY:                  ${{ inputs.dry_run }}
         run: |
@@ -70,12 +77,20 @@ jobs:
           #   문자열 "false" 를 보내고 GHA 에서 그것은 truthy 라 `!` 가 거짓이 된다.
           #   즉 **진짜 실행인데 커밋이 조용히 건너뛰어진다.** 셸 판정값 하나만 쓴다.
           if [ "$IN_DRY" = "true" ]; then echo "dry=true" >> "$GITHUB_OUTPUT"; else echo "dry=false" >> "$GITHUB_OUTPUT"; fi
+          # ★ 트랙마다 **다른 스크립트**다. 프롬프트가 다르기 때문이다 —
+          #   가이드라인 프롬프트로 리뷰를 판정하면 "지침이 아닌 것" 규정에 걸려
+          #   전건이 0~2 점으로 격리된다(자세한 것은 src/utils/reviewFit.js 머리말).
+          case "$IN_TRACK" in
+            guidelines) SCRIPT=scripts/guideline-fit.mjs ;;
+            reviews)    SCRIPT=scripts/review-fit.mjs ;;
+            *) echo "::error::알 수 없는 트랙: $IN_TRACK"; exit 2 ;;
+          esac
           set +e
-          node scripts/guideline-fit.mjs --limit "$IN_LIMIT" $DRY | tee fit.log
+          node "$SCRIPT" --limit "$IN_LIMIT" $DRY | tee fit.log
           echo "code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
           set -e
           {
-            echo "## 가이드라인 LLM 셀렉"
+            echo "## LLM 셀렉 — $IN_TRACK"
             echo '```'
             cat fit.log
             echo '```'
@@ -97,7 +112,7 @@ jobs:
             exit 0
           fi
           git add output/ index.html guidelines.html reviews.html
-          git commit -m "chore(guidelines): LLM 셀렉 반영 (limit ${{ inputs.limit }})"
+          git commit -m "chore(${{ inputs.track }}): LLM 셀렉 반영 (limit ${{ inputs.limit }})"
           for i in 1 2 3 4; do
             if git push; then exit 0; fi
             echo "· push 실패 — 최신 main 위로 옮겨 재시도 ($i)"
@@ -111,6 +126,6 @@ jobs:
         run: |
           CODE="${{ steps.fit.outputs.code }}"
           if [ -n "$CODE" ] && [ "$CODE" != "0" ]; then
-            echo "::error::guideline-fit exited with $CODE (4=전 배치 실패)"
+            echo "::error::LLM 셀렉(${{ inputs.track }}) exited with $CODE (4=전 배치 실패)"
             exit "$CODE"
           fi

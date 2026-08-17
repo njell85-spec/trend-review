@@ -17,6 +17,7 @@ import { ensureArchiveStatus } from './archiveStatus.js';
 import { impactFactorLabel } from './journalMeta.js';
 import { buildUpcoming } from './upcomingSchedule.js';
 import { sortByGuidelineRank } from './guidelineRank.js';
+import { rankedPublishableReviews } from './reviewRank.js';
 import { cadenceFor } from './trackCadence.js';
 import { kstDateStr } from './dates.js';
 import { TRACKS as UPCOMING_TRACKS } from './controlState.js';
@@ -644,7 +645,14 @@ export class GitHubPublisher {
     const publishableGuidelines = guidelines?.queue
       ? { ...guidelines, queue: sortByGuidelineRank(guidelines.queue.filter((x) => x?.status === 'queued')) }
       : guidelines;
-    const states = { papers, guidelines: publishableGuidelines, reviews };
+    // ★ 리뷰 예고도 **픽과 같은 함수**로 걸러 정렬한다 (2026-08-17).
+    //   종전에는 큐 배열을 통째로 그렸다 — 그때는 픽도 배열 머리였으니 우연히 일치했다.
+    //   LLM 셀렉이 붙으면서 픽이 `reviewRank` 를 보게 됐으므로, 여기가 안 따라오면
+    //   화면이 격리된 항목을 "다음에 나갑니다" 라고 말한다(결함 B2 와 같은 부류).
+    const publishableReviewState = reviews?.queue
+      ? { ...reviews, queue: rankedPublishableReviews(reviews.queue) }
+      : reviews;
+    const states = { papers, guidelines: publishableGuidelines, reviews: publishableReviewState };
     const labels = { papers: '논문', guidelines: '가이드라인', reviews: '리뷰' };
 
     // ★ 트랙마다 **자기 블록**을 그린다(PeterJ 요구 ②). `splitPages` 가 이 블록들을

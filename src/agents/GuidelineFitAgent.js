@@ -23,6 +23,17 @@ export class GuidelineFitAgent {
     this.llm = options.llm ?? new LLMClient({ provider: this.provider, model: this.model });
     this.batchSize = options.batchSize ?? 20;
     this.threshold = options.threshold ?? 6;
+    // ★ 트랙마다 **고르는 기준이 다르다**(PeterJ 확정: 세 트랙은 셀렉도 다르다).
+    //   배치·전역 index·소프트 실패는 트랙과 무관한 규칙이라 여기 한 벌만 둔다.
+    //   기준(도구·프롬프트·입력 모양)만 주입한다. 기본값은 가이드라인이라 종전 호출부는
+    //   한 글자도 안 바뀐다.
+    //   ★ 리뷰에 가이드라인 프롬프트를 그대로 쓰면 **전건 격리된다** — 그 프롬프트가
+    //     "지침이 아닌 것" 을 0~2 점으로 규정하고 리뷰는 정의상 전부 그렇다.
+    //     그래서 프롬프트를 주입구로 뺐다. 자세한 것은 `src/utils/reviewFit.js` 머리말.
+    this.tool = options.tool ?? FIT_TOOL;
+    this.buildPrompt = options.buildPrompt ?? buildFitPrompt;
+    this.toInput = options.toInput ?? toFitInput;
+    this.label = options.label ?? 'guideline-fit';
   }
 
   /**
@@ -40,14 +51,14 @@ export class GuidelineFitAgent {
     let offset = 0;
     let verdicts = [];
     for (const batch of batches) {
-      const inputs = batch.map((item, i) => toFitInput(item, offset + i));
+      const inputs = batch.map((item, i) => this.toInput(item, offset + i));
       try {
         const result = await this.cb.execute(() => this.retry.execute(
           () => this.llm.callWithTool(
-            [{ role: 'user', content: buildFitPrompt(inputs, { topicLabels }) }],
-            FIT_TOOL, { maxTokens: 8000 },
+            [{ role: 'user', content: this.buildPrompt(inputs, { topicLabels }) }],
+            this.tool, { maxTokens: 8000 },
           ),
-          { label: `${this.provider}-guideline-fit` },
+          { label: `${this.provider}-${this.label}` },
         ));
         const rows = Array.isArray(result?.verdicts) ? result.verdicts : [];
         if (!rows.length) throw new Error('LLM returned no verdicts');
@@ -55,7 +66,7 @@ export class GuidelineFitAgent {
       } catch (error) {
         evidence.failed += 1;
         evidence.error = error?.message ?? String(error);
-        this.logger.warn('지침 적합도 판정 배치 실패 — 이 묶음은 규칙 점수로 남는다', {
+        this.logger.warn('적합도 판정 배치 실패 — 이 묶음은 규칙 점수로 남는다', {
           batch: evidence.batches, size: batch.length, err: evidence.error,
         });
       }
@@ -64,7 +75,9 @@ export class GuidelineFitAgent {
 
     const applied = applyFitVerdicts(items, verdicts, { now, threshold: this.threshold });
     evidence.scored = applied.scored;
-    this.logger.info('지침 적합도 판정', { 대상: items.length, 판정: applied.scored, 실패배치: evidence.failed });
+    this.logger.info('적합도 판정', {
+      트랙: this.label, 대상: items.length, 판정: applied.scored, 실패배치: evidence.failed,
+    });
     return { items: applied.items, ...evidence };
   }
 }
