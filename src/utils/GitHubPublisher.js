@@ -16,6 +16,7 @@ import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
 import { impactFactorLabel } from './journalMeta.js';
 import { buildUpcoming } from './upcomingSchedule.js';
+import { sortByGuidelineRank } from './guidelineRank.js';
 import { cadenceFor } from './trackCadence.js';
 import { kstDateStr } from './dates.js';
 import { TRACKS as UPCOMING_TRACKS } from './controlState.js';
@@ -606,10 +607,11 @@ export class GitHubPublisher {
     //   예고는 큐 배열을 통째로 그리고 있었다. 지금 실물 큐가 `needsReview` 5 · `queued` 1
     //   이라 **화면은 검토 대기 항목이 오늘 나간다고 말하고 실제로는 다른 것이 나갔다.**
     //   결함 B2 와 같은 부류(화면과 게이트가 다른 것을 본다)라 같은 자리에서 막는다.
+    //   ★ 정렬은 `guidelineRank` 하나가 한다 — **발행 픽이 쓰는 것과 같은 함수다.**
+    //   여기서 따로 정렬하면 LLM 셀렉이 붙은 뒤 화면과 게이트가 서로 다른 순서를 보게 된다
+    //   (결함 B2 와 같은 부류라 같은 자리에서 막는다).
     const publishableGuidelines = guidelines?.queue
-      ? { ...guidelines, queue: guidelines.queue
-          .filter((x) => x?.status === 'queued')
-          .sort((a, b) => (b?.priority ?? 0) - (a?.priority ?? 0)) }
+      ? { ...guidelines, queue: sortByGuidelineRank(guidelines.queue.filter((x) => x?.status === 'queued')) }
       : guidelines;
     const states = { papers, guidelines: publishableGuidelines, reviews };
     const labels = { papers: '논문', guidelines: '가이드라인', reviews: '리뷰' };
