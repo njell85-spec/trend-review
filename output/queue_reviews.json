@@ -48,15 +48,6 @@
       "addedAt": "2026-08-16"
     },
     {
-      "pmid": "42412219",
-      "title": "Lung- and diaphragm-protective mechanical ventilation in acute respiratory distress syndrome.",
-      "journal": "Intensive Care Med",
-      "score": 9,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16"
-    },
-    {
       "pmid": "41951238",
       "title": "Airway management of adults in the acute care setting.",
       "journal": "BMJ",
@@ -3607,7 +3598,18 @@
       "publishedAt": "2026-08-17"
     }
   ],
-  "rejected": [],
+  "rejected": [
+    {
+      "pmid": "42412219",
+      "title": "Lung- and diaphragm-protective mechanical ventilation in acute respiratory distress syndrome.",
+      "journal": "Intensive Care Med",
+      "score": 9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "rejectedAt": "2026-08-17"
+    }
+  ],
   "lastRun": {
     "date": "2026-08-17",
     "outcome": "published",
