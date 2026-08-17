@@ -21,6 +21,8 @@ import {
 import { FIT_TOOL, FIT_SCHEMA_VERSION, unscoredItems, applyFitVerdicts } from '../src/utils/guidelineFit.js';
 import { GuidelineFitAgent } from '../src/agents/GuidelineFitAgent.js';
 import { TrendReviewOrchestrator } from '../src/orchestrator/TrendReviewOrchestrator.js';
+import { promoteInQueue, isManuallyPromoted } from '../src/utils/queueControl.js';
+import { sortByGuidelineRank } from '../src/utils/guidelineRank.js';
 
 const fit = (score, keep) => ({ version: FIT_SCHEMA_VERSION, score, keep, reason: 'r', at: 'now' });
 const rev = (pmid, extra = {}) => ({
@@ -218,4 +220,59 @@ test('FitAgent 는 주입받은 리뷰 도구·프롬프트로 LLM 을 부른다
   assert.equal(seen[0].toolName, 'review_fit');
   assert.ok(seen[0].prompt.includes('복습'), '리뷰 프롬프트가 안 쓰였다');
   assert.ok(!seen[0].prompt.includes('진료지침 후보를 추린다'), '가이드라인 프롬프트가 쓰였다');
+});
+
+// ── ⑥ ▶ 가 자기 설명대로 동작하나 (2026-08-17 실측 사고) ─────────────────────
+// ★ `promoteInQueue` 는 `status` 만 올리고 `llmFit.keep` 은 그대로 둔다. 정렬은
+//   배열 위치를 안 보므로, 이 표식이 없으면 승격한 항목이 `keep:false` 분기에 걸려
+//   **바닥으로 다시 가라앉는다.** 실측에서 258개 중 257·258위가 됐다 —
+//   "다음 실행에서 이것이 나간다" 는 버튼이 실제로는 맨 뒤로 보냈다.
+
+test('★★ ▶ 로 승격한 격리분이 발행 1순위가 된다 (맨 뒤로 가지 않는다)', () => {
+  const queue = [
+    rev('최상위', { score: 8.8, llmFit: fit(10, true) }),
+    rev('승격대상', { score: 7.6, status: 'needsReview', llmFit: fit(5, false) }),
+  ];
+  const { next, changed } = promoteInQueue({ queue }, '승격대상', '2026-08-17');
+  assert.equal(changed, true);
+  const ranked = rankedPublishableReviews(next.queue);
+  assert.equal(ranked[0].pmid, '승격대상',
+    '승격했는데 1순위가 아니다 — 버튼이 자기 설명과 반대로 동작한다');
+  // 격리 자체는 풀렸고, LLM 판정은 증거로 남아 있어야 한다.
+  assert.equal(ranked[0].status, 'queued');
+  assert.equal(ranked[0].promotedFrom, 'needsReview');
+  assert.equal(ranked[0].llmFit.keep, false, 'LLM 판정을 지워버렸다 — 증거가 사라진다');
+});
+
+test('▶ 는 이미 queued 인 항목에도 표식을 남긴다 (정렬이 위치를 안 보므로)', () => {
+  const queue = [
+    rev('최상위', { score: 8.8, status: 'queued', llmFit: fit(10, true) }),
+    rev('이미채택', { score: 1, status: 'queued', llmFit: fit(6, true) }),
+  ];
+  const { next, changed } = promoteInQueue({ queue }, '이미채택', '2026-08-17');
+  assert.equal(changed, true, '이미 queued 면 아무 일도 안 한다고 판단해 버렸다');
+  assert.equal(rankedPublishableReviews(next.queue)[0].pmid, '이미채택');
+  // 격리였던 적이 없으므로 promotedFrom 은 붙지 않는다.
+  assert.equal(next.queue[0].promotedFrom, undefined);
+});
+
+test('가이드라인 ▶ 도 같은 함정을 벗어난다 (같은 모양이라 같이 고쳤다)', () => {
+  const g = (id, extra) => ({ id, pmid: id, title: id, ...extra });
+  const queue = [
+    g('최상위', { priority: 12, status: 'queued', llmFit: fit(10, true) }),
+    g('승격대상', { priority: 3, status: 'needsReview', llmFit: fit(2, false) }),
+  ];
+  const { next } = promoteInQueue({ queue }, '승격대상', '2026-08-17');
+  assert.equal(sortByGuidelineRank(next.queue)[0].id, '승격대상');
+});
+
+test('papers 큐(status 없음)는 종전과 완전히 같다 — 표식을 안 붙인다', () => {
+  const queue = [{ pmid: '1', title: 'a' }, { pmid: '2', title: 'b' }];
+  const { next, changed } = promoteInQueue({ queue }, '2', '2026-08-17');
+  assert.equal(changed, true);
+  assert.deepEqual(next.queue.map((x) => x.pmid), ['2', '1'], '순서만 바뀌어야 한다');
+  assert.equal(next.queue[0].promotedAt, undefined, 'papers 에 표식이 붙었다');
+  assert.equal(next.queue[0].status, undefined, 'papers 에 status 가 생겼다');
+  // 이미 머리면 여전히 no-op 이다.
+  assert.equal(promoteInQueue({ queue }, '1', '2026-08-17').changed, false);
 });
