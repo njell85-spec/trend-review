@@ -22,13 +22,20 @@ export const FIT_SCHEMA_VERSION = 1;
  *   PeterJ 가 직접 넣은 문서를 LLM 이 "실무와 무관" 으로 보고 격리해서 그날 발행이
  *   통째로 사라졌다. 사람이 이미 고른 것을 기계가 다시 심사하면 안 된다.
  */
-export function unscoredItems(items, { limit = Infinity, version = FIT_SCHEMA_VERSION } = {}) {
+export function unscoredItems(items, {
+  limit = Infinity,
+  version = FIT_SCHEMA_VERSION,
+  // ★ 규칙 점수 필드는 트랙마다 다르다 — 가이드라인 `priority` · 리뷰 `score`.
+  //   기본값을 두고 주입만 허용한다. 한 함수가 두 필드를 추측하게 만들면, 한쪽
+  //   필드명이 바뀐 날 조용히 0점으로 읽히면서 **판정 순서만 뒤집힌다.**
+  priorityOf = (x) => Number(x?.priority) || 0,
+} = {}) {
   return (items ?? [])
     .filter((x) => x?.manualApproved !== true)
     .filter((x) => x?.llmFit?.version !== version)
     // 규칙 점수가 높은 것부터 판정받는다 — 예산이 모자라 잘리는 날에도
     // **먼저 나갈 후보부터** 판정이 붙어 있어야 한다.
-    .sort((a, b) => (b?.priority ?? 0) - (a?.priority ?? 0))
+    .sort((a, b) => priorityOf(b) - priorityOf(a))
     .slice(0, limit);
 }
 

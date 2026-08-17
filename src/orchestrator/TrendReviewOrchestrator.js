@@ -34,6 +34,7 @@ import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
 import { isNarrativeReview, notReviewReason } from '../utils/reviewQueue.js';
+import { rankedPublishableReviews } from '../utils/reviewRank.js';
 import { buildProgressLines } from '../utils/trackProgress.js';
 import { normalizeControl } from '../utils/controlState.js';
 import { intervalFor, trackRunsOn } from '../utils/trackCadence.js';
@@ -820,7 +821,17 @@ export class TrendReviewOrchestrator {
     }
     if (!queue.length) return { outcome: 'empty' };
 
-    const [picked, ...remaining] = state.queue;
+    // ★★ 큐 **배열 머리**를 집으면 안 된다 (2026-08-17 · LLM 셀렉을 붙이면서 드러났다).
+    //   리뷰 큐는 종전에 `status` 도 정렬도 없어서 머리를 집는 것이 곧 순서였다.
+    //   그 상태로 셀렉만 붙이면 `status:'needsReview'` 가 써지는데 **픽이 그 필드를
+    //   쳐다보지 않아** 격리한 것이 그대로 발행된다 — 돌려도 아무것도 안 바뀌는 부류다.
+    //   정렬·필터 정본은 `reviewRank` 하나이고, **예고 리스트가 쓰는 것과 같은 함수다**
+    //   (다르면 화면이 "다음은 이것" 이라 해놓고 딴 게 나간다 — 결함 B2).
+    const ranked = rankedPublishableReviews(queue);
+    if (!ranked.length) return { outcome: 'empty', reason: 'all-quarantined' };
+    const picked = ranked[0];
+    const pickedKey = String(picked.pmid ?? picked.id ?? '');
+    const remaining = state.queue.filter((x) => String(x?.pmid ?? x?.id ?? '') !== pickedKey);
     // ★ 번역·정리 카드를 여기서 만든다. 실패해도 발행은 계속된다(카드만 얇아진다).
     const card = await this._analyzeReview(picked);
     const published = { ...picked, publishedAt: todayStr, card };
