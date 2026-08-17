@@ -29,6 +29,7 @@ import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
 import { filterByRegion } from '../utils/guidelineRegionFilter.js';
+import { filterPediatric } from '../utils/guidelinePediatric.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
@@ -588,7 +589,14 @@ export class TrendReviewOrchestrator {
           unknownRegion: unknown,
         });
       }
-      const decided = regionFiltered.kept.map((candidate) => {
+      // ★ 소아 전용 배제 (PeterJ 확정 2026-08-17 · A-1). 지역 필터와 **같은 층**이다 —
+      //   문서 성격이 아니라 진료 범위 정책이므로 분류기에 섞지 않는다.
+      //   소아를 포함하는 성인 종합 지침(AHA BLS/ACLS/PALS 통합본)은 남는다.
+      const pediatricFiltered = filterPediatric(regionFiltered.kept);
+      if (pediatricFiltered.dropped.length) {
+        this.logger.info('지침 소아 전용 필터', { kept: pediatricFiltered.kept.length, dropped: pediatricFiltered.dropped.length });
+      }
+      const decided = pediatricFiltered.kept.map((candidate) => {
         const classification = classifyGuidelineDocument(candidate, { orgs });
         if (classification.verdict === 'rejected') return { ...candidate, status: 'rejected', verdict: classification.verdict, documentType: classification.documentType, reasons: classification.reasons };
         const enriched = { ...candidate, signals: { ...candidate.signals, ...classification.signals } };
