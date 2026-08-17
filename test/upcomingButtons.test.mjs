@@ -110,3 +110,44 @@ test('스크립트가 페이지에 실제로 들어간다', () => {
   assert.ok(out.includes('data-up-drop'), '버튼이 없다');
   assert.ok(out.includes('UPBTN'), '스크립트 마커가 없다');
 });
+
+/**
+ * ★ 입력 **이름**이 맞는 것과 보내는 **값**을 받아 주는 것은 다른 말이다.
+ *
+ * 2026-08-17 PeterJ 실측: 리뷰 예고에서 ▶ 를 눌렀더니 분석·발행이 안 되고
+ * "맨 앞으로 올렸습니다" 만 떴다. `on-demand.yml` 의 `kind` 가 choice 인데
+ * 목록에 `review` 가 없어서 스크립트가 아예 폴백하도록 짜여 있었다.
+ * 값을 넣어도 목록에 없으면 workflow_dispatch 는 **422 로 튕긴다** — 이름만 보는
+ * 검사로는 안 잡힌다.
+ */
+function choiceOptions(file, input) {
+  const src = readFileSync(new URL(`../.github/workflows/${file}`, import.meta.url), 'utf8');
+  const block = src.slice(src.indexOf(`      ${input}:`));
+  const line = block.match(/^\s*options:\s*\[([^\]]*)\]/m);
+  return line ? new Set(line[1].split(',').map((v) => v.trim())) : null;
+}
+
+test('★ ▶ 가 보내는 kind 값을 on-demand.yml 이 전부 받는다', () => {
+  const s = script();
+  const map = s.match(/var KIND=\{([^}]*)\}/)?.[1];
+  assert.ok(map, 'KIND 매핑을 못 찾았다');
+  const sent = [...map.matchAll(/:\s*'([^']+)'/g)].map((m) => m[1]);
+  const declared = choiceOptions('on-demand.yml', 'kind');
+  assert.ok(declared, 'on-demand.yml 의 kind 가 choice 가 아니다');
+  for (const v of sent) {
+    assert.ok(declared.has(v), `on-demand.yml 의 kind 목록에 '${v}' 가 없다 — 422 로 조용히 죽는다`);
+  }
+  // 세 트랙 모두 지금 실행이 가능해야 한다 (PeterJ 지시 2026-08-17)
+  for (const track of ['papers', 'guidelines', 'reviews']) {
+    assert.match(map, new RegExp(`${track}\\s*:`), `${track} 트랙의 ▶ 가 분석 경로에 안 붙었다`);
+  }
+});
+
+test('★ 🗑(누적 리스트)가 보내는 섹션 태그를 curate-remove.yml 이 전부 받는다', async () => {
+  const { SECTION_TAGS } = await import('../src/utils/curation.js');
+  const declared = choiceOptions('curate-remove.yml', 'tag');
+  assert.ok(declared, 'curate-remove.yml 의 tag 가 choice 가 아니다');
+  for (const tag of SECTION_TAGS) {
+    assert.ok(declared.has(tag), `curate-remove.yml 의 tag 목록에 '${tag}' 가 없다 — 422 로 조용히 죽는다`);
+  }
+});

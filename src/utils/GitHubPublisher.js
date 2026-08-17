@@ -354,7 +354,7 @@ export class GitHubPublisher {
   _upcomingScript(ident) {
     // 식별자를 못 정하면 스크립트를 굽지 않는다 — 죽은 버튼보다 없는 버튼이 정직하다.
     if (!ident) return '';
-    return `<!-- UPBTN v4 -->
+    return `<!-- UPBTN v5 -->
 <script>
 (function(){
   var OWNER='${ident.owner}', REPO='${ident.repo}';
@@ -436,18 +436,21 @@ export class GitHubPublisher {
   //   {pmid,mode} 를 보냈는데 그 워크플로는 {target,kind} 를 받는다 — 422 로 튕겨
   //   버튼이 조용히 죽어 있었다(실측). 여기를 고칠 때는 반드시
   //   .github/workflows/*.yml 의 inputs 를 열어서 맞춰라.
-  // ★ 트랙마다 ▶ 의 뜻이 다르다 (코드리뷰 발견 B4).
-  //   논문·가이드라인은 on-demand 가 그 종류의 카드를 바로 만들 수 있다.
-  //   **리뷰는 못 만든다** — on-demand 는 kind=paper|guideline|reference 뿐이라
-  //   리뷰를 넘기면 index.html 에 '직접 지정 논문' 으로 올라가고 리뷰 페이지에는
-  //   아무것도 안 생기며 리뷰 큐도 그대로 남아 며칠 뒤 같은 논문이 리뷰로 또 나간다.
-  //   그래서 리뷰의 ▶ 는 **큐 머리로 올린다**(= 다음 데일리에 이것이 나간다).
-  var KIND={papers:'paper',guidelines:'guideline'};
+  // ★ ▶ 는 **세 트랙 모두 지금 분석·발행**한다 (PeterJ 실측 2026-08-17 — 리뷰에서
+  //   눌렀더니 "맨 앞으로 올렸습니다" 만 뜨고 분석이 안 돌았다).
+  //   종전에 리뷰만 큐 순서 변경으로 폴백했던 이유는 on-demand 에 review kind 가
+  //   없어서였다(넘기면 index.html 에 '직접 지정 논문' 으로 올라갔다). 그 kind 를
+  //   만들었으므로 폴백을 걷는다 — 같은 버튼이 트랙마다 다른 일을 하면 안 된다.
+  //   ★ 입력 이름은 받는 워크플로의 계약 그대로다. 여기를 고칠 때는 반드시
+  //     .github/workflows/on-demand.yml 의 kind choice 목록까지 같이 열어라 —
+  //     목록에 없는 값은 422 로 튕겨 버튼이 조용히 죽는다.
+  var KIND={papers:'paper',guidelines:'guideline',reviews:'review'};
   document.addEventListener('click',function(e){
     var b=e.target.closest?e.target.closest('button'):null; if(!b)return;
     if(b.dataset.upRun){
       var tr=b.dataset.upTrack;
-      if(KIND[tr]){ fire('on-demand.yml',{target:b.dataset.upRun,kind:KIND[tr]},'▶ 지금 분석을 걸었습니다'); }
+      if(KIND[tr]){ fire('on-demand.yml',{target:b.dataset.upRun,kind:KIND[tr]},'▶ 지금 분석을 걸었습니다 — 몇 분 뒤 새로고침하세요'); }
+      // 트랙을 못 읽은 버튼(옛 배포본에 남은 것)은 최소한 순서라도 올린다.
       else { fire('queue-control.yml',{track:tr,action:'promote',id:b.dataset.upRun},'▶ 맨 앞으로 올렸습니다 — 다음 실행에 나갑니다'); }
     }
     else if(b.dataset.upDrop){

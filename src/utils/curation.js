@@ -12,6 +12,12 @@
  * 지우면 논문·가이드 카드가 함께 소멸한다(리뷰 C1). 숨김 상태의 키도
  * "SECTION:2026-07-06" / "GSECTION:2026-07-06" 형태의 태그 접두 키를 쓴다.
  *
+ * ★ 트랙은 **셋**이다: SECTION(논문) · GSECTION(가이드라인) · RSECTION(리뷰).
+ *   RSECTION 은 2026-08-16 3트랙 개편에서 생겼는데 **이 파일은 그때 안 따라왔다.**
+ *   그래서 리뷰 카드·누적행의 🗑 를 누르면 "섹션 키를 찾지 못했습니다" 로 죽었다
+ *   (2026-08-17 PeterJ 실측). 태그 목록을 한 곳(`SECTION_TAGS`)에 모아,
+ *   네 번째 트랙이 생겨도 여기만 고치면 되게 한다.
+ *
  * 서버측은 삭제 반영(removeSectionFromHtml)과 상태 파일 IO만 제공한다.
  */
 import { readFile, writeFile } from 'fs/promises';
@@ -36,13 +42,18 @@ export async function saveCurationState(state, file = CURATION_STATE_PATH) {
 // ── 삭제: 섹션 블록 + 표 행 제거 + 통계 재계산 ───────────────────────────────
 const reEsc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+/** 대시보드가 아는 섹션 태그 전부. 새 트랙이 생기면 **여기 한 곳**만 고친다. */
+export const SECTION_TAGS = Object.freeze(['SECTION', 'GSECTION', 'RSECTION']);
+/** 클라이언트 스크립트·상태 키 파싱이 함께 쓰는 정규식 조각. */
+export const SECTION_TAG_PATTERN = SECTION_TAGS.join('|');
+
 /**
  * 대시보드 HTML에서 지정 태그의 섹션과 해당 pmid의 표 행을 제거하고
  * 통계(분석일수·논문 수)를 재계산한다. 멱등 — 이미 없으면 그대로.
  * tag를 좁혀 받는 이유: SECTION/GSECTION이 같은 날짜 키로 공존할 수 있다(C1).
  */
 export function removeSectionFromHtml(html, { sectionKey, pmid = '', tag = 'SECTION' }) {
-  if (!['SECTION', 'GSECTION'].includes(tag)) return html;
+  if (!SECTION_TAGS.includes(tag)) return html;
   let out = html;
   const re = new RegExp(`\\n?<!-- ${tag}:${reEsc(sectionKey)} -->[\\s\\S]*?<!-- /${tag}:${reEsc(sectionKey)} -->`, 'g');
   out = out.replace(re, '');
@@ -62,7 +73,7 @@ export function removeSectionFromHtml(html, { sectionKey, pmid = '', tag = 'SECT
 
 /** 숨김 상태 키("TAG:sectionKey") → {tag, sectionKey}. 형식 밖이면 null. */
 export function parseHiddenKey(hiddenKey) {
-  const m = String(hiddenKey).match(/^(G?SECTION):(.+)$/);
+  const m = String(hiddenKey).match(new RegExp(`^(${SECTION_TAG_PATTERN}):(.+)$`));
   return m ? { tag: m[1], sectionKey: m[2] } : null;
 }
 
@@ -82,7 +93,7 @@ export function recountStats(html) {
  * 올릴 것 — 안 올리면 증분 패치되는 배포 페이지에 영원히 반영되지 않는다.
  */
 export function curationBlock({ owner, repo }) {
-  return `<!-- CURATION_BLOCK v5 -->
+  return `<!-- CURATION_BLOCK v6 -->
 <script>
 (function(){
   var OWNER='${owner}', REPO='${repo}';
@@ -138,7 +149,7 @@ export function curationBlock({ owner, repo }) {
     var n=el&&el.previousSibling;
     while(n){
       if(n.nodeType===8){
-        var m=String(n.nodeValue).match(/^\\s*(G?SECTION):(\\S+)/);
+        var m=String(n.nodeValue).match(/^\\s*(${SECTION_TAG_PATTERN}):(\\S+)/);
         if(m) return {tag:m[1],key:m[2]};
       }
       n=n.previousSibling;

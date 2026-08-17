@@ -14,11 +14,14 @@ on:
         required: true
         type: string
       tag:
-        description: '섹션 태그 — 같은 날짜에 논문·가이드 섹션이 공존하므로 필수 구분'
+        description: '섹션 태그 — 같은 날짜에 논문·가이드·리뷰 섹션이 공존하므로 필수 구분'
         required: false
         default: 'SECTION'
         type: choice
-        options: [SECTION, GSECTION]
+        # ★ RSECTION(리뷰)은 2026-08-16 3트랙 개편에서 생겼는데 여기 안 들어와 있었다.
+        #   버튼이 RSECTION 을 보내면 workflow_dispatch 가 422 로 튕긴다 —
+        #   클라이언트를 고쳐도 여기가 막혀 있으면 여전히 안 먹는다.
+        options: [SECTION, GSECTION, RSECTION]
       pmid:
         description: '논문 PMID (누적 표 행 제거용)'
         required: false
