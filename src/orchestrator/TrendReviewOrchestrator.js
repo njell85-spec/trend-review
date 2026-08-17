@@ -768,8 +768,11 @@ export class TrendReviewOrchestrator {
       } catch (error) {
         this.logger.warn('리뷰 원문 확보 실패 — 초록으로 진행', { pmid, err: error.message });
       }
-      const card = await this.guideline.analyze(enriched, { mode: 'reference' });
-      if (!card) this.logger.warn('리뷰 분석이 카드를 못 냈다 — 카드 없이 발행한다', { pmid });
+      // ★ 트랙3 전용 모드 (PeterJ 확정 2026-08-17) — 요약이 아니라 **있는 그대로 번역**이다.
+      //   종전에는 `reference`(PeterJ 가 직접 지정한 자료용)를 빌려 써서 요약이 나왔고,
+      //   NEJM·Lancet 종설에 불필요한 '출처 성격' 평가가 붙었다.
+      const card = await this.guideline.analyze(enriched, { mode: 'review' });
+      if (!card) this.logger.warn('리뷰 번역이 카드를 못 냈다 — 카드 없이 발행한다', { pmid });
       return card ?? null;
     } catch (error) {
       this.logger.warn('리뷰 분석 실패 (non-fatal)', { pmid, err: error.message });

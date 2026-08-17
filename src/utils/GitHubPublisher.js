@@ -247,6 +247,10 @@ export class GitHubPublisher {
   // `type` 미지정은 가이드라인 — 이미 배포된 상태파일의 구 카드가 여기 걸린다.
   _buildGuidelineCard(g) {
     const isRef = g.type === 'reference';
+    // ★ 트랙3(리뷰)은 **요약이 아니라 번역**이다 (PeterJ 확정 2026-08-17).
+    //   그래서 축이 다르다: 핵심 권고(summary) 대신 원문 절 구조를 따라간 `sections`,
+    //   이전 판 변경점·출처 성격 대신 `coverage`(무엇을 보고 옮겼나)를 싣는다.
+    const isReview = g.type === 'review';
     const paper = g.paper ?? {};
     const title = paper.title ?? g.title ?? '';
     const titleKo = g.title_ko ?? '';
@@ -270,6 +274,18 @@ export class GitHubPublisher {
     const changes = (g.keyChanges ?? []).map((c) => `
       <div class="gl-chg">${c.topic ? `<div class="gl-chg-t">${esc(c.topic)}</div>` : ''}${enko(c.detail, c.detail_ko)}</div>`).join('');
 
+    // 절별 번역 — 문단 줄바꿈을 살린다(번역문은 여러 문단일 수 있다).
+    const sections = (g.sections ?? []).map((sec) => `
+      <div class="gl-chg">${sec.heading_ko ? `<div class="gl-chg-t">${esc(sec.heading_ko)}</div>` : ''}${
+  String(sec.body_ko ?? '').split(/\n{1,}/).filter((x) => x.trim())
+    .map((para) => `<p class="txt ko">${esc(para)}</p>`).join('')}</div>`).join('');
+    const COVERAGE_NOTE = {
+      'full-text': '',
+      'web-augmented': '원문 전문을 직접 받지 못해 웹에서 본문을 확보해 옮겼습니다.',
+      'abstract-only': '원문 전문을 확보하지 못해 **초록 범위**만 옮겼습니다 — 아래 원문 링크에서 확인하세요.',
+    };
+    const coverageNote = isReview ? (COVERAGE_NOTE[g.coverage] ?? '') : '';
+
     const stateId = g.stateId ?? g.id ?? '';
     const superseded = g.status === 'superseded';
     const supersededBy = g.supersededBy ?? '';
@@ -279,15 +295,27 @@ export class GitHubPublisher {
     return `<article class="guideline-card"${stateId ? ` id="${esc(stateId)}" data-guideline-id="${esc(stateId)}"` : ''}>
       <div class="pc-top gl-top">
         <div class="medal gl-medal">${IC.book('#fff')}</div>
-        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">${isRef ? '🔖 참고자료' : '📋 가이드라인'}</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}${lineageBadges}</div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">${isReview ? '📰 리뷰 아티클' : (isRef ? '🔖 참고자료' : '📋 가이드라인')}</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}${lineageBadges}</div>
         <div class="ttl">${esc(titleKo || title)}</div>
         ${titleKo ? `<div class="ttle">${esc(title)}</div>` : ''}
         ${g.scope_ko ? `<p class="txt ko" style="margin-top:6px">${esc(g.scope_ko)}</p>` : ''}
         <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)}${esc(impactFactorLabel(journal))}${date ? ` · ${esc(date)}` : ''}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
       </div>
       <div class="pc-body">
-        ${summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>${isRef ? '핵심 내용' : '핵심 권고'}</div><ul class="pc-ul">${summary}</ul>` : ''}
-        ${isRef
+        ${summary && !isReview ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>${isRef ? '핵심 내용' : '핵심 권고'}</div><ul class="pc-ul">${summary}</ul>` : ''}
+        ${isReview
+          // 번역 본문. 절 하나도 못 얻었으면 지어내지 말고 그 사실을 적는다.
+          // ★ 단, **구판 카드는 내용을 지우지 않는다.** 2026-08-17 이전에 발행된 리뷰는
+          //   `reference` 모드로 만들어져 `sections` 대신 `summary` 를 갖는다. 새 축만
+          //   그리면 그 카드들이 "번역을 만들지 못했습니다" 로 바뀌어 **LLM 이 뽑은 내용이
+          //   화면에서 사라진다** — 확정 ③-C(구판을 삭제하지 않는다) 위반이다.
+          ? `${coverageNote ? `<p class="txt ko" style="margin-top:2px;color:#8a5f1e">${esc(coverageNote.replace(/\*\*/g, ''))}</p>` : ''}${
+  sections
+    ? `<div class="lbl gl-lbl"><span class="i">${IC.book(T.sec)}</span>본문 번역</div><div class="gl-changes">${sections}</div>`
+    : (summary
+      ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>핵심 내용</div><ul class="pc-ul">${summary}</ul>`
+      : `<div class="lbl gl-lbl"><span class="i">${IC.book(T.sec)}</span>본문 번역</div><div class="gl-changes"><p class="txt ko">본문을 확보하지 못해 번역을 만들지 못했습니다 — 아래 원문 링크에서 확인하세요.</p></div>`)}`
+          : isRef
           // 참고자료는 PeterJ 가 직접 고른 출처라 공인 문서가 아닐 수 있다 —
           // 무엇을 근거로 얼마나 믿을지 카드가 먼저 말해야 한다.
           ? (g.sourceNote_ko
@@ -298,9 +326,9 @@ export class GitHubPublisher {
             : (g.changesUnavailable
               ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes"><p class="txt ko">공개 초록/확보 본문에 구체적 변경 내용이 없어(대개 본문 페이월) 세부 변경점을 확보하지 못했습니다. 아래 원문 링크에서 확인하세요.</p></div>`
               : ''))}
-        ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>${isRef ? '어떻게 쓰나' : '임상 임팩트'}</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
+        ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>${isReview ? '임상 적용' : (isRef ? '어떻게 쓰나' : '임상 임팩트')}</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
         ${(g.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 출처</div>${g.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
-        <div class="pc-foot">${footLink}${doiLink} · ${isRef ? '직접 지정 참고자료' : '가이드라인 캐치업'}</div>
+        <div class="pc-foot">${footLink}${doiLink} · ${isReview ? '리뷰 아티클 번역' : (isRef ? '직접 지정 참고자료' : '가이드라인 캐치업')}</div>
       </div>
     </article>`;
   }
@@ -765,10 +793,11 @@ export class GitHubPublisher {
     // ★ 분석 카드가 있으면 **참고자료와 같은 틀**로 그린다 (PeterJ 지시 2026-08-17).
     //   NEJM syncope 카드가 그 모양이고, PeterJ 가 그것을 기준으로 지목했다.
     //   `_buildGuidelineCard` 는 `type` 으로 칩을 정하므로 리뷰용 칩만 갈아끼운다.
+    // ★ 종전에는 참고자료 카드를 그려 놓고 **칩 문자열을 갈아끼웠다.** 이제 리뷰는
+    //   제 타입(`review`)을 갖는다 — 카드 렌더러가 절별 번역·coverage 축을 직접 그린다.
+    //   문자열 치환은 렌더러가 한 글자만 바뀌어도 조용히 안 먹는다.
     const body = card
-      ? this._buildGuidelineCard({ ...card, type: 'reference' })
-        .replace('<span class="chip gl">🔖 참고자료</span>', '<span class="chip gl">📰 리뷰 아티클</span>')
-        .replace('· 직접 지정 참고자료', '· 리뷰 아티클')
+      ? this._buildGuidelineCard({ ...card, type: 'review' })
       // 분석이 실패한 날에도 **무엇이 나갔는지는 남긴다.** 빈 카드보다 얇은 카드가 낫다.
       : `<article class="guideline-card">
       <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">📰 리뷰 아티클</span></div>

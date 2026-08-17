@@ -215,6 +215,41 @@ Authors: ${(doc.authors ?? []).join(', ')}
 Journal: ${doc.journal} (${doc.pubDate})
 MeSH: ${(doc.meshTerms ?? []).join(', ')}`;
 
+    if (mode === 'review') {
+      // ★ 요약이 아니라 **번역**이다 (PeterJ 확정 2026-08-17).
+      //   원문을 못 구하면 웹서치로라도 본문을 확보한 뒤 옮긴다. 못 구했으면
+      //   `coverage` 에 그대로 적는다 — 초록만 보고 전문을 옮긴 척하면 안 된다.
+      return `You are translating a medical review article into Korean for an emergency
+medicine / critical care physician who wants to read the article itself, not a digest.
+
+★ THIS IS A TRANSLATION TASK, NOT A SUMMARY TASK.
+Do NOT compress the article into bullets. Do NOT impose a PICO structure. Do NOT report
+"changes versus a previous version" — a review article is not a versioned guideline.
+Follow the source's OWN section order and render each section faithfully in Korean,
+keeping the author's numbers, doses, thresholds, evidence grades, caveats and hedging.
+If the author is uncertain, your Korean must be uncertain in the same way.
+
+★ IF YOU DO NOT HAVE THE FULL TEXT: use WebSearch/WebFetch to find and read the article
+(publisher page, PMC, DOI landing page, society summary) BEFORE settling for the abstract.
+The user explicitly asked for this. Then set coverage honestly:
+  · full-text     — you rendered from the full text provided below
+  · web-augmented — you fetched the article content from the web
+  · abstract-only — you could only reach the abstract; say so rather than padding
+NEVER claim full-text coverage you did not have, and never invent section content.
+
+Review article:
+${meta}${doc.doi ? `
+DOI: https://doi.org/${doc.doi}` : ''}${doc.pmid ? `
+PubMed: https://pubmed.ncbi.nlm.nih.gov/${doc.pmid}/` : ''}
+
+Abstract:
+${doc.abstract}${fullTextSection}${augmentSection}
+
+Use the submit_review_translation tool.
+Write every _ko field in natural Korean prose. Drug names, score names, trial acronyms and
+abbreviations may stay in English. Keep the register of a clinical journal, not a blog.`;
+    }
+
     if (mode === 'reference') {
       return `You are an expert emergency medicine and critical care physician summarising a clinical reference for a busy colleague.
 
@@ -315,12 +350,22 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     }
 
     const keyChanges = Array.isArray(data.keyChanges) ? data.keyChanges : [];
-    // 참고자료는 "이전 판 대비 변경점" 축이 없다 — 대신 출처 성격을 싣는다.
-    const modeFields = mode === 'reference'
-      ? { sourceNote_ko: data.sourceNote_ko ?? '' }
-      : { keyChanges, changesUnavailable: keyChanges.length === 0 };
+    // 트랙마다 축이 다르다 (PeterJ 확정 2026-08-17):
+    //   guideline  이전 판 대비 변경점(keyChanges)
+    //   reference  출처 성격·한계(sourceNote_ko) — PeterJ 가 직접 고른 자료라 신뢰도를 먼저 말한다
+    //   review     절별 번역(sections) + 무엇을 보고 옮겼는지(coverage)
+    const modeFields = mode === 'review'
+      ? {
+        sections: (Array.isArray(data.sections) ? data.sections : [])
+          .filter((x) => String(x?.body_ko ?? '').trim()),
+        coverage: ['full-text', 'web-augmented', 'abstract-only'].includes(data.coverage)
+          ? data.coverage : 'abstract-only',
+      }
+      : mode === 'reference'
+        ? { sourceNote_ko: data.sourceNote_ko ?? '' }
+        : { keyChanges, changesUnavailable: keyChanges.length === 0 };
     return {
-      type: mode === 'reference' ? 'reference' : 'guideline',
+      type: mode === 'reference' ? 'reference' : (mode === 'review' ? 'review' : 'guideline'),
       paper: {
         pmid: guideline.pmid, title: guideline.title, journal: guideline.journal,
         pubDate: guideline.pubDate, pubmedUrl: pmUrl, doi: guideline.doi,

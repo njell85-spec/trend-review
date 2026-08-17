@@ -118,7 +118,11 @@ test('★ 발행되는 리뷰에 번역 카드가 실린다', async () => {
 
   const r = await o._stageReview('2026-08-17');
   assert.equal(r.outcome, 'published');
-  assert.equal(mode, 'reference', "분석기를 'reference' 모드로 안 불렀다 — 종설에 권고 틀을 씌운다");
+  // ★ 계약 변경 (PeterJ 확정 2026-08-17): *"리뷰는 있는그대로 번역 제시."*
+  //   종전에는 `reference`(PeterJ 가 직접 지정한 자료용)를 빌려 썼다. 그 모드는 요약을
+  //   내고 '출처 성격' 평가를 붙이는데, NEJM·Lancet 급 종설에는 둘 다 안 맞는다.
+  //   트랙3 전용 `review` 모드가 원문 절 구조를 따라간 번역을 낸다.
+  assert.equal(mode, 'review', "분석기를 'review' 모드로 안 불렀다 — 종설이 요약으로 되돌아간다");
   assert.equal(r.item.card?.title_ko, '번역된 제목', '카드가 발행 항목에 안 실렸다');
 
   const saved = JSON.parse(await readFile(qf, 'utf8'));

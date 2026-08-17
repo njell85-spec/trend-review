@@ -124,8 +124,8 @@ let notifyPaper = null;
 if (kind === REVIEW_KIND) {
   // 리뷰 카드는 데일리와 **같은 부품**으로 만든다 — 두 경로가 다른 카드를 그리면
   // "▶ 로 낸 것과 데일리가 낸 것이 다르게 생겼다" 가 된다.
-  const card = await new GuidelineAnalyzerAgent().analyze(enriched, { mode: 'reference' });
-  if (!card) console.warn('⚠️ 리뷰 분석이 카드를 못 냈습니다 — 얇은 카드로 발행합니다(데일리와 같은 처리).');
+  const card = await new GuidelineAnalyzerAgent().analyze(enriched, { mode: 'review' });
+  if (!card) console.warn('⚠️ 리뷰 번역이 카드를 못 냈습니다 — 얇은 카드로 발행합니다(데일리와 같은 처리).');
   const review = {
     pmid, title: article.title, journal: article.journal,
     publishedAt: todayKST, card: card ?? null,
