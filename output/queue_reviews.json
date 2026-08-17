@@ -3,6 +3,15 @@
   "track": "reviews",
   "queue": [
     {
+      "pmid": "41951238",
+      "title": "Airway management of adults in the acute care setting.",
+      "journal": "BMJ",
+      "score": 8.9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16"
+    },
+    {
       "pmid": "42412218",
       "title": "60 years of ARDS and the evolution of extracorporeal lung support - from ECMO to ECCO(2)R.",
       "journal": "Intensive Care Med",
@@ -43,15 +52,6 @@
       "title": "Prehospital airway and ventilatory management: a collaborative and narrative review.",
       "journal": "Intensive Care Med",
       "score": 9,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16"
-    },
-    {
-      "pmid": "41951238",
-      "title": "Airway management of adults in the acute care setting.",
-      "journal": "BMJ",
-      "score": 8.9,
       "topic": "resp_airway",
       "lowConfidence": false,
       "addedAt": "2026-08-16"
