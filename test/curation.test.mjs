@@ -6,7 +6,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  curationBlock, ensureCurationBlock, removeSectionFromHtml, recountStats, parseHiddenKey,
+  curationBlock, ensureCurationBlock, removeSectionFromHtml, recountStats, parseHiddenKey, SECTION_TAGS,
 } from '../src/utils/curation.js';
 
 const OPTS = { owner: 'o', repo: 'r' };
@@ -124,7 +124,14 @@ test('parseHiddenKey: 태그 접두 키만 해석, 형식 밖은 null', () => {
 test('클라이언트 블록: 삭제 dispatch에 tag가 포함된다(C1 클라이언트측)', () => {
   const b = curationBlock(OPTS);
   assert.ok(b.includes('tag:info.tag'), '섹션 태그를 서버로 보내야 같은 날짜 논문·가이드가 구분된다');
-  assert.ok(b.includes('(G?SECTION):'), '자기 마커의 태그+키를 캡처해야 함(M1)');
+  // ★ 종전에는 `(G?SECTION):` 리터럴을 봤다. 그 정규식이 **RSECTION 을 못 읽어서**
+  //   리뷰 누적행의 🗑 가 "섹션 키를 찾지 못했습니다" 로 죽었다(2026-08-17 실측).
+  //   문자열이 아니라 **정본 목록과 대조**한다 — 새 트랙이 생기면 여기가 적색이 된다.
+  const re = b.match(/nodeValue\)\.match\((\/[^/]+\/)\)/)?.[1];
+  assert.ok(re, '자기 마커의 태그+키를 캡처해야 함(M1)');
+  for (const tag of SECTION_TAGS) {
+    assert.ok(re.includes(tag), `클라이언트 정규식이 ${tag} 을 모른다: ${re}`);
+  }
 });
 
 // ── 통계 재계산 ──────────────────────────────────────────────────────────────
@@ -179,4 +186,51 @@ test('섹션을 실제로 지울 때는 표 행도 함께 지운다 (원래 의�
   const out = removeSectionFromHtml(samplePage(), { sectionKey: '2026-07-05', pmid: '111' });
   assert.ok(!out.includes('SECTION:2026-07-05 -->'));
   assert.ok(!out.includes('data-pmid="111"'));
+});
+
+// ── 리뷰 트랙(RSECTION) — 2026-08-17 PeterJ 실측 ─────────────────────────────
+// 누적 리스트의 🗑 를 누르면 "섹션 키를 찾지 못했습니다" 로 죽었다.
+// RSECTION 은 2026-08-16 3트랙 개편에서 생겼는데 **큐레이션 경로가 안 따라왔다** —
+// 클라이언트 정규식 · removeSectionFromHtml 화이트리스트 · parseHiddenKey · 워크플로
+// choice 목록, 넷 다 SECTION|GSECTION 만 알고 있었다.
+
+test('★ 리뷰 섹션(RSECTION)도 지워진다', () => {
+  const html = '<a>x</a>\n<!-- RSECTION:2026-08-17-r-41951238 -->카드<!-- /RSECTION:2026-08-17-r-41951238 -->\n<b>y</b>';
+  const out = removeSectionFromHtml(html, { sectionKey: '2026-08-17-r-41951238', tag: 'RSECTION' });
+  assert.ok(!out.includes('카드'), '리뷰 섹션이 안 지워졌다');
+  assert.ok(out.includes('<a>x</a>') && out.includes('<b>y</b>'), '이웃까지 지웠다');
+});
+
+test('★ 리뷰 섹션을 지울 때 논문·가이드 섹션은 안 건드린다', () => {
+  const html = '<!-- SECTION:2026-08-17 -->논문<!-- /SECTION:2026-08-17 -->'
+    + '<!-- GSECTION:2026-08-17 -->지침<!-- /GSECTION:2026-08-17 -->'
+    + '<!-- RSECTION:2026-08-17-r-1 -->리뷰<!-- /RSECTION:2026-08-17-r-1 -->';
+  const out = removeSectionFromHtml(html, { sectionKey: '2026-08-17-r-1', tag: 'RSECTION' });
+  assert.ok(out.includes('논문') && out.includes('지침'), '다른 트랙 카드가 같이 사라졌다');
+  assert.ok(!out.includes('리뷰'));
+});
+
+test('★ 모르는 태그는 여전히 아무것도 안 지운다', () => {
+  const html = '<!-- XSECTION:k -->x<!-- /XSECTION:k -->';
+  assert.equal(removeSectionFromHtml(html, { sectionKey: 'k', tag: 'XSECTION' }), html);
+});
+
+test('★ 숨김 상태 키가 RSECTION 을 읽는다', () => {
+  assert.deepEqual(parseHiddenKey('RSECTION:2026-08-17-r-41951238'),
+    { tag: 'RSECTION', sectionKey: '2026-08-17-r-41951238' });
+  // 앵커가 살아 있는지 — GSECTION 이 SECTION 으로 잘못 읽히면 안 된다
+  assert.deepEqual(parseHiddenKey('GSECTION:2026-08-17'), { tag: 'GSECTION', sectionKey: '2026-08-17' });
+  assert.equal(parseHiddenKey('NOPE'), null);
+});
+
+test('★ 클라이언트 스크립트가 RSECTION 주석을 알아본다', () => {
+  const block = curationBlock({ owner: 'o', repo: 'r' });
+  const re = block.match(/nodeValue\)\.match\((\/[^/]+\/)\)/)?.[1];
+  assert.ok(re, '섹션 태그 정규식을 못 찾았다');
+  assert.ok(re.includes('RSECTION'), `클라이언트가 RSECTION 을 모른다: ${re}`);
+  // 실제로 매칭되는지 — 문자열만 들어 있고 안 걸리면 의미가 없다
+  const live = new RegExp(re.slice(1, -1));
+  assert.equal(' RSECTION:2026-08-17-r-1 '.match(live)?.[1], 'RSECTION');
+  assert.equal(' GSECTION:2026-08-17 '.match(live)?.[1], 'GSECTION');
+  assert.equal(' SECTION:2026-08-17 '.match(live)?.[1], 'SECTION');
 });

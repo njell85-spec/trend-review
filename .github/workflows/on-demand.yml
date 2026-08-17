@@ -14,7 +14,10 @@ on:
         required: false
         default: 'paper'
         type: choice
-        options: [paper, guideline, reference]
+        # ★ review 는 예고 리스트의 ▶ 가 리뷰 트랙에서 부르는 값이다. 여기 없으면
+        #   workflow_dispatch 가 422 로 튕겨 버튼이 조용히 죽는다 — 스크립트만
+        #   고치고 여기를 빼먹으면 아무 것도 안 달라진다.
+        options: [paper, guideline, reference, review]
       title:
         description: '문서 제목 (URL 지정용, 선택 — 비우면 페이지 <title>)'
         required: false

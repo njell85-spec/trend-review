@@ -6,7 +6,7 @@
  * 동일한 분석 → 대시보드(직접 지정 배지) → 텔레그램 → 아카이브 경로에 태운다.
  * 같은 날 데일리 섹션을 건드리지 않으며(자체 섹션 키), "하루 1편" 카운트 밖의 예외다.
  *
- * 사용: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline|reference]
+ * 사용: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline|reference|review]
  * 트리거: .github/workflows/on-demand.yml (대시보드 위젯 또는 Actions 수동 실행)
  */
 import 'dotenv/config';
@@ -33,14 +33,26 @@ installUsageDump();
 const target = (process.argv[2] ?? '').trim();
 const kind = (process.argv[3] ?? 'paper').trim();
 if (!target) {
-  console.error('사용법: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline|reference]');
+  console.error('사용법: node scripts/on-demand.mjs <PMID|DOI|URL> [paper|guideline|reference|review]');
   process.exit(1);
 }
 // URL 은 논문(PICO) 경로로 못 간다 — PICO 분석은 PubMed 메타데이터(저널·저자·MeSH)가 전제다.
 // 가이드라인(공식 문서)과 참고자료(PeterJ 가 직접 고른 범용 자료)만 URL 을 받는다.
 const DOC_KINDS = new Set(['guideline', 'reference']);
+// ★ kind=review — 예고 리스트의 ▶ 가 리뷰 트랙에서 부르는 경로 (PeterJ 실측 2026-08-17:
+//   눌렀더니 "맨 앞으로 올렸습니다" 만 뜨고 분석·발행이 안 됐다).
+//   종전에는 on-demand 가 paper|guideline|reference 뿐이라 리뷰의 ▶ 는 큐 순서만 바꿨다.
+//   리뷰를 kind=paper 로 넘기면 index.html 에 '직접 지정 논문' 으로 올라가고 리뷰 페이지에는
+//   아무것도 안 생기며 리뷰 큐도 그대로 남아 며칠 뒤 같은 논문이 또 나간다 —
+//   그래서 폴백이 아니라 **제 트랙 경로**를 만든다.
+//   분석은 데일리 `_analyzeReview` 와 같다(GuidelineAnalyzer `mode: 'reference'`).
+const REVIEW_KIND = 'review';
 if (isHttpUrl(target) && !DOC_KINDS.has(kind)) {
-  console.error('✖ URL 지정은 kind=guideline 또는 kind=reference 에서만 지원합니다 (논문은 PMID/DOI로 지정하세요).');
+  console.error('✖ URL 지정은 kind=guideline 또는 kind=reference 에서만 지원합니다 (논문·리뷰는 PMID/DOI로 지정하세요).');
+  process.exit(1);
+}
+if (!['paper', 'guideline', 'reference', REVIEW_KIND].includes(kind)) {
+  console.error(`✖ 알 수 없는 kind: ${kind} (paper|guideline|reference|review)`);
   process.exit(1);
 }
 
@@ -109,7 +121,23 @@ const publisher = new GitHubPublisher();
 let pagesUrl = `https://${process.env.GITHUB_OWNER}.github.io/${process.env.GITHUB_REPO}/`;
 let notifyPaper = null;
 
-if (DOC_KINDS.has(kind)) {
+if (kind === REVIEW_KIND) {
+  // 리뷰 카드는 데일리와 **같은 부품**으로 만든다 — 두 경로가 다른 카드를 그리면
+  // "▶ 로 낸 것과 데일리가 낸 것이 다르게 생겼다" 가 된다.
+  const card = await new GuidelineAnalyzerAgent().analyze(enriched, { mode: 'reference' });
+  if (!card) console.warn('⚠️ 리뷰 분석이 카드를 못 냈습니다 — 얇은 카드로 발행합니다(데일리와 같은 처리).');
+  const review = {
+    pmid, title: article.title, journal: article.journal,
+    publishedAt: todayKST, card: card ?? null,
+  };
+  // ★ 큐에서 빼고 published 로 옮긴다. 안 그러면 **며칠 뒤 데일리가 같은 것을 또 낸다** —
+  //   ▶ 는 "지금 이것을 내보낸다" 이지 "한 번 더 낸다" 가 아니다.
+  const moved = await consumeReviewQueue(pmid, todayKST, review);
+  console.log(moved ? `· 리뷰 큐에서 소진 처리: ${pmid}` : `· 리뷰 큐에 없던 항목이다(직접 지정) — 큐는 그대로`);
+  const published = await publisher.publish(todayKST, [], { review });
+  pagesUrl = `${String(published).replace(/\/?$/, '/')}reviews.html`;
+  notifyPaper = { title_ko: card?.title_ko ?? article.title, paper: { title: article.title, journal: article.journal, pmid } };
+} else if (DOC_KINDS.has(kind)) {
   const isRef = kind === 'reference';
   const card = await new GuidelineAnalyzerAgent().analyze(enriched, { mode: kind });
   if (!card) {
@@ -163,6 +191,30 @@ try {
 }
 
 /** 제외목록에 추가(중복 자동선정 방지) — publish() 전에 호출해 publisher 커밋에 포함시킨다 */
+/**
+ * 리뷰 큐에서 해당 pmid 를 빼 `published` 로 옮긴다.
+ * 큐에 없으면(직접 지정으로 아무 PMID 나 넣은 경우) 아무 것도 하지 않고 false.
+ * 데일리 `_stageReview` 가 쓰는 것과 같은 상태 파일·같은 모양이다.
+ */
+async function consumeReviewQueue(targetPmid, todayStr, published) {
+  const key = String(targetPmid ?? '').trim();
+  if (!key) return false;
+  const file = path.join(process.cwd(), 'output/queue_reviews.json');
+  let state;
+  try { state = JSON.parse(await readFile(file, 'utf8')); } catch { return false; }
+  const queue = Array.isArray(state.queue) ? state.queue : [];
+  const hit = queue.find((x) => String(x?.pmid ?? '') === key);
+  if (!hit) return false;
+  const next = {
+    ...state,
+    queue: queue.filter((x) => String(x?.pmid ?? '') !== key),
+    published: [...(state.published ?? []), { ...hit, ...published, publishedAt: todayStr }],
+    updatedAt: todayStr,
+  };
+  await writeFile(file, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
+  return true;
+}
+
 async function appendState(rel, entry) {
   const p = path.join(process.cwd(), rel);
   let raw = null;
