@@ -3,15 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41324946",
-      "title": "Levosimendan to Facilitate Weaning From ECMO in Patients With Severe Cardiogenic Shock: The LEVOECMO Randomized Clinical Trial.",
-      "journal": "JAMA",
-      "score": 9.7,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-17"
-    },
-    {
       "pmid": "41188988",
       "title": "Use of rescue noninvasive ventilation for post-extubation respiratory failure.",
       "journal": "Critical care (London, England)",
@@ -121,7 +112,18 @@
     }
   ],
   "published": [],
-  "rejected": [],
+  "rejected": [
+    {
+      "pmid": "41324946",
+      "title": "Levosimendan to Facilitate Weaning From ECMO in Patients With Severe Cardiogenic Shock: The LEVOECMO Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "score": 9.7,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-17",
+      "rejectedAt": "2026-08-17"
+    }
+  ],
   "lastRun": null,
   "updatedAt": "2026-08-17"
 }
