@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { collectGuidelineCandidates, assertSupersetOfPtPath, enrichCandidates } from './guidelinePubmed.js';
 import { filterByRegion } from './guidelineRegionFilter.js';
+import { loadGuidelineTopics, topicQuerySpecs } from './guidelineTopics.js';
 import { matchOrganization } from './guidelineOrgs.js';
 import { classifyGuidelineDocument } from './guidelineClassifier.js';
 import { scoreGuideline, suggestStatus } from './GuidelineScorer.js';
@@ -9,14 +10,32 @@ import { loadGuidelineState, mergeCandidates, saveGuidelineState } from './guide
 
 export const DEFAULT_BACKFILL_WINDOWS = '60-30,150-120,240-210';
 
+// ★ `monthly:24` — 2년치를 **30일씩 24조각**으로 캔다 (PeterJ 지시 2026-08-17:
+//   "2년치 가이드라인 미리 풀링해놓고 + 최신 나오면 add on").
+//   왜 한 창(`730-0`)으로 안 캐나: esearch 는 `retmax` 로 잘린다. 2년치를 한 번에
+//   요청하면 최신 N건만 오고 **나머지는 조용히 사라진다** — 캐치업이라면서 최신만
+//   또 긁는 꼴이 된다. 창을 쪼개면 각 조각이 `retmax` 안에 들어오고, `truncated`
+//   플래그가 어느 조각이 넘쳤는지도 알려 준다.
+//   `24-0,60-30` 같은 명시 창은 종전 그대로 쓴다.
 export function parseBackfillWindows(value = DEFAULT_BACKFILL_WINDOWS, today = new Date()) {
   const midnight = new Date(`${today.toISOString().slice(0, 10)}T00:00:00Z`);
-  return String(value).split(',').map((part) => {
+  const date = (days) => { const d = new Date(midnight); d.setUTCDate(d.getUTCDate() - days); return d.toISOString().slice(0, 10).replaceAll('-', '/'); };
+  return String(value).split(',').flatMap((part) => {
+    const monthly = part.trim().match(/^monthly:(\d+)$/);
+    if (monthly) {
+      const months = Number(monthly[1]);
+      if (!months || months > 120) throw new Error(`Invalid monthly window count: ${part}`);
+      // 오래된 쪽부터 — 백로그는 옛것이 먼저 쌓여야 날짜순 소진이 자연스럽다.
+      return Array.from({ length: months }, (_, i) => {
+        const older = (months - i) * 30;
+        const newer = older - 30;
+        return { minDate: date(older), maxDate: date(newer), label: `${older}-${newer}` };
+      });
+    }
     const match = part.trim().match(/^(\d+)-(\d+)$/);
     if (!match || Number(match[1]) <= Number(match[2])) throw new Error(`Invalid backfill window: ${part}`);
     const [older, newer] = match.slice(1).map(Number);
-    const date = (days) => { const d = new Date(midnight); d.setUTCDate(d.getUTCDate() - days); return d.toISOString().slice(0, 10).replaceAll('-', '/'); };
-    return { minDate: date(older), maxDate: date(newer), label: `${older}-${newer}` };
+    return [{ minDate: date(older), maxDate: date(newer), label: `${older}-${newer}` }];
   });
 }
 
@@ -70,10 +89,13 @@ export function simulateDailyPublishing(rows, { minDate, maxDate }) {
 export async function runGuidelineBackfill({
   windows = DEFAULT_BACKFILL_WINDOWS, today = new Date(), fetchJson, apply = false,
   statePath, orgs: suppliedOrgs, interests: suppliedInterests, collect = collectGuidelineCandidates,
-  fetchArticles,
+  fetchArticles, topics: suppliedTopics, retmax = 100,
 } = {}) {
   if (typeof fetchJson !== 'function') throw new TypeError('fetchJson must be a function');
   const orgs = suppliedOrgs ?? loadGuidelineOrgs();
+  // 주제축은 백필에도 똑같이 건다 — 데일리와 다른 그물로 캐면 백로그와 유입이 서로
+  // 다른 모집단이 되어, "예고에 있던 종류가 다음 날부터 안 나온다" 가 된다.
+  const topicSpecs = topicQuerySpecs(suppliedTopics ?? loadGuidelineTopics());
   const interests = suppliedInterests ?? JSON.parse(await readFile(new URL('../../config/interests.json', import.meta.url), 'utf8'));
   const state = statePath ? await loadGuidelineState(statePath) : { schemaVersion: 2, queue: [], published: [], rejected: [], sourceHealth: {}, lastRun: null, updatedAt: new Date().toISOString(), configVersion: 'guideline-v2' };
   const alreadyPublished = new Set(state.published.map(idOf));
@@ -83,7 +105,7 @@ export async function runGuidelineBackfill({
 
   for (const window of parseBackfillWindows(windows, today)) {
     try {
-      const collected = await collect({ fetchJson, minDate: window.minDate, maxDate: window.maxDate });
+      const collected = await collect({ fetchJson, minDate: window.minDate, maxDate: window.maxDate, topicSpecs, retmax });
       const manifest = collected.manifest;
       // ★ 보강(efetch)과 지역 필터는 **프로덕션 `_stageGuideline()` 과 같은 순서**로 돈다.
       //   이 실험의 존재 이유가 "그날 아침 이 로직이 돌았다면 무엇이 나갔을까" 인데,

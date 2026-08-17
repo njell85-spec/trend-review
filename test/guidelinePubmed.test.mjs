@@ -162,3 +162,83 @@ test('F2: 보강은 이미 있는 값을 덮어쓰지 않는다', () => {
   assert.deepEqual(merged.publicationTypes, ['Guideline']);
   assert.equal(merged.journal, 'kept-journal');
 });
+
+// ── 주제축 배선 (2026-08-17) ────────────────────────────────────────────────
+const topicSpec = (id) => ({ id: `pubmed-topic:${id}`, discovery: 'pubmed-topic', label: id, term: `"${id}"[Title]` });
+
+function topicStub({ pt = ['1'], expanded = ['2'], topic = ['3'] } = {}) {
+  return async (url) => {
+    if (url.includes('esearch')) {
+      const term = new URL(url).searchParams.get('term');
+      const ids = term.includes('practice guideline"[Publication Type]) OR ("guideline') ? pt
+        : term.includes('consensus[Title]') ? expanded : topic;
+      return { esearchresult: { count: String(ids.length), idlist: ids } };
+    }
+    const ids = new URL(url).searchParams.get('id').split(',');
+    return { result: Object.fromEntries(ids.map((id) => [id, { uid: id, title: `Doc ${id}`, pubdate: '2026-01-01', pubtype: ['Guideline'] }])) };
+  };
+}
+
+test('주제축 스펙이 붙으면 그 결과도 후보에 들어온다', async () => {
+  const out = await collectGuidelineCandidates({
+    fetchJson: topicStub(), minDate: 'a', maxDate: 'b', retmax: 10,
+    topicSpecs: [topicSpec('sepsis')],
+  });
+  assert.deepEqual(out.candidates.map((x) => x.pmid).sort(), ['1', '2', '3']);
+  assert.deepEqual(out.candidates.find((x) => x.pmid === '3').discoveredBy, ['pubmed-topic']);
+  assert.equal(out.manifest.topicOnlyCount, 1, '주제축에서만 온 건수가 안 세어진다');
+  assert.equal(out.manifest.topics.length, 1);
+  assert.equal(out.manifest.topics[0].id, 'pubmed-topic:sepsis');
+  assert.equal(out.manifest.topics[0].totalFound, 1);
+});
+
+test('★ manifest.queries 에는 핵심 두 축만 남는다 (주제축 term 은 상태 파일을 불린다)', async () => {
+  const out = await collectGuidelineCandidates({
+    fetchJson: topicStub(), minDate: 'a', maxDate: 'b', retmax: 10,
+    topicSpecs: [topicSpec('sepsis'), topicSpec('neuro')],
+  });
+  assert.deepEqual(out.manifest.queries.map((q) => q.id), ['pubmed-pt', 'pubmed-expanded']);
+  assert.ok(out.manifest.topics.every((t) => !('term' in t)), '주제축 term 이 manifest 에 실렸다');
+});
+
+test('★ 초집합 검증은 인덱스가 아니라 id 로 PT 쿼리를 찾는다', async () => {
+  // 주제축이 여러 개 붙어도 ptPmids 는 PT 쿼리의 것이어야 한다.
+  const out = await collectGuidelineCandidates({
+    fetchJson: topicStub({ pt: ['1'], expanded: ['2'], topic: ['3'] }),
+    minDate: 'a', maxDate: 'b', retmax: 10,
+    topicSpecs: [topicSpec('a'), topicSpec('b'), topicSpec('c')],
+  });
+  assert.deepEqual(out.manifest.ptPmids, ['1']);
+  assert.equal(out.manifest.expandedOnlyCount, 1);
+});
+
+test('★ 주제축이 살아 있어도 핵심 두 축이 다 죽으면 던진다', async () => {
+  const stubFn = async (url) => {
+    if (url.includes('esearch')) {
+      const term = new URL(url).searchParams.get('term');
+      const isCore = term.includes('[Publication Type]');
+      if (isCore) throw new Error('core down');
+      return { esearchresult: { count: '1', idlist: ['3'] } };
+    }
+    return { result: { 3: { uid: '3', title: 'Doc 3', pubdate: '2026-01-01', pubtype: [] } } };
+  };
+  await assert.rejects(() => collectGuidelineCandidates({
+    fetchJson: stubFn, minDate: 'a', maxDate: 'b', retmax: 10, topicSpecs: [topicSpec('x')],
+  }), /Both PubMed/, '주제축이 살아 있다고 현행 경로 붕괴가 가려지면 안 된다');
+});
+
+test('★ 쿼리를 동시에 몰아치지 않는다 (PubMed 는 초당 3회다)', async () => {
+  let inFlight = 0; let peak = 0;
+  const fetchJson = async (url) => {
+    inFlight += 1; peak = Math.max(peak, inFlight);
+    await new Promise((r) => setTimeout(r, 5));
+    inFlight -= 1;
+    if (url.includes('esearch')) return { esearchresult: { count: '0', idlist: [] } };
+    return { result: {} };
+  };
+  await collectGuidelineCandidates({
+    fetchJson, minDate: 'a', maxDate: 'b', retmax: 10, concurrency: 2,
+    topicSpecs: Array.from({ length: 11 }, (_, i) => topicSpec(`g${i}`)),
+  });
+  assert.ok(peak <= 2, `동시 요청이 ${peak}개까지 갔다 — 429 로 통째로 죽는다`);
+});

@@ -8,7 +8,8 @@ function help() {
   console.log(`Usage: node scripts/guideline-backfill.mjs [options]
 
 Options:
-  --windows <list>  Day-offset windows (default: ${DEFAULT_BACKFILL_WINDOWS})
+  --windows <list>  Day-offset windows, or monthly:<N> (default: ${DEFAULT_BACKFILL_WINDOWS})
+                    예: monthly:24 = 2년치를 30일씩 24조각
   --out <path>      JSON report path (required)
   --apply           Apply candidates to output/selected_guidelines.json
   --help            Show this help`);
@@ -21,12 +22,36 @@ const out = value('--out');
 if (!out) { help(); process.exitCode = 2; }
 else {
   const apiKey = process.env.PUBMED_API_KEY;
+
+  // ★ PubMed 는 키 없이 **초당 3회**, 키가 있어도 10회다. 2년 백필은 창 24개 ×
+  //   쿼리 13개라 esearch 만 300회를 넘는다 — 종전의 맨 `fetch` 로는 429 로 통째로
+  //   죽는다(census 가 실제로 그렇게 죽었다, HANDOFF 2026-08-16 함정 ③).
+  //   ① 최소 간격을 지키고 ② 429·5xx 는 지수 백오프로 다시 친다.
+  const minIntervalMs = apiKey ? 110 : 350;
+  let gate = Promise.resolve();
+  const throttled = (fn) => {
+    const run = gate.then(fn);
+    gate = run.then(() => new Promise((r) => setTimeout(r, minIntervalMs)), () => new Promise((r) => setTimeout(r, minIntervalMs)));
+    return run;
+  };
   const fetchJson = async (url) => {
     const target = new URL(url);
     if (apiKey) target.searchParams.set('api_key', apiKey);
-    const response = await fetch(target, { headers: { Accept: 'application/json' } });
-    if (!response.ok) throw new Error(`PubMed HTTP ${response.status}`);
-    return response.json();
+    let lastError;
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+      try {
+        const response = await throttled(() => fetch(target, { headers: { Accept: 'application/json' } }));
+        if (response.status === 429 || response.status >= 500) throw new Error(`PubMed HTTP ${response.status}`);
+        if (!response.ok) throw new Error(`PubMed HTTP ${response.status}`);
+        return await response.json();
+      } catch (error) {
+        lastError = error;
+        // 마지막 시도면 더 기다리지 않고 올린다 — 조용히 빈 결과로 넘어가면 안 된다.
+        if (attempt === 4) break;
+        await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt));
+      }
+    }
+    throw lastError;
   };
   // ★ 초록·MeSH 보강은 **논문 트랙의 검증된 파서**를 그대로 쓴다(efetch XML).
   //   여기서 따로 파싱을 쓰면 같은 PubMed 응답을 두 파서가 다르게 읽는 날이 온다.

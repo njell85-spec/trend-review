@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { runGuidelineBackfill, simulateDailyPublishing } from '../src/utils/guidelineBackfill.js';
+import { runGuidelineBackfill, simulateDailyPublishing, parseBackfillWindows } from '../src/utils/guidelineBackfill.js';
 import { loadGuidelineOrgs } from '../src/utils/guidelineOrgs.js';
 
 const interests = { topicGroups: { resus: { weight: 1, terms: ['cardiac arrest'] } } };
@@ -174,4 +174,34 @@ test('F5: 백필도 efetch 보강을 태운다', async () => {
   assert.deepEqual(asked, ['1'], '백필이 보강을 안 태웠다');
   assert.equal(report.windows[0].manifest.enrichment.withAbstract, 1);
   assert.equal(report.windows[0].counts.queued, 1, '보강 없이는 needsReview 로 떨어진다');
+});
+
+// ── 2년 캐치업 풀링 (PeterJ 지시 2026-08-17) ──────────────────────────────────
+test('monthly:24 는 2년치를 30일씩 24조각으로 만든다', () => {
+  const w = parseBackfillWindows('monthly:24', new Date('2026-08-17T00:00:00Z'));
+  assert.equal(w.length, 24);
+  // 오래된 쪽부터 — 백로그는 옛것이 먼저 쌓여야 날짜순 소진이 자연스럽다
+  assert.equal(w[0].label, '720-690');
+  assert.equal(w.at(-1).label, '30-0');
+  assert.equal(w.at(-1).maxDate, '2026/08/17');
+  // ★ 조각 사이에 구멍이 없어야 한다 — 구멍은 그 달 지침이 통째로 안 캐진다는 뜻이다
+  for (let i = 1; i < w.length; i += 1) assert.equal(w[i].minDate, w[i - 1].maxDate);
+});
+
+test('monthly 와 명시 창을 섞어 쓸 수 있고, 잘못된 값은 던진다', () => {
+  assert.equal(parseBackfillWindows('monthly:2,900-870', new Date('2026-08-17T00:00:00Z')).length, 3);
+  assert.throws(() => parseBackfillWindows('monthly:0'), /monthly/);
+  assert.throws(() => parseBackfillWindows('monthly:999'), /monthly/);
+  assert.throws(() => parseBackfillWindows('30-60'), /Invalid backfill window/);
+});
+
+test('★ 백필도 주제축을 건다 (데일리와 다른 그물로 캐면 모집단이 갈린다)', async () => {
+  let seenSpecs = null;
+  const collect = async ({ topicSpecs, retmax }) => {
+    seenSpecs = { count: topicSpecs?.length ?? 0, retmax };
+    return { candidates: [], manifest: { queries: [], ptPmids: [], window: {} } };
+  };
+  await runGuidelineBackfill(opts(collect));
+  assert.ok(seenSpecs.count >= 8, `주제축이 백필에 안 걸렸다 (${seenSpecs.count}개)`);
+  assert.equal(seenSpecs.retmax, 100, '백필 retmax 가 데일리 기본값이면 옛 창이 잘린다');
 });

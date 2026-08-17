@@ -111,17 +111,42 @@ export function assertSupersetOfPtPath(manifest, candidates) {
   return true;
 }
 
-export async function collectGuidelineCandidates({ fetchJson, minDate, maxDate, retmax = 40, now = new Date().toISOString() }) {
+// ★ 쿼리를 **동시에 다 던지지 않는다.** 주제축이 붙으면 스펙이 2개에서 13개로 늘어나는데,
+//   PubMed 는 키 없이 초당 3회다(키가 있어도 10회). `Promise.all` 로 13개를 한꺼번에
+//   던지면 429 로 통째로 죽는다 — 이 저장소는 census 에서 이미 그렇게 죽어 봤다
+//   (HANDOFF 2026-08-16 함정 ③). 소비자가 넘긴 fetchJson 이 재시도를 갖고 있든 아니든,
+//   **애초에 몰아치지 않는 것**이 옳다.
+async function runSpecs(specs, fetchJson, opts, concurrency) {
+  const results = new Array(specs.length);
+  let cursor = 0;
+  const worker = async () => {
+    for (let i = cursor; i < specs.length; i = cursor) {
+      cursor += 1;
+      results[i] = await runQuery(specs[i], fetchJson, opts);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.max(1, Math.min(concurrency, specs.length)) }, worker));
+  return results;
+}
+
+export async function collectGuidelineCandidates({
+  fetchJson, minDate, maxDate, retmax = 40, now = new Date().toISOString(),
+  topicSpecs = [], concurrency = 2,
+}) {
   if (typeof fetchJson !== 'function') throw new TypeError('fetchJson must be a function');
   if (!minDate || !maxDate) throw new TypeError('minDate and maxDate are required');
   if (!Number.isInteger(retmax) || retmax < 1) throw new TypeError('retmax must be a positive integer');
   const specs = [
     { id: 'pubmed-pt', discovery: 'pubmed-pt', term: PT_TERM },
     { id: 'pubmed-expanded', discovery: 'pubmed-title', term: EXPANDED_TERM },
+    ...topicSpecs,
   ];
-  const results = await Promise.all(specs.map((spec) => runQuery(spec, fetchJson, { minDate, maxDate, retmax, now })));
-  if (results.every((x) => !x.evidence.succeeded)) {
-    throw new AggregateError(results.map((x) => new Error(x.evidence.error)), 'Both PubMed guideline queries failed');
+  const results = await runSpecs(specs, fetchJson, { minDate, maxDate, retmax, now }, concurrency);
+  // ★ 판정 기준은 **PT·확장 두 축**이다. 주제축까지 세면, 주제축 11개가 살아 있는 한
+  //   현행 경로 둘이 다 죽은 날에도 "일부 성공" 으로 조용히 넘어간다.
+  const coreResults = results.slice(0, 2);
+  if (coreResults.every((x) => !x.evidence.succeeded)) {
+    throw new AggregateError(coreResults.map((x) => new Error(x.evidence.error)), 'Both PubMed guideline queries failed');
   }
   const merged = new Map();
   for (const result of results) for (const candidate of result.candidates) {
@@ -131,11 +156,17 @@ export async function collectGuidelineCandidates({ fetchJson, minDate, maxDate, 
       : candidate);
   }
   const candidates = [...merged.values()];
-  const pt = new Set(results[0].ids);
-  const expanded = new Set(results[1].ids);
+  // ★ 인덱스가 아니라 **id 로 찾는다.** 종전에는 `results[0]`·`results[1]` 이었는데,
+  //   스펙 목록 앞에 무엇 하나만 끼면 초집합 검증이 엉뚱한 쿼리를 PT 로 착각한다.
+  const idsOf = (id) => new Set(results[specs.findIndex((s) => s.id === id)]?.ids ?? []);
+  const pt = idsOf('pubmed-pt');
+  const expanded = idsOf('pubmed-expanded');
   const dates = candidates.map((x) => x.pubDate).filter(Boolean).sort();
   const manifest = {
-    queries: results.map((x) => x.evidence),
+    // ★ `queries` 에는 **핵심 두 축만** 남긴다. 주제축 11개의 `term` 은 하나가 1.5~2.7KB 라
+    //   전부 넣으면 매일 상태 파일에 20KB 씩 같은 문자열이 쌓인다(이 manifest 는
+    //   `lastRun` 으로 그대로 직렬화된다). 주제축의 성패·건수는 아래 `topics` 에 있다.
+    queries: coreResults.map((x) => x.evidence),
     mergedTotal: candidates.length,
     overlapCount: [...pt].filter((id) => expanded.has(id)).length,
     ptOnlyCount: [...pt].filter((id) => !expanded.has(id)).length,
@@ -143,6 +174,14 @@ export async function collectGuidelineCandidates({ fetchJson, minDate, maxDate, 
     oldestFetchedDate: dates[0] ?? null,
     newestFetchedDate: dates.at(-1) ?? null,
     window: { minDate, maxDate }, retmax,
+    // 주제축은 그룹별로 남긴다 — 총계만 남기면 "심정지는 넉넉한데 중독은 반년째 0" 이 안 보인다.
+    topics: results.slice(2).map((r, i) => ({
+      id: specs[i + 2].id, label: specs[i + 2].label ?? null,
+      succeeded: r.evidence.succeeded, totalFound: r.evidence.totalFound,
+      idsFetched: r.evidence.idsFetched, truncated: r.evidence.truncated, error: r.evidence.error,
+    })),
+    topicOnlyCount: candidates.filter((c) => c.discoveredBy.includes('pubmed-topic')
+      && !c.discoveredBy.some((d) => d === 'pubmed-pt' || d === 'pubmed-title')).length,
   };
   manifest.ptPmids = [...pt];   // 열거 가능해야 한다 — 위 assert 주석 참조
   // PT 쿼리가 죽었으면 초집합을 **판정할 수 없다.** 수집 자체는 부분 성공으로 계속하되

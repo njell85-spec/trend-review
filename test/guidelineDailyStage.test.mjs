@@ -140,3 +140,42 @@ test('F2: 보강이 죽어도 수집은 성사되고, 죽었다는 사실이 남
   assert.equal(out.candidates.length, 1, '보강 실패가 수집을 죽이면 안 된다');
   assert.match(out.manifest.enrichment.error, /efetch 503/, '조용히 넘어가면 안 된다');
 });
+
+// ── 주제축 배선 회귀 (2026-08-17) ─────────────────────────────────────────────
+// `config/guideline-topics.json` 은 08-15 에 만들어졌지만 08-17 까지 **아무도 안 읽었다.**
+// 모듈이 옳아도 데일리가 안 부르면 그물은 그대로 EM/CCM MeSH 8개다.
+test('데일리 수집이 관심주제 축을 실제로 건다', async () => {
+  const o = new TrendReviewOrchestrator();
+  const terms = [];
+  o.collector = {
+    _fetchJson: async (url) => {
+      if (url.includes('esearch')) {
+        terms.push(new URL(url).searchParams.get('term'));
+        return { esearchresult: { count: '0', idlist: [] } };
+      }
+      return { result: {} };
+    },
+    fetchArticles: async () => [],
+  };
+  const out = await o._guidelineInputs('2026-08-17');
+  assert.ok(terms.length >= 10, `쿼리가 ${terms.length}개뿐이다 — 주제축이 안 걸렸다`);
+  const joined = terms.join(' ');
+  assert.ok(joined.includes('"cardiac arrest"[Title]'), '질병명 주제어가 쿼리에 없다');
+  assert.ok(!joined.includes('"cardiac"[Title]'), '넓은 단어가 쿼리에 들어갔다 (PeterJ 확정 위반)');
+  assert.ok(out.manifest.topics.length >= 8, 'manifest 에 주제별 증거가 안 남았다');
+});
+
+test('주제축 설정이 깨져도 데일리 수집은 현행 두 축으로 계속 돈다', async () => {
+  const o = new TrendReviewOrchestrator();
+  o.guidelineTopics = { schemaVersion: 1, search: { field: 'Title' }, groups: {} }; // groups 비었음 → 던진다
+  const terms = [];
+  o.collector = {
+    _fetchJson: async (url) => {
+      if (url.includes('esearch')) { terms.push(1); return { esearchresult: { count: '0', idlist: [] } }; }
+      return { result: {} };
+    },
+    fetchArticles: async () => [],
+  };
+  await o._guidelineInputs('2026-08-17');
+  assert.equal(terms.length, 2, '설정이 깨졌다고 데일리 코어까지 멈추면 불변식 위반이다');
+});
