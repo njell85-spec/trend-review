@@ -725,6 +725,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-18",
+      "pmid": "41122884",
+      "title": "Part 9: Adult Advanced Life Support: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
+      "title_ko": "Part 9: 성인 전문소생술(Advanced Life Support): 2025 미국심장협회(AHA) 심폐소생술 및 응급심혈관치료 가이드라인",
+      "journal": "Circulation",
+      "doi": "10.1161/CIR.0000000000001376",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "심정지, 호흡정지 및 심정지 전후(peri-arrest) 심혈관 응급을 겪는 성인에서 제세동, 심율동전환(cardioversion), 기도 및 약물 치료, 혈관 접근, 소생술 종료(termination of resuscitation)에 대한 최신 근거기반 전문소생술(ALS) 권고는 무엇인가?",
+      "pico": {
+        "population": "[USA] Adults experiencing cardiac arrest (ventricular fibrillation, pulseless ventricular tachycardia, asystole, and pulseless electrical activity), respiratory arrest, and life-threatening cardiovascular emergencies, as well as peri-arrest conditions such as atrial fibrillation and flutter with rapid ventricular response (guideline document; no enrolled study sample or N).",
+        "intervention": "Advanced Life Support strategies including defibrillation, electrical cardioversion, advanced airway management, drug therapies, and intravenous access, plus double sequential defibrillation, head-up cardiopulmonary resuscitation, and point-of-care ultrasound; initial attempts at IV access recommended over initial attempts at IO access, with IO attempted if initial IV is unsuccessful.",
+        "comparison": "Structured evidence reviews and the latest clinical research underpinning the recommendations; e.g., initial IV access vs initial intraosseous (IO) access for vascular access (no quantitative comparator group, as this is a guideline synthesis).",
+        "outcome": "Consensus, evidence-based recommendations to optimize survival and patient outcomes; double sequential external defibrillation and vector-change defibrillation are not established and not recommended for routine practice, head-up CPR is discouraged outside rigorous clinical trials, and termination-of-resuscitation rules are refined by EMS professional scope of practice. No quantitative primary outcome statistics (N, OR, HR, CI, p-values) are reported in the abstract."
+      },
+      "pico_ko": {
+        "population": "[미국] 심정지(심실세동, 무맥성 심실빈맥, 무수축, 무맥성 전기활동), 호흡정지 및 생명을 위협하는 심혈관 응급을 겪는 성인, 그리고 빠른 심실반응을 동반한 심방세동·심방조동 같은 심정지 전후(peri-arrest) 상태 (가이드라인 문서로, 등록된 연구 표본이나 N은 없음).",
+        "intervention": "제세동, 전기적 심율동전환, 전문기도관리, 약물 치료, 정맥 접근을 포함한 전문소생술(ALS) 전략과 이중 순차 제세동(double sequential defibrillation), head-up CPR, 현장현시 초음파(point-of-care ultrasound); 성인 심정지에서 초기 IO 접근보다 초기 IV 접근을 우선 권고하며 초기 IV 시도가 실패하면 IO를 시도.",
+        "comparison": "권고의 근거가 된 구조화된 근거검토 및 최신 임상연구; 예를 들어 혈관 접근에서 초기 IV 접근 대 초기 골내(IO) 접근 (가이드라인 종합이므로 정량적 대조군은 없음).",
+        "outcome": "생존과 환자 예후를 최적화하기 위한 합의·근거기반 권고; 이중 순차 외부 제세동과 벡터 변경(vector-change) 제세동은 확립되지 않았고 일상 진료에 권고되지 않으며, head-up CPR은 엄격한 임상시험 밖에서는 권장하지 않고, 소생술 종료 규칙은 EMS 종사자의 업무 범위(scope of practice)에 따라 정교화됨. 정량적 일차 결과 통계(N, OR, HR, CI, p값)는 초록에 보고되지 않음."
+      },
+      "keyFindings": [
+        "Double sequential external defibrillation (DSED) and vector-change defibrillation are not yet established and are not recommended for routine practice; reliable identification of shock-refractory VF and precisely timed delivery require further investigation.",
+        "Head-up CPR (a bundle of mechanical compressions, an impedance threshold device, and controlled sequential head/thorax elevation) is discouraged outside the setting of rigorous clinical trials with appropriate subject protections.",
+        "For adult cardiac arrest, initial attempts at IV access are recommended over initial attempts at IO access, with IO reserved for when initial IV attempts are unsuccessful; termination-of-resuscitation rules were refined by EMS scope of practice."
+      ],
+      "keyFindings_ko": [
+        "이중 순차 외부 제세동(DSED)과 벡터 변경 제세동은 아직 확립되지 않았고 일상 진료에 권고되지 않음; 충격불응성(shock-refractory) VF의 신뢰할 수 있는 식별과 정밀한 타이밍의 전달은 추가 연구가 필요함.",
+        "Head-up CPR(기계식 압박, 임피던스 역치 장치(impedance threshold device), 머리·흉부의 순차적 거상을 조절하는 자동장치의 묶음)는 적절한 피험자 보호가 갖춰진 엄격한 임상시험 밖에서는 권장되지 않음.",
+        "성인 심정지에서 초기 IO 접근보다 초기 IV 접근을 우선 권고하고, IO는 초기 IV 시도가 실패한 경우로 유보; 소생술 종료 규칙은 EMS 업무 범위에 따라 정교화됨."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41122884",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41122884/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1161/CIR.0000000000001376",
+          "url": "https://doi.org/10.1161/CIR.0000000000001376"
+        },
+        {
+          "label": "웹 — Part 9: Adult Advanced Life Support — Circulation (AHA Journals), DOI 10.1161/CIR.0000000000001376",
+          "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376"
+        },
+        {
+          "label": "웹 — AHA CPR & First Aid — Part 9 Adult Advanced Life Support summary",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support"
+        },
+        {
+          "label": "웹 — PubMed record (via Amedeo, PMID 41122884)",
+          "url": "https://m.amedeo.com/41122884"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "Part 9: Adult Advanced Life Support — Circulation (AHA Journals), DOI 10.1161/CIR.0000000000001376",
+          "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "AHA CPR & First Aid — Part 9 Adult Advanced Life Support summary",
+          "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed record (via Amedeo, PMID 41122884)",
+          "url": "https://m.amedeo.com/41122884",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
