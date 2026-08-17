@@ -5,10 +5,29 @@
  * 포맷이 따라 움직이고, 두 채널이 공존하던 시절엔 한쪽만 고쳐져 서로 다른 말을 했다.
  * 텍스트 규격은 여기 한 곳이고, 채널 모듈은 이 결과를 실어 나르기만 한다.
  *
- * (2026-08-04 카카오 폐지 시 KakaoNotifier에서 그대로 옮겨온 코드 — 텍스트 무변경.
- *  200자 분할은 카카오 나챗방 상한에서 온 규칙인데, §2의 "제목을 자르지 않는다"를
- *  보장하는 구조라 유지한다. 텔레그램은 4096자 한도라 join해서 1건으로 보낸다.)
+ * ── 2026-08-18 포맷 개정 (PeterJ 확정) ──────────────────────────────────────
+ * 사유는 **가독성** 이다. 다섯 줄이 빈 줄 없이 붙어 있어 폰에서 덩어리로 보였다.
+ * 확정 포맷 — **빈 줄 위치가 규격의 일부다**:
+ * ```
+ * [trend-review]
+ *                      ← 빈 줄
+ * 2026-08-17
+ * 발관 후 호흡부전에 대한 구제 비침습적 환기(rescue NIV)의 사용
+ * Critical care (London, England) · #41188988
+ *                      ← 빈 줄
+ * 📊 https://njell85-spec.github.io/trend-review/
+ * ```
+ *
+ * ★ 200자 2건 분할을 **없앴다.** 그 규칙은 카카오 나챗방 상한(200자)에서 온 것인데
+ *   카카오는 2026-08-04 에 폐지됐고 텔레그램 상한은 4096자다. 남겨 두면 긴 제목일 때
+ *   본문이 두 메시지로 갈리면서 **위 빈 줄 배치가 깨진다** — 규격과 정면으로 충돌한다.
+ *   대신 4096 을 넘길 때만 **제목 하나를 잘라** 구조를 지킨다(구조 > 제목 전문).
+ *   되돌리려는 다음 세션에게: 분할을 되살리면 PeterJ 가 고쳐 달라고 한 그 증상이 돌아온다.
  */
+
+// 텔레그램 sendMessage 본문 상한. 여유를 두고 자른다(이모지·URL 은 코드포인트로 셈).
+const TELEGRAM_LIMIT = 4096;
+const SAFE_LIMIT = 3900;
 
 export function buildReportMessages({ dateStr, topPaper, pagesUrl, progressLines = [] }) {
   const p = topPaper ?? {};
@@ -18,29 +37,25 @@ export function buildReportMessages({ dateStr, topPaper, pagesUrl, progressLines
   const pmid = paper.pmid ?? '';
   const url = pagesUrl || 'https://njell85-spec.github.io/trend-review/';
 
-  const l1 = '[trend-review]';
-  const l2 = dateStr;
-  const l4 = `${journal}${pmid ? `${journal ? ' · ' : ''}#${pmid}` : ''}`; // 어느 논문인지
-  const l5 = `📊 ${url}`;
+  const head = '[trend-review]';
+  const meta = `${journal}${pmid ? `${journal ? ' · ' : ''}#${pmid}` : ''}`; // 어느 논문인지
+  const link = `📊 ${url}`;
 
-  // ★ 진행상황은 **별도 메시지**로 붙인다. 기존 5줄 본문은 200자 계약(REPORT_SPEC §4-D)
-  //   아래 있고 분할 규칙이 거기 맞춰져 있다 — 본문에 끼워 넣으면 그 계약이 깨진다.
-  const progress = progressLines.length
-    ? [`[진행상황]`, ...progressLines].join('\n')
-    : null;
-  const withProgress = (msgs) => (progress ? [...msgs, progress] : msgs);
+  // 빈 줄은 '' 원소로 표현한다 — join('\n') 이 곧 규격이다.
+  const compose = (t) => [head, '', dateStr, t, meta, '', link].filter((l) => l !== null).join('\n');
 
-  const full = [l1, l2, title, l4, l5].filter(Boolean).join('\n');
-  if (full.length <= 200) return withProgress([full]);
-
-  // 200 초과 → 제목을 자르지 않고 2개로 분할. ① 헤더+날짜+제목  ② 저널·PMID + 링크
-  let msg1 = [l1, l2, title].join('\n');
-  if (msg1.length > 200) { // 초장문 제목 방어
-    const budget = 200 - l1.length - l2.length - 2 - 1;
-    msg1 = [l1, l2, `${title.slice(0, Math.max(12, budget))}…`].join('\n');
+  let body = compose(title);
+  if (body.length > SAFE_LIMIT) {
+    // 초장문 제목 방어 — **구조를 지키고 제목만** 자른다. 자른 사실을 …로 남긴다.
+    const overflow = body.length - SAFE_LIMIT;
+    const budget = Math.max(12, title.length - overflow - 1);
+    body = compose(`${title.slice(0, budget)}…`);
   }
-  const msg2 = [l4, l5].filter(Boolean).join('\n');
-  return withProgress([msg1, msg2]);
+
+  // ★ 진행상황은 **별도 메시지**다. 본문 규격(빈 줄 배치)에 끼워 넣으면 규격이 깨진다.
+  //   채널 모듈이 메시지 사이를 빈 줄로 잇는다(TelegramNotifier).
+  const progress = progressLines.length ? ['[진행상황]', ...progressLines].join('\n') : null;
+  return progress ? [body, progress] : [body];
 }
 
 // ── 실패 알림 텍스트 (자동 업데이트가 최종 실패했을 때) ──────────────────────
@@ -56,3 +71,5 @@ export function buildFailureText({ dateStr, reason }) {
   if (text.length > 195) text = `${text.slice(0, 193)}…`;
   return text;
 }
+
+export { TELEGRAM_LIMIT, SAFE_LIMIT };

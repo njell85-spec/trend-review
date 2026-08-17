@@ -1078,6 +1078,12 @@ export class TrendReviewOrchestrator {
         {
           ...(pagesUrl && { pagesUrl }),
           ...(notifyResult && { notification: notifyResult }),
+          // ★ 가이드라인·리뷰를 결과에 실어 보낸다 (2026-08-18). 진입점이 그날 md 첨부를
+          //   만들려면 **세 트랙 분석이 다 있어야** 한다 — 종전에는 `topPapers` 만 나가서
+          //   진입점이 논문 말고는 아무것도 볼 수 없었다. 발행에 쓰인 것과 **같은 객체**를
+          //   그대로 넘긴다(다시 만들면 첨부와 화면이 갈린다).
+          guideline: guidelineCard ?? null,
+          review: reviewItem ?? null,
         }
       );
     } catch (err) {
@@ -1125,6 +1131,9 @@ export class TrendReviewOrchestrator {
     return this._buildResult([], null, null, null, null, {
       pagesUrl,
       skipped: 'papers',
+      // 그날 md 첨부는 논문이 쉬는 날에도 나가야 한다 — 그날 나간 것이 이 둘뿐이다.
+      guideline: guidelineCard ?? null,
+      review: reviewItem ?? null,
       guidelinePublished: Boolean(guidelineCard),
       reviewPublished: Boolean(reviewItem),
     });

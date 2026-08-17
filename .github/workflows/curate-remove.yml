@@ -85,3 +85,30 @@ jobs:
           done
           echo "::error::3회 재시도 후에도 push 실패 (데일리와 지속 경합?)"
           exit 1
+
+  # 본 삭제 잡은 모든 클릭을 보존해야 해 concurrency를 두지 않지만, 검증은 최종 사이트
+  # 상태 하나만 의미가 있으므로 최신 검증만 남긴다. actions:write도 이 별도 잡에만 준다.
+  verify-pages:
+    needs: remove
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: verify-pages
+      cancel-in-progress: true
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Verify Pages deployment (auto-retry)
+        run: node scripts/verify-pages-deploy.mjs
+        env:
+          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}

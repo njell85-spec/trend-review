@@ -22,7 +22,7 @@
  * - **소프트**: 데이터가 없거나 깨져도 호출측이 원본 html을 그대로 쓰도록 한다(데일리 코어 무영향).
  */
 
-export const ARCHIVE_STATUS_VERSION = 'v2';
+export const ARCHIVE_STATUS_VERSION = 'v3';
 
 /**
  * 대시보드에서 지운 항목을 아카이브에서도 뺀다 (PeterJ 확정 2026-08-17).
@@ -103,10 +103,15 @@ export function buildArchiveStatusRows(archive) {
   return { rows, counts };
 }
 
-/** "아카이브 저장 현황" 섹션 HTML(버전 마커 포함). 게이트·접힘 상태로 렌더. */
+/**
+ * "분석 보관 현황" 섹션 HTML(버전 마커 포함). 게이트·접힘 상태로 렌더.
+ * ★ 이것은 **누적리스트가 아니다** — 누적리스트는 페이지 아래 표(읽음·삭제·자료화)이고,
+ *   이 패널은 그 분석이 어디까지 보관됐는지(OA본문·웹·초록만·PDF적재)를 보여주는 내부용이다.
+ *   종전 이름("아카이브 저장 현황")이 누적리스트와 헷갈려서 바꿨다(PeterJ 명칭 확정 2026-08-18).
+ */
 export function archiveStatusBlock(archive) {
   const { rows, counts } = buildArchiveStatusRows(archive);
-  const listHtml = rows || '<div class="as-row"><div class="as-t" style="color:#94a3b8;font-weight:600">아직 아카이브된 항목이 없습니다.</div></div>';
+  const listHtml = rows || '<div class="as-row"><div class="as-t" style="color:#94a3b8;font-weight:600">아직 보관된 분석이 없습니다.</div></div>';
   return `<!-- ARCHIVE_STATUS ${ARCHIVE_STATUS_VERSION} -->
 <div class="as-wrap" id="as-wrap" style="display:none">
 <style>
@@ -135,10 +140,10 @@ export function archiveStatusBlock(archive) {
 .as-note{padding:8px 16px 12px;font-size:10px;color:#94a3b8;line-height:1.5}
 </style>
 <details class="as-box">
-  <summary><span class="as-title">📦 아카이브 저장 현황</span><span class="as-lock">🔒 나만 보기</span><span class="as-cnt">${counts.total}건</span></summary>
+  <summary><span class="as-title">📦 분석 보관 현황</span><span class="as-lock">🔒 나만 보기</span><span class="as-cnt">${counts.total}건</span></summary>
   <div class="as-sum"><span>총 <b>${counts.total}건</b></span><span>OA본문 <b>${counts.oa}</b></span><span>웹레퍼런스 <b>${counts.web}</b></span><span>초록만 <b>${counts.abs}</b></span><span>PDF적재 <b>${counts.pdf}</b></span></div>
   <div class="as-list">${listHtml}</div>
-  <div class="as-note">※ 대시보드에서 삭제한 논문은 이 목록에서도 빠집니다(재선정 방지 목록은 유지 — 지운 논문이 다시 뽑히지 않습니다). 이미 Drive·Doc에 올라간 것은 되돌리지 않습니다. 본문 텍스트는 표시하지 않고 저장 여부만 보여줍니다.</div>
+  <div class="as-note">※ 누적리스트에서 삭제한 논문은 이 목록에서도 빠집니다(재선정 방지 목록은 유지 — 지운 논문이 다시 뽑히지 않습니다). 이미 Drive·Doc에 올라간 것은 되돌리지 않습니다. 본문 텍스트는 표시하지 않고 저장 여부만 보여줍니다.</div>
 </details>
 </div>
 <script>(function(){try{if(localStorage.getItem('tr_pat')){document.getElementById('as-wrap').style.display='block';}}catch(e){}})();</script>

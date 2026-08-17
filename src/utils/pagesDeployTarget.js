@@ -27,3 +27,9 @@ export function pickVerifyTargets(commits) {
   });
   return latestPublishedIndex === -1 ? [] : commits.slice(latestPublishedIndex).map(({ sha }) => sha);
 }
+
+// cancelled 런에는 실패한 잡이 없으므로 failed-jobs API가 아니라 전체 런을 재실행한다.
+export function rerunEndpointForConclusion(runId, conclusion) {
+  const suffix = conclusion === 'cancelled' ? 'rerun' : 'rerun-failed-jobs';
+  return `/actions/runs/${runId}/${suffix}`;
+}

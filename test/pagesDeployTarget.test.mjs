@@ -1,7 +1,7 @@
 /** pagesDeployTarget — 게시 파일 변경 커밋 선택 계약 검증. */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pickVerifyTargets, touchesPublishedPath } from '../src/utils/pagesDeployTarget.js';
+import { pickVerifyTargets, rerunEndpointForConclusion, touchesPublishedPath } from '../src/utils/pagesDeployTarget.js';
 
 const commit = (sha, files) => ({ sha, files });
 
@@ -25,6 +25,22 @@ test('최신 게시 파일 변경 커밋부터 끝까지 반환한다', () => {
     commit('b', ['output/video_log.json']),
     commit('c', ['guidelines.html']),
   ]), ['c']);
+});
+
+test('첫 대상은 가장 최신 게시 커밋이고 뒤 상태 커밋도 그 게시 내용을 포함한다', () => {
+  const targets = pickVerifyTargets([
+    commit('old-page', ['index.html']),
+    commit('latest-page', ['reviews.html']),
+    commit('state-after-page', ['output/video_log.json']),
+  ]);
+  const [latestPublishedSha] = targets;
+  assert.equal(latestPublishedSha, 'latest-page');
+  assert.deepEqual(targets, ['latest-page', 'state-after-page']);
+});
+
+test('취소 런만 전체 재실행하고 그 외 실패는 실패 잡만 재실행한다', () => {
+  assert.equal(rerunEndpointForConclusion(10, 'cancelled'), '/actions/runs/10/rerun');
+  assert.equal(rerunEndpointForConclusion(11, 'failure'), '/actions/runs/11/rerun-failed-jobs');
 });
 
 test('블록리스트에 없는 상태·새 자산 파일은 게시 파일이다', () => {

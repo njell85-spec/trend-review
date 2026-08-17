@@ -37,7 +37,7 @@ permissions:
 #   `curate-remove.yml` 주석이 바로 이 함정을 적어 두었는데 같은 데 빠졌다.
 #
 #   같은 파일(output/selected_guidelines.json)을 쓰지만 **직렬화가 필요 없다**:
-#   커밋 단계가 push 실패 시 최신 main 으로 rebase 해 멱등 재적용하는 루프를 갖고 있다.
+#   커밋 단계가 push 실패 시 최신 main 으로 reset 후 멱등 재적용하는 루프를 갖고 있다.
 #   사람이 누르는 버튼은 **절대 배치 작업 뒤에 줄 세우지 않는다.**
 concurrency:
   group: guideline-batch
@@ -103,20 +103,31 @@ jobs:
         env:
           GITHUB_OWNER: ${{ github.repository_owner }}
           GITHUB_REPO:  ${{ github.event.repository.name }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+          IN_TRACK: ${{ inputs.track }}
+          IN_LIMIT: ${{ inputs.limit }}
         run: |
-          node scripts/apply-page-render.mjs
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
-            echo "· 변경 없음 — 커밋하지 않는다"
-            exit 0
-          fi
-          git add output/ index.html guidelines.html reviews.html
-          git commit -m "chore(${{ inputs.track }}): LLM 셀렉 반영 (limit ${{ inputs.limit }})"
           for i in 1 2 3 4; do
+            git fetch origin main || exit 1
+            git reset --hard origin/main || exit 1
+            case "$IN_TRACK" in
+              guidelines) SCRIPT=scripts/guideline-fit.mjs ;;
+              reviews)    SCRIPT=scripts/review-fit.mjs ;;
+              *) echo "::error::알 수 없는 트랙: $IN_TRACK"; exit 2 ;;
+            esac
+            node "$SCRIPT" --limit "$IN_LIMIT"
+            node scripts/apply-page-render.mjs
+            if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
+              echo "· 변경 없음 — 커밋하지 않는다"
+              exit 0
+            fi
+            git add output/ index.html guidelines.html reviews.html
+            git commit -m "chore($IN_TRACK): LLM 셀렉 반영 (limit $IN_LIMIT)"
             if git push; then exit 0; fi
-            echo "· push 실패 — 최신 main 위로 옮겨 재시도 ($i)"
-            git pull --rebase origin main || exit 1
+            echo "· push 실패 — 최신 main에서 변형·렌더부터 다시 적용 ($i)"
             sleep $((i * 3))
           done
           exit 1

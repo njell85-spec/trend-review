@@ -210,11 +210,11 @@ test('★ CSS 선택자가 실제 마크업의 클래스와 일치한다 (안 �
   }
 });
 
-test('★ 예고할 것이 없으면 "없다" 고 말한다 (빈 화면은 고장과 구분이 안 된다)', () => {
+test('★ 예정리스트가 비면 "없다" 고 말한다 (빈 화면은 고장과 구분이 안 된다)', () => {
   const out = render({ from: '2026-08-16', days: 7,
     tracks: [{ key: 'papers', label: '논문', cadence: 'daily', mode: 'on', state: { queue: [] } }] });
   assert.match(out, /up-empty/);
-  assert.match(out, /예고할 것이 없습니다/);
+  assert.match(out, /예정리스트가 비었습니다/);
 });
 
 test('트랙이 전부 꺼져 있어도 빈 상태를 그린다', () => {

@@ -73,6 +73,6 @@ test('ensure: 앵커·기존 블록 없으면 원본 유지(소프트)', () => {
 
 test('빈 아카이브도 안전(0건 렌더)', () => {
   const html = archiveStatusBlock({ entries: [], driveState: {} });
-  assert.match(html, /아직 아카이브된 항목이 없습니다/);
+  assert.match(html, /아직 보관된 분석이 없습니다/);
   assert.match(html, /총 <b>0건<\/b>/);
 });

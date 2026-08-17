@@ -26,7 +26,7 @@ permissions:
 #   `curate-remove.yml` 주석이 바로 이 함정을 적어 두었는데 같은 데 빠졌다.
 #
 #   같은 파일(output/selected_guidelines.json)을 쓰지만 **직렬화가 필요 없다**:
-#   커밋 단계가 push 실패 시 최신 main 으로 rebase 해 멱등 재적용하는 루프를 갖고 있다.
+#   커밋 단계가 push 실패 시 최신 main 으로 reset 후 멱등 재적용하는 루프를 갖고 있다.
 #   사람이 누르는 버튼은 **절대 배치 작업 뒤에 줄 세우지 않는다.**
 concurrency:
   group: guideline-batch
@@ -131,20 +131,28 @@ jobs:
         env:
           GITHUB_OWNER: ${{ github.repository_owner }}
           GITHUB_REPO:  ${{ github.event.repository.name }}
+          PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
+          IN_WINDOWS: ${{ inputs.windows }}
         run: |
-          node scripts/apply-page-render.mjs
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
-            echo "· 변경 없음 — 커밋하지 않는다"
-            exit 0
-          fi
-          git add output/ index.html guidelines.html reviews.html
-          git commit -m "chore(guidelines): backfill apply ${{ inputs.windows }}"
           for i in 1 2 3 4; do
+            git fetch origin main || exit 1
+            git reset --hard origin/main || exit 1
+            # 정지 신호(4)는 일부 적용분을 버리라는 뜻이 아니다. 원래 replay와 같이
+            # 종료 코드는 마지막 단계가 반영하고, 여기서는 멱등 적용분을 끝까지 커밋한다.
+            set +e
+            node scripts/guideline-backfill.mjs --windows "$IN_WINDOWS" --out guideline-backfill-report.json --apply
+            set -e
+            node scripts/apply-page-render.mjs
+            if git diff --quiet -- output/ index.html guidelines.html reviews.html; then
+              echo "· 변경 없음 — 커밋하지 않는다"
+              exit 0
+            fi
+            git add output/ index.html guidelines.html reviews.html
+            git commit -m "chore(guidelines): backfill apply $IN_WINDOWS"
             if git push; then exit 0; fi
-            echo "· push 실패 — 최신 main 위로 옮겨 재시도 ($i)"
-            git pull --rebase origin main || exit 1
+            echo "· push 실패 — 최신 main에서 변형·렌더부터 다시 적용 ($i)"
             sleep $((i * 3))
           done
           exit 1

@@ -17,6 +17,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { GitHubPublisher } from '../src/utils/GitHubPublisher.js';
 import { mergePages, splitPages } from '../src/utils/pageSplit.js';
+import { loadCurationState, CURATION_STATE_PATH } from '../src/utils/curation.js';
 
 const DRY = process.argv.includes('--dry');
 const root = process.cwd();
@@ -43,8 +44,23 @@ const generatedAt = new Date().toLocaleString('ko-KR', {
   timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit',
   hour: '2-digit', minute: '2-digit', hour12: false,
 });
-const withUpcoming = await publisher._renderUpcomingFromDisk(merged, generatedAt);
-const out = splitPages(withUpcoming, { refIds: await publisher._referenceIds() });
+let staged = await publisher._renderUpcomingFromDisk(merged, generatedAt);
+
+// ★★ 클라이언트 블록도 여기서 최신판으로 맞춘다 (2026-08-18).
+//   종전에는 예정리스트만 다시 그렸다. 그런데 버튼·삭제·읽음 코드는 **버전 마커가 붙은
+//   클라이언트 블록**이고, 그 교체는 `publish()` 안에서만 일어난다 — 즉 **데일리가 돌기
+//   전까지 배포본은 옛 코드 그대로**다. 실측(커밋 542cfd2):
+//     · 생성기 CURATION_BLOCK v7 ↔ 배포 3페이지 v6 (삭제 확인 문구가 옛말을 하고 있었다)
+//     · 읽음 스크립트에 `output/read_state.json` PUT 이 **배포본에 아예 없었다**
+//   버튼 워크플로(🗑·큐제어)는 이 스크립트를 태우므로, 여기서 같이 맞추면 **버튼 한 번에
+//   배포본이 최신 코드로 따라온다.** 순서는 `publish()` 와 같게 둔다(다르면 어느 날
+//   두 경로가 다른 페이지를 만든다).
+staged = publisher._ensureOnDemandWidget(staged);
+staged = publisher._applyCuration(staged, await loadCurationState(path.join(root, CURATION_STATE_PATH)));
+staged = await publisher._ensureArchiveStatus(staged);
+staged = publisher._ensureReadScript(staged);
+
+const out = splitPages(staged, { refIds: await publisher._referenceIds() });
 
 if (!out.guidelines || !out.reviews) {
   console.error('✖ 3분할이 안 됐다 — 소프트 폴백으로 떨어졌다. 쓰지 않는다.');
