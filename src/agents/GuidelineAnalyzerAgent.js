@@ -16,6 +16,7 @@ import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
 import { LLMClient, PROVIDER_DEFAULTS, ANTHROPIC_ANALYSIS_MODEL } from '../utils/LLMClient.js';
 import { MetadataScorer } from '../utils/MetadataScorer.js';
+import { isTrustedSourceUrl } from '../utils/sourceTrust.js';
 
 /**
  * ★ 트랙3(리뷰) 실질 게이트 임계 — sections 본문(한국어) 글자수 합이 이 미만이고
@@ -527,7 +528,9 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       .map((x) => {
         if (x?.origin !== 'augmented') return x;
         const url = String(x.sourceUrl ?? '').trim();
-        if (!/^https?:\/\//i.test(url)) return null;
+        // ★ 허용목록을 통과한 출처만 (2026-08-18) — http(s) 만 보면 해적판 PDF 미러가
+        //   그대로 들어온다. 가이드라인 보강 절과 **같은 기준**이어야 한다.
+        if (!isTrustedSourceUrl(url)) return null;
         const heading = String(x.heading_ko ?? '').trim();
         const label = String(x.sourceLabel ?? '').trim() || url;
         const body = String(x.body_ko);
@@ -554,9 +557,30 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
   }
 
   /** 실제 http(s) 링크가 달린 webSources 만 — 웹을 정말 열었다는 증거로 센다. */
+  /**
+   * 근거로 인정할 웹 출처만.
+   *
+   * ★★ 2026-08-18 실측 — 웹검색을 고치자마자 내용은 1,119 → 5,173자로 좋아졌는데
+   *   근거로 붙은 출처가 **Lancet 논문 PDF 무단 게재 미러**(waltersport.com)였다.
+   *   내용이 맞더라도 인용할 곳이 아니고, 링크가 언제 사라질지 모르며, 진본 보증도 없다.
+   *   프롬프트의 "블로그·콘텐츠팜 배제" 는 PDF 미러를 못 걸렀다 —
+   *   **말로 막지 말고 코드로 막는다**(`sourceTrust` 허용목록).
+   * ★ 대가를 알고 고른 것이다: 정당한 출처를 못 찾은 날은 보강이 비어 카드가 얇아진다.
+   *   얇은 것은 정직한 결과이고, 해적판을 근거로 단 두꺼운 카드는 그렇지 않다.
+   *   (얇으면 아래 게이트가 한 번 더 돌아 정당한 출처를 다시 찾는다.)
+   */
   _validWebSources(data) {
-    return (Array.isArray(data?.webSources) ? data.webSources : [])
-      .filter((s) => s?.url && /^https?:\/\//i.test(String(s.url).trim()));
+    const all = (Array.isArray(data?.webSources) ? data.webSources : []);
+    const kept = all.filter((s) => isTrustedSourceUrl(s?.url));
+    const dropped = all.length - kept.length;
+    if (dropped) {
+      this.logger.warn(`신뢰할 수 없는 웹 출처 ${dropped}건 제외 (허용목록 밖)`, {
+        hosts: all.filter((s) => !isTrustedSourceUrl(s?.url))
+          .map((s) => { try { return new URL(String(s.url)).hostname; } catch { return String(s?.url).slice(0, 40); } })
+          .slice(0, 5),
+      });
+    }
+    return kept;
   }
 
   /**
@@ -589,7 +613,10 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       .filter((x) => String(x?.body_ko ?? '').trim())
       .map((x) => {
         const url = String(x?.sourceUrl ?? '').trim();
-        if (!/^https?:\/\//i.test(url)) return null;
+        // ★ http(s) 인 것만으로는 부족하다 — 해적판 PDF 미러도 https 다(2026-08-18 실측).
+        //   보강 절의 출처도 `webSources` 와 **같은 허용목록**을 통과해야 한다.
+        //   두 곳이 다른 기준을 쓰면 한쪽으로 미심쩍은 출처가 새어 들어온다.
+        if (!isTrustedSourceUrl(url)) return null;
         return {
           heading_ko: String(x.heading_ko ?? '').trim(),
           body_ko: String(x.body_ko).trim(),
