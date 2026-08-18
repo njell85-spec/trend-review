@@ -531,7 +531,11 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         // ★ 허용목록을 통과한 출처만 (2026-08-18) — http(s) 만 보면 해적판 PDF 미러가
         //   그대로 들어온다. 가이드라인 보강 절과 **같은 기준**이어야 한다.
         if (!isTrustedSourceUrl(url)) return null;
-        const heading = String(x.heading_ko ?? '').trim();
+        // ★ 모델이 제목에 `[보강]` 같은 표식을 스스로 붙여 오는 일이 있다(실측 2026-08-18:
+        //   화면에 `[웹 보강] [보강] …` 로 두 번 찍혔다). 우리 표식을 붙이기 **전에**
+        //   앞머리의 대괄호 표식을 걷어낸다 — 표식은 우리가 붙이는 것 하나여야 한다.
+        const heading = String(x.heading_ko ?? '').trim()
+          .replace(/^(?:\[[^\]]{0,12}\]\s*)+/, '').trim();
         const label = String(x.sourceLabel ?? '').trim() || url;
         const body = String(x.body_ko);
         return {
@@ -618,7 +622,8 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         //   두 곳이 다른 기준을 쓰면 한쪽으로 미심쩍은 출처가 새어 들어온다.
         if (!isTrustedSourceUrl(url)) return null;
         return {
-          heading_ko: String(x.heading_ko ?? '').trim(),
+          // 리뷰 보강 절과 같은 규칙 — 모델이 스스로 붙인 앞머리 표식을 걷는다.
+          heading_ko: String(x.heading_ko ?? '').trim().replace(/^(?:\[[^\]]{0,12}\]\s*)+/, '').trim(),
           body_ko: String(x.body_ko).trim(),
           sourceLabel: String(x.sourceLabel ?? '').trim() || url,
           sourceUrl: url,

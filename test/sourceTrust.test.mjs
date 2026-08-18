@@ -77,3 +77,22 @@ test('★★ 출처를 받는 세 자리가 모두 같은 판정기를 쓴다 (�
   assert.ok(!/if \(!\/\^https\?:\\\/\\\/\/i\.test\(url\)\) return null;/.test(src),
     'http 검사만 하는 자리가 남았다 — 그리로 해적판 미러가 들어온다');
 });
+
+// ── 표식 중복 (실측 2026-08-18) ──────────────────────────────────────────────
+// 화면에 `[웹 보강] [보강] Sepsis-3 진단 기준 …` 으로 표식이 **두 번** 찍혔다.
+// 모델이 제목에 스스로 `[보강]` 을 붙여 오는데 우리도 `[웹 보강]` 을 붙였기 때문이다.
+// 표식은 **우리가 붙이는 것 하나**여야 한다.
+test('★ 모델이 붙인 앞머리 표식을 걷어내고 우리 표식만 남긴다', async () => {
+  const { GuidelineAnalyzerAgent } = await import('../src/agents/GuidelineAnalyzerAgent.js');
+  const a = new GuidelineAnalyzerAgent();
+  const secs = a._publishableReviewSections({
+    sections: [{
+      origin: 'augmented', heading_ko: '[보강] Sepsis-3 진단 기준',
+      body_ko: '본문', sourceLabel: 'SCCM', sourceUrl: 'https://www.sccm.org/x',
+    }],
+  });
+  assert.equal(secs.length, 1);
+  assert.equal((secs[0].heading_ko.match(/\[/g) ?? []).length, 1,
+    `표식이 겹쳤다: ${secs[0].heading_ko}`);
+  assert.match(secs[0].heading_ko, /^\[웹 보강\] Sepsis-3 진단 기준$/);
+});
