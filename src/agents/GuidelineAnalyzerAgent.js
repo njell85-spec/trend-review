@@ -427,7 +427,21 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
           try {
             return await call(true);
           } catch (e) {
-            this.logger.warn(`${mode} web-search call failed — falling back to text-only: ${e.message}`);
+            // ★★ 이 폴백이 **조용해서** 두 달 가까이 웹검색이 한 번도 안 도는 줄 몰랐다
+          //   (2026-08-18 실측). 실패해도 카드는 나오므로 화면만 봐서는 안 보인다.
+          //   그래서 CLI 가 돌려준 진단(서버 웹툴 호출 횟수·중단 사유)을 **뽑아서 남긴다.**
+          //   `web_search_requests: 0` 이면 도구가 아예 안 돈 것이고, `error_max_turns`
+          //   면 턴이 모자란 것이다 — 둘은 처방이 다르므로 구분해서 보여야 한다.
+          const diag = (() => {
+            const m = String(e.message);
+            const subtype = m.match(/"subtype":"([^"]+)"/)?.[1] ?? '?';
+            const turns = m.match(/"num_turns":(\d+)/)?.[1] ?? '?';
+            const ws = m.match(/"web_search_requests":(\d+)/)?.[1] ?? '?';
+            const wf = m.match(/"web_fetch_requests":(\d+)/)?.[1] ?? '?';
+            return `subtype=${subtype} turns=${turns} web_search=${ws} web_fetch=${wf}`;
+          })();
+          this.logger.warn(`${mode} web-search call failed — falling back to text-only [${diag}]`);
+          this.logger.warn(`${mode} web-search 원문 오류: ${String(e.message).slice(0, 300)}`);
             return await call(false);
           }
         };

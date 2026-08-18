@@ -297,13 +297,28 @@ ${schema}`;
     // runs on the requested model (e.g. claude-opus-4-8) instead of the CLI default.
     if (this.model) args.push('--model', this.model);
 
-    // 웹검색 보강(가이드라인 등): 서버 웹툴을 허용하고 멀티턴을 연다.
-    // --allowedTools 는 가변 인자라 반드시 args 맨 끝에 둔다.
-    // 기본 12턴은 데일리 PICO 폴백 기준(바이트 동일 유지). 열린 웹 탐색(트랙 비교 Arm2 등)은
-    // 턴을 많이 먹으므로 LLM_WEB_MAX_TURNS 로 상향할 수 있다(미설정 시 12 그대로).
+    // 웹검색 보강(가이드라인·리뷰): 웹툴을 허용하고 멀티턴을 연다.
+    //
+    // ★★ 2026-08-18 실측 — **웹검색이 한 번도 실행된 적이 없었다.**
+    //   Actions run 32092960497 로그(리뷰 트랙, 두 시도 모두 동일):
+    //     {"subtype":"error_max_turns","num_turns":13,"stop_reason":"tool_use",
+    //      "server_tool_use":{"web_search_requests":0,"web_fetch_requests":0}}
+    //   `web_search_requests: 0` — 도구가 **한 번도 안 돌았다.** 모델은 쓰려 했고
+    //   (`stop_reason: tool_use`) 그 상태로 턴 한도를 다 써서 CLI 가 exit 1 로 죽었다.
+    //   호출부는 그 예외를 잡아 **text-only 로 조용히 폴백**한다 — 그래서 겉보기엔
+    //   "카드가 나왔다" 인데 내용은 늘 초록 범위였다(1,119자).
+    //
+    //   원인 둘을 같이 고친다:
+    //   ① `--allowedTools` 를 **공백으로 나눠** 넘기고 있었다. `WebSearch` 만 값으로
+    //      먹히고 `WebFetch` 는 **위치 인자**로 흘러갔다(그 자리는 프롬프트 자리다).
+    //      → 쉼표로 이어 **하나의 인자**로 넘긴다.
+    //   ② 12턴은 웹 리서치에 모자란다. 검색 3~5회 + 페이지 열기까지 하면 그 안에
+    //      절대 못 끝낸다(실측 13턴에서 잘렸다). 기본을 30으로 올린다.
+    //      ★ 이 분기는 `webSearch: true` 일 때만 탄다 — 데일리 PICO·rerank 는
+    //        `webSearch: false` 라 인자가 종전과 **바이트 동일**하다.
     if (webSearch) {
-      const maxTurns = String(process.env.LLM_WEB_MAX_TURNS || '12');
-      args.push('--max-turns', maxTurns, '--allowedTools', 'WebSearch', 'WebFetch');
+      const maxTurns = String(process.env.LLM_WEB_MAX_TURNS || '30');
+      args.push('--max-turns', maxTurns, '--allowedTools', 'WebSearch,WebFetch');
     }
 
     // 비동기 spawn — spawnSync는 호출당 최대 8분 이벤트 루프를 얼려
