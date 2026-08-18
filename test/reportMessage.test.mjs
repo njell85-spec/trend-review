@@ -9,47 +9,77 @@ import { TelegramNotifier } from '../src/agents/TelegramNotifier.js';
 // ★ 2026-08-18 개정: **빈 줄이 규격의 일부다** (PeterJ 확정 — 가독성).
 //   [trend-review] / 빈 줄 / 날짜 / 제목 / 저널·PMID / 빈 줄 / 📊 링크
 //   줄 인덱스를 그대로 못 박는다 — 빈 줄이 사라지면 적색이 되어야 한다.
-test('buildReportMessages: 7줄 구조 · 빈 줄 위치 · 링크 포함 · 금지 장식 없음', () => {
-  const [msg, ...rest] = buildReportMessages({
-    dateStr: '2026-08-17',
-    topPaper: {
-      title_ko: '발관 후 호흡부전에 대한 구제 비침습적 환기(rescue NIV)의 사용',
-      paper: { title: 'T', journal: 'Critical care (London, England)', pmid: '41188988' },
-    },
-    pagesUrl: 'https://njell85-spec.github.io/trend-review/',
-  });
-  assert.equal(rest.length, 0); // 진행상황이 없으면 1건
-  const lines = msg.split('\n');
-  assert.equal(lines.length, 7, `7줄이어야 한다 — 실제 ${lines.length}줄`);
-  assert.equal(lines[0], '[trend-review]');
-  assert.equal(lines[1], '', '헤더 다음 빈 줄이 없다');
-  assert.equal(lines[2], '2026-08-17');
-  assert.equal(lines[3], '발관 후 호흡부전에 대한 구제 비침습적 환기(rescue NIV)의 사용');
-  assert.equal(lines[4], 'Critical care (London, England) · #41188988');
-  assert.equal(lines[5], '', '저널 줄과 링크 사이 빈 줄이 없다');
-  assert.equal(lines[6], '📊 https://njell85-spec.github.io/trend-review/');
+// ★★ 2026-08-18 2차 개정 — **세 트랙을 다 싣는다** (PeterJ 실측 피드백:
+//    "그날 선정된 논문리스트만 있음. 논문 가이드라인 리뷰 각각 모두 제시").
+const THREE = {
+  dateStr: '2026-08-18',
+  topPaper: { title_ko: 'Part 9: 성인 전문소생술', paper: { journal: 'Circulation', pmid: '41122884' } },
+  guideline: { title_ko: '2026 급성 허혈성 뇌졸중 지침', paper: { journal: 'Stroke', pmid: '41582814' } },
+  review: { pmid: '41765030', card: { title_ko: '패혈증(Sepsis)', paper: { journal: 'Lancet (London, England)', pmid: '41765030' } } },
+  pagesUrl: 'https://njell85-spec.github.io/trend-review/',
+};
+
+test('★★ 세 트랙이 다 실리고 블록 사이가 빈 줄이다', () => {
+  const [msg, ...rest] = buildReportMessages(THREE);
+  assert.equal(rest.length, 0);
+  assert.equal(msg, [
+    '[trend-review]',
+    '',
+    '2026-08-18',
+    '',
+    '📄 논문',
+    'Part 9: 성인 전문소생술',
+    'Circulation · #41122884',
+    '',
+    '📋 가이드라인',
+    '2026 급성 허혈성 뇌졸중 지침',
+    'Stroke · #41582814',
+    '',
+    '📰 리뷰',
+    '패혈증(Sepsis)',
+    'Lancet (London, England) · #41765030',
+    '',
+    '📊 https://njell85-spec.github.io/trend-review/',
+  ].join('\n'));
   assert.ok(!/🥇/u.test(msg));
 });
 
-test('buildReportMessages: PeterJ 지정 예시와 글자 그대로 같다', () => {
-  const expected = [
-    '[trend-review]',
-    '',
-    '2026-08-17',
-    '발관 후 호흡부전에 대한 구제 비침습적 환기(rescue NIV)의 사용',
-    'Critical care (London, England) · #41188988',
-    '',
-    '📊 https://njell85-spec.github.io/trend-review/',
-  ].join('\n');
+test('★ 트랙 순서는 화면 탭 순서와 같다 — 논문 → 가이드라인 → 리뷰', () => {
+  const [msg] = buildReportMessages(THREE);
+  const order = ['📄 논문', '📋 가이드라인', '📰 리뷰'].map((l) => msg.indexOf(l));
+  assert.ok(order.every((v) => v > 0), '트랙 라벨이 빠졌다');
+  assert.deepEqual(order, [...order].sort((a, b) => a - b), '트랙 순서가 화면과 다르다');
+});
+
+test('★ 나간 트랙만 싣는다 — 없는 트랙의 빈 블록을 만들지 않는다', () => {
+  const [msg] = buildReportMessages({ ...THREE, guideline: null, review: null });
+  assert.ok(msg.includes('📄 논문'));
+  assert.ok(!msg.includes('📋 가이드라인'));
+  assert.ok(!msg.includes('📰 리뷰'));
+  assert.ok(!/\n\n\n/.test(msg), '빈 블록 자리에 줄이 겹쳐 남았다');
+});
+
+test('★ 논문이 없고 가이드라인·리뷰만 나간 날도 알린다', () => {
+  const [msg] = buildReportMessages({ ...THREE, topPaper: null });
+  assert.ok(!msg.includes('📄 논문'));
+  assert.ok(msg.includes('📋 가이드라인'));
+  assert.ok(msg.includes('📰 리뷰'));
+});
+
+test('발행이 하나도 없으면 그렇게 말한다 (빈 알림은 고장과 구분이 안 된다)', () => {
+  const [msg] = buildReportMessages({ dateStr: '2026-08-18', pagesUrl: 'https://x/' });
+  assert.match(msg, /오늘 발행된 것이 없습니다/);
+  assert.match(msg, /📊 https:\/\/x\//);
+});
+
+test('리뷰 큐 항목 모양(card 안에 분석)을 흡수한다', () => {
   const [msg] = buildReportMessages({
-    dateStr: '2026-08-17',
-    topPaper: {
-      title_ko: '발관 후 호흡부전에 대한 구제 비침습적 환기(rescue NIV)의 사용',
-      paper: { journal: 'Critical care (London, England)', pmid: '41188988' },
-    },
-    pagesUrl: 'https://njell85-spec.github.io/trend-review/',
+    dateStr: '2026-08-18',
+    review: { pmid: '9', journal: 'ICM', card: { title_ko: '리뷰 제목' } },
+    pagesUrl: 'https://x/',
   });
-  assert.equal(msg, expected);
+  assert.ok(msg.includes('리뷰 제목'));
+  assert.ok(msg.includes('ICM · #9'));
 });
 
 test('buildReportMessages: 링크 미지정이면 대시보드 폴백', () => {
@@ -59,20 +89,18 @@ test('buildReportMessages: 링크 미지정이면 대시보드 폴백', () => {
 
 // ★ 200자 2건 분할은 없앴다 — 카카오 상한에서 온 규칙이고, 살아 있으면 긴 제목일 때
 //   본문이 갈리면서 위 빈 줄 배치가 깨진다. 대신 4096 초과 때만 제목을 자른다.
-test('★ 제목이 아무리 길어도 본문은 1건 · 구조가 유지된다 (분할 금지)', () => {
+test('★ 제목이 길어도 본문은 1건 · 잘리지 않는다 (분할 금지)', () => {
   const long = '가'.repeat(300);
   const msgs = buildReportMessages({
     dateStr: '2026-08-04',
     topPaper: { title_ko: long, paper: { journal: 'J', pmid: '1' } },
   });
   assert.equal(msgs.length, 1, '분할이 되살아났다 — 빈 줄 규격이 깨진다');
-  const lines = msgs[0].split('\n');
-  assert.equal(lines.length, 7);
-  assert.equal(lines[3], long, '300자 제목은 잘리면 안 된다(상한 안)');
-  assert.equal(lines[4], 'J · #1');
+  assert.ok(msgs[0].includes(long), '300자 제목은 잘리면 안 된다(상한 안)');
+  assert.ok(msgs[0].includes('J · #1'));
 });
 
-test('초장문 제목은 텔레그램 상한 안으로 자르되 7줄 구조를 지킨다', () => {
+test('초장문 제목은 텔레그램 상한 안으로 자르되 구조를 지킨다', () => {
   const msgs = buildReportMessages({
     dateStr: '2026-08-04',
     topPaper: { title_ko: '가'.repeat(9000), paper: { journal: 'J', pmid: '1' } },
@@ -80,11 +108,11 @@ test('초장문 제목은 텔레그램 상한 안으로 자르되 7줄 구조를
   assert.equal(msgs.length, 1);
   assert.ok(msgs[0].length <= 4096, `텔레그램 상한 초과: ${msgs[0].length}`);
   const lines = msgs[0].split('\n');
-  assert.equal(lines.length, 7);
+  assert.equal(lines[0], '[trend-review]');
   assert.equal(lines[1], '');
-  assert.equal(lines[5], '');
-  assert.match(lines[3], /…$/, '잘랐으면 …로 표시해야 한다');
-  assert.equal(lines[6], '📊 https://njell85-spec.github.io/trend-review/');
+  assert.equal(lines.at(-2), '', '링크 앞 빈 줄이 없다');
+  assert.match(lines.at(-1), /^📊 /);
+  assert.ok(/…/.test(msgs[0]), '잘랐으면 …로 표시해야 한다');
 });
 
 test('buildFailureText: 사유를 그대로 싣고 195자 이내', () => {
@@ -121,7 +149,7 @@ test('★ 진행상황을 줘도 본문 7줄 규격이 안 깨진다', () => {
   assert.equal(withP.length, without.length + 1, '진행상황이 별도 메시지가 아니다');
   assert.match(withP.at(-1), /진행상황/);
   assert.match(withP.at(-1), /미독 2/);
-  assert.equal(withP[0].split('\n').length, 7);
+  assert.match(withP[0], /^\[trend-review\]\n\n/);
 });
 
 test('진행상황이 없으면 메시지가 늘지 않는다', () => {

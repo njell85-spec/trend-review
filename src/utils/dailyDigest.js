@@ -26,6 +26,8 @@
  */
 
 const text = (v) => String(v ?? '').trim();
+/** 트랙 구분 — 빈 줄 5개 + 수평선 + 빈 줄 5개. */
+const SEP = `${'\n'.repeat(6)}---${'\n'.repeat(6)}`;
 const first = (...vals) => vals.find((v) => text(v)) ?? '';
 const arr = (v) => (Array.isArray(v) ? v.map(text).filter(Boolean) : (text(v) ? [text(v)] : []));
 
@@ -53,7 +55,7 @@ function enko(en, ko) {
 
 function block(heading, body) {
   const b = text(body);
-  return b ? `### ${heading}\n\n${b}\n` : '';
+  return b ? `## ${heading}\n\n${b}\n` : '';
 }
 
 function bullets(en = [], ko = []) {
@@ -105,7 +107,7 @@ function paperSection(p) {
   ].filter(Boolean).join(' · ');
 
   return [
-    `## 📄 논문 — ${inline(title)}`,
+    `# 📄 논문\n\n## ${inline(title)}`,
     titleEn && titleEn !== text(title) ? `\n*${inline(titleEn)}*` : '',
     metaBits.length ? `\n${inline(metaBits.join(' · '))}\n` : '',
     block('WHY IT MATTERS', enko(p.clinicalQuestion, p.clinicalQuestion_ko)),
@@ -152,7 +154,7 @@ function cardSection(g, { fallbackHeading } = {}) {
   const sections = (g.sections ?? []).map((sec) => {
     const body = para(sec?.body_ko);
     if (!body) return '';
-    return text(sec?.heading_ko) ? `#### ${inline(sec.heading_ko)}\n\n${body}` : body;
+    return text(sec?.heading_ko) ? `### ${inline(sec.heading_ko)}\n\n${body}` : body;
   }).filter(Boolean).join('\n\n');
 
   const coverage = isReview ? (COVERAGE_NOTE[g.coverage] ?? '') : '';
@@ -164,7 +166,7 @@ function cardSection(g, { fallbackHeading } = {}) {
   ].filter(Boolean).join(' · ');
 
   return [
-    `## ${heading} — ${inline(title)}`,
+    `# ${heading}\n\n## ${inline(title)}`,
     titleEn && titleEn !== text(title) ? `\n*${inline(titleEn)}*` : '',
     metaBits.length ? `\n${inline(metaBits.join(' · '))}\n` : '',
     coverage ? `\n> ${md(coverage)}\n` : '',
@@ -207,7 +209,12 @@ export function buildDailyDigest({ dateStr, papers = [], guideline = null, revie
     `📊 ${url}`,
   ].join('\n');
 
-  return `${head}\n\n---\n\n${bodies.join('\n\n---\n\n')}\n`;
+  // ★ 트랙 사이는 **5줄 띄운다** (PeterJ 확정 2026-08-18 — 가독성).
+  //   *"논문 가이드라인 리뷰 구분을 5줄 정도 띄워서 가독성 확보."*
+  //   텔레그램 md 미리보기는 좁은 폭이라 구분선 하나만으로는 어디서 트랙이 바뀌는지
+  //   눈에 안 들어온다. 빈 줄은 Markdown 렌더러가 접지만, 원문으로 읽을 때도
+  //   미리보기로 읽을 때도 `---` 앞뒤 여백이 실제로 벌어진다.
+  return `${head}\n\n${SEP}${bodies.join(SEP)}\n`;
 }
 
 /** 첨부 파일명. 날짜 형식이 아니면 안전한 기본값으로 — 파일명에 외부 문자열을 안 태운다. */

@@ -33,6 +33,7 @@ import { filterPediatric } from '../utils/guidelinePediatric.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
+import { nextPaper, needsRefill, publishablePapers } from '../utils/paperQueue.js';
 import { isNarrativeReview, notReviewReason } from '../utils/reviewQueue.js';
 import { rankedPublishableReviews } from '../utils/reviewRank.js';
 import { buildProgressLines } from '../utils/trackProgress.js';
@@ -198,6 +199,118 @@ export class TrendReviewOrchestrator {
     } catch (error) {
       // 예비 큐는 관찰·예고용이다. 저장 장애가 데일리 선정과 발행을 막아서는 안 된다.
       this.logger.warn('트랙1 예비 큐 저장 실패 — 데일리는 계속한다', { err: error.message });
+    }
+  }
+
+  /**
+   * 예정리스트에서 오늘 나갈 논문 하나를 꺼내 **분석 가능한 모양**으로 만든다.
+   *
+   * ★ PeterJ 확정 2026-08-18 — *"예비리스트가 미리 선정 돌린 거로 보고 당일에는
+   *   예비리스트를 분석만 하는 걸로."* 그래서 이 경로는 **수집도 재순위도 안 한다.**
+   *   선정은 예정리스트를 채울 때(`_refillPaperQueue`) 이미 끝났다.
+   *
+   * ★ 큐 항목에는 {pmid,title,journal,score,topic} 뿐이라 분석에 필요한 초록·MeSH·
+   *   DOI 가 없다. PMID 하나로 다시 받아온다(리뷰 트랙이 쓰는 것과 같은 방식).
+   * ★ 무엇 하나라도 어긋나면 **null 을 돌려준다** — 호출부가 종전 수집 경로로 폴백해
+   *   그날 발행이 멈추지 않게 한다. 이것이 이 변경의 안전장치다.
+   */
+  async _pickFromPaperQueue(todayStr, excludePmids = []) {
+    let state;
+    try {
+      state = await loadTrackQueue(this.queuePapersPath, 'papers');
+    } catch (error) {
+      this.logger.warn('예정리스트를 못 읽었다 — 수집 경로로 폴백한다', { err: error.message });
+      return null;
+    }
+    const picked = nextPaper(state, excludePmids);
+    if (!picked) {
+      this.logger.info('예정리스트가 비었다 — 수집·선정을 돌려 채운다');
+      return null;
+    }
+
+    const pmid = String(picked.pmid);
+    let article;
+    try {
+      [article] = await this.collector.fetchArticles([pmid]);
+    } catch (error) {
+      this.logger.warn('예정 논문 메타데이터 수신 실패 — 수집 경로로 폴백', { pmid, err: error.message });
+      return null;
+    }
+    if (!article) {
+      this.logger.warn('예정 논문을 PubMed 에서 못 찾았다 — 수집 경로로 폴백', { pmid });
+      return null;
+    }
+
+    // 점수는 **결정적 스코어러만** 태운다. LLM 재순위는 선정 단계의 것이고 여기서는
+    // 후보가 하나뿐이라 부를 이유가 없다(부르면 매일 헛돈이 나간다).
+    let scoringData = null;
+    try {
+      const [scored] = await this.filter.scorer.scorePapers([article]);
+      scoringData = scored ?? null;
+    } catch (error) {
+      this.logger.warn('예정 논문 스코어링 실패 — 점수 없이 진행', { pmid, err: error.message });
+    }
+
+    this.logger.info(`예정리스트에서 오늘의 논문을 꺼냈다 — ${pmid}`, {
+      title: String(article.title).slice(0, 80),
+      remaining: publishablePapers(state, excludePmids).length - 1,
+    });
+    return {
+      topPapers: [{ ...article, scoringData: scoringData ?? { score: picked.score ?? 0, studyType: 'Other' } }],
+      picked,
+    };
+  }
+
+  /**
+   * 발행한 논문을 예정리스트에서 뺀다(→ published).
+   * ★ `publish()` 보다 **먼저** 불려야 한다 — publisher 가 큐 파일을 커밋하기 때문이다.
+   *   뒤에 두면 러너에서만 고쳐지고 커밋이 안 돼 다음 날 되살아난다(두 번 데인 자리).
+   */
+  async _consumePaperQueue(pmid, todayStr) {
+    const key = String(pmid ?? '').trim();
+    if (!key) return false;
+    try {
+      const state = await loadTrackQueue(this.queuePapersPath, 'papers');
+      const hit = state.queue.find((x) => String(x?.pmid ?? '') === key);
+      if (!hit) return false;
+      await saveTrackQueue(this.queuePapersPath, {
+        ...state,
+        queue: state.queue.filter((x) => String(x?.pmid ?? '') !== key),
+        published: [...state.published, { ...hit, publishedAt: todayStr }],
+        lastRun: { date: todayStr, outcome: 'published', publishedId: key },
+        updatedAt: todayStr,
+      });
+      return true;
+    } catch (error) {
+      // 소진 실패가 발행을 되돌리지는 않는다 — 다음 실행의 프루닝이 잡는다.
+      this.logger.warn('예정리스트 소진 실패 — 다음 실행이 정리한다', { pmid: key, err: error.message });
+      return false;
+    }
+  }
+
+  /**
+   * 예정리스트 리필 — **여기가 "선정" 이다.** 수집 → 검증 → 풀 구성 → 점수 → 저장.
+   * 남은 것이 하한 밑으로 떨어졌을 때만 돈다(매일 돌리면 어제 본 순서가 오늘 바뀐다).
+   * 실패해도 던지지 않는다 — 오늘 발행은 이미 끝났다.
+   */
+  async _refillPaperQueue(todayStr, excludePmids = []) {
+    try {
+      const state = await loadTrackQueue(this.queuePapersPath, 'papers');
+      if (!needsRefill(state, excludePmids)) return { refilled: false, reason: 'above-floor' };
+      this.logger.info('예정리스트가 하한 밑이다 — 수집·선정을 돌려 채운다');
+      const { papers: rawPapers, stats: collectStats } = await this._stageCollect();
+      if (!rawPapers.length) return { refilled: false, reason: 'no-papers' };
+      const { papers: validPapers } = await this._stageValidate1(rawPapers);
+      if (!validPapers.length) return { refilled: false, reason: 'all-invalid' };
+      const pool = this._buildSelectionPool(validPapers, collectStats);
+      await this._saveTrack1Queue(pool, todayStr, excludePmids);
+      const after = await loadTrackQueue(this.queuePapersPath, 'papers');
+      const n = publishablePapers(after, excludePmids).length;
+      this.logger.info(`예정리스트 리필 완료 — 발행 가능 ${n}건`);
+      return { refilled: true, count: n };
+    } catch (error) {
+      this.logger.warn('예정리스트 리필 실패 — 다음 실행에서 재시도한다', { err: error.message });
+      return { refilled: false, reason: error.message };
     }
   }
 
@@ -945,41 +1058,67 @@ export class TrendReviewOrchestrator {
         return this._runWithoutPapers(todayStr);
       }
 
-      // Stage 1: Collect
-      const { papers: rawPapers, stats: collectStats } = await this._stageCollect(
-        resumeCheckpoint?.data?.collectionResult
-      );
-
-      if (!rawPapers.length) {
-        this.logger.warn('No papers collected — aborting pipeline');
-        this.state = STAGES.DONE;
-        return this._buildResult(null, null, null, null, null, { warning: 'No papers found' });
-      }
-
-      // Stage 2: Validate (pass 1) — can run immediately after collect
-      const { papers: validPapers, stats: validStats } = await this._stageValidate1(
-        rawPapers,
-        resumeCheckpoint?.data
-      );
-
-      if (!validPapers.length) {
-        this.logger.warn('All papers excluded by validation — aborting pipeline');
-        this.state = STAGES.DONE;
-        return this._buildResult(null, null, null, null, null, {
-          warning: 'All papers failed validation',
-        });
-      }
-
-      // Stage 3: Score + select top-N — exclude already-published PMIDs
+      // ★★ 선정과 발행을 갈랐다 (PeterJ 확정 2026-08-18)
+      //   *"예비리스트가 미리 선정 돌린 거로 보고 당일에는 예비리스트를 분석만 하는 걸로."*
+      //   종전에는 트랙2·3만 예정리스트에서 꺼내 쓰고 **트랙1만 매일 새로 뽑았다.**
+      //   그래서 예정리스트에 없던 것이 논문으로 나갔고(2026-08-18 AHA 지침 문서),
+      //   화면이 "다음은 이것" 이라고 해놓고 실제로는 딴 게 나갔다.
+      //   이제 **큐 머리를 분석**하고, 선정(수집·점수)은 큐가 마를 때만 돈다.
       const excludePmids = await this._loadExcludePmids();
       if (excludePmids.length) this.logger.info(`Excluding ${excludePmids.length} already-published PMIDs`);
-      const selectionPapers = this._buildSelectionPool(validPapers, collectStats);
-      await this._saveTrack1Queue(selectionPapers, kstDateStr(), excludePmids);
-      const { topPapers: scoredTopPapers, allScoredPapers, rerank } = await this._stageAnalyze(
-        selectionPapers,
-        { excludePmids },
-        resumeCheckpoint?.data
-      );
+
+      const queuePick = await this._pickFromPaperQueue(todayStr, excludePmids);
+
+      let scoredTopPapers;
+      let allScoredPapers;
+      let rerank;
+      let collectStats;
+      let validStats;
+      let queuedPmid = null;
+
+      if (queuePick) {
+        // ── 평상시 경로: 예정리스트에서 꺼내 **분석만** 한다 (수집·재순위 없음) ──
+        scoredTopPapers = queuePick.topPapers;
+        queuedPmid = String(queuePick.picked.pmid);
+        allScoredPapers = scoredTopPapers;
+        rerank = { llmCalled: false, applied: false, reason: 'from-queue', poolSize: 1 };
+        collectStats = { source: 'queue', articlesCollected: 1, pmidsFound: 1 };
+        validStats = { source: 'queue' };
+      } else {
+        // ── 폴백: 큐가 비었거나 못 읽었다 → 종전 경로로 그 자리에서 수집·선정 ──
+        //   ★ 이 폴백이 있어야 **발행이 멈추지 않는다.** 첫 도입일·큐 소진일이 그 경우다.
+        const collected = await this._stageCollect(resumeCheckpoint?.data?.collectionResult);
+        const rawPapers = collected.papers;
+        collectStats = collected.stats;
+
+        if (!rawPapers.length) {
+          this.logger.warn('No papers collected — aborting pipeline');
+          this.state = STAGES.DONE;
+          return this._buildResult(null, null, null, null, null, { warning: 'No papers found' });
+        }
+
+        const validated1 = await this._stageValidate1(rawPapers, resumeCheckpoint?.data);
+        const validPapers = validated1.papers;
+        validStats = validated1.stats;
+
+        if (!validPapers.length) {
+          this.logger.warn('All papers excluded by validation — aborting pipeline');
+          this.state = STAGES.DONE;
+          return this._buildResult(null, null, null, null, null, {
+            warning: 'All papers failed validation',
+          });
+        }
+
+        const selectionPapers = this._buildSelectionPool(validPapers, collectStats);
+        await this._saveTrack1Queue(selectionPapers, todayStr, excludePmids);
+        const analyzed = await this._stageAnalyze(
+          selectionPapers, { excludePmids }, resumeCheckpoint?.data,
+        );
+        scoredTopPapers = analyzed.topPapers;
+        allScoredPapers = analyzed.allScoredPapers;
+        rerank = analyzed.rerank;
+        queuedPmid = String(scoredTopPapers?.[0]?.pmid ?? '') || null;
+      }
 
       // Stage 4: Fetch full text for top-N papers only
       const enrichedTopPapers = await this._stageFetchFullText(
@@ -1041,6 +1180,14 @@ export class TrendReviewOrchestrator {
       const excludable = validatedPico.filter((p) => !p.analysisError);
       if (excludable.length) await this._saveExcludePmids(excludable, rerank);
       if (guidelineCard) await this._saveGuideline(guidelineCard, todayStr);
+      // ★ 예정리스트 소진도 **publish 앞**이다 — publisher 가 큐 파일을 커밋한다.
+      //   뒤에 두면 러너에서만 빠지고 커밋이 안 돼 다음 날 같은 논문이 되살아난다.
+      //   분석이 실패한 논문(analysisError)은 소진하지 않는다 — 제외목록과 같은 이유로
+      //   다음 실행에서 다시 시도되게 남긴다.
+      if (queuedPmid && excludable.some((p) => String(p.paper?.pmid ?? p.pmid) === queuedPmid)) {
+        const consumed = await this._consumePaperQueue(queuedPmid, todayStr);
+        if (consumed) this.logger.info(`예정리스트에서 소진: ${queuedPmid}`);
+      }
 
       // Stage 7b: GitHub Pages 누적 업데이트 (optional — GITHUB_TOKEN 설정 시)
       const pagesUrl = await this._stagePublish(validatedPico, guidelineCard, reviewItem);
@@ -1057,6 +1204,11 @@ export class TrendReviewOrchestrator {
           this.logger.warn('리뷰 큐 롤백 실패 — 다음 실행에서 수동 확인 필요', { err: error.message });
         }
       }
+
+      // ★ 발행이 끝난 뒤에 예정리스트를 채운다 — 하한 밑일 때만 수집·선정이 돈다.
+      //   앞에 두면 오늘 채운 것이 오늘 나가서 "미리 선정" 이 아니게 된다.
+      //   실패해도 던지지 않는다(오늘 발행은 이미 끝났다).
+      const refill = await this._refillPaperQueue(todayStr, await this._loadExcludePmids());
 
       // Stage 8: Notify (optional — Google Drive 업로드, ENABLE_DRIVE 시에만)
       const notifyResult = await this._stageNotify(
@@ -1084,6 +1236,8 @@ export class TrendReviewOrchestrator {
           //   그대로 넘긴다(다시 만들면 첨부와 화면이 갈린다).
           guideline: guidelineCard ?? null,
           review: reviewItem ?? null,
+          paperSource: queuePick ? 'queue' : 'fresh-collection',
+          queueRefill: refill,
         }
       );
     } catch (err) {
