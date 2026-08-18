@@ -3,15 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41232590",
-      "title": "Temporary mechanical circulatory support after return of spontaneous circulation following cardiac arrest: a systematic review and meta-analysis.",
-      "journal": "Resuscitation",
-      "score": 9.2,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-17"
-    },
-    {
       "pmid": "41395998",
       "title": "Physiological Effects of High-Flow Nasal Oxygen Compared With Conventional Oxygen Therapy: A Randomized Trial in Postextubation Patients.",
       "journal": "Critical care medicine",
@@ -102,7 +93,18 @@
       "addedAt": "2026-08-17"
     }
   ],
-  "published": [],
+  "published": [
+    {
+      "pmid": "41232590",
+      "title": "Temporary mechanical circulatory support after return of spontaneous circulation following cardiac arrest: a systematic review and meta-analysis.",
+      "journal": "Resuscitation",
+      "score": 9.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-17",
+      "publishedAt": "2026-08-19"
+    }
+  ],
   "rejected": [
     {
       "pmid": "41324946",
@@ -115,6 +117,10 @@
       "rejectedAt": "2026-08-17"
     }
   ],
-  "lastRun": null,
-  "updatedAt": "2026-08-18"
+  "lastRun": {
+    "date": "2026-08-19",
+    "outcome": "published",
+    "publishedId": "41232590"
+  },
+  "updatedAt": "2026-08-19"
 }

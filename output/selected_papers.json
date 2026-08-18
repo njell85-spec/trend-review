@@ -308,5 +308,16 @@
     "rerankPoolSize": 29,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "41232590",
+    "title": "Temporary mechanical circulatory support after return of spontaneous circulation",
+    "date": "2026-08-19",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

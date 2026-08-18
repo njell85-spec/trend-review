@@ -3029,23 +3029,6 @@
       "status": "queued"
     },
     {
-      "pmid": "39774315",
-      "title": "Sepsis and Septic Shock.",
-      "journal": "N Engl J Med",
-      "score": 5.8,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "패혈증·패혈성쇼크 NEJM — 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "34545440",
       "title": "Critically ill cancer patient's resuscitation: a Belgian/French societies' consensus conference.",
       "journal": "Intensive Care Med",
@@ -6793,6 +6776,108 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39774315",
+      "title": "Sepsis and Septic Shock.",
+      "journal": "N Engl J Med",
+      "score": 5.8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "패혈증·패혈성쇼크 NEJM — 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-08-19",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39774315",
+          "title": "Sepsis and Septic Shock.",
+          "journal": "The New England journal of medicine",
+          "pubDate": "2025-1-8",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39774315/",
+          "doi": "10.1056/NEJMra2403213"
+        },
+        "title_ko": "패혈증과 패혈성 쇼크",
+        "scope_ko": "NEJM의 종설로, 패혈증·패혈성 쇼크의 정의와 위험인자, 병태생리(염증·면역억제·혈관 손상), 조기 감염 조절과 혈역학적 소생을 중심으로 한 치료, 생존자의 장기 후유증, 그리고 아형 규명·표적치료 연구 방향까지 아우른다. 다만 원문 본문(및 초록 PDF)은 유료 장벽으로 확보하지 못해, 이 번역은 검색으로 확인된 초록 수준 진술만을 'article'로 옮겼고 임상 세부는 권위 있는 2차 출처에서 'augmented'로 별도 보강했다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "정의 — 패혈증이란 무엇인가",
+            "body_ko": "저자들은 패혈증을 세균·진균·기생충·바이러스 감염에 의해 생명을 위협하는 급성 장기 기능부전(acute organ dysfunction)이 나타나는 증후군으로 규정한다. 즉 감염 자체가 아니라 감염에 대한 조절되지 않은 숙주 반응이 장기 손상을 일으키는 것이 핵심이며, 패혈증은 단일 질환이 아니라 이질적(heterogeneous)인 장애로 기술된다.\n\n(주: 이 절은 확보 가능한 초록 수준의 진술에 근거한다. 원문 본문에서 저자가 제시했을 세부 정의·역치는 확인하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "위험인자와 역학",
+            "body_ko": "패혈증 발생 위험에 영향을 주는 요인으로 저자들은 연령(age), 숙주의 면역 상태(immune status), 병원체의 병독성(pathogen virulence), 그리고 병원체 부하(pathogen burden)를 든다. 즉 위험은 숙주 측 취약성과 병원체 측 특성이 함께 결정한다는 틀을 제시한다.\n\n(주: 초록 수준 진술에 근거한다. 원문 본문의 구체적 발생률·사망률 수치는 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "병태생리 — 염증, 면역억제, 혈관 손상",
+            "body_ko": "저자들은 패혈증의 생물학적 특징을 조절 이상 염증(dysregulated inflammation), 면역억제(immunosuppression), 혈관 손상(vascular injury)의 공존으로 설명한다. 병태생리는 염증과 기능저하 면역(hypofunctional immunity)이 동시에 존재하고 미세혈관 손상(microvascular injury)이 두드러지는 상태로 지배된다.\n\n활성화된 호중구·대식세포·세포독성 T세포가 염증성 및 항균성 펩타이드를 분비하고, 호중구–내피 트랩(neutrophil–endothelial traps, NETs)을 형성한다. 이 NETs는 병원체를 포획하는 이점이 있지만 동시에 내피(endothelium)를 추가로 손상시킨다 — 즉 방어 기전이 곧 조직 손상 기전이기도 한 양날의 성격을 저자들은 강조한다.\n\n(주: 초록·요지 수준에서 확인된 진술이다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료의 큰 원칙",
+            "body_ko": "패혈증 관리의 두 축으로 저자들은 (1) 신속한 감염 조절(prompt infection control)과 (2) 혈역학적 소생(hemodynamic resuscitation)을 제시한다. 즉 원인 감염을 빨리 통제하고 관류를 회복시키는 것이 치료의 골간이다.\n\n(주: 이 절은 초록 수준 진술이며, 원문 본문이 담았을 항생제 투여 시점·수액량·승압제 목표치 등 구체 권고는 확보하지 못했다. 해당 임상 세부는 아래 'augmented'로 표시된 2차 출처 기반 절에서 보강한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생존자의 장기 후유증과 향후 연구 방향",
+            "body_ko": "저자들은 패혈증이 급성기를 넘긴 생존자에게 장기적 합병증(long-term complications)을 남긴다는 점을 짚는다. 또한 패혈증은 이질적 장애이므로, 숙주 반응 조절 이상의 아형(subtypes)을 규명하고 이에 대한 표적치료(targeted therapies)를 찾으려는 연구가 진행 중이라고 마무리한다.\n\n(주: 초록 수준 진술에 근거하며, 원문 본문의 구체적 후유증 항목·연구 사례는 확인하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 항생제 투여 시점과 감염원 조절",
+            "body_ko": "2023년 응급실 관리 업데이트 기준으로, 쇼크가 있거나 패혈증 가능성이 높으면 항생제는 '즉시, 이상적으로는 1시간 이내' 투여한다. 쇼크가 없고 위험이 낮음–중간이면 감염 우려가 지속될 때 3시간 이내 투여한다. 배양 채취 후 광범위 경험적 항생제를 시작하고, 감수성 결과가 나오면 좁힌다.\n\n감염원 조절: 감염된 카테터·기구 제거/교체, 농양 배액, 감염·괴사 조직의 외과적 절제 또는 영상유도 배액을 병행한다.\n\n(원문이 아니라 2차 출처에서 보강한 내용이다.)\n— 보강 출처: 2023 Update on Sepsis and Septic Shock in Adults: ED Management (PMC10179263) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10179263/)",
+            "origin": "augmented",
+            "sourceLabel": "2023 Update on Sepsis and Septic Shock in Adults: ED Management (PMC10179263)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10179263/"
+          },
+          {
+            "heading_ko": "[웹 보강] 수액 소생",
+            "body_ko": "2023년 응급실 관리 업데이트 기준으로, 균형 결정질액(balanced crystalloids)이 선택 수액이다. Surviving Sepsis Campaign은 첫 3시간 이내 최소 30 mL/kg의 정맥 결정질액을 권고한다. 이후에는 250–500 mL의 소량 반복 볼루스로, 수액 반응성·내약성을 지속 감시하며 개별화한다.\n\n(원문이 아니라 2차 출처에서 보강한 내용이다.)\n— 보강 출처: 2023 Update on Sepsis and Septic Shock in Adults: ED Management (PMC10179263) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10179263/)",
+            "origin": "augmented",
+            "sourceLabel": "2023 Update on Sepsis and Septic Shock in Adults: ED Management (PMC10179263)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10179263/"
+          },
+          {
+            "heading_ko": "[웹 보강] 승압제와 MAP 목표",
+            "body_ko": "2023년 응급실 관리 업데이트 기준으로, 1차 승압제는 norepinephrine으로 0.1–1.2 μg/kg/min 범위에서 사용하며 목표는 MAP ≥ 65 mmHg이다. 목표 미달 시 2차로 vasopressin(0.25–0.5 μg/kg/min)을 norepinephrine에 병용하고, norepinephrine과 vasopressin에도 불응하는 쇼크에는 3차로 epinephrine을 고려한다.\n\n(원문이 아니라 2차 출처에서 보강한 내용이다.)\n— 보강 출처: 2023 Update on Sepsis and Septic Shock in Adults: ED Management (PMC10179263) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10179263/)",
+            "origin": "augmented",
+            "sourceLabel": "2023 Update on Sepsis and Septic Shock in Adults: ED Management (PMC10179263)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10179263/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설의 골자는 침상에서 새로운 것을 바꾸기보다 원칙을 재확인한다: 감염을 신속히 통제(조기 경험적 항생제 + 감염원 조절)하고 혈역학을 조기에 되살리는 두 축이 여전히 핵심이며, 패혈증은 단일 질환이 아니라 염증·면역억제·혈관 손상이 공존하는 이질적 상태이므로 향후 아형별 표적치료가 관건임을 시사한다. 다만 원문 본문을 확보하지 못해 저자 고유의 구체 권고는 옮기지 못했고, 위 임상 세부(용량·역치)는 2차 출처 기반 보강임을 감안해 실제 적용 시 최신 지침 원문을 확인해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39774315",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39774315/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMra2403213",
+            "url": "https://doi.org/10.1056/NEJMra2403213"
+          },
+          {
+            "label": "웹 — MSD Manual Professional — Sepsis and Septic Shock (established clinical reference)",
+            "url": "https://www.msdmanuals.com/professional/critical-care-medicine/sepsis-and-septic-shock/sepsis-and-septic-shock"
+          },
+          {
+            "label": "웹 — 2023 Update on Sepsis and Septic Shock in Adults: ED Management (Europe/PMC full text)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10179263/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -6850,9 +6935,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-18",
+    "date": "2026-08-19",
     "outcome": "published",
-    "publishedId": "41765030"
+    "publishedId": "39774315"
   },
-  "updatedAt": "2026-08-18"
+  "updatedAt": "2026-08-19"
 }
