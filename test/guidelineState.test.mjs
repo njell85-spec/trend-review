@@ -6,10 +6,16 @@ import { join } from 'node:path';
 import { loadGuidelineState, mergeCandidates, migrateGuidelineState, saveGuidelineState, appendManualEntry } from '../src/utils/guidelineState.js';
 import { readPublishedLegacy } from './helpers/guidelineProduction.mjs';
 
-test('migrates all seven production records without field loss', async () => {
+// ★ 2026-08-18 — 고정 건수(7)를 하한으로 바꿨다. 가이드라인은 매일 발행되므로
+//   `=== 7` 은 발행이 있는 날마다 깨진다. 이 검사의 값은 건수가 아니라
+//   **무손실 마이그레이션**이다(아래 필드 대조가 그것을 본다).
+const LEGACY_FLOOR = 7;   // 2026-08-17 기준 실측. 줄면 데이터 유실이다.
+
+test('migrates every production record without field loss', async () => {
   const legacy = await readPublishedLegacy();
   const state = migrateGuidelineState(legacy);
-  assert.equal(legacy.length, 7);
+  assert.ok(legacy.length >= LEGACY_FLOOR,
+    `발행 이력이 ${legacy.length}건으로 줄었다(하한 ${LEGACY_FLOOR}) — 유실을 의심하라`);
   assert.equal(state.published.length, legacy.length);
   for (const [index, original] of legacy.entries()) {
     assert.deepEqual(state.published[index].legacy, original);

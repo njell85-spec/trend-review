@@ -13,6 +13,7 @@ import { CircuitBreaker } from '../utils/CircuitBreaker.js';
 import { RetryHelper } from '../utils/RetryHelper.js';
 import { kstDateSlash } from '../utils/dates.js';
 import { MetadataScorer } from '../utils/MetadataScorer.js';
+import { excludeGuidelineLike } from '../utils/paperTypeFilter.js';
 
 const PUBMED_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils';
 
@@ -521,6 +522,34 @@ export class DataCollectorAgent {
       (a.publicationTypes ?? []).some((t) => /guideline/i.test(t)));
   }
 
+  /**
+   * ★ 논문 트랙 후보에서 **지침류를 걷어낸다** (PeterJ 실측 2026-08-18).
+   *
+   * 그날 논문 트랙이 발행한 것이 AHA 소생술 지침이었다 — 같은 날 가이드라인 트랙은
+   * 따로 AHA/ASA 뇌졸중 지침을 냈다. 화면 두 곳이 지침을 냈고 한쪽은 "논문" 이라는
+   * 이름표를 달고 있었다. 지침은 저명 저널에 실리고 주제 적합도가 높아 **점수가 잘
+   * 나온다** — 걸러지기는커녕 상위로 올라온다(그날 IF 35.5 Circulation 이 그랬다).
+   *
+   * ★ 여기 한 자리에서 한다. 수집 모드가 셋(monthly · dual · single)인데 모드마다
+   *   따로 걸면 새 모드가 생긴 날 조용히 빠진다 — 이 저장소가 여러 번 데인 부류다.
+   * ★ 판정 정본은 `src/utils/paperTypeFilter.js` 하나다.
+   * ★ 걷어낸 것을 **로그로 남긴다.** 조용히 사라지면 "왜 후보가 줄었지" 를 못 쫓는다.
+   */
+  _dropGuidelineLike(result) {
+    const { kept, dropped } = excludeGuidelineLike(result?.papers ?? []);
+    if (dropped.length) {
+      this.logger.info(`논문 트랙에서 지침류 ${dropped.length}건 제외 (트랙2 소관)`, {
+        pmids: dropped.map((d) => d.pmid).slice(0, 20),
+        titles: dropped.map((d) => String(d.title).slice(0, 80)).slice(0, 5),
+      });
+    }
+    return {
+      ...result,
+      papers: kept,
+      stats: { ...(result?.stats ?? {}), guidelineLikeExcluded: dropped.length },
+    };
+  }
+
   // ── Public API ────────────────────────────────────────────────────────────
   async run() {
     this.logger.section('DataCollectorAgent — PubMed Collection');
@@ -550,7 +579,7 @@ export class DataCollectorAgent {
             newestPubDate: dates.at(-1) ?? null,
           };
           this.logger.info('Monthly collection complete', stats);
-          return { papers: monthly.papers, stats };
+          return this._dropGuidelineLike({ papers: monthly.papers, stats });
         } catch (monthlyErr) {
           this.logger.warn('월별 수집 실패/빈 결과 — 기존 단일 경로 폴백 실행', { err: monthlyErr.message });
           const fallback = await this._runSingleCollection(start);
@@ -560,19 +589,19 @@ export class DataCollectorAgent {
             execution: { pmidsFound: fallback.stats.pmidsFound, articlesCollected: fallback.stats.articlesCollected },
           };
           this.logger.warn('기존 단일 경로 폴백 완료', fallback.stats.monthlyFallback);
-          return fallback;
+          return this._dropGuidelineLike(fallback);
         }
       }
       if (this.collectionMode === 'dual') {
         const dual = await this.collectDualStreams();
         const dates = dual.papers.map((p) => p.pubDate).filter(Boolean).sort();
-        return { papers: dual.papers, stats: {
+        return this._dropGuidelineLike({ papers: dual.papers, stats: {
           pmidsFound: dual.papers.length, articlesCollected: dual.papers.length,
           streamACount: dual.streamA.length, streamBCount: dual.streamB.length,
           oldestPubDate: dates[0] ?? null, newestPubDate: dates.at(-1) ?? null,
-        } };
+        } });
       }
-      return await this._runSingleCollection(start);
+      return this._dropGuidelineLike(await this._runSingleCollection(start));
     } catch (err) {
       this.logger.error('Collection failed', { err: err.message, stack: err.stack });
       throw err;

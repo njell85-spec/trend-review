@@ -17,16 +17,29 @@ import { RetryHelper } from '../utils/RetryHelper.js';
 import { LLMClient, PROVIDER_DEFAULTS, ANTHROPIC_ANALYSIS_MODEL } from '../utils/LLMClient.js';
 import { MetadataScorer } from '../utils/MetadataScorer.js';
 
+/**
+ * ★ 트랙3(리뷰) 실질 게이트 임계 — sections 본문(한국어) 글자수 합이 이 미만이고
+ * coverage 가 full-text 가 아니면 "초록 치환"으로 보고 에스컬레이션 프롬프트로 1회 재시도한다.
+ *
+ * 근거(실측): 2026-08-18 데일리에서 Lancet Seminar "Sepsis"(PMID 41765030)가 초록만
+ * 6개 절로 쪼개져 본문 합 1,119자로 발행됐다 — 이것이 "얇다"의 실례다. 초록을 한국어로
+ * 옮기면 대개 600~1,500자 대에 머무르고, 웹에서 본문·공개 요약·2차 출처를 실제로 보강한
+ * 카드는 수천 자 이상이 나온다. 실측치의 약 2.7배인 3,000자를 하한으로 잡으면 초록 치환은
+ * 확실히 걸리고, 정상 보강 카드를 얇다고 오판해 불필요한 이중 호출을 내는 일은 드물다.
+ * (재시도는 어차피 1회뿐이라 오판 비용도 호출 1번이다 — 데일리 코어 무영향.)
+ */
+export const REVIEW_THIN_BODY_CHARS = 3000;
+
 export class GuidelineAnalyzerAgent {
   constructor(options = {}) {
     this.provider = options.provider ?? 'anthropic';
     this.model = options.model ?? (this.provider === 'anthropic' ? ANTHROPIC_ANALYSIS_MODEL : PROVIDER_DEFAULTS[this.provider]);
 
     this.logger = new Logger('GuidelineAnalyzer', { logFile: 'guideline_analyzer.jsonl' });
-    this.cache = new Cache();
+    this.cache = options.cache ?? new Cache();
     this.cb = new CircuitBreaker(`${this.provider}-guideline`, { failureThreshold: 3 });
     this.retry = new RetryHelper({ maxAttempts: 2, baseDelayMs: 3_000 });
-    this.llm = new LLMClient({ provider: this.provider, model: this.model });
+    this.llm = options.llm ?? new LLMClient({ provider: this.provider, model: this.model });
     this.scorer = new MetadataScorer();
   }
 
@@ -132,12 +145,15 @@ export class GuidelineAnalyzerAgent {
           },
           sections: {
             type: 'array',
-            description: "The article rendered in Korean, FOLLOWING THE SOURCE'S OWN SECTION ORDER. This is a translation, not a summary: keep the author's claims, numbers, doses, thresholds, caveats and hedging. Do not compress several sections into one. 4–12 sections depending on the article.",
+            description: "The article rendered in Korean, FOLLOWING THE SOURCE'S OWN SECTION ORDER. This is a translation, not a summary: keep the author's claims, numbers, doses, thresholds, caveats and hedging. Do not compress several sections into one. 4–12 sections depending on the article. If you could not obtain the article body, article-derived sections (origin 'article') and clearly-marked supplementary sections (origin 'augmented', with sources) may coexist — NEVER mixed inside one section.",
             items: {
               type: 'object',
               properties: {
                 heading_ko: { type: 'string', description: "절 제목(한국어). 원문 소제목을 그대로 옮긴다. 원문에 소제목이 없으면 그 문단이 다루는 바를 짧게 붙인다." },
                 body_ko: { type: 'string', description: '그 절의 내용을 한국어로 **충실히** 옮긴 것. 요약하지 말고, 저자가 말한 수치·용량·역치·근거등급·단서를 그대로 살려라. 약물명·점수명·약어는 영어로 두어도 된다. 여러 문단이면 줄바꿈으로 나눠라.' },
+                origin: { type: 'string', enum: ['article', 'augmented'], description: "이 절의 내용이 어디서 왔는가. 'article'(기본) = 이 논문 자체(제공된 전문·웹에서 확보한 본문·초록)가 말한 내용만. 'augmented' = 원문을 못 구해 권위 있는 2차 출처(학회 성명·저널 editorial/comment·공개 요약)에서 보강한 내용 — 반드시 sourceLabel·sourceUrl 을 채워라. 두 성격을 한 절에 절대 섞지 마라." },
+                sourceLabel: { type: 'string', description: "origin='augmented' 전용 — 보강 출처의 이름 (예: 'ESICM statement', 'NEJM editorial')." },
+                sourceUrl: { type: 'string', description: "origin='augmented' 전용 — 실제로 열어 읽은 페이지의 URL. 실제 URL 이 없으면 그 절을 제출하지 마라 (출처 없는 보강은 버려진다)." },
               },
               required: ['heading_ko', 'body_ko'],
             },
@@ -145,7 +161,7 @@ export class GuidelineAnalyzerAgent {
           practiceImpact_ko: { type: 'string', description: '이 종설을 읽고 EM/CCM 침상에서 무엇이 달라지는지 2–3문장 한국어. 원문이 말한 범위 안에서만 쓴다.' },
           webSources: {
             type: 'array',
-            description: 'Pages you actually consulted via WebSearch/WebFetch to obtain the article content (only if you used them). Each {label, url}. Empty array if you did not use web search.',
+            description: 'Pages you ACTUALLY OPENED AND READ via WebSearch/WebFetch while working the search ladder (only those — never a page you merely assume exists). Each {label, url}. Empty array if you did not use web search.',
             items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
           },
         },
@@ -201,8 +217,8 @@ export class GuidelineAnalyzerAgent {
     return `${mode}_v5_${this.provider}_${this.model}_${id}${supplied}`;
   }
 
-  /** 분석 프롬프트. 모드에 따라 요구 산출물이 갈린다. */
-  _prompt(doc, mode = 'guideline') {
+  /** 분석 프롬프트. 모드에 따라 요구 산출물이 갈린다. `escalate` 는 리뷰 실질 게이트(③) 전용. */
+  _prompt(doc, mode = 'guideline', { escalate = false } = {}) {
     const hasFullText = doc.fullText && doc.fullText.length > 100;
     const fullTextSection = hasFullText
       ? `\n\n--- FULL TEXT (source: ${doc.fullTextSource}, truncated) ---\n${doc.fullText}\n---`
@@ -219,7 +235,15 @@ MeSH: ${(doc.meshTerms ?? []).join(', ')}`;
       // ★ 요약이 아니라 **번역**이다 (PeterJ 확정 2026-08-17).
       //   원문을 못 구하면 웹서치로라도 본문을 확보한 뒤 옮긴다. 못 구했으면
       //   `coverage` 에 그대로 적는다 — 초록만 보고 전문을 옮긴 척하면 안 된다.
-      return `You are translating a medical review article into Korean for an emergency
+      const escalatePreamble = escalate ? `★★ ESCALATION — a previous attempt on this article returned an abstract-sized rendering
+(sections totalling roughly 1,000 Korean characters). That is exactly the failure this task
+exists to prevent. This time, ACTUALLY WALK the search ladder below rung by rung, opening
+pages with WebFetch, before you answer. If the article body is truly unreachable, you MUST
+still add clearly-marked "augmented" sections (origin "augmented", with sourceLabel and
+sourceUrl) from rungs 3–4, so the reader gets substance beyond the abstract.
+
+` : '';
+      return `${escalatePreamble}You are translating a medical review article into Korean for an emergency
 medicine / critical care physician who wants to read the article itself, not a digest.
 
 ★ THIS IS A TRANSLATION TASK, NOT A SUMMARY TASK.
@@ -229,12 +253,32 @@ Follow the source's OWN section order and render each section faithfully in Kore
 keeping the author's numbers, doses, thresholds, evidence grades, caveats and hedging.
 If the author is uncertain, your Korean must be uncertain in the same way.
 
-★ IF YOU DO NOT HAVE THE FULL TEXT: use WebSearch/WebFetch to find and read the article
-(publisher page, PMC, DOI landing page, society summary) BEFORE settling for the abstract.
-The user explicitly asked for this. Then set coverage honestly:
+★ IF YOU DO NOT HAVE THE FULL TEXT: work this SEARCH LADDER IN ORDER with WebSearch/WebFetch
+BEFORE settling for the abstract. The user explicitly asked for this. Do not stop because one
+page is paywalled — move to the next rung:
+  1. DOI landing page / publisher page — the article itself. Lancet/NEJM/ICM pages often
+     expose key messages, panels and figure legends even when the PDF is paywalled.
+  2. PubMed Central / Europe PMC — a free full-text or author-manuscript copy.
+  3. Public companion material for THIS article from the journal or a society: Seminar/Series
+     companion or "key points"/summary pages, visual abstracts, journal press releases.
+  4. Authoritative secondary sources that DISCUSS THIS ARTICLE: society statements,
+     editorials/comments in major journals, established clinical references citing it.
+List in webSources ONLY pages you actually opened and read — never a page you merely assume exists.
+
+★ IF THE LADDER STILL DID NOT YIELD THE ARTICLE BODY, do NOT ship a padded abstract:
+  · Render what the article itself provides (the abstract) as sections with origin "article".
+  · THEN ADD substantive supplementary sections with origin "augmented", built from rung 3–4
+    material, each carrying sourceLabel + sourceUrl of a page you actually opened. Stay
+    strictly inside the topic scope of THIS article — no generic textbook filler.
+  · NEVER blend augmented material into an "article" section. The reader must always be able
+    to tell what THIS article said from what came from elsewhere.
+
+Then set coverage honestly — coverage describes the ARTICLE body only; "augmented" sections
+NEVER upgrade it:
   · full-text     — you rendered from the full text provided below
-  · web-augmented — you fetched the article content from the web
-  · abstract-only — you could only reach the abstract; say so rather than padding
+  · web-augmented — you fetched the article's own content from the web (rung 1–2)
+  · abstract-only — you only reached the article's abstract (even if you added clearly
+    marked augmented sections from rung 3–4); say so rather than padding
 NEVER claim full-text coverage you did not have, and never invent section content.
 
 Review article:
@@ -305,25 +349,60 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     if (!doc) return null;
     const cacheKey = this._cacheKey(doc, mode);
     try {
-      const { data } = await this.cache.getOrFetch(cacheKey, async () => {
+      const fetchFresh = async () => {
         this.logger.info(`${mode} analysis: ${doc.pmid || doc.sourceId} — ${doc.title?.slice(0, 60)}…`);
-        const prompt = this._prompt(doc, mode);
         const tool = this._tool(mode);
 
         // 웹검색 보강 우선; 헤드리스에서 웹툴이 불가/실패하면 텍스트-only 로 폴백(정직 안내로 귀결).
-        const call = (webSearch) => this.cb.execute(() =>
-          this.retry.execute(
-            () => this.llm.callWithTool([{ role: 'user', content: prompt }], tool, { maxTokens: 12000, webSearch }),
-            { label: `${this.provider}-${mode}${webSearch ? '-web' : ''}` }));
-        let result;
-        try {
-          result = await call(true);
-        } catch (e) {
-          this.logger.warn(`${mode} web-search call failed — falling back to text-only: ${e.message}`);
-          result = await call(false);
+        const callOnce = async (prompt) => {
+          const call = (webSearch) => this.cb.execute(() =>
+            this.retry.execute(
+              () => this.llm.callWithTool([{ role: 'user', content: prompt }], tool, { maxTokens: 12000, webSearch }),
+              { label: `${this.provider}-${mode}${webSearch ? '-web' : ''}` }));
+          try {
+            return await call(true);
+          } catch (e) {
+            this.logger.warn(`${mode} web-search call failed — falling back to text-only: ${e.message}`);
+            return await call(false);
+          }
+        };
+
+        let result = await callOnce(this._prompt(doc, mode));
+
+        // ★ ③ 실질 게이트(리뷰 전용) — coverage 가 full-text 도 아닌데 본문이 얇으면
+        //   "초록 치환"이다(2026-08-18 실측 1,119자). 에스컬레이션 프롬프트로 **딱 1회** 더
+        //   시도한다. 두 번째도 얇으면 그대로 발행한다 — 얇은 카드보다 데일리가 늦어지거나
+        //   죽는 것이 나쁘다(불변식: 데일리 코어 무영향). 재시도가 더 짧으면 첫 결과를 쓴다.
+        if (mode === 'review' && this._isThinReview(result)) {
+          this.logger.warn(`review body thin (${this._reviewBodyChars(result)} chars < ${REVIEW_THIN_BODY_CHARS}) — escalating once`);
+          try {
+            const second = await callOnce(this._prompt(doc, mode, { escalate: true }));
+            if (this._reviewBodyChars(second) > this._reviewBodyChars(result)) result = second;
+            else this.logger.warn('review escalation did not improve length — keeping first result');
+          } catch (e) {
+            this.logger.warn(`review escalation failed — keeping first result: ${e.message}`);
+          }
         }
         return result;
-      });
+      };
+
+      let data;
+      if (mode === 'review') {
+        // ★ 리뷰는 캐시를 직접 다룬다 — **얇은 결과를 캐시에 굳히지 않기 위해서다.**
+        //   getOrFetch 를 그대로 쓰면 에스컬레이션까지 하고도 얇았던 결과가 TTL 동안
+        //   재사용돼 다음 실행도 얇게 나온다. 읽기도 같은 기준: 구버전이 굳혀 둔 얇은
+        //   캐시는 miss 로 취급해 새로 시도한다. (guideline·reference 경로는 종전 그대로.)
+        const cached = await this.cache.get(cacheKey);
+        if (cached !== null && cached !== undefined && !this._isThinReview(cached)) {
+          data = cached;
+        } else {
+          data = await fetchFresh();
+          if (data !== undefined && !this._isThinReview(data)) await this.cache.set(cacheKey, data);
+        }
+      } else {
+        // 데일리 코어(guideline)·reference 는 종전 경로 그대로 (불변식: 데일리 코어 무영향)
+        ({ data } = await this.cache.getOrFetch(cacheKey, fetchFresh));
+      }
 
       return this._toCard(doc, data, mode);
     } catch (err) {
@@ -331,6 +410,48 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       this.logger.warn(`${mode} analysis failed — skipping this cycle`, { err: err.message });
       return null;
     }
+  }
+
+  /**
+   * ② 리뷰 카드에 실을 수 있는 절만 남기고, 보강 절(origin='augmented')을 **화면에서
+   * 구분되게** 장식한다. 렌더러(GitHubPublisher·dailyDigest)는 heading_ko/body_ko 만
+   * 그리므로 구분 표식을 데이터에 심는다:
+   *   · 제목 앞에 `[웹 보강]` — 원문이 말한 절과 섞여 "Lancet 이 이렇게 말했다"로
+   *     읽히는 것을 막는다 (REPORT_SPEC §4-B 환각 배제 원칙).
+   *   · 본문 끝에 `— 보강 출처: <label> (<url>)` 한 줄 — 어디서 온 문장인지 링크로 밝힌다.
+   *   · http(s) 출처 URL 이 없는 보강 절은 **버린다** — 출처 없는 보강은 환각과 구분할 수 없다.
+   */
+  _publishableReviewSections(data) {
+    const AUG_MARK = '[웹 보강]';
+    return (Array.isArray(data?.sections) ? data.sections : [])
+      .filter((x) => String(x?.body_ko ?? '').trim())
+      .map((x) => {
+        if (x?.origin !== 'augmented') return x;
+        const url = String(x.sourceUrl ?? '').trim();
+        if (!/^https?:\/\//i.test(url)) return null;
+        const heading = String(x.heading_ko ?? '').trim();
+        const label = String(x.sourceLabel ?? '').trim() || url;
+        const body = String(x.body_ko);
+        return {
+          ...x,
+          heading_ko: heading.includes(AUG_MARK) ? heading : `${AUG_MARK} ${heading}`.trim(),
+          body_ko: body.includes(url) ? body : `${body}\n— 보강 출처: ${label} (${url})`,
+        };
+      })
+      .filter(Boolean);
+  }
+
+  /** 리뷰 본문 실질량 — 카드에 실제로 실릴 절(body_ko)의 글자수 합. */
+  _reviewBodyChars(data) {
+    return this._publishableReviewSections(data)
+      .reduce((n, sec) => n + String(sec.body_ko ?? '').trim().length, 0);
+  }
+
+  /** ③ 실질 게이트 판정 — full-text 를 확보했다고 말한 카드는 길이로 트집잡지 않는다. */
+  _isThinReview(data) {
+    if (!data) return true;
+    if (data.coverage === 'full-text') return false;
+    return this._reviewBodyChars(data) < REVIEW_THIN_BODY_CHARS;
   }
 
   _toCard(guideline, data, mode = 'guideline') {
@@ -356,8 +477,7 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     //   review     절별 번역(sections) + 무엇을 보고 옮겼는지(coverage)
     const modeFields = mode === 'review'
       ? {
-        sections: (Array.isArray(data.sections) ? data.sections : [])
-          .filter((x) => String(x?.body_ko ?? '').trim()),
+        sections: this._publishableReviewSections(data),
         coverage: ['full-text', 'web-augmented', 'abstract-only'].includes(data.coverage)
           ? data.coverage : 'abstract-only',
       }

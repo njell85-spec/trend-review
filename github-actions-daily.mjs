@@ -134,7 +134,19 @@ async function sendDailyDigest() {
 if (!papers.length) {
   console.warn('⚠️  오늘 선정된 논문이 없습니다.');
   console.log('::warning::오늘 선정된 논문이 없습니다 (파이프라인은 정상 종료).');
-  // 논문만 없을 뿐 가이드라인·리뷰는 나갔을 수 있다 — 그날 것을 md 로 보낸다.
+  // 논문만 없을 뿐 가이드라인·리뷰는 나갔을 수 있다 — 그날 것을 알리고 md 로 보낸다.
+  // ★ 본문 알림도 보낸다. 세 트랙을 다 싣게 된 뒤로는 "논문이 없다" 가 곧 "보낼 것이
+  //   없다" 가 아니다 — 가이드라인·리뷰가 나간 날 알림이 통째로 없으면 안 된다.
+  if (guidelineCard || reviewItem) {
+    try {
+      const r0 = await new TelegramNotifier().send({
+        dateStr: todayKST, topPaper: null, guideline: guidelineCard, review: reviewItem, pagesUrl,
+      });
+      if (r0.sent) console.log('💬 텔레그램 리포트 발송 완료 (논문 없음 · 다른 트랙)');
+    } catch (err) {
+      console.log(`::warning::텔레그램 발송 실패 — ${err.message.slice(0, 200)}`);
+    }
+  }
   const digestOnly = await sendDailyDigest();
   console.log(`📎 md 첨부: ${digestOnly}`);
   jobSummary(`## ⚠️ Trend Review — ${todayKST}\n\n선정된 논문이 없습니다 (검색/검증 결과 0편).\n\n- md 첨부: ${digestOnly}`);
@@ -157,7 +169,12 @@ try {
   let progressLines = [];
   try { progressLines = await new TrendReviewOrchestrator()._buildProgressLines(todayKST); }
   catch { /* 리포트를 막지 않는다 */ }
-  const r = await new TelegramNotifier().send({ dateStr: todayKST, topPaper: papers[0], pagesUrl, progressLines });
+  // ★ 세 트랙을 다 싣는다 (PeterJ 확정 2026-08-18) — 종전에는 논문만 실려서
+  //   가이드라인·리뷰가 나갔는지 알 길이 대시보드를 여는 것뿐이었다.
+  const r = await new TelegramNotifier().send({
+    dateStr: todayKST, topPaper: papers[0], guideline: guidelineCard, review: reviewItem,
+    pagesUrl, progressLines,
+  });
   if (r.sent) {
     telegramStatus = '발송 완료';
     console.log('💬 텔레그램 리포트 발송 완료');

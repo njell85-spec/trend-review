@@ -34,10 +34,18 @@ function asCandidate(entry) {
   };
 }
 
-test('소급 판정: 현행 발행 이력 7건이 전부 분류된다', async () => {
+// ★ 2026-08-18 — 종전에는 `=== 7` 로 못 박아 뒀는데, 가이드라인은 **매일 발행된다.**
+//   그래서 이 검사는 발행이 있는 날마다 깨졌다(오늘 8건이 되면서 실제로 깨졌다).
+//   **매번 깨지는 검사는 노이즈가 되고, 노이즈는 결국 꺼진다.**
+//   지켜야 할 것은 "건수가 그대로" 가 아니라 **"줄지 않는다"**(유실 방지)와
+//   "전부 분류된다" 이다. 하한만 남기고 그 둘을 검사한다.
+const HISTORY_FLOOR = 7;   // 2026-08-17 기준 실측. 줄면 데이터 유실이다.
+
+test('소급 판정: 현행 발행 이력이 전부 분류된다 (건수는 줄지 않는다)', async () => {
   const orgs = loadGuidelineOrgs();
   const history = await readPublishedLegacy();
-  assert.equal(history.length, 7, '발행 이력 건수가 바뀌었다 — 기대값을 다시 보라');
+  assert.ok(history.length >= HISTORY_FLOOR,
+    `발행 이력이 ${history.length}건으로 줄었다(하한 ${HISTORY_FLOOR}) — 유실을 의심하라`);
   for (const entry of history) {
     const verdict = classifyGuidelineDocument(asCandidate(entry), { orgs }).verdict;
     assert.ok(['guideline', 'needsReview', 'rejected'].includes(verdict), `알 수 없는 판정: ${verdict}`);

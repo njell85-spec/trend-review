@@ -51,9 +51,10 @@ const base = { dateStr: '2026-08-17', pagesUrl: 'https://njell85-spec.github.io/
 test('세 트랙이 다 있으면 세 절이 다 들어간다', () => {
   const out = buildDailyDigest({ ...base, papers: [paper], guideline, review });
   assert.match(out, /^# Trend Review — 2026-08-17/);
-  assert.match(out, /## 📄 논문 — 심정지 후 보존적 산소요법/);
-  assert.match(out, /## 📋 가이드라인 — 패혈증 지침 2026/);
-  assert.match(out, /## 📰 리뷰 아티클 — 자원제한 환경의 패혈증 관리/);
+  // ★ 2026-08-18 — 트랙 제목은 h1, 항목 제목은 h2 (PeterJ: "각 제목을 좀 더 큰 글자로")
+  assert.match(out, /# 📄 논문\n\n## 심정지 후 보존적 산소요법/);
+  assert.match(out, /# 📋 가이드라인\n\n## 패혈증 지침 2026/);
+  assert.match(out, /# 📰 리뷰 아티클\n\n## 자원제한 환경의 패혈증 관리/);
   assert.match(out, /분석 3건/);
   assert.ok(out.includes('https://njell85-spec.github.io/trend-review/'));
 });
@@ -62,7 +63,7 @@ test('세 트랙이 다 있으면 세 절이 다 들어간다', () => {
 test('★ 논문 절이 카드의 축을 전부 담는다', () => {
   const out = buildDailyDigest({ ...base, papers: [paper] });
   for (const axis of ['WHY IT MATTERS', 'PICO', '2차 결과', '통계 용어', '제한점', '임상 결론', 'Practice Change']) {
-    assert.ok(out.includes(`### ${axis}`), `축 누락: ${axis}`);
+    assert.ok(out.includes(`## ${axis}`), `축 누락: ${axis}`);
   }
   assert.match(out, /\*\*P\*\* — 성인/);
   assert.match(out, /\*\*O\*\* — 생존/);
@@ -74,9 +75,9 @@ test('★ 논문 절이 카드의 축을 전부 담는다', () => {
 
 test('★ 가이드라인 절이 핵심 권고·변경점·임팩트를 담는다', () => {
   const out = buildDailyDigest({ ...base, guideline });
-  assert.ok(out.includes('### 핵심 권고'));
-  assert.ok(out.includes('### 이전 판 대비 변경점'));
-  assert.ok(out.includes('### 임상 임팩트'));
+  assert.ok(out.includes('## 핵심 권고'));
+  assert.ok(out.includes('## 이전 판 대비 변경점'));
+  assert.ok(out.includes('## 임상 임팩트'));
   assert.match(out, /1시간 내 항생제 투여/);
   assert.match(out, /3시간에서 1시간으로/);
 });
@@ -84,13 +85,29 @@ test('★ 가이드라인 절이 핵심 권고·변경점·임팩트를 담는�
 // 리뷰는 요약이 아니라 번역이다 (PR #125) — 축이 다르다.
 test('★ 리뷰 절은 본문 번역·확보 수준·임상 적용을 담고 "핵심 권고"가 없다', () => {
   const out = buildDailyDigest({ ...base, review });
-  assert.ok(out.includes('### 본문 번역'));
-  assert.ok(out.includes('#### 서론'));
+  assert.ok(out.includes('## 본문 번역'));
+  assert.ok(out.includes('### 서론'));
   assert.match(out, /첫 문단/);
   assert.match(out, /둘째 문단/);
-  assert.ok(out.includes('### 임상 적용'));
+  assert.ok(out.includes('## 임상 적용'));
   assert.match(out, /초록 범위만 옮겼습니다/, 'coverage 안내가 없다 — 화면은 정직하게 말하는데 첨부가 숨긴다');
-  assert.ok(!out.includes('### 핵심 권고'), '리뷰에 요약 축이 붙었다');
+  assert.ok(!out.includes('## 핵심 권고'), '리뷰에 요약 축이 붙었다');
+});
+
+// ★ PeterJ 확정 2026-08-18 — "논문 가이드라인 리뷰 구분을 5줄 정도 띄워서 가독성 확보"
+test('★ 트랙 사이가 5줄 이상 띄워져 있다', () => {
+  const out = buildDailyDigest({ ...base, papers: [paper], guideline, review });
+  const gaps = out.match(/\n{5,}/g) ?? [];
+  assert.ok(gaps.length >= 4, `트랙 구분 여백이 ${gaps.length}군데 — 헤더 뒤 + 트랙 사이 2군데씩 필요`);
+  // 구분선이 여백 한가운데 있어야 어디서 트랙이 바뀌는지 보인다.
+  assert.match(out, /\n{5,}---\n{5,}/);
+});
+
+test('★ 트랙 제목이 h1 이다 (h2 였던 항목 제목보다 커야 한다)', () => {
+  const out = buildDailyDigest({ ...base, papers: [paper], guideline, review });
+  const h1 = out.split('\n').filter((l) => /^# /.test(l));
+  // 문서 제목 1 + 트랙 3
+  assert.equal(h1.length, 4, `h1 이 ${h1.length}개 — 문서 제목 + 트랙 3개여야 한다`);
 });
 
 test('발행이 없으면 그렇게 적고 던지지 않는다', () => {
