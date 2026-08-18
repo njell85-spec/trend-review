@@ -803,7 +803,7 @@ export class GitHubPublisher {
    * 리뷰 큐 항목은 논문과 달리 LLM 카드가 없다(저수지에서 제목·저널·점수만 들고 온다).
    * 그래서 **가진 것만 정직하게** 보여준다 — 없는 요약을 지어내지 않는다.
    */
-  _buildReviewSection(dateStr, generatedAt, review, { sectionKey = dateStr } = {}) {
+  _buildReviewSection(dateStr, generatedAt, review, { isToday = false, sectionKey = dateStr } = {}) {
     const card = review?.card ?? null;
     const rp = card?.paper ?? review?.paper ?? review ?? {};
     const pmid = rp.pmid ?? review?.pmid ?? '';
@@ -827,12 +827,22 @@ export class GitHubPublisher {
       <p class="txt ko" style="margin-top:6px">본문 정리를 만들지 못했습니다 — 원문을 확인해 주세요.</p>
     </article>`;
 
+    // ★★ 2026-08-18 실측 결함 (PeterJ) — *"1·2번 트랙은 오늘자 제목이 나오는데
+    //   3번 리뷰는 오늘자가 접혀 있다."*
+    //   종전에는 여기가 `day day-past` **하드코딩**이었다. 그래서 리뷰 카드는
+    //   **발행 당일부터** '지난 리뷰' 묶음 안으로 들어갔다(`foldPast` 가 `day day-today`
+    //   유무로 오늘/지난을 가른다). 논문·가이드라인은 호출부에서 `isToday: true` 를
+    //   받는데 리뷰만 그 인자가 아예 없었다 — 세 트랙이 같은 규칙을 쓰지 않던 자리다.
+    //   ★ 강등은 `publish()` 가 **새 카드 삽입 전에** 한 정규식으로 처리하므로
+    //     (`day day-today` → `day day-past`) 어제 리뷰는 자동으로 내려간다.
+    const cls = isToday ? 'day day-today' : 'day day-past';
+    const badge = isToday ? '<span class="t-badge gl-badge">NEW</span>' : '';
     return `
 <!-- RSECTION:${sectionKey} -->
-<details class="day day-past">
+<details class="${cls}">
   <summary class="day-sum">
     <div class="day-head">
-      <span class="day-date">${esc(dateStr)}</span><span class="gl-tag">📰 리뷰</span><span class="day-gen">생성 ${esc(generatedAt)}</span>
+      <span class="day-date">${esc(dateStr)}</span><span class="gl-tag">📰 리뷰</span>${badge}<span class="day-gen">생성 ${esc(generatedAt)}</span>
       <span class="day-chev">${IC.chev(T.muted)}</span>
     </div>
     <div class="day-prev"><span class="day-prev-medal">${IC.book(T.sec)}</span><div><div class="day-prev-t">${esc(title)}</div><div class="day-prev-m">${esc(journal)}</div></div></div>
@@ -1475,7 +1485,7 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
     }
     const publishableReview = rIdent ? review : null;
     const reviewSection = publishableReview
-      ? this._buildReviewSection(dateStr, generatedAt, publishableReview, { sectionKey: `${dateStr}-r-${rIdent}` })
+      ? this._buildReviewSection(dateStr, generatedAt, publishableReview, { isToday: true, sectionKey: `${dateStr}-r-${rIdent}` })
       : '';
 
     const newRows = this._tableRows(dateStr, topPapers, guideline, { manual, review: publishableReview });
