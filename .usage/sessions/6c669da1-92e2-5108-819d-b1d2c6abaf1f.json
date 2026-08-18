@@ -3,7 +3,7 @@
   "schema": 3,
   "repo": "trend-review",
   "updated": "2026-08-19",
-  "turns": 694,
+  "turns": 711,
   "records": [
     {
       "ts": "2026-08-19",
@@ -12,15 +12,15 @@
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-5",
-      "in": 3177,
-      "out": 320246,
-      "cache_w": 2791380,
-      "cache_r": 181005039,
-      "cost_usd": 126.438355,
+      "in": 3189,
+      "out": 323943,
+      "cache_w": 2797222,
+      "cache_r": 185658137,
+      "cost_usd": 128.915809,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "6c669da1-92e2-5108-819d-b1d2c6abaf1f",
-      "note": "세션 누계(턴 694) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 711) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
       "ts": "2026-08-19",
@@ -37,7 +37,7 @@
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "6c669da1-92e2-5108-819d-b1d2c6abaf1f",
-      "note": "세션 누계(턴 694) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 711) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
       "ts": "2026-08-19",
@@ -46,15 +46,15 @@
       "repo": "trend-review",
       "task": "session",
       "model": "claude-opus-4-7",
-      "in": 218,
-      "out": 83353,
-      "cache_w": 912289,
-      "cache_r": 11057485,
-      "cost_usd": 16.736548,
+      "in": 239,
+      "out": 87515,
+      "cache_w": 1207512,
+      "cache_r": 12287044,
+      "cost_usd": 20.407712,
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "6c669da1-92e2-5108-819d-b1d2c6abaf1f",
-      "note": "세션 누계(턴 694) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 711) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
       "ts": "2026-08-19",
@@ -71,7 +71,7 @@
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "6c669da1-92e2-5108-819d-b1d2c6abaf1f",
-      "note": "세션 누계(턴 694) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 711) · 공시단가 환산 · 캐시쓰기 배수 2"
     },
     {
       "ts": "2026-08-19",
@@ -88,7 +88,7 @@
       "auth": "subscription",
       "accuracy": "approx",
       "run_id": "6c669da1-92e2-5108-819d-b1d2c6abaf1f",
-      "note": "세션 누계(턴 694) · 공시단가 환산 · 캐시쓰기 배수 2"
+      "note": "세션 누계(턴 711) · 공시단가 환산 · 캐시쓰기 배수 2"
     }
   ]
 }
