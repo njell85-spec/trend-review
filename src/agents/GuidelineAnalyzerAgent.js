@@ -102,13 +102,27 @@ export class GuidelineAnalyzerAgent {
           },
           practiceImpact: { type: 'string', description: 'How this should concretely change EM/CCM bedside practice (2–4 sentences, English).' },
           practiceImpact_ko: { type: 'string', description: 'Korean translation of practiceImpact.' },
+          augmentedSections: {
+            type: 'array',
+            description: "Web-augmentation axis (PeterJ 확정 2026-08-18), SEPARATE from the guideline's own text and SEPARATE from keyChanges: worthwhile SECONDARY-SOURCE material about THIS guideline that you found via the MANDATORY title searches — official society summaries, journal editorials/comments, practice summaries in major journals, established clinical references. NEVER put the guideline's own recommendations here, NEVER mix this material into summary/keyChanges, and NEVER include personal blogs, content-farm summary sites, or AI-generated pages. Every item MUST carry the exact page you actually opened (sourceLabel + sourceUrl) — items without a real http(s) URL are discarded before publication. Empty array if the searches yielded nothing usable (say so honestly — never fabricate).",
+            items: {
+              type: 'object',
+              properties: {
+                heading_ko: { type: 'string', description: '보강 항목 제목(한국어) — 이 2차 자료가 다루는 논점.' },
+                body_ko: { type: 'string', description: '그 2차 자료가 말한 내용을 한국어로 충실히. 이 가이드라인 원문이 말한 것과 절대 섞지 마라 — 섞이면 "지침이 이렇게 말했다"로 잘못 읽힌다.' },
+                sourceLabel: { type: 'string', description: "출처 이름 (예: 'ESICM 공식 요약', 'JAMA editorial')." },
+                sourceUrl: { type: 'string', description: '실제로 열어 읽은 페이지의 URL. 실제 URL 이 없으면 이 항목을 제출하지 마라 (출처 없는 보강은 버려진다).' },
+              },
+              required: ['heading_ko', 'body_ko', 'sourceLabel', 'sourceUrl'],
+            },
+          },
           webSources: {
             type: 'array',
-            description: 'Authoritative web pages you consulted via WebSearch/WebFetch to determine the specific changes (only if you actually used web search). Prefer the issuing society, the journal, or PubMed. Each {label, url}. Empty array if you did not use web search.',
+            description: 'Every web page you ACTUALLY OPENED AND READ via WebSearch/WebFetch while running the MANDATORY searches — never a page you merely assume exists. Prefer the issuing society, the journal, or PubMed. Each {label, url}. Empty array ONLY if the searches genuinely failed or returned nothing usable.',
             items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
           },
         },
-        required: ['pmid', 'org', 'version', 'title_ko', 'scope_ko', 'summary', 'summary_ko', 'keyChanges', 'practiceImpact', 'practiceImpact_ko'],
+        required: ['pmid', 'org', 'version', 'title_ko', 'scope_ko', 'summary', 'summary_ko', 'keyChanges', 'augmentedSections', 'practiceImpact', 'practiceImpact_ko'],
       },
     };
   }
@@ -161,7 +175,7 @@ export class GuidelineAnalyzerAgent {
           practiceImpact_ko: { type: 'string', description: '이 종설을 읽고 EM/CCM 침상에서 무엇이 달라지는지 2–3문장 한국어. 원문이 말한 범위 안에서만 쓴다.' },
           webSources: {
             type: 'array',
-            description: 'Pages you ACTUALLY OPENED AND READ via WebSearch/WebFetch while working the search ladder (only those — never a page you merely assume exists). Each {label, url}. Empty array if you did not use web search.',
+            description: 'Pages you ACTUALLY OPENED AND READ via WebSearch/WebFetch while running the MANDATORY searches and working the search ladder (only those — never a page you merely assume exists). Each {label, url}. Empty array ONLY if the searches genuinely failed or returned nothing usable.',
             items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
           },
         },
@@ -217,7 +231,40 @@ export class GuidelineAnalyzerAgent {
     return `${mode}_v5_${this.provider}_${this.model}_${id}${supplied}`;
   }
 
-  /** 분석 프롬프트. 모드에 따라 요구 산출물이 갈린다. `escalate` 는 리뷰 실질 게이트(③) 전용. */
+  /**
+   * ★ 필수 웹검색 블록 (PeterJ 확정 2026-08-18) — 검색어는 **문서 제목 그대로**.
+   *
+   * 실측(2026-08-18 · Actions run 32089367959): 리뷰 보강이 실전에서 한 번도 안 돌았다 —
+   * webSources 0건, 보강 절 0개. 원인은 LLMClient 프롬프트 꼬리의 "You MAY first use
+   * WebSearch…" 였다. MAY 라서 모델이 안 해도 되는 것으로 읽었다. LLMClient 는 논문
+   * PICO·rerank 도 같이 쓰므로 못 고친다 — 그래서 여기 프롬프트 본문에서 **must** 로
+   * 강제하고, 실제로 칠 검색어를 제목에서 만들어 리터럴로 박는다.
+   */
+  _mandatorySearchBlock(doc, mode = 'review') {
+    // 제목 안의 큰따옴표는 검색어 리터럴을 깨므로 작은따옴표로 바꾼다.
+    const title = String(doc?.title ?? '').replace(/"/g, "'").replace(/\s+/g, ' ').trim();
+    const queries = [
+      `  WebSearch: "${title}"`,
+      `  WebSearch: "${title}" key points`,
+      `  WebSearch: "${title}" summary`,
+      ...(mode === 'guideline'
+        ? [`  WebSearch: "${title}" what's new`, `  WebSearch: "${title}" executive summary`]
+        : []),
+    ];
+    return `★★ MANDATORY WEB RESEARCH — THIS IS NOT OPTIONAL.
+Any general instruction elsewhere saying you "may" use web tools does NOT apply here.
+You MUST run at least these searches before answering, and open the most authoritative
+hits with WebFetch:
+${queries.join('\n')}
+From what the searches return, use ONLY worthwhile SECONDARY sources: official society
+summaries/statements, journal editorials/comments, practice summaries in major journals,
+established clinical references. EXCLUDE personal blogs, content-farm/summary sites, and
+AI-generated pages. Every claim you take from the web must carry the page you actually
+opened (label + URL). If the searches fail or return nothing usable, say so honestly —
+return empty arrays rather than pretending you searched, and NEVER fabricate content.`;
+  }
+
+  /** 분석 프롬프트. 모드에 따라 요구 산출물이 갈린다. `escalate` 는 실질 게이트(③·④) 전용. */
   _prompt(doc, mode = 'guideline', { escalate = false } = {}) {
     const hasFullText = doc.fullText && doc.fullText.length > 100;
     const fullTextSection = hasFullText
@@ -252,6 +299,8 @@ Do NOT compress the article into bullets. Do NOT impose a PICO structure. Do NOT
 Follow the source's OWN section order and render each section faithfully in Korean,
 keeping the author's numbers, doses, thresholds, evidence grades, caveats and hedging.
 If the author is uncertain, your Korean must be uncertain in the same way.
+
+${this._mandatorySearchBlock(doc, 'review')}
 
 ★ IF YOU DO NOT HAVE THE FULL TEXT: work this SEARCH LADDER IN ORDER with WebSearch/WebFetch
 BEFORE settling for the abstract. The user explicitly asked for this. Do not stop because one
@@ -318,13 +367,29 @@ Use the submit_reference_brief tool. Report ONLY what you can source — never i
 Provide Korean for all _ko fields; medical/drug/score names may remain in English.`;
     }
 
-    return `You are an expert emergency medicine and critical care physician writing a DETAILED GUIDELINE CATCH-UP brief for a busy clinician who wants to know EXACTLY what to change in practice.
+    const glEscalate = escalate ? `★★ ESCALATION — a previous attempt on this guideline skipped the mandatory web research
+entirely (no web sources, no secondary-source augmentation). That is exactly the failure
+this task exists to prevent. This time, ACTUALLY RUN every mandatory search below and open
+the best hits with WebFetch BEFORE you answer. Only if, after really searching, nothing
+usable exists may you return empty augmentedSections/webSources — never skip the searching.
+
+` : '';
+    return `${glEscalate}You are an expert emergency medicine and critical care physician writing a DETAILED GUIDELINE CATCH-UP brief for a busy clinician who wants to know EXACTLY what to change in practice.
+
+${this._mandatorySearchBlock(doc, 'guideline')}
 
 This is a clinical practice guideline (not a primary study) — do NOT force a PICO structure. Produce:
   1. scope_ko — 무엇을(어떤 환자군을) 다루는 가이드라인인지.
   2. summary — the key recommendations, each a SPECIFIC actionable statement with class/level of evidence when stated.
   3. keyChanges — for EACH important change versus the previous version, describe SPECIFICALLY what changed: 이전 권고 → 새 권고, 바뀐 수치/용량/시간 기준, 새 근거등급, 그리고 이유. Describe the actual CONTENT of the changes — NEVER vague counts like "20 recommendations were added". Include as many concrete changes as the source supports.
-  4. practiceImpact — concrete bedside impact for EM/CCM.
+  4. augmentedSections — the WEB AUGMENTATION axis (separate from 2 and 3): worthwhile
+     secondary-source material about THIS guideline found via the mandatory searches
+     (society official summaries, journal editorials/comments, practice summaries in major
+     journals, established clinical references). Each item MUST carry sourceLabel + sourceUrl
+     of a page you actually opened — items without a real URL are discarded. NEVER mix this
+     material into summary or keyChanges: the reader must always be able to tell what THIS
+     guideline said from what came from elsewhere. Empty array if nothing usable was found.
+  5. practiceImpact — concrete bedside impact for EM/CCM.
 
 Guideline:
 ${meta}${doc.sourceUrl ? `
@@ -369,18 +434,36 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
 
         let result = await callOnce(this._prompt(doc, mode));
 
-        // ★ ③ 실질 게이트(리뷰 전용) — coverage 가 full-text 도 아닌데 본문이 얇으면
-        //   "초록 치환"이다(2026-08-18 실측 1,119자). 에스컬레이션 프롬프트로 **딱 1회** 더
-        //   시도한다. 두 번째도 얇으면 그대로 발행한다 — 얇은 카드보다 데일리가 늦어지거나
-        //   죽는 것이 나쁘다(불변식: 데일리 코어 무영향). 재시도가 더 짧으면 첫 결과를 쓴다.
-        if (mode === 'review' && this._isThinReview(result)) {
-          this.logger.warn(`review body thin (${this._reviewBodyChars(result)} chars < ${REVIEW_THIN_BODY_CHARS}) — escalating once`);
+        // ★ ③④ 실질 게이트(리뷰) — coverage 가 full-text 도 아닌데 **본문이 얇거나 웹을
+        //   아예 안 열었으면**(webSources 0건 — 2026-08-18 run 32089367959 실측 증상)
+        //   에스컬레이션 프롬프트로 **딱 1회** 더 시도한다. 두 번째도 안 되면 그대로
+        //   발행한다 — 나쁜 카드보다 데일리가 늦어지거나 죽는 것이 나쁘다(불변식: 데일리
+        //   코어 무영향). 재시도가 더 나쁘면(본문이 안 늘고 게이트도 못 풀면) 첫 결과를 쓴다.
+        if (mode === 'review' && this._needsReviewEscalation(result)) {
+          this.logger.warn(`review gate: body ${this._reviewBodyChars(result)} chars, webSources ${this._validWebSources(result).length} — escalating once`);
           try {
             const second = await callOnce(this._prompt(doc, mode, { escalate: true }));
-            if (this._reviewBodyChars(second) > this._reviewBodyChars(result)) result = second;
-            else this.logger.warn('review escalation did not improve length — keeping first result');
+            const adoptSecond = this._reviewBodyChars(second) > this._reviewBodyChars(result)
+              || (!this._needsReviewEscalation(second) && this._needsReviewEscalation(result));
+            if (adoptSecond) result = second;
+            else this.logger.warn('review escalation did not improve — keeping first result');
           } catch (e) {
             this.logger.warn(`review escalation failed — keeping first result: ${e.message}`);
+          }
+        }
+
+        // ★ ④ 실질 게이트(가이드라인) — 보강 축도 비었고 webSources 도 비었으면 필수
+        //   검색이 통째로 건너뛰어진 것이다. **딱 1회** 에스컬레이션. 두 번째가 게이트를
+        //   못 풀면 첫 결과 그대로 발행한다(불변식: 데일리 코어 무영향 — 여기서 절대
+        //   던지지 않는다. callOnce 실패는 아래 catch 가 삼키고 첫 결과를 유지한다).
+        if (mode === 'guideline' && result && this._needsGuidelineEscalation(result)) {
+          this.logger.warn('guideline gate: no augmentedSections and no webSources — escalating once');
+          try {
+            const second = await callOnce(this._prompt(doc, mode, { escalate: true }));
+            if (second && !this._needsGuidelineEscalation(second)) result = second;
+            else this.logger.warn('guideline escalation still had no web evidence — keeping first result');
+          } catch (e) {
+            this.logger.warn(`guideline escalation failed — keeping first result: ${e.message}`);
           }
         }
         return result;
@@ -392,12 +475,14 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         //   getOrFetch 를 그대로 쓰면 에스컬레이션까지 하고도 얇았던 결과가 TTL 동안
         //   재사용돼 다음 실행도 얇게 나온다. 읽기도 같은 기준: 구버전이 굳혀 둔 얇은
         //   캐시는 miss 로 취급해 새로 시도한다. (guideline·reference 경로는 종전 그대로.)
+        // 게이트 기준(얇음 또는 웹 미사용)에 걸리는 결과는 캐시에 굳히지도, 캐시에서
+        // 재사용하지도 않는다 — 굳히면 다음 실행도 같은 실패를 그대로 재사용한다.
         const cached = await this.cache.get(cacheKey);
-        if (cached !== null && cached !== undefined && !this._isThinReview(cached)) {
+        if (cached !== null && cached !== undefined && !this._needsReviewEscalation(cached)) {
           data = cached;
         } else {
           data = await fetchFresh();
-          if (data !== undefined && !this._isThinReview(data)) await this.cache.set(cacheKey, data);
+          if (data !== undefined && !this._needsReviewEscalation(data)) await this.cache.set(cacheKey, data);
         }
       } else {
         // 데일리 코어(guideline)·reference 는 종전 경로 그대로 (불변식: 데일리 코어 무영향)
@@ -454,6 +539,53 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     return this._reviewBodyChars(data) < REVIEW_THIN_BODY_CHARS;
   }
 
+  /** 실제 http(s) 링크가 달린 webSources 만 — 웹을 정말 열었다는 증거로 센다. */
+  _validWebSources(data) {
+    return (Array.isArray(data?.webSources) ? data.webSources : [])
+      .filter((s) => s?.url && /^https?:\/\//i.test(String(s.url).trim()));
+  }
+
+  /**
+   * ④ 리뷰 에스컬레이션 판정 — 본문 길이만 보면 이번 실측(2026-08-18)의 증상을 놓친다:
+   * 그날 카드는 길이가 아니라 **webSources: 0** 이 증상이었다(웹을 아예 안 열었다).
+   * coverage ≠ full-text 이고 (본문이 얇거나 **웹 증거가 없으면**) 게이트에 걸린다.
+   */
+  _needsReviewEscalation(data) {
+    if (!data) return true;
+    if (data.coverage === 'full-text') return false;
+    return this._reviewBodyChars(data) < REVIEW_THIN_BODY_CHARS
+      || this._validWebSources(data).length === 0;
+  }
+
+  /** ④ 가이드라인 에스컬레이션 판정 — 보강 축도 비었고 웹 증거도 없으면 검색을 건너뛴 것. */
+  _needsGuidelineEscalation(data) {
+    if (!data) return false; // null/거부는 기존 실패 경로가 처리한다 — 여기서 재시도하지 않는다
+    return this._publishableAugments(data).length === 0
+      && this._validWebSources(data).length === 0;
+  }
+
+  /**
+   * ② 가이드라인 보강 축 — 카드에 실을 수 있는 항목만. 리뷰의 보강 절과 같은 계약이다:
+   * {heading_ko, body_ko, sourceLabel, sourceUrl} 이고 **http(s) 출처가 없으면 버린다**
+   * (출처 없는 보강은 환각과 구분할 수 없다 — REPORT_SPEC §4-B 환각 배제).
+   * 원문(summary·keyChanges)과 별도 배열로 남겨 렌더러가 화면에서 구분해 그린다.
+   */
+  _publishableAugments(data) {
+    return (Array.isArray(data?.augmentedSections) ? data.augmentedSections : [])
+      .filter((x) => String(x?.body_ko ?? '').trim())
+      .map((x) => {
+        const url = String(x?.sourceUrl ?? '').trim();
+        if (!/^https?:\/\//i.test(url)) return null;
+        return {
+          heading_ko: String(x.heading_ko ?? '').trim(),
+          body_ko: String(x.body_ko).trim(),
+          sourceLabel: String(x.sourceLabel ?? '').trim() || url,
+          sourceUrl: url,
+        };
+      })
+      .filter(Boolean);
+  }
+
   _toCard(guideline, data, mode = 'guideline') {
     const sources = [];
     const pmUrl = guideline.pubmedUrl ?? (guideline.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${guideline.pmid}/` : null);
@@ -483,7 +615,9 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       }
       : mode === 'reference'
         ? { sourceNote_ko: data.sourceNote_ko ?? '' }
-        : { keyChanges, changesUnavailable: keyChanges.length === 0 };
+        // guideline: keyChanges(원문 축 — 그대로 둔다)와 **별개 축**으로 웹 보강을 싣는다.
+        // 출처(http/https) 없는 보강 항목은 여기서 버려진다 — 렌더러까지 못 간다.
+        : { keyChanges, changesUnavailable: keyChanges.length === 0, augmentedSections: this._publishableAugments(data) };
     return {
       type: mode === 'reference' ? 'reference' : (mode === 'review' ? 'review' : 'guideline'),
       paper: {

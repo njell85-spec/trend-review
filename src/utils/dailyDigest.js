@@ -151,10 +151,30 @@ function cardSection(g, { fallbackHeading } = {}) {
     return text(c?.topic) ? `**${inline(c.topic)}**\n\n${body}` : body;
   }).filter(Boolean).join('\n\n');
 
+  // 보강 절(origin='augmented')은 화면(카드)과 동일하게 구분해 싣는다 — 출처는 Markdown
+  // 링크로(클릭 가능해야 한다). 본문에 심긴 평문 출처 줄은 링크와 중복되므로 걸러낸다.
   const sections = (g.sections ?? []).map((sec) => {
-    const body = para(sec?.body_ko);
+    const secUrl = text(sec?.sourceUrl);
+    const isAug = sec?.origin === 'augmented' && /^https?:\/\//i.test(secUrl);
+    const bodyRaw = isAug
+      ? text(sec?.body_ko).split(/\n+/).filter((l) => !/^—\s*보강 출처:/.test(l.trim())).join('\n')
+      : text(sec?.body_ko);
+    const body = para(bodyRaw);
     if (!body) return '';
-    return text(sec?.heading_ko) ? `### ${inline(sec.heading_ko)}\n\n${body}` : body;
+    const head = text(sec?.heading_ko) ? `### ${inline(sec.heading_ko)}\n\n` : '';
+    const src = isAug ? `\n\n[— 보강 출처: ${inline(text(sec.sourceLabel) || secUrl)}](${secUrl})` : '';
+    return `${head}${body}${src}`;
+  }).filter(Boolean).join('\n\n');
+
+  // ② 가이드라인 웹 보강 축 — 카드의 "🔎 웹 보강 (2차 자료)" 블록과 동일 내용.
+  //   http(s) 출처 없는 항목은 싣지 않는다(카드와 같은 규칙 — 출처 없는 보강은 버린다).
+  const augments = (Array.isArray(g.augmentedSections) ? g.augmentedSections : []).map((a) => {
+    const augUrl = text(a?.sourceUrl);
+    if (!/^https?:\/\//i.test(augUrl)) return '';
+    const body = para(a?.body_ko);
+    if (!body) return '';
+    const head = text(a?.heading_ko) ? `**${inline(a.heading_ko)}**\n\n` : '';
+    return `${head}${body}\n\n[— 출처: ${inline(text(a.sourceLabel) || augUrl)}](${augUrl})`;
   }).filter(Boolean).join('\n\n');
 
   const coverage = isReview ? (COVERAGE_NOTE[g.coverage] ?? '') : '';
@@ -174,6 +194,7 @@ function cardSection(g, { fallbackHeading } = {}) {
     block(isRef ? '핵심 내용' : '핵심 권고', bullets(g.summary, g.summary_ko)),
     block('본문 번역', sections),
     block(isRef ? '출처 성격' : '이전 판 대비 변경점', changes),
+    block('🔎 웹 보강 (2차 자료)', augments),
     block(isReview ? '임상 적용' : (isRef ? '어떻게 쓰나' : '임상 임팩트'),
       enko(g.practiceImpact, g.practiceImpact_ko)),
     links ? `${links}\n` : '',
