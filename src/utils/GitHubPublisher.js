@@ -276,11 +276,42 @@ export class GitHubPublisher {
     const changes = (g.keyChanges ?? []).map((c) => `
       <div class="gl-chg">${c.topic ? `<div class="gl-chg-t">${esc(c.topic)}</div>` : ''}${enko(c.detail, c.detail_ko)}</div>`).join('');
 
+    // ★ 웹 보강 표식 스타일은 **인라인**이다 — 배포 페이지는 증분 패치라 새 CSS 클래스가
+    //   주입되지 않아 무스타일로 렌더된다(이 저장소가 2026-08-16 실제로 겪은 일).
+    const AUG_BOX = 'margin-top:8px;padding:10px 12px;border-left:3px solid #5fb3a0;background:#f2faf8;border-radius:8px';
+    const AUG_SRC = 'color:#3f9b86;font-size:12.5px;text-decoration:underline;word-break:break-all';
+
     // 절별 번역 — 문단 줄바꿈을 살린다(번역문은 여러 문단일 수 있다).
-    const sections = (g.sections ?? []).map((sec) => `
-      <div class="gl-chg">${sec.heading_ko ? `<div class="gl-chg-t">${esc(sec.heading_ko)}</div>` : ''}${
-  String(sec.body_ko ?? '').split(/\n{1,}/).filter((x) => x.trim())
-    .map((para) => `<p class="txt ko">${esc(para)}</p>`).join('')}</div>`).join('');
+    // 보강 절(origin='augmented')은 원문 절과 화면에서 구분해 그린다: 표식 박스 + 출처를
+    // **클릭 가능한 앵커**로. 데이터에 심긴 평문 출처 줄("— 보강 출처: … (url)")은 앵커와
+    // 중복되므로 걸러 그린다(구판 카드 데이터에도 남아 있어 렌더에서 처리해야 한다).
+    const sections = (g.sections ?? []).map((sec) => {
+      const secUrl = String(sec?.sourceUrl ?? '').trim();
+      const isAug = sec?.origin === 'augmented' && /^https?:\/\//i.test(secUrl);
+      const paras = String(sec.body_ko ?? '').split(/\n{1,}/).filter((x) => x.trim())
+        .filter((x) => !(isAug && /^—\s*보강 출처:/.test(x.trim())))
+        .map((para) => `<p class="txt ko">${esc(para)}</p>`).join('');
+      const srcLink = isAug
+        ? `<p class="txt ko" style="margin:6px 0 0"><a href="${esc(secUrl)}" target="_blank" rel="noopener" style="${AUG_SRC}">— 보강 출처: ${esc(String(sec.sourceLabel ?? '').trim() || secUrl)}</a></p>`
+        : '';
+      return `
+      <div class="gl-chg"${isAug ? ` style="${AUG_BOX}"` : ''}>${sec.heading_ko ? `<div class="gl-chg-t">${esc(sec.heading_ko)}</div>` : ''}${paras}${srcLink}</div>`;
+    }).join('');
+
+    // ★ 가이드라인 웹 보강 축 (PeterJ 확정 2026-08-18) — 원문 축(핵심 권고·keyChanges)과
+    //   **별개 블록**으로 그린다. 섞이면 "이 지침이 이렇게 말했다"로 읽히는데 실제로는
+    //   딴 데서 온 문장이 된다(REPORT_SPEC §4-B 환각 배제). 렌더도 방어적으로 http(s)
+    //   출처 없는 항목을 버린다 — 상태 파일에 실린 과거/외부 데이터를 전부 믿을 수 없다.
+    const augments = (Array.isArray(g.augmentedSections) ? g.augmentedSections : [])
+      .filter((a) => String(a?.body_ko ?? '').trim() && /^https?:\/\//i.test(String(a?.sourceUrl ?? '').trim()))
+      .map((a) => {
+        const augUrl = String(a.sourceUrl).trim();
+        return `
+      <div class="gl-chg" style="${AUG_BOX}">${a.heading_ko ? `<div class="gl-chg-t">${esc(a.heading_ko)}</div>` : ''}${
+  String(a.body_ko).split(/\n{1,}/).filter((x) => x.trim())
+    .map((para) => `<p class="txt ko">${esc(para)}</p>`).join('')
+}<p class="txt ko" style="margin:6px 0 0"><a href="${esc(augUrl)}" target="_blank" rel="noopener" style="${AUG_SRC}">— 출처: ${esc(String(a.sourceLabel ?? '').trim() || augUrl)}</a></p></div>`;
+      }).join('');
     const COVERAGE_NOTE = {
       'full-text': '',
       'web-augmented': '원문 전문을 직접 받지 못해 웹에서 본문을 확보해 옮겼습니다.',
@@ -328,6 +359,7 @@ export class GitHubPublisher {
             : (g.changesUnavailable
               ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>이전 판 대비 주요 변경점</div><div class="gl-changes"><p class="txt ko">공개 초록/확보 본문에 구체적 변경 내용이 없어(대개 본문 페이월) 세부 변경점을 확보하지 못했습니다. 아래 원문 링크에서 확인하세요.</p></div>`
               : ''))}
+        ${augments ? `<div class="lbl gl-lbl">🔎 웹 보강 (2차 자료)</div><div class="gl-changes">${augments}</div>` : ''}
         ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>${isReview ? '임상 적용' : (isRef ? '어떻게 쓰나' : '임상 임팩트')}</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
         ${(g.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 출처</div>${g.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
         <div class="pc-foot">${footLink}${doiLink} · ${isReview ? '리뷰 아티클 번역' : (isRef ? '직접 지정 참고자료' : '가이드라인 캐치업')}</div>

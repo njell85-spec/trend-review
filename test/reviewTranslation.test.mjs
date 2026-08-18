@@ -176,6 +176,8 @@ const reviewData = (chars, over = {}) => ({
   pmid: '1', title_ko: '패혈증', scope_ko: '성인 패혈증',
   coverage: 'abstract-only', sections: secOf(chars), ...over,
 });
+// ④ 게이트가 "웹을 열었다"로 인정하는 증거 — 실제 http(s) 링크가 달린 webSources.
+const WEB = [{ label: 'journal page', url: 'https://example.org/page' }];
 const THIN = REVIEW_THIN_BODY_CHARS - 1;
 const THICK = REVIEW_THIN_BODY_CHARS + 500;
 
@@ -251,7 +253,7 @@ test('★★ 얇은 카드(초록 치환)면 에스컬레이션 프롬프트로 
   const prompts = [];
   const a = mkAgent(async (messages) => {
     prompts.push(messages[0].content);
-    return prompts.length === 1 ? reviewData(THIN) : reviewData(THICK, { coverage: 'web-augmented' });
+    return prompts.length === 1 ? reviewData(THIN) : reviewData(THICK, { coverage: 'web-augmented', webSources: WEB });
   });
   const card = await a.analyze(doc, { mode: 'review' });
   assert.equal(prompts.length, 2, `재시도가 안 일어났다 (호출 ${prompts.length}회)`);
@@ -301,11 +303,11 @@ test('★ coverage=full-text 면 짧아도 게이트를 안 태운다 (전문 �
   assert.equal(calls, 1, 'full-text 인데 재시도가 일어났다');
 });
 
-test('★ 게이트는 리뷰 전용 — guideline 모드는 종전처럼 1회만 부른다 (데일리 코어 무영향)', async () => {
+test('★ 리뷰 게이트는 guideline 모드에 안 샌다 — 웹 증거가 있으면 종전처럼 1회만 부른다', async () => {
   let calls = 0;
-  const a = mkAgent(async () => { calls += 1; return { org: 'AHA', version: '2026', title_ko: 'x', scope_ko: 'x', summary: [], summary_ko: [], keyChanges: [], practiceImpact: 'x', practiceImpact_ko: 'x' }; });
+  const a = mkAgent(async () => { calls += 1; return { org: 'AHA', version: '2026', title_ko: 'x', scope_ko: 'x', summary: [], summary_ko: [], keyChanges: [], webSources: WEB, practiceImpact: 'x', practiceImpact_ko: 'x' }; });
   await a.analyze(doc, { mode: 'guideline' });
-  assert.equal(calls, 1, 'guideline 모드에 게이트가 샜다');
+  assert.equal(calls, 1, 'guideline 모드에 불필요한 재시도가 났다 (웹 증거가 있는데 게이트가 걸렸다)');
 });
 
 // ── ③ 캐시 — 얇은 결과가 굳으면 안 된다 ─────────────────────────────────────
@@ -314,14 +316,14 @@ test('★★ 얇은 최종 결과는 캐시에 저장하지 않는다 / 두꺼�
   await aThin.analyze(doc, { mode: 'review' });
   assert.equal(aThin.cache.store.size, 0, '얇은 결과가 캐시에 굳었다 — 다음 실행도 얇게 나온다');
 
-  const aThick = mkAgent(async () => reviewData(THICK, { coverage: 'web-augmented' }));
+  const aThick = mkAgent(async () => reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }));
   await aThick.analyze(doc, { mode: 'review' });
   assert.equal(aThick.cache.store.size, 1, '두꺼운 결과가 캐시에 저장되지 않았다');
 });
 
 test('★ 캐시에 남은 얇은 구버전 결과는 miss 취급하고 새로 시도한다', async () => {
   let calls = 0;
-  const a = mkAgent(async () => { calls += 1; return reviewData(THICK, { coverage: 'web-augmented' }); });
+  const a = mkAgent(async () => { calls += 1; return reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }); });
   await a.cache.set(a._cacheKey(doc, 'review'), reviewData(THIN));
   const card = await a.analyze(doc, { mode: 'review' });
   assert.ok(calls >= 1, '얇은 캐시를 그대로 재사용했다');
@@ -331,7 +333,7 @@ test('★ 캐시에 남은 얇은 구버전 결과는 miss 취급하고 새로 �
 test('★ 두꺼운 캐시는 재사용한다 (LLM 을 다시 부르지 않는다)', async () => {
   let calls = 0;
   const a = mkAgent(async () => { calls += 1; return reviewData(THICK); });
-  await a.cache.set(a._cacheKey(doc, 'review'), reviewData(THICK, { coverage: 'web-augmented' }));
+  await a.cache.set(a._cacheKey(doc, 'review'), reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }));
   const card = await a.analyze(doc, { mode: 'review' });
   assert.equal(calls, 0, '캐시가 있는데 LLM 을 불렀다');
   assert.equal(card.coverage, 'web-augmented');
