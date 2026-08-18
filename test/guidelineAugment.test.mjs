@@ -43,7 +43,10 @@ const mkAgent = (callWithTool) => {
 };
 
 const AUG = { heading_ko: '학회 요약', body_ko: 'SCCM 이 요약한 내용.', sourceLabel: 'SCCM 공식 요약', sourceUrl: 'https://sccm.org/summary' };
-const WEB = [{ label: 'journal page', url: 'https://example.org/page' }];
+// ★ 픽스처도 **허용목록을 통과하는 실제 출처 모양**이어야 한다 (2026-08-18).
+//   example.org 를 쓰면 신뢰 필터가 걷어내고, 그러면 이 파일의 게이트 검사들이
+//   "웹 증거 없음" 으로 오판해 통째로 무의미해진다.
+const WEB = [{ label: 'journal page', url: 'https://www.thelancet.com/article/x' }];
 const glData = (over = {}) => ({
   pmid: '9', org: 'SSC', version: '2026', title_ko: '패혈증 지침', scope_ko: '성인 패혈증',
   summary: ['Give abx'], summary_ko: ['항생제'],
@@ -261,7 +264,7 @@ test('★★ 리뷰: 본문이 두꺼워도 webSources 가 비면 1회 에스컬
   const card = await a.analyze(doc, { mode: 'review' });
   assert.equal(prompts.length, 2, `webSources 빈 결과에 재시도가 안 났다 (호출 ${prompts.length}회)`);
   assert.match(prompts[1], /★★ ESCALATION/, '재시도가 에스컬레이션 프롬프트를 안 썼다');
-  assert.ok(card.sources.some((s) => s.url === 'https://example.org/page'), '웹 증거가 있는 재시도 결과가 채택되지 않았다');
+  assert.ok(card.sources.some((s) => s.url === 'https://www.thelancet.com/article/x'), '웹 증거가 있는 재시도 결과가 채택되지 않았다');
 });
 
 test('★★ 가이드라인: 보강도 webSources 도 비면 정확히 1회 더 부르고, 좋은 재시도를 채택한다', async () => {

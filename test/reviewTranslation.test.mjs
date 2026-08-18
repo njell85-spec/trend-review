@@ -177,7 +177,10 @@ const reviewData = (chars, over = {}) => ({
   coverage: 'abstract-only', sections: secOf(chars), ...over,
 });
 // ④ 게이트가 "웹을 열었다"로 인정하는 증거 — 실제 http(s) 링크가 달린 webSources.
-const WEB = [{ label: 'journal page', url: 'https://example.org/page' }];
+// ★ 픽스처도 **허용목록을 통과하는 실제 출처 모양**이어야 한다 (2026-08-18).
+//   example.org 를 쓰면 신뢰 필터가 걷어내고, 그러면 이 파일의 게이트 검사들이
+//   "웹 증거 없음" 으로 오판해 통째로 무의미해진다.
+const WEB = [{ label: 'journal page', url: 'https://www.thelancet.com/article/x' }];
 const THIN = REVIEW_THIN_BODY_CHARS - 1;
 const THICK = REVIEW_THIN_BODY_CHARS + 500;
 
