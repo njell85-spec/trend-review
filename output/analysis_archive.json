@@ -725,6 +725,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-19",
+      "pmid": "41232590",
+      "title": "Temporary mechanical circulatory support after return of spontaneous circulation following cardiac arrest: a systematic review and meta-analysis.",
+      "title_ko": "심정지 후 자발순환회복(ROSC) 이후 일시적 기계순환보조(MCS): 체계적 문헌고찰 및 메타분석",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2025.110893",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "원내 또는 원외 심정지 후 ROSC를 회복한 급성 심근경색 관련 심인성 쇼크(AMI-CS) 환자에서, 일시적 기계순환보조(MCS; ECMO, intra-aortic balloon pump, 또는 microaxial flow pump)가 표준 치료 대비 최장 추적관찰 시점의 생존율을 향상시키는가?",
+      "pico": {
+        "population": "[International] 762 patients with acute myocardial infarction-related cardiogenic shock (AMI-CS) who had achieved ROSC after in- or out-of-hospital cardiac arrest, drawn from fourteen RCTs enrolling 1,842 AMI-CS patients (searched through June 19, 2025).",
+        "intervention": "Temporary mechanical circulatory support (MCS): extracorporeal membrane oxygenation, intra-aortic balloon pump, or microaxial flow pump.",
+        "comparison": "Standard care (no temporary mechanical circulatory support) after ROSC.",
+        "outcome": "Survival at the longest follow-up: 46% with MCS vs 41% with standard care; RR 1.10 [95% CI, 0.94-1.29]; p = 0.23; I² = 0.0%."
+      },
+      "pico_ko": {
+        "population": "[다국가] 원내 또는 원외 심정지 후 ROSC를 회복한 급성 심근경색 관련 심인성 쇼크(AMI-CS) 환자 762명으로, AMI-CS 환자 1,842명을 등록한 14개 RCT에서 추출됨(2025년 6월 19일까지 검색).",
+        "intervention": "일시적 기계순환보조(MCS): extracorporeal membrane oxygenation(ECMO), intra-aortic balloon pump, 또는 microaxial flow pump.",
+        "comparison": "ROSC 이후 표준 치료(일시적 기계순환보조 미시행).",
+        "outcome": "최장 추적관찰 시점의 생존율: MCS 46% vs 표준 치료 41%; RR 1.10 [95% CI, 0.94-1.29]; p = 0.23; I² = 0.0%."
+      },
+      "keyFindings": [
+        "Among 762 post-ROSC AMI-CS patients from 14 RCTs (1,842 total AMI-CS), temporary MCS did not improve survival at longest follow-up (46% vs 41%; RR 1.10, 95% CI 0.94-1.29; p=0.23; I²=0.0%).",
+        "Bayesian analysis (RR 1.13, 95% CrI 0.90-1.44) showed 88% posterior probability of any survival benefit but only 56% probability of a clinically relevant (>5%) benefit.",
+        "In patients with no cardiac arrest or arrest duration <10 min, MCS improved survival (56% vs 45%; RR 1.25, 95% CI 1.06-1.47; p=0.007), while MCS overall increased device-related complications."
+      ],
+      "keyFindings_ko": [
+        "14개 RCT(전체 AMI-CS 1,842명)에서 추출한 ROSC 후 AMI-CS 환자 762명에서 일시적 MCS는 최장 추적 생존율을 향상시키지 못함(46% vs 41%; RR 1.10, 95% CI 0.94-1.29; p=0.23; I²=0.0%).",
+        "Bayesian 분석(RR 1.13, 95% CrI 0.90-1.44)은 어떤 생존 이득이 있을 사후확률 88%를 보였으나, 임상적으로 의미 있는(>5%) 이득 확률은 56%에 그침.",
+        "심정지가 없거나 지속시간 <10분인 환자에서는 MCS가 생존율을 향상시켰고(56% vs 45%; RR 1.25, 95% CI 1.06-1.47; p=0.007), 전체적으로 MCS는 기기 관련 합병증을 증가시킴."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41232590",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41232590/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110893",
+          "url": "https://doi.org/10.1016/j.resuscitation.2025.110893"
+        },
+        {
+          "label": "웹 — PubMed — article record (PMID 41232590)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41232590/"
+        },
+        {
+          "label": "웹 — Europe PMC — core record/abstract (EXT_ID 41232590)",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41232590&resultType=core&format=json"
+        },
+        {
+          "label": "웹 — Resuscitation — official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00905-0/abstract"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — article record (PMID 41232590)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41232590/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Europe PMC — core record/abstract (EXT_ID 41232590)",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41232590&resultType=core&format=json",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation — official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00905-0/abstract",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
