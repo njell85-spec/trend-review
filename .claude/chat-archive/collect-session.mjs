@@ -92,13 +92,51 @@ export function isInjected(text) {
  *
  * 형태는 실측으로 하나뿐이다 — `Base directory for this skill: <경로>`로 시작하고
  * `ARGUMENTS: …`로 끝난다. 전체 아카이브를 훑어 다른 패턴은 0건이었다.
- * **새 형태가 보이면 여기에 추가할 것.**
+ * **새 형태가 보이면 아래 `GENERATED_PROMPT_FORMS`에 추가할 것.**
  */
 export function skillBodyMarker(text) {
   const m = String(text).trimStart().match(/^Base directory for this skill:\s*(\S+)/);
   if (!m) return null;
   const name = m[1].split('/').filter(Boolean).pop() || '이름 미상';
   return `_(스킬 본문 생략 — ${name} · ${String(text).length.toLocaleString('en-US')}자)_`;
+}
+
+/**
+ * 스킬·명령·하네스가 만들어 낸 user 턴의 **다른 형태들** (2026-08-19 신설).
+ *
+ * GC#96(위 `skillBodyMarker`)이 잡은 것은 `Base directory for this skill:` 한 형태뿐이었고,
+ * 그때 주석에 **"새 형태가 보이면 여기에 추가할 것"**이라고 적어 뒀다. 2026-08-19 전수 재감사에서
+ * 그 새 형태들이 실제로 나왔다 — **PeterJ 발화로 기록된 글자의 87.4%**(6,587,904 / 7,533,464자)가
+ * 사람이 쓴 말이 아니었다. GC#96 당시(57.3%)보다 오히려 나빠졌는데, 원인은 새로 쓰기 시작한
+ * `/security-review`가 **바뀐 파일의 unified diff를 통째로 프롬프트에 실어** user 턴으로 넣기
+ * 때문이다(단일 턴 최대 487,012자 · 148턴).
+ *
+ * 왜 그냥 두면 안 되나: 아카이브는 브리핑의 **원자료**다(rulebook §5 "3단 방어" ①).
+ * 회수 하청·서브에이전트가 이걸 읽으면 ⓐ 창을 diff로 채워 진짜 발화를 밀어내고
+ * ⓑ 스킬 지시문("Review this change…")을 **PeterJ의 요구로 읽는다.**
+ *
+ * 판별은 **접두 패턴 목록**으로만 한다. 크기·언어 비율 같은 휴리스틱은 실측에서 못 쓴다 —
+ * diff 안에 한글 문자열이 섞여 있어 "한글 비율" 신호가 무너졌고(오탐 165/202), 길이만으로
+ * 자르면 PeterJ가 붙여넣은 셋업 스크립트 같은 진짜 발화가 사라진다.
+ *
+ * 여기 없는 것: TR 세션에 나온 앱 자체 프롬프트(임상 큐레이터·리뷰 번역 등, 7턴).
+ * 그건 그 저장소 고유라 **전 repo 공통 수집기가 알 일이 아니다** — 알고 남겨 둔다.
+ */
+const GENERATED_PROMPT_FORMS = [
+  [/^Review this change for security vulnerabilities\./, '/security-review 프롬프트 + diff'],
+  [/^You previously flagged these candidate vulnerabilities:/, '/security-review 재확인 프롬프트'],
+  [/^Approach this as the design lead at a small studio/, 'artifact-design 스킬 본문'],
+  [/^This session is being continued from a previous conversation/, '압축 요약 주입'],
+  [/^This session's worker process was restarted\./, '워커 재시작 주입'],
+];
+
+/** 위 형태 중 하나면 자리표시 한 줄을 돌려준다(아니면 null). 이유는 `GENERATED_PROMPT_FORMS` 주석. */
+export function generatedPromptMarker(text) {
+  const t = String(text).trimStart();
+  for (const [re, label] of GENERATED_PROMPT_FORMS) {
+    if (re.test(t)) return `_(${label} 생략 — ${String(text).length.toLocaleString('en-US')}자)_`;
+  }
+  return null;
 }
 
 /** system-reminder 등 삽입 블록을 문장 중간에서도 걷어낸다. */
@@ -112,8 +150,9 @@ export function stripInline(text) {
 
 /** 한 메시지에서 사람이 읽을 텍스트만 뽑는다. */
 export function textOf(message) {
-  // 스킬 본문은 버리기 전에 자리표시로 바꾼다 — isInjected보다 먼저 본다.
-  const one = (t) => skillBodyMarker(t) ?? (isInjected(t) ? '' : stripInline(t));
+  // 스킬 본문·생성 프롬프트는 버리기 전에 자리표시로 바꾼다 — isInjected보다 먼저 본다.
+  const one = (t) =>
+    skillBodyMarker(t) ?? generatedPromptMarker(t) ?? (isInjected(t) ? '' : stripInline(t));
   const c = message?.content;
   if (typeof c === 'string') return one(c);
   if (!Array.isArray(c)) return '';
