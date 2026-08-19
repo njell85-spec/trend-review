@@ -3,15 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41395998",
-      "title": "Physiological Effects of High-Flow Nasal Oxygen Compared With Conventional Oxygen Therapy: A Randomized Trial in Postextubation Patients.",
-      "journal": "Critical care medicine",
-      "score": 9.2,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-17"
-    },
-    {
       "pmid": "41577226",
       "title": "Effects of mild hypercapnia on myocardial injury among ST-elevation myocardial infarction patients after out-of-hospital cardiac arrest: a exploratory post-hoc study of the TAME trial.",
       "journal": "Resuscitation",
@@ -103,6 +94,16 @@
       "lowConfidence": false,
       "addedAt": "2026-08-17",
       "publishedAt": "2026-08-19"
+    },
+    {
+      "pmid": "41395998",
+      "title": "Physiological Effects of High-Flow Nasal Oxygen Compared With Conventional Oxygen Therapy: A Randomized Trial in Postextubation Patients.",
+      "journal": "Critical care medicine",
+      "score": 9.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-17",
+      "publishedAt": "2026-08-20"
     }
   ],
   "rejected": [
@@ -118,9 +119,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-19",
+    "date": "2026-08-20",
     "outcome": "published",
-    "publishedId": "41232590"
+    "publishedId": "41395998"
   },
-  "updatedAt": "2026-08-19"
+  "updatedAt": "2026-08-20"
 }

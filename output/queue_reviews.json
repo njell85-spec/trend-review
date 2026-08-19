@@ -20,23 +20,6 @@
       "status": "queued"
     },
     {
-      "pmid": "42412218",
-      "title": "60 years of ARDS and the evolution of extracorporeal lung support - from ECMO to ECCO(2)R.",
-      "journal": "Intensive Care Med",
-      "score": 9.3,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ARDS 체외폐지지 종설, 중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "37921532",
       "title": "Post-Cardiac Arrest Care in Adult Patients After Extracorporeal Cardiopulmonary Resuscitation.",
       "journal": "Crit Care Med",
@@ -6949,6 +6932,88 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "42412218",
+      "title": "60 years of ARDS and the evolution of extracorporeal lung support - from ECMO to ECCO(2)R.",
+      "journal": "Intensive Care Med",
+      "score": 9.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 체외폐지지 종설, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-08-20",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "42412218",
+          "title": "60 years of ARDS and the evolution of extracorporeal lung support - from ECMO to ECCOR.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2026-7-7",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42412218/",
+          "doi": "10.1007/s00134-026-08533-z"
+        },
+        "title_ko": "ARDS 60년과 체외 폐 지원의 진화 — ECMO에서 ECCO₂R까지",
+        "scope_ko": "ARDS 개념 정립 60주년을 맞아, 정맥-정맥 체외막산소공급(VV-ECMO)과 체외 이산화탄소 제거(ECCO₂R)를 포함한 체외 생명 유지(ECLS)가 ARDS 치료 전략으로 어떻게 발전해 왔는지, 그 효능의 근거·예후 인자·환자 관리·합병증·장기 예후를 통틀어 개관하는 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "종설의 목적과 다루는 범위",
+            "body_ko": "VV-ECMO와 ECCO₂R를 포함하는 체외 생명 유지(ECLS)는 선별된 ARDS 환자에서 확립된 치료법이다. 저자들은 ARDS 60주년을 맞아, ARDS에서 지지 전략으로서 ECLS가 어떻게 진화해 왔는지, 그 효능을 둘러싼 근거, 예후와 연관된 인자들, ECLS 적용 환자의 관리, 그에 동반되는 합병증, 그리고 생존자에서의 장기 예후를 개관한다. 아울러 아직 남아 있는 불확실성의 영역과, 앞으로 10년 이후 ARDS에서의 ECLS를 규정하게 될 진행 중인 임상 연구들을 짚는다.\n\n(주: 본 저널의 전문은 유료 장벽에 막혀 논문 본문을 확보하지 못했다. 위 내용은 논문 초록 자체가 밝힌 범위이며, 이 절은 초록에 근거한다. 아래 '보강' 표시가 붙은 절들은 논문 본문이 아니라 같은 주제를 다루는 권위 있는 2차 출처에서 가져온 것으로, 저자 원문과 구분해 읽어야 한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] ECMO의 역사와 근거의 진화 — Hill(1972)에서 EOLIA(2018)까지",
+            "body_ko": "성인 호흡부전에 대한 ECMO의 근거는 60년에 걸쳐 축적되었다. 1972년 Hill 등이 외상 후 호흡부전을 겪은 24세 환자에서 Bramson 막형 산소공급기와 말초 정맥-동맥(VA) ECMO를 이용해 최초의 성공적 임상 ECMO를 보고했다. 1979년 Zapol 등이 시행한 성인 중증 급성 호흡부전에 대한 최초의 전향적 무작위 ECMO 시험은 실망스러운 결과를 냈는데, ECMO군과 통상 인공호흡군 모두에서 생존율이 10% 미만이어서 이후 약 20년간 널리 보급되지 못했다. 1994년 Morris 등의 무작위 시험은 체외 CO₂ 제거를 역비율 환기와 비교했으나 ARDS 관리에 체외 지원을 권고하지 않았다.\n\n전환점은 2009년이었다. CESAR 시험은 신중히 선별된 성인 ARDS 환자에서 통상 환기 대비 ECMO의 생존 이득을 보였고, 비가역적 폐 손상이 오기 전 조기 시행의 중요성을 강조했다. 같은 해 2009년 인플루엔자 A(H1N1) 대유행 경험이 이를 뒷받침해(예: 호주 코호트에서 약 80%의 ECMO 생존율) 전 세계적 사용이 크게 늘었다. 2018년 EOLIA 시험은 중증 ARDS에서 조기 ECMO를 검증했으나 60일 시점에서 통계적으로 유의한 생존 이득을 보이지 못했다. 다만 이 시험은 조기 중단되어 검정력이 부족했고, 대조군의 상당수가 구제 목적으로 ECMO로 교차되었다는 한계가 함께 논의된다.\n— 보강 출처: JECT — Evolution of extracorporeal membrane oxygenation: historical milestones (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12710231/)",
+            "origin": "augmented",
+            "sourceLabel": "JECT — Evolution of extracorporeal membrane oxygenation: historical milestones (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12710231/"
+          },
+          {
+            "heading_ko": "[웹 보강] ECCO₂R의 근거 — REST 시험과 '아직 죽지 않은 약속'",
+            "body_ko": "ECCO₂R(체외 이산화탄소 제거)는 초저용량 환기(약 3 mL/kg)를 가능케 해 통상 폐보호 환기(약 6 mL/kg)보다 나은 결과를 낼 수 있으리라는 기대를 받았다. 그러나 이를 검증한 다기관 무작위 시험인 REST는 계획된 1,100여 명 중 412명에서 조기 중단되었고, ECCO₂R가 사망률이나 다른 주요 임상 결과를 개선하지 못했으며, 오히려 ECCO₂R군에서 중대 이상반응, 특히 출혈이 더 많았다.\n\nSlutsky와 Brodie(본 종설 공저자들)는 임상적 이득이 나타나지 않은 이유로 ① 이미 통상 환기가 잘 듣는 중등도 환자를 등록한 부적절한 환자 선택, ② 폐 손상이 확립된 뒤 시작한 늦은 시점, ③ 개선의 여지를 거의 남기지 않는 우수한 표준 치료, ④ 대사성 CO₂의 30–50%만 제거하는 저유량 시스템의 기술적 한계, ⑤ 고유량용으로 설계된 원심 펌프가 저유량에서 과도한 전단응력을 일으켜 용혈·혈전을 조장한 기기 설계 결함, ⑥ 소규모·검정력 부족의 시험 설계 등을 든다. 여러 시험을 통틀어 ECCO₂R 환자의 20–40%가 이상반응을 겪었고 중대 합병증은 대조군보다 수 배 높았으며, 치명적 두개내출혈을 포함한 출혈이 핵심 우려로 지목된다.\n\n저자들은 그럼에도 ECCO₂R를 완전히 폐기하기보다, 복와위나 폐보호 환기가 한때 외면받다 표준이 된 역사를 들어 신중한 낙관을 권한다. 자기부상·유체베어링 펌프로 혈액 손상을 줄이고, 이중내강 카테터로 덜 침습적으로 접근하며, 높은 사강이나 중증 산증(예: ventilatory ratio >3) 환자를 정밀 선별하면 미래가 있을 수 있다는 것이다. 다만 현재로서는 'ECCO₂R의 대부분 적용은 임상시험으로 한정되어야 한다'는 것이 이들의 결론이다.\n— 보강 출처: AJRCCM editorial (Slutsky & Brodie) — The (broken) promise of extracorporeal carbon dioxide removal (https://academic.oup.com/ajrccm/article/212/3/414/8435544)",
+            "origin": "augmented",
+            "sourceLabel": "AJRCCM editorial (Slutsky & Brodie) — The (broken) promise of extracorporeal carbon dioxide removal",
+            "sourceUrl": "https://academic.oup.com/ajrccm/article/212/3/414/8435544"
+          },
+          {
+            "heading_ko": "[웹 보강] 회로·산소공급기 기술의 발전",
+            "body_ko": "지난 수십 년간 회로 설계, 산소공급기, 펌프 기술의 개선이 ECMO의 안전성과 효능을 끌어올렸다. 현대 시스템은 프라이밍 용량을 줄이고(<300 mL), 열교환기를 통합하며, 원심 펌프와 생체적합성 코팅, 통합형 동맥 필터를 채택해 합병증을 줄이고 지원 지속 시간을 늘렸다. 이러한 내구성·생체적합성 개선이 임상 성적 향상과 함께 ECMO의 보급을 뒷받침했다.\n— 보강 출처: JECT — Evolution of extracorporeal membrane oxygenation: historical milestones (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12710231/)",
+            "origin": "augmented",
+            "sourceLabel": "JECT — Evolution of extracorporeal membrane oxygenation: historical milestones (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12710231/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설이 정리하는 근거대로, VV-ECMO는 신중히 선별된 중증 ARDS 환자에게 조기에 적용할 때 의미 있는 구제 전략이며 침상에서는 '언제·누구에게' 의뢰할지의 판단이 핵심으로 남는다. 반면 ECCO₂R는 초저용량 환기라는 매력적 근거에도 REST 등에서 사망률 이득을 입증하지 못하고 출혈 등 위해가 두드러져, 현시점에서는 일상 진료 도입보다 임상시험 범위 안에서 다루는 것이 타당하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42412218",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42412218/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-026-08533-z",
+            "url": "https://doi.org/10.1007/s00134-026-08533-z"
+          },
+          {
+            "label": "웹 — AJRCCM editorial (Slutsky & Brodie) — The (broken) promise of extracorporeal carbon dioxide removal",
+            "url": "https://academic.oup.com/ajrccm/article/212/3/414/8435544"
+          },
+          {
+            "label": "웹 — JECT — Evolution of extracorporeal membrane oxygenation: historical milestones and advanced developments (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12710231/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -7006,9 +7071,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-19",
+    "date": "2026-08-20",
     "outcome": "published",
-    "publishedId": "39774315"
+    "publishedId": "42412218"
   },
-  "updatedAt": "2026-08-19"
+  "updatedAt": "2026-08-20"
 }

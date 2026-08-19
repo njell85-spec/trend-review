@@ -49,7 +49,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -184,7 +184,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -475,7 +475,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-18T21:50:55.614Z"
+      "supersededAt": "2026-08-19T21:52:40.052Z"
     },
     {
       "id": "pmid:38531812",
@@ -26144,90 +26144,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:41122884",
-      "pmid": "41122884",
-      "title": "Part 9: Adult Advanced Life Support: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
-      "pubDate": "2025 Oct 21",
-      "journal": "Circulation",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "In these 2025 Advanced Life Support Guidelines, the American Heart Association provides comprehensive recommendations for the resuscitation and management of adults experiencing cardiac arrest, respiratory arrest, and life-threatening cardiovascular emergencies. Based on structured evidence reviews and the latest clinical research, these guidelines offer evidence-based strategies to optimize survival and patient outcomes. The 2025 guidelines provide guidance for the treatment of cardiac arrest, including ventricular fibrillation, pulseless ventricular tachycardia, asystole, and pulseless electrical activity, as well as peri-arrest conditions such as atrial fibrillation and flutter with rapid ventricular response. Recommendations are made for defibrillation, electrical cardioversion, advanced airway management, drug therapies, and intravenous access. Additionally, guidelines are provided for the use of double sequential defibrillation, head-up cardiopulmonary resuscitation, and point-of-care ultrasound in the advanced life support setting. Termination of resuscitation rules have been refined to guide decision-making based on the emergency medical services professional's scope of practice. Finally, these guidelines also underscore the importance of identifying causative versus secondary arrhythmias to inform the appropriate timing of therapeutic strategies.",
-      "meshTerms": [
-        "Adult",
-        "Humans",
-        "Advanced Cardiac Life Support",
-        "American Heart Association",
-        "Cardiopulmonary Resuscitation",
-        "Electric Countershock",
-        "Emergency Medical Services",
-        "Heart Arrest",
-        "United States",
-        "Review Literature as Topic"
-      ],
-      "keywords": [
-        "AHA Scientific Statements",
-        "advanced cardiac life support",
-        "airway management",
-        "arrhythmias, cardiac",
-        "cardiopulmonary resuscitation",
-        "drug therapy",
-        "electric countershock",
-        "emergency medical services"
-      ],
-      "doi": "10.1161/CIR.0000000000001376",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": "aha"
-      },
-      "priority": 11.570796228482395,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 1.570796228482396,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:08.134Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "2025 성인 ACLS 핵심 지침, 최우선",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|part-9-adult-advanced-life-support-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41117575",
       "pmid": "41117575",
       "title": "European Resuscitation Council and European Society of Intensive Care Medicine Guidelines 2025 Post-Resuscitation Care.",
@@ -33428,11 +33344,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.827369102651823,
+      "priority": 6.823714146664101,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.8273691026518233,
+        "recency": 1.8237141466641011,
         "scope": 0,
         "confidence": 1
       },
@@ -33445,7 +33361,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -38190,7 +38106,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40180,7 +40096,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41371,7 +41287,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42459,7 +42375,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44424,7 +44340,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44710,7 +44626,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44807,7 +44723,7 @@
         "publisher-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44888,7 +44804,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44971,7 +44887,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46393,7 +46309,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46952,7 +46868,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47258,7 +47174,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47327,7 +47243,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47477,7 +47393,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47551,7 +47467,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47596,7 +47512,7 @@
         "Thrombosis prophylaxis"
       ],
       "doi": "10.1007/s00508-026-02781-1",
-      "pmcid": "",
+      "pmcid": "PMC13481471",
       "region": "eu",
       "by": "nationality",
       "signals": {
@@ -47628,7 +47544,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47694,7 +47610,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47770,7 +47686,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47830,7 +47746,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47888,7 +47804,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47955,7 +47871,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -48015,7 +47931,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -48074,7 +47990,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-18T21:50:54.721Z",
+      "lastSeenAt": "2026-08-19T21:52:39.173Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -48085,6 +48001,73 @@
       "attempts": 0,
       "lineageKey": "unknown|sedation-gastrointestinal-endoscopy-european-society-gastrointestinal-endoscopy-esge-european-society-gastroenterology-endoscopy-nurses-associates-esgena",
       "supersedes": []
+    },
+    {
+      "id": "pmid:42617069",
+      "pmid": "42617069",
+      "title": "Strategies for preventing and reversing atrial cardiomyopathy (AtCM): current evidence, therapeutic targets, and future directions. A European Journal of Heart Failure expert consensus statement.",
+      "pubDate": "2026 Aug 19",
+      "journal": "European journal of heart failure",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
+      "abstract": "Atrial cardiomyopathy (AtCM) encompasses all forms of electrical atrial dysfunction in combination with mechanical atrial dysfunction, atrial enlargement and/or excessive atrial fibrosis. A growing body of evidence suggests that AtCM not only represents a consequence of ventricular and valvular heart disease but, critically, serves as the substrate driving atrial fibrillation (AF) and independently contributes to thromboembolic risk and heart failure (HF). Recent advances in cardiac imaging, electrocardiography, and electroanatomic mapping have enabled characterisation of AtCM and quantification of its severity, defining a continuum from atrial health to overt atrial failure. This framework creates an opportunity for targeted interventions that may reverse AtCM and prevent progression to clinical disease. This scientific statement summarises contemporary evidence regarding the natural history, determinants, and therapeutic modification of AtCM. We describe how targeted management of relevant lifestyle factors and comorbidities may prevent or attenuate AtCM progression and report the response of AtCM to pharmacological and structural interventions for HF and valve disease. Recognition of the bidirectional relationship between AtCM and AF has provided important insights into arrhythmia-mediated remodelling and generated the strongest evidence to date for reverse atrial remodelling following successful rhythm-control strategies. We also review emerging atrial-directed therapies targeting fibrosis, inflammation, metabolic dysfunction, and infiltrative disease. While AtCM appears to be, at least in part, a modifiable disease process, current evidence remains largely observational or mechanistic. We therefore highlight key evidence gaps and future research priorities to identify potentially reversible disease, develop targeted therapies, and translate state-of-the-art atrial phenotyping into improved patient outcomes.",
+      "meshTerms": [],
+      "keywords": [
+        "Atrial cardiomyopathy",
+        "atrial failure",
+        "atrial fibrillation",
+        "atrial remodelling",
+        "catheter ablation",
+        "heart failure",
+        "prevention",
+        "rhythm control"
+      ],
+      "doi": "10.1093/ejhf/xuag268",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "consensus",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-19T21:52:39.172Z",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "심방심근병증 예방·역전 합의문—심혈관이나 만성 관리 위주라 침상 응급 적용 제한적",
+        "at": "2026-08-19T21:52:41.464Z"
+      }
     }
   ],
   "published": [
@@ -48689,6 +48672,199 @@
         ]
       },
       "publishedAt": "2026-08-19"
+    },
+    {
+      "id": "pmid:41122884",
+      "pmid": "41122884",
+      "title": "Part 9: Adult Advanced Life Support: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
+      "pubDate": "2025 Oct 21",
+      "journal": "Circulation",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "In these 2025 Advanced Life Support Guidelines, the American Heart Association provides comprehensive recommendations for the resuscitation and management of adults experiencing cardiac arrest, respiratory arrest, and life-threatening cardiovascular emergencies. Based on structured evidence reviews and the latest clinical research, these guidelines offer evidence-based strategies to optimize survival and patient outcomes. The 2025 guidelines provide guidance for the treatment of cardiac arrest, including ventricular fibrillation, pulseless ventricular tachycardia, asystole, and pulseless electrical activity, as well as peri-arrest conditions such as atrial fibrillation and flutter with rapid ventricular response. Recommendations are made for defibrillation, electrical cardioversion, advanced airway management, drug therapies, and intravenous access. Additionally, guidelines are provided for the use of double sequential defibrillation, head-up cardiopulmonary resuscitation, and point-of-care ultrasound in the advanced life support setting. Termination of resuscitation rules have been refined to guide decision-making based on the emergency medical services professional's scope of practice. Finally, these guidelines also underscore the importance of identifying causative versus secondary arrhythmias to inform the appropriate timing of therapeutic strategies.",
+      "meshTerms": [
+        "Adult",
+        "Humans",
+        "Advanced Cardiac Life Support",
+        "American Heart Association",
+        "Cardiopulmonary Resuscitation",
+        "Electric Countershock",
+        "Emergency Medical Services",
+        "Heart Arrest",
+        "United States",
+        "Review Literature as Topic"
+      ],
+      "keywords": [
+        "AHA Scientific Statements",
+        "advanced cardiac life support",
+        "airway management",
+        "arrhythmias, cardiac",
+        "cardiopulmonary resuscitation",
+        "drug therapy",
+        "electric countershock",
+        "emergency medical services"
+      ],
+      "doi": "10.1161/CIR.0000000000001376",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "aha"
+      },
+      "priority": 11.570796228482395,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 1.570796228482396,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:08.134Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "2025 성인 ACLS 핵심 지침, 최우선",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|part-9-adult-advanced-life-support-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41122884",
+          "title": "Part 9: Adult Advanced Life Support: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
+          "journal": "Circulation",
+          "pubDate": "2025 Oct 21",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41122884/",
+          "doi": "10.1161/CIR.0000000000001376"
+        },
+        "org": "AHA",
+        "version": "2025",
+        "title_ko": "Part 9: 성인 전문소생술(ALS): 심폐소생술 및 응급심혈관치료에 관한 2025 미국심장협회(AHA) 가이드라인",
+        "scope_ko": "성인의 심정지(심실세동/무맥성 심실빈맥, 무수축, 무맥성 전기활동)와 호흡정지, 그리고 심정지 주변기(peri-arrest) 상태(급속심실반응을 동반한 심방세동·심방조동 등)를 포함한 생명을 위협하는 심혈관 응급의 소생·관리를 다루는 전문소생술(ALS) 임상 가이드라인이다. 제세동·전기적 심율동전환, 전문기도관리, 약물치료, 정맥로 확보, 이중연속제세동·머리거상 CPR·현장초음파(POCUS)의 사용, 소생술 종료 규칙까지 포괄한다.",
+        "summary": [
+          "Prioritize the highest-value actions — uninterrupted high-quality chest compressions and early defibrillation — and sequence airway, access, and drugs around them to minimize pauses.",
+          "For vascular access in adult cardiac arrest, attempt IV access first; if IV cannot be rapidly established, use intraosseous (IO) access. Central line placement is not needed during active resuscitation.",
+          "Point-of-care ultrasound (POCUS) has a limited, supportive role during active resuscitation — use it only to identify reversible causes and only when it does NOT interrupt chest compressions; it is more useful in the post-ROSC period.",
+          "The usefulness of double sequential external defibrillation (DSED) and vector-change (VC) defibrillation for refractory VF is addressed but remains not well established; these are not recommended for routine use.",
+          "Head-up/elevated CPR and routine mechanical CPR are not recommended for routine use because established benefit is lacking; mechanical CPR may be considered only when high-quality manual CPR is not feasible or safe.",
+          "Non-vasopressor drugs (sodium bicarbonate, calcium, magnesium, steroids) are not recommended routinely and should be reserved for specific indications (e.g., hyperkalemia, known hypomagnesemia/torsades, toxicologic arrest).",
+          "Termination-of-resuscitation (TOR) rules were refined to match the EMS professional's scope of practice; in-hospital termination is a clinical and ethical judgment to which prehospital TOR rules do not apply.",
+          "Emphasize distinguishing a causative (primary) arrhythmia from a secondary arrhythmia to guide the appropriate timing of therapeutic strategies."
+        ],
+        "summary_ko": [
+          "가장 가치가 큰 행위 — 중단 없는 고품질 가슴압박과 조기 제세동 — 을 최우선에 두고, 기도·정맥로·약물은 압박 중단을 최소화하도록 그 주위에 배치·배열한다.",
+          "성인 심정지의 혈관로는 정맥로(IV)를 먼저 시도한다. IV를 신속히 확보하지 못하면 골내주사(IO)를 사용한다. 활동적 소생 중 중심정맥관 삽입은 필요하지 않다.",
+          "현장초음파(POCUS)는 활동적 소생 중에는 제한적·보조적 역할만 한다 — 가역적 원인 확인 목적에 한정하고 가슴압박을 중단시키지 않을 때만 사용한다. ROSC 이후 시기에 더 유용하다.",
+          "불응성 VF에서 이중연속제세동(DSED)과 벡터변경(VC) 제세동의 유용성은 다루어졌으나 아직 확립되지 않았다 — 일상적(routine) 사용은 권고되지 않는다.",
+          "머리거상(head-up) CPR과 기계식 CPR의 일상적 사용은 확립된 이득이 없어 권고되지 않는다. 기계식 CPR은 고품질 수기 CPR이 불가능하거나 안전하지 않을 때만 고려할 수 있다.",
+          "비승압제 약물(sodium bicarbonate, calcium, magnesium, steroids)은 일상적으로 권고되지 않으며, 특정 적응증(고칼륨혈증, 알려진 저마그네슘혈증/torsades, 중독성 심정지 등)에 한해 사용한다.",
+          "소생술 종료(TOR) 규칙은 EMS 종사자의 진료 범위(scope of practice)에 맞추어 정교화되었다. 병원 내 종료는 임상적·윤리적 판단으로, 병원전 TOR 규칙을 그대로 적용하지 않는다.",
+          "치료 전략의 적절한 시점을 정하기 위해 원인(1차) 부정맥과 2차성 부정맥을 구분하는 것을 강조한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "혈관로 확보 (IV vs IO)",
+            "detail": "Vascular access was reordered: IV access is now explicitly the first-line route, with IO reserved for when IV cannot be rapidly obtained — a shift from the prior stance that treated IV and IO as effectively equivalent. Central venous line placement is no longer advised during active resuscitation. Stated rationale: avoid delaying epinephrine (especially in non-shockable rhythms) and recent data favoring IV over IO for outcomes.",
+            "detail_ko": "혈관로 순서가 재정렬되었다: 이제 IV가 명시적 1차 경로이고, IO는 IV를 신속히 확보하지 못할 때로 미룬다 — IV와 IO를 사실상 동등하게 보던 이전 입장에서 바뀐 것이다. 활동적 소생 중 중심정맥관 삽입은 더 이상 권장되지 않는다. 근거: (특히 비제세동 리듬에서) epinephrine 투여 지연을 막고, IV가 IO보다 예후에서 유리하다는 최근 자료."
+          },
+          {
+            "topic": "이중연속·벡터변경 제세동",
+            "detail": "New recommendations were added addressing double sequential external defibrillation (DSED) and vector-change (VC) defibrillation for refractory VF, where the 2020 guidelines gave no specific guidance. The 2025 position is that their usefulness is not yet well established and they are not recommended for routine use (weak/uncertain, ~Class IIb where cited).",
+            "detail_ko": "불응성 VF에 대한 이중연속제세동(DSED)과 벡터변경(VC) 제세동을 다루는 새 권고가 추가되었다(2020 지침에는 구체적 언급이 없었다). 2025 입장은 유용성이 아직 충분히 확립되지 않았고 일상적 사용은 권고하지 않는다는 것이다(약하거나 불확실 — 인용된 곳에서는 대략 Class IIb)."
+          },
+          {
+            "topic": "항부정맥제 (sotalol 삭제)",
+            "detail": "Sotalol was removed from the recommended antiarrhythmic infusions for stable wide-complex tachycardia; procainamide and amiodarone are the preferred agents. Reason cited: no demonstrated added benefit and slow infusion times.",
+            "detail_ko": "안정형 넓은QRS 빈맥에 대해 권고 항부정맥 정주제 목록에서 sotalol이 삭제되었고, procainamide와 amiodarone이 선호 약제로 남았다. 근거: 추가 이득이 입증되지 않았고 주입 시간이 느리다는 점."
+          },
+          {
+            "topic": "기관내 약물투여 삭제",
+            "detail": "Endotracheal (via ETT) drug administration was removed from ACLS because of unreliable absorption; drugs should be given by IV or IO route.",
+            "detail_ko": "흡수가 불안정하다는 이유로 기관내(ETT를 통한) 약물투여가 ACLS에서 삭제되었다. 약물은 IV 또는 IO 경로로 투여한다."
+          },
+          {
+            "topic": "현장초음파(POCUS)",
+            "detail": "POCUS guidance was newly framed: during active resuscitation it is a limited, supportive tool used only to identify reversible causes (tamponade, tension pneumothorax, PE, hypovolemia) and only if it does not interrupt compressions; it is more valuable post-ROSC for cardiac/hemodynamic assessment. Prior guidelines gave little explicit direction on intra-arrest POCUS.",
+            "detail_ko": "POCUS 지침이 새로 정리되었다: 활동적 소생 중에는 가역적 원인(심장압전, 긴장성 기흉, 폐색전, 저혈량) 확인 목적에만 쓰는 제한적·보조적 도구이며 가슴압박을 중단시키지 않을 때만 사용한다. ROSC 이후 심장기능·혈역학 평가에 더 유용하다. 이전 지침은 심정지 중 POCUS에 대한 명시적 방향이 거의 없었다."
+          },
+          {
+            "topic": "소생술 종료(TOR) 규칙",
+            "detail": "TOR rules were refined so decision-making is keyed to the EMS professional's scope of practice; and it is clarified that in-hospital termination is a separate clinical/ethical judgment (considering rhythm, downtime, interventions, reversible causes, goals of care) to which prehospital TOR rules do not directly apply.",
+            "detail_ko": "TOR 규칙이 정교화되어, 의사결정이 EMS 종사자의 진료 범위에 맞추어졌다. 또한 병원 내 종료는 (리듬, 심정지 지속시간, 시행한 처치, 가역적 원인, 치료 목표를 고려하는) 별개의 임상적·윤리적 판단이며 병원전 TOR 규칙을 그대로 적용하지 않는다는 점이 분명해졌다."
+          },
+          {
+            "topic": "머리거상·기계식 CPR / 비승압제 약물",
+            "detail": "The guidelines take an explicitly conservative stance: head-up/elevated CPR is not recommended for routine use (benefit not established); routine mechanical CPR is not recommended (reserve for when manual CPR is not feasible/safe); and routine sodium bicarbonate, calcium, magnesium, and steroids are not recommended absent a specific indication.",
+            "detail_ko": "지침은 명시적으로 보수적 입장을 취한다: 머리거상 CPR은 일상적 사용을 권고하지 않고(이득 미확립), 기계식 CPR도 일상적으로 권고하지 않으며(수기 CPR이 불가능/비안전할 때로 제한), sodium bicarbonate·calcium·magnesium·steroids도 특정 적응증이 없으면 일상적으로 권고하지 않는다."
+          },
+          {
+            "topic": "서맥 초기 관리 / 원인 vs 2차성 부정맥",
+            "detail": "New recommendations were added for the initial management of bradycardia, and the guidelines newly emphasize distinguishing a causative (primary) arrhythmia from a secondary arrhythmia to inform the timing of therapy (e.g., treating the underlying cause versus the rhythm itself).",
+            "detail_ko": "서맥 초기 관리에 대한 새 권고가 추가되었고, 치료 시점을 정하기 위해 원인(1차) 부정맥과 2차성 부정맥을 구분하는 것(예: 리듬 자체가 아니라 기저 원인을 치료)을 새롭게 강조한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, default to IV-first for drug delivery and stop reaching for central lines or the ETT to give arrest drugs; keep IO in reserve for failed/slow IV. Resist the temptation to routinely deploy head-up CPR, mechanical CPR, DSED/vector change, or ampules of bicarb/calcium/mag — reserve them for specific indications, and never let POCUS or airway maneuvers interrupt compressions. Drop sotalol from your stable wide-complex tachycardia toolkit in favor of procainamide/amiodarone. For EMS and ED leadership, revisit termination-of-resuscitation protocols so they map to each provider's scope of practice, and treat in-hospital TOR as a distinct clinical/ethical decision.",
+        "practiceImpact_ko": "현장에서는 약물 투여를 IV 우선으로 기본값을 잡고, 심정지 약물을 위해 중심정맥관이나 ETT로 손을 뻗지 않는다. IO는 IV 실패/지연 시 예비로 둔다. 머리거상 CPR·기계식 CPR·DSED/벡터변경·bicarb/calcium/magnesium 앰플을 일상적으로 꺼내려는 유혹을 억제하고 특정 적응증에만 사용하며, POCUS나 기도 조작이 가슴압박을 중단시키지 않게 한다. 안정형 넓은QRS 빈맥에서 sotalol을 빼고 procainamide/amiodarone을 쓴다. EMS·응급실 리더는 TOR 프로토콜을 각 제공자의 진료 범위에 맞게 재정비하고, 병원 내 TOR는 별개의 임상적·윤리적 판단으로 다룬다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41122884",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41122884/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1161/CIR.0000000000001376",
+            "url": "https://doi.org/10.1161/CIR.0000000000001376"
+          },
+          {
+            "label": "웹 — The Hospitalist (SHM) — What's New, What Matters: Implementing the 2025 ACLS Guidelines",
+            "url": "https://www.the-hospitalist.org/hospitalist/article/41486/cardiology/whats-new-what-matters-implementing-the-2025-acls-guidelines/"
+          },
+          {
+            "label": "웹 — Guideline Central — New 2025 AHA CPR & ECC Guideline Key Changes",
+            "url": "https://www.guidelinecentral.com/insights/dec-2025-aha-cprecc-guideline-spotlight/"
+          },
+          {
+            "label": "웹 — Learn & Master ACLS — 2025 Adult Cardiac Arrest Algorithm Changes",
+            "url": "https://acls-algorithms.com/new-2025-aha-acls-guideline-changes/2025-adult-cardiac-arrest-algorithm-changes/"
+          },
+          {
+            "label": "웹 — Circulation (AHA journal) — Part 9: Adult Advanced Life Support: 2025 AHA Guidelines (primary source; abstract accessed via search, full text 403-blocked)",
+            "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-20"
     }
   ],
   "rejected": [
@@ -48723,7 +48899,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -52610,7 +52786,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -53003,7 +53179,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -53629,7 +53805,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -53664,7 +53840,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -53694,7 +53870,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -53724,7 +53900,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -53760,7 +53936,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -53790,7 +53966,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-18T21:50:45.035Z",
+      "discoveredAt": "2026-08-19T21:52:28.384Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -53858,9 +54034,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260819_064740:guideline:2026-08-19",
+    "runId": "trend_review_20260820_065102:guideline:2026-08-20",
     "outcome": "published",
-    "publishedId": "pmid:41122893",
+    "publishedId": "pmid:41122884",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -53885,15 +54061,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 150,
+        "mergedTotal": 149,
         "overlapCount": 2,
         "ptOnlyCount": 0,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/20",
-          "maxDate": "2026/08/19"
+          "minDate": "2026/07/21",
+          "maxDate": "2026/08/20"
         },
         "retmax": 60,
         "topics": [
@@ -53901,8 +54077,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 58,
-            "idsFetched": 58,
+            "totalFound": 56,
+            "idsFetched": 56,
             "truncated": false,
             "error": null
           },
@@ -53919,8 +54095,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 15,
+            "idsFetched": 15,
             "truncated": false,
             "error": null
           },
@@ -53997,7 +54173,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 142,
+        "topicOnlyCount": 141,
         "ptPmids": [
           "42522393",
           "42087034"
@@ -54005,8 +54181,8 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 150,
-          "enriched": 150,
+          "requested": 149,
+          "enriched": 149,
           "withAbstract": 114,
           "error": null
         }
@@ -54060,23 +54236,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 1,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 230,
-        "needsReview": 440,
+        "queued": 229,
+        "needsReview": 441,
         "rejected": 120,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41122893",
+        "candidateId": "pmid:41122884",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-18T21:57:50.070Z",
+  "updatedAt": "2026-08-19T21:59:41.399Z",
   "configVersion": "guideline-v2"
 }

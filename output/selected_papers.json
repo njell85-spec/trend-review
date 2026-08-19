@@ -319,5 +319,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41395998",
+    "title": "Physiological Effects of High-Flow Nasal Oxygen Compared With Conventional Oxyge",
+    "date": "2026-08-20",
+    "topic": "resp_airway",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
