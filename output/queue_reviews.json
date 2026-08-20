@@ -20,23 +20,6 @@
       "status": "queued"
     },
     {
-      "pmid": "37921532",
-      "title": "Post-Cardiac Arrest Care in Adult Patients After Extracorporeal Cardiopulmonary Resuscitation.",
-      "journal": "Crit Care Med",
-      "score": 9.2,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ECPR 후 소생 후 관리, 소생·중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "42508832",
       "title": "Investigation and management of breakthrough ischemic stroke in anticoagulated patients with atrial fibrillation.",
       "journal": "BMJ",
@@ -7014,6 +6997,86 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "37921532",
+      "title": "Post-Cardiac Arrest Care in Adult Patients After Extracorporeal Cardiopulmonary Resuscitation.",
+      "journal": "Crit Care Med",
+      "score": 9.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ECPR 후 소생 후 관리, 소생·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-08-21",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "37921532",
+          "title": "Post-Cardiac Arrest Care in Adult Patients After Extracorporeal Cardiopulmonary Resuscitation.",
+          "journal": "Critical care medicine",
+          "pubDate": "2023-11-3",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/37921532/",
+          "doi": "10.1097/CCM.0000000000006102"
+        },
+        "title_ko": "체외심폐소생술(ECPR) 이후 성인 환자의 심정지 후 관리",
+        "scope_ko": "난치성 심정지에 대해 정맥-동맥(VA) ECMO를 이용한 ECPR을 시행한 성인 환자에서, 캐뉼러 삽입 직후 급성기의 체계적인 심정지 후 중환자실 관리 전략과 합병증, 예후 판정을 다루는 서술적 종설입니다. 제공된 전문은 도입부·순환·기도와 호흡·산소와 이산화탄소·진통진정(analgosedation)까지이며, 초록이 언급한 체온·영양·수액·영상·신경모니터링·합병증·예후/연명치료 중단 부분은 본문이 잘려 확보하지 못했습니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "서론",
+            "body_ko": "ECPR은 난치성 심정지(CA) 환자를 지지하기 위해 정맥-동맥(VA) ECMO를 사용합니다. 유럽소생협의회(ERC)와 미국심장협회(AHA)는 가역적 원인이 있을 수 있는 심정지에서, 자원과 경험이 충분한 ECMO 센터에서 신속히 시행할 수 있는 경우에 한해 선택적으로 ECPR을 사용할 것을 권고합니다.\n\n연구 결과는 극적인 생존 이득부터 모호한 결과까지 상반되게 보고되어 왔습니다. 다만 이들 ECPR 임상시험은 표본 수가 불충분하고 일반화 가능성이 부족하다는 한계가 있습니다(3개 연구 중 2개가 단일기관 설계). 특히 이 임상시험들에서 심정지 후 중환자실(ICU) 관리는 잘 기술되지 않았고, 표준화된 관리 접근이 없으며 임상연구 간 정의도 이질적입니다. 통상적 심정지 환자에서는 프로토콜화된 다학제 관리가 생존에 유의한 영향을 미쳐 Class I 권고에 해당합니다. 따라서 ECPR 이후의 심정지 후 관리는 이들 환자의 단기·장기 예후에 영향을 주므로 매우 중요합니다. 저자들은 ECPR 환자의 심정지 후 ICU 관리에 대한 실용적 지침을 담은 간결한 종설을 제시합니다."
+          },
+          {
+            "heading_ko": "순환(Circulation)",
+            "body_ko": "ECPR에서 가장 흔한 캐뉼러 삽입 전략은 대퇴정맥 배액과 대퇴동맥 유출을 사용하는 말초 캐뉼러 삽입이며, 본 종설의 권고는 이를 중심으로 합니다. 캐뉼러 삽입 후 ECMO 유량은 즉시 3~4 L/min을 목표로 증가시켜야 합니다. 동정맥 산소 함량차는 헤모글로빈 수치의 영향을 받지 않아 ECMO 유량 목표 설정에 신뢰할 수 있는 지표이며, 혈액 100 mL당 산소 3~5 cc 사이로 유지해야 합니다. 반면 혼합정맥 산소포화도(SvO2) 목표 66% 초과, 산소전달 대 소비 비율(DO2:VO2) 목표 3 초과는 헤모글로빈 의존적 지표여서 상대적으로 덜 신뢰할 수 있습니다.\n\n동맥혈가스(ABG)는 우측 요골동맥관에서 채취해야 합니다. 이 부위는 관상동맥 혈액 산소화를 반영하지 못한다는 점에서 완벽하지는 않지만, 상행대동맥/무명동맥(innominate) 및 그에 따른 뇌관류를 가장 잘 대표하기 때문입니다. 말초 캐뉼러 삽입 환자에서는 폐 가스교환이 불량하여 충분히 산소화되지 않은 혈액이 좌심실에서 박출되면 이중 순환(dual circulation)이 형성될 수 있습니다. 즉 전방(antegrade)으로 나가는 저산소화 혈액과 역방향(retrograde)의 잘 산소화된 ECMO 혈류가 상체와 하체의 산소화 차이를 만드는데, 이를 할리퀸(Harlequin) 또는 North-South 증후군이라 하며 말초 캐뉼러 삽입 환자의 약 10%에서 관찰됩니다. 우측 요골동맥관에서 맥압이 좁으면 혼합 지점이 무명동맥보다 근위부에 있음을, 좌심실 박출로 맥압이 넓으면 혼합 지점이 더 원위부에 있음을 시사함을 인지해야 합니다. 할리퀸의 관리에는 ECMO 유량을 늘려 혼합 지점을 근위부로 이동시키기, 산소화를 개선하기 위한 인공호흡기 설정 조정, 또는 경정맥에 산소화 유입 캐뉼러를 삽입하여 정맥 환류에 산소화 혈액을 공급하기(V-AV ECMO)가 포함됩니다.\n\n최적의 평균동맥압(MAP)은 환자마다 다르지만, 적절한 뇌 및 말단장기 관류를 제공하면서 좌심실 후부하를 최소화하는 MAP를 유지하는 것이 순환 지지와 심장 회복을 보장하는 데 핵심입니다. 캐뉼러 삽입 시 기계적 흉부압박은 중단하고, 혈관작용성 강심 지지는 견딜 수 있는 범위에서 감량해야 합니다. 다만 적절한 순환 지지, 좌심실 박출, 좌심실 벽 긴장/팽창의 최소화, 상체 산소화 차이 문제를 항상 염두에 두어야 합니다.\n\n말초 VA-ECMO는 좌심실 후부하를 증가시켜 심장 회복에 부정적 영향을 줄 수 있습니다. 좌심실 팽창은 강심제로 박출을 지지하여 완화할 수 있습니다. 혈관마비(vasoplegia)와 저혈압에서는 에피네프린을 사용할 수 있으나, 에피네프린 단독 사용이 더 높은 사망률과 연관되므로 노르에피네프린이 선호됩니다.\n\n좌심실 부하 경감(LV unloading)은 추가적인 기계적 순환보조(MCS)로도 달성할 수 있으며, 이는 팽창·심실 정체·폐울혈·심근 허혈을 예방하고 ECMO 이탈 및 원내 생존에 유리한 영향을 줍니다. 여기에는 대동맥내풍선펌프(IABP), Impella, 경정맥을 통한 폐동맥 벤팅 같은 경피적 치료와, 우측 내경정맥 캐뉼러를 통한 폐동맥 벤팅·심방중격절개술·전방 개흉을 통한 직접 좌심실 심첨 캐뉼러 삽입 같은 보다 침습적인 방법이 포함됩니다. 가장 적절한 벤팅 전략은 가장 덜 침습적이면서 가장 효과적인 것이어야 하며, 최근 전문가 합의를 근거로 좌심실 부하 경감 전략과 그 효능이 정리되어 있습니다. 중요한 점은, 저산소성 호흡부전이 있을 때는 IABP나 Impella 사용이 금기라는 것입니다. 이들이 저산소성 뇌관류를 악화시키기 때문입니다.\n\n허혈성 심정지가 있는 ECPR 환자에서는 조기 관상동맥 재관류가 예후를 개선하므로, 캐뉼러 삽입 후 경피적 관상동맥중재술(PCI)에 신속히 접근하는 것이 생명을 구할 수 있습니다."
+          },
+          {
+            "heading_ko": "기도와 호흡(Airway and breathing)",
+            "body_ko": "모든 ECPR 환자는 순환 회복 후 기관내삽관을 동반합니다. ECMO 회로가 충분한 산소화와 환기를 제공할 수 있지만, ECMO 지지 동안 폐를 팽창된 상태로 유지하기 위해 기계환기를 일반적으로 유지합니다. 더 중요한 점은, 말초 VA-ECMO가 상행대동맥에 충분한 산소화를 제공하지 못할 수 있으므로 기계환기를 통한 적절한 산소화가 할리퀸 증후군 예방에 도움이 된다는 것입니다. 흡입 산소분율(FiO2)은 동맥혈 산소포화도 92% 초과를 유지하도록 적정해야 합니다.\n\nECPR 환자에서 최적의 인공호흡기 모드를 정하는 확정적 근거는 부족하지만, 폐보호 전략이 권고됩니다. 낮은 환기 압력과 호흡수는 ECPR 환자에서 생존 개선과 연관되므로 채택할 수 있습니다. 폐포 팽창을 유지하고 폐부종과 무기폐를 예방하기 위해 호기말양압(PEEP)은 10 cmH2O를 초과하도록 권고됩니다.\n\nECPR 이후 환자는 흔히 호흡성·대사성 산증이 결합된 형태(유의한 젖산 산증)로 나타납니다. 낮은 pH는 더 높은 원내 사망률과 연관되므로, ECMO 산소공급기의 sweep 가스 유량을 조절하여 정상 또는 약간 알칼리성인 pH를 달성하는 것이 흔한 임상 관행이나, 캐뉼러 삽입 직후 이를 어느 속도로 교정해야 하는지는 불확실합니다."
+          },
+          {
+            "heading_ko": "산소와 이산화탄소(Oxygen and carbon dioxide)",
+            "body_ko": "여러 연구에서 조기 고산소혈증(PaO2 >300 mmHg)이 사망률 및 불량한 신경학적 예후와 연관됨을 보였습니다. 최적의 산소화 목표는 아직 정해지지 않았지만, ECMO sweep 가스 FiO2를 조정하여 동맥혈 산소포화도 92~97%를 목표로 함으로써 조기 고산소혈증을 피하는 것이 합리적입니다.\n\n동맥혈 이산화탄소분압(PaCO2)의 급격한 감소를 예방하기 위한 주의가 필요합니다. 캐뉼러 삽입 전후 시기의 경도 고탄산혈증은 허혈성 급성 뇌손상(ABI)의 위험을 완화할 수 있는데, 이는 상승한 PaCO2가 뇌혈관 확장과 혈류 증가를 유도하기 때문이며, 이러한 환자에서 ABI의 혈청 생체지표가 더 낮게 관찰된 바 있습니다. 그러나 중등도~고도의 고탄산혈증은 (혈관 확장으로 인한) 높은 두개내압과 연관될 수 있어, 이미 ABI를 입은 환자에서는 파국적일 수 있습니다. 실제로 일반 VA-ECMO 집단(비-ECPR)을 대상으로 한 한 연구에서는 캐뉼러 삽입 전후의 큰 PaCO2 감소폭(ΔPaCO2)이 두개내출혈(ICH)과 연관되었습니다. ELSO 레지스트리에 기반한 연구들에서는 캐뉼러 삽입 24시간 이내의 큰 ΔPaCO2가 VA-ECMO에서는 더 많은 ABI와, ECPR에서는 더 나쁜 생존과 연관되었습니다. 캐뉼러 삽입 후 적절한 CO2 목표를 정하려면 질 높은 전향적 다기관 자료가 필요합니다. 그때까지는 급격한 ΔPaCO2(>20 mmHg)를 피하면서 PaCO2를 35~45 mmHg 사이로 목표하는 것이 바람직합니다."
+          },
+          {
+            "heading_ko": "진통진정(Analgosedation)",
+            "body_ko": "Analgosedation은 진정제 도입에 앞서 통증 관리를 우선하는 치료적 접근입니다. ECPR 환자에서의 목표는 통증 관리, 초조(agitation)의 예방과 치료, 인공호흡기 동조 확보, ECMO 유량 최적화, 대사 요구 감소, 장기적 기능 예후 향상을 포함합니다. Analgosedation 약제의 과다 또는 과소 사용은 기능적·인지적 예후에 부정적 영향을 줄 수 있습니다. ECMO 초기에는 유량과 말단장기 관류를 최적화하기 위해 더 깊은 수준의 진정이 필요할 수 있습니다. 환자가 안정되면 신경학적 평가를 얻기 위해 진정을 가볍게 하고, 이후 편안함을 위해 적정합니다. 중증 질환은 약력학의 변동성을 유발할 수 있으며, ECMO 회로가 이를 더욱 변화시켜 분포용적의 변화와 지용성·단백결합 약물의 격리(sequestration)를 통해 약물의 생체이용률을 크게 감소시킵니다.\n\nHydromorphone이 1차 정맥(IV) 진통제로 권고되며, fentanyl은 회로에 크게 격리되므로 최적의 약제가 아닐 수 있습니다. 1차 경장(enteral) 약제는 oxycodone이고 그다음이 경구 hydromorphone이며, 신경병성 통증을 줄이기 위해 gabapentin을 보조적으로 사용합니다.\n\nDexmedetomidine과 ketamine 같은 비-벤조디아제핀 진정제가 보조 진정제로 선호됩니다. Propofol은 회로 격리가 높아 최적 약제는 아니지만 더 깊은 진정이 필요할 때 사용할 수 있습니다. 필요하면 IV lorazepam의 간헐 투여를 clonazepam 같은 경장 벤조디아제핀의 정규 용량과 함께 사용하는 것이 효과적입니다. Lorazepam 같은 벤조디아제핀의 지속 주입도 고려할 수 있으나 propylene glycol 독성을 유발할 수 있습니다. Midazolam은 회로에 크게 격리되어 신뢰할 수 없습니다. 섬망 치료의 1차 약제는 dexmedetomidine, quetiapine 또는 haloperidol입니다. 매일 analgosedation을 감량하고 프로토콜화된 진정 중단을 시행하는 것이 이들 환자의 전반적 예후 개선에 매우 중요합니다."
+          }
+        ],
+        "coverage": "full-text",
+        "fullTextSource": "PMC",
+        "practiceImpact_ko": "말초 VA-ECMO를 이용한 ECPR 이후에는 즉시 3~4 L/min의 유량 확보, 동정맥 산소차 3~5 cc/100 mL를 지표로 한 유량 설정, 우측 요골동맥 ABG로 뇌관류 감시, 그리고 상하체 산소화 차이(할리퀸, 약 10%)에 대한 인지가 침상에서의 핵심 실무입니다. 산소·이산화탄소는 조기 고산소혈증(PaO2 >300 mmHg)을 피하고 SaO2 92~97%, PaCO2 35~45 mmHg를 목표로 하되 급격한 ΔPaCO2(>20 mmHg)를 피해야 하며, 강심·승압은 epinephrine 단독보다 norepinephrine을 선호하고 저산소성 호흡부전 시 IABP/Impella는 금기임을 기억해야 합니다. 다만 ECPR 후 관리에 대한 고품질 근거와 확립된 지침은 여전히 부재하므로, 이러한 접근은 대체로 근거가 제한적인 실용적 권고임을 인식하고 적용해야 합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 37921532",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37921532/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000006102",
+            "url": "https://doi.org/10.1097/CCM.0000000000006102"
+          },
+          {
+            "label": "웹 — PubMed — Post-Cardiac Arrest Care in Adult Patients After ECPR (Kang et al., Crit Care Med 2023)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37921532/"
+          },
+          {
+            "label": "웹 — Resuscitation (2025) — Post-resuscitation care after adult ECPR: a scoping review",
+            "url": "https://www.sciencedirect.com/science/article/pii/S0300957225008925"
+          },
+          {
+            "label": "웹 — JAHA — Extracorporeal CPR for Out-of-Hospital Cardiac Arrest in Adult Patients (outcome figures)",
+            "url": "https://www.ahajournals.org/doi/10.1161/JAHA.119.015291"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -7071,9 +7134,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-20",
+    "date": "2026-08-21",
     "outcome": "published",
-    "publishedId": "42412218"
+    "publishedId": "37921532"
   },
-  "updatedAt": "2026-08-20"
+  "updatedAt": "2026-08-21"
 }
