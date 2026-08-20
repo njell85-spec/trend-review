@@ -535,12 +535,32 @@ function relayToGc(gc, { repo, files, id8 }) {
     }
   }
 
+  /* ★ 원격 릴레이 브랜치의 사본까지 병합한다 (2026-08-20 Fable 검토 · 처방 A).
+   * 아래 push 는 `-f` 다. worktree 사본하고만 병합하면, **컨테이너가 회수된 뒤 세션이 재개될 때**
+   * 새 worktree 에는 그 세션 파일이 없고(아직 수거 전이라 main 에도 없다) 압축·재개로 쪼그라든
+   * 재생성본이 그대로 force-push 되어 **원격에만 있던 앞턴을 지운다.** 수거가 하루 1회라
+   * 노출 창이 최대 하루이고, 지워지면 되돌릴 수 없다(원격 리플로그에 손이 닿지 않는다).
+   * 08-15 처방은 수거기·pull-repos·pull-local-drive 를 병합으로 바꿨는데 **이 push 쪽만 남아 있었다.**
+   * 실패는 무시한다 — 오프라인이면 종전 동작 그대로(불변: 이 함수는 예외를 밖으로 던지지 않는다). */
+  const REMOTE_PREV = `refs/remotes/relay-prev/${repo}-${id8}`;
+  git(wt, ['fetch', '--no-tags', '--quiet', 'origin',
+    `+refs/heads/${branch}:${REMOTE_PREV}`], 60000);
+  const remoteCopy = (name) => {
+    const r = gitOut(wt, ['show', `${REMOTE_PREV}:data/chat-archive/repos/${repo}/${name}`]);
+    return r || null;
+  };
+
   const outDir = path.join(wt, 'data', 'chat-archive', 'repos', repo);
   const outs = files.map(({ name }) => path.join(outDir, name));
   try {
     mkdirSync(outDir, { recursive: true });
     for (let i = 0; i < files.length; i++) {
-      const body = files[i].name.endsWith('.md') ? mergedBody(outs[i], files[i].body) : files[i].body;
+      let body = files[i].name.endsWith('.md') ? mergedBody(outs[i], files[i].body) : files[i].body;
+      if (files[i].name.endsWith('.md')) {
+        /* 원격 사본이 더 차 있을 수 있다 — 턴 단위 합집합이라 결합 순서에 안전하다. */
+        const prev = remoteCopy(files[i].name);
+        if (prev) { try { body = mergeArchive(prev, body); } catch { /* 병합 실패 시 현재 본문 유지 */ } }
+      }
       writeFileSync(outs[i], body, 'utf8');
       if (files[i].name.endsWith('.md')) {
         const meta = files.find((f) => f.name.endsWith('.meta.json'));
