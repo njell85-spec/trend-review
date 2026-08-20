@@ -851,6 +851,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-21",
+      "pmid": "41577226",
+      "title": "Effects of mild hypercapnia on myocardial injury among ST-elevation myocardial infarction patients after out-of-hospital cardiac arrest: a exploratory post-hoc study of the TAME trial.",
+      "title_ko": "원외 심정지 후 ST분절 상승 심근경색(STEMI) 환자에서 경도 고이산화탄소혈증(mild hypercapnia)이 심근 손상에 미치는 영향: TAME 시험의 탐색적 사후(post-hoc) 분석",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.110982",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "원외 심정지에서 소생된 혼수 성인 급성 심근경색 환자에서, 경도 고이산화탄소혈증을 목표로 하는 것이 정상 이산화탄소혈증(normocapnia)에 비해 STEMI 및 PCI 성공 STEMI 환자의 심근 손상을 줄이고 임상 결과를 개선하는가?",
+      "pico": {
+        "population": "[International] Post-hoc exploratory analysis of the multinational TAME trial; 810 of 1700 TAME patients (49%) diagnosed with acute myocardial infarction (AMI), of whom 593 had STEMI (73%) — 287 (48%) in the mild hypercapnia group and 306 (52%) in the normocapnia group — all comatose adults after out-of-hospital cardiac arrest (OHCA); troponin available for 562 STEMI patients (95%).",
+        "intervention": "Targeted mild hypercapnia (as defined in the TAME trial) after resuscitated out-of-hospital cardiac arrest, in 287 STEMI patients.",
+        "comparison": "Targeted normocapnia, in 306 STEMI patients.",
+        "outcome": "Primary outcome — myocardial injury assessed by peak high-sensitivity cardiac troponin T (hs-cTnT) or troponin I (cTnI) during hospitalisation: no difference by allocation (ratio of geometric means, mild hypercapnia/normocapnia: cTnI 1.18 [95% CI 0.79–1.77]; hs-cTnT 1.20 [95% CI 0.88–1.63])."
+      },
+      "pico_ko": {
+        "population": "[다국가] 다국적 TAME 시험의 탐색적 사후 분석; TAME 환자 1700명 중 810명(49%)이 급성 심근경색(AMI)으로 진단되었고, 그중 593명(73%)이 STEMI였음 — 경도 고이산화탄소혈증군 287명(48%), 정상 이산화탄소혈증군 306명(52%) — 모두 원외 심정지(OHCA) 후 혼수 성인; troponin은 STEMI 환자 562명(95%)에서 확보됨.",
+        "intervention": "소생된 원외 심정지 후 목표 경도 고이산화탄소혈증(TAME 시험 정의에 따름), STEMI 환자 287명.",
+        "comparison": "목표 정상 이산화탄소혈증(normocapnia), STEMI 환자 306명.",
+        "outcome": "일차 결과 — 입원 중 최고 high-sensitivity cardiac troponin T(hs-cTnT) 또는 troponin I(cTnI)로 평가한 심근 손상: 배정군 간 차이 없음(geometric mean 비, 경도 고이산화탄소혈증/정상 이산화탄소혈증: cTnI 1.18 [95% CI 0.79–1.77]; hs-cTnT 1.20 [95% CI 0.88–1.63])."
+      },
+      "keyFindings": [
+        "In 593 post-OHCA STEMI patients (287 mild hypercapnia vs 306 normocapnia), peak troponin did not differ by allocation (cTnI ratio of geometric means 1.18, 95% CI 0.79–1.77; hs-cTnT 1.20, 95% CI 0.88–1.63), and lactate clearance over 24 h was unchanged.",
+        "In-hospital mortality was similar (39% vs 40.5%; RR 0.97, 95% CI 0.82–1.14) and favourable six-month neurological outcome was similar (44.3% vs 48.5%; RR 1.09, 95% CI 0.92–1.29).",
+        "Among successfully PCI-treated STEMI patients there were no significant differences in any outcome, refuting the earlier single-centre suggestion that mild hypercapnia reduces myocardial injury."
+      ],
+      "keyFindings_ko": [
+        "원외 심정지 후 STEMI 환자 593명(경도 고이산화탄소혈증 287명 vs 정상 이산화탄소혈증 306명)에서 최고 troponin은 배정군 간 차이 없었고(cTnI geometric mean 비 1.18, 95% CI 0.79–1.77; hs-cTnT 1.20, 95% CI 0.88–1.63), 24시간 lactate clearance도 변화 없었음.",
+        "원내 사망률은 유사(39% vs 40.5%; RR 0.97, 95% CI 0.82–1.14), 6개월 양호한 신경학적 결과도 유사함(44.3% vs 48.5%; RR 1.09, 95% CI 0.92–1.29).",
+        "PCI 성공 STEMI 환자에서도 어떤 결과에서도 유의한 차이가 없어, 경도 고이산화탄소혈증이 심근 손상을 줄인다는 기존 단일기관 소견을 반증함."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41577226",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41577226/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.110982",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.110982"
+        },
+        {
+          "label": "웹 — PubMed — article record (PMID 41577226)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41577226/"
+        },
+        {
+          "label": "웹 — ScienceDirect — official article page (Resuscitation)",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0300957226000274"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — article record (PMID 41577226)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41577226/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ScienceDirect — official article page (Resuscitation)",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0300957226000274",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
