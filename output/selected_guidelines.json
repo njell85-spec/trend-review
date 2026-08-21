@@ -49,7 +49,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -184,7 +184,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -475,7 +475,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-20T21:55:11.683Z"
+      "supersededAt": "2026-08-21T21:52:07.362Z"
     },
     {
       "id": "pmid:38531812",
@@ -33344,11 +33344,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.820057187018569,
+      "priority": 6.816414437913185,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.820057187018569,
+        "recency": 1.8164144379131844,
         "scope": 0,
         "confidence": 1
       },
@@ -33361,7 +33361,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -36167,82 +36167,6 @@
       }
     },
     {
-      "id": "pmid:41586818",
-      "pmid": "41586818",
-      "title": "[Update ERC guidelines 2025 on cardiopulmonary resuscitation].",
-      "pubDate": "2026 Mar",
-      "journal": "Herz",
-      "publicationTypes": [
-        "English Abstract",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:38.246Z",
-      "abstract": "In October 2025 the current resuscitation guidelines of the European Resuscitation Council (ERC) were published in Resuscitation and translated into the German language by the German Resuscitation Council (GRC). This article focuses specifically on the main aspects and changes to the recommendations on basic life support, adult advanced life support and postresuscitation care. It should be emphasized that dispatchers will be involved earlier than before in the process of cardiopulmonary resuscitation in the form of assisted telephone resuscitation. Furthermore, in the event of persistent ventricular fibrillation, a so-called vector change should be considered. Probably the biggest change is that the previous targeted temperature management is no longer recommended and that only temperature control should be attempted.",
-      "meshTerms": [
-        "Cardiopulmonary Resuscitation",
-        "Humans",
-        "Germany",
-        "Europe",
-        "Heart Arrest",
-        "Practice Guidelines as Topic",
-        "Emergency Medical Services",
-        "Cardiology"
-      ],
-      "keywords": [
-        "Acute care medicine",
-        "Cardiac arrest",
-        "Intensive care",
-        "Life support",
-        "Post-resuscitation care"
-      ],
-      "doi": "10.1007/s00059-026-05365-x",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:05.137Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "ERC 2025 심폐소생술 업데이트 — 소생 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|erc-cardiopulmonary-resuscitation",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41581011",
       "pmid": "41581011",
       "title": "Utilization of current ACC/AHA genetic testing recommendations for thoracic aortic disease at a large adult aortic center.",
@@ -38027,7 +37951,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40017,7 +39941,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41208,7 +41132,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42296,7 +42220,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44261,7 +44185,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44547,7 +44471,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44644,7 +44568,7 @@
         "publisher-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44725,7 +44649,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44808,7 +44732,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46230,7 +46154,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46789,7 +46713,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47095,7 +47019,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47164,7 +47088,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47314,7 +47238,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47388,7 +47312,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47465,7 +47389,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47531,7 +47455,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47607,7 +47531,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47667,7 +47591,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47725,7 +47649,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47792,7 +47716,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47981,7 +47905,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -48041,7 +47965,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-08-21T21:52:06.589Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -49014,6 +48938,187 @@
         ]
       },
       "publishedAt": "2026-08-21"
+    },
+    {
+      "id": "pmid:41586818",
+      "pmid": "41586818",
+      "title": "[Update ERC guidelines 2025 on cardiopulmonary resuscitation].",
+      "pubDate": "2026 Mar",
+      "journal": "Herz",
+      "publicationTypes": [
+        "English Abstract",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:38.246Z",
+      "abstract": "In October 2025 the current resuscitation guidelines of the European Resuscitation Council (ERC) were published in Resuscitation and translated into the German language by the German Resuscitation Council (GRC). This article focuses specifically on the main aspects and changes to the recommendations on basic life support, adult advanced life support and postresuscitation care. It should be emphasized that dispatchers will be involved earlier than before in the process of cardiopulmonary resuscitation in the form of assisted telephone resuscitation. Furthermore, in the event of persistent ventricular fibrillation, a so-called vector change should be considered. Probably the biggest change is that the previous targeted temperature management is no longer recommended and that only temperature control should be attempted.",
+      "meshTerms": [
+        "Cardiopulmonary Resuscitation",
+        "Humans",
+        "Germany",
+        "Europe",
+        "Heart Arrest",
+        "Practice Guidelines as Topic",
+        "Emergency Medical Services",
+        "Cardiology"
+      ],
+      "keywords": [
+        "Acute care medicine",
+        "Cardiac arrest",
+        "Intensive care",
+        "Life support",
+        "Post-resuscitation care"
+      ],
+      "doi": "10.1007/s00059-026-05365-x",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:05.137Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "ERC 2025 심폐소생술 업데이트 — 소생 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|erc-cardiopulmonary-resuscitation",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41586818",
+          "title": "[Update ERC guidelines 2025 on cardiopulmonary resuscitation].",
+          "journal": "Herz",
+          "pubDate": "2026 Mar",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41586818/",
+          "doi": "10.1007/s00059-026-05365-x"
+        },
+        "org": "European Resuscitation Council (ERC); translated by German Resuscitation Council (GRC)",
+        "version": "2025",
+        "title_ko": "심폐소생술에 관한 ERC 가이드라인 2025 개정",
+        "scope_ko": "성인 심정지 환자를 대상으로 한 유럽소생협의회(ERC) 2025 소생술 지침의 개정 내용을 다루며, 특히 기본소생술(BLS), 성인 전문소생술(ALS), 소생 후 치료(post-resuscitation care)의 주요 변경점에 초점을 둔다. 2025년 10월 Resuscitation에 발표되었고 GRC가 독일어로 번역하였다.",
+        "summary": [
+          "In basic life support, emergency medical dispatchers should be involved earlier and more actively through assisted (dispatcher-guided) telephone CPR — helping the caller recognise cardiac arrest and agonal/abnormal breathing and coaching chest compressions.",
+          "In adult advanced life support, for refractory/persistent ventricular fibrillation (VF continuing after three consecutive shocks with correct antero-lateral pad placement), a defibrillation vector change to an alternative pad position (e.g. antero-posterior) should be considered.",
+          "Routine dual (double) sequential defibrillation (DSD) is NOT recommended, given practical challenges with two defibrillators and limited evidence of efficacy.",
+          "Drug dosing in ALS is retained: adrenaline 1 mg IV every 3–5 min while ALS continues; amiodarone 300 mg IV after the 3rd shock and a further 150 mg IV after the 5th shock in VF/pVT.",
+          "In post-resuscitation care, the previous targeted temperature management is no longer recommended — only 'temperature control' should be attempted, meaning active fever prevention with a target ≤37.5 °C for ≥72 h in patients who remain comatose after ROSC.",
+          "Oxygenation: give 100% oxygen initially, then titrate to SpO₂ 94–98%, with a new caution about pulse-oximetry inaccuracy in patients with darker skin tones; ventilation targets normocapnia.",
+          "Haemodynamics: target a mean arterial pressure (MAP) >60–65 mmHg after ROSC.",
+          "The Chain of Survival was redesigned to emphasise prevention (moved to the header of the first ring) and to add survivorship/long-term recovery, reflecting a continuum from arrest to recovery."
+        ],
+        "summary_ko": [
+          "기본소생술에서 응급의료 상황실 요원(dispatcher)이 이전보다 더 일찍·적극적으로 개입해야 하며, 전화 유도 심폐소생술(assisted telephone CPR)로 신고자가 심정지와 비정상/헐떡호흡을 인지하도록 돕고 가슴압박을 코치한다.",
+          "성인 전문소생술에서 불응성/지속성 심실세동(정확한 antero-lateral 패드 위치로 3회 연속 제세동 후에도 지속되는 VF)의 경우, 대체 패드 위치(예: antero-posterior)로 제세동 벡터 변경(vector change)을 고려해야 한다.",
+          "이중 순차 제세동(DSD)의 통상적 사용은 권고하지 않는다 — 제세동기 2대 사용의 실무적 어려움과 효능 근거 부족 때문이다.",
+          "ALS 약물 용량은 유지: adrenaline 1 mg IV를 ALS 지속 중 3–5분마다; VF/pVT에서 3회 쇼크 후 amiodarone 300 mg IV, 5회 쇼크 후 추가 150 mg IV.",
+          "소생 후 치료에서 기존의 목표체온유지(targeted temperature management)는 더 이상 권고되지 않고 '체온 조절(temperature control)'만 시도한다 — ROSC 후 혼수 환자에서 ≤37.5 °C를 ≥72시간 유지하는 능동적 발열 예방을 의미한다.",
+          "산소화: 초기에는 100% 산소를 투여하고 이후 SpO₂ 94–98%로 적정하며, 피부색이 어두운 환자에서 맥박산소측정 오차에 대한 새로운 주의를 담았다; 환기는 정상탄산혈증(normocapnia)을 목표로 한다.",
+          "혈역학: ROSC 후 평균동맥압(MAP) >60–65 mmHg를 목표로 한다.",
+          "생존 사슬(Chain of Survival)이 재설계되어 예방(첫 고리 상단으로 이동)을 강조하고 생존자 지원·장기 회복을 추가하여 '심정지에서 회복까지'의 연속선을 반영한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "체온 관리 (가장 큰 변화)",
+            "detail": "Previous targeted temperature management (TTM, i.e. actively targeting a defined temperature such as 32–36 °C) is NO LONGER recommended. New recommendation: only 'temperature control' — active fever prevention targeting ≤37.5 °C for ≥72 h in patients remaining comatose after ROSC. Reason: evidence (notably the TTM2 trial and subsequent evidence review) did not show benefit of active hypothermia over active fever prevention, so the guidance shifts from inducing/targeting a set temperature to simply preventing fever.",
+            "detail_ko": "기존의 목표체온유지(TTM, 즉 32–36 °C 같은 특정 목표체온을 능동적으로 맞추던 방식)는 더 이상 권고되지 않는다. 새 권고: ROSC 후 혼수 상태가 지속되는 환자에서 ≤37.5 °C를 ≥72시간 유지하는 능동적 발열 예방, 즉 '체온 조절(temperature control)'만 시도한다. 이유: 근거(특히 TTM2 시험 및 이후 근거 검토)에서 능동적 저체온이 능동적 발열 예방보다 이득이 있다고 보이지 않았기 때문에, 특정 목표체온을 유도·설정하던 방식에서 발열만 예방하는 방향으로 전환되었다."
+          },
+          {
+            "topic": "상황실 요원(dispatcher) 조기 개입",
+            "detail": "Dispatchers are involved earlier and more actively than before through assisted (dispatcher-guided) telephone CPR: the dispatch centre now explicitly helps the caller identify cardiac arrest and abnormal/agonal breathing (ventilation failure) and coaches bystander compressions. This strengthens the emphasis on the critical first 3–5 minutes after arrest.",
+            "detail_ko": "상황실 요원이 이전보다 더 일찍·적극적으로 전화 유도 심폐소생술(assisted telephone CPR)에 개입한다: 상황실이 신고자가 심정지와 비정상/헐떡호흡(환기 실패)을 인지하도록 명시적으로 돕고 목격자 가슴압박을 코치한다. 이는 심정지 후 결정적인 첫 3–5분의 중요성 강조를 강화한다."
+          },
+          {
+            "topic": "불응성 심실세동에서 벡터 변경",
+            "detail": "For refractory/persistent VF — defined as continuous VF after three consecutive shocks with confirmed correct antero-lateral pad position — consider a defibrillation vector change by moving to an alternative pad position (e.g. antero-posterior); prepare a fresh set of pads at the next rhythm check and optimise transthoracic impedance (e.g. shaving the pad areas). This is a newly emphasised option; routine dual (double) sequential defibrillation is explicitly NOT recommended due to practical challenges and limited efficacy evidence.",
+            "detail_ko": "불응성/지속성 VF — antero-lateral 패드 위치가 정확함을 확인한 상태에서 3회 연속 제세동 후에도 지속되는 VF로 정의 — 의 경우, 대체 패드 위치(예: antero-posterior)로 옮기는 제세동 벡터 변경을 고려한다; 다음 리듬 확인 시 새 패드 세트를 준비하고 흉부 임피던스를 최적화한다(예: 패드 부위 제모). 이는 새롭게 강조된 선택지이며, 이중 순차 제세동(DSD)의 통상적 사용은 실무적 어려움과 효능 근거 부족으로 명시적으로 권고하지 않는다."
+          },
+          {
+            "topic": "생존 사슬(Chain of Survival) 재설계",
+            "detail": "The four-ring Chain of Survival was revised: 'prevention of cardiac arrest' was moved to the header of the first ring to emphasise its growing importance, and the chain now explicitly incorporates survivorship and long-term recovery (from 'arrest to recovery'), including rehabilitation, structured follow-up and psychological support for both survivors and rescuers.",
+            "detail_ko": "4개 고리의 생존 사슬이 개정되었다: '심정지 예방'이 그 중요성 증대를 강조하기 위해 첫 고리의 상단(header)으로 이동했고, 사슬은 이제 생존자 지원과 장기 회복('심정지에서 회복까지')을 명시적으로 포함하여 재활, 체계적 추적관찰, 생존자와 구조자 모두를 위한 심리적 지원을 담는다."
+          },
+          {
+            "topic": "소생 후 산소·환기·혈역학·예후 목표",
+            "detail": "Post-resuscitation targets clarified: oxygen 100% initially then titrate to SpO₂ 94–98% (new caution on pulse-oximetry inaccuracy in darker skin tones); target normocapnia (with a caution about hypocapnia risk during hypothermia); maintain MAP >60–65 mmHg; multimodal neuroprognostication is applied to all comatose/unconscious patients (e.g. motor GCS ≤5), with specified timing for imaging and SSEP.",
+            "detail_ko": "소생 후 목표가 명확화됨: 산소는 초기 100% 후 SpO₂ 94–98%로 적정(어두운 피부색에서 맥박산소측정 오차에 대한 새 주의); 정상탄산혈증(normocapnia) 목표(저체온 중 저탄산혈증 위험 주의); MAP >60–65 mmHg 유지; 다중양식 신경예후평가를 모든 혼수/의식저하 환자(예: 운동 GCS ≤5)에 적용하며 영상검사와 SSEP의 시행 시점을 명시한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "저널 논평 (2차 자료): '심정지에서 회복까지' — 2025 ERC 지침의 생존 사슬 재정의",
+            "body_ko": "European Heart Journal: Acute Cardiovascular Care의 논평 'From arrest to recovery: the 2025 ERC guidelines redefine the chain of survival'는 2025 ERC 지침이 생존 사슬을 즉각적 생존만이 아니라 의미 있는 회복과 삶의 질까지 포괄하는 연속선으로 재개념화했다고 평가한다. 예방·조기 인지(지역사회 심혈관 위험 감소, 유전성 심질환 가족 선별), 목격자 행동('Three Steps to Save a Life' — Check-Call-CPR/AED, 상황실 유도 소생, 구조자 심리 지원), 전문 치료(신속 제세동·구조화된 팀 소통·표적 생리학적 개입), 소생 후·장기 회복(다중양식 신경보호, 체온 관리, 재활, 구조화된 추적관찰과 공동생존자 지원)의 네 단계를 강조한다고 소개한다. (주의: 이는 지침 원문이 아니라 저널 논평의 해석이다.)",
+            "sourceLabel": "European Heart Journal: Acute Cardiovascular Care — editorial (Oxford Academic)",
+            "sourceUrl": "https://academic.oup.com/ehjacc/article-abstract/15/1/90/8384645"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, stop actively cooling comatose post-arrest patients to 32–36 °C — instead run continuous temperature control aimed only at preventing fever (keep core ≤37.5 °C for at least 72 h), while still avoiding hyperthermia aggressively. In refractory VF after three shocks, quickly switch pad vector (e.g. antero-lateral → antero-posterior) rather than reaching for routine double sequential defibrillation, and keep standard adrenaline 1 mg q3–5 min and amiodarone 300 mg/150 mg dosing. EMS and dispatch systems should reinforce dispatcher-guided telephone CPR and recognition of agonal breathing, and post-ROSC care should target SpO₂ 94–98%, normocapnia, and MAP >60–65 mmHg with structured neuroprognostication and recovery/rehabilitation follow-up.",
+        "practiceImpact_ko": "임상 현장에서 혼수 상태의 심정지 후 환자를 32–36 °C로 능동적으로 냉각하던 관행을 중단하고, 대신 발열 예방만을 목표로 하는 지속적 체온 조절(중심체온 ≤37.5 °C를 최소 72시간 유지)을 시행하되 고체온은 여전히 적극적으로 피한다. 3회 쇼크 후 불응성 VF에서는 통상적 이중 순차 제세동에 손대기보다 패드 벡터를 신속히 변경(예: antero-lateral → antero-posterior)하고, adrenaline 1 mg 3–5분마다·amiodarone 300 mg/150 mg의 표준 용량은 유지한다. 응급의료·상황실 체계는 상황실 유도 전화 CPR과 헐떡호흡 인지를 강화해야 하며, ROSC 후 치료는 SpO₂ 94–98%, 정상탄산혈증, MAP >60–65 mmHg를 목표로 하고 체계적 신경예후평가와 회복·재활 추적관찰을 포함해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41586818",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41586818/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00059-026-05365-x",
+            "url": "https://doi.org/10.1007/s00059-026-05365-x"
+          },
+          {
+            "label": "웹 — ERC Guidelines 2025 Executive Summary — Resuscitation journal",
+            "url": "https://www.resuscitationjournal.com/article/S0300-9572%2825%2900282-5/fulltext"
+          },
+          {
+            "label": "웹 — ERC Guidelines 2025 Adult Advanced Life Support — Resuscitation journal",
+            "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00281-3/fulltext"
+          },
+          {
+            "label": "웹 — HealthManagement.org — ERC/ESICM 2025 Post-Resuscitation Care summary",
+            "url": "https://healthmanagement.org/c/icu/News/post-resuscitation-care-european-resuscitation-council-and-esicm-guidelines"
+          },
+          {
+            "label": "웹 — European Heart Journal: Acute Cardiovascular Care — 'From arrest to recovery' editorial",
+            "url": "https://academic.oup.com/ehjacc/article-abstract/15/1/90/8384645"
+          },
+          {
+            "label": "웹 — ERC Guidelines 2025 — official ERC index page",
+            "url": "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-22"
     }
   ],
   "rejected": [
@@ -49048,7 +49153,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -52935,7 +53040,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -53328,7 +53433,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -53954,7 +54059,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -53989,7 +54094,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54019,7 +54124,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54049,7 +54154,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -54085,7 +54190,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54115,7 +54220,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54144,7 +54249,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-20T21:55:00.587Z",
+      "discoveredAt": "2026-08-21T21:51:54.814Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -54221,9 +54326,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260821_065336:guideline:2026-08-21",
+    "runId": "trend_review_20260822_064822:guideline:2026-08-22",
     "outcome": "published",
-    "publishedId": "pmid:41773929",
+    "publishedId": "pmid:41586818",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -54248,15 +54353,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 152,
+        "mergedTotal": 147,
         "overlapCount": 2,
         "ptOnlyCount": 0,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/22",
-          "maxDate": "2026/08/21"
+          "minDate": "2026/07/23",
+          "maxDate": "2026/08/22"
         },
         "retmax": 60,
         "topics": [
@@ -54264,8 +54369,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 57,
-            "idsFetched": 57,
+            "totalFound": 54,
+            "idsFetched": 54,
             "truncated": false,
             "error": null
           },
@@ -54282,8 +54387,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 16,
-            "idsFetched": 16,
+            "totalFound": 17,
+            "idsFetched": 17,
             "truncated": false,
             "error": null
           },
@@ -54300,8 +54405,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 30,
-            "idsFetched": 30,
+            "totalFound": 29,
+            "idsFetched": 29,
             "truncated": false,
             "error": null
           },
@@ -54327,8 +54432,8 @@
             "id": "pubmed-topic:trauma_hemorrhage",
             "label": "외상·출혈",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           },
@@ -54345,8 +54450,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 5,
-            "idsFetched": 5,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -54360,7 +54465,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 144,
+        "topicOnlyCount": 139,
         "ptPmids": [
           "42522393",
           "42087034"
@@ -54368,9 +54473,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 152,
-          "enriched": 152,
-          "withAbstract": 115,
+          "requested": 147,
+          "enriched": 147,
+          "withAbstract": 111,
           "error": null
         }
       },
@@ -54423,25 +54528,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 1,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 229,
+        "queued": 228,
         "needsReview": 441,
         "rejected": 121,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41773929",
+        "candidateId": "pmid:41586818",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-20T21:58:02.936Z",
+  "updatedAt": "2026-08-21T21:55:00.694Z",
   "configVersion": "guideline-v2"
 }
