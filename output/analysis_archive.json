@@ -917,6 +917,81 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-22",
+      "pmid": "41620014",
+      "title": "ECPR eligible refractory out of hospital cardiac arrests - A post-hoc analysis of the EVIDENCE randomised controlled trial and Registry.",
+      "title_ko": "ECPR 적응이 되는 불응성 병원 밖 심정지 — EVIDENCE 무작위 대조 시험 및 레지스트리의 사후(post-hoc) 분석",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.110996",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "불응성 병원 밖 심정지(OHCA) 환자 중 실제로 병원 기반 ECPR 적응이 되는 비율은 얼마이며, ECPR이 시행되지 못하는 이유는 무엇이고, ECPR을 받지 못한 ECPR 적격 환자의 생존율은 어느 정도인가?",
+      "pico": {
+        "population": "[Australia] 1497 OHCA patients in the combined EVIDENCE randomised controlled trial (ACTRN12621000668808) and the contemporaneous EVIDENCE Registry (non-randomised data), Sydney, 2021–2024; a truly eligible hospital-based ECPR patient was defined as a patient meeting ECPR criteria and arriving to an ECPR-capable hospital within 1 h of arrest with no sustained ROSC within ECPR service hours (office hours).",
+        "intervention": "Assessment of ECPR eligibility (hospital-based ECPR): meeting ECPR criteria and arriving at an ECPR-capable hospital within 1 h of arrest with no sustained ROSC within ECPR service (office) hours; potential ECPR patients defined as meeting ECPR criteria with no ROSC on-scene.",
+        "comparison": null,
+        "outcome": "Thirty-eight of 1497 (3%) OHCA patients were truly eligible for hospital-based ECPR. Seventy-nine (5%) and 350 (23%) patients were identified as potential hospital-based and pre-hospital ECPR candidates, respectively. Survival to hospital discharge of potential ECPR patients was 5%."
+      },
+      "pico_ko": {
+        "population": "[호주] EVIDENCE 무작위 대조 시험(ACTRN12621000668808)과 동시기 EVIDENCE 레지스트리(비무작위 데이터)를 합친 OHCA 환자 1497명, 시드니, 2021–2024년; 진정한 병원 기반 ECPR 적격 환자는 ECPR 기준을 충족하고 심정지 후 1시간 이내에 ECPR 가능 병원에 도착하며 ECPR 운영 시간(office hours) 내에 지속적 ROSC가 없는 환자로 정의됨.",
+        "intervention": "ECPR 적격성 평가(병원 기반 ECPR): ECPR 기준을 충족하고 심정지 후 1시간 이내 ECPR 가능 병원 도착, ECPR 운영(office) 시간 내 지속적 ROSC 없음; 잠재적 ECPR 환자는 ECPR 기준을 충족하고 현장에서 ROSC가 없는 환자로 정의됨.",
+        "comparison": null,
+        "outcome": "OHCA 환자 1497명 중 38명(3%)이 진정한 병원 기반 ECPR 적격이었다. 잠재적 병원 기반 및 병원 전(pre-hospital) ECPR 후보는 각각 79명(5%), 350명(23%)으로 확인되었다. 잠재적 ECPR 환자의 퇴원 시 생존율은 5%였다."
+      },
+      "keyFindings": [
+        "Only 38 of 1497 (3%) combined RCT and Registry OHCA patients were truly eligible for hospital-based ECPR (ECPR criteria + ECPR-capable hospital within 1 h + no sustained ROSC in office hours).",
+        "79 (5%) were potential hospital-based ECPR candidates and 350 (23%) were potential pre-hospital ECPR candidates; main exclusions were >1-h arrival, non-ECPR-capable centre, and out-of-hours arrival.",
+        "Survival to hospital discharge of potential ECPR patients (not treated with ECPR) was only 5%."
+      ],
+      "keyFindings_ko": [
+        "RCT와 레지스트리를 합친 OHCA 환자 1497명 중 단 38명(3%)만이 진정한 병원 기반 ECPR 적격이었다(ECPR 기준 + 1시간 이내 ECPR 가능 병원 도착 + 운영 시간 내 지속 ROSC 없음).",
+        "79명(5%)이 잠재적 병원 기반 ECPR 후보, 350명(23%)이 잠재적 병원 전 ECPR 후보였으며, 주요 제외 사유는 1시간 초과 도착, 비-ECPR 가능 센터, 운영 시간 외 도착이었다.",
+        "ECPR을 받지 못한 잠재적 ECPR 환자의 퇴원 생존율은 단 5%였다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41620014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41620014/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.110996",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.110996"
+        },
+        {
+          "label": "웹 — Resuscitation — official article page (S0300-9572(26)00041-9)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00041-9/abstract"
+        },
+        {
+          "label": "웹 — ScienceDirect — article abstract (S0300957226000419)",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0300957226000419"
+        },
+        {
+          "label": "웹 — EVIDENCE trial rationale and design (Am Heart J, ScienceDirect) — setting/sample confirmation",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0002870323002958"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "Resuscitation — official article page (S0300-9572(26)00041-9)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00041-9/abstract",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ScienceDirect — article abstract (S0300957226000419)",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0300957226000419",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "EVIDENCE trial rationale and design (Am Heart J, ScienceDirect) — setting/sample confirmation",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0002870323002958",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
