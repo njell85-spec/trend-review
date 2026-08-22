@@ -49,7 +49,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -184,7 +184,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -475,7 +475,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-21T21:52:07.362Z"
+      "supersededAt": "2026-08-22T21:47:40.693Z"
     },
     {
       "id": "pmid:38531812",
@@ -33344,11 +33344,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.816414437913185,
+      "priority": 6.812775168780559,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.8164144379131844,
+        "recency": 1.8127751687805589,
         "scope": 0,
         "confidence": 1
       },
@@ -33361,7 +33361,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37951,7 +37951,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39941,7 +39941,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41132,7 +41132,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -41657,72 +41657,6 @@
       }
     },
     {
-      "id": "pmid:42297409",
-      "pmid": "42297409",
-      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.",
-      "pubDate": "2026 May",
-      "journal": "Clinical and experimental emergency medicine",
-      "publicationTypes": [
-        "Guideline",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:19.239Z",
-      "abstract": "This guideline summarizes evidence-based post-cardiac arrest care following the return of spontaneous circulation (ROSC) in adults, incorporating updates from the 2025 Korean Guidelines for Cardiopulmonary Resuscitation and contemporary international evidence. Recommendations were informed by recent randomized controlled trials and systematic reviews, with an emphasis on patient-centered outcomes and practical clinical applications. After ROSC, early evaluation should focus on identifying reversible causes. A 12-lead electrocardiogram should be obtained promptly, with echocardiography and whole-body computed tomography performed when clinically indicated to assess cardiac function and detect noncardiac or occult etiologies. Respiratory management aims to minimize secondary brain injury by preventing hypoxemia and hyperoxemia. High inspired oxygen concentrations may be used initially, followed by titration to an appropriate oxygen saturation level once reliable measurements are available, and ventilation should target normocapnia. Hemodynamic management prioritizes adequate organ perfusion and prompt treatment of shock, including active correction of hypotension. Routine immediate coronary angiography is not recommended in patients without ST-segment elevation. However, urgent angiography is indicated in those with ST-segment elevation, cardiogenic shock, or a high likelihood of ongoing myocardial ischemia. In comatose survivors, temperature control is essential. The selected target temperature should be maintained for at least 24 hours, with active fever prevention for 36 to 72 hours. Additional intensive care unit management includes glucose control and seizure monitoring. Routine prophylactic antibiotics or anticonvulsants are not recommended. Neuroprognostication should use a multimodal approach after confounders, such as sedation and temperature management, are addressed, integrating clinical examination, electrophysiology, biomarkers, and neuroimaging to support individualized decision-making.",
-      "meshTerms": [],
-      "keywords": [
-        "Cardiopulmonary resuscitation",
-        "Heart arrest",
-        "Post cardiac arrest syndrome"
-      ],
-      "doi": "10.15441/ceem.26.075",
-      "pmcid": "PMC13285305",
-      "region": "kr",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "성인 심정지 후 소생 후 관리 핵심 지침",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-6-post-cardiac-arrest-care",
-      "supersedes": []
-    },
-    {
       "id": "pmid:42297408",
       "pmid": "42297408",
       "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 5. Cardiac arrest in special circumstances.",
@@ -42220,7 +42154,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44185,7 +44119,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44471,7 +44405,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44568,7 +44502,7 @@
         "publisher-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44649,7 +44583,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44732,7 +44666,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46154,7 +46088,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46713,7 +46647,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47019,7 +46953,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47088,7 +47022,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47238,7 +47172,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47312,7 +47246,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47389,7 +47323,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47455,7 +47389,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47531,7 +47465,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47649,7 +47583,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47716,7 +47650,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47905,7 +47839,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47965,7 +47899,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-21T21:52:06.589Z",
+      "lastSeenAt": "2026-08-22T21:47:39.774Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -49119,6 +49053,167 @@
         ]
       },
       "publishedAt": "2026-08-22"
+    },
+    {
+      "id": "pmid:42297409",
+      "pmid": "42297409",
+      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.",
+      "pubDate": "2026 May",
+      "journal": "Clinical and experimental emergency medicine",
+      "publicationTypes": [
+        "Guideline",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:19.239Z",
+      "abstract": "This guideline summarizes evidence-based post-cardiac arrest care following the return of spontaneous circulation (ROSC) in adults, incorporating updates from the 2025 Korean Guidelines for Cardiopulmonary Resuscitation and contemporary international evidence. Recommendations were informed by recent randomized controlled trials and systematic reviews, with an emphasis on patient-centered outcomes and practical clinical applications. After ROSC, early evaluation should focus on identifying reversible causes. A 12-lead electrocardiogram should be obtained promptly, with echocardiography and whole-body computed tomography performed when clinically indicated to assess cardiac function and detect noncardiac or occult etiologies. Respiratory management aims to minimize secondary brain injury by preventing hypoxemia and hyperoxemia. High inspired oxygen concentrations may be used initially, followed by titration to an appropriate oxygen saturation level once reliable measurements are available, and ventilation should target normocapnia. Hemodynamic management prioritizes adequate organ perfusion and prompt treatment of shock, including active correction of hypotension. Routine immediate coronary angiography is not recommended in patients without ST-segment elevation. However, urgent angiography is indicated in those with ST-segment elevation, cardiogenic shock, or a high likelihood of ongoing myocardial ischemia. In comatose survivors, temperature control is essential. The selected target temperature should be maintained for at least 24 hours, with active fever prevention for 36 to 72 hours. Additional intensive care unit management includes glucose control and seizure monitoring. Routine prophylactic antibiotics or anticonvulsants are not recommended. Neuroprognostication should use a multimodal approach after confounders, such as sedation and temperature management, are addressed, integrating clinical examination, electrophysiology, biomarkers, and neuroimaging to support individualized decision-making.",
+      "meshTerms": [],
+      "keywords": [
+        "Cardiopulmonary resuscitation",
+        "Heart arrest",
+        "Post cardiac arrest syndrome"
+      ],
+      "doi": "10.15441/ceem.26.075",
+      "pmcid": "PMC13285305",
+      "region": "kr",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "성인 심정지 후 소생 후 관리 핵심 지침",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-6-post-cardiac-arrest-care",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42297409",
+          "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 6. Post-cardiac arrest care.",
+          "journal": "Clinical and experimental emergency medicine",
+          "pubDate": "2026 May",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42297409/",
+          "doi": "10.15441/ceem.26.075"
+        },
+        "org": "Korean Association of Cardiopulmonary Resuscitation (KACPR) / Korean Society of Emergency Medicine",
+        "version": "2025",
+        "title_ko": "2025 한국심폐소생술 가이드라인: Part 6. 심정지 후 통합 치료(Post–cardiac arrest care)",
+        "scope_ko": "자발순환회복(ROSC) 이후 성인 심정지 생존자의 소생 후 통합 치료를 다루는 임상진료지침입니다. 원인 감별을 위한 초기 평가·영상, 산소/환기 목표, 혈역학 관리, 관상동맥조영술 적응증, 목표체온관리(TTM)와 발열 예방, 혈당·경련·감염 관리, 그리고 혼수 생존자의 신경학적 예후 예측(다중모드)까지 포괄합니다. 소아·외상성 심정지 특수상황은 별도 파트에서 다룹니다.",
+        "summary": [
+          "Perform a 12-lead ECG promptly in all adults with ROSC (strong recommendation, moderate certainty); whole-body CT and echocardiography may be considered when clinically indicated to find reversible/occult causes (weak, low certainty).",
+          "Avoid hypoxemia (strong, moderate); give 100% O2 until reliable SpO2/PaO2 is available (prehospital strong/moderate, in-hospital strong/low), then titrate FiO2 to SaO2 94–98% (weak, low). Target normocapnia PaCO2 35–45 mmHg (strong, moderate).",
+          "Maintain MAP ≥60–65 mmHg in both OHCA and IHCA survivors and actively correct hypotension/shock (strong recommendation, moderate certainty).",
+          "Do NOT perform routine early coronary angiography in comatose patients without ST-elevation (weak, low); perform emergency angiography for ST-elevation or cardiogenic shock (strong, low).",
+          "Provide targeted temperature management in comatose ROSC patients with a target 33–37.5 °C (strong, moderate), maintained ≥24 h (weak, moderate); 33 °C may be considered for OHCA with initial nonshockable rhythm (weak, low). Actively prevent fever for 36–72 h (expert consensus).",
+          "Target blood glucose 144–180 mg/dL (weak, moderate) and immediately correct hypoglycemia (strong, moderate); do NOT give prophylactic antiepileptics (weak, very low), antibiotics (weak, moderate), or steroids (weak, low) routinely — treat seizures only when clinically/electrographically evident.",
+          "Do NOT routinely infuse large-volume cold IV fluids for prehospital cooling (strong, moderate); do not actively rewarm comatose patients who are spontaneously hypothermic after ROSC (good practice statement).",
+          "Prognosticate poor outcome only with a multimodal approach after removing confounders (sedation, temperature), combining exam (absent pupillary/corneal reflex ≥72 h, quantitative pupillometry), electrophysiology (absent N20 SSEP ≥24 h, highly malignant/suppression EEG), biomarkers (NSE), and neuroimaging (low GWR on CT, DWI/ADC on MRI) — all weak, very-low-to-low certainty."
+        ],
+        "summary_ko": [
+          "모든 ROSC 성인에서 12-lead ECG를 신속히 시행한다(강한 권고, 중등도 확실성). 가역적·잠복 원인 감별을 위해 임상적으로 필요하면 전신 CT와 심초음파를 고려할 수 있다(약한 권고, 낮은 확실성).",
+          "저산소혈증을 피한다(강한 권고, 중등도). 신뢰할 SpO2/PaO2가 확보될 때까지 100% 산소를 투여하고(병원전 강한/중등도, 병원내 강한/낮음), 이후 FiO2를 적정해 SaO2 94–98%를 유지한다(약한, 낮음). PaCO2는 정상범위 35–45 mmHg를 목표로 한다(강한, 중등도).",
+          "OHCA·IHCA 생존자 모두 MAP ≥60–65 mmHg를 유지하고 저혈압·쇼크를 적극 교정한다(강한 권고, 중등도 확실성).",
+          "ST 상승이 없는 혼수 환자에서 관상동맥조영술을 일상적으로 조기 시행하지 않는다(약한, 낮음). ST 상승 또는 심인성 쇼크가 있으면 응급 조영술을 시행한다(강한, 낮음).",
+          "혼수 ROSC 환자에게 목표체온관리를 시행하며 목표온도는 33–37.5 °C(강한, 중등도), 선택한 목표온도를 최소 24시간 유지한다(약한, 중등도). 초기 비제세동리듬 OHCA에서는 33 °C를 고려할 수 있다(약한, 낮음). 이후 36–72시간 동안 발열을 적극 예방한다(전문가 합의).",
+          "혈당은 144–180 mg/dL를 목표로 하고(약한, 중등도) 저혈당은 즉시 교정한다(강한, 중등도). 예방적 항경련제(약한, 매우 낮음)·항생제(약한, 중등도)·스테로이드(약한, 낮음)는 일상적으로 투여하지 않으며, 경련은 임상적·뇌파상 확인될 때만 치료한다.",
+          "병원전 냉각을 위한 대량 차가운 정맥수액의 일상적 주입은 권고하지 않는다(강한, 중등도). ROSC 후 자발적으로 저체온인 혼수 환자를 적극적으로 재가온하지 않는다(good practice statement).",
+          "불량 예후 예측은 진정·체온 등 교란요인을 제거한 뒤 다중모드로만 시행한다 — 신경학적 검사(≥72h 동공/각막반사 소실, 정량적 동공측정), 전기생리(≥24h N20 SSEP 소실, highly malignant/억제 EEG), 바이오마커(NSE), 신경영상(CT GWR 저하, MRI DWI/ADC)을 통합한다(모두 약한, 매우 낮음~낮음 확실성)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "목표체온관리(TTM) 목표온도 범위",
+            "detail": "The recommended target temperature range was revised from 32–36 °C (2020) to 33–37.5 °C (2025) for comatose ROSC patients (strong recommendation, moderate certainty). Rationale: 32 °C is rarely used in Korean clinical practice (Korean Hypothermia Therapy Society data), and ILCOR systematic reviews found no differences in survival or neurological outcome across temperature targets, so the guideline widened the range upward to include active normothermia/fever control rather than mandating deep hypothermia.",
+            "detail_ko": "혼수 ROSC 환자의 목표온도 범위가 2020년 32–36 °C에서 2025년 33–37.5 °C로 개정되었습니다(강한 권고, 중등도 확실성). 근거: 한국 임상에서 32 °C는 거의 쓰이지 않고(대한저체온치료학회 자료), ILCOR 체계적 고찰에서 목표온도별 생존·신경학적 예후 차이가 없어, 깊은 저체온을 강제하기보다 적극적 정상체온/발열관리를 포함하도록 범위를 상향 조정했습니다."
+          },
+          {
+            "topic": "발열 예방 기간 명시",
+            "detail": "The 2025 guideline explicitly specifies active fever prevention for 36–72 hours after ROSC in patients who remain comatose (expert consensus), whereas the 2020 version did not specify a duration. Basis: an RCT of 789 patients found no difference in 90-day survival or favorable neurological outcome between 36- and 72-hour fever-control protocols.",
+            "detail_ko": "2025 지침은 혼수 지속 환자에서 ROSC 후 36–72시간 동안 적극적 발열 예방을 명시했습니다(전문가 합의). 2020년에는 기간이 명시되지 않았습니다. 근거: 789명 RCT에서 36시간과 72시간 발열관리 사이에 90일 생존·양호 신경학적 예후 차이가 없었습니다."
+          },
+          {
+            "topic": "관상동맥조영술 적응증 축소",
+            "detail": "Routine immediate/early coronary angiography — previously applied more broadly — is now NOT recommended in comatose patients without ST-elevation (weak, low); emergency angiography is reserved for ST-elevation or cardiogenic shock (strong, low). A delayed approach after stabilization/neurologic recovery may be considered. Basis: five RCTs (COACT, DISCO, PEARL, TOMAHAWK, EMERGE) showed immediate angiography did not improve short- or mid-to-long-term outcomes in non-STEMI ROSC patients.",
+            "detail_ko": "이전에 더 폭넓게 적용되던 즉시/조기 관상동맥조영술이, 이제 ST 상승이 없는 혼수 환자에서는 권고되지 않습니다(약한, 낮음). 응급 조영술은 ST 상승 또는 심인성 쇼크로 한정하며, 안정화·신경학적 회복 후 지연 시행을 고려할 수 있습니다. 근거: 5개 RCT(COACT, DISCO, PEARL, TOMAHAWK, EMERGE)에서 비-STEMI ROSC 환자에게 즉시 조영술이 단기·중장기 예후를 개선하지 못했습니다."
+          },
+          {
+            "topic": "혈역학 목표(MAP) 정리",
+            "detail": "The hemodynamic target was standardized to MAP ≥60–65 mmHg for both OHCA and IHCA survivors (strong, moderate), replacing earlier framing (e.g., SBP-based/higher MAP goals). Basis: a 2024 meta-analysis concluded evidence supporting MAP targets higher than 60–65 mmHg was insufficient; higher targets may still be individualized in chronic hypertension.",
+            "detail_ko": "혈역학 목표가 OHCA·IHCA 생존자 모두 MAP ≥60–65 mmHg로 표준화되었습니다(강한, 중등도). 근거: 2024년 메타분석에서 60–65 mmHg보다 높은 MAP 목표를 지지하는 근거가 불충분하다고 결론지었습니다. 만성 고혈압 환자에서는 더 높은 목표를 개별화할 수 있습니다."
+          },
+          {
+            "topic": "산소 목표 구체화(100% → 적정)",
+            "detail": "Oxygen management was made explicit: give 100% O2 until reliable SpO2/PaO2 is available (strong; prehospital moderate, in-hospital low), then titrate FiO2 to SaO2 94–98% to avoid hyperoxemia (weak, low). Basis: meta-analyses (~549 prehospital, ~1,059 ICU patients) showed no benefit of lower vs higher oxygenation targets, supporting a titrate-after-stabilization approach rather than early restriction.",
+            "detail_ko": "산소 관리가 구체화되었습니다: 신뢰할 SpO2/PaO2가 확보될 때까지 100% 산소를 투여하고(강한; 병원전 중등도, 병원내 낮음), 이후 과산소혈증 방지를 위해 FiO2를 적정해 SaO2 94–98%를 유지합니다(약한, 낮음). 근거: 메타분석(병원전 약 549명, ICU 약 1,059명)에서 낮은 산소목표가 높은 목표 대비 이득이 없어, 조기 제한보다 안정화 후 적정 방식을 지지합니다."
+          },
+          {
+            "topic": "신경학적 예후 예측 — 다중모드 강조 및 신규 지표",
+            "detail": "Prognostication shifted to an explicit multimodal framework after removing confounders, reducing reliance on any single test. New/updated items: quantitative pupillometry ≥72 h may be considered (weak, low); EEG reactivity should NOT be used alone (weak, very low); highly malignant EEG patterns (Westhall) and burst suppression after sedation withdrawal added; novel biomarkers GFAP, tau, and neurofilament are NOT suggested (weak, very low), citing limited utility/access. Good-outcome predictors were expanded (GCS motor ≥4 within 4 days, NSE <17 μg/L within 72 h, continuous/near-continuous normal EEG within 72 h, absence of DWI restriction on MRI at 2–7 days).",
+            "detail_ko": "예후 예측이 교란요인 제거 후 다중모드 통합 방식으로 전환되어 단일검사 의존을 줄였습니다. 신규·갱신 항목: ≥72h 정량적 동공측정 고려 가능(약한, 낮음), EEG 반응성 단독 사용 금지(약한, 매우 낮음), highly malignant EEG(Westhall)·진정 중단 후 burst suppression 추가, 신규 바이오마커 GFAP·tau·neurofilament는 권고하지 않음(약한, 매우 낮음). 양호 예후 지표도 확장(4일내 GCS 운동 ≥4, 72h내 NSE <17 μg/L, 72h내 연속/거의연속 정상 EEG, 2–7일 MRI DWI 제한 없음)."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, stop chasing deep hypothermia: set the TTM device anywhere in 33–37.5 °C, hold it ≥24 h, then run strict fever control for 36–72 h with continuous core-temperature feedback. Do not activate the cath lab reflexively for a comatose non-STEMI arrest without shock — get the ECG and echo, treat reversible causes, and reserve emergent angiography for STEMI or cardiogenic shock. Keep SaO2 94–98% and PaCO2 35–45 after initial 100% O2, hold MAP ≥60–65 mmHg, target glucose 144–180 mg/dL, and drop routine prophylactic antibiotics/anticonvulsants/steroids. Never call a poor prognosis off one test — wait ≥72 h, clear sedation and temperature effects, and combine exam, EEG/SSEP, NSE, and CT/MRI.",
+        "practiceImpact_ko": "침상에서는 더 이상 깊은 저체온을 좇지 않습니다: TTM 장비를 33–37.5 °C 내 어디로든 설정해 최소 24시간 유지하고, 이후 36–72시간 지속 심부체온 피드백으로 엄격한 발열관리를 합니다. 쇼크 없는 비-STEMI 혼수 심정지에서 반사적으로 심도자실을 가동하지 말고 — ECG·심초음파로 가역적 원인을 치료하며, 응급 조영술은 STEMI나 심인성 쇼크로 한정합니다. 초기 100% 산소 후 SaO2 94–98%·PaCO2 35–45를 유지하고, MAP ≥60–65 mmHg, 혈당 144–180 mg/dL를 목표로 하며, 예방적 항생제·항경련제·스테로이드는 일상적으로 쓰지 않습니다. 불량 예후는 단일검사로 판단하지 말고 — ≥72시간 기다리고 진정·체온 영향을 제거한 뒤 진찰·EEG/SSEP·NSE·CT/MRI를 통합해 결정합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42297409",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42297409/"
+          },
+          {
+            "label": "Journal (DOI) — 10.15441/ceem.26.075",
+            "url": "https://doi.org/10.15441/ceem.26.075"
+          },
+          {
+            "label": "웹 — CEEM Journal — 2025 Korean CPR Guidelines Part 6: Post–cardiac arrest care (full article)",
+            "url": "https://www.ceemjournal.org/journal/view.php?doi=10.15441%2Fceem.26.075"
+          },
+          {
+            "label": "웹 — CEEM Journal — 2025 Korean CPR Guidelines Part 1: Update process and highlights",
+            "url": "https://www.ceemjournal.org/journal/view.php?doi=10.15441%2Fceem.26.071"
+          },
+          {
+            "label": "웹 — PubMed — 2020 Korean CPR Guidelines Part 5: Post-cardiac arrest care (previous version for comparison)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34034449/"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-23"
     }
   ],
   "rejected": [
@@ -49153,7 +49248,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -53040,7 +53135,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -53433,7 +53528,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -54059,7 +54154,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -54094,7 +54189,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54124,7 +54219,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54154,7 +54249,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -54190,7 +54285,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54220,7 +54315,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54249,7 +54344,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-21T21:51:54.814Z",
+      "discoveredAt": "2026-08-22T21:47:29.342Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -54265,7 +54360,7 @@
       ],
       "keywords": [],
       "doi": "10.1371/journal.pone.0354686",
-      "pmcid": "",
+      "pmcid": "PMC13492812",
       "region": "us",
       "by": "org-acronym",
       "status": "rejected",
@@ -54326,9 +54421,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260822_064822:guideline:2026-08-22",
+    "runId": "trend_review_20260823_064512:guideline:2026-08-23",
     "outcome": "published",
-    "publishedId": "pmid:41586818",
+    "publishedId": "pmid:42297409",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -54353,15 +54448,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 147,
+        "mergedTotal": 144,
         "overlapCount": 2,
         "ptOnlyCount": 0,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/23",
-          "maxDate": "2026/08/22"
+          "minDate": "2026/07/24",
+          "maxDate": "2026/08/23"
         },
         "retmax": 60,
         "topics": [
@@ -54369,8 +54464,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 54,
-            "idsFetched": 54,
+            "totalFound": 55,
+            "idsFetched": 55,
             "truncated": false,
             "error": null
           },
@@ -54396,8 +54491,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 9,
+            "idsFetched": 9,
             "truncated": false,
             "error": null
           },
@@ -54465,7 +54560,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 139,
+        "topicOnlyCount": 136,
         "ptPmids": [
           "42522393",
           "42087034"
@@ -54473,9 +54568,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 147,
-          "enriched": 147,
-          "withAbstract": 111,
+          "requested": 144,
+          "enriched": 144,
+          "withAbstract": 109,
           "error": null
         }
       },
@@ -54532,19 +54627,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 228,
+        "queued": 227,
         "needsReview": 441,
         "rejected": 121,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41586818",
+        "candidateId": "pmid:42297409",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-21T21:55:00.694Z",
+  "updatedAt": "2026-08-22T21:53:05.902Z",
   "configVersion": "guideline-v2"
 }
