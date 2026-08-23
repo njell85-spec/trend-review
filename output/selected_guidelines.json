@@ -49,7 +49,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -184,7 +184,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -475,7 +475,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-22T21:47:40.693Z"
+      "supersededAt": "2026-08-23T21:47:43.831Z"
     },
     {
       "id": "pmid:38531812",
@@ -33344,11 +33344,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.812775168780559,
+      "priority": 6.809124493180879,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.8127751687805589,
+        "recency": 1.8091244931808792,
         "scope": 0,
         "confidence": 1
       },
@@ -33361,7 +33361,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37951,7 +37951,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39941,7 +39941,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41132,7 +41132,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -41723,72 +41723,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:42297407",
-      "pmid": "42297407",
-      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 4. Adult advanced life support.",
-      "pubDate": "2026 May",
-      "journal": "Clinical and experimental emergency medicine",
-      "publicationTypes": [
-        "Guideline",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:19.239Z",
-      "abstract": "The 2025 Korean advanced life support guidelines were updated using a structured evidence evaluation process informed by recent randomized controlled trials and systematic reviews. The guideline development group prioritized patient-important outcomes and assessed the certainty of the evidence to formulate graded recommendations. For drug administration during adult cardiac arrest, intravenous access is the preferred initial route, with intraosseous access recommended when intravenous access cannot be rapidly established. Epinephrine remains the recommended vasopressor. Routine administration of vasopressin, either alone or in combination with corticosteroids, is not recommended for in-hospital or out-of-hospital cardiac arrest. In the absence of specific indications, the routine use of buffering agents and calcium is discouraged owing to insufficient evidence of their benefits and potential harm. Defibrillation recommendations were refined based on emerging evidence. In adults with refractory ventricular fibrillation or pulseless ventricular tachycardia after multiple unsuccessful defibrillation attempts, vector change or double sequential defibrillation may be considered in selected settings when performed by experienced teams with appropriate equipment. Airway management guidelines recommend cricothyroidotomy as a rescue technique when conventional airway management strategies fail. For patients receiving cardiopulmonary resuscitation while on mechanical ventilation, specific ventilator settings during chest compressions are recommended to optimize ventilation and minimize interference with high-quality cardiopulmonary resuscitation. The guidelines also address cardiopulmonary resuscitation-induced consciousness, allowing the cautious use of sedatives and/or analgesic agents when awareness interferes with resuscitation quality or safety. Overall, the guidelines emphasize evidence-based practice and individualized clinical decision-making.",
-      "meshTerms": [],
-      "keywords": [
-        "Advanced life support",
-        "Cardiopulmonary resuscitation",
-        "Heart arrest"
-      ],
-      "doi": "10.15441/ceem.26.073",
-      "pmcid": "PMC13277415",
-      "region": "kr",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "성인 전문소생술 핵심 지침",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-4-adult-advanced-life-support",
-      "supersedes": []
-    },
-    {
       "id": "pmid:42297406",
       "pmid": "42297406",
       "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 3. Adult basic life support.",
@@ -42154,7 +42088,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44119,7 +44053,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44405,7 +44339,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44502,7 +44436,7 @@
         "publisher-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44583,7 +44517,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44666,7 +44600,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46088,7 +46022,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46647,7 +46581,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46953,7 +46887,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47022,7 +46956,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47172,7 +47106,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47246,7 +47180,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47323,7 +47257,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47465,7 +47399,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47583,7 +47517,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47650,7 +47584,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47839,7 +47773,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47899,7 +47833,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-22T21:47:39.774Z",
+      "lastSeenAt": "2026-08-23T21:47:42.919Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -49214,6 +49148,178 @@
         ]
       },
       "publishedAt": "2026-08-23"
+    },
+    {
+      "id": "pmid:42297407",
+      "pmid": "42297407",
+      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 4. Adult advanced life support.",
+      "pubDate": "2026 May",
+      "journal": "Clinical and experimental emergency medicine",
+      "publicationTypes": [
+        "Guideline",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:19.239Z",
+      "abstract": "The 2025 Korean advanced life support guidelines were updated using a structured evidence evaluation process informed by recent randomized controlled trials and systematic reviews. The guideline development group prioritized patient-important outcomes and assessed the certainty of the evidence to formulate graded recommendations. For drug administration during adult cardiac arrest, intravenous access is the preferred initial route, with intraosseous access recommended when intravenous access cannot be rapidly established. Epinephrine remains the recommended vasopressor. Routine administration of vasopressin, either alone or in combination with corticosteroids, is not recommended for in-hospital or out-of-hospital cardiac arrest. In the absence of specific indications, the routine use of buffering agents and calcium is discouraged owing to insufficient evidence of their benefits and potential harm. Defibrillation recommendations were refined based on emerging evidence. In adults with refractory ventricular fibrillation or pulseless ventricular tachycardia after multiple unsuccessful defibrillation attempts, vector change or double sequential defibrillation may be considered in selected settings when performed by experienced teams with appropriate equipment. Airway management guidelines recommend cricothyroidotomy as a rescue technique when conventional airway management strategies fail. For patients receiving cardiopulmonary resuscitation while on mechanical ventilation, specific ventilator settings during chest compressions are recommended to optimize ventilation and minimize interference with high-quality cardiopulmonary resuscitation. The guidelines also address cardiopulmonary resuscitation-induced consciousness, allowing the cautious use of sedatives and/or analgesic agents when awareness interferes with resuscitation quality or safety. Overall, the guidelines emphasize evidence-based practice and individualized clinical decision-making.",
+      "meshTerms": [],
+      "keywords": [
+        "Advanced life support",
+        "Cardiopulmonary resuscitation",
+        "Heart arrest"
+      ],
+      "doi": "10.15441/ceem.26.073",
+      "pmcid": "PMC13277415",
+      "region": "kr",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "성인 전문소생술 핵심 지침",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-4-adult-advanced-life-support",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42297407",
+          "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 4. Adult advanced life support.",
+          "journal": "Clinical and experimental emergency medicine",
+          "pubDate": "2026 May",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42297407/",
+          "doi": "10.15441/ceem.26.073"
+        },
+        "org": "Korean Association of Cardiopulmonary Resuscitation (KACPR) / Korean Resuscitation Council",
+        "version": "2025",
+        "title_ko": "2025 한국심폐소생술 가이드라인: Part 4. 성인 전문소생술(Adult Advanced Life Support)",
+        "scope_ko": "성인 심정지 환자의 전문소생술(ALS)을 다루는 가이드라인으로, 전문기도관리, 승압제·항부정맥제 투약, 제세동, 그리고 체외순환보조(ECPR)를 포함한 순환 회복 전략을 병원내 심정지(IHCA)와 병원밖 심정지(OHCA) 모두에서 권고한다. GRADE 방법론에 기반해 환자 중요 결과를 우선하고 근거의 확실성을 평가하여 권고를 등급화하였다.",
+        "summary": [
+          "For drug administration during adult cardiac arrest, attempt intravenous (IV) access first; use intraosseous (IO) access only when IV cannot be rapidly established (weak recommendation, low certainty of evidence).",
+          "Epinephrine remains the recommended vasopressor (1 mg IV/IO bolus every 3–5 minutes, followed by a fluid flush); routine addition of vasopressin + corticosteroids is NOT recommended for IHCA (weak, low certainty) or OHCA (weak, very low certainty).",
+          "In the absence of specific indications (e.g., hyperkalemia, TCA/sodium-channel-blocker toxicity), routine buffering agents such as sodium bicarbonate are NOT recommended — OHCA (weak, low certainty), IHCA (weak, very low certainty).",
+          "Routine calcium is NOT recommended — a notably strong stance for OHCA (strong recommendation, moderate certainty) and against routine use in IHCA (weak, low certainty); reserve for hyperkalemia, hypocalcemia, calcium-channel-blocker overdose, hypermagnesemia.",
+          "For refractory VF/pVT persisting after ≥3 consecutive defibrillation attempts, vector-change defibrillation (weak, very low certainty) or double sequential defibrillation (weak, low certainty) may be considered by experienced teams with immediately available extra pads/defibrillators; a single operator sequentially activates the defibrillators (good practice statement).",
+          "When standard airway management fails during CPR, emergency cricothyroidotomy by an appropriately trained provider may be considered as a rescue surgical airway (good practice statement).",
+          "For patients already on a mechanical ventilator when arrest occurs, ventilation may be continued in volume-controlled mode during compressions: tidal volume 6–8 mL/kg predicted body weight (or visible chest rise), FiO₂ 1.0, rate 10/min, inspiratory time 1–2 s, PEEP 0–5 cmH₂O, peak-pressure alarm 60–70 cmH₂O, flow trigger disabled; switch to manual ventilation if adequate ventilation cannot be ensured (good practice statement).",
+          "For CPR-induced consciousness that interferes with resuscitation quality or safety, lowest-effective-dose sedatives and/or analgesics may be used; neuromuscular blockers alone in a conscious patient are NOT recommended (good practice statements)."
+        ],
+        "summary_ko": [
+          "성인 심정지 약물 투여 시 정맥로(IV)를 먼저 시도하고, IV를 신속히 확보할 수 없을 때만 골내주사(IO)를 대안으로 사용한다(약한 권고, 낮은 근거수준).",
+          "Epinephrine이 권장 승압제로 유지된다(1 mg IV/IO를 3~5분마다, 이후 수액 flush). Vasopressin + corticosteroid 병용의 일상적 추가는 IHCA(약한 권고, 낮은 근거수준)·OHCA(약한 권고, 매우 낮은 근거수준) 모두에서 권장하지 않는다.",
+          "특정 적응증(고칼륨혈증, TCA·나트륨통로차단제 중독 등)이 없는 한 sodium bicarbonate 등 완충제의 일상적 사용은 권장하지 않는다 — OHCA(약한 권고, 낮은 근거수준), IHCA(약한 권고, 매우 낮은 근거수준).",
+          "Calcium의 일상적 투여는 권장하지 않으며, 특히 OHCA에서는 이례적으로 강한 반대 권고이다(강한 권고, 중등도 근거수준). IHCA도 일상적 사용 반대(약한 권고, 낮은 근거수준). 고칼륨혈증·저칼슘혈증·칼슘통로차단제 과량·고마그네슘혈증에만 사용한다.",
+          "3회 이상 연속 제세동에도 지속되는 불응성 VF/pVT에서 vector-change 제세동(약한 권고, 매우 낮은 근거수준) 또는 double sequential 제세동(약한 권고, 낮은 근거수준)을 숙련된 팀이 추가 패드/제세동기를 즉시 사용할 수 있을 때 고려할 수 있다. Double sequential 시 한 명의 시술자가 제세동기를 순차적으로 작동시킨다(모범진료 권고).",
+          "표준 기도관리가 실패하면 CPR 중 훈련된 시술자가 응급 윤상갑상막절개술(cricothyroidotomy)을 구조기도 확보 수단으로 고려할 수 있다(모범진료 권고).",
+          "심정지 발생 시 이미 기계환기 중인 환자는 흉부압박 중 용량조절(volume-controlled) 모드로 환기를 유지할 수 있다: 일회호흡량 예측체중 6~8 mL/kg(또는 흉곽 상승 확인), FiO₂ 1.0, 호흡수 10회/분, 흡기시간 1~2초, PEEP 0~5 cmH₂O, 최고기도압 경보 60~70 cmH₂O, flow trigger 비활성화. 적절한 환기가 보장되지 않으면 수동환기로 전환한다(모범진료 권고).",
+          "CPR로 유발된 의식(consciousness)이 소생술의 질이나 안전을 방해하면 최소 유효용량의 진정제 및/또는 진통제를 고려할 수 있다. 의식이 있는 환자에서 신경근차단제 단독 사용은 권장하지 않는다(모범진료 권고)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "약물 투여 경로 (IV vs IO)",
+            "detail": "2020 did not explicitly prioritize the route of drug delivery. 2025 explicitly recommends attempting IV access FIRST and reserving IO for when IV cannot be established (weak recommendation, low certainty). Reason: recent RCTs found no superiority of IO for 30-day survival, neurologic outcome, or ROSC, with signals that IO was associated with lower likelihood of sustained ROSC.",
+            "detail_ko": "2020년에는 약물 투여 경로의 우선순위를 명시하지 않았다. 2025년은 IV를 먼저 시도하고 IV 확보가 안 될 때만 IO를 쓰도록 명시(약한 권고, 낮은 근거수준). 이유: 최근 RCT들에서 IO가 30일 생존·신경학적 예후·ROSC에서 우월성을 보이지 못했고, 오히려 지속적 ROSC 가능성이 낮은 신호가 있었다."
+          },
+          {
+            "topic": "Vasopressin + corticosteroid 병용",
+            "detail": "Previously not a firmly established recommendation. 2025 explicitly does NOT recommend routine addition of vasopressin + corticosteroids to standard resuscitation — IHCA (weak, low certainty) and OHCA (weak, very low certainty). Reason: recent RCTs showed the combination does not significantly improve clinically important outcomes despite physiologic rationale.",
+            "detail_ko": "이전에는 확립된 권고가 아니었다. 2025년은 표준 소생술에 vasopressin + corticosteroid의 일상적 추가를 권장하지 않음을 명시 — IHCA(약한 권고, 낮은 근거수준), OHCA(약한 권고, 매우 낮은 근거수준). 이유: 최근 RCT들에서 생리학적 근거에도 불구하고 임상적으로 중요한 결과를 유의하게 개선하지 못했다."
+          },
+          {
+            "topic": "완충제 (sodium bicarbonate)",
+            "detail": "Shift toward explicitly discouraging routine buffering agents unless a specific indication exists — OHCA (weak, low certainty), IHCA (weak, very low certainty). Reason: RCT/evidence shows no improvement in ROSC or survival to admission. Explicit exceptions retained: hyperkalemia, tricyclic antidepressant / sodium-channel-blocker toxicity.",
+            "detail_ko": "특정 적응증이 없는 한 완충제의 일상적 사용을 명시적으로 지양하는 방향으로 전환 — OHCA(약한 권고, 낮은 근거수준), IHCA(약한 권고, 매우 낮은 근거수준). 이유: ROSC나 입원 시 생존 개선이 없음. 예외 명시: 고칼륨혈증, TCA·나트륨통로차단제 중독."
+          },
+          {
+            "topic": "Calcium 투여",
+            "detail": "Strengthened stance against routine calcium. For OHCA the recommendation is now STRONG against routine use (strong recommendation, moderate certainty) — unusually strong for ALS; for IHCA weak recommendation, low certainty. Reason: a recent RCT showed significantly LOWER functionally favorable survival in the calcium group. Exceptions: hyperkalemia, hypocalcemia, calcium-channel-blocker overdose, hypermagnesemia.",
+            "detail_ko": "Calcium의 일상적 사용에 대한 반대가 강화됨. OHCA는 강한 반대 권고(강한 권고, 중등도 근거수준)로, ALS 영역에서는 이례적으로 강하다. IHCA는 약한 권고, 낮은 근거수준. 이유: 최근 RCT에서 calcium군의 기능적 양호 생존율이 유의하게 낮았다. 예외: 고칼륨혈증·저칼슘혈증·칼슘통로차단제 과량·고마그네슘혈증."
+          },
+          {
+            "topic": "불응성 VF/pVT 제세동 전략 (vector change / DSD)",
+            "detail": "New topic not addressed in 2020. For VF/pVT persisting after ≥3 consecutive shocks, vector-change (weak, very low certainty) or double sequential defibrillation (weak, low certainty) may be considered by experienced physicians with extra pads/defibrillators immediately available; a single operator sequentially activates the defibrillators. Reason: an RCT (single-center, DOSE-VF) showed higher rates of favorable neurologic outcome, but single-center design limits generalizability.",
+            "detail_ko": "2020년에 없던 새 주제. 3회 이상 연속 제세동에도 지속되는 VF/pVT에서 vector-change(약한 권고, 매우 낮은 근거수준) 또는 double sequential 제세동(약한 권고, 낮은 근거수준)을 추가 패드/제세동기가 즉시 있는 숙련의가 고려할 수 있다. Double sequential 시 한 시술자가 순차 작동. 이유: RCT(단일기관, DOSE-VF)에서 신경학적 양호 예후가 더 높았으나 단일기관 설계로 일반화에 제한."
+          },
+          {
+            "topic": "구조기도 — 윤상갑상막절개술",
+            "detail": "New explicit guidance: when standard airway management fails during CPR, appropriately trained providers may attempt emergency cricothyroidotomy as a surgical rescue airway (good practice statement). 2020 did not give explicit surgical-airway rescue guidance for CPR. Reason: no RCTs, but failed airway management can be fatal and a rescue path is clinically necessary.",
+            "detail_ko": "새 명시 권고: CPR 중 표준 기도관리가 실패하면 훈련된 시술자가 응급 윤상갑상막절개술을 구조 외과기도로 시도할 수 있다(모범진료 권고). 2020년에는 CPR 상황의 외과기도 구조 지침이 명시되지 않았다. 이유: RCT는 없으나 기도확보 실패는 치명적일 수 있어 구조 경로가 임상적으로 필요."
+          },
+          {
+            "topic": "CPR 중 기계환기 설정",
+            "detail": "New detailed protocol (not in 2020): if a ventilated patient arrests and mechanical ventilation is continued instead of manual, use volume-controlled mode during compressions — TV 6–8 mL/kg PBW (or visible chest rise), FiO₂ 1.0, rate 10/min, inspiratory time 1–2 s, PEEP 0–5 cmH₂O, peak-pressure alarm 60–70 cmH₂O, disable flow triggering; switch to manual if ventilation is inadequate (good practice statement). Reason: feasibility RCTs/observational data show it is feasible but without proven superiority over bag ventilation, so a consensus safety-oriented protocol was set.",
+            "detail_ko": "새로운 상세 프로토콜(2020년에 없음): 환기 중인 환자가 심정지 시 수동 대신 기계환기를 유지한다면 압박 중 용량조절 모드 사용 — TV 6~8 mL/kg PBW(또는 흉곽 상승), FiO₂ 1.0, 호흡수 10회/분, 흡기시간 1~2초, PEEP 0~5 cmH₂O, 최고기도압 경보 60~70 cmH₂O, flow trigger 비활성화. 환기가 부적절하면 수동환기로 전환(모범진료 권고). 이유: 실행가능성 RCT·관찰연구상 시행은 가능하나 백환기 대비 우월성은 입증되지 않아 안전 지향 합의 프로토콜을 정함."
+          },
+          {
+            "topic": "CPR 유발 의식 (CPR-induced consciousness)",
+            "detail": "New topic (not in 2020): when chest compressions cause temporary consciousness that interferes with CPR quality or endangers patient/providers, lowest-effective-dose sedatives and/or analgesics may be used; neuromuscular blockers alone in conscious patients are NOT recommended; regimen guided by ICU/local protocols (good practice statements). Reason: observational data show 0.23–0.7% of OHCA patients regain consciousness during CPR; outcomes were generally more favorable in those NOT medicated, so use only when awareness interferes.",
+            "detail_ko": "새 주제(2020년에 없음): 흉부압박으로 일시적 의식이 회복되어 CPR 질을 방해하거나 환자·시술자에게 위험하면 최소 유효용량의 진정제/진통제를 사용할 수 있다. 의식 있는 환자에서 신경근차단제 단독 사용은 권장하지 않는다. 약제는 ICU/기관 프로토콜에 따른다(모범진료 권고). 이유: 관찰연구상 OHCA의 0.23~0.7%가 CPR 중 의식을 회복하며, 약물을 쓰지 않은 경우 예후가 대체로 더 양호했으므로 방해가 있을 때만 사용."
+          },
+          {
+            "topic": "체외순환심폐소생술 (ECPR)",
+            "detail": "Evidence base updated: 2025 recommendations rest on four RCTs (vs prior largely observational evidence). ECPR may be considered as rescue therapy for refractory/recurrent arrest with a reversible cause in appropriately equipped/experienced centers (weak, low-to-very low certainty). Reason: RCT results are mixed and require specialized infrastructure and strict patient selection, hence low certainty.",
+            "detail_ko": "근거 기반 갱신: 2025 권고는 4개의 RCT에 근거한다(이전에는 주로 관찰연구). 가역적 원인이 있는 불응성/재발성 심정지에서 적절한 인프라·숙련 기관이라면 ECPR을 구조요법으로 고려할 수 있다(약한 권고, 낮음~매우 낮은 근거수준). 이유: RCT 결과가 혼재되고 전문 인프라와 엄격한 환자 선정이 필요하여 근거수준이 낮음."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, default to IV access first and stop reaching for IO as an equal option; drop the 'kitchen-sink' pharmacology — do not give routine vasopressin/steroids, bicarbonate, or calcium during undifferentiated arrest, but keep calcium/bicarbonate ready specifically for hyperkalemia and toxidromes. For refractory VF/pVT after ≥3 shocks, have a pre-planned pathway for vector-change or double sequential defibrillation (second set of pads/defibrillator, one operator sequencing) rather than improvising. Build ventilator-during-CPR settings (VC, TV 6–8 mL/kg, RR 10, FiO₂ 1.0, PEEP 0–5, flow-trigger off, high peak-pressure alarm) into ICU/ED code protocols, and prepare a plan for CPR-induced consciousness (low-dose sedation/analgesia, never paralytic alone) and for surgical-airway rescue (cricothyroidotomy) when intubation and BMV fail.",
+        "practiceImpact_ko": "현장에서는 IV 확보를 기본으로 하고 IO를 동등한 선택지로 먼저 잡지 않는다. '몰아넣기식' 약물 사용을 줄여 — 원인 미상 심정지에서 vasopressin/steroid·bicarbonate·calcium을 일상적으로 주지 않되, 고칼륨혈증·중독증에는 calcium/bicarbonate를 즉시 쓸 수 있게 준비한다. 3회 이상 제세동에도 불응하는 VF/pVT에는 vector-change나 double sequential 제세동 경로(추가 패드/제세동기, 한 명이 순차 작동)를 미리 계획해 둔다. CPR 중 기계환기 설정(VC, TV 6~8 mL/kg, RR 10, FiO₂ 1.0, PEEP 0~5, flow-trigger off, 높은 최고기도압 경보)을 ICU/ER 코드 프로토콜에 명문화하고, CPR 유발 의식(저용량 진정·진통, 신경근차단제 단독 금지)과 삽관·백마스크 실패 시 외과기도(윤상갑상막절개술) 구조 계획을 마련한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42297407",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42297407/"
+          },
+          {
+            "label": "Journal (DOI) — 10.15441/ceem.26.073",
+            "url": "https://doi.org/10.15441/ceem.26.073"
+          },
+          {
+            "label": "웹 — CEEM — 2025 Korean Guidelines for CPR: Part 4. Adult advanced life support (full article, official journal)",
+            "url": "https://www.ceemjournal.org/journal/view.php?doi=10.15441%2Fceem.26.073"
+          },
+          {
+            "label": "웹 — CEEM — 2025 Korean Guidelines for CPR: Part 1. The update process and highlights (companion summary)",
+            "url": "https://www.ceemjournal.org/journal/view.php?doi=10.15441%2Fceem.26.071"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-24"
     }
   ],
   "rejected": [
@@ -49248,7 +49354,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -53135,7 +53241,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -53528,7 +53634,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -54154,7 +54260,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -54189,7 +54295,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54219,7 +54325,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54249,7 +54355,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -54285,7 +54391,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54315,7 +54421,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54344,7 +54450,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-22T21:47:29.342Z",
+      "discoveredAt": "2026-08-23T21:47:34.858Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -54421,9 +54527,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260823_064512:guideline:2026-08-23",
+    "runId": "trend_review_20260824_064632:guideline:2026-08-24",
     "outcome": "published",
-    "publishedId": "pmid:42297409",
+    "publishedId": "pmid:42297407",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -54448,15 +54554,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 144,
+        "mergedTotal": 140,
         "overlapCount": 2,
         "ptOnlyCount": 0,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/24",
-          "maxDate": "2026/08/23"
+          "minDate": "2026/07/25",
+          "maxDate": "2026/08/24"
         },
         "retmax": 60,
         "topics": [
@@ -54464,8 +54570,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 55,
-            "idsFetched": 55,
+            "totalFound": 52,
+            "idsFetched": 52,
             "truncated": false,
             "error": null
           },
@@ -54482,8 +54588,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 17,
-            "idsFetched": 17,
+            "totalFound": 16,
+            "idsFetched": 16,
             "truncated": false,
             "error": null
           },
@@ -54560,7 +54666,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 136,
+        "topicOnlyCount": 132,
         "ptPmids": [
           "42522393",
           "42087034"
@@ -54568,9 +54674,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 144,
-          "enriched": 144,
-          "withAbstract": 109,
+          "requested": 140,
+          "enriched": 140,
+          "withAbstract": 107,
           "error": null
         }
       },
@@ -54627,19 +54733,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 227,
+        "queued": 226,
         "needsReview": 441,
         "rejected": 121,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42297409",
+        "candidateId": "pmid:42297407",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-22T21:53:05.902Z",
+  "updatedAt": "2026-08-23T21:55:19.944Z",
   "configVersion": "guideline-v2"
 }

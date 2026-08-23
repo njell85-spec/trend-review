@@ -3,15 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41821078",
-      "title": "Effect of the extubation predictive score (ExPreS) on reintubation in the ICU: a randomized controlled trial.",
-      "journal": "Critical care (London, England)",
-      "score": 9.2,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-17"
-    },
-    {
       "pmid": "41856454",
       "title": "The impact of defibrillation current and pad position on return of spontaneous circulation during refractory ventricular fibrillation.",
       "journal": "Resuscitation",
@@ -107,6 +98,16 @@
       "lowConfidence": false,
       "addedAt": "2026-08-17",
       "publishedAt": "2026-08-23"
+    },
+    {
+      "pmid": "41821078",
+      "title": "Effect of the extubation predictive score (ExPreS) on reintubation in the ICU: a randomized controlled trial.",
+      "journal": "Critical care (London, England)",
+      "score": 9.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-17",
+      "publishedAt": "2026-08-24"
     }
   ],
   "rejected": [
@@ -122,9 +123,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-23",
+    "date": "2026-08-24",
     "outcome": "published",
-    "publishedId": "41720426"
+    "publishedId": "41821078"
   },
-  "updatedAt": "2026-08-23"
+  "updatedAt": "2026-08-24"
 }

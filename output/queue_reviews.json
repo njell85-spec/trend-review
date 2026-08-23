@@ -37,23 +37,6 @@
       "status": "queued"
     },
     {
-      "pmid": "42474726",
-      "title": "Prone positioning in ARDS.",
-      "journal": "Intensive Care Med",
-      "score": 9,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ARDS 복와위, 호흡부전 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "41319669",
       "title": "Heart failure with reduced ejection fraction.",
       "journal": "Lancet",
@@ -7280,6 +7263,109 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "42474726",
+      "title": "Prone positioning in ARDS.",
+      "journal": "Intensive Care Med",
+      "score": 9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 복와위, 호흡부전 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-08-24",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "42474726",
+          "title": "Prone positioning in ARDS.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2026-7-20",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42474726/",
+          "doi": "10.1007/s00134-026-08543-x"
+        },
+        "title_ko": "ARDS에서의 복와위(엎드린 자세) 치료",
+        "scope_ko": "이 종설은 급성호흡곤란증후군(ARDS)에서 복와위(prone positioning)의 생리학적 근거, 무작위 대조시험 근거, 현행 진료지침 권고, 실제 적용상의 실무, 그리고 삽관 환자와 비삽관(각성) 환자 양쪽에 남아 있는 미해결 문제를 정리한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "50년에 걸친 복와위의 진화 — 구조요법에서 폐보호 환기의 핵심 구성요소로",
+            "body_ko": "지난 50여 년 동안 복와위는 단일 증례 보고에서 출발하여 근거에 기반한 중재로 발전해 왔다. 처음에는 구조요법(rescue therapy)으로 쓰였으나, 현재는 폐보호적 기계환기 전략의 필수 구성요소로 인정되며, PaO2/FIO2 비가 150 mmHg 미만인 삽관된 ARDS 환자에게 병의 경과 초기에 적용된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "COVID-19 팬데믹과 각성 복와위(APP)로의 확장",
+            "body_ko": "COVID-19 팬데믹은 복와위의 적용 범위를 비삽관 환자, 이른바 각성 복와위(awake prone position, APP)로 더욱 넓혔고 유망한 결과를 보였다. 다만 APP는 비-COVID 환자와 보다 일상적인 중환자실 진료 상황에서 그 효과를 아직 확증받아야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "산소화 개선 — 일관되고 잘 알려진 효과",
+            "body_ko": "산소화의 개선은 삽관 환자와 비삽관 ARDS 환자 모두에서 복와위의 일관되고 잘 알려진 효과다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "가스교환을 넘어선 효과 — VILI 완화와 혈역학",
+            "body_ko": "가스교환에 대한 효과를 넘어, 복와위는 폐 스트레스(stress)와 변형(strain)을 줄임으로써 인공호흡기유발 폐손상(ventilator-induced lung injury, VILI)을 완화한다. 또한 유리한 혈역학적 효과를 부여할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이 종설이 다루는 범위",
+            "body_ko": "본 논문은 복와위의 생리학적 근거, 무작위 대조시험(RCT)에서 나온 근거, 현행 진료지침 권고, 실제 적용상의 실무적 측면, 그리고 삽관 환자와 비삽관 환자 양쪽에서 아직 남아 있는 문제들을 개관한다.\n\n(주: 이 저널의 전문은 구독 장벽으로 접근할 수 없어, 이하 본문 세부 내용은 확보한 초록 범위 내에서만 옮겼다. 초록에 명시되지 않은 세부 수치·근거등급·시험 결과는 아래 '보강' 표시 절에서 권위 있는 2차 출처로 구분해 제시한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 각성 복와위(APP)의 RCT 메타분석 근거",
+            "body_ko": "COVID-19 급성 저산소성 호흡부전 환자를 대상으로 한 RCT 메타분석에서 각성 복와위(APP)는 일상 치료 대비 삽관률을 유의하게 낮췄다(OR 0.77, 95% CI 0.63–0.93, P=0.007). 반면 전 원인 사망률, 중환자실 재원기간, 입원기간에는 유의한 차이가 없었다. 소집단 분석에서는 중환자실에서 치료받은 환자(OR 0.74, 95% CI 0.60–0.91), 하루 누적 APP가 평균 4시간을 초과한 환자(OR 0.77, 95% CI 0.63–0.93), 기저 SpO2/FIO2가 낮은(<200) 환자(OR 0.75, 95% CI 0.61–0.92)에서 이득이 더 컸다. 이는 APP가 악화 자체를 막기보다 삽관을 지연시키는 효과일 가능성을 시사한다.\n— 보강 출처: PMC — Awake prone position in COVID-19: meta-analysis of RCTs (https://pmc.ncbi.nlm.nih.gov/articles/PMC10131466/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC — Awake prone position in COVID-19: meta-analysis of RCTs",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10131466/"
+          },
+          {
+            "heading_ko": "[웹 보강] 남아 있는 문제들",
+            "body_ko": "진전에도 불구하고 핵심 불확실성이 남아 있다: 비-COVID ARDS 비삽관 환자에서 복와위의 효과, ECMO 중 복와위의 역할, 연장 세션의 최적 지속시간, 그리고 경증-중등도 ARDS에서의 이득 여부 등이다.\n— 보강 출처: Springer Link — Prone positioning in ARDS (article landing/abstract) (https://link.springer.com/article/10.1007/s00134-026-08543-x)",
+            "origin": "augmented",
+            "sourceLabel": "Springer Link — Prone positioning in ARDS (article landing/abstract)",
+            "sourceUrl": "https://link.springer.com/article/10.1007/s00134-026-08543-x"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "삽관된 중증 ARDS(PaO2/FIO2 < 150 mmHg)에서는 조기에 하루 최소 16시간의 복와위를 폐보호 환기의 필수 구성요소로 시행하는 것이 표준이며, 이는 사망률 이득(PROSEVA)에 근거한다. 비삽관 저산소성 호흡부전 환자에서는 각성 복와위(APP)를 삽관률을 낮추기 위한 수단으로 고려하되, 사망률 이득은 확립되지 않았고 특히 비-COVID 상황에서는 근거가 제한적임을 인지해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42474726",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42474726/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-026-08543-x",
+            "url": "https://doi.org/10.1007/s00134-026-08543-x"
+          },
+          {
+            "label": "웹 — Springer Link — Prone positioning in ARDS (Ehrmann 외, ICM 2026, landing/abstract)",
+            "url": "https://link.springer.com/article/10.1007/s00134-026-08543-x"
+          },
+          {
+            "label": "웹 — PulmCCM — Prone positioning for severe ARDS (ATS/SCCM 지침 요약, PROSEVA)",
+            "url": "https://www.pulmccm.org/p/prone-positioning-ards-ats-sccm"
+          },
+          {
+            "label": "웹 — Critical Care Reviews — Prone position (therapies index)",
+            "url": "https://www.criticalcarereviews.com/therapies/prone-position"
+          },
+          {
+            "label": "웹 — PMC — Awake prone position in COVID-19: meta-analysis of RCTs",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10131466/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -7337,9 +7423,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-23",
+    "date": "2026-08-24",
     "outcome": "published",
-    "publishedId": "42390593"
+    "publishedId": "42474726"
   },
-  "updatedAt": "2026-08-23"
+  "updatedAt": "2026-08-24"
 }
