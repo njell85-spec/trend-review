@@ -49,7 +49,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -184,7 +184,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -475,7 +475,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-23T21:47:43.831Z"
+      "supersededAt": "2026-08-24T21:55:33.494Z"
     },
     {
       "id": "pmid:38531812",
@@ -26226,88 +26226,6 @@
       "lineageReason": "same-year-ambiguous"
     },
     {
-      "id": "pmid:41117574",
-      "pmid": "41117574",
-      "title": "European Resuscitation Council Guidelines 2025 Adult Basic Life Support.",
-      "pubDate": "2025 Oct",
-      "journal": "Resuscitation",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "The European Resuscitation Council has produced these ERC Guidelines 2025 Basic Life Support for adults based on the ILCOR Consensus on Cardiopulmonary Resuscitation Science with Treatment Recommendations published since 2021. The topics addressed include how to recognise cardiac arrest, alerting the emergency services, delivering chest compressions, performing rescue breaths, how to use an automated external defibrillator (AED) and safety considerations for rescuers. Quality of cardiopulmonary resuscitation (CPR) and the use of technology has been embedded into the relevant sections, rather than reported separately. The management of cardiac arrests in children, infants and neonates are described in the ERC guidelines 2025 Neonatal Life Support and Paediatric Life Support.",
-      "meshTerms": [
-        "Humans",
-        "Cardiopulmonary Resuscitation",
-        "Adult",
-        "Europe",
-        "Defibrillators",
-        "Heart Arrest",
-        "Emergency Medical Services",
-        "Out-of-Hospital Cardiac Arrest",
-        "Infant, Newborn",
-        "Child"
-      ],
-      "keywords": [
-        "Automated external defibrillator",
-        "Cardiopulmonary resuscitation",
-        "Defibrillation",
-        "Dispatcher-assisted CPR",
-        "Out-of-hospital cardiac arrest",
-        "Recognition of cardiac arrest"
-      ],
-      "doi": "10.1016/j.resuscitation.2025.110771",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.497786078959717,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.497786078959717,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:51.474Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "ERC 2025 성인 기본소생술, 소생 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-resuscitation-council-adult-basic-life-support",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41117573",
       "pmid": "41117573",
       "title": "European Resuscitation Council Guidelines 2025 Executive Summary.",
@@ -33344,11 +33262,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.809124493180879,
+      "priority": 6.805454105157769,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.8091244931808792,
+        "recency": 1.805454105157769,
         "scope": 0,
         "confidence": 1
       },
@@ -33361,7 +33279,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37951,7 +37869,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39941,7 +39859,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41132,7 +41050,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42088,7 +42006,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44053,7 +43971,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44339,7 +44257,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44436,7 +44354,7 @@
         "publisher-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44517,7 +44435,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44600,7 +44518,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46022,7 +45940,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46581,7 +46499,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46887,7 +46805,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46956,7 +46874,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47106,7 +47024,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47180,7 +47098,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47257,7 +47175,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47399,7 +47317,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47517,7 +47435,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47584,7 +47502,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47773,7 +47691,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47833,7 +47751,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-23T21:47:42.919Z",
+      "lastSeenAt": "2026-08-24T21:55:32.612Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -49320,6 +49238,187 @@
         ]
       },
       "publishedAt": "2026-08-24"
+    },
+    {
+      "id": "pmid:41117574",
+      "pmid": "41117574",
+      "title": "European Resuscitation Council Guidelines 2025 Adult Basic Life Support.",
+      "pubDate": "2025 Oct",
+      "journal": "Resuscitation",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "The European Resuscitation Council has produced these ERC Guidelines 2025 Basic Life Support for adults based on the ILCOR Consensus on Cardiopulmonary Resuscitation Science with Treatment Recommendations published since 2021. The topics addressed include how to recognise cardiac arrest, alerting the emergency services, delivering chest compressions, performing rescue breaths, how to use an automated external defibrillator (AED) and safety considerations for rescuers. Quality of cardiopulmonary resuscitation (CPR) and the use of technology has been embedded into the relevant sections, rather than reported separately. The management of cardiac arrests in children, infants and neonates are described in the ERC guidelines 2025 Neonatal Life Support and Paediatric Life Support.",
+      "meshTerms": [
+        "Humans",
+        "Cardiopulmonary Resuscitation",
+        "Adult",
+        "Europe",
+        "Defibrillators",
+        "Heart Arrest",
+        "Emergency Medical Services",
+        "Out-of-Hospital Cardiac Arrest",
+        "Infant, Newborn",
+        "Child"
+      ],
+      "keywords": [
+        "Automated external defibrillator",
+        "Cardiopulmonary resuscitation",
+        "Defibrillation",
+        "Dispatcher-assisted CPR",
+        "Out-of-hospital cardiac arrest",
+        "Recognition of cardiac arrest"
+      ],
+      "doi": "10.1016/j.resuscitation.2025.110771",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.497786078959717,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.497786078959717,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:51.474Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "ERC 2025 성인 기본소생술, 소생 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-resuscitation-council-adult-basic-life-support",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41117574",
+          "title": "European Resuscitation Council Guidelines 2025 Adult Basic Life Support.",
+          "journal": "Resuscitation",
+          "pubDate": "2025 Oct",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41117574/",
+          "doi": "10.1016/j.resuscitation.2025.110771"
+        },
+        "org": "European Resuscitation Council (ERC)",
+        "version": "2025",
+        "title_ko": "유럽소생협의회(ERC) 2025 성인 기본소생술(BLS) 가이드라인",
+        "scope_ko": "병원 밖·병원 내 성인 심정지 상황에서 일반인·구조자·1차 반응자가 시행하는 기본소생술을 다룬다. 심정지 인지, 응급의료체계(EMS) 신고, 가슴압박, 인공호흡, 자동제세동기(AED) 사용, 구조자 안전을 포함하며, 소아·영아·신생아는 별도의 ERC 2025 소아/신생아 소생술 지침에서 다룬다.",
+        "summary": [
+          "Recognise cardiac arrest in an unresponsive person with absent or abnormal breathing; slow/laboured breathing and agonal gasping/panting must be treated as cardiac arrest — note athletes may show a near-normal or panting breathing pattern early after arrest.",
+          "Call EMS (999/112) without delay as soon as the person is found unresponsive, and assess breathing while waiting for the call to be answered — rescuers no longer need to confirm abnormal breathing before calling.",
+          "Deliver high-quality chest compressions in the centre of the chest at a depth of at least 5 cm but not more than 6 cm, at a rate of 100–120 per minute, allowing full recoil and minimising interruptions.",
+          "If trained and willing, alternate 30 compressions with 2 rescue breaths, delivering just enough air to make the chest start to rise and avoiding excessive ventilation; if untrained or unable/unwilling to give breaths, perform continuous compression-only CPR.",
+          "Apply and follow an AED as soon as one is available — anyone can use an AED and no training is needed; AEDs should be in unlocked cabinets, accessible 24/7/365, and registered with the national AED database.",
+          "Ambulance call handlers should give CPR instructions to every caller, assume the caller cannot perform CPR and default to compression-only instructions, ask whether an AED/defibrillator is present, and direct additional bystanders to the nearest AED.",
+          "Consider rescuer safety and wellbeing: lay rescuers who perform resuscitation may be psychologically affected and may benefit from support/debriefing.",
+          "CPR quality and use of technology are embedded within each relevant topic (recognition, compressions, AED) rather than presented as separate sections."
+        ],
+        "summary_ko": [
+          "반응이 없고 호흡이 없거나 비정상인 사람에서 심정지를 인지한다. 느리고 힘겨운 호흡, 임종성 헐떡임(agonal gasping)·헐떡거림(panting)도 심정지 신호로 간주해야 하며, 운동선수는 심정지 직후 초기에 거의 정상에 가깝거나 헐떡이는 호흡 양상을 보일 수 있음에 유의한다.",
+          "반응이 없음을 확인하는 즉시 지체 없이 EMS(999/112)에 신고하고, 통화 연결을 기다리는 동안 호흡을 평가한다 — 신고 전에 비정상 호흡을 먼저 확인할 필요가 없어졌다.",
+          "가슴 중앙을 최소 5 cm, 6 cm를 넘지 않는 깊이로, 분당 100–120회 속도로 압박하며, 완전한 이완을 허용하고 중단을 최소화한다.",
+          "훈련되어 있고 의향이 있으면 압박 30회당 인공호흡 2회를 시행하되 가슴이 막 올라오기 시작할 정도의 공기만 불어넣고 과환기를 피한다. 훈련되지 않았거나 인공호흡이 어려우면 중단 없는 가슴압박(압박 전용 CPR)을 시행한다.",
+          "AED가 확보되는 즉시 부착하고 지시에 따른다 — 누구나 사용할 수 있고 훈련이 필요 없다. AED는 잠기지 않은 보관함에 두어 연중무휴 24시간 접근 가능해야 하며 국가 AED 데이터베이스에 등록되어야 한다.",
+          "구급 상황실 접수원(call handler)은 모든 신고자에게 CPR 지시를 제공하고, 신고자가 CPR을 모른다고 가정해 압박 전용 지시를 기본으로 하며, 현장에 AED/제세동기가 있는지 묻고, 추가 목격자를 가장 가까운 AED로 안내해야 한다.",
+          "구조자 안전·정신건강을 고려한다: 소생술을 시행한 일반인은 심리적 영향을 받을 수 있으며 지지·디브리핑이 도움이 될 수 있다.",
+          "CPR 질과 기술(technology) 활용은 별도 절로 분리하지 않고 각 주제(인지·압박·AED) 안에 통합해 기술한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "EMS 신고 시점·순서",
+            "detail": "Previous (2021): the rescuer checked responsiveness AND confirmed absent/abnormal breathing before alerting EMS. New (2025): call EMS without delay as soon as the person is found unresponsive, and assess breathing while waiting for the call to connect — rescuers no longer need to confirm abnormal breathing before calling. Reason: delays in EMS activation significantly worsen outcomes, and this brings the call forward in the sequence.",
+            "detail_ko": "이전(2021): 반응 확인 후 호흡이 없음/비정상임을 확인한 뒤 EMS에 신고했다. 신규(2025): 반응이 없음을 확인하면 즉시 지체 없이 EMS에 신고하고, 통화가 연결되는 동안 호흡을 평가한다 — 신고 전에 비정상 호흡을 먼저 확인할 필요가 없어졌다. 이유: EMS 활성화 지연이 예후를 유의하게 악화시키므로 신고 단계를 앞당겼다."
+          },
+          {
+            "topic": "운동선수의 비정상 호흡 인지",
+            "detail": "New (2025) explicit statement that early after the onset of cardiac arrest athletes may display a near-normal or panting breathing pattern, which should not be mistaken for adequate breathing. This addresses exercise as a common precipitant of arrest in younger people and reduces failure-to-recognise in that setting.",
+            "detail_ko": "신규(2025): 운동선수는 심정지 발생 직후 초기에 거의 정상에 가깝거나 헐떡이는(panting) 호흡 양상을 보일 수 있으며 이를 정상 호흡으로 오인해서는 안 된다는 점을 명시했다. 젊은 층에서 운동이 흔한 심정지 유발 요인임을 반영하고 해당 상황에서의 인지 실패를 줄이기 위함이다."
+          },
+          {
+            "topic": "구조자 심리적 지지",
+            "detail": "New (2025) recognition that lay rescuers who perform resuscitation may be psychologically affected/traumatised and may benefit from support. Previous guidance focused chiefly on physical rescuer safety; the 2025 version adds rescuer wellbeing/debriefing as an explicit consideration.",
+            "detail_ko": "신규(2025): 소생술을 시행한 일반인 구조자가 심리적으로 영향을 받거나 트라우마를 겪을 수 있으며 지지가 도움이 될 수 있음을 명시했다. 이전에는 주로 물리적 안전에 초점을 맞췄으나, 2025판은 구조자의 정신적 안녕·디브리핑을 명시적 고려사항으로 추가했다."
+          },
+          {
+            "topic": "상황실 접수원(dispatcher) 역할 강화",
+            "detail": "The 2025 guideline expands and dedicates guidance to ambulance call handlers: they should provide CPR instructions to ALL callers, assume the caller does not know how to do CPR and default to compression-only instructions, actively ask whether an AED/defibrillator is at the scene, and direct additional bystanders to the nearest AED. This strengthens telecommunicator/dispatcher-assisted CPR as a core system element rather than an adjunct.",
+            "detail_ko": "2025판은 구급 상황실 접수원에 대한 지침을 확대·전담화했다: 모든 신고자에게 CPR 지시를 제공하고, 신고자가 CPR을 모른다고 가정해 압박 전용 지시를 기본으로 하며, 현장에 AED/제세동기가 있는지 능동적으로 묻고, 추가 목격자를 가장 가까운 AED로 안내해야 한다. 접수원 유도 CPR을 부가적 요소가 아닌 시스템 핵심 요소로 강화했다."
+          },
+          {
+            "topic": "AED 접근성·표지",
+            "detail": "Strengthened AED accessibility guidance: signage should explicitly state that an AED can be used by anyone and that no training is needed; AEDs should be kept in unlocked cabinets, accessible 24 hours a day, 7 days a week, 365 days a year, and registered with the national AED database (e.g. The Circuit in the UK). This lowers barriers to bystander defibrillation.",
+            "detail_ko": "AED 접근성 지침 강화: 표지에 'AED는 누구나 사용할 수 있고 훈련이 필요 없다'는 문구를 명시해야 하며, AED는 잠기지 않은 보관함에 두어 연중무휴 24시간(주 7일·연 365일) 접근 가능해야 하고 국가 AED 데이터베이스(예: 영국 The Circuit)에 등록되어야 한다. 목격자 제세동의 장벽을 낮추기 위함이다."
+          },
+          {
+            "topic": "CPR 질·기술의 통합 서술",
+            "detail": "Structural change: CPR quality and the use of technology, previously reported in separate sections, are now embedded within each relevant topic (recognition, compressions, AED). The overall ERC 2025 framing also reconceives resuscitation as an integrated, patient-centred system across the chain of survival rather than isolated algorithms.",
+            "detail_ko": "구조적 변화: 이전에는 별도 절로 다루던 CPR 질과 기술(technology) 활용을 각 관련 주제(인지·압박·AED) 안에 통합해 서술한다. ERC 2025 전체 기조도 소생술을 개별 알고리즘의 나열이 아니라 생존사슬 전반을 아우르는 통합적·환자 중심 시스템으로 재정의한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "For EM/EMS systems, the headline operational change is bringing the emergency call forward: teach lay responders and dispatch protocols to activate EMS the moment a person is unresponsive and assess breathing during the call, rather than waiting to confirm abnormal breathing — this shortens time to EMS activation and dispatcher-assisted CPR. Reinforce dispatcher scripts that default to compression-only instructions for untrained callers and that actively locate and direct bystanders to the nearest registered AED. Core CPR mechanics are unchanged (5–6 cm depth, 100–120/min, 30:2 if trained, avoid over-ventilation), so retraining should focus on the new call-first sequence, recognising agonal/athlete breathing, and AED access. Add rescuer psychological support/debriefing pathways to post-event workflows.",
+        "practiceImpact_ko": "응급실·EMS 시스템에서 가장 큰 운영상 변화는 신고를 앞당기는 것이다: 일반인 반응자와 상황실 프로토콜이 '비정상 호흡 확인'을 기다리지 말고 반응이 없는 즉시 EMS를 활성화하고 통화 중에 호흡을 평가하도록 교육한다 — 이로써 EMS 활성화와 접수원 유도 CPR까지의 시간이 단축된다. 미훈련 신고자에게는 압박 전용 지시를 기본으로 하고, 목격자를 등록된 가장 가까운 AED로 능동적으로 안내하는 상황실 스크립트를 강화한다. 압박의 핵심 술기(깊이 5–6 cm, 분당 100–120회, 훈련 시 30:2, 과환기 회피)는 변함이 없으므로 재교육은 새로운 '신고 우선' 순서, 임종성 호흡·운동선수 호흡 인지, AED 접근에 집중한다. 사건 후 워크플로에 구조자 심리 지지·디브리핑 경로를 추가한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41117574",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41117574/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110771",
+            "url": "https://doi.org/10.1016/j.resuscitation.2025.110771"
+          },
+          {
+            "label": "웹 — Resuscitation Council UK — 2025 Adult Basic Life Support Guidelines",
+            "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/adult-basic-life-support-guidelines"
+          },
+          {
+            "label": "웹 — ERC — 2025 ERC Guidelines is Released (official news/index)",
+            "url": "https://www.erc.edu/news/2025-erc-guidelines-is-released/"
+          },
+          {
+            "label": "웹 — Resuscitation journal — ERC 2025 Adult Basic Life Support (full text; access blocked HTTP 403)",
+            "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00283-7/fulltext"
+          },
+          {
+            "label": "웹 — PubMed — ERC 2025 Adult Basic Life Support (PMID 41117574)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41117574/"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-25"
     }
   ],
   "rejected": [
@@ -49354,7 +49453,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -53241,7 +53340,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -53634,7 +53733,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -54260,7 +54359,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -54295,7 +54394,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54325,7 +54424,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54355,7 +54454,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -54391,7 +54490,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54421,7 +54520,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54450,7 +54549,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-23T21:47:34.858Z",
+      "discoveredAt": "2026-08-24T21:55:24.383Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -54527,9 +54626,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260824_064632:guideline:2026-08-24",
+    "runId": "trend_review_20260825_065330:guideline:2026-08-25",
     "outcome": "published",
-    "publishedId": "pmid:42297407",
+    "publishedId": "pmid:41117574",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -54554,15 +54653,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 140,
+        "mergedTotal": 138,
         "overlapCount": 2,
         "ptOnlyCount": 0,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/25",
-          "maxDate": "2026/08/24"
+          "minDate": "2026/07/26",
+          "maxDate": "2026/08/25"
         },
         "retmax": 60,
         "topics": [
@@ -54570,8 +54669,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 52,
-            "idsFetched": 52,
+            "totalFound": 51,
+            "idsFetched": 51,
             "truncated": false,
             "error": null
           },
@@ -54633,8 +54732,8 @@
             "id": "pubmed-topic:trauma_hemorrhage",
             "label": "외상·출혈",
             "succeeded": true,
-            "totalFound": 5,
-            "idsFetched": 5,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -54666,7 +54765,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 132,
+        "topicOnlyCount": 130,
         "ptPmids": [
           "42522393",
           "42087034"
@@ -54674,9 +54773,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 140,
-          "enriched": 140,
-          "withAbstract": 107,
+          "requested": 138,
+          "enriched": 138,
+          "withAbstract": 104,
           "error": null
         }
       },
@@ -54733,19 +54832,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 226,
+        "queued": 225,
         "needsReview": 441,
         "rejected": 121,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42297407",
+        "candidateId": "pmid:41117574",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-23T21:55:19.944Z",
+  "updatedAt": "2026-08-24T21:58:22.436Z",
   "configVersion": "guideline-v2"
 }

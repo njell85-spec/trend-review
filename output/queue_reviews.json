@@ -3,23 +3,6 @@
   "track": "reviews",
   "queue": [
     {
-      "pmid": "41951238",
-      "title": "Airway management of adults in the acute care setting.",
-      "journal": "BMJ",
-      "score": 8.9,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "성인 급성기 기도관리, 기도 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "42508832",
       "title": "Investigation and management of breakthrough ischemic stroke in anticoagulated patients with atrial fibrillation.",
       "journal": "BMJ",
@@ -7366,6 +7349,129 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41951238",
+      "title": "Airway management of adults in the acute care setting.",
+      "journal": "BMJ",
+      "score": 8.9,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 급성기 기도관리, 기도 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-08-25",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41951238",
+          "title": "Airway management of adults in the acute care setting.",
+          "journal": "BMJ (Clinical research ed.)",
+          "pubDate": "2026-4-9",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41951238/",
+          "doi": "10.1136/bmj-2025-086612"
+        },
+        "title_ko": "급성기 진료 현장에서의 성인 기도 관리",
+        "scope_ko": "급성 중증 성인 환자의 기도 관리에 대한 근거 기반 종설로, 기도 난이도 평가 도구의 한계, 준비와 전산소화(preoxygenation), 생리학적 최적화, 유도·마비 약물 선택, 비디오 후두경을 이용한 신속연속기관삽관(RSI), 삽관 위치 확인, 그리고 각성 및 과진정을 피하기 위한 진정·진통 관리를 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "서론 — 기도 관리의 중요성과 위험",
+            "body_ko": "기도 관리는 급성 중증 성인 환자를 돌보는 임상의에게 중요한 술기이다. 기관삽관(tracheal intubation)은 생명을 구할 수 있는 술기이지만 동시에 합병증 발생률이 높다. 이 종설은 급성기 진료 현장에서의 기도 관리에 대한 현재까지의 자료를 정리하고 근거 기반 접근법을 제시하는 것을 목적으로 한다.\n\n(참고: 이 절은 이 논문의 초록에서 확인된 내용만을 옮긴 것이다. 이 논문의 본문 전문은 유료 구독 장벽으로 확보하지 못하였다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "기도 난이도 평가 도구의 제한된 예측력",
+            "body_ko": "백-밸브-마스크 환기(bag-valve-mask ventilation), 기관삽관, 윤상갑상막절개술(cricothyroidotomy)의 난이도를 평가하기 위한 다양한 도구가 존재한다. 그러나 저자들에 따르면 이러한 도구들은 현재로서는 예측 가치가 제한적이다. 즉 어느 환자에서 어려운 기도가 될지를 이들 도구만으로 신뢰성 있게 가려내기는 어렵다는 점을 저자들은 지적한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "준비, 전산소화, 생리학적 최적화",
+            "body_ko": "난이도 평가 도구의 예측력이 제한적이기 때문에, 저자들은 모든 기도 관리에서 준비(preparation), 비침습적 양압환기(non-invasive positive pressure ventilation)를 이용한 전산소화(preoxygenation), 그리고 생리학적 최적화(physiological optimization)가 필수적인 단계라고 강조한다. 이 세 가지는 특정 고위험 환자에 국한된 것이 아니라 모든 기도 확보 상황에 공통적으로 적용되어야 하는 기본 단계로 제시된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "유도·마비 약물의 개별화",
+            "body_ko": "유도(induction) 및 마비(paralysis)에 사용하는 약물은 환자에 맞추어 선택하여야 한다(tailored to the patient). 초록 수준에서 저자들은 특정 약물을 일률적으로 권고하기보다 환자의 상태에 따른 개별화된 선택을 제시한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신속연속기관삽관과 비디오 후두경",
+            "body_ko": "신속연속기관삽관(rapid sequence intubation, RSI)을 시행하는 경우, 저자들은 직접 후두경(direct laryngoscopy)보다 비디오 후두경(video laryngoscopy)을 선호한다. 그 이유는 비디오 후두경이 첫 시도 성공률(first pass success)을 높이기 때문이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "삽관 위치 확인",
+            "body_ko": "삽관 후 기관 내 위치 확인에는 호기말 이산화탄소분압 측정(capnography) 또는 현장현장초음파(point-of-care ultrasound, POCUS)가 포함되어야 한다고 저자들은 기술한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진정·진통과 마비 상태에서의 각성 방지",
+            "body_ko": "임상의는 환자가 마비 상태에서 각성을 경험하는 것(awareness with paralysis)을 피하기 위해 충분한 진통(analgesia)과 진정(sedation)을 보장하여야 한다. 다만 이는 과진정(oversedation)을 피하는 것과 균형을 맞추어야 한다. 즉 마비 하 각성이라는 위해와 과도한 진정이라는 위해 사이에서 균형점을 찾는 것이 저자들이 강조하는 핵심이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 전산소화의 근거 — PREOXI 및 관련 시험",
+            "body_ko": "이 논문 본문을 확보하지 못하여, 같은 저자군(DeMasi·Casey·Semler)의 근거 정리 종설에서 전산소화 관련 핵심 시험 결과를 보강한다.\n\nPREOXI 시험에서 비침습적 양압환기(NIV)를 이용한 전산소화는 산소 마스크에 비해 삽관 중 저산소혈증 발생을 18.5%에서 8.1%로, 심정지 발생을 1.1%에서 0.2%로 낮추었다. 고유량 비강 캐뉼라(HFNO)는 NIV 및 마스크와 비교한 여러 시험에서 결론이 일관되지 않았다.\n\n유도와 후두경 조작 사이의 환기와 관련해서는 PreVent 시험(401명)에서 백-마스크 환기가 저산소혈증을 22.8%에서 10.9%로 낮추었고 흡인률은 두 군에서 유사하였다(2.5% 대 4.0%). 무호흡 산소공급(apneic oxygenation)의 경우, 일반적인 비강 캐뉼라와 고유량 비강 캐뉼라 모두 선별되지 않은 환자군에서 후두경 조작 중 산소포화도 개선에 유의한 이득을 보이지 못하였다.\n— 보강 출처: DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/)",
+            "origin": "augmented",
+            "sourceLabel": "DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/"
+          },
+          {
+            "heading_ko": "[웹 보강] 혈역학적 최적화 — 수액 볼루스와 승압제",
+            "body_ko": "이 논문 본문 대신 같은 저자군의 근거 종설에서 혈역학적 최적화 관련 근거를 보강한다.\n\nPrePARE 및 PREPARE II 시험에서 유도 전 500 mL 정질액(crystalloid) 볼루스는 저혈압이나 심정지를 예방하지 못하였다. 예방적 승압제(prophylactic vasopressors)에 대해서는 완료된 무작위 시험이 없으며, 성향점수 매칭 분석에서도 저혈압 감소를 보이지 못하였다(40.6% 대 32.1%). 볼루스 투여 시 용량 오류 위험도 보고되었다.\n— 보강 출처: DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/)",
+            "origin": "augmented",
+            "sourceLabel": "DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/"
+          },
+          {
+            "heading_ko": "[웹 보강] 유도제와 신경근차단제의 선택",
+            "body_ko": "이 논문 본문 대신 같은 저자군의 근거 종설에서 약물 선택 관련 근거를 보강한다.\n\n유도제와 관련하여 KETASED 시험(469명)에서는 케타민과 에토미데이트 간 28일 사망률에 유의한 차이가 없었으나(31% 대 35%), EvK 시험(801명)에서는 7일 사망률이 케타민에서 유리하였다(14.9% 대 22.7%, P=0.005). 우월한 약제에 대해서는 여전히 불확실성이 남아 있으며 대규모 다기관 시험이 진행 중이다.\n\n신경근차단제에 관해서는 CURASMUR 시험(병원전 1,248명)에서 숙시닐콜린이 로쿠로늄보다 첫 시도 성공률이 높았으나(79.4% 대 74.6%) 부정맥과 저혈압 발생률은 더 높았다. 로쿠로늄은 마비 하 각성(awareness with paralysis) 보고와 관련되어 있다. 응급실/중환자실 환경에서 두 약제를 직접 비교한 무작위 시험은 없다.\n— 보강 출처: DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/)",
+            "origin": "augmented",
+            "sourceLabel": "DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/"
+          },
+          {
+            "heading_ko": "[웹 보강] 비디오 후두경과 삽관 보조기구의 근거",
+            "body_ko": "이 논문 본문 대신 같은 저자군의 근거 종설에서 기기 관련 근거를 보강한다.\n\nDEVICE 시험(17개 기관, 1,417명)에서 비디오 후두경은 첫 시도 성공률 85.1%로 직접 후두경 70.8%보다 높았다(절대 차이 14.3%). 메타분석에서 비디오 후두경은 식도 삽관을 줄였다(RR 0.47).\n\n삽관 보조기구와 관련하여 STYLETO 시험(999명)에서 스타일렛 사용이 첫 시도 성공률을 개선하였고(78.2% 대 71.5%), BEAM 시험에서는 부지(bougie)에 익숙한 기관에서 부지가 98% 대 87%로 우월하였으나, BOUGIE 시험에서는 스타일렛에 익숙한 기관에서 스타일렛이 83.0% 대 부지 80.4%였다. 저자들의 결론은 두 방법 모두 합리적이며, 부지는 성대 시야가 제한적인 경우에 유보적으로 사용한다는 것이다. 자세와 관련해서는 다기관 시험에서 스니핑 자세(sniffing position)가 램프 자세(ramped position)보다 첫 시도 성공률이 높았다.\n— 보강 출처: DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/)",
+            "origin": "augmented",
+            "sourceLabel": "DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC12264701)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설(초록 기준)은 급성기 기도 관리에서 난이도 예측 도구에 의존하기보다 준비·전산소화(NIV)·생리학적 최적화를 모든 기도에 적용하고, RSI 시 비디오 후두경을 우선 사용하며, capnography 또는 POCUS로 위치를 확인할 것을 강조한다. 침상에서는 마비 하 각성을 막기 위한 충분한 진통·진정을 확보하되 과진정과의 균형을 맞추는 것이 실질적 변화 포인트이다. (보강 자료의 구체 수치는 이 논문 본문이 아니라 별도 출처에서 온 것이므로 그대로 이 논문의 주장으로 인용하지 않도록 주의한다.)",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41951238",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41951238/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/bmj-2025-086612",
+            "url": "https://doi.org/10.1136/bmj-2025-086612"
+          },
+          {
+            "label": "웹 — Europe PMC core record (abstract, open-access status) — EXT_ID:41951238",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41951238&resultType=core&format=json"
+          },
+          {
+            "label": "웹 — DeMasi SC, Casey JD, Semler MW. Evidence-based Emergency Tracheal Intubation. Am J Respir Crit Care Med 2025 (PMC full text)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264701/"
+          },
+          {
+            "label": "웹 — Point-of-care ultrasound for airway management in the emergency and critical care setting (Clin Exp Emerg Med)",
+            "url": "https://www.ceemjournal.org/journal/view.php?doi=10.15441%2Fceem.23.094"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -7423,9 +7529,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "outcome": "published",
-    "publishedId": "42474726"
+    "publishedId": "41951238"
   },
-  "updatedAt": "2026-08-24"
+  "updatedAt": "2026-08-25"
 }
