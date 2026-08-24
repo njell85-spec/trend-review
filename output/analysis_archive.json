@@ -1109,6 +1109,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-25",
+      "pmid": "41856454",
+      "title": "The impact of defibrillation current and pad position on return of spontaneous circulation during refractory ventricular fibrillation.",
+      "title_ko": "제세동 전류와 패드 위치가 불응성 심실세동에서 자발순환 회복에 미치는 영향",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111061",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "불응성 심실세동에서 자발순환 회복(ROSC)은 전달된 경흉부 전류(transthoracic current)에 의해 결정되는가 아니면 패드 위치(anteroposterior vs anterolateral)에 의해 결정되는가, 그리고 vector-change 및 double sequential external defibrillation의 이득을 독립적으로 설명하는 인자는 무엇인가?",
+      "pico": {
+        "population": "[Canada] 342 patients enrolled in the DOSE VF trial (mean age 63.6 years; 85% male) with refractory ventricular fibrillation, contributing 849 interventional shocks (51.6% standard, 25.4% VC and 22.9% DSED), analyzed in a secondary, per-protocol analysis.",
+        "intervention": "Anteroposterior (AP) pad positioning shocks — as delivered in vector-change (VC) and double sequential external defibrillation (DSED; AL + AP) — with transthoracic current calculated for the first six shocks using defibrillator-derived shock energy and impedance and manufacturer-provided formulas.",
+        "comparison": "Standard anterolateral (AL) pad positioning shocks.",
+        "outcome": "Return of spontaneous circulation (ROSC): in GEE modeling, AP positioning was independently associated with ROSC compared to AL positioning (aOR 2.01; 95% CI: 1.12-3.59). Delivered current was not associated with ROSC."
+      },
+      "pico_ko": {
+        "population": "[캐나다] DOSE VF 시험에 등록된 불응성 심실세동 환자 342명(평균 연령 63.6세; 85% 남성)으로, 849회의 중재 shock(51.6% standard, 25.4% VC, 22.9% DSED)를 제공했으며 secondary, per-protocol 분석으로 평가함.",
+        "intervention": "Anteroposterior(AP) 패드 위치 shock — vector-change(VC) 및 double sequential external defibrillation(DSED; AL + AP)로 전달됨 — 로, 첫 6회 shock의 경흉부 전류를 제세동기에서 도출한 shock energy와 impedance 및 제조사 제공 공식으로 계산함.",
+        "comparison": "표준 anterolateral(AL) 패드 위치 shock.",
+        "outcome": "자발순환 회복(ROSC): GEE 모델에서 AP 위치는 AL 위치 대비 ROSC와 독립적으로 연관됨(aOR 2.01; 95% CI: 1.12-3.59). 전달된 전류(delivered current)는 ROSC와 연관되지 않음."
+      },
+      "keyFindings": [
+        "Among 342 patients (mean age 63.6 years; 85% male) contributing 849 interventional shocks, AP positioning was independently associated with ROSC vs AL positioning (aOR 2.01; 95% CI: 1.12-3.59).",
+        "Mean current was significantly greater for AP shocks in VC (19.6 A) and DSED (19.2 A) than for standard AL (16.6 A) and DSED AL shocks (17.3 A) (P < 0.001).",
+        "Despite higher AP current, delivered current was not associated with ROSC — pad position rather than current independently drove the effect."
+      ],
+      "keyFindings_ko": [
+        "849회의 중재 shock를 제공한 환자 342명(평균 연령 63.6세; 85% 남성)에서 AP 위치는 AL 위치 대비 ROSC와 독립적으로 연관되었다(aOR 2.01; 95% CI: 1.12-3.59).",
+        "평균 전류는 AP shock에서 VC(19.6 A)와 DSED(19.2 A)가 표준 AL(16.6 A) 및 DSED AL shock(17.3 A)보다 유의하게 높았다(P < 0.001).",
+        "AP 전류가 더 높았음에도 전달된 전류는 ROSC와 연관되지 않았다 — 전류가 아니라 패드 위치가 효과를 독립적으로 주도했다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41856454",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41856454/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111061",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111061"
+        },
+        {
+          "label": "웹 — PubMed E-utilities (esearch, PMID 41856454)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=defibrillation+current+pad+position+return+spontaneous+circulation+refractory+ventricular+fibrillation+Cheskes"
+        },
+        {
+          "label": "웹 — Europe PMC core record (PMID 41856454, DOI 10.1016/j.resuscitation.2026.111061)",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41856454&resultType=core&format=json"
+        },
+        {
+          "label": "웹 — Resuscitation journal official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00107-3/fulltext"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed E-utilities (esearch, PMID 41856454)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=defibrillation+current+pad+position+return+spontaneous+circulation+refractory+ventricular+fibrillation+Cheskes",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Europe PMC core record (PMID 41856454, DOI 10.1016/j.resuscitation.2026.111061)",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:41856454&resultType=core&format=json",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation journal official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00107-3/fulltext",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
