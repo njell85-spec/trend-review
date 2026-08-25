@@ -8,9 +8,8 @@
       "pubDate": "2026 Aug",
       "journal": "Emergencias : revista de la Sociedad Espanola de Medicina de Emergencias",
       "publicationTypes": [
-        "Journal Article",
         "Consensus Statement",
-        "Practice Guideline"
+        "Journal Article"
       ],
       "discoveredBy": [
         "pubmed-pt",
@@ -19,14 +18,14 @@
       ],
       "discoveredAt": "2026-08-15T21:50:26.390Z",
       "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
         "expandedTitle": false,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": true,
+        "officialDocument": false,
         "organizationId": null
       },
       "priority": 8,
@@ -40,30 +39,28 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": null,
       "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
+        "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
       "meshTerms": [
         "Humans",
-        "Hypothermia",
-        "Spain",
-        "Emergency Medical Services",
-        "Critical Care",
-        "Rewarming",
         "Cardiopulmonary Resuscitation",
-        "Heart Arrest",
+        "Critical Care",
         "Delphi Technique",
-        "Resuscitation"
+        "Emergency Medical Services",
+        "Heart Arrest",
+        "Hypothermia",
+        "Resuscitation",
+        "Rewarming",
+        "Societies, Medical"
       ],
       "keywords": [
         "Accidental hypothermia",
@@ -184,7 +181,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -475,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-24T21:55:33.494Z"
+      "supersededAt": "2026-08-25T21:55:08.821Z"
     },
     {
       "id": "pmid:38531812",
@@ -26226,76 +26223,6 @@
       "lineageReason": "same-year-ambiguous"
     },
     {
-      "id": "pmid:41117573",
-      "pmid": "41117573",
-      "title": "European Resuscitation Council Guidelines 2025 Executive Summary.",
-      "pubDate": "2025 Oct",
-      "journal": "Resuscitation",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "The 2025 European Resuscitation Council (ERC) Guidelines present the most up-to-date evidence-based guidelines for the practice of resuscitation across Europe. The ERC Guidelines 2025 are based on evidence produced by the International Liaison Committee on Resuscitation (ILCOR) in the form of systematic reviews, scoping reviews, and evidence updates, published as the ILCOR Consensus on Science with Treatment Recommendations. The certainty of evidence of these ILCOR treatment recommendations was used to issue the ERC Guidelines 2025 Recommendations. In some cases, the ERC made good practice statements when evidence was absent for certain topics. If no ILCOR review was available, the ERC writing groups conducted their own reviews to provide recommendations. The ERC Guidelines 2025 cover the epidemiology of cardiac arrest, the role that systems play in saving lives, adult basic life support, adult advanced life support, resuscitation in special circumstances, post resuscitation care, newborn resuscitation and support of transition of infants at birth, paediatric basic and advanced life support, resuscitation ethics, education for resuscitation, and first aid. These guidelines are a framework of recommendations for the approach to out-of-hospital and in-hospital resuscitation; the implementation is achieved locally taking local legislation and health care regulations into consideration.",
-      "meshTerms": [
-        "Humans",
-        "Europe",
-        "Resuscitation",
-        "Cardiopulmonary Resuscitation",
-        "Heart Arrest",
-        "Out-of-Hospital Cardiac Arrest"
-      ],
-      "keywords": [],
-      "doi": "10.1016/j.resuscitation.2025.110770",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.497786078959717,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.497786078959717,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:51.474Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "ERC 2025 지침 총괄요약, 소생 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-resuscitation-council-executive-summary",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41117572",
       "pmid": "41117572",
       "title": "European Resuscitation Council Guidelines 2025 Adult Advanced Life Support.",
@@ -33262,11 +33189,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.805454105157769,
+      "priority": 6.801804605928566,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.805454105157769,
+        "recency": 1.8018046059285657,
         "scope": 0,
         "confidence": 1
       },
@@ -33279,7 +33206,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37869,7 +37796,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39859,7 +39786,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41050,7 +40977,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42006,7 +41933,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43971,7 +43898,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44257,7 +44184,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44354,7 +44281,7 @@
         "publisher-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44435,7 +44362,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44518,7 +44445,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45940,7 +45867,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46499,7 +46426,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46805,7 +46732,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46874,7 +46801,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47024,7 +46951,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47098,7 +47025,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47175,7 +47102,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47317,7 +47244,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47435,7 +47362,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47502,7 +47429,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47691,7 +47618,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47751,7 +47678,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-24T21:55:32.612Z",
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -47760,6 +47687,466 @@
         "keep": true,
         "reason": "중증 천식 관리 지침 — 응급/중환자 호흡 실무에 직접 닿음",
         "at": "2026-08-20T21:55:12.731Z"
+      }
+    },
+    {
+      "id": "pmid:41419448",
+      "pmid": "41419448",
+      "title": "Clinical Practice Guidelines by Infectious Diseases Society of America (IDSA): 2025 Guidelines on Management and Treatment of Complicated Urinary Tract Infections--Duration of Antibiotics for Complicated UTI.",
+      "pubDate": "2026 Aug 24",
+      "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
+      "abstract": "BACKGROUND: These recommendations provide guidance on the optimal duration of antibiotics in patients with complicated urinary tract infection (cUTI), especially in presence of associated Gram-negative bacteremia.\nMETHODS: The panel's recommendations are based upon evidence derived from systematic literature reviews which focused on comparative benefits and harms of shorter (5-7 days) vs prolonged (10-14 days) duration of antibiotics, including publications since 2000. These recommendations adhere to a standardized methodology for rating the certainty of evidence and strength of recommendation according to the GRADE (Grading of Recommendations Assessment, Development, and Evaluation) approach.\nRESULTS: The guidelines panel suggests that patients with cUTI who are improving on effective therapy can be treated with shorter duration of antimicrobials (either 5-7 days of a fluoroquinolone or 7 days of a non-fluoroquinolone) rather than longer courses of antibiotics, regardless of the presence of associated Gram-negative bacteremia. An effective antimicrobial agent achieves therapeutic levels in the urine and relevant tissue and is active against the causative pathogen. However, men with febrile UTI in whom acute bacterial prostatitis is suspected may benefit from a longer treatment duration (10-14 days), and a short courses of oral beta lactams may require higher doses for efficacy.\nCONCLUSIONS: Shorter durations of antibiotics for cUTI provide similar efficacy as longer courses, except in men with febrile UTI in whom acute bacterial prostatitis is suspected. This recommendation places a high value on antibiotic stewardship considerations as well as reducing the burden of antimicrobial administration from a healthcare perspective and reducing the burden of taking antibiotics from a patient perspective.",
+      "meshTerms": [
+        "Humans",
+        "Urinary Tract Infections",
+        "Anti-Bacterial Agents",
+        "Bacteremia",
+        "Male",
+        "Fluoroquinolones"
+      ],
+      "keywords": [],
+      "doi": "10.1093/cid/ciaf462",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "idsa"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "idsa",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
+      "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "복잡성 요로감염 항생제 기간·균혈증, 응급 실무",
+        "at": "2026-08-25T21:55:10.264Z"
+      }
+    },
+    {
+      "id": "pmid:41414903",
+      "pmid": "41414903",
+      "title": "Clinical Practice Guidelines by Infectious Diseases Society of America: 2025 Guidelines on Management and Treatment of Complicated Urinary Tract Infections - Timing of Intravenous to Oral Antibiotics Transition for Complicated Urinary Tract Infections.",
+      "pubDate": "2026 Aug 24",
+      "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
+      "abstract": "BACKGROUND: These recommendations provide guidance on the optimal timing for transitioning from intravenous to oral antibiotics in patients with complicated urinary tract infection (cUTI), especially in presence of associated Gram-negative bacteremia.\nMETHODS: The panel's recommendations are based upon evidence derived from systematic literature reviews which focused on comparative benefits and harms of transitioning to oral therapy versus continuing parenteral therapy of the total duration of treatment, including publications since 2000. These recommendations adhere to a standardized methodology for rating the certainty of evidence and strength of recommendation according to the GRADE (Grading of Recommendations Assessment, Development, and Evaluation) approach.\nRESULTS: The guidelines panel suggests transitioning to oral antibiotics in patients with cUTI who are clinically improving, able to take medication, and for whom an effective oral option is available, rather than continuing parenteral therapy for the remaining treatment duration, regardless of the presence of associated Gram-negative bacteremia. An effective oral option needs to be active against the causative pathogen and achieve therapeutic levels in the urine and relevant tissue.\nCONCLUSIONS: Parenteral and oral antibiotics used to complete treatment courses for cUTI provide similar efficacy and adverse events, especially in the context of shorter duration of therapy. This recommendation places a high value on reducing avoidable intravenous catheter-related adverse events, costs, and resources, as well as taking into account practical aspects of antibiotic administration.",
+      "meshTerms": [
+        "Humans",
+        "Anti-Bacterial Agents",
+        "Urinary Tract Infections",
+        "Administration, Oral",
+        "Administration, Intravenous",
+        "Bacteremia",
+        "Gram-Negative Bacterial Infections"
+      ],
+      "keywords": [],
+      "doi": "10.1093/cid/ciaf461",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "idsa"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "idsa",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
+      "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "cUTI 정맥→경구 전환 시점, 입원 실무",
+        "at": "2026-08-25T21:55:10.264Z"
+      }
+    },
+    {
+      "id": "pmid:41920902",
+      "pmid": "41920902",
+      "title": "2025 Clinical Practice Guideline Update by the Infectious Diseases Society of America on the Treatment and Management of COVID-19: Antiviral Treatment for Mild to Moderate COVID-19 in Adults.",
+      "pubDate": "2026 Aug 24",
+      "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
+      "abstract": "This article provides a focused update to the clinical practice guideline on the treatment and management of people with COVID-19, developed by the Infectious Diseases Society of America. The guideline panel presents 9 updated recommendations on the use of nirmatrelvir/ritonavir, remdesivir, and molnupiravir, in adults with mild to moderate COVID-19. The recommendations are based on evidence derived from a systematic literature review and adhere to a standardized methodology for rating the certainty of evidence and strength of recommendation according to the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) approach. The panel also provides a section on how to apply these recommendations, including an algorithm on the selection of antivirals.",
+      "meshTerms": [
+        "Humans",
+        "Antiviral Agents",
+        "COVID-19 Drug Treatment",
+        "Adenosine Monophosphate",
+        "Alanine",
+        "COVID-19",
+        "SARS-CoV-2",
+        "Ritonavir",
+        "Adult",
+        "Proline"
+      ],
+      "keywords": [
+        "COVID-19",
+        "guideline",
+        "molnupiravir",
+        "nirmatrelvir/ritonavir",
+        "remdesivir"
+      ],
+      "doi": "10.1093/cid/ciaf680",
+      "pmcid": "PMC13502200",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "idsa"
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "idsa",
+      "tier": 1,
+      "topicMatched": false,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "성인 경증 COVID 항바이러스제, 응급 처방",
+        "at": "2026-08-25T21:55:10.264Z"
+      }
+    },
+    {
+      "id": "pmid:41920901",
+      "pmid": "41920901",
+      "title": "2025 Clinical Practice Guideline Update by the Infectious Diseases Society of America on the Treatment and Management of COVID-19: Baricitinib vs. Tocilizumab.",
+      "pubDate": "2026 Aug 24",
+      "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
+      "abstract": "This article provides a focused update to the clinical practice guideline on the treatment and management of patients with COVID-19, developed by the Infectious Diseases Society of America. The guideline panel presents a new recommendation on the use of baricitinib vs. tocilizumab in hospitalized adults with severe or critical COVID-19. The panel has previously issued recommendations on baricitinib vs. no baricitinib and tocilizumab vs. no tocilizumab, but this new recommendation compares baricitinib to tocilizumab when the decision has been made to give one or the other. The new recommendation does not address combinations of multiple immunomodulatory agents (ie, baricitinib, tocilizumab, abatacept, infliximab). The recommendation is based on evidence derived from a systematic literature review and adheres to a standardized methodology for rating the certainty of evidence and strength of recommendation according to the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) approach.",
+      "meshTerms": [
+        "Humans",
+        "Antibodies, Monoclonal, Humanized",
+        "Azetidines",
+        "Pyrazoles",
+        "Purines",
+        "Sulfonamides",
+        "COVID-19 Drug Treatment",
+        "SARS-CoV-2",
+        "COVID-19",
+        "Antiviral Agents"
+      ],
+      "keywords": [
+        "COVID-19",
+        "SARS-CoV-2",
+        "baricitinib",
+        "guideline",
+        "tocilizumab"
+      ],
+      "doi": "10.1093/cid/ciaf681",
+      "pmcid": "PMC13502195",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "idsa"
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "idsa",
+      "tier": 1,
+      "topicMatched": false,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "중증 COVID 바리시티닙vs토실리주맙, 중환자",
+        "at": "2026-08-25T21:55:10.264Z"
+      }
+    },
+    {
+      "id": "pmid:41766454",
+      "pmid": "41766454",
+      "title": "IDSA 2025 Guidelines on the Use of Vaccines for the Prevention of Seasonal COVID-19, Influenza, and RSV Infections in Immunocompromised Patients.",
+      "pubDate": "2026 Aug 24",
+      "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
+      "abstract": "Respiratory viruses-including severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2 or COVID-19), respiratory syncytial virus (RSV), and influenza-pose significant risks to immunocompromised patients, who experience attenuated vaccine responses and higher morbidity. To address evolving vaccine recommendations for the 2025-2026 season, the Infectious Diseases Society of America (IDSA), in collaboration with the Vaccine Integrity Project (VIP) and partner organizations, developed rapid guidelines for US-licensed vaccines targeting these viruses. The guideline applies to adults and children with compromised immunity due to hematologic malignancy, solid organ or hematopoietic cell transplantation, autoimmune disease on immunosuppressants, human immunodeficienty virus with severe immunosuppression, and similar conditions. Strong recommendations, supported by moderate certainty evidence, endorse timely administration of age-appropriate COVID-19, RSV, and influenza vaccines, with guidance on optimal timing relative to immunosuppressive therapy and transplantation. Coadministration of these vaccines is considered appropriate. Research gaps remain in immunogenicity, durability, and clinical effectiveness, particularly for patients receiving B-cell-depleting therapies or early post-transplant. Priority areas include defining correlates of protection, optimizing vaccine schedules, evaluating high-dose or adjuvanted formulations, and improving real-world effectiveness and safety data. Equity and access strategies are essential to ensure uptake among vulnerable populations. These guidelines aim to support evidence-based decision-making and highlight the need for harmonized, multi-virus research to inform tailored vaccination strategies for immunocompromised individuals.",
+      "meshTerms": [
+        "Humans",
+        "Immunocompromised Host",
+        "Influenza, Human",
+        "Respiratory Syncytial Virus Infections",
+        "Influenza Vaccines",
+        "COVID-19",
+        "COVID-19 Vaccines",
+        "Child",
+        "Adult",
+        "Vaccination"
+      ],
+      "keywords": [
+        "adults children",
+        "coadministration",
+        "immunocompromised",
+        "vaccination"
+      ],
+      "doi": "10.1093/cid/ciag114",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "idsa"
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "idsa",
+      "tier": 1,
+      "topicMatched": false,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "면역저하자 백신 예방, 침상 판단은 제한적",
+        "at": "2026-08-25T21:55:10.264Z"
+      }
+    },
+    {
+      "id": "pmid:41739597",
+      "pmid": "41739597",
+      "title": "IDSA 2025 Guidelines on the Use of Vaccines for the Prevention of Seasonal COVID-19 Infections in Immunocompromised Patients.",
+      "pubDate": "2026 Aug 24",
+      "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
+      "abstract": "Immunocompromised individuals face elevated risks of severe COVID-19, yet vaccination guidance for these populations continues to evolve. To support evidence-based decision-making for the 2025-2026 respiratory virus season, the Infectious Diseases Society of America (IDSA) convened a multidisciplinary panel to develop rapid guidelines on the use of US-licensed COVID-19 vaccines in adults and children with hematologic malignancies, primary immunodeficiency, autoimmune disease on immunosuppressive therapy, HIV with severe immunosuppression, solid organ transplantation, hematopoietic cell transplantation (HCT), chimeric antigen receptor T-cell therapy (CAR-T), or solid tumor chemotherapy. A systematic evidence review of studies published from June 2024 to July 2025 identified comparative data on vaccine effectiveness and safety. Using the GRADE framework, the panel evaluated 7 observational effectiveness studies and 4 safety-focused studies. Across studies, COVID-19 vaccination was associated with reduced hospitalization (33%-56% effectiveness), critical illness, mortality, and COVID-19-related outpatient or emergency care visits. Serious adverse events were rare, and available evidence did not show consistent increases in exacerbations of underlying immunocompromising conditions. Most studies had short follow-up durations, likely reflecting higher-end estimates of vaccine effectiveness. Given moderate certainty of benefit and low certainty of harm, the panel strongly recommends the 2025-2026 COVID-19 vaccine for all immunocompromised individuals aged ≥6 months, with timing tailored to immunosuppressive therapy, clinical stability, and community transmission levels. Adjunct strategies-including vaccination of household contacts and early antiviral access-remain essential. Research priorities include defining immunologic correlates of protection, evaluating durability, optimizing vaccine timing, and improving real-world effectiveness and safety data.",
+      "meshTerms": [
+        "Humans",
+        "Immunocompromised Host",
+        "COVID-19",
+        "COVID-19 Vaccines",
+        "Vaccine Efficacy",
+        "Seasons",
+        "SARS-CoV-2",
+        "Vaccination",
+        "Child",
+        "Adult"
+      ],
+      "keywords": [
+        "adults",
+        "children",
+        "coadministration",
+        "immunocompromised",
+        "vaccination"
+      ],
+      "doi": "10.1093/cid/ciag115",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "idsa"
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "idsa",
+      "tier": 1,
+      "topicMatched": false,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-25T21:55:07.917Z",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "면역저하자 COVID 백신, 외래 예방 위주",
+        "at": "2026-08-25T21:55:10.264Z"
       }
     }
   ],
@@ -49419,6 +49806,208 @@
         ]
       },
       "publishedAt": "2026-08-25"
+    },
+    {
+      "id": "pmid:41117573",
+      "pmid": "41117573",
+      "title": "European Resuscitation Council Guidelines 2025 Executive Summary.",
+      "pubDate": "2025 Oct",
+      "journal": "Resuscitation",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "The 2025 European Resuscitation Council (ERC) Guidelines present the most up-to-date evidence-based guidelines for the practice of resuscitation across Europe. The ERC Guidelines 2025 are based on evidence produced by the International Liaison Committee on Resuscitation (ILCOR) in the form of systematic reviews, scoping reviews, and evidence updates, published as the ILCOR Consensus on Science with Treatment Recommendations. The certainty of evidence of these ILCOR treatment recommendations was used to issue the ERC Guidelines 2025 Recommendations. In some cases, the ERC made good practice statements when evidence was absent for certain topics. If no ILCOR review was available, the ERC writing groups conducted their own reviews to provide recommendations. The ERC Guidelines 2025 cover the epidemiology of cardiac arrest, the role that systems play in saving lives, adult basic life support, adult advanced life support, resuscitation in special circumstances, post resuscitation care, newborn resuscitation and support of transition of infants at birth, paediatric basic and advanced life support, resuscitation ethics, education for resuscitation, and first aid. These guidelines are a framework of recommendations for the approach to out-of-hospital and in-hospital resuscitation; the implementation is achieved locally taking local legislation and health care regulations into consideration.",
+      "meshTerms": [
+        "Humans",
+        "Europe",
+        "Resuscitation",
+        "Cardiopulmonary Resuscitation",
+        "Heart Arrest",
+        "Out-of-Hospital Cardiac Arrest"
+      ],
+      "keywords": [],
+      "doi": "10.1016/j.resuscitation.2025.110770",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.497786078959717,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.497786078959717,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:51.474Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "ERC 2025 지침 총괄요약, 소생 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-resuscitation-council-executive-summary",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41117573",
+          "title": "European Resuscitation Council Guidelines 2025 Executive Summary.",
+          "journal": "Resuscitation",
+          "pubDate": "2025 Oct",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41117573/",
+          "doi": "10.1016/j.resuscitation.2025.110770"
+        },
+        "org": "European Resuscitation Council (ERC)",
+        "version": "2025",
+        "title_ko": "유럽소생협의회(ERC) 2025 소생 지침 — 요약(Executive Summary)",
+        "scope_ko": "유럽 전역의 병원 밖·병원 내 심정지 소생 전반을 다루는 포괄적 임상진료지침으로, 심정지 역학, 생존을 위한 시스템(Systems Saving Lives), 성인 기본·전문소생술, 특수상황 소생, 소생 후 치료, 신생아 소생 및 출생 이행 지원, 소아 기본·전문소생술, 소생 윤리, 소생 교육, 응급처치(first aid)를 포괄한다. ILCOR의 체계적·범위 문헌고찰 근거(CoSTR)에 기반하며, 근거가 없는 영역은 ERC의 good practice statement로 제시한다.",
+        "summary": [
+          "Adult BLS: for any unresponsive person, alert emergency services before completing a breathing assessment, then give chest compressions 5–6 cm deep at 100–120/min; dispatchers should guide callers through CPR and AED use and coordinate first-responder/AED-registry systems.",
+          "Adult ALS: prioritize effective ventilation with high-quality compressions, correct defibrillation pad placement, early defibrillation, rapid identification and treatment of reversible causes, and adrenaline in non-shockable rhythms; screen for cardiovascular risk factors, inherited conditions, and warning symptoms, especially in younger patients.",
+          "Extracorporeal CPR (ECPR): may be considered in specialist centres when conventional CPR fails, particularly for refractory arrest due to hypothermia, thrombosis, or toxins.",
+          "CPR-induced consciousness is explicitly addressed and should be managed with sedation and analgesia during ongoing resuscitation.",
+          "Post-resuscitation haemodynamics: target systolic BP >100 mmHg or MAP ~60–65 mmHg after ROSC.",
+          "Post-resuscitation temperature: actively prevent fever, keeping core temperature ≤37.5°C with temperature control maintained for 36–72 h.",
+          "Neuroprognostication: use a multimodal assessment (clinical exam, EEG, biomarkers, imaging) no earlier than ≥72 h post-ROSC, and keep withdrawal of life-sustaining therapy decisions separate from prognostication.",
+          "Newborn resuscitation: base assessment on heart rate, breathing, tone, and response to stimulation rather than skin colour; sodium bicarbonate is no longer recommended and adrenaline is repeated every ~4 min."
+        ],
+        "summary_ko": [
+          "성인 BLS: 반응 없는 사람에게는 호흡 평가를 끝내기 전에 먼저 응급의료체계(구급)에 연락하고, 5–6 cm 깊이·분당 100–120회로 가슴압박을 시행한다. 상황실 접수자(dispatcher)는 전화로 CPR·AED 사용을 안내하고 최초반응자/AED 등록망과 연계한다.",
+          "성인 ALS: 효과적 환기와 고품질 압박, 올바른 제세동 패드 위치, 조기 제세동, 가역적 원인의 신속한 파악·교정, 비제세동 리듬에서의 아드레날린 투여를 강조한다. 특히 젊은 환자에서 심혈관 위험인자·유전질환·경고 증상을 선별한다.",
+          "체외순환 CPR(ECPR): 통상적 CPR이 실패하는 불응성 심정지, 특히 저체온·혈전·중독에서 전문센터에서 고려할 수 있다.",
+          "CPR로 유발된 의식(CPR-induced consciousness)을 명시적으로 다루며, 소생 진행 중 진정·진통으로 관리한다.",
+          "소생 후 혈역학: ROSC 후 수축기혈압 >100 mmHg 또는 MAP 약 60–65 mmHg를 목표로 한다.",
+          "소생 후 체온: 발열을 적극 예방하여 심부체온 ≤37.5°C를 유지하고, 체온 조절을 36–72시간 유지한다.",
+          "신경학적 예후 예측: 임상진찰·EEG·바이오마커·영상을 종합한 다중모달 평가를 ROSC 후 ≥72시간 이전에는 시행하지 않으며, 연명치료 중단 결정은 예후 예측과 분리한다.",
+          "신생아 소생: 피부색보다 심박수·호흡·긴장도·자극반응을 기준으로 평가한다. 중탄산나트륨(sodium bicarbonate)은 더 이상 권고되지 않고, 아드레날린은 약 4분마다 반복한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "심정지 인지·BLS 흐름",
+            "detail": "Recognition is streamlined: rescuers are told to alert emergency services for ANY unresponsive person BEFORE completing the breathing assessment, rather than assessing breathing first and then calling. Compression targets are reaffirmed at 5–6 cm depth and 100–120/min, with expanded dispatcher-assisted CPR and AED guidance and integration with volunteer first-responder systems and AED registries.",
+            "detail_ko": "인지 절차가 간소화됐다: 호흡 평가를 먼저 끝내고 신고하던 방식 대신, 반응이 없는 사람이면 호흡 평가를 완료하기 전에 먼저 응급의료체계에 연락하도록 바뀌었다. 가슴압박은 5–6 cm 깊이·분당 100–120회를 재확인했고, 상황실 접수자의 CPR·AED 전화 안내와 자원봉사 최초반응자 시스템·AED 등록망 연계를 확대했다."
+          },
+          {
+            "topic": "성인 ALS 강조점",
+            "detail": "Increased emphasis on effective ventilation together with high-quality compressions and on CORRECT defibrillation pad placement (vs prior less-detailed guidance), plus rapid identification/treatment of reversible causes and adrenaline for non-shockable rhythms. New emphasis on identifying cardiovascular risk factors, inherited conditions, and early warning symptoms — especially in younger patients — to prevent arrest.",
+            "detail_ko": "고품질 압박과 함께 효과적 환기, 그리고 '올바른' 제세동 패드 위치를 더 강조했고(이전보다 구체화), 가역적 원인의 신속한 파악·교정과 비제세동 리듬에서의 아드레날린을 강조한다. 특히 젊은 환자에서 심혈관 위험인자·유전질환·조기 경고 증상을 파악해 심정지를 예방하도록 새로 강조했다."
+          },
+          {
+            "topic": "체외순환 CPR(ECPR)",
+            "detail": "ECPR is newly positioned as an option that 'may be considered in specialist centres when conventional CPR fails,' particularly for selected refractory arrests (e.g., hypothermia, thrombosis, toxins), reflecting emerging evidence for refractory arrest pathways.",
+            "detail_ko": "ECPR을 '통상 CPR이 실패할 때 전문센터에서 고려 가능한' 선택지로 새로 위치시켰고, 특히 선별된 불응성 심정지(저체온·혈전·중독 등)에서의 활용을 반영했다."
+          },
+          {
+            "topic": "CPR 유발 의식",
+            "detail": "CPR-induced consciousness is addressed as a distinct clinical topic for the first time, with a recommendation to manage it using sedation and analgesia during ongoing resuscitation.",
+            "detail_ko": "CPR로 유발된 의식(CPR-induced consciousness)을 처음으로 독립된 임상 주제로 다루며, 소생 진행 중 진정·진통으로 관리하도록 권고했다."
+          },
+          {
+            "topic": "소생 후 혈압 목표",
+            "detail": "Post-ROSC haemodynamic target is specified as systolic BP >100 mmHg or MAP ~60–65 mmHg.",
+            "detail_ko": "ROSC 후 혈역학 목표를 수축기혈압 >100 mmHg 또는 MAP 약 60–65 mmHg로 구체화했다."
+          },
+          {
+            "topic": "소생 후 체온 관리(발열 예방)",
+            "detail": "Temperature management is framed as active fever prevention — keep core temperature ≤37.5°C with temperature control maintained for 36–72 h — rather than mandating deep targeted hypothermia.",
+            "detail_ko": "체온 관리를 심부 목표저체온 강제가 아니라 적극적 발열 예방으로 정리했다 — 심부체온 ≤37.5°C 유지, 체온 조절을 36–72시간 유지."
+          },
+          {
+            "topic": "소생 후 발작·신경보호제",
+            "detail": "For post-arrest seizures, levetiracetam or sodium valproate are recommended agents; neuroprotective drugs are NOT routinely recommended.",
+            "detail_ko": "심정지 후 발작에는 levetiracetam 또는 sodium valproate를 권고 약제로 제시했고, 신경보호제는 일상적으로 권고하지 않는다."
+          },
+          {
+            "topic": "신경학적 예후 예측",
+            "detail": "Prognostication should be multimodal (clinical exam + EEG + biomarkers + imaging) performed no earlier than ≥72 h post-ROSC, and withdrawal of life-sustaining therapy MUST be separated from prognostication.",
+            "detail_ko": "예후 예측은 다중모달(임상진찰+EEG+바이오마커+영상)로 ROSC 후 ≥72시간 이전에는 시행하지 않으며, 연명치료 중단은 예후 예측과 반드시 분리해야 한다."
+          },
+          {
+            "topic": "신생아 소생 — 피부색 평가",
+            "detail": "Skin colour is de-emphasized in newborn assessment because it is subjective and unreliable across different skin tones; assessment prioritizes heart rate, breathing, tone, and response to stimulation instead.",
+            "detail_ko": "신생아 평가에서 피부색은 주관적이고 서로 다른 피부톤에서 신뢰도가 낮아 비중을 낮췄고, 대신 심박수·호흡·긴장도·자극반응을 우선한다."
+          },
+          {
+            "topic": "신생아 소생 — 기도·약물",
+            "detail": "New airway guidance (two-person jaw thrust, earlier supraglottic airway use, video laryngoscopy where available); adrenaline repeated every ~4 min at standardized intervals; sodium bicarbonate is NO LONGER recommended; and out-of-hospital newborn life support (home births, unexpected out-of-hospital births, ambulance care) is now explicitly covered.",
+            "detail_ko": "새 기도 관리(2인 하악거상, 성문상기도 조기 사용, 가능 시 비디오후두경)를 제시했고, 아드레날린은 약 4분 간격으로 반복하며, 중탄산나트륨은 더 이상 권고하지 않는다. 병원 밖 신생아 소생(가정분만·예기치 못한 원외 출산·구급차 이송)을 명시적으로 포함했다."
+          },
+          {
+            "topic": "소아 소생 구성 개편",
+            "detail": "A new chapter on special circumstances in paediatric resuscitation is added, and a dedicated section on post-resuscitation care tailored to children is introduced.",
+            "detail_ko": "소아 소생의 '특수상황' 챕터가 새로 추가됐고, 소아 맞춤형 소생 후 치료 전용 섹션이 신설됐다."
+          },
+          {
+            "topic": "윤리·가족 입회·사전돌봄계획",
+            "detail": "Emphasis on clear, cross-setting documentation (e.g., ReSPECT-type forms) integrating resuscitation decisions with emergency care/treatment plans; families should be OFFERED the option to be present during resuscitation with support; ethical training including simulation should be embedded in education.",
+            "detail_ko": "소생 결정을 응급치료계획과 통합하고 여러 진료현장에서 접근 가능한 명확한 문서화(예: ReSPECT형 양식)를 강조한다. 가족에게는 지지와 함께 소생 현장 입회 선택권을 제공해야 하며, 시뮬레이션을 포함한 윤리 교육을 교육과정에 내재화한다."
+          },
+          {
+            "topic": "교육 — 조기 교육·방법",
+            "detail": "Resuscitation training should start in early childhood (age ~4–6) and continue annually in schools; methods now include gamified learning, real-time feedback devices, Rapid Cycle Deliberate Practice, and stepwise/flexible approaches; ambulance call handlers should be trained in cardiac arrest recognition and telephone-assisted CPR.",
+            "detail_ko": "소생 교육을 유아기(약 4–6세)부터 시작해 학교에서 매년 지속하도록 했고, 게임화 학습·실시간 피드백 장치·Rapid Cycle Deliberate Practice·단계적/유연한 접근을 포함한다. 구급 상황실 접수자는 심정지 인지와 전화 안내 CPR 교육을 받아야 한다."
+          },
+          {
+            "topic": "응급처치(First Aid) — 신설 챕터",
+            "detail": "A brand-new First Aid chapter is introduced, covering choking, life-threatening bleeding, drowning, chest pain, asthma, anaphylaxis, hypoglycaemia, opioid overdose, stroke, trauma, and environmental scenarios (heat stroke, hypothermia, snake bite, concussion), with a requirement that courses be inclusive and adapted to low-resource/rural settings.",
+            "detail_ko": "응급처치(First Aid) 챕터가 신설됐다 — 기도폐쇄(질식), 생명을 위협하는 출혈, 익수, 흉통, 천식, 아나필락시스, 저혈당, 오피오이드 과량, 뇌졸중, 외상, 그리고 환경 상황(열사병·저체온·뱀물림·뇌진탕)을 다루며, 교육과정을 포용적이고 저자원·농촌 환경에 맞추도록 요구한다."
+          },
+          {
+            "topic": "시스템·생존자 돌봄",
+            "detail": "Systems chapter expands with mandatory CPR training for schoolchildren, students, and drivers; first-responder systems linked to AED registries; regional networks for post-arrest care; and comprehensive survivorship care supporting patients and co-survivors from discharge through long-term recovery.",
+            "detail_ko": "시스템 챕터가 확장돼 학생·수강생·운전자에 대한 CPR 교육 의무화, AED 등록망과 연계된 최초반응자 체계, 소생 후 치료를 위한 지역 네트워크, 퇴원부터 장기 회복까지 환자와 공동생존자를 지원하는 포괄적 생존자 돌봄을 담았다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, EM/CCM teams should call for help and start compressions on any unresponsive patient without waiting to fully characterize breathing, and drill correct defibrillation pad placement and effective ventilation as quality metrics. Post-ROSC bundles should target SBP >100 mmHg or MAP ~60–65 mmHg, actively prevent fever (≤37.5°C for 36–72 h), reserve neuroprognostication for ≥72 h using multimodal data, and keep prognostication decoupled from withdrawal decisions. Recognize and treat CPR-induced consciousness with sedation/analgesia, and establish ECPR referral pathways for refractory arrest (hypothermia, thrombosis, toxins) at capable centres. Neonatal and paediatric teams should drop skin-colour-based assessment, stop giving sodium bicarbonate in newborns, and adopt the new paediatric special-circumstances and post-resuscitation care structures.",
+        "practiceImpact_ko": "현장에서 EM/CCM 팀은 반응 없는 환자에게 호흡을 완전히 규명하기 전에 도움을 요청하고 압박을 시작해야 하며, 올바른 제세동 패드 위치와 효과적 환기를 질 지표로 훈련해야 한다. 소생 후 번들은 수축기혈압 >100 mmHg 또는 MAP 약 60–65 mmHg를 목표로, 발열을 적극 예방(≤37.5°C, 36–72시간)하고, 신경예후 예측은 ROSC 후 ≥72시간에 다중모달로 시행하며 연명치료 중단 결정과 분리한다. CPR 유발 의식은 진정·진통으로 관리하고, 불응성 심정지(저체온·혈전·중독)에 대한 ECPR 의뢰 경로를 역량 있는 센터와 구축한다. 신생아·소아 팀은 피부색 기반 평가를 버리고 신생아에서 중탄산나트륨 투여를 중단하며, 새 소아 특수상황·소생 후 치료 구조를 도입한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41117573",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41117573/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110770",
+            "url": "https://doi.org/10.1016/j.resuscitation.2025.110770"
+          },
+          {
+            "label": "웹 — Resuscitation Council UK — Executive summary of the main changes since the 2021 Guidelines (opened, full content read)",
+            "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/executive-summary-main-changes-2021-guidelines"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-26"
     }
   ],
   "rejected": [
@@ -49453,7 +50042,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -53340,7 +53929,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -53733,7 +54322,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -54359,7 +54948,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -54394,7 +54983,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54424,7 +55013,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54445,7 +55034,7 @@
       "id": "pmid:42535264",
       "pmid": "42535264",
       "title": "Response to Request for Modification of the 2026 AHA/ASA Acute Ischemic Stroke Guidelines: Endovascular Thrombectomy Imaging Selection in the 6- to 24-Hour Window.",
-      "pubDate": "2026 Jul 31",
+      "pubDate": "2026 Sep",
       "journal": "Stroke",
       "publicationTypes": [
         "Journal Article",
@@ -54454,7 +55043,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -54490,7 +55079,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54520,7 +55109,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -54549,7 +55138,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-24T21:55:24.383Z",
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -54571,6 +55160,46 @@
       "status": "rejected",
       "verdict": "rejected",
       "documentType": "recommendations",
+      "reasons": [
+        "commentary-or-evaluation"
+      ]
+    },
+    {
+      "id": "pmid:42636820",
+      "pmid": "42636820",
+      "title": "[Lipid-lowering therapy in transition: implications of the ESC/EAS focused update].",
+      "pubDate": "2026 Aug",
+      "journal": "Deutsche medizinische Wochenschrift (1946)",
+      "publicationTypes": [
+        "Journal Article",
+        "Review",
+        "English Abstract"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-25T21:54:56.360Z",
+      "abstract": "In 2025, the focused update of the ESC/EAS guidelines on dyslipidemia management introduced clinically relevant refinements in cardiovascular risk stratification and lipid-lowering therapy. The updated recommendations emphasize the integration of additional risk modifiers, including comorbidities, biomarkers and imaging findings, enabling a more individualized assessment of cardiovascular risk. In patients with acute coronary syndrome, the updated guidance highlights the importance of rapid and intensive LDL cholesterol reduction during the index hospitalization, including prompt initiation of high-intensity statin therapy and early combination treatment to facilitate target achievement. Recent evidence further supports early intensive LDL cholesterol lowering, with outcome data for bempedoic acid and PCSK9 inhibitors extending the role of LDL cholesterol lowering beyond secondary prevention. At the same time, emerging evidence on statin safety indicates that a substantial proportion of commonly reported adverse effects are not causally related to statin therapy, underscoring the relevance of patient education and structured communication to improve adherence. Beyond LDL cholesterol, other lipid fractions have gained increasing clinical relevance. Lipoprotein(a) has emerged as an important genetically determined cardiovascular risk factor, and several therapies capable of markedly reducing lipoprotein(a) levels are currently being evaluated in large, randomized outcome trials. In hypertriglyceridemia, conventional therapies have shown limited benefit regarding cardiovascular outcomes. Novel targeted approaches, particularly therapies directed against apolipoprotein C-III, therefore represent promising future treatment strategies. Overall, recent developments highlight a shift toward earlier, more intensive, and more individualized lipid-lowering strategies, with emerging therapies likely to further expand cardiovascular prevention in the coming years.",
+      "meshTerms": [
+        "Humans",
+        "Dyslipidemias",
+        "Hypolipidemic Agents",
+        "Cholesterol, LDL",
+        "Hydroxymethylglutaryl-CoA Reductase Inhibitors",
+        "Cardiovascular Diseases",
+        "Practice Guidelines as Topic",
+        "Acute Coronary Syndrome",
+        "PCSK9 Inhibitors",
+        "Heart Disease Risk Factors"
+      ],
+      "keywords": [],
+      "doi": "10.1055/a-2676-2694",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "focused-update",
       "reasons": [
         "commentary-or-evaluation"
       ]
@@ -54626,9 +55255,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260825_065330:guideline:2026-08-25",
+    "runId": "trend_review_20260826_065308:guideline:2026-08-26",
     "outcome": "published",
-    "publishedId": "pmid:41117574",
+    "publishedId": "pmid:41117573",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -54637,8 +55266,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -54653,15 +55282,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 138,
-        "overlapCount": 2,
-        "ptOnlyCount": 0,
-        "expandedOnlyCount": 6,
+        "mergedTotal": 150,
+        "overlapCount": 1,
+        "ptOnlyCount": 2,
+        "expandedOnlyCount": 7,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/26",
-          "maxDate": "2026/08/25"
+          "minDate": "2026/07/27",
+          "maxDate": "2026/08/26"
         },
         "retmax": 60,
         "topics": [
@@ -54669,8 +55298,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 51,
-            "idsFetched": 51,
+            "totalFound": 53,
+            "idsFetched": 53,
             "truncated": false,
             "error": null
           },
@@ -54678,8 +55307,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -54696,8 +55325,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 9,
-            "idsFetched": 9,
+            "totalFound": 16,
+            "idsFetched": 16,
             "truncated": false,
             "error": null
           },
@@ -54723,8 +55352,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 10,
-            "idsFetched": 10,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           },
@@ -54741,8 +55370,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           },
@@ -54750,8 +55379,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -54765,17 +55394,18 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 130,
+        "topicOnlyCount": 140,
         "ptPmids": [
-          "42522393",
-          "42087034"
+          "42087034",
+          "41419448",
+          "41414903"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 138,
-          "enriched": 138,
-          "withAbstract": 104,
+          "requested": 150,
+          "enriched": 150,
+          "withAbstract": 115,
           "error": null
         }
       },
@@ -54828,23 +55458,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 6,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 225,
-        "needsReview": 441,
-        "rejected": 121,
+        "queued": 227,
+        "needsReview": 444,
+        "rejected": 122,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41117574",
+        "candidateId": "pmid:41117573",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-24T21:58:22.436Z",
+  "updatedAt": "2026-08-25T22:03:12.109Z",
   "configVersion": "guideline-v2"
 }

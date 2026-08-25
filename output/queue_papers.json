@@ -3,15 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42092447",
-      "title": "A randomised controlled trial of defibrillation with manual pressure augmentation during out-of-hospital cardiac arrest.",
-      "journal": "Resuscitation",
-      "score": 9.2,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-17"
-    },
-    {
       "pmid": "42145111",
       "title": "Resuscitation From Out-of-Hospital Cardiac Arrest: When Is EtCO Reliably Associated With ROSC?",
       "journal": "Circulation",
@@ -109,6 +100,16 @@
       "lowConfidence": false,
       "addedAt": "2026-08-17",
       "publishedAt": "2026-08-25"
+    },
+    {
+      "pmid": "42092447",
+      "title": "A randomised controlled trial of defibrillation with manual pressure augmentation during out-of-hospital cardiac arrest.",
+      "journal": "Resuscitation",
+      "score": 9.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-17",
+      "publishedAt": "2026-08-26"
     }
   ],
   "rejected": [
@@ -124,9 +125,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "outcome": "published",
-    "publishedId": "41856454"
+    "publishedId": "42092447"
   },
-  "updatedAt": "2026-08-25"
+  "updatedAt": "2026-08-26"
 }

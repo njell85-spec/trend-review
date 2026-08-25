@@ -105,23 +105,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "36640801",
-      "title": "Acute aortic dissection.",
-      "journal": "Lancet",
-      "score": 8.6,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "급성 대동맥박리, 응급 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40668153",
       "title": "Assessment of Tissue Perfusion Pressure in Patients With Septic Shock: Beyond Mean Arterial Pressure.",
       "journal": "Crit Care Med",
@@ -7472,6 +7455,136 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "36640801",
+      "title": "Acute aortic dissection.",
+      "journal": "Lancet",
+      "score": 8.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 대동맥박리, 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-08-26",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "36640801",
+          "title": "Acute aortic dissection.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2023-1-15",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36640801/",
+          "doi": "10.1016/S0140-6736(22)01970-5"
+        },
+        "title_ko": "급성 대동맥박리",
+        "scope_ko": "가장 중증의 급성 대동맥증후군인 급성 대동맥박리의 예방·진단·치료를 임상 관점에서 개괄하는 Lancet Seminar 종설로, 지난 10년간의 병태생리 이해 진전과 분류 체계의 재편, 그리고 수술·혈관내치료·최적 약물치료 사이의 치료 결정 원칙을 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "질병 부담과 종설의 목적",
+            "body_ko": "급성 대동맥박리는 예방·진단·치료에서 상당한 진전이 있었음에도 여전히 복잡한 심혈관 사건으로 남아 있으며, 즉각적 사망률이 높고 급성기를 넘겨 생존한 환자에게도 상당한 이환을 남긴다. 이 Seminar는 가장 중증의 급성 대동맥증후군인 급성 대동맥박리의 예방 가능성, 진단, 관리에 대해 임상적으로 유의미한 개괄을 제공하는 것을 목적으로 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "병태생리 이해의 진전과 분류 체계의 재편",
+            "body_ko": "지난 10년 동안 이 질환의 병태생리에 대한 이해가 크게 도약하였다. 기존의 분류 체계들이 도전을 받고 있으며, 학계는 형태(morphology)와 기능(function)에 따라 현재의 정의들을 통합할 가능성이 높은 명명법(nomenclature)으로 나아가고 있다.\n\n급성 대동맥박리의 관리와 추적관찰에 대한 과학적 근거는 계속 진화하고 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료 방향을 결정하는 핵심 병태생리 인자",
+            "body_ko": "가장 중요한 병태생리 경로는 초기 내막 파열(initial intimal tear)의 위치와 확장 범위이며, 이것이 대동맥벽 중막층(media layer)의 파괴를 일으킨다. 이 초기 내막 파열의 위치·확장 범위와 함께 침범된 대동맥 분절의 크기가, 환자가 응급수술을 받아야 하는지, 혈관내중재(endovascular intervention)를 받아야 하는지, 또는 최적 약물치료(optimal medical treatment)를 받아야 하는지를 결정한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 정의와 분류 — Stanford 및 non-A non-B",
+            "body_ko": "대동맥박리는 대동맥 내막층의 찢김으로 내막과 중막이 외막으로부터 분리되어, 기존의 진강(true lumen)에 더해 거짓강(false lumen)이 형성되는 급성 질환으로 정의된다.\n\nStanford 분류는 상행대동맥을 침범한 경우를 A형, 하행대동맥에만 국한된 경우를 B형으로 구분한다. 여기에 대동맥궁은 침범하되 상행대동맥은 침범하지 않은 경우를 가리키는 'non-A non-B'가 보완적으로 추가되었다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] 유형별 합병증",
+            "body_ko": "A형 합병증에는 판막 탈출을 동반한 대동맥판 역류, 관상동맥 폐색, 심낭삼출이 포함된다. B형 합병증에는 척수·소화관·신장·사지의 관류저하(malperfusion), 흉막삼출, 파열, 대동맥 직경 >40 mm, 또는 지속되는 통증이 포함된다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] 내과적 관리 — 혈압·심박수 목표",
+            "body_ko": "급성기 치료에는 심박수 감소를 목표로 하는 정맥 베타차단제가 필요하며, 수축기 혈압은 100–120 mmHg를 목표로 한다. 만성기 관리에서는 혈압을 <140/90 mmHg로 유지하고, 금연, 중등도 활동, 건강한 식이를 병행한다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] TEM 분류 체계",
+            "body_ko": "이 종설이 소개하는 TEM 분류는 A형 박리를 세 축으로 범주화한다: Type(Stanford 분류), Entry(내막 진입부 위치, 0–3 척도), Malperfusion(관류저하 상태, 0–3 척도에 +/− 표기 병용). 이는 형태와 기능에 근거해 정의를 통합하려는 흐름의 구체적 예이다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] 수술 전략",
+            "body_ko": "A형 박리는 개흉 수술을 요한다. 대부분의 TEM A E1 M0 증례는 상행대동맥 치환술로 충분히 이득을 얻는 반면, TEM A E2 M3+ 증례는 대개 hybrid frozen elephant trunk 기법을 이용한 대동맥궁 치환술을 필요로 한다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] 수술 사망 위험 평가",
+            "body_ko": "30일 수술 사망률은 여러 인자를 반영하는 점수화에 따라 달라진다: 연령, 성별, 소생술 여부, 이전 심장수술 병력, 기관삽관 필요, 카테콜아민 사용, 대동맥판 역류, 관류저하, 신경학적 상태, 박리의 확장 범위 등.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] non-A non-B형의 관리",
+            "body_ko": "응급 중재의 필요성은 여전히 논란이 있으며 보편적으로 권고되지 않는다. 소만곡부(lesser curvature)의 진입부 파열은 역행성 진행 위험이 더 높다. TEVAR는 상당한 역행성 A형 박리 위험을 동반하므로 TEM non-A non-B E2 증례에서는 피해야 한다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] B형 박리의 치료",
+            "body_ko": "많은 환자가 약물치료 단독으로 관리되지만, TEVAR가 더 우수한 대동맥 재형성(aortic remodeling) 결과를 제공할 수 있다는 근거가 대두되고 있다. 진행 위험인자에는 소만곡부 또는 쇄골하동맥 부근의 근위부 교통, 교통부 크기가 큰 경우, 하행대동맥 >40 mm, 또는 거짓강 >22 mm가 포함된다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          },
+          {
+            "heading_ko": "[웹 보강] 신흥 바이오마커",
+            "body_ko": "진단 및 예후 판정에 활용될 수 있는 잠재적 표지자로 cardiac troponin I, D-dimer, Aggrecan, ST2(interleukin-1 수용체 계열)가 제시되며, 이들은 진단을 앞당기고 만성 박리에서 결과를 예측하는 데 도움이 될 수 있다.\n— 보강 출처: ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023) (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection)",
+            "origin": "augmented",
+            "sourceLabel": "ACC Ten Points to Remember (Bach DS, review of Carrel et al Lancet 2023)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 초기 내막 파열의 위치·확장 범위와 침범 분절 크기가 응급수술/혈관내치료/약물치료를 가르는 핵심 축임을 재확인하게 한다. 급성기에는 정맥 베타차단제로 심박수를 낮추고 수축기 혈압을 100–120 mmHg로 조절하며, 상행대동맥 침범(A형)은 응급 개흉수술 대상, non-A non-B와 B형은 진입부 위치·거짓강/대동맥 직경 등 위험인자에 따라 개별화한다. 다만 이 세부 수치·전략은 보강 출처(ACC 리뷰)에서 온 것으로, 원문 본문을 직접 확보하지 못했으므로 실제 임상 적용 전 원문 확인이 필요하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 36640801",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36640801/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(22)01970-5",
+            "url": "https://doi.org/10.1016/S0140-6736(22)01970-5"
+          },
+          {
+            "label": "웹 — ACC Ten Points to Remember — Acute Aortic Dissection (review of Carrel et al, Lancet 2023)",
+            "url": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/01/03/20/08/acute-aortic-dissection"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -7529,9 +7642,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "outcome": "published",
-    "publishedId": "41951238"
+    "publishedId": "36640801"
   },
-  "updatedAt": "2026-08-25"
+  "updatedAt": "2026-08-26"
 }
