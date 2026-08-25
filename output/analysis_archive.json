@@ -1184,6 +1184,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-26",
+      "pmid": "42092447",
+      "title": "A randomised controlled trial of defibrillation with manual pressure augmentation during out-of-hospital cardiac arrest.",
+      "title_ko": "병원 밖 심정지에서 수동 압박 증강(manual pressure augmentation)을 이용한 제세동에 관한 무작위 대조 시험",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111121",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "초기 제세동 가능 리듬(shockable rhythm)의 병원 밖 심정지(OHCA) 성인에서, 수동 압박 증강(MPA)을 이용한 제세동이 표준 제세동에 비해 경흉 임피던스(transthoracic impedance)를 줄이고 심율동전환(cardioversion) 및 생존을 개선하는가?",
+      "pico": {
+        "population": "[Australia] Adults (≥18 years) with out-of-hospital cardiac arrest (OHCA) and a shockable rhythm receiving an attempted resuscitation, across 216 ambulance stations in Victoria, Australia (April 1, 2022–January 31, 2023); ITT population 560 patients (intervention n=279; control n=281).",
+        "intervention": "Defibrillation with manual pressure augmentation (MPA) applied during shock delivery using a choreographed sequence and safety protocols; all shocks biphasic at 200 J with anterior-lateral pad position.",
+        "comparison": "Control clusters performed standard defibrillation; all shocks biphasic at 200 J with anterior-lateral pad position.",
+        "outcome": "Primary outcome survival to hospital discharge: 39.8% (111/279) intervention vs 39.9% (112/281) control (absolute risk difference [AR] -0.1% [95% CI -8.2%, 8.0%]; adjusted odds ratio [AOR] 1.00 [95% CI 0.71, 1.40]; p = 0.99)."
+      },
+      "pico_ko": {
+        "population": "[호주] 병원 밖 심정지(OHCA)이면서 제세동 가능 리듬(shockable rhythm)으로 소생술이 시도된 성인(≥18세), 호주 Victoria주 216개 구급대 스테이션(2022년 4월 1일–2023년 1월 31일); ITT 대상 560명(중재군 n=279, 대조군 n=281).",
+        "intervention": "쇼크 전달 동안 정해진 안무식 순서(choreographed sequence)와 안전 프로토콜을 사용해 적용한 수동 압박 증강(MPA) 제세동; 모든 쇼크는 이상성(biphasic) 200 J, 전측방(anterior-lateral) 패드 위치.",
+        "comparison": "대조군 클러스터는 표준 제세동 시행; 모든 쇼크는 이상성 200 J, 전측방 패드 위치.",
+        "outcome": "일차 결과인 퇴원 생존율: 중재군 39.8%(111/279) vs 대조군 39.9%(112/281) (절대위험차[AR] -0.1% [95% CI -8.2%, 8.0%]; 보정 오즈비[AOR] 1.00 [95% CI 0.71, 1.40]; p = 0.99)."
+      },
+      "keyFindings": [
+        "MPA did not improve the primary outcome of survival to hospital discharge: 39.8% (111/279) intervention vs 39.9% (112/281) control (AR -0.1% [95% CI -8.2%, 8.0%]; AOR 1.00 [95% CI 0.71, 1.40]; p = 0.99).",
+        "MPA significantly reduced transthoracic impedance (AR -8.5 Ω [95% CI -12.9, -4.1]; p < 0.001; per-protocol AR -15.0 Ω [95% CI -22.8, -7.2]; p < 0.001), but 12-month survival, favourable neurologic outcome, and quality of life were similar.",
+        "Compliance with MPA was low (23.6%), the trial was prematurely terminated due to external safety reviews and operational delays, and perceptible shocks were rare and comparable (0.75 vs 0.71 per 1000 shocks) with no serious injuries."
+      ],
+      "keyFindings_ko": [
+        "MPA는 일차 결과인 퇴원 생존율을 개선하지 못했다: 중재군 39.8%(111/279) vs 대조군 39.9%(112/281) (AR -0.1% [95% CI -8.2%, 8.0%]; AOR 1.00 [95% CI 0.71, 1.40]; p = 0.99).",
+        "MPA는 경흉 임피던스를 유의하게 감소시켰으나(AR -8.5 Ω [95% CI -12.9, -4.1]; p < 0.001; per-protocol AR -15.0 Ω [95% CI -22.8, -7.2]; p < 0.001), 12개월 생존·양호한 신경학적 결과·삶의 질은 유사했다.",
+        "MPA 순응도는 낮았고(23.6%), 시험은 외부 안전 검토와 운영 지연으로 조기 종료되었으며, 감지 가능한 쇼크는 드물고 유사했고(1000회당 0.75 vs 0.71) 중대한 부상은 없었다."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42092447",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42092447/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111121",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111121"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42092447)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42092447/"
+        },
+        {
+          "label": "웹 — NCBI E-utilities efetch (PMID 42092447, abstract)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42092447&rettype=abstract&retmode=text"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 42092447)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42092447/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "NCBI E-utilities efetch (PMID 42092447, abstract)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42092447&rettype=abstract&retmode=text",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
