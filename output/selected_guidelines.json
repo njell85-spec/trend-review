@@ -45880,89 +45880,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:42299758",
-      "pmid": "42299758",
-      "title": "American Heart Association 2025 Guidelines: Basic life support, advanced cardiovascular life support, pediatric advanced life support, and neonatal resuscitation.",
-      "pubDate": "2026 Jul 1",
-      "journal": "Nursing",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:48.357Z",
-      "abstract": "The American Heart Association (AHA) regularly updates its evidence-based practice recommendations for basic life support, advanced cardiovascular life support, pediatric life support, and neonatal life support. This article reviews the latest AHA guidelines, which were released in October 2025, highlights important changes, and demonstrates how nurses can incorporate these changes into their practice. Examples of new practice recommendations include back blows and abdominal thrusts in the management of severe foreign body obstruction in the conscious adult, use of the two thumbs encircling approach or heel of one hand when providing infant chest compressions, and the administration of an initial 200 Joule synchronized shock in the unstable patient with atrial fibrillation.",
-      "meshTerms": [
-        "Humans",
-        "American Heart Association",
-        "United States",
-        "Infant, Newborn",
-        "Advanced Cardiac Life Support",
-        "Practice Guidelines as Topic",
-        "Life Support Care",
-        "Cardiopulmonary Resuscitation"
-      ],
-      "keywords": [
-        "ACLS",
-        "AHA",
-        "American Heart Association",
-        "BLS",
-        "ECC",
-        "NRP",
-        "PALS",
-        "advanced cardiovascular life support",
-        "basic life support",
-        "emergency cardiovascular care",
-        "neonatal advanced life support",
-        "pediatric advanced life support"
-      ],
-      "doi": "10.1097/NSG.0000000000000396",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "aha"
-      },
-      "priority": 12,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "AHA 2025 BLS/ACLS 소생 지침—응급·소생 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|basic-life-support-advanced-cardiovascular-life-support-pediatric-advanced-life-support-neonatal-resuscitation",
-      "supersedes": []
-    },
-    {
       "id": "pmid:42373444",
       "pmid": "42373444",
       "title": "[Interpretation and reflections on the 2025 American Academy of Sleep Medicine clinical practice guideline for the treatment of central sleep apnea in adults].",
@@ -55203,6 +55120,90 @@
       "reasons": [
         "commentary-or-evaluation"
       ]
+    },
+    {
+      "id": "pmid:42299758",
+      "pmid": "42299758",
+      "title": "American Heart Association 2025 Guidelines: Basic life support, advanced cardiovascular life support, pediatric advanced life support, and neonatal resuscitation.",
+      "pubDate": "2026 Jul 1",
+      "journal": "Nursing",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:48.357Z",
+      "abstract": "The American Heart Association (AHA) regularly updates its evidence-based practice recommendations for basic life support, advanced cardiovascular life support, pediatric life support, and neonatal life support. This article reviews the latest AHA guidelines, which were released in October 2025, highlights important changes, and demonstrates how nurses can incorporate these changes into their practice. Examples of new practice recommendations include back blows and abdominal thrusts in the management of severe foreign body obstruction in the conscious adult, use of the two thumbs encircling approach or heel of one hand when providing infant chest compressions, and the administration of an initial 200 Joule synchronized shock in the unstable patient with atrial fibrillation.",
+      "meshTerms": [
+        "Humans",
+        "American Heart Association",
+        "United States",
+        "Infant, Newborn",
+        "Advanced Cardiac Life Support",
+        "Practice Guidelines as Topic",
+        "Life Support Care",
+        "Cardiopulmonary Resuscitation"
+      ],
+      "keywords": [
+        "ACLS",
+        "AHA",
+        "American Heart Association",
+        "BLS",
+        "ECC",
+        "NRP",
+        "PALS",
+        "advanced cardiovascular life support",
+        "basic life support",
+        "emergency cardiovascular care",
+        "neonatal advanced life support",
+        "pediatric advanced life support"
+      ],
+      "doi": "10.1097/NSG.0000000000000396",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "AHA 2025 BLS/ACLS 소생 지침—응급·소생 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|basic-life-support-advanced-cardiovascular-life-support-pediatric-advanced-life-support-neonatal-resuscitation",
+      "supersedes": [],
+      "rejectedAt": "2026-08-26"
     }
   ],
   "sourceHealth": {
@@ -55477,6 +55478,6 @@
       }
     }
   },
-  "updatedAt": "2026-08-25T22:03:12.109Z",
+  "updatedAt": "2026-08-26",
   "configVersion": "guideline-v2"
 }
