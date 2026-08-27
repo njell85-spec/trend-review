@@ -396,5 +396,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42145111",
+    "title": "Resuscitation From Out-of-Hospital Cardiac Arrest: When Is EtCO Reliably Associa",
+    "date": "2026-08-27",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
