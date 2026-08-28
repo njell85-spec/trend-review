@@ -46,7 +46,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -181,7 +181,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-28T03:31:18.606Z"
+      "supersededAt": "2026-08-28T05:34:17.217Z"
     },
     {
       "id": "pmid:38531812",
@@ -32556,7 +32556,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -33049,11 +33049,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.793651315881204,
+      "priority": 6.79333955632555,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.7936513158812042,
+        "recency": 1.7933395563255496,
         "scope": 0,
         "confidence": 1
       },
@@ -33066,7 +33066,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -35248,7 +35248,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37254,85 +37254,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:41014602",
-      "pmid": "41014602",
-      "title": "Haemodynamic monitoring and management of the hypotensive out-of-hospital cardiac arrest patient in the adult intensive care unit: a clinical consensus statement of the Association for Acute CardioVascular Care of the ESC.",
-      "pubDate": "2026 Mar 10",
-      "journal": "European heart journal. Acute cardiovascular care",
-      "publicationTypes": [
-        "Consensus Statement",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-title",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:51.509Z",
-      "abstract": "AIMS: Out-of-hospital cardiac arrest (OHCA) represents a major public health challenge, with high mortality and significant neurological impairments among survivors. Haemodynamic instability, particularly hypotension (a mean arterial blood pressure <65 mmHg), may be a key contributor to post-resuscitation morbidity and mortality.\nMETHODS AND RESULTS: After return of spontaneous circulation, hypotension can result from various causes, including arrhythmias, mechanical complications, thromboembolism, or different types of shock, as well as sedation, temperature control and positive pressure ventilation. Differentiating between hypotension with vs. without hypoperfusion is critical to avoid unnecessary interventions while ensuring adequate cerebral and myocardial perfusion. Clinical assessment and repeated echocardiography should be routine in all patients. Therapeutic targets should include evidence of preserved end-organ function, including urine output, and normal or decreasing lactate. In selected cases, advanced haemodynamic monitoring with pulmonary artery catheters may be necessary to diagnose the shock-type and monitor treatment effects. Causal treatment of the precipitating cause of hypotension is crucial as well as symptomatic treatment with fluids, vasopressors and inotropes if needed. Mechanical circulatory support may be employed for refractory shock unresponsive to other treatment.\nCONCLUSION: This clinical consensus statement by the Association for Acute CardioVascular Care (ACVC) of the European Society of Cardiology (ESC) provides clinical guidance for the haemodynamic monitoring and management of hypotension in OHCA patients in intensive care. The document advocates for a multidisciplinary approach that integrates clinical assessment, imaging, and haemodynamic parameters to guide treatment, with the overarching goal of improving survival rates and neurological outcomes.",
-      "meshTerms": [
-        "Adult",
-        "Humans",
-        "Cardiopulmonary Resuscitation",
-        "Critical Care",
-        "Disease Management",
-        "Hemodynamic Monitoring",
-        "Hemodynamics",
-        "Hypotension",
-        "Intensive Care Units",
-        "Out-of-Hospital Cardiac Arrest"
-      ],
-      "keywords": [
-        "Blood pressure",
-        "Cardiac Arrest",
-        "Haemodynamic",
-        "Hypotension"
-      ],
-      "doi": "10.1093/ehjacc/zuaf125",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "esc"
-      },
-      "priority": 12,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "esc",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "consensus",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:05.137Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "저혈압 OHCA 혈역학 관리 ESC 합의, 소생·중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "esc|haemodynamic-monitoring-management-hypotensive-out-hospital-cardiac-arrest-patient-adult-intensive-care-unit-clinical-association-acute-cardiovascular-care",
-      "supersedes": []
-    },
-    {
       "id": "pmid:42064867",
       "pmid": "42064867",
       "title": "2025 ESC/EACTS valvular heart disease guidelines: practical updates on mitral and tricuspid regurgitation.",
@@ -37667,7 +37588,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39657,7 +39578,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40848,7 +40769,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -41804,7 +41725,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43769,7 +43690,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44055,7 +43976,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44316,7 +44237,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45738,7 +45659,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46214,7 +46135,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46520,7 +46441,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46589,7 +46510,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46739,7 +46660,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46813,7 +46734,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46890,7 +46811,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47032,7 +46953,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47150,7 +47071,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47217,7 +47138,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47406,7 +47327,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47466,7 +47387,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -47538,7 +47459,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47611,7 +47532,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47692,7 +47613,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47771,7 +47692,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47849,7 +47770,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47928,7 +47849,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47992,7 +47913,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48069,7 +47990,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "lineageKey": "unknown|management-community-acquired-urinary-tract-infections-adult-men-by-french-infectious-disease-society-spilf",
       "supersedes": [],
       "llmFit": {
@@ -48129,7 +48050,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48138,7 +48059,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -48199,7 +48120,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48208,7 +48129,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lastSeenAt": "2026-08-28T05:34:16.290Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -50436,6 +50357,152 @@
         ]
       },
       "publishedAt": "2026-08-28"
+    },
+    {
+      "id": "pmid:41014602",
+      "pmid": "41014602",
+      "title": "Haemodynamic monitoring and management of the hypotensive out-of-hospital cardiac arrest patient in the adult intensive care unit: a clinical consensus statement of the Association for Acute CardioVascular Care of the ESC.",
+      "pubDate": "2026 Mar 10",
+      "journal": "European heart journal. Acute cardiovascular care",
+      "publicationTypes": [
+        "Consensus Statement",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-title",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:51.509Z",
+      "abstract": "AIMS: Out-of-hospital cardiac arrest (OHCA) represents a major public health challenge, with high mortality and significant neurological impairments among survivors. Haemodynamic instability, particularly hypotension (a mean arterial blood pressure <65 mmHg), may be a key contributor to post-resuscitation morbidity and mortality.\nMETHODS AND RESULTS: After return of spontaneous circulation, hypotension can result from various causes, including arrhythmias, mechanical complications, thromboembolism, or different types of shock, as well as sedation, temperature control and positive pressure ventilation. Differentiating between hypotension with vs. without hypoperfusion is critical to avoid unnecessary interventions while ensuring adequate cerebral and myocardial perfusion. Clinical assessment and repeated echocardiography should be routine in all patients. Therapeutic targets should include evidence of preserved end-organ function, including urine output, and normal or decreasing lactate. In selected cases, advanced haemodynamic monitoring with pulmonary artery catheters may be necessary to diagnose the shock-type and monitor treatment effects. Causal treatment of the precipitating cause of hypotension is crucial as well as symptomatic treatment with fluids, vasopressors and inotropes if needed. Mechanical circulatory support may be employed for refractory shock unresponsive to other treatment.\nCONCLUSION: This clinical consensus statement by the Association for Acute CardioVascular Care (ACVC) of the European Society of Cardiology (ESC) provides clinical guidance for the haemodynamic monitoring and management of hypotension in OHCA patients in intensive care. The document advocates for a multidisciplinary approach that integrates clinical assessment, imaging, and haemodynamic parameters to guide treatment, with the overarching goal of improving survival rates and neurological outcomes.",
+      "meshTerms": [
+        "Adult",
+        "Humans",
+        "Cardiopulmonary Resuscitation",
+        "Critical Care",
+        "Disease Management",
+        "Hemodynamic Monitoring",
+        "Hemodynamics",
+        "Hypotension",
+        "Intensive Care Units",
+        "Out-of-Hospital Cardiac Arrest"
+      ],
+      "keywords": [
+        "Blood pressure",
+        "Cardiac Arrest",
+        "Haemodynamic",
+        "Hypotension"
+      ],
+      "doi": "10.1093/ehjacc/zuaf125",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:05.137Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "저혈압 OHCA 혈역학 관리 ESC 합의, 소생·중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "esc|haemodynamic-monitoring-management-hypotensive-out-hospital-cardiac-arrest-patient-adult-intensive-care-unit-clinical-association-acute-cardiovascular-care",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41014602",
+          "title": "Haemodynamic monitoring and management of the hypotensive out-of-hospital cardiac arrest patient in the adult intensive care unit: a clinical consensus statement of the Association for Acute CardioVascular Care of the ESC.",
+          "journal": "European heart journal. Acute cardiovascular care",
+          "pubDate": "2026 Mar 10",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41014602/",
+          "doi": "10.1093/ehjacc/zuaf125"
+        },
+        "org": "ESC ACVC (Association for Acute CardioVascular Care of the European Society of Cardiology)",
+        "version": "2026 (clinical consensus statement)",
+        "title_ko": "성인 중환자실에서 저혈압을 동반한 병원 밖 심정지(OHCA) 환자의 혈역학 감시 및 관리 — ESC ACVC 임상 합의 성명",
+        "scope_ko": "자발순환회복(ROSC) 후 중환자실에 입원한 성인 병원 밖 심정지(OHCA) 생존자 중 저혈압(평균동맥압 MAP <65 mmHg)을 보이는 환자의 혈역학 감시와 관리를 다룬다. 저혈압의 원인 감별(부정맥·기계적 합병증·혈전색전·각종 쇼크, 그리고 진정·체온조절·양압환기의 영향)과, 저관류를 동반한 저혈압과 동반하지 않은 저혈압의 구분에 초점을 둔다.",
+        "summary": [
+          "Distinguish hypotension WITH hypoperfusion from hypotension WITHOUT hypoperfusion before intervening — this differentiation is critical to avoid unnecessary treatment while still protecting cerebral and myocardial perfusion.",
+          "Perform routine clinical assessment and repeated echocardiography in ALL post-ROSC OHCA patients to evaluate LV/RV function, valvular disease, pericardial effusion, and non-invasive filling pressures/cardiac output.",
+          "Target a MAP of ~60–65 mmHg, but 'avoiding hypotension' is not a goal in itself; protocolized escalation of MAP is not beneficial and may be harmful — individualize to end-organ perfusion rather than a fixed pressure number.",
+          "Guide therapy to perfusion endpoints: urine output ≥0.5 mL/kg/hr and normal or decreasing lactate; lactate is highlighted as likely the single most important parameter to monitor.",
+          "Reserve advanced monitoring (pulmonary artery catheter) for selected patients to define shock type and monitor treatment response; routine use is not recommended.",
+          "Symptomatic treatment: crystalloids as initial fluid of choice (avoid fluid overload), noradrenaline as first-line vasopressor, and dobutamine or milrinone as inotropes when cardiac output remains inadequate despite volume and there is ongoing hypoperfusion.",
+          "Always treat the precipitating cause (e.g., ischemia/reinfarction, arrhythmia, mechanical complication, tamponade, thromboembolism) in parallel with symptomatic support.",
+          "Consider short-term mechanical circulatory support (microaxial flow pump or VA-ECMO) for refractory shock unresponsive to pharmacologic therapy; VA-ECMO is preferred for biventricular dysfunction, with careful patient selection and goals-of-care consideration."
+        ],
+        "summary_ko": [
+          "개입 전에 저관류를 '동반한' 저혈압과 '동반하지 않은' 저혈압을 구분한다 — 불필요한 치료를 피하면서도 뇌·심근 관류를 지키기 위해 이 감별이 핵심이다.",
+          "모든 ROSC 후 OHCA 환자에서 임상 평가와 반복 심초음파를 일상적으로 시행해 좌/우심실 기능, 판막질환, 심낭삼출, 비침습적 충만압·심박출량을 평가한다.",
+          "MAP 목표는 약 60–65 mmHg로 하되 '저혈압 회피' 자체를 목표로 삼지 않는다; 프로토콜화된 MAP 상향은 이득이 없고 오히려 해로울 수 있어 고정된 압력 수치가 아닌 말단장기 관류에 맞춰 개별화한다.",
+          "관류 지표로 치료를 유도한다: 소변량 ≥0.5 mL/kg/hr, 정상 또는 감소하는 lactate — lactate가 단일 지표로는 가장 중요하다고 강조한다.",
+          "고급 감시(폐동맥 카테터, PAC)는 쇼크 유형 규명과 치료반응 감시가 필요한 선택된 환자에 한한다; 일상적 사용은 권고하지 않는다.",
+          "대증 치료: 초기 수액은 crystalloid(수액 과부하 주의), 1차 승압제는 noradrenaline, 그리고 충분한 용적에도 심박출량이 부족하고 저관류가 지속되면 dobutamine 또는 milrinone을 강심제로 사용한다.",
+          "허혈/재경색, 부정맥, 기계적 합병증, 심낭압전, 혈전색전 등 유발 원인 치료를 대증 지지와 병행한다.",
+          "약물치료에 반응하지 않는 불응성 쇼크에는 단기 기계순환보조(microaxial flow pump 또는 VA-ECMO)를 고려한다; 양심실 기능부전에는 VA-ECMO가 선호되며, 환자 선택과 치료 목표를 신중히 고려한다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "MAP 목표 근거: BOX 시험 심인성 쇼크 하위분석 (낮은 63 mmHg vs 높은 77 mmHg)",
+            "body_ko": "경색 관련 OHCA 심인성 쇼크(OHCA-AMICS) 환자 258명을 대상으로 noradrenaline로 유지한 낮은 MAP 목표(63 mmHg)와 높은 목표(77 mmHg)를 비교한 BOX 시험 하위분석이다. 높은 목표군은 첫 24시간 심장지수(CI)가 더 높았으나(1.77→2.92 L/min/m², 약 8–19% 높음) 48시간이면 두 군이 비슷해졌고, 폐모세혈관쐐기압(PCWP)이 유의하게 더 높아 심장·폐 스트레스 증가를 시사했다. 결정적으로 lactate는 전 시점에서 두 군이 동등했고 6시간 내에 정상화되어, 심박출량 증가가 조직관류 개선으로 이어지지 않음을 보였다. 1년 사망률은 26%(낮은 목표) vs 34%(높은 목표)로 수치상 낮은 목표에 유리했으나 통계적 유의성은 없었다(HR 0.70, p=0.12). 저자들은 더 높은 noradrenaline 유도 MAP·CI가 조직관류나 임상결과를 개선하지 않고 심장·폐 부담만 늘릴 수 있다고 결론지어, 합의문의 '고정 MAP 상향은 이득 없음' 권고를 뒷받침한다. (이는 합의문 자체가 아니라 별도 하위분석 근거임)",
+            "sourceLabel": "European Heart Journal: Acute Cardiovascular Care — BOX-trial substudy (Oxford Academic)",
+            "sourceUrl": "https://academic.oup.com/ehjacc/advance-article/doi/10.1093/ehjacc/zuag045/8675539"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, treat post-ROSC hypotension by first asking whether the low pressure is actually causing hypoperfusion — use lactate trend and urine output, not the MAP number alone, to decide whether to escalate. Make repeated echocardiography a routine part of every post-arrest ICU assessment to identify the shock phenotype (LV failure, RV failure, tamponade, hypovolemia) and tailor fluids/noradrenaline/inotropes accordingly, rather than reflexively chasing a higher MAP. Reserve pulmonary artery catheters and mechanical circulatory support (Impella/VA-ECMO) for refractory or diagnostically unclear cases, and always pursue the reversible cause (ischemia, arrhythmia, mechanical/embolic) in parallel.",
+        "practiceImpact_ko": "침상에서 ROSC 후 저혈압은 먼저 '이 낮은 압력이 실제로 저관류를 일으키는가'를 묻는 것으로 시작한다 — 상향 여부는 MAP 수치만이 아니라 lactate 추세와 소변량으로 판단한다. 반복 심초음파를 모든 심정지 후 중환자 평가의 일상 항목으로 삼아 쇼크 표현형(좌심실부전·우심실부전·심낭압전·저혈량)을 규명하고, 무작정 MAP를 올리기보다 그에 맞춰 수액·noradrenaline·강심제를 조율한다. 폐동맥 카테터와 기계순환보조(Impella·VA-ECMO)는 불응성이거나 진단이 불명확한 경우로 제한하고, 가역적 원인(허혈·부정맥·기계적/색전성)은 항상 병행해 교정한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41014602",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41014602/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1093/ehjacc/zuaf125",
+            "url": "https://doi.org/10.1093/ehjacc/zuaf125"
+          },
+          {
+            "label": "웹 — ESC ACVC clinical consensus statement — full article (European Heart Journal: Acute Cardiovascular Care, Oxford Academic)",
+            "url": "https://academic.oup.com/ehjacc/advance-article/doi/10.1093/ehjacc/zuaf125/8266910"
+          },
+          {
+            "label": "웹 — BOX-trial substudy: blood pressure targets in cardiogenic shock after infarction-related OHCA (Oxford Academic)",
+            "url": "https://academic.oup.com/ehjacc/advance-article/doi/10.1093/ehjacc/zuag045/8675539"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-28"
     }
   ],
   "rejected": [
@@ -50470,7 +50537,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -54357,7 +54424,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -54750,7 +54817,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -55376,7 +55443,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -55411,7 +55478,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55441,7 +55508,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55471,7 +55538,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -55507,7 +55574,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55537,7 +55604,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55566,7 +55633,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -55606,7 +55673,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "In 2025, the focused update of the ESC/EAS guidelines on dyslipidemia management introduced clinically relevant refinements in cardiovascular risk stratification and lipid-lowering therapy. The updated recommendations emphasize the integration of additional risk modifiers, including comorbidities, biomarkers and imaging findings, enabling a more individualized assessment of cardiovascular risk. In patients with acute coronary syndrome, the updated guidance highlights the importance of rapid and intensive LDL cholesterol reduction during the index hospitalization, including prompt initiation of high-intensity statin therapy and early combination treatment to facilitate target achievement. Recent evidence further supports early intensive LDL cholesterol lowering, with outcome data for bempedoic acid and PCSK9 inhibitors extending the role of LDL cholesterol lowering beyond secondary prevention. At the same time, emerging evidence on statin safety indicates that a substantial proportion of commonly reported adverse effects are not causally related to statin therapy, underscoring the relevance of patient education and structured communication to improve adherence. Beyond LDL cholesterol, other lipid fractions have gained increasing clinical relevance. Lipoprotein(a) has emerged as an important genetically determined cardiovascular risk factor, and several therapies capable of markedly reducing lipoprotein(a) levels are currently being evaluated in large, randomized outcome trials. In hypertriglyceridemia, conventional therapies have shown limited benefit regarding cardiovascular outcomes. Novel targeted approaches, particularly therapies directed against apolipoprotein C-III, therefore represent promising future treatment strategies. Overall, recent developments highlight a shift toward earlier, more intensive, and more individualized lipid-lowering strategies, with emerging therapies likely to further expand cardiovascular prevention in the coming years.",
       "meshTerms": [
         "Humans",
@@ -55728,7 +55795,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "discoveredAt": "2026-08-28T05:34:09.641Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55794,9 +55861,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260828_123000:guideline:2026-08-28",
+    "runId": "trend_review_20260828_143313:guideline:2026-08-28",
     "outcome": "published",
-    "publishedId": "pmid:41417044",
+    "publishedId": "pmid:41014602",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -55997,25 +56064,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 225,
-        "needsReview": 447,
+        "queued": 226,
+        "needsReview": 445,
         "rejected": 124,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41417044",
+        "candidateId": "pmid:41014602",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-28T03:33:44.129Z",
+  "updatedAt": "2026-08-28T05:36:13.196Z",
   "configVersion": "guideline-v2"
 }

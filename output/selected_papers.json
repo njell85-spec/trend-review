@@ -418,5 +418,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41870444",
+    "title": "Transesophageal Echocardiography During CPR in Patients With Out-of-Hospital Car",
+    "date": "2026-08-28",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
