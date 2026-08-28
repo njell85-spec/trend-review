@@ -1363,6 +1363,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-28",
+      "pmid": "41870444",
+      "title": "Transesophageal Echocardiography During CPR in Patients With Out-of-Hospital Cardiac Arrest: The EXECT-CPR Randomized Clinical Trial.",
+      "title_ko": "심폐소생술 중 경식도 심초음파(TEE) 유도: 병원 밖 심정지 환자 대상 EXECT-CPR 무작위 임상시험",
+      "journal": "JAMA internal medicine",
+      "doi": "10.1001/jamainternmed.2026.0102",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "비외상성 병원 밖 심정지(OHCA) 성인에서, 대동맥판 압박을 피하고 좌심실을 겨냥하는 transesophageal echocardiography(TEE) 유도 CPR이 기존 가이드라인 권고(흉골 하부 절반) 압박에 비해 자발순환회복(ROSC) 및 기타 결과를 개선하는가?",
+      "pico": {
+        "population": "[Taiwan] Adults who consecutively presented to the emergency department (ED) with nontraumatic out-of-hospital cardiac arrest at 1 tertiary medical center in Taiwan (June 26 to November 19, 2023); 132 patients randomized (66 per group); median [IQR] age 68 [55-74] years; 87 [66%] male. Registry inclusion: age ≥20 years, out-of-hospital cardiac arrest, non-trauma. Exclusions were prehospital return of spontaneous circulation, extracorporeal CPR, contraindications to TEE, prior do-not-resuscitate orders, and obvious signs of death.",
+        "intervention": "Post-ED arrival CPR at a TEE-guided compression site (avoid aortic-valve compression and target the left ventricle).",
+        "comparison": "Guideline-recommended compression site (the lower half of the sternum), i.e., conventional CPR.",
+        "outcome": "Primary outcome — sustained return of spontaneous circulation (≥20 minutes): TEE-guided group 29 (44%) vs conventional group 26 (39%); cluster-adjusted odds ratio 1.21; 95% CI, 0.64-2.29 (not statistically significant)."
+      },
+      "pico_ko": {
+        "population": "[대만] 대만의 한 3차 의료기관 응급실(ED)에 비외상성 병원 밖 심정지로 연속적으로 내원한 성인(2023년 6월 26일~11월 19일); 132명 무작위배정(각 군 66명); 나이 중앙값[IQR] 68[55-74]세; 남성 87명[66%]. 등록기록상 포함기준: 20세 이상, 병원 밖 심정지, 비외상. 제외: 병원 전 자발순환회복, extracorporeal CPR, TEE 금기, 사전 do-not-resuscitate(DNR) 지시, 명백한 사망 징후.",
+        "intervention": "ED 도착 후 TEE 유도 압박 부위(대동맥판 압박을 피하고 좌심실을 겨냥)에서 시행한 CPR.",
+        "comparison": "가이드라인 권고 압박 부위(흉골 하부 절반), 즉 기존 방식의 CPR.",
+        "outcome": "일차 결과 — 지속적 자발순환회복(ROSC, ≥20분): TEE 유도군 29명(44%) vs 대조군 26명(39%); cluster-adjusted odds ratio 1.21; 95% CI, 0.64-2.29 (통계적으로 유의하지 않음)."
+      },
+      "keyFindings": [
+        "TEE-guided CPR did not significantly improve the primary outcome of sustained ROSC (≥20 min): 29/66 (44%) vs 26/66 (39%) conventional; cluster-adjusted OR 1.21 (95% CI, 0.64-2.29).",
+        "Secondary outcomes (any ROSC, survival to ICU, survival to discharge, CPC ≤2 at discharge) did not significantly differ, except higher intra-CPR EtCO2 in the TEE-guided group during the 11th–20th minutes after arrival.",
+        "Adverse event rates related to TEE and CPR were comparable; however, the trial was underpowered due to optimistic effect size assumptions, so neutral findings should be interpreted with caution."
+      ],
+      "keyFindings_ko": [
+        "TEE 유도 CPR은 일차 결과인 지속적 ROSC(≥20분)를 유의하게 개선하지 못함: 29/66(44%) vs 대조군 26/66(39%); cluster-adjusted OR 1.21(95% CI, 0.64-2.29).",
+        "이차 결과(any ROSC, ICU 생존, 퇴원 생존, 퇴원 시 CPC ≤2)는 유의한 차이가 없었으나, 도착 후 11~20분 구간의 CPR 중 EtCO2는 TEE 유도군에서 더 높았음.",
+        "TEE 및 CPR 관련 이상반응 발생률은 유사했으나, 낙관적 효과크기 가정으로 시험이 검정력 부족(underpowered) 상태여서 중립적 결과는 신중히 해석해야 함."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41870444",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41870444/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1001/jamainternmed.2026.0102",
+          "url": "https://doi.org/10.1001/jamainternmed.2026.0102"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT05907460 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT05907460"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
