@@ -46,7 +46,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -181,7 +181,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-27T00:58:42.529Z"
+      "supersededAt": "2026-08-28T03:31:18.606Z"
     },
     {
       "id": "pmid:38531812",
@@ -31659,83 +31659,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:41417044",
-      "pmid": "41417044",
-      "title": "[The new European Resuscitation Council (ERC) guidelines 2025-Overview of the most important changes; the first 3-5 min are decisive].",
-      "pubDate": "2026 Jan",
-      "journal": "Die Anaesthesiologie",
-      "publicationTypes": [
-        "English Abstract",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:08.135Z",
-      "abstract": "In October 2025 the new resuscitation guidelines of the European Resuscitation Council (ERC) were published. In the chapter on advanced life support (ALS) for adults the update emphasizes topics such as efficient ventilation with adequate chest compressions, early defibrillation, identification and treatment of reversible causes as rapidly as possible and the administration of epinephrine in cases of non-defibrillatable cardiac arrest. The aim of the guidelines is to sustainably improve survival rates after cardiac arrest through structured and evidence-based care systems.",
-      "meshTerms": [
-        "Adult",
-        "Humans",
-        "Advanced Cardiac Life Support",
-        "Cardiopulmonary Resuscitation",
-        "Epinephrine",
-        "Europe",
-        "Heart Arrest",
-        "Practice Guidelines as Topic",
-        "Resuscitation",
-        "Time Factors"
-      ],
-      "keywords": [
-        "Adult advanced life support (ALS)",
-        "Chain of survival",
-        "Life-saving systems",
-        "OHCA",
-        "Resuscitation"
-      ],
-      "doi": "10.1007/s00101-025-01619-1",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 6.833634028533554,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.833634028533554,
-        "scope": 0,
-        "confidence": 1
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "guideline-commentary-or-digest"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:38.246Z",
-      "llmFit": {
-        "version": 1,
-        "score": 10,
-        "keep": true,
-        "reason": "ERC 2025 소생술 지침 ALS 핵심 변경 — 최우선",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|new-european-resuscitation-council-erc-overview-most-important-changes-first-3-5-min-are-decisive",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41410977",
       "pmid": "41410977",
       "title": "2023 European Society of Cardiology guidelines for the management of infective endocarditis : Statement of endorsement by the NVVC Short version.",
@@ -32633,7 +32556,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -33126,11 +33049,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.7976887180147605,
+      "priority": 6.793651315881204,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.7976887180147605,
+        "recency": 1.7936513158812042,
         "scope": 0,
         "confidence": 1
       },
@@ -33143,7 +33066,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -35325,7 +35248,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37744,7 +37667,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39734,7 +39657,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40925,7 +40848,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -41881,7 +41804,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43846,7 +43769,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -44132,7 +44055,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44393,7 +44316,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45815,7 +45738,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46291,7 +46214,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46597,7 +46520,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46666,7 +46589,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46816,7 +46739,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46890,7 +46813,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46967,7 +46890,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47109,7 +47032,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47227,7 +47150,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47294,7 +47217,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47483,7 +47406,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47543,7 +47466,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -47615,7 +47538,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47688,7 +47611,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47769,7 +47692,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47848,7 +47771,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47926,7 +47849,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48005,7 +47928,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48069,7 +47992,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48146,7 +48069,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-27T00:58:41.578Z",
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
       "lineageKey": "unknown|management-community-acquired-urinary-tract-infections-adult-men-by-french-infectious-disease-society-spilf",
       "supersedes": [],
       "llmFit": {
@@ -48155,6 +48078,145 @@
         "keep": true,
         "reason": "성인 남성 지역사회 요로감염 지침 — 응급실 국소감염 실무에 닿음",
         "at": "2026-08-27T00:58:44.054Z"
+      }
+    },
+    {
+      "id": "pmid:42648009",
+      "pmid": "42648009",
+      "title": "Oral Anticoagulant Use Among Residents in VA Long-Term Care With Atrial Fibrillation After the 2014 ACC/AHA Guideline.",
+      "pubDate": "2026 Aug 26",
+      "journal": "Journal of the American Medical Directors Association",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "abstract": "OBJECTIVES: In 2014, the American College of Cardiology/American Heart Association moved away from recommending aspirin in atrial fibrillation (AF) and recommended that patients be treated with oral anticoagulants (OACs) to mitigate the risk of stroke. We aimed to evaluate the prevalence and predictors of OACs and/or aspirin use among veterans with AF in Veterans Affairs nursing homes in the era after the guideline publication.\nDESIGN: Observational study of veterans admitted from October 1, 2014 to September 30, 2019.\nSETTING AND PARTICIPANTS: Four thousand nine hundred ninety-four nursing home residents with AF and a CHADS-VASc score of ≥2.\nMETHODS: Multinomial logistic regression was used to compare demographics, comorbidities, functional status, and concurrent antiplatelet medication use in residents who received OAC ± aspirin and aspirin alone, compared with neither.\nRESULTS: In the era after the 2014 American College of Cardiology/American Heart Association guideline was released, age-standardized prevalence rates for any OAC (warfarin and direct oral anticoagulant) increased from 31.2% in fiscal year (FY) 2013 to 2014 to 46.6% in FY 2019. In addition, there was a decrease in patients receiving no OAC (21.1%-16.2%) and aspirin (47.7%-39.3%). However, some eligible residents remained untreated. Averaged over FY 2015 to 2019, each decade of ascending age was associated with a lower likelihood of receiving OAC [relative risk ratio (RRR), 0.79; 95% CI, 0.71-0.87], relative to neither anticoagulant nor aspirin use. Black veterans were less likely to receive OAC (RRR, 0.73; 95% CI, 0.58-0.91); Hispanic veterans were less likely to receive OAC (RRR, 0.63; 95% CI, 0.44-0.91) and aspirin (RRR, 0.47; 95% CI, 0.31-0.72). Mild to moderate cognitive impairment, greater disability, and other antiplatelet use were also associated with less OAC use.\nCONCLUSIONS AND IMPLICATIONS: Fewer Veterans Affairs nursing home residents received OACs than recommended by guidelines, with significant differences by age and race/ethnicity. Future research efforts should aim to understand the reasons for low OAC use and to augment the evidence base for anticoagulant use to include frail older adults.",
+      "meshTerms": [],
+      "keywords": [
+        "Atrial fibrillation",
+        "aspirin",
+        "deprescribing",
+        "nursing home",
+        "oral anticoagulation",
+        "stroke prophylaxis"
+      ],
+      "doi": "10.1016/j.jamda.2026.106439",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-28T03:31:17.660Z",
+      "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "지침 아닌 처방실태 관찰연구·요양원 만성 AF, 응급무관",
+        "at": "2026-08-28T03:31:20.119Z"
+      }
+    },
+    {
+      "id": "pmid:42657476",
+      "pmid": "42657476",
+      "title": "2026 Guideline for Adult Stroke Rehabilitation and Recovery: A Guideline From the American Heart Association and American Stroke Association.",
+      "pubDate": "2026 Aug 27",
+      "journal": "Stroke",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "abstract": "AIM: The \"2026 Guidelines for Adult Stroke Rehabilitation and Recovery\" replaces the 2016 \"Guidelines for Adult Stroke Rehabilitation and Recovery.\" This updated guideline is intended to provide a comprehensive, up-to-date, evidence-based set of recommendations. The intended audience includes physicians, allied health professionals, and caregivers.\nMETHODS: A comprehensive search for literature published since the 2016 guideline, derived from research involving human participants, published in English, and indexed in MEDLINE, PubMed, Cochrane Library, and other selected databases relevant to this guideline, was conducted between June and October 2025. Other documents on related subject matter previously published by the American Heart Association were also reviewed.\nSTRUCTURE: This guideline provides recommendations based on the most current evidence available for stroke rehabilitation and recovery. Key updates include new and revised recommendations across the stroke recovery continuum, including the assessment and treatment of medical comorbidities, fracture risk, fall prevention, technology-enabled rehabilitation, caregiver support, participation, and safe return to work and driving. Although this guideline reflects significant advances, it also highlights gaps in knowledge and underscores the urgent need for continued research to further refine and improve treatment strategies.",
+      "meshTerms": [],
+      "keywords": [
+        "AHA Scientific Statements",
+        "caregiver",
+        "guideline",
+        "recovery",
+        "rehabilitation",
+        "stroke"
+      ],
+      "doi": "10.1161/STR.0000000000000536",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 11,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-28T03:31:17.661Z",
+      "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "AHA 뇌졸중 지침이나 급성 아닌 재활·회복, 침상적용 제한",
+        "at": "2026-08-28T03:31:20.119Z"
       }
     }
   ],
@@ -50186,6 +50248,194 @@
         ]
       },
       "publishedAt": "2026-08-27"
+    },
+    {
+      "id": "pmid:41417044",
+      "pmid": "41417044",
+      "title": "[The new European Resuscitation Council (ERC) guidelines 2025-Overview of the most important changes; the first 3-5 min are decisive].",
+      "pubDate": "2026 Jan",
+      "journal": "Die Anaesthesiologie",
+      "publicationTypes": [
+        "English Abstract",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:08.135Z",
+      "abstract": "In October 2025 the new resuscitation guidelines of the European Resuscitation Council (ERC) were published. In the chapter on advanced life support (ALS) for adults the update emphasizes topics such as efficient ventilation with adequate chest compressions, early defibrillation, identification and treatment of reversible causes as rapidly as possible and the administration of epinephrine in cases of non-defibrillatable cardiac arrest. The aim of the guidelines is to sustainably improve survival rates after cardiac arrest through structured and evidence-based care systems.",
+      "meshTerms": [
+        "Adult",
+        "Humans",
+        "Advanced Cardiac Life Support",
+        "Cardiopulmonary Resuscitation",
+        "Epinephrine",
+        "Europe",
+        "Heart Arrest",
+        "Practice Guidelines as Topic",
+        "Resuscitation",
+        "Time Factors"
+      ],
+      "keywords": [
+        "Adult advanced life support (ALS)",
+        "Chain of survival",
+        "Life-saving systems",
+        "OHCA",
+        "Resuscitation"
+      ],
+      "doi": "10.1007/s00101-025-01619-1",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6.833634028533554,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.833634028533554,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "guideline-commentary-or-digest"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:38.246Z",
+      "llmFit": {
+        "version": 1,
+        "score": 10,
+        "keep": true,
+        "reason": "ERC 2025 소생술 지침 ALS 핵심 변경 — 최우선",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|new-european-resuscitation-council-erc-overview-most-important-changes-first-3-5-min-are-decisive",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41417044",
+          "title": "[The new European Resuscitation Council (ERC) guidelines 2025-Overview of the most important changes; the first 3-5 min are decisive].",
+          "journal": "Die Anaesthesiologie",
+          "pubDate": "2026 Jan",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41417044/",
+          "doi": "10.1007/s00101-025-01619-1"
+        },
+        "org": "European Resuscitation Council (ERC)",
+        "version": "2025",
+        "title_ko": "새로운 유럽소생협의회(ERC) 2025 가이드라인 — 가장 중요한 변경점 개관: 처음 3–5분이 결정적이다 (성인 전문소생술 ALS 중심)",
+        "scope_ko": "성인 심정지 환자의 전문소생술(Advanced Life Support, ALS)을 중심으로 한 2025년 ERC 소생 가이드라인 개관 논문입니다. 효율적 환기와 양질의 가슴압박, 조기 제세동, 가역적 원인의 신속한 발견·교정, 비제세동성(non-shockable) 리듬에서의 에피네프린 투여 등 소생 초기 수 분의 핵심 조치를 다룹니다.",
+        "summary": [
+          "There are no major changes in the 2025 Adult ALS guidelines versus 2021; the update is a re-emphasis of execution of the first minutes of resuscitation rather than new procedures.",
+          "High-quality chest compressions with minimal interruption plus early defibrillation remain the top priorities, and effective oxygenation/ventilation receives greater emphasis: deliver each breath over 1 second to produce visible chest rise, targeting tidal volumes of ~6–8 mL/kg predicted body weight.",
+          "Correct initial defibrillator pad placement is emphasized: the lateral (apical) pad should be placed below the armpit in the mid-axillary line.",
+          "Epinephrine 1 mg: give as soon as possible in non-shockable rhythms; give after the third shock in shockable rhythms; repeat every 3–5 minutes.",
+          "Antiarrhythmics for refractory shockable arrest: amiodarone 300 mg after 3 shocks and a further 150 mg after 5 shocks; do NOT routinely give calcium, sodium bicarbonate, or corticosteroids during arrest.",
+          "Identify and treat reversible causes without delay; waveform capnography is used to confirm tracheal tube placement, monitor CPR quality, and detect ROSC, but a low ETCO2 alone must not be the sole reason to stop CPR.",
+          "POCUS should be used only by skilled operators without interrupting compressions and cannot be the sole basis to terminate CPR; RV dilation alone does not diagnose pulmonary embolism.",
+          "Airway management is stepwise (start with basic techniques, escalate to the rescuer's skill level); tracheal intubation only by those achieving >95% success within two attempts. Double (dual) sequential defibrillation is NOT recommended for routine use."
+        ],
+        "summary_ko": [
+          "2025 성인 ALS 가이드라인은 2021년 대비 중대한 변경은 없으며, 새로운 술기가 아니라 소생 초기 수 분의 '실행 품질'을 재강조한 개정입니다.",
+          "중단 최소화한 양질의 가슴압박과 조기 제세동이 최우선으로 유지되며, 효과적 산소화·환기가 더 강조됩니다: 각 인공호흡은 1초에 걸쳐 가슴이 눈에 보이게 올라올 정도로, 목표 1회 호흡량 약 6–8 mL/kg(예측 체중).",
+          "초기 제세동 패드의 올바른 위치가 강조됩니다: 측면(apical) 패드는 겨드랑이 아래 중액와선(mid-axillary line)에 붙입니다.",
+          "에피네프린 1 mg: 비제세동 리듬에서는 가능한 한 즉시, 제세동 리듬에서는 3번째 쇼크 후 투여하고 3–5분마다 반복합니다.",
+          "불응성 제세동 리듬의 항부정맥제: amiodarone 300 mg을 3번째 쇼크 후, 추가 150 mg을 5번째 쇼크 후 투여; 심정지 중 calcium·sodium bicarbonate·corticosteroid는 일상적으로 투여하지 않습니다.",
+          "가역적 원인은 지체 없이 발견·교정하고, 파형 호기말이산화탄소(capnography)는 기관튜브 위치 확인·CPR 질 감시·ROSC 감지에 사용하되 낮은 ETCO2 단독을 CPR 중단의 유일한 근거로 삼지 않습니다.",
+          "POCUS는 숙련자만, 가슴압박을 중단하지 않고 사용하며 CPR 종료의 단독 근거가 될 수 없습니다; 우심실 확장 소견만으로 폐색전을 진단하지 않습니다.",
+          "기도관리는 단계적 접근(기본 술기로 시작해 술자 역량에 맞춰 상향)이며, 기관삽관은 2회 시도 내 성공률 95% 초과인 술자에게만; 이중 순차 제세동(double sequential defibrillation)은 일상적 사용을 권고하지 않습니다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "제세동 패드 위치",
+            "detail": "Greater emphasis on correct initial defibrillator pad placement: the lateral (apical) pad should be positioned below the armpit in the mid-axillary line (not too anterior/high on the chest wall). Rationale: optimizing the current vector across the myocardium to improve first-shock success in the decisive early minutes.",
+            "detail_ko": "초기 제세동 패드의 올바른 위치가 더 강조되었습니다: 측면(apical) 패드를 흉벽 앞쪽/위쪽이 아니라 겨드랑이 아래 중액와선에 위치시킵니다. 이유: 심근을 가로지르는 전류 벡터를 최적화해 결정적 초기 수 분의 첫 쇼크 성공률을 높이기 위함입니다."
+          },
+          {
+            "topic": "환기·산소화 강조",
+            "detail": "Effective oxygenation and ventilation now carry greater emphasis than in 2021. Practical guidance reiterated: deliver each ventilation over 1 second to achieve visible chest rise, targeting tidal volumes of ~6–8 mL/kg predicted body weight, coupled with high-quality compressions and minimal interruptions.",
+            "detail_ko": "효과적 산소화·환기가 2021년보다 더 강조되었습니다. 실무 지침을 재확인: 각 인공호흡은 1초에 걸쳐 가슴이 눈에 보이게 올라올 정도로, 목표 1회 호흡량 약 6–8 mL/kg(예측 체중)로 시행하며, 양질의 가슴압박과 중단 최소화를 병행합니다."
+          },
+          {
+            "topic": "에피네프린 투여 시점",
+            "detail": "Reaffirmed timing (dose unchanged at 1 mg): in NON-shockable rhythms give adrenaline as soon as possible; in shockable rhythms give it after the third shock (or if initial defibrillation is unsuccessful), repeating every 3–5 minutes. The 2025 overview specifically foregrounds early epinephrine in non-defibrillatable arrest as decisive in the first 3–5 minutes.",
+            "detail_ko": "투여 시점 재확인(용량은 1 mg로 불변): 비제세동 리듬에서는 가능한 한 즉시, 제세동 리듬에서는 3번째 쇼크 후(또는 초기 제세동 실패 시) 투여하고 3–5분마다 반복합니다. 2025 개관은 특히 비제세동성 심정지에서의 조기 에피네프린을 처음 3–5분의 결정적 요소로 전면에 내세웁니다."
+          },
+          {
+            "topic": "가역적 원인의 신속 교정",
+            "detail": "Renewed emphasis on identifying and treating reversible causes 'without delay' as rapidly as possible during the first minutes, integrated with capnography (tube confirmation, CPR-quality monitoring, ROSC detection) and cautious POCUS use by skilled operators only, without interrupting compressions.",
+            "detail_ko": "가역적 원인을 초기 수 분 내 '지체 없이' 최대한 신속히 발견·교정하도록 재강조되었습니다. 파형 capnography(튜브 확인·CPR 질 감시·ROSC 감지)와, 가슴압박을 중단하지 않는 숙련자 전용 POCUS 활용과 통합됩니다."
+          },
+          {
+            "topic": "심정지 중 약물 제한",
+            "detail": "Reinforced negative recommendations: do NOT routinely give calcium, sodium bicarbonate, or corticosteroids during cardiac arrest. Amiodarone dosing unchanged (300 mg after 3 shocks, 150 mg after 5 shocks). Double (dual) sequential defibrillation is not recommended for routine use given practical challenges and limited efficacy evidence.",
+            "detail_ko": "부정적 권고 강화: 심정지 중 calcium·sodium bicarbonate·corticosteroid를 일상적으로 투여하지 않습니다. Amiodarone 용량은 불변(3번째 쇼크 후 300 mg, 5번째 쇼크 후 150 mg). 이중 순차 제세동은 실무적 난점과 근거 부족으로 일상적 사용을 권고하지 않습니다."
+          },
+          {
+            "topic": "공유의사결정·사전연명의료계획",
+            "detail": "The 2025 update integrates shared decision-making and advance care planning with emergency care treatment plans, to clarify goals of treatment and prevent patients from being inadvertently deprived of other indicated treatments beyond CPR.",
+            "detail_ko": "2025 개정은 공유의사결정과 사전연명의료계획을 응급진료 치료계획과 통합해, 치료 목표를 명확히 하고 CPR 외의 다른 필요한 치료를 환자가 부주의하게 박탈당하지 않도록 합니다."
+          },
+          {
+            "topic": "조기경보(track-and-trigger) 시스템",
+            "detail": "Systems-of-care emphasis: hospitals should use a track-and-trigger early warning score system for early identification of critically ill or deteriorating patients, aiming to prevent in-hospital cardiac arrest.",
+            "detail_ko": "치료체계 강조: 병원은 track-and-trigger 조기경보점수 시스템을 사용해 중증·악화 환자를 조기에 식별하여 원내 심정지를 예방하도록 권고합니다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "가이드라인 개발 절차·범위(ERC 공식)와 공개 경위",
+            "body_ko": "ERC 공식 요약(WebSearch 발췌)에 따르면 2025 가이드라인은 역학, 시스템 기반 접근, 성인 기본·전문소생술, 특수상황, 소생 후 치료, 신생아·소아 소생, 윤리, 교육, 응급처치 등 12개 영역을 다루며 ILCOR 체계적 문헌고찰과 합의문에 근거합니다. 개발 과정에서 203개 개인·단체가 325건 의견을 제출해 최종본에 66건의 유의한 변경이 반영되었고, 2025년 6월 ERC 이사회·총회 승인 후 2025년 10월 22일 로테르담에서 ERC·AHA·ILCOR 협업으로 공개되었습니다.",
+            "sourceLabel": "ERC — Guidelines 2025 (English) 공식 페이지 / ERC ALS 2025 검색 발췌",
+            "sourceUrl": "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside the change is one of execution, not protocol: place the apical defib pad genuinely below the armpit in the mid-axillary line to maximize first-shock success, and treat ventilation as a quality metric (1-second breaths, visible chest rise, ~6–8 mL/kg) rather than an afterthought. Give epinephrine 1 mg immediately in non-shockable arrest and after the third shock in shockable arrest, repeating every 3–5 minutes, while hunting reversible causes in the first minutes using capnography and skilled non-interrupting POCUS. Stop giving routine calcium/bicarbonate/corticosteroids and avoid routine dual sequential defibrillation. Upstream, embed track-and-trigger early warning scores and shared decision-making/advance care plans so arrests are prevented and resuscitation is aligned with the patient's goals.",
+        "practiceImpact_ko": "침상에서의 변화는 프로토콜이 아니라 '실행'의 문제입니다: apical 제세동 패드를 실제로 겨드랑이 아래 중액와선에 붙여 첫 쇼크 성공률을 높이고, 환기를 부차적 조치가 아닌 품질 지표(1초 호흡, 눈에 보이는 가슴 상승, 약 6–8 mL/kg)로 다룹니다. 에피네프린 1 mg은 비제세동 심정지에서 즉시, 제세동 심정지에서는 3번째 쇼크 후 투여하고 3–5분마다 반복하며, 초기 수 분에 capnography와 압박을 중단하지 않는 숙련 POCUS로 가역적 원인을 찾습니다. calcium·bicarbonate·corticosteroid의 일상적 투여를 중단하고 일상적 이중 순차 제세동을 피합니다. 상류에서는 track-and-trigger 조기경보점수와 공유의사결정·사전연명의료계획을 정착시켜 심정지를 예방하고 소생을 환자의 치료 목표와 일치시킵니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41417044",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41417044/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00101-025-01619-1",
+            "url": "https://doi.org/10.1007/s00101-025-01619-1"
+          },
+          {
+            "label": "웹 — Resuscitation Council UK — Adult advanced life support Guidelines (2025)",
+            "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/adult-advanced-life-support-guidelines"
+          },
+          {
+            "label": "웹 — ERC — Guidelines 2025 (English) official page",
+            "url": "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/"
+          },
+          {
+            "label": "웹 — PubMed — [The new ERC guidelines 2025 – overview of the most important changes] (Die Anaesthesiologie, PMID 41417044)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41417044/"
+          },
+          {
+            "label": "웹 — Resuscitation — European Resuscitation Council Guidelines 2025 Adult Advanced Life Support (abstract/listing)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41117572/"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-28"
     }
   ],
   "rejected": [
@@ -50220,7 +50470,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -54107,7 +54357,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "BACKGROUND AND OBJECTIVES: Severe community-acquired pneumonia (CAP) remains a major cause of morbidity and mortality, requiring prompt empirical antibiotic therapy. The choice between amoxicillin/clavulanic acid (AMC) and third-generation cephalosporin (3GC) as first-line beta-lactam therapy in the ICU is still debated. To assess AMC and 3GC susceptibility in severe CAP or community-acquired aspiration pneumonia (CAAP) caused by Streptococcus pneumoniae (SP), Haemophilus influenzae (HI) and/or Staphylococcus aureus (SA), and to evaluate the appropriateness of empirical antibiotic therapy.\nMETHODOLOGY: We conducted a single-center retrospective study including patients admitted to the ICU between 01/01/2018 and 30/11/2022 for severe CAP/CAAP with microbiological documentation of at least one of the targeted pathogens. Clinical, microbiological, therapeutic, and outcome data were collected. The primary endpoint was AMC and 3GC susceptibility rates (expressed as percentage and [95% confidence intervals]).\nPRINCIPAL FINDINGS: Among 104 included patients (median age 64 [48-71] years; 67% male), 60 (57.7%) had CAAP. AMC susceptibility rates were 81.5% [61.9-93.7], 78.0% [62.4-89.4], and 100% [92.6-100.0], while 3GC susceptibility rates were 96.3% [81.0-99.9], 95.1% [83.5-99.4], and 100% [92.6-100.0], for SP, HI, and SA, respectively. AMC was the empirical treatment in 59% of cases, and this choice was microbiologically appropriate in 86.9% of these prescriptions. Conversely, 3GC were prescribed empirically in 20% of cases, but this broad-spectrum choice was unjustified in 80% of those situations. Antibiotic de-escalation was performed in 28% of cases.\nCONCLUSION: In this single-center retrospective cohort, AMC appears to be a relevant empirical option for severe CAP/CAAP in the ICU, while 3GCs seem frequently overused. These findings required prospective multicenter validation before practice change can be recommended.",
       "meshTerms": [
         "Humans",
@@ -54500,7 +54750,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -55126,7 +55376,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -55161,7 +55411,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55191,7 +55441,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55221,7 +55471,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -55257,7 +55507,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55287,7 +55537,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55316,7 +55566,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -55356,7 +55606,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-27T00:58:33.321Z",
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "In 2025, the focused update of the ESC/EAS guidelines on dyslipidemia management introduced clinically relevant refinements in cardiovascular risk stratification and lipid-lowering therapy. The updated recommendations emphasize the integration of additional risk modifiers, including comorbidities, biomarkers and imaging findings, enabling a more individualized assessment of cardiovascular risk. In patients with acute coronary syndrome, the updated guidance highlights the importance of rapid and intensive LDL cholesterol reduction during the index hospitalization, including prompt initiation of high-intensity statin therapy and early combination treatment to facilitate target achievement. Recent evidence further supports early intensive LDL cholesterol lowering, with outcome data for bempedoic acid and PCSK9 inhibitors extending the role of LDL cholesterol lowering beyond secondary prevention. At the same time, emerging evidence on statin safety indicates that a substantial proportion of commonly reported adverse effects are not causally related to statin therapy, underscoring the relevance of patient education and structured communication to improve adherence. Beyond LDL cholesterol, other lipid fractions have gained increasing clinical relevance. Lipoprotein(a) has emerged as an important genetically determined cardiovascular risk factor, and several therapies capable of markedly reducing lipoprotein(a) levels are currently being evaluated in large, randomized outcome trials. In hypertriglyceridemia, conventional therapies have shown limited benefit regarding cardiovascular outcomes. Novel targeted approaches, particularly therapies directed against apolipoprotein C-III, therefore represent promising future treatment strategies. Overall, recent developments highlight a shift toward earlier, more intensive, and more individualized lipid-lowering strategies, with emerging therapies likely to further expand cardiovascular prevention in the coming years.",
       "meshTerms": [
         "Humans",
@@ -55465,6 +55715,33 @@
       "lineageKey": "aha|basic-life-support-advanced-cardiovascular-life-support-pediatric-advanced-life-support-neonatal-resuscitation",
       "supersedes": [],
       "rejectedAt": "2026-08-26"
+    },
+    {
+      "id": "pmid:42658238",
+      "pmid": "42658238",
+      "title": "Correction to: Comment on ESO/EANS/ESMINT Guideline on Aneurysmal Subarachnoid Haemorrhage.",
+      "pubDate": "2026 Aug 27",
+      "journal": "Clinical neuroradiology",
+      "publicationTypes": [
+        "Published Erratum"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-28T03:31:09.675Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1007/s00062-026-01719-4",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "guideline",
+      "reasons": [
+        "correction-or-erratum"
+      ]
     }
   ],
   "sourceHealth": {
@@ -55517,9 +55794,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260827_095715:guideline:2026-08-27",
+    "runId": "trend_review_20260828_123000:guideline:2026-08-28",
     "outcome": "published",
-    "publishedId": "pmid:41117572",
+    "publishedId": "pmid:41417044",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -55538,21 +55815,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 10,
+            "idsFetched": 10,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 154,
+        "mergedTotal": 160,
         "overlapCount": 1,
         "ptOnlyCount": 2,
-        "expandedOnlyCount": 7,
+        "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/28",
-          "maxDate": "2026/08/27"
+          "minDate": "2026/07/29",
+          "maxDate": "2026/08/28"
         },
         "retmax": 60,
         "topics": [
@@ -55560,8 +55837,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 52,
-            "idsFetched": 52,
+            "totalFound": 53,
+            "idsFetched": 53,
             "truncated": false,
             "error": null
           },
@@ -55587,8 +55864,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 17,
-            "idsFetched": 17,
+            "totalFound": 16,
+            "idsFetched": 16,
             "truncated": false,
             "error": null
           },
@@ -55596,8 +55873,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 28,
-            "idsFetched": 28,
+            "totalFound": 31,
+            "idsFetched": 31,
             "truncated": false,
             "error": null
           },
@@ -55614,8 +55891,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 14,
+            "idsFetched": 14,
             "truncated": false,
             "error": null
           },
@@ -55656,7 +55933,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 144,
+        "topicOnlyCount": 148,
         "ptPmids": [
           "42087034",
           "41419448",
@@ -55665,9 +55942,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 154,
-          "enriched": 154,
-          "withAbstract": 118,
+          "requested": 160,
+          "enriched": 160,
+          "withAbstract": 121,
           "error": null
         }
       },
@@ -55726,19 +56003,19 @@
         "error": null
       },
       "decisions": {
-        "queued": 226,
-        "needsReview": 445,
-        "rejected": 123,
+        "queued": 225,
+        "needsReview": 447,
+        "rejected": 124,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41117572",
+        "candidateId": "pmid:41417044",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-27T01:01:27.871Z",
+  "updatedAt": "2026-08-28T03:33:44.129Z",
   "configVersion": "guideline-v2"
 }
