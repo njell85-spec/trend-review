@@ -46,7 +46,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "region": "eu",
       "by": "org-acronym",
       "abstract": "Accidental hypothermia is an underdiagnosed condition with a significant impact on public health. With the aim of providing the basis for a comprehensive care framework, 12 panelists from 3 Spanish scientific societies (SEDAR, SEMES and SEMICYUC) developed this multidisciplinary consensus document. Through a systematic search and the final synthesis of 281 articles including 1,704,632 patients, 37 recommendations were developed through a 2-round Delphi process, distributed across 8 application domains based on the organization of a rescue chain: prehospital prevention, initial evaluation, management and transport, hospital detection, care of the polytraumatized patient, hospital rewarming, cardiac arrest, and resuscitation. Robust consensus among panelists (>75% agreement) and excellent internal consistency (ω = 0.913) were achieved, providing a solid document that may serve as a basis for the implementation of standardized protocols.",
@@ -181,7 +181,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "region": "us",
       "by": "org-name",
       "abstract": "BACKGROUND AND PURPOSE: Teleneurocritical care (TeleNCC) provides virtual neurocritical care in emergency departments and intensive care units that do not have continuous in-person coverage. However, there is limited evidence upon which to apply standards, benchmarks, and best practice. The scope of TeleNCC practice is beyond that of Telestroke and Telecritical Care, both of which have existing guidelines. Here, an international authorship group was convened to prepare a consensus statement on both the minimal requirements and optimal conditions for effective adult and pediatric TeleNCC.\nMETHODS: A panel consisting of 22 multidisciplinary experts in TeleNCC reviewed the available published literature, held ten virtual meetings between April 2023 and June 2024, used a modified Delphi consensus method, and voted on recommendations for best practices of TeleNCC. In two phases, a total of 13 sections on specific components of TeleNCC were written, reviewed, revised, and finalized following authorship group consensus. Specific expert rationale and applicable supportive evidence, when available, were included and integrated into each section following the recommendation(s).\nRESULTS: Authorship consensus was achieved. For any disagreement exceeding 15%, there was additional group discussion and addition of explanatory text. Recommendations encompassed the following 13 sections, grouped by structure, operations, and quality; TeleNCC sections: (1) models, (2) organization in health system, (3) structural elements, (4) staffing and engagement, (5) clinical roles and responsibilities, (6) activation and communication, (7) afterhours and anticipatory guidance, (8) regulatory and credentialing, (9) finance, (10) pharmacy, (11) quality, (12) outcomes, and (13) the research gaps, training, and education. We recommend that TeleNCC: be available 24/7, though it may be utilized on a part time basis, use a reliable two-way audio-visual telecommunication system with backup options, allow for the hub TeleNCC provider to have real-time access to patient data contained in an electronic health record, as well as the original, nonprocessed raw electroencephalogram and direct diagnostic radiological imaging data. We suggest that phone-only interactions do not meet the minimum requirements for TeleNCC. The health care system should have defined roles and responsibilities for TeleNCC at the hub and spoke sites, including: a spoke site in-person provider(s) one of which is able to perform critical care procedures, clearly defined daytime and afterhours communication protocols, and have streamlined credentialing and financial arrangements. We recommend that regular continuous measurement of quality and outcome tracking is an essential component of TeleNCC practice. We review additional optimal components in well-resourced centers including the integration of advanced digital technology.\nCONCLUSION: TeleNCC may be an effective method to deliver neurocritical care in acute care environments lacking applicable in-person expertise provided the minimum requirements for standard practice and operations are met.",
@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-28T05:34:17.217Z"
+      "supersededAt": "2026-08-29T03:19:57.874Z"
     },
     {
       "id": "pmid:38531812",
@@ -25901,86 +25901,6 @@
       }
     },
     {
-      "id": "pmid:41122889",
-      "pmid": "41122889",
-      "title": "Part 10: Adult and Pediatric Special Circumstances of Resuscitation: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
-      "pubDate": "2025 Oct 21",
-      "journal": "Circulation",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "https://www.ahajournals.org/journal/circ In these guidelines, the American Heart Association provides updated guidance for resuscitation of adults and children in cardiac arrest or with a life-threatening condition due to special circumstances, including anaphylaxis, asthma, cardiac arrest in the cardiac intervention suite, cardiac arrest following cardiac surgery, drowning, electrocution, gas embolism, high-consequence respiratory pathogens, hyperkalemia, hyperthermia, hypothermia, left ventricular assist device failure, pregnancy, pulmonary embolism, and poisoning due to benzodiazepines, β-blockers, calcium channel blockers, cocaine, cyanide, digoxin and related cardiac glycosides, local anesthetic systemic toxicity, methemoglobinemia, opioids, organophosphates and carbamates, sodium channel blockers, sympathomimetics, and volatile hydrocarbons. Recommendations are also provided for alternatives to cardiopulmonary resuscitation and the use of extracorporeal membrane oxygenation for poisoned patients. Adults and children with these conditions require modification of basic life support and advanced life support. These guidelines are based on systematic evidence reviews and provide separate graded recommendations for adults and children.",
-      "meshTerms": [
-        "Humans",
-        "Cardiopulmonary Resuscitation",
-        "Adult",
-        "Child",
-        "American Heart Association",
-        "United States",
-        "Emergency Medical Services",
-        "Heart Arrest",
-        "Female"
-      ],
-      "keywords": [
-        "AHA Scientific Statements",
-        "communicable diseases, emerging",
-        "drowning",
-        "poisoning",
-        "resuscitation"
-      ],
-      "doi": "10.1161/CIR.0000000000001380",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": "aha"
-      },
-      "priority": 11.570796228524648,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 1.5707962285246475,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:08.134Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "아나필락시스·고칼륨·저체온 등 특수상황 소생, 응급 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|part-10-adult-pediatric-special-circumstances-resuscitation-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41122888",
       "pmid": "41122888",
       "title": "Part 7: Adult Basic Life Support: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
@@ -32556,7 +32476,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -33049,11 +32969,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.79333955632555,
+      "priority": 6.790029533904288,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.7933395563255496,
+        "recency": 1.7900295339042884,
         "scope": 0,
         "confidence": 1
       },
@@ -33066,7 +32986,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -35248,7 +35168,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37588,7 +37508,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39578,7 +39498,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40769,7 +40689,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -41725,7 +41645,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43690,7 +43610,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -43976,7 +43896,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44237,7 +44157,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45659,7 +45579,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46135,7 +46055,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46441,7 +46361,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46510,7 +46430,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46660,7 +46580,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46734,7 +46654,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46811,7 +46731,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46953,7 +46873,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47071,7 +46991,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47138,7 +47058,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47327,7 +47247,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47387,7 +47307,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -47459,7 +47379,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47532,7 +47452,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47551,7 +47471,8 @@
       "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline"
+        "Practice Guideline",
+        "Research Support, N.I.H., Extramural"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -47613,7 +47534,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47630,7 +47551,8 @@
       "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline"
+        "Practice Guideline",
+        "Research Support, N.I.H., Extramural"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -47692,7 +47614,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47770,7 +47692,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47849,7 +47771,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47913,7 +47835,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47990,7 +47912,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "lineageKey": "unknown|management-community-acquired-urinary-tract-infections-adult-men-by-french-infectious-disease-society-spilf",
       "supersedes": [],
       "llmFit": {
@@ -48059,7 +47981,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -48129,7 +48051,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-28T05:34:16.290Z",
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -48138,6 +48060,229 @@
         "keep": false,
         "reason": "AHA 뇌졸중 지침이나 급성 아닌 재활·회복, 침상적용 제한",
         "at": "2026-08-28T03:31:20.119Z"
+      }
+    },
+    {
+      "id": "pmid:42663246",
+      "pmid": "42663246",
+      "title": "Workup and management of rhythm disorders in myocarditis and inflammatory cardiomyopathy: a clinical consensus statement of the European Heart Rhythm Association and the Heart Failure Association of the ESC, the ESC Working Group on Myocardial & Pericardial Diseases, the European Association of Preventive Cardiology of the ESC, the Heart Rhythm Society, the Asian Pacific Heart Rhythm Society, and the Latin American Heart Rhythm Society.",
+      "pubDate": "2026 Aug 28",
+      "journal": "European journal of heart failure",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
+      "abstract": "Myocarditis is an important and frequently underrecognized cause of atrioventricular conduction disease and ventricular arrhythmias and may also be associated with atrial arrhythmias and sinus node dysfunction. Arrhythmic risk evolves over time as a result of the interplay between myocardial inflammation, fibrosis, and genetic predisposition. Despite its clinical relevance, guidance for the diagnosis, treatment, and follow-up of arrhythmias in myocarditis has remained limited. This consensus statement provides a structured framework for the management of arrhythmias in myocarditis and inflammatory cardiomyopathy (Infl-CMP), integrating disease phase and genetic background into clinical decision-making. It offers practical guidance across the disease spectrum, including diagnostic evaluation, therapeutic strategies, and longitudinal follow-up. The document was jointly developed by the European Heart Rhythm Association of the European Society of Cardiology (ESC) in collaboration with the Heart Failure Association of the ESC, the ESC Working Group on Myocardial & Pericardial Diseases, and the European Association of Preventive Cardiology of the ESC, together with the Heart Rhythm Society, the Asia Pacific Heart Rhythm Society, and the Latin American Heart Rhythm Society. Consensus advice is organized using a phase-aware framework distinguishing hot, hot-to-cold, and cold phases, with clinical consensus statements graded according to opinion-, observational-, or randomized trial-based evidence and supported by formal author voting. Arrhythmia management is stratified by disease phase. During active inflammation, antiarrhythmic therapy is combined with aetiology-targeted treatment or immunosuppression when indicated. In later stages, substrate-based strategies include pharmacological therapy, device implantation, or ablation. Emphasis is placed on hot-to-cold transition as an arrhythmogenic window and on risk stratification.",
+      "meshTerms": [],
+      "keywords": [
+        "Arrhythmias",
+        "Cold",
+        "Heart failure",
+        "Hot",
+        "Hot-to-cold",
+        "Inflammatory cardiomyopathy",
+        "Myocarditis",
+        "Rhythm disorders",
+        "Sudden cardiac death"
+      ],
+      "doi": "10.1093/ejhf/xuag271",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 11,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
+      "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "심근염 부정맥 진단·관리 ESC 합의문, 응급·중환 심혈관 실무에 닿음",
+        "at": "2026-08-29T03:19:59.376Z"
+      }
+    },
+    {
+      "id": "pmid:42663032",
+      "pmid": "42663032",
+      "title": "Artificial Intelligence predicted ESC 2026 Heart Failure Guidelines.",
+      "pubDate": "2026 Aug 28",
+      "journal": "European journal of heart failure",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "clinical practice guidelines",
+        "evidence grading",
+        "expert consensus",
+        "heart failure",
+        "large language models",
+        "level of evidence"
+      ],
+      "doi": "10.1093/ejhf/xuag281",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
+      "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "AI가 예측한 가상 지침, 실제 진료지침 아님",
+        "at": "2026-08-29T03:19:59.376Z"
+      }
+    },
+    {
+      "id": "pmid:42661420",
+      "pmid": "42661420",
+      "title": "2026 ESC Guidelines for the management of heart failure.",
+      "pubDate": "2026 Aug 28",
+      "journal": "European heart journal",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "Additional medical therapy",
+        "Advanced heart failure",
+        "Aetiology",
+        "Cardiac amyloidosis",
+        "Cardiac resynchronization therapy",
+        "Comorbidities",
+        "Decompensated heart failure",
+        "Diagnosis",
+        "European Society of Cardiology (ESC)",
+        "Foundational medical therapy",
+        "Guideline directed interventional therapy",
+        "Guidelines",
+        "Heart failure",
+        "Heart failure phenotypes",
+        "Heart failure with preserved ejection fraction (HFpEF)",
+        "Heart failure with reduced ejection fraction (HFrEF)",
+        "Implantable cardioverter-defibrillator",
+        "Pharmacotherapy",
+        "Prevention",
+        "Stages of heart failure",
+        "Treatment"
+      ],
+      "doi": "10.1093/eurheartj/ehag100",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-08-29T03:19:56.956Z",
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "2026 ESC 심부전 관리 지침, 응급·중환 핵심 주제",
+        "at": "2026-08-29T03:19:59.376Z"
       }
     }
   ],
@@ -50559,6 +50704,193 @@
         "title": "Management of Heart Failure With Preserved Ejection Fraction: 2026 ACC Expert Consensus Decision Pathway: A Report of the American College of Cardiology Solution Set Oversight Committee.",
         "date": "2026-08-29"
       }
+    },
+    {
+      "id": "pmid:41122889",
+      "pmid": "41122889",
+      "title": "Part 10: Adult and Pediatric Special Circumstances of Resuscitation: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
+      "pubDate": "2025 Oct 21",
+      "journal": "Circulation",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "https://www.ahajournals.org/journal/circ In these guidelines, the American Heart Association provides updated guidance for resuscitation of adults and children in cardiac arrest or with a life-threatening condition due to special circumstances, including anaphylaxis, asthma, cardiac arrest in the cardiac intervention suite, cardiac arrest following cardiac surgery, drowning, electrocution, gas embolism, high-consequence respiratory pathogens, hyperkalemia, hyperthermia, hypothermia, left ventricular assist device failure, pregnancy, pulmonary embolism, and poisoning due to benzodiazepines, β-blockers, calcium channel blockers, cocaine, cyanide, digoxin and related cardiac glycosides, local anesthetic systemic toxicity, methemoglobinemia, opioids, organophosphates and carbamates, sodium channel blockers, sympathomimetics, and volatile hydrocarbons. Recommendations are also provided for alternatives to cardiopulmonary resuscitation and the use of extracorporeal membrane oxygenation for poisoned patients. Adults and children with these conditions require modification of basic life support and advanced life support. These guidelines are based on systematic evidence reviews and provide separate graded recommendations for adults and children.",
+      "meshTerms": [
+        "Humans",
+        "Cardiopulmonary Resuscitation",
+        "Adult",
+        "Child",
+        "American Heart Association",
+        "United States",
+        "Emergency Medical Services",
+        "Heart Arrest",
+        "Female"
+      ],
+      "keywords": [
+        "AHA Scientific Statements",
+        "communicable diseases, emerging",
+        "drowning",
+        "poisoning",
+        "resuscitation"
+      ],
+      "doi": "10.1161/CIR.0000000000001380",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "aha"
+      },
+      "priority": 11.570796228524648,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 1.5707962285246475,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:08.134Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "아나필락시스·고칼륨·저체온 등 특수상황 소생, 응급 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|part-10-adult-pediatric-special-circumstances-resuscitation-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41122889",
+          "title": "Part 10: Adult and Pediatric Special Circumstances of Resuscitation: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
+          "journal": "Circulation",
+          "pubDate": "2025 Oct 21",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41122889/",
+          "doi": "10.1161/CIR.0000000000001380"
+        },
+        "org": "AHA",
+        "version": "2025",
+        "title_ko": "Part 10: 성인 및 소아 소생술의 특수 상황 — 2025 미국심장협회(AHA) 심폐소생술 및 응급심혈관치료 가이드라인",
+        "scope_ko": "심정지 또는 생명을 위협하는 특수 상황에 놓인 성인과 소아의 소생술 지침이다. 아나필락시스, 천식, 심도자실/심장수술 후 심정지, 익수, 감전, 공기색전, 고위험 호흡기 병원체, 고칼륨혈증, 고체온·저체온, LVAD 고장, 임신, 폐색전증, 그리고 다양한 중독(벤조디아제핀, β-차단제, 칼슘통로차단제, 코카인, 시안화물, 디곡신, 국소마취제 전신독성(LAST), 메트헤모글로빈혈증, 오피오이드, 유기인제/카바메이트, 나트륨통로차단제, 교감신경흥분제, 휘발성 탄화수소)을 다루며, 중독 환자에서의 CPR 대안과 ECMO 사용까지 포함한다. 성인·소아 각각에 대해 별도로 등급화된 권고를 제공한다.",
+        "summary": [
+          "Opioid overdose: give an opioid antagonist (naloxone) to anyone in respiratory arrest from suspected opioid overdose (COR 1, LOE B-NR); trained rescuers, lay rescuers, and the general public may all administer naloxone, and it must not delay initiation of CPR. Naloxone is now incorporated into the adult BLS algorithm.",
+          "Maternal cardiac arrest: begin preparation for 'resuscitative delivery' (the new term replacing 'perimortem cesarean delivery') at the moment maternal cardiac arrest is recognized, with the goal of completing delivery by ~5 minutes; consider ECPR if standard resuscitation fails.",
+          "Hyperkalemia: a good practice statement supports IV salbutamol or insulin-with-glucose (or both) to lower potassium in pediatric cardiac arrest associated with hyperkalemia; evidence for sodium bicarbonate and/or calcium in hyperkalemic arrest is limited and of uncertain benefit.",
+          "Severe environmental hypothermia: it may be reasonable to rewarm adults and children with core temperature <28°C (84°F) who are NOT in cardiac arrest using extracorporeal life support (ECLS).",
+          "Life-threatening β-blocker and calcium channel blocker poisoning: high-dose insulin therapy is recommended early in treatment; cyanide poisoning requires hydroxocobalamin; venoarterial ECMO (VA-ECMO)/ECLS is endorsed as a bridge for refractory poisoned patients.",
+          "Anaphylaxis: isotonic IV fluids may be used for fluid resuscitation in cardiac arrest from anaphylaxis; peri-arrest options include epinephrine (IM or IV), antihistamines, bronchodilators, corticosteroids, glucagon, and removal of the trigger.",
+          "Exertional heat stroke: rapid cold-water immersion (water 1–5°C) with cooling as rapidly as possible is recommended.",
+          "Interposed abdominal compression: a dedicated rescuer compresses the abdomen midway between the xiphoid and the umbilicus during the relaxation (recoil) phase of chest compression."
+        ],
+        "summary_ko": [
+          "오피오이드 과량: 오피오이드 과량 의심으로 호흡정지가 있는 사람에게 오피오이드 길항제(naloxone)를 투여한다(COR 1, LOE B-NR). 훈련받은 구조자·일반인 구조자·일반 대중 모두 투여할 수 있으며, CPR 시작을 지연시켜서는 안 된다. Naloxone은 이제 성인 BLS 알고리즘에 통합되었다.",
+          "산모 심정지: 산모 심정지를 인지하는 즉시 'resuscitative delivery'(기존 'perimortem cesarean delivery'를 대체하는 새 용어) 준비를 시작하고 약 5분 이내 분만 완료를 목표로 한다. 표준 소생술 실패 시 ECPR을 고려한다.",
+          "고칼륨혈증: 고칼륨혈증과 연관된 소아 심정지에서 칼륨을 낮추기 위해 IV salbutamol 또는 insulin+glucose(또는 병용)를 사용하도록 하는 good practice statement를 제시한다. 고칼륨혈증 심정지에서 sodium bicarbonate 및/또는 calcium의 근거는 제한적이고 이득이 불확실하다.",
+          "중증 환경성 저체온: 심장정지가 아닌 심부체온 <28°C(84°F)의 성인·소아를 ECLS로 재가온하는 것이 합리적일 수 있다.",
+          "생명을 위협하는 β-차단제·칼슘통로차단제 중독: 치료 초기에 high-dose insulin 요법을 권고한다. 시안화물 중독에는 hydroxocobalamin이 필요하며, 불응성 중독 환자에서 VA-ECMO/ECLS를 회복까지의 가교로 권고한다.",
+          "아나필락시스: 아나필락시스에 의한 심정지에서 등장성 IV 수액을 소생에 사용할 수 있다. 심정지 임박(peri-arrest) 시 선택지는 epinephrine(IM 또는 IV), 항히스타민제, 기관지확장제, 코르티코스테로이드, glucagon, 유발인자 제거를 포함한다.",
+          "운동성 열사병: 물 온도 1–5°C의 급속 냉수 침수로 가능한 한 빨리 냉각한다.",
+          "Interposed abdominal compression: 전담 구조자가 흉부압박의 이완(반동) 단계에서 검상돌기와 배꼽 중간 지점의 복부를 압박한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "구조·편제 변화",
+            "detail": "In the 2020 Guidelines, special circumstances of resuscitation were embedded within the adult BLS/ALS recommendations; for 2025 they are consolidated into a dedicated Part 10 with separately graded recommendations for adults and children. Across the special-circumstances content, 44 recommendations were modified and 140 new recommendations were added.",
+            "detail_ko": "2020 가이드라인에서는 특수 상황 소생술이 성인 BLS/ALS 권고 안에 포함되어 있었으나, 2025에서는 별도의 Part 10으로 통합되고 성인·소아 각각 별도 등급으로 권고를 제시한다. 특수 상황 전체에서 44개 권고가 수정되고 140개 새 권고가 추가되었다."
+          },
+          {
+            "topic": "산모 소생 용어·시점",
+            "detail": "Terminology changed from 'perimortem cesarean delivery' to 'resuscitative delivery.' Preparation should begin at recognition of maternal cardiac arrest (not after a fixed delay), with the goal of completing delivery by ~5 minutes; ECPR is added as a consideration when standard resuscitation fails, and balanced/massive transfusion is emphasized for suspected amniotic fluid embolism.",
+            "detail_ko": "용어가 'perimortem cesarean delivery'에서 'resuscitative delivery'로 바뀌었다. 준비는 (정해진 지연 후가 아니라) 산모 심정지 인지 즉시 시작하며 약 5분 이내 분만 완료를 목표로 한다. 표준 소생술 실패 시 ECPR을 고려 항목으로 추가했고, 양수색전증 의심 시 균형 잡힌 대량수혈을 강조한다."
+          },
+          {
+            "topic": "오피오이드 길항제(naloxone)",
+            "detail": "Naloxone administration for suspected opioid overdose is newly integrated into the adult BLS algorithm and given a formal recommendation (COR 1, LOE B-NR) for respiratory arrest, explicitly extending administration to lay rescuers and the general public. Prior guidance was less prescriptive about public/lay administration within the core BLS pathway.",
+            "detail_ko": "오피오이드 과량 의심 시 naloxone 투여가 성인 BLS 알고리즘에 새로 통합되었고, 호흡정지에 대해 공식 권고(COR 1, LOE B-NR)가 부여되었으며 일반인 구조자와 일반 대중으로까지 투여 주체가 명시적으로 확대되었다. 이전 지침은 핵심 BLS 경로 내 일반인 투여를 이만큼 명확히 규정하지 않았다."
+          },
+          {
+            "topic": "새로 다뤄진 특수 상황",
+            "detail": "Entirely new recommendations were added for interposed abdominal compression, electrocution, gas embolism, high-consequence respiratory pathogens (to reduce transmission risk during arrest care), hyperthermia, durable left ventricular assist device (LVAD) failure, amniotic fluid embolism in peripartum patients, and poisoning from volatile hydrocarbons — topics not separately addressed in 2020.",
+            "detail_ko": "interposed abdominal compression, 감전, 공기색전, 고위험 호흡기 병원체(심정지 치료 중 전파 위험 감소), 고체온, durable LVAD 고장, 분만전후 환자의 양수색전증, 휘발성 탄화수소 중독에 대해 완전히 새로운 권고가 추가되었다 — 2020에서는 별도로 다루지 않았던 주제들이다."
+          },
+          {
+            "topic": "β-차단제/CCB 중독",
+            "detail": "High-dose insulin therapy is recommended early in the treatment of life-threatening β-blocker and calcium channel blocker poisoning, and poisoned patients are identified as ideal candidates for VA-ECMO/ECLS as a bridge until the toxin clears — a more explicit endorsement of extracorporeal support for the poisoned patient.",
+            "detail_ko": "생명을 위협하는 β-차단제·칼슘통로차단제 중독 치료 초기에 high-dose insulin 요법을 권고하며, 중독 환자를 독소가 제거될 때까지의 가교로서 VA-ECMO/ECLS의 이상적 후보로 규정한다 — 중독 환자에 대한 체외순환보조를 보다 명확히 지지한다."
+          },
+          {
+            "topic": "아나필락시스",
+            "detail": "The guidelines note that in cardiac arrest from anaphylaxis the standard autoinjector/IM dose of epinephrine may not offer benefit, flag a knowledge gap as to whether a higher IM dose (e.g., 5 mg in adults) helps, and state that isotonic IV fluids may be used for resuscitation — a shift toward IV epinephrine and aggressive fluids once arrest occurs.",
+            "detail_ko": "아나필락시스에 의한 심정지에서는 표준 autoinjector/IM 용량의 epinephrine이 이득이 없을 수 있음을 지적하고, 더 높은 IM 용량(예: 성인 5 mg)이 도움이 되는지에 대한 지식 공백을 명시하며, 소생에 등장성 IV 수액을 사용할 수 있다고 기술한다 — 심정지 발생 시 IV epinephrine과 적극적 수액 쪽으로의 전환이다."
+          },
+          {
+            "topic": "고칼륨혈증(소아)",
+            "detail": "A good practice statement newly suggests IV salbutamol or insulin-with-glucose (or both) to lower potassium in pediatric cardiac arrest from hyperkalemia, while stating that evidence for sodium bicarbonate and/or calcium in hyperkalemic arrest is limited and of uncertain benefit.",
+            "detail_ko": "고칼륨혈증에 의한 소아 심정지에서 칼륨을 낮추기 위해 IV salbutamol 또는 insulin+glucose(또는 병용)를 제안하는 good practice statement가 새로 제시되었고, 고칼륨혈증 심정지에서 sodium bicarbonate 및/또는 calcium의 근거는 제한적이며 이득이 불확실하다고 명시한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "AHA 공식 보도자료: 오피오이드·기도폐쇄·단일 생존사슬 개편",
+            "body_ko": "AHA 뉴스룸 보도자료(2차 자료)는 2025 가이드라인 전반의 대중용 변화를 설명한다. 처음으로 일반인 대상 naloxone 사용 지침이 포함되어, 서맥성 호흡·그렁거림·기면·축동·청회색 피부 등 오피오이드 과량 징후 인지를 강조한다. 기도폐쇄는 성인·소아에서 '등 두드리기 5회와 복부 밀어내기 5회를 번갈아' 시행하고, 영아는 손상 위험 때문에 복부 밀어내기 대신 '등 두드리기 5회와 흉부 밀어내기 5회를 번갈아' 시행하도록 했다. 또한 성인/소아·병원내/병원외로 나뉘던 생존사슬을 하나의 통합 사슬(인지→고품질 CPR→제세동→전문소생→소생후치료→회복)로 합쳤다. 이는 특수 상황 Part 10 자체 권고가 아니라 가이드라인 전반의 대중 메시지 요약임에 유의한다.",
+            "sourceLabel": "AHA Newsroom 보도자료",
+            "sourceUrl": "https://newsroom.heart.org/news/updated-cpr-guidelines-tackle-choking-response-opioid-related-emergencies-and-a-revised-chain-of-survival"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, build naloxone into your BLS reflex for any unresponsive apneic patient with pinpoint pupils — give it early but never let it delay compressions or ventilation, and empower nurses/lay first responders to administer it. In maternal arrest, drop the '4-minute' mental clock as a starting gun: prep for resuscitative delivery the instant arrest is recognized and target completion by ~5 minutes, with ECPR and massive-transfusion pathways pre-briefed. For the poisoned or refractory patient (β-blocker/CCB, cyanide, severe hypothermia <28°C), activate high-dose insulin, hydroxocobalamin, and VA-ECMO/ECLS pathways early rather than as a last resort. Stock and rehearse the special-circumstance antidotes and cooling (rapid cold-water immersion 1–5°C for exertional heat stroke) so these low-frequency, high-stakes protocols are muscle memory.",
+        "practiceImpact_ko": "침상에서는 축동을 동반한 무반응·무호흡 환자에 대해 naloxone을 BLS 반사로 편입하되 — 조기에 주되 흉부압박·환기를 지연시키지 말고, 간호사·일반 초기대응자도 투여할 수 있게 한다. 산모 심정지에서는 '4분' 시계를 출발 신호로 삼지 말고, 심정지 인지 즉시 resuscitative delivery를 준비해 약 5분 완료를 목표로 하며 ECPR·대량수혈 경로를 미리 브리핑해 둔다. 중독·불응성 환자(β-차단제/CCB, 시안화물, 심부체온 <28°C 저체온)에서는 high-dose insulin, hydroxocobalamin, VA-ECMO/ECLS를 최후 수단이 아니라 조기에 가동한다. 이런 저빈도·고위험 프로토콜이 몸에 배도록 특수 상황 해독제와 냉각법(운동성 열사병에 1–5°C 급속 냉수 침수)을 상비·훈련해 둔다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41122889",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41122889/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1161/CIR.0000000000001380",
+            "url": "https://doi.org/10.1161/CIR.0000000000001380"
+          },
+          {
+            "label": "웹 — AHA Newsroom — Updated CPR guidelines (choking, opioid, chain of survival)",
+            "url": "https://newsroom.heart.org/news/updated-cpr-guidelines-tackle-choking-response-opioid-related-emergencies-and-a-revised-chain-of-survival"
+          },
+          {
+            "label": "웹 — EMOttawa Blog — 2025 AHA Guidelines Update: Key Changes in CPR and ECC",
+            "url": "https://emottawablog.com/2026/01/2025-aha-guidelines-update-key-changes-in-cpr-and-ecc/"
+          },
+          {
+            "label": "웹 — EMCrit 412 — 2025 AHA ACLS Guidelines with Shel Cheskes",
+            "url": "https://emcrit.org/emcrit/2025-aha-acls-guidelines/"
+          }
+        ]
+      },
+      "publishedAt": "2026-08-29"
     }
   ],
   "rejected": [
@@ -50593,7 +50925,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": null,
@@ -54873,7 +55205,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "BACKGROUND: Cardiovascular disease remains the leading cause of mortality worldwide, with acute myocardial infarction (AMI) contributing to over 100,000 deaths annually in the United States. Accurate risk stratification for in-hospital mortality is essential for guiding clinical decisions, improving outcomes, and optimizing hospital resources. However, existing models often rely on limited predictor sets, outdated data, and linear methods that may not reflect current clinical practice.\nOBJECTIVE: To develop and validate a contemporary in-hospital mortality risk model for AMI patients, incorporating clinical, demographic, and social determinants of health, and to compare performance against the legacy ACTION Registry-GWTG model.\nMETHODS: We utilized data from the American Heart Association (AHA) Get with The Guidelines-Coronary Artery Disease (GWTG-CAD) Registry. Patients with AMI admitted between October 1, 2019, and December 31, 2022 (201,191 patients from 605 hospitals) were used to develop the in-hospital mortality prediction model. A total number of 70,302 patients admitted in 2023 served as an independent validation cohort. We incorporated 27 predictors and benchmarked against the legacy ACTION Registry-GWTG model. Subgroup and sensitivity analyses assessed model performance across sex, race/ethnicity, ST-elevation myocardial infarction status, and time period.\nRESULTS: The Light Gradient Boosting Machine (LightGBM)-based GWTG-CAD model achieved the highest discrimination (area under the receiver operating characteristic curve [AUROC] 0.874, 95% confidence intervals, 0.867-0.880) and superior calibration across subgroups, outperforming the ACTION Registry-GWTG model (AUROC 0.859, 95% confidence intervals, 0.852-0.867). Comorbidities, transportation method, and community-level socioeconomic factors contributed meaningful predictive value beyond traditional predictors. The generalized linear mixed model (AUROC 0.865) provided interpretable odds ratios and calibrated probability estimates suitable for risk-adjusted benchmarking and quality improvement.\nCONCLUSION: The GWTG-CAD model suite advances AMI mortality prediction through 2 complementary approaches: the LightGBM model offers superior discrimination for identifying high-risk patients across diverse subgroups, while the generalized linear mixed model provides a transparent tool for institutional benchmarking and quality improvement. Broader external validation is needed before clinical deployment.",
       "meshTerms": [
         "Humans",
@@ -55499,7 +55831,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -55534,7 +55866,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55564,7 +55896,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55594,7 +55926,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -55630,7 +55962,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55660,7 +55992,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55689,7 +56021,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -55729,7 +56061,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "In 2025, the focused update of the ESC/EAS guidelines on dyslipidemia management introduced clinically relevant refinements in cardiovascular risk stratification and lipid-lowering therapy. The updated recommendations emphasize the integration of additional risk modifiers, including comorbidities, biomarkers and imaging findings, enabling a more individualized assessment of cardiovascular risk. In patients with acute coronary syndrome, the updated guidance highlights the importance of rapid and intensive LDL cholesterol reduction during the index hospitalization, including prompt initiation of high-intensity statin therapy and early combination treatment to facilitate target achievement. Recent evidence further supports early intensive LDL cholesterol lowering, with outcome data for bempedoic acid and PCSK9 inhibitors extending the role of LDL cholesterol lowering beyond secondary prevention. At the same time, emerging evidence on statin safety indicates that a substantial proportion of commonly reported adverse effects are not causally related to statin therapy, underscoring the relevance of patient education and structured communication to improve adherence. Beyond LDL cholesterol, other lipid fractions have gained increasing clinical relevance. Lipoprotein(a) has emerged as an important genetically determined cardiovascular risk factor, and several therapies capable of markedly reducing lipoprotein(a) levels are currently being evaluated in large, randomized outcome trials. In hypertriglyceridemia, conventional therapies have shown limited benefit regarding cardiovascular outcomes. Novel targeted approaches, particularly therapies directed against apolipoprotein C-III, therefore represent promising future treatment strategies. Overall, recent developments highlight a shift toward earlier, more intensive, and more individualized lipid-lowering strategies, with emerging therapies likely to further expand cardiovascular prevention in the coming years.",
       "meshTerms": [
         "Humans",
@@ -55851,7 +56183,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-28T05:34:09.641Z",
+      "discoveredAt": "2026-08-29T03:19:44.959Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -55917,9 +56249,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260828_143313:guideline:2026-08-28",
+    "runId": "trend_review_20260829_121404:guideline:2026-08-29",
     "outcome": "published",
-    "publishedId": "pmid:41014602",
+    "publishedId": "pmid:41122889",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -55944,15 +56276,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 160,
+        "mergedTotal": 167,
         "overlapCount": 1,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep",
         "window": {
-          "minDate": "2026/07/29",
-          "maxDate": "2026/08/28"
+          "minDate": "2026/07/30",
+          "maxDate": "2026/08/29"
         },
         "retmax": 60,
         "topics": [
@@ -55960,8 +56292,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 53,
-            "idsFetched": 53,
+            "totalFound": 57,
+            "idsFetched": 57,
             "truncated": false,
             "error": null
           },
@@ -55978,8 +56310,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 18,
-            "idsFetched": 18,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -55987,8 +56319,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 16,
-            "idsFetched": 16,
+            "totalFound": 15,
+            "idsFetched": 15,
             "truncated": false,
             "error": null
           },
@@ -55996,8 +56328,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 31,
-            "idsFetched": 31,
+            "totalFound": 33,
+            "idsFetched": 33,
             "truncated": false,
             "error": null
           },
@@ -56050,13 +56382,13 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 148,
+        "topicOnlyCount": 155,
         "ptPmids": [
           "42087034",
           "41419448",
@@ -56065,9 +56397,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 160,
-          "enriched": 160,
-          "withAbstract": 121,
+          "requested": 167,
+          "enriched": 167,
+          "withAbstract": 125,
           "error": null
         }
       },
@@ -56120,23 +56452,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 3,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 226,
-        "needsReview": 445,
+        "queued": 227,
+        "needsReview": 446,
         "rejected": 124,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41014602",
+        "candidateId": "pmid:41122889",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-29T02:04:25.093Z",
+  "updatedAt": "2026-08-29T03:23:45.348Z",
   "configVersion": "guideline-v2"
 }

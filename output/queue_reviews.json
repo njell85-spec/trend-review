@@ -139,23 +139,6 @@
       "status": "queued"
     },
     {
-      "pmid": "40335091",
-      "title": "Advances in treatments for acute ischemic stroke.",
-      "journal": "BMJ",
-      "score": 8.4,
-      "topic": "neuro",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "급성 허혈뇌졸중 치료, 신경응급 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40440268",
       "title": "Platelet Transfusion: 2025 AABB and ICTMG International Clinical Practice Guidelines.",
       "journal": "JAMA",
@@ -7767,6 +7750,100 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40335091",
+      "title": "Advances in treatments for acute ischemic stroke.",
+      "journal": "BMJ",
+      "score": 8.4,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 허혈뇌졸중 치료, 신경응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-08-29",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40335091",
+          "title": "Advances in treatments for acute ischemic stroke.",
+          "journal": "BMJ (Clinical research ed.)",
+          "pubDate": "2025-5-8",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40335091/",
+          "doi": "10.1136/bmj-2023-076161"
+        },
+        "title_ko": "급성 허혈뇌졸중 치료의 최신 진전",
+        "scope_ko": "급성 허혈뇌졸중의 급성기 재관류 치료(정맥 혈전용해와 혈관내 혈전제거술)의 최신 발전을 정리한 BMJ 종설로, 기존 가이드라인과 리뷰의 경계를 넘어 현재 연구 중인 새로운 전략과 치료까지 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "질병 부담과 종설의 취지",
+            "body_ko": "급성 허혈뇌졸중은 전 세계적으로 사망과 장애의 주요 원인이다. 본 종설은 급성 허혈뇌졸중에 대한 중재 치료의 최신 진전을 정리하되, 기존 가이드라인과 종설의 범위를 넘어 현재 연구가 진행 중인 새로운 전략과 치료까지 탐색하는 것을 목표로 한다.\n\n(주의: 아래 'article' 표시 절들은 이 논문의 초록에서만 확보한 내용이다. 본문 전문은 BMJ·DOI·Scribd·ResearchGate·Europe PMC 등 모든 경로에서 접근이 차단되어 확보하지 못했다. 저자의 원래 소제목·세부 수치·근거등급은 초록에 담긴 범위까지만 옮겼다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "정맥 혈전용해 — 급성기 치료의 초석",
+            "body_ko": "정맥 혈전용해는 허혈뇌졸중에 대해 처음으로 개발된 급성기 치료였다. 처음에는 alteplase로, 그리고 이제는 tenecteplase로 이어지며, 정맥 혈전용해는 급성 허혈뇌졸중 관리의 초석(cornerstone)으로 여전히 남아 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈관내 혈전제거술 — 대혈관 폐색의 표준 치료",
+            "body_ko": "대혈관 폐색(large vessel occlusion)에서는 혈관내 혈전제거술(endovascular thrombectomy)이 전방순환 및 후방순환 뇌졸중 모두에서 급성 뇌졸중 관리의 표준 치료(standard of care)로 자리 잡았다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "적응증 경계의 확장",
+            "body_ko": "이들 치료의 적응 경계가 확장되어 왔으며, 그 결과 이전에는 치료 대상이 되지 못했던(ineligible) 환자들의 예후가 개선되었다. 본 종설은 이러한 확장의 최신 근거와 함께, 현재 조사 중인 신흥 치료 전략을 함께 살핀다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] Tenecteplase의 약리와 주요 임상시험",
+            "body_ko": "Tenecteplase(TNK)는 조직플라스미노겐활성제(alteplase)를 유전공학적으로 개량한 변이체로, alteplase 대비 fibrin 특이성이 약 14배 높고 PAI-1에 대한 저항성이 약 80배 높으며 반감기가 길다. 이 덕분에 alteplase의 볼루스+지속주입 방식과 달리 단회 정맥 볼루스(single bolus)로 투여할 수 있어 투약 오류가 줄고 door-to-needle·door-in-door-out 시간이 개선된다. 임상시험으로 확립된 표준 용량은 0.25 mg/kg 단회 볼루스이다.\n\n주요 임상시험: EXTEND-IA TNK(2018)에서는 혈전제거술 예정 환자에서 tenecteplase가 alteplase 대비 대혈관 재관류 성공률을 절대값 12% 높였다. AcT(2022)는 최초의 3상 비열등성 시험으로 0.25 mg/kg tenecteplase가 alteplase에 비열등함을 보였다(90~120일 mRS 0–1: 36.9% 대 34.8%, −5% 비열등성 기준 충족). TRACE-2(2023, 중국, 1,430명)에서 mRS 0–1은 62% 대 58%(RR 1.07)로 역시 비열등했고 안전성도 유사했다. 반면 NOR-TEST(2017)는 0.4 mg/kg 용량에서 안전성은 유사했으나 기능적 우월성은 보이지 못했고, NOR-TEST 2는 중등도–중증 뇌졸중에서 0.4 mg/kg가 오히려 예후를 악화시켰다 — 즉 고용량이 아니라 0.25 mg/kg가 표준이다. 실사용 데이터(CERTAIN 협력, 9,238명)에서는 증상성 뇌내출혈이 1.8% 대 3.6%로 오히려 낮았다.\n\n가이드라인: 2023년 유럽뇌졸중기구(ESO)는 4.5시간 이내 급성 허혈뇌졸중/대혈관 폐색에서 0.25 mg/kg tenecteplase를 0.9 mg/kg alteplase의 대안으로 강하게 권고한다. 2023년 영국/아일랜드 국가 가이드라인도 발병 4.5시간 이내에서 두 약제를 모두 권고한다. (이 절은 이 논문 본문이 아니라 아래 2차 출처에서 보강한 내용이다.)\n— 보강 출처: Comprehensive Review of Tenecteplase for Thrombolysis in Acute Ischemic Stroke (JAHA, PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11179942/)",
+            "origin": "augmented",
+            "sourceLabel": "Comprehensive Review of Tenecteplase for Thrombolysis in Acute Ischemic Stroke (JAHA, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11179942/"
+          },
+          {
+            "heading_ko": "[웹 보강] 치료 시간창의 확장과 모바일 뇌졸중 유닛",
+            "body_ko": "혈전제거술의 시간창 확장은 이 종설이 말하는 '경계의 확장'의 핵심이다. DAWN 등 기계적 혈전제거술 시험은 구제 가능한 뇌조직(salvageable tissue)이 남아 있는 선별된 환자에서 치료 시간창을 발병 최대 24시간까지 넓힐 수 있음을 입증했다. 또한 정맥 혈전용해(alteplase 또는 tenecteplase) 이후 기계적 혈전제거술을 시행하는 복합(bridging) 전략은 재관류율과 임상 예후를 함께 개선한다.\n\n모바일 뇌졸중 유닛(MSU)은 표준 응급의료 대비 door-to-needle 시간을 평균 15~30분 단축할 수 있어 초급성기 치료 접근의 또 다른 진전으로 논의된다. (이 절은 이 논문 본문이 아니라 아래 2차 출처에서 보강한 내용이다.)\n— 보강 출처: Breaking Barriers in Stroke Therapy: Recent Advances and Ongoing Challenges (PMC, 2025) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11872241/)",
+            "origin": "augmented",
+            "sourceLabel": "Breaking Barriers in Stroke Therapy: Recent Advances and Ongoing Challenges (PMC, 2025)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11872241/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서의 함의는 초록 범위에서 명확하다 — 정맥 혈전용해는 여전히 급성기 초석이며, 단회 볼루스로 투여가 간편한 tenecteplase(0.25 mg/kg)가 alteplase를 대체해가고, 대혈관 폐색에서는 전·후방순환 모두 혈전제거술이 표준이다. 나아가 시간창(최대 24시간)과 대형 경색까지 적응 대상이 넓어지고 있어, 과거 '부적격'으로 넘겼던 환자도 재관류 치료 후보로 재평가할 필요가 있다. 다만 세부 적응 기준·역치·근거등급은 이 논문 본문을 확보하지 못해(초록만 접근) 원문에서 직접 확인해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40335091",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40335091/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/bmj-2023-076161",
+            "url": "https://doi.org/10.1136/bmj-2023-076161"
+          },
+          {
+            "label": "웹 — Comprehensive Review of Tenecteplase for Thrombolysis in Acute Ischemic Stroke (JAHA, PMC11179942)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11179942/"
+          },
+          {
+            "label": "웹 — Breaking Barriers in Stroke Therapy: Recent Advances and Ongoing Challenges (PMC11872241)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11872241/"
+          },
+          {
+            "label": "웹 — TCTMD: Endovascular Therapy Works for Ischemic Strokes With Large Cores, Trials Affirm",
+            "url": "https://www.tctmd.com/news/endovascular-therapy-works-ischemic-strokes-large-cores-trials-affirm"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -7824,9 +7901,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-28",
+    "date": "2026-08-29",
     "outcome": "published",
-    "publishedId": "39976933"
+    "publishedId": "40335091"
   },
-  "updatedAt": "2026-08-28"
+  "updatedAt": "2026-08-29"
 }

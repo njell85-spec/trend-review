@@ -429,5 +429,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41105050",
+    "title": "Targeted Tissue Perfusion Versus Macrocirculatory-Guided Standard Care in Patien",
+    "date": "2026-08-29",
+    "topic": "sepsis_shock",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 20,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
