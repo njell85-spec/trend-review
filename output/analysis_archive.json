@@ -1414,6 +1414,72 @@
       "fullTextSource": "abstract+registry",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-29",
+      "pmid": "41105050",
+      "title": "Targeted Tissue Perfusion Versus Macrocirculatory-Guided Standard Care in Patients With Septic Shock: A Randomized Clinical Trial-The TARTARE-2S Trial.",
+      "title_ko": "패혈성 쇼크 환자에서 조직 관류 표적 치료 대 대순환(macrocirculation) 기반 표준 치료: 무작위 임상시험 — TARTARE-2S 시험",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000006899",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "Lactate >3 mmol/L인 패혈성 쇼크 중환자에서, 권장치보다 낮은 MAP(50–65 mm Hg)를 허용하며 조직 관류를 표적으로 하는 전략이 2012 Surviving Sepsis Campaign 목표 기반의 MAP-유도 표준 치료에 비해 예후를 개선하는가?",
+      "pico": {
+        "population": "[Europe (multinational)] Two hundred nineteen patients with septic shock and blood lactate greater than 3 mmol/L in three European university hospital ICUs, enrolled from 2016 to 2022, allocated to TTP (n = 111) vs. SC (n = 108); patients were middle-aged to aged adults.",
+        "intervention": "Targeted tissue perfusion (TTP) protocol comprising capillary refill time, peripheral skin temperature, arterial lactate concentrations, and MAP 50–65 mm Hg (n = 111).",
+        "comparison": "MAP-guided standard care (SC) protocol comprising the hemodynamic targets of the 2012 Surviving Sepsis Campaign (n = 108).",
+        "outcome": "Primary outcome: median days alive in 30 days with normal lactate and without vasopressor/inotropic drugs was 23 (IQR 10–27) in TTP vs. 22 (IQR 1–27) in SC (difference in medians, 0.59; 95% CI, −3 to 4); analyzed in 194 patients (97 TTP, 97 SC)."
+      },
+      "pico_ko": {
+        "population": "[유럽 다국가] 세 곳의 유럽 대학병원 ICU에서 2016–2022년에 등록된, 패혈성 쇼크 및 혈중 lactate >3 mmol/L인 환자 219명; TTP군(n = 111) 대 SC군(n = 108)에 배정, 중년~고령 성인.",
+        "intervention": "조직 관류 표적(TTP) 프로토콜: capillary refill time, 말초 피부 온도, 동맥혈 lactate 농도, 그리고 MAP 50–65 mm Hg를 목표로 함(n = 111).",
+        "comparison": "MAP-유도 표준 치료(SC) 프로토콜: 2012 Surviving Sepsis Campaign의 혈역학 목표(n = 108).",
+        "outcome": "1차 결과: 30일 중 정상 lactate이면서 vasopressor/inotropic 약물 없이 생존한 일수의 중앙값은 TTP군 23일(IQR 10–27), SC군 22일(IQR 1–27) (중앙값 차이 0.59; 95% CI −3 to 4); 194명(TTP 97명, SC 97명)에서 분석됨."
+      },
+      "keyFindings": [
+        "The primary outcome (median days alive in 30 days with normal lactate and without vasopressor/inotropic drugs) was 23 (IQR 10–27) in TTP vs. 22 (IQR 1–27) in SC, difference in medians 0.59 (95% CI −3 to 4) — no significant difference.",
+        "30-day mortality was 24.7% (24/97) in TTP vs. 27.8% (27/97) in SC, with no significant difference; MAP levels were lower in the TTP group.",
+        "Secondary outcomes (single components of the primary outcome, days alive without organ support, mortality) and serious adverse reactions did not differ significantly, and no additional safety concerns were detected with the TTP strategy."
+      ],
+      "keyFindings_ko": [
+        "1차 결과(30일 중 정상 lactate이면서 vasopressor/inotropic 약물 없이 생존한 일수 중앙값)는 TTP군 23일(IQR 10–27), SC군 22일(IQR 1–27), 중앙값 차이 0.59(95% CI −3 to 4)로 유의한 차이 없음.",
+        "30일 사망률은 TTP군 24.7%(24/97), SC군 27.8%(27/97)로 유의한 차이 없었고, MAP 수치는 TTP군이 더 낮았음.",
+        "2차 결과(1차 결과의 개별 구성요소, organ support 없이 생존한 일수, 사망률)와 중대 이상반응은 유의하게 다르지 않았으며, TTP 전략에서 추가적인 안전성 우려는 발견되지 않음."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41105050",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41105050/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000006899",
+          "url": "https://doi.org/10.1097/CCM.0000000000006899"
+        },
+        {
+          "label": "웹 — PubMed — TARTARE-2S Trial (PMID 41105050)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41105050/"
+        },
+        {
+          "label": "웹 — Capital Region of Denmark Research Portal — TARTARE-2S publication record",
+          "url": "https://research.regionh.dk/en/publications/targeted-tissue-perfusion-versus-macrocirculatory-guided-standard/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — TARTARE-2S Trial (PMID 41105050)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41105050/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Capital Region of Denmark Research Portal — TARTARE-2S publication record",
+          "url": "https://research.regionh.dk/en/publications/targeted-tissue-perfusion-versus-macrocirculatory-guided-standard/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
