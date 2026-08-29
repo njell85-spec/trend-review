@@ -72,9 +72,12 @@ export class GuidelineAnalyzerAgent {
    * 참고자료는 `sourceNote_ko`(출처 성격·근거 수준·한계)를 요구한다. 참고자료는 공인되지 않은
    * 출처일 수 있다는 것이 이 모드의 전제이므로, 출처 성격을 카드가 말하지 않으면 안 된다.
    */
-  _tool(mode = 'guideline') {
+  _tool(mode = 'guideline', doc = null) {
     if (mode === 'reference') return this._referenceTool();
     if (mode === 'review') return this._reviewTool();
+    if (mode === 'synthesis') {
+      return this._synthesisTool((doc?.docs ?? []).map((d) => String(d.refId)).filter(Boolean));
+    }
     return {
       name: 'submit_guideline_catchup',
       description: 'Submit a DETAILED, structured guideline catch-up brief (bilingual EN + KO)',
@@ -124,6 +127,116 @@ export class GuidelineAnalyzerAgent {
           },
         },
         required: ['pmid', 'org', 'version', 'title_ko', 'scope_ko', 'summary', 'summary_ko', 'keyChanges', 'augmentedSections', 'practiceImpact', 'practiceImpact_ko'],
+      },
+    };
+  }
+
+  /**
+   * 종합 툴 — 관련 문헌 2~5건을 한 장으로 대조한다 (PeterJ 요구 2026-08-29).
+   *
+   * ★ **문헌의 정체(제목·PMID·기관)는 LLM 이 쓰지 않는다.** 파이프라인이 넘겨주고 모델은
+   *   `refId`(D1…D5)로만 지칭한다. refId 는 그 실행의 실제 목록으로 **enum 고정**한다.
+   *   이 카드의 제1 실패가 오귀속("ESC 가 이렇게 말했다"가 실은 합의문 내용)인데,
+   *   프롬프트로 막는 것보다 스키마로 막는 것이 세다 — 해적판 출처를 허용목록으로
+   *   막은 것과 같은 판단이다(sourceTrust.js).
+   *
+   * ★ "해당 없음"이 없다. 어떤 축에 안 나오는 문헌은 그 축의 `positions` 어디에도
+   *   안 실리면 그만이다 — 결정경로가 '정의' 축에 빠져도 빈칸을 강요받지 않는다.
+   */
+  _synthesisTool(refIds = []) {
+    const refSchema = refIds.length
+      ? { type: 'string', enum: refIds }
+      : { type: 'string', description: 'refId of one of the provided documents (D1, D2, …).' };
+    return {
+      name: 'submit_synthesis_brief',
+      description: 'Submit a structured multi-document synthesis/comparison brief (bilingual EN + KO)',
+      input_schema: {
+        type: 'object',
+        properties: {
+          title_ko: { type: 'string', description: '종합 카드 제목(한국어). 무엇을 묶었고 무엇이 쟁점인지 드러나게.' },
+          version: { type: 'string', description: '이 묶음을 대표하는 연도/판 (예: "2026").' },
+          scope_ko: { type: 'string', description: '이 문헌들을 왜 지금 한 장으로 묶는지 1–2문장(공통 주제 + 시기).' },
+          documents: {
+            type: 'array',
+            description: 'One entry per provided document, SAME refIds you were given. Do NOT invent documents and do NOT restate their titles/PMIDs — the pipeline supplies those.',
+            items: {
+              type: 'object',
+              properties: {
+                refId: refSchema,
+                docType: { type: 'string', enum: ['guideline', 'consensus', 'pathway', 'statement', 'other'], description: 'What KIND of document this is — a formal practice guideline carries different weight from a consensus statement or a decision pathway.' },
+                docTypeNote_ko: { type: 'string', description: '이 문서의 성격과 권위 무게를 1문장 한국어로 (정식 지침인지·합의문인지·실무 경로인지).' },
+                role_ko: { type: 'string', description: '이 묶음에서 이 문서가 맡는 몫을 1문장 한국어로.' },
+                shortLabel_ko: { type: 'string', description: '칩 라벨 12자 이내 (예: "ESC 2026", "ACC 경로").' },
+                isBaseline: { type: 'boolean', description: 'true only for an older document included as the comparison baseline, not as part of the new wave.' },
+              },
+              required: ['refId', 'docType', 'docTypeNote_ko', 'role_ko', 'shortLabel_ko'],
+            },
+          },
+          commonGround: {
+            type: 'array',
+            description: 'What the NEW documents (excluding any isBaseline document) actually agree on. 2–6 items, each a specific clinical statement — never a vague "both emphasise prevention".',
+            items: {
+              type: 'object',
+              properties: {
+                point: { type: 'string', description: 'The agreed point, English, specific and self-contained.' },
+                point_ko: { type: 'string', description: 'Korean translation with the same specificity.' },
+              },
+              required: ['point', 'point_ko'],
+            },
+          },
+          comparisons: {
+            type: 'array',
+            description: 'The axes where the documents actually DIVERGE — real decision points (definitions, thresholds, drug positioning, recommendation classes), never a per-document summary restated side by side. 3–6 axes. Documents holding the SAME position must be grouped into ONE position entry.',
+            items: {
+              type: 'object',
+              properties: {
+                axis_ko: { type: 'string', description: '쟁점 축 이름(한국어). 예: "LVEF 표현형 분류", "HFpEF 진단 도구".' },
+                positions: {
+                  type: 'array',
+                  description: 'Distinct positions on this axis. Group documents that say the same thing. A document that does not address this axis simply does not appear.',
+                  items: {
+                    type: 'object',
+                    properties: {
+                      refIds: { type: 'array', items: refSchema, description: 'Documents holding THIS position. At least one.' },
+                      detail: { type: 'string', description: 'What these documents say on this axis, English, with numbers/thresholds/classes.' },
+                      detail_ko: { type: 'string', description: 'Korean translation with the same specificity.' },
+                    },
+                    required: ['refIds', 'detail', 'detail_ko'],
+                  },
+                },
+                divergenceNote_ko: { type: 'string', description: '왜 갈리는지 — 문헌 자신이 밝힌 이유만. 추측이면 넣지 마라.' },
+              },
+              required: ['axis_ko', 'positions'],
+            },
+          },
+          gapNotes_ko: {
+            type: 'array',
+            items: { type: 'string' },
+            description: '이 묶음이 해결하지 못한 것·읽는 사람이 주의할 것 (0–4개). 문헌들이 말한 범위 안에서만.',
+          },
+          practiceImpact: { type: 'string', description: 'Concrete bedside impact for EM/CCM, INCLUDING what to follow when the documents diverge (2–4 sentences, English).' },
+          practiceImpact_ko: { type: 'string', description: 'Korean translation of practiceImpact.' },
+          augmentedSections: {
+            type: 'array',
+            description: "Web-augmentation axis, SEPARATE from what the documents themselves say: secondary-source material about THIS group of documents (editorials comparing them, society summaries). Every item MUST carry sourceLabel + sourceUrl of a page you actually opened. Empty array if nothing usable.",
+            items: {
+              type: 'object',
+              properties: {
+                heading_ko: { type: 'string' },
+                body_ko: { type: 'string' },
+                sourceLabel: { type: 'string' },
+                sourceUrl: { type: 'string' },
+              },
+              required: ['heading_ko', 'body_ko', 'sourceLabel', 'sourceUrl'],
+            },
+          },
+          webSources: {
+            type: 'array',
+            description: 'Every web page you ACTUALLY OPENED AND READ. Each {label, url}.',
+            items: { type: 'object', properties: { label: { type: 'string' }, url: { type: 'string' } }, required: ['label', 'url'] },
+          },
+        },
+        required: ['title_ko', 'version', 'scope_ko', 'documents', 'commonGround', 'comparisons', 'practiceImpact', 'practiceImpact_ko', 'augmentedSections'],
       },
     };
   }
@@ -368,6 +481,69 @@ Use the submit_reference_brief tool. Report ONLY what you can source — never i
 Provide Korean for all _ko fields; medical/drug/score names may remain in English.`;
     }
 
+    if (mode === 'synthesis') {
+      const docs = Array.isArray(doc.docs) ? doc.docs : [];
+      const blocks = docs.map((d) => {
+        const body = (d.fullText && d.fullText.length > 100)
+          ? `\n--- FULL TEXT (${d.fullTextSource ?? 'n/a'}, truncated) ---\n${d.fullText}\n---`
+          : '';
+        return `[${d.refId}]${d.isBaseline ? ' (BASELINE — older document, included only for comparison)' : ''}
+Title: ${d.title}
+Journal: ${d.journal ?? ''} (${d.pubDate ?? ''})${d.pmid ? `
+PMID: ${d.pmid}` : ''}${d.sourceUrl ? `
+Source URL: ${d.sourceUrl}` : ''}
+Abstract / summary text:
+${d.abstract ?? '(none)'}${body}`;
+      }).join('\n\n========================================\n\n');
+      const searchTitles = docs.slice(0, 5).map((d) => `  WebSearch: "${String(d.title ?? '').replace(/"/g, "'").replace(/\s+/g, ' ').trim()}"`);
+      const synEscalate = escalate ? `★★ ESCALATION — a previous attempt produced no real contrast: every axis had all
+documents in a single position, which means you summarised instead of comparing. Find the
+points where these documents actually DISAGREE (definitions, cut-offs, drug positioning,
+recommendation classes) and group documents by position. If, after genuinely checking, the
+documents truly agree everywhere, say that in gapNotes_ko rather than inventing a dispute.
+
+` : '';
+      return `${synEscalate}You are an expert emergency medicine and critical care physician writing a MULTI-DOCUMENT SYNTHESIS for a busy clinician. Several societies published on the same topic; your job is to say what they agree on and exactly where they diverge.
+
+★★ MANDATORY WEB RESEARCH — THIS IS NOT OPTIONAL.
+Any general instruction elsewhere saying you "may" use web tools does NOT apply here.
+Run at least these searches and open the most authoritative hits with WebFetch:
+${searchTitles.join('\n')}
+  WebSearch: "${String(doc.title ?? '').replace(/"/g, "'").trim()}" comparison
+Use ONLY worthwhile SECONDARY sources (official society summaries, journal editorials/
+comments, practice summaries in major journals). EXCLUDE personal blogs, content-farm
+summary sites, AI-generated pages. Every web claim carries the page you actually opened.
+
+★★ ATTRIBUTION IS THE POINT OF THIS CARD.
+Refer to documents ONLY by the refIds given below (${docs.map((d) => d.refId).join(', ')}).
+NEVER attribute a statement to a document that did not make it — that is the single worst
+failure this card can have. If you are unsure which document said something, leave it out.
+Do NOT restate the documents' titles, PMIDs or publishers — the pipeline supplies those.
+
+Produce:
+  1. scope_ko — 왜 이 문헌들을 지금 한 장으로 묶는지.
+  2. documents — one entry per refId: what KIND of document it is and what part it plays here.
+  3. commonGround — what the NEW documents genuinely agree on (exclude any BASELINE document).
+  4. comparisons — 3–6 axes where they actually DIVERGE. Group documents holding the same
+     position into ONE position entry. An axis a document does not address simply omits it.
+     ★ Do NOT produce an axis that merely lists each document's summary — that is not a
+     comparison. Each axis must name a real decision that differs.
+  5. gapNotes_ko — what this group leaves unresolved, or cautions for the reader.
+  6. practiceImpact — bedside impact INCLUDING what to follow when they diverge.
+  7. augmentedSections — secondary-source material ABOUT this group, kept separate from
+     what the documents themselves say. Each needs sourceLabel + sourceUrl actually opened.
+
+Topic: ${doc.title}
+
+Documents:
+${blocks}
+
+Use the submit_synthesis_brief tool. Report ONLY what you can source — never invent a
+recommendation, a disagreement, or an agreement.
+
+Provide Korean for all _ko fields; medical/drug/score names may remain in English.`;
+    }
+
     const glEscalate = escalate ? `★★ ESCALATION — a previous attempt on this guideline skipped the mandatory web research
 entirely (no web sources, no secondary-source augmentation). That is exactly the failure
 this task exists to prevent. This time, ACTUALLY RUN every mandatory search below and open
@@ -417,7 +593,7 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     try {
       const fetchFresh = async () => {
         this.logger.info(`${mode} analysis: ${doc.pmid || doc.sourceId} — ${doc.title?.slice(0, 60)}…`);
-        const tool = this._tool(mode);
+        const tool = this._tool(mode, doc);
 
         // 웹검색 보강 우선; 헤드리스에서 웹툴이 불가/실패하면 텍스트-only 로 폴백(정직 안내로 귀결).
         const callOnce = async (prompt) => {
@@ -471,6 +647,17 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         //   검색이 통째로 건너뛰어진 것이다. **딱 1회** 에스컬레이션. 두 번째가 게이트를
         //   못 풀면 첫 결과 그대로 발행한다(불변식: 데일리 코어 무영향 — 여기서 절대
         //   던지지 않는다. callOnce 실패는 아래 catch 가 삼키고 첫 결과를 유지한다).
+        // ★ 종합의 실질 게이트: 축이 없거나 **모든 축이 입장 하나뿐**이면 대조가 아니라
+        //   요약 재탕이다. 얇은 카드 게이트와 같은 자리, 같은 1회 재시도.
+        if (mode === 'synthesis' && result && this._needsSynthesisEscalation(result)) {
+          this.logger.warn(`synthesis gate: 축 ${(result.comparisons ?? []).length}개가 전부 단일 입장 — escalating once`);
+          try {
+            const second = await callOnce(this._prompt(doc, mode, { escalate: true }));
+            if (second && !this._needsSynthesisEscalation(second)) result = second;
+          } catch (e) {
+            this.logger.warn(`synthesis escalation failed — keeping first result: ${e.message}`);
+          }
+        }
         if (mode === 'guideline' && result && this._needsGuidelineEscalation(result)) {
           this.logger.warn('guideline gate: no augmentedSections and no webSources — escalating once');
           try {
@@ -600,6 +787,19 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
   }
 
   /** ④ 가이드라인 에스컬레이션 판정 — 보강 축도 비었고 웹 증거도 없으면 검색을 건너뛴 것. */
+  /**
+   * 종합 카드가 "대조" 가 아니라 "요약 재탕" 으로 붕괴했는가.
+   *
+   * ★ 축이 하나도 없거나, **모든 축의 입장이 하나뿐**이면 갈린 것이 없다는 뜻이다.
+   *   그런 카드는 문헌별 요약을 나란히 늘어놓은 것에 지나지 않는데, 화면에서는
+   *   "비교했다" 로 읽힌다 — 숫자가 정상처럼 보이는 고장이라 게이트로 잡는다.
+   */
+  _needsSynthesisEscalation(data) {
+    const axes = Array.isArray(data?.comparisons) ? data.comparisons : [];
+    if (!axes.length) return true;
+    return axes.every((c) => (Array.isArray(c?.positions) ? c.positions : []).length <= 1);
+  }
+
   _needsGuidelineEscalation(data) {
     if (!data) return false; // null/거부는 기존 실패 경로가 처리한다 — 여기서 재시도하지 않는다
     return this._publishableAugments(data).length === 0
@@ -653,6 +853,84 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     //   guideline  이전 판 대비 변경점(keyChanges)
     //   reference  출처 성격·한계(sourceNote_ko) — PeterJ 가 직접 고른 자료라 신뢰도를 먼저 말한다
     //   review     절별 번역(sections) + 무엇을 보고 옮겼는지(coverage)
+    // ★ 종합: 문헌의 정체는 **파이프라인이 넣는다.** LLM 이 준 것은 refId 와 성격 설명뿐이라
+    //   여기서 실제 문헌 목록과 합친다. 모르는 refId 는 버린다(오귀속 차단 2차 방어).
+    if (mode === 'synthesis') {
+      // ★ 목록의 정본은 **파이프라인이 넘긴 docs** 다 (코드리뷰 2026-08-29).
+      //   종전에는 모델이 반환한 documents 로 목록을 만들었는데, 모델이 문헌 하나를
+      //   빠뜨리면 그 문헌의 입장이 **모든 축에서 조용히 사라졌다**(재현됨).
+      //   설명은 모델이 붙이는 것이고 존재 여부는 모델이 정하는 것이 아니다.
+      const described = new Map((Array.isArray(data.documents) ? data.documents : [])
+        .filter((e) => e?.refId != null).map((e) => [String(e.refId), e]));
+      const documents = (guideline.docs ?? []).map((src) => {
+        const entry = described.get(String(src.refId)) ?? {};
+        return {
+          refId: String(src.refId),
+          docType: entry.docType ?? 'other',
+          docTypeNote_ko: entry.docTypeNote_ko ?? '',
+          role_ko: entry.role_ko ?? '',
+          shortLabel_ko: entry.shortLabel_ko ?? '',
+          isBaseline: Boolean(entry.isBaseline ?? src.isBaseline),
+          pmid: src.pmid ?? '',
+          sourceUrl: src.sourceUrl ?? '',
+          title: src.title ?? '',
+          org: src.org ?? '',
+        };
+      });
+      const known = new Set(documents.map((d) => d.refId));
+      const comparisons = (Array.isArray(data.comparisons) ? data.comparisons : [])
+        .map((c) => ({
+          axis_ko: c?.axis_ko ?? '',
+          divergenceNote_ko: c?.divergenceNote_ko ?? '',
+          positions: (Array.isArray(c?.positions) ? c.positions : [])
+            .map((p) => ({
+              refIds: (Array.isArray(p?.refIds) ? p.refIds : []).map(String).filter((r) => known.has(r)),
+              detail: p?.detail ?? '',
+              detail_ko: p?.detail_ko ?? '',
+            }))
+            .filter((p) => p.refIds.length && (p.detail || p.detail_ko)),
+        }))
+        .filter((c) => c.positions.length);
+      const ground = Array.isArray(data.commonGround) ? data.commonGround : [];
+      const groundPairs = ground.filter((x) => String(x?.point ?? '').trim() || String(x?.point_ko ?? '').trim());
+      // 종합 카드의 1차 출처는 **묶인 문헌 각각**이다. 웹 보강 출처보다 앞에 둔다.
+      const docSources = [];
+      for (const d of documents) {
+        const label = d.shortLabel_ko || d.org || d.refId;
+        if (d.pmid) docSources.push({ label: `${label} — PMID ${d.pmid}`, url: `https://pubmed.ncbi.nlm.nih.gov/${d.pmid}/` });
+        else if (/^https?:\/\//i.test(String(d.sourceUrl))) docSources.push({ label: `${label} — 원문(발행기관)`, url: d.sourceUrl });
+      }
+      sources.unshift(...docSources);
+      return {
+        type: 'synthesis',
+        // 종합은 원제(영문 단일 제목)가 없다 — 여기에 title_ko 를 넣으면 카드가
+        // 같은 한국어 제목을 제목·부제로 두 번 찍는다(코드리뷰 2026-08-29 재현).
+        paper: {
+          pmid: '', title: '', journal: '',
+          pubDate: '', pubmedUrl: null, doi: '',
+          sourceUrl: '', sourceId: guideline.sourceId,
+        },
+        // 카드에 id 를 달아 누적 표 행이 같은 페이지의 이 카드로 걸리게 한다.
+        stateId: guideline.sourceId,
+        org: `문헌 ${documents.length}건`,
+        version: data.version ?? '',
+        title_ko: data.title_ko ?? '',
+        scope_ko: data.scope_ko ?? '',
+        // ★ EN 만 filter 하면 인덱스가 밀려 **다른 항목의 한국어가 붙는다**
+        //   (코드리뷰 2026-08-29 재현: "EN 2" 밑에 "한국어 1"). 짝으로 거른다.
+        summary: groundPairs.map((x) => String(x.point ?? '')),
+        summary_ko: groundPairs.map((x) => String(x.point_ko ?? '')),
+        documents,
+        comparisons,
+        gapNotes_ko: (Array.isArray(data.gapNotes_ko) ? data.gapNotes_ko : []).map(String).filter((x) => x.trim()),
+        augmentedSections: this._publishableAugments(data),
+        fullTextSource: 'synthesis',
+        practiceImpact: data.practiceImpact,
+        practiceImpact_ko: data.practiceImpact_ko,
+        sources,
+      };
+    }
+
     const modeFields = mode === 'review'
       ? {
         sections: this._publishableReviewSections(data),

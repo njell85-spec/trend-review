@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'PMID 또는 DOI (가이드라인·참고자료는 원문 URL도 가능)'
+        description: 'PMID 또는 DOI (가이드라인·참고자료는 원문 URL도 가능 · synthesis 는 2~5건을 쉼표로, 기준선 구판은 뒤에 ! 예: 35363499!)'
         required: true
         type: string
       kind:
@@ -17,7 +17,9 @@ on:
         # ★ review 는 예고 리스트의 ▶ 가 리뷰 트랙에서 부르는 값이다. 여기 없으면
         #   workflow_dispatch 가 422 로 튕겨 버튼이 조용히 죽는다 — 스크립트만
         #   고치고 여기를 빼먹으면 아무 것도 안 달라진다.
-        options: [paper, guideline, reference, review]
+        # ★ synthesis 는 문헌 2~5건을 한 장으로 대조하는 종합 카드다 (PeterJ 요구
+        #   2026-08-29). target 에 쉼표/공백으로 여러 건을 넣는다.
+        options: [paper, guideline, reference, review, synthesis]
       title:
         description: '문서 제목 (URL 지정용, 선택 — 비우면 페이지 <title>)'
         required: false
