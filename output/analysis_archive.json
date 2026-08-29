@@ -1480,6 +1480,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-08-30",
+      "pmid": "42413523",
+      "title": "Standard-dose unfractionated heparin versus low-dose unfractionated heparin and low-molecular-weight heparin in extracorporeal life support (RATE): an open-label, randomised, non-inferiority trial.",
+      "title_ko": "체외생명유지(ECLS)에서 표준용량 미분획헤파린 대 저용량 미분획헤파린 및 저분자량헤파린 비교 (RATE): 공개표지·무작위·비열등성 시험",
+      "journal": "Lancet (London, England)",
+      "doi": "10.1016/S0140-6736(26)00851-2",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "완전용량 항응고의 절대 적응증이 없는 veno-venous 또는 veno-arterial ECMO 성인 환자에서, 저용량 unfractionated heparin(UFH) 또는 치료용량 low-molecular-weight heparin(LMWH)이 중대 출혈·중대 혈전색전 합병증·6개월 전체 사망의 복합 지표에 대해 표준용량 UFH에 비열등한가?",
+      "pico": {
+        "population": "[Netherlands] Adults aged 18 years or older supported with veno-venous or veno-arterial ECMO at seven Dutch ICUs without vital indication for full-dose anticoagulation (eg, mechanical mitral valve); 330 patients enrolled between Oct 22, 2020, and Sept 12, 2024, with 320 analysed at 6 months (225 [70%] males, 95 [30%] females; median age 56 years [IQR 45–65]; 255 [80%] White ethnicity). Exclusions per registry: ECMO used only to bridge a procedure, vital indication for robust anticoagulation (eg, mechanical valve, pulmonary embolism), and history of heparin-induced thrombocytopenia.",
+        "intervention": "Intravenous low-dose UFH (activated partial thromboplastin time 1·5–2·0 times baseline) or therapeutic subcutaneous LMWH (two of the three trial arms; 110 patients randomly assigned to each).",
+        "comparison": "Intravenous standard-dose UFH targeting activated partial thromboplastin time 2·0–2·5 times baseline (110 patients randomly assigned).",
+        "outcome": "Composite of severe bleeding during ECMO support, severe thromboembolic complications during ECMO support, or all-cause mortality at 6 months, occurring in 87 (81%) of 107 with standard-dose UFH, 78 (72%) of 108 with low-dose UFH (absolute risk difference −9·1 percentage points [95% CI −20·3 to 2·1]), and 79 (75%) of 105 with LMWH (−6·1 percentage points [95% CI −17·2 to 5·0]); non-inferiority (upper 95% CI limit <7·5 percentage points) was met for both interventions."
+      },
+      "pico_ko": {
+        "population": "[네덜란드] 완전용량 항응고의 절대 적응증(예: 기계식 승모판)이 없는, 네덜란드 7개 ICU에서 veno-venous 또는 veno-arterial ECMO를 받는 만 18세 이상 성인. 2020년 10월 22일~2024년 9월 12일에 330명 등록, 6개월 시점 320명 분석(남 225명[70%], 여 95명[30%]; 중앙값 연령 56세[IQR 45–65]; White 255명[80%]). 레지스트리상 제외: 시술 브리지 목적의 ECMO, 강력한 항응고의 절대 적응증(예: 기계판막, pulmonary embolism), heparin-induced thrombocytopenia 과거력.",
+        "intervention": "정맥 저용량 UFH(activated partial thromboplastin time 기저치의 1·5–2·0배) 또는 치료용량 피하 LMWH (3개 arm 중 2개; 각 arm에 110명 무작위 배정).",
+        "comparison": "activated partial thromboplastin time를 기저치의 2·0–2·5배로 목표하는 정맥 표준용량 UFH (110명 무작위 배정).",
+        "outcome": "ECMO 지지 중 중대 출혈, ECMO 지지 중 중대 혈전색전 합병증, 또는 6개월 전체 사망의 복합 지표로, 표준용량 UFH 107명 중 87명(81%), 저용량 UFH 108명 중 78명(72%)(절대 위험차 −9·1%p [95% CI −20·3 ~ 2·1]), LMWH 105명 중 79명(75%)(−6·1%p [95% CI −17·2 ~ 5·0])에서 발생. 두 중재 모두 비열등성(95% CI 상한 <7·5%p)을 충족."
+      },
+      "keyFindings": [
+        "Both low-dose UFH (absolute risk difference −9·1 percentage points [95% CI −20·3 to 2·1]) and therapeutic LMWH (−6·1 percentage points [95% CI −17·2 to 5·0]) met non-inferiority to standard-dose UFH for the composite of severe bleeding, severe thromboembolic complications, or 6-month mortality (upper 95% CI limit <7·5 percentage points).",
+        "Severe bleeding was numerically lower with low-dose UFH (63 [58%]) and LMWH (62 [59%]) than with standard-dose UFH (70 [65%]), without excess severe thromboembolic complications (11 [10%] and 9 [9%] vs 12 [11%]), though these differences were not statistically significant.",
+        "Six-month all-cause mortality was 54 (50%) with standard-dose UFH, 45 (42%) with low-dose UFH, and 46 (44%) with LMWH, among 320 of 330 enrolled patients analysed."
+      ],
+      "keyFindings_ko": [
+        "저용량 UFH(절대 위험차 −9·1%p [95% CI −20·3 ~ 2·1])와 치료용량 LMWH(−6·1%p [95% CI −17·2 ~ 5·0]) 모두 중대 출혈·중대 혈전색전 합병증·6개월 사망 복합 지표에 대해 표준용량 UFH에 비열등(95% CI 상한 <7·5%p)함.",
+        "중대 출혈은 저용량 UFH 63명(58%)·LMWH 62명(59%)이 표준용량 UFH 70명(65%)보다 수치상 낮았고, 중대 혈전색전 합병증 초과 없이(11명[10%]·9명[9%] 대 12명[11%]) 나타났으나 통계적 유의성은 없었음.",
+        "6개월 전체 사망은 표준용량 UFH 54명(50%), 저용량 UFH 45명(42%), LMWH 46명(44%)이었으며, 등록 330명 중 320명이 분석됨."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42413523",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42413523/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/S0140-6736(26)00851-2",
+          "url": "https://doi.org/10.1016/S0140-6736(26)00851-2"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT04536272 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT04536272"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
