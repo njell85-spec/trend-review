@@ -50503,6 +50503,23 @@
         ]
       },
       "publishedAt": "2026-08-28"
+    },
+    {
+      "id": "web:www-escardio-org-guidelines-clinical-practice-guidelines-all-esc-practice-guidel",
+      "pmid": "",
+      "sourceId": "web:www-escardio-org-guidelines-clinical-practice-guidelines-all-esc-practice-guidel",
+      "sourceUrl": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/heart-failure/",
+      "title": "2026 ESC Guidelines for the management of heart failure",
+      "status": "current",
+      "manualApproved": true,
+      "publishedAt": "2026-08-29",
+      "legacy": {
+        "pmid": "",
+        "title": "2026 ESC Guidelines for the management of heart failure",
+        "date": "2026-08-29",
+        "sourceUrl": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/heart-failure/",
+        "sourceId": "web:www-escardio-org-guidelines-clinical-practice-guidelines-all-esc-practice-guidel"
+      }
     }
   ],
   "rejected": [
@@ -56081,6 +56098,6 @@
       }
     }
   },
-  "updatedAt": "2026-08-28T05:36:13.196Z",
+  "updatedAt": "2026-08-29T00:47:30.912Z",
   "configVersion": "guideline-v2"
 }
