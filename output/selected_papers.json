@@ -440,5 +440,16 @@
     "rerankPoolSize": 20,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42413523",
+    "title": "Standard-dose unfractionated heparin versus low-dose unfractionated heparin and ",
+    "date": "2026-08-30",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 19,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
