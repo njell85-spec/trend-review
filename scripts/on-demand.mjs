@@ -39,6 +39,10 @@ if (!target) {
 // URL 은 논문(PICO) 경로로 못 간다 — PICO 분석은 PubMed 메타데이터(저널·저자·MeSH)가 전제다.
 // 가이드라인(공식 문서)과 참고자료(PeterJ 가 직접 고른 범용 자료)만 URL 을 받는다.
 const DOC_KINDS = new Set(['guideline', 'reference']);
+// ★ kind=synthesis — 관련 문헌 2~5건을 한 장으로 대조한다 (PeterJ 요구 2026-08-29).
+//   target 에 쉼표/공백/줄바꿈으로 여러 건을 넣는다. PMID·DOI·URL 을 섞어도 된다.
+//   기준선(구판)으로만 넣는 문헌은 뒤에 `!` 를 붙인다 — 예: `35363499!`.
+const SYNTHESIS_KIND = 'synthesis';
 // ★ kind=review — 예고 리스트의 ▶ 가 리뷰 트랙에서 부르는 경로 (PeterJ 실측 2026-08-17:
 //   눌렀더니 "맨 앞으로 올렸습니다" 만 뜨고 분석·발행이 안 됐다).
 //   종전에는 on-demand 가 paper|guideline|reference 뿐이라 리뷰의 ▶ 는 큐 순서만 바꿨다.
@@ -47,12 +51,19 @@ const DOC_KINDS = new Set(['guideline', 'reference']);
 //   그래서 폴백이 아니라 **제 트랙 경로**를 만든다.
 //   분석은 데일리 `_analyzeReview` 와 같다(GuidelineAnalyzer `mode: 'reference'`).
 const REVIEW_KIND = 'review';
-if (isHttpUrl(target) && !DOC_KINDS.has(kind)) {
+const synTargets = kind === SYNTHESIS_KIND
+  ? target.split(/[\s,]+/).map((t) => t.trim()).filter(Boolean)
+  : [];
+if (kind === SYNTHESIS_KIND && (synTargets.length < 2 || synTargets.length > 5)) {
+  console.error(`✖ kind=synthesis 는 문헌 2~5건이 필요합니다 (받은 것: ${synTargets.length}건). 쉼표나 공백으로 구분하세요.`);
+  process.exit(1);
+}
+if (kind !== SYNTHESIS_KIND && isHttpUrl(target) && !DOC_KINDS.has(kind)) {
   console.error('✖ URL 지정은 kind=guideline 또는 kind=reference 에서만 지원합니다 (논문·리뷰는 PMID/DOI로 지정하세요).');
   process.exit(1);
 }
-if (!['paper', 'guideline', 'reference', REVIEW_KIND].includes(kind)) {
-  console.error(`✖ 알 수 없는 kind: ${kind} (paper|guideline|reference|review)`);
+if (!['paper', 'guideline', 'reference', REVIEW_KIND, SYNTHESIS_KIND].includes(kind)) {
+  console.error(`✖ 알 수 없는 kind: ${kind} (paper|guideline|reference|review|synthesis)`);
   process.exit(1);
 }
 
@@ -71,7 +82,35 @@ async function resolvePmid(t) {
 }
 
 const todayKST = kstDateStr();
-const webMode = isHttpUrl(target);
+const webMode = kind !== SYNTHESIS_KIND && isHttpUrl(target);
+
+/**
+ * 종합용 — target 하나를 문서 하나로 푼다. 단일 경로와 **같은 부품**을 쓴다
+ * (DataCollector + FullText, 또는 URL 이면 externalGuideline). 두 경로가 다른 방식으로
+ * 문헌을 읽으면 종합 카드와 개별 카드가 서로 다른 사실을 말하게 된다.
+ */
+async function resolveSynthesisDoc(raw, refId) {
+  const isBaseline = raw.endsWith('!');
+  const t = isBaseline ? raw.slice(0, -1) : raw;
+  if (isHttpUrl(t)) {
+    const src = await fetchSourceText(t);
+    const web = buildWebGuideline({ url: t, title: src.title || t, org: '', pubDate: '', text: src.text });
+    return {
+      refId, isBaseline, pmid: '', sourceUrl: t, title: web.title, journal: web.journal ?? '',
+      pubDate: '', abstract: web.abstract ?? '', fullText: web.fullText ?? '', fullTextSource: 'web',
+    };
+  }
+  const id = await resolvePmid(t);
+  const [art] = await new DataCollectorAgent().fetchArticles([id]);
+  if (!art) throw new Error(`PMID ${id} 메타데이터를 가져오지 못했습니다`);
+  const { papers: [rich] } = await new FullTextAgent().run([art]);
+  const d = rich ?? art;
+  return {
+    refId, isBaseline, pmid: id, sourceUrl: '', title: d.title, journal: d.journal ?? '',
+    pubDate: d.pubDate ?? '', abstract: d.abstract ?? '', fullText: d.fullText ?? '',
+    fullTextSource: d.fullTextSource ?? 'abstract-only',
+  };
+}
 
 // ── 2) 메타데이터 + 본문 확보 ────────────────────────────────────────────────
 // (a) 웹 출처 가이드라인 — PubMed 미등재본(학회 홈페이지 living document).
@@ -81,7 +120,31 @@ let pmid = '';
 let article;
 let enriched;
 
-if (webMode) {
+if (kind === SYNTHESIS_KIND) {
+  console.log(`🔎 종합 분석 시작: 문헌 ${synTargets.length}건 (${kind}) — ${todayKST}`);
+  const docs = [];
+  for (const [i, raw] of synTargets.entries()) {
+    const d = await resolveSynthesisDoc(raw, `D${i + 1}`);
+    docs.push(d);
+    console.log(`  · ${d.refId}${d.isBaseline ? ' [기준선]' : ''} ${d.pmid ? `PMID ${d.pmid}` : d.sourceUrl} — ${String(d.title).slice(0, 70)}`);
+  }
+  // ★ URL 문헌을 전부 'web' 으로 적으면 같은 크기의 URL 묶음이 죄다 같은 sourceId 가
+  //   된다(syn:web-web). 그러면 두 번째 묶음이 장부에 안 오르고 첫 묶음의 행을 지운다.
+  //   URL 은 짧은 해시로 구분한다(코드리뷰 2026-08-29).
+  const shortHash = (s) => {
+    let h = 5381;
+    for (let i = 0; i < s.length; i += 1) h = (((h << 5) + h) ^ s.charCodeAt(i)) >>> 0;
+    return h.toString(16).padStart(8, '0').slice(0, 6);
+  };
+  const slug = docs.map((d) => d.pmid || `w${shortHash(d.sourceUrl || d.title || '')}`).join('-').slice(0, 72);
+  enriched = {
+    docs,
+    sourceId: `syn:${slug}`,
+    title: docs.filter((d) => !d.isBaseline).map((d) => d.title).join(' / ').slice(0, 200),
+    pmid: '',
+  };
+  article = { title: enriched.title, journal: '' };
+} else if (webMode) {
   console.log(`🔎 직접 지정 분석 시작: URL ${target} (${kind}) — ${todayKST}`);
   const src = await fetchSourceText(target);
   console.log(`📄 원문 텍스트: ${src.text ? `${src.text.length}자 확보` : `미확보(${src.contentType || '접근 불가'}) — LLM 웹검색 보강에 위임`}`);
@@ -106,7 +169,11 @@ if (webMode) {
 
 // (c) 페이월 보정 — PeterJ 가 본문 정리본을 넘겼으면 그것을 본문 자리에 얹는다.
 //     러너가 못 읽는 유료 문헌(NEJM 등)에서 카드가 초록 수준으로 얇아지는 것을 막는 유일한 통로.
-{
+if (kind === SYNTHESIS_KIND && String(process.env.OD_SOURCE_TEXT ?? '').trim()) {
+  // ★ 조용히 무시하지 않는다. 종합 프롬프트는 doc.docs[] 만 읽으므로 이 통로가
+  //   닿지 않는다 — 종전에는 "적용했습니다" 로그까지 찍고 아무 일도 안 했다.
+  console.warn('⚠️ sourceText 는 종합(synthesis)에 적용되지 않습니다 — 무시하고 진행합니다. 페이월 본문이 필요하면 그 문헌을 kind=guideline 으로 먼저 발행하세요.');
+} else {
   const r = applyUserText(enriched, process.env.OD_SOURCE_TEXT);
   if (r.applied) {
     enriched = r.doc;
@@ -162,6 +229,23 @@ if (kind === REVIEW_KIND) {
   //   방금 만든 카드가 **없는** 페이지를 열었다(pageSplit 이 reference 를 reviews 로 보낸다).
   pagesUrl = `${String(published).replace(/\/?$/, '/')}${isRef ? 'reviews' : 'guidelines'}.html`;
   notifyPaper = { title_ko: card.title_ko, paper: { title: article.title, journal: article.journal, pmid } };
+} else if (kind === SYNTHESIS_KIND) {
+  const card = await new GuidelineAnalyzerAgent().analyze(enriched, { mode: SYNTHESIS_KIND });
+  if (!card) {
+    console.error('✖ 종합 분석 실패 — 대시보드 미변경.');
+    process.exit(1);
+  }
+  // 종합 카드는 발행 장부에 **자체 식별자(sourceId)** 로 오른다. 묶인 문헌들의 PMID 로
+  // 올리면 개별 카드와 중복 제거가 충돌해 서로를 지운다.
+  await appendState('output/selected_guidelines.json', {
+    pmid: '', title: card.title_ko, date: todayKST,
+    sourceUrl: '', sourceId: enriched.sourceId,
+  });
+  // ★ 큐는 건드리지 않는다 — 종합은 큐에서 뽑은 것이 아니라 PeterJ 가 묶어 지시한 것이고,
+  //   묶인 문헌은 대개 이미 개별 발행돼 있다.
+  const published = await publisher.publish(todayKST, [], { guideline: card, manual: true });
+  pagesUrl = `${String(published).replace(/\/?$/, '/')}guidelines.html`;
+  notifyPaper = { title_ko: card.title_ko, paper: { title: card.title_ko, journal: `문헌 ${(card.documents ?? []).length}건 종합`, pmid: '' } };
 } else {
   const [analysis] = await new FilterAnalyzerAgent().analyzePico([enriched]);
   if (!analysis || analysis.analysisError) {

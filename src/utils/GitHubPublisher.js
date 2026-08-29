@@ -253,6 +253,12 @@ export class GitHubPublisher {
     //   그래서 축이 다르다: 핵심 권고(summary) 대신 원문 절 구조를 따라간 `sections`,
     //   이전 판 변경점·출처 성격 대신 `coverage`(무엇을 보고 옮겼나)를 싣는다.
     const isReview = g.type === 'review';
+    // ★ 종합 카드 — 관련 문헌 2~5건을 한 장으로 대조한다 (PeterJ 요구 2026-08-29).
+    //   **새 섹션 마커를 만들지 않는다.** GSECTION 을 그대로 쓰고 섹션 키만 다르다
+    //   (`YYYY-MM-DD-m-syn:<슬러그>`). 새 마커를 만들면 병합·페이지분할·무손실 렌더
+    //   검사를 전부 건드려야 하는데, 이 저장소는 바로 그 자리에서 카드를 통째로 날린
+    //   적이 있다(GSECTION 8→7, 본문 679KB→572KB).
+    const isSyn = g.type === 'synthesis';
     const paper = g.paper ?? {};
     const title = paper.title ?? g.title ?? '';
     const titleKo = g.title_ko ?? '';
@@ -312,6 +318,67 @@ export class GitHubPublisher {
     .map((para) => `<p class="txt ko">${esc(para)}</p>`).join('')
 }<p class="txt ko" style="margin:6px 0 0"><a href="${esc(augUrl)}" target="_blank" rel="noopener" style="${AUG_SRC}">— 출처: ${esc(String(a.sourceLabel ?? '').trim() || augUrl)}</a></p></div>`;
       }).join('');
+    // ── 종합 카드 부품 ────────────────────────────────────────────────────────
+    // ★ 문헌마다 고정 색을 준다. 같은 색 칩이 "비교 문헌" 목록과 쟁점 안에 함께 뜨므로
+    //   세로로 훑어도 누가 무슨 말을 했는지 추적된다. 스타일은 **인라인**이다 —
+    //   배포 페이지는 증분 패치라 새 CSS 클래스가 안 실린다(AUG_BOX 와 같은 이유).
+    const SYN_HUES = ['#1a5f78', '#9b2b35', '#7a6320', '#3f6b3a', '#5a4a7d'];
+    const synChip = (i, baseline) => (baseline
+      ? 'display:inline-block;padding:2px 9px;border-radius:11px;font-size:11.5px;font-weight:600;'
+        + 'background:#eef0f3;color:#6b7280;margin:0 5px 5px 0;white-space:nowrap'
+      : `display:inline-block;padding:2px 9px;border-radius:11px;font-size:11.5px;font-weight:600;`
+        + `background:${SYN_HUES[i % SYN_HUES.length]}1f;color:${SYN_HUES[i % SYN_HUES.length]};margin:0 5px 5px 0;white-space:nowrap`);
+    const synDocs = (Array.isArray(g.documents) ? g.documents : [])
+      .filter((d) => d && String(d.refId ?? '').trim());
+    // refId → 순번. **여기 없는 refId 는 렌더에서 버린다** — 오귀속(다른 문헌의 말을
+    // 이 문헌이 한 것으로 붙이는 것)이 이 카드의 제1 실패라 스키마와 렌더 두 겹으로 막는다.
+    const synIndex = new Map(synDocs.map((d, i) => [String(d.refId).trim(), { i, d }]));
+    const synDocLink = (d) => {
+      const p = String(d.pmid ?? '').trim();
+      const u = String(d.sourceUrl ?? '').trim();
+      if (p) return `<a href="https://pubmed.ncbi.nlm.nih.gov/${esc(p)}/" target="_blank" rel="noopener" class="lnk">PubMed ${esc(p)}</a>`;
+      if (/^https?:\/\//i.test(u)) return `<a href="${esc(u)}" target="_blank" rel="noopener" class="lnk">원문</a>`;
+      return '';
+    };
+    const synDocList = synDocs.map((d, i) => {
+      const link = synDocLink(d);
+      return `
+      <div class="gl-chg"><div class="gl-chg-t"><span style="${synChip(i, d.isBaseline)}">${esc(d.shortLabel_ko || d.org || d.refId)}</span>${
+  d.isBaseline ? `<span style="${synChip(i, true)}">기준선(구판)</span>` : ''}</div>${
+  d.docTypeNote_ko ? `<p class="txt ko">${esc(d.docTypeNote_ko)}</p>` : ''}${
+  d.role_ko ? `<p class="txt ko">${esc(d.role_ko)}</p>` : ''}${
+  link ? `<p class="txt ko" style="margin:6px 0 0">${link}</p>` : ''}</div>`;
+    }).join('');
+    // 쟁점 축. 같은 입장인 문헌은 한 묶음이라 축당 칸이 문헌 수가 아니라 **입장 수**다 —
+    // 폰 390px 에서 N×M 표가 물리적으로 안 들어가는 것을 이 구조가 대신한다.
+    const synComparisons = (Array.isArray(g.comparisons) ? g.comparisons : []).map((c) => {
+      const positions = (Array.isArray(c?.positions) ? c.positions : []).map((p) => {
+        const refs = (Array.isArray(p?.refIds) ? p.refIds : [])
+          .map((r) => String(r).trim()).filter((r) => synIndex.has(r));
+        if (!refs.length) return '';
+        const chips = refs.map((r) => {
+          const { i, d } = synIndex.get(r);
+          return `<span style="${synChip(i, d.isBaseline)}">${esc(d.shortLabel_ko || d.org || r)}</span>`;
+        }).join('');
+        return `<div style="margin-top:9px">${chips}${enko(p.detail, p.detail_ko)}</div>`;
+      }).filter(Boolean).join('');
+      if (!positions) return '';
+      return `
+      <div class="gl-chg">${c.axis_ko ? `<div class="gl-chg-t">${esc(c.axis_ko)}</div>` : ''}${positions}${
+  c.divergenceNote_ko ? `<p class="txt ko" style="margin:9px 0 0;color:#8a5f1e">왜 갈리나 — ${esc(c.divergenceNote_ko)}</p>` : ''}</div>`;
+    }).filter(Boolean).join('');
+    const synGaps = (Array.isArray(g.gapNotes_ko) ? g.gapNotes_ko : [])
+      .map((t) => String(t ?? '').trim()).filter(Boolean)
+      .map((t) => `
+      <li class="pc-li"><span class="pc-dot gl-dot"></span><div><p class="txt ko">${esc(t)}</p></div></li>`).join('');
+    // 공통 지반 라벨은 "신규 문헌 N건 공통" 으로 못 박는다 — 기준선(구판)까지 합의한 것으로
+    // 읽히면 과장이 된다.
+    const synNewCount = synDocs.filter((d) => !d.isBaseline).length;
+    const synBody = `${synDocList ? `<div class="lbl gl-lbl"><span class="i">${IC.book(T.sec)}</span>비교 문헌 ${synDocs.length}건</div><div class="gl-changes">${synDocList}</div>` : ''}${
+  summary ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>공통 지반${synNewCount ? ` (신규 문헌 ${synNewCount}건 공통)` : ''}</div><ul class="pc-ul">${summary}</ul>` : ''}${
+  synComparisons ? `<div class="lbl gl-lbl"><span class="i">${IC.pulse(T.sec)}</span>쟁점별 비교</div><div class="gl-changes">${synComparisons}</div>` : ''}${
+  synGaps ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>미해결·주의점</div><ul class="pc-ul">${synGaps}</ul>` : ''}`;
+
     const COVERAGE_NOTE = {
       'full-text': '',
       'web-augmented': '원문 전문을 직접 받지 못해 웹에서 본문을 확보해 옮겼습니다.',
@@ -325,18 +392,23 @@ export class GitHubPublisher {
     const supersedes = Array.isArray(g.supersedes) ? g.supersedes : [];
     const lineageBadges = `${superseded ? `<span class="chip superseded">superseded</span>` : ''}${supersededBy ? `<a class="chip successor-link" href="#${esc(supersededBy)}">신판 보기</a>` : ''}${supersedes.map((id) => `<a class="chip predecessor-link" href="#${esc(id)}">구판 보기</a>`).join('')}`;
 
-    return `<article class="guideline-card"${stateId ? ` id="${esc(stateId)}" data-guideline-id="${esc(stateId)}"` : ''}>
+    // ★ 종합 카드의 지문. 구성원 문헌의 PubMed 링크를 그대로 갖고 있으므로 PMID 로
+    //   식별하면 ⓐ 구성원 하나를 개별 발행할 때 종합 카드가 통째로 지워지고
+    //   ⓑ 종합을 다시 돌리면 옛 카드가 안 지워져 쌓인다(코드리뷰 2026-08-29 실측 재현).
+    //   그래서 **자체 id 하나**를 심고 중복 제거가 그것만 본다.
+    const synMark = isSyn && stateId ? ` data-synthesis-id="${esc(stateId)}"` : '';
+    return `<article class="guideline-card"${stateId ? ` id="${esc(stateId)}" data-guideline-id="${esc(stateId)}"` : ''}${synMark}>
       <div class="pc-top gl-top">
         <div class="medal gl-medal">${IC.book('#fff')}</div>
-        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">${isReview ? '📰 리뷰 아티클' : (isRef ? '🔖 참고자료' : '📋 가이드라인')}</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}${lineageBadges}</div>
+        <div class="chips" style="margin-top:0;margin-bottom:10px"><span class="chip gl">${isSyn ? '🧩 종합' : (isReview ? '📰 리뷰 아티클' : (isRef ? '🔖 참고자료' : '📋 가이드라인'))}</span>${g.org ? `<span class="chip org">${esc(g.org)}</span>` : ''}${g.version ? `<span class="chip yr">${esc(g.version)}</span>` : ''}${lineageBadges}</div>
         <div class="ttl">${esc(titleKo || title)}</div>
-        ${titleKo ? `<div class="ttle">${esc(title)}</div>` : ''}
+        ${titleKo && title ? `<div class="ttle">${esc(title)}</div>` : ''}
         ${g.scope_ko ? `<p class="txt ko" style="margin-top:6px">${esc(g.scope_ko)}</p>` : ''}
         <div class="meta"><span class="i">${IC.book(T.muted)}</span>${esc(journal)}${esc(impactFactorLabel(journal))}${date ? ` · ${esc(date)}` : ''}${pmid ? ` · PMID ${esc(pmid)}` : ''}</div>
       </div>
       <div class="pc-body">
-        ${summary && !isReview ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>${isRef ? '핵심 내용' : '핵심 권고'}</div><ul class="pc-ul">${summary}</ul>` : ''}
-        ${isReview
+        ${summary && !isReview && !isSyn ? `<div class="lbl gl-lbl"><span class="i">${IC.target(T.sec)}</span>${isRef ? '핵심 내용' : '핵심 권고'}</div><ul class="pc-ul">${summary}</ul>` : ''}
+        ${isSyn ? synBody : isReview
           // 번역 본문. 절 하나도 못 얻었으면 지어내지 말고 그 사실을 적는다.
           // ★ 단, **구판 카드는 내용을 지우지 않는다.** 2026-08-17 이전에 발행된 리뷰는
           //   `reference` 모드로 만들어져 `sections` 대신 `summary` 를 갖는다. 새 축만
@@ -362,7 +434,7 @@ export class GitHubPublisher {
         ${augments ? `<div class="lbl gl-lbl">🔎 웹 보강 (2차 자료)</div><div class="gl-changes">${augments}</div>` : ''}
         ${(g.practiceImpact || g.practiceImpact_ko) ? `<div class="lbl gl-lbl"><span class="i">${IC.bulb(T.sec)}</span>${isReview ? '임상 적용' : (isRef ? '어떻게 쓰나' : '임상 임팩트')}</div>${enko(g.practiceImpact, g.practiceImpact_ko)}` : ''}
         ${(g.sources?.length) ? `<div class="src-box"><div class="src-h">🔎 출처</div>${g.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener" class="src-li">${esc(s.label)}</a>`).join('')}</div>` : ''}
-        <div class="pc-foot">${footLink}${doiLink} · ${isReview ? '리뷰 아티클 번역' : (isRef ? '직접 지정 참고자료' : '가이드라인 캐치업')}</div>
+        <div class="pc-foot">${footLink}${doiLink} · ${isSyn ? '문헌 종합' : (isReview ? '리뷰 아티클 번역' : (isRef ? '직접 지정 참고자료' : '가이드라인 캐치업'))}</div>
       </div>
     </article>`;
   }
@@ -795,6 +867,9 @@ export class GitHubPublisher {
     // 참고자료도 이 섹션 골격을 공유한다(카드 축 하나만 다름) — 라벨까지 공유하면
     // §4-H 의 '🔖 기타 자료' 섹션 안에서 카드가 '📋 가이드라인'이라 말하는 모순이 된다.
     const isRef = guideline.type === 'reference';
+    // 종합도 같은 골격을 쓰므로 라벨만 갈아끼운다 — 헤더가 '가이드라인'인데 카드가
+    // '종합'이라 말하면 접힌 상태에서 무엇인지 알 수 없다.
+    const isSynSec = guideline.type === 'synthesis';
     const gTitle = guideline.title_ko || guideline.paper?.title || '';
     const gMeta = `${guideline.org || guideline.paper?.journal || ''}${guideline.version ? ` · ${guideline.version}` : ''}`;
     // 논문 섹션과 동일한 흰 박스로 통일 — 구별은 앞쪽 라벨로만
@@ -814,7 +889,7 @@ export class GitHubPublisher {
 <details${openAttr} class="${cls}">
   <summary class="day-sum">
     <div class="day-head">
-      ${badge}<span class="day-date">${esc(dateStr)}</span><span class="gl-tag${isRef ? ' ref' : ''}">${isRef ? '🔖 기타 자료' : '📋 가이드라인'}</span><span class="day-gen">생성 ${esc(generatedAt)}</span>
+      ${badge}<span class="day-date">${esc(dateStr)}</span><span class="gl-tag${isRef ? ' ref' : ''}">${isSynSec ? '🧩 종합' : (isRef ? '🔖 기타 자료' : '📋 가이드라인')}</span><span class="day-gen">생성 ${esc(generatedAt)}</span>
       <span class="day-chev">${IC.chev(T.muted)}</span>
     </div>
     <div class="day-prev"><span class="day-prev-medal">${IC.book(T.sec)}</span><div><div class="day-prev-t">${esc(gTitle)}</div><div class="day-prev-m">${esc(gMeta)}</div></div></div>
@@ -1108,8 +1183,11 @@ export class GitHubPublisher {
       const gp = guideline.paper ?? {};
       const pmid = gp.pmid ?? '';
       // PubMed 미등재 가이드라인은 원문 URL로 걸고, 행 키(읽음 체크·중복 제거)는 sourceId 로 대신한다.
-      const url = gp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : (gp.sourceUrl || '#'));
       const rowId = pmid || gp.sourceId || '';
+      // 종합은 외부 원문이 없다 — 같은 페이지의 제 카드로 건다(죽은 '#' 금지).
+      const url = guideline.type === 'synthesis'
+        ? (rowId ? `#${rowId}` : '#')
+        : (gp.pubmedUrl ?? (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : (gp.sourceUrl || '#')));
       const title = guideline.title_ko || gp.title || '';
       const journal = guideline.org || gp.journal || '';
       // data-guideline 마커 — 날짜 기준 행 교체에서 제외(가이드는 논문과 라이프사이클이
@@ -1541,13 +1619,33 @@ tr.classList.toggle('is-read',cb.checked);push();});});})();
       // 주간 게이트가 실패해도 같은 지침이 중복 노출되지 않게 하는 심층 방어.
       // 지문(fingerprint) = PubMed 링크(등재본) 또는 원문 URL(웹 공개본). 웹 공개본은 URL 이
       // 카드에 esc() 된 형태로 들어가므로 원문·이스케이프본 양쪽으로 대조한다.
+      // ★ 종합 카드는 이 지문 체계에서 **따로 논다** (코드리뷰 2026-08-29).
+      //   종합 카드 본문에는 묶인 문헌의 PubMed 링크가 전부 들어 있다. 그래서
+      //   ⓐ 구성원 하나를 개별 가이드라인으로 발행하면 그 PMID 지문이 종합 카드에도
+      //     맞아 **종합 카드가 통째로 지워졌다**(표 행만 고아로 남는다)
+      //   ⓑ 종합 자신은 pmid·sourceUrl 이 없어 지문이 비었고, manual 은 날짜 스윕도
+      //     건너뛰므로 **다시 돌릴 때마다 카드가 쌓였다**
+      //   둘 다 실행으로 재현했다. 종합은 제 id 로만, 개별은 종합을 건드리지 않고.
+      const isSynPub = guideline?.type === 'synthesis';
+      const synId = guideline?.paper?.sourceId ?? '';
       const gMarks = [];
-      if (guideline?.paper?.pmid) gMarks.push(`pubmed.ncbi.nlm.nih.gov/${guideline.paper.pmid}/`);
-      if (guideline?.paper?.sourceUrl) gMarks.push(guideline.paper.sourceUrl, esc(guideline.paper.sourceUrl));
+      if (isSynPub) {
+        if (synId) gMarks.push(`data-synthesis-id="${esc(synId)}"`);
+      } else {
+        if (guideline?.paper?.pmid) gMarks.push(`pubmed.ncbi.nlm.nih.gov/${guideline.paper.pmid}/`);
+        if (guideline?.paper?.sourceUrl) gMarks.push(guideline.paper.sourceUrl, esc(guideline.paper.sourceUrl));
+      }
       if (gMarks.length) {
         body = body.replace(
           /\n?<!-- GSECTION:[^\s>]+ -->[\s\S]*?<!-- \/GSECTION:[^\s>]+ -->/g,
-          (block) => gMarks.some((m) => block.includes(m)) ? '' : block,
+          (block) => {
+            const blockIsSyn = block.includes('data-synthesis-id=');
+            // 개별 가이드라인 발행은 종합 카드를 절대 지우지 않는다.
+            if (!isSynPub && blockIsSyn) return block;
+            // 종합 발행은 종합 카드만 본다.
+            if (isSynPub && !blockIsSyn) return block;
+            return gMarks.some((m) => block.includes(m)) ? '' : block;
+          },
         );
       }
       // 이전 TODAY/NEW → past 로 강등. 논문(TODAY)·가이드(NEW) 모두 같은
