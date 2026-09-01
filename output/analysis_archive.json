@@ -1582,6 +1582,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-01",
+      "pmid": "41324946",
+      "title": "Levosimendan to Facilitate Weaning From ECMO in Patients With Severe Cardiogenic Shock: The LEVOECMO Randomized Clinical Trial.",
+      "title_ko": "중증 심인성 쇼크 환자에서 ECMO 이탈을 촉진하기 위한 Levosimendan: LEVOECMO 무작위 임상시험",
+      "journal": "JAMA",
+      "doi": "10.1001/jama.2025.19843",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "VA-ECMO로 지지 중인 중증이지만 잠재적으로 가역적인 심인성 쇼크 성인 환자에서, 조기 levosimendan 투여가 placebo에 비해 성공적인 ECMO 이탈까지의 시간을 단축시키는가?",
+      "pico": {
+        "population": "[France] 205 adult patients with acute cardiogenic shock who had started VA-ECMO in the preceding 48 hours, enrolled across 11 ICUs in France between August 27, 2021, and September 10, 2024 (median age, 58 [IQR, 50-67] years; 149 [72.7%] male); main etiologies were postcardiotomy (79 [38.5%]), acute myocardial infarction (56 [27.3%]), and myocarditis (28 [13.7%]). Per the registry, key exclusions were age <18, pregnant/lactating women, VA-ECMO initiation >48 h, and resuscitation >30 minutes in the 48 hours before ECMO.",
+        "intervention": "Levosimendan, 0.15 μg/kg per minute, to be increased to 0.20 μg/kg per minute after 2 hours (n = 101); the dose was increased to 0.20 ± 0.01 μg/kg per minute in 93% of patients.",
+        "comparison": "Placebo (n = 104); dose was increased to 0.20 ± 0.01 μg/kg per minute in 96% of patients.",
+        "outcome": "Primary outcome was time to successful ECMO weaning within 30 days following randomization: 69 of 101 (68.3%) with levosimendan vs 71 of 104 (68.3%) with placebo (risk difference, 0.0% [95% CI, -12.8% to 12.7%]; subdistribution hazard ratio, 1.02 [95% CI, 0.74-1.39]; P = .92)."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 직전 48시간 이내에 VA-ECMO를 시작한 급성 심인성 쇼크 성인 환자 205명으로, 2021년 8월 27일부터 2024년 9월 10일 사이 프랑스 11개 ICU에서 등록됨(중앙값 나이 58세[IQR, 50-67]; 149명[72.7%] 남성); 주요 원인은 postcardiotomy(79명[38.5%]), 급성 심근경색(56명[27.3%]), myocarditis(28명[13.7%])였다. 등록 정보상 주요 제외 기준은 18세 미만, 임신/수유부, VA-ECMO 시작 >48시간, ECMO 전 48시간 이내 심폐소생술 >30분이었다.",
+        "intervention": "Levosimendan 0.15 μg/kg/min으로 시작하여 2시간 후 0.20 μg/kg/min으로 증량(n = 101); 93%의 환자에서 0.20 ± 0.01 μg/kg/min까지 증량되었다.",
+        "comparison": "Placebo(n = 104); 96%의 환자에서 0.20 ± 0.01 μg/kg/min까지 증량되었다.",
+        "outcome": "일차 결과는 무작위 배정 후 30일 이내 성공적인 ECMO 이탈까지의 시간: levosimendan군 101명 중 69명(68.3%) 대 placebo군 104명 중 71명(68.3%)(위험차 0.0% [95% CI, -12.8%~12.7%]; subdistribution hazard ratio 1.02 [95% CI, 0.74-1.39]; P = .92)."
+      },
+      "keyFindings": [
+        "Early levosimendan did not reduce time to successful ECMO weaning within 30 days: 69/101 (68.3%) vs 71/104 (68.3%) with placebo (risk difference 0.0% [95% CI, -12.8% to 12.7%]; subdistribution HR 1.02 [95% CI, 0.74-1.39]; P = .92).",
+        "No significant difference in median ECMO duration (5 vs 6 days; P = .53), mean ICU length of stay (18 vs 19 days; P = .42), or 60-day mortality (27.7% vs 25.0%; risk difference 2.7% [95% CI, -9.0% to 15.3%]; P = .78).",
+        "Ventricular arrhythmias were more frequent with levosimendan (18 [17.8%] vs 9 [8.7%]; absolute risk difference 9.2% [95% CI, 0.4%-18.1%])."
+      ],
+      "keyFindings_ko": [
+        "조기 levosimendan은 30일 이내 성공적 ECMO 이탈까지의 시간을 줄이지 못함: 69/101 (68.3%) 대 placebo 71/104 (68.3%)(위험차 0.0% [95% CI, -12.8%~12.7%]; subdistribution HR 1.02 [95% CI, 0.74-1.39]; P = .92).",
+        "ECMO 기간 중앙값(5일 대 6일; P = .53), ICU 재원기간 평균(18일 대 19일; P = .42), 60일 사망률(27.7% 대 25.0%; 위험차 2.7% [95% CI, -9.0%~15.3%]; P = .78)에서 유의한 차이 없음.",
+        "Ventricular arrhythmia는 levosimendan군에서 더 흔함(18명[17.8%] 대 9명[8.7%]; 절대 위험차 9.2% [95% CI, 0.4%~18.1%])."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 41324946",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41324946/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1001/jama.2025.19843",
+          "url": "https://doi.org/10.1001/jama.2025.19843"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT04728932 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT04728932"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
