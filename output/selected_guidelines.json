@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-08-30T23:47:31.737Z"
+      "supersededAt": "2026-09-01T00:48:09.077Z"
     },
     {
       "id": "pmid:38531812",
@@ -24182,66 +24182,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:40323259",
-      "pmid": "40323259",
-      "title": "Prehospital Trauma Compendium: Tranexamic Acid in Trauma - A Joint Position Statement and Resource Document of NAEMSP, ACEP, and ACS-COT.",
-      "pubDate": "2025 Aug 20",
-      "journal": "Prehospital emergency care",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:09.622Z",
-      "abstract": "Prehospital use of tranexamic acid (TXA) has grown substantially over the past decade despite contradictory evidence supporting its widespread use. Since the previous guidance document on the prehospital use of TXA for injured patients was published by the National Association of Emergency Medical Services Physicians (NAEMSP), the American College of Surgeons Committee on Trauma (ACS-COT), and the American College of Emergency Physicians (ACEP) in 2016, new research has investigated outcomes of patients who receive TXA in the prehospital setting. To provide updated evidence-based guidance on the use of intravenous TXA for injured patients in the EMS setting, we performed a structured literature review and developed the following recommendations supported by the evidence summarized in the accompanying resource document.",
-      "meshTerms": [],
-      "keywords": [],
-      "doi": "10.1080/10903127.2025.2497056",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "acep"
-      },
-      "priority": 11.344464493402278,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 1.344464493402278,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "acep",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": null,
-      "reasons": [
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:22.888Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "병원전 외상 TXA 합동 성명 — 응급 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "acep|prehospital-trauma-compendium-tranexamic-acid-trauma-joint-resource-document-naemsp-acs-cot",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40879726",
       "pmid": "40879726",
       "title": "[Treatment and Support for Adults at the End of Life in Intensive Care : A Recommendation by the Ethics Section of DIVI and the German Society for Palliative Medicine. Part 1: Key Aspects of End-of-Life Care and Dying in Intensive Care. Part 2: Therapeutic Measures and Support at the End of Life in Intensive Care].",
@@ -32319,7 +32259,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -32812,11 +32752,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.78326698683278,
+      "priority": 6.779462767760334,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.78326698683278,
+        "recency": 1.7794627677603339,
         "scope": 0,
         "confidence": 1
       },
@@ -32829,7 +32769,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -35011,7 +34951,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -41706,18 +41646,26 @@
       "id": "pmid:42034326",
       "pmid": "42034326",
       "title": "HRS position statement: Changing the tide in CPR and AED education for students in the United States.",
-      "pubDate": "2026 Apr 23",
+      "pubDate": "2026 Sep",
       "journal": "Heart rhythm",
       "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
+        "Consensus Statement",
+        "Journal Article"
       ],
       "discoveredBy": [
-        "pubmed-topic"
+        "pubmed-topic",
+        "pubmed-title"
       ],
       "discoveredAt": "2026-08-17T04:40:19.239Z",
       "abstract": "Out-of-hospital cardiac arrest remains a leading cause of mortality in the United States, with survival critically dependent on timely bystander cardiopulmonary resuscitation (CPR) and automated external defibrillator (AED) use. Despite strong evidence supporting early intervention, bystander-initiated CPR remains suboptimal, with persistent racial, demographic, socioeconomic, literacy-related, and geographic disparities. National legislative efforts have been hampered by inadequate funding. To improve out-of-hospital cardiac arrest survival and address these disparities, the Institute of Medicine has identified US high school students as a prime target for CPR education and AED use. Although most US states have legislated mandates for CPR and AED education, there is no consistent, standardized implementation process. 1-time or didactic-only training, limited hands-on practice, lack of longitudinal reinforcement, and inequitable AED access undermine effectiveness. This Heart Rhythm Society Scientific Statement evaluates the current landscape of CPR and AED education for US high school students, including the effectiveness of state legislative mandates, implementation strategies, and disparities in access and outcomes. We identify critical gaps and propose evidence-based solutions and an implementation framework for uniform, effective, and equitable initial and longitudinal CPR and AED training aiming to transform generations of US high school students into lifesavers.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Cardiopulmonary Resuscitation",
+        "Defibrillators",
+        "Out-of-Hospital Cardiac Arrest",
+        "Students",
+        "United States"
+      ],
       "keywords": [
         "Automated external defibrillator",
         "Cardiac emergency response plan",
@@ -41731,42 +41679,42 @@
       "region": "us",
       "by": "org-acronym",
       "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
         "expandedTitle": false,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": false,
         "explicitRecommendation": false,
-        "officialDocument": true,
+        "officialDocument": false,
         "organizationId": null
       },
       "priority": 7,
       "breakdown": {
         "authority": 0,
-        "topic": 3,
+        "topic": 4,
         "recency": 2,
         "scope": 0,
-        "confidence": 2
+        "confidence": 1
       },
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
       "status": "needsReview",
-      "verdict": "guideline",
-      "documentType": "guideline",
+      "verdict": "needsReview",
+      "documentType": null,
       "reasons": [
-        "format-evidence",
-        "official-evidence"
+        "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "학생 CPR 교육정책 성명, 침상 판단 아님",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42017878",
@@ -43453,7 +43401,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -43543,7 +43491,7 @@
       "id": "pmid:42269820",
       "pmid": "42269820",
       "title": "The 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults: Pertinent Points for the Interventional Radiologist.",
-      "pubDate": "2026 Jun 10",
+      "pubDate": "2026 Sep",
       "journal": "Journal of vascular and interventional radiology : JVIR",
       "publicationTypes": [
         "Journal Article"
@@ -43581,13 +43529,13 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "guideline",
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43596,7 +43544,8 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "aha|acc-accp-acep-chest-scai-shm-sir-svm-svn-evaluation-management-acute-pulmonary-embolism-adults-pertinent-points-interventional-radiologist",
-      "supersedes": []
+      "supersedes": [],
+      "attempts": 0
     },
     {
       "id": "pmid:42265997",
@@ -43739,7 +43688,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44000,7 +43949,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44269,10 +44218,11 @@
       "id": "pmid:42191456",
       "pmid": "42191456",
       "title": "EASL-AASLD Delphi consensus statement on surrogate endpoints and real-world evidence in primary biliary cholangitis.",
-      "pubDate": "2026 May 27",
+      "pubDate": "2026 Sep",
       "journal": "Journal of hepatology",
       "publicationTypes": [
         "Journal Article",
+        "Consensus Statement",
         "Practice Guideline"
       ],
       "discoveredBy": [
@@ -44280,7 +44230,16 @@
       ],
       "discoveredAt": "2026-08-17T04:40:34.154Z",
       "abstract": "Drug development in primary biliary cholangitis (PBC) has led to the conditional approval of three second-line therapies, yet the transition to full regulatory approval remains challenging due to (1) the reliance on liver biochemistry and non-invasive measures of liver fibrosis as biomarkers of clinical outcomes, which are not accepted by regulatory authorities as validated efficacy endpoints; (2) the limited integration of real-world data and real-world evidence to complement clinical trials; and (3) the absence of harmonised and standardised use of patient-reported outcomes (PROs). To address these limitations, the European Association for the Study of the Liver (EASL) and the American Association for the Study of Liver Diseases (AASLD) commissioned an international, multi-stakeholder consensus panel to conduct a modified Delphi process to review current evidence, identify unmet research needs, and create a framework aligned with regulatory expectations to guide ongoing and future research in PBC. A total of 62 panellists, including clinicians, methodologists, regulators, industry partners, and patient representatives, were divided into three working groups and participated in regular online meetings, one in-person conference, and two online Delphi voting rounds. Response rates across the two voting sessions were 88% and 60%, respectively. The Delphi process resulted in agreement on 16 statements and 42 recommendations across the three thematic domains. Collectively, these consensus recommendations provide a comprehensive and pragmatic framework to support and expand the existing regulatory pathway for the development and approval of new therapies in PBC.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Delphi Technique",
+        "Liver Cirrhosis, Biliary",
+        "Biomarkers",
+        "Patient Reported Outcome Measures",
+        "Consensus",
+        "United States",
+        "Europe"
+      ],
       "keywords": [
         "Biomarkers",
         "Delphi",
@@ -44316,7 +44275,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -44324,14 +44283,17 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 1,
         "keep": false,
         "reason": "PBC 대리지표 규제 논의, 응급 무관",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|easl-aasld-delphi-surrogate-endpoints-real-world-evidence-primary-biliary-cholangitis",
+      "supersedes": []
     },
     {
       "id": "pmid:41572910",
@@ -45152,14 +45114,15 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "ICU 기후·환경 완화 합의문, 침상 판단 무관",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42491935",
@@ -45422,7 +45385,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45502,44 +45465,56 @@
     {
       "id": "pmid:42371750",
       "pmid": "42371750",
-      "title": "Noninvasive Respiratory Support for Adult Patients with Acute Respiratory Failure. An Official American Thoracic Society Clinical Practice Guideline.",
-      "pubDate": "2026 Jun 29",
+      "title": "Noninvasive respiratory support for adult patients with acute respiratory failure: an official American Thoracic Society Clinical Practice Guideline.",
+      "pubDate": "2026 Sep 1",
       "journal": "American journal of respiratory and critical care medicine",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Practice Guideline"
       ],
       "discoveredBy": [
-        "pubmed-topic"
+        "pubmed-topic",
+        "pubmed-pt"
       ],
       "discoveredAt": "2026-08-17T04:40:48.357Z",
-      "abstract": "BACKGROUND: Acute hypoxemic and hypercapnic respiratory failure are among the most common reasons for ICU admission and need for invasive mechanical ventilation. Noninvasive respiratory support (NIRS) strategies-including high-flow nasal cannula (HFNC), noninvasive ventilation (NIV), and continuous positive airway pressure (CPAP)-may prevent intubation, improve outcomes, and reduce ICU utilization. However, there is uncertainty regarding optimal patient and modality selection, resulting in variable implementation. There are no clinical practice guidelines comprehensively addressing the use of the different noninvasive respiratory support strategies across the spectrum of acute respiratory failure.\nOBJECTIVE: To update and develop new evidence-based clinical practice recommendations informing noninvasive respiratory support use, including HFNC, NIV and CPAP, in adults with acute respiratory failure.\nMETHODS: A multidisciplinary panel used the GRADE approach to address four PICO questions related to the use of NIRS for hypoxemic and hypercapnic respiratory failure, preoxygenation for intubation, and post-extubation respiratory support. Recommendations were informed by several systematic reviews and network meta-analyses.\nRESULTS: The panel made a strong recommendation for HFNC and a conditional recommendation for NIV or CPAP for adults with acute hypoxemic respiratory failure with close monitoring for the need for escalation of respiratory support, based primarily on effects on need for intubation. For acute hypercapnic respiratory failure, the panel made a strong recommendation for NIV to reduce mortality and need for invasive mechanical ventilation, and a conditional recommendation for HFNC only in patients with less severe hypercapnia and with mild acidemia (eg, pH > 7.25), provided that close monitoring and prompt escalation to NIV are available. The panel made a strong recommendation for HFNC or NIV for preoxygenation prior to endotracheal intubation to prevent peri-intubation hypoxemia. The panel also issued a risk-based recommendation, suggesting HFNC for low-risk patients and NIV for high-risk patients to reduce the need for re-intubation following extubation after critical illness.\nCONCLUSIONS: Noninvasive respiratory support strategies are effective in improving outcomes in a range of clinical scenarios. We provide evidence-based recommendations, which can be further informed by patient risk, institutional capacity, and interface tolerance.",
-      "meshTerms": [],
+      "abstract": "BACKGROUND: Acute hypoxemic and hypercapnic respiratory failure are among the most common reasons for ICU admission and need for invasive mechanical ventilation. Noninvasive respiratory support (NIRS) strategies-including high-flow nasal cannula (HFNC), noninvasive ventilation (NIV), and continuous positive airway pressure (CPAP)-may prevent intubation, improve outcomes, and reduce ICU utilization. However, there is uncertainty regarding optimal patient and modality selection, resulting in variable implementation. There are no clinical practice guidelines comprehensively addressing the use of the different NIRS strategies across the spectrum of acute respiratory failure.\nOBJECTIVE: To update and develop new evidence-based clinical practice recommendations informing NIRS use, including HFNC, NIV and CPAP, in adults with acute respiratory failure.\nMETHODS: A multidisciplinary panel used the Grading of Recommendations, Assessment, Development, and Evaluation approach to address four PICO (Population, Intervention, Comparator, Outcome) questions related to the use of NIRS for hypoxemic and hypercapnic respiratory failure, preoxygenation for intubation, and postextubation respiratory support. Recommendations were informed by several systematic reviews and network meta-analyses.\nRESULTS: The panel made a strong recommendation for HFNC and a conditional recommendation for NIV or CPAP for adults with acute hypoxemic respiratory failure with close monitoring for the need for escalation of respiratory support, based primarily on effects on need for intubation. For acute hypercapnic respiratory failure, the panel made a strong recommendation for NIV to reduce mortality and need for invasive mechanical ventilation, and a conditional recommendation for HFNC only in patients with less severe hypercapnia and with mild acidemia (eg, pH > 7.25), provided that close monitoring and prompt escalation to NIV are available. The panel made a strong recommendation for HFNC or NIV for preoxygenation prior to endotracheal intubation to prevent peri-intubation hypoxemia. The panel also issued a risk-based recommendation, suggesting HFNC for low-risk patients and NIV for high-risk patients to reduce the need for re-intubation following extubation after critical illness.\nCONCLUSIONS: Noninvasive respiratory support strategies are effective in improving outcomes in a range of clinical scenarios. We provide evidence-based recommendations, which can be further informed by patient risk, institutional capacity, and interface tolerance.",
+      "meshTerms": [
+        "Humans",
+        "Noninvasive Ventilation",
+        "Respiratory Insufficiency",
+        "Continuous Positive Airway Pressure",
+        "Adult",
+        "Acute Disease",
+        "United States",
+        "Hypercapnia",
+        "Oxygen Inhalation Therapy"
+      ],
       "keywords": [
         "acute hypercapnic respiratory failure",
         "acute hypoxemic respiratory failure",
         "noninvasive respiratory support",
-        "post-extubation respiratory failure",
+        "postextubation respiratory failure",
         "preoxygenation"
       ],
       "doi": "10.1093/ajrccm/aamag302",
-      "pmcid": "",
+      "pmcid": "PMC13519360",
       "region": "us",
       "by": "org-name",
       "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": false,
+        "officialDocument": true,
         "organizationId": null
       },
-      "priority": 7,
+      "priority": 8,
       "breakdown": {
         "authority": 0,
-        "topic": 3,
+        "topic": 4,
         "recency": 2,
         "scope": 0,
         "confidence": 2
@@ -45552,9 +45527,10 @@
       "documentType": "guideline",
       "reasons": [
         "format-evidence",
-        "normative-evidence"
+        "normative-evidence",
+        "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45563,7 +45539,8 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "unknown|noninvasive-respiratory-support-adult-patients-with-acute-respiratory-failure-official-american-thoracic-society-clinical-practice",
-      "supersedes": []
+      "supersedes": [],
+      "attempts": 0
     },
     {
       "id": "pmid:42350065",
@@ -46094,58 +46071,75 @@
       "id": "pmid:42447876",
       "pmid": "42447876",
       "title": "Curriculum on management of acute upper gastrointestinal bleeding: European Society of Gastrointestinal Endoscopy (ESGE) Position Statement.",
-      "pubDate": "2026 Jul 14",
+      "pubDate": "2026 Sep",
       "journal": "Endoscopy",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Practice Guideline"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-17T04:40:48.357Z",
       "abstract": "ABSTRACT: 1: Before commencing hands-on upper gastrointestinal bleeding (UGIB) training, trainees should have thorough knowledge of: pathology, vascular anatomy, technical use of devices, clinical care pathways, and all relevant components of pre-, intra-, and postprocedural patient care.\nABSTRACT: 2: Preadoption technical skills required for training in the management of UGIB include adequate scope handling, intubation technique, washing and suctioning of residue, mucosal examination, and handling of accessories.\nABSTRACT: 3: Preadoption technical skills required for training in the management of UGIB should be assessed individually based on a competency framework and not solely on numerical thresholds.\nABSTRACT: 4: The integrative skills required for the management of UGIB do not essentially differ from those needed in other endoscopic procedures and should include adequate situational awareness, collaboration, team leadership, and patient communication in order to ensure short- and long-term goals are achieved.\nABSTRACT: 5: The trainee should reach minimum recommended standards for key performance indicators in upper GI endoscopy before starting training in the management of UGIB.\nABSTRACT: 6: Attendance of at least one half-day training session on a dedicated simulator that provides GI bleeding training at the beginning of training for management of UGIB is advised.\nABSTRACT: 7: Trainees should be supervised directly and carefully during UGIB training for a minimum of 20 procedures with endoscopic stigmata of recent hemorrhage in order to prevent failure of hemostasis and ensure adequate trainee skill acquisition.\nABSTRACT: 8: Trainers should take into account pre-endoscopic and intraprocedural factors predicting outcome, technical complexity, and risk of hemostatic failure when deciding appropriateness and degree of trainee involvement in case management.\nABSTRACT: 9: During their training, trainees should be exposed to all hemostatic modalities, as per ESGE guideline recommendations, and the opportunities for teaching arising from the specifics of each UGIB case.\nABSTRACT: 10: Trainers should use \"successful hemostasis,\" defined as the absence of any further bleeding (persistent or recurrent bleeding), as the ultimate goal of training in the endoscopic management of UGIB.\nABSTRACT: 11: Patients with recurrent bleeding should be treated by experienced endoscopists or by a trainee under their direct supervision owing to the higher risk of failure of conventional endoscopic treatment.\nABSTRACT: 12: Trainers who are teaching management of UGIB should fulfil the same standards as any trainer of basic endoscopy procedures.\nABSTRACT: 13: Trainees should be exposed to multidisciplinary team discussions and care pathways for failed endoscopic treatment of UGIB.\nABSTRACT: 14: Training centers with limited UGIB case volumes are encouraged to offer short-term immersive training in centers with high volume caseloads of UGIB in order to ensure sufficient exposure for trainees.\nABSTRACT: 15: Competency in managing UGIB is defined as the ability to assess the need for endoscopy, and plan and carry out successful hemostasis.\nABSTRACT: 16: Trainees should manage an indicative number of 30 cases in which successful hemostasis is achieved before evaluation of competence in management of UGIB.\nABSTRACT: 17: UGIB-CAT is advised as a formative assessment tool during training to track acquisition of competence and provide trainee feedback.\nABSTRACT: 18: Trainees should undergo a formal summative assessment of competence in managing UGIB during their training.\nABSTRACT: 19: Endoscopists should continue a period of tracking results and mentored practice with an experienced colleague for at least 6 months after achieving competence in managing UGIB.\nABSTRACT: 20: As trainees move to independent practice, they should have established access to or referral pathways for key supporting specialties involved in the nonendoscopic management of acute UGIB (including emergency medicine, surgery, and interventional radiology).",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Gastrointestinal Hemorrhage",
+        "Clinical Competence",
+        "Endoscopy, Gastrointestinal",
+        "Curriculum",
+        "Hemostasis, Endoscopic",
+        "Gastroenterology",
+        "Europe",
+        "Acute Disease",
+        "Education, Medical, Graduate"
+      ],
       "keywords": [],
       "doi": "10.1055/a-2893-6920",
       "pmcid": "",
       "region": "eu",
       "by": "org-name",
       "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
         "expandedTitle": false,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": false,
+        "officialDocument": true,
         "organizationId": null
       },
-      "priority": 7,
+      "priority": 8,
       "breakdown": {
         "authority": 0,
         "topic": 4,
         "recency": 2,
         "scope": 0,
-        "confidence": 1
+        "confidence": 2
       },
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
-      "verdict": "needsReview",
-      "documentType": null,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
       "reasons": [
-        "insufficient-positive-evidence"
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 4,
         "keep": false,
         "reason": "상부위장관출혈 내시경 교육 커리큘럼",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|curriculum-management-acute-upper-gastrointestinal-bleeding-european-society-gastrointestinal-endoscopy-esge",
+      "supersedes": []
     },
     {
       "id": "pmid:42371400",
@@ -46423,7 +46417,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46497,7 +46491,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46716,7 +46710,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -46834,7 +46828,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46901,7 +46895,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47090,7 +47084,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47150,7 +47144,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -47222,7 +47216,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47295,7 +47289,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47377,7 +47371,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47457,7 +47451,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47535,7 +47529,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47614,7 +47608,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47678,7 +47672,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47824,7 +47818,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47894,7 +47888,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47966,7 +47960,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -48036,7 +48030,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -48119,7 +48113,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48182,7 +48176,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -48230,7 +48224,7 @@
         "Ultra-rare"
       ],
       "doi": "10.1093/europace/euag184",
-      "pmcid": "",
+      "pmcid": "PMC13522997",
       "region": "eu",
       "by": "org-acronym",
       "signals": {
@@ -48255,7 +48249,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48265,7 +48259,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageKey": "esc|diagnosis-management-very-rare-primary-arrhythmia-syndromes-children-adults-clinical-european-heart-rhythm-association-association-cardiovascular-nursing-allied-professions-endorsed-by-association-european-paediatric-congenital-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48312,7 +48306,7 @@
         "Sudden cardiac death"
       ],
       "doi": "10.1093/europace/euag153",
-      "pmcid": "",
+      "pmcid": "PMC13522998",
       "region": "us",
       "by": "org-name",
       "signals": {
@@ -48337,7 +48331,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -48346,7 +48340,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-08-30T23:47:30.981Z",
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48355,6 +48349,209 @@
         "keep": true,
         "reason": "심근염 부정맥·AV차단·심실빈맥, 응급·중환자 실무에 닿음",
         "at": "2026-08-30T23:47:32.947Z"
+      }
+    },
+    {
+      "id": "pmid:42618174",
+      "pmid": "42618174",
+      "title": "Unscheduled Procedural Sedation Multidisciplinary Delphi Consensus Guidelines, Part 2: Clinical Practice: Approved by the ACEP Board of Directors, April 29, 2026.",
+      "pubDate": "2026 Sep",
+      "journal": "Annals of emergency medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "abstract": "Policy statements and clinical policies are the official policies of the American College of Emergency Physicians and, as such, are not subject to the same peer review process as articles appearing in the journal. Policy statements and clinical policies of ACEP do not necessarily reflect the policies and beliefs of Annals of Emergency Medicine and its editors.",
+      "meshTerms": [
+        "Humans",
+        "Procedural Sedation",
+        "Emergency Medicine",
+        "Societies, Medical",
+        "Consensus",
+        "United States"
+      ],
+      "keywords": [],
+      "doi": "10.1016/j.annemergmed.2026.06.039",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": true,
+        "organizationId": "acep"
+      },
+      "priority": 8.8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0.8,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "acep",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ACEP 응급 진정 지침 임상실무편 — 응급 술기 핵심",
+        "at": "2026-09-01T00:48:10.619Z"
+      }
+    },
+    {
+      "id": "pmid:42618173",
+      "pmid": "42618173",
+      "title": "Unscheduled Procedural Sedation Multidisciplinary Delphi Consensus Guidelines, Part 1: Principles, Oversight, and Quality Monitoring: Approved by the ACEP Board of Directors, April 29, 2026.",
+      "pubDate": "2026 Sep",
+      "journal": "Annals of emergency medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "abstract": "Policy statements and clinical policies are the official policies of the American College of Emergency Physicians and, as such, are not subject to the same peer review process as articles appearing in the journal. Policy statements and clinical policies of ACEP do not necessarily reflect the policies and beliefs of Annals of Emergency Medicine and its editors.",
+      "meshTerms": [
+        "Humans",
+        "Procedural Sedation",
+        "United States",
+        "Societies, Medical",
+        "Emergency Medicine",
+        "Consensus"
+      ],
+      "keywords": [],
+      "doi": "10.1016/j.annemergmed.2026.06.038",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": true,
+        "organizationId": "acep"
+      },
+      "priority": 8.8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0.8,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "acep",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "ACEP 응급 진정 지침 원칙·감독편 — 실무 관련",
+        "at": "2026-09-01T00:48:10.619Z"
+      }
+    },
+    {
+      "id": "pmid:42601141",
+      "pmid": "42601141",
+      "title": "Editorial regarding 2026 American Heart Association/American College of Cardiology/American College of Clinical Pharmacy/American College of Emergency Physicians/American College of Chest Physicians/Society for Cardiovascular Angiography and Interventions/Society of Hospital Medicine/Society of Interventional Radiology/Society for Vascular Medicine/Society for Vascular Nursing guideline for the evaluation and management of acute pulmonary embolism in adults.",
+      "pubDate": "2026 Sep",
+      "journal": "Journal of vascular surgery. Venous and lymphatic disorders",
+      "publicationTypes": [
+        "Editorial"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1016/j.jvsv.2026.102512",
+      "pmcid": "PMC13494267",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "commentary-or-evaluation",
+        "conflicting-editorial-publication-type"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "지침 자체 아닌 논평(editorial), 다만 주요 심혈관 다학회 지침 관련",
+        "at": "2026-09-01T00:48:10.619Z"
       }
     }
   ],
@@ -51320,6 +51517,152 @@
         ]
       },
       "publishedAt": "2026-08-31"
+    },
+    {
+      "id": "pmid:40323259",
+      "pmid": "40323259",
+      "title": "Prehospital Trauma Compendium: Tranexamic Acid in Trauma - A Joint Position Statement and Resource Document of NAEMSP, ACEP, and ACS-COT.",
+      "pubDate": "2025 Aug 20",
+      "journal": "Prehospital emergency care",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:09.622Z",
+      "abstract": "Prehospital use of tranexamic acid (TXA) has grown substantially over the past decade despite contradictory evidence supporting its widespread use. Since the previous guidance document on the prehospital use of TXA for injured patients was published by the National Association of Emergency Medical Services Physicians (NAEMSP), the American College of Surgeons Committee on Trauma (ACS-COT), and the American College of Emergency Physicians (ACEP) in 2016, new research has investigated outcomes of patients who receive TXA in the prehospital setting. To provide updated evidence-based guidance on the use of intravenous TXA for injured patients in the EMS setting, we performed a structured literature review and developed the following recommendations supported by the evidence summarized in the accompanying resource document.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1080/10903127.2025.2497056",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "acep"
+      },
+      "priority": 11.344464493402278,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 1.344464493402278,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "acep",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": null,
+      "reasons": [
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:22.888Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "병원전 외상 TXA 합동 성명 — 응급 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "acep|prehospital-trauma-compendium-tranexamic-acid-trauma-joint-resource-document-naemsp-acs-cot",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40323259",
+          "title": "Prehospital Trauma Compendium: Tranexamic Acid in Trauma - A Joint Position Statement and Resource Document of NAEMSP, ACEP, and ACS-COT.",
+          "journal": "Prehospital emergency care",
+          "pubDate": "2025 Aug 20",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40323259/",
+          "doi": "10.1080/10903127.2025.2497056"
+        },
+        "org": "NAEMSP/ACEP/ACS-COT",
+        "version": "2025",
+        "title_ko": "병원전 외상 개요서(Prehospital Trauma Compendium): 외상에서의 트라넥삼산(TXA) — NAEMSP·ACEP·ACS-COT 공동 입장문 및 자료 문서",
+        "scope_ko": "병원전(EMS) 환경에서 손상 환자에게 정맥내(IV/IO) 트라넥삼산(TXA)을 투여하는 것에 대한 근거 기반 지침으로, 주로 출혈성 쇼크의 임상 징후가 있는 성인 외상 환자를 대상으로 한다. 2016년 NAEMSP·ACS-COT·ACEP 공동 지침을 갱신한 개정판이며, 소아 외상에서의 TXA 역할과 미해결 지점도 함께 다룬다.",
+        "summary": [
+          "Prehospital TXA administration may reduce mortality in adult trauma patients with hemorrhagic shock when given after lifesaving interventions.",
+          "Acceptable dosing options are either a 1 g IV/IO dose followed by a hospital-based 1 g infusion over 8 hours, OR a single 2 g IV/IO dose given as an infusion or slow push; the optimal regimen remains unresolved.",
+          "If used, prehospital TXA should be given to adult trauma patients with clinical signs of hemorrhagic shock and no later than 3 hours post-injury; there is no evidence of benefit beyond 3 hours or in patients without clinically significant bleeding.",
+          "TXA appears safe in this setting, with low risk of thromboembolic events and seizures.",
+          "The role of prehospital TXA in pediatric trauma patients with signs of hemorrhagic shock has not been studied and standardized pediatric dosing has not been established.",
+          "A multidisciplinary quality-improvement program led by EMS physicians and including EMS clinicians, emergency physicians, and trauma surgeons should monitor prehospital TXA for protocol compliance and identification of clinical complications."
+        ],
+        "summary_ko": [
+          "병원전 TXA 투여는 생명구조 처치(lifesaving interventions) 이후에 투여할 경우 출혈성 쇼크를 동반한 성인 외상 환자의 사망률을 낮출 수 있다.",
+          "허용되는 용량 옵션은 ① 1 g IV/IO 투여 후 병원에서 1 g을 8시간에 걸쳐 주입, 또는 ② 2 g IV/IO 단회 용량을 주입 또는 천천히 정주(slow push)하는 방식이며, 최적 용법은 아직 미확정이다.",
+          "사용한다면 출혈성 쇼크의 임상 징후가 있는 성인 외상 환자에게 손상 후 3시간 이내에 투여해야 하며, 3시간을 넘기거나 임상적으로 유의한 출혈이 없는 환자에서는 이득의 근거가 없다.",
+          "이 환경에서 TXA는 혈전색전증 및 경련 위험이 낮아 안전한 것으로 보인다.",
+          "출혈성 쇼크 징후가 있는 소아 외상 환자에서의 병원전 TXA 역할은 연구되지 않았고 표준 소아 용량도 확립되지 않았다.",
+          "EMS 의사가 주도하고 EMS 임상가·응급의학과 의사·외상외과 의사가 포함된 다학제 질 향상(QI) 프로그램이 프로토콜 준수와 임상 합병증 파악을 위해 병원전 TXA 투여를 모니터링해야 한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "용량 옵션 (dosing)",
+            "detail": "The 2025 update explicitly endorses a single 2 g IV/IO dose (given as an infusion or slow push) as an acceptable alternative to the traditional split regimen of 1 g IV/IO followed by a hospital-based 1 g infusion over 8 hours, and states the optimal regimen remains unresolved. This adds an operationally simpler single-bolus option not emphasized in the 2016 document, reflecting newer prehospital evidence.",
+            "detail_ko": "2025년 개정판은 기존의 분할 용법(1 g IV/IO 후 병원에서 1 g을 8시간 주입)에 더해, 단회 2 g IV/IO(주입 또는 slow push) 용법을 허용 가능한 대안으로 명시하고 최적 용법은 미확정이라고 밝힌다. 이는 2016년 문서에서 부각되지 않았던 운영상 더 단순한 단회 볼루스 옵션을 새로 반영한 것으로, 최신 병원전 연구 근거를 반영한 변화다."
+          },
+          {
+            "topic": "대상 선정·투여 시점",
+            "detail": "The update tightens patient selection to adult trauma patients with clinical signs of hemorrhagic shock and specifies administration after lifesaving interventions and no later than 3 hours post-injury, explicitly stating there is no evidence of benefit beyond 3 hours or in patients without clinically significant bleeding — a more restrictive, shock-directed framing than broad prehospital use.",
+            "detail_ko": "개정판은 대상을 출혈성 쇼크의 임상 징후가 있는 성인 외상 환자로 좁히고, 생명구조 처치 이후 그리고 손상 후 3시간 이내 투여를 명시하며, 3시간 이후나 임상적으로 유의한 출혈이 없는 환자에서는 이득의 근거가 없다고 못 박는다 — 광범위한 병원전 사용보다 쇼크 중심으로 더 제한적인 틀이다."
+          },
+          {
+            "topic": "안전성 평가",
+            "detail": "The 2025 statement adds an explicit safety conclusion that prehospital TXA carries a low risk of thromboembolic events and seizures, providing reassurance that was not firmly established at the time of the 2016 guidance.",
+            "detail_ko": "2025년 입장문은 병원전 TXA가 혈전색전증 및 경련 위험이 낮다는 안전성 결론을 명시적으로 추가했으며, 이는 2016년 지침 시점에는 확립되지 않았던 안심 근거를 제공한다."
+          },
+          {
+            "topic": "소아 지식 격차 명문화",
+            "detail": "The update explicitly states that the role of prehospital TXA in pediatric trauma patients with signs of hemorrhagic shock has not been studied and that standardized pediatric dosing has not been established, formally flagging this as an evidence gap rather than extrapolating adult practice.",
+            "detail_ko": "개정판은 출혈성 쇼크 징후가 있는 소아 외상 환자에서 병원전 TXA의 역할이 연구되지 않았고 표준 소아 용량도 확립되지 않았음을 명시하여, 성인 진료를 외삽하지 않고 이를 근거 공백으로 공식화한다."
+          },
+          {
+            "topic": "질 향상(QI) 체계",
+            "detail": "The 2025 document adds a governance requirement that a multidisciplinary team led by EMS physicians (including EMS clinicians, emergency physicians, and trauma surgeons) develop a quality-improvement program to audit protocol compliance and identify clinical complications of prehospital TXA.",
+            "detail_ko": "2025년 문서는 EMS 의사가 주도하고 EMS 임상가·응급의학과 의사·외상외과 의사가 포함된 다학제 팀이 병원전 TXA의 프로토콜 준수를 감사하고 임상 합병증을 파악하는 질 향상(QI) 프로그램을 구축하도록 하는 거버넌스 요건을 추가했다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "EMS systems and receiving trauma/EM teams should target prehospital TXA to adult patients with clinical signs of hemorrhagic shock, give it after lifesaving interventions and within 3 hours of injury, and stop offering it for undifferentiated trauma or late presentations where benefit is unproven. Systems may standardize on a single 2 g IV/IO dose to simplify field administration, or retain the 1 g + 1 g/8 h regimen, coordinating the second-gram infusion with the receiving hospital. Clinicians can be reassured about a low thromboembolic and seizure risk, but should not extrapolate to children given the absence of pediatric data, and should build an EMS-physician-led QI loop to audit compliance and complications.",
+        "practiceImpact_ko": "EMS 시스템과 수용 외상/응급팀은 병원전 TXA를 출혈성 쇼크의 임상 징후가 있는 성인 환자에 한정해 생명구조 처치 이후·손상 3시간 이내에 투여하고, 이득이 입증되지 않은 미분류 외상이나 지연 도착 환자에서는 사용을 중단해야 한다. 현장 투여 단순화를 위해 단회 2 g IV/IO로 표준화하거나, 1 g + 8시간 1 g 용법을 유지하되 두 번째 1 g 주입은 수용 병원과 협의해 연계할 수 있다. 낮은 혈전색전증·경련 위험으로 안심할 수 있으나 소아 데이터 부재로 아동에게 외삽해서는 안 되며, 준수 여부와 합병증을 감사하는 EMS 의사 주도 QI 체계를 구축해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40323259",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40323259/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1080/10903127.2025.2497056",
+            "url": "https://doi.org/10.1080/10903127.2025.2497056"
+          },
+          {
+            "label": "웹 — NAEMSP — Prehospital Trauma Compendium: Tranexamic Acid in Trauma (official position statement page)",
+            "url": "https://naemsp.org/position-statement/prehospital-trauma-compendium-tranexamic-acid-in-trauma-a-joint-position-statement-and-resource-document-of-naemsp-acep-and-acs-cot/"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 40323259) — Prehospital Emergency Care, 2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40323259/"
+          },
+          {
+            "label": "웹 — Prehospital Emergency Care (Taylor & Francis) — full article DOI 10.1080/10903127.2025.2497056",
+            "url": "https://www.tandfonline.com/doi/full/10.1080/10903127.2025.2497056"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-01"
     }
   ],
   "rejected": [
@@ -56260,7 +56603,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-30T23:47:14.349Z",
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -56295,7 +56638,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-30T23:47:14.349Z",
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -56325,7 +56668,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-30T23:47:14.349Z",
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -56355,7 +56698,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-29T23:34:36.441Z",
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -56450,7 +56793,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-30T23:47:14.349Z",
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -56612,7 +56955,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-30T23:47:14.349Z",
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -56641,7 +56984,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-08-30T23:47:14.349Z",
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -56713,9 +57056,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260831_084206:guideline:2026-08-31",
+    "runId": "trend_review_20260901_094308:guideline:2026-09-01",
     "outcome": "published",
-    "publishedId": "pmid:40842057",
+    "publishedId": "pmid:40323259",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -56724,8 +57067,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -56734,21 +57077,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 12,
-            "idsFetched": 12,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 165,
-        "overlapCount": 2,
-        "ptOnlyCount": 2,
-        "expandedOnlyCount": 10,
+        "mergedTotal": 126,
+        "overlapCount": 3,
+        "ptOnlyCount": 4,
+        "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
-        "newestFetchedDate": "2026 Sep",
+        "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/01",
-          "maxDate": "2026/08/31"
+          "minDate": "2026/08/02",
+          "maxDate": "2026/09/01"
         },
         "retmax": 60,
         "topics": [
@@ -56756,17 +57099,17 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 61,
-            "idsFetched": 60,
-            "truncated": true,
+            "totalFound": 49,
+            "idsFetched": 49,
+            "truncated": false,
             "error": null
           },
           {
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -56774,8 +57117,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -56783,8 +57126,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 15,
-            "idsFetched": 15,
+            "totalFound": 14,
+            "idsFetched": 14,
             "truncated": false,
             "error": null
           },
@@ -56792,8 +57135,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 32,
-            "idsFetched": 32,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -56810,8 +57153,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -56819,8 +57162,8 @@
             "id": "pubmed-topic:trauma_hemorrhage",
             "label": "외상·출혈",
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 0,
+            "idsFetched": 0,
             "truncated": false,
             "error": null
           },
@@ -56828,8 +57171,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 9,
+            "idsFetched": 9,
             "truncated": false,
             "error": null
           },
@@ -56837,8 +57180,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 0,
+            "idsFetched": 0,
             "truncated": false,
             "error": null
           },
@@ -56846,25 +57189,28 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 1,
-            "idsFetched": 1,
+            "totalFound": 0,
+            "idsFetched": 0,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 151,
+        "topicOnlyCount": 114,
         "ptPmids": [
           "42669047",
-          "42087034",
+          "42618174",
+          "42618173",
+          "42371750",
+          "42248416",
           "41419448",
           "41414903"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 165,
-          "enriched": 165,
-          "withAbstract": 125,
+          "requested": 126,
+          "enriched": 126,
+          "withAbstract": 93,
           "error": null
         }
       },
@@ -56917,25 +57263,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
+        "scored": 3,
         "batches": 1,
         "failed": 0,
         "error": null
       },
       "decisions": {
-        "queued": 226,
+        "queued": 228,
         "needsReview": 448,
         "rejected": 125,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40842057",
+        "candidateId": "pmid:40323259",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-08-30T23:50:45.848Z",
+  "updatedAt": "2026-09-01T00:52:06.953Z",
   "configVersion": "guideline-v2"
 }
