@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-01T00:48:09.077Z"
+      "supersededAt": "2026-09-01T23:32:48.046Z"
     },
     {
       "id": "pmid:38531812",
@@ -32259,7 +32259,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -32752,11 +32752,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.779462767760334,
+      "priority": 6.776003246870399,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.7794627677603339,
+        "recency": 1.776003246870399,
         "scope": 0,
         "confidence": 1
       },
@@ -32769,7 +32769,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -34951,7 +34951,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -35315,70 +35315,6 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "aha|acute-coronary-syndromes-premenopausal-women-from",
-      "supersedes": []
-    },
-    {
-      "id": "pmid:41622524",
-      "pmid": "41622524",
-      "title": "A Critical Review of the 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
-      "pubDate": "2026 Feb 2",
-      "journal": "Cardiology in review",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:38.246Z",
-      "abstract": "The Utstein Formula for Survival, the ethos of the American Heart Association's 2025 guidelines for cardiopulmonary resuscitation and emergency cardiovascular care, is a conceptual model for survival of out-of-hospital cardiac arrest that equally weighs medical science, educational efficiency, and local implementation. With this formula in mind, the American Heart Association has put forth new guidelines that emphasize not only high-quality chest compressions and early defibrillation but also robust systems of care, equitable access, advanced resuscitation techniques, and postcardiac arrest recovery. The 2025 updates carry significant weight for health policy, clinical practice, education, and ethical discussions. In this review, we highlight the major changes, discuss their implications, and propose directions for future research and implementation.",
-      "meshTerms": [],
-      "keywords": [
-        "American Heart Association",
-        "CPR guidelines",
-        "cardiopulmonary resuscitation"
-      ],
-      "doi": "10.1097/CRD.0000000000001184",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "aha"
-      },
-      "priority": 10.950450833781412,
-      "breakdown": {
-        "authority": 4,
-        "topic": 3,
-        "recency": 1.9504508337814122,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:51.509Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "2025 AHA CPR·ECC 지침 리뷰, 소생 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|critical-review-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
       "supersedes": []
     },
     {
@@ -41706,7 +41642,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43401,7 +43337,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -43535,7 +43471,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43688,7 +43624,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -43949,7 +43885,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44283,7 +44219,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -45114,7 +45050,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45385,7 +45321,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45530,7 +45466,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -46129,7 +46065,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46417,7 +46353,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46491,7 +46427,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46710,7 +46646,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -46828,7 +46764,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46895,7 +46831,7 @@
         "publisher-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47084,7 +47020,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47144,7 +47080,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -47163,7 +47099,8 @@
       "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline"
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't"
       ],
       "discoveredBy": [
         "pubmed-pt",
@@ -47216,7 +47153,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47235,7 +47172,8 @@
       "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline"
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't"
       ],
       "discoveredBy": [
         "pubmed-pt",
@@ -47289,7 +47227,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47371,7 +47309,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47451,7 +47389,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47468,7 +47406,8 @@
       "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline"
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -47529,7 +47468,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47546,7 +47485,8 @@
       "journal": "Clinical infectious diseases : an official publication of the Infectious Diseases Society of America",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline"
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -47608,7 +47548,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47672,7 +47612,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47818,7 +47758,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47888,7 +47828,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47960,7 +47900,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -48030,7 +47970,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -48113,7 +48053,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48176,7 +48116,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -48259,7 +48199,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "esc|diagnosis-management-very-rare-primary-arrhythmia-syndromes-children-adults-clinical-european-heart-rhythm-association-association-cardiovascular-nursing-allied-professions-endorsed-by-association-european-paediatric-congenital-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48340,7 +48280,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48412,7 +48352,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48484,7 +48424,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.100Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48545,7 +48485,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-01T00:48:08.152Z",
+      "lastSeenAt": "2026-09-01T23:32:47.101Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -51663,6 +51603,199 @@
         ]
       },
       "publishedAt": "2026-09-01"
+    },
+    {
+      "id": "pmid:41622524",
+      "pmid": "41622524",
+      "title": "A Critical Review of the 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
+      "pubDate": "2026 Feb 2",
+      "journal": "Cardiology in review",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:38.246Z",
+      "abstract": "The Utstein Formula for Survival, the ethos of the American Heart Association's 2025 guidelines for cardiopulmonary resuscitation and emergency cardiovascular care, is a conceptual model for survival of out-of-hospital cardiac arrest that equally weighs medical science, educational efficiency, and local implementation. With this formula in mind, the American Heart Association has put forth new guidelines that emphasize not only high-quality chest compressions and early defibrillation but also robust systems of care, equitable access, advanced resuscitation techniques, and postcardiac arrest recovery. The 2025 updates carry significant weight for health policy, clinical practice, education, and ethical discussions. In this review, we highlight the major changes, discuss their implications, and propose directions for future research and implementation.",
+      "meshTerms": [],
+      "keywords": [
+        "American Heart Association",
+        "CPR guidelines",
+        "cardiopulmonary resuscitation"
+      ],
+      "doi": "10.1097/CRD.0000000000001184",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 10.950450833781412,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 1.9504508337814122,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:51.509Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "2025 AHA CPR·ECC 지침 리뷰, 소생 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|critical-review-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41622524",
+          "title": "A Critical Review of the 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care.",
+          "journal": "Cardiology in review",
+          "pubDate": "2026 Feb 2",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41622524/",
+          "doi": "10.1097/CRD.0000000000001184"
+        },
+        "org": "AHA (American Heart Association)",
+        "version": "2025",
+        "title_ko": "2025 미국심장협회(AHA) 심폐소생술 및 응급심혈관치료(CPR·ECC) 가이드라인에 대한 비판적 고찰",
+        "scope_ko": "심정지(원내·원외, 신생아·소아·성인 전 연령) 환자에 대한 기본소생술(BLS)·전문소생술(ALS)·심정지 후 관리·특수상황·시스템·교육·윤리를 포괄하는 AHA 2025 CPR/ECC 종합 가이드라인을 다룬다. 본 논문 자체는 이 가이드라인의 주요 변화와 함의를 정리·비판적으로 검토한 리뷰이다.",
+        "summary": [
+          "Anchor the whole guideline on the Utstein Formula for Survival — survival depends equally on medical science, educational efficiency, and local implementation — not on science alone.",
+          "Reaffirm the fundamentals: high-quality chest compressions (adequate rate/depth, full recoil, minimal interruptions) and early defibrillation as the highest-yield interventions.",
+          "Build robust, coordinated systems of care with attention to equitable access, and add a unified single Chain of Survival spanning all ages and settings with a Recovery/survivorship link.",
+          "Incorporate advanced resuscitation techniques and structured post–cardiac arrest care (including temperature management and hemodynamic stabilization) to improve neurological outcomes.",
+          "Address ethics and health-policy dimensions explicitly, including a dedicated ethics chapter spanning neonatal to geriatric populations.",
+          "The review flags implications for policy, clinical practice, education, and ethics, and proposes directions for future research and implementation."
+        ],
+        "summary_ko": [
+          "가이드라인 전체를 Utstein Formula for Survival에 정박한다 — 생존은 의학적 과학뿐 아니라 교육 효율성과 지역 실행이 동등한 비중으로 결정된다.",
+          "기본을 재확인한다: 고품질 흉부압박(적정 속도·깊이, 완전 이완, 중단 최소화)과 조기 제세동이 가장 효과가 큰 개입이다.",
+          "형평적 접근을 고려한 견고하고 조율된 치료 시스템을 구축하고, 전 연령·전 장소에 적용되며 회복/생존자 관리 고리를 포함하는 단일 통합 Chain of Survival을 도입한다.",
+          "진보된 소생 기법과 체계적인 심정지 후 관리(체온 관리, 혈역학 안정화 포함)를 통합해 신경학적 예후를 개선한다.",
+          "신생아부터 노년까지 아우르는 별도의 윤리 챕터를 포함하여 윤리·보건정책 차원을 명시적으로 다룬다.",
+          "본 리뷰는 정책·임상·교육·윤리적 함의를 짚고 향후 연구·실행 방향을 제안한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "혈관 접근 경로 (IV vs IO)",
+            "detail": "For adults in cardiac arrest, initial attempts at IV access are now recommended over initial attempts at IO access, with IO reserved for when initial IV attempts are unsuccessful — a shift emphasizing IV as the preferred first route rather than treating IV and IO as interchangeable.",
+            "detail_ko": "성인 심정지에서 이제 최초 접근은 IO보다 IV를 우선 시도하도록 권고하며, 최초 IV 시도가 실패한 경우에만 IO를 시도한다. IV와 IO를 동등하게 취급하던 것에서 IV를 우선 경로로 명확히 한 변화다."
+          },
+          {
+            "topic": "기계식 CPR",
+            "detail": "Routine use of mechanical CPR devices is no longer recommended for adult cardiac arrest, because multiple RCTs found no survival difference versus manual CPR; mechanical CPR may still be considered in select situations where high-quality manual compressions are impractical or unsafe (e.g., transport, hazardous environments) provided interruptions stay minimal.",
+            "detail_ko": "성인 심정지에서 기계식 CPR 장치의 일상적(routine) 사용은 더 이상 권고되지 않는다. 다수의 RCT에서 수기 CPR 대비 생존 차이가 없었기 때문이다. 다만 고품질 수기 압박이 어렵거나 안전하지 않은 특정 상황(이송 중, 위험 환경 등)에서는 중단을 최소화하는 조건으로 여전히 고려할 수 있다."
+          },
+          {
+            "topic": "성인·소아 기도 이물(질식) 대응",
+            "detail": "For choking in conscious adults/children, the sequence now begins with 5 back blows and alternates 5 back blows with 5 abdominal thrusts until the object is cleared or the patient becomes unresponsive — back blows are newly incorporated rather than abdominal thrusts alone.",
+            "detail_ko": "의식이 있는 성인·소아의 질식 대응은 이제 5회 등 두드리기(back blows)로 시작해, 이물이 제거되거나 환자가 무반응이 될 때까지 등 두드리기 5회와 복부 밀어내기(abdominal thrusts) 5회를 번갈아 시행한다. 복부 밀어내기만 하던 방식에서 등 두드리기가 새로 편입됐다."
+          },
+          {
+            "topic": "영아 질식 대응",
+            "detail": "For choking infants, use 5 back blows followed by 5 chest thrusts (heel of one hand); abdominal thrusts are explicitly not recommended in infants because of injury risk.",
+            "detail_ko": "질식 영아에게는 5회 등 두드리기 후 (한 손 손꿈치로) 5회 흉부 압박(chest thrusts)을 시행한다. 영아에게 복부 밀어내기는 손상 위험 때문에 명시적으로 권고하지 않는다."
+          },
+          {
+            "topic": "신생아 제대 결찰 시점",
+            "detail": "Delayed umbilical cord clamping for newborns is extended from at least 30 seconds to at least 60 seconds, to improve neonatal blood volume/iron stores.",
+            "detail_ko": "신생아 제대 결찰(cord clamping) 지연 시간이 '최소 30초'에서 '최소 60초'로 연장됐다. 신생아 혈액량·철분 저장을 개선하기 위함이다."
+          },
+          {
+            "topic": "오피오이드 과량/날록손",
+            "detail": "A new opioid overdose response algorithm is added, expanding emphasis on rapid naloxone administration and public access to naloxone (and defibrillation), with recognition of overdose signs (slow breathing, pinpoint pupils, altered consciousness, cyanosis).",
+            "detail_ko": "오피오이드 과량 대응 알고리즘이 새로 추가됐다. 신속한 날록손 투여와 날록손(및 제세동)에 대한 공공 접근성 강조가 확대됐고, 과량 징후(느린 호흡, 축소된 동공, 의식 변화, 청색증) 인지가 포함됐다."
+          },
+          {
+            "topic": "단일 통합 Chain of Survival",
+            "detail": "The previously separate Chains of Survival (adult/pediatric, in-hospital/out-of-hospital) are consolidated into a single unified Chain applying across all ages and settings, and it now includes a Recovery/survivorship link.",
+            "detail_ko": "기존에 나뉘어 있던 Chain of Survival(성인/소아, 원내/원외)이 전 연령·전 장소에 적용되는 단일 통합 Chain으로 합쳐졌으며, 이제 회복/생존자 관리(Recovery/survivorship) 고리가 포함된다."
+          },
+          {
+            "topic": "용어 정비",
+            "detail": "Terminology is refined — 'rescue breaths' becomes 'breaths' and 'bystander' becomes 'lay rescuer' — to standardize language across the documents.",
+            "detail_ko": "용어가 정비됐다 — 'rescue breaths'는 'breaths'로, 'bystander'는 'lay rescuer'로 변경되어 문서 전반의 표현이 표준화됐다."
+          },
+          {
+            "topic": "제세동 패드 위치·크기",
+            "detail": "Defibrillator pad placement guidance is clarified — either anterolateral or anteroposterior positioning is acceptable — and pads greater than 8 cm in diameter are recommended.",
+            "detail_ko": "제세동 패드 위치 지침이 명확해졌다 — 전측방(anterolateral) 또는 전후방(anteroposterior) 배치 모두 허용된다 — 그리고 직경 8 cm 초과 패드가 권고된다."
+          },
+          {
+            "topic": "소아·영아 압박 중단 최소화",
+            "detail": "For infants and children in cardiac arrest, pauses in chest compressions should be minimized and kept to less than 10 seconds.",
+            "detail_ko": "심정지 영아·소아에서 흉부압박 중단은 최소화하고 10초 미만으로 유지해야 한다."
+          },
+          {
+            "topic": "CPR 시행 표면",
+            "detail": "Renewed emphasis that CPR should be performed on a firm surface whenever possible, with attention to rescuer hand/body position and patient positioning.",
+            "detail_ko": "가능하면 CPR을 단단한 표면에서 시행하도록 다시 강조하며, 구조자 손·몸 자세와 환자 체위에 주의하도록 한다."
+          },
+          {
+            "topic": "윤리 챕터 신설",
+            "detail": "A new chapter dedicated to the Ethics of CPR and Emergency Cardiovascular Care is added, covering foundational ethics principles and contemporary challenges from neonatal to geriatric age groups.",
+            "detail_ko": "CPR 및 응급심혈관치료 윤리를 다루는 새 챕터가 신설됐다. 기초 윤리 원칙과 신생아부터 노년까지의 현대적 윤리 쟁점을 포괄한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, default to IV access first in adult cardiac arrest and reserve IO for failed IV attempts; stop deploying mechanical CPR devices routinely and rely on high-quality manual compressions, using devices only when manual CPR is impractical. Update BLS/first-aid teaching and airway-obstruction protocols to add back blows (adults/children) and back blows + chest thrusts for infants, and integrate a standing naloxone/opioid-overdose pathway with public-access kits. In the delivery room, extend delayed cord clamping to at least 60 seconds, and adopt the single unified Chain of Survival — including formal recovery/survivorship follow-up — into departmental and EMS protocols.",
+        "practiceImpact_ko": "현장에서는 성인 심정지 시 IV 접근을 먼저 시도하고 IO는 IV 실패 시로 미룬다. 기계식 CPR 장치의 일상적 사용을 중단하고 고품질 수기 압박에 의존하되, 수기 CPR이 곤란한 경우에만 장치를 쓴다. BLS·응급처치 교육과 기도폐쇄 프로토콜을 갱신해 성인·소아에는 등 두드리기를, 영아에는 등 두드리기+흉부 압박을 반영하고, 공공 접근 키트를 포함한 상시 날록손/오피오이드 과량 대응 경로를 통합한다. 분만실에서는 제대 결찰 지연을 최소 60초로 연장하고, 회복/생존자 추적을 포함한 단일 통합 Chain of Survival을 부서·EMS 프로토콜에 도입한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41622524",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41622524/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CRD.0000000000001184",
+            "url": "https://doi.org/10.1097/CRD.0000000000001184"
+          },
+          {
+            "label": "웹 — EMS1 — 2025 AHA CPR guidelines: changes to mechanical CPR, choking, single chain of survival",
+            "url": "https://www.ems1.com/cpr/2025-aha-cpr-guidelines-changes-to-mechanical-cpr-choking-single-chain-of-survival"
+          },
+          {
+            "label": "웹 — CHEST Physician — Inside the 2025 CPR and ECC guideline updates from the AHA",
+            "url": "https://www.chestphysician.org/inside-the-2025-cpr-and-ecc-guideline-updates-from-the-american-heart-association/"
+          },
+          {
+            "label": "웹 — AHCA/NCAL Blog — AHA Releases Guideline Updates for CPR and Emergency Cardiovascular Care",
+            "url": "https://www.ahcancal.org/News-and-Communications/Blog/Pages/AHA-Releases-Guideline-Updates-for-CPR-and-Emergency-Cardiovascular-Care-.aspx"
+          },
+          {
+            "label": "웹 — AHA Professional Heart Daily — 2025 AHA Guidelines for CPR and ECC: Top Things to Know (via search)",
+            "url": "https://professional.heart.org/en/science-news/2025-aha-guidelines-for-cpr-and-ecc/top-things-to-know"
+          },
+          {
+            "label": "웹 — Circulation — Part 1: Executive Summary: 2025 AHA Guidelines for CPR and ECC",
+            "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001372"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-02"
     }
   ],
   "rejected": [
@@ -56603,7 +56736,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "discoveredAt": "2026-09-01T23:32:39.065Z",
       "abstract": "BACKGROUND: European guidelines recommend for heart failure with reduced ejection fraction (HFrEF) rapid initiation and later up-titration of four foundation drugs. We assessed whether an educational intervention might improve guideline-directed medical therapy (GDMT) use in Italian clinical practice.\nMETHODS: OpTIMa-HF is a multicenter observational registry including 29 Italian centers (hospital- and community-based HF outpatient clinics). The protocol included a retrospective phase (T0; January-October 2022), an educational intervention, and a prospective enrolment (T1; September-November 2023). HFrEF patients in retrospective and prospective phases were compared. Outcomes were prescription rates of GDMT drugs, combination therapy, management of contraindications, and drugs doses, adjusted for multiple comparisons using the Holm-Bonferroni procedure.\nRESULTS: A total of 1,390 HFrEF patients were analyzed in T0 and 1,292 in T1. Patients enrolled in T1 were slightly older (70.5 vs 69.5 years; p=0.032), with similar sex distribution. After multiple comparisons, prescription rates increased for mineralocorticoid receptor antagonists (MRA, 75.8% vs 81.4%, p=0.040) and sodium-glucose co-transporter-2 inhibitors (SGLT2i, 63.2% to 80.3%, p<0.001), compared to T0. Quadruple therapy increased by approximately 30% (46.9% vs 61% p<0.001) and was stable after multiple comparisons, as the proportion of patients not receiving SGLT2i despite no contraindications that decreased from T0 to T1 (31.8% vs 17.1%; p<0.001).\nCONCLUSIONS: In patients with HFrEF educational activities are associated with improvement in guidelines recommended drugs implementation and might represent a feasible strategy to improve clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -56638,7 +56771,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "discoveredAt": "2026-09-01T23:32:39.065Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -56668,7 +56801,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "discoveredAt": "2026-09-01T23:32:39.065Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -56698,7 +56831,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "discoveredAt": "2026-09-01T23:32:39.065Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -56793,7 +56926,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "discoveredAt": "2026-09-01T23:32:39.065Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -56955,7 +57088,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "discoveredAt": "2026-09-01T23:32:39.065Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -56984,7 +57117,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "discoveredAt": "2026-09-01T23:32:39.065Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -57056,9 +57189,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260901_094308:guideline:2026-09-01",
+    "runId": "trend_review_20260902_082800:guideline:2026-09-02",
     "outcome": "published",
-    "publishedId": "pmid:40323259",
+    "publishedId": "pmid:41622524",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -57083,15 +57216,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 126,
+        "mergedTotal": 130,
         "overlapCount": 3,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/02",
-          "maxDate": "2026/09/01"
+          "minDate": "2026/08/03",
+          "maxDate": "2026/09/02"
         },
         "retmax": 60,
         "topics": [
@@ -57126,8 +57259,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 17,
+            "idsFetched": 17,
             "truncated": false,
             "error": null
           },
@@ -57135,8 +57268,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -57195,7 +57328,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 114,
+        "topicOnlyCount": 118,
         "ptPmids": [
           "42669047",
           "42618174",
@@ -57208,9 +57341,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 126,
-          "enriched": 126,
-          "withAbstract": 93,
+          "requested": 130,
+          "enriched": 130,
+          "withAbstract": 96,
           "error": null
         }
       },
@@ -57263,25 +57396,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 3,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 228,
+        "queued": 227,
         "needsReview": 448,
         "rejected": 125,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40323259",
+        "candidateId": "pmid:41622524",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-01T00:52:06.953Z",
+  "updatedAt": "2026-09-01T23:38:49.475Z",
   "configVersion": "guideline-v2"
 }

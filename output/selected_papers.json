@@ -473,5 +473,16 @@
     "rerankPoolSize": 18,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "41570881",
+    "title": "Tracheal intubation using video laryngoscopy as compared to direct laryngoscopy ",
+    "date": "2026-09-02",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 17,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
