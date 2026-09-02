@@ -428,23 +428,6 @@
       "status": "queued"
     },
     {
-      "pmid": "38759664",
-      "title": "Stroke.",
-      "journal": "Lancet",
-      "score": 8,
-      "topic": "neuro",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "뇌졸중 종설(Lancet)·응급신경 핵심 복습감",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "38889923",
       "title": "Recognition, diagnosis, and early management of suspected sepsis: summary of updated NICE guidance.",
       "journal": "BMJ",
@@ -8225,6 +8208,108 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "38759664",
+      "title": "Stroke.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "뇌졸중 종설(Lancet)·응급신경 핵심 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-03",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "38759664",
+          "title": "Stroke.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2024-5-18",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38759664/",
+          "doi": "10.1016/S0140-6736(24)00642-1"
+        },
+        "title_ko": "뇌졸중 (Stroke)",
+        "scope_ko": "허혈뇌졸중과 뇌내출혈을 아우르는 뇌졸중 전반에 관한 Lancet 종설로, 역학·부담, 혈관 병인, 다중 영상, 급성기 재관류치료(정맥내 혈전용해·혈관내 혈전제거술), 뇌내출혈의 번들 치료, 그리고 기전에 따른 이차예방까지의 최신 발전을 정리한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "역학과 질병 부담",
+            "body_ko": "뇌졸중은 일부 고소득 국가에서 평생 다섯 명 중 한 명까지, 저소득 국가에서는 거의 두 명 중 한 명까지가 겪는 질환이다. 전 세계적으로는 사망 원인 2위를 차지한다. 임상적으로는 갑작스러운 신경학적 결손으로 나타나는 것이 특징이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "병인 — 허혈뇌졸중과 뇌내출혈의 원인",
+            "body_ko": "혈관성 병인이 가장 흔한 허혈뇌졸중의 원인을 이룬다. 여기에는 대동맥질환(large artery disease), 심장색전(cardioembolism), 소혈관질환(small vessel disease)이 포함된다.\n\n소혈관질환은 뇌내출혈(intracerebral haemorrhage)의 가장 흔한 원인이기도 하며, 그다음으로 대혈관성(macrovascular) 원인이 뒤를 잇는다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신경영상",
+            "body_ko": "급성 허혈뇌졸중에서는 다중 CT 또는 MRI가 경색핵(infarct core), 허혈 반음영(ischaemic penumbra), 그리고 혈관 폐색 부위를 드러낸다.\n\n뇌내출혈에서는 신경영상이 혈종 확장(haematoma expansion)의 조기 방사선학적 표지자와 추정되는 기저 원인을 확인해 준다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "급성 허혈뇌졸중의 정맥내 혈전용해",
+            "body_ko": "허혈뇌졸중의 정맥내 혈전용해에서 tenecteplase는 이제 alteplase에 대한 안전하고 효과적인 대안이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "대혈관폐색에 대한 혈관내 혈전제거술",
+            "body_ko": "대혈관폐색(large vessel occlusion)에 의한 뇌졸중 환자에서 혈관내 혈전제거술(endovascular thrombectomy)의 적응증이 더 큰 경색핵(larger core infarcts)과 기저동맥 폐색(basilar artery occlusion)을 포함하도록 확대되었다. 또한 치료 시간창(time window)이 뇌졸중 발생으로부터 최대 24시간까지로 늘어났다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "뇌내출혈의 급성기 번들 치료",
+            "body_ko": "뇌내출혈과 관련하여, 즉각적인 항응고 역전(anticoagulation reversal), 동시적 혈압 강하(blood pressure lowering), 그리고 사전에 규정된 뇌졸중 유닛 프로토콜(prespecified stroke unit protocols)로 구성된 번들 치료를 신속히 시행하면 임상 결과를 개선할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이차예방",
+            "body_ko": "이차예방은 기저 뇌졸중 기전에 따라 안내되며, 약물적·혈관적·혈관내적 중재와 생활습관 교정(lifestyle modifications)을 포함한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 뇌내출혈 번들 치료의 근거 — INTERACT3의 목표치",
+            "body_ko": "이 종설이 권고하는 뇌내출혈 번들 치료의 핵심 근거인 INTERACT3 시험(Lancet, 2023)의 세부 목표치는 다음과 같다. ▲수축기혈압: 발생 초기 집중적으로 140 mmHg 미만 목표(하한 130 mmHg에서 중지), 1시간 내 달성 ▲혈당: 비당뇨 환자 6.1~7.8 mmol/L, 당뇨 환자 7.8~10.0 mmol/L ▲체온: 시작 1시간 내 37.5°C 미만 ▲항응고 역전: 와파린 복용 환자에서 신선동결혈장 또는 프로트롬빈복합체농축물(PCC)로 1시간 내 INR 1.5 미만.\n\n총 7,036명(번들군 3,221명, 통상치료군 3,815명)을 포함한 단계쐐기 군집무작위 시험에서, 6개월 시점 modified Rankin Scale의 서열분석 결과 공통 오즈비 0.86(95% CI 0.76–0.97; p=0.015), 보정 오즈비 0.84(95% CI 0.73–0.97; p=0.017)로 번들군에서 불량한 기능 결과의 오즈가 낮았다.\n\n(주의: 이 수치는 INTERACT3 원문에서 확보한 것으로, 본 Lancet 종설 본문의 서술과 세부가 다를 수 있다.)\n— 보강 출처: INTERACT3 trial full text (PMC10401723) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10401723/)",
+            "origin": "augmented",
+            "sourceLabel": "INTERACT3 trial full text (PMC10401723)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10401723/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급·중환자 진료에서 허혈뇌졸중 정맥내 혈전용해제로 tenecteplase를 alteplase의 안전·유효한 대안으로 고려할 수 있고, 대혈관폐색 환자에서 혈전제거술 적응증을 더 큰 경색핵과 기저동맥 폐색까지, 시간창을 발생 후 최대 24시간까지 넓혀 대상 환자를 판단하게 된다. 뇌내출혈에서는 즉각적 항응고 역전·동시 혈압 강하·규정된 뇌졸중 유닛 프로토콜을 하나의 번들로 신속히 시행하는 것이 결과 개선의 표준 접근이 된다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38759664",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38759664/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(24)00642-1",
+            "url": "https://doi.org/10.1016/S0140-6736(24)00642-1"
+          },
+          {
+            "label": "웹 — Radboudumc 프레스릴리스 — Rapid treatment of stroke remains of paramount importance (이 종설 소개)",
+            "url": "https://www.radboudumc.nl/en/news-items/2024/rapid-treatment-of-stroke-remains-of-paramount-importance"
+          },
+          {
+            "label": "웹 — Irish Medical Times — You might be interested in… Stroke (이 종설 요약)",
+            "url": "https://www.imt.ie/clinical/you-might-be-interested-instroke-2-20-05-2025/"
+          },
+          {
+            "label": "웹 — INTERACT3 trial full text (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10401723/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -8282,9 +8367,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-02",
+    "date": "2026-09-03",
     "outcome": "published",
-    "publishedId": "34505911"
+    "publishedId": "38759664"
   },
-  "updatedAt": "2026-09-02"
+  "updatedAt": "2026-09-03"
 }
