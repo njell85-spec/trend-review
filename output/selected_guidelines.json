@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-02T23:35:02.100Z"
+      "supersededAt": "2026-09-03T23:31:52.233Z"
     },
     {
       "id": "pmid:38531812",
@@ -12779,79 +12779,6 @@
       },
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous"
-    },
-    {
-      "id": "pmid:39873188",
-      "pmid": "39873188",
-      "title": "Choice of resuscitation fluids in critically ill adults: key messages from the European Society of Intensive Care Medicine 2024 clinical practice guidelines.",
-      "pubDate": "2025 Feb 27",
-      "journal": "Polish archives of internal medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:36:46.508Z",
-      "abstract": "The 2024 European Society of Intensive Care Medicine clinical practice guideline provide clinicians with evidence-based recommendations on intravenous fluid in critically ill adults across a range of common conditions. These guidelines aim to improve the practices of fluid therapy by adopting a global perspective that considers both clinical efficacy and resource utilization in diverse healthcare settings. The guidelines address three key questions: (1) albumin versus crystalloids, (2) balanced crystalloids versus isotonic saline, and (3) small-volume hypertonic solutions versus isotonic crystalloids. Recommendations were developed using the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) approach, ensuring a rigorous and transparent evaluation of the evidence across critical outcomes. Albumin was generally not favored over crystalloids due to its lack of demonstrated mortality benefit, higher cost, and limited availability in resource-limited settings. Balanced crystalloids were suggested over isotonic saline in most scenarios due to their potential to reduce mortality and mitigate the harmful effects of hyperchloremia, although the certainty of evidence was low. Small-volume hypertonic solutions were not shown to provide significant advantages over isotonic crystalloids, leading to a preference for the latter based on very low certainty evidence. This review provides an overview of the guideline development process and a detailed summary of their recommendations, highlighting key considerations for clinical practice. The guidelines also identify critical evidence gaps in fluid therapy research, underscoring the need for future studies to refine and optimize fluid management strategies in critically ill patients.",
-      "meshTerms": [
-        "Humans",
-        "Fluid Therapy",
-        "Critical Illness",
-        "Crystalloid Solutions",
-        "Critical Care",
-        "Resuscitation",
-        "Europe",
-        "Adult",
-        "Practice Guidelines as Topic",
-        "Albumins"
-      ],
-      "keywords": [],
-      "doi": "10.20452/pamw.16941",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "esicm"
-      },
-      "priority": 10.709272955765817,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 0.7092729557658168,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "esicm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:37:14.543Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ESICM 2024 소생수액 선택 핵심메시지—중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "esicm|choice-resuscitation-fluids-critically-ill-adults-key-messages-from-clinical-practice",
-      "supersedes": []
     },
     {
       "id": "pmid:39967372",
@@ -32175,7 +32102,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34867,7 +34794,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -41558,7 +41485,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43387,7 +43314,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43540,7 +43467,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44135,7 +44062,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -44966,7 +44893,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45237,7 +45164,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45382,7 +45309,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45981,7 +45908,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46269,7 +46196,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46343,7 +46270,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46680,7 +46607,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46936,7 +46863,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46996,7 +46923,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -47069,7 +46996,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47143,7 +47070,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47225,7 +47152,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47305,7 +47232,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47384,7 +47311,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47464,7 +47391,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47528,7 +47455,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47674,7 +47601,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47744,7 +47671,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47816,7 +47743,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47886,7 +47813,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47969,7 +47896,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48032,7 +47959,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.247Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -48268,7 +48195,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48340,7 +48267,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48401,7 +48328,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-09-03T23:31:51.246Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -51888,6 +51815,148 @@
         ]
       },
       "publishedAt": "2026-09-03"
+    },
+    {
+      "id": "pmid:39873188",
+      "pmid": "39873188",
+      "title": "Choice of resuscitation fluids in critically ill adults: key messages from the European Society of Intensive Care Medicine 2024 clinical practice guidelines.",
+      "pubDate": "2025 Feb 27",
+      "journal": "Polish archives of internal medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:36:46.508Z",
+      "abstract": "The 2024 European Society of Intensive Care Medicine clinical practice guideline provide clinicians with evidence-based recommendations on intravenous fluid in critically ill adults across a range of common conditions. These guidelines aim to improve the practices of fluid therapy by adopting a global perspective that considers both clinical efficacy and resource utilization in diverse healthcare settings. The guidelines address three key questions: (1) albumin versus crystalloids, (2) balanced crystalloids versus isotonic saline, and (3) small-volume hypertonic solutions versus isotonic crystalloids. Recommendations were developed using the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) approach, ensuring a rigorous and transparent evaluation of the evidence across critical outcomes. Albumin was generally not favored over crystalloids due to its lack of demonstrated mortality benefit, higher cost, and limited availability in resource-limited settings. Balanced crystalloids were suggested over isotonic saline in most scenarios due to their potential to reduce mortality and mitigate the harmful effects of hyperchloremia, although the certainty of evidence was low. Small-volume hypertonic solutions were not shown to provide significant advantages over isotonic crystalloids, leading to a preference for the latter based on very low certainty evidence. This review provides an overview of the guideline development process and a detailed summary of their recommendations, highlighting key considerations for clinical practice. The guidelines also identify critical evidence gaps in fluid therapy research, underscoring the need for future studies to refine and optimize fluid management strategies in critically ill patients.",
+      "meshTerms": [
+        "Humans",
+        "Fluid Therapy",
+        "Critical Illness",
+        "Crystalloid Solutions",
+        "Critical Care",
+        "Resuscitation",
+        "Europe",
+        "Adult",
+        "Practice Guidelines as Topic",
+        "Albumins"
+      ],
+      "keywords": [],
+      "doi": "10.20452/pamw.16941",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esicm"
+      },
+      "priority": 10.709272955765817,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 0.7092729557658168,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esicm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:37:14.543Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ESICM 2024 소생수액 선택 핵심메시지—중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "esicm|choice-resuscitation-fluids-critically-ill-adults-key-messages-from-clinical-practice",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39873188",
+          "title": "Choice of resuscitation fluids in critically ill adults: key messages from the European Society of Intensive Care Medicine 2024 clinical practice guidelines.",
+          "journal": "Polish archives of internal medicine",
+          "pubDate": "2025 Feb 27",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39873188/",
+          "doi": "10.20452/pamw.16941"
+        },
+        "org": "ESICM (European Society of Intensive Care Medicine)",
+        "version": "2024",
+        "title_ko": "중증 성인 환자의 소생 수액 선택 — 유럽중환자의학회(ESICM) 2024 임상진료지침 핵심 메시지",
+        "scope_ko": "성인 중환자(일반 중증, 패혈증, 급성호흡부전/ARDS, 외상성 뇌손상(TBI), 급성신손상(AKI), 수술 전후/출혈 위험, 간경변)에서 정맥 소생 수액의 '종류 선택'을 다루는 지침(3부작 중 Part 1). 알부민 대 결정질액, 균형결정질액 대 등장성 생리식염수, 소용량 고장액 대 등장성 결정질액의 세 가지 핵심 질문을 자원 활용까지 고려한 글로벌 관점으로 GRADE 방식으로 평가한다.",
+        "summary": [
+          "Albumin vs crystalloids — general critically ill: use crystalloids rather than albumin (conditional recommendation, moderate certainty); driven by no mortality/RRT/ventilation/LOS benefit, higher cost, and limited availability.",
+          "Albumin vs crystalloids — sepsis: use crystalloids rather than albumin (conditional, moderate certainty).",
+          "Albumin vs crystalloids — acute respiratory failure and perioperative/bleeding-risk patients: use crystalloids rather than albumin (conditional, very low certainty).",
+          "Cirrhosis: use albumin rather than crystalloids (conditional, very low certainty) — the one setting where albumin is favored.",
+          "Traumatic brain injury: use isotonic saline rather than albumin (conditional, very low), and use isotonic saline rather than balanced crystalloids (conditional, very low).",
+          "Balanced crystalloids vs isotonic saline: use balanced crystalloids in general critically ill (conditional, low certainty) and in sepsis (conditional, low), and in kidney injury/AKI (conditional, very low) — to reduce mortality and mitigate hyperchloremia-related harm.",
+          "Small-volume hypertonic vs isotonic: use isotonic crystalloids rather than small-volume hypertonic solutions in general critically ill patients (conditional, very low certainty) — no demonstrated advantage for hypertonic."
+        ],
+        "summary_ko": [
+          "알부민 대 결정질액 — 일반 중증환자: 알부민보다 결정질액을 사용(조건부 권고, 중등도 확실성). 사망률·RRT·인공호흡·재원기간 이득이 없고 비용이 높으며 가용성이 제한적이기 때문.",
+          "알부민 대 결정질액 — 패혈증: 알부민보다 결정질액을 사용(조건부, 중등도 확실성).",
+          "알부민 대 결정질액 — 급성호흡부전 및 수술 전후/출혈 위험군: 알부민보다 결정질액을 사용(조건부, 매우 낮은 확실성).",
+          "간경변: 결정질액보다 알부민을 사용(조건부, 매우 낮은 확실성) — 알부민이 선호되는 유일한 상황.",
+          "외상성 뇌손상(TBI): 알부민보다 등장성 생리식염수를 사용(조건부, 매우 낮음), 그리고 균형결정질액보다 등장성 생리식염수를 사용(조건부, 매우 낮음).",
+          "균형결정질액 대 등장성 생리식염수: 일반 중증환자(조건부, 낮은 확실성)와 패혈증(조건부, 낮음), 신손상/AKI(조건부, 매우 낮음)에서 균형결정질액 사용 — 사망률 감소와 고클로라이드혈증 관련 해악 완화를 위해.",
+          "소용량 고장액 대 등장성: 일반 중증환자에서 소용량 고장액보다 등장성 결정질액을 사용(조건부, 매우 낮은 확실성) — 고장액의 이점이 입증되지 않음."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "이 지침은 ESICM 수액치료 3부작 중 Part 1이다 (범위 맥락)",
+            "body_ko": "ESICM 공식 발표에 따르면 이번 '소생 수액의 선택(Part 1)'은 성인 중환자 수액치료 3부작 임상진료지침의 첫 부분이며, 나머지 두 부분은 각각 '수액의 양(amount)'과 '수액 제거(removal)'를 별도로 다룬다. 즉 지금 이 문서가 담은 세 가지 질문(알부민 대 결정질액, 균형결정질액 대 생리식염수, 고장액 대 등장액)은 수액 '종류' 축에 한정되며, 투여량·탈수액 전략은 Part 2·3에서 별도로 다뤄진다는 점을 유념해야 한다. 본 지침은 ICM(Intensive Care Medicine) 2024에 무료 접근(Online First)으로 게재되었다.",
+            "sourceLabel": "ESICM 공식 발표 (Intensive Care Medicine Online First)",
+            "sourceUrl": "https://www.esicm.org/icm-online-first-new-esicm-guidelines-on-fluid-therapy-adult-critically-ill-patients-part-i-more-studies/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "Default to balanced crystalloids (e.g., Lactated Ringer's/Plasma-Lyte) rather than 0.9% saline for most resuscitation — general ICU, sepsis, and AKI — to avoid hyperchloremia, but keep isotonic saline as the preferred crystalloid in TBI. Stop reaching for albumin as routine resuscitation fluid in general critical illness, sepsis, ARDS, or the perioperative/bleeding-risk setting: it adds cost without a mortality benefit; reserve albumin for cirrhosis. Abandon small-volume hypertonic solutions for general resuscitation, as they show no advantage over isotonic crystalloids. Remember all recommendations are conditional with low-to-very-low certainty (moderate only for crystalloid-over-albumin in general/sepsis), so individualize and weigh cost and availability.",
+        "practiceImpact_ko": "대부분의 소생(일반 ICU·패혈증·AKI)에서 0.9% 생리식염수 대신 균형결정질액(Lactated Ringer's/Plasma-Lyte 등)을 기본으로 삼아 고클로라이드혈증을 피하되, TBI에서는 등장성 생리식염수를 선호 결정질액으로 유지한다. 일반 중증·패혈증·ARDS·수술전후/출혈 위험군에서 알부민을 일상적 소생 수액으로 쓰지 않는다 — 사망률 이득 없이 비용만 늘며, 알부민은 간경변에 국한한다. 소용량 고장액은 등장성 결정질액 대비 이점이 없으므로 일반 소생에서 배제한다. 모든 권고가 조건부이고 확실성이 낮음~매우 낮음(일반·패혈증에서 알부민보다 결정질액만 중등도)이므로 비용·가용성을 함께 고려해 개별화한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39873188",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39873188/"
+          },
+          {
+            "label": "Journal (DOI) — 10.20452/pamw.16941",
+            "url": "https://doi.org/10.20452/pamw.16941"
+          },
+          {
+            "label": "웹 — Capital Region of Denmark Research Portal — ESICM CPG on fluid therapy, Part 1 (ICM 2024, full abstract with all 11 recommendations)",
+            "url": "https://research.regionh.dk/en/publications/european-society-of-intensive-care-medicine-clinical-practice-gui/"
+          },
+          {
+            "label": "웹 — ESICM — ICM Online First announcement of the fluid therapy guideline Part 1",
+            "url": "https://www.esicm.org/icm-online-first-new-esicm-guidelines-on-fluid-therapy-adult-critically-ill-patients-part-i-more-studies/"
+          },
+          {
+            "label": "웹 — PubMed record 39873188 — Polish Archives of Internal Medicine key-messages review",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39873188/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-04"
     }
   ],
   "rejected": [
@@ -56863,7 +56932,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-02T23:34:52.717Z",
+      "discoveredAt": "2026-09-03T23:31:40.529Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -56923,7 +56992,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-02T23:34:52.717Z",
+      "discoveredAt": "2026-09-03T23:31:40.529Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -57018,7 +57087,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-02T23:34:52.717Z",
+      "discoveredAt": "2026-09-03T23:31:40.529Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -57180,7 +57249,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-02T23:34:52.717Z",
+      "discoveredAt": "2026-09-03T23:31:40.529Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -57209,7 +57278,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-02T23:34:52.717Z",
+      "discoveredAt": "2026-09-03T23:31:40.529Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -57281,9 +57350,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260903_083001:guideline:2026-09-03",
+    "runId": "trend_review_20260904_082553:guideline:2026-09-04",
     "outcome": "published",
-    "publishedId": "pmid:40163133",
+    "publishedId": "pmid:39873188",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -57292,8 +57361,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -57308,15 +57377,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 128,
-        "overlapCount": 3,
+        "mergedTotal": 129,
+        "overlapCount": 2,
         "ptOnlyCount": 4,
-        "expandedOnlyCount": 5,
+        "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/04",
-          "maxDate": "2026/09/03"
+          "minDate": "2026/08/05",
+          "maxDate": "2026/09/04"
         },
         "retmax": 60,
         "topics": [
@@ -57333,8 +57402,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -57351,8 +57420,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 16,
-            "idsFetched": 16,
+            "totalFound": 19,
+            "idsFetched": 19,
             "truncated": false,
             "error": null
           },
@@ -57360,8 +57429,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 19,
+            "idsFetched": 19,
             "truncated": false,
             "error": null
           },
@@ -57378,8 +57447,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -57420,9 +57489,8 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 116,
+        "topicOnlyCount": 117,
         "ptPmids": [
-          "42669047",
           "42618174",
           "42618173",
           "42371750",
@@ -57433,9 +57501,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 128,
-          "enriched": 128,
-          "withAbstract": 94,
+          "requested": 129,
+          "enriched": 129,
+          "withAbstract": 95,
           "error": null
         }
       },
@@ -57492,19 +57560,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 226,
+        "queued": 225,
         "needsReview": 448,
         "rejected": 125,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40163133",
+        "candidateId": "pmid:39873188",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-02T23:37:22.793Z",
+  "updatedAt": "2026-09-03T23:34:13.269Z",
   "configVersion": "guideline-v2"
 }

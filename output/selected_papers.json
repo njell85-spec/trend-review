@@ -495,5 +495,16 @@
     "rerankPoolSize": 16,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "41237843",
+    "title": "The impact of vasopressor choice in patients with hypotension after cardiac arre",
+    "date": "2026-09-04",
+    "topic": "sepsis_shock",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 16,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]

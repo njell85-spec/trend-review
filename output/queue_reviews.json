@@ -445,23 +445,6 @@
       "status": "queued"
     },
     {
-      "pmid": "39059997",
-      "title": "Evaluation and management of hypertensive emergency.",
-      "journal": "BMJ",
-      "score": 8,
-      "topic": "vascular_gi_other",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "고혈압 응급 평가·관리, 응급실 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39067905",
       "title": "Infective endocarditis.",
       "journal": "Lancet",
@@ -8310,6 +8293,105 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39059997",
+      "title": "Evaluation and management of hypertensive emergency.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "vascular_gi_other",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "고혈압 응급 평가·관리, 응급실 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-04",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39059997",
+          "title": "Evaluation and management of hypertensive emergency.",
+          "journal": "BMJ (Clinical research ed.)",
+          "pubDate": "2024-7-27",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39059997/",
+          "doi": "10.1136/bmj-2023-077205"
+        },
+        "title_ko": "고혈압 응급(hypertensive emergency)의 평가와 관리",
+        "scope_ko": "이 종설은 급성 표적장기 손상을 동반한 중증 고혈압(고혈압 응급)의 평가와 치료를 다루며, 어떤 약제를 쓸지보다 '얼마나 빨리·어느 목표까지 혈압을 낮출지'가 임상 상황에 따라 크게 달라진다는 점과, 급성 장기 손상이 없는 무증상 중증 고혈압과의 구분 및 장기적 혈압 관리를 함께 논한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "개요 — 질병 부담과 치료의 핵심 원칙",
+            "body_ko": "고혈압 응급은 상당한 이환율과 사망률을 초래하며, 특히 급성 장기 손상(acute organ injury)이 동반된 경우에 그러하다. 따라서 혈압을 낮추고 압력 매개 손상(pressure-mediated injury)의 영향을 줄이기 위한 세심하고 효과적인 전략이 필수적이다. 이 종설은 고혈압 응급의 평가와 관리에 관한 현재의 근거와 진료지침을 논의한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "약제 선택보다 '혈압 강하의 강도(intensity)'가 관건",
+            "body_ko": "고혈압 응급의 여러 형태에 걸쳐 구체적인 항고혈압제(antihypertensive)의 선택은 큰 차이가 없다. 그러나 목표 혈압까지 낮추는 '강하의 강도'는 상황에 따라 상당히 달라진다. 즉 어떤 약을 쓰느냐보다, 얼마나 빠르게 어느 목표까지 낮추느냐가 임상 상황별로 크게 갈린다는 것이 이 종설의 핵심 메시지다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료의 균형 — 혈압 강하의 이득 대 장기 저관류의 위험",
+            "body_ko": "치료는 혈압을 낮추는 것의 긍정적 효과와, 자가조절(autoregulation) 기전이 변화된 환자에서 장기 저관류(organ hypoperfusion)가 초래할 수 있는 부정적 효과 사이의 균형에 달려 있다. 자가조절이 손상된 환자에서는 지나치게 급격한 혈압 강하가 오히려 표적장기의 관류 저하로 해를 끼칠 수 있으므로, 이 균형을 맞추는 것이 치료의 중심이 된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "급성 장기 손상이 없는 경우 — 보존적·외래 접근",
+            "body_ko": "중증 고혈압에 더해 급성 장기 손상이 없는 환자는 보존적이고 외래 중심(outpatient)인 혈압 관리 접근에서 이득을 얻는다. 이런 환자에서는 응급으로 정맥 약제를 써서 급격히 낮출 필요가 없으며, 서서히 조절하는 접근이 유익하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "장기적 혈압 조절의 중요성",
+            "body_ko": "모든 경우에서 장기적인 혈압 조절이 무엇보다 중요하다. 이는 고혈압 응급의 재발을 예방하고 전반적 예후를 개선하기 위함이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 정의와 역치 — 고혈압 응급 대 고혈압 긴급(urgency)",
+            "body_ko": "이 절은 원문(BMJ) 본문을 확보하지 못해 권위 있는 2차 임상 참고자료로 보강한 내용이다. 고혈압 응급은 통상 수축기혈압(SBP) ≥ 180 mmHg 그리고/또는 이완기혈압(DBP) ≥ 120 mmHg의 중증 고혈압에 표적장기(주로 뇌·심혈관계·신장) 손상의 징후가 동반된 경우로 정의된다. 표적장기 손상의 급성 징후 없이 혈압만 매우 높은 경우는 '고혈압 긴급(hypertensive urgency)'으로 구분하며, 이 둘을 합쳐 '고혈압 위기(hypertensive crisis)'라 부른다. 절대 수치의 역치 자체보다 기저치 대비 상승 속도가 더 중요한 기여 인자일 수 있다는 점도 지적된다. 응급실 초기 측정치는 흔히 일시적으로 높으므로, 조용히 안정시킨 뒤 재측정하면 상당히 떨어지는 경우가 많다.\n— 보강 출처: StatPearls (NCBI Bookshelf), Hypertensive Emergency (https://www.ncbi.nlm.nih.gov/books/NBK470371/)",
+            "origin": "augmented",
+            "sourceLabel": "StatPearls (NCBI Bookshelf), Hypertensive Emergency",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK470371/"
+          },
+          {
+            "heading_ko": "[웹 보강] 표적장기 증후군별 혈압 목표와 선호 약제",
+            "body_ko": "이 절은 원문 본문을 확보하지 못해 2차 자료(StatPearls·Merck Manual)로 보강한 내용으로, 원문 초록이 강조한 '증후군에 따라 강하 강도가 크게 다르다'는 원칙을 구체화한 것이다.\n\n급성 허혈성 뇌졸중: 혈전용해(정맥 tPA) 전에는 SBP < 185, DBP < 110 mmHg로 낮추고, 이후 24시간 동안 < 180/105 mmHg로 유지한다. 재관류를 하지 않는 경우 급격한 혈압 강하의 이득은 불확실하며 오히려 해로울 수 있다.\n\n뇌내출혈(intracerebral hemorrhage): SBP를 140 mmHg 미만으로 낮추면 기능적 예후가 개선될 수 있으며 nicardipine 등이 사용된다.\n\n급성 대동맥박리(aortic dissection): 가장 공격적으로 낮추는 상황으로, 반사성 빈맥을 피하기 위해 정맥 베타차단제(주로 esmolol)를 우선 투여한 뒤 필요 시 혈관확장제(예: nitroprusside)를 병용해 심박수와 혈압을 함께 낮춘다.\n\n급성 폐부종/심부전: nitroglycerin 또는 nitroprusside를 사용하며, 저박출률(reduced EF) 환자에서 clevidipine은 피한다.\n\n자간증/중증 전자간증(eclampsia/preeclampsia): magnesium sulfate(부하 4~6 g 후 1~2 g/시 주입)가 경련 예방의 일차 약제이며, 혈압 조절에는 정맥 hydralazine, labetalol 또는 경구 nifedipine을 사용한다.\n\n카테콜아민/교감신경성 위기(예: 갈색세포종): phentolamine을 사용한다.\n— 보강 출처: StatPearls (NCBI Bookshelf) & Merck Manual Professional — Hypertensive Emergency/Emergencies (https://www.ncbi.nlm.nih.gov/books/NBK470371/)",
+            "origin": "augmented",
+            "sourceLabel": "StatPearls (NCBI Bookshelf) & Merck Manual Professional — Hypertensive Emergency/Emergencies",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK470371/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서의 핵심은 '어떤 약을 쓸지'가 아니라 '급성 표적장기 손상이 있는가'를 먼저 가려내는 것이다: 손상이 있으면 자가조절 손상을 고려해 대개 첫 1~2시간에 MAP를 20~25% 정도만 조심스럽게 낮추되(대동맥박리는 예외로 공격적으로), 급성 손상 없이 혈압만 높은 무증상 중증 고혈압은 정맥 약제로 급강하시키지 말고 보존적·외래 접근으로 서서히 조절한다. 급성기 처치 못지않게 재발 예방과 예후 개선을 위한 장기 혈압 조절 계획을 반드시 함께 세운다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39059997",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39059997/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/bmj-2023-077205",
+            "url": "https://doi.org/10.1136/bmj-2023-077205"
+          },
+          {
+            "label": "웹 — BMJ 2024 원문 PDF (Miller et al., emergencymed.org.il 호스팅) — 열었으나 본문 텍스트 추출 불가",
+            "url": "https://emergencymed.org.il/wp-content/uploads/2024/10/Evaluation-and-management-of-hypertensive-emergency.pdf"
+          },
+          {
+            "label": "웹 — StatPearls (NCBI Bookshelf), Hypertensive Emergency",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK470371/"
+          },
+          {
+            "label": "웹 — Merck Manual Professional, Hypertensive Emergencies",
+            "url": "https://www.merckmanuals.com/professional/cardiovascular-disorders/hypertension/hypertensive-emergencies"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -8367,9 +8449,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-03",
+    "date": "2026-09-04",
     "outcome": "published",
-    "publishedId": "38759664"
+    "publishedId": "39059997"
   },
-  "updatedAt": "2026-09-03"
+  "updatedAt": "2026-09-04"
 }
