@@ -1727,6 +1727,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-04",
+      "pmid": "41237843",
+      "title": "The impact of vasopressor choice in patients with hypotension after cardiac arrest: a systematic review.",
+      "title_ko": "심정지 후 저혈압 환자에서 승압제 선택의 영향: 체계적 문헌고찰",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2025.110892",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "심정지 후 자발순환회복(ROSC)에 이어 저혈압이 있는 성인에서, 승압제 선택(예: noradrenaline 대 adrenaline, dopamine, 또는 병용)이 생존 및 양호한 신경학적 기능을 동반한 생존에 영향을 미치는가?",
+      "pico": {
+        "population": "[International] Adults with hypotension following return of spontaneous circulation (ROSC) after cardiac arrest; eight studies were included (one RCT and seven non-randomised studies) evaluating four comparisons, identified by searching 12 databases until 2nd May 2025.",
+        "intervention": "Vasopressor choice — principally noradrenaline (norepinephrine) as the index agent for treating hypotension after ROSC.",
+        "comparison": "Alternative vasopressor strategies: adrenaline (epinephrine) (six studies), dopamine (one study), noradrenaline plus dopamine (one study), and dopamine versus noradrenaline plus adrenaline (one study).",
+        "outcome": "Primary outcomes were survival and survival with favourable neurologic function. Study heterogeneity precluded meta-analysis. The single RCT (n=40) found no evidence of difference (30-day mortality 90% vs 90%, p=1.0). Non-randomised studies were inconsistent: some found no difference (e.g., survival to discharge adjusted OR 1.08, 95% CI 0.60–1.93), while others associated adrenaline with worse outcomes (e.g., mortality adjusted OR 2.6, 95% CI 1.4–4.7; unfavourable neurologic outcome adjusted OR 3.4, 95% CI 2.4–5.0). Certainty of evidence was very low for all comparisons and outcomes."
+      },
+      "pico_ko": {
+        "population": "[다국가] 심정지 후 자발순환회복(ROSC)에 이어 저혈압이 있는 성인; 12개 데이터베이스를 2025년 5월 2일까지 검색하여 4개 비교를 평가한 8개 연구(RCT 1개, 비무작위 연구 7개)가 포함됨.",
+        "intervention": "승압제 선택 — 주로 ROSC 후 저혈압 치료를 위한 기준 약제로서의 noradrenaline(norepinephrine).",
+        "comparison": "대안적 승압제 전략: adrenaline(epinephrine)(6개 연구), dopamine(1개 연구), noradrenaline+dopamine(1개 연구), dopamine 대 noradrenaline+adrenaline(1개 연구).",
+        "outcome": "일차 결과는 생존 및 양호한 신경학적 기능을 동반한 생존이었다. 연구 이질성으로 메타분석은 불가능했다. 유일한 RCT(n=40)는 차이의 근거를 찾지 못했다(30일 사망률 90% 대 90%, p=1.0). 비무작위 연구들은 일관되지 않았다: 일부는 차이가 없었고(예: 퇴원 시 생존 adjusted OR 1.08, 95% CI 0.60–1.93), 다른 일부는 adrenaline 사용을 더 나쁜 결과와 연관지었다(예: 사망 adjusted OR 2.6, 95% CI 1.4–4.7; 불량한 신경학적 결과 adjusted OR 3.4, 95% CI 2.4–5.0). 모든 비교·결과에서 근거 확실성은 very low였다."
+      },
+      "keyFindings": [
+        "Eight studies (one RCT, seven non-randomised) across four vasopressor comparisons were included; heterogeneity precluded meta-analysis and certainty of evidence was very low for all comparisons and outcomes.",
+        "The single RCT (n=40) found no difference between noradrenaline and adrenaline (30-day mortality 90% vs 90%, p=1.0); non-randomised studies were inconsistent, some null and some linking adrenaline to worse survival (adjusted OR 2.6, 95% CI 1.4–4.7) and neurologic outcome (adjusted OR 3.4, 95% CI 2.4–5.0).",
+        "Existing evidence does not support any specific vasopressor for hypotension after cardiac arrest/ROSC, and adequately powered RCTs are needed."
+      ],
+      "keyFindings_ko": [
+        "4개 승압제 비교에 걸쳐 8개 연구(RCT 1개, 비무작위 7개)가 포함되었고, 이질성으로 메타분석이 불가능했으며 모든 비교·결과에서 근거 확실성은 very low였다.",
+        "유일한 RCT(n=40)는 noradrenaline과 adrenaline 사이에 차이가 없었고(30일 사망률 90% 대 90%, p=1.0), 비무작위 연구들은 일관되지 않아 일부는 차이가 없고 일부는 adrenaline을 더 나쁜 생존(adjusted OR 2.6, 95% CI 1.4–4.7) 및 신경학적 결과(adjusted OR 3.4, 95% CI 2.4–5.0)와 연관지었다.",
+        "현 근거는 심정지/ROSC 후 저혈압에 대해 특정 승압제를 지지하지 않으며, 충분한 검정력을 갖춘 RCT가 필요하다."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41237843",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41237843/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110892",
+          "url": "https://doi.org/10.1016/j.resuscitation.2025.110892"
+        },
+        {
+          "label": "웹 — Resuscitation — official article page (S0300-9572(25)00904-9)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00904-9/fulltext"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41237843, esummary)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=41237843"
+        },
+        {
+          "label": "웹 — ILCOR CoSTR — Vasopressor choice for managing low blood pressure after cardiac arrest (ALS 3528 TF SR, same review)",
+          "url": "https://costr.ilcor.org/document/vasopressor-choice-for-managing-low-blood-pressure-after-cardiac-arrest-als-3528-tf-sr"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "Resuscitation — official article page (S0300-9572(25)00904-9)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00904-9/fulltext",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed record (PMID 41237843, esummary)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=41237843",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ILCOR CoSTR — Vasopressor choice for managing low blood pressure after cardiac arrest (ALS 3528 TF SR, same review)",
+          "url": "https://costr.ilcor.org/document/vasopressor-choice-for-managing-low-blood-pressure-after-cardiac-arrest-als-3528-tf-sr",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
