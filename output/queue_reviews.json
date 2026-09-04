@@ -445,23 +445,6 @@
       "status": "queued"
     },
     {
-      "pmid": "39067905",
-      "title": "Infective endocarditis.",
-      "journal": "Lancet",
-      "score": 8,
-      "topic": "infection",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "감염성 심내막염(Lancet) 핵심 임상 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39216494",
       "title": "Primary biliary cholangitis.",
       "journal": "Lancet",
@@ -8392,6 +8375,96 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39067905",
+      "title": "Infective endocarditis.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "감염성 심내막염(Lancet) 핵심 임상 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-05",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39067905",
+          "title": "Infective endocarditis.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2024-7-28",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39067905/",
+          "doi": "10.1016/S0140-6736(24)01098-5"
+        },
+        "title_ko": "감염성 심내막염(Infective endocarditis)",
+        "scope_ko": "native/prosthetic 판막, 벽측 심내막, 중격 결손, 또는 체내 삽입형 심장 장치를 침범하는 감염인 감염성 심내막염을 병태생리·원인균·진단·치료·예방·다학제 접근의 관점에서 포괄적으로 개관하는 Lancet Seminar이며, 최근 연구 동향과 진단 정확도·예방 전략·최적 치료를 둘러싼 미해결 논쟁을 함께 다룹니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "개요와 질병 정의",
+            "body_ko": "감염성 심내막염은 350여 년 전 처음 기술된 이래 전 세계적 보건 문제로, native 판막이나 prosthetic 판막, 벽측 심내막(mural endocardium), 중격 결손, 또는 체내 삽입형 심장 장치(indwelling cardiac device)를 침범하는 감염을 특징으로 합니다. 지난 수십 년간 원인(causation)과 역학(epidemiology)에서 변화가 관찰되어 왔습니다. 이 종설은 최적의 임상 진료를 포괄적으로 개관하며, 병태생리·원인균·진단·치료·예방 그리고 다학제 접근의 핵심을 짚습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단에서의 영상의 역할",
+            "body_ko": "심초음파(echocardiography)는 감염성 심내막염 진단에서 여전히 중심적(pivotal) 역할을 합니다. 다만 저자들은 다른 영상 modality들의 중요성이 점점 커지고 있다(gaining significance)고 명시합니다. 즉, 심초음파를 기본 축으로 두되 대안적 영상 기법의 비중이 확대되는 흐름을 진단 파트에서 강조합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "다학제 관리",
+            "body_ko": "감염성 심내막염의 관리는 심장내과 의사, 심혈관외과 의사, 감염내과 전문의, 미생물학자, 영상의학과 의사, 신경과 의사의 전문성을 요하는 다학제적(multidisciplinary) 접근이 반드시 필요합니다(imperative). 저자들은 이 여러 분야의 협력을 최적 진료의 필수 요건으로 제시합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "근거 기반과 남은 논쟁",
+            "body_ko": "현재의 임상 관리 권고는 상당 부분 관찰 연구(observational studies)에 의존합니다. 이는 질환이 드물어(rarity) 잘 수행된 무작위 대조시험(RCT)의 수가 제한적이기 때문입니다. 저자들은 진단 정확도, 예방 전략, 최적 치료를 둘러싸고 여전히 남아 있는 논쟁(remaining controversies)을 다루며, 최근 연구 결과에 대한 업데이트를 제공합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 역학·병태생리·원인균의 임상 세부",
+            "body_ko": "※ 아래는 원문 본문을 확보하지 못해 권위 있는 2차 임상 참고자료(StatPearls)에서 보강한 배경 지식이며, 이 Lancet 논문 자체의 서술이 아닙니다.\n\n역학: 연간 발생률은 10만 명당 약 3~10례이며, 환자군이 고령화되어 평균 연령이 65세 이상, 최고 발생은 80세 이상에서 나타납니다. 전통적으로 남성 우위(약 2:1)이나, 주사약물 사용 여성에서 사망률이 더 높습니다.\n\n병태생리: 발병에는 ① 심내막 손상(난류·카테터 외상 등), ② 균혈증, ③ 충분한 병독성의 미생물이라는 세 요소가 필요합니다. 손상된 심내막에 혈소판 응집과 응고 연쇄반응이 일어나 무균성 비세균성 혈전 증식물(NBTE)이 형성되고, 균혈증 시 여기에 세균이 정착합니다.\n\n원인균: 그람양성균이 80~90%를 차지합니다. S. aureus 약 30%(원내 감염의 50%), viridans streptococci 약 20%(불량한 치아 위생 연관), enterococci 15~18%(비뇨생식기/위장관 기원), HACEK 균, 대장암과 연관되는 S. gallolyticus, 그리고 진균(약 1%, 고사망률)이 포함됩니다.\n— 보강 출처: StatPearls (NCBI Bookshelf) — Infective Endocarditis (https://www.ncbi.nlm.nih.gov/books/NBK557641/)",
+            "origin": "augmented",
+            "sourceLabel": "StatPearls (NCBI Bookshelf) — Infective Endocarditis",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK557641/"
+          },
+          {
+            "heading_ko": "[웹 보강] 진단·항생제·수술·예방의 임상 세부",
+            "body_ko": "※ 아래도 StatPearls 기반 보강이며 이 Lancet 논문의 서술이 아닙니다.\n\nModified Duke 기준: ① 대기준 2개, ② 대기준 1개+소기준 3개, ③ 소기준 5개 중 하나를 만족해야 합니다. 대기준은 (a) 전형적 균의 혈액배양 양성(또는 지속 균혈증)과 (b) 영상에서의 심내막 침범 증거입니다. 소기준 5개는 소인 질환, 발열 >38℃, 혈관 현상(mycotic aneurysm, Janeway 병변, 색전), 면역 현상(Osler 결절, Roth 반점, 사구체신염), 대기준 미충족 배양 양성입니다.\n\n영상: TTE가 1차 검사이며, TTE가 부적절하거나(비만·COPD·prosthetic valve) 의심이 지속되면 TEE를 시행합니다. 판막주위 농양 검출에서 심장 CT가 한 메타분석에서 TEE보다 높은 민감도(88% 대 74%)를 보였습니다.\n\n항생제(예): penicillin-감수성 viridans strep native 판막은 ceftriaxone 2 g/일 + gentamicin 2주, 또는 ceftriaxone 2 g/일 4주, 또는 penicillin G 4주. Native MSSA는 nafcillin 2 g q4h 또는 cefazolin 2 g q8h 6주, MRSA는 vancomycin 15 mg/kg q12h 또는 daptomycin 8 mg/kg/일 6주. Prosthetic staphylococcal은 병용요법(± gentamicin 2주 + rifampin 6주). Enterococci는 β-lactam 단독으로 불충분하여 병용(ampicillin/penicillin G + aminoglycoside 4~6주). MSSA/MRSA native 판막에 대한 gentamicin 병용은 이득 부족과 신독성 우려로 더 이상 권장되지 않습니다.\n\n수술 적응증(응급 24~48시간 포함): 급성 심부전, 심장 합병증(전도 차단·판막주위/판륜 농양), 전신 색전 또는 큰 증식물(>10 mm), 적절 항생제에도 지속 균혈증(5~7일 초과), 난치 균(Pseudomonas, Coxiella, 진균), 대부분의 조기 prosthetic 판막 심내막염. 현재 환자의 거의 절반이 수술을 받습니다.\n\n예방: 고위험군(prosthetic 판막/수복재, 심내막염 기왕력, 미수복 청색증형 선천심질환, 잔존 결손 있는 수복 선천심질환, 판막 기능이상 있는 심장이식)에서 점막 천공을 동반하는 치과 시술에만 권장하며, 시술 60분 전 amoxicillin 2 g 경구(또는 clindamycin 600 mg)를 씁니다. 피부·비뇨생식기·위장관 시술에는 더 이상 권장하지 않습니다.\n\n예후: 원내 사망률 약 18%, 1년 사망률 약 40%. 조기 prosthetic 판막 심내막염(60일 이내)의 원내 사망률이 약 30%로 가장 높습니다.\n— 보강 출처: StatPearls (NCBI Bookshelf) — Infective Endocarditis (https://www.ncbi.nlm.nih.gov/books/NBK557641/)",
+            "origin": "augmented",
+            "sourceLabel": "StatPearls (NCBI Bookshelf) — Infective Endocarditis",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK557641/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "원문(초록)이 말하는 범위에서, 응급·중환자 침상에서는 심초음파를 진단의 중심 축으로 삼되 판막주위 농양 등에서 대안 영상(심장 CT 등)의 역할이 커진다는 점을 인식하고, 진단·항생제·수술 시점 결정을 심장내과·심장외과·감염내과·미생물·영상·신경과가 함께 판단하는 다학제 팀 경로로 조기에 연결해야 합니다. 또한 권고 상당수가 관찰 연구에 근거하고 배양 음성·예방 대상·균별 최적 치료에 논쟁이 남아 있음을 감안해, 개별 환자에서 근거의 확실성 수준을 함께 저울질하는 것이 실무적으로 중요합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39067905",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39067905/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(24)01098-5",
+            "url": "https://doi.org/10.1016/S0140-6736(24)01098-5"
+          },
+          {
+            "label": "웹 — Nanjing Medical University — 이 Lancet Seminar에 관한 기관 발표",
+            "url": "https://english.njmu.edu.cn/_t965/2024/0817/c6226a271230/page.htm"
+          },
+          {
+            "label": "웹 — StatPearls (NCBI Bookshelf) — Infective Endocarditis",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK557641/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -8449,9 +8522,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-04",
+    "date": "2026-09-05",
     "outcome": "published",
-    "publishedId": "39059997"
+    "publishedId": "39067905"
   },
-  "updatedAt": "2026-09-04"
+  "updatedAt": "2026-09-05"
 }

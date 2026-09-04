@@ -506,5 +506,16 @@
     "rerankPoolSize": 16,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42331277",
+    "title": "Diastolic blood pressure and end-tidal carbon dioxide during adult ICU cardiopul",
+    "date": "2026-09-05",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 14,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
