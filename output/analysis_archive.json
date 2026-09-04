@@ -1802,6 +1802,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-05",
+      "pmid": "42331277",
+      "title": "Diastolic blood pressure and end-tidal carbon dioxide during adult ICU cardiopulmonary resuscitation: association with return of spontaneous circulation.",
+      "title_ko": "성인 ICU 심폐소생술 중 이완기 혈압과 호기말 이산화탄소: 자발순환회복(ROSC)과의 연관성",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111177",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "동시에 동맥압과 capnography 감시가 이루어지는 성인 ICU 심정지 환자에서, 소생술 중 diastolic blood pressure(DBP)와 end-tidal carbon dioxide(EtCO2)가 return of spontaneous circulation(ROSC)과 연관이 있는지, 그리고 어느 지표가 ROSC를 더 잘 구별하는지 평가한다.",
+      "pico": {
+        "population": "[Country NR] Adult patients in an adult medical-surgical ICU with an indwelling arterial catheter and mainstream capnography at the time of cardiac arrest, over a 9-month prospective observational study; 68 cardiac arrest events from 63 patients were analyzed, with ROSC in 29 events (42.6%).",
+        "intervention": "Intra-arrest mean diastolic blood pressure (DBP) across the CPR episode, recorded at the end of each 2-min CPR cycle (mean DBP 39 ± 18 mmHg in ROSC events).",
+        "comparison": "Intra-arrest mean end-tidal carbon dioxide (EtCO2) across the CPR episode, recorded at the end of each 2-min CPR cycle (mean EtCO2 19 ± 5 mmHg in ROSC events); events without ROSC served as the outcome comparison.",
+        "outcome": "Primary outcome was ROSC. Mean DBP was higher in ROSC vs no-ROSC events (39 ± 18 vs 24 ± 10 mmHg; mean difference 15 mmHg, 95% CI 8–23; p < 0.001) and mean EtCO2 was higher (19 ± 5 vs 15 ± 6 mmHg; mean difference 4 mmHg, 95% CI 1–6; p = 0.010). For mean values, DBP showed numerically higher discrimination than EtCO2 (AUC 0.78 vs 0.69; DeLong p = 0.30, not statistically significant)."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 성인 medical-surgical ICU에서 심정지 발생 시점에 유치 동맥관(arterial catheter)과 mainstream capnography를 가지고 있던 성인 환자를 대상으로 한 9개월간의 prospective observational study; 63명 환자에서 발생한 68건의 심정지 이벤트를 분석했고 이 중 29건(42.6%)에서 ROSC가 달성되었다.",
+        "intervention": "각 2분 CPR 주기 종료 시점에 기록한 소생술 중 mean diastolic blood pressure(DBP) (ROSC 이벤트에서 mean DBP 39 ± 18 mmHg).",
+        "comparison": "각 2분 CPR 주기 종료 시점에 기록한 소생술 중 mean end-tidal carbon dioxide(EtCO2) (ROSC 이벤트에서 mean EtCO2 19 ± 5 mmHg); ROSC를 달성하지 못한 이벤트가 결과 비교군이었다.",
+        "outcome": "일차 결과는 ROSC였다. Mean DBP는 ROSC군에서 더 높았고(39 ± 18 vs 24 ± 10 mmHg; mean difference 15 mmHg, 95% CI 8–23; p < 0.001), mean EtCO2도 더 높았다(19 ± 5 vs 15 ± 6 mmHg; mean difference 4 mmHg, 95% CI 1–6; p = 0.010). Mean 값 기준으로 DBP가 EtCO2보다 수치상 높은 구별력을 보였으나 통계적으로 유의하지는 않았다(AUC 0.78 vs 0.69; DeLong p = 0.30)."
+      },
+      "keyFindings": [
+        "Mean DBP across the CPR episode was significantly higher in events achieving ROSC than without (39 ± 18 vs 24 ± 10 mmHg; mean difference 15 mmHg, 95% CI 8–23; p < 0.001) across 68 events (ROSC 29, 42.6%).",
+        "Mean EtCO2 was also significantly higher in ROSC events (19 ± 5 vs 15 ± 6 mmHg; mean difference 4 mmHg, 95% CI 1–6; p = 0.010).",
+        "For mean values across the episode, DBP had numerically but not significantly higher discrimination for ROSC than EtCO2 (AUC 0.78 vs 0.69; DeLong p = 0.30); last recorded pre-outcome DBP reached AUC 0.96 vs EtCO2 0.85 (DeLong p = 0.04) but only as a retrospective peri-outcome measure."
+      ],
+      "keyFindings_ko": [
+        "CPR 전체에 걸친 mean DBP는 ROSC 달성 이벤트에서 유의하게 더 높았다(39 ± 18 vs 24 ± 10 mmHg; mean difference 15 mmHg, 95% CI 8–23; p < 0.001), 총 68건(ROSC 29건, 42.6%) 분석.",
+        "Mean EtCO2도 ROSC 이벤트에서 유의하게 더 높았다(19 ± 5 vs 15 ± 6 mmHg; mean difference 4 mmHg, 95% CI 1–6; p = 0.010).",
+        "에피소드 전체 mean 값 기준으로 DBP는 EtCO2보다 수치상 높지만 유의하지 않은 구별력을 보였고(AUC 0.78 vs 0.69; DeLong p = 0.30), 결과 직전 마지막 DBP 값은 AUC 0.96(EtCO2 0.85; DeLong p = 0.04)에 이르렀으나 이는 후향적 peri-outcome 지표에 불과했다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42331277",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42331277/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111177",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111177"
+        },
+        {
+          "label": "웹 — PubMed E-utilities esearch (PMID lookup)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=Singh+A+Kataria+diastolic+blood+pressure+end-tidal+carbon+dioxide+ICU+return+spontaneous+circulation&retmax=5"
+        },
+        {
+          "label": "웹 — PubMed E-utilities esummary (PMID 42331277 confirmation)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42331277"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed E-utilities esearch (PMID lookup)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=Singh+A+Kataria+diastolic+blood+pressure+end-tidal+carbon+dioxide+ICU+return+spontaneous+circulation&retmax=5",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed E-utilities esummary (PMID 42331277 confirmation)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42331277",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
