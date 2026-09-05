@@ -1868,6 +1868,81 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-06",
+      "pmid": "42693471",
+      "title": "Extracorporeal CO elimination for acute exacerbation of severe COPD requiring invasive mechanical ventilation: a randomized controlled trial (the X-COPD trial).",
+      "title_ko": "침습적 기계환기가 필요한 중증 COPD 급성악화에서 체외 CO₂ 제거(ECCO₂R): 무작위 대조 시험(X-COPD trial)",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-026-06300-6",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "조기 발관에 실패했거나 부적격인, 침습적 기계환기가 필요한 중증 AE-COPD 성인에서 ECCO₂R을 이용한 조기 발관이 표준 침습적 기계환기에 비해 임상 결과(60일째 사망 또는 중증 장애)를 개선하는가?",
+      "pico": {
+        "population": "[Germany] Adults with acute hypercapnic respiratory failure due to AE-COPD requiring IMV who failed or were ineligible for extubation within 24 hours of intubation; 18 patients randomized before early termination by the sponsor for financial reasons (planned enrollment: 192), with 8 ECCO₂R-treated and 9 evaluable IMV-treated patients.",
+        "intervention": "ECCO₂R-facilitated early extubation using a high-capacity device with a capacity to eliminate more than 50% of the average CO₂ production (veno-venous ECCO₂R).",
+        "comparison": "No ECCO₂R — standard invasive mechanical ventilation with attempt to extubate and switch to NIV (tracheostomy if extubation fails).",
+        "outcome": "Primary composite of death or severe disability at day 60: 0/8 (0%) ECCO₂R-treated patients versus 3/9 (33%) evaluable IMV-treated patients; risk difference -33%; 95% CI -65% to 6%; p = 0.21."
+      },
+      "pico_ko": {
+        "population": "[독일] 24시간 이내 발관에 실패했거나 부적격인, AE-COPD로 인한 급성 고탄산혈증성 호흡부전으로 IMV가 필요한 성인; 재정적 사유로 sponsor가 조기 종료하기 전 18명이 무작위 배정됨(계획 등록 192명), ECCO₂R군 8명·분석가능 IMV군 9명.",
+        "intervention": "평균 CO₂ 생성량의 50% 이상을 제거할 수 있는 용량의 고성능 기기를 이용한 ECCO₂R 기반 조기 발관(veno-venous ECCO₂R).",
+        "comparison": "ECCO₂R 미시행 — 발관 시도 및 NIV 전환을 포함한 표준 침습적 기계환기(발관 실패 시 기관절개술).",
+        "outcome": "1차 복합 결과(60일째 사망 또는 중증 장애): ECCO₂R군 0/8(0%) 대 분석가능 IMV군 3/9(33%); risk difference -33%; 95% CI -65% ~ 6%; p = 0.21."
+      },
+      "keyFindings": [
+        "The primary composite of death or severe disability at day 60 occurred in 0/8 ECCO₂R patients vs 3/9 IMV patients (33%); risk difference -33%, 95% CI -65% to 6%, p = 0.21 — favorable numeric trend but not statistically significant.",
+        "IMV duration was significantly shorter with ECCO₂R: 7.1 ± 2.0 vs 24.3 ± 21.4 days (median 7.0 vs 16.0; mean difference -17.2 days; p = 0.043), with more device-support-free days at day 29 (17 ± 4 vs 8 ± 7; p = 0.011, post hoc).",
+        "VAP occurred in 0 vs 3 (37.5%) patients and severe bleeding in 1 ECCO₂R-treated patient (12.5%); the trial was terminated early by the sponsor for financial reasons after 18 of a planned 192 patients."
+      ],
+      "keyFindings_ko": [
+        "60일째 사망 또는 중증 장애의 1차 복합 결과는 ECCO₂R군 0/8 대 IMV군 3/9(33%); risk difference -33%, 95% CI -65% ~ 6%, p = 0.21 — 수치상 유리하나 통계적으로 유의하지 않음.",
+        "IMV 기간은 ECCO₂R군에서 유의하게 짧음: 7.1 ± 2.0 대 24.3 ± 21.4일(중앙값 7.0 대 16.0; mean difference -17.2일; p = 0.043), 29일째 device-support-free days도 더 많음(17 ± 4 대 8 ± 7; p = 0.011, 사후분석).",
+        "VAP는 0 대 3명(37.5%), 중증 출혈은 ECCO₂R군 1명(12.5%)에서 발생; 시험은 계획된 192명 중 18명 등록 후 재정적 사유로 sponsor가 조기 종료함."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42693471",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42693471/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-026-06300-6",
+          "url": "https://doi.org/10.1186/s13054-026-06300-6"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42693471, esummary)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42693471&retmode=json"
+        },
+        {
+          "label": "웹 — ClinicalTrials.gov NCT03584295 (X-COPD trial registry, API v2)",
+          "url": "https://clinicaltrials.gov/api/v2/studies/NCT03584295?format=json"
+        },
+        {
+          "label": "웹 — ClinicalTrials.gov NCT03584295 study page",
+          "url": "https://clinicaltrials.gov/study/NCT03584295"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 42693471, esummary)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42693471&retmode=json",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ClinicalTrials.gov NCT03584295 (X-COPD trial registry, API v2)",
+          "url": "https://clinicaltrials.gov/api/v2/studies/NCT03584295?format=json",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ClinicalTrials.gov NCT03584295 study page",
+          "url": "https://clinicaltrials.gov/study/NCT03584295",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
