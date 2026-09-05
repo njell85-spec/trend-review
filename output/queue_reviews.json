@@ -479,23 +479,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "39283629",
-      "title": "Community-Acquired Pneumonia: A Review.",
-      "journal": "JAMA",
-      "score": 8,
-      "topic": "infection",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "지역사회획득폐렴(JAMA) 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39288952",
       "title": "Management of atrial fibrillation in older adults.",
       "journal": "BMJ",
@@ -8465,6 +8448,111 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39283629",
+      "title": "Community-Acquired Pneumonia: A Review.",
+      "journal": "JAMA",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "지역사회획득폐렴(JAMA) 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-06",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39283629",
+          "title": "Community-Acquired Pneumonia: A Review.",
+          "journal": "JAMA",
+          "pubDate": "2024-9-17",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39283629/",
+          "doi": "10.1001/jama.2024.14796"
+        },
+        "title_ko": "지역사회획득폐렴(Community-Acquired Pneumonia): 종설",
+        "scope_ko": "면역저하가 없는 성인에서 지역사회획득폐렴(CAP)의 병태생리·역학·진단·치료에 관한 현재 근거를 일차진료·입원·중환자실 상황에 걸쳐 정리한 JAMA 종설입니다. 다만 이번 작업에서는 논문 본문(전문)에 접근하지 못하여 초록에 담긴 내용만을 논문 근거로 옮겼고, 그 밖의 임상적 세부는 별도 출처를 명시한 보강 절로 덧붙였습니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "중요성 — 질병 부담",
+            "body_ko": "지역사회획득폐렴(CAP)은 미국에서 연간 약 140만 건의 응급실 방문, 약 74만 건의 입원, 약 4만 1천 명의 사망을 초래합니다. 즉 흔하면서도 사망에 이를 수 있는 질환입니다.\n\n(주: 이 절은 논문 초록의 IMPORTANCE 문장을 그대로 옮긴 것으로, 본문에서 이 수치들이 어떤 자료원에 근거하는지까지는 이번에 확인하지 못했습니다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단",
+            "body_ko": "CAP는 폐렴을 시사하는 징후(예: 체온 >38 °C 또는 ≤36 °C, 백혈구 수 <4000/μL 또는 >10 000/μL) 또는 증상(예: 새로 생기거나 악화된 기침 또는 호흡곤란)이 2가지 이상 있으면서, 이에 부합하는 영상 소견(예: 공기공간 음영, air space density)이 동반되고, 달리 설명할 다른 원인이 없을 때 진단할 수 있습니다.\n\n초록은 이처럼 '징후·증상 2가지 이상 + 부합하는 영상 소견 + 대체 설명의 부재'라는 조합을 진단 틀로 제시합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "입원과 중증도",
+            "body_ko": "CAP 환자의 최대 10%가 입원하며, 그중 최대 5명 중 1명(up to 1 in 5)은 중환자 치료를 필요로 합니다. 즉 대부분은 외래에서 관리되지만, 입원 환자 중 상당수가 중증으로 진행할 수 있습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "고위험군과 합병증",
+            "body_ko": "고령자(≥65세), 그리고 기저 폐질환·흡연·면역억제가 있는 환자가 CAP 발생과, 패혈증·급성호흡곤란증후군(ARDS)·사망을 포함한 CAP 합병증의 위험이 가장 높습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "원인균",
+            "body_ko": "CAP로 입원한 환자 중 원인 병원체가 확인되는 경우는 38%에 불과합니다. 병원체가 확인된 환자 중에서는 최대 40%에서 바이러스가 CAP의 유력한 원인으로 확인되며, 원인이 규명된 폐렴 환자에서 Streptococcus pneumoniae는 약 15%에서 확인됩니다.\n\n초록의 이 수치는 '많은 경우 원인균이 밝혀지지 않는다'는 점과, 밝혀지는 경우 바이러스의 비중이 상당하다는 점을 함께 강조합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "COVID-19 및 인플루엔자 검사",
+            "body_ko": "지역사회에서 COVID-19와 인플루엔자가 흔한 시기에는 모든 CAP 환자에서 이 두 바이러스에 대한 검사를 시행해야 합니다. 이들의 진단은 치료(예: 항바이러스 요법)와 감염 예방 전략에 영향을 줄 수 있기 때문입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "경험적 항균요법의 선택",
+            "body_ko": "인플루엔자와 COVID-19 검사가 음성이거나, 이들 병원체가 유력한 원인이 아닐 때에는, 가장 가능성이 높은 세균 병원체를 겨냥해 경험적으로 치료할 수 있습니다.\n\n경험적 항균요법을 선택할 때 임상의는 질병 중증도를 고려하고, 세균 감염(또는 내성균 감염)의 가능성과 항균제 남용에 따른 위해의 위험을 함께 평가해야 합니다.\n\n내성균 위험인자가 없는 입원 환자는 β-락탐/마크로라이드 병합요법(예: ceftriaxone + azithromycin)으로 최소 3일간 치료할 수 있습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "중증 CAP에서의 전신 코르티코스테로이드",
+            "body_ko": "중증 CAP가 발생한 지 24시간 이내에 전신 코르티코스테로이드를 투여하면 28일 사망률을 낮출 수 있습니다(may reduce). 초록은 이를 단정이 아니라 가능성('~할 수 있다')으로 서술하고 있으며, 대상은 '중증' CAP로 한정하고 있습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론(초록 요약)",
+            "body_ko": "CAP는 흔하며 패혈증·ARDS·사망으로 이어질 수 있습니다. 일차 치료는 질병 중증도와 원인에 따라 달라집니다. 세균성 CAP가 의심되고 내성균 위험인자가 없는 입원 환자는 β-락탐/마크로라이드 병합요법(예: ceftriaxone + azithromycin)으로 최소 3일간 치료할 수 있습니다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "COVID-19와 인플루엔자가 유행하는 시기에는 모든 CAP 환자에서 두 바이러스를 먼저 검사해, 항바이러스제 투여와 격리·감염 예방 방침을 결정합니다. 바이러스가 음성이거나 유력하지 않으면, 내성균 위험인자가 없는 입원 환자는 β-락탐/마크로라이드(예: ceftriaxone + azithromycin)로 최소 3일이면 충분할 수 있어 불필요한 장기 항생제 노출을 줄일 수 있습니다. 중증 CAP에서는 발생 24시간 이내의 전신 스테로이드 투여가 28일 사망률을 낮출 수 있어 조기 판단이 필요합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39283629",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39283629/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2024.14796",
+            "url": "https://doi.org/10.1001/jama.2024.14796"
+          },
+          {
+            "label": "웹 — JAMA Network — Community-Acquired Pneumonia: A Review (초록/서지, 본문은 유료)",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2823762"
+          },
+          {
+            "label": "웹 — University of Utah School of Medicine — New JAMA Article on Pneumonia Best Practices (저자 소개·요지)",
+            "url": "https://medicine.utah.edu/internal-medicine/news/2024/09/new-jama-article-pneumonia-best-practices-co-authored-dr-valerie"
+          },
+          {
+            "label": "웹 — Cleveland Clinic Journal of Medicine — CAP: Strategies for triage and treatment (보강 출처)",
+            "url": "https://www.ccjm.org/content/87/3/145"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -8522,9 +8610,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-05",
+    "date": "2026-09-06",
     "outcome": "published",
-    "publishedId": "39067905"
+    "publishedId": "39283629"
   },
-  "updatedAt": "2026-09-05"
+  "updatedAt": "2026-09-06"
 }

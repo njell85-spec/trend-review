@@ -517,5 +517,16 @@
     "rerankPoolSize": 14,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42693471",
+    "title": "Extracorporeal CO elimination for acute exacerbation of severe COPD requiring in",
+    "date": "2026-09-06",
+    "topic": "resp_airway",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

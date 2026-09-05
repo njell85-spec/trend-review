@@ -1,17 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "papers",
-  "queue": [
-    {
-      "pmid": "42693471",
-      "title": "Extracorporeal CO elimination for acute exacerbation of severe COPD requiring invasive mechanical ventilation: a randomized controlled trial (the X-COPD trial).",
-      "journal": "Critical care (London, England)",
-      "score": 9.2,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-09-05"
-    }
-  ],
+  "queue": [],
   "published": [
     {
       "pmid": "41232590",
@@ -122,6 +112,16 @@
       "lowConfidence": false,
       "addedAt": "2026-08-17",
       "publishedAt": "2026-08-28"
+    },
+    {
+      "pmid": "42693471",
+      "title": "Extracorporeal CO elimination for acute exacerbation of severe COPD requiring invasive mechanical ventilation: a randomized controlled trial (the X-COPD trial).",
+      "journal": "Critical care (London, England)",
+      "score": 9.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-09-05",
+      "publishedAt": "2026-09-06"
     }
   ],
   "rejected": [
@@ -137,9 +137,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-08-28",
+    "date": "2026-09-06",
     "outcome": "published",
-    "publishedId": "41870444"
+    "publishedId": "42693471"
   },
-  "updatedAt": "2026-09-05"
+  "updatedAt": "2026-09-06"
 }

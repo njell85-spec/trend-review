@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-04T23:15:25.428Z"
+      "supersededAt": "2026-09-05T23:08:31.965Z"
     },
     {
       "id": "pmid:38531812",
@@ -11932,76 +11932,6 @@
         "reason": "초록없음. 심장 POCUS 명명법 권고 — 술기 접점이나 용어 위주",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:39982186",
-      "pmid": "39982186",
-      "title": "Society of Critical Care Medicine Guidelines for the Treatment of Heat Stroke.",
-      "pubDate": "2025 Feb 1",
-      "journal": "Critical care medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:36:46.508Z",
-      "abstract": "RATIONALE: Predicted increases in heat-related weather phenomena will result in increasing heat exposures and heat injuries, like heat stroke. Prompt recognition, early intervention, and evidence-based management are necessary to optimize outcomes.\nOBJECTIVES: The objective of these guidelines was to develop evidence-based recommendations for the treatment of patients with heat stroke.\nDESIGN: The Society of Critical Care Medicine convened a multidisciplinary panel of 18 international clinicians, comprising expertise in critical care, emergency medicine, neurocritical care, surgery, trauma/burn surgery, sports medicine, athletic training, military medicine, nursing, pharmacy, respiratory therapy, and one patient representative. The panel also included a guidelines methodologist specialized in developing evidence-based recommendations in alignment with the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) methodology. Conflict-of-interest policies were strictly followed during all phases of guidelines development including panel selection and voting.\nMETHODS: The panel members identified Patient, Intervention, Comparison, and Outcomes questions in two main areas: cooling modalities and medications that affect temperature. A systematic review for each question was conducted to identify the best available evidence, statistically analyze the evidence, and assess the certainty of the evidence using the GRADE methodology. The GRADE evidence-to-decision framework was used to formulate the recommendations. Good practice statements were included to provide additional clinical guidance.\nRESULTS: The panel generated two strong recommendations, five good practice statements and one \"only-in-the-context of research\" statement. Active cooling measures are recommended over passive cooling methods, with cold- or ice-water immersion achieving the fastest cooling rate. This method should be prioritized where available. In heat stroke patients, there is no evidence to support pharmacological interventions that affect temperature control and they should be avoided.\nCONCLUSIONS: The guidelines task force provided recommendations for the management of patients with heat stroke. These recommendations should be considered along with the patient's clinical status and available resources.",
-      "meshTerms": [
-        "Humans",
-        "Heat Stroke",
-        "Critical Care",
-        "Hypothermia, Induced",
-        "Evidence-Based Medicine"
-      ],
-      "keywords": [],
-      "doi": "10.1097/CCM.0000000000006551",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": "sccm"
-      },
-      "priority": 10.614359501428824,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 0.6143595014288239,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "sccm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:59.039Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "SCCM 열사병 치료 지침—응급·환경 응급 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "sccm|treatment-heat-stroke",
-      "supersedes": []
     },
     {
       "id": "pmid:39982184",
@@ -32102,7 +32032,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34794,7 +34724,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -41485,7 +41415,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43314,7 +43244,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43467,7 +43397,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44062,7 +43992,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -44893,7 +44823,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45164,7 +45094,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45309,7 +45239,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45908,7 +45838,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46196,7 +46126,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46270,7 +46200,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46607,7 +46537,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46863,7 +46793,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46923,7 +46853,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -46996,7 +46926,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47070,7 +47000,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47152,7 +47082,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47232,7 +47162,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47311,7 +47241,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47391,7 +47321,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47455,7 +47385,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47601,7 +47531,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47671,7 +47601,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47743,7 +47673,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47813,7 +47743,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47896,7 +47826,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47959,7 +47889,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -48195,7 +48125,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48267,7 +48197,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48328,7 +48258,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.498Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48397,7 +48327,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -48405,7 +48335,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-04T23:15:24.499Z",
+      "lastSeenAt": "2026-09-05T23:08:31.041Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -52212,6 +52142,143 @@
         ]
       },
       "publishedAt": "2026-09-05"
+    },
+    {
+      "id": "pmid:39982186",
+      "pmid": "39982186",
+      "title": "Society of Critical Care Medicine Guidelines for the Treatment of Heat Stroke.",
+      "pubDate": "2025 Feb 1",
+      "journal": "Critical care medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:36:46.508Z",
+      "abstract": "RATIONALE: Predicted increases in heat-related weather phenomena will result in increasing heat exposures and heat injuries, like heat stroke. Prompt recognition, early intervention, and evidence-based management are necessary to optimize outcomes.\nOBJECTIVES: The objective of these guidelines was to develop evidence-based recommendations for the treatment of patients with heat stroke.\nDESIGN: The Society of Critical Care Medicine convened a multidisciplinary panel of 18 international clinicians, comprising expertise in critical care, emergency medicine, neurocritical care, surgery, trauma/burn surgery, sports medicine, athletic training, military medicine, nursing, pharmacy, respiratory therapy, and one patient representative. The panel also included a guidelines methodologist specialized in developing evidence-based recommendations in alignment with the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) methodology. Conflict-of-interest policies were strictly followed during all phases of guidelines development including panel selection and voting.\nMETHODS: The panel members identified Patient, Intervention, Comparison, and Outcomes questions in two main areas: cooling modalities and medications that affect temperature. A systematic review for each question was conducted to identify the best available evidence, statistically analyze the evidence, and assess the certainty of the evidence using the GRADE methodology. The GRADE evidence-to-decision framework was used to formulate the recommendations. Good practice statements were included to provide additional clinical guidance.\nRESULTS: The panel generated two strong recommendations, five good practice statements and one \"only-in-the-context of research\" statement. Active cooling measures are recommended over passive cooling methods, with cold- or ice-water immersion achieving the fastest cooling rate. This method should be prioritized where available. In heat stroke patients, there is no evidence to support pharmacological interventions that affect temperature control and they should be avoided.\nCONCLUSIONS: The guidelines task force provided recommendations for the management of patients with heat stroke. These recommendations should be considered along with the patient's clinical status and available resources.",
+      "meshTerms": [
+        "Humans",
+        "Heat Stroke",
+        "Critical Care",
+        "Hypothermia, Induced",
+        "Evidence-Based Medicine"
+      ],
+      "keywords": [],
+      "doi": "10.1097/CCM.0000000000006551",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "sccm"
+      },
+      "priority": 10.614359501428824,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 0.6143595014288239,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "sccm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:59.039Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "SCCM 열사병 치료 지침—응급·환경 응급 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "sccm|treatment-heat-stroke",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39982186",
+          "title": "Society of Critical Care Medicine Guidelines for the Treatment of Heat Stroke.",
+          "journal": "Critical care medicine",
+          "pubDate": "2025 Feb 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39982186/",
+          "doi": "10.1097/CCM.0000000000006551"
+        },
+        "org": "SCCM (Society of Critical Care Medicine)",
+        "version": "2025",
+        "title_ko": "미국중환자의학회(SCCM) 열사병 치료 가이드라인 (2025)",
+        "scope_ko": "열사병(heat stroke) 환자의 치료를 다루는 가이드라인으로, 고전형(classic)과 노작성(exertional) 열사병 모두를 포함한다. 병원 전 단계와 급성기 진료 환경 모두에서 열사병 환자를 돌보는 모든 의료진을 대상으로 하며, 냉각 방법(cooling modalities)과 체온에 영향을 주는 약물이라는 두 가지 핵심 영역에 집중한다.",
+        "summary": [
+          "Use active cooling over passive cooling in patients with heat stroke (STRONG recommendation, very low certainty of evidence).",
+          "Recommend AGAINST the use of dantrolene in heat stroke (STRONG recommendation, very low certainty of evidence) — no benefit for temperature control.",
+          "Favor ice-water immersion (1–5°C) or cold-water immersion (9–12°C): these achieve the fastest rate of temperature reduction and the shortest time to target temperature (<39°C) and should be prioritized where available (good practice statement).",
+          "Choose cooling methods that reach target temperature within 30 minutes of heat stroke recognition and prioritize modalities achieving a cooling rate ≥0.155°C/min (good practice statement).",
+          "Clinicians may use similar cooling strategies for either classic or exertional heat stroke (good practice statement).",
+          "Avoid routine use of acetaminophen, NSAIDs, and salicylates for temperature reduction in heat stroke — there is no evidence they help (good practice statement).",
+          "Prophylactic antibiotics and prophylactic antiseizure medications should be used ONLY in the context of research (only-in-the-context-of-research statement).",
+          "Overall the panel issued 2 strong recommendations, 5 good practice statements, and 1 only-in-research statement."
+        ],
+        "summary_ko": [
+          "열사병 환자에서 수동적 냉각보다 능동적(active) 냉각을 사용하라 (강한 권고, 근거 확실성 매우 낮음).",
+          "열사병에서 dantrolene 사용을 권고하지 않는다(반대 권고) (강한 권고, 근거 확실성 매우 낮음) — 체온 조절에 이득이 없다.",
+          "ice-water immersion(1–5°C) 또는 cold-water immersion(9–12°C)을 우선하라: 체온 하강 속도가 가장 빠르고 목표 체온(<39°C) 도달 시간이 가장 짧다. 가능하면 이 방법을 최우선으로 한다 (good practice statement).",
+          "열사병 인지 후 30분 이내에 목표 체온에 도달하는 냉각법을 선택하고, 냉각 속도 ≥0.155°C/min을 달성하는 방법을 우선하라 (good practice statement).",
+          "고전형(classic)이든 노작성(exertional)이든 유사한 냉각 전략을 사용할 수 있다 (good practice statement).",
+          "열사병에서 체온 저하 목적의 acetaminophen, NSAIDs, salicylates의 통상적 사용을 피하라 — 효과 근거가 없다 (good practice statement).",
+          "예방적 항생제와 예방적 항경련제는 오직 연구(research) 맥락에서만 사용해야 한다 (only-in-the-context-of-research statement).",
+          "패널은 총 강한 권고 2개, good practice statement 5개, 연구 한정 statement 1개를 제시했다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "SCCM 공식 요약 — 두 개의 강한 권고와 냉각 목표치",
+            "body_ko": "SCCM 공식 가이드라인 페이지는 이 지침이 두 개의 강한 권고(능동적 냉각 우선, dantrolene 반대)를 담고 있으며 두 권고 모두 근거 확실성은 '매우 낮음'이라고 명시한다. Good practice statement로는 ice-water immersion(1–5°C) 또는 cold-water immersion(9–12°C)이 목표 체온(<39°C)까지 가장 빠르게 도달시키며, 냉각 속도 ≥0.155°C/min 및 증상 인지 후 30분 이내 목표 체온 도달을 권장한다고 요약한다. 또한 고전형·노작성 열사병에 유사 전략을 쓸 수 있고, 체온 저하 목적의 acetaminophen·NSAIDs·salicylates 통상 사용을 피하라고 정리한다.",
+            "sourceLabel": "SCCM 공식 가이드라인 페이지 (Guideline for the Treatment of Heat Stroke)",
+            "sourceUrl": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guideline-for-the-treatment-of-heat-stroke"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "Adopt a 'cool first, transport/work-up second' mindset: for suspected heat stroke, initiate active cooling — ideally ice- or cold-water immersion — immediately, aiming to drop core temperature below 39°C within 30 minutes at a rate of at least 0.155°C/min, using continuous core (e.g., rectal/esophageal) temperature monitoring. Stop reflexively reaching for antipyretics: acetaminophen, NSAIDs, and salicylates do not lower temperature in heat stroke and carry hepatic/renal/bleeding risk in a population already prone to hepatic injury and coagulopathy, and dantrolene is explicitly not recommended. Apply the same aggressive cooling strategy to both classic and exertional heat stroke, and reserve prophylactic antibiotics or antiseizure drugs for research protocols rather than routine use. EDs and prehospital services should pre-stage immersion capability (tubs, ice) so cooling is not delayed.",
+        "practiceImpact_ko": "'먼저 식히고, 이송·검사는 그다음(cool first)' 사고방식을 채택한다: 열사병이 의심되면 즉시 능동적 냉각 — 가능하면 ice- 또는 cold-water immersion — 을 시작하고, 지속적 심부 체온(예: 직장/식도) 모니터링 하에 30분 이내, 최소 0.155°C/min 속도로 심부 체온을 39°C 미만으로 낮추는 것을 목표로 한다. 반사적으로 해열제를 쓰는 관행을 중단한다: acetaminophen, NSAIDs, salicylates는 열사병에서 체온을 낮추지 못하며, 이미 간손상·응고장애가 흔한 환자군에서 간/신장/출혈 위험만 더한다. dantrolene도 명시적으로 권고되지 않는다. 고전형과 노작성 열사병 모두에 동일한 적극적 냉각 전략을 적용하고, 예방적 항생제·항경련제는 통상 사용하지 말고 연구 프로토콜에 한정한다. 응급실·병원 전 단계는 냉각 지연이 없도록 immersion 장비(욕조, 얼음)를 미리 갖춰 둔다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39982186",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39982186/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000006551",
+            "url": "https://doi.org/10.1097/CCM.0000000000006551"
+          },
+          {
+            "label": "웹 — SCCM 공식 — Guideline for the Treatment of Heat Stroke",
+            "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guideline-for-the-treatment-of-heat-stroke"
+          },
+          {
+            "label": "웹 — Guideline Central — SCCM Clinical Guideline for Treatment of Heat Stroke (Summary)",
+            "url": "https://www.guidelinecentral.com/guideline/4375443/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-06"
     }
   ],
   "rejected": [
@@ -57247,7 +57314,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-04T23:15:17.951Z",
+      "discoveredAt": "2026-09-05T23:08:21.890Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -57342,7 +57409,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-04T23:15:17.951Z",
+      "discoveredAt": "2026-09-05T23:08:21.890Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -57504,7 +57571,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-04T23:15:17.951Z",
+      "discoveredAt": "2026-09-05T23:08:21.890Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -57533,7 +57600,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-04T23:15:17.951Z",
+      "discoveredAt": "2026-09-05T23:08:21.890Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -57566,7 +57633,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-04T23:15:17.951Z",
+      "discoveredAt": "2026-09-05T23:08:21.890Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -57638,9 +57705,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260905_080934:guideline:2026-09-05",
+    "runId": "trend_review_20260906_080553:guideline:2026-09-06",
     "outcome": "published",
-    "publishedId": "pmid:42693678",
+    "publishedId": "pmid:39982186",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -57665,15 +57732,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 133,
+        "mergedTotal": 131,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/06",
-          "maxDate": "2026/09/05"
+          "minDate": "2026/08/07",
+          "maxDate": "2026/09/06"
         },
         "retmax": 60,
         "topics": [
@@ -57681,8 +57748,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 52,
-            "idsFetched": 52,
+            "totalFound": 50,
+            "idsFetched": 50,
             "truncated": false,
             "error": null
           },
@@ -57699,8 +57766,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -57708,8 +57775,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 19,
-            "idsFetched": 19,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -57777,7 +57844,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 121,
+        "topicOnlyCount": 119,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -57789,8 +57856,8 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 133,
-          "enriched": 133,
+          "requested": 131,
+          "enriched": 131,
           "withAbstract": 99,
           "error": null
         }
@@ -57844,25 +57911,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
         "queued": 225,
-        "needsReview": 449,
+        "needsReview": 448,
         "rejected": 126,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42693678",
+        "candidateId": "pmid:39982186",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-04T23:17:59.175Z",
+  "updatedAt": "2026-09-05T23:10:14.854Z",
   "configVersion": "guideline-v2"
 }
