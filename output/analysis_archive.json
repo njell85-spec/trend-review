@@ -1943,6 +1943,81 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-07",
+      "pmid": "41207464",
+      "title": "Higher ventilation rate is associated with increased return of spontaneous circulation in in-hospital cardiac arrest patients with advanced airways.",
+      "title_ko": "고급 기도확보가 된 병원내 심정지 환자에서 더 높은 환기 횟수는 자발순환회복(ROSC) 증가와 연관된다",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2025.110885",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "고급 기도확보가 된 성인 병원내 심정지(IHCA) 환자에서, CPR 중 더 높은 환기 횟수가 지침 권고치인 10 breaths/min에 비해 자발순환회복(ROSC) 증가와 연관되는가?",
+      "pico": {
+        "population": "[International] Adults undergoing CPR for in-hospital cardiac arrest (IHCA) with an advanced airway and continuous ventilation and end-tidal CO2 (ETCO2) monitoring, enrolled from 25 tertiary centers in the U.S. and U.K.; ventilation and ETCO2 data collected for 222 patients (blood gas data available for 127), of whom 84.7% were ventilated at >10 breaths/min.",
+        "intervention": "Higher ventilation rate during CPR, specifically >12 breaths/min (assessed continuously; adjusted OR expressed per 2 breaths/min increase), with regression suggesting diminishing benefit above 26 breaths/min.",
+        "comparison": "Lower ventilation rate of 6–12 breaths/min (near the guideline-recommended 10 breaths/min).",
+        "outcome": "Return of spontaneous circulation (ROSC): patients ventilated >12 breaths/min had higher ROSC than those at 6–12 breaths/min (45% vs. 24%, p = 0.009); ventilation rate remained independently associated with ROSC after adjustment for age, sex, cardiac rhythm, illness severity, and mechanical chest compression device use (adjusted OR 1.15 per 2 breaths/min increase; 95% CI 1.04–1.28; p = 0.006)."
+      },
+      "pico_ko": {
+        "population": "[다국가] 고급 기도확보가 되어 있고 지속적 환기 및 end-tidal CO2(ETCO2) 모니터링을 받으며 병원내 심정지(IHCA)로 CPR을 받은 성인 환자로, 미국과 영국의 25개 3차 의료기관에서 등록됨. 환기 및 ETCO2 데이터는 222명에서 수집(혈액가스 데이터는 127명 이용 가능)되었고, 이 중 84.7%가 >10 breaths/min으로 환기됨.",
+        "intervention": "CPR 중 더 높은 환기 횟수, 구체적으로 >12 breaths/min(연속변수로 평가; adjusted OR은 2 breaths/min 증가당으로 표현). 회귀분석상 26 breaths/min 초과에서 이득이 감소하는 것으로 나타남.",
+        "comparison": "더 낮은 환기 횟수인 6–12 breaths/min(지침 권고치 10 breaths/min에 근접).",
+        "outcome": "자발순환회복(ROSC): >12 breaths/min으로 환기된 환자가 6–12 breaths/min 환자보다 ROSC가 높았음(45% vs. 24%, p = 0.009). 환기 횟수는 나이, 성별, 심장 리듬, 질병 중증도, 기계적 흉부압박기구 사용을 보정한 후에도 ROSC와 독립적으로 연관됨(adjusted OR 1.15 per 2 breaths/min 증가; 95% CI 1.04–1.28; p = 0.006)."
+      },
+      "keyFindings": [
+        "Ventilation rates above guideline recommendations were common: 84.7% of 222 IHCA patients with an advanced airway were ventilated at >10 breaths/min.",
+        "Patients ventilated >12 breaths/min had higher ROSC than those at 6–12 breaths/min (45% vs. 24%, p = 0.009); ventilation rate remained independently associated with ROSC after adjustment (adjusted OR 1.15 per 2 breaths/min increase; 95% CI 1.04–1.28; p = 0.006), with diminishing benefit above 26 breaths/min.",
+        "Higher ventilation was associated with higher ETCO2 (median 25 vs. 17 mm Hg; p < 0.001) while PaO2 and PaCO2 did not differ significantly, suggesting a hemodynamic (perfusion) rather than gas-exchange mechanism."
+      ],
+      "keyFindings_ko": [
+        "지침 권고를 초과하는 환기 횟수가 흔했음: 고급 기도확보가 된 IHCA 환자 222명 중 84.7%가 >10 breaths/min으로 환기됨.",
+        ">12 breaths/min으로 환기된 환자가 6–12 breaths/min 환자보다 ROSC가 높았고(45% vs. 24%, p = 0.009), 보정 후에도 환기 횟수는 ROSC와 독립적으로 연관됨(adjusted OR 1.15 per 2 breaths/min 증가; 95% CI 1.04–1.28; p = 0.006). 26 breaths/min 초과에서는 이득이 감소함.",
+        "더 높은 환기는 더 높은 ETCO2와 연관되었으나(중앙값 25 vs. 17 mm Hg; p < 0.001) PaO2와 PaCO2는 유의한 차이가 없어, 가스 교환보다는 혈역학적(관류) 기전을 시사함."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41207464",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41207464/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110885",
+          "url": "https://doi.org/10.1016/j.resuscitation.2025.110885"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41207464)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41207464/"
+        },
+        {
+          "label": "웹 — Resuscitation official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00897-4/fulltext"
+        },
+        {
+          "label": "웹 — medRxiv preprint (full text, additional outcome numbers)",
+          "url": "https://www.medrxiv.org/content/10.1101/2025.04.17.25326045v1.full"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 41207464)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41207464/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00897-4/fulltext",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "medRxiv preprint (full text, additional outcome numbers)",
+          "url": "https://www.medrxiv.org/content/10.1101/2025.04.17.25326045v1.full",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
