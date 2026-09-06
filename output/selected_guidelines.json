@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-05T23:08:31.965Z"
+      "supersededAt": "2026-09-06T23:04:06.880Z"
     },
     {
       "id": "pmid:38531812",
@@ -4406,72 +4406,6 @@
         "reason": "수술중 혈역학 모니터링 지침 논평, 마취·간접적",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:38951014",
-      "pmid": "38951014",
-      "title": "Liberation from Mechanical Ventilation in Critically Ill Patients: Korean Society of Critical Care Medicine Clinical Practice Guidelines.",
-      "pubDate": "2024 Oct",
-      "journal": "Tuberculosis and respiratory diseases",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:35:49.433Z",
-      "abstract": "BACKGROUND: Successful liberation from mechanical ventilation is one of the most crucial processes in critical care, because it is the first step through which a respiratory failure patient begins to transition out of the intensive care unit, and return to normal life. Therefore, when devising appropriate strategies for removing mechanical ventilation, it is essential to consider scientific and systematic approaches, as well as the individual experiences of healthcare professionals. Recently, numerous studies have investigated methods and tools to identify when mechanically ventilated patients are ready to breathe on their own. The Korean Society of Critical Care Medicine therefore provides these recommendations to clinicians for liberation from the ventilator.\nMETHODS: Meta-analyses and comprehensive syntheses were used to thoroughly review, compile, and summarize the complete body of relevant evidence. All studies were meticulously assessed using the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) method, and the outcomes were presented succinctly as evidence profiles. These evidence syntheses were discussed by a multidisciplinary committee of experts in mechanical ventilation, who then developed and approved the recommendations.\nRESULTS: Recommendations for nine questions on ventilator liberation about Population, Intervention, Comparator, and Outcome (PICO) are presented in this document. This guideline presents seven conditional recommendations, one expert consensus recommendation, and one conditional deferred recommendation.\nCONCLUSION: We developed these clinical guidelines for mechanical ventilation liberation to provide meaningful recommendations. These guidelines reflect the best treatment for patients seeking liberation from mechanical ventilation.",
-      "meshTerms": [],
-      "keywords": [
-        "Critically Ill Patients",
-        "Liberation",
-        "Mechanical Ventilation",
-        "Recommendations"
-      ],
-      "doi": "10.4046/trd.2024.0039",
-      "pmcid": "PMC11468445",
-      "region": "kr",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "sccm"
-      },
-      "priority": 10.165345111952933,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 0.16534511195293314,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "sccm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:03.188Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "기계환기 이탈 지침, 중환자 핵심 주제",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "sccm|liberation-from-mechanical-ventilation-critically-ill-patients-korean-clinical-practice",
-      "supersedes": []
     },
     {
       "id": "pmid:38148269",
@@ -32032,7 +31966,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34724,7 +34658,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -41415,7 +41349,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43244,7 +43178,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43397,7 +43331,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -43992,7 +43926,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -44823,7 +44757,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45094,7 +45028,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45239,7 +45173,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45838,7 +45772,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46126,7 +46060,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46200,7 +46134,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46537,7 +46471,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46793,7 +46727,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46926,7 +46860,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -47000,7 +46934,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47082,7 +47016,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47162,7 +47096,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47241,7 +47175,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47321,7 +47255,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47531,7 +47465,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47601,7 +47535,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47673,7 +47607,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47743,7 +47677,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47826,7 +47760,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47889,7 +47823,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -48125,7 +48059,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48197,7 +48131,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48258,7 +48192,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48335,7 +48269,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-06T23:04:05.966Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -52279,6 +52213,142 @@
         ]
       },
       "publishedAt": "2026-09-06"
+    },
+    {
+      "id": "pmid:38951014",
+      "pmid": "38951014",
+      "title": "Liberation from Mechanical Ventilation in Critically Ill Patients: Korean Society of Critical Care Medicine Clinical Practice Guidelines.",
+      "pubDate": "2024 Oct",
+      "journal": "Tuberculosis and respiratory diseases",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:35:49.433Z",
+      "abstract": "BACKGROUND: Successful liberation from mechanical ventilation is one of the most crucial processes in critical care, because it is the first step through which a respiratory failure patient begins to transition out of the intensive care unit, and return to normal life. Therefore, when devising appropriate strategies for removing mechanical ventilation, it is essential to consider scientific and systematic approaches, as well as the individual experiences of healthcare professionals. Recently, numerous studies have investigated methods and tools to identify when mechanically ventilated patients are ready to breathe on their own. The Korean Society of Critical Care Medicine therefore provides these recommendations to clinicians for liberation from the ventilator.\nMETHODS: Meta-analyses and comprehensive syntheses were used to thoroughly review, compile, and summarize the complete body of relevant evidence. All studies were meticulously assessed using the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) method, and the outcomes were presented succinctly as evidence profiles. These evidence syntheses were discussed by a multidisciplinary committee of experts in mechanical ventilation, who then developed and approved the recommendations.\nRESULTS: Recommendations for nine questions on ventilator liberation about Population, Intervention, Comparator, and Outcome (PICO) are presented in this document. This guideline presents seven conditional recommendations, one expert consensus recommendation, and one conditional deferred recommendation.\nCONCLUSION: We developed these clinical guidelines for mechanical ventilation liberation to provide meaningful recommendations. These guidelines reflect the best treatment for patients seeking liberation from mechanical ventilation.",
+      "meshTerms": [],
+      "keywords": [
+        "Critically Ill Patients",
+        "Liberation",
+        "Mechanical Ventilation",
+        "Recommendations"
+      ],
+      "doi": "10.4046/trd.2024.0039",
+      "pmcid": "PMC11468445",
+      "region": "kr",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "sccm"
+      },
+      "priority": 10.165345111952933,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 0.16534511195293314,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "sccm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:03.188Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "기계환기 이탈 지침, 중환자 핵심 주제",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "sccm|liberation-from-mechanical-ventilation-critically-ill-patients-korean-clinical-practice",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "38951014",
+          "title": "Liberation from Mechanical Ventilation in Critically Ill Patients: Korean Society of Critical Care Medicine Clinical Practice Guidelines.",
+          "journal": "Tuberculosis and respiratory diseases",
+          "pubDate": "2024 Oct",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38951014/",
+          "doi": "10.4046/trd.2024.0039"
+        },
+        "org": "KSCCM (Korean Society of Critical Care Medicine)",
+        "version": "2024",
+        "title_ko": "중환자에서 기계환기 이탈(liberation): 대한중환자의학회 임상진료지침 (2024)",
+        "scope_ko": "급성 호흡부전 등으로 침습적 기계환기를 받는 성인 중환자에서, 기계환기로부터의 이탈(liberation)—즉 이탈 준비도 평가, 자발호흡시도(SBT) 방법, 발관 전후 처치 및 발관 후 호흡보조 전략—을 다루는 진료지침이다. 9개 PICO 핵심질문에 대해 7개 조건부 권고, 1개 전문가합의 권고, 1개 조건부 유보 권고를 제시한다.",
+        "summary": [
+          "Use a mechanical ventilation weaning protocol for critically ill ventilated patients — meta-analysis showed ~25 h shorter ventilation and ~39 h shorter weaning time (recommendation B, conditional, moderate certainty).",
+          "During the spontaneous breathing trial (SBT), either pressure support ventilation (PSV) or T-piece may be used, both in the general population (B, conditional, low certainty) and in patients at high risk of extubation failure (B, conditional, very low certainty).",
+          "A cuff leak test (CLT) may be performed at the clinician's discretion before extubation in adults at high risk of post-extubation stridor (PES) — failed CLT raised PES incidence (44.8% vs 15.9%, OR 4.01) but with low sensitivity (~0.52) (B, conditional, low certainty).",
+          "In patients who FAIL the CLT, administer steroids before extubation to prevent PES and reintubation (RR ~0.37 for PES, ~0.29 for reintubation); give at least 4 h before extubation, e.g. methylprednisolone 40 mg or dexamethasone 5 mg (B, conditional, moderate certainty).",
+          "The rapid shallow breathing index (RSBI) may be computed at the clinician's discretion; no RCT support and no single validated cutoff (reported cutoffs 57–105 breaths/min/L) (B, conditional, low certainty).",
+          "Inspiratory muscle training (IMT) may be used to increase weaning success — reduced unsuccessful weaning (RR 0.61) and raised peak inspiratory pressure (~12 cmH₂O), in hemodynamically stable, alert patients (PaO₂ ≥60 mmHg, FiO₂ <0.4, PEEP 5–8) (B, conditional, low certainty).",
+          "Early physical rehabilitation is suggested to increase weaning success — reduced ventilation duration by ~2.3–3.0 days and ICU stay by ~2.2–3.4 days (B, conditional, low certainty).",
+          "After planned extubation, use HFNC over conventional oxygen therapy (COT) — reduced weaning failure (RR 0.49) and reintubation (RR 0.47) (B, conditional, moderate certainty); use NIV over COT specifically in patients at high risk of weaning failure — reduced weaning failure (RR 0.30) and reintubation (RR 0.63) in high-risk groups (B, conditional, moderate certainty); HFNC vs NIV — either may be used at clinician discretion (E, expert consensus, very low certainty).",
+          "Do NOT perform early tracheostomy (≤7 days after intubation) solely to aid weaning in patients expected to need prolonged ventilation — no significant benefit in ventilation duration, ICU stay, or mortality (recommendation I, conditional deferred, low certainty)."
+        ],
+        "summary_ko": [
+          "기계환기 중인 중환자에서 이탈 프로토콜(weaning protocol)을 사용하라 — 메타분석에서 기계환기 기간 약 25시간, 이탈 시간 약 39시간 단축 (권고 B, 조건부, 중등도 확실성).",
+          "자발호흡시도(SBT) 시 PSV 또는 T-piece 어느 쪽이든 사용 가능 — 일반 환자군(B, 조건부, 낮은 확실성)과 발관 실패 고위험군(B, 조건부, 매우 낮은 확실성) 모두에서 동일.",
+          "발관 후 협착음(PES) 고위험 성인에서 발관 전 cuff leak test(CLT)를 임상의 재량으로 시행 가능 — CLT 실패 시 PES 발생 증가(44.8% vs 15.9%, OR 4.01)하나 민감도는 낮음(~0.52) (B, 조건부, 낮은 확실성).",
+          "CLT에 실패한 환자에서는 PES·재삽관 예방을 위해 발관 전 스테로이드를 투여하라(PES RR ~0.37, 재삽관 RR ~0.29); 발관 최소 4시간 전, 예: methylprednisolone 40 mg 또는 dexamethasone 5 mg (B, 조건부, 중등도 확실성).",
+          "RSBI는 임상의 재량으로 계산 가능; RCT 근거 없고 단일 검증 컷오프 없음(보고된 컷오프 57–105 breaths/min/L) (B, 조건부, 낮은 확실성).",
+          "흡기근 훈련(IMT)을 이탈 성공률 향상을 위해 사용 가능 — 이탈 실패 감소(RR 0.61), 최대흡기압 상승(~12 cmH₂O); 혈역학적으로 안정되고 각성된 환자(PaO₂ ≥60 mmHg, FiO₂ <0.4, PEEP 5–8)에 적용 (B, 조건부, 낮은 확실성).",
+          "조기 재활을 이탈 성공률 향상을 위해 시행 권고 — 기계환기 기간 약 2.3–3.0일, ICU 재실 약 2.2–3.4일 단축 (B, 조건부, 낮은 확실성).",
+          "계획된 발관 후 통상적 산소요법(COT)보다 HFNC 사용 권고 — 이탈 실패(RR 0.49)·재삽관(RR 0.47) 감소 (B, 조건부, 중등도 확실성); 이탈 실패 고위험 환자에서는 COT보다 NIV 사용 권고 — 고위험군에서 이탈 실패(RR 0.30)·재삽관(RR 0.63) 감소 (B, 조건부, 중등도 확실성); HFNC vs NIV는 임상의 재량으로 선택 (E, 전문가 합의, 매우 낮은 확실성).",
+          "장기 기계환기가 예상되는 환자에서 이탈 목적만으로 조기 기관절개(삽관 후 ≤7일)를 시행하지 말라 — 기계환기 기간·ICU 재실·사망률에서 유의한 이득 없음 (권고 I, 조건부 유보, 낮은 확실성)."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "Bedside, this standardizes a protocolized weaning pathway: run daily readiness screens and SBTs (PSV or T-piece are interchangeable, even in high-risk patients), and reserve the cuff leak test for patients at high risk of post-extubation stridor. When a CLT fails, give steroids at least 4 hours before extubation (e.g., methylprednisolone 40 mg or dexamethasone 5 mg) rather than extubating immediately. Prophylactically apply HFNC after planned extubation for most patients and NIV specifically for high-risk (hypercapnic/COPD/heart-failure) patients to prevent reintubation; RSBI and cuff leak testing are optional adjuncts, not mandatory gates. Do not rush to tracheostomy before day 7 expecting faster weaning, and add inspiratory muscle training plus early mobilization to the liberation bundle.",
+        "practiceImpact_ko": "침상 진료에서는 프로토콜 기반 이탈 경로를 표준화하게 된다: 매일 이탈 준비도 선별과 SBT를 시행하되(고위험군 포함 PSV·T-piece는 상호 대체 가능), cuff leak test는 발관 후 협착음 고위험 환자에 한정한다. CLT 실패 시 즉시 발관하지 말고 발관 최소 4시간 전 스테로이드(예: methylprednisolone 40 mg 또는 dexamethasone 5 mg)를 투여한다. 계획된 발관 후에는 대부분 환자에 HFNC를 예방적으로 적용하고, 고위험(고탄산혈증·COPD·심부전) 환자에는 NIV를 적용해 재삽관을 예방한다; RSBI와 cuff leak test는 필수 관문이 아니라 선택적 보조 도구다. 조기 이탈을 기대하며 7일 이내 조기 기관절개를 서두르지 말고, 흡기근 훈련과 조기 거동을 이탈 번들에 추가한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38951014",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38951014/"
+          },
+          {
+            "label": "Journal (DOI) — 10.4046/trd.2024.0039",
+            "url": "https://doi.org/10.4046/trd.2024.0039"
+          },
+          {
+            "label": "웹 — PMC full text — KSCCM 2024 Ventilator Liberation Guidelines",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11468445/"
+          },
+          {
+            "label": "웹 — Acute and Critical Care — KSCCM Ventilator Liberation Guidelines (full text)",
+            "url": "https://www.accjournal.org/journal/view.php?doi=10.4266%2Facc.2024.00052"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 38476061)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38476061/"
+          },
+          {
+            "label": "웹 — Tuberculosis and Respiratory Diseases — journal listing (Oct 2024)",
+            "url": "https://www.e-trd.org/journal/view.php?doi=10.4046%2Ftrd.2024.0039"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-07"
     }
   ],
   "rejected": [
@@ -57314,7 +57384,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-05T23:08:21.890Z",
+      "discoveredAt": "2026-09-06T23:03:58.674Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -57409,7 +57479,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-05T23:08:21.890Z",
+      "discoveredAt": "2026-09-06T23:03:58.674Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -57571,7 +57641,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-05T23:08:21.890Z",
+      "discoveredAt": "2026-09-06T23:03:58.674Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -57600,7 +57670,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-05T23:08:21.890Z",
+      "discoveredAt": "2026-09-06T23:03:58.674Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -57633,7 +57703,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-05T23:08:21.890Z",
+      "discoveredAt": "2026-09-06T23:03:58.674Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -57705,9 +57775,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260906_080553:guideline:2026-09-06",
+    "runId": "trend_review_20260907_075748:guideline:2026-09-07",
     "outcome": "published",
-    "publishedId": "pmid:39982186",
+    "publishedId": "pmid:38951014",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -57732,15 +57802,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 131,
+        "mergedTotal": 114,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
-        "newestFetchedDate": "2026 Sep-Oct",
+        "newestFetchedDate": "2026 Sep 5",
         "window": {
-          "minDate": "2026/08/07",
-          "maxDate": "2026/09/06"
+          "minDate": "2026/08/08",
+          "maxDate": "2026/09/07"
         },
         "retmax": 60,
         "topics": [
@@ -57748,8 +57818,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 50,
-            "idsFetched": 50,
+            "totalFound": 51,
+            "idsFetched": 51,
             "truncated": false,
             "error": null
           },
@@ -57757,8 +57827,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -57766,8 +57836,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 0,
+            "idsFetched": 0,
             "truncated": false,
             "error": null
           },
@@ -57784,8 +57854,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 19,
-            "idsFetched": 19,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -57820,8 +57890,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -57844,7 +57914,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 119,
+        "topicOnlyCount": 102,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -57856,9 +57926,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 131,
-          "enriched": 131,
-          "withAbstract": 99,
+          "requested": 114,
+          "enriched": 114,
+          "withAbstract": 87,
           "error": null
         }
       },
@@ -57915,19 +57985,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 225,
+        "queued": 224,
         "needsReview": 448,
         "rejected": 126,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39982186",
+        "candidateId": "pmid:38951014",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-05T23:10:14.854Z",
+  "updatedAt": "2026-09-06T23:05:48.055Z",
   "configVersion": "guideline-v2"
 }

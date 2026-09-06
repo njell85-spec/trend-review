@@ -528,5 +528,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41207464",
+    "title": "Higher ventilation rate is associated with increased return of spontaneous circu",
+    "date": "2026-09-07",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 14,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
