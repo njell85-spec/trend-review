@@ -1977,6 +1977,32 @@ Phase 2·3 코드 + On-demand 수동 디깅 + 카드뉴스까지 **main에 병�
   분석일수 6으로 정상 증가.
 
 ## 5. 완료 상태
+- **[2026-09-07] ESC 2026 심부전 감압(decongestion) 알고리즘 관련 문헌 2건 ▶ 발행**:
+  PeterJ 가 ESC 인스타 카드뉴스(AHF decongestion algorithm, "AI 콘텐츠" 라벨)를 보고
+  관련 내용을 온디맨드로 올려달라고 지시. 지침 본문(2026 ESC HF)은 이미 8/29 에 URL 로
+  발행돼 있어 **같은 문서를 다시 올리지 않고 알고리즘의 실체를 담은 문헌 2건**을 골랐다.
+  · PMID **41015822** — Early diagnosis and treatment of AHF in prehospital and emergency
+    settings (International Expert Opinion Series Part 1, Eur J Emerg Med 2025) — 응급의학과
+    독자 대상. run **34116328777**
+  · PMID **30600580** — HFA/ESC position statement, diuretics in HF with congestion (2019) —
+    카드뉴스가 쓰는 역치(uNa · 시간당 소변량 · 용량 배증 · 순차 네프론 차단)의 **출처**.
+    run **34117166345**
+  둘 다 conclusion=success · verify-pages 통과 · 가이드라인 **34 → 36건**.
+  섹션 키 `2026-09-07-m-41015822` / `2026-09-07-m-30600580`.
+- **[2026-09-07] ★ 발견 — 2026 ESC HF 지침이 이제 PubMed 에 색인됐다 (PMID 42661420)**:
+  8/29 핸드오프의 "PubMed 미색인이라 PMID 가 없다" 는 **옛말이다**(Eur Heart J, 2026-08-28,
+  doi 10.1093/eurheartj/ehag100). 그런데 그 PMID 가 **가이드라인 자동 큐에 keep=true·score 9
+  로 앉아 있다** — 그대로 두면 데일리가 8/29 URL 카드
+  (`web:www-escardio-org-...`)와 **별개의 중복 카드**를 한 번 더 낸다. 중복 제거 지문이
+  PMID 와 sourceId 로 갈려 있어 서로를 못 본다. 이번 세션에서는 손대지 않았다(지시 범위 밖) —
+  **다음 세션이 처리할 것**: 큐에서 42661420 을 소진 처리하거나, URL 카드에 PMID 를 붙여
+  같은 지문을 보게 만든다.
+- **[2026-09-07] 검증 못 한 것**: 카드뉴스의 수치(40 mg IV · 2× · uNa ≥70 · UO ≥100 mL/h ·
+  3 L/24h · 최대 600 mg/day)를 **지침 원문과 대조하지 못했다** — 이 세션 네트워크에서
+  `academic.oup.com` 과 `www.escardio.org` 가 egress 차단이다. 다만 HFA 2019 카드가
+  `uNa <50–70 mmol/L (1–2 h)` · `UO <100–150 mL/h (6 h)` · `naïve 20–40 mg` · `경구량의 1–2.5×`
+  로 적고 있어, 카드뉴스는 그 범위의 **엄격한 끝을 단일값으로 굳힌 형태**로 보인다.
+  원문 대조 전에는 인용 근거로 쓰지 말 것.
 - **[2026-08-29] 종합 카드 `kind=synthesis` 신설**: PR **#147** 머지. 문헌 2~5건을 한 장으로
   대조한다. **새 섹션 마커를 만들지 않고 GSECTION 재사용**(새 마커는 병합·페이지분할·무손실
   검사를 전부 건드린다 — GSECTION 8→7 선례). 오귀속은 프롬프트가 아니라 **구조로** 막았다:
@@ -2088,6 +2114,11 @@ Phase 2·3 코드 + On-demand 수동 디깅 + 카드뉴스까지 **main에 병�
   append의 export+재업로드 O(n²) → Docs API batchUpdate 전환(월말 Doc 수 MB 시).
 
 ## 8. 진행 중이던 것 → 완료 (Fable 재검토, 2026-07-06)
+- **[2026-09-07 진행 중 → 다음 세션]** 2026 ESC HF 지침의 **중복 발행 위험**이 열려 있다.
+  PMID **42661420** 이 가이드라인 자동 큐에 keep=true 로 앉아 있고, 같은 지침의 URL 카드
+  (`web:www-escardio-org-...`, 2026-08-29 발행)와 지문이 갈려 서로를 못 본다.
+  데일리가 이 항목을 뽑으면 같은 지침 카드가 둘이 된다. 지시 범위 밖이라 손대지 않았다.
+  선택지: ① 큐에서 소진 처리 ② URL 카드에 PMID 를 붙여 지문 통합(재발 방지 쪽).
 - Fable 세션에서 **전체 재검토 완료**: VideoAgent·ArchiveAgent·on-demand 위젯/스크립트·
   tts·videoRender·cardNews·googleAuth·docBuilder·ChartRenderer 전부 정독. 실버그 6건
   발견·수정 → **PR #27 병합**. 핵심: ① drive.file 스코프는 수동 생성 폴더 접근 불가
