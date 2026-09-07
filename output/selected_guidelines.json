@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-06T23:04:06.880Z"
+      "supersededAt": "2026-09-07T23:44:34.258Z"
     },
     {
       "id": "pmid:38531812",
@@ -23821,74 +23821,6 @@
       }
     },
     {
-      "id": "pmid:40719551",
-      "pmid": "40719551",
-      "title": "Executive Summary-Society of Critical Care Medicine and American Society of Health-System Pharmacists Guideline for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
-      "pubDate": "2025 Aug 19",
-      "journal": "American journal of health-system pharmacy : AJHP : official journal of the American Society of Health-System Pharmacists",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:09.622Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [
-        "bleeding",
-        "enteral nutrition",
-        "gastrointestinal bleeding",
-        "histamine-2 blockers",
-        "intensive care",
-        "proton pump inhibitors",
-        "stress ulcer prophylaxis"
-      ],
-      "doi": "10.1093/ajhp/zxaf165",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "sccm"
-      },
-      "priority": 10.140813950810797,
-      "breakdown": {
-        "authority": 4,
-        "topic": 2.8,
-        "recency": 1.3408139508107966,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "sccm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:22.888Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "SCCM 중환자 스트레스성 위장출혈 예방 지침, 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "sccm|executive-summary-american-society-health-system-pharmacists-prevention-stress-related-gastrointestinal-bleeding-critically-ill-adults",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40879726",
       "pmid": "40879726",
       "title": "[Treatment and Support for Adults at the End of Life in Intensive Care : A Recommendation by the Ethics Section of DIVI and the German Society for Palliative Medicine. Part 1: Key Aspects of End-of-Life Care and Dying in Intensive Care. Part 2: Therapeutic Measures and Support at the End of Life in Intensive Care].",
@@ -31966,7 +31898,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34658,7 +34590,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -41349,7 +41281,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43178,7 +43110,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43331,7 +43263,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -43926,7 +43858,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -44757,7 +44689,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45028,7 +44960,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45173,7 +45105,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45772,7 +45704,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46060,7 +45992,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46134,7 +46066,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46471,7 +46403,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46727,7 +46659,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46787,7 +46719,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -46860,7 +46792,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46934,7 +46866,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -47016,7 +46948,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47096,7 +47028,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47175,7 +47107,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47255,7 +47187,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47319,7 +47251,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-05T23:08:31.041Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47465,7 +47397,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47535,7 +47467,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47607,7 +47539,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47677,7 +47609,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47760,7 +47692,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47823,7 +47755,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -48059,7 +47991,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48131,7 +48063,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48192,7 +48124,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48269,7 +48201,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-06T23:04:05.966Z",
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48278,6 +48210,79 @@
         "keep": false,
         "reason": "ACS 후 장기 예방·추적 합의문—응급 침상 판단보다 만성관리 중심",
         "at": "2026-09-04T23:15:26.996Z"
+      }
+    },
+    {
+      "id": "pmid:42703764",
+      "pmid": "42703764",
+      "title": "Multimodality imaging for pre-, intra-, and postprocedural guidance of left atrial appendage closure: a European Left Atrial Appendage Closure Club (ELAACC) expert consensus statement.",
+      "pubDate": "2026 Sep 7",
+      "journal": "EuroIntervention : journal of EuroPCR in collaboration with the Working Group on Interventional Cardiology of the European Society of Cardiology",
+      "publicationTypes": [
+        "Journal Article",
+        "Consensus Statement"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-07T23:44:24.736Z",
+      "abstract": "Left atrial appendage closure (LAAC) is an established alternative for stroke prevention in patients with non-valvular atrial fibrillation who are not suitable candidates for long-term oral anticoagulation. Imaging is central to procedural success and safety, yet variability in acquisition, measurement, and reporting contributes to inconsistent workflows and outcomes among centres. This expert consensus document from the European Left Atrial Appendage Closure Club provides a unified framework for pre-, intra-, and postprocedural imaging in LAAC with the aim of reducing variability, standardising workflows, and improving clinical reproducibility. The consensus emphasises high-quality image acquisition, reproducible measurements, and the prioritisation of three-dimensional (3D) imaging techniques and multiplanar reconstruction. Standardised terminology, core anatomical parameters, and device-oriented requirements are defined to support consistent procedural planning and device selection. Intraprocedural recommendations focus on real-time guidance using 3D transoesophageal echocardiography, intracardiac echocardiography, and fusion imaging for transseptal puncture, device alignment, deployment, and sealing assessment. Postprocedural guidance harmonises echocardiographic and cardiac computed tomography criteria and proposes structured follow-up pathways for the assessment of device-related thrombus, peridevice leak, and device stability. By promoting consistent nomenclature and structured, evidence-informed imaging strategies across the entire LAAC pathway, this consensus aims to enhance procedural safety, improve reproducibility, and support uniform, high-quality LAAC practice across centres.",
+      "meshTerms": [
+        "Humans",
+        "Left Atrial Appendage Closure",
+        "Atrial Fibrillation",
+        "Echocardiography, Transesophageal",
+        "Atrial Appendage",
+        "Multimodal Imaging",
+        "Europe",
+        "Cardiac Catheterization",
+        "Echocardiography, Three-Dimensional",
+        "Consensus"
+      ],
+      "keywords": [],
+      "doi": "10.4244/EIJ-D-25-01372",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-07T23:44:33.611Z",
+      "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "LAAC 시술 영상가이드 합의문—선택적 구조심장 시술, 응급/중환자 침상 판단과 무관",
+        "at": "2026-09-07T23:44:35.403Z"
       }
     }
   ],
@@ -52375,6 +52380,171 @@
         "title": "The use of diuretics in heart failure with congestion - a position statement from the Heart Failure Association of the European Society of Cardiology.",
         "date": "2026-09-07"
       }
+    },
+    {
+      "id": "pmid:40719551",
+      "pmid": "40719551",
+      "title": "Executive Summary-Society of Critical Care Medicine and American Society of Health-System Pharmacists Guideline for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
+      "pubDate": "2025 Aug 19",
+      "journal": "American journal of health-system pharmacy : AJHP : official journal of the American Society of Health-System Pharmacists",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:09.622Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "bleeding",
+        "enteral nutrition",
+        "gastrointestinal bleeding",
+        "histamine-2 blockers",
+        "intensive care",
+        "proton pump inhibitors",
+        "stress ulcer prophylaxis"
+      ],
+      "doi": "10.1093/ajhp/zxaf165",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "sccm"
+      },
+      "priority": 10.140813950810797,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2.8,
+        "recency": 1.3408139508107966,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "sccm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:22.888Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "SCCM 중환자 스트레스성 위장출혈 예방 지침, 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "sccm|executive-summary-american-society-health-system-pharmacists-prevention-stress-related-gastrointestinal-bleeding-critically-ill-adults",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40719551",
+          "title": "Executive Summary-Society of Critical Care Medicine and American Society of Health-System Pharmacists Guideline for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
+          "journal": "American journal of health-system pharmacy : AJHP : official journal of the American Society of Health-System Pharmacists",
+          "pubDate": "2025 Aug 19",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40719551/",
+          "doi": "10.1093/ajhp/zxaf165"
+        },
+        "org": "SCCM/ASHP",
+        "version": "2024 guideline (Executive Summary 2025)",
+        "title_ko": "중증 성인 환자의 스트레스성 위장관 출혈 예방을 위한 SCCM/ASHP 지침 — 요약본",
+        "scope_ko": "중환자실(ICU)에 입원한 성인 중증 환자에서 스트레스성 점막 손상으로 인한 임상적으로 중요한 상부위장관출혈(UGIB) 예방을 다룬다. 소아, 하부위장관출혈, 이미 소화성 궤양/출혈이 있는 환자는 대상이 아니며, GRADE 방법론에 따른 근거기반 권고를 제시한다.",
+        "summary": [
+          "Consider critically ill adults with coagulopathy, shock, or chronic liver disease to be at risk for clinically important stress-related UGIB; mechanical ventilation alone is NOT identified as a firm independent risk factor (conditional, low-to-moderate certainty).",
+          "For at-risk patients, give pharmacologic prophylaxis with EITHER a proton pump inhibitor (PPI) or a histamine-2 receptor antagonist (H2RA) — no clear preference (conditional, moderate certainty). PPIs reduce UGIB more than H2RAs, but their effect on mortality in high-severity ICU patients is uncertain.",
+          "Use LOW-dose regimens (good practice statement): PPI ≤40 mg/day (esomeprazole/omeprazole/pantoprazole) or ≤30 mg lansoprazole; famotidine ≤40 mg; sucralfate ≤4 g/day.",
+          "Prophylaxis may be given by either the enteral or IV route (conditional, low certainty).",
+          "Administer enteral nutrition to reduce clinically important UGIB (conditional, moderate certainty), noting that combining enteral nutrition WITH pharmacologic prophylaxis may increase pneumonia risk.",
+          "In enterally-fed, LOW-risk patients, do NOT add pharmacologic prophylaxis (very low certainty).",
+          "In neurocritical care patients, suggest prophylaxis to reduce stress-related UGIB (conditional, very low certainty).",
+          "Discontinue prophylaxis once the risk factor/critical illness has resolved, and specifically BEFORE ICU transfer, to prevent inappropriate continuation as an outpatient (good practice statements)."
+        ],
+        "summary_ko": [
+          "응고장애(coagulopathy), 쇼크, 만성 간질환이 있는 중증 성인을 임상적으로 중요한 스트레스성 UGIB 위험군으로 간주한다. 기계환기 단독은 확실한 독립 위험인자로 인정되지 않음(조건부, 낮음~중등도 확실성).",
+          "위험군에서는 PPI 또는 H2RA 중 하나로 약물 예방을 시행 — 둘 사이 우열 없음(조건부, 중등도 확실성). PPI가 H2RA보다 UGIB를 더 줄이지만, 중증도가 높은 환자에서 사망률에 미치는 영향은 불확실.",
+          "저용량 요법을 사용(good practice statement): PPI ≤40 mg/일(esomeprazole/omeprazole/pantoprazole) 또는 lansoprazole ≤30 mg; famotidine ≤40 mg; sucralfate ≤4 g/일.",
+          "예방약은 경장 또는 정맥 경로 어느 쪽이든 가능(조건부, 낮음 확실성).",
+          "임상적으로 중요한 UGIB를 줄이기 위해 경장영양을 시행(조건부, 중등도 확실성). 단, 경장영양과 약물 예방을 병용하면 폐렴 위험이 증가할 수 있음.",
+          "경장영양 중인 저위험 환자에서는 약물 예방을 추가하지 않는다(매우 낮음 확실성).",
+          "신경계 중환자에서는 스트레스성 UGIB 감소를 위해 예방을 제안(조건부, 매우 낮음 확실성).",
+          "위험인자/중증 상태가 해소되면 예방을 중단하며, 특히 ICU 전실(transfer) 전에 중단하여 퇴원 후 부적절한 지속 처방을 막는다(good practice statements)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "예방 대상 — 전 ICU 환자 → 위험인자 기반 선별",
+            "detail": "The 1999 ASHP guidance prompted broad prophylaxis across ICU patients (e.g., anyone mechanically ventilated or with multiple risk factors). The 2024 SCCM/ASHP guideline restricts prophylaxis to patients with specific risk factors — coagulopathy, shock, or chronic liver disease — and does NOT endorse pharmacologic prophylaxis for enterally-fed low-risk patients. Reason: substantial decline in stress-related UGIB over 25 years with modern practice, plus new evidence that indiscriminate prophylaxis may cause net harm.",
+            "detail_ko": "1999년 ASHP 지침은 ICU 환자(예: 기계환기 중이거나 위험인자가 여럿인 경우) 전반에 폭넓은 예방을 유도했다. 2024년 SCCM/ASHP 지침은 예방 대상을 응고장애·쇼크·만성 간질환 등 특정 위험인자 보유자로 좁혔고, 경장영양 중인 저위험 환자에는 약물 예방을 권하지 않는다. 이유: 지난 25년간 현대 중환자 치료로 스트레스성 UGIB가 크게 줄었고, 무분별한 예방이 순손해를 낼 수 있다는 새 근거."
+          },
+          {
+            "topic": "기계환기 단독의 지위",
+            "detail": "Mechanical ventilation alone — historically a classic standalone indication for stress ulcer prophylaxis — is no longer identified as a firm independent risk factor in the 2024 guideline. This is a notable and debated shift; prophylaxis decisions should hinge on coagulopathy/shock/chronic liver disease rather than ventilation status per se.",
+            "detail_ko": "과거 스트레스성 궤양 예방의 대표적 단독 적응증이던 기계환기 단독은 2024년 지침에서 더 이상 확실한 독립 위험인자로 인정되지 않는다. 논쟁적이지만 중요한 변화로, 예방 결정은 환기 여부 자체보다 응고장애·쇼크·만성 간질환에 근거해야 한다."
+          },
+          {
+            "topic": "약물 선택 — PPI vs H2RA",
+            "detail": "The updated guideline gives no clear preference between PPIs and H2RAs (conditional, moderate certainty): PPIs reduce UGIB occurrence more than H2RAs, but with residual uncertainty about a possible mortality signal in high-severity ICU patients. Low-dose regimens are specified. This reflects synthesis of the modern landmark RCTs (SUP-ICU, PEPTIC, REVISE) unavailable in 1999.",
+            "detail_ko": "개정 지침은 PPI와 H2RA 사이에 명확한 선호를 두지 않는다(조건부, 중등도 확실성): PPI가 H2RA보다 UGIB를 더 줄이지만, 중증도 높은 환자에서 사망률 신호 가능성에 대한 불확실성이 남는다. 저용량 요법을 명시한다. 이는 1999년에는 없던 최신 대규모 RCT(SUP-ICU, PEPTIC, REVISE)의 종합을 반영한다."
+          },
+          {
+            "topic": "경장영양의 위치",
+            "detail": "Enteral nutrition is now framed as protective — it probably reduces clinically important UGIB (conditional, moderate certainty) — and adequate enteral feeding is a reason to withhold pharmacologic prophylaxis in low-risk patients. The guideline also flags that combining enteral nutrition with acid suppression may raise pneumonia risk.",
+            "detail_ko": "경장영양은 이제 보호 요인으로 규정된다 — 임상적으로 중요한 UGIB를 줄일 가능성이 있음(조건부, 중등도 확실성) — 충분한 경장영양은 저위험 환자에서 약물 예방을 보류할 근거가 된다. 또한 경장영양과 산분비 억제 병용은 폐렴 위험을 높일 수 있음을 명시한다."
+          },
+          {
+            "topic": "중단·전실 시점 관리 (신규 강조)",
+            "detail": "New explicit good-practice statements: discontinue prophylaxis once the risk factor/critical illness resolves, and specifically stop it BEFORE transfer out of the ICU, to prevent inappropriate continuation into the ward and after discharge. Pre-ICU prophylaxis should be reviewed and stopped unless a distinct indication (recent UGIB, hypersecretory state, erosive esophagitis, H. pylori eradication) persists. This deprescribing/stewardship emphasis was not a feature of the 1999 guidance.",
+            "detail_ko": "신설된 good-practice statement: 위험인자/중증 상태가 해소되면 예방을 중단하고, 특히 ICU 전실 전에 중단하여 병동·퇴원 후 부적절한 지속을 막는다. ICU 입실 전부터 쓰던 예방약은 별도 적응증(최근 UGIB, 위산과다분비 상태, 미란성 식도염, H. pylori 제균)이 없는 한 재평가 후 중단한다. 이러한 처방 중단(deprescribing)·스튜어드십 강조는 1999년 지침에는 없던 특징이다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "2차 요약(약대 교육 팟캐스트)이 짚은 핵심 변화점",
+            "body_ko": "Rosalind Franklin 약학대학의 HelixTalk 요약(2차 자료)에 따르면, 이 지침은 25년 만의 첫 대개정으로 PICO 형식의 13개 권고를 담고 있으며, 예방 대상 위험인자로 응고장애·쇼크·만성 간질환(그리고 가능하면 신경계 중환자)을 제시한다. 기계환기 단독은 명시적으로 지지하지 않아 '논쟁적 변화'라고 평했다. 약제는 PPI와 H2RA를 동등하게 선호하며 정맥·경구 모두 가능하고, 예방은 '적응증이 해소되거나 환자가 ICU를 떠날 때까지' 지속한다고 정리했다. 근거 기반으로 SUP-ICU, PEPTIC, REVISE 세 개의 랜드마크 시험을 든다. — 이는 지침 원문이 아니라 2차 해설의 정리임에 유의.",
+            "sourceLabel": "HelixTalk #185 (Rosalind Franklin University College of Pharmacy)",
+            "sourceUrl": "https://www.rosalindfranklin.edu/academics/college-of-pharmacy/helixtalk/helixtalk-185-they-are-late-but-don-t-stress-the-new-2024-stress-ulcer-prophylaxis-guidelines/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, stop reflexively ordering a PPI for every intubated or ICU-admitted adult: reserve pharmacologic prophylaxis for patients with coagulopathy, shock, or chronic liver disease, and use a low-dose PPI or H2RA (either is acceptable, IV or enteral). If a patient is tolerating enteral feeds and is otherwise low-risk, prophylaxis can generally be withheld. Build a deprescribing step into rounds — actively stop prophylaxis when the risk factor resolves and reconcile it OFF before ICU transfer to prevent it becoming an unintended lifelong outpatient medication.",
+        "practiceImpact_ko": "침상에서 기관삽관·ICU 입실했다는 이유만으로 반사적으로 PPI를 처방하는 관행을 멈춘다: 약물 예방은 응고장애·쇼크·만성 간질환 환자에 한정하고, 저용량 PPI 또는 H2RA를 사용한다(둘 다 허용, 정맥·경장 모두 가능). 경장영양을 잘 견디는 저위험 환자는 대체로 예방을 보류할 수 있다. 회진에 '중단(deprescribing)' 단계를 넣어 위험인자가 해소되면 능동적으로 중단하고, ICU 전실 전에 반드시 약물 재조정으로 빼서 의도치 않게 평생 외래약이 되는 것을 막는다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40719551",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40719551/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1093/ajhp/zxaf165",
+            "url": "https://doi.org/10.1093/ajhp/zxaf165"
+          },
+          {
+            "label": "웹 — SCCM 공식 지침 페이지 — SCCM/ASHP Prevention of UGIB",
+            "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/sccm-ashp-guideline-prevention-of-ugib"
+          },
+          {
+            "label": "웹 — AJHP Executive Summary (Oxford Academic, 82(17):e747)",
+            "url": "https://academic.oup.com/ajhp/article-abstract/82/17/e747/8215311"
+          },
+          {
+            "label": "웹 — HelixTalk #185 (Rosalind Franklin University College of Pharmacy)",
+            "url": "https://www.rosalindfranklin.edu/academics/college-of-pharmacy/helixtalk/helixtalk-185-they-are-late-but-don-t-stress-the-new-2024-stress-ulcer-prophylaxis-guidelines/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-08"
     }
   ],
   "rejected": [
@@ -57410,7 +57580,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-06T23:03:58.674Z",
+      "discoveredAt": "2026-09-07T23:44:24.736Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -57505,7 +57675,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-06T23:03:58.674Z",
+      "discoveredAt": "2026-09-07T23:44:24.736Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -57667,7 +57837,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-06T23:03:58.674Z",
+      "discoveredAt": "2026-09-07T23:44:24.736Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -57696,7 +57866,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-06T23:03:58.674Z",
+      "discoveredAt": "2026-09-07T23:44:24.736Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -57729,7 +57899,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-06T23:03:58.674Z",
+      "discoveredAt": "2026-09-07T23:44:24.736Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -57801,9 +57971,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260907_075748:guideline:2026-09-07",
+    "runId": "trend_review_20260908_083911:guideline:2026-09-08",
     "outcome": "published",
-    "publishedId": "pmid:38951014",
+    "publishedId": "pmid:40719551",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -57828,15 +57998,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 114,
+        "mergedTotal": 137,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
-        "newestFetchedDate": "2026 Sep 5",
+        "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/08",
-          "maxDate": "2026/09/07"
+          "minDate": "2026/08/09",
+          "maxDate": "2026/09/08"
         },
         "retmax": 60,
         "topics": [
@@ -57844,8 +58014,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 51,
-            "idsFetched": 51,
+            "totalFound": 53,
+            "idsFetched": 53,
             "truncated": false,
             "error": null
           },
@@ -57862,8 +58032,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 0,
-            "idsFetched": 0,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -57871,8 +58041,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -57880,8 +58050,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -57934,13 +58104,13 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 0,
-            "idsFetched": 0,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 102,
+        "topicOnlyCount": 125,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -57952,9 +58122,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 114,
-          "enriched": 114,
-          "withAbstract": 87,
+          "requested": 137,
+          "enriched": 137,
+          "withAbstract": 104,
           "error": null
         }
       },
@@ -58007,23 +58177,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 1,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 224,
-        "needsReview": 448,
+        "queued": 223,
+        "needsReview": 449,
         "rejected": 126,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:38951014",
+        "candidateId": "pmid:40719551",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-07T11:35:47.650Z",
+  "updatedAt": "2026-09-07T23:46:59.746Z",
   "configVersion": "guideline-v2"
 }

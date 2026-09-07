@@ -496,23 +496,6 @@
       "status": "queued"
     },
     {
-      "pmid": "39467606",
-      "title": "Acute respiratory distress syndrome.",
-      "journal": "BMJ",
-      "score": 8,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ARDS(BMJ) 중환자 호흡 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39550175",
       "title": "Cardiogenic shock.",
       "journal": "Lancet",
@@ -8665,6 +8648,95 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39467606",
+      "title": "Acute respiratory distress syndrome.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS(BMJ) 중환자 호흡 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-08",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39467606",
+          "title": "Acute respiratory distress syndrome.",
+          "journal": "BMJ (Clinical research ed.)",
+          "pubDate": "2024-10-29",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39467606/",
+          "doi": "10.1136/bmj-2023-076612"
+        },
+        "title_ko": "급성호흡곤란증후군(ARDS)",
+        "scope_ko": "1967년 최초 기술 이후 발전해 온 ARDS의 역학, 병태생리, 관리를 개괄하는 종설이다. 새롭게 권고된 ARDS의 글로벌 정의와, 저용량 일회호흡량 환기·복와위·보존적 수액 전략 같은 확립된 중재를 근간으로 한 최신 관리 지침을 핵심으로 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "ARDS 이해의 발전 과정",
+            "body_ko": "ARDS에 대한 이해는 1967년 증례 시리즈에서 처음 기술된 이래로 크게 발전해 왔으며, 이후 증후군의 정의도 여러 차례 갱신되었다. 기초과학의 진전과 임상시험을 통해 ARDS에서 폐 손상이 일어나는 기전에 대한 통찰이 축적되었고, 포괄적 중환자 진료 중재를 통해 사망률을 낮추는 데 기여하였다.\n\n(이 절은 이 논문의 초록에서 옮긴 것이다. BMJ 원문(전문)은 유료 장벽으로 접근할 수 없었고, PMC·Europe PMC에서도 무료 전문을 확보하지 못하여 본문 각 절의 서술은 재현하지 못하였다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이 종설이 다루는 범위",
+            "body_ko": "본 종설은 ARDS의 역학, 병태생리, 관리에 대한 현재의 이해를 요약한다. 핵심 하이라이트로는 (1) 새로 권고된 ARDS의 글로벌 정의(a recommended new global definition)와, (2) 저용량 일회호흡량 환기(low tidal volume ventilation), 복와위(prone positioning), 보존적 수액 전략(conservative fluid strategy)과 같이 이미 확립된 중재를 근간(backbone)으로 삼아 갱신된 ARDS 관리 지침이 있다. 아울러 향후 ARDS 연구가 우선적으로 다루어야 할 과제들도 함께 제시한다.\n\n(이 절 역시 초록의 서술이다. 저자가 본문에서 각 중재의 수치·역치·근거등급을 어떻게 다루었는지는 전문을 확보하지 못해 재현할 수 없었다. 아래 '보강' 절에서 권위 있는 2차 출처로 그 배경을 보완하였으나, 이는 이 논문 자체의 서술이 아님을 유의하시기 바란다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 새 정의의 배경과 취지 (ATS)",
+            "body_ko": "미국흉부학회(ATS)는 새 글로벌 정의가 2012년 Berlin 정의의 한계, 특히 '기계환기를 요구'하는 조건이 기계환기가 없는 다수의 자원 제한 환경에서 적용 불가능하다는 점을 겨냥한 것이라고 설명한다.\n\n핵심 권고 요지: 최소 유량 30 L/min 이상의 HFNO를 호흡 지원 옵션에 포함하고, SpO2가 97% 이하일 때 맥박산소측정치를 동맥혈가스분석의 대안으로 사용하며, 양측 폐 음영은 유지하되 특히 자원 제한 지역에서 초음파를 영상 방식으로 추가한다. 이 확장은 ARDS를 더 이른 시점에 식별하고, 비삽관 환자에게로 임상시험 등록과 중재의 대상 범위를 넓히는 것을 목적으로 한다.\n— 보강 출처: American Thoracic Society — News: New Global Definition of ARDS (https://site.thoracic.org/about-us/news/experts-propose-new-global-definition-of-acute-respiratory-distress-syndrome)",
+            "origin": "augmented",
+            "sourceLabel": "American Thoracic Society — News: New Global Definition of ARDS",
+            "sourceUrl": "https://site.thoracic.org/about-us/news/experts-propose-new-global-definition-of-acute-respiratory-distress-syndrome"
+          },
+          {
+            "heading_ko": "[웹 보강] 관리의 근간 — 확립된 중재와 최신 지침 권고",
+            "body_ko": "이 논문이 관리의 '근간'으로 든 저용량 일회호흡량 환기·복와위·보존적 수액 전략의 구체적 수치와 근거 강도를, 새 지침의 침상 적용을 다룬 2차 문헌으로 보완한다(주로 ESICM 2023 권고 기준).\n\n· 저용량 일회호흡량 환기: 일회호흡량 4–8 mL/kg 예측체중(predicted body weight) — 사용에 대한 '강한 권고(strong recommendation)'. 고평부압(plateau pressure) < 30 cmH2O는 언급되나 ESICM의 공식 권고문에는 포함되지 않았고(ATS 지침이 이를 포함), 구동압(driving pressure)은 대규모 무작위연구 부재로 미해결 사안으로 남아 있다.\n\n· PEEP: '권고 없음(no recommendation)' — 고 PEEP 대 저 PEEP 전략을 비교한 연구들이 확고한 결과를 내지 못했기 때문.\n\n· 복와위(prone positioning): 중등증/중증 ARDS에서 하루 16시간 초과(>16 h/day) 시행 — 사용에 대한 '강한 권고'. 급성호흡부전에서 삽관을 피하기 위한 '각성 복와위(awake prone)'도 제안된다.\n\n· 신경근차단제(NMBA): 지속 주입의 일상적(routine) 사용에 대한 '강한 반대 권고'.\n\n· ECMO: (ECMO 센터에서) 사용에 대한 '강한 권고'.\n\n· 폐 재확장수기(lung recruitment maneuvers): 장시간(prolonged) LRM에 대한 강한 반대 권고, 단시간 LRM에 대한 약한 반대 권고.\n\n· 코르티코스테로이드: ESICM 2023 권고에서는 다루지 않음(별도 문헌·지침 소관).\n\n(주의: 위 수치·근거등급은 이 BMJ 종설 자체가 아니라 새 ARDS 지침의 침상 적용을 정리한 2차 문헌에서 가져온 것이다. 이 종설 저자들이 본문에서 제시한 정확한 역치·문구와는 다를 수 있다.)\n— 보강 출처: PMC — 'Application of new ARDS guidelines at the bedside' (PMC12040422) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12040422/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC — 'Application of new ARDS guidelines at the bedside' (PMC12040422)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12040422/"
+          },
+          {
+            "heading_ko": "향후 연구 우선순위",
+            "body_ko": "본 종설은 ARDS 연구가 앞으로 우선적으로 다루어야 할 과제들을 함께 강조한다. (이 절은 초록에 명시된 내용으로, 저자가 본문에서 구체적으로 어떤 우선순위를 어떤 순서로 제시했는지는 전문을 확보하지 못해 재현하지 못하였다.)",
+            "origin": "article"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 확립된 근간 — 예측체중 기준 저용량 일회호흡량 환기(4–8 mL/kg, 고평부압 <30 cmH2O 지향), 중등증/중증에서 하루 16시간 초과 복와위, 초기 소생 이후 보존적 수액 전략, 지속 NMBA의 일상적 사용 회피, 중증 저산소혈증에서 ECMO 센터 의뢰 — 을 흔들림 없이 유지하는 것이 여전히 핵심이다. 아울러 새 글로벌 정의는 HFNO(≥30 L/min) 사용 비삽관 환자와 SpO2/FiO2·초음파 기반 진단을 포함하므로, 삽관·동맥혈가스 이전 단계의 환자도 ARDS로 인지하고 더 이른 시점에 폐보호 원칙을 적용하도록 촉진한다. 다만 이 정의 변경이 실제 예후에 미치는 영향은 전향적 검증이 진행 중이다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39467606",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39467606/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/bmj-2023-076612",
+            "url": "https://doi.org/10.1136/bmj-2023-076612"
+          },
+          {
+            "label": "웹 — Cleveland Clinic Journal of Medicine — 'ARDS: Why a definition matters'",
+            "url": "https://www.ccjm.org/content/92/9/565"
+          },
+          {
+            "label": "웹 — American Thoracic Society — News: New Global Definition of ARDS",
+            "url": "https://site.thoracic.org/about-us/news/experts-propose-new-global-definition-of-acute-respiratory-distress-syndrome"
+          },
+          {
+            "label": "웹 — PMC — Application of new ARDS guidelines at the bedside (PMC12040422)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12040422/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -8722,9 +8794,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-07",
+    "date": "2026-09-08",
     "outcome": "published",
-    "publishedId": "39341645"
+    "publishedId": "39467606"
   },
-  "updatedAt": "2026-09-07"
+  "updatedAt": "2026-09-08"
 }

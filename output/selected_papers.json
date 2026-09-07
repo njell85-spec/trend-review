@@ -539,5 +539,16 @@
     "rerankPoolSize": 14,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "41808206",
+    "title": "End-inspiratory pause enhances ventilation efficiency without increasing autoPEE",
+    "date": "2026-09-08",
+    "topic": "resp_airway",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 13,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
