@@ -550,5 +550,16 @@
     "rerankPoolSize": 13,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42618951",
+    "title": "Physiological comparison of high-flow oxygen via endotracheal tube and T-piece s",
+    "date": "2026-09-09",
+    "topic": "resp_airway",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 11,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]

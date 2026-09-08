@@ -496,23 +496,6 @@
       "status": "queued"
     },
     {
-      "pmid": "39550175",
-      "title": "Cardiogenic shock.",
-      "journal": "Lancet",
-      "score": 8,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "심인성 쇼크(Lancet) 소생·혈역학 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39616000",
       "title": "A contemporary review of sudden cardiac arrest and death in competitive and recreational athletes.",
       "journal": "Lancet",
@@ -8737,6 +8720,108 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39550175",
+      "title": "Cardiogenic shock.",
+      "journal": "Lancet",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크(Lancet) 소생·혈역학 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-09",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39550175",
+          "title": "Cardiogenic shock.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2024-11-17",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39550175/",
+          "doi": "10.1016/S0140-6736(24)01818-X"
+        },
+        "title_ko": "심인성 쇼크(Cardiogenic shock)",
+        "scope_ko": "심인성 쇼크의 현행 정의, 병태생리 원리, 관리 접근법을 개괄하고, 개별화된 쇼크 치료와 현대 기술·자원의 근거 기반·윤리적 사용을 진전시키기 위한 핵심 지식 공백을 짚는 Lancet 종설입니다. 다양한 원인에서 비롯되는 전신 저관류·불충분한 심박출량 증후군을 다룹니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "심인성 쇼크의 정의와 이 종설의 범위",
+            "body_ko": "심인성 쇼크는 다양한 기저 원인에서 비롯되는 전신 저관류(systemic hypoperfusion)와 불충분한 심박출량(inadequate cardiac output)으로 정의되는 복합 증후군입니다. 이 종설은 심인성 쇼크의 현행 정의, 병태생리 원리, 그리고 관리 접근법을 요약합니다.\n\n(주: 아래 'article' 표시 절은 이 논문 자체의 초록에서 확인된 내용만을 옮긴 것입니다. Lancet 본문·PMC 전문은 유료/접근 제한으로 확보하지 못했으므로, 초록 범위를 넘어서는 세부 수치·용량·근거등급은 이 논문의 서술로 제시하지 않았습니다. 본문에서 다루었을 개별 임상시험의 구체적 수치는 뒤의 '보강(augmented)' 절에 별도 출처와 함께 실었습니다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "역학·아형·혈역학·중증도 병기의 발전, 그러나 제한적인 치료 진전",
+            "body_ko": "심인성 쇼크의 역학, 특정 하위표현형(subphenotypes), 혈역학, 그리고 심인성 쇼크 중증도 병기 설정(severity staging)에 대한 이해는 발전해 왔습니다. 그러나 초록의 저자들은 생존 이득을 보인 치료적 중재는 소수에 불과하다고 명시하고 있습니다. 즉, 질환을 기술·분류하는 틀은 정교해졌지만, 그 정교함이 아직 생존율을 개선하는 치료로 폭넓게 전환되지는 못했다는 절제된 평가입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "근거가 뒷받침하는 중재: 조기 재관류와 선택적 임시 순환보조",
+            "body_ko": "중요한 무작위 대조군 연구(seminal randomised controlled trials)의 결과는 경색 관련 심인성 쇼크(infarct-related cardiogenic shock)에서 원인 혈관(culprit vessel)의 조기 재관류를 지지합니다. 또한 선택된 환자(selected patients)에서 임시 순환보조(temporary circulatory support)의 사용으로 생존이 개선된다는 근거를 제시합니다. 저자들은 이 두 가지를 근거가 비교적 확립된 영역으로 제시하되, 이득이 '선택된 환자'에 한정된다는 단서를 함께 달고 있습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "남아 있는 지식 공백",
+            "body_ko": "저자들은 다수의 질문이 여전히 답을 찾지 못한 상태라고 강조합니다. 여기에는 (1) 최적의 약물요법 요법(optimal pharmacotherapy regimens), (2) 기계적 순환보조 장치(mechanical circulatory support devices)의 역할, (3) 이차 장기기능부전(secondary organ dysfunction)의 관리, 그리고 (4) 최선의 지지 치료(best supportive care)가 포함됩니다. 이 종설은 개별화된 쇼크 치료와, 현대 기술·자원의 근거 기반이자 윤리적인 사용을 진전시키기 위해 이러한 핵심 지식 공백을 부각하는 데 목적을 둡니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 정맥-동맥 ECMO(VA-ECMO) — ECLS-SHOCK 시험",
+            "body_ko": "초록이 남긴 '기계적 순환보조 장치의 역할' 공백과 직결되는 VA-ECMO의 대표 근거입니다(본문 미확보로 보강). ECLS-SHOCK는 급성 심근경색에 동반된 심인성 쇼크에서 체외생명유지(ECLS)를 표준치료와 비교한 무작위 시험으로, 총 420명(ECLS군 211명, 통상치료군 209명, 평균 62세, 여성 19%)을 등록했습니다.\n\n30일 사망은 ECLS군 47.8% 대 통상치료군 49.0% (P=0.81)로 유의한 차이가 없었습니다. 반면 안전성은 열등하여 중등도 이상 출혈이 23.4% 대 9.6%, 수술/중재가 필요한 혈관 합병증이 11.0% 대 3.8%로 ECLS군에서 유의하게 높았습니다(각 P<0.05). 결론적으로 급성 심근경색 심인성 쇼크에서 조기·비선택적 VA-ECMO의 통상적 사용은 30일 생존을 개선하지 못하고 중대한 합병증을 늘렸습니다. ECMO-CS, EUROSHOCK 등 관련 시험들도 사망 이득을 보이지 못했습니다.\n— 보강 출처: American College of Cardiology — ECLS-SHOCK (https://www.acc.org/latest-in-cardiology/clinical-trials/2023/08/24/00/03/ecls-shock)",
+            "origin": "augmented",
+            "sourceLabel": "American College of Cardiology — ECLS-SHOCK",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/08/24/00/03/ecls-shock"
+          },
+          {
+            "heading_ko": "[웹 보강] 미세축류 펌프(Impella CP) — DanGer Shock 시험 결과",
+            "body_ko": "초록이 언급한 '선택된 환자에서 임시 순환보조로 생존이 개선된다'는 진술의 최신 핵심 근거로 DanGer Shock를 보강합니다(본문 미확보). 덴마크·독일·영국 14개 센터, 10년(2013–2023)에 걸쳐 ST분절 상승 심근경색(STEMI)에 동반된 심인성 쇼크 환자를 등록한 국제·공개표지 무작위 시험으로, 355명(중앙 연령 67세, 남성 79.2%)이 분석되었습니다. 표준치료 단독 대 표준치료+Impella CP 미세축류 펌프(심도자 시술 전·중 또는 최대 12시간 이내 삽입)를 비교했습니다.\n\n180일 전체 사망은 펌프군 45.8%(179명 중 82명) 대 표준치료군 58.5%(179명 중 103명)로, 위험비(HR) 0.74 (P=0.04)였습니다. 사망 1건 예방을 위한 치료필요수(NNT)는 8이었습니다. 그러나 이 이득은 합병증 증가를 동반했습니다: 중증 출혈, 사지 허혈, 용혈, 장치 고장, 대동맥판 역류 악화 등 중대 이상반응이 펌프군 43명 대 표준치료군 11명(상대위험 4.74)으로, 위해필요수(NNH)는 6이었습니다. 이득은 30일 이후에도 지속되는 것으로 보여 심근 보존 효과가 시사되었으며, 저자들은 생존 이득과 합병증 증가 사이의 상충(trade-off)을 명시했습니다. 이는 급성 심근경색 심인성 쇼크에서 기계적 순환보조 장치로 생존 이득을 처음으로 입증한 무작위 시험입니다.\n— 보강 출처: American College of Cardiology — DanGer Shock (ACC.24) (https://www.acc.org/Latest-in-Cardiology/Articles/2024/04/02/17/02/sun-945am-danger-shock-acc-2024)",
+            "origin": "augmented",
+            "sourceLabel": "American College of Cardiology — DanGer Shock (ACC.24)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/Articles/2024/04/02/17/02/sun-945am-danger-shock-acc-2024"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설의 초록 범위에서 침상 실무에 직접 닿는 확립된 메시지는 두 가지입니다: 경색 관련 심인성 쇼크에서 원인 혈관의 조기 재관류를 시행하고(다혈관 즉시 시술보다 원인 병변 우선), 임시 순환보조는 '선택된 환자'에 한해 생존 이득을 기대할 수 있다는 점입니다. 보강 근거를 종합하면 STEMI 심인성 쇼크에서 Impella CP는 생존을 개선하나 출혈·혈관 합병증 증가를 감수해야 하고 조기 적용일수록 이득이 크며, 통상적 IABP나 비선택적 VA-ECMO는 생존을 개선하지 못합니다. 다만 최적 약물요법, 기계적 보조의 세부 역할, 이차 장기기능부전 관리, 최선의 지지 치료는 여전히 미해결이므로 개별 환자의 중증도·시점·합병증 위험을 함께 저울질하는 판단이 필요합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39550175",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39550175/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(24)01818-X",
+            "url": "https://doi.org/10.1016/S0140-6736(24)01818-X"
+          },
+          {
+            "label": "웹 — American College of Cardiology — DanGer Shock (ACC.24)",
+            "url": "https://www.acc.org/Latest-in-Cardiology/Articles/2024/04/02/17/02/sun-945am-danger-shock-acc-2024"
+          },
+          {
+            "label": "웹 — tctmd — Delays in STEMI Cardiogenic Shock Care (DanGer Shock)",
+            "url": "https://www.tctmd.com/news/delays-stemi-cardiogenic-shock-care-come-cost-danger-shock"
+          },
+          {
+            "label": "웹 — American College of Cardiology — ECLS-SHOCK",
+            "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/08/24/00/03/ecls-shock"
+          },
+          {
+            "label": "웹 — Critical Care Reviews — IABP-SHOCK II",
+            "url": "https://criticalcarereviews.com/foundational-trials/iabp-shock-ii"
+          },
+          {
+            "label": "웹 — tctmd — CULPRIT-SHOCK 1-Year Results",
+            "url": "https://www.tctmd.com/news/culprit-shock-1-year-results-continue-support-culprit-only-pci-shock-patients"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -8794,9 +8879,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-08",
+    "date": "2026-09-09",
     "outcome": "published",
-    "publishedId": "39467606"
+    "publishedId": "39550175"
   },
-  "updatedAt": "2026-09-08"
+  "updatedAt": "2026-09-09"
 }
