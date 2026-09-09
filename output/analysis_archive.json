@@ -2116,6 +2116,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-10",
+      "pmid": "40986617",
+      "title": "Impact of Conservative Vs. Liberal Extracorporeal Oxygen Target During Venoarterial Extracorporeal Membrane Oxygenation Support for Cardiogenic Shock: A Pilot Randomized Control Trial.",
+      "title_ko": "심인성 쇼크에 대한 정맥-동맥 체외막산소공급(VA ECMO) 중 보존적 대 자유적 체외 산소 목표의 영향: 파일럿 무작위 대조 시험",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000006882",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "심인성 쇼크로 VA ECMO를 받는 환자에서, sweep gas 산소 분율(FDO2)을 보존적 post-oxygenator 산소 목표(PPOSTO2 100–150 mm Hg)로 적정하는 것이 자유적 전략(FDO2 100%)에 비해 장기 기능장애—특히 IFABP로 측정한 장 손상—를 줄이는가?",
+      "pico": {
+        "population": "[France] Among 55 analyzed patients with cardiogenic shock supported by venoarterial extracorporeal membrane oxygenation (VA ECMO), across four ICUs in three teaching hospitals of eastern France; 29 assigned to the conservative arm and 26 to the liberal arm.",
+        "intervention": "FDO2 titration targeting postoxygenator oxygen partial pressure (PPOSTO2) 100–150 mm Hg in the conservative arm; achieved FDO2 61 (± 7) % and PPOSTO2 139 (± 40) mm Hg, with mean proportion of time within the targeted window only 33 (± 20) %.",
+        "comparison": "Liberal extracorporeal oxygenation strategy with FDO2 maintained at 100%; achieved FDO2 98 (± 5) % and PPOSTO2 420 (± 50) mm Hg.",
+        "outcome": "Primary outcome was mean plasmatic intestinal fatty acid binding protein (IFABP) level at day 2, which did not differ between conservative and liberal arms (407 [206–549] pg/mL vs. 569 [247–708] pg/mL, p = 0.25)."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 정맥-동맥 체외막산소공급(VA ECMO)을 받는 심인성 쇼크 환자 중 분석된 55명; 프랑스 동부 3개 교육병원 4개 ICU에서 시행, 보존적군 29명·자유적군 26명 배정.",
+        "intervention": "보존적군에서 post-oxygenator 산소 분압(PPOSTO2) 100–150 mm Hg를 목표로 FDO2 적정; 달성 FDO2 61 (± 7) %, PPOSTO2 139 (± 40) mm Hg, 목표 범위 내 시간 비율은 평균 33 (± 20) %에 불과.",
+        "comparison": "FDO2를 100%로 유지하는 자유적 체외 산소공급 전략; 달성 FDO2 98 (± 5) %, PPOSTO2 420 (± 50) mm Hg.",
+        "outcome": "일차 결과는 day 2의 평균 혈장 intestinal fatty acid binding protein (IFABP) 수치로, 두 군 간 차이 없음 (407 [206–549] pg/mL vs. 569 [247–708] pg/mL, p = 0.25)."
+      },
+      "keyFindings": [
+        "The primary outcome, mean IFABP at day 2, did not differ between conservative and liberal arms (407 [206–549] pg/mL vs. 569 [247–708] pg/mL, p = 0.25) among 55 analyzed patients (29 conservative, 26 liberal).",
+        "The conservative strategy was not easily feasible: PPOSTO2 stayed within the 100–150 mm Hg window only 33 (± 20) % of the time, though arms were well separated (PPOSTO2 139±40 vs 420±50 mm Hg; FDO2 61±7% vs 98±5%).",
+        "No secondary biomarker of organ dysfunction differed between arms at day 0, 2, or 6, including lactate, vasoactive inotropic score, AST, prothrombin time, serum creatinine, need for RRT, TNF-α, IL-6, and IL-8."
+      ],
+      "keyFindings_ko": [
+        "일차 결과인 day 2 평균 IFABP는 분석된 55명(보존적 29명, 자유적 26명)에서 두 군 간 차이 없음 (407 [206–549] pg/mL vs. 569 [247–708] pg/mL, p = 0.25).",
+        "보존적 전략은 쉽게 실행되지 않음: PPOSTO2가 100–150 mm Hg 범위 내에 있던 시간은 33 (± 20) %에 불과했으나 두 군은 잘 분리됨 (PPOSTO2 139±40 vs 420±50 mm Hg; FDO2 61±7% vs 98±5%).",
+        "lactate, vasoactive inotropic score, AST, prothrombin time, serum creatinine, RRT 필요, TNF-α, IL-6, IL-8 등 어떤 이차 장기 기능장애 바이오마커도 day 0, 2, 6에 두 군 간 차이 없었음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 40986617",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40986617/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000006882",
+          "url": "https://doi.org/10.1097/CCM.0000000000006882"
+        },
+        {
+          "label": "웹 — PubMed abstract (PMID 40986617)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40986617/"
+        },
+        {
+          "label": "웹 — Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/2025/12000/impact_of_conservative_vs__liberal_extracorporeal.15.aspx"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed abstract (PMID 40986617)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40986617/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/2025/12000/impact_of_conservative_vs__liberal_extracorporeal.15.aspx",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
