@@ -561,5 +561,16 @@
     "rerankPoolSize": 11,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "40986617",
+    "title": "Impact of Conservative Vs. Liberal Extracorporeal Oxygen Target During Venoarter",
+    "date": "2026-09-10",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 10,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]

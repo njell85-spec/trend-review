@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-08T23:38:32.090Z"
+      "supersededAt": "2026-09-09T23:30:29.650Z"
     },
     {
       "id": "pmid:38531812",
@@ -11938,76 +11938,6 @@
         "reason": "성인 ICU 가족중심 진료 지침, 중환자 실무",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:39982182",
-      "pmid": "39982182",
-      "title": "Society of Critical Care Medicine Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024.",
-      "pubDate": "2025 Feb 1",
-      "journal": "Critical care medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-title"
-      ],
-      "discoveredAt": "2026-08-17T04:36:46.508Z",
-      "abstract": "RATIONALE: Critical care ultrasonography (CCUS) is rapidly evolving with new evidence being published since the prior 2016 guideline.\nOBJECTIVES: To identify and assess the best evidence regarding the clinical outcomes associated with five CCUS applications in adult patients since the publication of the previous guidelines.\nPANEL DESIGN: An interprofessional, multidisciplinary, and diverse expert panel of 36 individuals including two patient/family representatives was assembled via an intentional approach. Conflict-of-interest policies were strictly followed in all phases of the guidelines, including task force selection and voting.\nMETHODS: Focused research questions based on Population, Intervention, Control, and Outcomes (PICO) for adult CCUS application were developed. Panelists applied the guidelines revision process described in the Standard Operating Procedures Manual to analyze supporting literature and to develop evidence-based recommendations as a focused update. The evidence was statistically summarized and assessed for quality using the Grading of Recommendations, Assessment, Development, and Evaluation approach. The evidence-to-decision framework was used to formulate recommendations as strong or conditional.\nRESULTS: The Adult CCUS Focused Update Guidelines panel aimed to understand the current impact of CCUS on patient important outcomes as they related to five PICO questions in critically ill adults. A rigorous systematic review of evidence to date informed the panel's recommendations. In adult patients with septic shock, acute dyspnea/respiratory failure, or cardiogenic shock, we suggest using CCUS to guide management. Given evidence supporting an improvement in mortality, we suggest the use of CCUS for targeted volume management as opposed to usual care without CCUS. Last, there was insufficient data to determine if CCUS should be used over standard care without CCUS in the management of patients with cardiac arrest.\nCONCLUSIONS: The guidelines panel achieved strong agreement regarding the recommendations for CCUS to improve patient outcomes. These recommendations are intended for consideration along with the patient's existing clinical status.",
-      "meshTerms": [
-        "Humans",
-        "Critical Care",
-        "Ultrasonography",
-        "Adult",
-        "Societies, Medical"
-      ],
-      "keywords": [],
-      "doi": "10.1097/CCM.0000000000006530",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": "sccm"
-      },
-      "priority": 10.014359501386572,
-      "breakdown": {
-        "authority": 4,
-        "topic": 3.4,
-        "recency": 0.6143595013865722,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "sccm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:59.039Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "SCCM 중환자 초음파 지침 갱신, 핵심 술기",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "sccm|adult-critical-care-ultrasonography",
-      "supersedes": []
     },
     {
       "id": "pmid:39982130",
@@ -31898,7 +31828,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34590,7 +34520,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -41281,7 +41211,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43110,7 +43040,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43263,7 +43193,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -43858,7 +43788,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -44126,7 +44056,7 @@
       "id": "pmid:42190798",
       "pmid": "42190798",
       "title": "Palliative care in stroke: Guidelines of the Spanish Society of Neurology's Stroke Study Group.",
-      "pubDate": "2026 May 25",
+      "pubDate": "2026 Sep",
       "journal": "Neurologia",
       "publicationTypes": [
         "Journal Article",
@@ -44137,7 +44067,15 @@
       ],
       "discoveredAt": "2026-08-17T04:40:34.154Z",
       "abstract": "These guidelines address the relief of suffering and the optimal management of patients with stroke at the end of life. Their main purpose is to contribute to the development of skills in communication, setting goals of care, and decision-making. Furthermore, they focus on symptom management and specific care in patients with severe stroke. The recommendations are based on a systematic review of the literature and international guidelines on the subject. The levels of evidence and grade of recommendation are based on those established in the 2016 classification of the American College of Cardiology and the American Heart Association Task Force.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Palliative Care",
+        "Stroke",
+        "Terminal Care",
+        "Neurology",
+        "Spain",
+        "Societies, Medical"
+      ],
       "keywords": [
         "End-of-life care",
         "Haemorrhagic stroke",
@@ -44159,10 +44097,10 @@
         "officialDocument": true,
         "organizationId": null
       },
-      "priority": 7,
+      "priority": 8,
       "breakdown": {
         "authority": 0,
-        "topic": 3,
+        "topic": 4,
         "recency": 2,
         "scope": 0,
         "confidence": 2
@@ -44178,7 +44116,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44187,7 +44125,8 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "unknown|palliative-care-stroke-spanish-society-neurology-s-stroke-study-group",
-      "supersedes": []
+      "supersedes": [],
+      "attempts": 0
     },
     {
       "id": "pmid:42161591",
@@ -44689,7 +44628,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44960,7 +44899,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45105,7 +45044,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45704,7 +45643,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -45992,7 +45931,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46066,7 +46005,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46659,7 +46598,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46719,7 +46658,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -46792,7 +46731,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46866,7 +46805,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -46948,7 +46887,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47028,7 +46967,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47107,7 +47046,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47187,7 +47126,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47251,7 +47190,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47397,7 +47336,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47467,7 +47406,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47539,7 +47478,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47609,7 +47548,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47692,7 +47631,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47755,7 +47694,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47991,7 +47930,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48063,7 +48002,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48124,7 +48063,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48140,9 +48079,8 @@
       "pubDate": "2026 Sep 4",
       "journal": "European journal of preventive cardiology",
       "publicationTypes": [
-        "Journal Article",
         "Consensus Statement",
-        "Review"
+        "Journal Article"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -48152,14 +48090,14 @@
       "meshTerms": [
         "Humans",
         "Acute Coronary Syndrome",
-        "Europe",
-        "Consensus",
         "Cardiology",
-        "Risk Factors",
-        "Time Factors",
-        "Secondary Prevention",
+        "Consensus",
         "Critical Pathways",
-        "Delivery of Health Care, Integrated"
+        "Delivery of Health Care, Integrated",
+        "Europe",
+        "Risk Assessment",
+        "Risk Factors",
+        "Secondary Prevention"
       ],
       "keywords": [
         "Acute coronary syndrome",
@@ -48201,7 +48139,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48241,7 +48179,7 @@
       ],
       "keywords": [],
       "doi": "10.4244/EIJ-D-25-01372",
-      "pmcid": "",
+      "pmcid": "PMC13528801",
       "region": "eu",
       "by": "nationality",
       "signals": {
@@ -48274,7 +48212,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -48350,7 +48288,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -48358,13 +48296,153 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-08T23:38:31.192Z",
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
       "llmFit": {
         "version": 1,
         "score": 8,
         "keep": true,
         "reason": "중증 암환자 ICU 관리 전문가 합의, 중환자 실무 직결",
         "at": "2026-09-08T23:38:33.652Z"
+      }
+    },
+    {
+      "id": "pmid:42712221",
+      "pmid": "42712221",
+      "title": "Lipid lowering therapy in venous thromboembolism. A Clinical Consensus Statement of the ESC Working Group on Aorta and Peripheral Vascular Diseases, the ESC Working Group on Cardiovascular Pharmacotherapy, the ESC Working Group on Pulmonary Circulation & Right Ventricular Function, and the European Society of Vascular Medicine (ESVM).",
+      "pubDate": "2026 Sep 9",
+      "journal": "European journal of preventive cardiology",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-09T23:30:21.555Z",
+      "abstract": "The aim of this clinical consensus statement of the European Society of Cardiology Working Group on Aorta and Peripheral Vascular Diseases, the Working Group on Cardiovascular Pharmacotherapy, the Working Group on Pulmonary Circulation & Right Ventricular Function, and the European Society of Vascular Medicine is to summarize existing evidence on lipid-lowering therapy (LLT) in primary and secondary prevention of venous thromboembolism (VTE). VTE, which comprises deep vein thrombosis (DVT) and pulmonary embolism (PE), shares common risk factors with atherosclerotic cardiovascular disease (ASCVD). While anticoagulation is the mainstay in the management of patients with VTE, it may be appropriate to define LLT as risk modifier in primary prevention of VTE in populations at high cardiovascular risk. In patients with VTE, assessment of cardiovascular risk factors, including lipid levels, is commonly part of routine cardiovascular care in accordance with existing ESC Guidelines. Finally, this clinical consensus statement highlights the gaps in evidence and the need for large-scale studies directly investigating the role of LLT in secondary prevention of recurrent VTE in high-risk populations.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1093/eurjpc/zwag481",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 9,
+      "breakdown": {
+        "authority": 4,
+        "topic": 1,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "VTE 예방 지질강하 합의문—외래 예방 중심, 침상 판단 무관",
+        "at": "2026-09-09T23:30:31.267Z"
+      }
+    },
+    {
+      "id": "pmid:42712147",
+      "pmid": "42712147",
+      "title": "Harmonized Acquisition of Connectome MRI and Clinical Data for Stroke, Parkinson's Disease and Glioma: Delphi-Derived Protocol Recommendations by the European Academy of Neurology.",
+      "pubDate": "2026 Sep",
+      "journal": "European journal of neurology",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-09T23:30:21.555Z",
+      "abstract": "INTRODUCTION AND AIMS: The European Academy of Neurology (EAN) joined the Horizon Europe EBRAINS 2.0 research consortium to co-develop recommendations for prospective acquisition and integration of clinical and research core multi-scale human datasets for connectome analysis in stroke, Parkinson's disease (PD), and glioma (GBM).\nMETHODS: Using an online Delphi survey method, expert consensus was sought on 28 statements for each of the following protocols in stroke, PD and GBM: clinical core/research brain MRI, minimum/extended clinical outcomes, minimum/extended cognition assessments, case report forms (CRF). The level of agreement for each statement was predefined as ≥ 80%. 536 experts from four EAN Scientific Panels (SP) (SP Neuro-oncology [n = 70], SP Movement Disorders [n = 206], SP Neuroimaging [n = 112], SP Stroke [n = 148]) were invited to participate in this Delphi process.\nRESULTS: Two Delphi voting rounds were conducted to reach the predefined level of agreement (≥ 80%; range: 80.49%-100%) for all items to establish consensus on protocol recommendations for stroke, PD and GBM. Cumulative response rate from SP experts was 25% (n = 135 from 30 European countries) for the first, and 32% (n = 173 from 35 European countries) for the second Delphi voting round.\nDISCUSSION: These consented protocols provide a pragmatic framework for harmonizing multi-scale data acquisition for connectome analyses in stroke, PD, and GBM. Further, these protocols allow future modular extensions for other datasets, e.g., neurophysiological data or non-imaging biomarkers, and serve as a role model for brain network analyses in other neurological disorders.",
+      "meshTerms": [
+        "Humans",
+        "Connectome",
+        "Magnetic Resonance Imaging",
+        "Stroke",
+        "Glioma",
+        "Parkinson Disease",
+        "Delphi Technique",
+        "Europe",
+        "Brain Neoplasms",
+        "Neurology"
+      ],
+      "keywords": [
+        "connectome",
+        "data harmonization",
+        "data sharing",
+        "digital health",
+        "network neuroscience"
+      ],
+      "doi": "10.1111/ene.70708",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "recommendations",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "커넥톰 MRI 연구데이터 수집 프로토콜—임상지침 아님",
+        "at": "2026-09-09T23:30:31.267Z"
       }
     }
   ],
@@ -52801,6 +52879,169 @@
         ]
       },
       "publishedAt": "2026-09-09"
+    },
+    {
+      "id": "pmid:39982182",
+      "pmid": "39982182",
+      "title": "Society of Critical Care Medicine Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024.",
+      "pubDate": "2025 Feb 1",
+      "journal": "Critical care medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-17T04:36:46.508Z",
+      "abstract": "RATIONALE: Critical care ultrasonography (CCUS) is rapidly evolving with new evidence being published since the prior 2016 guideline.\nOBJECTIVES: To identify and assess the best evidence regarding the clinical outcomes associated with five CCUS applications in adult patients since the publication of the previous guidelines.\nPANEL DESIGN: An interprofessional, multidisciplinary, and diverse expert panel of 36 individuals including two patient/family representatives was assembled via an intentional approach. Conflict-of-interest policies were strictly followed in all phases of the guidelines, including task force selection and voting.\nMETHODS: Focused research questions based on Population, Intervention, Control, and Outcomes (PICO) for adult CCUS application were developed. Panelists applied the guidelines revision process described in the Standard Operating Procedures Manual to analyze supporting literature and to develop evidence-based recommendations as a focused update. The evidence was statistically summarized and assessed for quality using the Grading of Recommendations, Assessment, Development, and Evaluation approach. The evidence-to-decision framework was used to formulate recommendations as strong or conditional.\nRESULTS: The Adult CCUS Focused Update Guidelines panel aimed to understand the current impact of CCUS on patient important outcomes as they related to five PICO questions in critically ill adults. A rigorous systematic review of evidence to date informed the panel's recommendations. In adult patients with septic shock, acute dyspnea/respiratory failure, or cardiogenic shock, we suggest using CCUS to guide management. Given evidence supporting an improvement in mortality, we suggest the use of CCUS for targeted volume management as opposed to usual care without CCUS. Last, there was insufficient data to determine if CCUS should be used over standard care without CCUS in the management of patients with cardiac arrest.\nCONCLUSIONS: The guidelines panel achieved strong agreement regarding the recommendations for CCUS to improve patient outcomes. These recommendations are intended for consideration along with the patient's existing clinical status.",
+      "meshTerms": [
+        "Humans",
+        "Critical Care",
+        "Ultrasonography",
+        "Adult",
+        "Societies, Medical"
+      ],
+      "keywords": [],
+      "doi": "10.1097/CCM.0000000000006530",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "sccm"
+      },
+      "priority": 10.014359501386572,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3.4,
+        "recency": 0.6143595013865722,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "sccm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:59.039Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "SCCM 중환자 초음파 지침 갱신, 핵심 술기",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "sccm|adult-critical-care-ultrasonography",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39982182",
+          "title": "Society of Critical Care Medicine Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024.",
+          "journal": "Critical care medicine",
+          "pubDate": "2025 Feb 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39982182/",
+          "doi": "10.1097/CCM.0000000000006530"
+        },
+        "org": "SCCM",
+        "version": "2024 Focused Update",
+        "title_ko": "성인 중환자 초음파(CCUS)에 관한 미국중환자의학회(SCCM) 진료지침: 2024년 초점 개정판",
+        "scope_ko": "중환자실의 성인 중증 환자를 대상으로, 치료 담당 임상의가 직접 수행·해석하는 중환자 초음파(critical care ultrasonography, CCUS)를 다섯 가지 핵심 임상 시나리오 — 심정지, 패혈증/패혈성 쇼크, 급성 호흡곤란/호흡부전, 용량(수액) 관리, 심장성 쇼크 — 에서 사용하는 것이 환자 중요 결과(사망률 등)를 개선하는지에 대한 근거를 평가한 초점 개정판이다. 초음파의 술기·역량 기준이 아니라 '결과 개선' 관점에서 GRADE로 권고를 만든 것이 특징이다.",
+        "summary": [
+          "Septic shock: We suggest using CCUS to guide management in adults with septic shock to improve clinical outcomes (conditional recommendation, low certainty of evidence); a small mortality benefit was observed but may vary by patient and protocol/timing.",
+          "Acute dyspnea/respiratory failure: We suggest using CCUS to aid diagnosis and guide management in adults with acute dyspnea/respiratory failure to improve clinical outcomes (conditional recommendation, low certainty of evidence).",
+          "Volume management: We suggest CCUS for targeted volume management rather than usual care without CCUS to improve clinical outcomes, based on evidence supporting an improvement in mortality (conditional recommendation, low certainty of evidence).",
+          "Cardiogenic shock: We suggest using CCUS rather than usual care without CCUS in adults with cardiogenic shock to improve clinical outcomes (conditional recommendation, very low certainty of evidence); CCUS offers a portable, safer alternative to invasive monitoring such as the pulmonary artery catheter.",
+          "Cardiac arrest: We suggest EITHER using CCUS OR usual care without CCUS to guide management (conditional recommendation, for or against, very low certainty of evidence) — data were insufficient to determine whether CCUS is superior to standard care.",
+          "All five recommendations are conditional (none strong), reflecting low-to-very-low certainty evidence; CCUS is positioned as an adjunct to be integrated with the patient's overall clinical status and values, not a standalone decision tool.",
+          "Recommendations were developed by a 33–36-member interprofessional panel (including patient/family representatives and GRADE methodologists) using PICO questions, GRADE, and an evidence-to-decision framework."
+        ],
+        "summary_ko": [
+          "패혈성 쇼크: 성인 패혈성 쇼크 환자에서 임상 결과 개선을 위해 CCUS로 관리를 유도할 것을 제안한다(조건부 권고, 근거 확실성 낮음). 작은 사망률 이득이 관찰되었으나 환자·프로토콜·시행 시점에 따라 달라질 수 있다.",
+          "급성 호흡곤란/호흡부전: 성인 급성 호흡곤란·호흡부전 환자에서 진단을 돕고 관리를 유도하여 임상 결과를 개선하기 위해 CCUS 사용을 제안한다(조건부 권고, 근거 확실성 낮음).",
+          "용량(수액) 관리: 사망률 개선을 뒷받침하는 근거에 따라, CCUS 없는 통상 진료보다 CCUS를 이용한 표적 용량 관리를 제안한다(조건부 권고, 근거 확실성 낮음).",
+          "심장성 쇼크: 성인 심장성 쇼크 환자에서 CCUS 없는 통상 진료보다 CCUS 사용을 제안한다(조건부 권고, 근거 확실성 매우 낮음). CCUS는 폐동맥 카테터 같은 침습적 감시의 휴대 가능하고 더 안전한 대안이 된다.",
+          "심정지: CCUS를 쓰거나 CCUS 없는 통상 진료 중 '어느 쪽이든' 사용할 것을 제안한다(조건부 권고, 찬반 모두 가능, 근거 확실성 매우 낮음). CCUS가 표준 진료보다 우월한지 판단할 자료가 불충분했다.",
+          "다섯 권고 모두 조건부이며(강한 권고 없음) 근거 확실성은 낮음~매우 낮음이다. CCUS는 단독 의사결정 도구가 아니라 환자의 전반적 임상 상태·가치관과 통합해 쓰는 보조 수단으로 자리매김했다.",
+          "권고는 33~36명의 다직종 전문가 패널(환자·가족 대표 및 GRADE 방법론가 포함)이 PICO 질문, GRADE, evidence-to-decision 틀을 사용해 개발했다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "권고 방법론 (근거 기반 전환)",
+            "detail": "The prior 2016 SCCM ultrasonography guidance was framed around the appropriate use and technical performance/competency of bedside general and cardiac ultrasound (expert-consensus/appropriateness statements). The 2024 focused update reframes the question entirely toward patient-important OUTCOMES, using explicit PICO questions, GRADE certainty rating, and an evidence-to-decision framework to issue formal strong/conditional recommendations. Result: for the first time, CCUS in these scenarios carries outcome-based (not just appropriate-use) recommendations.",
+            "detail_ko": "이전 2016년 SCCM 초음파 지침은 병상 초음파의 '적절한 사용'과 술기·역량(수행 능력) 관점의 전문가 합의/적절성 진술 중심이었다. 2024 초점 개정판은 질문 자체를 환자 중요 '결과'로 재구성하여, 명시적 PICO 질문·GRADE 확실성 평가·evidence-to-decision 틀로 강한/조건부 권고를 공식화했다. 그 결과 이 시나리오들에서 CCUS는 처음으로 '적절 사용'이 아닌 '결과 기반' 권고를 받게 되었다."
+          },
+          {
+            "topic": "용량(수액) 관리 — 사망률 근거로 CCUS 권고 신설",
+            "detail": "The update newly issues a conditional recommendation to use CCUS for targeted volume management over usual care without CCUS, explicitly justified by evidence supporting an improvement in MORTALITY (conditional, low certainty). This mortality-based rationale is the strongest driver among the five scenarios and elevates CCUS from a technique-of-interest to a management strategy recommended over usual care.",
+            "detail_ko": "이번 개정에서 CCUS 없는 통상 진료보다 CCUS를 이용한 표적 용량 관리를 사용하라는 조건부 권고가 신설되었으며, 그 근거로 '사망률' 개선을 명시했다(조건부, 확실성 낮음). 이 사망률 기반 논거는 다섯 시나리오 중 가장 강력하며, CCUS를 단순 관심 술기에서 통상 진료보다 권고되는 관리 전략으로 격상시켰다."
+          },
+          {
+            "topic": "심정지 — 찬반 판단 유보",
+            "detail": "For cardiac arrest, the panel explicitly declined to recommend CCUS over usual care in either direction, issuing a conditional recommendation FOR OR AGAINST (very low certainty) because data were insufficient to establish superiority. This makes cardiac arrest the sole scenario without a directional recommendation, contrasting with the conditional 'suggest use' recommendations in the other four.",
+            "detail_ko": "심정지에서는 자료가 불충분해 CCUS가 통상 진료보다 우월하다고 볼 수 없어, 패널이 어느 방향으로도 권고하지 않고 '찬반 모두 가능'한 조건부 권고를 냈다(확실성 매우 낮음). 이로써 심정지는 다른 네 시나리오의 '사용 제안'과 달리 방향성 있는 권고가 없는 유일한 시나리오가 되었다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "동시기 종설이 덧붙인 주의점: VExUS 근거의 한계와 시나리오별 실제 데이터",
+            "body_ko": "Current Cardiology Reports(2025-02-15) 종설 'Point-of-Care Ultrasonography in the Critical Care Unit: An Update'는 지침 본문에 없는 실무 뉘앙스를 보탠다. 용량 평가에서 유행하는 VExUS 점수는 전향 연구에서 이뇨 유도 탈수 반응 예측력이 낮고 수액 균형과 뚜렷한 연관이 없었다며, 임상 도입 전 견고한 연구를 기다리라고 신중론을 편다. 호흡곤란에서는 dynamic air bronchogram의 양성예측도 96%, color Doppler의 음성예측도 90%로 폐렴/무기폐 감별에 유용하다고 소개한다. 심정지에서는 POCUS로 심장 활동이 확인된 환자가 ROSC·입원 생존이 더 높았다는 예후 데이터를 언급한다. 또한 2024-07-01부터 중환자 세부전공 수련이 초음파 영상 획득·해석·초음파 유도 카테터 삽입 역량을 갖추도록 요구(ACGME)한다는 점도 짚는다. (지침 원문이 아니라 별도 종설의 서술임.)",
+            "sourceLabel": "Current Cardiology Reports (2025) — Point-of-Care Ultrasonography in the Critical Care Unit: An Update (PMC11829842)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11829842/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, EM/CCM clinicians now have society backing to integrate CCUS into the workup and management of septic shock, undifferentiated acute dyspnea/respiratory failure, cardiogenic shock, and fluid/volume decisions — with the volume-management recommendation carrying a mortality-benefit rationale, so CCUS-guided assessment of preload/fluid responsiveness and pulmonary congestion should be a routine part of resuscitation rather than optional. Because all recommendations are conditional with low/very-low certainty, findings must be interpreted alongside the full clinical picture, not as standalone triggers. During cardiac arrest, the guideline does not mandate ultrasound to guide management, so it should be used judiciously (e.g., to identify reversible causes) without prolonging pulse checks or interrupting high-quality CPR. Institutions should expect CCUS competency to become an expected skill, aligning with training/credentialing trends.",
+        "practiceImpact_ko": "병상에서 EM/CCM 임상의는 이제 패혈성 쇼크, 원인 미상 급성 호흡곤란/호흡부전, 심장성 쇼크, 그리고 수액·용량 결정의 평가·관리에 CCUS를 통합할 학회 근거를 갖게 되었다. 특히 용량 관리 권고는 사망률 이득을 근거로 하므로, 전부하·수액 반응성·폐울혈에 대한 CCUS 유도 평가는 선택이 아니라 소생 과정의 일상 요소가 되어야 한다. 다만 모든 권고가 조건부이고 근거 확실성이 낮음~매우 낮음이므로, 초음파 소견은 단독 판단 근거가 아니라 전체 임상 맥락과 함께 해석해야 한다. 심정지에서는 관리 유도를 위한 초음파가 의무화되지 않았으므로, 가역적 원인 확인 등에 신중히 쓰되 맥박 확인을 지연시키거나 양질의 CPR을 중단시키지 않아야 한다. 기관 차원에서는 CCUS 역량이 기대되는 기본 술기로 자리잡을 것을 대비해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39982182",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39982182/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000006530",
+            "url": "https://doi.org/10.1097/CCM.0000000000006530"
+          },
+          {
+            "label": "웹 — SCCM — Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024 (official page)",
+            "url": "https://sccm.org/clinical-resources/guidelines/guidelines/guidelines-on-adult-critical-care-ultrasonography-focused-update-2024"
+          },
+          {
+            "label": "웹 — Guideline Central — SCCM Guidelines for Adult Critical Care Ultrasonography (guideline summary)",
+            "url": "https://www.guidelinecentral.com/guideline/4375492/"
+          },
+          {
+            "label": "웹 — Current Cardiology Reports (2025) — Point-of-Care Ultrasonography in the Critical Care Unit: An Update (PMC11829842)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11829842/"
+          },
+          {
+            "label": "웹 — PubMed — Society of Critical Care Medicine Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024 (39982182)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39982182/"
+          },
+          {
+            "label": "웹 — PubMed — Executive Summary: Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024 (39982181)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39982181/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-10"
     }
   ],
   "rejected": [
@@ -57836,7 +58077,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-08T23:38:22.331Z",
+      "discoveredAt": "2026-09-09T23:30:21.555Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -57931,7 +58172,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-08T23:38:22.331Z",
+      "discoveredAt": "2026-09-09T23:30:21.555Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -58093,7 +58334,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-08T23:38:22.331Z",
+      "discoveredAt": "2026-09-09T23:30:21.555Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -58122,7 +58363,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-08T23:38:22.331Z",
+      "discoveredAt": "2026-09-09T23:30:21.555Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -58155,7 +58396,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-08T23:38:22.331Z",
+      "discoveredAt": "2026-09-09T23:30:21.555Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -58227,9 +58468,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260909_083242:guideline:2026-09-09",
+    "runId": "trend_review_20260910_082530:guideline:2026-09-10",
     "outcome": "published",
-    "publishedId": "pmid:42708190",
+    "publishedId": "pmid:39982182",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -58254,15 +58495,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 146,
+        "mergedTotal": 153,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/10",
-          "maxDate": "2026/09/09"
+          "minDate": "2026/08/11",
+          "maxDate": "2026/09/10"
         },
         "retmax": 60,
         "topics": [
@@ -58270,17 +58511,17 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 59,
-            "idsFetched": 59,
-            "truncated": false,
+            "totalFound": 61,
+            "idsFetched": 60,
+            "truncated": true,
             "error": null
           },
           {
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -58297,8 +58538,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 22,
+            "idsFetched": 22,
             "truncated": false,
             "error": null
           },
@@ -58306,8 +58547,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 23,
-            "idsFetched": 23,
+            "totalFound": 26,
+            "idsFetched": 26,
             "truncated": false,
             "error": null
           },
@@ -58366,7 +58607,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 131,
+        "topicOnlyCount": 138,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -58378,9 +58619,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 146,
-          "enriched": 146,
-          "withAbstract": 110,
+          "requested": 153,
+          "enriched": 153,
+          "withAbstract": 119,
           "error": null
         }
       },
@@ -58439,19 +58680,19 @@
         "error": null
       },
       "decisions": {
-        "queued": 225,
-        "needsReview": 448,
+        "queued": 223,
+        "needsReview": 451,
         "rejected": 126,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42708190",
+        "candidateId": "pmid:39982182",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-08T23:41:20.043Z",
+  "updatedAt": "2026-09-09T23:33:42.747Z",
   "configVersion": "guideline-v2"
 }

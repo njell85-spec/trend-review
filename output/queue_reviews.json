@@ -513,23 +513,6 @@
       "status": "queued"
     },
     {
-      "pmid": "41247499",
-      "title": "Bedside thoracic echography in ICU: new insights for acute circulatory and respiratory failure.",
-      "journal": "Intensive Care Med",
-      "score": 8,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ICU 흉부초음파, 순환·호흡부전 술기 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "41359028",
       "title": "Current standard of care for septic shock.",
       "journal": "Intensive Care Med",
@@ -8822,6 +8805,110 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41247499",
+      "title": "Bedside thoracic echography in ICU: new insights for acute circulatory and respiratory failure.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 흉부초음파, 순환·호흡부전 술기 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-10",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41247499",
+          "title": "Bedside thoracic echography in ICU: new insights for acute circulatory and respiratory failure.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-11-17",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41247499/",
+          "doi": "10.1007/s00134-025-08189-1"
+        },
+        "title_ko": "중환자실에서의 침상 흉부 초음파: 급성 순환부전 및 호흡부전에 대한 새로운 통찰",
+        "scope_ko": "이 종설은 쇼크 및/또는 급성 호흡곤란 환자에서 폐 초음파와 경흉부 심초음파를 동시에 시행하는 '흉부 초음파(thoracic ultrasound)'가 진단 정확도와 치료 결정에 어떻게 기여하는지를 다루는 서술적(narrative) 리뷰입니다. 쇼크의 다섯 가지 주요 혈역학 프로파일을 식별하는 기준과, 심인성 폐부종·ARDS·폐렴·흉수·기흉을 감별하는 초음파 지표, 그리고 침상에서 쓸 수 있는 실용적 알고리즘을 제시합니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "배경 — 중환자실의 두 축, 순환부전과 호흡부전",
+            "body_ko": "중환자 진료에서 혈역학적 부전(순환부전)과 호흡부전은 가장 흔한 두 가지 장기 부전 형태이며, 서로 흔히 동반됩니다. 쇼크 및/또는 급성 호흡곤란이 있는 상황에서 흉부 초음파(thoracic ultrasound)는 폐 초음파(lung ultrasound)와 경흉부 심초음파(transthoracic echocardiography)를 동시에 함께 사용하는 것을 의미합니다. 저자들은 철저한 임상 평가가 여전히 근본이라는 점을 전제로 두고, 그 위에 흉부 초음파를 더하는 접근을 논합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단적 가치와 생존 영향 — 확립된 것과 아직 논쟁 중인 것",
+            "body_ko": "현재 문헌에 따르면, 기존의 통상적 진찰에 흉부 초음파를 추가하면 진단 정확도가 향상되고, 쇼크 및/또는 급성 호흡부전 상황에서 신속하고 적절한 치료 결정을 비침습적으로 내릴 수 있게 됩니다. 다만 저자들은 이 접근이 생존율(survival)에 미치는 영향은 아직 논쟁 중임을 분명히 하고 있습니다. 즉 진단 성능과 의사결정 측면의 이득은 뒷받침되지만, 사망률 개선이라는 최종 결과에 대해서는 단정하지 않는다는 점을 그대로 유지합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "쇼크의 다섯 가지 주요 혈역학 프로파일",
+            "body_ko": "이 리뷰는 쇼크 상황에서 다섯 가지 주요 혈역학 프로파일(five main hemodynamic profiles)을 식별하는 데 도움이 되는 기준들을 정리합니다. (초록 수준에서는 이 다섯 프로파일 각각의 세부 심초음파 기준이 명시되지 않았으며, 본문 전문에 해당 판별 기준이 제시되어 있습니다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "급성 호흡부전 원인의 감별 — 심인성 폐부종·ARDS·폐렴·흉수·기흉",
+            "body_ko": "저자들은 심인성 폐부종(cardiogenic pulmonary edema), 급성 호흡곤란증후군(ARDS), 폐렴(pneumonia), 흉수(pleural effusion), 기흉(pneumothorax)을 서로 구분(discriminate)할 수 있게 해 주는 초음파 종말점(endpoints)들을 요약합니다. 이 다섯 가지가 급성 호흡부전에서 감별해야 할 핵심 병태들로 제시됩니다. (각 지표의 구체적 역치와 소견은 본문 전문에 기술되어 있습니다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "침상 관리 알고리즘",
+            "body_ko": "이 종설은 쇼크 및/또는 호흡부전을 침상에서 관리하기 위한 실용적(pragmatic) 알고리즘을 제안합니다. 즉 개별 초음파 소견의 나열에 그치지 않고, 순환부전·호흡부전 상황에서 의사결정으로 이어지는 실무적 흐름의 형태로 제시하는 것이 이 리뷰의 특징입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "미래 전망 — 인공지능과 자동 계측",
+            "body_ko": "현재의 데이터는 인공지능(artificial intelligence)과 자동 계측(automated measurements)이 가까운 미래에 흉부 초음파의 진단 성능, 재현성(reproducibility), 사용 편의성(ease of use), 그리고 교육 용이성(teachability)을 크게 향상시킬 것임을 시사한다고 저자들은 전망합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 폐 초음파 프로파일로 급성 호흡부전 원인을 감별하는 방법(BLUE-protocol)",
+            "body_ko": "이 논문의 본문 전문을 공개 경로에서 확보하지 못했기에, 동일 주제(폐 초음파를 이용한 급성 호흡부전 원인 감별)를 다룬 권위 있는 공개 리뷰(Lichtenstein, 'Lung ultrasound in the critically ill')의 내용을 별도로 보강합니다 — 이 논문 자체의 서술은 아닙니다.\n\n기본 소견: A-line은 흉막선의 수평 반복 허상으로 흉막 아래 공기를 시사하고, B-line(lung rockets)은 흉막선에서 시작해 lung sliding과 함께 움직이는 혜성꼬리 허상입니다. 두 갈비뼈 사이에서 B-line이 3개 이상이면 'lung-rockets'로 부릅니다. lung sliding은 흉막선의 왕복 움직임으로, 기흉에서는 소실됩니다. lung point는 기흉에 특이적(pathognomonic)인 소견입니다.\n\nBLUE-protocol 프로파일: A-profile(전방 lung sliding + A-line)은 정상 또는 (DVT 동반 시) 폐색전을 시사하고, B-profile(전방 lung sliding + lung rockets)은 혈역학적/심인성 폐부종을 97% 민감도로 시사합니다. B'-profile(lung sliding 소실을 동반한 B), A/B-profile, C-profile(전방 폐경화)은 폐렴을 시사하며, A'-profile(lung sliding 소실을 동반한 A)은 기흉을 시사하되 lung point로 확진합니다.\n\n심인성 폐부종 vs ARDS: 심인성 폐부종은 여출액(transudate)으로 lung sliding이 보존되며 대개 균질한 양측성 B-profile(약 97%)을 만듭니다. 반면 폐렴/삼출성 병변은 삼출액(exudate)으로 B'-profile을 만드는 경향이 있고, ARDS는 폐렴 양상의 프로파일을 약 86%에서 보이며 아껴진 정상 구역(spared areas), 불규칙·비후된 흉막선, 흉막하 경화, 비균질 분포를 특징으로 합니다.\n\n기타 소견: 흉수는 quad sign과 sinusoid sign으로 확인하고 안전한 천자를 위해 흡기 시 15 mm 간격을 확보합니다. 폐렴과 무기폐는 dynamic air bronchogram과 lung pulse로 감별합니다. 기흉에서는 M-mode의 stratosphere sign과 lung point(민감도 약 66%)를 확인하며, 측방 lung point는 배액 필요성과 더 높게 연관됩니다. BLUE-protocol은 급성 호흡부전의 약 90.5% 정확도가 보고되어 있습니다.\n— 보강 출처: Lichtenstein D. Lung ultrasound in the critically ill (PMC open access) (https://pmc.ncbi.nlm.nih.gov/articles/PMC3895677/)",
+            "origin": "augmented",
+            "sourceLabel": "Lichtenstein D. Lung ultrasound in the critically ill (PMC open access)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3895677/"
+          },
+          {
+            "heading_ko": "[웹 보강] 쇼크에서 심초음파의 위치와 분류",
+            "body_ko": "이 역시 본문 전문 확보 실패를 보완하기 위한 별도 보강으로, 쇼크의 심초음파적 접근을 다룬 공개 리뷰('Detailing the cardiovascular profile in shock patients')의 내용입니다 — 이 논문 자체의 서술이 아닙니다. 해당 리뷰는 심초음파를 쇼크 유형을 평가하는 '선호되는 초기 검사 수단(preferred initial modality)'으로 규정하고, 쇼크를 저혈량성(hypovolemic)·심인성(cardiogenic)·폐쇄성(obstructive)·분포성(distributive/vasoplegic)의 네 고전적 범주로 신속히 분류하는 데 심초음파가 유용함을 강조합니다. 이는 본 논문이 제시하는 '다섯 가지 혈역학 프로파일'의 배경 틀로 참고할 수 있으나, 다섯 프로파일 각각의 세부 기준은 본 논문 전문을 확인해야 합니다.\n— 보강 출처: Detailing the cardiovascular profile in shock patients (PMC open access) (https://pmc.ncbi.nlm.nih.gov/articles/PMC5751637/)",
+            "origin": "augmented",
+            "sourceLabel": "Detailing the cardiovascular profile in shock patients (PMC open access)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5751637/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급실/중환자실 침상에서 쇼크나 급성 호흡곤란 환자를 볼 때, 폐 초음파와 경흉부 심초음파를 통상 진찰에 함께 더하면 진단 정확도가 높아지고 더 빠르고 적절한 치료 결정을 비침습적으로 내릴 수 있습니다. 다만 이 접근이 생존율을 개선한다는 근거는 아직 논쟁 중이므로, 초음파 소견은 철저한 임상 평가를 대체하는 것이 아니라 보완하는 것으로 자리매김해야 합니다. 향후 AI·자동 계측이 재현성과 사용·교육 편의성을 높여 줄 것으로 기대됩니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41247499",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41247499/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08189-1",
+            "url": "https://doi.org/10.1007/s00134-025-08189-1"
+          },
+          {
+            "label": "웹 — ESICM — ICM Latest Issue (이 논문을 Narrative Review로 수록·인용)",
+            "url": "https://www.esicm.org/icm-latest-issue-latest-results-from-sepsis-rrt-septic-shock-studies/"
+          },
+          {
+            "label": "웹 — Lichtenstein D. Lung ultrasound in the critically ill (PMC3895677)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3895677/"
+          },
+          {
+            "label": "웹 — Detailing the cardiovascular profile in shock patients (PMC5751637)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5751637/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -8879,9 +8966,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-09",
+    "date": "2026-09-10",
     "outcome": "published",
-    "publishedId": "39550175"
+    "publishedId": "41247499"
   },
-  "updatedAt": "2026-09-09"
+  "updatedAt": "2026-09-10"
 }
