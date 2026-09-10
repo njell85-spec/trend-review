@@ -572,5 +572,16 @@
     "rerankPoolSize": 10,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42087223",
+    "title": "Prehospital resuscitative endovascular balloon occlusion of the aorta in non-tra",
+    "date": "2026-09-11",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 10,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]

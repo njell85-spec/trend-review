@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-09T23:30:29.650Z"
+      "supersededAt": "2026-09-10T23:24:43.853Z"
     },
     {
       "id": "pmid:38531812",
@@ -31828,7 +31828,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34520,7 +34520,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37437,73 +37437,6 @@
         "reason": "노인 임상영양·수분 지침, 침상 응급 무관",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:41773928",
-      "pmid": "41773928",
-      "title": "Executive Summary: Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With Acute Respiratory Distress Syndrome.",
-      "pubDate": "2026 Mar 1",
-      "journal": "Critical care medicine",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:51.509Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [
-        "acute respiratory distress syndrome",
-        "critical care",
-        "critical illness",
-        "intensive care unit",
-        "neuromuscular blocking agents",
-        "practice guideline"
-      ],
-      "doi": "10.1097/CCM.0000000000007001",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "sccm"
-      },
-      "priority": 10,
-      "breakdown": {
-        "authority": 4,
-        "topic": 2,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "sccm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:05.137Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "SCCM ARDS 신경근차단 지침, 중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "sccm|executive-summary-administration-neuromuscular-blockade-adults-with-acute-respiratory-distress-syndrome",
-      "supersedes": []
     },
     {
       "id": "pmid:41760103",
@@ -41211,7 +41144,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43040,7 +42973,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43193,7 +43126,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -43788,7 +43721,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -44116,7 +44049,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44628,7 +44561,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45044,7 +44977,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45643,7 +45576,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -45931,7 +45864,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46005,7 +45938,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46598,7 +46531,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46658,7 +46591,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -46731,7 +46664,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46805,7 +46738,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -46887,7 +46820,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46967,7 +46900,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47046,7 +46979,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47126,7 +47059,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47190,7 +47123,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47336,7 +47269,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47406,7 +47339,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47478,7 +47411,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47548,7 +47481,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47631,7 +47564,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47694,7 +47627,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47930,7 +47863,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48002,7 +47935,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -48063,7 +47996,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48139,7 +48072,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48212,7 +48145,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -48296,7 +48229,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -48347,7 +48280,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -48355,7 +48288,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -48426,7 +48359,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "recommendations",
       "reasons": [
@@ -48434,7 +48367,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-09T23:30:28.724Z",
+      "lastSeenAt": "2026-09-10T23:24:42.925Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -53042,6 +52975,166 @@
         ]
       },
       "publishedAt": "2026-09-10"
+    },
+    {
+      "id": "pmid:41773928",
+      "pmid": "41773928",
+      "title": "Executive Summary: Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With Acute Respiratory Distress Syndrome.",
+      "pubDate": "2026 Mar 1",
+      "journal": "Critical care medicine",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:51.509Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "acute respiratory distress syndrome",
+        "critical care",
+        "critical illness",
+        "intensive care unit",
+        "neuromuscular blocking agents",
+        "practice guideline"
+      ],
+      "doi": "10.1097/CCM.0000000000007001",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "sccm"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "sccm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:05.137Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "SCCM ARDS 신경근차단 지침, 중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "sccm|executive-summary-administration-neuromuscular-blockade-adults-with-acute-respiratory-distress-syndrome",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41773928",
+          "title": "Executive Summary: Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With Acute Respiratory Distress Syndrome.",
+          "journal": "Critical care medicine",
+          "pubDate": "2026 Mar 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41773928/",
+          "doi": "10.1097/CCM.0000000000007001"
+        },
+        "org": "SCCM (Society of Critical Care Medicine) / American College of Critical Care Medicine",
+        "version": "2026",
+        "title_ko": "성인 급성호흡곤란증후군(ARDS) 환자에서 신경근차단제 투여에 관한 SCCM 가이드라인 — 요약본 (2026)",
+        "scope_ko": "성인 ARDS 환자에서 지속적 신경근차단제(NMBA) 사용에 관한 가이드라인이다. 1995·2002·2016판에 이은 네 번째 개정으로, 이번에는 대상을 '중증 치료 전반의 신경근차단'에서 좁혀 NMBA 지속 투여의 가장 흔한 적응증이자 사망률이 높은 ARDS에 특화했다. NMBA 사용 여부, 용량 전략(고정용량 vs 적정), 진정·진통 깊이 평가/모니터링, 복와위(prone) 환자에서의 NMBA 사용을 다룬다.",
+        "summary": [
+          "In adults with ARDS and PaO2/FiO2 < 150 who remain persistently hypoxemic and/or are not meeting mechanical ventilation targets on sedation, the panel suggests using NMBAs over not using them (conditional recommendation, low certainty of evidence).",
+          "For NMBA dosing, the panel suggests either a fixed-dose strategy without monitoring depth of neuromuscular blockade OR a titration-based strategy with monitoring of blockade depth — both are acceptable (conditional recommendation, very low certainty).",
+          "Before initiating NMBA, the panel suggests using either a scale-based or a nonscale-based evaluation of depth of analgesia and sedation (conditional recommendation, very low certainty).",
+          "During NMBA administration, the panel suggests either a monitoring-based or a no-monitoring strategy for depth of analgesia and sedation (conditional recommendation, very low certainty).",
+          "In adult ARDS patients who are in the prone position, the panel suggests either administering or not administering neuromuscular blockade — equipoise (conditional recommendation, very low certainty).",
+          "All five recommendations are conditional; the first carries low certainty and the remaining four very low certainty, developed by a 21-member multidisciplinary panel using GRADE methodology."
+        ],
+        "summary_ko": [
+          "PaO2/FiO2 < 150이면서 진정 상태에서도 지속적 저산소혈증이거나 기계환기 목표에 도달하지 못하는 성인 ARDS 환자에서는 NMBA를 사용하지 않는 것보다 사용할 것을 제안한다(조건부 권고, 근거수준 낮음).",
+          "NMBA 용량 전략은 신경근차단 깊이를 모니터링하지 않는 고정용량 전략 또는 차단 깊이를 모니터링하는 적정(titration) 전략 중 어느 쪽이든 사용할 것을 제안한다 — 둘 다 허용(조건부 권고, 근거수준 매우 낮음).",
+          "NMBA 시작 전에는 진통·진정 깊이 평가를 척도 기반(scale-based) 또는 비척도 기반(nonscale-based) 중 어느 방법으로든 시행할 것을 제안한다(조건부 권고, 근거수준 매우 낮음).",
+          "NMBA 투여 중에는 진통·진정 깊이에 대해 모니터링 기반 또는 비모니터링 전략 중 어느 쪽이든 사용할 것을 제안한다(조건부 권고, 근거수준 매우 낮음).",
+          "복와위(prone) 상태인 성인 ARDS 환자에서는 신경근차단을 시행하거나 시행하지 않는 것 어느 쪽이든 제안한다 — equipoise(조건부 권고, 근거수준 매우 낮음).",
+          "다섯 가지 권고 모두 조건부이며, 첫 번째는 근거수준 낮음, 나머지 넷은 매우 낮음이다. 21인의 다학제 패널이 GRADE 방법론으로 개발했다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "가이드라인 범위(대상) 축소",
+            "detail": "The 2016 guideline (Murray et al., Crit Care Med 2016;44(11):2079–2103) covered 'sustained neuromuscular blockade in the adult critically ill patient' broadly across many indications. The 2026 version narrows its scope specifically to adults with ARDS, chosen because ARDS is the most common indication for sustained NMBA and carries high mortality. This is a structural change from a general-ICU document to an ARDS-focused one.",
+            "detail_ko": "2016판(Murray 등, Crit Care Med 2016;44(11):2079–2103)은 '성인 중환자에서의 지속적 신경근차단'을 여러 적응증에 걸쳐 폭넓게 다뤘다. 2026판은 대상을 성인 ARDS로 특정해 좁혔는데, ARDS가 지속적 NMBA의 가장 흔한 적응증이자 사망률이 높기 때문이다. 즉 범용 중환자 문서에서 ARDS 특화 문서로의 구조적 전환이다."
+          },
+          {
+            "topic": "ARDS에서 NMBA 사용 권고의 강도 약화",
+            "detail": "The 2026 ARDS recommendation is now conditional with LOW certainty of evidence. Whereas the earlier recommendation to use early NMBA in severe ARDS leaned heavily on the single-center ACURASYS trial (mortality benefit), the panel now weighs the subsequent multicenter PETAL-ROSE (2019) trial, which found no significant 90-day mortality difference between early cisatracurium and a light-sedation strategy. The net result is a weaker, conditional 'suggest using' statement rather than a strong endorsement.",
+            "detail_ko": "2026판의 ARDS 권고는 이제 근거수준 '낮음'의 조건부 권고다. 과거에는 중증 ARDS에서 조기 NMBA 사용 권고가 단일기관 ACURASYS 시험(사망률 개선)에 크게 의존했으나, 이번 패널은 이후의 다기관 PETAL-ROSE(2019) 시험(조기 cisatracurium과 경(輕)진정 전략 간 90일 사망률 차이 없음)을 함께 반영했다. 그 결과 강한 권고가 아니라 더 약한 조건부 '사용을 제안' 수준으로 조정됐다."
+          },
+          {
+            "topic": "새로 추가된 임상질문 — 용량 전략(고정용량 vs 적정)",
+            "detail": "The 2026 guideline adds a new question not addressed in 2016: whether to give NMBA as a fixed dose without depth monitoring or as a titrated dose with monitoring of blockade depth. The panel found equipoise and issued a conditional recommendation (very low certainty) permitting either strategy.",
+            "detail_ko": "2026판은 2016판에 없던 새 질문을 추가했다: NMBA를 차단 깊이 모니터링 없이 고정용량으로 줄 것인가, 아니면 차단 깊이를 모니터링하며 적정할 것인가. 패널은 equipoise로 판단해 두 전략 모두 허용하는 조건부 권고(근거수준 매우 낮음)를 냈다."
+          },
+          {
+            "topic": "새로 추가된 임상질문 — 복와위(prone) 환자에서의 NMBA",
+            "detail": "Reflecting the rising use of prone positioning since 2016, the 2026 guideline newly addresses whether to administer NMBA in ARDS patients who are proned. The panel found equipoise and suggests either administering or withholding NMBA (conditional, very low certainty).",
+            "detail_ko": "2016판 이후 복와위 사용이 늘어난 현실을 반영해, 2026판은 복와위 상태의 ARDS 환자에게 NMBA를 줄지를 새로 다뤘다. 패널은 equipoise로 판단해 투여·비투여 어느 쪽이든 제안한다(조건부, 근거수준 매우 낮음)."
+          },
+          {
+            "topic": "새로 추가된 임상질문 — 진정·진통 깊이 평가/모니터링",
+            "detail": "Reflecting evolving sedation strategies, the 2026 guideline newly addresses how to assess analgesia/sedation depth both BEFORE starting NMBA (scale-based vs nonscale-based evaluation) and DURING NMBA administration (monitoring-based vs no-monitoring). Both were issued as conditional recommendations with very low certainty, with either option acceptable.",
+            "detail_ko": "진정 전략의 변화를 반영해, 2026판은 진통·진정 깊이 평가를 NMBA '시작 전'(척도 기반 vs 비척도 기반)과 '투여 중'(모니터링 기반 vs 비모니터링) 두 시점에서 새로 다뤘다. 둘 다 어느 방법이든 허용하는 조건부 권고(근거수준 매우 낮음)로 제시됐다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "발행 정보 및 개발 방식(2차 요약)",
+            "body_ko": "SCCM 공식 페이지와 University of Arizona/저널 색인에 따르면, 전문(full guideline)과 요약본(executive summary)은 Critical Care Medicine 2026년 3월(제54권 3호, 요약본 pp.630–633)에 실렸다. 개발은 American College of Critical Care Medicine 이사회가 소집한 21인 다학제 패널(중환자의학·간호·호흡치료·약리학·외과·신경과·마취과 및 방법론 전문가 2인)이 GRADE 방법론으로 수행했다. (지침 권고 자체가 아니라 서지·개발 절차 정보다.)",
+            "sourceLabel": "SCCM — Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS",
+            "sourceUrl": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-administration-of-neuromuscular-blockade"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, early NMBA remains a reasonable option for adults with moderate-to-severe ARDS (PaO2/FiO2 < 150) who stay hypoxemic or fail vent targets despite adequate sedation, but the weak/low-certainty language means it should be a targeted rescue decision rather than a routine reflex in every severe ARDS patient. Because the panel found equipoise on dosing, monitoring, and prone-position use, EM/CCM clinicians have latitude to follow local protocols — a fixed cisatracurium dose without train-of-four monitoring is acceptable, and NMBA is not mandatory simply because a patient is being proned. Ensure adequate analgesia and deep sedation before and during paralysis, but neither a validated sedation scale nor device-based monitoring is required over clinical assessment. Overall the guideline supports a more individualized, less protocolized approach than a blanket 'paralyze all severe ARDS' practice.",
+        "practiceImpact_ko": "침상에서 조기 NMBA는 적절한 진정에도 저산소혈증이 지속되거나 기계환기 목표에 도달하지 못하는 중등도–중증 ARDS(PaO2/FiO2 < 150) 성인에게 여전히 합리적 선택이지만, 약한/낮은 근거 표현은 이를 모든 중증 ARDS에 반사적으로 적용하기보다 표적화된 구조(rescue) 결정으로 두라는 의미다. 용량·모니터링·복와위 사용에서 패널이 equipoise로 결론냈으므로, EM/CCM 임상의는 기관 프로토콜을 따를 재량이 있다 — train-of-four 모니터링 없이 cisatracurium 고정용량을 쓰는 것도 허용되며, 단지 복와위라는 이유로 NMBA가 필수인 것은 아니다. 마비 전·중 충분한 진통과 깊은 진정을 보장하되, 검증된 진정 척도나 기기 기반 모니터링을 임상 평가보다 반드시 우선할 필요는 없다. 전반적으로 이 가이드라인은 '중증 ARDS면 모두 마비'라는 일괄 방식보다 더 개별화되고 덜 획일적인 접근을 지지한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41773928",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41773928/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000007001",
+            "url": "https://doi.org/10.1097/CCM.0000000000007001"
+          },
+          {
+            "label": "웹 — SCCM — Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS (official page)",
+            "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-administration-of-neuromuscular-blockade"
+          },
+          {
+            "label": "웹 — Guideline Central — SCCM NMBA in Adults With ARDS Guideline Summary (guideline/5120843)",
+            "url": "https://www.guidelinecentral.com/guideline/5120843/"
+          },
+          {
+            "label": "웹 — Guideline Central — 2026 SCCM NMBA in ARDS Guideline Spotlight (insights)",
+            "url": "https://www.guidelinecentral.com/insights/mar-2026-sccm-neuromuscularblocadeadultsards-guideline-spotlight/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-11"
     }
   ],
   "rejected": [
@@ -58077,7 +58170,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-09T23:30:21.555Z",
+      "discoveredAt": "2026-09-10T23:24:33.787Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -58172,7 +58265,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-09T23:30:21.555Z",
+      "discoveredAt": "2026-09-10T23:24:33.787Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -58334,7 +58427,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-09T23:30:21.555Z",
+      "discoveredAt": "2026-09-10T23:24:33.787Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -58363,7 +58456,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-09T23:30:21.555Z",
+      "discoveredAt": "2026-09-10T23:24:33.787Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -58396,7 +58489,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-09T23:30:21.555Z",
+      "discoveredAt": "2026-09-10T23:24:33.787Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -58468,9 +58561,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260910_082530:guideline:2026-09-10",
+    "runId": "trend_review_20260911_081932:guideline:2026-09-11",
     "outcome": "published",
-    "publishedId": "pmid:39982182",
+    "publishedId": "pmid:41773928",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -58495,15 +58588,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 153,
+        "mergedTotal": 152,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/11",
-          "maxDate": "2026/09/10"
+          "minDate": "2026/08/12",
+          "maxDate": "2026/09/11"
         },
         "retmax": 60,
         "topics": [
@@ -58511,9 +58604,9 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 61,
-            "idsFetched": 60,
-            "truncated": true,
+            "totalFound": 58,
+            "idsFetched": 58,
+            "truncated": false,
             "error": null
           },
           {
@@ -58547,8 +58640,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 26,
-            "idsFetched": 26,
+            "totalFound": 27,
+            "idsFetched": 27,
             "truncated": false,
             "error": null
           },
@@ -58607,7 +58700,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 138,
+        "topicOnlyCount": 137,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -58619,9 +58712,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 153,
-          "enriched": 153,
-          "withAbstract": 119,
+          "requested": 152,
+          "enriched": 152,
+          "withAbstract": 118,
           "error": null
         }
       },
@@ -58674,25 +58767,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 223,
-        "needsReview": 451,
+        "queued": 224,
+        "needsReview": 449,
         "rejected": 126,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39982182",
+        "candidateId": "pmid:41773928",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-09T23:33:42.747Z",
+  "updatedAt": "2026-09-10T23:27:18.645Z",
   "configVersion": "guideline-v2"
 }
