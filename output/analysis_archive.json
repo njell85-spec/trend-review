@@ -2233,6 +2233,63 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-12",
+      "pmid": "41467753",
+      "title": "Risk of Developing Lower Limb Ischemia in Patients With Extracorporeal Cardiopulmonary Resuscitation: A Secondary Analysis of the Study of Advanced Cardiac Life Support for Ventricular Fibrillation With Extracorporeal Circulation in Japan II (SAVE-J II) Study.",
+      "title_ko": "체외순환 심폐소생술(ECPR) 환자에서 하지 허혈 발생 위험: SAVE-J II 연구의 이차 분석",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007010",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "병원 밖 심정지로 ECPR을 받은 성인 환자에서 하지 허혈 발생의 위험인자는 무엇이며, 예방적 distal perfusion catheter(DPC) 삽입이 이 위험을 낮추는가?",
+      "pico": {
+        "population": "[Japan] Adult patients who underwent ECPR for out-of-hospital cardiac arrest; a nationwide, multicenter, retrospective cohort from 36 institutions (2013–2018). Of the 969 patients, 72 (7.4%) developed lower limb ischemia.",
+        "intervention": "Prophylactic distal perfusion catheter (DPC) placement during venoarterial ECMO/ECPR cannulation (exposure; observational — no assigned intervention).",
+        "comparison": "Patients without prophylactic DPC placement / without lower limb ischemia; prophylactic DPC used in 4 (5.6%) of ischemia patients vs. 219 (24.4%) of non-ischemia patients (p < 0.001).",
+        "outcome": "Lower limb ischemia (defined as requirement for a therapeutic DPC, fasciotomy, or amputation). On multivariable logistic regression, prophylactic DPC placement was associated with lower risk (OR 0.20, 95% CI 0.07–0.55; p = 0.002), whereas cannulation-related bleeding (OR 1.83, 95% CI 1.06–3.14; p = 0.030) and cannula malposition (OR 3.81, 95% CI 1.68–8.64; p = 0.001) were associated with increased risk."
+      },
+      "pico_ko": {
+        "population": "[일본] 병원 밖 심정지(out-of-hospital cardiac arrest)로 ECPR을 받은 성인 환자; 36개 기관에서 시행된 전국 규모의 다기관 후향적 코호트(2013–2018). 총 969명 중 72명(7.4%)에서 하지 허혈이 발생했다.",
+        "intervention": "venoarterial ECMO/ECPR 삽관 시 예방적 distal perfusion catheter(DPC) 삽입(노출 변수 — 관찰연구로 배정된 중재는 없음).",
+        "comparison": "예방적 DPC를 삽입하지 않은 환자 / 하지 허혈이 없는 환자; 예방적 DPC는 허혈 환자 4명(5.6%) 대 비허혈 환자 219명(24.4%)에서 사용됨(p < 0.001).",
+        "outcome": "하지 허혈(치료적 DPC, fasciotomy, 또는 절단이 필요한 경우로 정의). 다변량 로지스틱 회귀에서 예방적 DPC 삽입은 위험 감소와 연관(OR 0.20, 95% CI 0.07–0.55; p = 0.002), 반면 삽관 관련 출혈(OR 1.83, 95% CI 1.06–3.14; p = 0.030)과 캐뉼라 위치이상(cannula malposition)(OR 3.81, 95% CI 1.68–8.64; p = 0.001)은 위험 증가와 연관되었다."
+      },
+      "keyFindings": [
+        "Among 969 adult OHCA patients undergoing ECPR, 72 (7.4%) developed lower limb ischemia (requiring therapeutic DPC, fasciotomy, or amputation).",
+        "Prophylactic DPC placement was independently protective (OR 0.20, 95% CI 0.07–0.55; p = 0.002) and was used far less in ischemia patients (5.6% vs. 24.4%; p < 0.001).",
+        "Cannulation-related bleeding (OR 1.83, 95% CI 1.06–3.14; p = 0.030) and cannula malposition (OR 3.81, 95% CI 1.68–8.64; p = 0.001) independently increased limb ischemia risk."
+      ],
+      "keyFindings_ko": [
+        "ECPR을 받은 969명의 성인 OHCA 환자 중 72명(7.4%)에서 하지 허혈이 발생했다(치료적 DPC, fasciotomy, 또는 절단 필요).",
+        "예방적 DPC 삽입은 독립적 보호 인자였으며(OR 0.20, 95% CI 0.07–0.55; p = 0.002), 허혈 환자에서 훨씬 적게 사용되었다(5.6% 대 24.4%; p < 0.001).",
+        "삽관 관련 출혈(OR 1.83, 95% CI 1.06–3.14; p = 0.030)과 cannula malposition(OR 3.81, 95% CI 1.68–8.64; p = 0.001)은 독립적으로 하지 허혈 위험을 높였다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41467753",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41467753/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007010",
+          "url": "https://doi.org/10.1097/CCM.0000000000007010"
+        },
+        {
+          "label": "웹 — PubMed — SAVE-J II lower limb ischemia (PMID 41467753)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41467753/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — SAVE-J II lower limb ischemia (PMID 41467753)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41467753/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
