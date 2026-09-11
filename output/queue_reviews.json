@@ -513,23 +513,6 @@
       "status": "queued"
     },
     {
-      "pmid": "41428205",
-      "title": "The medical management of acute respiratory distress syndrome.",
-      "journal": "Intensive Care Med",
-      "score": 8,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ARDS 내과적 관리, 중환자 호흡 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "41575283",
       "title": "What Is Sepsis, Who Gets It, How, and Why? The Keys to Unlocking Precision Medicine in Sepsis.",
       "journal": "Crit Care Med",
@@ -9007,6 +8990,109 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41428205",
+      "title": "The medical management of acute respiratory distress syndrome.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 내과적 관리, 중환자 호흡 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-12",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41428205",
+          "title": "The medical management of acute respiratory distress syndrome.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-12-22",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41428205/",
+          "doi": "10.1007/s00134-025-08251-y"
+        },
+        "title_ko": "급성호흡곤란증후군(ARDS)의 내과적 관리",
+        "scope_ko": "ARDS의 내과적·환기 관리에 관한 핵심 근거를 정리하고, 표현형 기반의 정밀 아형 분류 같은 새로운 개념을 탐색하며, 현재의 최선 진료와 향후 방향에 대한 로드맵을 제시하는 서술적(narrative) 종설입니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "종설의 문제의식과 범위 (초록 기반)",
+            "body_ko": "침상 모니터링의 발전과 표준 환기 진료의 패러다임 전환에도 불구하고 ARDS의 사망률은 여전히 높습니다. 저자들은 이 이질적(heterogeneous) 증후군의 관리에 대한 이해가, 공통의 치료 표적을 공유하는 정밀한 아형(subgroup)을 규정하는 방향으로 이동하고 있다고 봅니다. 이 서술적 종설은 ARDS의 내과적·환기 관리에 대한 핵심 근거를 요약하고, 부상하는 개념들을 탐색하며, 임상의에게 현재의 최선 진료를 위한 틀과 향후 가능한 방향에 대한 로드맵을 제시하는 것을 목적으로 합니다.\n\n(주의: 원문 전문은 유료 접근이라 확보하지 못했습니다. 이 절은 논문 자체가 공개한 초록에서만 옮긴 것이며, 아래 '보강' 표시가 붙은 절들은 원문이 아니라 별도의 2차 출처에서 가져온 내용입니다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "Global ARDS 정의로의 전환 (초록 기반)",
+            "body_ko": "최근의 Global ARDS 정의는 보다 실용적인(pragmatic) 접근을 채택하여, 시행되고 있는 중재(intervention)와 무관하게 더 넓은 환자 스펙트럼에서 더 이른 시점에 ARDS를 식별할 수 있게 합니다. 저자들은 이 정의의 변화가 ARDS를 조기에, 그리고 더 폭넓게 인지하도록 하는 방향성을 갖는다는 점을 강조합니다. (원문 초록 수준의 서술이며, 정의의 구체적 역치·범주는 아래 보강 절을 참고하십시오.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "표현형과 개인 맞춤형 관리로의 이행 (초록 기반)",
+            "body_ko": "저자들은 관리의 초점이 공통 치료 표적을 공유하는 정밀 아형을 규정하는 쪽으로 이동하고 있다고 서술합니다. 생리학적(physiological)·생물학적(biological)·방사선학적(radiological) 표현형이, 그동안 이득이 불확실(indeterminate benefit)했던 중재에 대한 반응을 수정(modify)할 수 있으며, 따라서 이들 표현형이 향후 개인 맞춤형(personalised) ARDS 관리의 중심이 될 잠재력을 갖는다고 봅니다. 즉, 전체 ARDS 집단에서 '평균적으로' 효과가 모호했던 치료라도 반응할 아형을 골라내면 이득이 드러날 수 있다는 관점입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] Global ARDS 정의의 구체적 기준",
+            "body_ko": "2차 출처에 따르면 최근의 Global ARDS 정의는 다음을 도입했습니다. ① 비삽관(non-intubated) 범주: 그 밖의 ARDS 기준을 충족하면서 고유량 비강 캐뉼라(HFNC)를 최소 30 L/min 유량으로 사용하는 환자도 진단 기준에 포함됩니다. ② SpO2:FiO2 비를 진단과 중증도 평가에 사용할 수 있으며, 이때 SpO2는 97% 미만이어야 합니다. ③ 양측 침윤(bilateral infiltrates)의 진단에 초음파(ultrasound)를 활용할 수 있습니다. ④ 자원이 제한된 환경을 위한 수정(modified) 정의에서는 PaO2:FiO2 역치나 PEEP 요건을 필수로 두지 않고 S:F 비로 대체할 수 있습니다. 이러한 변화는 동맥혈가스 분석이 어려운 환경에서도 ARDS 인지를 넓히려는 취지입니다. (원문이 초록에서 언급한 '더 넓은 스펙트럼·조기 식별'을 구체화한 배경 정보이며, 원문 본문의 진술이 아닙니다.)\n— 보강 출처: UMEM Educational Pearls (University of Maryland EM) — Global Definition of ARDS (https://medschool.umaryland.edu/em/cme/umem-educational-pearls/?id=4814)",
+            "origin": "augmented",
+            "sourceLabel": "UMEM Educational Pearls (University of Maryland EM) — Global Definition of ARDS",
+            "sourceUrl": "https://medschool.umaryland.edu/em/cme/umem-educational-pearls/?id=4814"
+          },
+          {
+            "heading_ko": "[웹 보강] 폐 보호 환기: 일회호흡량·평형압·구동압",
+            "body_ko": "ARDS 환기 관리의 핵심 배경은 ARDS Network가 확립한 폐 보호(lung-protective) 전략입니다. 일회호흡량(tidal volume)은 예측체중(PBW) 기준 약 6 mL/kg로 설정하고, 평형압(plateau pressure)은 30 cmH2O 이하를 목표로 합니다. 여기에 구동압(driving pressure, Δp = 평형압 − PEEP) 개념이 핵심 생리학적 표적으로 대두되어, 일회호흡량과 폐 유순도(compliance)를 통합해 실시간 조정을 안내합니다. (원문 초록이 언급한 '표준 환기 진료의 패러다임 전환'을 뒷받침하는 배경으로, 원문 본문 서술이 아닙니다.)\n— 보강 출처: PMC editorial — 'Take a deep breath: managing the challenges of ARDS cases' (https://pmc.ncbi.nlm.nih.gov/articles/PMC13140947/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC editorial — 'Take a deep breath: managing the challenges of ARDS cases'",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13140947/"
+          },
+          {
+            "heading_ko": "[웹 보강] PEEP 적정화, 복와위, 신경근차단, ECMO",
+            "body_ko": "PEEP은 고정된 프로토콜보다 산소화 반응·호흡역학·혈역학적 내약성에 근거해 개별화(individualize)하도록 권고됩니다. 복와위(prone positioning)는 PROSEVA 시험을 근거로 중증 ARDS의 표준으로 자리 잡았으며, 조기에 장시간(중앙값 하루 16시간 이상) 시행할 때 사망률 감소가 확인되었습니다. 신경근차단(cisatracurium을 이용한 단기 마비)은 중증 ARDS에서 이득을 보였으나, 조기 중증 ARDS·난치성 환자-인공호흡기 비동조·보호적 환기 달성 실패 등 선택된 환자로 한정하도록 권고됩니다. 정맥-정맥 체외막산소공급(VV-ECMO)은 최적화된 환기와 보조요법에도 불응하는 저산소혈증 또는 중증 호흡성 산증에 적응이 됩니다. (배경 정보이며 원문 본문 서술이 아닙니다.)\n— 보강 출처: PMC editorial — 'Take a deep breath: managing the challenges of ARDS cases' (https://pmc.ncbi.nlm.nih.gov/articles/PMC13140947/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC editorial — 'Take a deep breath: managing the challenges of ARDS cases'",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13140947/"
+          },
+          {
+            "heading_ko": "[웹 보강] 수액·스테로이드 및 아형별 치료 반응 차이",
+            "body_ko": "ARDS에서 보존적 수액(conservative fluid) 전략은 인공호흡 기간 단축 등 더 나은 결과와 연관됨이 확인되었습니다. 조기에 시작하여 감량(taper)하는 조기·장기·중등도 용량의 코르티코스테로이드는 인공호흡 기간을 줄일 수 있고 일부 코호트에서 사망률을 낮출 가능성이 있습니다. 또한 ARDS의 생물학적 아표현형(subphenotype)에 따라 치료 효과가 이질적으로 나타난다는 점이 지적되며, 향후 임상시험은 반응자를 층화(stratify)하거나 농축(enrich)해야 한다는 주장으로 이어집니다. 이는 원문 초록이 강조한 '표현형에 따른 반응 수정·개인 맞춤형 관리'와 방향을 같이합니다. (배경 정보이며 원문 본문 서술이 아닙니다.)\n— 보강 출처: PMC editorial — 'Take a deep breath: managing the challenges of ARDS cases' (https://pmc.ncbi.nlm.nih.gov/articles/PMC13140947/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC editorial — 'Take a deep breath: managing the challenges of ARDS cases'",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13140947/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "원문 초록의 범위 안에서 보면, 침상에서는 Global ARDS 정의를 통해 HFNC(≥30 L/min) 사용 환자나 SpO2:FiO2·초음파만으로도 ARDS를 더 이르고 넓게 인지할 수 있게 됩니다. 또한 '모든 ARDS에 동일 치료'가 아니라 생리·생물·영상 표현형에 따라 이득이 갈릴 수 있다는 관점을 갖고, 그동안 효과가 모호했던 중재를 아형 특성에 비추어 재검토하는 태도가 요구됩니다. 다만 구체적 환기·약물 역치는 원문 전문을 확인해야 하며, 위의 수치들은 보강 출처에서 가져온 배경 정보입니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41428205",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41428205/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08251-y",
+            "url": "https://doi.org/10.1007/s00134-025-08251-y"
+          },
+          {
+            "label": "웹 — Springer / Intensive Care Medicine — article landing page (abstract only, full text paywalled)",
+            "url": "https://link.springer.com/article/10.1007/s00134-025-08251-y"
+          },
+          {
+            "label": "웹 — PMC editorial — 'Take a deep breath: managing the challenges of ARDS cases'",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13140947/"
+          },
+          {
+            "label": "웹 — UMEM Educational Pearls (University of Maryland EM) — Global Definition of ARDS",
+            "url": "https://medschool.umaryland.edu/em/cme/umem-educational-pearls/?id=4814"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -9064,9 +9150,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-11",
+    "date": "2026-09-12",
     "outcome": "published",
-    "publishedId": "41359028"
+    "publishedId": "41428205"
   },
-  "updatedAt": "2026-09-11"
+  "updatedAt": "2026-09-12"
 }

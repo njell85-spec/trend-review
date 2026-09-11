@@ -583,5 +583,16 @@
     "rerankPoolSize": 10,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "41467753",
+    "title": "Risk of Developing Lower Limb Ischemia in Patients With Extracorporeal Cardiopul",
+    "date": "2026-09-12",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 9,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]
