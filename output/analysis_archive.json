@@ -2290,6 +2290,63 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-13",
+      "pmid": "42000026",
+      "title": "Long-term neurological outcomes after extracorporeal cardiopulmonary resuscitation for refractory cardiac arrest: a 14-year single-centre cohort study.",
+      "title_ko": "난치성 심정지에 대한 체외심폐소생술(ECPR) 후 장기 신경학적 결과: 14년간의 단일기관 코호트 연구",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111095",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "난치성 원내(IHCA) 및 원외(OHCA) 심정지에 대해 ECPR로 치료받은 성인에서 장기(6개월) 신경학적 결과는 어떠하며, 환자 선정을 위해 양호한 신경학적 예후를 독립적으로 예측하는 ECPR 전 인자는 무엇인가?",
+      "pico": {
+        "population": "[Italy] Adult patients treated with ECPR for in-hospital (IHCA) and out-of-hospital (OHCA) refractory cardiac arrest at an Italian ECMO centre between 2011 and 2024; 295 consecutive patients (117 IHCA; 178 OHCA).",
+        "intervention": "Extracorporeal Cardiopulmonary Resuscitation (ECPR) via Veno-Arterial Extracorporeal Membrane Oxygenation (ECMO) for refractory cardiac arrest.",
+        "comparison": "In-hospital cardiac arrest (IHCA, n=117) versus out-of-hospital cardiac arrest (OHCA, n=178); no non-ECPR control group.",
+        "outcome": "Long-term neurological performance measured by the Cerebral Performance Category (CPC) scale six months after hospital discharge: 17.3% achieved CPC 1-2 (28.2% IHCA vs 10.1% OHCA; p < 0.0001); 4.4% survived with severe long-term neurological sequelae (CPC 3-4)."
+      },
+      "pico_ko": {
+        "population": "[이탈리아] 2011년부터 2024년까지 이탈리아 ECMO 센터에서 원내(IHCA) 및 원외(OHCA) 난치성 심정지에 대해 ECPR로 치료받은 성인 환자; 연속 295명(IHCA 117명, OHCA 178명).",
+        "intervention": "난치성 심정지에 대한 정맥-동맥 체외막산소화(VA-ECMO)를 통한 체외심폐소생술(ECPR).",
+        "comparison": "원내 심정지(IHCA, n=117) 대 원외 심정지(OHCA, n=178); 비-ECPR 대조군은 없음.",
+        "outcome": "퇴원 6개월 후 Cerebral Performance Category(CPC) 척도로 측정한 장기 신경학적 수행능력: 17.3%가 CPC 1-2 달성(IHCA 28.2% 대 OHCA 10.1%; p < 0.0001), 4.4%는 중증 장기 신경학적 후유증(CPC 3-4)을 안고 생존."
+      },
+      "keyFindings": [
+        "Among 295 consecutive ECPR patients (117 IHCA; 178 OHCA) over 2011-2024, 17.3% achieved favourable neurological outcome (CPC 1-2) at six months, markedly higher in IHCA than OHCA (28.2% vs 10.1%; p < 0.0001).",
+        "Only 4.4% survived with severe long-term neurological sequelae (CPC 3-4), indicating relatively few survivors were left severely disabled.",
+        "Independent predictors of CPC 1-2 were younger age (OR 0.95 per year, 95% CI 0.92-0.98), initial shockable rhythm (aOR 2.7; 95% CI 1.11-7.04), and shorter low-flow duration (OR 0.95 per minute, 95% CI 0.93-0.97)."
+      ],
+      "keyFindings_ko": [
+        "2011-2024년 연속 ECPR 환자 295명(IHCA 117명, OHCA 178명) 중 17.3%가 6개월 시점에 양호한 신경학적 결과(CPC 1-2)를 달성했으며, IHCA가 OHCA보다 뚜렷이 높았음(28.2% 대 10.1%; p < 0.0001).",
+        "중증 장기 신경학적 후유증(CPC 3-4)을 안고 생존한 경우는 4.4%에 불과해, 중증 장애로 남은 생존자는 상대적으로 적었음.",
+        "CPC 1-2의 독립적 예측인자는 낮은 연령(OR 0.95/년, 95% CI 0.92-0.98), 초기 shockable rhythm(aOR 2.7; 95% CI 1.11-7.04), 짧은 low-flow 시간(OR 0.95/분, 95% CI 0.93-0.97)이었음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42000026",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42000026/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111095",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111095"
+        },
+        {
+          "label": "웹 — Resuscitation — official article page (Pozzi et al., 2026; S0300-9572(26)00141-3)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00141-3/pdf"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "Resuscitation — official article page (Pozzi et al., 2026; S0300-9572(26)00141-3)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00141-3/pdf",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
