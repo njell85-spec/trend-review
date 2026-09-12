@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-11T23:32:39.193Z"
+      "supersededAt": "2026-09-12T23:14:16.402Z"
     },
     {
       "id": "pmid:38531812",
@@ -31828,7 +31828,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34520,7 +34520,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -38862,73 +38862,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:41949219",
-      "pmid": "41949219",
-      "title": "The AHA/ACC Guideline for Pulmonary Embolism: A New Era in Diagnosis, Risk Assessment, and Management.",
-      "pubDate": "2026 Apr 7",
-      "journal": "Journal of the American College of Cardiology",
-      "publicationTypes": [
-        "Editorial"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:05.138Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [
-        "ACC",
-        "AHA",
-        "anticoagulation",
-        "fibrinolysis",
-        "guideline",
-        "pulmonary embolism",
-        "venous thromboembolism"
-      ],
-      "doi": "10.1016/j.jacc.2025.12.089",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "aha"
-      },
-      "priority": 10,
-      "breakdown": {
-        "authority": 4,
-        "topic": 2,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "conflicting-editorial-publication-type"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:19.239Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "AHA/ACC PE 지침 진단·위험층화·관리",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|acc-pulmonary-embolism-new-era-diagnosis-risk-assessment-management",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41933833",
       "pmid": "41933833",
       "title": "Executive summary of the consensus document for recommendations on the diagnosis of venous thromboembolism in pregnancy. Recommendations from the Spanish Society of Internal Medicine, the Spanish Society of Medical Radiology, the Spanish Society of Vascular Interventional Radiology, and the Spanish Society of Gynecology and Obstetrics 2025.",
@@ -41080,7 +41013,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42909,7 +42842,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43062,7 +42995,7 @@
         "format-evidence",
         "publisher-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -43657,7 +43590,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43985,7 +43918,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44497,7 +44430,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44913,7 +44846,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45512,7 +45445,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -45800,7 +45733,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46467,7 +46400,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46527,7 +46460,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -46600,7 +46533,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46674,7 +46607,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -46756,7 +46689,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46836,7 +46769,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -46915,7 +46848,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46995,7 +46928,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47059,7 +46992,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47205,7 +47138,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47275,7 +47208,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47347,7 +47280,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47417,7 +47350,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47500,7 +47433,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47563,7 +47496,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47799,7 +47732,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47871,7 +47804,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47932,7 +47865,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48008,7 +47941,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48081,7 +48014,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -48165,7 +48098,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -48224,7 +48157,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -48303,7 +48236,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-11T23:32:38.281Z",
+      "lastSeenAt": "2026-09-12T23:14:15.523Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -53251,6 +53184,186 @@
         ]
       },
       "publishedAt": "2026-09-12"
+    },
+    {
+      "id": "pmid:41949219",
+      "pmid": "41949219",
+      "title": "The AHA/ACC Guideline for Pulmonary Embolism: A New Era in Diagnosis, Risk Assessment, and Management.",
+      "pubDate": "2026 Apr 7",
+      "journal": "Journal of the American College of Cardiology",
+      "publicationTypes": [
+        "Editorial"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:05.138Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "ACC",
+        "AHA",
+        "anticoagulation",
+        "fibrinolysis",
+        "guideline",
+        "pulmonary embolism",
+        "venous thromboembolism"
+      ],
+      "doi": "10.1016/j.jacc.2025.12.089",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "conflicting-editorial-publication-type"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:19.239Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "AHA/ACC PE 지침 진단·위험층화·관리",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|acc-pulmonary-embolism-new-era-diagnosis-risk-assessment-management",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41949219",
+          "title": "The AHA/ACC Guideline for Pulmonary Embolism: A New Era in Diagnosis, Risk Assessment, and Management.",
+          "journal": "Journal of the American College of Cardiology",
+          "pubDate": "2026 Apr 7",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41949219/",
+          "doi": "10.1016/j.jacc.2025.12.089"
+        },
+        "org": "AHA/ACC (with ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN)",
+        "version": "2026",
+        "title_ko": "2026 급성 폐색전증(성인) 평가 및 관리에 관한 AHA/ACC 가이드라인",
+        "scope_ko": "성인 급성 폐색전증(acute PE)의 진단, 위험도 평가, 급성기 치료, 그리고 급성기 이후 추적까지를 포괄하는 AHA/ACC 최초의 종합 임상진료지침이다. 응급실 내원 시점부터 저위험 외래 관리 대상부터 혈역학적 붕괴 환자까지 전 중증도 스펙트럼을 다룬다.",
+        "summary": [
+          "Adopt the new AHA/ACC Acute PE Clinical Categories (A–E), an integrative severity scheme incorporating clinical severity scores, biomarkers, RV imaging, hemodynamics, and respiratory compromise, replacing the older 'massive/submassive/low-risk' terminology.",
+          "Use CTPA as the primary confirmatory imaging test; when CTPA cannot be performed, ventilation-perfusion (V/Q) scanning is an acceptable alternative.",
+          "For patients eligible for oral anticoagulation, use a DOAC in preference to a vitamin K antagonist (unless contraindicated) to reduce major bleeding and recurrent VTE (Class 1).",
+          "For hospitalized higher-severity patients requiring parenteral anticoagulation, low-molecular-weight heparin is preferred over unfractionated heparin (Class 1).",
+          "Multidisciplinary PE Response Team (PERT) assessment is recommended for higher-severity (Category C–E) patients to improve timeliness, risk stratification, therapy selection, and follow-up (Class 1).",
+          "Lower-severity patients (Categories A and B; e.g., PESI ≤85 / sPESI 0 / Bova ≤4) may be managed with early discharge or outpatient oral anticoagulation provided reliable access to anticoagulation and structured follow-up.",
+          "For the sickest patients with persistent hypotension/cardiopulmonary failure (Category E), systemic thrombolysis, catheter-directed thrombolysis, mechanical thrombectomy, and surgical embolectomy are reasonable options with comparable recommendation status (Class 2a); for incipient failure (Category D) and Category C3 these advanced therapies are of unclear benefit and 'may be considered' (Class 2b).",
+          "Extended anticoagulation beyond the initial 3–6 months is recommended for a first PE that is unprovoked or associated with persistent (non-reversible) risk factors."
+        ],
+        "summary_ko": [
+          "새 AHA/ACC 급성 PE 임상 카테고리(A–E)를 도입한다 — 임상 중증도 점수, 바이오마커, 우심실(RV) 영상, 혈역학, 호흡 손상을 통합한 중증도 분류로, 기존 'massive/submassive/저위험' 용어를 대체한다.",
+          "확진 영상은 CTPA를 1차로 사용한다. CTPA를 시행할 수 없으면 환기-관류(V/Q) 스캔이 대안이 된다.",
+          "경구 항응고가 가능한 환자에서는 (금기가 아니라면) VKA보다 DOAC를 우선한다 — 주요출혈과 재발성 VTE를 줄이기 위함(Class 1).",
+          "비경구 항응고가 필요한 입원 고중증 환자에서는 미분획 헤파린(UFH)보다 저분자량 헤파린(LMWH)을 우선한다(Class 1).",
+          "고중증(Category C–E) 환자에는 다학제 PERT(PE Response Team) 평가를 권고한다 — 치료 적시성·위험도 평가·치료 선택·추적을 개선(Class 1).",
+          "저중증 환자(Category A·B; 예: PESI ≤85 / sPESI 0 / Bova ≤4)는 신뢰할 만한 항응고 접근성과 구조화된 추적이 확보되면 조기 퇴원 또는 외래 경구 항응고로 관리할 수 있다.",
+          "지속적 저혈압/심폐부전을 보이는 최중증(Category E)에서는 전신 혈전용해, 카테터-유도 혈전용해, 기계적 혈전제거술, 외과적 색전제거술이 동등한 권고 수준의 선택지다(Class 2a). 초기 심폐부전(Category D)과 Category C3에서는 이들 고급 치료의 이득이 불확실해 '고려할 수 있음'(Class 2b) 수준이다.",
+          "초기 3–6개월 이후의 연장 항응고는 유발요인이 없거나(unprovoked) 지속적(비가역) 위험인자를 동반한 첫 PE에서 권고된다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "위험 분류 체계 (용어·프레임워크 전환)",
+            "detail": "Previous North American practice relied on the anatomic/hemodynamic terms 'massive,' 'submassive,' and 'low-risk' PE. The 2026 guideline replaces this with a five-tier AHA/ACC Acute PE Clinical Category scheme (A–E) that integrates clinical severity scores, cardiac biomarkers, RV imaging, hemodynamics, and respiratory status — shifting the focus from clot burden/anatomy to physiopathologic impact. Category A = subclinical/incidental; B = symptomatic, low severity (PESI ≤85, sPESI 0, Bova ≤4); C = symptomatic, elevated severity (PESI >85, sPESI ≥1, Bova >4); D = incipient cardiopulmonary failure (transient hypotension/normotensive shock physiology); E = persistent hypotension/cardiopulmonary failure (highest mortality).",
+            "detail_ko": "기존 북미 진료는 해부/혈역학 기반 용어인 'massive, submassive, low-risk'에 의존했다. 2026 지침은 이를 5단계 AHA/ACC 급성 PE 임상 카테고리(A–E)로 대체하는데, 임상 중증도 점수·심장 바이오마커·RV 영상·혈역학·호흡 상태를 통합한다 — 초점을 혈전량/해부에서 병태생리학적 영향으로 옮긴다. A=무증상/우연발견, B=증상+저중증(PESI ≤85, sPESI 0, Bova ≤4), C=증상+고중증(PESI >85, sPESI ≥1, Bova >4), D=초기 심폐부전(일시적 저혈압/정상혈압 쇼크 생리), E=지속적 저혈압/심폐부전(최고 사망률)."
+          },
+          {
+            "topic": "PERT 공식화",
+            "detail": "Prior guidance mentioned multidisciplinary teams only informally. The 2026 guideline gives a formal Class 1 recommendation for multidisciplinary PE Response Team (PERT) assessment in higher-severity (Category C–E) patients, explicitly to improve timeliness of care, risk stratification, therapy selection, and follow-up.",
+            "detail_ko": "이전 지침은 다학제 팀을 비공식적으로만 언급했다. 2026 지침은 고중증(Category C–E) 환자에서 다학제 PERT(PE Response Team) 평가를 공식 Class 1로 권고하며, 치료 적시성·위험도 평가·치료 선택·추적 개선을 명시적 목적으로 든다."
+          },
+          {
+            "topic": "경구 항응고제 선택 (DOAC 우선)",
+            "detail": "The guideline codifies DOACs over vitamin K antagonists (Class 1) for eligible patients unless contraindicated, citing lower major bleeding and reduced recurrent VTE — formalizing DOAC-first practice within a North American PE-specific document for the first time.",
+            "detail_ko": "지침은 금기가 아닌 적격 환자에서 VKA보다 DOAC를 우선(Class 1)한다고 명문화하며, 주요출혈 감소와 재발성 VTE 감소를 근거로 든다 — 북미 PE 전용 문서에서 DOAC-우선 진료를 처음으로 공식화한 것이다."
+          },
+          {
+            "topic": "비경구 항응고 (LMWH 우선)",
+            "detail": "For hospitalized higher-severity patients needing parenteral anticoagulation, low-molecular-weight heparin is preferred over unfractionated heparin (Class 1), reserving UFH for situations such as anticipated procedures, severe renal impairment, or hemodynamic instability.",
+            "detail_ko": "비경구 항응고가 필요한 입원 고중증 환자에서 UFH보다 LMWH를 우선(Class 1)하며, UFH는 시술 예정·중증 신기능저하·혈역학 불안정 등의 상황에 남긴다."
+          },
+          {
+            "topic": "외래·조기퇴원 관리 확대",
+            "detail": "The new low-severity categories formalize where outpatient/early-discharge care is appropriate: Category A patients may be safe for ED discharge without hospitalization, and Category B patients are generally eligible for early discharge on oral anticoagulation — conditioned on reliable anticoagulation access and structured follow-up.",
+            "detail_ko": "새 저중증 카테고리는 외래/조기퇴원 관리가 적절한 지점을 공식화한다: Category A는 입원 없이 응급실 퇴원이 안전할 수 있고, Category B는 대체로 경구 항응고로 조기퇴원이 가능하다 — 신뢰할 만한 항응고 접근성과 구조화된 추적을 조건으로 한다."
+          },
+          {
+            "topic": "고급(재관류) 치료의 근거기반 계층화",
+            "detail": "Rather than a blanket endorsement, advanced reperfusion is tiered by category: in Category E (persistent hypotension), systemic thrombolysis, catheter-directed thrombolysis, mechanical thrombectomy, and surgical embolectomy carry equal Class 2a status; in Category D and Category C3 they are Class 2b ('may be considered,' benefit unclear). The guideline validates catheter-based therapy in the sickest patients while demanding better evidence before widespread use in more stable cohorts.",
+            "detail_ko": "고급 재관류를 일괄 권고하지 않고 카테고리별로 계층화한다: Category E(지속적 저혈압)에서는 전신 혈전용해·카테터-유도 혈전용해·기계적 혈전제거·외과적 색전제거가 동등한 Class 2a이고, Category D와 Category C3에서는 Class 2b('고려할 수 있음', 이득 불확실)이다. 지침은 최중증에서 카테터 기반 치료를 인정하되, 더 안정적인 군에서의 광범위 도입에는 더 나은 근거를 요구한다."
+          },
+          {
+            "topic": "연장 항응고",
+            "detail": "Extended anticoagulation beyond the initial 3–6 months is recommended for a first PE that is unprovoked or associated with a persistent (non-reversible) major risk factor, reflecting the emphasis on recurrence risk over a fixed treatment duration.",
+            "detail_ko": "초기 3–6개월 이후의 연장 항응고를, 유발요인이 없거나 지속적(비가역) 주요 위험인자를 동반한 첫 PE에서 권고한다 — 고정된 치료기간보다 재발 위험을 중시하는 방향이다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "이 지침이 '최초'라는 위상과 위험 계층화 전환의 의미",
+            "body_ko": "ACC 공식 저널 스캔은 이것이 ACC/AHA가 급성 PE 주제로 낸 최초의 임상진료지침이며, PERT 다학제 모델을 공식적으로 편입하고 환자-중심 결과를 급성기 치료 권고의 기준으로 세운 첫 북미 지침이라고 평가한다. 초기 비경구 치료로 LMWH를 UFH보다 우선, DOAC를 VKA보다 우선(주요출혈·재발 VTE 감소), 그리고 유발요인 없음/지속 위험인자 첫 PE에서 3–6개월을 넘는 연장 항응고를 권고한다는 점을 핵심으로 든다.",
+            "sourceLabel": "ACC.org — ACC, AHA Release First-Ever Guideline for Treatment and Management of Acute PE",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/journal-scans/2026/02/17/14/32/acc-aha-release-first-ever-guideline-for-treatment-and-management-of-acute-pe"
+          },
+          {
+            "heading_ko": "카테터 기반 치료에 대한 지침의 신중한 입장 (편집·스포트라이트 관점)",
+            "body_ko": "ACC의 JACC 스포트라이트 소개 글은, 이 지침이 가장 중증인 환자에서 고급 카테터 기반 치료의 사용을 인정하는 한편, 더 안정적인 환자군으로의 광범위한 도입에는 더 나은 근거를 요구한다고 정리한다. 함께 실린 자료들은 2018–2024년 고위험 PE에서 주요출혈은 감소했으나 사망률은 변하지 않았고, 전신 혈전용해 사용은 줄고 카테터-유도 혈전제거 채택은 늘었다는 관찰을 제시한다.",
+            "sourceLabel": "ACC.org — JACC Spotlight Issue Highlights New 2026 Acute PE Guideline",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/articles/2026/04/08/13/51/jacc-spotlight-issue-highlights-new-2026-acute-pe-guideline"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, EM/CCM clinicians should stop labeling PE as 'massive/submassive' and instead assign an A–E clinical category using a severity score (PESI/sPESI/Bova) plus biomarkers, RV imaging, and hemodynamics, since the category directly drives disposition (Category A–B → consider ED discharge/outpatient DOAC with follow-up; C–E → admit) and reperfusion decisions. Activate a PERT early for Category C–E patients, start LMWH (not UFH) as default parenteral therapy and a DOAC (not warfarin) for oral therapy when eligible, and reserve systemic thrombolysis/catheter-directed therapy/thrombectomy for hemodynamic compromise—strongest (Class 2a) in persistently hypotensive Category E and only 'consider' (Class 2b) in Category D/C3. Confirm the diagnosis with CTPA (V/Q if CTPA not feasible) and plan extended anticoagulation for unprovoked or persistent-risk-factor first PE.",
+        "practiceImpact_ko": "침상에서 EM/CCM 임상의는 PE를 'massive/submassive'로 부르는 것을 멈추고, 중증도 점수(PESI/sPESI/Bova)에 바이오마커·RV 영상·혈역학을 더해 A–E 임상 카테고리를 부여해야 한다. 카테고리가 곧 처치·재관류 결정을 좌우하기 때문이다(A–B → 응급실 퇴원/외래 DOAC+추적 고려, C–E → 입원). Category C–E에서는 PERT를 조기에 가동하고, 비경구는 UFH가 아닌 LMWH를, 경구는 적격 시 와파린이 아닌 DOAC를 기본으로 시작하며, 전신 혈전용해·카테터-유도 치료·혈전제거술은 혈역학 손상에 한정한다 — 지속적 저혈압의 Category E에서 가장 강함(Class 2a), Category D/C3에서는 '고려'(Class 2b)에 그친다. 진단은 CTPA(불가 시 V/Q)로 확정하고, 유발요인 없음·지속적 위험인자 동반 첫 PE는 연장 항응고를 계획한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41949219",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41949219/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.jacc.2025.12.089",
+            "url": "https://doi.org/10.1016/j.jacc.2025.12.089"
+          },
+          {
+            "label": "웹 — ACC.org — ACC, AHA Release First-Ever Guideline for Treatment and Management of Acute PE (journal scan)",
+            "url": "https://www.acc.org/latest-in-cardiology/journal-scans/2026/02/17/14/32/acc-aha-release-first-ever-guideline-for-treatment-and-management-of-acute-pe"
+          },
+          {
+            "label": "웹 — ACC.org — JACC Spotlight Issue Highlights New 2026 Acute PE Guideline",
+            "url": "https://www.acc.org/latest-in-cardiology/articles/2026/04/08/13/51/jacc-spotlight-issue-highlights-new-2026-acute-pe-guideline"
+          },
+          {
+            "label": "웹 — Endovascular Today — The 2026 AHA/ACC Guideline for the Management of Acute Pulmonary Embolism",
+            "url": "https://evtoday.com/articles/2026-july-supplement/the-2026-ahaacc-guideline-for-the-management-of-acute-pulmonary-embolism"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-13"
     }
   ],
   "rejected": [
@@ -58286,7 +58399,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-11T23:32:30.211Z",
+      "discoveredAt": "2026-09-12T23:14:06.466Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -58381,7 +58494,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-11T23:32:30.211Z",
+      "discoveredAt": "2026-09-12T23:14:06.466Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -58543,7 +58656,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-11T23:32:30.211Z",
+      "discoveredAt": "2026-09-12T23:14:06.466Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -58572,7 +58685,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-11T23:32:30.211Z",
+      "discoveredAt": "2026-09-12T23:14:06.466Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -58605,7 +58718,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-11T23:32:30.211Z",
+      "discoveredAt": "2026-09-12T23:14:06.466Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -58677,9 +58790,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260912_082730:guideline:2026-09-12",
+    "runId": "trend_review_20260913_080904:guideline:2026-09-13",
     "outcome": "published",
-    "publishedId": "pmid:41949235",
+    "publishedId": "pmid:41949219",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -58704,15 +58817,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 153,
+        "mergedTotal": 152,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/13",
-          "maxDate": "2026/09/12"
+          "minDate": "2026/08/14",
+          "maxDate": "2026/09/13"
         },
         "retmax": 60,
         "topics": [
@@ -58720,8 +58833,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 59,
-            "idsFetched": 59,
+            "totalFound": 58,
+            "idsFetched": 58,
             "truncated": false,
             "error": null
           },
@@ -58738,8 +58851,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -58756,8 +58869,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 28,
-            "idsFetched": 28,
+            "totalFound": 29,
+            "idsFetched": 29,
             "truncated": false,
             "error": null
           },
@@ -58816,7 +58929,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 138,
+        "topicOnlyCount": 137,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -58828,9 +58941,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 153,
-          "enriched": 153,
-          "withAbstract": 119,
+          "requested": 152,
+          "enriched": 152,
+          "withAbstract": 118,
           "error": null
         }
       },
@@ -58887,19 +59000,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 223,
+        "queued": 222,
         "needsReview": 449,
         "rejected": 126,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41949235",
+        "candidateId": "pmid:41949219",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-11T23:35:32.115Z",
+  "updatedAt": "2026-09-12T23:17:24.530Z",
   "configVersion": "guideline-v2"
 }

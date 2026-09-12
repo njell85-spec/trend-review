@@ -594,5 +594,16 @@
     "rerankPoolSize": 9,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42000026",
+    "title": "Long-term neurological outcomes after extracorporeal cardiopulmonary resuscitati",
+    "date": "2026-09-13",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 8,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]
