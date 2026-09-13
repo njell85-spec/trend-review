@@ -921,23 +921,6 @@
       "status": "queued"
     },
     {
-      "pmid": "34454688",
-      "title": "Cardiopulmonary resuscitation in special circumstances.",
-      "journal": "Lancet",
-      "score": 7.8,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "특수상황 CPR 종설 — 소생 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "34751704",
       "title": "Cardiogenic Shock After Acute Myocardial Infarction: A Review.",
       "journal": "JAMA",
@@ -9206,6 +9189,106 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "34454688",
+      "title": "Cardiopulmonary resuscitation in special circumstances.",
+      "journal": "Lancet",
+      "score": 7.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "특수상황 CPR 종설 — 소생 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-14",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "34454688",
+          "title": "Cardiopulmonary resuscitation in special circumstances.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2021-8-30",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/34454688/",
+          "doi": "10.1016/S0140-6736(21)01257-5"
+        },
+        "title_ko": "특수 상황에서의 심폐소생술",
+        "scope_ko": "이 종설은 일차성 심장 원인이 아닌 특수 상황—질식(asphyxia), 외상, 폐색전증, 우발적 저체온, 아나필락시스, COVID-19, 임신 중, 수술 전후—에 의한 심정지의 소생술을 다루며, 이들 상황에서 표준 소생술에 더해 가역적 원인을 교정하기 위해 필요한 추가 처치를 논한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "일차성 심장 원인과 조기 소생술의 우선순위",
+            "body_ko": "심폐소생술은 치료 대상 심정지의 대다수를 차지하는 일차성 심장 원인에 의한 심정지의 처치를 우선한다. 목격자에 의한 조기 흉부압박과, 적응이 될 때의 제세동 쇼크가 좋은 신경학적 상태로 생존할 최선의 기회를 제공한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "특수 상황에 의한 심정지",
+            "body_ko": "심정지는 질식(asphyxia), 외상, 폐색전증, 우발적 저체온, 아나필락시스, 또는 COVID-19와 같은 특수 상황에 의해서도, 그리고 임신 중이나 수술 전후에도 발생할 수 있다.\n\n이러한 상황에서의 심정지는 치료 대상 전체 심정지 중 차지하는 비율이 증가하고 있고, 흔히 예방 가능한 원인을 가지며, 소생술 도중 가역적 원인을 교정하기 위한 추가적 중재를 필요로 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "근거의 확실성과 시간 민감성",
+            "body_ko": "이들 상태를 치료하는 근거는 대부분 낮음(low) 또는 매우 낮음(very low) 확실성 수준이며, 추가 연구가 필요하다.\n\n원인이 무엇이든 심정지의 치료는 시간에 민감하며 조기에 시행할 때 가장 효과적이다—매 1분이 중요하다(every minute counts).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 아나필락시스에 의한 심정지에서의 아드레날린 및 처치",
+            "body_ko": "아래는 이 종설 본문(유료)을 확보하지 못해, 동일 주제 범위 내에서 확립된 임상 참고자료(NCBI StatPearls)로 보강한 내용이다.\n\n아나필락시스의 1차 치료는 근육 주사 adrenaline(epinephrine)이다. 성인은 1:1,000 농도로 0.3–0.5 mL(즉 300–500 μg)를 대퇴부(삼각근보다 대퇴부 선호) 전외측에 투여하고, 증상이 호전될 때까지 5–10분마다 반복할 수 있다. 소아는 0.01 mg/kg 또는 0.15 mg를 근육 주사한다.\n\n관찰된 저혈압에 대해서는 등장성 결정질액 1–2 L(또는 10–20 mL/kg) 볼루스를 투여한다. 여러 차례의 adrenaline 투여가 필요한 불응성 아나필락시스에서는 정맥 주입을 고려할 수 있으며, 1:10,000 adrenaline 0.1 mg를 5–10분에 걸쳐 시작하거나, 지속 주입은 1 μg/min으로 시작해 효과에 따라 적정한다. β-차단제를 복용 중인 환자에서 치료에 반응하지 않으면 glucagon을 선택지로 고려한다. 아나필락시스에서 adrenaline 사용의 절대 금기는 없다.\n— 보강 출처: StatPearls — Anaphylaxis (NCBI Bookshelf) (https://www.ncbi.nlm.nih.gov/books/NBK482124/)",
+            "origin": "augmented",
+            "sourceLabel": "StatPearls — Anaphylaxis (NCBI Bookshelf)",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK482124/"
+          },
+          {
+            "heading_ko": "[웹 보강] 우발적 저체온에 의한 심정지",
+            "body_ko": "아래는 이 종설 본문을 확보하지 못해 확립된 임상 참고자료(NCBI StatPearls)로 보강한 내용이다.\n\n저체온 심정지에서는 \"따뜻해지고도 사망일 때까지는 사망이 아니다(no one is dead until warm and dead)\"는 원칙이 적용되어, 선택된 환자에서는 장시간 심정지 후에도 좋은 신경학적 예후로 생존이 가능하므로 즉시 소생술을 시작한다.\n\n중심체온이 약 30°C 미만이면 epinephrine 투여를 보류하고 제세동 시도를 제한한다—저체온성 부정맥은 재가온이 진행되기 전까지 표준 ACLS에 불응할 수 있다. 재가온이 진행되면 약물 투여 간격을 두 배로 늘린다.\n\n재가온 방법 중 가장 효과적인 것은 체외 재가온(ECMO/ECLS)으로, 심폐우회술 및 정맥-동맥 ECMO는 시간당 최대 약 6°C의 재가온을 달성한다. ICE-CRASH(2023) 연구에서는 ECMO가 심정지 사례의 생존을 개선했으나 비정지 환자에서는 출혈 합병증을 증가시켰다.\n\n혈청 칼륨의 현저한 상승, 특히 12 mEq/L를 초과하는 값은 광범위한 세포 손상 및 불량한 예후와 연관되나, 칼륨 농도만을 소생술 중단의 단독 기준으로 사용해서는 안 된다. 정지 지속시간만이 아니라 HOPE 점수와 임상적 판단으로 ECLS 결정을 이끈다.\n— 보강 출처: StatPearls — Hypothermia (NCBI Bookshelf) (https://www.ncbi.nlm.nih.gov/books/NBK545239/)",
+            "origin": "augmented",
+            "sourceLabel": "StatPearls — Hypothermia (NCBI Bookshelf)",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK545239/"
+          },
+          {
+            "heading_ko": "[웹 보강] 임신 중 심정지와 소생적 제왕절개(perimortem caesarean)",
+            "body_ko": "아래는 이 종설 본문을 확보하지 못해 확립된 임상 참고자료(NCBI StatPearls)로 보강한 내용이다.\n\n임신부 심정지에서 4분 이내에 자발순환 회복(ROSC)이 이루어지지 않으면 소생적(perimortem) 제왕절개를 고려하며, 이상적으로는 심정지 후 5분 이내에 분만을 완료한다. 이 시간틀은 산소 결핍 후 신경학적 회복이 급격히 저하되는 시점과 관련이 있다.\n\n적응증은 대략 임신 20주 이상, 또는 자궁이 혈역학적 장애를 일으킬 만큼 커진 경우(대개 배꼽 높이 이상)이다. 임신 20주 미만이면 금기이다.\n\n수술 전에는 환자의 몸을 기울이지 않고, 자궁을 위쪽 및 왼쪽으로 손으로 밀거나 당기는 도수(徒手) 좌측 자궁 전위(manual left uterine displacement)를 시행한다—이는 효과적인 흉부압박에 필요한 앙와위를 유지하면서 대동맥-대정맥 압박을 완화한다.\n\n소생적 제왕절개의 일차 목적은 태아 생존만이 아니라, 정맥 환류를 개선하여 산모 소생술의 효과를 높이고 동시에 태아를 신속히 분만해 저산소성 뇌손상 위험을 최소화하는 데 있다.\n— 보강 출처: StatPearls — Perimortem Cesarean Delivery (NCBI Bookshelf) (https://www.ncbi.nlm.nih.gov/books/NBK534240/)",
+            "origin": "augmented",
+            "sourceLabel": "StatPearls — Perimortem Cesarean Delivery (NCBI Bookshelf)",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK534240/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설의 핵심은, 특수 상황 심정지가 전체 심정지 중 비중이 커지고 있고 흔히 예방 가능하며 표준 소생술만으로는 부족하다는 점—따라서 침상에서는 원인별 가역적 요인(질식·외상·폐색전증·저체온·아나필락시스·임신·수술 전후 등)을 조기에 능동적으로 찾아 교정해야 한다는 것이다. 근거의 확실성이 대부분 낮거나 매우 낮으므로 개별 중재는 확정적 지침이라기보다 임상적 판단과 병행해야 하며, 무엇보다 모든 처치가 시간에 민감하여 조기 시행이 성패를 가른다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 34454688",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34454688/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(21)01257-5",
+            "url": "https://doi.org/10.1016/S0140-6736(21)01257-5"
+          },
+          {
+            "label": "웹 — Lancet — Cardiopulmonary resuscitation in special circumstances (초록 페이지, 본문 유료·403)",
+            "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)01257-5/abstract"
+          },
+          {
+            "label": "웹 — StatPearls — Anaphylaxis (NCBI Bookshelf, 열람함)",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK482124/"
+          },
+          {
+            "label": "웹 — StatPearls — Hypothermia (NCBI Bookshelf, 열람함)",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK545239/"
+          },
+          {
+            "label": "웹 — StatPearls — Perimortem Cesarean Delivery (NCBI Bookshelf, 열람함)",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK534240/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -9263,9 +9346,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-13",
+    "date": "2026-09-14",
     "outcome": "published",
-    "publishedId": "41524797"
+    "publishedId": "34454688"
   },
-  "updatedAt": "2026-09-13"
+  "updatedAt": "2026-09-14"
 }

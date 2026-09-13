@@ -605,5 +605,16 @@
     "rerankPoolSize": 8,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42249495",
+    "title": "The effects of mechanical ventilation during v-a ecmo support: a systematic revi",
+    "date": "2026-09-14",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 7,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]
