@@ -353,6 +353,31 @@ export function mergeArchive(oldText, newText) {
     const parsed = match ? Date.parse(match[1]) : NaN;
     blocks.push({ block, at: Number.isNaN(parsed) ? null : parsed, order: blocks.length });
   }
+  /* ★ 과도기 중복 경고 (2026-08-20 Fable 검토 · 처방 I).
+   * dedupe 는 **블록 문자열 완전일치**다. 추출기를 고치면(08-19 GENERATED_PROMPT_FORMS 같은)
+   * 같은 턴의 옛 렌더링과 새 렌더링이 **같은 시각으로 둘 다** 남는다. 중복이라 안전한 방향이지만,
+   * 아카이브가 브리핑의 원자료라 하청이 이중으로 읽고, 부풀림을 잡으려던 개정이 부풀림을 만든다.
+   * **자동으로 지우지 않는다** — 어느 쪽이 옳은지는 사람이 정한다. 소리만 낸다. */
+  let dupWarn = '';
+  {
+    /* 키는 시각이 아니라 **턴 머리 한 줄**(화자+시각)이다. 시각만으로 묶으면 같은 초에 난
+     * 사람/어시스턴트 턴이 서로 다른 본문이라 정상인데도 경고가 뜬다(2026-08-20 테스트가 잡았다). */
+    const byHead = new Map();
+    for (const b of blocks) {
+      if (b.at === null) continue;
+      const nl = b.block.indexOf('\n');
+      const head = nl < 0 ? b.block : b.block.slice(0, nl);
+      const prev = byHead.get(head);
+      if (prev === undefined) byHead.set(head, b.block);
+      else if (prev !== b.block) byHead.set(head, null);   // 같은 턴 머리·다른 본문
+    }
+    const n = [...byHead.values()].filter((v) => v === null).length;
+    if (n) {
+      dupWarn = `> ⚠ 같은 시각에 본문이 다른 턴이 ${n}쌍 있다 — 추출기 개정 과도기의 이중 기록일 수 있다.\n`
+        + `> 지우지 않았다(어느 쪽이 옳은지는 사람이 정한다). 며칠 지나 안 사라지면 살펴볼 것.\n`;
+    }
+  }
+
   // 시각 없는 턴은 위치를 지어내지 않는다. 읽을 수 있는 턴끼리만 제자리 안정 정렬한다.
   const dated = blocks.filter((b) => b.at !== null).sort((a, b) => a.at - b.at || a.order - b.order);
   let datedIndex = 0;
@@ -362,6 +387,9 @@ export function mergeArchive(oldText, newText) {
   const from = stamps.length ? day(Math.min(...stamps)) : '';
   const to = stamps.length ? day(Math.max(...stamps)) : '';
   let header = (newArchive.header || oldArchive.header).trimEnd();
+  /* 지난 병합이 얹은 경고 블록은 **걷어내고 다시 계산한다** — 안 그러면 헤더로 먹혀
+   * 병합할 때마다 쌓이고 멱등성이 깨진다(턴 수 주석과 같은 함정. 2026-08-20 테스트가 잡았다). */
+  header = header.replace(/\n*^> ⚠ 같은 시각에 본문이 다른 턴이[^\n]*(?:\n> [^\n]*)*/m, '').trimEnd();
   if (from) header = header.replace(/^(> 세션: .*?) \([^\n]* KST\)$/m,
     `$1 (${from}${to !== from ? ` ~ ${to}` : ''} KST)`);
   /* 턴 수 주석은 **덧붙이지 말고 갈아끼운다** — 병합은 매 턴 돌므로 누적되면 안 된다.
@@ -376,7 +404,8 @@ export function mergeArchive(oldText, newText) {
       : `${clean} · ${ordered.length}턴`;
   });
   const salvageBlock = salvaged ? `\n\n${salvaged.trimEnd()}` : '';
-  return `${header}${salvageBlock}\n\n${ordered.map((b) => b.block).join('\n\n---\n\n')}\n`;
+  const dupBlock = dupWarn ? `\n\n${dupWarn.trimEnd()}` : '';
+  return `${header}${dupBlock}${salvageBlock}\n\n${ordered.map((b) => b.block).join('\n\n---\n\n')}\n`;
 }
 
 function archiveStats(body) {
