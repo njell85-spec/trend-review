@@ -938,23 +938,6 @@
       "status": "queued"
     },
     {
-      "pmid": "37314271",
-      "title": "Fluid Therapy for Critically Ill Adults With Sepsis: A Review.",
-      "journal": "JAMA",
-      "score": 7.7,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "패혈증 수액요법 종설 — 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39774207",
       "title": "Induction Agents for Tracheal Intubation in Critically Ill Patients.",
       "journal": "Crit Care Med",
@@ -9383,6 +9366,122 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "37314271",
+      "title": "Fluid Therapy for Critically Ill Adults With Sepsis: A Review.",
+      "journal": "JAMA",
+      "score": 7.7,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈증 수액요법 종설 — 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-16",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "37314271",
+          "title": "Fluid Therapy for Critically Ill Adults With Sepsis: A Review.",
+          "journal": "JAMA",
+          "pubDate": "2023-6-14",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/37314271/",
+          "doi": "10.1001/jama.2023.7560"
+        },
+        "title_ko": "패혈증 중환자에서의 수액요법: 종설",
+        "scope_ko": "패혈증에 이환된 성인 중환자에서 정맥 수액요법의 역할을 다루는 JAMA 종설로, 수액요법을 소생·최적화·안정화·배출의 네 국면으로 개념화하고 목표지향치료·혈압상승제 조기 사용·제한적 수액전략·수액 배출을 검증한 주요 무작위대조시험(RCT)의 결과와 hydroxyethyl starch의 위해를 정리한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "중요성 — 패혈증에서 수액이 갖는 위치",
+            "body_ko": "중환자실(ICU)에 입원하는 환자의 약 20~30%가 패혈증 환자이다. 수액요법은 통상 응급실에서 시작되지만, ICU에서 투여되는 정맥 수액 역시 패혈증 치료의 필수 구성요소이다.\n\n패혈증 환자에서 정맥 수액은 심박출량과 혈압을 높이고, 혈관내 용적을 유지하거나 늘리며, 약물을 전달하는 통로가 된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "수액요법의 네 국면",
+            "body_ko": "저자들은 수액요법을 초기 질환에서 패혈증 회복에 이르기까지 서로 겹치는 네 국면으로 개념화한다.\n\n① 소생(resuscitation): 관류를 회복하기 위해 수액을 빠르게 투여하는 단계.\n\n② 최적화(optimization): 쇼크를 치료하고 장기 관류를 확보하기 위한 추가 수액의 이익과 위해를 저울질하는 단계.\n\n③ 안정화(stabilization): 수액 반응성(fluid responsiveness)의 신호가 있을 때에만 수액을 사용하는 단계.\n\n④ 배출(evacuation): 중증질환 치료 과정에서 축적된 과잉 수액을 제거하는 단계.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "목표지향치료(goal-directed therapy) 대 통상 진료 — 3개 RCT",
+            "body_ko": "1~2 L의 수액을 투여받은 패혈증 환자 3,723명을 대상으로 한 3개의 무작위대조시험(RCT)에서, 목표지향치료는 구조화되지 않은 통상 임상진료에 비해 사망률을 낮추지 못했다(24.9% 대 25.4%; P = .68).\n\n여기서 목표지향치료란 중심정맥압(CVP)을 8~12 mm Hg로 맞추기 위해 수액 볼루스를 투여하고, 평균동맥압(MAP)을 65~90 mm Hg로 맞추기 위해 혈압상승제를 사용하며, 중심정맥혈 산소포화도(ScvO₂)를 최소 70% 이상으로 유지하기 위해 적혈구 수혈이나 강심제(inotrope)를 투여하는 전략을 말한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈압상승제 우선 대 추가 수액 투여",
+            "body_ko": "1 L의 수액을 투여받은 패혈증·저혈압 환자 1,563명을 대상으로 한 RCT에서, 혈압상승제 치료를 우선하는 전략은 추가 수액 투여에 비해 사망률을 개선하지 못했다(14.0% 대 14.9%; P = .61).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "제한적 수액 대 자유로운 수액 투여(패혈성 쇼크)",
+            "body_ko": "최소 1 L의 수액을 투여받은 패혈성 쇼크 ICU 환자 1,554명을 대상으로, 보다 자유로운 수액 투여와 비교한 또 다른 RCT에서는, 심한 저관류가 없는 상황에서 수액 투여를 제한하더라도 사망률이 감소하지 않았다(42.3% 대 42.1%; P = .96).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "배출 국면 — 급성호흡곤란에서의 제한적 수액·이뇨제, 그리고 hydroxyethyl starch의 위해",
+            "body_ko": "배출 국면에 있는 급성 호흡곤란 환자 1,000명을 대상으로 한 RCT에서, 수액 투여를 제한하고 이뇨제를 투여하는 전략은 더 높은 심장내압을 목표로 수액을 투여하는 전략에 비해 인공호흡기 없이 생존한 일수를 개선하였다(14.6일 대 12.1일; P < .001).\n\n같은 맥락에서 hydroxyethyl starch는 생리식염수(saline)에 비해 신대체요법(kidney replacement therapy)의 발생을 유의하게 증가시켰으며(7.0% 대 5.8%; P = .04), 이는 Ringer lactate 또는 Ringer acetate와 비교해서도 마찬가지였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론 및 임상적 의의",
+            "body_ko": "수액은 패혈증 중환자 치료의 중요한 구성요소이다. 다만 패혈증 환자에서 최적의 수액 관리가 무엇인지는 여전히 불확실하다.\n\n임상의는 중증질환의 각 국면마다 수액 투여의 이익과 위해를 함께 고려해야 하고, hydroxyethyl starch의 사용을 피해야 하며, 급성호흡곤란증후군(ARDS)에서 회복 중인 환자에서는 수액 제거를 촉진해야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 수액의 종류 — 균형결정질액 대 식염수, 알부민, hydroxyethyl starch",
+            "body_ko": "※ 아래 내용은 본 논문 본문(전문)을 확보하지 못해, 동일 주제·동일 선임저자(Semler) 계열의 공개 종설 'Fluid Management in Sepsis'(Brown & Semler)에서 보강한 것으로, 본 논문 자체의 서술이 아니다.\n\n균형결정질액 대 식염수: SMART 시험(ICU 환자 15,802명)에서 균형결정질액은 사망·신대체요법 신규 개시·지속적 신기능장애의 복합 결과를 식염수보다 감소시켰다(14.3% 대 15.4%; P = 0.04). 패혈증/패혈성 쇼크 하위군에서는 이 복합 결과 1건을 예방하기 위한 치료필요수(NNT)가 약 20명이었다. SALT-ED 시험(응급실 환자 13,347명)에서도 유사한 이익이 관찰되었다(4.7% 대 5.6%; P = 0.01).\n\n알부민: SAFE 시험의 패혈증 하위군에서 알부민은 안전하고 총 수액량을 줄였으며 사망률을 낮출 가능성이 시사되었다. ALBIOS 시험(패혈증 환자 1,818명, 20% 알부민으로 혈청 알부민 ≥30 g/L 유지)에서 사후 패혈성 쇼크 분석 결과 사망률이 더 낮았다(RR 0.87; 95% CI 0.77–0.99).\n\nHydroxyethyl starch(HES): VISEP, CRYSTMAS, 6S, CHEST 등 여러 시험에서 급성신손상과 사망률 증가 등 위해가 확인되었으며, 저자들은 위험과 비용을 이유로 패혈증에서 반합성 콜로이드의 사용을 피할 것을 권고한다.\n— 보강 출처: Brown & Semler, 'Fluid Management in Sepsis' (J Intensive Care Med, PMC 무료 전문) (https://pmc.ncbi.nlm.nih.gov/articles/PMC6532631/)",
+            "origin": "augmented",
+            "sourceLabel": "Brown & Semler, 'Fluid Management in Sepsis' (J Intensive Care Med, PMC 무료 전문)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6532631/"
+          },
+          {
+            "heading_ko": "[웹 보강] 수액 반응성의 평가 — 정적 지표 대 동적 지표",
+            "body_ko": "※ 본 논문 전문을 확보하지 못해 보강한 내용이다(본 논문 자체의 서술이 아니다).\n\n정적 지표(CVP 등): 우심방압(CVP)은 수액 투여에 따른 혈역학적 개선을 잘 예측하지 못하며, 정적 지표는 점차 동적 지표로 대체되어 왔다.\n\n동적 지표: 수동적 하지거상(passive leg raise) 검사는 자발호흡이나 부정맥이 있는 환자를 포함한 대부분의 중환자에서 사용할 수 있다. 다리를 45도로 들어 올리면 약 250~300 mL의 혈액이 심장으로 되돌아오며, 이때 일회박출량(stroke volume)이 최소 10~15% 증가하면 이후 수액 볼루스 투여 시 심박출량이 증가할 가능성이 높다. 그 밖에 맥압변이(PPV), 일회박출량변이(SVV), 수축기압변이(SPV), 체적변동지수, 하대정맥(IVC) 허탈도/팽창도 등이 동적 지표로 쓰인다.\n\n다만 '수액 반응성'이 있는 환자에게 수액을 투여하는 것이 실제로 예후를 개선하는지는 아직 전혀 밝혀지지 않았다.\n— 보강 출처: Brown & Semler, 'Fluid Management in Sepsis' (J Intensive Care Med, PMC 무료 전문) (https://pmc.ncbi.nlm.nih.gov/articles/PMC6532631/)",
+            "origin": "augmented",
+            "sourceLabel": "Brown & Semler, 'Fluid Management in Sepsis' (J Intensive Care Med, PMC 무료 전문)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6532631/"
+          },
+          {
+            "heading_ko": "[웹 보강] 초기 수액량과 수액 제거(de-resuscitation)",
+            "body_ko": "※ 본 논문 전문을 확보하지 못해 보강한 내용이다(본 논문 자체의 서술이 아니다).\n\n초기 수액량: Surviving Sepsis Campaign 지침은 패혈성 쇼크 또는 패혈증 유발 저관류에 대해 초기 30 mL/kg의 정맥 수액을 조기 투여할 것을 권고한다. 반면 Brown & Semler는 자원이 제한된 환경에서의 잠재적 위해 등을 근거로 20 mL/kg의 다소 보수적인 초기 볼루스를 제안한다.\n\n양성 수액균형의 위해와 수액 제거: 축적된 양성 수액균형은 사망률 증가와 연관되며, 72시간 누적 수액균형이 1 L 증가할 때마다 병원 내 사망 위험이 독립적으로 증가하였다(aOR 1.06; P <0.001). FACTT 시험(기계환기 중인 ARDS 환자 1,000명; 약 70%가 패혈증/폐렴)에서 보존적(furosemide로 CVP <4 mm Hg 목표) 전략은 자유로운 전략에 비해 인공호흡기 없이 생존한 일수(14.6 대 12.1일; P <0.001)와 ICU 재실 없이 생존한 일수(13.4 대 11.2일; P <0.001)를 늘렸고, 쇼크나 신대체요법 시행을 증가시키지 않았다. CLASSIC 파일럿(패혈성 쇼크 151명)에서도 제한적 전략이 5일째 수액량을 줄이고(약 −1.2 L; P <0.001) 급성신손상을 덜 유발하면서 사망률은 유사하였다.\n— 보강 출처: Brown & Semler, 'Fluid Management in Sepsis' (J Intensive Care Med, PMC 무료 전문) (https://pmc.ncbi.nlm.nih.gov/articles/PMC6532631/)",
+            "origin": "augmented",
+            "sourceLabel": "Brown & Semler, 'Fluid Management in Sepsis' (J Intensive Care Med, PMC 무료 전문)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6532631/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "본 종설(초록 범위)에 근거하면, 침상에서 수액을 하나의 균일한 처방이 아니라 소생·최적화·안정화·배출의 국면별 결정으로 다루게 된다. 초기 소생 이후에는 CVP/MAP/ScvO₂를 목표로 한 경직된 프로토콜(목표지향치료)이나 무조건적인 추가 볼루스가 사망률을 낮추지 못했으므로, 각 국면에서 수액의 이익과 위해를 저울질하고, hydroxyethyl starch는 사용하지 않으며, ARDS에서 회복 중인 환자에서는 이뇨 등으로 과잉 수액의 제거를 촉진하는 방향이 타당하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 37314271",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37314271/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2023.7560",
+            "url": "https://doi.org/10.1001/jama.2023.7560"
+          },
+          {
+            "label": "웹 — Physicians Weekly — Optimal Fluid Therapy for Sepsis Management in Critically Ill Adults (본 논문 요약, 초록 수준)",
+            "url": "https://www.physiciansweekly.com/post/optimal-fluid-therapy-for-sepsis-management-in-critically-ill-adults"
+          },
+          {
+            "label": "웹 — JAMA Network — Fluid Therapy for Critically Ill Adults With Sepsis: A Review (초록/서지, 본문 유료)",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2805900"
+          },
+          {
+            "label": "웹 — Brown & Semler, 'Fluid Management in Sepsis' (PMC 무료 전문, 보강 출처)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6532631/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -9440,9 +9539,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-15",
+    "date": "2026-09-16",
     "outcome": "published",
-    "publishedId": "34751704"
+    "publishedId": "37314271"
   },
-  "updatedAt": "2026-09-15"
+  "updatedAt": "2026-09-16"
 }

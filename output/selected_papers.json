@@ -627,5 +627,16 @@
     "rerankPoolSize": 7,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42150044",
+    "title": "Prehospital Resuscitation with Type O Whole Blood for Trauma and Hemorrhage.",
+    "date": "2026-09-16",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 7,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]
