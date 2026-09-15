@@ -2395,6 +2395,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-15",
+      "pmid": "41114833",
+      "title": "Characteristics of ventilator weaning in patients intubated for Guillain-Barré syndrome or myasthenia gravis: a nationwide multicenter study.",
+      "title_ko": "Guillain-Barré 증후군 또는 myasthenia gravis로 삽관된 환자에서 인공호흡기 이탈(weaning)의 특성: 전국 다기관 연구",
+      "journal": "Intensive care medicine",
+      "doi": "10.1007/s00134-025-08159-7",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "GBS 또는 MG로 삽관되어 ICU에 입원한 환자에서 인공호흡기 이탈(weaning)의 특성은 어떠하며, prolonged weaning·발관(extubation)·재삽관(reintubation)·기관절개(tracheostomy)·사망률 측면에서 GBS와 MG 환자는 어떻게 다른가?",
+      "pico": {
+        "population": "[France] 886 patients admitted to 47 ICUs in France, intubated for at least 48 h for GBS or MG over a 10-year period (January 2014 to December 2023), including 513 (58%) with Guillain-Barré syndrome (GBS) and 373 (42%) with myasthenia gravis (MG).",
+        "intervention": "Guillain-Barré syndrome (GBS) as the condition prompting intubation and mechanical ventilation (513 patients, 58%).",
+        "comparison": "Myasthenia gravis (MG) as the condition prompting intubation and mechanical ventilation (373 patients, 42%).",
+        "outcome": "Primary outcome was the proportion of patients having experienced prolonged weaning (at least 7 days): patients with GBS were more likely to experience prolonged weaning than those with MG (64% vs. 35%, p < 0.001)."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 프랑스 47개 ICU에 입원하여 GBS 또는 MG로 최소 48시간 이상 삽관된 환자 886명(10년간, 2014년 1월~2023년 12월). 이 중 513명(58%)이 Guillain-Barré 증후군(GBS), 373명(42%)이 myasthenia gravis(MG).",
+        "intervention": "삽관 및 기계환기를 유발한 기저질환으로서의 Guillain-Barré 증후군(GBS)(513명, 58%).",
+        "comparison": "삽관 및 기계환기를 유발한 기저질환으로서의 myasthenia gravis(MG)(373명, 42%).",
+        "outcome": "일차 결과는 prolonged weaning(7일 이상)을 경험한 환자의 비율로, GBS 환자가 MG 환자보다 prolonged weaning을 더 많이 경험함(64% vs. 35%, p < 0.001)."
+      },
+      "keyFindings": [
+        "Among 886 patients (513 GBS [58%], 373 MG [42%]) in 47 French ICUs (2014–2023), prolonged weaning (≥7 days) was far more common in GBS than MG (64% vs. 35%, p < 0.001).",
+        "GBS patients underwent tracheostomy far more often (57% vs. 17%, p < 0.001) and an extubation attempt was performed in only 46% of GBS vs. 88% of MG (p < 0.001); reintubation rates were similar (26% vs. 29%, p = 0.440).",
+        "Despite longer mechanical ventilation and ICU stay in GBS, mortality was low and similar between groups (9.4% GBS vs. 9.7% MG, p = 0.882)."
+      ],
+      "keyFindings_ko": [
+        "프랑스 47개 ICU의 886명(GBS 513명[58%], MG 373명[42%], 2014~2023) 중 prolonged weaning(≥7일)은 MG보다 GBS에서 훨씬 흔했음(64% vs. 35%, p < 0.001).",
+        "GBS 환자는 tracheostomy를 훨씬 더 많이 시행받았고(57% vs. 17%, p < 0.001), 발관 시도는 GBS 46% vs. MG 88%에서만 이루어짐(p < 0.001); 재삽관율은 유사함(26% vs. 29%, p = 0.440).",
+        "GBS에서 기계환기와 ICU 재원기간이 더 길었음에도 사망률은 낮고 두 군에서 유사했음(GBS 9.4% vs. MG 9.7%, p = 0.882)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41114833",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41114833/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1007/s00134-025-08159-7",
+          "url": "https://doi.org/10.1007/s00134-025-08159-7"
+        },
+        {
+          "label": "웹 — Springer / Intensive Care Medicine — official article page",
+          "url": "https://link.springer.com/article/10.1007/s00134-025-08159-7"
+        },
+        {
+          "label": "웹 — PubMed — PMID 41114833 (via NCBI eutils esearch)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ventilator+weaning+Guillain-Barre+myasthenia+gravis+nationwide+multicenter+Thille+2025"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "Springer / Intensive Care Medicine — official article page",
+          "url": "https://link.springer.com/article/10.1007/s00134-025-08159-7",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed — PMID 41114833 (via NCBI eutils esearch)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ventilator+weaning+Guillain-Barre+myasthenia+gravis+nationwide+multicenter+Thille+2025",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
