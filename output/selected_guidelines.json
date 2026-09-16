@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-15T23:40:10.547Z"
+      "supersededAt": "2026-09-16T23:48:58.582Z"
     },
     {
       "id": "pmid:38531812",
@@ -26071,75 +26071,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:41193010",
-      "pmid": "41193010",
-      "title": "Acute Care of Patients with Moderate Respiratory Distress: Recommendations from an American College of Emergency Physicians Expert Panel.",
-      "pubDate": "2025 Sep 27",
-      "journal": "The western journal of emergency medicine",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-title"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "INTRODUCTION: Patients with respiratory distress are frequently encountered in the emergency department (ED). Efforts to assess, initiate treatments, and stabilize these patients require a systematic and rapid response. Emergency physicians need a comprehensive and efficient approach for evaluating, treating, and managing patients presenting to the ED with moderate respiratory distress.\nMETHODS: The American College of Emergency Physicians convened an expert panel of academic and community emergency physicians, critical care specialists, respiratory therapists, hospitalists, and pharmacists to develop and subsequently disseminate consensus recommendations regarding the diagnosis and treatment of patients with moderate respiratory distress presenting to the ED.\nRESULTS: A digital tool using a consensus-based framework was developed to aid emergency clinicians in diagnosing and caring for patients with moderate respiratory distress. The tool can be employed at each step in the diagnostic and treatment process.\nCONCLUSION: The evidence-based tool is a practical and freely available bedside instrument for emergency clinicians to diagnose and treat patients with moderate respiratory distress. Further studies are needed to examine the effectiveness of this approach.",
-      "meshTerms": [
-        "Humans",
-        "Emergency Service, Hospital",
-        "United States",
-        "Emergency Medicine",
-        "Respiratory Distress Syndrome",
-        "Consensus",
-        "Critical Care"
-      ],
-      "keywords": [],
-      "doi": "10.5811/westjem.43539",
-      "pmcid": "PMC12591642",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "acep"
-      },
-      "priority": 9.08318390804452,
-      "breakdown": {
-        "authority": 4,
-        "topic": 1.6,
-        "recency": 1.4831839080445202,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "acep",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "recommendations",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:51.474Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ACEP 중등도 호흡곤란 응급진료 권고, ED 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "acep|acute-care-patients-with-moderate-respiratory-distress-from-expert-panel",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40994133",
       "pmid": "40994133",
       "title": "Future development of arrhythmogenic risk scores in patients with heart failure and inherited dilated cardiomyopathy. A scientific statement of the Heart Failure Association of the ESC.",
@@ -31768,7 +31699,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34460,7 +34391,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37382,7 +37313,7 @@
       "id": "pmid:41760103",
       "pmid": "41760103",
       "title": "2024 BTS/NICE/SIGN asthma guidelines have the potential to improve UK asthma outcomes, but we must act now.",
-      "pubDate": "2026 Feb 26",
+      "pubDate": "2026 Sep 15",
       "journal": "Thorax",
       "publicationTypes": [
         "Journal Article"
@@ -37431,14 +37362,15 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:40:05.137Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 5,
         "keep": false,
         "reason": "영국 천식지침 논평, 천식악화 응급 관련",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:41730216",
@@ -40888,7 +40820,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42657,7 +42589,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43405,7 +43337,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43733,7 +43665,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44245,7 +44177,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44661,7 +44593,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45260,7 +45192,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46215,7 +46147,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46275,7 +46207,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "unknown|french-severe-asthma-management",
       "supersedes": [],
       "llmFit": {
@@ -46348,7 +46280,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46422,7 +46354,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -46504,7 +46436,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46584,7 +46516,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -46663,7 +46595,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46743,7 +46675,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46807,7 +46739,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46953,7 +46885,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -47023,7 +46955,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -47095,7 +47027,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -47165,7 +47097,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47248,7 +47180,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47311,7 +47243,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47547,7 +47479,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.681Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47619,7 +47551,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47680,7 +47612,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47756,7 +47688,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47829,7 +47761,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47913,7 +47845,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47972,7 +47904,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -48051,7 +47983,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -48102,11 +48034,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.724876940924671,
+      "priority": 6.721204098080618,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.7248769409246707,
+        "recency": 1.7212040980806174,
         "scope": 0,
         "confidence": 2
       },
@@ -48121,7 +48053,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -48204,7 +48136,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.885Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48265,7 +48197,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -48273,7 +48205,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-15T23:40:09.886Z",
+      "lastSeenAt": "2026-09-16T23:48:57.682Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -53884,6 +53816,137 @@
         ]
       },
       "publishedAt": "2026-09-16"
+    },
+    {
+      "id": "pmid:41193010",
+      "pmid": "41193010",
+      "title": "Acute Care of Patients with Moderate Respiratory Distress: Recommendations from an American College of Emergency Physicians Expert Panel.",
+      "pubDate": "2025 Sep 27",
+      "journal": "The western journal of emergency medicine",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "INTRODUCTION: Patients with respiratory distress are frequently encountered in the emergency department (ED). Efforts to assess, initiate treatments, and stabilize these patients require a systematic and rapid response. Emergency physicians need a comprehensive and efficient approach for evaluating, treating, and managing patients presenting to the ED with moderate respiratory distress.\nMETHODS: The American College of Emergency Physicians convened an expert panel of academic and community emergency physicians, critical care specialists, respiratory therapists, hospitalists, and pharmacists to develop and subsequently disseminate consensus recommendations regarding the diagnosis and treatment of patients with moderate respiratory distress presenting to the ED.\nRESULTS: A digital tool using a consensus-based framework was developed to aid emergency clinicians in diagnosing and caring for patients with moderate respiratory distress. The tool can be employed at each step in the diagnostic and treatment process.\nCONCLUSION: The evidence-based tool is a practical and freely available bedside instrument for emergency clinicians to diagnose and treat patients with moderate respiratory distress. Further studies are needed to examine the effectiveness of this approach.",
+      "meshTerms": [
+        "Humans",
+        "Emergency Service, Hospital",
+        "United States",
+        "Emergency Medicine",
+        "Respiratory Distress Syndrome",
+        "Consensus",
+        "Critical Care"
+      ],
+      "keywords": [],
+      "doi": "10.5811/westjem.43539",
+      "pmcid": "PMC12591642",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "acep"
+      },
+      "priority": 9.08318390804452,
+      "breakdown": {
+        "authority": 4,
+        "topic": 1.6,
+        "recency": 1.4831839080445202,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "acep",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "recommendations",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:51.474Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ACEP 중등도 호흡곤란 응급진료 권고, ED 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "acep|acute-care-patients-with-moderate-respiratory-distress-from-expert-panel",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41193010",
+          "title": "Acute Care of Patients with Moderate Respiratory Distress: Recommendations from an American College of Emergency Physicians Expert Panel.",
+          "journal": "The western journal of emergency medicine",
+          "pubDate": "2025 Sep 27",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41193010/",
+          "doi": "10.5811/westjem.43539"
+        },
+        "org": "ACEP (American College of Emergency Physicians)",
+        "version": "2025",
+        "title_ko": "중등도 호흡곤란 환자의 급성기 진료: 미국응급의학회(ACEP) 전문가 패널 권고",
+        "scope_ko": "응급실에 중등도 호흡곤란(‘기본적 호흡 보조 이상을 필요로 하거나 악화 위험이 있는 환자’로 정의; 예: 호흡수 >24회/분, 저산소증 유무와 무관, 호흡보조근 사용)으로 내원한 성인 및 소아 환자의 초기 평가·감별·치료·처치 결정을 다룬다. 특정 질환별 지침이 아니라 미분화 호흡곤란에 대한 실시간 침상 의사결정 도구(emPOC)를 제시한다.",
+        "summary": [
+          "Defines 'moderate respiratory distress' operationally as a patient who requires more than basic respiratory care or is at risk of deterioration — e.g., respiratory rate >24 breaths/min, with or without hypoxia, and with accessory muscle use (expert consensus, modified Delphi; not GRADE-graded).",
+          "Use the ROX index (SpO2/FIO2[%] ÷ respiratory rate) to guide high-flow nasal cannula (HFNC) management: values ≥4.88 at 2, 6, or 12 hours after HFNC initiation predict lower intubation risk; values <3.85 indicate high HFNC-failure risk and should prompt consideration of intubation; intermediate values should be reassessed serially at 1–2 hours (consensus).",
+          "Match respiratory support to the patient's current and anticipated status along a stepwise ladder — nasal cannula → facemask/nonrebreather → HFNC → non-invasive ventilation (CPAP/BiPAP) → intubation/surgical airway — with frequent reassessment for escalation or de-escalation; immediate aggressive maneuvers such as rapid sequence intubation are often NOT indicated in moderate distress (consensus).",
+          "Recognize patients in whom intubation should be avoided when feasible because of high peri-intubation complication risk — e.g., status asthmaticus, severe metabolic acidosis, and untreated pneumothorax — as these require special ventilation strategies (consensus).",
+          "Drive diagnostic testing (laboratory, imaging, and other studies such as point-of-care ultrasound and serial blood gases) from the differential generated at the bedside, modified by local resources and the evolving clinical picture; perform frequent reassessment of vitals, mental status, and response to therapy (consensus).",
+          "Tailor pharmacologic therapy to the suspected underlying condition once a specific diagnosis is favored; the tool provides a non-exhaustive medication guide for common causes of respiratory distress (consensus).",
+          "Base disposition on symptom severity, comorbidities, and social drivers of health: discharge if mild-to-moderate symptoms respond to ED therapy with no new oxygen requirement and ability to ambulate without desaturation; admit for new/increased oxygen needs or new concurrent illness; consider ICU for escalating respiratory support, hemodynamic instability, intubation, severe acid-base disturbance, or new altered mental status (consensus)."
+        ],
+        "summary_ko": [
+          "‘중등도 호흡곤란’을 ‘기본 호흡 보조 이상을 필요로 하거나 악화 위험이 있는 환자’로 조작적 정의 — 예: 호흡수 >24회/분(저산소증 유무 무관), 호흡보조근 사용 (전문가 합의, modified Delphi; GRADE 등급화 아님).",
+          "HFNC 관리에 ROX index(SpO2/FIO2[%] ÷ 호흡수)를 사용: HFNC 시작 후 2·6·12시간에 측정한 값이 ≥4.88이면 삽관 위험 낮음, <3.85이면 HFNC 실패 위험 높아 삽관 고려, 중간값은 1–2시간 후 재측정 (합의).",
+          "호흡 보조는 환자의 현재·예상 상태에 맞춰 단계적으로 — 비강캐뉼라 → 안면마스크/비재호흡마스크 → HFNC → 비침습환기(CPAP/BiPAP) → 삽관/외과적 기도 — 상향·하향 조정을 위한 잦은 재평가와 함께 적용; 중등도 호흡곤란에서 즉각적 공격적 처치(예: RSI)는 흔히 적응증이 아님 (합의).",
+          "삽관 시 주위 합병증 위험이 높아 가능하면 삽관을 피해야 하는 환자군 인지 — 예: status asthmaticus, 중증 대사성 산증, 치료되지 않은 기흉 — 이들은 특수 환기 전략 필요 (합의).",
+          "진단 검사(검사실·영상·POCUS·연속 혈액가스 등)는 침상 감별진단에서 도출하고 지역 자원과 임상 경과 변화에 따라 조정; 활력징후·의식상태·치료 반응을 자주 재평가 (합의).",
+          "특정 진단이 유력해지면 약물치료를 해당 질환에 맞게 조정; 도구는 흔한 원인들에 대한 비망라적 약물 가이드를 제공 (합의).",
+          "처치 결정은 증상 중증도·동반질환·건강의 사회적 요인에 근거: 경–중등도 증상이 ED 치료에 반응하고 새 산소 요구가 없으며 탈포화 없이 보행 가능하면 퇴원, 새/증가된 산소 요구나 새 동반질환이면 입원, 상승하는 호흡 보조·혈역학 불안정·삽관·중증 산-염기 이상·새 의식저하이면 ICU 고려 (합의)."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, EM/CCM clinicians get a free ACEP emPOC smartphone/web tool that standardizes the undifferentiated moderate-respiratory-distress workflow: define moderate distress objectively (RR >24, accessory muscle use), avoid reflexive intubation, and instead titrate up the oxygen-support ladder with structured reassessment. It operationalizes HFNC decision-making with concrete ROX-index thresholds (≥4.88 reassuring, <3.85 high-failure) at defined time points, giving a shared numeric trigger for escalation to intubation. It also flags 'don't-intubate-if-you-can-avoid-it' physiologies (status asthmaticus, severe metabolic acidosis, untreated pneumothorax) and provides explicit discharge/admit/ICU disposition criteria — but these are expert consensus, not GRADE-graded evidence, so they should support, not replace, disease-specific society guidelines.",
+        "practiceImpact_ko": "침상에서 EM/CCM 임상의는 미분화 중등도 호흡곤란 워크플로를 표준화하는 무료 ACEP emPOC 스마트폰/웹 도구를 얻는다: 중등도를 객관적으로 정의(RR >24, 호흡보조근 사용)하고, 반사적 삽관을 피하며, 구조화된 재평가와 함께 산소 보조 단계를 적정한다. HFNC 의사결정을 정해진 시점의 구체적 ROX 임계값(≥4.88 안심, <3.85 실패 위험 높음)으로 구체화하여 삽관 상향 조정에 공유 가능한 수치 기준을 제공한다. 또한 가능하면 삽관을 피해야 하는 생리(status asthmaticus, 중증 대사성 산증, 치료되지 않은 기흉)를 표시하고 명확한 퇴원/입원/ICU 처치 기준을 준다 — 다만 이는 GRADE 등급 근거가 아닌 전문가 합의이므로 질환별 학회 지침을 대체하지 않고 보완하는 용도로 써야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41193010",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41193010/"
+          },
+          {
+            "label": "Journal (DOI) — 10.5811/westjem.43539",
+            "url": "https://doi.org/10.5811/westjem.43539"
+          },
+          {
+            "label": "웹 — ACEP Expert Panel full text (PMC12591642)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12591642/"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 41193010)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41193010/"
+          },
+          {
+            "label": "웹 — ACEP Point-of-Care Tools — Moderate Respiratory Distress",
+            "url": "https://poctools.acep.org/POCTool/ModerateRespiratoryDistress/7b2befb0-8667-4cc0-88ba-e672cd713158/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-17"
     }
   ],
   "rejected": [
@@ -58919,7 +58982,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-15T23:40:00.230Z",
+      "discoveredAt": "2026-09-16T23:48:46.927Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -59014,7 +59077,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-15T23:40:00.230Z",
+      "discoveredAt": "2026-09-16T23:48:46.927Z",
       "abstract": "The CDC's COVID-19 pandemic guidelines affected everyone, especially healthcare workers (HCWs) due to the high exposure risks, long hours and stress during the pandemic. Thus, understanding HCWs perceptions and acceptance of these guidelines were crucial to patient outcomes. Our goal was to investigate HCWs views on the Centers for Disease Control and Prevention (CDC) management of the COVID-19 pandemic and vaccine recommendations. Data were collected from an online survey of HCWs in Pennsylvania (August 2022 - February 2023). Eligible participants (n = 580) aged 21 + , reported COVID-19 vaccination status and time of first vaccination. Participants (n = 580) were 83% female and 92% White. From our sample, 71% provided direct care, 57% lived in a suburban area, and 85% had received at least one dose of the vaccine. HCWs had mixed perceptions of the CDC's management of the COVID-19 pandemic and vaccine recommendations. Positive perceptions of pandemic management highlighted clear communication, a science-driven approach, and an effective crisis response. Criticisms included overregulation of face mask requirements, politicization, and continuously changing policies. Regarding vaccine recommendations, positive perceptions included timely distribution, accessibility, affordability, and clear communication, while criticisms included vaccine mandates, politicization, perceived lack of scientific basis, and inconsistent messaging. Future recommendations for the CDC regarding outbreaks would be to ensure framing of messaging is free from perceived political bias. The CDC should continue to maintain communication with HCWs and focus on providing evidence-based information during future pandemics.",
       "meshTerms": [
         "Humans",
@@ -59176,7 +59239,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-15T23:40:00.230Z",
+      "discoveredAt": "2026-09-16T23:48:46.927Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -59205,7 +59268,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-15T23:40:00.230Z",
+      "discoveredAt": "2026-09-16T23:48:46.927Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -59238,7 +59301,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-15T23:40:00.230Z",
+      "discoveredAt": "2026-09-16T23:48:46.927Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -59273,7 +59336,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-15T23:40:00.230Z",
+      "discoveredAt": "2026-09-16T23:48:46.927Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -59354,9 +59417,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260916_083519:guideline:2026-09-16",
+    "runId": "trend_review_20260917_084410:guideline:2026-09-17",
     "outcome": "published",
-    "publishedId": "pmid:39823629",
+    "publishedId": "pmid:41193010",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -59381,15 +59444,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 156,
+        "mergedTotal": 161,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 10,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/17",
-          "maxDate": "2026/09/16"
+          "minDate": "2026/08/18",
+          "maxDate": "2026/09/17"
         },
         "retmax": 60,
         "topics": [
@@ -59397,8 +59460,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 55,
-            "idsFetched": 55,
+            "totalFound": 57,
+            "idsFetched": 57,
             "truncated": false,
             "error": null
           },
@@ -59406,8 +59469,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -59415,8 +59478,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 22,
-            "idsFetched": 22,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -59442,8 +59505,8 @@
             "id": "pubmed-topic:endo_metabolic",
             "label": "응급 내분비·대사",
             "succeeded": true,
-            "totalFound": 1,
-            "idsFetched": 1,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           },
@@ -59493,7 +59556,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 140,
+        "topicOnlyCount": 145,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -59505,9 +59568,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 156,
-          "enriched": 156,
-          "withAbstract": 124,
+          "requested": 161,
+          "enriched": 161,
+          "withAbstract": 127,
           "error": null
         }
       },
@@ -59560,25 +59623,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
         "queued": 221,
-        "needsReview": 450,
+        "needsReview": 449,
         "rejected": 127,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39823629",
+        "candidateId": "pmid:41193010",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-15T23:42:01.706Z",
+  "updatedAt": "2026-09-16T23:50:32.474Z",
   "configVersion": "guideline-v2"
 }

@@ -938,23 +938,6 @@
       "status": "queued"
     },
     {
-      "pmid": "39774207",
-      "title": "Induction Agents for Tracheal Intubation in Critically Ill Patients.",
-      "journal": "Crit Care Med",
-      "score": 7.7,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "중증환자 기관삽관 유도제 — 기도 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40163133",
       "title": "European Society of Intensive Care Medicine (ESICM) 2025 clinical practice guideline on fluid therapy in adult critically ill patients: part 2-the volume of resuscitation fluids.",
       "journal": "Intensive Care Med",
@@ -9482,6 +9465,94 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39774207",
+      "title": "Induction Agents for Tracheal Intubation in Critically Ill Patients.",
+      "journal": "Crit Care Med",
+      "score": 7.7,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중증환자 기관삽관 유도제 — 기도 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-17",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39774207",
+          "title": "Induction Agents for Tracheal Intubation in Critically Ill Patients.",
+          "journal": "Critical care medicine",
+          "pubDate": "2025-1-8",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39774207/",
+          "doi": "10.1097/CCM.0000000000006506"
+        },
+        "title_ko": "중증 환자의 기관삽관을 위한 유도 약제(induction agents)",
+        "scope_ko": "기관삽관을 받는 중증 환자에서 사용되는 정맥 유도 약제(etomidate, ketamine, propofol 등)와 임상 결과의 연관성을 정리한 '간결한 종합 리뷰(concise definitive review)'다. 무작위대조시험과 환자 결과를 보고한 관찰연구를 근거로 어떤 유도 약제를 선택해야 하는지를 검토한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "목적 (Objectives)",
+            "body_ko": "기관삽관을 받는 중증 환자에서 유도 약제의 사용과 그것이 결과(outcome)와 갖는 연관성을 간결하게 정리한 종합 리뷰(concise definitive review)다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "자료원·연구 선정·자료 추출 (Data Sources / Study Selection / Data Extraction)",
+            "body_ko": "원저 문헌은 '중증 환자의 기관삽관을 위한 유도 약제'와 관련된 검색어로 PubMed 검색을 통해 확보하였다.\n\n환자 결과(patient outcomes)를 보고한 무작위대조시험(RCT)과 관찰연구를 포함시켰다.\n\n포함된 연구에서 유도 약제의 선택과 임상적으로 의미 있는 결과에 관한 자료를 추출하였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "자료 종합 — 에토미데이트(etomidate)와 케타민(ketamine)",
+            "body_ko": "최근 수년간 중환자 진료에서 가장 많이 연구된 유도 약제는 etomidate와 ketamine이었다.\n\netomidate에 관한 최근 연구들은 잘 알려진 부신 억제(adrenal suppression)가 이환율(morbidity)과 사망률(mortality) 측면에서 갖는 임상적 영향을 조사하였다.\n\netomidate는 ketamine과 비교했을 때 확실한 혈역학적 이점(definitive hemodynamic benefit)은 없으면서도 무시할 수 없는(non-negligible) 사망 위험을 동반할 수 있다.\n\n따라서 현재까지의 자료는 etomidate보다 ketamine의 사용을 지지한다. 두 약제 사이의 혈역학 프로파일 차이는 임상적으로는 그 중요성이 작아(minor clinical relevance) 보이기 때문이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "자료 종합 — 프로포폴(propofol)",
+            "body_ko": "propofol을 다른 유도 약제와 비교한 다기관 무작위 연구는 존재하지 않는다. 그러나 대규모 관찰연구의 근거는 중증 환자에서 propofol이 삽관 후 심혈관 불안정(post-intubation cardiovascular instability)과 연관됨을 확인하였다.\n\n이러한 소견은 관찰연구라는 성격상 교란인자(confounders)의 역할을 배제할 수는 없으나, propofol과 유도 후 심혈관 불안정의 연관성은 약리학적으로 그럴듯(pharmacologically plausible)하다. 이는 propofol을 피하고, 중환자 진료에서 ketamine처럼 더 나은 안전성 프로파일을 가진 약제를 선호할 근거가 된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론 (Conclusions)",
+            "body_ko": "가용한 근거만으로 확정적인 결론을 내릴 수는 없으나, 최근 근거는 etomidate가 생존(survival)에 미칠 수 있는 잠재적 부정적 영향과 propofol의 심혈관 불안정 연관성을 지적하였다.\n\nketamine은 더 안전한 프로파일, 널리 보급된 가용성(widespread availability), 낮은 비용(low cost)을 가진 약제로 고려될 수 있다. 다만 향후 연구가 최적의 약제 선택, 중증 질환 상황에서의 용량(dosage), 그리고 삽관 전후 합병증 위험을 최소화하기 위한 병행 중재(concomitant interventions)에 관해 확정적인 자료를 제공해야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 저자(Russotto) 인터뷰 — 개별화 접근과 실제 유도 번들",
+            "body_ko": "※ 아래는 공동저자 Vincenzo Russotto가 이 리뷰를 주제로 진행한 SCCM 팟캐스트(SCCMPod-550, 2025-10-02) 내용을 보강한 것이다.\n\n연구의 한계: 중환자 영역의 최근 시험 대부분은 실용적(pragmatic)이고 비맹검(unblinded)이어서, 응급 삽관 상황에서 모든 유도 약제를 명확히 비교하는 근거를 세우기 어렵다.\n\netomidate: 2022년 무작위 시험에서 ketamine 대비 7일 사망률 증가가 관찰되었고, 여러 메타분석에서 잠재적 위해 신호가 확인되었다. 기전으로는 beta-hydroxylase 억제가 일부 환자군에서의 사망률 증가를 설명할 수 있다.\n\nketamine: '시냅스전 카테콜아민 재흡수 억제'로 혈역학적 안정성을 제공하고, 진통 효과로 오피오이드(그 자체가 심혈관 허탈 위험을 독립적으로 높인다) 필요를 줄인다. 다만 일부 환자에서 고혈압과 침 분비 과다를 유발할 수 있다(삽관된 환자에서 환각·악몽은 임상적 의미가 작다).\n\npropofol: 다른 약제와 비교한 RCT가 제한적이며, 현재 유럽 지침은 중증 환자에서의 사용을 권장하지 않는다. 선제적 승압제 지원이 필요할 수 있다.\n\n개별화 접근: Russotto는 경직된 프로토콜보다 환자 생리(외상성 뇌손상, 패혈성 쇼크, 심인성 쇼크 등)에 맞춘 약물 비율 조정을 강조하였다. 70kg 환자에 대한 전형적 유도 번들의 예로 ketamine을 주 최면제로, midazolam 1–3mg 보강, 선제적 노르아드레날린 주입, 가능하면 fentanyl 회피, 삽관 후 소량의 propofol 선택적 사용을 제시하였다.\n\n향후 연구: 유도 약제와 무관하게 선제적 승압제 사용이 유도 후 심혈관 허탈을 완화하는지를 볼 예방 시험(Prevention Trial)이 진행 중이며, Pragmatic Critical Care Research Group이 etomidate에 관한 대규모 다기관 시험을 수행하고 있다.\n— 보강 출처: SCCM Podcast SCCMPod-550 — Choosing Induction Agents in Critical Care (guest V. Russotto) (https://www.sccm.org/communications/sccm-podcast/sccm-podcast-all-episodes/sccmpod-550-ccm-choosing-induction-agents-in-critical-care)",
+            "origin": "augmented",
+            "sourceLabel": "SCCM Podcast SCCMPod-550 — Choosing Induction Agents in Critical Care (guest V. Russotto)",
+            "sourceUrl": "https://www.sccm.org/communications/sccm-podcast/sccm-podcast-all-episodes/sccmpod-550-ccm-choosing-induction-agents-in-critical-care"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 리뷰는 중증 환자 기관삽관에서 etomidate의 부신 억제와 잠재적 사망률 증가, propofol의 삽관 후 심혈관 불안정 연관성을 근거로, 확정적 결론은 아니지만 더 안전한 프로파일·광범위한 가용성·저비용을 가진 ketamine을 우선 고려하도록 임상 사고를 이끈다. 다만 저자들은 최적 약제·용량과 삽관 전후 합병증을 줄이기 위한 병행 중재(예: 선제적 승압제)는 아직 확정적 근거가 부족하다고 명시하므로, 약제 선택과 함께 혈역학 최적화를 개별 환자에 맞춰 병행해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39774207",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39774207/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000006506",
+            "url": "https://doi.org/10.1097/CCM.0000000000006506"
+          },
+          {
+            "label": "웹 — NYSORA — Choosing the safest induction agent for tracheal intubation in the critically ill",
+            "url": "https://nysora.com/education-news/choosing-the-safest-induction-agent-for-tracheal-intubation-in-the-critically-ill/"
+          },
+          {
+            "label": "웹 — SCCM Podcast SCCMPod-550 — Choosing Induction Agents in Critical Care (guest V. Russotto)",
+            "url": "https://www.sccm.org/communications/sccm-podcast/sccm-podcast-all-episodes/sccmpod-550-ccm-choosing-induction-agents-in-critical-care"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -9539,9 +9610,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-16",
+    "date": "2026-09-17",
     "outcome": "published",
-    "publishedId": "37314271"
+    "publishedId": "39774207"
   },
-  "updatedAt": "2026-09-16"
+  "updatedAt": "2026-09-17"
 }
