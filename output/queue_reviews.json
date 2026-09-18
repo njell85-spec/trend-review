@@ -955,23 +955,6 @@
       "status": "queued"
     },
     {
-      "pmid": "40522481",
-      "title": "Traumatic brain injury management in the intensive care unit: standard of care and knowledge gaps.",
-      "journal": "Intensive Care Med",
-      "score": 7.7,
-      "topic": "trauma",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ICU 외상성뇌손상 관리 종설 — 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "36682372",
       "title": "Asthma.",
       "journal": "Lancet",
@@ -9553,6 +9536,104 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40522481",
+      "title": "Traumatic brain injury management in the intensive care unit: standard of care and knowledge gaps.",
+      "journal": "Intensive Care Med",
+      "score": 7.7,
+      "topic": "trauma",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 외상성뇌손상 관리 종설 — 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-19",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40522481",
+          "title": "Traumatic brain injury management in the intensive care unit: standard of care and knowledge gaps.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-6-16",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40522481/",
+          "doi": "10.1007/s00134-025-07967-1"
+        },
+        "title_ko": "중환자실에서의 외상성 뇌손상 관리: 표준 진료와 지식의 공백",
+        "scope_ko": "중환자실(ICU)에 입원한 외상성 뇌손상(TBI) 환자의 관리를 다루는 서술적 종설(narrative review)로, 현재의 표준 진료와 근거, 그리고 남아 있는 지식의 공백을 정리해 임상의에게 실용적 접근을 제시하는 것을 목표로 한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "배경: 진보에도 여전히 높은 불량 예후율",
+            "body_ko": "중환자실에서의 외상성 뇌손상(TBI) 관리가 발전하고 새로운 진단 기법과 감시(monitoring) 방식이 도입되었음에도, 신경학적으로 불량한 예후를 보이는 비율은 여전히 높다. 다만 전문화된 신경중환자실(specialized neurocritical care units)은 예후를 개선하는 것으로 확인되어 있다.\n\n(주: 이 절은 이 논문의 초록에 근거한 것으로, 본문 전문은 유료 장벽으로 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "낮은 근거 수준과 진료의 이질성",
+            "body_ko": "지침(guidelines)이 개발되어 있으나 권고의 대부분은 낮은 수준의 근거에 기반한다. 이로 인해 TBI 관리의 여러 영역에서 임상 진료에 상당한 이질성(heterogeneity)이 발생하고 있다. 저자들은 그 예로 다중양식 신경감시(multimodal neuromonitoring)의 적응증, 두개내·두개외 합병증(intra- and extra-cranial complications)의 치료, 그리고 예후 예측 도구(prognostic tools)의 사용을 든다.\n\n(주: 초록에 근거한 서술이며, 각 영역별 구체적 역치·용량·근거등급은 본문 전문을 확보하지 못해 이 논문에서 직접 옮길 수 없었다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "새로 등장한 도구: 바이오마커와 인공지능",
+            "body_ko": "최근 바이오마커(biomarkers)와 인공지능(artificial intelligence)의 활용과 같은 새로운 도구들이 등장하였다. 그러나 이들을 실제 임상에 적용하기 위해서는 추가 연구가 필요하다고 저자들은 명시한다. 즉 이 도구들은 유망하지만 아직 확립되지 않은 단계로 제시된다.\n\n(주: 초록에 근거한 서술이다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이 종설의 목적과 성격",
+            "body_ko": "이 논문은 서술적 종설로서, 중환자실 TBI 관리의 표준 진료를 기술하고 현재의 근거와 지식의 공백을 함께 짚어, 이 환자군을 돌보는 임상의에게 실용적(pragmatic) 접근을 제공하는 것을 목표로 한다.\n\n(주: 초록에 근거한 서술이다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 일반 중환자 지지치료의 대표적 목표치",
+            "body_ko": "이 논문의 본문을 확보하지 못했으므로, 초록이 언급한 '두개외 합병증 치료'와 '지지치료'의 이해를 돕기 위해 동일 주제(중환자실 TBI 관리)를 다룬 권위 있는 2차 문헌에서 대표적 목표치를 보강한다. 아래 값은 이 논문의 주장이 아니라 아래 출처의 값이다.\n\n· 폐보호 환기: 이상체중 기준 일회호흡량(tidal volume) 6–8 mL/kg, PEEP 5–10 cmH2O, 고평부압(plateau pressure) 30 cmH2O 미만.\n· PaCO2: 저탄산혈증(hypocapnia)과 허용적 고탄산혈증(permissive hypercapnia)을 모두 피하고 가능한 한 빨리 정상범위로 되돌린다.\n· 두부 거상: 15°–30° 상체 거상.\n· 혈압: 수축기혈압 90 mmHg 미만의 저혈압을 피하며, 단독 TBI에서는 수축기혈압 110 mmHg 미만도 회피 대상으로 고려한다.\n· 혈당: 엄격한 인슐린 요법(80–110 mg/dL 또는 80–120 mg/dL)은 저혈당 위험이 있어 경계하며, 경도의 고혈당(120–150 mg/dL)이 오히려 이로울 수 있다는 논의가 있다.\n· 경련 예방: GCS 10 미만 등 선별된 고위험군에 한해 고려한다.\n· 체온: 정상체온(normothermia) 유지.\n— 보강 출처: General intensive care for patients with traumatic brain injury: an update (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC4024687/)",
+            "origin": "augmented",
+            "sourceLabel": "General intensive care for patients with traumatic brain injury: an update (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4024687/"
+          },
+          {
+            "heading_ko": "[웹 보강] 두개외 합병증·부가적 약물 이슈",
+            "body_ko": "마찬가지로 이 논문의 본문을 확보하지 못해, 초록이 언급한 '두개내·두개외 합병증 치료'의 맥락을 보강하기 위해 동일 주제를 다룬 2차 문헌의 내용을 아래에 정리한다. 이 논문의 주장이 아니라 아래 출처의 내용이다.\n\n· 발작성 교감신경 과활성(paroxysmal sympathetic hyperactivity, PSH): propranolol, labetalol 등 베타차단제가 논의된다.\n· 트라넥삼산(tranexamic acid, TXA): CRASH-2·CRASH-3 시험을 근거로 안전성이 뒷받침되며, 인용된 사례군에서 혈전 합병증 증가는 관찰되지 않았다고 보고된다.\n· 염증 바이오마커: IL-33 등 혈청·혈장·뇌척수액의 염증 반응 표지자가 연구 대상으로 언급된다.\n· 자원이 제한된 환경에서는 뇌지주막하수조 개방술(cisternostomy)이 대안적 수술 기법으로 논의된다.\n— 보강 출처: Traumatic Brain Injuries: Comprehensive Management of Complex Clinical Scenarios (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10139778/)",
+            "origin": "augmented",
+            "sourceLabel": "Traumatic Brain Injuries: Comprehensive Management of Complex Clinical Scenarios (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10139778/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설의 초록 범위 안에서 보면, TBI 환자는 가능하면 전문 신경중환자실에서 관리하는 것이 예후 측면에서 유리하며, 다중양식 신경감시·합병증 치료·예후 예측의 상당 부분이 낮은 근거 위에 서 있어 기관·의료진 간 편차가 크다는 점을 침상에서 인지할 필요가 있다. 바이오마커와 인공지능 기반 도구는 유망하나 아직 일상 진료 표준으로 삼기에는 근거가 부족하므로 신중하게 접근한다. (본문 전문을 확보하지 못해 구체적 역치·프로토콜 권고는 이 논문에서 직접 옮기지 못했다.)",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40522481",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40522481/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-07967-1",
+            "url": "https://doi.org/10.1007/s00134-025-07967-1"
+          },
+          {
+            "label": "웹 — Intensive Care Medicine — 논문 페이지(초록, 유료 장벽)",
+            "url": "https://www.springermedicine.com/traumatic-brain-injuries/neurointensive-care/traumatic-brain-injury-management-in-the-intensive-care-unit-sta/51108114"
+          },
+          {
+            "label": "웹 — UNIMIB 기관 리포지터리(전문 'reserved')",
+            "url": "https://boa.unimib.it/handle/10281/558461"
+          },
+          {
+            "label": "웹 — General intensive care for patients with traumatic brain injury: an update (PMC4024687)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4024687/"
+          },
+          {
+            "label": "웹 — Traumatic Brain Injuries: Comprehensive Management of Complex Clinical Scenarios (PMC10139778)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10139778/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -9610,9 +9691,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-17",
+    "date": "2026-09-19",
     "outcome": "published",
-    "publishedId": "39774207"
+    "publishedId": "40522481"
   },
-  "updatedAt": "2026-09-17"
+  "updatedAt": "2026-09-19"
 }

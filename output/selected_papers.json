@@ -649,5 +649,16 @@
     "rerankPoolSize": 6,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "41121365",
+    "title": "Adjunctive terlipressin versus placebo in the treatment of refractory septic sho",
+    "date": "2026-09-19",
+    "topic": "sepsis_shock",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 9,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]
