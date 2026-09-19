@@ -2606,6 +2606,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-20",
+      "pmid": "41914828",
+      "title": "Effect of a Lower Vs. Higher Positive End-Expiratory Pressure Strategy on Clinically Relevant Outcomes in ICU Patients Without Acute Respiratory Distress Syndrome: Bayesian Re-analysis of the REstricted Vs. Liberal Positive End-Expiratory Pressure in Patients Without Acute Respiratory Distress Syndrome (RELAx) Randomized Clinical Trial.",
+      "title_ko": "ARDS가 없는 중환자실 환자에서 낮은 PEEP 대 높은 PEEP 전략이 임상적으로 유의한 결과에 미치는 영향: RELAx 무작위 임상시험의 Bayesian 재분석",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007117",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ARDS가 없는 침습적 인공호흡 중환자실 환자에서, 비열등성 시험인 원래 RELAx 시험을 Bayesian 틀로 재분석했을 때 낮은 PEEP 전략이 높은 PEEP 전략에 비해 임상적으로 의미 있는 이익(ventilator-free days, 사망률, 인공호흡 기간)을 낼 확률은 얼마인가?",
+      "pico": {
+        "population": "[Netherlands] 980 ICU patients expected to require invasive mechanical ventilation greater than or equal to 24 hours for reasons other than ARDS, from a multicenter trial conducted between October 2017 and March 2019 in eight ICUs; all patients included in the original analysis entered the Bayesian re-analysis.",
+        "intervention": "The lowest possible PEEP between 0 and 5 cm H2O (lower-PEEP strategy).",
+        "comparison": "A higher PEEP of 8 cm H2O (higher-PEEP strategy).",
+        "outcome": "Primary outcome was ventilator-free days at day 28 (VFD-28); the odds ratio for higher VFD-28 with lower PEEP was 1.08 (95% credible intervals, 0.87–1.35), with consistent estimates across priors and a probability of superiority ranging from 75% to 78%."
+      },
+      "pico_ko": {
+        "population": "[네덜란드] ARDS 이외의 이유로 24시간 이상 침습적 인공호흡이 예상된 중환자실 환자 980명으로, 2017년 10월부터 2019년 3월까지 8개 ICU에서 수행된 다기관 시험 대상자이며, 원 분석에 포함된 모든 환자가 Bayesian 재분석에 포함되었다.",
+        "intervention": "가능한 한 낮은 0~5 cm H2O 사이의 PEEP (낮은 PEEP 전략).",
+        "comparison": "8 cm H2O의 높은 PEEP (높은 PEEP 전략).",
+        "outcome": "일차 결과는 28일째 ventilator-free days(VFD-28)였으며, 낮은 PEEP에서 더 높은 VFD-28에 대한 odds ratio는 1.08 (95% credible intervals, 0.87–1.35)이었고, 여러 prior에서 일관된 추정치와 함께 우월성 확률이 75%에서 78%였다."
+      },
+      "keyFindings": [
+        "For the primary outcome VFD-28, lower PEEP had an OR of 1.08 (95% CrI 0.87–1.35) with a probability of superiority of 75–78% across all priors — a modest, uncertain signal.",
+        "For 28-day mortality the probability of benefit with lower PEEP was 72–89%, whereas for duration of ventilation it was only 11–28%, indicating inconsistent direction across secondary outcomes.",
+        "In prespecified subgroups (admitted for reasons other than cardiac arrest, or intubated for reasons other than respiratory failure), the probability of benefit with lower PEEP exceeded 90%, suggesting heterogeneity of treatment effect."
+      ],
+      "keyFindings_ko": [
+        "일차 결과 VFD-28에서 낮은 PEEP의 OR는 1.08 (95% CrI 0.87–1.35)이고 모든 prior에서 우월성 확률이 75–78%로, 크지 않고 불확실한 신호였다.",
+        "28일 사망률에서는 낮은 PEEP의 이익 확률이 72–89%였으나 인공호흡 기간에서는 11–28%에 그쳐, 이차 결과 간 효과 방향이 일관되지 않았다.",
+        "사전 지정된 subgroup(심정지 이외 사유 입원, 호흡부전 이외 사유 기관삽관)에서는 낮은 PEEP의 이익 확률이 90%를 초과하여 치료효과의 이질성을 시사했다."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41914828",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41914828/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007117",
+          "url": "https://doi.org/10.1097/CCM.0000000000007117"
+        },
+        {
+          "label": "웹 — PubMed — Caroli et al., Bayesian re-analysis of RELAx (Crit Care Med 2026), PMID 41914828",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41914828/"
+        },
+        {
+          "label": "웹 — Critical Care Medicine / LWW official article page (DOI 10.1097/CCM.0000000000007117)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/10.1097/ccm.0000000000007117~effect-of-a-lower-vs-higher-positive-end-expiratory-pressure"
+        },
+        {
+          "label": "웹 — PMC — Statistical re-analysis plan of RELAx using a Bayesian framework (priors and outcome definitions), PMC12977215",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12977215/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — Caroli et al., Bayesian re-analysis of RELAx (Crit Care Med 2026), PMID 41914828",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41914828/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care Medicine / LWW official article page (DOI 10.1097/CCM.0000000000007117)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/10.1097/ccm.0000000000007117~effect-of-a-lower-vs-higher-positive-end-expiratory-pressure",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PMC — Statistical re-analysis plan of RELAx using a Bayesian framework (priors and outcome definitions), PMC12977215",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12977215/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
