@@ -1210,23 +1210,6 @@
       "status": "queued"
     },
     {
-      "pmid": "41123621",
-      "title": "European Resuscitation Council and European Society of Intensive Care Medicine guidelines 2025: post-resuscitation care.",
-      "journal": "Intensive Care Med",
-      "score": 7.6,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "소생 후 진료 지침, 소생 핵심 주제",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "41236566",
       "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
       "journal": "Intensive Care Med",
@@ -9745,6 +9728,130 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41123621",
+      "title": "European Resuscitation Council and European Society of Intensive Care Medicine guidelines 2025: post-resuscitation care.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "소생 후 진료 지침, 소생 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-21",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41123621",
+          "title": "European Resuscitation Council and European Society of Intensive Care Medicine guidelines 2025: post-resuscitation care.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-10-22",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41123621/",
+          "doi": "10.1007/s00134-025-08117-3"
+        },
+        "title_ko": "유럽소생협의회(ERC)·유럽중환자의학회(ESICM) 2025 지침: 소생 후 치료(post-resuscitation care)",
+        "scope_ko": "성인 심정지 환자에서 자발순환회복(ROSC) 직후부터 시작되는 소생 후 치료 전반을 다루는 ERC·ESICM 공동 지침이다. 심정지 후 증후군, 원인 진단, 산소·환기 조절, 관상동맥 재관류, 혈역학 관리, 발작 조절, 체온 조절, 일반 중환자 관리, 신경학적 예후 예측, 장기 예후·재활, 장기 기증까지를 ILCOR의 국제 합의(CoSTR)에 근거해 권고한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "소생 후 치료의 시작과 심정지 후 증후군(post-cardiac arrest syndrome)",
+            "body_ko": "소생 후 치료는 자발순환회복이 지속된 직후부터, 발생 장소와 무관하게 즉시 시작한다. ROSC 후에는 ABC(기도–호흡–순환) 접근을 사용한다.\n\n심정지 후 증후군은 전신 허혈–재관류 손상에서 비롯되는 여러 병태가 겹쳐 나타나는 상태로, ① 심정지 후 뇌손상(hypoxic-ischaemic brain injury), ② 심정지 후 심근 기능부전, ③ 전신적 허혈–재관류 반응, ④ 심정지를 유발한 지속되는 기저 병인(persistent precipitating pathology)으로 구성된다. 그 중증도는 심정지의 원인, 무혈류·저혈류 시간에 따라 달라지며 소생 후 치료의 방향을 결정한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "심정지 원인의 진단",
+            "body_ko": "ECG에서 명확한 ST분절 상승이 있는 환자에서는 즉각적인 관상동맥조영술을 우선한다.\n\n심정지 전 증상이 비관상동맥성 원인을 시사하는 경우(두통, 발작, 호흡곤란, 복통 등)에는 CT 영상을 우선한다. 입원 시 경흉부 심초음파와 함께, 두부에서 골반까지(폐동맥조영 포함) 이중조영(dual-phase) 전신 CT를 시행한다. 관상동맥조영술에서 병변이 확인되지 않으면 두부–골반 CT를 시행한다.\n\n원인이 밝혀지지 않은 심정지에서는 혈액 독성검사와 유전자 검사를 시행하고, 이식형 심장전자장치·웨어러블 모니터의 자료를 회수하며, 12유도 ECG를 반복하고 지속 심장 모니터링을 한다. 필요 시 심장 MRI, 나트륨통로차단제 유발검사, 운동부하검사를 고려한다. 유전성 질환이 확인되면 표적 유전자 검사를 신속히 진행하고, 재발 위험이 높으므로 장기 추적을 권고한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "기도·호흡: 산소화와 환기 조절",
+            "body_ko": "기술이 가능하면 진행된 기도(기관내삽관)를 확보한다. 삽관은 성공률이 높은 숙련된 시술자만 시행하고, 파형 호기말 이산화탄소(waveform capnography)로 위치를 확인한다. 숙련된 삽관이 불가능하면 숙련 인력이 올 때까지 성문상기도기(supraglottic airway)를 유지한다. 짧은 심정지 후 즉시 정상 뇌기능과 정상 호흡을 회복한 환자는 기도 보조가 필요 없을 수 있으나 SpO2가 94% 미만이면 산소를 보충한다.\n\n산소화: SpO2를 신뢰성 있게 측정할 수 있을 때까지 처음에는 100%(또는 가용 최대 농도) 산소를 사용한다. 이후 SpO2 94–98% 또는 PaO2 10–13 kPa(75–100 mmHg)를 목표로 적정한다. ROSC 후 저산소혈증(PaO2 < 8 kPa 또는 60 mmHg)을 피하고, 마찬가지로 고산소혈증도 피한다. 맥박산소측정은 피부색이 어두운 경우나 저관류 상태에서 실제보다 높게 나올 수 있음에 유의한다.\n\n환기: 정상 이산화탄소(normocapnia), 즉 PaCO2 4.7–6.0 kPa(35–45 mmHg)를 목표로 한다. 폐보호 환기 전략으로 이상체중 기준 일회호흡량 6–8 mL/kg를 사용한다. 기계환기 환자에서는 동맥혈가스를 확인하고 호기말 CO2를 모니터링한다. 저체온 환자에서는 저이산화탄소혈증 여부를 위해 PaCO2를 자주 확인하고, 온도보정값 또는 비보정값 중 하나를 일관되게 사용한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "순환: 관상동맥 재관류",
+            "body_ko": "심장성으로 의심되는 심정지 후 ROSC 환자에서 지속적인 ST분절 상승이 있으면 응급 심도자실 평가와 필요 시 일차적 경피관상동맥중재술(PPCI)을 시행한다.\n\nST분절 상승이 없는 경우에는, 임상 맥락상 급성 관상동맥 폐색 가능성이 높지 않은 한 심도자술을 지연한다(즉, ST상승이 없는 병원밖 심정지에서 일률적인 조기 조영술은 권고하지 않는다).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈역학 감시와 관리",
+            "body_ko": "평균동맥압(MAP)은 60–65 mmHg 초과를 목표로 하며 저혈압을 피한다. 개별 환자의 필요에 따라 수액, noradrenaline, dobutamine으로 관류를 유지한다. 스테로이드는 일상적으로 투여하지 않는다. 심실성 부정맥과 연관되는 저칼륨혈증·고칼륨혈증을 피한다.\n\n모든 환자에서 동맥관을 삽입해 지속적으로 혈압을 감시한다. 혈역학적으로 불안정한 환자에서는 심박출량 감시를 고려한다. 심장 병리 확인과 심근 기능부전 정량화를 위해 가능한 한 빨리 심초음파를 시행한다. 최적의 약물치료에도 지속되는 심장성 쇼크가 있는 일부 환자에서는 기계적 순환보조(IABP, LVAD, 정맥–동맥 ECMO)를 고려한다.\n\n심정지 주변기 부정맥은 ALS 지침을 따르고 기저 원인(관상동맥 폐색, 전해질 이상)을 교정한다. 부정맥이 없으면 항부정맥제 예방투여는 하지 않는다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신경계: 발작 조절",
+            "body_ko": "뇌파(EEG)로 전기적 발작을 진단하고 치료 반응을 감시한다. 발작 치료에는 진정제에 더해 levetiracetam 또는 sodium valproate를 1차 항경련제로 사용한다. 심정지 후 발작 예방적 투여는 하지 않는다. 근간대경련(myoclonus)이 있으나 EEG 배경이 양성(benign)인 환자에서는 심정지 며칠 후 각성 시도(wake-up trial)를 시도한다.\n\n혼수 상태의 심정지 생존자에게 사용을 권고할 만한 특정 신경보호제는 근거가 불충분하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "체온 조절(temperature control)",
+            "body_ko": "ROSC 후에도 혼수 상태가 지속되는 환자에서는 능동적으로 발열을 예방하여 체온 37.5°C 이하를 목표로 한다. 발열 예방은 36~72시간 동안 시행한다.\n\n경도 저체온(32–36°C)을 보이는 혼수 환자를 능동적으로 정상체온으로 가온하지 않는다. 체온 조절에는 지속 모니터링에 기반한 되먹임(feedback) 시스템을 갖춘 표면 또는 혈관내 냉각 기법을 사용한다. ROSC 직후 대량의 차가운 정맥 수액을 급속 주입하는 병원전 냉각은 권고하지 않는다.\n\n(참고: 이번 지침은 종전의 '목표체온관리(TTM)'라는 표현을 '체온 조절'로 대체하고 능동적 발열 예방을 표준으로 강조한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "일반 중환자 관리",
+            "body_ko": "진정: 조기 신경학적 진찰을 위해 단시간 작용 진정제를 사용하고 매일 진정 중단(sedation hold)을 시행한다. 혼수 상태의 심정지 후 환자에게 신경근차단제를 일률적으로 사용하지 않으며, ARDS를 동반한 중증 저산소혈증에서는 사용을 고려한다.\n\n감염: 예방적 항생제를 일상적으로 사용하지 않되, 폐렴이 의심되면 낮은 역치로 치료한다.\n\n영양·소화기: 환자를 머리 30° 상승 자세로 눕힌다. 저속(영양적, trophic) 위장관 영양을 고려하고 견디는 대로 증량한다. 특히 응고장애 환자에서 스트레스궤양 예방을 시행한다.\n\n항응고와 혈당은 일반 중환자실 권고에 따라 개별화·표준 관리한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신경학적 예후 예측(neuroprognostication)",
+            "body_ko": "임상 진찰, 전기생리검사, 생체표지자, 영상을 아우르는 다중양식(multimodal) 전략을 사용한다. 단일 예측인자로 100% 정확한 것은 없다. 진정제·아편유사제·근이완제 등 교란요인을 배제한 뒤, ROSC 후 72시간 이상 경과했음에도 각성하지 않거나 명령에 따르지 않는(GCS 운동점수 < 6) 환자에서 예후 예측을 고려한다.\n\n임상 진찰: 매일 신경학적 진찰을 시행한다. ≥72시간에서 불량 예후를 시사하는 소견은 양측 동공반사 소실, 양측 각막반사 소실, 96시간 이내의 근간대경련(특히 72시간 이내의 status myoclonus)이다. 근간대성 경련 중에는 EEG를 기록해 뇌전증모양 활동과 배경 반응성을 평가한다.\n\n뇌파(EEG): ROSC 후 1일차부터 시행한다. 24시간 이후 억제된 배경(주기적 방전 동반 여부 무관), 폭발–억제(burst suppression) 등 '고악성(highly malignant)' 패턴은 불량 예후를 시사한다.\n\n체성감각유발전위(SSEP): 양측 N20 피질 전위 소실은 불량 예후를 시사한다. SSEP 시행 시 근이완제를 사용하고, 결과는 임상 진찰·기타 검사 맥락에서 해석한다.\n\n생체표지자: neuron-specific enolase(NSE)를 연속 측정한다. 24–48시간 또는 72시간 사이 NSE 상승, 48·72시간의 높은 값, 그리고 다중양식 알고리즘에서 48 또는 72시간 NSE > 60 mcg/L은 불량 예후를 시사한다.\n\n뇌 영상: 뇌 CT/MRI로 불량 예후를 예측한다. 신경영상 전문 판독을 확보하고(불가능하면 원격의료 고려), CT에서 회백질/백질 비의 현저한 감소를 동반한 전반적 뇌부종, MRI에서 광범위한 확산제한(diffusion restriction)은 불량 예후를 시사한다. 72–96시간에 여전히 의식이 없고 첫 CT에서 저산소–허혈성 뇌손상(HIBI) 소견이 없으면 CT를 반복한다.\n\n다중양식 알고리즘: 교란요인을 배제한 상태에서 ROSC 후 ≥72시간에 다음 예측인자 중 2개 이상이 존재하면 불량 예후 가능성이 높다 — ① ≥72시간에 동공·각막반사 소실, ② ≥24시간에 양측 N20 SSEP 소실, ③ >24시간에 고악성 EEG 패턴, ④ 48 및/또는 72시간 NSE > 60 mcg/L, ⑤ ≤72시간의 status myoclonus, ⑥ 뇌 CT/MRI의 광범위한 무산소성 손상. 대부분의 징후는 72시간 이전에 기록될 수 있으나, 예후 판단은 ≥72시간의 임상 평가 시점에만 내린다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "연명치료 중단(withdrawal of life-sustaining therapy)",
+            "body_ko": "연명치료 중단에 관한 논의는 신경학적 예후 평가와 분리해서 진행한다. 연령, 동반질환, 전반적 장기기능, 환자의 선호를 고려한다. 의료진과 가족 간 소통에 충분한 시간을 두고, 치료적 목표에서 임종기 완화의료로 전환하는 구조화된 접근을 사용한다. 중단 결정 이후에는 장기 기증을 고려한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "장기 예후와 재활",
+            "body_ko": "입원 중에는 조기 거동, 섬망 관리, 중환자실 일기(ICU diary)를 시행하고 환자와 공동생존자(co-survivor)에게 정보를 제공한다. 퇴원 전에 신체적·비신체적 장애에 대한 기능 평가를 시행하고 재활 필요를 파악해 조기 재활에 의뢰한다.\n\n퇴원 후에는 퇴원 3개월 이내에 추적을 마련한다. 인지·신체·정서 문제, 피로, 일상 역할에 미친 영향을 선별하고, 공동생존자도 추적에 초대해 정서 문제와 역할 영향을 평가한다. 필요 시 전문의 의뢰와 추가 재활을 진행하고, 심정지 원인에 따라 심장재활을 제공한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "장기 기증(organ donation)",
+            "body_ko": "순환이 회복된 뒤 이후 사망에 이르는 모든 환자를 장기 기증 대상으로 평가한다. 신경학적 사망 기준을 충족하지 않는 혼수 상태의 기계환기 환자라도 임종기 치료 중단이 결정되면 장기 기증을 고려한다. 모든 지역의 법적·윤리적 요건을 따른다. 심정지 등록체계는 초기 소생 이후의 장기 기증 현황을 보고해야 한다.\n\n(관련 권고) 비외상성 병원밖 심정지 환자는 지역 프로토콜에 따라 심정지 센터(cardiac arrest centre)로 이송하며, 가능한 한 심정지 센터에서 치료한다. 심정지 네트워크를 구축·유지하는 지역 프로토콜을 마련한다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "web-augmented",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 ROSC 직후 SpO2 94–98%·PaCO2 35–45 mmHg·MAP >60–65 mmHg로 조기 적정하고, ST분절 상승이 없으면 급성 관상동맥 폐색이 강하게 의심되지 않는 한 조기 관상동맥조영술을 미루며 이중조영 전신 CT로 원인을 넓게 탐색한다. 체온은 유도저체온 대신 능동적 발열 예방(≤37.5°C, 36–72시간)으로 관리하고, 경도 저체온 환자를 굳이 가온하지 않는다. 예후 판단은 교란요인 배제 후 ≥72시간에 2개 이상 불량 예측인자가 모일 때만 다중양식으로 내리며, 퇴원 3개월 이내 인지·정서·재활 추적과 공동생존자 지원까지 소생 후 치료의 범위로 포함한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41123621",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41123621/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08117-3",
+            "url": "https://doi.org/10.1007/s00134-025-08117-3"
+          },
+          {
+            "label": "웹 — Resuscitation Council UK — Post-resuscitation care Guidelines (2025)",
+            "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/post-resuscitation-care-guidelines"
+          },
+          {
+            "label": "웹 — HealthManagement.org — Post-Resuscitation Care: ERC and ESICM Guidelines",
+            "url": "https://healthmanagement.org/c/icu/News/post-resuscitation-care-european-resuscitation-council-and-esicm-guidelines"
+          },
+          {
+            "label": "웹 — Springer / Intensive Care Medicine — article landing page (Nolan JP et al., 2025)",
+            "url": "https://link.springer.com/article/10.1007/s00134-025-08117-3"
+          },
+          {
+            "label": "웹 — ESICM — ICM latest issue: ERC & ESICM guidelines 2025 post-resuscitation care",
+            "url": "https://www.esicm.org/icm-latest-issue-erc-esicm-guidelines-2025-post-resucitation-care/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -9802,9 +9909,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-20",
+    "date": "2026-09-21",
     "outcome": "published",
-    "publishedId": "40768067"
+    "publishedId": "41123621"
   },
-  "updatedAt": "2026-09-20"
+  "updatedAt": "2026-09-21"
 }

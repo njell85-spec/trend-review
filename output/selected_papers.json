@@ -671,5 +671,16 @@
     "rerankPoolSize": 7,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "41593766",
+    "title": "Ventilator settings for fiberoptic bronchoscopy during mechanical ventilation: a",
+    "date": "2026-09-21",
+    "topic": "resp_airway",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 6,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]

@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-19T23:25:10.516Z"
+      "supersededAt": "2026-09-20T23:26:30.409Z"
     },
     {
       "id": "pmid:38531812",
@@ -31639,7 +31639,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34331,7 +34331,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -36414,72 +36414,6 @@
       }
     },
     {
-      "id": "pmid:41841349",
-      "pmid": "41841349",
-      "title": "The 2025 updated European Resuscitation Council guidelines: overview of the most important changes.",
-      "pubDate": "2026 Apr 29",
-      "journal": "Polish archives of internal medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:51.509Z",
-      "abstract": "The new resuscitation guidelines of the European Resuscitation Council were published in October 2025. The aim of the guidelines is to sustainably improve the survival rate after cardiac arrest through structured and evidence‑based care systems. The latest update brings about some important changes and innovations. In this review, we highlighted the new recommendations, especially in the chapters on adult advanced life support, post‑resuscitation care, and the role of systems in saving lives. The importance of the first 3-5 minutes after cardiac arrest has been further strengthened. The most relevant updates include, among others, the need for lay people to be educated in cardiopulmonary resuscitation (CPR) by physicians, the role of the dispatch center in helping the caller identify cardiac arrest and ventilation failure, identification of the intravenous access as superior to other routes of drug administration, highlighting the possibility of vector change in defibrillation, importance of provider experience in the context of point‑of‑care ultrasound use, and the role of sedation during CPR.",
-      "meshTerms": [
-        "Humans",
-        "Cardiopulmonary Resuscitation",
-        "Practice Guidelines as Topic",
-        "Europe",
-        "Heart Arrest"
-      ],
-      "keywords": [],
-      "doi": "10.20452/pamw.17251",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "guideline-commentary-or-digest"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ERC 2025 주요 변경 개관 — 소생 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-resuscitation-council-overview-most-important-changes",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41837923",
       "pmid": "41837923",
       "title": "ACR Appropriateness Criteria® Abdominal Aortic Aneurysm or Dissection-Interventional Planning and Follow-Up: Update 2025.",
@@ -37243,7 +37177,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40701,7 +40635,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42470,7 +42404,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43218,7 +43152,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43546,7 +43480,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44058,7 +43992,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44474,7 +44408,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45073,7 +45007,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46161,7 +46095,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46235,7 +46169,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -46317,7 +46251,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46397,7 +46331,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -46476,7 +46410,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46556,7 +46490,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46620,7 +46554,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46766,7 +46700,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -46836,7 +46770,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46908,7 +46842,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -46978,7 +46912,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -47061,7 +46995,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47124,7 +47058,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47360,7 +47294,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47432,7 +47366,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47493,7 +47427,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47569,7 +47503,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47642,7 +47576,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47726,7 +47660,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47785,7 +47719,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47864,7 +47798,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47915,11 +47849,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.710312800171575,
+      "priority": 6.706658879391563,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.7103128001715755,
+        "recency": 1.7066588793915627,
         "scope": 0,
         "confidence": 2
       },
@@ -47934,7 +47868,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -48017,7 +47951,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48086,7 +48020,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -48155,7 +48089,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.801Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "esc|analysis-european-association-cardio-thoracic-surgery-valvular-heart-disease",
       "supersedes": [],
       "llmFit": {
@@ -48200,11 +48134,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.710312800129324,
+      "priority": 7.706658879349311,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.7103128001293237,
+        "recency": 1.7066588793493112,
         "scope": 0,
         "confidence": 2
       },
@@ -48219,7 +48153,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-19T23:25:09.802Z",
+      "lastSeenAt": "2026-09-20T23:26:29.753Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -54245,6 +54179,193 @@
         ]
       },
       "publishedAt": "2026-09-20"
+    },
+    {
+      "id": "pmid:41841349",
+      "pmid": "41841349",
+      "title": "The 2025 updated European Resuscitation Council guidelines: overview of the most important changes.",
+      "pubDate": "2026 Apr 29",
+      "journal": "Polish archives of internal medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:51.509Z",
+      "abstract": "The new resuscitation guidelines of the European Resuscitation Council were published in October 2025. The aim of the guidelines is to sustainably improve the survival rate after cardiac arrest through structured and evidence‑based care systems. The latest update brings about some important changes and innovations. In this review, we highlighted the new recommendations, especially in the chapters on adult advanced life support, post‑resuscitation care, and the role of systems in saving lives. The importance of the first 3-5 minutes after cardiac arrest has been further strengthened. The most relevant updates include, among others, the need for lay people to be educated in cardiopulmonary resuscitation (CPR) by physicians, the role of the dispatch center in helping the caller identify cardiac arrest and ventilation failure, identification of the intravenous access as superior to other routes of drug administration, highlighting the possibility of vector change in defibrillation, importance of provider experience in the context of point‑of‑care ultrasound use, and the role of sedation during CPR.",
+      "meshTerms": [
+        "Humans",
+        "Cardiopulmonary Resuscitation",
+        "Practice Guidelines as Topic",
+        "Europe",
+        "Heart Arrest"
+      ],
+      "keywords": [],
+      "doi": "10.20452/pamw.17251",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "guideline-commentary-or-digest"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ERC 2025 주요 변경 개관 — 소생 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-resuscitation-council-overview-most-important-changes",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41841349",
+          "title": "The 2025 updated European Resuscitation Council guidelines: overview of the most important changes.",
+          "journal": "Polish archives of internal medicine",
+          "pubDate": "2026 Apr 29",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41841349/",
+          "doi": "10.20452/pamw.17251"
+        },
+        "org": "European Resuscitation Council (ERC)",
+        "version": "2025 update",
+        "title_ko": "2025년 개정 유럽소생협의회(ERC) 지침: 주요 변경사항 개요",
+        "scope_ko": "심정지 환자의 소생에 관한 ERC의 포괄적 지침(2025년 10월 발간)으로, 특히 성인 전문소생술(ALS), 소생후 치료(post-resuscitation care), 그리고 생존을 좌우하는 시스템(systems saving lives)을 중점적으로 다룬다. 성인·소아·신생아 심폐소생술, 특수상황 소생, 소생 윤리, 소생 교육, 응급처치까지 전 영역을 포괄한다.",
+        "summary": [
+          "For adult cardiac arrest, attempt intravenous (IV) access first for drug delivery; use intraosseous (IO) access only if IV cannot be rapidly achieved (IV identified as the superior route).",
+          "For ventricular fibrillation refractory to 3 consecutive shocks, consider a defibrillation vector change (switch pads to anterior–posterior) or double sequential external defibrillation (DSED).",
+          "Give epinephrine as soon as feasible in non-shockable rhythms (PEA/asystole); in shockable rhythms give epinephrine only after initial defibrillation attempts have failed.",
+          "Only experienced/skilled operators should perform intra-arrest point-of-care ultrasound (POCUS), and it must not cause additional or prolonged interruptions in chest compressions; POCUS can identify treatable causes such as cardiac tamponade and tension pneumothorax.",
+          "Rescuers may consider small doses of sedative and/or analgesic drugs for patients who become conscious during CPR (CPR-induced consciousness, CIC).",
+          "Dispatch centres should actively help the caller recognise cardiac arrest and identify abnormal/agonal breathing (ventilation failure) to trigger bystander CPR.",
+          "The first 3–5 minutes after cardiac arrest are emphasised as decisive, with laypeople to be educated in CPR (including by physicians).",
+          "In comatose post-ROSC patients, actively prevent fever by targeting a temperature ≤37.5 °C; do not actively rewarm patients with mild hypothermia (32–36 °C), and avoid routine prehospital cooling with large-volume cold IV fluids."
+        ],
+        "summary_ko": [
+          "성인 심정지에서 약물 투여를 위해 정맥로(IV) 확보를 먼저 시도하고, IV를 신속히 확보하지 못할 때만 골내주사(IO)를 사용한다(IV가 우월한 경로로 규정됨).",
+          "3회 연속 제세동에 불응하는 심실세동(refractory VF)에서는 제세동 벡터 변경(패드를 전후면 anterior–posterior로 전환) 또는 이중 순차 제세동(DSED)을 고려한다.",
+          "비제세동 리듬(PEA/무수축)에서는 에피네프린을 가능한 한 빨리 투여하고, 제세동 리듬에서는 초기 제세동 시도가 실패한 후에 투여한다.",
+          "심정지 중 POCUS는 숙련된 술기자만 시행해야 하며, 가슴압박을 추가로·장시간 중단시켜서는 안 된다. POCUS는 심장압전·긴장성 기흉 같은 교정 가능한 원인 식별에 도움이 된다.",
+          "CPR 중 의식이 돌아오는 환자(CPR 유발 의식, CIC)에게는 소량의 진정제 및/또는 진통제 사용을 고려할 수 있다.",
+          "구급 상황실(dispatch center)은 신고자가 심정지를 인지하고 비정상·헐떡호흡(환기 실패)을 식별하도록 적극 도와 목격자 CPR을 유도해야 한다.",
+          "심정지 후 첫 3–5분이 결정적임을 강조하며, 일반인(layperson)에 대한 CPR 교육(의사에 의한 교육 포함)을 권고한다.",
+          "ROSC 후 혼수 환자에서는 ≤37.5 °C를 목표로 발열을 적극 예방하고, 경도 저체온(32–36 °C) 환자를 능동적으로 재가온하지 않으며, 병원전 대량 냉각수액 주입은 일상적으로 피한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "혈관 접근 경로 (IV vs IO)",
+            "detail": "Previous guidance treated IV and IO as broadly interchangeable first-line routes; the 2025 update identifies IV access as SUPERIOR to other routes for drug administration in adult cardiac arrest and recommends attempting IV first, reserving IO for when IV cannot be rapidly achieved. Reason: emerging trial/meta-analysis data on drug delivery and outcomes favour the IV route.",
+            "detail_ko": "이전에는 IV와 IO를 사실상 서로 대체 가능한 1차 경로로 보았으나, 2025 개정판은 성인 심정지 약물 투여에서 IV를 다른 경로보다 우월한 경로로 규정하고 IV를 먼저 시도하며 IV를 신속히 확보하지 못할 때만 IO를 쓰도록 권고한다. 이유: 약물 전달·예후에 관한 최근 임상시험·메타분석 근거가 IV 경로를 지지한다."
+          },
+          {
+            "topic": "불응성 VF 제세동 (벡터 변경/DSED)",
+            "detail": "New in 2025: for VF refractory to 3 consecutive shocks, a defibrillation vector change (moving pads from anterior–lateral to anterior–posterior) is now highlighted as an option, and double sequential external defibrillation (DSED, two defibrillators/two pad sets in anterior-lateral + anterior-posterior) may be considered. This reflects newer RCT evidence (e.g., DOSE-VF) not available for prior versions.",
+            "detail_ko": "2025 신규: 3회 연속 제세동에 불응하는 VF에서 제세동 벡터 변경(패드를 전측방 anterior-lateral에서 전후면 anterior-posterior로 이동)을 선택지로 부각하고, 이중 순차 제세동(DSED; 제세동기 2대·패드 2세트를 전측방+전후면에 배치)을 고려할 수 있게 했다. 이는 이전 판에 없던 최신 RCT 근거(예: DOSE-VF)를 반영한 것이다."
+          },
+          {
+            "topic": "에피네프린 투여 시점 (리듬별 구분)",
+            "detail": "The update sharpens the rhythm-based timing of epinephrine: in non-shockable rhythms (PEA/asystole) give epinephrine as soon as feasible because each minute of delay reduces survival; in shockable rhythms give epinephrine only after initial defibrillation attempts have failed. Emphasis on early epinephrine specifically in non-defibrillatable arrest.",
+            "detail_ko": "리듬에 따른 에피네프린 투여 시점을 더 명확히 했다: 비제세동 리듬(PEA/무수축)에서는 지연 1분마다 생존율이 감소하므로 가능한 한 빨리 투여하고, 제세동 리듬에서는 초기 제세동 시도가 실패한 후에 투여한다. 특히 비제세동성 심정지에서 조기 에피네프린 투여를 강조한다."
+          },
+          {
+            "topic": "심정지 중 초음파(POCUS)와 술기자 경험",
+            "detail": "The 2025 update newly emphasises that intra-arrest POCUS should be limited to experienced/skilled operators and must not add to or prolong chest-compression interruptions; when used it can identify reversible causes (tamponade, tension pneumothorax). Reason: concern that inexperienced use degrades CPR quality and misleads decisions.",
+            "detail_ko": "2025 개정판은 심정지 중 POCUS를 숙련된 술기자에 한정하고 가슴압박 중단을 추가·연장하지 않아야 함을 새로이 강조한다. 사용 시 교정 가능한 원인(심장압전, 긴장성 기흉)을 식별할 수 있다. 이유: 미숙한 사용이 CPR 질을 떨어뜨리고 판단을 오도할 수 있다는 우려."
+          },
+          {
+            "topic": "CPR 중 진정 (CPR 유발 의식)",
+            "detail": "New topic: rescuers may consider small doses of sedative and/or analgesic drugs to prevent pain and distress in patients who become conscious during CPR (CPR-induced consciousness, CIC) — a scenario increasingly reported with high-quality mechanical/continuous compressions. Prior guidelines did not address this.",
+            "detail_ko": "신규 항목: CPR 중 의식이 돌아오는 환자(CPR 유발 의식, CIC)의 통증·고통을 막기 위해 소량의 진정제 및/또는 진통제 사용을 고려할 수 있다. 고품질 기계식·지속 압박이 늘며 보고가 증가한 상황으로, 이전 지침에는 없던 내용이다."
+          },
+          {
+            "topic": "구급 상황실(dispatcher)의 역할 강화",
+            "detail": "The role of the dispatch centre is strengthened: dispatchers should actively help the caller recognise cardiac arrest AND identify ventilation failure/abnormal (agonal) breathing, to prompt earlier bystander CPR. This expands the dispatcher-assisted recognition role versus prior versions.",
+            "detail_ko": "구급 상황실 역할이 강화되었다: 상황요원은 신고자가 심정지를 인지하도록 돕는 것에 더해 환기 실패/비정상(헐떡)호흡까지 식별하도록 적극 도와 목격자 CPR을 앞당겨야 한다. 이전 판보다 상황요원 지원 인지 역할을 확장한 것이다."
+          },
+          {
+            "topic": "일반인 CPR 교육과 첫 3–5분",
+            "detail": "The importance of the first 3–5 minutes after arrest is further strengthened, and the guidelines newly emphasise educating laypeople in CPR — including education delivered by physicians — to increase bystander response in that critical window.",
+            "detail_ko": "심정지 후 첫 3–5분의 중요성이 한층 강조되었고, 그 결정적 시간대의 목격자 대응을 높이기 위해 일반인 CPR 교육(의사에 의한 교육 포함)을 새로이 강조한다."
+          },
+          {
+            "topic": "소생후 체온관리 (발열 예방으로 전환)",
+            "detail": "Post-resuscitation temperature management shifts away from targeted hypothermia toward active fever prevention: in comatose post-ROSC patients target temperature ≤37.5 °C, do NOT actively rewarm patients who are mildly hypothermic (32–36 °C), and avoid routine prehospital cooling with large-volume cold IV fluids. Reason: repeated RCTs failed to show benefit of deep hypothermia (e.g., 33 °C) over fever control.",
+            "detail_ko": "소생후 체온관리가 목표체온 저체온요법에서 발열 적극 예방으로 전환되었다: ROSC 후 혼수 환자는 ≤37.5 °C를 목표로 하고, 경도 저체온(32–36 °C) 환자를 능동적으로 재가온하지 않으며, 병원전 대량 냉각수액 주입은 일상적으로 피한다. 이유: 반복된 RCT에서 심부 저체온(예: 33 °C)이 발열 조절 대비 이득을 보이지 못했다."
+          },
+          {
+            "topic": "생존 사슬(Chain of Survival)과 신규 주제",
+            "detail": "The Chain of Survival is updated to a 4-ring model explicitly adding recovery/quality-of-life and rehabilitation as the fourth ring. The guidelines also address, for the first time, social media, advocacy/health policy, and artificial intelligence (AI) as future tools for earlier recognition and post-resuscitation care (pending further evidence).",
+            "detail_ko": "생존 사슬이 4개 고리 모델로 갱신되어 네 번째 고리로 회복·삶의 질·재활을 명시적으로 추가했다. 또한 소셜미디어, 옹호/보건정책, 인공지능(AI)을 조기 인지·소생후 치료를 위한 미래 도구로 처음 다룬다(추가 근거는 필요)."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "ERC 2025 지침 구성(공식 사이트 챕터 목록)",
+            "body_ko": "ERC 공식 사이트에 따르면 2025 지침은 요약(Executive Summary)과 일반인용 판(Guidelines for Everyone)을 포함해 역학, 생존을 살리는 시스템, 성인 기본소생술, 성인 전문소생술, 성인 특수상황 소생, 성인 소생후 치료, 신생아 소생, 소아 소생, 소생 교육, 소생 윤리, 응급처치의 챕터로 구성되며, ILCOR의 체계적·범위 문헌고찰 근거에 기반한다.",
+            "sourceLabel": "ERC 공식 — Guidelines 2025 (English)",
+            "sourceUrl": "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, default to IV access first for arrest drugs and drop reflexive early IO placement; for VF still refractory after 3 shocks, be ready to switch pad vector to anterior–posterior or run DSED. Give epinephrine immediately in PEA/asystole but hold it in shockable rhythms until early shocks fail, and restrict intra-arrest POCUS to experienced operators with zero added compression pauses. In the ICU, retire deep 33 °C targets in favour of active fever prevention (≤37.5 °C) without rewarming spontaneously hypothermic patients, and plan analgesia/sedation for CPR-induced consciousness during ongoing high-quality compressions.",
+        "practiceImpact_ko": "현장에서는 심정지 약물 투여 시 IV 확보를 우선하고 반사적인 조기 IO 삽입을 지양하며, 3회 제세동에도 불응하는 VF에서는 패드 벡터를 전후면으로 전환하거나 DSED를 시행할 준비를 한다. PEA/무수축에서는 에피네프린을 즉시 투여하되 제세동 리듬에서는 초기 제세동 실패 후로 미루고, 심정지 중 POCUS는 숙련자에 한정하며 가슴압박 중단을 전혀 늘리지 않는다. 중환자실에서는 심부 33 °C 목표를 접고 능동적 발열 예방(≤37.5 °C)으로 전환하되 자발적 저체온 환자를 재가온하지 않으며, 고품질 압박 지속 중 CPR 유발 의식에 대비해 진통·진정을 계획한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41841349",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41841349/"
+          },
+          {
+            "label": "Journal (DOI) — 10.20452/pamw.17251",
+            "url": "https://doi.org/10.20452/pamw.17251"
+          },
+          {
+            "label": "웹 — ERC 공식 — Guidelines 2025 (English) 챕터 구성",
+            "url": "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english"
+          },
+          {
+            "label": "웹 — EMCrit / PulmCrit — 2025 post-arrest care 실무 요약",
+            "url": "https://emcrit.org/pulmcrit/2025-arrest/"
+          },
+          {
+            "label": "웹 — PAIM — The 2025 updated ERC guidelines: overview of the most important changes (검색 노출, 원문 접근 차단)",
+            "url": "https://www.mp.pl/paim/issue/article/17251/"
+          },
+          {
+            "label": "웹 — Resuscitation — ERC Guidelines 2025 Adult Advanced Life Support (검색 노출, 403)",
+            "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00281-3/fulltext"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-21"
     }
   ],
   "rejected": [
@@ -59280,7 +59401,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-19T23:25:00.865Z",
+      "discoveredAt": "2026-09-20T23:26:18.889Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -59537,7 +59658,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-19T23:25:00.865Z",
+      "discoveredAt": "2026-09-20T23:26:18.889Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -59566,7 +59687,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-19T23:25:00.865Z",
+      "discoveredAt": "2026-09-20T23:26:18.889Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -59599,7 +59720,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-19T23:25:00.865Z",
+      "discoveredAt": "2026-09-20T23:26:18.889Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -59634,7 +59755,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-19T23:25:00.865Z",
+      "discoveredAt": "2026-09-20T23:26:18.889Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -59715,9 +59836,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260920_081917:guideline:2026-09-20",
+    "runId": "trend_review_20260921_082125:guideline:2026-09-21",
     "outcome": "published",
-    "publishedId": "pmid:39982185",
+    "publishedId": "pmid:41841349",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -59749,8 +59870,8 @@
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/21",
-          "maxDate": "2026/09/20"
+          "minDate": "2026/08/22",
+          "maxDate": "2026/09/21"
         },
         "retmax": 60,
         "topics": [
@@ -59758,8 +59879,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 57,
-            "idsFetched": 57,
+            "totalFound": 55,
+            "idsFetched": 55,
             "truncated": false,
             "error": null
           },
@@ -59794,8 +59915,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 32,
-            "idsFetched": 32,
+            "totalFound": 34,
+            "idsFetched": 34,
             "truncated": false,
             "error": null
           },
@@ -59925,19 +60046,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 221,
+        "queued": 220,
         "needsReview": 449,
         "rejected": 127,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39982185",
+        "candidateId": "pmid:41841349",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-19T23:27:29.638Z",
+  "updatedAt": "2026-09-20T23:30:12.963Z",
   "configVersion": "guideline-v2"
 }
