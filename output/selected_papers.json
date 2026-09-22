@@ -682,5 +682,16 @@
     "rerankPoolSize": 6,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42678699",
+    "title": "No-Flow Duration and Outcomes After Cardiogenic Out-of-Hospital Cardiac Arrest i",
+    "date": "2026-09-22",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 4,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]

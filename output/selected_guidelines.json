@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-20T23:26:30.409Z"
+      "supersededAt": "2026-09-22T00:18:42.036Z"
     },
     {
       "id": "pmid:38531812",
@@ -31639,7 +31639,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34331,7 +34331,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37177,7 +37177,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39991,72 +39991,6 @@
       }
     },
     {
-      "id": "pmid:42297408",
-      "pmid": "42297408",
-      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 5. Cardiac arrest in special circumstances.",
-      "pubDate": "2026 May",
-      "journal": "Clinical and experimental emergency medicine",
-      "publicationTypes": [
-        "Guideline",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:19.239Z",
-      "abstract": "The 2025 update of the Korean guidelines for cardiac arrest under special circumstances incorporates new evidence and expert consensus to clarify when clinicians should modify standard resuscitation algorithms. For cardiac arrest caused by acute hyperkalemia, the guidelines suggest administering intravenous insulin with glucose; however, current evidence remains insufficient to recommend for or against routine use of sodium bicarbonate or calcium. In suspected pulmonary embolism-related cardiac arrest, thrombolytic therapy may be considered. In confirmed cases, thrombolysis, surgical embolectomy, or percutaneous mechanical thrombectomy may be appropriate, despite very low certainty of evidence. For opioid-related cardiac arrest, current evidence does not support the routine administration of naloxone in addition to standard advanced life support; however, naloxone may be administered when it is unclear whether the patient is in true cardiac arrest. The guidelines also emphasize managing cardiac arrest in the prone position. If the patient is intubated and immediate repositioning is unsafe or impractical, prone cardiopulmonary resuscitation and defibrillation may be attempted using invasive arterial pressure or end-tidal carbon dioxide monitoring to guide the timing of repositioning. Immediate supination is strongly recommended for non-intubated patients. Additional updates address drowning, severe hypothermia, pregnancy, anaphylaxis, and cardiac arrest during interventional procedures, underscoring the importance of early correction of reversible causes, appropriate airway strategies, and timely consideration of extracorporeal life support in selected cases. Overall, the 2025 recommendations highlight cautious, etiology-directed interventions and explicitly grade recommendation strength and certainty to support context-sensitive clinical decision-making in high-risk and resource-variable settings.",
-      "meshTerms": [],
-      "keywords": [
-        "Cardiopulmonary resuscitation",
-        "Heart arrest",
-        "Sudden cardiac death"
-      ],
-      "doi": "10.15441/ceem.26.074",
-      "pmcid": "PMC13277411",
-      "region": "kr",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "특수상황 심정지(고칼륨·PE) 소생 지침",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-5-cardiac-arrest-special-circumstances",
-      "supersedes": []
-    },
-    {
       "id": "pmid:42297406",
       "pmid": "42297406",
       "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 3. Adult basic life support.",
@@ -40635,7 +40569,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42404,7 +42338,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43152,7 +43086,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43480,7 +43414,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43992,7 +43926,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44408,7 +44342,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -45007,7 +44941,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46095,7 +46029,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46169,7 +46103,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -46251,7 +46185,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46331,7 +46265,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -46410,7 +46344,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46490,7 +46424,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46554,7 +46488,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46700,7 +46634,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -46770,7 +46704,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46842,7 +46776,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -46912,7 +46846,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -46995,7 +46929,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47058,7 +46992,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47294,7 +47228,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47366,7 +47300,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47427,7 +47361,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47503,7 +47437,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47576,7 +47510,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47660,7 +47594,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47719,7 +47653,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47798,7 +47732,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47849,11 +47783,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.706658879391563,
+      "priority": 6.702876029472048,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.7066588793915627,
+        "recency": 1.702876029472048,
         "scope": 0,
         "confidence": 2
       },
@@ -47868,7 +47802,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -47951,7 +47885,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -48020,7 +47954,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -48089,7 +48023,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.165Z",
       "lineageKey": "esc|analysis-european-association-cardio-thoracic-surgery-valvular-heart-disease",
       "supersedes": [],
       "llmFit": {
@@ -48134,11 +48068,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.706658879349311,
+      "priority": 7.702876029429796,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.7066588793493112,
+        "recency": 1.7028760294297962,
         "scope": 0,
         "confidence": 2
       },
@@ -48153,7 +48087,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-20T23:26:29.753Z",
+      "lastSeenAt": "2026-09-22T00:18:41.166Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -54366,6 +54300,162 @@
         ]
       },
       "publishedAt": "2026-09-21"
+    },
+    {
+      "id": "pmid:42297408",
+      "pmid": "42297408",
+      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 5. Cardiac arrest in special circumstances.",
+      "pubDate": "2026 May",
+      "journal": "Clinical and experimental emergency medicine",
+      "publicationTypes": [
+        "Guideline",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:19.239Z",
+      "abstract": "The 2025 update of the Korean guidelines for cardiac arrest under special circumstances incorporates new evidence and expert consensus to clarify when clinicians should modify standard resuscitation algorithms. For cardiac arrest caused by acute hyperkalemia, the guidelines suggest administering intravenous insulin with glucose; however, current evidence remains insufficient to recommend for or against routine use of sodium bicarbonate or calcium. In suspected pulmonary embolism-related cardiac arrest, thrombolytic therapy may be considered. In confirmed cases, thrombolysis, surgical embolectomy, or percutaneous mechanical thrombectomy may be appropriate, despite very low certainty of evidence. For opioid-related cardiac arrest, current evidence does not support the routine administration of naloxone in addition to standard advanced life support; however, naloxone may be administered when it is unclear whether the patient is in true cardiac arrest. The guidelines also emphasize managing cardiac arrest in the prone position. If the patient is intubated and immediate repositioning is unsafe or impractical, prone cardiopulmonary resuscitation and defibrillation may be attempted using invasive arterial pressure or end-tidal carbon dioxide monitoring to guide the timing of repositioning. Immediate supination is strongly recommended for non-intubated patients. Additional updates address drowning, severe hypothermia, pregnancy, anaphylaxis, and cardiac arrest during interventional procedures, underscoring the importance of early correction of reversible causes, appropriate airway strategies, and timely consideration of extracorporeal life support in selected cases. Overall, the 2025 recommendations highlight cautious, etiology-directed interventions and explicitly grade recommendation strength and certainty to support context-sensitive clinical decision-making in high-risk and resource-variable settings.",
+      "meshTerms": [],
+      "keywords": [
+        "Cardiopulmonary resuscitation",
+        "Heart arrest",
+        "Sudden cardiac death"
+      ],
+      "doi": "10.15441/ceem.26.074",
+      "pmcid": "PMC13277411",
+      "region": "kr",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "특수상황 심정지(고칼륨·PE) 소생 지침",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-5-cardiac-arrest-special-circumstances",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42297408",
+          "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 5. Cardiac arrest in special circumstances.",
+          "journal": "Clinical and experimental emergency medicine",
+          "pubDate": "2026 May",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42297408/",
+          "doi": "10.15441/ceem.26.074"
+        },
+        "org": "Korean Association of Cardiopulmonary Resuscitation (KACPR) / Korea Disease Control and Prevention Agency (KDCA)",
+        "version": "2025",
+        "title_ko": "2025 한국심폐소생술 가이드라인: 제5부. 특수상황에서의 심정지",
+        "scope_ko": "표준 심폐소생술(BLS/ALS) 알고리즘을 환자 특성이나 환경 요인에 따라 수정·추가해야 하는 특수상황 심정지를 다룬다. 고칼륨혈증, 폐색전증, 오피오이드 중독, 엎드린 자세(prone) 심정지, 익수, 중증 저체온, 임신, 아나필락시스, 천식/COPD, 시술 중 심정지 등이 대상이다.",
+        "summary": [
+          "Acute hyperkalemia-induced arrest: give IV insulin with glucose (weak recommendation, very low certainty); evidence is insufficient to recommend for OR against IV sodium bicarbonate or IV calcium (each weak recommendation, very low certainty).",
+          "Suspected pulmonary embolism as the cause of arrest: thrombolytics may be administered (weak recommendation, very low certainty). When PE is confirmed, thrombolytics, surgical embolectomy, OR percutaneous mechanical thrombectomy may be considered (weak recommendation, very low certainty).",
+          "Opioid-toxicity arrest: evidence does NOT support adding opioid-specific therapy (naloxone) to standard ALS during a true arrest; however, if it is unclear whether the patient is truly arrested, naloxone may be given (good practice statement).",
+          "Prone-position arrest in an intubated patient when turning supine is difficult/dangerous: prone CPR may be attempted, using invasive arterial pressure or ETCO2 to gauge perfusion and time the turn to supine (good practice statements). Defibrillation may be delivered in the prone position if the patient cannot be turned immediately (good practice statement).",
+          "Prone-position arrest WITHOUT an advanced airway: turn the patient to supine immediately for CPR (strong recommendation, low certainty of evidence).",
+          "Cardiac arrest in pregnancy >20 weeks (or uterus palpable above umbilicus): manually displace the uterus to the left (preferred over left tilt so compressions stay supine); perform resuscitative hysterotomy/perimortem cesarean within 5 minutes if there is no ROSC after ~4 minutes of CPR.",
+          "Anaphylaxis: give IM epinephrine 0.2–0.5 mg (1:1,000) early, repeat every 5 min as needed (autoinjector 0.3 mg adult / 0.15 mg child); rapidly infuse ≥500 mL balanced crystalloid or normal saline over 5–10 min in shock; antihistamines/steroids are not routine first-line. Consider ECPR if standard CPR fails.",
+          "Asthma/COPD arrest: intubate early (high aspiration risk), ventilate with lower rate and tidal volume 6–8 mL/kg to limit auto-PEEP, consider bag disconnection and chest compression to relieve dynamic hyperinflation, and treat suspected tension pneumothorax with tube thoracostomy; consider ECPR if refractory."
+        ],
+        "summary_ko": [
+          "급성 고칼륨혈증에 의한 심정지: IV insulin + glucose 투여 권고(약한 권고, 매우 낮은 근거수준). IV sodium bicarbonate와 IV calcium은 찬반 어느 쪽도 권고할 근거가 불충분(각각 약한 권고, 매우 낮은 근거수준).",
+          "폐색전증이 원인으로 의심되는 심정지: 혈전용해제 투여 가능(약한 권고, 매우 낮은 근거수준). 폐색전증이 확진되면 혈전용해제, 수술적 색전제거술, 또는 경피적 기계적 혈전제거술을 고려할 수 있다(약한 권고, 매우 낮은 근거수준).",
+          "오피오이드 중독 심정지: 진짜 심정지 상태에서는 표준 ALS에 naloxone 등 오피오이드 특이 치료를 추가하는 것을 뒷받침하는 근거가 없다. 다만 진짜 심정지인지 불확실하면 naloxone을 투여할 수 있다(good practice statement).",
+          "삽관된 환자가 엎드린 자세로 심정지 & 즉시 바로 눕히기 어렵거나 위험할 때: prone CPR을 시도할 수 있고, 침습적 동맥압 또는 ETCO2로 관류를 감시해 바로 눕힐 시점을 판단한다(good practice statement). 즉시 돌릴 수 없으면 엎드린 자세로 제세동을 시행할 수 있다(good practice statement).",
+          "기도확보(전문기도기)가 되어 있지 않은 엎드린 자세 심정지: 즉시 바로 눕혀 CPR 시행(강한 권고, 낮은 근거수준).",
+          "임신 20주 초과(또는 자궁이 배꼽 위로 만져질 때) 심정지: 자궁을 손으로 좌측 전위(좌측 기울이기보다 우선 — 앙와위 유지로 압박 질 확보). 약 4분간 CPR 후에도 ROSC 없으면 5분 이내 소생적 자궁절개/사후 제왕절개 시행.",
+          "아나필락시스: IM epinephrine 0.2–0.5 mg(1:1,000) 조기 투여, 필요 시 5분마다 반복(자가주사기 성인 0.3 mg / 소아 0.15 mg). 쇼크 시 balanced crystalloid 또는 생리식염수 ≥500 mL를 5–10분에 걸쳐 급속 투여. 항히스타민제·스테로이드는 초기 일차치료로 권장되지 않음. 표준 CPR 실패 시 ECPR 고려.",
+          "천식/COPD 심정지: 조기 기관삽관(흡인 위험 높음), auto-PEEP 억제 위해 낮은 호흡수와 일회호흡량 6–8 mL/kg로 환기, 동적 과팽창 의심 시 백-마스크 분리 후 흉부압박으로 공기 걸림 해소, 긴장성 기흉 의심 시 흉관삽관. 불응성이면 ECPR 고려."
+        ],
+        "keyChanges": [
+          {
+            "topic": "엎드린 자세(prone) 심정지 — 신규 항목",
+            "detail": "Prone CPR was newly addressed based on evidence published since 2020. New guidance: in an intubated patient in prone position where turning supine is difficult/dangerous, prone CPR may be attempted (good practice statement), using invasive arterial pressure or ETCO2 monitoring to judge perfusion pressure and time the turn to supine (good practice statement); defibrillation may be delivered in the prone position when the patient cannot be turned immediately (good practice statement). For patients WITHOUT an advanced airway, immediate supination is a strong recommendation (low certainty). The 2020 guidelines did not provide this structured prone-CPR pathway.",
+            "detail_ko": "2020년 이후 발표된 근거를 반영해 prone CPR이 신규로 다뤄졌다. 신규 지침: 삽관된 환자가 엎드린 자세로 심정지이고 즉시 바로 눕히기 어렵거나 위험하면 prone CPR을 시도할 수 있고(good practice statement), 침습적 동맥압 또는 ETCO2로 관류압을 감시해 바로 눕힐 시점을 판단하며(good practice statement), 즉시 돌릴 수 없을 때는 엎드린 자세에서 제세동을 시행할 수 있다(good practice statement). 전문기도기가 없는 환자는 즉시 앙와위 전환이 강한 권고(낮은 근거수준). 2020년 지침에는 이런 체계적 prone-CPR 경로가 없었다."
+          },
+          {
+            "topic": "고칼륨혈증 심정지 — 약물별 근거 재평가",
+            "detail": "Hyperkalemia management was re-reviewed as a topic with previously insufficient evidence. The 2025 guideline now explicitly states: IV insulin + glucose is recommended (weak, very low certainty), while for BOTH IV sodium bicarbonate and IV calcium the evidence is insufficient to recommend for or against (each weak, very low certainty) — an explicit, drug-by-drug grading rather than a blanket empiric-cocktail approach.",
+            "detail_ko": "근거가 불충분했던 주제로 재검토되었다. 2025 지침은 IV insulin + glucose는 권고(약한 권고, 매우 낮은 근거수준), IV sodium bicarbonate와 IV calcium은 둘 다 찬반 어느 쪽도 권고할 근거가 불충분(각각 약한 권고, 매우 낮은 근거수준)이라고 약물별로 명시적으로 등급화했다 — 일괄 경험적 칵테일이 아니라 약물별 판단."
+          },
+          {
+            "topic": "폐색전증 심정지 — 치료 옵션 확대",
+            "detail": "Beyond thrombolytics for suspected PE (weak, very low certainty), the 2025 guideline expands options for CONFIRMED PE arrest to include surgical embolectomy or percutaneous mechanical thrombectomy in addition to thrombolytics (weak, very low certainty), reflecting availability of catheter-based and surgical rescue in Korean centers.",
+            "detail_ko": "의심 폐색전증에 대한 혈전용해제(약한 권고, 매우 낮은 근거수준)에 더해, 2025 지침은 확진 폐색전증 심정지에서 혈전용해제 외에 수술적 색전제거술 또는 경피적 기계적 혈전제거술까지 선택지를 확대했다(약한 권고, 매우 낮은 근거수준). 국내 카테터·수술 구조요법 가용성을 반영."
+          },
+          {
+            "topic": "오피오이드 중독 심정지 — naloxone 위치 명확화",
+            "detail": "The 2025 guideline clarifies that in a true opioid-toxicity cardiac arrest, adding naloxone to standard ALS is NOT supported by evidence; naloxone's role is repositioned to the diagnostic-uncertainty situation — when it is unclear whether the patient is truly arrested, naloxone may be given (good practice statement).",
+            "detail_ko": "2025 지침은 진짜 오피오이드 중독 심정지에서는 표준 ALS에 naloxone을 추가하는 것을 뒷받침하는 근거가 없음을 명확히 했다. naloxone의 역할은 진단이 불확실한 상황(진짜 심정지인지 불분명할 때 투여 가능, good practice statement)으로 재정립되었다."
+          },
+          {
+            "topic": "권고 등급 체계 — GRADE 방식 명시화",
+            "detail": "Compared with 2020, the 2025 update explicitly grades every recommendation by strength (strong/weak) and certainty of evidence (e.g., very low/low), and adds 'good practice statements' for areas lacking formal evidence, to support context-sensitive decision-making in resource-variable settings.",
+            "detail_ko": "2020년 대비 2025 개정은 모든 권고를 강도(강한/약한)와 근거 확실성(예: 매우 낮음/낮음)으로 명시적으로 등급화하고, 정식 근거가 부족한 영역에는 'good practice statement'를 추가해 자원 편차가 있는 상황에서의 맥락 민감형 의사결정을 지원한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, treat special-circumstance arrests as etiology-directed: in hyperkalemic arrest give insulin+glucose but do not reflexively push bicarbonate/calcium as if evidence-backed. Do not delay compressions to turn an intubated prone patient — run prone CPR guided by arterial line/ETCO2 and defibrillate prone if needed, but immediately supinate any non-intubated prone arrest. In opioid arrest, prioritize high-quality ALS over naloxone, reserving naloxone for the 'is this really an arrest?' scenario. In pregnancy >20 weeks, manually left-displace the uterus and mobilize the team for resuscitative hysterotomy by ~4 minutes with delivery targeted within 5 minutes; for refractory anaphylaxis, asthma/COPD, PE, and severe hypothermia, escalate early to ECPR/ECLS-capable pathways.",
+        "practiceImpact_ko": "임상 현장에서 특수상황 심정지는 원인 지향적으로 접근한다: 고칼륨혈증 심정지에서는 insulin+glucose를 투여하되 bicarbonate/calcium을 근거가 확실한 것처럼 반사적으로 밀지 않는다. 삽관된 엎드린 환자를 돌리느라 압박을 지연시키지 말고 동맥압/ETCO2를 지표로 prone CPR을 시행하며 필요 시 엎드린 자세로 제세동하되, 전문기도기가 없는 prone 심정지는 즉시 바로 눕힌다. 오피오이드 심정지에서는 naloxone보다 고품질 ALS를 우선하고, naloxone은 '진짜 심정지인가?' 상황에 남겨둔다. 임신 20주 초과에서는 자궁을 손으로 좌측 전위하고 약 4분 시점에 소생적 자궁절개 팀을 가동해 5분 이내 분만을 목표로 한다. 불응성 아나필락시스·천식/COPD·폐색전증·중증 저체온에서는 조기에 ECPR/ECLS 가능 경로로 확대한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42297408",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42297408/"
+          },
+          {
+            "label": "Journal (DOI) — 10.15441/ceem.26.074",
+            "url": "https://doi.org/10.15441/ceem.26.074"
+          },
+          {
+            "label": "웹 — 2025 Korean Guidelines for CPR: Part 5. Cardiac arrest in special circumstances — PMC full text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13277411/"
+          },
+          {
+            "label": "웹 — 2025 Korean Guidelines for CPR: Part 5 — Clinical and Experimental Emergency Medicine (journal page)",
+            "url": "https://www.ceemjournal.org/journal/view.php?doi=10.15441%2Fceem.26.074"
+          },
+          {
+            "label": "웹 — 2025 Korean Guidelines for CPR: Part 5 — PubMed record",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42297408/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-22"
     }
   ],
   "rejected": [
@@ -59401,7 +59491,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-20T23:26:18.889Z",
+      "discoveredAt": "2026-09-22T00:18:30.684Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -59658,7 +59748,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-20T23:26:18.889Z",
+      "discoveredAt": "2026-09-22T00:18:30.684Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -59687,7 +59777,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-20T23:26:18.889Z",
+      "discoveredAt": "2026-09-22T00:18:30.684Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -59720,7 +59810,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-20T23:26:18.889Z",
+      "discoveredAt": "2026-09-22T00:18:30.684Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -59748,24 +59838,23 @@
       "pubDate": "2026 Sep 15",
       "journal": "European journal of heart failure",
       "publicationTypes": [
-        "Journal Article",
         "Consensus Statement",
-        "Review"
+        "Journal Article"
       ],
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-20T23:26:18.889Z",
+      "discoveredAt": "2026-09-22T00:18:30.684Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
         "Cardiomyopathy, Hypertrophic",
         "Death, Sudden, Cardiac",
-        "Genetic Testing",
-        "Ventricular Outflow Obstruction, Left",
         "Europe",
+        "Genetic Testing",
         "Heart Failure",
-        "Risk Assessment"
+        "Risk Assessment",
+        "Ventricular Outflow Obstruction, Left"
       ],
       "keywords": [
         "Cardiac myosin inhibitors",
@@ -59836,9 +59925,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260921_082125:guideline:2026-09-21",
+    "runId": "trend_review_20260922_091344:guideline:2026-09-22",
     "outcome": "published",
-    "publishedId": "pmid:41841349",
+    "publishedId": "pmid:42297408",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -59863,15 +59952,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 165,
+        "mergedTotal": 166,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 10,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/22",
-          "maxDate": "2026/09/21"
+          "minDate": "2026/08/23",
+          "maxDate": "2026/09/22"
         },
         "retmax": 60,
         "topics": [
@@ -59951,8 +60040,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -59975,7 +60064,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 149,
+        "topicOnlyCount": 150,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -59987,9 +60076,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 165,
-          "enriched": 165,
-          "withAbstract": 128,
+          "requested": 166,
+          "enriched": 166,
+          "withAbstract": 129,
           "error": null
         }
       },
@@ -60046,19 +60135,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 220,
+        "queued": 219,
         "needsReview": 449,
         "rejected": 127,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41841349",
+        "candidateId": "pmid:42297408",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-20T23:30:12.963Z",
+  "updatedAt": "2026-09-22T00:20:52.632Z",
   "configVersion": "guideline-v2"
 }

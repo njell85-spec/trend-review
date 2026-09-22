@@ -1210,23 +1210,6 @@
       "status": "queued"
     },
     {
-      "pmid": "41236566",
-      "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
-      "journal": "Intensive Care Med",
-      "score": 7.6,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "순환 쇼크·혈역학 모니터링 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39007570",
       "title": "Executive Summary-Society of Critical Care Medicine Guideline and American Society of Health-System Pharmacists for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
       "journal": "Crit Care Med",
@@ -9852,6 +9835,122 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41236566",
+      "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "순환 쇼크·혈역학 모니터링 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-22",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41236566",
+          "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-11-14",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41236566/",
+          "doi": "10.1007/s00134-025-08137-z"
+        },
+        "title_ko": "순환성 쇼크와 혈역학 감시에 관한 ESICM 2025 진료지침",
+        "scope_ko": "유럽중환자의학회(ESICM)가 성인 중환자에서 쇼크의 진단과 혈역학 감시를 어떻게 할 것인가에 대해 내놓은 진료지침으로, 무엇을 평가하고 언제 개입하며 어떻게 감시할지를 PICO 형식 질문과 GRADE 근거평가로 다룬다. 총 50개의 진술(권고·정의·모범진료문)로 구성된다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "목적과 방법 — 지침의 구성",
+            "body_ko": "이 지침은 성인 중환자에서 쇼크의 진단과 혈역학 감시에 관한 권고를 제공한다. 국제 전문가 패널이 PICO 형식의 질문을 만들고, 근거의 확실성 평가와 권고 도출에는 GRADE 방법을 적용하였다. 강한 근거가 없는 영역에서는 등급을 매기지 않은 모범진료문(ungraded good practice statement, UGPS)을 발표하였다.\n\n패널은 총 50개의 진술을 냈다. 권고의 강도는 강한 권고와 약한 권고로 나뉘고, 이와 별도로 등급 없는 정의(ungraded definition), 등급 없는 모범진료문이 있으며, 근거의 확실성은 높음(H)·중등도(M)·낮음(L)·매우 낮음(VL) 또는 등급 없음으로 표기된다. 즉 이 지침의 상당수 진술은 임상시험 근거가 부족하여 강한 권고가 아니라 모범진료문 형태로 제시되었다는 점을 저자들은 분명히 하고 있다."
+          },
+          {
+            "heading_ko": "쇼크의 정의와 피부(임상) 관류 평가",
+            "body_ko": "쇼크의 전형적 특징은 저혈압, 빈맥, 그리고 조직 저관류의 징후(비정상 피부 관류, 소변량 감소, 의식 변화 등)이다. 저혈압이 흔히 동반되기는 하지만, 저혈압이 있어야만 쇼크로 정의하는 것은 아니다(등급 없는 정의).\n\n피부 관류의 감시는 모세혈관 재충전 시간(capillary refill time, CRT) 평가로 시행해야 하며, 여기에 피부 온도와 반점(mottling) 평가를 보완적으로 더할 수 있다(모범진료문)."
+          },
+          {
+            "heading_ko": "정맥 산소포화도와 정맥-동맥 이산화탄소 분압차",
+            "body_ko": "중심정맥 도관이 있는 환자에서는 (중심)정맥 산소포화도와 정맥-동맥 이산화탄소 분압차(veno-arterial difference in CO2 partial pressure, v-a PCO2 gap)를 반복 측정해야 한다(모범진료문). 초록에서 강조하듯 이는 일회성이 아니라 연속(serial) 측정으로, 조직 관류와 산소 수급 상태의 추세를 보기 위한 것이다."
+          },
+          {
+            "heading_ko": "수액 반응성 — 동적 지표를 정적 지표보다 우선",
+            "body_ko": "초기 수액 소생 후에도 쇼크가 지속되는 환자에서는, 수액 투여를 계속하기 전에 수액 반응성(fluid responsiveness)을 먼저 평가해야 한다(모범진료문).\n\n수액 반응성 예측에는, 적용이 가능한 상황이라면 전부하(preload)의 정적 지표보다 동적 지표를 사용하도록 권고한다(등급이 매겨진 권고). 즉 중심정맥압 같은 단일 정적 수치보다, 호흡·자세 변화에 따른 심박출 변동을 보는 동적 지표가 더 낫다는 것이다."
+          },
+          {
+            "heading_ko": "심박출량/일회박출량 감시",
+            "body_ko": "초기 치료에 반응하지 않는 환자에서는 쇼크의 유형을 파악하고, 혈역학 상태를 평가하며, 치료 반응을 판정하기 위해 심박출량(cardiac output, CO)과/또는 일회박출량(stroke volume)을 감시해야 한다(모범진료문)."
+          },
+          {
+            "heading_ko": "동맥압 도관과 중심정맥압",
+            "body_ko": "초기 치료에 반응하지 않거나 승압제 주입이 필요한 쇼크에서는 동맥 도관(arterial catheter)으로 동맥압을 감시해야 한다(모범진료문).\n\n중심정맥 도관을 가진 환자에서는 중심정맥압(central venous pressure, CVP)을 측정해야 한다(모범진료문)."
+          },
+          {
+            "heading_ko": "심초음파와 좌·우심실 표현형",
+            "body_ko": "패널은 쇼크의 유형을 평가하기 위한 일차 영상 기법으로 심초음파를 사용할 것을 제안한다(등급이 매겨진 권고).\n\n심초음파로 정의되는 좌심실 및 우심실 기능부전의 표현형(phenotype)은 예후적 의미를 가질 수 있다(모범진료문). 결론적으로 패널은 쇼크의 진단과 혈역학 감시에 관하여 50개의 권고를 제시하였다."
+          },
+          {
+            "heading_ko": "[웹 보강] 수액요법의 이득·위해 평가, 수액 부하 검사, PLR·EEO 검사",
+            "body_ko": "이 절은 논문 초록에는 없으나 ESICM 공식 시각적 초록(visual abstract)에 명시된 수액요법 관련 진술을 옮긴 것이다.\n\n수액 투여의 잠재적 이득(수액 반응성으로 예측)은 수액 투여의 잠재적 위해와 견주어 판단해야 한다(모범진료문). 위해 위험은 혈관내 충만압, 복강내압, 혈관외 폐수분(EVLW), 폐혈관 투과성 지수(PVPI), 정맥울혈초음파(VExUS) 등급, PaO2/FiO2 비, 폐초음파 점수(LUS) 같은 지표로 평가할 수 있다.\n\n수액 부하(fluid challenge)는 그 효과를 평가하면서 200~500 mL를 5~10분에 걸쳐 투여하는 것으로 정의한다(등급 없는 정의, 확실성 낮음). 수액 볼루스가 조직 관류를 개선했는지는 CRT, 피부 반점, (중심)정맥 산소포화도, pCO2 유래 변수, 젖산 등의 변화를 보고 평가해야 한다(모범진료문).\n\n기계환기 중이면서 자발호흡이 있거나 없는 쇼크 환자에서 수액 반응성 평가에 수동 하지 거상(passive leg raising, PLR) 검사를 사용하도록 권고한다(강한 권고, 확실성 높음). 자발호흡 활동이 없는 기계환기 쇼크 환자에서는 PLR의 대안으로 호기말 폐색 검사(end-expiratory occlusion test, EEO)를 사용하도록 권고한다(강한 권고, 확실성 중등도).\n— 보강 출처: ESICM 공식 시각적 초록(visual abstract) (https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf)",
+            "origin": "augmented",
+            "sourceLabel": "ESICM 공식 시각적 초록(visual abstract)",
+            "sourceUrl": "https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf"
+          },
+          {
+            "heading_ko": "[웹 보강] 진행된 심박출량 감시 — 경폐 열희석·폐동맥 도관, ARDS, 연속 심초음파",
+            "body_ko": "이 절 역시 초록에는 없고 공식 시각적 초록에 명시된 내용이다.\n\n심박출량 감시가 필요한 환자에서는 경폐 열희석(transpulmonary thermodilution) 또는 폐동맥 도관(PAC)을 이용한 폐동맥 희석을 고려할 수 있다(모범진료문). 심박출량을 감시할 때에는 그 적절성을 장기 기능, 조직 산소화, 대사, 관류를 함께 평가하여 해석해야 한다(모범진료문).\n\n쇼크와 중등도~중증 ARDS가 동반된 환자에서는 수액 치료의 지침으로 경폐 열희석 또는 PAC를 고려할 수 있다(모범진료문).\n\n심박출량을 감시하고 있더라도, 심기능에 대한 추가 정보를 얻기 위해 연속적인 심초음파 평가를 시행해야 한다(모범진료문). 또한 쇼크 환자에서 심초음파는 치료 방침의 변화를 이끌고 치료적 영향을 뒷받침한다.\n— 보강 출처: ESICM 공식 시각적 초록(visual abstract) (https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf)",
+            "origin": "augmented",
+            "sourceLabel": "ESICM 공식 시각적 초록(visual abstract)",
+            "sourceUrl": "https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf"
+          },
+          {
+            "heading_ko": "[웹 보강] 목표 혈압(MAP)의 개별화 — 병태별 목표치",
+            "body_ko": "이 절은 초록에 없고 공식 시각적 초록에 명시된 혈압 목표 관련 진술이다.\n\n쇼크 소생 중 목표 혈압은 환자별로 개별화해야 한다(모범진료문).\n\n패혈성 쇼크에서 만성 동맥 고혈압 병력이 있고 더 높은 혈압에서 임상적으로 호전을 보이는 환자에서는 더 높은 MAP 목표를 고려할 수 있다(모범진료문). 마찬가지로 패혈성 쇼크에서 CVP가 높은데 더 높은 혈압에서 임상적으로 호전을 보이는 환자에서도 더 높은 MAP 목표를 고려할 수 있다(모범진료문).\n\n외상성 출혈성 쇼크에서 출혈이 통제되지 않았고 외상성 뇌손상이 없는 경우에는 더 낮은 MAP 목표를 고려할 수 있다(모범진료문). 구체적으로, 외상 초기 단계에서 외상성 뇌손상과 혼수(Glasgow Coma Score ≤ 8)의 임상적 근거가 없다면 주요 출혈이 멈출 때까지 수축기 동맥압 80~90 mmHg(MAP 50~60 mmHg)를 목표로 해야 한다. 외상성 뇌손상(GCS ≤ 8)이 있는 경우에는 초기 MAP ≥ 80 mmHg를 목표로 하도록 권고한다.\n\n심인성 쇼크 환자에서는 초기 MAP ≥ 65 mmHg를 목표로 하는 것을 고려할 수 있다(모범진료문).\n— 보강 출처: ESICM 공식 시각적 초록(visual abstract) (https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf)",
+            "origin": "augmented",
+            "sourceLabel": "ESICM 공식 시각적 초록(visual abstract)",
+            "sourceUrl": "https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf"
+          },
+          {
+            "heading_ko": "[웹 보강] 미세순환, 복강내압, CVP 목표에 관한 추가 진술",
+            "body_ko": "이 절은 초록에 없고 공식 시각적 초록에 명시된 추가 진술이다.\n\n가능하다면 미세순환(microcirculation) 평가를 포괄적 혈역학 평가의 보조 수단으로 고려할 수 있다(모범진료문).\n\n쇼크가 있으면서 복강내 고혈압의 확립된 위험인자를 가진 환자에서는 복강내압(intra-abdominal pressure, IAP)의 연속 감시를 고려할 수 있다(모범진료문).\n\nCVP는 중심정맥 도관이 있는 환자에서 측정해야 하지만, 쇼크 소생 중 미리 정해진 특정 CVP 값을 목표로 삼아서는 안 된다(모범진료문). 즉 CVP는 목표 수치가 아니라 추세·맥락 속에서 해석할 지표로 제시된다.\n— 보강 출처: ESICM 공식 시각적 초록(visual abstract) (https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf)",
+            "origin": "augmented",
+            "sourceLabel": "ESICM 공식 시각적 초록(visual abstract)",
+            "sourceUrl": "https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 쇼크를 저혈압 유무로 규정하지 말고 CRT·피부 반점·온도, 그리고 CVC가 있으면 (중심)정맥 산소포화도와 v-a PCO2 차를 연속으로 추적하는 방향으로 정리된다. 초기 소생 후 쇼크가 지속되면 수액을 더 주기 전에 동적 지표(PLR, 자발호흡 없으면 EEO)로 수액 반응성을 먼저 확인하고, 반응이 없으면 동맥 도관·심박출량/일회박출량 감시로 올리며 심초음파를 일차 영상으로 쓴다. 목표 MAP는 일률적 수치가 아니라 병태(패혈증·외상성 출혈·TBI·심인성)에 따라 개별화하고, CVP는 목표치가 아니라 해석 지표로만 쓴다. 다만 이들 진술의 다수는 강한 근거가 아니라 모범진료문 수준임을 감안해 적용해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41236566",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41236566/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08137-z",
+            "url": "https://doi.org/10.1007/s00134-025-08137-z"
+          },
+          {
+            "label": "웹 — ESICM 공식 시각적 초록(visual abstract) — 50개 권고 전체 목록·등급 포함 (실제 열람)",
+            "url": "https://www.esicm.org/wp-content/uploads/2025/10/Visual-abstract-final.pdf"
+          },
+          {
+            "label": "웹 — Guideline Central — ESICM 순환성 쇼크·혈역학 감시 지침 요약 (실제 열람, 내용 제한적)",
+            "url": "https://www.guidelinecentral.com/guideline/4972119/"
+          },
+          {
+            "label": "웹 — ESICM 저널 공지 페이지 — ICM Online First 안내 (실제 열람, 메타데이터만 제공)",
+            "url": "https://www.esicm.org/icm-esicm-guidelines-circulatory-shock-haemodynamic-monitoring-2025/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -9909,9 +10008,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-21",
+    "date": "2026-09-22",
     "outcome": "published",
-    "publishedId": "41123621"
+    "publishedId": "41236566"
   },
-  "updatedAt": "2026-09-21"
+  "updatedAt": "2026-09-22"
 }
