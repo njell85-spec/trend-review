@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-22T00:18:42.036Z"
+      "supersededAt": "2026-09-22T23:46:54.451Z"
     },
     {
       "id": "pmid:38531812",
@@ -31156,7 +31156,7 @@
       "id": "pmid:41360094",
       "pmid": "41360094",
       "title": "[Asthma Management and Control in Germany in Light of Current Guidelines].",
-      "pubDate": "2025 Dec 8",
+      "pubDate": "2026 Sep",
       "journal": "Pneumologie (Stuttgart, Germany)",
       "publicationTypes": [
         "English Abstract",
@@ -31166,11 +31166,22 @@
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-17T04:39:08.135Z",
-      "abstract": "Clinical studies and surveys indicate a significant need for improvement in asthma control, despite continuously advancing treatment options.To assess asthma control and patients' attitudes toward asthma therapy in Germany and to analyze the findings in the context of current guideline recommendations.Adults with asthma in Germany were recruited via the online panel forsa.omninet in November 2024 and surveyed regarding their asthma symptoms and management. Cross-correlation analyses were subsequently conducted. Asthma control was analyzed according to German guideline criteria.A total of 1,002 adults with self-reported asthma participated in the survey. Asthma was not well controlled in 61% of respondents, especially the elderly of 60 years and older. 63% of respondents were on a daily maintenance therapy. However, patients on maintenance therapy reported poorer asthma control. A large number of respondents were unfamiliar with the terms \"asthma control\" and \"asthma remission\". 75% did not use any self-management tools. Only 47% believed that symptom-free asthma could be achieved through adequate maintenance therapy.Asthma control in Germany remains inadequate. This survey confirms relevant discrepancies between guideline recommendations and clinical reality. Improved asthma management and patient education are urgently needed.",
-      "meshTerms": [],
+      "abstract": "BACKGROUND: Clinical studies and surveys indicate a significant need for improvement in asthma control, despite continuously advancing treatment options.\nOBJECTIVE: To assess asthma control and patients' attitudes toward asthma therapy in Germany and to analyze the findings in the context of current guideline recommendations.\nMETHODS: Adults with asthma in Germany were recruited via the online panel forsa.omninet in November 2024 and surveyed regarding their asthma symptoms and management. Cross-correlation analyses were subsequently conducted. Asthma control was analyzed according to German guideline criteria.\nRESULTS: A total of 1,002 adults with self-reported asthma participated in the survey. Asthma was not well controlled in 61% of respondents, especially the elderly of 60 years and older. 63% of respondents were on a daily maintenance therapy. However, patients on maintenance therapy reported poorer asthma control. A large number of respondents were unfamiliar with the terms \"asthma control\" and \"asthma remission\". 75% did not use any self-management tools. Only 47% believed that symptom-free asthma could be achieved through adequate maintenance therapy.\nCONCLUSION: Asthma control in Germany remains inadequate. This survey confirms relevant discrepancies between guideline recommendations and clinical reality. Improved asthma management and patient education are urgently needed.",
+      "meshTerms": [
+        "Humans",
+        "Germany",
+        "Asthma",
+        "Practice Guidelines as Topic",
+        "Guideline Adherence",
+        "Female",
+        "Middle Aged",
+        "Aged",
+        "Male",
+        "Adult"
+      ],
       "keywords": [],
       "doi": "10.1055/a-2739-3886",
-      "pmcid": "",
+      "pmcid": "PMC13593361",
       "region": "eu",
       "by": "nationality",
       "signals": {
@@ -31184,32 +31195,35 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.746021659126015,
+      "priority": 8,
       "breakdown": {
         "authority": 0,
-        "topic": 3,
-        "recency": 1.7460216591260145,
+        "topic": 4,
+        "recency": 2,
         "scope": 0,
         "confidence": 2
       },
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:39:22.746Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 2,
         "keep": false,
         "reason": "독일 천식 관리 설문 분석 — 만성 외래, 지침 아님",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|asthma-management-control-germany-light-current",
+      "supersedes": []
     },
     {
       "id": "pmid:41273365",
@@ -31639,7 +31653,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34331,7 +34345,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37177,7 +37191,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40569,7 +40583,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -41343,82 +41357,6 @@
         "reason": "뇌졸중 예후의 사회·환경 결정요인—형평성 성명, 침상 무관",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:42095756",
-      "pmid": "42095756",
-      "title": "2025 update to European Stroke Organisation (ESO) guideline on blood pressure management in acute ischaemic stroke and intracerebral haemorrhage.",
-      "pubDate": "2026 May 6",
-      "journal": "European stroke journal",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:19.239Z",
-      "abstract": "Optimal blood pressure (BP) management in acute ischaemic stroke (AIS) and acute ICH remains uncertain. In light of new data published since the previous ESO guidelines, this update provides revised, evidence-based recommendations across 8 key clinical questions to support BP management in acute stroke. The guidelines were developed using the ESO standard operating procedure and Grading of Recommendations, Assessment, Development and Evaluation (GRADE) methodology, including literature searches, systematic reviews and meta-analyses of relevant RCTs, assessment of evidence quality and formulation of specific recommendations. We advise against routine pre-hospital BP lowering in suspected stroke (moderate-certainty evidence). In AIS patients undergoing reperfusion therapy, we recommend maintaining BP < 185/110 mmHg before the bolus of intravenous thrombolysis and < 180/105 mmHg during and for 24 h after intravenous thrombolysis (low-certainty evidence) and/or mechanical thrombectomy (moderate-certainty evidence). We recommend against intensively lowering systolic BP < 140 mmHg in the first 24 h after successful mechanical thrombectomy (high-certainty evidence). Routine use of vasopressors to raise BP in AIS patients with neurological deterioration who are not treated with acute reperfusion therapies is discouraged (low-certainty evidence). In acute ICH, the net clinical benefit of intensive BP lowering remains uncertain; however, expert consensus supports early systolic BP reduction to < 140 mmHg in patients with small-to-moderate haematomas to limit haematoma expansion. Overall, the updated recommendations reaffirm the core principles of current clinical practice while providing more nuanced guidance for specific scenarios. However, the quality of evidence remains moderate to very low, limited by a lack of high-quality RCTs, methodological issues, inconsistent results and study heterogeneity. Consequently, most recommendations are weak and supported by expert consensus. These guidelines provide specific recommendations on BP thresholds and management strategies tailored to distinct acute stroke subgroups. They also highlight the ongoing uncertainty and emphasise the need for future RCTs to define optimal BP targets, timing, treatment strategies and ideal antihypertensive agents across different clinical contexts.",
-      "meshTerms": [
-        "Humans",
-        "Blood Pressure",
-        "Ischemic Stroke",
-        "Cerebral Hemorrhage",
-        "Antihypertensive Agents",
-        "Stroke",
-        "Europe",
-        "Practice Guidelines as Topic"
-      ],
-      "keywords": [
-        "blood pressure",
-        "guideline",
-        "stroke",
-        "systematic review"
-      ],
-      "doi": "10.1093/esj/aakag004",
-      "pmcid": "PMC13151662",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "급성 뇌졸중·ICH 혈압관리, 침상 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-stroke-organisation-eso-blood-pressure-management-acute-ischaemic-stroke-intracerebral-haemorrhage",
-      "supersedes": []
     },
     {
       "id": "pmid:42095754",
@@ -42338,7 +42276,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43086,7 +43024,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43414,7 +43352,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43926,7 +43864,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44342,7 +44280,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -44941,7 +44879,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46029,7 +45967,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-duration-antibiotics-complicated-uti",
       "supersedes": [],
       "llmFit": {
@@ -46103,7 +46041,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "idsa|clinical-practice-by-management-treatment-complicated-urinary-tract-infections-timing-intravenous-oral-antibiotics-transition-complicated-urinary-tract-infections",
       "supersedes": [],
       "llmFit": {
@@ -46185,7 +46123,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46265,7 +46203,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -46344,7 +46282,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46424,7 +46362,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46488,7 +46426,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46634,7 +46572,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -46704,7 +46642,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46776,7 +46714,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -46846,7 +46784,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -46929,7 +46867,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46992,7 +46930,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47228,7 +47166,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47300,7 +47238,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47361,7 +47299,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47437,7 +47375,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47510,7 +47448,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47594,7 +47532,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47653,7 +47591,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.165Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47732,7 +47670,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47783,11 +47721,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.702876029472048,
+      "priority": 6.699306085581396,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.702876029472048,
+        "recency": 1.6993060855813957,
         "scope": 0,
         "confidence": 2
       },
@@ -47802,7 +47740,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -47885,7 +47823,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47954,7 +47892,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -48068,11 +48006,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.702876029429796,
+      "priority": 7.699306085496892,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.7028760294297962,
+        "recency": 1.6993060854968924,
         "scope": 0,
         "confidence": 2
       },
@@ -48087,7 +48025,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T00:18:41.166Z",
+      "lastSeenAt": "2026-09-22T23:46:53.578Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -54456,6 +54394,172 @@
         ]
       },
       "publishedAt": "2026-09-22"
+    },
+    {
+      "id": "pmid:42095756",
+      "pmid": "42095756",
+      "title": "2025 update to European Stroke Organisation (ESO) guideline on blood pressure management in acute ischaemic stroke and intracerebral haemorrhage.",
+      "pubDate": "2026 May 6",
+      "journal": "European stroke journal",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:19.239Z",
+      "abstract": "Optimal blood pressure (BP) management in acute ischaemic stroke (AIS) and acute ICH remains uncertain. In light of new data published since the previous ESO guidelines, this update provides revised, evidence-based recommendations across 8 key clinical questions to support BP management in acute stroke. The guidelines were developed using the ESO standard operating procedure and Grading of Recommendations, Assessment, Development and Evaluation (GRADE) methodology, including literature searches, systematic reviews and meta-analyses of relevant RCTs, assessment of evidence quality and formulation of specific recommendations. We advise against routine pre-hospital BP lowering in suspected stroke (moderate-certainty evidence). In AIS patients undergoing reperfusion therapy, we recommend maintaining BP < 185/110 mmHg before the bolus of intravenous thrombolysis and < 180/105 mmHg during and for 24 h after intravenous thrombolysis (low-certainty evidence) and/or mechanical thrombectomy (moderate-certainty evidence). We recommend against intensively lowering systolic BP < 140 mmHg in the first 24 h after successful mechanical thrombectomy (high-certainty evidence). Routine use of vasopressors to raise BP in AIS patients with neurological deterioration who are not treated with acute reperfusion therapies is discouraged (low-certainty evidence). In acute ICH, the net clinical benefit of intensive BP lowering remains uncertain; however, expert consensus supports early systolic BP reduction to < 140 mmHg in patients with small-to-moderate haematomas to limit haematoma expansion. Overall, the updated recommendations reaffirm the core principles of current clinical practice while providing more nuanced guidance for specific scenarios. However, the quality of evidence remains moderate to very low, limited by a lack of high-quality RCTs, methodological issues, inconsistent results and study heterogeneity. Consequently, most recommendations are weak and supported by expert consensus. These guidelines provide specific recommendations on BP thresholds and management strategies tailored to distinct acute stroke subgroups. They also highlight the ongoing uncertainty and emphasise the need for future RCTs to define optimal BP targets, timing, treatment strategies and ideal antihypertensive agents across different clinical contexts.",
+      "meshTerms": [
+        "Humans",
+        "Blood Pressure",
+        "Ischemic Stroke",
+        "Cerebral Hemorrhage",
+        "Antihypertensive Agents",
+        "Stroke",
+        "Europe",
+        "Practice Guidelines as Topic"
+      ],
+      "keywords": [
+        "blood pressure",
+        "guideline",
+        "stroke",
+        "systematic review"
+      ],
+      "doi": "10.1093/esj/aakag004",
+      "pmcid": "PMC13151662",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 뇌졸중·ICH 혈압관리, 침상 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-stroke-organisation-eso-blood-pressure-management-acute-ischaemic-stroke-intracerebral-haemorrhage",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42095756",
+          "title": "2025 update to European Stroke Organisation (ESO) guideline on blood pressure management in acute ischaemic stroke and intracerebral haemorrhage.",
+          "journal": "European stroke journal",
+          "pubDate": "2026 May 6",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42095756/",
+          "doi": "10.1093/esj/aakag004"
+        },
+        "org": "European Stroke Organisation (ESO)",
+        "version": "2025 update",
+        "title_ko": "급성 허혈성 뇌졸중 및 뇌내출혈에서의 혈압 관리에 관한 유럽뇌졸중기구(ESO) 지침 2025 개정판",
+        "scope_ko": "급성기(발병 24시간 이내 중심) 허혈성 뇌졸중(AIS)과 급성 자발성 뇌내출혈(ICH) 환자의 혈압 관리를 다룬다. 병원 전 단계, 재관류치료(정맥 혈전용해술 IVT·기계적 혈전제거술 MT)를 받는/받지 않는 AIS, 신경학적 악화 시 승압 요법, 그리고 급성 ICH 등 8개 임상질문(PICO)에 걸쳐 GRADE 방법론으로 권고를 제시한다. 대상은 성인 급성 뇌졸중 환자.",
+        "summary": [
+          "Pre-hospital phase: advise AGAINST routine pre-hospital BP lowering in suspected acute stroke (weak recommendation, moderate-certainty evidence); no mortality or functional benefit overall, and a harm signal with transdermal GTN in the ICH subgroup.",
+          "AIS eligible for IV thrombolysis: keep BP < 185/110 mmHg before the IVT bolus, then < 180/105 mmHg during and for 24 h after IVT (weak recommendation, low-certainty evidence). No randomized evidence supports intensive lowering below these thresholds.",
+          "AIS with LVO undergoing mechanical thrombectomy: maintain BP < 180/105 mmHg during and for 24 h after MT (weak recommendation, moderate-certainty evidence).",
+          "After SUCCESSFUL thrombectomy: recommend AGAINST intensively lowering systolic BP < 140 mmHg in the first 24 h (STRONG recommendation, HIGH-certainty evidence) — pooled RCTs show worse functional outcomes with intensive control.",
+          "AIS not receiving reperfusion: routine BP lowering is not recommended in patients ineligible for reperfusion (weak recommendation, low/very-low certainty); no optimal threshold identified.",
+          "AIS with neurological deterioration NOT treated with reperfusion: routine use of vasopressors (induced hypertension) is discouraged (weak recommendation, low-certainty evidence); early neurological gains did not translate to 90-day benefit and ICH risk was increased.",
+          "Acute ICH: net clinical benefit of intensive BP lowering remains uncertain; by expert consensus, early systolic BP reduction to < 140 mmHg is supported in patients with small-to-moderate haematomas to limit haematoma expansion.",
+          "Overall: most recommendations are WEAK and rest on expert consensus because evidence quality is moderate-to-very-low; high-quality RCTs on targets, timing and agents are still needed."
+        ],
+        "summary_ko": [
+          "병원 전 단계: 의심 급성 뇌졸중에서 일상적(routine) 병원 전 혈압강하는 권고하지 않는다(약한 권고, 중등도 확실성). 전체적으로 사망·기능 이득이 없고, ICH 아군에서 경피 GTN의 위해 신호가 있었다.",
+          "IVT 대상 AIS: 볼루스 투여 전 혈압 < 185/110 mmHg, 이후 IVT 시행 중 및 24시간까지 < 180/105 mmHg 유지(약한 권고, 낮은 확실성). 이 기준 미만으로 더 강하게 낮추는 것을 뒷받침하는 무작위 근거는 없다.",
+          "MT를 받는 LVO 동반 AIS: MT 시행 중 및 24시간까지 혈압 < 180/105 mmHg 유지(약한 권고, 중등도 확실성).",
+          "성공적 혈전제거술 이후: 첫 24시간 동안 수축기혈압을 < 140 mmHg로 집중적으로(intensive) 낮추는 것에 반대(강한 권고, 높은 확실성) — RCT 통합분석에서 집중강하가 기능 예후를 악화시켰다.",
+          "재관류치료 비대상 AIS: 재관류 부적합 환자에서 일상적 혈압강하는 권고하지 않는다(약한 권고, 낮음/매우 낮음 확실성). 최적 기준치는 확인되지 않았다.",
+          "재관류치료를 받지 않은 AIS에서 신경학적 악화: 승압제를 이용한 유도성 고혈압(induced hypertension)의 일상적 사용은 권장하지 않는다(약한 권고, 낮은 확실성). 초기 신경학적 호전이 90일 이득으로 이어지지 않았고 ICH 위험이 증가했다.",
+          "급성 ICH: 집중 혈압강하의 순임상이익은 여전히 불확실하다. 전문가 합의로, 소~중등도 혈종 환자에서 혈종 확장 억제를 위해 조기 수축기혈압을 < 140 mmHg로 낮추는 것을 지지한다.",
+          "전반: 근거 수준이 중등도~매우 낮음이라 대부분 권고가 약하고 전문가 합의에 기반한다. 목표치·시점·약제에 대한 고품질 RCT가 여전히 필요하다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "성공적 혈전제거술 후 집중 혈압강하",
+            "detail": "The most substantial change. The 2021 guideline gave no strong recommendation on BP targets after MT; the 2025 update issues a STRONG recommendation AGAINST intensively lowering systolic BP < 140 mmHg in the first 24 h after SUCCESSFUL MT, now backed by HIGH-certainty evidence. New RCTs (ENCHANTED2/MT, OPTIMAL-BP, BP-TARGET) and their meta-analysis showed intensive control worsened outcomes (good outcome OR ~0.66, 95% CI 0.53–0.82; less disability OR ~0.72, 95% CI 0.60–0.86). Practical target after MT is < 180/105 mmHg (weak, moderate certainty).",
+            "detail_ko": "가장 큰 변화. 2021년 지침은 MT 후 혈압 목표에 대해 강한 권고가 없었으나, 2025 개정판은 '성공적' MT 후 첫 24시간 동안 수축기혈압을 < 140 mmHg로 집중강하하는 것에 '반대'하는 강한 권고를 높은 확실성 근거로 신설했다. 신규 RCT(ENCHANTED2/MT, OPTIMAL-BP, BP-TARGET) 및 통합분석에서 집중강하가 예후를 악화시켰다(양호 예후 OR≈0.66, 95%CI 0.53–0.82; 장애 감소 OR≈0.72, 95%CI 0.60–0.86). MT 후 실용 목표는 < 180/105 mmHg(약한 권고, 중등도 확실성)."
+          },
+          {
+            "topic": "병원 전 혈압강하",
+            "detail": "Newly formalized as a weak recommendation AGAINST routine pre-hospital BP lowering in suspected stroke, moderate-certainty evidence — driven by RIGHT-2, MR ASAP and INTERACT4. Pooled data showed no mortality (OR ~1.02, 95% CI 0.87–1.19) or functional benefit; transdermal GTN carried a harm signal in ICH (greater haematoma expansion, higher early mortality). Reason: pre-hospital, pre-imaging BP lowering does not improve outcomes and may harm ICH patients.",
+            "detail_ko": "의심 뇌졸중에서 일상적 병원 전 혈압강하에 '반대'하는 약한 권고로 새로 명문화(중등도 확실성). RIGHT-2, MR ASAP, INTERACT4가 근거다. 통합분석에서 사망(OR≈1.02, 95%CI 0.87–1.19)·기능 이득이 없었고, 경피 GTN은 ICH에서 혈종 확장 증가·조기 사망 증가라는 위해 신호를 보였다. 이유: 영상 전 병원 전 혈압강하는 예후를 개선하지 못하고 ICH 환자에게 해가 될 수 있다."
+          },
+          {
+            "topic": "유도성 고혈압(승압제)",
+            "detail": "New guidance: routine use of vasopressors to raise BP in AIS patients with neurological deterioration who are NOT receiving reperfusion is now discouraged (weak recommendation, low-certainty). The 2021 guideline lacked specific RCT evidence; the SETIN-HYPERTENSION trial (phenylephrine to raise SBP ~20%) showed early neurological improvement did not translate to 90-day functional benefit and increased symptomatic ICH (6.6% vs 0%, P=.022).",
+            "detail_ko": "신규 권고: 재관류치료를 받지 않으면서 신경학적으로 악화되는 AIS 환자에서 혈압을 올리기 위한 승압제의 일상적 사용을 권장하지 않는다(약한 권고, 낮은 확실성). 2021년에는 관련 RCT 근거가 부족했으나, SETIN-HYPERTENSION(phenylephrine으로 SBP 약 20% 상승)에서 초기 신경학적 호전이 90일 기능 이득으로 이어지지 않았고 증상성 ICH가 증가했다(6.6% 대 0%, P=.022)."
+          },
+          {
+            "topic": "IVT 전후 혈압 기준(집중강하 여부)",
+            "detail": "The < 185/110 mmHg (pre-bolus) and < 180/105 mmHg (during/24 h after IVT) thresholds are reaffirmed, but the update adds a clearer stance AGAINST intensive lowering below these values. ENCHANTED (intensive SBP 130–140 vs standard < 180) found no functional benefit (OR ~1.01, 95% CI 0.87–1.17) despite a modest reduction in intracranial haemorrhage — so standard, not intensive, targets are supported.",
+            "detail_ko": "볼루스 전 < 185/110 mmHg, IVT 시행 중·24시간 < 180/105 mmHg 기준은 유지되지만, 이 값 미만으로의 집중강하에 반대하는 입장이 더 분명해졌다. ENCHANTED(집중 SBP 130–140 대 표준 < 180)에서 두개내출혈은 소폭 감소했으나 기능 이득은 없었다(OR≈1.01, 95%CI 0.87–1.17). 따라서 집중강하가 아닌 표준 목표가 지지된다."
+          },
+          {
+            "topic": "급성 ICH 혈압강하",
+            "detail": "The update softens/qualifies ICH BP lowering: it states the net clinical benefit of intensive lowering remains uncertain (reflecting mixed INTERACT2/ATACH-2 data and heterogeneity), and now frames early SBP reduction to < 140 mmHg as EXPERT CONSENSUS specifically for small-to-moderate haematomas to limit expansion, rather than a blanket strong target. Emphasis on avoiding aggressive drops in large haematomas and on individualisation.",
+            "detail_ko": "ICH 혈압강하는 완화·조건부로 조정됐다. 집중강하의 순임상이익은 여전히 불확실하다고 명시하고(INTERACT2/ATACH-2의 상반된 자료와 이질성 반영), 조기 SBP < 140 mmHg 목표를 일괄적 강한 목표가 아니라 소~중등도 혈종에서 혈종 확장 억제를 위한 '전문가 합의'로 규정한다. 대형 혈종에서의 급격한 강하 회피와 개별화가 강조된다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside: do NOT start antihypertensives in the field or in triage for suspected stroke before imaging — especially avoid GTN, which may harm ICH. For thrombolysis, keep pushing the familiar < 185/110 (pre-bolus) then < 180/105 for 24 h, but stop chasing tighter targets; after a SUCCESSFUL thrombectomy, actively avoid dropping SBP below 140 mmHg in the first 24 h (this is now a strong, high-certainty 'do-not-do'). Abandon routine phenylephrine/vasopressor-induced hypertension for stuttering deficits in non-reperfused patients. In acute ICH with a small-to-moderate haematoma, still aim for early SBP < 140 mmHg but titrate smoothly, avoid large SBP swings, and individualise in large bleeds.",
+        "practiceImpact_ko": "침상 실무: 의심 뇌졸중에서 영상 전 현장·분류실 단계 항고혈압제를 시작하지 말 것 — 특히 ICH에 해로울 수 있는 GTN은 피한다. 혈전용해는 익숙한 볼루스 전 < 185/110, 이후 24시간 < 180/105를 유지하되 그 이하로의 집중강하는 추구하지 않는다. '성공적' 혈전제거술 후 첫 24시간에는 SBP를 140 mmHg 미만으로 떨어뜨리지 않도록 적극 관리한다(이제 강한·높은 확실성의 '하지 말 것'). 재관류를 못 받은 환자의 진행성/변동성 결손에 phenylephrine·승압제 유도성 고혈압을 일상적으로 쓰지 않는다. 소~중등도 혈종의 급성 ICH에서는 조기 SBP < 140 mmHg를 목표로 하되 급격한 변동 없이 완만히 적정하고, 대형 혈종은 개별화한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42095756",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42095756/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1093/esj/aakag004",
+            "url": "https://doi.org/10.1093/esj/aakag004"
+          },
+          {
+            "label": "웹 — ESO 2025 BP guideline — full text (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13151662/"
+          },
+          {
+            "label": "웹 — ESO 2025 BP guideline — European Stroke Journal / Oxford Academic",
+            "url": "https://academic.oup.com/esj/article/11/5/aakag004/8671384"
+          },
+          {
+            "label": "웹 — ESO BP Management guideline summary — Guideline Central",
+            "url": "https://www.guidelinecentral.com/guideline/5217150/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-23"
     }
   ],
   "rejected": [
@@ -59491,7 +59595,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T00:18:30.684Z",
+      "discoveredAt": "2026-09-22T23:46:46.162Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -59748,7 +59852,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T00:18:30.684Z",
+      "discoveredAt": "2026-09-22T23:46:46.162Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -59777,7 +59881,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T00:18:30.684Z",
+      "discoveredAt": "2026-09-22T23:46:46.162Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -59810,7 +59914,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T00:18:30.684Z",
+      "discoveredAt": "2026-09-22T23:46:46.162Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -59844,7 +59948,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-22T00:18:30.684Z",
+      "discoveredAt": "2026-09-22T23:46:46.162Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -59925,9 +60029,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260922_091344:guideline:2026-09-22",
+    "runId": "trend_review_20260923_084203:guideline:2026-09-23",
     "outcome": "published",
-    "publishedId": "pmid:42297408",
+    "publishedId": "pmid:42095756",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -59952,15 +60056,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 166,
+        "mergedTotal": 171,
         "overlapCount": 2,
         "ptOnlyCount": 4,
         "expandedOnlyCount": 10,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/23",
-          "maxDate": "2026/09/22"
+          "minDate": "2026/08/24",
+          "maxDate": "2026/09/23"
         },
         "retmax": 60,
         "topics": [
@@ -59968,8 +60072,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 55,
-            "idsFetched": 55,
+            "totalFound": 56,
+            "idsFetched": 56,
             "truncated": false,
             "error": null
           },
@@ -59977,8 +60081,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -59986,8 +60090,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 23,
-            "idsFetched": 23,
+            "totalFound": 24,
+            "idsFetched": 24,
             "truncated": false,
             "error": null
           },
@@ -60004,8 +60108,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 34,
-            "idsFetched": 34,
+            "totalFound": 35,
+            "idsFetched": 35,
             "truncated": false,
             "error": null
           },
@@ -60040,8 +60144,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -60064,7 +60168,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 150,
+        "topicOnlyCount": 155,
         "ptPmids": [
           "42618174",
           "42618173",
@@ -60076,9 +60180,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 166,
-          "enriched": 166,
-          "withAbstract": 129,
+          "requested": 171,
+          "enriched": 171,
+          "withAbstract": 134,
           "error": null
         }
       },
@@ -60136,18 +60240,18 @@
       },
       "decisions": {
         "queued": 219,
-        "needsReview": 449,
+        "needsReview": 448,
         "rejected": 127,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42297408",
+        "candidateId": "pmid:42095756",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-22T00:20:52.632Z",
+  "updatedAt": "2026-09-22T23:49:21.836Z",
   "configVersion": "guideline-v2"
 }
