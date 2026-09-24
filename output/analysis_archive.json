@@ -2823,6 +2823,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-24",
+      "pmid": "42492619",
+      "title": "One-year liver graft survival from brain-dead donors treated with ECPR for out-of-hospital cardiac arrest.",
+      "title_ko": "불응성 병원 밖 심정지에 대해 ECPR을 시행한 뇌사 공여자로부터의 1년 간 이식편 생존율",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111219",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "뇌사 장기 공여자 중, 불응성 병원 밖 심정지(OHCA)에 대해 ECPR을 시행받은 공여자와 ECPR을 받지 않은 공여자 간에 1년 간 이식편 생존율에 차이가 있는가?",
+      "pico": {
+        "population": "[France] Brain-dead patients who donated at least one organ at a single centre between January 2011 and June 2024; actual liver donors comprised 15 in the ECPR group (treated with ECPR for refractory OHCA; younger, median age 47 [36-54] years) and 27 in the Control group (not treated with ECPR, predominantly admitted for stroke and OHCA; median age 70 [48-79] years).",
+        "intervention": "Donors treated with extracorporeal cardiopulmonary resuscitation (ECPR) for refractory out-of-hospital cardiac arrest (OHCA) ('ECPR group'); this group had greater initial severity, e.g. peak lactate 9.4 [6.9-12.4] mmol/L.",
+        "comparison": "Donors not treated with ECPR ('Control group'), predominantly admitted for stroke and OHCA, with peak lactate 3.0 [2-5.7] mmol/L.",
+        "outcome": "One-year liver graft survival did not differ significantly between groups in univariate analysis: 12/15 (80%; 95% CI, 55-93) in the ECPR group vs. 24/27 (89%; 95% CI, 72-96) in the control group (P = 0.65)."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 단일 기관에서 2011년 1월부터 2024년 6월 사이에 최소 1개 이상의 장기를 공여한 뇌사 환자; 실제 간 공여자는 ECPR군 15명(불응성 OHCA에 ECPR 시행, 더 젊음, 중앙값 연령 47 [36-54]세)과 대조군 27명(ECPR 미시행, 주로 뇌졸중 및 OHCA로 입원, 중앙값 연령 70 [48-79]세)으로 구성되었다.",
+        "intervention": "불응성 병원 밖 심정지(OHCA)에 대해 extracorporeal cardiopulmonary resuscitation (ECPR)을 시행받은 공여자('ECPR군'); 이 군은 초기 중증도가 더 높았으며 예를 들어 peak lactate가 9.4 [6.9-12.4] mmol/L였다.",
+        "comparison": "ECPR을 시행받지 않은 공여자('대조군')로, 주로 뇌졸중 및 OHCA로 입원했으며 peak lactate는 3.0 [2-5.7] mmol/L였다.",
+        "outcome": "1년 간 이식편 생존율은 단변량 분석에서 두 군 간 유의한 차이가 없었다: ECPR군 12/15 (80%; 95% CI, 55-93) vs. 대조군 24/27 (89%; 95% CI, 72-96) (P = 0.65)."
+      },
+      "keyFindings": [
+        "One-year liver graft survival did not differ significantly between ECPR donors (12/15, 80%; 95% CI 55-93) and control donors (24/27, 89%; 95% CI 72-96) in univariate analysis (P = 0.65).",
+        "Actual liver retrieval was performed in only 15/38 (39%) potential ECPR donors vs. 27/34 (79%) potential non-ECPR donors (P < 0.01).",
+        "ECPR liver donors were younger (47 [36-54] vs. 70 [48-79] years, P < 0.01) but had greater initial severity, e.g. higher peak lactate (9.4 [6.9-12.4] vs. 3.0 [2-5.7] mmol/L, P < 0.01)."
+      ],
+      "keyFindings_ko": [
+        "1년 간 이식편 생존율은 단변량 분석에서 ECPR 공여자(12/15, 80%; 95% CI 55-93)와 대조군 공여자(24/27, 89%; 95% CI 72-96) 간 유의한 차이가 없었다 (P = 0.65).",
+        "실제 간 적출은 잠재 ECPR 공여자에서 15/38 (39%)에 그친 반면 잠재 비ECPR 공여자에서는 27/34 (79%)로 시행되었다 (P < 0.01).",
+        "ECPR 간 공여자는 더 젊었으나(47 [36-54] vs. 70 [48-79]세, P < 0.01) 초기 중증도가 더 높았다, 예: peak lactate가 더 높음(9.4 [6.9-12.4] vs. 3.0 [2-5.7] mmol/L, P < 0.01)."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42492619",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42492619/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111219",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111219"
+        },
+        {
+          "label": "웹 — PubMed — One-year liver graft survival from brain-dead donors treated with ECPR for OHCA (PMID 42492619)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42492619/"
+        },
+        {
+          "label": "웹 — ScienceDirect — article page (Resuscitation, S0300957226002662)",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0300957226002662"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — One-year liver graft survival from brain-dead donors treated with ECPR for OHCA (PMID 42492619)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42492619/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ScienceDirect — article page (Resuscitation, S0300957226002662)",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0300957226002662",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
