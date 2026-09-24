@@ -704,5 +704,16 @@
     "rerankPoolSize": 3,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42492619",
+    "title": "One-year liver graft survival from brain-dead donors treated with ECPR for out-o",
+    "date": "2026-09-24",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 2,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]

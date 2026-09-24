@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-22T23:46:54.451Z"
+      "supersededAt": "2026-09-23T23:55:57.707Z"
     },
     {
       "id": "pmid:38531812",
@@ -31213,7 +31213,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -31653,7 +31653,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -34345,7 +34345,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37191,7 +37191,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40583,7 +40583,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42276,7 +42276,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43024,7 +43024,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43352,7 +43352,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43864,7 +43864,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44211,86 +44211,6 @@
         "reason": "중추성 수면무호흡 외래 지침 해설",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:42371750",
-      "pmid": "42371750",
-      "title": "Noninvasive respiratory support for adult patients with acute respiratory failure: an official American Thoracic Society Clinical Practice Guideline.",
-      "pubDate": "2026 Sep 1",
-      "journal": "American journal of respiratory and critical care medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic",
-        "pubmed-pt"
-      ],
-      "discoveredAt": "2026-08-17T04:40:48.357Z",
-      "abstract": "BACKGROUND: Acute hypoxemic and hypercapnic respiratory failure are among the most common reasons for ICU admission and need for invasive mechanical ventilation. Noninvasive respiratory support (NIRS) strategies-including high-flow nasal cannula (HFNC), noninvasive ventilation (NIV), and continuous positive airway pressure (CPAP)-may prevent intubation, improve outcomes, and reduce ICU utilization. However, there is uncertainty regarding optimal patient and modality selection, resulting in variable implementation. There are no clinical practice guidelines comprehensively addressing the use of the different NIRS strategies across the spectrum of acute respiratory failure.\nOBJECTIVE: To update and develop new evidence-based clinical practice recommendations informing NIRS use, including HFNC, NIV and CPAP, in adults with acute respiratory failure.\nMETHODS: A multidisciplinary panel used the Grading of Recommendations, Assessment, Development, and Evaluation approach to address four PICO (Population, Intervention, Comparator, Outcome) questions related to the use of NIRS for hypoxemic and hypercapnic respiratory failure, preoxygenation for intubation, and postextubation respiratory support. Recommendations were informed by several systematic reviews and network meta-analyses.\nRESULTS: The panel made a strong recommendation for HFNC and a conditional recommendation for NIV or CPAP for adults with acute hypoxemic respiratory failure with close monitoring for the need for escalation of respiratory support, based primarily on effects on need for intubation. For acute hypercapnic respiratory failure, the panel made a strong recommendation for NIV to reduce mortality and need for invasive mechanical ventilation, and a conditional recommendation for HFNC only in patients with less severe hypercapnia and with mild acidemia (eg, pH > 7.25), provided that close monitoring and prompt escalation to NIV are available. The panel made a strong recommendation for HFNC or NIV for preoxygenation prior to endotracheal intubation to prevent peri-intubation hypoxemia. The panel also issued a risk-based recommendation, suggesting HFNC for low-risk patients and NIV for high-risk patients to reduce the need for re-intubation following extubation after critical illness.\nCONCLUSIONS: Noninvasive respiratory support strategies are effective in improving outcomes in a range of clinical scenarios. We provide evidence-based recommendations, which can be further informed by patient risk, institutional capacity, and interface tolerance.",
-      "meshTerms": [
-        "Humans",
-        "Noninvasive Ventilation",
-        "Respiratory Insufficiency",
-        "Continuous Positive Airway Pressure",
-        "Adult",
-        "Acute Disease",
-        "United States",
-        "Hypercapnia",
-        "Oxygen Inhalation Therapy"
-      ],
-      "keywords": [
-        "acute hypercapnic respiratory failure",
-        "acute hypoxemic respiratory failure",
-        "noninvasive respiratory support",
-        "postextubation respiratory failure",
-        "preoxygenation"
-      ],
-      "doi": "10.1093/ajrccm/aamag302",
-      "pmcid": "PMC13519360",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "급성호흡부전 비침습호흡지원 핵심 지침",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|noninvasive-respiratory-support-adult-patients-with-acute-respiratory-failure-official-american-thoracic-society-clinical-practice",
-      "supersedes": [],
-      "attempts": 0
     },
     {
       "id": "pmid:42350065",
@@ -44879,7 +44799,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46426,7 +46346,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46572,7 +46492,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -46642,7 +46562,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46714,7 +46634,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -46784,7 +46704,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -46867,7 +46787,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46930,7 +46850,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47166,7 +47086,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47238,7 +47158,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47299,7 +47219,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47375,7 +47295,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47448,7 +47368,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47532,7 +47452,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47591,7 +47511,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47670,7 +47590,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47721,11 +47641,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.699306085581396,
+      "priority": 6.695632591301382,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.6993060855813957,
+        "recency": 1.695632591301382,
         "scope": 0,
         "confidence": 2
       },
@@ -47740,7 +47660,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -47823,7 +47743,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47892,7 +47812,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -48006,11 +47926,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.699306085496892,
+      "priority": 7.69563259125913,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6993060854968924,
+        "recency": 1.6956325912591306,
         "scope": 0,
         "confidence": 2
       },
@@ -48025,7 +47945,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-22T23:46:53.578Z",
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -54560,6 +54480,176 @@
         ]
       },
       "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "pmid:42371750",
+      "pmid": "42371750",
+      "title": "Noninvasive respiratory support for adult patients with acute respiratory failure: an official American Thoracic Society Clinical Practice Guideline.",
+      "pubDate": "2026 Sep 1",
+      "journal": "American journal of respiratory and critical care medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic",
+        "pubmed-pt"
+      ],
+      "discoveredAt": "2026-08-17T04:40:48.357Z",
+      "abstract": "BACKGROUND: Acute hypoxemic and hypercapnic respiratory failure are among the most common reasons for ICU admission and need for invasive mechanical ventilation. Noninvasive respiratory support (NIRS) strategies-including high-flow nasal cannula (HFNC), noninvasive ventilation (NIV), and continuous positive airway pressure (CPAP)-may prevent intubation, improve outcomes, and reduce ICU utilization. However, there is uncertainty regarding optimal patient and modality selection, resulting in variable implementation. There are no clinical practice guidelines comprehensively addressing the use of the different NIRS strategies across the spectrum of acute respiratory failure.\nOBJECTIVE: To update and develop new evidence-based clinical practice recommendations informing NIRS use, including HFNC, NIV and CPAP, in adults with acute respiratory failure.\nMETHODS: A multidisciplinary panel used the Grading of Recommendations, Assessment, Development, and Evaluation approach to address four PICO (Population, Intervention, Comparator, Outcome) questions related to the use of NIRS for hypoxemic and hypercapnic respiratory failure, preoxygenation for intubation, and postextubation respiratory support. Recommendations were informed by several systematic reviews and network meta-analyses.\nRESULTS: The panel made a strong recommendation for HFNC and a conditional recommendation for NIV or CPAP for adults with acute hypoxemic respiratory failure with close monitoring for the need for escalation of respiratory support, based primarily on effects on need for intubation. For acute hypercapnic respiratory failure, the panel made a strong recommendation for NIV to reduce mortality and need for invasive mechanical ventilation, and a conditional recommendation for HFNC only in patients with less severe hypercapnia and with mild acidemia (eg, pH > 7.25), provided that close monitoring and prompt escalation to NIV are available. The panel made a strong recommendation for HFNC or NIV for preoxygenation prior to endotracheal intubation to prevent peri-intubation hypoxemia. The panel also issued a risk-based recommendation, suggesting HFNC for low-risk patients and NIV for high-risk patients to reduce the need for re-intubation following extubation after critical illness.\nCONCLUSIONS: Noninvasive respiratory support strategies are effective in improving outcomes in a range of clinical scenarios. We provide evidence-based recommendations, which can be further informed by patient risk, institutional capacity, and interface tolerance.",
+      "meshTerms": [
+        "Humans",
+        "Noninvasive Ventilation",
+        "Respiratory Insufficiency",
+        "Continuous Positive Airway Pressure",
+        "Adult",
+        "Acute Disease",
+        "United States",
+        "Hypercapnia",
+        "Oxygen Inhalation Therapy"
+      ],
+      "keywords": [
+        "acute hypercapnic respiratory failure",
+        "acute hypoxemic respiratory failure",
+        "noninvasive respiratory support",
+        "postextubation respiratory failure",
+        "preoxygenation"
+      ],
+      "doi": "10.1093/ajrccm/aamag302",
+      "pmcid": "PMC13519360",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성호흡부전 비침습호흡지원 핵심 지침",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|noninvasive-respiratory-support-adult-patients-with-acute-respiratory-failure-official-american-thoracic-society-clinical-practice",
+      "supersedes": [],
+      "attempts": 0,
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42371750",
+          "title": "Noninvasive respiratory support for adult patients with acute respiratory failure: an official American Thoracic Society Clinical Practice Guideline.",
+          "journal": "American journal of respiratory and critical care medicine",
+          "pubDate": "2026 Sep 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42371750/",
+          "doi": "10.1093/ajrccm/aamag302"
+        },
+        "org": "ATS",
+        "version": "2026",
+        "title_ko": "성인 급성 호흡부전 환자의 비침습적 호흡 보조(NIRS): 미국흉부학회(ATS) 공식 임상진료지침",
+        "scope_ko": "성인 급성 호흡부전 전반에 걸쳐 비침습적 호흡 보조(NIRS) — 고유량 비강캐뉼라(HFNC), 비침습적 환기(NIV), 지속기도양압(CPAP) — 의 사용을 다루는 지침입니다. 급성 저산소성 호흡부전, 급성 고탄산성 호흡부전, 기관삽관 전 전산소화, 발관 후 호흡 보조의 네 가지 임상 상황(4개 PICO)을 포괄합니다.",
+        "summary": [
+          "Acute hypoxemic respiratory failure: recommend HFNC over standard oxygen therapy (strong recommendation, moderate certainty); suggest NIV or CPAP via facemask or helmet as alternatives with close monitoring for escalation (conditional recommendation, low certainty), based primarily on reduction in need for intubation.",
+          "Acute hypercapnic respiratory failure: recommend NIV via facemask over standard oxygen to reduce mortality and need for invasive mechanical ventilation (strong recommendation, moderate certainty).",
+          "Acute hypercapnic respiratory failure — HFNC: suggest HFNC only in patients with less severe hypercapnia and mild acidemia (e.g., pH > 7.25), provided close monitoring and prompt escalation to NIV are available (conditional recommendation, low certainty).",
+          "Preoxygenation before endotracheal intubation: recommend HFNC or NIV via facemask over standard oxygen to prevent peri-intubation hypoxemia (strong recommendation, moderate certainty); no recommendation for HFNC vs NIV over each other.",
+          "Postextubation respiratory support after critical illness: suggest HFNC or NIV over standard oxygen (conditional recommendation, moderate certainty), with a risk-based approach — HFNC for low-risk patients and NIV for high-risk patients (e.g., age ≥65, obesity, hypercapnia, prolonged mechanical ventilation, or severe illness) to reduce reintubation.",
+          "Overarching principle: modality choice should be further individualized by patient risk, institutional capacity, and interface tolerance, with close monitoring and prompt escalation whenever a conditional (weaker) modality is used."
+        ],
+        "summary_ko": [
+          "급성 저산소성 호흡부전: 표준 산소요법보다 HFNC를 권고합니다(강한 권고, 중등도 확실성). NIV 또는 CPAP(안면마스크 또는 헬멧)는 상향 조정 필요성을 면밀히 감시하는 조건에서 대안으로 제안합니다(조건부 권고, 낮은 확실성). 주된 근거는 삽관 필요성 감소입니다.",
+          "급성 고탄산성 호흡부전: 사망률과 침습적 기계환기 필요성을 줄이기 위해 표준 산소요법보다 안면마스크 NIV를 권고합니다(강한 권고, 중등도 확실성).",
+          "급성 고탄산성 호흡부전 — HFNC: 경증 고탄산혈증과 경도 산증(예: pH > 7.25) 환자에 한해, 면밀한 감시와 NIV로의 신속한 상향 조정이 가능한 경우에만 HFNC를 제안합니다(조건부 권고, 낮은 확실성).",
+          "기관삽관 전 전산소화: 삽관 전후 저산소증 예방을 위해 표준 산소보다 HFNC 또는 NIV(안면마스크)를 권고합니다(강한 권고, 중등도 확실성). HFNC와 NIV 간 우열은 권고하지 않습니다.",
+          "중증질환 후 발관 후 호흡 보조: 표준 산소보다 HFNC 또는 NIV를 제안하되(조건부 권고, 중등도 확실성), 위험도 기반 접근 — 저위험 환자는 HFNC, 고위험 환자(예: 65세 이상, 비만, 고탄산혈증, 장기간 기계환기, 중증 질환)는 NIV — 로 재삽관을 줄일 것을 제안합니다.",
+          "총괄 원칙: 조건부(약한) 모달리티를 사용할 때는 면밀한 감시와 신속한 상향 조정을 전제로, 환자 위험도·기관 역량·인터페이스 내약성에 따라 모달리티 선택을 개별화합니다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "지침 범위 확장 (NIV 단독 → NIRS 전반)",
+            "detail": "The prior 2017 ERS/ATS clinical practice guideline (Rochwerg et al., Eur Respir J 2017) covered NIV essentially alone. This 2026 ATS guideline broadens scope to the full noninvasive respiratory support toolkit — HFNC, NIV, and CPAP — organized by physiologic category (hypoxemic vs hypercapnic failure, preoxygenation, postextubation) rather than by device or disease etiology, incorporating recent RCTs including COVID-19 populations.",
+            "detail_ko": "이전 2017 ERS/ATS 지침(Rochwerg 등, Eur Respir J 2017)은 사실상 NIV 단독을 다뤘습니다. 2026 ATS 지침은 범위를 HFNC·NIV·CPAP 전반으로 확장하고, 기기나 질환 원인별이 아니라 생리학적 범주(저산소성 vs 고탄산성 호흡부전, 전산소화, 발관 후)로 구성했으며 COVID-19 코호트를 포함한 최신 RCT를 반영했습니다."
+          },
+          {
+            "topic": "급성 저산소성 호흡부전에서 HFNC의 위상 격상",
+            "detail": "For de novo acute hypoxemic respiratory failure the 2017 NIV guideline made no recommendation (evidence deemed insufficient/uncertain). The 2026 guideline now issues a STRONG recommendation for HFNC over standard oxygen (moderate certainty), with NIV or CPAP downgraded to conditional alternatives (low certainty) — a clear shift making HFNC the preferred first-line noninvasive modality in this population, driven by reduced intubation.",
+            "detail_ko": "de novo 급성 저산소성 호흡부전에 대해 2017 NIV 지침은 근거 부족/불확실로 권고를 내지 않았습니다. 2026 지침은 표준 산소보다 HFNC를 강한 권고(중등도 확실성)로 격상하고, NIV·CPAP는 조건부 대안(낮은 확실성)으로 두었습니다. 삽관 감소를 근거로 이 환자군에서 HFNC를 선호되는 1차 비침습 모달리티로 명확히 전환한 변화입니다."
+          },
+          {
+            "topic": "급성 고탄산성 호흡부전에서 HFNC 조건부 허용",
+            "detail": "NIV remains the strong recommendation for acute hypercapnic respiratory failure (moderate certainty), consistent with 2017. New in 2026: HFNC is offered as a conditional option (low certainty) but ONLY in less severe hypercapnia with mild acidemia (e.g., pH > 7.25) and only where close monitoring and prompt escalation to NIV are available — previously HFNC was not endorsed for hypercapnic failure.",
+            "detail_ko": "급성 고탄산성 호흡부전에서 NIV는 2017과 마찬가지로 강한 권고(중등도 확실성)로 유지됩니다. 2026의 신규 사항: HFNC를 조건부 옵션(낮은 확실성)으로 제시하되, 경증 고탄산혈증·경도 산증(예: pH > 7.25)이면서 면밀한 감시와 NIV로의 신속한 상향 조정이 가능한 경우에 한합니다 — 이전에는 고탄산성 호흡부전에서 HFNC가 인정되지 않았습니다."
+          },
+          {
+            "topic": "삽관 전 전산소화 권고 신설",
+            "detail": "New topic not covered by the 2017 NIV guideline: a STRONG recommendation (moderate certainty) for HFNC or NIV via facemask over standard oxygen for preoxygenation before endotracheal intubation to prevent peri-intubation hypoxemia; the panel made no recommendation choosing between HFNC and NIV.",
+            "detail_ko": "2017 NIV 지침이 다루지 않은 신규 주제입니다: 삽관 전후 저산소증 예방을 위해 기관삽관 전 전산소화에 표준 산소보다 HFNC 또는 안면마스크 NIV를 강한 권고(중등도 확실성)로 신설했습니다. HFNC와 NIV 간 선택에 대해서는 권고하지 않았습니다."
+          },
+          {
+            "topic": "발관 후 위험도 기반 호흡 보조 신설",
+            "detail": "New risk-stratified postextubation guidance: suggest HFNC or NIV over standard oxygen (conditional, moderate certainty), with HFNC for low-risk patients and NIV for high-risk patients — high risk defined by features such as age ≥65 years, obesity, hypercapnia, prolonged mechanical ventilation, or severe illness — to reduce reintubation after critical illness.",
+            "detail_ko": "발관 후에 대한 위험도 계층화 권고를 신설했습니다: 표준 산소보다 HFNC 또는 NIV를 제안하되(조건부, 중등도 확실성), 저위험 환자는 HFNC, 고위험 환자는 NIV로 합니다. 고위험은 65세 이상, 비만, 고탄산혈증, 장기간 기계환기, 중증 질환 등으로 정의되며, 중증질환 후 재삽관을 줄이는 것이 목표입니다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, make HFNC the default first-line noninvasive support for de novo acute hypoxemic respiratory failure (reserving NIV/CPAP as monitored alternatives), while NIV stays the standard of care for hypercapnic failure — with HFNC acceptable only when hypercapnia is mild (pH > 7.25) and NIV escalation is immediately available. For every intubation, apply HFNC or NIV preoxygenation rather than a plain non-rebreather to blunt peri-intubation desaturation. Before extubating an ICU patient, risk-stratify: give prophylactic HFNC to low-risk patients and NIV to high-risk patients (age ≥65, obese, hypercapnic, prolonged ventilation, or severe illness) to prevent reintubation. Whenever a conditional modality is chosen, commit to close monitoring and a pre-planned, prompt escalation trigger.",
+        "practiceImpact_ko": "침상에서는 de novo 급성 저산소성 호흡부전의 1차 비침습 보조로 HFNC를 기본값으로 삼고(NIV·CPAP는 감시하 대안으로), 고탄산성 호흡부전에는 NIV를 표준으로 유지하되 HFNC는 경증 고탄산혈증(pH > 7.25)이면서 NIV 상향이 즉시 가능한 경우에만 허용합니다. 모든 삽관 시 단순 비재호흡마스크 대신 HFNC 또는 NIV로 전산소화를 시행해 삽관 전후 탈포화를 완화합니다. 중환자 발관 전에는 위험도를 계층화하여 저위험은 예방적 HFNC, 고위험(65세 이상·비만·고탄산혈증·장기 환기·중증)은 NIV를 적용해 재삽관을 예방합니다. 조건부 모달리티를 선택할 때는 반드시 면밀한 감시와 사전 계획된 신속 상향 조정 기준을 함께 둡니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42371750",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42371750/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1093/ajrccm/aamag302",
+            "url": "https://doi.org/10.1093/ajrccm/aamag302"
+          },
+          {
+            "label": "웹 — ATS Clinical Practice Guideline (full text) — Am J Respir Crit Care Med / Oxford Academic 212(9):2135",
+            "url": "https://academic.oup.com/ajrccm/article/212/9/2135/8721554"
+          },
+          {
+            "label": "웹 — ATS Clinical Practice Guideline (PDF, aamag302) — Oxford Academic",
+            "url": "https://academic.oup.com/ajrccm/article-pdf/212/9/2135/68645510/aamag302.pdf"
+          },
+          {
+            "label": "웹 — PubMed record PMID 42371750",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42371750/"
+          },
+          {
+            "label": "웹 — ATS Guideline Implementation Tools — Noninvasive Ventilation for Acute Respiratory Failure (references prior 2017 ERS/ATS guideline)",
+            "url": "https://www.thoracic.org/statements/guideline-implementation-tools/non-invasive-ventilation-for-acute-resp-failure.php"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-24"
     }
   ],
   "rejected": [
@@ -59595,7 +59685,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T23:46:46.162Z",
+      "discoveredAt": "2026-09-23T23:55:48.362Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -59852,7 +59942,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T23:46:46.162Z",
+      "discoveredAt": "2026-09-23T23:55:48.362Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -59881,7 +59971,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T23:46:46.162Z",
+      "discoveredAt": "2026-09-23T23:55:48.362Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -59914,7 +60004,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-22T23:46:46.162Z",
+      "discoveredAt": "2026-09-23T23:55:48.362Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -59948,7 +60038,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-22T23:46:46.162Z",
+      "discoveredAt": "2026-09-23T23:55:48.362Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -60029,9 +60119,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260923_084203:guideline:2026-09-23",
+    "runId": "trend_review_20260924_085048:guideline:2026-09-24",
     "outcome": "published",
-    "publishedId": "pmid:42095756",
+    "publishedId": "pmid:42371750",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -60040,8 +60130,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -60050,21 +60140,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 12,
-            "idsFetched": 12,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 171,
+        "mergedTotal": 166,
         "overlapCount": 2,
-        "ptOnlyCount": 4,
-        "expandedOnlyCount": 10,
+        "ptOnlyCount": 2,
+        "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/24",
-          "maxDate": "2026/09/23"
+          "minDate": "2026/08/25",
+          "maxDate": "2026/09/24"
         },
         "retmax": 60,
         "topics": [
@@ -60072,8 +60162,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 56,
-            "idsFetched": 56,
+            "totalFound": 55,
+            "idsFetched": 55,
             "truncated": false,
             "error": null
           },
@@ -60081,8 +60171,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -60090,8 +60180,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 24,
-            "idsFetched": 24,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -60099,8 +60189,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 26,
-            "idsFetched": 26,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -60108,8 +60198,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 35,
-            "idsFetched": 35,
+            "totalFound": 37,
+            "idsFetched": 37,
             "truncated": false,
             "error": null
           },
@@ -60135,8 +60225,8 @@
             "id": "pubmed-topic:trauma_hemorrhage",
             "label": "외상·출혈",
             "succeeded": true,
-            "totalFound": 0,
-            "idsFetched": 0,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           },
@@ -60168,21 +60258,19 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 155,
+        "topicOnlyCount": 153,
         "ptPmids": [
           "42618174",
           "42618173",
           "42371750",
-          "42248416",
-          "41419448",
-          "41414903"
+          "42248416"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 171,
-          "enriched": 171,
-          "withAbstract": 134,
+          "requested": 166,
+          "enriched": 166,
+          "withAbstract": 131,
           "error": null
         }
       },
@@ -60239,19 +60327,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 219,
+        "queued": 218,
         "needsReview": 448,
         "rejected": 127,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42095756",
+        "candidateId": "pmid:42371750",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-22T23:49:21.836Z",
+  "updatedAt": "2026-09-24T00:01:09.889Z",
   "configVersion": "guideline-v2"
 }

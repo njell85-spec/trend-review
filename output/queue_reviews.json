@@ -1329,23 +1329,6 @@
       "status": "queued"
     },
     {
-      "pmid": "35367005",
-      "title": "Acute coronary syndromes.",
-      "journal": "Lancet",
-      "score": 7.2,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "급성 관상동맥증후군 Lancet 종설, 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "35380580",
       "title": "Antiseizure Medications for Adults With Epilepsy: A Review.",
       "journal": "JAMA",
@@ -10045,6 +10028,130 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "35367005",
+      "title": "Acute coronary syndromes.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 관상동맥증후군 Lancet 종설, 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-24",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "35367005",
+          "title": "Acute coronary syndromes.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2022-4-4",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/35367005/",
+          "doi": "10.1016/S0140-6736(21)02391-6"
+        },
+        "title_ko": "급성 관상동맥증후군 (Acute coronary syndromes)",
+        "scope_ko": "Lancet Seminar로, 급성 관상동맥증후군의 병태생리·진단·치료를 임상 중심으로 개괄하고 주요 과학적 진전을 정리한다. 역학, 병태생리(MINOCA·SCAD 포함), 진단(고민감도 troponin과 신속 rule-out 알고리즘), NSTEACS 및 STEMI의 평가·관리, 이차예방, COVID-19의 영향까지 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "역학 (Epidemiology)",
+            "body_ko": "급성 관상동맥증후군의 진단과 치료에서 상당한 진전이 있었음에도, 심혈관질환은 여전히 전 세계 사망원인 1위이며 그 사망의 거의 절반이 허혈성 심장질환에 기인한다. 전 세계적으로 매년 손실되는 장애보정생존연수(disability-adjusted life-years, DALYs)의 12%가 허혈성 심장질환에 의한 것이다. 급성 관상동맥증후군 이후의 재관류술 시행률과 장기 사망률에는 뚜렷한 국가 간 편차가 존재한다.\n\n고소득국가(HIC)에서는 급성 관상동맥증후군 중 ST분절상승 심근경색(STEMI)이 차지하는 비율이 감소하고 있는데, 이는 부분적으로 서유럽·북미의 흡연율 감소 등 환자 위험 프로파일의 장기적 변화, 그리고 부분적으로 고민감도 troponin(hsTn) 검사를 이용한 non-STEMI(NSTEMI) 진단이 점점 널리 쓰이는 것과 관련이 있다. 그럼에도 쇼크를 동반한 STEMI 환자, 특히 심정지 상황에서의 원내 사망률은 여전히 높다."
+          },
+          {
+            "heading_ko": "병태생리 (Pathobiology)",
+            "body_ko": "급성 관상동맥증후군 스펙트럼에서 가장 경한 쪽 끝에는 불안정 협심증(unstable angina)이 있는데, 임상 증상은 급성 관상동맥증후군을 시사하나 심근경색의 생화학적 증거는 없는 경우다. 죽상혈전성 관상동맥질환에 의해 발생하는 제1형 심근경색(Type 1 MI)은 ECG 소견에 따라 NSTEMI 또는 STEMI로 다시 분류되며, 제4차 심근경색 보편정의(4th Universal Definition of Myocardial Infarction, UDMI)에 따라 심장 troponin(cTn) 수치의 상승 또는 하강(cTn을 쓸 수 없으면 다른 생체표지자)이 허혈의 임상적 증거(증상, ECG 변화, 이를 뒷받침하는 ECG 또는 영상 소견, 관상동맥 혈전의 증거)를 동반할 때로 정의된다.\n\n죽상경화 외에도, 심근 손상과 경색은 Takotsubo 심근증, 심근염, 공급-수요 불균형 등 여러 다른 과정에서 비롯될 수 있다. 이러한 사건들을 정의하는 틀은 제4차 UDMI에 제시되어 있다. 급성 죽상혈전과 무관하게 심근 산소 공급-수요 불균형으로 생기는 제2형 심근경색(Type 2 MI)은 제1형보다 사망률이 더 높은 경향이 있다는 점을 유념해야 한다. 제2형 심근경색에 대한 표적치료의 근거는 부족하지만, 강력한 지질저하요법이 발생을 줄일 수 있다.\n\n관상동맥 죽종 파열(plaque rupture)을 STEMI나 비ST분절상승 급성 관상동맥증후군(NSTEACS)의 유일한 원인으로 보던 기존 패러다임은 최근 흔들렸다. 관상동맥 내 영상 연구들은 급성 관상동맥증후군이 파열보다는 죽종 미란(plaque erosion), 또는 드물게는 혈전 형성을 유발하는 석회화 결절(calcific nodule)에 의해 생기기도 함을 보여주었다. 특히 관심을 두어야 할 두 가지 상황은 (1) 임상적으로 진단된 심근경색이 있으나 혈관조영에서 폐색성 관상동맥질환이 확인되지 않는 경우(MINOCA), 그리고 (2) 자발성 관상동맥박리(SCAD)다."
+          },
+          {
+            "heading_ko": "폐색성 관상동맥질환이 없는 심근경색 (MINOCA)",
+            "body_ko": "MINOCA는 급성 관상동맥증후군의 소수에서 관찰되며 남성보다 여성에서 더 우세하다(14·9% 대 3·5%, odds ratio [OR] 4·84; 95% CI 3·29–7·13). 진단적·치료적으로 상당한 불확실성을 안고 있다. MINOCA 여성 170명을 등록한 HARP-MINOCA 연구에서는 관상동맥 내 광간섭단층촬영(OCT)과 심장 MRI를 병용했을 때 환자의 85%에서 심근경색의 기전을 규명할 수 있었고, 이 중 64%에서는 허혈성 원인 — 전형적으로는 경한 죽상경화 병변에서의 죽종 파열(제1형 심근경색) — 이 확인되었다.\n\nMINOCA 환자에 대해 가이드라인은 가능한 한 진단을 확립하고, 확립된 진단에 따라 추가 검사와 치료를 지향하며, 진단이 불명확한 채로 남으면 표준 이차예방 조치로 치료할 것을 권고한다."
+          },
+          {
+            "heading_ko": "자발성 관상동맥박리 (SCAD)",
+            "body_ko": "자발성 관상동맥박리(SCAD)는 명확한 기계적 원인(예: 외상 또는 카테터 조작) 없이 내막 파열(또는 드물게 vasa vasorum 출혈)로 동맥벽 내에 가성내강(false lumen)이 형성되는 것을 말한다. 이에 따른 혈관 내강의 압박은 해당 심근 영역의 허혈을 초래할 수 있다. 전체 ACS의 5% 미만이 SCAD에 의한 것이지만, 임신 중이거나 산후 여성 같은 특정 집단에서는 그 비율이 더 높다.\n\n무작위 시험이 없어 SCAD의 최적 관리는 불확실하나, 저위험 해부학적 소견, 비폐색성 병변, 증상 소실을 보이는 환자에서는 대체로 보존적 약물치료와 혈압 조절을 포함한 적극적 이차예방이 선호된다. 이러한 환자에서는 섬유근성 이형성(fibromuscular dysplasia) 같은 일차 혈관증후군의 가능성도 고려해야 한다."
+          },
+          {
+            "heading_ko": "진단 (Diagnosis)",
+            "body_ko": "급성 관상동맥증후군의 진단은 임상 양상, ECG 소견, 그리고 심근 손상의 생화학적 증거에 의존한다. 급성 관상동맥증후군이 의심되는 환자의 즉각적인 첫 분기점은 물론 12유도 ECG에서 진단적 ST분절상승의 유무다. 불안정 협심증과 NSTEMI를 아우르는 NSTEACS의 진단은 고민감도 troponin(hsTn) 검사의 발전으로 크게 진화했으며 이는 다음 절에서 다룬다. ECG나 심장 MRI 같은 보조 진단 도구는 ACS가 의심되는 환자에서 국소 벽운동이상 및 심근 허혈의 다른 증거를 검출하는 데 도움이 될 수 있다."
+          },
+          {
+            "heading_ko": "신체진찰 (Physical examination)",
+            "body_ko": "신체진찰 소견은 대체로 급성 관상동맥증후군 진단에 특이적이지 않지만, 세심한 환자 평가는 즉각적 위험 평가, 임박한 혈역학적 붕괴의 인지, 그리고 심근경색의 기계적 합병증 식별에 결정적이다. 빈맥, 좁은 맥압(narrow pulse pressure), 저혈압, 그리고 울혈의 징후(예: 폐부종)나 관류 부족의 징후(예: 차가운 사지)는 모두 임상적 고위험을 나타내는 지표다.\n\nKillip 분류는 임상적 심부전의 정도에 따라 급성 관상동맥증후군 환자를 층화하는데, 울혈의 증거가 없는 상태(Class I)부터 심장성 쇼크(Class IV)까지 이르며 사망률을 강력히 예측한다. 심근경색의 기계적 합병증은 대개 급격한 혈역학적 악화를 동반하며, 급성 심실중격파열의 경우 좌측 흉골연에서 큰 전수축기 잡음(holosystolic murmur), 급성 승모판 역류의 경우 흔히 부드러운 수축기 잡음, 유리벽 파열(free wall rupture)의 경우 심장압전의 징후를 동반한다."
+          },
+          {
+            "heading_ko": "의심 NSTEACS의 평가와 관리",
+            "body_ko": "급성 관상동맥증후군 의심 환자의 평가는 시간 민감성, 기저에 잠재된 생명을 위협하는 병태, 그리고 초기 평가에서 흔히 비특이적인 소견 때문에 까다롭다. NSTEACS에서 ECG는 T파 역위나 ST분절 하강을 보일 수 있으나, 이러한 소견은 흔히 없으며 진단에 필수적이지도 않다. 심장 troponin I 또는 T(cTnI 또는 cTnT)나 creatine kinase-myocardial band(CK-MB)와 같은 순환 중 심근괴사 표지자의 농도 상승이 NSTEMI를 불안정 협심증과 구별해 주며, 전형적으로는 생체표지자 농도의 초기 상승, 정점, 그리고 이후 하강으로 특징지어진다."
+          },
+          {
+            "heading_ko": "고민감도 troponin 검사 (High-sensitivity troponin assays)",
+            "body_ko": "cTn 검사는 민감하고 비교적 특이적이므로 NSTEMI 진단에서 CK-MB를 포함한 다른 생체표지자보다 선호된다. hsTn 검사는 표준 cTn 검사에 비해 검사 특성이 개선되어 증상 발현 초기에 더 민감하다. 이에 따라 이른바 신속 rule-out 치료 알고리즘의 채택이 가능해졌다. 이 알고리즘들은 내원 시점(0시간)과 그로부터 1–3시간 뒤 두 번째 시점의 hsTn 측정에 의존하며, 절대 농도와 함께 두 검체 간 변화의 크기 양쪽에 주의를 기울인다.\n\n이러한 기준에 따라 환자는 30일 주요 심혈관사건(MACE) 발생률이 매우 낮은 상태로 NSTEMI를 배제(rule-out)하거나, NSTEMI로 확진(rule-in)하여 그에 맞춰 관리하거나, 또는 전반적 임상 평가에 따라 추가 관찰·검사가 필요할 수 있는 중간군에 속하게 된다. 0시간/1시간 알고리즘은 2020년 유럽심장학회(ESC) 가이드라인에서 권고된다. hsTn 역치의 구체적 농도는 검사법마다 다르다(assay specific)."
+          },
+          {
+            "heading_ko": "NSTEACS에서 관상동맥조영술의 시기 (Timing of coronary angiography)",
+            "body_ko": "NSTEACS 환자에 대한 즉각적 치료에는 aspirin 부하용량 투여와 전신 항응고가 포함된다. NSTEACS에서 심도자술의 최적 시기는 계속 논쟁 중이다. 임상적 위험 층화가 시기 결정의 주요 요인으로, 초고위험(very high-risk) 환자(예: 혈역학적 불안정, 불응성 흉부 불편감, 생명을 위협하는 부정맥)는 응급(<2시간) 혈관조영이 필요하고, 고위험(high-risk) 환자(예: Global Registry of Acute Coronary Events [GRACE] 점수 >140)는 24시간 이내 심도자술을 받으며, 저위험 환자는 선택적 침습 전략(selective invasive strategy)의 대상이 된다.\n\nVERDICT 시험 같은 근거가 늘어나면서 최고위험 환자에서 조기 심도자술의 중요성이 강화되었고, 대체로 저위험 환자에서는 심도자술을 지연하는 것의 안전성이 뒷받침된다. 조기 침습 전략이 계획된 NSTEACS 환자에서 심도자술 전 P2Y12 억제제 사전투여(pretreatment)는 이제 상시 전략으로는 권고되지 않는다(recommended against). 관상동맥 CT 혈관조영(CCTA)을 통한 비침습적 해부학적 평가는 향후 확대될 수 있다."
+          },
+          {
+            "heading_ko": "STEMI의 평가와 관리 (제공된 전문이 여기서 절단됨)",
+            "body_ko": "STEMI로 진단되는 ST분절상승을 보이는 환자에서는, 가장 최근의 유럽 및 미국 가이드라인에서 강조하듯 응급 재관류치료가 즉각적 최우선 과제로 남는다.\n\n※ 참고: 제공된 전문(PMC 출처)이 이 지점에서 절단되었습니다. 원문의 STEMI 재관류 세부(일차 PCI 대 섬유소용해, 시간 목표), 항혈소판·항응고 요법, DAPT 기간, 이차예방, COVID-19의 영향 등 이후 절의 본문은 확보하지 못했습니다. 아래 '보강' 절들은 이 논문 본문이 아니라 권위 있는 2차 출처(ESC 가이드라인 요약)에서 온 것이며, 이 논문 초록이 명시한 범위 안에서만 제시합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[초록 근거] 이차예방과 DAPT — 이 논문 초록이 명시한 내용",
+            "body_ko": "이 논문의 초록은 다음을 명시한다: 대부분의 환자에서 급성 관상동맥증후군 이후 12개월간 이중 항혈소판요법(dual antiplatelet therapy, DAPT)이 권고된다. 여기에 더해 강력한 지질저하요법(LDL-C <1·4 mmol/L), 신경호르몬 작용제(neurohormonal agents), 생활습관 교정을 포함한 추가 이차예방 조치가 핵심적으로 중요하다. 또한 급성 관상동맥증후군의 진단과 관리에 대한 과학적 근거는 COVID-19 팬데믹에 적응하는 것을 포함하여 빠르게 계속 진화하고 있으며, 팬데믹은 진료의 모든 측면에 영향을 미쳤다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] ESC 2020 NSTE-ACS 권고 — hsTn 알고리즘·침습 시기·항혈소판",
+            "body_ko": "이 논문의 절단된 관리 부분을 보완하기 위해, 논문이 인용하는 2020 ESC NSTE-ACS 가이드라인의 핵심 권고를 정리한다(구체 수치는 아래 출처에서 확인).\n\n· 고민감도 troponin: hs-cTn을 이용한 '0시간/1시간'(최선) 또는 '0시간/2시간'(차선) rule-in/rule-out 알고리즘 사용을 권고(Class I, Level B). RAPID-TnT 시험에서 0/1시간 프로토콜은 음성예측도(NPV) 99·6%를 달성했다.\n\n· 침습 시기: 초고위험(혈역학적 불안정, 생명을 위협하는 부정맥, 급성 심부전/심장성 쇼크, 재발성 흉통 등)은 즉시(<2시간); 고위험(troponin의 동적 상승/하강으로 진단된 NSTEMI, GRACE >140, 동적 ST/T 변화 또는 일과성 ST 상승)은 조기 침습(<24시간). ESC의 <24시간 권고는 NICE의 72시간 기준보다 더 적극적이다.\n\n· DAPT: 스텐트 종류와 무관하게 강력한 P2Y12 억제제 + aspirin으로 일반적으로 12개월 권고하며, 개별 허혈/출혈 위험에 따라 단축·연장·조정 및 de-escalation을 고려.\n\n· P2Y12 사전투여: 조기 침습 전략이 계획된 경우 관상동맥 해부가 파악되기 전 P2Y12 억제제의 상시 사전투여는 권고되지 않음(Class III, Level A). prasugrel 또는 ticagrelor는 해부 파악 및 PCI 확정 '후' 부하가 선호된다. 보존적/지연 전략에서는 CRUSADE 또는 ARC-HBR 기준으로 출혈위험을 평가한 뒤 고려한다.\n— 보강 출처: ESC 2020 NSTE-ACS key points for the general and emergency physician (PMC8002777) (https://pmc.ncbi.nlm.nih.gov/articles/PMC8002777/)",
+            "origin": "augmented",
+            "sourceLabel": "ESC 2020 NSTE-ACS key points for the general and emergency physician (PMC8002777)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8002777/"
+          },
+          {
+            "heading_ko": "[웹 보강] ESC 2020 — 지질저하 및 이차예방 목표치 배경",
+            "body_ko": "이 논문 초록의 'LDL-C <1·4 mmol/L' 목표는 2020 ESC 권고 기조와 일치한다. ACC의 ESC 2020 NSTE-ACS 요약(Ten Points to Remember)에서 재확인되는 관리 원칙은 다음과 같다: hs-cTn을 이용한 0h/1h 알고리즘을 최선으로, 0h/2h를 차선으로 사용; NSTEMI(특히 GRACE >140 또는 동적 ST 변화)에 대해 입원 24시간 이내 조기 상시 침습 접근; 스텐트 종류와 무관하게 강력한 P2Y12 억제제 + aspirin으로 12개월 DAPT를 원칙으로 하되 개별 허혈/출혈 위험에 따라 조정; 관상동맥 해부가 미상인 환자에서 P2Y12 억제제의 상시 사전투여는 권고하지 않음. (해당 ACC 요약 문서 자체는 LDL-C 목표치·지질저하 세부는 명시하지 않아, 목표치의 정본은 논문 초록과 ESC 이상지질혈증 가이드라인을 따른다.)\n— 보강 출처: ACC — 2020 ESC NSTE-ACS Guidelines: Ten Points to Remember (https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2020/08/28/20/42/2020-ESC-Guidelines-for-Acute-Coronary-Syndromes-ESC-2020)",
+            "origin": "augmented",
+            "sourceLabel": "ACC — 2020 ESC NSTE-ACS Guidelines: Ten Points to Remember",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2020/08/28/20/42/2020-ESC-Guidelines-for-Acute-Coronary-Syndromes-ESC-2020"
+          }
+        ],
+        "coverage": "full-text",
+        "fullTextSource": "PMC",
+        "practiceImpact_ko": "응급실·중환자실 침상에서 NSTEMI 의심 환자에는 hsTn 0시간/1시간 알고리즘으로 신속히 rule-out/rule-in하고, 위험 층화(초고위험은 <2시간, GRACE >140 등 고위험은 <24시간 침습)로 심도자술 시기를 정한다. 조기 침습이 계획되면 P2Y12 억제제 상시 사전투여는 피한다. 급성기 이후에는 대부분 12개월 DAPT와 함께 강력한 지질저하(LDL-C <1·4 mmol/L 목표)·신경호르몬 작용제·생활습관 교정을 이차예방으로 시행한다. 또한 troponin 상승이 반드시 제1형 MI를 뜻하지 않으므로(제2형 MI·MINOCA·SCAD 감별) 기전에 맞춘 진단·치료를 염두에 둔다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 35367005",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35367005/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(21)02391-6",
+            "url": "https://doi.org/10.1016/S0140-6736(21)02391-6"
+          },
+          {
+            "label": "웹 — ESC 2020 NSTE-ACS key points for the general and emergency physician (PMC8002777)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8002777/"
+          },
+          {
+            "label": "웹 — ACC — 2020 ESC NSTE-ACS Guidelines: Ten Points to Remember",
+            "url": "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2020/08/28/20/42/2020-ESC-Guidelines-for-Acute-Coronary-Syndromes-ESC-2020"
+          },
+          {
+            "label": "웹 — ACC — 2020 ESC NSTE-ACS Guidelines: Evolving Approaches and Recommendations",
+            "url": "https://www.acc.org/Latest-in-Cardiology/Articles/2021/05/20/13/01/2020-ESC-NSTE-ACS-Guidelines"
+          },
+          {
+            "label": "웹 — PubMed — Acute coronary syndromes (Bergmark et al., Lancet 2022)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35367005/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -10102,9 +10209,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-23",
+    "date": "2026-09-24",
     "outcome": "published",
-    "publishedId": "35166796"
+    "publishedId": "35367005"
   },
-  "updatedAt": "2026-09-23"
+  "updatedAt": "2026-09-24"
 }
