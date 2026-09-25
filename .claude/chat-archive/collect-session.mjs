@@ -69,7 +69,9 @@ export function isInjected(text) {
     t.startsWith('[Image:') ||
     t.startsWith('[Request interrupted') ||
     /^Stop hook feedback:/m.test(t) ||
-    t.startsWith('<task-notification>')
+    t.startsWith('<task-notification>') ||
+    // 다른 세션·서브에이전트의 보고 — user 턴으로 오지만 모델 출력이다(2026-09-25 mpr 실물)
+    t.startsWith('Another Claude session sent a message:')
   );
 }
 
