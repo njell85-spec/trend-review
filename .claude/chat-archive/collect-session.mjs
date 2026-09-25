@@ -49,7 +49,7 @@
  * **불변: 무슨 일이 있어도 종료코드 0.** 훅이 세션을 막지 않는다.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, openSync, readSync, closeSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -168,20 +168,42 @@ export function textOf(message) {
  * 트랜스크립트(JSONL 원문)에서 대화 턴만 뽑는다.
  * 연속한 같은 화자는 한 덩어리로 합친다 — 툴을 쓰며 여러 번 나눠 말한 것은 원래 한 턴이다.
  */
-export function extractTurns(raw) {
+/* ★ 작업 중에 PeterJ 가 보낸 말 (2026-09-25 실측) — `user` 가 아니라 이 모양으로 남는다:
+ *   { type: 'attachment', attachment: { type: 'queued_command', origin: { kind: 'human' }, prompt } }
+ * 종전엔 user/assistant 만 봐서 **턴이 도는 중에 끼워 넣은 말이 전부 빠졌다.**
+ * 사람 것만 받는다 — 같은 모양으로 에이전트 보고 등(origin.kind ≠ human)도 온다. */
+function queuedHumanPrompt(o) {
+  if (o.type !== 'attachment') return null;
+  const a = o.attachment;
+  if (!a || a.type !== 'queued_command') return null;
+  const human = a.origin ? a.origin.kind === 'human' : a.humanTurn === true;
+  return human ? { content: a.prompt } : null;
+}
+
+/* ★ SDK 자동화 기록은 PeterJ 대화가 아니다 (2026-09-25 근본 원인 확인).
+ * 커밋마다 도는 자동 보안 리뷰가 **같은 세션 id** 로 별도 트랜스크립트(entrypoint `sdk-py`)를 남기고,
+ * GC 폴더에서 돌기 때문에 GC 의 Stop 훅이 그것을 **같은 아카이브 파일로** 밀었다. 옛 아카이브의
+ * `/security-review` "PeterJ 턴"과 영어 리뷰 답이 그 산물이다(08-19 자리표시는 증상 처방이었다).
+ * entrypoint 가 없는 옛 기록은 종전대로 받는다. */
+const isAutomation = (o) => typeof o.entrypoint === 'string' && o.entrypoint.startsWith('sdk');
+
+export function extractTurns(raw, stats = {}) {
   const turns = [];
+  stats.automation = 0;
   for (const line of raw.split('\n')) {
     if (!line.trim()) continue;
     let o;
     try { o = JSON.parse(line); } catch { continue; }
-    if (o.type !== 'user' && o.type !== 'assistant') continue;
+    if (isAutomation(o)) { stats.automation += 1; continue; }
     if (o.isSidechain) continue;                 // 서브에이전트 — 본 대화가 아니다
-    if (o.message?.role === 'user' && o.userType && o.userType !== 'external') continue;
+    const queued = queuedHumanPrompt(o);
+    if (!queued && o.type !== 'user' && o.type !== 'assistant') continue;
+    if (!queued && o.message?.role === 'user' && o.userType && o.userType !== 'external') continue;
 
-    const text = textOf(o.message);
+    const text = textOf(queued || o.message);
     if (!text) continue;
 
-    const who = o.type === 'user' ? 'PeterJ' : 'Claude';
+    const who = queued || o.type === 'user' ? 'PeterJ' : 'Claude';
     const last = turns[turns.length - 1];
     if (last && last.who === who) last.text += `\n\n${text}`;
     else turns.push({ who, text, branch: o.gitBranch, at: o.timestamp });
@@ -307,9 +329,20 @@ export function renderArchive({ turns, title, repo, srcKB, by }) {
  *   ② `### <누구> · <ISO8601>` — 렌더러가 쓰는 정식 형태(저장소 이름 턴 포함)
  * 나머지 `### …` 는 전부 **본문 소제목**이라 블록 안에 남는다.
  * 턴 수 집계도 같은 자를 쓴다 — 종전에는 소제목까지 세어 관제 수치가 부풀었다. */
-const TURN_HEAD_RE =
-  /^### (?:PeterJ|Claude)[ \t]*$|^### .+ · \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})[ \t]*$/;
+/* ★ 소수초 `(?:\.\d{1,3})?` (Aside 계약 v2 §1-4 · 2026-09-25) — Aside 는 머리 시각에 밀리초를 쓴다.
+ * **아래 `HEAD_STAMP` 하나를 정규식과 시각 추출(mergeArchive)이 같이 쓴다** — 한 곳만 고치면
+ * 턴으로는 갈리는데 시각이 null 이 돼 정렬에서 빠지거나(추출 미수정), 파일 전체가 "턴 0개"로
+ * 읽혀 병합마다 통째 이어붙는다(정규식 미수정). 클로드·Codex 렌더러는 소수초를 안 쓰므로 동작 불변. */
+const HEAD_STAMP = String.raw`\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})`;
+const TURN_HEAD_RE = new RegExp(String.raw`^### (?:PeterJ|Claude)[ \t]*$|^### .+ · ${HEAD_STAMP}[ \t]*$`);
+const HEAD_STAMP_RE = new RegExp(String.raw`·\s*(${HEAD_STAMP})`);
 export function isTurnHead(line) { return TURN_HEAD_RE.test(String(line)); }
+/** 턴 머리 줄의 시각(ms). 시각이 없거나 못 읽으면 null — 지어내지 않는다. */
+export function turnHeadAt(line) {
+  const match = String(line).match(HEAD_STAMP_RE);
+  const parsed = match ? Date.parse(match[1]) : NaN;
+  return Number.isNaN(parsed) ? null : parsed;
+}
 
 export function mergeArchive(oldText, newText) {
   const split = (text) => {
@@ -349,9 +382,7 @@ export function mergeArchive(oldText, newText) {
     if (seen.has(block)) continue;
     seen.add(block);
     const head = block.slice(0, block.indexOf('\n') < 0 ? block.length : block.indexOf('\n'));
-    const match = head.match(/·\s*(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2}))/);
-    const parsed = match ? Date.parse(match[1]) : NaN;
-    blocks.push({ block, at: Number.isNaN(parsed) ? null : parsed, order: blocks.length });
+    blocks.push({ block, at: turnHeadAt(head), order: blocks.length });
   }
   /* ★ 과도기 중복 경고 (2026-08-20 Fable 검토 · 처방 I).
    * dedupe 는 **블록 문자열 완전일치**다. 추출기를 고치면(08-19 GENERATED_PROMPT_FORMS 같은)
@@ -443,7 +474,7 @@ function findLatestTranscript() {
   const home = process.env.HOME || process.env.USERPROFILE || '/root';
   const base = path.join(home, '.claude', 'projects');
   if (!existsSync(base)) return null;
-  let best = null;
+  const all = [];
   const walk = (dir, depth) => {
     if (depth > 3) return;
     for (const name of readdirSync(dir)) {
@@ -451,13 +482,32 @@ function findLatestTranscript() {
       let st;
       try { st = statSync(p); } catch { continue; }
       if (st.isDirectory()) { if (name !== 'subagents') walk(p, depth + 1); }
-      else if (name.endsWith('.jsonl') && (!best || st.mtimeMs > best.mtimeMs)) {
-        best = { path: p, mtimeMs: st.mtimeMs };
-      }
+      else if (name.endsWith('.jsonl')) all.push({ path: p, mtimeMs: st.mtimeMs });
     }
   };
   try { walk(base, 0); } catch { /* 읽을 수 없으면 못 찾은 것으로 친다 */ }
-  return best ? best.path : null;
+  all.sort((a, b) => b.mtimeMs - a.mtimeMs);
+  /* ★ 가장 최근 파일이 **SDK 자동화(보안 리뷰)** 일 수 있다 (2026-09-25 실측). 커밋마다 도는 리뷰가
+   * 같은 세션 id 로 다른 프로젝트 폴더에 트랜스크립트를 쓰고, 본 세션보다 늦게 수정된다.
+   * 그걸 고르면 추출 결과가 0턴이라 **본 세션 대화를 안 민 채 조용히 끝난다.** 앞 몇 개만 머리를 본다. */
+  // 전부 훑는다(2026-09-25 Fable F8) — 커밋이 잦은 세션은 자동 리뷰 파일이 8개를 넘게 더 최근일 수 있다.
+  // 머리 256KB 만 읽고, 사람 파일을 만나면 바로 멈춘다. 전부 자동화면 null — 남의 대화를 밀지 않는다.
+  for (const c of all) {
+    if (!automationTranscript(c.path)) return c.path;
+  }
+  return null;
+}
+
+/** 트랜스크립트 앞부분에서 처음 나오는 entrypoint 가 sdk* 면 자동화 기록으로 본다. 못 읽으면 false. */
+function automationTranscript(file) {
+  try {
+    const fd = openSync(file, 'r');
+    const buf = Buffer.alloc(256 * 1024);
+    const n = readSync(fd, buf, 0, buf.length, 0);
+    closeSync(fd);
+    const m = buf.toString('utf8', 0, n).match(/"entrypoint":"([^"]*)"/);
+    return !!m && m[1].startsWith('sdk');
+  } catch { return false; }
 }
 
 /** git 한 번 돌리고 stdout을 준다. 실패는 전부 null — 훅에서 도는 코드다. */
@@ -670,8 +720,12 @@ function main() {
     srcKB = Math.round(statSync(transcript).size / 1024);
   } catch { return; }
 
-  const turns = extractTurns(raw);
+  const extractStats = {};
+  const turns = extractTurns(raw, extractStats);
   if (!turns.length) return;                  // 대화가 하나도 없으면 아무것도 안 쓴다
+  /* 사람 대화와 SDK 자동화 기록이 **한 파일에 섞인** 드문 경우만 알린다 — 잘못 분류된 표면이
+   * 조용히 빠지지 않게(2026-09-25 Fable F6). 자동화만 있는 파일(보안 리뷰)은 위에서 조용히 끝난다. */
+  if (extractStats.automation) console.error(`[chat-archive] SDK 자동화 기록 ${extractStats.automation}건 제외(entrypoint sdk*)`);
 
   const sessionId = hook?.session_id || path.basename(transcript).replace(/\.jsonl$/, '') || 'unknown';
   const id8 = sessionId.slice(0, 8);
