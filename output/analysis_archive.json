@@ -2889,6 +2889,81 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-25",
+      "pmid": "41711512",
+      "title": "Association Between Systemic Anticoagulation and Outcomes in Patients With Acute Respiratory Distress Syndrome Receiving Venovenous Extracorporeal Membrane Oxygenation: Insights From a Multicenter Propensity-Weighted Study.",
+      "title_ko": "급성호흡곤란증후군(ARDS)으로 정맥-정맥 체외막산소공급(VV-ECMO)을 받는 환자에서 전신 항응고요법과 예후의 연관성: 다기관 성향점수 가중 연구",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007071",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ARDS로 VV-ECMO를 받는 성인 환자에서 전신 항응고요법이 항응고 미시행에 비해 생존율에 영향을 주는가?",
+      "pico": {
+        "population": "[Japan] Six hundred and ninety-five adult patients who received VV-ECMO for ARDS across twenty-four ICUs in Japan (J-CARVE registry); retrospective multicenter cohort.",
+        "intervention": "Systemic anticoagulation therapy during VV-ECMO (anticoagulation group); this group had a significantly higher average activated partial thromboplastin time during ECMO (51.3 s vs. 39.3 s, p < 0.01).",
+        "comparison": "No-anticoagulation group (patients who did not receive anticoagulant therapy during VV-ECMO).",
+        "outcome": "28-day survival: no significant difference between anticoagulation and no-anticoagulation groups (85.8% vs. 81.5%, p = 0.50) in the propensity score-overlap-weighted analysis."
+      },
+      "pico_ko": {
+        "population": "[일본] 일본 24개 ICU에서 ARDS로 VV-ECMO를 받은 성인 695명(J-CARVE 레지스트리); 후향적 다기관 코호트.",
+        "intervention": "VV-ECMO 중 전신 항응고요법(항응고군); 이 군은 ECMO 중 평균 activated partial thromboplastin time(aPTT)이 유의하게 높았다(51.3초 vs. 39.3초, p < 0.01).",
+        "comparison": "항응고 미시행군(VV-ECMO 중 항응고제를 투여받지 않은 환자).",
+        "outcome": "28일 생존율: 성향점수 overlap 가중 분석에서 항응고군과 미시행군 간 유의한 차이 없음(85.8% vs. 81.5%, p = 0.50)."
+      },
+      "keyFindings": [
+        "In 695 patients across 24 Japanese ICUs, propensity-overlap-weighted 28-day survival did not differ between anticoagulation and no-anticoagulation groups (85.8% vs. 81.5%, p = 0.50).",
+        "60-day survival, ECMO duration, circuit exchanges, bleeding complications, and transfusion volumes were all comparable between the two groups.",
+        "The anticoagulation group had a significantly higher average aPTT during ECMO (51.3 s vs. 39.3 s, p < 0.01), yet this did not translate into a survival or bleeding difference; findings were consistent in an IPTW sensitivity analysis."
+      ],
+      "keyFindings_ko": [
+        "일본 24개 ICU의 695명에서 성향점수 overlap 가중 28일 생존율은 항응고군과 미시행군 간 차이가 없었다(85.8% vs. 81.5%, p = 0.50).",
+        "60일 생존율, ECMO 유지기간, 회로 교환, 출혈 합병증, 수혈량 모두 두 군 간 비슷했다.",
+        "항응고군은 ECMO 중 평균 aPTT가 유의하게 높았으나(51.3초 vs. 39.3초, p < 0.01) 이것이 생존이나 출혈 차이로 이어지지 않았다; inverse probability of treatment weighting(IPTW) 민감도 분석에서도 결과가 일관되었다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41711512",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41711512/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007071",
+          "url": "https://doi.org/10.1097/CCM.0000000000007071"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41711512)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41711512/"
+        },
+        {
+          "label": "웹 — Critical Care Medicine official abstract page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/2026/05000/association_between_systemic_anticoagulation_and.6.aspx"
+        },
+        {
+          "label": "웹 — PMC commentary: Anticoagulation-free VV-ECMO: expanding the evidence beyond trauma (cites J-CARVE study)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13340376/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 41711512)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41711512/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care Medicine official abstract page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/2026/05000/association_between_systemic_anticoagulation_and.6.aspx",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PMC commentary: Anticoagulation-free VV-ECMO: expanding the evidence beyond trauma (cites J-CARVE study)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13340376/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
