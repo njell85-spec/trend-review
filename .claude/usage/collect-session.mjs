@@ -38,7 +38,7 @@
  * 훅에서 쓸 때는 **절대 실패로 세션을 막지 않는다** — 무슨 일이 있어도 종료코드 0.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, openSync, readSync, closeSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -305,6 +305,105 @@ function aggregateTranscript(file) {
   return { byModel, turns };
 }
 
+/* ---------------- 코덱스 하청(jev-gateway 경유) ----------------
+ * Jev 시범(2026-09-25, 계획 docs/superpowers/plans/2026-09-25-jev-codex-rollout.md)의 측정값이다.
+ * 코덱스 토큰은 Claude 트랜스크립트에 없다. `tools/jev/codex-run.mjs`가 하청을 jev-gateway로 돌리면
+ * 게이트웨이가 요청마다 `~/.jev-gateway/codex.log`에 사용량을 JSON 한 줄로 남기고, 래퍼는 실행 창을
+ * `runs.jsonl`에 세션 id와 함께 적는다. 여기서 **이 세션의 실행 창 안에 든 요청만** 모아 합산한다.
+ *
+ * `records`가 아니라 스냅샷의 `codex` 칸에 둔다 — 현황판의 토큰 합계는 Claude 토큰이라는 뜻을
+ * 유지해야 하고, 코덱스는 ChatGPT 구독이라 환산 비용도 없다. 보고는 `tools/jev/report.mjs`가 한다.
+ *
+ * 팔은 요청마다 실제 게이트웨이 상태로 가른다: `routing_disabled` → off(측정만) · `jev_error…` → err
+ * (켠 날인데 Jev에 못 닿음) · 그 외 → on. 한 요청이 **두 세션의 실행 창에 동시에** 들면(PC에서 세션 둘이
+ * 같은 게이트웨이를 겹쳐 쓴 경우) 어느 쪽 것인지 가를 수 없어 양쪽 다 세지 않고 `ambiguous`로 센다. */
+export function jevStateDir() {
+  return path.join(process.env.HOME || process.env.USERPROFILE || '/root', '.jev-gateway');
+}
+
+/** 게이트웨이 로그는 PC에서 몇 주씩 쌓인다 — Stop 훅마다 통째로 읽지 않고 끝부분만 읽는다. */
+const CODEX_LOG_TAIL_BYTES = 16 * 1024 * 1024;
+/** 끝 줄이 없는(죽은) 실행 창은 시작 후 이만큼까지만 연 것으로 본다 — 래퍼 codex-run.mjs 와 같은 값. */
+const OPEN_RUN_MAX_MS = 3 * 3600 * 1000;
+
+function readTail(file, maxBytes) {
+  let fd;
+  try {
+    const size = statSync(file).size;
+    const start = Math.max(0, size - maxBytes);
+    const buf = Buffer.alloc(size - start);
+    fd = openSync(file, 'r');
+    readSync(fd, buf, 0, buf.length, start);
+    const text = buf.toString('utf8');
+    return start > 0 ? text.slice(text.indexOf('\n') + 1) : text;   // 잘린 첫 줄은 버린다
+  } catch { return ''; } finally { if (fd !== undefined) try { closeSync(fd); } catch { /* 무시 */ } }
+}
+
+function readJsonLines(file, maxBytes = CODEX_LOG_TAIL_BYTES) {
+  const text = readTail(file, maxBytes);
+  if (!text) return [];
+  const out = [];
+  for (const line of text.split('\n')) {
+    const t = line.trim();
+    if (!t.startsWith('{')) continue;
+    try { out.push(JSON.parse(t)); } catch { /* 깨진 줄은 건너뛴다 */ }
+  }
+  return out;
+}
+
+/** 이 세션이 코덱스 하청으로 쓴 토큰 — 모델·팔별 합계. 없으면 빈 배열. */
+export function codexUsage({ sessionId, stateDir = jevStateDir() } = {}) {
+  // 래퍼는 시작 줄({id,sid,start})과 끝 줄({id,end})을 따로 쓴다 — id 로 묶는다. 끝 줄이 없으면(중간에 죽음) 아직 열린 창.
+  const byId = new Map();
+  for (const r of readJsonLines(path.join(stateDir, 'runs.jsonl'))) {
+    if (!r || !r.id) continue;
+    byId.set(r.id, { ...(byId.get(r.id) || {}), ...r });
+  }
+  const runs = [...byId.values()]
+    .filter((r) => r.sid && Number.isFinite(Date.parse(r.start)))
+    .map((r) => {
+      const s = Date.parse(r.start);
+      const end = Date.parse(r.end) || Math.min(Date.now(), s + OPEN_RUN_MAX_MS);
+      return { sid: String(r.sid), s: s - 2000, e: end + 2000 };
+    });
+  const mine = runs.filter((r) => r.sid === sessionId);
+  if (!mine.length) return [];
+  const agg = new Map();
+  let ambiguous = 0;
+  // 팔마다 게이트웨이가 따로다(래퍼 codex-run.mjs): 켬 = <stateDir>/codex.log · 끔 = <stateDir>/arm-off/.jev-gateway/codex.log
+  const events = [
+    ...readJsonLines(path.join(stateDir, 'codex.log')),
+    ...readJsonLines(path.join(stateDir, 'arm-off', '.jev-gateway', 'codex.log')),
+  ];
+  for (const ev of events) {
+    if (ev.event !== 'route' || !ev.usage) continue;
+    const t = Date.parse(ev.time);
+    if (!Number.isFinite(t)) continue;
+    const owners = new Set(runs.filter((r) => t >= r.s && t <= r.e).map((r) => r.sid));
+    if (!owners.has(sessionId)) continue;
+    if (owners.size > 1) { ambiguous++; continue; }
+    const reason = String(ev.reason ?? '');
+    const arm = reason === 'routing_disabled' ? 'off' : reason.startsWith('jev_error') ? 'err' : 'on';
+    const model = typeof ev.model === 'string' && ev.model ? ev.model : 'unknown';
+    const k = `${model}\u001f${arm}`;
+    const n = (v) => (Number.isFinite(Number(v)) ? Math.max(0, Math.trunc(Number(v))) : 0);
+    const u = ev.usage;
+    const cur = agg.get(k) || { model, arm, requests: 0, in: 0, out: 0, cache_w: 0, cache_r: 0, reasoning: 0 };
+    cur.requests++;
+    // 게이트웨이의 input 은 캐시 읽기·쓰기를 포함한 총량이다(jev-gateway src/usage.ts) — 세션 레코드와
+    // 같은 뜻으로 맞추려고 빼서 넣는다.
+    cur.in += Math.max(0, n(u.input) - n(u.cached) - n(u.cacheWrite));
+    cur.out += n(u.output);
+    cur.cache_r += n(u.cached);
+    cur.cache_w += n(u.cacheWrite);
+    cur.reasoning += n(u.reasoning);
+    agg.set(k, cur);
+  }
+  const rows = [...agg.values()];
+  if (ambiguous) rows.push({ model: '(겹침)', arm: 'ambiguous', requests: ambiguous, in: 0, out: 0, cache_w: 0, cache_r: 0, reasoning: 0 });
+  return rows;
+}
+
 /* ---------------- main ---------------- */
 function main() {
   // CI 실행이면 아무것도 쓰지 않는다(위 "CI 실행은 세지 않는다" 참조).
@@ -332,6 +431,8 @@ function main() {
 
   const { byModel, turns } = aggregateTranscript(transcript);
   if (byModel.size === 0) return;
+  let codex = [];
+  try { codex = codexUsage({ sessionId }); } catch { /* 측정 보조값 — 실패해도 세션 기록은 남긴다 */ }
 
   // 시각은 날짜까지만 (위 "KST · 시각 정밀도" 참조). 장부 C1 스키마의 `ts`·`date`
   // 두 칸을 유지하되 둘 다 같은 날짜값을 넣는다 — 칸을 없애면 장부 파서가 깨진다.
@@ -364,8 +465,12 @@ function main() {
   // `schema`는 병합 판정에 쓰인다 — 아래 설명은 lib/snapshot-store.mjs 참조.
   // 2 = message.id 중복 제거 + 서브에이전트 포함 (2026-07-27). 1 = 그 이전(과대 집계).
   const snapshot = { session_id: sessionId, schema: SNAPSHOT_SCHEMA, repo, updated: date, turns, records };
+  if (codex.length) snapshot.codex = codex;
 
   if (PRINT_ONLY) {
+    for (const c of codex) {
+      console.log(`  [코덱스·${c.arm}] ${c.model} 요청 ${c.requests} · in ${c.in} out ${c.out} cr ${c.cache_r} 추론 ${c.reasoning}`);
+    }
     const total = records.reduce((s, r) => s + r.cost_usd, 0);
     const tok = records.reduce((s, r) => s + r.in + r.out + r.cache_w + r.cache_r, 0);
     console.log(`세션 ${sessionId.slice(0, 8)}… · 턴 ${turns} · 모델 ${records.length}종`);
@@ -407,9 +512,13 @@ function stageSnapshot(file) {
   } catch { /* 위 주석 참조 — 조용히 넘어간다 */ }
 }
 
-try {
-  main();
-} catch {
-  // 훅에서 도는 도구다 — 무슨 일이 있어도 세션을 막지 않는다.
+// 테스트가 함수만 불러 쓸 때는 USAGE_COLLECT_NO_MAIN=1 로 막는다. 기본은 종전대로 늘 돈다 —
+// "직접 실행일 때만"으로 판정하면 경로 표기(심볼릭 링크·드라이브 문자) 차이로 훅에서 조용히 안 돌 수 있다.
+if (process.env.USAGE_COLLECT_NO_MAIN !== '1') {
+  try {
+    main();
+  } catch {
+    // 훅에서 도는 도구다 — 무슨 일이 있어도 세션을 막지 않는다.
+  }
+  process.exit(0);
 }
-process.exit(0);
