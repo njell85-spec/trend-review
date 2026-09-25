@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-23T23:55:57.707Z"
+      "supersededAt": "2026-09-25T00:03:53.418Z"
     },
     {
       "id": "pmid:38531812",
@@ -31213,7 +31213,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -33842,83 +33842,6 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "idsa|clinical-practice-by-treatment-management-covid-19-pemivibart-pre-exposure-prophylaxis-vilobelimab-critical-illness-abatacept-infliximab-severe-critical-illness",
-      "supersedes": []
-    },
-    {
-      "id": "pmid:40679934",
-      "pmid": "40679934",
-      "title": "Diagnosis and Management of Community-acquired Pneumonia: An Official American Thoracic Society Clinical Practice Guideline.",
-      "pubDate": "2026 Jan 1",
-      "journal": "American journal of respiratory and critical care medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:22.746Z",
-      "abstract": "BACKGROUND: Understanding of the diagnosis and treatment of adults with community-acquired pneumonia (CAP) has evolved thanks to new evidence, experience, and emerging technologies. This document updates evidence-based clinical practice guidelines on four key questions for the diagnosis and management of adult patients with CAP.\nMETHODS: A multidisciplinary panel integrated systematic reviews of comparative evidence with other relevant research and clinical experience, then applied Grading of Recommendations, Assessment, Development and Evaluation methodology to produce recommendations using the Evidence to Decision Framework.\nRESULTS: The panel formulated clinical recommendations that address questions related to CAP, including lung ultrasound for diagnosis, empiric antibacterial therapy if a test result for a respiratory virus is positive, antibiotic duration, and the use of systemic corticosteroids.\nCONCLUSIONS: The panel formulated and provided the rationale for recommendations on selected diagnostic and treatment strategies for adult patients with CAP.",
-      "meshTerms": [
-        "Humans",
-        "Community-Acquired Infections",
-        "Anti-Bacterial Agents",
-        "Pneumonia",
-        "United States",
-        "Adult",
-        "Societies, Medical",
-        "Adrenal Cortex Hormones",
-        "Community-Acquired Pneumonia"
-      ],
-      "keywords": [
-        "guideline update",
-        "lower respiratory tract infection",
-        "pneumonia",
-        "practice guidelines"
-      ],
-      "doi": "10.1164/rccm.202507-1692ST",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.8336340281532895,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.8336340281532892,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:38.246Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ATS 지역사회획득폐렴 지침, 응급·중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|diagnosis-management-community-acquired-pneumonia-official-american-thoracic-society-clinical-practice",
       "supersedes": []
     },
     {
@@ -37191,7 +37114,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40583,7 +40506,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42276,7 +42199,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43024,7 +42947,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43352,7 +43275,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43864,7 +43787,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44799,7 +44722,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46346,7 +46269,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46492,7 +46415,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -46562,7 +46485,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46634,7 +46557,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -46704,7 +46627,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -46787,7 +46710,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46850,7 +46773,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47086,7 +47009,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47158,7 +47081,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47219,7 +47142,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47295,7 +47218,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47368,7 +47291,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47452,7 +47375,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47511,7 +47434,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47590,7 +47513,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47641,11 +47564,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.695632591301382,
+      "priority": 6.691961947317768,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.695632591301382,
+        "recency": 1.691961947317768,
         "scope": 0,
         "confidence": 2
       },
@@ -47660,7 +47583,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -47743,7 +47666,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47812,7 +47735,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47926,11 +47849,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.69563259125913,
+      "priority": 7.691961947233264,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6956325912591306,
+        "recency": 1.6919619472332645,
         "scope": 0,
         "confidence": 2
       },
@@ -47945,7 +47868,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-23T23:55:56.787Z",
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47954,6 +47877,64 @@
         "keep": true,
         "reason": "고위험 급성담낭염 EAST 실무지침 — 응급·중환자 실무 직결",
         "at": "2026-09-18T23:32:31.312Z"
+      }
+    },
+    {
+      "id": "pmid:42778041",
+      "pmid": "42778041",
+      "title": "Multimodal Neuroprognostication After Cardiac Arrest following the 2025 ERC/ESICM recommendations: A Single-Centre Retrospective Study.",
+      "pubDate": "2026 Sep 23",
+      "journal": "Resuscitation",
+      "publicationTypes": [
+        "Letter"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-25T00:03:43.260Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1016/j.resuscitation.2026.111322",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esicm"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esicm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "recommendations",
+      "reasons": [
+        "conflicting-editorial-publication-type"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "지침 자체가 아니라 2025 ERC/ESICM 권고를 적용한 단일기관 후향연구",
+        "at": "2026-09-25T00:03:54.933Z"
       }
     }
   ],
@@ -54650,6 +54631,171 @@
         ]
       },
       "publishedAt": "2026-09-24"
+    },
+    {
+      "id": "pmid:40679934",
+      "pmid": "40679934",
+      "title": "Diagnosis and Management of Community-acquired Pneumonia: An Official American Thoracic Society Clinical Practice Guideline.",
+      "pubDate": "2026 Jan 1",
+      "journal": "American journal of respiratory and critical care medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:22.746Z",
+      "abstract": "BACKGROUND: Understanding of the diagnosis and treatment of adults with community-acquired pneumonia (CAP) has evolved thanks to new evidence, experience, and emerging technologies. This document updates evidence-based clinical practice guidelines on four key questions for the diagnosis and management of adult patients with CAP.\nMETHODS: A multidisciplinary panel integrated systematic reviews of comparative evidence with other relevant research and clinical experience, then applied Grading of Recommendations, Assessment, Development and Evaluation methodology to produce recommendations using the Evidence to Decision Framework.\nRESULTS: The panel formulated clinical recommendations that address questions related to CAP, including lung ultrasound for diagnosis, empiric antibacterial therapy if a test result for a respiratory virus is positive, antibiotic duration, and the use of systemic corticosteroids.\nCONCLUSIONS: The panel formulated and provided the rationale for recommendations on selected diagnostic and treatment strategies for adult patients with CAP.",
+      "meshTerms": [
+        "Humans",
+        "Community-Acquired Infections",
+        "Anti-Bacterial Agents",
+        "Pneumonia",
+        "United States",
+        "Adult",
+        "Societies, Medical",
+        "Adrenal Cortex Hormones",
+        "Community-Acquired Pneumonia"
+      ],
+      "keywords": [
+        "guideline update",
+        "lower respiratory tract infection",
+        "pneumonia",
+        "practice guidelines"
+      ],
+      "doi": "10.1164/rccm.202507-1692ST",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.8336340281532895,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.8336340281532892,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:38.246Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ATS 지역사회획득폐렴 지침, 응급·중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|diagnosis-management-community-acquired-pneumonia-official-american-thoracic-society-clinical-practice",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40679934",
+          "title": "Diagnosis and Management of Community-acquired Pneumonia: An Official American Thoracic Society Clinical Practice Guideline.",
+          "journal": "American journal of respiratory and critical care medicine",
+          "pubDate": "2026 Jan 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40679934/",
+          "doi": "10.1164/rccm.202507-1692ST"
+        },
+        "org": "ATS",
+        "version": "2025 (published 2026 Jan; AJRCCM 212(1):24-44)",
+        "title_ko": "지역사회획득 폐렴의 진단과 관리: 미국흉부학회(ATS) 공식 임상진료지침",
+        "scope_ko": "성인 지역사회획득 폐렴(CAP) 환자의 진단과 관리를 다루며, 2019년 ATS/IDSA 지침을 갱신한다. 네 가지 임상 질문 — ① 진단을 위한 폐 초음파, ② 호흡기 바이러스 검사 양성 시 경험적 항생제, ③ 항생제 투여 기간, ④ 전신 스테로이드 — 에 초점을 맞추며, 외래·비중증 입원·중증 입원 등 진료 세팅별로 권고를 구분한다.",
+        "summary": [
+          "Diagnosis: Lung ultrasound is an acceptable diagnostic alternative to chest radiography in centers where appropriate clinical expertise exists (conditional recommendation, low-quality evidence; panel vote 87%). Meta-analysis showed median sensitivity ~95% for LUS vs ~70% for chest x-ray.",
+          "Empiric antibiotics with a positive respiratory virus test — outpatients WITHOUT comorbidities: suggest NOT prescribing empiric antibiotics (conditional, very-low evidence, 93%).",
+          "Empiric antibiotics with a positive respiratory virus test — outpatients WITH comorbidities, and hospitalized non-severe CAP: suggest prescribing empiric antibiotics because of concern for bacterial-viral coinfection (conditional, very-low evidence; ~73% and 80%). For hospitalized SEVERE CAP: prescribe empiric antibiotics (100% vote).",
+          "Antibiotic duration — outpatients and hospitalized NON-severe CAP who reach clinical stability: suggest LESS than 5 days (minimum 3 days) rather than ≥5 days (conditional, low-quality evidence; 94% and 69%).",
+          "Antibiotic duration — hospitalized SEVERE CAP at clinical stability: suggest 5 or more days rather than <5 days (strong recommendation, low-quality evidence, 94%).",
+          "Corticosteroids — NON-severe CAP: recommend NOT administering systemic corticosteroids (strong recommendation, low-quality evidence, 100%).",
+          "Corticosteroids — SEVERE CAP: suggest systemic corticosteroids (conditional, low-quality evidence, 94%), while excluding influenza pneumonia due to harm signals."
+        ],
+        "summary_ko": [
+          "진단: 적절한 임상 숙련도를 갖춘 의료기관에서는 폐 초음파를 흉부 X선의 진단 대안으로 사용할 수 있다(조건부 권고, 낮은 근거 수준; 패널 투표 87%). 메타분석에서 폐 초음파 민감도 중앙값 약 95% vs 흉부 X선 약 70%.",
+          "호흡기 바이러스 검사 양성 시 경험적 항생제 — 동반질환이 없는 외래 환자: 경험적 항생제를 처방하지 않을 것을 제안(조건부, 매우 낮은 근거, 93%).",
+          "호흡기 바이러스 검사 양성 시 경험적 항생제 — 동반질환이 있는 외래 환자 및 입원한 비중증 CAP: 세균-바이러스 동시감염 우려로 경험적 항생제 처방을 제안(조건부, 매우 낮은 근거; 각 약 73%, 80%). 입원한 중증 CAP: 경험적 항생제를 처방(100% 투표).",
+          "항생제 투여 기간 — 임상적 안정에 도달한 외래 및 입원 비중증 CAP: 5일 이상보다 5일 미만(최소 3일)을 제안(조건부, 낮은 근거; 각 94%, 69%).",
+          "항생제 투여 기간 — 임상적 안정에 도달한 입원 중증 CAP: 5일 미만보다 5일 이상을 제안(강한 권고, 낮은 근거, 94%).",
+          "스테로이드 — 비중증 CAP: 전신 스테로이드를 투여하지 말 것을 권고(강한 권고, 낮은 근거, 100%).",
+          "스테로이드 — 중증 CAP: 전신 스테로이드를 제안(조건부, 낮은 근거, 94%), 단 해악 신호로 인해 인플루엔자 폐렴은 제외."
+        ],
+        "keyChanges": [
+          {
+            "topic": "폐 초음파(진단)",
+            "detail": "2019 guideline did not address lung ultrasound. NEW recommendation: lung ultrasound is an acceptable diagnostic alternative to chest radiography where appropriate clinical expertise exists (conditional, low-quality evidence). Rationale: meta-analysis of 11 (indirect) studies showed LUS median sensitivity ~95% vs ~70% for chest x-ray, though evidence was limited by inconsistency, imprecision, and lack of clinical-outcome data.",
+            "detail_ko": "2019 지침은 폐 초음파를 다루지 않았다. 신규 권고: 적절한 숙련도가 있는 곳에서 폐 초음파를 흉부 X선의 진단 대안으로 사용 가능(조건부, 낮은 근거). 이유: 11개(간접) 연구 메타분석에서 폐 초음파 민감도 중앙값 약 95% vs 흉부 X선 약 70%. 다만 비일관성·부정확성·임상 결과 자료 부재로 근거가 제한적."
+          },
+          {
+            "topic": "바이러스 양성 시 경험적 항생제",
+            "detail": "2019 recommended antibiotics for essentially all patients with a positive influenza test. 2025 diverges: for OUTPATIENTS WITHOUT comorbidities, suggest NOT prescribing empiric antibiotics (conditional, very-low). Antibiotics are still suggested/recommended for outpatients WITH comorbidities, hospitalized non-severe, and hospitalized severe CAP due to bacterial-viral coinfection risk (~25–30% bacterial codetection). Reason: absence of epidemiologic evidence supporting antibiotics in low-risk outpatients and recognition of antibiotic harms.",
+            "detail_ko": "2019는 인플루엔자 검사 양성인 사실상 모든 환자에게 항생제를 권고했다. 2025는 갈라진다: 동반질환 없는 외래 환자는 경험적 항생제를 처방하지 않을 것을 제안(조건부, 매우 낮음). 동반질환 있는 외래·입원 비중증·입원 중증 CAP는 세균-바이러스 동시감염 위험(세균 동시검출 약 25–30%)으로 여전히 항생제를 제안/권고. 이유: 저위험 외래 환자에서 항생제를 뒷받침할 역학적 근거 부재와 항생제 해악 인식."
+          },
+          {
+            "topic": "항생제 투여 기간(외래·비중증)",
+            "detail": "2019 recommended 'no more than 5 days' if clinically stable. 2025 permits SHORTER courses: <5 days with a minimum of 3 days for outpatients and hospitalized non-severe CAP who reach clinical stability (conditional, low). Reason: four RCTs showed non-inferior outcomes with shorter durations; paradigm shift toward reducing bacterial burden while minimizing microbiome disruption, C. difficile, and resistance rather than complete eradication.",
+            "detail_ko": "2019는 임상적으로 안정하면 '5일 이내'를 권고했다. 2025는 더 짧은 요법을 허용: 임상적 안정에 도달한 외래 및 입원 비중증 CAP에서 최소 3일, 5일 미만(조건부, 낮음). 이유: 4건의 RCT에서 짧은 기간의 비열등성 확인. 완전 박멸이 아니라 세균 부하를 줄이면서 microbiome 교란·C. difficile·내성을 최소화하는 방향으로의 패러다임 전환."
+          },
+          {
+            "topic": "항생제 투여 기간(중증)",
+            "detail": "For hospitalized SEVERE CAP at clinical stability, 2025 suggests 5 or more days rather than <5 days — and notably makes this a STRONG recommendation (low-quality evidence, 94% vote), distinguishing severe disease from the shorter-course approach now allowed in milder disease.",
+            "detail_ko": "임상적 안정에 도달한 입원 중증 CAP에서는 5일 미만보다 5일 이상을 제안하며, 특히 이를 강한 권고로 명시(낮은 근거, 94% 투표). 경증에서 허용된 단기 요법과 중증 질환을 구분한다."
+          },
+          {
+            "topic": "전신 스테로이드",
+            "detail": "2019 did not provide formal corticosteroid recommendations. 2025 adds guidance: STRONG recommendation AGAINST systemic corticosteroids in non-severe CAP (low, 100%), and a conditional recommendation FOR corticosteroids in severe CAP (low, 94%), excluding influenza pneumonia due to harm signals. Reason: for non-severe disease, avoid documented harms (hyperglycemia); for severe CAP, emerging evidence of benefit in respiratory-failure contexts.",
+            "detail_ko": "2019는 스테로이드에 대한 공식 권고가 없었다. 2025는 지침을 추가: 비중증 CAP에서는 전신 스테로이드에 반대하는 강한 권고(낮음, 100%), 중증 CAP에서는 스테로이드를 지지하는 조건부 권고(낮음, 94%)이며 해악 신호로 인플루엔자 폐렴은 제외. 이유: 비중증에서는 문서화된 해악(고혈당) 회피, 중증에서는 호흡부전 맥락에서의 유익 근거 대두."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, EM/CCM clinicians can use trained point-of-care lung ultrasound as a legitimate first-line imaging alternative when x-ray/CT is not readily available. For a well, comorbidity-free outpatient who is virus-positive, it is now defensible to withhold antibiotics — but comorbid, non-severe-inpatient, and severe patients should still receive empiric coverage for bacterial-viral coinfection. Antibiotic stewardship shortens: aim for as little as 3–5 days in outpatients and non-severe inpatients once clinically stable, while severe CAP should still get ≥5 days (strong). For steroids, do NOT give them in non-severe CAP (strong against), but consider systemic corticosteroids in severe CAP — except in influenza pneumonia.",
+        "practiceImpact_ko": "실제 진료에서 EM/CCM 임상의는 X선·CT를 즉시 쓸 수 없을 때 숙련된 POCUS 폐 초음파를 정당한 1차 영상 대안으로 활용할 수 있다. 동반질환이 없고 상태가 좋은 바이러스 양성 외래 환자에게는 이제 항생제 보류가 타당하지만, 동반질환자·비중증 입원·중증 환자는 세균-바이러스 동시감염을 고려해 경험적 항생제를 유지해야 한다. 항생제 스튜어드십은 더 짧아진다: 임상적 안정 후 외래·비중증 입원은 3–5일까지 단축을 목표로 하되, 중증 CAP는 여전히 5일 이상(강한 권고)을 유지한다. 스테로이드는 비중증 CAP에서는 주지 않으며(강한 반대), 중증 CAP에서는 전신 스테로이드를 고려하되 인플루엔자 폐렴은 제외한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40679934",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40679934/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1164/rccm.202507-1692ST",
+            "url": "https://doi.org/10.1164/rccm.202507-1692ST"
+          },
+          {
+            "label": "웹 — AJRCCM (Oxford Academic) — full guideline article, 212(1):24-44",
+            "url": "https://academic.oup.com/ajrccm/article/212/1/24/8435770"
+          },
+          {
+            "label": "웹 — Guideline Central — ATS/IDSA CAP Guideline Timeline (2019-2025)",
+            "url": "https://www.guidelinecentral.com/insights/nov-2025-atsidsa-cap-guideline-timeline/"
+          },
+          {
+            "label": "웹 — PubMed — guideline record (PMID 40679934)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40679934/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-25"
     }
   ],
   "rejected": [
@@ -59685,7 +59831,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-23T23:55:48.362Z",
+      "discoveredAt": "2026-09-25T00:03:43.260Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -59942,7 +60088,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-23T23:55:48.362Z",
+      "discoveredAt": "2026-09-25T00:03:43.260Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -59971,7 +60117,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-23T23:55:48.362Z",
+      "discoveredAt": "2026-09-25T00:03:43.260Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -60004,7 +60150,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-23T23:55:48.362Z",
+      "discoveredAt": "2026-09-25T00:03:43.260Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -60038,7 +60184,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-23T23:55:48.362Z",
+      "discoveredAt": "2026-09-25T00:03:43.260Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -60119,9 +60265,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260924_085048:guideline:2026-09-24",
+    "runId": "trend_review_20260925_085748:guideline:2026-09-25",
     "outcome": "published",
-    "publishedId": "pmid:42371750",
+    "publishedId": "pmid:40679934",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -60130,8 +60276,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           },
@@ -60140,21 +60286,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 11,
-            "idsFetched": 11,
+            "totalFound": 12,
+            "idsFetched": 12,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 166,
-        "overlapCount": 2,
+        "mergedTotal": 159,
+        "overlapCount": 3,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/25",
-          "maxDate": "2026/09/24"
+          "minDate": "2026/08/26",
+          "maxDate": "2026/09/25"
         },
         "retmax": 60,
         "topics": [
@@ -60189,8 +60335,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 19,
+            "idsFetched": 19,
             "truncated": false,
             "error": null
           },
@@ -60216,8 +60362,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 10,
-            "idsFetched": 10,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -60234,8 +60380,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -60252,25 +60398,26 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 153,
+        "topicOnlyCount": 145,
         "ptPmids": [
           "42618174",
           "42618173",
+          "42612906",
           "42371750",
           "42248416"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 166,
-          "enriched": 166,
-          "withAbstract": 131,
+          "requested": 159,
+          "enriched": 159,
+          "withAbstract": 124,
           "error": null
         }
       },
@@ -60323,23 +60470,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 1,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 218,
-        "needsReview": 448,
+        "queued": 217,
+        "needsReview": 449,
         "rejected": 127,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42371750",
+        "candidateId": "pmid:40679934",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-24T00:01:09.889Z",
+  "updatedAt": "2026-09-25T00:05:49.031Z",
   "configVersion": "guideline-v2"
 }
