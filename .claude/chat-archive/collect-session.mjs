@@ -180,21 +180,40 @@ function queuedHumanPrompt(o) {
   return human ? { content: a.prompt } : null;
 }
 
-/* ★ SDK 자동화 기록은 PeterJ 대화가 아니다 (2026-09-25 근본 원인 확인).
+/* ★ 자동 보안 리뷰 트랜스크립트는 PeterJ 대화가 아니다 — **파일 단위로, 두 조건이 겹칠 때만** 가른다.
  * 커밋마다 도는 자동 보안 리뷰가 **같은 세션 id** 로 별도 트랜스크립트(entrypoint `sdk-py`)를 남기고,
- * GC 폴더에서 돌기 때문에 GC 의 Stop 훅이 그것을 **같은 아카이브 파일로** 밀었다. 옛 아카이브의
- * `/security-review` "PeterJ 턴"과 영어 리뷰 답이 그 산물이다(08-19 자리표시는 증상 처방이었다).
- * entrypoint 가 없는 옛 기록은 종전대로 받는다. */
-const isAutomation = (o) => typeof o.entrypoint === 'string' && o.entrypoint.startsWith('sdk');
+ * GC 폴더에서 돌아 GC 의 Stop 훅이 그것을 **같은 아카이브 파일로** 밀었다(옛 `/security-review` "PeterJ 턴"의 근원).
+ * ⚠️ 2026-09-25 같은 날 정정: 처음엔 "entrypoint 가 sdk 로 시작하는 **기록**은 버린다"로 막았는데,
+ * **PC 의 Remote Control 서버 모드 세션도 entrypoint 가 sdk-… 로 찍혀** mpr 원격 세션의 진짜 대화(362건)가
+ * 통째로 빠졌다. entrypoint 는 "사람이냐"가 아니라 "어떤 껍데기로 떴냐"다. 그래서 기록을 버리지 않고,
+ * **첫 사람 메시지가 보안 리뷰 프롬프트이고 동시에 entrypoint 가 sdk*** 인 파일만 통째로 건너뛴다.
+ * PeterJ 가 대화형 표면에서 직접 부른 /security-review 는 entrypoint 가 sdk 가 아니라 걸리지 않는다. */
+const AUTOMATION_OPENERS = [
+  /^Review this change for security vulnerabilities\./,
+  /^You previously flagged these candidate vulnerabilities:/,
+];
+export function isAutomationTranscript(raw) {
+  for (const line of String(raw).split('\n')) {
+    if (!line.trim()) continue;
+    let o;
+    try { o = JSON.parse(line); } catch { continue; }
+    if (o.type !== 'user' || o.isSidechain) continue;
+    const c = o.message?.content;
+    const text = typeof c === 'string' ? c
+      : Array.isArray(c) ? (c.find((b) => b && b.type === 'text' && typeof b.text === 'string')?.text ?? null) : null;
+    if (text === null) continue;                 // tool_result 등 — 사람 메시지가 아니다
+    const sdk = typeof o.entrypoint === 'string' && o.entrypoint.startsWith('sdk');
+    return sdk && AUTOMATION_OPENERS.some((re) => re.test(text.trimStart()));
+  }
+  return false;
+}
 
-export function extractTurns(raw, stats = {}) {
+export function extractTurns(raw) {
   const turns = [];
-  stats.automation = 0;
   for (const line of raw.split('\n')) {
     if (!line.trim()) continue;
     let o;
     try { o = JSON.parse(line); } catch { continue; }
-    if (isAutomation(o)) { stats.automation += 1; continue; }
     if (o.isSidechain) continue;                 // 서브에이전트 — 본 대화가 아니다
     const queued = queuedHumanPrompt(o);
     if (!queued && o.type !== 'user' && o.type !== 'assistant') continue;
@@ -498,15 +517,15 @@ function findLatestTranscript() {
   return null;
 }
 
-/** 트랜스크립트 앞부분에서 처음 나오는 entrypoint 가 sdk* 면 자동화 기록으로 본다. 못 읽으면 false. */
+/** 트랜스크립트 앞부분(256KB)으로 자동 보안 리뷰 파일인지 가른다 — 규칙은 isAutomationTranscript 한 벌. 못 읽으면 false. */
 function automationTranscript(file) {
   try {
     const fd = openSync(file, 'r');
     const buf = Buffer.alloc(256 * 1024);
     const n = readSync(fd, buf, 0, buf.length, 0);
     closeSync(fd);
-    const m = buf.toString('utf8', 0, n).match(/"entrypoint":"([^"]*)"/);
-    return !!m && m[1].startsWith('sdk');
+    const head = buf.toString('utf8', 0, n);
+    return isAutomationTranscript(n === buf.length ? head.slice(0, head.lastIndexOf('\n')) : head);
   } catch { return false; }
 }
 
@@ -720,12 +739,9 @@ function main() {
     srcKB = Math.round(statSync(transcript).size / 1024);
   } catch { return; }
 
-  const extractStats = {};
-  const turns = extractTurns(raw, extractStats);
+  if (isAutomationTranscript(raw)) return;      // 자동 보안 리뷰 파일 — PeterJ 대화가 아니다(조용히 끝낸다)
+  const turns = extractTurns(raw);
   if (!turns.length) return;                  // 대화가 하나도 없으면 아무것도 안 쓴다
-  /* 사람 대화와 SDK 자동화 기록이 **한 파일에 섞인** 드문 경우만 알린다 — 잘못 분류된 표면이
-   * 조용히 빠지지 않게(2026-09-25 Fable F6). 자동화만 있는 파일(보안 리뷰)은 위에서 조용히 끝난다. */
-  if (extractStats.automation) console.error(`[chat-archive] SDK 자동화 기록 ${extractStats.automation}건 제외(entrypoint sdk*)`);
 
   const sessionId = hook?.session_id || path.basename(transcript).replace(/\.jsonl$/, '') || 'unknown';
   const id8 = sessionId.slice(0, 8);
