@@ -3030,6 +3030,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-27",
+      "pmid": "41974223",
+      "title": "Effect of immunomodulation on post-cardiac arrest brain injury: a systematic review and meta-analysis.",
+      "title_ko": "심정지 후 뇌손상에 대한 면역조절요법의 효과: 체계적 문헌고찰 및 메타분석",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111091",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "원내 또는 원외 심정지 후 소생한 성인에서 면역조절 치료제(corticosteroids, IL-6 수용체 차단, calcineurin 억제)가 기능적 신경학적 예후와 사망률을 개선하고 염증 biomarker를 낮추는가?",
+      "pico": {
+        "population": "[International] Adults following both in- and out-of-hospital cardiac arrest, pooled from 11 studies plus 3 sub-studies for a total of 2605 patients (search of MEDLINE, Embase, CINAHL, and CENTRAL from database inception up to June 2025; 19,558 records identified, 2351 duplicates, 58 full texts reviewed).",
+        "intervention": "Immunomodulatory therapeutics administered after resuscitation, consisting of corticosteroids (82%), interleukin-6 receptor blockade (9%), and calcineurin inhibition (9%).",
+        "comparison": "Control/comparator arms of the included randomized controlled trials (standard care or placebo).",
+        "outcome": "Immunomodulatory therapies were not associated with an increase in favorable neurological outcome (RR 1.04 [95% CI 0.85, 1.28])."
+      },
+      "pico_ko": {
+        "population": "[다국가] 원내 및 원외 심정지 후 소생한 성인. 11개 연구와 3개 sub-study, 총 2605명을 통합함(MEDLINE, Embase, CINAHL, CENTRAL을 database inception부터 2025년 6월까지 검색; 19,558건 검색, 2351건 중복, 58건 full text 검토).",
+        "intervention": "소생 후 투여된 면역조절 치료제로, corticosteroids(82%), interleukin-6 수용체 차단(9%), calcineurin 억제(9%)로 구성됨.",
+        "comparison": "포함된 randomized controlled trial의 대조군(표준 치료 또는 placebo).",
+        "outcome": "면역조절요법은 양호한 신경학적 예후 증가와 연관되지 않았음 (RR 1.04 [95% CI 0.85, 1.28])."
+      },
+      "keyFindings": [
+        "Immunomodulatory therapies were not associated with an increase in favorable neurological outcome (RR 1.04 [95% CI 0.85, 1.28]) across 11 studies plus 3 sub-studies (2605 patients).",
+        "No reduction in 30-day mortality was seen (RR 0.97 [95% CI 0.91, 1.03]); interventions were predominantly corticosteroids (82%), with IL-6 receptor blockade (9%) and calcineurin inhibition (9%).",
+        "A trend toward decreased IL-6 levels at 24 h was observed after glucocorticoid administration, but overall evidence quality was limited by heterogeneous interventions, dosing, and timing."
+      ],
+      "keyFindings_ko": [
+        "면역조절요법은 11개 연구와 3개 sub-study(2605명)에 걸쳐 양호한 신경학적 예후 증가와 연관되지 않았음 (RR 1.04 [95% CI 0.85, 1.28]).",
+        "30일 사망률 감소도 없었음 (RR 0.97 [95% CI 0.91, 1.03]); 중재는 대부분 corticosteroids(82%)였고 IL-6 수용체 차단(9%)과 calcineurin 억제(9%)가 포함됨.",
+        "glucocorticoid 투여 후 24시간째 IL-6 감소 경향이 관찰되었으나, 이질적인 중재·용량·시점으로 전반적 근거 수준은 제한적이었음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41974223",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41974223/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111091",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111091"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41974223)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41974223/"
+        },
+        {
+          "label": "웹 — Resuscitation journal article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00137-1/abstract"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 41974223)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41974223/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation journal article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00137-1/abstract",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
