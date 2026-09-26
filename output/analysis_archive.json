@@ -2964,6 +2964,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-26",
+      "pmid": "41967757",
+      "title": "Healthcare costs of expedited transport compared with standard care following out-of-hospital cardiac arrest: results from the EVIDENCE randomised controlled trial.",
+      "title_ko": "병원 밖 심정지 후 신속 이송과 표준 진료의 의료비 비교: EVIDENCE 무작위 대조 시험 결과",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111083",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "병원 밖 심정지(OHCA) 환자에서 신속 이송 방식과 표준 진료 간에 의료 시스템 비용이 다른가, 그리고 ECPR이 가능한 업무 시간(business hours) 내에 발생한 심정지와 그 외 시간에 발생한 심정지 간에 비용이 다른가?",
+      "pico": {
+        "population": "[Australia] All 197 randomised participants in the EVIDENCE trial conducted across Greater Sydney, Australia, with out-of-hospital cardiac arrest (OHCA); 102 in the expedited arm and 95 in the standard care arm; mean age 55 years, 82% males. Healthcare use reflected all medical interventions from paramedic contact to hospital discharge or death.",
+        "intervention": "An expedited pre-hospital transportation process for cardiac arrest (expedited arm, n=102), analysed as a prospective costing analysis from a health system perspective.",
+        "comparison": "Standard care pre-hospital transportation process (standard care arm, n=95).",
+        "outcome": "Mean healthcare costs per patient: AUD$60,780 (SD: $122,520) for expedited vs $67,579 (SD: $135,326) for standard care; difference in mean costs -$6,799, not significant (95% CI: -$44,014 to $30,416)."
+      },
+      "pico_ko": {
+        "population": "[호주] 호주 Greater Sydney 전역에서 시행된 EVIDENCE 시험에 무작위 배정된 병원 밖 심정지(OHCA) 환자 197명 전원; 신속 이송군 102명, 표준 진료군 95명; 평균 연령 55세, 남성 82%. 의료 이용은 구급대 접촉부터 퇴원 또는 사망까지 모든 의료 중재를 포함함.",
+        "intervention": "심정지에 대한 신속 이송 방식(신속 이송군, n=102). 의료 시스템 관점의 전향적 비용 분석으로 평가함.",
+        "comparison": "표준 진료 방식의 이송(표준 진료군, n=95).",
+        "outcome": "환자당 평균 의료비: 신속 이송군 AUD$60,780 (SD: $122,520) vs 표준 진료군 $67,579 (SD: $135,326); 평균 비용 차이 -$6,799로 유의하지 않음 (95% CI: -$44,014 ~ $30,416)."
+      },
+      "keyFindings": [
+        "Health system costs were comparable between arms: mean per-patient cost AUD$60,780 (SD $122,520) for expedited vs $67,579 (SD $135,326) for standard care; difference -$6,799, not significant (95% CI -$44,014 to $30,416).",
+        "OHCA occurring within ECPR (business) hours cost $36,182 more per participant than outside those hours (95% CI $1,554–72,918).",
+        "Mean hospital length of stay was similar (15 days expedited vs 17 days standard care), and all 197 randomised EVIDENCE participants (102 expedited, 95 standard; mean age 55, 82% male) were included."
+      ],
+      "keyFindings_ko": [
+        "두 군의 의료 시스템 비용은 유사함: 환자당 평균 비용 신속 이송 AUD$60,780 (SD $122,520) vs 표준 진료 $67,579 (SD $135,326); 차이 -$6,799로 유의하지 않음 (95% CI -$44,014~$30,416).",
+        "ECPR(업무) 시간 내 발생 OHCA는 그 외 시간보다 참가자당 $36,182 더 많은 비용이 들었음 (95% CI $1,554~72,918).",
+        "평균 재원기간은 비슷했고(신속 이송 15일 vs 표준 진료 17일), 무작위 배정된 EVIDENCE 참가자 197명 전원(신속 이송 102명, 표준 95명; 평균 연령 55세, 남성 82%)이 포함됨."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41967757",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41967757/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111083",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111083"
+        },
+        {
+          "label": "웹 — PubMed — Healthcare costs of expedited transport (EVIDENCE trial), PMID 41967757",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41967757/"
+        },
+        {
+          "label": "웹 — Resuscitation — official article page (costing analysis, EVIDENCE trial)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00129-2/fulltext"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — Healthcare costs of expedited transport (EVIDENCE trial), PMID 41967757",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41967757/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation — official article page (costing analysis, EVIDENCE trial)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00129-2/fulltext",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
