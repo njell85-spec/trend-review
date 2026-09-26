@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-25T00:03:53.418Z"
+      "supersededAt": "2026-09-26T00:06:11.341Z"
     },
     {
       "id": "pmid:38531812",
@@ -30201,88 +30201,6 @@
       }
     },
     {
-      "id": "pmid:40643606",
-      "pmid": "40643606",
-      "title": "[Consensus paper on focused transesophageal echocardiography (fTEE) in clinical acute and emergency medicine : From the Commission for Clinical Cardiovascular Medicine of the DGK in cooperation with the DGINA, DGIIN and DGIM].",
-      "pubDate": "2025 Dec",
-      "journal": "Medizinische Klinik, Intensivmedizin und Notfallmedizin",
-      "publicationTypes": [
-        "Journal Article",
-        "Consensus Statement",
-        "Practice Guideline",
-        "English Abstract",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-title",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:08.135Z",
-      "abstract": "In addition to intensive care medicine, focused transesophageal echocardiography (fTEE) is increasingly being used in emergency departments. fTEE should only be performed as part of advanced cardiopulmonary resuscitation or in cases of unclear shock if a particular issue cannot be clarified using focused transthoracic echocardiography (cardiac point-of-care ultrasound [cPOCUS]). The conditions, indications and performance of fTEE are summarized in this consensus paper in terms of quality management in echocardiography in clinical acute and emergency medicine.",
-      "meshTerms": [
-        "Humans",
-        "Echocardiography, Transesophageal",
-        "Cardiopulmonary Resuscitation",
-        "Critical Care",
-        "Germany",
-        "Point-of-Care Systems",
-        "Emergency Service, Hospital",
-        "Societies, Medical"
-      ],
-      "keywords": [
-        "Cardiac imaging",
-        "Cardiogenic shock",
-        "Complications",
-        "Emergency medicine",
-        "Resuscitation"
-      ],
-      "doi": "10.1007/s00063-025-01309-1",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.720467860732135,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.7204678607321349,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:22.746Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "소생·불명 쇼크 중 fTEE 합의문, 응급·중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|consensus-paper-focused-transesophageal-echocardiography-ftee-clinical-acute-emergency-medicine-from-commission-clinical-cardiovascular-medicine-dgk-cooperation-with-dgina-dgiin-dgim",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41391086",
       "pmid": "41391086",
       "title": "Audit of Admissions and Discharges of Intensive Care Unit at a Tertiary Care Center of Northern India with American Critical Care Medicine-2016 Recommendations.",
@@ -31213,7 +31131,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37114,7 +37032,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40506,7 +40424,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42199,7 +42117,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42947,7 +42865,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43275,7 +43193,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43787,7 +43705,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44722,7 +44640,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46485,7 +46403,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46557,7 +46475,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -46627,7 +46545,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -46710,7 +46628,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46773,7 +46691,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -47009,7 +46927,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47081,7 +46999,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47142,7 +47060,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47218,7 +47136,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47291,7 +47209,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47375,7 +47293,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47434,7 +47352,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47513,7 +47431,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47564,11 +47482,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.691961947317768,
+      "priority": 6.688305577843302,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.691961947317768,
+        "recency": 1.6883055778433016,
         "scope": 0,
         "confidence": 2
       },
@@ -47583,7 +47501,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -47666,7 +47584,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47735,7 +47653,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47849,11 +47767,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.691961947233264,
+      "priority": 7.68830557780105,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6919619472332645,
+        "recency": 1.68830557780105,
         "scope": 0,
         "confidence": 2
       },
@@ -47868,7 +47786,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47928,7 +47846,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-09-26T00:06:10.446Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -54796,6 +54714,159 @@
         ]
       },
       "publishedAt": "2026-09-25"
+    },
+    {
+      "id": "pmid:40643606",
+      "pmid": "40643606",
+      "title": "[Consensus paper on focused transesophageal echocardiography (fTEE) in clinical acute and emergency medicine : From the Commission for Clinical Cardiovascular Medicine of the DGK in cooperation with the DGINA, DGIIN and DGIM].",
+      "pubDate": "2025 Dec",
+      "journal": "Medizinische Klinik, Intensivmedizin und Notfallmedizin",
+      "publicationTypes": [
+        "Journal Article",
+        "Consensus Statement",
+        "Practice Guideline",
+        "English Abstract",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:08.135Z",
+      "abstract": "In addition to intensive care medicine, focused transesophageal echocardiography (fTEE) is increasingly being used in emergency departments. fTEE should only be performed as part of advanced cardiopulmonary resuscitation or in cases of unclear shock if a particular issue cannot be clarified using focused transthoracic echocardiography (cardiac point-of-care ultrasound [cPOCUS]). The conditions, indications and performance of fTEE are summarized in this consensus paper in terms of quality management in echocardiography in clinical acute and emergency medicine.",
+      "meshTerms": [
+        "Humans",
+        "Echocardiography, Transesophageal",
+        "Cardiopulmonary Resuscitation",
+        "Critical Care",
+        "Germany",
+        "Point-of-Care Systems",
+        "Emergency Service, Hospital",
+        "Societies, Medical"
+      ],
+      "keywords": [
+        "Cardiac imaging",
+        "Cardiogenic shock",
+        "Complications",
+        "Emergency medicine",
+        "Resuscitation"
+      ],
+      "doi": "10.1007/s00063-025-01309-1",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.720467860732135,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.7204678607321349,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:22.746Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "소생·불명 쇼크 중 fTEE 합의문, 응급·중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|consensus-paper-focused-transesophageal-echocardiography-ftee-clinical-acute-emergency-medicine-from-commission-clinical-cardiovascular-medicine-dgk-cooperation-with-dgina-dgiin-dgim",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40643606",
+          "title": "[Consensus paper on focused transesophageal echocardiography (fTEE) in clinical acute and emergency medicine : From the Commission for Clinical Cardiovascular Medicine of the DGK in cooperation with the DGINA, DGIIN and DGIM].",
+          "journal": "Medizinische Klinik, Intensivmedizin und Notfallmedizin",
+          "pubDate": "2025 Dec",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40643606/",
+          "doi": "10.1007/s00063-025-01309-1"
+        },
+        "org": "DGK (Commission for Clinical Cardiovascular Medicine) in cooperation with DGINA, DGIIN, DGIM",
+        "version": "2025",
+        "title_ko": "임상 응급·중환자의학에서의 초점형 경식도 심초음파(fTEE)에 관한 합의문 — 독일심장학회(DGK) 임상심혈관의학위원회, DGINA·DGIIN·DGIM 공동",
+        "scope_ko": "응급실 및 중환자실 환경에서 성인 환자를 대상으로 한 초점형 경식도 심초음파(fTEE)의 적응증·수행 조건·질 관리를 다루는 합의문입니다. 특히 전문 심폐소생술(ACLS) 중 또는 원인 불명의 쇼크 상황에서, 초점형 경흉부 심초음파(cPOCUS)로 특정 임상 의문을 해결하지 못할 때의 fTEE 활용을 규정합니다.",
+        "summary": [
+          "fTEE should be reserved as a second-line modality: perform it only as part of advanced cardiopulmonary resuscitation or in unclear shock, and only when a specific clinical question cannot be answered by focused transthoracic cardiac point-of-care ultrasound (cPOCUS).",
+          "fTEE is positioned as increasingly relevant not only in intensive care but also in the emergency department, reflecting growing acute-care adoption.",
+          "The paper frames fTEE within a formal quality-management structure for echocardiography in clinical acute and emergency medicine, defining the conditions, indications, and performance standards required.",
+          "It is a focused (not comprehensive) exam — a targeted, question-driven study aimed at resolving a defined clinical issue during resuscitation or shock, not a full diagnostic TEE.",
+          "The consensus was issued jointly by the DGK cardiology commission together with the emergency medicine (DGINA), internal-medicine intensive care (DGIIN), and internal medicine (DGIM) societies, signaling cross-disciplinary agreement on scope and governance."
+        ],
+        "summary_ko": [
+          "fTEE는 2차 검사로 국한해야 합니다 — 전문 심폐소생술(ACLS) 중이거나 원인 불명의 쇼크 상황에서, 초점형 경흉부 심초음파(cPOCUS)로 특정 임상 의문을 해결할 수 없을 때에만 시행합니다.",
+          "fTEE는 중환자의학뿐 아니라 응급실에서도 점점 더 중요하게 활용되고 있으며, 급성기 진료에서의 사용이 늘고 있음을 반영합니다.",
+          "본 합의문은 fTEE를 임상 응급·급성기 의학의 심초음파 질 관리 체계 안에 위치시켜, 수행 조건·적응증·수행 표준을 정의합니다.",
+          "포괄적 검사가 아닌 '초점형' 검사입니다 — 완전한 진단적 TEE가 아니라, 소생술이나 쇼크 상황에서 특정 임상 의문을 해결하기 위한 표적·질문 중심 검사입니다.",
+          "DGK 심장학위원회가 응급의학(DGINA)·내과계 중환자의학(DGIIN)·내과학(DGIM) 학회와 공동으로 발표하여, 적용 범위와 운영에 대한 다학제적 합의를 보여줍니다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "응급 소생술에서의 TEE 표준 뷰·적응증 (2차 임상 리뷰 — 본 합의문 원문 아님)",
+            "body_ko": "미국응급의학회(ACEP)를 인용한 이 임상 리뷰는 소생술적 TEE의 3대 적응증을 ① 경흉부 영상이 불충분한 쇼크 평가, ② 심정지 평가, ③ 응급 혈관내 시술 유도로 정리합니다. 소생 상황의 핵심 뷰로는 중식도 이심방(bicaval)면, 중식도 장축면, 경위(transgastric) 단축면이 제시되며, ACEP는 임상 질문에 맞춘 '10개 뷰 선택'을 권고합니다. CPR 중 이점으로는 흉부압박 최적화(압박 최대 지점이 좌심실에 가까울수록 더 높은 일회박출량 관찰), 심장눌림증·대동맥박리·심한 저혈량증·대량 폐색전증 같은 가역적 원인 식별, 그리고 PEA/무수축으로 보이는 환자에서 미세 심실세동 발견이 언급됩니다. 안전성은 외래에서 주요 합병증 0.01~0.08%, ICU 대규모 연구 2508례에서 사망·중대 기계적 손상 0으로 보고되며, 비디오후두경 보조 삽입이 손상을 줄인다고 합니다. 교육 권고는 사전 TTE 역량, 4~6시간의 구조화된 실습 교육, 실제·시뮬레이션 최소 10회 지도감독 검사입니다. (이는 본 독일 합의문 원문이 아니라, 같은 주제에 대한 별개의 2차 임상 리뷰입니다.)",
+            "sourceLabel": "Resuscitative Transesophageal Echocardiography in Critical Care (PMC review)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12569592/"
+          },
+          {
+            "heading_ko": "응급의학 내 TEE 활용 동향 스코핑 리뷰 (2차 자료 — 본 합의문 원문 아님)",
+            "body_ko": "2023년 12월까지의 논문 99편을 분석한 이 스코핑 리뷰에 따르면 응급 환경 TEE의 최다 적용 분야는 심정지(72.7%)이며, 이어 쇼크 평가(13.1%), 시술 유도(11.1%), 대동맥 질환(10.1%) 순입니다. 시술자는 응급의학과 전문의 69.1%·전공의 22.2%, 검사 장소는 95.1%가 응급실이었습니다. 2000년 이전에는 대동맥박리에 초점이 있었으나 2008년 대표적 증례 시리즈 이후 소생술 적용으로 관심이 급격히 이동했고, 논문 수는 2018년을 변곡점으로 연 +12.4편 증가했습니다. 도입 장벽으로는 안전성 우려, 재정, 자격 인증 요건, 훈련된 시술자 부족이 지목됩니다. (본 독일 합의문 원문이 아니라 주제 배경을 보여주는 별개의 2차 자료입니다.)",
+            "sourceLabel": "Trends in Studies on TEE in Emergency Medicine: A Scoping Review (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12208095/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, keep transthoracic cPOCUS as your first imaging step in arrest and undifferentiated shock; escalate to fTEE only when TTE leaves a specific question unanswered (e.g. poor windows, ongoing CPR, or suspected reversible cause not visualized). Because the arrested/shocked patient is often already intubated with a protected airway, fTEE gives an uninterrupted, high-resolution cardiac window that does not require pausing compressions and can guide chest-compression vector, unmask fine VF, and identify tamponade, massive PE, aortic dissection, or severe hypovolemia. Departments adopting fTEE should build the credentialing, structured training, and quality-management scaffolding the consensus emphasizes rather than treating it as an ad-hoc skill. Prior TTE competency plus structured hands-on TEE training and proctored exams are the practical prerequisites before independent use.",
+        "practiceImpact_ko": "실제 진료에서는 심정지·미분화 쇼크 시 경흉부 cPOCUS를 1차 영상 검사로 유지하고, TTE로 특정 의문이 해결되지 않을 때에만(예: 창(window) 불량, 진행 중인 CPR, 확인되지 않은 가역적 원인 의심) fTEE로 단계 상향합니다. 심정지·쇼크 환자는 이미 기관삽관되어 기도가 보호된 경우가 많으므로, fTEE는 흉부압박을 멈추지 않고도 중단 없는 고해상도 심장 영상을 제공하여 압박 벡터를 유도하고, 미세 심실세동을 드러내며, 심장눌림증·대량 폐색전증·대동맥박리·심한 저혈량증을 식별할 수 있습니다. fTEE를 도입하는 부서는 이를 임기응변식 술기가 아니라, 합의문이 강조하는 자격 인증·구조화된 교육·질 관리 체계를 갖춘 상태로 운용해야 합니다. 독립 시행 전 전제조건은 기존 TTE 역량에 더해 구조화된 실습 기반 TEE 교육과 지도감독 하 검사 수행입니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40643606",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40643606/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00063-025-01309-1",
+            "url": "https://doi.org/10.1007/s00063-025-01309-1"
+          },
+          {
+            "label": "웹 — Konsensuspapier zur fokussierten transösophagealen Echokardiographie (fTEE) — Medizinische Klinik Intensivmedizin und Notfallmedizin (Springer, abstract/landing)",
+            "url": "https://link.springer.com/article/10.1007/s00063-025-01309-1"
+          },
+          {
+            "label": "웹 — Resuscitative Transesophageal Echocardiography in Critical Care (PMC review)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12569592/"
+          },
+          {
+            "label": "웹 — Trends in Studies on Transesophageal Echocardiography in Emergency Medicine: A Scoping Review (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12208095/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-26"
     }
   ],
   "rejected": [
@@ -59831,7 +59902,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-25T00:03:43.260Z",
+      "discoveredAt": "2026-09-26T00:06:00.461Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -60088,7 +60159,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-25T00:03:43.260Z",
+      "discoveredAt": "2026-09-26T00:06:00.461Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -60117,7 +60188,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-25T00:03:43.260Z",
+      "discoveredAt": "2026-09-26T00:06:00.461Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -60150,7 +60221,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-25T00:03:43.260Z",
+      "discoveredAt": "2026-09-26T00:06:00.461Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -60184,7 +60255,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-25T00:03:43.260Z",
+      "discoveredAt": "2026-09-26T00:06:00.461Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -60212,6 +60283,39 @@
       "documentType": null,
       "reasons": [
         "commentary-or-evaluation"
+      ]
+    },
+    {
+      "id": "pmid:42786624",
+      "pmid": "42786624",
+      "title": "Social Determinants of Guideline-Directed Oral Anticoagulation Prescription in Patients With Atrial Fibrillation Without Contraindications: Findings From the American Heart Association Get With the Guidelines-Atrial Fibrillation Registry.",
+      "pubDate": "2026 Sep 24",
+      "journal": "Journal of the American Heart Association",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-26T00:06:00.461Z",
+      "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
+      "meshTerms": [],
+      "keywords": [
+        "atrial fibrillation",
+        "machine learning",
+        "oral anticoagulants",
+        "social determinants of health",
+        "stroke"
+      ],
+      "doi": "10.1161/JAHA.126.050448",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "guideline",
+      "reasons": [
+        "registry-named-guidelines"
       ]
     }
   ],
@@ -60265,9 +60369,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260925_085748:guideline:2026-09-25",
+    "runId": "trend_review_20260926_090057:guideline:2026-09-26",
     "outcome": "published",
-    "publishedId": "pmid:40679934",
+    "publishedId": "pmid:40643606",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -60276,8 +60380,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 5,
-            "idsFetched": 5,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -60286,21 +60390,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 12,
-            "idsFetched": 12,
+            "totalFound": 13,
+            "idsFetched": 13,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 159,
-        "overlapCount": 3,
+        "mergedTotal": 167,
+        "overlapCount": 4,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/26",
-          "maxDate": "2026/09/25"
+          "minDate": "2026/08/27",
+          "maxDate": "2026/09/26"
         },
         "retmax": 60,
         "topics": [
@@ -60308,8 +60412,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 55,
-            "idsFetched": 55,
+            "totalFound": 57,
+            "idsFetched": 57,
             "truncated": false,
             "error": null
           },
@@ -60317,8 +60421,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -60326,8 +60430,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 23,
-            "idsFetched": 23,
+            "totalFound": 22,
+            "idsFetched": 22,
             "truncated": false,
             "error": null
           },
@@ -60335,8 +60439,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 19,
-            "idsFetched": 19,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -60380,8 +60484,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -60389,8 +60493,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 0,
-            "idsFetched": 0,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           },
@@ -60404,8 +60508,9 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 145,
+        "topicOnlyCount": 152,
         "ptPmids": [
+          "42788594",
           "42618174",
           "42618173",
           "42612906",
@@ -60415,9 +60520,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 159,
-          "enriched": 159,
-          "withAbstract": 124,
+          "requested": 167,
+          "enriched": 167,
+          "withAbstract": 131,
           "error": null
         }
       },
@@ -60470,25 +60575,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 1,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 217,
+        "queued": 216,
         "needsReview": 449,
-        "rejected": 127,
+        "rejected": 128,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40679934",
+        "candidateId": "pmid:40643606",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-25T00:05:49.031Z",
+  "updatedAt": "2026-09-26T00:07:57.068Z",
   "configVersion": "guideline-v2"
 }

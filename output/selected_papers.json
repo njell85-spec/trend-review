@@ -726,5 +726,16 @@
     "rerankPoolSize": 2,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "41967757",
+    "title": "Healthcare costs of expedited transport compared with standard care following ou",
+    "date": "2026-09-26",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "pool_too_small",
+    "lowConfidence": true
   }
 ]
