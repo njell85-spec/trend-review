@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-26T00:06:11.341Z"
+      "supersededAt": "2026-09-26T23:50:14.220Z"
     },
     {
       "id": "pmid:38531812",
@@ -18336,80 +18336,6 @@
       }
     },
     {
-      "id": "pmid:40401775",
-      "pmid": "40401775",
-      "title": "European Stroke Organisation (ESO) and European Association of Neurosurgical Societies (EANS) guideline on stroke due to spontaneous intracerebral haemorrhage.",
-      "pubDate": "2025 Dec",
-      "journal": "European stroke journal",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:37:28.061Z",
-      "abstract": "Spontaneous (non-traumatic) intracerebral haemorrhage (ICH) affects ~3.4 million people worldwide each year, causing ~2.8 million deaths. Many randomised controlled trials and high-quality observational studies have added to the evidence base for the management of people with ICH since the last European Stroke Organisation (ESO) guidelines for the management of spontaneous ICH were published in 2014, so we updated the ESO guideline. This guideline update was guided by the European Stroke Organisation (ESO) standard operating procedures for guidelines and the Grading of Recommendations, Assessment, Development and Evaluation (GRADE) framework, in collaboration with the European Association of Neurosurgical Societies (EANS). We identified 37 Population, Intervention, Comparator, Outcome (PICO) questions and prioritised clinical outcomes. We conducted systematic literature searches, tailored to each PICO, seeking randomised controlled trials (RCT) - or observational studies when RCTs were not appropriate, or not available - that investigated interventions to improve clinical outcomes. A group of co-authors allocated to each PICO screened titles, abstracts, and full texts and extracted data from included studies. A methodologist conducted study-level meta-analyses and created summaries of findings tables. The same group of co-authors graded the quality of evidence, and drafted recommendations that were reviewed, revised and approved by the entire group. When there was insufficient evidence to make a recommendation, each group of co-authors drafted an expert consensus statement, which was reviewed, revised and voted on by the entire group. The systematic literature search revealed 115,647 articles. We included 208 studies. We found  treatment of people with ICH on organised stroke units, and secondary prevention of stroke with blood pressure lowering. We found  scores for predicting macrovascular causes underlying ICH; acute blood pressure lowering; open surgery via craniotomy for supratentorial ICH; minimally invasive surgery for supratentorial ICH; decompressive surgery for deep supratentorial ICH; evacuation of cerebellar ICH > 15 mL; external ventricular drainage with intraventricular thrombolysis for intraventricular extension; minimally invasive surgical evacuation of intraventricular blood; intermittent pneumatic compression to prevent proximal deep vein thrombosis; antiplatelet therapy for a licensed indication for secondary prevention; and applying a care bundle. We found  anti-inflammatory drug use outside of clinical trials. We found  routine use of rFVIIa, platelet transfusions for antiplatelet-associated ICH, general policies that limit treatment within 24 h of ICH onset, temperature and glucose management as single measures (outside of care bundles), prophylactic anti-seizures medicines, and prophylactic use of temperature-lowering measures, prokinetic anti-emetics, and/or antibiotics. New evidence about the management of ICH has emerged since 2014, enabling this update of the ESO guideline to provide new recommendations and consensus statements. Although we made strong recommendations for and against a few interventions, we were only able to make weak recommendations for and against many others, or produce consensus statements where the evidence was insufficient to guide clinical decisions. Although progress has been made, many interventions still require definitive, high-quality evidence, underpinning the need for embedding clinical trials in routine clinical practice for ICH.",
-      "meshTerms": [
-        "Humans",
-        "Cerebral Hemorrhage",
-        "Societies, Medical",
-        "Stroke",
-        "Europe",
-        "Neurosurgery"
-      ],
-      "keywords": [
-        "Guideline",
-        "intracerebral haemorrhage",
-        "stroke",
-        "systematic review"
-      ],
-      "doi": "10.1177/23969873251340815",
-      "pmcid": "PMC12098356",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.720467860182864,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.7204678601828636,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:22.746Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "자발성 뇌출혈 관리 지침, 신경응급 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-stroke-organisation-eso-european-association-neurosurgical-societies-eans-stroke-due-spontaneous-intracerebral-haemorrhage",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40401760",
       "pmid": "40401760",
       "title": "European Stroke Organisation (ESO) guideline on motor rehabilitation.",
@@ -31131,7 +31057,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -37032,7 +36958,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40424,7 +40350,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42117,7 +42043,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42865,7 +42791,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43193,7 +43119,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43705,7 +43631,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44056,32 +43982,45 @@
     {
       "id": "pmid:42350065",
       "pmid": "42350065",
-      "title": "Clinical Practice Guideline for the diagnosis of Granulomatous-Lymphocytic Interstitial Lung Disease (GLILD) in patients with Common Variable Immunodeficiency Disorders (CVID) - an ERS Clinical Research Collaboration.",
-      "pubDate": "2026 Jun 25",
+      "title": "Clinical practice guideline for the diagnosis of granulomatous-lymphocytic interstitial lung disease in patients with common variable immunodeficiency disorders: an ERS Clinical Research Collaboration.",
+      "pubDate": "2026 Sep",
       "journal": "The European respiratory journal",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-17T04:40:48.357Z",
-      "abstract": "BACKGROUND: Granulomatous-Lymphocytic Interstitial Lung Disease (GLILD) is a lung disease first described in people affected by common variable immunodeficiency disorders (CVID). Despite growing recognition of GLILD, there is no accepted diagnostic and management guideline, and current practice varies significantly across centres and countries.\nOBJECTIVE: This clinical practice guideline provides evidence- and consensus-based recommendations on the screening and diagnosis of GLILD in patients with CVID.\nMETHODS: A panel representing multiple interdisciplinary perspectives convened with methodologists to prioritize clinical questions, review and assess the evidence using GRADE (Grading of Recommendations Assessment, Development and Evaluation) methodology. Evidence-to-Decision frameworks were used to decide on the direction and strength of recommendations.\nRESULTS: Screening for GLILD is recommended in all adult CVID patients, preferably using high resolution computed tomography. Evaluation should be performed by a multidisciplinary team. Routine lung biopsies are not mandatory but necessary for atypical presentations. As part of the diagnostic process, pulmonary infections should be excluded and lymphocytic alveolitis sought after by means of bronchoalveolar lavage. The severity of lung function impairment should be evaluated using pulmonary function tests including gas transfer assessment. Most of the recommendations are graded as conditional because of low certainty in the evidence regarding health effects.\nCONCLUSIONS: This guideline allows for international homogeneity in the diagnosis of GLILD, thereby paving the way for improved comparability between centers, improving equity in health care for those affected by GLILD and facilitating multicenter research collaborations for future studies.",
-      "meshTerms": [],
+      "abstract": "BACKGROUND: Granulomatous-lymphocytic interstitial lung disease (GLILD) is a lung disease first described in people affected by common variable immunodeficiency disorders (CVID). Despite growing recognition of GLILD, there is no accepted diagnostic and management guideline, and current practice varies significantly across centres and countries. This clinical practice guideline provides evidence- and consensus-based recommendations on the screening and diagnosis of GLILD in patients with CVID.\nMETHODS: A panel representing multiple interdisciplinary perspectives convened with methodologists to prioritise clinical questions, and review and assess the evidence using Grading of Recommendations Assessment, Development and Evaluation (GRADE) methodology. Evidence-to-decision frameworks were used to decide on the direction and strength of recommendations.\nRESULTS: Screening for GLILD is recommended in all adult patients with CVID, preferably using high-resolution computed tomography. Evaluation should be performed by a multidisciplinary team. Routine lung biopsies are not mandatory but necessary for atypical presentations. As part of the diagnostic process, pulmonary infections should be excluded and lymphocytic alveolitis sought for by means of bronchoalveolar lavage. The severity of lung function impairment should be evaluated using pulmonary function tests including gas transfer assessment. Most of the recommendations are graded as conditional because of low certainty in the evidence regarding health effects.\nCONCLUSIONS: This guideline allows for international homogeneity in the diagnosis of GLILD, thereby paving the way for improved comparability between centres, improving equity in healthcare for those affected by GLILD and facilitating multicentre research collaborations for future studies.",
+      "meshTerms": [
+        "Humans",
+        "Lung Diseases, Interstitial",
+        "Common Variable Immunodeficiency",
+        "Tomography, X-Ray Computed",
+        "Respiratory Function Tests",
+        "Adult",
+        "Lung",
+        "Biopsy",
+        "Europe",
+        "Evidence-Based Medicine"
+      ],
       "keywords": [],
       "doi": "10.1183/13993003.02224-2025",
-      "pmcid": "",
+      "pmcid": "PMC13612986",
       "region": "eu",
       "by": "org-acronym",
       "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": false,
+        "officialDocument": true,
         "organizationId": null
       },
       "priority": 7,
@@ -44095,21 +44034,25 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
         "format-evidence",
-        "normative-evidence"
+        "normative-evidence",
+        "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 2,
         "keep": false,
         "reason": "CVID 관련 GLILD 진단, 니치 폐질환",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|clinical-practice-diagnosis-granulomatous-lymphocytic-interstitial-lung-disease-patients-with-common-variable-immunodeficiency-disorders-ers-clinical-research-collaboration",
+      "supersedes": []
     },
     {
       "id": "pmid:42531590",
@@ -44640,7 +44583,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46475,7 +46418,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
       "supersedes": [],
       "llmFit": {
@@ -46545,7 +46488,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "esc|artificial-intelligence-predicted-heart-failure",
       "supersedes": [],
       "llmFit": {
@@ -46628,7 +46571,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46691,7 +46634,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "unknown|american-society-gastrointestinal-endoscopy-role-endoscopy-acute-lower-gastrointestinal-bleeding",
       "supersedes": [],
       "llmFit": {
@@ -46927,7 +46870,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -46999,7 +46942,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47060,7 +47003,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47136,7 +47079,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47209,7 +47152,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47293,7 +47236,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47352,7 +47295,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47431,7 +47374,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47482,11 +47425,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.688305577843302,
+      "priority": 6.684695474941095,
       "breakdown": {
         "authority": 0,
         "topic": 3,
-        "recency": 1.6883055778433016,
+        "recency": 1.684695474941095,
         "scope": 0,
         "confidence": 2
       },
@@ -47501,7 +47444,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "unknown|human-factors-airway-management-focus-swiss-airway",
       "supersedes": [],
       "llmFit": {
@@ -47584,7 +47527,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47653,7 +47596,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47767,11 +47710,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.68830557780105,
+      "priority": 7.684695474856592,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.68830557780105,
+        "recency": 1.6846954748565917,
         "scope": 0,
         "confidence": 2
       },
@@ -47786,7 +47729,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47846,7 +47789,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T00:06:10.446Z",
+      "lastSeenAt": "2026-09-26T23:50:13.329Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -54867,6 +54810,221 @@
         ]
       },
       "publishedAt": "2026-09-26"
+    },
+    {
+      "id": "pmid:40401775",
+      "pmid": "40401775",
+      "title": "European Stroke Organisation (ESO) and European Association of Neurosurgical Societies (EANS) guideline on stroke due to spontaneous intracerebral haemorrhage.",
+      "pubDate": "2025 Dec",
+      "journal": "European stroke journal",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:37:28.061Z",
+      "abstract": "Spontaneous (non-traumatic) intracerebral haemorrhage (ICH) affects ~3.4 million people worldwide each year, causing ~2.8 million deaths. Many randomised controlled trials and high-quality observational studies have added to the evidence base for the management of people with ICH since the last European Stroke Organisation (ESO) guidelines for the management of spontaneous ICH were published in 2014, so we updated the ESO guideline. This guideline update was guided by the European Stroke Organisation (ESO) standard operating procedures for guidelines and the Grading of Recommendations, Assessment, Development and Evaluation (GRADE) framework, in collaboration with the European Association of Neurosurgical Societies (EANS). We identified 37 Population, Intervention, Comparator, Outcome (PICO) questions and prioritised clinical outcomes. We conducted systematic literature searches, tailored to each PICO, seeking randomised controlled trials (RCT) - or observational studies when RCTs were not appropriate, or not available - that investigated interventions to improve clinical outcomes. A group of co-authors allocated to each PICO screened titles, abstracts, and full texts and extracted data from included studies. A methodologist conducted study-level meta-analyses and created summaries of findings tables. The same group of co-authors graded the quality of evidence, and drafted recommendations that were reviewed, revised and approved by the entire group. When there was insufficient evidence to make a recommendation, each group of co-authors drafted an expert consensus statement, which was reviewed, revised and voted on by the entire group. The systematic literature search revealed 115,647 articles. We included 208 studies. We found  treatment of people with ICH on organised stroke units, and secondary prevention of stroke with blood pressure lowering. We found  scores for predicting macrovascular causes underlying ICH; acute blood pressure lowering; open surgery via craniotomy for supratentorial ICH; minimally invasive surgery for supratentorial ICH; decompressive surgery for deep supratentorial ICH; evacuation of cerebellar ICH > 15 mL; external ventricular drainage with intraventricular thrombolysis for intraventricular extension; minimally invasive surgical evacuation of intraventricular blood; intermittent pneumatic compression to prevent proximal deep vein thrombosis; antiplatelet therapy for a licensed indication for secondary prevention; and applying a care bundle. We found  anti-inflammatory drug use outside of clinical trials. We found  routine use of rFVIIa, platelet transfusions for antiplatelet-associated ICH, general policies that limit treatment within 24 h of ICH onset, temperature and glucose management as single measures (outside of care bundles), prophylactic anti-seizures medicines, and prophylactic use of temperature-lowering measures, prokinetic anti-emetics, and/or antibiotics. New evidence about the management of ICH has emerged since 2014, enabling this update of the ESO guideline to provide new recommendations and consensus statements. Although we made strong recommendations for and against a few interventions, we were only able to make weak recommendations for and against many others, or produce consensus statements where the evidence was insufficient to guide clinical decisions. Although progress has been made, many interventions still require definitive, high-quality evidence, underpinning the need for embedding clinical trials in routine clinical practice for ICH.",
+      "meshTerms": [
+        "Humans",
+        "Cerebral Hemorrhage",
+        "Societies, Medical",
+        "Stroke",
+        "Europe",
+        "Neurosurgery"
+      ],
+      "keywords": [
+        "Guideline",
+        "intracerebral haemorrhage",
+        "stroke",
+        "systematic review"
+      ],
+      "doi": "10.1177/23969873251340815",
+      "pmcid": "PMC12098356",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.720467860182864,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.7204678601828636,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:22.746Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "자발성 뇌출혈 관리 지침, 신경응급 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-stroke-organisation-eso-european-association-neurosurgical-societies-eans-stroke-due-spontaneous-intracerebral-haemorrhage",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40401775",
+          "title": "European Stroke Organisation (ESO) and European Association of Neurosurgical Societies (EANS) guideline on stroke due to spontaneous intracerebral haemorrhage.",
+          "journal": "European stroke journal",
+          "pubDate": "2025 Dec",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40401775/",
+          "doi": "10.1177/23969873251340815"
+        },
+        "org": "ESO/EANS",
+        "version": "2025 update",
+        "title_ko": "자발성(비외상성) 뇌실질내출혈(ICH)로 인한 뇌졸중에 관한 유럽뇌졸중기구(ESO)-유럽신경외과학회연합(EANS) 진료지침",
+        "scope_ko": "자발성(비외상성) 뇌실질내출혈(ICH) 성인 환자의 급성기 치료와 이차예방 전반을 다룬다. 조직화된 뇌졸중집중치료실 입원, 급성기 혈압강하, 지혈요법, 각종 수술적 치료(개두술·최소침습수술·후두와/소뇌출혈·감압술·뇌실외배액+뇌실내혈전용해), 심부정맥혈전 예방, 케어번들, 그리고 혈압강하·항혈소판제 등 이차예방을 37개 PICO 질문에 대해 GRADE 방식으로 권고한다. 2014년 ESO 지침의 개정판이다.",
+        "summary": [
+          "Admit people with ICH to an organised stroke unit rather than a general ward to reduce death and death-or-dependence (STRONG recommendation FOR).",
+          "For long-term secondary prevention after ICH, use sustained blood-pressure lowering to reduce recurrent stroke (STRONG recommendation FOR).",
+          "Do NOT use anti-inflammatory drugs for ICH outside of clinical trials (STRONG recommendation AGAINST).",
+          "Offer acute blood-pressure lowering in the hyperacute phase; it is safe and reduces haematoma expansion, though it has not been shown to improve functional outcome (WEAK recommendation FOR).",
+          "Surgical options may be offered in selected patients — open craniotomy for supratentorial ICH, minimally invasive surgery for supratentorial ICH, decompressive surgery for deep supratentorial ICH, evacuation of cerebellar ICH >15 mL, and external ventricular drainage with intraventricular thrombolysis (plus minimally invasive evacuation of intraventricular blood) for intraventricular extension (each a WEAK recommendation FOR).",
+          "Use intermittent pneumatic compression to prevent proximal DVT; apply a care bundle; and use antiplatelet therapy for a licensed indication in secondary prevention (WEAK recommendations FOR).",
+          "Do NOT routinely use recombinant factor VIIa (rFVIIa) or platelet transfusion for antiplatelet-associated ICH, and do NOT apply blanket policies that limit active treatment within 24 h of onset (WEAK recommendations AGAINST).",
+          "Do NOT use, as isolated single measures outside a care bundle, temperature or glucose management, prophylactic anti-seizure medicines, prophylactic temperature-lowering measures, prophylactic prokinetic anti-emetics, or prophylactic antibiotics (WEAK recommendations AGAINST)."
+        ],
+        "summary_ko": [
+          "ICH 환자는 일반 병동이 아닌 조직화된 뇌졸중집중치료실(stroke unit)에 입원시켜 사망 및 사망-의존 결과를 줄인다 (강한 권고, FOR).",
+          "ICH 이후 장기 이차예방으로 지속적 혈압강하를 시행해 재발성 뇌졸중을 줄인다 (강한 권고, FOR).",
+          "임상시험 밖에서는 ICH에 항염증약제를 사용하지 않는다 (강한 권고, AGAINST).",
+          "초급성기 혈압강하를 시행할 수 있다 — 안전하고 혈종 확대를 줄이지만 기능적 예후 개선은 입증되지 않았다 (약한 권고, FOR).",
+          "선별된 환자에서 수술적 치료를 고려할 수 있다 — 천막상부 ICH에 대한 개두술, 천막상부 ICH에 대한 최소침습수술, 심부 천막상부 ICH에 대한 감압술, 15 mL 초과 소뇌출혈의 혈종 제거, 뇌실내 출혈 확장에 대한 뇌실외배액(EVD)+뇌실내 혈전용해(및 뇌실내 혈액의 최소침습 제거) (각각 약한 권고, FOR).",
+          "근위부 심부정맥혈전(DVT) 예방을 위해 간헐적 공기압박(IPC)을 사용하고, 케어번들을 적용하며, 이차예방으로 허가된 적응증에 항혈소판제를 사용한다 (약한 권고, FOR).",
+          "recombinant factor VIIa(rFVIIa)나 항혈소판제 관련 ICH에 대한 혈소판 수혈을 일상적으로 사용하지 않으며, 발병 24시간 이내 적극적 치료를 일괄 제한하는 정책을 적용하지 않는다 (약한 권고, AGAINST).",
+          "케어번들 밖의 단독 조치로서 체온·혈당 관리, 예방적 항경련제, 예방적 체온강하 조치, 예방적 위장운동촉진 항구토제, 예방적 항생제는 사용하지 않는다 (약한 권고, AGAINST)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "급성기 혈압강하 (수치·근거 정교화)",
+            "detail": "2014 guidance on acute BP lowering was cautious/uncertain. The 2025 update, informed by INTERACT2 and ATACH-2, makes a WEAK recommendation FOR early intensive BP lowering (commonly a systolic target around <140 mmHg, initiated early e.g. within ~6 h): it is judged safe and reduces haematoma expansion, but — a key nuance — it does NOT improve functional outcome (mRS), so aggressive over-lowering and abrupt large drops are cautioned against. The message shifted from 'lower BP' to 'lowering is safe and reduces expansion but is not proven to improve function'.",
+            "detail_ko": "2014년에는 급성기 혈압강하가 신중·불확실하게 다뤄졌다. 2025년 개정판은 INTERACT2·ATACH-2를 근거로 조기 집중 혈압강하를 약한 권고(FOR)로 제시한다(대개 수축기 목표 약 <140 mmHg, 조기 예: 발병 ~6시간 이내 개시). 안전하고 혈종 확대를 줄이는 것으로 판단되나, 핵심은 기능적 예후(mRS)를 개선하지는 못한다는 점이며, 따라서 과도한 급격한 강하는 경계한다. 메시지가 '혈압을 낮춰라'에서 '강하는 안전하고 혈종 확대는 줄이나 기능 개선은 미입증'으로 이동했다."
+          },
+          {
+            "topic": "뇌졸중집중치료실 입원",
+            "detail": "Organised stroke-unit care is now a STRONG recommendation FOR in ICH (RCT/observational evidence of reduced death and death-or-dependence), consolidating what in 2014 was a more general statement — ICH patients should be managed on a specialist stroke unit, not a general ward.",
+            "detail_ko": "조직화된 뇌졸중집중치료실 치료가 ICH에서 이제 강한 권고(FOR)로 상향되었다(사망 및 사망-의존 감소 근거). 2014년의 보다 일반적 언급을 공고화한 것으로, ICH 환자는 일반 병동이 아닌 전문 뇌졸중 병동에서 관리해야 한다."
+          },
+          {
+            "topic": "케어번들 (신규 권고)",
+            "detail": "New in 2025: a WEAK recommendation FOR applying a care bundle (coordinated protocol covering early BP control, anticoagulation reversal, and other acute measures together), reflecting new trial evidence (e.g. INTERACT3) that bundled early goal-directed care improves outcomes. This concept did not exist as a recommendation in 2014.",
+            "detail_ko": "2025년 신규: 케어번들(조기 혈압조절·항응고 역전 등 급성기 조치를 통합한 조정 프로토콜) 적용에 대한 약한 권고(FOR). 번들 형태의 조기 목표지향 치료가 예후를 개선한다는 새 근거(예: INTERACT3)를 반영한다. 이 개념은 2014년에는 권고로 존재하지 않았다."
+          },
+          {
+            "topic": "최소침습수술(MIS) 및 개두술",
+            "detail": "Reflecting newer surgical trials (e.g. ENRICH, MISTIE-era data), the 2025 update adds WEAK recommendations FOR minimally invasive surgery for supratentorial ICH and for open craniotomy in selected supratentorial ICH, plus decompressive surgery for deep supratentorial ICH — a more permissive surgical stance than 2014, which found little benefit for routine surgery.",
+            "detail_ko": "새로운 수술 임상시험(예: ENRICH, MISTIE 계열)을 반영해, 2025년 개정판은 천막상부 ICH에 대한 최소침습수술과 선별된 천막상부 ICH에 대한 개두술, 그리고 심부 천막상부 ICH에 대한 감압술에 약한 권고(FOR)를 추가했다. 일상적 수술의 이득이 적다고 본 2014년보다 수술에 대해 다소 허용적인 입장이다."
+          },
+          {
+            "topic": "소뇌출혈 혈종 제거 기준",
+            "detail": "The update provides a WEAK recommendation FOR evacuation of cerebellar ICH >15 mL, giving a concrete volume threshold to trigger surgical evacuation of posterior fossa haemorrhage rather than the more qualitative 2014 guidance.",
+            "detail_ko": "개정판은 15 mL를 초과하는 소뇌출혈의 혈종 제거에 약한 권고(FOR)를 제시하여, 2014년의 정성적 안내 대신 후두와 출혈의 수술적 제거를 촉발하는 구체적 용적 기준을 제공한다."
+          },
+          {
+            "topic": "뇌실내 출혈 — EVD + 뇌실내 혈전용해",
+            "detail": "New WEAK recommendation FOR external ventricular drainage combined with intraventricular thrombolysis for intraventricular extension, and for minimally invasive surgical evacuation of intraventricular blood — informed by CLEAR III–type evidence not available in 2014.",
+            "detail_ko": "뇌실내 출혈 확장에 대해 뇌실외배액(EVD)과 뇌실내 혈전용해 병용, 그리고 뇌실내 혈액의 최소침습 수술적 제거에 대한 신규 약한 권고(FOR). 2014년에는 없던 CLEAR III류 근거를 반영한다."
+          },
+          {
+            "topic": "항혈소판제 관련 ICH — 혈소판 수혈",
+            "detail": "The 2025 guideline makes a WEAK recommendation AGAINST routine platelet transfusion for antiplatelet-associated ICH, driven by the PATCH trial showing harm (worse outcome) — this is a reversal/clarification versus prior common practice and the less definitive 2014 stance.",
+            "detail_ko": "2025년 지침은 항혈소판제 관련 ICH에 대한 일상적 혈소판 수혈에 약한 권고(AGAINST)를 제시한다. 해를 보인 PATCH 임상시험(예후 악화)이 근거이며, 기존 관행과 덜 명확했던 2014년 입장에 대한 역전/명확화이다."
+          },
+          {
+            "topic": "rFVIIa 지혈요법",
+            "detail": "WEAK recommendation AGAINST routine use of recombinant factor VIIa in spontaneous ICH (no functional-outcome benefit despite reduced expansion, thromboembolic risk) — reaffirming and grading against routine haemostatic use.",
+            "detail_ko": "자발성 ICH에서 recombinant factor VIIa의 일상적 사용에 약한 권고(AGAINST)(혈종 확대는 줄이나 기능적 예후 이득이 없고 혈전색전 위험). 일상적 지혈요법 사용에 반대함을 재확인·등급화했다."
+          },
+          {
+            "topic": "치료 조기제한 정책 / 자기충족적 예언 방지",
+            "detail": "New WEAK recommendation AGAINST general policies that limit active treatment within 24 h of ICH onset, addressing early DNR/withdrawal and the 'self-fulfilling prophecy' of early nihilism — a change emphasising that early care should not be capped by protocol.",
+            "detail_ko": "발병 24시간 이내 적극적 치료를 일괄 제한하는 정책에 대한 신규 약한 권고(AGAINST). 조기 DNR/치료중단과 조기 허무주의의 '자기충족적 예언'을 겨냥하며, 초기 치료를 프로토콜로 제한해서는 안 된다는 변화를 강조한다."
+          },
+          {
+            "topic": "예방적 항경련제",
+            "detail": "WEAK recommendation AGAINST prophylactic anti-seizure medication (i.e. do not give routinely to patients without clinical seizures), consistent with evidence of no benefit and possible harm — a clearer position than 2014.",
+            "detail_ko": "예방적 항경련제에 대한 약한 권고(AGAINST)(임상적 발작이 없는 환자에게 일상적으로 투여하지 않음). 이득 없음과 잠재적 해의 근거에 부합하며, 2014년보다 명확한 입장이다."
+          },
+          {
+            "topic": "단독 조치(체온·혈당) 및 기타 예방적 조치",
+            "detail": "WEAK recommendations AGAINST temperature and glucose management as single isolated measures (outside a care bundle), and against prophylactic temperature-lowering, prophylactic prokinetic anti-emetics, and prophylactic antibiotics — reframing these as valid only within a bundled protocol rather than as standalone interventions.",
+            "detail_ko": "체온·혈당 관리를 (케어번들 밖의) 단독 격리 조치로 시행하는 것, 그리고 예방적 체온강하·예방적 위장운동촉진 항구토제·예방적 항생제에 대한 약한 권고(AGAINST). 이들을 단독 중재가 아니라 번들 프로토콜 내에서만 타당한 것으로 재정의한다."
+          },
+          {
+            "topic": "항염증약제",
+            "detail": "STRONG recommendation AGAINST anti-inflammatory drug use for ICH outside of clinical trials — an explicit strong statement (new/strengthened) directing that such agents not enter routine practice pending trial evidence.",
+            "detail_ko": "임상시험 밖에서 ICH에 항염증약제를 사용하는 것에 대한 강한 권고(AGAINST). 명시적 강한 진술(신규/강화)로, 임상시험 근거가 나오기 전에는 일상 진료에 도입하지 말 것을 지시한다."
+          },
+          {
+            "topic": "이차예방 — 혈압강하·항혈소판제·DVT 예방",
+            "detail": "Secondary-prevention BP lowering is now a STRONG recommendation FOR; antiplatelet therapy for a licensed indication is a WEAK recommendation FOR (informed by RESTART showing antiplatelet resumption is not clearly harmful); and intermittent pneumatic compression is a WEAK recommendation FOR proximal DVT prevention (CLOTS-3-type evidence).",
+            "detail_ko": "이차예방 혈압강하는 이제 강한 권고(FOR)이고, 허가된 적응증에 대한 항혈소판제는 약한 권고(FOR)이며(항혈소판제 재개가 명백히 해롭지 않음을 보인 RESTART 근거), 근위부 DVT 예방을 위한 간헐적 공기압박(IPC)은 약한 권고(FOR)이다(CLOTS-3류 근거)."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "동반 사설(editorial): 지침의 의의와 '출판–현장 적용' 간극",
+            "body_ko": "European Stroke Journal 10주년·OUP 이관을 기념하는 편집진 사설로, 이번 ESO-EANS ICH 지침을 포함한 4개 신규 ESO 지침 출간을 다룬다. 편집진은 ICH 지침을 '범위 면에서 진정으로 예외적인, ICH 최적 임상관리에 대한 막대한 기여'로 평하며 '가장 복잡한 뇌혈관 질환 중 하나를 관리하는 데 있어 다학제 협력'의 중요성을 강조한다. 동시에 핵심 논점으로 '지침 출판'과 '실제 현장 적용' 사이의 간극을 지적한다 — 인력 부족, 의료 인프라 불평등, 재정적 제약 같은 자원 제약이 일관된 채택을 가로막는다는 것이다. 급성기 치료부터 장기 회복까지를 아우르고 지리적·사회적 격차를 줄이는, 근거 기반·통합·환자 중심 뇌졸중 진료를 지향해야 한다고 본다. (지침 자체의 권고가 아니라 이에 대한 학술지 논평이다.)",
+            "sourceLabel": "European Stroke Journal editorial (Dec 2025), PMC",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12681637"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, treat ICH as an active, time-critical disease rather than a nihilistic one: admit to a stroke unit, start early BP lowering (roughly systolic <140 mmHg) knowing it curbs haematoma expansion but is not a guaranteed functional cure, and apply a coordinated care bundle instead of piecemeal single measures. Stop reflexive antiplatelet-associated platelet transfusions and routine rFVIIa, avoid prophylactic anti-seizure drugs/antibiotics/anti-emetics, and do not cap active care or write early DNR orders within the first 24 h. Engage neurosurgery early for candidates — supratentorial minimally invasive or open evacuation, decompression for deep bleeds, cerebellar evacuation when volume exceeds 15 mL, and EVD with intraventricular thrombolysis for intraventricular extension — and use intermittent pneumatic compression for DVT prophylaxis. For survivors, drive sustained BP control and resume antiplatelet therapy where there is a licensed indication.",
+        "practiceImpact_ko": "침상에서 ICH를 허무적 질환이 아니라 적극적·시간의존적 질환으로 다룬다: 뇌졸중집중치료실에 입원시키고, 조기 혈압강하(대략 수축기 <140 mmHg)를 시작하되 이것이 혈종 확대는 줄이지만 기능 회복을 보장하지는 않음을 염두에 두며, 단발성 단독 조치 대신 조정된 케어번들을 적용한다. 반사적인 항혈소판제 관련 혈소판 수혈과 일상적 rFVIIa를 중단하고, 예방적 항경련제·항생제·항구토제를 피하며, 첫 24시간 내 적극적 치료를 제한하거나 조기 DNR을 성급히 내리지 않는다. 수술 후보에는 신경외과를 조기에 개입시킨다 — 천막상부 최소침습/개두 혈종 제거, 심부 출혈의 감압술, 15 mL 초과 소뇌출혈의 제거, 뇌실내 확장에 대한 EVD+뇌실내 혈전용해 — 그리고 DVT 예방으로 간헐적 공기압박을 사용한다. 생존자에게는 지속적 혈압조절을 추진하고, 허가된 적응증이 있는 경우 항혈소판제를 재개한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40401775",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40401775/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1177/23969873251340815",
+            "url": "https://doi.org/10.1177/23969873251340815"
+          },
+          {
+            "label": "웹 — ESO-EANS 2025 ICH guideline — full article (European Stroke Journal, Oxford Academic)",
+            "url": "https://academic.oup.com/esj/article/10/4/1007/8377192"
+          },
+          {
+            "label": "웹 — European Stroke Journal editorial commenting on the 2025 ESO guidelines (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12681637"
+          },
+          {
+            "label": "웹 — University of Edinburgh Research Explorer — guideline record (metadata/manuscript access)",
+            "url": "https://www.research.ed.ac.uk/en/publications/european-stroke-organisation-eso-and-european-association-of-neur/"
+          },
+          {
+            "label": "웹 — Guideline Central — ESO ICH guideline summary landing page (metadata only)",
+            "url": "https://www.guidelinecentral.com/guideline/4757717/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-27"
     }
   ],
   "rejected": [
@@ -59902,7 +60060,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T00:06:00.461Z",
+      "discoveredAt": "2026-09-26T23:50:01.862Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -60188,7 +60346,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T00:06:00.461Z",
+      "discoveredAt": "2026-09-26T23:50:01.862Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -60221,7 +60379,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T00:06:00.461Z",
+      "discoveredAt": "2026-09-26T23:50:01.862Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -60255,7 +60413,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-26T00:06:00.461Z",
+      "discoveredAt": "2026-09-26T23:50:01.862Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -60297,7 +60455,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T00:06:00.461Z",
+      "discoveredAt": "2026-09-26T23:50:01.862Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -60316,6 +60474,33 @@
       "documentType": "guideline",
       "reasons": [
         "registry-named-guidelines"
+      ]
+    },
+    {
+      "id": "pmid:42791565",
+      "pmid": "42791565",
+      "title": "Correction: Agitated Saline Contrast Echocardiography in the diagnosis of right to left shunts: Guidance and recommendations from the British Society of Echocardiography.",
+      "pubDate": "2026 Sep 25",
+      "journal": "Echo research and practice",
+      "publicationTypes": [
+        "Published Erratum"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-26T23:50:01.862Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1186/s44156-026-00128-0",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "recommendations",
+      "reasons": [
+        "correction-or-erratum"
       ]
     }
   ],
@@ -60369,9 +60554,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260926_090057:guideline:2026-09-26",
+    "runId": "trend_review_20260927_084450:guideline:2026-09-27",
     "outcome": "published",
-    "publishedId": "pmid:40643606",
+    "publishedId": "pmid:40401775",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -60396,15 +60581,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 167,
+        "mergedTotal": 164,
         "overlapCount": 4,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/27",
-          "maxDate": "2026/09/26"
+          "minDate": "2026/08/28",
+          "maxDate": "2026/09/27"
         },
         "retmax": 60,
         "topics": [
@@ -60412,8 +60597,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 57,
-            "idsFetched": 57,
+            "totalFound": 59,
+            "idsFetched": 59,
             "truncated": false,
             "error": null
           },
@@ -60448,8 +60633,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 37,
-            "idsFetched": 37,
+            "totalFound": 32,
+            "idsFetched": 32,
             "truncated": false,
             "error": null
           },
@@ -60484,8 +60669,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -60502,13 +60687,13 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 1,
-            "idsFetched": 1,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 152,
+        "topicOnlyCount": 149,
         "ptPmids": [
           "42788594",
           "42618174",
@@ -60520,9 +60705,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 167,
-          "enriched": 167,
-          "withAbstract": 131,
+          "requested": 164,
+          "enriched": 164,
+          "withAbstract": 129,
           "error": null
         }
       },
@@ -60580,18 +60765,18 @@
       },
       "decisions": {
         "queued": 216,
-        "needsReview": 449,
-        "rejected": 128,
+        "needsReview": 448,
+        "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40643606",
+        "candidateId": "pmid:40401775",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-26T00:07:57.068Z",
+  "updatedAt": "2026-09-26T23:53:58.668Z",
   "configVersion": "guideline-v2"
 }

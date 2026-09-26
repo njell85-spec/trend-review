@@ -737,5 +737,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "pool_too_small",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41974223",
+    "title": "Effect of immunomodulation on post-cardiac arrest brain injury: a systematic rev",
+    "date": "2026-09-27",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 2,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]

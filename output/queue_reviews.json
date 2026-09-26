@@ -1431,23 +1431,6 @@
       "status": "queued"
     },
     {
-      "pmid": "36070787",
-      "title": "Acute respiratory distress syndrome: causes, pathophysiology, and phenotypes.",
-      "journal": "Lancet",
-      "score": 7.2,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ARDS 기전·표현형 Lancet 종설, 중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "36070788",
       "title": "Acute respiratory distress syndrome in adults: diagnosis, outcomes, long-term sequelae, and management.",
       "journal": "Lancet",
@@ -10368,6 +10351,115 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "36070787",
+      "title": "Acute respiratory distress syndrome: causes, pathophysiology, and phenotypes.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 기전·표현형 Lancet 종설, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-27",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "36070787",
+          "title": "Acute respiratory distress syndrome: causes, pathophysiology, and phenotypes.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2022-9-8",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36070787/",
+          "doi": "10.1016/S0140-6736(22)01485-4"
+        },
+        "title_ko": "급성호흡곤란증후군(ARDS): 원인, 병태생리, 표현형(phenotype)",
+        "scope_ko": "미만성 폐 염증과 부종으로 인한 급성호흡부전 증후군인 ARDS를 원인, 병태생리(손상·염증·응고 경로의 활성화와 조절이상, 인공환기가 유발하는 손상·염증의 악순환, 염증 소실 과정), 그리고 임상·생리·영상·생물학적 이질성에 기반한 표현형 규명이라는 축으로 개괄하는 종설이다. 저자들은 보다 균질한 ARDS 표현형을 가려내는 정밀의학 접근이 병태생리 기전의 이해와 환자별 차이의 파악을 개선한다고 본다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "ARDS의 정의와 원인",
+            "body_ko": "급성호흡곤란증후군(ARDS)은 미만성 폐 염증 및 부종의 결과로 나타나는 급성호흡부전의 흔한 임상 증후군이다. ARDS는 다양한 원인에 의해 촉발될 수 있다.\n\n(이 절은 이 논문 자체가 제공한 초록에 근거한다. 저자들은 초록 수준에서 원인을 '다양하다'고만 서술하고 개별 원인의 목록·비중을 초록에는 제시하지 않았다. 직접(폐성)·간접(폐외성) 원인의 구체적 분류는 본문에 있을 것으로 보이나, 본문(전문)에 접근하지 못했으므로 이 절에는 옮기지 않는다. 해당 분류에 대한 보강 설명은 아래 'augmented' 절을 참고하라.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "병태생리 — 손상·염증·응고 경로의 조절이상",
+            "body_ko": "ARDS의 병태생리는 복잡하며, 폐 국소적으로도 전신적으로도 서로 겹치고 상호작용하는 다수의 손상(injury)·염증(inflammation)·응고(coagulation) 경로가 활성화되고 조절이상(dysregulation)에 빠지는 과정을 포함한다.\n\n(저자들은 초록에서 이들 경로가 '겹치고 상호작용한다', 그리고 '폐 국소뿐 아니라 전신적으로도' 일어난다는 점을 강조한다. 상피·내피 투과성 증가 등 개별 기전의 상세는 본문 사항으로, 전문에 접근하지 못해 이 절에는 옮기지 않는다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "인공환기가 유발하는 손상·염증의 악순환",
+            "body_ko": "인공환기(mechanical ventilation)는 폐 손상과 염증의 악순환(cycle of lung injury and inflammation)에 기여할 수 있다.\n\n(저자들은 초록에서 인공환기 자체가 손상·염증의 순환 고리에 '기여할 수 있다'고 서술한다. volutrauma·atelectrauma·barotrauma·biotrauma 등 세부 기전은 본문 사항으로, 전문 미확보로 이 절에는 옮기지 않는다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "염증의 소실(resolution)",
+            "body_ko": "염증의 소실(resolution of inflammation)은 조율된(coordinated) 과정으로, 염증촉진(proinflammatory) 경로의 하향조절(downregulation)과 항염증(anti-inflammatory) 경로의 상향조절(upregulation)을 함께 요구한다.\n\n(저자들은 염증 소실을 단순한 '가라앉음'이 아니라 능동적으로 조율되는 과정으로 규정한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이질성과 표현형(phenotype), 그리고 정밀의학 접근",
+            "body_ko": "이 임상 증후군의 이질성(heterogeneity)은 그 생물학(biology)·생리(physiology)·영상(radiology) 소견과 함께 점점 더 인식되어 왔으며, 이것이 표현형(phenotype)의 규명에 반영되고 있다.\n\n보다 균질한(homogeneous) ARDS 표현형의 식별을 개선하는 정밀의학(precision-medicine) 접근은, 그 병태생리 기전에 대한 이해와 그 기전이 환자마다 어떻게 다른지에 대한 이해를 향상시킬 것으로 기대된다.\n\n(초록은 표현형을 '임상·생리·영상·생물학적' 이질성에 근거해 규명한다고 총론적으로만 서술하고, 개별 표현형(예: hyperinflammatory/hypoinflammatory)의 정의·비율·사망률은 본문 사항이다. 전문 미확보로 이 절에는 옮기지 않는다 — 아래 'augmented' 절 참고.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 직접(폐성) 대 간접(폐외성) 원인 — 동일 주제 종설에서",
+            "body_ko": "아래는 이 논문의 전문을 확보하지 못해, 같은 주제(ARDS의 원인·병태생리·표현형)를 다룬 권위 있는 2차 종설에서 보강한 내용이다. 이 논문(Bos & Ware) 자체의 서술이 아님에 유의하라.\n\nARDS는 직접(폐성, direct/pulmonary) 기전 또는 간접(폐외성, indirect/extrapulmonary) 기전 중 하나를 통해 유발될 수 있다. 흔한 간접 원인으로는 패혈증(sepsis), 흉부 이외의 주요 외상(non-thoracic major trauma), 수혈(transfusion of blood products), 췌장염(pancreatitis)이 있고, 직접 원인으로는 폐렴(세균·진균·바이러스성), 위 내용물의 흡인(aspiration of gastric contents), 폐·흡입성 외상(pulmonary or inhalational trauma)이 있다. 직접형 ARDS는 폐 상피 손상이 더 심한 반면 염증성 사이토카인은 더 낮고 내피 손상은 상대적으로 경한 경향이 보고되며, 외상 관련 ARDS는 위험인자가 많음에도 패혈증 관련 ARDS보다 예후가 더 나은 역설적 양상이 기술된다.\n— 보강 출처: Acute Respiratory Distress Syndrome: Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/)",
+            "origin": "augmented",
+            "sourceLabel": "Acute Respiratory Distress Syndrome: Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/"
+          },
+          {
+            "heading_ko": "[웹 보강] 폐포-모세혈관 장벽 손상·염증·응고·VILI — 동일 주제 종설에서",
+            "body_ko": "아래는 보강 내용으로, 이 논문 자체의 서술이 아니다.\n\nARDS의 핵심 병태생리는 폐포 상피세포와 모세혈관 내피세포 모두의 손상으로, 세포간 접합(intercellular junction) 손상에 따른 세포옆(paracellular) 과투과성과 폐포강 내 체액·단백·면역세포의 축적을 일으킨다. 정수압만이 아닌 이 투과성 증가가 ARDS를 심인성 폐부종과 구분짓는다.\n\n염증 반응은 조절이상 상태로, 호중구가 기도강으로 이주하여 활성산소·단백분해효소·사이토카인(IL-1β, IL-6, IL-8, TNF-α)을 방출하고, 호중구 세포외덫(NET)과 순환 히스톤이 내피·상피 손상을 증폭시킨다. 응고 경로 활성화에 따른 미세혈관 혈전은 사강(dead-space) 환기를 악화시키고 가스교환 장애를 심화시키며 사망률 증가와 연관된다.\n\n인공환기유발폐손상(VILI)은 volutrauma(과팽창), atelectrauma(주기적 개폐), barotrauma를 포함하며, 이들 물리력은 구조적 손상을 넘어 국소·전신으로 퍼지는 염증 연쇄(biotrauma)를 촉발해 폐포-혈관 투과성과 다발성 장기부전 위험을 높인다. 질환은 삼출/염증기 → 증식기 → 섬유화기의 겹치는 세 단계로 진행하며, II형 폐포세포의 증식과 I형으로의 전환분화(transdifferentiation)를 통한 상피 복구가 장벽 회복에 핵심이다.\n— 보강 출처: ARDS Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/)",
+            "origin": "augmented",
+            "sourceLabel": "ARDS Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/"
+          },
+          {
+            "heading_ko": "[웹 보강] 생물학적 표현형 — hyperinflammatory 대 hypoinflammatory (동일 주제 종설에서)",
+            "body_ko": "아래는 보강 내용으로, 이 논문 자체의 서술이 아니다.\n\n잠재계층분석(latent class analysis)으로 두 개의 뚜렷한 생물학적 아표현형(subphenotype)이 규명되었다: hyperinflammatory(약 33%)와 hypoinflammatory(약 67%). Hyperinflammatory형은 sTNFR1·IL-6·IL-8·vWF·PAI-1·ICAM-1 등 염증·내피 표지자가 상승하고, 패혈증 등 간접 원인이 많으며, 쇼크·승압제 사용·빌리루빈/크레아티닌 상승을 동반하고 90일 사망률이 더 높다(대략 40–50%). Hypoinflammatory형은 염증 표지자가 낮고 검사 이상이 적으며 예후가 더 낫다(대략 18–26%).\n\n치료 반응도 아표현형에 따라 갈린다. FACTT 수액전략 재분석에서 hypoinflammatory형은 제한적 전략 18% 대 자유로운 전략 26%, hyperinflammatory형은 자유로운 전략 50% 대 제한적 전략 40%의 사망률을 보였다. 고PEEP은 hypoinflammatory형에서 과팽창·혈역학 악화로 불리하나 hyperinflammatory형에서는 폐포 재개방으로 유리한 경향이 기술된다. 스타틴에서는 HARP-2(simvastatin) 재분석에서 hyperinflammatory형의 28·90일 생존이 개선된 반면 SAILS(rosuvastatin)에서는 이익이 없어, 계열별 차이가 시사되었다.\n— 보강 출처: ARDS Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/)",
+            "origin": "augmented",
+            "sourceLabel": "ARDS Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/"
+          },
+          {
+            "heading_ko": "[웹 보강] 생리·영상·순환 표현형 (동일 주제 종설에서)",
+            "body_ko": "아래는 보강 내용으로, 이 논문 자체의 서술이 아니다.\n\n생리학적 아표현형: 재개방(recruitability) 정도에 따라 비재개방형은 사강과 폐 불균질성이 낮은 반면, 재개방형은 사강 증가·산소화 저하(더 낮은 PaO₂/FiO₂)·사망 위험 증가와 연관된다. 구동압(driving pressure) 상승은 독립적으로 사망을 예측하며 가장 중요한 환기성 사망 결정인자로 간주된다.\n\n영상 표현형: 국소(focal)형은 배측-하부 음영으로 복와위(prone)에 더 잘 반응하고, 비국소(non-focal)형은 광범위 침윤으로 PEEP에 의한 폐포 재개방이 크다.\n\n심혈관 표현형: 심초음파로 네 개의 순환부전 계층이 기술되었다 — Class 1(양심실 정상, 가장 흔함), Class 2(우심실 확장·수축기능 보존, 약 25%), Class 3(우심실 확장·수축기능 저하, 90일 사망률 약 80%로 최고), Class 4(좌심실 과역동·심박출 증가).\n\n임상적 함의: 이질성 탓에 사망률은 여전히 약 40%에 이르며, 아표현형 분류의 '정확도'가 관건이다. LIVE 시험에서 21%의 오분류가 오히려 맞춤환기군의 사망률을 높였고, IL-6·IL-8·sTNFR-1·protein C·승압제 사용 등 3–4개 변수를 쓰는 현장검사(point-of-care) 표지자가 침상 아표현형 식별의 가능성으로 제시된다.\n— 보강 출처: ARDS Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/)",
+            "origin": "augmented",
+            "sourceLabel": "ARDS Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설은 ARDS를 단일 질환이 아니라 원인(직접/간접)·생리·영상·생물학적으로 이질적인 증후군으로 보아야 함을 재확인하며, 침상에서는 '모두에게 동일한 치료'보다 표현형을 의식한 접근의 근거를 제공한다. 저자들의 초록 범위 안에서, 인공환기 자체가 손상·염증의 악순환에 기여할 수 있다는 점은 폐보호환기의 당위를 다시 강조하고, 염증 소실이 능동적으로 조율되는 과정이라는 틀은 향후 표적치료의 방향(염증촉진 경로 억제·항염증 경로 촉진)을 시사한다. 다만 표현형별 맞춤치료의 구체적 적용은 본문·후속 연구 사항으로, 초록만으로는 특정 치료 지침을 도출하지 않는다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 36070787",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36070787/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(22)01485-4",
+            "url": "https://doi.org/10.1016/S0140-6736(22)01485-4"
+          },
+          {
+            "label": "웹 — Amsterdam UMC research portal — Bos & Ware, ARDS: causes, pathophysiology, and phenotypes (초록 확인)",
+            "url": "https://pure.amsterdamumc.nl/en/publications/acute-respiratory-distress-syndrome-causes-pathophysiology-and-ph/"
+          },
+          {
+            "label": "웹 — ARDS: Pathophysiological Insights, Subphenotypes, and Clinical Implications—A Comprehensive Review (PMC12347897) — 보강 출처",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12347897/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -10425,9 +10517,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-26",
+    "date": "2026-09-27",
     "outcome": "published",
-    "publishedId": "35985353"
+    "publishedId": "36070787"
   },
-  "updatedAt": "2026-09-26"
+  "updatedAt": "2026-09-27"
 }
