@@ -3096,6 +3096,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-28",
+      "pmid": "41443575",
+      "title": "Impact of differential temperature trajectories following targeted temperature management on outcomes in out-of-hospital cardiac arrest patients receiving ECPR: a multicenter, retrospective study with prospective validation.",
+      "title_ko": "목표체온관리(TTM) 이후 체온 궤적의 차이가 ECPR을 받은 병원 밖 심정지 환자의 예후에 미치는 영향: 전향적 검증을 동반한 다기관 후향적 연구",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2025.110932",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ECPR와 표준화된 TTM을 받은 병원 밖 심정지(OHCA) 환자에서, 재가온 후 48–72시간의 체온 궤적이 90일 사망률 및 신경학적 예후와 연관이 있는가?",
+      "pico": {
+        "population": "[China] Adult patients with witnessed OHCA who underwent ECPR and standardized TTM between January 2017 and December 2023, across 6 ICUs in Zhejiang Province; cluster analysis identified a high-temperature variability group (HTVG, n = 107) and a low-temperature variability group (LTVG, n = 170).",
+        "intervention": "High-temperature variability pattern (HTVG, n = 107) in core body temperatures recorded between 48 and 72 h, identified by K-means-Dynamic Time Warping (DTW) clustering (optimal cluster number by maximum average silhouette coefficient across 2–10 clusters).",
+        "comparison": "Low-temperature variability group (LTVG, n = 170).",
+        "outcome": "Primary outcome was 90-day mortality: HTVG 34.6% vs. LTVG 53.5% (p < 0.001), confirmed by Kaplan-Meier analysis (HR 2.63; 95% CI 1.81–3.81; log-rank p < 0.001)."
+      },
+      "pico_ko": {
+        "population": "[중국] 2017년 1월부터 2023년 12월 사이에 ECPR과 표준화된 TTM을 받은, 목격된 성인 OHCA 환자로 Zhejiang성 6개 ICU에서 모집; 군집분석으로 고체온변동군(HTVG, n = 107)과 저체온변동군(LTVG, n = 170)이 확인됨.",
+        "intervention": "48–72시간에 기록된 심부체온에서의 고체온변동 패턴(HTVG, n = 107)으로, K-means-Dynamic Time Warping(DTW) 군집화로 식별(2–10개 군집 범위에서 평균 silhouette 계수가 최대가 되는 값으로 최적 군집 수 결정).",
+        "comparison": "저체온변동군(LTVG, n = 170).",
+        "outcome": "일차 결과는 90일 사망률: HTVG 34.6% vs. LTVG 53.5% (p < 0.001), Kaplan-Meier 분석으로 확인됨(HR 2.63; 95% CI 1.81–3.81; log-rank p < 0.001)."
+      },
+      "keyFindings": [
+        "K-means-DTW clustering of 48–72 h core temperatures split 277 ECPR/TTM OHCA patients into a high-variability group (HTVG, n = 107) and low-variability group (LTVG, n = 170).",
+        "HTVG had significantly lower 90-day mortality than LTVG (34.6% vs. 53.5%, p < 0.001; HR 2.63, 95% CI 1.81–3.81, log-rank p < 0.001).",
+        "HTVG also showed better neurological outcomes (mRS 4-6: 43.9% vs. 69.4%, p < 0.001) and less moderate/severe bleeding (29.0% vs. 45.9%, p = 0.005), with findings validated in a prospective multicenter cohort."
+      ],
+      "keyFindings_ko": [
+        "48–72시간 심부체온을 K-means-DTW로 군집화하여 277명의 ECPR/TTM OHCA 환자를 고변동군(HTVG, n = 107)과 저변동군(LTVG, n = 170)으로 분류함.",
+        "HTVG는 LTVG보다 90일 사망률이 유의하게 낮았음(34.6% vs. 53.5%, p < 0.001; HR 2.63, 95% CI 1.81–3.81, log-rank p < 0.001).",
+        "HTVG는 신경학적 예후도 더 좋았고(mRS 4-6: 43.9% vs. 69.4%, p < 0.001) 중등도/중증 출혈도 적었으며(29.0% vs. 45.9%, p = 0.005), 이 결과는 전향적 다기관 코호트에서 검증됨."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41443575",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41443575/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110932",
+          "url": "https://doi.org/10.1016/j.resuscitation.2025.110932"
+        },
+        {
+          "label": "웹 — PubMed — PMID 41443575 (record; abstract page)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41443575/"
+        },
+        {
+          "label": "웹 — Resuscitation — related editorial: Temperature management after TTM – Is variability good or bad?",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00022-5/abstract"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 41443575 (record; abstract page)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41443575/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation — related editorial: Temperature management after TTM – Is variability good or bad?",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00022-5/abstract",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
