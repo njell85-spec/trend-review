@@ -135,7 +135,7 @@ export class VideoAgent {
       this.logger.info(`이미 업로드됨(재실행 안전): ${key}`);
       return log[key];
     }
-    const auth = await getGoogleAuth({ logger: this.logger });
+    const auth = await getGoogleAuth({ logger: this.logger, purpose: 'youtube' });
     if (!auth) throw new Error('google-auth-unset');
     const yt = google.youtube({ version: 'v3', auth });
     const base = lang === 'ko'

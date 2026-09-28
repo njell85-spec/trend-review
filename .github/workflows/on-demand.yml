@@ -103,6 +103,7 @@ jobs:
           GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_YT_REFRESH_TOKEN: ${{ secrets.GOOGLE_YT_REFRESH_TOKEN }}
           GOOGLE_DRIVE_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_FOLDER_ID }}
 
       # 상태파일 동기화 — 데일리와 동일 패턴 (publisher가 index+selected를 이미 커밋·push,

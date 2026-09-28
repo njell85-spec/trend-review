@@ -5,14 +5,21 @@
  * 브라우저 승인 → refresh token을 화면에 1회 출력한다(GitHub Secrets 등록용).
  * 이 값은 비밀이다 — Secrets 등록 후 터미널 기록을 지울 것.
  *
- * 사용: node scripts/google-auth-setup.mjs
+ * 사용: node scripts/google-auth-setup.mjs            # Drive(아카이브) — 개인 계정으로 승인
+ *       node scripts/google-auth-setup.mjs --youtube  # YouTube 업로드 — 브랜드 채널로 승인
+ * 두 권한은 한 번에 요청할 수 없다(2026-09-28 구글 400 invalid_request) — 따로 받는다.
  * 상세 순서: docs/desktop-day-guide.md
  */
 import { google } from 'googleapis';
 import { createServer } from 'http';
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { exec } from 'child_process';
-import { GOOGLE_SCOPES } from '../src/utils/googleAuth.js';
+import { DRIVE_SCOPES, YOUTUBE_SCOPES } from '../src/utils/googleAuth.js';
+
+const YT = process.argv.includes('--youtube');
+const SCOPES = YT ? YOUTUBE_SCOPES : DRIVE_SCOPES;
+const TOKEN_FILE = YT ? 'output/google_yt_token.json' : 'output/google_token.json';
+const SECRET_NAME = YT ? 'GOOGLE_YT_REFRESH_TOKEN' : 'GOOGLE_REFRESH_TOKEN';
 
 const PORT = 53682;
 const REDIRECT = `http://127.0.0.1:${PORT}`;
@@ -31,7 +38,7 @@ if (!client_id || !client_secret) {
 }
 
 const oauth2 = new google.auth.OAuth2(client_id, client_secret, REDIRECT);
-const url = oauth2.generateAuthUrl({ access_type: 'offline', prompt: 'consent', scope: GOOGLE_SCOPES });
+const url = oauth2.generateAuthUrl({ access_type: 'offline', prompt: 'consent', scope: SCOPES });
 
 const server = createServer(async (req, res) => {
   try {
@@ -47,12 +54,12 @@ const server = createServer(async (req, res) => {
       process.exit(1);
     }
     mkdirSync('output', { recursive: true });
-    writeFileSync('output/google_token.json', JSON.stringify(tokens, null, 2));
-    console.log('\n✅ output/google_token.json 저장 완료 (데스크탑 실행용 · gitignore 대상)');
+    writeFileSync(TOKEN_FILE, JSON.stringify(tokens, null, 2));
+    console.log(`\n✅ ${TOKEN_FILE} 저장 완료 (데스크탑 실행용 · gitignore 대상) — 용도: ${YT ? 'YouTube 업로드' : 'Drive 아카이브'}`);
     console.log('\nGitHub Secrets 에 등록하세요 (repo → Settings → Secrets and variables → Actions):');
     console.log(`  GOOGLE_CLIENT_ID     = ${client_id}`);
     console.log(`  GOOGLE_CLIENT_SECRET = ${client_secret}`);
-    console.log(`  GOOGLE_REFRESH_TOKEN = ${tokens.refresh_token}`);
+    console.log(`  ${SECRET_NAME} = ${tokens.refresh_token}`);
     console.log('\n⚠️ 위 값은 비밀입니다. 등록 후 터미널 기록을 지우세요 (history -c 등).');
   } catch (e) {
     console.error(`✖ 토큰 교환 실패: ${e.message}`);
