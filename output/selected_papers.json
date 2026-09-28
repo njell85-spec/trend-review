@@ -748,5 +748,16 @@
     "rerankPoolSize": 2,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "41443575",
+    "title": "Impact of differential temperature trajectories following targeted temperature m",
+    "date": "2026-09-28",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "pool_too_small",
+    "lowConfidence": true
   }
 ]

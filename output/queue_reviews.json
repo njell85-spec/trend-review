@@ -1431,23 +1431,6 @@
       "status": "queued"
     },
     {
-      "pmid": "36070788",
-      "title": "Acute respiratory distress syndrome in adults: diagnosis, outcomes, long-term sequelae, and management.",
-      "journal": "Lancet",
-      "score": 7.2,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ARDS 진단·관리 Lancet 종설, 중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "36472590",
       "title": "Progress and Challenges in Bacterial Meningitis: A Review.",
       "journal": "JAMA",
@@ -10460,6 +10443,109 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "36070788",
+      "title": "Acute respiratory distress syndrome in adults: diagnosis, outcomes, long-term sequelae, and management.",
+      "journal": "Lancet",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ARDS 진단·관리 Lancet 종설, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-28",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "36070788",
+          "title": "Acute respiratory distress syndrome in adults: diagnosis, outcomes, long-term sequelae, and management.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2022-9-8",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36070788/",
+          "doi": "10.1016/S0140-6736(22)01439-8"
+        },
+        "title_ko": "성인 급성호흡곤란증후군(ARDS): 진단, 예후, 장기 후유증 및 관리",
+        "scope_ko": "Lancet ARDS 2022 시리즈의 한 편으로, 성인 ARDS의 진단·관리·단기 예후·장기 후유증을 개괄하고, Berlin 정의의 한계와 향후 개정 근거, 관리 지침의 권고·근거·불확실성을 논한 뒤 치료가능형질(treatable traits) 틀에 기반한 정밀의학적 접근의 미래를 탐색하는 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "ARDS의 정의와 진단",
+            "body_ko": "급성호흡곤란증후군(ARDS)은 흉부 영상에서 양측 침윤을 동반하는 급성 저산소혈성 호흡부전을 특징으로 하며, 이 소견이 심부전이나 체액 과부하만으로는 충분히 설명되지 않는 상태로 정의된다. 현재 ARDS는 Berlin 진단기준(Berlin criteria)에 따라 정의된다.\n\n(이 절은 이 논문의 초록에 근거한다. 저자들은 진단·관리·예후·장기 후유증을 이 시리즈 논문에서 개괄한다고 밝혔다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이 종설이 다루는 범위",
+            "body_ko": "이 시리즈 논문에서 저자들은 ARDS의 진단, 관리, 예후, 그리고 장기 후유증을 함께 개괄한다. 아울러 현행 ARDS 정의가 지닐 수 있는 한계와, 향후 정의 개정에 반영될 수 있는 근거를 검토한다. 또한 ARDS 관리와 관련한 지침 권고, 그 근거, 그리고 남아 있는 불확실성을 함께 논의한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "Berlin 정의의 한계와 향후 개정 근거",
+            "body_ko": "저자들은 현행 ARDS 정의가 지닐 수 있는 잠재적 한계를 짚고, 앞으로 정의를 개정하는 데 근거가 될 수 있는 자료들을 함께 고찰한다. 즉 Berlin 기준이 표준으로 쓰이고 있으나 그것이 최종적 형태는 아니며 개선의 여지가 있다는 관점을 취한다.\n\n(초록 수준의 서술이며, 구체적 역치·비판점은 아래 보강 절에서 권위 있는 2차 출처로 별도 제시한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "관리 권고, 근거, 그리고 불확실성",
+            "body_ko": "저자들은 ARDS 관리에 관한 지침 권고와 그 근거, 그리고 여전히 남아 있는 불확실성을 논의한다. ARDS 치료의 상당 부분이 확립된 근거 위에 서 있으나, 임상 결정에는 여전히 불확실성이 개입한다는 점을 강조하는 서술이다.\n\n(초록 수준의 서술이다. 개별 중재별 구체 권고·수치는 아래 보강 절에서 별도 출처로 제시한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "정밀의학과 치료가능형질(treatable traits)로의 지향",
+            "body_ko": "저자들은 ARDS의 미래가 정밀의학(precision medicine) 접근을 향해 나아가고 있다고 본다. 그 틀로서 ARDS의 진단과 관리에 '치료가능형질(treatable traits)' 개념을 도입해 탐색한다. 이는 환자마다 식별 가능하고 교정 가능한 특성(형질)을 찾아 그에 맞춰 치료를 개별화하려는 접근으로, 생물표지자(biomarker)뿐 아니라 영상·생리·임상 자료가 특정 병태생리 기전을 반영하고 그 기전이 치료에 반응할 수 있을 때 그 형질을 규정하는 지표가 될 수 있다는 사고를 담는다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] Berlin 정의의 구체적 역치와 알려진 한계",
+            "body_ko": "Berlin 정의(2012)의 구성요소는 다음과 같다. ① 시점: 알려진 임상적 유발 사건으로부터 1주 이내에 호흡부전이 발생. ② 영상: 흉수·무기폐·결절만으로는 설명되지 않는 양측 음영. ③ 부종의 기원: 심부전이나 체액 과부하만으로 설명되지 않아야 하며, 필요 시 심초음파 등으로 정수압성 부종을 배제. ④ 산소화(모두 PEEP 또는 CPAP ≥5 cmH2O 조건에서 평가): 경증 PaO2/FiO2 201–300 mmHg, 중등증 101–200 mmHg, 중증 ≤100 mmHg. 검증된 사망률은 경증·중등증·중증에서 각각 약 27%, 35%, 45%로 보고되었다.\n\n알려진 한계로는, 같은 P/F 비라도 더 높은 PEEP에서 그 값을 보이는 환자가 더 심한 폐손상을 가질 수 있어 PEEP 의존성이 문제로 지적된다. 또한 고유량 비강 산소(HFNO)를 받는 환자는 정의에서 배제되는데, 인공호흡을 받지 않았지만 나머지 기준을 충족한 환자들이 인공호흡 환자와 동일한 60일 사망률을 보였다는 근거가 있으며 HFNO에서는 FiO2를 추정만 할 수 있어 분류에 부정확성이 생긴다. 흉부 영상 판독의 변동성도 한계로, 한 연구에서는 두 사분면에 음영이 있으면 그것이 양측성이든 일측성이든 사망률이 동일했다는 보고가 있다.\n— 보강 출처: PMC — The Berlin definition of ARDS: should patients receiving high-flow nasal oxygen be included? (https://pmc.ncbi.nlm.nih.gov/articles/PMC8075801/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC — The Berlin definition of ARDS: should patients receiving high-flow nasal oxygen be included?",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8075801/"
+          },
+          {
+            "heading_ko": "[웹 보강] ARDS 관리의 구체적 권고 (2024 ATS 임상진료지침)",
+            "body_ko": "이 논문 자체의 본문을 확보하지 못했으므로, 논문이 다루는 관리 주제의 구체적 수치를 최신 권위 지침(2024 미국흉부학회 ARDS 관리 임상진료지침)으로 보강한다.\n\n· 폐보호 환기: 1회호흡량을 예측체중당 4–8 mL, 평탄압(plateau pressure) <30 cmH2O로 제한하는 전략 권고(강한 권고, 중등도 확실성).\n· 복와위(prone positioning): 중증 ARDS에서 하루 12시간 초과 시행 권고(강한 권고, 중등도 확실성).\n· 코르티코스테로이드: ARDS 환자에게 사용 제안(조건부 권고, 중등도 확실성).\n· 신경근차단제(NMBA): 조기(<48시간) 중증 ARDS(PaO2/FiO2 ≤100 mmHg)에서 최대 48시간까지 사용 제안(조건부 권고, 낮은 확실성).\n· PEEP: 중등도–중증 ARDS에서 폐포모집술 없이 더 높은 PEEP를 낮은 PEEP보다 우선 사용 제안(조건부 권고, 낮은–중등도 확실성). 장시간 폐포모집술(PEEP ≥35 cmH2O를 60초 초과)은 시행하지 말 것을 권고(강한 권고, 중등도 확실성).\n· VV-ECMO: 선별된 중증 ARDS 환자에서 사용 제안(조건부 권고, 낮은 확실성). 대상은 매우 심한 저산소혈증(PaO2/FiO2 <80) 또는 고탄산혈증(pH <7.25, PaCO2 ≥60).\n— 보강 출처: ATS 2024 Clinical Practice Guideline — Update on Management of Adults with ARDS (AJRCCM) (https://academic.oup.com/ajrccm/article/209/1/24/8427573)",
+            "origin": "augmented",
+            "sourceLabel": "ATS 2024 Clinical Practice Guideline — Update on Management of Adults with ARDS (AJRCCM)",
+            "sourceUrl": "https://academic.oup.com/ajrccm/article/209/1/24/8427573"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설은 침상에서 새로운 처치를 규정하기보다, ARDS를 Berlin 기준으로 진단하되 그 한계(PEEP 의존성·영상 변동성·HFNO 배제)를 인지하고, 폐보호 환기·복와위·근거 기반 관리를 유지하면서, 환자별 '치료가능형질'을 식별해 치료를 개별화하는 정밀의학적 사고로 나아가야 함을 시사한다. 즉 획일적 프로토콜에서 형질 기반 표적 치료로의 전환을 준비하라는 방향 제시로 읽힌다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 36070788",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36070788/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(22)01439-8",
+            "url": "https://doi.org/10.1016/S0140-6736(22)01439-8"
+          },
+          {
+            "label": "웹 — PubMed — Gorman EA, O'Kane CM, McAuley DF. ARDS in adults (Lancet 2022) 기록/초록",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36070788/"
+          },
+          {
+            "label": "웹 — The Lancet — ARDS 2022 시리즈 페이지(검색으로 확인, 본문은 페이월로 열지 못함)",
+            "url": "https://www.thelancet.com/series-do/ards-2022"
+          },
+          {
+            "label": "웹 — ATS 2024 Clinical Practice Guideline — Management of Adults with ARDS (AJRCCM, 실제 열람)",
+            "url": "https://academic.oup.com/ajrccm/article/209/1/24/8427573"
+          },
+          {
+            "label": "웹 — PMC — Berlin definition of ARDS and HFNO (한계 검토, 실제 열람)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8075801/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -10517,9 +10603,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-27",
+    "date": "2026-09-28",
     "outcome": "published",
-    "publishedId": "36070787"
+    "publishedId": "36070788"
   },
-  "updatedAt": "2026-09-27"
+  "updatedAt": "2026-09-28"
 }

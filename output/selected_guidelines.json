@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-26T23:50:14.220Z"
+      "supersededAt": "2026-09-27T23:57:44.020Z"
     },
     {
       "id": "pmid:38531812",
@@ -25861,82 +25861,6 @@
       }
     },
     {
-      "id": "pmid:41051555",
-      "pmid": "41051555",
-      "title": "British societies guideline on the management of emergencies in patients on extracorporeal membrane oxygenation.",
-      "pubDate": "2025 Nov",
-      "journal": "Intensive care medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "Extracorporeal membrane oxygenation (ECMO) is providing an increasingly important therapy for patients in severe heart and lung failure. Care of these patients is complex, with changes in circulation that mean standard advanced life support algorithms may not always be applicable. Through collaboration between all UK ECMO centres and eight national societies, we have assessed the current evidence base and, using a modified Delphi process, produced national guidelines on the management of emergencies on ECMO. The guidelines focus on the recognition of cardiac arrest, team prioritisation, and early ECMO troubleshooting for key life-saving interventions. The guidelines are applicable to all staff and types of ECMO performed in the UK and should be utilised in conjunction with appropriate training. In summary, the joint British societies and ECMO centres working group present the UK guideline for the management of emergencies in ECMO.",
-      "meshTerms": [
-        "Extracorporeal Membrane Oxygenation",
-        "Humans",
-        "United Kingdom",
-        "Heart Arrest",
-        "Emergencies",
-        "Delphi Technique",
-        "Respiratory Insufficiency"
-      ],
-      "keywords": [
-        "Cardiac arrest",
-        "ECMO",
-        "Mechanical circulatory support",
-        "Resuscitation"
-      ],
-      "doi": "10.1007/s00134-025-08142-2",
-      "pmcid": "PMC12640317",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.610952197875975,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.6109521978759755,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:08.134Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ECMO 응급상황 관리 지침, 중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|british-societies-management-emergencies-patients-extracorporeal-membrane-oxygenation",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40994133",
       "pmid": "40994133",
       "title": "Future development of arrhythmogenic risk scores in patients with heart failure and inherited dilated cardiomyopathy. A scientific statement of the Heart Failure Association of the ESC.",
@@ -31057,7 +30981,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -36958,7 +36882,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40350,7 +40274,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -42043,7 +41967,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42791,7 +42715,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43119,7 +43043,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43631,7 +43555,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44042,7 +43966,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44583,7 +44507,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46870,7 +46794,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -46942,7 +46866,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -47003,7 +46927,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47079,7 +47003,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47152,7 +47076,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47236,7 +47160,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47295,7 +47219,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47374,7 +47298,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47527,7 +47451,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47596,7 +47520,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47710,11 +47634,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.684695474856592,
+      "priority": 7.681025927683595,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6846954748565917,
+        "recency": 1.6810259276835946,
         "scope": 0,
         "confidence": 2
       },
@@ -47729,7 +47653,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47789,7 +47713,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-09-27T23:57:43.122Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -55025,6 +54949,165 @@
         ]
       },
       "publishedAt": "2026-09-27"
+    },
+    {
+      "id": "pmid:41051555",
+      "pmid": "41051555",
+      "title": "British societies guideline on the management of emergencies in patients on extracorporeal membrane oxygenation.",
+      "pubDate": "2025 Nov",
+      "journal": "Intensive care medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "Extracorporeal membrane oxygenation (ECMO) is providing an increasingly important therapy for patients in severe heart and lung failure. Care of these patients is complex, with changes in circulation that mean standard advanced life support algorithms may not always be applicable. Through collaboration between all UK ECMO centres and eight national societies, we have assessed the current evidence base and, using a modified Delphi process, produced national guidelines on the management of emergencies on ECMO. The guidelines focus on the recognition of cardiac arrest, team prioritisation, and early ECMO troubleshooting for key life-saving interventions. The guidelines are applicable to all staff and types of ECMO performed in the UK and should be utilised in conjunction with appropriate training. In summary, the joint British societies and ECMO centres working group present the UK guideline for the management of emergencies in ECMO.",
+      "meshTerms": [
+        "Extracorporeal Membrane Oxygenation",
+        "Humans",
+        "United Kingdom",
+        "Heart Arrest",
+        "Emergencies",
+        "Delphi Technique",
+        "Respiratory Insufficiency"
+      ],
+      "keywords": [
+        "Cardiac arrest",
+        "ECMO",
+        "Mechanical circulatory support",
+        "Resuscitation"
+      ],
+      "doi": "10.1007/s00134-025-08142-2",
+      "pmcid": "PMC12640317",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.610952197875975,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.6109521978759755,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:08.134Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ECMO 응급상황 관리 지침, 중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|british-societies-management-emergencies-patients-extracorporeal-membrane-oxygenation",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41051555",
+          "title": "British societies guideline on the management of emergencies in patients on extracorporeal membrane oxygenation.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025 Nov",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41051555/",
+          "doi": "10.1007/s00134-025-08142-2"
+        },
+        "org": "British ECMO centres & 8 national societies (ICS, FICM, Resuscitation Council UK, ACTACC, BACCN, BCS, BSH, SCTS)",
+        "version": "2025",
+        "title_ko": "ECMO 치료 중 환자의 응급상황 관리에 관한 영국 학회 합동 가이드라인",
+        "scope_ko": "성인에서 VV/VA/ECPR 등 모든 구성의 ECMO 치료를 받는 환자에게 발생하는 응급상황(주로 심정지, 그리고 무혈류/저혈류 상황)을 대상으로, 병원 내 최초 대응자를 위한 심정지 인지·팀 우선순위 결정·초기 ECMO 문제해결(troubleshooting)을 다룬다. 영국 14개 ECMO 센터와 8개 국가학회가 modified Delphi로 합의했으며 모든 직종·모든 ECMO 유형에 적용되도록 설계되었다.",
+        "summary": [
+          "Apply a single structured, ALS-style primary-survey algorithm to any deteriorating ECMO patient regardless of configuration (respiratory or cardiac); the team leader uses the algorithm as a checklist to minimise cognitive load and defer definitive assessment until immediate resuscitation is delivered.",
+          "Split the emergency response into a patient team and a device (ECMO/circuit) team under one designated overall team leader; each institution must predefine team composition including both patient-care and ECMO expertise plus a leader capable of assuming overall command.",
+          "Recognise cardiac arrest using the standard trigger — patient unresponsive and/or not breathing normally — rather than pulse checks, because VA ECMO commonly produces no pulsatile flow (no detectable pulse) and VF or an absent rhythm can coexist with a preserved ECMO circulation.",
+          "Interpret end-tidal CO2 with caution during ECMO emergencies: the oxygenator removes CO2, so ETCO2 can be artificially low and is unreliable for arrest recognition or resuscitation feedback on ECMO.",
+          "Prioritise early ECMO troubleshooting for key life-saving interventions in the first minutes of deterioration, because device failure in a patient with no physiological reserve can be rapidly catastrophic and cannot be rescued by standard ALS alone.",
+          "Recommendations were graded with the ESC framework (Class I recommended / IIa should be considered / IIb may be considered / III not recommended; Level of evidence A multiple RCTs, B single RCT, C observational data/expert consensus) by modified Delphi requiring ≥75% agreement over 5 rounds; because only 15 studies met inclusion, the evidence base rests largely on observational data and expert consensus (Level C).",
+          "The guideline is explicitly designed to be complementary to and delivered through structured, regular ECMO team training, not used as a standalone document."
+        ],
+        "summary_ko": [
+          "구성(호흡/심장)에 관계없이 악화되는 모든 ECMO 환자에게 하나의 구조화된 ALS식 1차 평가(primary survey) 알고리즘을 적용한다. 팀 리더는 이 알고리즘을 체크리스트로 사용해 인지부하를 줄이고, 즉각적 소생 후에 더 확정적인 평가를 미룬다.",
+          "응급대응을 환자 팀(patient team)과 기기 팀(device/ECMO circuit team)으로 나누고, 그 위에 전체를 지휘하는 지정된 팀 리더를 둔다. 각 기관은 환자진료·ECMO 전문성과 총괄 리더를 포함한 팀 구성을 미리 정해두어야 한다.",
+          "심정지 인지는 맥박 확인이 아니라 표준 기준(무반응 및/또는 정상 호흡 없음)으로 한다. VA ECMO에서는 박동성 혈류가 없어 맥박이 안 잡히는 경우가 흔하고, VF나 리듬 소실이 있어도 ECMO 순환이 유지될 수 있기 때문이다.",
+          "ECMO 응급 시 호기말 CO2(ETCO2)는 주의해서 해석한다. 산소화기(oxygenator)가 CO2를 제거하므로 ETCO2가 인위적으로 낮게 나올 수 있어 심정지 인지나 소생 피드백 지표로는 신뢰할 수 없다.",
+          "악화 초기 수 분 내에 핵심 구명 조치를 위한 ECMO 문제해결(troubleshooting)을 우선한다. 생리적 예비능이 없는 환자에서 기기 고장은 급격히 치명적일 수 있고 표준 ALS만으로는 회복시킬 수 없기 때문이다.",
+          "권고는 ESC 체계로 등급화했다(Class I 권고 / IIa 고려해야 함 / IIb 고려할 수 있음 / III 권고 안 함; 근거수준 A 다수 RCT, B 단일 RCT, C 관찰연구·전문가 합의). modified Delphi로 5라운드에 걸쳐 ≥75% 동의를 요구했다. 포함 연구가 15편에 불과해 근거 기반은 대부분 관찰자료·전문가 합의(Level C)에 의존한다.",
+          "이 가이드라인은 단독 문서가 아니라 정기적·구조화된 ECMO 팀 훈련을 통해 보완·시행되도록 설계되었다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "동반 논평이 짚은 강점과 한계 — '무혈류/저혈류'로 좁힌 범위",
+            "body_ko": "Intensive Care Medicine의 동반 논평('Defining a national standard for ECMO emergency care')은 이 가이드라인을 'ECMO 응급 관리를 표준화하려는 첫 국가적 노력'으로 평가한다. 핵심 강점으로 인지부하를 줄이는 ALS식 알고리즘과 '이중 팀(dual-team)' 개념을 든다 — ECMO 팀은 회로 기능을 즉각적 우선순위로 삼고, 환자 팀은 ECMO에 맞게 수정한 표준 ALS로 출혈·탐포네이드·저산소증 등 가역적 원인을 찾는다. 두 팀이 한 명의 지정 리더 아래 동시에 문제를 해결해 업무 중복을 피한다. 다만 논평은 권고 범위가 '무혈류(no-flow)·저혈류(low-flow) 상황에 좁게 국한'되어 공기색전(air embolism)이나 우발적 탈관(accidental decannulation) 같은 다른 생명위협 합병증은 다루지 않는다는 한계를 지적하고, 성공 여부는 보급·지역 맞춤화·정기 팀 훈련 편입에 달려 있다고 강조한다.",
+            "sourceLabel": "Intensive Care Medicine 동반 논평 (PMC12852264) — 'Defining a national standard for ECMO emergency care'",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12852264/"
+          },
+          {
+            "heading_ko": "발간 학회(ICS)의 공식 요지 — 세 가지 축과 대상 직종",
+            "body_ko": "Intensive Care Society(ICS) 공식 자료 페이지는 이 가이드라인을 응급 대응이 세 축으로 정리된 랜드마크 합의문으로 소개한다: ① 시스템/기기 고장(회로·펌프 부품 문제의 식별·대응 알고리즘), ② 출혈 관리('빈번하고 고위험 합병증'인 중증 출혈의 표준화된 진단·치료 접근), ③ 고압 응급상황에서 빠르게 쓰도록 만든 단계별 ALS 의사결정 도구. 대상은 중환자전문의, 심장외과의, 중재적 심장내과의, perfusionist, 중환자 간호사이며, ICS는 ECMO 역량을 갖춘 모든 중환자실이 이 프로토콜을 검토해 지역 훈련에 통합함으로써 전국 응급 대응을 표준화할 것을 권한다. (과거 최초 대응자용 지침이 제한적이었다는 점을 배경으로 든다.)",
+            "sourceLabel": "Intensive Care Society — Managing Emergencies in ECMO Patients",
+            "sourceUrl": "https://ics.ac.uk/resource/managing-emergencies-in-ecmo-patients.html"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, EM/CCM teams must abandon unmodified ALS for ECMO patients: recognise arrest by unresponsiveness/abnormal breathing (not pulse), disregard an absent pulse or bizarre rhythm in VA ECMO, and distrust a low ETCO2. Pre-assign every ECMO resuscitation into a patient team and a device team under one leader who works the algorithm as a checklist, and troubleshoot the circuit (flow, access insufficiency, oxygenator, sweep/FiO2) within the first minutes because a failing device offers no reserve. Units with ECMO capability should adopt the algorithm locally and embed it in regular simulation/team training rather than relying on the document alone.",
+        "practiceImpact_ko": "침상에서 EM/CCM 팀은 ECMO 환자에게 수정 없는 표준 ALS를 적용하지 말아야 한다. 심정지는 맥박이 아니라 무반응·비정상 호흡으로 인지하고, VA ECMO에서 맥박이 없거나 이상 리듬이 있어도 그것만으로 판단하지 말며, 낮은 ETCO2를 신뢰하지 않는다. 모든 ECMO 소생을 미리 환자 팀과 기기 팀으로 나누고 한 명의 리더가 알고리즘을 체크리스트로 운용하게 하며, 예비능이 없는 기기 특성상 초기 수 분 내에 회로(유량·access insufficiency·oxygenator·sweep/FiO2)를 문제해결해야 한다. ECMO 역량이 있는 병원은 이 알고리즘을 지역 실정에 맞게 도입하고 문서에만 의존하지 말고 정기 시뮬레이션·팀 훈련에 녹여야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41051555",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41051555/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08142-2",
+            "url": "https://doi.org/10.1007/s00134-025-08142-2"
+          },
+          {
+            "label": "웹 — PubMed — British societies guideline on the management of emergencies in patients on ECMO (PMID 41051555)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41051555/"
+          },
+          {
+            "label": "웹 — Intensive Care Medicine editorial/comment — Defining a national standard for ECMO emergency care (PMC12852264)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12852264/"
+          },
+          {
+            "label": "웹 — Intensive Care Society — Managing Emergencies in ECMO Patients (society summary)",
+            "url": "https://ics.ac.uk/resource/managing-emergencies-in-ecmo-patients.html"
+          },
+          {
+            "label": "웹 — Springer / Intensive Care Medicine — guideline landing page (login-gated full text)",
+            "url": "https://link.springer.com/article/10.1007/s00134-025-08142-2"
+          },
+          {
+            "label": "웹 — MLS Training news — UK ECMO guideline published",
+            "url": "https://www.mls.training/news/uk-ecmo-guideline-published"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-28"
     }
   ],
   "rejected": [
@@ -60060,7 +60143,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T23:50:01.862Z",
+      "discoveredAt": "2026-09-27T23:57:34.281Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -60346,7 +60429,7 @@
         "pubmed-title",
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T23:50:01.862Z",
+      "discoveredAt": "2026-09-27T23:57:34.281Z",
       "abstract": "Cardiogenic shock is a complex clinical syndrome with a high mortality risk. As heterogeneity of patient presentation is high and diagnosis not standardized, a timely diagnosis and thus initiation of treatment are oftentimes not achieved, further worsening the prognosis of affected patients. We therefore propose standardized criteria for the diagnosis of cardiogenic shock, based on three essential pillars: (i) an evidence of end-organ hypoperfusion at rest, (ii) which is primarily caused by haemodynamic abnormalities and a direct consequence of (iii) an underlying cardiac dysfunction commensurate with the state of shock.",
       "meshTerms": [
         "Humans",
@@ -60379,7 +60462,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T23:50:01.862Z",
+      "discoveredAt": "2026-09-27T23:57:34.281Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -60413,7 +60496,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-26T23:50:01.862Z",
+      "discoveredAt": "2026-09-27T23:57:34.281Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -60455,7 +60538,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T23:50:01.862Z",
+      "discoveredAt": "2026-09-27T23:57:34.281Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -60488,7 +60571,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-26T23:50:01.862Z",
+      "discoveredAt": "2026-09-27T23:57:34.281Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -60554,9 +60637,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260927_084450:guideline:2026-09-27",
+    "runId": "trend_review_20260928_085301:guideline:2026-09-28",
     "outcome": "published",
-    "publishedId": "pmid:40401775",
+    "publishedId": "pmid:41051555",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -60581,15 +60664,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 164,
+        "mergedTotal": 157,
         "overlapCount": 4,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 9,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/28",
-          "maxDate": "2026/09/27"
+          "minDate": "2026/08/29",
+          "maxDate": "2026/09/28"
         },
         "retmax": 60,
         "topics": [
@@ -60597,8 +60680,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 59,
-            "idsFetched": 59,
+            "totalFound": 55,
+            "idsFetched": 55,
             "truncated": false,
             "error": null
           },
@@ -60615,8 +60698,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 22,
-            "idsFetched": 22,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -60633,8 +60716,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 32,
-            "idsFetched": 32,
+            "totalFound": 31,
+            "idsFetched": 31,
             "truncated": false,
             "error": null
           },
@@ -60651,8 +60734,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -60693,7 +60776,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 149,
+        "topicOnlyCount": 142,
         "ptPmids": [
           "42788594",
           "42618174",
@@ -60705,9 +60788,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 164,
-          "enriched": 164,
-          "withAbstract": 129,
+          "requested": 157,
+          "enriched": 157,
+          "withAbstract": 124,
           "error": null
         }
       },
@@ -60764,19 +60847,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 216,
+        "queued": 215,
         "needsReview": 448,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40401775",
+        "candidateId": "pmid:41051555",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-26T23:53:58.668Z",
+  "updatedAt": "2026-09-28T00:01:23.005Z",
   "configVersion": "guideline-v2"
 }
