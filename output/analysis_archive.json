@@ -3162,28 +3162,117 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-29",
+      "pmid": "41759814",
+      "title": "Relationship between cortical electrical responsiveness and changes in regional cerebral oxygenation (rSO) and return of spontaneous circulation in prolonged cardiac arrest: a multi-center observational study.",
+      "title_ko": "장시간 심정지에서 피질 전기 반응성과 국소 뇌 산소포화도(rSO2) 변화 및 자발순환 회복(ROSC)의 관계: 다기관 관찰 연구",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111031",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "장시간 심정지 동안 뇌 산소화 역치가 충족되면 피질 전기 활동이 회복될 수 있는가, 그리고 피질 활동 양상이 자발순환 회복(ROSC)과 연관되는가?",
+      "pico": {
+        "population": "[Country NR] Consecutive adult patients with in-hospital cardiac arrest continuously monitored using EEG and near-infrared spectroscopy during CPR; among 85 cardiac arrests (median duration 31 min, IQR 23–45), 53 yielded interpretable EEG recordings.",
+        "intervention": "Continuous cortical electrical monitoring by EEG together with regional cerebral oxygen saturation (rSO2) by near-infrared spectroscopy during CPR; near-normal rhythms appeared above specific rSO2 thresholds (delta and theta emerged at rSO2 ≥16%, alpha at >40%).",
+        "comparison": "No separate control group; different cortical electrical patterns were compared for their association with ROSC — diffuse cortical suppression (47%) versus near-normal rhythms (40%: delta 22%, theta 12%, alpha 6%) and pathologic activity (13%).",
+        "outcome": "Return of spontaneous circulation (ROSC): alpha activity was associated with ROSC (OR 5.4; 95% CI 1.08–29.20; p = 0.045), while suppression predicted lower ROSC odds (OR 0.12; 95% CI 0.02–0.53; p = 0.002)."
+      },
+      "pico_ko": {
+        "population": "[국가 미기재] 병원 내 심정지가 발생한 연속 성인 환자를 CPR 중 EEG와 near-infrared spectroscopy로 지속 감시함; 총 85건의 심정지(중앙값 지속시간 31분, IQR 23–45) 중 53건에서 해석 가능한 EEG 기록을 얻음.",
+        "intervention": "CPR 중 EEG를 통한 지속적 피질 전기 활동 감시와 near-infrared spectroscopy를 통한 국소 뇌 산소포화도(rSO2) 감시; 정상에 가까운 리듬이 특정 rSO2 역치 이상에서 출현함(delta·theta는 rSO2 ≥16%, alpha는 >40%에서 출현).",
+        "comparison": "별도의 대조군은 없으며, 서로 다른 피질 전기 양상의 ROSC 연관성을 비교함 — diffuse cortical suppression(47%) 대 정상에 가까운 리듬(40%: delta 22%, theta 12%, alpha 6%) 및 병적 활동(13%).",
+        "outcome": "자발순환 회복(ROSC): alpha 활동은 ROSC와 연관되었고(OR 5.4; 95% CI 1.08–29.20; p = 0.045), suppression은 낮은 ROSC 확률을 예측함(OR 0.12; 95% CI 0.02–0.53; p = 0.002)."
+      },
+      "keyFindings": [
+        "Among 85 cardiac arrests (median 31 min, IQR 23–45), 53 had interpretable EEG; diffuse cortical suppression was most common (47%), while near-normal rhythms occurred in 40% (delta 22%, theta 12%, alpha 6%) and pathologic activity in 13%.",
+        "Cortical rhythms emerged above specific oxygenation thresholds (delta/theta at rSO2 ≥16%, alpha at >40%) and persisted late into CPR (alpha up to 35 min, delta/theta up to 60 min), with suppression reverting to near-normal in 12% of transitions.",
+        "Alpha activity was associated with ROSC (OR 5.4; 95% CI 1.08–29.20; p = 0.045), whereas diffuse cortical suppression predicted lower ROSC odds (OR 0.12; 95% CI 0.02–0.53; p = 0.002)."
+      ],
+      "keyFindings_ko": [
+        "총 85건의 심정지(중앙값 31분, IQR 23–45) 중 53건에서 해석 가능한 EEG를 얻었고, diffuse cortical suppression이 가장 흔했으며(47%), 정상에 가까운 리듬이 40%(delta 22%, theta 12%, alpha 6%), 병적 활동이 13%에서 나타남.",
+        "피질 리듬은 특정 산소화 역치 이상에서 출현했고(delta/theta는 rSO2 ≥16%, alpha는 >40%) CPR 후반까지 지속되었으며(alpha 최대 35분, delta/theta 최대 60분), suppression은 전환의 12%에서 정상에 가까운 리듬으로 회복됨.",
+        "alpha 활동은 ROSC와 연관되었고(OR 5.4; 95% CI 1.08–29.20; p = 0.045), diffuse cortical suppression은 낮은 ROSC 확률을 예측함(OR 0.12; 95% CI 0.02–0.53; p = 0.002)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41759814",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41759814/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111031",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111031"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41759814)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41759814/"
+        },
+        {
+          "label": "웹 — Resuscitation official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00077-8/abstract"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 41759814)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41759814/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation official article page",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(26)00077-8/abstract",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
     "docIds": {
-      "2026-07": "15hUHhHzkmD35XH30nn63mzx3E-65dDSXJMNXohL3ik0"
+      "2026-07": "15hUHhHzkmD35XH30nn63mzx3E-65dDSXJMNXohL3ik0",
+      "2026-09": "1I2zh7dRNYVtfEuUtbaZ2o_opcm9-dX8r3JTAYSzNX78"
     },
     "folderIds": {
-      "2026-07": "1t3xruJeH8pDo3sYl2FAvbLRM7B9_lvW3"
+      "2026-07": "1t3xruJeH8pDo3sYl2FAvbLRM7B9_lvW3",
+      "2026-09": "1OndH01JLWYAqBZulh50HKMMXnBZU8eCP"
     },
     "pdfFiles": {},
     "fulltextDocIds": {
-      "2026-07": "1t1XkK4D9G7VQUX-BwQ_68sTvQsMvuDyxrdoBM-lD3VE"
+      "2026-07": "1t1XkK4D9G7VQUX-BwQ_68sTvQsMvuDyxrdoBM-lD3VE",
+      "2026-09": "1tPdqviRXL5SH83howmNt2OvEdvMGSm-P5vVvdv2tDB4"
     },
     "fulltextDone": {
       "2026-07": [
         "41841715",
         "42262991",
         "42261571"
+      ],
+      "2026-09": [
+        "41324946",
+        "41570881",
+        "42576250",
+        "41237843",
+        "41808206",
+        "42618951",
+        "42087223",
+        "42249495",
+        "41114833",
+        "42150044",
+        "42171428",
+        "41121365",
+        "41914828",
+        "41593766",
+        "42678699",
+        "42750044",
+        "41711512"
       ]
     },
     "fulltextLen": {
-      "2026-07": 20987
+      "2026-07": 20987,
+      "2026-09": 219738
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
