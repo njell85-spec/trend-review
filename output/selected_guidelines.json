@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-27T23:57:44.020Z"
+      "supersededAt": "2026-09-29T01:14:58.964Z"
     },
     {
       "id": "pmid:38531812",
@@ -24706,81 +24706,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:40956301",
-      "pmid": "40956301",
-      "title": "The use of tranexamic acid in the management of injured patients at risk of hemorrhage: a systematic review and meta-analysis and an Eastern Association for the Surgery of Trauma Practice Management Guideline.",
-      "pubDate": "2025 Nov 1",
-      "journal": "The journal of trauma and acute care surgery",
-      "publicationTypes": [
-        "Journal Article",
-        "Systematic Review",
-        "Meta-Analysis"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:22.888Z",
-      "abstract": "BACKGROUND: The use of tranexamic acid in trauma patients at risk for hemorrhage remains controversial. This guideline evaluates the use of tranexamic acid in two clinical settings, the prehospital environment and the inpatient setting. In addition, this PMG evaluates the use TXA in specific populations and at different dosages and evaluates the potential risks associated with its use.\nMETHODS: Using the Grading of Recommendations Assessment, Development and Evaluation methodology, an EAST working group conducted a systematic review using MEDLINE, EMBASE, and COCHRANE CENTRAL. Articles in English from 2000 through 2023 were considered in evaluating four PICO questions relevant to the use of TXA in injured trauma patients at risk of hemorrhage (defined as patients with a systolic blood pressure (SBP) ≤90 mm Hg or a heart rate ≥110/min or suspicion for active hemorrhage).\nRESULTS: Thirty studies were identified for qualitative analysis, of which 24 met criteria for meta-analysis. TXA was associated with a significant reduction in 24-hour mortality in both prehospital (log risk ratio, -0.29; 95% confidence interval, -0.53 to -0.05; p = 0.02) and in-hospital settings (-0.38[-0.69, -0.06]; p = 0.02). A similar benefit was observed at 30-days across both settings (prehospital: -0.18[-0.35, -0.00]; p = 0.05, in-hospital: -0.24[-0.40, -0.07]; p = 0.01). In patients with SBP ≤75 mm Hg, TXA reduced mortality, but this was not found to be significant (-0.18 [-0.46, 0.09]; p = 0.20). The incidence of vaso-occlusive events did not differ between groups in either setting. Moreover, a large heterogeneity regarding TXA dosing regimens and comparison groups across studies was observed.\nCONCLUSION: Based on current available evidence, we conditionally recommend for the routine use of TXA in the prehospital and in-hospital settings. We cannot recommend for or against the use of an initial higher dose of bolus TXA. Finally, we conditionally recommend for the routine use of TXA in patients with severe hypotension.\nLEVEL OF EVIDENCE: Systematic Review/Meta-Analyses; Level III.",
-      "meshTerms": [
-        "Tranexamic Acid",
-        "Humans",
-        "Antifibrinolytic Agents",
-        "Hemorrhage",
-        "Wounds and Injuries",
-        "Practice Guidelines as Topic"
-      ],
-      "keywords": [
-        "TXA",
-        "blood",
-        "hemorrhage",
-        "resuscitation",
-        "tranexamic acid"
-      ],
-      "doi": "10.1097/TA.0000000000004773",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 7.610952197030943,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.6109521970309428,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:08.135Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "외상 출혈 TXA 지침, 응급·중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|use-tranexamic-acid-management-injured-patients-at-risk-hemorrhage-systematic-review-meta-analysis-eastern-association-surgery-trauma-practice-management",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40887950",
       "pmid": "40887950",
       "title": "The American Psychiatric Association Practice Guideline for the Prevention and Treatment of Delirium.",
@@ -30981,7 +30906,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -36882,7 +36807,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40274,7 +40199,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -41967,7 +41892,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42715,7 +42640,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -43043,7 +42968,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43555,7 +43480,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43966,7 +43891,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44507,7 +44432,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46794,7 +46719,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -46866,7 +46791,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -46927,7 +46852,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47003,7 +46928,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47076,7 +47001,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47160,7 +47085,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47219,7 +47144,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47298,7 +47223,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47451,7 +47376,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47520,7 +47445,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47634,11 +47559,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.681025927683595,
+      "priority": 7.677179551603505,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6810259276835946,
+        "recency": 1.677179551603505,
         "scope": 0,
         "confidence": 2
       },
@@ -47653,7 +47578,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47713,7 +47638,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-27T23:57:43.122Z",
+      "lastSeenAt": "2026-09-29T01:14:58.051Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -55108,6 +55033,148 @@
         ]
       },
       "publishedAt": "2026-09-28"
+    },
+    {
+      "id": "pmid:40956301",
+      "pmid": "40956301",
+      "title": "The use of tranexamic acid in the management of injured patients at risk of hemorrhage: a systematic review and meta-analysis and an Eastern Association for the Surgery of Trauma Practice Management Guideline.",
+      "pubDate": "2025 Nov 1",
+      "journal": "The journal of trauma and acute care surgery",
+      "publicationTypes": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:22.888Z",
+      "abstract": "BACKGROUND: The use of tranexamic acid in trauma patients at risk for hemorrhage remains controversial. This guideline evaluates the use of tranexamic acid in two clinical settings, the prehospital environment and the inpatient setting. In addition, this PMG evaluates the use TXA in specific populations and at different dosages and evaluates the potential risks associated with its use.\nMETHODS: Using the Grading of Recommendations Assessment, Development and Evaluation methodology, an EAST working group conducted a systematic review using MEDLINE, EMBASE, and COCHRANE CENTRAL. Articles in English from 2000 through 2023 were considered in evaluating four PICO questions relevant to the use of TXA in injured trauma patients at risk of hemorrhage (defined as patients with a systolic blood pressure (SBP) ≤90 mm Hg or a heart rate ≥110/min or suspicion for active hemorrhage).\nRESULTS: Thirty studies were identified for qualitative analysis, of which 24 met criteria for meta-analysis. TXA was associated with a significant reduction in 24-hour mortality in both prehospital (log risk ratio, -0.29; 95% confidence interval, -0.53 to -0.05; p = 0.02) and in-hospital settings (-0.38[-0.69, -0.06]; p = 0.02). A similar benefit was observed at 30-days across both settings (prehospital: -0.18[-0.35, -0.00]; p = 0.05, in-hospital: -0.24[-0.40, -0.07]; p = 0.01). In patients with SBP ≤75 mm Hg, TXA reduced mortality, but this was not found to be significant (-0.18 [-0.46, 0.09]; p = 0.20). The incidence of vaso-occlusive events did not differ between groups in either setting. Moreover, a large heterogeneity regarding TXA dosing regimens and comparison groups across studies was observed.\nCONCLUSION: Based on current available evidence, we conditionally recommend for the routine use of TXA in the prehospital and in-hospital settings. We cannot recommend for or against the use of an initial higher dose of bolus TXA. Finally, we conditionally recommend for the routine use of TXA in patients with severe hypotension.\nLEVEL OF EVIDENCE: Systematic Review/Meta-Analyses; Level III.",
+      "meshTerms": [
+        "Tranexamic Acid",
+        "Humans",
+        "Antifibrinolytic Agents",
+        "Hemorrhage",
+        "Wounds and Injuries",
+        "Practice Guidelines as Topic"
+      ],
+      "keywords": [
+        "TXA",
+        "blood",
+        "hemorrhage",
+        "resuscitation",
+        "tranexamic acid"
+      ],
+      "doi": "10.1097/TA.0000000000004773",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 7.610952197030943,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.6109521970309428,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:08.135Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "외상 출혈 TXA 지침, 응급·중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|use-tranexamic-acid-management-injured-patients-at-risk-hemorrhage-systematic-review-meta-analysis-eastern-association-surgery-trauma-practice-management",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40956301",
+          "title": "The use of tranexamic acid in the management of injured patients at risk of hemorrhage: a systematic review and meta-analysis and an Eastern Association for the Surgery of Trauma Practice Management Guideline.",
+          "journal": "The journal of trauma and acute care surgery",
+          "pubDate": "2025 Nov 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40956301/",
+          "doi": "10.1097/TA.0000000000004773"
+        },
+        "org": "EAST (Eastern Association for the Surgery of Trauma)",
+        "version": "2025",
+        "title_ko": "출혈 위험이 있는 외상 환자에서 트라넥사민산(TXA) 사용: 체계적 문헌고찰·메타분석 및 EAST 진료지침",
+        "scope_ko": "출혈 위험이 있는 성인 외상 환자(수축기혈압 ≤90 mmHg 또는 심박수 ≥110회/분 또는 활동성 출혈 의심으로 정의)를 대상으로, 병원전(prehospital) 단계와 입원(in-hospital) 단계 두 세팅에서의 TXA 사용을 다룬다. 아울러 특정 환자군(중증 저혈압)과 서로 다른 용량(고용량 볼루스 대 표준 용량)에서의 사용 및 관련 위험(혈전·혈관폐색성 사건)을 평가한다.",
+        "summary": [
+          "For injured patients at risk of hemorrhage (SBP ≤90 mm Hg, HR ≥110/min, or suspicion of active hemorrhage), conditionally recommend FOR routine PREHOSPITAL use of TXA — associated with reduced 24-hour mortality (log RR −0.29; 95% CI −0.53 to −0.05) and 30-day mortality (−0.18; 95% CI −0.35 to −0.00) (GRADE conditional recommendation; Level III).",
+          "Conditionally recommend FOR routine IN-HOSPITAL use of TXA in the same at-risk population — associated with reduced 24-hour mortality (log RR −0.38; 95% CI −0.69 to −0.06) and 30-day mortality (−0.24; 95% CI −0.40 to −0.07) (conditional recommendation; Level III).",
+          "CANNOT recommend for or against an initial HIGHER-DOSE bolus of TXA (e.g., 2–3 g / high-dose regimens) versus the standard 1 g bolus — insufficient and highly heterogeneous evidence across dosing regimens and comparison groups.",
+          "Conditionally recommend FOR routine use of TXA in patients with SEVERE HYPOTENSION — note that in the SBP ≤75 mm Hg subgroup TXA reduced mortality but the effect was not statistically significant (log RR −0.18; 95% CI −0.46 to 0.09; p = 0.20) (conditional recommendation).",
+          "Safety: the incidence of vaso-occlusive (thromboembolic) events did NOT differ between TXA and comparison groups in either the prehospital or in-hospital setting.",
+          "Evidence base: GRADE methodology; systematic review of MEDLINE/EMBASE/Cochrane CENTRAL (English, 2000–2023); 30 studies qualitatively reviewed, 24 in meta-analysis; overall Level of Evidence III."
+        ],
+        "summary_ko": [
+          "출혈 위험이 있는 외상 환자(SBP ≤90 mmHg, HR ≥110회/분, 또는 활동성 출혈 의심)에서 병원전 단계의 TXA 루틴 사용을 조건부 권고(FOR) — 24시간 사망률(log RR −0.29; 95% CI −0.53~−0.05)과 30일 사망률(−0.18; 95% CI −0.35~−0.00) 감소와 연관(GRADE 조건부 권고; 근거수준 III).",
+          "동일 위험군에서 입원 단계의 TXA 루틴 사용을 조건부 권고(FOR) — 24시간 사망률(log RR −0.38; 95% CI −0.69~−0.06)과 30일 사망률(−0.24; 95% CI −0.40~−0.07) 감소와 연관(조건부 권고; 근거수준 III).",
+          "초기 고용량 볼루스(예: 2–3 g 등 고용량 요법)를 표준 1 g 볼루스와 비교했을 때 찬반 어느 쪽도 권고할 수 없음 — 용량 요법·대조군의 이질성이 크고 근거가 불충분.",
+          "중증 저혈압 환자에서 TXA 루틴 사용을 조건부 권고(FOR) — 다만 SBP ≤75 mmHg 하위군에서는 사망률이 감소했으나 통계적으로 유의하지 않았음(log RR −0.18; 95% CI −0.46~0.09; p = 0.20).",
+          "안전성: 혈관폐색성(혈전색전) 사건 발생률은 병원전·입원 두 세팅 모두에서 TXA군과 대조군 간 차이가 없었음.",
+          "근거: GRADE 방법론; MEDLINE/EMBASE/Cochrane CENTRAL 체계적 고찰(영어, 2000–2023); 정성분석 30편, 메타분석 24편; 전체 근거수준 III."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "실제 용량 요법 지형: CRASH-2 원형과 JTS 2 g 볼루스 선호 (약물정보 2차 자료)",
+            "body_ko": "일리노이대(UIC) 약물정보그룹 FAQ는 가장 널리 쓰이는 요법이 '병원전 또는 손상 후 3시간 이내에 TXA 1 g IV 볼루스 후 1 g을 8시간에 걸쳐 주입'하는 CRASH-2(2010) 유래 방식이라고 설명한다. 다만 미 국방부 Joint Trauma System(JTS)은 최근 손상 직후 가능한 한 빨리 2 g 볼루스를 주는 방식을 선호하도록 갱신했다고 전한다. 모든 지침이 3시간 이내 투여를 강조하며, CRASH-2 분석상 3시간 이후 투여는 출혈로 인한 사망 위험을 오히려 증가시키는 것으로 보인다고 언급한다. (EAST 지침 원문이 아니라 약물정보 요약의 정리임)",
+            "sourceLabel": "University of Illinois Chicago — Drug Information Group FAQ (TXA dosing for major trauma)",
+            "sourceUrl": "https://dig.pharmacy.uic.edu/faqs/2026-2/march-2026-faqs/what-information-is-available-on-the-use-and-dosing-of-tranexamic-acid-txa-for-major-trauma/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "This shifts TXA from a case-by-case decision toward a default in the bleeding trauma patient: give TXA routinely both prehospital and in the ED/trauma bay to patients with SBP ≤90, HR ≥110, or clear active hemorrhage, and do NOT withhold it in the severely hypotensive (SBP ≤75) patient. The mortality signal is time-critical — administer as early as possible and within 3 hours of injury. Because higher-dose bolus regimens have no proven advantage, the standard 1 g IV bolus (± 1 g/8 h infusion) remains reasonable; the reassuring thromboembolic safety data mean fear of clotting should not delay a first dose in an actively bleeding patient.",
+        "practiceImpact_ko": "이 지침은 TXA를 '개별 판단' 대상에서 출혈 외상 환자의 '기본 처치'로 옮긴다: SBP ≤90, HR ≥110, 또는 명확한 활동성 출혈이 있는 환자에게 병원전과 응급실/외상소생실 모두에서 루틴으로 TXA를 투여하고, 중증 저혈압(SBP ≤75) 환자에서도 보류하지 말 것. 사망률 이득은 시간 의존적이므로 가능한 한 조기에, 손상 후 3시간 이내에 투여한다. 고용량 볼루스 요법의 이점이 입증되지 않았으므로 표준 1 g IV 볼루스(± 1 g/8시간 지속주입)가 여전히 합리적이며, 혈전색전 안전성 자료가 양호하므로 응고 우려로 첫 용량 투여를 지연시켜서는 안 된다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40956301",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40956301/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/TA.0000000000004773",
+            "url": "https://doi.org/10.1097/TA.0000000000004773"
+          },
+          {
+            "label": "웹 — Taming the SRU — Journal Club: Updated EAST Trauma Guidelines for TXA Use",
+            "url": "https://www.tamingthesru.com/blog/journal-club-updated-east-trauma-guidelines-for-txa-use"
+          },
+          {
+            "label": "웹 — University of Illinois Chicago Drug Information Group — TXA dosing for major trauma FAQ (March 2026)",
+            "url": "https://dig.pharmacy.uic.edu/faqs/2026-2/march-2026-faqs/what-information-is-available-on-the-use-and-dosing-of-tranexamic-acid-txa-for-major-trauma/"
+          },
+          {
+            "label": "웹 — Advocate Aurora Health Institutional Repository — abstract of the 2025 EAST TXA guideline",
+            "url": "https://institutionalrepository.aah.org/allother/1266/"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-29"
     }
   ],
   "rejected": [
@@ -60143,7 +60210,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-27T23:57:34.281Z",
+      "discoveredAt": "2026-09-29T01:14:47.273Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -60462,7 +60529,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-27T23:57:34.281Z",
+      "discoveredAt": "2026-09-29T01:14:47.273Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -60496,7 +60563,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-27T23:57:34.281Z",
+      "discoveredAt": "2026-09-29T01:14:47.273Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -60538,7 +60605,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-27T23:57:34.281Z",
+      "discoveredAt": "2026-09-29T01:14:47.273Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -60571,12 +60638,12 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-27T23:57:34.281Z",
+      "discoveredAt": "2026-09-29T01:14:47.273Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
       "doi": "10.1186/s44156-026-00128-0",
-      "pmcid": "",
+      "pmcid": "PMC13613777",
       "region": "eu",
       "by": "nationality",
       "status": "rejected",
@@ -60637,9 +60704,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260928_085301:guideline:2026-09-28",
+    "runId": "trend_review_20260929_100911:guideline:2026-09-29",
     "outcome": "published",
-    "publishedId": "pmid:41051555",
+    "publishedId": "pmid:40956301",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -60658,21 +60725,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 12,
+            "idsFetched": 12,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 157,
+        "mergedTotal": 159,
         "overlapCount": 4,
         "ptOnlyCount": 2,
-        "expandedOnlyCount": 9,
+        "expandedOnlyCount": 8,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/29",
-          "maxDate": "2026/09/28"
+          "minDate": "2026/08/30",
+          "maxDate": "2026/09/29"
         },
         "retmax": 60,
         "topics": [
@@ -60680,8 +60747,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 55,
-            "idsFetched": 55,
+            "totalFound": 54,
+            "idsFetched": 54,
             "truncated": false,
             "error": null
           },
@@ -60698,8 +60765,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -60707,8 +60774,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -60716,8 +60783,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 31,
-            "idsFetched": 31,
+            "totalFound": 32,
+            "idsFetched": 32,
             "truncated": false,
             "error": null
           },
@@ -60752,8 +60819,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -60776,7 +60843,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 142,
+        "topicOnlyCount": 145,
         "ptPmids": [
           "42788594",
           "42618174",
@@ -60788,9 +60855,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 157,
-          "enriched": 157,
-          "withAbstract": 124,
+          "requested": 159,
+          "enriched": 159,
+          "withAbstract": 126,
           "error": null
         }
       },
@@ -60847,19 +60914,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 215,
+        "queued": 214,
         "needsReview": 448,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41051555",
+        "candidateId": "pmid:40956301",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-28T00:01:23.005Z",
+  "updatedAt": "2026-09-29T01:19:35.275Z",
   "configVersion": "guideline-v2"
 }

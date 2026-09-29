@@ -1431,23 +1431,6 @@
       "status": "queued"
     },
     {
-      "pmid": "36472590",
-      "title": "Progress and Challenges in Bacterial Meningitis: A Review.",
-      "journal": "JAMA",
-      "score": 7.2,
-      "topic": "infection",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "세균성 뇌수막염 JAMA 종설, 감염·신경응급 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "36946547",
       "title": "Advances in the management of idiopathic pulmonary fibrosis and progressive pulmonary fibrosis.",
       "journal": "BMJ",
@@ -10546,6 +10529,117 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "36472590",
+      "title": "Progress and Challenges in Bacterial Meningitis: A Review.",
+      "journal": "JAMA",
+      "score": 7.2,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "세균성 뇌수막염 JAMA 종설, 감염·신경응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-29",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "36472590",
+          "title": "Progress and Challenges in Bacterial Meningitis: A Review.",
+          "journal": "JAMA",
+          "pubDate": "2022-12-7",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36472590/",
+          "doi": "10.1001/jama.2022.20521"
+        },
+        "title_ko": "세균성 뇌수막염의 발전과 과제: 리뷰",
+        "scope_ko": "성인과 신생아를 중심으로 세균성 뇌수막염의 역학, 원인균, 위험인자, 임상 증상, 진단(뇌영상·요추천자·뇌척수액 소견·그람 염색), 경험적 항생제 및 보조 덱사메타손 치료를 개괄하는 JAMA 종설입니다. 아래 본문은 논문 전문을 확보하지 못해 초록에 근거한 'article' 절과, 권위 있는 2차 출처에서 보강한 'augmented' 절로 나누어 제시합니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "중요성 — 역학·사망률·후유증",
+            "body_ko": "세균성 뇌수막염은 전 세계적인 보건 문제로, 발생률은 고소득 국가에서 연간 10만 명당 약 0.9명, 저소득 국가에서 연간 10만 명당 최대 80명에 이릅니다. 저소득 국가에서 세균성 뇌수막염의 사망률은 최대 54%에 달합니다. 생존자 중 최대 24%는 청력 소실이나 국소 신경학적 결손과 같은 만성 신경학적 후유증을 겪습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "원인균",
+            "body_ko": "16세를 초과하는 사람에서 세균성 뇌수막염의 약 72%는 Streptococcus pneumoniae가, 약 11%는 Neisseria meningitidis가 일으킵니다. 조기발현 신생아 뇌수막염의 약 35%는 Escherichia coli와 Streptococcus agalactiae가 원인입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "위험인자",
+            "body_ko": "성인에서 세균성 뇌수막염의 위험인자에는 고령과 면역억제 상태가 포함됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상 증상",
+            "body_ko": "가장 흔한 증상은 두통(84%), 발열(74%), 목 경직(74%), 의식 변화(Glasgow Coma Scale 점수 중앙값 [IQR] 11점 [9–14], 척도 범위 3–15), 그리고 오심(62%)입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단 — 뇌영상·요추천자·뇌척수액·그람 염색",
+            "body_ko": "의식 변화, 국소 신경학적 결손, 유두부종이 있거나 면역저하 상태 또는 중추신경계 질환의 병력이 있는 환자에서는 요추천자에 앞서 뇌영상을 시행해야 합니다.\n\n입원 시 다음 중 어느 하나라도 있으면 세균성 뇌수막염을 의심해야 합니다: 혈청 백혈구 10.0 ×10⁹/L 초과, 뇌척수액(CSF) 백혈구 2000/μL 초과, CSF 과립구 1180/μL 초과, CSF 단백 2.2 g/L 초과, CSF 포도당 34.23 mg/dL 미만, 또는 발열.\n\n그람 염색에서 세균 양성 결과는 진단적이지만, 세균성 뇌수막염에 대한 그람 염색 양성의 민감도는 50%에서 90%까지 다양합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "경험적 항생제 치료",
+            "body_ko": "Ceftriaxone 내성 Streptococcus pneumoniae의 유병률이 1%를 초과하는 국가에서는 vancomycin과 ceftriaxone이 경험적 항생제로 선택되며, 신생아, 고령 환자, 면역저하 환자에서는 여기에 ampicillin을 추가합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "보조 덱사메타손",
+            "body_ko": "세균성 뇌수막염 환자에서는 보조 요법으로 덱사메타손을 사용해야 하되, Listeria monocytogenes가 확인되면 중단해야 합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론 및 임상적 의의",
+            "body_ko": "세균성 뇌수막염은 연간 10만 명당 약 0.9명에서 80명에게 발생하며 사망률은 최대 54%에 이릅니다. 일차 치료는 신속한 경험적 정맥 항생제 투여와 보조 덱사메타손입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] Listeria 뇌수막염에서 덱사메타손을 둘러싼 최신 논쟁",
+            "body_ko": "본 종설은 Listeria monocytogenes가 확인되면 덱사메타손을 중단하도록 권고하지만, 이후 발표된 네덜란드 전국 코호트(2006–2022, 성인 지역사회획득 L. monocytogenes 뇌수막염 162명)는 이와 상반된 신호를 보여줍니다. 표준 덱사메타손(10 mg 1일 4회, 4일)을 받은 군에서 불량 예후가 46%였던 반면 미투여군에서는 72%였고, 전체 치명률은 31%였습니다. 표준 덱사메타손은 불량 예후에 대한 보정 오즈비 0.40(95% CI 0.19–0.81)로 독립적으로 연관되었습니다. 연구진은 '보조 덱사메타손이 L. monocytogenes 뇌수막염에서 더 나은 예후와 연관되며, Listeria가 의심·확인되더라도 중단해서는 안 된다'고 결론지어, 과거 프랑스 연구에 기반한 기존 권고에 이의를 제기했습니다. 즉 이 종설의 'Listeria 시 중단' 권고는 이후 근거로 재검토될 여지가 있습니다.\n— 보강 출처: Adjunctive dexamethasone in adults with Listeria monocytogenes meningitis: nationwide cohort (PMC10050789) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10050789/)",
+            "origin": "augmented",
+            "sourceLabel": "Adjunctive dexamethasone in adults with Listeria monocytogenes meningitis: nationwide cohort (PMC10050789)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10050789/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급실·중환자실에서는 의식 변화·국소 결손·면역저하 등 고위험 소견이 있으면 요추천자 전 뇌영상을 먼저 하되 항생제·덱사메타손 투여를 지연시키지 말고, ceftriaxone 내성 폐렴구균이 1%를 넘는 지역에서는 vancomycin+ceftriaxone(신생아·고령·면역저하 시 ampicillin 추가)을 경험적으로 시작하며 첫 항생제와 함께 덱사메타손을 병용합니다. 본 종설은 Listeria 확인 시 덱사메타손 중단을 권하지만, 이후 코호트 근거가 이를 반박하므로 개별 판단 시 참고할 수 있습니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 36472590",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36472590/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2022.20521",
+            "url": "https://doi.org/10.1001/jama.2022.20521"
+          },
+          {
+            "label": "웹 — JAMA — Progress and Challenges in Bacterial Meningitis: A Review (초록 페이지)",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2799148"
+          },
+          {
+            "label": "웹 — JAMA — Review of Progress and Challenges in Bacterial Meningitis (독자 서신, Giuliano·Sbrana·Tascini)",
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2804074"
+          },
+          {
+            "label": "웹 — IDSA 세균성 뇌수막염 지침 요약 (American Family Physician)",
+            "url": "https://www.aafp.org/pubs/afp/issues/2005/0515/p2003.html"
+          },
+          {
+            "label": "웹 — Adjunctive dexamethasone in adults with Listeria monocytogenes meningitis: nationwide cohort (PMC10050789)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10050789/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -10603,9 +10697,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-28",
+    "date": "2026-09-29",
     "outcome": "published",
-    "publishedId": "36070788"
+    "publishedId": "36472590"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-09-29"
 }
