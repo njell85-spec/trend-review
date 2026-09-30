@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-09-29T01:14:58.964Z"
+      "supersededAt": "2026-09-30T00:45:11.076Z"
     },
     {
       "id": "pmid:38531812",
@@ -30906,7 +30906,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -36807,7 +36807,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -40199,7 +40199,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -41892,7 +41892,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42640,7 +42640,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 1,
@@ -42968,7 +42968,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43480,7 +43480,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -43836,8 +43836,7 @@
       "journal": "The European respiratory journal",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline",
-        "Review"
+        "Practice Guideline"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -43845,16 +43844,16 @@
       "discoveredAt": "2026-08-17T04:40:48.357Z",
       "abstract": "BACKGROUND: Granulomatous-lymphocytic interstitial lung disease (GLILD) is a lung disease first described in people affected by common variable immunodeficiency disorders (CVID). Despite growing recognition of GLILD, there is no accepted diagnostic and management guideline, and current practice varies significantly across centres and countries. This clinical practice guideline provides evidence- and consensus-based recommendations on the screening and diagnosis of GLILD in patients with CVID.\nMETHODS: A panel representing multiple interdisciplinary perspectives convened with methodologists to prioritise clinical questions, and review and assess the evidence using Grading of Recommendations Assessment, Development and Evaluation (GRADE) methodology. Evidence-to-decision frameworks were used to decide on the direction and strength of recommendations.\nRESULTS: Screening for GLILD is recommended in all adult patients with CVID, preferably using high-resolution computed tomography. Evaluation should be performed by a multidisciplinary team. Routine lung biopsies are not mandatory but necessary for atypical presentations. As part of the diagnostic process, pulmonary infections should be excluded and lymphocytic alveolitis sought for by means of bronchoalveolar lavage. The severity of lung function impairment should be evaluated using pulmonary function tests including gas transfer assessment. Most of the recommendations are graded as conditional because of low certainty in the evidence regarding health effects.\nCONCLUSIONS: This guideline allows for international homogeneity in the diagnosis of GLILD, thereby paving the way for improved comparability between centres, improving equity in healthcare for those affected by GLILD and facilitating multicentre research collaborations for future studies.",
       "meshTerms": [
-        "Humans",
-        "Lung Diseases, Interstitial",
-        "Common Variable Immunodeficiency",
-        "Tomography, X-Ray Computed",
-        "Respiratory Function Tests",
         "Adult",
-        "Lung",
+        "Humans",
         "Biopsy",
+        "Common Variable Immunodeficiency",
         "Europe",
-        "Evidence-Based Medicine"
+        "Evidence-Based Medicine",
+        "Lung",
+        "Lung Diseases, Interstitial",
+        "Respiratory Function Tests",
+        "Tomography, X-Ray Computed"
       ],
       "keywords": [],
       "doi": "10.1183/13993003.02224-2025",
@@ -43891,7 +43890,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44432,7 +44431,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46719,7 +46718,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -46791,7 +46790,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-1-principles-oversight-quality-monitoring-approved-by-board-directors-april-29",
       "supersedes": [],
       "llmFit": {
@@ -46852,7 +46851,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46928,7 +46927,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47001,7 +47000,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47085,7 +47084,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47144,7 +47143,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47223,7 +47222,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "unknown|harmonized-acquisition-connectome-mri-clinical-data-stroke-parkinson-s-disease-glioma-delphi-derived-protocol-by-european-academy-neurology",
       "supersedes": [],
       "llmFit": {
@@ -47376,7 +47375,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47445,7 +47444,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47559,11 +47558,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.677179551603505,
+      "priority": 7.673604547781843,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.677179551603505,
+        "recency": 1.673604547781843,
         "scope": 0,
         "confidence": 2
       },
@@ -47578,7 +47577,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47638,13 +47637,165 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-29T01:14:58.051Z",
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "지침 자체가 아니라 2025 ERC/ESICM 권고를 적용한 단일기관 후향연구",
         "at": "2026-09-25T00:03:54.933Z"
+      }
+    },
+    {
+      "id": "pmid:42549877",
+      "pmid": "42549877",
+      "title": "[ESPEN practical and partially revised guideline: Clinical nutrition in the intensive care unit].",
+      "pubDate": "2026 Sep 22",
+      "journal": "Nutricion hospitalaria",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "English Abstract"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
+      "abstract": "Following the new ESPEN Standard Operating Procedures, the previous 2019 guideline to provide best medical nutritional therapy to critically ill patients has been shortened and partially revised. Following this update, we propose this publication as a practical guideline based on the published scientific guideline, but shortened and illustrated by flow charts. The main goal of this practical guideline is to increase understanding and allow the practitioner to implement the Nutrition in the ICU guidelines. All the items discussed in the previous guidelines are included as well as special conditions.",
+      "meshTerms": [
+        "Humans",
+        "Intensive Care Units",
+        "Critical Illness",
+        "Critical Care",
+        "Enteral Nutrition",
+        "Nutritional Support",
+        "Nutrition Therapy",
+        "Parenteral Nutrition",
+        "Practice Guidelines as Topic"
+      ],
+      "keywords": [
+        "ESPEN. Nutrición enteral. Guías clínicas. Cuidados intensivos. Soporte nutricional. Nutrición parenteral."
+      ],
+      "doi": "10.20960/nh.06943",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 5.6,
+      "breakdown": {
+        "authority": 0,
+        "topic": 1.6,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ESPEN 중환자 영양 실무 지침, 중환자의학 직접 적용",
+        "at": "2026-09-30T00:45:12.546Z"
+      }
+    },
+    {
+      "id": "pmid:42807668",
+      "pmid": "42807668",
+      "title": "Patient and author diversity and representation in studies supporting the European Respiratory Society/European Society of Intensive Care Medicine/European Society of Clinical Microbiology and Infectious Diseases/Asociación Latinoamericana de Tórax severe community-acquired pneumonia guidelines.",
+      "pubDate": "2026",
+      "journal": "Respiratory research & clinical practice",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
+      "abstract": "OBJECTIVE: Insufficient diversity is common among patients and authors in studies supporting guidelines. We hypothesized that the latest severe community-acquired pneumonia (CAP) guidelines suffered from such bias.\nMETHODS: We reviewed all original studies supporting the latest severe CAP guidelines. We assessed whether there were language restrictions in the search for studies to be included in each recommendation and recorded the following: the proportion of female patients included in the studies; ethnicity (when available); year of publication; and study location, which was classified by income in accordance with the World Bank classification. We also compiled data on the sex and affiliation of the first and last authors.\nRESULTS: The guidelines included 115 references in eight sections; 74 unique references supported the recommendations. There was language restriction in the selection of studies in 3 of 8 questions. The proportion of female patients ranged from 4.7% to 70.5% (mean, 36%). Most of the patients were White (72.2-91.2%), and 80.5% of the studies were conducted in high-income countries. Only 6 (5.2%) of the 115 references included patients from low- or middle-income countries. Most of the first and last authors were male (75.6-88.3%) and were based in high-income countries (96.1%).\nCONCLUSIONS: The studies supporting the severe CAP guidelines were found to have insufficient diversity and representativeness of patients, sex, and country of origin of the authors. To enhance the generalizability of severe CAP guidelines, strategies must be devised to increase the diversity of patients and authors.",
+      "meshTerms": [
+        "Humans",
+        "Community-Acquired Pneumonia",
+        "Female",
+        "Societies, Medical",
+        "Europe",
+        "Practice Guidelines as Topic",
+        "Authorship",
+        "Male",
+        "Community-Acquired Infections",
+        "Critical Care"
+      ],
+      "keywords": [
+        "Authorship",
+        "Community-acquired pneumonia",
+        "Critical care",
+        "Gender equity"
+      ],
+      "doi": "10.36416/1806-3756/e20250376",
+      "pmcid": "PMC13618722",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esicm"
+      },
+      "priority": 11.673604547781842,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 1.673604547781843,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esicm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
+      "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 1,
+        "keep": false,
+        "reason": "지침 자체가 아니라 CAP 지침의 다양성 편향 연구 논문",
+        "at": "2026-09-30T00:45:12.546Z"
       }
     }
   ],
@@ -55175,6 +55326,181 @@
         ]
       },
       "publishedAt": "2026-09-29"
+    },
+    {
+      "id": "pmid:42809101",
+      "pmid": "42809101",
+      "title": "Anesthesia for acute ischemic stroke after the 2026 AHA/ASA guideline: a peri-thrombectomy practice framework.",
+      "pubDate": "2026 Sep 29",
+      "journal": "Journal of anesthesia",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
+      "abstract": "The 2026 American Heart Association/American Stroke Association guideline for acute ischemic stroke expands eligibility for endovascular thrombectomy, broadens the role of tenecteplase, recommends against routine intensive post-reperfusion systolic blood pressure lowering, introduces an explicit recommendation against intensive glucose control to 80-130 mg/dL, and includes dedicated pediatric recommendations. Although the guideline is not written primarily for anesthesiologists, its implementation directly affects peri-thrombectomy care. This narrative review translates the 2026 guideline into an implementation-oriented practice framework for anesthesia teams. Recommendations are explicitly labeled as either guideline-derived or as pragmatic anesthesia implementation suggestions informed by supporting literature. Topics covered are rapid preprocedural assessment, choice between general anesthesia and procedural sedation (including triggers for conversion from sedation to general anesthesia), hemodynamic management before and after recanalization, ventilation and metabolic targets, anesthetic drug selection, neuromonitoring, post-thrombectomy handover, and pediatric considerations. Practice-model variation is acknowledged, and the framework distinguishes physiologic and escalation principles applicable across staffing models from elements specific to continuous anesthesia-led care. Areas of substantive uncertainty include posterior-circulation anesthetic technique, pediatric peri-procedural management, and the role of intraprocedural neuromonitoring.",
+      "meshTerms": [],
+      "keywords": [
+        "Acute ischemic stroke",
+        "Blood pressure management",
+        "Endovascular thrombectomy",
+        "General anesthesia",
+        "Neuroanesthesia"
+      ],
+      "doi": "10.1007/s00540-026-03908-4",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-09-30T00:45:10.220Z",
+      "lineageKey": "aha|anesthesia-acute-ischemic-stroke-after-asa-peri-thrombectomy-practice-framework",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "2026 AHA/ASA 뇌졸중 지침 기반 혈전제거술 실무틀, 신경응급 핵심",
+        "at": "2026-09-30T00:45:12.546Z"
+      },
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42809101",
+          "title": "Anesthesia for acute ischemic stroke after the 2026 AHA/ASA guideline: a peri-thrombectomy practice framework.",
+          "journal": "Journal of anesthesia",
+          "pubDate": "2026 Sep 29",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42809101/",
+          "doi": "10.1007/s00540-026-03908-4"
+        },
+        "org": "AHA/ASA (translated for anesthesia practice; review in Journal of Anesthesia)",
+        "version": "2026",
+        "title_ko": "2026 AHA/ASA 가이드라인 이후 급성 허혈성 뇌졸중의 마취: 혈전제거술 전후 실무 프레임워크",
+        "scope_ko": "성인 급성 허혈성 뇌졸중(특히 대혈관폐색으로 혈관내 혈전제거술을 받는 환자)의 혈전제거술 전후 마취·중환자 관리를 다루는 내러티브 리뷰다. 2026 AHA/ASA 급성 허혈성 뇌졸중 가이드라인을 마취팀 실무용으로 번역하여 시술 전 신속 평가, 전신마취 vs 진정 선택, 재관류 전후 혈압·환기·대사 목표, 마취약 선택, 신경모니터링, 인계, 소아 고려사항을 포함하며, 권고는 '가이드라인 유래'와 '실무적 마취 제안'으로 명시적으로 구분한다.",
+        "summary": [
+          "This is a narrative review that translates the 2026 AHA/ASA acute ischemic stroke guideline into a peri-thrombectomy practice framework for anesthesia teams; every recommendation is explicitly labeled as either guideline-derived or a pragmatic anesthesia implementation suggestion.",
+          "Reflecting the guideline, it supports expanded endovascular thrombectomy (EVT) eligibility and a broadened role for tenecteplase, which anesthesia teams must accommodate in preprocedural assessment and workflow.",
+          "For the general-anesthesia vs procedural-sedation decision, the framework favors an individualized choice and defines explicit triggers for intraprocedural conversion from sedation to general anesthesia (e.g., airway compromise, agitation/motion, aspiration risk, deteriorating neurology).",
+          "Hemodynamic management is aligned with the guideline's move AWAY from routine intensive systolic BP lowering after reperfusion; the review addresses distinct pre- vs post-recanalization BP goals.",
+          "It sets ventilation and metabolic targets and, consistent with the guideline, advises against intensive glucose control to a tight 80–130 mg/dL range.",
+          "It provides guidance on anesthetic drug selection, intraprocedural neuromonitoring, structured post-thrombectomy handover, and — mirroring the guideline's new pediatric section — dedicated pediatric peri-procedural considerations.",
+          "The framework distinguishes physiologic/escalation principles applicable across staffing models from elements specific to continuous anesthesia-led care, and flags substantive uncertainty in posterior-circulation anesthetic technique, pediatric peri-procedural management, and intraprocedural neuromonitoring."
+        ],
+        "summary_ko": [
+          "2026 AHA/ASA 급성 허혈성 뇌졸중 가이드라인을 마취팀용 혈전제거술 전후 실무 프레임워크로 번역한 내러티브 리뷰로, 모든 권고를 '가이드라인 유래' 또는 '실무적 마취 제안'으로 명시 구분한다.",
+          "가이드라인을 반영해 확대된 EVT 적응증과 tenecteplase 역할 확대를 지지하며, 마취팀은 이를 시술 전 평가·워크플로우에 반영해야 한다.",
+          "전신마취 vs 진정 선택은 개별화를 권하되, 시술 중 진정→전신마취 전환 트리거(기도 위협, 초조/움직임, 흡인 위험, 신경학적 악화 등)를 명시한다.",
+          "혈역학 관리는 재관류 후 '일상적 강력 수축기혈압 강하'를 지양하는 가이드라인 방향에 맞추며, 재개통 전후로 구분된 혈압 목표를 다룬다.",
+          "환기·대사 목표를 제시하고, 가이드라인과 일치하게 80–130 mg/dL의 엄격한 혈당 조절은 지양하도록 권한다.",
+          "마취약 선택, 시술 중 신경모니터링, 구조화된 혈전제거술 후 인계, 그리고 가이드라인의 신설 소아 섹션을 반영한 소아 시술 전후 고려사항을 제공한다.",
+          "인력 모델에 무관하게 적용되는 생리학·에스컬레이션 원칙과 지속적 마취주도 관리에만 해당하는 요소를 구분하며, 후방순환 마취기법·소아 시술관리·시술중 신경모니터링을 불확실 영역으로 명시한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "혈전용해제 선택 (tenecteplase)",
+            "detail": "Previously tenecteplase was framed mainly as a reasonable alternative to alteplase; the 2026 guideline elevates tenecteplase to equal, Class 1 footing with alteplase for eligible adults within 4.5 h of onset — tenecteplase 0.25 mg/kg IV bolus (max 25 mg) OR alteplase 0.9 mg/kg. Reason: non-inferiority data plus the practical advantage of a single bolus over a ~1 h infusion, which speeds interhospital transfer and door-to-needle.",
+            "detail_ko": "이전에는 tenecteplase가 주로 alteplase의 '수용 가능한 대안'으로 위치했으나, 2026 가이드라인은 발병 4.5시간 이내 적격 성인에서 tenecteplase를 alteplase와 동등한 Class 1로 격상했다 — tenecteplase 0.25 mg/kg IV bolus(최대 25 mg) 또는 alteplase 0.9 mg/kg. 이유: 비열등성 근거와 약 1시간 주입 대비 단일 볼루스라는 실무적 이점(병원간 이송·door-to-needle 단축)."
+          },
+          {
+            "topic": "혈전제거술 적응증 확대 — 후기 시간창/큰 코어",
+            "detail": "EVT eligibility is expanded: beyond the standard anterior-circulation LVO within 6 h (NIHSS ≥6, prestroke mRS 0–1, ASPECTS 3–10), a new Class 1 recommendation covers selected patients in the 6–24 h window including those with larger cores (e.g., age <80, low ASPECTS 3–5 without significant mass effect) when advanced imaging shows salvageable tissue. Reason: recent large-core and late-window trial evidence.",
+            "detail_ko": "EVT 적응증이 확대됐다: 표준 전방순환 LVO 6시간 이내(NIHSS ≥6, 발병 전 mRS 0–1, ASPECTS 3–10)를 넘어, 6–24시간 창의 선별 환자(예: 80세 미만, 낮은 ASPECTS 3–5·유의한 종괴효과 없음)에서 진보영상이 구제 가능 조직을 보이면 EVT를 신설 Class 1로 권고한다. 이유: 최근 큰 코어·후기 시간창 임상시험 근거."
+          },
+          {
+            "topic": "혈전제거술 — 후방순환/기저동맥폐색",
+            "detail": "Basilar artery occlusion, previously without a strong dedicated recommendation, is now explicitly supported for EVT within 24 h in selected patients (baseline mRS 0–1, NIHSS ≥10, PC-ASPECTS ≥6). Reason: positive basilar thrombectomy trials (e.g., ATTENTION/BAOCHE). (Sources vary on citing this as Class 1 vs Class 2a.)",
+            "detail_ko": "이전에 전용 강권고가 없던 기저동맥폐색이, 2026에서는 선별 환자(기저 mRS 0–1, NIHSS ≥10, PC-ASPECTS ≥6)에서 24시간 이내 EVT로 명시 지지된다. 이유: 양성 기저동맥 혈전제거 임상시험(예: ATTENTION/BAOCHE). (출처에 따라 Class 1 또는 2a로 표기 차이 있음.)"
+          },
+          {
+            "topic": "재관류 후 혈압 관리",
+            "detail": "Prior practice often pursued intensive BP lowering after reperfusion; the 2026 guideline adds Class 3 recommendations AGAINST routine intensive systolic BP lowering — do NOT target SBP <140 mm Hg after IV thrombolysis in mild-moderate stroke (Class 3, No Benefit) and do NOT target SBP <140 mm Hg for 72 h after successful anterior-circulation thrombectomy (Class 3, Harm). Conventional targets (~<180 mm Hg) preferred unless otherwise indicated. Reason: trials (e.g., ENCHANTED2/MT, OPTIMAL-BP) showed no benefit and potential harm.",
+            "detail_ko": "이전 실무는 재관류 후 강력한 혈압 강하를 자주 시행했으나, 2026 가이드라인은 일상적 강력 수축기혈압 강하를 반대하는 Class 3 권고를 신설했다 — 경중등도 뇌졸중에서 IV 혈전용해 후 SBP <140 mm Hg 목표 금지(Class 3, No Benefit), 전방순환 혈전제거 성공 후 72시간 동안 SBP <140 mm Hg 목표 금지(Class 3, Harm). 별도 적응증이 없으면 통상 목표(~<180 mm Hg) 권장. 이유: 임상시험(ENCHANTED2/MT, OPTIMAL-BP 등)에서 이득 없고 잠재적 해악."
+          },
+          {
+            "topic": "혈당 조절",
+            "detail": "New explicit Class 3 (No Benefit) recommendation AGAINST intensive glucose control with IV insulin targeting a tight 80–130 mg/dL in hospitalized hyperglycemic AIS patients; it did not improve 3-month outcomes and increased severe hypoglycemia. Reason: SHINE trial. Practically, avoid tight glycemic protocols in favor of more permissive targets.",
+            "detail_ko": "입원 고혈당 급성 허혈성 뇌졸중 환자에서 IV 인슐린으로 80–130 mg/dL의 엄격한 혈당을 목표하는 강력 혈당조절을 반대하는 Class 3(No Benefit) 권고를 명시 신설했다. 3개월 예후 개선 없고 중증 저혈당 증가. 이유: SHINE 임상시험. 실무적으로는 관대한 목표를 택하고 엄격 프로토콜은 피한다."
+          },
+          {
+            "topic": "소아 급성 허혈성 뇌졸중",
+            "detail": "For the first time, the guideline includes dedicated pediatric recommendations on acute interventional management — e.g., IV thrombolysis with alteplase may be considered (Class 2b) in ages 28 days–18 y within 4.5 h with disabling deficits, and EVT is reasonable (Class 2a) for children ≥6 y with LVO in a 6–24 h window with salvageable tissue (Class 2b for younger children at experienced centers). Reason: prior guidelines had essentially no pediatric acute-intervention guidance.",
+            "detail_ko": "가이드라인 최초로 소아 급성 중재관리에 대한 전용 권고를 포함했다 — 예: 28일–18세, 4.5시간 이내, 장애를 남기는 결손 시 alteplase IV 혈전용해 고려 가능(Class 2b), 6세 이상 LVO에서 6–24시간 창·구제 가능 조직 시 EVT 합리적(Class 2a; 더 어린 소아는 숙련 센터에서 Class 2b). 이유: 이전 가이드라인에는 소아 급성 중재 지침이 사실상 없었다."
+          },
+          {
+            "topic": "확장 시간창 정맥 혈전용해",
+            "detail": "Extended-window IV thrombolysis is newly endorsed: Class 2a for the 4.5–9 h window in selected patients with advanced-imaging evidence of salvageable tissue, and Class 2b for selected 4.5–24 h LVO patients who cannot undergo EVT. Reason: perfusion/mismatch-guided trial data (e.g., EXTEND).",
+            "detail_ko": "확장 시간창 정맥 혈전용해가 신규 지지됐다: 진보영상으로 구제 가능 조직이 확인된 선별 환자의 4.5–9시간 창에 Class 2a, EVT 불가능한 4.5–24시간 LVO 선별 환자에 Class 2b. 이유: 관류/미스매치 기반 임상시험 근거(예: EXTEND)."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the EVT bedside, treat tenecteplase 0.25 mg/kg bolus as a first-line equal to alteplase — its single-bolus delivery streamlines drip-and-ship and door-to-puncture workflows. After successful recanalization, STOP reflexively driving SBP <140 mm Hg: hold to conventional targets (roughly <180 mm Hg) unless the stroke/neurointervention team specifies otherwise, and avoid the tight 80–130 mg/dL insulin protocols in favor of more permissive glycemic targets. Widen your screening lens for late-window (up to 24 h), large-core, and basilar-occlusion patients — and for children — since more of them are now thrombectomy/thrombolysis candidates, and pre-plan the GA-vs-sedation decision with explicit conversion triggers (airway loss, agitation/motion, aspiration, neuro deterioration).",
+        "practiceImpact_ko": "EVT 현장에서 tenecteplase 0.25 mg/kg 볼루스를 alteplase와 동등한 1차 약제로 취급한다 — 단일 볼루스라 drip-and-ship 및 door-to-puncture 워크플로우가 간결해진다. 재개통 성공 후에는 반사적으로 SBP <140 mm Hg로 낮추지 말고, 뇌졸중/신경중재팀의 별도 지시가 없으면 통상 목표(대략 <180 mm Hg)를 유지하며, 80–130 mg/dL의 엄격한 인슐린 프로토콜 대신 관대한 혈당 목표를 쓴다. 후기 시간창(최대 24시간)·큰 코어·기저동맥폐색 환자, 그리고 소아까지 선별 범위를 넓혀야 하는데 이들 중 상당수가 이제 혈전제거/혈전용해 후보이기 때문이며, 전신마취 vs 진정 결정과 전환 트리거(기도 상실, 초조/움직임, 흡인, 신경학적 악화)를 미리 계획한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42809101",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42809101/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00540-026-03908-4",
+            "url": "https://doi.org/10.1007/s00540-026-03908-4"
+          },
+          {
+            "label": "웹 — TCTMD — AHA/ASA Release New Comprehensive Acute Ischemic Stroke Guideline",
+            "url": "https://www.tctmd.com/news/ahaasa-release-new-comprehensive-acute-ischemic-stroke-guideline"
+          },
+          {
+            "label": "웹 — emDOCs — 2026 Guideline Update: Early Management of Acute Ischemic Stroke",
+            "url": "https://www.emdocs.net/2026-guideline-update-early-management-of-acute-ischemic-stroke/"
+          },
+          {
+            "label": "웹 — Practical Neurology — Guidelines for the Management of Acute Ischemic Stroke Published",
+            "url": "https://practicalneurology.com/news/guidelines-for-the-management-of-acute-ischemic-stroke-published/2485579/"
+          },
+          {
+            "label": "웹 — Guideline Central — 2026 AHA/ASA Early Management of Acute Ischemic Stroke Spotlight",
+            "url": "https://www.guidelinecentral.com/insights/feb-2026-ahaasa-earlymanagementacuteischemicstroke-guideline-spotlight/"
+          },
+          {
+            "label": "웹 — AHA Journals — 2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke (STR.0000000000000513)",
+            "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000513"
+          }
+        ]
+      },
+      "publishedAt": "2026-09-30"
     }
   ],
   "rejected": [
@@ -60210,7 +60536,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-29T01:14:47.273Z",
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -60529,7 +60855,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-29T01:14:47.273Z",
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -60563,7 +60889,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-09-29T01:14:47.273Z",
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -60605,7 +60931,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-29T01:14:47.273Z",
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -60638,7 +60964,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-29T01:14:47.273Z",
+      "discoveredAt": "2026-09-30T00:45:00.014Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -60704,9 +61030,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20260929_100911:guideline:2026-09-29",
+    "runId": "trend_review_20260930_093934:guideline:2026-09-30",
     "outcome": "published",
-    "publishedId": "pmid:40956301",
+    "publishedId": "pmid:42809101",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -60725,21 +61051,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 12,
-            "idsFetched": 12,
+            "totalFound": 13,
+            "idsFetched": 13,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 159,
-        "overlapCount": 4,
-        "ptOnlyCount": 2,
-        "expandedOnlyCount": 8,
+        "mergedTotal": 164,
+        "overlapCount": 3,
+        "ptOnlyCount": 3,
+        "expandedOnlyCount": 10,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/08/30",
-          "maxDate": "2026/09/29"
+          "minDate": "2026/08/31",
+          "maxDate": "2026/09/30"
         },
         "retmax": 60,
         "topics": [
@@ -60774,8 +61100,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 23,
-            "idsFetched": 23,
+            "totalFound": 25,
+            "idsFetched": 25,
             "truncated": false,
             "error": null
           },
@@ -60783,8 +61109,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 32,
-            "idsFetched": 32,
+            "totalFound": 33,
+            "idsFetched": 33,
             "truncated": false,
             "error": null
           },
@@ -60819,8 +61145,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 9,
+            "idsFetched": 9,
             "truncated": false,
             "error": null
           },
@@ -60843,21 +61169,21 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 145,
+        "topicOnlyCount": 148,
         "ptPmids": [
           "42788594",
           "42618174",
           "42618173",
-          "42612906",
+          "42549877",
           "42371750",
           "42248416"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 159,
-          "enriched": 159,
-          "withAbstract": 126,
+          "requested": 164,
+          "enriched": 164,
+          "withAbstract": 131,
           "error": null
         }
       },
@@ -60910,23 +61236,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 3,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 214,
-        "needsReview": 448,
+        "queued": 215,
+        "needsReview": 449,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40956301",
+        "candidateId": "pmid:42809101",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-09-29T01:19:35.275Z",
+  "updatedAt": "2026-09-30T00:51:08.219Z",
   "configVersion": "guideline-v2"
 }

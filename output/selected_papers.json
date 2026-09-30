@@ -770,5 +770,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "pool_too_small",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42616082",
+    "title": "Early red blood cell transfusion strategy in septic shock among patients with ca",
+    "date": "2026-09-30",
+    "topic": "sepsis_shock",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 3,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]

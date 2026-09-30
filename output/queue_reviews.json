@@ -1448,23 +1448,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "38112771",
-      "title": "High and intermediate risk pulmonary embolism in the ICU.",
-      "journal": "Intensive Care Med",
-      "score": 7.2,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ICU 고·중위험 폐색전증, 중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "38117319",
       "title": "Status epilepticus in the ICU.",
       "journal": "Intensive Care Med",
@@ -10640,6 +10623,128 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "38112771",
+      "title": "High and intermediate risk pulmonary embolism in the ICU.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 고·중위험 폐색전증, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-09-30",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "38112771",
+          "title": "High and intermediate risk pulmonary embolism in the ICU.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2023-12-19",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38112771/",
+          "doi": "10.1007/s00134-023-07275-6"
+        },
+        "title_ko": "중환자실에서의 고위험 및 중등도위험 폐색전증",
+        "scope_ko": "이 종설은 중환자 진료의 관점에서 폐색전증(PE)의 역학·진단·위험 층화, 그리고 특히 치료를 다룬다. 예방, 항응고, 섬유소용해(혈전용해), 카테터 기반 치료, 외과적 색전제거술, 체외순환 보조에 이르는 관리 전반이 논의 범위에 포함된다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "개요 및 역학",
+            "body_ko": "폐색전증(PE)은 모든 급성기 진료 분야의 임상의가 마주치는 흔하고 중요한 의학적 응급 상황이다. PE가 중환자실(ICU)로의 직접 입원 사유가 되는 경우는 비교적 드물지만, 이러한 환자들은 사망 위험이 높다. 더 흔하게는 ICU에 입원한 환자가 별개의 급성 질환의 합병증으로 PE를 새로 발생시키는 양상으로 나타난다.\n\n(이 문단은 본 논문 초록이 명시한 내용만을 그대로 옮긴 것이다. 저자들이 제시하는 구체적 수치·용량·역치는 초록에 포함되어 있지 않으며, 실제 본문은 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이 종설이 다루는 범위",
+            "body_ko": "본 논문은 중환자 진료의 관점에서 PE의 역학, 진단, 위험 층화, 그리고 특히 치료를 개관한다. 구체적으로는 예방, 항응고, 섬유소용해(혈전용해), 카테터 기반 기법, 외과적 색전제거술, 체외순환 보조(extracorporeal support)와 관련된 쟁점들을 다룬다고 초록은 밝힌다.\n\n(초록은 이들 주제를 '다룬다'고만 열거할 뿐, 각 주제에 대한 저자들의 구체적 권고·수치는 초록 수준에서 제공되지 않는다. 아래 이어지는 절들은 본 논문 본문이 아니라 동일 주제 범위의 권위 있는 2차 문헌에서 보강한 내용으로, origin이 'augmented'로 표기되어 있다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 위험 층화: 고위험 대 중등도위험",
+            "body_ko": "고위험 PE는 다른 원인으로 설명되지 않는 지속적 저혈압(수축기혈압 <90 mmHg가 최소 15분 이상 지속) 또는 혈압상승제(vasopressor) 요구로 특징지어진다. 중등도-고위험(intermediate-high) PE는 정상혈압이면서 영상(우심실 기능부전)과 생체표지자(심근 손상) 근거가 모두 양성인 경우이고, 중등도-저위험(intermediate-low) PE는 영상상 RV 기능부전 또는 생체표지자 상승 중 하나만 있고 지속적 저혈압은 없는 경우로 정의된다. 중등도-고위험 환자의 약 10%가 진행성 심폐 악화를 겪어 진보된(advanced) 치료를 필요로 한다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          },
+          {
+            "heading_ko": "[웹 보강] 항응고",
+            "body_ko": "모든 중증도의 PE에서 초기 치료의 근간은 항응고이며, 임상적 가능성이 높거나 중등도인 환자에서는 지체 없이 시작할 것이 권고된다. 선호되는 약제는 저분자량 헤파린(LMWH)과 fondaparinux이다. 다만 시술적 치료가 필요할 수 있는 고위험 환자에서는 반감기가 짧다는 이유(UFH 0.5–1.5시간 대 LMWH 3–6시간)로 미분획 헤파린(UFH)이 선호된다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          },
+          {
+            "heading_ko": "[웹 보강] 전신 혈전용해(섬유소용해)",
+            "body_ko": "전신 혈전용해는 금기가 없는 고위험(혈역학적으로 불안정한) PE에서 권고된다. ESC 지침 기준으로 권장 약제는 재조합 조직형 플라스미노겐 활성인자(rtPA)이며, rtPA와 함께 UFH는 지속할 수 있으나 1세대 혈전용해제와는 병용을 중단해야 한다.\n\n주요(절대적) 금기에는 구조적 두개내 질환·두개내 종양, 과거 두개내출혈, 3개월 이내 허혈성 뇌졸중, 3개월 이내 뇌·척수 수술, 알려진 출혈성 소인 또는 활동성 내부 출혈이 포함된다. 소(상대적) 금기에는 장시간의 심폐소생술, 수축기혈압 >180 또는 이완기혈압 >110 mmHg, 2–4주 이내의 두개외 출혈, 2주 이내 수술, 1개월 이내 침습적 시술, 응고병증 또는 혈소판감소증, 18세 미만 또는 75세 초과, 현재 임신 또는 출산 1주 이내가 있다.\n\n단서: 환자의 약 50%가 금기를 가지며, 치료 실패는 약 8%에서 발생해 구조요법(rescue therapy) 검토가 필요하다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          },
+          {
+            "heading_ko": "[웹 보강] 카테터 기반 치료",
+            "body_ko": "카테터 유도 혈전용해(CDT)는 정맥 투여보다 낮은 전신 용량으로 혈전용해제를 국소 전달해 출혈 위험을 줄이는 것을 목표로 한다. 초음파 보조 CDT(USCDT)는 고주파·저출력 초음파로 섬유소분해를 촉진한다.\n\n주요 시험: ULTIMA는 중등도위험 PE 환자를 USCDT 대 항응고 단독으로 무작위 배정했고, 1차 종말점(24시간째 RV:LV 비 감소)에서 −0.30 대 −0.03을 보였으며 90일째 두 군 모두 혈역학적 악화나 대량 출혈은 없었다. OPTALYSE PE는 더 낮은 용량(폐당 4 mg 대 12 mg)과 더 짧은 주입시간(2시간 대 6시간)으로도 유사한 대리 결과를 얻었다. ESC 지침은 일상적 사용은 권하지 않으나 혈전용해가 실패했거나 금기인 고위험 PE에서 Class IIa로 고려할 수 있다고 한다.\n\n카테터 유도 색전제거(CDE)는 기계적 흡인 기반 장치로 혈전을 제거한다. FlowTriever(16–24 Fr)는 RV:LV 비 개선을 보인 단일군 FLARE 연구로 2018년 승인되었고, FLASH 레지스트리(2023)에서 중등도위험(77%)·고위험(8%) 환자에서 평균 폐동맥압 8 mmHg 감소, 심장지수 0.3 L/min/m² 증가, 30일 사망률 0.8%를 보였으며 고위험 코호트의 원내 사망률은 <2%로 역사적 대조군 >28% 대비 낮았다. Indigo 카테터는 더 작은 구경(6–12 Fr)으로 폐동맥 접근성은 좋으나 혈전 제거 능력은 떨어진다. 2024년 분석에서 USCDT는 CDE 대비 대량 출혈(11.0% 대 17.3%)과 두개내출혈(0.4% 대 1.4%)이 더 낮았으나 선택 편향을 배제할 수 없다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          },
+          {
+            "heading_ko": "[웹 보강] 외과적 색전제거술",
+            "body_ko": "외과적 혈전색전제거술은 정중 흉골절개와 심폐우회(cardiopulmonary bypass)를 요하는 고도 침습적 시술이다. 최근 보고에서 고위험·중등도위험 PE 환자의 원내 사망률은 6.6–11.7%로, 과거의 27.2%에서 개선되었다. 광범위한 근위부 혈전 부하, 이동 중 혈전(clot-in-transit), 역설색전 위험이 있을 때, 특히 혈전용해가 금기이거나 실패한 경우 고려된다. ESC 지침은 혈전용해나 카테터 치료가 금기·실패한 고위험 PE에서 Class I로 권고한다. 다만 내과적 치료와 직접 비교한 무작위 시험은 없으며, 수술 전 혈전용해는 출혈 위험을 높이지만 절대 금기는 아니다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          },
+          {
+            "heading_ko": "[웹 보강] 체외순환 보조(ECMO)",
+            "body_ko": "ESC 지침은 불응성 순환 허탈 또는 심정지를 동반한 고위험 PE에서 ECMO를 Class IIb로 권고한다. 정맥동맥(VA) ECMO가 선호되며(환기와 혈역학 보조를 모두 제공), 정맥정맥(VV) ECMO는 부적절하다. 기전상 정맥혈을 뽑아 산소화한 혈액을 대퇴동맥으로 되돌려 폐혈관 폐색을 우회한다. 결과 측면에서 한 체계적 고찰은 78% 생존율을, 심정지 환자를 다룬 또 다른 고찰은 61% 생존율을 보고했고, 65세 초과 및 심정지 중 캐뉼라 삽입 환자에서 사망률이 더 높았다. 금기에는 불량한 기능 상태, 고령, 병적 비만, 신경학적 기능부전, 만성 장기 기능부전, 장시간 CPR이 있으며 항응고가 필요하다. ECMO는 가교(bridge) 치료일 뿐이며, 환자는 대개 전신 혈전용해·카테터 유도 혈전용해·외과적 색전제거술 등 추가 중재를 함께 받는다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          },
+          {
+            "heading_ko": "[웹 보강] 우심실·혈역학 보조",
+            "body_ko": "산소요법은 산소포화도 ≥90%를 목표로 하며, 흉강내압 상승이 RV 후부하를 늘리고 전부하를 줄이므로 양압 방식보다 고유량 비강캐뉼라(HFNC)가 선호된다. 수액은 소량 도전(예: 500 mL 볼루스)이 심박출량을 늘릴 수 있으나 대량 볼루스는 RV 과팽창 위험이 있어, 중심정맥압이 낮거나 하대정맥이 잘 눌리는 환자가 가장 이득을 볼 가능성이 높고, 이뇨는 RV 벽 스트레스를 줄여 도움이 될 수 있다. 승압제는 norepinephrine을 1차로 선호하며(α·β 작용으로 폐혈관저항을 늘리지 않고 평균동맥압을 지지), vasopressin이 대안(비카테콜아민, PVR 미증가)이다. 강심제(epinephrine·dobutamine·dopamine)는 빈맥성 부정맥을 악화시킬 수 있다. iNOPE 시험에서 흡입 산화질소(iNO)는 중등도위험 PE에서 RV 심초음파 지표가 정상화된 환자를 더 많이 얻었으나 이득은 아직 추정적이다.\n\n또한 기관삽관은 일시적 저산소증·저혈압을 유발하고 RV 후부하를 악화시킬 수 있어 가능하면 피해야 한다는 점이 강조된다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) / WebSearch key-points 스니펫 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) / WebSearch key-points 스니펫",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          },
+          {
+            "heading_ko": "[웹 보강] 폐색전증 대응팀(PERT)",
+            "body_ko": "PERT는 심장내과, 응급의학, 혈액내과, 호흡기·중환자의학, 심장영상, 중재시술 분야를 아우르는 다학제 팀이다. Massachusetts General Hospital은 활성화의 72%가 중등도-고위험 및 고위험 PE였고 약 17%가 진보된 재관류 치료를 받았으며 출혈 위험은 항응고 단독과 유사했다고 보고했고, Cleveland Clinic은 33%가 진보된 치료를 받았다고 보고했다. ESC 지침은 병원의 필요와 역량에 따라 중등도·고위험 PE 관리를 위한 PERT 구성을 Class IIa로 권고한다. 이점으로는 프로토콜화, 전문가 접근성, 합의된 위험 평가, 반복 재평가, 신속한 치료 시행, 질 개선이 꼽힌다.\n— 보강 출처: Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/)",
+            "origin": "augmented",
+            "sourceLabel": "Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설의 초록 자체는 EM/CCM 침상 실무의 구체적 변화를 명시하지 않으며, 다만 PE는 ICU 직접 입원 사유로는 드물어도 사망 위험이 높고 ICU 재원 중 별개 질환의 합병증으로 흔히 새로 발생하므로 예방·조기 인지·위험 층화 기반 치료가 중요함을 시사한다. (아래 실무 함의는 본문이 아니라 보강 2차 문헌 범위의 내용이다.) 위험 층화로 고위험·중등도-고위험을 가려 항응고를 지체 없이 시작하되, 시술 가능성이 있는 고위험에서는 반감기가 짧은 UFH를 택하고, 혈전용해·카테터 치료·외과적 색전제거·VA-ECMO를 금기와 실패 여부에 따라 단계적으로 고려하며, 초기에는 norepinephrine 중심의 혈역학 지지와 신중한 수액, 삽관 회피로 RV 기능을 보전하고 가능하면 PERT를 활용하는 접근이 강조된다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38112771",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38112771/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-023-07275-6",
+            "url": "https://doi.org/10.1007/s00134-023-07275-6"
+          },
+          {
+            "label": "웹 — Johns Hopkins Pure — High and intermediate risk pulmonary embolism in the ICU (초록/서지, 실제 열람)",
+            "url": "https://pure.johnshopkins.edu/en/publications/high-and-intermediate-risk-pulmonary-embolism-in-the-icu/"
+          },
+          {
+            "label": "웹 — Intermediate-Risk and High-Risk Pulmonary Embolism: Recognition and Management (PMC11154926, 보강 본문 전체 열람)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11154926/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -10697,9 +10802,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-29",
+    "date": "2026-09-30",
     "outcome": "published",
-    "publishedId": "36472590"
+    "publishedId": "38112771"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-09-30"
 }
