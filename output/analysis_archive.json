@@ -3228,6 +3228,81 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-09-30",
+      "pmid": "42616082",
+      "title": "Early red blood cell transfusion strategy in septic shock among patients with cancer: the TRANSPORT randomized controlled trial.",
+      "title_ko": "암 환자의 패혈성 쇼크에서 조기 적혈구 수혈 전략: TRANSPORT 무작위 대조 시험",
+      "journal": "Intensive care medicine",
+      "doi": "10.1007/s00134-026-08582-4",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "빈혈을 동반한 암 환자의 패혈성 쇼크에서, 자유(liberal) 적혈구 수혈 전략(hemoglobin 목표 9.0 g/dL)이 제한(restrictive) 전략(목표 7.0 g/dL)에 비해 12시간 lactate 감소로 반영되는 조기 조직 산소화를 개선하는가?",
+      "pico": {
+        "population": "[France] Adult patients with hematological or solid malignancies presenting with septic shock with lactate level > 2.0 mmol/L and hemoglobin level < 9.0 g/dL, enrolled in 18 centers in France; 187 patients were enrolled (93 liberal, 94 restrictive) out of a planned 260 before the trial was prematurely stopped for safety concerns.",
+        "intervention": "Liberal red blood cell (RBC) transfusion strategy directed by a hemoglobin threshold of 9.0 g/dL during the first 48 h of resuscitation (n = 93).",
+        "comparison": "Restrictive RBC transfusion strategy directed by a hemoglobin threshold of 7.0 g/dL during the first 48 h of resuscitation (n = 94).",
+        "outcome": "Primary endpoint: 12-h lactate reduction (normalization ≤ 2.0 mmol/L or relative decrease by 30% from baseline), achieved in 52% (liberal) vs 50% (restrictive); odds ratio 1.07; 95% confidence interval 0.60 to 1.90; P = 0.82."
+      },
+      "pico_ko": {
+        "population": "[프랑스] lactate > 2.0 mmol/L, hemoglobin < 9.0 g/dL의 패혈성 쇼크를 동반한 혈액암 또는 고형암 성인 환자로, 프랑스 18개 센터에서 등록됨; 계획된 260명 중 안전성 우려로 조기 중단되기까지 총 187명(liberal 93명, restrictive 94명)이 등록됨.",
+        "intervention": "소생 첫 48시간 동안 hemoglobin 목표 9.0 g/dL로 시행한 자유(liberal) 적혈구(RBC) 수혈 전략 (n = 93).",
+        "comparison": "소생 첫 48시간 동안 hemoglobin 목표 7.0 g/dL로 시행한 제한(restrictive) 적혈구(RBC) 수혈 전략 (n = 94).",
+        "outcome": "일차 종료점: 12시간 lactate 감소(≤ 2.0 mmol/L로 정상화 또는 기저치 대비 30% 상대 감소), liberal 52% vs restrictive 50%에서 달성; odds ratio 1.07; 95% confidence interval 0.60~1.90; P = 0.82."
+      },
+      "keyFindings": [
+        "The primary endpoint of 12-h lactate reduction did not differ between arms: 52% (liberal) vs 50% (restrictive); OR 1.07; 95% CI 0.60–1.90; P = 0.82.",
+        "Arterial or venous thrombotic events were markedly more frequent with liberal transfusion (13% vs 1%; P = 0.001), and the trial was prematurely stopped for safety after enrolling 187 of a planned 260 patients.",
+        "28-day mortality was numerically lower but not significantly different with liberal transfusion (46% vs 53%; P = 0.34)."
+      ],
+      "keyFindings_ko": [
+        "일차 종료점인 12시간 lactate 감소는 두 군 간 차이 없음: liberal 52% vs restrictive 50%; OR 1.07; 95% CI 0.60–1.90; P = 0.82.",
+        "동맥 또는 정맥 혈전증 사건이 liberal 수혈에서 현저히 더 빈번(13% vs 1%; P = 0.001)했고, 계획된 260명 중 187명 등록 시점에 안전성 문제로 시험이 조기 중단됨.",
+        "28일 사망률은 liberal 군에서 수치상 낮았으나 유의하지 않음(46% vs 53%; P = 0.34)."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42616082",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42616082/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1007/s00134-026-08582-4",
+          "url": "https://doi.org/10.1007/s00134-026-08582-4"
+        },
+        {
+          "label": "웹 — PubMed (NCBI E-utilities efetch, PMID 42616082)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42616082&rettype=abstract&retmode=text"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42616082)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42616082/"
+        },
+        {
+          "label": "웹 — Intensive Care Medicine official article page (Springer, DOI 10.1007/s00134-026-08582-4)",
+          "url": "https://link.springer.com/article/10.1007/s00134-026-08582-4"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed (NCBI E-utilities efetch, PMID 42616082)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42616082&rettype=abstract&retmode=text",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed record (PMID 42616082)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42616082/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Intensive Care Medicine official article page (Springer, DOI 10.1007/s00134-026-08582-4)",
+          "url": "https://link.springer.com/article/10.1007/s00134-026-08582-4",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -3267,12 +3342,13 @@
         "41593766",
         "42678699",
         "42750044",
-        "41711512"
+        "41711512",
+        "42616082"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
-      "2026-09": 219738
+      "2026-09": 246949
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
