@@ -405,6 +405,36 @@ export function mergeArchive(oldText, newText) {
     const head = block.slice(0, block.indexOf('\n') < 0 ? block.length : block.indexOf('\n'));
     blocks.push({ block, at: turnHeadAt(head), order: blocks.length });
   }
+  /* ★ 턴 도중 스냅샷 흡수 (2026-09-27 Fable 재검토 ★2).
+   * 첫 턴 자가점검·마무리·"지금 수거"의 수동 실행은 **턴 도중**에 돈다 — 그 순간의 Claude 블록은 아직 덜 쓴
+   * 본문이다. 뒤에 Stop 훅(또는 다음 수동 실행)이 **같은 머리·완성 본문**을 밀면, 완전일치 dedupe 로는 둘 다 남아
+   * 한 턴이 두 번 기록됐다(09-27 main 62파일·2,013쌍). 같은 머리에서 **한 본문이 다른 본문의 앞부분(단락 경계)**
+   * 이면 긴 쪽만 남긴다 — 짧은 쪽의 글자는 전부 긴 쪽 안에 있으므로 잃는 것이 없다. 결정적·멱등이다.
+   * 앞부분이 아닌 "같은 머리·다른 본문"은 종전대로 둘 다 두고 경고한다(어느 쪽이 옳은지 모른다). */
+  {
+    const headOf = (block) => { const nl = block.indexOf('\n'); return nl < 0 ? block : block.slice(0, nl); };
+    const norm = (block) => block.replace(/(?:\n[ \t]*(?:-{3,})?[ \t]*)+$/, '');
+    const byHead = new Map();
+    blocks.forEach((b, i) => {
+      if (b.at === null) return;
+      const h = headOf(b.block);
+      if (!byHead.has(h)) byHead.set(h, []);
+      byHead.get(h).push(i);
+    });
+    const drop = new Set();
+    for (const idxs of byHead.values()) {
+      if (idxs.length < 2) continue;
+      for (const i of idxs) {
+        const a = norm(blocks[i].block);
+        if (idxs.some((j) => j !== i && !drop.has(j) && (() => { const b = norm(blocks[j].block); return b.length > a.length && b.startsWith(`${a}\n`); })())) drop.add(i);
+      }
+    }
+    if (drop.size) {
+      const kept = blocks.filter((_, i) => !drop.has(i));
+      blocks.length = 0;
+      kept.forEach((b, k) => blocks.push({ ...b, order: k }));
+    }
+  }
   /* ★ 과도기 중복 경고 (2026-08-20 Fable 검토 · 처방 I).
    * dedupe 는 **블록 문자열 완전일치**다. 추출기를 고치면(08-19 GENERATED_PROMPT_FORMS 같은)
    * 같은 턴의 옛 렌더링과 새 렌더링이 **같은 시각으로 둘 다** 남는다. 중복이라 안전한 방향이지만,
@@ -425,7 +455,7 @@ export function mergeArchive(oldText, newText) {
     }
     const n = [...byHead.values()].filter((v) => v === null).length;
     if (n) {
-      dupWarn = `> ⚠ 같은 시각에 본문이 다른 턴이 ${n}쌍 있다 — 추출기 개정 과도기의 이중 기록일 수 있다.\n`
+      dupWarn = `> ⚠ 같은 시각에 본문이 다른 턴이 ${n}쌍 있다 — 추출기 개정 과도기 등의 이중 기록일 수 있다(턴 도중 스냅샷은 자동 흡수됨).\n`
         + `> 지우지 않았다(어느 쪽이 옳은지는 사람이 정한다). 며칠 지나 안 사라지면 살펴볼 것.\n`;
     }
   }
@@ -549,6 +579,27 @@ function repoRoot(dir) {
   return gitOut(dir, ['rev-parse', '--show-toplevel']) || dir;
 }
 
+/** 트랜스크립트 기록의 `cwd` 를 세어 많은 순으로(같으면 이름순 — 결정적). 내용은 안 본다. */
+export function dominantCwds(raw) {
+  const counts = new Map();
+  for (const m of String(raw).matchAll(/"cwd":"((?:[^"\\]|\\.)*)"/g)) {
+    let c;
+    try { c = JSON.parse(`"${m[1]}"`); } catch { continue; }
+    counts.set(c, (counts.get(c) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).map(([c]) => c);
+}
+
+/** 가장 많이 머문 작업 폴더 중 git 저장소의 최상위. 없으면 null. */
+function dominantRepoRoot(raw) {
+  for (const c of dominantCwds(raw)) {
+    if (!existsSync(c)) continue;
+    const top = gitOut(c, ['rev-parse', '--show-toplevel']);
+    if (top) return top;
+  }
+  return null;
+}
+
 /** repo 이름 — origin URL의 마지막 조각. 없으면 디렉터리 이름.
  *  (클론 폴더명이 원격 이름과 다를 수 있으므로 원격을 먼저 본다.) */
 function repoName(root) {
@@ -623,14 +674,14 @@ function relayToGc(gc, { repo, files, id8 }) {
   const branch = `chat/${repo}-${id8}`;
 
   if (!existsSync(wt)) {
-    const r = git(gc, ['worktree', 'add', '--force', '-B', branch, wt, baseRef(gc)], 30000);
+    const r = git(gc, ['worktree', 'add', '--force', '--no-track', '-B', branch, wt, baseRef(gc)], 30000);
     if (r.status !== 0) return { ok: false, why: 'worktree를 만들지 못했습니다' };
   } else {
     /* 같은 컨테이너에서 다른 세션이 먼저 만들어 둔 worktree일 수 있다. 그때는 우리 브랜치로
      * 갈아탄다 — 매 턴 커밋·푸시하므로 저쪽에 남아 있을 미커밋 작업이 없다. */
     const cur = gitOut(wt, ['rev-parse', '--abbrev-ref', 'HEAD']);
     if (cur !== branch) {
-      const r = git(wt, ['checkout', '--force', '-B', branch, baseRef(gc)], 30000);
+      const r = git(wt, ['checkout', '--force', '--no-track', '-B', branch, baseRef(gc)], 30000);
       if (r.status !== 0) return { ok: false, why: '전용 worktree의 브랜치를 바꾸지 못했습니다' };
     }
   }
@@ -747,7 +798,14 @@ function main() {
 
   const sessionId = hook?.session_id || path.basename(transcript).replace(/\.jsonl$/, '') || 'unknown';
   const id8 = sessionId.slice(0, 8);
-  const root = repoRoot(hook?.cwd || process.cwd());
+  let root = repoRoot(hook?.cwd || process.cwd());
+  /* ★ 저장소 여럿을 붙인 클라우드 세션은 작업 폴더가 `/home/user` 라 git 저장소가 아니다(2026-09-27 Fable 재검토 1번).
+   * 그대로 두면 아래 폴백이 `/home/user/.chat/sessions/` 에 쓰고 git add 에 실패해 **버전 관리 밖으로 사라진다.**
+   * 트랜스크립트에서 가장 많이 머문 작업 폴더 중 git 저장소인 것을 그 세션의 저장소로 본다(결정적 — 같은 기록이면 같은 답). */
+  if (!gitOut(root, ['rev-parse', '--show-toplevel'])) {
+    const alt = dominantRepoRoot(raw);
+    if (alt) root = alt;
+  }
   const repo = repoName(root);
 
   /* 파일명 날짜는 **첫 턴의 KST 날짜로 고정**한다 — 자정을 넘겨도 같은 세션이 두 파일로
