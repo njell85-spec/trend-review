@@ -1,17 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "papers",
-  "queue": [
-    {
-      "pmid": "42467247",
-      "title": "Persistent tissue hypoperfusion improves risk stratification beyond vasopressor dose in refractory septic shock: a secondary analysis of the ANDROMEDA-SHOCK-2 trial.",
-      "journal": "Intensive care medicine",
-      "score": 9.2,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-09-30"
-    }
-  ],
+  "queue": [],
   "published": [
     {
       "pmid": "41232590",
@@ -132,6 +122,16 @@
       "lowConfidence": false,
       "addedAt": "2026-09-05",
       "publishedAt": "2026-09-06"
+    },
+    {
+      "pmid": "42467247",
+      "title": "Persistent tissue hypoperfusion improves risk stratification beyond vasopressor dose in refractory septic shock: a secondary analysis of the ANDROMEDA-SHOCK-2 trial.",
+      "journal": "Intensive care medicine",
+      "score": 9.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-09-30",
+      "publishedAt": "2026-10-01"
     }
   ],
   "rejected": [
@@ -147,9 +147,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-09-06",
+    "date": "2026-10-01",
     "outcome": "published",
-    "publishedId": "42693471"
+    "publishedId": "42467247"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-10-01"
 }

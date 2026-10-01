@@ -781,5 +781,16 @@
     "rerankPoolSize": 3,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42467247",
+    "title": "Persistent tissue hypoperfusion improves risk stratification beyond vasopressor ",
+    "date": "2026-10-01",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
