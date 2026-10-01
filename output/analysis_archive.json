@@ -3303,21 +3303,90 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-01",
+      "pmid": "42467247",
+      "title": "Persistent tissue hypoperfusion improves risk stratification beyond vasopressor dose in refractory septic shock: a secondary analysis of the ANDROMEDA-SHOCK-2 trial.",
+      "title_ko": "불응성 패혈성 쇼크에서 지속적 조직 저관류는 혈압상승제 용량을 넘어 위험 계층화를 향상시킨다: ANDROMEDA-SHOCK-2 시험의 2차 분석",
+      "journal": "Intensive care medicine",
+      "doi": "10.1007/s00134-026-08551-x",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "초기 패혈성 쇼크에서 프로토콜화된 소생 후 지속적 조직 저관류를 혈압상승제 용량과 통합하면 혈압상승제 용량 단독 대비 28일 사망 위험 계층화가 향상되는가?",
+      "pico": {
+        "population": "[International] 1363 patients with complete data from the ANDROMEDA-SHOCK-2 trial of early septic shock; among them 188 (13.8%) had a norepinephrine equivalent dose (NEE) > 0.5 µg/kg/min at 6 h after hemodynamic resuscitation. MeSH-coded as including Female, Male, Aged, and Middle Aged patients.",
+        "intervention": "Operationalized refractory septic shock defined as NEE > 0.5 µg/kg/min at 6 h plus an abnormal capillary refill time (> 3 s) and non-decreasing lactate (two-hypoperfusion criteria); a complementary construct used NEE > 0.5 µg/kg/min combined with either tissue perfusion criterion (≥ 1-hypoperfusion criterion). 53 patients (3.9%) met the two-hypoperfusion criteria and 124 (9.1%) met the ≥ 1-hypoperfusion criterion.",
+        "comparison": "Vasopressor dose alone (NEE > 0.5 µg/kg/min at 6 h without the tissue-hypoperfusion criteria), and patients classified as non-refractory under each construct.",
+        "outcome": "Primary outcome was 28-day mortality: 73.6% (39/53) under two-hypoperfusion criteria vs 23.7% (310/1310) in non-refractory (aHR 4.68; 95% CI 3.31–6.64; p < 0.001); 55.0% (68/124) under ≥ 1-hypoperfusion criterion vs 22.7% (281/1239) (aHR 2.62; 95% CI 1.90–3.46; p < 0.001). The two-hypoperfusion construct yielded superior prognostic enrichment vs NEE alone (LR+ 8.12; 95% CI 4.70–14.03 vs 2.71; 95% CI 2.10–3.50; p < 0.001)."
+      },
+      "pico_ko": {
+        "population": "[다국가] ANDROMEDA-SHOCK-2 초기 패혈성 쇼크 시험에서 완전한 데이터를 가진 1363명; 이 중 188명(13.8%)이 혈역학적 소생 6시간 후 norepinephrine equivalent dose(NEE) > 0.5 µg/kg/min였다. MeSH 상 Female, Male, Aged, Middle Aged 환자가 포함됨.",
+        "intervention": "불응성 패혈성 쇼크를 6시간째 NEE > 0.5 µg/kg/min에 더해 비정상 capillary refill time(> 3 s)과 비감소 lactate를 동반한 경우(two-hypoperfusion 기준)로 조작적 정의; 보완 분석은 NEE > 0.5 µg/kg/min에 두 조직관류 기준 중 하나를 결합(≥ 1-hypoperfusion 기준). 53명(3.9%)이 two-hypoperfusion 기준을, 124명(9.1%)이 ≥ 1-hypoperfusion 기준을 충족.",
+        "comparison": "혈압상승제 용량 단독(조직 저관류 기준 없이 6시간째 NEE > 0.5 µg/kg/min), 그리고 각 구성에서 비불응성으로 분류된 환자.",
+        "outcome": "일차 결과는 28일 사망률: two-hypoperfusion 기준에서 73.6%(39/53) 대 비불응성 23.7%(310/1310) (aHR 4.68; 95% CI 3.31–6.64; p < 0.001); ≥ 1-hypoperfusion 기준에서 55.0%(68/124) 대 22.7%(281/1239) (aHR 2.62; 95% CI 1.90–3.46; p < 0.001). two-hypoperfusion 구성이 NEE 단독 대비 우월한 예후 농축을 보임(LR+ 8.12; 95% CI 4.70–14.03 대 2.71; 95% CI 2.10–3.50; p < 0.001)."
+      },
+      "keyFindings": [
+        "Among 1363 patients, 188 (13.8%) had NEE > 0.5 µg/kg/min at 6 h (47.9% mortality); 53 (3.9%) met two-hypoperfusion criteria and 124 (9.1%) met the ≥ 1-hypoperfusion criterion.",
+        "Two-hypoperfusion criteria mortality was 73.6% (39/53) vs 23.7% (310/1310) non-refractory (aHR 4.68; 95% CI 3.31–6.64; p < 0.001); ≥ 1-hypoperfusion mortality was 55.0% (68/124) vs 22.7% (281/1239) (aHR 2.62; 95% CI 1.90–3.46; p < 0.001).",
+        "The two-hypoperfusion construct gave superior prognostic enrichment for 28-day mortality vs NEE alone (LR+ 8.12; 95% CI 4.70–14.03 vs 2.71; 95% CI 2.10–3.50; p < 0.001)."
+      ],
+      "keyFindings_ko": [
+        "1363명 중 188명(13.8%)이 6시간째 NEE > 0.5 µg/kg/min(사망률 47.9%); 53명(3.9%)이 two-hypoperfusion 기준을, 124명(9.1%)이 ≥ 1-hypoperfusion 기준을 충족.",
+        "two-hypoperfusion 기준 사망률은 73.6%(39/53) 대 비불응성 23.7%(310/1310) (aHR 4.68; 95% CI 3.31–6.64; p < 0.001); ≥ 1-hypoperfusion 사망률은 55.0%(68/124) 대 22.7%(281/1239) (aHR 2.62; 95% CI 1.90–3.46; p < 0.001).",
+        "two-hypoperfusion 구성이 NEE 단독 대비 28일 사망에 대해 우월한 예후 농축을 제공(LR+ 8.12; 95% CI 4.70–14.03 대 2.71; 95% CI 2.10–3.50; p < 0.001)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42467247",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42467247/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1007/s00134-026-08551-x",
+          "url": "https://doi.org/10.1007/s00134-026-08551-x"
+        },
+        {
+          "label": "웹 — Springer — Intensive Care Medicine article page (official)",
+          "url": "https://link.springer.com/article/10.1007/s00134-026-08551-x"
+        },
+        {
+          "label": "웹 — PMC — ANDROMEDA-SHOCK-2 parent trial (country/region, N, age)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12573117/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "Springer — Intensive Care Medicine article page (official)",
+          "url": "https://link.springer.com/article/10.1007/s00134-026-08551-x",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PMC — ANDROMEDA-SHOCK-2 parent trial (country/region, N, age)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12573117/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
     "docIds": {
       "2026-07": "15hUHhHzkmD35XH30nn63mzx3E-65dDSXJMNXohL3ik0",
-      "2026-09": "1I2zh7dRNYVtfEuUtbaZ2o_opcm9-dX8r3JTAYSzNX78"
+      "2026-09": "1I2zh7dRNYVtfEuUtbaZ2o_opcm9-dX8r3JTAYSzNX78",
+      "2026-10": "1MeR13Ar_8rFfeMCl0v_XehUzYfaIpRLKJpCYyN6g8MA"
     },
     "folderIds": {
       "2026-07": "1t3xruJeH8pDo3sYl2FAvbLRM7B9_lvW3",
-      "2026-09": "1OndH01JLWYAqBZulh50HKMMXnBZU8eCP"
+      "2026-09": "1OndH01JLWYAqBZulh50HKMMXnBZU8eCP",
+      "2026-10": "1UC5d98WpCecIeTKQW_0cAp7_A5URUL68"
     },
     "pdfFiles": {},
     "fulltextDocIds": {
       "2026-07": "1t1XkK4D9G7VQUX-BwQ_68sTvQsMvuDyxrdoBM-lD3VE",
-      "2026-09": "1tPdqviRXL5SH83howmNt2OvEdvMGSm-P5vVvdv2tDB4"
+      "2026-09": "1tPdqviRXL5SH83howmNt2OvEdvMGSm-P5vVvdv2tDB4",
+      "2026-10": "1V6e_VvogNzWUA5LQXIzjBoWcewRhwig51L3kT-LgP_0"
     },
     "fulltextDone": {
       "2026-07": [
@@ -3344,11 +3413,15 @@
         "42750044",
         "41711512",
         "42616082"
+      ],
+      "2026-10": [
+        "42467247"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
-      "2026-09": 246949
+      "2026-09": 246949,
+      "2026-10": 72892
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
