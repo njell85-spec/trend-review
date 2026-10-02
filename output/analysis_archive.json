@@ -3369,6 +3369,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-02",
+      "pmid": "42714473",
+      "title": "Distinct weaning phenotypes in patients unsuccessful in weaning from invasive mechanical ventilation: a secondary analysis of the WEAN SAFE cohort.",
+      "title_ko": "침습적 기계환기에서 이탈(weaning)에 실패한 환자들의 뚜렷한 이탈 표현형(phenotype): WEAN SAFE 코호트의 2차 분석",
+      "journal": "Intensive care medicine",
+      "doi": "10.1007/s00134-026-08592-2",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "이탈(weaning) 과정에 진입했으나 침습적 기계환기에서 이탈에 실패한 환자들의 경과·표현형·결과(특히 ICU mortality)는 어떠하며, 생명유지치료 중단/보류(WLST) 결정이 첫 분리 시도(separation attempt) 실패 및 사망 위험과 어떻게 연관되는가?",
+      "pico": {
+        "population": "[International] Patients ≥16 years undergoing invasive mechanical ventilation, drawn from the WEAN SAFE cohort (registry enrollment 11000); of the 5664 patients in this study population, 1270 (22.4%) never underwent a separation attempt (SA), while 4394 (77.6%) had at least one SA; of these, 664 (15.1%) eventually failed weaning from invasive MV at day 90 and 3730 (65.9%) successfully weaned. MeSH-reported ages: Aged, Middle Aged.",
+        "intervention": "Characterisation of weaning failure trajectories and phenotypes — examining weaning duration and intensity, number of separation attempts, decisions to withdraw or withhold life-sustaining therapy (WLST), and WLST timing. Three Failed-Wean phenotypes were defined: Phenotype A (single SA + WLST), Phenotype B (single SA, no WLST), and Phenotype C (> 1 SA).",
+        "comparison": "Successful-Wean patients (3730, 65.9%) compared with Failed-Wean patients (664, 15.1%); within Failed-Wean, comparison across Phenotypes A, B, and C.",
+        "outcome": "Primary outcome was ICU mortality, which was 78% in Failed-Wean compared with 2% in Successful-Wean. A WLST decision was associated with a higher hazard of ICU mortality and shorter median time to ICU death; a failed-first SA was strongly associated with WLST decisions."
+      },
+      "pico_ko": {
+        "population": "[다국가] 침습적 기계환기를 받는 16세 이상 환자로, WEAN SAFE 코호트에서 추출(registry 등록 11000명); 본 연구 대상 5664명 중 1270명(22.4%)은 한 번도 분리 시도(separation attempt, SA)를 하지 않았고, 4394명(77.6%)은 최소 1회 SA를 시행함. 이 중 664명(15.1%)은 day 90 시점에 결국 침습적 MV 이탈에 실패했고 3730명(65.9%)은 성공적으로 이탈함. MeSH상 연령대: Aged, Middle Aged.",
+        "intervention": "이탈 실패 경과와 표현형의 특성 규명 — 이탈 기간·강도, 분리 시도 횟수, 생명유지치료 중단/보류(WLST) 결정, WLST 시점을 분석함. 세 가지 Failed-Wean 표현형 정의: Phenotype A(단일 SA + WLST), Phenotype B(단일 SA, WLST 없음), Phenotype C(SA >1회).",
+        "comparison": "Successful-Wean 환자(3730명, 65.9%)와 Failed-Wean 환자(664명, 15.1%) 비교; Failed-Wean 내에서는 Phenotype A·B·C 간 비교.",
+        "outcome": "1차 결과는 ICU mortality로, Failed-Wean에서 78%, Successful-Wean에서 2%였음. WLST 결정은 ICU mortality의 hazard 증가 및 ICU 사망까지의 median time 단축과 연관되었고, 첫 SA 실패는 WLST 결정과 강하게 연관되었음."
+      },
+      "keyFindings": [
+        "Of 5664 ventilated patients, 664 (15.1%) failed weaning from invasive MV at day 90 and 3730 (65.9%) weaned successfully, while 1270 (22.4%) never underwent a separation attempt.",
+        "ICU mortality was 78% in Failed-Wean versus 2% in Successful-Wean; Failed-Wean patients had the longest invasive ventilation duration and ICU stay, with more separation attempts, fewer attempted extubations, and more reintubations and tracheostomies.",
+        "Three clinically distinct Failed-Wean phenotypes (A: single SA + WLST; B: single SA, no WLST; C: > 1 SA) were identified; a failed-first SA was strongly associated with WLST, and WLST was associated with higher hazard of ICU mortality and shorter median time to ICU death."
+      ],
+      "keyFindings_ko": [
+        "기계환기 환자 5664명 중 664명(15.1%)이 day 90에 침습적 MV 이탈에 실패하고 3730명(65.9%)이 이탈에 성공했으며, 1270명(22.4%)은 분리 시도를 전혀 하지 않음.",
+        "ICU mortality는 Failed-Wean 78% vs Successful-Wean 2%였고, Failed-Wean 환자는 침습적 환기 기간·ICU 재실이 가장 길었으며 분리 시도는 더 많고 발관 시도는 더 적으며 재삽관·기관절개는 더 많았음.",
+        "임상적으로 뚜렷한 세 Failed-Wean 표현형(A: 단일 SA + WLST, B: 단일 SA, WLST 없음, C: SA >1회)이 확인됨; 첫 SA 실패는 WLST와 강하게 연관되었고, WLST는 ICU mortality의 hazard 증가 및 ICU 사망까지 median time 단축과 연관됨."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42714473",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42714473/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1007/s00134-026-08592-2",
+          "url": "https://doi.org/10.1007/s00134-026-08592-2"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT03255109 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT03255109"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -3415,7 +3466,8 @@
         "42616082"
       ],
       "2026-10": [
-        "42467247"
+        "42467247",
+        "42714473"
       ]
     },
     "fulltextLen": {
