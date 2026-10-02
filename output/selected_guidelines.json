@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-10-01T00:43:24.639Z"
+      "supersededAt": "2026-10-02T01:05:17.473Z"
     },
     {
       "id": "pmid:38531812",
@@ -25311,86 +25311,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:41117569",
-      "pmid": "41117569",
-      "title": "European Resuscitation Council Guidelines 2025 Special Circumstances in Resuscitation.",
-      "pubDate": "2025 Oct",
-      "journal": "Resuscitation",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "These European Resuscitation Council (ERC) Guidelines 2025 on Special Circumstances in Resuscitation are based on the 2025 Consensus on Science with Treatment Recommendations (CoSTR) of the International Liaison Committee on Resuscitation (ILCOR), reviews by the expert writing group and relevant peer-reviewed literature. The guideline chapter provides guidance for laypeople and healthcare professionals on the modifications required to basic and advanced life support in adults for the prevention and treatment of cardiac arrest for in-hospital and out-of-hospital cardiac arrest. The ERC Guidelines 2025 Paediatric Life Support cover the special circumstances in children.",
-      "meshTerms": [
-        "Humans",
-        "Cardiopulmonary Resuscitation",
-        "Europe",
-        "Child",
-        "Heart Arrest",
-        "Out-of-Hospital Cardiac Arrest",
-        "Adult",
-        "Advanced Cardiac Life Support",
-        "Resuscitation"
-      ],
-      "keywords": [
-        "Adults",
-        "Cardiac arrest",
-        "Special causes",
-        "Special circumstances",
-        "Special patient populations",
-        "Special settings"
-      ],
-      "doi": "10.1016/j.resuscitation.2025.110753",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.497786078917465,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.4977860789174653,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:51.474Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ERC 특수상황 소생 — 응급 실무 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-resuscitation-council-special-circumstances-resuscitation",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41117568",
       "pmid": "41117568",
       "title": "European Resuscitation Council Guidelines 2025 First Aid.",
@@ -36807,7 +36727,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -38582,7 +38502,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43891,7 +43811,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -45325,7 +45245,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -46214,7 +46134,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46947,7 +46867,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47020,7 +46940,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -47104,7 +47024,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47163,7 +47083,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47395,7 +47315,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47464,7 +47384,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47578,11 +47498,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.66995850270964,
+      "priority": 7.666252490924979,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6699585027096406,
+        "recency": 1.6662524909249792,
         "scope": 0,
         "confidence": 2
       },
@@ -47597,7 +47517,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47657,7 +47577,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47731,7 +47651,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47787,11 +47707,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.66995850270964,
+      "priority": 11.666252490924979,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6699585027096406,
+        "recency": 1.6662524909249792,
         "scope": 0,
         "confidence": 2
       },
@@ -47807,7 +47727,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47874,7 +47794,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lastSeenAt": "2026-10-02T01:05:16.597Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -55749,6 +55669,199 @@
         ]
       },
       "publishedAt": "2026-10-01"
+    },
+    {
+      "id": "pmid:41117569",
+      "pmid": "41117569",
+      "title": "European Resuscitation Council Guidelines 2025 Special Circumstances in Resuscitation.",
+      "pubDate": "2025 Oct",
+      "journal": "Resuscitation",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "These European Resuscitation Council (ERC) Guidelines 2025 on Special Circumstances in Resuscitation are based on the 2025 Consensus on Science with Treatment Recommendations (CoSTR) of the International Liaison Committee on Resuscitation (ILCOR), reviews by the expert writing group and relevant peer-reviewed literature. The guideline chapter provides guidance for laypeople and healthcare professionals on the modifications required to basic and advanced life support in adults for the prevention and treatment of cardiac arrest for in-hospital and out-of-hospital cardiac arrest. The ERC Guidelines 2025 Paediatric Life Support cover the special circumstances in children.",
+      "meshTerms": [
+        "Humans",
+        "Cardiopulmonary Resuscitation",
+        "Europe",
+        "Child",
+        "Heart Arrest",
+        "Out-of-Hospital Cardiac Arrest",
+        "Adult",
+        "Advanced Cardiac Life Support",
+        "Resuscitation"
+      ],
+      "keywords": [
+        "Adults",
+        "Cardiac arrest",
+        "Special causes",
+        "Special circumstances",
+        "Special patient populations",
+        "Special settings"
+      ],
+      "doi": "10.1016/j.resuscitation.2025.110753",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.497786078917465,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.4977860789174653,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:51.474Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ERC 특수상황 소생 — 응급 실무 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-resuscitation-council-special-circumstances-resuscitation",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41117569",
+          "title": "European Resuscitation Council Guidelines 2025 Special Circumstances in Resuscitation.",
+          "journal": "Resuscitation",
+          "pubDate": "2025 Oct",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41117569/",
+          "doi": "10.1016/j.resuscitation.2025.110753"
+        },
+        "org": "European Resuscitation Council (ERC)",
+        "version": "2025",
+        "title_ko": "유럽소생협의회(ERC) 2025 가이드라인 — 특수 상황에서의 소생술",
+        "scope_ko": "성인에서 '특수 상황'(특수 원인·특수 환경·특수 환자군)으로 인한 심정지의 예방과 치료를 위해 표준 기본소생술(BLS)·전문소생술(ALS)에서 어떤 수정이 필요한지를 다루는 임상진료지침이다. 병원내·병원외 심정지 모두를 포괄하며, 일반인과 의료진 양쪽을 대상으로 한다(소아 특수 상황은 ERC 2025 소아소생술 지침에서 별도로 다룸). 2025 ILCOR CoSTR에 기반한다.",
+        "summary": [
+          "General: In any cardiac arrest, start the standard ALS algorithm and systematically address reversible causes — the 4Hs/4Ts (hypoxia, hypovolaemia, electrolyte disorders, hypothermia, cardiac tamponade, tension pneumothorax, thrombosis/PE, toxins); where appropriate, prioritise treating the reversible cause even if chest compressions are briefly interrupted.",
+          "Anaphylaxis: give IM adrenaline 500 mcg (1 mg/mL) at first suspicion and repeat after 5 min if no improvement, plus an early IV crystalloid bolus; the ERC recommends AGAINST routine corticosteroids (and routine antihistamines) as there is no evidence they help acute management.",
+          "Hyperkalaemia: protect the myocardium with IV calcium (10 mL 10% calcium chloride over 5 min, or 30 mL 10% calcium gluconate over 10 min) when ECG changes are present; shift K+ with 10 units soluble insulin + 25 g glucose IV (plus nebulised salbutamol 10–20 mg); in hyperkalaemic cardiac arrest give 10 mL 10% calcium chloride IV by rapid bolus (plus sodium bicarbonate 50 mmol via a separate line) and consider dialysis.",
+          "Accidental hypothermia: transfer patients with core temp <30°C, HR <45/min, SBP <90 mmHg, VF, or imminent-arrest risk directly to an ECPR/ECLS centre; in arrest with core temp <28°C where continuous CPR is not feasible, delay or use intermittent CPR; if VF persists after 3 shocks, withhold further defibrillation until core temp >30°C; withhold adrenaline until 30°C then give at 6–10 min intervals for 30–35°C.",
+          "Drowning: begin resuscitation with 5 rescue breaths using 100% oxygen before standard CPR, minimise ventilation pressures to avoid gastric inflation, and do not delay removal from water/resuscitation for spinal immobilisation; consider ECPR if initial resuscitation fails.",
+          "Local anaesthetic systemic toxicity (LAST): stop the local anaesthetic, use a reduced adrenaline dose (≤1 mcg/kg), and give 20% lipid emulsion — 1.5 mL/kg bolus then 15 mL/kg/h infusion; if no ROSC at 5 min, double the infusion rate and give up to two further boluses at 5-min intervals (max ~12 mL/kg).",
+          "Pulmonary embolism: for suspected PE-related cardiac arrest give a fibrinolytic, and once given continue CPR for 60–90 min before terminating; for known PE consider surgical embolectomy or percutaneous thrombectomy, and consider ECPR as rescue.",
+          "Perioperative/special-setting arrest: in operating-theatre arrest start compressions if SBP suddenly falls <50 mmHg with falling ETCO2 despite treatment, use 100% O2 and ultrasound, and consider early ECPR or open-chest compression; in cath lab / post-cardiac-surgery arrest give up to 3 stacked shocks for initial VF/pVT, with re-sternotomy within 5 min up to 10 days post-surgery."
+        ],
+        "summary_ko": [
+          "총론: 모든 심정지에서 표준 ALS 알고리즘으로 시작하고 가역적 원인(4Hs/4Ts — 저산소증, 저혈량, 전해질 이상, 저체온, 심장눌림증, 긴장성 기흉, 혈전/PE, 독성물질)을 체계적으로 찾아 교정한다. 필요하면 가슴압박이 잠시 중단되더라도 가역적 원인 치료를 우선한다.",
+          "아나필락시스: 의심 즉시 IM 아드레날린 500 mcg(1 mg/mL)을 투여하고 5분 내 호전 없으면 반복, 조기 IV 결정질액 볼루스 병행. ERC는 급성기에 스테로이드(및 항히스타민)의 루틴 사용을 '권고하지 않음' — 근거 없음.",
+          "고칼륨혈증: ECG 변화가 있으면 IV 칼슘(10% calcium chloride 10 mL를 5분, 또는 10% calcium gluconate 30 mL를 10분)으로 심근 보호; insulin 10단위 + glucose 25 g IV(+ 네뷸라이즈 salbutamol 10–20 mg)로 K+ 세포 내 이동; 고칼륨혈증 심정지에서는 10% calcium chloride 10 mL를 빠른 볼루스로(+ 별도 라인으로 sodium bicarbonate 50 mmol) 투여하고 투석 고려.",
+          "우발적 저체온: 중심체온 <30°C, HR <45/min, SBP <90 mmHg, VF, 또는 임박 심정지 위험이 있으면 ECPR/ECLS 센터로 직접 이송; 중심체온 <28°C 심정지에서 지속적 CPR이 불가능하면 CPR을 지연하거나 간헐적 CPR 시행; VF가 3회 제세동 후에도 지속되면 중심체온 >30°C가 될 때까지 추가 제세동 보류; 아드레날린은 30°C까지 보류 후 30–35°C에서 6–10분 간격.",
+          "익수: 표준 CPR 전에 100% 산소로 인공호흡 5회부터 시작, 위 팽만을 피하도록 환기 압력 최소화, 소생술/물에서 꺼내는 것을 척추 고정 때문에 지연시키지 않음; 초기 소생 실패 시 ECPR 고려.",
+          "국소마취제 전신독성(LAST): 국소마취제 중단, 낮은 아드레날린 용량(≤1 mcg/kg) 사용, 20% 지질유제 — 1.5 mL/kg 볼루스 후 15 mL/kg/h 주입; 5분에 ROSC 없으면 주입속도를 2배로 올리고 5분 간격으로 최대 2회 추가 볼루스(최대 ~12 mL/kg).",
+          "폐색전증(PE): PE 의심 심정지에는 섬유소용해제를 투여하고, 투여 후에는 60–90분간 CPR을 지속한 뒤 종료 판단; 알려진 PE에는 수술적 색전제거술 또는 경피적 혈전제거술 고려, ECPR을 구조요법으로 고려.",
+          "수술장/특수 환경 심정지: 수술장 심정지에서 치료에도 SBP가 갑자기 <50 mmHg로 떨어지고 ETCO2가 하강하면 가슴압박 시작, 100% O2와 초음파 활용, 조기 ECPR 또는 개흉 심장압박 고려; 심도자실/심장수술 후 심정지에서는 초기 VF/pVT에 최대 3회 연속 제세동, 수술 후 10일 이내면 5분 내 재흉골절개."
+        ],
+        "keyChanges": [
+          {
+            "topic": "아나필락시스 — 코르티코스테로이드",
+            "detail": "Versus 2021: corticosteroids are no longer recommended for routine acute management of anaphylaxis. The 2025 guideline explicitly recommends AGAINST routine corticosteroid use (and notes no evidence supports routine antihistamines either) because they do not improve acute outcomes and may distract from prompt adrenaline; emphasis shifts to early IM adrenaline 500 mcg and IV fluids.",
+            "detail_ko": "2021 대비: 아나필락시스 급성기 치료에서 코르티코스테로이드를 더 이상 루틴으로 권고하지 않는다. 2025 지침은 코르티코스테로이드의 루틴 사용을 명시적으로 '권고하지 않음'(항히스타민의 루틴 사용도 근거 없음)으로 바꿨다 — 급성 예후를 개선하지 못하고 즉각적 아드레날린 투여를 늦출 수 있기 때문. 초점은 조기 IM 아드레날린 500 mcg과 IV 수액으로 이동."
+          },
+          {
+            "topic": "우발적 저체온 — 고위험 기준",
+            "detail": "New high-risk criterion added: heart rate <45/min now flags a hypothermic patient as at risk of imminent cardiac arrest, triggering direct transfer to an ECPR/ECLS centre (alongside core temp <30°C, SBP <90 mmHg, VF). This bradycardia threshold was not an explicit trigger in 2021.",
+            "detail_ko": "새 고위험 기준 추가: 심박수 <45/min이 저체온 환자에서 임박 심정지 위험 신호로 새로 지정되어 ECPR/ECLS 센터로의 직접 이송 적응이 된다(중심체온 <30°C, SBP <90 mmHg, VF와 함께). 이 서맥 역치는 2021에는 명시적 트리거가 아니었다."
+          },
+          {
+            "topic": "저체온 심정지 — ECLS 자격 기준",
+            "detail": "Change: the usual ECLS qualification criteria (e.g. witnessed arrest, non-asystolic presenting rhythm) do NOT apply when the purpose is rewarming an arrested hypothermic patient — so unwitnessed arrest or asystole as the presenting rhythm should not by themselves exclude a hypothermic patient from extracorporeal rewarming.",
+            "detail_ko": "변경: 통상적 ECLS 자격 기준(예: 목격된 심정지, 무수축이 아닌 초기 리듬)은 '정지된 저체온 환자의 재가온'이 목적일 때는 적용하지 않는다 — 즉 목격되지 않은 심정지나 초기 리듬이 asystole라는 이유만으로 저체온 환자를 체외 재가온 대상에서 배제하지 않는다."
+          },
+          {
+            "topic": "저체온 심정지 — 간헐적 CPR 및 제세동",
+            "detail": "Reinforced/clarified: when core temp <28°C and continuous CPR is not feasible (e.g. prolonged rescue/transport), delayed or intermittent CPR is acceptable; and if VF persists after 3 shocks, withhold further defibrillation attempts until core temperature exceeds 30°C.",
+            "detail_ko": "강화·명확화: 중심체온 <28°C에서 지속적 CPR이 불가능할 때(예: 장시간 구조·이송) CPR을 지연하거나 간헐적으로 시행하는 것이 허용된다. 또한 VF가 3회 제세동 후에도 지속되면 중심체온이 30°C를 넘을 때까지 추가 제세동 시도를 보류한다."
+          },
+          {
+            "topic": "눈사태(avalanche) 구조",
+            "detail": "A new avalanche rescue algorithm was added, including a dedicated BLS avalanche rescue algorithm for situations with insufficient personnel on site, to standardise triage and resuscitation decisions in avalanche burial victims.",
+            "detail_ko": "새로운 눈사태 구조 알고리즘이 추가되었고, 현장 인력이 부족한 상황을 위한 전용 BLS 눈사태 구조 알고리즘이 포함되었다 — 눈사태 매몰 환자의 중증도 분류와 소생 결정을 표준화하기 위함."
+          },
+          {
+            "topic": "국소마취제 전신독성(LAST) — 알고리즘·지질유제",
+            "detail": "A new detailed LAST algorithm was added. Dosing clarified: use reduced adrenaline (≤1 mcg/kg) rather than standard 1 mg boluses, start 20% lipid emulsion 1.5 mL/kg bolus + 15 mL/kg/h infusion, and if ROSC is not achieved by 5 minutes, DOUBLE the lipid infusion rate and give up to two additional boluses at 5-minute intervals until ROSC.",
+            "detail_ko": "새로운 상세 LAST 알고리즘이 추가되었다. 용량 명확화: 표준 1 mg 볼루스 대신 낮은 아드레날린(≤1 mcg/kg) 사용, 20% 지질유제 1.5 mL/kg 볼루스 + 15 mL/kg/h 주입으로 시작하고, 5분까지 ROSC가 없으면 지질 주입속도를 2배로 올리고 ROSC까지 5분 간격으로 최대 2회 추가 볼루스를 투여한다."
+          },
+          {
+            "topic": "수술장/수술 주위 심정지 — 아드레날린 용량",
+            "detail": "For perioperative (operating-room) cardiac arrest, use a LOWER initial IV adrenaline dose with titrated incremental dosing (e.g. post-cardiac-surgery 0.05–0.1 mg increments) rather than routine 1 mg boluses, because the arrest is often rapidly recognised/monitored and standard doses risk harm; early ECPR for delayed ROSC and open-chest compressions (trained professionals only) are options.",
+            "detail_ko": "수술 주위(수술장) 심정지에서는 루틴 1 mg 볼루스 대신 낮은 초기 IV 아드레날린 용량과 적정(증량) 투여를 사용한다(예: 심장수술 후 0.05–0.1 mg 단위). 감시 하에 조기에 인지되는 경우가 많아 표준 용량이 해로울 수 있기 때문이다. 지연된 ROSC에는 조기 ECPR, 개흉 심장압박(훈련된 전문가에 한함)을 선택지로 둔다."
+          },
+          {
+            "topic": "흉벽 기형 — 오목가슴(pectus excavatum)",
+            "detail": "New guidance: in patients with pectus excavatum, a reduced chest-compression depth of 3–4 cm is now addressed/recommended (versus the standard 5–6 cm) to account for the altered chest-wall geometry.",
+            "detail_ko": "새 지침: 오목가슴(pectus excavatum) 환자에서는 변형된 흉벽 구조를 고려하여 표준 5–6 cm 대신 3–4 cm로 가슴압박 깊이를 줄이도록 새로 다룬다."
+          },
+          {
+            "topic": "폐색전증(PE) — 약물·용량 체계",
+            "detail": "Specific drug and dosage schemes for PE-related cardiac arrest were added (previously less specified), including fibrinolysis for suspected PE and, once a fibrinolytic is given, continuing CPR for 60–90 minutes before considering termination; surgical embolectomy/percutaneous thrombectomy for known PE and ECPR as rescue.",
+            "detail_ko": "PE 관련 심정지에 대한 구체적 약물·용량 체계가 추가되었다(이전에는 덜 구체적). 의심 PE에 섬유소용해제 투여, 투여 후에는 종료를 고려하기 전 60–90분간 CPR 지속, 알려진 PE에는 수술적 색전제거술/경피적 혈전제거술, 그리고 구조요법으로 ECPR을 포함한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "ERC 공식 발표 — 2025 가이드라인 릴리스 및 저자",
+            "body_ko": "유럽소생협의회(ERC) 공식 뉴스 페이지는 2025 가이드라인이 Resuscitation 저널에 12개 챕터로 발표되었음을 알리며, 특수상황(Special Circumstances) 챕터의 대표 저자가 Lott C 등임을 확인해 준다. 다만 이 발표 페이지 자체는 챕터별 '무엇이 바뀌었는지' 구체 내용을 나열하지는 않는다(릴리스 공지 수준).",
+            "sourceLabel": "ERC — 2025 ERC Guidelines is Released",
+            "sourceUrl": "https://www.erc.edu/news/2025-erc-guidelines-is-released/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, stop reaching for steroids/antihistamines as part of acute anaphylaxis resuscitation — adrenaline IM 500 mcg and fluids are the priority. In hypothermic patients, treat HR <45/min as a trigger to route directly to an ECPR centre, don't abandon asystolic/unwitnessed hypothermic arrests as non-salvageable, and hold both repeat shocks (after 3) and adrenaline until core temp climbs. For monitored/perioperative arrests, down-titrate adrenaline (increments, not reflex 1 mg) and consider early ECPR. Keep the LAST lipid-emulsion and PE fibrinolysis-then-prolonged-CPR (60–90 min) protocols immediately available, and remember the modified compression depth (3–4 cm) in pectus excavatum.",
+        "practiceImpact_ko": "침상에서는 급성 아나필락시스 소생의 일부로 스테로이드·항히스타민에 손을 뻗는 습관을 멈춘다 — IM 아드레날린 500 mcg과 수액이 우선이다. 저체온 환자에서 HR <45/min을 ECPR 센터 직접 이송의 트리거로 다루고, 무수축·비목격 저체온 심정지를 소생 불가로 포기하지 않으며, 중심체온이 오를 때까지 (3회 이후) 추가 제세동과 아드레날린을 보류한다. 감시 하/수술 주위 심정지에서는 반사적 1 mg 대신 아드레날린을 소량 적정하고 조기 ECPR을 고려한다. LAST 지질유제 프로토콜과 PE의 '섬유소용해 후 60–90분 CPR 지속' 프로토콜을 즉시 쓸 수 있게 준비하고, 오목가슴에서 압박 깊이 3–4 cm 수정을 기억한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41117569",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41117569/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110753",
+            "url": "https://doi.org/10.1016/j.resuscitation.2025.110753"
+          },
+          {
+            "label": "웹 — Resuscitation Council UK — Special circumstances Guidelines 2025",
+            "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines"
+          },
+          {
+            "label": "웹 — ERC — 2025 ERC Guidelines is Released",
+            "url": "https://www.erc.edu/news/2025-erc-guidelines-is-released/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-02"
     }
   ],
   "rejected": [
@@ -61103,7 +61216,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-01T00:43:11.681Z",
+      "discoveredAt": "2026-10-02T01:05:02.230Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -61137,7 +61250,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-01T00:43:11.681Z",
+      "discoveredAt": "2026-10-02T01:05:02.230Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -61179,7 +61292,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-01T00:43:11.681Z",
+      "discoveredAt": "2026-10-02T01:05:02.230Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -61212,7 +61325,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-01T00:43:11.681Z",
+      "discoveredAt": "2026-10-02T01:05:02.230Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -61278,9 +61391,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261001_094120:guideline:2026-10-01",
+    "runId": "trend_review_20261002_100023:guideline:2026-10-02",
     "outcome": "published",
-    "publishedId": "pmid:42812096",
+    "publishedId": "pmid:41117569",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -61289,8 +61402,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           },
@@ -61299,21 +61412,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 196,
-        "overlapCount": 3,
-        "ptOnlyCount": 3,
-        "expandedOnlyCount": 11,
+        "mergedTotal": 131,
+        "overlapCount": 1,
+        "ptOnlyCount": 1,
+        "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/09/01",
-          "maxDate": "2026/10/01"
+          "minDate": "2026/09/02",
+          "maxDate": "2026/10/02"
         },
         "retmax": 60,
         "topics": [
@@ -61321,17 +61434,17 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 60,
-            "idsFetched": 60,
-            "truncated": true,
+            "totalFound": 38,
+            "idsFetched": 38,
+            "truncated": false,
             "error": null
           },
           {
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -61339,8 +61452,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 26,
-            "idsFetched": 26,
+            "totalFound": 13,
+            "idsFetched": 13,
             "truncated": false,
             "error": null
           },
@@ -61348,8 +61461,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 28,
-            "idsFetched": 28,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -61357,8 +61470,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 37,
-            "idsFetched": 37,
+            "totalFound": 28,
+            "idsFetched": 28,
             "truncated": false,
             "error": null
           },
@@ -61366,8 +61479,8 @@
             "id": "pubmed-topic:endo_metabolic",
             "label": "응급 내분비·대사",
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           },
@@ -61375,8 +61488,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 11,
-            "idsFetched": 11,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -61393,8 +61506,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           },
@@ -61411,27 +61524,23 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 179,
+        "topicOnlyCount": 124,
         "ptPmids": [
           "42788594",
-          "42618174",
-          "42618173",
-          "42549877",
-          "42371750",
-          "42248416"
+          "42549877"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 196,
-          "enriched": 196,
-          "withAbstract": 153,
+          "requested": 131,
+          "enriched": 131,
+          "withAbstract": 101,
           "error": null
         }
       },
@@ -61484,25 +61593,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 215,
+        "queued": 214,
         "needsReview": 450,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42812096",
+        "candidateId": "pmid:41117569",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-01T00:46:19.683Z",
+  "updatedAt": "2026-10-02T01:08:25.433Z",
   "configVersion": "guideline-v2"
 }

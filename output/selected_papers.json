@@ -792,5 +792,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42714473",
+    "title": "Distinct weaning phenotypes in patients unsuccessful in weaning from invasive me",
+    "date": "2026-10-02",
+    "topic": "resp_airway",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "pool_too_small",
+    "lowConfidence": true
   }
 ]
