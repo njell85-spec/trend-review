@@ -803,5 +803,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "pool_too_small",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42823746",
+    "title": "A specialist-led interprofessional weaning program to prevent weaning failure in",
+    "date": "2026-10-03",
+    "topic": "resp_airway",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "pool_too_small",
+    "lowConfidence": true
   }
 ]

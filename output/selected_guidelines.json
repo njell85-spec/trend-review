@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-10-02T01:05:17.473Z"
+      "supersededAt": "2026-10-03T00:42:15.863Z"
     },
     {
       "id": "pmid:38531812",
@@ -12720,90 +12720,6 @@
         "reason": "초록없음·수술후 섬망 지침 적용성 논평, ICU 인접",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:40074060",
-      "pmid": "40074060",
-      "title": "Transfusion of Fresh Frozen Plasma and Platelets in Critically Ill Adults: An American College of Chest Physicians Clinical Practice Guideline.",
-      "pubDate": "2025 Sep",
-      "journal": "Chest",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-pt"
-      ],
-      "discoveredAt": "2026-08-17T04:36:59.039Z",
-      "abstract": "BACKGROUND: Platelets and fresh frozen plasma (FFP) are frequently administered to critically ill patients. Considering the variability in indications and thresholds guiding these transfusions, a comprehensive review of current evidence was conducted to provide guidance to critical care practitioners. This American College of Chest Physicians guideline examined the literature on platelet transfusions in critically ill patients with thrombocytopenia, with and without active bleeding, as well as data on prophylactic platelet and FFP transfusions for common procedures in the critical care setting.\nMETHODS: A panel of experts developed 7 Population, Intervention, Comparator, and Outcome questions addressing platelet and FFP transfusions in critically ill patients and performed a comprehensive evidence review. The panel applied the Grading of Recommendations, Assessment, Development, and Evaluations approach to assess the certainty of evidence, and to formulate and grade recommendations. A modified Delphi technique was used to reach consensus on the recommendations.\nRESULTS: The initial search identified a total of 7,172 studies, and after the initial screening, 100 articles were reviewed. Sixteen studies met inclusion criteria, comprising 1 randomized controlled trial and 15 observational studies. Overall, the certainty of the evidence for all questions was very low. The panel formulated 7 conditional recommendations.\nCONCLUSIONS: In critically ill patients with thrombocytopenia or coagulopathy, a risk/benefit assessment should be made by providers prior to transfusion of platelets or FFP. Given the known risks of blood product transfusion, and the limited data regarding the benefits from platelet or FFP transfusion, most patients will benefit from avoiding transfusion of these blood products. In patients at high risk of bleeding, or where the bleeding complication may be catastrophic, transfusion should be considered.",
-      "meshTerms": [
-        "Humans",
-        "Critical Illness",
-        "Platelet Transfusion",
-        "Plasma",
-        "Thrombocytopenia",
-        "Critical Care",
-        "Blood Component Transfusion",
-        "United States",
-        "Hemorrhage"
-      ],
-      "keywords": [
-        "arterial line",
-        "bronchoscopy",
-        "central line",
-        "critically ill",
-        "fresh frozen plasma",
-        "lumbar puncture",
-        "paracentesis",
-        "platelets",
-        "thoracentesis",
-        "transfusion"
-      ],
-      "doi": "10.1016/j.chest.2025.02.029",
-      "pmcid": "PMC12489387",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.388270465580241,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.3882704655802416,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:35.680Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "중환자 FFP·혈소판 수혈 ACCP 지침 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|transfusion-fresh-frozen-plasma-platelets-critically-ill-adults-american-college-chest-physicians-clinical-practice",
-      "supersedes": []
     },
     {
       "id": "pmid:40037948",
@@ -36727,7 +36643,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -38502,7 +38418,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43811,7 +43727,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -45245,7 +45161,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45999,17 +45915,29 @@
       "id": "pmid:42648009",
       "pmid": "42648009",
       "title": "Oral Anticoagulant Use Among Residents in VA Long-Term Care With Atrial Fibrillation After the 2014 ACC/AHA Guideline.",
-      "pubDate": "2026 Aug 26",
+      "pubDate": "2026 Oct",
       "journal": "Journal of the American Medical Directors Association",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Observational Study"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "OBJECTIVES: In 2014, the American College of Cardiology/American Heart Association moved away from recommending aspirin in atrial fibrillation (AF) and recommended that patients be treated with oral anticoagulants (OACs) to mitigate the risk of stroke. We aimed to evaluate the prevalence and predictors of OACs and/or aspirin use among veterans with AF in Veterans Affairs nursing homes in the era after the guideline publication.\nDESIGN: Observational study of veterans admitted from October 1, 2014 to September 30, 2019.\nSETTING AND PARTICIPANTS: Four thousand nine hundred ninety-four nursing home residents with AF and a CHADS-VASc score of ≥2.\nMETHODS: Multinomial logistic regression was used to compare demographics, comorbidities, functional status, and concurrent antiplatelet medication use in residents who received OAC ± aspirin and aspirin alone, compared with neither.\nRESULTS: In the era after the 2014 American College of Cardiology/American Heart Association guideline was released, age-standardized prevalence rates for any OAC (warfarin and direct oral anticoagulant) increased from 31.2% in fiscal year (FY) 2013 to 2014 to 46.6% in FY 2019. In addition, there was a decrease in patients receiving no OAC (21.1%-16.2%) and aspirin (47.7%-39.3%). However, some eligible residents remained untreated. Averaged over FY 2015 to 2019, each decade of ascending age was associated with a lower likelihood of receiving OAC [relative risk ratio (RRR), 0.79; 95% CI, 0.71-0.87], relative to neither anticoagulant nor aspirin use. Black veterans were less likely to receive OAC (RRR, 0.73; 95% CI, 0.58-0.91); Hispanic veterans were less likely to receive OAC (RRR, 0.63; 95% CI, 0.44-0.91) and aspirin (RRR, 0.47; 95% CI, 0.31-0.72). Mild to moderate cognitive impairment, greater disability, and other antiplatelet use were also associated with less OAC use.\nCONCLUSIONS AND IMPLICATIONS: Fewer Veterans Affairs nursing home residents received OACs than recommended by guidelines, with significant differences by age and race/ethnicity. Future research efforts should aim to understand the reasons for low OAC use and to augment the evidence base for anticoagulant use to include frail older adults.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Atrial Fibrillation",
+        "Male",
+        "Anticoagulants",
+        "Female",
+        "United States",
+        "Aged",
+        "Administration, Oral",
+        "Nursing Home Residents",
+        "Practice Guidelines as Topic"
+      ],
       "keywords": [
         "Atrial fibrillation",
         "aspirin",
@@ -46019,7 +45947,7 @@
         "stroke prophylaxis"
       ],
       "doi": "10.1016/j.jamda.2026.106439",
-      "pmcid": "",
+      "pmcid": "PMC13617581",
       "region": "us",
       "by": "org-acronym",
       "signals": {
@@ -46053,7 +45981,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -46072,8 +46000,7 @@
       "journal": "Stroke",
       "publicationTypes": [
         "Journal Article",
-        "Practice Guideline",
-        "Review"
+        "Practice Guideline"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -46081,14 +46008,14 @@
       "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "AIM: The \"2026 Guidelines for Adult Stroke Rehabilitation and Recovery\" replaces the 2016 \"Guidelines for Adult Stroke Rehabilitation and Recovery.\" This updated guideline is intended to provide a comprehensive, up-to-date, evidence-based set of recommendations. The intended audience includes physicians, allied health professionals, and caregivers.\nMETHODS: A comprehensive search for literature published since the 2016 guideline, derived from research involving human participants, published in English, and indexed in MEDLINE, PubMed, Cochrane Library, and other selected databases relevant to this guideline, was conducted between June and October 2025. Other documents on related subject matter previously published by the American Heart Association were also reviewed.\nSTRUCTURE: This guideline provides recommendations based on the most current evidence available for stroke rehabilitation and recovery. Key updates include new and revised recommendations across the stroke recovery continuum, including the assessment and treatment of medical comorbidities, fracture risk, fall prevention, technology-enabled rehabilitation, caregiver support, participation, and safe return to work and driving. Although this guideline reflects significant advances, it also highlights gaps in knowledge and underscores the urgent need for continued research to further refine and improve treatment strategies.",
       "meshTerms": [
-        "Humans",
-        "Stroke Rehabilitation",
-        "American Heart Association",
-        "United States",
-        "Stroke",
-        "Recovery of Function",
         "Adult",
-        "Practice Guidelines as Topic"
+        "Humans",
+        "American Heart Association",
+        "Practice Guidelines as Topic",
+        "Recovery of Function",
+        "Stroke",
+        "Stroke Rehabilitation",
+        "United States"
       ],
       "keywords": [
         "AHA Scientific Statements",
@@ -46134,7 +46061,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46819,13 +46746,13 @@
         "Humans",
         "Acute Coronary Syndrome",
         "Cardiology",
-        "Consensus",
         "Critical Pathways",
         "Delivery of Health Care, Integrated",
         "Europe",
         "Risk Assessment",
         "Risk Factors",
-        "Secondary Prevention"
+        "Secondary Prevention",
+        "Time Factors"
       ],
       "keywords": [
         "Acute coronary syndrome",
@@ -46867,7 +46794,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -46903,7 +46830,7 @@
         "Europe",
         "Cardiac Catheterization",
         "Echocardiography, Three-Dimensional",
-        "Consensus"
+        "Stroke"
       ],
       "keywords": [],
       "doi": "10.4244/EIJ-D-25-01372",
@@ -46940,7 +46867,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -46969,7 +46896,6 @@
       "meshTerms": [
         "Humans",
         "Austria",
-        "Consensus",
         "Critical Care",
         "Critical Illness",
         "Germany",
@@ -47024,7 +46950,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47083,7 +47009,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47315,7 +47241,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47384,7 +47310,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47498,11 +47424,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.666252490924979,
+      "priority": 7.662660323257244,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6662524909249792,
+        "recency": 1.662660323257244,
         "scope": 0,
         "confidence": 2
       },
@@ -47517,7 +47443,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47577,7 +47503,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47651,7 +47577,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47707,11 +47633,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.666252490924979,
+      "priority": 11.662660323299496,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6662524909249792,
+        "recency": 1.6626603232994956,
         "scope": 0,
         "confidence": 2
       },
@@ -47727,7 +47653,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47794,13 +47720,150 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-02T01:05:16.597Z",
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
       "llmFit": {
         "version": 1,
         "score": 4,
         "keep": false,
         "reason": "선천·후천 심질환 혈전예방 프랑스 합의, 만성·외래 성격이라 응급 적용 제한적",
         "at": "2026-10-01T00:43:26.121Z"
+      }
+    },
+    {
+      "id": "pmid:42823935",
+      "pmid": "42823935",
+      "title": "Diet and nutrition in chronic heart failure: A scientific statement of the Polish Society of Dietetics.",
+      "pubDate": "2026 Oct 2",
+      "journal": "Advances in clinical and experimental medicine : official organ Wroclaw Medical University",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-03T00:42:06.788Z",
+      "abstract": "Poor nutritional status and suboptimal dietary patterns are strongly associated with adverse outcomes in patients with chronic heart failure (CHF), including increased mortality, reduced functional capacity, and a higher risk of hospitalization. This scientific statement from the Polish Society of Dietetics summarizes the current evidence and provides clinically oriented guidance on the role of nutrition in the management of CHF. It outlines the key components of nutritional care across the spectrum of CHF, including screening, assessment, dietary strategies, and supplementation. The main features of evidence-based nutritional management in CHF include: 1) routine nutritional screening using validated tools and structured assessment incorporating the GLIM criteria; 2) identification of malnutrition, cachexia, sarcopenia, and sarcopenic obesity; 3) individualized dietary management tailored to the HF phenotype and clinical status; 4) prioritization of dietary patterns rich in plant-based and minimally processed foods, with the Mediterranean diet as the dietary model supported by the strongest evidence; 5) avoidance of excessive sodium intake and unnecessary fluid restriction in stable patients; 6) ensuring adequate energy intake and protein intake to preserve lean body mass; and 7) targeted, rather than routine, use of micronutrient supplementation, with particular consideration of iron deficiency.",
+      "meshTerms": [],
+      "keywords": [
+        "dietary patterns",
+        "dietitians",
+        "heart failure",
+        "nutrition therapy",
+        "nutritional status"
+      ],
+      "doi": "10.17219/acem/225017",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 7,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "scientific-statement",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "만성 심부전 외래 영양 권고, 응급·중환자 침상 무관",
+        "at": "2026-10-03T00:42:17.362Z"
+      }
+    },
+    {
+      "id": "pmid:42823130",
+      "pmid": "42823130",
+      "title": "Peripheral artery disease: Putting the updated 2024 AHA/ACC guideline into practice.",
+      "pubDate": "2026",
+      "journal": "Cleveland Clinic journal of medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-03T00:42:06.788Z",
+      "abstract": "The 2024 American Heart Association and American College of Cardiology multisociety peripheral artery disease (PAD) guideline updates the 2016 guideline by clarifying clinical terminology, using trial evidence to guide pharmacotherapy, and addressing equity and access to care. This article summarizes the main clinical recommendations and how to implement them.",
+      "meshTerms": [
+        "Humans",
+        "Peripheral Arterial Disease",
+        "Practice Guidelines as Topic",
+        "United States",
+        "American Heart Association",
+        "Cardiology"
+      ],
+      "keywords": [],
+      "doi": "10.3949/ccjm.93a.25101",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 11.66266032317274,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 1.6626603231727408,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "AHA/ACC 말초동맥질환 지침, 급성 사지허혈 등 일부 응급 접점",
+        "at": "2026-10-03T00:42:17.362Z"
       }
     }
   ],
@@ -55862,6 +55925,192 @@
         ]
       },
       "publishedAt": "2026-10-02"
+    },
+    {
+      "id": "pmid:40074060",
+      "pmid": "40074060",
+      "title": "Transfusion of Fresh Frozen Plasma and Platelets in Critically Ill Adults: An American College of Chest Physicians Clinical Practice Guideline.",
+      "pubDate": "2025 Sep",
+      "journal": "Chest",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-pt"
+      ],
+      "discoveredAt": "2026-08-17T04:36:59.039Z",
+      "abstract": "BACKGROUND: Platelets and fresh frozen plasma (FFP) are frequently administered to critically ill patients. Considering the variability in indications and thresholds guiding these transfusions, a comprehensive review of current evidence was conducted to provide guidance to critical care practitioners. This American College of Chest Physicians guideline examined the literature on platelet transfusions in critically ill patients with thrombocytopenia, with and without active bleeding, as well as data on prophylactic platelet and FFP transfusions for common procedures in the critical care setting.\nMETHODS: A panel of experts developed 7 Population, Intervention, Comparator, and Outcome questions addressing platelet and FFP transfusions in critically ill patients and performed a comprehensive evidence review. The panel applied the Grading of Recommendations, Assessment, Development, and Evaluations approach to assess the certainty of evidence, and to formulate and grade recommendations. A modified Delphi technique was used to reach consensus on the recommendations.\nRESULTS: The initial search identified a total of 7,172 studies, and after the initial screening, 100 articles were reviewed. Sixteen studies met inclusion criteria, comprising 1 randomized controlled trial and 15 observational studies. Overall, the certainty of the evidence for all questions was very low. The panel formulated 7 conditional recommendations.\nCONCLUSIONS: In critically ill patients with thrombocytopenia or coagulopathy, a risk/benefit assessment should be made by providers prior to transfusion of platelets or FFP. Given the known risks of blood product transfusion, and the limited data regarding the benefits from platelet or FFP transfusion, most patients will benefit from avoiding transfusion of these blood products. In patients at high risk of bleeding, or where the bleeding complication may be catastrophic, transfusion should be considered.",
+      "meshTerms": [
+        "Humans",
+        "Critical Illness",
+        "Platelet Transfusion",
+        "Plasma",
+        "Thrombocytopenia",
+        "Critical Care",
+        "Blood Component Transfusion",
+        "United States",
+        "Hemorrhage"
+      ],
+      "keywords": [
+        "arterial line",
+        "bronchoscopy",
+        "central line",
+        "critically ill",
+        "fresh frozen plasma",
+        "lumbar puncture",
+        "paracentesis",
+        "platelets",
+        "thoracentesis",
+        "transfusion"
+      ],
+      "doi": "10.1016/j.chest.2025.02.029",
+      "pmcid": "PMC12489387",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.388270465580241,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.3882704655802416,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:35.680Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중환자 FFP·혈소판 수혈 ACCP 지침 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|transfusion-fresh-frozen-plasma-platelets-critically-ill-adults-american-college-chest-physicians-clinical-practice",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40074060",
+          "title": "Transfusion of Fresh Frozen Plasma and Platelets in Critically Ill Adults: An American College of Chest Physicians Clinical Practice Guideline.",
+          "journal": "Chest",
+          "pubDate": "2025 Sep",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40074060/",
+          "doi": "10.1016/j.chest.2025.02.029"
+        },
+        "org": "American College of Chest Physicians (CHEST)",
+        "version": "2025",
+        "title_ko": "중증 성인 환자에서 신선동결혈장(FFP) 및 혈소판 수혈: 미국흉부의사학회(CHEST) 임상진료지침",
+        "scope_ko": "외상 및 신경중환자를 제외한 성인 중환자에서 혈소판감소증(출혈 유무 포함) 및 응고병증에 대한 혈소판·FFP 수혈을 다룬다. 침습적 시술(중심정맥관/동맥관 삽입, 흉강·복강천자, 요추천자, 굴곡성 기관지경, 문맥압항진성 소화관출혈 내시경) 전 예방적 수혈 여부도 포함한다. 권고 1–3은 혈소판감소증 중환자에 우선 적용하고, 4–7은 특정 시술 상황에 추가 적용하는 계층적 구조다.",
+        "summary": [
+          "In stable non-bleeding critically ill patients with thrombocytopenia WITHOUT high risk of spontaneous bleeding, transfuse platelets only if the count falls below 10 ×10⁹/L (conditional, very low certainty).",
+          "In stable non-bleeding thrombocytopenic patients considered at HIGH risk of spontaneous bleeding, transfuse platelets if the count falls below 30–50 ×10⁹/L (conditional, very low certainty).",
+          "In critically ill patients with thrombocytopenia and serious ACTIVE bleeding, transfuse platelets if the count falls below 50 ×10⁹/L (conditional, very low certainty).",
+          "For CVC or arterial line insertion, suggest AGAINST routine prophylactic platelet transfusion (for thrombocytopenia) and AGAINST routine prophylactic FFP (for coagulopathy) (conditional, very low certainty).",
+          "For bedside thoracentesis or paracentesis, suggest AGAINST routine prophylactic platelet transfusion and AGAINST routine prophylactic FFP (conditional, very low certainty).",
+          "For bedside lumbar puncture, suggest platelet transfusion if count is ≤40–50 ×10⁹/L, and FFP transfusion to target INR 1.5–2 before the procedure (conditional, very low certainty).",
+          "For routine flexible bronchoscopy without biopsy, and for suspected portal-hypertension–related GI bleeding undergoing endoscopy, suggest AGAINST routine prophylactic platelet and FFP transfusion (conditional, very low certainty).",
+          "All 7 recommendations are CONDITIONAL with VERY LOW certainty of evidence; overall message is a risk/benefit assessment favoring AVOIDING transfusion in most patients unless bleeding risk is high or potentially catastrophic."
+        ],
+        "summary_ko": [
+          "자발 출혈 고위험이 아닌 안정된 비출혈성 혈소판감소증 중환자는 혈소판 수치가 10 ×10⁹/L 미만일 때만 수혈한다(조건부, 매우 낮은 확실성).",
+          "자발 출혈 고위험으로 판단되는 안정된 비출혈성 혈소판감소증 환자는 수치가 30–50 ×10⁹/L 미만이면 수혈한다(조건부, 매우 낮은 확실성).",
+          "혈소판감소증이 있으면서 심각한 활동성 출혈이 있는 중환자는 수치가 50 ×10⁹/L 미만이면 수혈한다(조건부, 매우 낮은 확실성).",
+          "중심정맥관·동맥관 삽입 시 혈소판감소증에 대한 예방적 혈소판 수혈, 응고병증에 대한 예방적 FFP 수혈을 모두 일상적으로 하지 말 것을 제안(조건부, 매우 낮은 확실성).",
+          "침상 흉강천자·복강천자 시 예방적 혈소판 수혈 및 예방적 FFP 수혈을 일상적으로 하지 말 것을 제안(조건부, 매우 낮은 확실성).",
+          "침상 요추천자 시 혈소판 수치가 ≤40–50 ×10⁹/L이면 혈소판 수혈을, 응고병증이면 시술 전 INR 1.5–2를 목표로 FFP 수혈을 제안(조건부, 매우 낮은 확실성).",
+          "생검 없는 일상적 굴곡성 기관지경, 그리고 문맥압항진 관련 소화관출혈이 의심되어 내시경을 받는 경우 예방적 혈소판·FFP 수혈을 일상적으로 하지 말 것을 제안(조건부, 매우 낮은 확실성).",
+          "7개 권고 모두 조건부이며 근거 확실성은 매우 낮음. 전체 메시지는 위험/이득 평가를 통해, 출혈 위험이 높거나 재앙적일 수 있는 경우를 제외하면 대부분의 환자에서 수혈을 피하는 쪽."
+        ],
+        "keyChanges": [
+          {
+            "topic": "요추천자 전 혈소판 역치",
+            "detail": "Shift toward a lower platelet threshold for lumbar puncture: the panel cites evidence that lowering the prophylactic platelet transfusion threshold from 50 to 40 ×10⁹/L significantly reduced the number of platelet transfusions without increasing complications. The recommendation now supports transfusing only at ≤40–50 ×10⁹/L (conditional, very low certainty), formalizing a more restrictive bedside trigger.",
+            "detail_ko": "요추천자 전 혈소판 역치를 더 낮추는 방향. 패널은 예방적 혈소판 수혈 역치를 50에서 40 ×10⁹/L로 낮추면 합병증 증가 없이 혈소판 수혈 건수가 유의하게 감소했다는 근거를 인용한다. 이제 ≤40–50 ×10⁹/L일 때만 수혈하도록 권고(조건부, 매우 낮은 확실성)하여 더 제한적인 침상 기준을 명문화했다."
+          },
+          {
+            "topic": "침상 시술 전 예방적 수혈 지양",
+            "detail": "Move away from routine procedural prophylaxis that was common in prior practice: for CVC/arterial line insertion, thoracentesis/paracentesis, flexible bronchoscopy without biopsy, and portal-hypertension–related GI endoscopy, the guideline now explicitly suggests AGAINST routine prophylactic platelet or FFP transfusion. Lumbar puncture is the notable exception where prophylaxis is still suggested. The reason is minimal demonstrated benefit against documented transfusion risks (TACO/TRALI ~1% of platelet reactions).",
+            "detail_ko": "이전 관행에서 흔하던 시술 전 일상적 예방 수혈에서 벗어남: 중심정맥관/동맥관 삽입, 흉강·복강천자, 생검 없는 굴곡성 기관지경, 문맥압항진 관련 소화관 내시경에서 예방적 혈소판·FFP 수혈을 일상적으로 하지 말 것을 명시적으로 제안한다. 요추천자만 여전히 예방을 제안하는 예외다. 이유는 입증된 이득은 미미한 반면 수혈 위험(혈소판 반응의 약 1%가 TACO/TRALI)은 분명하기 때문."
+          },
+          {
+            "topic": "응고병증에 대한 FFP의 INR 목표",
+            "detail": "For coagulopathy, FFP is reserved for high-risk situations with a specific target: before lumbar puncture, transfuse FFP to target INR 1.5–2 (not full normalization). For most other bedside procedures, FFP prophylaxis is suggested against entirely — a departure from historical practice of correcting mild INR elevations before procedures.",
+            "detail_ko": "응고병증에서 FFP는 특정 목표치를 둔 고위험 상황에만 한정: 요추천자 전에는 INR 1.5–2를 목표로 FFP를 수혈하며(완전 정상화가 아님), 그 외 대부분의 침상 시술에서는 FFP 예방 수혈을 아예 하지 말 것을 제안한다. 이는 시술 전 경미한 INR 상승을 교정하던 과거 관행에서 벗어난 것이다."
+          },
+          {
+            "topic": "전반적 기조 — 제한적 수혈 전략",
+            "detail": "Overall reorientation from a liberal, threshold-driven approach toward a restrictive, risk/benefit-individualized approach: the explicit default is that most critically ill thrombocytopenic/coagulopathic patients benefit from AVOIDING platelet/FFP transfusion, reserving it for high or potentially catastrophic bleeding risk. Implementation is estimated to cut roughly half a million units of platelets/FFP annually in the U.S.",
+            "detail_ko": "자유로운 역치 중심 접근에서 제한적·개별 위험/이득 중심 접근으로의 전반적 재정립: 대부분의 중증 혈소판감소증/응고병증 환자는 혈소판·FFP 수혈을 피하는 것이 이득이며, 출혈 위험이 높거나 재앙적일 수 있는 경우에만 수혈을 남겨두는 것을 기본값으로 명시한다. 시행 시 미국에서 연간 약 50만 단위의 혈소판·FFP를 줄일 수 있을 것으로 추정된다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "동반 사설의 경고 — 특정 중환자군에서 제한적 권고의 한계",
+            "body_ko": "같은 CHEST 호에 실린 Adkins·Yates·Sarode의 사설은 제한적 권고를 특정 환자군에 일률 적용하는 데 주의를 당부한다. 중환자의 경미한 INR 상승은 진짜 응고병증이 아니라 비타민 K 결핍을 반영하는 경우가 많으므로 수혈 전 원인 규명이 먼저라고 지적하며, \"혈장 수혈이 ICU에서 출혈률을 낮춘다는 근거는 없다\"고 본다. 간경변처럼 재균형 지혈(rebalanced hemostasis) 상태에서는 혈장 수혈이 오히려 문맥압항진성 출혈을 악화시킬 수 있다. 또 비장 격리(splenic sequestration)로 혈소판 증가가 저조한 환자에게 '수치를 맞추려' 반복 수혈하면 용적 과부하를 유발할 수 있고, 이 용적 과부하(TACO)가 미국 수혈 관련 사망의 1위 원인이라고 강조한다. 지침이 Society for Interventional Radiology 기준을 인용하면서도 간경변 등 질환별 역치 구분을 두지 않은 점을 공백으로 지적한다. (이는 지침 원문이 아니라 사설의 견해다.)",
+            "sourceLabel": "CHEST 동반 사설 (Adkins, Yates, Sarode) — PMC",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12597579/"
+          },
+          {
+            "heading_ko": "CHEST 공식 보도자료 — 핵심 메시지와 자원 절감 근거",
+            "body_ko": "CHEST 공식 보도자료는 이 지침의 목표를 중환자에서 불필요한 혈소판·FFP 수혈을 줄이는 7개 조건부 권고로 요약한다. 두 가지 근거를 든다: (1) 자원 절감 — 미국에서 혈소판·FFP의 20%가 중환자에게 투여되어 연간 각 220만 단위에 달하며, 이 지침 시행으로 연간 약 50만 단위를 줄일 수 있어 전 세계적 희소성과 접근성 격차를 완화한다. (2) 불필요한 시술 축소 — 교신저자 Dr. Coz Yataco는 \"혈소판이나 FFP의 예방적 수혈이 불필요하게 이루어지고 있으며\" \"침상 시술 전 수혈이 필요한 경우는 드물다\"고 밝혔다. (RBC 동반 지침에 대한 구체 언급은 보도자료에 없다.)",
+            "sourceLabel": "CHEST 공식 보도자료",
+            "sourceUrl": "https://www.chestnet.org/newsroom/press-releases/2025/04/guideline-on-platelet-and-plasma-transfusion-released-by-chest"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, stop reflexively transfusing platelets or FFP to \"fix a number\" before common ICU procedures: for CVC/arterial lines, thoracentesis/paracentesis, bronchoscopy without biopsy, and variceal/portal-hypertension GI endoscopy, proceed without prophylactic transfusion in stable patients. Reserve platelets for counts <10 ×10⁹/L (non-bleeding, low risk), <30–50 ×10⁹/L (high spontaneous-bleeding risk), or <50 ×10⁹/L (active serious bleeding), and reserve FFP largely for lumbar puncture (target INR 1.5–2) or active bleeding. Because all recommendations are conditional with very-low-certainty evidence, apply shared decision-making and individualized bleeding-risk assessment (e.g., IMPROVE score ≥7 flags higher risk) rather than fixed triggers, and weigh transfusion harms such as TACO—the leading cause of transfusion-related death.",
+        "practiceImpact_ko": "침상에서, 흔한 ICU 시술 전에 \"수치를 맞추려고\" 반사적으로 혈소판·FFP를 수혈하는 관행을 중단한다: 중심정맥관/동맥관, 흉강·복강천자, 생검 없는 기관지경, 정맥류·문맥압항진성 소화관 내시경은 안정 환자에서 예방적 수혈 없이 진행한다. 혈소판은 <10 ×10⁹/L(비출혈·저위험), <30–50 ×10⁹/L(자발 출혈 고위험), <50 ×10⁹/L(활동성 심각 출혈)에, FFP는 주로 요추천자(INR 1.5–2 목표)나 활동성 출혈에 한정한다. 모든 권고가 조건부·매우 낮은 확실성이므로, 고정된 역치보다 개별 출혈 위험 평가(예: IMPROVE 점수 ≥7은 고위험 신호)와 공유 의사결정을 적용하고, 수혈 관련 사망의 최다 원인인 TACO 같은 수혈 위해를 함께 고려한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40074060",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40074060/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.chest.2025.02.029",
+            "url": "https://doi.org/10.1016/j.chest.2025.02.029"
+          },
+          {
+            "label": "웹 — CHEST 지침 전문 — PMC (PMID 40074060)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12489387/"
+          },
+          {
+            "label": "웹 — CHEST 동반 사설 (Adkins, Yates, Sarode) — PMC",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12597579/"
+          },
+          {
+            "label": "웹 — CHEST 공식 보도자료",
+            "url": "https://www.chestnet.org/newsroom/press-releases/2025/04/guideline-on-platelet-and-plasma-transfusion-released-by-chest"
+          },
+          {
+            "label": "웹 — EurekAlert — Guideline on platelet and plasma transfusion released by CHEST",
+            "url": "https://www.eurekalert.org/news-releases/1082382"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-03"
     }
   ],
   "rejected": [
@@ -61216,7 +61465,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-02T01:05:02.230Z",
+      "discoveredAt": "2026-10-03T00:42:06.788Z",
       "abstract": "BACKGROUND: Non-invasive assessment of left atrial pressure (LAP) remains difficult in patients with atrial fibrillation (AF). The American Society of Echocardiography (ASE) updated the Recommendations for the Evaluation of Left Ventricular Diastolic Function and introduced a specific algorithm for LAP estimation in AF. We retrospectively investigated the prognostic value of the new algorithm-based LAP assessment in patients with heart failure with preserved ejection fraction (HFpEF) and persistent AF.\nMETHODS: This study included 363 patients hospitalized for acutely decompensated HFpEF who had persistent AF at discharge. LAP was categorized as normal, elevated, or indeterminate using echocardiography at discharge, according to the algorithm in the 2025 ASE guidelines. Multivariable Cox proportional hazards models were constructed to assess associations between LAP classification and clinical outcomes such as death, heart failure (HF) hospitalization and stroke during follow-up of 574 days.\nRESULTS: LAP was classified as elevated in 93 patients (25.6%) and normal in 165 (45.5%), while it was indeterminate in 105 (28.9%) cases due to missing variables recommended in the 2025 guidelines. Elevated LAP was independently associated with HF hospitalization during follow-up period (HR 1.57, 95% CI 1.05-2.37, p=0.03), whereas it was not identified as an independent predictor for death or stroke after adjustment. This association remained significant after accounting for the competing risk of death and was largely preserved across multiple imputation and sensitivity analyses using different assumptions for indeterminate cases. The incremental value of LAP estimation for predicting HF hospitalization over natriuretic peptides was modest and not statistically significant.\nCONCLUSIONS: In patients hospitalized for HFpEF with persistent AF, LAP classification was associated with HF hospitalization, implying clinical relevance of the 2025 algorithm-based approach in this challenging population.",
       "meshTerms": [],
       "keywords": [
@@ -61250,7 +61499,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-02T01:05:02.230Z",
+      "discoveredAt": "2026-10-03T00:42:06.788Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -61292,7 +61541,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-02T01:05:02.230Z",
+      "discoveredAt": "2026-10-03T00:42:06.788Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -61325,7 +61574,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-02T01:05:02.230Z",
+      "discoveredAt": "2026-10-03T00:42:06.788Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -61391,9 +61640,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261002_100023:guideline:2026-10-02",
+    "runId": "trend_review_20261003_093755:guideline:2026-10-03",
     "outcome": "published",
-    "publishedId": "pmid:41117569",
+    "publishedId": "pmid:40074060",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -61418,15 +61667,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 131,
+        "mergedTotal": 129,
         "overlapCount": 1,
         "ptOnlyCount": 1,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/09/02",
-          "maxDate": "2026/10/02"
+          "minDate": "2026/09/03",
+          "maxDate": "2026/10/03"
         },
         "retmax": 60,
         "topics": [
@@ -61434,8 +61683,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 38,
-            "idsFetched": 38,
+            "totalFound": 39,
+            "idsFetched": 39,
             "truncated": false,
             "error": null
           },
@@ -61443,8 +61692,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           },
@@ -61461,8 +61710,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 18,
+            "idsFetched": 18,
             "truncated": false,
             "error": null
           },
@@ -61506,8 +61755,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 11,
-            "idsFetched": 11,
+            "totalFound": 10,
+            "idsFetched": 10,
             "truncated": false,
             "error": null
           },
@@ -61530,7 +61779,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 124,
+        "topicOnlyCount": 122,
         "ptPmids": [
           "42788594",
           "42549877"
@@ -61538,9 +61787,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 131,
-          "enriched": 131,
-          "withAbstract": 101,
+          "requested": 129,
+          "enriched": 129,
+          "withAbstract": 97,
           "error": null
         }
       },
@@ -61593,23 +61842,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 2,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 214,
-        "needsReview": 450,
+        "queued": 213,
+        "needsReview": 452,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41117569",
+        "candidateId": "pmid:40074060",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-02T01:08:25.433Z",
+  "updatedAt": "2026-10-03T00:44:27.206Z",
   "configVersion": "guideline-v2"
 }
