@@ -3471,6 +3471,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-04",
+      "pmid": "42314896",
+      "title": "Comparison of intraosseous line placement location and rates of return of spontaneous circulation and survival to discharge among patients with out-of-hospital cardiac arrest.",
+      "title_ko": "병원 밖 심정지 환자에서 골내주사(IO) 삽입 위치와 자발순환회복(ROSC) 및 퇴원 생존율의 비교",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111179",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "골내주사(IO)를 통한 약물 투여가 필요한 성인 병원 밖 심정지(OHCA) 환자에서, humeral IO 삽입이 tibial IO 삽입에 비해 자발순환회복(ROSC), 퇴원 생존율, 퇴원 시 신경학적 상태에 영향을 주는가?",
+      "pico": {
+        "population": "[USA] Patients (≥16 years) with non-traumatic out-of-hospital cardiac arrest treated between 2020 and 2023, from the Riverside County High Performance Resuscitation Training Cardiac Arrest Registry (Riverside County, California); 1920 cases examined, including 246 with humeral IO (12.8%) and 1674 with tibial IO (87.2%).",
+        "intervention": "Humeral intraosseous (IO) line placement for medication administration during OHCA (n = 246, 12.8%).",
+        "comparison": "Tibial intraosseous (IO) line placement for medication administration during OHCA (n = 1674, 87.2%).",
+        "outcome": "Return of spontaneous circulation (ROSC): humeral IO nearly twice as likely to achieve ROSC (OR 1.85, 95% CI [1.39, 2.50], p < 0.0001); after adjusting for age, sex, initial rhythm, and compression fraction the association was stronger (adjusted OR 2.55, 95% CI [1.54, 4.22], p = 0.0003)."
+      },
+      "pico_ko": {
+        "population": "[미국] 2020~2023년 사이 치료받은 ≥16세의 비외상성 병원 밖 심정지(OHCA) 환자로, Riverside County High Performance Resuscitation Training Cardiac Arrest Registry(캘리포니아주 Riverside County)에서 추출. 총 1920건 분석, 이 중 humeral IO 246건(12.8%), tibial IO 1674건(87.2%).",
+        "intervention": "OHCA 중 약물 투여를 위한 humeral 골내주사(IO) 삽입 (n = 246, 12.8%).",
+        "comparison": "OHCA 중 약물 투여를 위한 tibial 골내주사(IO) 삽입 (n = 1674, 87.2%).",
+        "outcome": "자발순환회복(ROSC): humeral IO가 ROSC 달성 가능성이 거의 2배 높음 (OR 1.85, 95% CI [1.39, 2.50], p < 0.0001); 나이, 성별, 초기 리듬, compression fraction 보정 후 연관성이 더 강해짐 (adjusted OR 2.55, 95% CI [1.54, 4.22], p = 0.0003)."
+      },
+      "keyFindings": [
+        "Among 1920 OHCA cases (246 humeral IO, 12.8%; 1674 tibial IO, 87.2%), humeral IO was associated with nearly double the odds of ROSC (OR 1.85, 95% CI 1.39–2.50, p < 0.0001), strengthening after adjustment for age, sex, initial rhythm, and compression fraction (adjusted OR 2.55, 95% CI 1.54–4.22, p = 0.0003).",
+        "Humeral IO placement was associated with about twice the odds of survival to hospital discharge (OR 2.04, 95% CI 1.03–4.17, p < 0.050).",
+        "Neurological status at discharge could not be assessed due to insufficient power (n = 49)."
+      ],
+      "keyFindings_ko": [
+        "1920건의 OHCA(humeral IO 246건 12.8%, tibial IO 1674건 87.2%) 중 humeral IO는 ROSC 오즈가 거의 2배(OR 1.85, 95% CI 1.39–2.50, p < 0.0001)였고, 나이·성별·초기 리듬·compression fraction 보정 후 더 강해짐(adjusted OR 2.55, 95% CI 1.54–4.22, p = 0.0003).",
+        "humeral IO 삽입은 퇴원 생존 오즈가 약 2배 높음(OR 2.04, 95% CI 1.03–4.17, p < 0.050).",
+        "퇴원 시 신경학적 상태는 검정력 부족(n = 49)으로 평가할 수 없었음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42314896",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42314896/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111179",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111179"
+        },
+        {
+          "label": "웹 — PubMed (PMID 42314896)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42314896/"
+        },
+        {
+          "label": "웹 — ScienceDirect — Resuscitation article page (abstract only)",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0300957226002261"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed (PMID 42314896)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42314896/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ScienceDirect — Resuscitation article page (abstract only)",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0300957226002261",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
