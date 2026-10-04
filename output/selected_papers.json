@@ -814,5 +814,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "pool_too_small",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42314896",
+    "title": "Comparison of intraosseous line placement location and rates of return of sponta",
+    "date": "2026-10-04",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 2,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]

@@ -472,7 +472,7 @@
       "lineageReview": true,
       "lineageReason": "candidate-not-newer",
       "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-10-03T00:42:15.863Z"
+      "supersededAt": "2026-10-04T00:03:34.266Z"
     },
     {
       "id": "pmid:38531812",
@@ -20407,91 +20407,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:39207913",
-      "pmid": "39207913",
-      "title": "Ketamine Analgo-sedation for Mechanically Ventilated Critically Ill Adults: A Rapid Practice Guideline from the Saudi Critical Care Society and the Scandinavian Society of Anesthesiology and Intensive Care Medicine.",
-      "pubDate": "2025 Aug 1",
-      "journal": "Anesthesia and analgesia",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Systematic Review",
-        "Meta-Analysis"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:37:55.033Z",
-      "abstract": "BACKGROUND: This Rapid Practice Guideline (RPG) aimed to provide evidence‑based recommendations for ketamine analgo-sedation (monotherapy and adjunct) versus non-ketamine sedatives or usual care in adult intensive care unit (ICU) patients on invasive mechanical ventilation (iMV) and to identify knowledge gaps for future research.\nMETHODS: The RPG panel comprised 23 multinational multidisciplinary panelists, including a patient representative. An up-to-date systematic review and meta-analysis constituted the evidence base. The Grading Recommendations, Assessment, Development, and Evaluation approach, and the evidence-to-decision framework were used to assess the certainty of evidence and to move from evidence to decision/recommendation. The panel provided input on the balance of the desirable and undesirable effects, certainty of evidence, patients' values and preferences, costs, resources, equity, feasibility, acceptability, and research priorities.\nRESULTS: Data from 17 randomized clinical trials (n=898) and 9 observational studies (n=1934) were included. There was considerable uncertainty about the desirable and undesirable effects of ketamine monotherapy for analgo-sedation. The evidence was very low certainty and downgraded for risk of bias, indirectness, and inconsistency. Uncertainty or variability in values and preferences were identified. Costs, resources, equity, and acceptability were considered varied. Adjunctive ketamine therapy had no effect on mortality (within 28 days) (relative risk [RR] 0.99; 95% confidence interval [CI] 0.76 to 1.27; low certainty), and may slightly reduce iMV duration (days) (mean difference [MD] -0.05 days; 95% CI -0.07 to -0.03; low certainty), and uncertain effect on the cumulative dose of opioids (mcg/kg/h morphine equivalent) (MD -11.6; 95% CI -20.4 to -2.7; very low certainty). Uncertain desirable effects (cumulative dose of sedatives and vasopressors) and undesirable effects (adverse event rate, delirium, arrhythmia, hepatotoxicity, hypersalivation, use of physical restraints) were also identified. A possibility of important uncertainty or variability in patient-important outcomes led to a balanced effect that favored neither the intervention nor the comparison. Cost, resources, and equity were considered varied.\nCONCLUSION: The RPG panel provided two conditional recommendations and suggested (1) against using ketamine as monotherapy analgo-sedation in critically ill adults on iMV when other analgo-sedatives are available; and (2) using ketamine as an adjunct to non-ketamine usual care sedatives (e.g., opioids, propofol, dexmedetomidine) or continuing with non-ketamine usual care sedatives alone. Large-scale trials should provide additional evidence.",
-      "meshTerms": [
-        "Humans",
-        "Ketamine",
-        "Respiration, Artificial",
-        "Critical Illness",
-        "Critical Care",
-        "Hypnotics and Sedatives",
-        "Adult",
-        "Anesthetics, Dissociative",
-        "Societies, Medical",
-        "Randomized Controlled Trials as Topic"
-      ],
-      "keywords": [
-        "Critical care",
-        "GRADE",
-        "Ketamine",
-        "Mechanical ventilation",
-        "Practice Guidelines",
-        "Sedation"
-      ],
-      "doi": "10.1213/ANE.0000000000007173",
-      "pmcid": "",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.275104183107841,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.2751041831078405,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:22.888Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "기계환기 케타민 진정 지침 — 중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|ketamine-analgo-sedation-mechanically-ventilated-critically-ill-adults-rapid-practice-from-saudi-critical-care-society-scandinavian-society-anesthesiology-intensive-care-medicine",
-      "supersedes": [
-        "pmid:39198198"
-      ]
-    },
-    {
       "id": "pmid:40613765",
       "pmid": "40613765",
       "title": "Pathway for a Diverse and Sustainable Emergency Medicine Clinician-Scientist Workforce: Recommendations From the 2024 SAEM Consensus Conference.",
@@ -36643,7 +36558,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -38418,7 +38333,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43727,7 +43642,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -45161,7 +45076,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45981,7 +45896,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -46061,7 +45976,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46794,7 +46709,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "esc|optimal-lifelong-roadmap-post-acute-coronary-syndrome-clinical-european-association-preventive-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -46867,7 +46782,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -46950,7 +46865,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47009,7 +46924,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47241,7 +47156,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47310,7 +47225,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47424,11 +47339,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.662660323257244,
+      "priority": 7.659107872817797,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.662660323257244,
+        "recency": 1.6591078728177973,
         "scope": 0,
         "confidence": 2
       },
@@ -47443,7 +47358,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47503,7 +47418,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47577,7 +47492,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.375Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47633,11 +47548,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.662660323299496,
+      "priority": 11.659107872860048,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6626603232994956,
+        "recency": 1.6591078728600488,
         "scope": 0,
         "confidence": 2
       },
@@ -47653,7 +47568,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47720,7 +47635,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47777,7 +47692,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -47785,7 +47700,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47835,18 +47750,18 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.66266032317274,
+      "priority": 11.659107872733294,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6626603231727408,
+        "recency": 1.659107872733294,
         "scope": 0,
         "confidence": 2
       },
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -47855,7 +47770,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-03T00:42:14.994Z",
+      "lastSeenAt": "2026-10-04T00:03:33.376Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -56111,6 +56026,159 @@
         ]
       },
       "publishedAt": "2026-10-03"
+    },
+    {
+      "id": "pmid:39207913",
+      "pmid": "39207913",
+      "title": "Ketamine Analgo-sedation for Mechanically Ventilated Critically Ill Adults: A Rapid Practice Guideline from the Saudi Critical Care Society and the Scandinavian Society of Anesthesiology and Intensive Care Medicine.",
+      "pubDate": "2025 Aug 1",
+      "journal": "Anesthesia and analgesia",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:37:55.033Z",
+      "abstract": "BACKGROUND: This Rapid Practice Guideline (RPG) aimed to provide evidence‑based recommendations for ketamine analgo-sedation (monotherapy and adjunct) versus non-ketamine sedatives or usual care in adult intensive care unit (ICU) patients on invasive mechanical ventilation (iMV) and to identify knowledge gaps for future research.\nMETHODS: The RPG panel comprised 23 multinational multidisciplinary panelists, including a patient representative. An up-to-date systematic review and meta-analysis constituted the evidence base. The Grading Recommendations, Assessment, Development, and Evaluation approach, and the evidence-to-decision framework were used to assess the certainty of evidence and to move from evidence to decision/recommendation. The panel provided input on the balance of the desirable and undesirable effects, certainty of evidence, patients' values and preferences, costs, resources, equity, feasibility, acceptability, and research priorities.\nRESULTS: Data from 17 randomized clinical trials (n=898) and 9 observational studies (n=1934) were included. There was considerable uncertainty about the desirable and undesirable effects of ketamine monotherapy for analgo-sedation. The evidence was very low certainty and downgraded for risk of bias, indirectness, and inconsistency. Uncertainty or variability in values and preferences were identified. Costs, resources, equity, and acceptability were considered varied. Adjunctive ketamine therapy had no effect on mortality (within 28 days) (relative risk [RR] 0.99; 95% confidence interval [CI] 0.76 to 1.27; low certainty), and may slightly reduce iMV duration (days) (mean difference [MD] -0.05 days; 95% CI -0.07 to -0.03; low certainty), and uncertain effect on the cumulative dose of opioids (mcg/kg/h morphine equivalent) (MD -11.6; 95% CI -20.4 to -2.7; very low certainty). Uncertain desirable effects (cumulative dose of sedatives and vasopressors) and undesirable effects (adverse event rate, delirium, arrhythmia, hepatotoxicity, hypersalivation, use of physical restraints) were also identified. A possibility of important uncertainty or variability in patient-important outcomes led to a balanced effect that favored neither the intervention nor the comparison. Cost, resources, and equity were considered varied.\nCONCLUSION: The RPG panel provided two conditional recommendations and suggested (1) against using ketamine as monotherapy analgo-sedation in critically ill adults on iMV when other analgo-sedatives are available; and (2) using ketamine as an adjunct to non-ketamine usual care sedatives (e.g., opioids, propofol, dexmedetomidine) or continuing with non-ketamine usual care sedatives alone. Large-scale trials should provide additional evidence.",
+      "meshTerms": [
+        "Humans",
+        "Ketamine",
+        "Respiration, Artificial",
+        "Critical Illness",
+        "Critical Care",
+        "Hypnotics and Sedatives",
+        "Adult",
+        "Anesthetics, Dissociative",
+        "Societies, Medical",
+        "Randomized Controlled Trials as Topic"
+      ],
+      "keywords": [
+        "Critical care",
+        "GRADE",
+        "Ketamine",
+        "Mechanical ventilation",
+        "Practice Guidelines",
+        "Sedation"
+      ],
+      "doi": "10.1213/ANE.0000000000007173",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.275104183107841,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.2751041831078405,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:22.888Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "기계환기 케타민 진정 지침 — 중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|ketamine-analgo-sedation-mechanically-ventilated-critically-ill-adults-rapid-practice-from-saudi-critical-care-society-scandinavian-society-anesthesiology-intensive-care-medicine",
+      "supersedes": [
+        "pmid:39198198"
+      ],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39207913",
+          "title": "Ketamine Analgo-sedation for Mechanically Ventilated Critically Ill Adults: A Rapid Practice Guideline from the Saudi Critical Care Society and the Scandinavian Society of Anesthesiology and Intensive Care Medicine.",
+          "journal": "Anesthesia and analgesia",
+          "pubDate": "2025 Aug 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39207913/",
+          "doi": "10.1213/ANE.0000000000007173"
+        },
+        "org": "SCCS/SSAI (Saudi Critical Care Society / Scandinavian Society of Anaesthesiology and Intensive Care Medicine)",
+        "version": "2025 (Anesth Analg; co-published Acta Anaesthesiol Scand 2024)",
+        "title_ko": "기계환기 중인 중증 성인 환자에서 케타민 진통-진정요법: 사우디 중환자의학회(SCCS)와 스칸디나비아 마취·중환자의학회(SSAI)의 신속 진료지침(Rapid Practice Guideline)",
+        "scope_ko": "침습적 기계환기(iMV)를 받는 성인 ICU 환자에서, 비(非)케타민 진정제 또는 통상치료 대비 케타민 진통-진정요법(단독요법 및 보조요법)의 사용에 관한 신속 진료지침이다. 소아, 비침습 환기, 삽관(RSI) 목적의 일회성 사용은 대상이 아니며, ICU에서 지속적 진정·진통 맥락에 한정된다.",
+        "summary": [
+          "CONDITIONAL recommendation AGAINST using ketamine as MONOTHERAPY for analgo-sedation in critically ill adults on invasive mechanical ventilation when other analgo-sedatives are available (very low certainty evidence; downgraded for risk of bias, indirectness, and inconsistency).",
+          "CONDITIONAL recommendation to use ketamine as an ADJUNCT to non-ketamine usual-care sedatives/analgesics (e.g., opioids, propofol, dexmedetomidine) OR to continue non-ketamine usual care alone — the panel judged the balance of effects to favor neither option, so either is acceptable (low certainty evidence).",
+          "Adjunctive ketamine had NO effect on 28-day mortality: RR 0.99 (95% CI 0.76–1.27), low certainty.",
+          "Adjunctive ketamine MAY slightly reduce invasive mechanical ventilation duration: MD −0.05 days (95% CI −0.07 to −0.03), low certainty — a statistically detectable but clinically negligible (~1 hour) difference.",
+          "Effect of adjunctive ketamine on cumulative opioid dose is UNCERTAIN: MD −11.6 mcg/kg/h morphine equivalent (95% CI −20.4 to −2.7), very low certainty.",
+          "Effects on cumulative sedative and vasopressor dose (desirable) and on adverse-event rate, delirium, arrhythmia, hepatotoxicity, hypersalivation, and use of physical restraints (undesirable) were all UNCERTAIN.",
+          "Evidence base: an up-to-date systematic review/meta-analysis of 17 RCTs (n=898) and 9 observational studies (n=1934), appraised with GRADE and an evidence-to-decision framework by a 23-member multinational multidisciplinary panel including a patient representative.",
+          "Both are WEAK/CONDITIONAL recommendations; the panel explicitly flagged major knowledge gaps and called for large-scale trials to inform future recommendations."
+        ],
+        "summary_ko": [
+          "다른 진통-진정제를 쓸 수 있는 상황에서는, 침습적 기계환기 중인 중증 성인에게 케타민을 '단독요법' 진통-진정제로 쓰지 말 것을 제안(조건부 권고, 근거 확실성 매우 낮음 — 비뚤림 위험·간접성·비일관성으로 등급 하향).",
+          "케타민을 비케타민 통상치료 진정/진통제(opioids, propofol, dexmedetomidine 등)에 '보조적으로' 추가하거나, 또는 케타민 없이 통상치료만 지속하는 것 중 하나를 선택하도록 제안 — 이익·위해 균형이 어느 쪽도 뚜렷이 선호하지 않아 둘 다 수용 가능(조건부 권고, 근거 확실성 낮음).",
+          "보조요법 케타민은 28일 사망률에 영향 없음: RR 0.99 (95% CI 0.76–1.27), 확실성 낮음.",
+          "보조요법 케타민은 침습적 기계환기 기간을 아주 약간 줄일 수 있음: MD −0.05일 (95% CI −0.07 ~ −0.03), 확실성 낮음 — 통계적으로는 검출되나 임상적으로는 무시할 수준(약 1시간).",
+          "보조요법 케타민의 누적 opioid 용량에 대한 효과는 불확실: MD −11.6 mcg/kg/h 모르핀 등가 (95% CI −20.4 ~ −2.7), 확실성 매우 낮음.",
+          "누적 진정제·승압제 용량(이로운 효과)과 이상반응률·섬망·부정맥·간독성·타액과다분비·신체억제대 사용(해로운 효과)에 대한 효과는 모두 불확실.",
+          "근거 기반: 최신 체계적 문헌고찰·메타분석으로 RCT 17편(n=898)과 관찰연구 9편(n=1934)을 포함, 환자 대표를 포함한 23인 다국적·다학제 패널이 GRADE 및 evidence-to-decision 틀로 평가.",
+          "두 권고 모두 약한(조건부) 권고이며, 패널은 근거 공백을 명시적으로 지적하고 향후 권고를 위한 대규모 임상시험을 요청."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, do not reach for ketamine as the sole/primary sedative for a ventilated adult when conventional agents (opioids, propofol, dexmedetomidine) are available — the evidence does not support monotherapy. It remains a reasonable ADJUNCT for opioid/sedative sparing or difficult-to-sedate patients, but clinicians should expect no mortality benefit and only a clinically trivial change in ventilation duration, so the decision should hinge on individual goals (e.g., analgesia, hemodynamic tolerance, agitation) rather than an expectation of improved hard outcomes. Because both recommendations are conditional and rest on low-to-very-low certainty evidence, continuing standard non-ketamine sedation without adding ketamine is an equally defensible choice, and ketamine-specific harms (delirium, arrhythmia, hypersalivation, need for restraints) should be monitored since the evidence could neither confirm nor exclude them.",
+        "practiceImpact_ko": "진료 현장에서, 통상 약제(opioids, propofol, dexmedetomidine)를 쓸 수 있는 기계환기 성인에게 케타민을 '단독/일차' 진정제로 쓰지 말아야 한다 — 단독요법을 뒷받침하는 근거가 없다. 다만 opioid/진정제 절감이나 진정이 어려운 환자에서 '보조제'로는 여전히 합리적이지만, 사망률 이득은 없고 환기 기간 변화도 임상적으로 미미하므로, 딱딱한 결과 개선을 기대하기보다 개별 목표(진통, 혈역학적 내약성, 초조 조절 등)에 근거해 결정해야 한다. 두 권고 모두 조건부이며 근거 확실성이 낮음~매우 낮음에 불과하므로, 케타민을 추가하지 않고 기존 비케타민 진정을 지속하는 것도 똑같이 타당한 선택이다. 또한 케타민 특이 위해(섬망·부정맥·타액과다분비·억제대 필요)는 근거가 이를 확인도 배제도 못 했으므로 주의 깊게 모니터링해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39207913",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39207913/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1213/ANE.0000000000007173",
+            "url": "https://doi.org/10.1213/ANE.0000000000007173"
+          },
+          {
+            "label": "웹 — Capital Region of Denmark Research Portal — guideline abstract (regionh.dk)",
+            "url": "https://research.regionh.dk/en/publications/ketamine-analgo-sedation-for-mechanically-ventilated-critically-i"
+          },
+          {
+            "label": "웹 — Monash University Research Portal — guideline abstract",
+            "url": "https://research.monash.edu/en/publications/ketamine-analgo-sedation-for-mechanically-ventilated-critically-i/"
+          },
+          {
+            "label": "웹 — SSAI (issuing society) — official full-text PDF of the guideline (Acta Anaesthesiol Scand version)",
+            "url": "https://ssai.info/wp-content/uploads/acta-anaesthesiol-scand-2024-amer-ketamine-analgo-sedation-for-mechanically-ventilated-critically-ill-adults-a-rapid.pdf"
+          },
+          {
+            "label": "웹 — Wiley Online Library — Acta Anaesthesiologica Scandinavica co-publication (abstract; full text 403)",
+            "url": "https://onlinelibrary.wiley.com/doi/10.1111/aas.14470"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-04"
     }
   ],
   "rejected": [
@@ -61499,7 +61567,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-03T00:42:06.788Z",
+      "discoveredAt": "2026-10-04T00:03:25.000Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -61541,7 +61609,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-03T00:42:06.788Z",
+      "discoveredAt": "2026-10-04T00:03:25.000Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -61574,7 +61642,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-03T00:42:06.788Z",
+      "discoveredAt": "2026-10-04T00:03:25.000Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -61640,9 +61708,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261003_093755:guideline:2026-10-03",
+    "runId": "trend_review_20261004_085859:guideline:2026-10-04",
     "outcome": "published",
-    "publishedId": "pmid:40074060",
+    "publishedId": "pmid:39207913",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -61667,15 +61735,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 129,
+        "mergedTotal": 125,
         "overlapCount": 1,
         "ptOnlyCount": 1,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/09/03",
-          "maxDate": "2026/10/03"
+          "minDate": "2026/09/04",
+          "maxDate": "2026/10/04"
         },
         "retmax": 60,
         "topics": [
@@ -61683,8 +61751,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 39,
-            "idsFetched": 39,
+            "totalFound": 35,
+            "idsFetched": 35,
             "truncated": false,
             "error": null
           },
@@ -61710,8 +61778,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 18,
-            "idsFetched": 18,
+            "totalFound": 17,
+            "idsFetched": 17,
             "truncated": false,
             "error": null
           },
@@ -61719,8 +61787,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 28,
-            "idsFetched": 28,
+            "totalFound": 29,
+            "idsFetched": 29,
             "truncated": false,
             "error": null
           },
@@ -61779,7 +61847,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 122,
+        "topicOnlyCount": 118,
         "ptPmids": [
           "42788594",
           "42549877"
@@ -61787,9 +61855,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 129,
-          "enriched": 129,
-          "withAbstract": 97,
+          "requested": 125,
+          "enriched": 125,
+          "withAbstract": 94,
           "error": null
         }
       },
@@ -61842,25 +61910,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 213,
-        "needsReview": 452,
+        "queued": 214,
+        "needsReview": 450,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40074060",
+        "candidateId": "pmid:39207913",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-03T00:44:27.206Z",
+  "updatedAt": "2026-10-04T00:06:39.549Z",
   "configVersion": "guideline-v2"
 }
