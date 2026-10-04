@@ -562,7 +562,7 @@ function main() {
   const sessionId =
     hook?.session_id || path.basename(transcript).replace(/\.jsonl$/, '') || 'unknown';
   // repo 이름: 훅의 cwd → 없으면 이 스크립트가 사는 repo
-  const repo = path.basename(hook?.cwd || ROOT);
+  const repo = repoFromCwd(hook?.cwd || ROOT);
 
   const { byModel, turns } = aggregateTranscript(transcript);
   if (byModel.size === 0) return;
@@ -658,10 +658,40 @@ export function storeSnapshot(snapshot, outDir) {
  * 실패는 전부 삼킨다: git이 없을 수도, repo가 아닐 수도, 다른 git 명령과 index.lock이
  * 겹칠 수도 있다. 어느 경우든 **스냅샷 파일 자체는 이미 쓰였고**, 세션이 평소대로
  * `git add`하면 그대로 올라간다. 훅을 깨뜨리면서까지 지킬 값어치는 없다. */
-function stageSnapshot(file) {
+/* repo 이름 = 작업 폴더명(종전 그대로). 단 **연결 worktree** 면 본 저장소 폴더명을 쓴다 (2026-10-04).
+ * PC 원격 세션·하청은 `<저장소>/.claude/worktrees/bridge-cse_…` 에서 돌아 repo 가 `bridge-cse_…` 로 찍혔고,
+ * 현황판에서 저장소별로 묶이지 않았다. 본 클론은 종전 표기를 지켜 옛 스냅샷과 이름이 갈리지 않게 한다.
+ * git 을 못 부르면 종전대로 폴더명 — 훅에서 도는 도구라 실패해도 기록은 남겨야 한다. */
+export function repoFromCwd(cwd) {
+  try {
+    const r = spawnSync('git', ['rev-parse', '--git-dir', '--git-common-dir'], {
+      cwd, encoding: 'utf8', timeout: 5000, env: gitEnvForStage(),
+    });
+    const [gitDir, commonDir] = String(r.stdout || '').split('\n').map((x) => x.trim()).filter(Boolean)
+      .map((x) => path.resolve(cwd, x));
+    if (r.status === 0 && gitDir && commonDir && gitDir !== commonDir && path.basename(commonDir) === '.git') {
+      return path.basename(path.dirname(commonDir));
+    }
+  } catch { /* 아래 폴백 */ }
+  return path.basename(cwd);
+}
+
+/* git 이 훅에 넘긴 GIT_DIR·GIT_WORK_TREE 는 떼고 부른다 (2026-10-04 재현으로 확정).
+ * 연결 worktree 에서 커밋하면 git 이 pre-commit 훅에 GIT_DIR 을 넘긴다. 그 상태로 cwd 를 스냅샷 폴더로
+ * 두고 `git add` 하면 git 이 **cwd 를 작업 트리 꼭대기로** 보아 `data/usage/sessions/x.json` 을
+ * 최상위 `x.json` 으로 스테이징한다(실제 파일은 없는 색인 항목만 — PR 428·GC-261004 TP 커밋).
+ * 떼면 git 이 cwd 에서 저장소를 다시 찾는다. GIT_INDEX_FILE 은 남긴다 — 훅 안에서는 그래야 커밋 색인에 실린다. */
+export function gitEnvForStage(env = process.env) {
+  const out = { ...env };
+  delete out.GIT_DIR;
+  delete out.GIT_WORK_TREE;
+  return out;
+}
+
+export function stageSnapshot(file) {
   try {
     spawnSync('git', ['add', '--', file], {
-      cwd: path.dirname(file), stdio: 'ignore', timeout: 5000,
+      cwd: path.dirname(file), stdio: 'ignore', timeout: 5000, env: gitEnvForStage(),
     });
   } catch { /* 위 주석 참조 — 조용히 넘어간다 */ }
 }

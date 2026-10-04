@@ -1130,7 +1130,12 @@ export function relayToGc(gc, { repo, files, id8, sessionId }) {
  * 자체는 이미 쓰였고, 세션이 평소대로 `git add`하면 그대로 올라간다. */
 function stage(file) {
   try {
-    spawnSync('git', ['add', '--', file], { cwd: path.dirname(file), stdio: 'ignore', timeout: 5000 });
+    // GIT_DIR·GIT_WORK_TREE 를 떼고 부른다 — 연결 worktree 의 pre-commit 훅 안에서는 cwd 가 작업 트리 꼭대기로
+    // 잘못 잡혀 최상위 경로로 스테이징된다(사용량 수집기 stageSnapshot 과 같은 함정 · 2026-10-04 재현).
+    const env = { ...process.env };
+    delete env.GIT_DIR;
+    delete env.GIT_WORK_TREE;
+    spawnSync('git', ['add', '--', file], { cwd: path.dirname(file), stdio: 'ignore', timeout: 5000, env });
   } catch { /* 위 주석 참조 */ }
 }
 
