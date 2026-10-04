@@ -15,10 +15,10 @@
  *
  * 규격 — 사용량 수집기(tools/usage/collect-session.mjs)와 **같다**
  * -----------------------------------------------------------------------------
- *     각자 자기 마당에 쓰고, 타워가 하루 한 번 걷는다.
+ *     매 턴 대화와 사용량을 비공개 GC 릴레이에 싣고, 타워가 하루 한 번 걷는다.
  *
  * 새 개념을 만들지 않는다. 그릇만 다르다(사용량 JSON → 대화 마크다운).
- *   · 언제  — 각 repo는 Stop 훅(매 턴 끝), 타워는 git `pre-commit` 훅.
+ *   · 언제  — 각 repo와 타워는 Stop 훅(매 턴 끝), 타워는 git `pre-commit`도 사용한다.
  *   · 무엇을 — 세션당 파일 **1개에 덮어쓴다**. 컨테이너가 언제 회수될지 모르므로 매 턴
  *             갱신해 두면 마지막으로 커밋된 스냅샷이 남는다.
  *   · 무엇을 버리나 — 툴 호출·툴 결과·thinking·시스템 주입·서브에이전트·이미지.
@@ -30,7 +30,7 @@
  *
  * 갈래 (설계 §3-2) — 추측하지 않고 **파일의 유무**로 가른다
  * -----------------------------------------------------------------------------
- *   · 타워 자신 (`tools/chat-archive/`가 있다)      → `data/chat-archive/sessions/` + git add
+ *   · 타워 자신 (`tools/chat-archive/`가 있다)      → GC 릴레이, 실패하면 `data/chat-archive/repos/global-config/` + git add
  *   · 그 외 전부 (`.claude/chat-archive/relay-to-gc` 마커) → GC 클론에 직접 (§4·relayToGc)
  *   · 마커도 없다 = 옛 배포본                       → 자기 repo `.chat/sessions/` + git add (폴백)
  *
@@ -981,11 +981,38 @@ function baseRef(gc) {
   return 'HEAD';
 }
 
+/** 배포본도 단일 파일이라 node 내장만 쓴다. 판→턴 비교는 snapshot-store.mjs와 같다. */
+export function fullerUsage(current, incoming) {
+  const a = JSON.parse(current), b = JSON.parse(incoming);
+  if (a.session_id !== b.session_id) throw new Error('사용량 세션 불일치');
+  const av = Number(a.schema) || 1, bv = Number(b.schema) || 1;
+  return av > bv || (av === bv && (a.turns || 0) >= (b.turns || 0)) ? current : incoming;
+}
+
+export function usageRelayFile(root, sessionId) {
+  // sid는 경로가 된다 — 훅 입력이 경로 밖 파일을 릴레이하지 못하도록 파일명 문자만 받는다.
+  if (!/^[A-Za-z0-9_.-]{1,128}$/.test(sessionId) || sessionId === '.' || sessionId === '..') return null;
+  const dir = process.env.USAGE_OUT_DIR ? path.resolve(process.env.USAGE_OUT_DIR)
+    : existsSync(path.join(root, 'data', 'usage')) ? path.join(root, 'data', 'usage', 'sessions')
+    : path.join(root, '.usage', 'sessions');
+  try {
+    const body = readFileSync(path.join(dir, `${sessionId}.json`), 'utf8');
+    const snap = JSON.parse(body);
+    if (snap.session_id !== sessionId || !Array.isArray(snap.records) || !snap.records.length) throw new Error('로컬 사용량 세션·레코드 불일치');
+    // trend-review 같은 공개 repo에서도 목적지는 비공개 GC worktree뿐이다. 공개 repo에는 추가로 쓰지 않는다.
+    // Stop 훅 순서는 보장되지 않아 한 턴 늦어도 매 턴 다시 싣는다. 없는 파일은 대화 릴레이를 막지 않는다.
+    return { name: `${sessionId}.json`, relayPath: `data/usage/sessions/${sessionId}.json`, body };
+  } catch (error) {
+    if (error.code !== 'ENOENT') console.error(`[chat-archive] 사용량 읽기 경고: ${error.message}`);
+    return null;
+  }
+}
+
 /**
  * GC 클론의 전용 worktree에 파일을 쓰고 `chat/<repo>-<id8>` 브랜치로 force-push한다.
  * @returns {{ok: boolean, changed?: boolean, why?: string}}
  */
-function relayToGc(gc, { repo, files, id8 }) {
+export function relayToGc(gc, { repo, files, id8, sessionId }) {
   const wt = path.join(gc, '.git', 'chat-archive-wt');
   const branch = `chat/${repo}-${id8}`;
 
@@ -1008,20 +1035,29 @@ function relayToGc(gc, { repo, files, id8 }) {
    * 재생성본이 그대로 force-push 되어 **원격에만 있던 앞턴을 지운다.** 수거가 하루 1회라
    * 노출 창이 최대 하루이고, 지워지면 되돌릴 수 없다(원격 리플로그에 손이 닿지 않는다).
    * 08-15 처방은 수거기·pull-repos·pull-local-drive 를 병합으로 바꿨는데 **이 push 쪽만 남아 있었다.**
-   * 실패는 무시한다 — 오프라인이면 종전 동작 그대로(불변: 이 함수는 예외를 밖으로 던지지 않는다). */
+   * 원격 부재만 새 브랜치로 취급한다 — 조회 실패 때 밀면 원격의 유일 사본을 지울 수 있다. */
   const REMOTE_PREV = `refs/remotes/relay-prev/${repo}-${id8}`;
-  git(wt, ['fetch', '--no-tags', '--quiet', 'origin',
+  const fetched = git(wt, ['fetch', '--no-tags', '--quiet', 'origin',
     `+refs/heads/${branch}:${REMOTE_PREV}`], 60000);
+  if (fetched.status !== 0) {
+    // 조회 실패를 부재로 취급하면 force-push가 아직 수거되지 않은 사본을 지운다.
+    const probe = git(wt, ['ls-remote', '--heads', 'origin', `refs/heads/${branch}`], 30000);
+    if (probe.status !== 0 || String(probe.stdout || '').trim()) return { ok: false, why: '원격 사본 조회 실패' };
+    git(wt, ['update-ref', '-d', REMOTE_PREV]);
+  }
   const remoteCopy = (name) => {
     const r = gitOut(wt, ['show', `${REMOTE_PREV}:data/chat-archive/repos/${repo}/${name}`]);
     return r || null;
   };
 
   const outDir = path.join(wt, 'data', 'chat-archive', 'repos', repo);
-  const outs = files.map(({ name }) => path.join(outDir, name));
+  const usage = files.find((f) => f.relayPath);
+  files = files.filter((f) => !f.relayPath);
+  const outs = files.map(({ name, relayPath }) => relayPath ? path.join(wt, relayPath) : path.join(outDir, name));
   try {
     mkdirSync(outDir, { recursive: true });
     for (let i = 0; i < files.length; i++) {
+      mkdirSync(path.dirname(outs[i]), { recursive: true });
       let body = files[i].name.endsWith('.md') ? mergedBody(outs[i], files[i].body) : files[i].body;
       if (files[i].name.endsWith('.md')) {
         /* 원격 사본이 더 차 있을 수 있다 — 턴 단위 합집합이라 결합 순서에 안전하다. */
@@ -1038,12 +1074,45 @@ function relayToGc(gc, { repo, files, id8 }) {
     return { ok: false, why: 'worktree에 파일을 쓰지 못했습니다' };
   }
 
+  // 사용량 오류가 대화 보관을 막지 않게 별도로 처리하고 원격 원문부터 보존한다.
+  if (sessionId && /^[A-Za-z0-9_.-]{1,128}$/.test(sessionId) && !['.', '..'].includes(sessionId)) {
+    const usagePath = `data/usage/sessions/${sessionId}.json`;
+    const dest = path.join(wt, usagePath);
+    try {
+      const entry = git(wt, ['ls-tree', REMOTE_PREV, '--', usagePath]);
+      const blob = /^100644 blob ([0-9a-f]+)\t/.exec(String(entry.stdout || ''))?.[1];
+      // 원문을 index에 먼저 복원하면 JSON·디스크 쓰기 실패에도 원격 blob을 그대로 싣는다.
+      const remoteIndexed = blob && git(wt, ['update-index', '--add', '--cacheinfo', `100644,${blob},${usagePath}`]).status === 0;
+      const remote = git(wt, ['show', `${REMOTE_PREV}:${usagePath}`]);
+      if (blob && remote.status !== 0) throw new Error('원격 사용량 읽기 실패');
+      let body = remote.status === 0 ? String(remote.stdout) : null;
+      const worktreeBody = existsSync(dest) ? readFileSync(dest, 'utf8') : null;
+      if (body !== null) {
+        mkdirSync(path.dirname(dest), { recursive: true });
+        writeFileSync(dest, body, 'utf8');
+        if (!remoteIndexed && git(wt, ['add', '--', dest]).status !== 0) throw new Error('사용량 스테이징 실패');
+        const parsed = JSON.parse(body);
+        if (parsed.session_id !== sessionId) throw new Error('사용량 세션 불일치');
+      }
+      // 로컬 집계가 없어도 worktree에만 남은 더 찬 사본을 원격의 짧은 사본에 잃지 않는다.
+      if (worktreeBody !== null || usage) {
+        for (const candidate of [worktreeBody, usage?.body]) {
+          if (candidate != null) body = body === null ? candidate : fullerUsage(body, candidate);
+        }
+        mkdirSync(path.dirname(dest), { recursive: true });
+        writeFileSync(dest, body, 'utf8');
+        if (git(wt, ['add', '--', dest]).status !== 0) throw new Error('사용량 스테이징 실패');
+      }
+    } catch (error) { console.error(`[chat-archive] 사용량 릴레이 경고: ${error.message}`); }
+  }
+
   if (git(wt, ['add', '--', ...outs]).status !== 0) return { ok: false, why: 'git add 실패' };
   // 내용이 그대로면(같은 턴 재실행 등) 빈 커밋을 쌓지 않는다.
   if (git(wt, ['diff', '--cached', '--quiet']).status === 0) return { ok: true, changed: false };
 
+  // 공유 pre-commit은 대화·사용량을 다시 수집하므로 방금 고른 합집합·누계를 덮지 않게 막는다.
   const commit = git(wt, [
-    '-c', 'user.name=chat-archive', '-c', 'user.email=chat-archive@users.noreply.github.com',
+    '-c', 'core.hooksPath=/dev/null', '-c', 'user.name=chat-archive', '-c', 'user.email=chat-archive@users.noreply.github.com',
     'commit', '-m', `chat-archive: ${repo} ${id8}`,
   ], 30000);
   if (commit.status !== 0) return { ok: false, why: '커밋 실패' };
@@ -1174,6 +1243,8 @@ function main() {
 
   /* ── 갈래 판별 (설계 §3-2) — 추측하지 않고 파일의 유무로 가른다 ───────────── */
   const isTower = existsSync(path.join(root, 'tools', 'chat-archive'));
+  const usage = usageRelayFile(root, sessionId);
+  if (usage) files.push(usage);
   const relayMarker = path.join(root, '.claude', 'chat-archive', 'relay-to-gc');
 
   if (isTower) {
@@ -1184,24 +1255,19 @@ function main() {
      * 에서 끊겨 있고, 두 세션 다 그 뒤로 한참 더 진행됐다. 잘리는 자리가 하필 4종 마무리
      * 직후 = PeterJ의 마지막 지시가 나오는 자리다.
      *
-     * 왜 `sessions/`가 아니라 `repos/global-config/`인가
-     *   릴레이 브랜치는 origin/main **전체 사본**이라, 수거기가 어떤 경로를 걷게 하면
-     *   다른 저장소의 낡은 릴레이 브랜치도 그 경로를 함께 덮어쓴다. `sessions/`를 수거
-     *   경로에 넣으면 2026-08-08 사고(낡은 사본이 main을 덮음)가 되살아난다 —
-     *   harvest-branches.test.sh [4]가 지키는 바로 그것이다. 그래서 타워도 다른 저장소와
-     *   똑같이 `repos/<repo>/` 밑에 쌓는다. 옛 `sessions/` 파일들은 그대로 둔다.
-     *
-     * 릴레이가 실패하면 종전 방식으로 되돌아간다 — 커밋에 의존하지만 아무것도 안 남는
-     * 것보다는 낫다. 그 경우 같은 세션의 파일이 두 곳에 생길 수 있는데, 중복은 되돌릴 수
-     * 있고 유실은 못 되돌린다. */
-    const r = relayToGc(root, { repo, files, id8 });
+     * 왜 폴백도 `repos/global-config/`인가: pre-commit·릴레이 수거와 같은 파일에
+     * 턴 합집합으로 써야 커밋에 폴백이 섞여도 두 벌이 생기지 않는다.
+     * 08-08의 낡은 사본 덮어쓰기 위험은 08-15 이후 수거기가 합집합 병합으로 바뀌어
+     * 해당하지 않는다(harvest-branches.sh 병합 루프·harvest-branches.test.sh main 전용 턴 회귀).
+     * 릴레이 실패에도 로컬 사본을 남긴다 — 중복은 되돌릴 수 있고 유실은 못 되돌린다. */
+    const r = relayToGc(root, { repo, files, id8, sessionId });
     if (r.ok) {
       if (r.changed) console.error(`[chat-archive] ${r.branch}에 올림 — ${turns.length}턴`);
       return;
     }
     console.error(`[chat-archive] 타워 릴레이 실패(${r.why}) — 로컬 폴백으로 씁니다`);
-    const out = path.join(root, 'data', 'chat-archive', 'sessions', fileName);
-    const metaOut = path.join(root, 'data', 'chat-archive', 'sessions', metaName);
+    const out = path.join(root, 'data', 'chat-archive', 'repos', 'global-config', fileName);
+    const metaOut = path.join(root, 'data', 'chat-archive', 'repos', 'global-config', metaName);
     mkdirSync(path.dirname(out), { recursive: true });
     const finalBody = mergedBody(out, body);
     writeFileSync(out, finalBody, 'utf8');
@@ -1227,7 +1293,7 @@ function main() {
       }
       return;
     }
-    const r = relayToGc(gc, { repo, files, id8 });
+    const r = relayToGc(gc, { repo, files, id8, sessionId });
     if (!r.ok) console.error(`[chat-archive] GC 릴레이 실패 — ${r.why}`);
     else if (r.changed) console.error(`[chat-archive] GC ${r.branch}에 올림 — ${turns.length}턴`);
     return;

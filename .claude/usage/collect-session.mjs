@@ -38,8 +38,9 @@
  * 훅에서 쓸 때는 **절대 실패로 세션을 막지 않는다** — 무슨 일이 있어도 종료코드 0.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, openSync, readSync, closeSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync, openSync, readSync, closeSync, renameSync, mkdtempSync, rmSync } from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
@@ -305,8 +306,9 @@ function aggregateTranscript(file) {
   return { byModel, turns };
 }
 
-/* ---------------- 코덱스 하청(jev-gateway 경유) ----------------
- * Jev 시범(2026-09-25, 계획 docs/superpowers/plans/2026-09-25-jev-codex-rollout.md)의 측정값이다.
+/* ---------------- 코덱스 하청(게이트웨이 로그 + 일반 실행 rollout) ----------------
+ * 일반 실행은 자식 stderr에서 확보한 rollout ID만 찾아 병렬 실행의 귀속 추정을 피한다.
+ * Jev 켬/끔 팔은 기존 게이트웨이 로그만 써서 같은 요청을 두 번 세지 않는다.
  * 코덱스 토큰은 Claude 트랜스크립트에 없다. `tools/jev/codex-run.mjs`가 하청을 jev-gateway로 돌리면
  * 게이트웨이가 요청마다 `~/.jev-gateway/codex.log`에 사용량을 JSON 한 줄로 남기고, 래퍼는 실행 창을
  * `runs.jsonl`에 세션 id와 함께 적는다. 여기서 **이 세션의 실행 창 안에 든 요청만** 모아 합산한다.
@@ -351,20 +353,125 @@ function readJsonLines(file, maxBytes = CODEX_LOG_TAIL_BYTES) {
   return out;
 }
 
+/** 긴 응답은 청크 조각으로 모아 한 번만 복사한다 — 훅 메모리와 복사 비용을 제한한다. */
+function* rolloutLines(file, cursor) {
+  let fd;
+  try {
+    fd = openSync(file, 'r');
+    const buf = Buffer.alloc(64 * 1024);
+    let position = cursor.offset;
+    let parts = [], bytes = 0, skipping = false, size;
+    while ((size = readSync(fd, buf, 0, buf.length, position)) > 0) {
+      let start = 0;
+      while (start < size) {
+        const end = buf.subarray(0, size).indexOf(10, start);
+        const stop = end < 0 ? size : end;
+        bytes += stop - start;
+        if (bytes > 4 * 1024 * 1024) { skipping = true; parts = []; }
+        if (!skipping) parts.push(Buffer.from(buf.subarray(start, stop)));
+        if (end >= 0) {
+          cursor.offset = position + end + 1;
+          if (!skipping) yield Buffer.concat(parts, bytes).toString('utf8');
+          parts = []; bytes = 0; skipping = false;
+        }
+        start = end < 0 ? size : end + 1;
+      }
+      position += size;
+    }
+    // 쓰는 중인 마지막 줄은 다음 Stop에서 이어 읽어야 부분 JSON을 확정하지 않는다.
+  } finally { if (fd !== undefined) try { closeSync(fd); } catch { /* 무시 */ } }
+}
+
+const tokenNumber = (v) => Number.isFinite(Number(v)) ? Math.max(0, Math.trunc(Number(v))) : 0;
+const TOKEN_FIELDS = ['input_tokens', 'cached_input_tokens', 'cache_write_input_tokens', 'output_tokens', 'reasoning_output_tokens', 'total_tokens'];
+
+function readRollout(file, prior) {
+  let id = prior?.id, model = prior?.model || 'unknown', index = prior?.events?.length || 0;
+  const events = [...(prior?.events || [])];
+  const cursor = { offset: prior?.offset || 0 };
+  for (const line of rolloutLines(file, cursor)) {
+    if (!/"(?:token_count|session_meta|model)"\s*[:,]/.test(line)) continue;
+    let o;
+    try { o = JSON.parse(line); } catch { continue; }
+    const p = o?.payload;
+    if (!p || typeof p !== 'object') continue;
+    if (o.type === 'session_meta') id = p.id;
+    if (typeof p.model === 'string' && p.model) model = p.model;
+    if (o.type !== 'event_msg' || p.type !== 'token_count' || !p.info?.total_token_usage) continue;
+    events.push({ model, values: TOKEN_FIELDS.map((k) => tokenNumber(p.info.total_token_usage[k])),
+      time: o.timestamp || '', index: index++ });
+  }
+  return { id, model, events, offset: cursor.offset };
+}
+
+// 파일별 읽기 위치와 당시 모델을 유지해야 다른 세션의 Stop 뒤에도 덧쓴 부분만 읽는다.
+// runs.jsonl 회전은 이번 범위 밖이다 — 시작 기록을 보존하는 별도 정책이 필요하다.
+function cachedRollouts(refs, stateDir) {
+  const cacheFile = path.join(stateDir, 'rollout-usage-cache.json');
+  let cache = {};
+  try { const saved = JSON.parse(readFileSync(cacheFile, 'utf8')); if (saved.version === 2) cache = saved.files || {}; } catch { /* 직접 읽는다 */ }
+  const now = Date.now(), next = {}, groups = new Map();
+  for (const [key, roll] of Object.entries(cache)) {
+    if (roll.used >= now - 30 * 86_400_000) next[key] = roll;
+  }
+  for (const [file, expectedId] of refs) {
+    try {
+      const st = statSync(file);
+      const key = JSON.stringify([file, st.size, st.mtimeMs]);
+      let roll = next[key];
+      if (!roll || !Array.isArray(roll.events)) {
+        const oldKey = Object.keys(next).find(k => JSON.parse(k)[0] === file);
+        const prior = oldKey && next[oldKey];
+        // 교체·축소·같은 크기 수정은 다시 읽고, 같은 파일의 증가만 이어 읽는다.
+        const append = prior && prior.ino === st.ino && prior.dev === st.dev &&
+          st.size > JSON.parse(oldKey)[1] && prior.offset > 0;
+        roll = readRollout(file, append ? prior : undefined);
+      }
+      for (const k of Object.keys(next)) if (JSON.parse(k)[0] === file) delete next[k];
+      next[key] = { ...roll, ino: st.ino, dev: st.dev, used: now };
+      if (roll.id !== expectedId) continue;
+      const events = groups.get(expectedId) || [];
+      for (const event of roll.events) events.push(event);
+      groups.set(expectedId, events);
+    } catch { /* 읽기 실패는 파일 하나에만 격리한다 */ }
+  }
+  try { writeFileSync(cacheFile, JSON.stringify({ version: 2, files: next }), 'utf8'); } catch { /* 캐시는 없어도 집계한다 */ }
+  return groups;
+}
+
+function findRollouts(run, codexHome, refs) {
+  const ids = new Set(run.rollouts.map(ref => ref?.id).filter(id => typeof id === 'string'));
+  if (!ids.size) return;
+  const first = Math.floor(run.start / 86_400_000) * 86_400_000;
+  for (let day = first; day <= run.end; day += 86_400_000) {
+    const dir = path.join(codexHome, 'sessions', ...new Date(day).toISOString().slice(0, 10).split('-'));
+    try {
+      for (const name of readdirSync(dir)) {
+        for (const id of ids) {
+          if (name.startsWith('rollout-') && name.endsWith(`-${id}.jsonl`)) refs.set(path.join(dir, name), id);
+        }
+      }
+    } catch { /* 늦게 생성된 파일은 다음 Stop에서 다시 찾아야 누락으로 굳지 않는다 */ }
+  }
+}
+
 /** 이 세션이 코덱스 하청으로 쓴 토큰 — 모델·팔별 합계. 없으면 빈 배열. */
-export function codexUsage({ sessionId, stateDir = jevStateDir() } = {}) {
+export function codexUsage({ sessionId, stateDir = jevStateDir(), codexHome = process.env.CODEX_HOME || path.join(os.homedir(), '.codex') } = {}) {
   // 래퍼는 시작 줄({id,sid,start})과 끝 줄({id,end})을 따로 쓴다 — id 로 묶는다. 끝 줄이 없으면(중간에 죽음) 아직 열린 창.
   const byId = new Map();
   for (const r of readJsonLines(path.join(stateDir, 'runs.jsonl'))) {
     if (!r || !r.id) continue;
-    byId.set(r.id, { ...(byId.get(r.id) || {}), ...r });
+    const prior = byId.get(r.id) || {};
+    const rollouts = [...(prior.rollouts || []), ...(Array.isArray(r.rollouts) ? r.rollouts : []),
+      ...(typeof r.rollout === 'string' ? [{ id: r.rollout }] : [])];
+    byId.set(r.id, { ...prior, ...r, rollouts });
   }
   const runs = [...byId.values()]
     .filter((r) => r.sid && Number.isFinite(Date.parse(r.start)))
     .map((r) => {
-      const s = Date.parse(r.start);
-      const end = Date.parse(r.end) || Math.min(Date.now(), s + OPEN_RUN_MAX_MS);
-      return { sid: String(r.sid), s: s - 2000, e: end + 2000 };
+      const start = Date.parse(r.start);
+      const end = Number.isFinite(Date.parse(r.end)) ? Date.parse(r.end) : start + OPEN_RUN_MAX_MS;
+      return { sid: String(r.sid), arm: r.arm, rollouts: r.rollouts || [], start, end, s: start - 2000, e: end + 2000 };
     });
   const mine = runs.filter((r) => r.sid === sessionId);
   if (!mine.length) return [];
@@ -379,7 +486,7 @@ export function codexUsage({ sessionId, stateDir = jevStateDir() } = {}) {
     if (ev.event !== 'route' || !ev.usage) continue;
     const t = Date.parse(ev.time);
     if (!Number.isFinite(t)) continue;
-    const owners = new Set(runs.filter((r) => t >= r.s && t <= r.e).map((r) => r.sid));
+    const owners = new Set(runs.filter((r) => r.arm !== 'plain' && t >= r.s && t <= r.e).map((r) => r.sid));
     if (!owners.has(sessionId)) continue;
     if (owners.size > 1) { ambiguous++; continue; }
     const reason = String(ev.reason ?? '');
@@ -398,6 +505,34 @@ export function codexUsage({ sessionId, stateDir = jevStateDir() } = {}) {
     cur.cache_w += n(u.cacheWrite);
     cur.reasoning += n(u.reasoning);
     agg.set(k, cur);
+  }
+  const refs = new Map();
+  const plainRuns = mine.filter(r => r.arm === 'plain');
+  for (const r of plainRuns) findRollouts(r, codexHome, refs);
+  for (const [rolloutId, events] of cachedRollouts(refs, stateDir)) {
+    let previous = TOKEN_FIELDS.map(() => 0);
+    const seen = new Set();
+    events.sort((a, b) => (Date.parse(a.time) - Date.parse(b.time) || 0) || a.index - b.index || a.values[5] - b.values[5]);
+    for (const event of events) {
+      const { model, values } = event;
+      const key = JSON.stringify(values);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      // 반복 또는 감소 누계는 요청으로 세지 않아 복제 파일과 늦은 기록을 함께 견딘다.
+      if (values[5] <= previous[5] || values.some((n, i) => n < previous[i])) continue;
+      const delta = values.map((n, i) => n - previous[i]);
+      previous = values;
+      // 창 밖 누계도 기준값에는 반영해야 재개 실행에 이전 사용량이 다시 붙지 않는다.
+      const time = Date.parse(event.time);
+      if (!Number.isFinite(time) || !plainRuns.some(r => time >= r.start && time <= r.end &&
+          r.rollouts.some(ref => ref.id === rolloutId))) continue;
+      const arm = 'rollout', k = `${model}\u001f${arm}`;
+      const cur = agg.get(k) || { model, arm, requests: 0, in: 0, out: 0, cache_w: 0, cache_r: 0, reasoning: 0 };
+      cur.requests++;
+      cur.in += Math.max(0, delta[0] - delta[1] - delta[2]);
+      cur.out += delta[3]; cur.cache_r += delta[1]; cur.cache_w += delta[2]; cur.reasoning += delta[4];
+      agg.set(k, cur);
+    }
   }
   const rows = [...agg.values()];
   if (ambiguous) rows.push({ model: '(겹침)', arm: 'ambiguous', requests: ambiguous, in: 0, out: 0, cache_w: 0, cache_r: 0, reasoning: 0 });
@@ -484,16 +619,35 @@ function main() {
     return;
   }
 
-  mkdirSync(OUT_DIR, { recursive: true });
-  const outFile = path.join(OUT_DIR, `${sessionId}.json`);
-  writeFileSync(outFile, JSON.stringify(snapshot, null, 2) + '\n', 'utf8');
-  stageSnapshot(outFile);
+  stageSnapshot(storeSnapshot(snapshot, OUT_DIR));
+}
+
+// 단일 파일 배포에서도 같은 보존 규칙을 쓰게 쓰기 경계를 수집과 분리한다.
+// 동시 실행 경합은 살아 있는 세션의 트랜스크립트로 매 턴 다시 집계해 다음 턴에 복구되므로 고치지 않는다.
+export function storeSnapshot(snapshot, outDir) {
+  mkdirSync(outDir, { recursive: true });
+  const outFile = path.join(outDir, `${snapshot.session_id}.json`);
+  // 재개된 짧은 기록이 이미 보관한 누계를 줄이지 않게 판→턴 순서로 고른다.
+  try {
+    const old = JSON.parse(readFileSync(outFile, 'utf8'));
+    const a = Number(old.schema) || 1, b = Number(snapshot.schema) || 1;
+    // 같은 판·턴도 지금 Stop에서 재집계한 코덱스 사용량이 늘 수 있어 새 스냅샷을 쓴다.
+    if (old.session_id === snapshot.session_id && (a > b || (a === b && (old.turns || 0) > snapshot.turns))) {
+      return outFile;
+    }
+  } catch { /* 없는 파일·깨진 생성물은 새 집계로 복구한다. */ }
+  const tmp = mkdtempSync(path.join(outDir, '.snapshot-'));
+  try {
+    writeFileSync(path.join(tmp, 'snapshot.json'), JSON.stringify(snapshot, null, 2) + '\n', 'utf8');
+    renameSync(path.join(tmp, 'snapshot.json'), outFile);
+  } finally { rmSync(tmp, { recursive: true, force: true }); }
+  return outFile;
 }
 
 /* 쓴 스냅샷을 곧바로 스테이징한다 (2026-07-27).
  *
  * 왜 필요한가: 각 repo 세션은 **자기 컨테이너**에서 돌고, 컨테이너는 회수된다. 타워는
- * 나중에 GitHub에서 새로 클론해 걷으므로, 스냅샷이 **커밋돼 올라가지 않으면 통째로 유실**된다.
+ * 나중에 GitHub에서 새로 클론해 걷으므로, 스냅샷이 **커밋이나 대화 수집기의 비공개 GC 릴레이로 올라가지 않으면 통째로 유실**된다.
  * 종전에는 "`git add`에 포함시킬 것"이라는 지침에만 기대고 있었다 — 세션이 잊으면 조용히
  * 사라지고, 사라졌다는 사실조차 안 보인다(화면에는 "안 썼다"와 똑같이 나온다).
  *
