@@ -825,5 +825,16 @@
     "rerankPoolSize": 2,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42827265",
+    "title": "Early multimodal vasopressor strategy in septic shock: results of the TRICYCLE r",
+    "date": "2026-10-05",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "pool_too_small",
+    "lowConfidence": true
   }
 ]

@@ -1601,23 +1601,6 @@
       "status": "queued"
     },
     {
-      "pmid": "40154972",
-      "title": "Evaluating patients with chest pain in the emergency department.",
-      "journal": "BMJ",
-      "score": 7.2,
-      "topic": "general_em_ccm",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "응급실 흉통 평가, EM 핵심 주제",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39557688",
       "title": "Position paper on the physiology and nomenclature of dual circulation during venoarterial ECMO in adults.",
       "journal": "Intensive Care Med",
@@ -11139,6 +11122,120 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40154972",
+      "title": "Evaluating patients with chest pain in the emergency department.",
+      "journal": "BMJ",
+      "score": 7.2,
+      "topic": "general_em_ccm",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "응급실 흉통 평가, EM 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-05",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40154972",
+          "title": "Evaluating patients with chest pain in the emergency department.",
+          "journal": "BMJ (Clinical research ed.)",
+          "pubDate": "2025-3-29",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40154972/",
+          "doi": "10.1136/bmj.r136"
+        },
+        "title_ko": "응급실에서 흉통 환자의 평가",
+        "scope_ko": "응급실을 찾는 흉통 환자에서 심장성(특히 급성관상동맥증후군) 원인을 식별·배제하기 위한 평가 접근법을 다루는 BMJ 임상 종설이다. 병력·심전도·심장 바이오마커(특히 고민감도 심장 트로포닌)를 축으로, 구조화된 위험평가와 임상의사결정경로, 영상검사, 그리고 환자 참여형 의사결정까지를 개괄한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "흉통 평가의 중요성과 핵심 3요소",
+            "body_ko": "심혈관질환은 사망률과 이환율이 높기 때문에, 흉통이 심장성 원인에서 비롯된 것인지를 식별하는 일이 결정적으로 중요하다. 저자들은 흉통 평가의 핵심 요소로 병력(history), 심전도(electrocardiogram), 그리고 심장 바이오마커(cardiac biomarkers) 세 가지를 제시한다. 이 세 축이 응급실 흉통 평가의 기본 골격을 이룬다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "선호 바이오마커로서의 고민감도 심장 트로포닌(hs-cTn)과 그 한계",
+            "body_ko": "급성심근경색(acute myocardial infarction)의 진단에서 선호되는 바이오마커는 고민감도 심장 트로포닌(high sensitivity cardiac troponins, hs-cTn)이다. hs-cTn은 심근 손상을 보다 정확하게 검출하고 또한 배제할 수 있게 해 준다.\n\n다만 저자들은 중요한 단서를 단다. hs-cTn의 상승은 급성심근경색을 겪고 있지 않은 환자에서도 나타날 수 있다는 점이다. 따라서 임상의는 hs-cTn 수치를 임상적 의사결정 과정에 '어떻게 통합할 것인가'를 인식하는 것이 중요하다. 즉, 트로포닌 상승을 곧바로 심근경색으로 등치시키지 않고 임상 맥락 속에서 해석해야 한다는 취지다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "구조화된 위험평가와 임상의사결정경로",
+            "body_ko": "흉통 환자에서 급성관상동맥증후군(acute coronary syndrome) 및 유해 사건(adverse events)의 위험을 추정하기 위해, 근거기반 진단 프로토콜(evidence based diagnostic protocols)을 활용한 구조화된 위험평가(structured risk assessments)를 시행해야 한다. 저자들은 이러한 임상의사결정경로(clinical decision pathways)가 응급실에서 일상적으로(routinely) 사용되어야 한다고 권고한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "중간·고위험 환자의 심장영상 및 추가 검사",
+            "body_ko": "폐색성 관상동맥질환(obstructive coronary artery disease)의 위험이 중간(intermediate) 또는 고위험(high risk)인 환자는 심장영상(cardiac imaging) 및 추가 검사의 이득을 볼 수 있다. 즉 위험도에 따라 영상·기능검사를 선택적으로 적용하는 접근을 제시한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "환자 참여형(공유) 의사결정",
+            "body_ko": "환자는 의사결정에 참여해야 하며, 이를 위해 위험(risks), 방사선 노출(radiation exposure), 비용(costs), 그리고 대안적 선택지(alternative options)에 대한 정보가 제공되어야 한다. 이러한 정보 제공은 충분한 설명에 근거한(informed) 의사결정을 촉진한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] hs-cTn 0/1시간·0/2시간·0/3시간 알고리즘의 구체적 역치",
+            "body_ko": "원 종설 본문(유료 접근)을 확보하지 못해, 종설이 다루는 'hs-cTn을 임상결정에 통합하는 법'의 구체를 공개 2차 출처로 보강한다. 유럽심장학회(ESC) 0/1시간 알고리즘은 제시 시점(0h)과 1시간 후 값을 함께 사용해 환자를 '배제(rule-out)·관찰(observe)·확정(rule-in)' 세 구역으로 나눈다.\n\n보강 출처(터키 단일기관 실제 적용 연구)가 적용한 hs-cTnT 역치의 예시는 다음과 같다. 배제: 0시간 hs-cTnT < 12 ng/L; 증상 발생이 응급실 내원 3시간을 넘긴 경우에는 0시간 단일 측정값 < 5 ng/L만으로 직접 배제 가능. 확정: 0시간 값 > 52 ng/L 이거나 1시간 내 변화(delta) > 5 ng/L. 관찰(중간) 구역: 12~52 ng/L 사이이거나 delta < 5 ng/L. 해당 연구에서 배제군의 민감도는 100.0%(95% CI 98.53–100.0), 음성예측도(NPV)는 100.0%(95% CI 99.78–100.0)로 매우 우수했고, 확정군은 특이도 91.16%, 양성예측도(PPV) 59.14%로 — PPV가 낮아 확정 구역은 추가 확진검사가 필요함을 시사한다. (주의: 구체적 역치는 사용하는 분석기기·assay에 따라 다르므로, 이는 ESC 0/1h 알고리즘의 작동 방식을 보여주는 예시다.)\n— 보강 출처: ESC 0/1h hs-cTnT 알고리즘 실제 적용 연구 (PMC, 2025) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12269136)",
+            "origin": "augmented",
+            "sourceLabel": "ESC 0/1h hs-cTnT 알고리즘 실제 적용 연구 (PMC, 2025)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12269136"
+          },
+          {
+            "heading_ko": "[웹 보강] HEART score — 구성과 위험 범주",
+            "body_ko": "종설은 구조화된 위험평가 도구를 권고하나 본문을 못 구했으므로, 대표 도구인 HEART score의 구체를 공개 2차 출처로 보강한다. HEART score는 다섯 요소 — History(병력), ECG(심전도), Age(나이), Risk factors(위험인자), Troponin(트로포닌) — 로 구성되며, 각 항목에 0~2점을 부여해 총 0~10점으로 산출한다. 트로포닌은 정상 0점, 정상 상한의 1~3배 1점, 3배 이상 2점으로 매긴다.\n\n위험 범주는 다음과 같다. 저위험 0~3점(조기 퇴원 후보), 중간위험 4~6점(관찰 및 추가 평가 후보), 고위험 7~10점(긴급·응급 중재 후보). 즉 트로포닌 값 자체가 점수화되어 전체 위험 범주에 직접 반영된다.\n— 보강 출처: HEART score for ED chest pain (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12247455/)",
+            "origin": "augmented",
+            "sourceLabel": "HEART score for ED chest pain (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12247455/"
+          },
+          {
+            "heading_ko": "[웹 보강] 가속진단프로토콜(ADP)의 효과와 안전성",
+            "body_ko": "종설이 권고하는 '임상의사결정경로의 일상적 사용'이 실제로 무엇을 바꾸는지를 공개 2차 출처(체계적 고찰·메타분석)로 보강한다. 가속진단프로토콜(accelerated diagnostic protocols, ADP)은 hs-cTn의 단축 연속 측정(0/1시간, 0/2시간, 0/3시간 — 기존 6시간 간격의 대폭 단축)과 임상결정도구(HEART Pathway, ADAPT, EDACS 등)를 결합한다.\n\n효과: 응급실 재실시간(length of stay)은 다수 연구에서 유의하게 감소했고(관찰연구 22건·RCT 4건에서 보고, 전체의 약 68%), 통합분석상 대략 1시간가량의 체류시간 단축이 확인됐다. 입원 비율도 15개 연구에서 유의하게 감소(통합 위험비 0.84)했다. 안전성: 30일 주요심장사건(MACE)을 보고한 13개 연구의 통합 위험비는 0.95로 유의하지 않아, 가속 퇴원 프로토콜이 표준진료 대비 유해 결과를 늘리지 않음을 시사한다.\n— 보강 출처: ADP for ED chest pain — systematic review/meta-analysis (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11495623/)",
+            "origin": "augmented",
+            "sourceLabel": "ADP for ED chest pain — systematic review/meta-analysis (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11495623/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "흉통 평가는 병력·심전도·hs-cTn을 축으로 하되, 트로포닌 상승을 반사적으로 심근경색과 등치시키지 말고 임상 맥락에서 해석해야 한다. 응급실에서는 HEART/EDACS 같은 구조화된 위험평가와 hs-cTn 연속측정 기반 가속진단경로를 일상적으로 적용해, 저위험군은 안전하게 조기 퇴원시키고 중간·고위험군만 심장영상·추가검사로 선별한다. 영상·추가검사 결정 시에는 위험·방사선 노출·비용·대안을 환자와 공유해 함께 결정한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40154972",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40154972/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/bmj.r136",
+            "url": "https://doi.org/10.1136/bmj.r136"
+          },
+          {
+            "label": "웹 — BMJ 원문 서지·초록 (Mayo Clinic Pure, Bellolio et al. 2025)",
+            "url": "https://mayoclinic.elsevierpure.com/en/publications/evaluating-patients-with-chest-pain-in-the-emergency-department/"
+          },
+          {
+            "label": "웹 — Europe PMC REST (core) — 개방접근/PMC 여부 확인 (not open access)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1136/bmj.r136&format=json&resultType=core"
+          },
+          {
+            "label": "웹 — HEART score for ED chest pain (PMC12247455)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12247455/"
+          },
+          {
+            "label": "웹 — Accelerated diagnostic protocols for ED chest pain — systematic review/meta-analysis (PMC11495623)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11495623/"
+          },
+          {
+            "label": "웹 — ESC 0/1h hs-cTnT algorithm — real-world validation (PMC12269136)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12269136"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -11196,9 +11293,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-04",
+    "date": "2026-10-05",
     "outcome": "published",
-    "publishedId": "39531053"
+    "publishedId": "40154972"
   },
-  "updatedAt": "2026-10-04"
+  "updatedAt": "2026-10-05"
 }
