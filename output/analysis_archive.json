@@ -3537,6 +3537,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-05",
+      "pmid": "42827265",
+      "title": "Early multimodal vasopressor strategy in septic shock: results of the TRICYCLE randomized controlled trial.",
+      "title_ko": "패혈성 쇼크에서 조기 다중 혈관수축제 전략: TRICYCLE 무작위 대조 임상시험 결과",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-026-06323-z",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "Norepinephrine ≥0.15 µg/kg/min을 투여 중인 성인 패혈성 쇼크 환자에서, 조기 동시 다중 혈관수축제 요법(angiotensin II, vasopressin, norepinephrine)이 고전적 단계적 혈관수축제 증량에 비해 혈장 renin 농도의 감소를 가속하고 생리학적·임상적 결과를 개선하는가?",
+      "pico": {
+        "population": "[Slovenia/Croatia] 79 adult (≥18 years) patients with septic shock (Sepsis-3) and persisting hypotension requiring vasopressors to maintain MAP ≥65 mmHg and serum lactate >2 mmol/L despite adequate volume resuscitation (20–30 ml/kg in 3 h), with vasopressor requirement ≥0.15 µg/kg/min of norepinephrine base equivalent and cardiac index >2.3 L/min/m², enrolled in three ICUs in two countries (intervention n=38, control n=41).",
+        "intervention": "Early multimodal vasopressor administration: simultaneous angiotensin II (Ang II), vasopressin, and norepinephrine, protocolized for the first 72 h.",
+        "comparison": "Classic stepwise vasopressor administration: norepinephrine dose increase followed by vasopressin and then by angiotensin II or other vasopressors (Ang II allowed in the control group only for refractory hypotension exceeding norepinephrine base 0.5 µg/kg/min plus vasopressin 0.03 IU/min).",
+        "outcome": "Primary outcome was change in plasma renin concentrations within 72 h: a faster decline was observed in the intervention group (2.61% per hour vs. 1.67% per hour; p = 0.015)."
+      },
+      "pico_ko": {
+        "population": "[슬로베니아/크로아티아] 2개국 3개 ICU에 등록된 성인(≥18세) 패혈성 쇼크(Sepsis-3) 환자 79명으로, 적절한 수액 소생(3시간 내 20–30 ml/kg)에도 MAP ≥65 mmHg 유지를 위해 혈관수축제가 필요하고 혈청 lactate >2 mmol/L인 지속성 저혈압 상태이며, norepinephrine base equivalent ≥0.15 µg/kg/min의 혈관수축제 요구량과 cardiac index >2.3 L/min/m²를 가진 환자(중재군 n=38, 대조군 n=41).",
+        "intervention": "조기 다중 혈관수축제 투여: angiotensin II(Ang II), vasopressin, norepinephrine를 동시에 투여하며 첫 72시간 동안 프로토콜화됨.",
+        "comparison": "고전적 단계적 혈관수축제 투여: norepinephrine 용량 증가 후 vasopressin, 그 다음 angiotensin II 또는 기타 혈관수축제 추가(대조군에서 Ang II는 norepinephrine base 0.5 µg/kg/min 초과 및 vasopressin 0.03 IU/min 투여에도 불응성 저혈압인 경우에만 허용).",
+        "outcome": "일차 결과는 72시간 내 혈장 renin 농도의 변화로, 중재군에서 더 빠른 감소가 관찰됨(시간당 2.61% vs. 1.67%; p = 0.015)."
+      },
+      "keyFindings": [
+        "Plasma renin declined faster with early multimodal vasopressors (2.61%/h vs 1.67%/h; p=0.015) and lactate also declined faster (1.53%/h vs 1.01%/h; p=0.006) over the first 72 h; SOFA at 72 h fell 3 points vs 0 (p=0.018).",
+        "Pharmacologically-treated tachyarrhythmias were markedly lower in the intervention group (15.6% vs 68.6%; p<0.01); early (0–24 h) NEE dose decreased faster (−6.87%/h vs −3.03%/h; p<0.0004) though 0–72 h NEE decline was similar (−5.41%/h vs −5.19%/h; p=0.47).",
+        "Mortality was not significantly different: ICU 26.3% vs 41.5% (RR 0.635; 95% CI 0.33–1.21; p=0.235) and 28-day 36.8% vs 46.3% (RR 0.795; 95% CI 0.47–1.35; p=0.494); the trial was not powered for mortality."
+      ],
+      "keyFindings_ko": [
+        "조기 다중 혈관수축제군에서 첫 72시간 동안 혈장 renin이 더 빠르게 감소했고(2.61%/h vs 1.67%/h; p=0.015), lactate도 더 빠르게 감소했으며(1.53%/h vs 1.01%/h; p=0.006), 72시간 SOFA는 3점 감소 vs 0점(p=0.018)이었다.",
+        "약물 치료가 필요한 tachyarrhythmia는 중재군에서 현저히 낮았고(15.6% vs 68.6%; p<0.01), 초기(0–24h) NEE 용량도 더 빠르게 감소했으나(−6.87%/h vs −3.03%/h; p<0.0004) 0–72h 전체 NEE 감소율은 유사했다(−5.41%/h vs −5.19%/h; p=0.47).",
+        "사망률은 유의한 차이가 없었다: ICU 26.3% vs 41.5%(RR 0.635; 95% CI 0.33–1.21; p=0.235), 28일 36.8% vs 46.3%(RR 0.795; 95% CI 0.47–1.35; p=0.494); 본 시험은 사망률에 대한 검정력이 없었다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42827265",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42827265/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-026-06323-z",
+          "url": "https://doi.org/10.1186/s13054-026-06323-z"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT06155812 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT06155812"
+        }
+      ],
+      "fullText": "### Background\nVasopressors are considered lifesaving in patients with septic shock when hypotension is unresponsive to fluid resuscitation. Norepinephrine is considered the vasopressor of first choice and is superior to dopamine [, ]. Although clinical trials comparing vasopressin, angiotensin II (Ang II) or other non-adrenergic vasopressors versus norepinephrine have failed to demonstrate a survival benefit [, ], retrospective data suggest these agents may improve patient outcomes [].\nVasodilation, vascular hyporeactivity and hypotension can persist with preserved cardiac output despite exogenous catecholamine infusion, which can be attributed to interpatient differences in adrenergic receptor function [, ] and dysregulation of multiple neurohormonal pathways [–]. Given that mortality increases substantially with escalating doses of norepinephrine [, ], initiation of additional vasopressors is commonly considered to shorten hypoperfusion and minimize toxicity associated with excessive catecholamine exposure. A balanced approach with the introduction of multiple mechanistically distinct vasopressors could theoretically better counteract the complex pathophysiology of septic shock [–]. The precise timing and selection of additional vasopressors remains unclear [, ]. Although observational studies, meta-analyses, and post-hoc analyses suggest potential benefits of earlier introduction of non-adrenergic vasopressors, prospective evidence remains limited [, , ].\nOver the past decade, several studies showed that elevated renin concentrations on admission and increasing concentrations during the intensive-care-unit (ICU) stay are associated with mortality and outperform lactate in outcome prediction [–]. Two recent studies showed that renin retains its prognostic value in patients who are treated with Ang II [, ].\nThese findings have prompted the initiation of the “Early multimodal vasopressor strategy in septic shock (TRICYCLE)” trial to determine whether early initiation of multimodal vasopressor therapy (defined as simultaneous use of Ang II, vasopressin and norepinephrine) accelerates the decline in plasma renin concentrations and improves physiological and clinical outcomes compared with classic stepwise use of vasopressors in adult patients with septic shock.\n\n### Methods\n\n### Study design and setting\nThis was an investigator-initiated and -designed (ZK, MG, GL and AM) randomized controlled trial in three separate ICUs in two countries (University Medical Centre Maribor and University Hospital Centre Zagreb). The trial was single blinded and enrolled adult septic shock patients to evaluate the physiological and clinical effects of an early multimodal vasopressor strategy compared to a classic stepwise vasopressor approach. Sepsis and septic shock were defined according to the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3) []. The protocol was approved by ethics committees in all participating institutions (KME RS 0120–212/2023-2711-13 and KME Rebro 02/013 AG). All participant screening and enrollment procedures were performed by the investigators (Fig. ). Written informed consent was obtained from all patients. If the patient was unable to provide informed consent due to disease severity, written consent was obtained from a legal guardian or the closest relative before study enrolment. Detailed rationale for the trial and trial protocol was published separately []. Collection and analysis of the trial data and preparation of the manuscript were all performed by the investigators. No protocol deviations were documented during the conduct of the trial. Differences between the protocol-specified and reported outcomes and analyses are summarized in Supplementary Appendix Table .\n[object Object]\n\n### Study population\nWe included patients who fulfilled the following inclusion criteria: adult (≥ 18 years), with sepsis and persisting hypotension requiring vasopressors to maintain mean arterial pressure (MAP) ≥ 65 mmHg and serum lactate level > 2 mmol/L despite adequate volume resuscitation (20–30 ml/kg in 3 h), with vasopressor requirement ≥ 0.15 µg/kg/min of norepinephrine base equivalent, with central venous access, arterial line and urinary catheter inserted and expected to remain present for at least the initial 72 h of treatment, and with cardiac index (CI) > 2.3 L/min/m (measured by bedside echocardiography, pulse contour analysis cardiac output (PiCCO) or Swan-Ganz catheter) []. Exclusion criteria were as follows: death expected within 24 h, suspected or confirmed pregnancy, surgery expected for the source of infection or inter-hospital transfer expected during the first 72 h of hospitalization (because both situations could have compromised protocol adherence), liver failure with a Model for End-Stage Liver Disease (MELD) score ≥ 30, acute mesenteric ischemia or history of mesenteric ischemia, Raynaud’s phenomenon, systemic sclerosis or vasospastic disease, active bleeding and an anticipated need (within the first 48 h of study initiation) for transfusion of > 4 units of packed red blood cells, known allergy to mannitol (an ingredient in Ang II 2,5 mg/ml vials), or veno-arterial ECMO.\n\n### Study intervention\nPatients were randomized to the intervention (Tricycle) group or the control group in a 1:1 ratio. Patients in the intervention group received multimodal vasopressor therapy with Ang II, vasopressin and norepinephrine, while patients in the control group received standard stepwise vasopressor therapy starting with norepinephrine, adding vasopressin at higher doses of norepinephrine and adding additional vasopressors at high doses of norepinephrine and vasopressin. The intervention group vasopressor titration regimen is shown in Fig. . Detailed treatment protocols for both groups are provided in the Supplementary Appendix and the published trial protocol []. Vasopressor doses were converted to NEE using the conversion factors proposed by Kotani et al. [] (Table  Supplementary Appendix). The protocol allowed the use of additional inotropes and vasopressors in both the control and intervention groups (dobutamine, levosimendan, epinephrine, methylene blue, or dopamine). Use of Ang II was allowed in the control group in patients with refractory hypotension (persistent hypotension despite exceeding a norepinephrine base dose of 0.5 µg/kg/min and administration of vasopressin at a dose of 0.03 IU/min). Vasopressor therapy for both the intervention and control groups was protocolized for the first 72 h. After 72 h, vasopressor therapy was prescribed as per the treating physician. All patients received thromboprophylaxis. Following randomization, additional intravenous fluids could be administered in both groups at the discretion of the treating team, based on clinical and ultrasound assessment of fluid status and responsiveness. All other aspects of treatment were as per standard guidelines and recommendations.\n[object Object]\n\n### Assessments and end points\nExtended laboratory examination was performed at baseline and at 24, 48 and 72 h after enrollment. Plasma renin concentrations were determined at baseline and at 12, 24, 36, 48 and 72 h after enrollment. Plasma lactate concentrations were determined at baseline and at 12-h intervals until 72 h after enrollment. SOFA score was determined daily. Plasma renin concentrations were measured as direct renin using a commercially available chemiluminescent immunoassay on the LIAISON XL automated analyzer (LIAISON Direct Renin assay, DiaSorin S.p.A., Saluggia, Italy) according to the manufacturer’s instructions. Results were expressed as mU/L. The assay has a reported reference range of 4–50 mU/L and an upper quantification limit of 500 mU/L.\nThe primary endpoint was the change in plasma renin concentrations within 72 h after inclusion. Prespecified secondary endpoints included change in lactate concentrations within 72 h after inclusion and change in SOFA score between day 1 and day 3 (ΔSOFA) []. Prespecified exploratory endpoints were RRT requirement during ICU stay, survival to ICU discharge (reported as ICU mortality) and 28-day mortality. Longitudinal NEE trajectories over 0–72 h and 0–24 h and change in eGFR over 0–72 h were additional non-prespecified analyses. A comparison of protocol-specified and reported outcomes/analyses and rationale for modifications are presented in Supplementary Appendix Table .\nAdverse events recorded during the study period included thrombotic events, tachyarrhythmias, thrombocytopenia, hyponatremia and cardiac, mesenteric and digital ischemia. Adverse events were identified from clinical assessment, laboratory findings and diagnostic investigations. During data collection, tachyarrhythmias were recorded when atrial fibrillation or atrial flutter, paroxysmal supraventricular tachycardia, or ventricular tachyarrhythmias required pharmacological treatment or electrical cardioversion. Events were identified during continuous cardiac monitoring and documented by the treating clinical team.\n\n### Data analysis\nThe planned sample size was 80 patients (40 per group), based on a priori Wilcoxon-Mann-Whitney comparison of renin concentrations to provide at least 80% statistical power as described in the published study protocol []. This approach was based on available published renin data, which did not provide sufficient information to estimate the parameters required for a sample-size calculation based on a longitudinal mixed-effects model. The sample size calculation therefore did not formally assess power for the mixed-effects model used in the present study.\nData were analyzed using IBM SPSS Statistics 25.0 (IBM Inc., Armonk, New York, USA) and R 4.2.3 statistical environment (R Core Team 2020, Vienna, Austria). We used standard statistical approaches to test for significant differences between the intervention and control groups. Data were summarized using descriptive statistics for continuous and catego",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -3585,13 +3636,14 @@
       "2026-10": [
         "42467247",
         "42714473",
-        "42823746"
+        "42823746",
+        "42827265"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
-      "2026-10": 83774
+      "2026-10": 94090
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
