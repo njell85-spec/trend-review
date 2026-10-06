@@ -1652,23 +1652,6 @@
       "status": "queued"
     },
     {
-      "pmid": "37707377",
-      "title": "The Ins and Outs of IV Fluids in Hemodynamic Resuscitation.",
-      "journal": "Crit Care Med",
-      "score": 7.1,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "수액 소생 혈역학, 응급·중환자 핵심 실무",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "38245889",
       "title": "International Consensus Criteria for Pediatric Sepsis and Septic Shock.",
       "journal": "JAMA",
@@ -11236,6 +11219,107 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "37707377",
+      "title": "The Ins and Outs of IV Fluids in Hemodynamic Resuscitation.",
+      "journal": "Crit Care Med",
+      "score": 7.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "수액 소생 혈역학, 응급·중환자 핵심 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-06",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "37707377",
+          "title": "The Ins and Outs of IV Fluids in Hemodynamic Resuscitation.",
+          "journal": "Critical care medicine",
+          "pubDate": "2023-9-14",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/37707377/",
+          "doi": "10.1097/CCM.0000000000006001"
+        },
+        "title_ko": "혈역학적 소생에서 정맥수액의 이모저모(The Ins and Outs)",
+        "scope_ko": "중환자에서 정맥수액(IVF) 사용의 생리를 다루는 'Concise Definitive Review'로, 임상 연구와 생리 연구를 엮어 수액·전해질을 합리적이고 과학에 근거해 쓰기 위한 틀을 제시한다. 알고리즘적 접근보다 쇼크의 생리와 '수액이 그 상황에서 무엇을 할 것인가'를 이해하는 데 초점을 둔다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "서론 — 이 종설의 목적(Concise Definitive Review)",
+            "body_ko": "정맥수액(IVF) 투여는 중환자에게 가장 흔한 중재 중 하나다. 저자들은 이 글에서 IVF의 생리와 중환자에서의 사용에 관한 기초 생리 연구, 관찰 연구, 임상시험, 종설을 종합해, 알고리즘에 의존하기보다 과학에 근거한 원리로 수액과 전해질을 사용하는 틀을 세우고자 한다. 핵심 주장은 수액의 합리적 사용이 쇼크 상태의 생리와 '그 상황에서 수액이 어떻게 분포하고 무엇을 할지'에 대한 이해 위에 있다는 것이다. 많은 의문이 여전히 답을 얻지 못했으며, 향후 연구는 연구 설계 단계에서부터 IVF의 생리학적 이해를 포함해야 한다고 본다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생리학적 배경 — 수액이 체내에서 하는 일",
+            "body_ko": "체액은 몸 구성의 약 50%를 차지하는 소금-물 용액이다. 수액은 두 가지 핵심 기능을 한다: 확산(diffusion)을 위해 용질을 녹여 두는 것과, 순환계를 통한 대류(convective flow)를 가능하게 하는 것이다.\n\nosmolality(삼투질 농도), osmolarity, tonicity(장성)는 용해된 입자가 막을 사이에 두고 만드는 삼투압을 기술하는 용어다. 저자들은 등삼투(iso-osmolality) 원리를 설명하는데, 모든 체액 구획이 비슷한 삼투질 농도(275–295 mOsm/L)를 유지한다는 것이다. 세포외 농도는 나트륨이 지배하며 135–145 mMol/L로 조절된다. 총 체수분의 약 2/3은 세포내에, 1/3은 세포외에 있고, 간질강(interstitial space)은 통상 혈관내강의 약 2배다.\n\n혈관과 간질 사이의 수분 이동은 정수압과 교질(종양)삼투압이 관여하는 Starling 원리에 따른다. 저자들은 '알부민이 혈장 교질삼투압의 약 80%를 차지'하여 혈관 내 수분 보유를 유지한다고 서술한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "수액의 이동 — 자유수, 생리식염수, 고장성 식염수, 교질액",
+            "body_ko": "수액 종류에 따라 체내 분포가 뚜렷이 다르다. 5% 포도당액은 등장성이어서 적혈구를 용혈시키지 않지만, 포도당이 빠르게 세포에 흡수·대사되고 나면 사실상 자유수처럼 전 구획에 재분포한다.\n\n등장성 결정질액(crystalloid)은 약 1/3이 혈관 내에, 2/3이 간질에 분포한다. 고장성 용액은 간질강과 세포내 공간을 수축시키면서 혈관내 용적을 확장시킨다.\n\n교질액(colloid)은 큰 분자를 포함해 대사되기 전까지 주로 혈관 내에 머문다. 알부민 제제는 혈장과 비슷한 교질삼투 효과를 갖는 4% 또는 5% 용액과, 과교질성(hyperoncotic)인 20% 또는 25% 용액이 있다. 하이드록시에틸전분(hetastarch) 제제는 패혈증 환자에서 사망 위험 증가와 연관되어 FDA가 명령한 블랙박스 경고를 달고 있다. 균형 용액(balanced solution)은 염소(chloride) 함량을 줄이기 위해 lactate, acetate, gluconate를 음이온으로 사용한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "순환 혈액량 — 긴장/비긴장 용적과 평균체순환충만압",
+            "body_ko": "이 절은 정맥환류(venous return)와 심기능의 개념으로 혈역학을 설명한다. 혈액량의 약 70%는 혈관벽을 '채우고만 있을 뿐' 혈관압에 기여하지 않는 비긴장 용적(unstressed volume)이다. 나머지 30%는 혈관벽을 늘려 탄성 반동을 만들고 혈관압을 생성하는 긴장 용적(stressed volume)이다.\n\n순응도가 높은 전신 정맥에 담긴 큰 혈액량은 평균체순환충만압(mean systemic filling pressure, MSFP)을 만들어 혈액을 우심방으로 되돌려 보낸다. 저자들은 용적이 심박출량(CO)을 늘릴 수 있는 유일한 길은 MSFP와 심장 전부하(preload)를 높이는 것뿐이라고 강조한다.\n\n교감신경계의 방출(또는 외인성 카테콜아민)은 혈관 평활근을 수축시켜 비긴장 용적을 긴장 용적으로 동원하며, 이는 수 초 안에 일어난다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생리에 근거한 IVF의 임상 사용 ① 출혈로 인한 저혈량",
+            "body_ko": "출혈은 혈장, 혈소판, 적혈구의 손실을 일으킨다. 초기 보상 기전에는 교감신경 활성화와, 비긴장 용적의 동원을 통한 '자가수혈(autotransfusion)'이 포함된다. 저자들은 출혈성 쇼크에서는 IVF를 신중히 써야 한다고 강조하는데, 혈관압을 올리면 형성된 혈전을 교란해 출혈을 악화시킬 수 있기 때문이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생리에 근거한 IVF의 임상 사용 ② 비출혈성 용적 손실로 인한 저혈량",
+            "body_ko": "용적 손실은 본질적으로 나트륨의 손실을 뜻한다. 등장성 결정질액은 혈관과 간질 구획을 다시 채운다. 저자들은 다량의 생리식염수를 투여할 때 혈장 염소 농도를 감시할 것을 권고하는데, 과도한 염소는 신장의 배설을 저해하고 대사성(과염소혈성) 산증을 일으키기 때문이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생리에 근거한 IVF의 임상 사용 ③ 분포성 쇼크(패혈증)",
+            "body_ko": "패혈증과 같은 상태는 혈관 투과성을 높이고 혈관 긴장도를 떨어뜨린다. IVF는 심장이 Starling 곡선의 상승부에서 작동할 때에만 일회박출량(SV)과 CO를 증가시킬 수 있다. 곡선의 평탄부에서는 IVF가 우심실 이완기말 '압력'만 올리고 '용적'은 올리지 못하므로 SV는 변하지 않는다. 수액반응성(fluid responsiveness, FR)으로 IVF를 유도하는 것은 패혈증에서 이환율·사망률 감소와 연관되어 왔으며, 최근의 소규모 전향 연구 하나와 두 건의 후향 연구는 CO 모니터링으로 IVF 투여를 유도하면 이환·사망이 낮아질 수 있음을 시사한다.\n\n그러나 패혈증성 쇼크에서 IVF에 관한 근거는 여전히 논쟁적이다. 한 건의 많이 인용된 단일기관·비맹검 연구에서는 패혈성 쇼크 초기에 산소운반 최적화를 목표로 한 프로토콜로 사망률이 상당히 감소했다(저자들은 Rivers의 조기목표지향치료를 가리킨다). 그러나 뒤이은 세 건의 대규모 다기관 무작위대조시험은 이 사망률 이득을 재현하지 못했다. 저자원 환경에서 패혈증의 조기 IVF 소생을 본 두 연구는 IVF 부하가 오히려 사망 증가와 연관됨을 발견했다. '패혈증 번들'에 대한 후향 연구는 조기 IVF와 사망 위험 감소 사이에 연관을 찾지 못했다.\n\n최근 두 건의 무작위대조시험은 패혈성 쇼크 환자에서 IVF의 자유로운(liberal) 사용과, IVF를 제한하고 혈압상승제를 조기에 쓰는(restrictive) 방식을 비교했다. 두 연구 모두에서 제한군의 총 투여 IVF 용량이 더 적었고, 두 중재 간 사망 위험은 비슷했다. 또한 두 연구 모두에서 투여된 IVF 용량(2 L 미만)이 과거 연구들보다 적었다.\n\n염소와 관련해서는, 다량의 0.9% 식염수가 과염소혈성 대사성 산증을 일으킬 수 있으나, 임상적으로 큰 이득(혹은 해)은 확인되지 않았는데 이는 투여된 총 용량과 염소의 양이 가설을 효과적으로 검증하기에 너무 적었기 때문이라고 본다. 0.9% 식염수를 2 L까지 쓰는 것은 해로울 가능성이 낮지만, 더 많은 용량에서는 혈장 염소 농도를 면밀히 감시해야 한다. 한편 정맥 울혈(venous congestion)의 징후는 대규모 ICU 데이터베이스에서 급성신손상(AKI) 위험 증가와 연관되어 왔다. 2021년 Surviving Sepsis Guidelines는 IVF에 대한 권고를 강한(strong) 권고에서 약한(weak) 권고로 하향 조정했다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생리에 근거한 IVF의 임상 사용 ④ 심인성·폐쇄성 쇼크",
+            "body_ko": "심기능 저하나 폐쇄가 심실 충만을 제한하는 경우 IVF의 이득은 미미하다. 저자들은 이러한 상황에서는 문제가 용적 결핍이 아니라 물리적 제한이므로 'IVF가 CO를 증가시키지 못한다'고 명시한다. 치료는 수액이 아니라 변력(inotrope) 지지, 기계적 보조, 또는 폐쇄의 해소를 필요로 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론",
+            "body_ko": "저자들은 처방자가 수액의 생리와, 그 중재가 기저 병태생리를 어떻게 다루는지를 먼저 고려해야 한다고 강조한다. 이들은 알고리즘적 프로토콜보다 병력, 신체검진, 검사 소견, 신뢰할 수 있는 모니터링을 결합한 개별화된 접근을 지지한다. IVF의 일차 목표는 CO와 산소운반을 늘리는 것이며, CO가 용적에 반응하지 않을 때 IVF는 고갈된 예비량을 복원하는 데 그친다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "web-augmented",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 수액을 주기 전에 '심장이 Starling 곡선의 상승부에 있고 수액반응성이 있는가'를 먼저 따지게 된다. 수액은 그럴 때에만 CO를 올리고, 출혈성 쇼크에서는 혈전 교란·출혈 악화 때문에 신중해야 하며, 심인성·폐쇄성 쇼크에서는 수액 대신 변력제·기계적 보조·원인 해소가 답이다. 대량의 생리식염수를 쓸 때는 특히 2 L를 넘기면 염소와 대사성 산증을 감시하고, 패혈증에서는 자유로운 수액이 제한+조기 혈압상승제 대비 사망에 차이가 없으며 2021 SSC도 수액 권고를 약한 권고로 낮췄다는 점을 염두에 둔다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 37707377",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37707377/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000006001",
+            "url": "https://doi.org/10.1097/CCM.0000000000006001"
+          },
+          {
+            "label": "웹 — Critical Care Medicine — 논문 전문 PDF(저자 원문, 텍스트 리더 경유로 확보)",
+            "url": "https://mdensino.s3.dualstack.us-east-2.amazonaws.com/original/2X/d/d8c94323d96378e00519b7673110f4bc1e067d27.pdf"
+          },
+          {
+            "label": "웹 — Amedeo 서지 페이지(PMID 37707377) — 서지 확인",
+            "url": "https://m.amedeo.com/37707377"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -11293,9 +11377,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-05",
+    "date": "2026-10-06",
     "outcome": "published",
-    "publishedId": "40154972"
+    "publishedId": "37707377"
   },
-  "updatedAt": "2026-10-05"
+  "updatedAt": "2026-10-06"
 }

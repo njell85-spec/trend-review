@@ -36493,7 +36493,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -38268,7 +38268,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -39306,72 +39306,6 @@
         "reason": "한국 CPR 소아 기본소생술 — 소아 전용, 성인 독자 제한",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:42297406",
-      "pmid": "42297406",
-      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 3. Adult basic life support.",
-      "pubDate": "2026 May",
-      "journal": "Clinical and experimental emergency medicine",
-      "publicationTypes": [
-        "Guideline",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:19.239Z",
-      "abstract": "The 2025 Korean basic life support guidelines are evidence-based treatment recommendations for basic cardiopulmonary resuscitation (CPR). The 2025 guidelines recommend that after checking the response of a patient suspected of cardiac arrest, call 119 (emergency medical services) immediately and request an automated external defibrillator (AED) before performing procedures to confirm cardiac arrest, such as checking breathing. There is currently insufficient evidence into the clinical effectiveness of dispatcher actively instructing individuals who report an emergency to retrieve and use an AED, but one observational study reported an increase in some survival rates. The guidelines recommend that lay rescuers and emergency medical personnel who have been trained in and are willing to perform artificial ventilation should apply standard CPR including artificial ventilation, and that lay rescuers who are not trained in or do not want to perform artificial ventilation should perform compression-only CPR. The guidelines emphasize high-quality CPR, including effective chest compressions and ventilation. The application of a rapid AED is continuously emphasized, and the anterolateral positioning method is recommended as a priority for ease of application. Healthcare workers are recommended to perform standard CPR with a compression to ventilation ratio of 30:2 for patients suspected of having a high-risk pathogen infection and to wear appropriate personal protective equipment, including a mask or respirator appropriate for the suspected pathogen, gloves, a gown, and eye protection.",
-      "meshTerms": [],
-      "keywords": [
-        "Guidelines",
-        "Heart arrest",
-        "Resuscitation"
-      ],
-      "doi": "10.15441/ceem.26.095",
-      "pmcid": "PMC13277413",
-      "region": "kr",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7,
-      "breakdown": {
-        "authority": 0,
-        "topic": 3,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "성인 기본소생술 핵심 지침, 침상 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-3-adult-basic-life-support",
-      "supersedes": []
     },
     {
       "id": "pmid:42297405",
@@ -43577,7 +43511,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -45011,7 +44945,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-05T00:10:16.381Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45831,7 +45765,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45911,7 +45845,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46717,7 +46651,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -46800,7 +46734,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46859,7 +46793,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47091,7 +47025,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47160,7 +47094,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47274,11 +47208,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.655440302515063,
+      "priority": 7.651529936435771,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6554403025150632,
+        "recency": 1.6515299364357707,
         "scope": 0,
         "confidence": 2
       },
@@ -47293,7 +47227,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47353,7 +47287,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47427,7 +47361,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47483,11 +47417,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.655440302515064,
+      "priority": 11.651529936478022,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6554403025150632,
+        "recency": 1.6515299364780223,
         "scope": 0,
         "confidence": 2
       },
@@ -47503,7 +47437,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47570,7 +47504,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.381Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47635,7 +47569,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.380Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47685,11 +47619,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.65544030243056,
+      "priority": 11.65152993639352,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6554403024305602,
+        "recency": 1.651529936393519,
         "scope": 0,
         "confidence": 2
       },
@@ -47705,7 +47639,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-05T00:10:16.381Z",
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47714,6 +47648,85 @@
         "keep": false,
         "reason": "AHA/ACC 말초동맥질환 지침, 급성 사지허혈 등 일부 응급 접점",
         "at": "2026-10-03T00:42:17.362Z"
+      }
+    },
+    {
+      "id": "pmid:42135060",
+      "pmid": "42135060",
+      "title": "Intracoronary imaging for left main percutaneous coronary intervention: a clinical consensus statement of the European Association of Percutaneous Cardiovascular Interventions (EAPCI) of the ESC and the European Bifurcation Club (EBC).",
+      "pubDate": "2026 Oct 5",
+      "journal": "European heart journal",
+      "publicationTypes": [
+        "Consensus Statement",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-06T01:52:39.473Z",
+      "abstract": "Left main disease represents one of the most complex lesion subsets for percutaneous coronary intervention, associated with an increased risk of serious late complications. The recent endorsement of intracoronary imaging for the guidance of left main bifurcation percutaneous coronary intervention in both acute and chronic coronary syndrome, with respective recommendations in American and European guidelines, reflects the results of recent studies. Patient benefit can only be realized through the interventional community embracing the need for intracoronary imaging-guided planning, guidance and optimization of left main stenting. This clinical consensus statement summarizes the views of a global expert panel, coordinated by the European Association of Percutaneous Cardiovascular Interventions (EAPCI), in collaboration with the European Bifurcation Club (EBC). The document includes an appraisal of the most contemporary evidence and provides clinical guidance on how to maximize the benefit of intravascular ultrasound or optical coherence tomography in the treatment of left main bifurcation disease.",
+      "meshTerms": [
+        "Humans",
+        "Percutaneous Coronary Intervention",
+        "Ultrasonography, Interventional",
+        "Tomography, Optical Coherence",
+        "Coronary Artery Disease",
+        "Stents",
+        "Coronary Angiography",
+        "Acute Coronary Syndrome"
+      ],
+      "keywords": [
+        "Bifurcation",
+        "Intracoronary imaging",
+        "Intravascular ultrasound",
+        "Left main stem",
+        "Optical coherence tomography",
+        "Percutaneous coronary intervention"
+      ],
+      "doi": "10.1093/eurheartj/ehag353",
+      "pmcid": "PMC13634641",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 9,
+      "breakdown": {
+        "authority": 4,
+        "topic": 1,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "좌주간부 PCI 영상유도 시술 합의문 — 중재시술 전용, 응급·중환자 침상 무관",
+        "at": "2026-10-06T01:52:47.329Z"
       }
     }
   ],
@@ -56305,6 +56318,185 @@
         ]
       },
       "publishedAt": "2026-10-05"
+    },
+    {
+      "id": "pmid:42297406",
+      "pmid": "42297406",
+      "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 3. Adult basic life support.",
+      "pubDate": "2026 May",
+      "journal": "Clinical and experimental emergency medicine",
+      "publicationTypes": [
+        "Guideline",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:19.239Z",
+      "abstract": "The 2025 Korean basic life support guidelines are evidence-based treatment recommendations for basic cardiopulmonary resuscitation (CPR). The 2025 guidelines recommend that after checking the response of a patient suspected of cardiac arrest, call 119 (emergency medical services) immediately and request an automated external defibrillator (AED) before performing procedures to confirm cardiac arrest, such as checking breathing. There is currently insufficient evidence into the clinical effectiveness of dispatcher actively instructing individuals who report an emergency to retrieve and use an AED, but one observational study reported an increase in some survival rates. The guidelines recommend that lay rescuers and emergency medical personnel who have been trained in and are willing to perform artificial ventilation should apply standard CPR including artificial ventilation, and that lay rescuers who are not trained in or do not want to perform artificial ventilation should perform compression-only CPR. The guidelines emphasize high-quality CPR, including effective chest compressions and ventilation. The application of a rapid AED is continuously emphasized, and the anterolateral positioning method is recommended as a priority for ease of application. Healthcare workers are recommended to perform standard CPR with a compression to ventilation ratio of 30:2 for patients suspected of having a high-risk pathogen infection and to wear appropriate personal protective equipment, including a mask or respirator appropriate for the suspected pathogen, gloves, a gown, and eye protection.",
+      "meshTerms": [],
+      "keywords": [
+        "Guidelines",
+        "Heart arrest",
+        "Resuscitation"
+      ],
+      "doi": "10.15441/ceem.26.095",
+      "pmcid": "PMC13277413",
+      "region": "kr",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 기본소생술 핵심 지침, 침상 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|korean-cardiopulmonary-resuscitation-part-3-adult-basic-life-support",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42297406",
+          "title": "2025 Korean Guidelines for Cardiopulmonary Resuscitation: Part 3. Adult basic life support.",
+          "journal": "Clinical and experimental emergency medicine",
+          "pubDate": "2026 May",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42297406/",
+          "doi": "10.15441/ceem.26.095"
+        },
+        "org": "Korean Association of Cardiopulmonary Resuscitation (KACPR) / Korean guidelines, aligned with ILCOR 2025 CoSTR",
+        "version": "2025",
+        "title_ko": "2025 한국 심폐소생술 가이드라인: Part 3. 성인 기본소생술(BLS)",
+        "scope_ko": "병원 전·병원 내 성인 심정지 환자를 대상으로 한 기본소생술(BLS) 권고로, 일반인 구조자와 의료제공자(응급의료종사자 포함) 모두를 다룬다. 반응·호흡 확인, 119 신고 및 AED 요청, 가슴압박/인공호흡, AED 적용, 이물질 기도폐쇄, 익수, 고위험 병원체 감염 의심 환자 소생술까지 포괄한다.",
+        "summary": [
+          "Call-first: after confirming unresponsiveness in suspected cardiac arrest, immediately call 119 and request an AED BEFORE confirmatory assessments such as checking breathing (unchanged since 2020).",
+          "119 dispatchers should actively instruct bystanders to obtain and use an AED, given Korea's low prehospital AED use (strong recommendation, low certainty of evidence).",
+          "Trained-and-willing rescuers (lay or EMS) perform standard CPR with ventilation; untrained/unwilling lay rescuers perform compression-only CPR; healthcare providers and trained first responders use 30:2.",
+          "Emphasize high-quality CPR: place the dominant hand against the sternum (weak recommendation, very low certainty) and keep chest compression fraction as high as possible, at least 60% (strong recommendation, low certainty).",
+          "For spontaneously breathing patients needing respiratory assistance, give one rescue breath every 6 seconds (10/min; expert consensus).",
+          "Apply AED rapidly with anterolateral pad placement as the priority method (below right clavicle and below left mid-axillary line) on a bare chest; in women, place pads without removing the bra, avoiding breast tissue (expert consensus).",
+          "In-hospital backboard use may be continued where already in place, but new introduction of backboards is NOT recommended (weak recommendation, very low certainty); suction-based airway-clearance devices are NOT recommended for routine foreign-body airway obstruction (weak recommendation, very low certainty).",
+          "For suspected high-risk pathogen infection, healthcare workers should still perform standard 30:2 CPR while wearing full PPE (N95/respirator, gloves, waterproof long-sleeved gown, eye protection) (strong recommendation, low certainty)."
+        ],
+        "summary_ko": [
+          "Call-first: 심정지 의심 환자에서 무반응을 확인하면 호흡 확인 등 확진 평가보다 먼저 즉시 119에 신고하고 AED를 요청한다(2020년부터 유지).",
+          "119 상황요원은 신고자에게 AED를 확보·사용하도록 적극 안내해야 한다 — 한국의 낮은 병원 전 AED 사용률을 고려(강한 권고, 낮은 근거수준).",
+          "훈련되고 의향이 있는 구조자(일반인·응급의료종사자)는 인공호흡 포함 표준 CPR을, 훈련되지 않았거나 원치 않는 일반인은 가슴압박소생술을 시행한다; 의료제공자·훈련된 최초반응자는 30:2.",
+          "고품질 CPR 강조: 가슴압박 시 우세손을 흉골에 댄다(약한 권고, 매우 낮은 근거수준), 가슴압박분율(CCF)은 가능한 높게, 최소 60% 유지(강한 권고, 낮은 근거수준).",
+          "자발호흡은 있으나 호흡보조가 필요한 환자에게는 6초마다 1회(분당 10회) 인공호흡(전문가 합의).",
+          "AED는 신속히 적용하며 전외측(anterolateral) 패드 부착을 우선 권고(오른쪽 빗장뼈 아래, 왼쪽 중간겨드랑선 아래) — 맨가슴에 부착; 여성은 브래지어를 제거하지 않고 유방 조직을 피해 부착(전문가 합의).",
+          "병원 내 백보드는 기존 사용은 유지 가능하나 신규 도입은 권고하지 않는다(약한 권고, 매우 낮은 근거수준); 이물질 기도폐쇄에 흡인 기반 기구의 일상적 사용은 권고하지 않는다(약한 권고, 매우 낮은 근거수준).",
+          "고위험 병원체 감염 의심 시에도 의료진은 표준 30:2 CPR을 시행하되 전신 PPE(N95/호흡보호구, 장갑, 방수 긴소매 가운, 눈 보호구)를 착용한다(강한 권고, 낮은 근거수준)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "119 상황요원의 AED 안내",
+            "detail": "Previous (2020): dispatchers primarily coached callers through CPR. New (2025): dispatchers should additionally instruct bystanders to secure and use an AED (strong recommendation, low certainty of evidence). Reason: very low prehospital AED use rate in Korea; one before-and-after observational study showed a survival increase, and ILCOR endorses dispatcher AED guidance (low certainty).",
+            "detail_ko": "이전(2020): 상황요원은 주로 전화 CPR을 지도. 신규(2025): AED를 확보·사용하도록 신고자에게 안내하는 것을 추가 권고(강한 권고, 낮은 근거수준). 이유: 한국의 매우 낮은 병원 전 AED 사용률, 전후 비교 관찰연구에서 일부 생존율 증가 보고, ILCOR의 상황요원 AED 안내 권고(낮은 근거수준)."
+          },
+          {
+            "topic": "자발호흡 환자 인공호흡 횟수",
+            "detail": "Previous: 1 breath every 5–6 seconds (~10–12/min). New (2025): to simplify the guideline, 1 rescue breath every 6 seconds (10/min) for spontaneously breathing patients who need respiratory assistance (expert consensus). Reason: standardization/simplification of the numbers.",
+            "detail_ko": "이전: 5~6초마다 1회(약 10~12회/분). 신규(2025): 지침 단순화를 위해 호흡보조가 필요한 자발호흡 환자에게 6초마다 1회(분당 10회)로 통일(전문가 합의). 이유: 수치 표준화·단순화."
+          },
+          {
+            "topic": "손 위치(우세손)",
+            "detail": "Newly specified in 2025: rescuers should place their dominant hand directly against the sternum when performing chest compressions (weak recommendation, very low certainty of evidence). Previously not explicitly specified.",
+            "detail_ko": "2025에서 새로 명시: 가슴압박 시 우세손을 흉골에 직접 대도록 권고(약한 권고, 매우 낮은 근거수준). 이전에는 명시되지 않았던 항목."
+          },
+          {
+            "topic": "가슴압박분율(CCF) 목표",
+            "detail": "Chest compression fraction should be kept as high as possible, with an explicit minimum target of at least 60% (strong recommendation, low certainty of evidence) — reinforcing/quantifying the prior 'minimize interruptions' guidance.",
+            "detail_ko": "가슴압박분율을 가능한 높게 유지하되 최소 60% 이상이라는 구체 목표를 명시(강한 권고, 낮은 근거수준) — 기존 '중단 최소화' 권고를 수치화·강화."
+          },
+          {
+            "topic": "백보드(backboard) 사용",
+            "detail": "New stance (2025): existing in-hospital backboard use may be maintained, but introducing new backboard application is NOT recommended (weak recommendation, very low certainty). Reason: some studies show improved compression depth but evidence is insufficient to confirm efficacy, and new adoption is not cost-effective and requires substantial training.",
+            "detail_ko": "신규 입장(2025): 병원 내 기존 백보드 사용은 유지 가능하나 신규 도입은 권고하지 않음(약한 권고, 매우 낮은 근거수준). 이유: 압박 깊이 개선 보고는 있으나 효능 확증 근거 부족, 신규 도입은 비용효과가 낮고 상당한 교육이 필요."
+          },
+          {
+            "topic": "AED 패드 위치 및 여성 환자",
+            "detail": "Anterolateral pad placement (below right clavicle, below left mid-axillary line) is prioritized for ease of application on a bare chest. New explicit guidance for women: attach pads to the bare chest WITHOUT loosening/removing the brassiere, avoiding breast tissue (expert consensus). Reason: reduce application delay.",
+            "detail_ko": "맨가슴에 전외측(오른쪽 빗장뼈 아래, 왼쪽 중간겨드랑선 아래) 패드 부착을 적용 용이성 측면에서 우선. 여성 환자에 대한 새 명시 지침: 브래지어를 풀거나 제거하지 않고 유방 조직을 피해 맨가슴에 부착(전문가 합의). 이유: 적용 지연 감소."
+          },
+          {
+            "topic": "익수 심정지 CPR 시작 순서",
+            "detail": "For consistency/simplicity: lay rescuers should begin CPR with chest compressions, whereas trained first responders and EMS personnel should begin with rescue breathing in drowning cardiac arrest (good practice statement). Compression-only CPR remains acceptable for untrained/unwilling lay rescuers.",
+            "detail_ko": "일관성·단순화를 위해: 익수 심정지에서 일반인은 가슴압박으로 CPR을 시작하고, 훈련된 최초반응자·응급의료종사자는 인공호흡으로 시작(good practice statement). 훈련되지 않았거나 원치 않는 일반인은 가슴압박소생술 유지."
+          },
+          {
+            "topic": "이물질 기도폐쇄 — 흡인 기구",
+            "detail": "New (2025): anti-choking suction-based devices are NOT recommended for routine use (weak recommendation, very low certainty), citing preparation/application time, cost, and possible adverse effects/complications. Back blows ×5 then abdominal thrusts ×5 sequence is maintained from 2020.",
+            "detail_ko": "신규(2025): 흡인 기반 질식 해소 기구의 일상적 사용은 권고하지 않음(약한 권고, 매우 낮은 근거수준) — 준비·적용 시간, 비용, 부작용·합병증 가능성. 등 두드리기 5회 후 복부 밀어내기 5회 순서는 2020 유지."
+          },
+          {
+            "topic": "고위험 병원체 감염 의심 환자",
+            "detail": "Healthcare workers should perform standard 30:2 CPR even for patients with suspected high-risk pathogen infection, while wearing full PPE — mask/respirator (e.g., N95), disposable gloves, disposable waterproof long-sleeved gown, and eye protection (goggles or face shield) (strong recommendation, low certainty). Codifies post-COVID infection-control practice without downgrading CPR quality.",
+            "detail_ko": "의료진은 고위험 병원체 감염 의심 환자에서도 표준 30:2 CPR을 시행하되 전신 PPE — 마스크/호흡보호구(예: N95), 일회용 장갑, 일회용 방수 긴소매 가운, 눈 보호구(고글/얼굴가리개) — 를 착용(강한 권고, 낮은 근거수준). CPR 품질을 낮추지 않으면서 코로나 이후 감염관리 관행을 명문화."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "2025 한국 CPR 가이드라인 전체의 '주요 변경점'을 묶어 정리한 동반 논문",
+            "body_ko": "이 가이드라인과 함께 발표된 동반 해설 논문('Major Changes of the 2025 Korean Cardiopulmonary Resuscitation Guidelines')은 BLS의 주요 변경을 다음과 같이 요약한다: ① 성인/소아·병원 전/병원 내로 나뉘던 생존사슬을 '인지·EMS 활성화 → 목격자 CPR → 제세동 → 전문소생술/소생 후 치료 → 재활·회복'의 단일 5단계 사슬로 통합하고 재활을 독립 고리로 강조. ② 상황요원이 CPR 지도에 더해 AED 확보·적용을 안내하도록 확대(한국의 낮은 공공 제세동률 대응). ③ 여성 환자에서 속옷을 제거하지 않고 맨가슴에 패드를 부착(적용 지연 감소). ④ 익수에서 훈련된 최초반응자는 인공호흡으로 시작. ⑤ 자발호흡 보조 환자의 인공호흡을 '6초마다 1회(분당 10회)'로 단순화. ⑥ 백보드는 기존 사용 허용·신규 도입 비권고. (주: 이 항목은 본 지침 원문이 아니라 동반 요약 논문의 서술이다.)",
+            "sourceLabel": "Major Changes of the 2025 Korean Cardiopulmonary Resuscitation Guidelines (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900573/"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, keep call-first discipline: in suspected arrest, trigger EMS/code and get the AED moving before prolonged breathing checks, and have dispatch actively push bystanders toward the nearest AED. Standardize teaching and feedback around compression fraction ≥60%, dominant hand on the sternum, and a single ventilation cadence of one breath every 6 seconds for the spontaneously breathing patient who needs support. For AED, default to anterolateral pads on a bare chest and do not remove a woman's bra—just avoid breast tissue—to cut time-to-shock. For infectious-risk arrests, do not abandon ventilation: deliver standard 30:2 in full PPE; stop routinely adding new backboards or anti-choking suction devices since neither is supported.",
+        "practiceImpact_ko": "현장에서는 call-first를 철저히 한다: 심정지 의심 시 장시간 호흡 확인보다 먼저 EMS/코드 가동과 AED 확보에 착수하고, 상황실은 가장 가까운 AED로 신고자를 적극 유도한다. 교육·피드백은 가슴압박분율 ≥60%, 우세손 흉골 위치, 그리고 호흡보조가 필요한 자발호흡 환자에 대한 6초마다 1회라는 단일 인공호흡 간격을 중심으로 표준화한다. AED는 맨가슴 전외측 패드를 기본으로 하고, 여성은 브래지어를 제거하지 말고 유방 조직만 피해 제세동 지연을 줄인다. 감염 위험 심정지에서도 인공호흡을 포기하지 말고 전신 PPE를 착용한 채 표준 30:2를 시행하며, 근거가 없는 신규 백보드 도입과 질식 해소용 흡인 기구의 일상적 사용은 중단한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42297406",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42297406/"
+          },
+          {
+            "label": "Journal (DOI) — 10.15441/ceem.26.095",
+            "url": "https://doi.org/10.15441/ceem.26.095"
+          },
+          {
+            "label": "웹 — 2025 Korean Guidelines for CPR: Part 3. Adult basic life support (PMC full text)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13277413/"
+          },
+          {
+            "label": "웹 — Major Changes of the 2025 Korean Cardiopulmonary Resuscitation Guidelines (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900573/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-06"
     }
   ],
   "rejected": [
@@ -61693,7 +61885,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-05T00:10:08.319Z",
+      "discoveredAt": "2026-10-06T01:52:39.473Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -61735,7 +61927,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-05T00:10:08.319Z",
+      "discoveredAt": "2026-10-06T01:52:39.473Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -61768,7 +61960,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-05T00:10:08.319Z",
+      "discoveredAt": "2026-10-06T01:52:39.473Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -61834,9 +62026,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261005_090409:guideline:2026-10-05",
+    "runId": "trend_review_20261006_104942:guideline:2026-10-06",
     "outcome": "published",
-    "publishedId": "pmid:41780887",
+    "publishedId": "pmid:42297406",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -61868,8 +62060,8 @@
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/09/05",
-          "maxDate": "2026/10/05"
+          "minDate": "2026/09/06",
+          "maxDate": "2026/10/06"
         },
         "retmax": 60,
         "topics": [
@@ -61877,8 +62069,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 35,
-            "idsFetched": 35,
+            "totalFound": 37,
+            "idsFetched": 37,
             "truncated": false,
             "error": null
           },
@@ -61904,8 +62096,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 16,
-            "idsFetched": 16,
+            "totalFound": 17,
+            "idsFetched": 17,
             "truncated": false,
             "error": null
           },
@@ -61913,8 +62105,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 30,
-            "idsFetched": 30,
+            "totalFound": 27,
+            "idsFetched": 27,
             "truncated": false,
             "error": null
           },
@@ -61983,7 +62175,7 @@
           "attempted": true,
           "requested": 125,
           "enriched": 125,
-          "withAbstract": 92,
+          "withAbstract": 93,
           "error": null
         }
       },
@@ -62036,23 +62228,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 1,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 213,
-        "needsReview": 450,
+        "queued": 212,
+        "needsReview": 451,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41780887",
+        "candidateId": "pmid:42297406",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-05T00:14:05.957Z",
+  "updatedAt": "2026-10-06T01:55:00.909Z",
   "configVersion": "guideline-v2"
 }
