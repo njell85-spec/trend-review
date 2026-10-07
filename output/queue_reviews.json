@@ -1703,23 +1703,6 @@
       "status": "queued"
     },
     {
-      "pmid": "34454687",
-      "title": "Brain injury after cardiac arrest.",
-      "journal": "Lancet",
-      "score": 6.8,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "심정지 후 뇌손상, 소생 중환자 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "34481570",
       "title": "Community-acquired pneumonia.",
       "journal": "Lancet",
@@ -11320,6 +11303,111 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "34454687",
+      "title": "Brain injury after cardiac arrest.",
+      "journal": "Lancet",
+      "score": 6.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심정지 후 뇌손상, 소생 중환자 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-07",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "34454687",
+          "title": "Brain injury after cardiac arrest.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2021-8-30",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/34454687/",
+          "doi": "10.1016/S0140-6736(21)00953-3"
+        },
+        "title_ko": "심정지 후 뇌손상",
+        "scope_ko": "심정지에서 소생한 뒤 발생하는 뇌손상을 다루는 Lancet 종설(2021, 원외 심정지 시리즈의 한 편)로, 소생 후 뇌손상의 중증도 스펙트럼, 뇌손상을 줄이는 전략, 예후 예측, 그리고 생존자의 재활과 삶의 질을 아우른다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "배경 — 생존자가 늘면서 초점이 신경학적 예후로 이동한다",
+            "body_ko": "심정지에서 살아 돌아오는 사람이 늘어남에 따라, 이제 초점은 생존자의 신경학적 예후와 삶의 질(quality of life)을 개선하는 쪽으로 옮겨가야 한다. 소생 후 뇌손상(brain injury after resuscitation)은 심정지에 흔히 뒤따르는 후유증으로, 그 중증도는 경미한 장애(mild impairment)에서부터 파괴적 뇌손상(devastating brain injury)과 뇌간사(brainstem death)에 이르기까지 폭넓게 걸쳐 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "소생 후 뇌손상을 최소화하는 전략",
+            "body_ko": "소생 후 뇌손상을 최소화하는 데 효과적인 전략으로 저자들은 다음을 든다: ① 심폐소생술(cardiopulmonary resuscitation)과 제세동(defibrillation)의 조기 시행, ② 정상 생리의 회복(restoration of normal physiology), ③ 목표체온관리(targeted temperature management, TTM).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "예후 예측과 연명치료 결정",
+            "body_ko": "예후가 나쁠 가능성이 있는 사람을 식별하는 일이 중요한데, 이는 연명치료(life-sustaining treatments)의 지속 또는 중단에 대해 충분한 정보에 근거한 선택을 가능하게 하기 위함이다.\n\n다중모드 예측 지침(multimodal prediction guidelines)은 두 가지를 동시에 피하고자 한다: 좋은 신경학적 예후로 생존할 수 있는 환자에서 섣부른 치료 중단(premature withdrawal)을 하는 것, 그리고 결국 중증 장애를 안고 생존하게 될 치료를 불필요하게 연장하는 것.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생존율과 재활",
+            "body_ko": "중환자실(intensive care)에 입원한 환자 중 약 3명 중 1명(approximately one in three)이 생존하며, 이들 중 상당수는 최선의 결과를 얻기 위해 퇴원 후 집중적이고 개별 맞춤형인 재활(intensive, tailored rehabilitation)을 필요로 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 소생 후 뇌손상의 병태생리 — 네 단계",
+            "body_ko": "※ 아래는 이 논문의 본문을 유료장벽으로 확보하지 못해, 같은 주제를 다룬 ILCOR 과학성명(Improving Outcomes After Post–Cardiac Arrest Brain Injury)에서 보강한 내용입니다. 이 Lancet 논문 자체의 서술이 아닙니다.\n\n심정지 후 뇌손상은 서로 구별되지만 겹치는 네 단계로 특징지어진다: ① 허혈성 탈분극(ischemic depolarization), ② 재관류 재분극(reperfusion repolarization), ③ 조절장애(dysregulation), ④ 회복 및 복구(recovery and repair).\n\n① 허혈성 탈분극: 뇌 산소 공급 부족, 산화적 인산화의 중단, ATP 고갈, 원형질막 이온펌프의 기능 부전, 막전위 소실, 전압의존성 이온채널의 개방, 흥분성 신경전달물질 방출, 리간드의존성 이온채널 개방, 이온펌프의 역전 등 복합적인 경로로 발생하며, 그 결과 막 안팎의 이온 농도구배가 평형에 이른다. 혈류가 갑작스럽게 멈춘 뒤 2~5분 이내에 일어난다.\n\n② 재관류 재분극: 장시간 심정지 후에는 자발순환회복(ROSC) 이후에도 미세혈관 혈전(microvascular thrombosis), 내피 부종, 호중구 세포외덫(NET) 형성 등으로 국소 조직 재관류가 저해될 수 있다.\n\n③ 조절장애: ROSC 후 수 분~수 시간에 시작되어 수 시간~수 일간 지속된다.\n\n④ 회복 및 복구: 급성 손상기 이후의 장기적 회복 과정에 해당한다.\n— 보강 출처: ILCOR Scientific Statement: Improving Outcomes After Post–Cardiac Arrest Brain Injury (open-access PDF) (https://backend.production.deepblue-documents.lib.umich.edu/server/api/core/bitstreams/4089fe9a-6348-4268-9db9-5c27bda9854d/content)",
+            "origin": "augmented",
+            "sourceLabel": "ILCOR Scientific Statement: Improving Outcomes After Post–Cardiac Arrest Brain Injury (open-access PDF)",
+            "sourceUrl": "https://backend.production.deepblue-documents.lib.umich.edu/server/api/core/bitstreams/4089fe9a-6348-4268-9db9-5c27bda9854d/content"
+          },
+          {
+            "heading_ko": "[웹 보강] 목표체온관리의 근거 변화 — TTM2와 발열 예방",
+            "body_ko": "※ 아래는 이 Lancet 논문의 본문이 아니라, 같은 주제를 다룬 공개 2차 자료(PMC 개방형 전문 'Temperature control after cardiac arrest')에서 보강한 내용입니다.\n\n지금까지 가장 큰 체온관리 연구인 TTM-2 시험은 소생 후 혼수상태인 성인 1,900명을 포함했으며, 33°C 저체온군과 정상체온(발열 예방)군 사이에 6개월 사망률 차이가 없음을 보였다(저체온군 50% vs 정상체온군 48%, p=0.37). 기능적 예후도 동일하여 양 군 모두 55%가 중등도~중증 장애를 보였다. 다만 혈역학적 불안정을 유발하는 부정맥은 저체온군에서 유의하게 더 많았다(24% vs 17%).\n\n이에 따라 지침은 '치료적 냉각'에서 '발열 예방'으로 무게중심을 옮겼다. 현재 ILCOR 권고는 32~34°C의 저체온을 추구하기보다 \"심부체온 37.5°C 이하를 목표로 발열을 능동적으로 예방\"할 것을 제시하며, 발열의 기준 역치는 37.7°C로, 이를 넘으면 적극적 치료가 정당화된다. 소생 후 혼수 환자에서 지속적 심부체온 감시와 함께 최소 72시간 발열을 능동적으로 예방하도록 권고한다. 병원 전 단계의 급속 냉각 생리식염수 주입은 폐부종·재정지와 연관되어 권고되지 않는다.\n— 보강 출처: Temperature control after cardiac arrest (PMC9700892, open-access) (https://pmc.ncbi.nlm.nih.gov/articles/PMC9700892/)",
+            "origin": "augmented",
+            "sourceLabel": "Temperature control after cardiac arrest (PMC9700892, open-access)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9700892/"
+          },
+          {
+            "heading_ko": "[웹 보강] 다중모드 신경학적 예후 예측 (ERC-ESICM 2021)",
+            "body_ko": "※ 아래는 이 Lancet 논문의 본문이 아니라, 본 논문이 언급하는 '다중모드 예측'을 구체화한 ERC-ESICM 2021 소생 후 치료/예후예측 지침(공개 PDF)에서 보강한 내용입니다.\n\n현행 지침은 임상 진찰, 전기생리학적 검사(EEG·체성감각유발전위 SSEP), 영상검사(뇌 CT 또는 MRI), 그리고 뇌손상 생체표지자를 조합하는 다중모드(multimodal) 접근을 권고한다.\n\n시행 시점과 판정: 교란요인(진정·대사 이상 등)이 없는 상태에서 ROSC 후 ≥72시간에 운동반응 Glasgow Motor score ≤3으로 혼수인 환자에서, 다음 소견 중 둘 이상이 있으면 나쁜 예후가 유력하다고 본다 — ≥72시간에 동공반사·각막반사 소실, ≥24시간에 양측 N20 SSEP 파형의 소실.\n\n주요 검사: SSEP의 양측 N20 피질전위 소실은 나쁜 예후의 지표이다. EEG 배경파의 반응성(reactivity) 소실도 나쁜 예후의 지표이다. 생체표지자 NSE(neuron-specific enolase)는 24~48시간 또는 24/48시간과 72시간 사이에서 수치가 상승하면 나쁜 예후 가능성을 추가로 뒷받침한다.\n\n이 다중모드 원칙의 취지는 본문 초록의 서술과 같다 — 단일 검사에 의존한 섣부른 연명치료 중단(자기충족적 예언)을 피하는 데 있다.\n— 보강 출처: ERC-ESICM 2021 Post-Resuscitation Care Guidelines / Neuroprognostication (open PDF) (https://neurosciences.ucsd.edu/centers-programs/neurocritical-care/_files/national-guidelines/ESICM%20Post%20Cardiac%20Arrest%20Guideline%202021.pdf)",
+            "origin": "augmented",
+            "sourceLabel": "ERC-ESICM 2021 Post-Resuscitation Care Guidelines / Neuroprognostication (open PDF)",
+            "sourceUrl": "https://neurosciences.ucsd.edu/centers-programs/neurocritical-care/_files/national-guidelines/ESICM%20Post%20Cardiac%20Arrest%20Guideline%202021.pdf"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급·중환자 침상에서는 소생 직후부터 '정상 생리 회복 + 발열 예방(≥72시간 심부체온 37.5°C 이하 목표)'을 뇌보호의 기본 축으로 삼고, 33°C 강제 저체온을 일률적으로 추구하지 않는다. 예후 판정은 ROSC 후 ≥72시간에 교란요인을 배제하고 진찰·EEG·SSEP·NSE·영상을 묶은 다중모드로만 내려 섣부른 연명치료 중단(자기충족적 예언)을 피한다. 또한 중환자실 생존자 약 3명 중 1명이라는 현실을 전제로, 퇴원 후 맞춤형 재활 연계를 처음부터 치료 계획에 포함한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 34454687",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34454687/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(21)00953-3",
+            "url": "https://doi.org/10.1016/S0140-6736(21)00953-3"
+          },
+          {
+            "label": "웹 — Brain injury after cardiac arrest — Lund University Research Portal (abstract, opened)",
+            "url": "https://portal.research.lu.se/en/publications/brain-injury-after-cardiac-arrest/"
+          },
+          {
+            "label": "웹 — Temperature control after cardiac arrest (PMC9700892, open-access full text, read)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9700892/"
+          },
+          {
+            "label": "웹 — ILCOR Scientific Statement: Improving Outcomes After Post–Cardiac Arrest Brain Injury (open-access PDF, opened)",
+            "url": "https://backend.production.deepblue-documents.lib.umich.edu/server/api/core/bitstreams/4089fe9a-6348-4268-9db9-5c27bda9854d/content"
+          },
+          {
+            "label": "웹 — ERC-ESICM 2021 Post-Resuscitation Care / Neuroprognostication Guidelines (open PDF, opened)",
+            "url": "https://neurosciences.ucsd.edu/centers-programs/neurocritical-care/_files/national-guidelines/ESICM%20Post%20Cardiac%20Arrest%20Guideline%202021.pdf"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -11377,9 +11465,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-06",
+    "date": "2026-10-07",
     "outcome": "published",
-    "publishedId": "37707377"
+    "publishedId": "34454687"
   },
-  "updatedAt": "2026-10-06"
+  "updatedAt": "2026-10-07"
 }

@@ -20329,84 +20329,6 @@
       }
     },
     {
-      "id": "pmid:40581261",
-      "pmid": "40581261",
-      "title": "Anticoagulant management in Emergency settings: 2024 guidelines from the French Society of Emergency Medicine (SFMU), the French Society of Anaesthesia and Intensive Care Medicine (SFAR), the French Society of Thrombosis and Haemostasis (SFTH) and the French Working Group on Perioperative Haemostasis (GIHP), endorsed by the French Neurovascular Society.",
-      "pubDate": "2025 Sep",
-      "journal": "Anaesthesia, critical care & pain medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt"
-      ],
-      "discoveredAt": "2026-08-17T04:37:55.033Z",
-      "abstract": "OBJECTIVE: The Société Française de Médecine d'Urgence (SFMU), the Société Française d'Anesthésie et de Réanimation (SFAR), the Groupe d'Intérêt en Hémostase Péri-opératoire (GIHP) and the Société Française de Thrombose et d'Hémostase (SFHT) have collaborated to propose a set of guidelines on the management of anticoagulants in an emergency setting.\nDESIGN: A group of French and Belgian experts from the French Societies of Emergency Medicine (SFMU), Anaesthesia and Intensive Care (SFAR), the working group on Perioperative Haemostasis (GIHP) and the French Society of Thrombosis and Haemostasis (SFHT) was convened. Any potential conflicts of interest were officially declared at the start of the recommendation development process, which was conducted independently of any industry funding. The authors used the GRADE (\"Grading of Recommendations Assessment, Development and Evaluation\") methodology to assess the level of evidence in the literature.\nMETHODS: Five areas were defined: (1) The role of laboratory testing in determining anticoagulant use and the level of anticoagulation; (2) Management of anticoagulant-associated bleeding; (3) Management of asymptomatic overdoses; (4) Management of non-elective invasive procedures on anticoagulants; and (5) Thrombolysis for acute ischaemic stroke on anticoagulants. For each field, the aim of the recommendations was to answer a certain number of questions formulated by the experts according to the PICO model (\"Population, Intervention, Comparison, Outcome\"). Based on these questions, an extensive bibliographic search from 1990 onwards was carried out using predefined key words according to the PRISMA recommendations. Data quality was analysed using the GRADE method. Recommendations were formulated using the GRADE method and then voted on by all the experts using the GRADE grid method.\nRESULTS: The experts' summary work and application of the GRADE method resulted in 103 recommendations concerning 21 questions. After two rounds of voting and several amendments, strong agreement was reached on 97 recommendations. Out of these recommendations, 19 have a high level of evidence (19 GRADE 1), 35 have a low level of evidence (35 GRADE 2), and 48 are expert opinions. Finally, for one question, no recommendation could be made.\nCONCLUSIONS: There was strong agreement among the experts to provide recommendations for clinicians to provide up-to-date management of patients on anticoagulants in an emergency setting.",
-      "meshTerms": [
-        "Humans",
-        "Anticoagulants",
-        "France",
-        "Societies, Medical",
-        "Hemostasis",
-        "Emergency Medicine",
-        "Critical Care",
-        "Emergency Medical Services",
-        "Perioperative Care"
-      ],
-      "keywords": [
-        "Anaesthesia",
-        "Anticoagulation",
-        "Bleeding",
-        "Emergency",
-        "Invasive procedure"
-      ],
-      "doi": "10.1016/j.accpm.2025.101584",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.988270465664744,
-      "breakdown": {
-        "authority": 0,
-        "topic": 3.5999999999999996,
-        "recency": 1.3882704656647449,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:35.680Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "응급 항응고 관리 지침, 침상 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|anticoagulant-management-emergency-settings-from-french-society-emergency-medicine-sfmu-french-society-anaesthesia-intensive-care-medicine-sfar-french-society-thrombosis-haemostasis-sfth-french-working-group-perioperative-haemostasis-gihp-endorsed-by-french-neurovascular-society",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40613765",
       "pmid": "40613765",
       "title": "Pathway for a Diverse and Sustainable Emergency Medicine Clinician-Scientist Workforce: Recommendations From the 2024 SAEM Consensus Conference.",
@@ -36493,7 +36415,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -38268,7 +38190,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43511,7 +43433,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44945,7 +44867,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45765,7 +45687,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45845,7 +45767,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46651,7 +46573,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "unknown|multimodality-imaging-pre-intra-postprocedural-left-atrial-appendage-closure-european-left-atrial-appendage-closure-club-elaacc-expert",
       "supersedes": [],
       "llmFit": {
@@ -46734,7 +46656,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46793,7 +46715,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -47025,7 +46947,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47094,7 +47016,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47208,11 +47130,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.651529936435771,
+      "priority": 7.648015460217239,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6515299364357707,
+        "recency": 1.6480154602172394,
         "scope": 0,
         "confidence": 2
       },
@@ -47227,7 +47149,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47241,7 +47163,7 @@
     {
       "id": "pmid:42778041",
       "pmid": "42778041",
-      "title": "Multimodal Neuroprognostication After Cardiac Arrest following the 2025 ERC/ESICM recommendations: A Single-Centre Retrospective Study.",
+      "title": "Multimodal neuroprognostication after cardiac arrest following the 2025 ERC/ESICM recommendations: a single-centre retrospective study.",
       "pubDate": "2026 Sep 23",
       "journal": "Resuscitation",
       "publicationTypes": [
@@ -47287,7 +47209,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47361,7 +47283,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47417,11 +47339,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.651529936478022,
+      "priority": 11.64801546021724,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6515299364780223,
+        "recency": 1.6480154602172394,
         "scope": 0,
         "confidence": 2
       },
@@ -47437,7 +47359,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47504,7 +47426,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47569,7 +47491,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47619,11 +47541,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.65152993639352,
+      "priority": 11.648015460132736,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.651529936393519,
+        "recency": 1.6480154601327361,
         "scope": 0,
         "confidence": 2
       },
@@ -47639,7 +47561,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47709,7 +47631,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -47718,7 +47640,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-06T01:52:45.804Z",
+      "lastSeenAt": "2026-10-07T00:59:05.425Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -56497,6 +56419,179 @@
         ]
       },
       "publishedAt": "2026-10-06"
+    },
+    {
+      "id": "pmid:40581261",
+      "pmid": "40581261",
+      "title": "Anticoagulant management in Emergency settings: 2024 guidelines from the French Society of Emergency Medicine (SFMU), the French Society of Anaesthesia and Intensive Care Medicine (SFAR), the French Society of Thrombosis and Haemostasis (SFTH) and the French Working Group on Perioperative Haemostasis (GIHP), endorsed by the French Neurovascular Society.",
+      "pubDate": "2025 Sep",
+      "journal": "Anaesthesia, critical care & pain medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt"
+      ],
+      "discoveredAt": "2026-08-17T04:37:55.033Z",
+      "abstract": "OBJECTIVE: The Société Française de Médecine d'Urgence (SFMU), the Société Française d'Anesthésie et de Réanimation (SFAR), the Groupe d'Intérêt en Hémostase Péri-opératoire (GIHP) and the Société Française de Thrombose et d'Hémostase (SFHT) have collaborated to propose a set of guidelines on the management of anticoagulants in an emergency setting.\nDESIGN: A group of French and Belgian experts from the French Societies of Emergency Medicine (SFMU), Anaesthesia and Intensive Care (SFAR), the working group on Perioperative Haemostasis (GIHP) and the French Society of Thrombosis and Haemostasis (SFHT) was convened. Any potential conflicts of interest were officially declared at the start of the recommendation development process, which was conducted independently of any industry funding. The authors used the GRADE (\"Grading of Recommendations Assessment, Development and Evaluation\") methodology to assess the level of evidence in the literature.\nMETHODS: Five areas were defined: (1) The role of laboratory testing in determining anticoagulant use and the level of anticoagulation; (2) Management of anticoagulant-associated bleeding; (3) Management of asymptomatic overdoses; (4) Management of non-elective invasive procedures on anticoagulants; and (5) Thrombolysis for acute ischaemic stroke on anticoagulants. For each field, the aim of the recommendations was to answer a certain number of questions formulated by the experts according to the PICO model (\"Population, Intervention, Comparison, Outcome\"). Based on these questions, an extensive bibliographic search from 1990 onwards was carried out using predefined key words according to the PRISMA recommendations. Data quality was analysed using the GRADE method. Recommendations were formulated using the GRADE method and then voted on by all the experts using the GRADE grid method.\nRESULTS: The experts' summary work and application of the GRADE method resulted in 103 recommendations concerning 21 questions. After two rounds of voting and several amendments, strong agreement was reached on 97 recommendations. Out of these recommendations, 19 have a high level of evidence (19 GRADE 1), 35 have a low level of evidence (35 GRADE 2), and 48 are expert opinions. Finally, for one question, no recommendation could be made.\nCONCLUSIONS: There was strong agreement among the experts to provide recommendations for clinicians to provide up-to-date management of patients on anticoagulants in an emergency setting.",
+      "meshTerms": [
+        "Humans",
+        "Anticoagulants",
+        "France",
+        "Societies, Medical",
+        "Hemostasis",
+        "Emergency Medicine",
+        "Critical Care",
+        "Emergency Medical Services",
+        "Perioperative Care"
+      ],
+      "keywords": [
+        "Anaesthesia",
+        "Anticoagulation",
+        "Bleeding",
+        "Emergency",
+        "Invasive procedure"
+      ],
+      "doi": "10.1016/j.accpm.2025.101584",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.988270465664744,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3.5999999999999996,
+        "recency": 1.3882704656647449,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:35.680Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "응급 항응고 관리 지침, 침상 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|anticoagulant-management-emergency-settings-from-french-society-emergency-medicine-sfmu-french-society-anaesthesia-intensive-care-medicine-sfar-french-society-thrombosis-haemostasis-sfth-french-working-group-perioperative-haemostasis-gihp-endorsed-by-french-neurovascular-society",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40581261",
+          "title": "Anticoagulant management in Emergency settings: 2024 guidelines from the French Society of Emergency Medicine (SFMU), the French Society of Anaesthesia and Intensive Care Medicine (SFAR), the French Society of Thrombosis and Haemostasis (SFTH) and the French Working Group on Perioperative Haemostasis (GIHP), endorsed by the French Neurovascular Society.",
+          "journal": "Anaesthesia, critical care & pain medicine",
+          "pubDate": "2025 Sep",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40581261/",
+          "doi": "10.1016/j.accpm.2025.101584"
+        },
+        "org": "SFMU/SFAR/GIHP/SFTH (endorsed by SFNV)",
+        "version": "2024",
+        "title_ko": "응급 상황에서의 항응고제 관리: 2024 프랑스 응급의학회(SFMU)·마취중환자의학회(SFAR)·혈전지혈학회(SFTH)·수술전후 지혈 연구그룹(GIHP) 합동 가이드라인 (프랑스 신경혈관학회 승인)",
+        "scope_ko": "응급실·응급 상황에서 항응고제를 복용 중인 성인 환자를 대상으로 한다. 대상 약제는 VKA(비타민K 길항제), DOAC(항-IIa dabigatran, 항-Xa rivaroxaban·apixaban·edoxaban), 비경구 항응고제(LMWH·UFH·fondaparinux)이며, 5개 영역 — ①항응고 여부·수준의 검사실 평가 ②항응고제 관련 출혈 관리 ③무증상 과용량 관리 ④비계획적(응급) 침습적 시술 ⑤항응고제 복용 중 급성 허혈성 뇌졸중의 혈전용해 — 을 다룬다.",
+        "summary": [
+          "Overall scope/method: GRADE-based consensus producing 103 recommendations across 21 questions; strong agreement reached on 97 (19 GRADE 1 / high, 35 GRADE 2 / low, 48 expert opinion); for 1 question no recommendation could be issued.",
+          "Severe anticoagulant-associated bleeding — general bundle: urgently (1) stop the anticoagulant, (2) provide symptomatic and hemostatic management, (3) measure the level of anticoagulation, and (4) reverse the anticoagulant.",
+          "Laboratory assessment: an anti-Xa assay calibrated for heparin (UFH/LMWH) is highly sensitive to and detects the anti-Xa DOACs apixaban and rivaroxaban; DOAC-specific calibrated assays quantify the plasma concentration, and measuring the DOAC concentration is recommended to guide emergency management.",
+          "VKA-associated severe bleeding: with INR > 1.5 (> 1.2 if intracranial hemorrhage), stop the VKA and urgently reverse with 4-factor PCC (CCP) plus IV vitamin K; recheck INR at ~30 min and again at 24 h to decide on additional PCC.",
+          "Dabigatran-associated severe bleeding: if concentration > 50 ng/mL (> 30 ng/mL if intracranial) — or if a rapid level is not available — urgently antagonize with idarucizumab 5 g IV (two 2.5 g aliquots); repeat dosing is justified for clinically significant rebound (> 50 ng/mL, > 30 if intracranial), which is more likely when the initial level is high or in severe renal impairment.",
+          "Anti-Xa DOAC (rivaroxaban/apixaban/edoxaban)-associated severe bleeding: if concentration > 50 ng/mL (> 30 ng/mL if intracranial), give 4-factor PCC 50 IU/kg for intracranial hemorrhage or shock and 25–50 IU/kg for other severe bleeding; if ≤ 50 ng/mL no reversal is recommended; andexanet alfa is positioned as a reversal option for apixaban/rivaroxaban.",
+          "Asymptomatic DOAC overdose (e.g. concentration > 400 ng/mL) without bleeding: systematically investigate the cause and perform clinical monitoring WITHOUT reversal.",
+          "Non-elective invasive procedures: a hemostatic-safety threshold of ~30 ng/mL (DOAC) is used below which reversal is not useful; for a VKA patient needing an urgent high-bleeding-risk procedure, give PCC 25 IU/kg with vitamin K 5 mg IV, start the procedure, and control INR at ~30 min; the pre-procedure INR target is ≤ 1.5 (≤ 1.2 for neurosurgery/neuraxial procedures).",
+          "Thrombolysis for acute ischemic stroke on DOAC: a DOAC concentration ≤ 50 ng/mL is compatible with IV thrombolysis, > 100 ng/mL contraindicates it, and 50–100 ng/mL requires a case-by-case benefit–risk discussion; for dabigatran, idarucizumab can be given before thrombolysis."
+        ],
+        "summary_ko": [
+          "전체 범위·방법: GRADE 방법으로 21개 질문에 대해 103개 권고를 도출, 97개에서 강한 합의 달성(19개 GRADE 1/높음, 35개 GRADE 2/낮음, 48개 전문가 의견); 1개 질문은 권고 불가.",
+          "중증 항응고제 관련 출혈 — 공통 묶음: 즉시 ①항응고제 중단 ②대증적·지혈적 처치 ③항응고 수준 측정 ④항응고제 역전(reversal)을 시행한다.",
+          "검사실 평가: heparin(UFH/LMWH)으로 보정한 anti-Xa 검사는 항-Xa DOAC(apixaban·rivaroxaban)에 매우 민감해 이를 검출하며, DOAC 전용 보정 검사는 혈중 농도를 정량한다. 응급 처치 결정을 위해 DOAC 농도 측정이 권고된다.",
+          "VKA 관련 중증 출혈: INR > 1.5(두개내출혈이면 > 1.2)이면 VKA를 중단하고 4인자 PCC(CCP) + 정주 비타민K로 긴급 역전한다. 역전 후 약 30분과 24시간에 INR을 재확인해 추가 PCC 투여 여부를 결정한다.",
+          "Dabigatran 관련 중증 출혈: 농도 > 50 ng/mL(두개내 > 30 ng/mL)이거나 농도를 신속히 알 수 없으면 idarucizumab 5 g 정주(2.5 g 2회)로 긴급 역전한다. 임상적으로 유의한 반등(> 50 ng/mL, 두개내 > 30)에는 재투여가 정당화되며, 초기 농도가 높거나 중증 신기능저하에서 반등이 더 흔하다.",
+          "항-Xa DOAC(rivaroxaban/apixaban/edoxaban) 관련 중증 출혈: 농도 > 50 ng/mL(두개내 > 30 ng/mL)이면 4인자 PCC를 두개내출혈·쇼크에는 50 IU/kg, 그 외 중증 출혈에는 25–50 IU/kg 투여한다. ≤ 50 ng/mL이면 역전을 권고하지 않는다. andexanet alfa는 apixaban/rivaroxaban 역전 옵션으로 자리매김한다.",
+          "무증상 DOAC 과용량(예: 농도 > 400 ng/mL)에 출혈이 없으면: 원인을 체계적으로 조사하고 임상 경과만 관찰하며 역전은 하지 않는다.",
+          "비계획적 침습 시술: DOAC 약 30 ng/mL를 지혈 안전 역치로 보아 그 미만에서는 역전이 무의미하다. 긴급·고출혈위험 시술이 필요한 VKA 환자는 PCC 25 IU/kg + 비타민K 5 mg 정주 후 시술을 시작하고 약 30분에 INR을 확인한다. 시술 전 목표 INR은 ≤ 1.5(신경외과·신경축 시술은 ≤ 1.2).",
+          "DOAC 복용 중 급성 허혈성 뇌졸중의 혈전용해: DOAC 농도 ≤ 50 ng/mL는 정맥 혈전용해와 양립 가능, > 100 ng/mL는 금기, 50–100 ng/mL는 사례별 득실 논의가 필요하다. Dabigatran의 경우 혈전용해 전 idarucizumab 투여가 가능하다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "FXa 억제제 역전제 andexanet alfa — 중환자의학 관점의 근거와 한계 (2차 자료)",
+            "body_ko": "이 가이드라인과 별개로, andexanet alfa를 다룬 중환자의학 리뷰(Critical Care Science, 2024, Savioli 등)는 다음을 정리한다: ANNEXA-4에서 평가 가능 342명 중 약 80%에서 지혈이 우수/양호, ANNEXA-I(급성 두개내출혈)에서 지혈 효과 67% 대 표준치료 53.1%로 혈종 확대 억제가 우월했다. 그러나 ANNEXA-I에서 혈전성 사건이 andexanet군 10.3% 대 표준치료 5.6%로 더 높았다(항응고 재개 후 추가 혈전은 없었다). 용량은 저용량(400 mg 볼루스 후 4 mg/min)·고용량(800 mg 후 8 mg/min)이며, 최근 도입·고비용 때문에 출혈 프로토콜이 확립된 병원으로 사용을 제한할 것을 권한다. (가이드라인 원문이 아니라 andexanet 자체에 대한 2차 임상 근거이다.)",
+            "sourceLabel": "Critical Care Science 2024 — Andexanet alfa for severe bleeding: what critical care physicians should know (PMC11463985)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11463985/"
+          },
+          {
+            "heading_ko": "응급 상황 경구 항응고제 역전 — 표준 용량 정리 (2차 자료)",
+            "body_ko": "별도의 종설(Reversal of oral anticoagulation in emergency conditions, PMC11841934)은 표준 역전 용량을 정리한다: dabigatran은 idarucizumab 5 g(2.5 g×2) 정주로 10분 내 작용; 항-Xa DOAC는 andexanet alfa 저용량(400 mg 볼루스→4 mg/min)·고용량(800 mg→8 mg/min, apixaban·rivaroxaban 승인, edoxaban 미승인); VKA는 INR 기반 4인자 PCC(INR 2–4: 25 IU/kg, 4–6: 35 IU/kg, >6: 50 IU/kg)와 비타민K 10 mg 정주. 이 수치들은 본 가이드라인이 제시한 응급 역치(예: DOAC 50/30 ng/mL, VKA PCC 25 IU/kg)와 교차 확인용 참고자료로 유용하다. (본 가이드라인 원문이 아니다.)",
+            "sourceLabel": "Reversal of oral anticoagulation in emergency conditions (PMC11841934)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11841934/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, make a measured DOAC/VKA level the trigger for reversal rather than reflexively reversing every anticoagulated bleeder: for DOACs, ≤ 50 ng/mL (≤ 30 ng/mL intracranial) generally means no reversal, and asymptomatic overdose is managed with cause-finding and monitoring, not antidotes. For severe bleeding, run the fixed pathway — stop drug, hemostatic control, measure level, reverse — using idarucizumab 5 g for dabigatran and 4F-PCC 50 IU/kg (ICH/shock) or andexanet alfa for anti-Xa DOACs, and reverse VKA with 4F-PCC plus vitamin K targeting INR ≤ 1.5 with a 30-min recheck. For stroke teams, a rapid DOAC concentration now gates thrombolysis (≤ 50 ng/mL go, > 100 ng/mL no-go, 50–100 case-by-case), and idarucizumab can enable thrombolysis in dabigatran patients — so emergency departments must secure fast-turnaround DOAC assays and stock the appropriate antidotes.",
+        "practiceImpact_ko": "침상에서는 항응고 환자의 출혈에 반사적으로 역전하지 말고, 측정된 DOAC/VKA 수준을 역전의 방아쇠로 삼는다: DOAC는 ≤ 50 ng/mL(두개내 ≤ 30)이면 대개 역전하지 않고, 무증상 과용량은 해독제 대신 원인 규명과 경과 관찰로 관리한다. 중증 출혈에는 고정 경로(약제 중단→지혈→농도 측정→역전)를 따르며, dabigatran은 idarucizumab 5 g, 항-Xa DOAC는 4인자 PCC 50 IU/kg(두개내·쇼크) 또는 andexanet alfa를, VKA는 4인자 PCC + 비타민K로 목표 INR ≤ 1.5·30분 재확인으로 역전한다. 뇌졸중 팀은 이제 신속 DOAC 농도가 혈전용해 가부를 가르므로(≤ 50 ng/mL 시행, > 100 ng/mL 금기, 50–100 사례별), dabigatran 환자에서는 idarucizumab로 혈전용해를 가능하게 할 수 있다. 따라서 응급실은 빠른 DOAC 농도 검사 접근과 해당 해독제 비치를 확보해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40581261",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40581261/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.accpm.2025.101584",
+            "url": "https://doi.org/10.1016/j.accpm.2025.101584"
+          },
+          {
+            "label": "웹 — PubMed record — Anticoagulant management in Emergency settings: 2024 SFMU/SFAR/SFTH/GIHP guidelines (PMID 40581261)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40581261/"
+          },
+          {
+            "label": "웹 — SFMU official full-text RFE PDF — Gestion de l'anticoagulation dans un contexte d'urgence (2024)",
+            "url": "https://www.sfmu.org/upload/consensus/RFE2024_Anticoagulation_contexte_urgence.pdf"
+          },
+          {
+            "label": "웹 — SFTH official guideline PDF — Gestion de l'anticoagulation dans un contexte d'urgence (2024)",
+            "url": "https://sfth.fr/app/uploads/2024/04/2024-gestion-de-l_anticoagulationdans-un-contexte-d_urgence.pdf"
+          },
+          {
+            "label": "웹 — SFTH official announcement page — Recommandations SFMU/SFAR/GIHP/SFTH",
+            "url": "https://sfth.fr/gestion-de-lanticoagulation-dans-un-contexte-durgence-recommandations-sfmu-sfar-gihp-sfth/"
+          },
+          {
+            "label": "웹 — FCVD summary of SFAR RFE 2024 — Gestion de l'anticoagulation dans un contexte d'urgence",
+            "url": "https://www.fcvd.fr/sfar-rfe-2024-gestion-de-lanticoagulation-dans-un-contexte-durgence/"
+          },
+          {
+            "label": "웹 — Critical Care Science 2024 — Andexanet alfa review (PMC11463985)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11463985/"
+          },
+          {
+            "label": "웹 — Reversal of oral anticoagulation in emergency conditions — review (PMC11841934)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11841934/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-07"
     }
   ],
   "rejected": [
@@ -61885,7 +61980,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-06T01:52:39.473Z",
+      "discoveredAt": "2026-10-07T00:58:55.397Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -61927,7 +62022,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-06T01:52:39.473Z",
+      "discoveredAt": "2026-10-07T00:58:55.397Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -61960,7 +62055,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-06T01:52:39.473Z",
+      "discoveredAt": "2026-10-07T00:58:55.397Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62026,9 +62121,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261006_104942:guideline:2026-10-06",
+    "runId": "trend_review_20261007_095432:guideline:2026-10-07",
     "outcome": "published",
-    "publishedId": "pmid:42297406",
+    "publishedId": "pmid:40581261",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -62047,21 +62142,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 125,
+        "mergedTotal": 131,
         "overlapCount": 1,
         "ptOnlyCount": 1,
-        "expandedOnlyCount": 5,
+        "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/09/06",
-          "maxDate": "2026/10/06"
+          "minDate": "2026/09/07",
+          "maxDate": "2026/10/07"
         },
         "retmax": 60,
         "topics": [
@@ -62069,8 +62164,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 37,
-            "idsFetched": 37,
+            "totalFound": 42,
+            "idsFetched": 42,
             "truncated": false,
             "error": null
           },
@@ -62087,8 +62182,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 15,
+            "idsFetched": 15,
             "truncated": false,
             "error": null
           },
@@ -62105,8 +62200,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 27,
-            "idsFetched": 27,
+            "totalFound": 26,
+            "idsFetched": 26,
             "truncated": false,
             "error": null
           },
@@ -62123,8 +62218,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -62165,7 +62260,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 118,
+        "topicOnlyCount": 123,
         "ptPmids": [
           "42788594",
           "42549877"
@@ -62173,9 +62268,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 125,
-          "enriched": 125,
-          "withAbstract": 93,
+          "requested": 131,
+          "enriched": 131,
+          "withAbstract": 96,
           "error": null
         }
       },
@@ -62228,25 +62323,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 1,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
         "queued": 212,
-        "needsReview": 451,
+        "needsReview": 450,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42297406",
+        "candidateId": "pmid:40581261",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-06T01:55:00.909Z",
+  "updatedAt": "2026-10-07T01:04:37.969Z",
   "configVersion": "guideline-v2"
 }

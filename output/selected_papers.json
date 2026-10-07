@@ -836,5 +836,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "pool_too_small",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42545101",
+    "title": "Renal Resistive Index Responsiveness to a Mean Arterial Pressure Test As a Guide",
+    "date": "2026-10-07",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "pool_too_small",
+    "lowConfidence": true
   }
 ]
