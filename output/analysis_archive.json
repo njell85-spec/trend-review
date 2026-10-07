@@ -3588,6 +3588,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-07",
+      "pmid": "42545101",
+      "title": "Renal Resistive Index Responsiveness to a Mean Arterial Pressure Test As a Guide for Mean Arterial Pressure Target in the Early Phase of Septic Shock: A Physiological Study.",
+      "title_ko": "패혈성 쇼크 초기에서 평균동맥압 목표 설정을 위한 지표로서 평균동맥압(MAP) 검사에 대한 신장 저항 지수(RRI) 반응성: 생리학적 연구",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007286",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "패혈성 쇼크 초기에, 일시적 고(高)MAP 검사 중 RRI 감소가 더 높은 MAP 목표로 신기능이 개선될 환자를 식별할 수 있는가?",
+      "pico": {
+        "population": "[France] Patients in the early phase of septic shock (norepinephrine ≥ 0.05 µg/kg/min base within 9 hr of initiation, with or without lactate > 2 mmol/L) without chronic kidney disease or immediate need for renal replacement therapy, in the medical ICU of a university hospital; 80 patients were randomized.",
+        "intervention": "A high MAP target of 80-85 mm Hg for 5 days, applied after a standardized 2-hour MAP test (65-70 followed by 80-85 mm Hg); RRI responders defined by an RRI decrease ≥ 0.05 during the MAP test (23 patients, 29%).",
+        "comparison": "A low MAP target of 65-70 mm Hg for 5 days, with randomization stratified by RRI response during the MAP test.",
+        "outcome": "Among RRI responders, the higher MAP target was not associated with improved renal outcomes (diuresis, KDIGO stage, need for renal replacement therapy, or serum creatinine). No effect sizes, confidence intervals, or p-values were reported in the abstract."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 패혈성 쇼크 초기 환자(norepinephrine 개시 9시간 이내 ≥ 0.05 µg/kg/min base, lactate > 2 mmol/L 동반 또는 비동반), 만성 신질환이나 즉각적 신대체요법 필요가 없는 대학병원 내과계 ICU 환자; 80명이 무작위 배정됨.",
+        "intervention": "표준화된 2시간 MAP 검사(65-70 이후 80-85 mm Hg) 시행 후 5일간 적용된 고MAP 목표 80-85 mm Hg; RRI 반응군은 MAP 검사 중 RRI가 ≥ 0.05 감소한 환자로 정의(23명, 29%).",
+        "comparison": "5일간 적용된 저MAP 목표 65-70 mm Hg, MAP 검사 중 RRI 반응 여부로 층화 무작위 배정.",
+        "outcome": "RRI 반응군에서 고MAP 목표는 신장 결과(diuresis, KDIGO stage, 신대체요법 필요, serum creatinine) 개선과 연관되지 않음. 초록에는 effect size, 신뢰구간, p-value가 보고되지 않음."
+      },
+      "keyFindings": [
+        "Of 80 randomized patients in early septic shock, only 23 (29%) were RRI responders (RRI decrease ≥ 0.05 during a standardized 2-hour MAP test of 65-70 then 80-85 mm Hg).",
+        "Among RRI responders, a high MAP target (80-85 mm Hg) for 5 days was NOT associated with improved renal outcomes (diuresis, KDIGO stage, need for RRT, or serum creatinine).",
+        "Among RRI nonresponders, a high MAP target was associated with higher urine output, with no other renal parameter differing significantly; the authors state these findings should be considered exploratory."
+      ],
+      "keyFindings_ko": [
+        "패혈성 쇼크 초기 무작위 배정 80명 중 23명(29%)만이 RRI 반응군이었음(표준화된 2시간 MAP 검사(65-70 후 80-85 mm Hg) 중 RRI ≥ 0.05 감소).",
+        "RRI 반응군에서 5일간의 고MAP 목표(80-85 mm Hg)는 신장 결과(diuresis, KDIGO stage, RRT 필요, serum creatinine) 개선과 연관되지 않았음.",
+        "RRI 비반응군에서 고MAP 목표는 더 높은 urine output과 연관되었고 다른 신장 지표는 유의한 차이가 없었음; 저자들은 이를 탐색적 결과로 간주해야 한다고 명시함."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42545101",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42545101/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007286",
+          "url": "https://doi.org/10.1097/CCM.0000000000007286"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42545101)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42545101/"
+        },
+        {
+          "label": "웹 — NCBI eutils efetch (citation: Crit Care Med 2026 Oct 1;54(10):2613-2624; author list)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42545101&rettype=abstract&retmode=text"
+        },
+        {
+          "label": "웹 — Critical Care Medicine official article page (Ovid, abstract; full text paywalled)",
+          "url": "https://www.ovid.com/jnls/ccmjournal/abstract/10.1097/ccm.0000000000007286~renal-resistive-index-responsiveness-to-a-mean-arterial"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 42545101)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42545101/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "NCBI eutils efetch (citation: Crit Care Med 2026 Oct 1;54(10):2613-2624; author list)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42545101&rettype=abstract&retmode=text",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care Medicine official article page (Ovid, abstract; full text paywalled)",
+          "url": "https://www.ovid.com/jnls/ccmjournal/abstract/10.1097/ccm.0000000000007286~renal-resistive-index-responsiveness-to-a-mean-arterial",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -3637,13 +3712,14 @@
         "42467247",
         "42714473",
         "42823746",
-        "42827265"
+        "42827265",
+        "42545101"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
-      "2026-10": 94090
+      "2026-10": 98503
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
