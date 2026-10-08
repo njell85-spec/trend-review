@@ -16444,82 +16444,6 @@
       }
     },
     {
-      "id": "pmid:40214785",
-      "pmid": "40214785",
-      "title": "ESTES recommendations for the treatment of polytrauma-a European consensus based on the German S3 guidelines for the treatment of patients with severe/multiple injuries.",
-      "pubDate": "2025 Apr 11",
-      "journal": "European journal of trauma and emergency surgery : official publication of the European Trauma Society",
-      "publicationTypes": [
-        "Journal Article",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:37:14.544Z",
-      "abstract": "INTRODUCTION: Considerable heterogeneity exists in the configuration and implementation maturity of trauma systems across European healthcare settings, and the opportunities for guideline-informed high-quality care varies considerably. Therefore, the European Society of Trauma and Emergency Surgery (ESTES), with its constituent national societies, has developed comprehensive consensus recommendations for care-context appropriate treatment of polytrauma patients in Europe, from the pre-hospital setting to the first surgical phase.\nMETHODS: Adhering to the RAND/UCLA Appropriateness Method (RAM), ESTES conducted a three-round modified Delphi consensus. National society expert delegates assessed Grade of Recommendation (GoR) A and Good Clinical Practice Points (GPP) elements of the German Society of Trauma Surgery (DGU) \"S3 guidelines for polytrauma/severe injury management\" for appropriateness and implementability within their respective healthcare systems.\nRESULTS: In the first consensus round, 82 GoR A and 57 GPP recommendations were analysed. Of these, seven GPP were rephrased for clarity and four were removed due to redundancy or conflicting content. Consequently, 135 recommendations (82 GoR A and 53 GPP) remained, with 128 (77 GoR A and 51 GPP) deemed appropriate and necessary, and seven as uncertain due to expert disagreement.\nCONCLUSION: These ESTES recommendations constitute the first cohesive Europe-wide framework for managing the polytrauma patient from the prehospital setting to the end of the first surgical phase. They serve as a foundational tool for the development of national guidelines, particularly in regions with evolving trauma systems, and promote alignment towards a uniform standard-of-care across Europe.",
-      "meshTerms": [
-        "Humans",
-        "Multiple Trauma",
-        "Europe",
-        "Consensus",
-        "Delphi Technique",
-        "Practice Guidelines as Topic",
-        "Germany",
-        "Societies, Medical"
-      ],
-      "keywords": [
-        "Consensus",
-        "Guidelines",
-        "Injury",
-        "Polytrauma",
-        "Recommendations"
-      ],
-      "doi": "10.1007/s00068-025-02852-4",
-      "pmcid": "PMC11991986",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 6.866245719379574,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 0.8662457193795734,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "recommendations",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:37:28.061Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ESTES 다발성외상 치료 권고 — 응급·외상 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|estes-treatment-polytrauma-european-consensus-based-german-s3-treatment-patients-with-severe-multiple-injuries",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40320004",
       "pmid": "40320004",
       "title": "2025 American Association for Thoracic Surgery (AATS) Expert Consensus Document: Surgical management of acute myocardial infarction and associated complications.",
@@ -36415,7 +36339,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -38190,7 +38114,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43433,7 +43357,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44687,17 +44611,30 @@
       "id": "pmid:42552475",
       "pmid": "42552475",
       "title": "Guidelines for Seizure Prophylaxis in Patients with Aneurysmal Subarachnoid Hemorrhage: A Statement for Healthcare Professionals from the Neurocritical Care Society.",
-      "pubDate": "2026 Aug 4",
+      "pubDate": "2026 Oct",
       "journal": "Neurocritical care",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis",
+        "Practice Guideline"
       ],
       "discoveredBy": [
-        "pubmed-topic"
+        "pubmed-topic",
+        "pubmed-pt",
+        "pubmed-title"
       ],
       "discoveredAt": "2026-08-17T04:41:03.449Z",
       "abstract": "BACKGROUND: There are limited data to guide antiseizure medication (ASM) prophylaxis in patients with aneurysmal subarachnoid hemorrhage (SAH). This results in practice variation in the use and duration of ASM prophylaxis.\nMETHODS: We conducted a systematic review and meta-analysis of articles assessing ASM prophylaxis in adults with aneurysmal SAH. The population, intervention, comparator, and outcome (PICO) questions were as follows: (1) Should ASM or no ASM be used in patients hospitalized for aneurysmal subarachnoid hemorrhage who have no history of clinical or electrographic seizures? (2) If an ASM is used, should levetiracetam or phenytoin/fosphenytoin be preferentially used? (3) If an ASM is used, should a long (> 3 days) or short (≤ 3 days) duration of prophylaxis be used? The main outcomes were early seizure (≤ 14 days), late seizures (> 14 days), adverse events, mortality, and functional outcomes. We used Grading of Recommendations Assessment, Development, and Evaluation (GRADE) methodology to generate recommendations.\nRESULTS: The initial literature search yielded 1988 articles, of which 10 formed the basis of the recommendations: Regarding PICO 1, we did not find a significant difference in outcomes of early seizure, adverse events, mortality, or functional outcomes when comparing ASM to no ASM. In regard to PICO 2, we found fewer early seizures with phenytoin/fosphenytoin and lower risk for neurologic decline with levetiracetam; however, there was low certainty of evidence. There was no significant difference in mortality between the different treatment types. Regarding PICO 3, we found extended use of ASM may be associated with lower seizure risk, but at the same time be associated with higher risk for adverse effects.\nCONCLUSIONS: Overall, the quality of evidence is low, precluding strong recommendations. We suggest that ASM or no ASM may be used in patients hospitalized with aneurysmal subarachnoid hemorrhage (conditional recommendation, low quality of evidence). If used, we suggest either levetiracetam or phenytoin/fosphenytoin (conditional recommendation, very low quality of evidence) for a short or long duration (conditional recommendation, moderate quality of evidence).",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Subarachnoid Hemorrhage",
+        "Anticonvulsants",
+        "Seizures",
+        "Levetiracetam",
+        "Phenytoin",
+        "Critical Care"
+      ],
       "keywords": [
         "Aneurysmal subarachnoid hemorrhage",
         "Antiseizure medication",
@@ -44711,20 +44648,20 @@
       "region": "us",
       "by": "org-name",
       "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
         "approvedOrganization": true,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": false,
+        "officialDocument": true,
         "organizationId": "ncs"
       },
-      "priority": 9.5,
+      "priority": 10.5,
       "breakdown": {
         "authority": 2.5,
-        "topic": 3,
+        "topic": 4,
         "recency": 2,
         "scope": 0,
         "confidence": 2
@@ -44738,9 +44675,10 @@
       "reasons": [
         "format-evidence",
         "publisher-evidence",
-        "normative-evidence"
+        "normative-evidence",
+        "official-evidence"
       ],
-      "lastSeenAt": "2026-09-02T23:35:01.276Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44867,7 +44805,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45687,7 +45625,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45767,7 +45705,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -46656,7 +46594,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46715,7 +46653,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "esc|lipid-lowering-therapy-venous-thromboembolism-clinical-working-group-aorta-peripheral-vascular-diseases-working-group-cardiovascular-pharmacotherapy-working-group-pulmonary-circulation-right-ventricular-function-european-society-vascular-medicine-esvm",
       "supersedes": [],
       "llmFit": {
@@ -46947,7 +46885,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -47016,7 +46954,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47130,11 +47068,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.648015460217239,
+      "priority": 7.644328725706251,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6480154602172394,
+        "recency": 1.6443287257062513,
         "scope": 0,
         "confidence": 2
       },
@@ -47149,7 +47087,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47209,7 +47147,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47283,7 +47221,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47339,11 +47277,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.64801546021724,
+      "priority": 11.644328725706252,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6480154602172394,
+        "recency": 1.6443287257062513,
         "scope": 0,
         "confidence": 2
       },
@@ -47359,7 +47297,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47426,7 +47364,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47491,7 +47429,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47541,11 +47479,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.648015460132736,
+      "priority": 11.644328725621747,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6480154601327361,
+        "recency": 1.6443287256217478,
         "scope": 0,
         "confidence": 2
       },
@@ -47561,7 +47499,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47640,7 +47578,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-07T00:59:05.425Z",
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47649,6 +47587,148 @@
         "keep": false,
         "reason": "좌주간부 PCI 영상유도 시술 합의문 — 중재시술 전용, 응급·중환자 침상 무관",
         "at": "2026-10-06T01:52:47.329Z"
+      }
+    },
+    {
+      "id": "pmid:42686991",
+      "pmid": "42686991",
+      "title": "Education and Ethical Guidance for Organ Donation at the End-of-Life: An Ethical Guidance Statement from the Neurocritical Care Society.",
+      "pubDate": "2026 Oct",
+      "journal": "Neurocritical care",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-10-08T01:13:13.486Z",
+      "abstract": "The neurocritical care treatment team frequently interacts with patient surrogates and Organ Procurement Organizations (OPOs) at the end-of-life. A 2025 survey of Neurocritical Care Society (NCS) members assessing experiences and attitudes related to organ donation identified the need to enhance education for the treatment team about organ donation and opportunities for improvement in palliative interventions after withdrawal of life-sustaining therapies for potential donation after cardiac death/death by circulatory-respiratory criteria. Additionally, members noted concerns regarding blurred boundaries between patient care and care directed towards organ donation; a potential lack of transparency, empathy and cultural sensitivity in communication between OPOs and patient surrogates; and the ethics of first-person authorization for organ donation. In response to these concerns, the NCS Ethics Committee developed this statement to provide education and ethical guidance for organ donation at the end-of-life. Members had an opportunity to share feedback on the statement from April 6-19, 2026. This statement provides an informal narrative review of the literature related to organ donation that is pertinent to the care of potential organ donors at the end-of-life and includes practical guidance related to the legal definitions of death and first-person authorization, collaborative communication, and management of potential conflicts.",
+      "meshTerms": [
+        "Humans",
+        "Tissue and Organ Procurement",
+        "Terminal Care",
+        "Critical Care",
+        "Societies, Medical",
+        "Neurology",
+        "Brain Death"
+      ],
+      "keywords": [
+        "Brain death/death by neurologic criteria",
+        "Donation after cardiac death/death by circulatory-respiratory criteria",
+        "End-of-life",
+        "Organ donation"
+      ],
+      "doi": "10.1007/s12028-026-02619-8",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "ncs"
+      },
+      "priority": 8.5,
+      "breakdown": {
+        "authority": 2.5,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "ncs",
+      "tier": 2,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": null,
+      "reasons": [
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "NCS 신경중환자 임종기 장기기증 윤리지침, ICU 실무 접점 있음",
+        "at": "2026-10-08T01:13:23.539Z"
+      }
+    },
+    {
+      "id": "pmid:42839771",
+      "pmid": "42839771",
+      "title": "Sudden unexpected death in epilepsy: An Italian expert consensus statement on risk, mechanisms, prevention, and therapeutic strategies.",
+      "pubDate": "2026 Oct 7",
+      "journal": "Epilepsia open",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-08T01:13:13.486Z",
+      "abstract": "OBJECTIVE: Sudden unexpected death in epilepsy (SUDEP) is a leading cause of premature mortality in people with epilepsy, particularly in those with tonic-clonic seizures (TCSs), developmental and epileptic encephalopathies (DEEs), and drug-resistant epilepsy. Although awareness of SUDEP has increased, major uncertainties remain regarding individualized risk stratification, mechanistic interpretation, and implementation of preventive strategies in routine care. This Italian expert consensus statement was developed to formalize a shared multidisciplinary position on SUDEP risk profiles, pathophysiological mechanisms, and preventive and therapeutic strategies.\nMETHODS: The consensus was supported by a focused narrative appraisal of current evidence, rather than a systematic review, and developed through a structured multidisciplinary process based on a nominal group technique. The panel comprised 11 Italian experts: nine epileptologists from the Italian League Against Epilepsy (LICE) and its SUDEP Working Group, one cardiologist with expertise in epilepsy-related cardiac complications and SUDEP, and one biomedical engineer with expertise in seizure-detection devices and wearable technologies. Statements were generated across three macro-areas, discussed in working groups and plenary sessions, prioritized through an initial in-person vote, refined after discussion, and submitted to a second online round. Consensus was predefined as at least 75% agreement on a 5-point Likert scale.\nRESULTS: A final set of 33 statements was generated, of which 26 reached consensus; two of these (serotonergic modulation as a preventive strategy and fenfluramine's mechanisms beyond seizure control) reached the threshold only narrowly and are discussed as hypothesis-generating rather than as established clinical guidance. The resulting framework supports an extension of seizure-centered prevention toward an integrated, individualized, and mechanism-informed approach, in which reduction of convulsive seizure burden remains central while post-ictal respiratory, autonomic, cardiac, arousal, genetic, and treatment-related vulnerabilities are considered in selected high-risk patients.\nSIGNIFICANCE: This consensus provides the first formalized Italian multidisciplinary position on SUDEP, offering an evidence-informed and mechanism-aware framework intended to support more consistent risk communication, individualized risk stratification, and preventive care in clinical practice.\nPLAIN LANGUAGE SUMMARY: Sudden unexpected death in epilepsy (SUDEP) is uncommon but is more likely in people with frequent tonic-clonic seizures and some severe epilepsy syndromes. An Italian multidisciplinary expert panel developed consensus statements on SUDEP risk, possible mechanisms, monitoring, and prevention. Reducing convulsive seizures and supporting treatment adherence remain the main preventive priorities; SUDEP information should be offered broadly, while counseling and additional measures should be tailored to individual risk. These statements reflect expert agreement and available evidence and are not formal clinical practice guidelines.",
+      "meshTerms": [],
+      "keywords": [
+        "SUDEP",
+        "developmental and epileptic encephalopathies",
+        "pathophysiology",
+        "prevention",
+        "risk factors"
+      ],
+      "doi": "10.1002/epi4.70358",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "이탈리아 SUDEP 합의문, 만성 뇌전증 관리라 응급 적용 제한적",
+        "at": "2026-10-08T01:13:23.539Z"
       }
     }
   ],
@@ -56592,6 +56672,187 @@
         ]
       },
       "publishedAt": "2026-10-07"
+    },
+    {
+      "id": "pmid:40214785",
+      "pmid": "40214785",
+      "title": "ESTES recommendations for the treatment of polytrauma-a European consensus based on the German S3 guidelines for the treatment of patients with severe/multiple injuries.",
+      "pubDate": "2025 Apr 11",
+      "journal": "European journal of trauma and emergency surgery : official publication of the European Trauma Society",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:37:14.544Z",
+      "abstract": "INTRODUCTION: Considerable heterogeneity exists in the configuration and implementation maturity of trauma systems across European healthcare settings, and the opportunities for guideline-informed high-quality care varies considerably. Therefore, the European Society of Trauma and Emergency Surgery (ESTES), with its constituent national societies, has developed comprehensive consensus recommendations for care-context appropriate treatment of polytrauma patients in Europe, from the pre-hospital setting to the first surgical phase.\nMETHODS: Adhering to the RAND/UCLA Appropriateness Method (RAM), ESTES conducted a three-round modified Delphi consensus. National society expert delegates assessed Grade of Recommendation (GoR) A and Good Clinical Practice Points (GPP) elements of the German Society of Trauma Surgery (DGU) \"S3 guidelines for polytrauma/severe injury management\" for appropriateness and implementability within their respective healthcare systems.\nRESULTS: In the first consensus round, 82 GoR A and 57 GPP recommendations were analysed. Of these, seven GPP were rephrased for clarity and four were removed due to redundancy or conflicting content. Consequently, 135 recommendations (82 GoR A and 53 GPP) remained, with 128 (77 GoR A and 51 GPP) deemed appropriate and necessary, and seven as uncertain due to expert disagreement.\nCONCLUSION: These ESTES recommendations constitute the first cohesive Europe-wide framework for managing the polytrauma patient from the prehospital setting to the end of the first surgical phase. They serve as a foundational tool for the development of national guidelines, particularly in regions with evolving trauma systems, and promote alignment towards a uniform standard-of-care across Europe.",
+      "meshTerms": [
+        "Humans",
+        "Multiple Trauma",
+        "Europe",
+        "Consensus",
+        "Delphi Technique",
+        "Practice Guidelines as Topic",
+        "Germany",
+        "Societies, Medical"
+      ],
+      "keywords": [
+        "Consensus",
+        "Guidelines",
+        "Injury",
+        "Polytrauma",
+        "Recommendations"
+      ],
+      "doi": "10.1007/s00068-025-02852-4",
+      "pmcid": "PMC11991986",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6.866245719379574,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 0.8662457193795734,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "recommendations",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:37:28.061Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ESTES 다발성외상 치료 권고 — 응급·외상 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|estes-treatment-polytrauma-european-consensus-based-german-s3-treatment-patients-with-severe-multiple-injuries",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40214785",
+          "title": "ESTES recommendations for the treatment of polytrauma-a European consensus based on the German S3 guidelines for the treatment of patients with severe/multiple injuries.",
+          "journal": "European journal of trauma and emergency surgery : official publication of the European Trauma Society",
+          "pubDate": "2025 Apr 11",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40214785/",
+          "doi": "10.1007/s00068-025-02852-4"
+        },
+        "org": "ESTES (European Society of Trauma and Emergency Surgery); based on DGU S3",
+        "version": "2025",
+        "title_ko": "ESTES 다발성 외상(polytrauma) 치료 권고 — 독일 DGU S3 가이드라인에 기반한 유럽 합의",
+        "scope_ko": "병원 전(prehospital) 단계부터 첫 수술 단계(first surgical phase) 종료까지, 중증·다발성 외상(polytrauma) 성인 환자의 초기 치료를 다루는 유럽 합의 권고다. 독일 외상외과학회(DGU) S3 다발성외상 가이드라인의 GoR A 및 GPP 권고 중 유럽 전역에 적용 가능한 항목을 ESTES 산하 국가학회 전문가들이 RAND/UCLA 적절성(RAM)·3라운드 수정 델파이로 재평가해, 유럽 외상체계의 이질성에 맞춘 '최초의 범유럽 합의 틀'을 제시한다.",
+        "summary": [
+          "Prehospital emergency anesthesia with endotracheal intubation and ventilation is mandated for severe airway/breathing compromise (e.g., respiratory rate <6 or apnea/agonal breathing); pre-oxygenation before induction is mandatory, normoventilation is targeted, and capnography is used to confirm placement and ventilation (GoR A). After >2 failed intubation attempts, switch to an alternative airway technique.",
+          "Administer tranexamic acid as early as possible — ideally in the prehospital phase — to any trauma patient who is bleeding profusely or at risk of significant bleeding (GoR A). (The consensus text does not restate a specific dose/time window.)",
+          "Stage external hemorrhage control: (1) manual/direct compression, (2) compression bandage ± topical hemostatic agent, (3) tourniquet when life-threatening extremity bleeding cannot be stopped in time by other means; apply a pelvic binder for a suspected unstable pelvic ring injury with hemodynamic instability.",
+          "Resuscitate with balanced, isotonic, ideally pre-warmed crystalloids via IV (intraosseous if IV access fails); titrated vasopressors may be considered for circulatory support if an adequate blood pressure cannot be achieved — in long-transport systems, prehospital blood products are prioritized.",
+          "In the ED, perform a trauma-specific whole-body CT (head through pelvis; non-contrast cranial CT included) in a timely manner once no immediate life-saving intervention is required and SBP is >60 mmHg; use eFAST to detect pericardial tamponade and hemoperitoneum in unstable patients.",
+          "Immediately decompress tension pneumothorax; place a chest tube for pneumothorax in ventilated patients; proceed to thoracotomy for initially high or ongoing intrathoracic blood loss.",
+          "In traumatic brain injury, target normal arterial pressure with SBP ≥110 mmHg, avoid SpO2 <90%, intubate when GCS ≤8, obtain a head CT (repeat on neurological deterioration), and avoid glucocorticoids.",
+          "Guide coagulation management with early labs (blood gas, PT/aPTT, fibrinogen, platelets) and viscoelastic testing (GoR A), maintaining plasma fibrinogen above the recommended threshold; mechanically stabilize a mechanically unstable pelvis with hemodynamic instability on an emergency basis."
+        ],
+        "summary_ko": [
+          "중증 기도·호흡 손상(예: 호흡수 <6 또는 무호흡/임종기 호흡) 시 병원 전 응급마취·기관내삽관·환기를 반드시 시행한다. 유도 전 전산소화(pre-oxygenation)는 필수, 정상환기(normoventilation)를 목표로 하며 capnography로 위치·환기를 확인한다(GoR A). 삽관 2회 초과 실패 시 대체 기도 확보법으로 전환한다.",
+          "출혈이 심하거나 의미 있는 출혈 위험이 있는 외상 환자에게 tranexamic acid를 가능한 한 빨리, 이상적으로는 병원 전 단계에서 투여한다(GoR A). (본 합의문은 구체적 용량/시간창을 재기술하지 않음.)",
+          "외부 출혈 제어는 단계적으로: (1) 손/직접 압박, (2) 압박붕대 ± 국소 지혈제, (3) 다른 방법으로 사지의 생명위협 출혈을 제때 멈출 수 없을 때 tourniquet. 불안정 골반환 손상 + 혈역학 불안정이 의심되면 pelvic binder를 적용한다.",
+          "균형·등장성, 가능하면 예열한 crystalloid를 정맥로로 소생한다(정맥로 실패 시 골내주사). 적절한 혈압을 얻지 못하면 승압제 적정(titration)을 고려할 수 있다 — 이송시간이 긴 체계에서는 병원 전 혈액제제를 우선한다.",
+          "응급실에서는 즉각적 생명구조 처치가 필요 없고 SBP >60 mmHg이면 외상 특이 프로토콜의 전신 CT(두부~골반 포함, 비조영 두부 CT 포함)를 지체 없이 시행한다. 불안정 환자에서 심장눌림·복강내출혈 확인에 eFAST를 사용한다.",
+          "긴장성 기흉은 즉시 감압한다. 환기 중인 환자의 기흉에는 흉관 배액을 시행한다. 초기 다량 또는 지속 흉강내 출혈 시 개흉술로 진행한다.",
+          "외상성 뇌손상에서는 정상 동맥압(SBP ≥110 mmHg)을 목표로 하고 SpO2 <90%를 피하며, GCS ≤8이면 삽관하고 두부 CT를 시행(신경학적 악화 시 재촬영)하며 글루코코르티코이드는 피한다.",
+          "조기 검사(혈액가스, PT/aPTT, fibrinogen, 혈소판)와 점탄성검사(viscoelastic testing)로 응고를 관리하고(GoR A) 혈장 fibrinogen을 권고 수준 이상으로 유지한다. 기계적으로 불안정한 골반 + 혈역학 불안정은 응급 기계적 안정화를 시행한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "합의의 성격 (vs 독일 S3)",
+            "detail": "This is not a new evidence update but a European adaptation of the December 2022 DGU S3 polytrauma guideline (332 recommendations). ESTES deliberately did NOT alter any GoR A statement (kept as written per German evidence synthesis); only GPP items could be rephrased or removed. From 139 GoR A+GPP items assessed, 7 GPP were rephrased for clarity/local applicability and 4 GPP were omitted for redundancy or information incongruency, leaving 135; 128 (77 GoR A + 51 GPP) were rated appropriate AND necessary (median necessity ≥8), and 7 remained uncertain due to disagreement. The specific identities of the 4 removed GPP are not named in the available text.",
+            "detail_ko": "이것은 새 근거 업데이트가 아니라 2022년 12월 DGU S3 다발성외상 가이드라인(권고 332개)의 유럽판 적응이다. ESTES는 GoR A 문구는 일부러 전혀 바꾸지 않았고(독일 근거합성대로 유지), GPP 항목만 재문구화·삭제했다. 평가한 GoR A+GPP 139개 중 GPP 7개를 명확성·지역 적용성 때문에 재문구화, GPP 4개를 중복·정보 불일치로 삭제해 135개가 남았고, 128개(GoR A 77 + GPP 51)가 '적절하며 필요함'(필요성 중앙값 ≥8)으로, 7개가 이견으로 '불확실'로 분류됐다. 삭제된 GPP 4개의 구체적 항목은 제공된 본문에 명시되지 않음."
+          },
+          {
+            "topic": "REBOA (횡격막하 출혈)",
+            "detail": "The S3 statement supporting REBOA for subdiaphragmatic hemorrhage was downgraded by the European panel to 'uncertain' because the UK-REBOA randomized trial showed no survival benefit and possible harm — so Europe-wide endorsement was withheld.",
+            "detail_ko": "횡격막하(subdiaphragmatic) 출혈에 REBOA를 지지하던 S3 입장은 유럽 패널에서 '불확실'로 하향됐다. UK-REBOA 무작위연구가 생존 이득이 없고 오히려 해가 될 수 있음을 보여, 범유럽 권고로 채택하지 않았다."
+          },
+          {
+            "topic": "Fibrinogen 보충 용량",
+            "detail": "The S3 recommendation for empiric fibrinogen supplementation (initially 3–6 g, or 30–60 mg/kg) was rated 'uncertain' by the panel because the CRYOSTAT-2 RCT found no mortality benefit, conflicting with the earlier RETIC-based rationale.",
+            "detail_ko": "경험적 fibrinogen 보충(초기 3–6 g, 또는 30–60 mg/kg)을 권한 S3 권고는 패널에서 '불확실'로 평가됐다. CRYOSTAT-2 무작위연구에서 사망률 이득이 없다는 결과가 이전 RETIC 근거와 충돌했기 때문이다."
+          },
+          {
+            "topic": "병원 전 지혈제 (chitosan)",
+            "detail": "The S3 GPP on chitosan-based hemostatic dressings for penetrating injuries (≥3 cm) was rated 'uncertain' for Europe because such agents are not widely available across European EMS systems (availability/implementation barrier, not an efficacy reversal).",
+            "detail_ko": "관통상(≥3 cm)에 chitosan 기반 지혈 드레싱을 권한 S3 GPP는 유럽에서 '불확실'로 평가됐다. 이 제제가 유럽 EMS 전반에 널리 보급돼 있지 않기 때문이다(효능 부정이 아니라 가용성·실행 장벽)."
+          },
+          {
+            "topic": "삽관 위치 확인 방법",
+            "detail": "The S3 statement to verify tube position with video laryngoscopy/bronchoscopy was rated 'uncertain' because some European countries prefer ultrasonography for confirmation — a practice/equipment divergence.",
+            "detail_ko": "비디오 후두경/기관지경으로 튜브 위치를 확인하라는 S3 문구는 '불확실'로 평가됐다. 일부 유럽 국가는 확인에 초음파를 선호하기 때문이다(술기·장비 차이)."
+          },
+          {
+            "topic": "병원 전 소생 수액 (crystalloid vs 혈액제제)",
+            "detail": "The S3 position favoring (pre-warmed) crystalloid-only prehospital resuscitation was rated 'uncertain' because it conflicts with prehospital blood-product availability and use in long-transport European systems.",
+            "detail_ko": "(예열한) crystalloid 단독 병원 전 소생을 선호한 S3 입장은 '불확실'로 평가됐다. 이송시간이 긴 유럽 체계의 병원 전 혈액제제 가용성·사용 관행과 충돌하기 때문이다."
+          },
+          {
+            "topic": "진통/유도 약제 등가성",
+            "detail": "The S3 statement treating fentanyl/ketamine/morphine as interchangeable was rated 'uncertain' due to their different hemodynamic profiles and variable national availability.",
+            "detail_ko": "fentanyl/ketamine/morphine를 상호 대체 가능으로 본 S3 문구는 '불확실'로 평가됐다. 약제별 혈역학 프로필이 다르고 국가별 가용성이 달라서다."
+          },
+          {
+            "topic": "골반 이학적 검사",
+            "detail": "The S3 GPP on performing a pelvic physical (manual stability) exam was rated 'uncertain' because a prehospital pelvic binder is often already applied, making the exam impractical; imaging is prioritized instead.",
+            "detail_ko": "골반 이학적(도수 안정성) 검사를 권한 S3 GPP는 '불확실'로 평가됐다. 병원 전에 이미 pelvic binder가 적용된 경우가 많아 검사가 비실용적이기 때문이며, 대신 영상검사를 우선한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "For EM/CCM, this consensus does not mandate new interventions so much as ratify a Europe-wide floor of trauma care that mirrors existing ATLS/DGU practice: early prehospital TXA, staged external hemorrhage control ending in tourniquet, pelvic binder for the unstable pelvis, capnography-confirmed airway with normoventilation, SBP ≥110 mmHg and SpO2 ≥90% in TBI with no steroids, and a whole-body CT once the patient is not peri-arrest (SBP >60 mmHg). The practically important signal is the panel's 'uncertain' list — treat REBOA for subdiaphragmatic bleeding and fixed empiric fibrinogen dosing (3–6 g) as unsettled given UK-REBOA and CRYOSTAT-2, and recognize that prehospital blood vs crystalloid should be driven by your transport times and local availability rather than a single protocol. Because ESTES left all GoR A statements unchanged, clinicians already following the European trauma bleeding guideline / DGU S3 need not change core practice; the document is mainly a tool for harmonizing and building national protocols where trauma systems are still maturing.",
+        "practiceImpact_ko": "EM/CCM 입장에서 이 합의는 새 중재를 강제하기보다, 기존 ATLS/DGU 관행과 같은 '범유럽 최소 기준'을 공식화한다: 병원 전 조기 TXA, tourniquet로 끝나는 단계적 외부 지혈, 불안정 골반에 pelvic binder, capnography 확인 기도와 정상환기, TBI에서 SBP ≥110 mmHg·SpO2 ≥90% 유지 및 스테로이드 금지, 그리고 환자가 거의-심정지 상태가 아니면(SBP >60 mmHg) 전신 CT. 실무적으로 중요한 신호는 패널의 '불확실' 목록이다 — 횡격막하 출혈에 대한 REBOA와 고정 경험적 fibrinogen 용량(3–6 g)은 UK-REBOA·CRYOSTAT-2를 고려해 아직 미정으로 다루고, 병원 전 혈액 대 crystalloid 선택은 단일 프로토콜이 아니라 각자의 이송시간·지역 가용성에 따라 결정한다. ESTES가 GoR A 문구를 전혀 바꾸지 않았으므로, 이미 유럽 외상출혈 가이드라인/DGU S3를 따르는 임상의는 핵심 진료를 바꿀 필요가 없다. 이 문서는 외상체계가 성숙 중인 지역에서 국가 프로토콜을 조화·수립하기 위한 도구에 가깝다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40214785",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40214785/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00068-025-02852-4",
+            "url": "https://doi.org/10.1007/s00068-025-02852-4"
+          },
+          {
+            "label": "웹 — ESTES polytrauma consensus — full text (PMC11991986)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11991986"
+          },
+          {
+            "label": "웹 — ESTES polytrauma consensus — NCBI PMC mirror",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11991986/"
+          },
+          {
+            "label": "웹 — ESTES polytrauma consensus — Springer open-access PDF (10.1007/s00068-025-02852-4)",
+            "url": "https://link.springer.com/content/pdf/10.1007/s00068-025-02852-4.pdf"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-08"
     }
   ],
   "rejected": [
@@ -61980,7 +62241,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-07T00:58:55.397Z",
+      "discoveredAt": "2026-10-08T01:13:13.486Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -62022,7 +62283,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-07T00:58:55.397Z",
+      "discoveredAt": "2026-10-08T01:13:13.486Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [],
       "keywords": [
@@ -62055,7 +62316,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-07T00:58:55.397Z",
+      "discoveredAt": "2026-10-08T01:13:13.486Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62121,9 +62382,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261007_095432:guideline:2026-10-07",
+    "runId": "trend_review_20261008_100944:guideline:2026-10-08",
     "outcome": "published",
-    "publishedId": "pmid:40581261",
+    "publishedId": "pmid:40214785",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -62132,8 +62393,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -62142,21 +62403,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 9,
+            "idsFetched": 9,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 131,
-        "overlapCount": 1,
+        "mergedTotal": 133,
+        "overlapCount": 2,
         "ptOnlyCount": 1,
-        "expandedOnlyCount": 6,
+        "expandedOnlyCount": 7,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep-Oct",
         "window": {
-          "minDate": "2026/09/07",
-          "maxDate": "2026/10/07"
+          "minDate": "2026/09/08",
+          "maxDate": "2026/10/08"
         },
         "retmax": 60,
         "topics": [
@@ -62164,8 +62425,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 42,
-            "idsFetched": 42,
+            "totalFound": 41,
+            "idsFetched": 41,
             "truncated": false,
             "error": null
           },
@@ -62191,8 +62452,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 17,
-            "idsFetched": 17,
+            "totalFound": 16,
+            "idsFetched": 16,
             "truncated": false,
             "error": null
           },
@@ -62200,8 +62461,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 26,
-            "idsFetched": 26,
+            "totalFound": 28,
+            "idsFetched": 28,
             "truncated": false,
             "error": null
           },
@@ -62263,14 +62524,15 @@
         "topicOnlyCount": 123,
         "ptPmids": [
           "42788594",
+          "42552475",
           "42549877"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 131,
-          "enriched": 131,
-          "withAbstract": 96,
+          "requested": 133,
+          "enriched": 133,
+          "withAbstract": 99,
           "error": null
         }
       },
@@ -62323,23 +62585,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 2,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
         "queued": 212,
-        "needsReview": 450,
+        "needsReview": 451,
         "rejected": 129,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40581261",
+        "candidateId": "pmid:40214785",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-07T01:04:37.969Z",
+  "updatedAt": "2026-10-08T01:16:04.304Z",
   "configVersion": "guideline-v2"
 }

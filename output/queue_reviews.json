@@ -1771,23 +1771,6 @@
       "status": "queued"
     },
     {
-      "pmid": "37184336",
-      "title": "Advances in the Management of Cardiogenic Shock.",
-      "journal": "Crit Care Med",
-      "score": 6.8,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "심인성 쇼크 관리, 심혈관 중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "37607072",
       "title": "Practice Standards for the Use of Multimodality Neuromonitoring: A Delphi Consensus Process.",
       "journal": "Crit Care Med",
@@ -11408,6 +11391,105 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "37184336",
+      "title": "Advances in the Management of Cardiogenic Shock.",
+      "journal": "Crit Care Med",
+      "score": 6.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크 관리, 심혈관 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-08",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "37184336",
+          "title": "Advances in the Management of Cardiogenic Shock.",
+          "journal": "Critical care medicine",
+          "pubDate": "2023-5-15",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/37184336/",
+          "doi": "10.1097/CCM.0000000000005919"
+        },
+        "title_ko": "심인성 쇼크 관리의 발전",
+        "scope_ko": "심인성 쇼크(CS)의 현대적 관리를 다루는 종설로, 쇼크 중증도(SCAI 분류)와 표현형에 따른 평가, 원인 치료(특히 급성심근경색에서의 조기 재관류), 혈관수축제·강심제 중심의 초기 약물치료, 그리고 적절히 선별된 환자에서의 일시적 기계순환보조(MCS)를 전문학회 권고와 임상연구(특히 무작위 임상시험)를 통합해 정리한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "종설의 목적과 방법",
+            "body_ko": "이 종설의 목적은 심인성 쇼크(cardiogenic shock, CS) 환자에 대한 현대적 관리 접근을 검토하는 것이다. 저자들은 CS에 관한 핵심 의학 문헌을 검토하였고, 전문학회의 과학적 성명(scientific statement)과 CS 환자의 결과(outcome)를 다룬 임상연구를 포함하되 특히 무작위 임상시험(randomized clinical trial)에 초점을 맞추었다. 각 연구의 핵심 결과와 CS 관리에 관한 과학적 성명의 권고를 추출하였으며, 전문학회의 권고를 평가된 연구 결과와 통합하여 서술하였다.\n\n(주: 아래 '기계순환보조' 절까지는 이 논문의 공개 초록이 직접 서술한 결론을 한국어로 옮긴 것이다. 본문 전문은 출판사 페이지가 유료 장벽으로 막혀 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "심인성 쇼크의 역학과 임상 양상",
+            "body_ko": "심인성 쇼크는 표준 치료에도 불구하고 단기 사망률이 30%를 넘는다. 지금까지 대부분의 CS 연구는 급성심근경색(acute myocardial infarction, AMI)에 초점을 맞추어 왔으나, 많은 센터에서는 이제 심부전(heart failure) 관련 CS가 더 많은 비중을 차지하게 되었다.\n\nCS는 쇼크 중증도의 넓은 스펙트럼으로 나타날 수 있으며, 여기에는 지속적인 저관류(hypoperfusion)가 있음에도 혈압이 정상인(normotensive) 환자도 포함된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "SCAI 쇼크 분류와 심인성 쇼크 표현형",
+            "body_ko": "Society for Cardiovascular Angiography and Intervention(SCAI) 쇼크 분류는 CS가 있거나 CS 위험이 있는 환자를 쇼크 중증도에 따라 범주화하며, 이 중증도는 사망률을 예측한다.\n\nCS 환자군은 심실 기능(ventricular function), 혈역학 프로파일(hemodynamic profile), 생체표지자(biomarker) 및 기타 임상 변수로 정의되는 이질적인(heterogeneous) 표현형들의 혼합으로 이루어진다. 쇼크 중증도와 CS 표현형을, 사망에 대한 수정 불가능한 위험인자(nonmodifiable risk factors)와 통합하면 임상적 의사결정과 예후 판단에 지침이 될 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "원인 규명과 초기 약물치료",
+            "body_ko": "CS의 원인을 규명하고 치료하는 것은 성공적 치료에 결정적이며, 여기에는 AMI에 대한 조기 원인병변(culprit vessel) 재관류가 포함된다.\n\n동맥압과 관류를 회복시키도록 적정(titrate)한 혈관수축제(vasopressor)와 강심제(inotrope)가 CS에 대한 초기 약물치료의 초석이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "일시적 기계순환보조(MCS)와 다학제 팀 접근",
+            "body_ko": "일시적 기계순환보조(temporary mechanical circulatory support, MCS)는 적절히 선별된 환자에서 회복(recovery), 의사결정(decision), 영구적 MCS(durable MCS), 또는 심장이식(heart transplant)으로 가는 가교(bridge)로서 적응이 된다. 그러나 무작위 대조시험들은 CS 환자에서 일시적 MCS를 일상적으로 사용하는 것이 생존율을 더 개선함을 입증하지 못하였다.\n\n따라서, 혈역학적 보조의 종류를 각 개별 CS 환자의 필요에 맞추기 위해 — 쇼크 중증도, 표현형, 그리고 출구 전략(exit strategy)에 근거하여 — 다학제 팀 기반(multidisciplinary team-based) 접근을 사용해야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] SCAI 병기 A–E 상세 정의와 위험 수정인자",
+            "body_ko": "SCAI 분류는 중증도가 높아지는 5개 병기로 환자를 층화한다. A기('위험', At risk) = 저관류가 없으나 대량 AMI나 만성 심부전의 급성 악화 등으로 CS 발생 위험이 있는 환자. B기('시작', Beginning, 전(前)쇼크) = 상대적 저혈압 또는 빈맥 등 혈역학적 불안정이 있으나 명백한 저관류는 없는 상태. C기(확립된 쇼크) = 중재가 필요한 저관류. D기(악화 쇼크) = 초기 중재에도 악화되는 상태. E기('극한', Extremis) = 보조에 반응하지 않는 불응성 쇼크. C–E기가 '중재가 필요한 저관류'로서의 쇼크에 해당하며, 여러 연구에서 병기가 한 단계 높아질수록 사망률이 단계적으로 증가함이 확인되었다.\n\n표현형 축에서는 좌심실(LV) 우세 부전, 우심실(RV) 침범/우세, 양심실(biventricular) 기능부전이 구분되며, RV 기능부전은 단독 LV 부전보다 예후가 나쁜 것으로 점차 인식되고 있다. 전신혈관저항이 낮으면서 심박출량도 감소한 '혈관확장성(vasodilatory) CS'(감염·염증반응·대사이상·혈관마비 등이 동반)와, 저혈압 없이 저관류만 있는 '정상혈압 CS'도 점차 인식되는 아형이다.\n\n중증도와 별개로 작용하는 위험 수정인자로는 고령, 심정지(cardiac arrest, 병기가 높아질수록 흔해지지만 각 병기 내에서 심정지 동반 환자의 사망 위험이 더 높다), RV 부전(우심방압 상승), 급성 신손상, 대사성 산증, 비심장성 장기부전 등이 있다. 같은 SCAI 병기 안에서도 위험의 폭과 잔여 이질성이 커서, 고위험 소견을 지닌 낮은 병기 환자가 저위험 소견의 높은 병기 환자와 비슷하거나 더 높은 사망 위험을 보일 수 있다. 현대 심장중환자실에서는 CS의 약 30%만이 AMI 관련이고 나머지 대부분은 비대상성 심부전 관련(de novo 대 만성 진행성 HF로 세분)이다.\n— 보강 출처: JACC: Advances — Advances in the Staging and Phenotyping of Cardiogenic Shock: Part 1 (PMC 전문) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11198663/)",
+            "origin": "augmented",
+            "sourceLabel": "JACC: Advances — Advances in the Staging and Phenotyping of Cardiogenic Shock: Part 1 (PMC 전문)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11198663/"
+          },
+          {
+            "heading_ko": "[웹 보강] 약물치료·재관류·기계순환보조의 근거(관련 2차 자료)",
+            "body_ko": "혈관수축제: 노르에피네프린(norepinephrine)이 1차 혈관수축제로 권고된다. SOAP II 시험에서 도파민은 CS 하위군에서 부정맥과 사망 위험 증가와 연관되었고, 에피네프린은 OPTIMA 연구에서 부정맥·심박수 증가·젖산혈증 증가와 연관되었다(CS 환자 2,583명 메타분석에서 에피네프린 사용 시 사망 위험 약 3배, OR 3.3).\n\n강심제: 도부타민(dobutamine)이 1차 강심제로 권고된다. DOREMI 시험(192명)에서 밀리논(milrinone)과 도부타민 간 복합 결과에 유의한 차이가 없었다(49% 대 54%; RR 0.90; p=0.47). 레보시멘단(levosimendan)은 SURVIVE 연구(1,227명)에서 180일 전원인 사망에 도부타민과 차이가 없었다.\n\n재관류: CULPRIT-SHOCK 시험(425명)에서 원인병변만 PCI 하는 전략이 다혈관 PCI 대비 30일 사망을 절대값 8.2% 낮추었다(43.3% 대 51.5%; RR 0.84; p=0.03).\n\n기계순환보조: VA-ECMO는 ECMO-CS(122명)와 ECLS-SHOCK(417명, 30일 전원인 사망 47.8% 대 49.0%; RR 0.98; p=0.81)에서 이득을 보이지 못했고, 4개 RCT 메타분석에서도 30일 사망 감소가 없었다(OR 0.93). MAP 목표는 65 mmHg로 충분해 보이며 그 이상을 목표하는 이득에 대한 자료는 상충된다. 폐동맥카테터(PAC)로 심박출량·심지수·심장력출력(cardiac power output)·PCWP(>18 mmHg)·RAP(>12 mmHg)·폐동맥박동지수(PAPi, RV 부전 예측)를 평가할 수 있다. 완전한 젖산 제거(lactate clearance)는 등록 후 8시간부터 원내 생존의 독립적 예측인자로 보고되었다. CS 관리는 심장내과·중환자의학·외과가 참여하는 'Heart Team'/쇼크팀의 긴밀한 협력과 조기 중환자실 입실을 요한다.\n\n(주: 위 시험 수치는 이 논문이 아니라 아래 2차 종설에서 가져온 것이다. 일부 시험은 이 논문의 출판 시점과 전후하여 보고되었으므로, 이 논문 자체가 동일 수치를 인용했다고 단정할 수 없다.)\n— 보강 출처: Management of cardiogenic shock: a narrative review (PMC 전문) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10980676/)",
+            "origin": "augmented",
+            "sourceLabel": "Management of cardiogenic shock: a narrative review (PMC 전문)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10980676/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 CS를 단일 질환이 아니라 SCAI 중증도 병기 × 표현형(LV/RV/양심실, 혈관확장성·정상혈압 포함) × 수정 불가능한 위험인자의 조합으로 평가하고, 혈압이 정상이라도 저관류가 있으면 CS로 취급해야 한다. 원인 치료(특히 AMI의 조기 원인병변 재관류)와 노르에피네프린·도부타민을 축으로 한 혈역학 회복이 기본이며, 일시적 MCS는 일상적 투입이 생존을 개선한다는 근거가 없으므로 출구 전략이 분명한 선별 환자에게 다학제 쇼크팀 논의를 거쳐 적용한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 37184336",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37184336/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000005919",
+            "url": "https://doi.org/10.1097/CCM.0000000000005919"
+          },
+          {
+            "label": "웹 — SCAI staging/phenotyping companion (PMC11198663, 전문 확보)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11198663/"
+          },
+          {
+            "label": "웹 — Management of cardiogenic shock: a narrative review (PMC10980676, 전문 확보)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10980676/"
+          },
+          {
+            "label": "웹 — LWW 원문 페이지 — 유료 장벽(HTTP 402)으로 본문 확보 실패",
+            "url": "https://journals.lww.com/ccmjournal/abstract/2023/09000/advances_in_the_management_of_cardiogenic_shock.13.aspx"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -11465,9 +11547,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-07",
+    "date": "2026-10-08",
     "outcome": "published",
-    "publishedId": "34454687"
+    "publishedId": "37184336"
   },
-  "updatedAt": "2026-10-07"
+  "updatedAt": "2026-10-08"
 }
