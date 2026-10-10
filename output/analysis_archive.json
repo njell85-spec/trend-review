@@ -3663,6 +3663,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-10",
+      "pmid": "42274006",
+      "title": "Vasopressors or Fluids in Early Septic Shock.",
+      "title_ko": "초기 패혈성 쇼크에서 혈압상승제(vasopressor) 대 수액(fluids)",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa2516225",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "응급실에 내원한 초기 패혈성 쇼크 성인 환자에서, 수액을 제한하고 혈압상승제를 조기에 사용하는 소생 전략이 수액을 더 많이 주고 혈압상승제를 늦게 사용하는 전략에 비해 90일째 생존·퇴원일수(days alive and out of hospital)를 개선하는가?",
+      "pico": {
+        "population": "[Australia & New Zealand] Adult patients who presented to the emergency department with septic shock (clinically suspected infection; SBP <90 mm Hg or MAP <65 mm Hg despite a ≥1000 ml cumulative IV fluid bolus over a maximum of 60 minutes including prehospital boluses; blood lactate >2.0 mmol/L; at least one dose of IV antimicrobial commenced); 1000 patients underwent randomization (499 vasopressor group, 501 fluids group), with 963 in the intention-to-treat population (481 vasopressor, 482 fluids) after informed consent was not obtained for 37 patients. Exclusions included age <18 years, pregnancy, transfer from another acute care facility, hypotension from a non-sepsis cause, >2 L total IV fluid, and >6 hours elapsed.",
+        "intervention": "Fluids at restricted volumes and early vasopressor therapy (vasopressor group) for at least 6 hours and up to 24 hours; patients in this group received a median of 1108 ml less IV fluid in the first 24 hours and vasopressor use was higher by 18.9 percentage points.",
+        "comparison": "Higher volumes of fluids and later vasopressor therapy (fluids group) for at least 6 hours and up to 24 hours.",
+        "outcome": "Primary outcome — days alive and out of the hospital from randomization to day 90: median 76 (IQR 55 to 83) in the vasopressor group vs. 76 (IQR 55 to 82) in the fluids group (difference, 0.0 days; 95% CI, -2.7 to 2.7; P = 1.00)."
+      },
+      "pico_ko": {
+        "population": "[호주·뉴질랜드] 응급실에 패혈성 쇼크로 내원한 성인 환자(임상적으로 의심되는 감염; 원외 투여 포함 최대 60분간 누적 ≥1000 ml 수액 볼루스에도 SBP <90 mm Hg 또는 MAP <65 mm Hg; 혈중 lactate >2.0 mmol/L; IV 항균제 1회 이상 투여 시작). 총 1000명이 무작위 배정(vasopressor군 499명, fluids군 501명)되었고, 37명에서 동의를 얻지 못해 intention-to-treat 집단은 963명(vasopressor군 481명, fluids군 482명). 제외 기준은 18세 미만, 임신, 타 급성기 시설에서의 전원, 비(非)패혈증 원인의 저혈압, 총 IV 수액 >2 L, 경과 시간 >6시간 등이었다.",
+        "intervention": "제한된 용량의 수액과 조기 혈압상승제 투여(vasopressor군)를 최소 6시간에서 최대 24시간까지 시행. 이 군은 첫 24시간 동안 IV 수액을 중앙값 1108 ml 적게 투여받았고, 혈압상승제 투여 비율이 18.9%p 더 높았다.",
+        "comparison": "더 많은 용량의 수액과 지연된 혈압상승제 투여(fluids군)를 최소 6시간에서 최대 24시간까지 시행.",
+        "outcome": "일차 결과 — 무작위 배정부터 90일까지 생존·퇴원일수(days alive and out of hospital): vasopressor군 중앙값 76일(IQR 55~83) 대 fluids군 76일(IQR 55~82)(차이 0.0일; 95% CI, -2.7~2.7; P = 1.00)."
+      },
+      "keyFindings": [
+        "In 963 ITT patients, days alive and out of hospital at day 90 were identical between groups: median 76 (IQR 55–83) vasopressor vs 76 (IQR 55–82) fluids (difference 0.0 days; 95% CI -2.7 to 2.7; P = 1.00).",
+        "The intervention successfully separated the groups: vasopressor group received 1108 ml less IV fluid in 24 h (95% CI -1395 to -850) and had 18.9 percentage points higher vasopressor use (95% CI 13.3 to 24.5).",
+        "Pulmonary edema was substantially less frequent with the restricted-fluid/early-vasopressor approach (0.6% vs 5.0%; P<0.001); other adverse events were similar."
+      ],
+      "keyFindings_ko": [
+        "ITT 963명에서 90일째 생존·퇴원일수는 두 군이 동일: vasopressor군 중앙값 76일(IQR 55~83) 대 fluids군 76일(IQR 55~82)(차이 0.0일; 95% CI -2.7~2.7; P = 1.00).",
+        "중재는 두 군을 성공적으로 분리: vasopressor군은 24시간 동안 IV 수액을 1108 ml 적게 투여받았고(95% CI -1395~-850), 혈압상승제 투여가 18.9%p 더 높았음(95% CI 13.3~24.5).",
+        "폐부종은 수액 제한/조기 혈압상승제 접근에서 상당히 적게 발생(0.6% 대 5.0%; P<0.001); 그 외 이상반응은 유사."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 42274006",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42274006/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1056/NEJMoa2516225",
+          "url": "https://doi.org/10.1056/NEJMoa2516225"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT04569942 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT04569942"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -3713,7 +3764,8 @@
         "42714473",
         "42823746",
         "42827265",
-        "42545101"
+        "42545101",
+        "42274006"
       ]
     },
     "fulltextLen": {
