@@ -310,88 +310,6 @@
       }
     },
     {
-      "id": "pmid:39341492",
-      "pmid": "39341492",
-      "title": "Red Blood Cell Transfusion in Critically Ill Adults: An American College of Chest Physicians Clinical Practice Guideline.",
-      "pubDate": "2025 Feb",
-      "journal": "Chest",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:35:33.642Z",
-      "abstract": "BACKGROUND: Blood products frequently are administered to critically ill patients. Considering recent trials and practice variability, a comprehensive review of current evidence was deemed essential to offer pertinent guidance to critical care practitioners. This American College of Chest Physicians (CHEST) guidelines panel examined the literature on RBC transfusions among critically ill patients overall and specific subgroups, including patients with gastrointestinal bleeding, acute coronary syndrome (ACS), cardiac surgery, isolated troponin elevation, and septic shock, to provide evidence-based recommendations.\nSTUDY DESIGN AND METHODS: A panel of experts developed six Population, Intervention, Comparator, and Outcome questions addressing RBC transfusions in critically ill patients and performed a comprehensive evidence review. The panel applied the Grading of Recommendations, Assessment, Development, and Evaluations approach to assess the certainty of evidence and to formulate and grade recommendations. A modified Delphi technique was used to reach consensus on the recommendations.\nRESULTS: The initial search identified a total of 3,082 studies, and after the initial screening, 38 articles were reviewed. Among them, 23 studies met inclusion criteria, comprising 22 randomized controlled trials and one cohort study. Based on the analysis of these studies, the panel formulated two strong and four conditional recommendations. The overall quality of evidence for recommendations ranged from very low to moderate.\nCONCLUSIONS: In most critically ill patients, a restrictive strategy was preferable to a permissive approach because it does not increase the risk of death or complications, but does decrease RBC use significantly. Data from critically ill subpopulations also supported a restrictive approach, except in patients with ACS, for whom favoring a restrictive approach could increase adverse outcomes.",
-      "meshTerms": [
-        "Humans",
-        "Critical Illness",
-        "Erythrocyte Transfusion",
-        "Critical Care",
-        "United States",
-        "Adult",
-        "Acute Coronary Syndrome",
-        "Societies, Medical"
-      ],
-      "keywords": [
-        "GI bleed",
-        "acute coronary syndrome",
-        "cardiac surgery",
-        "critically ill",
-        "red blood cell",
-        "sepsis",
-        "septic shock",
-        "transfusion"
-      ],
-      "doi": "10.1016/j.chest.2024.09.016",
-      "pmcid": "PMC11867898",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.614359501259817,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 0.6143595012598174,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:59.039Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "중환자 적혈구 수혈 CHEST 지침 — 핵심 중환자 주제",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|red-blood-cell-transfusion-critically-ill-adults-american-college-chest-physicians-clinical-practice",
-      "supersedes": []
-    },
-    {
       "id": "pmid:39198198",
       "pmid": "39198198",
       "title": "Ketamine analgo-sedation for mechanically ventilated critically ill adults: A rapid practice guideline from the Saudi Critical Care Society and the Scandinavian Society of Anesthesiology and Intensive Care Medicine.",
@@ -36339,7 +36257,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -38114,7 +38032,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43357,7 +43275,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44615,8 +44533,6 @@
       "journal": "Neurocritical care",
       "publicationTypes": [
         "Journal Article",
-        "Systematic Review",
-        "Meta-Analysis",
         "Practice Guideline"
       ],
       "discoveredBy": [
@@ -44628,12 +44544,14 @@
       "abstract": "BACKGROUND: There are limited data to guide antiseizure medication (ASM) prophylaxis in patients with aneurysmal subarachnoid hemorrhage (SAH). This results in practice variation in the use and duration of ASM prophylaxis.\nMETHODS: We conducted a systematic review and meta-analysis of articles assessing ASM prophylaxis in adults with aneurysmal SAH. The population, intervention, comparator, and outcome (PICO) questions were as follows: (1) Should ASM or no ASM be used in patients hospitalized for aneurysmal subarachnoid hemorrhage who have no history of clinical or electrographic seizures? (2) If an ASM is used, should levetiracetam or phenytoin/fosphenytoin be preferentially used? (3) If an ASM is used, should a long (> 3 days) or short (≤ 3 days) duration of prophylaxis be used? The main outcomes were early seizure (≤ 14 days), late seizures (> 14 days), adverse events, mortality, and functional outcomes. We used Grading of Recommendations Assessment, Development, and Evaluation (GRADE) methodology to generate recommendations.\nRESULTS: The initial literature search yielded 1988 articles, of which 10 formed the basis of the recommendations: Regarding PICO 1, we did not find a significant difference in outcomes of early seizure, adverse events, mortality, or functional outcomes when comparing ASM to no ASM. In regard to PICO 2, we found fewer early seizures with phenytoin/fosphenytoin and lower risk for neurologic decline with levetiracetam; however, there was low certainty of evidence. There was no significant difference in mortality between the different treatment types. Regarding PICO 3, we found extended use of ASM may be associated with lower seizure risk, but at the same time be associated with higher risk for adverse effects.\nCONCLUSIONS: Overall, the quality of evidence is low, precluding strong recommendations. We suggest that ASM or no ASM may be used in patients hospitalized with aneurysmal subarachnoid hemorrhage (conditional recommendation, low quality of evidence). If used, we suggest either levetiracetam or phenytoin/fosphenytoin (conditional recommendation, very low quality of evidence) for a short or long duration (conditional recommendation, moderate quality of evidence).",
       "meshTerms": [
         "Humans",
-        "Subarachnoid Hemorrhage",
         "Anticonvulsants",
-        "Seizures",
+        "Critical Care",
         "Levetiracetam",
         "Phenytoin",
-        "Critical Care"
+        "Seizures",
+        "Subarachnoid Hemorrhage",
+        "Systematic Reviews as Topic",
+        "Meta-Analysis as Topic"
       ],
       "keywords": [
         "Aneurysmal subarachnoid hemorrhage",
@@ -44644,7 +44562,7 @@
         "Seizure"
       ],
       "doi": "10.1007/s12028-026-02614-z",
-      "pmcid": "",
+      "pmcid": "PMC13642444",
       "region": "us",
       "by": "org-name",
       "signals": {
@@ -44678,7 +44596,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44805,7 +44723,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45416,7 +45334,7 @@
       "id": "pmid:42642341",
       "pmid": "42642341",
       "title": "Korean Clinical Practice Guidelines for Interstitial Lung Disease: Part 2. Idiopathic Pulmonary Fibrosis.",
-      "pubDate": "2026 Aug 26",
+      "pubDate": "2026 Oct",
       "journal": "Tuberculosis and respiratory diseases",
       "publicationTypes": [
         "Journal Article"
@@ -45425,7 +45343,7 @@
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-27T00:58:33.321Z",
-      "abstract": "Idiopathic pulmonary fibrosis (IPF) is a chronic, progressive fibrosing interstitial pneumonia characterized by declining lung function, severe dyspnea, and a poor prognosis. Although antifibrotic agents have improved outcomes in patients with IPF, important challenges remain in the diagnosis, monitoring, and long-term management of the disease. Since the publication of the first Korean clinical practice guideline for interstitial lung disease (ILD) in 2018, substantial advances in research have led to important changes in the clinical management of IPF. This updated guideline incorporates evidence published over the past five years and addresses key aspects of IPF, including epidemiology, pathogenesis, risk factors, clinical manifestations, diagnosis, treatment, comorbidities, prognosis, and acute exacerbations. In addition, key clinical questions (KQs) were developed through expert consensus, and systematic reviews and meta-analyses were conducted to reassess the effects of antifibrotic agents on lung function decline, mortality, and acute exacerbations in patients with IPF. These guidelines aim to standardize the clinical management of IPF, improve diagnostic accuracy, and promote the appropriate use of therapeutic strategies. They are intended for physicians, other healthcare professionals involved in the care of patients with IPF, and healthcare policymakers in Korea.",
+      "abstract": "Idiopathic pulmonary fibrosis (IPF) is a chronic, progressive, fibrosing interstitial pneumonia marked by declining lung function, severe dyspnea, and a poor prognosis. Antifibrotic agents have improved outcomes in patients with IPF, but diagnosing the disease, monitoring its course, and managing it over the long term remain challenging. Since the publication of the first Korean clinical practice guideline for interstitial lung disease in 2018, research has advanced substantially and has reshaped the clinical management of IPF. This updated guideline draws on evidence published over the past 5 years and covers the epidemiology, pathogenesis, risk factors, clinical manifestations, diagnosis, treatment, comorbidities, prognosis, and acute exacerbations of IPF. Expert consensus was also used to formulate key clinical questions, and systematic reviews and meta-analyses were then performed to reassess how antifibrotic agents affect lung function decline, mortality, and acute exacerbations in patients with IPF. This guideline aims to standardize the clinical management of IPF, improve diagnostic accuracy, and encourage the appropriate use of available treatments. It is intended for physicians, other healthcare professionals who care for patients with IPF, and healthcare policymakers in Korea.",
       "meshTerms": [],
       "keywords": [
         "Acute Exacerbation",
@@ -45435,7 +45353,7 @@
         "Management"
       ],
       "doi": "10.4046/trd.2026.0097",
-      "pmcid": "",
+      "pmcid": "PMC13646841",
       "region": "kr",
       "by": "nationality",
       "signals": {
@@ -45467,7 +45385,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-25T00:03:52.539Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45571,16 +45489,16 @@
       "discoveredAt": "2026-08-28T03:31:09.675Z",
       "abstract": "OBJECTIVES: In 2014, the American College of Cardiology/American Heart Association moved away from recommending aspirin in atrial fibrillation (AF) and recommended that patients be treated with oral anticoagulants (OACs) to mitigate the risk of stroke. We aimed to evaluate the prevalence and predictors of OACs and/or aspirin use among veterans with AF in Veterans Affairs nursing homes in the era after the guideline publication.\nDESIGN: Observational study of veterans admitted from October 1, 2014 to September 30, 2019.\nSETTING AND PARTICIPANTS: Four thousand nine hundred ninety-four nursing home residents with AF and a CHADS-VASc score of ≥2.\nMETHODS: Multinomial logistic regression was used to compare demographics, comorbidities, functional status, and concurrent antiplatelet medication use in residents who received OAC ± aspirin and aspirin alone, compared with neither.\nRESULTS: In the era after the 2014 American College of Cardiology/American Heart Association guideline was released, age-standardized prevalence rates for any OAC (warfarin and direct oral anticoagulant) increased from 31.2% in fiscal year (FY) 2013 to 2014 to 46.6% in FY 2019. In addition, there was a decrease in patients receiving no OAC (21.1%-16.2%) and aspirin (47.7%-39.3%). However, some eligible residents remained untreated. Averaged over FY 2015 to 2019, each decade of ascending age was associated with a lower likelihood of receiving OAC [relative risk ratio (RRR), 0.79; 95% CI, 0.71-0.87], relative to neither anticoagulant nor aspirin use. Black veterans were less likely to receive OAC (RRR, 0.73; 95% CI, 0.58-0.91); Hispanic veterans were less likely to receive OAC (RRR, 0.63; 95% CI, 0.44-0.91) and aspirin (RRR, 0.47; 95% CI, 0.31-0.72). Mild to moderate cognitive impairment, greater disability, and other antiplatelet use were also associated with less OAC use.\nCONCLUSIONS AND IMPLICATIONS: Fewer Veterans Affairs nursing home residents received OACs than recommended by guidelines, with significant differences by age and race/ethnicity. Future research efforts should aim to understand the reasons for low OAC use and to augment the evidence base for anticoagulant use to include frail older adults.",
       "meshTerms": [
-        "Humans",
-        "Atrial Fibrillation",
-        "Male",
-        "Anticoagulants",
-        "Female",
-        "United States",
         "Aged",
+        "Aged, 80 and over",
+        "Female",
+        "Humans",
+        "Male",
         "Administration, Oral",
-        "Nursing Home Residents",
-        "Practice Guidelines as Topic"
+        "American Heart Association",
+        "Anticoagulants",
+        "Aspirin",
+        "Atrial Fibrillation"
       ],
       "keywords": [
         "Atrial fibrillation",
@@ -45625,7 +45543,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45705,7 +45623,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45862,7 +45780,7 @@
       "id": "pmid:42661420",
       "pmid": "42661420",
       "title": "2026 ESC Guidelines for the management of heart failure.",
-      "pubDate": "2026 Aug 28",
+      "pubDate": "2026 Oct 9",
       "journal": "European heart journal",
       "publicationTypes": [
         "Journal Article"
@@ -45930,7 +45848,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-09-26T23:50:13.329Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46885,7 +46803,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -46954,7 +46872,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -47068,11 +46986,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.644328725706251,
+      "priority": 7.637030966953547,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6443287257062513,
+        "recency": 1.6370309669535468,
         "scope": 0,
         "confidence": 2
       },
@@ -47087,7 +47005,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -47147,7 +47065,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47221,7 +47139,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47277,11 +47195,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.644328725706252,
+      "priority": 11.637030966995798,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6443287257062513,
+        "recency": 1.6370309669957985,
         "scope": 0,
         "confidence": 2
       },
@@ -47297,7 +47215,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47364,7 +47282,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47429,7 +47347,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47479,11 +47397,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.644328725621747,
+      "priority": 11.637030966869045,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6443287256217478,
+        "recency": 1.6370309668690437,
         "scope": 0,
         "confidence": 2
       },
@@ -47499,7 +47417,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47578,7 +47496,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47606,12 +47524,12 @@
       "abstract": "The neurocritical care treatment team frequently interacts with patient surrogates and Organ Procurement Organizations (OPOs) at the end-of-life. A 2025 survey of Neurocritical Care Society (NCS) members assessing experiences and attitudes related to organ donation identified the need to enhance education for the treatment team about organ donation and opportunities for improvement in palliative interventions after withdrawal of life-sustaining therapies for potential donation after cardiac death/death by circulatory-respiratory criteria. Additionally, members noted concerns regarding blurred boundaries between patient care and care directed towards organ donation; a potential lack of transparency, empathy and cultural sensitivity in communication between OPOs and patient surrogates; and the ethics of first-person authorization for organ donation. In response to these concerns, the NCS Ethics Committee developed this statement to provide education and ethical guidance for organ donation at the end-of-life. Members had an opportunity to share feedback on the statement from April 6-19, 2026. This statement provides an informal narrative review of the literature related to organ donation that is pertinent to the care of potential organ donors at the end-of-life and includes practical guidance related to the legal definitions of death and first-person authorization, collaborative communication, and management of potential conflicts.",
       "meshTerms": [
         "Humans",
-        "Tissue and Organ Procurement",
-        "Terminal Care",
+        "Brain Death",
         "Critical Care",
-        "Societies, Medical",
         "Neurology",
-        "Brain Death"
+        "Societies, Medical",
+        "Terminal Care",
+        "Tissue and Organ Procurement"
       ],
       "keywords": [
         "Brain death/death by neurologic criteria",
@@ -47653,7 +47571,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47687,7 +47605,7 @@
         "risk factors"
       ],
       "doi": "10.1002/epi4.70358",
-      "pmcid": "",
+      "pmcid": "PMC13643408",
       "region": "eu",
       "by": "nationality",
       "signals": {
@@ -47712,7 +47630,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -47720,7 +47638,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-08T01:13:22.002Z",
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47729,6 +47647,79 @@
         "keep": false,
         "reason": "이탈리아 SUDEP 합의문, 만성 뇌전증 관리라 응급 적용 제한적",
         "at": "2026-10-08T01:13:23.539Z"
+      }
+    },
+    {
+      "id": "pmid:42851210",
+      "pmid": "42851210",
+      "title": "Diagnosis and Management of Infectious Encephalitis in Adults: Guidelines From the European Academy of Neurology and European Society of Clinical Microbiology and Infectious Diseases.",
+      "pubDate": "2026 Oct",
+      "journal": "European journal of neurology",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-10T01:11:52.830Z",
+      "abstract": "BACKGROUND: Encephalitis is difficult to diagnose and manage, posing a challenge to clinicians. Since the last European guidelines were published in 2010, novel causes have emerged, diagnostic processes have evolved and treatments assessed which need to be reflected in updated guidelines.\nOBJECTIVE: We aimed to produce recommendations for the diagnosis and management of infectious encephalitis in adults based on current evidence to equip clinicians to improve patient outcomes.\nMETHODS: These guidelines were developed jointly with the support of two European specialist medical organisations. Clinical questions were prioritised and formulated in PICO format. A systematic literature search was conducted for each question, and the quality of evidence was assessed using standardised tools. Recommendations were developed according to the Grading of Recommendations, Assessment, Development and Evaluations (GRADE) approach. Where only indirect evidence was available, a good practice statement was made.\nRESULTS: Sixteen questions were considered, with two recommendations reached: for initiation of intravenous aciclovir as soon as possible upon suspicion of encephalitis and against replacing pathogen-specific polymerase chain reaction (PCR) testing of cerebrospinal fluid (CSF) with multiplex CSF PCR panels for diagnosis of adult patients with suspected infectious encephalitis. For adults with proven HSV encephalitis, we were unable to recommend for or against the use of corticosteroids. A further 13 good practice statements regarding when to clinically suspect infectious encephalitis, microbiological investigations, additional investigations, treatment and ongoing care and rehabilitation were agreed.\nCONCLUSIONS: Given the clinical severity and public health importance of this condition, the paucity of high-quality evidence is striking. Transnational, large-scale research in infective encephalitis is encouraged.",
+      "meshTerms": [
+        "Humans",
+        "Infectious Encephalitis",
+        "Europe",
+        "Adult",
+        "Neurology"
+      ],
+      "keywords": [
+        "GRADE",
+        "encephalitis",
+        "intervention",
+        "neurology",
+        "practice guidelines"
+      ],
+      "doi": "10.1111/ene.70647",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 4,
+      "breakdown": {
+        "authority": 0,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": false,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-10T01:12:03.270Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 감염성 뇌염 진단·관리 국제 지침, 신경·감염 응급 핵심",
+        "at": "2026-10-10T01:12:05.724Z"
       }
     }
   ],
@@ -56853,6 +56844,169 @@
         ]
       },
       "publishedAt": "2026-10-08"
+    },
+    {
+      "id": "pmid:39341492",
+      "pmid": "39341492",
+      "title": "Red Blood Cell Transfusion in Critically Ill Adults: An American College of Chest Physicians Clinical Practice Guideline.",
+      "pubDate": "2025 Feb",
+      "journal": "Chest",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:35:33.642Z",
+      "abstract": "BACKGROUND: Blood products frequently are administered to critically ill patients. Considering recent trials and practice variability, a comprehensive review of current evidence was deemed essential to offer pertinent guidance to critical care practitioners. This American College of Chest Physicians (CHEST) guidelines panel examined the literature on RBC transfusions among critically ill patients overall and specific subgroups, including patients with gastrointestinal bleeding, acute coronary syndrome (ACS), cardiac surgery, isolated troponin elevation, and septic shock, to provide evidence-based recommendations.\nSTUDY DESIGN AND METHODS: A panel of experts developed six Population, Intervention, Comparator, and Outcome questions addressing RBC transfusions in critically ill patients and performed a comprehensive evidence review. The panel applied the Grading of Recommendations, Assessment, Development, and Evaluations approach to assess the certainty of evidence and to formulate and grade recommendations. A modified Delphi technique was used to reach consensus on the recommendations.\nRESULTS: The initial search identified a total of 3,082 studies, and after the initial screening, 38 articles were reviewed. Among them, 23 studies met inclusion criteria, comprising 22 randomized controlled trials and one cohort study. Based on the analysis of these studies, the panel formulated two strong and four conditional recommendations. The overall quality of evidence for recommendations ranged from very low to moderate.\nCONCLUSIONS: In most critically ill patients, a restrictive strategy was preferable to a permissive approach because it does not increase the risk of death or complications, but does decrease RBC use significantly. Data from critically ill subpopulations also supported a restrictive approach, except in patients with ACS, for whom favoring a restrictive approach could increase adverse outcomes.",
+      "meshTerms": [
+        "Humans",
+        "Critical Illness",
+        "Erythrocyte Transfusion",
+        "Critical Care",
+        "United States",
+        "Adult",
+        "Acute Coronary Syndrome",
+        "Societies, Medical"
+      ],
+      "keywords": [
+        "GI bleed",
+        "acute coronary syndrome",
+        "cardiac surgery",
+        "critically ill",
+        "red blood cell",
+        "sepsis",
+        "septic shock",
+        "transfusion"
+      ],
+      "doi": "10.1016/j.chest.2024.09.016",
+      "pmcid": "PMC11867898",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.614359501259817,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 0.6143595012598174,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:59.039Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중환자 적혈구 수혈 CHEST 지침 — 핵심 중환자 주제",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|red-blood-cell-transfusion-critically-ill-adults-american-college-chest-physicians-clinical-practice",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39341492",
+          "title": "Red Blood Cell Transfusion in Critically Ill Adults: An American College of Chest Physicians Clinical Practice Guideline.",
+          "journal": "Chest",
+          "pubDate": "2025 Feb",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39341492/",
+          "doi": "10.1016/j.chest.2024.09.016"
+        },
+        "org": "American College of Chest Physicians (CHEST)",
+        "version": "2025 (published online Oct 2024; Chest 2025 Feb, Vol 167 Issue 2)",
+        "title_ko": "중환자 성인에서의 적혈구(RBC) 수혈: 미국흉부의사협회(CHEST) 임상진료지침",
+        "scope_ko": "ICU에 입원한 중증 성인 환자의 적혈구 수혈 전략(제한적 vs 허용적)을 다루며, 전체 중환자군과 함께 위장관 출혈, 급성 관상동맥증후군(ACS), 심장수술, 단독 트로포닌 상승, 패혈성 쇼크 등 세부 환자군을 포괄한다. 급성 출혈로 인한 혈역학적 불안정, 신경계 손상, 외상 환자에는 적용되지 않는다.",
+        "summary": [
+          "In most critically ill adults, use a restrictive RBC transfusion strategy over a permissive one — a restrictive threshold is generally Hb 7–8 g/dL vs a permissive threshold of ~8.5–10 g/dL; it does not increase mortality or complications while significantly reducing RBC use (Strong recommendation, Moderate certainty).",
+          "In critically ill patients with acute gastrointestinal bleeding, use a restrictive RBC transfusion strategy over a permissive one — associated with lower rebleeding, fewer adverse events, and lower mortality (Strong recommendation, Moderate certainty).",
+          "In critically ill patients with acute coronary syndrome (ACS), do NOT use a restrictive strategy (i.e., favor a more liberal/permissive approach) — a restrictive approach could increase adverse cardiac outcomes (Conditional recommendation / 'suggest against,' Low certainty).",
+          "In critically ill patients undergoing cardiac surgery, use a restrictive RBC transfusion strategy over a permissive one during the perioperative period (Conditional recommendation, Moderate certainty).",
+          "In critically ill patients with isolated serum troponin elevation without other evidence of cardiac ischemia, use a restrictive RBC transfusion strategy over a permissive one (Conditional recommendation, Very low certainty).",
+          "The panel issued 6 recommendations (2 strong, 4 conditional) from 23 included studies (22 RCTs, 1 cohort); transfusing one unit at a time with reassessment of hemoglobin after each unit reduced RBC units used by ~50%.",
+          "Recommendations do NOT apply to hemodynamic instability from acute hemorrhage, neurologic injury, or trauma."
+        ],
+        "summary_ko": [
+          "대부분의 중증 성인 환자에서 허용적 전략보다 제한적 적혈구 수혈 전략을 권고한다 — 제한적 역치는 대체로 Hb 7–8 g/dL, 허용적 역치는 약 8.5–10 g/dL이며, 사망률·합병증을 늘리지 않으면서 적혈구 사용량을 유의하게 줄인다 (강한 권고, 중등도 확실성).",
+          "급성 위장관 출혈이 있는 중환자에서는 허용적 전략보다 제한적 전략을 권고한다 — 재출혈·이상반응·사망률 감소와 연관된다 (강한 권고, 중등도 확실성).",
+          "급성 관상동맥증후군(ACS) 중환자에서는 제한적 전략을 권고하지 않는다(즉 더 허용적/자유로운 접근을 선호) — 제한적 접근 시 심장 관련 이상결과가 증가할 수 있다 (조건부 권고/'반대 제안', 낮은 확실성).",
+          "심장수술을 받는 중환자에서는 수술 전후 기간 동안 허용적 전략보다 제한적 전략을 제안한다 (조건부 권고, 중등도 확실성).",
+          "다른 심근허혈 증거 없이 단독으로 트로포닌만 상승한 중환자에서는 허용적 전략보다 제한적 전략을 제안한다 (조건부 권고, 매우 낮은 확실성).",
+          "패널은 23개 연구(RCT 22, 코호트 1)를 근거로 6개 권고(강한 권고 2, 조건부 권고 4)를 제시했으며, 한 번에 1단위씩 수혈하고 매 단위 후 혈색소를 재측정하는 방식으로 적혈구 사용량을 약 50% 줄였다.",
+          "이 권고들은 급성 출혈로 인한 혈역학적 불안정, 신경계 손상, 외상 환자에는 적용되지 않는다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "기본 전략 — 제한적 수혈의 표준화",
+            "detail": "Shift away from historical practice that prioritized maximizing oxygen delivery (liberal transfusion). The guideline establishes a restrictive threshold (Hb ~7–8 g/dL) as the default for most critically ill adults (Strong, Moderate certainty), because pooled RCTs (~16,000 patients) showed no difference in ICU, 30-day, or 1-year mortality and a reduction in overall adverse events (RR 0.45), while cutting RBC use substantially. Modeled impact: ~40% fewer patients transfused, potentially sparing ~500,000 patients.",
+            "detail_ko": "산소운반 극대화를 우선하던 과거의 자유로운(허용적) 수혈 관행에서 벗어나, 대부분의 중환자에서 제한적 역치(Hb 약 7–8 g/dL)를 기본으로 명시(강한 권고, 중등도 확실성). 약 16,000명 RCT 통합분석에서 ICU·30일·1년 사망률 차이가 없고 전체 이상반응은 감소(RR 0.45)했으며 적혈구 사용은 크게 줄었기 때문. 모델링상 수혈 환자 약 40% 감소, 최대 약 50만 명을 불필요한 수혈에서 구할 수 있음."
+          },
+          {
+            "topic": "ACS 예외 — 제한적 접근에 반대",
+            "detail": "ACS is carved out as an explicit exception: the guideline suggests AGAINST a restrictive strategy (favoring a more liberal threshold, closer to Hb 10 g/dL) because a restrictive approach could increase adverse cardiac outcomes/cardiac death (Conditional, Low certainty). This reflects newer evidence (notably the MINT trial), the one recent trial that did not clearly favor restriction — a departure from applying restriction uniformly across all critically ill subgroups.",
+            "detail_ko": "ACS는 명시적 예외로 분리되어, 제한적 전략에 반대(보다 자유로운 역치, Hb 10 g/dL에 가깝게 선호)로 제안한다 — 제한적 접근 시 심장 이상결과/심장사가 증가할 수 있기 때문(조건부 권고, 낮은 확실성). 이는 제한적 전략을 분명히 지지하지 않은 최근 MINT 시험 등 신규 근거를 반영한 것으로, 모든 중환자 세부군에 제한적 접근을 일률 적용하던 흐름에서 벗어난 것이다."
+          },
+          {
+            "topic": "세부군 근거 확장 (GIB·심장수술·단독 트로포닌)",
+            "detail": "Subgroup-specific recommendations now formalize restriction beyond the general ICU population: acute GI bleeding (Strong, Moderate — lower rebleeding/mortality, per Villanueva et al), perioperative cardiac surgery (Conditional, Moderate), and isolated troponin elevation without ischemia (Conditional, Very low). Septic shock was discussed but protocol-driven goal-directed-therapy studies were excluded from the evidence review.",
+            "detail_ko": "세부군별 권고가 일반 ICU 집단을 넘어 제한적 전략을 공식화: 급성 위장관 출혈(강한 권고, 중등도 — Villanueva 등에서 재출혈·사망률 감소), 수술 전후 심장수술(조건부, 중등도), 허혈 증거 없는 단독 트로포닌 상승(조건부, 매우 낮음). 패혈성 쇼크는 논의되었으나 프로토콜 기반 목표지향치료 연구는 근거검토에서 제외되었다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "CHEST 공식 보도자료 — 제한적 전략의 공중보건적 파급효과",
+            "body_ko": "발행 학회(CHEST)의 공식 보도자료는 본 지침이 6개 근거기반 권고로 임상 현장에 적용할 틀을 제공하며, 제한적 전략 도입 시 수혈받는 환자 수를 약 40% 줄여 최대 약 50만 명을 불필요한 적혈구 수혈에서 구할 수 있다고 설명한다. 적혈구 수혈이 생명을 구할 수 있으나 중대하고 때로 생명을 위협하는 이상반응 위험을 수반한다는 점을 강조한다. (지침 원문이 아닌 학회 요약 자료의 서술)",
+            "sourceLabel": "CHEST 공식 보도자료 (chestnet.org)",
+            "sourceUrl": "https://www.chestnet.org/newsroom/press-releases/2024/10/guideline-on-red-blood-cell-transfusion-released-by-chest"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, default to a restrictive trigger of Hb 7–8 g/dL for most ICU patients (including GI bleeding, cardiac surgery, isolated troponin bumps), transfuse single units and recheck hemoglobin after each unit rather than ordering multiple units reflexively — this halves units given with no increase in death or complications. The key exception is ACS: do not apply a restrictive trigger, and instead favor a more liberal threshold (~Hb 10 g/dL). These thresholds do not apply to actively hemorrhaging/hemodynamically unstable patients, trauma, or neurologic injury, where clinical judgment and resuscitation needs govern.",
+        "practiceImpact_ko": "실제 진료에서는 대부분의 ICU 환자(위장관 출혈, 심장수술, 단독 트로포닌 상승 포함)에 Hb 7–8 g/dL 제한적 역치를 기본으로 하고, 여러 단위를 반사적으로 처방하는 대신 1단위씩 수혈 후 매번 혈색소를 재확인한다 — 이렇게 하면 사망·합병증 증가 없이 수혈 단위를 절반으로 줄일 수 있다. 핵심 예외는 ACS로, 제한적 역치를 적용하지 말고 보다 자유로운 역치(약 Hb 10 g/dL)를 선호한다. 이 역치는 활동성 출혈/혈역학적 불안정 환자, 외상, 신경계 손상에는 적용되지 않으며 이 경우 임상 판단과 소생 필요에 따른다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39341492",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39341492/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.chest.2024.09.016",
+            "url": "https://doi.org/10.1016/j.chest.2024.09.016"
+          },
+          {
+            "label": "웹 — CHEST 공식 보도자료 — Guideline on Red Blood Cell Transfusion Released by CHEST",
+            "url": "https://www.chestnet.org/newsroom/press-releases/2024/10/guideline-on-red-blood-cell-transfusion-released-by-chest"
+          },
+          {
+            "label": "웹 — CHEST Physician — RBC transfusion guidelines in critical care: making the case for a restrictive approach",
+            "url": "https://www.chestphysician.org/rbc-transfusion-guidelines-in-critical-care/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-10"
     }
   ],
   "rejected": [
@@ -61820,7 +61974,7 @@
       "id": "pmid:42557008",
       "pmid": "42557008",
       "title": "Correction to: 2025 ESC/EACTS Guidelines for the management of valvular heart disease: Developed by the task force for the management of valvular heart disease of the European Society of Cardiology (ESC) and the European Association for Cardio-Thoracic Surgery (EACTS).",
-      "pubDate": "2026 Aug 6",
+      "pubDate": "2026 Oct 9",
       "journal": "European heart journal",
       "publicationTypes": [
         "Published Erratum"
@@ -61828,7 +61982,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-09-04T23:15:17.951Z",
+      "discoveredAt": "2026-10-10T01:11:52.830Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62241,7 +62395,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-08T01:13:13.486Z",
+      "discoveredAt": "2026-10-10T01:11:52.830Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -62275,7 +62429,7 @@
       "id": "pmid:42786624",
       "pmid": "42786624",
       "title": "Social Determinants of Guideline-Directed Oral Anticoagulation Prescription in Patients With Atrial Fibrillation Without Contraindications: Findings From the American Heart Association Get With the Guidelines-Atrial Fibrillation Registry.",
-      "pubDate": "2026 Sep 24",
+      "pubDate": "2026 Oct 6",
       "journal": "Journal of the American Heart Association",
       "publicationTypes": [
         "Journal Article"
@@ -62283,9 +62437,20 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-08T01:13:13.486Z",
+      "discoveredAt": "2026-10-10T01:11:52.830Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Atrial Fibrillation",
+        "Female",
+        "Anticoagulants",
+        "Registries",
+        "Male",
+        "Aged",
+        "Social Determinants of Health",
+        "Administration, Oral",
+        "United States"
+      ],
       "keywords": [
         "atrial fibrillation",
         "machine learning",
@@ -62316,7 +62481,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-08T01:13:13.486Z",
+      "discoveredAt": "2026-10-10T01:11:52.830Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62327,6 +62492,33 @@
       "status": "rejected",
       "verdict": "rejected",
       "documentType": "recommendations",
+      "reasons": [
+        "correction-or-erratum"
+      ]
+    },
+    {
+      "id": "pmid:42848488",
+      "pmid": "42848488",
+      "title": "Correction to: Implementation of guideline-directed medical therapy in patients with heart failure and obesity: European Journal of Heart Failure expert consensus document.",
+      "pubDate": "2026 Oct 8",
+      "journal": "European journal of heart failure",
+      "publicationTypes": [
+        "Published Erratum"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-10T01:11:52.830Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1093/ejhf/xuag264",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "guideline",
       "reasons": [
         "correction-or-erratum"
       ]
@@ -62382,9 +62574,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261008_100944:guideline:2026-10-08",
+    "runId": "trend_review_20261010_100600:guideline:2026-10-10",
     "outcome": "published",
-    "publishedId": "pmid:40214785",
+    "publishedId": "pmid:39341492",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -62393,8 +62585,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -62403,21 +62595,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 9,
-            "idsFetched": 9,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 133,
+        "mergedTotal": 135,
         "overlapCount": 2,
-        "ptOnlyCount": 1,
-        "expandedOnlyCount": 7,
+        "ptOnlyCount": 2,
+        "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
-        "newestFetchedDate": "2026 Sep-Oct",
+        "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/08",
-          "maxDate": "2026/10/08"
+          "minDate": "2026/09/10",
+          "maxDate": "2026/10/10"
         },
         "retmax": 60,
         "topics": [
@@ -62425,8 +62617,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 41,
-            "idsFetched": 41,
+            "totalFound": 43,
+            "idsFetched": 43,
             "truncated": false,
             "error": null
           },
@@ -62443,8 +62635,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 15,
-            "idsFetched": 15,
+            "totalFound": 19,
+            "idsFetched": 19,
             "truncated": false,
             "error": null
           },
@@ -62452,8 +62644,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 16,
-            "idsFetched": 16,
+            "totalFound": 14,
+            "idsFetched": 14,
             "truncated": false,
             "error": null
           },
@@ -62506,8 +62698,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           },
@@ -62521,18 +62713,19 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 123,
+        "topicOnlyCount": 126,
         "ptPmids": [
           "42788594",
           "42552475",
-          "42549877"
+          "42549877",
+          "40298962"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 133,
-          "enriched": 133,
-          "withAbstract": 99,
+          "requested": 135,
+          "enriched": 135,
+          "withAbstract": 95,
           "error": null
         }
       },
@@ -62585,25 +62778,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
+        "scored": 1,
         "batches": 1,
         "failed": 0,
         "error": null
       },
       "decisions": {
-        "queued": 212,
-        "needsReview": 451,
-        "rejected": 129,
+        "queued": 213,
+        "needsReview": 450,
+        "rejected": 130,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40214785",
+        "candidateId": "pmid:39341492",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-08T01:16:04.304Z",
+  "updatedAt": "2026-10-10T01:14:04.015Z",
   "configVersion": "guideline-v2"
 }

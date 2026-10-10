@@ -847,5 +847,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "pool_too_small",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42274006",
+    "title": "Vasopressors or Fluids in Early Septic Shock.",
+    "date": "2026-10-10",
+    "topic": "sepsis_shock",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 3,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]

@@ -1839,23 +1839,6 @@
       "status": "queued"
     },
     {
-      "pmid": "34910228",
-      "title": "Current practice and evolving concepts in septic shock resuscitation.",
-      "journal": "Intensive Care Med",
-      "score": 6.7,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "패혈성 쇼크 소생, 응급·중환자 정중앙 복습감",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "35943569",
       "title": "Extracorporeal carbon dioxide removal for acute respiratory failure: a review of potential indications, clinical practice and open research questions.",
       "journal": "Intensive Care Med",
@@ -11490,6 +11473,157 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "34910228",
+      "title": "Current practice and evolving concepts in septic shock resuscitation.",
+      "journal": "Intensive Care Med",
+      "score": 6.7,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈성 쇼크 소생, 응급·중환자 정중앙 복습감",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-10",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "34910228",
+          "title": "Current practice and evolving concepts in septic shock resuscitation.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2021-12-16",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/34910228/",
+          "doi": "10.1007/s00134-021-06595-9"
+        },
+        "title_ko": "패혈성 쇼크 소생술의 현행 진료와 진화하는 개념",
+        "scope_ko": "지난 수십 년간 패혈성 쇼크의 병태생리·임상 이해가 발전하면서 사망률이 꾸준히 감소했으나 여전히 많은 의문이 남아 있다. 이 종설은 패혈성 쇼크 소생술의 현행 표준을 서술하되, 임상 소생 목표(target), 수액·혈관작용제의 적절한 사용, 불응성 쇼크(refractory shock), 체외 치료 등 여러 영역에서 '진화하는 개념'에 초점을 맞춘다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "소생 목표 (Resuscitation targets) — 평균동맥압(MAP)",
+            "body_ko": "Surviving Sepsis Campaign(SSC)은 초기 개입의 하한 역치로 \"MAP 65 mmHg\"를 권고한다. 그러나 저자들은 이 접근이 개별화되어 있지 않다는 점을 지적한다 — 초기 혈압 목표가 환자별로 맞춰져 있지 않으며, '개별화된 혈압 목표'를 정의할 필요가 있다는 것이다.\n\n더 높은 목표를 검증한 대표적 연구가 SEPSISPAM으로, 기존 고혈압 환자라고 해서 더 높은 MAP 목표가 모두에게 이득이 되는 것은 아닐 수 있음을 보여 주었다. ANDROMEDA-SHOCK은 혈관수축제 부하 검사(vasopressor test)를 통한 개별화 개념을 제시했는데, MAP를 올린 뒤 조직 관류에 미치는 효과(CRT, 소변량, lactate, 사지/심근 허혈, 부정맥 등)를 함께 모니터링하는 방식이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "소생 목표 — 젖산(Lactate)",
+            "body_ko": "저자들은 lactate의 유용성을 인정하면서도 한계를 함께 짚는다. lactate 기반 소생이 효과적임이 입증되기는 했으나, lactate 수치와 혈압을 목표로 삼아 함께 다루는 일의 복잡성이 최근 부각되었다고 적는다.\n\nlactate는 회복 동역학(kinetics)이 느리고, 수액 투여의 방아쇠(trigger)로 오용되는 경우가 잦다. 또한 생성 원천이 여러 가지이며, 실제 임상에서는 저산소(hypoxia)와 무관한 원인이 오히려 우세할 수 있다는 점을 강조한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "소생 목표 — 모세혈관 재충전 시간(CRT)",
+            "body_ko": "CRT는 소생의 '진화하는 개념'으로 제시된다. ANDROMEDA-SHOCK 연구에서 CRT를 목표로 한 소생은 더 낮은 사망률(34.9% 대 43.4%, p = 0.06), 장기 기능이상에 대한 유익한 효과, 그리고 더 낮은 치료 강도와 연관되었다. SSC 지침은 이제 다른 조직 관류 지표에 더하여 소생을 안내하는 데 CRT를 사용하도록 권고한다.\n\n장점으로는 수액 부하에 대한 빠른 반응 시간, 상대적 단순성, 그리고 자원이 제한된 환경에서도 사용할 수 있다는 점이 꼽힌다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "소생 목표 — 중심정맥 산소포화도(ScvO₂)",
+            "body_ko": "ScvO₂는 산소공급/산소소비(DO₂/VO₂) 관계의 지표로 기능하지만 한계가 있다. 심한 미세순환 장애가 있어도 값이 정상 또는 초정상(supranormal)으로 나타날 수 있고, 관류 그 자체보다 대사 스트레스를 더 반영한다.\n\n또한 ScvO₂를 '목표(target)'로 검증한 주요 임상시험들이 음성 결과를 낸 이후, 그 역할에 대한 혼란이 생겼다고 저자들은 적는다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "소생 목표 — 정맥-동맥 이산화탄소 차(Pv-aCO₂)와 심박출량(CO)",
+            "body_ko": "Pv-aCO₂는 전신 혈류의 간접 지표로 기술된다. 다만 조직 저산소를 직접 반영하지는 않으며, 전신 혈류가 유지되거나 높은 상태에서 조직 저산소가 있어도 정상으로 나올 수 있다.\n\n심박출량(CO) 모니터링은 정교한 기술을 요한다. 저자들은 최적/적절 목표치가 여전히 불확실하며, 개별화된 목표지향치료(personalized medicine)의 필요성을 강조한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "수액 (Fluids) — 결정질액 대 균형수액(balanced solution)",
+            "body_ko": "결정질액(crystalloid)은 여전히 패혈증 소생의 주된 수액이다. 균형수액('저염소(low chloride)') 용액은 임상에서 점차 많이 쓰이고 있으며, 특히 패혈성 쇼크 소생의 아주 초기(응급실 단계)에 시작할 때 더 유익할 수 있다.\n\n다만 최근 한 임상시험은 균형수액이 고염소 생리식염수에 비해 유의한 이득을 보여 주는 데 실패했는데, 이는 고염소혈증(hyperchloremia)이 유발되지 않은 상황에서였다. SSC 지침은 결정질액을 대량으로 사용했을 때 albumin 사용을 권고하지만, 획일적(one-size-fits-all) 연구에서 사망률 이득을 보인 연구가 없어 근거 수준은 중등도에 그친다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "수액 — 투여량과 시점",
+            "body_ko": "SSC 지침은 인지 후 3시간 이내에 최소 30 ml/kg를 투여하도록 권고한다. 그러나 저자들은 이 30 ml/kg 용량이 관찰연구 근거에만 기반하며 개별화가 필요하다는 점에서 논란이 있다고 강조한다.\n\n중요한 관찰로, 패혈성 쇼크 초기 환자의 50–60%만이 수액 반응자(fluid responder)이고, 25%는 초기 수액 소생 이후 이미 수액 비반응 상태일 수 있다. 따라서 상당수 환자에서 수액 투여가 오히려 해가 될 가능성이 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "수액 — 수액 반응성 평가",
+            "body_ko": "수액 반응성을 평가하는 세 가지 접근이 제시된다.\n\n1) 수액 부하 검사(fluid challenge): 짧은 시간에 일정 용량의 수액을 주입하면서 CO와 조직 관류를 모니터링하여 실제로 시스템을 '시험'하는 방법.\n\n2) 수동적 하지 거상(PLR) 및 동적 변수: 기계환기 환자에서 일회호흡량 변이(SVV)나 맥압 변이(PPV), 또는 호기말 정지(end-expiratory hold)나 일회호흡량을 6–8 ml/kg로 올리는 조작을 이용.\n\n3) 심초음파: 하대정맥보다 상대정맥의 에코 유래 변이가 제한점이 적어 더 신뢰할 만한 방법이나, 더 침습적인 경식도 심초음파를 요한다.\n\n핵심 한계는 역시 초기 패혈성 쇼크 환자의 50–60%만이 수액 반응자라는 점이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "수액 — 제한적 수액 소생과 조기 혈관수축제",
+            "body_ko": "저자들은 SOSD 개념(Salvage 구조, Optimization 최적화, Stabilization 안정화, De-escalation 감량)을 소개하며, 수액 투여는 병인, 임상 맥락, 동반질환의 존재, 부작용을 함께 고려해 개별화되어야 한다고 본다.\n\n수액과 함께 혈관수축제를 조기에 시작하는 것과 관련하여, 수액과 혈관수축제를 동시에 시작하는 전략은 더 적은 수액 사용, 더 낮은 순 수액 균형(net fluid balance), 저혈압 지속시간 단축, 그리고 폐부종 및 신규 부정맥 발생 감소와 연관된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "수액 — 수액 과부하와 감량(de-escalation)",
+            "body_ko": "수액 과부하는 흔히 장기 기능이상의 증거(이탈 관련 심부전, 장기 부종, 복강내 고혈압, 급성 신손상 등)와 연관되며 이환율과 사망률 증가로 이어진다.\n\n수액 제거와 관련하여, 안정화된 환자에서의 수액 비반응성은 수액 제거를 시작하는 지표로 성공적으로 활용되어 왔으며, 초음파를 이용해 수액 제거를 안내할 경우 효율이 개선됨이 보고되었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈관작용제 (Vasoactive drugs) — Norepinephrine",
+            "body_ko": "Norepinephrine은 현재 1차 선택 혈관수축제이다. Norepinephrine 투여는 평균동맥압(MAP)을 올릴 뿐 아니라 그 베타-1 아드레날린 효과와 정맥 환류 증가가 맞물려 CO와 조직 관류를 증가시킬 수 있다.\n\n저자들은 개별적 반응을 강조한다 — Norepinephrine으로 MAP를 올렸을 때 미세순환 관류에 미치는 효과는 미세순환의 기저 상태에 따라 달라졌다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈관작용제 — Vasopressin 및 유사체",
+            "body_ko": "Vasopressin은 생리학적 근거에도 불구하고 실제 진료에서 사용이 다양하다. 현재 권고는 MAP가 여전히 부족할 때 Vasopressin을 1차 약물로 쓰기보다, 저~중등도 용량의 norepinephrine(0.25–0.5 mcg/kg/min)에 추가하는 것이다. 한 메타분석에서 vasopressin 사용은 신대체요법 필요성 감소, 90일 사망률 감소 경향과 연관되었으나, 손가락 허혈(digital ischemia) 같은 합병증은 더 많았다.\n\n새로운 vasopressin 유사체로, Terlipressin은 norepinephrine과 비교해 사망률 차이는 없었으나 손가락 허혈 등 이상반응 발생률이 더 높았다(terlipressin 30%, norepinephrine 12%). Selepressin은 실험 모델에서의 이점에도 불구하고 사망률과 혈관수축제·인공호흡기 비사용일수에서 위약과 유사한 효과를 보였고, 허혈성 이상반응은 selepressin군에서 더 높았다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈관작용제 — Angiotensin II (ATII)",
+            "body_ko": "패혈성 쇼크에서 ATII 사용은 혈압을 올리고 표준 혈관수축제의 필요량을 줄이지만 결과(outcome)에는 영향을 주지 않는다. 주목할 점으로, 환자의 최대 30%는 ATII에 반응하지 않았다. 다만 신대체요법이 필요한 급성 신손상이 있고 renin 수치가 상승한 환자에서는 유의한 사망률 이득이 있었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈관작용제 — 조기 혈관수축제 투여",
+            "body_ko": "최근 근거는 혈관수축제를 수액과 동시에, 또는 매우 제한적인 수액 소생 직후에 시작하는 것이 유익한 효과와 연관되는 반면, 늦게 시작하면 사망률 증가와 연관됨을 시사한다.\n\n잠재적 이점으로는 혈액량의 동원(mobilization), 심실-동맥 결합(ventriculo-arterial coupling)의 최적화, 그리고 저혈압 교정을 통한 미세순환 구동압(driving pressure) 개선이 꼽힌다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈관작용제 — Dobutamine 및 기타 수축촉진제",
+            "body_ko": "Dobutamine은 임상적 반응과 유리한 작용 발현/소실 특성 덕분에 급성 중증 환자에서 기준이 되는 수축촉진제(inotrope)이다. 현재 사용 지침은 주로 수액 소생 후에도 조직 관류 이상 징후가 지속될 때로 한정된다.\n\n최근 연구는 반응자를 규명했는데, dobutamine은 이들 환자의 18%에서 이득을 보였고, 이들은 낮은 좌심실 박출률(LVEF < 40%)과 일회박출량 지표인 낮은 대동맥 속도-시간 적분(VTI)으로 특징지어졌다. 용량과 관련해, 현 치료에 저용량(5 mcg/kg/min) dobutamine을 추가하면 대순환뿐 아니라 미세순환 혈류도 개선되었다. 한 메타분석에서는 중증 패혈증 또는 패혈성 쇼크 환자에서 dobutamine이 사망률 감소와 유의하게 연관되었다(dobutamine 대 위약 OR 0.30; 95% CI 0.09–0.99). ANDROMEDA-SHOCK은 제한된 시간 동안 5 mcg/kg/min를 주입해 이득을 평가하는 '수축확장제 검사(inodilator test)'를 도입했다.\n\n대안 수축촉진제로, 칼슘 감작제인 Levosimendan은 명확한 심기능 손상이 없는 환자에서 표준 치료에 추가해도 이환율·사망률 개선과 연관되지 않았다. 포스포디에스터라제-3 억제제인 Milrinone과 Enoximone은 실험 연구에서 가능성 있는 이점을 보였으나 환자 결과에 대한 임상 연구는 드물다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "불응성 쇼크 (Refractory shock) — 정의와 기여 요인",
+            "body_ko": "불응성 패혈성 쇼크는 혈관작용 치료를 증량해도 적절한 조직 관류를 회복하지 못하는 상태로 가장 잘 정의되는, 생명을 위협하는 상황이다. 침상에서는 저혈량증이 없는 상태에서 환자가 0.25 μg/kg/min을 초과하는 norepinephrine을 투여받고 있는데도 저혈압과 저관류가 지속되는 것으로 인지할 수 있다.\n\n여러 기여 기전이 (원문 Table 3에) 기술된다: 심부 체온 >39°C(대사 요구 증가), 80세 초과 고령(혈관운동 긴장도 감소와 연관), 산증(pH <7.20, 혈관 수축력 손상), 고혈당(혈관운동 긴장도 감소), 중증질환 관련 코르티코스테로이드 부족(critical illness-related corticosteroid insufficiency), vasopressin 결핍, thiamine 및 vitamin C 결핍 등이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "불응성 쇼크 — 보조 치료와 진단적 고려",
+            "body_ko": "보조 치료 중 특정 환자에서 hydrocortisone(코르티코스테로이드)의 이득은 확립되어 있다. 비타민의 역할은 덜 명확하다. Methylene blue(MB)는 guanylate cyclase를 차단해 과도한 산화질소(NO) 생성을 줄여 혈역학을 개선하지만, 소규모 연구만 수행되었고 결과가 상충하여 현재로서는 사용을 권고할 수 없다.\n\n진단적 고려로, 심하게 저하된 혈관수축제 반응성과 높은 혈관수축제 지지로 인한 좌심실 유출로 폐쇄(LV outflow tract obstruction) 같은 합병증을 구별하는 것이 중요하다. 따라서 불응성 쇼크 진단에는 항상 심초음파가 동반되어야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "체외 혈액정화 치료 (ECBPT) 및 VA-ECMO",
+            "body_ko": "저자들은 여러 기법을 (원문 Table 4에서) 검토하며 대체로 음성 결과를 보고한다: 고용량 혈액여과(HVHF, Joannes-Boyau) — 사망률 이득 없음; 고차단분자량 혈액여과(high cut-off, Atan) — 이득 없음; 혈액관류/흡착(Cytosorb®, Schädler 등) — 이득 없음; Polymyxin B 혈액관류(EUPHRATES) — 사망률 이득 없음; LPS 흡착기(Lipcsey 등 2020) — 조기 종료, 사망률 이득 없음; 결합 혈장여과/흡착(coupled plasma filtration/adsorption, Garbero 등 2021) — 이상반응으로 조기 종료; 혈장교환술(plasmapheresis, Busund 등 2002) — 28일 사망률에 유의한 효과 없음; 선택적 세포분리(selective cytopheresis, Tumlin 등) — 사망률 이득 없음.\n\n핵심 한계로, 패혈증의 면역 반응은 개별적 과정이고 cytokine 양상이 패혈증 표현형(phenotype)마다 크게 달라 ECBPT의 성공을 예측하기 어렵다. 또한 영양소·미량원소·약물의 의도치 않은 제거 등 이상반응이 보고되었으며, 이들 기법의 임상적 이득은 여전히 논란의 여지가 있고 추가 연구가 필요하다. VA-ECMO의 경우, 최근 체계적 고찰·메타분석은 특히 LVEF가 매우 낮은 패혈성 쇼크 환자가 이득을 볼 수 있음을 시사했다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진화하는 개념과 저자의 유보(hedging)·결론",
+            "body_ko": "종설 전반에서 저자들은 불확실성을 강조한다. \"여전히 많은 의문이 남아 있다\", 진료의 거의 모든 측면에서 \"견고한 근거가 부족하다\", 효과는 \"적절한 프로토콜의 올바른 사용에 달려 있다\", \"아직 충분한 임상적 이득의 근거가 부족하다\", \"추가 연구가 필요하다\", \"아직 결정되지 않았다\", \"예측하기 어렵다\", \"여전히 진화하는 개념이다\" 같은 유보적 표현이 반복된다.\n\n결론에서 저자들은, 모든 영역에서 견고한 근거의 부재가 점점 커지는 우려이며 이로 인해 대부분의 중재에 대해 강한 권고를 하기 어렵다고 적는다. 따라서 여러 우수 연구그룹의 공동 노력을 통해 패혈성 쇼크 환자의 개별화(individualisation)와 표현형 분류(phenotyping)에 초점을 둔 폭넓은 연구 의제가 반드시 필요하다고 제언한다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "web-augmented",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 MAP 65 mmHg·30 ml/kg 같은 획일적 목표를 기계적으로 적용하기보다, CRT를 포함한 조직 관류 지표로 소생을 안내하고 각 중재(수액·혈관수축제 증량)를 짧은 결정 주기 안에서 '가역적 검사'처럼 다루는 개별화 접근이 강조된다. 초기 환자의 절반 정도만 수액 반응자이므로 반응성을 먼저 확인하고, 수액을 반복 볼루스하기보다 norepinephrine을 조기에(필요 시 vasopressin 0.25–0.5 mcg/kg/min 구간에서 추가) 병행해 순 수액 균형과 폐부종·부정맥을 줄이는 쪽을 고려한다. norepinephrine >0.25 μg/kg/min에도 저관류가 지속되면 불응성 쇼크로 보고 심초음파로 유출로 폐쇄 등을 배제하며 hydrocortisone 등 보조 치료를 고려하되, 체외 혈액정화 치료는 근거 부족으로 일상 사용을 권고하지 않는다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 34910228",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34910228/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-021-06595-9",
+            "url": "https://doi.org/10.1007/s00134-021-06595-9"
+          },
+          {
+            "label": "웹 — ICM 2022 전문 PDF (Bakker et al., 48:148–163) — 텍스트 추출본",
+            "url": "https://www.otamendi.com.ar/wp-content/uploads/2024/05/Current-practice-and-evolving-concepts-in-septic-shock-resuscitation.pdf"
+          },
+          {
+            "label": "웹 — Springer Link 게재 페이지 (초록·서지)",
+            "url": "https://link.springer.com/article/10.1007/s00134-021-06595-9"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -11547,9 +11681,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-08",
+    "date": "2026-10-10",
     "outcome": "published",
-    "publishedId": "37184336"
+    "publishedId": "34910228"
   },
-  "updatedAt": "2026-10-08"
+  "updatedAt": "2026-10-10"
 }
