@@ -215,17 +215,87 @@ export function isAutomationTranscript(raw) {
   return false;
 }
 
+/* ★ 같은 파일 안에 섞인 자동 보안 리뷰 턴 — **기록 단위로 출처를 가른다** (d1-20261007-25 · 10-07 실물).
+ * security-guidance 2.0.8 훅은 커밋마다 백그라운드 리뷰를 돌리는데, 그 리뷰가 **본 세션과 같은 jsonl** 에
+ * entrypoint `sdk-py` · parentUuid 없음으로 들어온다. 첫 사람 메시지가 원격(remote)이라 위 isAutomationTranscript
+ * (파일 단위)로는 못 가르고, 종전엔 리뷰 프롬프트가 `### PeterJ`(자리표시)로, 리뷰 답이 `### Claude` 로 렌더됐다.
+ * 게다가 하네스가 뒤이은 "Continue…"·사람 입력을 그 리뷰 턴의 자식으로 붙인다(10-07 18:35/18:38/18:52 KST).
+ * **그래서 sdk 뿌리 사슬을 통째로 버리면 안 된다** — 진짜 사람 입력과 작업 결과가 거기 매달린다.
+ * 가르는 것은 딱 이것뿐이다:
+ *   뿌리 = entrypoint sdk* 이고 첫 글이 AUTOMATION_OPENERS 로 시작하는 user 기록
+ *   사슬 = 부모(parentUuid)가 집합 안이고 entrypoint sdk* 이며 **사람 글이 아닌** 기록(assistant·attachment·tool_result 뿐인 user 등).
+ *          부모가 없거나 줄 순서가 뒤집혀도 같은 promptId 의 user 기록(tool_result)은 뿌리에 붙인다(고정점까지 반복 — 줄 순서 무관).
+ * 사람 글(user text)이 오면 거기서 사슬이 끊긴다 — 리뷰 턴의 자식이라도 사람 입력·그 뒤 작업은 종전대로 남는다.
+ * 사람이 대화형 표면에서 직접 부른 /security-review 는 entrypoint 가 sdk 가 아니라 걸리지 않는다.
+ * 지우지 않는다 — 화자만 `자동 보안 리뷰(요청)`·`자동 보안 리뷰(답)` 으로 바꾸고 첫 줄에 출처를 단다.
+ * ⚠ 기록을 정확히 하는 것이지 하네스의 resume 갈래 선택을 고치는 것이 아니다. */
+export const REVIEW_ASK = '자동 보안 리뷰(요청)';
+export const REVIEW_ANSWER = '자동 보안 리뷰(답)';
+/** 하네스 안내 — 출력 안전 검사가 답을 멈췄을 때 하네스가 user 자리에 넣는 글(isMeta:true · refusedMessageId · 10-11 C1 실측 CLI 2.1.296).
+ * 사람 입력이 아니다 — PeterJ 로 적지 않는다(d1-20261011-12). 본문은 받은 그대로. */
+export const REFUSAL_NOTE = '시스템(출력 차단)';   // 이름에 ' · ' 를 넣지 않는다 — 머리 줄 화자 파싱(/^### (.+?) · /)이 거기서 끊긴다
+export const isRefusalNote = (o) => o?.type === 'user' && o.isMeta === true && typeof o.refusedMessageId === 'string' && o.refusedMessageId.length > 0;
+const isSdk = (o) => typeof o?.entrypoint === 'string' && o.entrypoint.startsWith('sdk');
+function firstUserText(o) {
+  const c = o.message?.content;
+  return typeof c === 'string' ? c
+    : Array.isArray(c) ? (c.find((b) => b && b.type === 'text' && typeof b.text === 'string')?.text ?? null) : null;
+}
+/** 사람 글을 품은 user 기록인가 — tool_result·이미지·메타·주입(system-reminder 등)만 있으면 아니다. */
+// d1-20261007-26 ①: 첫 text 블록만 보면 [주입 + 사람 말] 배열을 놓친다 → **모든** text 블록에서 주입이 아닌 사람 글을 찾는다.
+// 작업 중 끼워 넣은 사람 말(attachment queued_command · origin.kind=human 또는 humanTurn=true)도 사슬 중단점이다.
+const hasUserText = (o) => {
+  if (queuedHumanPrompt(o)) return true;
+  if (o.type !== 'user' || o.isMeta) return false;
+  const c = o.message?.content;
+  const texts = typeof c === 'string' ? [c]
+    : Array.isArray(c) ? c.filter((b) => b && b.type === 'text' && typeof b.text === 'string').map((b) => b.text) : [];
+  return texts.some((x) => x.trim() !== '' && !isInjected(x));
+};
+/** records 중 자동 보안 리뷰 턴(뿌리와 그 직접 사슬)의 집합(Set<record>). */
+export function automationReviewRecords(records) {
+  const set = new Set(), uuids = new Set(), prompts = new Set();
+  const add = (o) => { set.add(o); if (o.uuid) uuids.add(o.uuid); };
+  for (const o of records) {
+    if (o.isSidechain || o.type !== 'user' || !isSdk(o)) continue;
+    const text = firstUserText(o);
+    if (text !== null && AUTOMATION_OPENERS.some((re) => re.test(text.trimStart()))) {
+      add(o);
+      if (o.promptId) prompts.add(o.promptId);
+    }
+  }
+  if (!set.size) return set;
+  for (let changed = true; changed;) {
+    changed = false;
+    for (const o of records) {
+      if (set.has(o) || o.isSidechain || !isSdk(o) || hasUserText(o)) continue;
+      const linked = (o.parentUuid && uuids.has(o.parentUuid))
+        || (o.type === 'user' && o.promptId && prompts.has(o.promptId));
+      if (linked) { add(o); changed = true; }
+    }
+  }
+  return set;
+}
+
 /** 대화방 서명만 해석한다. 전달된 PeterJ 발화를 직접 지시와 구별한다. */
 export function roomSpeaker(firstLine) {
   const first = String(firstLine ?? '').split(/\r?\n/)[0].trim();
   if (/^\[PeterJ via D1\]/.test(first)) return 'PeterJ(GPT)';
   if (/^\[PeterJ\]/.test(first)) return 'PeterJ(GitHub 직접)';
-  const m = /^\[(D1|C[1-9]|Claude|PeterJ\(GPT\)|PeterJ\(클로드\)) (?:→|->) (D1|C[1-9]|Claude)\]/.exec(first);
+  // 10-06 추가(§3-7): 화살표 `⇢` · 맨 `C`(§13 투입 방) · 대상 뒤 꼬리 ` · …`. `C<자유 이름>`·C10+ 는 받지 않는다.
+  const m = /^\[(D1|C[1-9]?|Claude|PeterJ\(GPT\)|PeterJ\(클로드\)) (?:→|->|⇢) (D1|C[1-9]?|Claude)(?: · [^\]]*)?\]/.exec(first);
   if (!m) return null;
   const [, from, to] = m;
-  if ((from === 'D1' || from === 'PeterJ(GPT)') && /^(?:C[1-9]|Claude)$/.test(to)) return from;
-  if (/^(?:C[1-9]|Claude|PeterJ\(클로드\))$/.test(from) && to === 'D1') return from === 'Claude' ? 'C1' : from;
+  if ((from === 'D1' || from === 'PeterJ(GPT)') && /^(?:C[1-9]?|Claude)$/.test(to)) return from;
+  if (/^(?:C[1-9]?|Claude|PeterJ\(클로드\))$/.test(from) && to === 'D1') return from === 'Claude' ? 'C1' : from;
   return null;
+}
+
+/** 서명은 못 읽지만 방 글 모양인가 — 첫 줄이 `[…]` 로 시작하고 같은 줄에 글 번호(d1-/c1-/c-YYYYMMDD-NN)가 있다.
+ * 10-06(§3-7): 이런 글은 버리지 않고 `서명 없음` 으로 보존한다. 모양이 아니면 종전대로 버린다(일반 댓글). */
+export function roomShaped(body) {
+  const first = String(body ?? '').split(/\r?\n/)[0].trim();
+  return /^\[[^\]\r\n]{1,120}\]/.test(first) && /\b(?:d1|c1|c)-\d{8}-\d{2}\b/.test(first);
 }
 
 const blockText = (content) => typeof content === 'string' ? content
@@ -233,7 +303,7 @@ const blockText = (content) => typeof content === 'string' ? content
 const roomBody = (text) => text.replace(/\r\n/g, '\n').trim();
 
 /** 문자열과 이스케이프를 존중하며 첫 JSON 객체를 읽는다 — { value, end }(end = 객체 다음 위치). 없으면 null. */
-function jsonObjectSpan(text, start) {
+export function jsonObjectSpan(text, start) {
   const begin = text.indexOf('{', start);
   if (begin < 0) return null;
   let depth = 0, quoted = false, escaped = false;
@@ -278,7 +348,7 @@ function roomEntries(o, isNotif = () => true) {
           const c = span.value;
           if (!object(c) || typeof c.comment !== 'string') continue;
           const times = [...text.slice(0, event.index).matchAll(/queued at:\s*(\S+)|<wake\b[^>]*\bcurrent-time="([^"]+)"/g)];
-          const time = times.at(-1), who = roomSpeaker(c.comment);
+          const time = times.at(-1), who = roomSpeaker(c.comment) ?? (roomShaped(c.comment) ? '서명 없음' : null);
           if (who) entries.push({ who, body: c.comment, id: c.comment_id, pr: c.pr, at: time ? (time[1] ?? time[2]) : o.timestamp });
         } catch { /* 한 이벤트가 깨져도 다음 이벤트와 사람 발화는 보존한다. */ }
       }
@@ -289,7 +359,7 @@ function roomEntries(o, isNotif = () => true) {
     const num = input.issue_number ?? input.issueNumber ?? input.pull_number ?? input.pullNumber ?? input.number ?? '?';
     const pr = input.owner && input.repo ? `${input.owner}/${input.repo}#${num}` : num;
     if (/add_issue_comment$/.test(b.name ?? '')) {
-      const who = roomSpeaker(input.body);
+      const who = roomSpeaker(input.body) ?? (roomShaped(input.body) ? '서명 없음' : null);
       if (who) entries.push({ who, body: input.body, pr, at: o.timestamp, toolId: b.id, posted: true });
     } else if (/(?:update_pull_request|update_issue)$/.test(b.name ?? '') && input.body.includes('<!-- d1-room-board -->')) {
       entries.push({ who: 'C1', body: input.body, pr, at: o.timestamp, board: true });
@@ -329,7 +399,16 @@ function postedIdIn(next, toolId) {
 
 // 세션 전송 래퍼는 user text의 시작 또는 tool_result 안에서만 해석한다.
 const CROSS_RE = /<cross-session-message\b([^>]*)>([\s\S]*?)<\/cross-session-message>/g;
-const crossFrom = (attrs) => /\bfrom-session="([^"]+)"/.exec(attrs)?.[1];
+// legacy(Remote MCP) = from-session="session_…" · native(내장 SendMessage, 10-08 실측) = from="bridge:session_…" — 둘 다 있으면(섞인 래퍼) 읽지 않는다.
+// 송신자는 전체 ID 로만 남긴다(from-name 은 개명 전 옛 제목일 수 있어 쓰지 않는다 — d1-20261008-13 ①).
+// legacy 는 종전처럼 from-session 하나(다른 속성 순서 허용 — 10-03 Astra 재현) · native 는 실측 꼴 그대로만(속성 순서·공백까지).
+// 둘이 섞였거나(from-session + from) native 꼴이 변형이면 송신자를 읽지 않는다 → 미검증 기록(D1 d1-20261008-17 ④).
+const crossFrom = (attrs) => {
+  if (/(?:^|\s)from="/.test(attrs)) return /^ from="bridge:(session_[A-Za-z0-9]{20,})"(?: hop-chain="[0-9a-f]{8,64}")? from-name="[^"\r\n]*" from-mode="[a-z-]+"$/.exec(attrs)?.[1];
+  const m = [...attrs.matchAll(/(?:^|\s)from-session="([^"\r\n]+)"/g)];
+  return m.length === 1 ? m[0][1] : undefined;
+};
+const looksCross = (text) => typeof text === 'string' && text.trimStart().startsWith('<cross-session-message');
 const crossStart = (text) => { const m = /^<cross-session-message\b([^>]*)>/.exec(text.trim()); return !!(m && crossFrom(m[1])); };
 const shortSession = (id) => String(id).replace(/^session_/, '').slice(0, 8);
 function sessionBody(text, harness = true) {
@@ -348,14 +427,19 @@ function crossEntries(text) {
     const id = crossFrom(m[1]);
     if (!id) return [];
     const note = [...text.slice(0, m.index).matchAll(/--- Notification [^\n]*?· id: ([0-9a-f-]{8,})/g)].at(-1)?.[1];
-    return [{ id, body: sessionBody(m[2]), note }];
+    // native 본문은 들여쓰기·안내문이 없다(실측) — 공통 들여쓰기를 떼면 원문이 바뀐다(독립 검토 B9). 앞뒤 경계 LF 만 뗀다.
+    const native = !/(?:^|\s)from-session="/.test(m[1]);
+    return [{ id, body: native ? m[2].replace(/^\n/, '').replace(/\n$/, '') : sessionBody(m[2]), note }];
   });
 }
 /** 래퍼를 뺀 나머지(사람이 래퍼 뒤에 이어 쓴 말) — 비면 ''. */
 const crossRemainder = (text) => text.replace(CROSS_RE, '').trim();
 function sessionName(body, id) {
   const inner = /^\[([^\]\r\n]{1,120})\]/.exec(body.split('\n')[0])?.[1];
-  const name = inner?.split(/→|->|⇒|=>/)[0].trim();
+  // d1-20261007-17 ②: 새 메타 분리(⇢ · ' · ' 꼬리)는 확인된 프로토콜 봉투(roomSpeaker 가 읽는 서명)에만 — 일반 세션 제목은
+  // 종전대로 보존해 옛 렌더와 화자가 달라지지 않게(mergeArchive 가 블록 전체 비교라 화자가 바뀌면 두 턴이 된다).
+  const proto = roomSpeaker(body.split('\n')[0]) != null;
+  const name = proto ? inner?.split(/→|->|⇒|=>|⇢/)[0].split(' · ')[0].trim() : inner?.split(/→|->|⇒|=>/)[0].trim();
   return name && name.length <= 40 ? name : shortSession(id);
 }
 
@@ -373,6 +457,7 @@ export function extractTurns(raw) {
     .filter((b) => b?.type === 'tool_use' && b.id).map((b) => [b.id, String(b.name ?? '')]));
   const isNotif = (id) => !toolNames.has(id) || /ReadNotifications$/.test(toolNames.get(id));
   const seenSessions = new Set();
+  const reviews = automationReviewRecords(records);   // 같은 파일에 섞인 자동 보안 리뷰 턴 — 지우지 않고 화자만 가른다
   let lastAt;                                   // 시각 없는 기록은 앞 기록의 시각을 이어받는다(턴 머리가 시각 없이 렌더되면 경계를 잃는다)
   /* 중복 판정은 **이벤트 식별자**로만 — 알림 id(알림 도구로 온 것) · 도구 호출 id(보낸 것) · 기록 uuid+순번(사용자 턴으로 온 것).
    * 본문이 같다고 지우지 않는다("완료"를 두 번 받는 일은 정상이다 — Astra 재현). 식별자는 메타 줄에 실어 병합에서도 갈린다. */
@@ -384,10 +469,74 @@ export function extractTurns(raw) {
     turns.push({ who: `세션 메시지(${who})`, text: `> 세션 메시지 · ${sent ? '받는' : '보낸'} 세션 ${id}${tag}\n\n${escaped}`, at: o.timestamp ?? lastAt, branch: o.gitBranch, room: true });
   };
   let lastBoard;
+  /* 턴 경계 = 하네스가 user 기록에 붙이는 promptId (d1-20261008-13 ③). 같은 화자라도 promptId 가 다르면 합치지 않는다 —
+   * 10-08 MPR 실물: 받은 세션 메시지가 렌더되지 않는 꼴로 들어와 10-08 답이 10-06 Claude 턴 꼬리에 붙었다(머리 시각 10-06).
+   * 훅 재진입(Stop hook feedback)이 연 promptId 만 직전 턴의 별칭으로 본다(종전처럼 한 턴 — 재진입 답은 상태 한 줄).
+   * isMeta 는 별칭으로 보지 않는다 — 새 프롬프트 앞에 오는 isMeta 가 그 promptId 를 옛 턴에 묶으면 같은 버그가 되살아난다(독립 검토 B7).
+   * promptId 가 없는 옛 기록은 종전 규칙(같은 화자면 합침) 그대로. */
+  const promptAlias = new Map();
+  let curPrompt = null;
+  /* promptId 가 없는 기록(옛 CLI 등)의 턴 경계 — 사람 몫 user 입력(도구 결과 아님 · Stop 훅·isMeta 아님)이
+   * 지나가면 그 뒤 Claude 글은 앞 Claude 블록에 합치지 않는다. 그 입력이 렌더되지 않는 꼴(주입·알림)이어도 마찬가지 —
+   * MPR 10-06→10-08 실물 증상의 promptId 없는 판(D1 d1-20261008-17). promptId 가 있으면 promptId 규칙이 우선한다. */
+  let turnBreak = false;
+  const noteBreak = (o) => {
+    if (o.type !== 'user' || o.isMeta || (o.userType && o.userType !== 'external')) return;
+    const c = o.message?.content;
+    const blocks = typeof c === 'string' ? [{ type: 'text', text: c }] : Array.isArray(c) ? c : [];
+    if (!blocks.length || blocks.every((b) => b?.type === 'tool_result')) return;
+    const text = blocks.filter((b) => b?.type === 'text').map((b) => b.text ?? '').join('');
+    // 글이 있는 입력만 경계로 본다(빈 입력·첨부만·하청 peer 는 종전대로) · Stop 훅 재진입은 같은 턴
+    if (!text.trim() || (o.origin ?? o.message?.origin)?.kind === 'peer' || /^Stop hook feedback:/.test(text.trimStart())) return;
+    turnBreak = true;
+  };
+  const notePrompt = (o) => {
+    if (o.type !== 'user' || typeof o.promptId !== 'string' || !o.promptId) return;
+    if (o.userType && o.userType !== 'external') return;                 // 렌더 대상이 아닌 기록은 경계를 옮기지 않는다(독립 검토 B7)
+    if (promptAlias.has(o.promptId)) { curPrompt = promptAlias.get(o.promptId); return; }
+    const c = o.message?.content;
+    const text = typeof c === 'string' ? c : Array.isArray(c) ? c.filter((b) => b?.type === 'text').map((b) => b.text ?? '').join('') : '';
+    if (curPrompt && o.promptId !== curPrompt && /^Stop hook feedback:/.test(text.trimStart())) {
+      promptAlias.set(o.promptId, curPrompt); return;
+    }
+    curPrompt = o.promptId;
+  };
   for (const [index, o] of records.entries()) {
     if (o.isSidechain || o.isCompactSummary || o.isVisibleInTranscriptOnly) continue;                 // 서브에이전트 — 본 대화가 아니다
     if (o.timestamp) lastAt = o.timestamp;
-    const queued = queuedHumanPrompt(o);
+    notePrompt(o);
+    noteBreak(o);
+    // 다른 세션이 내장 SendMessage 로 보낸 것(10-08 C1 실측: attachment queued_command · origin.kind 'peer' · prompt = native 래퍼).
+    // 사람 입력이 아니다 — PeterJ 턴으로 적지 않고 세션 메시지 턴으로. 한 전달은 delivery_id(없으면 source_uuid·기록 uuid) 하나로만 센다.
+    // 송신자 = 래퍼 from 의 bridge: 뒤 전체 ID, origin.from 과 다르면 '출처 불일치'로 적는다(이름 origin.name·from-name 은 쓰지 않음).
+    if (o.type === 'attachment' && o.attachment?.type === 'queued_command' && o.attachment.origin?.kind === 'peer'
+        && typeof o.attachment.prompt === 'string' && o.attachment.prompt.startsWith('<cross-session-message')) { // 하청 보고(<agent-message>)도 peer 다 — 래퍼만
+      const a = o.attachment;
+      const evt = `전달 ${a.delivery_id ?? a.source_uuid ?? o.uuid ?? index}${a.source_uuid ? ` · 원본 ${a.source_uuid}` : ''}`;
+      const entries = crossStart(a.prompt) ? crossEntries(a.prompt) : [];
+      if (entries.length === 1 && a.origin.from === `bridge:${entries[0].id}`) addSession(o, sessionName(entries[0].body, entries[0].id), entries[0].id, entries[0].body, false, evt);
+      else addSession(o, '출처 불일치', String(a.origin.from ?? '없음'), a.prompt, false, evt);
+      continue;
+    }
+    // native 4번째 꼴 — 받는 세션이 쉬는 중이면 새 user 턴(isMeta · origin peer · "Another Claude session sent a message:\n" + 래퍼 + 안내문 · 10-08 C1 실측).
+    // 사람 입력 아님 — 세션 메시지 턴으로. 래퍼 송신자·본문이 origin 과 다르면 '출처 불일치'.
+    if (o.type === 'user' && o.isMeta === true && o.origin?.kind === 'peer' && typeof o.message?.content === 'string'
+        && o.message.content.startsWith('Another Claude session sent a message:\n<cross-session-message')) {
+      const w = o.message.content.slice('Another Claude session sent a message:\n'.length);
+      const entries = crossEntries(w);
+      const e0 = entries.length === 1 ? entries[0] : null;
+      const evt = `기록 ${o.uuid ?? index}${o.promptId ? ` · 프롬프트 ${o.promptId}` : ''}`;
+      if (e0 && o.origin.from === `bridge:${e0.id}` && o.origin.body === e0.body) addSession(o, sessionName(e0.body, e0.id), e0.id, e0.body, false, evt);
+      else addSession(o, '출처 불일치', String(o.origin.from ?? '없음'), w, false, evt);
+      continue;
+    }
+    let queued = queuedHumanPrompt(o);
+    if (queued && looksCross(queued.content)) {
+      // 사람 입력 자리로 들어온 래퍼 — 발신을 확인할 수 없으므로 PeterJ 턴이 아니라 미검증 기록(원문 보존)
+      addSession(o, '미검증 래퍼', '확인 불가', String(queued.content), false, `기록 ${o.uuid ?? index}`);
+      turnBreak = true;
+      continue;
+    }
     if (!queued && o.type !== 'user' && o.type !== 'assistant') continue;
     if (!queued && o.message?.role === 'user' && o.userType && o.userType !== 'external') continue;
 
@@ -424,16 +573,25 @@ export function extractTurns(raw) {
       const text = [textOf({ content: ordinary }, !!queued || o.type === 'user'), ...markers].filter(Boolean).join('\n\n');
       ordinary = [];
       if (!text) return;
-      const who = queued || o.type === 'user' ? 'PeterJ' : 'Claude';
+      const review = !queued && reviews.has(o);
+      const who = review ? (o.type === 'user' ? REVIEW_ASK : REVIEW_ANSWER) : !queued && isRefusalNote(o) ? REFUSAL_NOTE : queued || o.type === 'user' ? 'PeterJ' : 'Claude';
       const last = turns.at(-1);
-      if (last && !last.room && last.who === who) last.text += `\n\n${text}`;
-      else turns.push({ who, text, branch: o.gitBranch, at: o.timestamp });
+      const samePrompt = last?.prompt != null && curPrompt != null ? last.prompt === curPrompt : !turnBreak;
+      turnBreak = false;
+      if (last && !last.room && last.who === who && samePrompt) last.text += `\n\n${text}`;
+      // 리뷰 턴의 첫 줄은 출처 표지 — 원본 기록으로 되짚을 수 있게 entrypoint·기록 uuid 를 남긴다.
+      else turns.push({ who, text: review ? `> 자동 보안 리뷰 · 출처 ${o.entrypoint}${o.uuid ? ` · 기록 ${o.uuid}` : ''}\n\n${text}` : text, branch: o.gitBranch, at: o.timestamp ?? lastAt, review, prompt: curPrompt });
     };
     for (const block of blocks) {
       if (!block) continue;
       if (o.type === 'assistant' && block.type === 'tool_use' && /send_message$/.test(block.name ?? '') && typeof block.input?.message === 'string' && typeof block.input?.session_id === 'string') {
         flush();
         addSession(o, `→${shortSession(block.input.session_id)}`, block.input.session_id, block.input.message, true, block.id ? `호출 ${block.id}` : '');
+      } else if (o.type === 'assistant' && block.type === 'tool_use' && block.name === 'SendMessage' && typeof block.input?.message === 'string' && typeof block.input?.to === 'string') {
+        // 내장 SendMessage — 받는 쪽은 ListAgents 이름이다(session ID 아님). 이름임을 메타 줄에 밝힌다.
+        flush();
+        const to = block.input.to.slice(0, 40);
+        addSession(o, `→${to}`, `${block.input.to} (이름 · 내장 SendMessage)`, block.input.message, true, block.id ? `호출 ${block.id}` : '');
       } else if (o.type === 'user' && block.type === 'tool_result' && !sentIds.has(block.tool_use_id) && isNotif(block.tool_use_id)) {
         const entries = crossEntries(blockText(block.content));
         if (entries.length) flush();
@@ -446,6 +604,10 @@ export function extractTurns(raw) {
           // 래퍼 바깥에 이어 쓴 말은 원래 화자(사람) 턴으로 남긴다 — 버리지 않는다(Astra 재현: 뒤의 실제 지시가 사라졌다).
           const rest = crossRemainder(block.text);
           if (rest) { ordinary.push({ type: 'text', text: rest }); flush(); }
+        } else if (looksCross(block.text)) {
+          // 세션 메시지 래퍼처럼 보이지만 검증된 꼴이 아니다 — 사람 발언(PeterJ)으로 적지 않고 미검증 기록으로 원문 보존(D1 d1-20261008-17 ④)
+          flush();
+          addSession(o, '미검증 래퍼', '확인 불가', block.text, false, `기록 ${o.uuid ?? index}`);
         } else if (origin?.kind === 'peer') {
           flush();
           const body = /<agent-message\b[^>]*>([\s\S]*?)<\/agent-message>/.exec(block.text)?.[1];
@@ -681,6 +843,48 @@ export function mergeArchive(oldText, newText) {
     const body = block.slice(nl < 0 ? block.length : nl).trim();
     return body.startsWith('<cross-session-message') || bodies.some((b) => b && body.includes(b.split('\n')[0]));
   };
+  /* ★ 자동 보안 리뷰 화자 이전 (d1-20261007-25) — 같은 리뷰 턴이 예전엔 `### PeterJ`(자리표시)·`### Claude` 로 렌더됐다.
+   * 화자가 바뀌면 블록 문자열이 달라 dedupe 가 못 잡고 같은 턴이 두 번 남는다. 그래서 옛 PeterJ·Claude 블록이
+   * **새 사본의 연속 블록들(같은 역할 = PeterJ↔리뷰 요청 · Claude↔리뷰 답, 리뷰를 하나 이상 포함)을 `\n\n` 으로 이은 것과
+   * 시각·글자까지 같을 때만** 대체된 것으로 본다(리뷰 블록은 첫 줄 출처 표지를 빼고 비교). 옛 렌더는 같은 화자를
+   * 한 블록으로 합쳤으므로 앞뒤 사람/Claude 글이 붙은 합본도 이렇게 대응된다. 그 밖은 건드리지 않는다(중복 쪽이 안전). */
+  // 하네스 안내(출력 차단)도 같은 이전 — 옛 보관본엔 `### PeterJ` 로 실렸다(d1-20261011-12). 본문은 그대로라 표지 줄 없이 비교한다.
+  const reviewRole = { [REVIEW_ASK]: 'PeterJ', [REVIEW_ANSWER]: 'Claude', [REFUSAL_NOTE]: 'PeterJ', PeterJ: 'PeterJ', Claude: 'Claude' };
+  const seqOf = (archive) => archive.blocks.map((block) => {
+    const nl = block.indexOf('\n');
+    const head = nl < 0 ? block : block.slice(0, nl);
+    const who = /^### (.+?) · /.exec(head)?.[1];
+    let body = block.slice(nl < 0 ? block.length : nl).trim();
+    const review = who === REVIEW_ASK || who === REVIEW_ANSWER || who === REFUSAL_NOTE;
+    if (who === REVIEW_ASK || who === REVIEW_ANSWER) body = (/^> 자동 보안 리뷰 · 출처 [^\n]*\n+([\s\S]*)$/.exec(body)?.[1] ?? body).trim();
+    return { role: reviewRole[who] ?? null, at: turnHeadAt(head), body, review };
+  });
+  // d1-20261007-27: 같은 엄격 대응(시각·역할·본문 완전 일치)을 **양방향**으로 — 옛 쪽에 이미 리뷰 블록 R 이 있으면
+  // 새 쪽의 대응 PeterJ/Claude 블록 L 을 다시 넣지 않는다(mergeArchive(R, L) = R). 느슨한 정규화는 하지 않는다.
+  const supersededBy = (seq) => {
+    if (!seq.some((x) => x.review)) return () => false;
+    return (block) => {
+      const nl = block.indexOf('\n');
+      const head = nl < 0 ? block : block.slice(0, nl);
+      const role = /^### (PeterJ|Claude) · /.exec(head)?.[1];
+      if (!role) return false;
+      const at = turnHeadAt(head);
+      const body = block.slice(nl < 0 ? block.length : nl).trim();
+      for (let i = 0; i < seq.length; i++) {
+        if (seq[i].role !== role || seq[i].at !== at) continue;
+        let joined = '', review = false;
+        for (let j = i; j < seq.length && seq[j].role === role; j++) {
+          joined = joined ? `${joined}\n\n${seq[j].body}` : seq[j].body;
+          review ||= seq[j].review;
+          if (joined === body) { if (review) return true; continue; }
+          if (!body.startsWith(joined)) break;
+        }
+      }
+      return false;
+    };
+  };
+  const supersededByReview = supersededBy(seqOf(newArchive));      // 옛 L ← 새 R
+  const supersededByOldReview = supersededBy(seqOf(oldArchive));   // 새 L ← 옛 R (역순 재수거)
   // 첨부 경계가 새로 생긴 사본에 대응하는 옛 Claude 합본만 분해한다. 양방향 적용.
   const headBody = (b) => { const n = b.indexOf('\n'); return [n < 0 ? b : b.slice(0, n), b.slice(n < 0 ? b.length : n).replace(/(?:\n[ \t]*(?:-{3,})?[ \t]*)+$/, '').trim()]; };
   const obsolete = new Set();
@@ -710,7 +914,7 @@ export function mergeArchive(oldText, newText) {
   }
   const seen = new Set();
   const blocks = [];
-  for (const block of [...oldArchive.blocks.filter((b) => !misattributed(b)), ...newArchive.blocks]) {
+  for (const block of [...oldArchive.blocks.filter((b) => !misattributed(b) && !supersededByReview(b)), ...newArchive.blocks.filter((b) => !supersededByOldReview(b))]) {
     // 댓글 ID와 본문이 같으면 스냅샷의 게시/알림 시각 차이도 중복이다 — 대화방 턴(roomMetaOf)일 때만.
     // 사람·클로드 턴 본문에 같은 인용이 있어도 대화방 턴으로 보지 않는다(Astra 2차: 클로드 답변 통째 유실 재현).
     const meta = roomMetaOf(block);
