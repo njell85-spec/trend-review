@@ -3714,6 +3714,57 @@
       "fullTextSource": "abstract+registry",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-11",
+      "pmid": "42449426",
+      "title": "Impact of ultra-low tidal volume ventilation on 1-year functional outcome in COVID-19 ARDS patients. A long-term follow-up analysis of a randomized controlled trial.",
+      "title_ko": "COVID-19 ARDS 환자에서 초저일회호흡량 환기(ULTV)가 1년 기능적 예후에 미치는 영향: 무작위대조시험의 장기 추적 분석",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-026-06195-3",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "COVID-19 ARDS 환자에서 체외 CO2 제거 없이 시행한 초저일회호흡량 환기(ULTV, 4 mL/kg PBW)가 저일회호흡량 환기(LTV, 6 mL/kg PBW)와 비교하여 장기(day-365) 기능적 예후 — 인지 기능, 건강 관련 삶의 질(HRQL), PTSD 증상 — 및 사망률에 영향을 미치는가?",
+      "pico": {
+        "population": "[France] COVID-19 ARDS patients (Berlin definition) under invasive mechanical ventilation with PaO2/FiO2 ≤ 150 mmHg and VT ≤ 6 mL/kg PBW under continuous intravenous sedation, enrolled in 10 French ICUs; 215 patients randomized (ULTV n = 106, LTV n = 109) between April 2020 and April 2021; 7 lost to follow-up and 34 surviving patients had missing data for at least one score.",
+        "intervention": "Ultra-low tidal volume ventilation (ULTV) with VT 4 mL/kg predicted body weight (PBW), achieved by stepwise reduction of 1 mL/kg PBW at intervals ≤ 2 h, with respiratory rate increased up to 35/min to keep minute ventilation constant.",
+        "comparison": "Low tidal volume ventilation (LTV) with VT set at 6 mL/kg predicted body weight (PBW).",
+        "outcome": "Cognitive function at day-365 by MoCA 5-minute score (cognitive impairment defined as score < 28): the MoCA 5-minute score was significantly lower in the ULTV arm (median difference −2 [CI: −4–0] points, p < 0.05)."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 침습적 기계환기 중이며 PaO2/FiO2 ≤ 150 mmHg, VT ≤ 6 mL/kg PBW, 지속적 정맥 진정 상태인 COVID-19 ARDS(Berlin 정의) 환자. 프랑스 10개 ICU에서 2020년 4월~2021년 4월 사이 215명 무작위배정(ULTV n = 106, LTV n = 109); 7명이 추적 소실, 생존자 34명은 하나 이상의 점수에서 결측 데이터가 있었음.",
+        "intervention": "VT 4 mL/kg 예측체중(PBW)의 초저일회호흡량 환기(ULTV). 1 mL/kg PBW씩 2시간 이하 간격으로 단계적으로 감량하고, 분당환기량을 일정하게 유지하기 위해 호흡수를 35/min까지 증가시킴.",
+        "comparison": "VT 6 mL/kg 예측체중(PBW)으로 설정한 저일회호흡량 환기(LTV).",
+        "outcome": "day-365 시점 MoCA 5-minute 점수로 평가한 인지 기능(점수 < 28을 인지 장애로 정의): ULTV군에서 MoCA 5-minute 점수가 유의하게 낮았음(중앙값 차이 −2 [CI: −4–0]점, p < 0.05)."
+      },
+      "keyFindings": [
+        "Day-365 mortality did not differ between ULTV (47/102, 46%) and LTV (44/106, 42%); hazard ratio 1.19 (95% CI 0.79–1.80).",
+        "MoCA 5-minute cognitive score was significantly lower in the ULTV arm at 1 year (median difference −2 [CI −4–0] points, p < 0.05), while SF-36 and IES-R scores showed no significant between-group difference.",
+        "In post-hoc analysis, lower MoCA 5-minute score was significantly associated with AUC or maximal PaCO2 during ARDS management (p < 0.01) but not with AUC or minimal PaO2, supporting a hypercapnia-related mechanism."
+      ],
+      "keyFindings_ko": [
+        "day-365 사망률은 ULTV(47/102, 46%)와 LTV(44/106, 42%) 간 차이가 없었음; hazard ratio 1.19 (95% CI 0.79–1.80).",
+        "1년 시점 MoCA 5-minute 인지 점수는 ULTV군에서 유의하게 낮았고(중앙값 차이 −2 [CI −4–0]점, p < 0.05), SF-36 및 IES-R 점수는 군 간 유의한 차이가 없었음.",
+        "사후 분석에서 낮은 MoCA 5-minute 점수는 ARDS 관리 중 PaCO2의 AUC 또는 최댓값과 유의하게 연관되었으나(p < 0.01) PaO2의 AUC 또는 최솟값과는 연관되지 않아, 고탄산혈증 관련 기전을 뒷받침함."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42449426",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42449426/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-026-06195-3",
+          "url": "https://doi.org/10.1186/s13054-026-06195-3"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT04349618 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT04349618"
+        }
+      ],
+      "fullText": "### Background\nPermissive hypercapnia is used in ARDS since the early 1990s following the seminal studies of Hickling et al. [, ], and protective ventilation (i.e., ventilation with low tidal volume (VT)) is a standard of care of acute respiratory distress syndrome (ARDS). However, barotrauma is still observed in 7% of the patients [], and its prevalence is even higher in the context of COVID-19 ARDS [], suggesting that protective ventilation is not protective enough. Ultra-low tidal volume ventilation (ULTV), by reducing VT at or below 4 mL.kg predicted body weight (PBW) may minimize ventilator-induced lung injury but may be associated with an increase in arterial carbon dioxide partial pressure (PaCO) with potential deleterious consequences across multiple organ systems [, ]. ULTV was not associated with improved outcomes when combined with extracorporeal CO removal (ECCOR) in patients with acute respiratory failure in the REST randomized controlled trial []. This may be related to a high rate of serious adverse events related to the ECCOR technique, and/or inadequate patient selection as ULTV may be most relevant in patients with severe ARDS and elevated standardized elastance []. We recently published the short-term results of the VT4COVID randomized controlled trial comparing ULTV without extracorporeal respiratory support with low tidal volume ventilation (LTV) in COVID-19 ARDS []. The VT4COVID study did not identify any impact of ULTV on the composite primary outcome of short-term mortality and ventilator-free days and on all other secondary outcomes, but was associated with an 11 mmHg elevation of PaCO in the ULTV arm []. As changes in PaCO levels induced by ULTV may have altered cerebral perfusion [], and as the ULTV strategy may have led to higher sedation dose with adverse potential effects, the consequences of ULTV on long-term functional outcomes (i.e., cognitive function, health-related quality of life (HRQL) and post-traumatic stress disorder (PTSD)) need to be assessed to evaluate the long-term safety of this strategy.\n\n### Methods\n\n### Study aim\nThe aim of the present study was to evaluate whether ULTV without extracorporeal respiratory support impacted long-term secondary outcomes at day-365 from inclusion.\n\n### Study design and setting\nThe VT4COVID study was a multicenter open-labelled, randomized superiority trial, with two parallel groups, and enrolled hospitalized participants from 10 intensive care units (ICU) in France. This study is a pre-planned 1-year follow-up of the VT4COVID participants. The VT4COVID study was approved by a research ethics committee (CPP-IDF-VII) on April 14, 2020, under the reference IDCRB-2020-A00869-30. The trial protocol has been previously published [], and is provided with the statistical analysis plan in Additional file 1. The trial was monitored by an independent data safety monitoring board and registered at ClinicalTrials.gov () on April 16, 2020. This manuscript is reported according to the CONSORT 2025 statement []. We obtained written informed consent from all patients and/or representatives and vouch for the accuracy and completeness of the data and for the fidelity of the trial to the protocol.\n\n### Patients\nEligible patients were 18 years or older, under invasive mechanical ventilation for COVID-19 confirmed by RT-PCR, fulfilled ARDS criteria according to the Berlin definition [], had an arterial partial oxygen pressure to inspired oxygen fraction ratio (PaO/FiO) ≤ 150 mmHg with a VT ≤ 6 mL.kg PBW and were under continuous intravenous sedation. Major exclusion criteria are reported thereafter, while the full list is reported in Additional file 2: onset of invasive or non-invasive ventilation more than 48 h before inclusion, arterial pH < 7.21 despite respiratory rate (RR) set to 35 min at the time of inclusion [], patient under extracorporeal CO removal or extracorporeal membrane oxygenation, suspected intracranial hypertension, severe chronic obstructive pulmonary disease defined by a GOLD score ≥ 3, chronic respiratory failure requiring long-term oxygen or non-invasive ventilation, and lack of written informed consent by patient or next of kin.\nPatients included and randomized in the study with eligibility criteria and without withdrawal of consent defined the intention-to-treat (ITT) population.\n\n### Randomization and masking\nWe randomly assigned patients in a 1:1 ratio to the ULTV or the LTV arm. The random allocation sequence was generated by the statistician in charge. Randomization was performed through a web-based software using a balanced randomization scheme by center and random blocks of size 4 and 6. Study enrollment and assignment of participants to interventions was ensured by attending physicians, who had no access to the random allocation sequence. Care providers, outcome assessors and data analysts were not blinded regarding group allocation.\n\n### Procedures\nIn the ULTV arm, VT was decreased, starting within the first hour after randomization, by stepwise reduction of 1 mL.kg PBW steps at intervals ≤ 2 h down to 4 mL.kg PBW, and RR increased up to 35 min to maintain minute-ventilation constant. In the LTV arm, VT was set at 6 mL.kg PBW [].\nIn both arms, positive end-expiratory pressure (PEEP) was set using a PEEP-FiO Table [] aiming for a plateau pressure < 30 cmHO under deep sedation (i.e., Richmond Agitation-Sedation Scale (RASS) score [] between − 3 and − 4). Sedative agents were left at the discretion of the attending physician. RR was further adjusted targeting a pH range between 7.20 and 7.45, and VT could be increased if pH remained below 7.15, despite RR increase to 35 min and minimization of instrumental dead space.\nBoth ventilatory strategies were applied until the success of a deep sedation withdrawal trial performed daily from day-2 of the study in patients with PaO/FiO>150 mm Hg in the supine position (Additional file 3). This trial was performed by decreasing PEEP to 5 cmHO, and by setting FiO to 50% and VT to 6 mL.kg PBW during a 30-min test. Patients were deemed weanable from deep sedation if SpO remained greater than 87% and RR lower than 36 min during the test. After a successful deep sedation withdrawal trial, patients in both arms were ventilated with VT 6–8 mL.kg PBW, sedation was titrated to target a RASS score between − 2 and 0, and a spontaneous breathing test was performed daily until successful extubation. Deep sedation could be resumed (along with resumption of the assigned ventilatory strategy) in the following situations: respiratory distress, hypoxemia, ventilator asynchrony, and RR > 35 min despite ventilatory adjustments. All other co-interventions were standardized to ensure treatment arm comparability (the reader may refer to the original publication for a complete description []).\n\n### Outcomes\nThe following pre-specified secondary outcomes of the VT4COVID trial were assessed at 365 ± 10 days from inclusion by phone call: 1- the median value of the French version of the Montreal Cognitive Assessment 5-minute (MoCA 5-minute) score evaluating cognitive impairment [, ]; 2- the median values of both physical (PCS) and mental (MCS) summary scores of the Short Form-36 Health Survey (SF-36) score evaluating HRQL []; and 3- the median value of the Impact of Event Scale-Revised (IES-R) score evaluating subjective distress caused by traumatic events [].\nMortality at day-365 was added  as a secondary outcome and analyzed as a time-to-event variable.\nCognitive impairment was deemed present when the MoCA 5-minute score was below 28, in accordance with the validation of the French version of the MoCA 5-minute score []. MCS was deemed altered for values lower than 40 []. PTSD was deemed present if the IES-R score was greater than 32 [].\n\n### Data collection\nInformation on sex was obtained from the administrative section of electronic health records. The following respiratory parameters were assessed daily from inclusion to withdrawal of deep sedation or 14 days after inclusion whichever came first : PaO/FiO, pH, PaCO, PEEP, VT, total PEEP, plateau pressure, driving pressure, RR, and mechanical power (MP). Total PEEP and plateau pressure were measured at the end of 3-s end-expiratory and end-inspiratory pauses, respectively. Driving pressure was defined as the difference between plateau pressure and total PEEP. In case of missing total PEEP, driving pressure was computed as (Pplat-PEEP)/VT. Total mechanical power was computed as previously described [].\nPrimary investigators at each trial site collected the date of death of non-survivors from medical records and/or through phone calls to relatives or next of kin. Survivors were contacted by phone by trained research personnel, and several attempts were made to minimize loss to follow-up.\n\n### Statistical analysis\nAll analyses (except mortality at day-365) were conducted according to a modified intention-to-treat (mITT) principle. The mITT population corresponded to all randomized patients with long-term follow-up and at least one pre-specified outcome available. MoCA 5-minute, SF-36 and IES-R populations were defined as all randomized patients with at least one corresponding assessment performed.\nUnless indicated otherwise, quantitative variables were described by median [interquartile range (IQR)] and compared between arms with the Mann-Whitney test.\nQualitative variables were described by frequencies and percentages, and compared between arms using the chi-square or the Fisher exact test.\nFor the one-year functional outcomes, complete-case data were used without replacement for missing data, except for the IES-R outcome. For this measure, a sensitivity analysis was conducted to account for one missing IES-R item (item#15) out of the 22 items composing the scale, due to a pagination error in some printed questionnaires. These values were assumed to be missing completely at random (MCAR), meaning that the probability of missingness was unrelated to both observed",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -3765,13 +3816,14 @@
         "42823746",
         "42827265",
         "42545101",
-        "42274006"
+        "42274006",
+        "42449426"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
-      "2026-10": 98503
+      "2026-10": 108977
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
