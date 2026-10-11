@@ -858,5 +858,16 @@
     "rerankPoolSize": 3,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42449426",
+    "title": "Impact of ultra-low tidal volume ventilation on 1-year functional outcome in COV",
+    "date": "2026-10-11",
+    "topic": "resp_airway",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 2,
+    "fallbackReason": null,
+    "lowConfidence": true
   }
 ]
