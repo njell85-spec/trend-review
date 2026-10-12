@@ -34982,87 +34982,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:41810980",
-      "pmid": "41810980",
-      "title": "Updated European Society for Emergency Medicine Guidelines for acute pain management in emergency departments and prehospital care.",
-      "pubDate": "2026 Jun 1",
-      "journal": "European journal of emergency medicine : official journal of the European Society for Emergency Medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt"
-      ],
-      "discoveredAt": "2026-08-17T04:39:51.509Z",
-      "abstract": "Acute pain management in European emergency settings faces persistent challenges, including inadequate clinical knowledge, training deficits, heightened emphasis on opioid stewardship, and concerns regarding drug-seeking behaviors. Despite previous guidelines, oligoanalgesia remains prevalent, with many patients experiencing suboptimal pain control. The evolving clinical landscape necessitated updating the 2020 European Society for Emergency Medicine (EUSEM) guidelines, considering emergent technological advances, the ongoing opioid crisis, aging populations, and continued pressure on emergency services. EUSEM launched the European Pain Initiative (EPI) to provide evidence-based recommendations for acute pain management in emergency settings and published guidelines in 2020. EPI convened a new project to review and update the previous guideline, rooted in the changing clinical landscape and experience. A systematic literature review was conducted following Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines, searching MEDLINE, Cochrane database, Google Scholar, and EMBASE from January 2020 to May 2025. Publications were evaluated against predetermined inclusion and exclusion criteria, with evidence levels assigned to assist in developing management recommendations. The literature findings were integrated with the clinical experience of the EPI panel to reach a consensus on flexible, adaptable guidelines suitable for diverse European settings. These updated guidelines provide evidence-based recommendations for adult (≥16 years) and pediatric (≥1-≤15 years) patients in emergency and prehospital settings, promoting a multimodal approach to acute pain management. The recommendations integrate the Channels-Enzymes-Receptors Targeted Analgesia framework with WHO analgesic ladder principles and emphasize systematic pain assessment, flexible routes of administration, and patient-specific decision-making. Nonopioid and multimodal strategies are prioritized, with opioids reserved for appropriate indications.",
-      "meshTerms": [
-        "Humans",
-        "Emergency Medical Services",
-        "Pain Management",
-        "Acute Pain",
-        "Europe",
-        "Emergency Service, Hospital",
-        "Emergency Medicine",
-        "Analgesics, Opioid",
-        "Societies, Medical",
-        "Practice Guidelines as Topic"
-      ],
-      "keywords": [
-        "Acute pain",
-        "Analgesia",
-        "Emergency care",
-        "Emergency department",
-        "Pain assessment",
-        "Practice guideline",
-        "Prehospital"
-      ],
-      "doi": "10.1097/MEJ.0000000000001323",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.6,
-      "breakdown": {
-        "authority": 0,
-        "topic": 2.6,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "EUSEM 응급·병원전 급성통증 관리 갱신 — 핵심 응급",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-society-emergency-medicine-acute-pain-management-emergency-departments-prehospital-care",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41773927",
       "pmid": "41773927",
       "title": "Society of Critical Care Medicine Guidelines for the Allocation of Critical Care Resources to Adults During Crisis-Level Shortages.",
@@ -36190,7 +36109,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -37965,7 +37884,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43208,7 +43127,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44529,7 +44448,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44656,7 +44575,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45318,7 +45237,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45476,7 +45395,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45556,7 +45475,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45781,7 +45700,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46736,7 +46655,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -46805,7 +46724,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46919,11 +46838,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.633499792121875,
+      "priority": 7.629793807209264,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6334997921218752,
+        "recency": 1.6297938072092641,
         "scope": 0,
         "confidence": 2
       },
@@ -46938,7 +46857,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -46998,7 +46917,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47072,7 +46991,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47128,11 +47047,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.633499792121874,
+      "priority": 11.629793807209264,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6334997921218752,
+        "recency": 1.6297938072092641,
         "scope": 0,
         "confidence": 2
       },
@@ -47148,7 +47067,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47215,7 +47134,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47280,7 +47199,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47330,11 +47249,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.633499792037373,
+      "priority": 11.629793807124761,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6334997920373722,
+        "recency": 1.6297938071247606,
         "scope": 0,
         "confidence": 2
       },
@@ -47350,7 +47269,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47429,7 +47348,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47504,7 +47423,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47571,7 +47490,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47646,7 +47565,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47704,7 +47623,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-11T00:24:58.105Z",
+      "lastSeenAt": "2026-10-12T00:46:50.295Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -57197,6 +57116,175 @@
         ]
       },
       "publishedAt": "2026-10-11"
+    },
+    {
+      "id": "pmid:41810980",
+      "pmid": "41810980",
+      "title": "Updated European Society for Emergency Medicine Guidelines for acute pain management in emergency departments and prehospital care.",
+      "pubDate": "2026 Jun 1",
+      "journal": "European journal of emergency medicine : official journal of the European Society for Emergency Medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt"
+      ],
+      "discoveredAt": "2026-08-17T04:39:51.509Z",
+      "abstract": "Acute pain management in European emergency settings faces persistent challenges, including inadequate clinical knowledge, training deficits, heightened emphasis on opioid stewardship, and concerns regarding drug-seeking behaviors. Despite previous guidelines, oligoanalgesia remains prevalent, with many patients experiencing suboptimal pain control. The evolving clinical landscape necessitated updating the 2020 European Society for Emergency Medicine (EUSEM) guidelines, considering emergent technological advances, the ongoing opioid crisis, aging populations, and continued pressure on emergency services. EUSEM launched the European Pain Initiative (EPI) to provide evidence-based recommendations for acute pain management in emergency settings and published guidelines in 2020. EPI convened a new project to review and update the previous guideline, rooted in the changing clinical landscape and experience. A systematic literature review was conducted following Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines, searching MEDLINE, Cochrane database, Google Scholar, and EMBASE from January 2020 to May 2025. Publications were evaluated against predetermined inclusion and exclusion criteria, with evidence levels assigned to assist in developing management recommendations. The literature findings were integrated with the clinical experience of the EPI panel to reach a consensus on flexible, adaptable guidelines suitable for diverse European settings. These updated guidelines provide evidence-based recommendations for adult (≥16 years) and pediatric (≥1-≤15 years) patients in emergency and prehospital settings, promoting a multimodal approach to acute pain management. The recommendations integrate the Channels-Enzymes-Receptors Targeted Analgesia framework with WHO analgesic ladder principles and emphasize systematic pain assessment, flexible routes of administration, and patient-specific decision-making. Nonopioid and multimodal strategies are prioritized, with opioids reserved for appropriate indications.",
+      "meshTerms": [
+        "Humans",
+        "Emergency Medical Services",
+        "Pain Management",
+        "Acute Pain",
+        "Europe",
+        "Emergency Service, Hospital",
+        "Emergency Medicine",
+        "Analgesics, Opioid",
+        "Societies, Medical",
+        "Practice Guidelines as Topic"
+      ],
+      "keywords": [
+        "Acute pain",
+        "Analgesia",
+        "Emergency care",
+        "Emergency department",
+        "Pain assessment",
+        "Practice guideline",
+        "Prehospital"
+      ],
+      "doi": "10.1097/MEJ.0000000000001323",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.6,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2.6,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "EUSEM 응급·병원전 급성통증 관리 갱신 — 핵심 응급",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-society-emergency-medicine-acute-pain-management-emergency-departments-prehospital-care",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41810980",
+          "title": "Updated European Society for Emergency Medicine Guidelines for acute pain management in emergency departments and prehospital care.",
+          "journal": "European journal of emergency medicine : official journal of the European Society for Emergency Medicine",
+          "pubDate": "2026 Jun 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41810980/",
+          "doi": "10.1097/MEJ.0000000000001323"
+        },
+        "org": "EUSEM (European Pain Initiative / European Society for Emergency Medicine)",
+        "version": "2025 update (published Eur J Emerg Med 2026 Jun; guideline dated Oct 2025)",
+        "title_ko": "응급실 및 병원전 단계 급성 통증 관리를 위한 유럽응급의학회(EUSEM) 개정 지침",
+        "scope_ko": "유럽의 응급실 및 병원전(prehospital) 환경에서 성인(≥16세)과 소아(≥1~≤15세)의 급성 통증 평가·관리를 다루는 임상 지침입니다. 다중복합(multimodal) 진통, 체계적 통증 평가, 유연한 투여 경로, 환자 맞춤형 의사결정, 오피오이드 절제(stewardship)를 핵심으로 하며 취약군(소아·고령·인지장애·물질사용장애)을 포함합니다.",
+        "summary": [
+          "Perform a baseline pain assessment for every patient on arrival to emergency services within 15 minutes, using validated and (where possible) multidimensional pain assessment tools, and reassess repeatedly to titrate analgesia (evidence grade not specified in the secondary sources reviewed).",
+          "Adopt a multimodal approach that integrates the CERTA (Channels-Enzymes-Receptors Targeted Analgesia) framework with WHO analgesic-ladder principles; prioritize non-opioid and multimodal strategies and reserve opioids for appropriate indications.",
+          "Use flexible routes of administration (IV, intranasal, inhaled, oral) and patient-specific decision-making, and combine drugs with non-pharmacological measures such as splinting, immobilisation, heat/cold, and distraction.",
+          "Opioid dosing — intranasal/IV fentanyl: start 50 μg, repeatable to a maximum of 200 μg; if intranasal is insufficient, follow with IV fentanyl or morphine. IV morphine: 2–3 mg titrated doses (contraindicated in moderate/severe renal impairment and raised intracranial pressure).",
+          "Ketamine as an opioid-sparing/rescue analgesic when opioids are insufficient: 0.1 mg/kg IV (repeatable at ≥10-minute intervals) or 0.7 mg/kg intranasal.",
+          "Codeine 30–60 mg orally (max 240 mg/day); contraindicated in CYP2D6-related metabolism concerns and in children ≤12 years.",
+          "Recommendations are stratified for adults (≥16 years) and children (≥1–≤15 years) across both emergency department and prehospital settings, with specific attention to vulnerable groups (children, the elderly, cognitive impairment, substance use disorders)."
+        ],
+        "summary_ko": [
+          "모든 환자에 대해 응급 진료 도착 후 15분 이내에 기저 통증 평가를 시행하고, 가능하면 검증된 다차원(multidimensional) 통증 평가도구를 사용하며, 진통제를 적정(titration)하기 위해 반복 재평가합니다(검토한 2차 자료에 근거등급 명시 없음).",
+          "CERTA(Channels-Enzymes-Receptors Targeted Analgesia) 프레임워크를 WHO 진통 사다리 원칙과 통합한 다중복합 접근을 채택하고, 비오피오이드·다중복합 전략을 우선하며 오피오이드는 적절한 적응증에 한정합니다.",
+          "유연한 투여 경로(정맥·비강내·흡입·경구)와 환자 맞춤형 의사결정을 사용하고, 부목·고정·온/냉찜질·주의전환 등 비약물적 요법을 약물과 병행합니다.",
+          "오피오이드 용량 — 비강내/정맥 fentanyl: 50 μg로 시작, 최대 200 μg까지 반복 가능; 비강내가 불충분하면 정맥 fentanyl 또는 morphine으로 이어갑니다. 정맥 morphine: 2–3 mg 적정 분할 투여(중등도/중증 신장애 및 두개내압 상승 시 금기).",
+          "오피오이드가 불충분할 때 오피오이드 절약/구조 진통제로 ketamine: 0.1 mg/kg 정맥(≥10분 간격 반복 가능) 또는 0.7 mg/kg 비강내.",
+          "Codeine 30–60 mg 경구(최대 240 mg/일); CYP2D6 대사 관련 상황과 12세 이하 소아에서 금기.",
+          "권고는 성인(≥16세)과 소아(≥1~≤15세)로 구분되어 응급실과 병원전 환경 모두에 적용되며, 취약군(소아·고령·인지장애·물질사용장애)에 특별한 주의를 둡니다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "진통 선택 프레임워크 (CERTA 도입)",
+            "detail": "The 2020 guideline was organized primarily around the WHO analgesic ladder. The 2025 update explicitly integrates the CERTA (Channels-Enzymes-Receptors Targeted Analgesia) framework with the WHO ladder, shifting toward mechanism-targeted, multimodal analgesic selection rather than a stepwise single-drug escalation. Reason given: advances in multimodal therapy and the need to reduce reliance on opioids. (Specific before→after evidence grades were not available in the secondary sources opened.)",
+            "detail_ko": "2020년 지침은 주로 WHO 진통 사다리를 중심으로 구성되었으나, 2025년 개정판은 CERTA(Channels-Enzymes-Receptors Targeted Analgesia) 프레임워크를 WHO 사다리와 명시적으로 통합하여 단계적 단일약제 증량이 아닌 기전 표적(mechanism-targeted) 다중복합 진통제 선택으로 전환했습니다. 명시된 이유: 다중복합 치료의 발전과 오피오이드 의존을 줄일 필요. (열람한 2차 자료에서 구체적 전후 근거등급은 확인되지 않음.)"
+          },
+          {
+            "topic": "오피오이드 절제 강화 / 비오피오이드 우선",
+            "detail": "Compared with 2020, the update refines alignment with the WHO framework to more strongly promote judicious opioid use, non-opioid-first and multimodal strategies, with opioids reserved for appropriate indications — driven explicitly by the ongoing opioid crisis and concerns about drug-seeking behavior.",
+            "detail_ko": "2020년 대비 WHO 프레임워크와의 정합성을 다듬어, 신중한 오피오이드 사용·비오피오이드 우선·다중복합 전략을 더 강하게 권장하고 오피오이드는 적절한 적응증에 한정합니다 — 지속되는 오피오이드 위기와 약물추구행동 우려가 명시된 추동 요인입니다."
+          },
+          {
+            "topic": "임상 알고리즘·의사결정 보조·현장검사(POC) 기술",
+            "detail": "The update adds updated clinical algorithms and decision aids, and new guidance on integrating point-of-care technology into pain management decision-making, reflecting technological advances since 2020 — content not present in the 2020 edition.",
+            "detail_ko": "개정판은 갱신된 임상 알고리즘과 의사결정 보조도구를 추가하고, 통증 관리 의사결정에 현장검사(point-of-care) 기술을 통합하는 새로운 지침을 제공합니다. 2020년 이후의 기술 발전을 반영한 것으로, 2020년판에는 없던 내용입니다."
+          },
+          {
+            "topic": "취약군 권고 확대",
+            "detail": "The update gives expanded, specific attention to vulnerable populations — children, the elderly, and patients with cognitive impairment or substance use disorders — reflecting aging populations and sustained pressure on emergency services.",
+            "detail_ko": "개정판은 취약군 — 소아, 고령자, 인지장애 또는 물질사용장애 환자 — 에 대해 확대되고 구체적인 주의를 제공하며, 이는 고령화 인구와 응급 서비스에 대한 지속적 부담을 반영합니다."
+          },
+          {
+            "topic": "근거 기반 갱신",
+            "detail": "The recommendations are rebuilt on a PRISMA-based systematic review of MEDLINE, Cochrane, Google Scholar and EMBASE covering January 2020 to May 2025, replacing the 2020 evidence base and incorporating the panel's clinical experience into consensus recommendations.",
+            "detail_ko": "권고는 MEDLINE·Cochrane·Google Scholar·EMBASE를 2020년 1월~2025년 5월 범위로 검색한 PRISMA 기반 체계적 문헌고찰 위에 재구축되어, 2020년 근거 기반을 대체하고 패널의 임상 경험을 합의 권고에 반영했습니다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, treat a documented pain score obtained within 15 minutes of arrival as a core triage vital sign and build repeated reassessment into the analgesia workflow. Move the default first step away from opioids toward multimodal, mechanism-targeted (CERTA) combinations — paracetamol/NSAIDs plus regional and non-pharmacological measures — and use low-dose ketamine (0.1 mg/kg IV or 0.7 mg/kg intranasal) and titrated short-acting opioids (fentanyl 50 μg up to 200 μg; morphine 2–3 mg aliquots) as targeted escalation rather than routine. Prehospital teams can apply the same framework with intranasal routes where IV access is impractical, and should individualize dosing and avoid codeine in children ≤12 years and specific opioids in renal impairment or raised ICP.",
+        "practiceImpact_ko": "진료 현장에서 도착 후 15분 이내에 얻은 통증 점수를 핵심 활력징후처럼 문서화하고, 반복 재평가를 진통 흐름에 내장하십시오. 1차 선택의 기본값을 오피오이드에서 다중복합·기전 표적(CERTA) 조합 — paracetamol/NSAID + 국소마취 및 비약물 요법 — 으로 옮기고, 저용량 ketamine(0.1 mg/kg 정맥 또는 0.7 mg/kg 비강내)과 적정한 단시간작용 오피오이드(fentanyl 50 μg~최대 200 μg; morphine 2–3 mg 분할)를 일상적 사용이 아닌 표적화된 증량 수단으로 사용하십시오. 병원전 팀은 정맥 확보가 어려울 때 비강내 경로로 동일한 프레임워크를 적용할 수 있으며, 12세 이하 소아에서 codeine을, 신장애나 두개내압 상승에서 특정 오피오이드를 피하는 등 용량을 개별화해야 합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41810980",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41810980/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/MEJ.0000000000001323",
+            "url": "https://doi.org/10.1097/MEJ.0000000000001323"
+          },
+          {
+            "label": "웹 — EUSEM 공식 뉴스 — 2025 Update: New Guidelines for Managing Acute Pain in Emergency Care",
+            "url": "https://eusem.org/news/1096-2025-update-new-guidelines-for-managing-acute-pain-in-emergency-care"
+          },
+          {
+            "label": "웹 — EUSEM Guidelines index page (links the Oct 2025 updated acute pain PDF)",
+            "url": "https://eusem.org/research/guidelines"
+          },
+          {
+            "label": "웹 — Medical Dialogues — Acute pain management in emergency: EUSEM Guideline (clinical practice summary with doses)",
+            "url": "https://medicaldialogues.in/anesthesia/guidelines/acute-pain-management-in-emergency-eusem-guideline-73128"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-12"
     }
   ],
   "rejected": [
@@ -62172,7 +62260,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-11T00:24:50.054Z",
+      "discoveredAt": "2026-10-12T00:46:41.461Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62585,7 +62673,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-11T00:24:50.054Z",
+      "discoveredAt": "2026-10-12T00:46:41.461Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -62627,7 +62715,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-11T00:24:50.054Z",
+      "discoveredAt": "2026-10-12T00:46:41.461Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -62671,7 +62759,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-11T00:24:50.054Z",
+      "discoveredAt": "2026-10-12T00:46:41.461Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62698,7 +62786,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-11T00:24:50.054Z",
+      "discoveredAt": "2026-10-12T00:46:41.461Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62764,9 +62852,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261011_092008:guideline:2026-10-11",
+    "runId": "trend_review_20261012_094158:guideline:2026-10-12",
     "outcome": "published",
-    "publishedId": "pmid:40991037",
+    "publishedId": "pmid:41810980",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -62791,15 +62879,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 130,
+        "mergedTotal": 131,
         "overlapCount": 3,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/11",
-          "maxDate": "2026/10/11"
+          "minDate": "2026/09/12",
+          "maxDate": "2026/10/12"
         },
         "retmax": 60,
         "topics": [
@@ -62825,8 +62913,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 19,
-            "idsFetched": 19,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -62903,7 +62991,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 120,
+        "topicOnlyCount": 121,
         "ptPmids": [
           "42788594",
           "42711241",
@@ -62914,9 +63002,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 130,
-          "enriched": 130,
-          "withAbstract": 90,
+          "requested": 131,
+          "enriched": 131,
+          "withAbstract": 91,
           "error": null
         }
       },
@@ -62969,25 +63057,23 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 1,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "decisions": {
-        "queued": 211,
+        "queued": 210,
         "needsReview": 452,
         "rejected": 130,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40991037",
+        "candidateId": "pmid:41810980",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-11T00:28:20.451Z",
+  "updatedAt": "2026-10-12T00:54:05.060Z",
   "configVersion": "guideline-v2"
 }

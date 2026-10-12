@@ -1890,23 +1890,6 @@
       "status": "queued"
     },
     {
-      "pmid": "35595999",
-      "title": "Management of moderate to severe traumatic brain injury: an update for the intensivist.",
-      "journal": "Intensive Care Med",
-      "score": 6.4,
-      "topic": "trauma",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "중등도~중증 TBI 집중치료 업데이트 — 외상·신경 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "35607967",
       "title": "Electrical Impedance Tomography in Acute Respiratory Distress Syndrome Management.",
       "journal": "Crit Care Med",
@@ -11736,6 +11719,110 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "35595999",
+      "title": "Management of moderate to severe traumatic brain injury: an update for the intensivist.",
+      "journal": "Intensive Care Med",
+      "score": 6.4,
+      "topic": "trauma",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중등도~중증 TBI 집중치료 업데이트 — 외상·신경 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-12",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "35595999",
+          "title": "Management of moderate to severe traumatic brain injury: an update for the intensivist.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2022-5-21",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/35595999/",
+          "doi": "10.1007/s00134-022-06702-4"
+        },
+        "title_ko": "중등도-중증 외상성 뇌손상의 관리: 중환자 전문의를 위한 최신 지견",
+        "scope_ko": "중환자실에 입원한 성인 중등도-중증 외상성 뇌손상(TBI) 환자를 대상으로, 현재의 최선의 임상 관리와 장기 예후를 포괄적·실용적으로 정리한 종설입니다. 이차 손상의 최소화, 기질 공급과 소비의 균형 최적화, 다중 모니터링 기반 관리, 전인적(holistic) 접근, 회복 경과와 신경예후판정을 다룹니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "질병 부담과 종설의 위치",
+            "body_ko": "외상성 뇌손상(TBI)은 여전히 전 세계적으로 가장 치명적이고 장애를 많이 남기는 질환 중 하나입니다. 본 논문은 중환자실에 입원한 성인 중등도-중증 TBI 환자의 임상 관리와 장기 예후에 관한 현 시점의 최선의 진료(best practice)를 포괄적이고 실용적으로 정리한 종설입니다.\n\n(주의: 아래 'article' 표시 절들은 본 논문의 초록에 근거해 충실히 옮긴 것입니다. 본문 전문은 출판사(Springer) 페이지가 인증을 요구하여 확보하지 못했습니다. 본문 고유의 구체적 수치·용량·역치·근거등급·그림 범례는 초록에 담겨 있지 않아 이 번역에 포함되지 않았음을 밝혀 둡니다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상 관리의 기본 원칙 — 이차 손상의 최소화와 기질 균형",
+            "body_ko": "현재 중증 TBI 환자의 임상 관리는 주로 이차적 침해(secondary insults)를 줄이고, 기질(substrate)의 공급과 소비 사이의 균형을 최적화하는 데 초점을 둡니다. 즉 손상 이후 뇌의 항상성 환경을 가능한 한 보전하여 추가 손상이 누적되지 않도록 하는 것이 관리의 핵심 목표입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "다중 모니터링과 관리 프로토콜",
+            "body_ko": "지난 수십 년에 걸쳐 다중(multimodality) 모니터링의 활용 가능성이 넓어졌고, 병태생리학적 교란을 교정하기 위한 잠재적 중재들을 권고하는 임상 관리 프로토콜들이 발표되었습니다.\n\n저자들은 권고된 중재들 가운데 상당수가 아직 무작위 임상시험(RCT)에 의한 근거를 갖추지 못했다는 점을 분명히 합니다. 그럼에도 이러한 프로토콜과 알고리즘은 명확한 치료의 표준(standard of therapy)을 정의하는 데 유용하며, 그 표준 위에 새로운 중재를 추가하거나 기존 중재와 비교하는 기준점이 될 수 있다고 봅니다. 즉 근거의 공백을 인정하면서도, 표준화된 관리 틀 자체의 실용적 가치를 강조하는 신중한 입장입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "전인적(holistic) 관리로의 전환",
+            "body_ko": "지난 10년 동안에는 전인적(holistic) 관리에 더 많은 주의가 기울여졌습니다. 이는 두개내압(ICP) 조절에만 집중하던 시각에서 벗어나, 혈역학적·호흡기계·염증성·응고 관련 교란을 함께 탐지하고 그에 맞추어 치료하는 접근을 말합니다. 뇌 자체만이 아니라 전신의 생리적 교란이 이차 뇌손상에 기여하므로, 이를 통합적으로 감지하고 교정하는 것이 관리의 한 축으로 자리 잡았다는 것입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "회복 경과의 다양성",
+            "body_ko": "회복의 궤적(trajectories of recovery)에는 상당한 변이가 존재합니다. 대부분의 회복은 TBI 이후 첫 수개월 이내에 일어나지만, 그보다 늦은 시기에도 실질적인 변화가 여전히 일어날 수 있습니다. 따라서 이른 시기의 상태만으로 최종 결과를 단정하기는 어렵다는 점이 시사됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신경예후판정과 자기충족적 예언의 위험",
+            "body_ko": "이들 환자에서 신경예후판정(neuroprognostication)은 어려운 과제입니다. 저자들은 특히 '자기충족적 예언(self-fulfilling prophecy)'의 위험을 우려 사항으로 지적합니다. 즉 나쁜 예후를 예측하고 그에 근거해 치료를 제한하면, 그 예측이 결과적으로 스스로 실현되어 버리는 순환의 위험이 있다는 것입니다. 회복에 늦은 변화의 여지가 남아 있다는 앞의 관찰과 맞물려, 예후 판정에는 신중함이 요구됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 초기 소생 및 응급·전원 전 관리 목표치",
+            "body_ko": "아래 내용은 본 논문의 본문을 확보하지 못해, 동일 주제 범위의 권위 있는 2차 문헌(중등도-중증 TBI 초기 소생을 다룬 공개 종설)에서 보강한 것입니다. 본 논문 자체의 서술이 아니며, 현장 참고를 위한 전형적 목표치입니다.\n\n혈압: BTF 지침은 임상적 특성(연령 포함)에 따라 수축기혈압(SBP) 역치를 100mmHg 또는 110mmHg로 권고합니다. 다만 최근 근거는 연령·성별과 무관하게 SBP > 110mmHg에서 사망률이 더 낮았음을 시사합니다.\n\n산소화: 저산소혈증과 과산소증 모두 이차 손상을 늘리므로 PaO2를 80~120mmHg로 유지하도록 권고합니다.\n\n환기(PaCO2): 허혈 유발 위험 때문에 PaCO2를 35~45mmHg로 유지하도록 권고하며, 뇌탈출(herniation) 위험 시에는 일시적으로 중등도 과환기를 적용할 수 있습니다.\n\nCPP/ICP: BTF 지침은 CPP를 60~70mmHg 범위로 권고하고 50mmHg 미만을 피하도록 합니다. 압력반응성지수(PRx) 기반 자동조절능 모니터링은 개별화 관리의 가능성으로 주목됩니다.\n\n삼투요법: 혈청 나트륨 145~155mmol/L 및/또는 혈청 삼투질농도 310~320mOsm/kg를 언급하되, ICP 조절과의 상관성은 확실치 않다고 봅니다.\n\n트라넥삼산(TXA): CRASH-3은 경–중등도 TBI에서 두부손상 관련 사망 감소를 보였으나 중증 TBI에서는 그렇지 않았습니다. 손상 후 3시간 이내에 1g 일시투여 후 8시간에 걸쳐 1g 주입이 제시됩니다.\n\n응고장애 교정: INR > 1.5 또는 유의한 출혈 시 FFP 15~20mL/kg 또는 PCC 25~50IU/kg 사용이 제시됩니다.\n— 보강 출처: Resuscitation and Initial Management After Moderate-to-Severe TBI (PMC free full text) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11642164/)",
+            "origin": "augmented",
+            "sourceLabel": "Resuscitation and Initial Management After Moderate-to-Severe TBI (PMC free full text)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11642164/"
+          },
+          {
+            "heading_ko": "[웹 보강] 중환자실 표준치료의 최근 동향 — 단계적(tiered) 접근과 다중 모니터링",
+            "body_ko": "아래 내용은 본 논문의 본문을 확보하지 못해, 동일 주제 범위의 권위 있는 2차 문헌(중환자실 TBI 최신 지견 종설)에서 보강한 것입니다. 본 논문 자체의 서술이 아닙니다.\n\n단계적 치료: ICP 관리 전략은 Seattle International Severe TBI Consensus Conference(SIBICC) 프로토콜의 단계적(stepwise) 권고를 따르는 것이 제안됩니다.\n\n개별화 CPP: 압력반응성지수(PRx)를 이용해 환자별 최적 CPP(CPPopt)를 찾는 접근이 주목되며, 자동조절능이 저하된 환자에서는 최적 CPP가 통상 범위보다 높을 수 있습니다.\n\n뇌조직 산소분압(PbtO2): OXY-TC 시험에서는 ICP와 PbtO2 이중 모니터링 후 뇌조직 저산소증을 프로토콜화하여 치료해도 신경학적 예후가 개선되지 않았습니다. 다만 사후 분석에서는 초기 ICP가 높은(≥20mmHg) 환자에서 이득 가능성이 시사되었습니다.\n\n삼투요법 선택: 만니톨, 고장성식염수, 또는 병용 간에 예후 차이가 뚜렷하지 않았고, 선택은 환자 특성보다 센터 선호에 따라 달라지는 경향이 보고됩니다.\n\n예후 바이오마커: 혈중 GFAP, UCH-L1, NFL이 손상 중증도와 예후에 대한 객관적·부가적 정보를 제공합니다.\n— 보강 출처: Update on traumatic brain injury in the ICU (PMC free full text) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11864042/)",
+            "origin": "augmented",
+            "sourceLabel": "Update on traumatic brain injury in the ICU (PMC free full text)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11864042/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서의 요지는 ICP 한 가지에 매달리기보다, 이차 손상을 줄이고 기질 공급-소비 균형을 지키는 목표 아래 혈역학·호흡·염증·응고 교란까지 통합적으로 관리하라는 것입니다. RCT 근거가 부족한 중재가 많으므로 SIBICC 같은 표준 프로토콜을 기준점으로 삼아 운용하는 것이 합리적입니다. 회복에는 늦은 시기의 변화 여지가 있고 신경예후판정에는 자기충족적 예언의 위험이 있으므로, 이른 시기의 소견만으로 치료 제한을 서두르지 않도록 신중해야 합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 35595999",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35595999/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-022-06702-4",
+            "url": "https://doi.org/10.1007/s00134-022-06702-4"
+          },
+          {
+            "label": "웹 — Meyfroidt 2022, Intensive Care Medicine — article landing page (abstract reachable; full text behind Springer authentication)",
+            "url": "https://link.springer.com/article/10.1007/s00134-022-06702-4"
+          },
+          {
+            "label": "웹 — Update on traumatic brain injury in the ICU (PMC free full text — secondary source for augmented sections)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11864042/"
+          },
+          {
+            "label": "웹 — Resuscitation and Initial Management After Moderate-to-Severe TBI (PMC free full text — secondary source for augmented sections)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11642164/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -11793,9 +11880,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-11",
+    "date": "2026-10-12",
     "outcome": "published",
-    "publishedId": "35986748"
+    "publishedId": "35595999"
   },
-  "updatedAt": "2026-10-11"
+  "updatedAt": "2026-10-12"
 }
