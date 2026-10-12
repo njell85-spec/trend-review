@@ -3765,6 +3765,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-12",
+      "pmid": "41528193",
+      "title": "Gender Disparity in Extracorporeal Cardiopulmonary Resuscitation for Out-of-Hospital Cardiac Arrest.",
+      "title_ko": "병원 밖 심정지 환자에서 체외순환 심폐소생술(ECPR)의 성별 불균형",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007041",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ECPR 가능 병원으로 이송된 병원 밖 심정지(OHCA) 성인 환자에서 환자의 성별이 ECPR 시행 가능성과 연관되는가?",
+      "pico": {
+        "population": "[Japan] Among 47,965 eligible adult patients (≥ 18 yr) with OHCA from nonexternal causes who did not achieve return of spontaneous circulation before or upon hospital arrival and were transported to facilities with 24-hour ECPR availability within 60 minutes of emergency call (JAAM-OHCA Registry, 164 hospitals, June 2014–December 2022); 28,754 (60.0%) male and 19,211 (40.0%) female; median age 78.0 years.",
+        "intervention": "Male sex (exposure).",
+        "comparison": "Female sex.",
+        "outcome": "Primary outcome was receiving ECPR, defined as emergent venoarterial extracorporeal membrane oxygenation implementation before return of spontaneous circulation within 60 minutes after hospital arrival. ECPR was performed in 1713 male patients (6.0%) vs 344 female patients (1.8%); after adjustment, male sex was associated with significantly higher odds of receiving ECPR (adjusted odds ratio 1.68; 95% CI, 1.46–1.93)."
+      },
+      "pico_ko": {
+        "population": "[일본] 비외상성 원인의 병원 밖 심정지(OHCA)로 병원 도착 전·도착 시점까지 자발순환회복(ROSC)이 없었고 응급신고 후 60분 이내에 24시간 ECPR 가능 시설로 이송된 성인(≥ 18세) 47,965명 (JAAM-OHCA 레지스트리, 164개 병원, 2014년 6월–2022년 12월); 남성 28,754명(60.0%), 여성 19,211명(40.0%), 중앙값 연령 78.0세.",
+        "intervention": "남성(노출 변수).",
+        "comparison": "여성.",
+        "outcome": "일차 결과는 ECPR 시행 여부로, 병원 도착 후 60분 이내 ROSC 전에 응급 venoarterial ECMO를 적용한 경우로 정의. ECPR은 남성 1713명(6.0%) 대 여성 344명(1.8%)에서 시행됨; 보정 후 남성은 ECPR 시행의 유의하게 높은 odds와 연관(adjusted OR 1.68; 95% CI, 1.46–1.93)."
+      },
+      "keyFindings": [
+        "Among 47,965 eligible OHCA patients (60.0% male, 40.0% female; median age 78.0 yr), ECPR was performed in 6.0% of males (1713) vs 1.8% of females (344).",
+        "After multilevel logistic regression adjusting for center-level and patient-level confounders, male sex was associated with significantly higher odds of receiving ECPR (adjusted OR 1.68; 95% CI, 1.46–1.93).",
+        "The male predominance was consistent across most subgroups but was NOT observed in patients unequivocally eligible or ineligible for ECPR, suggesting disparity concentrates where indications are ambiguous."
+      ],
+      "keyFindings_ko": [
+        "적격 OHCA 환자 47,965명(남성 60.0%, 여성 40.0%; 중앙값 연령 78.0세) 중 ECPR은 남성 6.0%(1713명) 대 여성 1.8%(344명)에서 시행됨.",
+        "센터 및 환자 수준 교란변수를 보정한 multilevel logistic regression 후, 남성은 ECPR 시행의 유의하게 높은 odds와 연관됨(adjusted OR 1.68; 95% CI, 1.46–1.93).",
+        "이 남성 우위는 대부분의 subgroup에서 일관되었으나 ECPR 적응증이 명백히 적격/부적격인 환자에서는 관찰되지 않아, 적응증이 모호한 영역에 불균형이 집중됨을 시사함."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41528193",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41528193/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007041",
+          "url": "https://doi.org/10.1097/CCM.0000000000007041"
+        },
+        {
+          "label": "웹 — PubMed (PMID 41528193)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41528193/"
+        },
+        {
+          "label": "웹 — Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/10.1097/ccm.0000000000007041~gender-disparity-in-extracorporeal-cardiopulmonary"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed (PMID 41528193)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41528193/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/10.1097/ccm.0000000000007041~gender-disparity-in-extracorporeal-cardiopulmonary",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
