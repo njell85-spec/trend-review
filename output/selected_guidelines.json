@@ -6108,74 +6108,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:39622601",
-      "pmid": "39622601",
-      "title": "Early management of adult sepsis and septic shock: Korean clinical practice guidelines.",
-      "pubDate": "2024 Nov",
-      "journal": "Acute and critical care",
-      "publicationTypes": [
-        "Guideline",
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:36:03.188Z",
-      "abstract": "BACKGROUND: Despite recent advances and global improvements in sepsis recognition and supportive care, mortality rates remain high, and adherence to sepsis bundle components in Korea is low. To address this, the Korean Sepsis Alliance, affiliated with the Korean Society of Critical Care Medicine, developed the first sepsis treatment guidelines for Korea based on a comprehensive systematic review and meta-analysis.\nMETHODS: A de novo method was used to develop the guidelines. Methodologies included determining key questions, conducting a literature search and selection, assessing the risk of bias, synthesizing evidence, and developing recommendations. The certainty of evidence and the strength of recommendations were determined using the Grading of Recommendations, Assessment, Development, and Evaluations approach. Draft recommendations underwent internal and external review processes and public hearings. The development of these guidelines was supported by a research grant from the Korean Disease Control and Prevention Agency.\nRESULTS: In these guidelines, we focused on early treatments for adult patients with sepsis and septic shock. Through the guideline development process, 12 key questions and their respective recommendations were formulated. These include lactate measurement, fluid therapies, target blood pressure, antibiotic administration, use of vasopressors and dobutamine, extracorporeal membrane oxygenation, and echocardiography.\nCONCLUSIONS: These guidelines aim to support medical professionals in making appropriate decisions about treating adult sepsis and septic shock. We hope these guidelines will increase awareness of sepsis and reduce its mortality rate.",
-      "meshTerms": [],
-      "keywords": [
-        "guidelines",
-        "outcome",
-        "sepsis",
-        "septic shock",
-        "treatment"
-      ],
-      "doi": "10.4266/acc.2024.00920",
-      "pmcid": "PMC11617831",
-      "region": "kr",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.278511354624278,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 0.27851135462427834,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:16.922Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "성인 패혈증·패혈성쇼크 조기관리 한국 지침, 핵심 주제",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|early-management-adult-sepsis-septic-shock-korean-clinical-practice",
-      "supersedes": []
-    },
-    {
       "id": "pmid:39495314",
       "pmid": "39495314",
       "title": "American Society for Microbiology evidence-based laboratory medicine practice guidelines to reduce blood culture contamination rates: a systematic review and meta-analysis.",
@@ -32590,7 +32522,7 @@
       "id": "pmid:41500850",
       "pmid": "41500850",
       "title": "[Aspiration pneumonia: Practical synthesis and perspectives in the light of the 2025 French guidelines].",
-      "pubDate": "2026 Jan 6",
+      "pubDate": "2026 Oct",
       "journal": "La Revue de medecine interne",
       "publicationTypes": [
         "English Abstract",
@@ -32602,7 +32534,14 @@
       ],
       "discoveredAt": "2026-08-17T04:39:22.746Z",
       "abstract": "Aspiration pneumonia is a specific respiratory infection. It is frequent and severe, and represents a pressing issue given the growing ageing population. For the first time, French guidelines clarify how to manage this infection. We therefore wanted to present a revised review on this topic. The main aim is to highlight strategic elements based on pathophysiology. Diagnosis is based on clinical and radiological criteria; however, the aspiration event remains difficult to define. Biological tests are still important for follow-up and evaluating the impact of the disease on different organ systems. Microbiological examinations should not be performed systematically, but only under specific conditions. Antibiotherapy is based on simple principles: amoxicillin-clavulanic acid is the first-line treatment, administered orally wherever possible, and metronidazole should not be used. A careful analysis of the context and risk factors is essential for effective prevention. This is a multimodal and multidisciplinary approach involving rehabilitation, nutritional care and oral hygiene.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "France",
+        "Pneumonia, Aspiration",
+        "Practice Guidelines as Topic",
+        "Anti-Bacterial Agents",
+        "Risk Factors"
+      ],
       "keywords": [
         "Aspiration pneumonia",
         "Geriatrics",
@@ -32629,11 +32568,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 6.851886741659968,
+      "priority": 8,
       "breakdown": {
         "authority": 0,
-        "topic": 3,
-        "recency": 1.8518867416599676,
+        "topic": 4,
+        "recency": 2,
         "scope": 0,
         "confidence": 2
       },
@@ -32647,7 +32586,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:39:38.246Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -32656,7 +32595,8 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "unknown|aspiration-pneumonia-practical-synthesis-perspectives-light-french",
-      "supersedes": []
+      "supersedes": [],
+      "attempts": 0
     },
     {
       "id": "pmid:40923137",
@@ -36020,7 +35960,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -37795,7 +37735,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43038,7 +42978,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44359,7 +44299,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44486,7 +44426,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45148,7 +45088,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45306,7 +45246,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45386,7 +45326,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45611,7 +45551,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46566,7 +46506,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -46635,7 +46575,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46749,11 +46689,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.62584349071482,
+      "priority": 7.622531031894335,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6258434907148194,
+        "recency": 1.6225310318943351,
         "scope": 0,
         "confidence": 2
       },
@@ -46768,7 +46708,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -46828,7 +46768,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46902,7 +46842,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46958,11 +46898,11 @@
         "officialDocument": false,
         "organizationId": "esicm"
       },
-      "priority": 11.62584349071482,
+      "priority": 11.622531031894335,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6258434907148194,
+        "recency": 1.6225310318943351,
         "scope": 0,
         "confidence": 2
       },
@@ -46978,7 +46918,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "esicm|patient-author-diversity-representation-studies-supporting-european-respiratory-society-european-society-clinical-microbiology-infectious-diseases-asociación-latinoamericana-de-tórax-severe-community-acquired-pneumonia",
       "supersedes": [],
       "llmFit": {
@@ -47045,7 +46985,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47110,7 +47050,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47160,11 +47100,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.625843490588064,
+      "priority": 11.62253103176758,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6258434905880645,
+        "recency": 1.62253103176758,
         "scope": 0,
         "confidence": 2
       },
@@ -47180,7 +47120,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47259,7 +47199,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47334,7 +47274,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47401,7 +47341,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47476,7 +47416,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47534,7 +47474,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-13T02:45:05.258Z",
+      "lastSeenAt": "2026-10-14T00:31:43.587Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -57378,6 +57318,156 @@
         ]
       },
       "publishedAt": "2026-10-13"
+    },
+    {
+      "id": "pmid:39622601",
+      "pmid": "39622601",
+      "title": "Early management of adult sepsis and septic shock: Korean clinical practice guidelines.",
+      "pubDate": "2024 Nov",
+      "journal": "Acute and critical care",
+      "publicationTypes": [
+        "Guideline",
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:36:03.188Z",
+      "abstract": "BACKGROUND: Despite recent advances and global improvements in sepsis recognition and supportive care, mortality rates remain high, and adherence to sepsis bundle components in Korea is low. To address this, the Korean Sepsis Alliance, affiliated with the Korean Society of Critical Care Medicine, developed the first sepsis treatment guidelines for Korea based on a comprehensive systematic review and meta-analysis.\nMETHODS: A de novo method was used to develop the guidelines. Methodologies included determining key questions, conducting a literature search and selection, assessing the risk of bias, synthesizing evidence, and developing recommendations. The certainty of evidence and the strength of recommendations were determined using the Grading of Recommendations, Assessment, Development, and Evaluations approach. Draft recommendations underwent internal and external review processes and public hearings. The development of these guidelines was supported by a research grant from the Korean Disease Control and Prevention Agency.\nRESULTS: In these guidelines, we focused on early treatments for adult patients with sepsis and septic shock. Through the guideline development process, 12 key questions and their respective recommendations were formulated. These include lactate measurement, fluid therapies, target blood pressure, antibiotic administration, use of vasopressors and dobutamine, extracorporeal membrane oxygenation, and echocardiography.\nCONCLUSIONS: These guidelines aim to support medical professionals in making appropriate decisions about treating adult sepsis and septic shock. We hope these guidelines will increase awareness of sepsis and reduce its mortality rate.",
+      "meshTerms": [],
+      "keywords": [
+        "guidelines",
+        "outcome",
+        "sepsis",
+        "septic shock",
+        "treatment"
+      ],
+      "doi": "10.4266/acc.2024.00920",
+      "pmcid": "PMC11617831",
+      "region": "kr",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.278511354624278,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 0.27851135462427834,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:16.922Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "성인 패혈증·패혈성쇼크 조기관리 한국 지침, 핵심 주제",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|early-management-adult-sepsis-septic-shock-korean-clinical-practice",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39622601",
+          "title": "Early management of adult sepsis and septic shock: Korean clinical practice guidelines.",
+          "journal": "Acute and critical care",
+          "pubDate": "2024 Nov",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39622601/",
+          "doi": "10.4266/acc.2024.00920"
+        },
+        "org": "Korean Sepsis Alliance (KSA) / Korean Society of Critical Care Medicine (KSCCM)",
+        "version": "2024",
+        "title_ko": "성인 패혈증 및 패혈성 쇼크의 초기 관리: 한국 임상진료지침 (2024)",
+        "scope_ko": "한국 최초의 근거기반(체계적 문헌고찰·메타분석) 패혈증 진료지침으로, 성인 패혈증 및 패혈성 쇼크 환자의 '초기' 치료만을 다룬다. 12개 핵심질문(KQ)에 대해 젖산(lactate) 측정, 수액 소생, 목표 혈압, 항생제 투여 시점, 승압제·도부타민 사용, ECMO, 심초음파를 권고한다. 진단법, 초기 소생 이후의 관리, 보조요법, 조기 인지(early recognition)는 범위에서 제외되었다.",
+        "summary": [
+          "During fluid resuscitation in sepsis/septic shock, use lactate clearance rather than ScvO2 as the resuscitation indicator (conditional recommendation, strength B; moderate certainty) — meta-analysis of 4 RCTs showed lower in-hospital mortality with lactate clearance (RR 0.74, 95% CI 0.59–0.93).",
+          "In sepsis/septic shock with hypotension or hypoperfusion, give 30 mL/kg of crystalloid within the first 3 hours (conditional, strength B; low certainty).",
+          "Either balanced crystalloids or 0.9% saline may be used for fluid resuscitation (conditional, strength B; moderate certainty).",
+          "In septic shock, target MAP ≥65 mmHg rather than a higher MAP target (conditional, strength B; moderate certainty).",
+          "After initial resuscitation, guide further fluid therapy using dynamic parameters (conditional, strength B; moderate certainty).",
+          "Administer antibiotics within 1 hour of septic shock recognition (conditional, strength B; low certainty); within 3 hours of sepsis (without shock) recognition (expert consensus, strength E; very low certainty).",
+          "Use norepinephrine as the first-line vasopressor in preference to others (STRONG recommendation, strength A; high certainty vs dopamine, moderate vs vasopressin, low vs epinephrine); start vasopressors early during initial fluid therapy if needed (conditional, strength B; moderate), and add vasopressin rather than escalating norepinephrine when MAP remains inadequate (conditional, strength B; moderate).",
+          "Consider dobutamine when cardiac dysfunction accompanies shock (expert opinion, strength E; very low); VA-ECMO for refractory cardiogenic shock (conditional, strength B; low) and VV-ECMO for refractory ARDS (expert opinion, strength E); use echocardiography to assess cardiac function/hemodynamics (conditional, strength B; very low)."
+        ],
+        "summary_ko": [
+          "패혈증/패혈성 쇼크의 수액 소생 시 ScvO2가 아니라 lactate clearance를 지표로 사용한다(조건부 권고, 강도 B; 중등도 확실성) — RCT 4편 메타분석에서 lactate clearance군의 원내 사망률이 유의하게 낮았다(RR 0.74, 95% CI 0.59–0.93).",
+          "저혈압 또는 저관류를 동반한 패혈증/패혈성 쇼크에서는 첫 3시간 이내에 결정질액(crystalloid) 30 mL/kg를 투여한다(조건부, 강도 B; 낮은 확실성).",
+          "수액 소생에는 balanced crystalloid 또는 0.9% 생리식염수 어느 쪽이든 사용할 수 있다(조건부, 강도 B; 중등도 확실성).",
+          "패혈성 쇼크에서 목표 MAP는 더 높은 목표가 아니라 ≥65 mmHg로 한다(조건부, 강도 B; 중등도 확실성).",
+          "초기 소생 이후의 추가 수액요법은 동적 지표(dynamic parameters)로 판단한다(조건부, 강도 B; 중등도 확실성).",
+          "패혈성 쇼크 인지 후 1시간 이내에 항생제를 투여한다(조건부, 강도 B; 낮은 확실성); 쇼크가 없는 패혈증은 인지 후 3시간 이내(전문가 합의, 강도 E; 매우 낮은 확실성).",
+          "승압제는 norepinephrine을 1차로 선택한다(강한 권고, 강도 A; dopamine 대비 high, vasopressin 대비 moderate, epinephrine 대비 low 확실성). 필요 시 초기 수액요법 중 조기에 승압제를 시작하고(조건부, 강도 B; 중등도), MAP가 부족하면 norepinephrine 증량보다 vasopressin을 추가한다(조건부, 강도 B; 중등도).",
+          "쇼크에 심기능 저하가 동반되면 dobutamine을 고려한다(전문가 의견, 강도 E; 매우 낮음). 불응성 심인성 쇼크에는 VA-ECMO(조건부, 강도 B; 낮음), 불응성 ARDS에는 VV-ECMO(전문가 의견, 강도 E)를 고려하고, 심기능·혈역학 평가에 심초음파를 활용한다(조건부, 강도 B; 매우 낮음)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "소생 목표 지표 (EGDT/ScvO2 → lactate clearance)",
+            "detail": "Previous early SSC/EGDT-era practice targeted ScvO2 (≥70%) for quantitative resuscitation. EGDT failed to reduce mortality in the large ProCESS/ARISE/ProMISe trials and ScvO2 targeting was removed from SSC in the 2016 revision. These guidelines formalize the shift: use lactate clearance rather than ScvO2 as the resuscitation indicator (conditional, strength B; moderate certainty), citing a 4-RCT meta-analysis with lower in-hospital mortality (RR 0.74, 95% CI 0.59–0.93) and the practical advantage that lactate can be measured without a central venous catheter.",
+            "detail_ko": "과거 초기 SSC/EGDT 시대에는 정량적 소생 목표로 ScvO2(≥70%)를 사용했다. EGDT는 대규모 ProCESS/ARISE/ProMISe 연구에서 사망률 감소를 보이지 못해 2016년 SSC 개정에서 ScvO2 목표가 삭제되었다. 본 지침은 이 전환을 공식화하여 ScvO2 대신 lactate clearance를 소생 지표로 사용하도록 권고한다(조건부, 강도 B; 중등도 확실성). 근거는 RCT 4편 메타분석의 원내 사망률 감소(RR 0.74, 95% CI 0.59–0.93)이며, 중심정맥관 없이도 신속 측정이 가능하다는 실용적 이점을 든다."
+          },
+          {
+            "topic": "수액 종류 선택 (balanced crystalloid 선호 → 양자 허용)",
+            "detail": "Unlike SSC 2021, which suggests balanced crystalloids over 0.9% saline, this Korean guideline concludes that either balanced crystalloids OR normal saline may be used for resuscitation (conditional, strength B; moderate certainty) — i.e., it does not establish a preference for balanced solutions, reflecting the evidence base at the December 2022 literature cutoff.",
+            "detail_ko": "SSC 2021이 0.9% 생리식염수보다 balanced crystalloid를 선호한 것과 달리, 본 한국 지침은 소생 시 balanced crystalloid 또는 생리식염수 어느 쪽이든 사용 가능하다고 결론지었다(조건부, 강도 B; 중등도 확실성). 즉 balanced 용액을 우선하는 선호를 두지 않았으며, 이는 2022년 12월 문헌 컷오프 시점의 근거를 반영한 것이다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "AGREE II 외부 품질평가 — 이 지침은 'A등급'(강력 권고 가능)으로 평가됨",
+            "body_ko": "한 2차 분석 논문(여러 패혈증 지침의 질을 AGREE II로 비교)이 본 KSCCM 2024 지침을 평가했다. 전체 평균 78.82%로 A등급(강력 권고)을 받았으며, 도메인별로는 명확성(clarity) 94.44%, 편집 독립성 91.67%, 개발의 엄밀성 85.42%, 범위·목적 83.33%로 높았으나 적용성(applicability) 62.50%, 이해관계자 참여(stakeholder involvement) 55.56%는 상대적으로 낮았다(후자는 J-SSCG의 94.44%에 비해 낮음). 이 논문은 또한 항생제 시점(쇼크 1시간/패혈증 3시간)과 수액에서 'balanced crystalloid 또는 saline 모두 허용'이라는 KSCCM의 입장이 balanced를 선호한 SSC 2021과 다르며, norepinephrine 1차 승압제는 모든 지침에서 일치한다고 지적했다. 주의: 이 내용은 지침 원문이 아니라 외부 평가 논문의 분석이다.",
+            "sourceLabel": "Quality assessment of clinical practice guidelines for sepsis and variations in recommendations (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12837635"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "Operationally, these guidelines align Korean EM/ICU practice with lactate-clearance–driven resuscitation (abandon ScvO2/central-line-dependent EGDT targets), a 30 mL/kg crystalloid bolus within 3 hours, and a firm MAP ≥65 mmHg target rather than chasing higher pressures. The time-to-antibiotic bar is bifurcated — ≤1 hour for septic shock vs ≤3 hours for sepsis without shock — which should drive triage and pharmacy workflows. Norepinephrine is the unambiguous first vasopressor (the only strong/A recommendation), started early even during ongoing fluids, with vasopressin as the preferred second agent instead of up-titrating norepinephrine. Because national bundle compliance is low (lactate delays largely due to staffing shortages per a KSA survey), the practical payoff is protocolizing these steps into order sets and nurse-driven triggers.",
+        "practiceImpact_ko": "실무적으로 이 지침은 한국 응급·중환자 진료를 ScvO2/중심정맥관 의존 EGDT 목표에서 벗어나 lactate clearance 기반 소생으로 정렬시키고, 3시간 내 결정질액 30 mL/kg 볼루스, 그리고 더 높은 혈압을 추구하지 않는 확고한 MAP ≥65 mmHg 목표를 제시한다. 항생제 투여 기준이 이원화되어 — 패혈성 쇼크는 ≤1시간, 쇼크 없는 패혈증은 ≤3시간 — 이는 triage·약제 워크플로우에 반영되어야 한다. 승압제는 norepinephrine이 명확한 1차(유일한 강한 권고/강도 A)이며 수액 투여 중에도 조기 시작하고, 2차로는 norepinephrine 증량 대신 vasopressin 추가가 선호된다. 국내 번들 순응도가 낮고(KSA 설문상 lactate 지연의 주원인이 인력 부족) 이를 오더셋·간호사 주도 트리거로 프로토콜화하는 것이 실질적 이득이다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39622601",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39622601/"
+          },
+          {
+            "label": "Journal (DOI) — 10.4266/acc.2024.00920",
+            "url": "https://doi.org/10.4266/acc.2024.00920"
+          },
+          {
+            "label": "웹 — Acute and Critical Care — article page (Early management of adult sepsis and septic shock: Korean clinical practice guidelines)",
+            "url": "https://www.accjournal.org/journal/view.php?number=1561"
+          },
+          {
+            "label": "웹 — Quality assessment of clinical practice guidelines for sepsis and variations in recommendations (PMC12837635)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12837635"
+          },
+          {
+            "label": "웹 — Acute and Critical Care — full-text PDF (acc-2024-00920)",
+            "url": "https://www.accjournal.org/upload/pdf/acc-2024-00920.pdf"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-14"
     }
   ],
   "rejected": [
@@ -62353,7 +62443,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-13T02:44:55.205Z",
+      "discoveredAt": "2026-10-14T00:31:35.127Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62766,7 +62856,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-13T02:44:55.205Z",
+      "discoveredAt": "2026-10-14T00:31:35.127Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -62808,7 +62898,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-13T02:44:55.205Z",
+      "discoveredAt": "2026-10-14T00:31:35.127Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -62852,7 +62942,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-13T02:44:55.205Z",
+      "discoveredAt": "2026-10-14T00:31:35.127Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62879,7 +62969,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-13T02:44:55.205Z",
+      "discoveredAt": "2026-10-14T00:31:35.127Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62907,7 +62997,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-13T02:44:55.205Z",
+      "discoveredAt": "2026-10-14T00:31:35.127Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62973,9 +63063,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261013_114114:guideline:2026-10-13",
+    "runId": "trend_review_20261014_092837:guideline:2026-10-14",
     "outcome": "published",
-    "publishedId": "pmid:38797374",
+    "publishedId": "pmid:39622601",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -62984,8 +63074,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 5,
-            "idsFetched": 5,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -63000,15 +63090,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 135,
-        "overlapCount": 3,
+        "mergedTotal": 139,
+        "overlapCount": 2,
         "ptOnlyCount": 2,
-        "expandedOnlyCount": 6,
+        "expandedOnlyCount": 7,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/13",
-          "maxDate": "2026/10/13"
+          "minDate": "2026/09/14",
+          "maxDate": "2026/10/14"
         },
         "retmax": 60,
         "topics": [
@@ -63016,8 +63106,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 42,
-            "idsFetched": 42,
+            "totalFound": 44,
+            "idsFetched": 44,
             "truncated": false,
             "error": null
           },
@@ -63043,8 +63133,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 15,
+            "idsFetched": 15,
             "truncated": false,
             "error": null
           },
@@ -63097,8 +63187,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           },
@@ -63112,10 +63202,9 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 124,
+        "topicOnlyCount": 128,
         "ptPmids": [
           "42788594",
-          "42711241",
           "42552475",
           "42549877",
           "40298962"
@@ -63123,9 +63212,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 135,
-          "enriched": 135,
-          "withAbstract": 95,
+          "requested": 139,
+          "enriched": 139,
+          "withAbstract": 98,
           "error": null
         }
       },
@@ -63182,19 +63271,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 209,
+        "queued": 208,
         "needsReview": 452,
         "rejected": 131,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:38797374",
+        "candidateId": "pmid:39622601",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-13T02:48:15.019Z",
+  "updatedAt": "2026-10-14T00:33:51.421Z",
   "configVersion": "guideline-v2"
 }
