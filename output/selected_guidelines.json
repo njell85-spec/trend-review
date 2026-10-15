@@ -19518,73 +19518,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:40457450",
-      "pmid": "40457450",
-      "title": "Prioritizing circulation over airway to improve survival in trauma patients with exsanguinating injuries: a world society of emergency surgery-panamerican trauma consensus statement.",
-      "pubDate": "2025 Jun 2",
-      "journal": "World journal of emergency surgery : WJES",
-      "publicationTypes": [
-        "Journal Article",
-        "Systematic Review",
-        "Meta-Analysis",
-        "Consensus Statement"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:37:41.690Z",
-      "abstract": "INTRODUCTION: Hemorrhage is one of the leading causes of preventable death in trauma patients. For decades, the Airway-Breathing-Circulation (ABC) approach has been the cornerstone of trauma care. However, emerging evidence suggests that prioritizing airway management in exsanguinating patients may worsen hypotension and increase mortality. This systematic review and meta-analysis aim to evaluate the effectiveness of the Circulation-Airway-Breathing (CAB) approach compared to the traditional ABC sequence in improving survival in trauma patients with severe hemorrhage.\nMETHODS: A systematic review was conducted in accordance with the PRISMA guidelines. Databases including PubMed and Ovid MEDLINE, SCOPUS, web of science and EMBASE were searched for studies published up to September 2024. Eligible studies included observational and comparative studies reporting outcomes of trauma patients with exsanguinating hemorrhage. The Newcastle-Ottawa Scale was used for risk of bias assessment. A meta-analysis was performed using a random-effects model to calculate pooled odds ratios (OR) for mortality, with 95% confidence intervals (CI). Subgroup analysis was conducted to compare the ABC and CAB approaches in prospective and retrospective studies.\nRESULTS: Six studies (N = 11,855 patients) met the inclusion criteria. The meta-analysis revealed a significant increase in mortality associated with the ABC approach (pooled OR: 3.65, 95% CI: 1.74-7.65). Subgroup analysis of prospective cohort studies found an even higher mortality risk (POR: 9.99, 95% CI: 5.59-17.85) when compared with POR of retrospective studies (POR: 2.42, 95%CI: 1.08-5.36). High heterogeneity (I2 = 92%) was observed across the studies, likely due to variations in patient populations and resuscitation protocols.\nCONCLUSION: Prioritizing circulation over airway management in trauma patients with exsanguinating injuries significantly reduces mortality compared to the traditional ABC approach. The present consensus paper, conducted according to the WSES methodology, aims to provide a review of the literature comparing the CAB approach to the traditional ABC sequence in trauma patients with exsanguinating hemorrhage, to develop a shared consensus statement based on the currently available evidence.",
-      "meshTerms": [
-        "Humans",
-        "Wounds and Injuries",
-        "Airway Management",
-        "Exsanguination"
-      ],
-      "keywords": [],
-      "doi": "10.1186/s13017-025-00618-2",
-      "pmcid": "PMC12128548",
-      "region": "us",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 6.056072799088243,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.0560727990882433,
-        "scope": 0,
-        "confidence": 1
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "consensus",
-      "reasons": [
-        "insufficient-positive-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:37:55.033Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "출혈성 외상 CAB vs ABC 소생 컨센서스—핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|prioritizing-circulation-over-airway-improve-survival-trauma-patients-with-exsanguinating-injuries-world-society-emergency-surgery-panamerican-trauma",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40440059",
       "pmid": "40440059",
       "title": "Impact of ERS/ATS 2022 bronchodilator response guidelines in asthma control.",
@@ -32586,7 +32519,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -35960,7 +35893,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -37735,7 +37668,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -42978,7 +42911,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44299,7 +44232,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44426,7 +44359,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45088,7 +45021,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45246,7 +45179,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45326,7 +45259,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45551,7 +45484,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46506,7 +46439,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "unknown|direct-oral-anticoagulants-primary-secondary-prevention-thrombotic-events-acc-report-american-college-cardiology",
       "supersedes": [],
       "llmFit": {
@@ -46575,7 +46508,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46689,11 +46622,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.622531031894335,
+      "priority": 7.6189490815209275,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6225310318943351,
+        "recency": 1.6189490815209275,
         "scope": 0,
         "confidence": 2
       },
@@ -46708,7 +46641,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -46768,7 +46701,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46842,7 +46775,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46985,7 +46918,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47050,7 +46983,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47100,11 +47033,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.62253103176758,
+      "priority": 11.618949081394172,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.62253103176758,
+        "recency": 1.6189490813941727,
         "scope": 0,
         "confidence": 2
       },
@@ -47120,7 +47053,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47199,7 +47132,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47274,7 +47207,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47341,7 +47274,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47416,7 +47349,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47474,7 +47407,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-14T00:31:43.587Z",
+      "lastSeenAt": "2026-10-15T00:04:40.164Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -57468,6 +57401,166 @@
         ]
       },
       "publishedAt": "2026-10-14"
+    },
+    {
+      "id": "pmid:40457450",
+      "pmid": "40457450",
+      "title": "Prioritizing circulation over airway to improve survival in trauma patients with exsanguinating injuries: a world society of emergency surgery-panamerican trauma consensus statement.",
+      "pubDate": "2025 Jun 2",
+      "journal": "World journal of emergency surgery : WJES",
+      "publicationTypes": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis",
+        "Consensus Statement"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:37:41.690Z",
+      "abstract": "INTRODUCTION: Hemorrhage is one of the leading causes of preventable death in trauma patients. For decades, the Airway-Breathing-Circulation (ABC) approach has been the cornerstone of trauma care. However, emerging evidence suggests that prioritizing airway management in exsanguinating patients may worsen hypotension and increase mortality. This systematic review and meta-analysis aim to evaluate the effectiveness of the Circulation-Airway-Breathing (CAB) approach compared to the traditional ABC sequence in improving survival in trauma patients with severe hemorrhage.\nMETHODS: A systematic review was conducted in accordance with the PRISMA guidelines. Databases including PubMed and Ovid MEDLINE, SCOPUS, web of science and EMBASE were searched for studies published up to September 2024. Eligible studies included observational and comparative studies reporting outcomes of trauma patients with exsanguinating hemorrhage. The Newcastle-Ottawa Scale was used for risk of bias assessment. A meta-analysis was performed using a random-effects model to calculate pooled odds ratios (OR) for mortality, with 95% confidence intervals (CI). Subgroup analysis was conducted to compare the ABC and CAB approaches in prospective and retrospective studies.\nRESULTS: Six studies (N = 11,855 patients) met the inclusion criteria. The meta-analysis revealed a significant increase in mortality associated with the ABC approach (pooled OR: 3.65, 95% CI: 1.74-7.65). Subgroup analysis of prospective cohort studies found an even higher mortality risk (POR: 9.99, 95% CI: 5.59-17.85) when compared with POR of retrospective studies (POR: 2.42, 95%CI: 1.08-5.36). High heterogeneity (I2 = 92%) was observed across the studies, likely due to variations in patient populations and resuscitation protocols.\nCONCLUSION: Prioritizing circulation over airway management in trauma patients with exsanguinating injuries significantly reduces mortality compared to the traditional ABC approach. The present consensus paper, conducted according to the WSES methodology, aims to provide a review of the literature comparing the CAB approach to the traditional ABC sequence in trauma patients with exsanguinating hemorrhage, to develop a shared consensus statement based on the currently available evidence.",
+      "meshTerms": [
+        "Humans",
+        "Wounds and Injuries",
+        "Airway Management",
+        "Exsanguination"
+      ],
+      "keywords": [],
+      "doi": "10.1186/s13017-025-00618-2",
+      "pmcid": "PMC12128548",
+      "region": "us",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6.056072799088243,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.0560727990882433,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "consensus",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:37:55.033Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "출혈성 외상 CAB vs ABC 소생 컨센서스—핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|prioritizing-circulation-over-airway-improve-survival-trauma-patients-with-exsanguinating-injuries-world-society-emergency-surgery-panamerican-trauma",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40457450",
+          "title": "Prioritizing circulation over airway to improve survival in trauma patients with exsanguinating injuries: a world society of emergency surgery-panamerican trauma consensus statement.",
+          "journal": "World journal of emergency surgery : WJES",
+          "pubDate": "2025 Jun 2",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40457450/",
+          "doi": "10.1186/s13017-025-00618-2"
+        },
+        "org": "WSES / Panamerican Trauma Society (WSES-PTS)",
+        "version": "2025",
+        "title_ko": "출혈성 외상 환자에서 기도보다 순환을 우선하여 생존을 개선하기 위한 WSES-범미주외상학회 합의 성명 (ABC → CAB/XABC)",
+        "scope_ko": "둔상·관통상을 불문하고 치명적 대량출혈(exsanguinating hemorrhage)로 쇼크 상태인 성인(16세 이상) 외상 환자의 초기 소생 순서를 다룬다. 전통적 ABC(기도-호흡-순환) 대신 순환(출혈 조절·수혈)을 먼저 하는 CAB(또는 출혈을 뜻하는 X를 앞세운 XABC) 접근을 병원전·응급실 소생에 적용하는 것을 대상으로 한다.",
+        "summary": [
+          "In exsanguinating trauma, prioritize resuscitation and hemorrhage control BEFORE invasive airway management — adopt a Circulation-first (CAB / XABC, 'X' = exsanguination) sequence rather than traditional ABC (Strong recommendation, moderate-quality evidence).",
+          "While circulation is being restored, maintain oxygenation with NON-invasive airway measures — oral/nasal airway adjuncts, bag-valve-mask ventilation and supplemental oxygen — rather than proceeding immediately to intubation (Strong recommendation, moderate-quality evidence).",
+          "Secure a definitive airway only AFTER the intravascular volume deficit has been addressed and adequate resuscitation achieved; early intubation is reserved for clear airway obstruction, apnea, or refractory severe hypoxia (Strong recommendation, moderate-quality evidence).",
+          "Train EMS and trauma teams to focus on early hemorrhage control and blood-product resuscitation and to limit unnecessary airway interventions that can worsen hypotension; begin early whole-blood resuscitation during transport when available (Strong recommendation, moderate-quality evidence).",
+          "Use whole blood as the first-line resuscitative fluid; when unavailable, give balanced component therapy at a 1:1:1 ratio (plasma:platelets:RBC) and avoid excessive crystalloid, which worsens coagulopathy.",
+          "Rationale: RSI, sedation and positive-pressure ventilation blunt compensatory vasoconstriction, reduce venous return and can abolish the muscular tamponade effect at bleeding sites — in the meta-analysis the ABC sequence carried ~3.65× higher mortality (OR 3.65, 95% CI 1.74–7.65; prospective-study subgroup OR 9.99, 95% CI 5.59–17.85)."
+        ],
+        "summary_ko": [
+          "출혈로 탈출혈(exsanguinating) 상태인 외상 환자에서는 침습적 기도 확보보다 소생·출혈 조절을 먼저 한다 — 전통적 ABC 대신 순환을 앞세운 CAB(또는 탈출혈을 뜻하는 X를 붙인 XABC) 순서를 채택 (강한 권고, 중등도 근거).",
+          "순환을 회복시키는 동안에는 즉각 삽관 대신 비침습적 기도 수단(구인두/비인두 기도기, BVM 환기, 보조 산소)으로 산소화를 유지한다 (강한 권고, 중등도 근거).",
+          "확정 기도(definitive airway)는 혈관내 용적 결손을 교정하고 충분한 소생이 이루어진 뒤에만 확보한다; 조기 삽관은 명백한 기도 폐쇄·무호흡·불응성 중증 저산소증에 한정한다 (강한 권고, 중등도 근거).",
+          "EMS·외상팀이 조기 출혈 조절과 혈액제제 소생에 집중하고 저혈압을 악화시킬 수 있는 불필요한 기도 중재를 자제하도록 교육한다; 가능하면 이송 중 조기 전혈(whole blood) 소생을 시작한다 (강한 권고, 중등도 근거).",
+          "소생액은 전혈(whole blood)을 1차로 쓰고, 없을 경우 1:1:1(혈장:혈소판:적혈구) 균형 성분수혈을 하며, 응고장애를 악화시키는 과다한 crystalloid는 피한다.",
+          "근거: RSI·진정·양압환기는 보상성 혈관수축을 둔화시키고 정맥환류를 줄이며 출혈 부위 근육의 tamponade 효과를 없앨 수 있다 — 메타분석에서 ABC 순서는 사망률이 약 3.65배 높았다(OR 3.65, 95% CI 1.74–7.65; 전향연구 하위군 OR 9.99, 95% CI 5.59–17.85)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "소생 순서 (ABC → CAB/XABC)",
+            "detail": "Previous: the decades-old ATLS Airway-Breathing-Circulation (ABC) sequence placed airway first for all trauma patients. New: for exsanguinating hemorrhage, invert to Circulation-Airway-Breathing (CAB), or XABC with 'X' denoting exsanguination — control bleeding and resuscitate first, then manage the airway. Reason: pooled mortality was ~3.65× higher with ABC (OR 3.65, 95% CI 1.74–7.65), and up to 9.99× in prospective studies, because airway-first care worsens hypotension. Strong recommendation, moderate-quality evidence.",
+            "detail_ko": "이전: 수십 년간의 ATLS ABC(기도-호흡-순환) 순서는 모든 외상 환자에서 기도를 가장 먼저 다뤘다. 변경: 탈출혈 환자에서는 순환을 앞세운 CAB(또는 X=exsanguination을 붙인 XABC)로 뒤집어 — 먼저 출혈 조절·소생 후 기도 관리. 이유: ABC에서 통합 사망률이 약 3.65배(OR 3.65, 95% CI 1.74–7.65), 전향연구에서는 최대 9.99배 높았다. 기도 우선이 저혈압을 악화시키기 때문. 강한 권고, 중등도 근거."
+          },
+          {
+            "topic": "삽관 시점 (조기 삽관 → 소생 후 삽관)",
+            "detail": "Previous: early/immediate endotracheal intubation of hemodynamically unstable trauma patients. New: delay definitive airway until the intravascular volume deficit is corrected; during resuscitation use non-invasive oxygenation (oral airway, BVM, supplemental O2). Reason: induction/RSI, sedation and positive-pressure ventilation cause vasodilation, reduced venous return and cardiovascular collapse, and paralytics abolish the muscular tamponade at bleeding sites. Immediate intubation remains indicated only for airway obstruction, apnea, or severe refractory hypoxia.",
+            "detail_ko": "이전: 혈역학적으로 불안정한 외상 환자의 조기/즉각 기관삽관. 변경: 혈관내 용적 결손이 교정될 때까지 확정 기도를 미루고, 소생 중에는 비침습적 산소화(구인두 기도기·BVM·보조산소)를 사용. 이유: 유도/RSI·진정·양압환기가 혈관확장·정맥환류 감소·심혈관 허탈을 유발하고, 근이완제는 출혈 부위 근육 tamponade를 없앤다. 즉각 삽관은 기도 폐쇄·무호흡·불응성 중증 저산소증에만 적응."
+          },
+          {
+            "topic": "소생액 선택 (crystalloid → whole blood / 1:1:1)",
+            "detail": "Previous practice leaned on early crystalloid and airway-centric resuscitation. New: whole blood is the first-line resuscitative fluid (ideally started prehospital/in transport when available); when whole blood is unavailable use balanced 1:1:1 component therapy (plasma:platelets:RBC) and avoid excessive crystalloid, which worsens dilutional coagulopathy. Reason: restoring oxygen-carrying capacity, coagulation factors and volume simultaneously supports the compensatory physiology that keeps the brain and heart perfused.",
+            "detail_ko": "이전: 조기 crystalloid와 기도 중심 소생에 의존. 변경: 전혈(whole blood)을 1차 소생액으로(가능하면 병원전/이송 중 시작), 전혈이 없으면 1:1:1(혈장:혈소판:적혈구) 균형 성분수혈을 하고 희석성 응고장애를 악화시키는 과다 crystalloid는 피한다. 이유: 산소운반능·응고인자·용적을 동시에 회복시켜 뇌·심장 관류를 유지하는 보상 생리를 뒷받침."
+          },
+          {
+            "topic": "둔한 의식(GCS)의 해석과 GCS≤9 삽관 관행",
+            "detail": "Previous: the conventional teaching to intubate trauma patients with GCS ≤9 (or ≤8). New/nuance: the statement advises reconsidering reflexive intubation for GCS ≤9, particularly in penetrating injury, because depressed mental status in exsanguination often reflects cerebral hypoperfusion from hemorrhage rather than primary brain injury — restoring circulation frequently improves mental status without intubation. Early intubation is still appropriate for severe TBI where hypoxia must be prevented.",
+            "detail_ko": "이전: 외상 환자 GCS ≤9(또는 ≤8)에서 삽관하라는 관행적 교육. 변경/보완: 특히 관통상에서 GCS ≤9에 대한 반사적 삽관을 재고하라 — 탈출혈에서의 의식저하는 일차 뇌손상이 아니라 출혈로 인한 뇌관류 저하를 반영하는 경우가 많아 순환 회복만으로 의식이 호전되는 일이 흔하다. 저산소증을 막아야 하는 중증 TBI에서는 여전히 조기 삽관이 타당."
+          },
+          {
+            "topic": "병원전·EMS 역할",
+            "detail": "Previous: prehospital emphasis on securing a definitive airway early. New: train EMS and trauma teams to prioritize early hemorrhage control and blood-product resuscitation and to limit unnecessary airway interventions that could exacerbate hypotension; begin whole-blood resuscitation during transport where available. Strong recommendation, moderate-quality evidence.",
+            "detail_ko": "이전: 병원전 단계에서 확정 기도 조기 확보 강조. 변경: EMS·외상팀이 조기 출혈 조절과 혈액제제 소생을 우선하고 저혈압을 악화시킬 수 있는 불필요한 기도 중재를 자제하도록 교육; 가능하면 이송 중 전혈 소생을 시작한다. 강한 권고, 중등도 근거."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "Journal of Trauma 동반 리뷰 'What you need to know' — resuscitate-before-intubate 실무 요지",
+            "body_ko": "J Trauma의 동반 교육 리뷰는 탈출혈 환자에서 '빠른 출혈 조절과 균형 수혈에 집중하기 위해 삽관을 미루는 것이 생존을 향상시킨다'고 명시한다. 핵심 기전으로 ① 양압환기가 정맥환류를 줄여 저혈압을 악화시키고 ② 삽관이 보상성 혈관수축을 방해한다고 설명한다. 실무적으로 CAB 번들을 제시: 순환(즉각 출혈 조절, 조기 전혈/균형 수혈, 과다 crystalloid 회피) → 기도(소생 중 삽관 지연, 기도 보조기구 사용) → 호흡(관류 최적화 후에만 폐보호 환기). 전혈을 1차 소생액으로 권고하고 없으면 1:1:1 비율을 유지하라고 한다.",
+            "sourceLabel": "Journal of Trauma and Acute Care Surgery — 'What you need to know' companion (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12893131/"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "For exsanguinating trauma (especially penetrating torso/junctional injury), stop reflexively intubating the hypotensive patient first: control hemorrhage, get whole blood (or 1:1:1) running, and oxygenate with BVM/airway adjuncts while you resuscitate — then intubate once volume is restored. Reserve immediate intubation for true airway obstruction, apnea, or refractory hypoxia, and reconsider the automatic GCS≤9 intubation rule in bleeding penetrating-trauma patients, since depressed mental status often reverses with perfusion. Expect EMS and trauma-bay workflows to shift toward prehospital whole blood and 'circulation-first' sequencing, and avoid RSI/positive-pressure ventilation before resuscitation because it can precipitate peri-intubation arrest.",
+        "practiceImpact_ko": "탈출혈 외상(특히 관통성 체간/junctional 손상)에서는 저혈압 환자를 반사적으로 먼저 삽관하지 말라: 출혈을 조절하고 전혈(또는 1:1:1)을 투여하며 BVM·기도 보조기구로 산소화를 유지하면서 소생한 뒤, 용적이 회복되면 삽관한다. 즉각 삽관은 진짜 기도 폐쇄·무호흡·불응성 저산소증에 한정하고, 출혈성 관통 외상에서는 의식저하가 관류 회복으로 호전되는 경우가 많으므로 자동적인 GCS≤9 삽관 규칙을 재고한다. EMS·외상소생실 흐름은 병원전 전혈과 '순환 우선' 순서로 이동할 것이며, 소생 전 RSI·양압환기는 삽관전후 심정지를 유발할 수 있으므로 피한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40457450",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40457450/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1186/s13017-025-00618-2",
+            "url": "https://doi.org/10.1186/s13017-025-00618-2"
+          },
+          {
+            "label": "웹 — Ferrada et al., WSES-PTS consensus statement, World J Emerg Surg 2025 (PMC full text)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12128548/"
+          },
+          {
+            "label": "웹 — Journal of Trauma and Acute Care Surgery — 'Prioritizing circulation over airway... What you need to know' (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12893131/"
+          },
+          {
+            "label": "웹 — American College of Surgeons press release — circulation before airway in massive bleeding",
+            "url": "https://www.facs.org/media-center/press-releases/2023/prioritizing-circulation-before-the-airway-in-trauma-may-improve-outcomes-for-patients-with-massive-bleeding/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-15"
     }
   ],
   "rejected": [
@@ -62443,7 +62536,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-14T00:31:35.127Z",
+      "discoveredAt": "2026-10-15T00:04:32.284Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62856,7 +62949,7 @@
       "discoveredBy": [
         "pubmed-title"
       ],
-      "discoveredAt": "2026-10-14T00:31:35.127Z",
+      "discoveredAt": "2026-10-15T00:04:32.284Z",
       "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disease and a leading cause of heart failure and sudden cardiac death (SCD) in young adults. Given its complex pathophysiology, phenotypic diversity, and rapidly evolving therapeutic landscape, a structured and multidisciplinary approach to care is essential. This manuscript outlines a six-pillar framework to standardize and optimize evaluation and management of HCM. The proposed model organizes HCM care into six key domains. (i) Establishing the correct diagnosis, which requires differentiation between sarcomeric HCM and phenocopies such as amyloidosis, Fabry, or mitochondrial disease, using multimodal imaging and genetic testing. (ii) Establish presence of symptoms and of left ventricular outflow tract obstruction (LVOTO), which is central to symptom evaluation, prognostication, and treatment. Dynamic assessment with exercise echocardiography when required is essential to guide management, including pharmacotherapy or septal reduction therapy. (iii) Risk stratification for SCD integrates risk scores with adjunctive imaging data to support patient-centred implantable cardioverter defibrillator decisions. (iv) Genetic evaluation and family management enable cascade testing, early detection, and counselling. (v) Management of comorbidities-including atrial fibrillation, hypertension, obesity, and sleep-disordered breathing-is integral to holistic care and symptom control. (vi) Education and lifestyle guidance focus on safe sport participation, avoidance of dehydration and vasodilators, and reproductive counselling within a multidisciplinary setting.",
       "meshTerms": [
         "Humans",
@@ -62898,7 +62991,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-14T00:31:35.127Z",
+      "discoveredAt": "2026-10-15T00:04:32.284Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -62942,7 +63035,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-14T00:31:35.127Z",
+      "discoveredAt": "2026-10-15T00:04:32.284Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62969,7 +63062,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-14T00:31:35.127Z",
+      "discoveredAt": "2026-10-15T00:04:32.284Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62997,7 +63090,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-14T00:31:35.127Z",
+      "discoveredAt": "2026-10-15T00:04:32.284Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63063,9 +63156,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261014_092837:guideline:2026-10-14",
+    "runId": "trend_review_20261015_090109:guideline:2026-10-15",
     "outcome": "published",
-    "publishedId": "pmid:39622601",
+    "publishedId": "pmid:40457450",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -63090,15 +63183,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 139,
+        "mergedTotal": 144,
         "overlapCount": 2,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 7,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/14",
-          "maxDate": "2026/10/14"
+          "minDate": "2026/09/15",
+          "maxDate": "2026/10/15"
         },
         "retmax": 60,
         "topics": [
@@ -63106,8 +63199,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 44,
-            "idsFetched": 44,
+            "totalFound": 46,
+            "idsFetched": 46,
             "truncated": false,
             "error": null
           },
@@ -63133,8 +63226,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 15,
-            "idsFetched": 15,
+            "totalFound": 17,
+            "idsFetched": 17,
             "truncated": false,
             "error": null
           },
@@ -63178,8 +63271,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 9,
-            "idsFetched": 9,
+            "totalFound": 10,
+            "idsFetched": 10,
             "truncated": false,
             "error": null
           },
@@ -63202,7 +63295,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 128,
+        "topicOnlyCount": 133,
         "ptPmids": [
           "42788594",
           "42552475",
@@ -63212,9 +63305,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 139,
-          "enriched": 139,
-          "withAbstract": 98,
+          "requested": 144,
+          "enriched": 144,
+          "withAbstract": 100,
           "error": null
         }
       },
@@ -63271,19 +63364,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 208,
+        "queued": 207,
         "needsReview": 452,
         "rejected": 131,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39622601",
+        "candidateId": "pmid:40457450",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-14T00:33:51.421Z",
+  "updatedAt": "2026-10-15T00:07:09.346Z",
   "configVersion": "guideline-v2"
 }

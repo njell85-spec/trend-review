@@ -2298,23 +2298,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "41467651",
-      "title": "Cardiogenic Shock.",
-      "journal": "N Engl J Med",
-      "score": 5.6,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "심인성 쇼크 NEJM — 소생·혈역학 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "36808215",
       "title": "How to manage coagulopathies in critically ill patients.",
       "journal": "Intensive Care Med",
@@ -11996,6 +11979,123 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41467651",
+      "title": "Cardiogenic Shock.",
+      "journal": "N Engl J Med",
+      "score": 5.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "심인성 쇼크 NEJM — 소생·혈역학 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-15",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41467651",
+          "title": "Cardiogenic Shock.",
+          "journal": "The New England journal of medicine",
+          "pubDate": "2025-12-30",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41467651/",
+          "doi": "10.1056/NEJMra2312086"
+        },
+        "title_ko": "심인성 쇼크 (Cardiogenic Shock)",
+        "scope_ko": "급성 심근경색, 급성 비대상성 심부전, 비허혈성 원인(심근염·판막/심막 질환·심정지 등)에 의한 심인성 쇼크의 병태생리, 예후, 그리고 재관류와 기계적 순환 보조(MCS)를 중심으로 한 치료 전략을 다루는 NEJM 종설입니다. EM/CCM 임상의를 대상으로 근거와 미해결 쟁점을 정리합니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "정의와 병태생리",
+            "body_ko": "심인성 쇼크는 심기능의 저하로 혈압이 떨어지고, 이것이 다시 관상동맥 허혈을 유발하며, 그로 인해 심근 수축력이 더욱 감소하여 조직 저산소증(tissue hypoxemia)에 이르는 상태로 규정됩니다. 즉 심기능 저하 → 저혈압 → 관상동맥 허혈 → 수축력 추가 저하라는 하강 나선(악순환)이 이 증후군의 핵심 기전입니다.\n\n(본 절은 이 논문이 제시한 초록의 정의·병태생리 서술을 그대로 옮긴 것으로, 논문 본문 전체를 확보하지는 못했습니다 — coverage: abstract-only.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "역학과 예후",
+            "body_ko": "심인성 쇼크는 조기 사망률이 높아 약 50%에 이릅니다. 이 사망률은 대체로 기저 원인 질환(etiologic factors)에 의해 크게 좌우된다고 저자들은 기술합니다. 즉 '심인성 쇼크'라는 하나의 사망률 수치로 환자를 묶기보다, 원인에 따라 예후가 달라진다는 점을 강조합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "경색 관련 심인성 쇼크에서의 재관류",
+            "body_ko": "경색 관련(infarct-related) 심인성 쇼크에서는 관상동맥 혈류의 신속한 회복(rapid restoration of coronary blood flow)이 사망률을 상당히(substantially) 낮춥니다. 저자들은 이 신속한 재관류를 경색 관련 심인성 쇼크 치료의 확립된 축으로 제시합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "기계적 순환 보조(MCS)",
+            "body_ko": "기계적 순환 보조 장치(mechanical circulatory support devices)는 신중하게 선택된 환자(carefully selected patients)에서 혈역학적 안정화와 더 나은 결과를 제공합니다. 다만 저자들은 최적의 환자 선택(optimal patient selection)과 보조 개시 시점(timing of initiation)이 여전히 활발히 연구되고 있는 영역이라고 단서를 답니다. 즉 'MCS가 도움이 된다'는 결론은 모든 환자가 아니라 선별된 집단에 한정되며, 누구에게·언제 적용할지는 아직 정립되지 않았다는 유보가 함께 제시됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "전반적 생존과 향후 연구 방향",
+            "body_ko": "관상동맥 재관류 기법과 기계적 순환 보조 장치가 발전했음에도, 심인성 쇼크의 전반적 생존은 '완만하게만(only modestly)' 개선되었습니다. 따라서 향후 연구는 ① 치료 알고리즘의 정교화, ② 장치 사용의 최적화, ③ 높은 사망률을 낮추기 위한 새로운 전략 개발에 초점을 맞추어야 한다고 저자들은 결론짓습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 원인 질환의 변화와 지속되는 높은 사망률",
+            "body_ko": "이 논문의 주제 범위 안에서, 제가 직접 열람한 2차 자료를 근거로 맥락을 보강합니다. 심인성 쇼크의 주된 원인은 과거의 경색 관련 사건에서 급성-만성 중첩 심부전(acute-on-chronic heart failure) 및 비허혈성 원인(심근염, 판막·심막 질환, 심정지 등)으로 이동해 왔습니다. 이러한 원인 변화에도 불구하고, 지난 50여 년간 중환자 치료·재관류·MCS 기술이 발전했음에도 심인성 쇼크의 1년 사망률은 여전히 약 30~50%에 머무릅니다. 실제 임상 데이터에서는 Impella 도입이 2016~2020년에 걸쳐 늘었지만 그에 상응하는 사망률 개선은 뚜렷하지 않았다는 관찰도 보고되었습니다. (이 단락의 수치·관찰은 논문 본문이 아니라 아래 출처에서 가져온 것입니다.)\n— 보강 출처: Cardiogenic shock 2025: real-world outcomes (editorial, PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12184712/)",
+            "origin": "augmented",
+            "sourceLabel": "Cardiogenic shock 2025: real-world outcomes (editorial, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12184712/"
+          },
+          {
+            "heading_ko": "[웹 보강] MCS의 무작위 근거 ① IABP와 Impella 초기 시험",
+            "body_ko": "대동맥내 풍선 펌프(IABP)의 대표적 무작위 시험인 IABP-SHOCK II(600명)는 30일 사망률뿐 아니라 어떤 이차 종료점에서도, 그리고 장기 추적에서도 대조군 대비 사망률 차이를 보이지 못했습니다. 그 결과 경색 후 심인성 쇼크에서 IABP 상용은 Class III(권고되지 않음) 지위를 받았습니다.\n\n초기 Impella 시험들도 사망률 개선을 입증하지 못했습니다. ISAR-SHOCK는 Impella가 IABP보다 더 많은 혈역학적 보조를 제공했으나 사망률 차이는 없었고, IMPRESS(48명, Impella CP 대 IABP)는 30일·6개월 모두 약 50%의 사망률로 양군이 유사했으며 5년 추적에서도 사망률 차이가 없었습니다. (이 단락의 수치는 논문 본문이 아니라 아래 2차 자료에서 가져온 것입니다.)\n— 보강 출처: MCS devices in AMI cardiogenic shock — review (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC9457021/)",
+            "origin": "augmented",
+            "sourceLabel": "MCS devices in AMI cardiogenic shock — review (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9457021/"
+          },
+          {
+            "heading_ko": "[웹 보강] MCS의 무작위 근거 ② DanGer Shock (Impella CP)",
+            "body_ko": "DanGer Shock 시험은 STEMI에 동반된 심인성 쇼크 환자(355명)를 Impella CP(미세축류 펌프) + 표준치료 대 표준치료 단독으로 무작위 배정한 공개(open-label) 시험입니다. 180일 전원인 사망률은 Impella군 45.8% 대 표준치료군 58.5%로 절대위험 약 12.7% 감소(p=0.04, NNT 8)를 보였습니다. 그러나 이 이득은 합병증 증가로 상쇄되었습니다 — 복합 안전성 종료점(중증 출혈, 사지 허혈/장치 실패, 대동맥판 역류 악화 등) 발생률이 Impella군 24.0% 대 표준치료군 약 6.2%였고(절대차 약 17.8%p 증가), 개별적으로 중등도~중증 출혈 RR 2.06(1.15–3.66), 혈관 합병증 RR 5.15(1.11–23.84), 신대체요법 RR 1.98(1.27–3.09), 패혈증 RR 2.79(1.20–6.48)였습니다. NNT가 8인 반면 해를 입히는 NNH는 6으로 보고되었습니다.\n\n환자 선택이 엄격했다는 점이 중요합니다: STEMI 심인성 쇼크만 포함했고, 지속되는 혼수를 동반한 병원 밖 심정지(GCS<8), 우심부전, 24시간을 초과한 쇼크 지속, 기계적 경색 합병증 등을 배제하여 선별 1,200명 중 약 30%만 등록되었습니다. 즉 이 생존 이득은 신중하게 선별된 집단에 한정됩니다. (수치는 논문 본문이 아니라 아래 2차 자료 기준입니다.)\n— 보강 출처: The Role of Impella in Cardiogenic Shock in the Post-DanGer Shock Era (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12467919/)",
+            "origin": "augmented",
+            "sourceLabel": "The Role of Impella in Cardiogenic Shock in the Post-DanGer Shock Era (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12467919/"
+          },
+          {
+            "heading_ko": "[웹 보강] MCS의 무작위 근거 ③ ECLS-SHOCK (VA-ECMO)",
+            "body_ko": "경색 관련 심인성 쇼크에서 VA-ECMO(체외생명유지)를 평가한 ECLS-SHOCK 시험은 중립적 결과를 보였습니다. 제가 열람한 SCAI 단계별 하위분석(전체 417명)에서 30일 전원인 사망률은 ECLS군 50.4%(106/210) 대 대조군 54.2%(116/207)로 유의한 차이가 없었습니다(상위 보고된 본시험 1차 종료점도 약 48% 대 49%로 중립적이었습니다). 반면 안전성은 뚜렷이 나빴습니다 — 중등도~중증 출혈(BARC≥3)이 전체적으로 19.2% 대 5.4%(p=0.002), 말초 허혈성 혈관 합병증이 SCAI C단계에서 10.6% 대 0.9%(p=0.002)로 ECLS군에서 더 많았습니다.\n\nSCAI 단계별 사망률은 C단계 약 32.6%, D단계 약 67.9%, E단계 약 64.4%로 단계가 깊어질수록 급격히 상승했으며, 각 단계 내에서 ECLS는 대조군 대비 사망률 이득을 보이지 못했습니다(C: 32.7% 대 32.4%; D: 68.4% 대 66.7%; E: 59.7% 대 68.4%). 이는 '루틴 VA-ECMO가 경색 관련 심인성 쇼크 전반의 생존을 개선하지 않는다'는 신호로 해석됩니다. (수치는 논문 본문이 아니라 아래 2차 자료 기준입니다.)\n— 보강 출처: SCAI shock severity substudy of ECLS-SHOCK (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12719867/)",
+            "origin": "augmented",
+            "sourceLabel": "SCAI shock severity substudy of ECLS-SHOCK (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12719867/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서의 메시지는 '원인별 접근'과 '선별적 MCS'입니다. 경색 관련 심인성 쇼크에서는 신속한 관상동맥 재관류가 사망률을 낮추는 확립된 축이므로 지체 없이 진행하되, 기계적 순환 보조는 모든 쇼크 환자에게 상용하는 치료가 아니라 신중히 선별된 환자에 한정해야 합니다 — IABP와 VA-ECMO의 루틴 사용은 사망률 이득을 보이지 못했고, Impella(DanGer Shock)의 생존 이득조차 엄격히 선별된 STEMI 집단에서만, 그리고 출혈·사지 허혈·신대체요법 등 합병증 증가를 감수하고 얻은 것입니다. 따라서 어떤 환자에게·언제 장치를 적용할지는 여전히 개별 판단과 미해결 연구의 영역이며, 전반적 생존 개선은 아직 완만하다는 점을 전제로 결정해야 합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41467651",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41467651/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMra2312086",
+            "url": "https://doi.org/10.1056/NEJMra2312086"
+          },
+          {
+            "label": "웹 — Cardiogenic shock 2025: real-world outcomes (editorial, PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12184712/"
+          },
+          {
+            "label": "웹 — MCS devices in AMI cardiogenic shock — review (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9457021/"
+          },
+          {
+            "label": "웹 — The Role of Impella Post-DanGer Shock (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12467919/"
+          },
+          {
+            "label": "웹 — SCAI shock severity substudy of ECLS-SHOCK (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12719867/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -12053,9 +12153,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-14",
+    "date": "2026-10-15",
     "outcome": "published",
-    "publishedId": "34705079"
+    "publishedId": "41467651"
   },
-  "updatedAt": "2026-10-14"
+  "updatedAt": "2026-10-15"
 }
