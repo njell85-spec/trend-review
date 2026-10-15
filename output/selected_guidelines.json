@@ -393,75 +393,6 @@
       "supersededAt": "2026-10-04T00:03:34.266Z"
     },
     {
-      "id": "pmid:38531812",
-      "pmid": "38531812",
-      "title": "Whole blood resuscitation for injured patients requiring transfusion: A systematic review, meta-analysis, and practice management guideline from the Eastern Association for the Surgery of Trauma.",
-      "pubDate": "2024 Sep 1",
-      "journal": "The journal of trauma and acute care surgery",
-      "publicationTypes": [
-        "Journal Article",
-        "Meta-Analysis",
-        "Practice Guideline",
-        "Systematic Review"
-      ],
-      "discoveredBy": [
-        "pubmed-pt"
-      ],
-      "discoveredAt": "2026-08-17T04:35:33.642Z",
-      "abstract": "INTRODUCTION: Whole blood (WB) resuscitation has reemerged as a resuscitation strategy for injured patients. However, the effect of WB-based resuscitation on outcomes has not been established. The primary objective of this guideline was to develop evidence-based recommendations on whether WB should be considered in civilian trauma patients receiving blood transfusions.\nMETHODS: An Eastern Association for the Surgery of Trauma working group performed a systematic review and meta-analysis using the Grading of Recommendations Assessment, Development and Evaluation methodology. One Population, Intervention, Comparison, and Outcomes question was developed to analyze the effect of WB resuscitation in the acute phase on mortality, transfusion requirements, infectious complications, and intensive care unit length of stay. English language studies including adult civilian trauma patients comparing in-hospital WB to component therapy were included. Medline, Embase, Cochrane CENTRAL, CINAHL Plus, and Web of Science were queried. GRADEpro (McMaster University; Evidence Prime, Inc.; Ontario) was used to assess quality of evidence and risk of bias. The study was registered on International Prospective Register of Systematic Reviews (CRD42023451143).\nRESULTS: A total of 21 studies were included. Most patients were severely injured and required blood transfusion, massive transfusion protocol activation, and/or a hemorrhage control procedure in the early phase of resuscitation. Mortality was assessed separately at the following intervals: early (i.e., emergency department, 3 hours, or 6 hours), 24 hours, late (i.e., 28 days or 30 days), and in-hospital. On meta-analysis, WB was not associated with decreased mortality. Whole blood was associated with decreased 4-hour red blood cell (mean difference, -1.82; 95% confidence interval [CI], -3.12 to -0.52), 4-hour plasma (mean difference, -1.47; 95% CI, -2.94 to 0), and 24-hour red blood cell transfusions (mean difference, -1.22; 95% CI, -2.24 to -0.19) compared with component therapy. There were no differences in infectious complications or intensive care unit length of stay between groups.\nCONCLUSION: We conditionally recommend WB resuscitation in adult civilian trauma patients receiving blood transfusions, recognizing that data are limited for certain populations, including women of childbearing age, and therefore this guideline may not apply to these populations.\nLEVEL OF EVIDENCE: Systematic Review/Meta-Analysis; Level III.",
-      "meshTerms": [
-        "Humans",
-        "Blood Transfusion",
-        "Resuscitation",
-        "Wounds and Injuries"
-      ],
-      "keywords": [],
-      "doi": "10.1097/TA.0000000000004327",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.055829413520883,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 0.055829413520883345,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:35:49.432Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "외상 수혈 전혈소생 EAST 지침—침상 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|whole-blood-resuscitation-injured-patients-requiring-transfusion-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma",
-      "supersedes": []
-    },
-    {
       "id": "pmid:39297198",
       "pmid": "39297198",
       "title": "Management of Patients With Cardiac Arrest Requiring Interfacility Transport: A Scientific Statement From the American Heart Association.",
@@ -32519,7 +32450,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34625,17 +34556,26 @@
       "id": "pmid:41649238",
       "pmid": "41649238",
       "title": "The American Psychiatric Association Practice Guideline for the Prevention and Treatment of Delirium: Updated Implications for Patient Care.",
-      "pubDate": "2026 Feb 6",
+      "pubDate": "2026 Fall",
       "journal": "The Journal of neuropsychiatry and clinical neurosciences",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Review"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-17T04:39:38.246Z",
       "abstract": "Delirium occurs in a significant proportion of hospitalized and older patients, contributing to increased morbidity and mortality rates, lengthier hospitalizations, increased readmissions, higher health care costs, greater odds of persistent functional decline, and psychological distress for patients, their families, and clinicians. Given that the global population continues to age, the incidence of delirium is expected to rise. The recently updated American Psychiatric Association Practice Guideline for the Prevention and Treatment of Delirium includes 15 statements to help clinicians prevent delirium, improve its detection, and optimize treatment for delirium in adult patient populations. In this analysis and commentary, the authors review each of the guideline statements, providing context and discussion of their clinical implications.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Delirium",
+        "Practice Guidelines as Topic",
+        "United States",
+        "Psychiatry",
+        "Societies, Medical",
+        "Patient Care"
+      ],
       "keywords": [
         "American Psychiatric Association Practice Guidelines",
         "Cognitive Disorders",
@@ -34658,24 +34598,24 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 2.965053003936079,
+      "priority": 1,
       "breakdown": {
         "authority": 0,
         "topic": 0,
-        "recency": 1.9650530039360794,
+        "recency": 0,
         "scope": 0,
         "confidence": 1
       },
       "organizationId": null,
       "tier": null,
       "topicMatched": false,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "guideline",
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:39:51.509Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -34684,7 +34624,8 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "unknown|american-psychiatric-association-practice-prevention-treatment-delirium-implications-patient-care",
-      "supersedes": []
+      "supersedes": [],
+      "attempts": 0
     },
     {
       "id": "pmid:41860322",
@@ -37668,7 +37609,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -42911,7 +42852,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44232,7 +44173,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44359,7 +44300,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45021,7 +44962,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45179,7 +45120,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45259,7 +45200,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45484,7 +45425,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46622,11 +46563,11 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7.6189490815209275,
+      "priority": 7.615338435346988,
       "breakdown": {
         "authority": 0,
         "topic": 4,
-        "recency": 1.6189490815209275,
+        "recency": 1.615338435346988,
         "scope": 0,
         "confidence": 2
       },
@@ -46641,7 +46582,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "unknown|acute-cholecystitis-high-risk-patients-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma-east",
       "supersedes": [],
       "llmFit": {
@@ -46701,7 +46642,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46775,7 +46716,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46918,7 +46859,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46983,7 +46924,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47033,11 +46974,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.618949081394172,
+      "priority": 11.615338435220233,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6189490813941727,
+        "recency": 1.615338435220233,
         "scope": 0,
         "confidence": 2
       },
@@ -47053,7 +46994,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47132,7 +47073,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47207,7 +47148,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47274,7 +47215,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47349,7 +47290,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47407,13 +47348,83 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-15T00:04:40.164Z",
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
       "llmFit": {
         "version": 1,
         "score": 4,
         "keep": false,
         "reason": "기관지내시경 마취 합의문—기도 인접하나 시술마취 위주로 응급/중환자 실무 제한적",
         "at": "2026-10-11T00:24:59.567Z"
+      }
+    },
+    {
+      "id": "pmid:42877955",
+      "pmid": "42877955",
+      "title": "Health Literacy and Communication in Stroke Prevention, Management, and Recovery: A Scientific Statement From the American Heart Association.",
+      "pubDate": "2026 Oct 15",
+      "journal": "Stroke",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-15T23:48:46.741Z",
+      "abstract": "Health literacy is a critical component of high-quality stroke care. Across the continuum from prevention through recovery, health literacy is strongly associated with functional outcomes and stroke-related morbidity. Despite its importance, it is often overlooked, leaving patients and caregivers overwhelmed by communication demands that exceed their capacity. These mismatches are especially pronounced among individuals with stroke-related cognitive or language impairments, limited English proficiency, socioeconomic disadvantage, or limited digital literacy. This scientific statement synthesizes current evidence on the role of health literacy and communication within stroke systems of care and identifies nurse-led opportunities to advance equity and patient-centered outcomes while recognizing this as a shared interprofessional responsibility. Nurse-led interventions, including teach-back-based education, dyadic psychoeducational programs, and tailored digital support, have demonstrated improvements in stroke knowledge, self-efficacy, quality of life, and caregiver preparedness. However, the literature is marked by methodological heterogeneity. Many studies are underpowered and infrequently use validated health literacy or communication measures. Future directions include standardized assessment of health literacy; literacy-sensitive, nurse-led, and interprofessional care models; workforce training in plain-language and culturally responsive communication; and organizational health literacy principles. Emerging technologies, including telehealth and artificial intelligence, offer promise for improving communication and personalization but require rigorous evaluation to minimize bias and ensure equity and usability.",
+      "meshTerms": [],
+      "keywords": [
+        "AHA Scientific Statements",
+        "communication",
+        "health literacy",
+        "nursing",
+        "patient-centered care",
+        "self efficacy",
+        "stroke"
+      ],
+      "doi": "10.1161/STR.0000000000000537",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 11,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "scientific-statement",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-15T23:48:55.905Z",
+      "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "뇌졸중이나 건강정보이해·소통 주제라 침상 판단 변화는 제한적",
+        "at": "2026-10-15T23:48:58.236Z"
       }
     }
   ],
@@ -57561,6 +57572,154 @@
         ]
       },
       "publishedAt": "2026-10-15"
+    },
+    {
+      "id": "pmid:38531812",
+      "pmid": "38531812",
+      "title": "Whole blood resuscitation for injured patients requiring transfusion: A systematic review, meta-analysis, and practice management guideline from the Eastern Association for the Surgery of Trauma.",
+      "pubDate": "2024 Sep 1",
+      "journal": "The journal of trauma and acute care surgery",
+      "publicationTypes": [
+        "Journal Article",
+        "Meta-Analysis",
+        "Practice Guideline",
+        "Systematic Review"
+      ],
+      "discoveredBy": [
+        "pubmed-pt"
+      ],
+      "discoveredAt": "2026-08-17T04:35:33.642Z",
+      "abstract": "INTRODUCTION: Whole blood (WB) resuscitation has reemerged as a resuscitation strategy for injured patients. However, the effect of WB-based resuscitation on outcomes has not been established. The primary objective of this guideline was to develop evidence-based recommendations on whether WB should be considered in civilian trauma patients receiving blood transfusions.\nMETHODS: An Eastern Association for the Surgery of Trauma working group performed a systematic review and meta-analysis using the Grading of Recommendations Assessment, Development and Evaluation methodology. One Population, Intervention, Comparison, and Outcomes question was developed to analyze the effect of WB resuscitation in the acute phase on mortality, transfusion requirements, infectious complications, and intensive care unit length of stay. English language studies including adult civilian trauma patients comparing in-hospital WB to component therapy were included. Medline, Embase, Cochrane CENTRAL, CINAHL Plus, and Web of Science were queried. GRADEpro (McMaster University; Evidence Prime, Inc.; Ontario) was used to assess quality of evidence and risk of bias. The study was registered on International Prospective Register of Systematic Reviews (CRD42023451143).\nRESULTS: A total of 21 studies were included. Most patients were severely injured and required blood transfusion, massive transfusion protocol activation, and/or a hemorrhage control procedure in the early phase of resuscitation. Mortality was assessed separately at the following intervals: early (i.e., emergency department, 3 hours, or 6 hours), 24 hours, late (i.e., 28 days or 30 days), and in-hospital. On meta-analysis, WB was not associated with decreased mortality. Whole blood was associated with decreased 4-hour red blood cell (mean difference, -1.82; 95% confidence interval [CI], -3.12 to -0.52), 4-hour plasma (mean difference, -1.47; 95% CI, -2.94 to 0), and 24-hour red blood cell transfusions (mean difference, -1.22; 95% CI, -2.24 to -0.19) compared with component therapy. There were no differences in infectious complications or intensive care unit length of stay between groups.\nCONCLUSION: We conditionally recommend WB resuscitation in adult civilian trauma patients receiving blood transfusions, recognizing that data are limited for certain populations, including women of childbearing age, and therefore this guideline may not apply to these populations.\nLEVEL OF EVIDENCE: Systematic Review/Meta-Analysis; Level III.",
+      "meshTerms": [
+        "Humans",
+        "Blood Transfusion",
+        "Resuscitation",
+        "Wounds and Injuries"
+      ],
+      "keywords": [],
+      "doi": "10.1097/TA.0000000000004327",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.055829413520883,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 0.055829413520883345,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:35:49.432Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "외상 수혈 전혈소생 EAST 지침—침상 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|whole-blood-resuscitation-injured-patients-requiring-transfusion-systematic-review-meta-analysis-practice-management-from-eastern-association-surgery-trauma",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "38531812",
+          "title": "Whole blood resuscitation for injured patients requiring transfusion: A systematic review, meta-analysis, and practice management guideline from the Eastern Association for the Surgery of Trauma.",
+          "journal": "The journal of trauma and acute care surgery",
+          "pubDate": "2024 Sep 1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38531812/",
+          "doi": "10.1097/TA.0000000000004327"
+        },
+        "org": "EAST (Eastern Association for the Surgery of Trauma)",
+        "version": "2024",
+        "title_ko": "수혈이 필요한 외상 환자의 전혈(Whole Blood) 소생: EAST 체계적 문헌고찰·메타분석·진료관리 가이드라인",
+        "scope_ko": "출혈로 수혈이 필요한 성인 민간(비군사) 외상 환자를 대상으로, 급성기(초기 소생 단계)에 성분수혈(component therapy) 대신 전혈(WB) 기반 소생을 사용할지를 다루는 가이드라인입니다. 대부분 중증 손상·대량수혈프로토콜(MTP) 활성화·조기 출혈 조절 시술이 필요했던 환자군이며, 가임기 여성·소아·군사 환경은 근거가 부족하거나 제외되어 권고가 적용되지 않을 수 있습니다.",
+        "summary": [
+          "In adult civilian trauma patients requiring blood transfusion in the acute phase, whole blood (WB) resuscitation is CONDITIONALLY recommended over component therapy (GRADE conditional/weak recommendation; low quality of evidence; overall Level III evidence).",
+          "The recommendation is driven by WB being associated with fewer early and 24-hour transfusions — not by a mortality reduction (meta-analysis of 21 studies showed WB was NOT associated with decreased mortality at early, 24-hour, late [28/30-day], or in-hospital intervals).",
+          "WB was associated with decreased 4-hour RBC transfusion (mean difference −1.82 units; 95% CI −3.12 to −0.52) and decreased 24-hour RBC transfusion (mean difference −1.22 units; 95% CI −2.24 to −0.19).",
+          "WB was associated with decreased 4-hour plasma transfusion (mean difference −1.47 units; 95% CI −2.94 to 0).",
+          "No difference was found between WB and component therapy in infectious complications or ICU length of stay.",
+          "The recommendation explicitly carries limited applicability to certain populations — notably women of childbearing age — where data are insufficient, so it may not apply to them."
+        ],
+        "summary_ko": [
+          "급성기 수혈이 필요한 성인 민간 외상 환자에서 성분수혈보다 전혈(WB) 소생을 '조건부(conditional)'로 권고합니다 (GRADE 조건부/약한 권고, 근거수준 낮음, 전체 Level III).",
+          "이 권고의 근거는 사망률 감소가 아니라 조기 및 24시간 수혈량 감소입니다 — 21개 연구 메타분석에서 WB는 조기(ED·3·6시간), 24시간, 후기(28/30일), 재원 중 어느 구간에서도 사망률 감소와 연관되지 않았습니다.",
+          "WB는 4시간 RBC 수혈량 감소(평균차 −1.82 단위; 95% CI −3.12 ~ −0.52) 및 24시간 RBC 수혈량 감소(평균차 −1.22 단위; 95% CI −2.24 ~ −0.19)와 연관되었습니다.",
+          "WB는 4시간 혈장(plasma) 수혈량 감소(평균차 −1.47 단위; 95% CI −2.94 ~ 0)와 연관되었습니다.",
+          "WB와 성분수혈 간 감염성 합병증 및 ICU 재원기간에는 차이가 없었습니다.",
+          "이 권고는 가임기 여성 등 일부 집단에는 근거가 부족하여 적용되지 않을 수 있음을 명시적으로 밝히고 있습니다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "소생 전략의 기본값 (성분수혈 → 전혈)",
+            "detail": "This is EAST's first practice management guideline on whole blood, formalizing a shift away from the prior civilian default of component/balanced-ratio therapy (e.g., 1:1:1 RBC:plasma:platelets of the PROPPR era). Previous practice: component therapy as the standard for hemorrhaging trauma. New: WB resuscitation is CONDITIONALLY recommended for adult civilian trauma patients requiring acute-phase transfusion. Reason: WB reduced 4-hour RBC (MD −1.82 units), 4-hour plasma (MD −1.47 units), and 24-hour RBC (MD −1.22 units) transfusion requirements, plus a survival benefit in the single available RCT — while being logistically simpler (one line item, one compatibility decision). Evidence grade: GRADE conditional recommendation, low quality / Level III.",
+            "detail_ko": "이것은 EAST가 전혈에 대해 처음 낸 진료관리 가이드라인으로, 기존 민간 표준이던 성분수혈·균형비율(PROPPR 시대의 1:1:1 RBC:혈장:혈소판) 기본값에서 벗어나는 전환을 공식화합니다. 이전: 출혈 외상에서 성분수혈이 표준. 변경: 급성기 수혈이 필요한 성인 민간 외상 환자에서 전혈 소생을 '조건부'로 권고. 이유: WB가 4시간 RBC(평균차 −1.82 단위)·4시간 혈장(−1.47)·24시간 RBC(−1.22) 수혈량을 줄였고, 유일한 RCT에서 생존 이득을 보였으며, 물류상으로도 단순(단일 품목·단일 적합성 판단)하기 때문. 근거등급: GRADE 조건부 권고, 낮은 근거수준 / Level III."
+          },
+          {
+            "topic": "권고의 근거가 사망률이 아님을 명시",
+            "detail": "Unlike the narrative that WB improves survival, this guideline explicitly bases its recommendation NOT on mortality (no mortality difference at any interval on meta-analysis) but on reduced transfusion burden and ICU-neutral/infection-neutral safety signals. This reframes the rationale for adopting WB around resource/transfusion-volume benefit rather than a proven mortality edge.",
+            "detail_ko": "WB가 생존을 개선한다는 통념과 달리, 이 가이드라인은 권고 근거를 사망률(메타분석상 어느 구간에서도 차이 없음)이 아니라 수혈 부담 감소와 ICU·감염 중립적 안전성 신호에 둡니다. 즉 WB 채택의 근거를 '증명된 사망률 이득'이 아니라 '자원·수혈량 이득'으로 재설정합니다."
+          },
+          {
+            "topic": "적용 제외·주의 집단 (가임기 여성 등)",
+            "detail": "The guideline newly and explicitly carves out populations where evidence is insufficient — particularly women of childbearing age (RhD alloimmunization concern with group O WB) — stating the recommendation may not apply to them. Pediatric and military populations were excluded from the evidence base.",
+            "detail_ko": "근거가 부족한 집단, 특히 가임기 여성(O형 전혈의 RhD 동종면역 우려)을 명시적으로 적용 제외·주의 대상으로 구분하고, 이들에게는 권고가 적용되지 않을 수 있다고 밝혔습니다. 소아 및 군사 집단은 근거 대상에서 제외되었습니다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "전혈 소생에 대한 저널 논평 — 실무·물류 맥락 (EAST 지침 자체 내용 아님)",
+            "body_ko": "이 저널 논평(군사 의학 배경)은 EAST 지침을 직접 인용·비판하지는 않지만, 전혈 채택의 실무 맥락을 보강합니다. 핵심: ① '저역가(low titer)'는 표준이 없고 기관·검사법에 따라 대략 1:50~1:256로 달라 비교연구의 장벽이다. ② 냉장 LTOWB 유효기간 21~35일(성분제제 42일+ 대비 짧음), 신선전혈(FWB)은 수분~수시간 내 수혈 필요하며 FDA 감염선별 요건상 민간에선 어렵다. ③ 전혈은 예비기증 응고인자 활성의 약 80~85%를 유지(재구성 성분수혈 약 60% 대비)하고 Hct 약 35~38%. ④ 민간에서 LTOWB 미사용분은 성분으로 분해해 폐기를 줄일 수 있다. 다만 이 글은 전혈 전반을 옹호하는 관점이며 EAST 지침의 '사망률 이득 없음' 결론과는 강조점이 다르므로, 지침 본문의 결론과 혼동하지 않아야 합니다.",
+            "sourceLabel": "Whole truth: resuscitating trauma patients with whole blood (저널 논평, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13264879/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "EM/trauma teams can justify stocking and transfusing cold-stored low-titer group O whole blood (LTOWB) as the up-front product for adult civilian patients in hemorrhagic shock requiring transfusion or MTP activation, replacing or front-loading the 1:1:1 component approach — expecting fewer units given in the first 4 and 24 hours and a simpler single-product workflow, but NOT promising a mortality reduction to the team or family. Build an explicit pathway for women of childbearing age (and any RhD-negative patient) given the alloimmunization gap, including RhD-negative LTOWB where available and informed discussion. Because evidence remains low-quality (conditional recommendation), WB should augment — not override — damage-control principles, early hemorrhage control, and TXA.",
+        "practiceImpact_ko": "응급실·외상팀은 수혈 또는 MTP 활성화가 필요한 성인 민간 출혈성 쇼크 환자에게 냉장 저역가 O형 전혈(LTOWB)을 선행 제제로 비치·투여하는 것을 정당화할 수 있으며, 기존 1:1:1 성분수혈을 대체하거나 앞단에 배치할 수 있습니다 — 초기 4시간·24시간 수혈 단위 감소와 단일 제제 워크플로 단순화는 기대하되, 팀·보호자에게 사망률 감소를 약속해서는 안 됩니다. 동종면역 근거 공백을 고려해 가임기 여성(및 RhD 음성 환자)에 대한 별도 경로(가능 시 RhD 음성 LTOWB, 설명·동의 포함)를 마련하십시오. 근거수준이 낮은 조건부 권고이므로 WB는 손상통제 소생·조기 출혈 조절·TXA 원칙을 대체하지 않고 보강하는 수단으로 써야 합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38531812",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38531812/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/TA.0000000000004327",
+            "url": "https://doi.org/10.1097/TA.0000000000004327"
+          },
+          {
+            "label": "웹 — PubMed — EAST Whole Blood Resuscitation guideline (PMID 38531812)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38531812/"
+          },
+          {
+            "label": "웹 — Whole truth: resuscitating trauma patients with whole blood — journal commentary (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13264879/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-16"
     }
   ],
   "rejected": [
@@ -62536,7 +62695,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-15T00:04:32.284Z",
+      "discoveredAt": "2026-10-15T23:48:46.741Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -62991,7 +63150,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-15T00:04:32.284Z",
+      "discoveredAt": "2026-10-15T23:48:46.741Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -63035,7 +63194,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-15T00:04:32.284Z",
+      "discoveredAt": "2026-10-15T23:48:46.741Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63062,7 +63221,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-15T00:04:32.284Z",
+      "discoveredAt": "2026-10-15T23:48:46.741Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63090,7 +63249,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-15T00:04:32.284Z",
+      "discoveredAt": "2026-10-15T23:48:46.741Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63156,9 +63315,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261015_090109:guideline:2026-10-15",
+    "runId": "trend_review_20261016_084538:guideline:2026-10-16",
     "outcome": "published",
-    "publishedId": "pmid:40457450",
+    "publishedId": "pmid:38531812",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -63177,21 +63336,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 9,
-            "idsFetched": 9,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 144,
+        "mergedTotal": 140,
         "overlapCount": 2,
         "ptOnlyCount": 2,
-        "expandedOnlyCount": 7,
+        "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/15",
-          "maxDate": "2026/10/15"
+          "minDate": "2026/09/16",
+          "maxDate": "2026/10/16"
         },
         "retmax": 60,
         "topics": [
@@ -63199,8 +63358,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 46,
-            "idsFetched": 46,
+            "totalFound": 45,
+            "idsFetched": 45,
             "truncated": false,
             "error": null
           },
@@ -63208,8 +63367,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 5,
-            "idsFetched": 5,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -63235,8 +63394,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 26,
-            "idsFetched": 26,
+            "totalFound": 25,
+            "idsFetched": 25,
             "truncated": false,
             "error": null
           },
@@ -63271,8 +63430,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 10,
-            "idsFetched": 10,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           },
@@ -63295,7 +63454,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 133,
+        "topicOnlyCount": 130,
         "ptPmids": [
           "42788594",
           "42552475",
@@ -63305,9 +63464,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 144,
-          "enriched": 144,
-          "withAbstract": 100,
+          "requested": 140,
+          "enriched": 140,
+          "withAbstract": 97,
           "error": null
         }
       },
@@ -63360,23 +63519,25 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 1,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "decisions": {
-        "queued": 207,
-        "needsReview": 452,
+        "queued": 205,
+        "needsReview": 454,
         "rejected": 131,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40457450",
+        "candidateId": "pmid:38531812",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-15T00:07:09.346Z",
+  "updatedAt": "2026-10-15T23:51:03.056Z",
   "configVersion": "guideline-v2"
 }

@@ -2842,23 +2842,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "35793208",
-      "title": "Pulmonary Embolism.",
-      "journal": "N Engl J Med",
-      "score": 4,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "폐색전증 NEJM, 응급·중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "36300975",
       "title": "Spontaneous Intracerebral Hemorrhage.",
       "journal": "N Engl J Med",
@@ -12096,6 +12079,109 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "35793208",
+      "title": "Pulmonary Embolism.",
+      "journal": "N Engl J Med",
+      "score": 4,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "폐색전증 NEJM, 응급·중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-16",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "35793208",
+          "title": "Pulmonary Embolism.",
+          "journal": "The New England journal of medicine",
+          "pubDate": "2022-7-7",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/35793208/",
+          "doi": "10.1056/NEJMcp2116489"
+        },
+        "title_ko": "폐색전증 (Pulmonary Embolism)",
+        "scope_ko": "증례 기반으로 성인 급성 폐색전증(PE)의 진단 접근, 위험도 분류(고위험·중등도위험·저위험), 그에 따른 초기 치료와 항응고 요법, 가정(외래) 치료, 항응고 지속 기간, 그리고 암·임신 등 특수 집단에서의 관리를 다루는 NEJM Clinical Practice 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "임상적 문제와 PE의 파급 효과 (핵심 임상 요점)",
+            "body_ko": "폐색전증(PE)은 흔히 진단되는 질환이며, 여러 가지 후유·합병 문제를 동반할 수 있다. 저자들은 PE가 재발성 정맥혈전색전증(VTE), 항응고제 사용에 따른 출혈, 만성 혈전색전성 폐고혈압(CTEPH), 그리고 장기적인 심리적 고통과 연관될 수 있다고 강조한다. 즉 PE는 급성기 이후에도 오래 이어지는 결과를 남길 수 있는 질환으로 제시된다.\n\n(이 절은 논문 본문 전체가 아니라 논문이 자체적으로 제시한 'Key Clinical Points' 요약 내용에 근거한다. 세부 수치·용량·근거등급이 담긴 본문은 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단적 평가 — 임상 확률과 D-dimer, 그리고 선택적 영상 (핵심 임상 요점)",
+            "body_ko": "PE가 의심될 때의 평가는 임상 확률(pretest probability) 평가로 시작하며, 적응이 될 경우 D-dimer 검사를 시행한다. 저자들은 PE 가능성으로 평가받는 환자 중 실제로 흉부 영상검사(예: CT)로 이득을 보는 경우는 소수(a minority)라고 명시한다. 즉, 체계적인 임상 확률 평가와 D-dimer를 통해 상당수 환자에서 영상검사 없이 PE를 안전하게 배제하는 것이 핵심 메시지다.\n\n(이 절은 논문의 'Key Clinical Points' 요약에 근거하며, 구체적인 임상 확률 점수·D-dimer 역치가 담긴 본문은 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "위험도 분류에 따른 초기 치료 (핵심 임상 요점)",
+            "body_ko": "급성 PE가 확진되면 초기 치료는 PE를 고위험(high-risk), 중등도위험(intermediate-risk), 저위험(low-risk)으로 분류하는 데서 출발한다. 치료 방침은 이 위험도 분류에 따라 달라지며, 환자 요인(암, 신장·간질환, 임신 등)에 맞추어 개별화된다고 제시된다.\n\n(이 절은 논문의 'Key Clinical Points' 요약에 근거한다. 각 위험군의 구체적 분류 기준과 치료 세부는 본문을 확보하지 못해 아래 'augmented' 절에서 권위 있는 2차 출처로 보강한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "저위험 PE의 가정 치료와 DOAC (핵심 임상 요점)",
+            "body_ko": "대부분의 환자는 저위험 PE에 해당하며, 이들은 입원 없이 가정에서 직접 경구 항응고제(DOAC)로 관리할 수 있다고 저자들은 기술한다. 즉 적절히 선별된 저위험 환자의 외래(재택) 치료가 표준적 선택지로 제시된다.\n\n(이 절은 논문의 'Key Clinical Points' 요약에 근거한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "항응고 지속 기간 (핵심 임상 요점)",
+            "body_ko": "급성 PE 환자는 최소 3개월(at least 3 months) 동안 항응고 요법을 받아야 한다. 이보다 더 긴(연장) 항응고 여부는 재발 위험과 출혈 위험의 균형에 따라 결정된다는 것이 종설의 틀이다.\n\n(이 절은 논문의 'Key Clinical Points' 요약에 근거하며, 유발성/비유발성 구분과 연장 치료의 구체적 권고가 담긴 본문은 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 임상 확률 평가·D-dimer·영상 진단의 실무 세부",
+            "body_ko": "이 종설의 진단 틀을 뒷받침하는 표준 실무를 권위 있는 2차 출처로 보강한다. 비(非)고위험 사전확률 환자에서 급성 PE 배제를 위해 Wells 또는 Geneva 등 검증된 사전확률 점수로 평가하고, D-dimer 검사를 활용한다. 50세 초과 환자에서는 연령보정 역치(FEU 기준 '나이 × 10')나 확률보정 역치를 적용할 수 있다. EMCrit(IBCC) 정리에 따르면 Wells 점수는 0–1점(저위험, 약 1–3%), 2–6점(중등도, 약 10%), >6점(고위험, 약 40%)으로 구분되고, PERC 규칙은 응급실에서 저위험 환자에 한해 8개 항목(나이 <50, 맥박 <100, SpO2 >94%, 각혈 없음, 호르몬 미사용, 최근 수술/외상 없음, 과거 VTE 없음, DVT 소견 없음)을 모두 만족하면 PE를 배제한다. YEARS 알고리즘은 각혈·DVT 소견·PE가 가장 가능성 높은 진단, 세 항목을 기준으로 D-dimer 역치를 조정(해당 없을 때 <1000 FEU)한다. 연령보정 D-dimer는 50세 미만 FEU <500 µg/L 수준을 기준으로 한다.\n\n영상검사로는 대부분의 지침이 CT 폐동맥조영술(CTPA)을 1차로 권고하며, CTPA의 중심·구역 PE에 대한 민감도는 >95%로 기술된다. 다만 미국혈액학회(ASH)는 방사선 노출을 줄이기 위해 가능하면 환기/관류(V/Q) 스캔을 권고한다. 하지정맥 압박초음파는 PE 환자에서 혈전 검출 민감도가 약 40%로 낮지만, 양성일 경우 특이도는 거의 100%다.\n— 보강 출처: ACC '10 Points to Remember' — International PE Guideline Comparison / EMCrit IBCC (https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2024/10/07/15/41/international-clinical-practice)",
+            "origin": "augmented",
+            "sourceLabel": "ACC '10 Points to Remember' — International PE Guideline Comparison / EMCrit IBCC",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2024/10/07/15/41/international-clinical-practice"
+          },
+          {
+            "heading_ko": "[웹 보강] 항응고·재관류 치료와 특수 집단의 실무 세부",
+            "body_ko": "치료 세부를 2차 출처로 보강한다. 항응고는 모든 위험군 PE 치료의 근간이다. 고위험 PE가 의심될 때의 초기 치료로는 미분획 헤파린(UFH)이 선호되나, 고정용량 저분자량 헤파린(LMWH)이 UFH보다 재발 VTE와 주요 출혈 발생이 낮다는 근거가 있다. 유지 치료에서는 비(非)위장관 암에서 DOAC가 LMWH보다 선호되고, 임신부에서는 LMWH가 권고된다. 적절히 선별된 저위험 환자는 경구 Xa 억제제(apixaban, rivaroxaban 등)로 귀가 치료가 가능하다.\n\n혈전용해(fibrinolysis)는 모든 지침이 고위험 PE에서 권고하지만, 출혈 위험 때문에 중등도-고위험에서의 일상적 사용은 권고하지 않는다. 카테터 기반 치료는 혈전용해 실패 후 또는 출혈 고위험 환자에서 구제(rescue) 요법으로 권고된다. 항응고 지속 기간은 최소 3개월이 표준이며, 지속적 위험인자가 있으면 연장 치료가 권고된다. 특수 집단에서, 임신부는 저선량 프로토콜 CTPA가 선호되고 수정 YEARS 알고리즘으로 영상검사를 최소화하며, 암 환자는 암의 종류·위치에 따라 DOAC 또는 LMWH를 선택한다.\n\n(구체적 DOAC 부하/유지 용량과 alteplase 용량 등 정량적 처방 세부는 이 종설 본문을 확보하지 못해 여기서는 단정하지 않는다.)\n— 보강 출처: ACC '10 Points to Remember' — International PE Guideline Comparison (https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2024/10/07/15/41/international-clinical-practice)",
+            "origin": "augmented",
+            "sourceLabel": "ACC '10 Points to Remember' — International PE Guideline Comparison",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2024/10/07/15/41/international-clinical-practice"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설은 PE가 의심되면 먼저 임상 확률을 평가하고 D-dimer를 적절히 활용해 영상검사 대상을 최소화하라는, 침상에서 바로 쓸 수 있는 진단 절제(diagnostic stewardship)를 강조한다. 확진 후에는 고/중등도/저위험 분류가 처치의 분기점이 되며, 대다수를 차지하는 저위험 PE는 DOAC로 가정 치료가 가능하고 모든 환자는 최소 3개월 항응고를 받는다. 다만 선호되는 DOAC나 중등도위험 PE의 감량 혈전용해 등은 아직 근거가 확립되지 않아 개별화 판단이 필요하다는 점을 유념한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 35793208",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35793208/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMcp2116489",
+            "url": "https://doi.org/10.1056/NEJMcp2116489"
+          },
+          {
+            "label": "웹 — Lady Davis Institute (McGill) — NEJM PE review highlight (Kahn & de Wit)",
+            "url": "https://www.ladydavis.ca/en/review-on-the-state-of-current-knowledge-on-pulmonary-embolism-published-in-new-england-journal-of-medicine-nejm/"
+          },
+          {
+            "label": "웹 — H1 Connect — expert recommendations on Kahn & de Wit NEJM 2022 PE review",
+            "url": "https://archive.connect.h1.co/article/742224562/"
+          },
+          {
+            "label": "웹 — ACC '10 Points to Remember' — International Clinical Practice Guideline comparison for PE",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2024/10/07/15/41/international-clinical-practice"
+          },
+          {
+            "label": "웹 — EMCrit IBCC — Pulmonary Embolism (diagnosis, risk stratification, low-risk treatment)",
+            "url": "https://emcrit.org/ibcc/pulmonary-embolism/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -12153,9 +12239,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "outcome": "published",
-    "publishedId": "41467651"
+    "publishedId": "35793208"
   },
-  "updatedAt": "2026-10-15"
+  "updatedAt": "2026-10-16"
 }
