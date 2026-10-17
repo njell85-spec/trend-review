@@ -3831,6 +3831,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-17",
+      "pmid": "42875240",
+      "title": "[Application of a spontaneous breathing trial based on high-flow oxygen therapy in weaning of mechanically ventilated patients].",
+      "title_ko": "기계환기 환자의 이탈(weaning)에서 고유량 산소요법(HFOT) 기반 자발호흡시험(SBT)의 적용",
+      "journal": "Zhonghua wei zhong bing ji jiu yi xue",
+      "doi": "10.3760/cma.j.cn121430-20260408-00165",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "침습적 기계환기를 받으며 이탈을 시도하는 환자에서, HFOT 기반 SBT가 PSV 기반 SBT에 비해 이탈/발관 결과와 안전성을 개선하는가?",
+      "pico": {
+        "population": "[China] A total of 163 patients undergoing invasive mechanical ventilation admitted to the Department of Critical Care Medicine, Zhongda Hospital, Southeast University, from September 2024 to July 2025, randomly assigned to the HFOT group (80 cases) or the PSV group (83 cases). MeSH indicates Middle Aged and Aged adults, both sexes.",
+        "intervention": "SBT based on high-flow oxygen therapy (HFOT); n=80. Specific flow rate/FiO2 settings not reported in the abstract.",
+        "comparison": "SBT based on pressure support ventilation (PSV); n=83. Specific pressure settings not reported in the abstract.",
+        "outcome": "Primary outcome was the success rate of extubation within 48 hours: 87.5% (70/80) in the HFOT group vs. 80.5% (66/82) in the PSV group, with no statistically significant difference (P>0.05)."
+      },
+      "pico_ko": {
+        "population": "[중국] 2024년 9월부터 2025년 7월까지 Southeast University Zhongda Hospital 중환자의학과에 입원하여 침습적 기계환기를 받은 총 163명을 HFOT군(80명) 또는 PSV군(83명)으로 무작위 배정. MeSH상 중년·고령 성인, 남녀 모두 포함.",
+        "intervention": "고유량 산소요법(HFOT) 기반 SBT; n=80. 유량/FiO2 설정은 초록에 보고되지 않음.",
+        "comparison": "압력보조환기(PSV) 기반 SBT; n=83. 압력 설정은 초록에 보고되지 않음.",
+        "outcome": "일차 결과는 48시간 이내 발관 성공률로, HFOT군 87.5%(70/80) vs. PSV군 80.5%(66/82)이며 통계적으로 유의한 차이 없음(P>0.05)."
+      },
+      "keyFindings": [
+        "In this single-center RCT (n=163; HFOT 80, PSV 83), the 48-hour extubation success rate did not differ between HFOT- and PSV-based SBT (87.5% [70/80] vs 80.5% [66/82], P>0.05), and SBT success rates were similarly high (100% vs 98.8%).",
+        "HFOT-based SBT produced a significantly lower heart rate at 30 minutes (87.10±12.73 vs 94.28±13.60; ΔHR 0.0 [-3.0, 2.0] vs -1.0 [-5.0, 1.0]; both P<0.05), with no significant differences in other vital signs, sputum grade, or ABG parameters, and no safety events in either group.",
+        "Subgroup analysis showed significant interaction by age and ventilation duration (both P<0.05): HFOT shortened ICU stay by a mean of 83.12 hours (95%CI -151.28 to -14.96) in patients ≥65 years and by 157.40 hours (95%CI -254.60 to -60.20) in those ventilated ≥24 hours."
+      ],
+      "keyFindings_ko": [
+        "단일기관 RCT(n=163; HFOT 80, PSV 83)에서 48시간 발관 성공률은 HFOT와 PSV 기반 SBT 간 차이 없었고(87.5%[70/80] vs 80.5%[66/82], P>0.05), SBT 성공률도 유사하게 높았음(100% vs 98.8%).",
+        "HFOT 기반 SBT는 30분째 심박수가 유의하게 낮았으며(87.10±12.73 vs 94.28±13.60; ΔHR 0.0 [-3.0, 2.0] vs -1.0 [-5.0, 1.0]; 모두 P<0.05), 그 외 활력징후·sputum grade·ABG 지표에는 차이가 없었고 양 군 모두 안전사건 없었음.",
+        "하위군 분석에서 연령·기계환기 기간과의 교호작용이 유의(모두 P<0.05)하여, HFOT는 65세 이상에서 ICU 재실기간을 평균 83.12시간(95%CI -151.28 ~ -14.96), 기계환기 ≥24시간 환자에서 157.40시간(95%CI -254.60 ~ -60.20) 단축함."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42875240",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42875240/"
+        },
+        {
+          "label": "Journal (DOI) — 10.3760/cma.j.cn121430-20260408-00165",
+          "url": "https://doi.org/10.3760/cma.j.cn121430-20260408-00165"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 42875240, esummary/efetch via NCBI eutils)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42875240/"
+        },
+        {
+          "label": "웹 — DOI (CMA): 10.3760/cma.j.cn121430-20260408-00165",
+          "url": "https://doi.org/10.3760/cma.j.cn121430-20260408-00165"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 42875240, esummary/efetch via NCBI eutils)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42875240/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "DOI (CMA): 10.3760/cma.j.cn121430-20260408-00165",
+          "url": "https://doi.org/10.3760/cma.j.cn121430-20260408-00165",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
