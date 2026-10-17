@@ -13069,75 +13069,6 @@
       "supersedes": []
     },
     {
-      "id": "pmid:40100174",
-      "pmid": "40100174",
-      "title": "2025 Concise Clinical Guidance: An ACC Expert Consensus Statement on the Evaluation and Management of Cardiogenic Shock: A Report of the American College of Cardiology Solution Set Oversight Committee.",
-      "pubDate": "2025 Apr 29",
-      "journal": "Journal of the American College of Cardiology",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:36:59.039Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [
-        "acute myocardial infarction",
-        "cardiogenic shock",
-        "concise clinical guidance",
-        "critical care",
-        "heart failure",
-        "hemodynamics",
-        "shock"
-      ],
-      "doi": "10.1016/j.jacc.2025.02.018",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 4.931954912206561,
-      "breakdown": {
-        "authority": 0,
-        "topic": 2,
-        "recency": 0.9319549122065612,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:37:41.689Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ACC 심인성쇼크 합의, 쇼크·중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|concise-clinical-acc-expert-evaluation-management-cardiogenic-shock-report-american-college-cardiology-solution-set-oversight-committee",
-      "supersedes": []
-    },
-    {
       "id": "pmid:40091554",
       "pmid": "40091554",
       "title": "How to handle polypharmacy in heart failure. A clinical consensus statement of the Heart Failure Association of the ESC.",
@@ -32450,7 +32381,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34615,7 +34546,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37609,7 +37540,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -42793,7 +42724,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44114,7 +44045,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44241,7 +44172,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44903,7 +44834,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45061,7 +44992,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45141,7 +45072,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45366,7 +45297,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46583,7 +46514,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46657,7 +46588,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46865,7 +46796,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -46915,11 +46846,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.61167896730542,
+      "priority": 11.60810604653242,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6116789673054186,
+        "recency": 1.6081060465324195,
         "scope": 0,
         "confidence": 2
       },
@@ -46935,7 +46866,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47014,7 +46945,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47089,7 +47020,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47156,7 +47087,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47231,7 +47162,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47289,7 +47220,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47357,7 +47288,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-16T23:52:27.145Z",
+      "lastSeenAt": "2026-10-17T23:21:50.011Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -57875,6 +57806,156 @@
         ]
       },
       "publishedAt": "2026-10-17"
+    },
+    {
+      "id": "pmid:40100174",
+      "pmid": "40100174",
+      "title": "2025 Concise Clinical Guidance: An ACC Expert Consensus Statement on the Evaluation and Management of Cardiogenic Shock: A Report of the American College of Cardiology Solution Set Oversight Committee.",
+      "pubDate": "2025 Apr 29",
+      "journal": "Journal of the American College of Cardiology",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:36:59.039Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "acute myocardial infarction",
+        "cardiogenic shock",
+        "concise clinical guidance",
+        "critical care",
+        "heart failure",
+        "hemodynamics",
+        "shock"
+      ],
+      "doi": "10.1016/j.jacc.2025.02.018",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 4.931954912206561,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 0.9319549122065612,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:37:41.689Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ACC 심인성쇼크 합의, 쇼크·중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|concise-clinical-acc-expert-evaluation-management-cardiogenic-shock-report-american-college-cardiology-solution-set-oversight-committee",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40100174",
+          "title": "2025 Concise Clinical Guidance: An ACC Expert Consensus Statement on the Evaluation and Management of Cardiogenic Shock: A Report of the American College of Cardiology Solution Set Oversight Committee.",
+          "journal": "Journal of the American College of Cardiology",
+          "pubDate": "2025 Apr 29",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40100174/",
+          "doi": "10.1016/j.jacc.2025.02.018"
+        },
+        "org": "ACC",
+        "version": "2025",
+        "title_ko": "2025 ACC 심인성 쇼크(Cardiogenic Shock) 평가 및 관리에 관한 전문가 합의문 — ACC의 첫 Concise Clinical Guidance(CCG)",
+        "scope_ko": "급성심근경색 및 비허혈성(심부전·심근염 등) 원인을 포함한 성인 심인성 쇼크 환자의 조기 인지, 중증도 분류, 약물·순환 보조 치료, 전원·시스템적 관리 전반을 다룬다. 단기 사망률 30–40%, 1년 사망률 약 50% 이상인 복합적·이질적 증후군에 대해 근거가 희박한 영역에서 실행 가능한 임상 결정을 돕는 ACC 최초의 간결임상지침(CCG)이다.",
+        "summary": [
+          "Use the 'SUSPECT CS' mnemonic for early recognition — combine clinical assessment of congestion (pulmonary edema, JVD, peripheral edema) and hypoperfusion with laboratory markers (CBC, comprehensive metabolic panel, troponin, natriuretic peptides, and lactic acid).",
+          "Initial diagnostic workup should include a 12-lead ECG, chest radiograph, and transthoracic echocardiogram or point-of-care ultrasound to establish etiology and phenotype.",
+          "Invasive hemodynamic monitoring with a pulmonary artery catheter is recommended to determine the CS phenotype, assess shock severity, and guide temporary mechanical circulatory support (tMCS) decisions.",
+          "Norepinephrine is recommended as the first-line vasopressor; medical management is aimed at restoring and maintaining tissue/end-organ perfusion.",
+          "Escalate to temporary mechanical circulatory support (tMCS) when pharmacologic therapy alone cannot maintain end-organ perfusion, and reconfigure/escalate tMCS based on serial shock-trajectory reassessment.",
+          "Apply SCAI SHOCK staging — framed as a three-axis model (etiology, phenotype, and nonmodifiable risk factors) — for serial reassessment and escalation decisions ('reassess, reassess, reassess' within the first 6–24 hours).",
+          "Adopt a standardized, interdisciplinary team-based model; resource-limited community centers should designate an on-site 'shock champion' and partner with advanced heart failure centers.",
+          "Use defined transfer criteria: AMI patients in refractory shock after revascularization should almost always transfer to a Level 1 shock center, and any patient on ≥1 vasoactive medication or requiring tMCS should trigger communication with a regional shock center. Follow the document's 1-hour and 24-hour management roadmaps."
+        ],
+        "summary_ko": [
+          "조기 인지에 'SUSPECT CS' 니모닉 사용 — 울혈(폐부종·경정맥 확장·말초부종)과 저관류의 임상 평가에 검사 지표(CBC, 종합대사패널, troponin, 나트륨이뇨펩타이드, lactic acid)를 결합한다.",
+          "초기 진단 검사에 12유도 ECG, 흉부 X선, 경흉부 심초음파(TTE) 또는 POCUS를 포함해 원인과 phenotype을 규명한다.",
+          "폐동맥 카테터(PA catheter)를 통한 침습적 혈역학 모니터링으로 CS phenotype 판별, 쇼크 중증도 평가, tMCS 결정을 지도할 것을 권고한다.",
+          "1차 승압제로 norepinephrine을 권고하며, 약물 치료의 목표는 조직·말초장기 관류의 회복·유지이다.",
+          "약물만으로 말초장기 관류를 유지할 수 없을 때 임시 기계순환보조(tMCS)로 상향 조정하고, 쇼크 경과의 연속 재평가에 따라 tMCS를 재구성·상향한다.",
+          "SCAI SHOCK 병기(3축 모델: 원인·phenotype·교정 불가능 위험인자)를 연속 재평가와 상향 결정에 적용한다(초기 6–24시간 내 '재평가, 재평가, 재평가').",
+          "표준화된 다학제 팀 기반 모델을 도입하고, 자원이 제한된 지역 병원은 현장 'shock champion'을 지정하고 advanced heart failure 센터와 제휴한다.",
+          "정의된 전원 기준 적용: 재관류 후에도 불응성 쇼크인 AMI 환자는 거의 항상 Level 1 shock center로 전원하고, 승압/혈관작용 약물 ≥1종 투여 또는 tMCS가 필요한 환자는 지역 shock center와의 연락을 촉발한다. 문서의 1시간·24시간 관리 로드맵을 따른다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "주변 근거 맥락 — MCS 장치별 임상시험 신호(2025 ACC/AHA ACS 가이드라인 포함)",
+            "body_ko": "ACC의 Year in Review 2025 요약은 이 CCG 자체의 권고가 아니라 주변 근거 흐름을 정리한다: DanGer Shock 장기 추적에서 microaxial flow pump(Impella)가 선택된 AMI-CS 환자에서 사망률 52.5% 대 68.8%(HR 0.7, 95% CI 0.54–0.92)로 생존 이득을 보였고(단, 원외 심정지 혼수·우심실부전·기계적 합병증 제외의 매우 선택적 모집단), 이에 따라 2025 ACC/AHA ACS 가이드라인에서 Impella는 선택 AMI-CS에 Class 2a로 상향, IABP는 Class 3(이득 없음)으로, VA-ECMO는 ECLS-SHOCK 등 조기·비선택 적용의 사망률 이득 부재를 반영해 하향되었다. 이 CCG 역시 VA-ECMO 중립 신호를 반영한다. 이 등급들은 ACS 가이드라인의 것으로, 이 CCG(전문가 합의문)의 자체 권고와 혼동하지 말 것.",
+            "sourceLabel": "ACC — Cardiogenic Shock and Mechanical Circulatory Support: Year in Review 2025",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/articles/2026/08/03/15/28/cardiogenic-shock-and-mechanical-circulatory-support"
+          },
+          {
+            "heading_ko": "ACC 공식 저널 스캔 — 팀 기반 모델과 1시간/24시간 로드맵 강조",
+            "body_ko": "ACC 공식 저널 스캔 요약은 표준화된 다학제 팀 기반 모델, 자원 제한 지역 병원의 'shock champion' 지정과 advanced heart failure 센터와의 제휴, 그리고 초기 평가·CS 팀 활성화 → 연속 재평가를 통한 안정화 → tMCS 상향/재구성을 담은 1시간·24시간 관리 로드맵을 핵심으로 제시한다. 또한 침습적 혈역학이 CS phenotype 규정, 중증도 평가, tMCS 지도에 유용함을 강조한다.",
+            "sourceLabel": "ACC — ACC's First Concise Clinical Guidance Focuses on Evaluation and Management of Cardiogenic Shock (Journal Scan)",
+            "sourceUrl": "https://www.acc.org/Latest-in-Cardiology/Journal-Scans/2025/03/17/18/39/ACCs-First-Concise-Clinical-Guidance-Focuses-on-Evaluation-and-Management-of-Cardiogenic-Shock"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, standardize CS recognition with the SUSPECT CS mnemonic (clinical congestion/hypoperfusion plus lactate, troponin, and natriuretic peptides) and assign a SCAI SHOCK stage on arrival, then re-stage repeatedly over the first 6–24 hours rather than treating shock as a static diagnosis. Default to norepinephrine as the first-line vasopressor and use invasive hemodynamics (PA catheter) to define phenotype, judge severity, and decide whether and which temporary MCS to add when pressors/inotropes fail to restore end-organ perfusion. Operationally, build or invoke a shock team/'shock champion' pathway and apply explicit transfer triggers — any patient on ≥1 vasoactive drug or needing tMCS, or in refractory post-revascularization AMI shock, should prompt early contact with a regional/Level 1 shock center. The 1-hour and 24-hour roadmaps give EM/CICU teams a concrete, time-based checklist for activation, stabilization, and escalation.",
+        "practiceImpact_ko": "현장에서는 SUSPECT CS 니모닉(임상 울혈·저관류 + lactate·troponin·나트륨이뇨펩타이드)으로 CS 인지를 표준화하고, 내원 시 SCAI SHOCK 병기를 부여한 뒤 쇼크를 고정된 진단이 아니라 초기 6–24시간 동안 반복해 재병기해야 한다. 1차 승압제는 norepinephrine을 기본으로 하고, 침습적 혈역학(PA catheter)으로 phenotype을 규정하고 중증도를 판단하며 승압제/강심제로 말초장기 관류를 회복하지 못할 때 임시 MCS의 추가 여부와 종류를 결정한다. 운영 측면에서는 shock team/'shock champion' 경로를 구축·가동하고, 명시적 전원 기준을 적용한다 — 혈관작용 약물 ≥1종 투여 또는 tMCS가 필요한 환자, 재관류 후에도 불응성인 AMI 쇼크 환자는 조기에 지역/Level 1 shock center와 연락해야 한다. 1시간·24시간 로드맵은 응급실·CICU 팀에 활성화·안정화·상향에 대한 구체적·시간 기반 체크리스트를 제공한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40100174",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40100174/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.jacc.2025.02.018",
+            "url": "https://doi.org/10.1016/j.jacc.2025.02.018"
+          },
+          {
+            "label": "웹 — ACC — ACC's First Concise Clinical Guidance Focuses on Evaluation and Management of Cardiogenic Shock (Journal Scan)",
+            "url": "https://www.acc.org/Latest-in-Cardiology/Journal-Scans/2025/03/17/18/39/ACCs-First-Concise-Clinical-Guidance-Focuses-on-Evaluation-and-Management-of-Cardiogenic-Shock"
+          },
+          {
+            "label": "웹 — ACC Press Release — American College of Cardiology Issues Concise Clinical Guidance on Evaluation and Management of Cardiogenic Shock",
+            "url": "https://www.acc.org/About-ACC/Press-Releases/2025/03/18/19/19/American-College-of-Cardiology-Issues-Concise-Clinical-Guidance-on-Evaluation-and-Management-of-Cardiogenic-Shock"
+          },
+          {
+            "label": "웹 — TCTMD — ACC Releases 'Concise Clinical Guidance' for Cardiogenic Shock Care",
+            "url": "https://www.tctmd.com/news/acc-releases-concise-clinical-guidance-cardiogenic-shock-care"
+          },
+          {
+            "label": "웹 — ACC — Cardiogenic Shock and Mechanical Circulatory Support: Year in Review 2025",
+            "url": "https://www.acc.org/latest-in-cardiology/articles/2026/08/03/15/28/cardiogenic-shock-and-mechanical-circulatory-support"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-18"
     }
   ],
   "rejected": [
@@ -62850,7 +62931,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-16T23:52:18.181Z",
+      "discoveredAt": "2026-10-17T23:21:43.112Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63305,7 +63386,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-16T23:52:18.181Z",
+      "discoveredAt": "2026-10-17T23:21:43.112Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -63349,7 +63430,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-16T23:52:18.181Z",
+      "discoveredAt": "2026-10-17T23:21:43.112Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63376,7 +63457,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-16T23:52:18.181Z",
+      "discoveredAt": "2026-10-17T23:21:43.112Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63404,7 +63485,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-16T23:52:18.181Z",
+      "discoveredAt": "2026-10-17T23:21:43.112Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63470,9 +63551,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261017_084631:guideline:2026-10-17",
+    "runId": "trend_review_20261018_081832:guideline:2026-10-18",
     "outcome": "published",
-    "publishedId": "pmid:42420041",
+    "publishedId": "pmid:40100174",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -63504,8 +63585,8 @@
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/17",
-          "maxDate": "2026/10/17"
+          "minDate": "2026/09/18",
+          "maxDate": "2026/10/18"
         },
         "retmax": 60,
         "topics": [
@@ -63513,8 +63594,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 41,
-            "idsFetched": 41,
+            "totalFound": 42,
+            "idsFetched": 42,
             "truncated": false,
             "error": null
           },
@@ -63540,8 +63621,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 16,
-            "idsFetched": 16,
+            "totalFound": 15,
+            "idsFetched": 15,
             "truncated": false,
             "error": null
           },
@@ -63621,7 +63702,7 @@
           "attempted": true,
           "requested": 133,
           "enriched": 133,
-          "withAbstract": 90,
+          "withAbstract": 93,
           "error": null
         }
       },
@@ -63678,19 +63759,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 205,
+        "queued": 204,
         "needsReview": 453,
         "rejected": 131,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42420041",
+        "candidateId": "pmid:40100174",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-16T23:55:44.588Z",
+  "updatedAt": "2026-10-17T23:24:10.161Z",
   "configVersion": "guideline-v2"
 }
