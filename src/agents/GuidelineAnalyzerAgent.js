@@ -630,12 +630,12 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         //   에스컬레이션 프롬프트로 **딱 1회** 더 시도한다. 두 번째도 안 되면 그대로
         //   발행한다 — 나쁜 카드보다 데일리가 늦어지거나 죽는 것이 나쁘다(불변식: 데일리
         //   코어 무영향). 재시도가 더 나쁘면(본문이 안 늘고 게이트도 못 풀면) 첫 결과를 쓴다.
-        if (mode === 'review' && this._needsReviewEscalation(result)) {
+        if (mode === 'review' && this._needsReviewEscalation(result, doc)) {
           this.logger.warn(`review gate: body ${this._reviewBodyChars(result)} chars, webSources ${this._validWebSources(result).length} — escalating once`);
           try {
             const second = await callOnce(this._prompt(doc, mode, { escalate: true }));
             const adoptSecond = this._reviewBodyChars(second) > this._reviewBodyChars(result)
-              || (!this._needsReviewEscalation(second) && this._needsReviewEscalation(result));
+              || (!this._needsReviewEscalation(second, doc) && this._needsReviewEscalation(result, doc));
             if (adoptSecond) result = second;
             else this.logger.warn('review escalation did not improve — keeping first result');
           } catch (e) {
@@ -680,11 +680,11 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         // 게이트 기준(얇음 또는 웹 미사용)에 걸리는 결과는 캐시에 굳히지도, 캐시에서
         // 재사용하지도 않는다 — 굳히면 다음 실행도 같은 실패를 그대로 재사용한다.
         const cached = await this.cache.get(cacheKey);
-        if (cached !== null && cached !== undefined && !this._needsReviewEscalation(cached)) {
+        if (cached !== null && cached !== undefined && !this._needsReviewEscalation(cached, doc)) {
           data = cached;
         } else {
           data = await fetchFresh();
-          if (data !== undefined && !this._needsReviewEscalation(data)) await this.cache.set(cacheKey, data);
+          if (data !== undefined && !this._needsReviewEscalation(data, doc)) await this.cache.set(cacheKey, data);
         }
       } else {
         // 데일리 코어(guideline)·reference 는 종전 경로 그대로 (불변식: 데일리 코어 무영향)
@@ -779,9 +779,20 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
    * 그날 카드는 길이가 아니라 **webSources: 0** 이 증상이었다(웹을 아예 안 열었다).
    * coverage ≠ full-text 이고 (본문이 얇거나 **웹 증거가 없으면**) 게이트에 걸린다.
    */
-  _needsReviewEscalation(data) {
+  // Match the prompt's definition: full-text means supplied article text, while
+  // model-fetched article content uses web-augmented. Length is only an input
+  // presence check, not proof of completeness, identity or factual accuracy.
+  _reviewCoverage(doc, data) {
+    const claimed = data?.coverage;
+    const hasSuppliedText = typeof doc?.fullText === 'string' && doc.fullText.length > 100;
+    if (claimed === 'full-text' && hasSuppliedText) return 'full-text';
+    if (claimed === 'web-augmented' && this._validWebSources(data).length) return 'web-augmented';
+    return 'abstract-only';
+  }
+
+  _needsReviewEscalation(data, doc) {
     if (!data) return true;
-    if (data.coverage === 'full-text') return false;
+    if (this._reviewCoverage(doc, data) === 'full-text') return false;
     return this._reviewBodyChars(data) < REVIEW_THIN_BODY_CHARS
       || this._validWebSources(data).length === 0;
   }
@@ -841,8 +852,9 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     if (guideline.doi && guideline.doi.length > 3) sources.push({ label: `Journal (DOI) — ${guideline.doi}`, url: `https://doi.org/${guideline.doi}` });
     if (guideline.oaUrl) sources.push({ label: 'Open-access full text', url: guideline.oaUrl });
     for (const s of guideline.augmentSources ?? []) sources.push(s);
-    // Opus 가 웹검색으로 실제 사용한 권위 출처 (http/https 링크만 수용 — javascript: 등 주입 차단)
-    for (const s of data.webSources ?? []) {
+    // Use the same trust policy as escalation and augmented sections; retain
+    // user-selected sourceUrl above independently of the model's web citations.
+    for (const s of this._validWebSources(data)) {
       if (s?.url && /^https?:\/\//i.test(String(s.url).trim())) {
         sources.push({ label: `웹 — ${s.label ?? s.url}`, url: String(s.url).trim() });
       }
@@ -934,8 +946,13 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     const modeFields = mode === 'review'
       ? {
         sections: this._publishableReviewSections(data),
-        coverage: ['full-text', 'web-augmented', 'abstract-only'].includes(data.coverage)
-          ? data.coverage : 'abstract-only',
+        coverage: this._reviewCoverage(guideline, data),
+        coverageEvidence: {
+          modelReported: data.coverage ?? null,
+          suppliedTextChars: typeof guideline.fullText === 'string' ? guideline.fullText.length : 0,
+          suppliedTextSource: guideline.fullTextSource ?? null,
+          trustedWebSourceCount: this._validWebSources(data).length,
+        },
       }
       : mode === 'reference'
         ? { sourceNote_ko: data.sourceNote_ko ?? '' }

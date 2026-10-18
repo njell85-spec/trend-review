@@ -12,6 +12,8 @@
  *   배선은 오케스트레이터. 판정 로직이 네트워크와 섞이면 테스트가 스텁 지옥이 된다.
  */
 
+import { isManuallyPromoted } from './queueControl.js';
+
 export const FIT_SCHEMA_VERSION = 1;
 
 /**
@@ -31,7 +33,7 @@ export function unscoredItems(items, {
   priorityOf = (x) => Number(x?.priority) || 0,
 } = {}) {
   return (items ?? [])
-    .filter((x) => x?.manualApproved !== true)
+    .filter((x) => x?.manualApproved !== true && !isManuallyPromoted(x))
     .filter((x) => x?.llmFit?.version !== version)
     // 규칙 점수가 높은 것부터 판정받는다 — 예산이 모자라 잘리는 날에도
     // **먼저 나갈 후보부터** 판정이 붙어 있어야 한다.
@@ -90,7 +92,13 @@ export function applyFitVerdicts(items, verdicts, { now = new Date().toISOString
       version: FIT_SCHEMA_VERSION, score, keep,
       reason: String(verdict.reason ?? '').slice(0, 200), at: now,
     };
-    if (item.status === 'rejected') return { ...item, llmFit };
+    // Relevance cannot establish edition identity or revive superseded documents.
+    // Explicit human promotion retains its existing precedence.
+    if (['rejected', 'superseded', 'current'].includes(item.status)) return { ...item, llmFit };
+    if (item.manualApproved === true || isManuallyPromoted(item)) return { ...item, llmFit };
+    if (item.lineageReview && item.manualApproved !== true && !isManuallyPromoted(item)) {
+      return { ...item, llmFit, status: 'needsReview' };
+    }
     return { ...item, llmFit, status: keep ? 'queued' : 'needsReview' };
   });
   return { items: next, scored };

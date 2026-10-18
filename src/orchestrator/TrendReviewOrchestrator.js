@@ -32,6 +32,7 @@ import { filterByRegion } from '../utils/guidelineRegionFilter.js';
 import { filterPediatric } from '../utils/guidelinePediatric.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
+import { isManuallyPromoted } from '../utils/queueControl.js';
 import { loadTrackQueue, mergeQueueItems, saveTrackQueue, consumedIds } from '../utils/trackQueue.js';
 import { nextPaper, needsRefill, publishablePapers } from '../utils/paperQueue.js';
 import { isNarrativeReview, notReviewReason } from '../utils/reviewQueue.js';
@@ -734,12 +735,15 @@ export class TrendReviewOrchestrator {
       const pendingTransitions = [];
       state.queue = state.queue.map((candidate) => {
         if (candidate.status !== 'queued') return candidate;
+        // Human selection permits publication, not inferred replacement of older cards.
+        if (candidate.manualApproved === true || isManuallyPromoted(candidate)) return candidate;
         const resolution = resolveSupersede(state, candidate, { orgs });
         pendingTransitions.push(...(resolution.transitions ?? []));
         if (!resolution.confident && resolution.reason !== 'no-matching-lineage') {
           return { ...candidate, status: 'needsReview', lineageReview: true, lineageReason: resolution.reason };
         }
-        return { ...candidate, lineageKey: lineageKeyOf(candidate, { orgs }), supersedes: resolution.supersedes };
+        return { ...candidate, lineageKey: lineageKeyOf(candidate, { orgs }), supersedes: resolution.supersedes,
+          lineageReview: false, lineageReason: resolution.reason };
       });
       // 전이는 map 이 **끝난 뒤** 최종 배열에 한 번에 적용한다 — 배열 순서에 의존하지 않게.
       applySupersede(state, pendingTransitions);
@@ -777,6 +781,12 @@ export class TrendReviewOrchestrator {
         : undefined;
       const manifest = {
         pubmed: pubmedManifest, orgSources: orgHealth, collectionError, fit: fitEvidence,
+        // Keep per-candidate reasons: a count in a transient log cannot explain
+        // why an official guideline is absent from the persisted queue.
+        scopeExclusions: [
+          ...regionFiltered.dropped.map((x) => ({ stage: 'region', ...x })),
+          ...pediatricFiltered.dropped.map((x) => ({ stage: 'pediatric', ...x })),
+        ],
         decisions: {
           queued: state.queue.filter((x) => x.status === 'queued').length,
           needsReview: state.queue.filter((x) => x.status === 'needsReview').length,
