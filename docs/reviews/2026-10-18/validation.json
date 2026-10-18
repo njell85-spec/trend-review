@@ -47,5 +47,17 @@
     "fail": 0
   },
   "historicalEvidence": "history-findings.json",
-  "independentReviewEvidence": "Reported results only; reviewer SHA, commands and raw logs not provided"
+  "independentReviewEvidence": {
+    "initialTarget": {
+      "code": "fb6aff9",
+      "documentation": "78296a6"
+    },
+    "missingEvidence": "Exact 90-test commands and raw logs",
+    "followupTarget": {
+      "code": "9c525bd",
+      "documentation": "2eef6bb"
+    },
+    "followupReportedConfirmedP0P1P2": 0,
+    "september18Limitation": "Independent reviewer did not obtain raw execution log; verified historical empty-collection early-return code only"
+  }
 }

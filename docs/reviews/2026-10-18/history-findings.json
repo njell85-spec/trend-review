@@ -55,14 +55,28 @@
     ],
     "historicalEarlyReturnVerified": true,
     "directCause": "Empty paper collection caused pipeline return before guideline/review stages",
-    "upstreamRootCause": "Unknown: raw search response/status not retained in reviewed evidence"
+    "upstreamRootCause": "Unknown: raw search response/status not retained in reviewed evidence",
+    "independentReviewScope": "Raw execution log not independently obtained; only the historical empty-collection early-return code path independently confirmed"
   },
   "independentReview": {
     "reportedConfirmedP0P1P2": 0,
     "reportedFocusedPass": 90,
     "reportedSyntheticQueueComparison": "0 -> 14",
     "reportedCensusReplayMatched": true,
-    "reviewerShaAndRawCommands": "not provided; reported results, not independently rerun as the same 90-test set"
+    "reviewedCodeCommit": "fb6aff9",
+    "reviewedDocumentationCommit": "78296a6",
+    "rawCommandsAndLogs": "Exact 90-test commands and raw logs not provided; same set not rerun locally",
+    "followup": {
+      "codeCommit": "9c525bd",
+      "documentationCommit": "2eef6bb",
+      "reportedConfirmedP0P1P2": 0,
+      "reportedFocusedPass": 43,
+      "reportedScoreChanges": [
+        109,
+        25
+      ],
+      "reportedCardRowArithmetic": "73 + 2 - 1 = 74"
+    }
   },
   "followupLocalTests": {
     "focused": 43,
