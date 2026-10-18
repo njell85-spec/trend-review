@@ -3897,6 +3897,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-19",
+      "pmid": "42637214",
+      "title": "Cognition, quality of life, and psychological outcomes in out-of-hospital cardiac arrest survivors - Results from the German Cardiac Arrest Registry (G-CAR).",
+      "title_ko": "병원 밖 심정지(OHCA) 생존자의 인지기능, 삶의 질, 심리적 결과 — German Cardiac Arrest Registry (G-CAR) 결과",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111277",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "병원 밖 심정지(OHCA) 생존자에서 6개월 및 12개월 추적 시점의 장기 인지기능, 건강 관련 삶의 질(HRQoL), 일상생활 복귀, 심리적 결과는 어떠한가?",
+      "pico": {
+        "population": "[Germany] OHCA survivors from the multicenter German Cardiac Arrest Registry (G-CAR); among 1644 OHCA patients enrolled between July 2021 and August 2024, 416 survived to hospital discharge, with follow-up data available for 354 patients at 6 months and 307 at 12 months. Inclusion: patients with out-of-hospital cardiac arrest with assumed cardiovascular cause; exclusion: rejection of registry participation by patient or legal representative.",
+        "intervention": "Standardized long-term assessment at 6- and 12-month follow-up using (1) Mini Montreal Cognitive Assessment (Mini-MoCA), (2) EuroQol 5 Dimension 5 Level (EQ-5D-5L), (3) Hospital Anxiety and Depression Scale (HADS), (4) Reintegration to Normal Living Index (RNLI), and (5) Posttraumatic Stress Symptoms-14 (PTSS-14).",
+        "comparison": "No internal control group (single-arm observational registry); EQ-5D-5L mean index values were referenced against those of the age-matched German population.",
+        "outcome": "Cognitive impairment (Mini-MoCA) was identified in 30.5% of respondents at 6 months and 33.6% at 12 months."
+      },
+      "pico_ko": {
+        "population": "[독일] 다기관 German Cardiac Arrest Registry (G-CAR)에 등록된 OHCA 생존자; 2021년 7월~2024년 8월 등록된 OHCA 환자 1644명 중 416명이 퇴원까지 생존했고, 추적 데이터는 6개월 354명·12개월 307명에서 확보됨. 포함 기준: 심혈관성 원인으로 추정되는 병원 밖 심정지 환자; 제외 기준: 환자 또는 법정대리인의 레지스트리 참여 거부.",
+        "intervention": "6개월 및 12개월 추적 시점에 (1) Mini Montreal Cognitive Assessment (Mini-MoCA), (2) EuroQol 5 Dimension 5 Level (EQ-5D-5L), (3) Hospital Anxiety and Depression Scale (HADS), (4) Reintegration to Normal Living Index (RNLI), (5) Posttraumatic Stress Symptoms-14 (PTSS-14)를 이용한 표준화된 장기 평가.",
+        "comparison": "내부 대조군 없음(단일군 관찰 레지스트리); EQ-5D-5L 평균 index 값은 연령 보정 독일 일반 인구 값과 비교됨.",
+        "outcome": "인지장애(Mini-MoCA)는 응답자 중 6개월 30.5%, 12개월 33.6%에서 확인됨."
+      },
+      "keyFindings": [
+        "Among 1644 OHCA patients (enrolled July 2021–August 2024), 416 survived to discharge; follow-up was available for 354 at 6 months and 307 at 12 months, with cognitive impairment in 30.5% (6M) and 33.6% (12M).",
+        "HRQoL was generally favorable (≥75% no/slight limitations on EQ-5D-5L; index 0.83 ± 0.24 at 6M, 0.84 ± 0.23 at 12M, comparable to the age-matched German population) and reintegration was high (RNLI 37.9 ± 7.3 at 6M; 38.4 ± 6.9 at 12M).",
+        "Psychological distress was generally low (PTSS-14 below PTSD threshold: 30.9 at 6M, 31.3 at 12M; mostly normal HADS), but 13% reported abnormal depressive symptom scores."
+      ],
+      "keyFindings_ko": [
+        "OHCA 환자 1644명(2021년 7월~2024년 8월 등록) 중 416명이 퇴원까지 생존했고, 추적은 6개월 354명·12개월 307명에서 가능했으며 인지장애는 30.5%(6M)·33.6%(12M)에서 확인됨.",
+        "HRQoL은 전반적으로 양호했고(EQ-5D-5L에서 ≥75%가 제한 없음/경미; index 6M 0.83 ± 0.24, 12M 0.84 ± 0.23로 연령 보정 독일 인구와 유사), 일상 복귀도 높았음(RNLI 6M 37.9 ± 7.3; 12M 38.4 ± 6.9).",
+        "심리적 디스트레스는 전반적으로 낮았으나(PTSS-14가 PTSD 기준 미만: 6M 30.9, 12M 31.3; HADS 대부분 정상) 13%는 비정상 우울 증상 점수를 보고함."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42637214",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42637214/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111277",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111277"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT05142124 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT05142124"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -3949,7 +4000,8 @@
         "42827265",
         "42545101",
         "42274006",
-        "42449426"
+        "42449426",
+        "42637214"
       ]
     },
     "fulltextLen": {
