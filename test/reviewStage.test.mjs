@@ -16,6 +16,8 @@ async function setup(queue = [], lastRun = null) {
   const controlFile = path.join(dir, 'control_state.json');
   await writeFile(queueFile, JSON.stringify(state(queue, lastRun)));
   const o = new TrendReviewOrchestrator({ queueReviewsPath: queueFile, controlStatePath: controlFile });
+  // Cadence/queue tests must not fetch real PubMed records or invoke analysis.
+  o.collector.fetchArticles = async () => [];
   return { o, queueFile, controlFile };
 }
 

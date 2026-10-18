@@ -4,7 +4,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
 const workflowDir = new URL('../.github/workflows/', import.meta.url);
-const read = (name) => readFileSync(new URL(name, workflowDir), 'utf8');
+const read = (name) => readFileSync(new URL(name, workflowDir), 'utf8').replace(/\r\n/g, '\n');
 const buttonWorkflows = [
   ['curate-remove.yml', 'remove'],
   ['queue-control.yml', 'control'],

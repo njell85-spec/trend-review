@@ -15,6 +15,7 @@
  *   { pmid, score, rawScore, qualityScore, relevanceScore, studyType, rationale, matchedInterests }
  */
 import { readFileSync } from 'fs';
+import { topicTermMatches } from './topicTerms.js';
 
 // ── 연구 설계 → (점수, 표준 라벨) — 보조 신호(가중 축소되어 반영) ────────────────
 const DESIGN_RULES = [
@@ -397,12 +398,12 @@ export class MetadataScorer {
       for (const t of terms) {
         const covered = (arr) => arr.some((h) => h.includes(t));
         const titleAllowed = !(this.scoring.queryMeshExcludeInTitle && isQueryMesh(t));
-        if (title.includes(t) && titleAllowed) {
+        if (topicTermMatches(title, t) && titleAllowed) {
           if (!covered(hitTitle)) hitTitle.push(t);
           continue;
         }
-        const inMesh = mesh.some((m) => m.includes(t));
-        const inNonMesh = nonMeshMeta.includes(t);
+        const inMesh = mesh.some((m) => topicTermMatches(m, t));
+        const inNonMesh = topicTermMatches(nonMeshMeta, t);
         if (inMesh || inNonMesh) {
           if (!covered(hitMetaBefore)) hitMetaBefore.push(t);
           const blockedMeshOnly = this.scoring.queryMeshExcludeInMeta && isQueryMesh(t) && inMesh && !inNonMesh;

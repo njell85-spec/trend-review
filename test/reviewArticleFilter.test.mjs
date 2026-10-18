@@ -75,7 +75,9 @@ async function setup(queue) {
   }));
   const cf = path.join(dir, 'control_state.json');
   await writeFile(cf, JSON.stringify({ tracks: {} }));
-  return { o: new TrendReviewOrchestrator({ queueReviewsPath: qf, controlStatePath: cf }), qf };
+  const o = new TrendReviewOrchestrator({ queueReviewsPath: qf, controlStatePath: cf });
+  o.collector.fetchArticles = async () => [];
+  return { o, qf };
 }
 
 test('★ 저수지 머리에 합의문이 있으면 건너뛰고 진짜 종설을 발행한다', async () => {

@@ -24,7 +24,7 @@ import { collectGuidelineCandidates, enrichCandidates } from '../utils/guideline
 import { loadGuidelineTopics, topicQuerySpecs } from '../utils/guidelineTopics.js';
 import { GuidelineFitAgent } from '../agents/GuidelineFitAgent.js';
 import { unscoredItems } from '../utils/guidelineFit.js';
-import { sortByGuidelineRank } from '../utils/guidelineRank.js';
+import { rankedPublishableGuidelines } from '../utils/guidelineRank.js';
 import { dryRunOrgSources } from '../utils/guidelineOrgSources.js';
 import { loadGuidelineOrgs } from '../utils/guidelineOrgs.js';
 import { classifyGuidelineDocument } from '../utils/guidelineClassifier.js';
@@ -32,7 +32,7 @@ import { filterByRegion } from '../utils/guidelineRegionFilter.js';
 import { filterPediatric } from '../utils/guidelinePediatric.js';
 import { scoreGuideline, suggestStatus } from '../utils/GuidelineScorer.js';
 import { lineageKeyOf, resolveSupersede, applySupersede } from '../utils/guidelineLineage.js';
-import { loadTrackQueue, mergeQueueItems, saveTrackQueue } from '../utils/trackQueue.js';
+import { loadTrackQueue, mergeQueueItems, saveTrackQueue, consumedIds } from '../utils/trackQueue.js';
 import { nextPaper, needsRefill, publishablePapers } from '../utils/paperQueue.js';
 import { isNarrativeReview, notReviewReason } from '../utils/reviewQueue.js';
 import { rankedPublishableReviews } from '../utils/reviewRank.js';
@@ -141,7 +141,10 @@ export class TrendReviewOrchestrator {
   // 월별 풀(arm F) 선정 — 수집분에서 월 top-K 를 뽑아 LLM 풀을 만든다.
   // **분기를 메서드로 뺀 이유**: run() 안에 인라인으로 두면 테스트가 분기를 "재현"할 뿐
   // 실제 코드를 못 탄다. 그러면 여기서 폴백을 지워도 테스트가 초록인 채로 남는다.
-  _buildSelectionPool(validPapers, collectStats = {}) {
+  _buildSelectionPool(validPapers, collectStats = {}, excludePmids = []) {
+    // Exclude before monthly top-K: consumed papers must not occupy its slots.
+    const consumed = new Set(excludePmids.map(String));
+    if (consumed.size) validPapers = validPapers.filter((p) => !consumed.has(String(p.pmid)));
     if (this.collectionMode !== 'monthly12') return validPapers;
     if (collectStats?.monthlyFallback?.executed === true) return validPapers;
 
@@ -173,9 +176,12 @@ export class TrendReviewOrchestrator {
 
   async _saveTrack1Queue(selectionPool, today, excludePmids = []) {
     try {
+      const state = await loadTrackQueue(this.queuePapersPath, 'papers');
+      const consumed = consumedIds(state, excludePmids);
       const scores = this.filter.scorer.scorePapers(selectionPool);
       const papers = new Map(selectionPool.map((paper) => [String(paper.pmid), paper]));
       const items = [...scores]
+        .filter((scored) => !consumed.has(String(scored.pmid)))
         .sort((a, b) => (Number(b.rawScore ?? b.score) - Number(a.rawScore ?? a.score))
           || String(a.pmid).localeCompare(String(b.pmid)))
         .slice(0, 14)
@@ -190,7 +196,6 @@ export class TrendReviewOrchestrator {
             lowConfidence: false,
           };
         });
-      const state = await loadTrackQueue(this.queuePapersPath, 'papers');
       const merged = mergeQueueItems(state, items, { today, excludePmids });
       if (!existsSync(path.dirname(this.queuePapersPath))) {
         await mkdir(path.dirname(this.queuePapersPath), { recursive: true });
@@ -302,12 +307,12 @@ export class TrendReviewOrchestrator {
       if (!rawPapers.length) return { refilled: false, reason: 'no-papers' };
       const { papers: validPapers } = await this._stageValidate1(rawPapers);
       if (!validPapers.length) return { refilled: false, reason: 'all-invalid' };
-      const pool = this._buildSelectionPool(validPapers, collectStats);
+      const pool = this._buildSelectionPool(validPapers, collectStats, [...consumedIds(state, excludePmids)]);
       await this._saveTrack1Queue(pool, todayStr, excludePmids);
       const after = await loadTrackQueue(this.queuePapersPath, 'papers');
       const n = publishablePapers(after, excludePmids).length;
       this.logger.info(`예정리스트 리필 완료 — 발행 가능 ${n}건`);
-      return { refilled: true, count: n };
+      return { refilled: n > 0, count: n, ...(n === 0 ? { reason: 'no-eligible-papers' } : {}) };
     } catch (error) {
       this.logger.warn('예정리스트 리필 실패 — 다음 실행에서 재시도한다', { err: error.message });
       return { refilled: false, reason: error.message };
@@ -768,7 +773,7 @@ export class TrendReviewOrchestrator {
       // 정렬은 `guidelineRank` 하나가 한다 — 예고 리스트가 읽는 것과 같은 함수다.
       // 여기서 따로 정렬하면 화면이 "내일 이것이 나갑니다" 라고 해놓고 다른 게 나간다(결함 B2).
       const pick = (autoPublish && dueToday)
-        ? sortByGuidelineRank(state.queue.filter((x) => x.status === 'queued'))[0]
+        ? rankedPublishableGuidelines(state.queue)[0]
         : undefined;
       const manifest = {
         pubmed: pubmedManifest, orgSources: orgHealth, collectionError, fit: fitEvidence,
@@ -1109,7 +1114,9 @@ export class TrendReviewOrchestrator {
           });
         }
 
-        const selectionPapers = this._buildSelectionPool(validPapers, collectStats);
+        const paperQueue = await loadTrackQueue(this.queuePapersPath, 'papers').catch(() => null);
+        const selectionPapers = this._buildSelectionPool(validPapers, collectStats,
+          [...consumedIds(paperQueue, excludePmids)]);
         await this._saveTrack1Queue(selectionPapers, todayStr, excludePmids);
         const analyzed = await this._stageAnalyze(
           selectionPapers, { excludePmids }, resumeCheckpoint?.data,
