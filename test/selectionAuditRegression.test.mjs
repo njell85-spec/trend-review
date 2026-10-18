@@ -30,6 +30,27 @@ test('short topic abbreviations do not match words, including metadata', () => {
 import { readFileSync } from 'node:fs';
 function awaitReadInterests() { return readFileSync(new URL('../config/interests.json', import.meta.url), 'utf8'); }
 
+test('explicit DNACPR alias retains CPR relevance without restoring substring matching', () => {
+  for (const value of ['DNACPR', '(dnacpr)', 'DNACPR-related']) assert.ok(topicTermMatches(value, 'cpr'));
+  for (const value of ['dnacprism', 'prednacprpost', 'microscopy', 'systemic', 'standards']) {
+    assert.equal(topicTermMatches(value, 'cpr'), false);
+  }
+  const scorer = new MetadataScorer();
+  for (const field of ['title', 'abstract', 'meshTerms', 'keywords']) {
+    const record = token => ({[field]: ['meshTerms','keywords'].includes(field) ? [token] : token});
+    assert.equal(scorer.scoreOne(record('DNACPR')).contributions.relevance,
+      scorer.scoreOne(record('CPR')).contributions.relevance, field);
+    assert.ok(scorer.scoreOne(record('DNACPR')).contributions.relevance > 0, field);
+  }
+  const options = {orgs:loadGuidelineOrgs(),interests:JSON.parse(awaitReadInterests()),now:'2026-10-18'};
+  assert.equal(scoreGuideline({title:'DNACPR decisions'},options).breakdown.topic,
+    scoreGuideline({title:'CPR decisions'},options).breakdown.topic);
+  assert.ok(scoreGuideline({title:'DNACPR decisions'},options).breakdown.topic > 0);
+  assert.equal(topicTermMatches('systemic','stemi'),false);
+  assert.equal(topicTermMatches('standards','ards'),false);
+  assert.equal(topicTermMatches('hysteroscopic','rosc'),false);
+});
+
 test('consumed candidates cannot exhaust monthly slots or the fourteen queue slots', async () => {
   const dir = await mkdtemp(path.join(tmpdir(), 'tr-selection-audit-'));
   const file = path.join(dir, 'queue.json');

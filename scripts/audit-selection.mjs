@@ -50,6 +50,10 @@ for(const [track,file]of Object.entries({papers:'index.html',guidelines:'guideli
  const rowIds=[...html.matchAll(/<tr\s+[^>]*data-pmid="([^"]+)"/g)].map(m=>m[1]);
  const cardCount=[...html.matchAll(/<article class="(?:paper|guideline)-card"/g)].length;
  const keys=[...html.matchAll(/<!-- ((?:G|R)?SECTION):([^>]+) -->/g)].map(m=>`${m[1]}:${m[2]}`);
+ const cardIds=[...html.matchAll(/<!-- ((?:G|R)?SECTION):([^>]+) -->([\s\S]*?)<!-- \/\1:\2 -->/g)]
+   .map(m=>m[3].match(/<div class="meta">([\s\S]*?)<\/div>/)?.[1]?.match(/PMID\s*(\d+)/)?.[1]
+     ?? m[3].match(/data-guideline-id="([^"]+)"/)?.[1]
+     ?? (m[2].includes('-m-') ? m[2].split('-m-').slice(1).join('-m-') : null)).filter(Boolean);
  const missing=tracks[track].filter(x=>!rowIds.includes(String(x.pmid||x.id||x.sourceId||''))).map(x=>{
    const id=String(x.pmid||x.id||x.sourceId||'');
    const tag={papers:'SECTION',guidelines:'GSECTION',reviews:'RSECTION'}[track];
@@ -57,11 +61,13 @@ for(const [track,file]of Object.entries({papers:'index.html',guidelines:'guideli
      || Boolean(hidden[`${tag}:${x.date||x.publishedAt}`])};
  });
  result.pages[track]={file,cardCount,tableRows:rowIds.length,duplicateRows:dupes(rowIds),duplicateSections:dupes(keys),
+   orphanTableIds:rowIds.filter(id=>!cardIds.includes(id)),cardIdsWithoutTable:cardIds.filter(id=>!rowIds.includes(id)),
    sectionDates:dates(keys.map(k=>k.split(':')[1].slice(0,10))),missingFromTable:missing,
    emptyPubmedLinks:[...html.matchAll(/href="#"[^>]*>PubMed<\/a>/g)].length};
 }
 result.crossTrackDuplicates={papersGuidelines:papers.filter(p=>p.pmid&&guidelines.published.some(g=>g.pmid===p.pmid)).map(p=>p.pmid),
- papersReviews:papers.filter(p=>reviews.published.some(g=>g.pmid===p.pmid)).map(p=>p.pmid)};
+ papersReviews:papers.filter(p=>reviews.published.some(g=>g.pmid===p.pmid)).map(p=>p.pmid),
+ guidelinesReviews:guidelines.published.filter(g=>g.pmid&&reviews.published.some(r=>r.pmid===g.pmid)).map(g=>g.pmid)};
 result.paperQueue={count:pq.queue.length,lastRun:pq.lastRun,updatedAt:pq.updatedAt};
 result.paperArchive={count:archive.length,dates:dates(archive.map(x=>x.date)),
  evidenceLevels:count(archive.map(x=>x.evidenceLevel)),journals:count(archive.map(x=>x.journal)),
@@ -71,8 +77,8 @@ result.guidelineQueue={count:guidelines.queue.length,status:count(guidelines.que
  staleQueuedNegativeFit:guidelines.queue.filter(x=>x.status==='queued'&&x.llmFit?.keep===false).map(x=>x.pmid),
  unpublishedWithoutFit:guidelines.queue.filter(x=>!x.llmFit).length,sourceHealth:guidelines.sourceHealth};
 result.census={generatedAt:census.generatedAt,axes:Object.fromEntries(Object.entries(census.axes).map(([k,v])=>[k,{total:v.total,fetched:v.fetched,minDate:v.minDate,maxDate:v.maxDate}]))};
-// Same retained pool for both versions. Split before scoring: numeric PMID mod 5 == 0
-// is an untouched holdout, other records form the diagnostic partition.
+// Retrospective descriptive split of the same retained pool, not an isolated
+// holdout or temporal validation. No complete historical pool or clinical labels.
 const pool=[...new Map(Object.values(census.axes).flatMap(a=>a.items).map(x=>[String(x.pmid),{
  pmid:String(x.pmid),title:x.title,journal:x.journal,pubDate:x.date,publicationTypes:x.types??[]}])).values()];
 const oldSource=execFileSync('git',['show',`${result.baseline}:src/utils/MetadataScorer.js`],{encoding:'utf8'});
@@ -82,9 +88,10 @@ const oldGSource=execFileSync('git',['show',`${result.baseline}:src/utils/Guidel
  .replace("'./guidelineOrgs.js'",JSON.stringify(new URL('../src/utils/guidelineOrgs.js',import.meta.url).href));
 const {scoreGuideline:oldG}=await import(`data:text/javascript;base64,${Buffer.from(oldGSource).toString('base64')}`);
 result.replay={poolCount:pool.length,poolSha256:createHash('sha256').update(JSON.stringify(pool)).digest('hex'),
- split:'Number(PMID) % 5 === 0 -> holdout; all others diagnostic; no learned weights',partitions:{}};
-for(const name of ['diagnostic','holdout']) {
- const subset=pool.filter(x=>(Number(x.pmid)%5===0)===(name==='holdout'));
+ split:'Retrospective: Number(PMID) % 5 === 0 -> pmid_subset; all others diagnostic; no learned weights',
+ splitLimitations:['No evidence of preregistration or pre-analysis isolation.','Not temporal validation.','No complete historical candidate pool or independent clinical ground truth.'],partitions:{}};
+for(const name of ['diagnostic','pmid_subset']) {
+ const subset=pool.filter(x=>(Number(x.pmid)%5===0)===(name==='pmid_subset'));
  const scored=subset.map(p=>{
    const oldTopic=oldG(p,{orgs,interests}).breakdown.topic;
    const revised=scoreGuideline(p,{orgs,interests,now:'2026-10-18'});
