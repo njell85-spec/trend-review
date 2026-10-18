@@ -1,3 +1,6 @@
+> 현재 작업 상태: [HANDOFF.md](HANDOFF.md)를 먼저 읽고, 아래 도구별 규칙과
+> [기존 공통 인계](docs/HANDOFF.md)를 따른다. 현재 상태 문서는 권한을 추가하지 않는다.
+
 # Trend Review — 에이전트 메모
 
 ## 사용자

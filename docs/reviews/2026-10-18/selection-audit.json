@@ -1,0 +1,2218 @@
+{
+  "asOf": "2026-10-18",
+  "baseline": "f816ce2",
+  "limitations": [
+    "Selected ledger is not a complete historical candidate pool.",
+    "Census replay uses the retained 2026-08-16 metadata snapshot, not contemporaneous full abstracts or clinical relevance labels.",
+    "Title-only topics are proxies, not clinical adjudication. No population omission rate or treatment recommendation is estimated."
+  ],
+  "tracks": {
+    "papers": {
+      "count": 105,
+      "dates": {
+        "first": "2026-06-29",
+        "last": "2026-10-17"
+      },
+      "duplicates": [],
+      "storedTopics": {
+        "unknown": 48,
+        "resp_airway": 17,
+        "sepsis_shock": 9,
+        "cardiac_resus": 30,
+        "infection": 1
+      },
+      "titleOnlyTopics": {
+        "unknown": 28,
+        "sepsis_shock": 26,
+        "resp_airway": 19,
+        "infection": 4,
+        "cardiac_resus": 25,
+        "general_em_ccm": 3
+      },
+      "metadataCoverage": {
+        "pubDate": 0,
+        "journal": 0,
+        "publicationTypes": 0,
+        "abstract": 0
+      },
+      "selectionModes": {
+        "unknown": 43,
+        "deterministic": 22,
+        "llm_reranked": 40
+      },
+      "lowConfidence": 41,
+      "monthly": {
+        "2026-06": 1,
+        "2026-07": 31,
+        "2026-08": 34,
+        "2026-09": 29,
+        "2026-10": 10
+      },
+      "studyTypes": {
+        "unknown": 105
+      },
+      "sourceYears": {
+        "unknown": 105
+      },
+      "coverage": {
+        "unknown": 105
+      },
+      "llmFit": {
+        "unknown": 105
+      }
+    },
+    "guidelines": {
+      "count": 75,
+      "dates": {
+        "first": "2026-07-02",
+        "last": "2026-10-18"
+      },
+      "duplicates": [],
+      "storedTopics": {
+        "unknown": 75
+      },
+      "titleOnlyTopics": {
+        "sepsis_shock": 5,
+        "general_em_ccm": 6,
+        "cardiac_resus": 38,
+        "unknown": 3,
+        "neuro": 6,
+        "resp_airway": 7,
+        "trauma": 4,
+        "vascular_gi_other": 3,
+        "infection": 2,
+        "procedure_dx": 1
+      },
+      "metadataCoverage": {
+        "pubDate": 61,
+        "journal": 61,
+        "publicationTypes": 61,
+        "abstract": 48
+      },
+      "selectionModes": {
+        "unknown": 75
+      },
+      "lowConfidence": 0,
+      "monthly": {
+        "2026-07": 5,
+        "2026-08": 22,
+        "2026-09": 31,
+        "2026-10": 17
+      },
+      "studyTypes": {
+        "unknown": 14,
+        "Guidelines": 31,
+        "Other": 19,
+        "Review": 7,
+        "Meta-analysis": 4
+      },
+      "sourceYears": {
+        "2024": 4,
+        "2025": 30,
+        "2026": 27,
+        "unknown": 14
+      },
+      "coverage": {
+        "unknown": 75
+      },
+      "llmFit": {
+        "unknown": 14,
+        "true:10": 13,
+        "true:9": 48
+      }
+    },
+    "reviews": {
+      "count": 62,
+      "dates": {
+        "first": "2026-08-16",
+        "last": "2026-10-18"
+      },
+      "duplicates": [],
+      "storedTopics": {
+        "cardiac_resus": 25,
+        "sepsis_shock": 7,
+        "resp_airway": 14,
+        "neuro": 7,
+        "infection": 5,
+        "vascular_gi_other": 1,
+        "trauma": 2,
+        "general_em_ccm": 1
+      },
+      "titleOnlyTopics": {
+        "cardiac_resus": 25,
+        "sepsis_shock": 7,
+        "resp_airway": 14,
+        "neuro": 7,
+        "infection": 5,
+        "vascular_gi_other": 1,
+        "trauma": 2,
+        "general_em_ccm": 1
+      },
+      "metadataCoverage": {
+        "pubDate": 0,
+        "journal": 62,
+        "publicationTypes": 0,
+        "abstract": 0
+      },
+      "selectionModes": {
+        "unknown": 62
+      },
+      "lowConfidence": 0,
+      "monthly": {
+        "2026-08": 16,
+        "2026-09": 29,
+        "2026-10": 17
+      },
+      "studyTypes": {
+        "unknown": 62
+      },
+      "sourceYears": {
+        "2021": 6,
+        "2022": 13,
+        "2023": 7,
+        "2024": 11,
+        "2025": 15,
+        "2026": 8,
+        "unknown": 2
+      },
+      "coverage": {
+        "unknown": 2,
+        "full-text": 13,
+        "abstract-only": 34,
+        "web-augmented": 13
+      },
+      "llmFit": {
+        "unknown": 2,
+        "true:10": 2,
+        "true:9": 58
+      }
+    }
+  },
+  "pages": {
+    "papers": {
+      "file": "index.html",
+      "cardCount": 69,
+      "tableRows": 69,
+      "duplicateRows": [],
+      "duplicateSections": [],
+      "sectionDates": {
+        "first": "2026-06-29",
+        "last": "2026-10-17"
+      },
+      "missingFromTable": [
+        {
+          "id": "42348212",
+          "date": "2026-07-02",
+          "hidden": true
+        },
+        {
+          "id": "42275060",
+          "date": "2026-07-02",
+          "hidden": true
+        },
+        {
+          "id": "42275064",
+          "date": "2026-07-02",
+          "hidden": true
+        },
+        {
+          "id": "42270296",
+          "date": "2026-07-02",
+          "hidden": true
+        },
+        {
+          "id": "42392606",
+          "date": "2026-07-03",
+          "hidden": true
+        },
+        {
+          "id": "42262991",
+          "date": "2026-07-07",
+          "hidden": true
+        },
+        {
+          "id": "42304649",
+          "date": "2026-07-09",
+          "hidden": true
+        },
+        {
+          "id": "42410774",
+          "date": "2026-07-10",
+          "hidden": true
+        },
+        {
+          "id": "42284053",
+          "date": "2026-07-11",
+          "hidden": true
+        },
+        {
+          "id": "42284522",
+          "date": "2026-07-13",
+          "hidden": true
+        },
+        {
+          "id": "42319221",
+          "date": "2026-07-14",
+          "hidden": true
+        },
+        {
+          "id": "42409761",
+          "date": "2026-07-15",
+          "hidden": true
+        },
+        {
+          "id": "42410446",
+          "date": "2026-07-19",
+          "hidden": true
+        },
+        {
+          "id": "42469837",
+          "date": "2026-07-23",
+          "hidden": true
+        },
+        {
+          "id": "42341623",
+          "date": "2026-07-24",
+          "hidden": true
+        },
+        {
+          "id": "42341374",
+          "date": "2026-07-25",
+          "hidden": true
+        },
+        {
+          "id": "42498336",
+          "date": "2026-07-26",
+          "hidden": true
+        },
+        {
+          "id": "42377086",
+          "date": "2026-07-27",
+          "hidden": true
+        },
+        {
+          "id": "42485042",
+          "date": "2026-07-28",
+          "hidden": true
+        },
+        {
+          "id": "42498339",
+          "date": "2026-07-30",
+          "hidden": true
+        },
+        {
+          "id": "42520766",
+          "date": "2026-07-31",
+          "hidden": true
+        },
+        {
+          "id": "42482139",
+          "date": "2026-08-01",
+          "hidden": true
+        },
+        {
+          "id": "42538732",
+          "date": "2026-08-02",
+          "hidden": true
+        },
+        {
+          "id": "42522393",
+          "date": "2026-08-03",
+          "hidden": true
+        },
+        {
+          "id": "42399677",
+          "date": "2026-08-04",
+          "hidden": true
+        },
+        {
+          "id": "42498331",
+          "date": "2026-08-05",
+          "hidden": true
+        },
+        {
+          "id": "42484103",
+          "date": "2026-08-06",
+          "hidden": true
+        },
+        {
+          "id": "42555934",
+          "date": "2026-08-07",
+          "hidden": true
+        },
+        {
+          "id": "42528431",
+          "date": "2026-08-08",
+          "hidden": true
+        },
+        {
+          "id": "42568095",
+          "date": "2026-08-09",
+          "hidden": true
+        },
+        {
+          "id": "42437551",
+          "date": "2026-08-10",
+          "hidden": true
+        },
+        {
+          "id": "42507344",
+          "date": "2026-08-11",
+          "hidden": true
+        },
+        {
+          "id": "42454924",
+          "date": "2026-08-12",
+          "hidden": true
+        },
+        {
+          "id": "42486569",
+          "date": "2026-08-13",
+          "hidden": true
+        },
+        {
+          "id": "41122884",
+          "date": "2026-08-18",
+          "hidden": true
+        },
+        {
+          "id": "40967395",
+          "date": "2026-08-28",
+          "hidden": false
+        }
+      ],
+      "emptyPubmedLinks": 0
+    },
+    "guidelines": {
+      "file": "guidelines.html",
+      "cardCount": 73,
+      "tableRows": 74,
+      "duplicateRows": [],
+      "duplicateSections": [],
+      "sectionDates": {
+        "first": "2026-07-02",
+        "last": "2026-10-18"
+      },
+      "missingFromTable": [
+        {
+          "id": "41236566",
+          "date": "2026-07-23",
+          "hidden": false
+        }
+      ],
+      "emptyPubmedLinks": 0
+    },
+    "reviews": {
+      "file": "reviews.html",
+      "cardCount": 61,
+      "tableRows": 61,
+      "duplicateRows": [],
+      "duplicateSections": [],
+      "sectionDates": {
+        "first": "2026-08-07",
+        "last": "2026-10-18"
+      },
+      "missingFromTable": [
+        {
+          "id": "40889512",
+          "date": "2026-08-16",
+          "hidden": false
+        },
+        {
+          "id": "41504890",
+          "date": "2026-08-17",
+          "hidden": true
+        }
+      ],
+      "emptyPubmedLinks": 0
+    }
+  },
+  "crossTrackDuplicates": {
+    "papersGuidelines": [
+      "41122884"
+    ],
+    "papersReviews": []
+  },
+  "paperQueue": {
+    "count": 0,
+    "lastRun": {
+      "date": "2026-10-01",
+      "outcome": "published",
+      "publishedId": "42467247"
+    },
+    "updatedAt": "2026-10-18"
+  },
+  "paperArchive": {
+    "count": 67,
+    "dates": {
+      "first": "2026-07-06",
+      "last": "2026-10-17"
+    },
+    "evidenceLevels": {
+      "High": 5,
+      "Low": 37,
+      "Very Low": 7,
+      "Moderate": 18
+    },
+    "journals": {
+      "The New England journal of medicine": 4,
+      "Journal of Korean medical science": 1,
+      "Critical care (London, England)": 17,
+      "Open heart": 1,
+      "Critical care explorations": 2,
+      "BMJ open respiratory research": 1,
+      "Microbiology spectrum": 1,
+      "Intensive care medicine": 5,
+      "JAMA": 2,
+      "Resuscitation": 18,
+      "Critical care medicine": 9,
+      "Circulation": 1,
+      "JAMA internal medicine": 1,
+      "Lancet (London, England)": 1,
+      "JAMA network open": 2,
+      "Zhonghua wei zhong bing ji jiu yi xue": 1
+    },
+    "provenance": "Existing pipeline assessments, not an independent clinical evidence adjudication."
+  },
+  "guidelineQueue": {
+    "count": 657,
+    "status": {
+      "needsReview": 453,
+      "queued": 203,
+      "superseded": 1
+    },
+    "publishableAfterGuard": 172,
+    "staleQueuedNegativeFit": [
+      "41942814",
+      "41360094",
+      "41405527",
+      "41505788",
+      "41837923",
+      "42009116",
+      "42312386",
+      "42191456",
+      "42339539",
+      "42350065",
+      "42447876",
+      "42550214",
+      "42496134",
+      "42189053",
+      "42480549",
+      "42648009",
+      "42657476",
+      "42663032",
+      "42669047",
+      "42017832",
+      "42703764",
+      "42712221",
+      "42712147",
+      "42741845",
+      "42754487",
+      "42807668",
+      "42823935",
+      "42823130",
+      "42135060",
+      "42839771",
+      "42877955"
+    ],
+    "unpublishedWithoutFit": 0,
+    "sourceHealth": {
+      "organizations": [
+        {
+          "organizationId": "aha",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "esc",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "sccm",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "esicm",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "acep",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "idsa",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "ilcor",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "surviving-sepsis",
+          "status": "unconfigured",
+          "sources": []
+        },
+        {
+          "organizationId": "ncs",
+          "status": "unconfigured",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "census": {
+    "generatedAt": "2026-08-16T05:48:09.228Z",
+    "axes": {
+      "pt_emccm": {
+        "total": 99,
+        "fetched": 99,
+        "minDate": "2025/08/16",
+        "maxDate": "2026/08/16"
+      },
+      "expanded_emccm": {
+        "total": 126,
+        "fetched": 126,
+        "minDate": "2025/08/16",
+        "maxDate": "2026/08/16"
+      },
+      "union_emccm": {
+        "total": 197,
+        "fetched": 197,
+        "minDate": "2025/08/16",
+        "maxDate": "2026/08/16"
+      },
+      "pt_all": {
+        "total": 2033,
+        "fetched": 2033,
+        "minDate": "2025/08/16",
+        "maxDate": "2026/08/16"
+      },
+      "topic": {
+        "total": 2888,
+        "fetched": 2888,
+        "minDate": "2025/08/16",
+        "maxDate": "2026/08/16"
+      },
+      "review_core4": {
+        "total": 217,
+        "fetched": 217,
+        "minDate": "2021/08/17",
+        "maxDate": "2026/08/16"
+      },
+      "review_core4_plus_ccm": {
+        "total": 408,
+        "fetched": 408,
+        "minDate": "2021/08/17",
+        "maxDate": "2026/08/16"
+      },
+      "review_wide": {
+        "total": 958,
+        "fetched": 958,
+        "minDate": "2021/08/17",
+        "maxDate": "2026/08/16"
+      }
+    }
+  },
+  "replay": {
+    "poolCount": 5282,
+    "poolSha256": "e0dcd15f14eae1c6236095b24d5fa5f8f93d5084c6f30fb9ba6b2cac17635ad2",
+    "split": "Number(PMID) % 5 === 0 -> holdout; all others diagnostic; no learned weights",
+    "partitions": {
+      "diagnostic": {
+        "count": 4273,
+        "changed": 110,
+        "top20Overlap": 20,
+        "guidelineTop20Overlap": 17,
+        "beforeTop20": [
+          "34454688",
+          "34751704",
+          "36640801",
+          "40889512",
+          "37721023",
+          "41122894",
+          "42008277",
+          "37707378",
+          "37707379",
+          "39306386",
+          "42508832",
+          "39316661",
+          "40778886",
+          "41122884",
+          "41122886",
+          "41122888",
+          "41122892",
+          "41122893",
+          "37314271",
+          "41951238"
+        ],
+        "afterTop20": [
+          "34454688",
+          "34751704",
+          "36640801",
+          "40889512",
+          "37721023",
+          "41122894",
+          "42008277",
+          "37707378",
+          "37707379",
+          "39306386",
+          "42508832",
+          "39316661",
+          "40778886",
+          "41122884",
+          "41122886",
+          "41122888",
+          "41122892",
+          "41122893",
+          "37314271",
+          "41951238"
+        ],
+        "changes": [
+          {
+            "pmid": "41067978",
+            "title": "Intensive Care Departments organization towards High-Quality Care: SOGAMIUC recommendations Using a Delphi Methodology (endorsed by SEMICYUC, SAMI, SBMICIUC, SOCAMICYUC, SNMIUC, SCLMICYUC, SOCMIC, SEXMICYUC, and SOMIUC).",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42350027",
+            "title": "'An adrenaline-fueled emergency': a qualitative thematic analysis of reviews of deaths in England where DNACPR (Do Not Attempt Cardiopulmonary Resuscitation) recommendations are not implemented for people with a learning disability.",
+            "before": 2.1500000000000004,
+            "after": 1.5499999999999998,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "cpr"
+            ]
+          },
+          {
+            "pmid": "41163099",
+            "title": "Towards optimised nutrition therapy after critical illness: a position statement and research framework by the global research initiative on post-intensive care nutrition (GRIP) consortium.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41110431",
+            "title": "Consensus statement on standards for neurocritical care units in low-income and middle-income countries (LMICs).",
+            "before": 4.75,
+            "after": -2.25,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42576619",
+            "title": "The Asia-Pacific League of Associations for Rheumatology Consensus Recommendations on the Management of Systemic Juvenile Idiopathic Arthritis (Juvenile Still's Disease).",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42336388",
+            "title": "The 2026 British Society for Rheumatology guideline for the management of children, young people and adults with systemic lupus erythematosus.",
+            "before": 2.4499999999999993,
+            "after": -4.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42336133",
+            "title": "Visually Directed Hysteroscopic Biopsy in the Evaluation of Abnormal Uterine Bleeding and Postmenopausal Bleeding: A Joint Society Practice Guideline.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "42270533",
+            "title": "Guide from the Colegio Mexicano de Reumatología for the Pharmacological Treatment of Systemic Sclerosis Part 1: Cutaneous Involvement, Interstitial Lung Disease, and Pulmonary Arterial Hypertension.",
+            "before": 4.75,
+            "after": 4.449999999999999,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42261894",
+            "title": "International guideline on antimicrobial stewardship and the role of microbial-binding dressings in wound care 2026: infection prevention, control, early intervention and treatment.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42250978",
+            "title": "SEPAR Position Paper on Infrastructure, Technology, Staffing, Quality Standards, and Management of Intermediate Respiratory Care Units in Spain.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42099109",
+            "title": "The American Society of ExtraCorporeal Technology Standards and Guidelines for Pediatric and Congenital Perfusion Practice: 2025 Update.",
+            "before": 2.75,
+            "after": 2.4499999999999993,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42041719",
+            "title": "Guidance for Canadian Breast Cancer Practice: National Consensus Recommendations for the Systemic Treatment of Patients with HER2+ Breast Cancer in Both the Early and Metastatic Settings (2025 Update).",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42035794",
+            "title": "Evidence-Based Guidelines for Instrument and Handle Selection for Ergonomic Optimization in Laparoscopic Surgery.",
+            "before": 4.65,
+            "after": -2.3499999999999996,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41966326",
+            "title": "Development of the Competencies for the Future Education Model Accreditation Standards for Graduate Degree Programs in Nutrition and Dietetics.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41921121",
+            "title": "Systemic Treatment of Thyroid Cancer: ASCO Guideline.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41871966",
+            "title": "Use of Tranexamic Acid in Laparoscopic Myomectomy: AAGL Committee Opinion and Practice Guideline Update.",
+            "before": 4.75,
+            "after": 4.449999999999999,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41774393",
+            "title": "Australian best practice recommendations for transjugular intrahepatic portosystemic shunt (TIPS) in portal hypertension: a consensus statement.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41770188",
+            "title": "Perioperative Management of Systemic Cancer Therapies for Solid Organ and Hematologic Malignant Neoplasms: Recommendations From the Emory University Systemic Therapies Perioperative Management Group.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41744876",
+            "title": "Guidance for Canadian Breast Cancer Practice: National Consensus Recommendations for the Systemic Treatment of Patients with HR+/HER2- Early Breast Cancer 2025.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41739032",
+            "title": "American Society for Gastrointestinal Endoscopy standards for fellowship training in peroral endoscopic myotomy.",
+            "before": 1.4499999999999993,
+            "after": -5.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41713786",
+            "title": "ESMO adaptation of Lines of Systemic Therapy (EnLiST): a consensus framework for standardising the designation of lines of therapy in solid tumours.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41667921",
+            "title": "[Guideline for quality control of laparoscopic radical resection of biliary tract malignancies(2026 edition)].",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41651774",
+            "title": "Management of dyslipidemia in adults. A consensus statement from the French Society of Endocrinology (SFE), the French-speaking Diabetes Society (SFD), the New French-speaking Atherosclerosis Society (NSFA) and the French Society of Cardiology (SFC).",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41651737",
+            "title": "Management of dyslipidemia in adults. A consensus statement from the French Society of Endocrinology (SFE), the French-speaking Diabetes Society (SFD), the New French-speaking Atherosclerosis Society (NSFA) and the French Society of Cardiology (SFC).",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41649446",
+            "title": "Recommendations From the Blue Ribbon Panel on Fluoroscopy Safety.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41633912",
+            "title": "SEA 2026 Standards for Global Control of Vascular Risk.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41557978",
+            "title": "Systemic Therapy in Patients With Metastatic Castration-Resistant Prostate Cancer: ASCO Living Guideline, Version 2026.1.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41507473",
+            "title": "CIRSE Standards of Practice on Nephrostomy and Ureteric Stent Placement and Exchange.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41507472",
+            "title": "CIRSE Standards of Practice for the Provision of Emergency IR Care on a 24/7 Basis.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41469898",
+            "title": "French guidelines on systemic treatments for moderate-to-severe psoriasis in adults: Update 2025.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41461049",
+            "title": "American Clinical Neurophysiology Society Technical Standards for Performing Intraoperative Electrocorticography.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41441801",
+            "title": "Emergency and All-Hazards Preparedness: AWHONN Practice Brief Number 22.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41366616",
+            "title": "Cardiovascular Prevention in Children, Adolescents, and Young Adults. A Call-to-Action of the Italian Societies of Pediatrics (SIP), Hypertension (SIIA), Study of Atherosclerosis (SISA), and Cardiovascular Prevention (SIPREC).",
+            "before": 2.4499999999999993,
+            "after": -4.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41358899",
+            "title": "10. Cardiovascular Disease and Risk Management: Standards of Care in Diabetes-2026.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41342823",
+            "title": "Occupational hazards in cardiac electrophysiology: Insights from an HRS member survey.",
+            "before": 1.75,
+            "after": 1.4499999999999993,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41223122",
+            "title": "Clinical Practice Recommendations of the Swiss Society for Neuroradiology: Neuroimaging Standards for Enrollment and Disease Monitoring in Anti-Amyloid Immunotherapies.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41187097",
+            "title": "2025 American College of Rheumatology (ACR) Guideline for the Treatment of Systemic Lupus Erythematosus.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41182321",
+            "title": "2025 American College of Rheumatology (ACR) Guideline for the Treatment of Systemic Lupus Erythematosus.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41138626",
+            "title": "Alignment of Oral Health Care With ISO Standards.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41107121",
+            "title": "EULAR recommendations for the management of systemic lupus erythematosus with kidney involvement: 2025 update.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41085253",
+            "title": "ACSM Expert Consensus Statement: Considerations and Recommendations for Prescribing Exercise and Designing Physical Activity Programs for People with Disabilities.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "acs"
+            ]
+          },
+          {
+            "pmid": "41038202",
+            "title": "Assessing pathological response to neoadjuvant therapy in renal cell carcinoma: a systematic review and guidelines for sampling and reporting standards from the International Neoadjuvant Kidney Cancer Consortium.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41002088",
+            "title": "[Systemic treatment of breast cancer: professional guideline].",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "40987622",
+            "title": "Appraisal of Clinical Practice Guideline: The Formal European Union (EU)-United States (US) Meniscus Rehabilitation 2024 Consensus: A European Society of Sports Traumatology, Knee Surgery and Arthroscopy (ESSKA), American Orthopaedic Society for Sports Medicine (AOSSM) and American Academy of Sports Physical Therapy (AASPT) Initiative: Part I-Rehabilitation Management After Meniscus Surgery (Meniscectomy, Repair and Reconstruction).",
+            "before": 1.75,
+            "after": 1.4499999999999993,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "40953951",
+            "title": "Canadian Rheumatology Association/Canadian Research Group of Rheumatology in Immuno-Oncology Living Guidelines for Baseline Immunosuppression in Individuals With Preexisting Rheumatic Diseases Initiating Immune Checkpoint Inhibitors. Part 2: Preexisting Systemic Autoimmune Rheumatic Diseases.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "40762446",
+            "title": "Guidelines for Phototherapy and PUVA Service Delivery in Australia: Minimum Standards and Quality Assurance Framework.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "40632481",
+            "title": "Correlative light and electron microscopy analysis for neurobiological applications.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "40588224",
+            "title": "Quality standards and curriculum for training in cholangiopancreatoscopy: European Society of Gastrointestinal Endoscopy (ESGE) Position Statement.",
+            "before": 1.4499999999999993,
+            "after": -5.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "40398341",
+            "title": "French national protocol for diagnosis and management of drug reaction with eosinophilia and systemic symptoms (DRESS) in adults and children.",
+            "before": 2.4499999999999993,
+            "after": -4.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "40185923",
+            "title": "ESR Essentials: assessing the radiological response of liver metastases to systemic therapy-practice recommendations by the European Society of Gastrointestinal and Abdominal Radiology.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42575623",
+            "title": "Linking Quality Measures to Guideline Recommendations in Allergy-Immunology: Challenges and Opportunities: A Workgroup Report of the AAAAI Measures Stewardship Committee.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42552374",
+            "title": "Navigating evidence-based recommendations for the management of systemic sclerosis.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42547461",
+            "title": "Allergic Rhinitis and Its Impact on Asthma (ARIA) Guidelines: Moving Towards Living Guidelines With Regionally Tailored Recommendations.",
+            "before": 1.5499999999999998,
+            "after": 0.5499999999999998,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42505602",
+            "title": "Antimicrobial Stewardship Program in a Low-Middle Income Country: Impact of an Antibiotic Guideline for Neonatal Early-Onset Sepsis.",
+            "before": 1.8499999999999996,
+            "after": 1.5499999999999998,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42495702",
+            "title": "Effects of exercises based on ACSM recommendations on patients with heart failure with preserved ejection fraction: a systematic review and meta-analysis of randomized controlled trials.",
+            "before": 4.1499999999999995,
+            "after": 3.15,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "acs"
+            ]
+          },
+          {
+            "pmid": "42423949",
+            "title": "Systemic Autoimmune Rheumatic Disease-Associated Interstitial Lung Disease: A Pulmonary Perspective on Recent Guidelines.",
+            "before": 3.4499999999999997,
+            "after": 3.15,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42398632",
+            "title": "Diagnostic stewardship for optimizing blood culture practices: a systematic review of clinical practice guidelines and evidence-based recommendations.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42377293",
+            "title": "Antiplatelet Therapy in the Management of Atherosclerotic Cardiovascular Disease: 2026 ACC Scientific Statement: A Report of the American College of Cardiology.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "42367434",
+            "title": "Management of Fragility Femoral Fractures: A UK Regional Multicentre Audit of the British Orthopaedic Association Standards for Trauma (BOAST) Guidelines.",
+            "before": 2.05,
+            "after": 1.75,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42306989",
+            "title": "Premature atherosclerotic cardiovascular disease in the MENA region: economic impact, barriers to care, and policy recommendations for an escalating crisis.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "42276948",
+            "title": "Balancing the evidence with the SPAQI recommendations: from perioperative discontinuation towards continuation of SGLT2 inhibitors.",
+            "before": 0.5499999999999998,
+            "after": -6.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42178198",
+            "title": "Lipid clinics worldwide: harmonization and guidance on how to optimally organize and fund. European Atherosclerosis Society consensus statement across 55 countries and more than 500 lipid clinics.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "42131862",
+            "title": "Suggested Guidelines for Applying a Systemic Lens to Psychedelic-Assisted Psychotherapy.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42062052",
+            "title": "Diagnostic cerebral angiography: A report of the SNIS Standards and Guidelines Committee, endorsed by ANZSNR and ESMINT.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42047178",
+            "title": "Improving urine testing stewardship with a technology-leveraged urine testing guideline.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42029388",
+            "title": "A systematic review of physical activity guidelines for adults with cardio-respiratory diseases: Stepping towards evidence-based recommendations.",
+            "before": 4.55,
+            "after": -2.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41997804",
+            "title": "Efficacy of synthetic and biological DMARDs: a systematic literature review informing the 2025 update of the EULAR recommendations for the management of rheumatoid arthritis.",
+            "before": 4.65,
+            "after": -2.3499999999999996,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41981236",
+            "title": "Management of chronic subdural hematoma: a consensus statement from the 2024 Copenhagen joint iCORIC/DACSUHS symposium.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "acs"
+            ]
+          },
+          {
+            "pmid": "41951459",
+            "title": "Safety of synthetic and biological DMARDs: a systematic literature review informing the 2025 update of the EULAR recommendations for the management of rheumatoid arthritis.",
+            "before": 4.65,
+            "after": -2.3499999999999996,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41921413",
+            "title": "Recommendations for a microbiology Diagnostic Stewardship Program for antimicrobial resistance: Pre-analytical phase.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41830541",
+            "title": "A randomized trial of pocket cards to increase implementation of the 2020 NHLBI asthma guidelines.",
+            "before": 5.8,
+            "after": 4.8,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41807011",
+            "title": "Protocol for the development of the Asian consensus recommendations on the standardised diagnosis and imaging of intracranial atherosclerotic stenosis applying a modified Delphi approach.",
+            "before": 3.8499999999999996,
+            "after": 3.55,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41745398",
+            "title": "The Impact of PRAC EMA/AIFA Recommendations on the Prescriptions of JAKi and b-DMARDs: Preliminary Results of the Survey from 21 Rheumatological Italian Centers Affiliated with CReI.",
+            "before": 0.5499999999999998,
+            "after": -6.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41713851",
+            "title": "Transthoracic echocardiography - the new AWMF S2k guidelines establish uniform standards.",
+            "before": 3.79,
+            "after": 3.1500000000000004,
+            "guidelineTopicBefore": 3.6,
+            "guidelineTopicAfter": 1.6,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41705086",
+            "title": "Aortic Atherosclerosis: An Updated Review of Current Guidelines and Management Approach-A Literature Review.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41704336",
+            "title": "Pharmacokinetic-guided magnesium prophylaxis in cardiac surgery: A randomized trial demonstrating guideline-level reductions in atrial fibrillation, accelerated recovery, and systemic cost savings.",
+            "before": 6.2,
+            "after": 5.6,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41666397",
+            "title": "DOACs, Andexanet, Pump Clots-Oh My! A Joint Consensus Statement for Safe Management of Patients on DOACs Requiring Cardiac Surgery.",
+            "before": 4.55,
+            "after": 3.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "acs"
+            ]
+          },
+          {
+            "pmid": "41657216",
+            "title": "Coronary Atherosclerosis in Patients With Cancer and Survivors: A Scientific Statement From the American Heart Association.",
+            "before": 5.55,
+            "after": -1.4499999999999997,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41654307",
+            "title": "Enhanced guideline-compliant antimicrobial prophylaxis based on preoperative urine culture pathogens reduces bloodstream infection and sepsis following ureteroscopic lithotripsy.",
+            "before": 4.25,
+            "after": 3.9499999999999997,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41608698",
+            "title": "Consensus Statement on Middle Meningeal Artery Embolization in Chronic Subdural Hematoma Treatment: A Guideline from the Society of Vascular and Interventional Neurology Guidelines and Practice Standards Committee.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41544252",
+            "title": "Treatment Recommendations for Clinical Deterioration on the Wards: Development and Validation of Machine Learning Models.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41492587",
+            "title": "Improving Patient Care and Clinical Services: Compliance With the British Orthopaedic Association Standards for Trauma (BOAST) Guidelines for Neurological and Vascular Assessment of Acute Fractures.",
+            "before": 2.05,
+            "after": 1.75,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41458349",
+            "title": "Timely Fixation of Distal Radius Fractures: Improving Compliance With National Institute for Health and Care Excellence (NICE) and British Orthopaedic Association Standards for Trauma (BOAST) Guidelines.",
+            "before": 2.05,
+            "after": 1.75,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41399933",
+            "title": "Periodontal Disease and Atherosclerotic Cardiovascular Disease: A Scientific Statement From the American Heart Association.",
+            "before": 5.55,
+            "after": -1.4499999999999997,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41397518",
+            "title": "Systemic Sclerosis-Associated Interstitial Lung Disease: What We Know and How to Incorporate Guidelines Into Clinical Practice.",
+            "before": 5.85,
+            "after": 5.55,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41389718",
+            "title": "Cost-Analysis of Adherence to Antimicrobial Guidelines as Part of Antimicrobial Stewardship Strategies in 6 Latin American Countries: A Pilot Experience Focusing on Economic Impact.",
+            "before": 4.1,
+            "after": -2.9,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41262857",
+            "title": "Financial toxicity after trauma and acute care surgery: recommendations for measuring long-term financial hardship.",
+            "before": 0.8499999999999996,
+            "after": 0.6699999999999999,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2.8,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41222669",
+            "title": "[ESC/EACTS guidelines 2025 on the treatment of valvular heart disease : New standards in diagnostics and treatment].",
+            "before": 3.4499999999999997,
+            "after": 3.15,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41196308",
+            "title": "[Management of systemic lupus erythematosus-Including secondary antiphospholipid syndrome, fertility and pregnancy : S3 guidelines of the German Society for Rheumatology and Clinical Immunology and the German Society for Neurology (DGN), German Society for Internal Medicine (DGIM), German Cardiac Society (DGK), Society for Thrombosis and Hemostasis Research (GTH), German Society for Hematology and Medical Oncology (DGHO), German Society for Pediatric and Adolescent Medicine (DGKJ), Society for Pediatric and Adolescent Rheumatology (GKJR), German Society for Nephrology (DGfN), German Society for Pneumology and Ventilation Medicine (DGP), German Rheumatism League National Association, Lupus Erythematosus Self-help Community, German Dermatological Society (DDG). Version: 1.2].",
+            "before": 2.1499999999999995,
+            "after": 1.15,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41188867",
+            "title": "The importance of considering progression speed in systemic sclerosis-associated interstitial lung diseases: application of 2022 and 2024 clinical practice guidelines for progressive pulmonary fibrosis, a retrospective cohort study.",
+            "before": 4.85,
+            "after": 4.55,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41164393",
+            "title": "Venous thromboembolism after hip arthroscopy: a systematic review of incidence, risk factors, and international guidelines.",
+            "before": 4.65,
+            "after": -2.3499999999999996,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41119959",
+            "title": "[Telemedical extremity boards and quality assessment of guidelines for orthoplastic surgery of open fractures of the extremities].",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41109637",
+            "title": "Frostbite to the upper limb: An updated review and management recommendations.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "tbi"
+            ]
+          },
+          {
+            "pmid": "41054784",
+            "title": "Amoxicillin/clavulanate as a cornerstone of antibiotic stewardship: integrating WHO AWaRe principles, Italian recommendations, and evidence-based practice.",
+            "before": 3.15,
+            "after": -3.85,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41001923",
+            "title": "ESC consensus statement on stroke risk management in carotid atherosclerotic disease: 10 key points.",
+            "before": 6.25,
+            "after": 5.95,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "40879677",
+            "title": "Applicability of guideline-informing lipid-lowering clinical trials to contemporary real-world patients with atherosclerotic cardiovascular disease.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "40849731",
+            "title": "A Frostbite Treatment Guideline for Pediatric Patients.",
+            "before": 1.5499999999999998,
+            "after": -5.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "tbi"
+            ]
+          },
+          {
+            "pmid": "40614123",
+            "title": "Tailoring ATS/IDSA community-acquired pneumonia guidelines to high-resistance settings: an antibiotic stewardship framework from Lebanon.",
+            "before": 3.8499999999999996,
+            "after": 3.55,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "40398563",
+            "title": "Blunted cardiac reserve as a marker of cirrhotic cardiomyopathy-Cardiac outcomes following liver transplantation and comparison to the existing guidelines.",
+            "before": 4.25,
+            "after": 3.9499999999999997,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "blunt"
+            ]
+          },
+          {
+            "pmid": "40331343",
+            "title": "Clinical staging to guide management of metabolic disorders and their sequelae: a European Atherosclerosis Society consensus statement.",
+            "before": 5.95,
+            "after": -1.0499999999999998,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "40124984",
+            "title": "Physician-patient communication in the treatment of systemic sclerosis-associated interstitial lung disease: A narrative review and recommendations.",
+            "before": 3.4499999999999997,
+            "after": 3.15,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42419784",
+            "title": "Advances in systemic therapies for advanced prostate cancer.",
+            "before": 7.6,
+            "after": 0.5999999999999996,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "40773213",
+            "title": "Geroscience: A Translational Review.",
+            "before": 7.6,
+            "after": 0.5999999999999996,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "42228011",
+            "title": "Nutrition support in the ICU: current evidence and evolving standards.",
+            "before": 5.55,
+            "after": -1.4499999999999997,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "37607072",
+            "title": "Practice Standards for the Use of Multimodality Neuromonitoring: A Delphi Consensus Process.",
+            "before": 6.85,
+            "after": -0.15000000000000036,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42521151",
+            "title": "Pulmonary Hypertension Under the Microscope: What Histopathology Means for Diagnosis and Treatment.",
+            "before": 5.55,
+            "after": -1.4499999999999997,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "39960983",
+            "title": "Hypertension in Pregnancy and Postpartum: Current Standards and Opportunities to Improve Care.",
+            "before": 5.55,
+            "after": -1.4499999999999997,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "37154053",
+            "title": "Epidemiology of Diabetes and Atherosclerotic Cardiovascular Disease Among Asian American Adults: Implications, Management, and Future Directions: A Scientific Statement From the American Heart Association.",
+            "before": 5.55,
+            "after": -1.4499999999999997,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "36508493",
+            "title": "GLP-1 Receptor Agonists for the Reduction of Atherosclerotic Cardiovascular Risk in Patients With Type 2 Diabetes.",
+            "before": 5.55,
+            "after": -1.4499999999999997,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "34865513",
+            "title": "Methodological Standards for the Design, Implementation, and Analysis of Randomized Trials in Cardiac Surgery: A Scientific Statement From the American Heart Association.",
+            "before": 5.85,
+            "after": 5.55,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          }
+        ]
+      },
+      "holdout": {
+        "count": 1009,
+        "changed": 25,
+        "top20Overlap": 19,
+        "guidelineTop20Overlap": 19,
+        "beforeTop20": [
+          "36075255",
+          "34499865",
+          "41122890",
+          "41122895",
+          "34872910",
+          "35536260",
+          "34481570",
+          "35367005",
+          "35380580",
+          "36194215",
+          "36472590",
+          "39067905",
+          "39244275",
+          "39341645",
+          "39550175",
+          "39616000",
+          "41765030",
+          "42043915",
+          "41504890",
+          "40736325"
+        ],
+        "afterTop20": [
+          "34499865",
+          "41122890",
+          "41122895",
+          "34872910",
+          "35536260",
+          "34481570",
+          "35367005",
+          "35380580",
+          "36075255",
+          "36194215",
+          "36472590",
+          "39067905",
+          "39244275",
+          "39341645",
+          "39550175",
+          "39616000",
+          "41765030",
+          "42043915",
+          "40736325",
+          "41051555"
+        ],
+        "changes": [
+          {
+            "pmid": "42552165",
+            "title": "Update to the Sociedad Española de Reumatología Guidelines on the Use of Biological Therapy in Systemic Lupus Erythematosus.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41744870",
+            "title": "Guidance for Canadian Breast Cancer Practice: National Consensus Recommendations for the Systemic Treatment of Patients with HR+/HER2- Metastatic Breast Cancer 2025.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41702295",
+            "title": "Management of dyslipidemia in adults. A consensus statement from the French Society of Endocrinology (SFE), the French-speaking Diabetes Society (SFD), the New French-speaking Society of Atherosclerosis (NSFA) and the French Society of Cardiology (SFC).",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41546150",
+            "title": "The Taiwan College of Rheumatology Consensus for the Management of Systemic Lupus Erythematosus.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41441805",
+            "title": "Emergency and All-Hazards Preparedness: AWHONN Practice Brief Number 22.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "40957610",
+            "title": "Professional Standards in Thoracic Ultrasound - EFSUMB Position Paper.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "40602390",
+            "title": "Onkopedia: What's New? Systemic Tumor Treatment in Pregnancy.",
+            "before": 4.449999999999999,
+            "after": -2.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42585765",
+            "title": "Cancer-associated myositis in Chinese patients with idiopathic inflammatory myopathies: Malignancy spectrum, risk factors, and validation of the IMACS guideline.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "acs"
+            ]
+          },
+          {
+            "pmid": "42516005",
+            "title": "From Guidelines to Practice: Closing the Antibiotic Stewardship Gap in Acute Cholecystitis.",
+            "before": 3.8499999999999996,
+            "after": 3.55,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42461170",
+            "title": "A Case Study on Bronchiolitis Management: Quality Improvement, Guideline Utilization, and Resource Stewardship in the Pediatric Emergency Department.",
+            "before": -1.33,
+            "after": -2.65,
+            "guidelineTopicBefore": 2.8,
+            "guidelineTopicAfter": 0.8,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42428630",
+            "title": "Non-Achievement of Low-Density Lipoprotein Cholesterol Management Goals: Implications on High-Risk Cardiovascular Disease Patients Within the Japan Atherosclerosis Society 2022 Guideline Recommendations.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "42404835",
+            "title": "Endovascular Thrombectomy in Medium and Distal Vessel Occlusions: A Focused Guideline From the Society of Vascular and Interventional Neurology Guidelines and Practice Standards Committee.",
+            "before": 3.4499999999999997,
+            "after": 3.15,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "42301240",
+            "title": "Initial Exercise Guidance for Children and Adolescents during and beyond Cancer Treatment: ACSM Expert Consensus Statement.",
+            "before": 1.5499999999999998,
+            "after": -5.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "acs"
+            ]
+          },
+          {
+            "pmid": "42233840",
+            "title": "Position Statement on Multimodal Cardiac Imaging in Patients with Systemic Diseases - 2026.",
+            "before": 4.55,
+            "after": 3.55,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "42112895",
+            "title": "Safety and Feasibility of Early Laparoscopic Cholecystectomy in High-Risk Acute Cholecystitis: A Critical Evaluation of Tokyo Guidelines 2018 Risk Stratification.",
+            "before": 0.8499999999999996,
+            "after": 0.5499999999999998,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "42063035",
+            "title": "Sepsis policy, guidelines, and standards in Canada: a jurisdictional scoping review.",
+            "before": -1.35,
+            "after": -1.65,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41878880",
+            "title": "Alignment of national standard treatment guidelines with WHO AWaRe recommendations for adult primary care infectious diseases: implications for antimicrobial stewardship.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41568775",
+            "title": "Chinese guidelines for diagnosis and treatment of intracranial atherosclerotic stenosis.",
+            "before": 3.8499999999999996,
+            "after": 3.55,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41417310",
+            "title": "CT characterization of idiopathic inflammatory myopathy-associated interstitial lung disease: frontiers to strengthen diagnostic accuracyAuthors' ReplyA Review of Myositis-Associated Interstitial Lung Disease2023 American College of Rheumatology (ACR)/American College of Chest Physicians (CHEST) Guideline for the Screening and Monitoring of Interstitial Lung Disease in People with Systemic Autoimmune Rheumatic Diseases2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension.",
+            "before": 0.8499999999999996,
+            "after": 0.5499999999999998,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          },
+          {
+            "pmid": "41341900",
+            "title": "The American Society of Pain and Neuroscience (ASPN) Guidelines for Advanced Practice Providers in Interventional Spine and Pain Management Practice.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "rosc"
+            ]
+          },
+          {
+            "pmid": "41020770",
+            "title": "Associations between Insurance Status, Financial Hardship, and Rurality on Receipt of Guideline-Concordant Mammography.",
+            "before": 3.55,
+            "after": -3.45,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 0,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "40698620",
+            "title": "[Recommendations from an antimicrobial stewardship program on the duration of antibiotic treatment: effectiveness of short-course regimens in the emergency department].",
+            "before": 3.67,
+            "after": 2.35,
+            "guidelineTopicBefore": 2.8,
+            "guidelineTopicAfter": 0.8,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "36075255",
+            "title": "Towards the elimination of chronic obstructive pulmonary disease: a Lancet Commission.",
+            "before": 8.6,
+            "after": 7.6,
+            "guidelineTopicBefore": 2,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "ards"
+            ]
+          },
+          {
+            "pmid": "41504890",
+            "title": "A consensus of international experts on definition, sampling, treatment, and prevention of peripheral extracorporeal membrane oxygenation cannula-site infection obtained by the Delphi method: the SAVECMO study.",
+            "before": 7.25,
+            "after": 6.25,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 4,
+            "removedSubstringTerms": [
+              "ecmo"
+            ]
+          },
+          {
+            "pmid": "37772985",
+            "title": "Treatment of Systemic Sclerosis-associated Interstitial Lung Disease: Evidence-based Recommendations. An Official American Thoracic Society Clinical Practice Guideline.",
+            "before": 4.75,
+            "after": 4.449999999999999,
+            "guidelineTopicBefore": 4,
+            "guidelineTopicAfter": 2,
+            "removedSubstringTerms": [
+              "stemi"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

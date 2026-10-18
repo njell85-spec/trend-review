@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-18T14:41:06.408Z",
+  "baseline": "f816ce2ab3f1f12f302bc2c48e9648fa8867c351",
+  "codeCommit": "fb6aff91036ee5a1c34e71684d41b71d94111f06",
+  "unitTests": {
+    "tests": 956,
+    "pass": 956,
+    "fail": 0,
+    "skipped": 0
+  },
+  "specLint": {
+    "pass": true,
+    "warnings": 0
+  },
+  "localLinksChecked": 18,
+  "unresolvedLinks": [],
+  "automaticLoadingVerified": false,
+  "independentModelComprehensionVerified": false,
+  "logs": {
+    "audit-unit-final.log": {
+      "path": "output/audit-unit-final.log",
+      "sha256": "2e87ade2564e45c66f56ba10f4cf856737b1530361adabe611d8f1d93e06162d"
+    },
+    "audit-spec-final.log": {
+      "path": "output/audit-spec-final.log",
+      "sha256": "1fd3793419e0df5e120843417103b52e84630ebae640d15fce362177a7d2f7d7"
+    }
+  },
+  "mobile": "not completed: Chromium sandbox file-access error",
+  "contextReadback": "handoff-readback.json"
+}
