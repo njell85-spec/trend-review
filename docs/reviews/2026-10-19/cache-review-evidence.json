@@ -1,0 +1,59 @@
+{
+  "baseline": "bc3837b9b95c1bd4197eb589d16c1e66857561fa",
+  "synthetic": true,
+  "networkCalls": 0,
+  "authorBefore": {
+    "testLog": "output/cache-review-red.log",
+    "tests": 15,
+    "pass": 10,
+    "fail": 5
+  },
+  "independentReview": {
+    "targetCode": "f35563c",
+    "targetHandoff": "bc3837b",
+    "finding": "P2 cached abstract-derived output attributed to newly supplied article text",
+    "postFixSignoff": false
+  },
+  "authorAfter": {
+    "sameKey": false,
+    "additionalCallsForNewInput": 1,
+    "first": {
+      "coverage": "abstract-only",
+      "bodyPrefix": "OLD_",
+      "evidence": {
+        "policyVersion": 1,
+        "inputFingerprint": "1aed8415edfa34659cf0a93afbc0ad73927ed9130c655fa6a52a97f6505d52af",
+        "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "suppliedTextChars": 0,
+        "suppliedTextSource": "abstract-only",
+        "generatedAt": "2026-10-18T17:31:47.901Z",
+        "resultFingerprint": "fa04a7df8a2a72a3898ae327566b523fd2675d85721c51aa293dd1c866dd0a50",
+        "modelReported": "full-text",
+        "coverage": "abstract-only",
+        "trustedWebSourceCount": 1,
+        "webRetrievalVerified": false
+      }
+    },
+    "second": {
+      "coverage": "full-text",
+      "bodyPrefix": "NEW_",
+      "evidence": {
+        "policyVersion": 1,
+        "inputFingerprint": "34ba0b460ba41a4971402d5b6311bec1ae78cf430831dbd4435f0292b8ea43ca",
+        "suppliedTextSha256": "30d8d0d8979125c0a4f12a54b96b84e2b1ff499127ecf0ad8b9ce21d357eda4f",
+        "suppliedTextChars": 525,
+        "suppliedTextSource": "PMC",
+        "generatedAt": "2026-10-18T17:31:47.902Z",
+        "resultFingerprint": "faaec6a3e2f403f78656677d5573ce95d280f6c80861a56ffbb9e6c902ff4558",
+        "modelReported": "full-text",
+        "coverage": "full-text",
+        "trustedWebSourceCount": 1,
+        "webRetrievalVerified": false
+      }
+    },
+    "third": {
+      "additionalCalls": 0,
+      "evidencePreserved": true
+    }
+  }
+}
