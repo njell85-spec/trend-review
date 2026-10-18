@@ -77,3 +77,12 @@ test('multiple title years require explicit edition metadata', () => {
   assert.equal(resolveSupersede({ published: [prior] }, next, { orgs }).confident, false);
   assert.equal(resolveSupersede({ published: [prior] }, { ...next, editionYear: 2024 }, { orgs }).confident, true);
 });
+
+test('the same DOI cannot become a new edition solely through different title years', () => {
+  const prior = { ...item('prior', 2024), doi: '10.1234/SAME' };
+  const next = { ...item('next', 2025), doi: 'https://doi.org/10.1234/same' };
+  const result = resolveSupersede({ published: [prior] }, next, { orgs });
+  assert.equal(result.confident, false);
+  assert.equal(result.reason, 'same-doi-not-new-edition');
+  assert.deepEqual(result.transitions, []);
+});

@@ -42,6 +42,9 @@ function yearOf(item) {
   return years.length === 1 ? Number(years[0]) : null;
 }
 function idOf(item) { return item?.id ?? (item?.pmid ? `pmid:${item.pmid}` : item?.sourceId); }
+function doiOf(item) {
+  return String(item?.doi ?? '').trim().toLowerCase().replace(/^(?:https?:\/\/(?:dx\.)?doi\.org\/|doi:\s*)/, '');
+}
 
 function isPartialUpdate(item) {
   return /\bfocused[\s-]+update\b|\baddendum\b|\bcorrigendum\b|\berratum\b/i.test(String(item?.title ?? ''))
@@ -54,6 +57,10 @@ export function resolveSupersede(state, candidate, { orgs } = {}) {
   const all = [...(state?.queue ?? []), ...(state?.published ?? [])];
   const same = all.filter((item) => idOf(item) !== idOf(candidate) && lineageKeyOf(item, { orgs }) === key);
   if (!same.length) return { supersedes: [], transitions: [], reason: 'no-matching-lineage', confident: false };
+  const doi = doiOf(candidate);
+  if (doi && same.some(item => doiOf(item) === doi)) {
+    return { supersedes: [], transitions: [], reason: 'same-doi-not-new-edition', confident: false };
+  }
   // A shared topic does not prove a partial update replaces the whole document.
   if ([candidate, ...same].some(isPartialUpdate)) return { supersedes: [], transitions: [], reason: 'partial-update-needs-review', confident: false };
   if (!candidateYear) return { supersedes: [], transitions: [], reason: 'candidate-year-unknown', confident: false };

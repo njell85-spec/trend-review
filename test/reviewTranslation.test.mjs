@@ -360,9 +360,9 @@ test('★ 캐시에 남은 얇은 구버전 결과는 miss 취급하고 새로 �
 
 test('★ 두꺼운 캐시는 재사용한다 (LLM 을 다시 부르지 않는다)', async () => {
   let calls = 0;
-  const a = mkAgent(async () => { calls += 1; return reviewData(THICK); });
-  await a.cache.set(a._cacheKey(doc, 'review'), reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }));
+  const a = mkAgent(async () => { calls += 1; return reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }); });
+  await a.analyze(doc, { mode: 'review' });
   const card = await a.analyze(doc, { mode: 'review' });
-  assert.equal(calls, 0, '캐시가 있는데 LLM 을 불렀다');
+  assert.equal(calls, 1, 'compatible cache must avoid a second model call');
   assert.equal(card.coverage, 'web-augmented');
 });

@@ -72,13 +72,11 @@ test('본문 내용이 다르면 캐시키도 다르다 (길이만 같아도 갈
   assert.notEqual(a, b);
 });
 
-test('본문 없는 기존 경로의 캐시키는 종전과 완전히 동일하다 (데일리 코어 불변식)', () => {
-  // 접미사가 붙지 않아야 한다 — 붙으면 데일리 가이드라인이 매일 캐시 미스를 낸다.
-  assert.equal(agent._cacheKey(DOC, 'guideline'),
-    `guideline_v5_${agent.provider}_${agent.model}_42555934`);
-  // fullText 가 있어도 출처가 user-supplied 가 아니면 종전 키 그대로.
+test('evidence policy versions legacy keys and distinguishes PMC as well as user-supplied text', () => {
+  assert.match(agent._cacheKey(DOC, 'guideline'), /^guideline_v6_ep1_/);
+  assert.notEqual(agent._cacheKey(DOC, 'guideline'), `guideline_v5_${agent.provider}_${agent.model}_42555934`);
   const pmc = { ...DOC, fullText: LONG, fullTextSource: 'PMC' };
-  assert.equal(agent._cacheKey(pmc, 'guideline'), agent._cacheKey(DOC, 'guideline'));
+  assert.notEqual(agent._cacheKey(pmc, 'guideline'), agent._cacheKey(DOC, 'guideline'));
 });
 
 // ── ③ 배선 ──────────────────────────────────────────────────────────────────
