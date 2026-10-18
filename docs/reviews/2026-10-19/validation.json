@@ -178,10 +178,11 @@
     }
   ],
   "limitations": [
-    "Post-fix independent review and browser viewport verification have not been performed.",
+    "Post-fix independent review covered 18 synthetic cases and 5 new regressions, not a full-suite rerun. Browser viewport verification remains unperformed.",
     "Domain allowlisting is not proof of retrieval or article identity; generated evidence records webRetrievalVerified=false.",
     "Cache v6/ep1 does not read or delete legacy keys; first-use cache misses can increase.",
-    "New-process file readback does not demonstrate automatic loading or independent model comprehension."
+    "New-process file readback does not demonstrate automatic loading or independent model comprehension.",
+    "Actual article retrieval, identity, completeness and clinical accuracy remain unverified; cache fingerprints are not signed retrieval receipts or authentication against complete record forgery."
   ],
   "remoteVerification": {
     "pr": 165,
@@ -220,6 +221,40 @@
     "newTestsPassed": 9,
     "p2": "Cached abstract-derived output attributed to new PMC input",
     "authorReproduced": true,
-    "postFixIndependentSignoff": false
+    "postFixIndependentSignoff": true,
+    "postFixReview": {
+      "code": "2f20d6cc6b1125aeb70a19de24e4a219a9aea7de",
+      "head": "fe0d8f18da803c74d61346b38846388e5f3b4562",
+      "syntheticCases": 18,
+      "repositoryRegressionSubset": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0
+      },
+      "p2ClosedWithinTestedScope": true,
+      "newConfirmedP0P1P2": 0,
+      "fullSuiteRerun": false,
+      "authorFocusedAndFullLogsHashCheckedOnly": true,
+      "evidenceFiles": [
+        {
+          "name": "tr-cache-recheck-20261019.mjs",
+          "sha256": "b9ef97fdbc82e04c8c751086c82d6d03915e2bb01803c6ba804d5b46b709cd15"
+        },
+        {
+          "name": "tr-cache-recheck-20261019.json",
+          "sha256": "4a789b7b94ae23e26384a21128f5ee50aeeaf51f4c5a22208c651657613663b4"
+        },
+        {
+          "name": "tr-cache-recheck-20261019-verification.json",
+          "sha256": "51811da315a727ad513b083ee93ec30c79036434db413f0860db64d51cc57b8c"
+        }
+      ]
+    }
+  },
+  "docsOnlyClosure": {
+    "testsRerun": false,
+    "sourceChanged": false,
+    "published": false,
+    "publicationBaseline": "5dc5d166b9a45be9c2d0841913a53c8c9664aece"
   }
 }
