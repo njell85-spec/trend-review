@@ -1,0 +1,146 @@
+{
+  "codeCommit": "f35563ccdaa0ac790b7b7e5ec008c5eb9ab48cbb",
+  "runtime": "v24.16.0",
+  "tests": {
+    "tests": 966,
+    "pass": 966,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMs": 68953.6068
+  },
+  "focused": {
+    "tests": 101,
+    "pass": 101,
+    "fail": 0,
+    "durationMs": 1978.355
+  },
+  "specLint": {
+    "groups": 6,
+    "files": 80,
+    "warnings": 0
+  },
+  "preservedHistoricalArtifacts": true,
+  "localLinks": [
+    {
+      "from": "AGENTS.md",
+      "target": "HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "AGENTS.md",
+      "target": "CLAUDE.md",
+      "exists": true
+    },
+    {
+      "from": "AGENTS.md",
+      "target": "REPORT_SPEC.md",
+      "exists": true
+    },
+    {
+      "from": "AGENTS.md",
+      "target": "docs/HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "CLAUDE.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "REPORT_SPEC.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-19/validation.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-19/selection-followup.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-19/followup-evidence.json",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-18/selection-quality.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-18/history-findings.json",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "../../../scripts/audit-selection-followup.mjs",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "followup-evidence.json",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "../../../HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "../../HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/validation.md",
+      "target": "validation.json",
+      "exists": true
+    }
+  ],
+  "logs": [
+    {
+      "path": "output/deep-followup-focused.log",
+      "sha256": "4720036722485fe6148dff10d49005e87c06e7e190549689e970e64643bb1e6d"
+    },
+    {
+      "path": "output/deep-followup-focused-final.log",
+      "sha256": "661fa3f94b89e4df42481a99ca2247012e1ed918d1b3d18cc32a184df56eb55d"
+    },
+    {
+      "path": "output/deep-followup-unit.log",
+      "sha256": "4c94b30dd46a3a607629d2ebe8d6ab489a053ab11575b54144bc66b490352184"
+    },
+    {
+      "path": "output/deep-followup-spec.log",
+      "sha256": "1fd3793419e0df5e120843417103b52e84630ebae640d15fce362177a7d2f7d7"
+    }
+  ],
+  "limitations": [
+    "No new independent review, browser viewport test, production run or remote CI.",
+    "New-process file readback does not demonstrate automatic loading or independent model comprehension."
+  ],
+  "remoteVerification": {
+    "pr": 165,
+    "state": "OPEN",
+    "draft": true,
+    "head": "5dc5d166b9a45be9c2d0841913a53c8c9664aece",
+    "main": "f816ce2ab3f1f12f302bc2c48e9648fa8867c351",
+    "originalMainClean": true
+  }
+}
