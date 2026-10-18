@@ -5,12 +5,13 @@
 
 | 검사 | 실제 결과 |
 |---|---|
-| 신규 회귀 | 약어 매칭, 소진 전 제한, 빈 리필, 큐 저장 목록, 종합 링크, 지침 fit 게이트 |
-| 전체 단위시험 | 통과: 956/956, 실패 0, 취소/skip 0, 89.046초 |
+| 신규 회귀 | 약어 매칭·DNACPR 명시 별칭, 소진 전 제한, 빈 리필, 큐 저장 목록, 종합 링크, 지침 fit 게이트 |
+| 후속 집중시험 | 통과: 43/43, 실패 0, 1.830초 |
+| 전체 단위시험 | 통과: 957/957, 실패 0, 취소/skip 0, 74.369초 |
 | `npm run spec-lint` | 통과: 6그룹, 대상 80파일, 경고 0 |
 | `git diff --check` | 통과 |
-| 같은 후보풀 비교 | 5,282건; 진단 4,273 / holdout 1,009; 네트워크·LLM 0 |
-| 링크·새 진입점 | 통과: 로컬 상대 링크 18개 존재, 필수 상태 필드/코드 SHA 확인, 기존 본문 보존 |
+| 같은 후보풀 비교 | 5,282건; 사후 PMID 분할 4,273/1,009; 격리 holdout·시간 검증 아님; 네트워크·LLM 0 |
+| 링크·새 진입점 | 통과: 로컬 상대 링크 20개 존재, 필수 상태 필드/코드 SHA 확인, 기존 본문 보존 |
 | 모바일 실물 | 미완료: Windows Chromium sandbox 실행 파일 접근 오류(원래/작업 폴더 모두) |
 | 별도 lint/타입/build | package.json에 별도 스크립트 없음. spec-lint/Node 구문/단위시험으로 검증 |
 | 외부 운영·배포 | 미실행: push, PR, merge, 배포, 서버 재시작, 유료 LLM 호출 없음 |
@@ -19,6 +20,7 @@
 
 ```sh
 npm run spec-lint
+node --import ./output/offline-test-guard.mjs --test --test-reporter=tap test/selectionAuditRegression.test.mjs test/metadataScorer.test.mjs test/guidelineScorer.test.mjs test/scorerAxes.test.mjs
 node --import ./output/offline-test-guard.mjs --test --test-reporter=tap test/*.test.mjs
 node scripts/audit-selection.mjs f816ce2
 git diff --check
@@ -30,7 +32,8 @@ git diff --check
 
 최초 전체 시험은 955개 중 950통과/5실패였다. 새 변경이 만든 빈 제외 목록의 배열 참조
 회귀 2건을 고쳤고, 기존 Windows CRLF workflow 파서 실패 3건을 고쳤다. 이후 955/955
-통과를 확인했다. 후속 지침 keep:false 보호 조건을 추가한 최종 결과는 위 표에 기록한다.
+통과를 확인했다. 후속 지침 keep:false 보호 조건을 추가해 956/956 통과했고,
+DNACPR 명시 별칭 보완 후 집중 43/43·전체 957/957 통과했다.
 초기 sandbox 임시 디렉터리의 rename 실패는 작업 폴더 안의 테스트 전용 임시 경로로
 해소했다. 네트워크 의존 리뷰 테스트의 기본 수집기를 stub으로 바꿨다.
 
@@ -45,3 +48,9 @@ git diff --check
 기존 CLAUDE/HANDOFF 본문은 새 안내 접두 외에 보존되었는지 기준 커밋과 대조한다.
 실측 결과: 두 원본문 모두 접두 외 보존 확인. [검증 요약](validation.json)과
 [새 프로세스의 현재 상태 재독 결과](handoff-readback.json)를 함께 남긴다.
+
+독립 검수 통보에는 확정 P0/P1/P2 없음, 집중 90개 통과, 합성 큐 0→14 및 5,282건 감사
+재현 일치가 포함됐다. 검수 대상 SHA·정확한 명령·원시 로그는 제공되지 않아 동일한
+90개 집합을 직접 실행했다고 주장하지 않는다. 이 통보는 저장소 전체 결함 부재를 뜻하지 않는다.
+이후 직접 실행한 집중/전체 시험과 [커밋·실행 이력 대조](history-findings.json)는 별도 근거다.
+과거 카드/행은 관찰만 했으며 자동 복구·삭제나 외부 발행을 하지 않았다.

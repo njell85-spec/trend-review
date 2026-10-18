@@ -1,10 +1,10 @@
 {
   "baseline": "f816ce2ab3f1f12f302bc2c48e9648fa8867c351",
-  "codeCommit": "fb6aff91036ee5a1c34e71684d41b71d94111f06",
+  "codeCommit": "9c525bd0037fffc4a2312a50de1a0a71c94cbe0c",
   "purpose": "목적: 논문·가이드라인·리뷰 선정 품질을 보존 자료로 감사하고, 재현된 결함을 수정한다.",
-  "testResult": "- 시험: **전체 단위시험 956/956 통과, spec-lint 경고 0, 구문/diff 검사 통과**. [명령·결과·미실행](docs/reviews/2026-10-18/validation.md).",
+  "testResult": "- 시험: **전체 단위시험 957/957 통과, spec-lint 경고 0, 구문/diff 검사 통과**. [명령·결과·미실행](docs/reviews/2026-10-18/validation.md).",
   "deployment": "- 배포 상태: 로컬 전용. push/PR/merge/배포/운영 서버 재시작 없음.",
-  "nextActions": "1. 위 코드 SHA와 보고서·[정량 근거](docs/reviews/2026-10-18/selection-audit.json)를 읽고,\n   현재 체크아웃을 대조한다. 이 링크들이 실제 도구에 자동 로딩된다고 가정하지 않는다.\n2. 미해명 장부/화면 차이 각 1건과 가이드라인 카드/표 73/74를 추적한다. 의도 확인 전\n   과거 항목을 자동 복구하거나 삭제하지 않는다. 모바일 390/800px와 링크 응답을 검증한다.\n3. 다음 승인된 운영 실행에서 큐 리필→원격 상태 지속을 확인하고, 실제 후보풀·선정 이유·\n   원문 발행일 보존 방식을 검토한다. 현재 로컬 수정의 게시/배포는 별도 범위다.",
+  "nextActions": "1. 위 코드 SHA와 보고서·[정량 근거](docs/reviews/2026-10-18/selection-audit.json)를 읽고,\n   현재 체크아웃을 대조한다. 이 링크들이 실제 도구에 자동 로딩된다고 가정하지 않는다.\n2. [커밋별 정합성 원인](docs/reviews/2026-10-18/history-findings.json)에 따라 날짜 재실행·트랙 간\n   표 행·초기 발행 기록의 보존 정책을 정한 뒤 복구한다. 모바일 390/800px·링크도 검증한다.\n3. 수집 0건 시 다른 트랙까지 조기 종료하는 경로를 별도 검토한다. 다음 승인된 운영 실행에서\n   큐 상태 지속·실제 후보풀·선정 이유 보존을 확인한다. 게시/배포는 별도 범위다.",
   "automaticLoadingVerified": false,
   "independentModelComprehensionVerified": false
 }

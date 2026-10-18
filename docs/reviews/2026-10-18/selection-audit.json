@@ -195,6 +195,8 @@
       "tableRows": 69,
       "duplicateRows": [],
       "duplicateSections": [],
+      "orphanTableIds": [],
+      "cardIdsWithoutTable": [],
       "sectionDates": {
         "first": "2026-06-29",
         "last": "2026-10-17"
@@ -389,6 +391,13 @@
       "tableRows": 74,
       "duplicateRows": [],
       "duplicateSections": [],
+      "orphanTableIds": [
+        "41417044",
+        "41582814"
+      ],
+      "cardIdsWithoutTable": [
+        "41236566"
+      ],
       "sectionDates": {
         "first": "2026-07-02",
         "last": "2026-10-18"
@@ -408,6 +417,8 @@
       "tableRows": 61,
       "duplicateRows": [],
       "duplicateSections": [],
+      "orphanTableIds": [],
+      "cardIdsWithoutTable": [],
       "sectionDates": {
         "first": "2026-08-07",
         "last": "2026-10-18"
@@ -431,7 +442,10 @@
     "papersGuidelines": [
       "41122884"
     ],
-    "papersReviews": []
+    "papersReviews": [],
+    "guidelinesReviews": [
+      "41236566"
+    ]
   },
   "paperQueue": {
     "count": 0,
@@ -622,11 +636,16 @@
   "replay": {
     "poolCount": 5282,
     "poolSha256": "e0dcd15f14eae1c6236095b24d5fa5f8f93d5084c6f30fb9ba6b2cac17635ad2",
-    "split": "Number(PMID) % 5 === 0 -> holdout; all others diagnostic; no learned weights",
+    "split": "Retrospective: Number(PMID) % 5 === 0 -> pmid_subset; all others diagnostic; no learned weights",
+    "splitLimitations": [
+      "No evidence of preregistration or pre-analysis isolation.",
+      "Not temporal validation.",
+      "No complete historical candidate pool or independent clinical ground truth."
+    ],
     "partitions": {
       "diagnostic": {
         "count": 4273,
-        "changed": 110,
+        "changed": 109,
         "top20Overlap": 20,
         "guidelineTop20Overlap": 17,
         "beforeTop20": [
@@ -683,17 +702,6 @@
             "guidelineTopicAfter": 0,
             "removedSubstringTerms": [
               "ards"
-            ]
-          },
-          {
-            "pmid": "42350027",
-            "title": "'An adrenaline-fueled emergency': a qualitative thematic analysis of reviews of deaths in England where DNACPR (Do Not Attempt Cardiopulmonary Resuscitation) recommendations are not implemented for people with a learning disability.",
-            "before": 2.1500000000000004,
-            "after": 1.5499999999999998,
-            "guidelineTopicBefore": 2,
-            "guidelineTopicAfter": 2,
-            "removedSubstringTerms": [
-              "cpr"
             ]
           },
           {
@@ -1886,7 +1894,7 @@
           }
         ]
       },
-      "holdout": {
+      "pmid_subset": {
         "count": 1009,
         "changed": 25,
         "top20Overlap": 19,

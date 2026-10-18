@@ -1,0 +1,72 @@
+{
+  "baseline": "f816ce2ab3f1f12f302bc2c48e9648fa8867c351",
+  "paper": {
+    "pmid": "40967395",
+    "added": "6b9d7a9",
+    "replaced": "ba5bb9b",
+    "section": "SECTION:2026-08-28",
+    "replacementPmid": "41870444",
+    "ledgerRetained": true,
+    "operatorIntent": "not recorded"
+  },
+  "guidelineTable": {
+    "pmid": "41236566",
+    "changed": "9a5082a",
+    "cardRetained": true,
+    "reviewSection": "RSECTION:2026-09-22-r-41236566",
+    "cause": "PMID-only table row deduplication across tracks"
+  },
+  "reviewSeed": {
+    "pmid": "40889512",
+    "seedCommit": "e4df2e3",
+    "firstHtmlCommit": "cb24d67",
+    "presentInFirstHtml": false,
+    "trackedHtmlPickaxeCommits": [],
+    "externalPublicationEvidence": "not available"
+  },
+  "guidelineArithmetic": {
+    "cards": 73,
+    "orphanRows": [
+      {
+        "pmid": "41582814",
+        "changed": "b29e69e",
+        "event": "dated GSECTION removed, row retained"
+      },
+      {
+        "pmid": "41417044",
+        "changed": "ba5bb9b",
+        "event": "dated card replaced by 41014602, old row retained"
+      }
+    ],
+    "cardWithoutRow": "41236566",
+    "rows": 74,
+    "equation": "73 + 2 - 1 = 74"
+  },
+  "september18": {
+    "runId": 35287551157,
+    "url": "https://github.com/njell85-spec/trend-review/actions/runs/35287551157",
+    "headSha": "cda9295eb0fe40bfc41d481db2dfa22218ed263b",
+    "createdAt": "2026-09-17T23:35:54Z",
+    "conclusion": "success",
+    "runtimeEvidence": [
+      "Found undefined total, retrieved 0 PMIDs",
+      "No PMIDs found for query",
+      "No papers collected — aborting pipeline"
+    ],
+    "historicalEarlyReturnVerified": true,
+    "directCause": "Empty paper collection caused pipeline return before guideline/review stages",
+    "upstreamRootCause": "Unknown: raw search response/status not retained in reviewed evidence"
+  },
+  "independentReview": {
+    "reportedConfirmedP0P1P2": 0,
+    "reportedFocusedPass": 90,
+    "reportedSyntheticQueueComparison": "0 -> 14",
+    "reportedCensusReplayMatched": true,
+    "reviewerShaAndRawCommands": "not provided; reported results, not independently rerun as the same 90-test set"
+  },
+  "followupLocalTests": {
+    "focused": 43,
+    "full": 957,
+    "failed": 0
+  }
+}

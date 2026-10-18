@@ -19,3 +19,8 @@ branch `codex/selection-quality-20261018`; preserve the existing checkout.
 No push, PR, merge, deployment, credential changes, or service restart. No
 private conversations, local private paths, patient data, or credentials in
 repository artifacts. Current-state documents do not override tool rules.
+
+Execution correction: the retained census was divided retrospectively by PMID.
+There is no evidence of pre-analysis isolation, preregistration, or temporal
+validation. The planned holdout condition was not established; report the 1,009
+records as a descriptive PMID subset, not independent validation.
