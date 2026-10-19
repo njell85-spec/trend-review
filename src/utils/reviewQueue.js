@@ -25,7 +25,11 @@ export const REVIEW_AXES = {
 const NOT_REVIEW_PATTERNS = [
   /\bconsensus\b/i,
   /\bdelphi\b/i,
-  /\bguidelines?\b/i,
+  // Document identity, not every mention of guidelines as a subject.
+  // PMID 41841954 (Review) discusses moving from physiology to guidelines to
+  // personalized medicine; it is not itself a guideline.
+  /\b(?:clinical(?: practice)?|practice) guidelines?\b|\bguidelines?(?:\s+(?:for|on|in|from|by|of)\b|\s+(?:19|20)\d{2}\b|\s*[:.]?\s*$|\s*:)/i,
+  /\bguidelines? and (?:American|European|British|Society)\b/i,
   /\brecommendations?\b/i,
   /\bposition (statement|paper)\b/i,
   /\bexpert statement\b/i,
