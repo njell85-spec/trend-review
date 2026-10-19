@@ -2,7 +2,8 @@
 
 Baseline: `96600bc489c76e0657914d27dc02d9e270113cb4`.
 Branch: `codex/selection-evaluation-20261019`.
-Implementation: [`5ce917257d1e42550404edea6148cfacc40cf054`](https://github.com/njell85-spec/trend-review/commit/5ce917257d1e42550404edea6148cfacc40cf054).
+Local implementation: `5ce917257d1e42550404edea6148cfacc40cf054`.
+Evaluation/documentation commit: `a4d426d61fad692cb00312e039b816042020617e`.
 
 ## Freeze and evaluation order
 
@@ -63,13 +64,19 @@ workflow ran, and the prior full suite was not repeated locally.
 
 ## Release
 
-This committed document records pre-publication verification. The final merge
-SHA, CI run, existing Pages run and public-file comparison are recorded in the
-release receipt in the PR associated with the implementation commit above.
-Check that receipt before treating the source as deployed; a source hash alone
-is not deployment evidence. This release changes selection code, tests and
-evidence documents; it does not change the published clinical HTML. Runtime
-selection on a subsequent real daily run is intentionally not exercised here.
+**Local completion only; not deployed.** Remote branch push was blocked by
+automatic approval review. A read-only remote lookup confirmed that the branch
+had not been created. One retry after checking the later task record was also
+rejected before execution. No further retry, workaround, PR publication, merge,
+new remote CI, Pages deployment or live daily run occurred for this patch.
+Resolve explicit publication authorization before resuming; inspect remote state
+and then run the existing PR/CI/Pages process. Do not cite the previous release's
+988-test CI or deployment as verification of this new source.
+
+The preserved local branch contains the source and evaluation commits above.
+It changes selection code, tests and evidence documents without changing clinical
+HTML or production ledgers. Runtime selection on a subsequent real daily run
+is intentionally not exercised here. Existing main remains the baseline SHA.
 
 The current handoff and START_HERE were independently read as a new-context
 entry; all 37 relative links resolved and no authority expansion was found.
