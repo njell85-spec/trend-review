@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "parentFrozenSha256": "c45145458531d357f4d20a864ca139bbd4df357addd6e2e289f932e5097e41ed",
+  "frozenAtUtc": "2026-10-19T10:25:51Z",
+  "usage": "Development cases only. Metadata-only counterfactual replay must not be reported as historic observed rank. Do not substitute clinicalRationale for a retrieved abstract.",
+  "cases": [
+    {
+      "caseId": "P1",
+      "pmid": "38869091",
+      "track": "paper",
+      "split": "development",
+      "title": "Noninvasive Ventilation for Preoxygenation during Emergency Intubation",
+      "publicationDate": "2024-06-20",
+      "topic": "respiratory-airway",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Multicenter randomized trial; procedural hypoxemia outcome, not proof of improved long-term survival.",
+        "clinicalRationale": "NIV versus oxygen mask before emergency intubation; directly actionable airway preparation.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Primary PREOXI report; exclude correspondence and later commentary.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38869091/",
+        "https://doi.org/10.1056/NEJMoa2313680"
+      ],
+      "evaluationStratum": "dated-reference",
+      "sourceMetadata": {
+        "pmid": "38869091",
+        "title": "Noninvasive Ventilation for Preoxygenation during Emergency Intubation",
+        "journal": "The New England journal of medicine",
+        "pubDate": "2024-06-20",
+        "abstract": null,
+        "meshTerms": null,
+        "publicationTypes": null
+      },
+      "sourceConfidence": "Primary abstract or source excerpt checked; title/journal/date/DOI metadata available. Bibliographic date precision exceptions remain in editionFamily."
+    },
+    {
+      "caseId": "P4",
+      "pmid": "41159835",
+      "track": "paper",
+      "split": "development",
+      "title": "Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early Septic Shock: The ANDROMEDA-SHOCK-2 Randomized Clinical Trial",
+      "publicationDate": "2025-12-09",
+      "topic": "sepsis-hemodynamics",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Multicenter randomized trial; hierarchical composite win ratio 1.16 (95% CI 1.02–1.33) is not a stand-alone mortality benefit.",
+        "clinicalRationale": "Early septic-shock resuscitation and bedside perfusion targets are directly relevant.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Primary JAMA randomized trial, 2025 volume 334 issue 22; print date 2025-12-09. Exact online date not verified; do not rely on an invented online day.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/41159835/",
+        "https://doi.org/10.1001/jama.2025.20402"
+      ],
+      "evaluationStratum": "current-window",
+      "sourceMetadata": {
+        "pmid": "41159835",
+        "title": "Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early Septic Shock: The ANDROMEDA-SHOCK-2 Randomized Clinical Trial",
+        "journal": "JAMA",
+        "pubDate": "2025-12-09",
+        "abstract": null,
+        "meshTerms": null,
+        "publicationTypes": null
+      },
+      "sourceConfidence": "Primary abstract or source excerpt checked; title/journal/date/DOI metadata available. Bibliographic date precision exceptions remain in editionFamily."
+    },
+    {
+      "caseId": "G1",
+      "pmid": "39052901",
+      "track": "guideline",
+      "split": "development",
+      "title": "Hyperglycemic Crises in Adults With Diabetes: A Consensus Report",
+      "publicationDate": "2024-08-01",
+      "topic": "metabolic-emergencies",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Multisociety expert consensus, not a new randomized trial; individual recommendations require their own certainty assessment.",
+        "clinicalRationale": "Adult DKA/HHS recognition and treatment have immediate ER/ICU applicability.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "2024 consensus revision; parallel journal versions should be grouped rather than counted as independent recommendations.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39052901/",
+        "https://doi.org/10.2337/dci24-0032"
+      ],
+      "evaluationStratum": "dated-reference",
+      "sourceMetadata": {
+        "pmid": "39052901",
+        "title": "Hyperglycemic Crises in Adults With Diabetes: A Consensus Report",
+        "journal": "Diabetes care",
+        "pubDate": "2024-08-01",
+        "abstract": null,
+        "meshTerms": null,
+        "publicationTypes": null
+      },
+      "sourceConfidence": "Primary abstract or source excerpt checked; title/journal/date/DOI metadata available. Bibliographic date precision exceptions remain in editionFamily."
+    },
+    {
+      "caseId": "G3",
+      "pmid": "42570093",
+      "track": "guideline",
+      "split": "development",
+      "title": "Infectious Diseases Society of America 2026 Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections",
+      "publicationDate": "2026-08-08",
+      "topic": "infection-antimicrobials",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Expert guidance informed by literature and consensus; explicitly not GRADE, with US epidemiology and drug availability limitations.",
+        "clinicalRationale": "Resistant-organism antibiotic selection is directly useful to ICU care, with local susceptibility and formulary adaptation.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Explicitly replaces earlier IDSA AMR guidance; evidence current through 2026-03-01, typeset correction 2026-08-26.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/42570093/",
+        "https://doi.org/10.1093/cid/ciag481"
+      ],
+      "evaluationStratum": "current-window",
+      "sourceMetadata": {
+        "pmid": "42570093",
+        "title": "Infectious Diseases Society of America 2026 Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections",
+        "journal": "Clinical infectious diseases",
+        "pubDate": "2026-08-08",
+        "abstract": null,
+        "meshTerms": null,
+        "publicationTypes": null
+      },
+      "sourceConfidence": "Primary abstract or source excerpt checked; title/journal/date/DOI metadata available. Bibliographic date precision exceptions remain in editionFamily."
+    },
+    {
+      "caseId": "R1",
+      "pmid": "39904062",
+      "track": "narrative-review",
+      "split": "development",
+      "title": "Emergency medicine updates: Management of sepsis and septic shock",
+      "publicationDate": "2025-04-01",
+      "topic": "sepsis-hemodynamics",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Clinical narrative update; not original comparative evidence or a society recommendation.",
+        "clinicalRationale": "Direct emergency-management refresher on sepsis/shock; worth consideration despite non-top-tier journal.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Management article is distinct from companion diagnosis article PMID 39892181; overlapping topic does not prove duplication. Online 2025-01-22.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39904062/",
+        "https://doi.org/10.1016/j.ajem.2025.01.054"
+      ],
+      "evaluationStratum": "current-window",
+      "sourceMetadata": {
+        "pmid": "39904062",
+        "title": "Emergency medicine updates: Management of sepsis and septic shock",
+        "journal": "The American journal of emergency medicine",
+        "pubDate": "2025-04-01",
+        "abstract": null,
+        "meshTerms": null,
+        "publicationTypes": null
+      },
+      "sourceConfidence": "Title, journal, DOI and online/issue dates verified; complete abstract not available. Clinical-review role inferred from source metadata."
+    },
+    {
+      "caseId": "R3",
+      "pmid": "42475841",
+      "track": "narrative-review",
+      "split": "development",
+      "title": "Emergency medicine updates: The physiologically difficult airway",
+      "publicationDate": "2026-10-01",
+      "topic": "respiratory-airway",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Clinical review; source-title and publisher metadata verified, complete abstract unavailable in this audit.",
+        "clinicalRationale": "Physiologic preparation for high-risk intubation is directly applicable ER/ICU refresher content.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Online 2026-07-11, October issue; unknown day represented as first of month for window calculations only.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/42475841/",
+        "https://doi.org/10.1016/j.ajem.2026.07.017"
+      ],
+      "evaluationStratum": "current-window",
+      "sourceMetadata": {
+        "pmid": "42475841",
+        "title": "Emergency medicine updates: The physiologically difficult airway",
+        "journal": "The American journal of emergency medicine",
+        "pubDate": "2026-10-01",
+        "abstract": null,
+        "meshTerms": null,
+        "publicationTypes": null
+      },
+      "sourceConfidence": "Title, journal, DOI and online/issue dates verified; full abstract unavailable. Practical relevance inference from title."
+    }
+  ]
+}

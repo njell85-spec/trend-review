@@ -1,58 +1,61 @@
 # 현재 인계 — trend-review
 
-현재 구현 배포 확인: **`ce8f18b6b93bbcb3f180e6a905e2642d3923beb2`** — [PR #166](https://github.com/njell85-spec/trend-review/pull/166), [CI](https://github.com/njell85-spec/trend-review/actions/runs/39234894334), [Pages](https://github.com/njell85-spec/trend-review/actions/runs/39234893351).
-문서 확인 커밋과 구현 커밋을 구별하며 이후 문서 전용 릴리스의 최종 영수증은 [PR #166의 최종 증거](https://github.com/njell85-spec/trend-review/pull/166)에 연결한다.
+현재 선정 평가 기준: **`96600bc489c76e0657914d27dc02d9e270113cb4`**.
+현재 구현 소스: **[`5ce917257d1e42550404edea6148cfacc40cf054`](https://github.com/njell85-spec/trend-review/commit/5ce917257d1e42550404edea6148cfacc40cf054)**.
+이번 변경의 소스·시험·배포 상태는 [검증 기록](docs/reviews/2026-10-19/selection-evaluation-validation.md)을 따른다.
+최종 병합 SHA와 CI·Pages 영수증은 위 구현 커밋에 연결된 PR 본문에서 확인한다.
+이전 운영 배포와 이번 구현 소스를 혼동하지 않는다.
 
-읽을 순서: **[docs/START_HERE.md](docs/START_HERE.md)** → 이 문서 →
-[REPORT_SPEC.md](REPORT_SPEC.md)·[CLAUDE.md](CLAUDE.md) →
-[기존 공통 누적 인계](docs/HANDOFF.md). 자동 로딩이나 추가 권한을 가정하지 않는다.
-이 짧은 인계가 기존 Claude 작업과 이번 변경, 다음 담당자의 행동을 연결한다.
+읽는 순서: [START_HERE](docs/START_HERE.md) → 이 문서 →
+[REPORT_SPEC](REPORT_SPEC.md)·[CLAUDE](CLAUDE.md) → [기존 공통 인계](docs/HANDOFF.md).
+기존 Claude 결정·누적 기록을 보존하며 자동 로딩이나 추가 권한을 전제하지 않는다.
 
-## 소스와 배포 기준
+## 유지할 것과 고칠 것
 
-- 현재 구현: `87739c8e5a0f186b7adaedde4c7c1a1a668e7a99`.
-- 기반 배포: `11ae9729c0ff2133200ab3de93fe830cece1af8a`,
-  [이전 PR #165](https://github.com/njell85-spec/trend-review/pull/165).
-- 분리 브랜치: `codex/selection-closure-20261019`. 원본 main `475cd0c` 및
-  이전 후속 브랜치를 보존했다. 원본에는 pull/reset/stash/clean을 하지 않았다.
-- 이번 CI·통합·Pages 검증은 [closure validation](docs/reviews/2026-10-19/closure-validation.md)에
-  구분해 기록한다. 정적 배포와 다음 예약 분석 실행은 별개다.
-- 운영 사이트: [논문](https://njell85-spec.github.io/trend-review/),
-  [지침](https://njell85-spec.github.io/trend-review/guidelines.html),
-  [리뷰](https://njell85-spec.github.io/trend-review/reviews.html). 기존 Pages `main:/` 사용.
+**3트랙과 수동 선택은 유지하고, 확인된 선정 논리 결함은 수정한다.**
+임상 실용성·중요도·근거 수준·최신성·문서 계보를 별도로 판단한다.
+현재 자료로 전체 누락률이나 임상 선정 정확도 개선을 주장하지 않는다.
 
-## 완료한 수정과 검증
+- 공개 원문에서 먼저 고정한 12건은 현재 수집 기간 5건과 과거 참고 7건이다.
+  개발 6건(현재 4/과거 2), 저자에게 숨긴 평가 6건(현재 1/과거 5)으로 구분했다.
+  모두 편집 검토 가치가 있다는 양성 판단이므로 정밀도·특이도 검증이 아니다.
+- 현재 5건 중 2건은 발행 증거가 있고 3건은 확보 경로 미상이다. 부재를 검색 실패로
+  바꾸어 해석하지 않는다. PADIS는 이미 리뷰 저수지에 있어 검색 누락이 아니다.
+- 비정상 fit 값이 0점 거절로 변하는 경로, 비무작위 제목의 RCT 가점,
+  논문 큐 보충 시 기존 주제 반복 제한 누락을 고쳤다. 기존 수동 배열·메타데이터는
+  보존하고 새 후보만 기존 정책으로 평가한다. LLM을 실행했다고 표시하지 않는다.
+- 장부·기발행 임상 내용·과거 채택과 거절은 변경하지 않았다. 이번 변경은 화면 수정이
+  아니며 이전 모바일 DOM 검증이나 미완료 픽셀 검증을 새 시험처럼 재사용하지 않는다.
 
-- 기존 3트랙·선정/발행 분리·수동 선택·이력은 유지한다. 앞선 D1 변경은 소진 후보,
-  약어 경계, 지침 fit, 판본·캐시 근거, 리뷰 적격성, 논문 0건의 독립 트랙 처리다.
-- 케타민 `39198198/39207913`의 거짓 신판 관계를 제거하고 공동출판 링크를 추가했다.
-  미발행 후보는 계속 보류한다. ARDS `41773929/41773928`은 본문/공식 요약 관계를
-  양쪽 카드에 표시했다. `36322846`은 전문 열람 근거 미확인으로 정정하고 기존
-  번역을 보존한 안내를 넣었다. 장부 5건의 9필드만 바꿨다.
-- 일일 성공 기록 뒤 남은 큐가 같은 날 발행될 것처럼 보이던 예고일을 수정했다.
-  리뷰 `42059919`는 10월 20일로 표시된다. 수동 추가·실패·격일·순차·off를 구별한다.
-- 메타데이터 4/4, 날짜 62/62, 번역 표시 30/30 통과. 독립 검수는 중복 포함
-  12개 시험과 별도 72개 일정 사례에서 범위 내 P0/P1/P2를 찾지 못했다.
-  spec lint·구문·diff 검사 통과. 로컬 전체시험·실제 일일 분석은 반복하지 않았다.
-- [정정 근거와 남은 결정](docs/reviews/2026-10-19/closure-metadata.md),
-  [날짜 계산과 한계](docs/reviews/2026-10-19/closure-dates.md),
-  [시험·독립 검수·HTML 보존 증거](docs/reviews/2026-10-19/closure-validation.md).
+정본: [선정 품질 판단](docs/reviews/2026-10-19/selection-evaluation.md),
+[원문과 표본 한계](docs/reviews/2026-10-19/selection-evaluation-sources.md),
+[실제 단계 추적](docs/reviews/2026-10-19/selection-evaluation-trace.json),
+[변경 전후·회귀시험](docs/reviews/2026-10-19/selection-evaluation-changes.md),
+[독립 검수·최종 검증](docs/reviews/2026-10-19/selection-evaluation-validation.md).
 
-## 다음 담당자가 이어받을 결정과 한계
+## 다음 담당자가 판단할 일
 
-1. PADIS `39982143`는 공식 부분개정 지침이다. 리뷰 자동 발행에서는 이미 제외되지만
-   지침 트랙으로의 채택은 별도 결정이다. 임의 이동·승격하지 않았다.
-2. `38748265`는 ICU 응급 혈액질환 관련성이 있어 “좁은 주제” 탈락 근거를 재검토할
-   만하다. `41324946`는 거절 주체/이유가 없어 복구 결정을 추정할 수 없다.
-   평가 결과는 정리했으며 원래 결정은 보존했다.
-3. 390/800px DOM 검사와 픽셀 검증을 구별한다. 캡처 시간 초과로 픽셀 검증은 미완료다.
-   새 권한·네트워크 변경으로 우회하지 않았다.
-4. 일일 소비 기록은 배포 영수증이 아니다. 기존 논문/지침의 배포 실패 복구,
-   과거 번역의 전문 일치·임상 정확도 검증은 이번 범위 밖이다.
+1. **임상적 좁음과 낮은 유용성을 구분한다.** `38748265`는 ICU 혈액응급 처치라는
+   구체적 가치가 있지만 기존 fit 5/keep:false가 남아 있다. 수동 거절 의도를 확인하고
+   재검토하며 자동 승격하지 않는다. `41324946`도 거절 사유가 없어 의도를 먼저 확인한다.
+2. **범위 선택을 명시한다.** AJEM 리뷰 `39904062/42475841`은 현행 6개 저널 수집 범위
+   밖이다. 저널 확대의 가치와 작업량을 판단한다. IDSA AMR `42570093`은 확보 경로가
+   미상이며 PT/MeSH·원 검색 결과를 확인하기 전 검색 또는 필터 결함으로 단정하지 않는다.
+3. **계보와 트랙을 함께 본다.** PADIS `39982143`은 부분개정 지침의 채택/트랙 이동
+   판단이 남는다. 케타민 동시출판, ARDS 본문/요약 관계는 이전 배포에서 정정했다.
+   새 임상 권고로 중복 발행하거나 과거 문서를 일괄 폐기하지 않는다.
+4. **편중을 공급량과 함께 평가한다.** 논문은 주제 기록 58건 중 심혈관·소생 31건,
+   주제 미상 48건이다. 리뷰는 주제 기록 62건 중 25건, 미상 1건이다.
+   완전한 후보풀 없이 가중치나 강제 주제 할당량을 다시 조정하지 않는다.
 
-보유 자료는 논문 106 / 지침 76 / 리뷰 63건이며 전체 역사 후보풀이 아니다.
-전체 누락률·독립 임상 holdout 성능을 주장하지 않는다. 주제 편중 및 후보 한계는
-[최초 감사](docs/reviews/2026-10-18/selection-quality.md)와
-[최신 후보 대조](docs/reviews/2026-10-19/release-selection-audit.md)를 함께 읽는다.
-타워 및 Drive 최종 취합은 별도 통합 담당 범위다. 공개 인계에 비공개 대화·경로·계정
-지표·환자자료를 포함하지 않는다.
+최신 장부는 논문 106 / 지침 76 / 리뷰 63건이다. 논문 큐는 현재 비어 있어 이번 큐
+개선의 전후 비교는 명시된 로컬 재현 시험이며 운영 임상 성과가 아니다. 월별 사전 선별,
+미기록 주제 이력, 일반 큐 경로의 임상 LLM 재정렬 미실행 한계는 남는다.
+
+이전 배포: [PR #166](https://github.com/njell85-spec/trend-review/pull/166),
+[PR #167](https://github.com/njell85-spec/trend-review/pull/167),
+[메타데이터·예고일 마감 검증](docs/reviews/2026-10-19/closure-validation.md).
+운영 사이트: [논문](https://njell85-spec.github.io/trend-review/),
+[지침](https://njell85-spec.github.io/trend-review/guidelines.html),
+[리뷰](https://njell85-spec.github.io/trend-review/reviews.html).
+타워·Drive 집계는 부모 작업이 담당한다. 공개 인계에 개인 대화·경로·계정 지표·환자자료를 넣지 않는다.

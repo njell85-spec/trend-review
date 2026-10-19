@@ -1,7 +1,9 @@
 # Start here — project context for any tool
 
-현재 구현 배포 확인: **`ce8f18b6b93bbcb3f180e6a905e2642d3923beb2`** — [PR #166](https://github.com/njell85-spec/trend-review/pull/166), [CI](https://github.com/njell85-spec/trend-review/actions/runs/39234894334), [Pages](https://github.com/njell85-spec/trend-review/actions/runs/39234893351).
-문서 확인 커밋과 구현 커밋을 구별하며 이후 문서 전용 릴리스의 최종 영수증은 [PR #166의 최종 증거](https://github.com/njell85-spec/trend-review/pull/166)에 연결한다.
+현재 선정 평가 기준: **`96600bc489c76e0657914d27dc02d9e270113cb4`**.
+현재 구현 소스: [`5ce917257d1e42550404edea6148cfacc40cf054`](https://github.com/njell85-spec/trend-review/commit/5ce917257d1e42550404edea6148cfacc40cf054).
+이번 소스·독립 평가·배포 상태는 [selection evaluation verification](reviews/2026-10-19/selection-evaluation-validation.md)을 따른다.
+이전 메타데이터/예고일 배포는 [PR #166](https://github.com/njell85-spec/trend-review/pull/166)과 [PR #167](https://github.com/njell85-spec/trend-review/pull/167)에 보존되어 있다.
 
 This reading order is for a person or an assistant using any editor or model.
 These files are links to project context, not an automatic loading mechanism and
@@ -28,14 +30,22 @@ not an authorization to run operations. Read the actual files and check the SHA.
    and [follow-up validation](reviews/2026-10-19/validation.md). The latter separates
    author-run 971 tests from independent 18 synthetic cases and 5 regressions.
    Test counts from one SHA are not proof that a later SHA was executed.
-6. **Current closure:** implementation `87739c8e5a0f186b7adaedde4c7c1a1a668e7a99`,
+6. **Current substantive selection evaluation:** read the
+   [source-first assessment](reviews/2026-10-19/selection-evaluation.md),
+   [source and split limitations](reviews/2026-10-19/selection-evaluation-sources.md),
+   [bounded fixes](reviews/2026-10-19/selection-evaluation-changes.md), and
+   [independent verification and release](reviews/2026-10-19/selection-evaluation-validation.md).
+   Five cases are current and seven are dated references; the six-case holdout
+   includes only one current case. Do not call publication coverage recall or
+   controlled bug regressions proof of clinical accuracy.
+7. **Previous closure:** implementation `87739c8e5a0f186b7adaedde4c7c1a1a668e7a99`,
    based on deployed `11ae9729c0ff2133200ab3de93fe830cece1af8a`.
    Read [metadata corrections and held decisions](reviews/2026-10-19/closure-metadata.md),
    [upcoming-date contract](reviews/2026-10-19/closure-dates.md),
    [independent review and release verification](reviews/2026-10-19/closure-validation.md),
    and [closure plan](superpowers/plans/2026-10-19-selection-closure.md).
    These separate justified corrections from decisions still requiring reader intent.
-7. **Prior release background:** [release candidate/source audit](reviews/2026-10-19/release-selection-audit.md),
+8. **Prior release background:** [release candidate/source audit](reviews/2026-10-19/release-selection-audit.md),
    [release validation and independent review](reviews/2026-10-19/release-validation.md),
    and [release plan](superpowers/plans/2026-10-19-selection-release.md).
    [PR #165](https://github.com/njell85-spec/trend-review/pull/165) records the exact
