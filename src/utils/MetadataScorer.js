@@ -304,7 +304,8 @@ export class MetadataScorer {
       }
     }
     const title = String(paper.title ?? '').toLowerCase();
-    if (/randomi[sz]ed|\brct\b|double-blind|placebo-controlled/.test(title)) {
+    const explicitlyNonrandomized = /\b(?:non[\s\-\u2010-\u2015]*|not\s+)randomi[sz]ed\b/.test(title);
+    if (!explicitlyNonrandomized && /\brandomi[sz]ed\b|\brct\b|double-blind|placebo-controlled/.test(title)) {
       return { score: 3.6, label: 'RCT', matched: 'title-rct' };
     }
     if (/meta-analysis/.test(title)) return { score: 3.8, label: 'Meta-analysis', matched: 'title-ma' };

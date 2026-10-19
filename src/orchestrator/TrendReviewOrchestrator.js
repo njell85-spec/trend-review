@@ -178,25 +178,40 @@ export class TrendReviewOrchestrator {
     try {
       const state = await loadTrackQueue(this.queuePapersPath, 'papers');
       const consumed = consumedIds(state, excludePmids);
-      const scores = this.filter.scorer.scorePapers(selectionPool);
-      const papers = new Map(selectionPool.map((paper) => [String(paper.pmid), paper]));
-      const items = [...scores]
-        .filter((scored) => !consumed.has(String(scored.pmid)))
-        .sort((a, b) => (Number(b.rawScore ?? b.score) - Number(a.rawScore ?? a.score))
-          || String(a.pmid).localeCompare(String(b.pmid)))
-        .slice(0, 14)
-        .map((scored) => {
-          const paper = papers.get(String(scored.pmid)) ?? {};
+      // Array order also carries human promotion: never rerank existing entries.
+      const surviving = publishablePapers(state, excludePmids);
+      const occupied = new Set([...consumed, ...surviving.map((p) => String(p.pmid))]);
+      const fresh = selectionPool.filter((paper) => {
+        const id = String(paper.pmid);
+        if (occupied.has(id)) return false;
+        occupied.add(id);
+        return true;
+      });
+      const capacity = Math.max(0, 14 - surviving.length);
+      const selected = capacity > 0 ? this.filter._selectTopPapers(
+        fresh, this.filter.scorer.scorePapers(fresh),
+        { limit: capacity, history: await this._loadSelectionHistory(), today },
+      ) : [];
+      const items = selected.map((paper) => {
+          const scored = paper.scoringData;
           return {
-            pmid: scored.pmid,
+            pmid: paper.pmid,
             title: paper.title ?? '',
             journal: paper.journal ?? '',
             score: scored.score,
             topic: scored.primaryTopic ?? null,
-            lowConfidence: false,
+            lowConfidence: true,
+            selectionEvidence: {
+              method: 'metadata-with-topic-cooldown',
+              rawScore: scored.rawScore ?? scored.score,
+              cooldownPenalty: scored.cooldownPenalty ?? 0,
+              llmCalled: false,
+            },
           };
         });
       const merged = mergeQueueItems(state, items, { today, excludePmids });
+      const addedById = new Map(merged.queue.map((item) => [String(item.pmid), item]));
+      merged.queue = [...surviving, ...items.map((item) => addedById.get(String(item.pmid)))];
       if (!existsSync(path.dirname(this.queuePapersPath))) {
         await mkdir(path.dirname(this.queuePapersPath), { recursive: true });
       }
@@ -307,7 +322,9 @@ export class TrendReviewOrchestrator {
       if (!rawPapers.length) return { refilled: false, reason: 'no-papers' };
       const { papers: validPapers } = await this._stageValidate1(rawPapers);
       if (!validPapers.length) return { refilled: false, reason: 'all-invalid' };
-      const pool = this._buildSelectionPool(validPapers, collectStats, [...consumedIds(state, excludePmids)]);
+      const occupied = [...consumedIds(state, excludePmids),
+        ...publishablePapers(state, excludePmids).map((paper) => String(paper.pmid))];
+      const pool = this._buildSelectionPool(validPapers, collectStats, occupied);
       await this._saveTrack1Queue(pool, todayStr, excludePmids);
       const after = await loadTrackQueue(this.queuePapersPath, 'papers');
       const n = publishablePapers(after, excludePmids).length;
