@@ -1,5 +1,8 @@
 # 현재 인계 — trend-review
 
+현재 구현 배포 확인: **`ce8f18b6b93bbcb3f180e6a905e2642d3923beb2`** — [PR #166](https://github.com/njell85-spec/trend-review/pull/166), [CI](https://github.com/njell85-spec/trend-review/actions/runs/39234894334), [Pages](https://github.com/njell85-spec/trend-review/actions/runs/39234893351).
+문서 확인 커밋과 구현 커밋을 구별하며 이후 문서 전용 릴리스의 최종 영수증은 [PR #166의 최종 증거](https://github.com/njell85-spec/trend-review/pull/166)에 연결한다.
+
 읽을 순서: **[docs/START_HERE.md](docs/START_HERE.md)** → 이 문서 →
 [REPORT_SPEC.md](REPORT_SPEC.md)·[CLAUDE.md](CLAUDE.md) →
 [기존 공통 누적 인계](docs/HANDOFF.md). 자동 로딩이나 추가 권한을 가정하지 않는다.

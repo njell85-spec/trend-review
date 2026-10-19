@@ -61,6 +61,22 @@ relation was removed and the source link added.
 ## Release evidence
 
 The implementation SHA above is fixed. Remote CI, merge and GitHub Pages runs
-are separate checks and will be linked after execution; local checks do not
-imply deployment. The [handoff](../../../HANDOFF.md) distinguishes source,
+are separate checks recorded below; local checks alone do not imply deployment. The [handoff](../../../HANDOFF.md) distinguishes source,
 integration and documentation revisions.
+
+## Verified implementation deployment
+
+- Source: `87739c8e5a0f186b7adaedde4c7c1a1a668e7a99`.
+- [PR #166](https://github.com/njell85-spec/trend-review/pull/166) merged as `ce8f18b6b93bbcb3f180e6a905e2642d3923beb2`.
+- [PR CI](https://github.com/njell85-spec/trend-review/actions/runs/39234584537) and [main CI](https://github.com/njell85-spec/trend-review/actions/runs/39234894334) passed all 988 tests.
+- [GitHub Pages](https://github.com/njell85-spec/trend-review/actions/runs/39234893351) deployed that merge successfully.
+- All three public HTML pages returned HTTP 200 and exactly matched the source
+  after newline normalization, including the hashes above. No daily clinical
+  workflow or notification was triggered for this deployment verification.
+- This later documentation seal records an already verified code deployment;
+  its documentation-only merge and delivery receipt are linked in its release PR.
+
+Deployment browser checks confirmed all three relationship links, the provenance
+notice and an expanded six-item review preview beginning October 20. Document
+scroll width did not exceed the viewport on any of the three pages at 390 and
+800 pixels. The temporary viewport was reset. These are DOM checks, not pixels.
