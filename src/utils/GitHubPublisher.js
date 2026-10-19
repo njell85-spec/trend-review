@@ -384,6 +384,7 @@ export class GitHubPublisher {
       'full-text': '',
       'web-augmented': '원문 전문을 직접 받지 못해 웹에서 본문을 확보해 옮겼습니다.',
       'abstract-only': '원문 전문을 확보하지 못해 **초록 범위**만 옮겼습니다 — 아래 원문 링크에서 확인하세요.',
+      'unverified': '전문 확보·열람 근거를 확인할 수 없습니다. 기존 번역 내용은 보존했으며 전문 대조는 검증되지 않았습니다.',
     };
     const coverageNote = isReview ? (COVERAGE_NOTE[g.coverage] ?? '') : '';
 

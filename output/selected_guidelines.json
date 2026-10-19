@@ -371,7 +371,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "superseded",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -388,9 +388,7 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageReview": true,
-      "lineageReason": "candidate-not-newer",
-      "supersededBy": "pmid:39207913",
-      "supersededAt": "2026-10-04T00:03:34.266Z"
+      "lineageReason": "co-publication-not-new-edition"
     },
     {
       "id": "pmid:39297198",
@@ -48198,6 +48196,10 @@
           {
             "label": "웹 — PubMed — Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS (PMID 41773929)",
             "url": "https://pubmed.ncbi.nlm.nih.gov/41773929/"
+          },
+          {
+            "label": "공식 요약 — 같은 SCCM ARDS 신경근차단 지침의 Executive Summary (PMID 41773928)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41773928/"
           }
         ]
       },
@@ -51993,6 +51995,10 @@
           {
             "label": "웹 — Guideline Central — 2026 SCCM NMBA in ARDS Guideline Spotlight (insights)",
             "url": "https://www.guidelinecentral.com/insights/mar-2026-sccm-neuromuscularblocadeadultsards-guideline-spotlight/"
+          },
+          {
+            "label": "지침 본문 — 이 Executive Summary의 SCCM ARDS 신경근차단 본문 (PMID 41773929)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41773929/"
           }
         ]
       },
@@ -55567,9 +55573,7 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "lineageKey": "unknown|ketamine-analgo-sedation-mechanically-ventilated-critically-ill-adults-rapid-practice-from-saudi-critical-care-society-scandinavian-society-anesthesiology-intensive-care-medicine",
-      "supersedes": [
-        "pmid:39198198"
-      ],
+      "supersedes": [],
       "card": {
         "type": "guideline",
         "paper": {
@@ -55634,6 +55638,10 @@
           {
             "label": "웹 — Wiley Online Library — Acta Anaesthesiologica Scandinavica co-publication (abstract; full text 403)",
             "url": "https://onlinelibrary.wiley.com/doi/10.1111/aas.14470"
+          },
+          {
+            "label": "공동출판 — Acta Anaesthesiologica Scandinavica (PMID 39198198); 신판·구판 관계 아님",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39198198/"
           }
         ]
       },
