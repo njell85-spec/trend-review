@@ -25428,65 +25428,6 @@
       }
     },
     {
-      "id": "pmid:41075936",
-      "pmid": "41075936",
-      "title": "French guidelines on sepsis: A pragmatic frame to manage septic patients.",
-      "pubDate": "2025 Nov",
-      "journal": "Anaesthesia, critical care & pain medicine",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [],
-      "doi": "10.1016/j.accpm.2025.101643",
-      "pmcid": "",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 4.6109521974112075,
-      "breakdown": {
-        "authority": 0,
-        "topic": 2,
-        "recency": 1.6109521974112075,
-        "scope": 0,
-        "confidence": 1
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "insufficient-positive-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:08.134Z",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "패혈증 관리 프랑스 지침, 중환자 핵심 주제",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|french-sepsis-pragmatic-frame-manage-septic-patients",
-      "supersedes": []
-    },
-    {
       "id": "pmid:41198528",
       "pmid": "41198528",
       "title": "Update 2025 of the Spanish COPD Guidelines (GesEPOC): Pharmacological Treatment of Stable COPD.",
@@ -32381,7 +32322,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34546,7 +34487,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37540,7 +37481,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -42724,7 +42665,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44045,7 +43986,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44172,7 +44113,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44834,7 +44775,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44992,7 +44933,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45072,7 +45013,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45297,7 +45238,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46514,7 +46455,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46588,7 +46529,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -46796,7 +46737,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -46846,11 +46787,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.60810604653242,
+      "priority": 11.604427912091552,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.6081060465324195,
+        "recency": 1.6044279120915523,
         "scope": 0,
         "confidence": 2
       },
@@ -46866,7 +46807,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -46945,7 +46886,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47020,7 +46961,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47087,7 +47028,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47162,7 +47103,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47220,7 +47161,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47288,7 +47229,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-17T23:21:50.011Z",
+      "lastSeenAt": "2026-10-18T23:32:43.045Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -57956,6 +57897,168 @@
         ]
       },
       "publishedAt": "2026-10-18"
+    },
+    {
+      "id": "pmid:41075936",
+      "pmid": "41075936",
+      "title": "French guidelines on sepsis: A pragmatic frame to manage septic patients.",
+      "pubDate": "2025 Nov",
+      "journal": "Anaesthesia, critical care & pain medicine",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1016/j.accpm.2025.101643",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 4.6109521974112075,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 1.6109521974112075,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:08.134Z",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "패혈증 관리 프랑스 지침, 중환자 핵심 주제",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|french-sepsis-pragmatic-frame-manage-septic-patients",
+      "supersedes": [],
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41075936",
+          "title": "French guidelines on sepsis: A pragmatic frame to manage septic patients.",
+          "journal": "Anaesthesia, critical care & pain medicine",
+          "pubDate": "2025 Nov",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41075936/",
+          "doi": "10.1016/j.accpm.2025.101643"
+        },
+        "org": "HAS (France) with French scientific societies (SFAR, SRLF, SFMU, SOFMER, SFP/GFRUP et al.) and France Sepsis Association; article authored by the SFAR/SRLF-affiliated group (M. Leone, D. Annane, A. Roquilly et al.)",
+        "version": "2025",
+        "title_ko": "프랑스 sepsis 진료지침: 패혈증 환자를 관리하기 위한 실용적 틀 (Anaesth Crit Care Pain Med, 2025)",
+        "scope_ko": "프랑스 최초의 국가 단위 패혈증 권고로, 신생아·소아부터 성인·고령자까지 전 연령을 대상으로 하며 지역사회(병원 전)·급성기·퇴원 후 후기(재활·추적)까지 '통합 진료경로(parcours de soins intégré)' 전 구간을 다룬다. 응급실·ICU에 국한된 국제 Surviving Sepsis Campaign과 달리 프랑스 의료체계 특성과 지역사회·재활 단계를 포함하도록 설계되었다.",
+        "summary": [
+          "This is France's first national, pathway-wide sepsis recommendation (community/prehospital → acute → post-discharge), covering neonates to the elderly; it deliberately complements the international Surviving Sepsis Campaign by adding national healthcare-system specifics, the community phase, and rehabilitation that the SSC's 93 ED/ICU-focused recommendations omit.",
+          "Prevention is a core pillar: respect the vaccination schedule at every age; in at-risk adults vaccinate against encapsulated bacteria (pneumococcus, meningococcus, Haemophilus), influenza and SARS-CoV-2; know sepsis risk factors and maintain hygiene.",
+          "Adult early recognition uses a simple 6-variable clinical score — age >65 yr, temperature >38°C, systolic BP ≤110 mmHg, heart rate >110/min, SpO₂ ≤95%, altered mental status — with ≥3 variables flagging sepsis risk; in the ambulatory setting do NOT measure lactate, CRP or procalcitonin for early identification.",
+          "First-hour hospital bundle: establish IV or intra-osseous access; draw blood cultures (≥40 mL split across 2–3 aerobic/anaerobic pairs) and lactate; start IV antibiotics tailored to infection site, community vs nosocomial origin and local ecology; and restore hemodynamics using individualized clinical + ultrasound assessment.",
+          "Antibiotic timing: give IV antibiotics within 3 hours of sepsis identification when there is no shock, and immediately in septic shock; microbiological sampling must not delay antibiotics (blood cultures ideally obtained without delaying antibiotics by more than ~6 h); total duration ≤7 days unless a longer course is justified, with adequate source control.",
+          "Fluid resuscitation is an individualized bolus of 10–20 mL/kg over 15–20 min with early reassessment (clinical + ultrasound), rather than a reflex fixed volume; vasopressors: noradrenaline first-line targeting MAP 65 mmHg, adding vasopressin 0.02–0.04 U/min if the response is inadequate.",
+          "Pediatric/neonatal specifics: use the Phoenix Sepsis Score (dysregulation ≥2 points of max 13; hemodynamic sub-score ≥1 = shock); neonatal bolus 10 mL/kg of 0.9% saline over 30 min; any fever <1 month → urgent pediatric emergency evaluation, fever at 1–3 months → medical assessment within 6 h; initiate noradrenaline or epinephrine after 20–40 mL/kg if poor perfusion persists, hydrocortisone (off-label) for refractory shock.",
+          "Post-acute care is built in: begin standardized, progressive 6-stage rehabilitation within 48 h of hospitalization (1–2 sessions/day, up to 5 days/week; target ~1 physiotherapist per 5 patients); organize a follow-up consultation within 3 months of discharge and a systematic clinical evaluation at 1 year, with a patient information booklet and multidisciplinary/psychological support."
+        ],
+        "summary_ko": [
+          "프랑스 최초의 국가 단위·전(全) 경로 패혈증 권고로, 지역사회(병원 전)→급성기→퇴원 후까지, 신생아부터 고령자까지 포괄한다. 응급실·ICU 중심의 93개 권고로 된 국제 SSC가 다루지 않는 국가 의료체계 특성·지역사회 단계·재활을 보완하도록 설계되었다.",
+          "예방이 핵심 축: 전 연령에서 예방접종 일정 준수, 고위험 성인은 피막형 세균(pneumococcus·meningococcus·Haemophilus)·인플루엔자·SARS-CoV-2 백신 접종, 패혈증 위험인자 인지와 위생 수칙 유지.",
+          "성인 조기 인지는 6개 변수의 간단한 임상 점수 사용 — 연령 >65세, 체온 >38°C, 수축기혈압 ≤110 mmHg, 심박수 >110/분, SpO₂ ≤95%, 의식 변화 — 로 ≥3개면 패혈증 위험으로 분류; 외래(병원 전) 단계에서는 조기 식별 목적의 lactate·CRP·procalcitonin 측정을 하지 않는다.",
+          "첫 1시간 병원 번들: 정맥 또는 골내(IO) 확보, 혈액배양(≥40 mL를 호기/혐기 2–3쌍으로) 및 lactate 채취, 감염 부위·지역사회 대 병원 기원·국소 균 생태를 고려한 IV 항생제 투여, 임상+초음파 평가에 기반한 개별화된 혈역학 소생.",
+          "항생제 투여 시점: 쇼크가 없으면 패혈증 식별 후 3시간 이내, 패혈증 쇼크면 즉시 투여; 미생물 검체 채취가 항생제를 지연시켜서는 안 된다(혈액배양은 항생제를 약 6시간 넘게 지연시키지 않는 선에서 시행); 총 투여기간은 더 긴 기간의 정당한 사유가 없는 한 ≤7일, 적절한 감염원 제거 병행.",
+          "수액 소생은 고정 용량이 아니라 10–20 mL/kg를 15–20분에 걸쳐 주는 개별화 볼루스로, 임상+초음파로 조기 재평가; 승압제는 noradrenaline을 1차로 MAP 65 mmHg 목표, 반응이 부족하면 vasopressin 0.02–0.04 U/min 추가.",
+          "소아/신생아: Phoenix Sepsis Score 사용(조절장애 ≥2점/최대 13점; 혈역학 하위점수 ≥1점 = 쇼크); 신생아 볼루스는 0.9% 생리식염수 10 mL/kg를 30분에 걸쳐; <1개월 발열은 즉시 소아 응급 평가, 1–3개월 발열은 6시간 이내 진료; 20–40 mL/kg 후에도 관류 저하가 지속되면 noradrenaline 또는 epinephrine 시작, 불응성 쇼크에 hydrocortisone(허가 외) 고려.",
+          "후기(post-acute) 관리가 지침에 내장됨: 입원 48시간 이내 표준화된 6단계 점진적 재활 시작(1–2회/일, 최대 주 5일; 이상적으로 물리치료사 1명당 환자 5명), 퇴원 후 3개월 이내 추적 진료 예약, 1년 시점 체계적 임상 평가, 환자용 정보 책자와 다학제·심리 지원 포함."
+        ],
+        "keyChanges": [
+          {
+            "topic": "초기 수액 소생 (국제 SSC 대비)",
+            "detail": "Previous/international SSC standard: a fixed initial crystalloid bolus of 30 mL/kg within the first 3 hours. French guideline: an INDIVIDUALIZED bolus of 10–20 mL/kg over 15–20 min, with further fluid decisions driven by clinical and ultrasound reassessment rather than a fixed total — the stated aim being to tailor resuscitation to tolerance and avoid fluid overload. (Note: this is France's first national sepsis guideline, so the comparator is the international SSC standard, not a prior French version.)",
+            "detail_ko": "기존/국제 SSC 기준: 첫 3시간 내 30 mL/kg의 고정 정질액 볼루스. 프랑스 지침: 10–20 mL/kg를 15–20분에 걸쳐 주는 개별화 볼루스로, 이후 수액 결정은 고정 총량이 아니라 임상·초음파 재평가에 따라 조정 — 수액 과부하를 피하고 내약성에 맞추려는 취지. (프랑스 최초 국가 지침이므로 비교 기준은 이전 프랑스판이 아니라 국제 SSC 기준이다.)"
+          },
+          {
+            "topic": "성인 조기 인지 도구 (국제 SSC 대비)",
+            "detail": "SSC does not endorse a single stand-alone screening score (and recommends against using qSOFA alone as the sole screen). The French guideline introduces a concrete 6-variable clinical score for adults — age >65 yr, temperature >38°C, systolic BP ≤110 mmHg, heart rate >110/min, SpO₂ ≤95%, altered mental status — with ≥3 positive flagging sepsis risk and triggering escalation, giving frontline/community clinicians a simple, defined trigger.",
+            "detail_ko": "SSC는 단일 선별 점수를 권고하지 않으며(qSOFA 단독 선별은 권장하지 않음). 프랑스 지침은 성인용 구체적 6변수 임상 점수를 도입 — 연령 >65세, 체온 >38°C, 수축기혈압 ≤110 mmHg, 심박수 >110/분, SpO₂ ≤95%, 의식 변화 — ≥3개 양성이면 패혈증 위험으로 분류해 상향 대응을 촉발, 일선·지역사회 임상의에게 단순·명확한 기준을 제공한다."
+          },
+          {
+            "topic": "항생제 투여 시점 (국제 SSC 대비)",
+            "detail": "French guideline makes the timing explicit by shock status: administer IV antibiotics IMMEDIATELY in septic shock, and within 3 hours of sepsis identification when there is no shock. Microbiological sampling (blood cultures ≥40 mL) must precede antibiotics only insofar as it does not delay them, with cultures ideally not delaying antibiotics by more than ~6 h; empiric duration is ≤7 days unless justified. This operationalizes the SSC 1-hour (shock) vs 3-hour (possible sepsis without shock) framing within the French pathway.",
+            "detail_ko": "프랑스 지침은 쇼크 유무로 시점을 명시: 패혈증 쇼크면 IV 항생제 즉시, 쇼크가 없으면 패혈증 식별 후 3시간 이내. 미생물 검체(혈액배양 ≥40 mL)는 항생제를 지연시키지 않는 한에서 선행하며, 배양 때문에 항생제를 약 6시간 넘게 늦추지 않는다; 경험적 투여기간은 정당한 사유가 없으면 ≤7일. SSC의 1시간(쇼크)/3시간(쇼크 없는 가능 패혈증) 틀을 프랑스 경로에 맞게 구체화한 것이다."
+          },
+          {
+            "topic": "지침 범위 확장 — 지역사회·재활 포함 (국제 SSC 대비)",
+            "detail": "SSC comprises ~93 recommendations confined to the emergency department and ICU, with no coverage of community/pre-hospital recognition and no description of rehabilitation. The French guideline deliberately extends the scope end-to-end: from community detection and medicalized transport, through the acute hospital phase, to structured post-acute rehabilitation and long-term follow-up — explicitly to address gaps the international document leaves open.",
+            "detail_ko": "SSC는 응급실·ICU에 국한된 약 93개 권고로, 지역사회·병원 전 인지나 재활 기술이 없다. 프랑스 지침은 범위를 의도적으로 전 구간으로 확장: 지역사회 탐지와 의료화 이송 → 급성 병원기 → 구조화된 후기 재활과 장기 추적까지 — 국제 지침이 비워 둔 공백을 메우기 위함이다."
+          },
+          {
+            "topic": "퇴원 후 재활·장기 추적 신설 (국제 SSC 대비)",
+            "detail": "New, not addressed by SSC: begin standardized progressive 6-stage rehabilitation within 48 h of hospitalization (1–2 sessions/day, up to 5 days/week; aspirational staffing ~1 physiotherapist per 5 patients), add systematic respiratory rehab after pulmonary sepsis or mechanical ventilation, organize a follow-up consultation within 3 months of discharge, and perform a systematic clinical evaluation at 1 year (with pediatric neuropsychological assessment/brain MRI and annual multidisciplinary review).",
+            "detail_ko": "SSC에 없는 신설 내용: 입원 48시간 이내 표준화된 6단계 점진적 재활 시작(1–2회/일, 최대 주 5일; 지향 인력은 물리치료사 1명당 환자 5명), 폐 패혈증·기계환기 후에는 호흡 재활 추가, 퇴원 후 3개월 이내 추적 진료 예약, 1년 시점 체계적 임상 평가 시행(소아는 신경심리 평가/뇌 MRI 및 연 1회 다학제 추적)."
+          },
+          {
+            "topic": "소아 패혈증 정의 점수 (Phoenix Sepsis Score 채택)",
+            "detail": "For children the French guideline adopts the Phoenix Sepsis Score: organ dysfunction defined by a score ≥2 points (maximum 13), with septic shock defined by a hemodynamic sub-score ≥1 point — aligning the French pediatric definition with the 2024 Phoenix criteria rather than older SIRS/SSC-pediatric-only framing.",
+            "detail_ko": "소아에서 프랑스 지침은 Phoenix Sepsis Score를 채택: 장기 기능장애는 점수 ≥2점(최대 13점), 패혈증 쇼크는 혈역학 하위점수 ≥1점으로 정의 — 과거 SIRS/소아 SSC 단독 틀 대신 2024 Phoenix 기준에 프랑스 소아 정의를 맞춘 것이다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, francophone EM/CCM clinicians get a single defined adult trigger — the 6-variable score (≥3) — for who gets escalated, and a shift away from a reflex 30 mL/kg bolus toward titrated 10–20 mL/kg boluses with early noradrenaline (MAP 65) and vasopressin 0.02–0.04 U/min, reassessed by ultrasound. Antibiotics go in immediately in shock and within 3 h otherwise, and cultures should never delay them; empiric courses default to ≤7 days. Pediatric teams should use the Phoenix score for sepsis/shock and the neonatal 10 mL/kg/30-min bolus. Critically, the acute team now owns the handoff: start rehabilitation within 48 h and ensure a 3-month and 1-year follow-up pathway for post-sepsis sequelae, a responsibility the international SSC never assigned.",
+        "practiceImpact_ko": "현장에서 프랑스어권 EM/CCM 임상의는 누구를 상향 대응할지에 대한 단일 성인 기준(6변수 점수 ≥3)을 얻고, 반사적 30 mL/kg 볼루스에서 벗어나 10–20 mL/kg 적정 볼루스 + 조기 noradrenaline(MAP 65) + vasopressin 0.02–0.04 U/min을 초음파로 재평가하는 방식으로 전환한다. 항생제는 쇼크면 즉시, 그 외에는 3시간 이내 투여하고 배양이 결코 이를 지연시키지 않으며, 경험적 투여는 기본 ≤7일이다. 소아팀은 패혈증/쇼크 판단에 Phoenix 점수를, 신생아에는 10 mL/kg/30분 볼루스를 사용한다. 무엇보다 급성기팀이 이행(handoff)의 주체가 된다: 48시간 이내 재활을 시작하고 패혈증 후 후유증을 위한 3개월·1년 추적 경로를 보장해야 하며, 이는 국제 SSC가 부여한 적 없는 책임이다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41075936",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41075936/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.accpm.2025.101643",
+            "url": "https://doi.org/10.1016/j.accpm.2025.101643"
+          },
+          {
+            "label": "웹 — PubMed (NCBI E-utilities) — article metadata/authors, PMID 41075936",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41075936&rettype=abstract&retmode=text"
+          },
+          {
+            "label": "웹 — HAS 2025 sepsis guideline full text (SOFMER-hosted PDF, read via text proxy)",
+            "url": "https://www.sofmer.com/download/reco_sepsis.pdf"
+          },
+          {
+            "label": "웹 — HAS — official guideline page (EN)",
+            "url": "https://www.has-sante.fr/jcms/p_3587144/en/prise-en-charge-du-sepsis-du-nouveau-ne-de-l-enfant-et-de-l-adulte-recommandations-pour-un-parcours-de-soins-integre"
+          },
+          {
+            "label": "웹 — SRLF — official society announcement of the integrated-pathway sepsis guideline",
+            "url": "https://www.srlf.org/article/prise-charge-du-sepsis-parcours-soins-integres"
+          },
+          {
+            "label": "웹 — IHU Sepsis / HAS Guidelines (approval & scope context)",
+            "url": "https://ihu-sepsis.fr/en/extranet/sepsis/guidelines"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-19"
     }
   ],
   "rejected": [
@@ -62931,7 +63034,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-17T23:21:43.112Z",
+      "discoveredAt": "2026-10-18T23:32:32.793Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63386,7 +63489,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-17T23:21:43.112Z",
+      "discoveredAt": "2026-10-18T23:32:32.793Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -63430,7 +63533,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-17T23:21:43.112Z",
+      "discoveredAt": "2026-10-18T23:32:32.793Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63457,7 +63560,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-17T23:21:43.112Z",
+      "discoveredAt": "2026-10-18T23:32:32.793Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63485,7 +63588,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-17T23:21:43.112Z",
+      "discoveredAt": "2026-10-18T23:32:32.793Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -63551,9 +63654,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261018_081832:guideline:2026-10-18",
+    "runId": "trend_review_20261019_082755:guideline:2026-10-19",
     "outcome": "published",
-    "publishedId": "pmid:40100174",
+    "publishedId": "pmid:41075936",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -63578,15 +63681,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 133,
+        "mergedTotal": 134,
         "overlapCount": 2,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/18",
-          "maxDate": "2026/10/18"
+          "minDate": "2026/09/19",
+          "maxDate": "2026/10/19"
         },
         "retmax": 60,
         "topics": [
@@ -63648,8 +63751,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 9,
+            "idsFetched": 9,
             "truncated": false,
             "error": null
           },
@@ -63690,7 +63793,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 123,
+        "topicOnlyCount": 124,
         "ptPmids": [
           "42788594",
           "42552475",
@@ -63700,8 +63803,8 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 133,
-          "enriched": 133,
+          "requested": 134,
+          "enriched": 134,
           "withAbstract": 93,
           "error": null
         }
@@ -63759,19 +63862,19 @@
         "scored": 0
       },
       "decisions": {
-        "queued": 204,
+        "queued": 203,
         "needsReview": 453,
         "rejected": 131,
         "superseded": 1
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40100174",
+        "candidateId": "pmid:41075936",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-17T23:24:10.161Z",
+  "updatedAt": "2026-10-18T23:42:52.172Z",
   "configVersion": "guideline-v2"
 }

@@ -3216,23 +3216,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "41841954",
-      "title": "The Effective Management of Shock: Moving From Physiology to Guidelines to Personalized Medicine.",
-      "journal": "Crit Care Med",
-      "score": 3,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "쇼크 관리 종설 — 중환자 핵심 주제",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "41860322",
       "title": "Society of Critical Care Medicine Guidelines on Caring for Older Adults in the ICU.",
       "journal": "Crit Care Med",
@@ -12375,6 +12358,109 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41841954",
+      "title": "The Effective Management of Shock: Moving From Physiology to Guidelines to Personalized Medicine.",
+      "journal": "Crit Care Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "쇼크 관리 종설 — 중환자 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-19",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41841954",
+          "title": "The Effective Management of Shock: Moving From Physiology to Guidelines to Personalized Medicine.",
+          "journal": "Critical care medicine",
+          "pubDate": "2026-3-17",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41841954/",
+          "doi": "10.1097/CCM.0000000000007115"
+        },
+        "title_ko": "쇼크의 효과적 관리: 생리학에서 가이드라인을 거쳐 맞춤의학으로",
+        "scope_ko": "중증 환자 쇼크(심폐 부전) 관리의 지난 40년 진전을 저자(Michael R. Pinsky)의 관점에서 조망하는 perspective 성격의 종설입니다. 원인 규명·조기 표적치료·감시(monitoring)의 발전을 짚으면서, 그 모든 진보가 결국 침상 임상가의 병태생리 이해와 개별 반응에 따른 치료 적정화(titration)로 수렴해야 함을 논합니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "쇼크 관리의 핵심 축",
+            "body_ko": "중증 환자 관리의 중심은 심폐 부전(즉 쇼크)의 원인(etiology)을 규명하는 것, 조직으로 가는 충분한 혈류와 산소 공급을 유지하기 위해 심폐계를 지지하는 조기·적절·표적화된(early appropriate targeted) 치료를 시행하는 것, 그리고 쇼크의 원인 자체를 되돌리기 위한 특이적 치료를 병행하는 것입니다. 이 세 가지가 함께 가야 합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "지난 40년의 진전",
+            "body_ko": "지난 40년에 걸쳐 쇼크 자체에 대한 이해, 그 중증도, 그리고 치료에 대한 반응을 이해하는 데 수많은 진보가 이루어졌고, 이와 함께 더 특이적이고 통찰력 있는 감시(monitoring) 방법들도 개발되었습니다. 본 perspective는 그 진전의 일부 측면을 정리합니다. 저자는 \"우리는 먼 길을 왔다(We have come a long way)\"고 평가하면서도, 그럼에도 반드시 이해해야 할 세 가지가 남아 있다고 짚습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "첫째 — 일단 장기 손상이 생기면 치료는 '완화'일 뿐 '복구'가 아니다",
+            "body_ko": "일단 장기 손상(organ injury)이 발생하고 나면, 우리 치료가 할 수 있는 일은 추가 손상을 완화(mitigate)하는 것뿐이며 이미 생긴 손상을 되돌리지(reverse) 못합니다. 따라서 초기의 공격적인 소생(aggressive resurrection) 노력으로도 장기 기능을 회복시킬 수 없다면, 그 치료 행위들은 흔히 의인성 손상(iatrogenic injury)만을 초래하게 됩니다. 즉 소생이 장기 기능을 되살리지 못하는 상황에서 공격적 치료를 밀어붙이는 것은 득보다 해가 됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "둘째 — 감시 장비는 '결과를 개선하는 치료'와 연결될 때만 의미가 있다",
+            "body_ko": "현존하는 고급 감시 장비(advanced monitoring devices)는, 그 데이터가 아무리 통찰력 있다 하더라도, 그 자체로 환자 결과를 개선하는 치료에 연결(coupled)되지 않는 한 환자 예후를 개선하지 못합니다. 감시 자체가 목적이 될 수 없으며, 측정값은 결과를 바꾸는 중재와 이어질 때 비로소 가치를 가집니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "셋째 — 결국은 병태생리를 이해하고 개별 반응에 맞춰 적정화하는 침상 임상가가 필요하다",
+            "body_ko": "지난 세월의 모든 진보는 오히려, 질병과 그 치료의 병태생리학적 토대를 숙지하고 환자 개개인의 반응에 근거해 치료를 적정화(titrate)하는, 사려 깊고 관찰력 있는 침상 임상가(thoughtful and observant bedside clinician)의 근본적 필요성을 거듭 확인시켜 주었습니다. 이것이 저자가 말하는, 생리학에서 가이드라인을 거쳐 맞춤의학(personalized medicine)으로 나아가는 여정의 귀결점입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 가이드라인·프로토콜은 침상 관찰을 대체할 수 없다",
+            "body_ko": "같은 저자(Michael Pinsky)가 참여한 SCCM 팟캐스트(제목: From Monitoring to Personalized Medicine)에서 이 종설의 핵심 메시지가 구어로 풀어집니다. Pinsky는 \"가이드라인이 침상에서의 병태생리 이해를 결코 능가해서는 안 된다(guidelines should never supersede an understanding of pathophysiology at the bedside)\"고 말합니다. 프로토콜은 유용한 지침이지만 침상 관찰을 대체하지 않으며, 핵심은 모든 환자에게 동일한 중재를 적용하는 것이 아니라 개별 환자의 반응에 따라 치료를 지속적으로 조정하는 것입니다(운전자가 노면 상태에 따라 끊임없이 조향·가속을 조정하는 것에 비유). 감시는 가능한 한 '연속적·대사적·비침습적(continuous, metabolic, noninvasive)'이어야 하고, CVP 같은 단일 지표에 의존하기보다 중재에 대한 환자의 반응을 관찰해 조정해야 합니다. 또한 수액이나 승압제가 많다고 본질적으로 이로운 것이 아니며 용량 과부하(volume overload)는 상당한 해를 끼칩니다.\n— 보강 출처: SCCM Podcast #569 — From Monitoring to Personalized Medicine (Michael Pinsky) (https://www.sccm.org/communications/sccm-podcast/sccm-podcast-all-episodes/sccmpod-569-from-monitoring-to-personalized-medicine)",
+            "origin": "augmented",
+            "sourceLabel": "SCCM Podcast #569 — From Monitoring to Personalized Medicine (Michael Pinsky)",
+            "sourceUrl": "https://www.sccm.org/communications/sccm-podcast/sccm-podcast-all-episodes/sccmpod-569-from-monitoring-to-personalized-medicine"
+          },
+          {
+            "heading_ko": "[웹 보강] 압력이 아니라 관류 — TPP와 혈관 폭포(vascular waterfall) 개념",
+            "body_ko": "이 종설이 강조하는 핵심 생리 개념(TPP, 혈관 폭포)은 같은 저자 그룹의 동반 논문에서 구체화됩니다. 조직 자가조절(autoregulation)이 국소 혈류를 대사 요구에 맞추려면 충분히 높은 상류 평균동맥압(MAP)과, MAP과 하류 세동맥 임계폐쇄압(critical closing pressure) 사이의 관류압 차(tissue perfusion pressure, TPP)가 모두 필요합니다. 패혈성 쇼크의 혈관마비(vasoplegia)에서는 임계폐쇄압이 평균체순환충만압(mean systemic filling pressure)에 근접하면서 자가조절 기전이 사실상 소실됩니다. 임계폐쇄압과 평균체순환충만압 사이의 압력차가 바로 '혈관 폭포'이며, 폐쇄압 아래에서 충만압이 오르내려도 조직 혈류는 변하지 않습니다. 임상 평가로는 모세혈관 재충만시간(capillary refill time, CRT)이 실용적 침상 지표로 제시되며, 표준 소생 후에도 CRT가 3초를 초과하면 MAP을 75 mmHg 이상으로 올리는 승압제 챌린지(vasopressor challenge)로 추가 승압이 미세순환 관류를 개선하는지 판단해 볼 수 있습니다. 요지는 '압력(pressure) 하나가 아니라 관류(perfusion)'에 초점을 둔 맞춤 접근입니다.\n— 보강 출처: Pinsky et al., Assessing tissue perfusion during septic shock resuscitation through the vascular waterfall lens (AJRCCM, 초록) (https://academic.oup.com/ajrccm/advance-article-abstract/doi/10.1093/ajrccm/aamag397/8746775?redirectedFrom=fulltext)",
+            "origin": "augmented",
+            "sourceLabel": "Pinsky et al., Assessing tissue perfusion during septic shock resuscitation through the vascular waterfall lens (AJRCCM, 초록)",
+            "sourceUrl": "https://academic.oup.com/ajrccm/advance-article-abstract/doi/10.1093/ajrccm/aamag397/8746775?redirectedFrom=fulltext"
+          }
+        ],
+        "coverage": "abstract-only",
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서의 교훈은 명확합니다. 고급 감시 장비의 숫자 자체를 목표로 삼지 말고, 결과를 바꾸는 중재와 연결될 때만 쓰십시오. 초기 공격적 소생에도 장기 기능이 회복되지 않으면 더 밀어붙이는 것이 의인성 손상을 키울 수 있음을 인식하고, 수액·승압제를 환자 개별 반응(예: CRT, 관류 지표)에 맞춰 적정화해야 합니다. 프로토콜은 출발점일 뿐, 병태생리를 이해하는 관찰력 있는 임상가의 판단이 최종 결정권을 가집니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41841954",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41841954/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000007115",
+            "url": "https://doi.org/10.1097/CCM.0000000000007115"
+          },
+          {
+            "label": "웹 — PubMed — The Effective Management of Shock (PMID 41841954, 서지·초록)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41841954/"
+          },
+          {
+            "label": "웹 — Critical Care Medicine (LWW) — 논문 페이지 (유료, HTTP 402)",
+            "url": "https://journals.lww.com/ccmjournal/abstract/10.1097/ccm.0000000000007115~the-effective-management-of-shock-moving-from-physiology-to?redirectionsource=fulltextview"
+          },
+          {
+            "label": "웹 — SCCM Podcast #569 — From Monitoring to Personalized Medicine (Michael Pinsky)",
+            "url": "https://www.sccm.org/communications/sccm-podcast/sccm-podcast-all-episodes/sccmpod-569-from-monitoring-to-personalized-medicine"
+          },
+          {
+            "label": "웹 — Pinsky et al. — Assessing tissue perfusion through the vascular waterfall lens (AJRCCM 초록)",
+            "url": "https://academic.oup.com/ajrccm/advance-article-abstract/doi/10.1093/ajrccm/aamag397/8746775?redirectedFrom=fulltext"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -12432,9 +12518,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-18",
+    "date": "2026-10-19",
     "outcome": "published",
-    "publishedId": "36322846"
+    "publishedId": "41841954"
   },
-  "updatedAt": "2026-10-18"
+  "updatedAt": "2026-10-19"
 }

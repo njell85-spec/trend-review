@@ -891,5 +891,16 @@
     "rerankPoolSize": 2,
     "fallbackReason": null,
     "lowConfidence": true
+  },
+  {
+    "pmid": "42637214",
+    "title": "Cognition, quality of life, and psychological outcomes in out-of-hospital cardia",
+    "date": "2026-10-19",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "pool_too_small",
+    "lowConfidence": true
   }
 ]
