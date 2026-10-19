@@ -101,6 +101,18 @@ test('★ 절을 하나도 못 얻으면 지어내지 말고 그 사실을 적�
   assert.match(html, /본문을 확보하지 못해/);
 });
 
+test('historical unverified coverage discloses the evidence gap without rewriting retained translation', () => {
+  const card = reviewCard({ coverage: 'unverified' });
+  const before = structuredClone(card);
+  const html = pub()._buildGuidelineCard(card);
+  assert.match(html, /전문 확보·열람 근거를 확인할 수 없습니다/);
+  assert.match(html, /기존 번역 내용은 보존했으며 전문 대조는 검증되지 않았습니다/);
+  assert.match(html, /첫 문단입니다/);
+  assert.match(html, /둘째 문단입니다/);
+  assert.doesNotMatch(html, /초록 범위|웹에서 본문을 확보/);
+  assert.deepEqual(card, before);
+});
+
 // ★ 구판 보존 (확정 ③-C). 2026-08-17 이전 리뷰는 reference 모드로 만들어져 sections 가
 //   없고 summary 만 있다. 새 축만 그리면 그 카드들의 내용이 화면에서 사라진다.
 test('★ 구판 리뷰 카드(sections 없음)는 내용을 잃지 않는다', () => {

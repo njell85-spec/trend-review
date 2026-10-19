@@ -8,7 +8,23 @@
 // 날짜는 처음부터 끝까지 'YYYY-MM-DD' 문자열로만 다룬다. Date 객체를 돌리면
 // 컨테이너 타임존과 KST 가 어긋나 하루가 밀린다 — 이 저장소가 이미 겪은 부류다.
 
-import { trackRunsOn } from './trackCadence.js';
+import { intervalFor, trackRunsOn } from './trackCadence.js';
+import { calendarDay } from './dates.js';
+
+// Daily consumption is recorded before the publisher renders these blocks.
+// On-demand publication changes published[] but deliberately leaves lastRun
+// alone, so a manual extra must not consume the next automatic daily slot.
+function lastSuccessfulRunDay(state) {
+  const run = state?.lastRun;
+  if (run?.outcome !== 'published') return null;
+  if (run.date != null) return calendarDay(run.date); // papers/reviews
+  // Guidelines record the date on the published entry, not on lastRun. Resolve
+  // only its explicit publishedId; updatedAt also changes on failure/observation.
+  if (run.publishedId == null || !Array.isArray(state?.published)) return null;
+  const entry = state.published.find((x) => [x?.id, x?.pmid, x?.sourceId]
+    .some((id) => id != null && String(id) === String(run.publishedId)));
+  return calendarDay(entry?.publishedAt);
+}
 
 /** 'YYYY-MM-DD' 에 일수를 더한다. UTC 정오를 기준으로 삼아 DST·타임존 밀림을 피한다. */
 function addDays(ymd, n) {
@@ -25,15 +41,23 @@ function addDays(ymd, n) {
  * ★ 격일을 **인덱스 패리티가 아니라 달력 패리티**로 바꿨다(2026-08-16 리뷰 B13).
  *   종전에는 `from`(오늘)부터 두 칸씩 세어서, 게이트가 보는 날과 하루씩 엇갈렸다.
  */
-export function nextRunDates({ from, days, mode = 'on', cadence = 'daily', sequential = false, track = null }) {
+export function nextRunDates({ from, days, mode = 'on', cadence = 'daily', sequential = false, track = null, state = null }) {
   if (mode === 'off') return [];
-  if (cadence === 'weekly') return [from];
+  const lastDay = lastSuccessfulRunDay(state);
+  const interval = cadence === 'weekly' ? 7 : intervalFor(track);
+  // Review's runtime gate also requires two intervals in alternate mode. This
+  // matters when the mode changed after a successful run on the other parity.
+  const minimumGap = track === 'reviews' && mode === 'alternate' ? interval * 2 : interval;
   const out = [];
   for (let i = 0; i < days; i += 1) {
     const d = addDays(from, i);
+    if (lastDay !== null && calendarDay(d) - lastDay < minimumGap) continue;
     // ★ 판정은 `trackRunsOn` **하나**가 한다 — 게이트가 부르는 것과 같은 함수다.
     //   여기서 따로 계산하면 화면이 "내일 나갑니다" 라고 해놓고 안 나가는 결함이 난다.
-    if (trackRunsOn(track ?? 'papers', d, { mode, sequential })) out.push(d);
+    if (trackRunsOn(track ?? 'papers', d, { mode, sequential })) {
+      out.push(d);
+      if (cadence === 'weekly') break;
+    }
   }
   return out;
 }
@@ -48,7 +72,7 @@ export function buildUpcoming({ from, days, tracks = [], sequential = false }) {
   const rows = [];
   for (const t of tracks) {
     const dates = nextRunDates({
-      from, days, mode: t.mode, cadence: t.cadence, sequential, track: t.key,
+      from, days, mode: t.mode, cadence: t.cadence, sequential, track: t.key, state: t.state,
     });
     // ★ 제목 없는 항목은 예고에 올리지 않는다. 화면에 **빈 줄**로 떠서 무엇을 지우는지
     //   무엇을 먼저 돌리는지 알 수 없게 된다(실측: 테스트 픽스처가 흘러들어와 빈 줄이 떴다).
