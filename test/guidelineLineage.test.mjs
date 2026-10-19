@@ -48,3 +48,41 @@ test('unknown date/version and same-year editions never auto supersede', () => {
   assert.equal(resolveSupersede({ published: [item('old', 2025)] }, { id: 'new', title: 'Shock focused update', organizationId: 'alpha' }, { orgs }).confident, false);
   assert.equal(resolveSupersede({ published: [item('old', 2025)] }, item('new', 2025), { orgs }).confident, false);
 });
+
+test('co-publication print dates and local publication timestamps are not edition evidence', () => {
+  const title = 'Ketamine analgo-sedation for mechanically ventilated critically ill adults: A rapid practice guideline';
+  const old = { id: 'pmid:39198198', title, pubDate: '2024 Oct', status: 'current' };
+  const newer = { id: 'pmid:39207913', title, pubDate: '2025 Aug 1', publishedAt: '2026-10-04' };
+  const result = resolveSupersede({ published: [old] }, newer, { orgs });
+  assert.equal(result.confident, false);
+  assert.equal(result.reason, 'candidate-year-unknown');
+  assert.deepEqual(result.transitions, []);
+  assert.equal(old.status, 'current');
+});
+
+test('focused updates stay related but cannot retire complete guidelines in either direction', () => {
+  const base = item('base', 2024);
+  const update = item('update', 2025, 'alpha', '2025 Focused Update: Shock Guideline');
+  const full = item('full', 2026);
+  for (const [prior, next] of [[base, update], [update, full]]) {
+    const result = resolveSupersede({ published: [prior] }, next, { orgs });
+    assert.equal(result.reason, 'partial-update-needs-review');
+    assert.deepEqual(result.transitions, []);
+  }
+});
+
+test('multiple title years require explicit edition metadata', () => {
+  const prior = item('prior', 2023);
+  const next = { id: 'new', title: '2024 Update to 2020 Shock Guidelines', organizationId: 'alpha' };
+  assert.equal(resolveSupersede({ published: [prior] }, next, { orgs }).confident, false);
+  assert.equal(resolveSupersede({ published: [prior] }, { ...next, editionYear: 2024 }, { orgs }).confident, true);
+});
+
+test('the same DOI cannot become a new edition solely through different title years', () => {
+  const prior = { ...item('prior', 2024), doi: '10.1234/SAME' };
+  const next = { ...item('next', 2025), doi: 'https://doi.org/10.1234/same' };
+  const result = resolveSupersede({ published: [prior] }, next, { orgs });
+  assert.equal(result.confident, false);
+  assert.equal(result.reason, 'same-doi-not-new-edition');
+  assert.deepEqual(result.transitions, []);
+});

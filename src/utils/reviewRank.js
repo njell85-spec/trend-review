@@ -1,4 +1,5 @@
 import { isManuallyPromoted } from './queueControl.js';
+import { isNarrativeReview } from './reviewQueue.js';
 
 /**
  * 리뷰(트랙3) 큐의 **정렬·필터 정본**.
@@ -20,10 +21,16 @@ import { isManuallyPromoted } from './queueControl.js';
  * ★★ `status` 가 **없으면 통과**시킨다. 리뷰 큐는 2026-08-17 까지 `status` 를 아예 안
  *   들고 있었고(실측: 397건 전원 무필드), 판정은 벌크로 나중에 붙는다. 없음을 격리로
  *   읽으면 필터를 붙이는 순간 **큐 397건이 통째로 화면에서 사라진다.**
- *   격리는 LLM 이 명시적으로 내린 `needsReview` 뿐이다.
+ *   `needsReview` 상태는 계속 제외한다. 상태가 없거나 queued 여도 문서 유형이
+ *   종설이 아니면 자동 발행에서 보류하며, 원본 큐 기록은 검토를 위해 보존한다.
+ *   명시적 수동 승인·승격은 문서 유형 필터를 우회한다.
  */
 export function publishableReviews(items) {
-  return (items ?? []).filter((x) => x?.status == null || x.status === 'queued');
+  return (items ?? []).filter((x) => {
+    if (!(x?.status == null || x.status === 'queued')) return false;
+    if (x.manualApproved === true || isManuallyPromoted(x)) return true;
+    return isNarrativeReview(x);
+  });
 }
 
 /** 수동 승격은 자동 필터를 우회한다 — 그 판정을 쓰는 곳과 같은 함수를 본다. */
@@ -45,7 +52,7 @@ const MANUAL_FLOOR = 1_000;
  */
 export function reviewRank(item) {
   const score = Number(item?.score) || 0;
-  if (isManuallyPromoted(item)) return MANUAL_FLOOR + score;
+  if (item?.manualApproved === true || isManuallyPromoted(item)) return MANUAL_FLOOR + score;
   const fit = item?.llmFit;
   if (fit?.keep === false) return -1_000 + score;
   if (!Number.isFinite(Number(fit?.score))) return score;

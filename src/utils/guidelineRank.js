@@ -35,3 +35,10 @@ export function guidelineRank(item) {
 export function sortByGuidelineRank(items) {
   return [...(items ?? [])].sort((a, b) => guidelineRank(b) - guidelineRank(a));
 }
+
+/** A stale queued status must not undo a negative fit verdict. Explicit human
+ * approval/promotion still wins, and the item remains available for review. */
+export function rankedPublishableGuidelines(items) {
+  return sortByGuidelineRank((items ?? []).filter((item) => item?.status === 'queued'
+    && (item.manualApproved === true || isManuallyPromoted(item) || item.llmFit?.keep !== false)));
+}

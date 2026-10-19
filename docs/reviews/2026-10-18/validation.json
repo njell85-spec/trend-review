@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-18T15:04:28.140Z",
+  "baseline": "f816ce2ab3f1f12f302bc2c48e9648fa8867c351",
+  "codeCommit": "9c525bd0037fffc4a2312a50de1a0a71c94cbe0c",
+  "unitTests": {
+    "tests": 957,
+    "pass": 957,
+    "fail": 0,
+    "skipped": 0
+  },
+  "specLint": {
+    "pass": true,
+    "warnings": 0
+  },
+  "localLinksChecked": 20,
+  "unresolvedLinks": [],
+  "automaticLoadingVerified": false,
+  "independentModelComprehensionVerified": false,
+  "logs": {
+    "audit-followup-unit.log": {
+      "path": "output/audit-followup-unit.log",
+      "sha256": "9bb9661d3e4d939f37e6878067ca8e4a1f31df157f0a46995f49d41dd2381cf2"
+    },
+    "audit-followup-focused.log": {
+      "path": "output/audit-followup-focused.log",
+      "sha256": "90f179ef17d1c3e1783952a1e5b002761e1289fda9234790eba8934fd99b20e0"
+    },
+    "audit-followup-spec.log": {
+      "path": "output/audit-followup-spec.log",
+      "sha256": "1fd3793419e0df5e120843417103b52e84630ebae640d15fce362177a7d2f7d7"
+    }
+  },
+  "mobile": "not completed: Chromium sandbox file-access error",
+  "contextReadback": "handoff-readback.json",
+  "previousCodeValidation": {
+    "codeCommit": "fb6aff91036ee5a1c34e71684d41b71d94111f06",
+    "unitTests": {
+      "tests": 956,
+      "pass": 956,
+      "fail": 0,
+      "skipped": 0
+    }
+  },
+  "focusedTests": {
+    "tests": 43,
+    "pass": 43,
+    "fail": 0
+  },
+  "historicalEvidence": "history-findings.json",
+  "independentReviewEvidence": {
+    "initialTarget": {
+      "code": "fb6aff9",
+      "documentation": "78296a6"
+    },
+    "missingEvidence": "Exact 90-test commands and raw logs",
+    "followupTarget": {
+      "code": "9c525bd",
+      "documentation": "2eef6bb"
+    },
+    "followupReportedConfirmedP0P1P2": 0,
+    "september18Limitation": "Independent reviewer did not obtain raw execution log; verified historical empty-collection early-return code only"
+  }
+}

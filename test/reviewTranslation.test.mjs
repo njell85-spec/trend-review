@@ -43,7 +43,7 @@ test('★ 리뷰 프롬프트가 요약을 금지하고 원문 확보를 지시�
 });
 
 test('★ _toCard 가 리뷰를 review 타입으로 내고 축만 싣는다', () => {
-  const card = agent()._toCard(doc, {
+  const card = agent()._toCard({ ...doc, fullText: 'Article body. '.repeat(20), fullTextSource: 'PMC' }, {
     title_ko: '중환자 기도관리', scope_ko: '성인 중환자',
     coverage: 'full-text',
     sections: [{ heading_ko: '서론', body_ko: '첫 문단\n둘째 문단' }, { heading_ko: '빈 절', body_ko: '  ' }],
@@ -302,8 +302,33 @@ test('★ 에스컬레이션 호출이 실패하면 첫 결과를 그대로 쓴�
 test('★ coverage=full-text 면 짧아도 게이트를 안 태운다 (전문 확보 카드를 트집잡지 않는다)', async () => {
   let calls = 0;
   const a = mkAgent(async () => { calls += 1; return reviewData(800, { coverage: 'full-text' }); });
-  await a.analyze(doc, { mode: 'review' });
+  await a.analyze({ ...doc, fullText: 'Article body. '.repeat(20), fullTextSource: 'PMC' }, { mode: 'review' });
   assert.equal(calls, 1, 'full-text 인데 재시도가 일어났다');
+});
+
+test('unsupported full-text claims cannot bypass escalation, cache policy or card coverage', async () => {
+  let calls = 0;
+  const a = mkAgent(async () => { calls += 1; return reviewData(800, { coverage: 'full-text' }); });
+  await a.cache.set(a._cacheKey(doc, 'review'), reviewData(800, { coverage: 'full-text' }));
+  const card = await a.analyze(doc, { mode: 'review' });
+  assert.equal(calls, 2, 'unsupported cached claim must not suppress bounded retry');
+  assert.equal(card.coverage, 'abstract-only');
+  assert.equal(card.coverageEvidence.modelReported, 'full-text');
+  assert.equal(card.coverageEvidence.suppliedTextChars, 0);
+  const empty = mkAgent(async () => reviewData(800, { coverage: 'full-text' }));
+  await empty.analyze(doc, { mode: 'review' });
+  assert.equal(empty.cache.store.size, 0, 'unsupported thin result must not become reusable cache');
+});
+
+test('web claims and displayed sources use the same existing trust policy', () => {
+  const untrusted = [{ label: 'unverified mirror', url: 'https://untrusted.example/article.pdf' }];
+  const a = agent();
+  const card = a._toCard(doc, reviewData(THICK, { coverage: 'web-augmented', webSources: untrusted }), 'review');
+  assert.equal(card.coverage, 'abstract-only');
+  assert.ok(card.sources.every(s => !s.url.includes('untrusted.example')));
+  assert.equal(card.coverageEvidence.trustedWebSourceCount, 0);
+  assert.equal(a._toCard(doc, reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }), 'review').coverage, 'web-augmented');
+  assert.equal(a._toCard({ ...doc, fullText: 'short', fullTextSource: 'PMC' }, reviewData(800, { coverage: 'full-text' }), 'review').coverage, 'abstract-only');
 });
 
 test('★ 리뷰 게이트는 guideline 모드에 안 샌다 — 웹 증거가 있으면 종전처럼 1회만 부른다', async () => {
@@ -335,9 +360,9 @@ test('★ 캐시에 남은 얇은 구버전 결과는 miss 취급하고 새로 �
 
 test('★ 두꺼운 캐시는 재사용한다 (LLM 을 다시 부르지 않는다)', async () => {
   let calls = 0;
-  const a = mkAgent(async () => { calls += 1; return reviewData(THICK); });
-  await a.cache.set(a._cacheKey(doc, 'review'), reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }));
+  const a = mkAgent(async () => { calls += 1; return reviewData(THICK, { coverage: 'web-augmented', webSources: WEB }); });
+  await a.analyze(doc, { mode: 'review' });
   const card = await a.analyze(doc, { mode: 'review' });
-  assert.equal(calls, 0, '캐시가 있는데 LLM 을 불렀다');
+  assert.equal(calls, 1, 'compatible cache must avoid a second model call');
   assert.equal(card.coverage, 'web-augmented');
 });

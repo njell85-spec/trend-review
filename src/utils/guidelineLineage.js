@@ -35,15 +35,21 @@ export function lineageKeyOf(candidate, { orgs } = {}) {
 function yearOf(item) {
   const explicit = item?.versionYear ?? item?.editionYear;
   if (/^(?:19|20)\d{2}$/.test(String(explicit ?? ''))) return Number(explicit);
-  const titleYear = String(item?.title ?? '').match(/\b((?:19|20)\d{2})\b/)?.[1];
-  if (titleYear) return Number(titleYear);
-  for (const value of [item?.officialPublishedAt, item?.publishedAt, item?.pubDate, item?.lastModified]) {
-    const year = String(value ?? '').match(/\b((?:19|20)\d{2})\b/)?.[1];
-    if (year) return Number(year);
-  }
-  return null;
+  const years = [...new Set(String(item?.title ?? '').match(/\b(?:19|20)\d{2}\b/g) ?? [])];
+  // Print, online, site-publication and modification dates are not edition years.
+  // Co-publications can have different print years (PMIDs 39198198/39207913).
+  // Multiple title years need review unless an explicit edition is supplied.
+  return years.length === 1 ? Number(years[0]) : null;
 }
 function idOf(item) { return item?.id ?? (item?.pmid ? `pmid:${item.pmid}` : item?.sourceId); }
+function doiOf(item) {
+  return String(item?.doi ?? '').trim().toLowerCase().replace(/^(?:https?:\/\/(?:dx\.)?doi\.org\/|doi:\s*)/, '');
+}
+
+function isPartialUpdate(item) {
+  return /\bfocused[\s-]+update\b|\baddendum\b|\bcorrigendum\b|\berratum\b/i.test(String(item?.title ?? ''))
+    || /^(?:focused[- ]update|addendum|corrigendum|erratum)$/i.test(String(item?.documentType ?? ''));
+}
 
 export function resolveSupersede(state, candidate, { orgs } = {}) {
   const key = lineageKeyOf(candidate, { orgs });
@@ -51,6 +57,12 @@ export function resolveSupersede(state, candidate, { orgs } = {}) {
   const all = [...(state?.queue ?? []), ...(state?.published ?? [])];
   const same = all.filter((item) => idOf(item) !== idOf(candidate) && lineageKeyOf(item, { orgs }) === key);
   if (!same.length) return { supersedes: [], transitions: [], reason: 'no-matching-lineage', confident: false };
+  const doi = doiOf(candidate);
+  if (doi && same.some(item => doiOf(item) === doi)) {
+    return { supersedes: [], transitions: [], reason: 'same-doi-not-new-edition', confident: false };
+  }
+  // A shared topic does not prove a partial update replaces the whole document.
+  if ([candidate, ...same].some(isPartialUpdate)) return { supersedes: [], transitions: [], reason: 'partial-update-needs-review', confident: false };
   if (!candidateYear) return { supersedes: [], transitions: [], reason: 'candidate-year-unknown', confident: false };
   if (same.some((item) => !yearOf(item))) return { supersedes: [], transitions: [], reason: 'prior-year-unknown', confident: false };
   if (same.some((item) => yearOf(item) === candidateYear)) return { supersedes: [], transitions: [], reason: 'same-year-ambiguous', confident: false };

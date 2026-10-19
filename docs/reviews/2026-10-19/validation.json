@@ -1,0 +1,260 @@
+{
+  "codeCommit": "2f20d6cc6b1125aeb70a19de24e4a219a9aea7de",
+  "runtime": "v24.16.0",
+  "tests": {
+    "tests": 971,
+    "pass": 971,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMs": 71631.7194
+  },
+  "focused": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "durationMs": 633.5188
+  },
+  "specLint": {
+    "groups": 6,
+    "files": 80,
+    "warnings": 0
+  },
+  "preservedHistoricalArtifacts": true,
+  "localLinks": [
+    {
+      "from": "AGENTS.md",
+      "target": "HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "AGENTS.md",
+      "target": "CLAUDE.md",
+      "exists": true
+    },
+    {
+      "from": "AGENTS.md",
+      "target": "REPORT_SPEC.md",
+      "exists": true
+    },
+    {
+      "from": "AGENTS.md",
+      "target": "docs/HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "CLAUDE.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "REPORT_SPEC.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-19/cache-review.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-19/validation.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-19/selection-followup.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-19/followup-evidence.json",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-18/selection-quality.md",
+      "exists": true
+    },
+    {
+      "from": "HANDOFF.md",
+      "target": "docs/reviews/2026-10-18/history-findings.json",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "../../../scripts/audit-selection-followup.mjs",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "followup-evidence.json",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "cache-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "../../../HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/selection-followup.md",
+      "target": "../../HANDOFF.md",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/validation.md",
+      "target": "validation.json",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/validation.md",
+      "target": "cache-review-evidence.json",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/cache-review.md",
+      "target": "../../../test/analysisEvidenceCache.test.mjs",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/cache-review.md",
+      "target": "cache-review-evidence.json",
+      "exists": true
+    },
+    {
+      "from": "docs/reviews/2026-10-19/cache-review.md",
+      "target": "validation.md",
+      "exists": true
+    }
+  ],
+  "logs": [
+    {
+      "path": "output/deep-followup-focused.log",
+      "sha256": "4720036722485fe6148dff10d49005e87c06e7e190549689e970e64643bb1e6d"
+    },
+    {
+      "path": "output/deep-followup-focused-final.log",
+      "sha256": "661fa3f94b89e4df42481a99ca2247012e1ed918d1b3d18cc32a184df56eb55d"
+    },
+    {
+      "path": "output/deep-followup-unit.log",
+      "sha256": "4c94b30dd46a3a607629d2ebe8d6ab489a053ab11575b54144bc66b490352184"
+    },
+    {
+      "path": "output/deep-followup-spec.log",
+      "sha256": "1fd3793419e0df5e120843417103b52e84630ebae640d15fce362177a7d2f7d7"
+    },
+    {
+      "path": "output/cache-review-red.log",
+      "sha256": "59acb22f005b09ffbd6620a3d97d14e67ee799981a907cca886716575b54e517"
+    },
+    {
+      "path": "output/cache-review-focused-final.log",
+      "sha256": "d961a02603eb1f8a146cbdeb91f18d68b57b387d0e4c33685c7b775e2c10cbb3"
+    },
+    {
+      "path": "output/cache-review-unit-final.log",
+      "sha256": "a6a058e75611c1cf5bb97f64668374b2313eed719c0ad47508c79fba85343475"
+    },
+    {
+      "path": "output/cache-review-spec-final.log",
+      "sha256": "1fd3793419e0df5e120843417103b52e84630ebae640d15fce362177a7d2f7d7"
+    }
+  ],
+  "limitations": [
+    "Post-fix independent review covered 18 synthetic cases and 5 new regressions, not a full-suite rerun. Browser viewport verification remains unperformed.",
+    "Domain allowlisting is not proof of retrieval or article identity; generated evidence records webRetrievalVerified=false.",
+    "Cache v6/ep1 does not read or delete legacy keys; first-use cache misses can increase.",
+    "New-process file readback does not demonstrate automatic loading or independent model comprehension.",
+    "Actual article retrieval, identity, completeness and clinical accuracy remain unverified; cache fingerprints are not signed retrieval receipts or authentication against complete record forgery."
+  ],
+  "remoteVerification": {
+    "pr": 165,
+    "state": "OPEN",
+    "draft": true,
+    "head": "5dc5d166b9a45be9c2d0841913a53c8c9664aece",
+    "main": "f816ce2ab3f1f12f302bc2c48e9648fa8867c351",
+    "originalMainClean": true
+  },
+  "previousPhase": {
+    "codeCommit": "f35563ccdaa0ac790b7b7e5ec008c5eb9ab48cbb",
+    "tests": {
+      "tests": 966,
+      "pass": 966,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "durationMs": 68953.6068
+    },
+    "focused": {
+      "tests": 101,
+      "pass": 101,
+      "fail": 0,
+      "durationMs": 1978.355
+    }
+  },
+  "intentionalRed": {
+    "baseline": "bc3837b",
+    "tests": 15,
+    "pass": 10,
+    "fail": 5
+  },
+  "independentReview": {
+    "code": "f35563c",
+    "handoff": "bc3837b",
+    "newTestsPassed": 9,
+    "p2": "Cached abstract-derived output attributed to new PMC input",
+    "authorReproduced": true,
+    "postFixIndependentSignoff": true,
+    "postFixReview": {
+      "code": "2f20d6cc6b1125aeb70a19de24e4a219a9aea7de",
+      "head": "fe0d8f18da803c74d61346b38846388e5f3b4562",
+      "syntheticCases": 18,
+      "repositoryRegressionSubset": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0
+      },
+      "p2ClosedWithinTestedScope": true,
+      "newConfirmedP0P1P2": 0,
+      "fullSuiteRerun": false,
+      "authorFocusedAndFullLogsHashCheckedOnly": true,
+      "evidenceFiles": [
+        {
+          "name": "tr-cache-recheck-20261019.mjs",
+          "sha256": "b9ef97fdbc82e04c8c751086c82d6d03915e2bb01803c6ba804d5b46b709cd15"
+        },
+        {
+          "name": "tr-cache-recheck-20261019.json",
+          "sha256": "4a789b7b94ae23e26384a21128f5ee50aeeaf51f4c5a22208c651657613663b4"
+        },
+        {
+          "name": "tr-cache-recheck-20261019-verification.json",
+          "sha256": "51811da315a727ad513b083ee93ec30c79036434db413f0860db64d51cc57b8c"
+        }
+      ]
+    }
+  },
+  "docsOnlyClosure": {
+    "testsRerun": false,
+    "sourceChanged": false,
+    "published": false,
+    "publicationBaseline": "5dc5d166b9a45be9c2d0841913a53c8c9664aece"
+  }
+}

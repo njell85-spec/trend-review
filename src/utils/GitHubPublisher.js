@@ -16,7 +16,7 @@ import { mergePages, splitPages, ensureTowerTone } from './pageSplit.js';
 import { ensureArchiveStatus } from './archiveStatus.js';
 import { impactFactorLabel } from './journalMeta.js';
 import { buildUpcoming } from './upcomingSchedule.js';
-import { sortByGuidelineRank } from './guidelineRank.js';
+import { rankedPublishableGuidelines } from './guidelineRank.js';
 import { rankedPublishableReviews } from './reviewRank.js';
 import { cadenceFor } from './trackCadence.js';
 import { consumedIds, withoutConsumed } from './trackQueue.js';
@@ -272,7 +272,8 @@ export class GitHubPublisher {
       ? `<a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed ${esc(pmid)}</a>`
       : (srcUrl
         ? `<a href="${esc(srcUrl)}" target="_blank" rel="noopener" class="lnk">원문 (발행기관)</a>`
-        : `<a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed</a>`);
+        : (isSyn ? '<span class="lnk">출처: 위 문헌별 링크</span>'
+          : `<a href="${esc(pmurl)}" target="_blank" rel="noopener" class="lnk">PubMed</a>`));
     const doi = paper.doi ?? '';
     const doiLink = doi ? ` · <a href="https://doi.org/${esc(doi)}" target="_blank" rel="noopener" class="lnk">DOI</a>` : '';
 
@@ -760,7 +761,7 @@ export class GitHubPublisher {
     //   여기서 따로 정렬하면 LLM 셀렉이 붙은 뒤 화면과 게이트가 서로 다른 순서를 보게 된다
     //   (결함 B2 와 같은 부류라 같은 자리에서 막는다).
     const publishableGuidelines = guidelines?.queue
-      ? { ...guidelines, queue: sortByGuidelineRank(guidelines.queue.filter((x) => x?.status === 'queued')) }
+      ? { ...guidelines, queue: rankedPublishableGuidelines(guidelines.queue) }
       : guidelines;
     // ★ 리뷰 예고도 **픽과 같은 함수**로 걸러 정렬한다 (2026-08-17).
     //   종전에는 큐 배열을 통째로 그렸다 — 그때는 픽도 배열 머리였으니 우연히 일치했다.

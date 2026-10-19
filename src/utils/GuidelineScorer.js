@@ -1,4 +1,5 @@
 import { matchOrganization } from './guidelineOrgs.js';
+import { topicTermMatches } from './topicTerms.js';
 
 function text(value) {
   return (Array.isArray(value) ? value.join(' ') : String(value ?? ''))
@@ -10,7 +11,7 @@ function consumeTerms(value, terms) {
   let matched = false;
   for (const term of [...terms].sort((a, b) => b.length - a.length)) {
     const needle = text(term).trim();
-    if (!needle || !remaining.includes(needle)) continue;
+    if (!topicTermMatches(remaining, needle)) continue;
     matched = true;
     remaining = remaining.split(needle).join(' ');
   }
@@ -63,12 +64,12 @@ function scopeScore(candidate, policy) {
   return score;
 }
 
-export function scoreGuideline(candidate, { orgs, interests }) {
+export function scoreGuideline(candidate, { orgs, interests, now = new Date() }) {
   const match = matchOrganization(candidate, orgs);
   const organization = match && orgs.organizations.find((org) => org.id === match.organizationId);
   const authority = organization?.authorityScore ?? 0;
   const topic = topicScore(candidate, interests);
-  const recency = recencyScore(candidate.pubDate);
+  const recency = recencyScore(candidate.pubDate, new Date(now));
   const scope = scopeScore(candidate, orgs.policy);
   const confidence = confidenceScore(candidate);
   const policy = orgs.policy;

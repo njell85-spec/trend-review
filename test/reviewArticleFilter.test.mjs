@@ -33,6 +33,7 @@ const REAL_REVIEWS = [
   'Current standard of care for septic shock.',
   'Traumatic brain injury management in the intensive care unit: standard of care and knowledge gaps.',
   'Syncope.',
+  'The Effective Management of Shock: Moving From Physiology to Guidelines to Personalized Medicine.',
 ];
 
 test('★ 합의문·지침류는 리뷰가 아니다', () => {
@@ -75,7 +76,9 @@ async function setup(queue) {
   }));
   const cf = path.join(dir, 'control_state.json');
   await writeFile(cf, JSON.stringify({ tracks: {} }));
-  return { o: new TrendReviewOrchestrator({ queueReviewsPath: qf, controlStatePath: cf }), qf };
+  const o = new TrendReviewOrchestrator({ queueReviewsPath: qf, controlStatePath: cf });
+  o.collector.fetchArticles = async () => [];
+  return { o, qf };
 }
 
 test('★ 저수지 머리에 합의문이 있으면 건너뛰고 진짜 종설을 발행한다', async () => {
@@ -89,8 +92,8 @@ test('★ 저수지 머리에 합의문이 있으면 건너뛰고 진짜 종설�
   assert.equal(r.item.pmid, 'good', '합의문이 그대로 발행됐다');
 
   const saved = JSON.parse(await readFile(qf, 'utf8'));
-  assert.deepEqual(saved.rejected.map((x) => x.pmid), ['bad1', 'bad2'], '뺀 것이 rejected 에 안 남았다');
-  assert.ok(saved.rejected[0].rejectedReason, '뺀 이유가 안 남았다');
+  assert.deepEqual(saved.queue.map((x) => x.pmid), ['bad1', 'bad2'], '검토할 지침을 삭제하면 안 된다');
+  assert.deepEqual(saved.rejected, [], '제목 필터만으로 영구 배제하면 안 된다');
   assert.deepEqual(saved.published.map((x) => x.pmid), ['good']);
 });
 
@@ -99,7 +102,8 @@ test('★ 저수지가 전부 합의문이면 발행하지 않는다 (억지로 
   const r = await o._stageReview('2026-08-17');
   assert.equal(r.outcome, 'empty');
   const saved = JSON.parse(await readFile(qf, 'utf8'));
-  assert.equal(saved.queue.length, 0);
+  assert.equal(saved.queue.length, NOT_REVIEWS.length);
+  assert.equal(saved.rejected.length, 0);
   assert.equal(saved.published.length, 0, '리뷰가 아닌 것을 발행했다');
 });
 

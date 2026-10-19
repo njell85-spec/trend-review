@@ -117,7 +117,7 @@ jobs:
       - name: Commit daily state (papers + guideline gate + archive/video)
         run: |
           git add output/selected_papers.json
-          for f in output/selected_guidelines.json output/analysis_archive.json output/video_log.json; do
+            for f in output/selected_guidelines.json output/analysis_archive.json output/video_log.json output/queue_papers.json output/queue_reviews.json; do
             [ -f "$f" ] && git add "$f" || true
           done
           git diff --staged --quiet \

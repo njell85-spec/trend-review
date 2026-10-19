@@ -1,0 +1,438 @@
+{
+  "baseline": "5dc5d166b9a45be9c2d0841913a53c8c9664aece",
+  "snapshotDate": "2026-10-18",
+  "limitations": [
+    "Current retained snapshot, not complete historical candidate pools.",
+    "Stored topic tags and model coverage claims are not independent clinical adjudication.",
+    "No holdout, clinical gold standard, population omission rate or new LLM ranking is claimed.",
+    "Current filter replay does not establish the historical cause of an absent ledger entry."
+  ],
+  "inputs": [
+    {
+      "path": "output/selected_papers.json",
+      "sha256": "7052212153139b6e59cf67398dd8f0e2d436b04610be752137cf8b331d179a48"
+    },
+    {
+      "path": "output/selected_guidelines.json",
+      "sha256": "e46ca31916219a146ec5c01b5d74ae64d01ac8813913ded3e35ba3438f43e922"
+    },
+    {
+      "path": "output/queue_reviews.json",
+      "sha256": "c6ebff2247696758414a0ed96bf4171d43837c7de81fb3af7cd350dc4844e28f"
+    },
+    {
+      "path": "experiments/guideline-census.json",
+      "sha256": "ca2fb8eaeb177a64fa9511bae6cf8ae22314a36e849109d9871d0bf00415faa7"
+    }
+  ],
+  "counts": {
+    "papers": 105,
+    "guidelines": 75,
+    "reviews": 62
+  },
+  "topics": {
+    "papers": {
+      "unknown": 48,
+      "resp_airway": 17,
+      "sepsis_shock": 9,
+      "cardiac_resus": 30,
+      "infection": 1
+    },
+    "reviewsPublished": {
+      "cardiac_resus": 25,
+      "sepsis_shock": 7,
+      "resp_airway": 14,
+      "neuro": 7,
+      "infection": 5,
+      "vascular_gi_other": 1,
+      "trauma": 2,
+      "general_em_ccm": 1
+    },
+    "reviewsNext20": {
+      "unknown": 13,
+      "cardiac_resus": 5,
+      "infection": 1,
+      "endo_metabolic": 1
+    }
+  },
+  "rationale": {
+    "papersWithSelectionMode": 62,
+    "guidelinesWithFitReason": 61,
+    "reviewsWithFitReason": 60
+  },
+  "coverage": {
+    "distribution": {
+      "unknown": 2,
+      "full-text": 13,
+      "abstract-only": 34,
+      "web-augmented": 13
+    },
+    "inconsistentClaims": [
+      {
+        "pmid": "36322846",
+        "title": "Noninvasive Respiratory Support for Adults with Acute Respiratory Failure.",
+        "coverage": "full-text",
+        "source": "abstract-only",
+        "untrustedWebHosts": [
+          "internetbookofemergencymedicine.com",
+          "jtd.amegroups.org"
+        ]
+      }
+    ]
+  },
+  "lineage": {
+    "collisionGroups": [
+      {
+        "key": "unknown|ketamine-analgo-sedation-mechanically-ventilated-critically-ill-adults-rapid-practice-from-saudi-critical-care-society-scandinavian-society-anesthesiology-intensive-care-medicine",
+        "ids": [
+          "pmid:39198198",
+          "pmid:39207913"
+        ]
+      },
+      {
+        "key": "aha|acc-clinical-performance-quality-measures-adults-with-heart-failure-report-american-college-cardiology-joint-committee-performance-measures",
+        "ids": [
+          "pmid:39127953",
+          "pmid:39116212"
+        ]
+      },
+      {
+        "key": "unknown|european-heart-rhythm-association-heart-rhythm-society-asia-pacific-heart-rhythm-society-latin-american-heart-rhythm-society-expert-catheter-surgical-ablation-atrial-fibrillation",
+        "ids": [
+          "pmid:38597857",
+          "pmid:39669937"
+        ]
+      },
+      {
+        "key": "esc|atrial-fibrillation-developed-collaboration-with-european-association-cardio-thoracic-surgery-eacts",
+        "ids": [
+          "pmid:39210723",
+          "pmid:39898766"
+        ]
+      },
+      {
+        "key": "aha|evolution-critical-care-cardiology-structure-care-delivery-training-research-paradigms-from",
+        "ids": [
+          "pmid:39945062",
+          "pmid:40249352"
+        ]
+      },
+      {
+        "key": "unknown|management-community-acquired-pneumonia-adults-by-french-infectious-disease-society-spilf-french-speaking-society-respiratory-diseases-splf-endorsed-by-french-intensive-care-society-srlf-french-microbiology-society-sfm-french-radiology-society-sfr-french-emergency-society-sfmu",
+        "ids": [
+          "pmid:40037948",
+          "pmid:40011168",
+          "pmid:40011104"
+        ]
+      },
+      {
+        "key": "esc|quality-life-heart-failure-heart-matter-heart-failure-association-european-association-preventive-cardiology",
+        "ids": [
+          "pmid:40070300",
+          "pmid:40070307"
+        ]
+      },
+      {
+        "key": "aha|acc-acep-naemsp-scai-patients-with-acute-coronary-syndromes-report-american-college-cardiology-joint-committee-clinical-practice",
+        "ids": [
+          "pmid:40014670",
+          "pmid:40013746"
+        ]
+      },
+      {
+        "key": "esc|use-left-ventricular-ejection-fraction-diagnosis-management-heart-failure-clinical-heart-failure-association-hfa-heart-failure-society-america-hfsa-japanese-heart-failure-society-jhfs",
+        "ids": [
+          "pmid:40268622",
+          "pmid:40260636"
+        ]
+      },
+      {
+        "key": "unknown|hrs-acc-guiding-principles-same-day-discharge-intracardiac-catheter-ablation-procedures",
+        "ids": [
+          "pmid:40272340",
+          "pmid:40272321"
+        ]
+      },
+      {
+        "key": "esc|optimal-approach-performing-reporting-computed-tomography-angiography-suspected-acute-pulmonary-embolism-clinical-working-group-pulmonary-circulation-right-ventricular-function-fleischner-society-association-acute-cardiovascular-care-acvc-european-association-cardiovascular-imaging-eacvi-endorsed-by-european-respiratory-society-ers-asian-society-thoracic-radiology-astr-european-society-thoracic-imaging-esti-society-thoracic-radiology-str",
+        "ids": [
+          "pmid:40459417",
+          "pmid:40457988"
+        ]
+      },
+      {
+        "key": "esc|antithrombotic-drugs-acute-coronary-syndromes-women-sex-adjusted-treatment-female-representation-randomised-clinical-trials-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-working-group-thrombosis",
+        "ids": [
+          "pmid:40388110",
+          "pmid:40390370"
+        ]
+      },
+      {
+        "key": "unknown|continuum-prevention-heart-failure-cardiovascular-medicine-joint-from-heart-failure-society-america-american-society-preventive-cardiology",
+        "ids": [
+          "pmid:41141606",
+          "pmid:40816577"
+        ]
+      },
+      {
+        "key": "esc|eacts-valvular-heart-disease",
+        "ids": [
+          "pmid:40878291",
+          "pmid:41287601",
+          "pmid:40878295"
+        ]
+      },
+      {
+        "key": "unknown|treatment-support-adults-at-end-life-intensive-care-by-ethics-section-divi-german-society-palliative-medicine-part-1-key-aspects-end-life-care-dying-intensive-care-part-2-therapeutic-measures-support-at-end-life-intensive-care",
+        "ids": [
+          "pmid:40879726",
+          "pmid:40879751"
+        ]
+      },
+      {
+        "key": "aha|part-6-pediatric-basic-life-support-american-academy-pediatrics-cardiopulmonary-resuscitation-emergency-cardiovascular-care",
+        "ids": [
+          "pmid:41122891",
+          "pmid:41122852"
+        ]
+      },
+      {
+        "key": "esicm|european-resuscitation-council-post-resuscitation-care",
+        "ids": [
+          "pmid:41117575",
+          "pmid:41123621"
+        ]
+      },
+      {
+        "key": "aha|comparative-analysis-american-college-cardiology-multisociety-european-society-cardiology-acute-coronary-syndrome-implications-advanced-practice-registered-nurses",
+        "ids": [
+          "pmid:41643132",
+          "pmid:40856359"
+        ]
+      },
+      {
+        "key": "unknown|integrated-health-technologies-heart-failure-from-heart-failure-society-america-american-association-heart-failure-nurses",
+        "ids": [
+          "pmid:41605780",
+          "pmid:41605748"
+        ]
+      },
+      {
+        "key": "aha|prevention-treatment-maternal-stroke-pregnancy-postpartum-from",
+        "ids": [
+          "pmid:41678811",
+          "pmid:41603019"
+        ]
+      },
+      {
+        "key": "aha|acc-accp-acep-chest-scai-shm-sir-svm-svn-evaluation-management-acute-pulmonary-embolism-adults-report-american-college-cardiology-joint-committee-clinical-practice",
+        "ids": [
+          "pmid:41712898",
+          "pmid:41712677"
+        ]
+      },
+      {
+        "key": "unknown|european-society-clinical-nutrition-metabolism-espen-clinical-nutrition-hydration-geriatrics",
+        "ids": [
+          "pmid:41820196",
+          "pmid:41810828"
+        ]
+      },
+      {
+        "key": "unknown|adequacy-three-compartment-parenteral-nutrition-bags-current-european-adults-simulation-study",
+        "ids": [
+          "pmid:41741300",
+          "pmid:42000278"
+        ]
+      },
+      {
+        "key": "sccm|clinical-criteria-definition-refractory-septic-shock-joint-delphi-consensus-from-european-society-intensive-care-medicine-esicm",
+        "ids": [
+          "pmid:41874620",
+          "pmid:41873857"
+        ]
+      },
+      {
+        "key": "idsa|why-did-not-endorse-community-acquired-pneumonia",
+        "ids": [
+          "pmid:41738241",
+          "pmid:41340493"
+        ]
+      },
+      {
+        "key": "aha|acc-ada-asn-prevention-detection-evaluation-management-cardiovascular-kidney-metabolic-syndrome-report-american-college-cardiology-joint-committee-clinical-practice",
+        "ids": [
+          "pmid:42265997",
+          "pmid:42263157"
+        ]
+      },
+      {
+        "key": "aha|use-predicted-risk-expected-benefit-guide-decision-making-cardiovascular-kidney-metabolic-syndrome-primary-prevention-cardiovascular-disease-from-american-college-cardiology",
+        "ids": [
+          "pmid:42263147",
+          "pmid:42263012"
+        ]
+      },
+      {
+        "key": "esc|workup-management-rhythm-disorders-myocarditis-inflammatory-cardiomyopathy-clinical-european-heart-rhythm-association-heart-failure-association-esc-working-group-myocardial-pericardial-diseases-european-association-preventive-cardiology-heart-rhythm-society-asian-pacific-heart-rhythm-society-latin-american-heart-rhythm-society",
+        "ids": [
+          "pmid:42663246",
+          "pmid:42669046"
+        ]
+      },
+      {
+        "key": "esc|heart-failure",
+        "ids": [
+          "pmid:42661420",
+          "web:www-escardio-org-guidelines-clinical-practice-guidelines-all-esc-practice-guidel"
+        ]
+      }
+    ],
+    "ketamine": {
+      "prior": {
+        "id": "pmid:39198198",
+        "title": "Ketamine analgo-sedation for mechanically ventilated critically ill adults: A rapid practice guideline from the Saudi Critical Care Society and the Scandinavian Society of Anesthesiology and Intensive Care Medicine.",
+        "status": "superseded",
+        "pubDate": "2024 Oct",
+        "fit": {
+          "version": 1,
+          "score": 8,
+          "keep": true,
+          "reason": "기계환기 중환자 케타민 진정 신속 지침, ICU 핵심",
+          "at": "2026-08-17T04:43:32.344Z"
+        }
+      },
+      "candidate": {
+        "id": "pmid:39207913",
+        "title": "Ketamine Analgo-sedation for Mechanically Ventilated Critically Ill Adults: A Rapid Practice Guideline from the Saudi Critical Care Society and the Scandinavian Society of Anesthesiology and Intensive Care Medicine.",
+        "status": "current",
+        "pubDate": "2025 Aug 1",
+        "publishedAt": "2026-10-04",
+        "fit": {
+          "version": 1,
+          "score": 9,
+          "keep": true,
+          "reason": "기계환기 케타민 진정 지침 — 중환자 핵심",
+          "at": "2026-08-17T04:43:32.344Z"
+        },
+        "supersedes": [
+          "pmid:39198198"
+        ]
+      },
+      "before": {
+        "supersedes": [
+          "pmid:39198198"
+        ],
+        "transitions": [
+          {
+            "id": "pmid:39198198",
+            "status": "superseded",
+            "supersededBy": "pmid:39207913"
+          }
+        ],
+        "reason": "newer-edition-2026",
+        "confident": true
+      },
+      "after": {
+        "supersedes": [],
+        "transitions": [],
+        "reason": "candidate-year-unknown",
+        "confident": false
+      },
+      "officialSource": "https://ssai.info/wp-content/uploads/acta-anaesthesiol-scand-2024-amer-ketamine-analgo-sedation-for-mechanically-ventilated-critically-ill-adults-a-rapid.pdf",
+      "sourceLocation": "Page 1 states co-publication in Acta Anaesthesiologica Scandinavica and Anesthesia & Analgesia."
+    },
+    "positiveFitGuard": {
+      "id": "example",
+      "status": "needsReview",
+      "lineageReview": true,
+      "lineageReason": "candidate-year-unknown",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "Relevant",
+        "at": "2026-10-18T00:00:00Z"
+      }
+    }
+  },
+  "priorityFollowup": {
+    "padis": {
+      "id": "39982143",
+      "title": "A Focused Update to the Clinical Practice Guidelines for the Prevention and Management of Pain, Anxiety, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU.",
+      "status": "queued",
+      "topic": null,
+      "fit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICU 통증·진정·섬망(PADIS) 갱신—중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "reviewQueueRank": 64,
+      "guidelineLedgerPresent": false,
+      "censusAxes": [
+        {
+          "axis": "review_core4_plus_ccm",
+          "minDate": "2021/08/17",
+          "maxDate": "2026/08/16"
+        },
+        {
+          "axis": "review_wide",
+          "minDate": "2021/08/17",
+          "maxDate": "2026/08/16"
+        }
+      ],
+      "currentTitleOnlyRegionReplay": {
+        "kept": [],
+        "dropped": [
+          {
+            "pmid": "39982143",
+            "title": "A Focused Update to the Clinical Practice Guidelines for the Prevention and Management of Pain, Anxiety, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU.",
+            "region": null,
+            "reason": "지역 판정 불가 (unknown)"
+          }
+        ]
+      },
+      "officialSource": "https://www.sccm.org/clinical-resources/guidelines/guidelines/focused-update-padis-guideline"
+    },
+    "nmbaFamily": [
+      {
+        "id": "pmid:41773929",
+        "title": "Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With Acute Respiratory Distress Syndrome.",
+        "status": "current",
+        "pubDate": "2026 Mar 1",
+        "publishedAt": "2026-08-21",
+        "fit": {
+          "version": 1,
+          "score": 10,
+          "keep": true,
+          "reason": "SCCM ARDS 신경근차단 지침, 중환자 핵심",
+          "at": "2026-08-17T04:43:32.344Z"
+        },
+        "supersedes": []
+      },
+      {
+        "id": "pmid:41773928",
+        "title": "Executive Summary: Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With Acute Respiratory Distress Syndrome.",
+        "status": "current",
+        "pubDate": "2026 Mar 1",
+        "publishedAt": "2026-09-11",
+        "fit": {
+          "version": 1,
+          "score": 9,
+          "keep": true,
+          "reason": "SCCM ARDS 신경근차단 지침, 중환자 핵심",
+          "at": "2026-08-17T04:43:32.344Z"
+        },
+        "supersedes": []
+      }
+    ],
+    "corticosteroids2024": {
+      "pmid": "38240492",
+      "anyLedgerPresent": false,
+      "officialSource": "https://www.sccm.org/clinical-resources/guidelines/guidelines/use-of-corticosteroids-in-sepsis-ards-cap",
+      "note": "Official publication January 2024, outside the current daily 30-day window and 2025-08-16 census guideline window; no omission rate inferred."
+    }
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "snapshot": "39363ae92a3d3fa72830077823a79165fa518748",
+  "codeBase": "b24377bd1d1d0a9088df76640b98a8c2143dae11",
+  "scope": "Retained candidates and targeted primary sources; not a complete historical pool or clinical gold standard.",
+  "counts": {
+    "papers": 106,
+    "guidelines": 76,
+    "reviews": 63,
+    "reviewEligibleBefore": 195,
+    "reviewEligibleAfter": 163
+  },
+  "blockedRankedCandidates": [
+    {
+      "pmid": "35587274",
+      "title": "Use of dexmedetomidine for sedation in mechanically ventilated adult ICU patients: a rapid practice guideline.",
+      "priorRank": 10,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "42113209",
+      "title": "Extracorporeal membrane oxygenation, acute kidney injury, fluid balance, and continuous renal replacement therapy: Acute Disease Quality Initiative (ADQI) and Extracorporeal Life Support Organization (ELSO) joint consensus conference.",
+      "priorRank": 19,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "41773929",
+      "title": "Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With Acute Respiratory Distress Syndrome.",
+      "priorRank": 25,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": true
+    },
+    {
+      "pmid": "39982186",
+      "title": "Society of Critical Care Medicine Guidelines for the Treatment of Heat Stroke.",
+      "priorRank": 30,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": true
+    },
+    {
+      "pmid": "38771364",
+      "title": "European Society of Intensive Care Medicine clinical practice guideline on fluid therapy in adult critically ill patients. Part 1: the choice of resuscitation fluids.",
+      "priorRank": 37,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "42257880",
+      "title": "International evidence-based recommendations for point-of-care lung ultrasound : 2025 focused update of the 2012 recommendations.",
+      "priorRank": 61,
+      "reason": "not-narrative-review:recommendations?",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "39982143",
+      "title": "A Focused Update to the Clinical Practice Guidelines for the Prevention and Management of Pain, Anxiety, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU.",
+      "priorRank": 63,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "39982182",
+      "title": "Society of Critical Care Medicine Guidelines on Adult Critical Care Ultrasonography: Focused Update 2024.",
+      "priorRank": 64,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": true
+    },
+    {
+      "pmid": "37707378",
+      "title": "Society of Critical Care Medicine Clinical Practice Guidelines for Rapid Sequence Intubation in the Critically Ill Adult Patient: Executive Summary.",
+      "priorRank": 80,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "37707379",
+      "title": "Society of Critical Care Medicine Clinical Practice Guidelines for Rapid Sequence Intubation in the Critically Ill Adult Patient.",
+      "priorRank": 81,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "40163133",
+      "title": "European Society of Intensive Care Medicine (ESICM) 2025 clinical practice guideline on fluid therapy in adult critically ill patients: part 2-the volume of resuscitation fluids.",
+      "priorRank": 83,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": true
+    },
+    {
+      "pmid": "37824153",
+      "title": "Red Blood Cell Transfusion: 2023 AABB International Guidelines.",
+      "priorRank": 85,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "39007570",
+      "title": "Executive Summary-Society of Critical Care Medicine Guideline and American Society of Health-System Pharmacists for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
+      "priorRank": 87,
+      "reason": "not-narrative-review:guidelines? and (?:American|European|British|Society)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "39007578",
+      "title": "Society of Critical Care Medicine and American Society of Health-System Pharmacists Guideline for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
+      "priorRank": 88,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "39557688",
+      "title": "Position paper on the physiology and nomenclature of dual circulation during venoarterial ECMO in adults.",
+      "priorRank": 93,
+      "reason": "not-narrative-review:position (statement|paper)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "40828463",
+      "title": "European Society of Intensive Care Medicine Clinical Practice Guideline on fluid therapy in adult critically ill patients: Part 3-fluid removal at de-escalation phase.",
+      "priorRank": 99,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "34677620",
+      "title": "Transfusion strategies in bleeding critically ill adults: a clinical practice guideline from the European Society of Intensive Care Medicine.",
+      "priorRank": 101,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "39961851",
+      "title": "ESICM consensus-based recommendations for the management of very old patients in intensive care.",
+      "priorRank": 113,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "38526578",
+      "title": "British societies guideline on the management of emergencies in implantable left ventricular assist device recipients in transplant centres.",
+      "priorRank": 119,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "37052436",
+      "title": "Guidelines for the Management of Adult Acute and Acute-on-Chronic Liver Failure in the ICU: Neurology, Peri-Transplant Medicine, Infectious Disease, and Gastroenterology Considerations.",
+      "priorRank": 124,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "36066598",
+      "title": "Artificial liver support in patients with liver failure: a modified DELPHI consensus of international experts.",
+      "priorRank": 127,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "40440268",
+      "title": "Platelet Transfusion: 2025 AABB and ICTMG International Clinical Practice Guidelines.",
+      "priorRank": 128,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "41686209",
+      "title": "Consensus on identifying and ranking ventilator asynchronies in invasively ventilated ICU patients: a modified Delphi study (SYNAPsE).",
+      "priorRank": 133,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "41874620",
+      "title": "Clinical criteria for the definition of refractory septic shock: a joint Delphi consensus from the Society of Critical Care Medicine (SCCM) and European Society of Intensive Care Medicine (ESICM).",
+      "priorRank": 135,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "41873857",
+      "title": "Clinical Criteria for the Definition of Refractory Septic Shock: A Joint Delphi Consensus from the Society of Critical Care Medicine (SCCM) and European Society of Intensive Care Medicine (ESICM).",
+      "priorRank": 136,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "41051555",
+      "title": "British societies guideline on the management of emergencies in patients on extracorporeal membrane oxygenation.",
+      "priorRank": 139,
+      "reason": "not-narrative-review:(?:clinical(?: practice)?|practice) guidelines?|guidelines?(?:\\s+(?:for|on|in|from|by|of)|\\s+(?:19|20)\\d{2}|\\s*[:.]?\\s*$|\\s*:)",
+      "alreadyGuidelinePublished": true
+    },
+    {
+      "pmid": "39847066",
+      "title": "The Brussels consensus for non-invasive ICP monitoring when invasive systems are not available in the care of TBI patients (the B-ICONIC consensus, recommendations, and management algorithm).",
+      "priorRank": 140,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "37607072",
+      "title": "Practice Standards for the Use of Multimodality Neuromonitoring: A Delphi Consensus Process.",
+      "priorRank": 147,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "34545440",
+      "title": "Critically ill cancer patient's resuscitation: a Belgian/French societies' consensus conference.",
+      "priorRank": 151,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "41528192",
+      "title": "Vasoactive Medications and the Microcirculation in Septic Shock: A Scoping Review.",
+      "priorRank": 162,
+      "reason": "not-narrative-review:scoping review",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "34787687",
+      "title": "Basic ultrasound head-to-toe skills for intensivists in the general and neuro intensive care unit population: consensus and expert recommendations of the European Society of Intensive Care Medicine.",
+      "priorRank": 163,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    },
+    {
+      "pmid": "38836697",
+      "title": "Optic Nerve Sheath Diameter Point-of-Care Ultrasonography Quality Criteria Checklist: An International Consensus Statement on Optic Nerve Sheath Diameter Imaging and Measurement.",
+      "priorRank": 180,
+      "reason": "not-narrative-review:consensus",
+      "alreadyGuidelinePublished": false
+    }
+  ],
+  "knownCases": {
+    "padis": {
+      "pmid": "39982143",
+      "reviewRank": 63,
+      "guidelinePresent": false
+    },
+    "ketamine": [
+      {
+        "pmid": "39198198",
+        "status": "superseded",
+        "supersededBy": "pmid:39207913"
+      }
+    ],
+    "coverage": [
+      {
+        "pmid": "36322846",
+        "coverage": "full-text",
+        "fullTextSource": "abstract-only"
+      }
+    ],
+    "promisingReview": [
+      {
+        "pmid": "38748265",
+        "title": "Management of hematological patients requiring emergency chemotherapy in the intensive care unit.",
+        "status": "needsReview",
+        "llmFit": {
+          "version": 1,
+          "score": 5,
+          "keep": false,
+          "reason": "혈액암 응급 항암 ICU 관리 — 다소 좁은 주제",
+          "at": "2026-08-17T07:31:06.571Z"
+        }
+      }
+    ],
+    "latestPaper": {
+      "pmid": "42637214",
+      "title": "Cognition, quality of life, and psychological outcomes in out-of-hospital cardia",
+      "date": "2026-10-19",
+      "topic": "cardiac_resus",
+      "selectionMode": "deterministic",
+      "rerankApplied": false,
+      "rerankPoolSize": 1,
+      "fallbackReason": "pool_too_small",
+      "lowConfidence": true
+    }
+  },
+  "inputs": [
+    {
+      "path": "output/queue_reviews.json",
+      "sha256": "7a76ecbf690981566ebd022c5e38506ae8d833e3b98d4210ae1a5137acd7d93d"
+    },
+    {
+      "path": "output/selected_guidelines.json",
+      "sha256": "0abc1b58b89945be64c3b17edb3fc0cbf4d7ec55a5f643fa6754aa0bbe417a97"
+    },
+    {
+      "path": "output/selected_papers.json",
+      "sha256": "bec372e4e882c8c6cfa9e36bf1f8bda46c0c2c1c91c4e3c925e311a1688a6401"
+    },
+    {
+      "path": "output/queue_papers.json",
+      "sha256": "70157f3d83a973360629ffb39739af7ab1df10637091300d9a0cd5b9e6cabbd4"
+    }
+  ],
+  "validation": [
+    {
+      "path": "output/release-selection-focused.log",
+      "passed": 54,
+      "failed": 0,
+      "sha256": "38c32212eae3d49a5aae3f3ff04671c3263d3acc9fd6edce2ef229dbba32c7fe"
+    },
+    {
+      "path": "output/release-empty-paper-focused.log",
+      "passed": 13,
+      "failed": 0,
+      "sha256": "976368ed8f089acfd8904c3724d40d64804b271131ee7d358863fb12a0b611c0"
+    },
+    {
+      "path": "output/release-selection-boundary.log",
+      "passed": 13,
+      "failed": 0,
+      "sha256": "3db10a4afc317a8d8c01768f685df816f7c534f16039119356ed0a8db0c9ad5d"
+    }
+  ],
+  "limits": [
+    "No live pipeline, paid model call, queue migration, prior-card regeneration or full-suite rerun.",
+    "Full-text completeness and accuracy are not established by this audit.",
+    "First test runs failed with sandbox temporary-directory atomic-rename EPERM; workspace TEMP/TMP runs passed."
+  ]
+}

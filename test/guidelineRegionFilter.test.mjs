@@ -94,6 +94,7 @@ async function runStage(candidates) {
   await writeFile(file, JSON.stringify(emptyState()));
   const o = new TrendReviewOrchestrator();
   o.guidelineListPath = file;
+  process.env.ENABLE_GUIDELINE_LLM_FIT = 'false'; // Region tests never call a live model.
   process.env.ENABLE_GUIDELINE_AUTOPUBLISH = 'false';   // 관찰 전용 — 발행은 안 한다
   o._guidelineInputs = async () => ({ candidates, manifest: { ptPmids: [] } });
   o.guideline = { analyze: async (paper) => ({ paper, org: 'X' }) };
@@ -114,6 +115,21 @@ test('★ 배선 확인 — 파이프라인을 실제로 돌리면 그 외 지�
   const all = [...state.queue, ...state.published].map((x) => x.pmid);
   assert.ok(all.includes('1'), '미국 지침이 사라졌다');
   assert.ok(!all.includes('2'), '브라질 지침이 큐에 들어왔다 — 지역 필터가 배선되지 않았다');
+  assert.equal(state.lastRun.manifest.scopeExclusions[0].pmid, '2');
+  assert.equal(state.lastRun.manifest.scopeExclusions[0].stage, 'region');
+});
+
+test('unknown-region and pediatric exclusions retain distinct candidate-level reasons', async () => {
+  const state = await runStage([
+    cand('unknown', 'Focused update to guidelines for adult ICU sedation'),
+    cand('child', 'American Heart Association guideline for children'),
+  ]);
+  const excluded = state.lastRun.manifest.scopeExclusions;
+  assert.deepEqual(excluded.map(x => [x.pmid, x.stage]), [['unknown', 'region'], ['child', 'pediatric']]);
+  assert.equal(excluded[0].region, null);
+  assert.match(excluded[0].reason, /unknown/);
+  assert.equal(state.queue.length, 0);
+  assert.equal(state.rejected.length, 0, 'policy exclusions must not become permanent rejections');
 });
 
 test('★ 유럽·한국도 실제 파이프라인에서 통과한다', async () => {

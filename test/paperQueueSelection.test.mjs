@@ -70,6 +70,38 @@ function harness(dir, { articles = {} } = {}) {
 
 const ART = (pmid, title) => ({ pmid, title, journal: 'NEJM', abstract: 'a'.repeat(200), publicationTypes: ['Journal Article'] });
 
+test('empty collection and validation keep independent tracks running without another refill', async () => {
+  for (const stage of ['collection', 'validation']) {
+    for (const publishOk of [true, false]) {
+      const dir = await sandbox([]);
+      const { o, called } = harness(dir);
+      o._stageCollect = async () => {
+        called.push('collect');
+        return { papers: stage === 'collection' ? [] : [ART('111', 'Candidate')], stats: {} };
+      };
+      o._refillPaperQueue = async () => { throw new Error('must not retry an empty collection'); };
+      o._stageGuideline = async () => { called.push('guideline'); return { pmid: 'g' }; };
+      o._saveGuideline = async () => { called.push('save-guideline'); };
+      o._stageReview = async () => ({ outcome: 'published', item: { pmid: 'r' },
+        rollback: async () => { called.push('rollback-review'); } });
+      o._stagePublish = async (papers, guideline, review) => {
+        called.push('publish');
+        assert.deepEqual(papers, []);
+        assert.equal(guideline.pmid, 'g');
+        assert.equal(review.pmid, 'r');
+        return publishOk ? 'https://pages/' : null;
+      };
+      const result = await o.run();
+      assert.equal(result.warning, stage === 'collection' ? 'No papers found' : 'All papers failed validation');
+      assert.equal(called.filter(x => x === 'collect').length, 1);
+      assert.ok(called.includes('guideline') && called.includes('publish'));
+      assert.equal(called.includes('validate1'), stage === 'validation');
+      assert.equal(called.includes('rollback-review'), !publishOk);
+      assert.ok(!called.includes('analyze') && !called.includes('pico') && !called.includes('fulltext'));
+    }
+  }
+});
+
 test('★★ 예정리스트 머리를 그대로 발행한다 (순서대로 뽑힌다)', async () => {
   const dir = await sandbox([
     { pmid: '111', title: '첫째', journal: 'NEJM', score: 9 },

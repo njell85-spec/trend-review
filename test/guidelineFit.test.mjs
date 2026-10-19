@@ -36,6 +36,39 @@ test('★ 안 맞는다고 rejected 로 내리지 않는다 — 되살릴 수 �
   assert.equal(out[0].status, 'needsReview');
 });
 
+test('positive fit cannot undo lineage review or superseded state; human promotion still wins', () => {
+  const inputs = [
+    item('1', { status: 'needsReview', lineageReview: true, lineageReason: 'candidate-year-unknown' }),
+    item('2', { status: 'superseded', supersededBy: 'new' }),
+    item('3', { lineageReview: true, promotedAt: '2026-10-19' }),
+  ];
+  const out = applyFitVerdicts(inputs, inputs.map((_, index) => ({ index, fit: 9, keep: true, reason: 'Relevant' }))).items;
+  assert.deepEqual(out.map(x => x.status), ['needsReview', 'superseded', 'queued']);
+  assert.ok(out.every(x => x.llmFit.score === 9));
+  assert.equal(out[0].lineageReason, 'candidate-year-unknown');
+  const negative = applyFitVerdicts([inputs[2]], [{ index: 0, fit: 0, keep: false, reason: 'No' }]).items[0];
+  assert.equal(negative.status, 'queued', 'a machine verdict cannot undo explicit human promotion');
+  assert.deepEqual(unscoredItems([inputs[2]]), [], 'human-promoted items need no automatic rescoring');
+});
+
+test('real guideline stage keeps ambiguous editions unpublishable after positive fit', async () => {
+  const state = await stageWith([
+    item('1', { title: 'Shock guideline', pubDate: '2024 Jan', organizationId: 'aha' }),
+    item('2', { title: 'Shock guideline', pubDate: '2025 Jan', organizationId: 'aha' }),
+  ], { score: async items => ({ ...applyFitVerdicts(items, items.map((_, index) => ({ index, fit: 9, keep: true, reason: 'Relevant' }))), batches: 1, failed: 0 }) });
+  assert.equal(state.published.length, 0);
+  assert.ok(state.queue.every(x => x.status === 'needsReview' && x.lineageReview));
+});
+
+test('explicit human promotion can publish an ambiguous edition without retiring its counterpart', async () => {
+  const state = await stageWith([
+    item('1', { title: 'Shock guideline', pubDate: '2024 Jan', organizationId: 'aha' }),
+    item('2', { title: 'Shock guideline', pubDate: '2025 Jan', organizationId: 'aha', promotedAt: '2026-10-19' }),
+  ], { score: async items => ({ ...applyFitVerdicts(items, items.map((_, index) => ({ index, fit: 9, keep: true, reason: 'Relevant' }))), batches: 1, failed: 0 }) });
+  assert.deepEqual(state.published.map(x => x.pmid), ['2']);
+  assert.notEqual(state.queue[0].status, 'superseded');
+});
+
 test('★ 빠뜨린 판정은 0점이 아니라 무판정이다', () => {
   const items = [item('1'), item('2')];
   const { items: out, scored } = applyFitVerdicts(items, [{ index: 0, fit: 8, keep: true, reason: 'ok' }]);

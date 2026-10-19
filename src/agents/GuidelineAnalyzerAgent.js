@@ -31,6 +31,26 @@ import { isTrustedSourceUrl } from '../utils/sourceTrust.js';
  */
 export const REVIEW_THIN_BODY_CHARS = 3000;
 
+// Bump when evidence/coverage or source-trust semantics change. Older keys and
+// values remain on disk but are never treated as compatible generation evidence.
+const EVIDENCE_POLICY_VERSION = 1;
+function fingerprint(value) {
+  const canonical = x => Array.isArray(x) ? x.map(canonical)
+    : x && typeof x === 'object' ? Object.fromEntries(Object.keys(x).filter(k => x[k] !== undefined).sort().map(k => [k, canonical(x[k])]))
+      : x ?? null;
+  return createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');
+}
+function sourceInput(doc) {
+  return {
+    pmid: doc.pmid, pmcid: doc.pmcid, doi: doc.doi, sourceId: doc.sourceId,
+    sourceUrl: doc.sourceUrl, oaUrl: doc.oaUrl, org: doc.org,
+    fullTextSource: doc.fullTextSource, fullTextLength: doc.fullTextLength,
+    fullTextTruncated: doc.fullTextTruncated, fullTextHash: fingerprint(doc.fullText),
+    augmentTextHash: fingerprint(doc.augmentText), augmentSources: doc.augmentSources,
+    docs: (doc.docs ?? []).map(sourceInput),
+  };
+}
+
 export class GuidelineAnalyzerAgent {
   constructor(options = {}) {
     this.provider = options.provider ?? 'anthropic';
@@ -334,15 +354,40 @@ export class GuidelineAnalyzerAgent {
    * 돌리면 mode 없는 키에서는 먼저 돌린 쪽 결과가 그대로 재사용된다.
    * PubMed 미등재(웹 출처)는 pmid 가 빈 문자열이라 sourceId 로 폴백한다.
    */
-  _cacheKey(doc, mode = 'guideline') {
+  _cacheInput(doc, mode) {
+    return {
+      policyVersion: EVIDENCE_POLICY_VERSION,
+      // Exact model input plus supplied provenance, including synthesis members.
+      inputFingerprint: fingerprint({ mode, prompt: this._prompt(doc, mode), sources: sourceInput(doc) }),
+      suppliedTextSha256: fingerprint(doc.fullText),
+      suppliedTextChars: typeof doc.fullText === 'string' ? doc.fullText.length : 0,
+      suppliedTextSource: doc.fullTextSource ?? null,
+    };
+  }
+
+  _cacheKey(doc, mode = 'guideline', input = this._cacheInput(doc, mode)) {
     const id = doc.pmid || doc.sourceId || doc.sourceUrl;
-    // 사용자가 본문을 얹은 경우 본문 지문을 키에 넣는다 — 안 넣으면 같은 PMID 를 초록만으로
-    // 한 번 돌린 뒤 본문을 넣어 다시 돌려도 **얇은 첫 결과가 그대로 재사용**된다.
-    // (본문 없는 기존 경로는 접미사가 붙지 않아 키가 종전과 완전히 동일 — 데일리 코어 무영향)
-    const supplied = doc.fullTextSource === 'user-supplied' && doc.fullText
-      ? `_ut${createHash('sha256').update(doc.fullText).digest('hex').slice(0, 12)}`
-      : '';
-    return `${mode}_v5_${this.provider}_${this.model}_${id}${supplied}`;
+    return `${mode}_v6_ep${EVIDENCE_POLICY_VERSION}_${this.provider}_${this.model}_${id}_${input.inputFingerprint}`;
+  }
+
+  _cacheEvidence(doc, data, mode, input = this._cacheInput(doc, mode)) {
+    return {
+      ...input, generatedAt: new Date().toISOString(), resultFingerprint: fingerprint(data),
+      ...(mode === 'review' ? {
+        modelReported: data?.coverage ?? null, coverage: this._reviewCoverage(doc, data),
+        trustedWebSourceCount: this._validWebSources(data).length,
+        // Domain allowlisting is not a WebFetch receipt or article identity check.
+        webRetrievalVerified: false,
+      } : {}),
+    };
+  }
+
+  _compatibleCache(record, doc, mode, input) {
+    if (record?.schemaVersion !== 1 || record.data === undefined || !record.evidence
+        || !Number.isFinite(Date.parse(record.evidence.generatedAt))) return false;
+    const expected = this._cacheEvidence(doc, record.data, mode, input);
+    return fingerprint({ ...record.evidence, generatedAt: null })
+      === fingerprint({ ...expected, generatedAt: null });
   }
 
   /**
@@ -589,8 +634,9 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
    */
   async analyze(doc, { mode = 'guideline' } = {}) {
     if (!doc) return null;
-    const cacheKey = this._cacheKey(doc, mode);
     try {
+      const input = this._cacheInput(doc, mode);
+      const cacheKey = this._cacheKey(doc, mode, input);
       const fetchFresh = async () => {
         this.logger.info(`${mode} analysis: ${doc.pmid || doc.sourceId} — ${doc.title?.slice(0, 60)}…`);
         const tool = this._tool(mode, doc);
@@ -630,12 +676,12 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         //   에스컬레이션 프롬프트로 **딱 1회** 더 시도한다. 두 번째도 안 되면 그대로
         //   발행한다 — 나쁜 카드보다 데일리가 늦어지거나 죽는 것이 나쁘다(불변식: 데일리
         //   코어 무영향). 재시도가 더 나쁘면(본문이 안 늘고 게이트도 못 풀면) 첫 결과를 쓴다.
-        if (mode === 'review' && this._needsReviewEscalation(result)) {
+        if (mode === 'review' && this._needsReviewEscalation(result, doc)) {
           this.logger.warn(`review gate: body ${this._reviewBodyChars(result)} chars, webSources ${this._validWebSources(result).length} — escalating once`);
           try {
             const second = await callOnce(this._prompt(doc, mode, { escalate: true }));
             const adoptSecond = this._reviewBodyChars(second) > this._reviewBodyChars(result)
-              || (!this._needsReviewEscalation(second) && this._needsReviewEscalation(result));
+              || (!this._needsReviewEscalation(second, doc) && this._needsReviewEscalation(result, doc));
             if (adoptSecond) result = second;
             else this.logger.warn('review escalation did not improve — keeping first result');
           } catch (e) {
@@ -671,27 +717,23 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
         return result;
       };
 
-      let data;
-      if (mode === 'review') {
-        // ★ 리뷰는 캐시를 직접 다룬다 — **얇은 결과를 캐시에 굳히지 않기 위해서다.**
-        //   getOrFetch 를 그대로 쓰면 에스컬레이션까지 하고도 얇았던 결과가 TTL 동안
-        //   재사용돼 다음 실행도 얇게 나온다. 읽기도 같은 기준: 구버전이 굳혀 둔 얇은
-        //   캐시는 miss 로 취급해 새로 시도한다. (guideline·reference 경로는 종전 그대로.)
-        // 게이트 기준(얇음 또는 웹 미사용)에 걸리는 결과는 캐시에 굳히지도, 캐시에서
-        // 재사용하지도 않는다 — 굳히면 다음 실행도 같은 실패를 그대로 재사용한다.
-        const cached = await this.cache.get(cacheKey);
-        if (cached !== null && cached !== undefined && !this._needsReviewEscalation(cached)) {
-          data = cached;
-        } else {
-          data = await fetchFresh();
-          if (data !== undefined && !this._needsReviewEscalation(data)) await this.cache.set(cacheKey, data);
-        }
+      let data, generationEvidence;
+      const cached = await this.cache.get(cacheKey);
+      if (this._compatibleCache(cached, doc, mode, input)
+          && (mode !== 'review' || !this._needsReviewEscalation(cached.data, doc))) {
+        data = cached.data;
+        generationEvidence = cached.evidence;
       } else {
-        // 데일리 코어(guideline)·reference 는 종전 경로 그대로 (불변식: 데일리 코어 무영향)
-        ({ data } = await this.cache.getOrFetch(cacheKey, fetchFresh));
+        data = await fetchFresh();
+        generationEvidence = this._cacheEvidence(doc, data, mode, input);
+        // Retain the bounded retry/thin-review policy. No legacy-key lookup,
+        // invalidation or deletion: incompatible values simply are not reused.
+        if (data !== undefined && (mode !== 'review' || !this._needsReviewEscalation(data, doc))) {
+          await this.cache.set(cacheKey, { schemaVersion: 1, data, evidence: generationEvidence });
+        }
       }
 
-      return this._toCard(doc, data, mode);
+      return this._toCard(doc, data, mode, generationEvidence);
     } catch (err) {
       // 분석 실패/거부 → null. 오케스트레이터가 조용히 건너뛴다(카드 미표시).
       this.logger.warn(`${mode} analysis failed — skipping this cycle`, { err: err.message });
@@ -779,9 +821,20 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
    * 그날 카드는 길이가 아니라 **webSources: 0** 이 증상이었다(웹을 아예 안 열었다).
    * coverage ≠ full-text 이고 (본문이 얇거나 **웹 증거가 없으면**) 게이트에 걸린다.
    */
-  _needsReviewEscalation(data) {
+  // Match the prompt's definition: full-text means supplied article text, while
+  // model-fetched article content uses web-augmented. Length is only an input
+  // presence check, not proof of completeness, identity or factual accuracy.
+  _reviewCoverage(doc, data) {
+    const claimed = data?.coverage;
+    const hasSuppliedText = typeof doc?.fullText === 'string' && doc.fullText.length > 100;
+    if (claimed === 'full-text' && hasSuppliedText) return 'full-text';
+    if (claimed === 'web-augmented' && this._validWebSources(data).length) return 'web-augmented';
+    return 'abstract-only';
+  }
+
+  _needsReviewEscalation(data, doc) {
     if (!data) return true;
-    if (data.coverage === 'full-text') return false;
+    if (this._reviewCoverage(doc, data) === 'full-text') return false;
     return this._reviewBodyChars(data) < REVIEW_THIN_BODY_CHARS
       || this._validWebSources(data).length === 0;
   }
@@ -832,7 +885,7 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       .filter(Boolean);
   }
 
-  _toCard(guideline, data, mode = 'guideline') {
+  _toCard(guideline, data, mode = 'guideline', generationEvidence = null) {
     const sources = [];
     const pmUrl = guideline.pubmedUrl ?? (guideline.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${guideline.pmid}/` : null);
     if (pmUrl) sources.push({ label: `PubMed — PMID ${guideline.pmid}`, url: pmUrl });
@@ -841,8 +894,9 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
     if (guideline.doi && guideline.doi.length > 3) sources.push({ label: `Journal (DOI) — ${guideline.doi}`, url: `https://doi.org/${guideline.doi}` });
     if (guideline.oaUrl) sources.push({ label: 'Open-access full text', url: guideline.oaUrl });
     for (const s of guideline.augmentSources ?? []) sources.push(s);
-    // Opus 가 웹검색으로 실제 사용한 권위 출처 (http/https 링크만 수용 — javascript: 등 주입 차단)
-    for (const s of data.webSources ?? []) {
+    // Use the same trust policy as escalation and augmented sections; retain
+    // user-selected sourceUrl above independently of the model's web citations.
+    for (const s of this._validWebSources(data)) {
       if (s?.url && /^https?:\/\//i.test(String(s.url).trim())) {
         sources.push({ label: `웹 — ${s.label ?? s.url}`, url: String(s.url).trim() });
       }
@@ -931,11 +985,12 @@ Provide Korean for all _ko fields; medical/drug/score names may remain in Englis
       };
     }
 
+    const reviewEvidence = mode === 'review' ? generationEvidence ?? this._cacheEvidence(guideline, data, mode) : null;
     const modeFields = mode === 'review'
       ? {
         sections: this._publishableReviewSections(data),
-        coverage: ['full-text', 'web-augmented', 'abstract-only'].includes(data.coverage)
-          ? data.coverage : 'abstract-only',
+        coverage: reviewEvidence.coverage,
+        coverageEvidence: reviewEvidence,
       }
       : mode === 'reference'
         ? { sourceNote_ko: data.sourceNote_ko ?? '' }
