@@ -101,6 +101,7 @@ test('선정 풀 상위 14편을 실제 score와 topic 필드로 저장한다', 
   const { dir, file } = await tempPath();
   const orch = new TrendReviewOrchestrator({ outputDir: dir, queuePapersPath: file });
   orch.filter.scorer = {
+    isExcludedJournal: () => false,
     scorePapers: (papers) => papers.map((paper) => ({
       pmid: paper.pmid, score: Number(paper.pmid), rawScore: Number(paper.pmid),
       primaryTopic: `topic-${paper.pmid}`,
@@ -115,7 +116,9 @@ test('선정 풀 상위 14편을 실제 score와 topic 필드로 저장한다', 
   assert.deepEqual(state.queue.slice(0, 2).map((x) => x.pmid), ['16', '15']);
   assert.deepEqual(state.queue[0], {
     pmid: '16', title: '제목 16', journal: '저널 16', score: 16,
-    topic: 'topic-16', addedAt: '2026-08-16', lowConfidence: false,
+    topic: 'topic-16', addedAt: '2026-08-16', lowConfidence: true,
+    selectionEvidence: { method: 'metadata-with-topic-cooldown', rawScore: 16,
+      cooldownPenalty: 0, llmCalled: false },
   });
 });
 

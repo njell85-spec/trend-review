@@ -62,6 +62,9 @@ export function fitBatches(items, size = 20) {
 }
 
 function clampScore(value) {
+  // Missing or malformed evidence is not a zero-fit judgment.
+  if (typeof value !== 'number' && typeof value !== 'string') return null;
+  if (typeof value === 'string' && value.trim() === '') return null;
   const n = Number(value);
   if (!Number.isFinite(n)) return null;
   return Math.min(10, Math.max(0, Math.round(n)));

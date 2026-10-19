@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "96600bc489c76e0657914d27dc02d9e270113cb4",
+  "freezeSha256": "c45145458531d357f4d20a864ca139bbd4df357addd6e2e289f932e5097e41ed",
+  "tracedAtUtc": "2026-10-19T10:29:50.657Z",
+  "sourceFileHashes": {
+    "output/selected_papers.json": "fb1ba9d13220a5484ac2b4737c799fd54cd6894ebc66b5dd73cde48b4c593f19",
+    "output/queue_reviews.json": "da224807d7807eb569e267450596bcdb9f7e3bdded4464d9bcc88126a7bed464",
+    "output/selected_guidelines.json": "1162e6ae3a4f20d90ea899b05306274bf9d8ff75c040ad32a2281e0253a9e67e",
+    "experiments/guideline-census.json": "ca2fb8eaeb177a64fa9511bae6cf8ae22314a36e849109d9871d0bf00415faa7",
+    "src/utils/reviewQueue.js": "f7bd0124a00c737a9b06841bbb33f6a96550812fc4d1e113aebc8e612564508f",
+    "src/utils/reviewRank.js": "047ef335cc6be8d5931b7d93dba3983b6a63430bb7bf26573d8fe38d64ca71b1",
+    "src/utils/guidelineRank.js": "36586cf07de32820d5b122e56f2a574f365fc85ad8a38597fa33a955ce402e27",
+    "src/utils/MetadataScorer.js": "cc9c0ccccd28e0e4000bc6aa7dbfdeedc6bd7688c7a154abebcde01d1135ea5d",
+    "src/utils/GuidelineScorer.js": "048295db99a92ac8055a775a112af166f9fef9b6af230e8c2cb334f7f97f6468",
+    "config/interests.json": "11d476b217b3bd43d0ce420783843728deab925e669e9be9dcdfc2c4dcc574fa",
+    "scripts/guideline-census.mjs": "7faaef8e557b46e9676fa03e0894c3efeaa56ef389c4eb0b520602c0fb48f242",
+    "scripts/build-review-queue.mjs": "e7125907e0e26d4be5553ce81c65c6bc4cba80fa3d0fb91d2f5d16340373ac32",
+    "src/orchestrator/TrendReviewOrchestrator.js": "739b6034517bc6a2f765079f146ce7e46a937ff11eb595abf750463001117e3f"
+  },
+  "scope": "Exact PMID checks in top-level output/*.json and experiments/*.json; focused retained-ledger/census/HTML tracing. No live collection, full raw historical pool, or model scoring.",
+  "counts": {
+    "newCases": 12,
+    "currentWindow": 5,
+    "datedReferences": 7,
+    "development": 6,
+    "holdout": 6,
+    "knownControlFamilies": 4,
+    "observedCurrentPublished": 2,
+    "currentUnknownAcquisition": 3,
+    "selectedPapers": 106,
+    "guidelines": {
+      "queue": 656,
+      "published": 76,
+      "rejected": 131
+    },
+    "reviews": {
+      "queue": 334,
+      "published": 63,
+      "rejected": 3
+    }
+  },
+  "censusSnapshot": {
+    "generatedAt": "2026-08-16T05:48:09.228Z",
+    "minDate": "2025/08/16",
+    "maxDate": "2026/08/16",
+    "note": "This historical census is not the current complete acquisition pool; review axes use a distinct historical window."
+  },
+  "cases": [
+    {
+      "caseId": "P1",
+      "pmid": "38869091",
+      "split": "development",
+      "evaluationStratum": "dated-reference",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "P2",
+      "pmid": "39565030",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "P3",
+      "pmid": "38869931",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "P4",
+      "pmid": "41159835",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "observed": {
+        "retainedRecords": [
+          {
+            "file": "output/selected_papers.json",
+            "section": "selected",
+            "index": 48,
+            "status": null,
+            "score": null,
+            "llmFit": null,
+            "publishedAt": "2026-08-16",
+            "selectionMode": "llm_reranked"
+          }
+        ],
+        "censusAxes": [],
+        "htmlReferences": [
+          "index.html"
+        ],
+        "acquisition": "retained downstream/census evidence exists; original full raw acquisition manifest unavailable",
+        "filter": "Reached downstream retained record; complete historical filter trace unavailable",
+        "rank": "Historical LLM rerank flag retained; competing raw pool and exact historical rank unavailable",
+        "publication": "reference present in published HTML; supported by retained publication record"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "G1",
+      "pmid": "39052901",
+      "split": "development",
+      "evaluationStratum": "dated-reference",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": false,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "G2",
+      "pmid": "38316735",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": false,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "G3",
+      "pmid": "42570093",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "G4",
+      "pmid": "37012484",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": false,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "R1",
+      "pmid": "39904062",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "R2",
+      "pmid": "39467606",
+      "split": "holdout",
+      "evaluationStratum": "current-window",
+      "observed": {
+        "retainedRecords": [
+          {
+            "file": "output/queue_reviews.json",
+            "section": "published",
+            "index": 23,
+            "status": "queued",
+            "score": 8,
+            "llmFit": {
+              "version": 1,
+              "score": 9,
+              "keep": true,
+              "reason": "ARDS(BMJ) 중환자 호흡 핵심 종설",
+              "at": "2026-08-17T07:31:06.571Z"
+            },
+            "publishedAt": "2026-09-08",
+            "selectionMode": null
+          }
+        ],
+        "censusAxes": [
+          "review_core4",
+          "review_core4_plus_ccm",
+          "review_wide"
+        ],
+        "htmlReferences": [
+          "reviews.html"
+        ],
+        "acquisition": "retained downstream/census evidence exists; original full raw acquisition manifest unavailable",
+        "filter": "Reached downstream retained record; complete historical filter trace unavailable",
+        "rank": "Stored fit and base score retained; exact historical competing-pool rank unavailable",
+        "publication": "reference present in published HTML; supported by retained publication record"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "R3",
+      "pmid": "42475841",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    },
+    {
+      "caseId": "R4",
+      "pmid": "39367501",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "observed": {
+        "retainedRecords": [],
+        "censusAxes": [],
+        "htmlReferences": [],
+        "acquisition": "unknown: no exact PMID retained in examined output and census",
+        "filter": "unknown historical filter outcome",
+        "rank": "unknown historical rank",
+        "publication": "no exact PMID reference in checked HTML; not evidence of a search miss"
+      },
+      "counterfactual": {
+        "kind": "title-only document-type check, no score or rank replay",
+        "isNarrativeReviewByTitle": true,
+        "limit": "Only applicable if independently known to be a review. A permissive title match is not proof of publication type or eligibility."
+      }
+    }
+  ],
+  "knownBoundaryControls": [
+    {
+      "pmids": [
+        "39982143"
+      ],
+      "label": "PADIS focused update belongs to guideline consideration; observed review reservoir is not a search miss.",
+      "records": [
+        {
+          "pmid": "39982143",
+          "track": "reviews",
+          "section": "queue",
+          "status": "queued",
+          "rankValue": 82.6,
+          "currentEligibleRank": 0,
+          "eligible": false
+        }
+      ]
+    },
+    {
+      "pmids": [
+        "39198198",
+        "39207913"
+      ],
+      "label": "Ketamine co-publications are one recommendation family, not newer versus superseded editions.",
+      "records": [
+        {
+          "pmid": "39198198",
+          "track": "guidelines",
+          "section": "queue",
+          "status": "needsReview",
+          "rankValue": 86.1653451123332,
+          "currentEligibleRank": 0,
+          "eligible": false
+        },
+        {
+          "pmid": "39207913",
+          "track": "guidelines",
+          "section": "published",
+          "status": "current",
+          "rankValue": 97.27510418310784,
+          "currentEligibleRank": null,
+          "eligible": null
+        }
+      ]
+    },
+    {
+      "pmids": [
+        "41773929",
+        "41773928"
+      ],
+      "label": "ARDS main guideline and executive summary are one family with distinct document roles.",
+      "records": [
+        {
+          "pmid": "41773929",
+          "track": "reviews",
+          "section": "queue",
+          "status": "queued",
+          "rankValue": 88,
+          "currentEligibleRank": 0,
+          "eligible": false
+        },
+        {
+          "pmid": "41773929",
+          "track": "guidelines",
+          "section": "published",
+          "status": "current",
+          "rankValue": 111.4,
+          "currentEligibleRank": null,
+          "eligible": null
+        },
+        {
+          "pmid": "41773928",
+          "track": "guidelines",
+          "section": "published",
+          "status": "current",
+          "rankValue": 100,
+          "currentEligibleRank": null,
+          "eligible": null
+        }
+      ]
+    },
+    {
+      "pmids": [
+        "38748265"
+      ],
+      "label": "Narrow ICU hematologic-emergency review has plausible clinical relevance; held fit judgment needs context, not automatic promotion.",
+      "records": [
+        {
+          "pmid": "38748265",
+          "track": "reviews",
+          "section": "queue",
+          "status": "needsReview",
+          "rankValue": -994,
+          "currentEligibleRank": 0,
+          "eligible": false
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Positive-only convenience sample cannot estimate precision, specificity, or recall.",
+    "Development/holdout split is stratified by track but not balanced for recency: only one holdout case is current.",
+    "No historical rank is invented from current helper outputs. No fetched abstract is fabricated from a clinical rationale.",
+    "No clinical text, queue, status, adoption, or publication history was changed.",
+    "Source verification is metadata/abstract level and partial for blocked publisher pages."
+  ]
+}

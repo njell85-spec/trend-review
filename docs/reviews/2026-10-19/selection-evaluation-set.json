@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "frozenAtUtc": "2026-10-19T10:25:51Z",
+  "baselineCommit": "96600bc489c76e0657914d27dc02d9e270113cb4",
+  "dateWindow": {
+    "from": "2023-01-01",
+    "through": "2026-10-19",
+    "purpose": "Purposive clinical relevance reference set, including dated references; not a current-acquisition recall sample."
+  },
+  "selectionRule": "Before inspecting repository outcomes for these IDs, choose four primary original research reports, four official society/multisociety normative documents and four clinical narrative reviews from public PubMed/journal/society sources. Cover five ER/ICU topic areas. Prefer decisions with concrete bedside consequences and include a narrow but practical ICU review. Accessible source discovery is a convenience constraint; no exhaustive search or random sampling is claimed.",
+  "splitRule": "Freeze two cases per track for development and two per track for holdout before code changes or repository outcome lookup. Development includes both dated and current examples; holdout is not balanced for age. Do not tune code from holdout identities/labels before patch freeze.",
+  "independenceLimits": [
+    "Earlier audit exposed other repository candidates; previously known cases are controls only.",
+    "Source-first selection is independent of these cases' current repository outcomes, not independent of general clinical knowledge or author judgment.",
+    "Twelve positive relevance labels cannot estimate overall selection precision or literature recall.",
+    "Dated cases outside configured acquisition windows are reference controls within the clinical-quality set, not evidence of current search omission."
+  ],
+  "cases": [
+    {
+      "caseId": "P1",
+      "pmid": "38869091",
+      "track": "paper",
+      "split": "development",
+      "title": "Noninvasive Ventilation for Preoxygenation during Emergency Intubation",
+      "publicationDate": "2024-06-20",
+      "topic": "respiratory-airway",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Multicenter randomized trial; procedural hypoxemia outcome, not proof of improved long-term survival.",
+        "clinicalRationale": "NIV versus oxygen mask before emergency intubation; directly actionable airway preparation.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Primary PREOXI report; exclude correspondence and later commentary.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38869091/",
+        "https://doi.org/10.1056/NEJMoa2313680"
+      ],
+      "evaluationStratum": "dated-reference"
+    },
+    {
+      "caseId": "P2",
+      "pmid": "39565030",
+      "track": "paper",
+      "split": "holdout",
+      "title": "Antibiotic Treatment for 7 versus 14 Days in Patients with Bloodstream Infections",
+      "publicationDate": "2025-03-13",
+      "topic": "infection-antimicrobials",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Randomized noninferiority trial; interpret prespecified exclusions and noninferiority margin before generalization.",
+        "clinicalRationale": "Antibiotic duration in hospitalized bloodstream infection is a common ICU stewardship decision.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Primary BALANCE report; online publication 2024-11-20 predates print.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39565030/",
+        "https://doi.org/10.1056/NEJMoa2404991"
+      ],
+      "evaluationStratum": "dated-reference"
+    },
+    {
+      "caseId": "P3",
+      "pmid": "38869931",
+      "track": "paper",
+      "split": "holdout",
+      "title": "Liberal or Restrictive Transfusion Strategy in Patients with Traumatic Brain Injury",
+      "publicationDate": "2024-08-22",
+      "topic": "neuro-trauma",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Randomized trial; six-month unfavorable neurologic outcome difference was not statistically significant; confidence interval does not establish equivalence.",
+        "clinicalRationale": "Hemoglobin threshold in moderate/severe TBI addresses a consequential ICU choice.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Primary HEMOTION report; online publication 2024-06-13; secondary analyses are not a replacement edition.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38869931/",
+        "https://doi.org/10.1056/NEJMoa2404360"
+      ],
+      "evaluationStratum": "dated-reference"
+    },
+    {
+      "caseId": "P4",
+      "pmid": "41159835",
+      "track": "paper",
+      "split": "development",
+      "title": "Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early Septic Shock: The ANDROMEDA-SHOCK-2 Randomized Clinical Trial",
+      "publicationDate": "2025-12-09",
+      "topic": "sepsis-hemodynamics",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Multicenter randomized trial; hierarchical composite win ratio 1.16 (95% CI 1.02–1.33) is not a stand-alone mortality benefit.",
+        "clinicalRationale": "Early septic-shock resuscitation and bedside perfusion targets are directly relevant.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Primary JAMA randomized trial, 2025 volume 334 issue 22; print date 2025-12-09. Exact online date not verified; do not rely on an invented online day.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/41159835/",
+        "https://doi.org/10.1001/jama.2025.20402"
+      ],
+      "evaluationStratum": "current-window"
+    },
+    {
+      "caseId": "G1",
+      "pmid": "39052901",
+      "track": "guideline",
+      "split": "development",
+      "title": "Hyperglycemic Crises in Adults With Diabetes: A Consensus Report",
+      "publicationDate": "2024-08-01",
+      "topic": "metabolic-emergencies",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Multisociety expert consensus, not a new randomized trial; individual recommendations require their own certainty assessment.",
+        "clinicalRationale": "Adult DKA/HHS recognition and treatment have immediate ER/ICU applicability.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "2024 consensus revision; parallel journal versions should be grouped rather than counted as independent recommendations.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39052901/",
+        "https://doi.org/10.2337/dci24-0032"
+      ],
+      "evaluationStratum": "dated-reference"
+    },
+    {
+      "caseId": "G2",
+      "pmid": "38316735",
+      "track": "guideline",
+      "split": "holdout",
+      "title": "Guidelines for Seizure Prophylaxis in Adults Hospitalized with Moderate-Severe Traumatic Brain Injury: A Clinical Practice Guideline for Health Care Professionals from the Neurocritical Care Society",
+      "publicationDate": "2024-06-01",
+      "topic": "neuro-trauma",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Society guideline based on systematic review; strength/certainty must remain separate from clinical relevance.",
+        "clinicalRationale": "Whether, which and how long to use prophylactic antiseizure medication after TBI is a concrete ICU decision.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "2024 NCS guideline; online 2024-02-05. June issue date has no verified day.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38316735/",
+        "https://doi.org/10.1007/s12028-023-01907-x"
+      ],
+      "evaluationStratum": "dated-reference"
+    },
+    {
+      "caseId": "G3",
+      "pmid": "42570093",
+      "track": "guideline",
+      "split": "development",
+      "title": "Infectious Diseases Society of America 2026 Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections",
+      "publicationDate": "2026-08-08",
+      "topic": "infection-antimicrobials",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Expert guidance informed by literature and consensus; explicitly not GRADE, with US epidemiology and drug availability limitations.",
+        "clinicalRationale": "Resistant-organism antibiotic selection is directly useful to ICU care, with local susceptibility and formulary adaptation.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Explicitly replaces earlier IDSA AMR guidance; evidence current through 2026-03-01, typeset correction 2026-08-26.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/42570093/",
+        "https://doi.org/10.1093/cid/ciag481"
+      ],
+      "evaluationStratum": "current-window"
+    },
+    {
+      "caseId": "G4",
+      "pmid": "37012484",
+      "track": "guideline",
+      "split": "holdout",
+      "title": "ERS/ESICM/ESCMID/ALAT guidelines for the management of severe community-acquired pneumonia",
+      "publicationDate": "2023-06-01",
+      "topic": "respiratory-airway",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "International society guideline; individual recommendations have different evidence certainty.",
+        "clinicalRationale": "Severe pneumonia treatment and respiratory support are central ICU decisions.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "2023 main guideline; correction PMID 37195462 must accompany interpretation; June issue date has no verified day.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/37012484/",
+        "https://doi.org/10.1007/s00134-023-07033-8"
+      ],
+      "evaluationStratum": "dated-reference"
+    },
+    {
+      "caseId": "R1",
+      "pmid": "39904062",
+      "track": "narrative-review",
+      "split": "development",
+      "title": "Emergency medicine updates: Management of sepsis and septic shock",
+      "publicationDate": "2025-04-01",
+      "topic": "sepsis-hemodynamics",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Clinical narrative update; not original comparative evidence or a society recommendation.",
+        "clinicalRationale": "Direct emergency-management refresher on sepsis/shock; worth consideration despite non-top-tier journal.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Management article is distinct from companion diagnosis article PMID 39892181; overlapping topic does not prove duplication. Online 2025-01-22.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39904062/",
+        "https://doi.org/10.1016/j.ajem.2025.01.054"
+      ],
+      "evaluationStratum": "current-window"
+    },
+    {
+      "caseId": "R2",
+      "pmid": "39467606",
+      "track": "narrative-review",
+      "split": "holdout",
+      "title": "Acute respiratory distress syndrome",
+      "publicationDate": "2024-10-28",
+      "topic": "respiratory-airway",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "BMJ state-of-the-art narrative review; summarizes epidemiology, mechanisms and management, not a normative guideline.",
+        "clinicalRationale": "Broad ARDS refresher links definition, ventilation, positioning and fluid strategy.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Review discusses updated guidelines; that does not make it a guideline or a replacement edition.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39467606/",
+        "https://doi.org/10.1136/bmj-2023-076612"
+      ],
+      "evaluationStratum": "current-window"
+    },
+    {
+      "caseId": "R3",
+      "pmid": "42475841",
+      "track": "narrative-review",
+      "split": "development",
+      "title": "Emergency medicine updates: The physiologically difficult airway",
+      "publicationDate": "2026-10-01",
+      "topic": "respiratory-airway",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "high",
+        "clinicalImportance": "high",
+        "evidence": "Clinical review; source-title and publisher metadata verified, complete abstract unavailable in this audit.",
+        "clinicalRationale": "Physiologic preparation for high-risk intubation is directly applicable ER/ICU refresher content.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Online 2026-07-11, October issue; unknown day represented as first of month for window calculations only.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/42475841/",
+        "https://doi.org/10.1016/j.ajem.2026.07.017"
+      ],
+      "evaluationStratum": "current-window"
+    },
+    {
+      "caseId": "R4",
+      "pmid": "39367501",
+      "track": "narrative-review",
+      "split": "holdout",
+      "title": "A narrative review on antimicrobial dosing in adult critically ill patients on extracorporeal membrane oxygenation",
+      "publicationDate": "2024-10-04",
+      "topic": "infection-antimicrobials",
+      "judgment": {
+        "expectedDisposition": "eligible-for-editorial-consideration",
+        "clinicalPracticality": "medium-high",
+        "clinicalImportance": "medium-high",
+        "evidence": "Narrative dosing synthesis; heterogeneous pharmacokinetic evidence limits universal dosing conclusions.",
+        "clinicalRationale": "Narrow but concrete ICU antimicrobial-dosing need; low frequency does not make it off-topic.",
+        "recency": "Judge acquisition-window eligibility separately; relevance does not imply current automatic admission.",
+        "editionFamily": "Standalone narrative review, not a new guideline; no replacement family established.",
+        "uncertainty": "Purposive expert judgment, not a validated gold standard. Abstract/metadata-level review unless the source note states otherwise; no automatic adoption or treatment recommendation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39367501/",
+        "https://doi.org/10.1186/s13054-024-05101-z"
+      ],
+      "evaluationStratum": "dated-reference"
+    }
+  ],
+  "knownBoundaryControls": [
+    {
+      "pmids": [
+        "39982143"
+      ],
+      "label": "PADIS focused update belongs to guideline consideration; observed review reservoir is not a search miss."
+    },
+    {
+      "pmids": [
+        "39198198",
+        "39207913"
+      ],
+      "label": "Ketamine co-publications are one recommendation family, not newer versus superseded editions."
+    },
+    {
+      "pmids": [
+        "41773929",
+        "41773928"
+      ],
+      "label": "ARDS main guideline and executive summary are one family with distinct document roles."
+    },
+    {
+      "pmids": [
+        "38748265"
+      ],
+      "label": "Narrow ICU hematologic-emergency review has plausible clinical relevance; held fit judgment needs context, not automatic promotion."
+    }
+  ],
+  "currentWindowStratum": {
+    "count": 5,
+    "countsByTrack": {
+      "paper": 1,
+      "guideline": 1,
+      "narrative-review": 3
+    },
+    "paperWindowDays": 360,
+    "guidelineReviewWindowYears": 2,
+    "datedReferenceCount": 7,
+    "note": "Only the five in-window cases enter a current-window descriptive denominator; neither stratum estimates recall."
+  },
+  "freezeProtocol": "Final source-first freeze follows clarification to separate current-window and dated strata. An unpublished pre-freeze draft was revised for these strata and date precision; no repository outcome lookup or code edits occurred before final freeze."
+}

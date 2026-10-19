@@ -1,0 +1,894 @@
+{
+  "baselineCommit": "96600bc489c76e0657914d27dc02d9e270113cb4",
+  "patchBundleSha256": "31dfe4e170548f2342bdccad47cf1c3ee3779167c82994fb7cb4750cca9e7178",
+  "fixtureSha256": "c45145458531d357f4d20a864ca139bbd4df357addd6e2e289f932e5097e41ed",
+  "executedAtUtc": "2026-10-19T10:34:43.089Z",
+  "method": "Offline baseline source extracted into temporary directory outside repository; identical inputs and 2026-10-19 clock supplied before/after. No network/model calls. No original abstract or PT fabricated.",
+  "counts": {
+    "all": 12,
+    "development": 6,
+    "holdout": 6,
+    "current": 5,
+    "dated": 7,
+    "changed": 0,
+    "holdoutChanged": 0
+  },
+  "cases": [
+    {
+      "caseId": "P1",
+      "pmid": "38869091",
+      "split": "development",
+      "evaluationStratum": "dated-reference",
+      "input": {
+        "pmid": "38869091",
+        "title": "Noninvasive Ventilation for Preoxygenation during Emergency Intubation",
+        "journal": "The New England journal of medicine",
+        "pubDate": "2024-06-20",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 7.75,
+          "score": 7.8,
+          "studyType": "Other",
+          "relevanceScore": 7.5,
+          "primaryTopic": "resp_airway",
+          "contributions": {
+            "journal": 4,
+            "relevance": 3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 7.75,
+          "score": 7.8,
+          "studyType": "Other",
+          "relevanceScore": 7.5,
+          "primaryTopic": "resp_airway",
+          "contributions": {
+            "journal": 4,
+            "relevance": 3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    },
+    {
+      "caseId": "P2",
+      "pmid": "39565030",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "input": {
+        "pmid": "39565030",
+        "title": "Antibiotic Treatment for 7 versus 14 Days in Patients with Bloodstream Infections",
+        "journal": "The New England journal of medicine",
+        "pubDate": "2025-03-13",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": -0.25,
+          "score": 1,
+          "studyType": "Other",
+          "relevanceScore": 0,
+          "primaryTopic": null,
+          "contributions": {
+            "journal": 4,
+            "relevance": 0,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": -5,
+            "excludeGate": 0
+          },
+          "gated": true,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": -0.25,
+          "score": 1,
+          "studyType": "Other",
+          "relevanceScore": 0,
+          "primaryTopic": null,
+          "contributions": {
+            "journal": 4,
+            "relevance": 0,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": -5,
+            "excludeGate": 0
+          },
+          "gated": true,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    },
+    {
+      "caseId": "P3",
+      "pmid": "38869931",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "input": {
+        "pmid": "38869931",
+        "title": "Liberal or Restrictive Transfusion Strategy in Patients with Traumatic Brain Injury",
+        "journal": "The New England journal of medicine",
+        "pubDate": "2024-08-22",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 7.05,
+          "score": 7.1,
+          "studyType": "Other",
+          "relevanceScore": 5.7,
+          "primaryTopic": "trauma",
+          "contributions": {
+            "journal": 4,
+            "relevance": 2.3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 7.05,
+          "score": 7.1,
+          "studyType": "Other",
+          "relevanceScore": 5.7,
+          "primaryTopic": "trauma",
+          "contributions": {
+            "journal": 4,
+            "relevance": 2.3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    },
+    {
+      "caseId": "P4",
+      "pmid": "41159835",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "input": {
+        "pmid": "41159835",
+        "title": "Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early Septic Shock: The ANDROMEDA-SHOCK-2 Randomized Clinical Trial",
+        "journal": "JAMA",
+        "pubDate": "2025-12-09",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 9.700000000000001,
+          "score": 9.7,
+          "studyType": "RCT",
+          "relevanceScore": 9.8,
+          "primaryTopic": "sepsis_shock",
+          "contributions": {
+            "journal": 4,
+            "relevance": 3.9,
+            "design": 1.8,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 9.700000000000001,
+          "score": 9.7,
+          "studyType": "RCT",
+          "relevanceScore": 9.8,
+          "primaryTopic": "sepsis_shock",
+          "contributions": {
+            "journal": 4,
+            "relevance": 3.9,
+            "design": 1.8,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    },
+    {
+      "caseId": "G1",
+      "pmid": "39052901",
+      "split": "development",
+      "evaluationStratum": "dated-reference",
+      "input": {
+        "pmid": "39052901",
+        "title": "Hyperglycemic Crises in Adults With Diabetes: A Consensus Report",
+        "journal": "Diabetes care",
+        "pubDate": "2024-08-01",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 3.55,
+          "score": 3.6,
+          "studyType": "Other",
+          "relevanceScore": 5,
+          "primaryTopic": "endo_metabolic",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 2,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": false,
+        "guideline": {
+          "priority": 2,
+          "breakdown": {
+            "authority": 0,
+            "topic": 2,
+            "recency": 0,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": null,
+          "tier": null,
+          "topicMatched": true
+        }
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 3.55,
+          "score": 3.6,
+          "studyType": "Other",
+          "relevanceScore": 5,
+          "primaryTopic": "endo_metabolic",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 2,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": false,
+        "guideline": {
+          "priority": 2,
+          "breakdown": {
+            "authority": 0,
+            "topic": 2,
+            "recency": 0,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": null,
+          "tier": null,
+          "topicMatched": true
+        }
+      },
+      "changed": false
+    },
+    {
+      "caseId": "G2",
+      "pmid": "38316735",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "input": {
+        "pmid": "38316735",
+        "title": "Guidelines for Seizure Prophylaxis in Adults Hospitalized with Moderate-Severe Traumatic Brain Injury: A Clinical Practice Guideline for Health Care Professionals from the Neurocritical Care Society",
+        "journal": "Neurocritical care",
+        "pubDate": "2024-06-01",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 3.8499999999999996,
+          "score": 3.9,
+          "studyType": "Other",
+          "relevanceScore": 5.7,
+          "primaryTopic": "neuro",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 2.3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": false,
+        "guideline": {
+          "priority": 6.5,
+          "breakdown": {
+            "authority": 2.5,
+            "topic": 4,
+            "recency": 0,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": "ncs",
+          "tier": 2,
+          "topicMatched": true
+        }
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 3.8499999999999996,
+          "score": 3.9,
+          "studyType": "Other",
+          "relevanceScore": 5.7,
+          "primaryTopic": "neuro",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 2.3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": false,
+        "guideline": {
+          "priority": 6.5,
+          "breakdown": {
+            "authority": 2.5,
+            "topic": 4,
+            "recency": 0,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": "ncs",
+          "tier": 2,
+          "topicMatched": true
+        }
+      },
+      "changed": false
+    },
+    {
+      "caseId": "G3",
+      "pmid": "42570093",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "input": {
+        "pmid": "42570093",
+        "title": "Infectious Diseases Society of America 2026 Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections",
+        "journal": "Clinical infectious diseases",
+        "pubDate": "2026-08-08",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": -2.25,
+          "score": 1,
+          "studyType": "Other",
+          "relevanceScore": 0,
+          "primaryTopic": null,
+          "contributions": {
+            "journal": 2,
+            "relevance": 0,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": -5,
+            "excludeGate": 0
+          },
+          "gated": true,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true,
+        "guideline": {
+          "priority": 6,
+          "breakdown": {
+            "authority": 4,
+            "topic": 0,
+            "recency": 2,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": "idsa",
+          "tier": 1,
+          "topicMatched": false
+        }
+      },
+      "after": {
+        "metadata": {
+          "rawScore": -2.25,
+          "score": 1,
+          "studyType": "Other",
+          "relevanceScore": 0,
+          "primaryTopic": null,
+          "contributions": {
+            "journal": 2,
+            "relevance": 0,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": -5,
+            "excludeGate": 0
+          },
+          "gated": true,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true,
+        "guideline": {
+          "priority": 6,
+          "breakdown": {
+            "authority": 4,
+            "topic": 0,
+            "recency": 2,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": "idsa",
+          "tier": 1,
+          "topicMatched": false
+        }
+      },
+      "changed": false
+    },
+    {
+      "caseId": "G4",
+      "pmid": "37012484",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "input": {
+        "pmid": "37012484",
+        "title": "ERS/ESICM/ESCMID/ALAT guidelines for the management of severe community-acquired pneumonia",
+        "journal": "Intensive care medicine",
+        "pubDate": "2023-06-01",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 5.95,
+          "score": 6,
+          "studyType": "Other",
+          "relevanceScore": 5,
+          "primaryTopic": "infection",
+          "contributions": {
+            "journal": 3.2,
+            "relevance": 2,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": false,
+        "guideline": {
+          "priority": 6,
+          "breakdown": {
+            "authority": 4,
+            "topic": 2,
+            "recency": 0,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": "esicm",
+          "tier": 1,
+          "topicMatched": true
+        }
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 5.95,
+          "score": 6,
+          "studyType": "Other",
+          "relevanceScore": 5,
+          "primaryTopic": "infection",
+          "contributions": {
+            "journal": 3.2,
+            "relevance": 2,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": false,
+        "guideline": {
+          "priority": 6,
+          "breakdown": {
+            "authority": 4,
+            "topic": 2,
+            "recency": 0,
+            "scope": 0,
+            "confidence": 0
+          },
+          "organizationId": "esicm",
+          "tier": 1,
+          "topicMatched": true
+        }
+      },
+      "changed": false
+    },
+    {
+      "caseId": "R1",
+      "pmid": "39904062",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "input": {
+        "pmid": "39904062",
+        "title": "Emergency medicine updates: Management of sepsis and septic shock",
+        "journal": "The American journal of emergency medicine",
+        "pubDate": "2025-04-01",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 4.67,
+          "score": 4.7,
+          "studyType": "Other",
+          "relevanceScore": 7.8,
+          "primaryTopic": "sepsis_shock",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 3.12,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 4.67,
+          "score": 4.7,
+          "studyType": "Other",
+          "relevanceScore": 7.8,
+          "primaryTopic": "sepsis_shock",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 3.12,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    },
+    {
+      "caseId": "R2",
+      "pmid": "39467606",
+      "split": "holdout",
+      "evaluationStratum": "current-window",
+      "input": {
+        "pmid": "39467606",
+        "title": "Acute respiratory distress syndrome",
+        "journal": "BMJ",
+        "pubDate": "2024-10-28",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 6.75,
+          "score": 6.8,
+          "studyType": "Other",
+          "relevanceScore": 5,
+          "primaryTopic": "resp_airway",
+          "contributions": {
+            "journal": 4,
+            "relevance": 2,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 6.75,
+          "score": 6.8,
+          "studyType": "Other",
+          "relevanceScore": 5,
+          "primaryTopic": "resp_airway",
+          "contributions": {
+            "journal": 4,
+            "relevance": 2,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    },
+    {
+      "caseId": "R3",
+      "pmid": "42475841",
+      "split": "development",
+      "evaluationStratum": "current-window",
+      "input": {
+        "pmid": "42475841",
+        "title": "Emergency medicine updates: The physiologically difficult airway",
+        "journal": "The American journal of emergency medicine",
+        "pubDate": "2026-10-01",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 3.67,
+          "score": 3.7,
+          "studyType": "Other",
+          "relevanceScore": 5.3,
+          "primaryTopic": "resp_airway",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 2.12,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 3.67,
+          "score": 3.7,
+          "studyType": "Other",
+          "relevanceScore": 5.3,
+          "primaryTopic": "resp_airway",
+          "contributions": {
+            "journal": 0.8,
+            "relevance": 2.12,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    },
+    {
+      "caseId": "R4",
+      "pmid": "39367501",
+      "split": "holdout",
+      "evaluationStratum": "dated-reference",
+      "input": {
+        "pmid": "39367501",
+        "title": "A narrative review on antimicrobial dosing in adult critically ill patients on extracorporeal membrane oxygenation",
+        "journal": "Critical Care",
+        "pubDate": "2024-10-04",
+        "publicationTypes": [],
+        "meshTerms": [],
+        "abstract": ""
+      },
+      "inputProvenance": "Frozen bibliographic title/date plus primary-source journal name; empty abstract/MeSH/PT represent unavailable evidence, not actual source absence.",
+      "before": {
+        "metadata": {
+          "rawScore": 6.25,
+          "score": 6.3,
+          "studyType": "Other",
+          "relevanceScore": 5.7,
+          "primaryTopic": "cardiac_resus",
+          "contributions": {
+            "journal": 3.2,
+            "relevance": 2.3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "after": {
+        "metadata": {
+          "rawScore": 6.25,
+          "score": 6.3,
+          "studyType": "Other",
+          "relevanceScore": 5.7,
+          "primaryTopic": "cardiac_resus",
+          "contributions": {
+            "journal": 3.2,
+            "relevance": 2.3,
+            "design": 0.75,
+            "recency": 0,
+            "sample": 0,
+            "negative": 0,
+            "topicGate": 0,
+            "excludeGate": 0
+          },
+          "gated": false,
+          "journalExcluded": false
+        },
+        "narrativeTitleGate": true
+      },
+      "changed": false
+    }
+  ],
+  "controlledChecks": [
+    {
+      "name": "null fit is not negative evidence",
+      "synthetic": true,
+      "excludedFromClinicalDenominator": true,
+      "before": {
+        "items": [
+          {
+            "id": "synthetic-missing-fit",
+            "status": "needsReview",
+            "priority": 5,
+            "llmFit": {
+              "version": 1,
+              "score": 0,
+              "keep": false,
+              "reason": "synthetic missing value",
+              "at": "2026-10-19T00:00:00Z"
+            }
+          }
+        ],
+        "scored": 1
+      },
+      "after": {
+        "items": [
+          {
+            "id": "synthetic-missing-fit",
+            "status": "queued",
+            "priority": 5
+          }
+        ],
+        "scored": 0
+      }
+    }
+  ],
+  "limits": [
+    "Metadata-only counterfactual is not historical selection, full PubMed scoring, or rank among a raw pool.",
+    "Missing source evidence may trigger a gate; this does not prove actual candidate exclusion.",
+    "All 12 source cases, including six holdouts, are unchanged; improvement is not demonstrated on this positive-only set.",
+    "Synthetic null-fit check tests one contract defect separately; independent code review covers refill and other boundaries."
+  ]
+}
