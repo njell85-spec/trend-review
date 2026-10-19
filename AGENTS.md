@@ -1,7 +1,8 @@
 # Agent entry
 
-Read [HANDOFF.md](HANDOFF.md) first for the single current work-state summary,
-then [CLAUDE.md](CLAUDE.md), [REPORT_SPEC.md](REPORT_SPEC.md), and the applicable
+Start with [the tool-neutral reading order](docs/START_HERE.md), then read
+[HANDOFF.md](HANDOFF.md) for the single current work-state summary. Follow
+[CLAUDE.md](CLAUDE.md), [REPORT_SPEC.md](REPORT_SPEC.md), and the applicable
 repository skills. [docs/HANDOFF.md](docs/HANDOFF.md) remains the shared historical
 handoff entry and preserves prior decisions and logs.
 
