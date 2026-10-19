@@ -1,5 +1,8 @@
 # Start here — project context for any tool
 
+현재 구현 배포 확인: **`ce8f18b6b93bbcb3f180e6a905e2642d3923beb2`** — [PR #166](https://github.com/njell85-spec/trend-review/pull/166), [CI](https://github.com/njell85-spec/trend-review/actions/runs/39234894334), [Pages](https://github.com/njell85-spec/trend-review/actions/runs/39234893351).
+문서 확인 커밋과 구현 커밋을 구별하며 이후 문서 전용 릴리스의 최종 영수증은 [PR #166의 최종 증거](https://github.com/njell85-spec/trend-review/pull/166)에 연결한다.
+
 This reading order is for a person or an assistant using any editor or model.
 These files are links to project context, not an automatic loading mechanism and
 not an authorization to run operations. Read the actual files and check the SHA.
