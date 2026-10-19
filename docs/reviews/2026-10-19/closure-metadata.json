@@ -1,0 +1,297 @@
+{
+  "baseline": "11ae9729c0ff2133200ab3de93fe830cece1af8a",
+  "correction": "Historical metadata only; no clinical rewriting, adoption, queue promotion, deletion or new publication.",
+  "changes": [
+    {
+      "location": "guidelines.queue[39198198]",
+      "field": "status",
+      "oldValue": "superseded",
+      "newValue": "needsReview"
+    },
+    {
+      "location": "guidelines.queue[39198198]",
+      "field": "lineageReason",
+      "oldValue": "candidate-not-newer",
+      "newValue": "co-publication-not-new-edition"
+    },
+    {
+      "location": "guidelines.queue[39198198]",
+      "field": "supersededBy",
+      "oldValue": "pmid:39207913",
+      "removed": true
+    },
+    {
+      "location": "guidelines.queue[39198198]",
+      "field": "supersededAt",
+      "oldValue": "2026-10-04T00:03:34.266Z",
+      "removed": true
+    },
+    {
+      "location": "guidelines.published[39207913]",
+      "field": "supersedes",
+      "oldValue": [
+        "pmid:39198198"
+      ],
+      "newValue": []
+    },
+    {
+      "location": "guidelines.published[39207913].card",
+      "field": "sources",
+      "oldValue": [
+        {
+          "label": "PubMed — PMID 39207913",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39207913/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1213/ANE.0000000000007173",
+          "url": "https://doi.org/10.1213/ANE.0000000000007173"
+        },
+        {
+          "label": "웹 — Capital Region of Denmark Research Portal — guideline abstract (regionh.dk)",
+          "url": "https://research.regionh.dk/en/publications/ketamine-analgo-sedation-for-mechanically-ventilated-critically-i"
+        },
+        {
+          "label": "웹 — Monash University Research Portal — guideline abstract",
+          "url": "https://research.monash.edu/en/publications/ketamine-analgo-sedation-for-mechanically-ventilated-critically-i/"
+        },
+        {
+          "label": "웹 — SSAI (issuing society) — official full-text PDF of the guideline (Acta Anaesthesiol Scand version)",
+          "url": "https://ssai.info/wp-content/uploads/acta-anaesthesiol-scand-2024-amer-ketamine-analgo-sedation-for-mechanically-ventilated-critically-ill-adults-a-rapid.pdf"
+        },
+        {
+          "label": "웹 — Wiley Online Library — Acta Anaesthesiologica Scandinavica co-publication (abstract; full text 403)",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/aas.14470"
+        }
+      ],
+      "newValue": [
+        {
+          "label": "PubMed — PMID 39207913",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39207913/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1213/ANE.0000000000007173",
+          "url": "https://doi.org/10.1213/ANE.0000000000007173"
+        },
+        {
+          "label": "웹 — Capital Region of Denmark Research Portal — guideline abstract (regionh.dk)",
+          "url": "https://research.regionh.dk/en/publications/ketamine-analgo-sedation-for-mechanically-ventilated-critically-i"
+        },
+        {
+          "label": "웹 — Monash University Research Portal — guideline abstract",
+          "url": "https://research.monash.edu/en/publications/ketamine-analgo-sedation-for-mechanically-ventilated-critically-i/"
+        },
+        {
+          "label": "웹 — SSAI (issuing society) — official full-text PDF of the guideline (Acta Anaesthesiol Scand version)",
+          "url": "https://ssai.info/wp-content/uploads/acta-anaesthesiol-scand-2024-amer-ketamine-analgo-sedation-for-mechanically-ventilated-critically-ill-adults-a-rapid.pdf"
+        },
+        {
+          "label": "웹 — Wiley Online Library — Acta Anaesthesiologica Scandinavica co-publication (abstract; full text 403)",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/aas.14470"
+        },
+        {
+          "label": "공동출판 — Acta Anaesthesiologica Scandinavica (PMID 39198198); 신판·구판 관계 아님",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39198198/"
+        }
+      ]
+    },
+    {
+      "location": "guidelines.published[41773929].card",
+      "field": "sources",
+      "oldValue": [
+        {
+          "label": "PubMed — PMID 41773929",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773929/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007002",
+          "url": "https://doi.org/10.1097/CCM.0000000000007002"
+        },
+        {
+          "label": "웹 — SCCM 공식 지침 페이지 — Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS",
+          "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-administration-of-neuromuscular-blockade"
+        },
+        {
+          "label": "웹 — Guideline Central — 2026 SCCM NMB in Adults with ARDS Guideline Spotlight",
+          "url": "https://www.guidelinecentral.com/insights/mar-2026-sccm-neuromuscularblocadeadultsards-guideline-spotlight/"
+        },
+        {
+          "label": "웹 — Guideline Central — SCCM Administration of Neuromuscular Blockade in Adults With ARDS Guideline Summary (verbatim recommendation text with GRADE codes)",
+          "url": "https://www.guidelinecentral.com/guideline/5120843/"
+        },
+        {
+          "label": "웹 — PubMed — Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS (PMID 41773929)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773929/"
+        }
+      ],
+      "newValue": [
+        {
+          "label": "PubMed — PMID 41773929",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773929/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007002",
+          "url": "https://doi.org/10.1097/CCM.0000000000007002"
+        },
+        {
+          "label": "웹 — SCCM 공식 지침 페이지 — Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS",
+          "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-administration-of-neuromuscular-blockade"
+        },
+        {
+          "label": "웹 — Guideline Central — 2026 SCCM NMB in Adults with ARDS Guideline Spotlight",
+          "url": "https://www.guidelinecentral.com/insights/mar-2026-sccm-neuromuscularblocadeadultsards-guideline-spotlight/"
+        },
+        {
+          "label": "웹 — Guideline Central — SCCM Administration of Neuromuscular Blockade in Adults With ARDS Guideline Summary (verbatim recommendation text with GRADE codes)",
+          "url": "https://www.guidelinecentral.com/guideline/5120843/"
+        },
+        {
+          "label": "웹 — PubMed — Society of Critical Care Medicine Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS (PMID 41773929)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773929/"
+        },
+        {
+          "label": "공식 요약 — 같은 SCCM ARDS 신경근차단 지침의 Executive Summary (PMID 41773928)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773928/"
+        }
+      ]
+    },
+    {
+      "location": "guidelines.published[41773928].card",
+      "field": "sources",
+      "oldValue": [
+        {
+          "label": "PubMed — PMID 41773928",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773928/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007001",
+          "url": "https://doi.org/10.1097/CCM.0000000000007001"
+        },
+        {
+          "label": "웹 — SCCM — Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS (official page)",
+          "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-administration-of-neuromuscular-blockade"
+        },
+        {
+          "label": "웹 — Guideline Central — SCCM NMBA in Adults With ARDS Guideline Summary (guideline/5120843)",
+          "url": "https://www.guidelinecentral.com/guideline/5120843/"
+        },
+        {
+          "label": "웹 — Guideline Central — 2026 SCCM NMBA in ARDS Guideline Spotlight (insights)",
+          "url": "https://www.guidelinecentral.com/insights/mar-2026-sccm-neuromuscularblocadeadultsards-guideline-spotlight/"
+        }
+      ],
+      "newValue": [
+        {
+          "label": "PubMed — PMID 41773928",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773928/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007001",
+          "url": "https://doi.org/10.1097/CCM.0000000000007001"
+        },
+        {
+          "label": "웹 — SCCM — Guidelines for the Administration of Neuromuscular Blockade in Adults With ARDS (official page)",
+          "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-administration-of-neuromuscular-blockade"
+        },
+        {
+          "label": "웹 — Guideline Central — SCCM NMBA in Adults With ARDS Guideline Summary (guideline/5120843)",
+          "url": "https://www.guidelinecentral.com/guideline/5120843/"
+        },
+        {
+          "label": "웹 — Guideline Central — 2026 SCCM NMBA in ARDS Guideline Spotlight (insights)",
+          "url": "https://www.guidelinecentral.com/insights/mar-2026-sccm-neuromuscularblocadeadultsards-guideline-spotlight/"
+        },
+        {
+          "label": "지침 본문 — 이 Executive Summary의 SCCM ARDS 신경근차단 본문 (PMID 41773929)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773929/"
+        }
+      ]
+    },
+    {
+      "location": "reviews.published[36322846].card",
+      "field": "coverage",
+      "oldValue": "full-text",
+      "newValue": "unverified"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "output/selected_guidelines.json",
+      "beforeSha256": "0abc1b58b89945be64c3b17edb3fc0cbf4d7ec55a5f643fa6754aa0bbe417a97",
+      "afterSha256": "1162e6ae3a4f20d90ea899b05306274bf9d8ff75c040ad32a2281e0253a9e67e",
+      "countsBefore": {
+        "queue": 656,
+        "published": 76,
+        "rejected": 131
+      },
+      "countsAfter": {
+        "queue": 656,
+        "published": 76,
+        "rejected": 131
+      }
+    },
+    {
+      "path": "output/queue_reviews.json",
+      "beforeSha256": "7a76ecbf690981566ebd022c5e38506ae8d833e3b98d4210ae1a5137acd7d93d",
+      "afterSha256": "da224807d7807eb569e267450596bcdb9f7e3bdded4464d9bcc88126a7bed464",
+      "countsBefore": {
+        "queue": 334,
+        "published": 63,
+        "rejected": 3
+      },
+      "countsAfter": {
+        "queue": 334,
+        "published": 63,
+        "rejected": 3
+      }
+    }
+  ],
+  "idempotence": {
+    "secondDryRunChanges": 0
+  },
+  "verification": {
+    "tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "logSha256": "ab06aa861d7a11632031b818e337f44536c100f9f8526c56f071123572698edd"
+  },
+  "sources": [
+    {
+      "case": "ketamine",
+      "url": "https://ssai.info/wp-content/uploads/acta-anaesthesiol-scand-2024-amer-ketamine-analgo-sedation-for-mechanically-ventilated-critically-ill-adults-a-rapid.pdf",
+      "location": "PDF pages1and16",
+      "finding": "Co-publication; texts identical except stylistic/spelling differences, either citation usable."
+    },
+    {
+      "case": "ards",
+      "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/guidelines-for-the-administration-of-neuromuscular-blockade",
+      "location": "Related Resources / Executive Summary",
+      "finding": "Main guideline and executive summary are related versions of the same guideline, not independent editions."
+    },
+    {
+      "case": "padis",
+      "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/focused-update-padis-guideline",
+      "finding": "SCCM clinical focused update, five statements; linked2018parent. No adoption/routing authorization inferred."
+    }
+  ],
+  "unchangedDecisions": [
+    {
+      "pmid": "39982143",
+      "decision": "Keep retained review candidate held by existing type eligibility; guideline adoption/routing is an explicit user decision."
+    },
+    {
+      "pmid": "38748265",
+      "decision": "Preserve original model fit and needsReview. Clinical relevance supports re-review, not automatic promotion or rewriting model reason.",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38748265/"
+    },
+    {
+      "pmid": "41324946",
+      "decision": "Preserve rejection. Relevance does not reveal who rejected it or why; request original intent before reversal.",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/41324946/"
+    }
+  ],
+  "limits": [
+    "Unverified coverage is a historical provenance correction, not a claim that the retained translation was validated or only abstract-derived.",
+    "Related-publication links use existing rendered card.sources; no general relationship graph or duplicate merging is implemented.",
+    "Original web-source records remain as historical evidence; no unverified mirror was opened."
+  ]
+}

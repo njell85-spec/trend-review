@@ -25,7 +25,14 @@ not an authorization to run operations. Read the actual files and check the SHA.
    and [follow-up validation](reviews/2026-10-19/validation.md). The latter separates
    author-run 971 tests from independent 18 synthetic cases and 5 regressions.
    Test counts from one SHA are not proof that a later SHA was executed.
-6. **Current release work:** [release candidate/source audit](reviews/2026-10-19/release-selection-audit.md),
+6. **Current closure:** implementation `87739c8e5a0f186b7adaedde4c7c1a1a668e7a99`,
+   based on deployed `11ae9729c0ff2133200ab3de93fe830cece1af8a`.
+   Read [metadata corrections and held decisions](reviews/2026-10-19/closure-metadata.md),
+   [upcoming-date contract](reviews/2026-10-19/closure-dates.md),
+   [independent review and release verification](reviews/2026-10-19/closure-validation.md),
+   and [closure plan](superpowers/plans/2026-10-19-selection-closure.md).
+   These separate justified corrections from decisions still requiring reader intent.
+7. **Prior release background:** [release candidate/source audit](reviews/2026-10-19/release-selection-audit.md),
    [release validation and independent review](reviews/2026-10-19/release-validation.md),
    and [release plan](superpowers/plans/2026-10-19-selection-release.md).
    [PR #165](https://github.com/njell85-spec/trend-review/pull/165) records the exact

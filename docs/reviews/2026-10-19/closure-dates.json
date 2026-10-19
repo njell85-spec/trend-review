@@ -1,0 +1,51 @@
+{
+  "base": "11ae9729c0ff2133200ab3de93fe830cece1af8a",
+  "reproduction": {
+    "from": "2026-10-19",
+    "days": 7,
+    "lastRun": {
+      "date": "2026-10-19",
+      "outcome": "published",
+      "publishedId": "41841954"
+    },
+    "nextPmid": "42059919",
+    "beforeDate": "2026-10-19",
+    "afterDate": "2026-10-20",
+    "windowEnd": "2026-10-25"
+  },
+  "verification": {
+    "focused": {
+      "tests": 62,
+      "pass": 62,
+      "fail": 0,
+      "skip": 0,
+      "cancelled": 0,
+      "durationMs": 570.4892
+    },
+    "initialFocused": {
+      "pass": 61,
+      "fail": 1,
+      "reason": "Whole-document byte-idempotence assertion exceeded existing renderer contract; corrected to exact upcoming blocks plus preserved body."
+    },
+    "specLint": {
+      "groups": 6,
+      "files": 80,
+      "warnings": 0
+    },
+    "diffCheck": "passed",
+    "externalCalls": 0,
+    "fullSuiteRerun": false,
+    "independentReview": "completed; see closure-validation.md"
+  },
+  "sha256": {
+    "src/utils/upcomingSchedule.js": "95be637a895f6613d1cebce0e26e238dac914967175353e27fb02a7e34ca1584",
+    "test/upcomingPublicationDates.test.mjs": "574a4b50b4112d27e1e17f53487f47555c4526a8dd3cac0474592490ee1bd195",
+    "output/closure-dates-tests.log": "ce18ad2c86349703a00c0fa5d1682f68b13d5b296e97495e7f95a7fa30bab455",
+    "output/closure-dates-spec.log": "1fd3793419e0df5e120843417103b52e84630ebae640d15fce362177a7d2f7d7"
+  },
+  "limits": [
+    "Explicit lastRun success represents daily consumption; it is not a deployment receipt.",
+    "Manual publication does not advance lastRun and does not consume the daily slot.",
+    "Paper/guideline publication transaction rollback remains outside this date-only patch."
+  ]
+}
