@@ -1,7 +1,218 @@
 {
   "schemaVersion": 1,
   "track": "papers",
-  "queue": [],
+  "queue": [
+    {
+      "pmid": "42377463",
+      "title": "Effects of a clinical metagenomics intervention on clinical outcomes, healthcare costs, and health-related quality of life in patients with sepsis or septic shock: results of the randomized-controlled DigiSep trial.",
+      "journal": "Intensive care medicine",
+      "score": 8.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.2192,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "42008277",
+      "title": "Using Serious Games to Increase the Implementation of Trauma Triage Guidelines: A Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "score": 8.1,
+      "topic": "trauma",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.139199999999999,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "42092974",
+      "title": "Prevalence and representation of comorbidities and multimorbidity in randomised controlled trials in sepsis or septic shock: a systematic review.",
+      "journal": "Critical care (London, England)",
+      "score": 8.1,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.0884,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "41749261",
+      "title": "Association between initial norepinephrine dose and minute by minute mean arterial pressure.",
+      "journal": "Critical care (London, England)",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.0092,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "41999287",
+      "title": "Fast Antimicrobial Susceptibility Testing for Gram-Negative Bacteremia: The FAST Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "42895744",
+      "title": "Timeliness of Emergency Care for Intracerebral Hemorrhage Compared With Acute Ischemic Stroke.",
+      "journal": "JAMA network open",
+      "score": 7.4,
+      "topic": "neuro",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.369200000000001,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "41352474",
+      "title": "Tracheal intubation vs. supraglottic airway devices during mechanical intra-arrest-ventilation with volume-controlled-ventilation in out-of-hospital cardiac arrest: a cohort study.",
+      "journal": "Resuscitation",
+      "score": 8.4,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.35,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "42153811",
+      "title": "The Association Between Mechanical Power and Mortality in Critically Ill Patients Receiving Invasive Mechanical Ventilation: A Systematic Review and Meta-Analysis.",
+      "journal": "Critical care medicine",
+      "score": 8.3,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.280000000000001,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "42149248",
+      "title": "Effects of out-of-bed armchair positioning on oxygenation in spontaneously breathing ICU patients receiving respiratory support: a randomized controlled trial.",
+      "journal": "Intensive care medicine",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.1792,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "41787551",
+      "title": "Effect of driving pressure-limiting strategies on outcomes of patients with ARDS: a meta-analysis of randomized controlled trials.",
+      "journal": "Critical care (London, England)",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.1792,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "41204181",
+      "title": "Handgrip strength association with weaning outcome in mechanically ventilated ICU patients: a systematic review and meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.1792,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "42584185",
+      "title": "Epidemiology, Ventilatory Patterns, and Outcomes in Acute Hypoxemic Respiratory Failure Among ICU Patients Requiring Respiratory Support: A Registry-Based Cohort Study.",
+      "journal": "Critical care medicine",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.1592,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "42267821",
+      "title": "Carbocisteine or Hypertonic Saline for Acute Respiratory Failure.",
+      "journal": "The New England journal of medicine",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.0192,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    },
+    {
+      "pmid": "41508101",
+      "title": "Dyspnea is related to clinical outcomes in patients weaning from invasive mechanical ventilation with tracheostomy: a multicenter prospective study.",
+      "journal": "Critical care (London, England)",
+      "score": 7.9,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.8584000000000005,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20"
+    }
+  ],
   "published": [
     {
       "pmid": "41232590",
@@ -151,5 +362,5 @@
     "outcome": "published",
     "publishedId": "42467247"
   },
-  "updatedAt": "2026-10-19"
+  "updatedAt": "2026-10-20"
 }

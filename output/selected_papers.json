@@ -902,5 +902,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "pool_too_small",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41218981",
+    "title": "Vernakalant versus procainamide for rapid cardioversion of patients with acute a",
+    "date": "2026-10-20",
+    "topic": "cardiac_resus",
+    "selectionMode": "llm_reranked",
+    "rerankApplied": true,
+    "rerankPoolSize": 36,
+    "fallbackReason": null,
+    "lowConfidence": false
   }
 ]
