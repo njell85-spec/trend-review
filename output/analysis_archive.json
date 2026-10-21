@@ -3999,6 +3999,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-21",
+      "pmid": "42377463",
+      "title": "Effects of a clinical metagenomics intervention on clinical outcomes, healthcare costs, and health-related quality of life in patients with sepsis or septic shock: results of the randomized-controlled DigiSep trial.",
+      "title_ko": "패혈증 또는 패혈성 쇼크 환자에서 임상 메타유전체학(clinical metagenomics) 중재가 임상 결과, 의료비용, 건강 관련 삶의 질에 미치는 영향: 무작위 대조 DigiSep trial 결과",
+      "journal": "Intensive care medicine",
+      "doi": "10.1007/s00134-026-08521-3",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "패혈증 또는 패혈성 쇼크 성인 환자에서, 표준 미생물 검사에 미생물 순환 cell-free DNA의 metagenomic next-generation sequencing(mNGS)을 추가하면 의료비용을 늘리지 않으면서 임상 결과와 건강 관련 삶의 질(HRQoL)을 개선하는가?",
+      "pico": {
+        "population": "[Germany] Adult patients aged ≥ 18 years with sepsis or septic shock diagnosed within < 24 h, enrolled in intensive care units across 24 hospitals; 409 patients recruited between March 16, 2022 and August 8, 2023, and after exclusion of 20 patients (CG n = 11, IG n = 9), 389 patients were analyzed (CG n = 189, IG n = 200).",
+        "intervention": "A comprehensive digital precision diagnostics concept comprising mNGS-based diagnostics (CE-IVD-marked DISQVER test, Noscendo GmbH) of microbial circulating cell-free DNA in addition to standard-of-care microbiological analyses and optional infectious disease consultations (intervention group, n = 200).",
+        "comparison": "Standard-of-care microbiological analyses alone, supplemented by optional infectious disease consultations (control group, n = 189).",
+        "outcome": "The primary endpoint, the DOOR/RADAR (Desirability of Outcome Ranking / Response Adjusted for Duration of Antibiotic Risk) score at 28 days, was not significantly improved (intervention group: 3.21 ± 1.54; control group: 3.49 ± 1.51; 95% CI − 0.58 to 0.03)."
+      },
+      "pico_ko": {
+        "population": "[독일] 24개 병원 중환자실(ICU)에 등록된, < 24시간 이내 진단된 패혈증 또는 패혈성 쇼크를 가진 만 18세 이상 성인 환자; 2022년 3월 16일부터 2023년 8월 8일 사이 409명이 모집되었고, 20명(CG n = 11, IG n = 9) 제외 후 389명(CG n = 189, IG n = 200)이 분석되었다.",
+        "intervention": "표준 미생물 검사(SOC)와 선택적 감염내과 자문에 더하여, 미생물 순환 cell-free DNA의 mNGS 기반 진단(CE-IVD 인증 DISQVER test, Noscendo GmbH)을 포함하는 종합 디지털 정밀진단 개념(중재군, n = 200).",
+        "comparison": "선택적 감염내과 자문을 포함한 표준 미생물 검사(SOC) 단독(대조군, n = 189).",
+        "outcome": "일차 평가변수인 28일 시점 DOOR/RADAR(Desirability of Outcome Ranking / Response Adjusted for Duration of Antibiotic Risk) 점수는 유의하게 개선되지 않았다(중재군: 3.21 ± 1.54; 대조군: 3.49 ± 1.51; 95% CI − 0.58 ~ 0.03)."
+      },
+      "keyFindings": [
+        "The primary endpoint, 28-day DOOR/RADAR score, was not significantly improved by mNGS (IG 3.21 ± 1.54 vs CG 3.49 ± 1.51; 95% CI − 0.58 to 0.03).",
+        "Exploratory secondary endpoints favored the intervention: shorter mechanical ventilation (6.6 ± 9.4 vs 9.3 ± 10.6 days; 95% CI − 5.03 to − 0.34) and faster shock resolution (6.9 ± 7.4 vs 8.8 ± 8.5 days; 95% CI − 3.75 to − 0.04).",
+        "90-day HRQoL (EQ-5D-5L) was higher in the intervention group (0.312 ± 0.386 vs 0.208 ± 0.373; p = 0.047), while 180-day healthcare costs did not differ in the claims-data subgroup (33.2% of patients)."
+      ],
+      "keyFindings_ko": [
+        "일차 평가변수인 28일 DOOR/RADAR 점수는 mNGS로 유의하게 개선되지 않았다(IG 3.21 ± 1.54 vs CG 3.49 ± 1.51; 95% CI − 0.58 ~ 0.03).",
+        "탐색적 이차 평가변수는 중재군에 유리했다: 기계환기 기간 단축(6.6 ± 9.4 vs 9.3 ± 10.6일; 95% CI − 5.03 ~ − 0.34)과 빠른 쇼크 해소(6.9 ± 7.4 vs 8.8 ± 8.5일; 95% CI − 3.75 ~ − 0.04).",
+        "90일 HRQoL(EQ-5D-5L)은 중재군에서 더 높았고(0.312 ± 0.386 vs 0.208 ± 0.373; p = 0.047), 180일 의료비용은 claims-data 하위군(환자의 33.2%)에서 차이가 없었다."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42377463",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42377463/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1007/s00134-026-08521-3",
+          "url": "https://doi.org/10.1007/s00134-026-08521-3"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT04571801 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT04571801"
+        }
+      ],
+      "fullText": "### Take home message\n[object Object]\n\n### Introduction\nSepsis is a life-threatening organ dysfunction caused by a dysregulated host response to infection []. With up to 50 million cases and ~ 11 million deaths annually, sepsis accounts for nearly 20% of worldwide deaths []. Early initiation of therapy is associated with improved outcomes [] and current guidelines recommend the administration of anti-infectives in adults with suspected septic shock or a high likelihood of sepsis within 1 h []. In particular, critically ill septic patients who receive inadequate empirical anti-infective therapy face higher risks of adverse outcomes []. Therefore, early identification of sepsis-causing pathogens is critical. Although culture-based techniques represent the diagnostic gold standard, they are associated with significant weaknesses (e.g., low sensitivity/specificity) []. The detection of circulating cell-free DNA through metagenomic next-generation sequencing (mNGS) has proven to be a promising alternative []. While previous studies have demonstrated that mNGS is applicable for identifying causal pathogens in septic patients, a prospective multicenter evaluation of the mNGS-based approach in a large patient cohort was lacking [–]. Therefore, the multicenter non-interventional  trial was conducted to evaluate the performance characteristics of the mNGS-based approach and its potential impact on anti-infective treatment regimens in patients with sepsis []. This study revealed a positivity rate of 70.5% for mNGS-based diagnostics, compared with 19.4% for blood cultures (BCs), within the first 3 days after sepsis onset. Based on expert recommendations, additional knowledge of mNGS findings would have led to adjustments in anti-infective treatment in 32.6% of cases. Notably, these potentially inadequately treated patients exhibited significantly worse outcomes compared with those receiving appropriate treatment. However, because of its non-interventional design, the  trial and several other clinical studies did not allow a definitive conclusion regarding the possible benefit of mNGS diagnostics in septic patients [, –]. Thus, the objectives of this randomized, controlled, interventional  trial were to evaluate the effects of an mNGS-based approach for pathogen identification in patients with sepsis or septic shock on clinical outcomes, health-related quality of life (HRQoL), and healthcare costs in real-world scenarios [].\n\n### Methods\n\n### Trial design\nThe  trial was a randomized, controlled, interventional, open-label, multicenter study that enrolled patients with sepsis or septic shock in intensive care units (ICUs) across 24 hospitals of the German Society of Anaesthesiology and Intensive Care (GSAIC) Trials Group []. See Supplemental Methods for additional details.\n\n### Patients\nAdult patients aged ≥ 18 years with sepsis or septic shock and with a diagnosis within < 24 h were eligible for study inclusion []. Exclusion criteria were age < 18 years, refusal to give consent, anticipated discharge from the ICU within the first 72 h following inclusion, and primary palliative treatment intent. In addition, patients were not included if clinicians were not committed to aggressive treatment, and if death was deemed imminent or inevitable. Readmitted patients who had previously been included during the same hospitalization could not be included a second time. All patients were treated according to current sepsis guidelines [, ]. Written informed consent was obtained from all patients or their legal representatives prior to study inclusion.\n\n### Randomization and blinding\nPatients were randomized (1:1) into either the control group (CG) or the intervention group (IG). Patients were unable to infer their group allocation due to their general state of health and the identical nature of study visits in both groups. Blinding of the attending physicians was not possible. See Supplemental Methods for additional details.\n\n### Interventions\nPathogen diagnostics in the CG were performed by standard-of-care (SOC) microbiological analyses, supplemented by optional infectious disease consultations. In the IG, a comprehensive digital precision diagnostics concept was implemented, comprising mNGS-based diagnostics in addition to SOC microbiological analyses and optional infectious disease consultations. For the IG, samples were transferred overnight by a logistics integrator, after which mNGS-based analyses were conducted using the CE-IVD-marked DISQVER test (Noscendo GmbH, Duisburg, Germany), as further described in Supplemental Methods. In both groups, the choice of anti-infective therapy and the duration of treatment were based on the local standard and not dictated by the study protocol to better reflect everyday clinical practice.\n\n### Sample collection\nStandard-of-care microbiological analyses of potential pathogens in the different specimens were performed according to current sepsis guidelines [] and the usual practice in each participating institution (including rapid multiplex PCR if it was part of the local standard). Blood culture diagnostics included the collection of BC sets (2 × aerobic/2 × anaerobic) at baseline and 3 days later. At the same time and from the same site, blood samples were obtained for mNGS-based pathogen diagnostics. Additional sampling for mNGS-based diagnostics could be performed up to day 14 whenever the attending physician requested further BC collection. Routine microbiological findings from other biological samples were also considered for retrospective expert panel evaluation (see below) if obtained within 3 days before or after the extraction of blood samples for mNGS-based diagnostics.\n\n### Data collection and management\nBaseline data were collected at the time of sepsis diagnosis. Clinical data were assessed at baseline and at 3, 7, 14, and 28 days thereafter. Outcome evaluations were conducted at 28, 90, and 180 days after sepsis onset. Cost data for each patient for an individual period of 180 days across different health service areas were extracted from claims data provided by involved statutory health insurance providers (BARMER, AOK Rhineland/Hamburg, and Techniker Krankenkasse Hamburg), thereby continuously capturing healthcare costs from a payer perspective. HRQoL was assessed using the EQ-5D-5L questionnaire at baseline and at 90 and 180 days. See Supplemental Methods for additional details.\n\n### Study outcomes\nThe  trial primarily evaluated whether additional mNGS-based diagnostics improve the Desirability of Outcome Ranking/Response Adjusted for Duration of Antibiotic Risk (DOOR/RADAR) score []. The DOOR component reflects the overall clinical outcome, consisting of ICU/intermediate care unit (IMC) length of stay (LOS), 28-day mortality, and acute kidney injury requiring kidney replacement therapy, whereas the RADAR component reflects the duration of anti-infective treatment. A detailed list with additional outcomes is provided in Supplemental Table . Safety outcomes were based on adverse-event reporting.\n\n### Retrospective expert panel evaluation\nThe potential clinical value of the mNGS-based approach was assessed by three independent specialists in infectious diseases or intensive care medicine, who retrospectively evaluated the plausibility and therapeutic relevance of the mNGS and BC results, as further described in Supplemental Methods. This retrospective expert panel evaluation of the potential diagnostic utility of mNGS in patients with sepsis or septic shock was exploratory and hypothesis-generating in nature.\n\n### Statistical methods\nThis calculation was based on a differentiated outcome analysis of study patients from four major German sepsis studies and has been described in detail in the study protocol []. With 180 patients per study arm, a power of 90% could be achieved under the assumption that with a relative effect p of 0.6 (common language effect size), a patient from the IG would have a lower DOOR/RADAR score than one from the CG. Allowing for a dropout rate of 12.5%, a total of 410 randomized patients ( = 205 per arm) were required.\nBecause no interim analysis had been prespecified, the primary hypothesis was first analyzed after study completion using the Mann–Whitney  test in the intention-to-treat population. Missing DOOR/RADAR scores were replaced using multiple imputation methods. The imputation model was based on age, Sequential Organ Failure Assessment (SOFA) score at sepsis onset, and survival, and it assumed that missing values for the primary outcome were “missing at random”. In addition, 95% confidence intervals (CIs) and descriptive  values for the effect estimates are reported. More detailed information on secondary outcome analyses is given in the Supplemental Methods. The study protocol had prospectively specified the use of an expert panel to retrospectively assess the maximum potential benefit of mNGS diagnostics. The independent responses were analyzed based on majority rule and are described with descriptive methods. All statistical tests were two-sided and performed using R version 4.2.0 in a validated environment. Detailed information on the statistical methods was prespecified in a statistical analysis plan finalized before database closure (Supplementary Appendix).\nDirect healthcare costs per patient were calculated by summing costs across different health service areas within each patient’s individual 180-day observation period. Outliers in total costs were excluded based on the 99th percentile. HRQoL was descriptively assessed using both the EQ-5D-5L index and visual analog scale. The data were not normally distributed, so the Wilcoxon rank-sum test (Mann–Whitney U) was applied for group comparisons.\n\n### Results\n\n### Recruitment, participant flow, and patient characteristics\nIn total, 409 patients were recruited between March 16, 2022, and August 8, 2023. After the exclusion of 20 patients (CG:  = 11, IG:  = 9), 389 patients (CG:  = 189, IG",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -4053,13 +4104,14 @@
         "42274006",
         "42449426",
         "42637214",
-        "41218981"
+        "41218981",
+        "42377463"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
-      "2026-10": 119613
+      "2026-10": 130696
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
