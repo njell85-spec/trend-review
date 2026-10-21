@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42377463",
-      "title": "Effects of a clinical metagenomics intervention on clinical outcomes, healthcare costs, and health-related quality of life in patients with sepsis or septic shock: results of the randomized-controlled DigiSep trial.",
-      "journal": "Intensive care medicine",
-      "score": 8.2,
-      "topic": "sepsis_shock",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.2192,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42008277",
       "title": "Using Serious Games to Increase the Implementation of Trauma Triage Guidelines: A Randomized Clinical Trial.",
       "journal": "JAMA",
@@ -343,6 +328,22 @@
       "lowConfidence": false,
       "addedAt": "2026-09-30",
       "publishedAt": "2026-10-01"
+    },
+    {
+      "pmid": "42377463",
+      "title": "Effects of a clinical metagenomics intervention on clinical outcomes, healthcare costs, and health-related quality of life in patients with sepsis or septic shock: results of the randomized-controlled DigiSep trial.",
+      "journal": "Intensive care medicine",
+      "score": 8.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.2192,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-21"
     }
   ],
   "rejected": [
@@ -358,9 +359,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-01",
+    "date": "2026-10-21",
     "outcome": "published",
-    "publishedId": "42467247"
+    "publishedId": "42377463"
   },
-  "updatedAt": "2026-10-20"
+  "updatedAt": "2026-10-21"
 }

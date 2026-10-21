@@ -3522,23 +3522,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "42555934",
-      "title": "Syncope.",
-      "journal": "N Engl J Med",
-      "score": 3,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "실신 NEJM 종설 — 응급 핵심 증상 접근",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "42593537",
       "title": "Decades of intensive care medicine trials: what randomised evidence has changed, corrected, and still questions to resolve.",
       "journal": "Intensive Care Med",
@@ -12578,6 +12561,132 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "42555934",
+      "title": "Syncope.",
+      "journal": "N Engl J Med",
+      "score": 3,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "실신 NEJM 종설 — 응급 핵심 증상 접근",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-21",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "42555934",
+          "title": "Syncope.",
+          "journal": "The New England journal of medicine",
+          "pubDate": "2026-8-5",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42555934/",
+          "doi": "10.1056/NEJMcp2517255"
+        },
+        "title_ko": "실신(Syncope)",
+        "scope_ko": "일과성 뇌 저관류로 인한 실신을 반사성·기립성·심인성 기전으로 분류하고, 병력·진찰과 위험도 층화에 근거한 표적 검사로 진단하며, 기전에 따라 재발과 손상 위험을 줄이는 방향으로 관리하는 방법을 정리한 NEJM 임상진료(Clinical Practice) 종설이다. 특히 고령 환자에서 실신이 '원인불명 낙상'으로 나타날 수 있음을 강조한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "정의와 기전에 따른 분류",
+            "body_ko": "실신은 일과성 뇌 저관류(transient cerebral hypoperfusion)로 발생하는 흔한 임상 문제로, 반사성(reflex), 기립성(orthostatic), 심인성(cardiac) 기전을 포괄한다. 이 종설은 실신을 이 세 가지 기전의 틀로 바라보며, 치료 방향 역시 바탕에 깔린 기전에 따라 결정된다는 점을 전제로 삼는다.\n\n(주: 이하 '원문(article)' 표시 절들은 이 논문의 초록이 밝힌 범위만 옮긴 것이다. 본문은 유료 접근 장벽으로 확보하지 못했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단: 병력·진찰과 위험도 기반 표적 검사",
+            "body_ko": "정확한 진단은 세심한 병력 청취와 신체 진찰, 그리고 위험도 층화(risk stratification)에 따라 선택하는 표적 검사(targeted testing)에 달려 있다. 즉 모든 환자에게 광범위한 검사를 일괄 시행하는 것이 아니라, 병력과 진찰로 가능성을 좁힌 뒤 위험도에 맞춰 검사를 겨냥해 시행하는 것이 이 종설이 제시하는 접근 원칙이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "관리: 기전 기반, 재발과 손상 위험 감소",
+            "body_ko": "실신의 관리는 바탕이 되는 기전에 근거해 결정되며, 재발(recurrence)과 손상(injury) 위험을 줄이는 데 초점을 둔다. 치료는 기전별로 달라지므로, 반사성·기립성·심인성 중 어느 기전인지 규명하는 것이 관리의 전제가 된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "고령 환자: '원인불명 낙상'으로 나타나는 실신",
+            "body_ko": "고령 환자에서는 실신이 '원인불명 낙상(unexplained falls)'의 형태로 나타날 수 있다. 따라서 낙상을 호소하는 노인 환자에서 실신을 감별 진단에 반드시 포함해야 한다는 점을 저자는 강조한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "고위험 특징의 조기 식별",
+            "body_ko": "불리한 심혈관 결과를 예방하기 위해서는 고위험 특징(high-risk features)을 조기에 식별하는 것이 결정적으로 중요하다. 이는 실신 평가에서 위험도 층화가 단순한 분류가 아니라 예후를 바꾸는 핵심 단계임을 의미한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 기립성 저혈압의 정의와 역치",
+            "body_ko": "이 논문 본문을 확보하지 못해, 동일 주제 범위 안에서 권위 있는 2차 출처로 기립성 기전의 구체적 역치를 보강한다.\n\n전형적(classic) 기립성 저혈압: 능동 기립 또는 경사검사 3분 이후 수축기혈압(SBP)이 ≥20 mmHg 및/또는 이완기혈압(DBP)이 ≥10 mmHg 하강, 또는 SBP가 90 mmHg 미만으로 지속되는 경우.\n\n초기(initial) 기립성 저혈압: 기립 후 첫 15초 이내에 SBP가 >40 mmHg 및/또는 DBP가 >20 mmHg 하강하는 경우로, 경사검사에서는 놓치기 쉬워 박동간(beat-to-beat) 혈압 측정이 동반된 능동 기립(active stand) 검사가 필요하다.\n\n지연성(delayed) 기립성 저혈압: 능동 기립 또는 경사 3분 이후에 서서히 나타나는 경우.\n— 보강 출처: Recent Advances and Future Directions in Syncope Management (PMC narrative review) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/)",
+            "origin": "augmented",
+            "sourceLabel": "Recent Advances and Future Directions in Syncope Management (PMC narrative review)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/"
+          },
+          {
+            "heading_ko": "[웹 보강] 경동맥동 증후군과 경동맥동 마사지",
+            "body_ko": "경동맥동 마사지(carotid sinus massage)는 40세 이상 환자에서 적응이 되며, 마사지에 반응하여 심정지(asystolic) 휴지기 ≥3초 및/또는 혈압 하강 ≥50 mmHg가 나타나면 양성(경동맥동 증후군)으로 판정한다.\n— 보강 출처: Recent Advances and Future Directions in Syncope Management (PMC narrative review) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/)",
+            "origin": "augmented",
+            "sourceLabel": "Recent Advances and Future Directions in Syncope Management (PMC narrative review)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/"
+          },
+          {
+            "heading_ko": "[웹 보강] 기립경사검사와 삽입형 루프 기록기(ILR)",
+            "body_ko": "기립경사검사(tilt test): 수동 단계는 60–70° 각도로 20–45분 유지하며, 음성이면 약물 유발 단계에서 설하 니트로글리세린 300–400 μg을 사용한다.\n\n삽입형 루프 기록기(ILR): 원인 미상의 고위험 실신, 또는 저위험이라도 재발(2년 내 ≥3회)하는 경우에 적응이 된다. 증상을 동반한 심정지 휴지기 >3초 또는 무증상 휴지기 >6초가 기록되면 의미 있는 소견으로 본다.\n— 보강 출처: Recent Advances and Future Directions in Syncope Management (PMC narrative review) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/)",
+            "origin": "augmented",
+            "sourceLabel": "Recent Advances and Future Directions in Syncope Management (PMC narrative review)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/"
+          },
+          {
+            "heading_ko": "[웹 보강] 기전별 치료: 반사성 실신과 기립성 저혈압",
+            "body_ko": "반사성(혈관미주신경성) 실신: 대개 생활습관 교정으로 충분하며, 물리적 역압동작(physical counter-pressure maneuvers)이 1차이다. 약물로는 지속적 저혈압 표현형의 젊은 환자에서 fludrocortisone 0.05–0.2 mg/일, midodrine 2.5–10 mg 하루 3회를 고려한다(midodrine 메타분석 재발 상대위험 RR 0.55, 95% CI 0.35–0.85). 40세 초과이면서 심억제성(cardioinhibitory) 반응으로 증상성 휴지기 >3초 또는 무증상 휴지기 >6초(동정지 또는 방실차단)가 기록된 경우 이중방 심박동기(dual-chamber pacemaker)를 고려한다.\n\n기립성 저혈압: 약물요법에 앞서 항고혈압제 감량(목표 SBP 약 140–150 mmHg), 물리적 역압동작, 탄력 스타킹, 침대 머리 쪽 올리기(head-up tilt)를 우선한다.\n— 보강 출처: Recent Advances and Future Directions in Syncope Management (PMC narrative review) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/)",
+            "origin": "augmented",
+            "sourceLabel": "Recent Advances and Future Directions in Syncope Management (PMC narrative review)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "60647e71432a8e60e61b54edea3afe7b58d60388dd39e3b858cd90554ec120d7",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-10-21T00:13:23.669Z",
+          "resultFingerprint": "8d9617f83a40d7573640d0cc91c4517eb813aec3df076b22532eed00d6f0aad0",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 실신 환자를 처음부터 반사성·기립성·심인성 중 어느 기전인지로 분류하고, 병력·진찰·심전도·기립 혈압이라는 네 축으로 대부분의 원인을 가려 위험도에 맞춰 검사를 겨냥해야 한다. 고위험 특징을 조기에 식별해 심인성 실신을 놓치지 않는 것이 불리한 심혈관 결과 예방의 핵심이며, 특히 고령 환자의 '원인불명 낙상'에서는 실신을 반드시 감별에 넣어야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42555934",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42555934/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1056/NEJMcp2517255",
+            "url": "https://doi.org/10.1056/NEJMcp2517255"
+          },
+          {
+            "label": "웹 — PubMed — Syncope (Kenny RA, NEJM 2026; PMID 42555934)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42555934/"
+          },
+          {
+            "label": "웹 — ESC FOCUS on Syncope",
+            "url": "https://www.escardio.org/education/content-collections/focus/syncope/"
+          },
+          {
+            "label": "웹 — Recent Advances and Future Directions in Syncope Management (PMC10856004)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10856004/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -12635,9 +12744,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "outcome": "published",
-    "publishedId": "42059919"
+    "publishedId": "42555934"
   },
-  "updatedAt": "2026-10-20"
+  "updatedAt": "2026-10-21"
 }

@@ -32538,7 +32538,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34727,7 +34727,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.672Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37747,7 +37747,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41001,69 +41001,6 @@
       }
     },
     {
-      "id": "pmid:42264011",
-      "pmid": "42264011",
-      "title": "2026 ACC/AHA Guidelines and Risk Stratification of Acute Pulmonary Embolism: A Hemodynamic Choice.",
-      "pubDate": "2026 Aug 15",
-      "journal": "The American journal of cardiology",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:34.154Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [],
-      "doi": "10.1016/j.amjcard.2026.06.009",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "aha"
-      },
-      "priority": 12,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence"
-      ],
-      "lastSeenAt": "2026-09-13T23:23:48.299Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "급성 폐색전 위험층화 ACC/AHA—응급 혈역학 결정 핵심(초록없음,제목판단)",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "attempts": 0,
-      "lineageKey": "aha|acc-risk-stratification-acute-pulmonary-embolism-hemodynamic-choice",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:42263157",
       "pmid": "42263157",
       "title": "2026 AHA/ACC/ADA/ASN Guideline for the Prevention, Detection, Evaluation, and Management of Cardiovascular-Kidney-Metabolic Syndrome: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines.",
@@ -42916,7 +42853,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44259,7 +44196,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44388,7 +44325,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.672Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -45058,7 +44995,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45218,7 +45155,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45300,7 +45237,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.672Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45529,7 +45466,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46531,15 +46468,14 @@
       "discoveredAt": "2026-09-15T23:40:00.230Z",
       "abstract": "Cardiovascular disease became the leading cause of death among Hispanic individuals in the United States in 2022. Hispanic adults experience a disproportionate burden of cardiometabolic risk factors, including obesity, diabetes, and dyslipidemia. Hispanic populations are highly heterogeneous, with substantial variations in genetic ancestry and sociocultural influences that shape cardiovascular disease risk and outcomes. The \"Hispanic paradox,\" describing lower cardiovascular disease mortality despite higher risk factor burden, is increasingly recognized as an oversimplification that does not apply uniformly across Hispanic heritage groups, sexes, or disease types. Disaggregated data reveal substantial differences in risk profiles and disease burden among Hispanic heritage groups, emphasizing the limitations of treating this population as a monolithic unit. Recent evidence demonstrates widening disparities in hypertension control, obesity, diabetes, and metabolic diseases among Hispanic populations, threatening this prior mortality advantage. Advancing cardiovascular and equitable health will require developing a deeper understanding of the unique drivers of cardiovascular disease within diverse Hispanic communities, addressing barriers such as language and insurance access, and implementing culturally tailored interventions and policies. This scientific statement summarizes current cardiovascular disease epidemiology in Hispanic populations, emphasizing heritage group variation and social and structural determinants of health, and presents strategies to improve prevention and healthcare delivery. Key priorities for advancing cardiovascular health in Hispanic adults include expanding disaggregated data collection, increasing representation in research, and ensuring equitable implementation of precision medicine approaches, including genomics, multi-omics, and artificial intelligence, while addressing environmental exposures, psychosocial stressors, and policy-related drivers of risk in order to achieve the American Heart Association's 2028 Impact Goals to advancing health and hope for everyone, everywhere.",
       "meshTerms": [
+        "Adult",
         "Humans",
-        "Hispanic or Latino",
-        "United States",
         "American Heart Association",
         "Cardiovascular Diseases",
-        "Stroke",
+        "Hispanic or Latino",
         "Risk Factors",
-        "Adult",
-        "Female"
+        "Stroke",
+        "United States"
       ],
       "keywords": [
         "AHA Scientific Statements",
@@ -46583,7 +46519,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.672Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46782,7 +46718,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46856,7 +46792,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -47066,7 +47002,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47118,11 +47054,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.600617293288233,
+      "priority": 11.597050113627366,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.600617293288232,
+        "recency": 1.5970501136273658,
         "scope": 0,
         "confidence": 2
       },
@@ -47138,7 +47074,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.672Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47219,7 +47155,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47296,7 +47232,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47365,7 +47301,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.672Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47442,7 +47378,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47500,7 +47436,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47568,7 +47504,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.672Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47623,7 +47559,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -47632,7 +47568,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-20T00:35:51.683Z",
+      "lastSeenAt": "2026-10-21T00:02:58.671Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -58605,6 +58541,152 @@
         ]
       },
       "publishedAt": "2026-10-20"
+    },
+    {
+      "id": "pmid:42264011",
+      "pmid": "42264011",
+      "title": "2026 ACC/AHA Guidelines and Risk Stratification of Acute Pulmonary Embolism: A Hemodynamic Choice.",
+      "pubDate": "2026 Aug 15",
+      "journal": "The American journal of cardiology",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:34.154Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1016/j.amjcard.2026.06.009",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 12,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "lastSeenAt": "2026-09-13T23:23:48.299Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성 폐색전 위험층화 ACC/AHA—응급 혈역학 결정 핵심(초록없음,제목판단)",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "attempts": 0,
+      "lineageKey": "aha|acc-risk-stratification-acute-pulmonary-embolism-hemodynamic-choice",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42264011",
+          "title": "2026 ACC/AHA Guidelines and Risk Stratification of Acute Pulmonary Embolism: A Hemodynamic Choice.",
+          "journal": "The American journal of cardiology",
+          "pubDate": "2026 Aug 15",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42264011/",
+          "doi": "10.1016/j.amjcard.2026.06.009"
+        },
+        "org": "AHA/ACC",
+        "version": "2026",
+        "title_ko": "2026 ACC/AHA 급성 폐색전증 가이드라인과 위험 계층화: 혈역학적 선택 (사설/논평)",
+        "scope_ko": "성인 급성 폐색전증(PE)의 평가·위험 계층화·치료를 다루는 2026 AHA/ACC 다학제 합동 가이드라인에 대한 American Journal of Cardiology 사설이다. 기존 '거대/준거대(massive/submassive)' 위험 기반 분류를 혈역학·기능 중심의 새로운 임상 범주(A–E)로 전환한 점을 중심으로 논평한다.",
+        "summary": [
+          "Replace the legacy 'massive/submassive' labels with a 5-tier Acute PE Clinical Category system (A = subclinical/incidental, B = symptomatic low severity, C = symptomatic elevated severity [former 'intermediate'], D = incipient cardiopulmonary failure/normotensive shock, E = overt cardiopulmonary failure), with D1/D2 and E1/E2 subtiers and an optional respiratory (R) modifier for hypoxia/tachypnea/escalating O2 need.",
+          "Use PESI, sPESI, or Hestia to identify low-risk patients in Categories A–B; add biomarkers (troponin, BNP) and RV imaging (echocardiography preferred) to stratify Category C.",
+          "Measure serum lactate (venous or arterial) in Categories C–E to detect preshock/normotensive shock (Class 1).",
+          "Do NOT use quantification of thrombus burden for risk stratification in Categories A–C (Class 3: No Benefit) — no association between clot extent and adverse events; decisions should follow hemodynamic/RV impact, not anatomy.",
+          "Prefer DOACs over vitamin K antagonists (Class 1, Level B-R) and LMWH over UFH for parenteral anticoagulation (Class 1, Level B-R); outpatient management with a DOAC is reasonable in appropriately selected low-risk Category A–B patients (Class 2a).",
+          "Give systemic thrombolysis for cardiopulmonary failure (Category E) and consider it in Category D (transient hypotension/normotensive shock) with acceptable bleeding risk; systemic thrombolysis is harmful in lower-severity Category C (up to C2) (Class 3).",
+          "Catheter-directed therapy and mechanical thrombectomy are reasonable in E1 (Class 2a) and may be considered in D1–D2; in Category C their benefit is uncertain and should be restricted to progressive deterioration after multidisciplinary review.",
+          "Multidisciplinary PE response teams (PERTs) are recommended to improve timeliness and appropriateness of care (Class 1, Level B-NR); for Categories D–E support RV perfusion with norepinephrine, dobutamine for low output, inhaled pulmonary vasodilators, prefer HFNC over invasive ventilation, and consider VA-ECMO for refractory shock."
+        ],
+        "summary_ko": [
+          "기존 '거대/준거대(massive/submassive)' 용어를 5단계 급성 PE 임상 범주로 대체한다(A=무증상/우연 발견, B=증상 있으나 낮은 중증도, C=증상+높은 중증도[기존 '중등도 위험'], D=임박한 심폐부전/정상혈압 쇼크, E=명백한 심폐부전). D1/D2·E1/E2 하위 분류와 저산소·빈호흡·산소요구 증가 시 붙이는 호흡(R) 수식어가 있다.",
+          "범주 A–B에서는 PESI, sPESI, Hestia로 저위험 환자를 식별하고, 범주 C에서는 바이오마커(troponin, BNP)와 RV 영상(심초음파 우선)을 더해 계층화한다.",
+          "범주 C–E에서는 전조 쇼크/정상혈압 쇼크를 포착하기 위해 혈청 lactate(정맥 또는 동맥)를 측정한다(Class 1).",
+          "범주 A–C에서 혈전 부하량 정량을 위험 계층화에 사용하지 말라(Class 3: 이득 없음) — 혈전 범위와 유해 사건 간 연관이 없으며, 결정은 해부학적 범위가 아니라 혈역학/RV 영향에 따라야 한다.",
+          "경구 항응고는 vitamin K 길항제보다 DOAC를 우선하고(Class 1, Level B-R), 비경구는 UFH보다 LMWH를 우선한다(Class 1, Level B-R); 적절히 선별된 저위험 A–B 범주에서는 DOAC로 외래 치료가 합당하다(Class 2a).",
+          "심폐부전(범주 E)에는 전신 혈전용해를 시행하고, 범주 D(일시적 저혈압/정상혈압 쇼크)에서는 출혈 위험이 수용 가능하면 고려한다; 중증도가 낮은 범주 C(최대 C2)에서 전신 혈전용해는 해롭다(Class 3).",
+          "카테터 기반 치료와 기계적 혈전제거술은 E1에서 합당하며(Class 2a) D1–D2에서 고려할 수 있다; 범주 C에서는 이득이 불확실하여 다학제 검토 후 진행성 악화에 한정한다.",
+          "다학제 PE 대응팀(PERT)은 치료의 적시성·적절성 향상을 위해 권고된다(Class 1, Level B-NR); 범주 D–E에서는 RV 관류를 위해 norepinephrine, 저심박출에는 dobutamine, 흡입 폐혈관확장제를 쓰고, 침습적 환기보다 HFNC를 선호하며 불응성 쇼크에는 VA-ECMO를 고려한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "위험 분류 체계 전면 개편",
+            "detail": "Previous risk-based nomenclature ('massive/submassive/low-risk', mirroring the ESC low/intermediate/high scheme) is replaced by a 5-tier Acute PE Clinical Category system (A–E) with D1/D2, E1/E2 subtiers and a respiratory (R) modifier. Reason: 'submassive' lumped too heterogeneous a population; the new scheme integrates clinical severity scores, biomarkers, RV imaging, hemodynamics, and respiratory compromise to capture dynamic risk trajectory and preshock states rather than a static snapshot.",
+            "detail_ko": "기존 위험 기반 명명('massive/submassive/저위험', ESC의 저/중/고 위험 체계와 유사)을 D1/D2·E1/E2 하위 분류와 호흡(R) 수식어를 갖춘 5단계 급성 PE 임상 범주(A–E)로 대체했다. 이유: 'submassive'가 지나치게 이질적인 환자군을 묶었기 때문이며, 새 체계는 임상 중증도 점수·바이오마커·RV 영상·혈역학·호흡 손상을 통합해 정적 스냅숏이 아니라 동적 위험 궤적과 전조 쇼크 상태를 포착한다."
+          },
+          {
+            "topic": "해부학적 혈전 부하 → 혈역학 중심",
+            "detail": "New explicit statement that quantification of thrombus burden should NOT be used for risk stratification in Categories A–C (Class 3: No Benefit), because evidence shows no association between clot extent and adverse events. Therapeutic decisions now hinge on hemodynamic and functional progression of RV dysfunction, not anatomic clot extent — a departure from anatomy-weighted thinking.",
+            "detail_ko": "범주 A–C에서 혈전 부하량 정량을 위험 계층화에 사용하지 말라는 새로운 명시적 권고(Class 3: 이득 없음). 혈전 범위와 유해 사건 사이에 연관이 없다는 근거 때문이다. 치료 결정은 이제 해부학적 혈전 범위가 아니라 RV 기능부전의 혈역학적·기능적 진행에 달려 있으며, 이는 해부학 가중 사고에서 벗어난 변화다."
+          },
+          {
+            "topic": "Lactate 및 전조 쇼크 인식 도입",
+            "detail": "Serum lactate measurement (venous or arterial) is newly elevated to a Class 1 recommendation in Categories C–E, and 'normotensive shock'/incipient cardiopulmonary failure (Category D) is formally defined — the patient with normal cuff pressure but rising lactate/creatinine. This operationalizes detection of deterioration before overt hypotension, which prior risk-score-first frameworks did not emphasize.",
+            "detail_ko": "혈청 lactate 측정(정맥 또는 동맥)이 범주 C–E에서 Class 1 권고로 새롭게 격상되었고, '정상혈압 쇼크'/임박한 심폐부전(범주 D)이 공식 정의되었다 — 혈압계 수치는 정상이지만 lactate·creatinine이 오르는 환자다. 이는 명백한 저혈압 이전에 악화를 포착하도록 구체화한 것으로, 위험 점수 우선의 기존 틀이 강조하지 않았던 부분이다."
+          },
+          {
+            "topic": "PERT 공식 권고",
+            "detail": "Multidisciplinary PE response teams (PERTs) receive a Class 1 (Level B-NR) recommendation — the first North American guideline to formally embed the PERT care model to improve timeliness and appropriateness of advanced-therapy decisions. Prior guidance treated PERT as optional/institutional.",
+            "detail_ko": "다학제 PE 대응팀(PERT)이 Class 1(Level B-NR) 권고를 받았다 — PERT 진료 모델을 공식적으로 명시한 최초의 북미 가이드라인으로, 고급 치료 결정의 적시성·적절성을 높이기 위한 것이다. 기존 지침은 PERT를 선택적/기관 재량 사항으로 다뤘다."
+          },
+          {
+            "topic": "항응고제 선택",
+            "detail": "DOACs are recommended over vitamin K antagonists (Class 1, Level B-R) and LMWH over UFH for parenteral therapy (Class 1, Level B-R); outpatient treatment with a DOAC is explicitly endorsed as reasonable (Class 2a) for selected low-risk Category A–B patients, consolidating the shift away from VKA/UFH-default pathways.",
+            "detail_ko": "경구 항응고는 vitamin K 길항제보다 DOAC를(Class 1, Level B-R), 비경구는 UFH보다 LMWH를(Class 1, Level B-R) 권고한다; 선별된 저위험 A–B 범주 환자에서 DOAC 외래 치료가 합당하다고 명시적으로 지지한다(Class 2a). 이는 VKA/UFH 기본 경로에서 벗어나는 흐름을 굳힌 것이다."
+          },
+          {
+            "topic": "재관류 치료의 범주별 세분화",
+            "detail": "Reperfusion is tied to category rather than to 'massive/submassive': systemic thrombolysis for Category E (cardiopulmonary failure) and considered in Category D; systemic thrombolysis is designated harmful (Class 3) in lower-severity Category C (up to C2). Catheter-directed therapy and mechanical thrombectomy are reasonable in E1 (Class 2a) and may be considered in D1–D2, while in Category C benefit is uncertain and restricted to progressive deterioration after PERT review.",
+            "detail_ko": "재관류는 'massive/submassive'가 아니라 범주에 연동된다: 범주 E(심폐부전)에는 전신 혈전용해, 범주 D에서는 고려; 중증도가 낮은 범주 C(최대 C2)에서는 전신 혈전용해가 해롭다고 지정(Class 3). 카테터 기반 치료와 기계적 혈전제거술은 E1에서 합당하고(Class 2a) D1–D2에서 고려 가능하며, 범주 C에서는 이득이 불확실하여 PERT 검토 후 진행성 악화에 한정한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, stop labeling PEs 'massive/submassive' and instead assign an A–E clinical category that drives disposition: Category A–B patients can usually go home on a DOAC, while Category C–E patients are admitted, get troponin/BNP, RV echo, and — critically — a lactate to unmask normotensive shock before the blood pressure falls. Do not escalate to thrombolysis or catheter-directed therapy based on CT clot burden; reserve systemic lysis for overt failure (E) and consider it/advanced therapies in incipient failure (D) through an activated PERT, since lysis is now flagged as harmful in lower-severity Category C. For hemodynamically failing patients, default to norepinephrine (± dobutamine), favor high-flow nasal cannula over intubation, and escalate to VA-ECMO for refractory shock where available.",
+        "practiceImpact_ko": "침상에서는 PE를 'massive/submassive'로 부르지 말고 처치를 결정하는 A–E 임상 범주를 부여한다: A–B 범주는 대개 DOAC로 귀가 가능하고, C–E 범주는 입원시켜 troponin/BNP, RV 심초음파, 그리고 결정적으로 혈압이 떨어지기 전에 정상혈압 쇼크를 드러내기 위한 lactate를 확인한다. CT상 혈전 부하로 혈전용해나 카테터 치료를 결정하지 말고, 전신 혈전용해는 명백한 부전(E)에 한정하며 임박한 부전(D)에서는 활성화된 PERT를 통해 고급 치료를 고려한다 — 중증도가 낮은 범주 C에서는 혈전용해가 이제 해롭다고 표시되기 때문이다. 혈역학적으로 악화하는 환자에서는 norepinephrine(± dobutamine)을 기본으로 하고 삽관보다 HFNC를 선호하며, 가능한 경우 불응성 쇼크에는 VA-ECMO로 상향한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42264011",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42264011/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.amjcard.2026.06.009",
+            "url": "https://doi.org/10.1016/j.amjcard.2026.06.009"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-21"
     }
   ],
   "rejected": [
@@ -63580,7 +63662,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-20T00:35:42.208Z",
+      "discoveredAt": "2026-10-21T00:02:49.186Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64035,7 +64117,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-20T00:35:42.208Z",
+      "discoveredAt": "2026-10-21T00:02:49.186Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -64079,7 +64161,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-20T00:35:42.208Z",
+      "discoveredAt": "2026-10-21T00:02:49.186Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64106,7 +64188,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-20T00:35:42.208Z",
+      "discoveredAt": "2026-10-21T00:02:49.186Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64134,7 +64216,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-20T00:35:42.208Z",
+      "discoveredAt": "2026-10-21T00:02:49.186Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64145,6 +64227,42 @@
       "status": "rejected",
       "verdict": "rejected",
       "documentType": "scientific-statement",
+      "reasons": [
+        "correction-or-erratum"
+      ]
+    },
+    {
+      "id": "pmid:42898842",
+      "pmid": "42898842",
+      "title": "Correction: Implementation of guideline-recommended organ-protective therapy in people with type 2 diabetes and cardiovascular disease, heart failure, or kidney disease: real-world evidence from a German University Hospital.",
+      "pubDate": "2026",
+      "journal": "Frontiers in endocrinology",
+      "publicationTypes": [
+        "Published Erratum"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-21T00:02:49.186Z",
+      "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
+      "meshTerms": [],
+      "keywords": [
+        "GLP1RA",
+        "SGLT2i",
+        "atherosclerotic cardiovascular disease",
+        "chronic kidney disease",
+        "guidelines",
+        "heart failure",
+        "organ protection",
+        "type 2 diabetes"
+      ],
+      "doi": "10.3389/fendo.2026.1954561",
+      "pmcid": "PMC13679133",
+      "region": "eu",
+      "by": "nationality",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "guideline",
       "reasons": [
         "correction-or-erratum"
       ]
@@ -64200,9 +64318,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261020_092959:guideline:2026-10-20",
+    "runId": "trend_review_20261021_090137:guideline:2026-10-21",
     "outcome": "published",
-    "publishedId": "pmid:42090788",
+    "publishedId": "pmid:42264011",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -64227,15 +64345,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 137,
+        "mergedTotal": 136,
         "overlapCount": 2,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/20",
-          "maxDate": "2026/10/20"
+          "minDate": "2026/09/21",
+          "maxDate": "2026/10/21"
         },
         "retmax": 60,
         "topics": [
@@ -64243,8 +64361,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 43,
-            "idsFetched": 43,
+            "totalFound": 44,
+            "idsFetched": 44,
             "truncated": false,
             "error": null
           },
@@ -64261,8 +64379,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 22,
+            "idsFetched": 22,
             "truncated": false,
             "error": null
           },
@@ -64270,8 +64388,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 13,
+            "idsFetched": 13,
             "truncated": false,
             "error": null
           },
@@ -64279,8 +64397,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 26,
-            "idsFetched": 26,
+            "totalFound": 25,
+            "idsFetched": 25,
             "truncated": false,
             "error": null
           },
@@ -64315,8 +64433,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 10,
-            "idsFetched": 10,
+            "totalFound": 9,
+            "idsFetched": 9,
             "truncated": false,
             "error": null
           },
@@ -64339,7 +64457,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 127,
+        "topicOnlyCount": 126,
         "ptPmids": [
           "42788594",
           "42552475",
@@ -64349,8 +64467,8 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 137,
-          "enriched": 137,
+          "requested": 136,
+          "enriched": 136,
           "withAbstract": 95,
           "error": null
         }
@@ -64404,10 +64522,8 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 1,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "scopeExclusions": [
         {
@@ -64783,6 +64899,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42033471",
+          "title": "Management of Dysphagia in Patients with Tracheostomy: Clinical Position Statement of the UEP Swallowing Committee.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "41397518",
           "title": "Systemic Sclerosis-Associated Interstitial Lung Disease: What We Know and How to Incorporate Guidelines Into Clinical Practice.",
           "region": null,
@@ -64841,13 +64964,6 @@
           "stage": "region",
           "pmid": "42786262",
           "title": "Diagnosing autoimmune encephalitis in psychiatry: clinical recommendations and unresolved challenges from the GENERATE network.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42776600",
-          "title": "Vaccination coverage among migrant and refugee populations in Uganda: A narrative review of challenges and recommendations.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -64958,13 +65074,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42484019",
-          "title": "Clinical practice guideline for the diagnosis and treatment of neonatal arterial ischemic stroke (2026).",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42454751",
           "title": "The vascular contribution to dementia: World Stroke Organization scientific statement.",
           "region": null,
@@ -65051,13 +65160,6 @@
           "stage": "region",
           "pmid": "42212485",
           "title": "Clinical Care Guideline Implementation of Nebulized Tranexamic Acid in Post-Tonsillectomy Hemorrhage.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42788067",
-          "title": "Evidence-Based Guidelines versus Enteral Nutrition Practices in Intensive Care Units: A Descriptive Cross-Sectional Study.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65166,18 +65268,18 @@
       ],
       "decisions": {
         "queued": 202,
-        "needsReview": 455,
-        "rejected": 131,
+        "needsReview": 454,
+        "rejected": 132,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42090788",
+        "candidateId": "pmid:42264011",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-20T00:37:21.535Z",
+  "updatedAt": "2026-10-21T00:08:53.651Z",
   "configVersion": "guideline-v2"
 }

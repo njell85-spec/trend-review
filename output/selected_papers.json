@@ -913,5 +913,16 @@
     "rerankPoolSize": 36,
     "fallbackReason": null,
     "lowConfidence": false
+  },
+  {
+    "pmid": "42377463",
+    "title": "Effects of a clinical metagenomics intervention on clinical outcomes, healthcare",
+    "date": "2026-10-21",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
