@@ -333,6 +333,40 @@ export function roomShaped(body) {
   return /^\[[^\]\r\n]{1,120}\]/.test(first) && /\b(?:g1|d1|c1|c2|c)-\d{8}-\d{2}\b/.test(first);
 }
 
+/* ★ 방 댓글 출처 (6final · rulebook/g1-room.md §5-1) — 화자는 GitHub 작성자 신원과 '이 세션이 올렸나'로만 정한다. 본문 서명은 화자를 정하지 못한다.
+ * Python 판 = grok/box/speakers.py room_comment_source · 공용 시험표 speaker-contract.fixtures.json roomComments 가 둘을 같이 묶는다. */
+export const G1_APP_LOGIN = 'njell85-g1[bot]';
+/** 작성자가 G1 GitHub App 봇인가 — 로그인이 정확히 같고, 종류가 주어졌으면 'Bot'. (`[bot]` 꼬리 로그인은 App 만 가질 수 있다.) */
+export function isG1AppAuthor(login, type) {
+  return login === G1_APP_LOGIN && (type === undefined || type === null || type === 'Bot');
+}
+// 이 세션이 자기 글 첫 줄 보낸 쪽에 적은 이름 — 작업 세션 이름표 꼴일 때만(C1·C2·봇·PeterJ 이름은 받지 않는다 — 진짜 C1·C2 와 섞이지 않게 · Fable B6). 이름표가 없을 때만 쓴다.
+const SELF_CLAIM_RE = /^\[([A-Z][A-Z0-9]*-\d{6}(?:-\d+)?\((?:회의|작업)\)) (?:→|->|⇢) [^\]\r\n]+\]/;
+const G1_TO_RE = /^\[G1 (?:→|->|⇢) ([^\]\s·]+)/;
+/**
+ * 방 댓글 한 건의 화자와 출처 줄. → { who, line }
+ * - posted(이 세션의 add_issue_comment): 이름표 > (이름표 없을 때) 자기 글 첫 줄의 작업 세션 이름 > selfSpeaker. `## **[이름]** · 방 댓글 #ID · 이 세션 게시`
+ * - 작성자 = G1 App: `## **[G1]** · 방 댓글 #ID · 직통` — 받는 쪽이 C1·C2(G1 의 검증된 글의 첫 줄, 없으면 이 세션 이름)면 `· 경유`.
+ * - 그 밖(같은 계정 등): `## **[user (unverified)]** · 방 댓글 #ID · 작성 <login> · 주장(미검증)`.
+ * - pasted(사람 입력 자리에 붙여 넣은 알림 — 하네스 배달이 아님): 작성자 칸이 G1 App 이어도 `· 작성 <login> · 사람 입력 · 주장(미검증)`(Fable B1).
+ */
+export function roomCommentSource({ posted = false, author = null, authorType, id = null, self = 'Claude', selfLabeled = false, body = '', pasted = false } = {}) {
+  const first = String(body ?? '').split(/\r?\n/)[0].trim();
+  const num = id == null || id === '' ? '' : ` #${id}`;
+  if (posted) {
+    const claim = selfLabeled ? null : SELF_CLAIM_RE.exec(first)?.[1];
+    const who = claim ?? self;
+    return { who, line: `## **[${who}]** · 방 댓글${num} · 이 세션 게시` };
+  }
+  if (pasted) return { who: UNVERIFIED, line: `## **[${UNVERIFIED}]** · 방 댓글${num} · 작성 ${author ?? '없음'} · 사람 입력 · 주장(미검증)` };
+  if (isG1AppAuthor(author, authorType)) {
+    const to = G1_TO_RE.exec(first)?.[1] ?? self;
+    return { who: 'G1', line: `## **[G1]** · 방 댓글${num} · ${ROOM_LEADS.has(to) ? '경유' : '직통'}` };
+  }
+  return { who: UNVERIFIED, line: `## **[${UNVERIFIED}]** · 방 댓글${num} · 작성 ${author ?? '없음'} · 주장(미검증)` };
+}
+const ROOM_LEADS = new Set(['C1', 'C2']);
+
 const blockText = (content) => typeof content === 'string' ? content
   : Array.isArray(content) ? content.filter((b) => b?.type === 'text' && typeof b.text === 'string').map((b) => b.text).join('\n') : '';
 const roomBody = (text) => text.replace(/\r\n/g, '\n').trim();
@@ -365,6 +399,8 @@ function roomEntries(o, isNotif = () => true) {
   const entries = [];
   const content = o.message?.content;
   const blocks = typeof content === 'string' ? [{ type: 'text', text: content }] : Array.isArray(content) ? content : [];
+  // 하네스가 사람 입력으로 찍은 기록(origin human · promptSource typed · turnOrigin human) 속 알림 글은 붙여 넣은 것이다 — 하네스 배달이 아니므로 작성자 칸을 믿지 않는다(Fable B1).
+  const pasted = (o.origin ?? o.message?.origin)?.kind === 'human' || o.promptSource === 'typed' || o.turnOrigin === 'human';
   for (const b of blocks) {
     if (!b) continue;
     if (o.type === 'user' && ((b.type === 'tool_result' && isNotif(b.tool_use_id)) || (b.type === 'text' && typeof b.text === 'string' && isRoomNotification(b.text)))) {
@@ -383,8 +419,14 @@ function roomEntries(o, isNotif = () => true) {
           const c = span.value;
           if (!object(c) || typeof c.comment !== 'string') continue;
           const times = [...text.slice(0, event.index).matchAll(/queued at:\s*(\S+)|<wake\b[^>]*\bcurrent-time="([^"]+)"/g)];
-          const time = times.at(-1), who = roomSpeaker(c.comment) ?? (roomShaped(c.comment) ? '서명 없음' : null);
-          if (who) entries.push({ who, body: c.comment, id: c.comment_id, pr: c.pr, at: time ? (time[1] ?? time[2]) : o.timestamp });
+          const time = times.at(-1);
+          // 작성자 신원(GitHub 가 정한 author)이 G1 App 이면 본문 모양과 상관없이 G1 글이다(6final · g1-room.md §5-1).
+          const authorType = typeof c.author_type === 'string' ? c.author_type : typeof c.user_type === 'string' ? c.user_type : undefined;
+          const fromPaste = pasted && b.type === 'text';
+          // 붙여 넣은 알림도 남긴다(Python room_kept 와 같은 보존 판정) — 화자만 미검증으로 내린다.
+          const appAuthor = isG1AppAuthor(c.author, authorType);
+          const who = appAuthor ? (fromPaste ? UNVERIFIED : 'G1') : roomSpeaker(c.comment) ?? (roomShaped(c.comment) ? '서명 없음' : null);
+          if (who) entries.push({ who, body: c.comment, id: c.comment_id, pr: c.pr, at: time ? (time[1] ?? time[2]) : o.timestamp, author: typeof c.author === 'string' ? c.author : null, authorType, pasted: fromPaste });
         } catch { /* 한 이벤트가 깨져도 다음 이벤트와 사람 발화는 보존한다. */ }
       }
     }
@@ -526,6 +568,7 @@ export function extractTurns(raw, { dialogueOnly = false, repo = '', labels = {}
   const sid = sessionId || records.find((o) => typeof o.sessionId === 'string' && o.sessionId)?.sessionId || '';
   const cwd = records.find((o) => o.cwd)?.cwd;
   const self = selfSpeaker(sid, repo || (cwd ? String(cwd).replace(/\\/g, '/').replace(/\/+$/, '').split('/').pop() : ''), labels);
+  const selfLabeled = !!sid && !!labels && Object.hasOwn(labels, sid);
   const botOf = promptOrigins(records);
   const sentIds = new Set(records.filter((o) => !o.isSidechain && o.type === 'assistant')
     .flatMap((o) => Array.isArray(o.message?.content) ? o.message.content : [])
@@ -777,8 +820,10 @@ export function extractTurns(raw, { dialogueOnly = false, repo = '', labels = {}
         }
       }
       const escaped = entry.body.replace(/\r\n/g, '\n').split('\n').map((line) => isTurnHead(line) ? `\\${line}` : line).join('\n');
-      // 이 세션이 올린 댓글 = 자기 자신(출처 확인) · 알림으로 받은 댓글 = 작성자 신원이 없어 미검증(서명은 주장일 뿐).
-      turns.push({ who: dialogueOnly ? (entry.posted ? self : UNVERIFIED) : entry.who, text: dialogueOnly ? escaped : `${entry.board ? `> 현황판 갱신 · ${entry.pr ?? '?'} · #${bodyHash(body)}` : `> 대화방 댓글 ${entry.id ?? `#${bodyHash(body)}`} · ${entry.pr ?? '?'}`}\n\n${escaped}`, at: entry.at, branch: o.gitBranch, room: true });
+      // 이 세션이 올린 댓글 = 자기 자신(출처 = 이 세션의 도구 호출) · 받은 댓글 = 작성자 신원으로만(G1 App 이면 G1 · 그 밖은 미검증).
+      // 대화 아카이브는 첫 줄에 출처 줄 `## **[화자]** · 방 댓글 #ID · …` 을 단다(6final — roomCommentSource · Python room_comment_source 와 같은 표).
+      const src = dialogueOnly && !entry.board ? roomCommentSource({ posted: !!entry.posted, author: entry.author, authorType: entry.authorType, id: entry.id == null ? null : String(entry.id), self, selfLabeled, body: entry.body, pasted: !!entry.pasted }) : null;
+      turns.push({ who: src ? src.who : entry.who, text: src ? `${src.line}\n\n${escaped}` : dialogueOnly ? escaped : `${entry.board ? `> 현황판 갱신 · ${entry.pr ?? '?'} · #${bodyHash(body)}` : `> 대화방 댓글 ${entry.id ?? `#${bodyHash(body)}`} · ${entry.pr ?? '?'}`}\n\n${escaped}`, at: entry.at, branch: o.gitBranch, room: true });
     }
   }
   return turns;
@@ -1260,6 +1305,40 @@ export function mergeArchive(oldText, newText) {
           if (bh === xh && body.startsWith(x + '\n\n') && reconstructed.startsWith(body)) obsolete.add(b);
         }
       }
+    }
+  }
+  /* ★ 방 댓글 출처 줄 이전 (6final) — 방 댓글 턴은 이제 첫 줄에 `## **[화자]** · 방 댓글 #ID · …` 을 단다(roomCommentSource).
+   * 같은 댓글의 옛 렌더(출처 줄 없는 본문 · 옛 판의 `> 대화방 댓글 ID · PR` 메타 · 화자 `서명 없음`·저장소-ID 등)가 같은 시각에 있으면
+   * 새 쪽이 대체한 것으로 본다 — 시각 일치 + 본문 완전 일치(메타 꼴이면 댓글 ID 까지)일 때만. 양방향(역순 재수거). 그 밖은 건드리지 않는다. */
+  {
+    const SOURCE_RE = /^## \*\*\[[^\]\n]+\]\*\* · 방 댓글(?: #(\d+))? · [^\n]+\n\n([\s\S]*)$/;
+    for (const [fresh, older] of [[newArchive.blocks, oldArchive.blocks], [oldArchive.blocks, newArchive.blocks]]) {
+      const sourced = [];
+      for (const b of fresh) {
+        const [head, body] = headBody(b);
+        const m = SOURCE_RE.exec(body);
+        const at = turnHeadAt(head);
+        if (m && at !== null) sourced.push({ at, id: m[1] ?? null, rest: m[2].trim() });
+      }
+      if (!sourced.length) continue;
+      for (const b of older) {
+        const [head, body] = headBody(b);
+        if (SOURCE_RE.test(body)) continue;
+        const at = turnHeadAt(head);
+        const meta = /^> 대화방 댓글 (\S+) · \S+\n\n([\s\S]*)$/.exec(body);
+        if (sourced.some((x) => x.at === at && (body === x.rest || (meta && x.id !== null && meta[1] === x.id && meta[2].trim() === x.rest)))) obsolete.add(b);
+      }
+    }
+    // 출처 줄이 있는 같은 댓글(같은 #ID · 같은 본문)이 이름표가 바뀌어 머리·출처 줄만 달라졌으면 새 렌더만 남긴다(Fable B7 — 댓글 ID 하나 = 턴 하나).
+    const freshIds = new Map();
+    for (const b of newArchive.blocks) {
+      const m = SOURCE_RE.exec(headBody(b)[1]);
+      if (m?.[1]) freshIds.set(`${m[1]}\n${m[2].trim()}`, b);
+    }
+    for (const b of oldArchive.blocks) {
+      const m = SOURCE_RE.exec(headBody(b)[1]);
+      const twin = m?.[1] ? freshIds.get(`${m[1]}\n${m[2].trim()}`) : undefined;
+      if (twin !== undefined && twin !== b) obsolete.add(b);
     }
   }
   const seen = new Set();
