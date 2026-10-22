@@ -549,6 +549,15 @@ export function reasonDelivery(text) {
   return m ? { envelope: m[0], rest: t.slice(start + m[0].length) } : null;
 }
 const reasonWho = (r) => `${r.from} (Reason${r.agent ? ` · ${r.agent}` : ''})`;
+/* ★ Reason 끌어오기(pull) 수신 (g1-15 · 2026-10-22 6단계 직통 실물 c4bd773b) — 작업 세션이 MCP 도구 `check_inbox`(또는 `listen`)로 받으면
+ * 봉투가 사람 턴이 아니라 **도구 결과**(tool_result)에 `<reason-message from=… id=…>본문</reason-message>
+From … Reply …` 로 온다.
+ * 종전엔 도구 결과를 읽지 않아 G1 의 요청이 아카이브에서 통째로 빠지고 세션의 답만 남았다. 출처 규칙은 push(peer 배달)와 같다 —
+ * 결과 **맨 앞** 봉투 하나만 출처(서버가 붙인 여는 태그)이고 그 뒤 글(두 번째 봉투 포함)은 본문이라 미검증(보낸 쪽이 본문에 닫는 태그와
+ * 가짜 G1 봉투를 써 넣을 수 있다 — 서버가 본문을 이스케이프하는지 확인되지 않았다). 'No messages.' 등 봉투 없는 결과·오류 결과는 건너뛴다.
+ * 셸로 돌린 `reason-network listen` 출력(Bash·PowerShell 결과)은 도구 이름으로 출처를 확인할 수 없어 읽지 않는다. Python box-collect.py 와 같다.
+ * 한계(사실 · 10-22): MCP `listen` 도구 결과·한 결과에 여러 통이 묶인 꼴은 아직 실물 미관측이다 — 관측되면 축소 기록을 fixtures 에 더한다. */
+export const REASON_INBOX_TOOL = /(?:^|__)reason-network__(?:check_inbox|listen)$/;
 function sessionName(body, id) {
   const inner = /^\[([^\]\r\n]{1,120})\]/.exec(body.split('\n')[0])?.[1];
   // d1-20261007-17 ②: 새 메타 분리(⇢ · ' · ' 꼬리)는 확인된 프로토콜 봉투(roomSpeaker 가 읽는 서명)에만 — 일반 세션 제목은
@@ -731,6 +740,20 @@ export function extractTurns(raw, { dialogueOnly = false, repo = '', labels = {}
       // 리뷰 턴의 첫 줄은 출처 표지 — 원본 기록으로 되짚을 수 있게 entrypoint·기록 uuid 를 남긴다.
       else turns.push({ who, text: review ? `> 자동 보안 리뷰 · 출처 ${o.entrypoint}${o.uuid ? ` · 기록 ${o.uuid}` : ''}\n\n${text}` : text, branch: o.gitBranch, at: o.timestamp ?? lastAt, review, prompt: curPrompt });
     };
+    // 하네스 Reason 배달(peer idle 턴)·끌어오기 결과(check_inbox) 한 글 — 맨 앞 봉투 = 보낸 주소·메시지 id 로 · 그 뒤 글은 미검증 본문.
+    const addReasonDelivery = (text, from) => {
+      if (dialogueOnly) {
+        for (const part of dialogueInputParts(text, from)) {
+          if (part.reason) {
+            const r = part.reason;
+            addSession(o, `Reason ${r.from}`, reasonWho(r), part.text, false, `Reason ${r.id}`, { kind: 'reason', from: r.from });
+          } else { ordinary.push({ type: 'text', text: part.text }); flush([], part.who); }
+        }
+      } else {
+        const r = reasonEntry(reasonDelivery(text).envelope);
+        addSession(o, `Reason ${r.from}`, reasonWho(r), r.body, false, `Reason ${r.id}`, { kind: 'reason', from: r.from });
+      }
+    };
     for (const block of blocks) {
       if (!block) continue;
       if (o.type === 'assistant' && block.type === 'tool_use' && /reason-network__send_message$/.test(block.name ?? '') && typeof block.input?.to === 'string' && typeof block.input?.message === 'string') {
@@ -747,6 +770,11 @@ export function extractTurns(raw, { dialogueOnly = false, repo = '', labels = {}
         flush();
         const to = block.input.to.slice(0, 40);
         addSession(o, `→${to}`, `${block.input.to} (이름 · 내장 SendMessage)`, block.input.message, true, block.id ? `호출 ${block.id}` : '');
+      } else if (o.type === 'user' && block.type === 'tool_result' && REASON_INBOX_TOOL.test(toolNames.get(block.tool_use_id) ?? '')) {
+        // Reason 끌어오기 수신(check_inbox·listen 결과) — push 와 같은 출처 규칙(맨 앞 봉투만 · 뒤 글은 미검증). 봉투 없는 결과('No messages.')·오류는 건너뛴다.
+        const t = block.is_error ? '' : blockText(block.content);
+        const d = reasonDelivery(t);
+        if (d && reasonEntry(d.envelope)) { flush(); addReasonDelivery(t, { kind: 'peer' }); }
       } else if (o.type === 'user' && block.type === 'tool_result' && !sentIds.has(block.tool_use_id) && isNotif(block.tool_use_id)) {
         const entries = crossEntries(blockText(block.content));
         if (entries.length) flush();
@@ -772,17 +800,7 @@ export function extractTurns(raw, { dialogueOnly = false, repo = '', labels = {}
           // 그리고 하네스 Reason 배달 꼴(글 맨 앞 봉투 — 안내 머리 뒤 허용)일 때만이다: 하청 보고(<agent-message>) 등 일반 peer 글 속 봉투는 본문(리뷰 B2).
           // Reason 수신(idle 턴 꼴) — 보낸 주소·메시지 id 로 적는다('하청 이름없음'·'unknown' 이 아니라).
           flush();
-          if (dialogueOnly) {
-            for (const part of dialogueInputParts(block.text, origin)) {
-              if (part.reason) {
-                const r = part.reason;
-                addSession(o, `Reason ${r.from}`, reasonWho(r), part.text, false, `Reason ${r.id}`, { kind: 'reason', from: r.from });
-              } else { ordinary.push({ type: 'text', text: part.text }); flush([], part.who); }
-            }
-          } else {
-            const r = reasonEntry(reasonDelivery(block.text).envelope);
-            addSession(o, `Reason ${r.from}`, reasonWho(r), r.body, false, `Reason ${r.id}`, { kind: 'reason', from: r.from });
-          }
+          addReasonDelivery(block.text, origin);
         } else if (origin?.kind === 'peer') {
           flush();
           const body = /<agent-message\b[^>]*>([\s\S]*?)<\/agent-message>/.exec(block.text)?.[1];
