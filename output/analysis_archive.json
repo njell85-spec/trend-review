@@ -4050,6 +4050,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-23",
+      "pmid": "42008277",
+      "title": "Using Serious Games to Increase the Implementation of Trauma Triage Guidelines: A Randomized Clinical Trial.",
+      "title_ko": "외상 분류 지침 이행률 향상을 위한 시리어스 게임 활용: 무작위 임상시험",
+      "journal": "JAMA",
+      "doi": "10.1001/jama.2026.4079",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "비외상센터에서 고령 외상 환자를 분류하는 응급의학과 의사에게, 이론 기반 시리어스 게임(목적형 비디오 게임)이 일반 교육에 비해 외상 분류 지침 이행률을 향상시키는가?",
+      "pico": {
+        "population": "[USA] 800 emergency physicians responsible for the triage of Medicare fee-for-service injured patients (≥65 years of age) at emergency departments within nontrauma centers in the US; enrollment November 27, 2023–February 7, 2024; physicians worked at 1147 hospitals and treated 41 073 injured Medicare patients, of whom 1738 (4.2%) had severe injuries; median 10 (IQR, 6-17) years in practice, 71% male (563/789), 750 (94%) ATLS-completed. Registry inclusion: board-certified physicians working exclusively in EDs of non-trauma centers in the continental US who triage adult trauma patients.",
+        "intervention": "Game-based training on a tablet for an initial session of 2 hours and then a 20-minute session each quarter (4 doses; n = 400 physicians); 99% (397/399) received 1 dose and 67% (268/399) received 4 doses.",
+        "comparison": "Usual education (n = 400 physicians).",
+        "outcome": "Primary outcome was undertriage (proportion of severely injured patients not transferred to trauma centers) during the year after randomization: game-based training group 49% (402/819) vs usual education group 57% (527/919); model-adjusted difference, -7% (95% CI, -13% to -0.8%); P = .02 (mixed-effects regression of Medicare fee-for-service claims)."
+      },
+      "pico_ko": {
+        "population": "[미국] 미국 내 비외상센터 응급실에서 Medicare fee-for-service 외상 환자(≥65세)의 분류를 담당하는 응급의학과 의사 800명; 등록 기간 2023년 11월 27일–2024년 2월 7일; 의사들은 1147개 병원에서 근무하며 41,073명의 외상 Medicare 환자를 치료했고 그 중 1738명(4.2%)이 중증 손상; 진료 경력 중앙값 10년(IQR 6-17), 남성 71%(563/789), 750명(94%)이 ATLS 이수. 등록부 포함 기준: 성인 외상 환자를 분류하며 미국 본토 비외상센터 응급실에서만 근무하는 전문의.",
+        "intervention": "태블릿 기반 게임 훈련 — 초기 2시간 세션 후 분기마다 20분 세션(총 4회분; n = 400명); 99%(397/399)가 1회분, 67%(268/399)가 4회분 모두 수행.",
+        "comparison": "일반 교육(usual education; n = 400명).",
+        "outcome": "일차 결과는 과소분류(undertriage, 외상센터로 전원되지 않은 중증 손상 환자의 비율), 무작위배정 후 1년간: 게임 훈련군 49%(402/819) vs 일반 교육군 57%(527/919); 모델 보정 차이 -7%(95% CI, -13%~-0.8%); P = .02 (Medicare fee-for-service claims의 mixed-effects regression)."
+      },
+      "keyFindings": [
+        "Game-based training reduced undertriage of severely injured older adults: 49% (402/819) vs 57% (527/919) usual education; model-adjusted difference -7% (95% CI, -13% to -0.8%); P = .02.",
+        "Overtriage did not differ significantly between groups (model-adjusted difference -3%; 95% CI, -6% to 1%; P = .14).",
+        "The composite clinical outcome of 30-day mortality or hospital readmission was unchanged (model-adjusted difference -0.4%; 95% CI, -5% to 4%; P = .87)."
+      ],
+      "keyFindings_ko": [
+        "게임 기반 훈련은 중증 고령 외상 환자의 과소분류를 감소시켰다: 49%(402/819) vs 일반 교육 57%(527/919); 모델 보정 차이 -7%(95% CI, -13%~-0.8%); P = .02.",
+        "과대분류는 두 군 간 유의한 차이가 없었다(모델 보정 차이 -3%; 95% CI, -6%~1%; P = .14).",
+        "30일 사망 또는 병원 재입원의 복합 임상 결과는 변화가 없었다(모델 보정 차이 -0.4%; 95% CI, -5%~4%; P = .87)."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42008277",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42008277/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1001/jama.2026.4079",
+          "url": "https://doi.org/10.1001/jama.2026.4079"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT06063434 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT06063434"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -4105,7 +4156,8 @@
         "42449426",
         "42637214",
         "41218981",
-        "42377463"
+        "42377463",
+        "42008277"
       ]
     },
     "fulltextLen": {
