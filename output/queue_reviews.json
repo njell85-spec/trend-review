@@ -4049,23 +4049,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "40705073",
-      "title": "Noninvasive respiratory supports in ICU.",
-      "journal": "Intensive Care Med",
-      "score": 2.6,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ICU 비침습 호흡보조, 중환자 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40719889",
       "title": "State of the art: Renal recovery after AKI - from basic science to clinical practice.",
       "journal": "Intensive Care Med",
@@ -12687,6 +12670,113 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40705073",
+      "title": "Noninvasive respiratory supports in ICU.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 비침습 호흡보조, 중환자 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-23",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40705073",
+          "title": "Noninvasive respiratory supports in ICU.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-7-24",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40705073/",
+          "doi": "10.1007/s00134-025-08036-3"
+        },
+        "title_ko": "중환자실에서의 비침습적 호흡 보조",
+        "scope_ko": "급성 호흡부전 환자에서 삽관과 침습적 기계환기를 피하고, 삽관 시 전산소화를 돕고, 발관 후 이탈을 성공시키기 위해 쓰이는 비침습적 호흡 보조 — 고유량 비강 산소요법(HFNO), 지속기도양압(CPAP), 비침습환기(NIV) — 의 생리학적 작용과 임상 적응증을 정리한 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "배경 — 비침습적 호흡 보조의 역할",
+            "body_ko": "비침습적 호흡 보조는 급성 호흡부전을 겪는 중환자에서 일상적으로 적용된다. 그 목적은 첫째, 삽관과 침습적 기계환기를 피함으로써 그에 수반되는 합병증의 위험을 줄이는 것이고, 둘째, 발관 후 기계환기로부터의 성공적 이탈(weaning)을 돕는 것이다.\n\n또한 삽관 시술 과정에서도 전산소화(preoxygenation)를 위해 적용되는데, 이는 산소화를 향상시키고 시술의 안전을 확보하려는 목적이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "고유량 비강 산소요법(HFNO)의 작용 기전",
+            "body_ko": "고유량 비강 산소요법은 기도 사강(dead space)을 감소시키고, 흡입 산소 농도를 안정적으로 일정하게 공급하며, 유량에 의존하는 낮은 수준의 기도 양압을 생성하고, 환자의 편안함을 최적화한다.\n\n(원문 초록은 이상의 기전을 서술하며, 구체적 유량 수치나 압력 값은 초록 수준에서는 제시하지 않는다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "양압 비침습 보조 — CPAP와 NIV",
+            "body_ko": "양압 방식의 비침습 보조에는 지속기도양압(CPAP)과 비침습환기(NIV)가 포함된다. 이들은 더 높은 호기말 양압(end-expiratory pressure)을 제공할 수 있어, 그 결과 산소화를 추가로 개선한다.\n\n다만 NIV는 — CPAP와 달리 — 흡기 노력(inspiratory effort)을 더 잘 감소시키고, 일회호흡량(tidal volume)과 경폐 구동압(transpulmonary driving pressure)을 증가시킨다. 즉 흡기 노력 경감과 환기 보조라는 측면에서는 NIV와 CPAP가 서로 구분된다는 점을 저자들이 강조한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "급성 저산소혈증 호흡부전에서의 일차 치료",
+            "body_ko": "저자들의 결론에 따르면, 고유량 비강 산소요법(HFNO)은 급성 저산소혈증 호흡부전(acute hypoxemic respiratory failure)에서 일차(first-line) 치료가 되었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "COPD 악화·호흡성 산증에서의 NIV",
+            "body_ko": "비침습환기(NIV)는 만성폐쇄성폐질환(COPD)의 급성 악화 시, 특히 호흡성 산증(respiratory acidosis)을 동반한 환자에서 여전히 기준(reference) 치료로 남아 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "삽관을 요하는 환자에서의 전산소화(preoxygenation)",
+            "body_ko": "삽관이 필요한 환자에서 전산소화를 위한 최적의 기법은 NIV이며, 이는 저산소혈증의 위험을 감소시킨다.\n\n한편 고유량 비강 산소요법(HFNO)은 저산소혈증이 없는 환자, 또는 NIV의 금기가 있는 환자에서 대안적 선택지가 된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "발관 후 재삽관 예방",
+            "body_ko": "발관 후 재삽관 위험이 높은 환자에서는, 예방적 NIV를(필요에 따라 HFNO와 번갈아 적용하는 방식으로) 사용하는 것이 다른 전략에 비해 이탈 결과를 개선한다.\n\n반면 재삽관 위험이 낮은 환자에서는 HFNO 단독이 통상적 산소요법(conventional oxygen)보다 우수한 성적을 보인다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] ATS 2025 임상진료지침의 권고(근거 등급 포함)",
+            "body_ko": "※ 이 절은 원문 본문을 확보하지 못해, 같은 주제를 다루는 권위 있는 2차 출처(미국흉부학회 2025 임상진료지침)에서 구체적 권고와 근거 등급을 보강한 것입니다 — 원 종설 자체의 서술이 아닙니다.\n\n미국흉부학회(ATS)의 2025년 「성인 급성 호흡부전 환자에 대한 비침습적 호흡 보조」 공식 임상진료지침은 다음을 권고한다.\n\n• 신규(de novo) 급성 저산소혈증 호흡부전 성인에서 표준 산소요법보다 HFNC를 권고한다 — 강한 권고, 근거 확실성 중등도(삽관 필요성 감소, RR 0.76; 95% CI 0.64–0.89).\n\n• 급성 고탄산혈증 호흡부전 성인에서 표준 산소요법보다 안면마스크 NIV를 권고한다 — 강한 권고, 근거 확실성 중등도(사망률 RR 0.47 [0.34–0.65], 삽관 필요성 RR 0.43 [0.32–0.56]).\n\n• 경한 산증(pH > 7.25)을 동반한 급성 고탄산혈증 호흡부전에서는 NIV의 대안으로 HFNC를 제안할 수 있으나, 면밀한 감시와 신속한 NIV로의 상향 전환이 가능해야 한다 — 조건부 권고, 근거 확실성 낮음.\n\n• 삽관 시 전산소화에는 표준 산소요법보다 HFNC 또는 안면마스크 NIV 사용을 권고한다 — 강한 권고, 근거 확실성 중등도(시술 전후 저산소혈증 감소: NIV RR 0.51, HFNC RR 0.69).\n\n• 중증 질환 후 발관 환자에서 표준 산소요법보다 HFNC 또는 안면마스크 NIV 사용을 제안한다 — 조건부 권고, 근거 확실성 중등도. 특히 발관 실패 고위험군(예: 65세 이상, 비만, 고탄산혈증, 장기 기계환기)에서는 안면마스크 NIV를 제안한다 — 조건부 권고, 근거 확실성 중등도.\n\n• 급성 심인성 폐부종(ACPE)에 대해서는 지침의 근거가 주로 COPD 악화 집단에서 유래했으므로, 임상의가 해당 집단 맥락을 고려해 독립적으로 판단할 것을 당부한다.\n— 보강 출처: American Thoracic Society 2025 Clinical Practice Guideline (AJRCCM) (https://academic.oup.com/ajrccm/article/212/9/2135/8721554)",
+            "origin": "augmented",
+            "sourceLabel": "American Thoracic Society 2025 Clinical Practice Guideline (AJRCCM)",
+            "sourceUrl": "https://academic.oup.com/ajrccm/article/212/9/2135/8721554"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "6f2d7ef1b457949bfcc9a5757ec6968420064ada372e25894569ac2bf5fef34e",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-10-23T00:13:38.863Z",
+          "resultFingerprint": "801765d700b8675581fdc0cc57842d33e002315e49f2ed5575419cb7eb5a72d9",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 1,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 호흡부전의 '종류'에 따라 모달리티를 나누는 원칙이 재확인된다. 신규 급성 저산소혈증 호흡부전에서는 HFNO를 일차로 쓰고, COPD 악화에 동반된 호흡성 산증에는 NIV를 기준 치료로 유지하며, 삽관 전 전산소화는 (금기가 없는 한) NIV를 우선 고려하고 비저산소혈증 환자에서는 HFNO를 대안으로 둔다. 발관 후에는 재삽관 위험을 층화하여 고위험군에는 예방적 NIV(±HFNO 교대)를, 저위험군에는 HFNO 단독을 적용한다. (이상은 원 종설의 초록이 명시한 범위이며, 구체적 유량·압력 수치는 보강한 ATS 지침 등 별도 출처를 참고해야 한다.)",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40705073",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40705073/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08036-3",
+            "url": "https://doi.org/10.1007/s00134-025-08036-3"
+          },
+          {
+            "label": "웹 — American Thoracic Society 2025 Clinical Practice Guideline on Noninvasive Respiratory Support (AJRCCM)",
+            "url": "https://academic.oup.com/ajrccm/article/212/9/2135/8721554"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -12744,9 +12834,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-21",
+    "date": "2026-10-23",
     "outcome": "published",
-    "publishedId": "42555934"
+    "publishedId": "40705073"
   },
-  "updatedAt": "2026-10-21"
+  "updatedAt": "2026-10-23"
 }

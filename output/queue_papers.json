@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42008277",
-      "title": "Using Serious Games to Increase the Implementation of Trauma Triage Guidelines: A Randomized Clinical Trial.",
-      "journal": "JAMA",
-      "score": 8.1,
-      "topic": "trauma",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.139199999999999,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42092974",
       "title": "Prevalence and representation of comorbidities and multimorbidity in randomised controlled trials in sepsis or septic shock: a systematic review.",
       "journal": "Critical care (London, England)",
@@ -344,6 +329,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-21"
+    },
+    {
+      "pmid": "42008277",
+      "title": "Using Serious Games to Increase the Implementation of Trauma Triage Guidelines: A Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "score": 8.1,
+      "topic": "trauma",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.139199999999999,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-23"
     }
   ],
   "rejected": [
@@ -359,9 +360,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-21",
+    "date": "2026-10-23",
     "outcome": "published",
-    "publishedId": "42377463"
+    "publishedId": "42008277"
   },
-  "updatedAt": "2026-10-21"
+  "updatedAt": "2026-10-23"
 }

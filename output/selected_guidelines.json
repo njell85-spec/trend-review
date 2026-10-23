@@ -32538,7 +32538,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34727,7 +34727,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-21T00:02:58.672Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37747,7 +37747,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -41657,68 +41657,6 @@
       }
     },
     {
-      "id": "pmid:42242731",
-      "pmid": "42242731",
-      "title": "The 2026 AHA/ASA Guideline Updates to Management of Patients with Acute Ischemic Stroke: A Guide for Radiologists.",
-      "pubDate": "2026 Jun 4",
-      "journal": "AJNR. American journal of neuroradiology",
-      "publicationTypes": [
-        "Journal Article",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:34.154Z",
-      "abstract": "The 2026 guideline for early management of acute ischemic stroke (AIS) retains many foundational recommendations while introducing clinically meaningful updates spanning imaging, broader inpatient management, and reperfusion strategies including intravenous thrombolysis (IVT) and endovascular therapy (EVT). Notably, it provides expanded guidance for medium vessel occlusions and introduces pediatric recommendations that were largely absent from prior iterations. Given their impact on imaging workflows in AIS, the authors present a focused review of the updated guidelines for the radiologist.",
-      "meshTerms": [],
-      "keywords": [],
-      "doi": "10.3174/ajnr.A9455",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "aha"
-      },
-      "priority": 11,
-      "breakdown": {
-        "authority": 4,
-        "topic": 3,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "guideline-commentary-or-digest"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "2026 급성뇌졸중 지침 갱신, 신경 응급 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|asa-updates-management-patients-with-acute-ischemic-stroke-guide-radiologists",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:42217665",
       "pmid": "42217665",
       "title": "American College of Surgeons Best Practice Guidelines on Management of Traumatic Brain Injury: Executive Summary of Early Rehabilitation Recommendations.",
@@ -42853,7 +42791,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44196,7 +44134,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.577Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44325,7 +44263,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-21T00:02:58.672Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44995,7 +44933,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45155,7 +45093,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45237,7 +45175,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.672Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45466,7 +45404,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46519,7 +46457,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.672Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46718,7 +46656,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.577Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47002,7 +46940,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.577Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -47054,11 +46992,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.597050113627366,
+      "priority": 11.589740962181645,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.5970501136273658,
+        "recency": 1.5897409621816454,
         "scope": 0,
         "confidence": 2
       },
@@ -47074,7 +47012,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.672Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47155,7 +47093,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47232,7 +47170,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.577Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47301,7 +47239,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.672Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47378,7 +47316,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47436,7 +47374,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47504,7 +47442,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.672Z",
+      "lastSeenAt": "2026-10-23T00:06:09.578Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47568,7 +47506,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-21T00:02:58.671Z",
+      "lastSeenAt": "2026-10-23T00:06:09.577Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -58687,6 +58625,201 @@
         ]
       },
       "publishedAt": "2026-10-21"
+    },
+    {
+      "id": "pmid:42242731",
+      "pmid": "42242731",
+      "title": "The 2026 AHA/ASA Guideline Updates to Management of Patients with Acute Ischemic Stroke: A Guide for Radiologists.",
+      "pubDate": "2026 Jun 4",
+      "journal": "AJNR. American journal of neuroradiology",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:34.154Z",
+      "abstract": "The 2026 guideline for early management of acute ischemic stroke (AIS) retains many foundational recommendations while introducing clinically meaningful updates spanning imaging, broader inpatient management, and reperfusion strategies including intravenous thrombolysis (IVT) and endovascular therapy (EVT). Notably, it provides expanded guidance for medium vessel occlusions and introduces pediatric recommendations that were largely absent from prior iterations. Given their impact on imaging workflows in AIS, the authors present a focused review of the updated guidelines for the radiologist.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.3174/ajnr.A9455",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 11,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "guideline-commentary-or-digest"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "2026 급성뇌졸중 지침 갱신, 신경 응급 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|asa-updates-management-patients-with-acute-ischemic-stroke-guide-radiologists",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42242731",
+          "title": "The 2026 AHA/ASA Guideline Updates to Management of Patients with Acute Ischemic Stroke: A Guide for Radiologists.",
+          "journal": "AJNR. American journal of neuroradiology",
+          "pubDate": "2026 Jun 4",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42242731/",
+          "doi": "10.3174/ajnr.A9455"
+        },
+        "org": "AHA/ASA",
+        "version": "2026",
+        "title_ko": "2026 AHA/ASA 급성 허혈뇌졸중 환자 관리 지침 업데이트: 영상의학과 의사를 위한 안내",
+        "scope_ko": "급성 허혈뇌졸중(AIS) 환자의 조기 관리를 다루는 AHA/ASA 지침의 2026년 개정판으로, 영상검사 워크플로·입원 관리·재관류 치료(정맥 혈전용해술 IVT 및 혈관내 치료 EVT)를 포괄한다. 성인 전 연령을 대상으로 하며, 이번 판에서는 중혈관폐색(medium vessel occlusion)에 대한 확대 지침과 이전 판에 거의 없던 소아 권고가 새로 포함되었다. 이 논문 자체는 영상의학과 의사의 관점에서 영상 관련 변화를 중심으로 재구성한 안내이다.",
+        "summary": [
+          "IV thrombolysis within 4.5 h of onset: tenecteplase 0.25 mg/kg IV bolus (max 25 mg) and alteplase 0.9 mg/kg (max 90 mg; 10% bolus then remainder over 60 min) are endorsed as equivalent options.",
+          "Extended-window IVT (4.5–9 h from last-known-well, including wake-up stroke) is reasonable in EVT-ineligible patients when perfusion imaging or DWI-FLAIR mismatch demonstrates salvageable penumbra.",
+          "EVT eligibility is broadened to large ischemic cores (ASPECTS as low as 0–2 within 6 h; ASPECTS ≥3 up to 24 h in selected patients) and to basilar artery occlusion up to 24 h (typically NIHSS ≥10).",
+          "Blood pressure: pre-IVT target <185/110 mmHg and post-IVT <180/105 mmHg are retained, but intensive SBP lowering to <140 mmHg after IVT is NOT recommended, and after successful EVT recanalization a <140 mmHg target may be harmful.",
+          "Glucose: a moderate target of 140–180 mg/dL is preferred; intensive control to 80–130 mg/dL is no longer recommended due to hypoglycemia risk without benefit.",
+          "Imaging workflow: emergency CTA/CTP should not be delayed to obtain a creatinine level; IVT within 4.5 h should not be delayed for MRI to assess cerebral microbleed burden; complete initial brain imaging within ~25 min of arrival.",
+          "Mobile stroke units are recommended over conventional EMS, where available, for thrombolytic-eligible patients.",
+          "New content: first-time pediatric recommendations (prehospital screening, imaging, IVT, EVT; thrombectomy considered in children ≥6 y) and expanded guidance for medium vessel occlusions."
+        ],
+        "summary_ko": [
+          "발병 4.5시간 이내 IVT: tenecteplase 0.25 mg/kg IV 일시주사(최대 25 mg)와 alteplase 0.9 mg/kg(최대 90 mg; 10% 볼루스 후 나머지 60분 주입)를 동등한 선택지로 인정.",
+          "연장창 IVT(마지막 정상 확인 시점 기준 4.5–9시간, 기상 시 발견 뇌졸중 포함)는 관류영상 또는 DWI-FLAIR 불일치로 구제 가능한 penumbra가 확인될 때 EVT 비대상 환자에서 시행 고려 가능.",
+          "EVT 적응증 확대: 큰 경색핵(6시간 이내 ASPECTS 0–2까지, 선별 환자에서 ASPECTS ≥3은 24시간까지)과 기저동맥 폐색(통상 NIHSS ≥10)에 대해 24시간까지 확대.",
+          "혈압: IVT 전 <185/110 mmHg, IVT 후 <180/105 mmHg 목표는 유지하되, IVT 후 SBP를 <140 mmHg로 적극 낮추는 것은 권고하지 않으며 EVT 재개통 성공 후 <140 mmHg 목표는 해로울 수 있음.",
+          "혈당: 140–180 mg/dL의 중등도 목표를 선호하며, 저혈당 위험 대비 이득이 없어 80–130 mg/dL의 적극적 조절은 더 이상 권고하지 않음.",
+          "영상 워크플로: 응급 CTA/CTP는 크레아티닌 결과를 기다리느라 지연시키지 말 것; 4.5시간 이내 IVT는 미세출혈 부담 평가를 위한 MRI로 지연시키지 말 것; 내원 후 약 25분 이내 초기 뇌영상 완료.",
+          "가용한 경우 혈전용해 대상 환자에서 기존 EMS보다 모바일 뇌졸중 유닛(MSU)을 권고.",
+          "신규 내용: 최초의 소아 권고(병원전 선별·영상·IVT·EVT; 6세 이상 소아에서 혈전제거술 고려)와 중혈관폐색에 대한 확대 지침 포함."
+        ],
+        "keyChanges": [
+          {
+            "topic": "혈전용해제 선택 (tenecteplase)",
+            "detail": "Previously alteplase was the primary endorsed thrombolytic with tenecteplase only an alternative; the 2026 guideline endorses tenecteplase 0.25 mg/kg IV bolus (max 25 mg) as EQUIVALENT to alteplase 0.9 mg/kg within 4.5 h. Rationale: single-bolus administration simplifies and speeds treatment in time-sensitive settings with comparable efficacy/safety.",
+            "detail_ko": "이전에는 alteplase가 1차 권고 혈전용해제이고 tenecteplase는 대안에 그쳤으나, 2026년 지침은 4.5시간 이내에서 tenecteplase 0.25 mg/kg IV 일시주사(최대 25 mg)를 alteplase 0.9 mg/kg와 동등한 선택지로 인정. 이유: 단회 볼루스로 투여가 간단·신속하고 효능·안전성이 유사하기 때문."
+          },
+          {
+            "topic": "연장창 IVT (4.5–9시간)",
+            "detail": "New: IVT in the 4.5–9 h window (and wake-up/unknown-onset stroke) is now reasonable in EVT-ineligible patients when automated perfusion imaging or DWI-FLAIR mismatch shows salvageable penumbra — previously IVT was essentially capped at 4.5 h. Shifts selection from a pure clock to imaging-based tissue criteria.",
+            "detail_ko": "신규: 자동 관류영상 또는 DWI-FLAIR 불일치로 구제 가능 penumbra가 확인되는 EVT 비대상 환자에서 4.5–9시간 창(및 기상 시 발견/발병시각 미상 뇌졸중) IVT를 합리적으로 인정 — 이전에는 사실상 4.5시간으로 제한. 단순 시간 기준에서 영상 기반 조직 기준으로 선별 패러다임 전환."
+          },
+          {
+            "topic": "EVT 큰 경색핵 확대",
+            "detail": "Previously large cores (low ASPECTS) were largely excluded; 2026 supports EVT in select patients with large ischemic cores — ASPECTS as low as 0–2 within 6 h and ASPECTS ≥3 up to 24 h — based on recent large-core thrombectomy trials showing benefit.",
+            "detail_ko": "이전에는 큰 경색핵(낮은 ASPECTS)이 대체로 제외되었으나, 2026년은 큰 경색핵 선별 환자에서 EVT를 지지 — 6시간 이내 ASPECTS 0–2까지, ASPECTS ≥3은 24시간까지 — 최근 대형 경색핵 혈전제거술 시험의 이득 근거에 기반."
+          },
+          {
+            "topic": "기저동맥/후순환 EVT",
+            "detail": "New strong recommendation for EVT in basilar artery occlusion up to 24 h in appropriately selected patients (typically NIHSS ≥10) — a shift from prior uncertainty about posterior-circulation thrombectomy, driven by recent positive basilar trials.",
+            "detail_ko": "적절히 선별된 환자(통상 NIHSS ≥10)에서 기저동맥 폐색에 대해 24시간까지 EVT를 강하게 권고하는 신규 조항 — 후순환 혈전제거술에 대한 이전의 불확실성에서 전환, 최근 긍정적 기저동맥 시험 결과에 기반."
+          },
+          {
+            "topic": "EVT 선별 기준 완화 (연령·prestroke mRS)",
+            "detail": "The prior 80-year upper age limit for the early-window EVT recommendation was removed, and EVT is now considered reasonable in selected patients with prestroke mRS 2 — broadening eligibility beyond the previously narrow independent-baseline population.",
+            "detail_ko": "조기창 EVT 권고의 기존 80세 연령 상한이 삭제되었고, prestroke mRS 2인 선별 환자에서도 EVT가 합리적으로 고려됨 — 이전의 좁은 '기저 독립' 집단을 넘어 적응증 확대."
+          },
+          {
+            "topic": "IVT 후 혈압 목표",
+            "detail": "Change: intensive systolic BP lowering to <140 mmHg after IVT is NO longer recommended (prior guidance had leaned toward tighter control); pre-IVT <185/110 and post-IVT <180/105 mmHg are retained. Reason: trials showed no benefit and potential harm from aggressive lowering.",
+            "detail_ko": "변경: IVT 후 SBP를 <140 mmHg로 적극 낮추는 것은 더 이상 권고하지 않음(이전에는 더 엄격한 조절 경향). IVT 전 <185/110, IVT 후 <180/105 mmHg는 유지. 이유: 적극적 강압의 이득 부재 및 잠재적 해로움을 시험에서 확인."
+          },
+          {
+            "topic": "EVT 재개통 후 혈압",
+            "detail": "New: after successful EVT recanalization, lowering SBP to <140 mmHg is flagged as potentially HARMFUL — a new explicit caution absent from prior versions.",
+            "detail_ko": "신규: EVT 재개통 성공 후 SBP를 <140 mmHg로 낮추는 것은 해로울 수 있음으로 명시 — 이전 판에 없던 새로운 경고."
+          },
+          {
+            "topic": "혈당 관리",
+            "detail": "Change: intensive glucose control to 80–130 mg/dL is no longer recommended; the moderate 140–180 mg/dL target is preferred. Reason: hypoglycemia risk without clinical benefit (consistent with SHINE trial).",
+            "detail_ko": "변경: 80–130 mg/dL의 적극적 혈당 조절은 더 이상 권고하지 않고 140–180 mg/dL의 중등도 목표를 선호. 이유: 임상 이득 없이 저혈당 위험(SHINE 시험과 일치)."
+          },
+          {
+            "topic": "영상 전 크레아티닌 대기 금지",
+            "detail": "Imaging workflow change: emergency vascular imaging (CTA/CTP) should NOT be delayed to obtain a serum creatinine in patients without known renal impairment — reduces door-to-reperfusion delays.",
+            "detail_ko": "영상 워크플로 변경: 알려진 신장애가 없는 환자에서 응급 혈관영상(CTA/CTP)을 혈청 크레아티닌 확보를 위해 지연시키지 말 것 — 내원-재관류 지연 감소."
+          },
+          {
+            "topic": "미세출혈 평가용 MRI로 IVT 지연 금지",
+            "detail": "New imaging guidance: IVT within 4.5 h should be given even when cerebral microbleed burden is unknown, without delaying to obtain MRI/GRE screening — avoids time loss from microbleed assessment.",
+            "detail_ko": "신규 영상 지침: 4.5시간 이내 IVT는 뇌 미세출혈 부담을 모르더라도 MRI/GRE 선별을 위해 지연시키지 말고 시행 — 미세출혈 평가로 인한 시간 손실 방지."
+          },
+          {
+            "topic": "소아 급성 뇌졸중 권고 신설",
+            "detail": "First-ever pediatric acute-interventional recommendations added (prehospital screening, imaging, IVT, and EVT), with mechanical thrombectomy considered in appropriately selected children (reported as roughly age ≥6 y) — a domain largely absent from prior adult-focused guidelines.",
+            "detail_ko": "최초의 소아 급성 중재 권고 신설(병원전 선별, 영상, IVT, EVT 포함), 적절히 선별된 소아(보도상 대략 6세 이상)에서 기계적 혈전제거술 고려 — 이전의 성인 중심 지침에 거의 없던 영역."
+          },
+          {
+            "topic": "중혈관폐색(MeVO)",
+            "detail": "Expanded guidance for medium vessel occlusions was added versus prior iterations, reflecting growing use of thrombectomy/thrombolysis in more distal occlusions (specific class/level not confirmed in the secondary sources opened).",
+            "detail_ko": "이전 판 대비 중혈관폐색에 대한 확대 지침이 추가되어, 보다 원위부 폐색에서 혈전제거술/혈전용해 사용 증가를 반영(구체적 권고등급/근거수준은 열람한 2차 자료에서 확인되지 않음)."
+          },
+          {
+            "topic": "모바일 뇌졸중 유닛(MSU)",
+            "detail": "New systems-of-care emphasis: mobile stroke units are recommended over conventional EMS, where available, for thrombolytic-eligible patients to shorten time to IVT.",
+            "detail_ko": "신규 진료체계 강조: 가용한 경우 혈전용해 대상 환자에서 IVT까지의 시간 단축을 위해 기존 EMS보다 모바일 뇌졸중 유닛(MSU)을 권고."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "약물요법 변경 요약 (대학 약물정보센터 FAQ)",
+            "body_ko": "UIC 약물정보그룹 FAQ는 약물 측면 변화를 구체적 용량과 함께 정리한다: tenecteplase 0.25 mg/kg IV 일시주사(최대 25 mg)와 alteplase 0.9 mg/kg(최대 90 mg; 10% 볼루스 후 60분 주입)를 제시하고, tenecteplase를 alteplase와 동등하게 격상한 것이 핵심 변화라고 설명한다. 혈압은 IVT 전 <185/110, IVT 후 24시간 <180/105를 유지하되 <140 mmHg로의 적극적 강압은 권고하지 않음을, 혈당은 140–180 mg/dL를 합리적 목표로 하고 80–130 mg/dL의 적극 조절은 저혈당 위험으로 권고하지 않음을 강조한다. (지침 원문이 아니라 2차 자료의 정리이다.)",
+            "sourceLabel": "University of Illinois Chicago — Drug Information Group FAQ (2026)",
+            "sourceUrl": "https://dig.pharmacy.uic.edu/faqs/2026-2/april-2026-faqs/update-what-are-major-pharmacotherapy-updates-from-the-2026-aha-asa-stroke-guidelines/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, do not wait on creatinine before CTA/CTP and do not delay 4.5-h thrombolysis for MRI microbleed screening; stock and default to tenecteplase 0.25 mg/kg single bolus to speed door-to-needle. Use advanced imaging (perfusion/mismatch) to extend IVT to 9 h and EVT to 24 h — including large cores (ASPECTS 0–2 ≤6 h) and basilar occlusions — rather than excluding on clock or core size alone, and drop the old 80-year/independent-baseline hard cutoffs. Reset post-reperfusion hemodynamics: stop driving SBP to <140 mmHg after IVT, treat <140 mmHg after successful EVT as potentially harmful, and keep glucose 140–180 mg/dL rather than tight control. EDs and PICU/ICU teams should also now have a pediatric acute stroke pathway (screening, imaging, IVT/EVT) since children are explicitly covered.",
+        "practiceImpact_ko": "현장에서는 CTA/CTP 전 크레아티닌을 기다리지 말고, 4.5시간 혈전용해를 미세출혈 선별 MRI로 지연시키지 말 것; door-to-needle 단축을 위해 tenecteplase 0.25 mg/kg 단회 볼루스를 기본으로 비치·사용한다. 고급 영상(관류/불일치)을 활용해 IVT는 9시간, EVT는 24시간까지 확대 적용하고 — 큰 경색핵(6시간 이내 ASPECTS 0–2)과 기저동맥 폐색 포함 — 단순히 시간이나 경색핵 크기만으로 배제하지 않으며, 과거의 80세/기저 독립 절대 기준을 버린다. 재관류 후 혈역학을 재설정한다: IVT 후 SBP를 <140 mmHg로 몰아붙이지 말고, EVT 재개통 성공 후 <140 mmHg는 해로울 수 있는 것으로 간주하며, 혈당은 엄격조절 대신 140–180 mg/dL를 유지한다. 소아가 명시적으로 포함되었으므로 ED와 PICU/ICU 팀은 소아 급성 뇌졸중 경로(선별·영상·IVT/EVT)도 갖추어야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42242731",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42242731/"
+          },
+          {
+            "label": "Journal (DOI) — 10.3174/ajnr.A9455",
+            "url": "https://doi.org/10.3174/ajnr.A9455"
+          },
+          {
+            "label": "웹 — University of Illinois Chicago Drug Information Group — Major Pharmacotherapy Updates from the 2026 AHA/ASA Stroke Guidelines (FAQ)",
+            "url": "https://dig.pharmacy.uic.edu/faqs/2026-2/april-2026-faqs/update-what-are-major-pharmacotherapy-updates-from-the-2026-aha-asa-stroke-guidelines/"
+          },
+          {
+            "label": "웹 — PubMed — source article record (PMID 42242731)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42242731/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-23"
     }
   ],
   "rejected": [
@@ -63662,7 +63795,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-21T00:02:49.186Z",
+      "discoveredAt": "2026-10-23T00:05:59.844Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64117,7 +64250,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-21T00:02:49.186Z",
+      "discoveredAt": "2026-10-23T00:05:59.844Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -64161,7 +64294,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-21T00:02:49.186Z",
+      "discoveredAt": "2026-10-23T00:05:59.844Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64188,7 +64321,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-21T00:02:49.186Z",
+      "discoveredAt": "2026-10-23T00:05:59.844Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64216,7 +64349,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-21T00:02:49.186Z",
+      "discoveredAt": "2026-10-23T00:05:59.844Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64243,7 +64376,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-21T00:02:49.186Z",
+      "discoveredAt": "2026-10-23T00:05:59.844Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -64318,9 +64451,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261021_090137:guideline:2026-10-21",
+    "runId": "trend_review_20261023_090456:guideline:2026-10-23",
     "outcome": "published",
-    "publishedId": "pmid:42264011",
+    "publishedId": "pmid:42242731",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -64329,8 +64462,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           },
@@ -64339,21 +64472,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 136,
-        "overlapCount": 2,
-        "ptOnlyCount": 2,
+        "mergedTotal": 127,
+        "overlapCount": 1,
+        "ptOnlyCount": 1,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/21",
-          "maxDate": "2026/10/21"
+          "minDate": "2026/09/23",
+          "maxDate": "2026/10/23"
         },
         "retmax": 60,
         "topics": [
@@ -64361,8 +64494,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 44,
-            "idsFetched": 44,
+            "totalFound": 41,
+            "idsFetched": 41,
             "truncated": false,
             "error": null
           },
@@ -64370,8 +64503,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -64397,8 +64530,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 25,
-            "idsFetched": 25,
+            "totalFound": 22,
+            "idsFetched": 22,
             "truncated": false,
             "error": null
           },
@@ -64433,8 +64566,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 9,
-            "idsFetched": 9,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -64457,19 +64590,17 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 126,
+        "topicOnlyCount": 119,
         "ptPmids": [
-          "42788594",
           "42552475",
-          "42549877",
           "40298962"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 136,
-          "enriched": 136,
-          "withAbstract": 95,
+          "requested": 127,
+          "enriched": 127,
+          "withAbstract": 87,
           "error": null
         }
       },
@@ -64526,13 +64657,6 @@
         "scored": 0
       },
       "scopeExclusions": [
-        {
-          "stage": "region",
-          "pmid": "42788594",
-          "title": "Systematic Review on the Safety of Physical Exercise in Hypertrophic Cardiomyopathy: Recommendations from the Brazilian Society of Cardiology.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
         {
           "stage": "region",
           "pmid": "40298962",
@@ -64668,27 +64792,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42788589",
-          "title": "Are artificial intelligence-generated recommendations clinically safe? Evaluation of thromboembolic prophylaxis advice after arthroplasty.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42772884",
-          "title": "Differential uptake of SGLT2 inhibitors in England following heart failure guideline expansion: a controlled interrupted time series analysis.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42767488",
-          "title": "Association of in-hospital mineralocorticoid receptor antagonist initiation with outcomes according to guideline-defined eGFR and potassium eligibility in patients with heart failure.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42687463",
           "title": "Defining Clinically Meaningful Within-Patient Changes in Heart Failure: JACC: Heart Failure Position Statement.",
           "region": null,
@@ -64782,6 +64885,13 @@
           "stage": "region",
           "pmid": "41027505",
           "title": "Expanded Results From a Dedicated Guideline-Directed Medical Therapy Clinic.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42904495",
+          "title": "Clinical guideline highlights for the hospitalist: Surviving Sepsis Campaign Update (Adults) 2026.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65004,27 +65114,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42773699",
-          "title": "A roadmap for somatosensory rehabilitation and research after stroke: Consensus-based core recommendations from the fourth Stroke Recovery and Rehabilitation Roundtable.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42771011",
-          "title": "Commentary: Hemorrhage Volume and Imaging Recommendations: Factors for Decision Making in the Care of Patients With Perimesencephalic Subarachnoid Hemorrhage.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42766019",
-          "title": "Evidence Base for Positioning Electroconvulsive Therapy and Magnetic Seizure Therapy in Treatment Guidelines for Major Depressive Disorder.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42758512",
           "title": "Updated Stroke Guideline Emphasizes Early, Holistic Intervention.",
           "region": null,
@@ -65165,20 +65254,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42771693",
-          "title": "Targeted Treatment of Agitation in Alzheimer's Dementia: Prioritizing Function and Safety Over Sedation and Other Serious Harms.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42766836",
-          "title": "The 2025 revision of JPOS/JASCC clinical guidelines for delirium in adult patients with cancer: a summary of recommendations.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42641618",
           "title": "Procedural sedation guidelines: directing the focus on sedation practitioner competencies and patient comfort.",
           "region": null,
@@ -65267,19 +65342,19 @@
         }
       ],
       "decisions": {
-        "queued": 202,
+        "queued": 201,
         "needsReview": 454,
         "rejected": 132,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42264011",
+        "candidateId": "pmid:42242731",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-21T00:08:53.651Z",
+  "updatedAt": "2026-10-23T00:09:42.975Z",
   "configVersion": "guideline-v2"
 }
