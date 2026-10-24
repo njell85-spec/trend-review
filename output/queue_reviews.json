@@ -4134,23 +4134,6 @@
       "status": "queued"
     },
     {
-      "pmid": "40888899",
-      "title": "Antibiotic therapy for severe bacterial infections.",
-      "journal": "Intensive Care Med",
-      "score": 2.6,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "중증 세균감염 항생제 치료, 중환자 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40952730",
       "title": "Superficial Vein Thrombosis: A Review.",
       "journal": "JAMA",
@@ -12777,6 +12760,138 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40888899",
+      "title": "Antibiotic therapy for severe bacterial infections.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "중증 세균감염 항생제 치료, 중환자 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-24",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40888899",
+          "title": "Antibiotic therapy for severe bacterial infections.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-9-1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40888899/",
+          "doi": "10.1007/s00134-025-08063-0"
+        },
+        "title_ko": "중증 세균감염의 항생제 치료",
+        "scope_ko": "중환자실의 중증 세균감염에서 항생제 치료를 최적화하는 방법을 다룬 서술적 종설(narrative review)로, 조기 투여·신속 진단·de-escalation·치료기간 단축·약동학(PK) 최적화·치료적 약물농도 모니터링(TDM), 그리고 난치성 내성균 치료의 미해결 쟁점을 정리한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "배경 — 왜 항생제 최적화가 필요한가",
+            "body_ko": "중증 감염 환자에서 조기 항생제 치료는 예후를 개선하는 데 필수적이다. 그러나 반대로, 감수성이 있는 병원체에 지나치게 광범위한 항생제를 쓰거나, 세균감염이 없는 환자에게 불필요한 항생제를 쓰는 것은 생명을 위협하는 이상반응과 중복감염(superinfection)과 연관된다.\n\n항생제에 의한 인체 미생물총(microbiota)의 변화는 면역계와 대사계를 모두 교란한다. 또한 통제되지 않은 항생제 사용은 항생제 내성균의 출현을 조장한다.\n\n저자들은 항생제 치료를 받는 중환자실 환자의 약 50%가 확인된 감염이 없는 상태이며, 그럼에도 de-escalation과 치료기간 단축은 드물게만 시행된다고 지적한다. 중증 감염의 사망률은 여전히 높아, 치료 최적화의 필요성이 두드러진다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "목적과 방법",
+            "body_ko": "이 논문은 서술적 종설(narrative review)이다. 목적은 중증 감염에서 항생제 치료를 최적화하기 위해 현재까지 확보된 근거, 새롭게 떠오르는 선택지, 그리고 아직 해결되지 않은 논쟁점을 정리하는 것이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료 선택에 영향을 주는 맥락 요인",
+            "body_ko": "저자들은 항생제 치료를 결정할 때 고려해야 할 중요한 요인으로 지역별 역학(local epidemiology), 환자의 기저질환, 의료체계 접근성, 그리고 가용한 진단·치료 자원을 든다. 즉, 최적의 선택은 보편적 공식이 아니라 이러한 맥락에 따라 달라진다는 것이 전제다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신속 진단검사와 개별화된 의사결정",
+            "body_ko": "신속 진단검사(rapid diagnostic tests)를 개별화된 의사결정과 결합하면 항생제 선택을 개선할 수 있다. 저자들은 진단 기술과 임상 판단을 함께 쓰는 것이 경험적 처방의 정확도를 높이는 방향이라고 본다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신속한 de-escalation과 치료기간 단축을 원칙으로",
+            "body_ko": "협범위 단독요법(narrow-spectrum monotherapy)으로의 신속한 de-escalation과 치료기간의 단축이 원칙이 되어야 한다고 저자들은 명시한다. 앞서 언급했듯 실제로는 이 두 가지가 드물게만 시행되고 있어, 이를 일상적 관행으로 끌어올리는 것이 핵심 메시지 중 하나다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "난치성 내성균에서 치료의 개별화 — 남은 불확실성",
+            "body_ko": "치료가 어려운 내성균(difficult-to-treat resistant bacteria)에 대한 치료의 개별화(personalisation)에 관해서는 여전히 불확실성이 남아 있다고 저자들은 솔직히 인정한다. 이 영역은 종설이 '미해결 논쟁'으로 분류한 부분이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "약동학(PK) 최적화와 연장/지속 베타락탐 투여",
+            "body_ko": "약동학(PK) 최적화, 그리고 베타락탐의 연장 주입(prolonged) 또는 지속 주입(continuous)은 안전하며 예후를 개선할 가능성이 있다고 저자들은 평가한다. 다만 표현 그대로 '개선할 수 있다(may improve)' 수준의 신중한 서술로, 단정적 결론은 아니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료적 약물농도 모니터링(TDM)",
+            "body_ko": "치료적 약물농도 모니터링(TDM)은, 특히 분포용적(volume of distribution)이나 약물 청소율(clearance)의 변화가 의심되거나 독성 발생 가능성이 높은 상황에서 사용해야 한다. 저자들은 TDM을 신속한 용량 조정과 결합하는 것의 효과를 강조하며 이를 권장한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신기술과 항생제 스튜어드십 협업",
+            "body_ko": "신속하고 광범위한 진단검사, 그리고 전자적 항생제 최적화 도구(electronic antibiotic optimisation tools)를 비롯한 신기술은 약사·미생물검사실·감염내과 전문의·중환자의학 전문의 간의 협업을 더욱 뒷받침할 것이다. 저자들은 이러한 협업이 항생제 치료를 최적화하고, 이 귀중한 자원을 관리(steward)하는 데 기여한다고 본다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 항생제 투여 시점 — SSC 2021의 1시간/3시간 기준",
+            "body_ko": "이 종설이 다루는 '조기 투여'의 임상 기준은 Surviving Sepsis Campaign(SSC) 2021 지침에서 구체화되어 있다. 패혈성 쇼크가 있거나 패혈증 가능성이 높은 성인에서는 인지 후 가능한 한 빨리, 이상적으로 1시간 이내에 항균제를 투여하도록 권고한다(강한 권고, 근거수준 낮음). 반면 쇼크가 없는 패혈증 의심 성인에서는 감염 여부를 신속히 평가하는 시간 제한적 과정을 거치되, 감염 우려가 지속되면 패혈증이 처음 인지된 시점으로부터 3시간 이내에 항균제를 투여하도록 제안한다(약한 권고, 근거수준 매우 낮음). 즉 '쇼크=1시간, 쇼크 없음=3시간 진단 창(window)'이라는 계층화가, 종설이 말한 과잉치료 축소의 실천 기준이다.\n— 보강 출처: Surviving Sepsis Campaign 2021 Guidelines (SCCM) (https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-guidelines-2021)",
+            "origin": "augmented",
+            "sourceLabel": "Surviving Sepsis Campaign 2021 Guidelines (SCCM)",
+            "sourceUrl": "https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-guidelines-2021"
+          },
+          {
+            "heading_ko": "[웹 보강] 경험적 병용요법·매일 de-escalation·치료기간 단축",
+            "body_ko": "종설이 원칙으로 제시한 de-escalation과 기간 단축의 근거 기준도 SSC 2021에 정리되어 있다. 다제내성균(MDR) 고위험 성인에서는 경험적으로 그람음성 커버 항균제 2제 병용을 1제보다 제안한다(약한 권고, 근거수준 매우 낮음). 치료 중에는 고정된 치료기간을 두기보다 매일 de-escalation 가능 여부를 재평가하도록 제안한다(약한 권고). 적절한 소스 조절(source control)이 이루어진 패혈증/패혈성 쇼크에서는 더 긴 기간보다 더 짧은 치료기간을 제안하며(약한 권고), 최적 기간이 불분명할 때는 임상 평가 단독보다 procalcitonin과 임상 평가를 함께 써서 중단 시점을 정하도록 제안한다(약한 권고, 근거수준 낮음).\n— 보강 출처: Surviving Sepsis Campaign 2021 Guidelines (SCCM) (https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-guidelines-2021)",
+            "origin": "augmented",
+            "sourceLabel": "Surviving Sepsis Campaign 2021 Guidelines (SCCM)",
+            "sourceUrl": "https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-guidelines-2021"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "95afb114d64e225c5c40650313a0007c0dcc33487aa4861633dc46d9e8cf9ed0",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-10-24T00:09:09.155Z",
+          "resultFingerprint": "89e89a49a4fcd51f3b0faef583a03369fec2d88f873364be8431965d29b53df9",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 '빠르게, 그러나 똑똑하게'가 요지다. 쇼크나 감염 가능성이 높으면 1시간 내 투여를, 쇼크가 없으면 3시간의 진단 창을 활용해 불필요한 경험적 치료를 줄인다. 신속 진단과 매일 재평가로 조기에 협범위 단독요법으로 de-escalation하고 치료기간을 단축하는 것을 기본 관행으로 삼는다. 분포용적·청소율 변화가 의심되거나 독성이 우려되는 환자에서는 TDM과 신속한 용량 조정을 쓰고, 베타락탐의 연장/지속 주입을 고려한다(안전하며 임상적 치유 개선 가능성). 이 모든 과정은 약사·미생물검사실·감염내과·중환자의학 간 협업으로 수행한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40888899",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40888899/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08063-0",
+            "url": "https://doi.org/10.1007/s00134-025-08063-0"
+          },
+          {
+            "label": "웹 — Accepted manuscript PDF (Timsit et al., ICM 2025) — Apollo/University of Cambridge repository (fetched; PDF body not machine-extractable in this environment)",
+            "url": "https://www.repository.cam.ac.uk/items/477e840c-d4fb-44d1-b1d4-bdb526cf1fb4"
+          },
+          {
+            "label": "웹 — Europe PMC REST API — open-access/full-text status for DOI 10.1007/s00134-025-08063-0 (not open access; not in PMC/EPMC)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1007/s00134-025-08063-0&resultType=core&format=json"
+          },
+          {
+            "label": "웹 — Surviving Sepsis Campaign 2021 Guidelines (SCCM)",
+            "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-guidelines-2021"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -12834,9 +12949,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-23",
+    "date": "2026-10-24",
     "outcome": "published",
-    "publishedId": "40705073"
+    "publishedId": "40888899"
   },
-  "updatedAt": "2026-10-23"
+  "updatedAt": "2026-10-24"
 }
