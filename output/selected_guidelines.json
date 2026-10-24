@@ -21449,89 +21449,6 @@
       "lineageReason": "no-matching-lineage"
     },
     {
-      "id": "pmid:40828463",
-      "pmid": "40828463",
-      "title": "European Society of Intensive Care Medicine Clinical Practice Guideline on fluid therapy in adult critically ill patients: Part 3-fluid removal at de-escalation phase.",
-      "pubDate": "2025 Oct",
-      "journal": "Intensive care medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:09.622Z",
-      "abstract": "PURPOSE: This is the third of three parts of the clinical practice guideline from the European Society of Intensive Care Medicine (ESICM) on fluid management in adult critically ill patients. This part addresses fluid removal in the de-escalation phase of shock management.\nMETHODS: This guideline was formulated by an international panel of clinical experts, methodologists, and patient representatives. A literature search was conducted to identify relevant randomized controlled trials (RCTs) in adults published up to February 2025. The Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) methodology was applied to evaluate the certainty of evidence and to move from evidence to decision.\nRESULTS: Based on data from 13 RCTs, the panel issued three conditional recommendations. The panel suggested de-escalation of fluid therapy over no de-escalation in critically ill adults after the acute phase of fluid resuscitation (low certainty evidence). They suggested protocolized fluid removal by diuretics over usual care in critically ill patients after the acute phase of fluid resuscitation (moderate certainty evidence). A conditional recommendation was issued against the routine use of ultrafiltration or extracorporeal fluid removal in critically ill adults after the acute phase of fluid resuscitation, without other indication for RRT (low certainty evidence). There was limited evidence to comment on fluid removal in specific patient cohorts.\nCONCLUSIONS: This ESICM guideline provides three recommendations to inform clinicians on fluid removal during the de-escalation phase in critically ill patients with shock who no longer need fluid resuscitation.",
-      "meshTerms": [
-        "Humans",
-        "Critical Illness",
-        "Fluid Therapy",
-        "Critical Care",
-        "Adult",
-        "Europe",
-        "Societies, Medical",
-        "Randomized Controlled Trials as Topic"
-      ],
-      "keywords": [
-        "De-resuscitation",
-        "Diuretics",
-        "Extracorporeal fluid removal",
-        "Fluid",
-        "Fluid removal",
-        "Ultrafiltration"
-      ],
-      "doi": "10.1007/s00134-025-08058-x",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": "esicm"
-      },
-      "priority": 10.69778607879071,
-      "breakdown": {
-        "authority": 4,
-        "topic": 3.1999999999999997,
-        "recency": 1.4977860787907105,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "esicm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:51.474Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ESICM 수액 제거 지침(탈에스컬레이션)—중환자 실무",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "esicm|clinical-practice-fluid-therapy-adult-critically-ill-patients-part-3-fluid-removal-at-de-escalation-phase",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:40784821",
       "pmid": "40784821",
       "title": "Definitions and consensus recommendations on critical care medicine at altitude from the Expert Committee on Critical Care Medicine at altitude of the Pan-American and Iberian Federation of Critical Care Medicine and Intensive Care.",
@@ -32538,7 +32455,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34727,7 +34644,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-23T23:56:44.037Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37747,7 +37664,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -42791,7 +42708,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -44134,7 +44051,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -44263,7 +44180,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-23T23:56:44.037Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44933,7 +44850,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45093,7 +45010,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45175,7 +45092,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.037Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45404,7 +45321,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46457,7 +46374,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.037Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46940,7 +46857,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -46992,11 +46909,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.586114314546812,
+      "priority": 11.582523025966935,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.5861143145468126,
+        "recency": 1.5825230259669354,
         "scope": 0,
         "confidence": 2
       },
@@ -47012,7 +46929,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.037Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47093,7 +47010,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47170,7 +47087,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47239,7 +47156,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.037Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47316,7 +47233,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47374,7 +47291,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47442,7 +47359,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.037Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47506,7 +47423,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47568,7 +47485,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -47576,7 +47493,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-23T23:56:44.036Z",
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47587,6 +47504,133 @@
         "keep": false,
         "reason": "원발담즙성담관염은 외래 만성 간질환 관리, 응급·중환자 무관",
         "at": "2026-10-23T23:56:46.321Z"
+      }
+    },
+    {
+      "id": "pmid:42918641",
+      "pmid": "42918641",
+      "title": "Residual vulnerability after decompensated heart failure: what remains unmet after the 2026 ESC guidelines for the management of heart failure?",
+      "pubDate": "2026 Oct 23",
+      "journal": "European journal of internal medicine",
+      "publicationTypes": [
+        "Letter"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "Atrial fibrillation",
+        "C-reactive protein-to-albumin ratio",
+        "Cardiorenal dysfunction",
+        "Heart failure",
+        "Rehospitalization"
+      ],
+      "doi": "10.1016/j.ejim.2026.107249",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "conflicting-editorial-publication-type"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "2026 ESC 심부전 지침 논평—급성심부전 응급 관련, 지침 자체 아닌 미충족 영역 논의",
+        "at": "2026-10-24T23:33:23.689Z"
+      }
+    },
+    {
+      "id": "pmid:42919647",
+      "pmid": "42919647",
+      "title": "NICE Guideline Review: Meningitis and meningococcal disease: recognition, diagnosis and management (NG240).",
+      "pubDate": "2026 Oct 23",
+      "journal": "Archives of disease in childhood. Education and practice edition",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "Child Health",
+        "Infant Development",
+        "Mortality",
+        "Paediatrics"
+      ],
+      "doi": "10.1136/archdischild-2026-330773",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 5,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "NICE 수막염·수막구균 지침 리뷰—응급 감별 핵심이나 소아 저널 게재",
+        "at": "2026-10-24T23:33:23.689Z"
       }
     }
   ],
@@ -59060,6 +59104,160 @@
         ]
       },
       "publishedAt": "2026-10-24"
+    },
+    {
+      "id": "pmid:40828463",
+      "pmid": "40828463",
+      "title": "European Society of Intensive Care Medicine Clinical Practice Guideline on fluid therapy in adult critically ill patients: Part 3-fluid removal at de-escalation phase.",
+      "pubDate": "2025 Oct",
+      "journal": "Intensive care medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:09.622Z",
+      "abstract": "PURPOSE: This is the third of three parts of the clinical practice guideline from the European Society of Intensive Care Medicine (ESICM) on fluid management in adult critically ill patients. This part addresses fluid removal in the de-escalation phase of shock management.\nMETHODS: This guideline was formulated by an international panel of clinical experts, methodologists, and patient representatives. A literature search was conducted to identify relevant randomized controlled trials (RCTs) in adults published up to February 2025. The Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) methodology was applied to evaluate the certainty of evidence and to move from evidence to decision.\nRESULTS: Based on data from 13 RCTs, the panel issued three conditional recommendations. The panel suggested de-escalation of fluid therapy over no de-escalation in critically ill adults after the acute phase of fluid resuscitation (low certainty evidence). They suggested protocolized fluid removal by diuretics over usual care in critically ill patients after the acute phase of fluid resuscitation (moderate certainty evidence). A conditional recommendation was issued against the routine use of ultrafiltration or extracorporeal fluid removal in critically ill adults after the acute phase of fluid resuscitation, without other indication for RRT (low certainty evidence). There was limited evidence to comment on fluid removal in specific patient cohorts.\nCONCLUSIONS: This ESICM guideline provides three recommendations to inform clinicians on fluid removal during the de-escalation phase in critically ill patients with shock who no longer need fluid resuscitation.",
+      "meshTerms": [
+        "Humans",
+        "Critical Illness",
+        "Fluid Therapy",
+        "Critical Care",
+        "Adult",
+        "Europe",
+        "Societies, Medical",
+        "Randomized Controlled Trials as Topic"
+      ],
+      "keywords": [
+        "De-resuscitation",
+        "Diuretics",
+        "Extracorporeal fluid removal",
+        "Fluid",
+        "Fluid removal",
+        "Ultrafiltration"
+      ],
+      "doi": "10.1007/s00134-025-08058-x",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "esicm"
+      },
+      "priority": 10.69778607879071,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3.1999999999999997,
+        "recency": 1.4977860787907105,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esicm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:51.474Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ESICM 수액 제거 지침(탈에스컬레이션)—중환자 실무",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "esicm|clinical-practice-fluid-therapy-adult-critically-ill-patients-part-3-fluid-removal-at-de-escalation-phase",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40828463",
+          "title": "European Society of Intensive Care Medicine Clinical Practice Guideline on fluid therapy in adult critically ill patients: Part 3-fluid removal at de-escalation phase.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025 Oct",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40828463/",
+          "doi": "10.1007/s00134-025-08058-x"
+        },
+        "org": "ESICM",
+        "version": "2025",
+        "title_ko": "성인 중환자의 수액요법에 대한 유럽중환자의학회(ESICM) 임상진료지침 — 제3부: 탈출(de-escalation) 단계의 수액 제거",
+        "scope_ko": "쇼크 관리에서 급성 수액 소생 단계를 지나 더 이상 수액 소생이 필요하지 않은 성인 중환자를 대상으로, 탈출(de-escalation) 단계에서의 수액 제거(de-resuscitation) 전략을 다루는 지침이다. 3부작 수액요법 지침의 마지막 편으로, 수액 탈출 여부, 이뇨제를 이용한 프로토콜화된 수액 제거, 신대체요법(RRT) 적응증이 없는 상태에서의 한외여과/체외 수액 제거 세 가지 질문을 다룬다.",
+        "summary": [
+          "After the acute phase of fluid resuscitation, suggest de-escalation of fluid therapy over no de-escalation in critically ill adults (conditional recommendation, low certainty evidence). Based on 13 RCTs, protocolized de-escalation showed little-to-no mortality difference but more ventilator-free and ICU-free days.",
+          "Suggest protocolized fluid removal using diuretics over usual care in critically ill patients after the acute resuscitation phase (conditional recommendation, moderate certainty evidence) — the most practical recommendation, supported by a more homogeneous body of 10 RCTs.",
+          "Recommend AGAINST the routine use of ultrafiltration or extracorporeal fluid removal in critically ill adults after the acute phase when there is no other indication for RRT (conditional recommendation against, low certainty evidence).",
+          "All three recommendations are CONDITIONAL — individualized, hemodynamically-monitored management is emphasized rather than a one-size-fits-all protocol; fluid removal targets patients with shock who no longer need resuscitation.",
+          "Evidence was insufficient to make recommendations on fluid removal in specific patient cohorts (e.g., particular shock subtypes)."
+        ],
+        "summary_ko": [
+          "급성 수액 소생 단계 이후에는 성인 중환자에서 수액 탈출(de-escalation)을 하지 않는 것보다 하는 쪽을 제안한다(조건부 권고, 근거확실성 낮음). 13개 RCT에 근거하며, 프로토콜화된 탈출은 사망률 차이는 거의 없었으나 ventilator-free days와 ICU-free days를 늘렸다.",
+          "급성 소생 단계 이후 환자에서 통상적 치료(usual care)보다 이뇨제를 이용한 프로토콜화된 수액 제거를 제안한다(조건부 권고, 근거확실성 중등도) — 10개 RCT로 상대적으로 균질한 근거를 갖춘, 가장 실용적인 권고다.",
+          "RRT의 다른 적응증이 없는 상태에서는, 급성 단계 이후 성인 중환자에게 한외여과(ultrafiltration)나 체외 수액 제거를 일상적으로 사용하지 말 것을 권고한다(조건부 반대 권고, 근거확실성 낮음).",
+          "세 권고 모두 조건부(conditional)이며, 획일적 프로토콜보다 혈역학 모니터링 하의 개별화된 관리를 강조한다. 대상은 더 이상 소생이 필요 없는 쇼크 환자다.",
+          "특정 환자군(예: 특정 쇼크 아형)에서의 수액 제거에 대해서는 근거가 제한적이어서 별도 권고를 내리지 못했다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [
+          {
+            "heading_ko": "동반 논평(editorial)이 짚은 근거의 한계와 임상적 주의점",
+            "body_ko": "지침에 대한 2차 논평/요약에 따르면, 프로토콜화된 수액 탈출은 13개 RCT에서 사망률 차이는 거의 없었으나 ventilator-free days와 ICU-free days 증가와 연관되었다. 이뇨제 권고는 보다 균질한 10개 RCT에 근거해 '실용적'이라 평가되었고, 한외여과 반대 권고는 사망률 이득 없이 비용만 상당히 높다는 4개 시험에 근거한다. 다만 중요한 한계로 ① 다수 시험이 수액 제거와 수액 제한을 혼합했고 ② 목표 제거 속도가 모세혈관 재충전 등 한계로 자주 달성되지 못했으며 ③ '수액 제거 시작 적기(readiness for removal)'를 정의한 시험이 없고 ④ '수액 과다(fluid overload)' 자체에 대한 합의 정의가 없다는 점을 지적한다. 따라서 수액 제거 시작 전 세심한 혈역학 모니터링과 안전장치, 환자별 반응 이질성에 대한 인식이 필요하다. (지침 원문이 아닌 2차 논평의 평가임)",
+            "sourceLabel": "PMC — 'A path toward improved patient management' (ESICM 수액지침 논평)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13184491/"
+          },
+          {
+            "heading_ko": "ESICM 공식 안내 — 3부작 수액요법 지침의 마지막 편",
+            "body_ko": "ESICM 공식 발표문은 이 문서가 성인 중환자 수액관리 3부작 지침의 세 번째이자 마지막 편임을 밝힌다. 앞선 1·2부는 각각 소생 수액의 '종류(선택)'와 소생 수액의 '양(용량)'을 다루었고, 3부가 탈출 단계의 수액 제거를 담당한다. 공식 안내는 세 가지 조건부 권고(탈출 제안, 이뇨제 프로토콜 제안, 일상적 한외여과 반대)를 제시하며 특정 환자군 근거가 제한적임을 인정하고 개별화 관리를 강조한다. (지침 자체 권고를 ESICM가 공식적으로 요약한 2차 안내문)",
+            "sourceLabel": "ESICM 공식 발표문",
+            "sourceUrl": "https://www.esicm.org/new-esicm-guideline-fluid-therapy-part-3/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, treat the post-resuscitation ICU patient as entering an active de-resuscitation phase rather than passively letting fluid accumulate: once the patient no longer needs resuscitation, adopt a protocolized diuretic-driven negative-balance strategy (the moderate-certainty, most practical recommendation) with careful hemodynamic monitoring and safeguards. Do NOT reach for ultrafiltration or extracorporeal fluid removal purely to remove fluid when there is no independent RRT indication — it adds cost without a mortality benefit. Because all recommendations are conditional and no consensus definition of fluid overload or 'readiness for removal' exists, individualize targets and watch tolerance (e.g., capillary refill, perfusion) rather than forcing a fixed removal rate.",
+        "practiceImpact_ko": "소생 이후 중환자를 수액이 수동적으로 쌓이게 두지 말고 능동적 de-resuscitation 단계로 간주한다: 더 이상 소생이 필요 없어지면, 혈역학 모니터링과 안전장치를 갖춘 상태에서 이뇨제 기반의 프로토콜화된 음성 수액균형 전략을 채택한다(중등도 근거의 가장 실용적 권고). 독립적인 RRT 적응증이 없는데 오로지 수액 제거만을 목적으로 한외여과·체외 수액 제거를 쓰지 않는다 — 비용만 늘고 사망률 이득이 없다. 모든 권고가 조건부이고 '수액 과다'나 '제거 시작 적기'에 대한 합의 정의가 없으므로, 고정된 제거 속도를 강요하기보다 환자별로 목표를 정하고 내약성(모세혈관 재충전, 관류 등)을 보며 조절한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40828463",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40828463/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08058-x",
+            "url": "https://doi.org/10.1007/s00134-025-08058-x"
+          },
+          {
+            "label": "웹 — ESICM 공식 발표문 — New ESICM Guideline on Fluid Therapy Part 3",
+            "url": "https://www.esicm.org/new-esicm-guideline-fluid-therapy-part-3/"
+          },
+          {
+            "label": "웹 — PMC — ESICM fluid therapy guideline: a path toward improved patient management (editorial)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13184491/"
+          },
+          {
+            "label": "웹 — Springer / Intensive Care Medicine — full article (paywalled; redirected, not readable)",
+            "url": "https://link.springer.com/article/10.1007/s00134-025-08058-x"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-25"
     }
   ],
   "rejected": [
@@ -64035,7 +64233,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-23T23:56:34.280Z",
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64490,7 +64688,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-23T23:56:34.280Z",
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -64534,7 +64732,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-23T23:56:34.280Z",
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64561,7 +64759,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-23T23:56:34.280Z",
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64589,7 +64787,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-23T23:56:34.280Z",
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64616,7 +64814,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-23T23:56:34.280Z",
+      "discoveredAt": "2026-10-24T23:33:13.109Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -64691,9 +64889,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261024_085533:guideline:2026-10-24",
+    "runId": "trend_review_20261025_083207:guideline:2026-10-25",
     "outcome": "published",
-    "publishedId": "pmid:42913334",
+    "publishedId": "pmid:40828463",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -64718,15 +64916,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 131,
+        "mergedTotal": 130,
         "overlapCount": 1,
         "ptOnlyCount": 1,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/24",
-          "maxDate": "2026/10/24"
+          "minDate": "2026/09/25",
+          "maxDate": "2026/10/25"
         },
         "retmax": 60,
         "topics": [
@@ -64734,8 +64932,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 43,
-            "idsFetched": 43,
+            "totalFound": 42,
+            "idsFetched": 42,
             "truncated": false,
             "error": null
           },
@@ -64752,8 +64950,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 23,
-            "idsFetched": 23,
+            "totalFound": 22,
+            "idsFetched": 22,
             "truncated": false,
             "error": null
           },
@@ -64761,8 +64959,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 15,
+            "idsFetched": 15,
             "truncated": false,
             "error": null
           },
@@ -64770,8 +64968,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 22,
-            "idsFetched": 22,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -64815,8 +65013,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 6,
-            "idsFetched": 6,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           },
@@ -64830,7 +65028,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 123,
+        "topicOnlyCount": 122,
         "ptPmids": [
           "42552475",
           "40298962"
@@ -64838,9 +65036,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 131,
-          "enriched": 131,
-          "withAbstract": 91,
+          "requested": 130,
+          "enriched": 130,
+          "withAbstract": 89,
           "error": null
         }
       },
@@ -65125,22 +65323,15 @@
         },
         {
           "stage": "region",
-          "pmid": "41748197",
-          "title": "Guideline-directed medical therapy in older heart failure patients: survival gains, evidence gaps and the challenge of implementation.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "41672763",
-          "title": "Survival benefit of guideline-directed medical therapy in older patients with heart failure: a systematic review and meta-analysis.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "41027505",
           "title": "Expanded Results From a Dedicated Guideline-Directed Medical Therapy Clinic.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42918809",
+          "title": "Discordance between actual care and recommendations by a reinforcement learning model for sepsis.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65155,13 +65346,6 @@
           "stage": "region",
           "pmid": "42822214",
           "title": "The clinical side of Icarus - hubris, overconfidence, and sepsis guidelines.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42786551",
-          "title": "Revisiting diastolic arterial pressure in the 2026 Surviving Sepsis Campaign Guidelines.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65225,13 +65409,6 @@
           "stage": "region",
           "pmid": "42791180",
           "title": "Difficult Airway Society 2025 guidelines for management of unanticipated difficult tracheal intubation in adults: endobronchial intubation, an overlooked risk after difficult airway management. Comment on Br J Anaesth 2026; 136: 283-307.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42785634",
-          "title": "Supporting Asthma Guideline-Based Management by Integrating Patient Navigators.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65344,6 +65521,13 @@
           "stage": "region",
           "pmid": "41711121",
           "title": "The 2025 CAP Controversy: Why Guideline Methodology Matters for Clinical Decision-Making.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42919778",
+          "title": "Changes and Modifications Included in the 2026 Acute Ischemic Stroke Guidelines Relevant to the Adult and Pediatric Cardiac Surgery Populations.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65538,13 +65722,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42784635",
-          "title": "Community risk perceptions and recommendations for drowning prevention: A qualitative study across West Bengal, India.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42772815",
           "title": "Drowning in a Sea of Guidelines.",
           "region": null,
@@ -65605,19 +65782,19 @@
         }
       ],
       "decisions": {
-        "queued": 201,
-        "needsReview": 455,
+        "queued": 203,
+        "needsReview": 454,
         "rejected": 132,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42913334",
+        "candidateId": "pmid:40828463",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-23T23:59:42.932Z",
+  "updatedAt": "2026-10-24T23:35:27.524Z",
   "configVersion": "guideline-v2"
 }

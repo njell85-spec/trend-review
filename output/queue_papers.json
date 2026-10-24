@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41749261",
-      "title": "Association between initial norepinephrine dose and minute by minute mean arterial pressure.",
-      "journal": "Critical care (London, England)",
-      "score": 8,
-      "topic": "sepsis_shock",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.0092,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "41999287",
       "title": "Fast Antimicrobial Susceptibility Testing for Gram-Negative Bacteremia: The FAST Randomized Clinical Trial.",
       "journal": "JAMA",
@@ -346,6 +331,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-24"
+    },
+    {
+      "pmid": "41749261",
+      "title": "Association between initial norepinephrine dose and minute by minute mean arterial pressure.",
+      "journal": "Critical care (London, England)",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.0092,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-25"
     }
   ],
   "rejected": [
@@ -361,9 +362,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "outcome": "published",
-    "publishedId": "42092974"
+    "publishedId": "41749261"
   },
-  "updatedAt": "2026-10-24"
+  "updatedAt": "2026-10-25"
 }

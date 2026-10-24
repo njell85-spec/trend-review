@@ -946,5 +946,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41749261",
+    "title": "Association between initial norepinephrine dose and minute by minute mean arteri",
+    "date": "2026-10-25",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

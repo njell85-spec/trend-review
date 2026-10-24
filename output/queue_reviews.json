@@ -4219,23 +4219,6 @@
       "status": "queued"
     },
     {
-      "pmid": "41222651",
-      "title": "Critical care management of the patient with pharmaceutical poisoning.",
-      "journal": "Intensive Care Med",
-      "score": 2.6,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "약물중독 중환자 관리, 중독·CC 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "41318214",
       "title": "Contemporary, non-invasive imaging diagnosis of chronic coronary artery disease.",
       "journal": "Lancet",
@@ -12892,6 +12875,122 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41222651",
+      "title": "Critical care management of the patient with pharmaceutical poisoning.",
+      "journal": "Intensive Care Med",
+      "score": 2.6,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "약물중독 중환자 관리, 중독·CC 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-25",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41222651",
+          "title": "Critical care management of the patient with pharmaceutical poisoning.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-11-12",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41222651/",
+          "doi": "10.1007/s00134-025-08176-6"
+        },
+        "title_ko": "약물 중독 환자의 중환자 치료",
+        "scope_ko": "이 종설은 중환자실에서 만나는 약물(의약품) 중독 환자의 처치를 집중치료 의사의 실제 진료 관점에서 다루는 state-of-the-art 리뷰로, ABCDE 접근에 따른 초기 소생, 진단적 평가, 그리고 지지요법에서 위장관 제염·체외 독성물질 제거·해독제·구조요법(정맥 지질유제, ECMO)으로 치료를 상향하는 시점과 방법을 정리한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "중독의 역학과 중환자실에서의 비중",
+            "body_ko": "중독은 중환자실(ICU) 입원의 최대 10%를 차지하며, 흔하면서도 복잡한 집중치료의 과제다. 대부분의 환자는 지지요법만으로도 회복하지만, 상당수는 표적화된 중재와 고급 장기 지원(advanced organ support)을 필요로 한다. 이 종설은 집중치료 의사를 위한 실제 적용 가능성에 초점을 맞추어, 중환자실에서 약물 중독을 처치하기 위한 실용적이고 근거에 기반한 지침을 제시하는 것을 목표로 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "ABCDE 접근에 따른 초기 소생과 독성물질별 고려사항",
+            "body_ko": "초기 소생은 ABCDE 접근을 기본 틀로 삼아 구조화하며, 그 안에서 원인 독성물질(toxicant)에 따른 고려사항을 강조한다. 즉 중독 상황에 맞춘 ABCDE 기반 안정화를 통해 기도·호흡·순환·의식·노출을 체계적으로 평가·교정하되, 각 약물이 일으키는 특이적 병태생리에 맞춘 조기 소생 전략을 적용한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단적 평가의 기본 원칙",
+            "body_ko": "종설은 중독 환자 진단적 평가(diagnostic workup)의 핵심 원칙도 함께 요약한다. 진단적 평가 경로는 시각적으로 구조화된 그림(알고리즘)으로 제시된다. (초록 수준에서는 구체적 검사 항목·역치가 기술되지 않았으며, 본 종설 본문에서 상세히 다루어진다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료의 상향: 지지요법에서 특이적 중재로",
+            "body_ko": "종설은 언제, 어떻게 치료를 상향할지에 대한 실행 가능한 지침을 제공한다. 지지적 처치에서 출발하여, 적응증이 될 때 특이적 중재로 단계적으로 이행한다. 특이적 중재에는 위장관 제염(gastrointestinal decontamination), 체외 독성물질 제거(extracorporeal toxicant elimination), 해독제(antidote) 치료, 그리고 정맥 지질유제(intravenous lipid emulsion, ILE)와 체외막산소화(ECMO) 같은 구조요법(rescue strategies)이 포함된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "핵심 알고리즘·결정 경로와 해독제 표",
+            "body_ko": "진단적 평가, ABCDE 기반 안정화, 위장관 제염, 체외 제거 접근과 같은 핵심 알고리즘·결정 경로가 시각적으로 구조화된 그림으로 제시된다. 또한 포괄적인 표를 통해 중환자 치료에서 가장 관련성이 높은 해독제들을 적응증 및 용량과 함께 개괄한다. (구체적인 해독제 목록·용량은 본 종설 본문의 표에 수록되어 있으며, 확보한 초록 범위에서는 재현할 수 없다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 체외 혈액정화(EBP)에 대한 논쟁 — 서신 반론",
+            "body_ko": "본 종설에 대해 Klinkmann 등은 체외 혈액정화(extracorporeal blood purification, EBP) 기법의 서술이 지나치게 단순화되었다는 반론 서신을 제기했다. 저자들은 원 종설이 \"투석되지 않는(non-dialyzable) 약물에 대해 제안되어 온\" EBP 기법들을 \"간헐적 투석(intermittent dialysis) 대비 명확한 이점이 없다\"고 묶어 기술한 점을 세 가지로 문제 삼았다. 즉 ① 기전과 위험 프로파일이 서로 다른 치료들을 부적절하게 한데 묶었고, ② 근거로 뒷받침되지 않는 일괄적 \"무효성\"을 함의하며, ③ 혈액투석이 기전적으로 실패하는 상황에서 합리적 사용을 위축시킨다는 것이다. 이들은 약물 고유의 성질 — 단백 결합률, 분포용적(volume of distribution), 내인성 청소율 — 이 중요하므로 범주적 비교가 아니라 독성동태학(toxicokinetic) 원칙에 따라 양식을 선택해야 한다고 강조한다. 구체적 예로 ① carbamazepine 중독에서는 EXTRIP 지침이 중증 사례에 간헐적 혈액투석과 함께 흡착(sorbent) 접근을 명시적으로 포함하고, ② 농약(paraquat) 중독에서는 조기의, 필요 시 반복적인 흡착요법이 다중양식 치료 틀 안에서 독소 감소를 가속할 수 있으며, ③ ticagrelor 제거에 대한 최근 실험적 자료가 고도로 단백 결합된 약물에 대한 혈액흡착(hemoadsorption)의 효능을 뒷받침한다고 제시한다. 결론적으로 간헐적 혈액투석을 효과적일 때 1차 요법으로 인정하되, 혈장·흡착 기반 전략은 독성동태학적 추론에 근거해 \"신중히 선택된 중증 중독\"에서 고려 대상이 된다고 재정식화할 것을 권한다.\n— 보강 출처: Klinkmann 등, Hüser 등 논문에 대한 서신 (Intensive Care Medicine, PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC13246803/)",
+            "origin": "augmented",
+            "sourceLabel": "Klinkmann 등, Hüser 등 논문에 대한 서신 (Intensive Care Medicine, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13246803/"
+          },
+          {
+            "heading_ko": "[웹 보강] EBP 논쟁에 대한 추가 왕복 — 쟁점 정리",
+            "body_ko": "이어진 왕복 서신에서 Klinkmann 등은 자신들의 지적이 언어적이면서 동시에 임상적이었다고 밝힌다. 비전통적 기법을 \"간헐적 투석 대비 명확한 이점이 없다\"고 서술하면 기전적으로 구별되는 양식들을 인정하기보다 거짓 이분법(false dichotomy)을 만들 수 있다는 것이다. 다만 몇 가지 점에서는 원저자들과 의견을 같이한다: 간헐적 혈액투석(및 혈액여과)은 효과적일 때 1차 요법으로 남으며, 큰 분포용적은 체외 제거 효율을 제한하고, 혈장 청소(plasma clearance)를 입증된 임상적 이득과 혼동해서는 안 된다는 점이다. 핵심 쟁점은 이것이 \"혈액흡착 대 혈액투석\"의 우열 비교가 아니라는 데 있다. 저자들은 \"우월성이 입증되지 않았다\"는 것과 \"타당한 역할이 전혀 없다\"는 것은 다르며, 무작위 시험이 실행하기 어려운 급성 독성학에서 특히 그렇다고 주장한다. 이들은 혈액투석이 1차 요법으로 남되, 혈장·흡착 기반 양식은 독성동태학·실행가능성·전문가 자문을 지침으로 삼아 신중히 선택된 중증 중독에서 고려될 수 있음을 명시적으로 기술할 것을 제안한다. 또한 ticagrelor 제거를 포화 동태(saturation dynamics)를 동반한 빠른 조기 제거의 원리 증명(proof-of-principle) 예로 인용하면서, 혈액흡착을 우월하다고 내세우기보다 엄격한 약동학 보고를 옹호한다.\n— 보강 출처: 저자 왕복 반론(Reply), 동일 주제 서신 (Intensive Care Medicine, PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC13246801/)",
+            "origin": "augmented",
+            "sourceLabel": "저자 왕복 반론(Reply), 동일 주제 서신 (Intensive Care Medicine, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13246801/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "7e423f5d25ecc50e77ddaae24e888836e62c4270f3e098fadaeaacb199d45eb3",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-10-24T23:39:32.219Z",
+          "resultFingerprint": "f4171eb951b7489511b74ceeba9ed328f92b3bf8d217d5f026f4b4aabe51f4fc",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 4,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 중독 환자를 ABCDE 틀로 안정화하되 원인 약물별 병태생리에 맞춰 조기 소생을 조정하고, 대부분은 지지요법으로 회복하므로 위장관 제염·체외 제거·해독제·ILE·ECMO 같은 특이적·구조적 중재는 명확한 적응증이 설 때 단계적으로 상향한다. 해독제는 적응증과 금기를 분명히 이해한 뒤 신중히 사용하며, 체외 제거 양식 선택은 범주적 일반화가 아니라 단백 결합률·분포용적·내인성 청소율 등 독성동태학적 추론과 전문가(독성학자·중독관리센터) 자문에 근거해 결정한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41222651",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41222651/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08176-6",
+            "url": "https://doi.org/10.1007/s00134-025-08176-6"
+          },
+          {
+            "label": "웹 — Critical care management of the patient with pharmaceutical poisoning — PubMed (PMID 41222651)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41222651/"
+          },
+          {
+            "label": "웹 — Springer 논문 랜딩 페이지 (DOI 10.1007/s00134-025-08176-6, 인증 벽으로 본문 접근 불가)",
+            "url": "https://link.springer.com/article/10.1007/s00134-025-08176-6"
+          },
+          {
+            "label": "웹 — Klinkmann 등, Hüser 등 논문에 대한 서신 (PMC 무료 전문)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13246803/"
+          },
+          {
+            "label": "웹 — 저자 왕복 반론(Reply), 동일 주제 서신 (PMC 무료 전문)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13246801/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -12949,9 +13048,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "outcome": "published",
-    "publishedId": "40888899"
+    "publishedId": "41222651"
   },
-  "updatedAt": "2026-10-24"
+  "updatedAt": "2026-10-25"
 }
