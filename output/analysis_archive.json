@@ -4148,6 +4148,53 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-25",
+      "pmid": "41749261",
+      "title": "Association between initial norepinephrine dose and minute by minute mean arterial pressure.",
+      "title_ko": "초기 norepinephrine 용량과 분 단위 평균동맥압(MAP) 사이의 연관성",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-026-05920-2",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "쇼크와 저혈압을 동반한 ICU 환자에서, 서로 다른 초기 norepinephrine(NE) 주입 속도(0.025, 0.050, 0.100 µg/kg/min)에 따른 분 단위 평균동맥압(MAP) 반응은 어떠하며, 60분 이내에 목표 MAP ≥ 65 mmHg를 달성하기에 충분한 시작 용량은 무엇인가?",
+      "pico": {
+        "population": "[Japan] Among the 81,829 patients admitted to seven ICUs in Japan between February 2013 and February 2024, 5,349 adult (aged ≥ 15 years) patients who had hypotension (MAP ≤ 65 mmHg) and initiated NE infusion more than 30 min after ICU admission were analyzed, of whom 2,006 (37.5%) had sepsis.",
+        "intervention": "Initial NE infusion rate in the ICU of 0.100 µg/kg/min, with each dose normalized to the molecular weight of NE base and calculated using the patient's admission body weight.",
+        "comparison": "Lower initial NE infusion rates of 0.025 and 0.050 µg/kg/min.",
+        "outcome": "The primary outcome was the time course of invasive MAP following NE initiation. Both the maximum MAP rise and the 15-min rate of increase were higher at an NE infusion rate of 0.100 µg/kg/min, compared with 0.025 and 0.050 µg/kg/min (p < 0.01). NE infusion rates of 0.025 and 0.050 µg/kg/min failed to achieve a MAP ≥ 65 mmHg within 60 min when baseline MAP was below 53.9 and 48.4 mmHg, respectively."
+      },
+      "pico_ko": {
+        "population": "[일본] 2013년 2월부터 2024년 2월 사이 일본 7개 ICU에 입원한 81,829명 중, 저혈압(MAP ≤ 65 mmHg)이 있고 ICU 입실 30분 이후 NE 주입을 시작한 성인(≥ 15세) 환자 5,349명이 분석되었으며, 이 중 2,006명(37.5%)이 sepsis였다.",
+        "intervention": "ICU에서의 초기 NE 주입 속도 0.100 µg/kg/min으로, 각 용량은 NE base의 분자량 기준으로 정규화하고 입실 시 체중으로 계산하였다.",
+        "comparison": "더 낮은 초기 NE 주입 속도인 0.025 및 0.050 µg/kg/min.",
+        "outcome": "일차 결과는 NE 시작 후 침습적 MAP의 시간 경과였다. 최대 MAP 상승량과 15분 상승률 모두 0.100 µg/kg/min에서 0.025 및 0.050 µg/kg/min보다 높았다(p < 0.01). 0.025 및 0.050 µg/kg/min의 NE 주입 속도는 기저 MAP가 각각 53.9, 48.4 mmHg 미만일 때 60분 이내에 MAP ≥ 65 mmHg를 달성하지 못하였다."
+      },
+      "keyFindings": [
+        "Among 5,349 NE-treated ICU patients (37.5% sepsis), both the maximum MAP rise and the 15-min rate of increase were higher at 0.100 µg/kg/min than at 0.025 and 0.050 µg/kg/min (p < 0.01).",
+        "Modeling indicated that 0.025 and 0.050 µg/kg/min failed to achieve MAP ≥ 65 mmHg within 60 min when baseline MAP was below 53.9 and 48.4 mmHg, respectively.",
+        "Failure to achieve MAP ≥ 65 mmHg within 60 min was independently associated with increased ICU mortality (OR 1.49, 95% CI 1.27–1.76, p < 0.01)."
+      ],
+      "keyFindings_ko": [
+        "NE 투여를 받은 ICU 환자 5,349명(sepsis 37.5%)에서 최대 MAP 상승량과 15분 상승률 모두 0.100 µg/kg/min이 0.025 및 0.050 µg/kg/min보다 높았다(p < 0.01).",
+        "모델링 결과 0.025 및 0.050 µg/kg/min은 기저 MAP가 각각 53.9, 48.4 mmHg 미만일 때 60분 이내 MAP ≥ 65 mmHg 달성에 실패하였다.",
+        "60분 이내 MAP ≥ 65 mmHg 달성 실패는 ICU 사망률 증가와 독립적으로 연관되었다(OR 1.49, 95% CI 1.27–1.76, p < 0.01)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41749261",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41749261/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-026-05920-2",
+          "url": "https://doi.org/10.1186/s13054-026-05920-2"
+        }
+      ],
+      "fullText": "### Background\nShock is the clinical manifestation of acute circulatory failure characterized by inadequate tissue oxygen delivery that precipitates end-organ dysfunction and carries a high risk of death [, ]. Early restoration of perfusion is critical because prolonged hypoperfusion is well known to be associated with increased mortality []. Norepinephrine (NE) is therefore widely used in the intensive care unit (ICU) as the first-line vasopressor for shock that is unresponsive to fluid resuscitation. A target mean arterial pressure (MAP) ≥ 65 mmHg is recommended to ensure adequate organ perfusion, a threshold supported by major clinical guidelines [–]. Numerous studies have demonstrated the beneficial effects of NE infusion across various types of shock, from vasodilatory [] to hypovolemic [] and cardiogenic shock [].\nAlthough the rapid, dose-dependent hemodynamic effects of NE (half-life < 2.5 min) are well documented in animal models of shock [, ], its minute-by-minute hemodynamic impact in real-world clinical settings has not been thoroughly investigated []. In ICU patients, these effects may differ substantially from preclinical observations because decreased renal and hepatic function, varying degrees of vasodilation, sepsis-related pathophysiology, and receptor down-regulation, all of which are common in critically ill patients, can alter the pharmacodynamic response to norepinephrine []. While many previous studies have recommended titrating NE to attain the target MAP level [, ], the optimal initial dosing of NE most likely to achieve this target remains undefined. A starting NE dose of approximately 0.05–0.1 µg/kg/min is commonly used in clinical practice based on our study (currently posted as a medRxiv preprint and under review for journal publication) [], but rigorous evidence supporting this practice is scarce [–]. Moreover, neither the magnitude of MAP rise nor the time needed to achieve the target MAP has been clearly defined, leaving clinicians without objective criteria to judge whether the starting dose is sufficient or when to escalate doses to stabilize hemodynamics.\nRecently, we developed a retrospective ICU database from seven hospitals in Japan. Apart from most existing resources, it contains time-series vital sign data recorded at 1 min intervals, enabling detailed time-dependent analyses. This high-resolution database allows us to examine the hemodynamic effect of NE infusion in critically ill patients with previously unattainable granularity. Accordingly, this study aims to analyze dynamic blood pressure changes after different starting doses of NE infusion in ICU patients with shock.\n\n### Methods\n\n### Study design\nWe conducted a retrospective cohort study using the OneICU database, an ongoing nationwide initiative that aggregates multicentre, minute-level physiologic ICU data from tertiary-care hospitals across Japan. The database captures continuous vital signs and clinician-validated spot measurements, each time-stamped and linked to contemporaneous medication-administration records (start/stop times and infusion rates), laboratory values, procedures, and outcomes. Free-text diagnoses are mapped to the International Classification of Diseases, 10th Revision via a natural-language-processing pipeline and validated by intensivists. The database architecture, data quality assurance workflow, and full variable documentation have been described in detail elsewhere []. A master protocol approved by the Institutional Review Board (IRB) of Kansai Medical University authorizes data contribution from 34 hospitals, and several additional centres are finalizing IRB submissions, ensuring the continued expansion of OneICU. For this analysis, we included only the seven ICUs for which data extraction and quality checks had been fully completed. This study was conducted with the approval of the IRB of Hiroshima University Hospital (e2024-0054), which waived the need to obtain informed consent from the patients, to ensure participant anonymity as stipulated in the Japanese government guidelines.\n\n### Participants\nAdult (aged ≥ 15 years) patients who had hypotension (MAP ≤ 65 mmHg) and initiated NE infusion more than 30 min after ICU admission between February 2013 and February 2024 were included. Patients were excluded, if they had any missing values for the variables needed for our main analysis (age, sex, body weight, vital signs, blood gas, and primary diagnosis documentation for ICU admission), if they had infusion of > 100 ml of sodium bicarbonate during observational period, or if they had extracorporeal membrane oxygenation management during observational period. The reason for excluding patients who received > 100 mL of sodium bicarbonate during the observational period was that acidemia can attenuate the hemodynamic effect of norepinephrine, while bicarbonate administration can restore acid–base balance and enhance norepinephrine responsiveness []. We also excluded patients with < 10 invasive MAP measurements in the 30 min preceding NE initiation or < 10 measurements in the post-initiation observation period.\n\n### Exposure and outcomes\nThe exposure variable was the initial NE infusion rate in the ICU, classified into three strata: 0.025, 0.050, and 0.100 µg/kg/min. Each dose was normalized to the molecular weight of NE base, as recommended in current guidelines [], and calculated using the patient’s admission body weight recorded in the database.\nThe primary outcome was the time course of invasive MAP following NE initiation. The observation period spanned from 30 min before NE initiation to the earlier of (1) 120 min after initiation or (2) the first change (> 20%) in the infusion rate of NE or any of the following concomitant vasoactive agents: vasopressin and epinephrine. To mitigate high-frequency noise and bridge short measurement gaps, the raw arterial-pressure signal was processed with a low-pass filter before modelling (Fig. ). We derived two hemodynamic metrics that characterize dynamic blood-pressure responses—magnitude and slope. Magnitude was defined as the largest absolute rise in MAP recorded within the observation window, whereas slope captured the early rate of increase, expressed as the change in the MAP values (mmHg/min) during the first 15 min after NE initiation.\n\n### Data collection\nFrom the OneICU database we extracted two sets of variables: (i) admission variables—age, sex, sepsis diagnosis according to the Sepsis-3 definition [], and the Sequential Organ Failure Assessment (SOFA) score; and (ii) variables at NE initiation—the initial NE dose (µg/kg/min), heart rate, arterial blood-gas values (pH, bicarbonate, base excess, PaCO₂, lactate), and mechanical-ventilation status (current and prior during the ICU stay). All invasive MAP measurements recorded within the observation window were retrieved. Baseline MAP was defined as the value documented at the moment NE infusion began.\n\n### Statistical analysis\nBecause the MAP response to NE is expected to vary nonlinearly over time (e.g., a rapid early rise followed by a plateau) and may not increase proportionally with dose, we modelled MAP trajectories after NE initiation using multivariable generalized additive models with thin-plate regression splines for main effects and tensor-product cubic regression splines for product terms. This approach extends conventional regression by modelling the outcome as the sum of linear terms for covariates and smooth functions of key continuous predictors, allowing flexible relationships without imposing a specific parametric shape. Covariates adjusted in the model included age, sex, SOFA score at ICU admission, latest heart rate and arterial-blood-gas results before NE initiation, mechanical-ventilation status, renal replacement therapy status, steroid use, use of other vasoactive drugs (vasopressin, and epinephrine), cumulative fluid volume before NE initiation, the presence or absence of sepsis, and initial NE dose. We defined “offset” as time since NE initiation, measured in minutes, and also included in the model. Baseline MAP values at NE initiation and at − 5, −10, − 15, −20, − 25, and − 30 min were also entered in the model. Smooth terms were applied to NE dose, offset, and baseline MAP to account for nonlinear relationships. A smooth product term between NE dose and offset was included in the model to assess dose-dependent effects over time. Predicted MAP curves for a “typical” patient (all covariates fixed at cohort medians) were generated for the three prespecified doses (0.025, 0.050, 0.100 µg/kg/min). These visualizations were based on complete cases without imputations.\nFrom the estimated trajectories, we derived the MAP magnitude change and 15 min slope to quantify time-dependent NE effects across starting doses. Missing pre-NE MAP values were handled with 3 multiple imputations; each imputed set underwent 500 bootstrap iterations. Bootstrap resampling was performed at the patient level rather than at the individual time-point level to account for within-patient correlation of observations. Rubin’s rules combined the results to produce point estimates and 95% confidence intervals (CIs). Subgroup models were fitted separately for three etiologic comparisons: septic vs. non-septic, cardiogenic vs. non-cardiogenic, and hypovolemic vs. non-hypovolemic cohorts (the corresponding etiology indicator was omitted from each respective model). Magnitude and slope estimates across NE doses were compared between cohorts using the same imputation-plus-bootstrap procedure. For the entire cohort, we fitted an additional generalized additive model to characterize MAP over the full 120-min window, fixing the NE dose at the cohort median (0.051 µg/kg/min). Five hundred bootstrap samples provided 95% CIs for the predicted trajectory. We also recalculated the slope by shifting the early-phase window from 0 to 15 min to 2–17 min to account for potential differences in time to pharmacologic e",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -4205,13 +4252,15 @@
         "41218981",
         "42377463",
         "42008277",
-        "42092974"
+        "42092974",
+        "41528193",
+        "41749261"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
-      "2026-10": 142387
+      "2026-10": 159564
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
