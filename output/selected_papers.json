@@ -957,5 +957,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41999287",
+    "title": "Fast Antimicrobial Susceptibility Testing for Gram-Negative Bacteremia: The FAST",
+    "date": "2026-10-26",
+    "topic": "infection",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

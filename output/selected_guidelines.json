@@ -32455,7 +32455,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34644,7 +34644,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37664,7 +37664,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43981,91 +43981,6 @@
       "attempts": 0
     },
     {
-      "id": "pmid:42552475",
-      "pmid": "42552475",
-      "title": "Guidelines for Seizure Prophylaxis in Patients with Aneurysmal Subarachnoid Hemorrhage: A Statement for Healthcare Professionals from the Neurocritical Care Society.",
-      "pubDate": "2026 Oct",
-      "journal": "Neurocritical care",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic",
-        "pubmed-pt",
-        "pubmed-title"
-      ],
-      "discoveredAt": "2026-08-17T04:41:03.449Z",
-      "abstract": "BACKGROUND: There are limited data to guide antiseizure medication (ASM) prophylaxis in patients with aneurysmal subarachnoid hemorrhage (SAH). This results in practice variation in the use and duration of ASM prophylaxis.\nMETHODS: We conducted a systematic review and meta-analysis of articles assessing ASM prophylaxis in adults with aneurysmal SAH. The population, intervention, comparator, and outcome (PICO) questions were as follows: (1) Should ASM or no ASM be used in patients hospitalized for aneurysmal subarachnoid hemorrhage who have no history of clinical or electrographic seizures? (2) If an ASM is used, should levetiracetam or phenytoin/fosphenytoin be preferentially used? (3) If an ASM is used, should a long (> 3 days) or short (≤ 3 days) duration of prophylaxis be used? The main outcomes were early seizure (≤ 14 days), late seizures (> 14 days), adverse events, mortality, and functional outcomes. We used Grading of Recommendations Assessment, Development, and Evaluation (GRADE) methodology to generate recommendations.\nRESULTS: The initial literature search yielded 1988 articles, of which 10 formed the basis of the recommendations: Regarding PICO 1, we did not find a significant difference in outcomes of early seizure, adverse events, mortality, or functional outcomes when comparing ASM to no ASM. In regard to PICO 2, we found fewer early seizures with phenytoin/fosphenytoin and lower risk for neurologic decline with levetiracetam; however, there was low certainty of evidence. There was no significant difference in mortality between the different treatment types. Regarding PICO 3, we found extended use of ASM may be associated with lower seizure risk, but at the same time be associated with higher risk for adverse effects.\nCONCLUSIONS: Overall, the quality of evidence is low, precluding strong recommendations. We suggest that ASM or no ASM may be used in patients hospitalized with aneurysmal subarachnoid hemorrhage (conditional recommendation, low quality of evidence). If used, we suggest either levetiracetam or phenytoin/fosphenytoin (conditional recommendation, very low quality of evidence) for a short or long duration (conditional recommendation, moderate quality of evidence).",
-      "meshTerms": [
-        "Humans",
-        "Anticonvulsants",
-        "Critical Care",
-        "Levetiracetam",
-        "Phenytoin",
-        "Seizures",
-        "Subarachnoid Hemorrhage",
-        "Systematic Reviews as Topic",
-        "Meta-Analysis as Topic"
-      ],
-      "keywords": [
-        "Aneurysmal subarachnoid hemorrhage",
-        "Antiseizure medication",
-        "Levetiracetam",
-        "Phenytoin/fosphenytoin",
-        "Prophylaxis",
-        "Seizure"
-      ],
-      "doi": "10.1007/s12028-026-02614-z",
-      "pmcid": "PMC13642444",
-      "region": "us",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": "ncs"
-      },
-      "priority": 10.5,
-      "breakdown": {
-        "authority": 2.5,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "ncs",
-      "tier": 2,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "NCS aneurysmal SAH 발작예방 지침, 신경중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "attempts": 0,
-      "lineageKey": "ncs|seizure-prophylaxis-patients-with-aneurysmal-subarachnoid-hemorrhage-statement-healthcare-professionals-from",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:42490058",
       "pmid": "42490058",
       "title": "Post-Transfusion Management of RhD-Negative Females of Childbearing Potential Who Receive RhD-Positive Low-Titer Group O Whole Blood and Red Blood Cells During Trauma Resuscitation: A Joint Position Statement and Resource Document of the American College of Surgeons Committee on Trauma (ACS-COT), Prehospital Blood Transfusion Coalition (PBTC), National Association of Emergency Medical Services Physicians (NAEMSP), Trauma Hemostasis and Oxygenation Research (THOR) Network, and Allo Hope Foundation (AHF).",
@@ -44180,7 +44095,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44850,7 +44765,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45010,7 +44925,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45092,7 +45007,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45321,7 +45236,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46374,7 +46289,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46857,7 +46772,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -46909,11 +46824,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.582523025966935,
+      "priority": 11.578888508919789,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.5825230259669354,
+        "recency": 1.5788885089197884,
         "scope": 0,
         "confidence": 2
       },
@@ -46929,7 +46844,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -47010,7 +46925,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47087,7 +47002,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47156,7 +47071,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47233,7 +47148,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47291,7 +47206,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47359,7 +47274,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47423,7 +47338,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47493,7 +47408,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47554,14 +47469,14 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "guideline",
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47617,6 +47532,254 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "NICE 수막염·수막구균 지침 리뷰—응급 감별 핵심이나 소아 저널 게재",
+        "at": "2026-10-24T23:33:23.689Z"
+      }
+    },
+    {
+      "id": "pmid:42923502",
+      "pmid": "42923502",
+      "title": "2026 Asia Pacific Heart Rhythm Society (APHRS) Guidelines (Part II) on Stroke Prevention in Atrial Fibrillation.",
+      "pubDate": "2026 Oct",
+      "journal": "Journal of arrhythmia",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "abstract": "The 2026 Asia Pacific Heart Rhythm Society (APHRS) Guidelines represent the first comprehensive APHRS guidelines dedicated to the management of atrial fibrillation (AF) and comprise four parts covering epidemiology, detection/screening and integrated care; stroke prevention; rate and rhythm control; and lifestyle risk factor and comorbidity management. Part II focuses on stroke prevention in AF, integrating contemporary global evidence with data and clinical considerations specific to the Asia-Pacific region. It provides evidence-based and practical recommendations for stroke and bleeding risk assessment, oral anticoagulation, selection and appropriate dosing of direct oral anticoagulants, management of patients with special or complex clinical characteristics, and left atrial appendage occlusion. Particular attention is given to issues (and evidence) highly relevant to Asia-Pacific populations, including the evolving risk of ischemic stroke, appropriate anticoagulant dosing, renal function assessment, and balancing thromboembolic and bleeding risks. These recommendations aim to support individualized clinical decision-making, promote appropriate use of stroke-prevention strategies, and improve outcomes for patients with AF across the Asia-Pacific region.",
+      "meshTerms": [],
+      "keywords": [
+        "Asia Pacific Heart Rhythm Society",
+        "atrial fibrillation",
+        "guidelines",
+        "oral anticoagulation",
+        "stroke prevention"
+      ],
+      "doi": "10.1002/joa3.70491",
+      "pmcid": "PMC13687583",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "AF 뇌졸중 예방·항응고, 응급실 판단에 직결",
+        "at": "2026-10-25T23:27:04.134Z"
+      }
+    },
+    {
+      "id": "pmid:42923148",
+      "pmid": "42923148",
+      "title": "2026 Asia Pacific Heart Rhythm Society (APHRS) Guidelines (Part I) on Epidemiology, Detection/Screening and Integrated Patient Care in Atrial Fibrillation.",
+      "pubDate": "2026 Oct",
+      "journal": "Journal of arrhythmia",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "abstract": "The 2026 Asia Pacific Heart Rhythm Society (APHRS) Guidelines represent the first comprehensive APHRS guidelines dedicated to the management of atrial fibrillation (AF) and comprise four parts covering epidemiology, detection/screening and integrated care; stroke prevention; rate and rhythm control; and lifestyle risk factor and comorbidity management. Part 1 focuses on epidemiology and integrated care management, integrating contemporary global evidence with data and clinical considerations specific to the Asia-Pacific region. It provides evidence-based and practical recommendations for clinical epidemiology in the region, as well as introduces the need for holistic or integrated care management.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1002/joa3.70495",
+      "pmcid": "PMC13687576",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "역학·검진·통합관리 위주라 침상 적용 제한적",
+        "at": "2026-10-25T23:27:04.134Z"
+      }
+    },
+    {
+      "id": "pmid:42923086",
+      "pmid": "42923086",
+      "title": "2026 Asia Pacific Heart Rhythm Society (APHRS) Guidelines (Part IV) on Comprehensive Lifestyle Risk Factor and Comorbidity Management in Atrial Fibrillation.",
+      "pubDate": "2026 Oct",
+      "journal": "Journal of arrhythmia",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "abstract": "Atrial fibrillation (AF) is closely associated with comorbidities and lifestyle factors that influence the development, progression, and outcomes. Here the focus is on guidelines for the systematic management of hypertension, heart failure, coronary and structural heart disease, diabetes, dyslipidemia, cerebrovascular disease, obesity, chronic kidney disease, thyroid dysfunction, inflammatory disease, cancer and frailty. In addition, it provides guidelines for lifestyle factors such as nutrition, physical activity, alcohol consumption, tobacco use, sleep and psychological health as key components of AF care. Finally, multimorbidity, polypharmacy and the diverse clinical, cultural, socioeconomic and healthcare contexts of the Asia Pacific region are also addressed. Particular focus is driven by evidence to support the comprehensive management of lifestyle factors as a core component of AF care with equitable access adapted to local resources and patient needs.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1002/joa3.70490",
+      "pmcid": "PMC13687582",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "insufficient-positive-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "동반질환·생활습관 만성관리라 응급 실무와 거리",
+        "at": "2026-10-25T23:27:04.134Z"
+      }
+    },
+    {
+      "id": "pmid:42923076",
+      "pmid": "42923076",
+      "title": "2026 Asia Pacific Heart Rhythm Society (APHRS) Guidelines (Part III) on Rate and Rhythm Control in Atrial Fibrillation.",
+      "pubDate": "2026 Oct",
+      "journal": "Journal of arrhythmia",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1002/joa3.70492",
+      "pmcid": "PMC13687593",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 5,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
       "status": "queued",
       "verdict": "needsReview",
       "documentType": "guideline",
@@ -47624,13 +47787,13 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-24T23:33:21.626Z",
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
       "llmFit": {
         "version": 1,
-        "score": 6,
+        "score": 7,
         "keep": true,
-        "reason": "NICE 수막염·수막구균 지침 리뷰—응급 감별 핵심이나 소아 저널 게재",
-        "at": "2026-10-24T23:33:23.689Z"
+        "reason": "초록없음·제목판단: 속도·리듬조절은 응급 직결",
+        "at": "2026-10-25T23:27:04.134Z"
       }
     }
   ],
@@ -59258,6 +59421,168 @@
         ]
       },
       "publishedAt": "2026-10-25"
+    },
+    {
+      "id": "pmid:42552475",
+      "pmid": "42552475",
+      "title": "Guidelines for Seizure Prophylaxis in Patients with Aneurysmal Subarachnoid Hemorrhage: A Statement for Healthcare Professionals from the Neurocritical Care Society.",
+      "pubDate": "2026 Oct",
+      "journal": "Neurocritical care",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic",
+        "pubmed-pt",
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-17T04:41:03.449Z",
+      "abstract": "BACKGROUND: There are limited data to guide antiseizure medication (ASM) prophylaxis in patients with aneurysmal subarachnoid hemorrhage (SAH). This results in practice variation in the use and duration of ASM prophylaxis.\nMETHODS: We conducted a systematic review and meta-analysis of articles assessing ASM prophylaxis in adults with aneurysmal SAH. The population, intervention, comparator, and outcome (PICO) questions were as follows: (1) Should ASM or no ASM be used in patients hospitalized for aneurysmal subarachnoid hemorrhage who have no history of clinical or electrographic seizures? (2) If an ASM is used, should levetiracetam or phenytoin/fosphenytoin be preferentially used? (3) If an ASM is used, should a long (> 3 days) or short (≤ 3 days) duration of prophylaxis be used? The main outcomes were early seizure (≤ 14 days), late seizures (> 14 days), adverse events, mortality, and functional outcomes. We used Grading of Recommendations Assessment, Development, and Evaluation (GRADE) methodology to generate recommendations.\nRESULTS: The initial literature search yielded 1988 articles, of which 10 formed the basis of the recommendations: Regarding PICO 1, we did not find a significant difference in outcomes of early seizure, adverse events, mortality, or functional outcomes when comparing ASM to no ASM. In regard to PICO 2, we found fewer early seizures with phenytoin/fosphenytoin and lower risk for neurologic decline with levetiracetam; however, there was low certainty of evidence. There was no significant difference in mortality between the different treatment types. Regarding PICO 3, we found extended use of ASM may be associated with lower seizure risk, but at the same time be associated with higher risk for adverse effects.\nCONCLUSIONS: Overall, the quality of evidence is low, precluding strong recommendations. We suggest that ASM or no ASM may be used in patients hospitalized with aneurysmal subarachnoid hemorrhage (conditional recommendation, low quality of evidence). If used, we suggest either levetiracetam or phenytoin/fosphenytoin (conditional recommendation, very low quality of evidence) for a short or long duration (conditional recommendation, moderate quality of evidence).",
+      "meshTerms": [
+        "Humans",
+        "Anticonvulsants",
+        "Critical Care",
+        "Levetiracetam",
+        "Phenytoin",
+        "Seizures",
+        "Subarachnoid Hemorrhage",
+        "Systematic Reviews as Topic",
+        "Meta-Analysis as Topic"
+      ],
+      "keywords": [
+        "Aneurysmal subarachnoid hemorrhage",
+        "Antiseizure medication",
+        "Levetiracetam",
+        "Phenytoin/fosphenytoin",
+        "Prophylaxis",
+        "Seizure"
+      ],
+      "doi": "10.1007/s12028-026-02614-z",
+      "pmcid": "PMC13642444",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": "ncs"
+      },
+      "priority": 10.5,
+      "breakdown": {
+        "authority": 2.5,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "ncs",
+      "tier": 2,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "NCS aneurysmal SAH 발작예방 지침, 신경중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "attempts": 0,
+      "lineageKey": "ncs|seizure-prophylaxis-patients-with-aneurysmal-subarachnoid-hemorrhage-statement-healthcare-professionals-from",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42552475",
+          "title": "Guidelines for Seizure Prophylaxis in Patients with Aneurysmal Subarachnoid Hemorrhage: A Statement for Healthcare Professionals from the Neurocritical Care Society.",
+          "journal": "Neurocritical care",
+          "pubDate": "2026 Oct",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42552475/",
+          "doi": "10.1007/s12028-026-02614-z"
+        },
+        "org": "Neurocritical Care Society (NCS)",
+        "version": "2026",
+        "title_ko": "동맥류성 지주막하출혈 환자에서의 발작 예방(항발작약 예방요법) 지침 — 신경중환자학회(NCS) 성명서",
+        "scope_ko": "급성 동맥류성 지주막하출혈(aneurysmal SAH)로 입원한 성인 중, 임상적·뇌파상 발작 병력이 없고 손상 이전 항발작약(ASM) 사용이 없던 환자에서의 '예방적' 항발작약 사용을 다룬다. 외상성 뇌손상·비외상성 뇌내출혈·천막상부 수술 환자의 발작 예방은 별도 지침으로 다루며 본 지침 범위 밖이다.",
+        "summary": [
+          "In adults hospitalized with aneurysmal SAH and no prior clinical/electrographic seizure, either using an ASM or using no ASM is acceptable — no significant difference was found in early seizure, adverse events, mortality, or functional outcome (conditional recommendation, low quality of evidence).",
+          "If an ASM is used, either levetiracetam or phenytoin/fosphenytoin may be used (conditional recommendation, very low quality of evidence); phenytoin/fosphenytoin showed fewer early seizures while levetiracetam showed lower risk of neurologic decline, with no mortality difference.",
+          "If an ASM is used, either a short (≤3 days) or long (>3 days) duration may be used (conditional recommendation, moderate quality of evidence).",
+          "Extended (long) duration may lower seizure risk but carries a higher risk of adverse effects — the trade-off should be individualized.",
+          "All three recommendations are conditional; the overall quality of evidence is low, precluding any strong recommendation, and the evidence base is only 10 studies (of 1988 screened), mostly observational.",
+          "Early seizure is defined as ≤14 days from hemorrhage (or during hospitalization) and late seizure as >14 days; this 14-day threshold was chosen pragmatically to be inclusive of heterogeneous study definitions (7 days vs 14 days vs 'during hospitalization')."
+        ],
+        "summary_ko": [
+          "발작 병력이 없는 동맥류성 SAH 성인 입원 환자에서, ASM을 쓰는 것과 쓰지 않는 것 모두 허용된다 — 조기 발작, 이상반응, 사망률, 기능적 예후에서 유의한 차이가 없었다 (조건부 권고, 낮은 근거 수준).",
+          "ASM을 쓴다면 levetiracetam 또는 phenytoin/fosphenytoin 중 어느 것이든 사용 가능하다 (조건부 권고, 매우 낮은 근거 수준); phenytoin/fosphenytoin은 조기 발작이 더 적었고 levetiracetam은 신경학적 악화 위험이 더 낮았으며 사망률 차이는 없었다.",
+          "ASM을 쓴다면 단기(≤3일) 또는 장기(>3일) 중 어느 기간이든 사용 가능하다 (조건부 권고, 중등도 근거 수준).",
+          "장기(연장) 사용은 발작 위험을 낮출 수 있으나 이상반응 위험이 더 높다 — 이 상충관계를 개별화해 판단해야 한다.",
+          "세 권고 모두 조건부이며 전반적 근거 수준은 낮아 강한 권고가 불가능하다. 근거는 선별된 1988편 중 10편(대부분 관찰연구)에 불과하다.",
+          "조기 발작은 출혈 후 ≤14일(또는 입원 중), 후기 발작은 >14일로 정의했고, 이 14일 기준은 연구마다 다른 정의(7일·14일·입원 중)를 포괄하기 위해 실용적으로 택한 값이다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "NCS의 입장 변화 (권고 부재 → 권고 제시)",
+            "detail": "Previous NCS aneurysmal SAH guidance made NO recommendation on ASM use for seizure prophylaxis. This dedicated 2026 statement now issues three explicit (though conditional) GRADE recommendations covering whether to use ASM, which agent, and for how long — filling a prior gap rather than reversing a prior position.",
+            "detail_ko": "기존 NCS 동맥류성 SAH 지침은 발작 예방을 위한 ASM 사용에 대해 아무런 권고를 하지 않았다. 이 2026 성명서는 ASM 사용 여부·약제 선택·투여 기간에 대해 (조건부이긴 하나) 세 가지 명시적 GRADE 권고를 처음으로 제시해, 이전의 공백을 메운다 — 기존 입장을 뒤집은 것이 아니라 새로 채운 것이다."
+          },
+          {
+            "topic": "ASM 사용 여부 (일률적 권장 → 등가(equipoise))",
+            "detail": "Prior AHA guidance supported 'consideration' of prophylactic ASM in the post-bleed period, and the 2023 AHA/ASA SAH guideline gave a weak recommendation FOR prophylactic ASM in patients with high-seizure-risk features. This NCS statement instead frames ASM vs no ASM as equipoise — either is acceptable — because no significant difference was found in early seizure, adverse events, mortality, or functional outcome (conditional, low quality).",
+            "detail_ko": "기존 AHA 지침은 출혈 직후 기간에 예방적 ASM '고려'를 지지했고, 2023 AHA/ASA SAH 지침은 고발작위험 특징을 가진 환자에서 예방적 ASM을 약한 권고(FOR)로 제시했다. 이번 NCS 성명서는 조기 발작·이상반응·사망률·기능 예후에 유의한 차이가 없다는 이유로 ASM 사용/미사용을 등가(어느 쪽이든 허용)로 재규정한다 (조건부, 낮은 근거)."
+          },
+          {
+            "topic": "투여 기간 (장기 반대 → 단기·장기 모두 허용)",
+            "detail": "The previous AHA guideline recommended AGAINST long-term prophylaxis. This statement no longer prohibits long duration: it concludes that either a short (≤3 days) or a long (>3 days) course is acceptable (conditional, MODERATE quality — the highest certainty of the three questions), explicitly noting extended use may reduce seizures but increase adverse effects.",
+            "detail_ko": "기존 AHA 지침은 장기 예방요법에 반대(AGAINST)했다. 이번 성명서는 장기 사용을 더 이상 금하지 않는다: 단기(≤3일)와 장기(>3일) 모두 허용된다고 결론지으며(조건부, 중등도 근거 — 세 질문 중 가장 높은 확실성), 연장 사용이 발작을 줄일 수 있으나 이상반응을 늘릴 수 있음을 명시한다."
+          },
+          {
+            "topic": "약제 선택 (명시적 비교 신설)",
+            "detail": "Earlier SAH guidance did not formally adjudicate levetiracetam vs phenytoin/fosphenytoin for prophylaxis. This statement adds a head-to-head conditional recommendation: either agent may be used (very low quality), noting phenytoin/fosphenytoin had fewer early seizures but levetiracetam had lower risk of neurologic decline, with no mortality difference.",
+            "detail_ko": "기존 SAH 지침은 예방 목적의 levetiracetam 대 phenytoin/fosphenytoin을 공식적으로 비교·판정하지 않았다. 이번 성명서는 직접 비교 조건부 권고를 신설한다: 어느 약제든 사용 가능(매우 낮은 근거)하며, phenytoin/fosphenytoin은 조기 발작이 더 적었고 levetiracetam은 신경학적 악화 위험이 더 낮았으며 사망률 차이는 없었다고 명시한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, this guideline licenses NOT starting prophylactic ASM in a routine aneurysmal SAH patient without prior seizure — there is no proven mortality, functional, or early-seizure benefit, so 'no ASM' is a defensible default, with ASM reserved for individualized high-risk judgment. If you do start one, levetiracetam and phenytoin/fosphenytoin are both acceptable (most units will still favor levetiracetam for tolerability and no-levels dosing), and you are no longer obligated to a fixed short course — a short (≤3 days) course is reasonable for most, while a longer course trades fewer seizures for more adverse effects. The practical shift is toward explicit, documented individualized decision-making and away from reflexive long-term prophylaxis, all under low-certainty conditional recommendations that leave room for clinical judgment.",
+        "practiceImpact_ko": "침상에서 이 지침은 발작 병력이 없는 통상적 동맥류성 SAH 환자에게 예방적 ASM을 '시작하지 않는 것'을 정당화한다 — 사망률·기능·조기 발작에서 입증된 이득이 없으므로 'ASM 미사용'을 기본값으로 둘 수 있고, ASM은 개별화된 고위험 판단에 한해 쓴다. 쓴다면 levetiracetam과 phenytoin/fosphenytoin 모두 허용되며(대개는 내약성과 혈중농도 모니터링 불필요 때문에 levetiracetam을 선호), 고정된 단기 요법에 더 이상 매이지 않는다 — 대부분 단기(≤3일)가 합리적이고, 장기 요법은 발작 감소와 이상반응 증가를 맞바꾼다. 핵심 변화는 반사적 장기 예방에서 벗어나 명시적·기록된 개별화 의사결정으로 옮겨가는 것이며, 모두 임상 재량의 여지를 남기는 낮은 확실성의 조건부 권고다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42552475",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42552475/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s12028-026-02614-z",
+            "url": "https://doi.org/10.1007/s12028-026-02614-z"
+          },
+          {
+            "label": "웹 — Guidelines for Seizure Prophylaxis in aneurysmal SAH — NCS statement (SpringerLink article page, Neurocritical Care)",
+            "url": "https://link.springer.com/article/10.1007/s12028-026-02614-z"
+          },
+          {
+            "label": "웹 — Guidelines for Seizure Prophylaxis in aneurysmal SAH — NCS statement (PubMed record)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42552475/"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-26"
     }
   ],
   "rejected": [
@@ -64233,7 +64558,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-24T23:33:13.109Z",
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64688,7 +65013,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-24T23:33:13.109Z",
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -64759,7 +65084,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-24T23:33:13.109Z",
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64787,7 +65112,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-24T23:33:13.109Z",
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -64814,7 +65139,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-24T23:33:13.109Z",
+      "discoveredAt": "2026-10-25T23:26:52.325Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -64889,9 +65214,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261025_083207:guideline:2026-10-25",
+    "runId": "trend_review_20261026_082541:guideline:2026-10-26",
     "outcome": "published",
-    "publishedId": "pmid:40828463",
+    "publishedId": "pmid:42552475",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -64916,15 +65241,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 130,
+        "mergedTotal": 132,
         "overlapCount": 1,
         "ptOnlyCount": 1,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/25",
-          "maxDate": "2026/10/25"
+          "minDate": "2026/09/26",
+          "maxDate": "2026/10/26"
         },
         "retmax": 60,
         "topics": [
@@ -64932,8 +65257,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 42,
-            "idsFetched": 42,
+            "totalFound": 47,
+            "idsFetched": 47,
             "truncated": false,
             "error": null
           },
@@ -64950,8 +65275,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 22,
-            "idsFetched": 22,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -64959,8 +65284,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 15,
-            "idsFetched": 15,
+            "totalFound": 14,
+            "idsFetched": 14,
             "truncated": false,
             "error": null
           },
@@ -64968,8 +65293,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 23,
-            "idsFetched": 23,
+            "totalFound": 25,
+            "idsFetched": 25,
             "truncated": false,
             "error": null
           },
@@ -65022,13 +65347,13 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 122,
+        "topicOnlyCount": 124,
         "ptPmids": [
           "42552475",
           "40298962"
@@ -65036,9 +65361,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 130,
-          "enriched": 130,
-          "withAbstract": 89,
+          "requested": 132,
+          "enriched": 132,
+          "withAbstract": 93,
           "error": null
         }
       },
@@ -65091,7 +65416,7 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
+        "scored": 4,
         "batches": 1,
         "failed": 0,
         "error": null
@@ -65136,6 +65461,20 @@
           "stage": "region",
           "pmid": "42288073",
           "title": "Re-evaluating pediatric laryngoscope blade size recommendations: Comparable intubation performance across blade sizes in pediatric manikin models.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42927337",
+          "title": "Evaluating cardiopulmonary resuscitation in \"The Pitt\": accuracy, clinical realism, and adherence to international resuscitation guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42925956",
+          "title": "Practical Prevention of Heart Failure Across Stages A and B: A Scientific Statement From the Japanese Heart Failure Society.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65274,13 +65613,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42386545",
-          "title": "JCS/JPCPHS 2025 Guideline on Pulmonary Hypertension and Pulmonary Embolism/Deep Vein Thrombosis.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42342484",
           "title": "The 2026 Multisociety Acute Pulmonary Embolism Guidelines: An Expert Perspective.",
           "region": null,
@@ -65407,13 +65739,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42791180",
-          "title": "Difficult Airway Society 2025 guidelines for management of unanticipated difficult tracheal intubation in adults: endobronchial intubation, an overlooked risk after difficult airway management. Comment on Br J Anaesth 2026; 136: 283-307.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42575137",
           "title": "From the Anatomically Difficult Airway to the Physiologically Difficult Airway: Lessons From Contemporary Airway Society Guidelines.",
           "region": null,
@@ -65512,15 +65837,15 @@
         },
         {
           "stage": "region",
-          "pmid": "42786262",
-          "title": "Diagnosing autoimmune encephalitis in psychiatry: clinical recommendations and unresolved challenges from the GENERATE network.",
+          "pmid": "41711121",
+          "title": "The 2025 CAP Controversy: Why Guideline Methodology Matters for Clinical Decision-Making.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
         {
           "stage": "region",
-          "pmid": "41711121",
-          "title": "The 2025 CAP Controversy: Why Guideline Methodology Matters for Clinical Decision-Making.",
+          "pmid": "42926880",
+          "title": "Healthcare providers' perceptions of barriers and facilitators to implementation of an acute traumatic brain injury clinical practice guideline: a CFIR-informed qualitative study at a regional referral hospital in Northern Tanzania.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65782,19 +66107,19 @@
         }
       ],
       "decisions": {
-        "queued": 203,
-        "needsReview": 454,
+        "queued": 202,
+        "needsReview": 458,
         "rejected": 132,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40828463",
+        "candidateId": "pmid:42552475",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-24T23:35:27.524Z",
+  "updatedAt": "2026-10-25T23:29:33.125Z",
   "configVersion": "guideline-v2"
 }

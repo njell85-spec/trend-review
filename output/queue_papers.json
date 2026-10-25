@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41999287",
-      "title": "Fast Antimicrobial Susceptibility Testing for Gram-Negative Bacteremia: The FAST Randomized Clinical Trial.",
-      "journal": "JAMA",
-      "score": 8,
-      "topic": "infection",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42895744",
       "title": "Timeliness of Emergency Care for Intracerebral Hemorrhage Compared With Acute Ischemic Stroke.",
       "journal": "JAMA network open",
@@ -347,6 +332,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-25"
+    },
+    {
+      "pmid": "41999287",
+      "title": "Fast Antimicrobial Susceptibility Testing for Gram-Negative Bacteremia: The FAST Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "score": 8,
+      "topic": "infection",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-26"
     }
   ],
   "rejected": [
@@ -362,9 +363,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-25",
+    "date": "2026-10-26",
     "outcome": "published",
-    "publishedId": "41749261"
+    "publishedId": "41999287"
   },
-  "updatedAt": "2026-10-25"
+  "updatedAt": "2026-10-26"
 }
