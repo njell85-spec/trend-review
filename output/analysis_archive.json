@@ -4195,6 +4195,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-26",
+      "pmid": "41999287",
+      "title": "Fast Antimicrobial Susceptibility Testing for Gram-Negative Bacteremia: The FAST Randomized Clinical Trial.",
+      "title_ko": "그람음성균 균혈증에 대한 신속 항균제 감수성 검사: FAST 무작위 임상시험",
+      "journal": "JAMA",
+      "doi": "10.1001/jama.2026.5487",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "항균제 내성 유병률이 높은 지역에서 그람음성균(gram-negative bacilli) 혈류감염이 있는 입원 환자에게, 양성 혈액배양에서 직접 시행하는 신속 표현형 항균제 감수성 검사(AST)를 표준 AST에 추가하면 표준 AST 단독에 비해 임상 결과가 개선되는가?",
+      "pico": {
+        "population": "[International] Hospitalized patients (adults and children) with bloodstream infections (BSIs) caused by gram-negative bacilli, enrolled from December 2023 to May 2025 (final follow-up June 18, 2025) at 7 medical centers in Greece (n=2), India (n=1), Israel (n=3), and Spain (n=1) in regions with high prevalence of antimicrobial resistance; 899 randomized, 850 included in the primary analysis (median [IQR] age 72 [21] years; 43% female). Eligibility required a positive blood culture with Gram stain showing GNB, hospitalization at the time of Gram stain result, and enrollment within 16 hours of blood culture positivity.",
+        "intervention": "Blood culture evaluation using rapid, phenotypic AST directly from positive blood cultures plus standard susceptibility testing (n=413), with local antimicrobial stewardship teams reviewing all patients and providing treatment recommendations.",
+        "comparison": "Standard susceptibility testing alone (n=437), with local antimicrobial stewardship teams reviewing all patients and providing treatment recommendations.",
+        "outcome": "Primary outcome was a desirability of outcome ranking (DOOR) at day 30 with 3 categories (alive without deleterious events, alive with deleterious events, death); superiority was concluded if the lower limit of the 95% CI exceeded 50%. The probability that DOOR outcomes were more favorable in the rapid testing group was 48.8% (95% CI, 45.3%-52.4%), so rapid AST was not superior to standard testing."
+      },
+      "pico_ko": {
+        "population": "[다국가] 항균제 내성 유병률이 높은 지역에서 그람음성균(gram-negative bacilli)에 의한 혈류감염(BSI)이 있는 입원 환자(성인 및 소아)로, 2023년 12월부터 2025년 5월까지 등록(최종 추적 2025년 6월 18일)되었으며 그리스(n=2), 인도(n=1), 이스라엘(n=3), 스페인(n=1)의 7개 의료기관에서 시행됨; 899명이 무작위 배정되고 850명이 주요 분석에 포함됨(중앙값 [IQR] 연령 72 [21]세; 43% 여성). 적격 기준은 Gram 염색에서 GNB가 확인된 양성 혈액배양, Gram 염색 결과 시점에 입원 중, 혈액배양 양성 후 16시간 이내 등록이었음.",
+        "intervention": "양성 혈액배양에서 직접 시행하는 신속 표현형 AST에 표준 감수성 검사를 추가한 혈액배양 평가(n=413)이며, 지역 항균제 스튜어드십 팀이 모든 환자를 검토하고 치료 권고를 제공함.",
+        "comparison": "표준 감수성 검사 단독(n=437)이며, 지역 항균제 스튜어드십 팀이 모든 환자를 검토하고 치료 권고를 제공함.",
+        "outcome": "주요 결과는 30일째의 desirability of outcome ranking(DOOR)으로 3개 범주(사망·유해사건 없이 생존, 유해사건을 동반하여 생존, 사망)로 구성되었으며, 95% CI 하한이 50%를 초과하면 우월성으로 판정하였음. 신속 검사군에서 DOOR 결과가 더 바람직할 확률은 48.8%(95% CI, 45.3%-52.4%)로, 신속 AST는 표준 검사 대비 우월하지 않았음."
+      },
+      "keyFindings": [
+        "Rapid AST was not superior to standard testing for the primary DOOR outcome at day 30: probability of a more favorable outcome in the rapid group was 48.8% (95% CI, 45.3%-52.4%), failing the prespecified superiority threshold (lower CI limit >50%).",
+        "Rapid AST shortened median time to antibiotic escalation or deescalation by 14 hours (95% CI, 6-22) in the as-randomized population, but did not shorten median time to effective antibiotic therapy overall.",
+        "In the prespecified carbapenem-resistant subgroup, median time to effective therapy was 9.5 hours (rapid) vs 28 hours (standard) (difference, -18 hours [95% CI, -42 to 6]); no differences were seen in 30-day mortality, length of stay, ICU admission, or hospital-acquired infections."
+      ],
+      "keyFindings_ko": [
+        "신속 AST는 30일째 주요 결과인 DOOR에서 표준 검사 대비 우월하지 않았음: 신속군에서 더 바람직한 결과를 보일 확률이 48.8%(95% CI, 45.3%-52.4%)로, 사전 지정된 우월성 기준(CI 하한 >50%)을 충족하지 못함.",
+        "신속 AST는 as-randomized 집단에서 항생제 상향 또는 하향 조정까지의 중앙 시간을 14시간(95% CI, 6-22) 단축했으나, 전체적으로 효과적 항생제 치료까지의 중앙 시간은 단축하지 못함.",
+        "사전 지정된 carbapenem 내성 하위군에서 효과적 치료까지의 중앙 시간은 신속군 9.5시간 대 표준군 28시간(차이 -18시간 [95% CI, -42 to 6])이었으며, 30일 사망률·재원 기간·ICU 입실·병원획득 감염에서는 차이가 없었음."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 41999287",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41999287/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1001/jama.2026.5487",
+          "url": "https://doi.org/10.1001/jama.2026.5487"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT06174649 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT06174649"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -4254,7 +4305,8 @@
         "42008277",
         "42092974",
         "41528193",
-        "41749261"
+        "41749261",
+        "41999287"
       ]
     },
     "fulltextLen": {
