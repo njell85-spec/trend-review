@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42895744",
-      "title": "Timeliness of Emergency Care for Intracerebral Hemorrhage Compared With Acute Ischemic Stroke.",
-      "journal": "JAMA network open",
-      "score": 7.4,
-      "topic": "neuro",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.369200000000001,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "41352474",
       "title": "Tracheal intubation vs. supraglottic airway devices during mechanical intra-arrest-ventilation with volume-controlled-ventilation in out-of-hospital cardiac arrest: a cohort study.",
       "journal": "Resuscitation",
@@ -348,6 +333,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-26"
+    },
+    {
+      "pmid": "42895744",
+      "title": "Timeliness of Emergency Care for Intracerebral Hemorrhage Compared With Acute Ischemic Stroke.",
+      "journal": "JAMA network open",
+      "score": 7.4,
+      "topic": "neuro",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.369200000000001,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-27"
     }
   ],
   "rejected": [
@@ -363,9 +364,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "outcome": "published",
-    "publishedId": "41999287"
+    "publishedId": "42895744"
   },
-  "updatedAt": "2026-10-26"
+  "updatedAt": "2026-10-27"
 }

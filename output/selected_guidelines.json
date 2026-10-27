@@ -7151,88 +7151,6 @@
       "lineageReason": "no-matching-lineage"
     },
     {
-      "id": "pmid:39180134",
-      "pmid": "39180134",
-      "title": "Imaging in acute percutaneous mechanical circulatory support in adults: a clinical consensus statement of the Association for Acute CardioVascular Care (ACVC) of the ESC, the European Association of Cardiovascular Imaging (EACVI) of the ESC and the European branch of the Extracorporeal Life Support Organization (EuroELSO).",
-      "pubDate": "2024 Nov 27",
-      "journal": "European heart journal. Cardiovascular Imaging",
-      "publicationTypes": [
-        "Journal Article",
-        "Review",
-        "Consensus Statement"
-      ],
-      "discoveredBy": [
-        "pubmed-title",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:36:16.922Z",
-      "abstract": "The use of temporary mechanical circulatory support (tMCS) in cardiogenic shock patients has increased during the last decades with most management strategies relying on observational studies and expert opinion, including hemodynamic monitoring, device selection, and timing of support institution/duration. In this context, imaging has a pivotal role throughout the patient pathway, from identification to initiation, monitoring, and weaning. This manuscript summarizes the consensus of an expert panel from the European Society of Cardiology Association for Acute CardioVascular Care, the European Association of CardioVascular Imaging, and the European Extracorporeal Life Support Organization, providing the rationale for and practical guidance of imaging to tMCS based on existing evidence and consensus on best current practice.",
-      "meshTerms": [
-        "Adult",
-        "Female",
-        "Humans",
-        "Male",
-        "Europe",
-        "Extracorporeal Membrane Oxygenation",
-        "Heart-Assist Devices",
-        "Shock, Cardiogenic",
-        "Societies, Medical"
-      ],
-      "keywords": [
-        "clinical",
-        "imaging",
-        "management",
-        "mechanical circulatory support",
-        "ultrasound"
-      ],
-      "doi": "10.1093/ehjci/jeae219",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "esc"
-      },
-      "priority": 10.373424861649081,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 0.3734248616490802,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "esc",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "consensus",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:31.193Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "심원성쇼크 tMCS 영상 합의, 중환자·혈역학 실무",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "esc|imaging-acute-percutaneous-mechanical-circulatory-support-adults-clinical-association-acute-cardiovascular-care-acvc-european-association-cardiovascular-imaging-eacvi-european-branch-extracorporeal-life-support-organization-euroelso",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:39716733",
       "pmid": "39716733",
       "title": "Spotlight on the 2024 ESC/EACTS management of atrial fibrillation guidelines: 10 novel key aspects.",
@@ -32455,7 +32373,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34644,7 +34562,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.173Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37664,7 +37582,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44095,7 +44013,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.173Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44765,7 +44683,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44925,7 +44843,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -45007,7 +44925,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.173Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45236,7 +45154,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46289,7 +46207,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.173Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46772,7 +46690,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -46824,11 +46742,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.578888508919789,
+      "priority": 11.575046657738048,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.5788885089197884,
+        "recency": 1.5750466577380478,
         "scope": 0,
         "confidence": 2
       },
@@ -46844,7 +46762,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.173Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -46925,7 +46843,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -47002,7 +46920,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -47071,7 +46989,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.173Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47148,7 +47066,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47206,7 +47124,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47219,7 +47137,7 @@
       "id": "pmid:42877955",
       "pmid": "42877955",
       "title": "Health Literacy and Communication in Stroke Prevention, Management, and Recovery: A Scientific Statement From the American Heart Association.",
-      "pubDate": "2026 Oct 15",
+      "pubDate": "2026 Nov",
       "journal": "Stroke",
       "publicationTypes": [
         "Journal Article",
@@ -47230,7 +47148,14 @@
       ],
       "discoveredAt": "2026-10-15T23:48:46.741Z",
       "abstract": "Health literacy is a critical component of high-quality stroke care. Across the continuum from prevention through recovery, health literacy is strongly associated with functional outcomes and stroke-related morbidity. Despite its importance, it is often overlooked, leaving patients and caregivers overwhelmed by communication demands that exceed their capacity. These mismatches are especially pronounced among individuals with stroke-related cognitive or language impairments, limited English proficiency, socioeconomic disadvantage, or limited digital literacy. This scientific statement synthesizes current evidence on the role of health literacy and communication within stroke systems of care and identifies nurse-led opportunities to advance equity and patient-centered outcomes while recognizing this as a shared interprofessional responsibility. Nurse-led interventions, including teach-back-based education, dyadic psychoeducational programs, and tailored digital support, have demonstrated improvements in stroke knowledge, self-efficacy, quality of life, and caregiver preparedness. However, the literature is marked by methodological heterogeneity. Many studies are underpowered and infrequently use validated health literacy or communication measures. Future directions include standardized assessment of health literacy; literacy-sensitive, nurse-led, and interprofessional care models; workforce training in plain-language and culturally responsive communication; and organizational health literacy principles. Emerging technologies, including telehealth and artificial intelligence, offer promise for improving communication and personalization but require rigorous evaluation to minimize bias and ensure equity and usability.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Health Literacy",
+        "Stroke",
+        "United States",
+        "American Heart Association",
+        "Communication"
+      ],
       "keywords": [
         "AHA Scientific Statements",
         "communication",
@@ -47255,10 +47180,10 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11,
+      "priority": 12,
       "breakdown": {
         "authority": 4,
-        "topic": 3,
+        "topic": 4,
         "recency": 2,
         "scope": 0,
         "confidence": 2
@@ -47274,7 +47199,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.173Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47338,7 +47263,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47408,7 +47333,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47476,7 +47401,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47539,7 +47464,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47604,7 +47529,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47659,7 +47584,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -47667,7 +47592,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47729,7 +47654,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47780,20 +47705,89 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "guideline",
       "reasons": [
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-25T23:27:02.336Z",
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
       "llmFit": {
         "version": 1,
         "score": 7,
         "keep": true,
         "reason": "초록없음·제목판단: 속도·리듬조절은 응급 직결",
         "at": "2026-10-25T23:27:04.134Z"
+      }
+    },
+    {
+      "id": "pmid:42929804",
+      "pmid": "42929804",
+      "title": "American Epilepsy Society/Congress of Neurological Surgeons Epilepsy Surgery Clinical Practice Guideline.",
+      "pubDate": "2026 Oct 26",
+      "journal": "Neurosurgery",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "abstract": "This practice guideline from the American Epilepsy Society and the Congress of Neurological Surgeons provides evidence-based recommendations for surgical treatment of epilepsy for adults and children. It is an update to previous practice parameters published by the Academy of Neurology in 2003. The multidisciplinary panel addressed resective procedures for mesial temporal epilepsy, neocortical epilepsy, and resection/disconnection of hypothalamic hamartoma. It also examined evidence for callosotomy in developmental and epileptic encephalopathies. It did not intentionally address neurostimulation treatment. A comprehensive literature review was conducted using Grading of Recommendations Assessment, Development, and Education methodology, and it was also used for decision making. This guideline considers not only seizure outcomes but also other critical and important outcomes. Seizures, quality of life, mortality, adverse events, and verbal memory loss were considered critical outcomes, whereas other neuropsychological deficits besides verbal memory loss (ie, naming, fluency), neuropsychiatric, and social outcomes were considered important outcomes.",
+      "meshTerms": [],
+      "keywords": [
+        "Anterior temporal lobectomy",
+        "Corpus callosotomy",
+        "Drug-resistant epilepsy",
+        "Epilepsy surgery",
+        "Hypothalamic hamartoma",
+        "Laser interstitial thermal therapy",
+        "Mesial temporal lobe epilepsy",
+        "Neocortical epilepsy",
+        "Selective amygdalohippocampectomy"
+      ],
+      "doi": "10.1227/neu.0000000000004254",
+      "pmcid": "",
+      "region": "us",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 5,
+      "breakdown": {
+        "authority": 0,
+        "topic": 1,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "뇌전증 수술 지침(선택적 신경외과)—응급·중환자 침상 판단과 무관",
+        "at": "2026-10-27T00:42:32.465Z"
       }
     }
   ],
@@ -59583,6 +59577,144 @@
         ]
       },
       "publishedAt": "2026-10-26"
+    },
+    {
+      "id": "pmid:39180134",
+      "pmid": "39180134",
+      "title": "Imaging in acute percutaneous mechanical circulatory support in adults: a clinical consensus statement of the Association for Acute CardioVascular Care (ACVC) of the ESC, the European Association of Cardiovascular Imaging (EACVI) of the ESC and the European branch of the Extracorporeal Life Support Organization (EuroELSO).",
+      "pubDate": "2024 Nov 27",
+      "journal": "European heart journal. Cardiovascular Imaging",
+      "publicationTypes": [
+        "Journal Article",
+        "Review",
+        "Consensus Statement"
+      ],
+      "discoveredBy": [
+        "pubmed-title",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:36:16.922Z",
+      "abstract": "The use of temporary mechanical circulatory support (tMCS) in cardiogenic shock patients has increased during the last decades with most management strategies relying on observational studies and expert opinion, including hemodynamic monitoring, device selection, and timing of support institution/duration. In this context, imaging has a pivotal role throughout the patient pathway, from identification to initiation, monitoring, and weaning. This manuscript summarizes the consensus of an expert panel from the European Society of Cardiology Association for Acute CardioVascular Care, the European Association of CardioVascular Imaging, and the European Extracorporeal Life Support Organization, providing the rationale for and practical guidance of imaging to tMCS based on existing evidence and consensus on best current practice.",
+      "meshTerms": [
+        "Adult",
+        "Female",
+        "Humans",
+        "Male",
+        "Europe",
+        "Extracorporeal Membrane Oxygenation",
+        "Heart-Assist Devices",
+        "Shock, Cardiogenic",
+        "Societies, Medical"
+      ],
+      "keywords": [
+        "clinical",
+        "imaging",
+        "management",
+        "mechanical circulatory support",
+        "ultrasound"
+      ],
+      "doi": "10.1093/ehjci/jeae219",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 10.373424861649081,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 0.3734248616490802,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:31.193Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "심원성쇼크 tMCS 영상 합의, 중환자·혈역학 실무",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "esc|imaging-acute-percutaneous-mechanical-circulatory-support-adults-clinical-association-acute-cardiovascular-care-acvc-european-association-cardiovascular-imaging-eacvi-european-branch-extracorporeal-life-support-organization-euroelso",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39180134",
+          "title": "Imaging in acute percutaneous mechanical circulatory support in adults: a clinical consensus statement of the Association for Acute CardioVascular Care (ACVC) of the ESC, the European Association of Cardiovascular Imaging (EACVI) of the ESC and the European branch of the Extracorporeal Life Support Organization (EuroELSO).",
+          "journal": "European heart journal. Cardiovascular Imaging",
+          "pubDate": "2024 Nov 27",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39180134/",
+          "doi": "10.1093/ehjci/jeae219"
+        },
+        "org": "ESC ACVC / EACVI / EuroELSO",
+        "version": "2024",
+        "title_ko": "성인 급성 경피적 기계순환보조(tMCS)에서의 영상: ESC 급성심혈관진료학회(ACVC)·유럽심혈관영상학회(EACVI)·유럽 ELSO(EuroELSO) 공동 임상 합의 성명",
+        "scope_ko": "심인성 쇼크 등으로 일시적 기계순환보조(temporary MCS: IABP, VA-ECMO, Impella 등 좌심축류펌프, Impella RP·ProtekDuo 등 우심보조장치)를 받는 성인 환자를 대상으로, 환자 선별·장치 선택 → 삽입(캐뉼레이션) 유도 → 위치 확인 → 유지 중 모니터링·합병증 감지 → 이탈(weaning)에 이르는 전 경로에서 심초음파(TTE/TEE)·투시·흉부 X선·CT를 어떻게 활용할지에 대한 실용적 합의 지침이다.",
+        "summary": [
+          "Patient selection/device choice: TTE is the foundational modality — assess biventricular function, valvular anatomy, chamber size, ventriculo-ventricular interaction and mechanical complications; lung ultrasound (B-line pattern) distinguishes cardiogenic vs non-cardiogenic edema, and chest X-ray/CTA exclude contraindications (e.g., proximal PA thrombus).",
+          "IABP positioning: fluoroscopy is standard with the balloon tip distal to the left subclavian artery and proximal end above the renal arteries; on chest X-ray the upper marker sits ~1 cm below the aortic arch apex at/above the carina. TTE (off-axis apical 2-chamber of descending aorta, suprasternal view) and TEE (mid-esophageal descending aorta, upper-esophageal arch) can confirm.",
+          "VA-ECMO cannulation/monitoring: TEE bicaval view confirms the venous cannula in mid-RA (mono-stage) or tip at SVC–RA junction (multi-stage) and detects wire interaction with Chiari network/Eustachian valve; perform daily TTE to detect LV overload (LV dilation, spontaneous echo contrast/thrombus, absent aortic-valve opening, worsening MR) and trigger LV unloading. Combination signs (including LVOT VTI <10 cm, pulmonary-vein flow reversal, refractory arrhythmias) prompt unloading discussion.",
+          "Impella (left axial flow) positioning: inlet ~3.5 cm below the aortic annular plane for Impella CP (~5 cm for Impella 5.5) with the pigtail angled toward the LV apex away from the mitral valve; fluoroscopy plus TTE (parasternal long-axis) confirm alignment. Suction alarms/waveform change mandate immediate position re-assessment; note that LV VTI/LV Doppler is unreliable due to motor/rotational artifact.",
+          "Right-sided devices (Impella RP, ProtekDuo): pre-procedure SVC sizing (venogram/TEE/CT) to prevent SVC syndrome; insert under fluoroscopy with simultaneous echo, inflow at RA–SVC junction (TEE bicaval ~110°) and outflow in the pulmonary artery (RV inflow–outflow ~45–60°); watch for cannula migration to sub-pulmonary level causing new/worsening pulmonary regurgitation.",
+          "Routine monitoring: prefer TTE over TEE (minimize bleeding risk on anticoagulation), at least daily and whenever instability, therapy change, gas-exchange deterioration or device alarm occurs — trends matter more than single values; add daily chest X-ray for cannula position and parenchyma, and brain CT for neurologic change.",
+          "Weaning: assess suitability daily from 48 h after cannulation (or earlier with clear recovery), reducing support stepwise and re-imaging ≥5 min after each flow reduction. Longitudinal function (MAPSE, TDI S′) and RV–PA coupling (RV TDI S′/PASP) outperform LVEF as predictors; representative thresholds include LV VTI >10–14 cm, LVEF >20–25%, TAPSE >15 mm; for axial-flow weaning LVEF >35%, LV VTI ≥12–15 cm, E/e′ <15 with no rise in valvular regurgitation at minimal (P2) support.",
+          "When an unloading device is combined with VA-ECMO, wean the VA-ECMO first; management requires multi-modality, multi-parametric integration with invasive hemodynamics rather than any single imaging gold standard."
+        ],
+        "summary_ko": [
+          "환자 선별·장치 선택: TTE가 기본 — 양심실 기능, 판막 해부, 심방·심실 크기, 심실-심실 상호작용, 기계적 합병증을 평가한다. 폐초음파(B-line 분포)로 심인성/비심인성 폐부종을 구분하고, 흉부 X선·CTA로 금기(예: 근위 폐동맥 혈전)를 배제한다.",
+          "IABP 위치: 투시가 표준으로, 풍선 끝은 좌쇄골하동맥 원위부, 근위부는 신동맥 위에 둔다. 흉부 X선에서는 상단 마커가 대동맥궁 정점 ~1 cm 아래(기관분기부 높이/상방)에 위치한다. TTE(하행대동맥 off-axis 심첨 2-chamber, 흉골상 뷰)와 TEE(식도중부 하행대동맥, 식도상부 대동맥궁 뷰)로 확인 가능.",
+          "VA-ECMO 삽입·모니터링: TEE bicaval 뷰로 정맥 캐뉼라를 우심방 중앙(mono-stage) 또는 끝을 SVC–RA 접합부(multi-stage)에 확인하고 Chiari network·Eustachian valve와 와이어 간섭을 본다. 매일 TTE로 LV 과부하(LV 확장, 자발 에코음영/혈전, 대동맥판 미개방, MR 악화)를 감지해 좌심 off-loading을 판단한다. LVOT VTI <10 cm, 폐정맥 역류, 난치성 부정맥 등이 겹치면 unloading을 논의한다.",
+          "Impella(좌심 축류펌프) 위치: Impella CP는 유입부를 대동맥판륜 평면 ~3.5 cm 아래(Impella 5.5는 ~5 cm)에 두고 pigtail은 승모판에서 멀어져 LV 심첨을 향하게 한다. 투시 + TTE(흉골연장축)로 정렬 확인. 흡인(suction) 알람·파형 변화 시 즉시 위치 재평가. 모터·회전 인공물로 LV VTI/LV 도플러는 신뢰도가 낮다.",
+          "우심 보조장치(Impella RP, ProtekDuo): 시술 전 SVC 직경 측정(정맥조영·TEE·CT)으로 SVC 증후군 예방. 투시 + 동시 심초음파로 삽입하며, 유입부는 RA–SVC 접합부(TEE bicaval ~110°), 유출부는 폐동맥(RV 유입-유출 ~45–60°)에 둔다. 캐뉼라가 폐동맥하방으로 밀려 새로운/악화되는 폐동맥판 역류가 생기는지 감시한다.",
+          "일상 모니터링: 출혈 위험을 줄이기 위해 TEE보다 TTE 선호, 최소 매일 + 불안정·치료 변경·가스교환 악화·장치 알람 시마다 시행하며 단일값보다 추세가 중요하다. 캐뉼라 위치·폐실질 확인용 흉부 X선을 매일, 신경학적 변화 시 뇌 CT를 추가한다.",
+          "이탈(weaning): 캐뉼레이션 후 48시간부터(명확한 회복 시 더 일찍) 매일 적합성을 평가하고, 지지를 단계적으로 줄이며 각 감량 후 ≥5분 뒤 재영상한다. 종축 기능(MAPSE, TDI S′)과 RV–PA 커플링(RV TDI S′/PASP)이 LVEF보다 우수한 예측인자다. 대표 기준: LV VTI >10–14 cm, LVEF >20–25%, TAPSE >15 mm. 축류펌프 이탈은 최소(P2) 지지에서 LVEF >35%, LV VTI ≥12–15 cm, E/e′ <15, 판막 역류 무증가.",
+          "Unloading 장치를 VA-ECMO와 병용한 경우 VA-ECMO를 먼저 이탈한다. 단일 영상 '정답'은 없으며, 침습적 혈역학과 함께 다중-모달·다중-파라미터 통합 판단이 필요하다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "This statement standardizes bedside imaging for tMCS: make TTE the default serial tool (daily minimum, reserving TEE for cannulation guidance or inadequate windows to limit bleeding on anticoagulation), and memorize device-specific position targets — IABP tip distal to the left subclavian, Impella CP inlet ~3.5 cm (5.5 ~5 cm) below the annulus with the pigtail toward the apex, and VA-ECMO/right-sided cannula landmarks — so suction alarms or waveform changes trigger immediate re-imaging. For VA-ECMO, actively screen daily for LV distension/failure-to-unload (absent AV opening, LV dilation, stasis/thrombus, worsening MR, LVOT VTI <10 cm) to decide on LV venting, and wean VA-ECMO before any combined unloading device. Drive weaning off trends during stepwise flow reduction using longitudinal function (MAPSE, TDI S′) and RV–PA coupling rather than LVEF alone, imaging ≥5 min after each step and integrating invasive hemodynamics.",
+        "practiceImpact_ko": "이 성명은 tMCS의 침상 영상 사용을 표준화한다: TTE를 기본 추적 도구로 삼아(최소 매일) TEE는 캐뉼레이션 유도나 창이 불량할 때로 제한해 항응고 중 출혈 위험을 줄인다. 장치별 위치 목표—IABP 끝은 좌쇄골하동맥 원위부, Impella CP 유입부는 판륜 ~3.5 cm 아래(5.5는 ~5 cm)·pigtail은 심첨 방향, VA-ECMO·우심 캐뉼라 랜드마크—를 숙지해 흡인 알람·파형 변화 시 즉시 재영상한다. VA-ECMO에서는 매일 좌심 팽창/unloading 실패(대동맥판 미개방, LV 확장, 정체·혈전, MR 악화, LVOT VTI <10 cm)를 선별해 좌심 venting을 판단하고, 병용 unloading 장치가 있으면 VA-ECMO를 먼저 이탈한다. 이탈 판단은 LVEF 단독이 아니라 단계적 감량 중 종축 기능(MAPSE, TDI S′)과 RV–PA 커플링의 추세로 하되, 각 단계 후 ≥5분 뒤 영상하고 침습적 혈역학과 통합한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39180134",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39180134/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1093/ehjci/jeae219",
+            "url": "https://doi.org/10.1093/ehjci/jeae219"
+          },
+          {
+            "label": "웹 — European Heart Journal - Cardiovascular Imaging (OUP) — full consensus statement, 2024;25(12):e296",
+            "url": "https://academic.oup.com/ehjcimaging/article/25/12/e296/7740477?login=false"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-27"
     }
   ],
   "rejected": [
@@ -64558,7 +64690,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "discoveredAt": "2026-10-27T00:42:20.738Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65013,7 +65145,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "discoveredAt": "2026-10-27T00:42:20.738Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -65084,7 +65216,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "discoveredAt": "2026-10-27T00:42:20.738Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65112,7 +65244,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "discoveredAt": "2026-10-27T00:42:20.738Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65139,7 +65271,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-25T23:26:52.325Z",
+      "discoveredAt": "2026-10-27T00:42:20.738Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -65156,6 +65288,34 @@
       "pmcid": "PMC13679133",
       "region": "eu",
       "by": "nationality",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "guideline",
+      "reasons": [
+        "correction-or-erratum"
+      ]
+    },
+    {
+      "id": "pmid:42932410",
+      "pmid": "42932410",
+      "title": "Correction to: 2026 Guideline for Adult Stroke Rehabilitation and Recovery: A Guideline From the American Heart Association and American Stroke Association.",
+      "pubDate": "2026 Nov",
+      "journal": "Stroke",
+      "publicationTypes": [
+        "Journal Article",
+        "Published Erratum"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1161/STR.0000000000000540",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
       "status": "rejected",
       "verdict": "rejected",
       "documentType": "guideline",
@@ -65214,9 +65374,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261026_082541:guideline:2026-10-26",
+    "runId": "trend_review_20261027_094104:guideline:2026-10-27",
     "outcome": "published",
-    "publishedId": "pmid:42552475",
+    "publishedId": "pmid:39180134",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -65241,15 +65401,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 132,
+        "mergedTotal": 136,
         "overlapCount": 1,
         "ptOnlyCount": 1,
         "expandedOnlyCount": 6,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/26",
-          "maxDate": "2026/10/26"
+          "minDate": "2026/09/27",
+          "maxDate": "2026/10/27"
         },
         "retmax": 60,
         "topics": [
@@ -65257,8 +65417,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 47,
-            "idsFetched": 47,
+            "totalFound": 48,
+            "idsFetched": 48,
             "truncated": false,
             "error": null
           },
@@ -65293,8 +65453,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 25,
-            "idsFetched": 25,
+            "totalFound": 27,
+            "idsFetched": 27,
             "truncated": false,
             "error": null
           },
@@ -65311,8 +65471,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 9,
-            "idsFetched": 9,
+            "totalFound": 10,
+            "idsFetched": 10,
             "truncated": false,
             "error": null
           },
@@ -65353,7 +65513,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 124,
+        "topicOnlyCount": 128,
         "ptPmids": [
           "42552475",
           "40298962"
@@ -65361,9 +65521,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 132,
-          "enriched": 132,
-          "withAbstract": 93,
+          "requested": 136,
+          "enriched": 136,
+          "withAbstract": 96,
           "error": null
         }
       },
@@ -65416,7 +65576,7 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 4,
+        "scored": 1,
         "batches": 1,
         "failed": 0,
         "error": null
@@ -65461,6 +65621,13 @@
           "stage": "region",
           "pmid": "42288073",
           "title": "Re-evaluating pediatric laryngoscope blade size recommendations: Comparable intubation performance across blade sizes in pediatric manikin models.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42928092",
+          "title": "The Illusion of Recovery From Atrial Fibrillation, a Review of Postcardioversion Anticoagulation Guidelines.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65956,6 +66123,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42931091",
+          "title": "Clinical Safety Thresholds and Decision Risks of Search-Augmented Large Language Models in Acute Pancreatitis: A Guideline-Anchored Evaluation for Surgical Practice.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42862830",
           "title": "Dietary intake patterns and KDOQI guideline compliance among hemodialysis patients in Bangladesh: Gaps, misreporting, and clinical implications.",
           "region": null,
@@ -66107,19 +66281,19 @@
         }
       ],
       "decisions": {
-        "queued": 202,
-        "needsReview": 458,
-        "rejected": 132,
+        "queued": 201,
+        "needsReview": 459,
+        "rejected": 133,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42552475",
+        "candidateId": "pmid:39180134",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-25T23:29:33.125Z",
+  "updatedAt": "2026-10-27T00:45:14.219Z",
   "configVersion": "guideline-v2"
 }
