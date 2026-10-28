@@ -4525,23 +4525,6 @@
       "status": "queued"
     },
     {
-      "pmid": "39098320",
-      "title": "Acute liver failure.",
-      "journal": "Lancet",
-      "score": 2.2,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "급성 간부전 — 중환자 응급 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39133476",
       "title": "Perioperative Management of Patients Taking Direct Oral Anticoagulants: A Review.",
       "journal": "JAMA",
@@ -13180,6 +13163,112 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39098320",
+      "title": "Acute liver failure.",
+      "journal": "Lancet",
+      "score": 2.2,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "급성 간부전 — 중환자 응급 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-28",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39098320",
+          "title": "Acute liver failure.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2024-8-5",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39098320/",
+          "doi": "10.1016/S0140-6736(24)00693-7"
+        },
+        "title_ko": "급성 간부전(Acute liver failure)",
+        "scope_ko": "기존 간질환이 없던 환자에서 간기능이 급속히 악화되어 응고장애와 간성뇌증을 동반하는 급성 간부전(ALF)에 관한 Lancet 종설(Seminar)로, 원인, 예후 모델, 그리고 관리(간이식 및 인공간 보조, 특히 치료적 혈장교환)를 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "정의와 임상적 특징",
+            "body_ko": "급성 간부전(acute liver failure, ALF)은 기존 간질환이 없던 환자에서 간기능이 급속히 악화되어 응고장애(coagulopathy)와 간성뇌증(hepatic encephalopathy)을 동반하는, 생명을 위협하는 질환이다. 즉 '선행 간질환 없음'이라는 전제 위에서 간기능의 빠른 저하, 응고장애, 뇌증이 함께 나타나는 것이 이 질환의 핵심 특징이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "원인과 원인 규명의 중요성",
+            "body_ko": "ALF의 원인은 전 세계적으로 다양하다. 성인에서 흔한 원인으로는 약물 독성(drug toxicity), 간친화성 및 비(非)간친화성 바이러스(hepatotropic and non-hepatotropic viruses), 생약 및 건강보조식품(herbal and dietary supplements), 항결핵제(antituberculosis drugs), 그리고 자가면역 간염(autoimmune hepatitis)이 있다.\n\n간부전의 원인은 관리 방침과 예후에 영향을 미친다. 따라서 저자들은 원인에 대한 광범위한 검사(extensive investigation for cause)를 강력히 권고한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "주요 사망 원인과 조기 관리의 중요성",
+            "body_ko": "다장기 부전을 동반한 패혈증(sepsis with multiorgan failure)과 뇌부종(cerebral oedema)은 ALF 환자의 주된 사망 원인으로 남아 있다. 이들을 조기에 인지하고 적절히 관리하면 ALF의 경과를 바꿀 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료: 간이식과 인공간 보조(치료적 혈장교환)",
+            "body_ko": "간이식(liver transplantation)은 현재 가장 좋은 치료다. 다만 인공간 보조 시스템(artificial liver support systems), 특히 치료적 혈장교환(therapeutic plasma exchange, TPE)의 역할도 ALF 환자에게, 특히 이식을 시행하지 않는 비(非)이식 센터(non-transplant centres)에서 유용할 수 있다.\n\n이 종설에서 저자들은 ALF의 원인, 예후 모델(prognostic models), 그리고 관리에 대해 논의한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 예후 모델 — King's College Criteria, MELD, 동적 모델",
+            "body_ko": "King's College Hospital(KCH) 기준은 전 세계적으로 가장 널리 쓰이며 특히 아세트아미노펜 관련 ALF에 사용된다. 메타분석에서 아세트아미노펜 유발 ALF에 대한 특이도는 95%, 비아세트아미노펜의 경우 81%였으나, 민감도는 각각 58%, 69%로 상대적으로 낮았다.\n\n아세트아미노펜 특이 예후 예측을 위해 1일차 7개 변수(나이, 심혈관 부전, Glasgow 혼수척도, 동맥혈 pH, creatinine, INR, 동맥혈 lactate)와 2일차 2개 변수(최저 동맥혈 lactate, INR)를 결합한 동적 예측모델이 개발되어 30일 생존 예측에서 AUC 0.91을 보였다. MELD >25는 높은 사망 위험을 시사한다.\n— 보강 출처: PMC11534773 — Acute liver failure: individualization of care and minimizing the need for liver transplantation (https://pmc.ncbi.nlm.nih.gov/articles/PMC11534773/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC11534773 — Acute liver failure: individualization of care and minimizing the need for liver transplantation",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11534773/"
+          },
+          {
+            "heading_ko": "[웹 보강] 치료적 혈장교환(TPE)과 인공간 보조의 근거",
+            "body_ko": "고용량 혈장교환(high-volume PE) 무작위연구(Larsen 등, ALF 182명, 58%가 아세트아미노펜)에서 퇴원까지 생존은 고용량 PE(10~12 L/일) 58.7% 대 대조군 47.8%(HR 0.56, 95% CI 0.36~0.86; P=0.008)였고, 이식 금기인 불량 예후 환자에서 이득이 특히 뚜렷했다. 표준용량 PE 연구(40명)에서는 21일 이식 없는 생존이 75% 대 45%(P=0.04, HR 0.30, 95% CI 0.01~0.88)였다. 두 연구 모두 PE 군에서 SIRS, SOFA 점수, 암모니아 감소, lactate 청소의 개선을 보였다. 최근에는 더 낮은 용량(혈장량의 1.5~2배)을 쓰는 TPE도 이상반응이 적으면서 효과적일 수 있다고 제시된다. MARS™ 장치, 고용량 PE, ECAD 등 인공간 보조는 이식을 기다리거나 이식 금기인 중증 환자, 특히 자원이 제한된 환경에서 가교(bridge)로 권고된다.\n— 보강 출처: PMC11534773 — Acute liver failure: individualization of care / EMCrit IBCC (https://pmc.ncbi.nlm.nih.gov/articles/PMC11534773/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC11534773 — Acute liver failure: individualization of care / EMCrit IBCC",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11534773/"
+          },
+          {
+            "heading_ko": "[웹 보강] 간이식 — 적응과 생존 성적",
+            "body_ko": "잠재적 이식 후보는 조기에 이식센터로 이송·상의해야 한다. 이송을 시사하는 소견으로는 산증, 핍뇨, creatinine 상승, 의식 변화, 저혈당, 수액소생에도 불구한 lactate 상승, 현저한 INR/빌리루빈 상승, 간성뇌증 진행 등이 있다. 최근 ELTR 자료(2015~2022)에서 이식받은 ALF 환자의 1년·5년 생존율은 각각 80%·70%로 과거보다 향상됐다. 전반적 생존이 개선되면서 이식이 필요하지 않은 ALF 환자 수도 유의하게 늘었으나, 저자들은 간이식이 여전히 최적의 치료이며 특히 비아세트아미노펜 원인에서 그러하다고 결론짓는다.\n— 보강 출처: PMC11534773 — Acute liver failure: individualization of care (https://pmc.ncbi.nlm.nih.gov/articles/PMC11534773/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC11534773 — Acute liver failure: individualization of care",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11534773/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "cae9dfe2d631f9fb6e50dff1a9ef7f7eb033982f2e6edc2d51382afcc8beb2ae",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-10-28T00:48:24.958Z",
+          "resultFingerprint": "f53d984127ba6d27113a945168c9b91e6a9f2e6d981acb58cea9ec37d0c8ea8e",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 1,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급·중환자 침상에서는 선행 간질환이 없던 환자의 급속한 간기능 저하+응고장애+뇌증을 ALF로 인지하고, 원인(약물·바이러스·생약/건강보조식품·항결핵제·자가면역)에 대한 광범위한 검사를 즉시 시작하며 원인에 맞춰 관리와 예후를 조정하는 것이 핵심이다. 사망의 주 원인인 다장기 부전 동반 패혈증과 뇌부종을 조기에 발견·치료하고, 이식 후보를 조기에 이식센터와 상의하되, 비이식 센터에서는 치료적 혈장교환 등 인공간 보조를 가교로 활용할 수 있다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39098320",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39098320/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(24)00693-7",
+            "url": "https://doi.org/10.1016/S0140-6736(24)00693-7"
+          },
+          {
+            "label": "웹 — PMC11534773 — Acute liver failure: individualization of care and minimizing the need for liver transplantation",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11534773/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -13237,9 +13326,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-27",
+    "date": "2026-10-28",
     "outcome": "published",
-    "publishedId": "38240487"
+    "publishedId": "39098320"
   },
-  "updatedAt": "2026-10-27"
+  "updatedAt": "2026-10-28"
 }

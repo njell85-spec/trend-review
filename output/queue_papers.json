@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41352474",
-      "title": "Tracheal intubation vs. supraglottic airway devices during mechanical intra-arrest-ventilation with volume-controlled-ventilation in out-of-hospital cardiac arrest: a cohort study.",
-      "journal": "Resuscitation",
-      "score": 8.4,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.35,
-        "cooldownPenalty": -1,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42153811",
       "title": "The Association Between Mechanical Power and Mortality in Critically Ill Patients Receiving Invasive Mechanical Ventilation: A Systematic Review and Meta-Analysis.",
       "journal": "Critical care medicine",
@@ -349,6 +334,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-27"
+    },
+    {
+      "pmid": "41352474",
+      "title": "Tracheal intubation vs. supraglottic airway devices during mechanical intra-arrest-ventilation with volume-controlled-ventilation in out-of-hospital cardiac arrest: a cohort study.",
+      "journal": "Resuscitation",
+      "score": 8.4,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.35,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-28"
     }
   ],
   "rejected": [
@@ -364,9 +365,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-27",
+    "date": "2026-10-28",
     "outcome": "published",
-    "publishedId": "42895744"
+    "publishedId": "41352474"
   },
-  "updatedAt": "2026-10-27"
+  "updatedAt": "2026-10-28"
 }

@@ -979,5 +979,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41352474",
+    "title": "Tracheal intubation vs. supraglottic airway devices during mechanical intra-arre",
+    "date": "2026-10-28",
+    "topic": "resp_airway",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

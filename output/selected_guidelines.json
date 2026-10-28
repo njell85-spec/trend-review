@@ -3903,83 +3903,6 @@
       }
     },
     {
-      "id": "pmid:39270731",
-      "pmid": "39270731",
-      "title": "Ventricular arrhythmias in acute heart failure: a clinical consensus statement of the Association for Acute CardioVascular Care, the European Heart Rhythm Association, and the Heart Failure Association of the European Society of Cardiology.",
-      "pubDate": "2024 Oct 3",
-      "journal": "Europace : European pacing, arrhythmias, and cardiac electrophysiology : journal of the working groups on cardiac pacing, arrhythmias, and cardiac cellular electrophysiology of the European Society of Cardiology",
-      "publicationTypes": [
-        "Journal Article",
-        "Consensus Statement"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:35:49.433Z",
-      "abstract": "Patients presenting with or alerting emergency networks due to acute heart failure (AHF) form a diverse group with a plethora of symptoms, risks, comorbidities, and aetiologies. During AHF, there is an increased risk of destabilizing the functional substrate and modulatory adding to the risk of ventricular arrhythmias (VAs) already created by the structural substrate. New VAs during AHF have previously identified patients with higher intra-hospital and 60-day morbidity and mortality. Risk stratification and criteria/best time point for coronary intervention and implantable cardioverter defibrillator implantation, however, are still controversial topics in this difficult clinical setting. The characteristics and logistics of pre-hospital emergency medicine, as well as the density of centres capable of treating AHF and VAs, differ massively throughout Europe. Scientific guidelines provide clear recommendations for the management of arrhythmias in patients with chronic heart failure. However, the incidence, significance, and management of arrhythmias in patients with AHF have been less studied. This consensus paper aimed to address the identification and treatment of VAs that complicate the course of patients who have AHF, including cardiogenic shock.",
-      "meshTerms": [
-        "Humans",
-        "Acute Disease",
-        "Arrhythmias, Cardiac",
-        "Cardiology",
-        "Defibrillators, Implantable",
-        "Europe",
-        "Heart Failure",
-        "Risk Assessment",
-        "Risk Factors"
-      ],
-      "keywords": [
-        "Acute heart failure",
-        "Ventricular arrhythmias"
-      ],
-      "doi": "10.1093/europace/euae235",
-      "pmcid": "PMC11525034",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "esc"
-      },
-      "priority": 10.17264619747391,
-      "breakdown": {
-        "authority": 4,
-        "topic": 4,
-        "recency": 0.17264619747390914,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "esc",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "consensus",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:03.188Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "급성심부전 심실부정맥 ESC 합의, 응급·중환자 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "esc|ventricular-arrhythmias-acute-heart-failure-clinical-association-acute-cardiovascular-care-european-heart-rhythm-association-heart-failure-association",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:39210723",
       "pmid": "39210723",
       "title": "2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS).",
@@ -32373,7 +32296,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34562,7 +34485,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-27T00:42:30.173Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37582,7 +37505,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44013,7 +43936,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-27T00:42:30.173Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44683,7 +44606,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44843,7 +44766,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -44925,7 +44848,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.173Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45154,7 +45077,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46207,7 +46130,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.173Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46690,7 +46613,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -46742,11 +46665,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.575046657738048,
+      "priority": 11.571398314302767,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.5750466577380478,
+        "recency": 1.571398314302767,
         "scope": 0,
         "confidence": 2
       },
@@ -46762,7 +46685,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.173Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -46843,7 +46766,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -46920,7 +46843,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -46989,7 +46912,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.173Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -47066,7 +46989,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47124,7 +47047,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47199,7 +47122,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.173Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47263,7 +47186,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47333,7 +47256,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47401,7 +47324,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47464,7 +47387,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47529,7 +47452,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47592,7 +47515,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47654,7 +47577,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47712,7 +47635,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47781,7 +47704,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-27T00:42:30.172Z",
+      "lastSeenAt": "2026-10-28T00:41:38.121Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -59715,6 +59638,143 @@
         ]
       },
       "publishedAt": "2026-10-27"
+    },
+    {
+      "id": "pmid:39270731",
+      "pmid": "39270731",
+      "title": "Ventricular arrhythmias in acute heart failure: a clinical consensus statement of the Association for Acute CardioVascular Care, the European Heart Rhythm Association, and the Heart Failure Association of the European Society of Cardiology.",
+      "pubDate": "2024 Oct 3",
+      "journal": "Europace : European pacing, arrhythmias, and cardiac electrophysiology : journal of the working groups on cardiac pacing, arrhythmias, and cardiac cellular electrophysiology of the European Society of Cardiology",
+      "publicationTypes": [
+        "Journal Article",
+        "Consensus Statement"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:35:49.433Z",
+      "abstract": "Patients presenting with or alerting emergency networks due to acute heart failure (AHF) form a diverse group with a plethora of symptoms, risks, comorbidities, and aetiologies. During AHF, there is an increased risk of destabilizing the functional substrate and modulatory adding to the risk of ventricular arrhythmias (VAs) already created by the structural substrate. New VAs during AHF have previously identified patients with higher intra-hospital and 60-day morbidity and mortality. Risk stratification and criteria/best time point for coronary intervention and implantable cardioverter defibrillator implantation, however, are still controversial topics in this difficult clinical setting. The characteristics and logistics of pre-hospital emergency medicine, as well as the density of centres capable of treating AHF and VAs, differ massively throughout Europe. Scientific guidelines provide clear recommendations for the management of arrhythmias in patients with chronic heart failure. However, the incidence, significance, and management of arrhythmias in patients with AHF have been less studied. This consensus paper aimed to address the identification and treatment of VAs that complicate the course of patients who have AHF, including cardiogenic shock.",
+      "meshTerms": [
+        "Humans",
+        "Acute Disease",
+        "Arrhythmias, Cardiac",
+        "Cardiology",
+        "Defibrillators, Implantable",
+        "Europe",
+        "Heart Failure",
+        "Risk Assessment",
+        "Risk Factors"
+      ],
+      "keywords": [
+        "Acute heart failure",
+        "Ventricular arrhythmias"
+      ],
+      "doi": "10.1093/europace/euae235",
+      "pmcid": "PMC11525034",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 10.17264619747391,
+      "breakdown": {
+        "authority": 4,
+        "topic": 4,
+        "recency": 0.17264619747390914,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:03.188Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성심부전 심실부정맥 ESC 합의, 응급·중환자 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "esc|ventricular-arrhythmias-acute-heart-failure-clinical-association-acute-cardiovascular-care-european-heart-rhythm-association-heart-failure-association",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39270731",
+          "title": "Ventricular arrhythmias in acute heart failure: a clinical consensus statement of the Association for Acute CardioVascular Care, the European Heart Rhythm Association, and the Heart Failure Association of the European Society of Cardiology.",
+          "journal": "Europace : European pacing, arrhythmias, and cardiac electrophysiology : journal of the working groups on cardiac pacing, arrhythmias, and cardiac cellular electrophysiology of the European Society of Cardiology",
+          "pubDate": "2024 Oct 3",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39270731/",
+          "doi": "10.1093/europace/euae235"
+        },
+        "org": "ESC (ACVC/EHRA/HFA)",
+        "version": "2024",
+        "title_ko": "급성 심부전에서의 심실 부정맥: ACVC·EHRA·HFA(ESC) 임상 합의 성명",
+        "scope_ko": "급성 심부전(AHF, 심인성 쇼크 포함)으로 집중심장치료실(ICCU)에 있는 성인 환자에서 경과를 복잡하게 만드는 심실 부정맥(PVC·비지속성/지속성 VT·VF·전기폭풍)의 식별·위험평가·치료를 다룬다. 만성 심부전 부정맥과 달리 근거가 부족한 '급성기' 상황에 초점을 맞춘 전문가 합의 성명이다.",
+        "summary": [
+          "Amiodarone is the first-line antiarrhythmic in AHF with VAs: load 150 mg over 10 min, then 360 mg over 6 h, then 540 mg over 18 h; avoid repeated fast boluses because they drop cardiac output (prolonged infusion after a single fast bolus preferred).",
+          "For haemodynamically unstable sustained VT/VF, immediate ACLS with external cardioversion/defibrillation is advised; stable monomorphic wide-complex tachycardia may first get vagal manoeuvres and adenosine, then AADs, with electrical cardioversion if drugs fail.",
+          "Do NOT discontinue background beta-blockers on admission for AHF with VAs; for electrical storm short-acting or non-selective beta-blockers may be appropriate, and carvedilol may be switched to metoprolol/bisoprolol if vasodilation is a problem.",
+          "Correct reversible triggers immediately: keep potassium 4.0–5.0 mmol/L (identify/treat loop-diuretic hypokalaemia), and give i.v. magnesium for torsades with hypokalaemia.",
+          "Class I antiarrhythmics and class III agents other than amiodarone are contraindicated in HFrEF, and non-dihydropyridine calcium channel blockers are contraindicated; lidocaine has a limited role only in acute ischaemia after amiodarone and beta-blockers fail; quinidine may be used for polymorphic VA or as bail-out for refractory monomorphic VT.",
+          "Catheter ablation is advised for electrical storm/incessant monomorphic VT after failed drug therapy, and may be appropriate for recurrent polymorphic VT/VF triggered by a unifocal PVC; mechanical circulatory support may be appropriate for intractable VAs with cardiogenic shock or to enable ablation.",
+          "Urgent coronary angiography/revascularization is advised for polymorphic VT/VF with STEMI/NSTE-ACS; for haemodynamically non-tolerated sustained VT/VF in the acute phase, ICD implantation before discharge is advised.",
+          "For refractory electrical storm, deep sedation/intubation may be considered; overdrive pacing may be appropriate for slow incessant monomorphic VT; minimize/avoid i.v. inotropes (smallest dose, shortest time), prefer norepinephrine in cardiogenic shock, and temporarily stop ACEi/ARNI when recurrent VT/ES causes haemodynamic instability."
+        ],
+        "summary_ko": [
+          "Amiodarone이 AHF+VA의 1차 항부정맥제: 150 mg을 10분, 이어 360 mg을 6시간, 540 mg을 18시간에 투여. 반복적 급속 볼루스는 심박출량을 떨어뜨리므로 피하고, 1회 급속 볼루스 후 지속 주입이 바람직하다.",
+          "혈역학적으로 불안정한 지속성 VT/VF는 즉시 ACLS와 함께 체외 심율동전환/제세동이 권고된다. 안정적 단형성 넓은 QRS 빈맥은 먼저 미주신경수기·adenosine, 이어 항부정맥제, 약물 실패 시 전기 심율동전환.",
+          "AHF+VA 입원 시 기존 베타차단제를 중단하지 말 것. 전기폭풍에는 단시간형 또는 비선택성 베타차단제가 적절할 수 있고, 혈관확장이 문제면 carvedilol을 metoprolol/bisoprolol로 교체할 수 있다.",
+          "가역적 유발요인은 즉시 교정: 칼륨 4.0–5.0 mmol/L 유지(만성 루프이뇨제의 저칼륨혈증 확인·교정), 저칼륨혈증 동반 torsades에는 i.v. magnesium 투여.",
+          "HFrEF에서 Class I 항부정맥제와 amiodarone 외 Class III는 금기이며 non-dihydropyridine 칼슘차단제도 금기. Lidocaine은 amiodarone·베타차단제 실패 후 급성 허혈에서만 제한적 역할. Quinidine은 다형성 VA 또는 난치성 단형성 VT의 구제요법으로 고려.",
+          "도관절제는 약물 실패한 전기폭풍/incessant 단형성 VT에 권고되고, 단일초점 PVC가 유발하는 재발성 다형성 VT/VF에 적절할 수 있다. 기계순환보조(MCS)는 난치성 VA+심인성 쇼크 또는 절제술 가능케 하기 위해 적절할 수 있다.",
+          "다형성 VT/VF+STEMI/NSTE-ACS에는 긴급 관상동맥조영·재관류가 권고. 급성기 혈역학적으로 못 견디는 지속성 VT/VF에는 퇴원 전 ICD 삽입이 권고된다.",
+          "난치성 전기폭풍에는 깊은 진정/삽관을 고려할 수 있고, 느린 incessant 단형성 VT에는 overdrive pacing이 적절할 수 있다. i.v. 승압·강심제는 최소·최단으로 피하고(심인성 쇼크에선 norepinephrine 선호), 재발성 VT/ES가 혈역학 불안정을 유발하면 ACEi/ARNI를 일시 중단한다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside this consolidates AHF-specific VA management: reach for amiodarone (not lidocaine, not other class III) as first-line, do not stop chronic beta-blockers on admission, and aggressively normalize K⁺ to 4.0–5.0 and give Mg for torsades. Cardiovert unstable VT/VF immediately, pursue urgent angiography when polymorphic VT/VF accompanies ACS, interrogate every ICD early, and escalate refractory electrical storm through deep sedation, overdrive pacing, catheter ablation, and mechanical circulatory support rather than piling on inotropes. Non-tolerated sustained VT/VF in the acute phase should prompt ICD implantation before discharge.",
+        "practiceImpact_ko": "임상 현장에서는 AHF 특이적 VA 관리를 정리해 준다: 1차 약제는 lidocaine이나 다른 Class III가 아니라 amiodarone, 입원 시 만성 베타차단제는 끊지 않기, K⁺를 4.0–5.0으로 적극 교정하고 torsades에는 Mg 투여. 불안정 VT/VF는 즉시 심율동전환, 다형성 VT/VF가 ACS와 동반되면 긴급 관상동맥조영, 모든 ICD는 조기 확인. 난치성 전기폭풍은 강심제를 늘리기보다 깊은 진정·overdrive pacing·도관절제·기계순환보조로 단계적 상승. 급성기에 못 견디는 지속성 VT/VF는 퇴원 전 ICD 삽입을 고려한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39270731",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39270731/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1093/europace/euae235",
+            "url": "https://doi.org/10.1093/europace/euae235"
+          },
+          {
+            "label": "웹 — Europace 2024 full text (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11525034/"
+          },
+          {
+            "label": "웹 — Europace article landing (Oxford Academic)",
+            "url": "https://academic.oup.com/europace/article/26/10/euae235/7756517"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-28"
     }
   ],
   "rejected": [
@@ -64690,7 +64750,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "discoveredAt": "2026-10-28T00:41:29.842Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65145,7 +65205,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "discoveredAt": "2026-10-28T00:41:29.842Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -65216,7 +65276,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "discoveredAt": "2026-10-28T00:41:29.842Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65244,7 +65304,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "discoveredAt": "2026-10-28T00:41:29.842Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65271,7 +65331,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "discoveredAt": "2026-10-28T00:41:29.842Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -65308,7 +65368,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-27T00:42:20.738Z",
+      "discoveredAt": "2026-10-28T00:41:29.842Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65321,6 +65381,40 @@
       "documentType": "guideline",
       "reasons": [
         "correction-or-erratum"
+      ]
+    },
+    {
+      "id": "pmid:42945467",
+      "pmid": "42945467",
+      "title": "Heart failure beyond cardiology: a primary care perspective on the 2026 ESC guideline.",
+      "pubDate": "2026 Oct 27",
+      "journal": "ESC heart failure",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-28T00:41:29.842Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "diagnosis",
+        "heart failure",
+        "integrated care",
+        "multimorbidity",
+        "prevention",
+        "primary care"
+      ],
+      "doi": "10.1093/eschf/xvag273",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "guideline",
+      "reasons": [
+        "commentary-or-evaluation"
       ]
     }
   ],
@@ -65374,9 +65468,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261027_094104:guideline:2026-10-27",
+    "runId": "trend_review_20261028_093933:guideline:2026-10-28",
     "outcome": "published",
-    "publishedId": "pmid:39180134",
+    "publishedId": "pmid:39270731",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -65395,21 +65489,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 136,
+        "mergedTotal": 143,
         "overlapCount": 1,
         "ptOnlyCount": 1,
-        "expandedOnlyCount": 6,
+        "expandedOnlyCount": 7,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Sep 30",
         "window": {
-          "minDate": "2026/09/27",
-          "maxDate": "2026/10/27"
+          "minDate": "2026/09/28",
+          "maxDate": "2026/10/28"
         },
         "retmax": 60,
         "topics": [
@@ -65417,8 +65511,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 48,
-            "idsFetched": 48,
+            "totalFound": 52,
+            "idsFetched": 52,
             "truncated": false,
             "error": null
           },
@@ -65435,8 +65529,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -65444,8 +65538,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 16,
+            "idsFetched": 16,
             "truncated": false,
             "error": null
           },
@@ -65453,8 +65547,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 27,
-            "idsFetched": 27,
+            "totalFound": 26,
+            "idsFetched": 26,
             "truncated": false,
             "error": null
           },
@@ -65513,7 +65607,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 128,
+        "topicOnlyCount": 134,
         "ptPmids": [
           "42552475",
           "40298962"
@@ -65521,9 +65615,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 136,
-          "enriched": 136,
-          "withAbstract": 96,
+          "requested": 143,
+          "enriched": 143,
+          "withAbstract": 103,
           "error": null
         }
       },
@@ -65576,16 +65670,21 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 1,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "scopeExclusions": [
         {
           "stage": "region",
           "pmid": "40298962",
           "title": "[Palliative extubation after ROSC in the emergency setting-a guideline for emergency physicians].",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42935102",
+          "title": "Singapore Society of Anaesthesiologists Position Statement: sustainability in anaesthesiology and intensive care in Singapore.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65626,6 +65725,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42936602",
+          "title": "Timely Reperfusion in STEMI: A Closed-Loop Audit of Guideline Compliance and Practice Improvements.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42928092",
           "title": "The Illusion of Recovery From Atrial Fibrillation, a Review of Postcardioversion Anticoagulation Guidelines.",
           "region": null,
@@ -65642,6 +65748,13 @@
           "stage": "region",
           "pmid": "42925956",
           "title": "Practical Prevention of Heart Failure Across Stages A and B: A Scientific Statement From the Japanese Heart Failure Society.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42922129",
+          "title": "[Non-pharmacological management of chronic heart failure].",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65670,6 +65783,13 @@
           "stage": "region",
           "pmid": "42866381",
           "title": "Digital and algorithmic strategies for guideline-directed medical therapy initiation and up-titration in adults with heart failure with reduced ejection fraction: a systematic review.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42855941",
+          "title": "Left ventricular ejection fraction recovery under contemporary quadruple guideline-directed therapy and the need for ICD/CRT-D implantation in HFrEF: a retrospective single-center cohort study.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -65850,6 +65970,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42933872",
+          "title": "[Chinese guidelines for the diagnosis and management of chronic obstructive pulmonary disease (2026 revision)].",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42912560",
           "title": "Home non-invasive ventilation in chronic respiratory failure: Evidence-based guidelines.",
           "region": null,
@@ -65955,6 +66082,20 @@
         },
         {
           "stage": "region",
+          "pmid": "42936034",
+          "title": "Meropenem as a non-guideline antibiotic: the factor associated with mortality of mortality in Listeria monocytogenes meningitis.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42935101",
+          "title": "Evidence-to-Recommendation Framework for 2026 ACE Clinical Guideline on community-acquired pneumonia - assessment, diagnosis and antibiotic prescribing.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42888911",
           "title": "Antibiotic Stewardship in Cirrhosis: Current Recommendations and Clinical Challenges.",
           "region": null,
@@ -66013,13 +66154,6 @@
           "stage": "region",
           "pmid": "42926880",
           "title": "Healthcare providers' perceptions of barriers and facilitators to implementation of an acute traumatic brain injury clinical practice guideline: a CFIR-informed qualitative study at a regional referral hospital in Northern Tanzania.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42919778",
-          "title": "Changes and Modifications Included in the 2026 Acute Ischemic Stroke Guidelines Relevant to the Adult and Pediatric Cardiac Surgery Populations.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -66281,19 +66415,19 @@
         }
       ],
       "decisions": {
-        "queued": 201,
+        "queued": 200,
         "needsReview": 459,
-        "rejected": 133,
+        "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39180134",
+        "candidateId": "pmid:39270731",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-27T00:45:14.219Z",
+  "updatedAt": "2026-10-28T00:43:21.148Z",
   "configVersion": "guideline-v2"
 }
