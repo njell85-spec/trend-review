@@ -4293,6 +4293,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-10-28",
+      "pmid": "41352474",
+      "title": "Tracheal intubation vs. supraglottic airway devices during mechanical intra-arrest-ventilation with volume-controlled-ventilation in out-of-hospital cardiac arrest: a cohort study.",
+      "title_ko": "병원 밖 심정지에서 용적조절환기(VCV)를 이용한 심정지 중 기계환기 동안 기관내삽관 vs. 성문상기도유지기: 코호트 연구",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2025.110918",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "성인 병원 밖 심정지(OHCA)에서 용적조절환기(VCV)를 이용한 심정지 중 기계환기 시, 성문상기도유지기(SGA)에 비해 기관내삽관(TI)이 전달 환기를 개선하는가 — 특히 설정 일회호흡량과 호기 일회호흡량의 차이(VTset–VTe)를 줄이고 누출량(VLeak)을 낮추는가?",
+      "pico": {
+        "population": "[Germany] Adult out-of-hospital cardiac arrest (OHCA) cases receiving intra-arrest ventilation between 01/2019 and 08/2023 with volume-controlled ventilation (VCV) via either SGA or TI, from the emergency medical service of the Gütersloh district, Germany; real-world data combined with the German Resuscitation Registry (n = 27; 682 min of VCV).",
+        "intervention": "Tracheal intubation (TI) as the airway management strategy during intra-arrest VCV (n = 14; 352 min).",
+        "comparison": "Supraglottic airway (SGA) devices during intra-arrest VCV (n = 13; 330 min).",
+        "outcome": "Primary outcome was the difference between set and measured expiratory tidal volume (VTset–VTe). Compared to SGA, TI was associated with a smaller VTset–VTe (regression coefficient: -128.3 ml; 95% CI [-252.3 ml; -4.3 ml]; p = 0.0427), using linear mixed regression models."
+      },
+      "pico_ko": {
+        "population": "[독일] 2019년 1월~2023년 8월 사이 심정지 중 환기를 받고 SGA 또는 TI를 통해 용적조절환기(VCV)를 시행받은 성인 병원 밖 심정지(OHCA) 환자; 독일 Gütersloh 지역 응급의료서비스의 실제 진료 데이터를 German Resuscitation Registry와 결합 (n = 27; VCV 총 682분).",
+        "intervention": "심정지 중 VCV 동안 기도관리 전략으로서의 기관내삽관(TI) (n = 14; 352분).",
+        "comparison": "심정지 중 VCV 동안 성문상기도유지기(SGA) (n = 13; 330분).",
+        "outcome": "일차 결과는 설정 일회호흡량과 측정 호기 일회호흡량의 차이(VTset–VTe)였다. SGA에 비해 TI는 더 작은 VTset–VTe와 연관되었다(회귀계수: -128.3 ml; 95% CI [-252.3 ml; -4.3 ml]; p = 0.0427, linear mixed regression model 사용)."
+      },
+      "keyFindings": [
+        "Among 27 adult OHCA patients on VCV (TI n=14/352 min; SGA n=13/330 min), TI was associated with a smaller deviation of delivered volume from the set volume (VTset–VTe coefficient -128.3 ml; 95% CI [-252.3; -4.3]; p = 0.0427).",
+        "Leakage was far lower with TI than SGA (mean VLeak 5.5 ± 7.0% vs 42.3 ± 28.4%; regression coefficient -32.3%; 95% CI [-46.1%; -18.4%]; p < 0.0001).",
+        "Despite nearly identical set tidal volumes (TI 573.9 vs SGA 550.9 ml), measured expiratory tidal volume was markedly higher with TI (348.1 ± 215.6 ml) than SGA (188.2 ± 156.6 ml), i.e., SGA delivered only about half the intended volume."
+      ],
+      "keyFindings_ko": [
+        "VCV를 받은 성인 OHCA 환자 27명 중(TI n=14/352분; SGA n=13/330분), TI는 전달 용적과 설정 용적의 차이가 더 작은 것과 연관되었다(VTset–VTe 계수 -128.3 ml; 95% CI [-252.3; -4.3]; p = 0.0427).",
+        "누출량은 TI에서 SGA보다 훨씬 낮았다(평균 VLeak 5.5 ± 7.0% vs 42.3 ± 28.4%; 회귀계수 -32.3%; 95% CI [-46.1%; -18.4%]; p < 0.0001).",
+        "설정 일회호흡량은 거의 동일했음에도(TI 573.9 vs SGA 550.9 ml), 측정 호기 일회호흡량은 TI(348.1 ± 215.6 ml)가 SGA(188.2 ± 156.6 ml)보다 현저히 높았다 — 즉 SGA는 의도한 용적의 약 절반만 전달했다."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41352474",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41352474/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110918",
+          "url": "https://doi.org/10.1016/j.resuscitation.2025.110918"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41352474) via NCBI E-utilities efetch",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41352474&rettype=abstract&retmode=text"
+        },
+        {
+          "label": "웹 — Resuscitation journal official article page (access blocked, HTTP 403)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00930-X/fulltext"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 41352474) via NCBI E-utilities efetch",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41352474&rettype=abstract&retmode=text",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Resuscitation journal official article page (access blocked, HTTP 403)",
+          "url": "https://www.resuscitationjournal.com/article/S0300-9572(25)00930-X/fulltext",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
