@@ -5222,23 +5222,6 @@
       "status": "queued"
     },
     {
-      "pmid": "35426840",
-      "title": "Temperature Management in the ICU.",
-      "journal": "Crit Care Med",
-      "score": 1.4,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "ICU 체온관리, 중환자 핵심 주제",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "35430021",
       "title": "Management of common clinical problems experienced by survivors of cancer.",
       "journal": "Lancet",
@@ -13269,6 +13252,127 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "35426840",
+      "title": "Temperature Management in the ICU.",
+      "journal": "Crit Care Med",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ICU 체온관리, 중환자 핵심 주제",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-29",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "35426840",
+          "title": "Temperature Management in the ICU.",
+          "journal": "Critical care medicine",
+          "pubDate": "2022-4-16",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/35426840/",
+          "doi": "10.1097/CCM.0000000000005556"
+        },
+        "title_ko": "중환자실에서의 체온 관리",
+        "scope_ko": "성인 중환자에서 능동적 체온 관리(목표체온관리 및 해열 치료)의 근거를 심정지 후, 급성 허혈성·출혈성 뇌졸중, 외상성 뇌손상(TBI), 패혈증을 중심으로 비판적으로 정리한 Concise Definitive Review이다. 환경성 응급(열사병·우발적 저체온), 약물유발 체온이상(악성고열·세로토닌증후군), 소아 체온 관리는 다루지 않는다. 주의: 본 번역의 심정지~출혈성 뇌졸중 절은 제공된 전문(PMC·truncated)에서 충실히 옮긴 것이나, 전문이 출혈성 뇌졸중 절 중간에서 잘려 TBI·패혈증·해열요법 절의 본문은 제공되지 않았다. 해당 주제는 논문 자체의 초록 수준 결론으로 옮기고(origin 'article'), TBI는 별도 권위 2차 출처로 명확히 구분해 보강했다(origin 'augmented').",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "서론",
+            "body_ko": "체온 이상은 고대 문명기부터 인간 질병의 표지로 인식되어 왔고, 질병을 치료하기 위한 치료 표적으로서의 체온의 가치 또한 그만큼 오래 가설로 제기되어 왔다. 체온 항상성은 동물계 전반에 걸쳐 고도로 보존되어 있다. 체온의 작은 변화만으로도 염증과 면역 기능에 변화가 생길 수 있으며, 그것이 환자 예후에 미치는 영향에 대해서는 다양한 효과가 제시되어 왔다.\n\n고열은 에너지 이용에도 영향을 준다. 발열이 있는 중환자에서는 에너지 소비의 최대 1/5이 체온을 올리고 유지하는 데 쓰인다. 이처럼 상당한 대사적 비용을 요구하고 수많은 생리 경로에 영향을 미치는 상태는 중환자실(ICU)에서 여전히 매력적인 치료 표적이다.\n\n이 Concise Definitive Review의 목적은 ICU에서 능동적 체온 관리의 역할에 관한 현재 근거를 상세히 기술하는 것이다. 저자들은 심정지, 신경학적 응급, 감염과 같은 성인 ICU 내과 질환에 초점을 맞춘다. 본 리뷰에서는 환경성 응급(예: 열사병, 환경성 저체온), 약물유발 체온이상(예: 악성고열, 세로토닌증후군), 소아 체온 관리는 다루지 않는다. 본 리뷰의 목적상 심부 체온 38.0°C 초과를 발열(fever)로, 36.0°C 미만을 저체온(hypothermia)으로 흔히 정의한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "심정지 후(Post–Cardiac Arrest)",
+            "body_ko": "중환자에서 체온 관리의 적응증 중 가장 잘 연구된 것은 아마도 병원 밖 심정지(out-of-hospital cardiac arrest) 이후의 성인일 것이다. 심정지 생존율은 낮고, 자발순환이 회복된 환자에서도 무산소증으로 인한 신경학적 손상이 흔하다. 동물 모델에서 경도 치료적 저체온(mild therapeutic hypothermia)은 뇌 대사를 감소시키고, 뇌 조직의 염증을 줄이며, 신경세포 자멸사(apoptosis)를 예방하는 것으로 나타났다. 치료적 저체온은 심장 수술 중 신경보호 전략으로 성공적으로 사용되어 왔으며, 이로부터 일부에서는 심정지 후 치료적 저체온이 임상 결과를 개선할 수 있다는 가설을 세우게 되었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "초기 임상시험(Early Clinical Trials)",
+            "body_ko": "2002년, 목격된 병원 밖 심정지이면서 초기 리듬이 제세동 가능 리듬(shockable rhythm)인 환자를 대상으로 한 두 건의 별개의 획기적 무작위 임상시험에서, 경도 치료적 저체온(32–34°C)이 양호한 신경학적 생존을 개선함을 보였다. 두 시험 모두 비교적 소규모였고(합산 352명) 목격된 병원 밖 심정지 환자로 국한되었지만, 효과 크기(양호한 신경학적 생존의 절대위험이 각각 16%, 23% 증가)는 설득력이 있었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상시험 결과를 뒷받침한 관찰 연구",
+            "body_ko": "이후 10여 년에 걸쳐 여러 관찰 연구가 이들 시험의 주요 결과를 재현하였다 — 심정지 후 치료적 저체온 프로토콜을 도입한 병원들은 위험 보정 생존율의 개선을 관찰하였다. 이러한 결과에 근거하여 국제소생술연락위원회(ILCOR)는 2002년 Level I 근거를 바탕으로 경도 치료적 저체온을 권고하였다.\n\n그러나 일부 상반된 소견들이 나오면서, 신경보호에 요구되는 저체온의 기전과 정도에 대해 의문을 제기하는 이들도 있었다. 치료적 저체온이 매우 시간 의존적이라는 동물 데이터에도 불구하고, 임상시험에서 더 신속한 병원 전 냉각이 추가적인 이득으로 이어지지 않았다. 또한 서로 다른 온도로 냉각되더라도 환자들의 결과는 비슷해 보였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "후기 임상시험(Later Clinical Trials)",
+            "body_ko": "2013년 Nielsen 등은 TTM 시험(Targeted Temperature Management 33°C versus 36°C after Out-of-Hospital Cardiac Arrest)을 발표하였다. 이는 병원 밖 심정지 환자를 33°C와 36°C로 36시간 유지한 뒤 72시간 동안 적극적 발열 예방을 시행하여 결과를 비교한 무작위 대조 용량 탐색 시험(n=950)이었다. TTM 시험은 심장 기원으로 추정되는 병원 밖 심정지 환자를 포함하되 제세동 가능 리듬과 불가능 리듬을 모두 포함하였다. 표본 크기도 이전 시험들보다 훨씬 컸으며, 전체 사망률(위험비 HR 1.06, 95% CI 0.89–1.23)이나 6개월 양호한 신경학적 결과(상대위험 RR 1.02, 95% CI 0.88–1.16)에서 차이를 보이지 않았다.\n\n그러나 TTM 시험 발표 후, 여러 관찰 연구에서 병원 프로토콜을 변경하여 심정지 후 체온을 36°C까지 허용한 것이 발열 유병률 증가 및 양호한 신경학적 결과 환자 비율 감소와 연관됨을 시사하였다. 일부에서는 이것이 치료효과의 이질성(heterogeneity of treatment effects)에서 비롯된 것인지, 아니면 임상의들이 TTM 프로토콜이 요구한 것보다 덜 통제된 방식으로 정상체온을 시행한 것인지 의문을 제기하였다. 또한 질병 중증도가 이질적 치료효과를 매개했을 수 있는데, 가장 심하게 손상된 환자에서는 더 낮은 체온이 더 나은 결과와 연관되었다.\n\n최근의 두 시험이 논란을 계속 부추겼다. HYPERION 시험(Therapeutic Hypothermia after Cardiac Arrest in Nonshockable Rhythm)은 비제세동 리듬을 보인 병원 밖 또는 병원 내 심정지 혼수 생존자 584명을 경도 치료적 저체온(33°C) 또는 유도 정상체온(37°C)에 배정한 공개 표지(open-label) 무작위 대조시험이었다. 양호한 신경학적 결과의 유병률은 치료적 저체온군에서 더 높았다(10.2% 대 5.7%, p=0.04). 2021년에는 1,850명 규모의 TTM2 시험(Targeted Hypothermia versus Targeted Normothermia after Out-of-Hospital Cardiac Arrest)이 발표되었는데, 이 역시 병원 밖 심정지 혼수 환자를 33°C 대 37°C에 배정하였다. 6개월 시점 전체 사망률(50% 대 48%, RR 1.04, 95% CI 0.95–1.23)과 불량한 기능적 결과(55% 대 55%, RR 1.00, 95% CI 0.92–1.09) 모두 비슷하였다.\n\nHYPERION은 프랑스에서 비제세동 심정지 환자를 대상으로 한 연구였고(27%가 병원 내 심정지), 대조군의 상당 비율에서 발열이 있었다. 반면 TTM2는 더 큰 시험으로 병원 밖 심정지 환자만 포함했으며, 74%가 제세동 가능 리듬이었고 79%가 목격자 심폐소생술(bystander CPR)을 받았다. 환자군의 이러한 차이와 대조군에서의 발열 관리 차이가 두 연구의 겉보기에 상반된 결과에 기여했을 수 있다. 또한 일부에서는 TTM2에서 목표 온도 도달까지 5시간 이상 걸린 점이 치료적 저체온의 효과를 희석시켰을 수 있는지 의문을 제기하였다. 다른 이들은 우월성 시험에서 이득이 없다는 것이 통계적 동등성을 의미하지는 않는다는 점을 지적하였다.\n\n현 시점에서, 심정지에서 치료적 저체온의 역할과 용량에 대해 상반된 결론으로 이어지는 다수의 임상시험이 수행되었고, 관찰 데이터는 표준화된 체온 관리 프로토콜의 이득을 시사한다. 초기 시험들에 근거할 때, 심정지 후 혼수 환자에서 발열을 피하는 것은 여전히 신중한 선택이며, 불량한 신경학적 결과의 고위험 일부 환자는 더 적극적인 치료적 저체온 전략에서 이득을 볼 수 있다. 대안으로, 일부 센터는 발열을 피하기 위한 실용적 전략으로 경도 치료적 저체온을 선택할 수 있다 — 이는 적극적이고 높은 신뢰도의 정상체온 유지보다 나쁘지 않은 것으로 나타났는데, 의도치 않은 발열에 수반되는 해악이 상당하기 때문이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신경학적 손상 — 뇌졸중(Stroke)",
+            "body_ko": "고열은 뇌졸중 후에도 흔하며, 심정지 환자와 마찬가지로 뇌졸중 환자도 체온 유발 신경학적 손상에 취약하다. 발열은 허혈성 및 출혈성 뇌졸중 환자에서 이차성 뇌손상과 연관되어 왔으며, 고열은 뇌 산소 소비를 증가시키고, 혈액뇌장벽 손상을 악화시키며, 전염증성 사이토카인 방출을 증가시키고, 경색 크기를 확장시키며, 신경세포 자멸사를 유발한다. 발열은 허혈성 뇌졸중, 출혈성 뇌졸중, 지주막하출혈 후 악화된 신경학적 결과와 연관되어 왔으나, 능동적 체온 관리의 효과는 불분명하다.\n\n발열의 정도와 지속 기간은 뇌손상 중증도와 강하게 연결되어 있어, 관찰 연구만으로는 결과 악화에서 발열의 역할을 평가하기 어렵다. 뇌졸중 또는 외상성 뇌손상(TBI) ICU 환자 38,679명 코호트에서, 체온 37.4°C 초과 환자는 병원 사망률이 더 높았으나, 질병 중증도를 보정한 후에도 사망 위험 증가가 지속된 것은 최고 체온 39°C 초과인 환자에서만이었다. 발열이 이 관계에서 인과적인 것인지, 아니면 손상 중증도와 관련된 단순한 수반현상(epiphenomenon)인지는 향후 연구의 과제이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "허혈성 뇌졸중(Ischemic Stroke)",
+            "body_ko": "허혈성 뇌졸중에서 경도 치료적 저체온(33–35°C)이 뇌졸중 결과 개선에 미치는 영향을 측정하기 위해 다수의 소규모 무작위 대조시험이 수행되었다. 안타깝게도 이 시험들은 소규모였고(참가자 18–98명), 어느 것도 임상적 이득을 보이지 못했으나 치료적 저체온과 연관된 개선을 검출하기에는 검정력이 부족했다. 뇌졸중에서 냉각에 관한 두 건의 대규모 무작위 대조시험이 계획되었으나, EUROHYP-1 시험(European Multicentre, Randomised, Phase III Clinical Trial of Therapeutic Hypothermia for Acute Ischaemic Stroke)은 느린 모집과 연구비 중단으로 중단되었고(계획 1,500명 중 98명), ICTuS-2 시험(Intravascular Cooling in the Treatment of Stroke)은 혈전제거술(thrombectomy) 시험들과의 중복으로 인해 중단되었다(계획 1,600명 중 120명).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "출혈성 뇌졸중(Hemorrhagic Stroke) — 제공 전문이 여기서 잘림",
+            "body_ko": "출혈성 뇌졸중에서 과거 대조군(historical controls)을 사용한 두 건의 관찰 연구가 제한적인 이득 근거를 내놓았다. 한 연구(n=50)에서는 대량 뇌내출혈(≥25 mL)이면서 유도 정상체온을 시행한 환자에서 처음 2주간 출혈 주위 부종(perihemorrhage edema)의 증가가 더 적었다고 보고하였고, 두 번째 연구(n=80…\n\n※ 제공된 전문(PMC·truncated)이 바로 이 문장 중간에서 잘려 있어, 두 번째 연구의 결과와 출혈성 뇌졸중 절의 나머지는 본문으로 확인되지 않는다. 이 지점 이후 논문이 다루는 TBI·패혈증·해열요법 절의 본문은 제공되지 않았으므로, 해당 주제는 아래에서 논문의 초록 수준 결론으로만 옮긴다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "TBI·패혈증·해열요법에 대한 논문 자체의 결론(초록 근거)",
+            "body_ko": "※ 아래는 논문 본문 대신 논문 자체의 초록이 명시한 결론이다(해당 절의 전문은 제공되지 않음).\n\n급성 뇌졸중, 외상성 뇌손상(TBI), 패혈증을 포함한 다른 중환자 질환에서의 목표체온관리(TTM)는 대규모 임상시험에서 이득을 보이지 못하였다. 마찬가지로, 약물학적 해열 요법(pharmacologic antipyretic therapy)의 시험들도 결과 개선을 입증하지 못하였다. 다만, 발열이 더 나쁜 결과와 연관된다는 관찰 근거에 기반하여, 국가 지침(national guidelines)은 뇌졸중 및 TBI 환자에서 발열의 치료를 권고하고 있다.\n\n결론적으로, 여러 질환에서 중환자의 체온 관리는 여전히 매력적인 치료법으로 남아 있으나, 관리 전략과 치료 경로를 명확히 하기 위해서는 추가 연구가 필요하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 외상성 뇌손상에서의 목표 체온 조절 — ESICM/NACCS 모범 임상 합의",
+            "body_ko": "※ 이 절은 논문 본문이 아니라, 동일 주제(TBI 체온 조절)를 다룬 권위 있는 2차 출처에서 보강한 것이다. 논문 자체의 주장과 혼동하지 말 것.\n\nESICM/NACCS 모범 임상 합의 권고는 TBI에서 1차 치료 목표로 심부 체온 36.0–37.5°C의 통제된 정상체온(controlled normothermia)을 강하게 권고하며, 이를 SIBICC 2019 지침의 두개내압(ICP) 관리 Tier 1·2 치료에 추가 항목으로 포함할 것을 권고한다. 37.5°C 초과는 발열로 정의하여, 특히 이차성 뇌손상 위험이 있다고 판단되는 급성기 TBI 환자에서 즉시 중재할 것을 권고한다.\n\n치료적 저체온(심부 체온 ≤36.0°C)은 Tier 1·2 치료로 ICP가 조절되지 않는 경우에 한해 고려할 수 있다는 정도의 '중등도 합의(moderate consensus)'에만 도달했으며, 이때에도 목표 체온은 가능한 한 생리적 체온에 가깝게(즉 깊은 냉각이 아닌 35–36°C 부근의 경도 저체온) 관리할 것을 명시한다. 임박한 뇌탈출(herniation)에 대한 응급 임시 전략으로서의 저체온, 위기 상황의 최적 목표 체온, barbiturate 고려 대비 저체온의 시점 등에 대해서는 합의에 이르지 못했다.\n\n주요 단서: 체온 조절은 이차성 뇌손상 위험과 발열 원인에 따라 개별화해야 하고, 간헐적 측정으로는 불충분하여 자동 피드백 제어 장치에 의한 지속 감시가 강하게 권고되며(변동 시간당 ≤±0.5°C, 24시간당 ≤1°C 유지), ICP가 불안정하고 전율(shivering)이 있을 때는 진정 심도 최적화 후 신경근차단제를 고려한다. 패널은 확정적 프로토콜을 위한 고품질 무작위 시험 근거가 부족함을 명시적으로 인정하였다.\n— 보강 출처: ESICM/NACCS best practice consensus recommendations — Targeted temperature control following TBI (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11107011/)",
+            "origin": "augmented",
+            "sourceLabel": "ESICM/NACCS best practice consensus recommendations — Targeted temperature control following TBI (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11107011/"
+          }
+        ],
+        "coverage": "full-text",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "1678f382973059025114cefb8be050d95d269b7339107a2a07a73a2bd5fbff51",
+          "suppliedTextSha256": "f734af17f49ce08132afe0d7336a7e1208ec0e2f295ccf08568067e6051ae196",
+          "suppliedTextChars": 10000,
+          "suppliedTextSource": "PMC",
+          "generatedAt": "2026-10-29T01:17:03.397Z",
+          "resultFingerprint": "23e70267b074a29085da1a8bdf98676cfb1356771e69f19d384bb401207a7b72",
+          "modelReported": "full-text",
+          "coverage": "full-text",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "PMC",
+        "practiceImpact_ko": "심정지 후 혼수 환자에서는 33°C의 적극적 저체온부터 37.5°C까지의 목표체온관리가 모두 합리적 범위에 들며, 핵심은 '발열을 피하는 것'이다 — 적극적 저체온이 어렵다면 발열 예방 목적의 경도 저체온도 신뢰도 높은 정상체온 유지에 못지않다(의도치 않은 발열의 해악이 크기 때문). 반면 급성 뇌졸중·TBI·패혈증에서 신경보호/예후 개선을 노린 능동적 TTM이나 약물 해열은 대규모 시험에서 이득이 입증되지 않았으므로 일률적으로 적용할 근거는 약하다. 다만 뇌졸중·TBI에서는 관찰 근거에 기반해 발열 자체의 치료(정상체온 유지)는 여전히 권고되므로, 침상에서는 '신경보호용 저체온'과 '발열 통제'를 구분해 접근하는 것이 타당하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 35426840",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35426840/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000005556",
+            "url": "https://doi.org/10.1097/CCM.0000000000005556"
+          },
+          {
+            "label": "웹 — Temperature Management in the ICU — PubMed (PMID 35426840)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35426840/"
+          },
+          {
+            "label": "웹 — ESICM/NACCS best practice consensus — Targeted temperature control following TBI (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11107011/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -13326,9 +13430,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "outcome": "published",
-    "publishedId": "39098320"
+    "publishedId": "35426840"
   },
-  "updatedAt": "2026-10-28"
+  "updatedAt": "2026-10-29"
 }

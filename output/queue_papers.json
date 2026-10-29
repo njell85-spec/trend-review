@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42153811",
-      "title": "The Association Between Mechanical Power and Mortality in Critically Ill Patients Receiving Invasive Mechanical Ventilation: A Systematic Review and Meta-Analysis.",
-      "journal": "Critical care medicine",
-      "score": 8.3,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.280000000000001,
-        "cooldownPenalty": -1,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42149248",
       "title": "Effects of out-of-bed armchair positioning on oxygenation in spontaneously breathing ICU patients receiving respiratory support: a randomized controlled trial.",
       "journal": "Intensive care medicine",
@@ -350,6 +335,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-28"
+    },
+    {
+      "pmid": "42153811",
+      "title": "The Association Between Mechanical Power and Mortality in Critically Ill Patients Receiving Invasive Mechanical Ventilation: A Systematic Review and Meta-Analysis.",
+      "journal": "Critical care medicine",
+      "score": 8.3,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.280000000000001,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-29"
     }
   ],
   "rejected": [
@@ -365,9 +366,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "outcome": "published",
-    "publishedId": "41352474"
+    "publishedId": "42153811"
   },
-  "updatedAt": "2026-10-28"
+  "updatedAt": "2026-10-29"
 }
