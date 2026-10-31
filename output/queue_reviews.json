@@ -5426,23 +5426,6 @@
       "status": "queued"
     },
     {
-      "pmid": "35852524",
-      "title": "Diagnosis and Management of Hyponatremia: A Review.",
-      "journal": "JAMA",
-      "score": 1.4,
-      "topic": null,
-      "lowConfidence": true,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 9,
-        "keep": true,
-        "reason": "저나트륨혈증 진단·관리 — 응급·중환자 핵심 대사",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "35866651",
       "title": "Using Qualitative Synthesis to Explore Heterogeneity of Randomized Trials on ICU Diaries.",
       "journal": "Crit Care Med",
@@ -13486,6 +13469,130 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "35852524",
+      "title": "Diagnosis and Management of Hyponatremia: A Review.",
+      "journal": "JAMA",
+      "score": 1.4,
+      "topic": null,
+      "lowConfidence": true,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "저나트륨혈증 진단·관리 — 응급·중환자 핵심 대사",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-10-31",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "35852524",
+          "title": "Diagnosis and Management of Hyponatremia: A Review.",
+          "journal": "JAMA",
+          "pubDate": "2022-7-20",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/35852524/",
+          "doi": "10.1001/jama.2022.11176"
+        },
+        "title_ko": "저나트륨혈증의 진단과 치료: 종설",
+        "scope_ko": "성인과 입원 환자에서 가장 흔한 전해질 장애인 저나트륨혈증(혈청 Na < 135 mEq/L)의 역학, 임상 양상, 용적 상태에 따른 진단적 분류, 그리고 기저 원인 치료부터 중증 증상 시 고장성 식염수 투여까지의 관리 원칙을 정리한 JAMA 임상 종설이다. 본 번역은 논문 본문을 확보하지 못해 초록을 '논문' 절로 옮기고, 그 위에 공개된 2차 지침 출처에서 세부 진단·치료 역치를 '보강' 절로 분리해 덧붙였다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "중요성 — 역학과 정의",
+            "body_ko": "저나트륨혈증은 가장 흔한 전해질 장애로, 성인의 약 5%, 입원 환자의 약 35%에서 나타난다. 혈청 나트륨 농도가 135 mEq/L 미만인 경우로 정의되며, 가장 흔한 기전은 수분 저류(water retention)이다. 경도의 저나트륨혈증조차 재원 기간 연장 및 사망률 증가와 연관된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상 양상 — 증상과 만성 경도 저나트륨혈증의 영향",
+            "body_ko": "저나트륨혈증의 증상과 징후는 경미하고 비특이적인 것(쇠약감, 오심 등)부터 중증·생명을 위협하는 것(경련, 혼수 등)까지 다양하다. 증상의 중증도는 저나트륨혈증이 발생한 속도, 지속 기간, 그리고 그 심한 정도에 좌우된다.\n\n만성 경도 저나트륨혈증은 인지장애, 보행장애, 낙상 및 골절 증가와 연관된다. 한 전향적 연구에서 저나트륨혈증 환자는 혈청 나트륨이 정상인 사람에 비해 낙상 과거력을 더 자주 보고했고(각각 23.8% 대 16.4%; P < .01), 평균 7.4년 추적 동안 새로운 골절 발생률도 더 높았다(23.3% 대 17.3%; P < .004). 저나트륨혈증은 골다공증의 이차적 원인이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "환자 평가 — 용적 상태에 따른 분류",
+            "body_ko": "환자를 평가할 때 임상의는 체액 용적 상태에 따라 저용적성(hypovolemic), 정상용적성(euvolemic), 고용적성(hypervolemic) 저나트륨혈증으로 분류해야 한다. 대부분의 환자에서 저나트륨혈증 관리의 기본 접근은 기저 원인을 치료하는 것이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료 — 기저 질환 치료와 약물 요법(urea, vaptan)",
+            "body_ko": "대부분의 환자는 기저 질환을 치료하고, 저용적성·정상용적성·고용적성 중 어디에 해당하는지에 따라 관리한다.\n\nUrea와 vaptan은 부적절 항이뇨 증후군(syndrome of inappropriate antidiuresis, SIAD) 및 심부전 환자의 저나트륨혈증을 관리하는 데 효과적일 수 있으나 부작용이 있다. urea는 맛이 좋지 않고 위장관 불내성이 있으며, vaptan은 저나트륨혈증을 지나치게 빠르게 교정하고 갈증을 증가시킨다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "응급 상황 — 중증 증상 저나트륨혈증과 고장성 식염수",
+            "body_ko": "졸음(somnolence), 혼미(obtundation), 혼수, 경련, 또는 심폐 곤란의 징후를 동반한 중증 증상 저나트륨혈증은 의학적 응급 상황이다.\n\n미국과 유럽 지침은 중증 증상 저나트륨혈증을 고장성 식염수 볼루스(bolus hypertonic saline)로 치료하여, 1~2시간 이내에 혈청 나트륨을 4~6 mEq/L 올려 저나트륨혈증성 뇌병증(hyponatremic encephalopathy)을 되돌리되, 첫 24시간 동안은 10 mEq/L를 초과해서는 안 된다(교정 한계, correction limit)고 권고한다. 그러나 이 치료 접근은 실제로 약 4.5%~28%의 환자에서 이 교정 한계를 초과한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "합병증 — 삼투성 탈수초화",
+            "body_ko": "만성 저나트륨혈증을 지나치게 빠르게 교정하면 삼투성 탈수초화(osmotic demyelination)가 발생할 수 있다. 이는 드물지만 중증의 신경학적 질환으로, 파킨슨증(parkinsonism), 사지마비(quadriparesis), 심지어 사망을 초래할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 진단 알고리즘 세부 역치 — 긴장도·요 삼투압·요 나트륨·급성/만성 구분",
+            "body_ko": "본 종설 본문을 확보하지 못해, 종설이 근거로 삼는 공개 지침 종합 자료에서 진단 세부 역치를 보강한다.\n\n첫 단계는 저장성(hypotonic) 저나트륨혈증을 비저장성(nonhypotonic)과 구분하는 것이다. 비저장성 원인에는 고혈당, mannitol, 고장성 조영제 등에 의한 전위성(translocational) 저나트륨혈증과, 고중성지방·고콜레스테롤·고단백에 의한 검사실 인공물인 가성저나트륨혈증(pseudohyponatremia)이 있다. 저장성 확인에는 혈청 삼투압 측정이 필요하며, 지침마다 약간 달라 대략 275~285 mOsm/kg 범위의 절단값을 쓴다.\n\n저장성 저나트륨혈증은 용적 상태(저용적/정상용적/고용적)로 분류하되, 임상적 용적 평가의 민감도(50~80%)·특이도(30~50%)가 낮다는 점에 유의한다. 이를 보완하기 위해 요 삼투압(일반적으로 100 mOsm/kg 역치)과 요 나트륨(역치는 자료에 따라 15~40 mmol/L, 흔히 30 mmol/L)을 함께 쓴다. 요 나트륨 < 30 mmol/L는 저용적성과 고용적성에서, > 30 mmol/L는 SIAD 등과의 감별에 쓰인다. 다만 저염식, 이뇨제 사용, 만성콩팥병(CKD)은 요 나트륨 해석을 교란할 수 있다. 유럽 지침은 용적 상태 평가보다 요 삼투압·요 나트륨을 우선한다.\n\n급성과 만성의 구분에는 통상 48시간 절단값을 쓴다. 급성의 위험은 뇌부종이고, 만성의 위험은 삼투성 탈수초화 증후군(ODS)이다.\n— 보강 출처: 저나트륨혈증 지침 종합(Compilation of the Guidelines, PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC5407738/)",
+            "origin": "augmented",
+            "sourceLabel": "저나트륨혈증 지침 종합(Compilation of the Guidelines, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5407738/"
+          },
+          {
+            "heading_ko": "[웹 보강] 고장성 식염수 투여 프로토콜과 과교정 대처 — 미국(2013) 대 유럽(2014)",
+            "body_ko": "본 종설이 인용하는 미국(2013 전문가 패널)·유럽(2014) 지침의 구체적 투여법을 공개 종합 자료에서 보강한다.\n\n중증 증상 시 3% NaCl 볼루스 — 미국 지침: 3% NaCl 100 mL를 10분에 걸쳐, 필요 시 최대 3회 반복. 유럽 지침: 3% NaCl 150 mL를 20분에 걸쳐, 필요 시 2~3회 반복. 중등도 증상 시 — 미국: 3% NaCl 지속 주입 0.5~2 mL/kg/시; 유럽: 3% NaCl 150 mL를 20분에 걸쳐 1회 볼루스.\n\n교정 속도 한계 — 양 지침 모두 급성·만성 모두에서 24시간당 10 mmol/L를 한계로 둔다. 미국 지침은 ODS 고위험 시 하루 8 mmol/L로 더 엄격히 제한한다.\n\n과교정 시 재하향(relowering) — 미국 지침: 기저 혈청 나트륨 < 120 mmol/L에서 교정이 하루 6~8 mmol/L를 초과하면 전해질이 없는 수분(electrolyte-free water) 또는 desmopressin으로 다시 낮추기 시작. 유럽 지침: 한계를 넘자마자 시작하며, 전해질 없는 수액(10 mL/kg)을 desmopressin 2 μg 정주와 함께 또는 없이 투여.\n— 보강 출처: 저나트륨혈증 지침 종합(Compilation of the Guidelines, PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC5407738/)",
+            "origin": "augmented",
+            "sourceLabel": "저나트륨혈증 지침 종합(Compilation of the Guidelines, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5407738/"
+          },
+          {
+            "heading_ko": "[웹 보강] 만성·무증상 저나트륨혈증의 용적별 치료와 vaptan에 대한 미·유럽 견해 차",
+            "body_ko": "만성·무증상 또는 경증 저나트륨혈증의 일차 치료는 용적 상태에 따른다. 저용적성에는 0.9% 생리식염수, 정상용적성에는 수분 제한(흔히 < 1 L/일)이 치료의 핵심, 고용적성에는 수분 제한(필요 시 염분 제한 병행)이다.\n\n이차 약물 요법에서 미국·유럽 지침은 vaptan(바소프레신 수용체 길항제)에 대해 뚜렷이 갈린다. 미국 전문가 패널은 demeclocycline, urea, vaptan을 비교적 긍정적으로 열거하는 반면, 유럽 지침은 urea 또는 '루프 이뇨제 + 경구 NaCl'을 권하고 중등도 저나트륨혈증에서 vaptan 사용에 반대(recommend against)한다. 이는 본 종설이 SIAD·심부전에서 urea와 vaptan의 효용을 인정하면서도 vaptan의 과도한 교정·갈증 증가 부작용을 함께 지적한 것과 맥을 같이한다.\n— 보강 출처: 저나트륨혈증 임상진료지침·합의문 체계적 고찰(PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC4276109/)",
+            "origin": "augmented",
+            "sourceLabel": "저나트륨혈증 임상진료지침·합의문 체계적 고찰(PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4276109/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "041bccf374d1e89c7deae80643a7438ba915db7a3532ce9f47e0246349ef5541",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-10-31T01:05:37.131Z",
+          "resultFingerprint": "78c0033320c3247209e241f21494eff57c0407fcf09440845271554675f31d73",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 모든 저나트륨혈증을 '증상 중증도 + 용적 상태'로 먼저 분류하고, 기본적으로 기저 원인을 치료한다. 졸음·혼미·혼수·경련·심폐곤란 등 중증 증상이 있으면 응급으로 간주해 3% 고장성 식염수 볼루스로 1~2시간 내 Na를 4~6 mEq/L만 올려 뇌병증을 되돌리되, 첫 24시간 교정은 10 mEq/L(고위험군은 8 mEq/L)를 넘기지 않도록 자주 재측정한다 — 실제로 4.5~28%에서 이 한계를 넘기므로 과교정 감시와 재하향 전략이 필요하다. 만성 저나트륨혈증의 급속 교정은 드물지만 파킨슨증·사지마비·사망까지 가는 삼투성 탈수초화를 부를 수 있음을 늘 염두에 둔다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 35852524",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35852524/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2022.11176",
+            "url": "https://doi.org/10.1001/jama.2022.11176"
+          },
+          {
+            "label": "웹 — JAMA — Diagnosis and Management of Hyponatremia: A Review (초록·key points 페이지)",
+            "url": "https://jamanetwork.com/journals/jama/article-abstract/2794358"
+          },
+          {
+            "label": "웹 — Diagnosis and Treatment of Hyponatremia: Compilation of the Guidelines (PMC5407738)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5407738/"
+          },
+          {
+            "label": "웹 — Diagnosis and treatment of hyponatremia: a systematic review of clinical practice guidelines and consensus statements (PMC4276109)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4276109/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -13543,9 +13650,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-30",
+    "date": "2026-10-31",
     "outcome": "published",
-    "publishedId": "35690953"
+    "publishedId": "35852524"
   },
-  "updatedAt": "2026-10-30"
+  "updatedAt": "2026-10-31"
 }

@@ -29906,67 +29906,6 @@
       "lineageReason": "no-matching-lineage"
     },
     {
-      "id": "pmid:41273365",
-      "pmid": "41273365",
-      "title": "Reassessing open lung ventilation in ARDS: an updated meta-analysis of the 2023 ESICM guidelines highlights risks of routine use and supports individualized strategies.",
-      "pubDate": "2026 Mar",
-      "journal": "Intensive care medicine",
-      "publicationTypes": [
-        "Letter"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:08.135Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [],
-      "doi": "10.1007/s00134-025-08214-3",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "esicm"
-      },
-      "priority": 10,
-      "breakdown": {
-        "authority": 4,
-        "topic": 2,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "esicm",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "conflicting-editorial-publication-type"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:05.137Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ARDS 폐개방환기 재평가, 중환자 침상 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "esicm|reassessing-open-lung-ventilation-ards-meta-analysis-highlights-risks-routine-use-supports-individualized-strategies",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:41447855",
       "pmid": "41447855",
       "title": "Survey data collection during the COVID-19 pandemic in Germany: Recommendations for an improved data collection infrastructure.",
@@ -32296,7 +32235,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -34485,7 +34424,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 8,
@@ -37505,7 +37444,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -43936,7 +43875,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -44606,7 +44545,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -44766,7 +44705,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "aha|oral-anticoagulant-use-among-residents-va-long-term-care-with-atrial-fibrillation-after-acc",
       "supersedes": [],
       "llmFit": {
@@ -44848,7 +44787,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "aha|adult-stroke-rehabilitation-recovery-from-american-stroke-association",
       "supersedes": [],
       "llmFit": {
@@ -45077,7 +45016,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46130,7 +46069,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46561,17 +46500,27 @@
       "id": "pmid:42823935",
       "pmid": "42823935",
       "title": "Diet and nutrition in chronic heart failure: A scientific statement of the Polish Society of Dietetics.",
-      "pubDate": "2026 Oct 2",
+      "pubDate": "2026 Oct",
       "journal": "Advances in clinical and experimental medicine : official organ Wroclaw Medical University",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Review"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-10-03T00:42:06.788Z",
       "abstract": "Poor nutritional status and suboptimal dietary patterns are strongly associated with adverse outcomes in patients with chronic heart failure (CHF), including increased mortality, reduced functional capacity, and a higher risk of hospitalization. This scientific statement from the Polish Society of Dietetics summarizes the current evidence and provides clinically oriented guidance on the role of nutrition in the management of CHF. It outlines the key components of nutritional care across the spectrum of CHF, including screening, assessment, dietary strategies, and supplementation. The main features of evidence-based nutritional management in CHF include: 1) routine nutritional screening using validated tools and structured assessment incorporating the GLIM criteria; 2) identification of malnutrition, cachexia, sarcopenia, and sarcopenic obesity; 3) individualized dietary management tailored to the HF phenotype and clinical status; 4) prioritization of dietary patterns rich in plant-based and minimally processed foods, with the Mediterranean diet as the dietary model supported by the strongest evidence; 5) avoidance of excessive sodium intake and unnecessary fluid restriction in stable patients; 6) ensuring adequate energy intake and protein intake to preserve lean body mass; and 7) targeted, rather than routine, use of micronutrient supplementation, with particular consideration of iron deficiency.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Heart Failure",
+        "Nutritional Status",
+        "Chronic Disease",
+        "Poland",
+        "Dietetics",
+        "Diet",
+        "Nutrition Assessment"
+      ],
       "keywords": [
         "dietary patterns",
         "dietitians",
@@ -46594,10 +46543,10 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 7,
+      "priority": 8,
       "breakdown": {
         "authority": 0,
-        "topic": 3,
+        "topic": 4,
         "recency": 2,
         "scope": 0,
         "confidence": 2
@@ -46613,7 +46562,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "unknown|diet-nutrition-chronic-heart-failure-polish-society-dietetics",
       "supersedes": [],
       "llmFit": {
@@ -46665,11 +46614,11 @@
         "officialDocument": false,
         "organizationId": "aha"
       },
-      "priority": 11.564013935862162,
+      "priority": 11.560402886522965,
       "breakdown": {
         "authority": 4,
         "topic": 4,
-        "recency": 1.5640139358621623,
+        "recency": 1.5604028865229655,
         "scope": 0,
         "confidence": 2
       },
@@ -46685,7 +46634,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "aha|peripheral-artery-disease-putting-acc-into-practice",
       "supersedes": [],
       "llmFit": {
@@ -46766,7 +46715,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -46843,7 +46792,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "ncs|education-ethical-organ-donation-at-end-life-ethical-statement-from",
       "supersedes": [],
       "llmFit": {
@@ -46912,7 +46861,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -46989,7 +46938,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47047,7 +46996,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47122,7 +47071,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47186,7 +47135,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47256,7 +47205,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47324,7 +47273,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47387,7 +47336,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47452,7 +47401,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47515,7 +47464,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47577,7 +47526,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47635,7 +47584,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47704,7 +47653,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47774,7 +47723,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47854,7 +47803,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47914,7 +47863,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "recommendations",
       "reasons": [
@@ -47922,7 +47871,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-10-30T01:14:29.478Z",
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47933,6 +47882,64 @@
         "keep": false,
         "reason": "뇌졸중 언어치료 재활 지침, 침상 응급·중환자와 무관",
         "at": "2026-10-30T01:14:31.321Z"
+      }
+    },
+    {
+      "id": "pmid:42957366",
+      "pmid": "42957366",
+      "title": "NICE chronic heart failure guideline update: implications for primary care.",
+      "pubDate": "2026 Nov 1",
+      "journal": "The British journal of general practice : the journal of the Royal College of General Practitioners",
+      "publicationTypes": [
+        "Editorial"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.3399/BJGP.2026.0319",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 5,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "conflicting-editorial-publication-type"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-31T00:58:54.760Z",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "만성심부전 지침이나 일차진료 초점 — 응급·중환자 적용 제한적",
+        "at": "2026-10-31T00:58:56.316Z"
       }
     }
   ],
@@ -60352,6 +60359,162 @@
         ]
       },
       "publishedAt": "2026-10-30"
+    },
+    {
+      "id": "pmid:41273365",
+      "pmid": "41273365",
+      "title": "Reassessing open lung ventilation in ARDS: an updated meta-analysis of the 2023 ESICM guidelines highlights risks of routine use and supports individualized strategies.",
+      "pubDate": "2026 Mar",
+      "journal": "Intensive care medicine",
+      "publicationTypes": [
+        "Letter"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:08.135Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1007/s00134-025-08214-3",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esicm"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esicm",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "conflicting-editorial-publication-type"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:05.137Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ARDS 폐개방환기 재평가, 중환자 침상 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "esicm|reassessing-open-lung-ventilation-ards-meta-analysis-highlights-risks-routine-use-supports-individualized-strategies",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41273365",
+          "title": "Reassessing open lung ventilation in ARDS: an updated meta-analysis of the 2023 ESICM guidelines highlights risks of routine use and supports individualized strategies.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2026 Mar",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41273365/",
+          "doi": "10.1007/s00134-025-08214-3"
+        },
+        "org": "ESICM (2023 ARDS guidelines) — reassessment correspondence, Intensive Care Medicine",
+        "version": "2026 (Letter to the Editor, reassessing the 2023 ESICM ARDS guidelines)",
+        "title_ko": "ARDS에서 개방폐환기(open lung ventilation) 재평가: 2023 ESICM 가이드라인에 대한 업데이트 메타분석 — 일률적 적용의 위험과 개별화 전략의 근거",
+        "scope_ko": "중등도~중증 급성호흡곤란증후군(ARDS) 성인 기계환기 환자에서 '개방폐환기(OLV)' 전략 — 저일회호흡량 + 계단식 폐포동원술(staircase recruitment maneuver, SRM) + 높은 PEEP + 하향식 PEEP 적정(decremental PEEP titration) — 를 전통적 ARDSNet 전략과 비교하여, 2023 ESICM ARDS 가이드라인이 폐포동원술에 대해 내린 권고의 근거를 재검토한 교신(letter)이다. 정식 가이드라인이 아니라, 가이드라인이 인용한 메타분석의 한계를 지적하고 업데이트 메타분석 결과로 재평가를 제안하는 서신이다.",
+        "summary": [
+          "This is a Letter to the Editor (Intensive Care Med 2026;52(3):625–626), not a new guideline; it reassesses the recruitment-maneuver / open lung ventilation (OLV) evidence underpinning the 2023 ESICM ARDS guidelines and argues against routine, unselected use.",
+          "OLV is defined by the authors as a bundle: low tidal volumes + staircase recruitment maneuvers (SRM) + high PEEP + decremental PEEP titration, compared against the conventional ARDSNet strategy.",
+          "In their updated meta-analysis (7 RCTs, 1,545 patients, 2009–2019), routine OLV showed NO mortality benefit at any timepoint: hospital mortality RR 1.03 (95% CI 0.94–1.13), ICU mortality RR 1.04 (0.94–1.15), 28-day RR 1.08 (0.97–1.21), 60-day RR 0.86 (0.62–1.19), 6-month RR 1.07 (0.98–1.18) — all nonsignificant.",
+          "Routine OLV increased harms: pneumothorax requiring drainage within 7 days RR 2.40 (p=0.04), arrhythmia RR 2.19 (p=0.004), desaturation RR 1.90 (p=0.005), and hypotension within 1 hour RR 1.24 (p=0.02).",
+          "OLV improved oxygenation index at days 1, 3, and 7 (all p<0.01) but did not improve ventilator-free days, ventilation duration, or length of stay — i.e., a physiologic signal without a patient-centered outcome benefit.",
+          "Excluding the ART trial (Cavalcanti 2017, n=1,010) in sensitivity analysis left mortality results unchanged (still nonsignificant), so the conclusion does not hinge on that single trial.",
+          "The authors conclude that in ARDS patients whose lung recruitability has NOT been assessed, systematic use of OLV should be approached with caution, and future strategy should be individualized — targeting patients with high lung recruitability."
+        ],
+        "summary_ko": [
+          "이 문헌은 새 가이드라인이 아니라 Intensive Care Med 2026;52(3):625–626에 실린 '교신(Letter)'으로, 2023 ESICM ARDS 가이드라인의 폐포동원술/개방폐환기(OLV) 근거를 재검토하고 선별 없는 일률적 적용에 반대한다.",
+          "저자들은 OLV를 저일회호흡량 + 계단식 폐포동원술(SRM) + 높은 PEEP + 하향식 PEEP 적정의 묶음으로 정의하고, 전통적 ARDSNet 전략과 비교한다.",
+          "저자들의 업데이트 메타분석(RCT 7편, 환자 1,545명, 2009–2019)에서 일률적 OLV는 어느 시점에서도 사망률 이득이 없었다: 병원 사망 RR 1.03(95% CI 0.94–1.13), ICU 사망 RR 1.04(0.94–1.15), 28일 RR 1.08(0.97–1.21), 60일 RR 0.86(0.62–1.19), 6개월 RR 1.07(0.98–1.18) — 모두 비유의.",
+          "일률적 OLV는 합병증을 늘렸다: 7일 이내 흉관삽입 필요 기흉 RR 2.40(p=0.04), 부정맥 RR 2.19(p=0.004), 탈산소화 RR 1.90(p=0.005), 1시간 내 저혈압 RR 1.24(p=0.02).",
+          "OLV는 1·3·7일째 산소화 지수를 개선했으나(모두 p<0.01) 인공호흡기-free days, 환기 기간, 재원일수는 개선하지 못했다 — 즉 생리학적 신호는 있으나 환자중심 결과 이득은 없다.",
+          "ART 시험(Cavalcanti 2017, n=1,010)을 제외한 민감도 분석에서도 사망률 결과는 변하지 않아(여전히 비유의), 결론이 그 한 시험에 좌우되지 않음을 보였다.",
+          "저자들은 폐 동원가능성(recruitability)이 평가되지 않은 ARDS 환자에서 OLV의 체계적 사용은 신중해야 하며, 향후 전략은 동원가능성이 높은 환자를 겨냥해 개별화되어야 한다고 결론짓는다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "폐포동원술/OLV의 일률적 사용 → 개별화",
+            "detail": "Previous stance (2023 ESICM guidelines): a conditional recommendation on recruitment maneuvers with low confidence in effect estimates, with caution driven largely by the ART trial showing harm. This reassessment argues the position should shift from any routine/systematic use of OLV toward an INDIVIDUALIZED strategy, because across 7 RCTs (1,545 patients) routine OLV gave no mortality benefit (hospital RR 1.03, 28-day RR 1.08) while increasing pneumothorax (RR 2.40), arrhythmia (RR 2.19), desaturation (RR 1.90) and hypotension (RR 1.24). Reason: benefit appears confined to patients with high lung recruitability, which must be assessed rather than assumed.",
+            "detail_ko": "이전 입장(2023 ESICM 가이드라인): 폐포동원술에 대해 효과 추정 신뢰도가 낮은 상태의 조건부 권고로, 주로 ART 시험의 해악 소견에 근거한 신중 권고. 이 재평가는 입장이 OLV의 일률적/체계적 사용에서 '개별화' 전략으로 이동해야 한다고 주장한다. 근거: RCT 7편(1,545명)에서 일률적 OLV는 사망률 이득이 없고(병원 RR 1.03, 28일 RR 1.08) 기흉(RR 2.40)·부정맥(RR 2.19)·탈산소화(RR 1.90)·저혈압(RR 1.24)은 증가했다. 이득은 폐 동원가능성이 높은 환자에 국한되므로, 가정하지 말고 평가해야 한다."
+          },
+          {
+            "topic": "가이드라인 근거가 된 원 메타분석의 한계",
+            "detail": "The authors contend the recruitment-maneuver meta-analysis in the 2023 ESICM guidelines had methodologic limitations — reliance on the ART trial (Cavalcanti 2017), which lacked pre-randomization recruitability assessment and enrolled ~63% direct/pulmonary ARDS (pneumonia, typically poorly recruitable), plus (in related correspondence) a search limited to PubMed and omission of relevant trials (e.g., Amato, Constantin). Their updated meta-analysis re-pools the evidence and, on sensitivity analysis EXCLUDING the ART trial, mortality remained nonsignificant — so the no-benefit conclusion is robust and not an artifact of one negative trial.",
+            "detail_ko": "저자들은 2023 ESICM 가이드라인의 폐포동원술 메타분석에 방법론적 한계가 있었다고 본다 — 무작위화 전 동원가능성 평가가 없고 직접성(폐성) ARDS(폐렴, 보통 동원성 낮음)가 약 63%였던 ART 시험(Cavalcanti 2017)에 과도하게 의존했고, (관련 교신 기준) 검색을 PubMed로 한정하고 Amato·Constantin 등 관련 시험을 누락했다는 것. 저자들의 업데이트 메타분석은 근거를 재통합했고, ART 시험을 '제외한' 민감도 분석에서도 사망률이 여전히 비유의하여 '이득 없음' 결론이 한 음성 시험의 산물이 아니라 견고함을 보였다."
+          },
+          {
+            "topic": "평가 대상 결과: 생리 지표 vs 환자중심 결과",
+            "detail": "The reassessment emphasizes decoupling oxygenation gains from outcomes: OLV improved the oxygenation index at days 1/3/7 (all p<0.01) yet produced no improvement in ventilator-free days at day 28, ventilation duration, or length of stay. The practical implication is that improved PaO2/FiO2 after recruitment should NOT by itself justify continuing a routine OLV bundle.",
+            "detail_ko": "이 재평가는 산소화 개선과 결과를 분리해서 봐야 한다고 강조한다: OLV는 1/3/7일째 산소화 지수를 개선(모두 p<0.01)했으나, 28일 인공호흡기-free days·환기 기간·재원일수에서는 개선이 없었다. 실무적 함의는 동원술 후 PaO2/FiO2가 좋아졌다는 것만으로 일률적 OLV 묶음을 지속할 근거로 삼아서는 안 된다는 것이다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "저자들의 근거가 된 업데이트 메타분석(전문 공개판)의 구체 수치",
+            "body_ko": "이 교신의 바탕이 된 체계적 고찰/메타분석 전문(공개판)에서는 2009–2019년 20개국 182개 센터의 RCT 7편·1,545명을 분석했다. OLV(저일회호흡량+SRM+고PEEP+하향식 PEEP 적정)는 ARDSNet 대비 병원 사망 RR 1.03(0.94–1.13), ICU 사망 RR 1.04(0.94–1.15), 28일 RR 1.08(0.97–1.21), 60일 RR 0.86(0.62–1.19), 6개월 RR 1.07(0.98–1.18)로 전 시점 사망률 이득이 없었다. 반면 7일 내 흉관 필요 기흉 RR 2.40(p=0.04), 1시간 내 저혈압 RR 1.24(p=0.02), 부정맥 RR 2.19(p=0.004), 탈산소화 RR 1.90(p=0.005)로 해악이 증가했다. 산소화 지수는 1·3·7일째 개선(p<0.01)됐으나 VFD·환기기간·재원일수는 차이 없었다. 저자 결론: 동원가능성 미평가 환자에서 OLV의 체계적 사용은 임상결과를 개선하지 못하고 일부 해악을 초래하므로 신중해야 하며, 향후 연구는 동원가능성 높은 하위군 식별에 집중해야 한다. 이 전문은 교신 본문이 아니라 별도 공개 논문이므로 '보강 축'으로 분리해 제시한다.",
+            "sourceLabel": "Open lung ventilation vs ARDSNet systematic review & meta-analysis (전문, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13001771/"
+          },
+          {
+            "heading_ko": "2023 ESICM 메타분석 '고압 동원술' 재평가 필요성에 대한 선행 교신",
+            "body_ko": "같은 주제에 대한 선행 교신은 2023 ESICM 가이드라인의 '고압 폐포동원술' 메타분석에 한계가 있다고 지적한다: (1) '지속(>35 cmH2O, >1분)' 대 '단시간' 고압 동원술의 구분이 둘 다 개방폐 전략이라는 점에서 의미가 모호할 수 있음, (2) PubMed만 검색해 Amato·Constantin·Khan·Yang 등 관련 시험을 누락했을 수 있음, (3) 포함 연구의 가용 결과를 충분히 분석하지 않았고 중앙값/IQR 자료를 평균/표준편차로 변환해 더 포괄적으로 분석할 수 있었음. 이에 '메타분석 업데이트'를 권고한다 — 이번 2026 교신이 그 업데이트에 해당한다.",
+            "sourceLabel": "Potential reevaluation of high-pressure RM meta-analysis in 2023 ESICM ARDS guidelines (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11541350/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, do not apply a fixed open-lung bundle (staircase recruitment + high PEEP + decremental titration) to every moderate–severe ARDS patient: pooled RCT data show no survival or ventilator-free-day benefit and meaningfully more pneumothorax requiring drainage, arrhythmia, hypotension and desaturation. Before committing to an aggressive high-PEEP/recruitment strategy, assess lung recruitability (e.g., recruitment-to-inflation ratio, PEEP trial with gas exchange/compliance/driving-pressure response, or imaging) and reserve OLV for demonstrated responders — especially being cautious in direct/pulmonary ARDS such as pneumonia, where recruitability is typically low. Treat a rise in PaO2/FiO2 after recruitment as a physiologic signal, not proof of outcome benefit, and watch hemodynamics closely during and after any recruitment maneuver.",
+        "practiceImpact_ko": "병상에서 고정된 개방폐 묶음(계단식 동원술 + 높은 PEEP + 하향식 적정)을 모든 중등도~중증 ARDS 환자에게 일률 적용하지 말 것: 통합 RCT 자료상 생존·인공호흡기-free day 이득은 없고 흉관삽입이 필요한 기흉·부정맥·저혈압·탈산소화는 유의하게 늘었다. 공격적 고PEEP/동원 전략을 결정하기 전에 폐 동원가능성(recruitment-to-inflation ratio, 가스교환/compliance/driving pressure 반응을 보는 PEEP trial, 영상 등)을 평가하고, 반응이 확인된 환자에만 OLV를 쓴다 — 특히 폐렴 같은 직접성(폐성) ARDS는 동원성이 낮으므로 더 신중해야 한다. 동원 후 PaO2/FiO2 상승은 생리학적 신호일 뿐 결과 이득의 증거가 아니며, 동원술 시행 중·후 혈역학을 면밀히 감시한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41273365",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41273365/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08214-3",
+            "url": "https://doi.org/10.1007/s00134-025-08214-3"
+          },
+          {
+            "label": "웹 — PubMed 41273365 — Reassessing open lung ventilation in ARDS (letter, ICM 2026;52(3):625–626)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41273365/"
+          },
+          {
+            "label": "웹 — Open lung ventilation vs ARDSNet — systematic review & meta-analysis full text (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13001771/"
+          },
+          {
+            "label": "웹 — Potential reevaluation of high-pressure RM meta-analysis in 2023 ESICM ARDS guidelines (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11541350/"
+          },
+          {
+            "label": "웹 — Springer Link — article landing page (10.1007/s00134-025-08214-3)",
+            "url": "https://link.springer.com/article/10.1007/s00134-025-08214-3"
+          }
+        ]
+      },
+      "publishedAt": "2026-10-31"
     }
   ],
   "rejected": [
@@ -64526,7 +64689,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -65336,7 +65499,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65791,7 +65954,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -65862,7 +66025,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65890,7 +66053,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65917,7 +66080,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -65954,7 +66117,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -65981,7 +66144,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-10-30T01:14:19.051Z",
+      "discoveredAt": "2026-10-31T00:58:45.029Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -66054,9 +66217,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261030_101319:guideline:2026-10-30",
+    "runId": "trend_review_20261031_095732:guideline:2026-10-31",
     "outcome": "published",
-    "publishedId": "pmid:42949586",
+    "publishedId": "pmid:41273365",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -66081,15 +66244,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 155,
+        "mergedTotal": 158,
         "overlapCount": 1,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 7,
         "oldestFetchedDate": "2026",
-        "newestFetchedDate": "2026 Sep 30",
+        "newestFetchedDate": "2026 Oct-Dec",
         "window": {
-          "minDate": "2026/09/30",
-          "maxDate": "2026/10/30"
+          "minDate": "2026/10/01",
+          "maxDate": "2026/10/31"
         },
         "retmax": 60,
         "topics": [
@@ -66097,8 +66260,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 57,
-            "idsFetched": 57,
+            "totalFound": 58,
+            "idsFetched": 58,
             "truncated": false,
             "error": null
           },
@@ -66151,8 +66314,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 11,
-            "idsFetched": 11,
+            "totalFound": 12,
+            "idsFetched": 12,
             "truncated": false,
             "error": null
           },
@@ -66178,8 +66341,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 5,
-            "idsFetched": 5,
+            "totalFound": 6,
+            "idsFetched": 6,
             "truncated": false,
             "error": null
           },
@@ -66193,7 +66356,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 145,
+        "topicOnlyCount": 148,
         "ptPmids": [
           "42837684",
           "42552475",
@@ -66202,9 +66365,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 155,
-          "enriched": 155,
-          "withAbstract": 112,
+          "requested": 158,
+          "enriched": 158,
+          "withAbstract": 114,
           "error": null
         }
       },
@@ -66257,7 +66420,7 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
+        "scored": 1,
         "batches": 1,
         "failed": 0,
         "error": null
@@ -66594,6 +66757,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42959359",
+          "title": "Implementation of the National Asthma Guidelines in New Zealand: a retrospective patient-level study of the change to anti-inflammatory reliever therapy in 324,972 patients.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42946175",
           "title": "Awareness without actionable knowledge: understanding physical activity recommendations among people with COPD.",
           "region": null,
@@ -66652,13 +66822,6 @@
           "stage": "region",
           "pmid": "42833476",
           "title": "Sex differences in delivery of guideline-recommended COPD care: A national U.S. cohort.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42815415",
-          "title": "[Early recognition of fibrosing interstitial lung disease: practical recommendations for initial evaluation and referral].",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -66909,6 +67072,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42839871",
+          "title": "Post-transplant follow-up for kidney transplant recipients: a systematic review of clinical practice guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42837114",
           "title": "Recommendations of the Brazilian Society of Nephrology for hemodiafiltration in maintenance dialysis therapy.",
           "region": null,
@@ -66981,6 +67151,13 @@
           "stage": "region",
           "pmid": "42370871",
           "title": "Anesthesia Education on Postoperative Delirium Guidelines and Consensuses for the Adult Patient.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42957411",
+          "title": "Comparison of 3 guideline lipid emulsion regimens for local anesthetic systemic toxicity: an in silico study of bolus duration, total dose, and treatment delay in intravenous bupivacaine overdose.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -67060,12 +67237,12 @@
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42949586",
+        "candidateId": "pmid:41273365",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-10-30T01:17:16.625Z",
+  "updatedAt": "2026-10-31T01:01:54.464Z",
   "configVersion": "guideline-v2"
 }

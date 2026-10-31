@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41787551",
-      "title": "Effect of driving pressure-limiting strategies on outcomes of patients with ARDS: a meta-analysis of randomized controlled trials.",
-      "journal": "Critical care (London, England)",
-      "score": 8.2,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.1792,
-        "cooldownPenalty": -1,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "41204181",
       "title": "Handgrip strength association with weaning outcome in mechanically ventilated ICU patients: a systematic review and meta-analysis.",
       "journal": "Critical care (London, England)",
@@ -472,6 +457,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-30"
+    },
+    {
+      "pmid": "41787551",
+      "title": "Effect of driving pressure-limiting strategies on outcomes of patients with ARDS: a meta-analysis of randomized controlled trials.",
+      "journal": "Critical care (London, England)",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.1792,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-10-31"
     }
   ],
   "rejected": [
@@ -487,9 +488,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-30",
+    "date": "2026-10-31",
     "outcome": "published",
-    "publishedId": "42149248"
+    "publishedId": "41787551"
   },
-  "updatedAt": "2026-10-30"
+  "updatedAt": "2026-10-31"
 }
