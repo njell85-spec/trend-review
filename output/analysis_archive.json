@@ -4504,24 +4504,74 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-01",
+      "pmid": "41204181",
+      "title": "Handgrip strength association with weaning outcome in mechanically ventilated ICU patients: a systematic review and meta-analysis.",
+      "title_ko": "기계환기 중인 ICU 환자에서 악력(handgrip strength)과 이탈(weaning) 결과의 연관성: 체계적 문헌고찰 및 메타분석",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-025-05729-5",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "기계환기 중인 성인 ICU 환자에서 발관(extubation) 전 측정한 최대 악력(maximal HGS)이 이탈 결과(발관 실패, SBT 실패, 이탈 분류[simple/difficult/prolonged])와 연관이 있고 이를 예측할 수 있는가?",
+      "pico": {
+        "population": "[International] Adult patients hospitalized in an ICU who required mechanical ventilation for at least 24 h; 7 prospective cohort studies were included in the review (n = 707 patients) and 6 in the meta-analysis, from a systematic search of MEDLINE, EMBASE, CINAHL, and Cochrane Library up to December 2024.",
+        "intervention": "Maximal handgrip strength (HGS) of the dominant hand measured before extubation, proposed as a simple bedside surrogate marker of global muscle strength (reported ICU-acquired weakness cut-offs: 11 kg for men and 7 kg for women).",
+        "comparison": "Patients grouped by weaning outcome — extubation failure vs. success; SBT failure vs. success; and non-simple (difficult or prolonged) vs. simple weaning. No comparison against another prognostic index was within scope.",
+        "outcome": "Extubation failure vs. success: no significant difference in HGS (pooled mean difference −3.62 kg; 95% CI −7.92 to 0.62)."
+      },
+      "pico_ko": {
+        "population": "[다국가] 최소 24시간 이상 기계환기가 필요했던 ICU 입원 성인 환자; 2024년 12월까지 MEDLINE, EMBASE, CINAHL, Cochrane Library 체계적 검색을 통해 전향적 코호트 연구 7편(n = 707명)이 고찰에, 6편이 메타분석에 포함됨.",
+        "intervention": "발관 전 측정한 우세손(dominant hand)의 최대 악력(maximal HGS)으로, 전신 근력의 간단한 침상 대리 지표로 제안됨(보고된 ICU-acquired weakness 절단값: 남성 11 kg, 여성 7 kg).",
+        "comparison": "이탈 결과별 환자군 — 발관 실패 vs. 성공, SBT 실패 vs. 성공, non-simple(difficult 또는 prolonged) vs. simple 이탈. 다른 예후 지표와의 비교는 연구 범위 밖임.",
+        "outcome": "발관 실패 vs. 성공: HGS에 유의한 차이 없음(pooled mean difference −3.62 kg; 95% CI −7.92 to 0.62)."
+      },
+      "keyFindings": [
+        "Maximal HGS did not significantly differentiate extubation failure from success (pooled mean difference −3.62 kg; 95% CI −7.92 to 0.62) across 7 studies (n = 707; 6 in meta-analysis).",
+        "Significantly lower HGS was associated with SBT failure (−3.00 kg; 95% CI −4.64 to −1.36) and with non-simple (difficult/prolonged) weaning (−3.94 kg; 95% CI −5.31 to −2.58).",
+        "For the composite endpoint, pooled sensitivity was 72% and specificity 60%, with negative predictive values of 90–95% at 10% and 20% pre-test probability."
+      ],
+      "keyFindings_ko": [
+        "최대 HGS는 발관 실패와 성공을 유의하게 구분하지 못함(pooled mean difference −3.62 kg; 95% CI −7.92 to 0.62), 7편(n = 707; 메타분석 6편) 기준.",
+        "유의하게 낮은 HGS가 SBT 실패(−3.00 kg; 95% CI −4.64 to −1.36) 및 non-simple(difficult/prolonged) 이탈(−3.94 kg; 95% CI −5.31 to −2.58)과 연관됨.",
+        "복합 종료점에서 pooled sensitivity 72%, specificity 60%였고, 사전확률 10%·20%에서 NPV 90~95%."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41204181",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41204181/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-025-05729-5",
+          "url": "https://doi.org/10.1186/s13054-025-05729-5"
+        }
+      ],
+      "fullText": "### Background\nWeaning from mechanical ventilation is a major concern in Intensive Care Units (ICU). This process covers several steps []: spontaneous breathing trial (SBT), assessment of risk factors for extubation failure, cuff leak test and finally extubation. Considering the whole weaning process, from the SBT to the extubation, weaning can be defined as simple (successful extubation after one successful SBT), difficult (up to 3 SBT, or 7 days between first SBT and extubation), or prolonged (more than 3 SBT, or extubation more than 7 days after first SBT) [].\nDespite assessments for readiness and scheduling the extubation, from 15% [, ] to 30% [, ] of patients fail extubation. In this population of patients who fail the extubation, outcomes are very poor, with a high mortality []. Extubation failure can be defined as the need for reintubation from 24 h [] up to 7 days [, ] following the extubation, when supported with non-invasive ventilation. Extubation failure can result from a variety of causes [], including upper airway obstruction, congestive heart failure, respiratory failure, aspiration, and ineffective cough… This multifactorial nature makes it difficult to establish a clear underlying pathophysiology. Extubation failure can be classified as a “non-airway failure” or an “airway failure” []. Non-airway failure is related to the liberation from mechanical ventilation and is mostly represented by respiratory failure or congestive heart failure [, ]. Airway failure is related to the removal of the endotracheal tube and caused by an upper airway obstruction or an ineffective management of the upper airway or pulmonary secretions [, ]. About half of extubation failures would be related to an airway failure, and the other half with non-airway failure or mixed failure []. In both conditions, duration of mechanical ventilation, weak cough strength, and copious secretions were found to be associated with extubation failure []. These findings were also reported in a multivariate meta-analysis on risk factors of extubation failure [], but which found that all these outcomes were related to a late extubation failure, between 48 h and 7 days post-extubation.\nJust as the causes of extubation failure are multiple, the risk factors for these failures are also numerous, such as older age, impaired consciousness, positive fluid balance, abundant endotracheal secretions []. ICU Acquired Weakness (ICUAW) has been identified as one of these possible risk factors []. ICUAW is a muscle weakness described as “a secondary disorder while patients are treated for other life-threatening conditions” []. This affection would concern 33% of ICU patients []. The diagnosis of ICUAW is primarily clinical, with the use of a volitional manual muscle testing score involving limb muscles: the 60 points Medical Research Council-Sum Score (MRC-SS) []. Clinical diagnosis is made for a score below 48, and ICUAW is classified as severe for a score below 36 []. It was found that MRC-SS-defined ICUAW was associated with a longer duration of mechanical ventilation [, ], and also with extubation failure [, ]. A prospective observational study [] highlighted that the group of patients with extubation failure presented more limb weakness as well as a higher prevalence of weak cough. However, association between limb muscles and respiratory muscles strength appears to be moderate to weak [, –]. Diaphragm dysfunction has been shown to occur independently of limb weakness []. Although peripheral muscle weakness has emerged as a potential factor to the weaning process, its precise role has not yet been clearly defined.\nApart from MRC-SS, another diagnosis tool for ICUAW is maximal handgrip strength (HGS). Best HGS cut-off values to diagnose ICUAW would be 11 kg for men and 7 kg for women, with a sensitivity of 80% and a specificity of 83% []. Still, HGS and MRC are moderately correlated, with reported coefficients of 0.5 [], 0.55 [] and 0.65 []. HGS would have a better inter-rater reliability than MRC-SS [, ], especially concerning highest level of this scale [, , ].\nThe first aim of the study was to investigate the association between maximal HGS and extubation outcome. Secondary aims included examining the association between maximal HGS and SBT outcome, as well as weaning classifications. Our hypotheses were that a low HGS was associated with poorer weaning outcomes, through a higher incidence of extubation failure, SBT failure, and difficult or prolonged weaning.\n\n### Methods\nThis systematic review is based on the 2020 PRISMA guidelines [] and the Checklist for critical Appraisal and data extraction for systematic Reviews of prediction modeling Studies (CHARMS) []. It was registered on Prospero with the number CRD42023471055.\nEligibility of the studies for this review was constructed according to a PICO strategy adapted for prognosis study: Population, Index of prognosis, Comparison, Outcome. The population of interest was adult patients hospitalized in an ICU who required mechanical ventilation for at least 24 h. The index of prognosis was the maximal HGS of the dominant hand before extubation. The primary outcome was the extubation failure or success. Secondary outcomes were SBT failure or success, and weaning type (simple, difficult or prolonged). A comparison against another index of prognosis was out of the scope of this study. Only cohort studies of prognosis were considered for inclusion. Randomized controlled trials or any other efficacy study were excluded.\nThe MedLine, EMBase, CINAHL and Cochrane Library databases were explored in December 2023, and updated in December 2024. The following Mesh terms were used: “hand strength” and “airway extubation”. Synonyms and boolean operators have also been used, depending on the database. No time limit or filter of was used.\nSelection of the studies was conducted by two blinded reviewers (HDN, TG) within the help of the free version of rayyan.ai tool. Any disagreement was resolved by discussion, and remaining disagreements were resolved by consensus with consultation of a third reviewer (ND). According to the PRISMA flow diagram, the first step was checking and removing duplicates, followed by a first selection based on title and abstract, and a final selection based on full-text articles. Causes for the removal of full-text were reported.\nData extraction was released according to the CHARMS checklist [] regarding the description of participants, outcomes to be predicted, prognosis factors, sample size, missing data, analysis, and results. Risk of bias was assessed by two blinded reviewers (HDN, TG), using the Quality In Prognosis Study (QUIPS) tool []. Discrepancies were addressed by the third reviewer (ND).\nIn the qualitative analysis, all studies were included, regardless of their risk of bias. The synthesis was built to report the mean differences of handgrip strength (i) between extubation success and extubation failure, (ii) between SBT success and SBT failure, and (iii) between different type of weaning groups (simple, difficult and prolonged). Results of receiver operating characteristics (ROC) analysis conducted to identify the best HGS threshold to predict weaning outcome were reported.\nIn the meta-analysis, studies with an overall high risk of bias as determined by the QUIPS were excluded. In order to pool mean differences of the studies, data presented as median and interquartile range were transformed into mean and standard deviation to pool the mean differences of the studies. This was done based on the hypothesis that data were normally distributed, and according to the third method described by Wan et al. []: the mean was estimated as (Q1 + Q2 + Q3)/3 and the standard deviation as IQR/1.35. Data from difficult and prolonged weaning groups were also pooled through a weighted average to create a “non-simple” weaning group [].\nStatistical analysis was conducted using 4.3.3 version of the R software, and the “metaphor” and “mada” packages. Heterogeneity was investigated through Cochrane’s Q test and heterogeneity index I. When I was higher than 30%, a random effect model was used instead of a fixed effect model. The method used to pool the mean differences was inverse-variance in the fixed-effect model and Der Simonian and Laird for the random-effect model []. A sensitivity analysis was conducted through a leave-one-out process. The publication bias was assessed based on graphical representation of a funnel plot.\nTo assess the diagnostic accuracy of an HGS cut-off for predicting either extubation failure or non-simple weaning, we combined both outcomes into a single composite endpoint. A hierarchical summary ROC model, as described by Rutter and Gatsonis, was used for this pooled analysis []. Sensitivity and specificity extracted from the studies were standardized so that a positive test result corresponded to either extubation failure or non-simple weaning. As a sensitivity analysis, we then stratified the data and generated separate summary ROC curves for each outcome individually (one for extubation failure and one for non-simple weaning) to explore potential differences in diagnostic performance.\nCertainty of evidence was estimated for each outcome using the Grading of Recommendations Assessment, Development and Evaluation (GRADE) approach adapted for prognosis factors [].\n\n### Results\n\n### Search strategy\nFrom the database investigation, 950 records were found in December 2023. Upon actualizing the search strategy in December 2024, another article was found to meet the inclusion criteria and was added to the selection. After duplicates removal, 723 records were screened based on title and abstract, 25 articles were assessed for eligibility through the full-text, and 7 were included in the review. Reasons for exclusion were reported and presented in a flow diagram (Fig. ).\n[object Object]\n\n### Risk of bias\nRaters agreed on 78% of the QUIPS tool. After reconciliation, four studies w",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
     "docIds": {
       "2026-07": "15hUHhHzkmD35XH30nn63mzx3E-65dDSXJMNXohL3ik0",
       "2026-09": "1I2zh7dRNYVtfEuUtbaZ2o_opcm9-dX8r3JTAYSzNX78",
-      "2026-10": "1MeR13Ar_8rFfeMCl0v_XehUzYfaIpRLKJpCYyN6g8MA"
+      "2026-10": "1MeR13Ar_8rFfeMCl0v_XehUzYfaIpRLKJpCYyN6g8MA",
+      "2026-11": "1Uj1tSAix3fOZP6EUwJR0Yd23mYFhwRIUejcuImw0oXQ"
     },
     "folderIds": {
       "2026-07": "1t3xruJeH8pDo3sYl2FAvbLRM7B9_lvW3",
       "2026-09": "1OndH01JLWYAqBZulh50HKMMXnBZU8eCP",
-      "2026-10": "1UC5d98WpCecIeTKQW_0cAp7_A5URUL68"
+      "2026-10": "1UC5d98WpCecIeTKQW_0cAp7_A5URUL68",
+      "2026-11": "1d5QQhdIQD_fcpUERtgYqzTqFZdah8Iub"
     },
     "pdfFiles": {},
     "fulltextDocIds": {
       "2026-07": "1t1XkK4D9G7VQUX-BwQ_68sTvQsMvuDyxrdoBM-lD3VE",
       "2026-09": "1tPdqviRXL5SH83howmNt2OvEdvMGSm-P5vVvdv2tDB4",
-      "2026-10": "1V6e_VvogNzWUA5LQXIzjBoWcewRhwig51L3kT-LgP_0"
+      "2026-10": "1V6e_VvogNzWUA5LQXIzjBoWcewRhwig51L3kT-LgP_0",
+      "2026-11": "14t-2pYUbJlOOczWEFHrX_WqDYL3Ee4WbHiqduvjeZ-o"
     },
     "fulltextDone": {
       "2026-07": [
@@ -4571,12 +4621,16 @@
         "42153811",
         "42149248",
         "41787551"
+      ],
+      "2026-11": [
+        "41204181"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
-      "2026-10": 297559
+      "2026-10": 297559,
+      "2026-11": 10358
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
