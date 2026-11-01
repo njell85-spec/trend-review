@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41204181",
-      "title": "Handgrip strength association with weaning outcome in mechanically ventilated ICU patients: a systematic review and meta-analysis.",
-      "journal": "Critical care (London, England)",
-      "score": 8.2,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.1792,
-        "cooldownPenalty": -1,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42584185",
       "title": "Epidemiology, Ventilatory Patterns, and Outcomes in Acute Hypoxemic Respiratory Failure Among ICU Patients Requiring Respiratory Support: A Registry-Based Cohort Study.",
       "journal": "Critical care medicine",
@@ -473,6 +458,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-10-31"
+    },
+    {
+      "pmid": "41204181",
+      "title": "Handgrip strength association with weaning outcome in mechanically ventilated ICU patients: a systematic review and meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.1792,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-11-01"
     }
   ],
   "rejected": [
@@ -488,9 +489,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-10-31",
+    "date": "2026-11-01",
     "outcome": "published",
-    "publishedId": "41787551"
+    "publishedId": "41204181"
   },
-  "updatedAt": "2026-10-31"
+  "updatedAt": "2026-11-01"
 }
