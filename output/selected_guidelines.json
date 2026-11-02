@@ -36970,73 +36970,6 @@
       "lineageReason": "no-matching-lineage"
     },
     {
-      "id": "pmid:41949229",
-      "pmid": "41949229",
-      "title": "A Field in Transition: Catheter-Based Therapy in the 2026 AHA/ACC Acute Pulmonary Embolism Guideline.",
-      "pubDate": "2026 Apr 7",
-      "journal": "Journal of the American College of Cardiology",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:05.138Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [
-        "catheter-directed lysis",
-        "mechanical thrombectomy",
-        "pulmonary embolism",
-        "thrombolysis"
-      ],
-      "doi": "10.1016/j.jacc.2026.01.018",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "aha"
-      },
-      "priority": 10,
-      "breakdown": {
-        "authority": 4,
-        "topic": 2,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:19.239Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "PE 지침 카테터치료 파트, 응급 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|field-transition-catheter-based-therapy-acc-acute-pulmonary-embolism",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:41933833",
       "pmid": "41933833",
       "title": "Executive summary of the consensus document for recommendations on the diagnosis of venous thromboembolism in pregnancy. Recommendations from the Spanish Society of Internal Medicine, the Spanish Society of Medical Radiology, the Spanish Society of Vascular Interventional Radiology, and the Spanish Society of Gynecology and Obstetrics 2025.",
@@ -43349,10 +43282,11 @@
       "id": "pmid:42586421",
       "pmid": "42586421",
       "title": "Executive summary of the consensus document for recommendations on the treatment of venous thromboembolism in pregnancy: consensus document from the Spanish Society of Internal Medicine, the Spanish Society of Medical Radiology, the Spanish Society of Vascular Interventional Radiology and the Spanish Society of Gynecology and Obstetrics 2026.",
-      "pubDate": "2026 Aug 12",
+      "pubDate": "2026 Nov",
       "journal": "Revista clinica espanola",
       "publicationTypes": [
         "Journal Article",
+        "Consensus Statement",
         "Practice Guideline"
       ],
       "discoveredBy": [
@@ -43360,7 +43294,17 @@
       ],
       "discoveredAt": "2026-08-17T04:41:03.449Z",
       "abstract": "INTRODUCTION: Low-molecular-weight heparin is the anticoagulant treatment of choice for managing venous thromboembolism (VTE) during pregnancy and lactation. Vitamin K antagonists are contraindicated between weeks 6-12 of gestation due to their association with a specific embryopathy, and during the third trimester due to the risk of bleeding. Direct oral anticoagulants are contraindicated during pregnancy and breastfeeding because of the risk of prenatal malformations. Reperfusion techniques, such as systemic thrombolysis or mechanical thrombectomy, are reserved for cases of pulmonary embolism with hemodynamic instability.\nMETHODS AND RESULTS: This consensus document, developed by the Spanish Societies of Internal Medicine, Medical Radiology, Vascular and Interventional Radiology, and Gynecology and Obstetrics, provides a comprehensive review of the most recent evidence on the treatment of VTE in pregnant patients and updates current recommendations.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Female",
+        "Pregnancy",
+        "Venous Thromboembolism",
+        "Pregnancy Complications, Cardiovascular",
+        "Anticoagulants",
+        "Spain",
+        "Societies, Medical",
+        "Heparin, Low-Molecular-Weight"
+      ],
       "keywords": [
         "Deep venous thrombosis",
         "Embarazo",
@@ -43407,7 +43351,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-09-10T23:24:42.925Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -45016,7 +44960,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -46069,7 +46013,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46268,7 +46212,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46715,7 +46659,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -46861,7 +46805,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -46996,7 +46940,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47071,7 +47015,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47135,7 +47079,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47205,7 +47149,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47273,7 +47217,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47336,7 +47280,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47401,7 +47345,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47464,7 +47408,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47526,7 +47470,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47584,7 +47528,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47653,7 +47597,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47723,7 +47667,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47803,7 +47747,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47871,7 +47815,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47933,7 +47877,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48003,7 +47947,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48012,7 +47956,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -48094,7 +48038,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48193,7 +48137,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48294,7 +48238,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48375,7 +48319,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-01T00:18:32.941Z",
+      "lastSeenAt": "2026-11-02T00:58:52.693Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -61148,6 +61092,165 @@
         ]
       },
       "publishedAt": "2026-11-01"
+    },
+    {
+      "id": "pmid:41949229",
+      "pmid": "41949229",
+      "title": "A Field in Transition: Catheter-Based Therapy in the 2026 AHA/ACC Acute Pulmonary Embolism Guideline.",
+      "pubDate": "2026 Apr 7",
+      "journal": "Journal of the American College of Cardiology",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:05.138Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "catheter-directed lysis",
+        "mechanical thrombectomy",
+        "pulmonary embolism",
+        "thrombolysis"
+      ],
+      "doi": "10.1016/j.jacc.2026.01.018",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:19.239Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "PE 지침 카테터치료 파트, 응급 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|field-transition-catheter-based-therapy-acc-acute-pulmonary-embolism",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41949229",
+          "title": "A Field in Transition: Catheter-Based Therapy in the 2026 AHA/ACC Acute Pulmonary Embolism Guideline.",
+          "journal": "Journal of the American College of Cardiology",
+          "pubDate": "2026 Apr 7",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41949229/",
+          "doi": "10.1016/j.jacc.2026.01.018"
+        },
+        "org": "AHA/ACC",
+        "version": "2026",
+        "title_ko": "변화의 과도기: 2026 AHA/ACC 급성 폐색전증 가이드라인에서의 카테터 기반 치료 (JACC 논평/사설)",
+        "scope_ko": "성인 급성 폐색전증(PE)을 대상으로 한 최초의 AHA/ACC 단독 임상진료지침에 대한 JACC 논평으로, 특히 카테터 기반 재관류 치료(카테터-유도 혈전용해 CDT/CDL, 기계적 혈전제거술 MT)의 역할을 다룬다. 기존 '대량(massive)/준대량(submassive)' 분류를 대체한 새 임상 범주(A–E)에 따라 어느 환자군에서 진보된 치료가 타당한지를 논평·평가한다.",
+        "summary": [
+          "The 2026 AHA/ACC guideline replaces the old 'massive/submassive/low-risk' scheme with a five-tier clinical category system (A–E): A = incidental/asymptomatic; B = symptomatic, low severity; C = symptomatic with elevated severity (C1–C3 by RV dysfunction/biomarkers); D = incipient cardiopulmonary failure (normotensive/pre-shock); E = active cardiopulmonary failure (E1 = cardiogenic shock ≈ SCAI C; E2 = refractory shock/arrest, SCAI D–E).",
+          "For Category E1 PE, catheter-directed thrombolysis (CDT) plus anticoagulation is reasonable to prevent clinical deterioration and early mortality (Class 2a), and mechanical thrombectomy (MT) is reasonable versus anticoagulation alone (Class 2a) — the first North American guideline to give systemic thrombolysis, CDT, and MT a Class 2a recommendation in Category E.",
+          "For Category D1–D2 (incipient failure), advanced reperfusion — systemic thrombolysis, CDT, MT, and surgical embolectomy — may be considered in selected patients with progressive deterioration (Class 2b, benefit uncertain).",
+          "For Category C (including C3), the benefit of reperfusion is unclear (Class 2b); catheter-based therapy should be restricted to patients with clinical progression and decided through a multidisciplinary Pulmonary Embolism Response Team (PERT).",
+          "Systemic thrombolysis is considered harmful in lower-severity disease (Categories A–C2) (Class 3: Harm).",
+          "Quantification of thrombus burden (anatomic clot load) should NOT be used for risk stratification in Categories A–C (Class 3: No Benefit) — hemodynamic/physiologic impact, not clot anatomy, drives treatment.",
+          "The editorial's core appraisal: catheter-based tools reliably improve acute hemodynamics and imaging endpoints but lack definitive evidence that they improve patient-centered outcomes (survival); the recommendations validate advanced therapies in the sickest patients while demanding better evidence (e.g., ongoing HI-PEITHO) before widespread adoption in more stable cohorts."
+        ],
+        "summary_ko": [
+          "2026 AHA/ACC 가이드라인은 기존 '대량/준대량/저위험' 체계를 5단계 임상 범주(A–E)로 대체한다: A=우연 발견/무증상, B=증상 있으나 중증도 낮음, C=증상+중증도 상승(RV 기능이상/바이오마커로 C1–C3), D=임박한 심폐부전(정상혈압/쇼크 전 단계), E=진행 중 심폐부전(E1=심인성 쇼크 ≈ SCAI C, E2=불응성 쇼크/심정지, SCAI D–E).",
+          "Category E1 PE에서 CDT+항응고는 임상 악화·조기 사망 예방을 위해 타당(Class 2a)하고, MT는 항응고 단독 대비 타당(Class 2a)하다 — 북미 가이드라인 중 최초로 전신 혈전용해·CDT·MT에 Category E에서 Class 2a를 부여.",
+          "Category D1–D2(임박한 부전)에서는 진행성 악화가 있는 선별 환자에서 전신 혈전용해·CDT·MT·외과적 색전제거술을 고려할 수 있다(Class 2b, 이익 불확실).",
+          "Category C(C3 포함)에서 재관류의 이익은 불확실(Class 2b)하며, 카테터 기반 치료는 임상 진행이 있는 환자에 한정하고 다학제 PERT를 통해 결정해야 한다.",
+          "전신 혈전용해는 저중증도(Category A–C2)에서 해롭다고 본다(Class 3: Harm).",
+          "혈전 부하량(해부학적 혈전량)의 정량화는 Category A–C의 위험 분류에 사용하면 안 된다(Class 3: No Benefit) — 해부학적 혈전량이 아니라 혈역학적/생리학적 영향이 치료를 결정한다.",
+          "사설의 핵심 평가: 카테터 기반 도구는 급성 혈역학·영상 지표를 확실히 개선하지만 생존 등 환자 중심 결과를 개선한다는 확정적 근거는 부족하다. 권고는 가장 중증인 환자에서 진보된 치료를 승인하면서도, 더 안정적인 환자군으로의 광범위한 확대 전에는 더 나은 근거(진행 중인 HI-PEITHO 등)를 요구한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "분류 체계 전면 개편",
+            "detail": "The imprecise three-level 'low-risk / submassive / massive' terminology was abandoned and replaced by a five-tier clinical category system (A–E), with subgrades (C1–C3, D1–D2, E1–E2) and an optional respiratory modifier (R) for hypoxia/escalating O2. Rationale: 'submassive' lumped together very different patients (e.g., a stable patient with borderline troponin vs. one deteriorating toward shock), so severity is now graded by physiology (symptoms, biomarkers, RV function, hemodynamics) rather than clot size.",
+            "detail_ko": "부정확한 3단계 '저위험/준대량/대량' 용어를 폐기하고 5단계 임상 범주(A–E)와 하위등급(C1–C3, D1–D2, E1–E2), 저산소/산소요구 증가에 대한 선택적 호흡 수식어(R)로 대체했다. 이유: '준대량'이 매우 다른 환자(경계역 troponin의 안정 환자 vs 쇼크로 악화 중인 환자)를 한데 묶었기 때문에, 이제 혈전 크기가 아니라 생리(증상·바이오마커·RV 기능·혈역학)로 중증도를 등급화한다."
+          },
+          {
+            "topic": "전신 혈전용해의 우위 상실",
+            "detail": "Previously systemic thrombolysis held primacy as the default reperfusion therapy. The 2026 guideline states that available evidence and clinical experience no longer support that primacy and places catheter-based therapies (CDT and MT) at an EQUIVALENT recommendation level — both CDT and MT are Class 2a alongside systemic thrombolysis in Category E1. PEERLESS data showed no significant mortality difference between catheter-directed lysis and mechanical thrombectomy.",
+            "detail_ko": "이전에는 전신 혈전용해가 기본 재관류 치료로 우위를 점했다. 2026 가이드라인은 근거와 임상 경험이 더 이상 그 우위를 지지하지 않는다고 명시하고, 카테터 기반 치료(CDT·MT)를 동등한 권고 수준에 둔다 — Category E1에서 CDT와 MT 모두 전신 혈전용해와 나란히 Class 2a. PEERLESS 자료에서 CDL과 MT 간 사망률 차이는 유의하지 않았다."
+          },
+          {
+            "topic": "Category E에서 진보 치료 Class 2a 신설",
+            "detail": "For the first time in a North American guideline, systemic thrombolysis, CDT, and MT receive a Class 2a ('reasonable') recommendation in Category E (persistent hemodynamic failure / cardiogenic shock, E1). In the most extreme Category E2 (refractory shock/arrest), prognosis is poor regardless of therapy; systemic thrombolysis is reasonable and surgical embolectomy is not recommended over alternatives such as VA-ECMO.",
+            "detail_ko": "북미 가이드라인 최초로 Category E(지속적 혈역학 부전/심인성 쇼크, E1)에서 전신 혈전용해·CDT·MT에 Class 2a('타당함')를 부여했다. 가장 극단적인 Category E2(불응성 쇼크/심정지)는 치료와 무관하게 예후가 불량하며, 전신 혈전용해는 타당하고 외과적 색전제거술을 VA-ECMO 등 대안보다 우선 권고하지 않는다."
+          },
+          {
+            "topic": "카테터 치료의 적응 범위 확대(단, 조건부)",
+            "detail": "The guideline expands structured, earlier consideration of catheter-based reperfusion into the intermediate-to-deteriorating range (Categories C3 and D1–D2, as Class 2b 'may be considered') for patients at increased risk of clinical deterioration — more proactive than the 2019 ESC/ERS approach, which largely reserved intervention for high-risk PE or overt deterioration. Use outside Category E is explicitly gated on clinical progression and PERT decision-making.",
+            "detail_ko": "가이드라인은 임상 악화 위험이 높은 환자에서 중간~악화 구간(Category C3, D1–D2에 Class 2b '고려 가능')으로 카테터 기반 재관류의 구조적·조기 고려를 확대한다 — 개입을 주로 고위험 PE나 명백한 악화에 국한했던 2019 ESC/ERS보다 적극적이다. 단, Category E 이외의 사용은 임상 진행과 PERT 결정을 명시적 전제로 한다."
+          },
+          {
+            "topic": "혈전 부하 정량화의 위험분류 금지",
+            "detail": "New Class 3 (No Benefit) statement: quantification of anatomic thrombus burden should not be used for risk stratification in Categories A–C. This shifts decision-making away from clot size/location toward physiologic/hemodynamic impact.",
+            "detail_ko": "신설 Class 3(No Benefit): Category A–C에서 해부학적 혈전 부하량의 정량화를 위험 분류에 사용해서는 안 된다. 의사결정의 축을 혈전 크기/위치에서 생리학적·혈역학적 영향으로 이동시킨다."
+          },
+          {
+            "topic": "PERT 다학제 평가 Class 1",
+            "detail": "New Class 1 recommendation for multidisciplinary Pulmonary Embolism Response Team (PERT) assessment for higher-severity patients (Categories C–E), formalizing team-based decision-making before advanced/catheter therapies.",
+            "detail_ko": "고중증도 환자(Category C–E)에 대해 다학제 폐색전증 대응팀(PERT) 평가를 Class 1로 신설하여, 진보·카테터 치료 전 팀 기반 의사결정을 공식화했다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "ACC 공식 스포트라이트 — 분류 체계와 결과 동향에 대한 동반 논평",
+            "body_ko": "ACC의 JACC 스포트라이트 소개 기사는 Piazza·Cushman의 동반 논평을 인용해 새 임상 범주(A–E)를 '차세대 임상의·연구자·환자를 위한 다재다능한 도구'로 평가한다. 또한 고위험 PE에서 출혈 결과가 시간이 지나며 개선된 것은 전신 혈전용해 감소와 카테터-유도 접근 증가 때문으로 보이나, 사망률은 안정적으로 유지되어 치료받은 환자 상당수가 실제로는 고위험 합병증에 직면하지 않았을 가능성을 시사한다고 전한다. 급성기 이후 회복·재활·심리 지원 등 장기 관리의 중요성도 강조한다.",
+            "sourceLabel": "American College of Cardiology — JACC Spotlight 기사",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/articles/2026/04/08/13/51/jacc-spotlight-issue-highlights-new-2026-acute-pe-guideline"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, EM/CCM clinicians should re-grade PE by the A–E categories (physiology/biomarkers/RV, not clot size) rather than the old massive/submassive language, and reserve catheter-directed therapy or mechanical thrombectomy as Class 2a options primarily for Category E1 (cardiogenic shock), while treating their use in Category C3–D as a conditional, PERT-gated decision tied to active deterioration. Systemic thrombolysis should NOT be given in low-severity disease (A–C2, Class 3 Harm), and anatomic clot burden should not by itself trigger escalation. Activate the PERT (now Class 1) for any Category C–E patient before committing to advanced therapy, and counsel that catheter tools improve hemodynamics/imaging but lack proven survival benefit in stable patients pending trials like HI-PEITHO.",
+        "practiceImpact_ko": "병상에서 EM/CCM 임상의는 PE를 기존 대량/준대량 용어가 아니라 A–E 범주(혈전 크기가 아닌 생리·바이오마커·RV)로 재등급화하고, 카테터-유도 치료나 기계적 혈전제거술은 주로 Category E1(심인성 쇼크)에서 Class 2a 옵션으로 두되, Category C3–D에서의 사용은 활발한 악화에 연동된 조건부·PERT 결정으로 다뤄야 한다. 전신 혈전용해는 저중증도(A–C2, Class 3 Harm)에서는 주지 말아야 하며, 해부학적 혈전 부하 자체가 단독으로 치료 상향의 방아쇠가 되어서는 안 된다. Category C–E 환자는 진보 치료 결정 전 PERT(이제 Class 1)를 가동하고, 카테터 도구가 혈역학·영상은 개선하나 안정 환자에서 생존 이익은 아직 입증되지 않았음을(HI-PEITHO 등 시험 대기) 설명한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41949229",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41949229/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.jacc.2026.01.018",
+            "url": "https://doi.org/10.1016/j.jacc.2026.01.018"
+          },
+          {
+            "label": "웹 — American College of Cardiology — JACC Spotlight: New 2026 Acute PE Guideline",
+            "url": "https://www.acc.org/latest-in-cardiology/articles/2026/04/08/13/51/jacc-spotlight-issue-highlights-new-2026-acute-pe-guideline"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-02"
     }
   ],
   "rejected": [
@@ -65322,7 +65425,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -66132,7 +66235,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -66587,7 +66690,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -66658,7 +66761,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -66686,7 +66789,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -66713,7 +66816,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -66750,7 +66853,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -66777,7 +66880,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-01T00:18:25.618Z",
+      "discoveredAt": "2026-11-02T00:58:43.670Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -66850,9 +66953,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261101_091716:guideline:2026-11-01",
+    "runId": "trend_review_20261102_095733:guideline:2026-11-02",
     "outcome": "published",
-    "publishedId": "pmid:42937164",
+    "publishedId": "pmid:41949229",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -66877,15 +66980,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 103,
+        "mergedTotal": 106,
         "overlapCount": 0,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 2,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 9",
         "window": {
-          "minDate": "2026/10/02",
-          "maxDate": "2026/11/01"
+          "minDate": "2026/10/03",
+          "maxDate": "2026/11/02"
         },
         "retmax": 60,
         "topics": [
@@ -66893,8 +66996,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 47,
-            "idsFetched": 47,
+            "totalFound": 49,
+            "idsFetched": 49,
             "truncated": false,
             "error": null
           },
@@ -66920,8 +67023,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 9,
-            "idsFetched": 9,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           },
@@ -66929,8 +67032,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 17,
-            "idsFetched": 17,
+            "totalFound": 16,
+            "idsFetched": 16,
             "truncated": false,
             "error": null
           },
@@ -66989,7 +67092,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 99,
+        "topicOnlyCount": 102,
         "ptPmids": [
           "42837684",
           "42665231"
@@ -66997,9 +67100,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 103,
-          "enriched": 103,
-          "withAbstract": 75,
+          "requested": 106,
+          "enriched": 106,
+          "withAbstract": 79,
           "error": null
         }
       },
@@ -67052,10 +67155,8 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 6,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "scopeExclusions": [
         {
@@ -67083,6 +67184,13 @@
           "stage": "region",
           "pmid": "42469072",
           "title": "Brain Death Determination During VA-ECMO After Pediatric Cardiac Surgery: A Case-Based Analysis of the 2023 Unified Consensus.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42965135",
+          "title": "Barriers and Enablers to Guideline-Directed Prescribing for Heart Failure with Reduced Ejection Fraction: A Multi-Stakeholder Qualitative Study.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -67389,6 +67497,20 @@
         },
         {
           "stage": "region",
+          "pmid": "42683687",
+          "title": "Recommendations for COVID-19 Vaccines in Infants, Children, and Adolescents, 2026-2027: Technical Report.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42683684",
+          "title": "Recommendations for COVID-19 Vaccines in Infants, Children, and Adolescents, 2026-2027: Policy Statement.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42175918",
           "title": "CAR/BRC Recommendations for Management of Axillary Lymphadenopathy Following COVID-19 Vaccination.",
           "region": null,
@@ -67419,13 +67541,6 @@
           "stage": "region",
           "pmid": "42758512",
           "title": "Updated Stroke Guideline Emphasizes Early, Holistic Intervention.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42742010",
-          "title": "[Clinical practice guideline for initial monotherapy of newly diagnosed childhood epilepsy (2026)].",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -67513,18 +67628,18 @@
       ],
       "decisions": {
         "queued": 202,
-        "needsReview": 465,
+        "needsReview": 464,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42937164",
+        "candidateId": "pmid:41949229",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-01T00:21:46.408Z",
+  "updatedAt": "2026-11-02T01:01:49.107Z",
   "configVersion": "guideline-v2"
 }

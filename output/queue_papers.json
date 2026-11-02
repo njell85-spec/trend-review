@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42584185",
-      "title": "Epidemiology, Ventilatory Patterns, and Outcomes in Acute Hypoxemic Respiratory Failure Among ICU Patients Requiring Respiratory Support: A Registry-Based Cohort Study.",
-      "journal": "Critical care medicine",
-      "score": 8.2,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.1592,
-        "cooldownPenalty": -1,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42267821",
       "title": "Carbocisteine or Hypertonic Saline for Acute Respiratory Failure.",
       "journal": "The New England journal of medicine",
@@ -474,6 +459,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-11-01"
+    },
+    {
+      "pmid": "42584185",
+      "title": "Epidemiology, Ventilatory Patterns, and Outcomes in Acute Hypoxemic Respiratory Failure Among ICU Patients Requiring Respiratory Support: A Registry-Based Cohort Study.",
+      "journal": "Critical care medicine",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.1592,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-11-02"
     }
   ],
   "rejected": [
@@ -489,9 +490,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-01",
+    "date": "2026-11-02",
     "outcome": "published",
-    "publishedId": "41204181"
+    "publishedId": "42584185"
   },
-  "updatedAt": "2026-11-01"
+  "updatedAt": "2026-11-02"
 }

@@ -3,23 +3,6 @@
   "track": "reviews",
   "queue": [
     {
-      "pmid": "41319669",
-      "title": "Heart failure with reduced ejection fraction.",
-      "journal": "Lancet",
-      "score": 8.8,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "HFrEF 종설, 응급·중환자서 흔함",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "41794418",
       "title": "Atrial fibrillation.",
       "journal": "Lancet",
@@ -13693,6 +13676,137 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "41319669",
+      "title": "Heart failure with reduced ejection fraction.",
+      "journal": "Lancet",
+      "score": 8.8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "HFrEF 종설, 응급·중환자서 흔함",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-02",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "41319669",
+          "title": "Heart failure with reduced ejection fraction.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2025-12-1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41319669/",
+          "doi": "10.1016/S0140-6736(25)01851-3"
+        },
+        "title_ko": "박출률 감소 심부전(Heart failure with reduced ejection fraction, HFrEF)",
+        "scope_ko": "이 Lancet Seminar는 박출률 감소 심부전(HFrEF)의 현행 진단과 약물학적 관리를 개관하면서, 지금까지의 진전과 아직 남아 있는 과제를 함께 짚는 종설입니다. 본 번역에서 '본문(article)'으로 표시한 절은 확보 가능한 초록에 근거하며, 저널 전문은 유료 장벽으로 접근할 수 없었습니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "심부전이라는 임상 증후군과 역학",
+            "body_ko": "심부전은 전 세계적으로 약 7천만 명에게 영향을 미치는 복합적인 임상 증후군입니다. 유병률은 유럽과 북미에서 2%, 아시아와 남미에서는 약 1%로 보고됩니다.\n\n(주: 이 절은 이 논문 초록이 명시한 범위만 옮긴 것입니다. 저자가 든 수치를 그대로 살렸습니다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단의 기본 요건",
+            "body_ko": "정확한 진단은 세 가지에 의존합니다. 첫째, 전형적인 징후와 증상의 존재, 둘째, 상승한 나트륨이뇨펩타이드(natriuretic peptide) 농도, 셋째, 심장 영상 기법으로 확인한 심장의 구조적 또는 기능적 이상입니다. 이 세 축이 함께 갖추어질 때 심부전 진단이 성립한다는 것이 초록이 제시한 틀입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "HFrEF의 위치 — 전체 심부전의 약 절반",
+            "body_ko": "전체 심부전 사례의 약 절반은 좌심실 수축기능 저하에 기인하며, 이를 박출률 감소 심부전(HFrEF)으로 분류합니다. 즉 HFrEF는 심부전이라는 큰 범주 안에서 수축기능 저하라는 기전으로 묶이는 하위 집단입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "현행 가이드라인 기반 약물요법(GDMT)",
+            "body_ko": "현행 가이드라인 기반 약물요법(guideline-directed medical therapy, GDMT)은 HFrEF 환자의 생존과 삶의 질을 뚜렷하게 개선해 왔습니다.\n\n현대적 관리의 핵심은 네 가지 기초 약물 계열(four foundational drug classes)을 조기에 시작하고 빠르게 증량(early initiation and rapid uptitration)하는 데 있습니다. 네 계열은 ① 레닌-안지오텐신계 억제제(renin-angiotensin system inhibitors) 또는 안지오텐신 수용체-네프릴라이신 억제제(angiotensin receptor-neprilysin inhibitors, ARNI), ② β 차단제, ③ 미네랄코르티코이드 수용체 길항제(mineralocorticoid receptor antagonists, MRA), ④ 나트륨-포도당 공동수송체 2 억제제(sodium-glucose cotransporter 2 inhibitors, SGLT2 inhibitors)입니다. 여기에 더해, 용적 과부하(volume overload)에 따른 증상 완화를 위해 이뇨제(diuretics)를 병용합니다. 저자는 이뇨제의 역할을 '증상 완화'로 한정해 기술합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진전에도 남아 있는 과제 — 구현과 순응도",
+            "body_ko": "관리의 발전에도 불구하고 심부전은 여전히 심혈관계 이환과 사망의 주요 원인입니다. 저자는 그 원인의 일부가 치료의 '구현 부족(absence of implementation)'과 약물에 대한 '불량한 순응도(poor adherence)'에 있다고 지적합니다. 즉, 효과가 입증된 약제가 있음에도 그것이 실제 환자에게 충분히 적용되지 못하고 유지되지 못하는 간극이 남은 부담의 상당 부분을 설명한다는 것입니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "앞으로의 방향",
+            "body_ko": "예후를 더 개선하기 위한 향후 방향으로 저자는 다음을 제시합니다. 맞춤의학(personalised medicine) 접근의 통합, 다중오믹스 프로파일링(multiomic profiling), 그리고 잔여 위험(residual risk)을 다루고 새로운 치료 표적을 찾기 위한 혁신적 임상시험 설계(innovative clinical trial designs)입니다. 이 종설 자체의 목적은 HFrEF 환자의 현행 진단과 약물학적 관리를 개관하고, 이룬 진전과 남은 과제를 함께 제시하는 데 있다고 밝힙니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] LVEF 역치에 따른 분류와 진단 기준",
+            "body_ko": "이 논문 본문을 유료 장벽으로 확보하지 못해, 동일 주제의 권위 있는 2차 출처로 진단 역치를 보강합니다.\n\n유럽심장학회(ESC) 심부전 가이드라인 요점에 따르면 좌심실 박출률(LVEF)에 따른 분류는 다음과 같습니다. HFrEF는 LVEF ≤40%, 경도 감소 심부전(HFmrEF)은 LVEF 41–49%, 박출률 보존 심부전(HFpEF)은 LVEF ≥50%입니다. 초기 진단 평가에는 나트륨이뇨펩타이드(BNP/NT-proBNP) 측정이 포함됩니다. 다만 ESC 요점 문서 자체는 구체적 진단 역치 수치를 제시하지 않으며, 나트륨이뇨펩타이드 상승은 주요 임상시험에서 등록 기준(예: 동율동에서 ≥300 pg/mL, 심방세동에서 ≥600 pg/mL)으로 사용되었다는 점이 2023 ESC 포커스 업데이트 논의에서 언급됩니다.\n— 보강 출처: ACC — 2021 ESC Guidelines for Acute and Chronic Heart Failure: Key Points (https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2021/08/29/18/05/2021-esc-guidelines-for-hf-esc-2021)",
+            "origin": "augmented",
+            "sourceLabel": "ACC — 2021 ESC Guidelines for Acute and Chronic Heart Failure: Key Points",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2021/08/29/18/05/2021-esc-guidelines-for-hf-esc-2021"
+          },
+          {
+            "heading_ko": "[웹 보강] 네 기둥 약물요법 — 용량과 개시 전략",
+            "body_ko": "이 논문 본문을 확보하지 못해, '네 기둥(four pillars)' 약물요법의 구체적 내용을 2차 출처로 보강합니다. 아래 내용은 이 Lancet 논문이 아니라 인용한 출처에서 온 것입니다.\n\nARNI, 근거 기반 β 차단제, MRA, SGLT2 억제제의 네 계열이 HFrEF의 표준 기초 치료를 구성합니다. 전통적인 순차적(sequential) 도입 대신, 진단 후 수 주 이내에 네 계열을 '병렬로' 함께 시작하자는 접근이 권고됩니다. 한 종설은 '저용량 ARNI와 SGLT2i를 동시에 시작'한 뒤 증량할 수 있다고 기술합니다.\n\n표준 가이드라인 목표 용량(ESC 가이드라인 기준)의 예: ARNI 사쿠비트릴/발사르탄 24/26 mg 1일 2회 → 목표 97/103 mg 1일 2회; 비소프롤롤 1.25 → 10 mg/일, 카르베딜롤 3.125 mg 1일 2회 → 25 mg 1일 2회, 네비볼롤 1.25 → 10 mg/일; 스피로노락톤 25 → 50 mg/일, 에플레레논 25 → 50 mg/일; SGLT2i(다파글리플로진·엠파글리플로진)는 증량 없이 단일 고정 용량.\n\n근거 측면에서 ARNI는 ACEi 대비 전체 사망에 대해 HR 0.84(95% CI 0.76–0.93)를, SGLT2 억제제(다파글리플로진·엠파글리플로진)는 심혈관 사망 또는 심부전 악화라는 일차 종말점에서 약 25%의 위험 감소를 보였습니다. 별도의 가정의학 임상 요약(AFP)은 GDMT를 진단 후 6–12주 이내에 목표 용량까지 증량할 것을 권고하며, 이뇨제는 사망률 감소가 아닌 증상 관리 목적임을 명시합니다. 디곡신, 하이드랄라진/이소소르바이드 다이나이트레이트, 이바브라딘, 베리시구앗(vericiguat)은 특정 환자군을 위한 이차 요법으로 기술됩니다.\n— 보강 출처: PMC — Four pillars of heart failure (contemporary pharmacological therapy for HFrEF) / AAFP — HFrEF Medical Management (https://pmc.ncbi.nlm.nih.gov/articles/PMC7929859/)",
+            "origin": "augmented",
+            "sourceLabel": "PMC — Four pillars of heart failure (contemporary pharmacological therapy for HFrEF) / AAFP — HFrEF Medical Management",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7929859/"
+          },
+          {
+            "heading_ko": "[웹 보강] 기기 치료(ICD·CRT)",
+            "body_ko": "이 논문 본문을 확보하지 못해 기기 치료 적응증을 ESC 가이드라인 요점으로 보강합니다.\n\n일차 예방 목적의 삽입형 제세동기(ICD)는 LVEF ≤35%인 증상성 허혈성 또는 비허혈성 심근병증에서 고려되며, 3개월 이상의 GDMT 이후, 기대 여명 1년 초과, 그리고 심근경색 후 40일 이내에는 권고되지 않는다는 조건이 붙습니다. 심장재동기화치료(CRT)는 동율동에서 LVEF <35%이고 좌각차단(LBBB)이며 QRS가 150 msec을 초과하는 경우, 또는 심박동기가 필요한 고도 방실차단에서 적응이 됩니다.\n— 보강 출처: ACC — 2021 ESC Guidelines for Acute and Chronic Heart Failure: Key Points (https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2021/08/29/18/05/2021-esc-guidelines-for-hf-esc-2021)",
+            "origin": "augmented",
+            "sourceLabel": "ACC — 2021 ESC Guidelines for Acute and Chronic Heart Failure: Key Points",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2021/08/29/18/05/2021-esc-guidelines-for-hf-esc-2021"
+          },
+          {
+            "heading_ko": "[웹 보강] 실제 임상에서의 구현 장벽 — 저혈압에 대한 과도한 경계",
+            "body_ko": "초록이 지적한 '구현 부족·순응도' 문제와 맞닿는 최신 논의를 Lancet의 'What's new in heart failure? September 2025' 에디토리얼로 보강합니다. 이 내용은 이 논문이 아니라 해당 에디토리얼에서 온 것입니다.\n\n저혈압은 GDMT 구현을 막는 가장 흔히 인식되는 임상적 장벽이지만, 실제로 수축기 혈압 <90 mmHg인 경우는 실세계 코호트에서 1.8%에 불과할 만큼 드뭅니다. 8개 주요 임상시험 참가자 28,406명을 통합 분석한 결과, HFrEF에서 낮은 수축기 혈압(<120 mmHg)은 심혈관 사망과 심부전 입원 증가와 일관되게 연관되었으나(HR 1.71, 95% CI 1.60–1.82), 높은 수축기 혈압(>140 mmHg)은 더 나쁜 예후와 연관되지 않았습니다. 또한 '낮은 혈압은 환자가 최적 용량의 심부전 약제를 복용 중일 때 덜 해롭다'는 점이 강조됩니다 — 즉 낮은 혈압 그 자체만으로 증량을 중단해서는 안 된다는 것입니다.\n— 보강 출처: Lancet — What's new in heart failure? September 2025 (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12502451/)",
+            "origin": "augmented",
+            "sourceLabel": "Lancet — What's new in heart failure? September 2025 (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12502451/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "6703a8a151056b6c723e182126793478e51a55daa2f20c6382d6a337dac832ee",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-02T01:07:08.988Z",
+          "resultFingerprint": "2d1d25be0dca8ae5667d5983bf04d3b732447e1b2a6e764d1afebf5df89e30fa",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "초록 범위 안에서, 침상의 핵심 메시지는 네 가지 기초 약물 계열(RAS 억제제/ARNI, β 차단제, MRA, SGLT2 억제제)을 '조기에 시작하고 빠르게 증량'하는 것이며, 이뇨제는 용적 과부하 증상 완화 목적으로 병용한다는 점입니다. 효과가 입증된 치료가 실제로는 구현 부족과 순응도 저하로 충분히 적용되지 못하는 간극이 여전히 남은 부담의 상당 부분을 설명하므로, 응급·중환자 현장에서도 GDMT의 개시·유지·증량을 적극적으로 보장하는 것이 환자 예후에 직결됩니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41319669",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41319669/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(25)01851-3",
+            "url": "https://doi.org/10.1016/S0140-6736(25)01851-3"
+          },
+          {
+            "label": "웹 — ACC — 2021 ESC Guidelines for Acute and Chronic Heart Failure: Key Points",
+            "url": "https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2021/08/29/18/05/2021-esc-guidelines-for-hf-esc-2021"
+          },
+          {
+            "label": "웹 — Lancet — What's new in heart failure? September 2025 (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12502451/"
+          },
+          {
+            "label": "웹 — PMC — Four pillars of heart failure: contemporary pharmacological therapy for HFrEF",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7929859/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -13750,9 +13864,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-01",
+    "date": "2026-11-02",
     "outcome": "published",
-    "publishedId": "42508832"
+    "publishedId": "41319669"
   },
-  "updatedAt": "2026-11-01"
+  "updatedAt": "2026-11-02"
 }
