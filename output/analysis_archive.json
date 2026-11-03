@@ -4598,6 +4598,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-03",
+      "pmid": "42267821",
+      "title": "Carbocisteine or Hypertonic Saline for Acute Respiratory Failure.",
+      "title_ko": "급성 호흡부전에서 Carbocisteine 또는 고장성 식염수(Hypertonic Saline)",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa2603406",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "급성 호흡부전과 제거하기 어려운 분비물을 가진, 기계환기 중인 중환자 성인에서 통상 치료에 더해 점액활성제인 carbocisteine 및/또는 분무 고장성 식염수(HTS)를 투여하면 기계환기 기간이 단축되는가?",
+      "pico": {
+        "population": "[UK] A total of 1956 critically ill, mechanically ventilated participants 16 years of age or older with acute respiratory failure and difficult-to-clear secretions, enrolled across 71 hospitals in the United Kingdom (472, 474, 479, and 478 included in the primary analysis of the four groups, respectively).",
+        "intervention": "Carbocisteine 750 mg three times daily enterally and/or 6% or 7% nebulized hypertonic saline (HTS) 4 ml four times daily, added to usual care, for up to 28 days (2-by-2 factorial: carbocisteine alone [n=486], HTS alone [n=485], or both [n=492]).",
+        "comparison": "Usual care alone (n=493); primary comparisons were any carbocisteine vs. no carbocisteine and any HTS vs. no HTS.",
+        "outcome": "Primary outcome was duration of mechanical ventilation (randomization to first successful unassisted breathing). Median 186.1 h (95% CI, 168.3–196.6) with carbocisteine vs. 172.7 h (95% CI, 165.2–190.4) with no carbocisteine (adjusted HR, 0.96; 95% CI, 0.87–1.05; P=0.34); 184.5 h (95% CI, 165.6–194.1) with HTS vs. 174.3 h (95% CI, 166.9–192.7) with no HTS (adjusted HR, 1.00; 95% CI, 0.91–1.10; P=0.98). No treatment interaction (HR, 1.01; 95% CI, 0.83–1.22; P=0.91)."
+      },
+      "pico_ko": {
+        "population": "[영국] 급성 호흡부전과 제거하기 어려운 분비물을 가진 16세 이상의 기계환기 중인 중환자 총 1956명으로, 영국 71개 병원에서 등록됨(네 군의 일차 분석에 각각 472, 474, 479, 478명 포함).",
+        "intervention": "통상 치료에 더해 carbocisteine 750 mg 1일 3회 경장 투여 및/또는 6% 또는 7% 분무 고장성 식염수(HTS) 4 ml 1일 4회를 최대 28일간 투여(2×2 요인설계: carbocisteine 단독 [n=486], HTS 단독 [n=485], 또는 둘 다 [n=492]).",
+        "comparison": "통상 치료 단독(n=493); 일차 비교는 carbocisteine 투여군 vs. 비투여군, HTS 투여군 vs. 비투여군.",
+        "outcome": "일차 결과는 기계환기 기간(무작위배정부터 첫 성공적 자발호흡까지). Carbocisteine 중앙값 186.1시간(95% CI, 168.3–196.6) vs. 비투여 172.7시간(95% CI, 165.2–190.4)(adjusted HR, 0.96; 95% CI, 0.87–1.05; P=0.34); HTS 184.5시간(95% CI, 165.6–194.1) vs. 비투여 174.3시간(95% CI, 166.9–192.7)(adjusted HR, 1.00; 95% CI, 0.91–1.10; P=0.98). 치료 간 상호작용 없음(HR, 1.01; 95% CI, 0.83–1.22; P=0.91)."
+      },
+      "keyFindings": [
+        "Neither carbocisteine nor HTS reduced duration of mechanical ventilation: carbocisteine median 186.1 vs 172.7 h (adjusted HR 0.96; 95% CI 0.87–1.05; P=0.34); HTS 184.5 vs 174.3 h (adjusted HR 1.00; 95% CI 0.91–1.10; P=0.98), with no treatment interaction (HR 1.01; 95% CI 0.83–1.22; P=0.91).",
+        "Carbocisteine significantly increased clinically important upper GI bleeding (13/965 [1.4%] vs 2/966 [0.2%]; RR 6.51; 95% CI 1.47–28.76; P=0.01).",
+        "HTS significantly increased bronchoconstriction requiring bronchodilators (23/967 [2.4%] vs 4/964 [0.4%]; RR 5.73; P=0.001) and hypoxemia during nebulization (40/967 [4.1%] vs 3/964 [0.3%]; RR 13.29; P<0.001)."
+      ],
+      "keyFindings_ko": [
+        "Carbocisteine와 HTS 모두 기계환기 기간을 단축하지 못함: carbocisteine 중앙값 186.1 vs 172.7시간(adjusted HR 0.96; 95% CI 0.87–1.05; P=0.34); HTS 184.5 vs 174.3시간(adjusted HR 1.00; 95% CI 0.91–1.10; P=0.98), 치료 간 상호작용 없음(HR 1.01; 95% CI 0.83–1.22; P=0.91).",
+        "Carbocisteine는 임상적으로 중요한 상부위장관 출혈을 유의하게 증가시킴(13/965 [1.4%] vs 2/966 [0.2%]; RR 6.51; 95% CI 1.47–28.76; P=0.01).",
+        "HTS는 기관지확장제가 필요한 기관지수축(23/967 [2.4%] vs 4/964 [0.4%]; RR 5.73; P=0.001)과 분무 중 저산소혈증(40/967 [4.1%] vs 3/964 [0.3%]; RR 13.29; P<0.001)을 유의하게 증가시킴."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 42267821",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42267821/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1056/NEJMoa2603406",
+          "url": "https://doi.org/10.1056/NEJMoa2603406"
+        },
+        {
+          "label": "웹 — PubMed (PMID 42267821)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42267821/"
+        },
+        {
+          "label": "웹 — NEJM article page (DOI 10.1056/NEJMoa2603406)",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2603406"
+        },
+        {
+          "label": "웹 — CHEST Physician — MARCH trial report",
+          "url": "https://www.chestphysician.org/march-trial-challenges-routine-use-of-mucoactive-therapies-in-mechanically-ventilated-patients/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed (PMID 42267821)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42267821/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "NEJM article page (DOI 10.1056/NEJMoa2603406)",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2603406",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "CHEST Physician — MARCH trial report",
+          "url": "https://www.chestphysician.org/march-trial-challenges-routine-use-of-mucoactive-therapies-in-mechanically-ventilated-patients/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -4671,14 +4746,15 @@
       ],
       "2026-11": [
         "41204181",
-        "42584185"
+        "42584185",
+        "42267821"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 20724
+      "2026-11": 33129
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
