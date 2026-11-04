@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41508101",
-      "title": "Dyspnea is related to clinical outcomes in patients weaning from invasive mechanical ventilation with tracheostomy: a multicenter prospective study.",
-      "journal": "Critical care (London, England)",
-      "score": 7.9,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 6.8584000000000005,
-        "cooldownPenalty": -1,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-20"
-    },
-    {
       "pmid": "42600769",
       "title": "Arterial blood gas parameters during cardiopulmonary resuscitation and sustained return of spontaneous circulation in out-of-hospital cardiac arrest: a preplanned secondary analysis of the AMCPR trial.",
       "journal": "Resuscitation",
@@ -476,6 +461,22 @@
       },
       "addedAt": "2026-10-20",
       "publishedAt": "2026-11-03"
+    },
+    {
+      "pmid": "41508101",
+      "title": "Dyspnea is related to clinical outcomes in patients weaning from invasive mechanical ventilation with tracheostomy: a multicenter prospective study.",
+      "journal": "Critical care (London, England)",
+      "score": 7.9,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.8584000000000005,
+        "cooldownPenalty": -1,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-20",
+      "publishedAt": "2026-11-04"
     }
   ],
   "rejected": [
@@ -491,9 +492,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-03",
+    "date": "2026-11-04",
     "outcome": "published",
-    "publishedId": "42267821"
+    "publishedId": "41508101"
   },
-  "updatedAt": "2026-11-03"
+  "updatedAt": "2026-11-04"
 }

@@ -41228,17 +41228,23 @@
       "id": "pmid:42217665",
       "pmid": "42217665",
       "title": "American College of Surgeons Best Practice Guidelines on Management of Traumatic Brain Injury: Executive Summary of Early Rehabilitation Recommendations.",
-      "pubDate": "2026 May 30",
+      "pubDate": "2026 Nov",
       "journal": "Archives of physical medicine and rehabilitation",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Practice Guideline"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-08-17T04:40:34.154Z",
       "abstract": "This executive summary provides a synopsis of the recommendations within the de novo early rehabilitation chapter of the updated 2024 American College of Surgeons (ACS) Trauma Quality Improvement Program's Traumatic Brain Injury (TBI) Best Practice Guideline (BPG) Recommendations. These recommendations were developed through review of the best available evidence and expert consensus. The American Congress of Rehabilitation Medicine endorsed the final TBI BPG recommendations. This endorsement, a byproduct of the ongoing partnership between ACS and American Congress of Rehabilitation Medicine reflects ACS' validation of the importance of interdisciplinary rehabilitation in acute management of patients with traumatic injuries, including TBI. The results include, for the first time, specific recommendations for rehabilitation management of TBI. These recommendations focus on integration of early rehabilitation after moderate to severe TBI, consistent inclusion of rehabilitation physicians and specialists within the primary trauma team and the importance of postacute specialized rehabilitation across the course of recovery from TBI of all severities. The primary objective in developing clear TBI BPGs for acute care rehabilitation is to facilitate increased awareness and implementation of early rehabilitation services within trauma centers that serve survivors of TBI.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Brain Injuries, Traumatic",
+        "Humans",
+        "United States",
+        "Practice Guidelines as Topic"
+      ],
       "keywords": [
         "Clinical guideline",
         "Rehabilitation",
@@ -41250,14 +41256,14 @@
       "region": "us",
       "by": "org-name",
       "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": false,
+        "officialDocument": true,
         "organizationId": null
       },
       "priority": 8,
@@ -41271,21 +41277,27 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
-      "documentType": "recommendations",
+      "documentType": "guideline",
       "reasons": [
         "format-evidence",
-        "normative-evidence"
+        "normative-evidence",
+        "official-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 4,
         "keep": false,
         "reason": "외상성뇌손상 조기재활 권고, 급성 아님",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0,
+      "lineageKey": "unknown|american-college-surgeons-best-practice-management-traumatic-brain-injury-executive-summary-early-rehabilitation",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage"
     },
     {
       "id": "pmid:42203999",
@@ -42089,7 +42101,7 @@
       "id": "pmid:42379923",
       "pmid": "42379923",
       "title": "Risk reclassification and implementation challenges in the 2026 AHA/ACC pulmonary embolism guideline.",
-      "pubDate": "2026 Jun 30",
+      "pubDate": "2026 Nov",
       "journal": "European journal of internal medicine",
       "publicationTypes": [
         "Letter"
@@ -42131,13 +42143,13 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "guideline",
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42148,7 +42160,8 @@
       "lineageKey": "aha|risk-reclassification-implementation-challenges-acc-pulmonary-embolism",
       "supersedes": [],
       "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
+      "lineageReason": "no-matching-lineage",
+      "attempts": 0
     },
     {
       "id": "pmid:42339539",
@@ -43223,9 +43236,8 @@
       "pubDate": "2026 Nov",
       "journal": "Revista clinica espanola",
       "publicationTypes": [
-        "Journal Article",
         "Consensus Statement",
-        "Practice Guideline"
+        "Journal Article"
       ],
       "discoveredBy": [
         "pubmed-topic"
@@ -43233,15 +43245,15 @@
       "discoveredAt": "2026-08-17T04:41:03.449Z",
       "abstract": "INTRODUCTION: Low-molecular-weight heparin is the anticoagulant treatment of choice for managing venous thromboembolism (VTE) during pregnancy and lactation. Vitamin K antagonists are contraindicated between weeks 6-12 of gestation due to their association with a specific embryopathy, and during the third trimester due to the risk of bleeding. Direct oral anticoagulants are contraindicated during pregnancy and breastfeeding because of the risk of prenatal malformations. Reperfusion techniques, such as systemic thrombolysis or mechanical thrombectomy, are reserved for cases of pulmonary embolism with hemodynamic instability.\nMETHODS AND RESULTS: This consensus document, developed by the Spanish Societies of Internal Medicine, Medical Radiology, Vascular and Interventional Radiology, and Gynecology and Obstetrics, provides a comprehensive review of the most recent evidence on the treatment of VTE in pregnant patients and updates current recommendations.",
       "meshTerms": [
-        "Humans",
         "Female",
+        "Humans",
         "Pregnancy",
-        "Venous Thromboembolism",
-        "Pregnancy Complications, Cardiovascular",
         "Anticoagulants",
-        "Spain",
+        "Heparin, Low-Molecular-Weight",
+        "Pregnancy Complications, Cardiovascular",
         "Societies, Medical",
-        "Heparin, Low-Molecular-Weight"
+        "Spain",
+        "Venous Thromboembolism"
       ],
       "keywords": [
         "Deep venous thrombosis",
@@ -43262,14 +43274,14 @@
       "region": "eu",
       "by": "nationality",
       "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": true,
+        "officialDocument": false,
         "organizationId": null
       },
       "priority": 7,
@@ -43285,11 +43297,11 @@
       "topicMatched": true,
       "status": "needsReview",
       "verdict": "needsReview",
-      "documentType": "guideline",
+      "documentType": "recommendations",
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44898,7 +44910,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -45951,7 +45963,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46150,7 +46162,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46597,7 +46609,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "esc|intracoronary-imaging-left-main-percutaneous-coronary-intervention-clinical-european-association-percutaneous-cardiovascular-interventions-eapci-european-bifurcation-club-ebc",
       "supersedes": [],
       "llmFit": {
@@ -46743,7 +46755,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -46878,7 +46890,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46953,7 +46965,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47017,7 +47029,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47087,7 +47099,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47155,7 +47167,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47218,7 +47230,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47283,7 +47295,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47346,7 +47358,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47408,7 +47420,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47466,7 +47478,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47535,7 +47547,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47605,7 +47617,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47685,7 +47697,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47753,7 +47765,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47815,7 +47827,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47894,7 +47906,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47976,7 +47988,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48075,7 +48087,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48176,7 +48188,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48257,7 +48269,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -48339,7 +48351,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-03T03:02:17.275Z",
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48350,6 +48362,138 @@
         "keep": true,
         "reason": "AHA 항혈전 과소치료 성명 — AF·VTE 등 응급 관련이나 실무 권고보다 정책성",
         "at": "2026-11-03T03:02:19.676Z"
+      }
+    },
+    {
+      "id": "pmid:42974685",
+      "pmid": "42974685",
+      "title": "Beyond the 2026 ESC Heart Failure Guidelines: Heart Stress, Biological Aging, and Heart Failure Prevention.",
+      "pubDate": "2026 Nov 3",
+      "journal": "European journal of preventive cardiology",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1093/eurjpc/zwag574",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "초록없음, 제목상 HF 예방·노화 논평 — 급성 아님, 경계라 보류",
+        "at": "2026-11-04T01:36:15.465Z"
+      }
+    },
+    {
+      "id": "pmid:42974958",
+      "pmid": "42974958",
+      "title": "As-needed inhaled corticosteroids in asthma: an Official American Thoracic Society clinical practice guideline.",
+      "pubDate": "2026 Nov 3",
+      "journal": "American journal of respiratory and critical care medicine",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "abstract": "BACKGROUND: Inhaled corticosteroid (ICS)-containing reliever therapy has demonstrated efficacy in improving asthma outcomes when compared to short-acting beta2-agonists (SABA) alone but remains underutilized. The purpose of this guideline is to provide recommendations surrounding the use of combination ICS-formoterol or ICS+SABA (in combination or separate inhalers) as reliever therapy across the asthma severity spectrum in adolescents and adults.\nMETHODS: The American Thoracic Society clinical practice guideline panel evaluated six research questions in the PICO format addressing the use of ICS-containing reliever therapy across National Asthma Education and Prevention Program (NAEPP) asthma treatment steps 1-5. The methodology team conducted systematic literature reviews and GRADE assessments, which the panel utilized to inform the recommendations for each specific PICO and overall.\nRECOMMENDATIONS: In patients at NAEPP steps 1 and 2, the panel made strong recommendations for the use of as-needed-only ICS-SABA or ICS-formoterol over SABA-only therapy, and conditional recommendations over scheduled ICS + as-needed SABA. In patients at NAEPP steps 3-5, the taskforce made a strong recommendation for the use of maintenance-and-reliever therapy (MART) with ICS-formoterol over scheduled ICS-LABA plus as-needed SABA. In patients at NAEPP steps 3-5 who are using scheduled maintenance ICS-LABA, the panel made a conditional recommendation for use of ICS+SABA reliever over SABA reliever. In considering these recommendations, the panel valued the importance of preventing severe exacerbations and considered the risk of SABA-only treatment, as well as ICS and systemic corticosteroid (SCS) exposure.\nCONCLUSIONS: This clinical practice guideline, informed by systematic reviews and GRADE-based appraisals of PICO-framed evidence, makes these evidence-based recommendations for the safe and effective use of ICS-containing reliever therapy in asthma.",
+      "meshTerms": [],
+      "keywords": [
+        "anti-inflammatory reliever (AIR)",
+        "as-needed ICS+SABA",
+        "as-needed ICS-formoterol",
+        "asthma",
+        "maintenance and reliever therapy (MART)"
+      ],
+      "doi": "10.1093/ajrccm/aamag577",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 7,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "ATS 성인 천식 ICS 지침 — 호흡 영역이나 외래 유지요법 성격",
+        "at": "2026-11-04T01:36:15.465Z"
       }
     }
   ],
@@ -61410,6 +61554,232 @@
         ]
       },
       "publishedAt": "2026-11-03"
+    },
+    {
+      "id": "pmid:42972097",
+      "pmid": "42972097",
+      "title": "[New sepsis guidelines: Surviving Sepsis Campaign 2026 and German Sepsis Society 2025 -Competing or complementary?].",
+      "pubDate": "2026 Nov 2",
+      "journal": "Die Anaesthesiologie",
+      "publicationTypes": [
+        "English Abstract",
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "abstract": "BACKGROUND: Sepsis is one of the leading causes of death in intensive care units worldwide. In German-speaking countries, patient management is primarily guided by two sets of guidelines: the international Surviving Sepsis Campaign (SSC) guidelines and the S3 guidelines of the German Sepsis Society (DSG). While the DSG guidelines were published in 2025 as an evidence-based adaptation of the SSC 2021 guidelines, the SSC has since released an updated international version in 2026.\nOBJECTIVE: To provide a structured analysis of the key content areas, similarities and differences between the two guidelines, with a particular focus on the timing of treatment initiation, anti-infective treatment and hemodynamic management.\nRESULTS: Both guidelines reflect not so much a fundamental shift in strategy but more a consolidation of evidence and a refinement of concepts. Three overarching themes can be identified: a broadened perspective encompassing the entire continuum of care, from the prehospital setting to post-sepsis follow-up, the increasing integration of antibiotic stewardship principles and in SSC 2026, the introduction of a graded sepsis terminology (definite/probable/possible/unlikely). Areas of agreement include the importance of early anti-infective treatment, the preferential use of balanced crystalloids, norepinephrine as the first-line vasopressor, the inclusion of capillary refill time as a perfusion parameter and a strong recommendation for prolonged or continuous beta-lactam infusion. Differences are evident in the specificity of antimicrobial recommendations, the definition of risk factors warranting empirical antifungal treatment and several new recommendations introduced in SSC 2026, such as a lower mean arterial pressure (MAP) target of 60-65 mm Hg for patients aged ≥ 65 years, initiation of treatment in the prehospital setting and source control within 6 h.\nCONCLUSION: The DSG 2025 and SSC 2026 guidelines should be regarded as complementary rather than competing frameworks. The DSG 2025 remains the practical, high-resolution handbook for care in the Central European context, while the SSC 2026 outlines the international direction: away from a purely acute care set of rules towards an individualized, continuum-based model of care.",
+      "meshTerms": [],
+      "keywords": [
+        "Antimicrobial stewardship",
+        "Antimicrobial therapy",
+        "Hemodynamics",
+        "Practice guideline",
+        "Septic shock"
+      ],
+      "doi": "10.1007/s00101-026-01753-4",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "surviving-sepsis"
+      },
+      "priority": 11.4,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3.4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "surviving-sepsis",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lineageKey": "surviving-sepsis|new-sepsis-german-sepsis-society-competing-complementary",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "SSC 2026·독일 패혈증 지침 비교 — 패혈증은 핵심 주제",
+        "at": "2026-11-04T01:36:15.465Z"
+      },
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42972097",
+          "title": "[New sepsis guidelines: Surviving Sepsis Campaign 2026 and German Sepsis Society 2025 -Competing or complementary?].",
+          "journal": "Die Anaesthesiologie",
+          "pubDate": "2026 Nov 2",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42972097/",
+          "doi": "10.1007/s00101-026-01753-4"
+        },
+        "org": "Surviving Sepsis Campaign (SSC) / German Sepsis Society (DSG)",
+        "version": "Comparative review of SSC 2026 and DSG 2025 (S3)",
+        "title_ko": "새로운 패혈증 가이드라인: Surviving Sepsis Campaign 2026과 독일패혈증학회(DSG) 2025 — 경쟁인가 보완인가?",
+        "scope_ko": "성인 패혈증·패혈성 쇼크 환자를 대상으로, 독일어권에서 함께 쓰이는 국제 SSC 2026 가이드라인과 독일패혈증학회(DSG)의 2025 S3 가이드라인을 비교 분석한 리뷰다. 치료 개시 시점, 항감염 치료, 혈역학 관리를 중심으로 두 지침의 공통점·차이점과 상호 관계를 다룬다.",
+        "summary": [
+          "Both guidelines emphasize early anti-infective (antibiotic) treatment as a cornerstone of sepsis management.",
+          "Balanced crystalloids are preferentially recommended for initial fluid resuscitation.",
+          "Norepinephrine is the first-line vasopressor.",
+          "Capillary refill time is incorporated as a perfusion/resuscitation-targeting parameter alongside lactate.",
+          "Prolonged or continuous beta-lactam infusion (after a loading dose) is given a STRONG recommendation in both guidelines.",
+          "SSC 2026 introduces a graded sepsis terminology — definite / probable / possible / unlikely — to individualize the urgency of antimicrobial initiation.",
+          "SSC 2026 adds several new positions: a lower MAP target of 60–65 mmHg for patients aged ≥65 years, initiation of treatment already in the prehospital setting, and source control within 6 hours.",
+          "Both guidelines increasingly integrate antibiotic stewardship and broaden scope across the whole continuum of care (prehospital → acute → post-sepsis follow-up); differences remain in the specificity of antimicrobial recommendations and in the risk factors defining when empirical antifungal therapy is warranted."
+        ],
+        "summary_ko": [
+          "두 지침 모두 조기 항감염(항생제) 치료를 패혈증 관리의 핵심으로 강조한다.",
+          "초기 수액 소생에는 균형 결정질액(balanced crystalloid)을 우선 권고한다.",
+          "1차 승압제는 norepinephrine이다.",
+          "관류 평가·소생 목표 지표로 lactate와 함께 capillary refill time(모세혈관 재충전 시간)을 포함한다.",
+          "베타락탐의 연장/지속 주입(로딩 후)을 두 지침 모두 '강한 권고'로 제시한다.",
+          "SSC 2026은 항생제 개시 긴급도를 개별화하기 위해 definite/probable/possible/unlikely의 단계적 패혈증 용어를 새로 도입했다.",
+          "SSC 2026은 ≥65세 환자에서 더 낮은 MAP 목표 60–65 mmHg, 병원 전(prehospital) 단계에서의 치료 개시, 6시간 이내 감염원 제어(source control) 등 새 입장을 추가했다.",
+          "두 지침 모두 항생제 스튜어드십을 강화하고 병원 전→급성기→패혈증 후 추적까지 전 치료 연속선으로 범위를 넓혔다; 항균제 권고의 구체성과 경험적 항진균 치료가 필요한 위험인자 정의에서 차이가 남는다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "혈압 목표 (고령)",
+            "detail": "SSC 2021 targeted an initial MAP of ~65 mmHg for all patients. SSC 2026 retains ~65 mmHg generally but newly suggests a lower MAP range of 60–65 mmHg for patients aged ≥65 years (conditional/weak recommendation), to reduce excessive vasopressor exposure and its harms in older adults.",
+            "detail_ko": "SSC 2021은 모든 환자에서 초기 MAP 약 65 mmHg를 목표로 했다. SSC 2026은 일반적으로 ~65 mmHg를 유지하되 ≥65세 환자에서는 더 낮은 60–65 mmHg 범위를 새로 제안한다(조건부/약한 권고). 고령에서 과도한 승압제 노출과 그 위해를 줄이기 위함이다."
+          },
+          {
+            "topic": "경험적 항진균 치료",
+            "detail": "The previous guidance allowed broader empirical antifungal use; SSC 2026 now suggests AGAINST routine empirical antifungal therapy in sepsis/septic shock, reserving it for case-by-case high-risk patients. DSG 2025 similarly moved to risk-stratified antifungal therapy (avoid in low-risk, initiate in high-risk) rather than a blanket approach.",
+            "detail_ko": "이전에는 경험적 항진균제 사용 폭이 넓었으나, SSC 2026은 패혈증/패혈성 쇼크에서 일상적 경험적 항진균 치료를 '하지 말 것'으로 제안하며 고위험 환자에 한해 개별 판단으로 국한한다. DSG 2025도 일괄 투여 대신 위험층화 접근(저위험은 회피, 고위험은 개시)으로 전환했다."
+          },
+          {
+            "topic": "혐기성 커버리지",
+            "detail": "SSC 2026 newly suggests an empiric regimen WITHOUT anaerobic coverage for patients without risk factors for anaerobic infection (conditional), citing evidence of microbiome harm from unnecessary anaerobic coverage. DSG 2025 likewise advises against routine 'double gram-negative coverage' in low-risk patients (new weak recommendation).",
+            "detail_ko": "SSC 2026은 혐기성 감염 위험인자가 없는 환자에서 혐기성 커버리지를 '뺀' 경험적 요법을 새로 제안한다(조건부). 불필요한 혐기성 커버가 장내 미생물총에 해를 준다는 근거를 든다. DSG 2025도 저위험 환자에서 일상적 '이중 그람음성 커버리지'를 피하라고 새로 권고한다(약한 권고)."
+          },
+          {
+            "topic": "항생제 디에스컬레이션",
+            "detail": "SSC 2021 framed daily de-escalation assessment as a weak recommendation; SSC 2026 ELEVATES de-escalation once antimicrobial susceptibilities return to a STRONG recommendation, reflecting the stronger stewardship emphasis.",
+            "detail_ko": "SSC 2021은 매일 디에스컬레이션 평가를 약한 권고로 두었으나, SSC 2026은 감수성 결과가 나오면 디에스컬레이션을 '강한 권고'로 격상했다. 스튜어드십 강조를 반영한다."
+          },
+          {
+            "topic": "수액 보조(알부민)",
+            "detail": "SSC 2021 included a conditional recommendation supporting albumin in patients who had received large volumes of crystalloid. SSC 2026 suggests crystalloids ALONE over crystalloids plus supplemental albumin for resuscitation.",
+            "detail_ko": "SSC 2021은 결정질액 대량 투여 환자에서 알부민을 지지하는 조건부 권고를 두었다. SSC 2026은 소생 시 결정질액에 알부민을 보태기보다 결정질액 '단독'을 제안한다."
+          },
+          {
+            "topic": "혈압 모니터링 방식",
+            "detail": "Previously invasive (arterial line) blood pressure monitoring was recommended for septic shock. SSC 2026 now suggests EITHER invasive OR noninvasive blood pressure monitoring (very low certainty), a more patient-centered/less-invasive stance.",
+            "detail_ko": "이전에는 패혈성 쇼크에서 침습적(동맥관) 혈압 모니터링을 권고했다. SSC 2026은 침습적 '또는' 비침습적 혈압 모니터링 중 선택을 제안한다(매우 낮은 확실성). 더 환자 중심·덜 침습적 방향이다."
+          },
+          {
+            "topic": "병원 전 항생제",
+            "detail": "SSC 2026 newly suggests administering antibiotics during prehospital transport for septic shock when anticipated delay to hospital evaluation exceeds ~60 minutes (very low certainty).",
+            "detail_ko": "SSC 2026은 병원 평가까지 예상 지연이 약 60분을 초과하는 패혈성 쇼크에서 병원 전 이송 중 항생제 투여를 새로 제안한다(매우 낮은 확실성)."
+          },
+          {
+            "topic": "감염원 제어 시점",
+            "detail": "SSC 2026 introduces an explicit target of source control within 6 hours (new), making the timing of source control an actionable benchmark rather than a vague 'as soon as possible.'",
+            "detail_ko": "SSC 2026은 6시간 이내 감염원 제어라는 명시적 목표를 새로 도입한다. 모호한 '가능한 빨리'가 아니라 실행 가능한 시간 기준으로 제시한 것이다."
+          },
+          {
+            "topic": "단계적 패혈증 용어와 항생제 타이밍",
+            "detail": "SSC 2026 introduces graded terminology (definite/probable/possible/unlikely). Antibiotic urgency is individualized: definite/probable sepsis — and possible sepsis WITH shock — warrant antibiotics within 1 hour; possible sepsis WITHOUT shock allows a rapid investigation window (~3 hours) before committing to antibiotics. This replaces a single blanket 1-hour mandate and aims to reduce unnecessary antimicrobial exposure.",
+            "detail_ko": "SSC 2026은 단계적 용어(definite/probable/possible/unlikely)를 도입한다. 항생제 긴급도를 개별화해 definite/probable 패혈증과 '쇼크 동반 possible' 패혈증은 1시간 이내 항생제를, '쇼크 없는 possible' 패혈증은 투여 전 약 3시간의 신속 검사 창을 허용한다. 일률적 1시간 의무를 대체하며 불필요한 항균제 노출을 줄이려는 것이다."
+          },
+          {
+            "topic": "베타락탐 연장/지속 주입",
+            "detail": "Prolonged or continuous beta-lactam infusion (after a loading dose) is a STRONG recommendation (moderate certainty) in both SSC 2026 and DSG 2025, based on improved time-above-MIC and efficacy — a strengthening versus earlier intermittent-dosing norms.",
+            "detail_ko": "베타락탐의 연장/지속 주입(로딩 후)은 SSC 2026과 DSG 2025 모두에서 '강한 권고'(중등도 확실성)다. MIC 상회 시간 증가와 효능 개선 근거에 기반하며, 과거 간헐 투여 관행 대비 강화된 입장이다."
+          },
+          {
+            "topic": "소생 후 수액 제거(디리서시테이션)",
+            "detail": "SSC 2026 adds a new conditional recommendation for active fluid removal (diuretics/ultrafiltration) in patients with fluid overload after the initial resuscitation phase.",
+            "detail_ko": "SSC 2026은 초기 소생 이후 수액 과부하 환자에서 능동적 수액 제거(이뇨제/초여과)를 새 조건부 권고로 추가했다."
+          },
+          {
+            "topic": "호흡 지원(HFNC)",
+            "detail": "SSC 2026 suggests high-flow nasal cannula (HFNC) over noninvasive positive-pressure ventilation as the initial device for sepsis-associated acute respiratory failure (low certainty).",
+            "detail_ko": "SSC 2026은 패혈증 관련 급성호흡부전의 초기 기구로 비침습적 양압환기(NIPPV)보다 고유량비강캐뉼라(HFNC)를 제안한다(낮은 확실성)."
+          },
+          {
+            "topic": "DSG 2025 승압제 보조제",
+            "detail": "DSG 2025 now prefers vasopressin over epinephrine as the adjunct to norepinephrine (changed from a prior either/or stance), recommends against terlipressin (new), and finds insufficient evidence for methylene blue (new neutral stance).",
+            "detail_ko": "DSG 2025는 norepinephrine 보조제로 epinephrine보다 vasopressin을 선호한다(이전의 양자택일에서 변경). terlipressin은 사용하지 말라고 새로 권고하고, methylene blue는 근거 불충분으로 중립 입장을 새로 취한다."
+          },
+          {
+            "topic": "패혈증 후 추적·재활",
+            "detail": "Both guidelines newly extend scope beyond discharge: SSC 2026 recommends post-critical-illness follow-up including physical rehabilitation and mental health support for survivors, reflecting the continuum-of-care model.",
+            "detail_ko": "두 지침 모두 퇴원 이후로 범위를 새로 확장한다: SSC 2026은 생존자 대상 신체 재활과 정신건강 지원을 포함한 중증질환 후 추적을 권고하며, 이는 치료 연속선 모델을 반영한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "ESICM 공식 발표 — 신규 권고 규모와 소아 지침",
+            "body_ko": "ESICM 공식 요약에 따르면 SSC 2026 성인 지침은 2021판 위에 46개의 새 statement를 추가했고, 항생제 최적화, 고령 혈압 목표, 초기 소생 후 수액 제거 전략, 심리·신체 재활을 포함한 퇴원 후 연속 관리를 새 중점 영역으로 둔다. 소아 지침은 POCUS를 통한 소생 유도(조건부), 패혈증 후 이환 평가와 장기 추적 등 20개의 새 주제를 다루며, ICU 수준 패혈증을 겪은 소아의 30–40%가 지속적 건강 문제를 겪을 수 있다는 점을 근거로 든다. (이 항목은 이 리뷰 원문이 아니라 ESICM 요약의 내용이다.)",
+            "sourceLabel": "ESICM 공식 발표",
+            "sourceUrl": "https://www.esicm.org/2026-surviving-sepsing-guidelines/"
+          },
+          {
+            "heading_ko": "저널 논평 — 개별화·연속선 중심 패러다임",
+            "body_ko": "Intensive Care Medicine 계열 PMC 논평(‘Prioritizing the patient through a continuum of personalized care’)은 SSC 2026의 세 축을 병원 전→퇴원 후를 아우르는 연속 치료, 개별화된 치료 프로토콜, 환자 중심·비침습적 관리로 정리한다. 병원 전 NEWS2 등 표준 선별 도구 사용, 원내 'code sepsis' 신속 인지 프로토콜, 생존자 재활·정신건강 지원을 새 권고로 소개하고, ≥65세에서 MAP 60–65 mmHg 범위 제안이 승압제 과노출 위험을 줄이려는 것임을 설명한다. (이 리뷰 원문이 아니라 해당 논평의 서술이다.)",
+            "sourceLabel": "PMC 논평 (Intensive Care Medicine)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268726/"
+          },
+          {
+            "heading_ko": "DSG S3 2025 원문 요약 — 방법론과 구체 권고",
+            "body_ko": "DSG S3 2025 원문(PMC)은 18세 초과 성인 패혈증/패혈성 쇼크를 전 진료 환경에서 다루며 SSC 2021을 참조틀로 2024년 12월까지 문헌을 GRADE로 재평가했다. 88개 PICO 중 57개가 근거기반 권고(강 26·약 31), 29개 전문가 합의, 2개 statement이며 2018판 대비 43개 유지·16개 수정·29개 신규다. 약 30 mL/kg 초기 결정질액(3시간 내), MAP ≥65, capillary refill time 도입, 베타락탐 연장/지속 주입(신규 강 권고), 쇼크 없는 패혈증은 검사 선행 후 3시간 내 항생제, 저위험군 이중 그람음성 커버 지양, 위험층화 항진균을 제시한다. (이 리뷰 원문이 아니라 DSG S3 원문의 내용이다.)",
+            "sourceLabel": "DSG S3 가이드라인 2025 (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12708846/"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, continue early balanced crystalloids and norepinephrine first-line, but now accept a MAP of 60–65 mmHg in patients ≥65 to spare vasopressors, use capillary refill time alongside lactate to guide resuscitation, and switch beta-lactams to prolonged/continuous infusion after a loading dose. Antimicrobial behavior tightens: drop routine anaerobic coverage and empiric antifungals when risk factors are absent, de-escalate firmly once susceptibilities return, and — using the new SSC definite/probable/possible framework — reserve the 1-hour antibiotic mandate for definite/probable sepsis or possible sepsis with shock while allowing a ~3-hour work-up for possible sepsis without shock. Operationally, extend sepsis care outward: prehospital screening and antibiotics for long transport delays, a 6-hour source-control target, and structured post-sepsis rehabilitation/follow-up. In the Central European context the DSG 2025 S3 remains the detailed practical handbook, with SSC 2026 pointing toward a more individualized, continuum-based model.",
+        "practiceImpact_ko": "현장에서는 조기 균형 결정질액과 1차 norepinephrine을 유지하되, ≥65세에서는 MAP 60–65 mmHg를 허용해 승압제를 아끼고, lactate와 함께 capillary refill time으로 소생을 유도하며, 베타락탐은 로딩 후 연장/지속 주입으로 전환한다. 항균 전략은 조여진다: 위험인자가 없으면 일상적 혐기성 커버와 경험적 항진균을 빼고, 감수성 결과가 나오면 확실히 디에스컬레이션하며, 새 SSC definite/probable/possible 틀을 써서 1시간 이내 항생제는 definite/probable 패혈증 또는 쇼크 동반 possible에 한정하고 쇼크 없는 possible은 약 3시간 검사 창을 허용한다. 운영 측면에서 패혈증 관리를 밖으로 확장한다: 병원 전 선별과 장거리 이송 시 항생제, 6시간 감염원 제어 목표, 구조화된 패혈증 후 재활·추적. 중부 유럽 맥락에서는 DSG 2025 S3가 상세한 실무 핸드북으로 남고, SSC 2026은 더 개별화된 연속선 기반 모델 방향을 제시한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42972097",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42972097/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00101-026-01753-4",
+            "url": "https://doi.org/10.1007/s00101-026-01753-4"
+          },
+          {
+            "label": "웹 — ESICM — The 2026 Surviving Sepsis Campaign Guidelines have just been released",
+            "url": "https://www.esicm.org/2026-surviving-sepsing-guidelines/"
+          },
+          {
+            "label": "웹 — PMC — Prioritizing the patient through a continuum of personalized care: insights from the 2026 SSC guidelines",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268726/"
+          },
+          {
+            "label": "웹 — PMC — S3 guideline on sepsis (German Sepsis Society), update 2025",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12708846/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-04"
     }
   ],
   "rejected": [
@@ -65584,7 +65954,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -66394,7 +66764,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -66849,7 +67219,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -66920,7 +67290,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -66948,7 +67318,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -66975,7 +67345,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "[This corrects the article DOI: 10.3389/fendo.2025.1736984.].",
       "meshTerms": [],
       "keywords": [
@@ -67012,7 +67382,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67039,7 +67409,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-03T03:02:09.245Z",
+      "discoveredAt": "2026-11-04T01:36:03.110Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -67112,9 +67482,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261103_120023:guideline:2026-11-03",
+    "runId": "trend_review_20261104_103339:guideline:2026-11-04",
     "outcome": "published",
-    "publishedId": "pmid:40900106",
+    "publishedId": "pmid:42972097",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -67133,21 +67503,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 106,
+        "mergedTotal": 115,
         "overlapCount": 0,
         "ptOnlyCount": 2,
-        "expandedOnlyCount": 2,
+        "expandedOnlyCount": 3,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 9",
         "window": {
-          "minDate": "2026/10/04",
-          "maxDate": "2026/11/03"
+          "minDate": "2026/10/05",
+          "maxDate": "2026/11/04"
         },
         "retmax": 60,
         "topics": [
@@ -67155,8 +67525,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 49,
-            "idsFetched": 49,
+            "totalFound": 52,
+            "idsFetched": 52,
             "truncated": false,
             "error": null
           },
@@ -67164,8 +67534,8 @@
             "id": "pubmed-topic:sepsis_shock",
             "label": "패혈증·쇼크·혈역학",
             "succeeded": true,
-            "totalFound": 5,
-            "idsFetched": 5,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -67173,8 +67543,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 11,
-            "idsFetched": 11,
+            "totalFound": 12,
+            "idsFetched": 12,
             "truncated": false,
             "error": null
           },
@@ -67182,8 +67552,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 11,
-            "idsFetched": 11,
+            "totalFound": 12,
+            "idsFetched": 12,
             "truncated": false,
             "error": null
           },
@@ -67191,8 +67561,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 16,
-            "idsFetched": 16,
+            "totalFound": 18,
+            "idsFetched": 18,
             "truncated": false,
             "error": null
           },
@@ -67227,8 +67597,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -67251,7 +67621,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 102,
+        "topicOnlyCount": 110,
         "ptPmids": [
           "42837684",
           "42665231"
@@ -67259,9 +67629,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 106,
-          "enriched": 106,
-          "withAbstract": 79,
+          "requested": 115,
+          "enriched": 115,
+          "withAbstract": 86,
           "error": null
         }
       },
@@ -67314,7 +67684,7 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 1,
+        "scored": 3,
         "batches": 1,
         "failed": 0,
         "error": null
@@ -67331,6 +67701,13 @@
           "stage": "region",
           "pmid": "42665231",
           "title": "Use of factor concentrates for the management of perioperative bleeding: guidance from the ISTH SSC Subcommittee on Perioperative and Critical Care Thrombosis and Hemostasis.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42971693",
+          "title": "How can we optimize the diagnostic and therapeutic approach to Staphylococcus aureus bacteremia? Expert opinion-based recommendations.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -67478,6 +67855,13 @@
           "stage": "region",
           "pmid": "42569659",
           "title": "Guideline directed-medical therapy for heart failure within 3 months post LVAD implant and rehospitalization.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42554537",
+          "title": "National Impact of Optimal Implementation of Guideline-Directed Medical Therapy in Heart Failure With Reduced Ejection Fraction.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -67672,6 +68056,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42974351",
+          "title": "Endovascular Therapy in Intracranial Atherosclerotic Stenosis-Related Large Vessel Occlusion Stroke: A Brief Practice Update and Consensus Statement From the SVIN.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42947898",
           "title": "Recommendations for transitioning diabetes, epilepsy, and ADHD youth. The TransiDEA Project.",
           "region": null,
@@ -67742,6 +68133,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42971533",
+          "title": "Bridging the Gap: Real-World Parenteral Nutrition Practices versus ESPGHAN 2018 Recommendations in Very Low Birth Weight Infants.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42957411",
           "title": "Comparison of 3 guideline lipid emulsion regimens for local anesthetic systemic toxicity: an in silico study of bolus duration, total dose, and treatment delay in intravenous bupivacaine overdose.",
           "region": null,
@@ -67782,18 +68180,18 @@
       ],
       "decisions": {
         "queued": 202,
-        "needsReview": 464,
+        "needsReview": 466,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40900106",
+        "candidateId": "pmid:42972097",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-03T03:04:29.199Z",
+  "updatedAt": "2026-11-04T01:39:49.840Z",
   "configVersion": "guideline-v2"
 }
