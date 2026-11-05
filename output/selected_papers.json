@@ -1067,5 +1067,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42600769",
+    "title": "Arterial blood gas parameters during cardiopulmonary resuscitation and sustained",
+    "date": "2026-11-05",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

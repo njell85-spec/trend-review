@@ -41285,7 +41285,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41446,71 +41446,6 @@
       "lineageKey": "unknown|palliative-care-stroke-spanish-society-neurology-s-stroke-study-group",
       "supersedes": [],
       "attempts": 0,
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
-      "id": "pmid:42161591",
-      "pmid": "42161591",
-      "title": "Should baseline mRS serve as a gatekeeper for stroke thrombectomy? A commentary on the 2026 AHA/ASA guidelines for the early management of acute ischemic stroke.",
-      "pubDate": "2026 May 20",
-      "journal": "Journal of neurointerventional surgery",
-      "publicationTypes": [
-        "Editorial"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:34.154Z",
-      "abstract": "",
-      "meshTerms": [],
-      "keywords": [
-        "Stroke",
-        "Thrombectomy"
-      ],
-      "doi": "10.1136/jnis-2026-025473",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": false,
-        "organizationId": "aha"
-      },
-      "priority": 10,
-      "breakdown": {
-        "authority": 4,
-        "topic": 2,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "aha",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "commentary-or-evaluation",
-        "conflicting-editorial-publication-type"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "2026 급성 뇌졸중 혈전제거술 지침 논평 — 신경응급 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "aha|should-baseline-mrs-serve-as-gatekeeper-stroke-thrombectomy-commentary-asa-early-management-acute-ischemic-stroke",
-      "supersedes": [],
       "lineageReview": false,
       "lineageReason": "no-matching-lineage"
     },
@@ -42149,7 +42084,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43301,7 +43236,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44910,7 +44845,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -45963,7 +45898,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -46162,7 +46097,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46755,7 +46690,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "unknown|sudden-unexpected-death-epilepsy-italian-expert-risk-mechanisms-prevention-therapeutic-strategies",
       "supersedes": [],
       "llmFit": {
@@ -46890,7 +46825,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46965,7 +46900,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -47029,7 +46964,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -47099,7 +47034,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47167,7 +47102,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47230,7 +47165,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47295,7 +47230,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47358,7 +47293,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47420,7 +47355,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47478,7 +47413,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47547,7 +47482,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47617,7 +47552,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47697,7 +47632,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47765,7 +47700,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47827,7 +47762,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47906,7 +47841,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47988,7 +47923,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -48087,7 +48022,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48188,7 +48123,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48269,7 +48204,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -48351,7 +48286,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48406,7 +48341,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48414,7 +48349,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.055Z",
+      "lastSeenAt": "2026-11-05T01:38:01.971Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -48475,7 +48410,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48483,7 +48418,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-04T01:36:13.056Z",
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -48494,6 +48429,76 @@
         "keep": false,
         "reason": "ATS 성인 천식 ICS 지침 — 호흡 영역이나 외래 유지요법 성격",
         "at": "2026-11-04T01:36:15.465Z"
+      }
+    },
+    {
+      "id": "pmid:42981478",
+      "pmid": "42981478",
+      "title": "Insulin therapy with enteral and parenteral nutrition: a consensus statement endorsed by the Swiss Society for Endocrinology and Diabetology and the Swiss Society for Clinical Nutrition and Metabolism.",
+      "pubDate": "2026 Nov 2",
+      "journal": "Swiss medical weekly",
+      "publicationTypes": [
+        "Journal Article",
+        "Consensus Statement"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
+      "abstract": "BACKGROUND: Nutritional support with enteral or parenteral nutrition is often required in hospitalised patients and can impair glycaemic control. Despite its clinical importance, practical and uniform recommendations for insulin therapy are lacking.\nMETHODS: The Swiss Society for Endocrinology and Diabetology convened an expert panel to develop consensus guidance on insulin therapy for patients receiving enteral or parenteral nutrition. The working group reviewed available evidence, international guidelines and current practice in Swiss hospitals, and harmonised approaches across regions. The resulting statement provides strategies for insulin dosing in intermittent, continuous and bolus enteral nutrition, as well as parenteral nutrition, primarily for inpatient care, but also applicable to home-based nutritional support.\nRECOMMENDATIONS: The insulin dose depends on the (known or calculated) basal insulin requirement and the carbohydrate content of the enteral or parenteral nutrition bag. For intermittent enteral nutrition (infused over 12-14 hours), intermediate-acting insulin with a duration of action matching the feeding duration is recommended. For continuous enteral nutrition (over 24 hours), long-acting insulin is preferred. When enteral nutrition is administered as boluses (2-3 hours each), short-acting insulin should be injected before each bolus, similar to prandial dosing with meals. For parenteral nutrition, adding short-acting insulin directly to the parenteral nutrition bag is encouraged, as it helps maintain stable glycaemic control without increasing the risk of hypoglycaemia. Across all modalities, correction insulin should be prescribed according to institutional schemes and individualised requirements, with additional units of correction insulin incorporated into the subsequent day's basal and (par)enteral nutrition insulin dose. The statement also provides recommendations for glucose monitoring, safe transitions between regimens, and management of unexpected interruptions in nutritional therapy.\nCONSLUSIONS: This consensus statement, endorsed by the Swiss Society for Endocrinology and Diabetology and the Swiss Society for Clinical Nutrition and Metabolism, represents a nationwide framework for insulin therapy in patients receiving enteral or parenteral nutrition in Switzerland. By standardising insulin use, it aims to enhance safety, reduce glycaemic variability and improve outcomes in hospitalised patients and in those receiving home-based specialised nutritional support.",
+      "meshTerms": [
+        "Humans",
+        "Enteral Nutrition",
+        "Insulin",
+        "Parenteral Nutrition",
+        "Switzerland",
+        "Hypoglycemic Agents",
+        "Blood Glucose",
+        "Societies, Medical",
+        "Endocrinology"
+      ],
+      "keywords": [],
+      "doi": "10.57187/5268",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 4,
+      "breakdown": {
+        "authority": 0,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": false,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-05T01:38:01.972Z",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "입원환자 영양중 인슐린 관리로 중환자실 접점은 있으나 스위스 내분비 합의",
+        "at": "2026-11-05T01:38:04.322Z"
       }
     }
   ],
@@ -61780,6 +61785,176 @@
         ]
       },
       "publishedAt": "2026-11-04"
+    },
+    {
+      "id": "pmid:42161591",
+      "pmid": "42161591",
+      "title": "Should baseline mRS serve as a gatekeeper for stroke thrombectomy? A commentary on the 2026 AHA/ASA guidelines for the early management of acute ischemic stroke.",
+      "pubDate": "2026 May 20",
+      "journal": "Journal of neurointerventional surgery",
+      "publicationTypes": [
+        "Editorial"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:34.154Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [
+        "Stroke",
+        "Thrombectomy"
+      ],
+      "doi": "10.1136/jnis-2026-025473",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "commentary-or-evaluation",
+        "conflicting-editorial-publication-type"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "2026 급성 뇌졸중 혈전제거술 지침 논평 — 신경응급 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "aha|should-baseline-mrs-serve-as-gatekeeper-stroke-thrombectomy-commentary-asa-early-management-acute-ischemic-stroke",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42161591",
+          "title": "Should baseline mRS serve as a gatekeeper for stroke thrombectomy? A commentary on the 2026 AHA/ASA guidelines for the early management of acute ischemic stroke.",
+          "journal": "Journal of neurointerventional surgery",
+          "pubDate": "2026 May 20",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42161591/",
+          "doi": "10.1136/jnis-2026-025473"
+        },
+        "org": "AHA/ASA (commentary in J Neurointerv Surg)",
+        "version": "2026",
+        "title_ko": "기저 mRS를 뇌졸중 혈전제거술의 관문(gatekeeper)으로 삼아야 하는가? — 급성 허혈뇌졸중 초기 치료에 관한 2026 AHA/ASA 가이드라인에 대한 논평",
+        "scope_ko": "이 글은 단일 연구가 아니라 2026 AHA/ASA '급성 허혈뇌졸중 초기 관리' 가이드라인(2018/2019판 대체)에 대한 전문가 논평이다. 특히 전방·후방 순환 대혈관폐색(LVO) 환자에서 기계적 혈전제거술(EVT) 적응증을 정할 때 뇌졸중 전(prestroke) 기저 modified Rankin Scale(mRS)을 적격/부적격의 경계선으로 사용하는 것이 타당한지를 비판적으로 다룬다.",
+        "summary": [
+          "The commentary's central thesis: in the 2026 AHA/ASA guideline, baseline (prestroke) mRS 0–1 remains embedded as a de facto eligibility 'gatekeeper' for most Class 1 EVT recommendations, and the authors question whether this rigid cutoff is justified.",
+          "The authors note the guideline expands EVT only modestly to selected prestroke mRS 2 patients in the early anterior-circulation window, while patients with greater premorbid disability (mRS ≥2–3) remain largely outside explicit recommendations because pivotal RCTs enrolled almost exclusively mRS 0–1 patients.",
+          "They argue this creates a circular evidence gap: trials excluded disabled patients, so guidelines cannot recommend EVT for them, so they continue to be excluded — despite registry/observational data suggesting many such patients can still return to their own prestroke baseline after EVT.",
+          "The commentary advocates for individualized, goals-of-care–based EVT decisions rather than a hard mRS threshold, emphasizing that prestroke disability alone does not reliably predict futility, symptomatic hemorrhage risk, or reperfusion success.",
+          "It frames the 2026 guideline's broadened anterior (6–24 h, large-core ASPECTS 3–5) and basilar-occlusion EVT recommendations as evidence that eligibility is being liberalized on imaging/time axes — and urges the prestroke-functional axis be reconsidered similarly."
+        ],
+        "summary_ko": [
+          "논평의 핵심 주장: 2026 AHA/ASA 가이드라인에서도 기저(prestroke) mRS 0–1이 사실상 대부분 Class 1 EVT 권고의 적격 '관문'으로 박혀 있으며, 저자들은 이 경직된 경계선이 타당한지 의문을 제기한다.",
+          "저자들은 가이드라인이 전방순환 조기 시간창에서 선택된 prestroke mRS 2 환자까지만 소폭 확대했을 뿐이고, 더 큰 기저 장애(mRS ≥2–3)를 가진 환자는 핵심 RCT들이 거의 mRS 0–1만 등록했기 때문에 여전히 명시적 권고 밖에 남아 있다고 지적한다.",
+          "이는 순환적 근거 공백을 만든다: 임상시험이 장애 환자를 배제 → 가이드라인이 그들에게 EVT를 권고할 수 없음 → 계속 배제됨 — 레지스트리·관찰 데이터는 이런 환자 상당수가 EVT 후 자신의 prestroke 기저로 복귀할 수 있음을 시사함에도.",
+          "논평은 고정된 mRS 역치 대신, 환자 개별 치료목표(goals of care)에 기반한 개별화된 EVT 결정을 옹호하며, prestroke 장애만으로는 무용성·증상성 출혈 위험·재관류 성공을 신뢰성 있게 예측하지 못한다고 강조한다.",
+          "2026 가이드라인이 전방(6–24시간, large-core ASPECTS 3–5)과 기저동맥폐색 EVT를 확대한 것을 영상·시간 축에서 적격성이 자유화되는 증거로 보고, prestroke 기능 축도 같은 방식으로 재고할 것을 촉구한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "Prestroke mRS 적응 확대",
+            "detail": "Previous guidance restricted Class 1 EVT to prestroke mRS 0–1. The 2026 guideline additionally states EVT is reasonable in SELECTED early-window anterior-circulation LVO patients with prestroke mRS 2 — a modest expansion beyond the traditional 0–1 cutoff. The commentary highlights that patients with prestroke mRS ≥3 still lack an explicit recommendation, which is the focus of its critique.",
+            "detail_ko": "이전 지침은 Class 1 EVT를 prestroke mRS 0–1로 제한했다. 2026 가이드라인은 추가로 '선택된' 조기 시간창 전방순환 LVO 환자 중 prestroke mRS 2에서도 EVT가 타당(reasonable)하다고 명시 — 전통적 0–1 경계선을 소폭 넘어선 확대다. 논평은 prestroke mRS ≥3 환자는 여전히 명시적 권고가 없다는 점을 지적하며 이를 비판의 핵심으로 삼는다."
+          },
+          {
+            "topic": "대코어(large-core) 전방순환 EVT (6–24시간)",
+            "detail": "New Class 1 recommendation: EVT for anterior-circulation proximal ICA/M1 occlusion presenting 6–24 h after onset in patients age <80, NIHSS ≥6, prestroke mRS 0–1, and ASPECTS 3–5 (large ischemic core) without significant mass effect. Previously large-core strokes (low ASPECTS) were generally excluded from EVT. Rationale: positive large-core trials (e.g., SELECT2, ANGEL-ASPECT, TESLA, TENSION, LASTE).",
+            "detail_ko": "신규 Class 1 권고: 발병 6–24시간에 내원한 전방순환 근위 ICA/M1 폐색 환자 중 80세 미만, NIHSS ≥6, prestroke mRS 0–1, ASPECTS 3–5(대코어)이며 유의한 종괴효과가 없는 경우 EVT 권고. 이전에는 저ASPECTS 대코어 뇌졸중이 대체로 EVT에서 배제되었다. 근거: 대코어 양성 임상시험(SELECT2, ANGEL-ASPECT, TESLA, TENSION, LASTE 등)."
+          },
+          {
+            "topic": "매우 큰 코어(ASPECTS 0–2) 조기창 EVT",
+            "detail": "Within 6 h, EVT is now considered reasonable even with ASPECTS 0–2 in select patients (age <80, NIHSS ≥6, prestroke mRS 0–1, no significant mass effect) — a further liberalization beyond prior ASPECTS thresholds.",
+            "detail_ko": "6시간 이내에서, 선택된 환자(80세 미만, NIHSS ≥6, prestroke mRS 0–1, 유의한 종괴효과 없음)라면 ASPECTS 0–2라도 EVT가 타당한 것으로 간주 — 이전 ASPECTS 역치를 더 완화한 것."
+          },
+          {
+            "topic": "기저동맥폐색(BAO) EVT",
+            "detail": "New Class 1 recommendation: EVT within 24 h for basilar artery occlusion with NIHSS ≥10, PC-ASPECTS ≥6, and baseline mRS 0–1, to improve functional outcome and reduce mortality. Prior guidelines had no strong/clear posterior-circulation EVT recommendation. Rationale: ATTENTION and BAOCHE trials.",
+            "detail_ko": "신규 Class 1 권고: NIHSS ≥10, PC-ASPECTS ≥6, 기저 mRS 0–1인 기저동맥폐색에서 24시간 이내 EVT로 기능적 예후 개선·사망률 감소. 이전 지침에는 명확한 후방순환 EVT 강권고가 없었다. 근거: ATTENTION, BAOCHE 임상시험."
+          },
+          {
+            "topic": "혈전용해제 선택 (tenecteplase)",
+            "detail": "Tenecteplase 0.25 mg/kg (max 25 mg) as a single IV bolus is now placed as a Class 1, co-equal first-line alternative to alteplase 0.9 mg/kg within 4.5 h. Previously alteplase was the standard agent and TNK was only 'reasonable/may be considered.' Rationale: comparable efficacy/safety plus operational advantage of a single bolus vs a 1-hour infusion.",
+            "detail_ko": "tenecteplase 0.25 mg/kg(최대 25 mg) 단일 정맥 볼루스가 4.5시간 이내 alteplase 0.9 mg/kg와 동등한 Class 1 1차 선택지로 격상. 이전에는 alteplase가 표준이고 TNK는 '타당/고려 가능' 수준이었다. 근거: 유사한 효능·안전성에 더해 1시간 주입 대비 단일 볼루스의 운영상 이점."
+          },
+          {
+            "topic": "확장 시간창 정맥 혈전용해 (4.5–9시간/기상형 발병)",
+            "detail": "Extended-window IV thrombolysis (4.5–9 h, or unknown-onset/wake-up stroke) is now reasonable in selected patients when automated perfusion/diffusion imaging shows salvageable penumbra (favorable mismatch). This expands thrombolysis beyond the prior 4.5-h ceiling.",
+            "detail_ko": "확장 시간창 정맥 혈전용해(4.5–9시간, 또는 기상형/발병시각 불명)가 자동 관류/확산영상에서 구제 가능한 penumbra(유리한 불일치)를 보이는 선택 환자에서 타당. 이전 4.5시간 상한을 넘어 혈전용해를 확대한 것."
+          },
+          {
+            "topic": "혈압 집중강하 축소 (de-intensification)",
+            "detail": "Post-IV-thrombolysis intensive SBP lowering to <140 mmHg is now Class 3 (No Benefit). Intensive BP lowering after successful EVT recanalization in anterior-circulation LVO is Class 3 (Harm — not recommended). This reverses a prior tendency toward aggressive post-reperfusion BP control. Rationale: trials (e.g., ENCHANTED, OPTIMAL-BP, post-EVT BP trials) showed no benefit or harm.",
+            "detail_ko": "정맥 혈전용해 후 수축기혈압 <140 mmHg로의 집중강하는 이제 Class 3(무이익). 전방순환 LVO에서 성공적 EVT 재관류 후 집중 혈압강하는 Class 3(유해 — 권고하지 않음). 이전의 공격적 재관류 후 혈압조절 경향을 뒤집는다. 근거: ENCHANTED, OPTIMAL-BP 등 임상시험에서 이익 없음/유해 확인."
+          },
+          {
+            "topic": "혈당 목표",
+            "detail": "Tight glucose control (targeting 80–130 mg/dL) is not recommended — it does not improve outcomes and increases severe hypoglycemia (reflecting SHINE trial results).",
+            "detail_ko": "엄격한 혈당조절(80–130 mg/dL 목표)은 권고하지 않음 — 예후를 개선하지 못하고 중증 저혈당을 늘린다(SHINE 임상시험 반영)."
+          },
+          {
+            "topic": "이동형 뇌졸중 유닛·EMS 분류",
+            "detail": "Mobile stroke units (MSUs) now receive a formal recommendation based on outcome data, and EMS triage guidance endorses direct transport to the nearest EVT-capable center where rapid interhospital transfer systems are lacking.",
+            "detail_ko": "이동형 뇌졸중 유닛(MSU)이 예후 데이터에 근거해 공식 권고를 받았고, EMS 분류 지침은 신속한 병원간 이송체계가 미비한 경우 가장 가까운 EVT 가능 센터로의 직접 이송을 지지한다."
+          },
+          {
+            "topic": "소아 급성 허혈뇌졸중",
+            "detail": "The 2026 guideline includes the first dedicated recommendations for pediatric acute ischemic stroke, emphasizing early recognition and the safety/potential benefit of thrombectomy in selected children — content absent from prior adult-focused versions.",
+            "detail_ko": "2026 가이드라인은 소아 급성 허혈뇌졸중에 대한 최초의 전용 권고를 포함하여, 조기 인지와 선택된 소아에서 혈전제거술의 안전성·잠재적 이익을 강조한다 — 이전의 성인 중심 판에는 없던 내용."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, baseline/prestroke mRS still frames EVT eligibility, but it should not be treated as an automatic veto: for a patient with prestroke mRS 2 (and selectively higher) who has an acute LVO, EVT is now explicitly reasonable, so document functional baseline and goals of care rather than reflexively excluding. Expect more candidates in the angiosuite — large-core (ASPECTS 3–5, even 0–2 in select) anterior strokes out to 24 h and basilar occlusions (NIHSS ≥10) now meet Class 1 criteria — so EM/CCM teams should trigger neurointervention activation and transfer earlier and broader. Switch default lytic to single-bolus tenecteplase 0.25 mg/kg (max 25 mg) within 4.5 h, and STOP aggressive post-reperfusion BP lowering (<140 mmHg is no-benefit after IVT and potentially harmful after successful EVT) and tight glucose targets.",
+        "practiceImpact_ko": "병상에서 기저/prestroke mRS는 여전히 EVT 적격성의 틀이지만 자동 거부권으로 다뤄서는 안 된다: 급성 LVO가 있는 prestroke mRS 2(및 선택적으로 그 이상) 환자에서도 이제 EVT가 명시적으로 타당하므로, 반사적으로 배제하지 말고 기능적 기저상태와 치료목표를 기록하라. 혈관조영실로 올 후보가 늘어난다 — 대코어(ASPECTS 3–5, 선택적으로 0–2) 전방 뇌졸중의 24시간까지 및 기저동맥폐색(NIHSS ≥10)이 Class 1에 해당하므로, EM/CCM 팀은 더 일찍·더 폭넓게 신경중재 활성화와 전원을 걸어야 한다. 1차 용해제를 4.5시간 이내 단일 볼루스 tenecteplase 0.25 mg/kg(최대 25 mg)로 바꾸고, 공격적 재관류 후 혈압강하(IVT 후 <140 mmHg는 무이익, 성공적 EVT 후에는 유해 가능)와 엄격한 혈당목표를 중단하라.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42161591",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42161591/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/jnis-2026-025473",
+            "url": "https://doi.org/10.1136/jnis-2026-025473"
+          },
+          {
+            "label": "웹 — PubMed — Should baseline mRS serve as a gatekeeper for stroke thrombectomy? (commentary, PMID 42161591)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42161591/"
+          },
+          {
+            "label": "웹 — AHA/ASA — 2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke (Stroke journal)",
+            "url": "https://www.ahajournals.org/doi/10.1161/STR.0000000000000513"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-05"
     }
   ],
   "rejected": [
@@ -65954,7 +66129,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -66764,7 +66939,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67219,7 +67394,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
       "abstract": "BACKGROUND: Oral anticoagulant (OAC) prescriptions recommended by atrial fibrillation guidelines to prevent stroke may be influenced by social determinants of health (SDOH). We aimed to uncover patient and institutional SDOH associated with failure to prescribe guideline-directed OAC and to develop an SDOH-based scoring system to predict failure to prescribe OAC.\nMETHODS: We analyzed the nationwide, 249-hospital American Heart Association GWTG-AFib (Get With The Guidelines-Atrial Fibrillation) registry. We included adult patients hospitalized for atrial fibrillation with class I indication for OAC and no contraindications. Using a logistic regression model, we identified patient and institutional SDOH of failure to prescribe OAC, adjusting for the other SDOH. Next, we developed a machine learning-based prediction model in a training data set and examined the relative contribution of each SDOH. We then compared the risk of failure to prescribe OAC in an independent test data set for validation.\nRESULTS: Among 68 628 eligible patients, 1345 (2.0%) patients did not receive guideline-directed OAC prescription. The guideline-directed OAC prescription was influenced by both institutional SDOH (eg, hospital region, hospital size, the absence of a cardiology team) and patient SDOH (eg, sex, insurance). The absence of a cardiology team was the most important predictor (adjusted odds ratio [OR], 3.72 [95% CI, 3.20-4.32]). Patients with the higher-than-Youden-index-cutoff prediction score had higher risk of failure to prescribe OAC than those with the lower-than-cutoff prediction score (OR, 3.11 [95% CI, 2.67-3.63]).\nCONCLUSIONS: We identified both institutional and patient SDOH of guideline-directed OAC prescription failure. We further developed and validated a SDOH-based scoring system to predict failure to prescribe OAC.",
       "meshTerms": [
         "Humans",
@@ -67290,7 +67465,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67318,7 +67493,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67382,7 +67557,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67409,7 +67584,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-04T01:36:03.110Z",
+      "discoveredAt": "2026-11-05T01:37:52.510Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -67482,9 +67657,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261104_103339:guideline:2026-11-04",
+    "runId": "trend_review_20261105_103625:guideline:2026-11-05",
     "outcome": "published",
-    "publishedId": "pmid:42972097",
+    "publishedId": "pmid:42161591",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -67509,15 +67684,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 115,
+        "mergedTotal": 112,
         "overlapCount": 0,
         "ptOnlyCount": 2,
         "expandedOnlyCount": 3,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 9",
         "window": {
-          "minDate": "2026/10/05",
-          "maxDate": "2026/11/04"
+          "minDate": "2026/10/06",
+          "maxDate": "2026/11/05"
         },
         "retmax": 60,
         "topics": [
@@ -67525,8 +67700,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 52,
-            "idsFetched": 52,
+            "totalFound": 48,
+            "idsFetched": 48,
             "truncated": false,
             "error": null
           },
@@ -67552,8 +67727,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 12,
-            "idsFetched": 12,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           },
@@ -67561,8 +67736,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 18,
-            "idsFetched": 18,
+            "totalFound": 19,
+            "idsFetched": 19,
             "truncated": false,
             "error": null
           },
@@ -67597,8 +67772,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -67621,7 +67796,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 110,
+        "topicOnlyCount": 107,
         "ptPmids": [
           "42837684",
           "42665231"
@@ -67629,9 +67804,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 115,
-          "enriched": 115,
-          "withAbstract": 86,
+          "requested": 112,
+          "enriched": 112,
+          "withAbstract": 84,
           "error": null
         }
       },
@@ -67684,7 +67859,7 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 3,
+        "scored": 1,
         "batches": 1,
         "failed": 0,
         "error": null
@@ -67827,20 +68002,6 @@
           "stage": "region",
           "pmid": "42844660",
           "title": "Temporal and institutional differences in heart failure guideline adherence in Taiwan.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42836802",
-          "title": "Trends in Guideline Directed Medical Therapy Use in Heart Failure With a Mildly Reduced Ejection Fraction.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42832065",
-          "title": "Known Unknowns: Unpacking Controversies and Uncertainties in the 2025 Guidelines for Management of Acute Coronary Syndromes.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -68021,13 +68182,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42832262",
-          "title": "Peer Comparison Improves Guideline Adherence for Urinary Tract Infection in a Military Emergency Department: A Quality Improvement Project.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42715931",
           "title": "Child maltreatment and harsh parenting in Canada during the COVID-19 pandemic: a scoping review of the epidemiological evidence, methodological and data gaps, and recommendations for strengthening public health data.",
           "region": null,
@@ -68051,6 +68205,13 @@
           "stage": "region",
           "pmid": "42175918",
           "title": "CAR/BRC Recommendations for Management of Axillary Lymphadenopathy Following COVID-19 Vaccination.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42981147",
+          "title": "Consensus Statement on Traumatic Brain Injury in First Responders: The 1st International Conference on TBI in First Responders.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -68179,19 +68340,19 @@
         }
       ],
       "decisions": {
-        "queued": 202,
-        "needsReview": 466,
+        "queued": 203,
+        "needsReview": 465,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42972097",
+        "candidateId": "pmid:42161591",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-04T01:39:49.840Z",
+  "updatedAt": "2026-11-05T01:41:21.868Z",
   "configVersion": "guideline-v2"
 }
