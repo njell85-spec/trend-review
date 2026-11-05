@@ -4720,6 +4720,81 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-05",
+      "pmid": "42600769",
+      "title": "Arterial blood gas parameters during cardiopulmonary resuscitation and sustained return of spontaneous circulation in out-of-hospital cardiac arrest: a preplanned secondary analysis of the AMCPR trial.",
+      "title_ko": "병원 밖 심정지 환자의 심폐소생술 중 동맥혈 가스 지표와 지속적 자발순환회복(ROSC): AMCPR 시험의 사전 계획된 이차 분석",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111266",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "병원 밖 심정지(OHCA)의 응급실 소생술 중, 현재 가이드라인에서 CPR 중 일상적으로 권고되지 않는 동맥혈 가스 분석(ABGA) 지표인 심정지 중 PaO2가 지속적 자발순환회복(ROSC)과 연관되는가?",
+      "pico": {
+        "population": "[South Korea] Among 251 adult OHCA patients treated at a tertiary emergency department (preplanned secondary analysis of the AMCPR trial); 135 had a 10-min arterial blood gas sample. 93 (37.1%) achieved sustained ROSC.",
+        "intervention": "Intra-arrest PaO2 at the protocol-defined 10-min time point (primary exposure), measured by arterial blood gas analysis obtained immediately after ultrasound-confirmed arterial catheterization and at 10 and 20 min after the start of ED resuscitation (parameters: pH, PaO2, PaCO2, HCO3-, lactate).",
+        "comparison": "Lower intra-arrest PaO2 levels (exposure analyzed as a continuous variable; no separate control arm within this secondary analysis).",
+        "outcome": "Sustained ROSC. In the primary analysis of 135 patients, higher PaO2 at 10 min was independently associated with sustained ROSC (adjusted odds ratio 1.02; 95% CI 1.01-1.02)."
+      },
+      "pico_ko": {
+        "population": "[대한민국] 3차 응급실에서 치료받은 성인 OHCA 환자 251명(AMCPR 시험의 사전 계획된 이차 분석); 이 중 135명이 10분 시점 동맥혈 가스 검체를 보유. 93명(37.1%)이 지속적 ROSC에 도달.",
+        "intervention": "프로토콜에 규정된 10분 시점의 심정지 중 PaO2(일차 노출). 초음파로 확인된 동맥 카테터 삽입 직후 및 응급실 소생술 시작 후 10분, 20분에 동맥혈 가스 분석을 시행(측정 항목: pH, PaO2, PaCO2, HCO3-, lactate).",
+        "comparison": "더 낮은 심정지 중 PaO2 수치(노출을 연속 변수로 분석; 이 이차 분석 내 별도 대조군 없음).",
+        "outcome": "지속적 ROSC. 135명을 대상으로 한 일차 분석에서 10분 시점의 높은 PaO2는 지속적 ROSC와 독립적으로 연관됨(adjusted odds ratio 1.02; 95% CI 1.01-1.02)."
+      },
+      "keyFindings": [
+        "Among 251 adult OHCA patients, 93 (37.1%) achieved sustained ROSC; in the primary analysis of 135 patients with a 10-min sample, higher PaO2 at 10 min was independently associated with sustained ROSC (aOR 1.02; 95% CI 1.01-1.02).",
+        "Exploratory optimal cut-offs were PaO2 >60 mmHg and PaCO2 <70 mmHg, whereas pH and lactate showed no consistent pattern.",
+        "Survival to discharge occurred in 20 patients (8.0%) and favorable neurological outcome in only 2 patients (0.8%); the PaO2-ROSC association was only partly separable from resuscitation duration."
+      ],
+      "keyFindings_ko": [
+        "성인 OHCA 환자 251명 중 93명(37.1%)이 지속적 ROSC에 도달; 10분 검체를 가진 135명 대상 일차 분석에서 10분 시점의 높은 PaO2가 지속적 ROSC와 독립적으로 연관(aOR 1.02; 95% CI 1.01-1.02).",
+        "탐색적 최적 절단값은 PaO2 >60 mmHg, PaCO2 <70 mmHg였고, pH와 lactate는 일관된 양상을 보이지 않음.",
+        "생존 퇴원은 20명(8.0%), 양호한 신경학적 예후는 2명(0.8%)에 불과; PaO2-ROSC 연관은 소생술 지속시간과 일부만 분리됨."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42600769",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42600769/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111266",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111266"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42600769 (AMCPR secondary analysis)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42600769/"
+        },
+        {
+          "label": "웹 — NCBI E-utilities efetch — PMID 42600769 (abstract, DOI 10.1016/j.resuscitation.2026.111266)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42600769&rettype=abstract&retmode=text"
+        },
+        {
+          "label": "웹 — ClinicalTrials.gov — AMCPR parent trial NCT03191240 (Asan Medical Center, Seoul)",
+          "url": "https://clinicaltrials.gov/study/NCT03191240"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 42600769 (AMCPR secondary analysis)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42600769/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "NCBI E-utilities efetch — PMID 42600769 (abstract, DOI 10.1016/j.resuscitation.2026.111266)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42600769&rettype=abstract&retmode=text",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "ClinicalTrials.gov — AMCPR parent trial NCT03191240 (Asan Medical Center, Seoul)",
+          "url": "https://clinicaltrials.gov/study/NCT03191240",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
