@@ -4795,6 +4795,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-06",
+      "pmid": "41222408",
+      "title": "Acute Kidney Injury After Extracorporeal Cardiopulmonary Resuscitation for Out-of-Hospital Cardiac Arrest.",
+      "title_ko": "병원 밖 심정지에 대한 체외순환 심폐소생술(ECPR) 후 발생한 급성 신손상(AKI)",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000006946",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "심인성으로 추정되는 병원 밖 심정지(OHCA)로 ECPR을 받은 성인에서, 중환자실 초기에 급성 신손상(AKI)이 얼마나 자주 발생하고, 이것이 원내 사망 및 신경학적 예후와 연관되며, 어떤 요인이 AKI 발생에 기여하는가?",
+      "pico": {
+        "population": "[Japan] Adult patients 18 years old or older with out-of-hospital cardiac arrest (OHCA) of presumed cardiac etiology who received extracorporeal cardiopulmonary resuscitation (ECPR) and were admitted to the ICU, from 36 ICUs participating in the SAVE-J II study between 2013 and 2018; among the 943 patients, AKI occurred in 66.9% (n = 631).",
+        "intervention": "Development of acute kidney injury (AKI), defined based on the Kidney Disease: Improving Global Outcomes (KDIGO) criteria with regard to serum creatinine level during the 4 days after ICU admission.",
+        "comparison": "Patients undergoing ECPR for OHCA who did not develop AKI during the 4 days after ICU admission.",
+        "outcome": "Primary outcome was in-hospital mortality; on multivariable analysis AKI was significantly associated with in-hospital mortality (OR, 4.15; 95% CI, 3.05-5.66; p < 0.001)."
+      },
+      "pico_ko": {
+        "population": "[일본] SAVE-J II 연구에 참여한 36개 중환자실에서 2013~2018년 사이 심인성으로 추정되는 병원 밖 심정지(OHCA)로 ECPR을 받고 중환자실에 입원한 18세 이상 성인 환자; 943명 중 66.9%(n = 631)에서 AKI가 발생했다.",
+        "intervention": "중환자실 입실 후 4일 동안의 혈청 creatinine 수치를 기준으로 KDIGO(Kidney Disease: Improving Global Outcomes) 기준에 따라 정의된 급성 신손상(AKI)의 발생.",
+        "comparison": "OHCA로 ECPR을 받았으나 중환자실 입실 후 4일 동안 AKI가 발생하지 않은 환자.",
+        "outcome": "일차 결과는 원내 사망이었으며, 다변량 분석에서 AKI는 원내 사망과 유의하게 연관되었다(OR, 4.15; 95% CI, 3.05-5.66; p < 0.001)."
+      },
+      "keyFindings": [
+        "Among 943 adults receiving ECPR for OHCA, AKI (KDIGO, serum creatinine over the first 4 ICU days) occurred in 66.9% (n = 631).",
+        "AKI was independently associated with in-hospital mortality on multivariable analysis (OR, 4.15; 95% CI, 3.05-5.66; p < 0.001).",
+        "AKI was independently associated with unfavorable neurologic outcome (CPC 3-5 at discharge) (OR, 3.43; 95% CI, 2.42-4.87; p < 0.001); age, time course, arrival pH, admission creatinine, and ICU-admission blood pressure were associated with AKI occurrence."
+      ],
+      "keyFindings_ko": [
+        "OHCA로 ECPR을 받은 성인 943명 중, AKI(KDIGO, 중환자실 초기 4일 혈청 creatinine 기준)가 66.9%(n = 631)에서 발생했다.",
+        "AKI는 다변량 분석에서 원내 사망과 독립적으로 연관되었다(OR, 4.15; 95% CI, 3.05-5.66; p < 0.001).",
+        "AKI는 불량한 신경학적 예후(퇴원 시 CPC 3-5)와 독립적으로 연관되었다(OR, 3.43; 95% CI, 2.42-4.87; p < 0.001); 연령, 시간 경과, 도착 시 pH, 입원 시 creatinine, 중환자실 입실 시 혈압이 AKI 발생과 연관되었다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41222408",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41222408/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000006946",
+          "url": "https://doi.org/10.1097/CCM.0000000000006946"
+        },
+        {
+          "label": "웹 — PubMed abstract (PMID 41222408)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41222408/"
+        },
+        {
+          "label": "웹 — Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/9900/acute_kidney_injury_after_extracorporeal.672.aspx"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed abstract (PMID 41222408)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41222408/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/9900/acute_kidney_injury_after_extracorporeal.672.aspx",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -4870,14 +4936,15 @@
         "41204181",
         "42584185",
         "42267821",
-        "41508101"
+        "41508101",
+        "41222408"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 43614
+      "2026-11": 47942
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }

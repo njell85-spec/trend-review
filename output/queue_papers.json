@@ -91,6 +91,126 @@
         "llmCalled": false
       },
       "addedAt": "2026-10-29"
+    },
+    {
+      "pmid": "42456111",
+      "title": "Effect of Early Administration of Shenfu Injection on Hemodynamics in Septic Patients: A Multicenter, Randomized, Controlled Trial.",
+      "journal": "Critical care medicine",
+      "score": 9.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 9.16,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "42573415",
+      "title": "A 1-Hour Resuscitation Bundle for Prehospital Management of Septic Shock.",
+      "journal": "Critical care medicine",
+      "score": 8.1,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.14,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "42057084",
+      "title": "Blood pressure response index trajectories identify distinct hemodynamic phenotypes and predict mortality in septic shock: a two-database retrospective cohort study.",
+      "journal": "Critical care (London, England)",
+      "score": 7.9,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.91,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "41838001",
+      "title": "Incidence of Adverse Events in Peripheral Intravenous Vasopressor Use: A Systematic Review and Meta-Analysis.",
+      "journal": "JAMA network open",
+      "score": 7.5,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.52,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "42958418",
+      "title": "Chlorhexidine within a standardized oral-care bundle for the prevention of ventilator-associated pneumonia: a pragmatic cluster-randomized crossover trial in six medical intensive care units.",
+      "journal": "Critical care (London, England)",
+      "score": 7.5,
+      "topic": "infection",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.5,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "41339937",
+      "title": "Influence of ventilatory settings on pendelluft and expiratory muscle activity in hypoxemic patients resuming spontaneous breathing.",
+      "journal": "Critical care (London, England)",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.66,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "41369227",
+      "title": "Ketamine or Etomidate for Tracheal Intubation of Critically Ill Adults.",
+      "journal": "The New England journal of medicine",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.6584,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "41361939",
+      "title": "Effect of Automated Closed-Loop Ventilation vs Protocolized Conventional Ventilation on Ventilator-Free Days in Critically Ill Adults: A Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "score": 8.1,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.639199999999999,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06"
     }
   ],
   "published": [
