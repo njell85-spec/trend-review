@@ -1078,5 +1078,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41222408",
+    "title": "Acute Kidney Injury After Extracorporeal Cardiopulmonary Resuscitation for Out-o",
+    "date": "2026-11-06",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

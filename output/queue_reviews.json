@@ -71,23 +71,6 @@
       "status": "queued"
     },
     {
-      "pmid": "40522647",
-      "title": "Adrenal Insufficiency in Adults: A Review.",
-      "journal": "JAMA",
-      "score": 8.4,
-      "topic": "endo_metabolic",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "부신부전·부신위기, 응급 내분비 핵심 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40720119",
       "title": "Patent Foramen Ovale and Stroke: A Review.",
       "journal": "JAMA",
@@ -14167,6 +14150,133 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40522647",
+      "title": "Adrenal Insufficiency in Adults: A Review.",
+      "journal": "JAMA",
+      "score": 8.4,
+      "topic": "endo_metabolic",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "부신부전·부신위기, 응급 내분비 핵심 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-06",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40522647",
+          "title": "Adrenal Insufficiency in Adults: A Review.",
+          "journal": "JAMA",
+          "pubDate": "2025-6-16",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40522647/",
+          "doi": "10.1001/jama.2025.5485"
+        },
+        "title_ko": "성인 부신기능저하증: 종설",
+        "scope_ko": "코르티솔 결핍 증후군인 부신기능저하증을 일차성·이차성·글루코코르티코이드 유발형으로 나누어 그 병태생리와 진단·치료, 그리고 부신위기의 예방·처치 접근법을 정리한 JAMA 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "중요성 — 분류와 역학",
+            "body_ko": "부신기능저하증은 코르티솔 결핍 증후군으로, 일차성(primary), 이차성(secondary), 글루코코르티코이드 유발형(glucocorticoid-induced)으로 분류한다. 일차성과 이차성 부신기능저하증은 드물어 유병률이 100만 명당 279명 미만이지만, 글루코코르티코이드 유발 부신기능저하증은 흔하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "일차성 부신기능저하증의 원인",
+            "body_ko": "일차성 부신기능저하증은 모든 부신피질 호르몬의 결핍을 동반한다. 원인으로는 자가면역성 파괴, 선천성 부신과형성(congenital adrenal hyperplasia), 약물에 의한 억제(예: 고용량 azole계 항진균제 치료), 감염(예: 결핵, 진균 감염), 그리고 부신피질 조직의 수술적 제거가 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이차성 부신기능저하증의 원인",
+            "body_ko": "이차성 부신기능저하증은 뇌하수체를 침범하는 질환에 의해 발생한다. 여기에는 종양, 출혈, 염증성·침윤성 병태(예: 뇌하수체염(hypophysitis), 사르코이드증, 혈색소증), 수술, 방사선 치료, 그리고 corticotropin(ACTH) 생성을 억제하는 약물(예: 아편유사제(opioid))이 포함된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "글루코코르티코이드 유발 부신기능저하증",
+            "body_ko": "글루코코르티코이드 유발 부신기능저하증은 생리학적 용량을 초과하는(supraphysiological) 글루코코르티코이드 투여에 의해 생긴다. 최근 생리적 용량을 초과하는 글루코코르티코이드를 감량했거나 중단한 환자에서 이 형태를 의심해야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상 양상",
+            "body_ko": "부신기능저하증 환자는 전형적으로 비특이적 증상으로 내원한다. 피로(50%~95%), 오심·구토(20%~62%), 식욕부진·체중감소(43%~73%) 등이 흔하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "진단",
+            "body_ko": "진단에는 이른 아침(약 오전 8시)에 측정한 혈청 코르티솔, corticotropin, 그리고 DHEAS(dehydroepiandrosterone sulfate)를 사용한다.\n\n일차성 부신기능저하증은 전형적으로 낮은 아침 코르티솔(<5 µg/dL), 높은 corticotropin, 낮은 DHEAS를 보인다. 이차성 및 글루코코르티코이드 유발 부신기능저하증 환자는 전형적으로 낮거나 중간 정도의 아침 코르티솔(5~10 µg/dL)과, 낮거나 정상 하한에 가까운 corticotropin·DHEAS를 보인다.\n\n아침 코르티솔이 중간 정도(intermediate)인 환자는 이른 아침 코르티솔 측정을 반복하거나 corticotropin 자극 검사를 받아야 한다. 자극 검사는 cosyntropin 250 µg 투여 전과 투여 60분 후에 코르티솔을 측정하는 방식이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료",
+            "body_ko": "부신기능저하증의 치료는 글루코코르티코이드 보충(예: hydrocortisone 1일 15~25 mg, 또는 prednisone 1일 3~5 mg)으로 이루어진다. 일차성 부신기능저하증 환자에게는 광질코르티코이드(mineralocorticoid, 예: fludrocortisone 1일 0.05~0.3 mg)를 추가해야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "부신위기와 그 예방",
+            "body_ko": "부신위기(adrenal crisis)는 치료하지 않으면 저혈압과 쇼크, 저나트륨혈증, 의식 변화, 사망까지 초래할 수 있는 증후군이다. 글루코코르티코이드 치료가 불충분한 상태에서 급성 질환이나 신체적 스트레스가 겹친 부신기능저하증 환자에서 발생할 수 있다.\n\n따라서 부신기능저하증 환자 전원에게 급성 질환 시 글루코코르티코이드를 증량하는 방법을 교육하고, 부신위기를 예방·치료하기 위한 주사용 글루코코르티코이드(예: hydrocortisone 100 mg 근육주사)를 처방해야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 아형별 유병률 세부",
+            "body_ko": "이 논문의 환자용 요약(JAMA Patient Page)은 아형별 유병률을 좀 더 구체적으로 제시한다. 일차성 부신기능저하증(주로 자가면역에 의한 부신 파괴, 즉 Addison병)은 100만 명당 약 4~221명, 이차성 부신기능저하증은 100만 명당 약 140~279명으로 보고된다. 글루코코르티코이드 유발형은 장기간 고용량 스테로이드 사용이 정상 코르티솔 생산을 억제하여 생기는 가장 흔한 형태이다. 환자 요약은 또한 피부 착색 증가, 기립성 저혈압, 염분 갈망을 추가적 징후로 든다.\n— 보강 출처: JAMA Patient Page — What Is Adrenal Insufficiency? (본 논문 동반 자료) (https://jamanetwork.com/journals/jama/fullarticle/2844544)",
+            "origin": "augmented",
+            "sourceLabel": "JAMA Patient Page — What Is Adrenal Insufficiency? (본 논문 동반 자료)",
+            "sourceUrl": "https://jamanetwork.com/journals/jama/fullarticle/2844544"
+          },
+          {
+            "heading_ko": "[웹 보강] 부신위기 급성 처치와 Sick-day 규칙 세부",
+            "body_ko": "본 종설 본문은 유료 접근이라 부신위기의 급성 처치 용량 세부는 확보하지 못했다. 참고로, 부신위기 관리에 관한 별도 문헌(Rushworth 등, PMC9242908)은 다음과 같이 권고한다: 성인 급성 부신위기 시 hydrocortisone 100 mg을 IV 또는 IM으로 즉시 투여하고, 이후 24시간 동안 200 mg(지속 정주 또는 6시간마다 50 mg 볼루스)을 투여하며, 24시간 성공적으로 치료된 뒤에는 평소 용량의 2~3배 경구 hydrocortisone으로 전환해 2~3일에 걸쳐 감량한다.\n\n또한 환자는 생리적 스트레스(발열 등 경증 질환) 시 평소 경구 hydrocortisone 용량을 2~3배로 늘리는 등 용량 증량(경구 및/또는 비경구)에 대한 자가관리 역량을 갖추어야 한다. 구토·설사로 경구 흡수가 불가능하거나 경구 투여를 견디지 못하는 등 상황에서는 비경구 스테로이드가 필요하다. 부신위기는 (절대적 또는 상대적) 저혈압에 저나트륨혈증, 고칼륨혈증, 저혈당, 오심·구토, 심한 피로·쇠약, 혼동 등이 동반되는 급성 악화로 정의된다. 이 단락은 본 논문 자체가 아니라 부신위기 전문 2차 문헌에서 가져온 보강 내용이다.\n— 보강 출처: Rushworth RL et al., Adrenal crises in adolescents and young adults (Endocrine, PMC9242908) (https://pmc.ncbi.nlm.nih.gov/articles/PMC9242908/)",
+            "origin": "augmented",
+            "sourceLabel": "Rushworth RL et al., Adrenal crises in adolescents and young adults (Endocrine, PMC9242908)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9242908/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "8a3aa05cc0346ed5a125749e801be0fe49dd6a1b179485f65cc332c3639771a0",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-06T01:50:20.107Z",
+          "resultFingerprint": "0eb40c323a5e3f50073995e9e0ac5a7db99d4b8b330ba007ac6b430a797bc629",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급·중환자 현장에서 글루코코르티코이드를 최근 감량·중단한 환자나 비특이적 피로·오심·저혈압 환자에서 부신기능저하증을 폭넓게 의심해야 하며, 확진 전이라도 급성 스트레스 상황에서는 글루코코르티코이드 증량을 미루지 말아야 한다. 진단은 이른 아침 코르티솔·corticotropin·DHEAS 측정과 중간값일 때의 cosyntropin 250 µg 자극 검사로 접근하고, 모든 환자에게 sick-day 증량 교육과 주사용 hydrocortisone 100 mg IM 처방을 통해 부신위기를 예방·치료하도록 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40522647",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40522647/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1001/jama.2025.5485",
+            "url": "https://doi.org/10.1001/jama.2025.5485"
+          },
+          {
+            "label": "웹 — Adrenal Insufficiency in Adults: A Review (JAMA 전문 페이지 — 초록 수준만 공개)",
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2835391"
+          },
+          {
+            "label": "웹 — JAMA Patient Page — What Is Adrenal Insufficiency? (본 논문 동반 환자용 요약)",
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2844544"
+          },
+          {
+            "label": "웹 — Adrenal crises in adolescents and young adults (PMC9242908 — 부신위기 처치 보강)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9242908/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -14224,9 +14334,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "outcome": "published",
-    "publishedId": "40193249"
+    "publishedId": "40522647"
   },
-  "updatedAt": "2026-11-05"
+  "updatedAt": "2026-11-06"
 }

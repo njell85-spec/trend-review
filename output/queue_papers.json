@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41222408",
-      "title": "Acute Kidney Injury After Extracorporeal Cardiopulmonary Resuscitation for Out-of-Hospital Cardiac Arrest.",
-      "journal": "Critical care medicine",
-      "score": 8.5,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.5,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-29"
-    },
-    {
       "pmid": "41857661",
       "title": "Prehospital initiation of extracorporeal life support for refractory out-of-hospital cardiac arrest-results of a prospective observational study.",
       "journal": "Critical care (London, England)",
@@ -478,6 +463,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-05"
+    },
+    {
+      "pmid": "41222408",
+      "title": "Acute Kidney Injury After Extracorporeal Cardiopulmonary Resuscitation for Out-of-Hospital Cardiac Arrest.",
+      "journal": "Critical care medicine",
+      "score": 8.5,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.5,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-29",
+      "publishedAt": "2026-11-06"
     }
   ],
   "rejected": [
@@ -493,9 +494,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "outcome": "published",
-    "publishedId": "42600769"
+    "publishedId": "41222408"
   },
-  "updatedAt": "2026-11-05"
+  "updatedAt": "2026-11-06"
 }
