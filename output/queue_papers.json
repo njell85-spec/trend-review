@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41857661",
-      "title": "Prehospital initiation of extracorporeal life support for refractory out-of-hospital cardiac arrest-results of a prospective observational study.",
-      "journal": "Critical care (London, England)",
-      "score": 8.4,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.35,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-29"
-    },
-    {
       "pmid": "41620016",
       "title": "Cerebral blood flow estimation using NIRS in cardiac arrest patients: correlation with ROSC outcomes.",
       "journal": "Resuscitation",
@@ -599,6 +584,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-06"
+    },
+    {
+      "pmid": "41857661",
+      "title": "Prehospital initiation of extracorporeal life support for refractory out-of-hospital cardiac arrest-results of a prospective observational study.",
+      "journal": "Critical care (London, England)",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.35,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-29",
+      "publishedAt": "2026-11-07"
     }
   ],
   "rejected": [
@@ -614,9 +615,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-06",
+    "date": "2026-11-07",
     "outcome": "published",
-    "publishedId": "41222408"
+    "publishedId": "41857661"
   },
-  "updatedAt": "2026-11-06"
+  "updatedAt": "2026-11-07"
 }

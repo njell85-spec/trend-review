@@ -1089,5 +1089,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41857661",
+    "title": "Prehospital initiation of extracorporeal life support for refractory out-of-hosp",
+    "date": "2026-11-07",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
