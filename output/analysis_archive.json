@@ -4908,6 +4908,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-08",
+      "pmid": "41620016",
+      "title": "Cerebral blood flow estimation using NIRS in cardiac arrest patients: correlation with ROSC outcomes.",
+      "title_ko": "심정지 환자에서 NIRS를 이용한 뇌혈류 추정: ROSC 결과와의 상관관계",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.110997",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "원외 심정지(OHCA)로 CPR을 받는 성인에서, NIRS로 추정한 뇌혈류(CBF)가 평균동맥압(MAP) 수준 변화에 어떻게 반응하며, 이 MAP–CBF 관계가 ROSC를 달성한 환자와 그렇지 않은 환자 사이에서 다른가?",
+      "pico": {
+        "population": "[South Korea] Adult patients (≥18 years) with OHCA who underwent CPR with both invasive arterial monitoring and near-infrared spectroscopy (NIRS) measurements; 74 patients analyzed.",
+        "intervention": "NIRS-estimated cerebral blood flow (CBF) assessed across mean arterial pressure (MAP) categorized into 20 mmHg intervals (0–20, 20–40, 40–60, 60–80 mmHg) during CPR.",
+        "comparison": "Patients achieving return of spontaneous circulation (ROSC) compared with those who did not achieve ROSC.",
+        "outcome": "Correlation between MAP and NIRS-estimated CBF during CPR. CBF showed minimal responsiveness to MAP below 60 mmHg in both groups; a significant positive correlation between MAP and CBF emerged in the 60–80 mmHg range specifically among ROSC patients (p < 0.001) but not in non-ROSC patients, with steeper CBF increases on linear regression in the ROSC group beyond 60 mmHg."
+      },
+      "pico_ko": {
+        "population": "[대한민국] 침습적 동맥압 모니터링과 근적외선분광법(NIRS) 측정을 함께 시행하며 CPR을 받은 성인(≥18세) OHCA 환자; 분석 대상 74명.",
+        "intervention": "CPR 중 20 mmHg 간격(0–20, 20–40, 40–60, 60–80 mmHg)으로 구분한 평균동맥압(MAP)에 따른 NIRS 추정 뇌혈류(CBF) 평가.",
+        "comparison": "자발순환회복(ROSC)을 달성한 환자와 달성하지 못한 환자 간 비교.",
+        "outcome": "CPR 중 MAP와 NIRS 추정 CBF 간 상관관계. 60 mmHg 미만에서는 양 군 모두 CBF가 MAP 변화에 거의 반응하지 않았고, 60–80 mmHg 구간에서는 ROSC 군에서만 MAP와 CBF 간 유의한 양의 상관관계가 나타났으며(p < 0.001) non-ROSC 군에서는 나타나지 않았다. 선형회귀에서 ROSC 군은 60 mmHg 초과 구간에서 더 가파른 CBF 증가를 보였다."
+      },
+      "keyFindings": [
+        "Among 74 OHCA patients, NIRS-estimated CBF showed minimal responsiveness to MAP changes below 60 mmHg in both ROSC and non-ROSC groups.",
+        "A significant positive correlation between MAP and CBF emerged in the 60–80 mmHg range specifically among patients achieving ROSC (p < 0.001), but not in non-ROSC patients.",
+        "Linear regression showed steeper CBF increases with higher MAP values in the ROSC group beyond 60 mmHg, suggesting a pressure-range–dependent MAP–CBF relationship."
+      ],
+      "keyFindings_ko": [
+        "74명의 OHCA 환자에서 NIRS 추정 CBF는 ROSC 군과 non-ROSC 군 모두 60 mmHg 미만의 MAP 변화에 거의 반응하지 않았다.",
+        "60–80 mmHg 구간에서는 ROSC를 달성한 환자에서만 MAP와 CBF 간 유의한 양의 상관관계가 나타났고(p < 0.001) non-ROSC 환자에서는 나타나지 않았다.",
+        "선형회귀에서 ROSC 군은 60 mmHg 초과 구간에서 더 가파른 CBF 증가를 보여, MAP–CBF 관계가 압력 구간에 따라 달라짐을 시사했다."
+      ],
+      "evidenceLevel": "Very Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41620016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41620016/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.110997",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.110997"
+        },
+        {
+          "label": "웹 — PubMed (PMID 41620016)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41620016/"
+        },
+        {
+          "label": "웹 — Seoul National University – Elsevier Pure publication record",
+          "url": "https://snu.elsevierpure.com/en/publications/cerebral-blood-flow-estimation-using-nirs-in-cardiac-arrest-patie/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed (PMID 41620016)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41620016/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Seoul National University – Elsevier Pure publication record",
+          "url": "https://snu.elsevierpure.com/en/publications/cerebral-blood-flow-estimation-using-nirs-in-cardiac-arrest-patie/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -4985,14 +5051,15 @@
         "42267821",
         "41508101",
         "41222408",
-        "41857661"
+        "41857661",
+        "41620016"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 58684
+      "2026-11": 70978
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
