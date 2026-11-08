@@ -41110,7 +41110,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41909,7 +41909,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43061,7 +43061,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -44670,7 +44670,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -44911,80 +44911,6 @@
         "reason": "심근염 부정맥·AV차단·심실빈맥, 응급·중환자 실무에 닿음",
         "at": "2026-08-30T23:47:32.947Z"
       }
-    },
-    {
-      "id": "pmid:42618174",
-      "pmid": "42618174",
-      "title": "Unscheduled Procedural Sedation Multidisciplinary Delphi Consensus Guidelines, Part 2: Clinical Practice: Approved by the ACEP Board of Directors, April 29, 2026.",
-      "pubDate": "2026 Sep",
-      "journal": "Annals of emergency medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-title",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-09-01T00:48:00.223Z",
-      "abstract": "Policy statements and clinical policies are the official policies of the American College of Emergency Physicians and, as such, are not subject to the same peer review process as articles appearing in the journal. Policy statements and clinical policies of ACEP do not necessarily reflect the policies and beliefs of Annals of Emergency Medicine and its editors.",
-      "meshTerms": [
-        "Humans",
-        "Procedural Sedation",
-        "Emergency Medicine",
-        "Societies, Medical",
-        "Consensus",
-        "United States"
-      ],
-      "keywords": [],
-      "doi": "10.1016/j.annemergmed.2026.06.039",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": false,
-        "explicitRecommendation": false,
-        "officialDocument": true,
-        "organizationId": "acep"
-      },
-      "priority": 8.8,
-      "breakdown": {
-        "authority": 4,
-        "topic": 0.8,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "acep",
-      "tier": 1,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "official-evidence"
-      ],
-      "attempts": 0,
-      "lastSeenAt": "2026-10-01T00:43:23.773Z",
-      "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
-      "supersedes": [],
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ACEP 응급 진정 지침 임상실무편 — 응급 술기 핵심",
-        "at": "2026-09-01T00:48:10.619Z"
-      },
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
     },
     {
       "id": "pmid:42618173",
@@ -45723,7 +45649,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -45922,7 +45848,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46650,7 +46576,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46725,7 +46651,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46789,7 +46715,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -46859,7 +46785,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46927,7 +46853,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46990,7 +46916,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -47055,7 +46981,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47118,7 +47044,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47180,7 +47106,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47238,7 +47164,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47307,7 +47233,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47377,7 +47303,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47457,7 +47383,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47525,7 +47451,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47587,7 +47513,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47666,7 +47592,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47748,7 +47674,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47847,7 +47773,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47948,7 +47874,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48029,7 +47955,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -48111,7 +48037,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48174,7 +48100,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -48243,7 +48169,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -48317,7 +48243,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-07T01:03:37.014Z",
+      "lastSeenAt": "2026-11-08T00:52:12.023Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -62098,6 +62024,183 @@
         ]
       },
       "publishedAt": "2026-11-07"
+    },
+    {
+      "id": "pmid:42618174",
+      "pmid": "42618174",
+      "title": "Unscheduled Procedural Sedation Multidisciplinary Delphi Consensus Guidelines, Part 2: Clinical Practice: Approved by the ACEP Board of Directors, April 29, 2026.",
+      "pubDate": "2026 Sep",
+      "journal": "Annals of emergency medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-09-01T00:48:00.223Z",
+      "abstract": "Policy statements and clinical policies are the official policies of the American College of Emergency Physicians and, as such, are not subject to the same peer review process as articles appearing in the journal. Policy statements and clinical policies of ACEP do not necessarily reflect the policies and beliefs of Annals of Emergency Medicine and its editors.",
+      "meshTerms": [
+        "Humans",
+        "Procedural Sedation",
+        "Emergency Medicine",
+        "Societies, Medical",
+        "Consensus",
+        "United States"
+      ],
+      "keywords": [],
+      "doi": "10.1016/j.annemergmed.2026.06.039",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": true,
+        "organizationId": "acep"
+      },
+      "priority": 8.8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0.8,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "acep",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "official-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-10-01T00:43:23.773Z",
+      "lineageKey": "acep|unscheduled-procedural-sedation-multidisciplinary-delphi-consensus-part-2-clinical-practice-approved-by-board-directors-april-29",
+      "supersedes": [],
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ACEP 응급 진정 지침 임상실무편 — 응급 술기 핵심",
+        "at": "2026-09-01T00:48:10.619Z"
+      },
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42618174",
+          "title": "Unscheduled Procedural Sedation Multidisciplinary Delphi Consensus Guidelines, Part 2: Clinical Practice: Approved by the ACEP Board of Directors, April 29, 2026.",
+          "journal": "Annals of emergency medicine",
+          "pubDate": "2026 Sep",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42618174/",
+          "doi": "10.1016/j.annemergmed.2026.06.039"
+        },
+        "org": "ACEP (multidisciplinary Delphi consensus; 17 endorsing organizations incl. AAP, AANA, SCCM, CAEP)",
+        "version": "2026",
+        "title_ko": "비예정(응급) 시술 진정 다학제 델파이 합의 가이드라인, Part 2: 임상 실무 (ACEP 이사회 승인, 2026-04-29)",
+        "scope_ko": "응급실 등 비예정(긴급·응급) 상황에서 소아와 성인에게 시행하는 시술 진정·진통(PSA)의 임상 실무를 다룬다. 시술자 역량, 진정 전 평가, 금식(NPO)·흡인 위험 평가(GLP-1 수용체 작용제 복용자 포함), 모니터링, 진정제 조합, 회복·퇴실, 기록을 포괄하며 2019년 합의 가이드라인을 갱신한 것이다.",
+        "summary": [
+          "Risk-stratify each patient at pre-sedation assessment using evidence-based factors, then apply graded (not blanket) fasting precautions for elective procedures by aspiration-risk category (negligible / mild / moderate); urgency of the procedure dictates timing regardless of last oral intake.",
+          "There is no evidence that compliance with elective fasting guidelines reduces aspiration, emesis, or other adverse events during procedural sedation — strict NPO rules are not required for unscheduled PSA (moderate evidence per secondary reporting).",
+          "GLP-1 receptor agonist use should NOT automatically trigger special precautions (e.g., mandatory prolonged fast or rapid-sequence/awake airway management); incorporate it into individualized aspiration-risk assessment (very low evidence).",
+          "Use capnography routinely whenever feasible for moderate, deep, and dissociative sedation; monitor blood pressure at least every 5 minutes (high evidence for capnography).",
+          "Supplemental oxygen is optional rather than mandatory during procedural sedation.",
+          "Do NOT require ASA Physical Status classification or Mallampati score to guide individual sedation decisions — both have poor predictive value and inter-rater reliability.",
+          "Ketofol (propofol plus subdissociative-dose ketamine) is an equally safe and effective alternative to opioid pretreatment followed by propofol; dissociative ketamine may proceed without pre-existing IV access when IV expertise is immediately available.",
+          "Routine prophylactic anticholinergics (e.g., atropine/glycopyrrolate) with ketamine are no longer recommended; adjunctive midazolam modestly reduces recovery agitation with ketamine in adults but not in children."
+        ],
+        "summary_ko": [
+          "진정 전 평가에서 근거 기반 인자로 환자별 위험을 먼저 층화한 뒤, 선택적 시술에서는 일괄 금식이 아니라 흡인위험 범주(무시가능/경도/중등도)에 따라 차등 금식 주의를 적용한다. 시술의 긴급도가 마지막 경구섭취와 무관하게 진정 시점을 좌우한다.",
+          "선택적 금식 지침을 지킨다고 해서 시술 진정 중 흡인·구토·기타 이상반응이 줄어든다는 근거는 없다 — 비예정 PSA에 엄격한 NPO 규칙은 필요하지 않다(2차 보도 기준 moderate evidence).",
+          "GLP-1 수용체 작용제 복용 자체를 특별 주의(예: 의무적 장시간 금식, RSI/각성 기도관리)의 자동 사유로 삼지 말고, 개별 흡인위험 평가에 하나의 인자로 포함한다(very low evidence).",
+          "중등도·심부·해리성 진정에서는 가능한 한 capnography(호기말 CO2)를 상시 사용하고, 혈압은 최소 5분마다 측정한다(capnography는 high evidence).",
+          "보충 산소는 의무가 아니라 선택 사항이다.",
+          "ASA Physical Status 분류나 Mallampati 점수를 개별 진정 결정의 필수 기준으로 요구하지 않는다 — 두 지표 모두 예측력과 검사자 간 일치도가 낮다.",
+          "Ketofol(propofol + 아해리용량 ketamine)은 opioid 전처치 후 propofol과 동등하게 안전·유효한 대안이며, IV 전문 인력이 즉시 가용하면 기존 정맥로 없이도 해리성 ketamine 진정을 진행할 수 있다.",
+          "ketamine에 예방적 항콜린제(atropine/glycopyrrolate) 상시 병용은 더 이상 권고하지 않으며, 보조 midazolam은 성인에서 ketamine 회복기 초조를 다소 줄이나 소아에서는 입증되지 않았다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "금식(NPO)·흡인 위험",
+            "detail": "Moves further from fixed NPO intervals: instead of time-based fasting thresholds, the 2026 guideline has each patient risk-stratified at pre-sedation assessment and then applies graded liquid/solid fasting precautions for ELECTIVE procedures only, categorized as negligible, mild, or moderate aspiration risk. It explicitly states there is no evidence that compliance with elective fasting guidelines decreases aspiration/emesis/adverse events, and urgency dictates timing regardless of oral intake — a less restrictive stance than historical strict-NPO practice.",
+            "detail_ko": "고정 NPO 시간 기준에서 더 벗어난다: 시간 기반 금식 역치 대신, 2026년판은 진정 전 평가에서 환자별 위험을 층화하고 '선택적' 시술에 한해 무시가능/경도/중등도 흡인위험 범주로 나누어 수분·고형식에 차등 금식 주의를 적용한다. 선택적 금식 지침 준수가 흡인·구토·이상반응을 줄인다는 근거가 없음을 명시하고, 경구섭취와 무관하게 긴급도가 시점을 좌우하게 하여 과거의 엄격한 NPO 관행보다 덜 제한적이다."
+          },
+          {
+            "topic": "GLP-1 수용체 작용제",
+            "detail": "Adds brand-new guidance absent from 2019: GLP-1 receptor agonist use by itself should NOT automatically mandate special precautions (prolonged fasting, routine rapid-sequence or awake intubation). Reported GLP-1-associated aspiration events (incl. deaths) are acknowledged but the absolute risk is low with no significant difference in aspiration pneumonia vs non-users, so the drug becomes one factor in individualized risk assessment rather than an automatic trigger.",
+            "detail_ko": "2019년에 없던 완전히 새로운 지침을 추가한다: GLP-1 수용체 작용제 복용 그 자체를 특별 주의(장시간 금식, 일상적 RSI·각성 삽관)의 자동 사유로 삼지 않는다. GLP-1 관련 흡인 사례(사망 포함)는 인정하되 절대 위험은 낮고 비복용자 대비 흡인성 폐렴 빈도에 유의한 차이가 없어, 이 약물은 자동 트리거가 아니라 개별 위험 평가의 한 인자로 다룬다."
+          },
+          {
+            "topic": "ASA Physical Status 분류",
+            "detail": "Previously risk stratification leaned on ASA Physical Status class; the 2026 guideline states ASA scoring has poor predictive value and inter-rater reliability and cannot reliably guide individual sedation decisions — a departure from using ASA class as a gatekeeping criterion.",
+            "detail_ko": "이전에는 ASA Physical Status 등급에 의존해 위험을 층화했으나, 2026년판은 ASA 점수가 예측력과 검사자 간 일치도가 낮아 개별 진정 결정을 신뢰성 있게 안내할 수 없다고 명시한다 — ASA 등급을 관문 기준으로 쓰던 관행에서 벗어난 것이다."
+          },
+          {
+            "topic": "기도 평가(Mallampati)",
+            "detail": "Recommends AGAINST requiring routine Mallampati scoring before procedural sedation, citing poor predictive value for difficult ventilation/intubation — a change from reflexive airway-scoring as a mandatory pre-sedation step.",
+            "detail_ko": "시술 진정 전 Mallampati 점수를 일상적으로 요구하지 말 것을 권고한다. 어려운 환기·삽관에 대한 예측력이 낮다는 이유로, 기도 점수화를 진정 전 필수 단계로 삼던 관행을 바꾼다."
+          },
+          {
+            "topic": "모니터링(capnography·산소)",
+            "detail": "Strengthens monitoring guidance: capnography is recommended routinely 'whenever feasible' for moderate, deep, and dissociative sedation (high-quality evidence), with blood pressure at least every 5 minutes; meanwhile supplemental oxygen is downgraded to optional rather than mandatory (it can mask hypoventilation on pulse oximetry).",
+            "detail_ko": "모니터링 지침을 강화한다: 중등도·심부·해리성 진정에서 가능한 한 capnography를 상시 사용하도록 권고하고(고근거) 혈압은 최소 5분마다 측정한다. 반면 보충 산소는 의무에서 선택으로 낮춘다(산소 투여가 pulse oximetry 상 저환기를 가릴 수 있음)."
+          },
+          {
+            "topic": "진정제 조합(ketofol·ketamine)",
+            "detail": "Expands drug options: ketofol (propofol + subdissociative ketamine) is endorsed as an equally safe/effective alternative to opioid pretreatment followed by propofol; dissociative ketamine may proceed without pre-existing IV access when IV expertise is immediately available; adjunctive midazolam modestly lowers recovery agitation with ketamine in adults (not children).",
+            "detail_ko": "약물 선택지를 넓힌다: ketofol(propofol + 아해리용량 ketamine)을 opioid 전처치 후 propofol과 동등하게 안전·유효한 대안으로 인정하고, IV 전문 인력이 즉시 가용하면 기존 정맥로 없이도 해리성 ketamine을 진행할 수 있으며, 보조 midazolam은 성인에서 ketamine 회복기 초조를 다소 줄인다(소아는 해당 없음)."
+          },
+          {
+            "topic": "예방적 항콜린제",
+            "detail": "Routine prophylactic anticholinergics (atropine/glycopyrrolate) co-administered with ketamine are no longer recommended, reversing the older practice of routine antisialagogue use to reduce hypersalivation.",
+            "detail_ko": "ketamine 병용 시 예방적 항콜린제(atropine/glycopyrrolate) 상시 투여를 더 이상 권고하지 않는다 — 과다 타액 억제를 위해 항타액제를 일상적으로 쓰던 이전 관행을 뒤집는다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "ACEP 공식 페이지 — 문서 위치와 구성(Part 1/Part 2)",
+            "body_ko": "ACEP의 Procedural Sedation 주제 페이지는 이 가이드라인을 'Unscheduled Procedural Sedation Multidisciplinary Delphi Consensus Guidelines'로 게시하며, Part 1(원칙·감독·질 모니터링)과 Part 2(임상 실무)로 구성됨을 확인해 준다. 다만 이 페이지 자체는 세부 권고 내용을 요약 제공하지는 않고, 관련 정책성명(법 집행 목적 ketamine 사용 반대 ACEP/ASA 공동성명 등)과 자격·크리덴셜 문서를 함께 링크한다. 세부 권고는 원문 전문을 참조해야 한다는 점만 안내한다.",
+            "sourceLabel": "ACEP — Procedural Sedation (by Medical Focus)",
+            "sourceUrl": "https://www.acep.org/by-medical-focus/procedural-sedation"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, EM/CCM clinicians can proceed with urgent procedural sedation without delaying for fixed NPO intervals and without automatically deferring or escalating airway management for GLP-1 users — instead documenting an individualized aspiration-risk category. Routine ASA-class and Mallampati gating, prophylactic anticholinergics with ketamine, and mandatory supplemental oxygen can be dropped, while continuous capnography (whenever feasible) plus q5-minute blood pressure become the monitoring standard for moderate/deep/dissociative sedation. Ketofol and IV-expertise-contingent IM/IV ketamine broaden practical drug choices. Department protocols, order sets, and sedation checklists should be updated to replace time-based fasting and reflexive airway-scoring steps with a documented risk-stratification step.",
+        "practiceImpact_ko": "현장에서 EM/CCM 의료진은 고정 NPO 시간을 기다리지 않고 긴급 시술 진정을 진행할 수 있고, GLP-1 복용자라도 자동으로 기도관리를 미루거나 강화할 필요 없이 개별 흡인위험 범주를 기록하면 된다. ASA 등급·Mallampati 관문, ketamine 예방적 항콜린제, 의무적 보충 산소는 생략할 수 있으며, 중등도·심부·해리성 진정에서는 (가능한 한) 지속 capnography와 5분마다 혈압이 모니터링 표준이 된다. ketofol과 IV 전문 인력 조건부 ketamine이 실용적 약물 선택을 넓힌다. 부서 프로토콜·오더세트·진정 체크리스트에서 시간 기반 금식과 반사적 기도 점수화 단계를 '위험 층화 기록' 단계로 교체하도록 갱신해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42618174",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42618174/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.annemergmed.2026.06.039",
+            "url": "https://doi.org/10.1016/j.annemergmed.2026.06.039"
+          },
+          {
+            "label": "웹 — ACEP — Procedural Sedation (by Medical Focus)",
+            "url": "https://www.acep.org/by-medical-focus/procedural-sedation"
+          },
+          {
+            "label": "웹 — PubMed listing — Unscheduled Procedural Sedation Multidisciplinary Delphi Consensus Guidelines, Part 2 (PMID 42618174)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42618174/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-08"
     }
   ],
   "rejected": [
@@ -66272,7 +66375,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-07T01:03:29.310Z",
+      "discoveredAt": "2026-11-08T00:52:02.033Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -67082,7 +67185,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-07T01:03:29.310Z",
+      "discoveredAt": "2026-11-08T00:52:02.033Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67636,7 +67739,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-07T01:03:29.310Z",
+      "discoveredAt": "2026-11-08T00:52:02.033Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67700,7 +67803,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-07T01:03:29.310Z",
+      "discoveredAt": "2026-11-08T00:52:02.033Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -67727,7 +67830,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-07T01:03:29.310Z",
+      "discoveredAt": "2026-11-08T00:52:02.033Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -67800,9 +67903,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261107_100203:guideline:2026-11-07",
+    "runId": "trend_review_20261108_095040:guideline:2026-11-08",
     "outcome": "published",
-    "publishedId": "pmid:39707127",
+    "publishedId": "pmid:42618174",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -67811,8 +67914,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -67821,21 +67924,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           }
         ],
         "mergedTotal": 118,
         "overlapCount": 0,
-        "ptOnlyCount": 2,
-        "expandedOnlyCount": 3,
+        "ptOnlyCount": 3,
+        "expandedOnlyCount": 4,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 9",
         "window": {
-          "minDate": "2026/10/08",
-          "maxDate": "2026/11/07"
+          "minDate": "2026/10/09",
+          "maxDate": "2026/11/08"
         },
         "retmax": 60,
         "topics": [
@@ -67843,8 +67946,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 50,
-            "idsFetched": 50,
+            "totalFound": 47,
+            "idsFetched": 47,
             "truncated": false,
             "error": null
           },
@@ -67879,8 +67982,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 17,
-            "idsFetched": 17,
+            "totalFound": 18,
+            "idsFetched": 18,
             "truncated": false,
             "error": null
           },
@@ -67939,8 +68042,9 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 113,
+        "topicOnlyCount": 111,
         "ptPmids": [
+          "42858614",
           "42837684",
           "42665231"
         ],
@@ -67949,7 +68053,7 @@
           "attempted": true,
           "requested": 118,
           "enriched": 118,
-          "withAbstract": 86,
+          "withAbstract": 87,
           "error": null
         }
       },
@@ -68008,6 +68112,13 @@
       "scopeExclusions": [
         {
           "stage": "region",
+          "pmid": "42858614",
+          "title": "Guidelines for Decisions to Withhold or Withdraw Life-Sustaining Treatments (LST) in Adult ICU.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42837684",
           "title": "Technical Update No. 472: The Resuscitative Use of Intact Umbilical Cord Milking for Non-Vigorous Late Preterm (≥35(0) weeks of gestation) and Term Infants.",
           "region": null,
@@ -68017,6 +68128,13 @@
           "stage": "region",
           "pmid": "42665231",
           "title": "Use of factor concentrates for the management of perioperative bleeding: guidance from the ISTH SSC Subcommittee on Perioperative and Critical Care Thrombosis and Hemostasis.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42994848",
+          "title": "Development and pilot feasibility testing of an evidence-based endotracheal tube maintenance protocol for critically ill patients: A delphi consensus study.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -68038,6 +68156,13 @@
           "stage": "region",
           "pmid": "42469072",
           "title": "Brain Death Determination During VA-ECMO After Pediatric Cardiac Surgery: A Case-Based Analysis of the 2023 Unified Consensus.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42995105",
+          "title": "Bridging the gap between guidelines: ultrasound and the diagnostic continuum of venous thromboembolism.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -68143,27 +68268,6 @@
           "stage": "region",
           "pmid": "42855768",
           "title": "[Chinese guideline for the laboratory diagnosis of venous thromboembolism (2026 edition)].",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42850367",
-          "title": "Correction: Autonomic effects of simulated periodic breathing in patients with chronic heart failure on contemporary guideline-directed therapy.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42850059",
-          "title": "Timing of heart failure diagnosis and uptake of newly recommended therapies following clinical guideline updates.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42844660",
-          "title": "Temporal and institutional differences in heart failure guideline adherence in Taiwan.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -68400,6 +68504,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42994935",
+          "title": "Facilitators and barriers to nurses' adherence to traumatic brain injury management guidelines at the accident and emergency unit in a national referral hospital in Uganda: a qualitative study.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42981147",
           "title": "Consensus Statement on Traumatic Brain Injury in First Responders: The 1st International Conference on TBI in First Responders.",
           "region": null,
@@ -68537,19 +68648,19 @@
         }
       ],
       "decisions": {
-        "queued": 201,
+        "queued": 200,
         "needsReview": 465,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39707127",
+        "candidateId": "pmid:42618174",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-07T01:05:45.849Z",
+  "updatedAt": "2026-11-08T00:54:56.163Z",
   "configVersion": "guideline-v2"
 }

@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41620016",
-      "title": "Cerebral blood flow estimation using NIRS in cardiac arrest patients: correlation with ROSC outcomes.",
-      "journal": "Resuscitation",
-      "score": 8.4,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.35,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-29"
-    },
-    {
       "pmid": "41338370",
       "title": "Filtered electrocardiogram combined with end-tidal carbon dioxide for the identification of patients' cardiac arrest status during uninterrupted chest compressions in cardiopulmonary resuscitation.",
       "journal": "Resuscitation",
@@ -600,6 +585,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-07"
+    },
+    {
+      "pmid": "41620016",
+      "title": "Cerebral blood flow estimation using NIRS in cardiac arrest patients: correlation with ROSC outcomes.",
+      "journal": "Resuscitation",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.35,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-29",
+      "publishedAt": "2026-11-08"
     }
   ],
   "rejected": [
@@ -615,9 +616,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-07",
+    "date": "2026-11-08",
     "outcome": "published",
-    "publishedId": "41857661"
+    "publishedId": "41620016"
   },
-  "updatedAt": "2026-11-07"
+  "updatedAt": "2026-11-08"
 }

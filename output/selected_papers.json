@@ -1100,5 +1100,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41620016",
+    "title": "Cerebral blood flow estimation using NIRS in cardiac arrest patients: correlatio",
+    "date": "2026-11-08",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
