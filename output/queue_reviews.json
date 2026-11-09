@@ -207,23 +207,6 @@
       "status": "queued"
     },
     {
-      "pmid": "42455344",
-      "title": "Antiseizure medication dosing and monitoring in the intensive care unit: a practical narrative review.",
-      "journal": "Intensive Care Med",
-      "score": 8.1,
-      "topic": "neuro",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ICU 항경련제 용량·모니터링, 실무 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "38441582",
       "title": "Cardiac Amyloidosis Due to Transthyretin Protein: A Review.",
       "journal": "JAMA",
@@ -14503,6 +14486,127 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "42455344",
+      "title": "Antiseizure medication dosing and monitoring in the intensive care unit: a practical narrative review.",
+      "journal": "Intensive Care Med",
+      "score": 8.1,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICU 항경련제 용량·모니터링, 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-09",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "42455344",
+          "title": "Antiseizure medication dosing and monitoring in the intensive care unit: a practical narrative review.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2026-7-15",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42455344/",
+          "doi": "10.1007/s00134-026-08550-y"
+        },
+        "title_ko": "중환자실에서의 항발작약물(ASM) 용량 결정과 모니터링: 실용적 내러티브 리뷰",
+        "scope_ko": "중환자실(ICU) 환자에서 항발작약물(antiseizure medication, ASM)의 약동학이 건강한 성인이나 외래 환경과 어떻게 다른지, 그리고 그 차이를 반영한 용량 결정·치료적 약물 모니터링(TDM)·장기 부전 및 체외 장치(지속적 신대체요법, ECMO, 혈장교환술) 상황에서의 조정을 다루는 실용적 내러티브 리뷰다. 15종의 ASM을 대상으로 한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "목적 — 왜 ICU에서는 ASM 접근이 달라야 하는가",
+            "body_ko": "항발작약물(ASM)은 중환자실에서 흔히 사용되지만, 그 약동학은 건강한 자원자나 외래 환경에서의 약동학과 상당히 다른 경우가 많다. 장기 부전, 다약제 병용(polypharmacy), 외인성 장치(exogenous devices), 그리고 더 높은 질병 중증도가 모두 ASM의 약동학, 용량 결정, 그리고 모니터링 지표에 영향을 미친다. 따라서 중환자 진료 임상의가 ICU 환경에서 ASM에 접근할 때 — 이 리뷰가 다루는 — 약동학, 용량 고려사항, 외인성 장치의 영향, 그리고 치료적 약물 모니터링(TDM)에 익숙해지는 것이 필수적이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "방법 — 문헌 검색 범위",
+            "body_ko": "저자들은 MEDLINE에서 시작 시점부터 2026년 3월까지, ICU에서의 ASM과 관련된 문헌을 확인하였다. 약동학, ICU에서의 용량 결정, 신대체요법(renal replacement therapy)·체외막산소화(ECMO)·혈장교환술(plasmapheresis, PLEX)이 ASM 노출에 미치는 영향, 그리고 ICU에서 TDM의 역할에 관한 자료를 수집·요약하였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결과 — 다룬 15종의 ASM과 상황별 고려사항",
+            "body_ko": "이 리뷰에는 15종의 ASM — brivaracetam, cannabidiol, carbamazepine, cenobamate, clobazam, lacosamide, lamotrigine, levetiracetam, oxcarbazepine, perampanel, phenobarbital, phenytoin, topiramate, valproate, zonisamide — 에 대한 고려사항이 포함되었다.\n\nTDM를 위한 용량 고려사항(적응증과 목표 참고 범위 포함)과 함께, 장기 부전, 질병 중증도, 신대체요법, ECMO, PLEX와 같은 특정 상황이 논의되었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론 — 환자 맞춤형 접근의 필요성",
+            "body_ko": "ICU에서의 ASM 사용은 외래 환경과는 구별되는 접근을 필요로 한다. 질병의 중증도, 장기 부전과 대체 장치(replacement devices), 그리고 빈번한 약물-약물 상호작용은 약제 선택, 용량 결정, 모니터링을 환자에 맞게 조정(tailored)할 것을 요구한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 저알부민혈증과 단백 결합 — 유리 농도의 함정",
+            "body_ko": "이 리뷰의 본문(전문)은 유료화되어 확보하지 못했으므로, 이 절은 동일 주제(중환자에서의 ASM 약동학)를 다룬 권위 있는 2차 출처에서 보강한 내용이다. 이 논문 자체가 말한 내용이 아니라는 점을 유의한다.\n\n중증 질환에서 흔한 저알부민혈증은 알부민 결합률이 높은 약물의 비결합(유리, free) 분율을 증가시켜 임상 활성에 영향을 준다. 특히 phenytoin(단백 결합 90~95%)과 valproic acid(단백 결합 80~90%)에서 중요한데, 결합 변화가 치료 효과를 바꿀 수 있다. 따라서 저알부민혈증 환자에서는 총 농도만 보면 오도될 수 있어 유리(free) phenytoin 농도 해석이 필요하다. valproic acid는 농도가 높아질수록 단백 결합이 포화되어 유리 분율이 더 높아진다.\n— 보강 출처: Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651 (https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/)",
+            "origin": "augmented",
+            "sourceLabel": "Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/"
+          },
+          {
+            "heading_ko": "[웹 보강] 신대체요법(IHD·CRRT)이 ASM 제거에 미치는 영향",
+            "body_ko": "이 절도 전문을 구하지 못해 위와 같은 2차 출처에서 보강한 내용이며, 이 논문 자체의 서술이 아니다.\n\n간헐적 혈액투석(IHD)에서는 levetiracetam과 lacosamide가 제거되는 양상이 비교적 잘 특성화되어 있으며, 투석 후 보충 용량(supplemental dosing)이 권장된다. phenobarbital은 간 대사 약물임에도 부분적으로 제거되므로 농도 모니터링이 필요하다. 지속적 신대체요법(CRRT)에 대해서는 \"ASM의 명확한 용량 지침을 권고하기에 근거가 불충분하며, 더 많은 연구가 필요하다.\" 일반적으로 IHD로 제거되는 약물은 CRRT에서 더 광범위하게 제거되므로, 가능하다면 TDM를 지표로 삼아 더 높은 용량이 필요할 수 있다.\n— 보강 출처: Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651 (https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/)",
+            "origin": "augmented",
+            "sourceLabel": "Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/"
+          },
+          {
+            "heading_ko": "[웹 보강] 주요 ASM의 용량·치료 농도 범위 (2차 출처 기준)",
+            "body_ko": "이 절은 전문 미확보로 인한 2차 출처 보강이며, 이 논문의 목표 범위(목표 참고 범위 제시)와 겹치지만 이 논문이 제시한 수치가 아니라 인용한 출처의 수치임을 분명히 한다. 이 논문 자체의 목표 범위는 전문을 확보해야 확인할 수 있다.\n\nLevetiracetam: 신 배설 비율 높음(66%), 단백 결합 낮음(<10%), 반감기 6~8시간. 빠른 제거로 CRRT에 적합하나 자료는 제한적.\n\nPhenytoin: 부하용량 15~20 mg/kg, 유지 4~6 mg/kg/일, 치료 범위 10~20 μg/mL. 비선형(포화) 약동학을 따라 면밀한 모니터링 필요.\n\nValproic acid: 부하용량 20~40 mg/kg, 유지 10~15 mg/kg/일, 치료 범위 50~100 μg/mL(불응성에서는 최대 175 μg/mL). 포화성 단백 결합으로 고농도에서 유리 분율 증가.\n\nPhenobarbital: 부하용량 20 mg/kg, 유지 1.5~2 mg/kg/일, 치료 범위 15~40 μg/mL. 긴 반감기(~100시간)로 단기 사용에는 제약.\n\nLacosamide: 신 배설 최소, 단백 결합 낮음(<15%), 반감기 13시간. 유리한 특성에도 RRT 중 모니터링 필요.\n\nTDM 채혈 시점: 부하 후 1시간 채혈이 통상 권장되며, 유지 모니터링은 개시 후 7~10일. 발작 중인 중환자에서는 더 이른 시점(2~3일)에 비정상 대사 양상을 포착할 수 있다.\n— 보강 출처: Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651 (https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/)",
+            "origin": "augmented",
+            "sourceLabel": "Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/"
+          },
+          {
+            "heading_ko": "[웹 보강] 치료적 저체온과 CYP450 매개 청소율 저하",
+            "body_ko": "이 절도 2차 출처 보강이며 이 논문 자체의 서술이 아니다.\n\n유도 저체온(induced hypothermia)은 CYP450가 매개하는 다수 약물(예: phenytoin, propofol)의 전신 청소율을 감소시키며, 37°C 미만으로 1°C 내려갈 때마다 약 7~22% 감소한다. 이는 치료적 저체온 프로토콜에서 용량 결정을 상당히 복잡하게 만든다.\n— 보강 출처: Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651 (https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/)",
+            "origin": "augmented",
+            "sourceLabel": "Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "3517752f5e52b70be797f870aa0d53b891d7e2b87437565632765f69f55173aa",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-09T01:15:25.597Z",
+          "resultFingerprint": "7b18980d5c299a1d06519d313c088939d117a96115f3c7ad7b3cad436f6628d8",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설은 ICU에서 ASM을 외래와 동일하게 투여해서는 안 된다는 점을 환기한다 — 장기 부전, 질병 중증도, 체외 장치(CRRT·ECMO·PLEX), 빈번한 약물 상호작용을 반영해 약제 선택과 용량을 조정하고, 적응증에 맞춰 TDM와 목표 참고 범위를 활용해야 한다. 다만 구체적 15종별 용량·목표 범위·장치별 조정 수치는 이 논문의 전문에 담겨 있으므로, 침상 적용 전 원문(또는 기관 약제팀)으로 정확한 값을 확인하는 것이 바람직하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42455344",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42455344/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-026-08550-y",
+            "url": "https://doi.org/10.1007/s00134-026-08550-y"
+          },
+          {
+            "label": "웹 — PubMed 초록 — Antiseizure medication dosing and monitoring in the ICU (PMID 42455344)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42455344/"
+          },
+          {
+            "label": "웹 — Springer / Intensive Care Medicine 논문 페이지 (전문 유료)",
+            "url": "https://link.springer.com/article/10.1007/s00134-026-08550-y"
+          },
+          {
+            "label": "웹 — Antiepileptic drugs in critically ill patients — Critical Care (2018), PMC5992651 (보강 출처, 실제 열람)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5992651/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -14560,9 +14664,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-08",
+    "date": "2026-11-09",
     "outcome": "published",
-    "publishedId": "42043555"
+    "publishedId": "42455344"
   },
-  "updatedAt": "2026-11-08"
+  "updatedAt": "2026-11-09"
 }

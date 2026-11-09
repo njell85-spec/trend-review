@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41338370",
-      "title": "Filtered electrocardiogram combined with end-tidal carbon dioxide for the identification of patients' cardiac arrest status during uninterrupted chest compressions in cardiopulmonary resuscitation.",
-      "journal": "Resuscitation",
-      "score": 8.4,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.35,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-29"
-    },
-    {
       "pmid": "41457245",
       "title": "Cangrelor in critically ill patients with cardiogenic shock or post-cardiac arrest undergoing percutaneous coronary intervention: a systematic review and meta-analysis.",
       "journal": "Critical care (London, England)",
@@ -601,6 +586,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-08"
+    },
+    {
+      "pmid": "41338370",
+      "title": "Filtered electrocardiogram combined with end-tidal carbon dioxide for the identification of patients' cardiac arrest status during uninterrupted chest compressions in cardiopulmonary resuscitation.",
+      "journal": "Resuscitation",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.35,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-29",
+      "publishedAt": "2026-11-09"
     }
   ],
   "rejected": [
@@ -616,9 +617,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-08",
+    "date": "2026-11-09",
     "outcome": "published",
-    "publishedId": "41620016"
+    "publishedId": "41338370"
   },
-  "updatedAt": "2026-11-08"
+  "updatedAt": "2026-11-09"
 }
