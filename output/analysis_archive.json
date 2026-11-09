@@ -4974,6 +4974,63 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-09",
+      "pmid": "41338370",
+      "title": "Filtered electrocardiogram combined with end-tidal carbon dioxide for the identification of patients' cardiac arrest status during uninterrupted chest compressions in cardiopulmonary resuscitation.",
+      "title_ko": "중단 없는 흉부압박 중 심정지 상태 식별을 위한 필터링된 심전도와 호기말 이산화탄소(fEEt)의 결합 활용",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2025.110913",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "CPR 중 흉부압박을 멈추지 않은 상태에서, 필터링된 ECG와 호기말 CO2를 결합한 fEEt 전략이 압박 중단이 필요한 전통적 평가와 비교하여 환자의 실시간 심정지 상태(ROSC, 제세동 가능 리듬, PEA, asystole)를 정확히 분류할 수 있는가?",
+      "pico": {
+        "population": "[China] 51 cardiac arrest patients at a tertiary hospital in China; a total of 575 segments were analyzed; MeSH indicates Middle Aged and Aged patients, both male and female, including Out-of-Hospital Cardiac Arrest.",
+        "intervention": "The fEEt strategy (filtered Electrocardiogram combined with End-tidal carbon dioxide) used to classify cardiac arrest status during uninterrupted chest compressions, including ROSC, shockable rhythm, pulseless electric activity (PEA) and asystole; each episode independently reported by a panel of emergency physicians.",
+        "comparison": "The traditional method used to confirm the patients' status in real clinical situations, which served as the reference standard for the study.",
+        "outcome": "Primary outcome was the consistency and accuracy between the fEEt-classified status and traditional assessment: good consistency for ROSC (Kappa = 0.695, p < 0.001) and shockable rhythm (Kappa = 0.704, p < 0.001); moderate consistency for PEA (Kappa = 0.535, p < 0.001) and asystole (Kappa = 0.574, p < 0.001)."
+      },
+      "pico_ko": {
+        "population": "[중국] 중국 3차 병원의 심정지 환자 51명; 총 575개 segment가 분석됨; MeSH상 중년 및 고령 환자, 남녀 모두 포함, 병원 밖 심정지(Out-of-Hospital Cardiac Arrest) 포함.",
+        "intervention": "중단 없는 흉부압박 중 심정지 상태(ROSC, 제세동 가능 리듬, PEA, asystole)를 분류하기 위해 사용된 fEEt 전략(필터링된 심전도 + 호기말 이산화탄소 결합); 각 에피소드는 응급의학과 의사 패널이 독립적으로 판독함.",
+        "comparison": "실제 임상 상황에서 환자 상태를 확인하는 데 사용된 전통적 방법으로, 본 연구의 기준표준(reference standard) 역할을 함.",
+        "outcome": "일차 결과는 fEEt 분류 상태와 전통적 평가 간의 일치도 및 정확도: ROSC(Kappa = 0.695, p < 0.001)와 제세동 가능 리듬(Kappa = 0.704, p < 0.001)에서 good consistency; PEA(Kappa = 0.535, p < 0.001)와 asystole(Kappa = 0.574, p < 0.001)에서 moderate consistency."
+      },
+      "keyFindings": [
+        "In 51 cardiac arrest patients with 575 analyzed segments, the fEEt strategy showed good consistency with traditional assessment for ROSC (Kappa = 0.695, p < 0.001) and shockable rhythm (Kappa = 0.704, p < 0.001).",
+        "Consistency was only moderate for identifying PEA (Kappa = 0.535, p < 0.001) and asystole (Kappa = 0.574, p < 0.001).",
+        "For the binary decision of whether to stop chest compressions (PEA/asystole → continue; ROSC/shockable → consider stopping), fEEt showed good consistency (Kappa = 0.656, p < 0.001)."
+      ],
+      "keyFindings_ko": [
+        "심정지 환자 51명, 분석된 575개 segment에서 fEEt 전략은 ROSC(Kappa = 0.695, p < 0.001)와 제세동 가능 리듬(Kappa = 0.704, p < 0.001)에 대해 전통적 평가와 good consistency를 보임.",
+        "PEA(Kappa = 0.535, p < 0.001)와 asystole(Kappa = 0.574, p < 0.001) 식별에서는 일치도가 moderate 수준에 그침.",
+        "흉부압박 중단 여부의 이분적 결정(PEA/asystole → 지속; ROSC/제세동 가능 → 중단 고려)에서 fEEt는 good consistency를 보임(Kappa = 0.656, p < 0.001)."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41338370",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41338370/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2025.110913",
+          "url": "https://doi.org/10.1016/j.resuscitation.2025.110913"
+        },
+        {
+          "label": "웹 — PubMed — PMID 41338370",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41338370/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — PMID 41338370",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41338370/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
