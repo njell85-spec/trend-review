@@ -1122,5 +1122,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41457245",
+    "title": "Cangrelor in critically ill patients with cardiogenic shock or post-cardiac arre",
+    "date": "2026-11-10",
+    "topic": "cardiac_resus",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

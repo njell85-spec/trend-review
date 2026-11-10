@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41457245",
-      "title": "Cangrelor in critically ill patients with cardiogenic shock or post-cardiac arrest undergoing percutaneous coronary intervention: a systematic review and meta-analysis.",
-      "journal": "Critical care (London, England)",
-      "score": 8.3,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.32,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-29"
-    },
-    {
       "pmid": "42790858",
       "title": "Rescue-breathing versus chest compression-only bystander cardiopulmonary resuscitation in non-cardiac out-of-hospital cardiac arrest: a nationwide retrospective cohort study.",
       "journal": "Resuscitation",
@@ -602,6 +587,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-09"
+    },
+    {
+      "pmid": "41457245",
+      "title": "Cangrelor in critically ill patients with cardiogenic shock or post-cardiac arrest undergoing percutaneous coronary intervention: a systematic review and meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "score": 8.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.32,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-29",
+      "publishedAt": "2026-11-10"
     }
   ],
   "rejected": [
@@ -617,9 +618,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-09",
+    "date": "2026-11-10",
     "outcome": "published",
-    "publishedId": "41338370"
+    "publishedId": "41457245"
   },
-  "updatedAt": "2026-11-09"
+  "updatedAt": "2026-11-10"
 }

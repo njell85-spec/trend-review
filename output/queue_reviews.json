@@ -275,23 +275,6 @@
       "status": "queued"
     },
     {
-      "pmid": "38889923",
-      "title": "Recognition, diagnosis, and early management of suspected sepsis: summary of updated NICE guidance.",
-      "journal": "BMJ",
-      "score": 8,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "패혈증 조기인지·초기관리 요약, 응급 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39216494",
       "title": "Primary biliary cholangitis.",
       "journal": "Lancet",
@@ -14607,6 +14590,74 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "38889923",
+      "title": "Recognition, diagnosis, and early management of suspected sepsis: summary of updated NICE guidance.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "패혈증 조기인지·초기관리 요약, 응급 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-10",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "38889923",
+          "title": "Recognition, diagnosis, and early management of suspected sepsis: summary of updated NICE guidance.",
+          "journal": "BMJ (Clinical research ed.)",
+          "pubDate": "2024-6-19",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38889923/",
+          "doi": "10.1136/bmj.q1173"
+        },
+        "title_ko": "의심 패혈증의 인지, 진단 및 초기 관리: 개정된 NICE 지침 요약",
+        "scope_ko": "이 논문은 영국 NICE가 2024년 개정한 '의심 패혈증(suspected sepsis)' 지침(16세 이상 비임신 성인 대상, NG253; 소아는 별도 NG254)의 핵심 권고를 BMJ Practice 형식으로 요약한 글입니다. 다만 제출 시점에 BMJ 본문·PubMed 초록·Europe PMC·NICE 원문 페이지가 모두 접근 차단(403)되어 이 논문의 본문과 초록 자체는 확보하지 못했습니다. 따라서 아래 각 절은 모두 '보강(augmented)'으로 표기했으며, 이 BMJ 논문을 직접 리뷰한 저널 리뷰와 동일 NICE 지침을 요약한 권위 있는 2차 자료에서 재구성한 것입니다. 수치·역치·시간목표는 2차 출처가 전한 값으로, 실제 지침 원문과 대조 확인이 필요합니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "[웹 보강] 정보 제공·지원과 교육",
+            "body_ko": "지침은 의심 패혈증 환자 전원에게 적절한 정보와 지원을 제공할 것을 권고합니다. 또한 분류(triage)나 초기 관리에 관여하는 모든 보건의료 종사자는 의심 패혈증의 식별·평가·관리에 관한 정기적이고 적절한 교육을 받아야 합니다. 호중구감소성 패혈증(neutropenic sepsis)이 의심되는 환자는 2차 또는 3차 의료기관의 평가를 위해 즉시 의뢰해야 합니다.\n— 보강 출처: NICE guidance summary (search-returned NG253/NG51 resource summaries) (https://www.nice.org.uk/guidance/ng253)",
+            "origin": "augmented",
+            "sourceLabel": "NICE guidance summary (search-returned NG253/NG51 resource summaries)",
+            "sourceUrl": "https://www.nice.org.uk/guidance/ng253"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "de134b2f83c08e897af236e25b214dfae52fd952360f4383730b3f6358a1b58f",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-10T03:53:34.620Z",
+          "resultFingerprint": "d223ae6b3a54e0b6e6d8ee0153e966202e3d799615253bcaa266964d9198e0a7",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 0,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급실·중환자 침상에서는, 모든 의심 패혈증 환자에게 1시간 내 항생제를 주던 관행 대신 NEWS2로 위험을 먼저 계층화하게 됩니다(≥7은 1시간, 5–6은 3시간, 1–4는 6시간 내 항생제, 저위험군은 투여 전 진단 명확화·표적화). 수액은 젖산 >2 또는 SBP <90에서 250 mL 볼루스 후 재평가하고 총 1,000 mL 무반응 시 중환자 상의, 젖산 >4·수액 불응성 저혈압·1시간 내 무호전이면 중환자실에 연락하는 흐름이 강조됩니다. 다만 '결정했으면 즉시 투여'라는 원칙은 유지되며, 전체적으로 신속 치료와 항생제 스튜어드십의 균형이 핵심 변화입니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38889923",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38889923/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/bmj.q1173",
+            "url": "https://doi.org/10.1136/bmj.q1173"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -14664,9 +14715,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-09",
+    "date": "2026-11-10",
     "outcome": "published",
-    "publishedId": "42455344"
+    "publishedId": "38889923"
   },
-  "updatedAt": "2026-11-09"
+  "updatedAt": "2026-11-10"
 }

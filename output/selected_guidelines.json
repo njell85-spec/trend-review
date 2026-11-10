@@ -39488,93 +39488,6 @@
       }
     },
     {
-      "id": "pmid:42095754",
-      "pmid": "42095754",
-      "title": "European Stroke Organisation (ESO), European Association of Neurosurgical Societies (EANS) and European Society for Minimally Invasive Neurological Therapy (ESMINT) guideline on aneurysmal subarachnoid haemorrhage.",
-      "pubDate": "2026 May 6",
-      "journal": "European stroke journal",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:19.239Z",
-      "abstract": "Aneurysmal subarachnoid haemorrhage (aSAH) results from the rupture of an intracranial aneurysm. The case-fatality after aSAH is approximately 40% and those who survive often have functional, cognitive or emotional sequelae. We prepared guidelines according to Grading of Recommendations, Assessment, Development and Evaluations (GRADE) methodology, using data from meta-analyses, randomised trials, prospective observational and case-control studies, prospective registries with external validation and single-arm cohort studies with > 50 patients with aSAH. Based on high levels of evidence, we recommend oral administration of nimodipine and regular coiling over clipping if both aneurysm treatment options are equally suitable in patients who are in good clinical condition, and recommend against the routine use of antifibrinolytic drugs prior to aneurysm treatment and against the use of tirilazad, statins, magnesium sulphate or endothelin receptor antagonists. Because of lower levels of evidence, no evidence-based recommendations can be made for the prophylactic use of antiplatelet drugs or external lumbar drainage, hypertension induction, treatment of the ruptured aneurysm with endovascular devices other than coils or endovascular treatment of vasospasm. We formulated 37 expert-consensus statements, which include, among others, the suggestions to treat aSAH patients in a dedicated neuro-ICU or high care unit in a centre that treats at least 70 patients with aSAH per year or at least 35 patients with aSAH per year in geographically remote areas, and to treat the ruptured aneurysm within 24 h after ictus provided that the most dedicated team of experts is available. These guidelines present up-to-date recommendations and expert-consensus statements on key aspects in the management of aSAH patients.",
-      "meshTerms": [
-        "Humans",
-        "Subarachnoid Hemorrhage",
-        "Aneurysm, Ruptured",
-        "Intracranial Aneurysm",
-        "Europe",
-        "Endovascular Procedures",
-        "Stroke",
-        "Societies, Medical"
-      ],
-      "keywords": [
-        "assessment",
-        "clipping",
-        "coiling",
-        "delayed cerebral ischaemia",
-        "endovascular repair",
-        "grading of recommendations",
-        "guideline",
-        "hydrocephalus",
-        "management",
-        "medical management",
-        "rebleeding",
-        "subarachnoid haemorrhage",
-        "systematic review"
-      ],
-      "doi": "10.1093/esj/aakag043",
-      "pmcid": "PMC13151661",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "동맥류성 SAH 지침, 신경 응급·중환자",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-stroke-organisation-eso-european-association-neurosurgical-societies-eans-european-society-minimally-invasive-neurological-therapy-esmint-aneurysmal-subarachnoid-haemorrhage",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:42067227",
       "pmid": "42067227",
       "title": "Sex-specific risk factors for stroke in women: Focus on the 2024 AHA/ASA guideline.",
@@ -41110,7 +41023,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41909,7 +41822,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42837,7 +42750,7 @@
       "id": "pmid:42370555",
       "pmid": "42370555",
       "title": "Contemporary survey of United States poison center treatment recommendations for sodium channel blocking drug poisoning.",
-      "pubDate": "2026 Jun 29",
+      "pubDate": "2026 Nov",
       "journal": "Clinical toxicology (Philadelphia, Pa.)",
       "publicationTypes": [
         "Journal Article"
@@ -42847,7 +42760,18 @@
       ],
       "discoveredAt": "2026-08-17T04:40:48.357Z",
       "abstract": "INTRODUCTION: A 1997 survey assessed United States poison center medical directors' recommendations for serum alkalinization in tricyclic antidepressant poisoning. This study aims to assess current recommendations for all sodium channel blocking drug poisonings.\nMETHODS: This was a cross-sectional survey utilizing anonymous responses from United States poison center medical directors. Participants were asked about initial treatments of varying features of sodium channel blocking drug poisoning, criteria and thresholds to recommend sodium bicarbonate, including a patient with baseline pre-poisoning QRS prolongation; and how specific drug exposures influenced treatment recommendations. The QRS duration thresholds to recommend sodium bicarbonate were compared to those from the prior survey and to the case with pre-poisoning QRS prolongation.\nRESULTS: Of 55 recipients, 30 (60%) surveys were completed. Sodium bicarbonate was the most frequently recommended initial treatment (23 participants, 78%) for isolated electrocardiogram changes. Vasopressors and supportive care alone were the most frequent initial recommendations for isolated hypotension (17, 57%) and isolated central nervous system toxicity (28, 93%), respectively. In the presence of electrocardiogram changes, shock, and central nervous system toxicity, 28 (93%) recommended sodium bicarbonate as initial treatment. The most frequent second- and third-line treatments were vasopressors (21, 70%) and hypertonic saline (11, 37%). Twenty-nine (97%) participants considered QRS duration when recommending sodium bicarbonate. The median QRS threshold utilized was 120 (IQR 100-160) milliseconds, compared to the previous survey's median threshold of 100 milliseconds ( = 0.002). In the case with pre-poisoning QRS duration 130 milliseconds, this threshold increased to 140 (IQR 130-160) milliseconds (.001). Thirteen (43.3%) respondents were less likely to recommend sodium bicarbonate in bupropion poisoning.\nDISCUSSION: The threshold QRS duration for recommending sodium bicarbonate was greater in 2024 compared to 1997, likely due to practice changes and increased variety of sodium channel blocking drugs.\nCONCLUSIONS: Sodium bicarbonate recommendations continue to focus heavily on electrocardiogram changes, with exact thresholds depending on patient and drug exposure factors. Further studies are needed to evaluate the optimal approach to sodium channel blocking drug poisoning.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Poison Control Centers",
+        "United States",
+        "Cross-Sectional Studies",
+        "Sodium Bicarbonate",
+        "Sodium Channel Blockers",
+        "Poisoning",
+        "Electrocardiography",
+        "Antidepressive Agents, Tricyclic",
+        "Practice Patterns, Physicians'"
+      ],
       "keywords": [
         "Alkalinization",
         "QRS prolongation",
@@ -42882,14 +42806,14 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "guideline",
       "documentType": "recommendations",
       "reasons": [
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42900,7 +42824,8 @@
       "lineageKey": "unknown|contemporary-survey-united-states-poison-center-treatment-sodium-channel-blocking-drug-poisoning",
       "supersedes": [],
       "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
+      "lineageReason": "no-matching-lineage",
+      "attempts": 0
     },
     {
       "id": "pmid:42604549",
@@ -43061,7 +42986,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -45649,7 +45574,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -45848,7 +45773,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46651,7 +46576,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46715,7 +46640,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -46785,7 +46710,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46853,7 +46778,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46916,7 +46841,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46981,7 +46906,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47044,7 +46969,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47106,7 +47031,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47164,7 +47089,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47233,7 +47158,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47303,7 +47228,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47383,7 +47308,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47451,7 +47376,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47513,7 +47438,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47592,7 +47517,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47674,7 +47599,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47773,7 +47698,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47874,7 +47799,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47955,7 +47880,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -48037,7 +47962,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48100,7 +48025,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -48169,7 +48094,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -48243,7 +48168,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -48301,7 +48226,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -48309,7 +48234,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-09T01:08:27.676Z",
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -48320,6 +48245,149 @@
         "keep": false,
         "reason": "AI 용어·ML 해설 성명서, 침상 판단과 무관",
         "at": "2026-11-09T01:08:30.062Z"
+      }
+    },
+    {
+      "id": "pmid:43001510",
+      "pmid": "43001510",
+      "title": "[2026 ESC Guidelines for the management of heart failure].",
+      "pubDate": "2026 Nov",
+      "journal": "Giornale italiano di cardiologia (2006)",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-10T03:43:30.986Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1714/4798.48230",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lineageReview": true,
+      "lineageReason": "same-year-ambiguous",
+      "llmFit": {
+        "version": 1,
+        "score": 9,
+        "keep": true,
+        "reason": "ESC 심부전 지침 2026, 핵심 심혈관 주제로 응급·중환자 직결(초록 없음, 제목 판단)",
+        "at": "2026-11-10T03:43:39.967Z"
+      }
+    },
+    {
+      "id": "pmid:42866888",
+      "pmid": "42866888",
+      "title": "Multidisciplinary Approach to Antiplatelet Management in Coronary Syndromes: A Scientific Statement From the American Heart Association.",
+      "pubDate": "2026 Nov 10",
+      "journal": "Circulation",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-10T03:43:30.986Z",
+      "abstract": "Antiplatelet therapy is a cornerstone of care for patients with acute coronary syndrome and chronic coronary disease, yet its optimal use requires careful balancing of thrombotic risk reduction with bleeding complications. Since the mid-2000s, advances in stent technology, antiplatelet pharmacotherapy, procedural technique, and risk stratification tools have led to increasingly individualized approaches to antiplatelet management. Current guidelines and evidence emphasize tailoring agent selection, intensity, and duration of therapy according to patient-, procedure-, and disease-specific factors rather than a uniform strategy. However, the growing complexity of evidence, frequent care transitions, social determinants of health, and variability in patient characteristics have increased the risk of inappropriate prescribing, nonadherence, and adverse outcomes. This scientific statement reviews contemporary evidence informing antiplatelet strategies and highlights the critical role of the multidisciplinary cardiovascular team (interventional cardiology, general cardiology, pharmacists, advanced practice nurses) and the importance of their collective expertise in ensuring antithrombotic stewardship in patients with acute coronary syndrome and chronic coronary disease.",
+      "meshTerms": [
+        "Humans",
+        "Platelet Aggregation Inhibitors",
+        "Acute Coronary Syndrome",
+        "American Heart Association",
+        "United States",
+        "Patient Care Team",
+        "Risk Factors",
+        "Risk Assessment",
+        "Hemorrhage"
+      ],
+      "keywords": [
+        "AHA Scientific Statements",
+        "acute coronary syndrome",
+        "coronary disease",
+        "duration of therapy",
+        "inappropriate prescribing",
+        "risk assessment",
+        "thrombosis"
+      ],
+      "doi": "10.1161/CIR.0000000000001478",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 10,
+      "breakdown": {
+        "authority": 4,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "scientific-statement",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 7,
+        "keep": true,
+        "reason": "AHA 항혈소판 성명서, ACS 침상 판단에 닿는 실무 권고",
+        "at": "2026-11-10T03:43:39.967Z"
       }
     }
   ],
@@ -62471,6 +62539,196 @@
         ]
       },
       "publishedAt": "2026-11-09"
+    },
+    {
+      "id": "pmid:42095754",
+      "pmid": "42095754",
+      "title": "European Stroke Organisation (ESO), European Association of Neurosurgical Societies (EANS) and European Society for Minimally Invasive Neurological Therapy (ESMINT) guideline on aneurysmal subarachnoid haemorrhage.",
+      "pubDate": "2026 May 6",
+      "journal": "European stroke journal",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:19.239Z",
+      "abstract": "Aneurysmal subarachnoid haemorrhage (aSAH) results from the rupture of an intracranial aneurysm. The case-fatality after aSAH is approximately 40% and those who survive often have functional, cognitive or emotional sequelae. We prepared guidelines according to Grading of Recommendations, Assessment, Development and Evaluations (GRADE) methodology, using data from meta-analyses, randomised trials, prospective observational and case-control studies, prospective registries with external validation and single-arm cohort studies with > 50 patients with aSAH. Based on high levels of evidence, we recommend oral administration of nimodipine and regular coiling over clipping if both aneurysm treatment options are equally suitable in patients who are in good clinical condition, and recommend against the routine use of antifibrinolytic drugs prior to aneurysm treatment and against the use of tirilazad, statins, magnesium sulphate or endothelin receptor antagonists. Because of lower levels of evidence, no evidence-based recommendations can be made for the prophylactic use of antiplatelet drugs or external lumbar drainage, hypertension induction, treatment of the ruptured aneurysm with endovascular devices other than coils or endovascular treatment of vasospasm. We formulated 37 expert-consensus statements, which include, among others, the suggestions to treat aSAH patients in a dedicated neuro-ICU or high care unit in a centre that treats at least 70 patients with aSAH per year or at least 35 patients with aSAH per year in geographically remote areas, and to treat the ruptured aneurysm within 24 h after ictus provided that the most dedicated team of experts is available. These guidelines present up-to-date recommendations and expert-consensus statements on key aspects in the management of aSAH patients.",
+      "meshTerms": [
+        "Humans",
+        "Subarachnoid Hemorrhage",
+        "Aneurysm, Ruptured",
+        "Intracranial Aneurysm",
+        "Europe",
+        "Endovascular Procedures",
+        "Stroke",
+        "Societies, Medical"
+      ],
+      "keywords": [
+        "assessment",
+        "clipping",
+        "coiling",
+        "delayed cerebral ischaemia",
+        "endovascular repair",
+        "grading of recommendations",
+        "guideline",
+        "hydrocephalus",
+        "management",
+        "medical management",
+        "rebleeding",
+        "subarachnoid haemorrhage",
+        "systematic review"
+      ],
+      "doi": "10.1093/esj/aakag043",
+      "pmcid": "PMC13151661",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "동맥류성 SAH 지침, 신경 응급·중환자",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-stroke-organisation-eso-european-association-neurosurgical-societies-eans-european-society-minimally-invasive-neurological-therapy-esmint-aneurysmal-subarachnoid-haemorrhage",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42095754",
+          "title": "European Stroke Organisation (ESO), European Association of Neurosurgical Societies (EANS) and European Society for Minimally Invasive Neurological Therapy (ESMINT) guideline on aneurysmal subarachnoid haemorrhage.",
+          "journal": "European stroke journal",
+          "pubDate": "2026 May 6",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42095754/",
+          "doi": "10.1093/esj/aakag043"
+        },
+        "org": "ESO/EANS/ESMINT",
+        "version": "2026",
+        "title_ko": "ESO/EANS/ESMINT 동맥류성 지주막하출혈(aSAH) 관리 가이드라인 (2026)",
+        "scope_ko": "파열된 뇌동맥류로 인한 동맥류성 지주막하출혈(aSAH) 성인 환자의 응급실·입원·추적관찰 전 과정 관리를 다룬다. 재출혈·지연성 뇌허혈(DCI)·수두증 등 합병증 예방과 치료, 동맥류 치료 방식·시점, 약물요법, 영상·모니터링, 치료 센터/시술자 용량 기준, 치료 후 추적 영상까지 GRADE 방법론으로 신경외과·신경과·신경중재·신경중환자의학 임상의를 위한 권고와 전문가 합의문(37개)을 제시한다.",
+        "summary": [
+          "Give oral nimodipine to all aSAH patients (standard dosing for 21 days) — strong recommendation, high-quality evidence; reduces poor functional outcome (OR 0.56, 95% CI 0.40–0.76).",
+          "When both options are equally suitable in good-grade patients (awake/mildly drowsy, WFNS I–III), prefer endovascular coiling over microsurgical clipping — strong recommendation, high evidence; reduces poor outcome (OR 0.69, 95% CI 0.58–0.83; ~7% absolute risk reduction), benefit durable to 10 years.",
+          "Do NOT routinely use antifibrinolytic drugs before the aneurysm is secured — recommendation against, high evidence; they reduce rebleeding but do not improve functional outcome or case-fatality (ULTRA trial).",
+          "Do NOT use tirilazad, statins, magnesium sulphate, or endothelin receptor antagonists to prevent DCI/poor outcome — recommendation against, high evidence.",
+          "No evidence-based recommendation can be made (low evidence) for prophylactic antiplatelets, external lumbar drainage, hypertension induction, endovascular aneurysm treatment with devices other than regular coils (stent-assisted coiling, flow diverters, intrasaccular devices), or endovascular treatment of vasospasm.",
+          "Expert consensus: treat the ruptured aneurysm within 24 h of ictus when a dedicated expert team is available; the operator should treat ≥30 intracranial aneurysms/year, and the modality decision should be made by a multidisciplinary team with ≥1 neurosurgeon and ≥1 neurointerventionalist.",
+          "Expert consensus: manage patients in a dedicated neuro-ICU/high-care unit at centres treating ≥70 aSAH patients/year (≥35/year in geographically remote areas).",
+          "Expert consensus for DCI: consider induced hypertension only after the aneurysm is secured and a fluid trial has failed; endovascular vasodilators for critically reduced flow and balloon angioplasty only as last-line rescue after multidisciplinary discussion; use CT/CT-perfusion when patients deteriorate; routine invasive multimodal monitoring and EEG are not recommended; drain hydrocephalus when consciousness is depressed."
+        ],
+        "summary_ko": [
+          "모든 aSAH 환자에게 경구 nimodipine을 투여한다(표준 용량, 21일) — 강한 권고, 높은 근거수준; 불량 기능예후를 줄인다(OR 0.56, 95% CI 0.40–0.76).",
+          "두 치료가 똑같이 적합한 양호한 등급(각성/경한 기면, WFNS I–III) 환자에서는 미세수술 clipping보다 혈관내 coiling을 우선한다 — 강한 권고, 높은 근거; 불량예후를 줄이고(OR 0.69, 95% CI 0.58–0.83; 절대위험감소 약 7%) 이득이 10년까지 지속된다.",
+          "동맥류를 확보하기 전 항섬유소용해제(antifibrinolytics)를 일상적으로 쓰지 않는다 — 반대 권고, 높은 근거; 재출혈은 줄이지만 기능예후나 치사율은 개선하지 못한다(ULTRA 연구).",
+          "DCI·불량예후 예방 목적으로 tirilazad, statin, 황산마그네슘, endothelin 수용체 길항제를 쓰지 않는다 — 반대 권고, 높은 근거.",
+          "근거 부족(낮은 근거)으로 예방적 항혈소판제, 외부 요추 배액(external lumbar drain), 유도 고혈압, 일반 coil 이외의 혈관내 기구(stent-보조 coiling, flow diverter, intrasaccular 기구), 혈관연축의 혈관내 치료에 대해서는 근거 기반 권고를 낼 수 없다.",
+          "전문가 합의: 전담 전문가 팀이 가능할 때 발병 24시간 이내에 파열 동맥류를 치료하고, 시술자는 연 ≥30건의 두개내 동맥류를 치료하며, 치료 방식은 신경외과의 ≥1명과 신경중재의 ≥1명이 포함된 다학제팀이 결정한다.",
+          "전문가 합의: 연 ≥70명(원격지는 연 ≥35명)의 aSAH를 치료하는 센터의 전담 neuro-ICU/고도 치료 병동에서 관리한다.",
+          "DCI에 대한 전문가 합의: 동맥류 확보 후 수액 요법이 실패한 뒤에만 유도 고혈압을 고려하고, 심한 혈류 저하에는 혈관내 혈관확장제를, 풍선 혈관성형술은 다학제 논의 후 최후의 구조요법으로만 쓴다; 악화 시 CT/CT-관류를 사용하고, 일상적 침습 다중 모니터링·EEG는 권고하지 않으며, 의식 저하가 있는 수두증은 배액한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "항섬유소용해제(재출혈 예방)",
+            "detail": "Previous 2013 ESO guidance left room for short-term antifibrinolytic therapy to reduce pre-treatment rebleeding. The 2026 guideline now explicitly recommends AGAINST routine antifibrinolytic use before aneurysm treatment (high-level evidence). Reason: the ULTRA randomised trial showed that although these drugs reduce rebleeding, ultra-early/short-course tranexamic acid did not improve functional outcome or case-fatality.",
+            "detail_ko": "2013 ESO 지침은 치료 전 재출혈을 줄이기 위한 단기 항섬유소용해 요법의 여지를 남겨두었다. 2026 지침은 이제 동맥류 치료 전 항섬유소용해제의 일상적 사용을 명시적으로 반대한다(높은 근거수준). 이유: ULTRA 무작위 연구에서 이 약물이 재출혈은 줄였으나 초조기/단기 tranexamic acid가 기능예후나 치사율을 개선하지 못했다."
+          },
+          {
+            "topic": "Coiling vs clipping",
+            "detail": "The recommendation to prefer endovascular coiling over clipping (in good-grade patients when both are equally suitable) is reaffirmed and strengthened in the modern era with high-level evidence — reduced poor outcome OR 0.69 (95% CI 0.58–0.83), ~7% absolute risk reduction, with benefit sustained at 10-year follow-up (ISAT long-term and ISAT-2 era data published since 2013).",
+            "detail_ko": "두 치료가 동등하게 적합한 양호한 등급 환자에서 clipping보다 혈관내 coiling을 우선하라는 권고가 현대 근거로 재확인·강화되었다(높은 근거) — 불량예후 OR 0.69(95% CI 0.58–0.83), 절대위험감소 약 7%, 그리고 이득이 10년 추적까지 지속(2013년 이후 발표된 ISAT 장기·ISAT-2 시대 자료)."
+          },
+          {
+            "topic": "DCI 예방 약물(statin·마그네슘 등)",
+            "detail": "After 2013, several agents trialled for DCI prevention are now explicitly recommended AGAINST with high-level evidence: tirilazad, statins, magnesium sulphate, and endothelin receptor antagonists — reflecting negative/neutral trial results (e.g., MASH-2 for magnesium, clazosentan programme for endothelin antagonists) that matured after the prior guideline.",
+            "detail_ko": "2013년 이후 DCI 예방을 위해 시험된 여러 약제가 이제 높은 근거수준으로 명시적으로 반대 권고된다: tirilazad, statin, 황산마그네슘, endothelin 수용체 길항제 — 이전 지침 이후 성숙한 음성/중립적 임상시험 결과(예: 마그네슘의 MASH-2, endothelin 길항제의 clazosentan 프로그램)를 반영한다."
+          },
+          {
+            "topic": "센터·시술자 용량 기준(정량화)",
+            "detail": "The 2026 guideline introduces explicit, numeric volume thresholds as expert-consensus statements: manage aSAH in a dedicated neuro-ICU/high-care unit at centres treating ≥70 aSAH patients/year (≥35/year in geographically remote areas), with operators treating ≥30 intracranial aneurysms/year — concrete quantification not specified in the 2013 guideline.",
+            "detail_ko": "2026 지침은 전문가 합의문으로 명시적·정량적 용량 기준을 도입한다: 연 ≥70명(원격지 연 ≥35명)의 aSAH를 치료하는 센터의 전담 neuro-ICU/고도 치료 병동에서 관리하고, 시술자는 연 ≥30건의 두개내 동맥류를 치료한다 — 2013 지침에는 없던 구체적 수치화다."
+          },
+          {
+            "topic": "혈관연축/DCI의 혈관내 치료",
+            "detail": "A newly addressed area: for DCI, induced hypertension is positioned as a step only after the aneurysm is secured and fluid therapy has failed; endovascular vasodilators may be used for critically reduced flow, but balloon angioplasty is restricted to last-line rescue after multidisciplinary discussion, and temporary stents are deemed to have insufficient supporting evidence. No evidence-based (only consensus) recommendation is made overall for endovascular vasospasm treatment.",
+            "detail_ko": "새로 다뤄진 영역: DCI에서 유도 고혈압은 동맥류 확보 후 수액 요법 실패 뒤에만 쓰는 단계로 위치시키고, 심한 혈류 저하에는 혈관내 혈관확장제를 쓸 수 있으나 풍선 혈관성형술은 다학제 논의 후 최후의 구조요법으로 제한하며, 임시 stent는 근거 불충분으로 본다. 혈관연축의 혈관내 치료 전반에 대해서는 근거 기반 권고 없이 합의 수준만 제시한다."
+          },
+          {
+            "topic": "신형 혈관내 기구(stent-보조·flow diverter·intrasaccular)",
+            "detail": "For aneurysms not treatable by regular coiling, the guideline states there are no high-quality data that newer techniques/devices (stent-assisted coiling, flow-diverting stents, intra-saccular devices) reduce poor outcome versus regular coiling — so no evidence-based recommendation is made. This explicitly addresses devices that largely post-date the 2013 guideline.",
+            "detail_ko": "일반 coiling으로 치료할 수 없는 동맥류에서, 신형 기법·기구(stent-보조 coiling, flow diverter, intrasaccular 기구)가 일반 coiling 대비 불량예후를 줄인다는 고품질 자료가 없다고 명시하여 근거 기반 권고를 내지 않는다. 이는 대체로 2013 지침 이후 등장한 기구를 명시적으로 다룬 것이다."
+          },
+          {
+            "topic": "치료 후 추적 영상 프로토콜",
+            "detail": "The guideline differentiates follow-up imaging by treatment type (as expert consensus): follow-up only while re-treatment remains an option; coiled aneurysms imaged at/after ~12 months; clipped aneurysms with complete occlusion at ~6 months need no long-term follow-up; partially occluded/novel-device aneurysms require long-term follow-up; and periodic imaging (e.g., every 5 years) for new aneurysms in high-risk patients.",
+            "detail_ko": "치료 유형별로 추적 영상을 구분한다(전문가 합의): 재치료가 선택지로 남아 있는 동안만 추적; coiling 동맥류는 약 12개월 시점/이후 촬영; clipping 후 약 6개월에 완전 폐색이면 장기 추적 불필요; 부분 폐색/신형 기구 동맥류는 장기 추적 필요; 고위험 환자는 신생 동맥류를 위해 주기적(예: 5년마다) 영상."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "신형 혈관내 기구에 대한 근거 해석 비판 (신경중재 전문가 교신)",
+            "body_ko": "이 가이드라인에 대한 공개 교신(Möhlenbruch & Bendszus)은 지침이 서로 다른 기술 세대의 자료를 뒤섞어 현대 혈관내 치료의 안전성·효과를 과소평가할 수 있다고 비판한다. 풍선-보조 coiling(BAC)에 불리하게 인용된 근거가 초기 단일기관·소규모·구세대 기구 경험에서 나온 반면, CLARITY 연구는 BAC의 더 높은 폐색률을 보였다고 지적한다. intrasaccular 혈류차단 기구(WEB)도 전향적 다기관 연구(CLARYS, WEB-IT)에서 양호한 안전성을 보였다고 주장한다. 핵심 제언은 향후 지침이 모든 혈관내 자료를 동일하게 다루지 말고 연구 시기·기구 세대·방법론 품질로 근거를 층화하라는 것이다. (※ 이는 지침 원문이 아니라 이에 대한 외부 논평이다.)",
+            "sourceLabel": "Evidence on novel endovascular techniques in the ESO/EANS/ESMINT guideline — Comment (European Stroke Journal, PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13344100/"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside: start oral nimodipine in every aSAH patient and stop reflexively ordering tranexamic acid — antifibrinolytics are no longer endorsed for routine pre-securing rebleeding prevention and confer no outcome benefit. Push for aneurysm securing within 24 h, defaulting to coiling over clipping in good-grade patients when both are suitable, with the modality chosen by a neurosurgeon + neurointerventionalist team; drop statins, magnesium, and endothelin antagonists for DCI prophylaxis. For DCI, reserve induced hypertension for after the aneurysm is secured and a fluid trial has failed, treat hydrocephalus with CSF drainage when consciousness drops, use CT/CT-perfusion (not routine invasive multimodal monitoring/EEG) to work up deterioration, and transfer/concentrate care in high-volume neuro-ICU centres (≥70 aSAH/yr).",
+        "practiceImpact_ko": "침상에서: 모든 aSAH 환자에 경구 nimodipine을 시작하고 tranexamic acid를 반사적으로 처방하지 않는다 — 항섬유소용해제는 더 이상 치료 전 재출혈 예방 목적의 일상 사용으로 권고되지 않으며 예후 이득도 없다. 24시간 이내 동맥류 확보를 추진하고, 두 치료가 적합한 양호 등급 환자에서는 clipping보다 coiling을 기본으로 하되 신경외과의+신경중재의 팀이 방식을 결정한다; DCI 예방용 statin·마그네슘·endothelin 길항제는 중단한다. DCI에서는 동맥류 확보 후 수액 실패 시에만 유도 고혈압을 쓰고, 의식 저하 시 수두증은 뇌척수액 배액으로 치료하며, 악화 평가는 일상적 침습 다중 모니터링·EEG가 아니라 CT/CT-관류로 하고, 고용량 neuro-ICU 센터(연 ≥70명 aSAH)로 전원·집중한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42095754",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42095754/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1093/esj/aakag043",
+            "url": "https://doi.org/10.1093/esj/aakag043"
+          },
+          {
+            "label": "웹 — ESO/EANS/ESMINT aSAH guideline — full article (European Stroke Journal, OUP)",
+            "url": "https://academic.oup.com/esj/article/11/5/aakag043/8671382"
+          },
+          {
+            "label": "웹 — Comment — Evidence on novel endovascular techniques in the ESO/EANS/ESMINT guideline (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13344100/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-10"
     }
   ],
   "rejected": [
@@ -66645,7 +66903,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-09T01:08:18.466Z",
+      "discoveredAt": "2026-11-10T03:43:30.986Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -68009,7 +68267,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-09T01:08:18.466Z",
+      "discoveredAt": "2026-11-10T03:43:30.986Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -68073,7 +68331,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-09T01:08:18.466Z",
+      "discoveredAt": "2026-11-10T03:43:30.986Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -68100,7 +68358,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-09T01:08:18.466Z",
+      "discoveredAt": "2026-11-10T03:43:30.986Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -68173,9 +68431,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261109_100708:guideline:2026-11-09",
+    "runId": "trend_review_20261110_124226:guideline:2026-11-10",
     "outcome": "published",
-    "publishedId": "pmid:42999961",
+    "publishedId": "pmid:42095754",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -68194,21 +68452,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 120,
+        "mergedTotal": 124,
         "overlapCount": 0,
         "ptOnlyCount": 3,
-        "expandedOnlyCount": 4,
+        "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 31",
         "window": {
-          "minDate": "2026/10/10",
-          "maxDate": "2026/11/09"
+          "minDate": "2026/10/11",
+          "maxDate": "2026/11/10"
         },
         "retmax": 60,
         "topics": [
@@ -68216,8 +68474,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 48,
-            "idsFetched": 48,
+            "totalFound": 50,
+            "idsFetched": 50,
             "truncated": false,
             "error": null
           },
@@ -68297,8 +68555,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -68312,7 +68570,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 113,
+        "topicOnlyCount": 116,
         "ptPmids": [
           "42858614",
           "42837684",
@@ -68321,9 +68579,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 120,
-          "enriched": 120,
-          "withAbstract": 91,
+          "requested": 124,
+          "enriched": 124,
+          "withAbstract": 94,
           "error": null
         }
       },
@@ -68400,6 +68658,13 @@
           "stage": "region",
           "pmid": "42665231",
           "title": "Use of factor concentrates for the management of perioperative bleeding: guidance from the ISTH SSC Subcommittee on Perioperative and Critical Care Thrombosis and Hemostasis.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43001415",
+          "title": "Building Consensus Among Intensive Care Nurses on the Scope of Practice for Registered Nurses Deployed to Intensive Care During Surge Events: A Real-Time Delphi Study.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -68942,18 +69207,18 @@
       ],
       "decisions": {
         "queued": 200,
-        "needsReview": 466,
+        "needsReview": 467,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42999961",
+        "candidateId": "pmid:42095754",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-09T01:13:34.073Z",
+  "updatedAt": "2026-11-10T03:46:57.359Z",
   "configVersion": "guideline-v2"
 }
