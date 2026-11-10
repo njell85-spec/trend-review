@@ -5031,6 +5031,53 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-10",
+      "pmid": "41457245",
+      "title": "Cangrelor in critically ill patients with cardiogenic shock or post-cardiac arrest undergoing percutaneous coronary intervention: a systematic review and meta-analysis.",
+      "title_ko": "심인성 쇼크 또는 심정지 후 경피적 관상동맥중재술(PCI)을 받는 중증 환자에서의 Cangrelor: 체계적 문헌고찰 및 메타분석",
+      "journal": "Critical care (London, England)",
+      "doi": "10.1186/s13054-025-05812-x",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "심인성 쇼크(CS) 또는 심정지(CA) 후 PCI를 받는 중증 환자에서, 보조적 정맥 cangrelor가 경구 P2Y12 억제제(또는 cangrelor 비투여) 대비 유효성 및 안전성 결과를 개선시키는가?",
+      "pico": {
+        "population": "[International] Critically ill patients with cardiogenic shock (CS) or post-cardiac arrest (CA) undergoing PCI; 12 studies (2 RCTs and 10 observational studies) including 4,537 patients, of whom 2,089 (46.0%) received IV cangrelor; studies published up until August 31, 2025 (updated search October 19, 2025).",
+        "intervention": "Adjunctive intravenous (IV) cangrelor during PCI, typically a 30 µg/kg bolus followed by a 4 µg/kg/min infusion during the periprocedural period.",
+        "comparison": "Conventional treatment with an oral P2Y12 inhibitor (clopidogrel, prasugrel, or ticagrelor) or a control group not receiving cangrelor.",
+        "outcome": "All-cause mortality (short-term, in-hospital or at 30 days) was reduced with adjunctive cangrelor overall (RR 0.90; 95% CI 0.82–0.98); the effect was significant in CS (RR 0.86; 95% CI 0.78–0.96) but not in CA (RR 0.94; 95% CI 0.74–1.18)."
+      },
+      "pico_ko": {
+        "population": "[다국가] 심인성 쇼크(CS) 또는 심정지(CA) 후 PCI를 받는 중증 환자; RCT 2편과 관찰연구 10편을 포함한 12개 연구, 총 4,537명 중 2,089명(46.0%)이 IV cangrelor를 투여받음; 2025년 8월 31일까지 출판된 연구(2025년 10월 19일 업데이트 검색).",
+        "intervention": "PCI 중 보조적 정맥(IV) cangrelor 투여, 통상 주위시술기에 30 µg/kg bolus 후 4 µg/kg/min 지속주입.",
+        "comparison": "경구 P2Y12 억제제(clopidogrel, prasugrel, ticagrelor)를 사용한 통상 치료 또는 cangrelor 비투여 대조군.",
+        "outcome": "단기(원내 또는 30일) 전체 사망률은 보조적 cangrelor로 전체에서 감소(RR 0.90; 95% CI 0.82–0.98); CS에서는 유의(RR 0.86; 95% CI 0.78–0.96)했으나 CA에서는 유의하지 않음(RR 0.94; 95% CI 0.74–1.18)."
+      },
+      "keyFindings": [
+        "Across 12 studies (4,537 patients; 2 RCTs + 10 observational), adjunctive IV cangrelor reduced all-cause mortality overall (RR 0.90; 95% CI 0.82–0.98), with a significant benefit in CS (RR 0.86; 95% CI 0.78–0.96) but not in CA (RR 0.94; 95% CI 0.74–1.18).",
+        "Cangrelor improved post-PCI TIMI 3 flow (RR 1.14; 95% CI 1.01–1.29) but showed no significant difference in CV mortality, stent thrombosis, MI, or stroke.",
+        "Major bleeding was not significantly increased overall (RR 1.37; 95% CI 0.95–1.97) but was significantly elevated in controlled studies (RR 1.50; 95% CI 1.10–2.05)."
+      ],
+      "keyFindings_ko": [
+        "12개 연구(4,537명; RCT 2편 + 관찰연구 10편)에서 보조적 IV cangrelor는 전체 사망률을 감소(RR 0.90; 95% CI 0.82–0.98)시켰고, CS에서는 유의(RR 0.86; 95% CI 0.78–0.96)했으나 CA에서는 유의하지 않음(RR 0.94; 95% CI 0.74–1.18).",
+        "Cangrelor는 PCI 후 TIMI 3 flow를 개선(RR 1.14; 95% CI 1.01–1.29)했으나 CV 사망률, stent thrombosis, MI, stroke에서는 유의한 차이가 없었음.",
+        "Major bleeding은 전체적으로 유의한 증가가 없었으나(RR 1.37; 95% CI 0.95–1.97) 대조연구에서는 유의하게 증가(RR 1.50; 95% CI 1.10–2.05)함."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41457245",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41457245/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1186/s13054-025-05812-x",
+          "url": "https://doi.org/10.1186/s13054-025-05812-x"
+        }
+      ],
+      "fullText": "### Introduction\nOral P2Y inhibitors—clopidogrel, prasugrel, and ticagrelor—form a cornerstone of dual antiplatelet therapy (DAPT) in patients with coronary artery disease (CAD) []. However, their pharmacokinetic profiles present significant clinical limitations. In critically ill patients, oral administration has a delayed onset; several hours may be needed to achieve effective platelet inhibition, leaving patients vulnerable to early ischemic events. Furthermore, these agents have prolonged offset times, ranging from 3–5 days for ticagrelor to 5–10 days for clopidogrel and prasugrel, which can complicate management in the event of bleeding or urgent surgery [].\nCangrelor, an intravenous (IV) P2Y inhibitor, offers a distinct pharmacodynamic advantage. It provides immediate, potent platelet inhibition within two minutes of administration, with a rapid offset and recovery of platelet function within approximately one hour of discontinuation []. This characteristic makes it ideally suited for patients undergoing percutaneous coronary intervention (PCI) for acute thrombotic conditions, especially when oral absorption may be delayed or where immediate antiplatelet effect is crucial and quick reversibility may be needed for procedural complications. These advantages become particularly vital in high-acuity scenarios such as cardiogenic shock (CS) or cardiac arrest (CA), where gut hypoperfusion, mucosal edema, and vasopressor use severely compromise enteral absorption [, ], rendering oral P2Y inhibitors unreliable and potentially ineffective at the most critical time. Moreover, patients with CS or CA face a substantially higher risk of stent thrombosis due to low-flow states, heightened inflammatory responses, and increased platelet activation, making reliable peri-procedural platelet inhibition particularly crucial in these populations [].\nDespite a strong physiologic rationale, high-quality evidence supporting cangrelor in these populations remains scarce. While the large-scale randomized clinical trials (RCTs) established the efficacy and safety of cangrelor across broad PCI populations, these trials systematically excluded hemodynamically unstable patients in the protocol [–]. Consequently, the evidence base is predominantly observational, with inconsistent findings that indicate treatment-effect heterogeneity and a possible signal of increased bleeding []. Most recently, the DAPT-SHOCK-AMI (Dual Antiplatelet Therapy for Shock Patients With Acute Myocardial Infarction) trial—the first randomized evaluation of antiplatelet therapy in AMI patients complicated by CS—found that cangrelor did not demonstrate superiority to crushed ticagrelor for its primary composite endpoint, though without a significant increase in major bleeding [].\nGiven the profound clinical vulnerability of these patient cohorts and the ongoing uncertainty regarding optimal antiplatelet strategy, we conducted a systematic review and meta-analysis to evaluate the clinical efficacy and safety of cangrelor in patients with CS or CA undergoing PCI.\n\n### Methods\nThis systematic review and meta-analysis was conducted in accordance with the Cochrane Collaboration recommendations and the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines (Supplementary Table 1) []. The study protocol was registered prospectively with the International Prospective Register of Systematic Reviews (PROSPERO) under registration number CRD420251126926.\n\n### Literature search and study selection\nWe performed a systematic search of PubMed, Embase, and the Cochrane Central Register of Controlled Trials (CENTRAL) from inception to August 31, 2025, restricting results to English-language publications. Search terms encompassed relevant keywords related to acute coronary syndrome (ACS) (e.g., infarction, coronary, angina), critical states (e.g., shock, hypotension, arrest, coma, resuscitation), and the intervention (e.g., cangrelor) (Supplementary Table 2). To maximize sensitivity, the search strategy intentionally omitted terms related to outcomes. Two authors (HH and JJ) independently conducted the literature search, screening of abstracts, and selection of the included trials. Any discrepancies were resolved through discussion, and if consensus could not be reached, a third reviewer was consulted (YHJ). Additionally, we manually screened the reference lists of all included articles and monitored presentations from major cardiology congresses to identify further potentially eligible studies. Full-text review and assessment of supplementary materials were performed for all studies meeting initial screening criteria. An updated search conducted on October 19, 2025, using the original strategy identified no additional eligible studies.\n\n### Eligibility criteria\nNo restrictions were applied regarding publication date or status. We included RCTs and observational studies that met the following criteria: (1) compared cangrelor with either an oral P2Y inhibitor or a control group not receiving cangrelor; (2) enrolled patients with CS or CA undergoing PCI; and (3) reported at least one predefined clinical outcome of interest. Studies were excluded in cases of overlapping populations, crossover designs, absence of a control group, or lack of relevant outcome variables. To avoid duplication, publications from overlapping patient data or time frames were excluded; only the most recent or comprehensive study reporting the outcomes of interest was retained.\n\n### Data extraction\nData extraction was performed independently by two authors (HH and JJ). One reviewer (HH) conducted the initial data extraction, which was subsequently verified for accuracy and completeness by the second reviewer (JJ). Any discrepancies were resolved through discussion, with consultation of a third reviewer (YHJ) when consensus could not be reached. Extracted information included study characteristics, baseline patient demographics, antithrombotic treatment details, and clinical outcomes. The available clinical outcomes are summarized in Supplementary Table 3. For studies identified through conference presentations, data were extracted directly from the presented slides, abstracts, and accompanying press materials. Potential disagreements in the review and selection of studies were discussed and resolved through consensus.\n\n### Quality assessment\nThe methodological quality of the included RCT was evaluated using the Cochrane Risk of Bias 2 (RoB 2) tool, which assesses risk of bias across key domains and classifies it as low, high, or presenting some concerns []. Observational studies were appraised using the Newcastle–Ottawa Scale (NOS), which assigns a maximum score of nine stars across three domains: selection of study groups, comparability of groups, and outcome ascertainment []. Publication bias was evaluated visually using funnel plots of study weights versus point estimates for outcomes where at least 10 studies were available.\n\n### Outcome measures\nThe prespecified efficacy outcomes were all-cause mortality, cardiovascular (CV) mortality, stent thrombosis, myocardial infarction (MI), and stroke. Non-clinical outcomes included the incidence of post-PCI Thrombolysis in Myocardial Infarction (TIMI) grade 3 flow. Safety outcomes encompassed major and minor bleeding episodes, with Bleeding Academic Research Consortium (BARC) criteria preferentially used when available []; study-specific definitions were applied otherwise (Supplementary Table 4). All outcomes were assessed over the short term (in-hospital or at 30 days).\n\n### Statistical analysis\nDichotomous outcomes are expressed as risk ratios (RRs) with 95% confidence intervals (CIs). The Mantel–Haenszel method was used for binary endpoints, and the inverse-variance method was applied for continuous endpoints. Heterogeneity was evaluated using Cochran’s Q test (considered significant at  < 0.10) and quantified using the  statistic. A fixed-effect model was employed for analyses with low heterogeneity ( ≤ 25%), while a DerSimonian–Laird random-effects model was used in cases of substantial heterogeneity ( > 25%) or when observational studies were included.\nTo assess the robustness of the findings, a leave-one-out sensitivity analysis was performed by iteratively excluding each study and recalculating the pooled effect size. Predefined subgroup analyses were conducted for controlled studies (RCTs and propensity score-matched), as well as for specific high-risk populations: CS patients supported with mechanical circulatory support (MCS) devices, out-of-hospital CA (OHCA) patients, and those managed with targeted temperature management (TTM).\nTo investigate specific clinical hypotheses and explore sources of heterogeneity, univariate meta-regression analyses were performed for outcomes including at least 10 studies to ensure sufficient power. All analyses were performed using Review Manager (RevMan, version 5.4.1, The Cochrane Collaboration) and Comprehensive Meta-Analysis software (CMA, version 4, Biostat, Inc.).\n\n### Results\n\n### Study selection and characteristics\nThe systematic literature search identified 308 records from 3 databases. After duplicate removal and screening of titles and abstracts, 32 full-text articles and conference abstracts underwent eligibility assessment, with supplementary materials reviewed where available. Eleven studies initially met inclusion criteria. Prospective monitoring of major cardiology congresses subsequently identified one additional eligible RCT (the DAPT-SHOCK-AMI trial) []. Ultimately, 12 studies (4,537 patients) [, , –] met the inclusion criteria and were included in the meta-analysis (Fig. ).\nAmong these, two were RCTs and ten were observational studies. Key study and baseline characteristics are detailed in Table . A total of 2,089 patients (46.0%) received IV cangrelor, typically a 30 µg/kg bolus followed by a 4 µg/kg/min infusion during the periprocedural period. In the control group",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -5109,14 +5156,15 @@
         "41508101",
         "41222408",
         "41857661",
-        "41620016"
+        "41620016",
+        "41457245"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 70978
+      "2026-11": 83143
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
