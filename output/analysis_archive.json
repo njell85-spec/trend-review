@@ -5078,6 +5078,72 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-11",
+      "pmid": "42790858",
+      "title": "Rescue-breathing versus chest compression-only bystander cardiopulmonary resuscitation in non-cardiac out-of-hospital cardiac arrest: a nationwide retrospective cohort study.",
+      "title_ko": "비심장성 병원 밖 심정지에서 인공호흡 포함 심폐소생술(RB-CPR) 대 가슴압박 단독 심폐소생술(CO-CPR): 전국 후향적 코호트 연구",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111332",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "구경꾼이 시행하는 비심장성 병원 밖 심정지(OHCA)에서 인공호흡 포함 CPR(RB-CPR)이 가슴압박 단독 CPR(CO-CPR)에 비해 30일 사망률과 불량한 신경학적 예후를 낮추는가?",
+      "pico": {
+        "population": "[Japan] Patients identified in the All-Japan Utstein Registry with non-cardiac OHCA between 2012 and 2023 (N=154,137), excluding cardiac or traumatic etiology and those in whom resuscitation was not initiated; restricted to patients who received bystander CPR with documented chest compressions and available information on rescue breathing. Includes pediatric, adult, middle-aged, and elderly patients.",
+        "intervention": "Bystander-performed rescue-breathing CPR (RB-CPR), i.e., chest compressions with documented rescue breathing — 20,124 patients (13.1%).",
+        "comparison": "Bystander-performed chest compression-only CPR (CO-CPR) — 134,013 patients (86.9%).",
+        "outcome": "30-day mortality: adjusted RR 0.98 (95% CI 0.98–0.99); 30-day unfavorable neurological outcome: adjusted RR 0.99 (95% CI 0.99–0.99). Adjusted risk ratios estimated using modified Poisson regression with robust variance."
+      },
+      "pico_ko": {
+        "population": "[일본] All-Japan Utstein Registry에서 2012–2023년에 확인된 비심장성 OHCA 환자(N=154,137). 심장성 또는 외상성 원인과 소생술이 시작되지 않은 경우는 제외했고, 가슴압박이 기록되고 인공호흡 정보가 확인 가능한 구경꾼 CPR을 받은 환자로 한정. 소아, 성인, 중년, 노인 환자 포함.",
+        "intervention": "구경꾼이 시행한 인공호흡 포함 CPR(RB-CPR), 즉 가슴압박과 함께 인공호흡이 기록된 경우 — 20,124명(13.1%).",
+        "comparison": "구경꾼이 시행한 가슴압박 단독 CPR(CO-CPR) — 134,013명(86.9%).",
+        "outcome": "30일 사망: adjusted RR 0.98 (95% CI 0.98–0.99); 30일 불량한 신경학적 예후: adjusted RR 0.99 (95% CI 0.99–0.99). Adjusted risk ratio는 robust variance를 적용한 modified Poisson regression으로 추정."
+      },
+      "keyFindings": [
+        "Among 154,137 non-cardiac OHCA patients, only 20,124 (13.1%) received RB-CPR versus 134,013 (86.9%) CO-CPR, reflecting the dominance of compression-only CPR in Japan.",
+        "RB-CPR was associated with modestly lower 30-day mortality (adjusted RR 0.98, 95% CI 0.98–0.99) and 30-day unfavorable neurological outcomes (adjusted RR 0.99, 95% CI 0.99–0.99).",
+        "The benefit was concentrated in pediatric patients and drowning-related arrests (strongest), modest in asphyxia, with no clear difference in adult or elderly patients."
+      ],
+      "keyFindings_ko": [
+        "154,137명의 비심장성 OHCA 환자 중 RB-CPR을 받은 경우는 20,124명(13.1%)에 불과했고 CO-CPR이 134,013명(86.9%)으로, 일본에서 가슴압박 단독 CPR이 지배적임을 반영.",
+        "RB-CPR은 30일 사망(adjusted RR 0.98, 95% CI 0.98–0.99)과 30일 불량한 신경학적 예후(adjusted RR 0.99, 95% CI 0.99–0.99)를 완만하게 낮추는 것과 연관됨.",
+        "이득은 소아 환자와 익수 관련 심정지에서 집중(가장 강함)되었고 질식에서는 완만, 성인·노인에서는 뚜렷한 차이 없음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42790858",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42790858/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111332",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111332"
+        },
+        {
+          "label": "웹 — ScienceDirect — article page (Resuscitation, S0300957226023798)",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0300957226023798"
+        },
+        {
+          "label": "웹 — PubMed — PMID 42790858 (bibliographic record)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42790858/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "ScienceDirect — article page (Resuscitation, S0300957226023798)",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0300957226023798",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PubMed — PMID 42790858 (bibliographic record)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42790858/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
