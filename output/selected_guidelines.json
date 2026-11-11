@@ -41023,7 +41023,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41822,7 +41822,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42131,77 +42131,6 @@
         "reason": "남미 COVID 보건정책 회고, 무관",
         "at": "2026-08-17T04:43:32.344Z"
       }
-    },
-    {
-      "id": "pmid:42415225",
-      "pmid": "42415225",
-      "title": "Strategies to prevent ventilator-associated pneumonia in critically ill mechanically ventilated patients: a SIAARTI consensus statement.",
-      "pubDate": "2026 Jul 8",
-      "journal": "Journal of anesthesia, analgesia and critical care",
-      "publicationTypes": [
-        "Journal Article",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:40:48.357Z",
-      "abstract": "BACKGROUND: Ventilator-associated pneumonia (VAP) remains a major complication in mechanically ventilated critically ill patients. Although several preventive strategies have been proposed and incorporated into international guidelines, emerging evidence and evolving epidemiology warrant updated statements. The Italian Society of Anaesthesia, Analgesia, Resuscitation and Intensive Care (SIAARTI) developed an expert consensus statement to provide pragmatic guidance for VAP prevention.\nMETHODS: This consensus statement was developed in accordance with SIAARTI methodology for consensus-based documents. A multidisciplinary panel of 10 experts was appointed and identified key items through a modified Delphi process. Consensus was defined as ≥ 75% agreement within the same Likert scale range. A structured literature search was conducted. Statements and supporting rationales were drafted by multidisciplinary subgroups and subjected to blinded voting. External peer review was performed prior to final approval.\nRESULTS: Of ten proposed items, four achieved consensus in agreement and were included in the final document. Individual statements address: (1) subglottic secretion drainage, (2) endotracheal cuff pressure control, (3) chlorhexidine for oral hygiene, and (4) selective digestive decontamination (SDD). Subglottic secretions drainage and appropriate cuff pressure control are supported as preventive measures, while routine chlorhexidine use is not recommended outside selected cardiac surgery populations, and SDD was demonstrated effective to reduce VAP and mortality in low multidrug-resistant (MDR) settings.\nCONCLUSIONS: This consensus statement provides updated, pragmatic guidance for VAP prevention. Implementation should consider local epidemiology, particularly MDR prevalence, and patient-specific risk profiles.",
-      "meshTerms": [],
-      "keywords": [
-        "Bundles",
-        "Critical care",
-        "Intensive care",
-        "Mechanical ventilation",
-        "Prevention",
-        "Sepsis",
-        "Ventilator-associated pneumonia"
-      ],
-      "doi": "10.1186/s44158-026-00432-5",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 8,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "consensus",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:41:03.449Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "인공호흡기 관련 폐렴 예방, ICU 실무",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|strategies-prevent-ventilator-associated-pneumonia-critically-ill-mechanically-ventilated-patients-siaarti",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
     },
     {
       "id": "pmid:42418304",
@@ -42813,7 +42742,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.235Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42986,7 +42915,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -45574,7 +45503,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -45773,7 +45702,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46576,7 +46505,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46640,7 +46569,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -46710,7 +46639,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46778,7 +46707,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46841,7 +46770,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46906,7 +46835,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46969,7 +46898,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -47031,7 +46960,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47089,7 +47018,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47158,7 +47087,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47228,7 +47157,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47308,7 +47237,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47376,7 +47305,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47438,7 +47367,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47517,7 +47446,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47599,7 +47528,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47698,7 +47627,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47799,7 +47728,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47880,7 +47809,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47962,7 +47891,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48025,7 +47954,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -48094,7 +48023,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -48168,7 +48097,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -48234,7 +48163,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -48297,7 +48226,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48377,7 +48306,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-10T03:43:38.545Z",
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48388,6 +48317,193 @@
         "keep": true,
         "reason": "AHA 항혈소판 성명서, ACS 침상 판단에 닿는 실무 권고",
         "at": "2026-11-10T03:43:39.967Z"
+      }
+    },
+    {
+      "id": "pmid:43008190",
+      "pmid": "43008190",
+      "title": "Early ambulatory re-evaluation and follow-up of patients admitted in the acute cardiac care unit - Practical aspects on ambulatory follow-up of acute care patients: acute coronary syndromes, heart failure, ventricular arrhythmias, atrial arrhythmias, conductance disorders, myocarditis, pericarditis, other acute cardiac settings A Clinical Consensus Statement of the Association for Acute CardioVascular Care of the ESC.",
+      "pubDate": "2026 Nov 10",
+      "journal": "European heart journal. Acute cardiovascular care",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-11T01:23:01.700Z",
+      "abstract": "Early, structured ambulatory follow-up after hospitalization for acute cardiac events remains a key unmet need in cardiovascular care. This clinical consensus statement of the Association for Acute CardioVascular Care of the ESC provides pragmatic, condition-specific guidance on post discharge management and (early) ambulatory re-evaluation for patients admitted to an acute cardiac care unit. It complements existing disease-oriented guidelines by focusing on the vulnerable transition from hospital to home rather than on acute in-hospital treatment. The document first defines key concepts and outlines general principles regarding timing, content, and organization of the first post-discharge contacts, including risk stratification, medication reconciliation, symptom assessment, evaluation of psychosocial status and comorbidities, patient and family education, and integration of cardiac rehabilitation. In practice, the consensus statement discusses the patient's path after discharge: how should the follow-up team look like, when should the first and subsequent visits be planned, what should be done at each contact, and how can multidisciplinary teams and hybrid (in-person plus remote) models be implemented according to local resources. Supplementary material highlights major evidence gaps, including the optimal timing and intensity of follow-up, the composition of ambulatory teams, the role of telemonitoring and digital health, and the needs of vulnerable populations. Overall, this consensus aims to support clinicians in designing structured, individualized, and scalable ambulatory pathways after acute cardiac care.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1093/ehjacc/zuag133",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 11.8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3.8,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "ESC 급성심장진료 후 외래 추적 권고 — 침상보다 퇴원후 전환에 초점",
+        "at": "2026-11-11T01:23:11.107Z"
+      }
+    },
+    {
+      "id": "pmid:43006793",
+      "pmid": "43006793",
+      "title": "Adoption of ESC Guideline-Directed Heart Failure Pharmacotherapy and Outcomes: A Nationwide Claims-Based Cohort Study.",
+      "pubDate": "2026 Nov 10",
+      "journal": "ESC heart failure",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-11T01:23:01.700Z",
+      "abstract": "AIMS: The actual European heart failure (HF) guidelines recommend the combination of four drugs as a standard therapy (angiotensin-converting enzyme inhibitor (ACEI)/angiotensin receptor blocker (ARB)/angiotensin receptor-neprilysin inhibitor (ARNI); beta-blocker (BB); mineralocorticoid receptor antagonist (MRA); sodium-glucose co-transporter 2 inhibitor (SGLT-2i)) in patients with heart failure and reduced ejection fraction (HFrEF). We investigated the current use of this combined treatment in comparison to partly using these drugs in routine data with respect to outcomes of mortality and readmission.\nMETHODS: We included anonymized data from all patients who were insured with Germany's largest health insurer and had a claims record for hospitalization (2021-2023, follow-up in 2024) with a primary hospital diagnosis of HF. The use of different combinations of the four drug classes and their association with mortality and readmission within 91-365 days following the index stay were analysed (n = 307,755). Data were adjusted for a large set of potential confounders including age, sex, and comorbidities. In addition, the frequency of different 2-, 3-, and 4-drug heart failure medications was assessed from 2019 to 2023.\nRESULTS: In 2019 the dominant combination of drugs was ACEI/ARB and BB in nearly 37.84% of all cases. By 2023, the dominating combination was ACEI/ARB/ARNI, BB and SGLT-2i with or without an additional MRA (40.85%). The complete four-pillar therapy was prescribed in 21.81% of cases, while the old combination of ACEI/ARB and BB declined to 21.07%. Outcomes were assessed in 307,755 cases. In total, 55,985 of 298,535 (18.8%) included HF patients died 91-365 days after hospital discharge. Multivariable Cox proportional hazards models indicated a significantly lower mortality risk when patients had a combined treatment of all four drugs compared to a two-drug therapy (HR 0.89, 95% CI 0.86-0.92). The four-drug therapy was more effective with respect to mortality compared to the three-drug combination with an MRA (0.85, 95% CI 0.82-0.89). The comparison with a three-drug combination including an SGLT-2i performed equally (0.99, CI 0.95-1.03). Female sex was an independent negative predictor of four-drug therapy prescription after multivariable adjustment (AOR 0.62, 95% CI 0.60-0.63).\nCONCLUSIONS: Our study suggests that the comprehensive four-drug therapy for heart failure is increasingly implemented in routine care and is independently associated with lower mortality and readmission rates. A three-drug combination including an SGLT-2i may be equivalent in selected cases. Female sex is associated with a lower likelihood of four-drug therapy prescription. These hypothesis-generating results underscore the necessity of investigating sex-specific clinical phenotypes and prescribing patterns in heart failure populations.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1093/eschf/xvag279",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 11,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-outcomes-nationwide-claims-based-cohort-study",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "지침 아닌 청구자료 코호트 연구, 외래 만성 심부전 처방 실태",
+        "at": "2026-11-11T01:23:11.107Z"
+      }
+    },
+    {
+      "id": "pmid:43003636",
+      "pmid": "43003636",
+      "title": "From Response to Remission in Adult Severe Asthma: Practical Clarifications Following the New American College of Chest Physicians Biologic Guideline.",
+      "pubDate": "2026 Nov",
+      "journal": "Chest",
+      "publicationTypes": [
+        "Letter"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-11T01:23:01.700Z",
+      "abstract": "",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.1016/j.chest.2025.09.144",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 5,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 1
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "commentary-or-evaluation",
+        "conflicting-editorial-publication-type"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "초록없음·제목판단: ACCP 중증천식 생물학제제 지침 해설, 주로 외래",
+        "at": "2026-11-11T01:23:11.107Z"
       }
     }
   ],
@@ -62729,6 +62845,156 @@
         ]
       },
       "publishedAt": "2026-11-10"
+    },
+    {
+      "id": "pmid:42415225",
+      "pmid": "42415225",
+      "title": "Strategies to prevent ventilator-associated pneumonia in critically ill mechanically ventilated patients: a SIAARTI consensus statement.",
+      "pubDate": "2026 Jul 8",
+      "journal": "Journal of anesthesia, analgesia and critical care",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:40:48.357Z",
+      "abstract": "BACKGROUND: Ventilator-associated pneumonia (VAP) remains a major complication in mechanically ventilated critically ill patients. Although several preventive strategies have been proposed and incorporated into international guidelines, emerging evidence and evolving epidemiology warrant updated statements. The Italian Society of Anaesthesia, Analgesia, Resuscitation and Intensive Care (SIAARTI) developed an expert consensus statement to provide pragmatic guidance for VAP prevention.\nMETHODS: This consensus statement was developed in accordance with SIAARTI methodology for consensus-based documents. A multidisciplinary panel of 10 experts was appointed and identified key items through a modified Delphi process. Consensus was defined as ≥ 75% agreement within the same Likert scale range. A structured literature search was conducted. Statements and supporting rationales were drafted by multidisciplinary subgroups and subjected to blinded voting. External peer review was performed prior to final approval.\nRESULTS: Of ten proposed items, four achieved consensus in agreement and were included in the final document. Individual statements address: (1) subglottic secretion drainage, (2) endotracheal cuff pressure control, (3) chlorhexidine for oral hygiene, and (4) selective digestive decontamination (SDD). Subglottic secretions drainage and appropriate cuff pressure control are supported as preventive measures, while routine chlorhexidine use is not recommended outside selected cardiac surgery populations, and SDD was demonstrated effective to reduce VAP and mortality in low multidrug-resistant (MDR) settings.\nCONCLUSIONS: This consensus statement provides updated, pragmatic guidance for VAP prevention. Implementation should consider local epidemiology, particularly MDR prevalence, and patient-specific risk profiles.",
+      "meshTerms": [],
+      "keywords": [
+        "Bundles",
+        "Critical care",
+        "Intensive care",
+        "Mechanical ventilation",
+        "Prevention",
+        "Sepsis",
+        "Ventilator-associated pneumonia"
+      ],
+      "doi": "10.1186/s44158-026-00432-5",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "consensus",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:41:03.449Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "인공호흡기 관련 폐렴 예방, ICU 실무",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|strategies-prevent-ventilator-associated-pneumonia-critically-ill-mechanically-ventilated-patients-siaarti",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42415225",
+          "title": "Strategies to prevent ventilator-associated pneumonia in critically ill mechanically ventilated patients: a SIAARTI consensus statement.",
+          "journal": "Journal of anesthesia, analgesia and critical care",
+          "pubDate": "2026 Jul 8",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42415225/",
+          "doi": "10.1186/s44158-026-00432-5"
+        },
+        "org": "SIAARTI (Italian Society of Anaesthesia, Analgesia, Resuscitation and Intensive Care)",
+        "version": "2026",
+        "title_ko": "중환자실 기계환기 중증 환자에서 인공호흡기 연관 폐렴(VAP) 예방 전략 — SIAARTI 합의 성명서",
+        "scope_ko": "침습적 기계환기를 받는 성인 중증 환자에서 인공호흡기 연관 폐렴(VAP) 예방을 다루는 전문가 합의 성명서로, 마취·중환자 전문의 및 관련 의료진에게 침상 적용을 위한 실용적 지침을 제공한다. 10개 제안 항목 중 ≥75% 동의(modified Delphi)를 얻은 4개 항목(성문하 분비물 배액, 기관튜브 커프압 관리, 클로르헥시딘 구강위생, 선택적 소화관 제균[SDD])만 최종 채택되었으며, 기존 국제 지침을 대체가 아닌 보완하는 성격이다.",
+        "summary": [
+          "Subglottic secretion drainage: endotracheal tubes with a dedicated subglottic suction lumen can be considered as part of a VAP-prevention strategy, particularly in patients expected to need invasive ventilation for more than 48–72 h; evidence does not favor any specific suctioning modality (consensus reached, IQR 7–9). Note: it reduces VAP but has not consistently improved ventilator-associated events, ventilation duration, ICU LOS, or mortality.",
+          "Endotracheal cuff pressure: cuff pressure monitoring is indicated to reduce VAP risk and should be kept consistently between 20 and 30 cmH2O; manual adjustment remains the reference method, with insufficient evidence to mandate a specific monitoring frequency or routine continuous automated control systems (consensus reached, IQR 7–9).",
+          "Chlorhexidine oral hygiene: routine use of chlorhexidine for oral care in mechanically ventilated patients is NOT recommended for VAP prevention; it may be considered only in post-operative cardiac surgery ICU patients on an individualized basis (consensus reached, IQR 7–9) — driven by a signal of possible increased mortality and lack of consistent efficacy.",
+          "Selective digestive decontamination (SDD): current evidence supports SDD to reduce VAP and hospital mortality in patients expected to need ventilation for more than 48 h, but benefit derives mainly from settings with LOW prevalence of multidrug-resistant (MDR) organisms and depends on an accompanying systemic antibiotic component (consensus reached, IQR 7–9).",
+          "Implementation must be tailored to local epidemiology — particularly MDR prevalence (e.g., ≥5% ESBL-producing Enterobacterales bacteraemia, as in high-MDR countries such as Italy) — and to patient-specific risk profiles."
+        ],
+        "summary_ko": [
+          "성문하 분비물 배액: 전용 성문하 흡인 루멘이 있는 기관튜브는 VAP 예방 전략의 일부로 고려할 수 있으며, 특히 48–72시간 이상 침습적 기계환기가 예상되는 환자에서 그렇다. 특정 흡인 방식(지속 vs 간헐)을 지지할 근거는 없다(합의 달성, IQR 7–9). VAP는 줄이지만 인공호흡기 연관 사건·환기 기간·ICU 재실일수·사망률은 일관되게 개선하지 못한다.",
+          "기관튜브 커프압: VAP 위험 감소를 위해 커프압 모니터링이 권고되며 20–30 cmH2O로 일관되게 유지해야 한다. 수기 조정이 기준 방법이며, 특정 모니터링 빈도나 지속적 자동 커프압 조절 장치의 일상적 사용을 뒷받침할 근거는 아직 불충분하다(합의 달성, IQR 7–9).",
+          "클로르헥시딘 구강위생: 기계환기 환자에서 VAP 예방 목적의 클로르헥시딘 일상적 사용은 권고하지 않는다. 심장수술 후 ICU 환자에 한해 개별 임상 맥락에 따라 고려할 수 있다(합의 달성, IQR 7–9) — 사망률 증가 가능성 신호와 효능의 비일관성 때문이다.",
+          "선택적 소화관 제균(SDD): 48시간 이상 기계환기가 예상되는 환자에서 VAP와 병원 사망률을 줄이기 위해 SDD 사용을 지지하는 근거가 있으나, 그 근거는 주로 다제내성(MDR) 균 유병률이 낮은 환경에서 나온 것이며 전신 항생제 병용 요소에 의존한다(합의 달성, IQR 7–9).",
+          "적용은 국소 역학, 특히 MDR 유병률(예: ESBL 생성 장내세균 균혈증 ≥5% — 이탈리아 등 고MDR 국가)과 환자별 위험 프로파일에 맞춰야 한다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "클로르헥시딘 구강위생",
+            "detail": "Previous international guidance inconsistently endorsed routine chlorhexidine oral care as a VAP-prevention measure; SIAARTI 2026 now recommends AGAINST routine chlorhexidine for VAP prevention in general mechanically ventilated patients, carving out an exception where it 'may be taken into account' only in post-cardiac-surgery ICU patients. Reason: although a Cochrane review showed VAP reduction from 26% to 18% (RR 0.67; 95% CI 0.47–0.97; p=0.03), a separate meta-analysis signaled a possible increase in mortality (p=0.01) and a recent network meta-analysis found no difference in VAP, mortality, ventilation duration, or ICU LOS — so the efficacy/safety balance no longer supports routine use.",
+            "detail_ko": "기존 국제 지침은 클로르헥시딘 일상적 구강위생을 VAP 예방책으로 비일관적으로 권고했으나, SIAARTI 2026은 일반 기계환기 환자에서 VAP 예방 목적의 일상적 클로르헥시딘 사용을 '권고하지 않음'으로 명확히 하고, 심장수술 후 ICU 환자에 한해 '고려 가능'으로 예외를 둔다. 이유: Cochrane 리뷰에서 VAP가 26%→18%로 감소(RR 0.67; 95% CI 0.47–0.97; p=0.03)했으나, 별도 메타분석에서 사망률 증가 가능성(p=0.01) 신호가 있었고, 최근 네트워크 메타분석은 VAP·사망률·환기 기간·ICU 재실일수에서 차이가 없음을 보고 — 효능/안전 균형이 더 이상 일상적 사용을 지지하지 않는다."
+          },
+          {
+            "topic": "지속적 자동 커프압 관리",
+            "detail": "Where continuous automated cuff-pressure control had been an emerging/promoted technology, SIAARTI 2026 states there is insufficient evidence to support routine use of continuous automated systems or a specific monitoring frequency; manual cuff-pressure adjustment remains the reference standard, with the target reaffirmed at 20–30 cmH2O. Reason: a randomized crossover study showed automated systems gave more stable pressures but NO difference in microaspiration events versus manual measurement, and meta-analysis certainty for continuous monitoring benefit was 'very low'; pressures <20 cmH2O raise VAP risk up to fourfold while >30 cmH2O risk tracheal ischaemia/stenosis.",
+            "detail_ko": "지속적 자동 커프압 조절이 부상하는 기술로 홍보되던 것과 달리, SIAARTI 2026은 지속적 자동 장치의 일상적 사용이나 특정 모니터링 빈도를 지지할 근거가 불충분하다고 명시하고, 수기 커프압 조정을 기준 방법으로 재확인하며 목표치를 20–30 cmH2O로 유지한다. 이유: 무작위 교차연구에서 자동 장치는 더 안정적인 압력을 제공했으나 미세흡인 사건은 수기 측정과 차이가 없었고, 지속 모니터링 이득에 대한 메타분석 확실성은 '매우 낮음'이었다. <20 cmH2O는 VAP 위험을 최대 4배 높이고 >30 cmH2O는 기관 허혈·협착 위험이 있다."
+          },
+          {
+            "topic": "SDD의 MDR 유병률 맥락화",
+            "detail": "SDD guidance is reframed around local MDR prevalence rather than a blanket recommendation. SIAARTI supports SDD to reduce VAP and hospital mortality in patients ventilated >48 h, but explicitly conditions this on low-MDR settings and on inclusion of systemic antibiotics: meta-analysis (32 RCTs, 24,389 patients) showed VAP RR 0.44 (95% CrI 0.36–0.54) and hospital mortality RR 0.91 (0.82–0.99); the mortality benefit held WITH systemic antibiotics (RR 0.84, 0.74–0.94) but disappeared WITHOUT them (RR 1.01, 0.91–1.11). In ICUs with ≥5% ESBL-producing Enterobacterales bacteraemia there was no benefit (bloodstream infection HR 0.70, 0.43–1.14; mortality HR 1.03, 0.80–1.32), so generalisability to high-MDR countries such as Italy is uncertain — aligning with IDSA advice against SDD where MDR prevalence is high.",
+            "detail_ko": "SDD 권고가 일괄 권고가 아니라 국소 MDR 유병률을 중심으로 재구성되었다. SIAARTI는 48시간 초과 환기 환자에서 VAP와 병원 사망률 감소를 위해 SDD를 지지하나, 저MDR 환경과 전신 항생제 병용을 명시적 전제로 둔다: 메타분석(32 RCT, 24,389명)에서 VAP RR 0.44(95% CrI 0.36–0.54), 병원 사망률 RR 0.91(0.82–0.99)이었고, 사망률 이득은 전신 항생제 병용 시 유지(RR 0.84, 0.74–0.94)되었으나 미병용 시 소실(RR 1.01, 0.91–1.11)되었다. ESBL 생성 장내세균 균혈증 ≥5%인 ICU에서는 이득이 없어(혈류감염 HR 0.70, 0.43–1.14; 사망률 HR 1.03, 0.80–1.32) 이탈리아 등 고MDR 국가로의 일반화는 불확실 — MDR 유병률이 높은 곳에서 SDD를 권하지 않는 IDSA 입장과 일치한다."
+          },
+          {
+            "topic": "성문하 분비물 배액 — 적응 대상 명확화",
+            "detail": "The recommendation for subglottic secretion drainage is reaffirmed but scoped and qualified: it 'can be considered' specifically for patients expected to need invasive ventilation >48–72 h, and the panel explicitly declines to endorse any specific suctioning modality (continuous vs intermittent) due to insufficient evidence. It also makes clear that, while subglottic drainage reduces VAP incidence, major trials have NOT consistently shown improvement in harder outcomes (ventilator-associated events, ventilation duration, ICU LOS, mortality) — a more cautious framing than a blanket endorsement.",
+            "detail_ko": "성문하 분비물 배액 권고는 재확인되되 대상이 좁혀지고 단서가 붙었다: 48–72시간 초과 침습적 환기가 예상되는 환자에서 '고려 가능'하며, 근거 부족으로 특정 흡인 방식(지속 vs 간헐)을 지지하지 않는다. 또한 성문하 배액이 VAP 발생을 줄이지만 주요 임상시험에서 더 단단한 결과(인공호흡기 연관 사건·환기 기간·ICU 재실일수·사망률)는 일관되게 개선하지 못했음을 분명히 하여, 무조건적 지지보다 신중한 틀로 제시한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside: stop routine chlorhexidine mouthwash for VAP prevention in general ventilated patients — reserve it only for post-cardiac-surgery ICU cases — because of a possible mortality signal and absent efficacy. Keep cuff pressure reliably in the 20–30 cmH2O band using manual checks; do not feel compelled to buy or deploy continuous automated cuff controllers, as they have not shown clinical superiority. Favor subglottic-suction ETTs when intubation is expected to exceed 48–72 h, recognizing the benefit is VAP reduction rather than proven mortality gain. For SDD, decide by your unit's MDR epidemiology: it is reasonable (with a systemic antibiotic component) in low-MDR ICUs but of unproven and potentially null benefit where ESBL/MDR prevalence is high (e.g., ≥5% ESBL bacteraemia).",
+        "practiceImpact_ko": "침상 적용: 일반 기계환기 환자에서 VAP 예방 목적의 일상적 클로르헥시딘 구강세정을 중단하고 — 심장수술 후 ICU 환자에만 한정 — 사망률 증가 가능성 신호와 효능 부재 때문이다. 커프압은 수기 점검으로 20–30 cmH2O 범위를 안정적으로 유지하되, 임상적 우월성이 입증되지 않은 지속 자동 커프압 조절 장치를 꼭 도입할 필요는 없다. 48–72시간 초과 삽관이 예상되면 성문하 흡인 기관튜브를 선호하되, 그 이득은 사망률 개선이 아니라 VAP 감소임을 인지한다. SDD는 병동의 MDR 역학에 따라 결정 — 저MDR ICU에서는 전신 항생제 병용 하에 합리적이나, ESBL/MDR 유병률이 높은 곳(예: ESBL 균혈증 ≥5%)에서는 이득이 불확실하거나 없을 수 있다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42415225",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42415225/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1186/s44158-026-00432-5",
+            "url": "https://doi.org/10.1186/s44158-026-00432-5"
+          },
+          {
+            "label": "웹 — SIAARTI VAP prevention consensus statement — full text (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13628800"
+          },
+          {
+            "label": "웹 — SIAARTI VAP prevention consensus statement — Journal of Anesthesia, Analgesia and Critical Care (Springer)",
+            "url": "https://link.springer.com/article/10.1186/s44158-026-00432-5"
+          },
+          {
+            "label": "웹 — SIAARTI VAP prevention consensus statement — PubMed record",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42415225/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-11"
     }
   ],
   "rejected": [
@@ -66903,7 +67169,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-10T03:43:30.986Z",
+      "discoveredAt": "2026-11-11T01:23:01.700Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -68267,7 +68533,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-10T03:43:30.986Z",
+      "discoveredAt": "2026-11-11T01:23:01.700Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -68331,7 +68597,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-10T03:43:30.986Z",
+      "discoveredAt": "2026-11-11T01:23:01.700Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -68358,7 +68624,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-10T03:43:30.986Z",
+      "discoveredAt": "2026-11-11T01:23:01.700Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -68431,9 +68697,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261110_124226:guideline:2026-11-10",
+    "runId": "trend_review_20261111_102118:guideline:2026-11-11",
     "outcome": "published",
-    "publishedId": "pmid:42095754",
+    "publishedId": "pmid:42415225",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -68458,15 +68724,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 124,
+        "mergedTotal": 133,
         "overlapCount": 0,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 31",
         "window": {
-          "minDate": "2026/10/11",
-          "maxDate": "2026/11/10"
+          "minDate": "2026/10/12",
+          "maxDate": "2026/11/11"
         },
         "retmax": 60,
         "topics": [
@@ -68474,8 +68740,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 50,
-            "idsFetched": 50,
+            "totalFound": 56,
+            "idsFetched": 56,
             "truncated": false,
             "error": null
           },
@@ -68492,8 +68758,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 14,
+            "idsFetched": 14,
             "truncated": false,
             "error": null
           },
@@ -68510,8 +68776,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 18,
-            "idsFetched": 18,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -68528,8 +68794,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -68570,7 +68836,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 116,
+        "topicOnlyCount": 125,
         "ptPmids": [
           "42858614",
           "42837684",
@@ -68579,9 +68845,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 124,
-          "enriched": 124,
-          "withAbstract": 94,
+          "requested": 133,
+          "enriched": 133,
+          "withAbstract": 101,
           "error": null
         }
       },
@@ -68634,7 +68900,7 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
+        "scored": 3,
         "batches": 1,
         "failed": 0,
         "error": null
@@ -68693,6 +68959,20 @@
           "stage": "region",
           "pmid": "42469072",
           "title": "Brain Death Determination During VA-ECMO After Pediatric Cardiac Surgery: A Case-Based Analysis of the 2023 Unified Consensus.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43004157",
+          "title": "Impact of Guideline-Directed Medication Titration Velocity in Patients With Heart Failure With Reduced Ejection Fraction.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43003599",
+          "title": "Prevalence and Consequences of Guideline-Directed Indications for Aortic Valve Replacement in the EARLY TAVR Trial.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -68817,6 +69097,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42823528",
+          "title": "Might Residual Clot Burden Have a Role in Follow-Up After Pulmonary Embolism? A Question Prompted by the 2026 Acute Pulmonary Embolism Guideline.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42687846",
           "title": "Pharmacotherapy of heart failure: Impact of the 2021 guideline update on guideline-directed medical therapy assessed using a Japanese employee health insurance claims database.",
           "region": null,
@@ -68847,6 +69134,13 @@
           "stage": "region",
           "pmid": "42484006",
           "title": "Short-term survival of dual SGLT2i-MRA and four-class guideline-directed medical therapy in acute heart failure.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42479001",
+          "title": "Pulmonary Embolism Reporting and Data System (PE-RADS™) v2026 for the Diagnosis of Acute Pulmonary Embolism on CT and MR Angiography.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -69111,8 +69405,22 @@
         },
         {
           "stage": "region",
+          "pmid": "42611723",
+          "title": "Summary of the 2025 AANN Guidelines for Aneurysmal Subarachnoid Hemorrhage: An Update to the 2018 Guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42535992",
           "title": "Hyponatremia treatment guidelines: a necessary course correction.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43003793",
+          "title": "Noninvasive assessments for identifying peripheral artery disease described within guidelines, consensus, and best practice statements: A rapid systematic review.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -69206,19 +69514,19 @@
         }
       ],
       "decisions": {
-        "queued": 200,
-        "needsReview": 467,
+        "queued": 199,
+        "needsReview": 470,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42095754",
+        "candidateId": "pmid:42415225",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-10T03:46:57.359Z",
+  "updatedAt": "2026-11-11T01:25:25.626Z",
   "configVersion": "guideline-v2"
 }

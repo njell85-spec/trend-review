@@ -309,23 +309,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "39288952",
-      "title": "Management of atrial fibrillation in older adults.",
-      "journal": "BMJ",
-      "score": 8,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "고령 심방세동 관리, 응급·심장 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39616000",
       "title": "A contemporary review of sudden cardiac arrest and death in competitive and recreational athletes.",
       "journal": "Lancet",
@@ -14658,6 +14641,139 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39288952",
+      "title": "Management of atrial fibrillation in older adults.",
+      "journal": "BMJ",
+      "score": 8,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "고령 심방세동 관리, 응급·심장 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-11",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39288952",
+          "title": "Management of atrial fibrillation in older adults.",
+          "journal": "BMJ (Clinical research ed.)",
+          "pubDate": "2024-9-18",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39288952/",
+          "doi": "10.1136/bmj-2023-076246"
+        },
+        "title_ko": "노인에서의 심방세동 관리",
+        "scope_ko": "심방세동 환자의 대부분을 차지하는 노인(동반 만성질환·다약제·노쇠 등 노인증후군이 겹치는 집단)에 대해, 연령 비특이적으로 설계된 기존 무작위 임상시험·지침의 한계를 짚고 '노화 과학'의 관점을 적용해 선별검사, 생활습관 중재, 증상·합병증, 심박수·리듬 조절, 동반 심부전, 항응고 치료, 좌심방이 폐색 기구에 이르는 심방세동 관리의 각 축을 노인 맞춤으로 재구성한 BMJ 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "왜 노인 심방세동은 다르게 접근해야 하는가 (종설의 문제의식)",
+            "body_ko": "심방세동 환자의 대다수는 노인이며, 이들에서 심방세동은 단독으로 존재하기보다 다른 만성질환, 다약제(polypharmacy), 그리고 노쇠(frailty)와 같은 노인증후군과 함께 나타난다. 그런데 대부분의 무작위 대조시험과 전문가 지침은 '연령 비특이적(age agnostic)' 접근을 취한다. 저자들은 노화가 매우 이질적(heterogeneity of aging)이라는 점을 들어, 이러한 데이터가 노인 스펙트럼 전반에 보편적으로 적용되지 않을 수 있다고 지적한다. 이 종설은 가용한 근거를 종합하되 노화 과학(aging science)의 엄정한 원칙을 적용하는 것을 목표로 한다.\n\n(참고: 본 번역은 BMJ 원문 본문이 유료 장벽으로 확보되지 않아 논문 자체의 초록만을 근거로 한 '초록 기반' 번역이다. 아래 'article' 절들은 초록이 밝힌 범위에 충실하게 옮긴 것이며, 초록에 없는 구체적 수치·용량·역치는 담지 않았다. 구체적 임상 수치는 뒤의 'augmented'(보강) 절에 출처를 명시해 별도로 제시한다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "동반질환과 노인증후군의 부담",
+            "body_ko": "종설은 본격적인 관리 논의에 앞서, 심방세동을 가진 사람들에서 동반질환(comorbidities)과 노쇠 등 노인증후군(geriatric syndromes)이 어느 정도의 부담으로 존재하는지를 먼저 맥락화한다. 이는 심방세동이 그 사람의 유일한 문제일 수도, 여러 문제 중 하나일 수도, 또는 생애 말기에 '곁다리(bystander)'로 존재할 수도 있다는 인식을 바탕에 둔다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "심방세동 선별검사 (screening)",
+            "body_ko": "종설은 노화에 초점을 둔 접근을 심방세동 관리의 각 축에 적용하며, 그 첫 축으로 노인에서의 심방세동 선별검사를 다룬다. 초록 수준에서는 선별검사를 관리의 한 기둥으로 제시하는 데 그치며, 구체적 선별 전략·연령 역치는 본문에 기술된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "생활습관 중재 (lifestyle interventions)",
+            "body_ko": "다음 축으로 생활습관 중재를 다룬다. 역시 노인 맞춤 관점에서 심방세동 관리의 한 축으로 제시되며, 세부 내용은 본문에 기술된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "증상과 합병증 (symptoms and complications)",
+            "body_ko": "종설은 노인 심방세동 환자의 증상과 합병증을 관리의 한 축으로 다룬다. 초록은 이를 관리의 기둥 중 하나로 열거한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "심박수 조절과 리듬 조절 (rate and rhythm control)",
+            "body_ko": "심박수 조절(rate control)과 리듬 조절(rhythm control)을 노화 초점 관점에서 다룬다. 초록은 이를 심방세동 관리의 핵심 축으로 제시한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "동반된 심부전 (coexisting heart failure)",
+            "body_ko": "심방세동과 흔히 공존하는 심부전을 별도의 축으로 다룬다. 노인에서 두 질환이 겹칠 때의 관리가 종설의 한 장(章)으로 기술된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "항응고 치료 (anticoagulation therapy)",
+            "body_ko": "뇌졸중 예방을 위한 항응고 치료를 노화 초점 관점에서 다룬다. 초록은 이를 관리의 한 기둥으로 열거하며, 노인·노쇠 환자에서의 득실 저울질이 본문에서 전개된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "좌심방이 폐색 기구 (left atrial appendage occlusion devices)",
+            "body_ko": "항응고의 대안 또는 보완으로서의 좌심방이 폐색(LAAO) 기구를 관리의 한 축으로 다룬다. 초록 수준에서는 이를 기둥의 하나로 제시한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "환자의 목표를 우선하는 프레임워크",
+            "body_ko": "종설은 전반에 걸쳐, 환자의 목표(goals)를 우선하고 기존 근거를 모든 노인에게 적용하는 하나의 틀(framework)을 제안한다. 이 틀은 심방세동이 그 환자의 유일한 질환이든, 여러 질환 중 하나이든, 생애 말기의 곁다리이든 간에 일관되게 적용될 수 있도록 설계되어 있다. 즉, 연령 자체가 아니라 환자의 전체적 상태·목표·기대여명에 맞추어 각 관리 축의 강도를 조절한다는 것이 종설의 관통하는 메시지다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 노쇠 노인에서의 평가 도구·항응고·리듬/심박수 조절·시술 — 구체 수치",
+            "body_ko": "※ 아래는 원문 본문을 확보하지 못해, 동일 주제(노쇠 노인의 심방세동 평가·관리)를 다룬 동료심사 2차 종설에서 옮긴 보강 내용이다. 원문 Parks 등의 수치가 아니라 해당 2차 출처의 수치임에 유의한다.\n\n노쇠 평가: 임상 적용에는 4m 보행속도나 9점 Clinical Frailty Scale 같은 간편 도구가 권장된다. 심방세동 환자에서 노쇠 유병률은 30–50%로 보고된다(Clinical Frailty Scale 사용 연구에서 더 높음).\n\n항응고: 노쇠·낙상 위험 범주 전반에서 경구 항응고제의 뇌졸중 예방 이득이 출혈 위험을 상회하므로, 노쇠나 낙상 자체는 항응고를 보류할 이유가 되지 않는다. 다만 무작위 FRAIL-AF 시험(n=1,330)에서는 안정적으로 warfarin을 복용 중이던 노쇠 노인을 DOAC로 전환하자 12개월 내 출혈 합병증이 69% 증가(색전증률은 유사)해, 안정적 warfarin 복용자는 전환하지 말고 유지하도록 제시한다. ELDERCARE-AF(일본, ≥80세)는 표준용량 금기/고출혈위험 환자에서 저용량 edoxaban 15 mg/일이 주요출혈의 유의한 증가 없이 뇌졸중/전신색전을 줄였음을 보였다. FDA 감량 기준은 ①≥80세 ②체중 ≤60 kg ③혈청 크레아티닌 ≥1.5 mg/dL 중 2개 이상. 여러 후향연구에서 apixaban이 rivaroxaban·dabigatran·warfarin 대비 사건 위험이 낮았다.\n\n심박수 조절: RACE II(n=614)에 근거해 느슨한 조절(<110 bpm)이 권장되며, 엄격 조절(<80 bpm)과 차이가 없었다. 1차 약제는 베타차단제와 비-dihydropyridine 칼슘통로차단제. Digoxin은 Beers 기준상 1차 약제로 권장되지 않으며, 사용 시 ≤0.125 mg/일로 제한한다.\n\n리듬 조절: EAST-AFNET 4는 조기 리듬 조절이 심혈관 사망·뇌졸중·심부전 악화 입원·급성관상동맥증후군의 복합 결과를 줄였음을 보였다. Amiodarone이 동율동 유지에 가장 효과적이나, 심부전·유의한 좌심실비대가 없는 환자에서는 Beers 기준상 1차 사용을 피하도록 권고한다.\n\n도관절제: 노인 전반에서 안전성 프로파일은 안심할 만하나(합병증률 낮음), CABANA(n≈2,200)에서 1차 복합결과 차이는 없었고 이득은 주로 <65세에서 관찰되었다. ≥75세 약 20만 명 한국 후향코호트에서 노쇠 환자는 절제의 사망 이득이 없었고 비노쇠에서만 이득이 관찰되었다. CASTLE-AF는 심부전 동반 심방세동에서 절제가 사망/심부전악화 입원을 줄였다.\n\n좌심방이 폐색(LAAO): 비가역적 항응고 금기(재발성 낙상 관련 출혈 포함)와 중등도–고위험 뇌졸중 위험 환자에서 합당(Class 2A)하다. warfarin과 유사한 색전 예방에 주요출혈은 감소시키나, 노쇠는 시술 합병증 및 30일·1년 사망률 증가와 연관되며, 장기 출혈 위험 감소가 단기 시술 위험을 상회하기까지 약 2년이 걸릴 수 있어 기대여명이 짧은 노쇠 환자에서는 신중해야 한다.\n\n선별검사: SAFE 연구는 체계적·기회적 선별 모두 ≥65세에서 심방세동 진단을 늘렸고, LOOP 연구는 삽입형 루프레코더 선별이 진단을 3배로 늘렸으나 뇌졸중은 줄이지 못했다. 신약으로 Factor XI/XIa 억제제가 2상에서 DOAC 대비 출혈 위험을 유의하게 낮춰, 고출혈위험 노쇠 집단에 잠재적 이점이 기대된다.\n— 보강 출처: Geriatrics (MDPI) 종설 — Assessment and Management of Atrial Fibrillation in Older Adults with Frailty (PMC11050611) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11050611/)",
+            "origin": "augmented",
+            "sourceLabel": "Geriatrics (MDPI) 종설 — Assessment and Management of Atrial Fibrillation in Older Adults with Frailty (PMC11050611)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11050611/"
+          },
+          {
+            "heading_ko": "[웹 보강] 고령 심방세동 환자 관리의 임상 쟁점 — 보조 종설 관점",
+            "body_ko": "※ 아래는 원문이 아닌, 동일 주제를 다룬 별도의 동료심사 종설/논평에서 옮긴 보강 내용이다.\n\n심박수 대 리듬 조절: 사망·심혈관 결과에서 심박수 조절이 리듬 조절에 흔히 비열등하나, 최근 발생(≤1년) 심방세동을 가진 선별된 노인에서는 리듬 조절이 이득일 수 있다. 다수 동반질환·인지저하·노쇠·짧은 기대여명에는 심박수 조절을, 증상이 뚜렷하고 발생이 최근인 경우에는 리듬 조절을 선호한다.\n\n항응고: 고령 심방세동에서는 연령 자체가 경구 항응고의 근거가 되며, DOAC가 연령과 무관하게 1차 치료다. 약제별로 dabigatran은 약 80%가 신배설되어 용량조절에 주의가 필요하고, edoxaban은 크레아티닌청소율이 95 mL/min을 초과하면 효능이 감소하며, rivaroxaban은 1일 1회로 순응도에 유리하다. warfarin이 불가피할 경우 연령 증가에 따라 민감도가 높아져 70세 이후 필요 용량이 약 20% 감소한다.\n\n인지·심부전: 심방세동이 있으면 치매 발생 위험이 약 2배로 증가한다(기전: 뇌 저관류·염증·미세경색). 심방세동 환자의 약 50%가 심부전을 동반하며, 두 질환은 양방향 관계로 이뇨제·ACE억제제·ARNI·SGLT2 억제제를 포함한 통합 관리가 필요하다.\n\n한계: 현행 무작위 시험은 85세 초과 및 다수 동반질환 환자를 흔히 배제해 실제 임상 적용성이 제한된다. 포괄적 노인평가(CGA) 선행, 노쇠·동반질환에 따른 전략 개별화, 가능하면 warfarin보다 DOAC 선호, 공유의사결정, 잦은 추적이 권장된다.\n— 보강 출처: 종설/논평 — Management of Atrial Fibrillation in Elderly Patients: A Whole New Ballgame? (PMC11989488) (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11989488/)",
+            "origin": "augmented",
+            "sourceLabel": "종설/논평 — Management of Atrial Fibrillation in Elderly Patients: A Whole New Ballgame? (PMC11989488)",
+            "sourceUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11989488/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "b8405efa8117316e5caf4a2c2ddc402408daa31cd637ff9f35de521d8ab34cbd",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-11T01:28:39.787Z",
+          "resultFingerprint": "cd13edfb9f4e66d9fa45779cce1131ddc34bf71b4603597dddc6405480056234",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설의 핵심은 '연령만으로' 또는 '노쇠·낙상 위험만으로' 심방세동 치료(특히 항응고)를 보류하지 말고, 환자의 전체 상태·목표·기대여명에 맞춰 각 관리 축의 강도를 조절하라는 것이다. EM/CCM 침상에서는 노쇠 고령 환자라도 금기가 없으면 DOAC(특히 apixaban) 기반 항응고를 기본으로 두되, 안정적으로 warfarin을 쓰던 환자를 무턱대고 DOAC로 바꾸지 않고(FRAIL-AF), 심박수 조절은 느슨한 목표(<110 bpm)로 시작하며, 도관절제·LAAO 같은 시술은 기대여명과 시술 위험을 저울질해 선별 적용하는 방향으로 판단이 선명해진다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39288952",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39288952/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1136/bmj-2023-076246",
+            "url": "https://doi.org/10.1136/bmj-2023-076246"
+          },
+          {
+            "label": "웹 — Geriatrics(MDPI) 종설 — Assessment and Management of Atrial Fibrillation in Older Adults with Frailty (PMC11050611)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11050611/"
+          },
+          {
+            "label": "웹 — 종설/논평 — Management of Atrial Fibrillation in Elderly Patients: A Whole New Ballgame? (PMC11989488)",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11989488/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -14715,9 +14831,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "outcome": "published",
-    "publishedId": "38889923"
+    "publishedId": "39288952"
   },
-  "updatedAt": "2026-11-10"
+  "updatedAt": "2026-11-11"
 }

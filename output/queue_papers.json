@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42790858",
-      "title": "Rescue-breathing versus chest compression-only bystander cardiopulmonary resuscitation in non-cardiac out-of-hospital cardiac arrest: a nationwide retrospective cohort study.",
-      "journal": "Resuscitation",
-      "score": 8.3,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.318,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-29"
-    },
-    {
       "pmid": "41405523",
       "title": "The Limit of Detection in the Emergency Department Trial (LEGEND): A Stepped-Wedge Cluster Randomized Trial to Rule Out Acute Myocardial Infarction and Reduce Hospital Length of Stay for Patients Presenting to the Emergency Department.",
       "journal": "Annals of emergency medicine",
@@ -603,6 +588,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-10"
+    },
+    {
+      "pmid": "42790858",
+      "title": "Rescue-breathing versus chest compression-only bystander cardiopulmonary resuscitation in non-cardiac out-of-hospital cardiac arrest: a nationwide retrospective cohort study.",
+      "journal": "Resuscitation",
+      "score": 8.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.318,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-29",
+      "publishedAt": "2026-11-11"
     }
   ],
   "rejected": [
@@ -618,9 +619,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "outcome": "published",
-    "publishedId": "41457245"
+    "publishedId": "42790858"
   },
-  "updatedAt": "2026-11-10"
+  "updatedAt": "2026-11-11"
 }
