@@ -5144,6 +5144,81 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-12",
+      "pmid": "41405523",
+      "title": "The Limit of Detection in the Emergency Department Trial (LEGEND): A Stepped-Wedge Cluster Randomized Trial to Rule Out Acute Myocardial Infarction and Reduce Hospital Length of Stay for Patients Presenting to the Emergency Department.",
+      "title_ko": "응급실 검출한계(LEGEND) 시험: 응급실 내원 환자에서 급성 심근경색을 배제하고 재원시간을 단축하기 위한 단계적 쐐기(stepped-wedge) 군집 무작위 배정 시험",
+      "journal": "Annals of emergency medicine",
+      "doi": "10.1016/j.annemergmed.2025.10.014",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "급성 관상동맥증후군(ACS)이 의심되는 성인 응급실 환자에서, 내원 시 측정한 high-sensitivity cardiac troponin이 검출한계 이하(≤2 ng/L)인 것과 공유 의사결정(shared decision making)을 결합한 배제 전략이 표준진료와 비교해 안전성을 저해하지 않으면서 재원시간과 심장검사를 줄이는가?",
+      "pico": {
+        "population": "[Australia] 9,944 adult patients presenting with suspected acute coronary syndrome (ACS) to 4 Australian emergency departments from August 2019 to July 2020; 5,347 in the standard care arm and 4,597 in the intervention arm. MeSH indicates middle-aged, aged, male and female patients.",
+        "intervention": "The LEGEND rule-out strategy, which integrates high-sensitivity cardiac troponin assay concentrations (LEGEND cohort defined by presentation troponin ≤2 ng/L) with shared decision making to rapidly assess emergency patients with suspected ACS.",
+        "comparison": "Standard care arm (standard emergency department assessment of suspected ACS), prior to site crossover in the stepped-wedge design.",
+        "outcome": "Primary outcome was length of stay (LOS). For patients in the LEGEND cohort (presentation troponin ≤2 ng/L), the mean LOS was 3.6 hours shorter in the intervention arm than the standard care arm (95% CI 2.5 to 4.6 hours)."
+      },
+      "pico_ko": {
+        "population": "[호주] 2019년 8월부터 2020년 7월까지 호주 4개 응급실에 급성 관상동맥증후군(ACS)이 의심되어 내원한 성인 환자 9,944명; 표준진료군 5,347명, 중재군 4,597명. MeSH 기준 중년·고령, 남녀 환자 포함.",
+        "intervention": "내원 시 high-sensitivity cardiac troponin 농도(LEGEND 코호트는 내원 troponin ≤2 ng/L로 정의)와 공유 의사결정(shared decision making)을 결합하여 ACS 의심 응급환자를 신속히 평가하는 LEGEND 배제 전략.",
+        "comparison": "단계적 쐐기 설계에서 사이트 교차 이전의 표준진료군(ACS 의심 환자에 대한 표준 응급실 평가).",
+        "outcome": "일차 결과는 재원시간(LOS). LEGEND 코호트(내원 troponin ≤2 ng/L) 환자에서 평균 LOS가 중재군에서 표준진료군보다 3.6시간 짧았다(95% CI 2.5~4.6시간)."
+      },
+      "keyFindings": [
+        "Among 9,944 patients (5,347 standard care; 4,597 intervention) in 4 Australian EDs, LEGEND-cohort patients (presentation troponin ≤2 ng/L) had a mean LOS 3.6 hours shorter in the intervention arm (95% CI 2.5 to 4.6 hours).",
+        "The proportion of patients safely discharged within 4 hours increased by 22.9% (95% CI 19.5% to 26.3%), and cardiac testing decreased by 7.8% (95% CI 4.6% to 11.1%).",
+        "Safety was maintained: there were no differences in hospital representations, index events, or 30-day events between arms."
+      ],
+      "keyFindings_ko": [
+        "호주 4개 응급실의 9,944명(표준진료 5,347명, 중재 4,597명) 중 LEGEND 코호트(내원 troponin ≤2 ng/L) 환자는 중재군에서 평균 LOS가 3.6시간 짧았다(95% CI 2.5~4.6시간).",
+        "4시간 이내 안전하게 퇴원한 환자 비율이 22.9% 증가(95% CI 19.5%~26.3%), 심장검사는 7.8% 감소(95% CI 4.6%~11.1%).",
+        "안전성 유지: 재내원, index 사건, 30일 사건에서 양 군 간 차이가 없었다."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 41405523",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41405523/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.annemergmed.2025.10.014",
+          "url": "https://doi.org/10.1016/j.annemergmed.2025.10.014"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41405523)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41405523/"
+        },
+        {
+          "label": "웹 — Annals of Emergency Medicine — LEGEND article page (full text paywalled)",
+          "url": "https://www.annemergmed.com/article/S0196-0644(25)01308-3/fulltext"
+        },
+        {
+          "label": "웹 — PMC — LEGEND health services/economic companion paper (PMC12402291)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12402291/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 41405523)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41405523/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Annals of Emergency Medicine — LEGEND article page (full text paywalled)",
+          "url": "https://www.annemergmed.com/article/S0196-0644(25)01308-3/fulltext",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "PMC — LEGEND health services/economic companion paper (PMC12402291)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12402291/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -5223,14 +5298,15 @@
         "41222408",
         "41857661",
         "41620016",
-        "41457245"
+        "41457245",
+        "41405523"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 83143
+      "2026-11": 122098
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
