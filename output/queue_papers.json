@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41405523",
-      "title": "The Limit of Detection in the Emergency Department Trial (LEGEND): A Stepped-Wedge Cluster Randomized Trial to Rule Out Acute Myocardial Infarction and Reduce Hospital Length of Stay for Patients Presenting to the Emergency Department.",
-      "journal": "Annals of emergency medicine",
-      "score": 8.3,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.280000000000001,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-10-29"
-    },
-    {
       "pmid": "42456111",
       "title": "Effect of Early Administration of Shenfu Injection on Hemodynamics in Septic Patients: A Multicenter, Randomized, Controlled Trial.",
       "journal": "Critical care medicine",
@@ -604,6 +589,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-11"
+    },
+    {
+      "pmid": "41405523",
+      "title": "The Limit of Detection in the Emergency Department Trial (LEGEND): A Stepped-Wedge Cluster Randomized Trial to Rule Out Acute Myocardial Infarction and Reduce Hospital Length of Stay for Patients Presenting to the Emergency Department.",
+      "journal": "Annals of emergency medicine",
+      "score": 8.3,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.280000000000001,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-10-29",
+      "publishedAt": "2026-11-12"
     }
   ],
   "rejected": [
@@ -619,9 +620,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "outcome": "published",
-    "publishedId": "42790858"
+    "publishedId": "41405523"
   },
-  "updatedAt": "2026-11-11"
+  "updatedAt": "2026-11-12"
 }

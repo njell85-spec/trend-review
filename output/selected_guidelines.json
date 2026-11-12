@@ -26895,93 +26895,6 @@
       "lineageReason": "no-matching-lineage"
     },
     {
-      "id": "pmid:41193046",
-      "pmid": "41193046",
-      "title": "ACR Appropriateness Criteria® Management of Acute Pulmonary Embolism.",
-      "pubDate": "2025 Nov",
-      "journal": "Journal of the American College of Radiology : JACR",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Research Support, N.I.H., Extramural",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:51.474Z",
-      "abstract": "Acute pulmonary embolism (PE) is a subclass of venous thromboembolism, which can be associated with significant morbidity and mortality. Risk stratification algorithms classify PE into high-risk (massive), intermediate-risk (submassive), and low-risk groups, with management guidelines determined based on clinical risk. For high-risk PE, first-line treatment options may include anticoagulation, systemic thrombolysis, catheter-directed therapies, and surgical embolectomy. For intermediate-risk PE, management may involve anticoagulation and catheter-directed therapies, whereas for low-risk PE, management typically involves anticoagulation alone. Special case scenarios, such as a clinical contraindication to thrombolysis or right atrial thrombus-in-transit, may require a modified treatment approach. The American College of Radiology Appropriateness Criteria are evidence-based guidelines for specific clinical conditions that are reviewed annually by a multidisciplinary expert panel. The guideline development and revision process support the systematic analysis of the medical literature from peer reviewed journals. Established methodology principles such as Grading of Recommendations Assessment, Development, and Evaluation or GRADE are adapted to evaluate the evidence. The RAND/UCLA Appropriateness Method User Manual provides the methodology to determine the appropriateness of imaging and treatment procedures for specific clinical scenarios. In those instances where peer reviewed literature is lacking or equivocal, experts may be the primary evidentiary source available to formulate a recommendation.",
-      "meshTerms": [
-        "Pulmonary Embolism",
-        "Humans",
-        "United States",
-        "Acute Disease",
-        "Evidence-Based Medicine",
-        "Societies, Medical",
-        "Risk Assessment",
-        "Anticoagulants",
-        "Thrombolytic Therapy",
-        "Embolectomy"
-      ],
-      "keywords": [
-        "AUC",
-        "Appropriate Use Criteria",
-        "Appropriateness Criteria",
-        "anticoagulation",
-        "catheter-directed therapy",
-        "pulmonary embolism",
-        "thrombectomy",
-        "thrombolysis",
-        "venous thromboembolism"
-      ],
-      "doi": "10.1016/j.jacr.2025.08.039",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.610952197664718,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.6109521976647174,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:08.134Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "급성 폐색전증 관리 기준, 응급 핵심 주제",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|acr-appropriateness-criteria-management-acute-pulmonary-embolism",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:41181880",
       "pmid": "41181880",
       "title": "Letter regarding the article 'Remote pulmonary artery pressure-guided management of patients with heart failure: A clinical consensus statement of the Heart Failure Association (HFA) of the ESC'.",
@@ -41023,7 +40936,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41822,7 +41735,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42742,7 +42655,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-11T01:23:09.235Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42915,7 +42828,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -45503,7 +45416,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -45702,7 +45615,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46505,7 +46418,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46569,7 +46482,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -46639,7 +46552,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46707,7 +46620,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46770,7 +46683,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46835,7 +46748,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46898,7 +46811,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46960,7 +46873,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47018,7 +46931,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47087,7 +47000,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47157,7 +47070,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47237,7 +47150,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47305,7 +47218,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47367,7 +47280,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47446,7 +47359,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47528,7 +47441,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47627,7 +47540,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47728,7 +47641,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47809,7 +47722,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47891,7 +47804,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47954,7 +47867,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -48023,7 +47936,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -48097,7 +48010,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -48163,7 +48076,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -48226,7 +48139,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48306,7 +48219,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48361,7 +48274,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "consensus",
       "reasons": [
@@ -48370,7 +48283,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -48425,7 +48338,7 @@
       "organizationId": "esc",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48434,7 +48347,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-outcomes-nationwide-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -48497,7 +48410,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-11T01:23:09.234Z",
+      "lastSeenAt": "2026-11-12T02:24:22.635Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -62995,6 +62908,147 @@
         ]
       },
       "publishedAt": "2026-11-11"
+    },
+    {
+      "id": "pmid:41193046",
+      "pmid": "41193046",
+      "title": "ACR Appropriateness Criteria® Management of Acute Pulmonary Embolism.",
+      "pubDate": "2025 Nov",
+      "journal": "Journal of the American College of Radiology : JACR",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:51.474Z",
+      "abstract": "Acute pulmonary embolism (PE) is a subclass of venous thromboembolism, which can be associated with significant morbidity and mortality. Risk stratification algorithms classify PE into high-risk (massive), intermediate-risk (submassive), and low-risk groups, with management guidelines determined based on clinical risk. For high-risk PE, first-line treatment options may include anticoagulation, systemic thrombolysis, catheter-directed therapies, and surgical embolectomy. For intermediate-risk PE, management may involve anticoagulation and catheter-directed therapies, whereas for low-risk PE, management typically involves anticoagulation alone. Special case scenarios, such as a clinical contraindication to thrombolysis or right atrial thrombus-in-transit, may require a modified treatment approach. The American College of Radiology Appropriateness Criteria are evidence-based guidelines for specific clinical conditions that are reviewed annually by a multidisciplinary expert panel. The guideline development and revision process support the systematic analysis of the medical literature from peer reviewed journals. Established methodology principles such as Grading of Recommendations Assessment, Development, and Evaluation or GRADE are adapted to evaluate the evidence. The RAND/UCLA Appropriateness Method User Manual provides the methodology to determine the appropriateness of imaging and treatment procedures for specific clinical scenarios. In those instances where peer reviewed literature is lacking or equivocal, experts may be the primary evidentiary source available to formulate a recommendation.",
+      "meshTerms": [
+        "Pulmonary Embolism",
+        "Humans",
+        "United States",
+        "Acute Disease",
+        "Evidence-Based Medicine",
+        "Societies, Medical",
+        "Risk Assessment",
+        "Anticoagulants",
+        "Thrombolytic Therapy",
+        "Embolectomy"
+      ],
+      "keywords": [
+        "AUC",
+        "Appropriate Use Criteria",
+        "Appropriateness Criteria",
+        "anticoagulation",
+        "catheter-directed therapy",
+        "pulmonary embolism",
+        "thrombectomy",
+        "thrombolysis",
+        "venous thromboembolism"
+      ],
+      "doi": "10.1016/j.jacr.2025.08.039",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.610952197664718,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.6109521976647174,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:08.134Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성 폐색전증 관리 기준, 응급 핵심 주제",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|acr-appropriateness-criteria-management-acute-pulmonary-embolism",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41193046",
+          "title": "ACR Appropriateness Criteria® Management of Acute Pulmonary Embolism.",
+          "journal": "Journal of the American College of Radiology : JACR",
+          "pubDate": "2025 Nov",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41193046/",
+          "doi": "10.1016/j.jacr.2025.08.039"
+        },
+        "org": "ACR (American College of Radiology)",
+        "version": "2025 (New topic)",
+        "title_ko": "ACR 적절성 기준: 급성 폐색전증의 관리 (2025)",
+        "scope_ko": "급성 폐색전증(PE) 환자에서 위험도 계층화(고위험/중등도위험/저위험)에 따른 치료법(항응고, 전신 혈전용해, 카테터 기반 치료, 외과적 색전제거술, ECMO, IVC 필터)의 '적절성'을 다루는 ACR 적절성 기준으로, 혈전용해 금기, 우심방 이동성 혈전(thrombus-in-transit) 같은 특수 상황도 포함한다. 진단·영상 프로토콜이 아니라 치료 선택의 적절성에 초점을 둔다.",
+        "summary": [
+          "Management is driven by clinical risk stratification (high-risk/massive, intermediate-risk/submassive, low-risk), NOT by imaging appearance alone.",
+          "High-risk PE (extensive bilateral central PE with sustained hypotension, Variant 1): anticoagulation, systemic thrombolysis, catheter-directed therapy, and surgical embolectomy are all 'Usually Appropriate'; ECMO 'May Be Appropriate'.",
+          "Intermediate-risk PE (RV/LV ratio >0.9, RV strain, elevated troponin, no hypotension, Variant 2): anticoagulation and catheter-directed therapy are 'Usually Appropriate'; systemic thrombolysis is 'Usually Not Appropriate'; surgical embolectomy 'May Be Appropriate (Disagreement)'.",
+          "Low-risk PE (hemodynamically stable, no RV strain, normal troponin, Variants 3–4): anticoagulation alone is 'Usually Appropriate' and all advanced reperfusion therapies are 'Usually Not Appropriate'.",
+          "High-/intermediate-risk PE with contraindication to thrombolysis (e.g., recent intracranial hemorrhage, Variant 5): catheter-directed MECHANICAL thrombectomy without pharmacologic lytics is 'Usually Appropriate' (provided thrombus is in a catheter-accessible distribution); systemic thrombolysis 'Usually Not Appropriate'; ECMO and anticoagulation 'May Be Appropriate'.",
+          "Right atrial thrombus-in-transit with sustained hypotension (Variant 6): anticoagulation, catheter-directed therapy, and surgical embolectomy are each 'Usually Appropriate' to reduce clot burden and prevent distal embolization; systemic thrombolysis and ECMO 'May Be Appropriate'.",
+          "Methodology: recommendations derived via adapted GRADE and the RAND/UCLA Appropriateness Method by a multidisciplinary panel; where peer-reviewed evidence is lacking/equivocal, expert opinion is the primary evidentiary basis."
+        ],
+        "summary_ko": [
+          "관리의 기준은 영상 소견 단독이 아니라 임상적 위험도 계층화(고위험/대량, 중등도위험/준대량, 저위험)이다.",
+          "고위험 PE(지속적 저혈압을 동반한 광범위 양측 중심성 PE, Variant 1): 항응고, 전신 혈전용해, 카테터 기반 치료, 외과적 색전제거술이 모두 'Usually Appropriate'; ECMO는 'May Be Appropriate'.",
+          "중등도위험 PE(RV/LV 비 >0.9, 우심실 부담, 트로포닌 상승, 저혈압 없음, Variant 2): 항응고와 카테터 기반 치료가 'Usually Appropriate'; 전신 혈전용해는 'Usually Not Appropriate'; 외과적 색전제거술은 'May Be Appropriate(이견 있음)'.",
+          "저위험 PE(혈역학적 안정, 우심실 부담 없음, 정상 트로포닌, Variant 3–4): 항응고 단독이 'Usually Appropriate'이고 모든 고급 재관류 치료는 'Usually Not Appropriate'.",
+          "혈전용해 금기(예: 최근 두개내출혈)를 동반한 고위험/중등도위험 PE(Variant 5): 약물 혈전용해 없이 시행하는 카테터 기반 '기계적' 혈전제거술이 'Usually Appropriate'(혈전이 카테터 접근 가능 분포일 때); 전신 혈전용해는 'Usually Not Appropriate'; ECMO와 항응고는 'May Be Appropriate'.",
+          "지속적 저혈압을 동반한 우심방 이동성 혈전(thrombus-in-transit, Variant 6): 항응고, 카테터 기반 치료, 외과적 색전제거술이 각각 'Usually Appropriate'로 혈전 부담을 줄이고 원위부 색전을 예방; 전신 혈전용해와 ECMO는 'May Be Appropriate'.",
+          "방법론: 다학제 패널이 변형 GRADE와 RAND/UCLA 적절성 평가법으로 권고를 도출하며, 동료심사 근거가 부족·불명확할 때는 전문가 의견이 주된 근거가 된다."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, treatment selection should flow from formal risk stratification (hemodynamics, RV/LV ratio, troponin) rather than clot size on CT: low-risk PE gets anticoagulation alone, and advanced reperfusion should be avoided in these patients. For intermediate-risk PE, systemic thrombolysis is explicitly not favored while catheter-directed therapy is endorsed—supporting early PERT/interventional consultation. Critically, when thrombolysis is contraindicated (e.g., recent intracranial hemorrhage), mechanical thrombectomy without lytics is the preferred reperfusion route if the clot is catheter-accessible, and right atrial thrombus-in-transit warrants aggressive clot removal (CDT or surgery) plus anticoagulation.",
+        "practiceImpact_ko": "침상에서 치료 선택은 CT상 혈전 크기가 아니라 공식적 위험도 계층화(혈역학, RV/LV 비, 트로포닌)에서 출발해야 한다: 저위험 PE는 항응고 단독이며 이들에게 고급 재관류는 피한다. 중등도위험 PE에서는 전신 혈전용해가 선호되지 않고 카테터 기반 치료가 권장되므로, 조기 PERT/중재시술 협진이 뒷받침된다. 특히 혈전용해가 금기일 때(예: 최근 두개내출혈)는 혈전이 카테터 접근 가능하면 약물 없이 시행하는 기계적 혈전제거술이 우선 재관류 경로이며, 우심방 이동성 혈전은 항응고에 더해 적극적 혈전 제거(CDT 또는 수술)가 필요하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41193046",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41193046/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/j.jacr.2025.08.039",
+            "url": "https://doi.org/10.1016/j.jacr.2025.08.039"
+          },
+          {
+            "label": "웹 — ACR Appropriateness Criteria® Management of Acute Pulmonary Embolism — JACR 2025 (PubMed record)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41193046/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-12"
     }
   ],
   "rejected": [
@@ -67169,7 +67223,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-11T01:23:01.700Z",
+      "discoveredAt": "2026-11-12T02:24:13.975Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -68533,7 +68587,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-11T01:23:01.700Z",
+      "discoveredAt": "2026-11-12T02:24:13.975Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -68597,7 +68651,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-11T01:23:01.700Z",
+      "discoveredAt": "2026-11-12T02:24:13.975Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -68624,7 +68678,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-11T01:23:01.700Z",
+      "discoveredAt": "2026-11-12T02:24:13.975Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -68697,9 +68751,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261111_102118:guideline:2026-11-11",
+    "runId": "trend_review_20261112_112225:guideline:2026-11-12",
     "outcome": "published",
-    "publishedId": "pmid:42415225",
+    "publishedId": "pmid:41193046",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -68731,8 +68785,8 @@
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 31",
         "window": {
-          "minDate": "2026/10/12",
-          "maxDate": "2026/11/11"
+          "minDate": "2026/10/13",
+          "maxDate": "2026/11/12"
         },
         "retmax": 60,
         "topics": [
@@ -68740,8 +68794,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 56,
-            "idsFetched": 56,
+            "totalFound": 57,
+            "idsFetched": 57,
             "truncated": false,
             "error": null
           },
@@ -68767,8 +68821,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 13,
-            "idsFetched": 13,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           },
@@ -68776,8 +68830,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -68794,8 +68848,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 8,
-            "idsFetched": 8,
+            "totalFound": 7,
+            "idsFetched": 7,
             "truncated": false,
             "error": null
           },
@@ -68803,8 +68857,8 @@
             "id": "pubmed-topic:trauma_hemorrhage",
             "label": "외상·출혈",
             "succeeded": true,
-            "totalFound": 0,
-            "idsFetched": 0,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           },
@@ -68900,10 +68954,8 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 3,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "scopeExclusions": [
         {
@@ -69111,6 +69163,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42612178",
+          "title": "Differential rates of guideline-directed medical therapy modification in C-MIC and control patients: results from the C-MIC II trial.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42569659",
           "title": "Guideline directed-medical therapy for heart failure within 3 months post LVAD implant and rehospitalization.",
           "region": null,
@@ -69202,6 +69261,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43011774",
+          "title": "Prescription Patterns and Adherence to GOLD 2021 Guidelines for Chronic Obstructive Pulmonary Disease Management in Pakistan: A Cross-Sectional Study.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42995317",
           "title": "COPD Exacerbation in Aboriginal Australians: Examining Ethnic Disparity in AECOPD Guideline Alignment Between Aboriginal and Non-Aboriginal Patients.",
           "region": null,
@@ -69272,13 +69338,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42811563",
-          "title": "[Chinese expert consensus on the clinical application of lung biopsy in interstitial lung disease].",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42546548",
           "title": "Guideline update: Neonatal and infant airway management.",
           "region": null,
@@ -69286,22 +69345,8 @@
         },
         {
           "stage": "region",
-          "pmid": "42936034",
-          "title": "Meropenem as a non-guideline antibiotic: the factor associated with mortality of mortality in Listeria monocytogenes meningitis.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42873563",
           "title": "Oral Fosfomycin for Pyelonephritis: Time for Evidence Over Eminence-based Guidelines.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42863638",
-          "title": "Management of suspected infectious and autoimmune encephalitis in adults - National Guidelines from the United Kingdom Joint Societies.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -69344,6 +69389,13 @@
           "stage": "region",
           "pmid": "42175918",
           "title": "CAR/BRC Recommendations for Management of Axillary Lymphadenopathy Following COVID-19 Vaccination.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43010983",
+          "title": "Delivery of selected guideline-based care processes in adult stroke rehabilitation: a systematic review and meta-analysis.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -69440,15 +69492,15 @@
         },
         {
           "stage": "region",
-          "pmid": "42862830",
-          "title": "Dietary intake patterns and KDOQI guideline compliance among hemodialysis patients in Bangladesh: Gaps, misreporting, and clinical implications.",
+          "pmid": "42839871",
+          "title": "Post-transplant follow-up for kidney transplant recipients: a systematic review of clinical practice guidelines.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
         {
           "stage": "region",
-          "pmid": "42839871",
-          "title": "Post-transplant follow-up for kidney transplant recipients: a systematic review of clinical practice guidelines.",
+          "pmid": "42776522",
+          "title": "Management of Colon and Rectal Injuries From Blunt and Penetrating Trauma: Evidence-Based Recommendations From the World Society of Emergency Surgery.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -69514,19 +69566,19 @@
         }
       ],
       "decisions": {
-        "queued": 199,
-        "needsReview": 470,
+        "queued": 200,
+        "needsReview": 468,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42415225",
+        "candidateId": "pmid:41193046",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-11T01:25:25.626Z",
+  "updatedAt": "2026-11-12T02:25:55.892Z",
   "configVersion": "guideline-v2"
 }

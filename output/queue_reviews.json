@@ -632,23 +632,6 @@
       "status": "queued"
     },
     {
-      "pmid": "42525086",
-      "title": "Intracranial pressure physiology, monitoring and individualized management in the acute brain injured patient.",
-      "journal": "Intensive Care Med",
-      "score": 8,
-      "topic": "neuro",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ICP 생리·감시·개별화 관리 종설, 신경 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "42593538",
       "title": "Corticosteroids in ARDS: old controversies, new insights, and future directions.",
       "journal": "Intensive Care Med",
@@ -14774,6 +14757,134 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "42525086",
+      "title": "Intracranial pressure physiology, monitoring and individualized management in the acute brain injured patient.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "neuro",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ICP 생리·감시·개별화 관리 종설, 신경 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-12",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "42525086",
+          "title": "Intracranial pressure physiology, monitoring and individualized management in the acute brain injured patient.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2026-7-29",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42525086/",
+          "doi": "10.1007/s00134-026-08558-4"
+        },
+        "title_ko": "급성 뇌손상 환자에서 두개내압의 생리, 감시, 그리고 개별화된 관리",
+        "scope_ko": "외상성 뇌손상과 허혈성·출혈성 뇌졸중을 포함한 급성 뇌손상(ABI)에서 두개내압(ICP)의 생리적 결정인자와 두개내 고혈압의 기전을 정리하고, 고정 역치 기반 관리의 한계를 짚으면서 ICP burden·파형 형태·뇌혈류 자가조절·기능적 뇌 감시 같은 개별화 지표와 다중모드 신경모니터링, 그리고 AI 기반 접근까지 아우르는 종설입니다. 즉 '획일적·역치 중심' 관리에서 '개별화·생리 기반' 관리로의 전환을 제안합니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "급성 뇌손상과 이차성 뇌손상에서 ICP의 위치",
+            "body_ko": "외상성 뇌손상, 허혈성 및 출혈성 뇌졸중을 포함하는 급성 뇌손상(acute brain injury, ABI)은 높은 이환율과 사망률을 동반합니다. 이 나쁜 예후는 일차 뇌손상 그 자체뿐 아니라, 손상 이후에 전개되는 이차성 뇌손상(secondary cerebral insults)에 의해서도 좌우됩니다.\n\n이러한 이차성 손상 가운데 상승한 두개내압(intracranial pressure, ICP)은 중심적인 병태생리학적 역할을 합니다. 저자들은 ICP가 진행 중인 뇌손상의 '결과'이면서 동시에 '원인(driver)'으로 작용한다고 기술합니다. 즉 기계적 변형(mechanical deformation)과 뇌허혈(cerebral ischemia)이라는 두 경로를 통해 손상을 더 악화시킵니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "ICP의 생리적 결정인자와 두개내 고혈압의 기전",
+            "body_ko": "본 종설은 ICP를 결정하는 생리적 요인들을 정리합니다. 여기에는 두개내 유순도(intracranial compliance), 뇌척수액(CSF) 동역학, 뇌혈액량(cerebral blood volume), 그리고 전신적 요인(systemic factors)이 포함됩니다. 저자들은 이러한 요소들이 어떻게 상호작용하여 두개내 고혈압(intracranial hypertension)을 일으키는지 그 기전을 설명합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "고정 ICP 역치의 한계와 개별화 개념의 부상",
+            "body_ko": "침습적 ICP 감시는 신경중환자 관리에서 오랫동안 확립된 역할을 해왔고 지금도 그 역할이 이어지고 있습니다. 그러나 ICP 값의 해석과 임상적 활용은 여전히 논쟁적입니다.\n\n전통적인 관리 전략은 고정된 ICP 역치(예: > 22 mmHg)를 기준으로 표준화된 단계적 치료 상향(stepwise escalation)을 작동시키는 방식입니다. 하지만 축적되는 임상 근거는 ICP 상승에 대한 내약성(tolerance)이 환자마다, 질환마다, 그리고 생리적 맥락마다 크게 다르다는 점을 보여줍니다.\n\n이에 저자들은 고정 역치 사용의 한계를 논하고, ICP 해석을 개별화하기 위한 새로운 개념들을 부각합니다. 구체적으로 ICP burden(상승의 강도와 지속시간을 함께 반영하는 부하 개념), 파형 형태(waveform morphology), 뇌혈류 자가조절(cerebral autoregulation), 그리고 기능적 뇌 감시(functional brain monitoring)가 ICP를 환자별로 해석하는 도구로 제시됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "침습적·비침습적 ICP 감시 양식",
+            "body_ko": "본 종설은 침습적 ICP 감시와 비침습적 ICP 감시(noninvasive ICP, nICP) 양식의 역할을 함께 검토합니다. 저자들은 특히 침습적 감시가 불가능하거나 금기인 상황에서 의사결정을 보조하는 nICP의 '보완적 가치(complementary value)'를 강조합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "다중모드 신경모니터링 체계 안에서의 통합",
+            "body_ko": "저자들은 ICP를 단독 지표로 보지 않고 다중모드 신경모니터링(multimodal neuromonitoring) 체계 안에 통합하는 데 특별한 주의를 기울입니다. 이 체계는 뇌관류(cerebral perfusion), 산소화(oxygenation), 대사(metabolism)를 함께 평가하며, ICP는 그 가운데 하나의 축으로 자리합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "미래 전망 — AI 기반 접근",
+            "body_ko": "마지막으로 저자들은 미래 전망을 탐색합니다. 복잡한 신경모니터링 데이터를 분석하고, 이차성 손상을 예측하며, 실행 가능한 환자 맞춤형 치료 전략으로 나아가기 위한 인공지능(AI) 기반 접근의 잠재력을 제시합니다.\n\n종합하면, 이러한 진전들은 획일적이고 역치 중심적인 접근에서 벗어나, 개별화되고 생리에 기반한(physiology-informed) 두개내 고혈압 관리로의 전환을 뒷받침한다고 저자들은 결론짓습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] ICP 파형 분석의 임상적 의의 — P1/P2/P3, P2/P1, RAP",
+            "body_ko": "※ 이 절은 본 논문 전문을 확보하지 못해, 동일 주제를 다룬 2차 출처에서 보강한 내용입니다(원문 자체의 서술이 아님).\n\n정상 ICP 맥파(pulse wave)는 세 개의 봉우리로 이루어집니다. P1(percussion wave, 맥락얼기의 동맥 박동을 반영), P2(tidal wave, 두개내 유순도에 영향받음), P3(dicrotic wave, 대동맥판 폐쇄와 연관). 정상에서는 P1 > P2 > P3 입니다.\n\n두개내 유순도가 나빠지면 P2가 P1에 비해 상대적으로 커져 P2/P1 비가 1을 넘어서게 되며(P2/P1 > 1.0), 이는 완충 능력 저하와 유순도 손상을 시사합니다. 파형 형태는 직각삼각형 모양에서 피라미드형으로 바뀝니다.\n\nRAP 지수는 평균 ICP와 맥압 진폭(pulse amplitude) 사이의 비선형 관계를 정량화합니다. RAP ≈ 0 은 보상 예비력이 온전함을, RAP가 +1에 가까워지면 두개내 유순도가 소진되었음을 의미합니다. 평균 맥압 진폭(mean pulse amplitude, AMP)의 상승도 완충 능력 고갈을 나타냅니다. 머신러닝 기반 파형 지표(예: pulse shape index)는 ICP 급상승(ICP crisis)에 선행할 수 있어 조기 탐지 도구로 연구되고 있습니다.\n— 보강 출처: The clinical significance of intracranial pressure waveform analysis in brain-injured patients (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC13124119/)",
+            "origin": "augmented",
+            "sourceLabel": "The clinical significance of intracranial pressure waveform analysis in brain-injured patients (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13124119/"
+          },
+          {
+            "heading_ko": "[웹 보강] ICP 감시의 적응증·방식·감시 항목과 역치",
+            "body_ko": "※ 이 절은 본 논문 전문을 확보하지 못해, 동일 주제를 다룬 2차 출처에서 보강한 내용입니다(원문 자체의 서술이 아님).\n\n적응증(When): 중증 TBI(GCS 3–8)에서 ICP 감시가 권고되며(Class II 근거), ICP 상승 위험이 높은 중등도 TBI(GCS 9–12)에서도 고려됩니다. 불량 등급 지주막하출혈(SAH)에서 수두증이나 뇌실내출혈 위험이 있을 때, 그리고 ICH에서 GCS ≤8인 경우(약한 권고) 고려됩니다.\n\n방식(How): 뇌실내 감시(IVM)가 현재까지 '금본위(gold standard)'로, CSF 배액과 치료적 개입이 가능하나 감염 위험이 0.7–2.5%로 상대적으로 높습니다. 뇌실질내 감시(IPM)는 TBI에서 가장 널리 쓰이며(약 73%) 감염 위험이 낮지만, 국소압만 측정하고 재보정 없이는 영점 이동(zero drift)이 생길 수 있습니다. 비침습적 방법으로 시신경집 직경(ONSD, 상승 탐지 민감도 약 90%·특이도 약 85%), 경두개 도플러(TCD, 오차가 최대 10 mmHg까지), 고막 변위, 동공계측(pupillometry)이 있으나 단독 임상 사용에는 검증이 부족합니다.\n\n감시 항목·역치(What): 평균 ICP는 TBI에서 >22 mmHg가 사망률 증가와 연관됩니다. Pressure-Time Dose(PTD, 20 mmHg 초과 ICP의 강도×지속시간 누적)는 평균 ICP보다 예후 예측력이 큽니다. 압력반응지수(PRx)는 뇌혈관 자가조절을 평가하며 PRx <0.3 이 자가조절 보존을 시사하고, 상승 시 자가조절 손상과 불량한 예후를 가리킵니다. CPP는 ≥60 mmHg 유지(Seattle 합의)가 권고되며, 최적 CPP는 PRx 감시로 개별화할 수 있습니다. 이 밖에 뇌조직 산소분압(PbtO2), 뇌혈류, 미세투석(microdialysis)이 다중모드 감시 항목으로 거론됩니다.\n— 보강 출처: Intracranial Pressure Monitoring for Acute Brain Injured Patients: When, How, What Should We Monitor (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10329885/)",
+            "origin": "augmented",
+            "sourceLabel": "Intracranial Pressure Monitoring for Acute Brain Injured Patients: When, How, What Should We Monitor (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10329885/"
+          },
+          {
+            "heading_ko": "[웹 보강] 고정 역치에서 정밀의학으로 — ICP dose·자가조절·BOOST-3",
+            "body_ko": "※ 이 절은 본 논문 전문을 확보하지 못해, 동일 주제를 다룬 2차 출처에서 보강한 내용입니다(원문 자체의 서술이 아님).\n\n현행 지침은 비(非)TBI 환자 20 mmHg, TBI 환자 22 mmHg라는 '획일적(one-size-fits-all)' 역치로 두개내 고혈압을 다루지만, 개인 간 변이를 반영하지 못한다는 비판이 커지고 있습니다. ICP burden('ICP dose')은 상승의 강도와 지속시간을 함께 반영하는 개념으로, 예컨대 성인 TBI에서 ICP가 30 mmHg를 초과해 8분 이상 지속되면 유의하게 나쁜 예후와 상관됩니다.\n\n뇌혈관 반응성 손상과 낮은 CPP는 ICP 내약성을 악화시키며, 지침은 이차 손상 예방을 위해 CPP 60–70 mmHg 유지를 권고하고 CPP <60 mmHg가 ICP 상승과 연관됩니다. 다중모드 측면에서 BOOST-3 임상시험은 ICP 단독을 넘어 뇌조직 산소화(PbtO2)를 함께 사용해 치료 결정을 유도하는 전략을 검증하고 있습니다. 나아가 전통적 머신러닝과 딥러닝(시계열 ICP용 LSTM 등)을 이용한 이차 손상 예측, 그리고 비지도 군집화로 환자 아형을 나누는 엔도타이핑(endotyping)이 표적 치료와 임상시험 대상 선별을 위한 미래 방향으로 제시됩니다.\n— 보강 출처: Evolving concepts in intracranial pressure monitoring — from traditional monitoring to precision medicine (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11840348/)",
+            "origin": "augmented",
+            "sourceLabel": "Evolving concepts in intracranial pressure monitoring — from traditional monitoring to precision medicine (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11840348/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "5018b478402a33ad8662e2b5722e8b33c45a9cd034995e916aa1fe9e40d6c719",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-12T02:28:09.365Z",
+          "resultFingerprint": "1f12fe461139be3422c5181651cc8b0b471dc0c4f2e1a9e20d95f51f8af31179",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 4,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 'ICP > 22 mmHg면 단계적 치료 상향'이라는 단일 역치 반사에서 벗어나, 같은 ICP 값이라도 환자·질환·생리 맥락에 따라 내약성이 다르다는 전제로 해석하게 됩니다. 즉 평균 ICP 한 숫자보다 ICP 부하(지속시간×강도), 파형 형태(P2/P1), 자가조절 상태(PRx)와 개별 최적 CPP를 함께 읽고, 침습적 감시가 어려울 때는 ONSD·TCD·동공계측 등 비침습적 지표를 보완적으로 활용하며 PbtO2 등 다중모드 감시와 통합해 의사결정합니다. 다만 비침습적 지표와 파형·AI 기반 지표 다수는 아직 검증 단계로, 단독 판단 근거로 삼기보다 보조적으로 쓰는 것이 저자들의 입장입니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42525086",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42525086/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-026-08558-4",
+            "url": "https://doi.org/10.1007/s00134-026-08558-4"
+          },
+          {
+            "label": "웹 — Springer / Intensive Care Medicine — article landing page (abstract; full text paywalled, redirects to auth)",
+            "url": "https://link.springer.com/article/10.1007/s00134-026-08558-4"
+          },
+          {
+            "label": "웹 — Evolving concepts in intracranial pressure monitoring — from traditional monitoring to precision medicine (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11840348/"
+          },
+          {
+            "label": "웹 — The clinical significance of intracranial pressure waveform analysis in brain-injured patients (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13124119/"
+          },
+          {
+            "label": "웹 — Intracranial Pressure Monitoring for Acute Brain Injured Patients: When, How, What Should We Monitor (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10329885/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -14831,9 +14942,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "outcome": "published",
-    "publishedId": "39288952"
+    "publishedId": "42525086"
   },
-  "updatedAt": "2026-11-11"
+  "updatedAt": "2026-11-12"
 }
