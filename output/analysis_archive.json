@@ -5219,6 +5219,72 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-13",
+      "pmid": "42456111",
+      "title": "Effect of Early Administration of Shenfu Injection on Hemodynamics in Septic Patients: A Multicenter, Randomized, Controlled Trial.",
+      "title_ko": "패혈증 환자에서 Shenfu Injection 조기 투여가 혈역학에 미치는 영향: 다기관 무작위 대조 시험",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007269",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "ICU에 입원한 패혈증(Sepsis-3) 환자에서 Shenfu injection(SFI)의 조기 투여가 생리식염수 대비 승압제 요구량(norepinephrine equivalents)을 줄이고 임상 결과와 미세순환을 개선하는가?",
+      "pico": {
+        "population": "[China] ICU patients 18-75 years old who met the Sepsis-3 diagnostic criteria, at four tertiary care hospitals located in central China; a total of 172 patients were enrolled, with 86 assigned to the SFI group and 86 to the control group.",
+        "intervention": "Shenfu injection (SFI) administered at a rate of 20 mL/hr over 5 hours from the time of sepsis diagnosis, bid for 3 consecutive days.",
+        "comparison": "Normal saline administered at a rate of 20 mL/hr over 5 hours from the time of sepsis diagnosis, bid for 3 consecutive days (control group).",
+        "outcome": "Primary outcome was the amount of vasopressor administration (norepinephrine equivalents [NEEs]). The SFI group had no significant improvement in total NEE doses versus control (22.00 [16.00-29.50] vs. 20.00 [12.50-28.50]; p = 0.16)."
+      },
+      "pico_ko": {
+        "population": "[중국] Sepsis-3 진단 기준을 충족한 18-75세 ICU 환자로, 중국 중부의 4개 3차 의료기관에서 시행; 총 172명이 등록되어 SFI군 86명, 대조군 86명으로 배정됨.",
+        "intervention": "Shenfu injection(SFI)을 패혈증 진단 시점부터 20 mL/hr 속도로 5시간에 걸쳐, 1일 2회(bid) 3일 연속 투여.",
+        "comparison": "생리식염수를 패혈증 진단 시점부터 20 mL/hr 속도로 5시간에 걸쳐, 1일 2회(bid) 3일 연속 투여(대조군).",
+        "outcome": "일차 결과는 승압제 투여량(norepinephrine equivalents [NEEs])이었음. SFI군은 대조군 대비 총 NEE 용량에서 유의한 개선이 없었음(22.00 [16.00-29.50] vs. 20.00 [12.50-28.50]; p = 0.16)."
+      },
+      "keyFindings": [
+        "The pre-specified primary outcome was negative: total norepinephrine equivalents did not differ between SFI and control groups (22.00 [16.00-29.50] vs. 20.00 [12.50-28.50]; p = 0.16).",
+        "Secondary mortality outcomes favored SFI: ICU mortality 3.5% vs. 11.6% (p = 0.04) and 28-day mortality 15.1% vs. 27.9% (p = 0.04).",
+        "SFI significantly improved sublingual microcirculation indicators versus control, with no significant drug-related adverse events in either group."
+      ],
+      "keyFindings_ko": [
+        "사전 지정 일차 결과는 음성이었음: 총 norepinephrine equivalents는 SFI군과 대조군 간 차이가 없었음(22.00 [16.00-29.50] vs. 20.00 [12.50-28.50]; p = 0.16).",
+        "이차 사망률 결과는 SFI에 유리했음: ICU 사망률 3.5% vs. 11.6% (p = 0.04), 28일 사망률 15.1% vs. 27.9% (p = 0.04).",
+        "SFI는 대조군 대비 설하 미세순환 지표를 유의하게 개선했으며, 양 군 모두 유의한 약물 관련 이상반응은 없었음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42456111",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42456111/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007269",
+          "url": "https://doi.org/10.1097/CCM.0000000000007269"
+        },
+        {
+          "label": "웹 — PubMed (PMID 42456111)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42456111/"
+        },
+        {
+          "label": "웹 — Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/10.1097/ccm.0000000000007269~effect-of-early-administration-of-shenfu-injection-on"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed (PMID 42456111)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42456111/",
+          "note": "웹보강 근거 (권위 소스)"
+        },
+        {
+          "source": "Critical Care Medicine official article page (LWW)",
+          "url": "https://journals.lww.com/ccmjournal/abstract/10.1097/ccm.0000000000007269~effect-of-early-administration-of-shenfu-injection-on",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -5299,14 +5365,15 @@
         "41857661",
         "41620016",
         "41457245",
-        "41405523"
+        "41405523",
+        "42456111"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 122098
+      "2026-11": 165960
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
