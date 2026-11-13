@@ -1155,5 +1155,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42456111",
+    "title": "Effect of Early Administration of Shenfu Injection on Hemodynamics in Septic Pat",
+    "date": "2026-11-13",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

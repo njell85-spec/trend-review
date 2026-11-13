@@ -632,23 +632,6 @@
       "status": "queued"
     },
     {
-      "pmid": "42593538",
-      "title": "Corticosteroids in ARDS: old controversies, new insights, and future directions.",
-      "journal": "Intensive Care Med",
-      "score": 8,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ARDS 스테로이드 종설, 호흡 핵심 복습",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40163131",
       "title": "A consensus of European experts on the definition of ventilator-associated pneumonia recurrences obtained by the Delphi method: the RECUVAP study.",
       "journal": "Intensive Care Med",
@@ -14885,6 +14868,128 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "42593538",
+      "title": "Corticosteroids in ARDS: old controversies, new insights, and future directions.",
+      "journal": "Intensive Care Med",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ARDS 스테로이드 종설, 호흡 핵심 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-13",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "42593538",
+          "title": "Corticosteroids in ARDS: old controversies, new insights, and future directions.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2026-8-13",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42593538/",
+          "doi": "10.1007/s00134-026-08567-3"
+        },
+        "title_ko": "ARDS에서의 코르티코스테로이드: 오래된 논쟁, 새로운 통찰, 그리고 미래 방향",
+        "scope_ko": "급성호흡곤란증후군(ARDS)에서 코르티코스테로이드의 작용 기전, 임상 근거, 병인·생물학적 아형별 반응의 이질성, 장기 및 이상반응, 그리고 정밀의학 기반의 미래 치료 방향을 다루는 종설입니다. 저자들은 스테로이드를 획일적 치료가 아니라 병인·질병 단계·염증 표현형·투여 시점에 따라 효과가 달라지는 맥락 의존적(context-dependent) 치료로 보아야 한다고 주장합니다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "작용 기전 — 유전체성 및 비유전체성 글루코코르티코이드 수용체 신호전달",
+            "body_ko": "코르티코스테로이드는 글루코코르티코이드 수용체(glucocorticoid receptor, GR)의 유전체성(genomic) 및 비유전체성(non-genomic) 신호전달을 통해 ARDS에 관여하는 핵심적인 염증 경로와 섬유증식(fibroproliferative) 경로를 조절합니다. 즉 그 효과는 단순한 항염증 작용에 그치지 않고, ARDS의 염증기와 그 이후 섬유증식 단계에 걸친 병태생리 경로를 함께 조절하는 데서 비롯됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "병태생리의 진전 — 시점·염증 부담·숙주 반응의 중요성",
+            "body_ko": "ARDS 병태생리에 대한 이해가 진전되면서, 치료 효능을 결정하는 데 있어 투여 시점(timing), 염증 부담(inflammatory burden), 숙주 반응(host response)의 중요성이 부각되었습니다. 다시 말해 동일한 약제라도 어느 시점에, 어느 정도의 염증 상태에서, 어떤 숙주 반응을 가진 환자에게 투여되느냐에 따라 효과가 달라질 수 있다는 점이 강조됩니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상 근거 — 중등도–중증 ARDS, COVID-19, 중증 지역사회획득폐렴",
+            "body_ko": "임상 근거는 중등도–중증(moderate-to-severe) ARDS에서, 특히 COVID-19 관련 ARDS와 중증 지역사회획득폐렴(community-acquired pneumonia, CAP)에서 코르티코스테로이드 사용을 뒷받침하며, 사망률 감소와 기계환기 기간 단축이 보고됩니다. 다만 이러한 효과가 모든 ARDS에 일률적으로 적용되는 것은 아닙니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료 효과의 이질성 — 병인과 생물학적 아형에 따른 차이",
+            "body_ko": "치료 효과는 병인(etiology)과 생물학적 아형(biological subphenotype)에 따라 이질적으로 나타납니다. 최근 확인된 과염증(hyperinflammatory) 및 저염증(hypoinflammatory) ARDS 표현형은 코르티코스테로이드 반응성이 균일하지 않음을 시사합니다.\n\n과염증 표현형과 패혈증성(septic) ARDS는 이득을 볼 가능성이 더 높아 보이는 반면, 인플루엔자 관련(influenza-associated) ARDS와 비패혈증성(non-septic) ARDS에서는 근거가 제한적이거나 상충합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "장기 효과와 이상반응 — 충분히 규명되지 않은 영역",
+            "body_ko": "장기적 효과와 이상 결과는 아직 충분히 규명되지 않았습니다. 여기에는 대사성 합병증(metabolic complications)과 중환자실 획득 쇠약(ICU-acquired weakness)이 포함되며, 저자들은 이들 항목에 대한 특성 규명이 불충분하다고 지적합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "미래 방향 — 정밀의학, 폐 표적 전달, 선택적 GR 조절제",
+            "body_ko": "향후 연구는 바이오마커 통합, 적응형 플랫폼 임상시험(adaptive platform trials), 표현형 기반(phenotype-guided) 전략을 아우르는 정밀의학(precision medicine) 접근으로 점차 초점이 옮겨가고 있습니다.\n\n새로운 개발 동향으로는 전신 독성을 줄이면서 효능을 높이도록 설계된 폐 표적 코르티코스테로이드 전달 시스템(lung-targeted delivery systems)과 선택적 글루코코르티코이드 수용체 조절제(selective glucocorticoid receptor modulators)가 있습니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론 — 맥락 의존적 치료",
+            "body_ko": "따라서 코르티코스테로이드는 그 이득이 병인, 질병 단계(disease stage), 염증 표현형(inflammatory phenotype), 투여 시점(timing)에 의해 좌우되는 맥락 의존적(context-dependent) 치료로 간주되어야 합니다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 주요 임상시험과 용량 요법 — DEXA-ARDS, CoDEX, RECOVERY, CAPE COD, Meduri/LaSRS",
+            "body_ko": "이 논문의 본문(전문)은 유료 구독 장벽으로 확보하지 못해, 동일 주제를 다룬 공개 2차 리뷰에서 핵심 임상시험의 구체적 수치를 보강합니다.\n\n조기 ARDS: DEXA-ARDS 시험(중등도–중증 ARDS 환자 207명)에서 dexamethasone 20 mg/일 5일 투여 후 10 mg/일 5일 투여가 기계환기 비적용 일수(ventilator-free days)를 늘리고 60일 사망률을 유의하게 감소시켰습니다(NNT=7). 다만 맹검이 없었고 복와위(prone positioning)가 포함되지 않았다는 한계가 있습니다.\n\n지속성(≥7일) ARDS: Meduri 시험(1998)은 methylprednisolone 2 mg/kg/일을 32일에 걸쳐 감량하는 요법으로 결과 개선을 보였으나, 더 큰 LaSRS 시험에서는 사망률 이득이 없었고 신경근병증(neuromyopathy) 비율이 더 높았습니다. 늦게(발병 7일 이후) 시작하는 경우 오히려 해로울 수 있습니다.\n\nCOVID-19 폐렴: RECOVERY 시험은 dexamethasone 6 mg/일 10일 투여로 산소 보충이 필요한 환자의 사망률을 감소시켰고, CoDEX 시험은 dexamethasone 20 mg/일 5일 후 10 mg/일 5일로 기계환기 비적용 일수를 개선했습니다. COVID STEROID 2 시험은 중증 저산소혈증에서 고용량(12 mg)이 6 mg보다 이득이 있을 가능성을 보였습니다.\n\n중증 지역사회획득폐렴: CAPE COD 시험은 hydrocortisone 200 mg/일(지속 주입)로 28일 사망률을 약 5.6% 감소시켰으며(NNT≈18), 4일째 호전 평가에 따라 8–14일 동안 투여했습니다.\n— 보강 출처: BJA Education — Corticosteroids in adults with ARDS and severe pneumonia (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10667747)",
+            "origin": "augmented",
+            "sourceLabel": "BJA Education — Corticosteroids in adults with ARDS and severe pneumonia (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10667747"
+          },
+          {
+            "heading_ko": "[웹 보강] 학회 권고와 비바이러스성 ARDS의 근거 격차",
+            "body_ko": "2024년 ATS 및 SCCM 지침은 중등도–중증 ARDS에 대해 발병 72시간 이내 시작하는 전신 코르티코스테로이드를 권고하나, 최적의 시점·용량·환자 선택을 구체적으로 명시하지는 못합니다. 보강 리뷰 저자들은 \"권고가 근거를 앞지른다(recommendations outpace evidence)\"고 지적합니다.\n\n주요 용량 요법은 다음과 같이 정리됩니다 — dexamethasone 20 mg IV/일 5일 후 10 mg/일 5일, hydrocortisone 200 mg/일 지속 주입 후 감량, methylprednisolone 1–2 mg/kg/일 7–14일 후 점진적 감량.\n\n근거의 한계: DEXA-ARDS와 감염 관련 시험은 병인별로 층화되지 않았고, 흡인·췌장염·외상·수혈관련폐손상(TRALI) 환자는 과소대표되어 일반화 가능성이 불확실합니다. 2024년 확장된 ARDS 정의(비삽관 환자 포함)는 질병 중증도·염증 부담·치료 반응성의 이질성을 키우고 발병 시점 특정을 더 모호하게 만들어 72시간 창(window) 적용을 어렵게 합니다. 과염증/저염증 아형별 효능은 아직 명확히 정의되지 않았으며, 저자들은 보편적 적용보다 바이오마커 기반 접근을 촉구합니다.\n\n인플루엔자: 어떤 무작위 대조시험도 인플루엔자에서 코르티코스테로이드를 특이적으로 평가하지 않았으며, 바이러스 배출 증가를 시사하는 동물모델 자료 때문에 대부분의 시험이 이 환자군을 제외했습니다 — 추가적 강한 근거 없이는 주의가 필요합니다.\n\n이상반응: 고혈당은 여러 시험에서 일관되게 증가했고, 섬망(delirium)은 스테로이드와 독립적으로 연관되나 보고가 불충분하며, 신경근 쇠약은 특히 LaSRS의 methylprednisolone 군에서 두드러져 재삽관에 기여했습니다. 반면 중복감염(superinfection)은 오랜 우려와 달리 메타분석에서 확인되지 않았고, 위장관 출혈은 수치상 더 높았으나 통계적으로 유의하지 않았습니다.\n— 보강 출처: Corticosteroids in non-viral ARDS: recommendations outpace evidence — concise review (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12497343/)",
+            "origin": "augmented",
+            "sourceLabel": "Corticosteroids in non-viral ARDS: recommendations outpace evidence — concise review (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12497343/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "9ac5accf7d6a6d68210d53a67a66f382f451699f94e24182940320bd5ee18772",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-13T02:07:24.623Z",
+          "resultFingerprint": "9061de01ec0006e06278790e2734e1988e2cd3c252d836edd1b78c72abe1e9b0",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "중등도–중증 ARDS, 특히 COVID-19 관련 ARDS와 중증 CAP에서는 코르티코스테로이드를 조기에 적정 용량으로 사용하는 것이 사망률과 기계환기 기간을 줄일 수 있어 합리적인 선택입니다. 다만 침상에서는 이를 획일적으로 적용하기보다 병인·질병 단계·염증 표현형(과염증 대 저염증)·투여 시점을 함께 따져 결정해야 하며, 인플루엔자 관련·비패혈증성 ARDS에서는 근거가 제한적이거나 상충하므로 신중해야 합니다. 또한 고혈당·중환자실 획득 쇠약 등 이상반응과 장기 결과가 충분히 규명되지 않았음을 감안해 모니터링해야 합니다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42593538",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42593538/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-026-08567-3",
+            "url": "https://doi.org/10.1007/s00134-026-08567-3"
+          },
+          {
+            "label": "웹 — PubMed — Corticosteroids in ARDS: old controversies, new insights, and future directions (abstract)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42593538/"
+          },
+          {
+            "label": "웹 — BJA Education — Corticosteroids in adults with ARDS and severe pneumonia (open-access review, PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10667747"
+          },
+          {
+            "label": "웹 — Corticosteroids in non-viral ARDS: recommendations outpace evidence — concise review (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12497343/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -14942,9 +15047,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-12",
+    "date": "2026-11-13",
     "outcome": "published",
-    "publishedId": "42525086"
+    "publishedId": "42593538"
   },
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-13"
 }

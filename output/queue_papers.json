@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42456111",
-      "title": "Effect of Early Administration of Shenfu Injection on Hemodynamics in Septic Patients: A Multicenter, Randomized, Controlled Trial.",
-      "journal": "Critical care medicine",
-      "score": 9.2,
-      "topic": "sepsis_shock",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 9.16,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-06"
-    },
-    {
       "pmid": "42573415",
       "title": "A 1-Hour Resuscitation Bundle for Prehospital Management of Septic Shock.",
       "journal": "Critical care medicine",
@@ -605,6 +590,22 @@
       },
       "addedAt": "2026-10-29",
       "publishedAt": "2026-11-12"
+    },
+    {
+      "pmid": "42456111",
+      "title": "Effect of Early Administration of Shenfu Injection on Hemodynamics in Septic Patients: A Multicenter, Randomized, Controlled Trial.",
+      "journal": "Critical care medicine",
+      "score": 9.2,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 9.16,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06",
+      "publishedAt": "2026-11-13"
     }
   ],
   "rejected": [
@@ -620,9 +621,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-12",
+    "date": "2026-11-13",
     "outcome": "published",
-    "publishedId": "41405523"
+    "publishedId": "42456111"
   },
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-13"
 }
