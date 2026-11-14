@@ -5285,6 +5285,57 @@
         }
       ],
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-14",
+      "pmid": "42573415",
+      "title": "A 1-Hour Resuscitation Bundle for Prehospital Management of Septic Shock.",
+      "title_ko": "패혈성 쇼크의 병원 전 처치를 위한 1시간 소생 번들(1-Hour Resuscitation Bundle)",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007283",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "성인 패혈성 쇼크 환자에서 이동형 중환자실(MICU) 팀이 시행하는 병원 전 1시간 소생 번들(조기 항생제, 수액·승압제를 통한 혈역학 최적화, 필요 시 hydrocortisone)이 통상 치료(usual care)에 비해 28일 전체 사망률을 줄이는가?",
+      "pico": {
+        "population": "[France] Adults (≥18 yr) with suspected septic shock at the time of prehospital MICU management (sepsis-associated hypotension — SBP <90 mm Hg or MBP <65 mm Hg before fluid, lactate >4 mmol/L, GCS <13, or mottling score >2 — plus >1 organ dysfunction per 2013 SSC definition); of 398 enrolled, 381 (96%; mean age 67 ± 15 yr) analyzed, from May 09, 2016 to November 2, 2018 across 22 SAMU centers.",
+        "intervention": "A 1-hour resuscitation bundle: IV ceftriaxone 2 g (or piperacillin-tazobactam 4.5 g if hospitalized in prior 3 mo), a 30-min IV bolus of ≥1000 mL up to 35 mL/kg ideal body weight of isotonic crystalloid within the first 60 minutes, norepinephrine if MBP remained <65 mm Hg or diastolic BP <40 mm Hg, and 100 mg IV hydrocortisone when MBP remained <65 mm Hg while receiving ≥1.5 mg/hr norepinephrine (n=103).",
+        "comparison": "Usual care, with no guidance on prehospital antibiotics, hemodynamic management, or corticosteroids, left to the MICU physician's discretion (n=278).",
+        "outcome": "28-day all-cause mortality: 23 of 103 (22%) in the 1-hour bundle arm vs 76 of 278 (27%) in the usual care arm (risk ratio 0.81; 95% CI 0.61–1.08; p = 0.16); intracluster correlation coefficient 0.005 ± 0.002."
+      },
+      "pico_ko": {
+        "population": "[프랑스] 병원 전 MICU 처치 시점에 패혈성 쇼크가 의심된 성인(≥18세)(수액 투여 전 SBP <90 mm Hg 또는 MBP <65 mm Hg, lactate >4 mmol/L, GCS <13, 또는 mottling score >2의 패혈증 연관 저혈압과 2013 SSC 정의에 따른 1개 초과 장기 기능부전); 등록된 398명 중 381명(96%, 평균 연령 67 ± 15세)을 분석, 2016년 5월 9일~2018년 11월 2일, 22개 SAMU 센터.",
+        "intervention": "1시간 소생 번들: IV ceftriaxone 2 g(또는 최근 3개월 내 입원력 시 piperacillin-tazobactam 4.5 g), 첫 60분 이내 ≥1000 mL에서 이상체중 기준 최대 35 mL/kg의 등장성 crystalloid를 30분간 볼루스, MBP <65 mm Hg 또는 이완기 BP <40 mm Hg 지속 시 norepinephrine, norepinephrine ≥1.5 mg/hr 투여 중에도 MBP <65 mm Hg 지속 시 IV hydrocortisone 100 mg (n=103).",
+        "comparison": "통상 치료(usual care): 병원 전 항생제·혈역학 관리·corticosteroid에 대한 지침 없이 MICU 의사 재량에 맡김 (n=278).",
+        "outcome": "28일 전체 사망률: 1시간 번들군 23/103(22%) vs 통상 치료군 76/278(27%) (risk ratio 0.81; 95% CI 0.61–1.08; p = 0.16); intracluster correlation coefficient 0.005 ± 0.002."
+      },
+      "keyFindings": [
+        "The prehospital 1-hour resuscitation bundle did not significantly reduce 28-day all-cause mortality: 23/103 (22%) vs 76/278 (27%) in usual care (RR 0.81; 95% CI 0.61–1.08; p = 0.16).",
+        "All secondary outcomes (ICU/90-day/discharge mortality, vasopressor/MV/RRT-free days, lengths of stay) were similar between groups; ICC was very low at 0.005 ± 0.002.",
+        "The trial was prematurely terminated by the sponsor for insufficient funding, reaching only 72% (381/554) of the planned sample, with marked enrollment imbalance (103 bundle vs 278 usual care) and more severe illness and lower lactate availability in the usual care arm."
+      ],
+      "keyFindings_ko": [
+        "병원 전 1시간 소생 번들은 28일 전체 사망률을 유의하게 줄이지 못함: 번들군 23/103(22%) vs 통상 치료군 76/278(27%) (RR 0.81; 95% CI 0.61–1.08; p = 0.16).",
+        "모든 이차 결과(ICU/90일/퇴원 시 사망률, 승압제·MV·RRT 없는 일수, 재원기간)가 두 군 간 유사했으며 ICC는 0.005 ± 0.002로 매우 낮음.",
+        "연구는 자금 부족으로 스폰서에 의해 조기 종료되어 계획 표본의 72%(381/554)만 도달했고, 등록 불균형(번들군 103명 vs 통상군 278명)과 통상 치료군의 더 중한 질병 중증도·lactate 측정 가용성 차이가 있었음."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42573415",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42573415/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007283",
+          "url": "https://doi.org/10.1097/CCM.0000000000007283"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT02473263 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT02473263"
+        }
+      ],
+      "fullText": "### MATERIALS AND METHODS\n\n### Trial Design and Oversight\nThis multicenter cluster-randomized controlled trial involved 22 Urgent Medical Aid Services (SAMU; Appendix 1, ). SAMU is the French national public emergency medical system managing prehospital emergencies through dispatch centers staffed by physicians and assistants (). MICUs, staffed by a driver, a nurse, and an emergency physician, provide advanced life support and transport patients to the emergency department (ED) or ICU when required. Centers able to implement the “1-hour resuscitation bundle” strategy were eligible.\nThe trial protocol, statistical analysis plan, and participating centers are publicly available (Appendices 1, 2, 3, 4, and 7, ). Ethics approval was obtained on July 6, 2015 (Comité de Protection des Personnes Ile de France II, reference number: 2015-05-03) and the study complies with the 1975 Helsinki Declaration. Emergency medical information and verbal consent were obtained from patients or relatives whenever possible; deferred consent procedures followed the French Public Health Code.\nThis investigator-led study was publicly funded (French Ministry of Health, PHRC 2013 – ). All authors had full and independent access to all data, and vouch for the integrity, accuracy, and completeness of the data and analysis, as well as adherence to the study protocol. The trial was registered at ClinicalTrials.gov () on June 16, 2015, before inclusion of the first patient.\n\n### Study Patients\nPatients of 18 years or older requiring prehospital MICU intervention were included if they had sepsis-associated hypotension (systolic blood pressure less than 90 mm Hg or MBP less than 65 mm Hg before any fluid expansion, lactatemia greater than 4 mmol/L (if available), Glasgow Coma Score less than 13, or skin mottling score greater than 2 []), and septic shock defined with dysfunction of greater than 1 organ according to the 2013 SSC definition ().\nExclusion criteria included refusal of consent, guardianship or conservatorship, pregnancy, cardiac arrest, “do not resuscitate” order, purpura fulminans, beta-lactam allergy, or prior hemodynamic resuscitation or antibiotic therapy before MICU intervention. Patients not affiliated with the French social security system were also ineligible, under French regulation.\nParticipants were subsequently admitted to the ED or ICU according to the MICU physician’s decision.\n\n### Randomization and Study Interventions\n\n### Randomization\nThe unit of randomization was the center. Each center was randomized before the start of the study, with a 1:1 allocation to the 1-hour resuscitation bundle or usual care. Each center had to comply with the allocated intervention throughout the study period, and no crossover was allowed. The randomization was stratified by center size. Centers were considered large if expected to enroll 30 or more patients and small if expected to enroll less than 30 patients (Appendix 5, ).\nPatients in both arms underwent IV catheter placement and received respiratory support (oxygen supplementation, high-flow oxygen therapy, or noninvasive or invasive mechanical ventilation [MV]) according to their clinical condition and pulse oximetry measurements.\n\n### 1-Hour Resuscitation Bundle\nThe bundle included administration of 1) IV ceftriaxone 2 g, or piperacillin-tazobactam 4.5 g (4 g piperacillin + 0.5 g tazobactam) () for patients hospitalized in the previous 3 mo, and in a sequential order 2) a 30-minute IV bolus of at least 1000 mL and up to 35 mL/kg (ideal body weight estimated with the following formula: size in centimeters minus 100) of crystalloids within the first 60 minutes, 3) followed by continuous IV perfusion of norepinephrine if MBP remained less than 65 mm Hg or diastolic blood pressure less than 40 mm Hg, and 4) hydrocortisone hemisuccinate 100 mg IV bolus, if MBP remained less than 65 mm Hg and norepinephrine dose greater than or equal to 1.5 mg/hr (Appendix 6, ).\nThe “time zero” for starting the 1-hour bundle was the time of septic shock diagnosis by the MICU physician.\n\n### Usual Care\nThere was no guidance on prehospital antibiotic administration, hemodynamic management, or corticosteroid therapy, which were left to the MICU physician’s discretion.\n\n### Study Measurements and Procedures\n\n### Variables\nStudy variables and procedures are described in Appendix 7 (). Data collection included time from emergency call to MICU arrival, demographic and anthropometric characteristics (self-reported body weight), medical history, infection details, vital signs, and illness severity. Blood samples obtained at venous catheterization included blood cultures, glucose, electrolytes, lactatemia (when available), and blood cell count. Vital signs, lactatemia (if available), and MICU interventions were recorded every 15 minutes until hospital admission.\nPatients were followed for up to 90 days or until hospital discharge. In the hospital, vital signs were continuously monitored. The Simplified Acute Physiology Score was calculated 24 hours after ICU admission (), and the Sequential Organ Failure Assessment score was recorded on days 1–4 regardless of ICU admission (). ICU admission, MV, vasopressor use, and renal replacement therapy (RRT) were documented throughout hospitalization.\n\n### Definitions\nSeptic shock was diagnosed prehospital by the MICU physician. Infection type, source, pathogens, and antimicrobial susceptibility were confirmed during hospitalization using cultures obtained within 48 hours. Initial antimicrobial therapy appropriateness, based on French guidelines, and infection context (community or healthcare-acquired), was assessed by each center’s microbiologist after pathogen identification and antibiogram results.\n\n### Outcomes\nThe primary outcome was 28-day all-cause mortality. Secondary outcomes included all-cause mortality at 90 days and hospital discharge, number of days alive up to day 28, number of days free of invasive MV, RRT, or vasopressor support, and ICU and hospital length of stay.\nAll-cause mortality at 28 and 90 days was determined from medical records or by telephone contact with the patient (or family). If contact was not possible, the patient was considered alive if his/her name was not recorded in the National Register of Identification of Natural Persons, or in the French national death register.\n\n### Statistical Analysis\n\n### Sample Size Calculation\nConsidering an estimated intra-cluster correlation coefficient of 0.03 and a mean number of 25 patients included per center, a sample size of 277 patients per arm was required to achieve 90% power to detect a 15% difference (from 30% to 15%) in mortality rates with a two-sided alpha risk of 5%.\nThe statistical analysis was carried out at the Necker Hospital clinical research unit—Assistance Publique–Hôpitaux de Paris (APHP)—France, in accordance with the prespecified analysis plan (Appendix 7, ). No interim analysis was planned.\nBaseline characteristics were expressed as means () or median (Q1–Q3) for quantitative parameters (as appropriate), and as frequencies (percentages) for qualitative parameters.\nThe primary outcome analysis was performed on an intent-to-treat (ITT) basis. Patients lost to follow-up were considered alive if they were not found in the national register of deceased persons.\nLog-binomial regression models were performed using generalized estimating equations (GEE; assuming an exchangeable correlation structure) and robust s to account for the cluster randomization. Risk ratios (RRs) with 95% CIs and intracluster correlation coefficients were estimated from the model. All secondary outcomes were analyzed with the same log-binomial or linear regression model using the GEE method among patients with available data for the studied outcome. GEE results are reported as means and mean differences.\nFor the calculation of MV, RRT, and vasopressor-free days, patients discharged from the ICU alive before day 28 (or day 90) were considered not on MV at day 28 (or day 90). Patients who died before day 28 (or day 90) were scored as 0 MV-free days.\nPost hoc exploratory analysis compared overall survival at day 90 between groups using Kaplan-Meier curves and a Cox model, accounting for MICU as a cluster.\nAll tests were two-sided with a statistically significant  value of less than 0.05. All analyses were performed using R software Version 4.0.3 (Copyright 2018 R Foundation for Statistical Computing, Vienna, Austria).\n\n### RESULTS\n\n### Patient Characteristics\nBetween May 09, 2016, and November 2, 2018, 398 patients were enrolled, with follow-up completed on February 2, 2019. The study was prematurely terminated by the sponsor (APHP) because of insufficient funding. Of 23 eligible MICUs, 22 were randomized, although three centers in the usual care arm enrolled no patients. Overall, 381 of 398 patients (96%) were analyzed while deferred consent was not obtained for 17 patients (10/113 in the experimental arm; ).\nThe absence of enrollment from one large center reduced recruitment to 72% of the planned sample size (381/554). Lactate measurements were less frequently available in the 1-hour resuscitation bundle arm (21/103; 20%) vs. (204/278; 73%) in the usual care arm, and patients in the usual care arm appeared more severely ill, based on lactate values Tables S1 and S2 (). Most patients (352/381) had at least one preexisting comorbidity (Table S2, ). Median prehospital care duration was similar between groups, at approximately 91 minutes (70–116) overall (Table S1, ).\nIn the 1-hour resuscitation bundle arm, 61 of 103 patients (60%) were admitted directly to the ICU and 41 of 103 patients (40%) to the ED compared with 221 of 278 patients (79%) and 57 of 278 patients (21%), respectively, in the usual care arm.\nLower respiratory tract was the main source of infection (Tables S3, a and b, ). At least one pathogen was identified in 260 patients (68%), with only 3% involving multi-drug-resistant bacteria (Table S4, ).\nPrehos",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -5366,14 +5417,15 @@
         "41620016",
         "41457245",
         "41405523",
-        "42456111"
+        "42456111",
+        "42573415"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 165960
+      "2026-11": 190437
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }

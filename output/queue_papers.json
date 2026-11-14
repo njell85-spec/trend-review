@@ -91,6 +91,126 @@
         "llmCalled": false
       },
       "addedAt": "2026-11-06"
+    },
+    {
+      "pmid": "41345696",
+      "title": "Predicting early prone position ventilation responsiveness in patients with acute respiratory distress syndrome based on electrical impedance tomography: a prospective study.",
+      "journal": "Critical care (London, England)",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.99,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
+    },
+    {
+      "pmid": "41906154",
+      "title": "Complications in acute respiratory distress syndrome: a systematic review and meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "score": 7.8,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.84,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
+    },
+    {
+      "pmid": "42956771",
+      "title": "Prone positioning and high-frequency oscillatory ventilation in early paediatric acute respiratory distress syndrome (PROSpect): an international, two-by-two factorial, response-adaptive, phase 3, randomised controlled trial.",
+      "journal": "Lancet (London, England)",
+      "score": 7.7,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.6592,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
+    },
+    {
+      "pmid": "42121165",
+      "title": "Induction agents for emergency tracheal intubation in critically ill adults: a systematic review and network meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "score": 7.6,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.640000000000001,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
+    },
+    {
+      "pmid": "41493393",
+      "title": "Approaches to Converting Sp o2 /F io2 Ratio to Pa o2 /F io2 Ratio for Assessment of Respiratory Failure in Critically Ill Patients: A Systematic Review.",
+      "journal": "Critical care medicine",
+      "score": 7.5,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.49,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
+    },
+    {
+      "pmid": "42902295",
+      "title": "Toward targeted assessment of inspiratory muscle weakness before extubation: a pooled individual patient data analysis from multiple observational cohorts in critically ill ventilated patients.",
+      "journal": "Critical care (London, England)",
+      "score": 7.4,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.449199999999999,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
+    },
+    {
+      "pmid": "42667934",
+      "title": "Safety and efficacy of the 0/1 h pathway for myocardial infarction in the emergency department: an international, pragmatic, stepped-wedge, cluster-randomised, controlled trial.",
+      "journal": "Lancet (London, England)",
+      "score": 8.4,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.9399999999999995,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
+    },
+    {
+      "pmid": "42184916",
+      "title": "Understanding patients with mechanical circulatory support for cardiogenic shock: The role of preceding cardiac arrest.",
+      "journal": "Resuscitation",
+      "score": 8.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.688000000000001,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14"
     }
   ],
   "published": [
