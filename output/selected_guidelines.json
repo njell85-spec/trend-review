@@ -21628,77 +21628,6 @@
       "lineageReason": "same-year-ambiguous"
     },
     {
-      "id": "pmid:40825204",
-      "pmid": "40825204",
-      "title": "Red Cell Transfusion in Acute Myocardial Infarction: AABB International Clinical Practice Guidelines.",
-      "pubDate": "2025 Oct",
-      "journal": "Annals of internal medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:09.622Z",
-      "abstract": "DESCRIPTION: Optimal transfusion strategies for patients with acute myocardial infarction (AMI) are uncertain. The aim of this guideline is to provide recommendations for red blood cell transfusion in patients with AMI.\nMETHODS: These guidelines are based on evidence from randomized controlled trials of patients presenting with AMI and assigned to 2 different transfusion strategies (restrictive or liberal) based on hemoglobin concentrations or hematocrit levels before receipt of a transfusion. A meta-analysis of eligible trials was performed using Cochrane methods. The international panel followed GRADE (Grading of Recommendations Assessment, Development and Evaluation) methods to summarize evidence and formulate recommendations. This guideline's primary perspective is that of the patient, including medical, financial, and psychological effects, with secondary consideration of health care system issues, particularly conservation of the limited and costly blood supply.\nRECOMMENDATION: For hospitalized patients with AMI, the panel suggests a liberal red cell transfusion strategy when the hemoglobin concentration is less than 10 g/dL (conditional recommendation, low-certainty evidence). A restrictive strategy of 7 to 8 g/dL may result in increased mortality in patients with AMI. The direction of the recommendation for the liberal strategy was based on the great importance of mortality for patients. The conditional recommendation was based on the low certainty of evidence and the competing consideration of blood supply conservation. Clinicians should adopt mitigation strategies to reduce potential adverse events associated with a liberal transfusion strategy, and all transfusion decisions should incorporate the clinical context rather than solely the hemoglobin concentration.",
-      "meshTerms": [
-        "Humans",
-        "Myocardial Infarction",
-        "Erythrocyte Transfusion",
-        "Hemoglobins",
-        "Hematocrit",
-        "Randomized Controlled Trials as Topic"
-      ],
-      "keywords": [],
-      "doi": "10.7326/ANNALS-25-00706",
-      "pmcid": "",
-      "region": "us",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.497786078579452,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.4977860785794521,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:51.474Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "AMI 수혈전략 AABB 지침 — 침상 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|red-cell-transfusion-acute-myocardial-infarction-aabb-international-clinical-practice",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:40819957",
       "pmid": "40819957",
       "title": "Identifying and overcoming barriers to referral in advanced heart failure. A scientific statement of the Heart Failure Association (HFA) of the ESC.",
@@ -39614,7 +39543,7 @@
       "id": "pmid:42057302",
       "pmid": "42057302",
       "title": "Cultural Adaptation of Overdose Education Programs: Recommendations from Black Americans with Lived Experience of Opioid and Stimulant Use.",
-      "pubDate": "2026 Apr 29",
+      "pubDate": "2026 Nov-Dec",
       "journal": "Journal of psychoactive drugs",
       "publicationTypes": [
         "Journal Article"
@@ -39624,7 +39553,17 @@
       ],
       "discoveredAt": "2026-08-17T04:40:19.239Z",
       "abstract": "Black Americans have experienced disproportionate overdose deaths due to structural barriers inflicted by systemic racism, particularly among individuals who co-ingest opioids and stimulants. Despite efforts to improve overdose prevention resources on a national level, Black Americans continue to have lower access to naloxone for overdose reversal, are less likely to have received naloxone training, and have lower engagement in other overdose prevention strategies. Community engaged and culturally informed approaches are needed to ensure equitable provision of overdose education and naloxone distribution (OEND). Using empirically supported community engaged methods, the current study centers perspectives of stakeholders with lived experience to identify cultural adaptation needs for OEND programs that specifically target Black adults who use opioids and stimulants. Semi-structured qualitative focus groups revealed several themes that provide insights on cultural adaptation needs, including: centering Black overdose experiences, changes to structure and format, dispelling naloxone myths, coping strategies and alternatives to drug use, motivations for wellness, and sharing with others. Findings can inform more effective dissemination of OEND in Black communities impacted by high overdose rates.",
-      "meshTerms": [],
+      "meshTerms": [
+        "Humans",
+        "Black or African American",
+        "Drug Overdose",
+        "Naloxone",
+        "Narcotic Antagonists",
+        "Central Nervous System Stimulants",
+        "Analgesics, Opioid",
+        "Focus Groups",
+        "Female"
+      ],
       "keywords": [
         "Black or African American",
         "Overdose education and naloxone distribution",
@@ -39647,31 +39586,32 @@
         "officialDocument": false,
         "organizationId": null
       },
-      "priority": 4,
+      "priority": 3,
       "breakdown": {
         "authority": 0,
-        "topic": 1,
+        "topic": 0,
         "recency": 2,
         "scope": 0,
         "confidence": 1
       },
       "organizationId": null,
       "tier": null,
-      "topicMatched": true,
+      "topicMatched": false,
       "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "recommendations",
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-08-17T04:40:34.154Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 3,
         "keep": false,
         "reason": "과용량 교육 문화적응 권고, 임상관리 아님",
         "at": "2026-08-17T04:43:32.344Z"
-      }
+      },
+      "attempts": 0
     },
     {
       "id": "pmid:42246225",
@@ -40936,7 +40876,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41735,7 +41675,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42655,7 +42595,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42828,7 +42768,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43184,52 +43124,69 @@
     {
       "id": "pmid:42490058",
       "pmid": "42490058",
-      "title": "Post-Transfusion Management of RhD-Negative Females of Childbearing Potential Who Receive RhD-Positive Low-Titer Group O Whole Blood and Red Blood Cells During Trauma Resuscitation: A Joint Position Statement and Resource Document of the American College of Surgeons Committee on Trauma (ACS-COT), Prehospital Blood Transfusion Coalition (PBTC), National Association of Emergency Medical Services Physicians (NAEMSP), Trauma Hemostasis and Oxygenation Research (THOR) Network, and Allo Hope Foundation (AHF).",
-      "pubDate": "2026 Jul 22",
+      "title": "Posttransfusion Management of RhD-Negative Females of Childbearing Potential Who Receive RhD-Positive Low-Titer Group O Whole Blood and RBCs During Trauma Resuscitation: A Joint Position Statement and Resource Document of the American College of Surgeons Committee on Trauma, Prehospital Blood Transfusion Coalition, National Association of Emergency Medical Services Physicians, Trauma Hemostasis and Oxygenation Research Network, and Allo Hope Foundation.",
+      "pubDate": "2026 Dec 1",
       "journal": "Journal of the American College of Surgeons",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Consensus Statement",
+        "Practice Guideline"
       ],
       "discoveredBy": [
-        "pubmed-topic"
+        "pubmed-topic",
+        "pubmed-pt",
+        "pubmed-title"
       ],
       "discoveredAt": "2026-08-17T04:41:03.449Z",
-      "abstract": "BACKGROUND: Increasing use of low-titer group O whole blood and red blood cells in trauma resuscitation has increased the likelihood that RhD-negative females of childbearing potential (FCPs) will receive RhD-positive blood products. Concurrently, national trauma data demonstrate that FCPs with traumatic hemorrhage are approximately 40% less likely to receive low-titer group O whole blood than comparable males, highlighting a trauma systems and equity concern. Evidence-based guidance for post-transfusion management remains limited.\nSTUDY DESIGN: A multidisciplinary panel representing trauma surgery, transfusion medicine, emergency medicine, critical care, obstetrics, pediatrics, and prehospital care reviewed available literature, registry data, modeling studies, existing guidance, and ethical considerations and developed consensus recommendations through an iterative process for management of RhD-negative FCPs exposed to RhD-positive blood products during trauma resuscitation.\nRESULTS: Reported D-alloimmunization rates following trauma transfusion range from approximately 8%-43%. Modeling studies estimate a perinatal death risk from anti-D-mediated hemolytic disease of the fetus and newborn (HDFN) of approximately 0.04% and a combined severe HDFN/perinatal death risk of approximately 0.24% after RhD-positive transfusion. Estimated risk of any HDFN-complicated future pregnancy ranges from approximately 0.6%-6.5%. The panel concluded that RhD-positive blood products should not be withheld when RhD-negative products are unavailable and transfusion is clinically indicated. Recommended management includes selective Rh immunoglobulin prophylaxis for low-volume exposures, structured antibody surveillance, patient counseling, multidisciplinary follow-up, and institutional protocols.\nCONCLUSIONS: For RhD-negative FCPs with life-threatening hemorrhage, immediate survival should take precedence over potential future reproductive risk. Standardized post-transfusion pathways may support equitable access to life-saving transfusion while mitigating alloimmunization-related reproductive risks.",
-      "meshTerms": [],
+      "abstract": "BACKGROUND: Increasing use of low-titer group O whole blood and RBC in trauma resuscitation has increased the likelihood that RhD-negative females of childbearing potential (FCPs) will receive RhD-positive blood products. Concurrently, national trauma data demonstrate that FCPs with traumatic hemorrhage are approximately 40% less likely to receive low-titer group O whole blood than comparable male patients, highlighting a trauma systems and equity concern. Evidence-based guidance for posttransfusion management remains limited.\nSTUDY DESIGN: A multidisciplinary panel representing trauma surgery, transfusion medicine, emergency medicine, critical care, OB, pediatrics, and prehospital care reviewed available literature, registry data, modeling studies, existing guidance, and ethical considerations and developed consensus recommendations through an iterative process for management of RhD-negative FCPs exposed to RhD-positive blood products during trauma resuscitation.\nRESULTS: Reported D-alloimmunization rates after trauma transfusion range from approximately 8% to 43%. Modeling studies estimate a perinatal death risk from anti-D-mediated hemolytic disease of the fetus and newborn (HDFN) of approximately 0.04% and a combined severe HDFN and perinatal death risk of approximately 0.24% after RhD-positive transfusion. Estimated risk of any HDFN-complicated future pregnancy ranges from approximately 0.6% to 6.5%. The panel concluded that RhD-positive blood products should not be withheld when RhD-negative products are unavailable, and transfusion is clinically indicated. Recommended management includes selective Rh immunoglobulin prophylaxis for low-volume exposures, structured antibody surveillance, patient counseling, multidisciplinary follow-up, and institutional protocols.\nCONCLUSIONS: For RhD-negative FCPs with life-threatening hemorrhage, immediate survival should take precedence over potential future reproductive risk. Standardized posttransfusion pathways may support equitable access to lifesaving transfusion while mitigating alloimmunization-related reproductive risks.",
+      "meshTerms": [
+        "Humans",
+        "Female",
+        "Wounds and Injuries",
+        "Resuscitation",
+        "Blood Transfusion",
+        "Rh-Hr Blood-Group System",
+        "ABO Blood-Group System",
+        "Hemorrhage",
+        "Rh Isoimmunization",
+        "Pregnancy"
+      ],
       "keywords": [],
       "doi": "10.1097/XCS.0000000000002099",
       "pmcid": "",
       "region": "us",
       "by": "org-name",
       "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
         "expandedTitle": false,
         "approvedOrganization": false,
         "approvedOrgPath": false,
         "normativeContent": true,
         "explicitRecommendation": true,
-        "officialDocument": false,
+        "officialDocument": true,
         "organizationId": null
       },
-      "priority": 7,
+      "priority": 8,
       "breakdown": {
         "authority": 0,
         "topic": 4,
         "recency": 2,
         "scope": 0,
-        "confidence": 1
+        "confidence": 2
       },
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
-      "verdict": "needsReview",
-      "documentType": null,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
       "reasons": [
-        "insufficient-positive-evidence"
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
       ],
-      "lastSeenAt": "2026-08-20T21:55:11.045Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -43237,7 +43194,11 @@
         "reason": "외상 전혈 수혈 후 RhD 관리, 소생 실무",
         "at": "2026-08-17T04:43:32.344Z"
       },
-      "attempts": 0
+      "attempts": 0,
+      "lineageKey": "unknown|posttransfusion-management-rhd-negative-females-childbearing-potential-who-receive-rhd-positive-low-titer-group-o-whole-blood-rbcs-during-trauma-resuscitation-joint-resource-document-american-college-surgeons-committee-trauma-prehospital-blood-transfusion-coalition-national-association-emergency-medical-services-physicians-trauma-hemostasis-oxygenation-research-network-allo-hope-foundation",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage"
     },
     {
       "id": "pmid:42480549",
@@ -45416,7 +45377,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -45615,7 +45576,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46418,7 +46379,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46482,7 +46443,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -46552,7 +46513,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46620,7 +46581,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46683,7 +46644,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46748,7 +46709,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46811,7 +46772,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46873,7 +46834,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46931,7 +46892,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -47000,7 +46961,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47070,7 +47031,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47150,7 +47111,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47218,7 +47179,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47280,7 +47241,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47359,7 +47320,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47441,7 +47402,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47540,7 +47501,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47641,7 +47602,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47722,7 +47683,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47804,7 +47765,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47867,7 +47828,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47936,7 +47897,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -48010,7 +47971,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.328Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -48076,7 +48037,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -48139,7 +48100,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48219,7 +48180,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48283,7 +48244,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -48347,7 +48308,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-outcomes-nationwide-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -48410,7 +48371,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48470,14 +48431,14 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "queued",
+      "status": "needsReview",
       "verdict": "needsReview",
       "documentType": "consensus",
       "reasons": [
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-13T02:02:02.037Z",
+      "lastSeenAt": "2026-11-14T01:36:06.327Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -63281,6 +63242,157 @@
         ]
       },
       "publishedAt": "2026-11-13"
+    },
+    {
+      "id": "pmid:40825204",
+      "pmid": "40825204",
+      "title": "Red Cell Transfusion in Acute Myocardial Infarction: AABB International Clinical Practice Guidelines.",
+      "pubDate": "2025 Oct",
+      "journal": "Annals of internal medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:09.622Z",
+      "abstract": "DESCRIPTION: Optimal transfusion strategies for patients with acute myocardial infarction (AMI) are uncertain. The aim of this guideline is to provide recommendations for red blood cell transfusion in patients with AMI.\nMETHODS: These guidelines are based on evidence from randomized controlled trials of patients presenting with AMI and assigned to 2 different transfusion strategies (restrictive or liberal) based on hemoglobin concentrations or hematocrit levels before receipt of a transfusion. A meta-analysis of eligible trials was performed using Cochrane methods. The international panel followed GRADE (Grading of Recommendations Assessment, Development and Evaluation) methods to summarize evidence and formulate recommendations. This guideline's primary perspective is that of the patient, including medical, financial, and psychological effects, with secondary consideration of health care system issues, particularly conservation of the limited and costly blood supply.\nRECOMMENDATION: For hospitalized patients with AMI, the panel suggests a liberal red cell transfusion strategy when the hemoglobin concentration is less than 10 g/dL (conditional recommendation, low-certainty evidence). A restrictive strategy of 7 to 8 g/dL may result in increased mortality in patients with AMI. The direction of the recommendation for the liberal strategy was based on the great importance of mortality for patients. The conditional recommendation was based on the low certainty of evidence and the competing consideration of blood supply conservation. Clinicians should adopt mitigation strategies to reduce potential adverse events associated with a liberal transfusion strategy, and all transfusion decisions should incorporate the clinical context rather than solely the hemoglobin concentration.",
+      "meshTerms": [
+        "Humans",
+        "Myocardial Infarction",
+        "Erythrocyte Transfusion",
+        "Hemoglobins",
+        "Hematocrit",
+        "Randomized Controlled Trials as Topic"
+      ],
+      "keywords": [],
+      "doi": "10.7326/ANNALS-25-00706",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.497786078579452,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.4977860785794521,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:51.474Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "AMI 수혈전략 AABB 지침 — 침상 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|red-cell-transfusion-acute-myocardial-infarction-aabb-international-clinical-practice",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40825204",
+          "title": "Red Cell Transfusion in Acute Myocardial Infarction: AABB International Clinical Practice Guidelines.",
+          "journal": "Annals of internal medicine",
+          "pubDate": "2025 Oct",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40825204/",
+          "doi": "10.7326/ANNALS-25-00706"
+        },
+        "org": "AABB (Association for the Advancement of Blood & Biotherapies) — international panel, published in Annals of Internal Medicine",
+        "version": "2025",
+        "title_ko": "급성 심근경색(AMI)에서의 적혈구 수혈: AABB 국제 임상진료지침 (2025)",
+        "scope_ko": "입원한 급성 심근경색(AMI) 환자에서 적혈구(RBC) 수혈 전략(제한적 vs 적극적)을 혈색소/헤마토크릿 역치에 따라 어떻게 정할지를 다루는 지침이다. AMI 환자만을 대상으로 한 RCT 근거(MINT, REALITY 등)에 기반하며, 혈역학적으로 불안정한 환자나 AMI가 아닌 환자에는 적용되지 않는다.",
+        "summary": [
+          "For hospitalized patients with acute myocardial infarction (AMI), use a LIBERAL red cell transfusion strategy, transfusing when hemoglobin is less than 10 g/dL (conditional/suggestion, low-certainty evidence).",
+          "A restrictive strategy (transfusion threshold 7–8 g/dL) may result in INCREASED mortality in AMI patients; the liberal direction was chosen because of the great importance patients place on mortality.",
+          "The recommendation is only CONDITIONAL because the evidence is low-certainty and must be balanced against conservation of the limited, costly blood supply.",
+          "All transfusion decisions must incorporate the full clinical context (history, signs, symptoms, hemodynamic status, patient preferences) rather than relying on the hemoglobin number alone (Good Practice Statement).",
+          "Because the liberal strategy carries a higher risk of serious adverse events (notably circulatory overload), clinicians should apply mitigation strategies to reduce transfusion-associated harm.",
+          "Methodology: Cochrane meta-analysis of eligible AMI RCTs with GRADE; primary perspective is the patient (medical, financial, psychological), with secondary consideration of health-system/blood-supply issues."
+        ],
+        "summary_ko": [
+          "입원한 급성 심근경색(AMI) 환자에서는 적극적(liberal) 적혈구 수혈 전략을 사용하여 혈색소(Hb)가 10 g/dL 미만일 때 수혈한다 (조건부 권고, 낮은 근거수준).",
+          "제한적(restrictive) 전략(수혈 역치 7–8 g/dL)은 AMI 환자에서 사망률을 증가시킬 수 있다. 환자에게 사망률이 매우 중요하다는 점을 근거로 적극적 전략 방향을 택했다.",
+          "권고가 '조건부'인 이유는 근거가 낮은 수준이고, 제한적이며 비용이 큰 혈액 공급의 보존이라는 상충 요소를 함께 고려했기 때문이다.",
+          "모든 수혈 결정은 혈색소 수치만이 아니라 전체 임상 맥락(병력, 징후, 증상, 혈역학 상태, 환자 선호)을 반영해야 한다 (Good Practice Statement).",
+          "적극적 전략은 중대한 이상반응(특히 순환 과부하) 위험이 더 높으므로, 임상의는 수혈 관련 위해를 줄이기 위한 완화 전략을 적용해야 한다.",
+          "방법론: 적격 AMI RCT에 대한 Cochrane 메타분석과 GRADE 방법 사용. 1차 관점은 환자(의학적·재정적·심리적 영향), 2차로 의료체계·혈액공급 이슈를 고려했다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "AMI 환자 수혈 역치 (제한적 → 적극적)",
+            "detail": "Previously, the dominant practice (extrapolated from restrictive-strategy general/ICU guidelines such as the TRICC era, which had actually EXCLUDED acute MI patients) was a restrictive threshold of ~7–8 g/dL. This guideline reverses that for the AMI population: it now suggests a LIBERAL threshold of Hb <10 g/dL. Reason: 3 of 4 AMI RCTs (notably MINT, n=3504) and the pooled meta-analysis suggest liberal transfusion may reduce mortality, and a restrictive 7–8 g/dL threshold may increase mortality in AMI.",
+            "detail_ko": "이전에는 제한적 전략(일반/중환자 지침, 특히 급성 MI를 실제로 제외했던 TRICC 시대 근거에서 외삽)에 따라 약 7–8 g/dL의 제한적 역치가 주류 관행이었다. 본 지침은 AMI 환자에 한해 이를 뒤집어, Hb <10 g/dL의 적극적 역치를 제안한다. 이유: 4개 AMI RCT 중 3개(특히 MINT, n=3504)와 통합 메타분석에서 적극적 수혈이 사망률을 낮출 수 있고, 7–8 g/dL의 제한적 역치는 AMI에서 사망률을 높일 수 있다고 시사되었기 때문이다."
+          },
+          {
+            "topic": "근거 등급·권고 강도",
+            "detail": "Rather than a strong/unqualified recommendation, the panel issued a CONDITIONAL recommendation based on LOW-certainty evidence for the mortality benefit. A liberal threshold likely has little or no effect on recurrent MI at 30 days (moderate-certainty evidence). The conditional strength explicitly reflects the competing need to conserve blood supply.",
+            "detail_ko": "강한/무조건적 권고가 아니라, 사망률 이득에 대해 낮은 근거수준(low-certainty)에 기반한 조건부(conditional) 권고로 발표되었다. 적극적 역치는 30일 재발 MI에는 거의 영향이 없을 것으로 보인다(중등도 근거수준). 조건부 강도는 혈액 공급 보존이라는 상충 요소를 명시적으로 반영한 것이다."
+          },
+          {
+            "topic": "임상 맥락 통합 (Good Practice Statement)",
+            "detail": "The guideline adds an explicit Good Practice Statement that transfusion decisions must be individualized to clinical context (history, signs, symptoms, hemodynamic status) and patient preferences via informed consent, rather than being driven solely by the Hb number; it explicitly does NOT apply to patients without AMI or to all AMI phenotypes.",
+            "detail_ko": "본 지침은 수혈 결정을 혈색소 수치만으로 몰아가지 말고, 임상 맥락(병력, 징후, 증상, 혈역학 상태)과 사전동의를 통한 환자 선호에 맞춰 개별화하라는 Good Practice Statement를 명시적으로 추가했다. AMI가 없는 환자나 모든 AMI 유형에 일괄 적용되지 않음을 분명히 했다."
+          },
+          {
+            "topic": "이상반응 완화 전략 신설",
+            "detail": "Because the liberal strategy raises the risk of serious adverse events (especially transfusion-associated circulatory overload, TACO), the guideline newly spells out mitigation measures: optimize peri-transfusion fluid status, slow the transfusion rate, give diuretics, reach the target Hb more gradually, and transfuse during renal replacement therapy sessions in patients with renal failure.",
+            "detail_ko": "적극적 전략은 중대한 이상반응(특히 수혈관련 순환과부하, TACO) 위험을 높이므로, 본 지침은 완화 조치를 새로 구체화했다: 수혈 전후 수액 상태 최적화, 수혈 속도 늦추기, 이뇨제 투여, 목표 Hb에 더 점진적으로 도달, 신부전 환자에서는 신대체요법(투석) 세션 중 수혈."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "다른 학회 지침과의 정렬 — 2025 ACC/AHA ACS 지침",
+            "body_ko": "ACC의 Journal Scan 해설에 따르면, 이번 AABB 권고는 2025 ACC/AHA 급성관상동맥증후군(ACS) 지침과 방향이 일치한다. 다만 두 문서 모두 이 환자군에서 수혈 권고를 더 공고히 하기 위한 추가 연구가 필요함을 인정한다고 전했다.",
+            "sourceLabel": "American College of Cardiology — Journal Scan",
+            "sourceUrl": "https://www.acc.org/latest-in-cardiology/journal-scans/2025/08/27/19/35/new-international-ami"
+          }
+        ],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, do NOT apply the usual restrictive 7–8 g/dL ICU/general transfusion trigger to patients admitted with acute MI — instead transfuse toward a liberal threshold of Hb <10 g/dL, while still individualizing to hemodynamics, symptoms, and patient preference rather than reflexively chasing a number. Because this liberal strategy increases circulatory-overload risk, actively mitigate TACO: transfuse single units slowly, reassess, use diuretics and careful fluid balance, and reach target Hb gradually (and time transfusion to dialysis in renal failure). The recommendation is conditional/low-certainty and excludes hemodynamically unstable patients and non-AMI patients, so it supports a clinical decision, not a rigid protocol.",
+        "practiceImpact_ko": "병상에서는 급성 심근경색으로 입원한 환자에게 통상적인 중환자/일반 제한적 수혈 역치(7–8 g/dL)를 적용하지 말고, Hb <10 g/dL의 적극적 역치를 목표로 수혈하되 수치만 쫓지 말고 혈역학·증상·환자 선호에 맞춰 개별화한다. 적극적 전략은 순환과부하 위험을 높이므로 TACO를 적극적으로 완화한다: 단위를 천천히 수혈하고 재평가, 이뇨제와 수액 균형 관리, 목표 Hb에 점진적으로 도달(신부전 시 투석 세션에 맞춰 수혈). 본 권고는 조건부·낮은 근거수준이며 혈역학적으로 불안정한 환자와 AMI가 아닌 환자는 제외되므로, 엄격한 프로토콜이 아니라 임상적 판단을 돕는 근거로 활용한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40825204",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40825204/"
+          },
+          {
+            "label": "Journal (DOI) — 10.7326/ANNALS-25-00706",
+            "url": "https://doi.org/10.7326/ANNALS-25-00706"
+          },
+          {
+            "label": "웹 — American College of Cardiology — New International AMI Treatment Guideline Focuses on Hemoglobin Transfusion Strategy (Journal Scan)",
+            "url": "https://www.acc.org/latest-in-cardiology/journal-scans/2025/08/27/19/35/new-international-ami"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-14"
     }
   ],
   "rejected": [
@@ -67455,7 +67567,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-13T02:01:52.134Z",
+      "discoveredAt": "2026-11-14T01:35:57.968Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -68883,7 +68995,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-13T02:01:52.134Z",
+      "discoveredAt": "2026-11-14T01:35:57.968Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -68910,7 +69022,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-13T02:01:52.134Z",
+      "discoveredAt": "2026-11-14T01:35:57.968Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -68983,9 +69095,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261113_110039:guideline:2026-11-13",
+    "runId": "trend_review_20261114_103442:guideline:2026-11-14",
     "outcome": "published",
-    "publishedId": "pmid:43018747",
+    "publishedId": "pmid:40825204",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -68994,8 +69106,8 @@
             "term": "((\"practice guideline\"[Publication Type]) OR (\"guideline\"[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -69004,21 +69116,21 @@
             "term": "((consensus[Title] OR \"consensus statement\"[Title] OR \"scientific statement\"[Title] OR \"position statement\"[Title] OR \"focused update\"[Title] OR \"clinical recommendations\"[Title] OR \"practice recommendations\"[Title] OR \"expert recommendations\"[Title] OR statement[Title] OR recommendations[Title]) OR (consensus[Publication Type] OR statement[Publication Type] OR recommendations[Publication Type])) AND (\"emergency medicine\"[MeSH] OR \"critical care\"[MeSH] OR \"sepsis\"[MeSH] OR \"respiratory distress syndrome\"[MeSH] OR \"resuscitation\"[MeSH] OR \"heart arrest\"[MeSH] OR \"shock\"[MeSH] OR \"respiration, artificial\"[MeSH])",
             "attempted": true,
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 5,
+            "idsFetched": 5,
             "truncated": false,
             "error": null
           }
         ],
-        "mergedTotal": 130,
-        "overlapCount": 0,
+        "mergedTotal": 134,
+        "overlapCount": 1,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 4,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 31",
         "window": {
-          "minDate": "2026/10/14",
-          "maxDate": "2026/11/13"
+          "minDate": "2026/10/15",
+          "maxDate": "2026/11/14"
         },
         "retmax": 60,
         "topics": [
@@ -69044,8 +69156,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 14,
-            "idsFetched": 14,
+            "totalFound": 15,
+            "idsFetched": 15,
             "truncated": false,
             "error": null
           },
@@ -69080,8 +69192,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -69089,8 +69201,8 @@
             "id": "pubmed-topic:trauma_hemorrhage",
             "label": "외상·출혈",
             "succeeded": true,
-            "totalFound": 1,
-            "idsFetched": 1,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           },
@@ -69107,8 +69219,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 3,
-            "idsFetched": 3,
+            "totalFound": 4,
+            "idsFetched": 4,
             "truncated": false,
             "error": null
           },
@@ -69122,18 +69234,19 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 123,
+        "topicOnlyCount": 126,
         "ptPmids": [
           "42858614",
           "42837684",
-          "42665231"
+          "42665231",
+          "42490058"
         ],
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 130,
-          "enriched": 130,
-          "withAbstract": 102,
+          "requested": 134,
+          "enriched": 134,
+          "withAbstract": 107,
           "error": null
         }
       },
@@ -69186,10 +69299,8 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "scopeExclusions": [
         {
@@ -69481,6 +69592,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43020642",
+          "title": "New era in interstitial lung disease associated with connective tissue disease (CTD-ILD): from guidelines to emerging therapies.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43011774",
           "title": "Prescription Patterns and Adherence to GOLD 2021 Guidelines for Chronic Obstructive Pulmonary Disease Management in Pakistan: A Cross-Sectional Study.",
           "region": null,
@@ -69565,8 +69683,8 @@
         },
         {
           "stage": "region",
-          "pmid": "42873563",
-          "title": "Oral Fosfomycin for Pyelonephritis: Time for Evidence Over Eminence-based Guidelines.",
+          "pmid": "43020389",
+          "title": "Conflicts of Interest and Broad-Spectrum First-Line Antibiotic Recommendations in Community-Acquired Pneumonia Guidelines: A Meta-epidemiological Study Using the WHO AWaRe Classification.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -69691,6 +69809,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43023937",
+          "title": "Impact of Guideline-Based Acute Kidney Injury Care Processes on Outcomes in Hospitalized Patients With Decompensated Cirrhosis.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43003793",
           "title": "Noninvasive assessments for identifying peripheral artery disease described within guidelines, consensus, and best practice statements: A rapid systematic review.",
           "region": null,
@@ -69780,19 +69905,19 @@
         }
       ],
       "decisions": {
-        "queued": 201,
+        "queued": 200,
         "needsReview": 468,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:43018747",
+        "candidateId": "pmid:40825204",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-13T02:05:14.877Z",
+  "updatedAt": "2026-11-14T01:40:59.083Z",
   "configVersion": "guideline-v2"
 }

@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42573415",
-      "title": "A 1-Hour Resuscitation Bundle for Prehospital Management of Septic Shock.",
-      "journal": "Critical care medicine",
-      "score": 8.1,
-      "topic": "sepsis_shock",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 8.14,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-06"
-    },
-    {
       "pmid": "42057084",
       "title": "Blood pressure response index trajectories identify distinct hemodynamic phenotypes and predict mortality in septic shock: a two-database retrospective cohort study.",
       "journal": "Critical care (London, England)",
@@ -606,6 +591,22 @@
       },
       "addedAt": "2026-11-06",
       "publishedAt": "2026-11-13"
+    },
+    {
+      "pmid": "42573415",
+      "title": "A 1-Hour Resuscitation Bundle for Prehospital Management of Septic Shock.",
+      "journal": "Critical care medicine",
+      "score": 8.1,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 8.14,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06",
+      "publishedAt": "2026-11-14"
     }
   ],
   "rejected": [
@@ -621,9 +622,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-13",
+    "date": "2026-11-14",
     "outcome": "published",
-    "publishedId": "42456111"
+    "publishedId": "42573415"
   },
-  "updatedAt": "2026-11-13"
+  "updatedAt": "2026-11-14"
 }

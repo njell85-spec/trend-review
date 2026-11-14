@@ -1166,5 +1166,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "42573415",
+    "title": "A 1-Hour Resuscitation Bundle for Prehospital Management of Septic Shock.",
+    "date": "2026-11-14",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
