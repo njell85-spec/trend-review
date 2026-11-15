@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42057084",
-      "title": "Blood pressure response index trajectories identify distinct hemodynamic phenotypes and predict mortality in septic shock: a two-database retrospective cohort study.",
-      "journal": "Critical care (London, England)",
-      "score": 7.9,
-      "topic": "sepsis_shock",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.91,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-06"
-    },
-    {
       "pmid": "41838001",
       "title": "Incidence of Adverse Events in Peripheral Intravenous Vasopressor Use: A Systematic Review and Meta-Analysis.",
       "journal": "JAMA network open",
@@ -727,6 +712,22 @@
       },
       "addedAt": "2026-11-06",
       "publishedAt": "2026-11-14"
+    },
+    {
+      "pmid": "42057084",
+      "title": "Blood pressure response index trajectories identify distinct hemodynamic phenotypes and predict mortality in septic shock: a two-database retrospective cohort study.",
+      "journal": "Critical care (London, England)",
+      "score": 7.9,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.91,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06",
+      "publishedAt": "2026-11-15"
     }
   ],
   "rejected": [
@@ -742,9 +743,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-14",
+    "date": "2026-11-15",
     "outcome": "published",
-    "publishedId": "42573415"
+    "publishedId": "42057084"
   },
-  "updatedAt": "2026-11-14"
+  "updatedAt": "2026-11-15"
 }

@@ -717,23 +717,6 @@
       "status": "queued"
     },
     {
-      "pmid": "36682372",
-      "title": "Asthma.",
-      "journal": "Lancet",
-      "score": 7.6,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "천식 종설, Lancet — 호흡 응급 적합",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "36917048",
       "title": "Heart Failure With Preserved Ejection Fraction: A Review.",
       "journal": "JAMA",
@@ -15098,6 +15081,114 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "36682372",
+      "title": "Asthma.",
+      "journal": "Lancet",
+      "score": 7.6,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "천식 종설, Lancet — 호흡 응급 적합",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-15",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "36682372",
+          "title": "Asthma.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2023-1-23",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36682372/",
+          "doi": "10.1016/S0140-6736(22)02125-0"
+        },
+        "title_ko": "천식 (Asthma) — Lancet Seminar",
+        "scope_ko": "소아와 성인의 천식을 임상 중심으로 개관하는 Lancet 종설(Seminar)로, 역학·병태생리·진단·관리를 다루며, 특히 생물학적 제제 도입 이후 중증 천식 관리가 정밀의료 시대로 이행하고 '관해(remission)'를 목표로 삼게 된 변화를 강조한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "정의와 역학",
+            "body_ko": "천식은 전 세계적으로 가장 흔한 만성 비감염성 질환(chronic non-communicable disease)의 하나이다. 가변적 기류 폐쇄(variable airflow obstruction)를 특징으로 하며, 이로 인해 호흡곤란(dyspnoea)과 천명(wheezing)이 발생한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "치료 성과와 지속되는 과소치료",
+            "body_ko": "매우 효과적인 치료제들이 이미 사용 가능하며, 지난 15년 동안 천식의 이환율과 사망률이 크게 개선되었다. 그 결과 대부분의 환자는 양호한 천식 조절(good asthma control)을 달성할 수 있다.\n\n그러나 과소치료(undertreatment)는 여전히 흔하다. 저자들은 언제, 어떻게 치료를 조정해야 하는지에 대한 환자와 의료 제공자 양쪽의 이해를 높이는 것이 결정적으로 중요하다고 강조한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "천식 관리의 순환(assessment–adjustment cycle)",
+            "body_ko": "천식 관리는 하나의 순환(cycle)으로 이루어진다. 즉 ① 천식 조절 상태와 위험인자(risk factors)를 평가하고, ② 그에 따라 약물을 조정하는 과정을 반복한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "중증 천식 — 정밀의료와 관해라는 목표",
+            "body_ko": "생물학적 제제(biological therapies)의 도입으로 중증 천식(severe asthma) 관리는 정밀의료(precision medicine) 시대로 진입하였다. 저자들은 이 변화가 임상적 목표를 질병 관해(disease remission)로 끌어올리고 있다고 서술한다.\n\n중증 천식 환자는 증상에 기여하는 동반질환(co-existing conditions)을 함께 가진 경우가 많으며, 따라서 다차원적(multidimensional) 관리 접근이 필수적이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "이 Seminar의 범위",
+            "body_ko": "저자들은 이 Seminar에서 소아와 성인 모두를 대상으로 천식의 역학, 병태생리, 진단, 관리를 임상 중심(clinically focused)으로 개관한다고 밝힌다. (본 요약은 논문 초록에서 직접 옮긴 것으로, 전문은 유료 접근 제한으로 확보하지 못하였다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 병태생리 — type 2 염증과 non-type 2 염증",
+            "body_ko": "이 논문 자체의 병태생리 본문은 확보하지 못하여, 같은 주제를 다루는 권위 있는 2차 자료로 맥락을 보강한다. 중증 천식 대부분의 핵심 기전은 type 2 염증으로, 선천·적응 면역반응에 의해 기도에 알레르기성 또는 비알레르기성 호산구 침윤이 일어난다. 관여하는 사이토카인은 IL-4, IL-13, IL-5이며, 세포 성분으로는 CD4 T림프구, 2형 선천림프구세포(ILC2), 비만세포가 있다. 호산구성 염증은 ILC2가 분비하는 IL-5·IL-4·IL-13에 의해 유도되며, 이는 알레르겐 노출과 무관하게도 일어날 수 있다. 중증 천식 환자는 전체 천식 인구의 약 3–10%로 추정되며, 기전상 'high-T2'와 'low-T2' 두 축으로 내표현형(endotype)이 구분된다.\n— 보강 출처: Biologics for the treatment of severe asthma: current status report 2023 (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10795269/)",
+            "origin": "augmented",
+            "sourceLabel": "Biologics for the treatment of severe asthma: current status report 2023 (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10795269/"
+          },
+          {
+            "heading_ko": "[웹 보강] 중증 천식의 생물학적 제제 — 표적과 바이오마커",
+            "body_ko": "초록이 언급한 '정밀의료로의 이행'을 뒷받침하기 위해, 승인된 생물학적 제제와 그 표적·선택 바이오마커를 2차 자료로 보강한다.\n\n· Omalizumab: 유리 혈청 IgE 표적. 알레르기성 천식, IgE 30–1500 IU/mL, 연중 알레르겐 감작.\n· Mepolizumab: IL-5 표적. 호산구성 천식, 혈중 호산구 ≥150 cells/µL(또는 지난 1년 내 ≥300).\n· Reslizumab: IL-5 표적. 호산구성 천식, 혈중 호산구 >400 cells/µL.\n· Benralizumab: IL-5 수용체 α 표적. 호산구성 천식, 혈중 호산구 ≥300 cells/µL.\n· Dupilumab: IL-4 수용체 α 표적(IL-4/IL-13 차단). 호산구 ≥150 cells/µL 또는 OCS 의존성 천식, FeNO ≥25 ppb.\n· Tezepelumab: TSLP(thymic stromal lymphopoietin) 표적. 표현형·바이오마커 제한 없이 승인된 유일한 제제이며, 호산구 ≥150 cells/µL 및 FeNO 상승 시 반응이 더 좋다.\n\nTezepelumab 이전의 생물학적 제제는 대부분 type 2 염증을 표적으로 했다는 점이 이 영역의 한계이자 tezepelumab의 차별점이다.\n— 보강 출처: Biologics for the treatment of severe asthma: current status report 2023 (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10795269/)",
+            "origin": "augmented",
+            "sourceLabel": "Biologics for the treatment of severe asthma: current status report 2023 (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10795269/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "2950285acfba96e1fa9aff44e31b3b2952327e20ec1d0bde403c1ce3e2ea2d2f",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-15T01:23:16.157Z",
+          "resultFingerprint": "1fd777fe051477ed2979d4241efa99fb46ac56d9b661621c1a3d08c6cd490bf3",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "응급·중환자 현장에서는 SABA 단독 완화 대신 ICS-formoterol 기반 완화/유지(AIR·MART)로의 전환 흐름을 인지하고, 급성 악화 후 퇴원 시 항염증 완화 전략과 조절 상태·위험인자 재평가를 연결하는 것이 핵심이다. 반복 악화·OCS 의존·고FeNO·호산구 증가를 보이는 환자는 '중증 천식'으로 분류해 생물학적 제제가 가능한 전문 클리닉으로 조기 의뢰해야 하며, 바이오마커(혈중 호산구·FeNO·IgE)가 제제 선택과 연결된다는 점을 염두에 두어야 한다. 다만 이상의 수치·역치는 논문 전문이 아니라 초록과 보강 출처(GINA 2023·2차 자료)에서 나온 것임을 감안해 적용한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 36682372",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36682372/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(22)02125-0",
+            "url": "https://doi.org/10.1016/S0140-6736(22)02125-0"
+          },
+          {
+            "label": "웹 — The Lancet — Asthma (Porsbjerg et al., 2023) 초록/서지 페이지 (본문 유료 제한)",
+            "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02125-0/abstract"
+          },
+          {
+            "label": "웹 — Biologics for the treatment of severe asthma: current status report 2023 (PMC10795269)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10795269/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15155,9 +15246,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-14",
+    "date": "2026-11-15",
     "outcome": "published",
-    "publishedId": "40960600"
+    "publishedId": "36682372"
   },
-  "updatedAt": "2026-11-14"
+  "updatedAt": "2026-11-15"
 }

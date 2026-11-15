@@ -19181,86 +19181,6 @@
       "lineageReason": "no-matching-lineage"
     },
     {
-      "id": "pmid:40468902",
-      "pmid": "40468902",
-      "title": "Airway management in patients living with obesity: best practice recommendations from the Society for Obesity and Bariatric Anaesthesia: Endorsed by the All Wales Airway Group, Scottish Airway Group and Difficult Airway Society.",
-      "pubDate": "2025 Sep",
-      "journal": "Anaesthesia",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Systematic Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:37:41.690Z",
-      "abstract": "INTRODUCTION: Patients living with obesity present specific challenges for airway management. They have been overrepresented repeatedly in studies looking at complications associated with airway management. Whilst generic airway guidelines offer assistance, there are no evidence-based guidelines specific to this group of patients to support safe and effective airway management.\nMETHODS: An expert multidisciplinary working party was convened on behalf of the Society of Obesity and Bariatric Anaesthesia to conduct this work. A systematic review was performed and was followed by a three-round Delphi process.\nRESULTS: Forty-three recommendations are made which cover a number of key areas of practice including: pre-assessment; planning; peroxygenation; tracheal intubation; supraglottic airway devices; tracheal extubation; training; and organisational responsibilities.\nDISCUSSION: It is hoped the recommendations made will improve the safety and efficacy of airway management in patients living with obesity. They are not intended to replace current airway management guidelines.",
-      "meshTerms": [
-        "Humans",
-        "Airway Management",
-        "Obesity",
-        "Intubation, Intratracheal",
-        "Bariatric Surgery",
-        "Delphi Technique",
-        "Airway Extubation",
-        "Societies, Medical",
-        "Anesthesia"
-      ],
-      "keywords": [
-        "airway",
-        "guidelines",
-        "obesity",
-        "tracheal intubation"
-      ],
-      "doi": "10.1111/anae.16647",
-      "pmcid": "PMC12351209",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 7.38827046528448,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 1.38827046528448,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:35.680Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "비만 환자 기도관리 권고 — 응급 실무",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|airway-management-patients-living-with-obesity-best-from-society-obesity-bariatric-anaesthesia-endorsed-by-all-wales-airway-group-scottish-airway-group-difficult-airway-society",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:40440059",
       "pmid": "40440059",
       "title": "Impact of ERS/ATS 2022 bronchodilator response guidelines in asthma control.",
@@ -39603,7 +39523,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -40876,7 +40796,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41675,7 +41595,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42595,7 +42515,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42768,7 +42688,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43186,7 +43106,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -45377,7 +45297,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -45576,7 +45496,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46379,7 +46299,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46443,7 +46363,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "esc|management-heart-transplant-recipients-non-heart-transplant-health-care-provider-clinical-heart-failure-association-hfa-association-cardiovascular-nursing-allied-professions-acnap",
       "supersedes": [],
       "lineageReview": false,
@@ -46513,7 +46433,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46581,7 +46501,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46644,7 +46564,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46709,7 +46629,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46772,7 +46692,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46834,7 +46754,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46892,7 +46812,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -46961,7 +46881,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47031,7 +46951,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47111,7 +47031,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47179,7 +47099,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47241,7 +47161,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47320,7 +47240,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47402,7 +47322,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47501,7 +47421,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47602,7 +47522,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47683,7 +47603,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47765,7 +47685,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47828,7 +47748,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47897,7 +47817,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47971,7 +47891,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.328Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -48037,7 +47957,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -48100,7 +48020,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -48180,7 +48100,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48244,7 +48164,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -48308,7 +48228,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-outcomes-nationwide-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -48371,7 +48291,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48438,7 +48358,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-14T01:36:06.327Z",
+      "lastSeenAt": "2026-11-15T01:12:34.055Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -63393,6 +63313,168 @@
         ]
       },
       "publishedAt": "2026-11-14"
+    },
+    {
+      "id": "pmid:40468902",
+      "pmid": "40468902",
+      "title": "Airway management in patients living with obesity: best practice recommendations from the Society for Obesity and Bariatric Anaesthesia: Endorsed by the All Wales Airway Group, Scottish Airway Group and Difficult Airway Society.",
+      "pubDate": "2025 Sep",
+      "journal": "Anaesthesia",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Systematic Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:37:41.690Z",
+      "abstract": "INTRODUCTION: Patients living with obesity present specific challenges for airway management. They have been overrepresented repeatedly in studies looking at complications associated with airway management. Whilst generic airway guidelines offer assistance, there are no evidence-based guidelines specific to this group of patients to support safe and effective airway management.\nMETHODS: An expert multidisciplinary working party was convened on behalf of the Society of Obesity and Bariatric Anaesthesia to conduct this work. A systematic review was performed and was followed by a three-round Delphi process.\nRESULTS: Forty-three recommendations are made which cover a number of key areas of practice including: pre-assessment; planning; peroxygenation; tracheal intubation; supraglottic airway devices; tracheal extubation; training; and organisational responsibilities.\nDISCUSSION: It is hoped the recommendations made will improve the safety and efficacy of airway management in patients living with obesity. They are not intended to replace current airway management guidelines.",
+      "meshTerms": [
+        "Humans",
+        "Airway Management",
+        "Obesity",
+        "Intubation, Intratracheal",
+        "Bariatric Surgery",
+        "Delphi Technique",
+        "Airway Extubation",
+        "Societies, Medical",
+        "Anesthesia"
+      ],
+      "keywords": [
+        "airway",
+        "guidelines",
+        "obesity",
+        "tracheal intubation"
+      ],
+      "doi": "10.1111/anae.16647",
+      "pmcid": "PMC12351209",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 7.38827046528448,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 1.38827046528448,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:35.680Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "비만 환자 기도관리 권고 — 응급 실무",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|airway-management-patients-living-with-obesity-best-from-society-obesity-bariatric-anaesthesia-endorsed-by-all-wales-airway-group-scottish-airway-group-difficult-airway-society",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40468902",
+          "title": "Airway management in patients living with obesity: best practice recommendations from the Society for Obesity and Bariatric Anaesthesia: Endorsed by the All Wales Airway Group, Scottish Airway Group and Difficult Airway Society.",
+          "journal": "Anaesthesia",
+          "pubDate": "2025 Sep",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40468902/",
+          "doi": "10.1111/anae.16647"
+        },
+        "org": "SOBA (Society for Obesity and Bariatric Anaesthesia), endorsed by All Wales Airway Group, Scottish Airway Group and Difficult Airway Society",
+        "version": "2025",
+        "title_ko": "비만 환자의 기도 관리: SOBA(비만·대사수술 마취학회) 모범진료 권고 — All Wales Airway Group, Scottish Airway Group, Difficult Airway Society 공동 승인",
+        "scope_ko": "비만과 함께 살아가는(일반적으로 BMI≥30 kg/m², BMI≥40에서 특히 고위험) 성인 수술·마취 환자의 기도 관리를 다루는, 비만에 특화된 최초의 근거기반 모범진료 권고(총 43개). 사전평가·계획·과산소화(peroxygenation)·기관삽관·성문상기도기(SAD)·발관·교육·조직적 책임의 전 과정을 포괄한다.",
+        "summary": [
+          "All patients living with obesity should have a formal airway assessment in advance of surgery, and be consented for obesity-related complications including airway difficulties (Grade D, strong recommendation); patients already on home CPAP should bring their device.",
+          "Difficult facemask ventilation — not difficult intubation per se — is the key obesity hazard: it is associated with composite airway failure and a ~10-fold increase in the risk of failed intubation, so it must be central to the airway strategy.",
+          "Preoxygenate (peroxygenate) in a ramped, head-up position of ≥30°; use high-flow nasal oxygen (HFNO) as the first-line method and continue nasal oxygen during laryngoscopy to delay desaturation, given reduced FRC and increased metabolic O2 demand.",
+          "Use a videolaryngoscope as first-line for tracheal intubation (Grade A), with a hyperangulated blade where training is sufficient; maintain a low threshold for awake tracheal intubation and perform intubation on the operating table (not the anaesthetic room).",
+          "When a supraglottic airway is used as the primary airway, use a second-generation device and maintain head-up positioning; SADs may also rescue oxygenation between intubation attempts when facemask ventilation is difficult.",
+          "Plan for emergency front-of-neck airway in advance: pre-induction ultrasound identification of the cricothyroid membrane may be considered, and awake/regional techniques considered when plan D is anticipated.",
+          "Extubate high-risk patients in the head-up position with a high inspired oxygen fraction, considering extubation directly onto HFNO or CPAP.",
+          "Organisational/training duties: flag BMI ≥40 kg/m² patients and allocate extra theatre time, ensure suitable equipment and manual-handling/positioning aids, designate a departmental obesity lead, and provide obesity-specific airway training (Grade D, strong recommendations)."
+        ],
+        "summary_ko": [
+          "비만 환자는 수술 전 공식적인 기도 평가를 받아야 하고, 기도 곤란을 포함한 비만 관련 합병증에 대해 동의를 받아야 한다(Grade D, 강한 권고). 가정에서 CPAP를 쓰는 환자는 기기를 지참한다.",
+          "핵심 위험은 어려운 삽관 자체가 아니라 '어려운 안면마스크 환기'다 — 이는 복합적 기도 실패와 연관되며 삽관 실패 위험을 약 10배 높이므로 기도 전략의 중심에 두어야 한다.",
+          "과산소화는 램프·머리 올림(head-up) ≥30° 자세에서 시행하고, HFNO(고유량 비강 산소)를 1차 방법으로 사용하며 후두경 조작 중에도 비강 산소를 유지해 탈산소화를 지연시킨다(FRC 감소·대사 산소요구 증가 때문).",
+          "기관삽관은 비디오후두경을 1차로 사용한다(Grade A). 훈련이 충분하면 과각(hyperangulated) 블레이드를 선호하고, 각성하 기관삽관(awake intubation)의 역치를 낮게 유지하며, 삽관은 마취유도실이 아니라 수술대 위에서 시행한다.",
+          "성문상기도기(SAD)를 1차 기도로 쓸 경우 2세대 기기를 사용하고 head-up 자세를 유지한다. 또한 안면마스크 환기가 어려울 때 삽관 시도 사이 산소화를 구제하는 데 쓸 수 있다.",
+          "응급 전경부 기도(FONA)를 미리 계획한다 — 유도 전 초음파로 윤상갑상막(cricothyroid membrane)을 확인하는 것을 고려할 수 있고, plan D가 예상되면 각성/부위마취 기법을 고려한다.",
+          "고위험 환자의 발관은 높은 흡입 산소분율로 head-up 자세에서 시행하고, HFNO 또는 CPAP로 바로 발관하는 것을 고려한다.",
+          "조직·교육적 책임: BMI≥40 kg/m² 환자를 사전 표시하고 추가 수술시간을 배정하며, 적절한 장비와 이송·체위 보조기구를 확보하고, 부서별 비만 담당(obesity lead)을 지정하며, 비만 특화 기도 교육을 제공한다(Grade D, 강한 권고)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "비만 특화 기도 지침의 신설(이전엔 부속 조항뿐)",
+            "detail": "Previously, obesity-specific airway advice existed only as an addendum/subsection within generic airway or peri-operative obesity guidelines. This is the first standalone, evidence-informed best-practice document dedicated to airway management in patients living with obesity (43 recommendations via systematic review + 3-round Delphi), not intended to replace generic airway guidelines but to supplement them.",
+            "detail_ko": "이전에는 비만 특화 기도 권고가 일반 기도 지침이나 수술기 비만 지침의 '부록/소절'로만 존재했다. 이번 문서는 비만 환자 기도 관리에 전용으로 만들어진 최초의 독립형 근거기반 모범진료 문서다(체계적 고찰 + 3라운드 Delphi로 43개 권고). 기존 일반 기도 지침을 대체하는 것이 아니라 보완한다."
+          },
+          {
+            "topic": "과산소화: HFNO를 1차로",
+            "detail": "Generic practice relied on facemask preoxygenation; the obesity-specific guidance elevates high-flow nasal oxygen (HFNO) to the first-line peroxygenation method in a ≥30° head-up/ramped position, and recommends continuing nasal oxygen during laryngoscopy, because reduced FRC and raised metabolic O2 demand cause rapid desaturation.",
+            "detail_ko": "일반 진료는 안면마스크 전산소화에 의존했으나, 비만 특화 권고는 ≥30° head-up/램프 자세에서 HFNO를 1차 과산소화 방법으로 격상하고 후두경 조작 중에도 비강 산소를 유지하도록 권고한다 — FRC 감소와 대사 산소요구 증가로 탈산소화가 빠르기 때문이다."
+          },
+          {
+            "topic": "기관삽관: 비디오후두경 1차 (Grade A)",
+            "detail": "Rather than leaving device choice to operator preference, the guideline specifies a videolaryngoscope as first-line for intubation (Grade A), favouring a hyperangulated blade where training permits, and advises performing intubation on the operating table rather than in the anaesthetic room to avoid transfer-related circuit disconnection and desaturation.",
+            "detail_ko": "기구 선택을 시술자 재량에 맡기던 관행과 달리, 이 지침은 비디오후두경을 삽관 1차로 명시하고(Grade A), 훈련이 가능하면 과각 블레이드를 선호하며, 이송 중 회로 분리·탈산소화를 피하기 위해 마취유도실이 아닌 수술대 위에서 삽관하도록 권고한다."
+          },
+          {
+            "topic": "새 위험인자 반영: GLP-1 작용제·SGLT2 억제제",
+            "detail": "The guideline newly incorporates the increased use of GLP-1 receptor agonists and SGLT2 inhibitors in this population as factors raising pulmonary aspiration risk, to be included in individual risk assessment and airway strategy — a consideration absent from earlier generic airway guidance.",
+            "detail_ko": "이 지침은 비만 인구에서 GLP-1 수용체 작용제와 SGLT2 억제제 사용 증가를 폐흡인 위험을 높이는 새 요인으로 반영해 개별 위험평가와 기도 전략에 포함하도록 한다 — 이전 일반 기도 지침에는 없던 고려사항이다."
+          },
+          {
+            "topic": "비만 정의 기준의 변화 반영",
+            "detail": "The document notes a shift away from the classic BMI > 30 kg/m² threshold: the Lancet Commission redefined clinical obesity and suggested excess adiposity can be assumed at BMI > 40 kg/m², which is used as an operational high-risk flag for airway planning and extra theatre time.",
+            "detail_ko": "이 문서는 고전적 BMI>30 kg/m² 기준에서 벗어난 변화를 반영한다 — Lancet Commission이 임상적 비만을 재정의하고 BMI>40 kg/m²에서 과다 지방을 가정할 수 있다고 제안했으며, 이를 기도 계획·추가 수술시간 배정의 고위험 표시 기준으로 삼는다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "For EM/CCM, treat intubation of the patient with obesity as physiologically high-risk from the outset: position ramped/head-up ≥30°, default to HFNO (apnoeic oxygenation continued through laryngoscopy), and reach first for a videolaryngoscope. Anticipate difficult bag-mask ventilation (the real obesity hazard, ~10× risk of failed intubation) and pre-plan the rescue chain — second-generation SAD and front-of-neck access with pre-procedure ultrasound CTM identification. Factor GLP-1/SGLT2 use and OSA into aspiration/desaturation risk, and extubate or transition high-risk patients onto HFNO/CPAP in a head-up position.",
+        "practiceImpact_ko": "응급의학·중환자의학에서는 비만 환자 삽관을 처음부터 생리적으로 고위험으로 다룬다: 램프/head-up ≥30° 체위, HFNO 기본 적용(무호흡 산소화를 후두경 조작 내내 유지), 비디오후두경을 우선 선택한다. 비만의 진짜 위험인 '어려운 백-마스크 환기'(삽관 실패 위험 약 10배)를 예상하고 구제 사슬을 미리 짠다 — 2세대 SAD, 유도 전 초음파 윤상갑상막 확인을 포함한 전경부 기도 접근. GLP-1/SGLT2 사용과 OSA를 흡인·탈산소화 위험에 반영하고, 고위험 환자는 head-up 자세에서 HFNO/CPAP로 발관·전환한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40468902",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40468902/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1111/anae.16647",
+            "url": "https://doi.org/10.1111/anae.16647"
+          },
+          {
+            "label": "웹 — Anaesthesia (Wiley) — McKechnie et al., SOBA airway management in obesity (primary article landing page; full text returned HTTP 403, not readable)",
+            "url": "https://associationofanaesthetists-publications.onlinelibrary.wiley.com/doi/10.1111/anae.16647"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-15"
     }
   ],
   "rejected": [
@@ -67567,7 +67649,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-14T01:35:57.968Z",
+      "discoveredAt": "2026-11-15T01:12:23.894Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -68995,7 +69077,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-14T01:35:57.968Z",
+      "discoveredAt": "2026-11-15T01:12:23.894Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -69022,7 +69104,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-14T01:35:57.968Z",
+      "discoveredAt": "2026-11-15T01:12:23.894Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -69095,9 +69177,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261114_103442:guideline:2026-11-14",
+    "runId": "trend_review_20261115_101106:guideline:2026-11-15",
     "outcome": "published",
-    "publishedId": "pmid:40825204",
+    "publishedId": "pmid:40468902",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -69122,15 +69204,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 134,
+        "mergedTotal": 135,
         "overlapCount": 1,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 4,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2026 Oct 31",
         "window": {
-          "minDate": "2026/10/15",
-          "maxDate": "2026/11/14"
+          "minDate": "2026/10/16",
+          "maxDate": "2026/11/15"
         },
         "retmax": 60,
         "topics": [
@@ -69165,8 +69247,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 11,
-            "idsFetched": 11,
+            "totalFound": 12,
+            "idsFetched": 12,
             "truncated": false,
             "error": null
           },
@@ -69234,7 +69316,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 126,
+        "topicOnlyCount": 127,
         "ptPmids": [
           "42858614",
           "42837684",
@@ -69244,9 +69326,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 134,
-          "enriched": 134,
-          "withAbstract": 107,
+          "requested": 135,
+          "enriched": 135,
+          "withAbstract": 108,
           "error": null
         }
       },
@@ -69683,6 +69765,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43025661",
+          "title": "Management of suspected infectious and autoimmune encephalitis in children - National Guidelines from the United Kingdom Joint Societies.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43020389",
           "title": "Conflicts of Interest and Broad-Spectrum First-Line Antibiotic Recommendations in Community-Acquired Pneumonia Guidelines: A Meta-epidemiological Study Using the WHO AWaRe Classification.",
           "region": null,
@@ -69905,19 +69994,19 @@
         }
       ],
       "decisions": {
-        "queued": 200,
+        "queued": 199,
         "needsReview": 468,
         "rejected": 134,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:40825204",
+        "candidateId": "pmid:40468902",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-14T01:40:59.083Z",
+  "updatedAt": "2026-11-15T01:14:21.788Z",
   "configVersion": "guideline-v2"
 }
