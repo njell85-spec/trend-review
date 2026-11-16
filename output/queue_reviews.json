@@ -836,23 +836,6 @@
       "status": "queued"
     },
     {
-      "pmid": "40323451",
-      "title": "Atrial fibrillation in critical illness: state of the art.",
-      "journal": "Intensive Care Med",
-      "score": 7.6,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "중증질환 심방세동 state of art — 핵심",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40411623",
       "title": "How to approach a patient hospitalized for pneumonia who is not responding to treatment?",
       "journal": "Intensive Care Med",
@@ -15189,6 +15172,77 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40323451",
+      "title": "Atrial fibrillation in critical illness: state of the art.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중증질환 심방세동 state of art — 핵심",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-16",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40323451",
+          "title": "Atrial fibrillation in critical illness: state of the art.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-5-5",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40323451/",
+          "doi": "10.1007/s00134-025-07895-0"
+        },
+        "title_ko": "중증질환에서의 심방세동: 현 시점의 종설(State of the Art)",
+        "scope_ko": "중환자에서 가장 흔한 부정맥인 심방세동(AF)의 역학·병태생리·위험인자, 예측과 예방, 급성기 관리(속도조절 대 리듬조절), 항응고, 그리고 장기 예후와 퇴원 후 추적관찰을 정리하고, 현행 진료지침을 중증질환이라는 맥락에서 재해석하며 지식의 공백과 연구 기회를 짚는 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "개요 — 중증질환에서의 심방세동",
+            "body_ko": "심방세동(AF)은 중증 환자가 겪는 부정맥 중 가장 흔하다. AF는 혈전색전증, 심부전, 사망 위험 증가를 포함해 단기 및 장기 예후 악화와 연관되어 왔다.\n\n병태생리가 복잡하고 다인성이며, 환자군이 이질적이고, 이 인구집단에서 타당성이 검증된 위험층화 임상도구가 없기 때문에 중증질환에서의 AF는 예측·예방·관리가 모두 어렵다. 저자들은 기저 심장 구조와 기능, 교정 가능한 부정맥 유발인자, AF 합병증 위험 등 환자 요인을 함께 고려하는 개별화된 관리 전략이 필요하다고 본다. 아울러 이러한 중재가 장기 예후에 미치는 영향에 대한 평가가 요구된다. AF를 겪은 중증질환 생존자는 퇴원 후 체계적 추적이 필요한 독특한 집단이지만, 그 추적의 빈도·종류·강도는 아직 알려져 있지 않다. 이 종설은 근거를 요약하고, 현행 지침을 중증질환이라는 상황 속에서 맥락화하며, 이 부정맥에 대한 이해를 넓히고 환자 예후를 개선하기 위한 지식의 공백과 연구 기회를 부각하는 것을 목표로 한다.\n\n(이 절은 논문 초록 자체에서 옮긴 내용이다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "장기 예후와 퇴원 후 추적관찰",
+            "body_ko": "AF를 겪은 중증질환 생존자는 퇴원 후 체계적 추적이 필요한 독특한 집단이다. 그러나 그 추적의 빈도·종류·강도는 아직 알려져 있지 않다. 저자들은 이러한 중재가 장기 예후에 미치는 영향에 대한 평가가 필요하다고 강조한다.\n\n(이 절은 논문 초록 자체에서 옮긴 내용이다.)",
+            "origin": "article"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "4d9b88c1a63c0f15aa3272cbc463affb9ed4a2428d617b2d078bbecfeecdedd6",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-16T01:25:30.147Z",
+          "resultFingerprint": "6f5443b8d22ee1a59c94b24a858c290321f9817bf9691ceb1eff0a30a445c8a9",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 0,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서는 혈역학 상태와 좌심실 기능으로 치료를 나누게 된다 — 불안정하면 전기적 심율동전환(ICU 성공률은 낮음)과 아미오다론(마그네슘 병용 시 향상), 혈압 영향이 적은 란디올롤/에스몰롤을 고려하고, 안정적(LVEF >40%)이면 베타차단제·딜티아젬 등으로 속도조절하되 승압제(특히 카테콜아민) 최소화를 예방의 축으로 삼는다. 항응고는 CHA₂DS₂-VASc가 이 집단에서 잘 맞지 않고 검증된 도구가 없어 개별화가 불가피하며, NOAF를 겪은 생존자는 재발 위험이 높으므로 퇴원 시 심장내과 의뢰와 체계적 추적을 계획해야 한다(단, 표준 프로토콜은 아직 없음).",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40323451",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40323451/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-07895-0",
+            "url": "https://doi.org/10.1007/s00134-025-07895-0"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15246,9 +15300,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-15",
+    "date": "2026-11-16",
     "outcome": "published",
-    "publishedId": "36682372"
+    "publishedId": "40323451"
   },
-  "updatedAt": "2026-11-15"
+  "updatedAt": "2026-11-16"
 }

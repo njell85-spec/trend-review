@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41838001",
-      "title": "Incidence of Adverse Events in Peripheral Intravenous Vasopressor Use: A Systematic Review and Meta-Analysis.",
-      "journal": "JAMA network open",
-      "score": 7.5,
-      "topic": "sepsis_shock",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.52,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-06"
-    },
-    {
       "pmid": "42958418",
       "title": "Chlorhexidine within a standardized oral-care bundle for the prevention of ventilator-associated pneumonia: a pragmatic cluster-randomized crossover trial in six medical intensive care units.",
       "journal": "Critical care (London, England)",
@@ -728,6 +713,22 @@
       },
       "addedAt": "2026-11-06",
       "publishedAt": "2026-11-15"
+    },
+    {
+      "pmid": "41838001",
+      "title": "Incidence of Adverse Events in Peripheral Intravenous Vasopressor Use: A Systematic Review and Meta-Analysis.",
+      "journal": "JAMA network open",
+      "score": 7.5,
+      "topic": "sepsis_shock",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.52,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06",
+      "publishedAt": "2026-11-16"
     }
   ],
   "rejected": [
@@ -743,9 +744,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-15",
+    "date": "2026-11-16",
     "outcome": "published",
-    "publishedId": "42057084"
+    "publishedId": "41838001"
   },
-  "updatedAt": "2026-11-15"
+  "updatedAt": "2026-11-16"
 }

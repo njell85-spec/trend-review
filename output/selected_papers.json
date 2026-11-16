@@ -1188,5 +1188,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41838001",
+    "title": "Incidence of Adverse Events in Peripheral Intravenous Vasopressor Use: A Systema",
+    "date": "2026-11-16",
+    "topic": "sepsis_shock",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]
