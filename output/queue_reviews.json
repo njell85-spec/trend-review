@@ -904,23 +904,6 @@
       "status": "queued"
     },
     {
-      "pmid": "40982016",
-      "title": "Pathophysiology and clinical applications of PEEP in acute brain injury.",
-      "journal": "Intensive Care Med",
-      "score": 7.6,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "급성 뇌손상 PEEP — 호흡·신경 중환자 복습",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39007570",
       "title": "Executive Summary-Society of Critical Care Medicine Guideline and American Society of Health-System Pharmacists for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
       "journal": "Crit Care Med",
@@ -15326,6 +15309,114 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "40982016",
+      "title": "Pathophysiology and clinical applications of PEEP in acute brain injury.",
+      "journal": "Intensive Care Med",
+      "score": 7.6,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "급성 뇌손상 PEEP — 호흡·신경 중환자 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-18",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "40982016",
+          "title": "Pathophysiology and clinical applications of PEEP in acute brain injury.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025-9-22",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40982016/",
+          "doi": "10.1007/s00134-025-08111-9"
+        },
+        "title_ko": "급성 뇌손상에서 PEEP의 병태생리와 임상 적용",
+        "scope_ko": "급성 뇌손상 환자에게 기계환기를 적용할 때 PEEP가 뇌-심장-폐 상호작용을 통해 두개내압·뇌관류압·뇌관류에 미치는 직접·간접 효과를 정리하고, 폐 보호 효과와 뇌관류에 대한 잠재적 악영향 사이의 균형을 맞추기 위한 개별화 환기 설정의 필요성을 다루는 종설이다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "급성 뇌손상에서 기계환기의 역할",
+            "body_ko": "기계환기는 급성 뇌손상 환자에서 생명 유지를 위해 필요한 치료로, 기도 개방성을 유지하고 가스교환을 최적화하며 이차적 뇌손상을 예방하는 목적을 가진다. 저자들은 이 세 가지 목표를 기계환기의 핵심 역할로 제시한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "PEEP의 폐 보호 측면 이점",
+            "body_ko": "PEEP(호기말 양압)는 기계환기의 핵심 구성요소로, 무기폐를 예방하고 산소화를 개선하며 폐포 모집(recruitment)을 안정화하는 데 도움을 준다. 이를 통해 폐 보호 측면에서 잠재적 이득을 제공할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "뇌손상 환자에서 PEEP에 대한 신경학적 내약성의 문제",
+            "body_ko": "그러나 뇌손상 환자에서는 PEEP에 대한 신경학적 내약성(neurological tolerance)이 좋지 않을 수 있다. 더구나 폐 및 흉벽 탄성(elastance)의 가변성, 폐 모집가능성(recruitability), 심장 기능, 수액 상태, 그리고 뇌 자동조절(cerebral autoregulation)의 보존 여부가 서로 달라, 이 환자군에서 안전한 PEEP 범위에 대한 권고를 내리기가 더욱 어려워진다. 저자들은 이러한 변수들이 권고를 복잡하게 만든다고 분명히 밝힌다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "뇌-심장-폐 상호작용에 대한 PEEP의 생리적 효과",
+            "body_ko": "이 종설은 뇌-심장-폐 상호작용에 미치는 PEEP의 생리적 효과를 탐구하며, 특히 PEEP가 두개내압과 뇌관류압에 미치는 직접·간접 영향, 그리고 뇌관류 자체에 미치는 영향에 초점을 둔다. 즉 PEEP가 흉강내압을 매개로 심장 전부하와 정맥 환류, 나아가 뇌정맥 유출과 두개내압에 어떻게 연결되는지를 생리학적 관점에서 다룬다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "개별화된 기계환기 설정의 필요성",
+            "body_ko": "저자들은 PEEP의 호흡기계 이점을 뇌관류에 대한 잠재적 악영향과 저울질하기 위해 개별화된 기계환기 설정이 필요하다고 결론짓는다. 단일한 고정 프로토콜보다는 환자별 폐·흉벽 역학, 혈역학, 자동조절 상태에 맞춘 조정이 요구된다는 것이 핵심 메시지다. (주: 이하 수치·역치가 담긴 구체적 권고 본문은 본 논문 원문이 유료 장벽으로 확보되지 않아, 초록 수준까지만 원문으로 옮긴다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 뇌보호 환기에서의 구체적 설정 목표치",
+            "body_ko": "원문 본문을 확보하지 못해, 동일 주제를 다루는 권위 있는 2차 자료에서 구체적 역치를 보강한다. 중등도 PEEP(5–10 cmH₂O)는 대체로 잘 견디며, 혈역학적으로 안정되고 정상 혈량 상태인 환자에서는 엄격한 감시 하에 최대 15 cmH₂O까지 조심스럽게 적용할 수 있다. 다만 뇌정맥 환류 저하를 막기 위해 ICP 감시가 동반되어야 한다. 함께 제시되는 뇌손상 특이적 목표치는 다음과 같다: 고평부압(Pplat) ≤27 cmH₂O(일반 ARDS의 ≤30보다 엄격), 일회환기량 6–8 mL/kg(예측체중), 구동압(ΔP) <15 cmH₂O, 기계적 일(mechanical power) <17 J/min, PaCO₂ 35–40 mmHg의 정상탄산증 유지(ICP 위기 시에만 일시적으로 30–35 mmHg 허용 후 신속 복귀), PaO₂ 80–120 mmHg(SpO₂ 92–96%), 뇌조직 산소분압(PbtO₂) 20–30 mmHg, 침상 머리 거상 ≥30°. PEEP의 두개내 효과는 혈관내 용량·폐 유순도·기저 뇌 유순도에 좌우되어 '가변적이고 맥락 의존적'이라는 점이 강조된다.\n— 보강 출처: Brain Protective Ventilation Strategies in Severe Acute Brain Injury (PMC12518427) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12518427/)",
+            "origin": "augmented",
+            "sourceLabel": "Brain Protective Ventilation Strategies in Severe Acute Brain Injury (PMC12518427)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12518427/"
+          },
+          {
+            "heading_ko": "[웹 보강] 폐 모집가능성이 두개내 반응을 좌우한다 — 생리 연구 근거",
+            "body_ko": "PEEP가 ICP에 미치는 영향이 왜 환자마다 다른지를 보여주는 생리 연구를 보강한다. PEEP를 5에서 15 cmH₂O로 올렸을 때 침습적 ICP는 중앙값 14에서 23.5 mmHg로 유의하게 상승했고(p<0.001), 뇌관류압은 78에서 63 mmHg로 하락했다. 그러나 실제 폐포 모집량은 전체 폐 중량의 2.5%로 미미했으며, 핵심적으로 '모집된 조직량이 많을수록 ΔICP는 작았다'(rho=−0.78, p=0.0006). 즉 진짜 폐 모집이 일어나면 ICP 상승이 완화되고, 과팽창(hyperinflation)이 일어나면 악화된다. 호흡기계 유순도(Crs)의 변화와 PaCO₂ 변화가 ICP 상승과 독립적으로 연관되었다. 따라서 PEEP의 이득은 과팽창 없이 실제 모집을 달성할 때 성립하며, 임상의는 균일한 프로토콜을 적용하기보다 혈역학 상태·호흡역학·폐 형태(lung morphology)를 고려해 PEEP를 적정(titration)해야 한다.\n— 보강 출처: Effects of PEEP on Lung Recruitment, Respiratory Mechanics, and ICP in Brain-Injured Patients (PMC8558243) (https://pmc.ncbi.nlm.nih.gov/articles/PMC8558243)",
+            "origin": "augmented",
+            "sourceLabel": "Effects of PEEP on Lung Recruitment, Respiratory Mechanics, and ICP in Brain-Injured Patients (PMC8558243)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8558243"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "d0c0e65a39f53001299fc92a3acf871df3fc84b3da8e0407b77fba97aacb59c4",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-18T03:09:49.178Z",
+          "resultFingerprint": "074acbd62806793cbca08c2dd7b8ff10c9a2a01ca4256e53f7ca781f6402218a",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "급성 뇌손상 환자에서 PEEP는 무조건 피할 대상이 아니라, 폐 보호 이득과 뇌관류 위험을 저울질해 개별 적정해야 하는 설정이다. 중등도(5–10 cmH₂O)는 대체로 안전하게 적용하되, 그 이상으로 올릴 때는 ICP/CPP 감시 하에서 실제 폐 모집이 일어나는지(과팽창이 아닌지)를 확인하고, 정상혈량·머리 거상·정상탄산증 같은 뇌정맥 유출 최적화를 병행한다. 다만 구체적 수치의 상당 부분은 본 논문 초록을 넘어선 보강 자료에서 온 것이므로, 침상 적용 시 원문 전문을 별도로 확인하는 것이 바람직하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40982016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40982016/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-08111-9",
+            "url": "https://doi.org/10.1007/s00134-025-08111-9"
+          },
+          {
+            "label": "웹 — Brain Protective Ventilation Strategies in Severe Acute Brain Injury (PMC12518427)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12518427/"
+          },
+          {
+            "label": "웹 — Effects of PEEP on Lung Recruitment, Respiratory Mechanics, and ICP in Brain-Injured Patients (PMC8558243)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8558243"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15383,9 +15474,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-17",
+    "date": "2026-11-18",
     "outcome": "published",
-    "publishedId": "40411623"
+    "publishedId": "40982016"
   },
-  "updatedAt": "2026-11-17"
+  "updatedAt": "2026-11-18"
 }
