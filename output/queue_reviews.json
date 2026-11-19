@@ -836,23 +836,6 @@
       "status": "queued"
     },
     {
-      "pmid": "37909826",
-      "title": "The Roles of Venopulmonary Arterial Extracorporeal Membrane Oxygenation.",
-      "journal": "Crit Care Med",
-      "score": 7.5,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "VP-ECMO 역할 — 중환자 소생 실무",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "40668231",
       "title": "Clinical heterogeneity and phenotyping of post cardiac arrest brain injury: one size may not fit all.",
       "journal": "Intensive Care Med",
@@ -15417,6 +15400,102 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "37909826",
+      "title": "The Roles of Venopulmonary Arterial Extracorporeal Membrane Oxygenation.",
+      "journal": "Crit Care Med",
+      "score": 7.5,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "VP-ECMO 역할 — 중환자 소생 실무",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-19",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "37909826",
+          "title": "The Roles of Venopulmonary Arterial Extracorporeal Membrane Oxygenation.",
+          "journal": "Critical care medicine",
+          "pubDate": "2023-11-1",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/37909826/",
+          "doi": "10.1097/CCM.0000000000006094"
+        },
+        "title_ko": "정맥-폐동맥 체외막산소공급(V-PA ECMO)의 역할",
+        "scope_ko": "심폐부전 환자에서 정맥-폐동맥 체외막산소공급(V-PA ECMO) 지원의 사용을 다룬 간결한 종설이다. 저자들은 우심실(RV) 기능부전이 핵심 적응증이라는 전제 아래, V-PA ECMO가 연구된 네 가지 환자군(ARDS, LVAD 삽입 후 RV 기능부전, 폐이식 가교, 폐색전증)의 근거를 정리한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "목적 — 이 종설이 다루는 것",
+            "body_ko": "이 글은 심폐부전 환자에서 정맥-폐동맥 체외막산소공급(venopulmonary arterial ECMO, V-PA ECMO) 지원의 사용에 관한 간결한 '정본(definitive)' 종설을 표방한다. 핵심 전제는 V-PA ECMO가 우심실(RV) 기능부전에 대한 체외 지원 방식으로서 유망하다는 것이며, 저자들은 이 방식이 어떤 환자군에서, 어떤 근거 수준으로 연구되어 왔는지를 정리하는 데 초점을 둔다.\n\n(이하 절들은 이 논문의 초록이 밝힌 범위에서 옮긴 것이다. 논문 본문은 유료 장벽으로 확보하지 못했으며, 생리·술기의 세부는 아래 '보강' 절에서 2차 출처로 따로 표시해 덧붙였다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "자료원·연구 선택·자료 추출 (방법)",
+            "body_ko": "저자들은 PubMed 검색을 통해 원저(original investigation)들을 식별했으며, 사용한 검색어는 \"percutaneous right ventricular assist device\", \"oxy-RVAD\", \"V-PA ECMO\", \"veno-pulmonary arterial ECMO\"였다. 검색된 연구들은 관련성을 기준으로 검토·평가되었다.\n\n연구 선택 기준은 V-PA ECMO로 지원받은 환자가 3명을 초과(more than three patients)하여 포함된 연구였다. 포함된 연구들에서 환자에게 중요한 결과(patient-important outcomes)를 비롯해 임상적으로 의미 있는 자료를 추출·요약하여 논의하였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "자료 종합 — V-PA ECMO가 연구된 네 환자군",
+            "body_ko": "저자들은 V-PA ECMO가 연구되어 온 네 가지 환자군을 식별하였다.\n\n1) 급성호흡곤란증후군(ARDS)\n2) 좌심실보조장치(LVAD) 삽입 후의 우심실(RV) 기능부전\n3) 폐이식으로의 가교(bridge to lung transplantation)\n4) 폐색전증(pulmonary embolism)\n\n이 네 군이 현재까지 V-PA ECMO의 임상 근거가 축적되어 온 영역이다. (초록은 각 군의 세부 수치·결과까지는 제시하지 않으며, 본 번역은 초록 수준에서 그 범위만 옮긴다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "근거의 한계와 결론",
+            "body_ko": "식별된 연구 대부분은 소규모·단일기관·후향적(small, single center, and retrospective) 성격으로, V-PA ECMO의 효능(efficacy)에 대한 확정적 결론을 내리기 어렵다. 지금까지 어떤 적응증에 대해서도 V-PA ECMO의 효능을 평가한 임상시험(clinical trial)은 존재하지 않는다.\n\n결론적으로 저자들은 V-PA ECMO가 우심실 기능부전 환자에 대한 유망한(promising) 형태의 체외 지원이라고 본다. 향후 연구는 V-PA ECMO 사용의 최적 시점(optimal timing)과 대상 집단(populations)을 규명하는 데 초점을 두어야 한다고 제언한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] V-PA ECMO의 생리 — 폐동맥 복귀 캐뉼러로 RV 부하를 덜다",
+            "body_ko": "아래는 이 논문 본문을 확보하지 못해, 같은 주제를 다룬 증례 보고에서 V-PA ECMO의 작동 원리를 보강한 것이다(논문 저자들의 주장이 아님).\n\n표준 정맥-정맥(VV) ECMO(대퇴-경정맥 배치)에서 복귀 캐뉼러를 폐동맥으로 전진시켜 V-PA 구성으로 전환하는 방식이 기술된다. 보고된 증례에서는 19 Fr 정맥 캐뉼러를 우측 내경정맥을 통해 투시(fluoroscopy) 유도 하에 폐동맥 우분지로 진입시켰다.\n\n생리적 이점은 두 축이다. 첫째, 재순환(recirculation) 감소 — 복귀된 산소화 혈액이 흡인 캐뉼러로 다시 빨려드는 현상이 줄어 해당 증례에서 재순환이 25%→14%로 감소하고 전신 산소운반이 개선되었다. 둘째, 산소화 혈액을 폐동맥으로 직접 되돌려 보냄으로써 우심실에 가해지는 압력·용적 부하를 줄여 '기계적 우심실 부하 경감(RV unloading)'을 제공한다. 보고된 지표 변화: 동맥 산소포화도 88%→96%, PaO2 57→78 mmHg, 젖산 2.7→1.1 mmol/L, RV/LV 비 정상화, 분획단축률 33.5%→42.7%. (단일 증례 수치이므로 일반화에 주의.)\n— 보강 출처: J Cardiothorac Surg 증례 — PA 캐뉼러 삽입을 통한 난치성 저산소증·RV 기능부전 관리 (PMC9270772) (https://pmc.ncbi.nlm.nih.gov/articles/PMC9270772/)",
+            "origin": "augmented",
+            "sourceLabel": "J Cardiothorac Surg 증례 — PA 캐뉼러 삽입을 통한 난치성 저산소증·RV 기능부전 관리 (PMC9270772)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270772/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "80ce40a306256fb5124d41416c846a5736b4e69e3de28ca670238c8163edbde5",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-19T02:51:48.395Z",
+          "resultFingerprint": "2e21d8e007e70900b99938e1006a4dac59b8b839a60e9a436bf6db0d687f0e22",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "V-PA(또는 oxy-RVAD) ECMO는 RV 기능부전이 전면에 있는 환자 — 난치성 급성 폐성심을 동반한 ARDS, LVAD 후 RV 부전, 폐이식 가교, 중증 폐색전증 — 에서 복귀 혈류를 폐동맥으로 보내 RV를 부하 경감하는 선택지로 고려할 수 있다. 다만 모든 적응증에서 근거는 소규모·단일기관·후향적 수준에 머물고 무작위 임상시험이 전무하므로, 침상에서는 '효능이 입증된 치료'가 아니라 숙련된 ECMO 센터에서 최적 시점·대상을 신중히 가린 개별화된 구제 전략으로 접근해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 37909826",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37909826/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000006094",
+            "url": "https://doi.org/10.1097/CCM.0000000000006094"
+          },
+          {
+            "label": "웹 — Critical Care Medicine — 논문 공식 페이지(유료 장벽, 본문 확보 실패)",
+            "url": "https://journals.lww.com/ccmjournal/abstract/2024/02000/the_roles_of_venopulmonary_arterial_extracorporeal.12.aspx"
+          },
+          {
+            "label": "웹 — J Cardiothorac Surg 증례 — PA 캐뉼러를 통한 난치성 저산소증·RV 기능부전 관리 (PMC9270772)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270772/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15474,9 +15553,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "outcome": "published",
-    "publishedId": "40982016"
+    "publishedId": "37909826"
   },
-  "updatedAt": "2026-11-18"
+  "updatedAt": "2026-11-19"
 }

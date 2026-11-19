@@ -18183,88 +18183,6 @@
       "lineageReason": "no-matching-lineage"
     },
     {
-      "id": "pmid:40465080",
-      "pmid": "40465080",
-      "title": "Diagnosis and treatment of invasive pulmonary aspergillosis in critically ill intensive care patients: executive summary of the German national guideline (AWMF 113-005).",
-      "pubDate": "2025 Aug",
-      "journal": "Infection",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:37:41.690Z",
-      "abstract": "PURPOSE: The executive summary of the guideline aims to provide the most relevant recommendations on the diagnosis and treatment of invasive pulmonary aspergillosis in critically ill patients in the intensive care unit.\nMETHODS: The guideline's work included a systematic literature search, selection and assessment of the data relevant to the issues identified. Key questions included the areas of epidemiology, risk factors, diagnostics, and therapy. They were discussed analogous to a PICO scheme within the guideline committee, with subsequent working groups proposing recommendations for specific key questions, which were then again discussed and finalized by the entire guideline committee.\nRESULTS: In addition to the classic risk factors (persistent neutropenia, allogeneic stem cell transplantation, congenital or acquired immunodeficiency, etc.), decompensated liver cirrhosis, COPD, solid tumours and viral pneumonia (influenza, COVID-19) have been established as risk factors for critically ill patients in need of intensive care. If there is no adequate improvement or even further clinical deterioration of the respiratory status in critically ill patients, the presence of IPA should be considered and appropriate diagnostic tests should be initiated. Diagnostics should include a CT scan of the chest and a broncho-alveolar lavage with culture for moulds, testing for galactomannan and PCR. Isavuconazole and voriconazole are recommended as first-line treatment, liposomal amphotericin B as an alternative, with posaconazole (PCZ) or the echinocandins (as an add-on to azole or polyene treatment) being additional options for salvage treatment.\nCONCLUSION: Invasive aspergillosis in critically ill patients represents a diagnostic and therapeutic challenge. If indicated, invasive aspergillosis should be considered and appropriate diagnostic tests initiated. Isavuconazole and voriconazole are recommended as first-line treatment, liposomal amphotericin B as an alternative.",
-      "meshTerms": [
-        "Humans",
-        "Invasive Pulmonary Aspergillosis",
-        "Critical Illness",
-        "Antifungal Agents",
-        "Germany",
-        "Risk Factors",
-        "Critical Care",
-        "Intensive Care Units",
-        "COVID-19",
-        "Voriconazole"
-      ],
-      "keywords": [
-        "Azoles",
-        "Critically ill patients",
-        "Drug interactions",
-        "Guideline",
-        "Intensive care medicine",
-        "Invasive pulmonary aspergillosis"
-      ],
-      "doi": "10.1007/s15010-025-02572-2",
-      "pmcid": "PMC12316785",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.87510418310784,
-      "breakdown": {
-        "authority": 0,
-        "topic": 3.5999999999999996,
-        "recency": 1.2751041831078405,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "needsReview",
-      "documentType": "guideline",
-      "reasons": [
-        "guideline-commentary-or-digest"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:22.888Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "중환자 침습성 폐아스페르길루스증 진단·치료 지침, ICU 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|diagnosis-treatment-invasive-pulmonary-aspergillosis-critically-ill-intensive-care-patients-executive-summary-german-national-awmf-113-005",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:40688888",
       "pmid": "40688888",
       "title": "Improving Patient Care and Clinical Services: Compliance With the National Institute for Health and Care Excellence (NICE) Guidelines for Venous Thromboembolism Prophylaxis After Hip and Knee Arthroplasty.",
@@ -39461,7 +39379,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -40734,7 +40652,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -42453,7 +42371,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42626,7 +42544,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -43044,7 +42962,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -45150,7 +45068,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "aha|state-cardiovascular-disease-stroke-hispanic-latino-adults-united-states-from",
       "supersedes": [],
       "llmFit": {
@@ -45349,7 +45267,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46152,7 +46070,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46286,7 +46204,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "unknown|aasld-aga-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46354,7 +46272,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46417,7 +46335,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46482,7 +46400,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-ii-stroke-prevention-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46545,7 +46463,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "unknown|asia-pacific-heart-rhythm-society-aphrs-part-i-epidemiology-detection-screening-integrated-patient-care-atrial-fibrillation",
       "supersedes": [],
       "lineageReview": false,
@@ -46607,7 +46525,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46665,7 +46583,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -46734,7 +46652,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -46804,7 +46722,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46884,7 +46802,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -46952,7 +46870,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -47014,7 +46932,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47093,7 +47011,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47175,7 +47093,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47274,7 +47192,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47375,7 +47293,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47456,7 +47374,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47538,7 +47456,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47601,7 +47519,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47670,7 +47588,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47744,7 +47662,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47810,7 +47728,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -47873,7 +47791,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47953,7 +47871,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48017,7 +47935,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -48033,19 +47951,37 @@
     {
       "id": "pmid:43006793",
       "pmid": "43006793",
-      "title": "Adoption of ESC Guideline-Directed Heart Failure Pharmacotherapy and Outcomes: A Nationwide Claims-Based Cohort Study.",
-      "pubDate": "2026 Nov 10",
+      "title": "Adoption of ESC guideline-directed heart failure pharmacotherapy and post-discharge outcomes: a nationwide German claims-based cohort study.",
+      "pubDate": "2026 Nov 6",
       "journal": "ESC heart failure",
       "publicationTypes": [
-        "Journal Article"
+        "Journal Article",
+        "Multicenter Study"
       ],
       "discoveredBy": [
         "pubmed-topic"
       ],
       "discoveredAt": "2026-11-11T01:23:01.700Z",
-      "abstract": "AIMS: The actual European heart failure (HF) guidelines recommend the combination of four drugs as a standard therapy (angiotensin-converting enzyme inhibitor (ACEI)/angiotensin receptor blocker (ARB)/angiotensin receptor-neprilysin inhibitor (ARNI); beta-blocker (BB); mineralocorticoid receptor antagonist (MRA); sodium-glucose co-transporter 2 inhibitor (SGLT-2i)) in patients with heart failure and reduced ejection fraction (HFrEF). We investigated the current use of this combined treatment in comparison to partly using these drugs in routine data with respect to outcomes of mortality and readmission.\nMETHODS: We included anonymized data from all patients who were insured with Germany's largest health insurer and had a claims record for hospitalization (2021-2023, follow-up in 2024) with a primary hospital diagnosis of HF. The use of different combinations of the four drug classes and their association with mortality and readmission within 91-365 days following the index stay were analysed (n = 307,755). Data were adjusted for a large set of potential confounders including age, sex, and comorbidities. In addition, the frequency of different 2-, 3-, and 4-drug heart failure medications was assessed from 2019 to 2023.\nRESULTS: In 2019 the dominant combination of drugs was ACEI/ARB and BB in nearly 37.84% of all cases. By 2023, the dominating combination was ACEI/ARB/ARNI, BB and SGLT-2i with or without an additional MRA (40.85%). The complete four-pillar therapy was prescribed in 21.81% of cases, while the old combination of ACEI/ARB and BB declined to 21.07%. Outcomes were assessed in 307,755 cases. In total, 55,985 of 298,535 (18.8%) included HF patients died 91-365 days after hospital discharge. Multivariable Cox proportional hazards models indicated a significantly lower mortality risk when patients had a combined treatment of all four drugs compared to a two-drug therapy (HR 0.89, 95% CI 0.86-0.92). The four-drug therapy was more effective with respect to mortality compared to the three-drug combination with an MRA (0.85, 95% CI 0.82-0.89). The comparison with a three-drug combination including an SGLT-2i performed equally (0.99, CI 0.95-1.03). Female sex was an independent negative predictor of four-drug therapy prescription after multivariable adjustment (AOR 0.62, 95% CI 0.60-0.63).\nCONCLUSIONS: Our study suggests that the comprehensive four-drug therapy for heart failure is increasingly implemented in routine care and is independently associated with lower mortality and readmission rates. A three-drug combination including an SGLT-2i may be equivalent in selected cases. Female sex is associated with a lower likelihood of four-drug therapy prescription. These hypothesis-generating results underscore the necessity of investigating sex-specific clinical phenotypes and prescribing patterns in heart failure populations.",
-      "meshTerms": [],
-      "keywords": [],
+      "abstract": "AIMS: The actual European heart failure (HF) guidelines recommend the combination of four drugs as a standard therapy [angiotensin-converting enzyme inhibitor (ACEI)/angiotensin receptor blocker (ARB)/angiotensin receptor-neprilysin inhibitor (ARNI); beta-blocker (BB); mineralocorticoid receptor antagonist (MRA); sodium-glucose co-transporter 2 inhibitor (SGLT-2i)] in patients with heart failure and reduced ejection fraction (HFrEF). We investigated the current use of this combined treatment in comparison to partly using these drugs in routine data with respect to outcomes of mortality and readmission.\nMETHODS: We included anonymized data from all patients who were insured with Germany's largest health insurer and had a claims record for hospitalization (2021-23, follow-up in 2024) with a primary hospital diagnosis of HF. The use of different combinations of the four drug classes and their association with mortality and readmission within 91-365 days following the index stay were analysed (n = 307 755). Data were adjusted for a large set of potential confounders including age, sex, and comorbidities. In addition, the frequency of different 2-, 3-, and 4-drug heart failure medications was assessed from 2019 to 2023.\nRESULTS: In 2019 the dominant combination of drugs was ACEI/ARB and BB in nearly 37.84% of all cases. By 2023, the dominating combination was ACEI/ARB/ARNI, BB and SGLT-2i with or without an additional MRA (40.85%). The complete four-pillar therapy was prescribed in 21.81% of cases, while the old combination of ACEI/ARB and BB declined to 21.07%. Outcomes were assessed in 307 755 cases. In total, 55 985 of 298 535 (18.8%) included HF patients died 91-365 days after hospital discharge. Multivariable Cox proportional hazards models indicated a significantly lower mortality risk when patients had a combined treatment of all four drugs compared to a two-drug therapy (HR 0.89, 95% CI 0.86-0.92). The four-drug therapy was more effective with respect to mortality compared to the three-drug combination with an MRA (0.85, 95% CI 0.82-0.89). The comparison with a three-drug combination including an SGLT-2i performed equally (0.99, CI 0.95-1.03). Female sex was an independent negative predictor of four-drug therapy prescription after multivariable adjustment (AOR 0.62, 95% CI 0.60-0.63).\nCONCLUSIONS: Our study suggests that the comprehensive four-drug therapy for HF is increasingly implemented in routine care and is independently associated with lower mortality and readmission rates. A three-drug combination including an SGLT-2i may be equivalent in selected cases. Female sex is associated with a lower likelihood of four-drug therapy prescription. These hypothesis-generating results underscore the necessity of investigating sex-specific clinical phenotypes and prescribing patterns in heart failure populations.",
+      "meshTerms": [
+        "Humans",
+        "Heart Failure",
+        "Female",
+        "Germany",
+        "Male",
+        "Patient Discharge",
+        "Aged",
+        "Stroke Volume",
+        "Angiotensin-Converting Enzyme Inhibitors",
+        "Practice Guidelines as Topic"
+      ],
+      "keywords": [
+        "Gender bias",
+        "Guideline directed medical therapy",
+        "Heart failure",
+        "Outcomes",
+        "Routine data"
+      ],
       "doi": "10.1093/eschf/xvag279",
       "pmcid": "",
       "region": "eu",
@@ -48061,10 +47997,10 @@
         "officialDocument": false,
         "organizationId": "esc"
       },
-      "priority": 11,
+      "priority": 12,
       "breakdown": {
         "authority": 4,
-        "topic": 3,
+        "topic": 4,
         "recency": 2,
         "scope": 0,
         "confidence": 2
@@ -48081,8 +48017,8 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
-      "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-outcomes-nationwide-claims-based-cohort-study",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
+      "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-post-discharge-outcomes-nationwide-german-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
       "lineageReason": "no-matching-lineage",
@@ -48144,7 +48080,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48211,7 +48147,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -48291,7 +48227,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48354,13 +48290,76 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-18T03:03:02.942Z",
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
       "llmFit": {
         "version": 1,
         "score": 2,
         "keep": false,
         "reason": "임상연구 평가기준 합의문, 침상 진료지침 아님",
         "at": "2026-11-18T03:03:04.547Z"
+      }
+    },
+    {
+      "id": "pmid:43048918",
+      "pmid": "43048918",
+      "title": "Diastolic Function Classification in Acute Myocardial Infarction: Comparison of the 2016 ASE/EACVI Guideline and the 2025 ASE Recommendations.",
+      "pubDate": "2026 Nov 17",
+      "journal": "Turk Kardiyoloji Dernegi arsivi : Turk Kardiyoloji Derneginin yayin organidir",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-19T02:44:46.655Z",
+      "abstract": "OBJECTIVE: Diastolic dysfunction (DD) and elevated left ventricular filling pressure (LVFP) commonly occur after acute myocardial infarction (MI) and are associated with adverse clinical outcomes. This study aimed to compare the 2016 American Society of Echocardiography/European Association of Cardiovascular Imaging (ASE/EACVI) guideline and the 2025 American Society of Echocardiography (ASE) recommendations for assessing diastolic function (DF) in patients with acute MI.\nMETHOD: This prospective, single-center, observational study included consecutive patients admitted with acute MI between November 2025 and April 2026. Comprehensive transthoracic echocardiography (TTE) was performed during hospitalization in the coronary intensive care unit (CICU). The presence of DD, LVFP categorization, and DD grading were evaluated according to both the 2016 ASE/EACVI guideline and the 2025 ASE recommendations. Agreement between the two algorithms was assessed using Cohen's kappa analysis.\nRESULTS: A total of 99 patients were included (mean age, 59.3+-12.2 years; 82.8% male). According to the 2016 guideline, DD status remained indeterminate in 3 patients and LVFP categorization remained indeterminate in 13 patients, whereas all patients could be classified using the 2025 recommendations. Among the patients who could be classified using both algorithms, 18 patients classified as having DD according to the 2016 guideline were reclassified as having normal diastolic function according to the 2025 recommendations (P < 0.001). Agreement between the two approaches was substantial for LVFP categorization (Cohen's kappa=0.721, P < 0.001) and moderate for DD grading (weighted Cohen's kappa=0.606, P < 0.001).\nCONCLUSION: In patients with acute MI, the 2025 ASE recommendations reduced the number of indeterminate DF classifications and resulted in lower DD grades than the 2016 ASE/EACVI guideline while maintaining substantial agreement for LVFP categorization.",
+      "meshTerms": [],
+      "keywords": [],
+      "doi": "10.5543/tkda.2026.35922",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "recommendations",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-19T02:44:56.669Z",
+      "lineageKey": "unknown|diastolic-function-classification-acute-myocardial-infarction-comparison-ase-eacvi-ase",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 3,
+        "keep": false,
+        "reason": "지침 자체가 아니라 두 심초음파 지침을 비교한 연구, 응급·중환자 침상 적용 제한적",
+        "at": "2026-11-19T02:44:58.978Z"
       }
     }
   ],
@@ -63943,6 +63942,179 @@
         ]
       },
       "publishedAt": "2026-11-18"
+    },
+    {
+      "id": "pmid:40465080",
+      "pmid": "40465080",
+      "title": "Diagnosis and treatment of invasive pulmonary aspergillosis in critically ill intensive care patients: executive summary of the German national guideline (AWMF 113-005).",
+      "pubDate": "2025 Aug",
+      "journal": "Infection",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:37:41.690Z",
+      "abstract": "PURPOSE: The executive summary of the guideline aims to provide the most relevant recommendations on the diagnosis and treatment of invasive pulmonary aspergillosis in critically ill patients in the intensive care unit.\nMETHODS: The guideline's work included a systematic literature search, selection and assessment of the data relevant to the issues identified. Key questions included the areas of epidemiology, risk factors, diagnostics, and therapy. They were discussed analogous to a PICO scheme within the guideline committee, with subsequent working groups proposing recommendations for specific key questions, which were then again discussed and finalized by the entire guideline committee.\nRESULTS: In addition to the classic risk factors (persistent neutropenia, allogeneic stem cell transplantation, congenital or acquired immunodeficiency, etc.), decompensated liver cirrhosis, COPD, solid tumours and viral pneumonia (influenza, COVID-19) have been established as risk factors for critically ill patients in need of intensive care. If there is no adequate improvement or even further clinical deterioration of the respiratory status in critically ill patients, the presence of IPA should be considered and appropriate diagnostic tests should be initiated. Diagnostics should include a CT scan of the chest and a broncho-alveolar lavage with culture for moulds, testing for galactomannan and PCR. Isavuconazole and voriconazole are recommended as first-line treatment, liposomal amphotericin B as an alternative, with posaconazole (PCZ) or the echinocandins (as an add-on to azole or polyene treatment) being additional options for salvage treatment.\nCONCLUSION: Invasive aspergillosis in critically ill patients represents a diagnostic and therapeutic challenge. If indicated, invasive aspergillosis should be considered and appropriate diagnostic tests initiated. Isavuconazole and voriconazole are recommended as first-line treatment, liposomal amphotericin B as an alternative.",
+      "meshTerms": [
+        "Humans",
+        "Invasive Pulmonary Aspergillosis",
+        "Critical Illness",
+        "Antifungal Agents",
+        "Germany",
+        "Risk Factors",
+        "Critical Care",
+        "Intensive Care Units",
+        "COVID-19",
+        "Voriconazole"
+      ],
+      "keywords": [
+        "Azoles",
+        "Critically ill patients",
+        "Drug interactions",
+        "Guideline",
+        "Intensive care medicine",
+        "Invasive pulmonary aspergillosis"
+      ],
+      "doi": "10.1007/s15010-025-02572-2",
+      "pmcid": "PMC12316785",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.87510418310784,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3.5999999999999996,
+        "recency": 1.2751041831078405,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "needsReview",
+      "documentType": "guideline",
+      "reasons": [
+        "guideline-commentary-or-digest"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:22.888Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 침습성 폐아스페르길루스증 진단·치료 지침, ICU 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|diagnosis-treatment-invasive-pulmonary-aspergillosis-critically-ill-intensive-care-patients-executive-summary-german-national-awmf-113-005",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "40465080",
+          "title": "Diagnosis and treatment of invasive pulmonary aspergillosis in critically ill intensive care patients: executive summary of the German national guideline (AWMF 113-005).",
+          "journal": "Infection",
+          "pubDate": "2025 Aug",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/40465080/",
+          "doi": "10.1007/s15010-025-02572-2"
+        },
+        "org": "German national guideline (AWMF 113-005); S1 Leitlinie (German scientific medical societies, incl. intensive care / infectious disease / mycology)",
+        "version": "2025 (S1, Infection 2025 Aug)",
+        "title_ko": "중환자실 중증 환자의 침습성 폐 아스페르길루스증(IPA) 진단과 치료 — 독일 국가 가이드라인(AWMF 113-005) 요약판",
+        "scope_ko": "중환자실(ICU)에서 치료받는 성인 중증 환자의 침습성 (폐) 아스페르길루스증의 역학·위험인자·진단·치료를 다루는 전문가 합의(S1 수준) 가이드라인이다. 전통적 면역저하 숙주뿐 아니라 COPD·간경변·중증 바이러스 폐렴(인플루엔자·COVID-19) 등 비(非)혈액암 중환자까지 대상으로 한다.",
+        "summary": [
+          "Consider IPA whenever a critically ill ICU patient fails to improve or deteriorates respiratorily despite adequate therapy, and initiate targeted diagnostics (S1 / expert-opinion level — the guideline could not assign formal grades due to lack of RCTs).",
+          "Obtain a native thin-slice chest CT (low-dose if possible) rather than bedside ultrasound or supine chest radiography; add angio-CT when haemoptysis raises concern for vascular invasion, and use follow-up low-dose CT for monitoring treatment response (expert opinion).",
+          "Perform bronchoscopy with bronchoalveolar lavage at a low threshold (especially in intubated patients, where risk is low) and send BALF for mould culture, galactomannan, and PCR; a BAL galactomannan cut-off of 1.0 ODI performed with ~80% sensitivity / 97% specificity (expert opinion).",
+          "Prefer respiratory-sample (BAL) galactomannan over serum galactomannan in non-neutropenic ICU patients, where serum sensitivity is low; do NOT use serum (1,3)-beta-D-glucan because of low specificity and false positives; Aspergillus PCR can additionally detect cyp51A azole-resistance mutations (expert opinion).",
+          "First-line therapy for possible/probable/proven IPA is IV isavuconazole OR voriconazole; liposomal amphotericin B is the recommended alternative (expert opinion).",
+          "Posaconazole or an echinocandin are reserved as salvage options — echinocandins only as add-on to an azole or polyene, never as first-line monotherapy (expert opinion).",
+          "Use therapeutic drug monitoring for voriconazole: target trough 1–5.5 mg/L (2–6 mg/L for severe/CNS disease, toxicity >6 mg/L), first measured within 5 days; posaconazole trough >1 mg/L (upper limit 2–4 mg/L), checked days 5–7 (expert opinion)."
+        ],
+        "summary_ko": [
+          "중증 ICU 환자가 적절한 치료에도 호흡 상태가 개선되지 않거나 악화되면 IPA 가능성을 반드시 고려하고 표적 진단검사를 시작한다(근거가 RCT 부재로 정식 등급을 매길 수 없어 전문가 의견·S1 수준).",
+          "병상 초음파나 앙와위 흉부 X선 대신 저선량 박편(thin-slice) 흉부 CT를 촬영하고, 객혈이 있으면 혈관 침습 확인을 위해 angio-CT를 추가하며, 치료 반응 모니터링에는 저선량 CT 추적을 쓴다(전문가 의견).",
+          "기관삽관 환자 등에서 위험이 낮으므로 낮은 문턱으로 기관지내시경+BAL을 시행하고 BALF로 곰팡이 배양·galactomannan·PCR을 검사한다; BAL galactomannan 1.0 ODI 컷오프는 민감도 ~80%·특이도 97%였다(전문가 의견).",
+          "비호중구감소 ICU 환자에서는 혈청 galactomannan보다 호흡기검체(BAL) galactomannan을 우선한다(혈청 민감도 낮음); 혈청 베타-D-글루칸은 특이도가 낮고 위양성이 많아 권고하지 않는다; Aspergillus PCR은 cyp51A azole 내성 변이도 검출 가능(전문가 의견).",
+          "possible/probable/proven IPA의 1차 치료는 정맥 isavuconazole 또는 voriconazole이며, liposomal amphotericin B가 권고되는 대체 약제다(전문가 의견).",
+          "Posaconazole 또는 echinocandin은 구제(salvage) 옵션으로 남긴다 — echinocandin은 azole·polyene에 추가(add-on)로만, 1차 단독요법으로는 쓰지 않는다(전문가 의견).",
+          "TDM 적용: voriconazole 목표 trough 1–5.5 mg/L(중증·CNS 침범 시 2–6 mg/L, 독성 >6 mg/L), 치료 5일 이내 첫 측정; posaconazole trough >1 mg/L(상한 2–4 mg/L), 5–7일째 확인(전문가 의견)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "위험인자 확대 (비혈액암 중환자 포함)",
+            "detail": "Previously IPA risk was framed mainly around classic immunocompromise (prolonged neutropenia <500/mm³, allogeneic stem-cell/organ transplant, haematological malignancy, congenital/acquired immunodeficiency). The guideline now additionally establishes decompensated liver cirrhosis, COPD, solid tumours, ARDS, mechanical ventilation, prolonged steroid therapy, and viral pneumonia (influenza, SARS-CoV-2/COVID-19) as risk factors in critically ill ICU patients — reflecting post-pandemic evidence that non-neutropenic ICU patients develop IPA.",
+            "detail_ko": "이전에는 IPA 위험을 주로 전형적 면역저하(지속 호중구감소 <500/mm³, 동종 조혈모세포/장기 이식, 혈액암, 선천/후천 면역결핍) 중심으로 봤다. 이번 지침은 여기에 더해 비대상성 간경변, COPD, 고형암, ARDS, 기계환기, 장기 스테로이드 사용, 바이러스 폐렴(인플루엔자, SARS-CoV-2/COVID-19)을 중증 ICU 환자의 위험인자로 확립했다 — 팬데믹 이후 비호중구감소 ICU 환자에서도 IPA가 발생한다는 근거를 반영한 것."
+          },
+          {
+            "topic": "1차 항진균제에 isavuconazole 추가",
+            "detail": "Historically voriconazole was the single preferred first-line azole for IPA. The guideline now positions isavuconazole as co-equal first-line with voriconazole (IV, for possible/probable/proven IPA), with liposomal amphotericin B as the alternative — giving a better-tolerated azole option (fewer drug interactions, more predictable levels) alongside voriconazole.",
+            "detail_ko": "과거에는 voriconazole이 IPA의 단일 선호 1차 azole이었다. 이번 지침은 isavuconazole을 voriconazole과 동등한 1차 약제(정맥, possible/probable/proven IPA)로 올리고 liposomal amphotericin B를 대체로 둔다 — voriconazole과 함께 내약성이 더 좋은(약물상호작용 적고 혈중농도 예측성 높은) azole 선택지를 제공."
+          },
+          {
+            "topic": "진단 정의 표준화 (2024 FUNDICU 합의정의 채택)",
+            "detail": "Until early 2024 there was no accepted consensus definition of IPA specifically for ICU patients (making incidence and diagnosis inconsistent). The guideline adopts the March-2024 international consensus/FUNDICU criteria for invasive fungal infection in ICU patients as the research definition, deliberately applying strict/conservative criteria to harmonise studies — while explicitly allowing justified clinical deviations in exceptional cases.",
+            "detail_ko": "2024년 초까지 ICU 환자 전용 IPA 합의정의가 없어 발생률·진단이 일관되지 않았다. 이번 지침은 2024년 3월 발표된 ICU 환자 침습성 진균감염 국제 합의/FUNDICU 기준을 연구용 정의로 채택하고, 연구 조화를 위해 의도적으로 엄격·보수적 기준을 적용하되, 예외적 임상 상황에서는 정당화되는 일탈을 명시적으로 허용한다."
+          },
+          {
+            "topic": "Galactomannan — 혈청 대신 BAL 우선, 컷오프 명시",
+            "detail": "Serum galactomannan, which performs reasonably in neutropenic patients, is de-emphasised in non-neutropenic ICU patients where its sensitivity is low (angioinvasion is uncommon). The guideline directs testing of respiratory (BAL) material instead, specifying a BAL galactomannan cut-off of 1.0 ODI (≈80% sensitivity, 97% specificity); lateral-flow assays show comparable performance.",
+            "detail_ko": "호중구감소 환자에서 쓸 만한 혈청 galactomannan은, 혈관침습이 드문 비호중구감소 ICU 환자에서는 민감도가 낮아 비중이 낮아졌다. 지침은 대신 호흡기(BAL) 검체 검사를 지시하며 BAL galactomannan 컷오프 1.0 ODI(민감도 ~80%, 특이도 97%)를 명시한다; lateral-flow 검사도 비슷한 성능을 보인다."
+          },
+          {
+            "topic": "베타-D-글루칸 비권고 / echinocandin은 add-on 구제만",
+            "detail": "The guideline recommends against serum (1,3)-beta-D-glucan for IPA diagnosis owing to low specificity/false positives, and restricts echinocandins to add-on salvage therapy (combined with an azole or polyene) rather than first-line monotherapy; posaconazole is likewise a salvage option. PCR is endorsed as an adjunct that also detects cyp51A azole-resistance mutations.",
+            "detail_ko": "지침은 특이도 저하·위양성 때문에 IPA 진단에 혈청 베타-D-글루칸을 권고하지 않으며, echinocandin은 1차 단독요법이 아니라 azole·polyene 병용의 추가(add-on) 구제요법으로만 제한한다; posaconazole도 구제 옵션이다. PCR은 cyp51A azole 내성 변이까지 검출하는 보조 검사로 인정한다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "코르티코스테로이드가 ICU IPA의 핵심 유발인자라는 2차 해설",
+            "body_ko": "Pneumonia 誌 해설 'Invasive pulmonary aspergillosis in the ICU: the corticosteroid link'는 이 독일 지침이 비혈액암 중환자로 위험인자를 넓힌 흐름과 같은 맥락에서, 중증 ICU 환자의 아스페르길루스증 위험이 상당 부분 코르티코스테로이드 치료(특히 prednisone 환산 20 mg/day 초과)와 중증 바이러스 감염에서 비롯된다고 강조한다. 스테로이드를 투여받는 환자, 만성 폐질환, 중증 바이러스 폐렴, 침습적 환기가 필요한 환자를 고위험군으로 조기 인지하는 것이 예후 개선의 열쇠라고 본다. 또한 ICU 환자 약 27명 중 1명이 재원 중 침습성 아스페르길루스증을 겪는 것으로 추정하며, 기관삽관 환자나 폐·면역 기능장애 환자에서 Aspergillus 배양 양성이면 조기 항진균 치료를 시작하라고 권하고, voriconazole·isavuconazole이 현 1차 치료라는 점을 재확인한다. (이 단락은 지침 원문이 아니라 별도 2차 해설의 주장임.)",
+            "sourceLabel": "Pneumonia (BMC) commentary — 'Invasive pulmonary aspergillosis in the ICU: the corticosteroid link'",
+            "sourceUrl": "https://link.springer.com/article/10.1186/s41479-025-00189-5"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the ICU bedside, expand the IPA differential beyond classic neutropenic hosts: in any ventilated patient with COPD, cirrhosis, solid tumour, or influenza/COVID-19 pneumonia whose respiratory status stalls or worsens, order a thin-slice chest CT and a low-threshold bronchoscopy with BALF mould culture, BAL galactomannan (act on ≥1.0 ODI), and PCR rather than relying on serum galactomannan or beta-D-glucan. Start first-line IV isavuconazole or voriconazole promptly (liposomal amphotericin B as alternative), reserve echinocandins only as azole/polyene add-on salvage, and institute TDM early — voriconazole trough 1–5.5 mg/L (2–6 for CNS) within 5 days, posaconazole >1 mg/L at days 5–7. Because these are strict S1 research-oriented criteria, justified clinical deviation is explicitly permitted for the individual critically ill patient.",
+        "practiceImpact_ko": "ICU 병상에서 IPA 감별진단을 전형적 호중구감소 숙주 너머로 넓혀야 한다: COPD·간경변·고형암·인플루엔자/COVID-19 폐렴을 가진 기계환기 환자가 호흡 상태가 정체·악화되면, 혈청 galactomannan이나 베타-D-글루칸에 의존하지 말고 박편 흉부 CT와 낮은 문턱의 기관지내시경+BALF 곰팡이 배양·BAL galactomannan(≥1.0 ODI이면 대응)·PCR을 시행한다. 1차로 정맥 isavuconazole 또는 voriconazole을 신속히 시작하고(대체는 liposomal amphotericin B), echinocandin은 azole/polyene 추가 구제로만 쓰며, TDM을 조기에 적용한다 — voriconazole trough 1–5.5 mg/L(CNS 2–6)를 5일 내, posaconazole >1 mg/L를 5–7일째 확인. 이 기준은 엄격한 S1 연구용 기준이므로 개별 중환자에서는 정당한 임상적 일탈이 명시적으로 허용된다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 40465080",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40465080/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s15010-025-02572-2",
+            "url": "https://doi.org/10.1007/s15010-025-02572-2"
+          },
+          {
+            "label": "웹 — Primary guideline full text — Infection/PMC (PMC12316785): Diagnosis and treatment of invasive pulmonary aspergillosis in critically ill ICU patients, German national guideline AWMF 113-005 executive summary",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12316785/"
+          },
+          {
+            "label": "웹 — Secondary commentary — Pneumonia (BMC): 'Invasive pulmonary aspergillosis in the ICU: the corticosteroid link'",
+            "url": "https://link.springer.com/article/10.1186/s41479-025-00189-5"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-19"
     }
   ],
   "rejected": [
@@ -69545,7 +69717,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-18T03:02:55.310Z",
+      "discoveredAt": "2026-11-19T02:44:46.655Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -69564,7 +69736,7 @@
       "id": "pmid:42945467",
       "pmid": "42945467",
       "title": "Heart failure beyond cardiology: a primary care perspective on the 2026 ESC guideline.",
-      "pubDate": "2026 Oct 27",
+      "pubDate": "2026 Nov 6",
       "journal": "ESC heart failure",
       "publicationTypes": [
         "Journal Article"
@@ -69572,16 +69744,16 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-18T03:02:55.310Z",
+      "discoveredAt": "2026-11-19T02:44:46.655Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
-        "diagnosis",
-        "heart failure",
-        "integrated care",
-        "multimorbidity",
-        "prevention",
-        "primary care"
+        "Diagnosis",
+        "Heart failure",
+        "Integrated care",
+        "Multimorbidity",
+        "Prevention",
+        "Primary care"
       ],
       "doi": "10.1093/eschf/xvag273",
       "pmcid": "",
@@ -69607,7 +69779,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-18T03:02:55.310Z",
+      "discoveredAt": "2026-11-19T02:44:46.655Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -69620,6 +69792,40 @@
       "documentType": "scientific-statement",
       "reasons": [
         "correction-or-erratum"
+      ]
+    },
+    {
+      "id": "pmid:43045552",
+      "pmid": "43045552",
+      "title": "Real-world adherence to ERS/ATS recommendations for non-invasive ventilation in exacerbations of COPD: A prospective multicenter Italian cohort study.",
+      "pubDate": "2026 Nov 17",
+      "journal": "European journal of internal medicine",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-19T02:44:46.655Z",
+      "abstract": "BACKGROUND: Non-invasive ventilation (NIV) is recommended for exacerbations of chronic obstructive pulmonary disease (ECOPD) complicated by respiratory acidosis, yet real-world adherence remains uncertain. We evaluated adherence to ERS/ATS recommendations, patterns of non-adherence, and their association with short-term outcomes.\nMETHODS: In this prospective multicenter cohort study, consecutive patients with ECOPD-related acute hypoxemic-hypercapnic respiratory failure were enrolled across nine Italian hospitals and classified as guideline-adherent, NIV underuse, or NIV overuse according to ERS/ATS pH-based recommendations. The primary objective was to assess adherence to recommendations; the association between adherence patterns and the composite outcome of in-hospital death or endotracheal intubation was a secondary objective.\nRESULTS: Among 456 patients, 315 (69%) were guideline-adherent, 60 (13%) had NIV underuse, and 81 (18%) had NIV overuse. Underuse occurred predominantly in patients with mild respiratory acidosis receiving alternative respiratory support, mainly high-flow nasal cannula (HFNC), whereas overuse occurred primarily in hypercapnic patients without respiratory acidosis. The composite clinical outcome occurred in 48 patients (11%) and did not differ across adherence groups. After adjustment, neither NIV underuse (odds ratio [OR] 0.85, 95% confidence interval [CI] 0.33-2.20) nor overuse (OR 0.54, 95% CI 0.20-1.46) was associated with the composite clinical outcome, whereas higher Simplified Acute Physiology Score (SAPS) II was independently associated with it (OR 1.05, 95% CI 1.02-1.08).\nCONCLUSIONS: Deviations from ERS/ATS recommendations followed distinct clinical patterns and were not independently associated with the composite clinical outcome. Overall illness severity was consistently associated with adverse outcomes, highlighting the complexity of implementing NIV recommendations in routine clinical practice.",
+      "meshTerms": [],
+      "keywords": [
+        "Acute hypercapnic respiratory failure",
+        "Chronic obstructive pulmonary disease",
+        "Guideline adherence",
+        "High-flow nasal cannula",
+        "Non-invasive ventilation",
+        "Respiratory acidosis"
+      ],
+      "doi": "10.1016/j.ejim.2026.107269",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "recommendations",
+      "reasons": [
+        "guideline-uptake-study"
       ]
     }
   ],
@@ -69673,9 +69879,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261118_120130:guideline:2026-11-18",
+    "runId": "trend_review_20261119_114343:guideline:2026-11-19",
     "outcome": "published",
-    "publishedId": "pmid:42377292",
+    "publishedId": "pmid:40465080",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -69700,15 +69906,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 151,
+        "mergedTotal": 152,
         "overlapCount": 2,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 4,
         "oldestFetchedDate": "2026",
-        "newestFetchedDate": "2027 Jan-Mar",
+        "newestFetchedDate": "2027 Jan",
         "window": {
-          "minDate": "2026/10/19",
-          "maxDate": "2026/11/18"
+          "minDate": "2026/10/20",
+          "maxDate": "2026/11/19"
         },
         "retmax": 60,
         "topics": [
@@ -69716,7 +69922,7 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 64,
+            "totalFound": 66,
             "idsFetched": 60,
             "truncated": true,
             "error": null
@@ -69752,8 +69958,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -69806,13 +70012,13 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 1,
+            "idsFetched": 1,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 142,
+        "topicOnlyCount": 143,
         "ptPmids": [
           "43044046",
           "42858614",
@@ -69823,9 +70029,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 151,
-          "enriched": 151,
-          "withAbstract": 121,
+          "requested": 152,
+          "enriched": 152,
+          "withAbstract": 123,
           "error": null
         }
       },
@@ -69930,6 +70136,20 @@
           "stage": "region",
           "pmid": "42469072",
           "title": "Brain Death Determination During VA-ECMO After Pediatric Cardiac Surgery: A Case-Based Analysis of the 2023 Unified Consensus.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43049712",
+          "title": "Clinical Safety Evaluation of a Large Language Model for Heart Failure Treatment Recommendations.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43044709",
+          "title": "When to Refer - Guidelines for Approaching Transfers to Centers of Excellence in Cardiogenic Shock.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -70159,13 +70379,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42429404",
-          "title": "Adherence to guideline-recommended management in acute severe ulcerative colitis: a retrospective audit.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42982695",
           "title": "Persistent hypoperfusion in the Surviving Sepsis Campaign guidelines: an insufficiently defined treatment trigger.",
           "region": null,
@@ -70210,13 +70423,6 @@
           "stage": "region",
           "pmid": "43036120",
           "title": "Indoor Air Quality Management for Patients with COPD and IPF: Practical Recommendations Based on Current Standards and Evidence.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "43032439",
-          "title": "Recommendations on the Use of Computed Tomography in Severe Asthma: A Consensus Document.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -70383,6 +70589,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43046669",
+          "title": "Consensus-based recommendations on cilostazol and standardized Ginkgo biloba combination therapy for secondary stroke prevention and post-stroke cognitive impairment (PSCI) management.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43016718",
           "title": "A multi-dimensional comparative evaluation of ten injectable neuroprotective agents for acute ischemic stroke based on the Chinese guideline for drug selection.",
           "region": null,
@@ -70448,6 +70661,13 @@
           "stage": "region",
           "pmid": "42611723",
           "title": "Summary of the 2025 AANN Guidelines for Aneurysmal Subarachnoid Hemorrhage: An Update to the 2018 Guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42475131",
+          "title": "[Mild Traumatic Brain Injury: National Consensus Clinical Recommendations].",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -70551,13 +70771,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42895537",
-          "title": "What's new in point-of-care lung ultrasound: reading the new recommendations.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "40664402",
           "title": "ASRA pain medicine narrative review and expert practice recommendations for gastric point-of-care ultrasound to assess aspiration risk in medically complex patients undergoing regional anesthesia and pain procedures: infographic.",
           "region": null,
@@ -70583,19 +70796,19 @@
         }
       ],
       "decisions": {
-        "queued": 197,
-        "needsReview": 470,
-        "rejected": 135,
+        "queued": 196,
+        "needsReview": 471,
+        "rejected": 136,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42377292",
+        "candidateId": "pmid:40465080",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-18T03:05:40.680Z",
+  "updatedAt": "2026-11-19T02:47:27.292Z",
   "configVersion": "guideline-v2"
 }

@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41369227",
-      "title": "Ketamine or Etomidate for Tracheal Intubation of Critically Ill Adults.",
-      "journal": "The New England journal of medicine",
-      "score": 8.2,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 6.6584,
-        "cooldownPenalty": -1.5,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-06"
-    },
-    {
       "pmid": "41361939",
       "title": "Effect of Automated Closed-Loop Ventilation vs Protocolized Conventional Ventilation on Ventilator-Free Days in Critically Ill Adults: A Randomized Clinical Trial.",
       "journal": "JAMA",
@@ -731,6 +716,22 @@
       },
       "addedAt": "2026-11-06",
       "publishedAt": "2026-11-18"
+    },
+    {
+      "pmid": "41369227",
+      "title": "Ketamine or Etomidate for Tracheal Intubation of Critically Ill Adults.",
+      "journal": "The New England journal of medicine",
+      "score": 8.2,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.6584,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06",
+      "publishedAt": "2026-11-19"
     }
   ],
   "rejected": [
@@ -746,9 +747,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "outcome": "published",
-    "publishedId": "41339937"
+    "publishedId": "41369227"
   },
-  "updatedAt": "2026-11-18"
+  "updatedAt": "2026-11-19"
 }
