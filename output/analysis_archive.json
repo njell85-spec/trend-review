@@ -5524,6 +5524,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-19",
+      "pmid": "41369227",
+      "title": "Ketamine or Etomidate for Tracheal Intubation of Critically Ill Adults.",
+      "title_ko": "중증 성인의 기관삽관을 위한 유도제: 케타민 또는 에토미데이트 (RSI 무작위 배정 임상시험)",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa2511420",
+      "badge": "본문(PMC)",
+      "clinicalQuestion_ko": "응급 기관삽관을 받는 중증 성인에서, 마취 유도제로 etomidate 대신 ketamine을 사용하면 28일 이내 원내 사망 위험이 감소하는가?",
+      "pico": {
+        "population": "[USA] Critically ill adults (age ≥18 years) undergoing emergency tracheal intubation with a medication to induce anesthesia in 14 sites (6 emergency departments and 8 intensive care units) across 6 medical centers; a total of 2365 patients underwent randomization (1176 ketamine, 1189 etomidate). Patients with known pregnancy, prisoner status, a primary diagnosis of trauma, an immediate need for intubation precluding randomization, or in whom ketamine/etomidate was deemed necessary or contraindicated were excluded.",
+        "intervention": "Ketamine administered intravenously to induce anesthesia, with a nomogram providing a full dose (2.0 mg/kg), intermediate dose (1.5 mg/kg), or reduced dose (1.0 mg/kg); clinicians selected the dose (n=1176).",
+        "comparison": "Etomidate administered intravenously to induce anesthesia, with a nomogram providing a full dose (0.3 mg/kg), intermediate dose (0.25 mg/kg), or reduced dose (0.2 mg/kg); clinicians selected the dose (n=1189).",
+        "outcome": "Primary outcome — in-hospital death from any cause by day 28: 330 of 1173 patients (28.1%) in the ketamine group vs 345 of 1186 patients (29.1%) in the etomidate group (risk difference adjusted for trial site, -0.8 percentage points; 95% CI, -4.5 to 2.9; P = 0.65)."
+      },
+      "pico_ko": {
+        "population": "[미국] 6개 의료기관의 14개 unit(응급실 6곳, 중환자실 8곳)에서 마취 유도제를 사용해 응급 기관삽관을 받는 중증 성인(만 18세 이상); 총 2365명이 무작위 배정됨(ketamine 1176명, etomidate 1189명). 임신 확인, 재소자, 외상이 주진단, 즉시 삽관이 필요해 무작위 배정이 불가능한 경우, 또는 담당의가 ketamine/etomidate가 반드시 필요하거나 금기라고 판단한 경우는 제외.",
+        "intervention": "마취 유도를 위해 ketamine을 정맥 투여. nomogram으로 full dose(2.0 mg/kg), intermediate dose(1.5 mg/kg), reduced dose(1.0 mg/kg)를 제시하고 임상의가 용량 선택(n=1176).",
+        "comparison": "마취 유도를 위해 etomidate를 정맥 투여. nomogram으로 full dose(0.3 mg/kg), intermediate dose(0.25 mg/kg), reduced dose(0.2 mg/kg)를 제시하고 임상의가 용량 선택(n=1189).",
+        "outcome": "1차 결과 — 28일 이내 모든 원인에 의한 원내 사망: ketamine군 1173명 중 330명(28.1%) 대 etomidate군 1186명 중 345명(29.1%) (시험 기관 보정 risk difference -0.8%p; 95% CI, -4.5 ~ 2.9; P = 0.65)."
+      },
+      "keyFindings": [
+        "In-hospital death by day 28 did not differ between groups: 28.1% (330/1173) with ketamine vs 29.1% (345/1186) with etomidate (adjusted risk difference -0.8 percentage points; 95% CI, -4.5 to 2.9; P = 0.65).",
+        "Cardiovascular collapse during intubation was significantly more frequent with ketamine: 22.1% (260/1176) vs 17.0% (202/1189) with etomidate (risk difference 5.1 percentage points; 95% CI, 1.9 to 8.3).",
+        "Among 2365 randomized critically ill adults, prespecified safety outcomes were similar between the two groups."
+      ],
+      "keyFindings_ko": [
+        "28일 이내 원내 사망은 두 군 간 차이가 없었다: ketamine 28.1%(330/1173) 대 etomidate 29.1%(345/1186) (보정 risk difference -0.8%p; 95% CI, -4.5 ~ 2.9; P = 0.65).",
+        "삽관 중 심혈관 허탈은 ketamine에서 유의하게 더 흔했다: 22.1%(260/1176) 대 etomidate 17.0%(202/1189) (risk difference 5.1%p; 95% CI, 1.9 ~ 8.3).",
+        "무작위 배정된 중증 성인 2365명에서 사전 지정 안전성 결과는 두 군이 유사했다."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 41369227",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41369227/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1056/NEJMoa2511420",
+          "url": "https://doi.org/10.1056/NEJMoa2511420"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT05277896 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT05277896"
+        }
+      ],
+      "fullText": "### INTRODUCTION\nMore than 13 million critically ill adults undergo emergency tracheal intubation each year worldwide, approximately 30% of whom die before hospital discharge. Nearly all patients undergoing tracheal intubation in an emergency department (ED) or intensive care unit (ICU) receive a medication to induce anesthesia for the procedure. Whether the choice of induction medication for critically ill adults affects the risk of death or other outcomes is uncertain.\nEtomidate is the medication most often used to induce anesthesia during emergency tracheal intubation in the United States. This imidazole-derived sedative-hypnotic agent, which acts on gamma-aminobutyric acid (GABA) receptors, has been described as an “ideal” induction medication for critically ill adults because of its rapid onset and limited effect on blood pressure and heart rate. However, etomidate inhibits 11-β-hydroxylase in the adrenal glands and a single dose decreases cortisol production for up to 72 hours. Concern that etomidate-induced corticosteroid insufficiency may cause organ dysfunction and death, particularly among patients with sepsis, has led regulators to remove etomidate from the market in multiple countries.\nKetamine, a dissociative agent that acts on N-methyl-D-aspartate (NMDA) receptors and does not impair cortisol production, is an increasingly used alternative to etomidate for induction of anesthesia in critically ill patients. Because its administration increases plasma catecholamine concentrations, ketamine has been postulated to maintain hemodynamic stability during intubation better than other induction medications. However, ketamine is also a negative inotrope and vasodilator, and observational studies have reported an association between receipt of ketamine and hypotension, arrhythmia, and cardiac arrest during intubation.\nPrevious small and moderate-sized randomized trials and meta-analyses comparing ketamine and etomidate have reported conflicting results, with some suggesting that the use of ketamine decreases mortality and others finding no differences in outcomes. To determine the effects of using ketamine, as compared with etomidate, for induction of anesthesia during emergency tracheal intubation, we conducted the Randomized trial of Sedative choice for Intubation (RSI). We hypothesized that the use of ketamine would decrease the incidence of death.\n\n### METHODS\n\n### Trial Design and Oversight\nThe Pragmatic Critical Care Research Group conducted this pragmatic, multicenter, unblinded, randomized, parallel-group trial in which the use of ketamine was compared with the use of etomidate for induction of anesthesia during emergency tracheal intubation of critically ill adults. The trial was initiated by the investigators, approved by the institutional review board at Vanderbilt University Medical Center and the US Food and Drug Administration (IND 141424), and conducted with Exception from Informed Consent Requirements for Emergency Research (EFIC) (details in the ). The trial was registered at  before initiation and was overseen by an independent data and safety monitoring board. The trial protocol and statistical analysis plan were published before the conclusion of enrollment and are available at . The authors vouch for the accuracy and completeness of the data and for the fidelity of the trial to the protocol.\n\n### Trial Sites and Patient Population\nThe trial was conducted at 14 sites (6 emergency departments and 8 intensive care units) in 6 medical centers across the United States. Critically ill adults (age, ≥ 18 years) undergoing tracheal intubation with the use of a medication to induce anesthesia were eligible. Patients were excluded if they were known to be pregnant, were known to be a prisoner, were presenting with a primary diagnosis of trauma, or had an immediate need for tracheal intubation that precluded randomization. Patients were also excluded if the treating clinicians determined that the use of ketamine or etomidate was either necessary or contraindicated. Details of the trial sites and complete lists of inclusion and exclusion criteria are provided in the .\n\n### Randomization\nPatients were randomly assigned in a 1:1 ratio to receive either ketamine or etomidate for induction of anesthesia during tracheal intubation. Randomization was performed with the use of permuted blocks of variable size and was stratified according to trial site. Trial-group assignments were placed in sequentially numbered, opaque envelopes and remained concealed until after enrollment. Clinicians and research personnel were aware of trial-group assignments after randomization.\n\n### Trial Interventions\nFor patients assigned to the ketamine group, clinicians were instructed to administer ketamine intravenously to induce anesthesia for tracheal intubation. A nomogram on the trial group assignment sheet provided doses of ketamine (in milligrams) for a range of patient weights that corresponded to a full dose (2.0 mg/kg), an intermediate dose (1.5 mg/kg), or a reduced dose (1.0 mg/kg) (). Clinicians selected the dose of ketamine to administer.\nFor patients assigned to the etomidate group, clinicians were instructed to administer etomidate intravenously to induce anesthesia for tracheal intubation. A nomogram on the trial group assignment sheet provided doses of etomidate (in milligrams) for a range of patient weights that corresponded to a full dose (0.3 mg/kg), an intermediate dose (0.25 mg/kg), or a reduced dose (0.2 mg/kg) (). Clinicians selected the dose of etomidate to administer.\nAll other aspects of the patient’s medical care were at the discretion of the treating clinicians, including the administration of vasopressors prior to induction, the choice of neuromuscular blocking agent for intubation, the approach to sedation and analgesia during mechanical ventilation, and the administration of intravenous fluids, vasopressors, and systemic corticosteroids.\n\n### Data Collection\nA trained observer who was not involved in the performance of the intubation collected data on the duration of intubation, the systolic blood pressure, and the administration of vasopressors during the interval between induction of anesthesia and 2 minutes after intubation. Immediately after intubation, clinicians recorded whether the patient experienced arrhythmia or cardiac arrest between induction of anesthesia and 2 minutes after intubation. Trial personnel reviewed the medical record to collect data on patients’ baseline characteristics, periprocedural care, and clinical outcomes. Trial personnel collected information on death from the medical record, public vital statistics records, and phone calls to patients or family members at 3 and 12 months (details in ).\n\n### Trial Outcomes\nThe primary outcome was in-hospital death by 28 days, defined as death from any cause occurring between enrollment and 28 days after enrollment with outcome ascertainment ending at hospital discharge. The single prespecified secondary outcome was cardiovascular collapse during intubation, defined as the occurrence of any of the following in the interval between the induction of anesthesia and 2 minutes after tracheal intubation: systolic blood pressure < 65 mm Hg; receipt of new or increased vasopressors; or cardiac arrest. Additional details regarding the trial outcomes are provided in the .\n\n### Statistical Analysis\nDetails regarding the determination of the sample size have been reported previously and are included in the . Assuming an incidence of in-hospital death by 28 days of 30.0% in the etomidate group, 80% statistical power, and a two-sided alpha level of 0.05, we calculated that a sample of 2,308 patients would be needed to detect an absolute difference of 5.2 percentage points between the groups in the incidence of in-hospital death by 28 days. To ensure adequate power if data were missing in up to 3% of the patients, we planned to enroll a total of 2,364 patients (1,182 per group). A single interim analysis after 1,182 patients were enrolled used a P value threshold of ≤ 0.001 for the difference between the groups in the primary outcome that would justify stopping the trial.\nThe primary analysis was an intention-to-treat comparison of the primary outcome between the trial groups that was performed with the use of a generalized linear mixed-effects model with a random effect for trial site and a fixed effect for group assignment (ketamine group vs etomidate group) without adjustment for covariates. The primary analysis included all patients who underwent randomization, except for those who withdrew from follow-up prior to ascertainment of the primary outcome. Sensitivity analyses of the primary outcome included: an unadjusted analysis using a Chi-square test; an analysis adjusting for prespecified baseline covariates; analyses in which patients who withdrew prior to outcome ascertainment were treated as all having experienced the primary outcome or all having not experienced the primary outcome; an analysis of death in any location by 28 days (including deaths that occurred after hospital discharge); and an analysis of survival to 28 days in any location using the Kaplan-Meier method (details in the ).\nIn accordance with published guidelines, we examined whether prespecified baseline variables modified the effect of trial-group assignment on the primary outcome using three approaches: (i) subgroup analyses using a generalized linear mixed-effects model with a random effect for trial site and fixed effects for trial group, the proposed effect modifier, and the interaction between the effect modifier and trial group, without adjustment for covariates; (ii) a risk-modeling approach using previously validated models for patients’ baseline risk of the primary outcome; and (iii) an effect-modeling approach using a machine learning model to predict the effect of ketamine versus etomidate on the primary outcome for each patient based on his or her individ",
+      "fullTextSource": "PMC",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -5610,14 +5661,15 @@
         "42057084",
         "41838001",
         "42958418",
-        "41339937"
+        "41339937",
+        "41369227"
       ]
     },
     "fulltextLen": {
       "2026-07": 20987,
       "2026-09": 246949,
       "2026-10": 297559,
-      "2026-11": 659859
+      "2026-11": 1126746
     },
     "rootFolderId": "17BmQVjVylera5G-_HNeZexQEWtc8pR6A"
   }
