@@ -870,23 +870,6 @@
       "status": "queued"
     },
     {
-      "pmid": "38059745",
-      "title": "Oxygenation During Venoarterial Extracorporeal Membrane Oxygenation: Physiology, Current Evidence, and a Pragmatic Approach to Oxygen Titration.",
-      "journal": "Crit Care Med",
-      "score": 7.5,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "VA-ECMO 산소화 생리·적정 실무 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39007570",
       "title": "Executive Summary-Society of Critical Care Medicine Guideline and American Society of Health-System Pharmacists for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults.",
       "journal": "Crit Care Med",
@@ -15496,6 +15479,129 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "38059745",
+      "title": "Oxygenation During Venoarterial Extracorporeal Membrane Oxygenation: Physiology, Current Evidence, and a Pragmatic Approach to Oxygen Titration.",
+      "journal": "Crit Care Med",
+      "score": 7.5,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "VA-ECMO 산소화 생리·적정 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-20",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "38059745",
+          "title": "Oxygenation During Venoarterial Extracorporeal Membrane Oxygenation: Physiology, Current Evidence, and a Pragmatic Approach to Oxygen Titration.",
+          "journal": "Critical care medicine",
+          "pubDate": "2023-12-7",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38059745/",
+          "doi": "10.1097/CCM.0000000000006134"
+        },
+        "title_ko": "정맥동맥 체외막산소공급(VA-ECMO) 중의 산소화: 생리, 현재의 근거, 그리고 산소 적정(titration)에 대한 실용적 접근",
+        "scope_ko": "말초 정맥동맥(VA) ECMO를 받는 환자에서 전신 산소화를 결정하는 회로·환자 인자, 고산소혈증(hyperoxia)과 임상 결과의 연관성, 그리고 산소 적정의 실용적 접근법을 정리한 서술형 종설이다. 저산소증은 피하되 고산소혈증도 피하는 침상(bedside) 전략을 제시하는 데 초점을 둔다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "목적(Objectives)",
+            "body_ko": "이 종설은 말초 VA-ECMO 환자에서 다음 세 가지를 목표로 한다. 1) 전신 산소화에 영향을 주는 핵심 회로(circuit) 및 환자(patient) 인자를 규명한다. 2) 고산소혈증과 환자 결과의 연관성을 보고한 문헌을 정리한다. 3) 산소 적정에 대한 실용적 접근법을 제시한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "자료원·연구선정·자료추출(Data Sources, Study Selection, Data Extraction)",
+            "body_ko": "검색은 PubMed, SCOPUS, Medline, Google Scholar를 사용하여 수행하였다. 고산소혈증과 임상 결과의 연관성을 다룬 모든 관찰연구 및 중재연구를 포함하였고, Extracorporeal Life Support Organization(ELSO)의 지침도 포함하였다. 관련 문헌에서 자료를 추출·요약하여 간결한 서술형 종설로 통합하였으며, 참고 편의를 위해 관련 연구들의 요약표도 함께 작성하였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "산소화의 생리 — 체외회로와 자가 심폐회로의 기여",
+            "body_ko": "VA-ECMO 중 전신 산소화에는 체외회로(extracorporeal circuit)와 자가 심폐회로(native cardiorespiratory circuit)가 모두 기여한다. 체외회로의 전신 산소화 기여는 실제로는 대체로 ECMO 혈류량(blood flow)에 의해 결정되는 반면, 자가 성분의 산소화는 자가 심박출량(native cardiac output)과 잔여 호흡 기능(residual respiratory function)에서 비롯된다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "상호작용 — 차등적 저산소증과 산소 운반을 조절하는 인자들",
+            "body_ko": "ECMO 유출(outflow)과 자가 심박출량 사이의 상호작용(차등적 저산소증, differential hypoxia에서 나타나는 바와 같이), 호흡 보조(respiratory support)의 유무, 그리고 혈중 산소 운반(blood oxygen carriage)에 영향을 주는 생리학적 매개변수들이 VA-ECMO 중 전체적인 산소 노출을 조절한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "고산소혈증의 빈도와 정의",
+            "body_ko": "생리학적으로 VA-ECMO가 필요한 환자는 고산소혈증에 취약하다. 고산소혈증의 정의는 다양하지만, 가장 흔히 PaO₂ > 150 mm Hg로 정의된다. 중증 고산소혈증(원문 서술상 PaO₂ > 300 mm Hg)도 흔하여 20%에서 관찰된다.\n\n(참고: 초록 본문에는 \"Severe hypoxia (PaO₂ > 300 mm Hg)\"로 표기되어 있으나, PaO₂ > 300 mm Hg라는 역치와 문맥상 이는 중증 '고산소혈증(hyperoxia)'을 가리키는 표기로 읽힌다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "고산소혈증과 임상 결과의 연관성",
+            "body_ko": "조기 중증 고산소혈증(early severe hyperoxia)뿐 아니라 누적 고산소혈증 노출(cumulative hyperoxia exposure)이 병원 내 사망(in-hospital mortality)과 연관되었으며, 이는 VA-ECMO와 체외 심폐소생술(ECPR, extracorporeal cardiopulmonary resuscitation) 모두에서 질환 중증도(disease severity)를 보정한 뒤에도 유지되었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "산소 적정에 대한 실용적 접근",
+            "body_ko": "말초 VA-ECMO 중 산소화에 대한 실용적 접근은 우측 요골동맥(right radial) 산소포화도 목표치 94–98%를 겨냥하는 것을 포함한다. 그리고 선택된 환자에서는 공기-산소 혼합기(air-oxygen blender)를 통해 혼합가스 내 산소분율(FdO₂)을 적정하여 산소공급막 후방(postoxygenator) PaO₂ 150–300 mm Hg를 목표로 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론(Conclusions)",
+            "body_ko": "고산소혈증은 다양한 ECMO 회로 및 환자 관련 인자에서 비롯된다. 이는 말초 VA-ECMO 중 흔하며, 그 존재는 불량한 결과와 연관된다. 저산소증을 예방하면서도 고산소혈증을 피하는 실용적 접근법이 말초 VA-ECMO 환자를 위해 기술되었다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 차등적 저산소증(Harlequin/North-South 증후군)의 기전",
+            "body_ko": "이 종설이 핵심 상호작용으로 지목한 '차등적 저산소증'의 생리를 같은 주제의 VA-ECMO 생리 종설이 상세히 설명한다. 말초 VA-ECMO에서 자가 심장이 회복되면, 손상된 폐를 통과한 불충분하게 산소화된 자가 혈액이 좌심실에서 대동맥으로 박출되어 상체 순환(관상동맥·뇌혈류)에 우선적으로 도달하는 반면, ECMO 캐뉼라가 공급하는 잘 산소화된 혈액은 하체로 향한다. 고유량 ECMO(>4 L/min)는 폐순환을 우회시켜 폐동맥 혈류를 전체 심박출량의 25% 미만으로 줄일 수 있으며, 자가 폐 관류는 폐동맥 혈류에 크게 의존하므로 기관지 측부순환만으로는 보상되지 않는다. 자가 심박출량이 ECMO 유량 대비 증가할수록 상체(관상·뇌)로 가는 저산소화 혈액 비중이 커진다. 대처로는 기계환기 설정 최적화(PEEP 및 FiO₂ 상향)나 중심/반중심 캐뉼러화로의 전환이 제시된다. 또한 동맥 맥압(pulse pressure)이 핵심 감시지표로, VA-ECMO 유량을 올리면 맥압은 감소하고 평균 혈압은 대개 상승하며, 최소 10 mmHg의 맥압이 좌심실 박출과 심실·대동맥근부 혈전 예방에 필요하다고 본다.\n— 보강 출처: The physiology of venoarterial ECMO — a comprehensive clinical perspective (PMC11041071) (https://pmc.ncbi.nlm.nih.gov/articles/PMC11041071/)",
+            "origin": "augmented",
+            "sourceLabel": "The physiology of venoarterial ECMO — a comprehensive clinical perspective (PMC11041071)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11041071/"
+          },
+          {
+            "heading_ko": "[웹 보강] 고산소혈증 — 원인인가 공변량인가: BLENDER 연구진의 논평과 무작위 근거",
+            "body_ko": "이 종설이 요약한 '고산소혈증–사망 연관성'은 인과관계인지 질환 중증도의 반영(교란)인지가 논쟁적이다. BLENDER 연구진의 논평은 단순 인과성에 대한 반론을 든다. ① 특히 우측 요골동맥에서의 높은 PaO₂ 수치는 직접적 산소 독성이라기보다 낮은 자가 심박출량(혼합점이 무명동맥 근위부에 위치)을 반영할 수 있다. ② 노출 측정의 이질성(최고치·평균 PaO₂·캐뉼러화 후 단일 측정 등)이 비교를 어렵게 한다 — 최대 규모 연구(775명)조차 질환 중증도 보정 없이 단일·24시간 측정만 분석했다. ③ 조기 ECMO 개시는 더 나은 결과와 연관되지만 조기 고산소혈증은 불량한 신경학적 결과와 연관되어 시점 보정이 까다롭다. ④ 고산소혈증의 해로움은 ECPR 환자에서 가장 뚜렷하며, ICU-ROX 시험은 저산소-허혈성 뇌병증에서 특히 해로움 신호를 보였다.\n\nBLENDER 무작위 시험 설계: 214명 등록(2022년 9월까지), ECMO 개시 6시간 이내 무작위 배정, 보존군 SpO₂ 목표 92–96% vs 자유군 97–100%, 7일간 1일 2회 산소공급막 후방 혈액가스 측정, ECPR 여부로 층화. 일차 결과는 ICU-free days, 이차 결과는 6개월 장애 평가였다. 연구진은 해로운 PaO₂ 역치, 최적 고산소혈증 노출 기간, 캐뉼러화 전략별 장기 심혈관·신경학적 영향이 여전히 미해결 과제임을 인정하며, 연관성이 아닌 인과관계 확립에는 무작위 근거가 필수라고 강조한다.\n— 보강 출처: Hyperoxia during venoarterial ECMO: Culprit or co-variate? A comment from the BLENDER investigators (PMC9644601) (https://pmc.ncbi.nlm.nih.gov/articles/PMC9644601/)",
+            "origin": "augmented",
+            "sourceLabel": "Hyperoxia during venoarterial ECMO: Culprit or co-variate? A comment from the BLENDER investigators (PMC9644601)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9644601/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "51cd8a8b0608061ea89877118c10edd5057db545a6949ab87669da70acf32d9c",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-20T02:35:19.135Z",
+          "resultFingerprint": "81ab35594f8523cfa599da39cef0e9dd01b78f61b99358d9da7a5c1758dd6ffe",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "말초 VA-ECMO 환자에서는 생리적으로 고산소혈증이 흔하고(중증 고산소혈증 약 20%) 조기·누적 고산소혈증이 중증도 보정 후에도 병원 내 사망과 연관되므로, 산소를 '되는 대로' 넘치게 주지 말고 적정 대상으로 삼아야 한다. 침상에서는 우측 요골동맥 SpO₂ 94–98%를 겨냥하고, 선택된 환자에서는 공기-산소 혼합기로 FdO₂를 조절해 산소공급막 후방 PaO₂ 150–300 mm Hg를 목표로 하여 고산소혈증과 저산소증을 동시에 피한다. 우측 요골 샘플링과 맥압·차등적 저산소증 감시를 병행해 자가 심박출량 회복과 상체 저산소화 신호를 함께 본다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38059745",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38059745/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1097/CCM.0000000000006134",
+            "url": "https://doi.org/10.1097/CCM.0000000000006134"
+          },
+          {
+            "label": "웹 — BLENDER investigators' comment — Hyperoxia during VA-ECMO: Culprit or co-variate? (PMC9644601)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9644601/"
+          },
+          {
+            "label": "웹 — The physiology of venoarterial ECMO — a comprehensive clinical perspective (PMC11041071)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11041071/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15553,9 +15659,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-19",
+    "date": "2026-11-20",
     "outcome": "published",
-    "publishedId": "37909826"
+    "publishedId": "38059745"
   },
-  "updatedAt": "2026-11-19"
+  "updatedAt": "2026-11-20"
 }

@@ -1232,5 +1232,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41361939",
+    "title": "Effect of Automated Closed-Loop Ventilation vs Protocolized Conventional Ventila",
+    "date": "2026-11-20",
+    "topic": "resp_airway",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

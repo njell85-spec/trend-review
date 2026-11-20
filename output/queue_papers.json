@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41361939",
-      "title": "Effect of Automated Closed-Loop Ventilation vs Protocolized Conventional Ventilation on Ventilator-Free Days in Critically Ill Adults: A Randomized Clinical Trial.",
-      "journal": "JAMA",
-      "score": 8.1,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 6.639199999999999,
-        "cooldownPenalty": -1.5,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-06"
-    },
-    {
       "pmid": "41345696",
       "title": "Predicting early prone position ventilation responsiveness in patients with acute respiratory distress syndrome based on electrical impedance tomography: a prospective study.",
       "journal": "Critical care (London, England)",
@@ -732,6 +717,22 @@
       },
       "addedAt": "2026-11-06",
       "publishedAt": "2026-11-19"
+    },
+    {
+      "pmid": "41361939",
+      "title": "Effect of Automated Closed-Loop Ventilation vs Protocolized Conventional Ventilation on Ventilator-Free Days in Critically Ill Adults: A Randomized Clinical Trial.",
+      "journal": "JAMA",
+      "score": 8.1,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.639199999999999,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-06",
+      "publishedAt": "2026-11-20"
     }
   ],
   "rejected": [
@@ -747,9 +748,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-19",
+    "date": "2026-11-20",
     "outcome": "published",
-    "publishedId": "41369227"
+    "publishedId": "41361939"
   },
-  "updatedAt": "2026-11-19"
+  "updatedAt": "2026-11-20"
 }
