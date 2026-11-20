@@ -5575,6 +5575,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-20",
+      "pmid": "41361939",
+      "title": "Effect of Automated Closed-Loop Ventilation vs Protocolized Conventional Ventilation on Ventilator-Free Days in Critically Ill Adults: A Randomized Clinical Trial.",
+      "title_ko": "중증 성인 환자에서 자동 폐쇄회로 환기(automated closed-loop ventilation) vs 프로토콜 기반 기존 환기가 ventilator-free days에 미치는 영향: 무작위 임상시험",
+      "journal": "JAMA",
+      "doi": "10.1001/jama.2025.24384",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "침습적 기계환기를 받는 중증 성인 환자에서, 자동 폐쇄회로 환기(INTELLiVENT-ASV)를 조기에 시작하면 프로토콜 기반 기존 환기에 비해 day 28의 ventilator-free days가 증가하는가?",
+      "pico": {
+        "population": "[International] Adult patients with less than 1 hour elapsed after initiation of invasive ventilation and expected to require ventilation for 24 hours or longer, enrolled at 7 ICUs in the Netherlands and Switzerland between October 2020 and June 2025; among 1514 randomized, 1201 (79%) were included in the modified intention-to-treat analysis (36% women; median age, 63 years).",
+        "intervention": "Automated closed-loop ventilation using INTELLiVENT adaptive support ventilation (n = 602), initiated early; the group followed standardized ventilation management, sedation, and weaning protocols.",
+        "comparison": "Protocolized conventional ventilation (n = 599), following standardized ventilation management, sedation, and weaning protocols.",
+        "outcome": "The primary outcome was the number of ventilator-free days at day 28 (days alive and free from invasive ventilation): median 16.7 days (IQR, 0.0-26.1) in the closed-loop group vs 16.3 days (IQR, 0.0-26.5) in the conventional group (odds ratio, 0.91; 95% CI, 0.77-1.06; P = .23)."
+      },
+      "pico_ko": {
+        "population": "[다국가] 침습적 환기 시작 후 1시간 미만이 경과했고 24시간 이상 환기가 필요할 것으로 예상된 성인 환자로, 2020년 10월~2025년 6월 네덜란드와 스위스의 7개 ICU에서 등록; 무작위 배정된 1514명 중 1201명(79%)이 modified intention-to-treat 분석에 포함됨(여성 36%; 중앙값 연령 63세).",
+        "intervention": "INTELLiVENT adaptive support ventilation을 이용한 자동 폐쇄회로 환기(n = 602)를 조기에 시작; 표준화된 환기 관리·진정·이탈(weaning) 프로토콜을 따름.",
+        "comparison": "프로토콜 기반 기존 환기(n = 599)로, 표준화된 환기 관리·진정·이탈 프로토콜을 따름.",
+        "outcome": "일차 결과는 day 28의 ventilator-free days(생존하며 침습적 환기에서 벗어난 일수): 폐쇄회로군 중앙값 16.7일(IQR, 0.0-26.1) vs 기존군 16.3일(IQR, 0.0-26.5)(odds ratio, 0.91; 95% CI, 0.77-1.06; P = .23)."
+      },
+      "keyFindings": [
+        "Among 1201 mITT patients, median ventilator-free days at day 28 were 16.7 (IQR 0.0-26.1) with closed-loop vs 16.3 (IQR 0.0-26.5) with conventional ventilation (OR 0.91; 95% CI 0.77-1.06; P = .23) — no significant difference.",
+        "No differences between groups in 28-day mortality or duration of ventilation among survivors, nor in ICU and hospital lengths of stay.",
+        "Ventilation quality was higher with closed-loop ventilation, and severe hypercapnia, hypoxemia, and need for rescue therapies (mainly prone positioning) were less frequent, but these were non-significant after multiplicity adjustment."
+      ],
+      "keyFindings_ko": [
+        "1201명 mITT 환자에서 day 28 ventilator-free days 중앙값은 폐쇄회로 16.7일(IQR 0.0-26.1) vs 기존 환기 16.3일(IQR 0.0-26.5)(OR 0.91; 95% CI 0.77-1.06; P = .23)로 유의한 차이 없음.",
+        "28-day mortality나 생존자의 환기 기간, ICU 및 병원 재원기간에서도 군 간 차이가 없었음.",
+        "ventilation quality는 폐쇄회로 환기에서 더 높았고 severe hypercapnia, hypoxemia 및 rescue therapies(주로 prone positioning) 필요성이 더 적었으나, 다중성 보정 후 유의하지 않았음."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 41361939",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41361939/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1001/jama.2025.24384",
+          "url": "https://doi.org/10.1001/jama.2025.24384"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT04593810 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT04593810"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
@@ -5662,7 +5713,8 @@
         "41838001",
         "42958418",
         "41339937",
-        "41369227"
+        "41369227",
+        "41361939"
       ]
     },
     "fulltextLen": {
