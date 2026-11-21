@@ -887,23 +887,6 @@
       "status": "queued"
     },
     {
-      "pmid": "38598123",
-      "title": "Head-to-toe bedside ultrasound for adult patients on extracorporeal membrane oxygenation.",
-      "journal": "Intensive Care Med",
-      "score": 7.5,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ECMO 환자 침상 초음파 — 중환자 술기",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "38771364",
       "title": "European Society of Intensive Care Medicine clinical practice guideline on fluid therapy in adult critically ill patients. Part 1: the choice of resuscitation fluids.",
       "journal": "Intensive Care Med",
@@ -15602,6 +15585,126 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "38598123",
+      "title": "Head-to-toe bedside ultrasound for adult patients on extracorporeal membrane oxygenation.",
+      "journal": "Intensive Care Med",
+      "score": 7.5,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ECMO 환자 침상 초음파 — 중환자 술기",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-21",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "38598123",
+          "title": "Head-to-toe bedside ultrasound for adult patients on extracorporeal membrane oxygenation.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2024-4-10",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38598123/",
+          "doi": "10.1007/s00134-024-07333-7"
+        },
+        "title_ko": "ECMO를 적용 중인 성인 환자를 위한 머리끝부터 발끝까지(head-to-toe) 침상 초음파",
+        "scope_ko": "이 종설은 체외막산소공급(ECMO)을 받는 성인 환자에서 ECMO 시작 결정 단계부터 삽관, 유지 중 모니터링과 합병증 해결, 이탈(liberation), 그리고 발거(decannulation) 이후까지 전 과정에 걸친 침상 초음파(심초음파·혈관·폐·뇌 초음파)의 역할을 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "서론 — 왜 침상 초음파인가",
+            "body_ko": "초음파는 어디서나 쓸 수 있고 비침습적이어서 ECMO 환자의 진단·모니터링 도구로 특히 적합하다. ECMO 환자는 병원 내에서 가장 중증인 경우가 많고 진단 검사를 위해 다른 구역으로 이송하기에는 너무 불안정한 경우가 흔하므로, 침상에서 바로 진단을 내릴 수 있다는 point-of-care 초음파의 특성은 큰 이점이 된다.\n\n초음파의 역할은 ECMO를 시작하기 전부터 시작된다. 이 종설은 ECMO 시작을 결정하는 시점부터 발거 후 단계까지, 성인 ECMO 환자 관리 전반에 걸친 '머리끝부터 발끝까지'의 초음파 활용을 다룬다. 다만 저자들은 초음파 소견을 올바르게 해석하려면 ECMO가 유발하는 생리학적 변화, 서로 다른 ECMO 구성(configuration)에 대한 이해, 그리고 장비가 혈역학 지표에 미치는 영향을 숙지하고 있어야 한다는 점을 강조한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "ECMO 시작 전 평가(Pre-ECMO)",
+            "body_ko": "ECMO를 고려하는 모든 환자는 ECMO 캐뉼러 삽입을 지연시키지 않는 범위에서 심장·판막 기능과 혈관 해부에 대한 철저한 초음파 평가를 받아야 한다. 진행 중인 심폐소생술 등으로 금기가 아닌 한 ECMO 시작 전에 포괄적 심장 평가를 시행한다. 가능하면 경흉부 심초음파(TTE)를 선호하되, 체형·최근 수술·기계환기 등으로 영상 획득이 제한되면 경식도 심초음파(TEE)가 필요해진다.\n\n평가하는 주요 지표에는 좌심실 박출률과 좌심실 유출로 속도-시간 적분(LVOT VTI), 우심실 기능(면적 변화율 FAC, 조직 도플러 속도), 이완기 기능과 국소 벽운동 이상, 폐동맥압을 추정하기 위한 삼첨판 역류 속도, 심강 내 혈전, 그리고 상·하대정맥의 형태/혈전을 포함한 혈관 해부가 포함된다.\n\n전(前)-ECMO 초음파의 역할은 ① ECMO 적응증을 확인하고, ② ECMO가 적응되지 않는 임상 상황을 가려내며, ③ 금기를 배제하고, ④ ECMO 구성 선택에 정보를 제공하는 것이다. 구성 선택과 관련해, 정맥-정맥(VV) ECMO 후보라도 중증 좌심실 기능 저하, 근위부 폐색전증, 혹은 만성 폐고혈압의 징후(우심실 비후, 폐동맥압 >60 mmHg)가 있으면 정맥-동맥(VA) 지원이 필요하다. 금기 배제에는 대동맥 박리, 중증 대동맥판 역류, 심장압전, 심한 죽상반(atheroma) 등이 포함된다.\n\n폐 초음파는 심인성 폐부종과 비심인성 폐부종을 감별하는 데 쓰인다. 불규칙하고 조각난 흉막선이나 전방 경화(consolidation) 소견은 심장 원인보다 ARDS를 시사한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "삽관(cannulation) 중 초음파 유도",
+            "body_ko": "삽관 중 혈관·심장 초음파의 사용은 합병증 위험을 줄이고 캐뉼러의 적절한 위치를 보장한다. 실시간 초음파 유도는 혈관 손상 등 합병증을 줄인다. 캐뉼러의 최대 크기는 '최대 크기[Fr] = 혈관 직경[mm] × 3' 공식을 따르되, 안전한 삽입을 위해 그보다 약간 작은 크기를 권장한다.\n\n삽관 중 심초음파로 유도선(wire)의 위치를 지속적으로 확인하여, 말초 혈관(내경정맥, 대퇴정맥)과 중심 위치(상·하대정맥, 하행대동맥)에 올바르게 놓이도록 한다. 유도선이 우심방이나 우심실로 이동하면 생명을 위협할 수 있다. 삽관 후 심초음파로 캐뉼러의 최종 위치를 확인하고, 새로 생긴 심막 삼출이나 대동맥 박리가 없는지 배제한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "VA ECMO 유지 중 모니터링과 좌심실 부하 경감(unloading)",
+            "body_ko": "VA ECMO에서는 매일 연속 심초음파로 양심실 기능과 크기, 대동맥판 개방 여부, 승모판 역류 양상, 자발 심초음파 조영(spontaneous echo contrast, 혈전 형성 위험을 시사), 그리고 캐뉼러 위치를 평가한다.\n\nVA ECMO는 후부하를 증가시켜 좌심실 팽창(distention)을 일으킬 수 있고, 그 결과 대동맥판이 열리지 않게 되어 승모판 역류, 폐부종, 부정맥을 유발할 수 있으므로 심초음파 해석을 크게 바꾼다. 최대한의 약물 치료와 최소 유량에도 불구하고 대동맥판이 지속적으로 닫혀 있거나, 자발 조영 또는 심강 내 혈전이 확인되면 기계적 좌심실 부하 경감이 필요해진다. 선택지에는 경피적 심방중격절개술(septostomy), 대동맥내 풍선펌프(IABP), Impella 장치가 있다. 단, 유의한 대동맥판 역류가 있으면 IABP는 금기다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "VV ECMO 유지 중 모니터링 — 배액 부족·재순환·지속 저산소혈증",
+            "body_ko": "VV ECMO에서는 심초음파로 우심실 기능을 추적하는데, 폐질환 악화나 체액 과부하로 우심실 기능이 나빠질 수 있다.\n\n배액 부족(drainage insufficiency): 저자들은 그 원인으로 캐뉼러 위치 변화, 캐뉼러 인접부 혈전 형성, 저혈량, 그리고 기침·긴장성 기흉·흉막 삼출·심장압전으로 인한 흉강내압 상승을 든다. 심초음파는 이러한 원인을 가려내고, ECMO 회로 자체와 무관한 체외혈류(ECBF) 감소를 평가하는 데 도움이 된다.\n\n재순환(recirculation): 재순환이 의심되면 산화기 전·후 혈액가스에 더해 심초음파로 캐뉼러 위치를 재평가해야 하며, 심초음파는 심장 각 방(chamber)에 대한 캐뉼러의 정확한 위치를 확인해 준다. 이중관(dual-lumen) 양대정맥(bicaval) 캐뉼러를 쓸 때는 색도플러(CFD)로 환류(return) 혈류가 삼첨판(TV)을 향하도록 올바르게 정렬되었는지 확인해야 한다. 재순환 분율의 정량화를 위해 희석 초음파(dilutional ultrasound)와 심초음파를 결합할 수 있으나 일상적으로 시행되지는 않는다. 또한 처음에는 최적 위치였더라도, 환자 자세나 기계환기(MV) 감소로 횡격막이 크게 이동하면 우심방 내 환류 구멍(reinfusion hole)의 위치가 바뀔 수 있다. 극단적으로는 환류 혈류가 거의 간내(intrahepatic)로만 향하게 되어 산소화가 비효율적으로 될 수 있다.\n\n지속 저산소혈증: 산화기를 통한 산소 전달이 최적인데도 저산소혈증이 지속될 때 심초음파가 도움이 되며, 평가의 초점은 재순환과 캐뉼러 재위치에 맞춰진다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "심장압전 인지와 초음파 조영제",
+            "body_ko": "ECMO 적용 중에는 체외혈류가 유지되면서 전형적 임상 징후가 가려지기 때문에 심장압전 진단이 어려워진다. 저자들은 혈역학적으로 유의한 압박이 있어도 '많은 임상적·심초음파적 징후가 결여되어 있을 수 있다'고 지적한다. 따라서 잦은 감시 심초음파(매일 또는 그보다 자주)가 권장된다.\n\n초음파 조영제: 조영 증강용 미세기포(microbubble)는 좌심실 기능 평가와 혈전 검출의 진단 정확도를 높인다. 에코가 제한적인 환자에서 좌심실 심근 기능·역학 평가나 심강 내 혈전 배제에 안전하게 쓸 수 있어 진단 정확도를 개선한다. 다만 공기 기포 감지기(air-bubble detector)를 작동시킬 수 있어 일시적인 비활성화가 필요할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "폐 초음파",
+            "body_ko": "연속 폐 초음파 점수(lung ultrasound score)는 VV ECMO에서 회복 가능성과 상관관계가 있다. 점수가 높게 지속되면 예후가 나쁜 것과 연관되고, 점수가 호전되면 성공적 발거를 예측한다. 즉 폐 초음파는 VV ECMO에서 회복의 징후를 모니터링하는 데 쓸 수 있다.\n\n단, 초보호 환기(ultra-protective ventilation)를 받는 환자에서는 폐 슬라이딩(lung sliding)이 미미할 수 있으므로 기흉을 진단할 때 신중한 분석이 필요하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "뇌 초음파(경두개 도플러, TCD)",
+            "body_ko": "뇌 초음파는 두개내압과 뇌관류압을 비침습적으로 추정하는 데 가치 있는 진단·예후 정보를 제공한다. VA ECMO에서는 좌심실 박출률이 20%를 초과하거나 IABP 지원이 있을 때에만 수축기 피크(systolic peak)가 나타난다. 박동지수(pulsatility index)에서 박동성이 소실되는 것은 두개내 출혈 위험과 상관관계가 있다.\n\nTCD는 미세색전 신호(microembolic signal)를 검출하는 데에도 쓰이며, 이전에 박동성 혈류가 기록되었던 상태에서 이완기 혈류 소실로 진행하는 혈류 양상을 보일 때 뇌사 판정을 보조한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "혈관·사지 관류 모니터링",
+            "body_ko": "말초 VA ECMO에서는 전신 항응고에도 불구하고 삽관된 사지의 관류가 충분한지 도플러로 정기적으로 확인한다. 항응고를 하더라도 심부정맥혈전증(DVT)의 빈도는 여전히 높지만, ECMO 유지 중 근거 기반 선별검사 프로토콜은 아직 정립되어 있지 않다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "ECMO 이탈(liberation) 평가",
+            "body_ko": "VA ECMO 이탈: 이탈 시점은 원인 요인, 양심실 회복 징후, 혈역학 지표를 함께 고려해 결정한다. 단계적 유량 감소 시험 동안 제안되는 심초음파 역치로는 좌심실 박출률(LVEF) >20–25%, 좌심실 유출로 VTI >10 cm, 승모판륜 수축기 조직 도플러 속도 >6 cm/s, TAPSE(삼첨판륜 수축기 이동) >10 mm, 우심실 박출률 >25%가 있다.\n\n저자들은 부하-비의존적(load-independent) 지표와 우심실–폐동맥 커플링(RV–PA coupling) 평가가 더 우수한 예후 정보를 제공한다고 본다. 전량(full flow)과 감량(reduced flow) 상태 사이의 동적 속도 변화는 정적 측정치보다 심장 예비능을 더 잘 반영한다. 우심실 기능 평가는 최소 잔류 유량이 기능 저하를 가릴 수 있어 특히 까다로우며, 일부 기관에서는 이를 피하기 위해 펌프 조절 역행 이탈 시험(pump-controlled retrograde trial-off)을 사용한다.\n\nVV ECMO 이탈: 심초음파로 유도하는 VV 이탈에 대한 자료는 제한적이다. 이탈 중 재개통된 난원공개존(PFO)을 통한 우-좌 단락이 이탈 실패를 유발할 수 있으며, 색도플러나 기포 검사(bubble study)로 확인할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "발거(decannulation) 후 초음파 및 결론",
+            "body_ko": "발거 후에는 이전 삽관 부위를 체계적으로 초음파로 영상화하여 혈전증과 혈관 합병증(가성동맥류, 동정맥루)을 찾아낸다. 지원 중 생겼을 수 있는 심강 내 혈전도 발거 후 선별검사가 필요하다. 최근 연구들은 ECMO 후 DVT 발생률이 환자의 약 절반에 이른다고 보고한다.\n\n결론적으로 저자들은 초음파가 초기 환자 선택부터 성공적 이탈에 이르기까지 의사결정을 이끌고 후기 합병증을 찾아내므로 ECMO 관리 전 과정에서 필수 불가결하다고 강조한다. 다만 정확한 해석을 위해서는 ECMO가 유발하는 생리 변화, 서로 다른 구성, 그리고 장비가 혈역학 지표에 미치는 기계별 영향을 이해하고 있어야 한다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "web-augmented",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "a880e0870fc53d5dda5fb109f5ffdb1c26c6025a72217015a9650816180fe379",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-21T02:54:37.176Z",
+          "resultFingerprint": "17e2d72b1bb12f7b24e170bb4de74478610dd3823167fcbaefe25c71a25e79c9",
+          "modelReported": "web-augmented",
+          "coverage": "web-augmented",
+          "trustedWebSourceCount": 1,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "침상에서 환자를 옮기지 않고도 ECMO 전 과정을 초음파로 끌고 갈 수 있다: 시작 전 심장·판막·혈관 평가로 적응증·금기·구성을 정하고, 삽관 시 유도선·캐뉼러 위치를 실시간 확인하며, 유지 중에는 배액 부족·재순환·좌심실 팽창·압전을 매일 감시한다. VA ECMO 이탈은 단계적 유량 감소 중 LVEF >20–25%, LVOT VTI >10 cm, 조직 도플러 >6 cm/s, TAPSE >10 mm 같은 역치로 판단하되 정적 수치보다 유량 변화에 따른 동적 반응과 RV–PA 커플링을 더 신뢰하고, 발거 후에는 삽관 부위 혈전·혈관 합병증을 반드시 선별한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38598123",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38598123/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-024-07333-7",
+            "url": "https://doi.org/10.1007/s00134-024-07333-7"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 38598123)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38598123/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15659,9 +15762,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
     "outcome": "published",
-    "publishedId": "38059745"
+    "publishedId": "38598123"
   },
-  "updatedAt": "2026-11-20"
+  "updatedAt": "2026-11-21"
 }

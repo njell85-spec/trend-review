@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41345696",
-      "title": "Predicting early prone position ventilation responsiveness in patients with acute respiratory distress syndrome based on electrical impedance tomography: a prospective study.",
-      "journal": "Critical care (London, England)",
-      "score": 8,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.99,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-14"
-    },
-    {
       "pmid": "41906154",
       "title": "Complications in acute respiratory distress syndrome: a systematic review and meta-analysis.",
       "journal": "Critical care (London, England)",
@@ -733,6 +718,22 @@
       },
       "addedAt": "2026-11-06",
       "publishedAt": "2026-11-20"
+    },
+    {
+      "pmid": "41345696",
+      "title": "Predicting early prone position ventilation responsiveness in patients with acute respiratory distress syndrome based on electrical impedance tomography: a prospective study.",
+      "journal": "Critical care (London, England)",
+      "score": 8,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.99,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14",
+      "publishedAt": "2026-11-21"
     }
   ],
   "rejected": [
@@ -748,9 +749,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
     "outcome": "published",
-    "publishedId": "41361939"
+    "publishedId": "41345696"
   },
-  "updatedAt": "2026-11-20"
+  "updatedAt": "2026-11-21"
 }
