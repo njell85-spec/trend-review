@@ -1254,5 +1254,16 @@
     "rerankPoolSize": 1,
     "fallbackReason": "from-queue",
     "lowConfidence": true
+  },
+  {
+    "pmid": "41906154",
+    "title": "Complications in acute respiratory distress syndrome: a systematic review and me",
+    "date": "2026-11-22",
+    "topic": "resp_airway",
+    "selectionMode": "deterministic",
+    "rerankApplied": false,
+    "rerankPoolSize": 1,
+    "fallbackReason": "from-queue",
+    "lowConfidence": true
   }
 ]

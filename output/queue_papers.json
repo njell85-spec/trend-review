@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41906154",
-      "title": "Complications in acute respiratory distress syndrome: a systematic review and meta-analysis.",
-      "journal": "Critical care (London, England)",
-      "score": 7.8,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.84,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-14"
-    },
-    {
       "pmid": "42956771",
       "title": "Prone positioning and high-frequency oscillatory ventilation in early paediatric acute respiratory distress syndrome (PROSpect): an international, two-by-two factorial, response-adaptive, phase 3, randomised controlled trial.",
       "journal": "Lancet (London, England)",
@@ -734,6 +719,22 @@
       },
       "addedAt": "2026-11-14",
       "publishedAt": "2026-11-21"
+    },
+    {
+      "pmid": "41906154",
+      "title": "Complications in acute respiratory distress syndrome: a systematic review and meta-analysis.",
+      "journal": "Critical care (London, England)",
+      "score": 7.8,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.84,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14",
+      "publishedAt": "2026-11-22"
     }
   ],
   "rejected": [
@@ -749,9 +750,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-21",
+    "date": "2026-11-22",
     "outcome": "published",
-    "publishedId": "41345696"
+    "publishedId": "41906154"
   },
-  "updatedAt": "2026-11-21"
+  "updatedAt": "2026-11-22"
 }

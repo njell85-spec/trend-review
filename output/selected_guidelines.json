@@ -11621,84 +11621,6 @@
       }
     },
     {
-      "id": "pmid:39961851",
-      "pmid": "39961851",
-      "title": "ESICM consensus-based recommendations for the management of very old patients in intensive care.",
-      "pubDate": "2025 Feb",
-      "journal": "Intensive care medicine",
-      "publicationTypes": [
-        "Journal Article",
-        "Consensus Statement",
-        "Research Support, Non-U.S. Gov't"
-      ],
-      "discoveredBy": [
-        "pubmed-title"
-      ],
-      "discoveredAt": "2026-08-17T04:36:46.508Z",
-      "abstract": "PURPOSE: The heterogeneity of very old patients (age ≥ 80 years) and the prevalence of complex geriatric syndromes in this cohort constitute major challenges for the classical methods of evidence-based medicine to inform clinical practice. The lack of robust guidance for the management of critical conditions in these patients contributes to considerable uncertainty among practitioners and unwarranted variations of care. The European Society of Intensive Care Medicine (ESICM) initiated a Delphi study to translate the empirical knowledge of experts in this field into consensus-based recommendations for clinical practice.\nMETHODS: A multi-national group of specialists in intensive care, emergency, and geriatric medicine provided opinions on managing very old patients with critical conditions. Strong or moderate consensus was defined as having at least 90% or 80% of experts, respectively, expressing agreement or disagreement on the three highest or lowest levels of a 9-points Likert scale.\nRESULTS: Twenty-eight members of the expert steering group and 82 additional experts completed two Delphi rounds. After discussing the results, the steering group issued recommendations for 48 statements and 2 checklists for which consensus was achieved. In addition to determining fundamental principles, they include advice on goals of care and the decision-making about admission to and treatment of patients in intensive care and the management after discharge.\nCONCLUSION: A multi-disciplinary group of experts achieved consensus on recommendations concerning intensive care for very old patients, which were approved and endorsed by ESICM. The implementation requires a careful analysis of available healthcare resources and should proceed in a stepwise fashion.",
-      "meshTerms": [
-        "Humans",
-        "Delphi Technique",
-        "Critical Care",
-        "Aged, 80 and over",
-        "Geriatrics",
-        "Europe"
-      ],
-      "keywords": [
-        "Critical care",
-        "Delphi study",
-        "Emergency medicine",
-        "Geriatric medicine",
-        "Intensive care"
-      ],
-      "doi": "10.1007/s00134-025-07794-4",
-      "pmcid": "",
-      "region": "eu",
-      "by": "org-acronym",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": true,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": "esicm"
-      },
-      "priority": 6.6143595012175656,
-      "breakdown": {
-        "authority": 4,
-        "topic": 0,
-        "recency": 0.6143595012175658,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": "esicm",
-      "tier": 1,
-      "topicMatched": false,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "recommendations",
-      "reasons": [
-        "format-evidence",
-        "publisher-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:59.039Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "초고령 중환자 관리 ESICM 권고 — 중환자 실무",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "esicm|consensus-based-very-old-patients-intensive-care",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:39945062",
       "pmid": "39945062",
       "title": "Evolution of Critical Care Cardiology: An Update on Structure, Care Delivery, Training, and Research Paradigms: A Scientific Statement From the American Heart Association.",
@@ -39311,7 +39233,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -40584,7 +40506,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41383,7 +41305,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42303,7 +42225,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42476,7 +42398,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42894,7 +42816,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -45199,7 +45121,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46002,7 +45924,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46204,7 +46126,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46267,7 +46189,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -46584,7 +46506,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -46654,7 +46576,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46734,7 +46656,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -46802,7 +46724,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -46864,7 +46786,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46943,7 +46865,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -47025,7 +46947,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47124,7 +47046,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47225,7 +47147,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47306,7 +47228,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47388,7 +47310,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47451,7 +47373,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47520,7 +47442,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47594,7 +47516,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47660,7 +47582,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -47723,7 +47645,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47803,7 +47725,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47867,7 +47789,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -47949,7 +47871,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-post-discharge-outcomes-nationwide-german-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -48012,7 +47934,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48079,7 +48001,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -48159,7 +48081,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48222,7 +48144,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48281,7 +48203,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "unknown|diastolic-function-classification-acute-myocardial-infarction-comparison-ase-eacvi-ase",
       "supersedes": [],
       "lineageReview": false,
@@ -48336,7 +48258,7 @@
       "organizationId": null,
       "tier": null,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "guideline",
       "reasons": [
@@ -48344,7 +48266,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-21T02:43:05.285Z",
+      "lastSeenAt": "2026-11-22T01:30:56.698Z",
       "lineageKey": "unknown|ers-clinical-practice-patients-with-idiopathic-pulmonary-fibrosis-lung-cancer",
       "supersedes": [],
       "lineageReview": false,
@@ -64406,6 +64328,140 @@
         ]
       },
       "publishedAt": "2026-11-21"
+    },
+    {
+      "id": "pmid:39961851",
+      "pmid": "39961851",
+      "title": "ESICM consensus-based recommendations for the management of very old patients in intensive care.",
+      "pubDate": "2025 Feb",
+      "journal": "Intensive care medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Consensus Statement",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "discoveredBy": [
+        "pubmed-title"
+      ],
+      "discoveredAt": "2026-08-17T04:36:46.508Z",
+      "abstract": "PURPOSE: The heterogeneity of very old patients (age ≥ 80 years) and the prevalence of complex geriatric syndromes in this cohort constitute major challenges for the classical methods of evidence-based medicine to inform clinical practice. The lack of robust guidance for the management of critical conditions in these patients contributes to considerable uncertainty among practitioners and unwarranted variations of care. The European Society of Intensive Care Medicine (ESICM) initiated a Delphi study to translate the empirical knowledge of experts in this field into consensus-based recommendations for clinical practice.\nMETHODS: A multi-national group of specialists in intensive care, emergency, and geriatric medicine provided opinions on managing very old patients with critical conditions. Strong or moderate consensus was defined as having at least 90% or 80% of experts, respectively, expressing agreement or disagreement on the three highest or lowest levels of a 9-points Likert scale.\nRESULTS: Twenty-eight members of the expert steering group and 82 additional experts completed two Delphi rounds. After discussing the results, the steering group issued recommendations for 48 statements and 2 checklists for which consensus was achieved. In addition to determining fundamental principles, they include advice on goals of care and the decision-making about admission to and treatment of patients in intensive care and the management after discharge.\nCONCLUSION: A multi-disciplinary group of experts achieved consensus on recommendations concerning intensive care for very old patients, which were approved and endorsed by ESICM. The implementation requires a careful analysis of available healthcare resources and should proceed in a stepwise fashion.",
+      "meshTerms": [
+        "Humans",
+        "Delphi Technique",
+        "Critical Care",
+        "Aged, 80 and over",
+        "Geriatrics",
+        "Europe"
+      ],
+      "keywords": [
+        "Critical care",
+        "Delphi study",
+        "Emergency medicine",
+        "Geriatric medicine",
+        "Intensive care"
+      ],
+      "doi": "10.1007/s00134-025-07794-4",
+      "pmcid": "",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "esicm"
+      },
+      "priority": 6.6143595012175656,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0,
+        "recency": 0.6143595012175658,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esicm",
+      "tier": 1,
+      "topicMatched": false,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "recommendations",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:59.039Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "초고령 중환자 관리 ESICM 권고 — 중환자 실무",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "esicm|consensus-based-very-old-patients-intensive-care",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "39961851",
+          "title": "ESICM consensus-based recommendations for the management of very old patients in intensive care.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2025 Feb",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39961851/",
+          "doi": "10.1007/s00134-025-07794-4"
+        },
+        "org": "ESICM",
+        "version": "2025",
+        "title_ko": "매우 고령(≥80세) 중환자 관리에 관한 ESICM 합의 기반 권고안",
+        "scope_ko": "80세 이상 '매우 고령' 중환자의 집중치료 관리를 다루는 ESICM 합의(Delphi) 권고안. 노쇠·다중이환·기능저하 등 노인증후군이 흔하고 무작위 근거가 부족한 이 집단에서, ICU 입실·치료 결정, 치료 목표(goals of care), ICU 내 관리, 퇴원 후 관리, 그리고 교육·인프라까지 환자 전 경로(trajectory)에 걸친 기본 원칙과 실무 지침을 제시한다.",
+        "summary": [
+          "Consensus method: an ESICM multinational Delphi (steering group of 28 experts + 82 additional experts, two rounds) issued 48 statements and 2 checklists covering fundamental principles, goals of care, ICU admission/treatment decision-making, and post-discharge management. Strong consensus = ≥90% and moderate consensus = ≥80% agreement on a 9-point Likert scale.",
+          "Anti-ageism core principle: chronological age alone should NOT determine ICU admission or decisions to limit life-sustaining treatment; there is no evidence-based age cut-off for futility. Decisions should weigh acute and chronic conditions, frailty, functional/cognitive status, intervention burden, and the patient's own preferences/ceiling of care.",
+          "Assess frailty, multimorbidity, and pre-existing functional and cognitive impairment, and incorporate quality-of-life and the patient's perspective (including religious/spiritual beliefs). An admission checklist should document functional independence, pre-existing frailty, cognitive impairment, comorbidities, sensory deficits, malnutrition, prior hospitalizations, and current support systems.",
+          "Document goals of care in the record and actively seek advance directives; patients should communicate treatment preferences when able, and decisions should reflect likely outcomes and the burden of intervention rather than age or functional prognosis alone.",
+          "Use a time-limited trial of intensive care when prognosis is substantially uncertain — agreed with patient/caregivers and followed by planned re-evaluation of the response before definitive decisions on treatment limitation.",
+          "Tailor ICU care to aging physiology: delirium prevention, pressure-ulcer prevention, early mobilization, sedation adjusted for aging pharmacology, and provision of sensory aids (glasses, hearing aids).",
+          "Post-ICU continuity: a structured transfer checklist, medication review by a pharmacist or geriatrician, early transfer to step-down units with geriatric rehabilitation, handover to primary care regarding assessment and goals of care, and evaluation of community/social support.",
+          "Education/infrastructure: specialty (ICU/EM) training programmes should incorporate topics specific to very old patients, and geriatric medicine curricula should incorporate intensive care topics; implementation should be stepwise and matched to local healthcare resources."
+        ],
+        "summary_ko": [
+          "합의 방법론: ESICM 다국가 Delphi(운영위원 28명 + 추가 전문가 82명, 2라운드)로 48개 권고문과 2개 체크리스트를 도출. 기본 원칙, 치료 목표, ICU 입실·치료 결정, 퇴원 후 관리를 포괄. 9점 Likert 척도에서 강한 합의=동의 ≥90%, 중등도 합의=≥80%.",
+          "핵심 원칙(반-연령차별): 생물학적 나이(chronological age)만으로 ICU 입실이나 생명유지치료 제한을 결정해서는 안 됨 — 무의미성(futility)의 근거 기반 연령 컷오프는 없음. 급·만성 상태, 노쇠, 기능·인지 상태, 중재 부담, 환자 본인의 선호/치료 상한(ceiling)을 함께 고려.",
+          "노쇠·다중이환·기존 기능 및 인지 저하를 평가하고, 삶의 질과 환자 관점(종교·영적 신념 포함)을 반영. 입실 체크리스트에 기능적 독립성, 기존 노쇠, 인지장애, 동반질환, 감각 결손, 영양불량, 이전 입원력, 현재 지지체계를 문서화.",
+          "치료 목표를 기록에 문서화하고 사전의료지시(advance directives)를 적극 확인; 가능하면 환자가 치료 선호를 표현하게 하며, 결정은 나이나 기능 예후만이 아니라 예상 결과와 중재 부담을 반영.",
+          "예후가 상당히 불확실할 때는 시간제한 치료 시도(time-limited trial)를 활용 — 환자/보호자와 합의하고, 반응을 재평가한 뒤 치료 제한에 대한 최종 결정을 내림.",
+          "노화 생리에 맞춘 ICU 관리: 섬망 예방, 욕창 예방, 조기 거동(early mobilization), 노화 약리에 맞춘 진정, 감각 보조도구(안경·보청기) 제공.",
+          "ICU 퇴원 후 연속성: 구조화된 전원 체크리스트, 약사 또는 노인의학 전문의의 약물 검토, 노인 재활이 가능한 step-down 병동으로의 조기 전원, 평가·치료 목표에 대한 1차 진료팀 인계, 지역사회·사회적 지지 평가.",
+          "교육/인프라: 전문의(ICU/응급) 수련 프로그램에 매우 고령 환자 주제를 포함하고, 노인의학 교육과정에 집중치료 주제를 포함; 실행은 지역 의료자원에 맞춰 단계적으로 진행."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "abstract-only",
+        "practiceImpact": "At the bedside, stop using age as a triage cut-off: admission and treatment-limitation decisions for patients ≥80 should turn on frailty (e.g., formal frailty scoring), functional and cognitive baseline, comorbidity burden, and documented patient preferences rather than chronological age. Operationalize a structured admission checklist and goals-of-care/advance-directive documentation up front, and when prognosis is unclear, explicitly frame therapy as a time-limited trial with a defined re-evaluation point instead of open-ended escalation. During the stay, apply geriatric-oriented bundles (delirium and pressure-ulcer prevention, early mobilization, age-adjusted sedation, sensory aids), and at discharge drive early geriatric rehabilitation, pharmacist/geriatrician medication review, and clean handover to primary care.",
+        "practiceImpact_ko": "임상 현장에서 나이를 분류 컷오프로 쓰지 말 것: ≥80세 환자의 입실·치료 제한 결정은 생물학적 나이가 아니라 노쇠(예: 공식 노쇠 점수), 기능·인지 기저 상태, 동반질환 부담, 문서화된 환자 선호에 근거해야 한다. 구조화된 입실 체크리스트와 치료 목표·사전의료지시 문서화를 처음부터 시행하고, 예후가 불확실하면 무기한 치료 상승 대신 재평가 시점을 정한 '시간제한 치료 시도'로 명시적으로 틀을 잡는다. 입원 중에는 노인 지향 번들(섬망·욕창 예방, 조기 거동, 노화 맞춤 진정, 감각 보조도구)을 적용하고, 퇴원 시에는 조기 노인 재활, 약사/노인의학 전문의 약물 검토, 1차 진료로의 명확한 인계를 추진한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39961851",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39961851/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-025-07794-4",
+            "url": "https://doi.org/10.1007/s00134-025-07794-4"
+          },
+          {
+            "label": "웹 — Intensive Care Medicine (Springer) — 원문 (Beil M, et al. 2025;51:287–301, DOI 10.1007/s00134-025-07794-4; 유료·인증 리다이렉트로 본문 열람 불가)",
+            "url": "https://link.springer.com/article/10.1007/s00134-025-07794-4"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-22"
     }
   ],
   "rejected": [
@@ -68580,7 +68636,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-17T04:06:02.319Z",
+      "discoveredAt": "2026-11-22T01:30:49.759Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -70008,7 +70064,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-21T02:42:55.765Z",
+      "discoveredAt": "2026-11-22T01:30:49.759Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70035,7 +70091,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-21T02:42:55.765Z",
+      "discoveredAt": "2026-11-22T01:30:49.759Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70070,7 +70126,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-21T02:42:55.765Z",
+      "discoveredAt": "2026-11-22T01:30:49.759Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70097,7 +70153,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-21T02:42:55.765Z",
+      "discoveredAt": "2026-11-22T01:30:49.759Z",
       "abstract": "BACKGROUND: Non-invasive ventilation (NIV) is recommended for exacerbations of chronic obstructive pulmonary disease (ECOPD) complicated by respiratory acidosis, yet real-world adherence remains uncertain. We evaluated adherence to ERS/ATS recommendations, patterns of non-adherence, and their association with short-term outcomes.\nMETHODS: In this prospective multicenter cohort study, consecutive patients with ECOPD-related acute hypoxemic-hypercapnic respiratory failure were enrolled across nine Italian hospitals and classified as guideline-adherent, NIV underuse, or NIV overuse according to ERS/ATS pH-based recommendations. The primary objective was to assess adherence to recommendations; the association between adherence patterns and the composite outcome of in-hospital death or endotracheal intubation was a secondary objective.\nRESULTS: Among 456 patients, 315 (69%) were guideline-adherent, 60 (13%) had NIV underuse, and 81 (18%) had NIV overuse. Underuse occurred predominantly in patients with mild respiratory acidosis receiving alternative respiratory support, mainly high-flow nasal cannula (HFNC), whereas overuse occurred primarily in hypercapnic patients without respiratory acidosis. The composite clinical outcome occurred in 48 patients (11%) and did not differ across adherence groups. After adjustment, neither NIV underuse (odds ratio [OR] 0.85, 95% confidence interval [CI] 0.33-2.20) nor overuse (OR 0.54, 95% CI 0.20-1.46) was associated with the composite clinical outcome, whereas higher Simplified Acute Physiology Score (SAPS) II was independently associated with it (OR 1.05, 95% CI 1.02-1.08).\nCONCLUSIONS: Deviations from ERS/ATS recommendations followed distinct clinical patterns and were not independently associated with the composite clinical outcome. Overall illness severity was consistently associated with adverse outcomes, highlighting the complexity of implementing NIV recommendations in routine clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -70131,7 +70187,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-21T02:42:55.765Z",
+      "discoveredAt": "2026-11-22T01:30:49.759Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70163,7 +70219,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-21T02:42:55.765Z",
+      "discoveredAt": "2026-11-22T01:30:49.759Z",
       "abstract": "Applying the Choosing Wisely® methodology, a task force mandated by the Ventilation and Oxygen-therapy group (GAVO2) of the French Pulmonary Society (SPLF) was commissioned to draw up a series of expert recommendations on practical aspects of long-term non-invasive ventilation (NIV). These guidelines are annually updated. Several themes were taken up, notably including NIV configuration, efficacy and tolerance. For each topic, the experts reviewed recent data in the literature. Based on these data and on their own clinical experience, the experts developed a comprehensive analysis of recent insights, and went on to write out practical tips, which have been grouped together in a series of three articles, of which the first is dedicated to the monitoring of non-invasive ventilation.",
       "meshTerms": [],
       "keywords": [
@@ -70236,9 +70292,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261121_114143:guideline:2026-11-21",
+    "runId": "trend_review_20261122_102942:guideline:2026-11-22",
     "outcome": "published",
-    "publishedId": "pmid:43058480",
+    "publishedId": "pmid:39961851",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -70263,15 +70319,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 164,
+        "mergedTotal": 161,
         "overlapCount": 2,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2027 Jan",
         "window": {
-          "minDate": "2026/10/22",
-          "maxDate": "2026/11/21"
+          "minDate": "2026/10/23",
+          "maxDate": "2026/11/22"
         },
         "retmax": 60,
         "topics": [
@@ -70279,7 +70335,7 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 63,
+            "totalFound": 60,
             "idsFetched": 60,
             "truncated": true,
             "error": null
@@ -70297,8 +70353,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 24,
-            "idsFetched": 24,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -70306,8 +70362,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 21,
-            "idsFetched": 21,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -70360,8 +70416,8 @@
             "id": "pubmed-topic:toxicology_environmental",
             "label": "중독·환경 응급",
             "succeeded": true,
-            "totalFound": 4,
-            "idsFetched": 4,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -70375,7 +70431,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 154,
+        "topicOnlyCount": 151,
         "ptPmids": [
           "43044046",
           "42858614",
@@ -70386,9 +70442,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 164,
-          "enriched": 164,
-          "withAbstract": 131,
+          "requested": 161,
+          "enriched": 161,
+          "withAbstract": 127,
           "error": null
         }
       },
@@ -70441,10 +70497,8 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "scopeExclusions": [
         {
@@ -70631,13 +70685,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42936602",
-          "title": "Timely Reperfusion in STEMI: A Closed-Loop Audit of Guideline Compliance and Practice Improvements.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42928092",
           "title": "The Illusion of Recovery From Atrial Fibrillation, a Review of Postcardioversion Anticoagulation Guidelines.",
           "region": null,
@@ -70654,13 +70701,6 @@
           "stage": "region",
           "pmid": "42925956",
           "title": "Practical Prevention of Heart Failure Across Stages A and B: A Scientific Statement From the Japanese Heart Failure Society.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42912128",
-          "title": "Clinician adherence to peri-procedural warfarin bridging guidelines for patients with atrial fibrillation enrolled in an anticoagulation management service.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -70750,6 +70790,20 @@
         },
         {
           "stage": "region",
+          "pmid": "42366965",
+          "title": "Response by Fonarow et al to Letter Regarding Article, \"Improving Heart Failure Quality of are Over the First Twenty Years: The Get With The Guidelines-Heart Failure Program\".",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "41999358",
+          "title": "Do Guidelines Change Practice: A Comparison of Single-Center Adherence After Publication of Pediatric Venothromboembolism Guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43058059",
           "title": "Surviving sepsis guideline suggesting Selective digestive decontamination is unsafe.",
           "region": null,
@@ -70766,13 +70820,6 @@
           "stage": "region",
           "pmid": "42954892",
           "title": "From evidence to implementation in sepsis: caution against overinterpreting the 2026 Surviving Sepsis Campaign Guidelines.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42918809",
-          "title": "Discordance between actual care and recommendations by a reinforcement learning model for sepsis.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -70850,13 +70897,6 @@
           "stage": "region",
           "pmid": "42988324",
           "title": "The impact of removing prior authorization for guideline-concordant maintenance inhaled medications for COPD: a population-based cohort study.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42959359",
-          "title": "Implementation of the National Asthma Guidelines in New Zealand: a retrospective patient-level study of the change to anti-inflammatory reliever therapy in 324,972 patients.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71198,13 +71238,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42467866",
-          "title": "Structured clinical reflection in acute toxicology: bridging guidelines and bedside decision-making.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "40664402",
           "title": "ASRA pain medicine narrative review and expert practice recommendations for gastric point-of-care ultrasound to assess aspiration risk in medically complex patients undergoing regional anesthesia and pain procedures: infographic.",
           "region": null,
@@ -71224,6 +71257,12 @@
         },
         {
           "stage": "pediatric",
+          "pmid": "43064519",
+          "title": "Guideline review: NICE guidance (2026) on switching from intravenous to oral antibiotics for suspected early-onset neonatal sepsis.",
+          "reason": "소아 전용"
+        },
+        {
+          "stage": "pediatric",
           "pmid": "41975045",
           "title": "Diagnosis and management of mineral and bone disorders in paediatric kidney transplant recipients: a position statement from the European Society for Paediatric Nephrology.",
           "reason": "소아 전용"
@@ -71231,18 +71270,18 @@
       ],
       "decisions": {
         "queued": 196,
-        "needsReview": 471,
+        "needsReview": 470,
         "rejected": 138,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:43058480",
+        "candidateId": "pmid:39961851",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-21T02:45:45.021Z",
+  "updatedAt": "2026-11-22T01:33:31.752Z",
   "configVersion": "guideline-v2"
 }

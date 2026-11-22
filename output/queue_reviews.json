@@ -1125,23 +1125,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "38801520",
-      "title": "Implementing diaphragm protection during invasive mechanical ventilation.",
-      "journal": "Intensive Care Med",
-      "score": 7.2,
-      "topic": "resp_airway",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "기계환기 중 횡격막 보호 실무 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "38899947",
       "title": "A Core Outcome Set for Research Evaluating Interventions to Enable Communication in Patients With an Artificial Airway: An International Delphi Consensus Study (Comm-COS).",
       "journal": "Crit Care Med",
@@ -15705,6 +15688,100 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "38801520",
+      "title": "Implementing diaphragm protection during invasive mechanical ventilation.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "resp_airway",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "기계환기 중 횡격막 보호 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-22",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "38801520",
+          "title": "Implementing diaphragm protection during invasive mechanical ventilation.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2024-5-27",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38801520/",
+          "doi": "10.1007/s00134-024-07472-x"
+        },
+        "title_ko": "침습적 기계환기 중 횡격막 보호의 실제적 구현",
+        "scope_ko": "이 종설은 침습적 기계환기를 받는 환자에서 환기유발 횡격막 손상(위축·편심성 근손상 등)을 예방하기 위한 '횡격막 보호' 전략을 다섯 단계의 실천 절차로 제시한다. 횡격막 활동의 모니터링부터 비활동 기간 최소화, 과도한 호흡 동인·노력의 억제, 환자–인공호흡기 동조성 유지, 근거기반 이탈 전략까지를 침상 관점에서 순서대로 설명한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "1단계: 횡격막 노력을 모니터링한다",
+            "body_ko": "횡격막 활동은 인공호흡기 설정값만으로 정확히 추정할 수 없다. 따라서 횡격막 보호에는 횡격막 노력의 직접적인 모니터링이 필요하다. 기준(reference) 기법은 식도·위 압력계용 이중 풍선 카테터를 이용한 횡격막관통압(transdiaphragmatic pressure) 측정이다. 그러나 이 방법은 전문적인 숙련도와 장비를 요하며, 현재는 횡격막 노력을 간접적으로 평가하는 여러 간편한 기법을 쓸 수 있다.\n\n기도폐쇄압(P0.1)으로 정량화한 호흡 동인(respiratory drive)은 횡격막 노력과 상관관계가 있으며, 낮은 P0.1(< 1 cmH2O)은 낮은 횡격막 활동에 대해 민감하고 특이적이다. 횡격막 노력은 간단한 폐쇄 조작으로도 비침습적으로 평가할 수 있다. 즉 환자가 폐쇄된 기도에 대해 흡기 노력을 할 때, 기도압의 음성 편향(폐쇄압, Pocc)의 크기로 횡격막 노력의 정도를 추정할 수 있다.\n\n횡격막 전기활동(Edi) 기법은 근전도 기반으로 횡격막 활동을 지속적으로 감시하는 방법이며, 신경근 결합(neuromuscular coupling, Pocc/Edi)을 간헐적으로 측정해 Edi를 정규화하면 Edi를 이용해 횡격막 노력을 평가하는 간단한 방법이 된다. 횡격막 초음파는 수축 시 횡격막 근육의 두꺼워짐(thickening)을 측정할 수 있으나, 이 측정에는 잡음과 변동성이 상당할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "2단계: 횡격막 비활동 기간을 최소화한다",
+            "body_ko": "횡격막 비활동은 빠른 불용성 위축(disuse atrophy), 그리고 세포의 산화 스트레스 손상을 초래하는 급성 미토콘드리아 기능장애와 연관된다. 기계환기는 환기를 증강하고 호흡 동인을 약화시킴으로써 횡격막 활동을 줄인다. 횡격막 비활동은 동맥혈 이산화탄소 분압이 무호흡 역치(apnea threshold) 아래로 떨어지고, 수면·진정·신경학적 손상으로 의식 수준이 저하될 때 나타난다. 이 때문에 진정(sedation)은 삽관 후 횡격막 활동이 재개되기까지의 시간을 결정하는 핵심 요인이다. 아편유사제(opioids)는 신경성 호흡수를 억제하는 경향이 있으므로 특히 횡격막 비활동을 유발하기 쉽다.\n\n횡격막 비활동 기간을 최소화하려면 진정 노출을 가능한 한 줄이는 것이 매우 중요하다. 지속 진정이 필요하다면 아편유사제보다 propofol을 우선 고려할 수 있으나, 효과적이고 적절한 진통(analgesia)은 여전히 독립적으로 중요한 목표로 남는다. 진정은 고통 완화에 대해 확립된 목표를 충족시키는 동시에, 횡격막 노력과 환자–인공호흡기 상호작용을 최적화하도록 조절해야 한다.\n\n환자가 진정된 상태에서 인공호흡기의 설정 호흡수가 환자의 내재적 신경성 호흡수를 초과하면, 환자가 인공호흡기를 트리거할 만큼 호흡할 가능성은 훨씬 낮아진다. 조절환기(controlled ventilation) 중 설정 호흡수를 가능한 한 낮춰 저탄산혈증을 피하고 호흡 동인을 자극하면, 불필요한 과환기로 인한 횡격막 비활동을 막는 데 도움이 된다. 환기 보조(흡기압 또는 유량)를 줄이면 과보조(overassistance)를 피하기 위해 대개 횡격막 노력이 증가한다. 향후에는 횡격막 신경자극(diaphragm neurostimulation)과 같은 기법으로, 호흡 동인이 없을 때에도 규칙적인 횡격막 수축을 유지하도록 횡격막 활동을 직접 제어할 수 있을지도 모른다.\n\n폐를 과도한 폐 확장압으로부터 보호하고 안전하고 효과적인 환기를 유지하기 위해서는, 때로 신경근차단제(neuromuscular blocking agents)로 횡격막과 다른 호흡근을 비활동 상태로 만드는 것이 필요할 수 있다. 횡격막 보호가 중요할 수 있지만, 최적의 환기를 위해서는 폐 보호가 여전히 최우선 순위다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "3단계: 과도한 호흡 동인과 노력을 피한다",
+            "body_ko": "환자가 환기 중 자발호흡으로 이행할 때 호흡 노력이 현저히 높아지는 경우가 흔하다. 이는 이론적으로 급성 폐손상과 과부하 유발 횡격막 손상에 기여할 수 있다. 한 연구에서는 불충분한 횡격막 수축 활동과 과도한 횡격막 수축 활동이 모두 기계환기 기간의 연장과 연관되어, 과도한 노력이 예후에 해로울 수 있음을 시사했다.\n\n호흡 동인과 노력은 흡기압·유량을 포함한 인공호흡기의 흡기 보조 수준을 조절하여 제어할 수 있다. 호기말양압(PEEP)의 증가 또는 감소는 폐 역학과 횡격막 형태의 변화에 따라 호흡 동인과 노력을 줄일 수 있다. 저산소혈증은 호흡 동인에 대한 비교적 약한 자극이지만, 흡입 산소분율(FiO2)을 높이면 일부 환자에서 호흡 동인을 약화시킬 수 있다. 인공호흡기 적정(titration)으로 효과가 없으면, 과도한 호흡 노력을 완화하기 위해 진정을 사용할 수 있다. 호흡 동인과 노력을 줄이는 데에는 아편유사제보다 propofol이 더 효과적이다. 체외 생명유지장치(extracorporeal life support)를 받는 환자에서는 sweep gas 유량을 높이는 것이 호흡 동인과 노력을 줄이는 매우 효과적인 수단인 경우가 많다. 조기의 안전한 자발호흡과 횡격막 보호를 촉진하는 기법으로서 체외 CO2 제거(extracorporeal CO2 removal)의 이득을 검증하는 임상시험이 필요하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "4단계: 환자–인공호흡기 동조성을 유지한다",
+            "body_ko": "인공호흡기가 기계적 호기상(expiratory phase)으로 전환되는 동안 횡격막이 능동적으로 수축하고 있으면, 횡격막은 수축하면서 늘어나도록 강제될 수 있다. 이러한 '늘어나는'(편심성, eccentric) 수축은 다양한 유형의 환자–인공호흡기 비동조(dyssynchrony) 중에 발생할 수 있으며, 수축력의 크기에 따라 급성 횡격막 손상과 약화를 초래한다. 최근의 한 임상연구는 이러한 부하 조건에 장기간 노출되는 것이 진행성 횡격막 기능장애와 연관됨을 보여주었다.\n\n횡격막을 편심성 근손상(eccentric myotrauma)으로부터 보호하려면, 신경성 호기상과 기계적 호기상이 잘 동조되도록 세심히 주의해야 한다. 유량 파형(flow tracing)을 관찰하여 초기 호기상에서 횡격막이 호기 유량에 맞서 노력하고 있음을 시사하는 불규칙한 변동이 있는지 확인할 수 있다. 호흡 노력을 모니터링하면 흡기 노력의 지속시간을 명확히 하고 호기 비동조를 탐지하는 데 도움이 된다. 환기 모드에 따라 일회호흡량이나 흡기시간을 늘리거나 호기 순환 유량 역치(expiratory cycling flow threshold)를 낮추면 호기 동조성을 최적화하고 편심성 부하를 피하는 데 도움이 될 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "5단계: 근거기반 이탈 전략을 따른다",
+            "body_ko": "아마도 횡격막을 인공호흡기 유발 의인성 손상(iatrogenesis)으로부터 보호하는 가장 좋은 방법은 가능한 가장 이른 시점에 환자를 인공호흡기에서 해방시키는 것이다. 이탈 준비도를 인지하고, 진정을 최소화하며, 이탈 시험(weaning trial)을 수행하는 체계적 접근은 기계환기와 중환자실(ICU)로부터의 해방을 가속화할 수 있다. 호흡부전을 유발한 원인을 치료하고, 병원 내 합병증(인공호흡기 관련 폐렴, 섬망, ICU 획득 쇠약)을 예방·치료하려는 노력도 기계환기 노출 기간을 최소화함으로써 횡격막 보호에 기여할 수 있다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "full-text",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "f5dd93bcba1ed305f99ad9f734cd1cd30b697940b545c8bee6af93c598ff9dc4",
+          "suppliedTextSha256": "4f13b725a1fc06c8ada511385241c1f2cca74c3e8cb1c700a4a80f6ad23a2930",
+          "suppliedTextChars": 7054,
+          "suppliedTextSource": "PMC",
+          "generatedAt": "2026-11-22T01:35:20.064Z",
+          "resultFingerprint": "34aa4f6ba0d41a7a090f265e92ffd42376b210c58877418625d9f2531d04fbce",
+          "modelReported": "full-text",
+          "coverage": "full-text",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "PMC",
+        "practiceImpact_ko": "침상에서는 인공호흡기 설정만 보지 말고 P0.1(< 1 cmH2O는 낮은 횡격막 활동을 시사)·Pocc·Edi·횡격막 초음파 등으로 횡격막 노력을 직접 모니터링하고, 진정(특히 아편유사제)과 설정 호흡수를 낮춰 불필요한 과환기와 횡격막 비활동을 줄이되 과도한 호흡 노력도 함께 억제하도록 보조 수준을 적정한다. 호기 비동조로 인한 편심성 근손상을 피하도록 유량 파형을 관찰하고, 궁극적으로는 근거기반 이탈을 서둘러 기계환기 기간 자체를 단축한다. 다만 폐 보호와 충돌할 때에는 항상 폐 보호가 횡격막 보호에 우선한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38801520",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38801520/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-024-07472-x",
+            "url": "https://doi.org/10.1007/s00134-024-07472-x"
+          },
+          {
+            "label": "웹 — PubMed — Implementing diaphragm protection during invasive mechanical ventilation (Goligher, Damiani, Patel; Intensive Care Med 2024)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38801520/"
+          },
+          {
+            "label": "웹 — Springer / Intensive Care Medicine — article landing page (10.1007/s00134-024-07472-x)",
+            "url": "https://link.springer.com/article/10.1007/s00134-024-07472-x"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15762,9 +15839,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-21",
+    "date": "2026-11-22",
     "outcome": "published",
-    "publishedId": "38598123"
+    "publishedId": "38801520"
   },
-  "updatedAt": "2026-11-21"
+  "updatedAt": "2026-11-22"
 }
