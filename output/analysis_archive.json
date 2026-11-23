@@ -5720,6 +5720,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-23",
+      "pmid": "42956771",
+      "title": "Prone positioning and high-frequency oscillatory ventilation in early paediatric acute respiratory distress syndrome (PROSpect): an international, two-by-two factorial, response-adaptive, phase 3, randomised controlled trial.",
+      "title_ko": "조기 소아 급성호흡곤란증후군(PARDS)에서의 복와위(prone positioning)와 고빈도 진동 환기(HFOV) (PROSpect): 국제, 2×2 요인설계, 반응적응형(response-adaptive) 3상 무작위 대조시험",
+      "journal": "Lancet (London, England)",
+      "doi": "10.1016/S0140-6736(26)01949-5",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "조기 중등도-중증 소아 급성호흡곤란증후군(PARDS) 환아에서 복와위(prone positioning, vs 앙와위)나 HFOV(vs 통상적 기계환기)가 28일까지의 ventilator-free days(VFD)를 늘리는가?",
+      "pico": {
+        "population": "[International] Children aged 2 weeks to 20 years, intubated and mechanically ventilated for less than 96 h before meeting criteria for moderate-to-severe PARDS (per PALICC: chest imaging consistent with acute pulmonary parenchymal disease and OI ≥12 or OSI ≥10), in 75 paediatric intensive care units across 18 countries; 424 of 600 planned patients randomly assigned between May 1, 2019 and Jan 13, 2026; median age 3·3 years (IQR 1·1–10·1), 211 (50%) female and 213 (50%) male.",
+        "intervention": "Prone positioning (vs supine) and HFOV (vs conventional mechanical ventilation) in a two-by-two factorial design; 130 assigned to prone + conventional mechanical ventilation, 90 to supine + HFOV, and 78 to prone + HFOV.",
+        "comparison": "Supine positioning and conventional mechanical ventilation (126 patients assigned to the supine + conventional mechanical ventilation group).",
+        "outcome": "Ventilator-free days through to day 28. No significant difference between prone and supine positioning (median 17·9 days [IQR 8·9–21·3] vs 17·4 days [6·4–21·9]; Hodges-Lehmann location shift adjusting for ventilation 0·0 [95% CI −0·8 to 1·0]) or between HFOV and conventional mechanical ventilation (17·3 [5·7–21·6] vs 18·0 [9·9–21·5]; Hodges-Lehmann location shift adjusting for positioning −0·3 [95% CI −1·5 to 0·5])."
+      },
+      "pico_ko": {
+        "population": "[다국가] 생후 2주–20세 소아로, 중등도-중증 PARDS 기준(PALICC 기준: 급성 폐실질 질환에 합당한 흉부영상 + OI ≥12 또는 OSI ≥10)을 충족하기 전 96시간 미만 동안 삽관 및 기계환기를 받은 환아; 18개국 75개 소아중환자실(PICU)에서 계획된 600명 중 424명이 2019년 5월 1일–2026년 1월 13일 사이에 무작위 배정됨; 중앙 연령 3·3세(IQR 1·1–10·1), 211명(50%) 여아, 213명(50%) 남아.",
+        "intervention": "2×2 요인설계로 복와위(prone positioning, vs 앙와위)와 HFOV(vs 통상적 기계환기)를 적용; prone + 통상 기계환기 130명, supine + HFOV 90명, prone + HFOV 78명 배정.",
+        "comparison": "앙와위(supine positioning) + 통상적 기계환기(126명 배정).",
+        "outcome": "28일까지의 ventilator-free days. 복와위와 앙와위 간 유의한 차이 없음(중앙값 17·9일 [IQR 8·9–21·3] vs 17·4일 [6·4–21·9]; 환기법 보정 Hodges-Lehmann location shift 0·0 [95% CI −0·8 ~ 1·0]), HFOV와 통상 기계환기 간에도 차이 없음(17·3 [5·7–21·6] vs 18·0 [9·9–21·5]; 체위 보정 Hodges-Lehmann location shift −0·3 [95% CI −1·5 ~ 0·5])."
+      },
+      "keyFindings": [
+        "In 424 children with early moderate-to-severe PARDS, neither prone positioning nor HFOV improved ventilator-free days through day 28 (prone vs supine Hodges-Lehmann shift 0·0 [95% CI −0·8 to 1·0]; HFOV vs conventional −0·3 [95% CI −1·5 to 0·5]); the trial was stopped early for futility and slow enrolment after 424 of 600 planned patients.",
+        "Day-28 mortality was 41 (10%) with no differences between groups.",
+        "Prone positioning increased artificial airway plugging/obstruction (rate ratio 4·83 [95% CI 1·38–16·82]) and stage ≥2 pressure injuries (relative risk 6·13 [95% CI 1·45–25·97]); HFOV increased haemodynamic instability (rate ratio 1·84 [95% CI 1·18–2·87])."
+      ],
+      "keyFindings_ko": [
+        "조기 중등도-중증 PARDS 환아 424명에서 복와위도 HFOV도 28일까지의 ventilator-free days를 개선하지 못함(prone vs supine Hodges-Lehmann shift 0·0 [95% CI −0·8 ~ 1·0]; HFOV vs 통상 −0·3 [95% CI −1·5 ~ 0·5]); 계획 600명 중 424명 모집 후 무용성(futility) 및 느린 등록으로 조기 종료됨.",
+        "28일 사망률은 41명(10%)이며 군 간 차이 없음.",
+        "복와위는 인공기도 폐색(rate ratio 4·83 [95% CI 1·38–16·82])과 stage ≥2 욕창(relative risk 6·13 [95% CI 1·45–25·97])을 증가시켰고, HFOV는 혈역학적 불안정(rate ratio 1·84 [95% CI 1·18–2·87])을 증가시킴."
+      ],
+      "evidenceLevel": "Moderate",
+      "references": [
+        {
+          "label": "PubMed — PMID 42956771",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42956771/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/S0140-6736(26)01949-5",
+          "url": "https://doi.org/10.1016/S0140-6736(26)01949-5"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT03896763 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT03896763"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
