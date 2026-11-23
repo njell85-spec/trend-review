@@ -1210,23 +1210,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "39453492",
-      "title": "My echo checklist in venoarterial ECMO patients.",
-      "journal": "Intensive Care Med",
-      "score": 7.2,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "VA ECMO 심초음파 체크리스트, 술기 실무 유용",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "39557688",
       "title": "Position paper on the physiology and nomenclature of dual circulation during venoarterial ECMO in adults.",
       "journal": "Intensive Care Med",
@@ -15782,6 +15765,125 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "39453492",
+      "title": "My echo checklist in venoarterial ECMO patients.",
+      "journal": "Intensive Care Med",
+      "score": 7.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "VA ECMO 심초음파 체크리스트, 술기 실무 유용",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-23",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "39453492",
+          "title": "My echo checklist in venoarterial ECMO patients.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2024-10-25",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/39453492/",
+          "doi": "10.1007/s00134-024-07659-2"
+        },
+        "title_ko": "정맥동맥 ECMO(VA-ECMO) 환자에서 나의 심초음파 체크리스트",
+        "scope_ko": "정맥동맥 체외막산소공급(VA-ECMO) 중인 환자를 침상에서 심초음파로 매일 평가하기 위한 체계적 접근법을 제시하는 종설이다. 저자들은 VA-ECMO 전 경과에 걸쳐 확인해야 할 핵심 과제들을 9가지 항목의 체크리스트로 정리하여, 경흉부 심초음파(TTE)를 이용한 유량 조정·합병증 발견·배출(venting) 필요성 평가·회복 감시의 틀을 제안한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "심초음파의 역할 — 왜 VA-ECMO에서 필수 도구인가",
+            "body_ko": "경흉부 심초음파(TTE)는 VA-ECMO 환자 관리에 필수적인 도구이다. 접근성이 좋아 매일 침상에서 반복 평가하기에 이상적이며, 이러한 일상적 평가는 ECMO 유량을 조정하고, ECMO 관련 합병증을 발견하며, 배출(venting) 장치의 필요성을 평가하고, 환자의 회복을 추적하는 데 핵심적이다.\n\n경흉부 영상이 어렵거나 화질이 불충분한 경우에는 경식도 심초음파(TEE)를 시행해야 한다.\n\n(주: 제공된 범위는 이 논문의 초록·공개 미리보기 수준이며, 저자가 제시한 9개 체크리스트 항목의 전체 세부 내용과 각 항목의 구체적 수치는 본문이 유료 접근이어서 확보하지 못했다. 아래 '원문' 절들은 공개된 초록이 실제로 서술한 내용만 담았고, 그 밖의 임상 수치는 '보강' 절에서 2차 출처로 따로 표시했다.)",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "9가지 항목의 체크리스트와 매일 심초음파",
+            "body_ko": "저자들은 VA-ECMO 전 경과에 걸쳐 초음파로 평가가 필요한 핵심 과제 9가지를 체크리스트 형태로 제안한다. 다른 방법으로 측정한 심박출량은 VA-ECMO 상황에서 신뢰하기 어렵기 때문에, 환자가 ECMO를 받는 동안에는 이상적으로 매일 심초음파를 시행해야 한다.\n\n전체 관리의 목표는 전신 산소 운반량(DO2)을 산소 소비량(VO2)의 최소 3배 이상으로 유지하는 것, 즉 DO2:VO2 비 >3을 유지하는 것이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "배출 캐뉼라(drainage cannula) 위치",
+            "body_ko": "배출 캐뉼라 끝의 최적 위치는 우심방(RA) 내부이다. 캐뉼라 끝이 하대정맥(IVC) 안에 위치하면 IVC 벽이 빨려 들어가(suction) 혈액 배출이 방해받을 수 있다. 따라서 심초음파로 캐뉼라 끝 위치를 확인하는 것이 체크리스트의 한 축을 이룬다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 좌심실 과팽창·대동맥판 개방·배출(venting)의 심초음파 판단",
+            "body_ko": "이 논문 본문의 해당 항목 수치를 직접 확보하지 못해, VA-ECMO 심초음파 모니터링을 다룬 2차 종설의 기준으로 보강한다.\n\n대동맥판이 지속적으로 닫혀 있으면 혈류 정체, 좌심실 이완기말압 상승, 폐울혈, 심강내 혈전 위험 증가와 연관된다. 반대로 대동맥판이 규칙적으로 열리는 것은 좌심실 감압이 적절함을 반영한다.\n\n좌심실 배출(venting/unloading)을 고려하는 유발 요인으로는 ▲강심제에도 불구하고 지속적으로 닫혀 있는 대동맥판 ▲폐울혈 악화와 동반된 폐모세혈관쐐기압(PAWP) >18–20 mmHg ▲심초음파상 진행성 좌심실 확장 ▲맥압 <10–15 mmHg와 호기말 CO2 감소 ▲좌심실 과팽창으로 인한 불응성 저산소혈증이 제시된다.\n— 보강 출처: Beyond Standard Parameters: Precision Hemodynamic Monitoring in Patients on Veno-Arterial ECMO (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/)",
+            "origin": "augmented",
+            "sourceLabel": "Beyond Standard Parameters: Precision Hemodynamic Monitoring in Patients on Veno-Arterial ECMO (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/"
+          },
+          {
+            "heading_ko": "[웹 보강] 자체 심박출량 평가 — VTI와 맥압 역치",
+            "body_ko": "자체(native) 심박출 회복을 평가할 때, LVOT VTI ≥10–12 cm는 양호한 회복을 시사하는 지표로 제시된다. 맥압 >15 mmHg는 적절한 자체 박출을 시사하는 반면, 맥압 <15 mmHg는 자체 심박출량이 1 L/분 미만임을 시사하여 추가 평가가 필요하다. 보조 지표로 호기말 CO2(ETCO2)가 14 mmHg 미만이면 심박출량 1 L/분 미만을 비교적 신뢰성 있게 반영한다고 기술된다.\n— 보강 출처: Beyond Standard Parameters (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/)",
+            "origin": "augmented",
+            "sourceLabel": "Beyond Standard Parameters (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/"
+          },
+          {
+            "heading_ko": "[웹 보강] 배출(venting) 기법별 특징",
+            "body_ko": "좌심실 배출 방법별 특징은 다음과 같이 정리된다. ▲IABP(대동맥내 풍선펌프): 경·중등도 부하에 선호되며 후부하를 낮추고 간헐적 대동맥판 개방을 촉진한다. ▲Impella 계열: 좌심실강의 혈액을 상행대동맥으로 능동적으로 뽑아내어 이완기말 용적과 벽 긴장을 줄인다. ▲심방중격절개술(atrial septostomy): 좌→우 단락을 만들어 좌심방을 감압하고 폐울혈을 효과적으로 줄인다. ▲심첨부 좌심실 배출(apical LV venting): 좌측 소개흉술을 통해 우수한 감압을 제공한다. (이 논문의 키워드에 'Intra-Aortic Balloon'이 포함되어, 본문에서도 IABP 등 배출 전략이 다루어졌을 가능성이 높다.)\n— 보강 출처: Beyond Standard Parameters (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/)",
+            "origin": "augmented",
+            "sourceLabel": "Beyond Standard Parameters (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/"
+          },
+          {
+            "heading_ko": "[웹 보강] 합병증 탐지 — 심낭압전·혈전",
+            "body_ko": "심초음파는 심낭삼출, 판막 기능, 심강내 혈전의 유무를 식별하고, 중격 위치와 운동을 통해 양심실 상호작용을 평가하는 데 쓰인다. 특히 대동맥판이 닫힌 채 혈류가 정체되면 좌심실·좌심방 내 자발성 에코 조영(spontaneous echo contrast)과 혈전 형성 위험이 커지므로 이들 소견을 매일 확인하는 것이 중요하다.\n— 보강 출처: Beyond Standard Parameters (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/)",
+            "origin": "augmented",
+            "sourceLabel": "Beyond Standard Parameters (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/"
+          },
+          {
+            "heading_ko": "[웹 보강] 이탈(weaning) 시 심초음파 기준",
+            "body_ko": "VA-ECMO 이탈의 심초음파 기준은 전통적으로 ▲대동맥 VTI ≥10 cm ▲LVEF >20–25% ▲측방 승모판륜 수축기 최고속도(lateral mitral annulus peak systolic velocity, TDSa/S') >6 cm/s가 성공적 이탈과 연관되는 것으로 제시된다. 이탈 시도 시 ECMO 유량은 0.5 L/분씩 감량하며 각 단계에서 약 1분간 평균동맥압과 심내압 변화를 관찰하고, 시험 중 최소 유량 목표는 2 L/분이다. 낮은 유량은 추가 이탈 시도 전 최소 8시간 유지하며, 이탈 시도는 최소 24시간마다 반복한다. 2 L/분을 8시간 이상 견디면 약 1분에 걸쳐 1 L/분까지 서서히 낮춰 최소 보조 상태에서의 혈역학 안정성을 확인한다.\n— 보강 출처: How I approach weaning from venoarterial ECMO (PMC) (https://pmc.ncbi.nlm.nih.gov/articles/PMC7278069/)",
+            "origin": "augmented",
+            "sourceLabel": "How I approach weaning from venoarterial ECMO (PMC)",
+            "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7278069/"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "ab737ce1da5e9ffb8768eb32044b4c04c55af347d170b728a5cb3769830892fe",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-23T02:01:59.299Z",
+          "resultFingerprint": "dac62b9cf7856637bb8e04021bbcaaa2719be870a919014186c36568452f4b11",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "이 종설은 VA-ECMO 환자에게 매일 심초음파를 정규 침상 평가로 삼아, 배출 캐뉼라 끝을 우심방에 두었는지 확인하고(하대정맥에 걸리면 벽 흡착으로 배출 불량), ECMO 유량을 조정하며, 배출 장치 필요성과 합병증을 감시하고 회복을 추적하는 체계적 틀을 제공한다. 전신 산소 운반 목표는 DO2:VO2 >3이며, 다른 심박출량 측정이 신뢰롭지 못한 ECMO 상황에서 심초음파가 일차 모니터링 수단이 된다. 경흉부 화질이 불충분하면 경식도 심초음파로 전환한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 39453492",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39453492/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-024-07659-2",
+            "url": "https://doi.org/10.1007/s00134-024-07659-2"
+          },
+          {
+            "label": "웹 — Beyond Standard Parameters: Precision Hemodynamic Monitoring in Patients on Veno-Arterial ECMO (PMC12653693)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653693/"
+          },
+          {
+            "label": "웹 — How I approach weaning from venoarterial ECMO (PMC7278069)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7278069/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15839,9 +15941,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-22",
+    "date": "2026-11-23",
     "outcome": "published",
-    "publishedId": "38801520"
+    "publishedId": "39453492"
   },
-  "updatedAt": "2026-11-22"
+  "updatedAt": "2026-11-23"
 }

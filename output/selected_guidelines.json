@@ -25801,75 +25801,6 @@
       }
     },
     {
-      "id": "pmid:41039227",
-      "pmid": "41039227",
-      "title": "Vascular access for initial treatment of adult emergency patients in the resuscitation room: short summary of recommendations from the German national S1 guideline.",
-      "pubDate": "2025 Oct 2",
-      "journal": "International journal of emergency medicine",
-      "publicationTypes": [
-        "Journal Article"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:35.680Z",
-      "abstract": "The initial treatment in the resuscitation room involves vital procedures, including the placement of peripheral intravenous lines, central venous catheters, and arterial lines. As most vascular access guidelines were not developed for resuscitation room settings, clear recommendations were necessary. This guideline has been developed by an interdisciplinary, interprofessional group of experts from five German national medical professional societies. The first part of the guideline provides general recommendations for vascular access in the resuscitation room in adults, whereas the second part describes specific recommendations and strategies for particular emergency situations.",
-      "meshTerms": [],
-      "keywords": [
-        "Arterial line",
-        "Central venous catheter",
-        "Emergency department",
-        "Peripheral intravenous line",
-        "Resuscitation room",
-        "Vascular access"
-      ],
-      "doi": "10.1186/s12245-025-01015-x",
-      "pmcid": "PMC12490025",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": false,
-        "pubmedPt": false,
-        "expandedTitle": true,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": false,
-        "organizationId": null
-      },
-      "priority": 6.501436620706166,
-      "breakdown": {
-        "authority": 0,
-        "topic": 3,
-        "recency": 1.5014366207061653,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "recommendations",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:38:51.474Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "소생실 성인 혈관확보 지침 — 응급 술기 직접 적용",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|vascular-access-initial-treatment-adult-emergency-patients-resuscitation-room-short-summary-from-german-national-s1",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:41123621",
       "pmid": "41123621",
       "title": "European Resuscitation Council and European Society of Intensive Care Medicine guidelines 2025: post-resuscitation care.",
@@ -39233,7 +39164,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -40506,7 +40437,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41305,7 +41236,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42225,7 +42156,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42398,7 +42329,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42816,7 +42747,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -45121,7 +45052,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45924,7 +45855,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46506,7 +46437,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -46576,7 +46507,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46656,7 +46587,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -46724,7 +46655,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -46786,7 +46717,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46865,7 +46796,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46947,7 +46878,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -47046,7 +46977,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47147,7 +47078,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47228,7 +47159,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47310,7 +47241,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47373,7 +47304,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47442,7 +47373,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47516,7 +47447,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47582,7 +47513,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -47645,7 +47576,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47725,7 +47656,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47789,7 +47720,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -47871,7 +47802,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-post-discharge-outcomes-nationwide-german-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -47934,7 +47865,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48001,7 +47932,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -48081,7 +48012,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48144,7 +48075,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48203,7 +48134,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.727Z",
       "lineageKey": "unknown|diastolic-function-classification-acute-myocardial-infarction-comparison-ase-eacvi-ase",
       "supersedes": [],
       "lineageReview": false,
@@ -48266,7 +48197,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-22T01:30:56.698Z",
+      "lastSeenAt": "2026-11-23T01:55:36.728Z",
       "lineageKey": "unknown|ers-clinical-practice-patients-with-idiopathic-pulmonary-fibrosis-lung-cancer",
       "supersedes": [],
       "lineageReview": false,
@@ -64462,6 +64393,131 @@
         ]
       },
       "publishedAt": "2026-11-22"
+    },
+    {
+      "id": "pmid:41039227",
+      "pmid": "41039227",
+      "title": "Vascular access for initial treatment of adult emergency patients in the resuscitation room: short summary of recommendations from the German national S1 guideline.",
+      "pubDate": "2025 Oct 2",
+      "journal": "International journal of emergency medicine",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:35.680Z",
+      "abstract": "The initial treatment in the resuscitation room involves vital procedures, including the placement of peripheral intravenous lines, central venous catheters, and arterial lines. As most vascular access guidelines were not developed for resuscitation room settings, clear recommendations were necessary. This guideline has been developed by an interdisciplinary, interprofessional group of experts from five German national medical professional societies. The first part of the guideline provides general recommendations for vascular access in the resuscitation room in adults, whereas the second part describes specific recommendations and strategies for particular emergency situations.",
+      "meshTerms": [],
+      "keywords": [
+        "Arterial line",
+        "Central venous catheter",
+        "Emergency department",
+        "Peripheral intravenous line",
+        "Resuscitation room",
+        "Vascular access"
+      ],
+      "doi": "10.1186/s12245-025-01015-x",
+      "pmcid": "PMC12490025",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 6.501436620706166,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3,
+        "recency": 1.5014366207061653,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "recommendations",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:38:51.474Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "소생실 성인 혈관확보 지침 — 응급 술기 직접 적용",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|vascular-access-initial-treatment-adult-emergency-patients-resuscitation-room-short-summary-from-german-national-s1",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41039227",
+          "title": "Vascular access for initial treatment of adult emergency patients in the resuscitation room: short summary of recommendations from the German national S1 guideline.",
+          "journal": "International journal of emergency medicine",
+          "pubDate": "2025 Oct 2",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41039227/",
+          "doi": "10.1186/s12245-025-01015-x"
+        },
+        "org": "DGAI/AWMF (DGINA, DGIIN, DGNI, DGU)",
+        "version": "2025 (S1)",
+        "title_ko": "성인 응급환자 초기 처치(소생실)에서의 혈관 접근 — 독일 국가 S1 가이드라인 권고 요약",
+        "scope_ko": "소생실(resuscitation room)에서 초기 처치를 받는 성인 응급환자를 대상으로, 말초정맥로(IV)·중심정맥관(CVC)·동맥관 등 혈관 접근의 적응증·기법·고정·합병증 관리에 대한 권고를 다룬다. Part A는 일반 권고, Part B는 외상·패혈증·심정지·신경응급·심혈관/호흡부전 등 특정 응급상황별 전략을 다루며, 독일 5개 전문학회(DGAI 주도)가 개발한 전문가 합의(S1) 수준의 지침이다.",
+        "summary": [
+          "Establish at least two large-lumen peripheral IV catheters with a flow rate of ≥100 mL/min (e.g., 18G) in the resuscitation room; in immediately life-threatening conditions or cardiac arrest where rapid IV access fails, place intraosseous access without delay (expert consensus, S1).",
+          "Peripheral vasopressor infusion is acceptable under controlled conditions — catheter confirmed intravascular, arm kept still, and low-concentration solution used — so CVC placement need not precede vasopressor start (S1).",
+          "CVC and arterial line placement must not delay initial diagnostics (e.g., CT) in compensated patients; defer CVC until after initial imaging and place it when peripheral access is insufficient and ongoing circulatory instability is foreseeable. Arterial lines are indicated for critically ill/severely injured patients (S1).",
+          "Use sonographic (ultrasound) guidance for difficult peripheral veins and for CVC/arterial puncture; CVC in particular should be placed under ultrasound guidance whenever possible, while operators must retain landmark-based technique for when ultrasound is unavailable (S1).",
+          "Confirm position before use: aspirate and flush venous/CVC lumens with sterile 0.9% NaCl and check for leakage; arterial catheters must be aspiratable/flushable with a typical arterial waveform; verify CVC tip by endovascular ECG, transthoracic echo with fluid bolus, or diagnostic imaging (S1).",
+          "Securely fix every vascular access using manufacturer-provided fixation sets; suture all CVCs and all femoral arterial lines at the hub, but do NOT routinely suture distal (radial) arterial catheters; document insertion depth on the dressing and in the record (S1).",
+          "Observe standard hygiene for the catheter type; if aseptic placement was not possible under emergency conditions, remove and re-site the catheter at a different location within 24 h. Prophylactic IV antibiotics for vascular access are NOT indicated (S1).",
+          "Situation-specific access: avoid subclavian puncture in respiratory/cardiovascular emergencies to prevent pneumothorax (prefer internal jugular or femoral); in cervical-spine immobilization the internal jugular route is impractical; for severe thoracic injury with chest tube place CVC via the subclavian vein on the injured/drained side; maintain 15–30° head-up positioning for raised ICP even with a CVC in place; and give intraosseous-only patients an additional peripheral IV (S1)."
+        ],
+        "summary_ko": [
+          "소생실에서 유량 ≥100 mL/min인 대구경 말초정맥로(예: 18G)를 최소 2개 확보한다. 즉각적 생명위협 상황이나 심정지에서 빠른 IV 확보가 실패하면 지체 없이 골내(intraosseous) 접근을 시행한다(전문가 합의, S1).",
+          "말초정맥로를 통한 승압제 투여는 통제된 조건(카테터의 혈관내 위치 확인, 팔 고정, 저농도 용액 사용)에서 허용되므로, 승압제 개시를 위해 CVC를 먼저 넣을 필요는 없다(S1).",
+          "보상된 환자에서 CVC·동맥관 삽입이 초기 진단(예: CT)을 지연시켜서는 안 된다. CVC는 초기 영상검사 이후로 미루고, 말초 접근이 불충분하며 지속적 순환 불안정이 예상될 때 시행한다. 동맥관은 중증/중증외상 환자에 적응된다(S1).",
+          "어려운 말초정맥과 CVC·동맥 천자에 초음파 유도를 사용한다. 특히 CVC는 가능하면 초음파 유도로 삽입하되, 초음파가 없을 때를 위해 landmark 기반 술기 능력을 유지한다(S1).",
+          "사용 전 위치 확인: 정맥/CVC 내강은 멸균 0.9% NaCl로 흡인·주입하여 누출 여부를 확인하고, 동맥관은 흡인·주입이 되며 전형적 동맥압 파형을 보여야 한다. CVC 끝 위치는 심내 ECG, 수액 볼루스 병행 경흉부 심초음파, 또는 영상검사로 확인한다(S1).",
+          "모든 혈관 접근을 제조사 제공 고정 세트로 견고히 고정한다. 모든 CVC와 모든 대퇴동맥관은 허브에 봉합 고정하되, 원위부(요골) 동맥관은 일상적으로 봉합하지 않는다. 삽입 깊이를 드레싱과 기록에 남긴다(S1).",
+          "카테터 종류별 표준 위생을 준수한다. 응급 상황으로 무균 삽입이 불가능했다면 24시간 이내에 다른 부위로 제거·재삽입한다. 혈관 접근을 위한 예방적 정맥 항생제 투여는 적응되지 않는다(S1).",
+          "상황별 접근: 호흡·심혈관 응급에서는 기흉 예방을 위해 쇄골하 천자를 피하고 내경정맥 또는 대퇴를 선호한다. 경추 고정 중에는 내경정맥 경로가 비현실적이다. 중증 흉부손상+흉관 삽입 시에는 손상/배액된 쪽 쇄골하정맥으로 CVC를 넣는다. 두개내압 상승 시 CVC가 있어도 15–30° 상체 거상을 유지한다. 골내 접근만 있는 환자에게는 말초정맥로를 추가로 확보한다(S1)."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "This is the first German national (AWMF S1) guideline written specifically for the resuscitation room, so it has no prior version to update — its value is codifying resus-room-specific defaults rather than borrowing from ward/ICU line guidelines. Concretely at the bedside: default to two ≥100 mL/min peripheral IVs plus early IO rather than reflexive CVC; start peripheral vasopressors in controlled conditions instead of waiting for central access; and do NOT let line placement delay CT in a compensated patient. Use ultrasound as the default for CVC and difficult access, suture every CVC and femoral arterial line (but not radial lines), and formally re-site any non-aseptically placed line within 24 h with no prophylactic antibiotics. Situation-specific rules (avoid subclavian in respiratory emergencies, injured-side subclavian with a chest tube, 15–30° head-up with raised ICP, add a peripheral IV to IO-only patients) should become checklist items for the team leader.",
+        "practiceImpact_ko": "이것은 소생실 전용으로 작성된 독일 최초의 국가 가이드라인(AWMF S1)으로, 개정할 이전 판이 없다 — 병동·ICU용 혈관관 지침을 빌려 쓰던 관행 대신 소생실 특이적 기본값을 명문화한 데 의의가 있다. 침상에서의 구체적 변화: 반사적 CVC보다 ≥100 mL/min 말초 IV 2개 + 조기 IO를 기본으로 하고, 중심정맥을 기다리지 말고 통제된 조건에서 말초 승압제를 시작하며, 보상된 환자에서 혈관 접근이 CT를 지연시키지 않게 한다. CVC·어려운 접근에는 초음파를 기본으로 쓰고, 모든 CVC와 대퇴동맥관은 봉합(요골동맥관은 제외), 무균이 아니었던 라인은 예방적 항생제 없이 24시간 내 재삽입한다. 상황별 규칙(호흡응급 시 쇄골하 회피, 흉관 있을 때 손상쪽 쇄골하, ICP 상승 시 15–30° 거상, IO만 있는 환자에 말초 IV 추가)은 팀 리더 체크리스트 항목으로 삼을 만하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41039227",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41039227/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1186/s12245-025-01015-x",
+            "url": "https://doi.org/10.1186/s12245-025-01015-x"
+          },
+          {
+            "label": "웹 — Int J Emerg Med (2025) — full text on PubMed Central (PMC12490025)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12490025/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-23"
     }
   ],
   "rejected": [
@@ -68636,7 +68692,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-22T01:30:49.759Z",
+      "discoveredAt": "2026-11-23T01:55:29.064Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -70064,7 +70120,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-22T01:30:49.759Z",
+      "discoveredAt": "2026-11-23T01:55:29.064Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70091,7 +70147,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-22T01:30:49.759Z",
+      "discoveredAt": "2026-11-23T01:55:29.064Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70126,7 +70182,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-22T01:30:49.759Z",
+      "discoveredAt": "2026-11-23T01:55:29.064Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70153,7 +70209,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-22T01:30:49.759Z",
+      "discoveredAt": "2026-11-23T01:55:29.064Z",
       "abstract": "BACKGROUND: Non-invasive ventilation (NIV) is recommended for exacerbations of chronic obstructive pulmonary disease (ECOPD) complicated by respiratory acidosis, yet real-world adherence remains uncertain. We evaluated adherence to ERS/ATS recommendations, patterns of non-adherence, and their association with short-term outcomes.\nMETHODS: In this prospective multicenter cohort study, consecutive patients with ECOPD-related acute hypoxemic-hypercapnic respiratory failure were enrolled across nine Italian hospitals and classified as guideline-adherent, NIV underuse, or NIV overuse according to ERS/ATS pH-based recommendations. The primary objective was to assess adherence to recommendations; the association between adherence patterns and the composite outcome of in-hospital death or endotracheal intubation was a secondary objective.\nRESULTS: Among 456 patients, 315 (69%) were guideline-adherent, 60 (13%) had NIV underuse, and 81 (18%) had NIV overuse. Underuse occurred predominantly in patients with mild respiratory acidosis receiving alternative respiratory support, mainly high-flow nasal cannula (HFNC), whereas overuse occurred primarily in hypercapnic patients without respiratory acidosis. The composite clinical outcome occurred in 48 patients (11%) and did not differ across adherence groups. After adjustment, neither NIV underuse (odds ratio [OR] 0.85, 95% confidence interval [CI] 0.33-2.20) nor overuse (OR 0.54, 95% CI 0.20-1.46) was associated with the composite clinical outcome, whereas higher Simplified Acute Physiology Score (SAPS) II was independently associated with it (OR 1.05, 95% CI 1.02-1.08).\nCONCLUSIONS: Deviations from ERS/ATS recommendations followed distinct clinical patterns and were not independently associated with the composite clinical outcome. Overall illness severity was consistently associated with adverse outcomes, highlighting the complexity of implementing NIV recommendations in routine clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -70187,7 +70243,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-22T01:30:49.759Z",
+      "discoveredAt": "2026-11-23T01:55:29.064Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70219,7 +70275,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-22T01:30:49.759Z",
+      "discoveredAt": "2026-11-23T01:55:29.064Z",
       "abstract": "Applying the Choosing Wisely® methodology, a task force mandated by the Ventilation and Oxygen-therapy group (GAVO2) of the French Pulmonary Society (SPLF) was commissioned to draw up a series of expert recommendations on practical aspects of long-term non-invasive ventilation (NIV). These guidelines are annually updated. Several themes were taken up, notably including NIV configuration, efficacy and tolerance. For each topic, the experts reviewed recent data in the literature. Based on these data and on their own clinical experience, the experts developed a comprehensive analysis of recent insights, and went on to write out practical tips, which have been grouped together in a series of three articles, of which the first is dedicated to the monitoring of non-invasive ventilation.",
       "meshTerms": [],
       "keywords": [
@@ -70292,9 +70348,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261122_102942:guideline:2026-11-22",
+    "runId": "trend_review_20261123_105359:guideline:2026-11-23",
     "outcome": "published",
-    "publishedId": "pmid:39961851",
+    "publishedId": "pmid:41039227",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -70319,15 +70375,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 161,
+        "mergedTotal": 159,
         "overlapCount": 2,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2027 Jan",
         "window": {
-          "minDate": "2026/10/23",
-          "maxDate": "2026/11/22"
+          "minDate": "2026/10/24",
+          "maxDate": "2026/11/23"
         },
         "retmax": 60,
         "topics": [
@@ -70335,9 +70391,9 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 60,
-            "idsFetched": 60,
-            "truncated": true,
+            "totalFound": 59,
+            "idsFetched": 59,
+            "truncated": false,
             "error": null
           },
           {
@@ -70362,8 +70418,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 19,
+            "idsFetched": 19,
             "truncated": false,
             "error": null
           },
@@ -70431,7 +70487,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 151,
+        "topicOnlyCount": 149,
         "ptPmids": [
           "43044046",
           "42858614",
@@ -70442,8 +70498,8 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 161,
-          "enriched": 161,
+          "requested": 159,
+          "enriched": 159,
           "withAbstract": 127,
           "error": null
         }
@@ -71269,19 +71325,19 @@
         }
       ],
       "decisions": {
-        "queued": 196,
+        "queued": 195,
         "needsReview": 470,
         "rejected": 138,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:39961851",
+        "candidateId": "pmid:41039227",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-22T01:33:31.752Z",
+  "updatedAt": "2026-11-23T01:57:20.178Z",
   "configVersion": "guideline-v2"
 }

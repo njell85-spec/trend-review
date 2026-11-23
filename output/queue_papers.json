@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42956771",
-      "title": "Prone positioning and high-frequency oscillatory ventilation in early paediatric acute respiratory distress syndrome (PROSpect): an international, two-by-two factorial, response-adaptive, phase 3, randomised controlled trial.",
-      "journal": "Lancet (London, England)",
-      "score": 7.7,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.6592,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-14"
-    },
-    {
       "pmid": "42121165",
       "title": "Induction agents for emergency tracheal intubation in critically ill adults: a systematic review and network meta-analysis.",
       "journal": "Critical care (London, England)",
@@ -855,6 +840,22 @@
       },
       "addedAt": "2026-11-14",
       "publishedAt": "2026-11-22"
+    },
+    {
+      "pmid": "42956771",
+      "title": "Prone positioning and high-frequency oscillatory ventilation in early paediatric acute respiratory distress syndrome (PROSpect): an international, two-by-two factorial, response-adaptive, phase 3, randomised controlled trial.",
+      "journal": "Lancet (London, England)",
+      "score": 7.7,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.6592,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14",
+      "publishedAt": "2026-11-23"
     }
   ],
   "rejected": [
@@ -870,9 +871,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-22",
+    "date": "2026-11-23",
     "outcome": "published",
-    "publishedId": "41906154"
+    "publishedId": "42956771"
   },
-  "updatedAt": "2026-11-22"
+  "updatedAt": "2026-11-23"
 }
