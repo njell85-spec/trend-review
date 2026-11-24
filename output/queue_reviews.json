@@ -1244,23 +1244,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "37507572",
-      "title": "Clinical targeting of the cerebral oxygen cascade to improve brain oxygenation in patients with hypoxic-ischaemic brain injury after cardiac arrest.",
-      "journal": "Intensive Care Med",
-      "score": 7.1,
-      "topic": "cardiac_resus",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "심정지 후 뇌 산소화 목표, 소생 후 중환자 복습",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "38245889",
       "title": "International Consensus Criteria for Pediatric Sepsis and Septic Shock.",
       "journal": "JAMA",
@@ -15884,6 +15867,129 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "37507572",
+      "title": "Clinical targeting of the cerebral oxygen cascade to improve brain oxygenation in patients with hypoxic-ischaemic brain injury after cardiac arrest.",
+      "journal": "Intensive Care Med",
+      "score": 7.1,
+      "topic": "cardiac_resus",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "심정지 후 뇌 산소화 목표, 소생 후 중환자 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-24",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "37507572",
+          "title": "Clinical targeting of the cerebral oxygen cascade to improve brain oxygenation in patients with hypoxic-ischaemic brain injury after cardiac arrest.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2023-7-29",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/37507572/",
+          "doi": "10.1007/s00134-023-07165-x"
+        },
+        "title_ko": "심정지 후 저산소성-허혈성 뇌손상 환자의 뇌 산소화를 개선하기 위한 대뇌 산소 캐스케이드의 임상적 표적화",
+        "scope_ko": "심정지 소생 후 발생하는 저산소성-허혈성 뇌손상(HIBI)을, 대기에서 미토콘드리아에 이르는 '대뇌 산소 캐스케이드'의 세 단계(대류성 산소전달·산소확산·세포 수준의 산소이용)라는 틀로 재해석한 종설이다. 각 단계의 병태생리, 이를 평가하는 신경모니터링 기법, 그리고 임상 관리·향후 연구에 대한 함의를 다룬다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "핵심 메시지 (Take-home message)",
+            "body_ko": "저산소성-허혈성 뇌손상(HIBI)의 성공적 치료는 산소 캐스케이드의 각 단계 — 대류성 산소전달(convective oxygen delivery), 산소확산(oxygen diffusion), 산소이용(oxygen utilisation) — 에서 발생하는 기능장애를 모두 해소하는 다각적(multi-pronged) 접근을 필요로 할 가능성이 높다. 또한 심정지 소생 후 개입의 '시점(timing)'과 환자별 병태생리를 향후 연구에서 반드시 고려해야 한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "서론",
+            "body_ko": "심정지에서 소생한 환자에서 HIBI는 사망의 가장 큰 원인이며, 생존자에서도 상당한 장애와 연관된다. HIBI의 병태생리는 세 국면으로 나뉜다: (1) 순환정지부터 심폐소생술(CPR) 시작 사이의 전뇌 허혈(no-flow), (2) CPR 중의 전뇌 저관류(low-flow), (3) 자발순환회복(ROSC) 이후의 뇌 재관류. 상당 부분의 HIBI는 ROSC 이후 이차 손상으로 발생하며, 이 손상의 일부는 뇌조직 저산소증과 연관된다.\n\n관찰 연구들은 동맥 저혈압, 빈혈, 저탄산혈증으로 인한 대뇌 산소전달(CDO₂) 감소가 소생 후 불량한 신경학적 예후와 관련됨을 보여 왔다. 그 결과 소생 후 CDO₂ 최적화에 상당한 관심이 모였으나, ROSC 이후 뇌조직 저산소증이 지속되는 기전은 그보다 더 복잡해 보인다.\n\n산소 캐스케이드는 대기에서 미토콘드리아까지의 산소 수송을 포괄하며, 심폐·미세순환·세포 시스템의 통합을 요구한다. 세 핵심 단계는 (1) 대류성 산소전달, (2) 산소확산, (3) 세포 수준의 산소이용이다. 소생 후 CDO₂ 최적화를 시도한 HIBI 임상시험들이 신경학적 예후를 개선하지 못한 것은, 산소확산이나 이용의 이상을 고려하지 않고 '대류성 CDO₂ 최적화'에만 불균형하게 초점을 둔 탓일 수 있다. 저자들은 세 가지 목적으로 본 종설을 제시한다: (1) 산소 캐스케이드 각 단계의 맥락에서 심정지 후 HIBI의 뇌혈관 병태생리를 정리하고, (2) 각 단계를 평가하는 신경모니터링 기법의 유용성을 검토하며, (3) 산소 캐스케이드 기능장애가 HIBI 환자의 임상 관리와 향후 연구에 갖는 함의를 조명한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "1단계: 대류성 산소전달 (Convective oxygen delivery)",
+            "body_ko": "대류성 CDO₂는 폐혈관에서 뇌로 산소를 전달하는 순환계의 기능을 포괄한다. 대류성 CDO₂는 뇌혈류(CBF)와 동맥 산소함량(CaO₂)의 곱이며, CaO₂는 동맥 산소포화도(SaO₂), 혈색소(Hb) 농도, 그리고 그보다 적은 정도로 동맥 산소분압(PaO₂)에 의해 결정된다.\n\nCBF는 뇌혈관저항(CVR)에 반비례하고 대뇌관류압(CPP)에 비례하며, CPP는 평균동맥압(MAP)과 두개내압(ICP)의 차이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "뇌혈류 (Cerebral blood flow)",
+            "body_ko": "HIBI 이후 뇌혈관저항은 증가하는데, 그 기전으로는 뇌 내피세포 기능장애, 주위세포(pericyte) 수축과 사멸, 산화 스트레스, 파종성혈관내응고 상황에서의 미세혈관 혈전증, 그리고/또는 혈관 주위 부종으로 인한 미세혈관 허탈 등이 거론된다. 동맥 저혈압이나 지속적 저탄산혈증에서 신경학적 예후가 악화되는 것은 이 시기의 CBF 감소가 손상을 유발함을 시사한다. 본 종설에서 임상적으로 중요한 CBF 조절 기전은 뇌자동조절능(cerebral autoregulation)과 뇌혈관 이산화탄소 반응성이다.\n\n뇌자동조절능은 MAP 변화가 CBF에 미치는 영향을 '완충'하는 내재적 뇌혈관 운동반응을 말한다. MAP 증가·감소에 대한 연질막 세동맥의 수축·확장은 이미 1930년대에 기술되었다. 이후 'CBF는 MAP 50–150 mmHg 사이에서 일정하게 유지된다'는 개념(Lassen 곡선)이 널리 받아들여졌다. 그러나 최근 근거는 Lassen 곡선에 대한 초기 비판을 지지하며, 건강한 상태에서도 자동조절능은 좁은 고원(plateau) 구간에서만 CBF를 보존하고 그 고원도 완전히 평탄하지 않으며 흔히 완만한 상향 기울기를 가진다는 점이 재정립되었다. CBF 변화 없이 MAP가 변동될 수 있는 폭은 약 10–20 mmHg이며, 이는 주로 MAP 변화의 급속성에 좌우된다. 중요하게도, 건강한 상태에서 뇌혈관은 MAP 감소보다 증가를 완충하는 데 더 능숙하여, 뇌는 저혈압 중 허혈에 취약하다. 건강한 상태에서 자동조절능의 하한은 약 70 mmHg로 매우 가변적인데, HIBI 환자에서는 이 하한이 더 높아 뇌 저관류에 대한 취약성이 더 크다. 침습적 신경모니터링을 이용한 연구에서 HIBI 환자의 평균 자동조절 하한은 약 85 mmHg였으며, 개인 간 변이가 상당하였다(범위 60–100 mmHg). 임상적으로 이는 HIBI 환자가 표준 MAP 목표(즉 > 65 mmHg)에서도 뇌 저관류를 겪을 수 있음을 시사한다.\n\n이전에 MAP 증강(augmentation)이 소생 후 효과적 치료 전략일 수 있다는 제안이 있었다. 그러나 MAP 증강을 검증한 무작위대조시험들의 중립적 결과와, 최근 메타분석에서 MAP 증강이 신경학적 예후에 영향을 주지 못한 점은 그러한 접근의 효과에 의문을 제기하게 했다. MAP 증강의 중요성이 인식됨에도 임상시험에서 이득이 없는 이러한 불일치는, 산소 캐스케이드의 후단계 기능장애와 환자별 뇌혈관 생리를 반영하는 개별화된 관류 역치로 설명될 수 있다. 한편 MAP 증강은 CDO₂에 대한 잠재적 영향 외에도 신기능 개선 및 심근손상 감소와 연관된 바 있다. 그럼에도 현재 진행 중인 다기관 국제 무작위대조시험(STEPCARE)이 더 높은 MAP 목표가 HIBI 환자의 신경학적 회복에 미치는 영향에 대한 추가 통찰을 제공할 것이다.\n\nCBF의 또 다른 핵심 조절인자는 PaCO₂이다. 건강한 상태에서 PaCO₂ 변화는 CBF에 같은 방향의 변화를 일으킨다. 정상값 대비 PaCO₂가 1 mmHg 상승·하강할 때마다 CBF는 각각 약 4–8% 증가 또는 약 1–4% 감소한다. 뇌혈관 CO₂ 반응성은 뇌혈관 전반에서 CBF를 조절하며, 회백질이 백질보다 2–3배 높은 반응성을 보인다. 건강한 사람에서 경두개 도플러 초음파로 측정한 정상 뇌혈관 PaCO₂ 반응성[즉 Δ중대뇌동맥 혈류속도(cm/s)/ΔPaCO₂(mmHg)]은 약 2.5–3.6 cm/s/mmHg 범위다. 그러나 심정지에서 소생한 환자를 대상으로 한 Buunk 등과 Bisschops 등의 연구는 각각 1.85 및 1.34 cm/s/mmHg라는 값을 보고하여, HIBI에서 뇌혈관 CO₂ 반응성이 손상되어 있을 수 있음을 시사한다. 임상적으로, 손상된 CO₂ 반응성은 고탄산혈증이 대류성 CDO₂를 개선하는 능력을 제한할 수 있다. 이는 초기 소규모 임상시험들과 최근 발표된 TAME 시험이 경도 고탄산혈증과 정상탄산혈증 사이에 신경학적 예후 차이를 보이지 못한 이유를 설명하는 데 도움이 될 수 있다. TAME은 원외 심정지 환자 1700명을 ROSC 후 24시간 동안 경도 고탄산혈증(PaCO₂ 50–55 mmHg) 대 정상탄산혈증(PaCO₂ 35–45 mmHg)으로 무작위 배정했다. 일차 결과는 Glasgow Outcome Scale-Extended ≥ 5로 정의한 양호한 신경학적 예후였다. 시험은 경도 고탄산혈증군과 정상탄산혈증군 사이에 양호한 예후 비율의 차이를 보이지 못했다(43.5% 대 44.6%, 상대위험도(RR) 0.98; 95% 신뢰구간(CI) 0.87–1.11; P = 0.76).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "동맥 산소함량 (Arterial oxygen content)",
+            "body_ko": "동맥 산소함량의 유지와 증강은 일반적인 중환자에서는 광범위하게 연구되었으나 HIBI에서는 최근에야 연구되기 시작했다. 빈혈이나 저산소혈증(PaO₂ < 60 mmHg)에 따른 CaO₂ 감소는 건강한 상태에서 CBF를 증가시킨다. 구체적으로 CaO₂가 1% 감소하면 CBF는 2% 증가하며, 이 CBF 반응의 크기는 건강한 상태에서 대류성 CDO₂를 유지하기에 충분하다. HIBI가 이 관계를 변화시키는지는 알려져 있지 않다. 저산소혈증은 HIBI 환자에서 더 높은 사망률과 연관된다. 그러나 최근 BOX 시험은 정상(예: PaO₂ 98–105 mmHg)과 제한적(예: PaO₂ 68–75 mmHg) 동맥 산소분압을 비교하여 신경학적 예후 차이를 보이지 못했는데, 이는 PaO₂가 60 mmHg 이상으로 유지되는 완만한 감소에서는 HIBI에서도 CDO₂가 유지됨을 시사할 수 있다.\n\n관찰 근거는 중증 고산소혈증(예: PaO₂ > 300 mmHg)이 심정지 후 더 나쁜 예후와 연관됨을 시사하나, 구체적으로 해로운 PaO₂ 역치는 아직 잘 확립되어 있지 않다. 최근 TTM2 시험의 사후 분석에서 6개월 사망률과 연관된 고산소혈증의 최적 분할점은 195 mmHg였다(RR 1.006, 95% CI 0.95–1.06). 고산소혈증이 활성산소종 생성을 증가시켜 HIBI를 악화시킬 수 있다는 제안이 있었으나, COMACARE의 사후 분석에서는 목표 PaO₂ 75–112 mmHg군과 150–187 mmHg군 사이에 대뇌 지질과산화 표지자의 차이가 없었다. EXACT 시험은 적정한 산소 감량(SpO₂ 97% 대 표준치료)이 생존이나 12개월 신경학적 예후에 유의한 영향을 주지 못함을 보였다.\n\n급성 빈혈은 적절한 대뇌 산소전달을 저해한다. 한 관찰 연구에서는 심정지 후 첫 48시간 및 7일간의 평균 혈색소 농도가 높을수록 불량한 신경학적 예후의 보정 오즈가 낮았다(10 단위 감소당 OR 0.69).",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "2단계: 산소 확산 (Oxygen diffusion)",
+            "body_ko": "산소 확산은 Fick의 법칙을 따르며, 표면적(A)·확산계수(D)·압력 기울기(ΔPO₂)에 비례하고 확산장벽 두께(T)에 반비례한다. 이 확산장벽은 뇌혈관 내피, 혈관벽, 간질 조직으로 구성된다.\n\n확산 제한(diffusion limitation): 적절한 대류성 전달에도 불구하고 뇌조직 저산소증이 지속될 수 있다. 연구에 따르면, 소생 후 뇌조직 저산소증이 있는 환자는 뇌조직 정상산소군보다 더 큰 대뇌 PvO₂–PbtO₂ 기울기를 보인다(39 mmHg [SD 11] 대 16 mmHg [SD 6]; P < 0.001).\n\n병태생리 표현형(phenotypes): 근거는 HIBI의 뚜렷한 표현형을 시사한다 — 관류 증강에 따라 PbtO₂가 증가하는 '관류 의존형(perfusion-dependent)'과, 관류를 증강해도 PbtO₂가 반응하지 않는 '확산 제한형(diffusion-limited)'이다. 이 구분은 MAP 증강 시험들이 중립적 결과를 낸 이유를 설명한다.\n\n삼투요법(osmotherapy): 고장성 식염수는 ICP·CPP·MAP의 유의한 변화 없이 PvO₂–PbtO₂ 기울기를 줄이고 저산소 환자의 PbtO₂를 개선하는 유망한 효과를 보이며, 이는 혈관 주위 부종 감소를 통한 산소확산 향상을 시사한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "3단계: 산소 이용과 미토콘드리아 기능장애 (Oxygen utilisation)",
+            "body_ko": "대사 변화: 과거 근거는 소생 후 대뇌 산소대사율(CMRO₂)이 정상의 약 50%까지 감소함을 보였다. 다만 그 임상적 의의는 불분명하다 — 이 감소는 적응적 하향조절을 반영할 수도, 비가역적 세포사멸을 반영할 수도 있다.\n\n기전 경로: HIBI는 보조인자(예: thiamine) 고갈에 따른 당분해 장애와 pyruvate dehydrogenase 기능장애를 동반한다. 동물모델은 허혈 중 succinate 축적에 이어 급속한 산화와, complex I에서의 역전자전달(reverse electron transport)을 통한 활성산소종 생성을 보여준다. 특히 혈장 succinate 농도는 생존한 HIBI보다 생존하지 못한 HIBI에서 더 높다. 칼슘 축적은 미토콘드리아 cytochrome C 유리를 유발해 세포자멸 신호를 개시한다. 항산화 방어 감소와 산화 스트레스 증가는 미토콘드리아 기능장애를 가중시킨다.\n\n치료적 저체온: TTM2 시험은 HIBI 전반에서 저체온의 이득이 없음을 보였으나, 비제세동 리듬(non-shockable rhythm)에서는 일부 이득이 있을 수 있다. 전신 부작용을 고려해, 미토콘드리아를 표적으로 하는 대안적 치료가 연구되고 있다.\n\n실험적 개입:\n- Thiamine: 두 건의 2상 RCT(NCT03450707, NCT02974257)가 전임상적 가능성에도 불구하고 무용성(futility)으로 조기 종료되었다.\n- Coenzyme Q₁₀: 한 연구는 저체온과 병용 시 잠재적 이득을 보였으나, 다른 RCT는 혈장 Q₁₀ 상승에도 불구하고 대뇌 대사·생체표지자·예후에 차이를 보이지 못했다.\n- Vitamin C: 2상 RCT(NCT03509662)가 진행 중이며, 전임상 연구는 활성산소종 감소를 보인다.\n- Cyclosporine: 미토콘드리아 투과성 전이공(permeability transition pore) 억제제로, 전문심장구조술 개시 시점에 투여했을 때 퇴원 생존을 개선하지 못했다.\n\n합리적 병용요법(rational polytherapy): 세포 수준의 복잡성을 고려해 여러 병태생리 과정을 동시에 표적하는 다제 병용 투여가 제안되나, 아직 대체로 전임상 단계에 머물러 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신경모니터링 — 침습적 기법 (ICP · SjvO₂ · PbtO₂)",
+            "body_ko": "두개내압(ICP): ICP 모니터링은 CPP의 연속적 정량화를 가능하게 한다. 최근 전향적 자료에서 연속 HIBI 환자의 평균 ICP는 14 mmHg(SD 11)였고, 모니터링 시간의 22%(범위 0–100)가 ICP > 20 mmHg 상태였다. HIBI 환자는 경도 뇌부종으로 인해 두개내 순응도(compliance)가 저하되는 경우가 많아, 'ICP가 정상'인 환자도 ICP 저하 중재 없이는 압력 급등에 취약하다. ICP 모니터링에서 유도되는 압력반응성 지수(pressure reactivity index)는 개별화된 최적 관류 역치를 추정하는 데 쓰일 수 있으나 임상적 유용성은 아직 확립되지 않았다. 중요한 한계는 ICP 모니터링 문헌 대부분이 비제세동 리듬 심정지를 대상으로 한다는 점으로, 제세동 리듬에서는 항혈소판/항응고 요구가 흔히 침습적 모니터링을 불가능하게 한다.\n\n경정맥구 산소측정(SjvO₂): SjvO₂는 역행성 경정맥 카테터를 통해 S상정맥동 원위부의 산소포화도를 측정한다. 정상적 확산 상태에서는 대류성 전달과 이용 사이의 전뇌 균형을 반영한다. 확산이 비정상이면 저산소증에도 불구하고 SjvO₂가 상승할 수 있어, 뇌부종·미토콘드리아 기능장애·뇌사를 시사한다. 상승한 SjvO₂는 불량한 신경학적 예후 및 상승한 neuron-specific enolase(NSE)와 상관된다. 원외 심정지 환자 40명을 대상으로 한 한 후향 연구에서는 68%가 평균 SjvO₂ > 75%였으며, SjvO₂ 55–75%인 환자는 > 75%인 환자보다 NSE 수치가 낮았다(9 [IQR 7–13] 대 46 [IQR 14–65] ng/mL; P < 0.01). 임상적 유용성은 아직 불분명하며, SjvO₂가 정상 확산과 비정상 확산을 구분하는 데 도움이 될 수 있으나 상승한 SjvO₂가 질환 중증도를 나타내는지 아니면 치료 표적이 될 수 있는지는 추가 연구가 필요하다.\n\n뇌실질 조직 산소분압(PbtO₂): 연속 실질 탐침은 피질하 백질의 뇌조직 산소장력을 평가한다. 최근 전향적 중재 연구에서 환자들은 모니터링 시간의 약 40%(범위 6–100%)를 PbtO₂ < 20 mmHg(저산소 상태)로 보냈다. PbtO₂ < 18 mmHg는 불량한 신경학적 예후와 연관된다. 한 매칭 코호트 연구에서 PbtO₂ 모니터링으로 관리한 환자는 표준치료 대비 양호한 신경학적 예후 비율이 더 높았으나(44% 대 18%; P = 0.03), 작은 표본수로 결론이 제한된다. PbtO₂는 대류성 CDO₂·산소확산·대뇌 대사 사이의 균형을 반영한다. 한 전향 연구는 개별 환자마다 MAP–PbtO₂ 관계가 이질적임을 보여(R² = 0.71, P < 0.001) 다양한 병태생리 표현형의 존재를 시사했다. 한계로, PbtO₂는 순수한 조직 산소보다 미세혈관 내 용존 산소에 의해 교란될 수 있다. 외상성 뇌손상 환자에서 정상압 고산소로 PaO₂를 127에서 441 mmHg로 올렸을 때, CBF가 23.9에서 18.5 mL/100g/min으로 감소했음에도 PbtO₂는 22.9에서 77 mmHg로 증가하여, PaO₂가 측정값에 독립적으로 영향을 미침을 보였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "신경모니터링 — 비침습적 기법 (TCD · NIRS)",
+            "body_ko": "경두개 도플러 초음파(TCD): TCD는 (혈관 직경이 일정하다는 가정 하에) 중대뇌동맥 혈류속도를 CBF의 비침습적 대리지표로 측정하고 ICP를 추정한다. HIBI 환자 20명을 대상으로 한 한 전향 관찰 연구에서는 24시간째 중대뇌동맥 속도가 건강한 대조군보다 낮았으나(26 대 59.1 cm/s; P < 0.001) 72시간째에는 유의하게 개선되어, 시간에 따른 역동적 뇌혈류 변화를 시사했다. 박동지수(Pulsatility Index, PI)는 (수축기 최고 − 이완기 속도)/평균 속도로 계산되며, PI > 1.2는 두개내 고혈압을 시사한다. 한 다기관 연구는 ICP > 20 mmHg를 배제하는 데 좋은 음성예측도를 보였다. 높은 PI와 낮은 이완기 속도는 불량한 신경학적 예후와 연관된다. 침습적 ICP와 TCD 유도 비침습적 추정치 간 일치도를 본 한 연구에서는 선형 관계(R = 0.3, P = 0.01)와 함께 ICP > 20 mmHg 예측에 대한 곡선하면적 0.91(95% CI 0.83–1.00)을 보였다. 한계로는 기술적 숙련 요구, 관찰자 간 변이, 획득의 어려움이 있다. 진행 중인 시험(NCT04000334)이 HIBI에서 TCD 유도 혈역학 관리의 실행 가능성을 평가하고 있다.\n\n근적외선 분광법(NIRS): NIRS는 양측 이마 패드를 통해 국소 산소포화도(rSO₂)를 측정하며, 세동맥 대 세정맥 비율을 25:75 또는 30:70으로 가정하여 뇌혈관 구획 내 추정 혈색소 포화도를 나타낸다. 장점은 비침습적이고 저위험이며 신속히 적용할 수 있다는 점이다. 한계로는 피부 혈류에 의한 오염, 패드 비밀착, 주변광 간섭이 정확도를 저해한다. 확산 제한이 있는 HIBI에서는 '뇌혈관 혈색소 포화도가 조직 산소화를 반영한다'는 정상 가정이 성립하지 않는다. 특히 NIRS는 MAP 증강 시 PbtO₂와, HIBI에서 CBF와 같은 방향으로 변하지 않으며, 실질 모니터링에서 유도된 확립된 자동조절 지수와도 일치도가 낮다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상적 함의와 통합적 접근",
+            "body_ko": "현재 근거는 산소 캐스케이드의 단일 단계만을 표적하는 개입이 치료적 이득을 제공할 가능성이 낮음을 보여준다. 대류성 전달·산소확산·이용을 동시에 평가하는 통합적 접근이 필요하다. 각 캐스케이드 단계에 대해 여러 중재를 적용하는 단계적(stepwise) 관리 전략이 유망한 방향으로 제시된다(원문 Figure 5). 이러한 접근은 각 단계의 기능과 중재에 대한 반응을 평가하기 위한 다중모드 신경모니터링을 필요로 한다. 임상적으로 실행 가능한 병태생리 표현형 식별법은 아직 없으며, 환자별 병태생리를 식별하는 비침습적 기법의 개발이 향후 연구에 필수적이다.\n\n산소확산 장애는 모든 HIBI 환자가 대류성 전달 증강으로 이득을 보지 못하는 이유를 설명할 수 있다. 과거 연구들은 대류성 CDO₂만을 표적하거나 단일 중재만을 시행했으나, 근거는 점차 묶음(bundle) 기반 관리가 필요함을 시사한다. 중개연구는 산소 캐스케이드 기반 전략의 생물학적 타당성을 확립해야 하며, 임상시험 설계는 병용 중재를 평가하기 위한 플랫폼 기반 적응형(adaptive) 또는 요인(factorial) 방법론을 채택해야 한다.\n\n시점(timing) 고려: 소생과 중재 시행 사이의 지연이 결정적일 가능성이 높다. 지연이 길수록 CDO₂ 회복이 임상적 이득을 줄 가능성이 낮아지는데, 이는 뇌졸중 문헌에서 잘 확립된 시간 의존적 치료 창(time-dependent treatment window)과 유사하다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "web-augmented",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "7f23446a0b0faeddde16d08bc4bfb2710d05481608131ca669216cfcf377d5d2",
+          "suppliedTextSha256": "0e9ecb6cf16b3de727fe98b496359c5510dc02e18438e0051c419631a99cebb5",
+          "suppliedTextChars": 10000,
+          "suppliedTextSource": "PMC",
+          "generatedAt": "2026-11-24T05:34:25.368Z",
+          "resultFingerprint": "39e1338ad016e4d52de35da35253f65ded439939933fb3c6d6de8847ad57f2c3",
+          "modelReported": "web-augmented",
+          "coverage": "web-augmented",
+          "trustedWebSourceCount": 3,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "PMC",
+        "practiceImpact_ko": "HIBI 환자에서 MAP·PaCO₂·PaO₂를 올려 '산소를 더 밀어 넣는' 단일 표적 전략(MAP 증강, 경도 고탄산혈증, 고산소)은 BOX·TAME·여러 MAP 증강 RCT에서 중립적이었으므로, 표준 소생 후 목표(MAP > 65 mmHg, 정상탄산·정상산소, PaO₂ > 60 mmHg 유지, 중증 고산소혈증 회피)를 유지하되 그것만으로 뇌조직 저산소증이 교정된다고 기대하지 않는 것이 합리적이다. 일부 환자는 자동조절 하한이 85 mmHg까지 높고 확산 제한형 생리를 보여 관류 증강에 반응하지 않으므로, 가능하면 다중모드 신경모니터링(PbtO₂·ICP·자동조절 지수 등)으로 환자별 표현형을 파악하고, 확산 장애가 의심되면 혈관 주위 부종을 겨냥한 삼투요법 같은 접근을 고려 대상으로 둔다. STEPCARE 등 진행 중 시험의 결과를 기다리는 것이 현재로서 적절하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 37507572",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37507572/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-023-07165-x",
+            "url": "https://doi.org/10.1007/s00134-023-07165-x"
+          },
+          {
+            "label": "웹 — Europe PMC full text (PMC10499700) — Hoiland et al., Intensive Care Med 2023",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10499700/fullTextXML"
+          },
+          {
+            "label": "웹 — PubMed abstract (PMID 37507572)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37507572/"
+          },
+          {
+            "label": "웹 — Europe PMC search (PMCID/open-access lookup)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Clinical%20targeting%20of%20the%20cerebral%20oxygen%20cascade%20Hoiland&format=json"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -15941,9 +16047,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-23",
+    "date": "2026-11-24",
     "outcome": "published",
-    "publishedId": "39453492"
+    "publishedId": "37507572"
   },
-  "updatedAt": "2026-11-23"
+  "updatedAt": "2026-11-24"
 }

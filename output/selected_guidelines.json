@@ -8560,89 +8560,6 @@
       }
     },
     {
-      "id": "pmid:38752743",
-      "pmid": "38752743",
-      "title": "European Stroke Organisation and European Society for Minimally Invasive Neurological Therapy guideline on acute management of basilar artery occlusion.",
-      "pubDate": "2024 Dec",
-      "journal": "European stroke journal",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:36:16.922Z",
-      "abstract": "The aim of the present European Stroke Organisation (ESO) guideline is to provide evidence-based recommendations on the acute management of patients with basilar artery occlusion (BAO). These guidelines were prepared following the Standard Operational Procedure of the ESO and according to the GRADE methodology. Although BAO accounts for only 1%-2% of all strokes, it has very poor natural outcome. We identified 10 relevant clinical situations and formulated the corresponding Population Intervention Comparator Outcomes (PICO) questions, based on which a systematic literature search and review was performed. The working group consisted of 10 voting members (five representing ESO and five ESMINT) and three non-voting junior members. The certainty of evidence was generally very low. In many PICOs, available data were scarce or lacking, hence, we provided expert consensus statements. First, we compared intravenous thrombolysis (IVT) to no IVT, but specific BAO-related data do not exist. Yet, historically, IVT was standard of care for BAO patients who were also included (albeit in small numbers) in IVT trials. Non-randomised studies of IVT-only cohorts showed high proportion of favourable outcomes. Expert Consensus suggests using IVT up to 24 h unless otherwise contraindicated. We further suggest IVT plus endovascular treatment (EVT) over direct EVT. EVT on top of best medical treatment (BMT) was compared to BMT alone within 6 and 6-24 h from last seen well. In both time windows, we observed a different effect of treatment depending on (a) the region where the patients were treated (Europe vs. Asia), (b) on the proportion of IVT in the BMT arm, and (c) on the initial stroke severity. In case of high proportion of IVT in the BMT group and in patients with NIHSS below 10, EVT plus BMT was not found better than BMT alone. Based on very low certainty of evidence, we suggest EVT + BMT over BMT alone (i.e. based on results of patients with at least 10 NIHSS points and a low proportion of IVT in BMT). For patients with an NIHSS below 10, we found no evidence to recommend EVT over BMT. In fact, BMT was non-significantly better and safer than EVT. Furthermore, we found a stronger treatment effect of EVT + BMT over BMT alone in proximal and middle locations of BAO compared to distal location. While recommendations for patients without extensive early ischaemic changes in the posterior fossa can, in general, follow those of other PICOs, we formulated an Expert Consensus Statement suggesting against reperfusion therapy in those with extensive bilateral and/or brainstem ischaemic changes. Another Expert Consensus suggests reperfusion therapy regardless of collateral scores. Based on limited evidence, we suggest direct aspiration over stent retriever as the first-line strategy of mechanical thrombectomy. As an Expert Consensus, we suggest rescue percutaneous transluminal angioplasty and/or stenting after a failed EVT procedure. Finally, based on very low certainty of evidence, we suggest add-on antithrombotic treatment during EVT or within 24 h after EVT in patients with no concomitant IVT and in whom EVT was complicated (defined as failed or imminent re-occlusion, or need for additional stenting or angioplasty).",
-      "meshTerms": [
-        "Humans",
-        "Arterial Occlusive Diseases",
-        "Endovascular Procedures",
-        "Europe",
-        "Fibrinolytic Agents",
-        "Societies, Medical",
-        "Stroke",
-        "Thrombolytic Therapy",
-        "Vertebrobasilar Insufficiency"
-      ],
-      "keywords": [
-        "Guideline",
-        "acute management",
-        "basilar artery occlusion",
-        "endovascular treatment",
-        "posterior circulation",
-        "stroke",
-        "systematic review",
-        "thrombolysis"
-      ],
-      "doi": "10.1177/23969873241257223",
-      "pmcid": "PMC11569583",
-      "region": "eu",
-      "by": "org-name",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.388027031676993,
-      "breakdown": {
-        "authority": 0,
-        "topic": 4,
-        "recency": 0.3880270316769925,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:36:31.193Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "ESO 뇌기저동맥폐색 급성기 지침 — 신경응급 핵심",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|european-stroke-organisation-european-society-minimally-invasive-neurological-therapy-acute-management-basilar-artery-occlusion",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:39676231",
       "pmid": "39676231",
       "title": "Advancing kidney transplantation in black patients: a genetics-based and personalized approach under NICE, KDIGO, and ERBP guidelines.",
@@ -39164,7 +39081,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -40437,7 +40354,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41236,7 +41153,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42156,7 +42073,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42329,7 +42246,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42747,7 +42664,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -45052,7 +44969,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45855,7 +45772,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46437,7 +46354,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -46507,7 +46424,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46587,7 +46504,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -46655,7 +46572,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -46717,7 +46634,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46796,7 +46713,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46878,7 +46795,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46977,7 +46894,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47078,7 +46995,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47159,7 +47076,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47241,7 +47158,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47304,7 +47221,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47373,7 +47290,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47447,7 +47364,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47513,7 +47430,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -47576,7 +47493,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47656,7 +47573,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47720,7 +47637,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -47802,7 +47719,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-post-discharge-outcomes-nationwide-german-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -47865,7 +47782,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47932,7 +47849,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -48012,7 +47929,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48075,7 +47992,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48134,7 +48051,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.727Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "unknown|diastolic-function-classification-acute-myocardial-infarction-comparison-ase-eacvi-ase",
       "supersedes": [],
       "lineageReview": false,
@@ -48197,7 +48114,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-23T01:55:36.728Z",
+      "lastSeenAt": "2026-11-24T05:26:47.248Z",
       "lineageKey": "unknown|ers-clinical-practice-patients-with-idiopathic-pulmonary-fibrosis-lung-cancer",
       "supersedes": [],
       "lineageReview": false,
@@ -48208,6 +48125,152 @@
         "keep": false,
         "reason": "IPF+폐암 외래 만성·종양 관리, 응급·중환자 무관",
         "at": "2026-11-21T02:43:07.152Z"
+      }
+    },
+    {
+      "id": "pmid:43073070",
+      "pmid": "43073070",
+      "title": "Aligned Evidence, Aligned Guidance: 2026-2027 Respiratory Virus Immunization Recommendations from The AAFP, AAP, ACOG, AND IDSA.",
+      "pubDate": "2026 Nov 23",
+      "journal": "Annals of family medicine",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "abstract": "Disruption of the federal vaccine advisory process prompted a coordinated, society-led approach to respiratory virus immunization guidance for the 2026-2027 season. The Vaccine Integrity Project (VIP) at the University of Minnesota Center for Infectious Disease Research and Policy, in collaboration with the American Medical Association and with coordination support from the Council of Medical Specialty Societies, completed systematic reviews of influenza, COVID-19, and respiratory syncytial virus (RSV) immunization. Across 299 studies, the reviews confirmed protection against hospitalization and death and identified no new safety concerns in comparative studies. On September 2, 2026, the American Academy of Family Physicians (AAFP), American Academy of Pediatrics, American College of Obstetricians and Gynecologists, and Infectious Diseases Society of America issued aligned recommendations informed by this evidence. This report explains the shared evidence base, summarizes recommendations by age and population, describes the AAFP review and adoption process, and directs primary care clinicians to implementation and patient resources.",
+      "meshTerms": [
+        "Humans",
+        "Respiratory Syncytial Virus Infections",
+        "Influenza, Human",
+        "Influenza Vaccines",
+        "Respiratory Syncytial Virus Vaccines",
+        "COVID-19",
+        "United States",
+        "Practice Guidelines as Topic",
+        "COVID-19 Vaccines",
+        "SARS-CoV-2"
+      ],
+      "keywords": [
+        "COVID-19",
+        "RSV",
+        "immunization",
+        "influenza"
+      ],
+      "doi": "10.1370/afm.260718",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": "idsa"
+      },
+      "priority": 8,
+      "breakdown": {
+        "authority": 4,
+        "topic": 0,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "idsa",
+      "tier": 1,
+      "topicMatched": false,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "recommendations",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "llmFit": {
+        "version": 1,
+        "score": 4,
+        "keep": false,
+        "reason": "호흡기 바이러스 백신 권고, 예방·외래 중심이나 감염 인접",
+        "at": "2026-11-24T05:26:49.704Z"
+      }
+    },
+    {
+      "id": "pmid:43070175",
+      "pmid": "43070175",
+      "title": "Forecasting the Burden and Cost of Stroke in the United States: Projections by Sociodemographic Groups Through 2050: A Scientific Statement From the American Heart Association.",
+      "pubDate": "2026 Nov 23",
+      "journal": "Stroke",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "abstract": "BACKGROUND: Given expected increases in stroke burden in the United States through 2050, forecasts of the burden by age, sex, race, ethnicity, education level, income level, and health insurance status are needed.\nMETHODS: We used National Health and Nutrition Examination Survey (January 2015-March 2020) and Medical Expenditure Panel Survey (2015-2019) data to estimate recent trends in stroke prevalence and costs, then projected prevalence and costs through 2050 accounting for population sociodemographic changes. We also projected prevalence by age, sex, race, and ethnicity strata.\nRESULTS: We estimate that stroke will affect >9.0 million of ≈148 million men (6.1%) and >10.4 million of ≈154 million women (6.7%) by 2050. Prevalence will be highest among Black, American Indian/Alaska Native, and multiracial adults, reaching 25% to 30% among those >80 years of age, compared with 16% among White adults of the same age. The largest relative increases will occur among Hispanic and Asian Americans, with a 2- to 6-fold increase in absolute case numbers, depending on age. Prevalence will remain high among people with lower levels of education or income and those without health insurance; however, absolute numbers will roughly double, and costs will increase 5- to 8-fold among high school and college graduates and middle- and high-income earners. Adjusted for inflation, annual stroke care costs will quintuple to $142 billion among people 45 to 64 years of age. Young adults 20 to 44 years of age and Hispanic, American Indian/Alaska Native, and multiracial populations will experience cost increases >1000%.\nCONCLUSIONS: The alarming rise in stroke burden projected by 2050 is expected to affect sociodemographic groups unequally. Programs and policies to prevent and treat stroke across age groups, mitigate widening healthcare disparities, and reduce costs are urgently needed.",
+      "meshTerms": [],
+      "keywords": [
+        "AHA Scientific Statements",
+        "health care costs",
+        "healthcare disparities",
+        "population forecast",
+        "stroke"
+      ],
+      "doi": "10.1161/STR.0000000000000539",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "aha"
+      },
+      "priority": 11,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "aha",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "scientific-statement",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lineageKey": "aha|forecasting-burden-cost-stroke-united-states-projections-by-sociodemographic-groups-through-from",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 2,
+        "keep": false,
+        "reason": "뇌졸중 비용·부담 예측 성명서 — 침상 판단 무관",
+        "at": "2026-11-24T05:26:49.704Z"
       }
     }
   ],
@@ -64518,6 +64581,197 @@
         ]
       },
       "publishedAt": "2026-11-23"
+    },
+    {
+      "id": "pmid:38752743",
+      "pmid": "38752743",
+      "title": "European Stroke Organisation and European Society for Minimally Invasive Neurological Therapy guideline on acute management of basilar artery occlusion.",
+      "pubDate": "2024 Dec",
+      "journal": "European stroke journal",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:36:16.922Z",
+      "abstract": "The aim of the present European Stroke Organisation (ESO) guideline is to provide evidence-based recommendations on the acute management of patients with basilar artery occlusion (BAO). These guidelines were prepared following the Standard Operational Procedure of the ESO and according to the GRADE methodology. Although BAO accounts for only 1%-2% of all strokes, it has very poor natural outcome. We identified 10 relevant clinical situations and formulated the corresponding Population Intervention Comparator Outcomes (PICO) questions, based on which a systematic literature search and review was performed. The working group consisted of 10 voting members (five representing ESO and five ESMINT) and three non-voting junior members. The certainty of evidence was generally very low. In many PICOs, available data were scarce or lacking, hence, we provided expert consensus statements. First, we compared intravenous thrombolysis (IVT) to no IVT, but specific BAO-related data do not exist. Yet, historically, IVT was standard of care for BAO patients who were also included (albeit in small numbers) in IVT trials. Non-randomised studies of IVT-only cohorts showed high proportion of favourable outcomes. Expert Consensus suggests using IVT up to 24 h unless otherwise contraindicated. We further suggest IVT plus endovascular treatment (EVT) over direct EVT. EVT on top of best medical treatment (BMT) was compared to BMT alone within 6 and 6-24 h from last seen well. In both time windows, we observed a different effect of treatment depending on (a) the region where the patients were treated (Europe vs. Asia), (b) on the proportion of IVT in the BMT arm, and (c) on the initial stroke severity. In case of high proportion of IVT in the BMT group and in patients with NIHSS below 10, EVT plus BMT was not found better than BMT alone. Based on very low certainty of evidence, we suggest EVT + BMT over BMT alone (i.e. based on results of patients with at least 10 NIHSS points and a low proportion of IVT in BMT). For patients with an NIHSS below 10, we found no evidence to recommend EVT over BMT. In fact, BMT was non-significantly better and safer than EVT. Furthermore, we found a stronger treatment effect of EVT + BMT over BMT alone in proximal and middle locations of BAO compared to distal location. While recommendations for patients without extensive early ischaemic changes in the posterior fossa can, in general, follow those of other PICOs, we formulated an Expert Consensus Statement suggesting against reperfusion therapy in those with extensive bilateral and/or brainstem ischaemic changes. Another Expert Consensus suggests reperfusion therapy regardless of collateral scores. Based on limited evidence, we suggest direct aspiration over stent retriever as the first-line strategy of mechanical thrombectomy. As an Expert Consensus, we suggest rescue percutaneous transluminal angioplasty and/or stenting after a failed EVT procedure. Finally, based on very low certainty of evidence, we suggest add-on antithrombotic treatment during EVT or within 24 h after EVT in patients with no concomitant IVT and in whom EVT was complicated (defined as failed or imminent re-occlusion, or need for additional stenting or angioplasty).",
+      "meshTerms": [
+        "Humans",
+        "Arterial Occlusive Diseases",
+        "Endovascular Procedures",
+        "Europe",
+        "Fibrinolytic Agents",
+        "Societies, Medical",
+        "Stroke",
+        "Thrombolytic Therapy",
+        "Vertebrobasilar Insufficiency"
+      ],
+      "keywords": [
+        "Guideline",
+        "acute management",
+        "basilar artery occlusion",
+        "endovascular treatment",
+        "posterior circulation",
+        "stroke",
+        "systematic review",
+        "thrombolysis"
+      ],
+      "doi": "10.1177/23969873241257223",
+      "pmcid": "PMC11569583",
+      "region": "eu",
+      "by": "org-name",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.388027031676993,
+      "breakdown": {
+        "authority": 0,
+        "topic": 4,
+        "recency": 0.3880270316769925,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:36:31.193Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "ESO 뇌기저동맥폐색 급성기 지침 — 신경응급 핵심",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|european-stroke-organisation-european-society-minimally-invasive-neurological-therapy-acute-management-basilar-artery-occlusion",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "38752743",
+          "title": "European Stroke Organisation and European Society for Minimally Invasive Neurological Therapy guideline on acute management of basilar artery occlusion.",
+          "journal": "European stroke journal",
+          "pubDate": "2024 Dec",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/38752743/",
+          "doi": "10.1177/23969873241257223"
+        },
+        "org": "ESO/ESMINT",
+        "version": "2024",
+        "title_ko": "급성 뇌기저동맥폐색(basilar artery occlusion, BAO) 치료에 관한 ESO-ESMINT 가이드라인 (2024)",
+        "scope_ko": "급성 허혈뇌졸중 중 1–2%에 불과하지만 사망·중증 장애율이 매우 높은 뇌기저동맥폐색(BAO) 성인 환자의 급성기 재관류치료를 다룬다. 10개의 임상 상황(PICO)을 선정해 정맥내혈전용해(IVT), 혈관내치료(EVT)와 최선의 내과적치료(BMT)의 비교, 혈전제거 기법, 구제 혈관성형/스텐트, 보조 항혈전제 등을 GRADE 방법론으로 권고한다.",
+        "summary": [
+          "IVT: Expert Consensus suggests giving IVT up to 24 h from onset in BAO unless otherwise contraindicated, regardless of stroke severity — no BAO-specific RCT exists, but historical IVT-only cohorts showed a high proportion of favourable outcomes (expert consensus, very low certainty).",
+          "IVT + EVT over direct EVT: In eligible patients, suggest bridging IVT before/with EVT rather than direct EVT alone (weak recommendation, very low certainty).",
+          "EVT + BMT vs BMT in NIHSS ≥10 (both <6 h and 6–24 h windows): suggest EVT + BMT over BMT alone, driven by patients with NIHSS ≥10 and a low proportion of IVT in the BMT arm (weak recommendation, very low certainty).",
+          "NIHSS <10: no evidence to recommend EVT over BMT; BMT was non-significantly better and safer (higher sICH with EVT) — do not routinely offer EVT in mild deficits (very low certainty).",
+          "Occlusion location: treatment effect of EVT + BMT over BMT is stronger in proximal and middle BAO than in distal BAO (interaction p≈0.01, very low certainty).",
+          "Imaging selection: Expert Consensus suggests AGAINST reperfusion therapy in patients with extensive bilateral and/or brainstem ischaemic changes; but offer reperfusion regardless of collateral scores (expert consensus).",
+          "Thrombectomy technique: suggest direct aspiration over stent retriever as the first-line strategy (weak recommendation, limited/low certainty).",
+          "Rescue therapy & antithrombotics: Expert Consensus suggests rescue percutaneous transluminal angioplasty and/or stenting after failed EVT; and suggest add-on antithrombotic during or within 24 h after EVT in patients with NO concomitant IVT whose EVT was complicated (failed/imminent re-occlusion, or need for stenting/angioplasty) (very low certainty)."
+        ],
+        "summary_ko": [
+          "IVT: 금기가 없는 한 발병 후 24시간까지, 증상 중증도와 무관하게 IVT를 시행하도록 전문가 합의로 권고한다 — BAO 전용 RCT는 없으나 IVT 단독 코호트에서 양호한 결과 비율이 높았다(전문가 합의, 근거 확실성 매우 낮음).",
+          "IVT + EVT를 직접 EVT보다 우선: 적응증이 되는 환자에서 직접 EVT 단독보다 IVT를 병용(bridging)한 뒤 EVT를 시행하도록 제안한다(약한 권고, 확실성 매우 낮음).",
+          "EVT + BMT vs BMT (NIHSS ≥10, <6시간 및 6–24시간 두 시간창 모두): NIHSS ≥10이고 BMT군의 IVT 비율이 낮았던 환자 결과에 근거하여 EVT + BMT를 BMT 단독보다 제안한다(약한 권고, 확실성 매우 낮음).",
+          "NIHSS <10: EVT를 BMT보다 권할 근거가 없으며, BMT가 통계적 유의성은 없으나 더 낫고 더 안전했다(EVT에서 sICH 증가) — 경증에서는 EVT를 일상적으로 권하지 않는다(확실성 매우 낮음).",
+          "폐색 위치: EVT + BMT의 BMT 대비 치료효과는 원위부(distal)보다 근위부·중간부(proximal/middle) BAO에서 더 강했다(상호작용 p≈0.01, 확실성 매우 낮음).",
+          "영상 선별: 양측성 및/또는 뇌간의 광범위 허혈 변화가 있는 환자에서는 재관류치료를 하지 않도록 전문가 합의로 권고한다; 다만 측부순환(collateral) 점수와 무관하게 재관류치료를 제공한다(전문가 합의).",
+          "혈전제거 기법: 1차 전략으로 stent retriever보다 direct aspiration을 제안한다(약한 권고, 근거 제한적/낮음).",
+          "구제치료 및 항혈전제: EVT 실패 후 구제 경피적 혈관성형(PTA) 및/또는 스텐트를 전문가 합의로 제안한다; 그리고 동반 IVT가 없고 EVT가 합병(실패/재폐색 임박, 또는 추가 스텐트·혈관성형 필요)된 환자에서 EVT 중 또는 EVT 후 24시간 이내 보조 항혈전제를 제안한다(확실성 매우 낮음)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "EVT 권고의 근거 지위 (전문가 의견 → 근거기반)",
+            "detail": "Previously, the 2019 ESO-ESMINT mechanical thrombectomy guideline could only offer EXPERT OPINION on EVT for BAO (BAO and M2 occlusions were recommended by unanimous 11/11 expert consensus but formally lacked RCT evidence). Since then, four RCTs (BASICS, BEST, ATTENTION, BAOCHE) were published, so the 2024 guideline upgrades BAO EVT from pure expert opinion to formal (albeit very low certainty) GRADE evidence-based recommendations.",
+            "detail_ko": "이전 2019 ESO-ESMINT 기계적 혈전제거술 가이드라인은 BAO에 대한 EVT를 오직 '전문가 의견'으로만 제시할 수 있었다(BAO·M2 폐색은 11/11 만장일치 전문가 합의로 권고했으나 공식적 RCT 근거는 없었다). 이후 4개의 RCT(BASICS, BEST, ATTENTION, BAOCHE)가 발표되어, 2024 가이드라인은 BAO의 EVT를 순수 전문가 의견에서 (확실성은 매우 낮지만) 공식 GRADE 근거기반 권고로 격상했다."
+          },
+          {
+            "topic": "중증도에 따른 EVT 환자 선별 (NIHSS <10에서 권고하지 않음)",
+            "detail": "New, previously unquantified effect modifier: EVT benefit depends on stroke severity. The guideline now recommends EVT + BMT only for NIHSS ≥10, and states there is NO evidence to recommend EVT over BMT for NIHSS <10 — in mild deficits BMT was non-significantly better and safer (sICH 8.1% with EVT vs 0% with BMT in the 78-patient BASICS+BAOCHE pooled subgroup; interaction p≈0.04). The 2019 expert opinion made no such severity threshold.",
+            "detail_ko": "새로 규명된 효과 조정인자: EVT 이득이 뇌졸중 중증도에 따라 달라진다. 이번 가이드라인은 NIHSS ≥10에서만 EVT + BMT를 권고하고, NIHSS <10에서는 EVT를 BMT보다 권할 근거가 없다고 명시한다 — 경증에서는 BMT가 통계적 유의성은 없으나 더 낫고 더 안전했다(BASICS+BAOCHE 78명 통합 하위군에서 sICH가 EVT 8.1% vs BMT 0%, 상호작용 p≈0.04). 2019 전문가 의견에는 이런 중증도 기준이 없었다."
+          },
+          {
+            "topic": "치료 시간창 24시간까지 확대",
+            "detail": "The guideline explicitly addresses an extended window: IVT suggested up to 24 h (expert consensus) and EVT + BMT suggested in both the <6 h AND the 6–24 h windows (vs BMT alone). This formalizes a much longer actionable time window for BAO than earlier anterior-circulation-derived frameworks, acknowledging posterior-circulation tissue may remain salvageable later.",
+            "detail_ko": "확장된 시간창을 명시적으로 다룬다: IVT는 24시간까지 제안(전문가 합의), EVT + BMT는 <6시간과 6–24시간 두 시간창 모두에서 BMT 단독 대비 제안한다. 이는 기존 전방순환 기반 틀보다 훨씬 긴 실행 가능한 치료 시간창을 BAO에 공식화한 것으로, 후방순환 조직이 더 늦게까지 구제 가능할 수 있음을 반영한다."
+          },
+          {
+            "topic": "지역·BMT 구성에 따른 효과 차이 명시",
+            "detail": "The guideline newly quantifies that EVT effect is modified by region (Europe vs Asia) and by the proportion of IVT in the BMT arm: where the BMT arm had a high IVT proportion (e.g. European BASICS) EVT was not superior, whereas in Asian trials with low IVT in BMT, EVT showed benefit (pooled RR up to ~1.9). This explains conflicting trial results and warns against over-generalizing Asian-trial effect sizes to IVT-rich European practice.",
+            "detail_ko": "EVT 효과가 지역(유럽 vs 아시아)과 BMT군 내 IVT 비율에 따라 조정됨을 새로 정량화했다: BMT군의 IVT 비율이 높았던 경우(예: 유럽 BASICS) EVT가 우월하지 않았고, BMT 내 IVT가 적었던 아시아 시험들에서는 EVT 이득이 나타났다(통합 RR 최대 ~1.9). 이는 상반된 시험 결과를 설명하며, 아시아 시험의 효과크기를 IVT가 많은 유럽 진료에 과도하게 일반화하지 말 것을 경고한다."
+          },
+          {
+            "topic": "폐색 위치에 따른 효과",
+            "detail": "New location-based guidance: EVT + BMT shows a stronger effect over BMT alone in proximal and middle BAO compared to distal BAO (interaction p≈0.01). This location-stratified consideration did not exist in the 2019 expert opinion.",
+            "detail_ko": "위치 기반 새 지침: EVT + BMT의 BMT 단독 대비 효과는 원위부보다 근위부·중간부 BAO에서 더 강했다(상호작용 p≈0.01). 이런 위치 층화 고려는 2019 전문가 의견에는 없었다."
+          },
+          {
+            "topic": "영상 기반 제외 기준 (광범위 뇌간 허혈)",
+            "detail": "New expert consensus against reperfusion therapy in patients with extensive bilateral and/or brainstem ischaemic changes (i.e. already-established irreversible injury), while reperfusion should otherwise proceed REGARDLESS of collateral scores. This clarifies that collateral status alone should not exclude patients, but extensive established infarction should.",
+            "detail_ko": "광범위 양측성 및/또는 뇌간 허혈 변화(이미 확립된 비가역적 손상)가 있는 환자에서 재관류치료를 하지 않도록 하는 새 전문가 합의를 제시한다. 반면 그 외에는 측부순환 점수와 무관하게 재관류치료를 진행해야 한다. 즉 측부순환만으로 환자를 배제하지 말되, 광범위 확립된 경색은 배제 기준이 됨을 명확히 했다."
+          },
+          {
+            "topic": "혈전제거 기법 (direct aspiration 1차)",
+            "detail": "New technique recommendation: suggest direct aspiration over stent retriever as the first-line mechanical thrombectomy strategy in BAO (weak, limited evidence). The 2019 guideline did not give a BAO-specific first-line technique preference.",
+            "detail_ko": "새 기법 권고: BAO에서 1차 기계적 혈전제거 전략으로 stent retriever보다 direct aspiration을 제안한다(약한 권고, 근거 제한적). 2019 가이드라인에는 BAO 전용 1차 기법 선호가 없었다."
+          },
+          {
+            "topic": "구제 혈관성형/스텐트 및 보조 항혈전제",
+            "detail": "New statements: expert consensus suggests rescue PTA and/or stenting after a failed EVT, and suggests add-on antithrombotic treatment during or within 24 h after EVT specifically in patients with NO concomitant IVT whose procedure was complicated (failed/imminent re-occlusion or need for stenting/angioplasty) — relevant to the high ICAD burden in BAO. These procedural/pharmacologic details were not covered by the 2019 expert opinion.",
+            "detail_ko": "새 권고: EVT 실패 후 구제 PTA 및/또는 스텐트를 전문가 합의로 제안하고, 동반 IVT가 없고 시술이 합병(실패/재폐색 임박 또는 스텐트·혈관성형 필요)된 환자에 한해 EVT 중 또는 후 24시간 이내 보조 항혈전제를 제안한다 — BAO의 높은 두개내죽상경화(ICAD) 부담과 관련된다. 이런 시술·약물 세부사항은 2019 전문가 의견에서 다뤄지지 않았다."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "경증(NIHSS <10)에서는 혈전제거가 해가 될 수 있다 — 저널 플레인-랭귀지 요약",
+            "body_ko": "European Stroke Journal(OUP academic) 측 요약은 이 가이드라인의 핵심을 평이한 문장으로 다시 정리한다: IVT는 금기가 없는 한 24시간까지 중증도와 무관하게 시행; EVT 이득은 초기 중증도(NIHSS ≥10에서 이득), 지역(유럽 vs 아시아), 대조군 내 IVT 비율에 크게 좌우; 경증(NIHSS <10)에서는 'EVT를 BMT보다 권할 근거가 없고' BMT가 더 안전해 보였다; 1차 기법으로 direct aspiration 선호; EVT 실패 시 구제 PTA/스텐트. 이 2차 요약은 가이드라인 본문과 동일 결론을 담되 임상의가 빠르게 읽도록 압축한 판이다.",
+            "sourceLabel": "European Stroke Journal (OUP academic) — guideline article page",
+            "sourceUrl": "https://academic.oup.com/esj/article/9/4/835/8269023"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, do not withhold reperfusion from BAO solely because the patient is late — both IVT (up to 24 h) and EVT (within 24 h, including the 6–24 h window) are on the table if there is no extensive, already-established bilateral/brainstem infarction, and collateral scores alone should not exclude. Use NIHSS as a decision gate: offer EVT + BMT for moderate-to-severe deficits (NIHSS ≥10), but recognize that in mild deficits (NIHSS <10) thrombectomy may cause net harm (higher sICH) and best medical therapy ± IVT is often the safer default. Give bridging IVT before/with EVT when not contraindicated rather than going straight to EVT; neurointervention should favor direct aspiration first-line, keep rescue angioplasty/stenting ready for the frequent underlying atherosclerotic lesions, and consider peri-procedural antiplatelet/antithrombotic when EVT is complicated in a patient who did not receive IVT. Finally, interpret the dramatic Asian-trial effect sizes cautiously in IVT-rich Western systems, where the incremental EVT benefit over well-delivered BMT is smaller.",
+        "practiceImpact_ko": "현장에서는 '늦었다'는 이유만으로 BAO에 재관류치료를 보류하지 말아야 한다 — 광범위하게 이미 확립된 양측성·뇌간 경색이 없다면 IVT(최대 24시간)와 EVT(24시간 이내, 6–24시간 창 포함) 모두 고려 대상이며, 측부순환 점수만으로 배제해서는 안 된다. NIHSS를 결정 관문으로 사용한다: 중등도–중증(NIHSS ≥10)에는 EVT + BMT를 제공하되, 경증(NIHSS <10)에서는 혈전제거가 순 해(sICH 증가)를 줄 수 있어 BMT ± IVT가 더 안전한 기본 선택인 경우가 많다. 금기가 없으면 직접 EVT로 직행하기보다 IVT 병용(bridging)을 먼저 하고, 중재는 1차로 direct aspiration을 선호하며, 흔한 기저 죽상경화 병변에 대비해 구제 혈관성형/스텐트를 준비하고, IVT를 받지 않은 환자에서 EVT가 합병된 경우 시술 전후 항혈소판/항혈전제를 고려한다. 끝으로, IVT 시행률이 높은 서구 시스템에서는 잘 시행된 BMT 대비 EVT의 추가 이득이 더 작으므로 아시아 시험의 큰 효과크기를 신중히 해석해야 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 38752743",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38752743/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1177/23969873241257223",
+            "url": "https://doi.org/10.1177/23969873241257223"
+          },
+          {
+            "label": "웹 — ESO-ESMINT BAO guideline full text — PMC11569583",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11569583/"
+          },
+          {
+            "label": "웹 — ESO-ESMINT BAO guideline — European Stroke Journal (OUP academic)",
+            "url": "https://academic.oup.com/esj/article/9/4/835/8269023"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-24"
     }
   ],
   "rejected": [
@@ -68692,7 +68946,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-23T01:55:29.064Z",
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -70120,7 +70374,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-23T01:55:29.064Z",
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70147,7 +70401,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-23T01:55:29.064Z",
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70182,7 +70436,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-23T01:55:29.064Z",
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70209,7 +70463,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-23T01:55:29.064Z",
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
       "abstract": "BACKGROUND: Non-invasive ventilation (NIV) is recommended for exacerbations of chronic obstructive pulmonary disease (ECOPD) complicated by respiratory acidosis, yet real-world adherence remains uncertain. We evaluated adherence to ERS/ATS recommendations, patterns of non-adherence, and their association with short-term outcomes.\nMETHODS: In this prospective multicenter cohort study, consecutive patients with ECOPD-related acute hypoxemic-hypercapnic respiratory failure were enrolled across nine Italian hospitals and classified as guideline-adherent, NIV underuse, or NIV overuse according to ERS/ATS pH-based recommendations. The primary objective was to assess adherence to recommendations; the association between adherence patterns and the composite outcome of in-hospital death or endotracheal intubation was a secondary objective.\nRESULTS: Among 456 patients, 315 (69%) were guideline-adherent, 60 (13%) had NIV underuse, and 81 (18%) had NIV overuse. Underuse occurred predominantly in patients with mild respiratory acidosis receiving alternative respiratory support, mainly high-flow nasal cannula (HFNC), whereas overuse occurred primarily in hypercapnic patients without respiratory acidosis. The composite clinical outcome occurred in 48 patients (11%) and did not differ across adherence groups. After adjustment, neither NIV underuse (odds ratio [OR] 0.85, 95% confidence interval [CI] 0.33-2.20) nor overuse (OR 0.54, 95% CI 0.20-1.46) was associated with the composite clinical outcome, whereas higher Simplified Acute Physiology Score (SAPS) II was independently associated with it (OR 1.05, 95% CI 1.02-1.08).\nCONCLUSIONS: Deviations from ERS/ATS recommendations followed distinct clinical patterns and were not independently associated with the composite clinical outcome. Overall illness severity was consistently associated with adverse outcomes, highlighting the complexity of implementing NIV recommendations in routine clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -70243,7 +70497,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-23T01:55:29.064Z",
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70275,7 +70529,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-23T01:55:29.064Z",
+      "discoveredAt": "2026-11-24T05:26:38.434Z",
       "abstract": "Applying the Choosing Wisely® methodology, a task force mandated by the Ventilation and Oxygen-therapy group (GAVO2) of the French Pulmonary Society (SPLF) was commissioned to draw up a series of expert recommendations on practical aspects of long-term non-invasive ventilation (NIV). These guidelines are annually updated. Several themes were taken up, notably including NIV configuration, efficacy and tolerance. For each topic, the experts reviewed recent data in the literature. Based on these data and on their own clinical experience, the experts developed a comprehensive analysis of recent insights, and went on to write out practical tips, which have been grouped together in a series of three articles, of which the first is dedicated to the monitoring of non-invasive ventilation.",
       "meshTerms": [],
       "keywords": [
@@ -70348,9 +70602,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261123_105359:guideline:2026-11-23",
+    "runId": "trend_review_20261124_142526:guideline:2026-11-24",
     "outcome": "published",
-    "publishedId": "pmid:41039227",
+    "publishedId": "pmid:38752743",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -70375,15 +70629,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 159,
+        "mergedTotal": 162,
         "overlapCount": 2,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2027 Jan",
         "window": {
-          "minDate": "2026/10/24",
-          "maxDate": "2026/11/23"
+          "minDate": "2026/10/25",
+          "maxDate": "2026/11/24"
         },
         "retmax": 60,
         "topics": [
@@ -70391,8 +70645,8 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 59,
-            "idsFetched": 59,
+            "totalFound": 58,
+            "idsFetched": 58,
             "truncated": false,
             "error": null
           },
@@ -70418,8 +70672,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 19,
-            "idsFetched": 19,
+            "totalFound": 20,
+            "idsFetched": 20,
             "truncated": false,
             "error": null
           },
@@ -70427,8 +70681,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 23,
-            "idsFetched": 23,
+            "totalFound": 24,
+            "idsFetched": 24,
             "truncated": false,
             "error": null
           },
@@ -70454,8 +70708,8 @@
             "id": "pubmed-topic:trauma_hemorrhage",
             "label": "외상·출혈",
             "succeeded": true,
-            "totalFound": 2,
-            "idsFetched": 2,
+            "totalFound": 3,
+            "idsFetched": 3,
             "truncated": false,
             "error": null
           },
@@ -70481,13 +70735,13 @@
             "id": "pubmed-topic:procedure_dx",
             "label": "응급 술기·진단",
             "succeeded": true,
-            "totalFound": 1,
-            "idsFetched": 1,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           }
         ],
-        "topicOnlyCount": 149,
+        "topicOnlyCount": 152,
         "ptPmids": [
           "43044046",
           "42858614",
@@ -70498,9 +70752,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 159,
-          "enriched": 159,
-          "withAbstract": 127,
+          "requested": 162,
+          "enriched": 162,
+          "withAbstract": 128,
           "error": null
         }
       },
@@ -70553,8 +70807,10 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 2,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "scopeExclusions": [
         {
@@ -70750,13 +71006,6 @@
           "stage": "region",
           "pmid": "42927337",
           "title": "Evaluating cardiopulmonary resuscitation in \"The Pitt\": accuracy, clinical realism, and adherence to international resuscitation guidelines.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42925956",
-          "title": "Practical Prevention of Heart Failure Across Stages A and B: A Scientific Statement From the Japanese Heart Failure Society.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71245,6 +71494,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43073015",
+          "title": "Resuscitative thoracotomy at a UK major trauma centre: guideline adherence and outcomes from a 5-year service evaluation.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "42776522",
           "title": "Management of Colon and Rectal Injuries From Blunt and Penetrating Trauma: Evidence-Based Recommendations From the World Society of Emergency Surgery.",
           "region": null,
@@ -71294,6 +71550,13 @@
         },
         {
           "stage": "region",
+          "pmid": "42895537",
+          "title": "What's new in point-of-care lung ultrasound: reading the new recommendations.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "40664402",
           "title": "ASRA pain medicine narrative review and expert practice recommendations for gastric point-of-care ultrasound to assess aspiration risk in medically complex patients undergoing regional anesthesia and pain procedures: infographic.",
           "region": null,
@@ -71325,19 +71588,19 @@
         }
       ],
       "decisions": {
-        "queued": 195,
-        "needsReview": 470,
+        "queued": 194,
+        "needsReview": 472,
         "rejected": 138,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41039227",
+        "candidateId": "pmid:38752743",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-23T01:57:20.178Z",
+  "updatedAt": "2026-11-24T05:29:55.409Z",
   "configVersion": "guideline-v2"
 }
