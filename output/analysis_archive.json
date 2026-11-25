@@ -5818,6 +5818,63 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-25",
+      "pmid": "41493393",
+      "title": "Approaches to Converting Sp o2 /F io2 Ratio to Pa o2 /F io2 Ratio for Assessment of Respiratory Failure in Critically Ill Patients: A Systematic Review.",
+      "title_ko": "중환자에서 호흡부전 평가를 위한 SpO2/FiO2 비를 PaO2/FiO2 비로 변환하는 방법: 체계적 문헌고찰",
+      "journal": "Critical care medicine",
+      "doi": "10.1097/CCM.0000000000007018",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "중환자에서 비침습적 SpO2/FiO2 (SF) 비를 PaO2/FiO2 (PF) 비로 변환하는 가장 좋은 방법은 진단적/예후적 정확도와 임상적 유용성 측면에서 무엇인가?",
+      "pico": {
+        "population": "[International] Critically ill patients across 45 observational studies that compared the SF to PF ratio, ranging from 61 to 141,000 measurements per study.",
+        "intervention": "Use of the noninvasive SpO2/FiO2 (SF) ratio, converted via imputation equations (one linear, one logarithmic linear, and two nonlinear equations prioritized based on ease of use, size, generalizability and methodology), to estimate oxygenation and assess respiratory failure.",
+        "comparison": "The invasive PaO2/FiO2 (PF) ratio, which mandates invasive arterial access, as the reference standard.",
+        "outcome": "Diagnostic/prognostic accuracy and clinical utility of SF-to-PF conversion: all studies established strong correlational relationships between SF and PF ratios but with no clear best equation; SF to PF imputation was less accurate when SpO2 was ≥97%; the SF ratio correlated well with clinical outcomes compared with the PF ratio, both as an individual value and as part of a comprehensive score, with more discriminating performance in some cases. No pooled effect sizes, AUROC, or confidence intervals were reported in the abstract."
+      },
+      "pico_ko": {
+        "population": "[다국가] SF 비와 PF 비를 비교한 45개 관찰연구에 포함된 중환자들로, 연구당 측정치는 61건에서 141,000건까지 분포.",
+        "intervention": "비침습적 SpO2/FiO2 (SF) 비를 imputation 방정식(사용 편의성·규모·일반화 가능성·방법론을 근거로 우선 선정된 선형 1개, 로그-선형 1개, 비선형 2개)으로 변환하여 산소화 상태 및 호흡부전을 평가.",
+        "comparison": "침습적 동맥 접근이 필요한 PaO2/FiO2 (PF) 비를 참조 표준으로 사용.",
+        "outcome": "SF-PF 변환의 진단적/예후적 정확도 및 임상적 유용성: 모든 연구에서 SF와 PF 비 사이에 강한 상관관계가 확립되었으나 명확한 최선의 방정식은 없었음; SpO2가 ≥97%일 때 SF→PF imputation 정확도가 낮아짐; SF 비는 PF 비와 비교해 임상 결과와 잘 상관하였고(개별 값으로도, 종합 점수의 일부로도) 일부 경우 더 우수한 discrimination을 보임. 초록에는 통합 효과크기·AUROC·신뢰구간이 보고되지 않음."
+      },
+      "keyFindings": [
+        "Across 45 observational studies (61 to 141,000 measurements), SF and PF ratios showed strong correlation, but no single conversion equation was clearly best.",
+        "Four equations were prioritized (one linear, one logarithmic linear, two nonlinear) based on ease of use, size, generalizability and methodology; all correlated strongly, with the linear equation easiest to apply at the bedside.",
+        "SF to PF imputation was less accurate when SpO2 was ≥97%, and the SF ratio correlated with clinical outcomes comparably to—and in some cases more discriminately than—the PF ratio."
+      ],
+      "keyFindings_ko": [
+        "45개 관찰연구(측정치 61~141,000건)에서 SF 비와 PF 비는 강한 상관을 보였으나 명확히 가장 좋은 단일 변환 방정식은 없었다.",
+        "사용 편의성·규모·일반화 가능성·방법론을 근거로 4개 방정식(선형 1, 로그-선형 1, 비선형 2)이 우선 선정되었고 모두 강한 상관을 보였으며, 선형 방정식이 침상 적용에 가장 쉬웠다.",
+        "SpO2가 ≥97%일 때 SF→PF imputation 정확도가 낮아졌고, SF 비는 임상 결과와 PF 비에 준하는—일부 경우 더 우수한 discrimination을 보이며—상관을 보였다."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 41493393",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41493393/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1097/CCM.0000000000007018",
+          "url": "https://doi.org/10.1097/CCM.0000000000007018"
+        },
+        {
+          "label": "웹 — PubMed record (PMID 41493393)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41493393/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed record (PMID 41493393)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41493393/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
