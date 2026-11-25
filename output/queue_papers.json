@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "41493393",
-      "title": "Approaches to Converting Sp o2 /F io2 Ratio to Pa o2 /F io2 Ratio for Assessment of Respiratory Failure in Critically Ill Patients: A Systematic Review.",
-      "journal": "Critical care medicine",
-      "score": 7.5,
-      "topic": "resp_airway",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 7.49,
-        "cooldownPenalty": 0,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-14"
-    },
-    {
       "pmid": "42902295",
       "title": "Toward targeted assessment of inspiratory muscle weakness before extubation: a pooled individual patient data analysis from multiple observational cohorts in critically ill ventilated patients.",
       "journal": "Critical care (London, England)",
@@ -857,6 +842,22 @@
       },
       "addedAt": "2026-11-14",
       "publishedAt": "2026-11-24"
+    },
+    {
+      "pmid": "41493393",
+      "title": "Approaches to Converting Sp o2 /F io2 Ratio to Pa o2 /F io2 Ratio for Assessment of Respiratory Failure in Critically Ill Patients: A Systematic Review.",
+      "journal": "Critical care medicine",
+      "score": 7.5,
+      "topic": "resp_airway",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 7.49,
+        "cooldownPenalty": 0,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14",
+      "publishedAt": "2026-11-25"
     }
   ],
   "rejected": [
@@ -872,9 +873,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-24",
+    "date": "2026-11-25",
     "outcome": "published",
-    "publishedId": "42121165"
+    "publishedId": "41493393"
   },
-  "updatedAt": "2026-11-24"
+  "updatedAt": "2026-11-25"
 }

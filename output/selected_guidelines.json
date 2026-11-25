@@ -33813,89 +33813,6 @@
       }
     },
     {
-      "id": "pmid:41655594",
-      "pmid": "41655594",
-      "title": "Recommendations for Stress Ulcer Prophylaxis in Critically Ill Adults: A Contextualized Clinical Practice Guideline From the Saudi Critical Care Society and the Scandinavian Society of Anaesthesiology and Intensive Care Medicine, Endorsed by the Kuwait Anesthesia and Critical Care Society.",
-      "pubDate": "2026 Mar",
-      "journal": "Acta anaesthesiologica Scandinavica",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt",
-        "pubmed-title",
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:39:51.509Z",
-      "abstract": "BACKGROUND: Critically ill adults are at risk for stress-related upper gastrointestinal bleeding (UGIB). Regional variations in gastrointestinal bleeding incidence, infection epidemiology, formulary access, and the relative value placed on bleeding versus infection outcomes by patients and clinicians necessitate contextualized recommendations. This guideline provides regionally adapted, evidence-based recommendations for the use of stress ulcer prophylaxis (SUP) in Saudi Arabia, Kuwait, and the Nordic countries using the GRADE-ADOLOPMENT methodology.\nMETHODS: A multidisciplinary panel from both regions prioritized PICO questions and ranked outcomes by patient importance. The 2024 Society of Critical Care Medicine (SCCM) and American Society of Health-System Pharmacists (ASHP) guideline served as the source guideline and was evaluated for credibility; contextual fit in Saudi Arabia, Kuwait, and the Nordic countries; and alignment with the GRADE methodology. Evidence profiles and Evidence-to-Decision frameworks were adapted or developed, incorporating updated data, local epidemiology, drug access, and health system variables such as equity, cost, and feasibility.\nRESULTS: The panel adopted the following five recommendations. In critically ill adults with coagulopathy, shock, or chronic liver disease, the panel suggests using SUP over no SUP (conditional recommendation; moderate certainty). In enterally fed patients at high risk of UGIB, the panel suggests using SUP over no SUP (conditional recommendation; very low certainty); in those at low risk, the panel suggests not using SUP (conditional recommendation; very low certainty). For patients receiving SUP, the panel suggests using a proton pump inhibitor (PPI) or a histamine-2 receptor antagonist (H2RA) rather than sucralfate (conditional recommendation; low to moderate certainty) and suggests enteral or intravenous administration based on clinical feasibility (conditional recommendation; very low to low certainty). In critically ill adults receiving SUP, low-dose PPI or H2RA therapy should be used rather than high-dose regimens (best practice statement; not GRADEd). Regarding SUP discontinuation, the panel suggests discontinuing SUP in critically ill adults with resolved risk factors for UGIB (conditional recommendations; very low certainty) and in critically ill adults without UGIB risk factors but receiving SUP prior to intensive care unit (ICU) admission in the absence of an active indication (conditional recommendations; very low certainty). Differences in drug availability, ICU discharge practices, and health equity considerations shaped the panel's judgments and highlighted key implementation challenges.\nCONCLUSION: This guideline offers five context-specific, evidence-informed recommendations for SUP in critically ill adults in Saudi Arabia, Kuwait, and the Nordic countries. While grounded in the health system realities of these regions, the recommendations may inform practice in other settings with similar ICU structures and resource contexts. The panel also identified key research priorities to address remaining evidence gaps and support future updates.",
-      "meshTerms": [
-        "Humans",
-        "Critical Illness",
-        "Critical Care",
-        "Scandinavian and Nordic Countries",
-        "Saudi Arabia",
-        "Kuwait",
-        "Adult",
-        "Stress, Psychological",
-        "Societies, Medical",
-        "Peptic Ulcer"
-      ],
-      "keywords": [
-        "GRADE",
-        "gastrointestinal bleeding",
-        "guideline adaptation",
-        "intensive care",
-        "stress ulcer prophylaxis"
-      ],
-      "doi": "10.1111/aas.70201",
-      "pmcid": "PMC12883282",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 6.2,
-      "breakdown": {
-        "authority": 0,
-        "topic": 2.2,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:05.137Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "중환자 스트레스궤양 예방 CPG, ICU 핵심 실무",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|stress-ulcer-prophylaxis-critically-ill-adults-contextualized-clinical-practice-from-saudi-critical-care-society-scandinavian-society-anaesthesiology-intensive-care-medicine-endorsed-by-kuwait-anesthesia-critical-care-society",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:42064867",
       "pmid": "42064867",
       "title": "2025 ESC/EACTS valvular heart disease guidelines: practical updates on mitral and tricuspid regurgitation.",
@@ -39081,7 +38998,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -40354,7 +40271,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41153,7 +41070,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -42073,7 +41990,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42246,7 +42163,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42664,7 +42581,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -44969,7 +44886,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45772,7 +45689,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46354,7 +46271,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -46424,7 +46341,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46504,7 +46421,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -46572,7 +46489,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -46634,7 +46551,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46713,7 +46630,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46795,7 +46712,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46894,7 +46811,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46995,7 +46912,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47076,7 +46993,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47158,7 +47075,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47221,7 +47138,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47290,7 +47207,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47364,7 +47281,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47430,7 +47347,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -47493,7 +47410,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47573,7 +47490,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47637,7 +47554,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -47719,7 +47636,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-post-discharge-outcomes-nationwide-german-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -47782,7 +47699,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47849,7 +47766,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47929,7 +47846,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47992,7 +47909,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -48051,7 +47968,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "unknown|diastolic-function-classification-acute-myocardial-infarction-comparison-ase-eacvi-ase",
       "supersedes": [],
       "lineageReview": false,
@@ -48114,7 +48031,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.248Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "unknown|ers-clinical-practice-patients-with-idiopathic-pulmonary-fibrosis-lung-cancer",
       "supersedes": [],
       "lineageReview": false,
@@ -48160,7 +48077,7 @@
         "influenza"
       ],
       "doi": "10.1370/afm.260718",
-      "pmcid": "",
+      "pmcid": "PMC13792829",
       "region": "us",
       "by": "org-acronym",
       "signals": {
@@ -48194,7 +48111,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48252,7 +48169,7 @@
       "organizationId": "aha",
       "tier": 1,
       "topicMatched": true,
-      "status": "needsReview",
+      "status": "queued",
       "verdict": "guideline",
       "documentType": "scientific-statement",
       "reasons": [
@@ -48260,7 +48177,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-24T05:26:47.249Z",
+      "lastSeenAt": "2026-11-25T04:29:31.189Z",
       "lineageKey": "aha|forecasting-burden-cost-stroke-united-states-projections-by-sociodemographic-groups-through-from",
       "supersedes": [],
       "lineageReview": false,
@@ -64772,6 +64689,192 @@
         ]
       },
       "publishedAt": "2026-11-24"
+    },
+    {
+      "id": "pmid:41655594",
+      "pmid": "41655594",
+      "title": "Recommendations for Stress Ulcer Prophylaxis in Critically Ill Adults: A Contextualized Clinical Practice Guideline From the Saudi Critical Care Society and the Scandinavian Society of Anaesthesiology and Intensive Care Medicine, Endorsed by the Kuwait Anesthesia and Critical Care Society.",
+      "pubDate": "2026 Mar",
+      "journal": "Acta anaesthesiologica Scandinavica",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt",
+        "pubmed-title",
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:39:51.509Z",
+      "abstract": "BACKGROUND: Critically ill adults are at risk for stress-related upper gastrointestinal bleeding (UGIB). Regional variations in gastrointestinal bleeding incidence, infection epidemiology, formulary access, and the relative value placed on bleeding versus infection outcomes by patients and clinicians necessitate contextualized recommendations. This guideline provides regionally adapted, evidence-based recommendations for the use of stress ulcer prophylaxis (SUP) in Saudi Arabia, Kuwait, and the Nordic countries using the GRADE-ADOLOPMENT methodology.\nMETHODS: A multidisciplinary panel from both regions prioritized PICO questions and ranked outcomes by patient importance. The 2024 Society of Critical Care Medicine (SCCM) and American Society of Health-System Pharmacists (ASHP) guideline served as the source guideline and was evaluated for credibility; contextual fit in Saudi Arabia, Kuwait, and the Nordic countries; and alignment with the GRADE methodology. Evidence profiles and Evidence-to-Decision frameworks were adapted or developed, incorporating updated data, local epidemiology, drug access, and health system variables such as equity, cost, and feasibility.\nRESULTS: The panel adopted the following five recommendations. In critically ill adults with coagulopathy, shock, or chronic liver disease, the panel suggests using SUP over no SUP (conditional recommendation; moderate certainty). In enterally fed patients at high risk of UGIB, the panel suggests using SUP over no SUP (conditional recommendation; very low certainty); in those at low risk, the panel suggests not using SUP (conditional recommendation; very low certainty). For patients receiving SUP, the panel suggests using a proton pump inhibitor (PPI) or a histamine-2 receptor antagonist (H2RA) rather than sucralfate (conditional recommendation; low to moderate certainty) and suggests enteral or intravenous administration based on clinical feasibility (conditional recommendation; very low to low certainty). In critically ill adults receiving SUP, low-dose PPI or H2RA therapy should be used rather than high-dose regimens (best practice statement; not GRADEd). Regarding SUP discontinuation, the panel suggests discontinuing SUP in critically ill adults with resolved risk factors for UGIB (conditional recommendations; very low certainty) and in critically ill adults without UGIB risk factors but receiving SUP prior to intensive care unit (ICU) admission in the absence of an active indication (conditional recommendations; very low certainty). Differences in drug availability, ICU discharge practices, and health equity considerations shaped the panel's judgments and highlighted key implementation challenges.\nCONCLUSION: This guideline offers five context-specific, evidence-informed recommendations for SUP in critically ill adults in Saudi Arabia, Kuwait, and the Nordic countries. While grounded in the health system realities of these regions, the recommendations may inform practice in other settings with similar ICU structures and resource contexts. The panel also identified key research priorities to address remaining evidence gaps and support future updates.",
+      "meshTerms": [
+        "Humans",
+        "Critical Illness",
+        "Critical Care",
+        "Scandinavian and Nordic Countries",
+        "Saudi Arabia",
+        "Kuwait",
+        "Adult",
+        "Stress, Psychological",
+        "Societies, Medical",
+        "Peptic Ulcer"
+      ],
+      "keywords": [
+        "GRADE",
+        "gastrointestinal bleeding",
+        "guideline adaptation",
+        "intensive care",
+        "stress ulcer prophylaxis"
+      ],
+      "doi": "10.1111/aas.70201",
+      "pmcid": "PMC12883282",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 6.2,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2.2,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:05.137Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 스트레스궤양 예방 CPG, ICU 핵심 실무",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|stress-ulcer-prophylaxis-critically-ill-adults-contextualized-clinical-practice-from-saudi-critical-care-society-scandinavian-society-anaesthesiology-intensive-care-medicine-endorsed-by-kuwait-anesthesia-critical-care-society",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41655594",
+          "title": "Recommendations for Stress Ulcer Prophylaxis in Critically Ill Adults: A Contextualized Clinical Practice Guideline From the Saudi Critical Care Society and the Scandinavian Society of Anaesthesiology and Intensive Care Medicine, Endorsed by the Kuwait Anesthesia and Critical Care Society.",
+          "journal": "Acta anaesthesiologica Scandinavica",
+          "pubDate": "2026 Mar",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41655594/",
+          "doi": "10.1111/aas.70201"
+        },
+        "org": "Saudi Critical Care Society (SCCS) / Scandinavian Society of Anaesthesiology and Intensive Care Medicine (SSAI), endorsed by Kuwait Anesthesia and Critical Care Society (KACCS)",
+        "version": "2026",
+        "title_ko": "중환자 성인에서의 스트레스 궤양 예방(SUP): 사우디 중환자의학회(SCCS)와 스칸디나비아 마취·중환자의학회(SSAI)의 맥락화 임상진료지침 (쿠웨이트 마취·중환자의학회 KACCS 승인), 2026",
+        "scope_ko": "사우디아라비아·쿠웨이트·북유럽(Nordic) 국가의 중환자실에 입원한 성인(내과·외과·신경중환자 포함)을 대상으로, 스트레스 관련 상부위장관출혈(UGIB) 예방을 위한 약물적 스트레스 궤양 예방(SUP)의 사용·약제 선택·투여경로·용량·중단 기준을 다룬다. 2024 SCCM/ASHP 지침을 원천으로 GRADE-ADOLOPMENT 방법으로 지역 맥락(약제 접근성·역학·형평성·비용)을 반영해 적응한 지침이며, 소아 및 비-ICU 환자는 제외한다.",
+        "summary": [
+          "In critically ill adults with coagulopathy, shock, or chronic liver disease, use SUP over no SUP (conditional recommendation; MODERATE certainty).",
+          "In enterally fed patients at HIGH risk of UGIB, use SUP over no SUP (conditional; very low certainty); in enterally fed patients at LOW risk, do NOT use SUP (conditional; very low certainty).",
+          "For patients receiving SUP, use a proton pump inhibitor (PPI) or an H2-receptor antagonist (H2RA) rather than sucralfate (conditional; low-to-moderate certainty) — PPIs may favor higher-risk patients, H2RAs preferred when high acuity raises safety concerns.",
+          "Administer SUP by the enteral OR intravenous route based on clinical context and feasibility (conditional; very low-to-low certainty); enteral may reduce cost when feasible.",
+          "Use LOW-dose PPI or H2RA regimens rather than high-dose regimens — higher doses add no benefit (best practice statement; ungraded).",
+          "Discontinue SUP in critically ill adults once UGIB risk factors have resolved (conditional; very low certainty).",
+          "Discontinue SUP in patients WITHOUT UGIB risk factors who were on SUP prior to ICU admission when there is no active indication (conditional; very low certainty).",
+          "Panel judgments and safety framing drew on the updated evidence base (including the REVISE trial and pairwise systematic reviews): PPI vs no prophylaxis shows little-to-no difference in mortality (RR ~0.99) and no clear difference in pneumonia or C. difficile risk, with a possible mortality harm signal in high-acuity subgroups (low certainty)."
+        ],
+        "summary_ko": [
+          "응고장애(coagulopathy), 쇼크(shock), 또는 만성 간질환(chronic liver disease)이 있는 중환자 성인에서는 SUP를 하지 않는 것보다 SUP를 할 것을 제안한다 (조건부 권고; 확실성 중등도/MODERATE).",
+          "경장영양 중이면서 UGIB 고위험인 환자에서는 SUP를 할 것을 제안하고(조건부; 매우 낮은 확실성), 경장영양 중이면서 저위험인 환자에서는 SUP를 하지 말 것을 제안한다(조건부; 매우 낮은 확실성).",
+          "SUP를 받는 환자에서는 sucralfate보다 PPI 또는 H2RA를 사용할 것을 제안한다(조건부; 낮음~중등도 확실성) — PPI는 더 고위험 환자에서 유리할 수 있고, 고중증도로 안전성 우려가 큰 경우 H2RA를 선호한다.",
+          "SUP는 임상 상황과 실행가능성에 따라 경장(enteral) 또는 정맥(IV) 경로로 투여한다(조건부; 매우 낮음~낮음 확실성); 가능하면 경장 투여가 비용을 줄일 수 있다.",
+          "고용량 요법보다 저용량(low-dose) PPI 또는 H2RA 요법을 사용한다 — 고용량은 추가 이득이 없다(최선실무문; GRADE 미평가).",
+          "UGIB 위험인자가 해소된 중환자 성인에서는 SUP를 중단할 것을 제안한다(조건부; 매우 낮은 확실성).",
+          "UGIB 위험인자가 없는데 ICU 입실 전부터 SUP를 받고 있던 환자는, 활성 적응증이 없으면 SUP를 중단할 것을 제안한다(조건부; 매우 낮은 확실성).",
+          "패널의 판단과 안전성 프레이밍은 갱신된 근거(REVISE 시험 및 쌍대비교 체계적 고찰 포함)에 기반했다: PPI는 무예방 대비 사망률에 거의 차이가 없고(RR 약 0.99), 폐렴·C. difficile 위험에도 뚜렷한 차이가 없으나 고중증도 하위군에서 사망률 해악 신호 가능성이 있다(낮은 확실성)."
+        ],
+        "keyChanges": [
+          {
+            "topic": "경장영양 상태를 위험층화에 통합 (PICO 2)",
+            "detail": "The 2024 SCCM/ASHP source guideline did not explicitly evaluate enteral-nutrition (EN) status as a modifier of the SUP decision. This contextualized guideline adds a dedicated recommendation stratified by EN: in enterally fed patients at HIGH UGIB risk use SUP (conditional, very low certainty), and in enterally fed patients at LOW risk withhold SUP (conditional, very low certainty). Reason: regional infection epidemiology and the observed association between enteral feeding and pneumonia risk in the SUP-ICU subgroup made feeding status a clinically relevant decision factor.",
+            "detail_ko": "2024 SCCM/ASHP 원천 지침은 경장영양(EN) 상태를 SUP 결정의 수정인자로 명시적으로 평가하지 않았다. 이 맥락화 지침은 EN으로 층화한 별도 권고를 추가했다: 경장영양 중 UGIB 고위험이면 SUP 사용(조건부, 매우 낮은 확실성), 경장영양 중 저위험이면 SUP 보류(조건부, 매우 낮은 확실성). 이유: 지역 감염역학과 SUP-ICU 하위군에서 경장영양-폐렴 위험 연관성이 관찰되어 영양 상태가 임상적으로 의미 있는 결정인자가 되었기 때문."
+          },
+          {
+            "topic": "SUP 중단(deprescribing)을 최선실무문에서 공식 조건부 권고로 격상 (PICO 4·5)",
+            "detail": "In the 2024 source guideline, discontinuation guidance was framed largely as best-practice statements. This guideline elevates deprescribing to two formal conditional recommendations: (4) discontinue SUP once UGIB risk factors resolve, and (5) discontinue SUP in patients without risk factors who were on it before ICU admission with no active indication — both conditional, very low certainty. Reason: a deliberate stewardship orientation against unnecessary continuation and long-term PPI exposure, plus region-specific discharge/medication-reconciliation differences (automated reconciliation in Nordic registries vs. manual processes in Gulf settings).",
+            "detail_ko": "2024 원천 지침에서 중단 지침은 주로 최선실무문 형태였다. 이 지침은 중단(deprescribing)을 두 개의 공식 조건부 권고로 격상했다: (4) UGIB 위험인자가 해소되면 SUP 중단, (5) 위험인자가 없는데 ICU 입실 전부터 SUP를 받던 환자는 활성 적응증이 없으면 중단 — 둘 다 조건부, 매우 낮은 확실성. 이유: 불필요한 지속·장기 PPI 노출에 대한 의도적 스튜어드십 지향과, 지역별 퇴실/투약조정 차이(북유럽 레지스트리의 자동 투약조정 vs 걸프 지역의 수동 처리)를 반영하기 위함."
+          },
+          {
+            "topic": "지역 약제 가용성에 따른 약제 선택 적응",
+            "detail": "The direction of the agent-choice recommendation (PPI or H2RA over sucralfate) was adopted from the source guideline, but adapted to regional formulary realities: ranitidine is unavailable in Saudi Arabia and H2RAs are unavailable in some Nordic countries. The guideline therefore frames PPI/H2RA interchangeably with explicit guidance that choice depends on local availability and patient acuity (PPIs for higher risk; H2RAs when acuity raises safety concerns). Reason: feasibility and equity in mixed public–private–military (Gulf) vs. universal tax-funded (Nordic) systems.",
+            "detail_ko": "약제 선택 권고의 방향(sucralfate보다 PPI 또는 H2RA)은 원천 지침에서 채택했으나 지역 처방집 현실에 맞게 적응했다: 사우디아라비아에서는 ranitidine이, 일부 북유럽 국가에서는 H2RA가 사용 불가하다. 따라서 PPI/H2RA를 상호교환적으로 제시하되, 선택은 현지 가용성과 환자 중증도에 달려 있음을 명시한다(고위험엔 PPI, 중증도로 안전성 우려 시 H2RA). 이유: 혼합 공공-민간-군(걸프)과 보편 조세기반(북유럽) 시스템에서의 실행가능성·형평성."
+          },
+          {
+            "topic": "근거 갱신 (REVISE 시험·최신 체계적 고찰 반영)",
+            "detail": "PICOs 1–3 retained the source guideline's direction and certainty but were refreshed with newer evidence, notably the REVISE trial and updated pairwise systematic reviews. The updated evidence base supports the mortality/pneumonia/C. difficile safety framing: PPI vs no prophylaxis RR for mortality ~0.99 (low certainty), little-to-no difference in pneumonia or C. difficile, with a possible harm signal from PPIs in high-acuity subgroups prompting caution in the most severely ill. Reason: incorporate data published after the 2024 guideline (searches through July 27, 2025).",
+            "detail_ko": "PICO 1–3은 원천 지침의 방향·확실성을 유지했으나 최신 근거(특히 REVISE 시험과 갱신된 쌍대비교 체계적 고찰)로 새로 다듬었다. 갱신된 근거는 사망률/폐렴/C. difficile 안전성 프레이밍을 뒷받침한다: PPI 대 무예방의 사망률 RR 약 0.99(낮은 확실성), 폐렴·C. difficile에 거의 차이 없음, 다만 고중증도 하위군에서 PPI의 해악 신호 가능성으로 가장 중증인 환자에서는 주의. 이유: 2024 지침 이후 발표된 데이터(2025년 7월 27일까지 검색) 반영."
+          },
+          {
+            "topic": "5개 핵심 PICO로 압축한 맥락화",
+            "detail": "The source 2024 SCCM/ASHP guideline addressed 13 PICO questions; this adaptation prioritized and condensed to 5 high-yield PICO questions (risk-based SUP use, EN-stratified use, agent/route/dose selection, and two discontinuation questions) via a structured prioritization process. Reason: focus on the highest-yield, most context-sensitive evidence gaps for the Gulf and Nordic regions rather than reproducing the full source scope.",
+            "detail_ko": "원천 2024 SCCM/ASHP 지침은 13개 PICO 질문을 다뤘으나, 이 적응 지침은 구조적 우선순위화를 거쳐 5개의 고효용 PICO 질문(위험 기반 SUP 사용, EN 층화 사용, 약제/경로/용량 선택, 2개의 중단 질문)으로 압축했다. 이유: 원천 지침의 전체 범위를 재현하기보다 걸프·북유럽 지역에서 가장 효용이 크고 맥락 민감도가 높은 근거 공백에 집중하기 위함."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [
+          {
+            "heading_ko": "원천 지침(2024 SCCM/ASHP)의 핵심 권고 — 이 맥락화 지침이 적응한 기준점",
+            "body_ko": "이 지침이 원천으로 삼은 2024 SCCM/ASHP '중환자 성인 스트레스 관련 위장관출혈 예방' 지침(SCCM 공식 페이지)은 다음을 권고했다: (1) 임상적으로 중요한 스트레스 관련 UGIB를 줄이기 위해 경장영양 투여를 제안; (2) 스트레스 관련 UGIB 위험을 높이는 인자(응고장애·쇼크·만성 간질환)가 있는 중환자에게는 저용량 PPI 또는 H2RA로 예방; (3) 경장영양 중이고 저위험인 환자에게는 SUP를 하지 말 것을 제안; (4) 위험인자가 더 이상 없으면 SUP를 중단하고, 부적절한 지속처방을 막기 위해 ICU 전실 전에 중단. 2026 맥락화 지침은 이 방향성을 대체로 채택하되 경장영양 층화·중단 권고의 공식화·지역 약제 가용성 측면에서 적응했다. (주: 이는 원천 지침의 내용이며 2026 지침 자체의 문장이 아니다.)",
+            "sourceLabel": "SCCM — SCCM/ASHP Guideline for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults (공식 페이지)",
+            "sourceUrl": "https://www.sccm.org/clinical-resources/guidelines/guidelines/sccm-ashp-guideline-prevention-of-ugib"
+          },
+          {
+            "heading_ko": "저널 전문(Acta Anaesthesiologica Scandinavica, Wiley) — 2026 지침의 공식 게재본",
+            "body_ko": "Acta Anaesthesiologica Scandinavica(2026;70(3):e70201, Wiley Online Library)의 공식 전문은 이 지침이 GRADE-ADOLOPMENT로 2024 SCCM/ASHP 지침을 사우디아라비아·쿠웨이트·북유럽 맥락에 적응했으며, 28명 다학제 패널이 5개 우선순위 PICO를 선정하고 환자 중요도로 결과를 순위화했다고 밝힌다. 다섯 개의 맥락 특이적 권고(위험 기반 SUP, 경장영양 층화, PPI/H2RA 대 sucralfate, 경로·저용량, 2건의 중단)를 제시하며, 약제 가용성·ICU 퇴실 관행·건강 형평성의 차이가 패널 판단과 구현 과제를 형성했다고 기술한다. (주: 이는 2026 지침 원문 출처 확인용이며 원문 권고 자체다.)",
+            "sourceLabel": "Acta Anaesthesiologica Scandinavica / Wiley Online Library — Amer et al. 2026, aas.70201",
+            "sourceUrl": "https://onlinelibrary.wiley.com/doi/10.1111/aas.70201"
+          }
+        ],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, do NOT reflexively start SUP on every ICU patient: reserve pharmacologic prophylaxis for clearly defined risk (coagulopathy, shock, chronic liver disease, or enterally fed patients judged high-risk) and actively withhold it in enterally fed low-risk patients. When SUP is indicated, choose a low-dose PPI or H2RA (not sucralfate) based on local availability — favoring PPIs in higher-risk patients but weighing a possible mortality-harm signal in the most severely ill, where an H2RA may be preferred — and give it enterally when feasible to cut cost and IV exposure. Most importantly, build deprescribing into daily rounds and ICU-discharge workflow: stop SUP as soon as risk factors resolve, and reconcile/stop pre-admission acid suppression that has no active indication so patients are not discharged on unnecessary long-term PPIs.",
+        "practiceImpact_ko": "병상에서 모든 ICU 환자에게 반사적으로 SUP를 시작하지 말 것: 약물 예방은 명확히 정의된 위험(응고장애·쇼크·만성 간질환, 또는 고위험으로 판단된 경장영양 환자)에 한정하고, 경장영양 중인 저위험 환자에서는 적극적으로 보류한다. SUP가 적응증이면 현지 가용성에 따라 저용량 PPI 또는 H2RA(sucralfate 아님)를 선택하되 — 고위험 환자에선 PPI를 선호하되 가장 중증인 환자에서는 사망률 해악 신호 가능성을 고려해 H2RA를 선호할 수 있음 — 가능하면 비용·IV 노출을 줄이기 위해 경장으로 투여한다. 무엇보다 중단(deprescribing)을 매일 회진과 ICU 퇴실 워크플로우에 넣어야 한다: 위험인자가 해소되는 즉시 SUP를 중단하고, 활성 적응증이 없는 입원 전 위산억제제는 투약조정으로 중단해 불필요한 장기 PPI를 달고 퇴원하지 않도록 한다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41655594",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41655594/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1111/aas.70201",
+            "url": "https://doi.org/10.1111/aas.70201"
+          },
+          {
+            "label": "웹 — PMC full text — Recommendations for Stress Ulcer Prophylaxis in Critically Ill Adults (Amer et al., 2026, PMC12883282)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12883282/"
+          },
+          {
+            "label": "웹 — Acta Anaesthesiologica Scandinavica / Wiley Online Library — Amer et al. 2026 (aas.70201)",
+            "url": "https://onlinelibrary.wiley.com/doi/10.1111/aas.70201"
+          },
+          {
+            "label": "웹 — SCCM — SCCM/ASHP Guideline for the Prevention of Stress-Related Gastrointestinal Bleeding in Critically Ill Adults (2024 source guideline, official page)",
+            "url": "https://www.sccm.org/clinical-resources/guidelines/guidelines/sccm-ashp-guideline-prevention-of-ugib"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-25"
     }
   ],
   "rejected": [
@@ -68946,7 +69049,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
       "abstract": "This review evaluates the role of heart failure (HF) registries in the Nordic countries-Sweden, Denmark, Norway, and Iceland-in the implementation of the European Society of Cardiology's guidelines for guideline-directed medical therapy (GDMT) in heart failure with reduced ejection fraction (HFrEF). It critically examines how these registries facilitate clinical practice and enhance patient outcomes through their design, data collection methods, and the evaluation of key metrics related to GDMT implementation over time. We highlight the nurse-led models adopted by these registries, which emphasize quality benchmarks and feature real-time feedback mechanisms regarding the application of GDMT. Between 2021 and 2024, registry population-weighted estimates revealed significant increases in the utilization of key therapies: mineralocorticoid receptor antagonists rose from 51% to 72%, sodium-glucose co-transporter-2 inhibitors from 20% to 81%, and sacubitril/valsartan from 22% to 32%. The use of beta-blockers and renin-angiotensin-system inhibitors remained consistently high at 91% and 94%, respectively. These shifts were linked to better treatment outcomes. The findings underscore that HF registries play a crucial role in enhancing care quality through established drug therapies for HFrEF, offering a model for integrating data-driven methodologies into HF management. Future utilization and expansion of these registries are vital for tackling healthcare disparities and refining treatment strategies for HF patients.",
       "meshTerms": [
         "Heart Failure",
@@ -70374,7 +70477,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70401,7 +70504,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70436,7 +70539,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70463,7 +70566,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
       "abstract": "BACKGROUND: Non-invasive ventilation (NIV) is recommended for exacerbations of chronic obstructive pulmonary disease (ECOPD) complicated by respiratory acidosis, yet real-world adherence remains uncertain. We evaluated adherence to ERS/ATS recommendations, patterns of non-adherence, and their association with short-term outcomes.\nMETHODS: In this prospective multicenter cohort study, consecutive patients with ECOPD-related acute hypoxemic-hypercapnic respiratory failure were enrolled across nine Italian hospitals and classified as guideline-adherent, NIV underuse, or NIV overuse according to ERS/ATS pH-based recommendations. The primary objective was to assess adherence to recommendations; the association between adherence patterns and the composite outcome of in-hospital death or endotracheal intubation was a secondary objective.\nRESULTS: Among 456 patients, 315 (69%) were guideline-adherent, 60 (13%) had NIV underuse, and 81 (18%) had NIV overuse. Underuse occurred predominantly in patients with mild respiratory acidosis receiving alternative respiratory support, mainly high-flow nasal cannula (HFNC), whereas overuse occurred primarily in hypercapnic patients without respiratory acidosis. The composite clinical outcome occurred in 48 patients (11%) and did not differ across adherence groups. After adjustment, neither NIV underuse (odds ratio [OR] 0.85, 95% confidence interval [CI] 0.33-2.20) nor overuse (OR 0.54, 95% CI 0.20-1.46) was associated with the composite clinical outcome, whereas higher Simplified Acute Physiology Score (SAPS) II was independently associated with it (OR 1.05, 95% CI 1.02-1.08).\nCONCLUSIONS: Deviations from ERS/ATS recommendations followed distinct clinical patterns and were not independently associated with the composite clinical outcome. Overall illness severity was consistently associated with adverse outcomes, highlighting the complexity of implementing NIV recommendations in routine clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -70497,7 +70600,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70529,7 +70632,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-24T05:26:38.434Z",
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
       "abstract": "Applying the Choosing Wisely® methodology, a task force mandated by the Ventilation and Oxygen-therapy group (GAVO2) of the French Pulmonary Society (SPLF) was commissioned to draw up a series of expert recommendations on practical aspects of long-term non-invasive ventilation (NIV). These guidelines are annually updated. Several themes were taken up, notably including NIV configuration, efficacy and tolerance. For each topic, the experts reviewed recent data in the literature. Based on these data and on their own clinical experience, the experts developed a comprehensive analysis of recent insights, and went on to write out practical tips, which have been grouped together in a series of three articles, of which the first is dedicated to the monitoring of non-invasive ventilation.",
       "meshTerms": [],
       "keywords": [
@@ -70549,6 +70652,39 @@
       "documentType": "guideline",
       "reasons": [
         "commentary-or-evaluation"
+      ]
+    },
+    {
+      "id": "pmid:43075744",
+      "pmid": "43075744",
+      "title": "Quality of Care and Outcomes Among American Indian and Alaska Native Patients With Acute Myocardial Infarction: Cardiovascular Health Insights From the American Heart Association Get With The Guidelines Program.",
+      "pubDate": "2026 Nov 24",
+      "journal": "Circulation. Population health and outcomes",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-25T04:29:20.518Z",
+      "abstract": "BACKGROUND: American Indian and Alaska Native (AI/AN) patients in the US face a disproportionate burden of cardiovascular disease, yet data on the quality of care and outcomes in this population are limited. Using the American Heart Association's Get With The Guidelines-Coronary Artery Disease registry, we evaluated the clinical profiles and use of evidence-based therapies among AI/AN patients with acute myocardial infarction compared with White patients.\nMETHODS: We analyzed data from 1955 AI/AN patients with acute myocardial infarction in 45 states participating in the Get With The Guidelines-Coronary Artery Disease program from 2017 to 2022. Six performance measures were evaluated: aspirin within 24 hours, β-blocker and statin at discharge, smoking cessation counseling, ACE (angiotensin-converting enzyme) inhibitor/ARB (angiotensin II receptor blocker) for EF ≤40%, and antiplatelet therapy at discharge. Additional metrics included door-to-balloon time ≤90 minutes for ST-segment-elevation myocardial infarction, cardiac rehabilitation referral, GLP-1 (glucagon-like peptide-1) use for those with obesity and diabetes, and in-hospital mortality.\nRESULTS: Compared with White patients, AI/AN patients with acute myocardial infarction were younger, with a higher prevalence of diabetes, obesity, and end-stage renal disease. Overall, the utilization of evidence-based medical therapies and smoking cessation counseling was similar. However, door-to-balloon time ≤90 minutes for ST-segment-elevation myocardial infarction was significantly lower for AI/AN patients (65.5% versus 76.2%; <0.0001). Cardiac rehabilitation referral was also significantly lower for AI/AN patients (69.1% versus 72.9%; <0.01). Adjusted in-hospital mortality was higher for AI/AN patients (adjusted odds ratio, 1.27 [95% CI, 1.03-1.56]; =0.02) when adjusted for patient characteristics, but differences were attenuated after adjustment for hospital characteristics (adjusted odds ratio, 1.13 [95% CI, 0.88-1.47]).\nCONCLUSIONS: AI/AN patients received similar evidence-based therapies as White patients, but disparities remain in cardiac rehabilitation referral and timely reperfusion. Differences in in-hospital mortality may be attributed to the types of hospitals where AI/AN patients receive care, indicating the need for targeted interventions to improve cardiovascular outcomes in these communities.",
+      "meshTerms": [],
+      "keywords": [
+        "aspirin",
+        "cardiovascular diseases",
+        "obesity",
+        "prevalence",
+        "reperfusion"
+      ],
+      "doi": "10.1161/CIRCOUTCOMES.126.013626",
+      "pmcid": "",
+      "region": "us",
+      "by": "org-name",
+      "status": "rejected",
+      "verdict": "rejected",
+      "documentType": "guideline",
+      "reasons": [
+        "registry-named-guidelines"
       ]
     }
   ],
@@ -70602,9 +70738,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261124_142526:guideline:2026-11-24",
+    "runId": "trend_review_20261125_132744:guideline:2026-11-25",
     "outcome": "published",
-    "publishedId": "pmid:38752743",
+    "publishedId": "pmid:41655594",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -70629,15 +70765,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 162,
+        "mergedTotal": 168,
         "overlapCount": 2,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
-        "newestFetchedDate": "2027 Jan",
+        "newestFetchedDate": "2027 Jan-Mar 01",
         "window": {
-          "minDate": "2026/10/25",
-          "maxDate": "2026/11/24"
+          "minDate": "2026/10/26",
+          "maxDate": "2026/11/25"
         },
         "retmax": 60,
         "topics": [
@@ -70645,9 +70781,9 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 58,
-            "idsFetched": 58,
-            "truncated": false,
+            "totalFound": 60,
+            "idsFetched": 60,
+            "truncated": true,
             "error": null
           },
           {
@@ -70672,8 +70808,8 @@
             "id": "pubmed-topic:infection",
             "label": "감염 (비패혈증 국소)",
             "succeeded": true,
-            "totalFound": 20,
-            "idsFetched": 20,
+            "totalFound": 21,
+            "idsFetched": 21,
             "truncated": false,
             "error": null
           },
@@ -70681,8 +70817,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 24,
-            "idsFetched": 24,
+            "totalFound": 26,
+            "idsFetched": 26,
             "truncated": false,
             "error": null
           },
@@ -70690,8 +70826,8 @@
             "id": "pubmed-topic:endo_metabolic",
             "label": "응급 내분비·대사",
             "succeeded": true,
-            "totalFound": 1,
-            "idsFetched": 1,
+            "totalFound": 2,
+            "idsFetched": 2,
             "truncated": false,
             "error": null
           },
@@ -70741,7 +70877,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 152,
+        "topicOnlyCount": 158,
         "ptPmids": [
           "43044046",
           "42858614",
@@ -70752,9 +70888,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 162,
-          "enriched": 162,
-          "withAbstract": 128,
+          "requested": 168,
+          "enriched": 168,
+          "withAbstract": 134,
           "error": null
         }
       },
@@ -70807,10 +70943,8 @@
       ],
       "collectionError": null,
       "fit": {
-        "scored": 2,
-        "batches": 1,
-        "failed": 0,
-        "error": null
+        "skipped": "nothing-unscored",
+        "scored": 0
       },
       "scopeExclusions": [
         {
@@ -71006,6 +71140,13 @@
           "stage": "region",
           "pmid": "42927337",
           "title": "Evaluating cardiopulmonary resuscitation in \"The Pitt\": accuracy, clinical realism, and adherence to international resuscitation guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "42844660",
+          "title": "Temporal and institutional differences in heart failure guideline adherence in Taiwan.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71249,6 +71390,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43077614",
+          "title": "Assessment of Critical Care Nurses' Knowledge, Compliance, and Barriers Related to Implementation of the Ventilator-Associated Pneumonia Prevention Guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43062879",
           "title": "2026-2027 Influenza, RSV, and SARSCoV-2 Immunization Recommendations for Nonpregnant, Immunocompetent Adults and Health Care Personnel.",
           "region": null,
@@ -71347,6 +71495,20 @@
         },
         {
           "stage": "region",
+          "pmid": "43077132",
+          "title": "Intraoperative electrocorticography in epilepsy surgery: background, technological advances, clinical impact, and current recommendations - a literature review.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43073624",
+          "title": "Discordance Between Guidelines and Practice in ICP Monitoring in Traumatic Brain Injury: Insights from the CENTER-TBI Cohort Study.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43046669",
           "title": "Consensus-based recommendations on cilostazol and standardized Ginkgo biloba combination therapy for secondary stroke prevention and post-stroke cognitive impairment (PSCI) management.",
           "region": null,
@@ -71426,6 +71588,13 @@
           "stage": "region",
           "pmid": "42475131",
           "title": "[Mild Traumatic Brain Injury: National Consensus Clinical Recommendations].",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43077345",
+          "title": "Secondary adrenal insufficiency prevalence in patients with euvolaemic hyponatraemia - analysis of a randomized controlled, parallel-group trial (standard care versus guideline based).",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71589,18 +71758,18 @@
       ],
       "decisions": {
         "queued": 194,
-        "needsReview": 472,
-        "rejected": 138,
+        "needsReview": 471,
+        "rejected": 139,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:38752743",
+        "candidateId": "pmid:41655594",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-24T05:29:55.409Z",
+  "updatedAt": "2026-11-25T04:31:48.410Z",
   "configVersion": "guideline-v2"
 }
