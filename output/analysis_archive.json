@@ -5922,6 +5922,57 @@
       "fullTextSource": "PMC",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-27",
+      "pmid": "42667934",
+      "title": "Safety and efficacy of the 0/1 h pathway for myocardial infarction in the emergency department: an international, pragmatic, stepped-wedge, cluster-randomised, controlled trial.",
+      "title_ko": "응급실에서 심근경색에 대한 0/1시간 경로(0/1 h pathway)의 안전성과 효능: 국제적, 실용적(pragmatic), 단계적 쐐기(stepped-wedge), 군집 무작위배정(cluster-randomised) 대조 시험",
+      "journal": "Lancet (London, England)",
+      "doi": "10.1016/S0140-6736(26)01654-5",
+      "badge": "초록 + 레지스트리",
+      "clinicalQuestion_ko": "의심되는 심근경색으로 응급실에 내원한 환자에서, 가이드라인 권고 high-sensitivity troponin 0/1시간 경로를 도입하는 것이 0/3시간 경로와 비교해 30일 안전성에서 비열등(non-inferior)하고 효율성(응급실 재실시간)에서 우월한가?",
+      "pico": {
+        "population": "[International] Consecutive adults presenting to the emergency department with acute non-traumatic chest discomfort and suspected myocardial infarction at 19 hospitals in ten countries; between Dec 1, 2020, and Dec 31, 2024, 71 983 consecutive patient presentations were screened, of which 67 624 (93·9%) met the eligibility criteria and comprised the full analysis set. Median age was 59 years (IQR 46–73); 29 954 (44·3%) were in female patients and 37 670 (55·7%) in male patients; 13 753 (22·2%) of 62 060 with available data had known coronary artery disease and 5855 (8·7%) had an adjudicated index diagnosis of myocardial infarction. Exclusion criteria: terminal kidney failure requiring dialysis, cardiac arrest, cardiogenic shock.",
+        "intervention": "Implementation of the guideline-recommended 0/1 h pathway (blood draws at 0 h and 1 h); 31 160 patient presentations were managed with the 0/1 h pathway.",
+        "comparison": "The 0/3 h pathway (blood draws at 0 h and 3 h) as standard care; 36 464 patient presentations were managed with a 0/3 h pathway.",
+        "outcome": "Coprimary safety outcome (composite of death from any cause or new type 1 myocardial infarction within 30 days): 454 (1·2%) in the 0/3 h group vs 341 (1·1%) in the 0/1 h group (adjusted odds ratio 0·93 [95% CI 0·77–1·13]; p=0·0004, meeting the prespecified non-inferiority margin of OR 1·3). Coprimary efficacy outcome (ED length of stay): median 309 min (IQR 203–470) with 0/3 h vs 309 min (207–474) with 0/1 h (ratio of adjusted median times 1·00 [95% CI 0·97–1·02]; two-sided p=0·65)."
+      },
+      "pico_ko": {
+        "population": "[다국가] 10개국 19개 병원에서 급성 비외상성 흉부 불편감과 의심되는 심근경색으로 응급실에 연속 내원한 성인; 2020년 12월 1일~2024년 12월 31일 사이 71 983건의 연속 내원이 선별되었고 그 중 67 624건(93·9%)이 적격 기준을 충족해 full analysis set을 구성. 중앙값 연령 59세(IQR 46–73), 29 954건(44·3%)이 여성, 37 670건(55·7%)이 남성; 자료가 있는 62 060건 중 13 753건(22·2%)이 기존 coronary artery disease, 5855건(8·7%)이 판정된 지표 진단으로 심근경색. 제외 기준: 투석이 필요한 말기 신부전, 심정지, 심장성 쇼크.",
+        "intervention": "가이드라인 권고 0/1시간 경로(0 h 및 1 h 채혈) 도입; 31 160건이 0/1시간 경로로 관리됨.",
+        "comparison": "표준 진료로서의 0/3시간 경로(0 h 및 3 h 채혈); 36 464건이 0/3시간 경로로 관리됨.",
+        "outcome": "공동 일차 안전성 결과(30일 이내 모든 원인 사망 또는 새로운 type 1 심근경색의 복합): 0/3시간군 454건(1·2%) vs 0/1시간군 341건(1·1%) (adjusted odds ratio 0·93 [95% CI 0·77–1·13]; p=0·0004, 사전 지정 비열등 마진 OR 1·3 충족). 공동 일차 효능 결과(응급실 재실시간): 0/3시간 중앙값 309분(IQR 203–470) vs 0/1시간 309분(207–474) (ratio of adjusted median times 1·00 [95% CI 0·97–1·02]; 양측 p=0·65)."
+      },
+      "keyFindings": [
+        "In 67 624 presentations across 19 hospitals in ten countries, the 0/1 h pathway was non-inferior for the 30-day composite of death or new type 1 MI: 341 (1·1%) vs 454 (1·2%) with 0/3 h (adjusted OR 0·93 [95% CI 0·77–1·13]; p=0·0004, margin OR 1·3).",
+        "The 0/1 h pathway did NOT shorten ED length of stay: median 309 min (IQR 207–474) vs 309 min (203–470) with 0/3 h (ratio of adjusted median times 1·00 [95% CI 0·97–1·02]; two-sided p=0·65).",
+        "Overall adjudicated index MI prevalence was 8·7% (5855 presentations); 36 464 were managed with 0/3 h and 31 160 with 0/1 h."
+      ],
+      "keyFindings_ko": [
+        "10개국 19개 병원의 67 624건 내원에서 0/1시간 경로는 30일 사망 또는 새로운 type 1 MI 복합에서 비열등: 0/1시간 341건(1·1%) vs 0/3시간 454건(1·2%) (adjusted OR 0·93 [95% CI 0·77–1·13]; p=0·0004, 마진 OR 1·3).",
+        "0/1시간 경로는 응급실 재실시간을 단축하지 못함: 중앙값 309분(IQR 207–474) vs 0/3시간 309분(203–470) (ratio of adjusted median times 1·00 [95% CI 0·97–1·02]; 양측 p=0·65).",
+        "전체 판정 지표 MI 유병률은 8·7%(5855건); 36 464건이 0/3시간, 31 160건이 0/1시간으로 관리됨."
+      ],
+      "evidenceLevel": "High",
+      "references": [
+        {
+          "label": "PubMed — PMID 42667934",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42667934/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/S0140-6736(26)01654-5",
+          "url": "https://doi.org/10.1016/S0140-6736(26)01654-5"
+        },
+        {
+          "label": "ClinicalTrials.gov — NCT05649384 (구조화 레지스트리)",
+          "url": "https://clinicaltrials.gov/study/NCT05649384"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract+registry",
+      "dossier": null,
+      "pdfLink": null
     }
   ],
   "driveState": {
