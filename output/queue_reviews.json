@@ -1261,23 +1261,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "34481570",
-      "title": "Community-acquired pneumonia.",
-      "journal": "Lancet",
-      "score": 6.8,
-      "topic": "infection",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "지역사회 폐렴, 응급실 흔한 감염 복습",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "34607802",
       "title": "Treatments for poorly controlled asthma.",
       "journal": "BMJ",
@@ -16158,6 +16141,111 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "34481570",
+      "title": "Community-acquired pneumonia.",
+      "journal": "Lancet",
+      "score": 6.8,
+      "topic": "infection",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "지역사회 폐렴, 응급실 흔한 감염 복습",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-27",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "34481570",
+          "title": "Community-acquired pneumonia.",
+          "journal": "Lancet (London, England)",
+          "pubDate": "2021-9-6",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/34481570/",
+          "doi": "10.1016/S0140-6736(21)00630-9"
+        },
+        "title_ko": "지역사회획득 폐렴 (Community-acquired pneumonia)",
+        "scope_ko": "성인 지역사회획득 폐렴(CAP)에 대한 Lancet Seminar로, 면역적격 환자와 면역저하 환자 모두에서 사망률·이환율·합병증을 줄이기 위한 임상 관리 전반 — 신속 진단, 미생물학적 검사, 합병증 예방·관리, 경험적 및 표적 항생제 치료, 경구 전환, 퇴원 계획, 장기 추적 — 을 최신 관점에서 정리하고 임상·중개 연구 방향을 제안한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "질병 부담과 종설의 위치",
+            "body_ko": "지역사회획득 폐렴은 대중에게 흔히 높은 우선순위의 문제로 여겨지지 않지만, 상당한 사망을 초래한다. 폐렴으로 입원(병원에 입원하여 치료받음)했다가 퇴원한 환자의 3분의 1이 퇴원 후 1년 이내에 사망한다.\n\n이 Seminar는 성인의 지역사회획득 폐렴에 대한 최신 관점을 제시하며, 임상 연구와 중개(translational) 연구를 위한 제안을 함께 담고 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "면역저하 환자에서의 근거 부족",
+            "body_ko": "전 세계적으로 입원한 지역사회획득 폐렴 환자 중 최대 18%가 면역억제에 대한 위험인자를 적어도 하나 이상 가지고 있다. 그러나 이 집단에서의 지역사회획득 폐렴 관리에 관한 강력한 근거는 부족하다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "임상 관리에서 다루어야 할 핵심 요소들",
+            "body_ko": "면역적격 환자와 면역저하 환자 모두에서 지역사회획득 폐렴과 관련된 사망률·이환율·합병증을 줄이려면 임상 관리의 여러 측면을 함께 다루어야 한다. 이에 해당하는 요소들은 다음과 같다.\n\n· 신속한 진단\n· 미생물학적 검사\n· 합병증(예: 호흡부전, 패혈증, 다장기부전)의 예방과 관리\n· 환자의 위험인자와 지역 미생물 역학에 따른 경험적 항생제 치료\n· 미생물학적 자료에 따른 개별화된 항생제 치료\n· 비경구에서 경구 항생제로의 전환 시점에 대한 적절한 지표(outcome)\n· 퇴원 계획\n· 장기 추적 관찰\n\n저자들은 이러한 관리 요소들을 중심으로 CAP 관리를 개선할 것을 제안한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "[웹 보강] 중증 CAP의 정의와 경험적 항생제 (2019 ATS/IDSA 가이드라인)",
+            "body_ko": "이 논문 본문(전문)은 확보하지 못해, 종설이 다루는 '위험인자·지역 역학에 따른 경험적 치료'의 구체적 내용을 2019 ATS/IDSA 가이드라인으로 보강한다.\n\n중증 CAP는 주 기준(major criteria) 1개 또는 부 기준(minor criteria) 3개 이상으로 정의한다. 주 기준은 ① 혈압상승제(vasopressor)가 필요한 패혈성 쇼크, ② 기계환기가 필요한 호흡부전이다. 부 기준은 호흡수 ≥30회/분, PaO2/FiO2 ≤250, 다엽성 침윤, 의식저하(confusion), 요독증(BUN ≥20 mg/dL), 백혈구감소(<4,000/μL), 혈소판감소(<100,000/μL), 저체온(<36°C), 수액소생이 필요한 저혈압이다.\n\n경험적 항생제:\n· 외래, 동반질환 없음 — amoxicillin 1 g 1일 3회, 또는 doxycycline 100 mg 1일 2회, 또는 macrolide(폐렴구균의 macrolide 내성률 <25%일 때).\n· 외래, 동반질환 있음 — (amoxicillin/clavulanate 또는 cephalosporin) + (macrolide 또는 doxycycline) 병용, 또는 호흡기 fluoroquinolone 단독(levofloxacin 750 mg/일, moxifloxacin 400 mg/일, gemifloxacin 320 mg/일).\n· 입원 비중증 — β-lactam(ampicillin/sulbactam, cefotaxime, ceftriaxone, ceftaroline) + macrolide(azithromycin 500 mg/일 또는 clarithromycin 500 mg 1일 2회), 또는 호흡기 fluoroquinolone 단독.\n· 입원 중증 — 위와 동일한 약제를 쓰되 병용요법(β-lactam + macrolide 또는 fluoroquinolone)을 선호한다.\n— 보강 출처: 2019 ATS/IDSA CAP Clinical Practice Guideline (Am J Respir Crit Care Med) (https://academic.oup.com/ajrccm/article/200/7/e45/8496962)",
+            "origin": "augmented",
+            "sourceLabel": "2019 ATS/IDSA CAP Clinical Practice Guideline (Am J Respir Crit Care Med)",
+            "sourceUrl": "https://academic.oup.com/ajrccm/article/200/7/e45/8496962"
+          },
+          {
+            "heading_ko": "[웹 보강] 내성균 커버·미생물 검사·스테로이드·치료기간 (2019 ATS/IDSA 가이드라인)",
+            "body_ko": "이 절은 종설이 언급한 '미생물학적 검사'와 '개별화 치료·경구 전환'의 구체 기준을 가이드라인으로 보강한 것이다(논문 본문 아님).\n\nMRSA·녹농균(P. aeruginosa) 경험적 커버는 지역에서 검증된 위험인자가 있을 때만 권고한다 — 특히 과거 호흡기 검체에서 해당 균이 분리된 병력, 또는 최근 입원과 90일 이내 비경구 항생제 사용이 동반된 경우. MRSA에는 vancomycin(15 mg/kg, 12시간마다) 또는 linezolid(600 mg, 12시간마다), 녹농균에는 piperacillin-tazobactam, cefepime, ceftazidime, aztreonam, meropenem, imipenem을 쓴다.\n\n미생물 검사: 객담 배양은 중증 CAP, MRSA/녹농균에 대한 경험적 치료를 하는 경우, 또는 과거 MRSA/녹농균 감염력이 있는 경우에 권고한다. 혈액배양은 외래 CAP에서는 권고하지 않으나, 중증 CAP 및 내성균을 경험적으로 치료하는 경우에 권고한다.\n\nProcalcitonin: 임상적으로 의심되고 영상으로 확인된 CAP에서는 초기 혈청 procalcitonin 수치와 무관하게 경험적 항생제를 시작할 것을 권고한다.\n\n코르티코스테로이드: 비중증 및 중증 CAP에서 일상적 사용을 권고하지 않는다(단, 불응성 패혈성 쇼크에서는 고려할 수 있다).\n\n인플루엔자: 인플루엔자 양성 CAP 환자에게 항바이러스제를 권고하며, 세균 동시감염이 의심되면 항균제를 병용한다.\n\n치료기간: 호전되는 환자는 임상 반응에 따라 보통 5–7일 후 중단할 수 있다.\n— 보강 출처: 2019 ATS/IDSA CAP Clinical Practice Guideline (Am J Respir Crit Care Med) (https://academic.oup.com/ajrccm/article/200/7/e45/8496962)",
+            "origin": "augmented",
+            "sourceLabel": "2019 ATS/IDSA CAP Clinical Practice Guideline (Am J Respir Crit Care Med)",
+            "sourceUrl": "https://academic.oup.com/ajrccm/article/200/7/e45/8496962"
+          },
+          {
+            "heading_ko": "[웹 보강] 가이드라인의 공백 — HCAP 범주 폐기와 진화하는 병원체",
+            "body_ko": "종설이 강조한 '위험인자 기반 개별화'의 배경으로, 최근 문헌은 현행 가이드라인이 진화하는 병원체·치료제·임상 양상에 뒤처진다는 점을 지적한다(논문 본문 아님).\n\n2005년 ATS/IDSA 가이드라인이 정의했던 의료관련폐렴(HCAP) 범주는 광범위 항생제의 과다 사용을 초래했으며, 2019년 개정판은 이 정의와 관리에서 '벗어나는' 방향을 제시하여 사실상 HCAP 범주를 폐기하고 지역 역학과 검증된 위험인자에 근거해 MRSA·녹농균 커버 필요성을 판단하도록 했다. 그럼에도 신종 병원체, 면역저하 집단, 새로운 치료제 측면에서 가이드라인과 실제 임상 사이의 공백이 남아 있다는 지적이 이어진다.\n— 보강 출처: Community-acquired pneumonia: a US perspective on the guideline gap (J Antimicrob Chemother) (https://academic.oup.com/jac/article/79/5/959/7660892)",
+            "origin": "augmented",
+            "sourceLabel": "Community-acquired pneumonia: a US perspective on the guideline gap (J Antimicrob Chemother)",
+            "sourceUrl": "https://academic.oup.com/jac/article/79/5/959/7660892"
+          }
+        ],
+        "coverage": "abstract-only",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "044acef34a8d77d35c2cfe96e96722586398ad6bd8bf9a52dafaee7d94a2744a",
+          "suppliedTextSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "suppliedTextChars": 0,
+          "suppliedTextSource": "abstract-only",
+          "generatedAt": "2026-11-27T03:49:12.814Z",
+          "resultFingerprint": "79cdddb011b1b241e44e9fe034e947a1d8ba8650ee5a995ac727d7e1471f679f",
+          "modelReported": "abstract-only",
+          "coverage": "abstract-only",
+          "trustedWebSourceCount": 2,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "abstract-only",
+        "practiceImpact_ko": "CAP는 급성기만의 문제가 아니라 퇴원 후 1년 내 3분의 1이 사망하는 질환이므로, EM/CCM 침상에서는 초기 안정화뿐 아니라 합병증(호흡부전·패혈증·다장기부전) 예방과 퇴원 후 장기 추적까지 염두에 두어야 한다. 경험적 항생제는 획일적 처방이 아니라 환자의 면역저하 등 위험인자와 지역 미생물 역학에 맞춰 선택하고, 미생물 결과가 나오면 표적·개별화 치료로 좁히며 적절한 시점에 비경구에서 경구로 전환하는 것이 권고된다. 특히 입원 환자의 최대 18%를 차지하는 면역저하 집단은 근거가 부족한 영역이므로 개별 판단과 주의가 필요하다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 34481570",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34481570/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1016/S0140-6736(21)00630-9",
+            "url": "https://doi.org/10.1016/S0140-6736(21)00630-9"
+          },
+          {
+            "label": "웹 — 2019 ATS/IDSA CAP Clinical Practice Guideline (Am J Respir Crit Care Med)",
+            "url": "https://academic.oup.com/ajrccm/article/200/7/e45/8496962"
+          },
+          {
+            "label": "웹 — Community-acquired pneumonia: a US perspective on the guideline gap (J Antimicrob Chemother)",
+            "url": "https://academic.oup.com/jac/article/79/5/959/7660892"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -16215,9 +16303,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "outcome": "published",
-    "publishedId": "34303412"
+    "publishedId": "34481570"
   },
-  "updatedAt": "2026-11-26"
+  "updatedAt": "2026-11-27"
 }

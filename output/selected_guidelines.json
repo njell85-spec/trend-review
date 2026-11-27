@@ -27783,88 +27783,6 @@
       }
     },
     {
-      "id": "pmid:41185922",
-      "pmid": "41185922",
-      "title": "Management of acute intoxication with carbon monoxide - Polish Medical Society, Section of Clinical Toxicology position statement.",
-      "pubDate": "2025 Nov 12",
-      "journal": "International journal of occupational medicine and environmental health",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline",
-        "Review"
-      ],
-      "discoveredBy": [
-        "pubmed-topic"
-      ],
-      "discoveredAt": "2026-08-17T04:38:51.474Z",
-      "abstract": "Carbon monoxide (CO) poisoning remains a significant public health concern, often leading to both acute and delayed neurological and cardiac complications.This article presents the official position statement of the Section of Clinical Toxicology of the Polish Medical Society regarding the management of acute CO poisoning, with particular emphasis on oxygen therapy. The cornerstone of CO poisoning treatment is the immediate initiation of normobaric oxygen therapy using 100% oxygen at the highest possible flow rate, preferably via a non-rebreather mask. Oxygen administration should continue until the carboxyhemoglobin (COHb) level drops to approx. 3%, but for no less than 6 h. In pregnant patients, extended oxygen therapy is recommended due to slower fetal CO elimination. Hyperbaric oxygen therapy (HBOT) is not mandatory in all cases but should be considered in selected patients-primarily those with persistent neurological or cardiac symptoms or metabolic acidosis despite normobaric oxygen, regardless of COHb levels. In pregnant women, HBOT is always indicated, irrespective of COHb concentration or clinical presentation. When indicated, the first HBOT session should be performed as soon as possible - ideally within 6 h of exposure-taking into account the availability of hyperbaric facilities and transport logistics. This article provides detailed, practical recommendations for the management of CO poisoning, highlighting the essential role of normobaric oxygen therapy and the complementary use of HBOT in appropriately selected cases. Int J Occup Med Environ Health. 2025;38(5):457-73.",
-      "meshTerms": [
-        "Humans",
-        "Carbon Monoxide Poisoning",
-        "Poland",
-        "Pregnancy",
-        "Female",
-        "Hyperbaric Oxygenation",
-        "Societies, Medical",
-        "Oxygen Inhalation Therapy",
-        "Carboxyhemoglobin"
-      ],
-      "keywords": [
-        "carbon monoxide",
-        "clinical protocols",
-        "hyperbaric oxygenation",
-        "oxygen inhalation therapy",
-        "poisoning",
-        "treatment guideline"
-      ],
-      "doi": "10.13075/ijomeh.1896.02653",
-      "pmcid": "PMC12658967",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 5.651108166466774,
-      "breakdown": {
-        "authority": 0,
-        "topic": 2,
-        "recency": 1.6511081664667742,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:39:08.135Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "CO 중독 관리 position statement — 중독·환경 응급 직결",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|management-acute-intoxication-with-carbon-monoxide-polish-medical-society-section-clinical-toxicology",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
-    },
-    {
       "id": "pmid:41419371",
       "pmid": "41419371",
       "title": "Hypoglossal nerve stimulation in the treatment of obstructive sleep apnea: Update on French practices and position paper of the SFRMS, SPLF and SFORL sleep medicine work-group.",
@@ -38930,7 +38848,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-26T03:44:00.870Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -40203,7 +40121,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -41002,7 +40920,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -41922,7 +41840,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-26T03:44:00.870Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42095,7 +42013,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42513,7 +42431,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -44818,7 +44736,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45621,7 +45539,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46353,7 +46271,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -46421,7 +46339,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -46483,7 +46401,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46562,7 +46480,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46644,7 +46562,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46743,7 +46661,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46844,7 +46762,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46925,7 +46843,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.870Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -47007,7 +46925,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47070,7 +46988,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47139,7 +47057,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47213,7 +47131,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47279,7 +47197,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -47342,7 +47260,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47422,7 +47340,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47486,7 +47404,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -47568,7 +47486,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-post-discharge-outcomes-nationwide-german-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -47631,7 +47549,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47698,7 +47616,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47778,7 +47696,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47841,7 +47759,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47900,7 +47818,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "unknown|diastolic-function-classification-acute-myocardial-infarction-comparison-ase-eacvi-ase",
       "supersedes": [],
       "lineageReview": false,
@@ -47963,7 +47881,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "unknown|ers-clinical-practice-patients-with-idiopathic-pulmonary-fibrosis-lung-cancer",
       "supersedes": [],
       "lineageReview": false,
@@ -48043,7 +47961,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48109,7 +48027,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-26T03:44:00.869Z",
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
       "lineageKey": "aha|forecasting-burden-cost-stroke-united-states-projections-by-sociodemographic-groups-through-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48120,6 +48038,81 @@
         "keep": false,
         "reason": "뇌졸중 비용·부담 예측 성명서 — 침상 판단 무관",
         "at": "2026-11-24T05:26:49.704Z"
+      }
+    },
+    {
+      "id": "pmid:43091016",
+      "pmid": "43091016",
+      "title": "Contemporary Management of Heart Failure Across the Ejection Fraction Spectrum Including Improved Ejection Fraction: A Narrative Review Aligned with the 2026 ESC Guidelines.",
+      "pubDate": "2026 Nov 16",
+      "journal": "Journal of clinical medicine",
+      "publicationTypes": [
+        "Journal Article",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "abstract": "Heart failure (HF) management has moved beyond a single ejection fraction threshold toward rapid implementation of outcome-modifying therapy, active decongestion, and phenotype-directed care. The 2026 European Society of Cardiology (ESC) guidelines removed HF with mildly reduced ejection fraction as a clinical entity and recognize two phenotypes: HF with reduced ejection fraction (HFrEF; left ventricular ejection fraction [LVEF] < 50%) and HF with preserved ejection fraction (HFpEF; LVEF ≥ 50%). This narrative review integrates the guidelines with pivotal randomized evidence from prevention to advanced HF. In HFrEF, the goal is early exposure to all four foundational classes-renin-angiotensin system or angiotensin receptor-neprilysin inhibition, beta-blockade, mineralocorticoid receptor antagonism, and sodium-glucose cotransporter 2 inhibition-with titration every 1-2 weeks; this framework extends to an LVEF of 41-49%, although evidence for some classes there derives from subgroup and pooled analyses. Patients whose LVEF improves (HFimpEF), a frequently under-recognized trajectory, remain on the HFrEF pathway and require continued foundational therapy and structured surveillance. In HFpEF, sodium-glucose cotransporter 2 inhibitors and mineralocorticoid receptor antagonists form the foundation, while semaglutide and tirzepatide improve health status and exercise capacity in obesity-related HFpEF, with fewer worsening-HF events also demonstrated for tirzepatide. Because most trials used earlier LVEF categories, each is interpreted within its original population. The greatest remaining opportunity is closing the implementation gap through structured titration and multidisciplinary follow-up.",
+      "meshTerms": [],
+      "keywords": [
+        "2026 ESC guidelines",
+        "decompensated heart failure",
+        "device therapy",
+        "foundational medical therapy",
+        "heart failure",
+        "mineralocorticoid receptor antagonist",
+        "obesity",
+        "preserved ejection fraction",
+        "reduced ejection fraction",
+        "sodium–glucose cotransporter 2 inhibitor"
+      ],
+      "doi": "10.3390/jcm15228983",
+      "pmcid": "PMC13804210",
+      "region": "eu",
+      "by": "org-acronym",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": true,
+        "approvedOrgPath": false,
+        "normativeContent": false,
+        "explicitRecommendation": false,
+        "officialDocument": false,
+        "organizationId": "esc"
+      },
+      "priority": 11,
+      "breakdown": {
+        "authority": 4,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": "esc",
+      "tier": 1,
+      "topicMatched": true,
+      "status": "queued",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "publisher-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lineageKey": "esc|contemporary-management-heart-failure-across-ejection-fraction-spectrum-including-improved-ejection-fraction-narrative-review-aligned-with",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 6,
+        "keep": true,
+        "reason": "2026 ESC 심부전 지침 요지 담은 종설, 응급·중환자 심혈관 실무 유용",
+        "at": "2026-11-27T03:44:17.276Z"
       }
     }
   ],
@@ -64935,6 +64928,174 @@
         ]
       },
       "publishedAt": "2026-11-26"
+    },
+    {
+      "id": "pmid:41185922",
+      "pmid": "41185922",
+      "title": "Management of acute intoxication with carbon monoxide - Polish Medical Society, Section of Clinical Toxicology position statement.",
+      "pubDate": "2025 Nov 12",
+      "journal": "International journal of occupational medicine and environmental health",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-08-17T04:38:51.474Z",
+      "abstract": "Carbon monoxide (CO) poisoning remains a significant public health concern, often leading to both acute and delayed neurological and cardiac complications.This article presents the official position statement of the Section of Clinical Toxicology of the Polish Medical Society regarding the management of acute CO poisoning, with particular emphasis on oxygen therapy. The cornerstone of CO poisoning treatment is the immediate initiation of normobaric oxygen therapy using 100% oxygen at the highest possible flow rate, preferably via a non-rebreather mask. Oxygen administration should continue until the carboxyhemoglobin (COHb) level drops to approx. 3%, but for no less than 6 h. In pregnant patients, extended oxygen therapy is recommended due to slower fetal CO elimination. Hyperbaric oxygen therapy (HBOT) is not mandatory in all cases but should be considered in selected patients-primarily those with persistent neurological or cardiac symptoms or metabolic acidosis despite normobaric oxygen, regardless of COHb levels. In pregnant women, HBOT is always indicated, irrespective of COHb concentration or clinical presentation. When indicated, the first HBOT session should be performed as soon as possible - ideally within 6 h of exposure-taking into account the availability of hyperbaric facilities and transport logistics. This article provides detailed, practical recommendations for the management of CO poisoning, highlighting the essential role of normobaric oxygen therapy and the complementary use of HBOT in appropriately selected cases. Int J Occup Med Environ Health. 2025;38(5):457-73.",
+      "meshTerms": [
+        "Humans",
+        "Carbon Monoxide Poisoning",
+        "Poland",
+        "Pregnancy",
+        "Female",
+        "Hyperbaric Oxygenation",
+        "Societies, Medical",
+        "Oxygen Inhalation Therapy",
+        "Carboxyhemoglobin"
+      ],
+      "keywords": [
+        "carbon monoxide",
+        "clinical protocols",
+        "hyperbaric oxygenation",
+        "oxygen inhalation therapy",
+        "poisoning",
+        "treatment guideline"
+      ],
+      "doi": "10.13075/ijomeh.1896.02653",
+      "pmcid": "PMC12658967",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 5.651108166466774,
+      "breakdown": {
+        "authority": 0,
+        "topic": 2,
+        "recency": 1.6511081664667742,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:39:08.135Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "CO 중독 관리 position statement — 중독·환경 응급 직결",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|management-acute-intoxication-with-carbon-monoxide-polish-medical-society-section-clinical-toxicology",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "41185922",
+          "title": "Management of acute intoxication with carbon monoxide - Polish Medical Society, Section of Clinical Toxicology position statement.",
+          "journal": "International journal of occupational medicine and environmental health",
+          "pubDate": "2025 Nov 12",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/41185922/",
+          "doi": "10.13075/ijomeh.1896.02653"
+        },
+        "org": "Polish Medical Society – Section of Clinical Toxicology",
+        "version": "2025",
+        "title_ko": "급성 일산화탄소(CO) 중독의 관리 — 폴란드의학회 임상독성학분과 입장문(Position Statement)",
+        "scope_ko": "모든 연령의 급성 CO 중독 환자를 대상으로 병원 전 분류(triage), 산소요법(상압 100% 산소 및 고압산소요법 HBOT), 진단, 지연성 신경학적 후유증(DNS) 장기 추적까지 다루는 폴란드 최초의 근거기반 통합 프로토콜. 임산부·소아 등 취약군에 대한 별도 권고를 포함한다(직업·가정 환경 노출 모두 포함).",
+        "summary": [
+          "Start treatment immediately with 100% normobaric oxygen at the highest possible flow (8–12 L/min) via a tightly fitting non-rebreather mask, BEFORE laboratory confirmation; do not rely on SpO₂ because pulse oximetry cannot distinguish COHb from oxyhemoglobin and reads falsely normal.",
+          "Continue normobaric oxygen until COHb falls to approximately 3%, but for no less than 6 hours in all patients (NBO shortens COHb half-life from ~320 min on room air to ~60–90 min).",
+          "Diagnose and quantify with CO-oximetry on a blood gas analyzer (not pulse oximetry); support severity assessment with serum lactate, high-anion-gap metabolic acidosis, and markers of myocardial injury/rhabdomyolysis — recognizing that COHb level does NOT reliably reflect clinical severity.",
+          "HBOT is NOT mandatory in every case but should be considered — regardless of COHb level — for persistent neurological or cardiac symptoms, loss of consciousness, myocardial ischemia, or metabolic acidosis despite normobaric oxygen.",
+          "When HBOT is indicated, perform the first session as soon as possible — ideally within 6 h of exposure (acceptable ≤24 h); a delay ≥200 min raises the odds of delayed neurological sequelae nearly 19-fold. Typical protocol 2.2–2.8 ATA for 60–120 min; a 2nd session if initial response is inadequate (evidence for >2 sessions limited to case series).",
+          "In pregnancy, HBOT is ALWAYS indicated irrespective of COHb concentration or clinical presentation; after COHb reaches ~3%, continue normobaric oxygen for a duration ~5 times longer than in non-pregnant patients because fetal CO elimination is ~3.5× slower (HBOT shown safe in 412 children born to treated mothers).",
+          "Arrange long-term neurological follow-up for all survivors: roughly 10–30% develop delayed neurological sequelae, with onset typically 27–270 days after exposure, even after apparently successful acute treatment.",
+          "Recommendations on optimal HBOT timing and total session number rest on observational studies and expert consensus (no RCT-level evidence); this is a narrative-review–based consensus statement, not a systematic review."
+        ],
+        "summary_ko": [
+          "검사 확인을 기다리지 말고 즉시 밀착형 non-rebreather 마스크로 최대 유량(8–12 L/min)의 100% 상압 산소를 투여한다. SpO₂에 의존하지 말 것 — 맥박산소포화도는 COHb와 산화헤모글로빈을 구분하지 못해 정상으로 허위 표시된다.",
+          "COHb가 약 3%로 떨어질 때까지, 단 모든 환자에서 최소 6시간 이상 상압 산소를 지속한다(상압 산소는 COHb 반감기를 실내공기 ~320분에서 ~60–90분으로 단축).",
+          "진단·정량은 맥박산소계가 아니라 혈액가스분석기의 CO-oximetry로 하고, 혈청 lactate·고음이온차 대사성 산증·심근손상/횡문근융해 지표로 중증도를 보조 평가한다 — COHb 수치는 임상 중증도를 신뢰성 있게 반영하지 못함을 전제로 한다.",
+          "HBOT는 모든 환자에 필수는 아니나, COHb 수치와 무관하게 지속되는 신경학적·심장 증상, 의식소실, 심근허혈, 또는 상압 산소에도 불구한 대사성 산증이 있으면 고려한다.",
+          "HBOT 적응 시 가능한 한 빨리 — 이상적으로 노출 후 6시간 이내(≤24시간까지 허용) — 첫 세션을 시행한다. 지연 ≥200분이면 지연성 신경학적 후유증(DNS) 위험이 약 19배 증가. 보통 프로토콜은 2.2–2.8 ATA로 60–120분, 초기 반응이 불충분하면 2회차 고려(2회 초과의 근거는 증례군 수준).",
+          "임신 중에는 COHb 농도나 임상양상과 무관하게 HBOT가 항상 적응된다. COHb가 ~3%에 도달한 뒤에도 비임신 환자보다 ~5배 긴 시간 동안 상압 산소를 지속한다 — 태아 CO 제거가 ~3.5배 느리기 때문(치료받은 산모에서 태어난 412명 소아에서 안전성 확인).",
+          "모든 생존자에 장기 신경학적 추적을 배치한다: 약 10–30%가 지연성 신경학적 후유증을 보이며, 급성기 치료가 외견상 성공해도 통상 노출 후 27–270일에 발현한다.",
+          "최적 HBOT 시점과 총 세션 수에 대한 권고는 관찰연구와 전문가 합의에 근거한다(RCT 수준 근거 없음). 본 문서는 체계적 고찰이 아니라 서술적 고찰 기반 합의 입장문이다."
+        ],
+        "keyChanges": [
+          {
+            "topic": "COHb 역치 기반 → 임상 상태 기반 HBOT 결정",
+            "detail": "Previous paradigm (e.g., AHA 2022) triggered HBOT on a fixed COHb cut-off (≥25% in non-pregnant adults). The Polish statement de-emphasizes COHb thresholds and aligns with ECHM 2023 ('steps away from rigid cut-offs'), basing HBOT on clinical status — persistent neurological/cardiac symptoms, loss of consciousness, myocardial ischemia, or metabolic acidosis despite NBO — regardless of COHb level. Rationale: COHb does not reliably track severity (an analysis of 1323 patients found no consistent COHb–presentation correlation, and ~18% of fatal cases presented with COHb <15%).",
+            "detail_ko": "이전 패러다임(예: AHA 2022)은 고정 COHb 역치(비임신 성인 ≥25%)로 HBOT를 결정했다. 폴란드 입장문은 COHb 역치 비중을 낮추고 ECHM 2023('경직된 cut-off에서 벗어남')과 정렬하여, COHb 수치와 무관하게 임상 상태 — 지속되는 신경학적/심장 증상, 의식소실, 심근허혈, 상압 산소에도 불구한 대사성 산증 — 로 HBOT를 결정한다. 이유: COHb는 중증도를 신뢰성 있게 반영하지 못함(1323명 분석에서 COHb–임상양상 일관된 상관 없음, 사망 사례의 ~18%가 COHb <15%로 발현)."
+          },
+          {
+            "topic": "상압 산소 종료 기준 명문화",
+            "detail": "Rather than a vague 'until symptoms resolve,' the statement sets an explicit, dual stopping rule: continue 100% NBO until COHb ≈3% AND for no less than 6 hours in all patients — an operational floor that standardizes duration across Polish emergency systems where prior practice lacked a unified protocol.",
+            "detail_ko": "'증상이 호전될 때까지' 같은 모호한 기준 대신, 명시적 이중 종료 규칙을 세웠다: 모든 환자에서 COHb ≈3% 도달 그리고 최소 6시간 이상 100% 상압 산소를 지속한다 — 통합 프로토콜이 없던 폴란드 응급체계에서 치료 기간을 표준화하는 하한선."
+          },
+          {
+            "topic": "임신부 — 연장 상압 산소 수치화 + HBOT 절대 적응",
+            "detail": "For pregnancy the statement makes HBOT an absolute indication (always, regardless of COHb or symptoms) and quantifies the extended NBO: after COHb reaches ~3%, continue 8–12 L/min oxygen for a duration ~5 times longer than non-pregnant patients, because fetal CO elimination is ~3.5× slower. Safety is supported by 412 children born to HBOT-treated mothers showing no malformations/developmental deficits.",
+            "detail_ko": "임신부에 대해 HBOT를 절대 적응(COHb·증상과 무관하게 항상)으로 하고, 연장 상압 산소를 수치화했다: COHb ~3% 도달 후에도 비임신 환자보다 ~5배 긴 시간 동안 8–12 L/min 산소 지속 — 태아 CO 제거가 ~3.5배 느리기 때문. 안전성은 HBOT 치료 산모에서 태어난 412명 소아에서 기형·발달결손 없음으로 뒷받침."
+          },
+          {
+            "topic": "HBOT 시점의 정량 근거",
+            "detail": "The statement operationalizes 'as early as possible' with a concrete harm threshold: first HBOT ideally within 6 h (acceptable ≤24 h), and an HBOT delay ≥200 min increases the odds of delayed neurological sequelae almost 19-fold — giving clinicians a defensible transport-triage number rather than a qualitative urgency statement.",
+            "detail_ko": "'가능한 한 빨리'를 구체적 해악 역치로 수치화했다: 첫 HBOT는 이상적으로 6시간 이내(≤24시간 허용), HBOT 지연 ≥200분이면 지연성 신경학적 후유증 위험이 약 19배 증가 — 정성적 긴급성 대신 이송·분류에 쓸 수 있는 근거 수치 제공."
+          },
+          {
+            "topic": "지역 실정 반영한 운영 역치",
+            "detail": "Unlike international guidelines, the Polish statement integrates local epidemiology (52 deaths, 1334 nonfatal events in the 2024 heating season) and limited hyperbaric-chamber availability to provide 'operational thresholds realistic for local emergency systems' — e.g., in pre-hospital triage arranging transport for loss of consciousness, neurological deficit, myocardial ischemia, or COHb >25%, accounting for chamber availability and transport logistics.",
+            "detail_ko": "국제 지침과 달리, 폴란드 입장문은 지역 역학(2024 난방철 사망 52명·비치명 1334건)과 제한된 고압챔버 가용성을 반영해 '지역 응급체계에 현실적인 운영 역치'를 제시한다 — 예: 병원 전 분류에서 의식소실·신경학적 결손·심근허혈·COHb >25%면 챔버 가용성·이송 물류를 고려해 이송 배치."
+          }
+        ],
+        "changesUnavailable": false,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "At the bedside, treat suspected CO poisoning by starting high-flow 100% O₂ via non-rebreather (8–12 L/min) the moment CO is suspected and ignoring a reassuring SpO₂ — confirm with CO-oximetry blood gas, not pulse oximetry. Run NBO to a COHb of ~3% but a minimum of 6 hours, and drive the HBOT decision off clinical status and metabolic markers (lactate, acidosis, cardiac/neuro findings) rather than a single COHb cut-off; if HBOT is indicated, move fast because crossing ~200 minutes to first chamber roughly 19× the DNS risk. Treat every pregnant exposure as an automatic HBOT case and extend post-threshold oxygen ~5-fold. Finally, discharge every survivor into structured neurological follow-up, since 10–30% develop delayed sequelae weeks to months out.",
+        "practiceImpact_ko": "현장에서는 CO 중독이 의심되는 즉시 non-rebreather로 고유량 100% O₂(8–12 L/min)를 시작하고 안심시키는 SpO₂는 무시한다 — 맥박산소계가 아니라 CO-oximetry 혈액가스로 확인한다. 상압 산소는 COHb ~3%까지, 단 최소 6시간 지속하고, HBOT 결정은 단일 COHb cut-off가 아니라 임상 상태와 대사 지표(lactate·산증·심장/신경 소견)로 내린다. HBOT 적응 시 ~200분을 넘기면 DNS 위험이 약 19배이므로 신속히 움직인다. 모든 임신부 노출은 자동 HBOT 대상으로 다루고 역치 도달 후 산소를 ~5배 연장한다. 끝으로 모든 생존자를 체계적 신경학적 추적으로 퇴원시킨다 — 10–30%가 수주~수개월 뒤 지연성 후유증을 보이기 때문.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 41185922",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41185922/"
+          },
+          {
+            "label": "Journal (DOI) — 10.13075/ijomeh.1896.02653",
+            "url": "https://doi.org/10.13075/ijomeh.1896.02653"
+          },
+          {
+            "label": "웹 — PMC full text — Management of acute intoxication with carbon monoxide (Polish Medical Society, Section of Clinical Toxicology position statement), IJOMEH 2025;38(5):457-73",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12658967/"
+          },
+          {
+            "label": "웹 — PubMed record — Management of acute intoxication with carbon monoxide (PMID 41185922)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41185922/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-27"
     }
   ],
   "rejected": [
@@ -70537,7 +70698,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-26T03:43:50.388Z",
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70564,7 +70725,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-26T03:43:50.388Z",
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70599,7 +70760,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-26T03:43:50.388Z",
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70626,7 +70787,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-26T03:43:50.388Z",
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
       "abstract": "BACKGROUND: Non-invasive ventilation (NIV) is recommended for exacerbations of chronic obstructive pulmonary disease (ECOPD) complicated by respiratory acidosis, yet real-world adherence remains uncertain. We evaluated adherence to ERS/ATS recommendations, patterns of non-adherence, and their association with short-term outcomes.\nMETHODS: In this prospective multicenter cohort study, consecutive patients with ECOPD-related acute hypoxemic-hypercapnic respiratory failure were enrolled across nine Italian hospitals and classified as guideline-adherent, NIV underuse, or NIV overuse according to ERS/ATS pH-based recommendations. The primary objective was to assess adherence to recommendations; the association between adherence patterns and the composite outcome of in-hospital death or endotracheal intubation was a secondary objective.\nRESULTS: Among 456 patients, 315 (69%) were guideline-adherent, 60 (13%) had NIV underuse, and 81 (18%) had NIV overuse. Underuse occurred predominantly in patients with mild respiratory acidosis receiving alternative respiratory support, mainly high-flow nasal cannula (HFNC), whereas overuse occurred primarily in hypercapnic patients without respiratory acidosis. The composite clinical outcome occurred in 48 patients (11%) and did not differ across adherence groups. After adjustment, neither NIV underuse (odds ratio [OR] 0.85, 95% confidence interval [CI] 0.33-2.20) nor overuse (OR 0.54, 95% CI 0.20-1.46) was associated with the composite clinical outcome, whereas higher Simplified Acute Physiology Score (SAPS) II was independently associated with it (OR 1.05, 95% CI 1.02-1.08).\nCONCLUSIONS: Deviations from ERS/ATS recommendations followed distinct clinical patterns and were not independently associated with the composite clinical outcome. Overall illness severity was consistently associated with adverse outcomes, highlighting the complexity of implementing NIV recommendations in routine clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -70660,7 +70821,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-26T03:43:50.388Z",
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70692,7 +70853,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-26T03:43:50.388Z",
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
       "abstract": "Applying the Choosing Wisely® methodology, a task force mandated by the Ventilation and Oxygen-therapy group (GAVO2) of the French Pulmonary Society (SPLF) was commissioned to draw up a series of expert recommendations on practical aspects of long-term non-invasive ventilation (NIV). These guidelines are annually updated. Several themes were taken up, notably including NIV configuration, efficacy and tolerance. For each topic, the experts reviewed recent data in the literature. Based on these data and on their own clinical experience, the experts developed a comprehensive analysis of recent insights, and went on to write out practical tips, which have been grouped together in a series of three articles, of which the first is dedicated to the monitoring of non-invasive ventilation.",
       "meshTerms": [],
       "keywords": [
@@ -70726,7 +70887,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-26T03:43:50.388Z",
+      "discoveredAt": "2026-11-27T03:44:04.890Z",
       "abstract": "BACKGROUND: American Indian and Alaska Native (AI/AN) patients in the US face a disproportionate burden of cardiovascular disease, yet data on the quality of care and outcomes in this population are limited. Using the American Heart Association's Get With The Guidelines-Coronary Artery Disease registry, we evaluated the clinical profiles and use of evidence-based therapies among AI/AN patients with acute myocardial infarction compared with White patients.\nMETHODS: We analyzed data from 1955 AI/AN patients with acute myocardial infarction in 45 states participating in the Get With The Guidelines-Coronary Artery Disease program from 2017 to 2022. Six performance measures were evaluated: aspirin within 24 hours, β-blocker and statin at discharge, smoking cessation counseling, ACE (angiotensin-converting enzyme) inhibitor/ARB (angiotensin II receptor blocker) for EF ≤40%, and antiplatelet therapy at discharge. Additional metrics included door-to-balloon time ≤90 minutes for ST-segment-elevation myocardial infarction, cardiac rehabilitation referral, GLP-1 (glucagon-like peptide-1) use for those with obesity and diabetes, and in-hospital mortality.\nRESULTS: Compared with White patients, AI/AN patients with acute myocardial infarction were younger, with a higher prevalence of diabetes, obesity, and end-stage renal disease. Overall, the utilization of evidence-based medical therapies and smoking cessation counseling was similar. However, door-to-balloon time ≤90 minutes for ST-segment-elevation myocardial infarction was significantly lower for AI/AN patients (65.5% versus 76.2%; <0.0001). Cardiac rehabilitation referral was also significantly lower for AI/AN patients (69.1% versus 72.9%; <0.01). Adjusted in-hospital mortality was higher for AI/AN patients (adjusted odds ratio, 1.27 [95% CI, 1.03-1.56]; =0.02) when adjusted for patient characteristics, but differences were attenuated after adjustment for hospital characteristics (adjusted odds ratio, 1.13 [95% CI, 0.88-1.47]).\nCONCLUSIONS: AI/AN patients received similar evidence-based therapies as White patients, but disparities remain in cardiac rehabilitation referral and timely reperfusion. Differences in in-hospital mortality may be attributed to the types of hospitals where AI/AN patients receive care, indicating the need for targeted interventions to improve cardiovascular outcomes in these communities.",
       "meshTerms": [],
       "keywords": [
@@ -70798,9 +70959,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261126_124234:guideline:2026-11-26",
+    "runId": "trend_review_20261127_124236:guideline:2026-11-27",
     "outcome": "published",
-    "publishedId": "pmid:42064346",
+    "publishedId": "pmid:41185922",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -70825,15 +70986,15 @@
             "error": null
           }
         ],
-        "mergedTotal": 165,
+        "mergedTotal": 166,
         "overlapCount": 2,
         "ptOnlyCount": 3,
         "expandedOnlyCount": 5,
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2027 Jan-Mar 01",
         "window": {
-          "minDate": "2026/10/27",
-          "maxDate": "2026/11/26"
+          "minDate": "2026/10/28",
+          "maxDate": "2026/11/27"
         },
         "retmax": 60,
         "topics": [
@@ -70841,7 +71002,7 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 61,
+            "totalFound": 63,
             "idsFetched": 60,
             "truncated": true,
             "error": null
@@ -70913,8 +71074,8 @@
             "id": "pubmed-topic:critical_care_practice",
             "label": "중환자 진료 실무",
             "succeeded": true,
-            "totalFound": 7,
-            "idsFetched": 7,
+            "totalFound": 8,
+            "idsFetched": 8,
             "truncated": false,
             "error": null
           },
@@ -70937,7 +71098,7 @@
             "error": null
           }
         ],
-        "topicOnlyCount": 155,
+        "topicOnlyCount": 156,
         "ptPmids": [
           "43044046",
           "42858614",
@@ -70948,9 +71109,9 @@
         "supersetCheckable": true,
         "enrichment": {
           "attempted": true,
-          "requested": 165,
-          "enriched": 165,
-          "withAbstract": 131,
+          "requested": 166,
+          "enriched": 166,
+          "withAbstract": 132,
           "error": null
         }
       },
@@ -71003,8 +71164,10 @@
       ],
       "collectionError": null,
       "fit": {
-        "skipped": "nothing-unscored",
-        "scored": 0
+        "scored": 1,
+        "batches": 1,
+        "failed": 0,
+        "error": null
       },
       "scopeExclusions": [
         {
@@ -71060,6 +71223,13 @@
           "stage": "region",
           "pmid": "42469072",
           "title": "Brain Death Determination During VA-ECMO After Pediatric Cardiac Surgery: A Case-Based Analysis of the 2023 Unified Consensus.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43090680",
+          "title": "From Recovery to Relapse: A Systematic Review and Meta-Analysis of Guideline-Directed and Targeted Therapy De-Escalation and Phenotypic Variability in Heart Failure with Improved Ejection Fraction.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71198,13 +71368,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42946324",
-          "title": "HFSA Scientific Statement on Right Heart Failure.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42927337",
           "title": "Evaluating cardiopulmonary resuscitation in \"The Pitt\": accuracy, clinical realism, and adherence to international resuscitation guidelines.",
           "region": null,
@@ -71310,8 +71473,8 @@
         },
         {
           "stage": "region",
-          "pmid": "41999358",
-          "title": "Do Guidelines Change Practice: A Comparison of Single-Center Adherence After Publication of Pediatric Venothromboembolism Guidelines.",
+          "pmid": "43095836",
+          "title": "Clinical guideline highlights for the hospitalist: Surviving Sepsis Campaign International Guidelines for the Management of Sepsis and Septic Shock in Children 2026.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71340,6 +71503,13 @@
           "stage": "region",
           "pmid": "42747338",
           "title": "What is next in sepsis? Controversies and future directions from the 2026 Surviving Sepsis Campaign Guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43085577",
+          "title": "Clinical practice guidelines from the Societat Catalana d'Anestesiologia, Reanimació i Terapèutica del Dolor (SCARTD) for the comprehensive management of the difficult airway in obstetric patients.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71417,13 +71587,6 @@
           "stage": "region",
           "pmid": "42946175",
           "title": "Awareness without actionable knowledge: understanding physical activity recommendations among people with COPD.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42945990",
-          "title": "[Diagnosis and Treatment of COPD: A Guideline for Respiratory Specialists 2026].",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71555,6 +71718,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43095188",
+          "title": "Safety and Efficacy of Intravenous Thrombolysis after DOAC Use in Acute Ischemic Stroke: A Systematic Review and Meta-Analysis in Light of Current Guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43078408",
           "title": "Ischemic Stroke Guidelines in Latin America: A Systematic AGREE II Appraisal.",
           "region": null,
@@ -71585,13 +71755,6 @@
           "stage": "region",
           "pmid": "43016718",
           "title": "A multi-dimensional comparative evaluation of ten injectable neuroprotective agents for acute ischemic stroke based on the Chinese guideline for drug selection.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "43010983",
-          "title": "Delivery of selected guideline-based care processes in adult stroke rehabilitation: a systematic review and meta-analysis.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71737,6 +71900,13 @@
         },
         {
           "stage": "region",
+          "pmid": "43085337",
+          "title": "[Guidelines in Practice: Delirium in Older Adults - Implications for Anesthesiologists].",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
           "pmid": "43057642",
           "title": "International Expert Consensus Statement on Contemporary Prevention and Management of Postoperative Delirium in Cardiac Surgery.",
           "region": null,
@@ -71824,12 +71994,12 @@
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:42064346",
+        "candidateId": "pmid:41185922",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-26T03:45:38.601Z",
+  "updatedAt": "2026-11-27T03:46:20.478Z",
   "configVersion": "guideline-v2"
 }
