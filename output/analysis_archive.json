@@ -5973,6 +5973,63 @@
       "fullTextSource": "abstract+registry",
       "dossier": null,
       "pdfLink": null
+    },
+    {
+      "date": "2026-11-28",
+      "pmid": "42184916",
+      "title": "Understanding patients with mechanical circulatory support for cardiogenic shock: The role of preceding cardiac arrest.",
+      "title_ko": "심인성 쇼크로 기계순환보조(MCS)를 받는 환자의 이해: 선행 심정지의 역할",
+      "journal": "Resuscitation",
+      "doi": "10.1016/j.resuscitation.2026.111149",
+      "badge": "초록 + 웹보강",
+      "clinicalQuestion_ko": "PCI 후 급성심근경색 관련 심인성 쇼크(AMICS)로 기계순환보조(MCS)를 받는 환자에서, 선행 병원밖 심정지(OHCA)가 환자 프로파일·임상 경과·30일 사망률과 어떻게 연관되며, OHCA군과 비OHCA군 간 사망 결정인자가 다른가?",
+      "pico": {
+        "population": "[Netherlands] A real-world AMICS cohort that underwent PCI and received MCS between 2017 and 2021 across nine hospitals, using the Netherlands Heart Registration (NHR) PCI Registry; a total of 241 patients with a mean age of 59.7 years and 78.0% male.",
+        "intervention": "Preceding out-of-hospital cardiac arrest (OHCA) — present in 49.4% (n = 119) of the cohort; patients were classified as OHCA or non-OHCA.",
+        "comparison": "Non-OHCA patients (n = 122) receiving MCS for AMICS after PCI.",
+        "outcome": "Thirty-day mortality rates were comparable between OHCA and non-OHCA patients (63.0% vs. 61.2%, p = 0.869). In the overall cohort, age, lactate, intubation and multivessel disease were independently associated with 30-day mortality (multivariable logistic regression)."
+      },
+      "pico_ko": {
+        "population": "[네덜란드] 2017~2021년 9개 병원에서 PCI를 받고 MCS를 시행한 실제 임상(real-world) AMICS 코호트로, Netherlands Heart Registration(NHR) PCI Registry를 사용; 총 241명, 평균 연령 59.7세, 남성 78.0%.",
+        "intervention": "선행 병원밖 심정지(OHCA) — 코호트의 49.4%(n = 119)에서 존재; 환자를 OHCA 또는 비OHCA로 분류함.",
+        "comparison": "PCI 후 AMICS로 MCS를 받은 비OHCA 환자(n = 122).",
+        "outcome": "30일 사망률은 OHCA군과 비OHCA군 간 유사했다(63.0% vs. 61.2%, p = 0.869). 전체 코호트에서는 age, lactate, intubation, multivessel disease가 30일 사망률과 독립적으로 연관되었다(multivariable logistic regression)."
+      },
+      "keyFindings": [
+        "Of 241 AMICS patients treated with PCI + MCS (mean age 59.7, 78.0% male), half (49.4%, n = 119) had a preceding OHCA; OHCA patients had better pre-existing condition, more acute presentation, and less frequent multivessel disease.",
+        "30-day mortality was high and statistically comparable between groups (OHCA 63.0% vs. non-OHCA 61.2%, p = 0.869).",
+        "Determinants of 30-day mortality differed by group: OHCA — resuscitation >30 min, initial non-shockable rhythm, multivessel disease; non-OHCA — age, lactate, in-hospital cardiac arrest (multivessel disease not predictive); overall cohort — age, lactate, intubation, multivessel disease."
+      ],
+      "keyFindings_ko": [
+        "PCI + MCS로 치료받은 AMICS 환자 241명(평균 59.7세, 남성 78.0%) 중 절반(49.4%, n = 119)이 선행 OHCA를 가졌으며, OHCA 환자는 기저 상태가 더 양호하고 더 급성인 발현을 보였으며 multivessel disease 빈도가 낮았다.",
+        "30일 사망률은 높았고 두 군 간 통계적으로 유사했다(OHCA 63.0% vs. 비OHCA 61.2%, p = 0.869).",
+        "30일 사망의 결정인자는 군별로 달랐다: OHCA — 30분 초과 소생술, 초기 non-shockable rhythm, multivessel disease; 비OHCA — age, lactate, 병원내 심정지(multivessel disease는 예측 안 됨); 전체 코호트 — age, lactate, intubation, multivessel disease."
+      ],
+      "evidenceLevel": "Low",
+      "references": [
+        {
+          "label": "PubMed — PMID 42184916",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42184916/"
+        },
+        {
+          "label": "Journal (DOI) — 10.1016/j.resuscitation.2026.111149",
+          "url": "https://doi.org/10.1016/j.resuscitation.2026.111149"
+        },
+        {
+          "label": "웹 — PubMed — Bogerd et al., Resuscitation 2026 (PMID 42184916)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42184916/"
+        }
+      ],
+      "fullText": null,
+      "fullTextSource": "abstract-only",
+      "dossier": [
+        {
+          "source": "PubMed — Bogerd et al., Resuscitation 2026 (PMID 42184916)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42184916/",
+          "note": "웹보강 근거 (권위 소스)"
+        }
+      ],
+      "pdfLink": null
     }
   ],
   "driveState": {
