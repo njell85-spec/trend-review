@@ -1295,23 +1295,6 @@
       "status": "needsReview"
     },
     {
-      "pmid": "36592205",
-      "title": "How to use biomarkers of infection or sepsis at the bedside: guide to clinicians.",
-      "journal": "Intensive Care Med",
-      "score": 6.8,
-      "topic": "sepsis_shock",
-      "lowConfidence": false,
-      "addedAt": "2026-08-16",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "감염·패혈증 바이오마커 침상 활용, 실무 종설",
-        "at": "2026-08-17T07:31:06.571Z"
-      },
-      "status": "queued"
-    },
-    {
       "pmid": "37607072",
       "title": "Practice Standards for the Use of Multimodality Neuromonitoring: A Delphi Consensus Process.",
       "journal": "Crit Care Med",
@@ -16246,6 +16229,123 @@
           }
         ]
       }
+    },
+    {
+      "pmid": "36592205",
+      "title": "How to use biomarkers of infection or sepsis at the bedside: guide to clinicians.",
+      "journal": "Intensive Care Med",
+      "score": 6.8,
+      "topic": "sepsis_shock",
+      "lowConfidence": false,
+      "addedAt": "2026-08-16",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "감염·패혈증 바이오마커 침상 활용, 실무 종설",
+        "at": "2026-08-17T07:31:06.571Z"
+      },
+      "status": "queued",
+      "publishedAt": "2026-11-28",
+      "card": {
+        "type": "review",
+        "paper": {
+          "pmid": "36592205",
+          "title": "How to use biomarkers of infection or sepsis at the bedside: guide to clinicians.",
+          "journal": "Intensive care medicine",
+          "pubDate": "2023-1-3",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36592205/",
+          "doi": "10.1007/s00134-022-06956-y"
+        },
+        "title_ko": "침상에서 감염·패혈증 바이오마커를 어떻게 사용할 것인가: 임상의를 위한 지침",
+        "scope_ko": "패혈증 진단·치료 및 항생제 관리에서 바이오마커의 침상 활용법을 다루는 내러티브 리뷰로, 병원체 특이 바이오마커와 대표적 숙주반응 바이오마커인 procalcitonin(PCT)·C-reactive protein(CRP)을 중심으로 그 임상적 유용성과 한계, 최적 사용법을 제시한다.",
+        "summary": [],
+        "summary_ko": [],
+        "sections": [
+          {
+            "heading_ko": "핵심 메시지 (Take-home message)",
+            "body_ko": "병원체 특이 바이오마커와 숙주반응 바이오마커는 침상에서 환자 진료를 최적화할 추가 정보를 제공하므로 임상의에게 유용한 도구가 될 수 있다. 연속 측정(serial determinations)이 단일 측정값보다 더 많은 정보를 준다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "서론",
+            "body_ko": "패혈증은 감염에 대한 숙주 반응의 조절 이상으로 생기는, 생명을 위협하는 장기기능장애로 정의된다. 이 맥락에서 바이오마커는 감염 또는 조절되지 않은 숙주 반응의 지표, 치료 반응의 지표, 혹은 환자 위험도를 예후 예측하는 데 도움을 주는 지표로 볼 수 있다.\n\n일상적인 침상 진료에서 패혈증의 진단·관리와 항생제 스튜어드십을 위해 임상의는 세 벡터의 교차점에서 나오는 서로 다른 출처의 자료를 종합한다: 전신 징후(systemic manifestations), 장기기능장애(organ dysfunction), 미생물학적 증거(microbiological documentation). 바이오마커는 전신 징후 벡터에 숙주반응 바이오마커(예: CRP, PCT)로, 장기기능장애 벡터에 신손상 바이오마커 등으로, 미생물학적 증거 벡터에 병원체 특이 바이오마커로 각각 추가 정보를 제공할 수 있다. 앞의 두 벡터는 패혈증에 대해 특이적이지도 민감하지도 않다. 미생물학적 증거는 확정까지 대개 최소 2~3일이 걸리고, 특히 환자가 이미 항균제를 투여받는 중에 배양을 채취하면 민감도가 떨어진다. 그 결과 패혈증 증례의 약 40~50%가 배양 음성으로 간주된다.\n\n바이오마커는 패혈증의 예측, 진단, 치료 반응 평가, 그리고 바이오마커 유도 항생제 치료의 맥락에서 연구되어 왔다. 또한 패혈증 바이오마커는 예후적(prognostic)·예측적(predictive)·테라노스틱(theranostic, 즉 치료의 선택·용량·기간을 유도)으로 나눌 수 있다. 지난 수십 년간 250종 이상의 바이오마커가 연구·평가되었으며, 본 리뷰의 목적은 임상의에게 감염·패혈증 바이오마커, 특히 병원체 특이 바이오마커와 두 가지 숙주반응 바이오마커(PCT, CRP)에 대해 그 사용 지침과 함께 알리는 것이다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "바이오마커를 어떻게 사용할 것인가?",
+            "body_ko": "패혈증이 의심되는 상황에서 임상의는 여러 질문에 답해야 한다. Surviving Sepsis Campaign 지침이 잘 인식하고 있듯 첫 질문들이 있으며, 임상의는 흔히 바이오마커의 도움으로 이 질문들에 답하려 한다. 그러나 패혈증 관리에서 바이오마커의 성능은 최적에 못 미친다(suboptimal)는 점을 인정하는 것이 중요하다.\n\n바이오마커는 객관적으로 측정되어 생리적·병리적 과정 또는 약물 활성의 대리 표지자로 쓰이는 생물학적 특성으로 기술된다. 본 맥락에서 감염·패혈증 바이오마커는 감염, 조절되지 않은 숙주 반응, 또는 치료 반응 중 어느 하나의 지표로 간주될 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "병원체 특이 바이오마커",
+            "body_ko": "미생물 핵산 검출이 점점 흔해지고 있으나, 감염 전반 및 특히 세균 감염 관리에서의 위치는 아직 불확실하며 표준화도 잘 되어 있지 않다. 반면 직접 항원 검사 같은 병원체 특이 바이오마커는 이미 중환자에서 널리 쓰이고 있다.\n\n대부분의 신속 항원 기반 검사는 면역크로마토그래피 분석에 기반하며 침상 사용 잠재력이 있다. Influenza와 SARS-CoV-2 호흡기 항원 검사, 폐렴구균 및 Legionella spp. 소변 항원 검사가 지역사회획득폐렴(CAP)에 사용된다. 이들은 특이도는 높으나 민감도는 낮거나 중등도이다. 자동 판독으로 개선되었음에도, 음성 검사를 신뢰할 만한 배제(rule-out) 결과로 볼 수는 없다. Legionella 항원 검사는 serogroup 1을 검출한다. 이것이 legionellosis의 주된 원인이지만 다른 serogroup이나 종에서는 위음성이 발생한다. 폐렴구균 항원 검사의 진단 정확도도 혈청형에 크게 의존하며, 13가 다당류 접합 백신 도입 이후 항원 변이(antigenic shift)로 민감도 저하가 관찰되었다. 현재 mariPOC 검사처럼 한 검체에서 여러 병원체를 다중(multiplex) 검사하는 신속 진단검사는 소수에 불과하다. 그러나 어떤 항원 검사도 항생제 감수성 정보는 주지 못한다.\n\nClostridioides difficile 감염(CDI)은 증상이 있는 환자에서 대변 검체에 대해 glutamate dehydrogenase(GDH)와 유리 독소 A·B를 모두 신속 효소면역측정(EIA)으로 검사하는 2단계 알고리즘으로 진단할 수 있다. CDI 유병률이 낮을 때는 양성예측도가 낮으므로 어느 한 검사만 단독으로 쓰면 안 된다. GDH 검사는 민감도가 높아 양성이면 더 특이적인 독소 A/B 검출 검사와 조합한다. GDH 양성이면서 독소 A/B 음성인 환자는, 설사 환자에서 검출 역치 이하의 독소를 가진 CDI이거나 비독소생성균 보균을 의미할 수 있으므로 신중히 평가해야 한다.\n\n진균 항원 검사는 진균 세포벽 유래 구조 다당류를 표적으로 한다. (1,3)-β-D-glucan(BDG)은 침습성 칸디다증 검출에 흔히 쓰이는 범진균(panfungal) 혈청 바이오마커이다. 민감도는 높으나 특이도는 낮아, 유병률이 낮은 중환자실(ICU)에서 침습성 칸디다증을 배제(rule-out)하는 데 유용한 도구이다. 그러나 최근 한 무작위대조시험(RCT)은 침습성 칸디다증 위험이 낮음~중간인 중증 패혈증 환자에서 BDG 유도 항진균제 조기 투여가 생존 이득을 보이지 못했고, 오히려 상당한 항진균제 과다 사용이라는 대가를 치렀다고 보고했다. 마찬가지로 BDG는 비-HIV 환자에서 질환 가능성이 낮거나 중간인 경우 Pneumocystis 폐렴 진단에 높은 음성예측도를 보인다. 검사를 반복하거나 절단값(cut-off)을 올리면 특이도와 양성예측도를 높일 수 있다.\n\nGalactomannan(GM)은 혈청과 기관지폐포세척(BAL) 검체에서 측정할 수 있고 침습성 폐 아스페르길루스증(IPA) 진단에 높은 특이도를 보인다. 특히 BAL액 GM 검사는 비호중구감소 환자의 IPA 진단에서 혈청 검사보다 더 민감하며, 이 검사는 중환자 IPA 진단 기준에서 핵심 역할을 한다. BAL 검체용 신속 침상 Aspergillus 측방유동(lateral-flow) 검사가 개발되었고 연구가 진행 중이다(Trial ISRCTN 43895480). 혈청 cryptococcal 항원 검출은 중추신경계 증상이 있는 HIV 환자에서 cryptococcal 수막염을 매우 잘 예측한다.\n\n병원체 특이 바이오마커 유도 알고리즘도 검증되었다. 두 건의 RCT가 침습성 칸디다증이 의심되는 중환자에서 경험적 항진균제 중단에 대한 BDG 유도 전략을 평가했는데, 안전하며 항진균 치료 기간 단축과 연관됨을 보였다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "숙주반응 바이오마커 — Procalcitonin (PCT)",
+            "body_ko": "PCT는 calcitonin의 전구체인 prohormone이다. 거의 모든 장기와 대식세포에서 생성되며, 염증 자극 후 3~4시간에 상승하기 시작해 약 24시간에 정점에 이르고 반감기는 22~35시간이다. 다만 PCT 수치는 사구체여과율과 신대체요법의 영향을 받는다.\n\n패혈증 예측: PCT는 인공호흡기 관련 폐렴(VAP) 분야에서 가장 많이 연구된 바이오마커이다. 단일 측정이든 연속 측정이든 VAP의 예측·진단에 PCT가 유용하지 않다는 점이 여러 관찰 연구에서 제시되었다. 중환자에서 PCT 동태(kinetics)를 본 연구들도 진단 정확도가 낮고 치료 개시 유도에 대한 영향이 미미함을 보였다. 따라서 선택된 상황에서 항생제 사용 감소와 연관되긴 하나, ICU에서 패혈증을 예측하는 PCT의 유용성은 제한적이다.\n\n패혈증 진단: 패혈증 진단을 위한 합의된 PCT 절단값은 없다. 발표된 연구들은 절단값을 보고하지 않았거나 0.5~2 μg/L 범위의 값을 사용했다. 다수의 비감염성 염증 상태도 혈청 PCT 상승과 연관된다. PCT에 대한 세 건의 별도 메타분석은 패혈증 진단 민감도 77~85%, 특이도 75~83%의 범위를 보고했다. PCT가 패혈증 의심 환자에서 CRP보다 우월할 수 있으나, PCT를 항균제 처방을 유도하는 데 써서는 안 된다. 마찬가지로 2016년 IDSA/ATS 지침과 2017년 ERS/ESICM/ESCMID/ALAT 지침 모두 VAP 진단에 PCT 사용을 권고하지 않는다.\n\n중증 CAP에서 PCT는 influenza의 세균 중복감염 존재 평가에 검토되어 왔다. 확진된 influenza 증례의 예비 연구들은 PCT가 세균 중복감염을 배제하는 데 더 높은 음성예측도를 제공할 수 있음을 시사했다. 그러나 이 소견은 다른 연구들에서 재현되지 않았다. 이 전략, 특히 influenza 이외의 다른 바이러스 감염으로 더 넓게 사용하려면 더 많은 연구가 필요하다. 또한 최근 메타분석은 PCT가 CAP 초기에 민감도가 부족하며 그 시점에서 바이러스와 세균 감염을 신뢰성 있게 구분하지 못함을 보였다.\n\n치료 반응 평가(D4 값): 패혈증 진단 및 항생제 치료 개시 약 48~72시간 후에는 환자의 임상 경과를 평가하며 다음을 물어야 한다 — (1) 환자가 임상적으로 호전되고 있는가? (2) 호전되지 않는다면 발견되지 않은 패혈성 합병증(예: 농흉, 폐농양), (동일 부위 또는 다른 부위의) 이차 감염, 부적절하거나 부적합한 항생제 치료 때문인가? (3) 혹은 비감염성 원인 때문인가? VAP 환자에서 발병 시와 치료 4일째(D4) 측정한 PCT는 생존을 예측하여 좋은 예후와 나쁜 예후의 환자를 구분할 수 있었다. 항생제 치료 D4에 PCT가 지속적으로 높으면 감염 조절 실패를 시사한다. 항생제 치료 D3/D4까지 바이오마커가 지속적으로 상승해 있는 환자는 치료 실패를 의심해야 한다.\n\nPCT 유도 항생제 치료/스튜어드십: 점점 많은 근거가 PCT로 전체 항생제 사용이 감소함을 확인한다. 연구들은 이 전략이 안전하고 치료 기간 단축과 연관되며 일부 RCT에서는 사망률을 낮춘다고 보고한다. 다만 초기 RCT들의 대조군에서는 항생제 치료 기간이 권고치보다 길었다. 한 분석에서 PCT 유도 전략은 항생제 기간을 1일 줄이고 생존을 개선했으며, 특히 프로토콜 준수도가 높지 않은 RCT들과 PCT를 CRP와 조합했을 때 그러했다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "숙주반응 바이오마커 — C-reactive protein (CRP)",
+            "body_ko": "혈청 CRP는 사이토카인, 특히 interleukin 6에 반응해 간에서만 합성되는 급성기 단백질이다. 염증 자극 후 4~6시간에 상승하기 시작해 8시간마다 두 배가 되고 36~50시간에 정점에 이르며 반감기는 19시간이다.\n\n패혈증 예측: CRP와 시간에 따른 CRP 기울기(slope)는 VAP 발생의 좋은 예측 인자였으며, 일일 최대 CRP 증가 > 4.1 mg/dL이 특히 예측적이었고 절대 농도 > 8.7 mg/dL과 함께 있을 때 더욱 그러했다.\n\n패혈증 진단: 메타분석에서 민감도 78~80%, 특이도 60~61% 범위가 보고되었으며, 통상 절단점은 2~10 mg/dL 범위였다.\n\n치료 반응 평가: 상대적 CRP 변화(CRP-ratio) — 각 날의 CRP 농도를 0일째(D0) 값에 대한 비로 나타낸 것 — 를 사용하는 것이 절대 CRP 변화보다 더 많은 정보를 주었다. 네 가지 반응 양상이 규정되었다: 빠른 반응(fast response, D4까지 CRP-ratio < 0.4), 느린 반응(slow response, D4 값이 0.4 초과 0.8 미만), 무반응(nonresponse, CRP-ratio가 지속적으로 > 0.8), 이상성(biphasic, 초기에 CRP-ratio가 0.8 미만으로 떨어진 뒤 이차적으로 재상승). 미생물학적으로 입증된 VAP 환자에서 D4에 초기값의 0.6을 초과하는 CRP는 나쁜 예후의 표지였다.\n\nCRP 유도 항생제 치료: CRP는 치료 기간 유도에서 PCT에 비열등(non-inferior)했으며 이환율·사망률에 차이가 없었다. 최근 시험들은 이 바이오마커 유도 전략을 PCT 유도 전략이나 고정 기간과 비교했을 때 실질적 차이가 없었음을 뒷받침한다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "바이오마커 유도 항생제 알고리즘 — 이중 방아쇠(double trigger) 전략",
+            "body_ko": "그림 2(사용자 지침)의 요지는 다음과 같다: 패혈증이 의심되는 중환자에서 항생제 시작은 어떤 바이오마커 수치와도 무관하게 시행해야 한다. 그러나 이 결정은 매일 재평가해야 한다. 치료의 최적 기간을 정하기 위해 임상 경과, (SOFA 점수로 본) 장기기능장애 경과, 바이오마커 동태, 그리고 항생제 치료 기간을 활용한다.\n\n치료를 개별화하는 방법은 고정 기간과 바이오마커 유도를 결합한 '이중 방아쇠(double trigger)' 전략이다. 즉 며칠간의 치료 후, 임상 경과와 함께 사전에 정의된 알고리즘에 따른 바이오마커(CRP 또는 PCT) 감소가 나타나거나 또는 5~7일의 완전한 항생제 치료가 완료되는 것 중 먼저 도달하는 쪽에 따라 항생제를 중단할 수 있다.",
+            "origin": "article"
+          },
+          {
+            "heading_ko": "결론 및 향후 연구",
+            "body_ko": "요약하면, 현재의 패혈증 바이오마커 수준에서, 예후 개선을 위해 환자 치료 경로를 이끄는 임상적으로 유용한 표지자를 갖춘 지점으로 나아가려면 접근 방식의 상당한 변화가 필요하다. 단일 기관의 단일 차원 연구로는 큰 진전을 이루기 어렵다. 필요한 것은 최신 오믹스(omics), 생물정보학, 기계학습 알고리즘을 활용하여 특정 임상 엔도타입(endotype)에서 중재에 대한 차등 반응을 예측하는 바이오마커를 찾아내는 대규모 다기관 코호트 연구이다.\n\n최종 지침: 패혈증 바이오마커는 임상의가 침상에서 환자 진료를 최적화할 추가 정보가 필요할 때 유용한 보조 도구가 될 수 있다. 연속 측정이 단일 값보다 더 많은 정보를 주며, 바이오마커는 결코 단독 검사로 사용해서는 안 되고 항상 철저한 임상 평가, 그리고 바이오마커의 생물학·간섭·강점·한계에 대한 포괄적 이해와 함께 사용해야 한다.",
+            "origin": "article"
+          }
+        ],
+        "coverage": "web-augmented",
+        "coverageEvidence": {
+          "policyVersion": 1,
+          "inputFingerprint": "46a219b85bbed8ebaa9157d87dc843085608adf3bd0eb5b67932eace9f842a74",
+          "suppliedTextSha256": "c74dc5a64acbd1e4e68ed51d066eb778c7e38ccac2853977d2cf8dcddf6b2a25",
+          "suppliedTextChars": 10000,
+          "suppliedTextSource": "PMC",
+          "generatedAt": "2026-11-28T03:32:40.601Z",
+          "resultFingerprint": "c2ef09eaca68d7528cbb624cfc245618344ab54412b2d594353b260d537fafa2",
+          "modelReported": "web-augmented",
+          "coverage": "web-augmented",
+          "trustedWebSourceCount": 4,
+          "webRetrievalVerified": false
+        },
+        "fullTextSource": "PMC",
+        "practiceImpact_ko": "응급실/중환자실에서 패혈증 의심 시 항생제 개시는 바이오마커 수치와 무관하게 결정하되, 이후 매일 임상 경과·SOFA·바이오마커 동태를 보고 재평가한다는 원칙이 분명해진다. 단일 PCT/CRP 값으로 진단하거나 처방을 정하지 말고, CRP-ratio나 D4 PCT 같은 연속 추이로 치료 반응·실패(D3/D4 지속 상승)를 판단하며, 고정 기간(5~7일)과 바이오마커 감소를 결합한 '이중 방아쇠'로 항생제를 조기 중단해 스튜어드십에 활용할 수 있다. 다만 두 마커 모두 패혈증과 유사 증후군을 정확히 구별하지 못하므로 반드시 임상 평가와 함께 보조적으로만 쓴다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 36592205",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36592205/"
+          },
+          {
+            "label": "Journal (DOI) — 10.1007/s00134-022-06956-y",
+            "url": "https://doi.org/10.1007/s00134-022-06956-y"
+          },
+          {
+            "label": "웹 — PMC full text (PMC9807102) — Póvoa et al., Intensive Care Med 2023",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9807102/"
+          },
+          {
+            "label": "웹 — Europe PMC REST (PMCID lookup for DOI 10.1007/s00134-022-06956-y)",
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1007/s00134-022-06956-y&format=json"
+          },
+          {
+            "label": "웹 — Springer Link article landing page (Intensive Care Medicine)",
+            "url": "https://link.springer.com/article/10.1007/s00134-022-06956-y"
+          },
+          {
+            "label": "웹 — PubMed record 36592205",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36592205/"
+          }
+        ]
+      }
     }
   ],
   "rejected": [
@@ -16303,9 +16403,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "outcome": "published",
-    "publishedId": "34481570"
+    "publishedId": "36592205"
   },
-  "updatedAt": "2026-11-27"
+  "updatedAt": "2026-11-28"
 }

@@ -38848,7 +38848,7 @@
       "reasons": [
         "insufficient-positive-evidence"
       ],
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -38857,87 +38857,6 @@
         "at": "2026-08-17T04:43:32.344Z"
       },
       "attempts": 0
-    },
-    {
-      "id": "pmid:42246225",
-      "pmid": "42246225",
-      "title": "Central venous cannulation in critically ill patients: guidelines of the Polish Society of Anaesthesiology and Intensive Therapy.",
-      "pubDate": "2026 May 21",
-      "journal": "Anaesthesiology intensive therapy",
-      "publicationTypes": [
-        "Journal Article",
-        "Practice Guideline"
-      ],
-      "discoveredBy": [
-        "pubmed-pt"
-      ],
-      "discoveredAt": "2026-08-17T04:40:34.154Z",
-      "abstract": "These guidelines provide evidence-based recommendations for central venous cannulation in critically ill patients in the intensive care unit. The document was developed by the Working Group of the Polish Society of Anaesthesiology and Intensive Therapy (Polskie Towarzystwo Anestezjologii i Intensywnej Terapii - PTAiIT) based on the GRADE (Grading of Recommendations Assessment, Development and Evaluation) methodology, which encompasses systematic reviews of the literature, meta-analyses, and - in the absence of sufficient data - expert consensus. These guidelines aim to standardise the approach to central venous cannulation, increase the effectiveness of procedures, and minimise the risk of complications. The guidelines address pre-procedural ultrasound assessment, selection of the optimal vascular access site, comparison of ultrasound-guided versus landmark cannulation at different access sites, confirmation of catheter position after cannulation, and the role of positional manoeuvres.",
-      "meshTerms": [
-        "Humans",
-        "Catheterization, Central Venous",
-        "Critical Illness",
-        "Critical Care",
-        "Poland",
-        "Ultrasonography, Interventional",
-        "Anesthesiology",
-        "Societies, Medical"
-      ],
-      "keywords": [
-        "catheterization",
-        "central venous",
-        "critical illness",
-        "intensive care units",
-        "practice guidelines as topic",
-        "ultrasonography",
-        "vascular access devices"
-      ],
-      "doi": "10.5114/ait/220388",
-      "pmcid": "PMC13384218",
-      "region": "eu",
-      "by": "nationality",
-      "signals": {
-        "guidelinePublicationType": true,
-        "pubmedPt": true,
-        "expandedTitle": false,
-        "approvedOrganization": false,
-        "approvedOrgPath": false,
-        "normativeContent": true,
-        "explicitRecommendation": true,
-        "officialDocument": true,
-        "organizationId": null
-      },
-      "priority": 5.2,
-      "breakdown": {
-        "authority": 0,
-        "topic": 1.2000000000000002,
-        "recency": 2,
-        "scope": 0,
-        "confidence": 2
-      },
-      "organizationId": null,
-      "tier": null,
-      "topicMatched": true,
-      "status": "queued",
-      "verdict": "guideline",
-      "documentType": "guideline",
-      "reasons": [
-        "format-evidence",
-        "normative-evidence",
-        "official-evidence"
-      ],
-      "lastSeenAt": "2026-08-17T04:40:48.357Z",
-      "llmFit": {
-        "version": 1,
-        "score": 8,
-        "keep": true,
-        "reason": "중환자 중심정맥관 삽입 지침, ICU 핵심 술기",
-        "at": "2026-08-17T04:43:32.344Z"
-      },
-      "lineageKey": "unknown|central-venous-cannulation-critically-ill-patients-polish-society-anaesthesiology-intensive-therapy",
-      "supersedes": [],
-      "lineageReview": false,
-      "lineageReason": "no-matching-lineage"
     },
     {
       "id": "pmid:42153399",
@@ -40121,7 +40040,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -40920,7 +40839,7 @@
       "reasons": [
         "conflicting-editorial-publication-type"
       ],
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -41840,7 +41759,7 @@
         "format-evidence",
         "normative-evidence"
       ],
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42013,7 +41932,7 @@
       "reasons": [
         "guideline-commentary-or-digest"
       ],
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 6,
@@ -42431,7 +42350,7 @@
         "normative-evidence",
         "official-evidence"
       ],
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 7,
@@ -44736,7 +44655,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -45539,7 +45458,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "aha|health-literacy-communication-stroke-prevention-management-recovery-from",
       "supersedes": [],
       "llmFit": {
@@ -46271,7 +46190,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "esc|inflammation-coronary-syndromes-clinical-practice-clinical-association-acute-cardiovascular-care-working-group-myocardial-pericardial-diseases-council-basic-cardiovascular-science-council-cardiology-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -46339,7 +46258,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "unknown|italian-speech-language-therapy-patients-with-stroke-primary-progressive-aphasia-from-italian-neuropsychological-society",
       "supersedes": [],
       "lineageReview": false,
@@ -46401,7 +46320,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46480,7 +46399,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "unknown|aga-aasld-clinical-practice-management-primary-biliary-cholangitis",
       "supersedes": [],
       "lineageReview": false,
@@ -46562,7 +46481,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 3,
@@ -46661,7 +46580,7 @@
         "commentary-or-evaluation"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46762,7 +46681,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -46843,7 +46762,7 @@
         "official-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "unknown|american-association-surgery-trauma-american-college-surgeons-committee-trauma-clinical-protocol-nutrition-support-adult-trauma",
       "supersedes": [],
       "lineageReview": false,
@@ -46925,7 +46844,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "aha|impact-undertreated-antithrombotic-therapy-adverse-patient-outcomes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -46988,7 +46907,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "esc|beyond-heart-failure-heart-stress-biological-aging-heart-failure-prevention",
       "supersedes": [],
       "lineageReview": false,
@@ -47057,7 +46976,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "unknown|as-needed-inhaled-corticosteroids-asthma-official-american-thoracic-society-clinical-practice",
       "supersedes": [],
       "lineageReview": false,
@@ -47131,7 +47050,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 5,
@@ -47197,7 +47116,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "esc|artificial-intelligence-cardiology-non-experts-decoding-key-terms-understanding-machine-learning-methodologies-working-group-e-cardiology-european-heart-rhythm-association-ehra-association-acute-cardiovascular-care-acvc-heart-failure-association-hfa-european-association-cardiovascular-imaging-eacvi-european-association-preventive-cardiology-eapc-european-association-percutaneous-cardiovascular-interventions-eapci-esc-regulatory-affairs-committee-digital-cardiology-artificial-intelligence-committee",
       "supersedes": [],
       "lineageReview": false,
@@ -47260,7 +47179,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageReview": true,
       "lineageReason": "same-year-ambiguous",
       "llmFit": {
@@ -47340,7 +47259,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "aha|multidisciplinary-approach-antiplatelet-management-coronary-syndromes-from",
       "supersedes": [],
       "lineageReview": false,
@@ -47404,7 +47323,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "esc|early-ambulatory-re-evaluation-follow-up-patients-admitted-acute-cardiac-care-unit-practical-aspects-ambulatory-follow-up-acute-care-patients-acute-coronary-syndromes-heart-failure-ventricular-arrhythmias-atrial-arrhythmias-conductance-disorders-myocarditis-pericarditis-other-acute-cardiac-settings-clinical-association-acute-cardiovascular-care",
       "supersedes": [],
       "lineageReview": false,
@@ -47486,7 +47405,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "esc|adoption-directed-heart-failure-pharmacotherapy-post-discharge-outcomes-nationwide-german-claims-based-cohort-study",
       "supersedes": [],
       "lineageReview": false,
@@ -47549,7 +47468,7 @@
         "conflicting-editorial-publication-type"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -47616,7 +47535,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 9,
@@ -47696,7 +47615,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47759,7 +47678,7 @@
         "insufficient-positive-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 2,
@@ -47818,7 +47737,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "unknown|diastolic-function-classification-acute-myocardial-infarction-comparison-ase-eacvi-ase",
       "supersedes": [],
       "lineageReview": false,
@@ -47881,7 +47800,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "unknown|ers-clinical-practice-patients-with-idiopathic-pulmonary-fibrosis-lung-cancer",
       "supersedes": [],
       "lineageReview": false,
@@ -47961,7 +47880,7 @@
         "normative-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "llmFit": {
         "version": 1,
         "score": 4,
@@ -48027,7 +47946,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "aha|forecasting-burden-cost-stroke-united-states-projections-by-sociodemographic-groups-through-from",
       "supersedes": [],
       "lineageReview": false,
@@ -48102,7 +48021,7 @@
         "publisher-evidence"
       ],
       "attempts": 0,
-      "lastSeenAt": "2026-11-27T03:44:14.996Z",
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
       "lineageKey": "esc|contemporary-management-heart-failure-across-ejection-fraction-spectrum-including-improved-ejection-fraction-narrative-review-aligned-with",
       "supersedes": [],
       "lineageReview": false,
@@ -48113,6 +48032,88 @@
         "keep": true,
         "reason": "2026 ESC 심부전 지침 요지 담은 종설, 응급·중환자 심혈관 실무 유용",
         "at": "2026-11-27T03:44:17.276Z"
+      }
+    },
+    {
+      "id": "pmid:43098181",
+      "pmid": "43098181",
+      "title": "SEMI 2026 Guidelines for the diagnosis and treatment of heart failure with preserved ejection fraction. Developed by the Heart Failure and Atrial Fibrillation Working Group of the Spanish Society of Internal Medicine (SEMI).",
+      "pubDate": "2026 Nov 4",
+      "journal": "Revista clinica espanola",
+      "publicationTypes": [
+        "Journal Article"
+      ],
+      "discoveredBy": [
+        "pubmed-topic"
+      ],
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
+      "abstract": "This clinical practice guideline (CPG) from the Spanish Society of Internal Medicine provides a comprehensive approach to the diagnosis and treatment of heart failure with preserved ejection fraction (HFpEF) in adults. Developed using GRADE methodology, it is intended for use across levels of care, with particular attention to older people, people with frailty and those with multimorbidity. The diagnosis of HFpEF requires an integrated assessment of clinical, laboratory and imaging findings. Algorithms such as H₂FPEF and HFA-PEFF may facilitate this process, but do not replace clinical judgement. Patient assessment must be multidimensional, with particular attention to congestion, comorbidities, nutritional status, cognition, frailty, sarcopenia, functional capacity and social determinants. This CPG recommends diuretics to control congestion and SGLT2 inhibitors as the pharmacological treatment with the most consistent supporting evidence. It also recommends finerenone to reduce worsening heart failure events and reserves sacubitril/valsartan for selected patients. Semaglutide and tirzepatide are particularly relevant to the HFpEF-obesity phenotype. For non-pharmacological management, the CPG provides recommendations on supervised exercise, weight reduction, vaccination, self-care and palliative care. It also highlights the appropriate identification of patients with cardiac amyloidosis and initiation of specific treatment when indicated. Comprehensive management of comorbidities is a central component and requires a multidisciplinary, person-centred approach. Appropriate management of HFpEF requires the active involvement of nursing staff, whose role is fundamental in health education, promotion of self-care, treatment adherence and clinical follow-up. Overall, this CPG aims to provide a practical, comprehensive framework to improve care for people with HFpEF.",
+      "meshTerms": [],
+      "keywords": [
+        "Amiloidosis cardiaca",
+        "Cardiac amyloidosis",
+        "Clinical practice guidelines",
+        "Comorbidities",
+        "Comorbilidades",
+        "Continuidad asistencial",
+        "Continuity of care",
+        "Diagnosis",
+        "Diagnóstico",
+        "Fenotipos de insuficiencia cardiaca",
+        "Fragilidad",
+        "Frailty",
+        "Guías de práctica clínica",
+        "Heart failure phenotypes",
+        "Heart failure with preserved ejection fraction",
+        "Insuficiencia cardiaca con fracción de eyección preservada",
+        "Tratamiento",
+        "Treatment"
+      ],
+      "doi": "10.1016/j.rceng.2026.502638",
+      "pmcid": "",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": false,
+        "pubmedPt": false,
+        "expandedTitle": true,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": false,
+        "organizationId": null
+      },
+      "priority": 7,
+      "breakdown": {
+        "authority": 0,
+        "topic": 3,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "needsReview",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence"
+      ],
+      "attempts": 0,
+      "lastSeenAt": "2026-11-28T03:27:28.573Z",
+      "lineageKey": "unknown|semi-diagnosis-treatment-heart-failure-with-preserved-ejection-fraction-developed-by-heart-failure-atrial-fibrillation-working-group-spanish-society-internal-medicine-semi",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "llmFit": {
+        "version": 1,
+        "score": 5,
+        "keep": false,
+        "reason": "HFpEF 지침이나 내과 외래 만성질환 위주, 응급 적용 제한적",
+        "at": "2026-11-28T03:27:30.827Z"
       }
     }
   ],
@@ -65096,6 +65097,147 @@
         ]
       },
       "publishedAt": "2026-11-27"
+    },
+    {
+      "id": "pmid:42246225",
+      "pmid": "42246225",
+      "title": "Central venous cannulation in critically ill patients: guidelines of the Polish Society of Anaesthesiology and Intensive Therapy.",
+      "pubDate": "2026 May 21",
+      "journal": "Anaesthesiology intensive therapy",
+      "publicationTypes": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "discoveredBy": [
+        "pubmed-pt"
+      ],
+      "discoveredAt": "2026-08-17T04:40:34.154Z",
+      "abstract": "These guidelines provide evidence-based recommendations for central venous cannulation in critically ill patients in the intensive care unit. The document was developed by the Working Group of the Polish Society of Anaesthesiology and Intensive Therapy (Polskie Towarzystwo Anestezjologii i Intensywnej Terapii - PTAiIT) based on the GRADE (Grading of Recommendations Assessment, Development and Evaluation) methodology, which encompasses systematic reviews of the literature, meta-analyses, and - in the absence of sufficient data - expert consensus. These guidelines aim to standardise the approach to central venous cannulation, increase the effectiveness of procedures, and minimise the risk of complications. The guidelines address pre-procedural ultrasound assessment, selection of the optimal vascular access site, comparison of ultrasound-guided versus landmark cannulation at different access sites, confirmation of catheter position after cannulation, and the role of positional manoeuvres.",
+      "meshTerms": [
+        "Humans",
+        "Catheterization, Central Venous",
+        "Critical Illness",
+        "Critical Care",
+        "Poland",
+        "Ultrasonography, Interventional",
+        "Anesthesiology",
+        "Societies, Medical"
+      ],
+      "keywords": [
+        "catheterization",
+        "central venous",
+        "critical illness",
+        "intensive care units",
+        "practice guidelines as topic",
+        "ultrasonography",
+        "vascular access devices"
+      ],
+      "doi": "10.5114/ait/220388",
+      "pmcid": "PMC13384218",
+      "region": "eu",
+      "by": "nationality",
+      "signals": {
+        "guidelinePublicationType": true,
+        "pubmedPt": true,
+        "expandedTitle": false,
+        "approvedOrganization": false,
+        "approvedOrgPath": false,
+        "normativeContent": true,
+        "explicitRecommendation": true,
+        "officialDocument": true,
+        "organizationId": null
+      },
+      "priority": 5.2,
+      "breakdown": {
+        "authority": 0,
+        "topic": 1.2000000000000002,
+        "recency": 2,
+        "scope": 0,
+        "confidence": 2
+      },
+      "organizationId": null,
+      "tier": null,
+      "topicMatched": true,
+      "status": "current",
+      "verdict": "guideline",
+      "documentType": "guideline",
+      "reasons": [
+        "format-evidence",
+        "normative-evidence",
+        "official-evidence"
+      ],
+      "lastSeenAt": "2026-08-17T04:40:48.357Z",
+      "llmFit": {
+        "version": 1,
+        "score": 8,
+        "keep": true,
+        "reason": "중환자 중심정맥관 삽입 지침, ICU 핵심 술기",
+        "at": "2026-08-17T04:43:32.344Z"
+      },
+      "lineageKey": "unknown|central-venous-cannulation-critically-ill-patients-polish-society-anaesthesiology-intensive-therapy",
+      "supersedes": [],
+      "lineageReview": false,
+      "lineageReason": "no-matching-lineage",
+      "card": {
+        "type": "guideline",
+        "paper": {
+          "pmid": "42246225",
+          "title": "Central venous cannulation in critically ill patients: guidelines of the Polish Society of Anaesthesiology and Intensive Therapy.",
+          "journal": "Anaesthesiology intensive therapy",
+          "pubDate": "2026 May 21",
+          "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42246225/",
+          "doi": "10.5114/ait/220388"
+        },
+        "org": "PTAiIT (Polish Society of Anaesthesiology and Intensive Therapy)",
+        "version": "2026",
+        "title_ko": "중환자에서 중심정맥 캐뉼러 삽입: 폴란드 마취·집중치료학회(PTAiIT) 가이드라인",
+        "scope_ko": "중환자실에 입원한 성인 중환자에서 중심정맥 카테터(CVC) 삽입을 다루는 근거기반 가이드라인으로, 시술 전 초음파 평가, 혈관 접근 부위 선택, 접근 부위별 초음파 유도 대 해부학적 랜드마크 기법 비교, 삽입 후 카테터 위치 확인, 체위 조작(Trendelenburg 등)의 역할을 다룬다. 소아나 비중환자 성인에는 직접 적용되지 않으며 개별 임상 판단이 필요하다.",
+        "summary": [
+          "Perform a pre-procedural ultrasound assessment of the large veins before choosing the CVC insertion site (strong recommendation; expert consensus, no direct evidence).",
+          "When no contraindication exists and real-time ultrasound is used, prefer the subclavian/axillary vein as the insertion site (weak/suggest; low certainty).",
+          "Use real-time ultrasound rather than the landmark technique for internal jugular vein cannulation (strong recommendation; moderate certainty) — US is a first-choice tool, not just a rescue technique for difficult cases.",
+          "Use real-time ultrasound rather than landmark for subclavian/axillary vein cannulation (weak/suggest; moderate certainty) and for femoral vein cannulation (weak/suggest; very low certainty).",
+          "Before threading the catheter, confirm guidewire position inside the target vein by ultrasound during US-guided cannulation (strong recommendation; expert consensus).",
+          "Consider arm abduction during US-guided subclavian/axillary cannulation to reduce catheter malposition (weak/suggest; low certainty) — benefit applies only with ultrasound, as abduction with the landmark technique performed worse.",
+          "No recommendation is issued for ultrasound as a routine alternative to chest radiograph to evaluate post-insertion complications, because US sensitivity was judged insufficient and false negatives could delay recognition of complications (very low certainty).",
+          "Consider positional manoeuvres (absent contraindications): Trendelenburg to improve IJ and subclavian/axillary cannulation conditions, and reverse Trendelenburg for the femoral vein (all weak/suggest; very low certainty)."
+        ],
+        "summary_ko": [
+          "CVC 삽입 부위를 정하기 전에 큰 정맥들에 대한 시술 전 초음파 평가를 시행한다(강한 권고; 직접 근거 없음·전문가 합의).",
+          "금기나 다른 선택 요인이 없고 실시간 초음파를 사용하는 경우, 쇄골하/액와정맥을 우선 삽입 부위로 선택한다(약한 권고/제안; 낮은 근거확실성).",
+          "내경정맥 캐뉼러 삽입 시 랜드마크 기법 대신 실시간 초음파를 사용한다(강한 권고; 중등도 확실성) — 초음파는 어려운 경우의 구제 수단이 아니라 1차 선택 도구다.",
+          "쇄골하/액와정맥(약한 권고/제안; 중등도 확실성)과 대퇴정맥(약한 권고/제안; 매우 낮은 확실성)에서도 랜드마크 대신 실시간 초음파를 사용한다.",
+          "초음파 유도 캐뉼러 삽입 시 카테터를 진입시키기 전에 유도철사(guidewire)가 표적 정맥 내에 있는지 초음파로 확인한다(강한 권고; 전문가 합의).",
+          "초음파 유도하 쇄골하/액와정맥 삽입 시 카테터 오위치를 줄이기 위해 팔 외전(arm abduction)을 고려한다(약한 권고/제안; 낮은 확실성) — 이 이득은 초음파를 쓸 때만 해당하며, 랜드마크 기법에서의 외전은 오히려 결과가 나빴다.",
+          "삽입 후 합병증 평가에서 흉부 X선을 대체하는 일상적 초음파 사용에 대해서는 권고를 내리지 않는다 — 초음파 민감도가 불충분하다고 판단되어 위음성이 합병증 인지를 지연시킬 수 있기 때문이다(매우 낮은 확실성).",
+          "금기가 없다면 체위 조작을 고려한다: 내경정맥·쇄골하/액와정맥 조건 개선을 위한 Trendelenburg, 대퇴정맥을 위한 역-Trendelenburg(모두 약한 권고/제안; 매우 낮은 확실성)."
+        ],
+        "keyChanges": [],
+        "changesUnavailable": true,
+        "augmentedSections": [],
+        "fullTextSource": "PMC",
+        "practiceImpact": "This positions real-time ultrasound as the default — not a backup — for central venous access in the ICU, with a strong mandate for the internal jugular and a suggestion extending it even to subclavian/axillary and femoral sites. Add two concrete habits to every US-guided line: scan the veins before choosing a site, and confirm the guidewire is intravenous before dilating/threading — a cheap step that catches arterial or malpositioned wires early. Do not drop the confirmatory chest radiograph after upper-body lines, since the panel found ultrasound too insensitive to replace it for ruling out pneumothorax/malposition. Low-cost adjuncts — Trendelenburg for IJ/subclavian, reverse Trendelenburg for femoral, and arm abduction (only when combined with ultrasound) for subclavian/axillary — can improve first-pass success and reduce malposition.",
+        "practiceImpact_ko": "이 지침은 중환자실 중심정맥 접근에서 실시간 초음파를 백업이 아닌 기본값으로 자리매김하며, 내경정맥에는 강한 권고, 쇄골하/액와·대퇴정맥에도 확장 제안을 둔다. 모든 초음파 유도 라인에 두 가지 습관을 추가하라: 부위 선택 전 정맥을 스캔하고, 확장·진입 전에 유도철사가 정맥 내에 있는지 확인하는 것 — 동맥 오천자나 오위치를 조기에 잡는 저비용 단계다. 상반신 라인 후 흉부 X선 확인은 유지하라 — 패널은 기흉/오위치 배제에 초음파 민감도가 너무 낮다고 판단했다. 저비용 보조책(내경·쇄골하 Trendelenburg, 대퇴 역-Trendelenburg, 그리고 초음파 병용 시에만 쇄골하/액와의 팔 외전)으로 첫 시도 성공률을 높이고 오위치를 줄일 수 있다.",
+        "sources": [
+          {
+            "label": "PubMed — PMID 42246225",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42246225/"
+          },
+          {
+            "label": "Journal (DOI) — 10.5114/ait/220388",
+            "url": "https://doi.org/10.5114/ait/220388"
+          },
+          {
+            "label": "웹 — PMC full text — PTAiIT central venous cannulation guidelines (2026)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13384218/"
+          },
+          {
+            "label": "웹 — PubMed record (PMID 42246225)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42246225/"
+          }
+        ]
+      },
+      "publishedAt": "2026-11-28"
     }
   ],
   "rejected": [
@@ -70698,7 +70840,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70725,7 +70867,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70760,7 +70902,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [],
@@ -70787,7 +70929,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
       "abstract": "BACKGROUND: Non-invasive ventilation (NIV) is recommended for exacerbations of chronic obstructive pulmonary disease (ECOPD) complicated by respiratory acidosis, yet real-world adherence remains uncertain. We evaluated adherence to ERS/ATS recommendations, patterns of non-adherence, and their association with short-term outcomes.\nMETHODS: In this prospective multicenter cohort study, consecutive patients with ECOPD-related acute hypoxemic-hypercapnic respiratory failure were enrolled across nine Italian hospitals and classified as guideline-adherent, NIV underuse, or NIV overuse according to ERS/ATS pH-based recommendations. The primary objective was to assess adherence to recommendations; the association between adherence patterns and the composite outcome of in-hospital death or endotracheal intubation was a secondary objective.\nRESULTS: Among 456 patients, 315 (69%) were guideline-adherent, 60 (13%) had NIV underuse, and 81 (18%) had NIV overuse. Underuse occurred predominantly in patients with mild respiratory acidosis receiving alternative respiratory support, mainly high-flow nasal cannula (HFNC), whereas overuse occurred primarily in hypercapnic patients without respiratory acidosis. The composite clinical outcome occurred in 48 patients (11%) and did not differ across adherence groups. After adjustment, neither NIV underuse (odds ratio [OR] 0.85, 95% confidence interval [CI] 0.33-2.20) nor overuse (OR 0.54, 95% CI 0.20-1.46) was associated with the composite clinical outcome, whereas higher Simplified Acute Physiology Score (SAPS) II was independently associated with it (OR 1.05, 95% CI 1.02-1.08).\nCONCLUSIONS: Deviations from ERS/ATS recommendations followed distinct clinical patterns and were not independently associated with the composite clinical outcome. Overall illness severity was consistently associated with adverse outcomes, highlighting the complexity of implementing NIV recommendations in routine clinical practice.",
       "meshTerms": [],
       "keywords": [
@@ -70821,7 +70963,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
       "abstract": "",
       "meshTerms": [],
       "keywords": [
@@ -70853,7 +70995,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
       "abstract": "Applying the Choosing Wisely® methodology, a task force mandated by the Ventilation and Oxygen-therapy group (GAVO2) of the French Pulmonary Society (SPLF) was commissioned to draw up a series of expert recommendations on practical aspects of long-term non-invasive ventilation (NIV). These guidelines are annually updated. Several themes were taken up, notably including NIV configuration, efficacy and tolerance. For each topic, the experts reviewed recent data in the literature. Based on these data and on their own clinical experience, the experts developed a comprehensive analysis of recent insights, and went on to write out practical tips, which have been grouped together in a series of three articles, of which the first is dedicated to the monitoring of non-invasive ventilation.",
       "meshTerms": [],
       "keywords": [
@@ -70887,7 +71029,7 @@
       "discoveredBy": [
         "pubmed-topic"
       ],
-      "discoveredAt": "2026-11-27T03:44:04.890Z",
+      "discoveredAt": "2026-11-28T03:27:18.506Z",
       "abstract": "BACKGROUND: American Indian and Alaska Native (AI/AN) patients in the US face a disproportionate burden of cardiovascular disease, yet data on the quality of care and outcomes in this population are limited. Using the American Heart Association's Get With The Guidelines-Coronary Artery Disease registry, we evaluated the clinical profiles and use of evidence-based therapies among AI/AN patients with acute myocardial infarction compared with White patients.\nMETHODS: We analyzed data from 1955 AI/AN patients with acute myocardial infarction in 45 states participating in the Get With The Guidelines-Coronary Artery Disease program from 2017 to 2022. Six performance measures were evaluated: aspirin within 24 hours, β-blocker and statin at discharge, smoking cessation counseling, ACE (angiotensin-converting enzyme) inhibitor/ARB (angiotensin II receptor blocker) for EF ≤40%, and antiplatelet therapy at discharge. Additional metrics included door-to-balloon time ≤90 minutes for ST-segment-elevation myocardial infarction, cardiac rehabilitation referral, GLP-1 (glucagon-like peptide-1) use for those with obesity and diabetes, and in-hospital mortality.\nRESULTS: Compared with White patients, AI/AN patients with acute myocardial infarction were younger, with a higher prevalence of diabetes, obesity, and end-stage renal disease. Overall, the utilization of evidence-based medical therapies and smoking cessation counseling was similar. However, door-to-balloon time ≤90 minutes for ST-segment-elevation myocardial infarction was significantly lower for AI/AN patients (65.5% versus 76.2%; <0.0001). Cardiac rehabilitation referral was also significantly lower for AI/AN patients (69.1% versus 72.9%; <0.01). Adjusted in-hospital mortality was higher for AI/AN patients (adjusted odds ratio, 1.27 [95% CI, 1.03-1.56]; =0.02) when adjusted for patient characteristics, but differences were attenuated after adjustment for hospital characteristics (adjusted odds ratio, 1.13 [95% CI, 0.88-1.47]).\nCONCLUSIONS: AI/AN patients received similar evidence-based therapies as White patients, but disparities remain in cardiac rehabilitation referral and timely reperfusion. Differences in in-hospital mortality may be attributed to the types of hospitals where AI/AN patients receive care, indicating the need for targeted interventions to improve cardiovascular outcomes in these communities.",
       "meshTerms": [],
       "keywords": [
@@ -70959,9 +71101,9 @@
     ]
   },
   "lastRun": {
-    "runId": "trend_review_20261127_124236:guideline:2026-11-27",
+    "runId": "trend_review_20261128_122546:guideline:2026-11-28",
     "outcome": "published",
-    "publishedId": "pmid:41185922",
+    "publishedId": "pmid:42246225",
     "manifest": {
       "pubmed": {
         "queries": [
@@ -70993,8 +71135,8 @@
         "oldestFetchedDate": "2026",
         "newestFetchedDate": "2027 Jan-Mar 01",
         "window": {
-          "minDate": "2026/10/28",
-          "maxDate": "2026/11/27"
+          "minDate": "2026/10/29",
+          "maxDate": "2026/11/28"
         },
         "retmax": 60,
         "topics": [
@@ -71002,7 +71144,7 @@
             "id": "pubmed-topic:cardiac_resus",
             "label": "심혈관·소생",
             "succeeded": true,
-            "totalFound": 63,
+            "totalFound": 62,
             "idsFetched": 60,
             "truncated": true,
             "error": null
@@ -71020,8 +71162,8 @@
             "id": "pubmed-topic:resp_airway",
             "label": "호흡·기도·기계환기",
             "succeeded": true,
-            "totalFound": 22,
-            "idsFetched": 22,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -71038,8 +71180,8 @@
             "id": "pubmed-topic:neuro",
             "label": "신경 응급",
             "succeeded": true,
-            "totalFound": 25,
-            "idsFetched": 25,
+            "totalFound": 23,
+            "idsFetched": 23,
             "truncated": false,
             "error": null
           },
@@ -71056,8 +71198,8 @@
             "id": "pubmed-topic:vascular_gi_other",
             "label": "혈관·소화기·기타 응급",
             "succeeded": true,
-            "totalFound": 10,
-            "idsFetched": 10,
+            "totalFound": 11,
+            "idsFetched": 11,
             "truncated": false,
             "error": null
           },
@@ -71111,7 +71253,7 @@
           "attempted": true,
           "requested": 166,
           "enriched": 166,
-          "withAbstract": 132,
+          "withAbstract": 131,
           "error": null
         }
       },
@@ -71257,7 +71399,7 @@
         {
           "stage": "region",
           "pmid": "43044709",
-          "title": "When to Refer - Guidelines for Approaching Transfers to Centers of Excellence in Cardiogenic Shock.",
+          "title": "When to refer - guidelines for approaching transfers to centers of excellence in cardiogenic shock.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71431,13 +71573,6 @@
         },
         {
           "stage": "region",
-          "pmid": "42484006",
-          "title": "Short-term survival of dual SGLT2i-MRA and four-class guideline-directed medical therapy in acute heart failure.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42479001",
           "title": "Pulmonary Embolism Reporting and Data System (PE-RADS™) v2026 for the Diagnosis of Acute Pulmonary Embolism on CT and MR Angiography.",
           "region": null,
@@ -71503,6 +71638,13 @@
           "stage": "region",
           "pmid": "42747338",
           "title": "What is next in sepsis? Controversies and future directions from the 2026 Surviving Sepsis Campaign Guidelines.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43098773",
+          "title": "The Difficult Airway Society 2025 guidelines for management of unanticipated difficult tracheal intubation in adults and decommissioning the difficult airway trolley.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71753,13 +71895,6 @@
         },
         {
           "stage": "region",
-          "pmid": "43016718",
-          "title": "A multi-dimensional comparative evaluation of ten injectable neuroprotective agents for acute ischemic stroke based on the Chinese guideline for drug selection.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
           "pmid": "42994935",
           "title": "Facilitators and barriers to nurses' adherence to traumatic brain injury management guidelines at the accident and emergency unit in a national referral hospital in Uganda: a qualitative study.",
           "region": null,
@@ -71790,13 +71925,6 @@
           "stage": "region",
           "pmid": "42817860",
           "title": "Comparison of recommendations for initial adult traumatic brain injury management across clinical practice guidelines and consensus statements: a scoping review.",
-          "region": null,
-          "reason": "지역 판정 불가 (unknown)"
-        },
-        {
-          "stage": "region",
-          "pmid": "42726040",
-          "title": "Paradoxical Stroke via Persistent Levoatriocardinal Vein and Evaluation and Management Recommendations.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71839,6 +71967,13 @@
           "stage": "region",
           "pmid": "42535992",
           "title": "Hyponatremia treatment guidelines: a necessary course correction.",
+          "region": null,
+          "reason": "지역 판정 불가 (unknown)"
+        },
+        {
+          "stage": "region",
+          "pmid": "43098656",
+          "title": "Management of inherited kidney diseases: A practical approach from S.E.N. working groups and RICORS-ISCIII network.",
           "region": null,
           "reason": "지역 판정 불가 (unknown)"
         },
@@ -71987,19 +72122,19 @@
         }
       ],
       "decisions": {
-        "queued": 193,
-        "needsReview": 471,
+        "queued": 192,
+        "needsReview": 472,
         "rejected": 139,
         "superseded": 0
       },
       "publish": {
         "attempted": true,
-        "candidateId": "pmid:41185922",
+        "candidateId": "pmid:42246225",
         "analyzed": true,
         "stateContainsPublishedId": true
       }
     }
   },
-  "updatedAt": "2026-11-27T03:46:20.478Z",
+  "updatedAt": "2026-11-28T03:29:00.225Z",
   "configVersion": "guideline-v2"
 }

@@ -3,21 +3,6 @@
   "track": "papers",
   "queue": [
     {
-      "pmid": "42184916",
-      "title": "Understanding patients with mechanical circulatory support for cardiogenic shock: The role of preceding cardiac arrest.",
-      "journal": "Resuscitation",
-      "score": 8.2,
-      "topic": "cardiac_resus",
-      "lowConfidence": true,
-      "selectionEvidence": {
-        "method": "metadata-with-topic-cooldown",
-        "rawScore": 6.688000000000001,
-        "cooldownPenalty": -1.5,
-        "llmCalled": false
-      },
-      "addedAt": "2026-11-14"
-    },
-    {
       "pmid": "41707975",
       "title": "External validation of rules for termination of resuscitation in in-hospital cardiac arrest.",
       "journal": "Resuscitation",
@@ -860,6 +845,22 @@
       },
       "addedAt": "2026-11-14",
       "publishedAt": "2026-11-27"
+    },
+    {
+      "pmid": "42184916",
+      "title": "Understanding patients with mechanical circulatory support for cardiogenic shock: The role of preceding cardiac arrest.",
+      "journal": "Resuscitation",
+      "score": 8.2,
+      "topic": "cardiac_resus",
+      "lowConfidence": true,
+      "selectionEvidence": {
+        "method": "metadata-with-topic-cooldown",
+        "rawScore": 6.688000000000001,
+        "cooldownPenalty": -1.5,
+        "llmCalled": false
+      },
+      "addedAt": "2026-11-14",
+      "publishedAt": "2026-11-28"
     }
   ],
   "rejected": [
@@ -875,9 +876,9 @@
     }
   ],
   "lastRun": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "outcome": "published",
-    "publishedId": "42667934"
+    "publishedId": "42184916"
   },
-  "updatedAt": "2026-11-27"
+  "updatedAt": "2026-11-28"
 }
